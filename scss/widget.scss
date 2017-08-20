@@ -1,0 +1,36 @@
+/************************************
+** ウィジェット
+************************************/
+
+/*タグクラウド*/
+// .tagcloud a{
+//   font-size: 16px !important;
+//   padding: 2px 6px;
+//   border: 1px solid #aaa;
+//   text-decoration: none;
+//   border-radius: 4px;
+//   margin: 2px;
+//   display: inline-block;
+// }
+.tagcloud {
+  a {
+
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    color: #666;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    text-decoration: none;
+    font-size: 12px !important;
+
+
+    &::before{
+      @include fontawsome('\f02b');
+    }
+    &:hover {
+      @include bgc_hover;
+    }
+  }
+}

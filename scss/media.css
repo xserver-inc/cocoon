@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/************************************!
+** YouTubeビデオなどのiframeをレスポンシブにするスタイル
+************************************/
+/*!動画の最大幅を指定する*/
+.video-container,
+.instagram-container,
+.facebook-container {
+  max-width: 640px; }
+
+/*!動画の大きさを調整*/
+.video-container .video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto; }
+
+/*!Instagramの大きさを調整*/
+.instagram-container .instagram {
+  position: relative;
+  padding-bottom: 120%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+/*!Facebookの大きさを調整*/
+.facebook-container .facebook {
+  position: relative;
+  padding-bottom: 120%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+/*!動画を囲んでいるdiv目一杯に広げる*/
+.video iframe,
+.video object,
+.video embed,
+.instagram iframe,
+.instagram object,
+.instagram embed,
+.facebook iframe,
+.facebook object,
+.facebook embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*!Twitterビデオの最小幅を上書き変更*/
+.twitter-video {
+  min-width: 200px !important; }
+
+.pixiv-embed iframe {
+  max-width: 100%; }

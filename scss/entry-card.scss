@@ -1,0 +1,69 @@
+/************************************
+** エントリーカードの設定
+************************************/
+.a-wrap{
+  text-decoration: none;
+  display: block;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  &:hover {
+    @include bgc_hover;
+  }
+}
+
+.entry-card-thumnail{
+  width: 320px;
+  float: left;
+  margin-top: 3px;
+}
+
+.entry-card-content{
+  margin-left: 330px;
+}
+
+.entry-card-title{
+  font-size: 22px;
+  margin: 0;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.entry-card-snippet{
+  font-size: 0.8em;
+}
+
+.entry-card-info{
+  margin-top: 0.6em;
+  // text-overflow: ellipsis;
+  // white-space: nowrap;
+  // width: 100%;
+  div{
+    display: inline;
+  }
+
+}
+
+.published::before,
+.category::before{
+  margin-right: 2px;
+}
+
+.published,
+.category{
+  padding: 2px;
+  margin-right: 8px;
+  display: inline;
+  font-size: 14px;
+}
+
+.published::before{
+  @include fontawsome('\f017');
+}
+
+.category::before{
+  @include fontawsome('\f07b');
+}
+
+

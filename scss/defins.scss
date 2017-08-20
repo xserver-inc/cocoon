@@ -1,0 +1,39 @@
+//要素の丸め
+$basic_border_radius: 3px;
+$badge_border_radius: 3px;
+
+//メインカラム
+$main_width: 800px;
+$main_border_width: 1px;
+$main_border_style: solid ;
+$main_border_color: #999;
+$main_padding_width: 29px;
+
+//メインカラムとサイドバーの余白
+$main_sidebar: 20px;
+
+//サイドバー
+$sidebar_width: 336px;
+$sidebar_border_width: 1px;
+$sidebar_border_style: solid ;
+$sidebar_border_color: #999;
+$sidebar_padding_width: 9px;
+
+$site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +
+  $sidebar_width + $sidebar_border_width*2 + $sidebar_padding_width*2 +
+  $main_sidebar;
+
+//背景ホバー
+$bgc_hover_color: #efefef;
+$bgc_hover_anime: all 0.3s ease 0s;
+@mixin bgc_hover($color:$bgc_hover_color) {
+  background-color: $color;
+  transition: $bgc_hover_anime;
+}
+
+//Font Awesomeアイコンを出力するとき
+@mixin fontawsome($unicode:'/f004') {
+  font-family: FontAwesome;
+  content: $unicode;
+  padding-right: 4px;
+}

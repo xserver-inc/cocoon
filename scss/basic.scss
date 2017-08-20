@@ -1,0 +1,58 @@
+/************************************
+** 基本表示
+************************************/
+body {
+  /* フォントの種類 */
+  font-family: -apple-system, BlinkMacSystemFont,
+               "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+  /* フォントのサイズ */
+  font-size: 17px;
+
+  /* フォントの色 */
+  font-size: #333;
+
+  /* カーニングの設定 */
+  //letter-spacing: 1.2px;
+  font-feature-settings: "palt" 1;
+  font-kerning: auto;
+
+  /* 行間の設定 */
+  line-height: 1.75;
+
+  margin: 0;
+
+  //word-wrap: break-word;
+  overflow-wrap: break-word;
+
+}
+
+figure{
+  margin: 0;
+}
+
+/* クリアフィックス */
+.cf::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* インナーを囲む */
+.wrap{
+  width: $site_width;
+  margin: 0 auto;
+}
+
+.header{
+  width: 100%;
+  height: 100px;
+}
+
+.main{
+  width: $main_width;
+  float: left;
+  padding: 20px $main_padding_width;
+  border: $main_border_width $main_border_style $main_border_color;
+  border-radius: $basic_border_radius;
+}
