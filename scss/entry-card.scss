@@ -63,7 +63,7 @@
 // }
 
 .published,
-.category{
+.entry-category{
   padding: 2px;
   margin-right: 8px;
   display: inline;
@@ -74,7 +74,7 @@
   @include fontawsome('\f017');
 }
 
-.category::before{
+.entry-category::before{
   @include fontawsome('\f07b');
 }
 

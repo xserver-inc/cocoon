@@ -4,7 +4,7 @@
 function get_the_nolink_categories(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<span class="category">'.$category->cat_name.'</span>';
+    $categories .= '<span class="entry-category">'.$category->cat_name.'</span>';
   }
   return $categories;
 }

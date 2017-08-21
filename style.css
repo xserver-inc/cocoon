@@ -106,7 +106,7 @@ img {
   display: inline; }
 
 .published,
-.category {
+.entry-category {
   padding: 2px;
   margin-right: 8px;
   display: inline;
@@ -117,7 +117,7 @@ img {
   content: "";
   padding-right: 3px; }
 
-.category::before {
+.entry-category::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px; }
