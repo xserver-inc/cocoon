@@ -20,45 +20,46 @@ body {
   /* フォントのサイズ */
   font-size: 17px;
   /* フォントの色 */
-  font-size: #333;
+  color: #333;
   /* カーニングの設定 */
   font-feature-settings: "palt" 1;
   font-kerning: auto;
   /* 行間の設定 */
   line-height: 1.75;
   margin: 0;
-  overflow-wrap: break-word;
-}
-
-figure {
-  margin: 0;
-}
+  overflow-wrap: break-word; }
 
 /* クリアフィックス */
 .cf::after {
   clear: both;
   content: "";
-  display: block;
-}
+  display: block; }
 
 /* インナーを囲む */
 .wrap {
   width: 1236px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .header {
   width: 100%;
-  height: 100px;
-}
+  height: 100px; }
 
 .main {
   width: 800px;
   float: left;
   padding: 20px 29px;
   border: 1px solid #999;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
+
+/************************************
+** 画像関係のスタイル
+************************************/
+figure {
+  margin: 0; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 /************************************
 ** エントリーカードの設定
@@ -68,65 +69,82 @@ figure {
   display: block;
   color: #333;
   padding: 10px;
-  margin-bottom: 20px;
-}
-.a-wrap:hover {
-  background-color: #efefef;
-  transition: all 0.3s ease 0s;
-}
+  margin-bottom: 20px; }
+  .a-wrap:hover {
+    background-color: #f3f3f3;
+    transition: all 0.5s ease 0s; }
 
 .entry-card-thumnail {
   width: 320px;
   float: left;
   margin-top: 3px;
-}
+  position: relative; }
+
+.category-label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 10px;
+  color: #fff;
+  background-color: rgba(51, 51, 51, 0.7);
+  padding: 0px 4px; }
 
 .entry-card-content {
-  margin-left: 330px;
-}
+  margin-left: 330px; }
 
 .entry-card-title {
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
   line-height: 1.1;
   margin-bottom: 5px;
-}
+  display: inline; }
 
 .entry-card-snippet {
-  font-size: 0.8em;
-}
+  font-size: 0.8em; }
 
-.entry-card-info {
-  margin-top: 0.6em;
-}
-.entry-card-info div {
-  display: inline;
-}
-
-.published::before,
-.category::before {
-  margin-right: 2px;
-}
+.entry-card-meta div {
+  display: inline; }
 
 .published,
 .category {
   padding: 2px;
   margin-right: 8px;
   display: inline;
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 .published::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
-}
+  padding-right: 3px; }
 
 .category::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
-}
+  padding-right: 3px; }
+
+.entry-card-meta .entry-card-categorys {
+  display: none; }
+
+/************************************
+** パンくずリスト
+************************************/
+/************************************
+** パンくずリスト（Breadcrumb）
+************************************/
+#breadcrumb {
+  margin-top: 20px;
+  color: #777;
+  font-size: 13px; }
+
+#breadcrumb div {
+  display: inline; }
+
+#breadcrumb span.sp {
+  margin: 0 10px; }
+
+#breadcrumb a {
+  text-decoration: none;
+  color: #777; }
 
 /************************************
 ** サイドバーのスタイル
@@ -136,12 +154,10 @@ figure {
   width: 336px;
   border: 1px solid #999;
   padding: 9px;
-  border-radius: 3px;
-}
-.sidebar h3 {
-  background-color: #ddd;
-  padding: 10px;
-}
+  border-radius: 3px; }
+  .sidebar h3 {
+    background-color: #ddd;
+    padding: 10px; }
 
 /************************************
 ** ウィジェット
@@ -156,59 +172,74 @@ figure {
   margin-bottom: 5px;
   padding: 4px 8px;
   text-decoration: none;
-  font-size: 12px !important;
-}
-.tagcloud a::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
-.tagcloud a:hover {
-  background-color: #efefef;
-  transition: all 0.3s ease 0s;
-}
+  font-size: 12px !important; }
+  .tagcloud a::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px; }
+  .tagcloud a:hover {
+    background-color: #f3f3f3;
+    transition: all 0.5s ease 0s; }
+
+/*カテゴリー*/
+.widget_categories ul {
+  padding: 0;
+  list-style: none; }
+  .widget_categories ul li ul {
+    padding-left: 20px; }
+  .widget_categories ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    padding-right: 4px;
+    padding-left: 4px; }
+    .widget_categories ul li a:hover {
+      background-color: #f3f3f3;
+      transition: all 0.5s ease 0s; }
+    .widget_categories ul li a span {
+      display: block;
+      float: right;
+      color: #fff;
+      background-color: #999;
+      font-size: 0.8em;
+      padding: 0 6px;
+      border-radius: 6px; }
 
 /************************************
 ** ページネーション
 ************************************/
 .pagenation {
   margin: 30px 0;
-  clear: both;
-}
-.pagenation .current {
-  background-color: #ddd;
-}
-.pagenation .prev::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-right: 3px;
-}
-.pagenation .next::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-left: 3px;
-}
-.pagenation a:hover {
-  background-color: #efefef;
-  transition: all 0.3s ease 0s;
-}
+  clear: both; }
+  .pagenation .current {
+    background-color: #ddd; }
+  .pagenation .prev::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px;
+    padding-right: 3px; }
+  .pagenation .next::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px;
+    padding-left: 3px; }
+  .pagenation a:hover {
+    background-color: #f3f3f3;
+    transition: all 0.5s ease 0s; }
 
 .page-numbers:not(.dots) {
   text-decoration: none;
   color: #333;
   border: 1px solid #ddd;
   padding: 8px 16px;
-  margin-left: 3px;
-}
+  margin-left: 3px; }
 
 /************************************
 ** フッター
 ************************************/
 .copyright {
-  text-align: center;
-}
+  text-align: center; }
 
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
@@ -217,8 +248,7 @@ figure {
 .video-container,
 .instagram-container,
 .facebook-container {
-  max-width: 640px;
-}
+  max-width: 640px; }
 
 /*!動画の大きさを調整*/
 .video-container .video {
@@ -228,8 +258,7 @@ figure {
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 /*!Instagramの大きさを調整*/
 .instagram-container .instagram {
@@ -237,8 +266,7 @@ figure {
   padding-bottom: 120%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /*!Facebookの大きさを調整*/
 .facebook-container .facebook {
@@ -246,8 +274,7 @@ figure {
   padding-bottom: 120%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /*!動画を囲んでいるdiv目一杯に広げる*/
 .video iframe,
@@ -263,14 +290,11 @@ figure {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 /*!Twitterビデオの最小幅を上書き変更*/
 .twitter-video {
-  min-width: 200px !important;
-}
+  min-width: 200px !important; }
 
 .pixiv-embed iframe {
-  max-width: 100%;
-}
+  max-width: 100%; }

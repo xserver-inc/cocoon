@@ -19,7 +19,7 @@ function the_nolink_categories(){
 function get_the_nolink_category(){
   $categories = get_the_category();
   $category = $categories[0];
-  return '<span class="category">'.$category->cat_name.'</span>';
+  return '<span class="category-label">'.$category->cat_name.'</span>';
 }
 
 //リンクのないカテゴリーの出力

@@ -38,3 +38,11 @@ function custom_wp_tag_cloud($args) {
 }
 endif;
 add_filter( 'widget_tag_cloud_args', 'custom_wp_tag_cloud' );
+
+if ( !function_exists( 'remove_cotegory_count_parenthesis' ) ):
+function remove_cotegory_count_parenthesis( $output, $args ) {
+  $output = preg_replace('/<\/a>\s*\((\d+)\)/',' <span class="category-count">$1</span></a>',$output);
+  return $output;
+}
+endif;
+add_filter( 'wp_list_categories', 'remove_cotegory_count_parenthesis', 10, 2 );

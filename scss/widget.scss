@@ -3,18 +3,8 @@
 ************************************/
 
 /*タグクラウド*/
-// .tagcloud a{
-//   font-size: 16px !important;
-//   padding: 2px 6px;
-//   border: 1px solid #aaa;
-//   text-decoration: none;
-//   border-radius: 4px;
-//   margin: 2px;
-//   display: inline-block;
-// }
 .tagcloud {
   a {
-
     background-color: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 2px;
@@ -25,7 +15,6 @@
     text-decoration: none;
     font-size: 12px !important;
 
-
     &::before{
       @include fontawsome('\f02b');
     }
@@ -33,4 +22,42 @@
       @include bgc_hover;
     }
   }
+}
+
+/*カテゴリー*/
+.widget_categories{
+  ul{
+    padding: 0;
+    list-style: none;
+
+    li{
+      ul{
+        padding-left: 20px;
+      }
+
+      a{
+        @include link_cancel;
+        padding: 10px 0;
+        display: block;
+        padding-right: 4px;
+        padding-left: 4px;
+
+        &:hover {
+          @include bgc_hover;
+        }
+
+        span{
+          display: block;
+          float: right;
+          color: #fff;
+          background-color: #999;
+          font-size: 0.8em;
+          padding: 0 6px;
+          border-radius: 6px;
+        }
+      }
+
+    }
+  }
+
 }

@@ -1,3 +1,8 @@
+//テキスト色
+$text_color: #333;
+$pallid_text_color: #777;
+
+
 //要素の丸め
 $basic_border_radius: 3px;
 $badge_border_radius: 3px;
@@ -24,9 +29,9 @@ $site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +
   $main_sidebar;
 
 //背景ホバー
-$bgc_hover_color: #efefef;
-$bgc_hover_anime: all 0.3s ease 0s;
-@mixin bgc_hover($color:$bgc_hover_color) {
+$bgc_hover_color: #f3f3f3;
+$bgc_hover_anime: all 0.5s ease 0s;
+@mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
 }
@@ -35,5 +40,11 @@ $bgc_hover_anime: all 0.3s ease 0s;
 @mixin fontawsome($unicode:'/f004') {
   font-family: FontAwesome;
   content: $unicode;
-  padding-right: 4px;
+  padding-right: 3px;
+}
+
+//リンクキャンセル
+@mixin link_cancel($color: $text_color) {
+  color: $color;
+  text-decoration: none;
 }

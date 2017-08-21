@@ -1,0 +1,26 @@
+/************************************
+** パンくずリスト
+************************************/
+
+/************************************
+** パンくずリスト（Breadcrumb）
+************************************/
+#breadcrumb{
+  margin-top: 20px;
+  color: $pallid_text_color;
+  font-size: 13px;
+}
+
+#breadcrumb div {
+  display: inline;
+}
+
+#breadcrumb span.sp{
+  margin: 0 10px;
+}
+
+#breadcrumb a{
+  text-decoration:none;
+  color: $pallid_text_color;
+}
+
