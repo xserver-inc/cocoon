@@ -30,7 +30,7 @@ $site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +
 
 //背景ホバー
 $bgc_hover_color: #f3f3f3;
-$bgc_hover_anime: all 0.5s ease 0s;
+$bgc_hover_anime: all 0.3s ease 0s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;

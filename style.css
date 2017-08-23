@@ -72,7 +72,7 @@ img {
   margin-bottom: 20px; }
   .a-wrap:hover {
     background-color: #f3f3f3;
-    transition: all 0.5s ease 0s; }
+    transition: all 0.3s ease 0s; }
 
 .entry-card-thumnail {
   width: 320px;
@@ -179,25 +179,40 @@ img {
     padding-right: 3px; }
   .tagcloud a:hover {
     background-color: #f3f3f3;
-    transition: all 0.5s ease 0s; }
+    transition: all 0.3s ease 0s; }
 
 /*カテゴリー*/
-.widget_categories ul {
+.widget_recent_entries ul,
+.widget_categories ul,
+.widget_archive ul,
+.widget_meta ul {
   padding: 0;
   list-style: none; }
-  .widget_categories ul li ul {
+  .widget_recent_entries ul li ul,
+  .widget_categories ul li ul,
+  .widget_archive ul li ul,
+  .widget_meta ul li ul {
     padding-left: 20px; }
-  .widget_categories ul li a {
+  .widget_recent_entries ul li a,
+  .widget_categories ul li a,
+  .widget_archive ul li a,
+  .widget_meta ul li a {
     color: #333;
     text-decoration: none;
     padding: 10px 0;
     display: block;
     padding-right: 4px;
     padding-left: 4px; }
-    .widget_categories ul li a:hover {
+    .widget_recent_entries ul li a:hover,
+    .widget_categories ul li a:hover,
+    .widget_archive ul li a:hover,
+    .widget_meta ul li a:hover {
       background-color: #f3f3f3;
-      transition: all 0.5s ease 0s; }
-    .widget_categories ul li a span {
+      transition: all 0.3s ease 0s; }
+    .widget_recent_entries ul li a .post-count,
+    .widget_categories ul li a .post-count,
+    .widget_archive ul li a .post-count,
+    .widget_meta ul li a .post-count {
       display: block;
       float: right;
       color: #fff;
@@ -205,6 +220,42 @@ img {
       font-size: 0.8em;
       padding: 0 6px;
       border-radius: 6px; }
+
+/*カレンダー*/
+.calendar_wrap {
+  margin: 20px 0; }
+
+#wp-calendar {
+  border-collapse: collapse;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-top-color: #ddd;
+  border-right-color: #ddd;
+  width: 100%;
+  max-width: 400px; }
+  #wp-calendar caption {
+    font-weight: bold;
+    text-align: center; }
+  #wp-calendar #today {
+    background-color: #ddd; }
+  #wp-calendar th {
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd; }
+  #wp-calendar td {
+    text-align: center;
+    padding: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd; }
 
 /************************************
 ** ページネーション
@@ -226,7 +277,7 @@ img {
     padding-left: 3px; }
   .pagenation a:hover {
     background-color: #f3f3f3;
-    transition: all 0.5s ease 0s; }
+    transition: all 0.3s ease 0s; }
 
 .page-numbers:not(.dots) {
   text-decoration: none;

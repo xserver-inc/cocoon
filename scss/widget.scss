@@ -25,7 +25,10 @@
 }
 
 /*カテゴリー*/
-.widget_categories{
+.widget_recent_entries,
+.widget_categories,
+.widget_archive,
+.widget_meta{
   ul{
     padding: 0;
     list-style: none;
@@ -46,7 +49,7 @@
           @include bgc_hover;
         }
 
-        span{
+        .post-count{
           display: block;
           float: right;
           color: #fff;
@@ -60,4 +63,51 @@
     }
   }
 
+}
+
+/*カレンダー*/
+.calendar_wrap{
+  margin: 20px 0;
+}
+
+#wp-calendar {
+  border-collapse: collapse;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-top-color: #ddd;
+  border-right-color: #ddd;
+  width: 100%;
+  max-width: 400px;
+
+  caption {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #today {
+    background-color: #ddd;
+  }
+
+  th {
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd;
+  }
+
+  td {
+    text-align: center;
+    padding: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd;
+
+  }
 }
