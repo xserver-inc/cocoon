@@ -39,6 +39,11 @@ body {
   margin: 0 auto;
 }
 
+/*エントリーの見出し*/
+.entry-title{
+  font-size: 25px;
+}
+
 .main{
   width: $main_width;
   float: left;

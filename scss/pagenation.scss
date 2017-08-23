@@ -35,9 +35,26 @@ $pagenation_wh: 50px;
   display: inline-block;
   height: $pagenation_wh;
   width: $pagenation_wh;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   margin-left: 3px;
   line-height: $pagenation_wh;
   text-align: center;
 }
 
+/*「次のページ」ページネーション*/
+.pagenation-next-link {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: $text_color;
+  display: block;
+  font-size: 1.25em;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  display: block;
+
+  &:hover {
+    @include bgc_hover;
+  }
+}

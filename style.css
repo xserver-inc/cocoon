@@ -40,6 +40,10 @@ body {
   width: 1236px;
   margin: 0 auto; }
 
+/*エントリーの見出し*/
+.entry-title {
+  font-size: 25px; }
+
 .main {
   width: 800px;
   float: left;
@@ -313,10 +317,26 @@ img {
   display: inline-block;
   height: 50px;
   width: 50px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   margin-left: 3px;
   line-height: 50px;
   text-align: center; }
+
+/*「次のページ」ページネーション*/
+.pagenation-next-link {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+  display: block;
+  font-size: 1.25em;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  display: block; }
+  .pagenation-next-link:hover {
+    background-color: #f3f3f3;
+    transition: all 0.3s ease 0s; }
 
 /************************************
 ** フッター
