@@ -7,8 +7,6 @@
     <?php // force Internet Explorer to use the latest rendering engine available ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title><?php wp_title(''); ?></title>
-
     <?php // mobile meta (hooray!) ?>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -34,10 +32,10 @@
       <header id="header" class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
         <div id="header-in" class="header-in wrap cf">
-          <div class="header-top"><?php bloginfo('description') ?></div>
+          <div class="header-top"><span class="tagline"><?php bloginfo('description') ?></span></div>
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></p>
+          <p id="logo" class="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></p>
 
           <?php // if you'd like to use the site description you can un-comment it below ?>
           <?php // bloginfo('description'); ?>

@@ -3,8 +3,7 @@
 ************************************/
 body {
   /* フォントの種類 */
-  font-family: -apple-system, BlinkMacSystemFont,
-               "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;;
 
   /* フォントのサイズ */
   font-size: 17px;
@@ -38,11 +37,6 @@ body {
 .wrap{
   width: $site_width;
   margin: 0 auto;
-}
-
-.header{
-  width: 100%;
-  height: 100px;
 }
 
 .main{

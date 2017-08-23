@@ -1,0 +1,20 @@
+/************************************
+** ヘッダー
+************************************/
+
+.header{
+}
+
+.header-top{
+  font-size: 0.8em;
+}
+
+.logo{
+  text-align: center;
+
+}
+
+.site-name{
+  @include link_cancel;
+  font-size: 40px;
+}
