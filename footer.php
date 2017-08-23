@@ -14,9 +14,9 @@
           if ( (is_active_sidebar('footer-left') ||
             is_active_sidebar('footer-center') ||
             is_active_sidebar('footer-right') )  ): ?>
-            <div id="footer-widget">
+            <div class="footer-widgets cf">
                <div class="footer-left">
-               <?php if ( dynamic_sidebar('footer-left') ) : else : ?>
+               <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('footer-left') ) : else : ?>
                <?php endif; ?>
                </div>
                <div class="footer-center">

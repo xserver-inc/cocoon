@@ -48,3 +48,9 @@ $bgc_hover_anime: all 0.3s ease 0s;
   color: $color;
   text-decoration: none;
 }
+
+//リストキャンセル
+@mixin list_cancel {
+  padding: 0;
+  list-style: none;
+}

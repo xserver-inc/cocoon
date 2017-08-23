@@ -162,6 +162,11 @@ img {
 /************************************
 ** ウィジェット
 ************************************/
+/*ウィジェットリスト*/
+.widget ul {
+  padding: 0;
+  list-style: none; }
+
 /*タグクラウド*/
 .tagcloud a {
   background-color: #fff;
@@ -185,17 +190,20 @@ img {
 .widget_recent_entries ul,
 .widget_categories ul,
 .widget_archive ul,
+.widget_pages ul,
 .widget_meta ul {
   padding: 0;
   list-style: none; }
   .widget_recent_entries ul li ul,
   .widget_categories ul li ul,
   .widget_archive ul li ul,
+  .widget_pages ul li ul,
   .widget_meta ul li ul {
     padding-left: 20px; }
   .widget_recent_entries ul li a,
   .widget_categories ul li a,
   .widget_archive ul li a,
+  .widget_pages ul li a,
   .widget_meta ul li a {
     color: #333;
     text-decoration: none;
@@ -206,12 +214,14 @@ img {
     .widget_recent_entries ul li a:hover,
     .widget_categories ul li a:hover,
     .widget_archive ul li a:hover,
+    .widget_pages ul li a:hover,
     .widget_meta ul li a:hover {
       background-color: #f3f3f3;
       transition: all 0.3s ease 0s; }
     .widget_recent_entries ul li a .post-count,
     .widget_categories ul li a .post-count,
     .widget_archive ul li a .post-count,
+    .widget_pages ul li a .post-count,
     .widget_meta ul li a .post-count {
       display: block;
       float: right;
@@ -289,8 +299,22 @@ img {
 /************************************
 ** フッター
 ************************************/
+.footer {
+  margin-top: 20px; }
+
 .copyright {
   text-align: center; }
+
+.footer-widgets {
+  margin: 10px auto; }
+
+.footer-left,
+.footer-center,
+.footer-right {
+  box-sizing: border-box;
+  padding: 10px 15px;
+  float: left;
+  width: 33%; }
 
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル

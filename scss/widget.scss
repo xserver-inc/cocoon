@@ -2,6 +2,14 @@
 ** ウィジェット
 ************************************/
 
+/*ウィジェットリスト*/
+.widget{
+  ul{
+    @include list_cancel;
+  }
+
+}
+
 /*タグクラウド*/
 .tagcloud {
   a {
@@ -28,10 +36,10 @@
 .widget_recent_entries,
 .widget_categories,
 .widget_archive,
+.widget_pages,
 .widget_meta{
   ul{
-    padding: 0;
-    list-style: none;
+    @include list_cancel;
 
     li{
       ul{
