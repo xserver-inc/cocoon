@@ -117,5 +117,14 @@
     border-bottom-color: #ddd;
     border-left-color: #ddd;
 
+    a{
+      color: $text_color;
+      display: block;
+      background-color: #ffface;
+      &:hover{
+        background-color: #fff69b;
+      }
+    }
+
   }
 }

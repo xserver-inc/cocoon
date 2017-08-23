@@ -48,36 +48,3 @@ function title_parts_custom( $title ){
 }
 endif;
 add_filter( 'document_title_parts', 'title_parts_custom' );
-
-// //タイトル自動作成をフックして変更したい部分を変更する
-// if ( !function_exists( 'wp_title_custom' ) ):
-// function wp_title_custom( $title ) {
-//   global $paged, $page;
-
-//   if ( is_feed() ) {
-//     return $title;
-//   }
-
-//   $site_name = trim( get_bloginfo('name') );
-//   if(is_front_page()):
-//     $title = $site_name;
-//     // if ( is_catch_phrase_to_frontpage_title() )://キャッチフレーズを追加する場合
-//     //    $title = $title. ' | ' . trim( get_bloginfo('description') );
-//     // endif;
-//   elseif(is_singular()):
-//     $title = trim( get_the_title() );
-
-//     // //SEO向けのタイトルが設定されているとき
-//     // if (get_seo_title_singular_page()) {
-//     //   $title = get_seo_title_singular_page();
-//     // }
-//     // if ( is_site_name_to_singular_title() )://サイト名を追加する場合
-//     //    $title = $title. ' | ' . $site_name;
-//     // endif;
-//   endif;
-
-//   return $title;
-// }
-// endif;
-// //Wordpress4.4未満
-// add_filter( 'wp_title', 'wp_title_custom');

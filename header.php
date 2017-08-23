@@ -35,7 +35,7 @@
           <div class="header-top"><span class="tagline"><?php bloginfo('description') ?></span></div>
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <p id="logo" class="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></p>
+          <div id="logo" class="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></div>
 
           <?php // if you'd like to use the site description you can un-comment it below ?>
           <?php // bloginfo('description'); ?>

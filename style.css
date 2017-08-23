@@ -64,7 +64,8 @@ img {
   font-size: 0.8em; }
 
 .logo {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 30px; }
 
 .site-name {
   color: #333;
@@ -276,6 +277,12 @@ img {
     border-left-style: solid;
     border-bottom-color: #ddd;
     border-left-color: #ddd; }
+    #wp-calendar td a {
+      color: #333;
+      display: block;
+      background-color: #ffface; }
+      #wp-calendar td a:hover {
+        background-color: #fff69b; }
 
 /************************************
 ** ページネーション
