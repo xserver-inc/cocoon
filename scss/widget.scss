@@ -21,13 +21,23 @@
     margin-bottom: 5px;
     padding: 4px 8px;
     text-decoration: none;
-    font-size: 12px !important;
+    font-size: 12px;
 
     &::before{
       @include fontawsome('\f02b');
     }
+
     &:hover {
       @include bgc_hover;
+    }
+
+    .tag-link-count{
+      margin-left: 10px;
+      // background-color: #999;
+      // padding: 1px 2px;
+      // border-radius: 6px;
+      // color: #fff;
+
     }
   }
 }
@@ -60,11 +70,11 @@
         .post-count{
           display: block;
           float: right;
-          color: #fff;
-          background-color: #999;
-          font-size: 0.8em;
-          padding: 0 6px;
-          border-radius: 6px;
+          // color: #fff;
+          // background-color: #999;
+          // font-size: 0.8em;
+          // padding: 0 6px;
+          // border-radius: 6px;
         }
       }
 

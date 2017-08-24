@@ -52,7 +52,7 @@ body {
   width: 800px;
   float: left;
   padding: 20px 29px;
-  border: 1px solid #ccc;
+  border: 1px solid transparent;
   border-radius: 3px;
 }
 
@@ -193,7 +193,7 @@ img {
 .sidebar {
   float: right;
   width: 336px;
-  border: 1px solid #ccc;
+  border: 1px solid transparent;
   padding: 9px;
   border-radius: 3px;
 }
@@ -221,7 +221,7 @@ img {
   margin-bottom: 5px;
   padding: 4px 8px;
   text-decoration: none;
-  font-size: 12px !important;
+  font-size: 12px;
 }
 .tagcloud a::before {
   font-family: FontAwesome;
@@ -231,6 +231,9 @@ img {
 .tagcloud a:hover {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
+}
+.tagcloud a .tag-link-count {
+  margin-left: 10px;
 }
 
 /*ウィジェット（カテゴリー・アーカイブなど）*/
@@ -276,11 +279,6 @@ img {
 .widget_meta ul li a .post-count {
   display: block;
   float: right;
-  color: #fff;
-  background-color: #999;
-  font-size: 0.8em;
-  padding: 0 6px;
-  border-radius: 6px;
 }
 
 /*カレンダー*/

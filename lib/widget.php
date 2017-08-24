@@ -25,3 +25,16 @@ endif;
 add_filter( 'wp_list_categories', 'remove_post_count_parentheses' );
 add_filter( 'get_archives_link',  'remove_post_count_parentheses' );
 
+//タグクラウドの出力変更
+if ( !function_exists( 'wp_tag_cloud_custom' ) ):
+function wp_tag_cloud_custom( $output ) {
+  //style属性を取り除く
+  $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
+  //カッコを取り除く
+  $output = str_replace( ' (', '',  $output);
+  $output = str_replace( ')', '',  $output);
+  return $output;
+}
+endif;
+add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom');
+
