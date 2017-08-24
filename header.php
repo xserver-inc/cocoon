@@ -20,9 +20,6 @@
     <?php wp_head(); ?>
     <?php // end of wordpress head ?>
 
-    <?php // drop Google Analytics Here ?>
-    <?php // end analytics ?>
-
   </head>
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

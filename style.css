@@ -27,54 +27,64 @@ body {
   /* 行間の設定 */
   line-height: 1.75;
   margin: 0;
-  overflow-wrap: break-word; }
+  overflow-wrap: break-word;
+}
 
 /* クリアフィックス */
 .cf::after {
   clear: both;
   content: "";
-  display: block; }
+  display: block;
+}
 
 /* インナーを囲む */
 .wrap {
   width: 1236px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 /*エントリーの見出し*/
 .entry-title {
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .main {
   width: 800px;
   float: left;
   padding: 20px 29px;
   border: 1px solid #999;
-  border-radius: 3px; }
+  border-radius: 3px;
+}
 
 /************************************
 ** 画像関係のスタイル
 ************************************/
 figure {
-  margin: 0; }
+  margin: 0;
+}
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 /************************************
 ** ヘッダー
 ************************************/
 .header-top {
-  font-size: 0.8em; }
+  font-size: 0.8em;
+}
 
 .logo {
   text-align: center;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+}
 
 .site-name {
   color: #333;
   text-decoration: none;
-  font-size: 40px; }
+  font-size: 40px;
+}
 
 /************************************
 ** エントリーカードの設定
@@ -84,16 +94,19 @@ img {
   display: block;
   color: #333;
   padding: 10px;
-  margin-bottom: 20px; }
-  .a-wrap:hover {
-    background-color: #f3f3f3;
-    transition: all 0.3s ease 0s; }
+  margin-bottom: 20px;
+}
+.a-wrap:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
 
 .entry-card-thumnail {
   width: 320px;
   float: left;
   margin-top: 3px;
-  position: relative; }
+  position: relative;
+}
 
 .category-label {
   position: absolute;
@@ -102,43 +115,52 @@ img {
   font-size: 10px;
   color: #fff;
   background-color: rgba(51, 51, 51, 0.7);
-  padding: 0px 4px; }
+  padding: 0px 4px;
+}
 
 .entry-card-content {
-  margin-left: 330px; }
+  margin-left: 330px;
+}
 
 .entry-card-title {
   font-size: 20px;
   margin: 0;
   line-height: 1.1;
   margin-bottom: 5px;
-  display: inline; }
+  display: inline;
+}
 
 .entry-card-snippet {
-  font-size: 0.8em; }
+  font-size: 0.8em;
+}
 
 .entry-card-meta div {
-  display: inline; }
+  display: inline;
+}
 
 .published,
 .entry-category {
   padding: 2px;
   margin-right: 8px;
   display: inline;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .published::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px; }
+  padding-right: 3px;
+}
 
 .entry-category::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px; }
+  padding-right: 3px;
+}
 
 .entry-card-meta .entry-card-categorys {
-  display: none; }
+  display: none;
+}
 
 /************************************
 ** パンくずリスト
@@ -149,17 +171,21 @@ img {
 #breadcrumb {
   margin-top: 20px;
   color: #777;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 #breadcrumb div {
-  display: inline; }
+  display: inline;
+}
 
 #breadcrumb span.sp {
-  margin: 0 10px; }
+  margin: 0 10px;
+}
 
 #breadcrumb a {
   text-decoration: none;
-  color: #777; }
+  color: #777;
+}
 
 /************************************
 ** サイドバーのスタイル
@@ -169,10 +195,12 @@ img {
   width: 336px;
   border: 1px solid #999;
   padding: 9px;
-  border-radius: 3px; }
-  .sidebar h3 {
-    background-color: #ddd;
-    padding: 10px; }
+  border-radius: 3px;
+}
+.sidebar h3 {
+  background-color: #ddd;
+  padding: 10px;
+}
 
 /************************************
 ** ウィジェット
@@ -180,7 +208,8 @@ img {
 /*ウィジェットリスト*/
 .widget ul {
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 /*タグクラウド*/
 .tagcloud a {
@@ -192,63 +221,72 @@ img {
   margin-bottom: 5px;
   padding: 4px 8px;
   text-decoration: none;
-  font-size: 12px !important; }
-  .tagcloud a::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px; }
-  .tagcloud a:hover {
-    background-color: #f3f3f3;
-    transition: all 0.3s ease 0s; }
+  font-size: 12px !important;
+}
+.tagcloud a::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+.tagcloud a:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
 
-/*カテゴリー*/
+/*ウィジェット（カテゴリー・アーカイブなど）*/
 .widget_recent_entries ul,
 .widget_categories ul,
 .widget_archive ul,
 .widget_pages ul,
 .widget_meta ul {
   padding: 0;
-  list-style: none; }
-  .widget_recent_entries ul li ul,
-  .widget_categories ul li ul,
-  .widget_archive ul li ul,
-  .widget_pages ul li ul,
-  .widget_meta ul li ul {
-    padding-left: 20px; }
-  .widget_recent_entries ul li a,
-  .widget_categories ul li a,
-  .widget_archive ul li a,
-  .widget_pages ul li a,
-  .widget_meta ul li a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 0;
-    display: block;
-    padding-right: 4px;
-    padding-left: 4px; }
-    .widget_recent_entries ul li a:hover,
-    .widget_categories ul li a:hover,
-    .widget_archive ul li a:hover,
-    .widget_pages ul li a:hover,
-    .widget_meta ul li a:hover {
-      background-color: #f3f3f3;
-      transition: all 0.3s ease 0s; }
-    .widget_recent_entries ul li a .post-count,
-    .widget_categories ul li a .post-count,
-    .widget_archive ul li a .post-count,
-    .widget_pages ul li a .post-count,
-    .widget_meta ul li a .post-count {
-      display: block;
-      float: right;
-      color: #fff;
-      background-color: #999;
-      font-size: 0.8em;
-      padding: 0 6px;
-      border-radius: 6px; }
+  list-style: none;
+}
+.widget_recent_entries ul li ul,
+.widget_categories ul li ul,
+.widget_archive ul li ul,
+.widget_pages ul li ul,
+.widget_meta ul li ul {
+  padding-left: 20px;
+}
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
+.widget_recent_entries ul li a .post-count,
+.widget_categories ul li a .post-count,
+.widget_archive ul li a .post-count,
+.widget_pages ul li a .post-count,
+.widget_meta ul li a .post-count {
+  display: block;
+  float: right;
+  color: #fff;
+  background-color: #999;
+  font-size: 0.8em;
+  padding: 0 6px;
+  border-radius: 6px;
+}
 
 /*カレンダー*/
 .calendar_wrap {
-  margin: 20px 0; }
+  margin: 20px 0;
+}
 
 #wp-calendar {
   border-collapse: collapse;
@@ -259,34 +297,41 @@ img {
   border-top-color: #ddd;
   border-right-color: #ddd;
   width: 100%;
-  max-width: 400px; }
-  #wp-calendar caption {
-    font-weight: bold;
-    text-align: center; }
-  #wp-calendar #today {
-    background-color: #ddd; }
-  #wp-calendar th {
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-bottom-color: #ddd;
-    border-left-color: #ddd; }
-  #wp-calendar td {
-    text-align: center;
-    padding: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-bottom-color: #ddd;
-    border-left-color: #ddd; }
-    #wp-calendar td a {
-      color: #333;
-      display: block;
-      background-color: #ffface; }
-      #wp-calendar td a:hover {
-        background-color: #fff69b; }
+  max-width: 400px;
+}
+#wp-calendar caption {
+  font-weight: bold;
+  text-align: center;
+}
+#wp-calendar #today {
+  background-color: #ddd;
+}
+#wp-calendar th {
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-bottom-color: #ddd;
+  border-left-color: #ddd;
+}
+#wp-calendar td {
+  text-align: center;
+  padding: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-bottom-color: #ddd;
+  border-left-color: #ddd;
+}
+#wp-calendar td a {
+  color: #333;
+  display: block;
+  background-color: #ffface;
+}
+#wp-calendar td a:hover {
+  background-color: #fff69b;
+}
 
 /************************************
 ** ページネーション
@@ -294,22 +339,27 @@ img {
 .pagenation {
   margin: 30px 0;
   clear: both;
-  text-align: center; }
-  .pagenation .current {
-    background-color: #ddd; }
-  .pagenation .prev::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px;
-    padding-right: 3px; }
-  .pagenation .next::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px;
-    padding-left: 3px; }
-  .pagenation a:hover {
-    background-color: #f3f3f3;
-    transition: all 0.3s ease 0s; }
+  text-align: center;
+}
+.pagenation .current {
+  background-color: #ddd;
+}
+.pagenation .prev::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  padding-right: 3px;
+}
+.pagenation .next::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  padding-left: 3px;
+}
+.pagenation a:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
 
 .page-numbers {
   color: #333;
@@ -320,7 +370,8 @@ img {
   border: 1px solid #ccc;
   margin-left: 3px;
   line-height: 50px;
-  text-align: center; }
+  text-align: center;
+}
 
 /*「次のページ」ページネーション*/
 .pagenation-next-link {
@@ -333,22 +384,27 @@ img {
   width: 100%;
   text-align: center;
   padding: 12px 0;
-  display: block; }
-  .pagenation-next-link:hover {
-    background-color: #f3f3f3;
-    transition: all 0.3s ease 0s; }
+  display: block;
+}
+.pagenation-next-link:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
 
 /************************************
 ** フッター
 ************************************/
 .footer {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 .copyright {
-  text-align: center; }
+  text-align: center;
+}
 
 .footer-widgets {
-  margin: 10px auto; }
+  margin: 10px auto;
+}
 
 .footer-left,
 .footer-center,
@@ -356,7 +412,8 @@ img {
   box-sizing: border-box;
   padding: 10px 15px;
   float: left;
-  width: 33%; }
+  width: 33%;
+}
 
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
@@ -365,7 +422,8 @@ img {
 .video-container,
 .instagram-container,
 .facebook-container {
-  max-width: 640px; }
+  max-width: 640px;
+}
 
 /*!動画の大きさを調整*/
 .video-container .video {
@@ -375,7 +433,8 @@ img {
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 /*!Instagramの大きさを調整*/
 .instagram-container .instagram {
@@ -383,7 +442,8 @@ img {
   padding-bottom: 120%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /*!Facebookの大きさを調整*/
 .facebook-container .facebook {
@@ -391,7 +451,8 @@ img {
   padding-bottom: 120%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 /*!動画を囲んでいるdiv目一杯に広げる*/
 .video iframe,
@@ -407,11 +468,14 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 /*!Twitterビデオの最小幅を上書き変更*/
 .twitter-video {
-  min-width: 200px !important; }
+  min-width: 200px !important;
+}
 
 .pixiv-embed iframe {
-  max-width: 100%; }
+  max-width: 100%;
+}

@@ -3,7 +3,7 @@
 //リンクのないカテゴリーの取得（複数）
 function get_the_nolink_categories(){
   $categories = null;
-  foreach((get_the_category()) as $category){
+  foreach((get_categories()) as $category){
     $categories .= '<span class="entry-category">'.$category->cat_name.'</span>';
   }
   return $categories;
@@ -17,9 +17,12 @@ function the_nolink_categories(){
 
 //リンクのないカテゴリーの取得
 function get_the_nolink_category(){
-  $categories = get_the_category();
-  $category = $categories[0];
-  return '<span class="category-label">'.$category->cat_name.'</span>';
+  $categories = get_categories();
+  //var_dump($categories);
+  if ( isset($categories[0]) ) {
+    $category = $categories[0];
+    return '<span class="category-label">'.$category->cat_name.'</span>';
+  }
 }
 
 //リンクのないカテゴリーの出力
