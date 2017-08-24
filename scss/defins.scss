@@ -2,6 +2,9 @@
 $text_color: #333;
 $pallid_text_color: #777;
 
+//ボーダー色
+$basic_border_color: #ccc;
+
 
 //要素の丸め
 $basic_border_radius: 3px;
@@ -11,7 +14,7 @@ $badge_border_radius: 3px;
 $main_width: 800px;
 $main_border_width: 1px;
 $main_border_style: solid ;
-$main_border_color: #999;
+$main_border_color: $basic_border_color;
 $main_padding_width: 29px;
 
 //メインカラムとサイドバーの余白
@@ -21,7 +24,7 @@ $main_sidebar: 20px;
 $sidebar_width: 336px;
 $sidebar_border_width: 1px;
 $sidebar_border_style: solid ;
-$sidebar_border_color: #999;
+$sidebar_border_color: $basic_border_color;
 $sidebar_padding_width: 9px;
 
 $site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +

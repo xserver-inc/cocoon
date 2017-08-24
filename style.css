@@ -52,7 +52,7 @@ body {
   width: 800px;
   float: left;
   padding: 20px 29px;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   border-radius: 3px;
 }
 
@@ -193,7 +193,7 @@ img {
 .sidebar {
   float: right;
   width: 336px;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   padding: 9px;
   border-radius: 3px;
 }
@@ -478,4 +478,37 @@ img {
 
 .pixiv-embed iframe {
   max-width: 100%;
+}
+
+/************************************
+** 入力フォーム
+************************************/
+/*検索フォーム*/
+.search-form {
+  margin: 2em 0;
+  position: relative;
+}
+
+.search-edit {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+}
+
+.search-submit {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 41px;
+  border: none;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0);
+}
+.search-submit::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
 }

@@ -3,3 +3,31 @@
 ************************************/
 
 /*検索フォーム*/
+.search-form{
+  margin: 2em 0;
+  position: relative;
+}
+
+.search-edit{
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid $basic_border_color;
+  //border-radius: $basic_border_radius;
+}
+
+.search-submit{
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 41px;
+  border: none;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0);
+
+  &::before{
+    @include fontawsome('\f002');
+  }
+}
