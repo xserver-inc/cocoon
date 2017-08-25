@@ -1,5 +1,6 @@
 
-<?php
+<?php //「次のページ」ページネーション
+
 //現在のページ番号
 global $paged;
 if(empty($paged)) $paged = 1;
@@ -12,16 +13,15 @@ if(!$pages){
   $pages = 1;
 }
 
-if(1 != $pages) {
+//ページが1ページしかない場合は出力しない
+if($pages != 1) {
   //次のページ番号
   if ( $pages == $paged ) {
     $next_page_num = $paged;
   } else {
     $next_page_num = $paged + 1;
   }
-  // var_dump($pages);
-  // var_dump($paged);
-  // var_dump($next_page_num);
+
   //現在のページ番号が全ページ数よりも少ないときは「次のページ」タグを出力
   if ( $paged < $pages ) {
     echo '<div class="pagenation-next"><a href="'.get_pagenum_link($next_page_num).'" class="pagenation-next-link">'.__( '次のページ', THEME_NAME ).'</a></div>';

@@ -1,0 +1,33 @@
+/************************************
+** グローバルメニュー
+************************************/
+.menu{
+  ul{
+    @include list_cancel;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    li{
+      display: block;
+      width: 176px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .children{
+      display: none;
+    }
+
+  }
+
+  a{
+    @include link_cancel;
+    display: block;
+    &:hover{
+      @include bgc_hover;
+    }
+  }
+}

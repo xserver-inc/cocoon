@@ -59,6 +59,8 @@
 
       </header>
 
+      <?php get_template_part('tmp/navi') ?>
+
       <div id="content">
 
         <div id="content-in" class="content-in wrap cf">

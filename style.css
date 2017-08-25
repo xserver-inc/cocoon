@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ************************************/
 body {
   /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   /* フォントのサイズ */
   font-size: 17px;
   /* フォントの色 */
@@ -84,6 +84,36 @@ img {
   color: #333;
   text-decoration: none;
   font-size: 40px;
+}
+
+/************************************
+** グローバルメニュー
+************************************/
+.menu ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.menu ul li {
+  display: block;
+  width: 176px;
+  height: 50px;
+  line-height: 50px;
+}
+.menu ul .children {
+  display: none;
+}
+.menu a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+.menu a:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
 }
 
 /************************************
