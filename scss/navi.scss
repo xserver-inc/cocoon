@@ -1,9 +1,13 @@
 /************************************
 ** グローバルメニュー
 ************************************/
+$menu_height: 50px;
+$sub_menu_width: 240px;
 .menu{
-  ul{
+  >ul{
     @include list_cancel;
+    background-color: #fff;
+
 
     display: flex;
     flex-wrap: wrap;
@@ -13,12 +17,34 @@
     li{
       display: block;
       width: 176px;
-      height: 50px;
-      line-height: 50px;
+      height: $menu_height;
+      line-height: $menu_height;
     }
 
     .children{
       display: none;
+      position: absolute;
+      margin-left: 0;
+      min-width: $sub_menu_width;
+      list-style: none;
+      padding-left: 0;
+      background-color: #fff;
+      z-index: 99;
+      text-align: left;
+      li{
+        width: auto;
+      }
+
+      a{
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      ul{
+        top: -$menu_height;
+        left: $sub_menu_width;
+        position: relative;
+      }
     }
 
   }
@@ -26,8 +52,17 @@
   a{
     @include link_cancel;
     display: block;
+    font-size: 16px;
     &:hover{
       @include bgc_hover;
+
+      >ul{
+        display: block;
+      }
     }
   }
+}
+
+#navi ul li:hover > ul{
+  display: block;
 }

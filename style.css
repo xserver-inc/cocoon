@@ -72,7 +72,11 @@ img {
 ** ヘッダー
 ************************************/
 .header-top {
-  font-size: 0.8em;
+  font-size: 12px;
+}
+
+.tagline {
+  margin-left: 30px;
 }
 
 .logo {
@@ -89,31 +93,60 @@ img {
 /************************************
 ** グローバルメニュー
 ************************************/
-.menu ul {
+.menu > ul {
   padding: 0;
   list-style: none;
+  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
 }
-.menu ul li {
+.menu > ul li {
   display: block;
   width: 176px;
   height: 50px;
   line-height: 50px;
 }
-.menu ul .children {
+.menu > ul .children {
   display: none;
+  position: absolute;
+  margin-left: 0;
+  min-width: 240px;
+  list-style: none;
+  padding-left: 0;
+  background-color: #fff;
+  z-index: 99;
+  text-align: left;
+}
+.menu > ul .children li {
+  width: auto;
+}
+.menu > ul .children a {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.menu > ul .children ul {
+  top: -50px;
+  left: 240px;
+  position: relative;
 }
 .menu a {
   color: #333;
   text-decoration: none;
   display: block;
+  font-size: 16px;
 }
 .menu a:hover {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
+}
+.menu a:hover > ul {
+  display: block;
+}
+
+#navi ul li:hover > ul {
+  display: block;
 }
 
 /************************************
