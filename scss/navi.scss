@@ -3,10 +3,10 @@
 ************************************/
 $menu_height: 50px;
 $sub_menu_width: 240px;
-.menu{
+.navi-in{
   >ul{
     @include list_cancel;
-    background-color: #fff;
+    //background-color: #fff;
 
 
     display: flex;
@@ -19,16 +19,24 @@ $sub_menu_width: 240px;
       width: 176px;
       height: $menu_height;
       line-height: $menu_height;
+
+      &:hover{
+        >ul{
+          display: block;
+        }
+      }
     }
 
-    .children{
+    /*サブメニュー*/
+    .children,
+    .sub-menu{
       display: none;
       position: absolute;
       margin-left: 0;
       min-width: $sub_menu_width;
       list-style: none;
       padding-left: 0;
-      background-color: #fff;
+      background-color: #fcfcfc;
       z-index: 99;
       text-align: left;
       li{
@@ -40,6 +48,7 @@ $sub_menu_width: 240px;
         padding-right: 16px;
       }
 
+      /*サブメニューのサブメニュー*/
       ul{
         top: -$menu_height;
         left: $sub_menu_width;
@@ -61,8 +70,4 @@ $sub_menu_width: 240px;
       }
     }
   }
-}
-
-#navi ul li:hover > ul{
-  display: block;
 }

@@ -5,6 +5,7 @@
       array (
         'theme_location' => 'header-navi',
         //'menu_class' => 'menu' ,
+        'container' => false,
       )
     ); ?>
   </div><!-- /#navi-in -->

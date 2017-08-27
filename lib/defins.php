@@ -2,6 +2,8 @@
 
 //テーマ名
 define('THEME_NAME', 'cocoon');
+//ウィジェット名プレフィックス
+define('WIDGET_NAME_PLEFIX', '[C] ');
 
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');

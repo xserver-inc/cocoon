@@ -4,6 +4,8 @@
 
 /*ウィジェットリスト*/
 .widget{
+  margin-bottom: 32px;
+
   ul{
     @include list_cancel;
   }

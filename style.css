@@ -93,59 +93,63 @@ img {
 /************************************
 ** グローバルメニュー
 ************************************/
-.menu > ul {
+.navi-in > ul {
   padding: 0;
   list-style: none;
-  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  /*サブメニュー*/
 }
-.menu > ul li {
+.navi-in > ul li {
   display: block;
   width: 176px;
   height: 50px;
   line-height: 50px;
 }
-.menu > ul .children {
+.navi-in > ul li:hover > ul {
+  display: block;
+}
+.navi-in > ul .children,
+.navi-in > ul .sub-menu {
   display: none;
   position: absolute;
   margin-left: 0;
   min-width: 240px;
   list-style: none;
   padding-left: 0;
-  background-color: #fff;
+  background-color: #fcfcfc;
   z-index: 99;
   text-align: left;
+  /*サブメニューのサブメニュー*/
 }
-.menu > ul .children li {
+.navi-in > ul .children li,
+.navi-in > ul .sub-menu li {
   width: auto;
 }
-.menu > ul .children a {
+.navi-in > ul .children a,
+.navi-in > ul .sub-menu a {
   padding-left: 16px;
   padding-right: 16px;
 }
-.menu > ul .children ul {
+.navi-in > ul .children ul,
+.navi-in > ul .sub-menu ul {
   top: -50px;
   left: 240px;
   position: relative;
 }
-.menu a {
+.navi-in a {
   color: #333;
   text-decoration: none;
   display: block;
   font-size: 16px;
 }
-.menu a:hover {
+.navi-in a:hover {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
 }
-.menu a:hover > ul {
-  display: block;
-}
-
-#navi ul li:hover > ul {
+.navi-in a:hover > ul {
   display: block;
 }
 
@@ -261,14 +265,17 @@ img {
   border-radius: 3px;
 }
 .sidebar h3 {
-  background-color: #ddd;
-  padding: 10px;
+  background-color: #f3f3f3;
+  padding: 16px 10px;
 }
 
 /************************************
 ** ウィジェット
 ************************************/
 /*ウィジェットリスト*/
+.widget {
+  margin-bottom: 32px;
+}
 .widget ul {
   padding: 0;
   list-style: none;

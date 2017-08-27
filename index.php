@@ -10,10 +10,10 @@ if (have_posts()) : // WordPress ループ
   endwhile; // 繰り返し処理終了 ?>
   <div class="clear"></div>
 <?php else : // ここから記事が見つからなかった場合の処理  ?>
-    <div class="post">
-      <h2>NOT FOUND</h2>
-      <p><?php echo __( '投稿が見つかりませんでした。', THEME_NAME );//見つからない時のメッセージ ?></p>
-    </div>
+  <div class="post">
+    <h2>NOT FOUND</h2>
+    <p><?php echo __( '投稿が見つかりませんでした。', THEME_NAME );//見つからない時のメッセージ ?></p>
+  </div>
 <?php
 endif;
 ?>
