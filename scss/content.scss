@@ -1,0 +1,54 @@
+/************************************
+** 内容
+************************************/
+
+/*エントリーの見出し*/
+.entry-title{
+  font-size: 28px;
+}
+
+/*本文下カテゴリとタグ*/
+.entry-categories-tags{
+  font-family: "Meiryo", sans-serif;
+}
+
+/*本文下カテゴリ*/
+.category-link{
+  @include link_cancel;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 5px;
+  font-size: 12px;
+  background-color: $text_color;
+  border: 1px solid $text_color;
+  color: #fff;
+  border-radius: $badge_border_radius;
+
+  &::before{
+    @include fontawsome('\f07b');
+  }
+
+  &:hover{
+    @include bgc_hover;
+    color: $text_color;
+  }
+}
+
+/*本文下タグ*/
+.tag-link{
+  @include link_cancel;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 5px;
+  font-size: 12px;
+  border: 1px solid $text_color;
+  border-radius: $badge_border_radius;
+
+  &::before{
+    @include fontawsome('\f02b');
+  }
+
+  &:hover{
+    @include bgc_hover;
+  }
+}

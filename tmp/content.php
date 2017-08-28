@@ -17,7 +17,8 @@
 
       <footer class="article-footer entry-footer">
         <div class="entry-categories-tags">
-
+          <?php the_category_links(); //カテゴリの出力
+                the_tag_links(); //タグの出力?>
         </div>
       </footer>
 

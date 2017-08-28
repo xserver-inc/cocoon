@@ -41,11 +41,6 @@ body {
   margin: 0 auto;
 }
 
-/*エントリーの見出し*/
-.entry-title {
-  font-size: 25px;
-}
-
 .main {
   width: 800px;
   float: left;
@@ -226,9 +221,6 @@ img {
 /************************************
 ** パンくずリスト
 ************************************/
-/************************************
-** パンくずリスト（Breadcrumb）
-************************************/
 #breadcrumb {
   margin-top: 20px;
   color: #777;
@@ -246,6 +238,64 @@ img {
 #breadcrumb a {
   text-decoration: none;
   color: #777;
+}
+
+/************************************
+** 内容
+************************************/
+/*エントリーの見出し*/
+.entry-title {
+  font-size: 28px;
+}
+
+/*本文下カテゴリとタグ*/
+.entry-categories-tags {
+  font-family: "Meiryo", sans-serif;
+}
+
+/*本文下カテゴリ*/
+.category-link {
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 5px;
+  font-size: 12px;
+  background-color: #333;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 2px;
+}
+.category-link::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+.category-link:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+  color: #333;
+}
+
+/*本文下タグ*/
+.tag-link {
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 5px;
+  font-size: 12px;
+  border: 1px solid #333;
+  border-radius: 2px;
+}
+.tag-link::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+.tag-link:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
 }
 
 /************************************
@@ -474,7 +524,7 @@ img {
   box-sizing: border-box;
   padding: 10px 15px;
   float: left;
-  width: 33%;
+  width: 33.33%;
 }
 
 /************************************!
