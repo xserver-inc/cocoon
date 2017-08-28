@@ -7,13 +7,17 @@
   font-size: 28px;
 }
 
+.entry-content{
+  margin-bottom: 3em;
+}
+
 /*本文下カテゴリとタグ*/
 .entry-categories-tags{
   font-family: "Meiryo", sans-serif;
 }
 
 /*本文下カテゴリ*/
-.category-link{
+.catlink{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;
@@ -35,13 +39,13 @@
 }
 
 /*本文下タグ*/
-.tag-link{
+.taglink{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  border: 1px solid $text_color;
+  border: 1px solid #999;
   border-radius: $badge_border_radius;
 
   &::before{

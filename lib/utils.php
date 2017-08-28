@@ -18,7 +18,7 @@ function the_nolink_categories(){
 function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<a class="category-link" href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
+    $categories .= '<a class="catlink" href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
   }
   return $categories;
 }
@@ -50,7 +50,7 @@ function get_the_tag_links(){
   $posttags = get_the_tags();
   if ( $posttags ) {
     foreach(get_the_tags() as $tag){
-      $tags .= '<a class="tag-link" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
+      $tags .= '<a class="taglink" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
     }
   }
   return $tags;

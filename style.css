@@ -111,7 +111,7 @@ img {
   min-width: 240px;
   list-style: none;
   padding-left: 0;
-  background-color: #fcfcfc;
+  background-color: #fafafa;
   z-index: 99;
   text-align: left;
   /*サブメニューのサブメニュー*/
@@ -248,13 +248,17 @@ img {
   font-size: 28px;
 }
 
+.entry-content {
+  margin-bottom: 3em;
+}
+
 /*本文下カテゴリとタグ*/
 .entry-categories-tags {
   font-family: "Meiryo", sans-serif;
 }
 
 /*本文下カテゴリ*/
-.category-link {
+.catlink {
   color: #333;
   text-decoration: none;
   display: inline-block;
@@ -266,34 +270,34 @@ img {
   color: #fff;
   border-radius: 2px;
 }
-.category-link::before {
+.catlink::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.category-link:hover {
+.catlink:hover {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
   color: #333;
 }
 
 /*本文下タグ*/
-.tag-link {
+.taglink {
   color: #333;
   text-decoration: none;
   display: inline-block;
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  border: 1px solid #333;
+  border: 1px solid #999;
   border-radius: 2px;
 }
-.tag-link::before {
+.taglink::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.tag-link:hover {
+.taglink:hover {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
 }
