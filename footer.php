@@ -32,15 +32,21 @@
 
 
           <nav id="footer-navi" class="footer-navi" role="navigation">
-            <nav id="footer-navi-in" class="footer-navi-in" role="navigation">
+            <div id="footer-navi-in" class="footer-navi-in">
               <?php wp_nav_menu(
                 array(
-                  'container' => false,
+                  //'container' => false,
                   'theme_location' => 'footer-navi',
-                  'depth' => 0,
+                  'depth' => 1,
+                  // 'menu_class' => '',
+                  // 'menu_id' => '',
+                  'container' => 'div',
+                  'container_class' => 'menu',
+                  'fallback_cb' => false,
+                  'items_wrap' => '<ul>%3$s</ul>',
                 )
               ); ?>
-            </nav>
+            </div>
           </nav>
 
           <div class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</div>
@@ -51,7 +57,6 @@
 
     </div>
 
-    <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
 
   </body>

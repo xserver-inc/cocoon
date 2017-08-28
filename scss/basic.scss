@@ -6,15 +6,15 @@ body {
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;;
 
   /* フォントのサイズ */
-  font-size: 17px;
+  font-size: 18px;
 
   /* フォントの色 */
   color: $text_color;
 
   /* カーニングの設定 */
   //letter-spacing: 1.2px;
-  font-feature-settings: "palt" 1;
-  font-kerning: auto;
+  //font-feature-settings: "palt" 1;
+  //font-kerning: auto;
 
   /* 行間の設定 */
   line-height: 1.75;
