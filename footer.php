@@ -30,26 +30,12 @@
             </div>
           <?php endif; ?>
 
+          <div class="footer-bottom cf">
+            <?php get_template_part('tmp/navi-footer') ?>
 
-          <nav id="footer-navi" class="footer-navi" role="navigation">
-            <div id="footer-navi-in" class="footer-navi-in">
-              <?php wp_nav_menu(
-                array(
-                  //'container' => false,
-                  'theme_location' => 'footer-navi',
-                  'depth' => 1,
-                  // 'menu_class' => '',
-                  // 'menu_id' => '',
-                  'container' => 'div',
-                  'container_class' => 'menu',
-                  'fallback_cb' => false,
-                  'items_wrap' => '<ul>%3$s</ul>',
-                )
-              ); ?>
-            </div>
-          </nav>
+            <div class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</div>
+          </div>
 
-          <div class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</div>
 
         </div>
 

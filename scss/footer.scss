@@ -22,3 +22,24 @@
   float: left;
   width: 33.33%;
 }
+
+/************************************
+** フッターボトム
+************************************/
+.footer-bottom{
+  margin-top: 24px;
+  vertical-align: bottom;
+  //position: relative;
+  font-size: 14px;
+}
+
+.navi-footer{
+  float: left;
+}
+
+.copyright{
+  float: right;
+  // position: absolute;
+  // bottom: 0;
+  // right: 0;
+}

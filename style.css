@@ -143,6 +143,31 @@ img {
 }
 
 /************************************
+** フッターメニュー
+************************************/
+.navi-footer-in > ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0;
+}
+.navi-footer-in > ul li {
+  width: 100px;
+}
+.navi-footer-in a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+.navi-footer-in a:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
+
+/************************************
 ** エントリーカードの設定
 ************************************/
 .a-wrap {
@@ -564,6 +589,23 @@ img {
   padding: 10px 15px;
   float: left;
   width: 33.33%;
+}
+
+/************************************
+** フッターボトム
+************************************/
+.footer-bottom {
+  margin-top: 24px;
+  vertical-align: bottom;
+  font-size: 14px;
+}
+
+.navi-footer {
+  float: left;
+}
+
+.copyright {
+  float: right;
 }
 
 /************************************!

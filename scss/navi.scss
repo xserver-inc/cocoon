@@ -70,3 +70,32 @@ $sub_menu_width: 240px;
     }
   }
 }
+
+/************************************
+** フッターメニュー
+************************************/
+.navi-footer-in{
+  >ul{
+    @include list_cancel;
+
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: center;
+    text-align: center;
+    margin: 0;
+
+    li{
+      width: 100px;
+    }
+
+  }
+
+  a{
+    @include link_cancel;
+    display: block;
+    font-size: 14px;
+    &:hover{
+      @include bgc_hover;
+    }
+  }
+}

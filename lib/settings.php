@@ -29,8 +29,8 @@ add_theme_support( 'menus' );
 //register_nav_menu( 'header-navi', 'ヘッダーナビゲーション' );
 register_nav_menus(
   array(
-    'header-navi' => 'ヘッダーナビ',
-    'footer-navi' => 'フッターナビ（サブメニュー不可）',
+    'navi-header' => 'ヘッダーナビ',
+    'navi-footer' => 'フッターナビ（サブメニュー不可）',
   )
 );
 
