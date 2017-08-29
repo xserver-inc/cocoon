@@ -1,5 +1,5 @@
 <!--ページャー-->
-<div class="pagenation">
+<div class="pagination">
   <?php global $wp_rewrite;
   $paginate_base = get_pagenum_link(1);
   if(strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()){
@@ -21,4 +21,4 @@
     'prev_text' => '<span class="fa fa-caret-left fa-fx"></span>&#160;',
     'next_text' => '&#160;<span class="fa fa-caret-right fa-fx"></span>',
   )); ?>
-</div><!-- /.pagenation -->
+</div><!-- /.pagination -->

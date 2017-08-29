@@ -18,6 +18,6 @@ if (have_posts()) : // WordPress ループ
 endif;
 ?>
 
-<?php get_template_part('tmp/pagenation') ?>
+<?php get_template_part('tmp/pagination') ?>
 
 <?php get_footer(); ?>

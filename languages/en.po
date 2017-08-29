@@ -1,0 +1,343 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-08-29 22:31+0900\n"
+"PO-Revision-Date: 2017-08-29 22:35+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:15
+msgid "投稿が見つかりませんでした。"
+msgstr ""
+
+#: lib/widget-areas.php:9
+msgid "サイドバー"
+msgstr "Sidebar"
+
+#: lib/widget-areas.php:11
+msgid "サイドバーのウィジットエリアです。"
+msgstr "Widget area of sidebar."
+
+#: lib/widget-areas.php:20
+msgid "スクロール追従領域"
+msgstr "Scroll Following Area"
+
+#: lib/widget-areas.php:22
+#, fuzzy
+msgid ""
+"サイドバーで下にスクロールすると追いかけてくるエ"
+"リアです。※モバイルでは表示されません。（ここに"
+"Google AdSenseを貼るのはポリシー違反です。）"
+msgstr ""
+"Sidebar bottom area. ※ It is not displayed on "
+"mobile. (It is a policy violation to paste "
+"Google AdSense here.)"
+
+#: lib/widget-areas.php:31
+#, fuzzy
+msgid "投稿パンくずリスト上"
+msgstr "Over Breadcrumbs"
+
+#: lib/widget-areas.php:33
+#, fuzzy
+msgid ""
+"投稿のパンくずリスト上に表示されるウイジェット。"
+"設定しないと表示されません。"
+msgstr ""
+"Widget area displayed above a breadcrumbs on a "
+"post."
+
+#: lib/widget-areas.php:42
+#, fuzzy
+msgid "投稿タイトル上"
+msgstr "Over Post Title"
+
+#: lib/widget-areas.php:44
+msgid ""
+"投稿タイトル上に表示されるウイジェット。設定しな"
+"いと表示されません。"
+msgstr "Widget area displayed above a post title."
+
+#: lib/widget-areas.php:53
+#, fuzzy
+msgid "投稿本文上"
+msgstr "Post Content Top"
+
+#: lib/widget-areas.php:55
+#, fuzzy
+msgid ""
+"投稿本文上に表示されるウイジェット。設定しないと"
+"表示されません。"
+msgstr ""
+"Widget area displayed on a post content top."
+
+#: lib/widget-areas.php:64
+#, fuzzy
+msgid "投稿本文中"
+msgstr "Post Content Middle"
+
+#: lib/widget-areas.php:66
+#, fuzzy
+msgid ""
+"投稿本文中に表示されるウイジェット。文中最初のH2"
+"タグの手前に表示されます。広告が表示されている場"
+"合は、広告の下に表示されます。設定しないと表示さ"
+"れません。"
+msgstr "Widget area displayed in a post content."
+
+#: lib/widget-areas.php:75
+#, fuzzy
+msgid "投稿本文下"
+msgstr "Post Content Bottom"
+
+#: lib/widget-areas.php:77
+#, fuzzy
+msgid ""
+"投稿本文下に表示されるウイジェット。設定しないと"
+"表示されません。"
+msgstr ""
+"Widget area displayed on a post content bottom."
+
+#: lib/widget-areas.php:86
+#, fuzzy
+msgid "投稿SNSボタン上"
+msgstr "Over Post SNS Buttons"
+
+#: lib/widget-areas.php:88
+#, fuzzy
+msgid ""
+"投稿のメインカラムの一番下となるSNSボタンの上に表"
+"示されるウイジェット。広告を表示している場合は、"
+"広告の下になります。設定しないと表示されません。"
+msgstr ""
+"Widget area displayed above SNS buttons at the "
+"bottom of a post."
+
+#: lib/widget-areas.php:97
+#, fuzzy
+msgid "投稿SNSボタン下"
+msgstr "Under Post SNS Buttons"
+
+#: lib/widget-areas.php:99
+#, fuzzy
+msgid ""
+"投稿のメインカラムの一番下となるSNSボタンの下に表"
+"示されるウイジェット。設定しないと表示されませ"
+"ん。"
+msgstr ""
+"Widget area displayed below the SNS buttons at "
+"the bottom of a post."
+
+#: lib/widget-areas.php:108
+#, fuzzy
+msgid "投稿関連記事下"
+msgstr "Under Related Posts"
+
+#: lib/widget-areas.php:110
+#, fuzzy
+msgid ""
+"関連記事の下（広告を表示している場合はその下）に"
+"表示されるウイジェット。設定しないと表示されませ"
+"ん。"
+msgstr ""
+"Widget area displayed below a related posts."
+
+#: lib/widget-areas.php:119
+#, fuzzy
+msgid "固定ページ本文上"
+msgstr "Page Content Top"
+
+#: lib/widget-areas.php:121
+#, fuzzy
+msgid ""
+"固定ページ本文上に表示されるウイジェット。設定し"
+"ないと表示されません。"
+msgstr ""
+"Widget area displayed above a page content."
+
+#: lib/widget-areas.php:130
+#, fuzzy
+msgid "固定ページ本文中"
+msgstr "Page Content Middle"
+
+#: lib/widget-areas.php:132
+#, fuzzy
+msgid ""
+"固定ページ本文中に表示されるウイジェット。文中最"
+"初のH2タグの手前に表示されます。広告が表示されて"
+"いる場合は、広告の下に表示されます。設定しないと"
+"表示されません。"
+msgstr ""
+"Widget area displayed in a page content. It is "
+"displayed before the first H2 tag in the content."
+
+#: lib/widget-areas.php:141
+#, fuzzy
+msgid "固定ページ本文下"
+msgstr "Page Content Bottom"
+
+#: lib/widget-areas.php:143
+#, fuzzy
+msgid ""
+"固定ページ本文下に表示されるウイジェット。設定し"
+"ないと表示されません。"
+msgstr ""
+"Widget area displayed below a page content. "
+
+#: lib/widget-areas.php:152
+#, fuzzy
+msgid "固定ページSNSボタン上"
+msgstr "Over Page SNS Buttons"
+
+#: lib/widget-areas.php:154
+#, fuzzy
+msgid ""
+"固定ページのメインカラムの一番下となるSNSボタンの"
+"上に表示されるウイジェット。広告を表示している場"
+"合は、広告の下になります。設定しないと表示されま"
+"せん。"
+msgstr ""
+"Widget area displayed above SNS buttons at the "
+"bottom of a page."
+
+#: lib/widget-areas.php:163
+#, fuzzy
+msgid "固定ページSNSボタン下"
+msgstr "Under Page SNS Buttons"
+
+#: lib/widget-areas.php:165
+#, fuzzy
+msgid ""
+"固定ページのメインカラムの一番下となるSNSボタンの"
+"下に表示されるウイジェット。設定しないと表示され"
+"ません。"
+msgstr ""
+"Widget area displayed below SNS buttons at the "
+"bottom of a page."
+
+#: lib/widget-areas.php:174
+#, fuzzy
+msgid "インデックスリストトップ"
+msgstr "Index Top"
+
+#: lib/widget-areas.php:176
+#, fuzzy
+msgid ""
+"インデックスリストのトップに表示されるウイジェッ"
+"ト。広告が表示されているときは広告の下に表示され"
+"ます。設定しないと表示されません。"
+msgstr ""
+"Widget area displayed at the top of a index page."
+
+#: lib/widget-areas.php:185
+#, fuzzy
+msgid "インデックスリストミドル"
+msgstr "Index Middle"
+
+#: lib/widget-areas.php:187
+#, fuzzy
+msgid ""
+"インデックスリストの3つ目下に表示されるウイジェッ"
+"ト。「一覧リストのスタイル」が「サムネイルカー"
+"ド」の時のみの機能です。広告が表示されているとき"
+"は広告の下に表示されます。設定しないと表示されま"
+"せん。"
+msgstr ""
+"Widget area displayed at the middle of a index "
+"page."
+
+#: lib/widget-areas.php:196
+#, fuzzy
+msgid "インデックスリストボトム"
+msgstr "Index Bottom"
+
+#: lib/widget-areas.php:198
+#, fuzzy
+msgid ""
+"インデックスリストのボトムに表示されるウイジェッ"
+"ト。広告が表示されているときは広告の下に表示され"
+"ます。設定しないと表示されません。"
+msgstr ""
+"Widget area displayed at the bottom of a index "
+"page."
+
+#: lib/widget-areas.php:207
+#, fuzzy
+msgid "フッター左"
+msgstr "Footer Left"
+
+#: lib/widget-areas.php:209
+#, fuzzy
+msgid "フッター左側のウィジットエリアです。"
+msgstr ""
+"Widget area displayed at the left of this site "
+"footer."
+
+#: lib/widget-areas.php:219
+#, fuzzy
+msgid "フッター中"
+msgstr "Footer Center"
+
+#: lib/widget-areas.php:220
+#, fuzzy
+msgid "フッター中間のウィジットエリアです。"
+msgstr ""
+"Widget area displayed at the center of this site "
+"footer."
+
+#: lib/widget-areas.php:229
+#, fuzzy
+msgid "フッター右"
+msgstr "Footer Right"
+
+#: lib/widget-areas.php:231
+#, fuzzy
+msgid ""
+"フッター右側フッター中のウィジットエリアです。"
+msgstr ""
+"Widget area displayed at the right of this site "
+"footer."
+
+#: lib/widget-areas.php:240
+#, fuzzy
+msgid "404ページ"
+msgstr "404 Page"
+
+#: lib/widget-areas.php:242
+#, fuzzy
+msgid ""
+"404ページをカスタマイズするためのウィジットエリア"
+"です。"
+msgstr "Widget area for customizing 404 pages."
+
+#: searchform.php:2
+#, fuzzy
+msgid "ブログ内を検索"
+msgstr "Search in the blog"
+
+#: tmp/breadcrumbs-page.php:6 tmp/breadcrumbs.php:7
+#, fuzzy
+msgid "ホーム"
+msgstr "Home"
+
+#: tmp/pagination.php:27
+msgid "次のページ"
+msgstr ""
+
+#: tmp/related-entries.php:2
+#, fuzzy
+msgid "関連記事"
+msgstr "Related Posts"
+
+#: tmp/related-entries.php:13
+msgid "関連記事は見つかりませんでした。"
+msgstr ""
