@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class() ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
@@ -28,5 +28,5 @@
 </article>
 
 <div class="under-entry-content">
-
+  <?php get_template_part('tmp/related-entries'); //関連記事の呼び出し ?>
 </div>

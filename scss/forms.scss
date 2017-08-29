@@ -13,6 +13,8 @@
   padding: 12px;
   box-sizing: border-box;
   border: 2px solid $basic_border_color;
+  font-size: 16px;
+  font-family: $Meiryo_font;
   //border-radius: $basic_border_radius;
 }
 
@@ -22,7 +24,7 @@
   top: 1px;
   font-size: 20px;
   cursor: pointer;
-  line-height: 41px;
+  line-height: 49px;
   border: none;
   color: #999;
   background-color: rgba(255, 255, 255, 0);

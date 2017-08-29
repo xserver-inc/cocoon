@@ -1,6 +1,14 @@
+//フォント
+$default_font: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$Meiryo_font: "Meiryo", sans-serif;
+
 //テキスト色
 $text_color: #333;
 $pallid_text_color: #777;
+
+//テキストサイズ
+$text_size_s: 0.8em;
+$text_size_xs: 0.6em;
 
 //ボーダー色
 $basic_border_color: #ccc;
@@ -31,6 +39,8 @@ $sidebar_padding_width: 9px;
 $site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +
   $sidebar_width + $sidebar_border_width*2 + $sidebar_padding_width*2 +
   $main_sidebar;
+
+$emtry_card_thumb_margin_top: 4px;
 
 //背景ホバー
 $bgc_hover_color: #f3f3f3;

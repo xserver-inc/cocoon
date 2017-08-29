@@ -3,7 +3,7 @@
 ************************************/
 body {
   /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: $default_font;
 
   /* フォントのサイズ */
   font-size: 18px;

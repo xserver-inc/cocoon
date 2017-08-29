@@ -1,10 +1,15 @@
 /************************************
 ** 内容
 ************************************/
+.article{
+  margin-bottom: 60px;
+}
 
 /*エントリーの見出し*/
 .entry-title{
-  font-size: 28px;
+  font-size: 26px;
+  margin: 12px 0;
+  line-height: 1.3;
 }
 
 .entry-content{
@@ -13,7 +18,7 @@
 
 /*本文下カテゴリとタグ*/
 .entry-categories-tags{
-  font-family: "Meiryo", sans-serif;
+  font-family: $Meiryo_font;
 }
 
 /*本文下カテゴリ*/

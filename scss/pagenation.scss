@@ -29,12 +29,12 @@
   }
 }
 
-$pagenation_wh: 50px;
+$pagenation_wh: 40px;
 .page-numbers{
   @include link_cancel;
   display: inline-block;
   height: $pagenation_wh;
-  width: $pagenation_wh;
+  width: 50px;
   border: 1px solid #ccc;
   margin-left: 3px;
   line-height: $pagenation_wh;

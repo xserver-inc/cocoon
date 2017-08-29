@@ -1,0 +1,21 @@
+/************************************
+** 関連記事
+************************************/
+.related-entry-card-thumb{
+  float: left;
+  margin-top: $emtry_card_thumb_margin_top;
+  position: relative;
+  width: 160px;
+}
+.related-entry-card-content{
+  margin-left: 170px;
+}
+
+.related-entry-card-title{
+  font-size: 18px;
+  margin: 0;
+}
+
+.related-entry-card-snippet{
+  font-size: $text_size_s;
+}

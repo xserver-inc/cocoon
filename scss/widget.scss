@@ -106,8 +106,15 @@
     text-align: center;
   }
 
-  #today {
-    background-color: #ddd;
+  #today  {
+    background-color: #FFE6B2;
+
+    a{
+      background-color: #FFE6B2;
+      &:hover{
+        background-color: #FFD67F;
+      }
+    }
   }
 
   th {

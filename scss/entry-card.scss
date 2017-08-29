@@ -13,10 +13,10 @@
   }
 }
 
-.entry-card-thumnail{
+.entry-card-thumb{
   width: 320px;
   float: left;
-  margin-top: 3px;
+  margin-top: $emtry_card_thumb_margin_top;
   position: relative;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .entry-card-snippet{
-  font-size: 0.8em;
+  font-size: $text_size_s;
 }
 
 .entry-card-meta{
