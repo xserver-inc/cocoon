@@ -15,6 +15,9 @@
         the_content(); ?>
       </div>
 
+      <?php //マルチページ用のページャーリンク
+      get_template_part('tmp/pager-page-links'); ?>
+
       <footer class="article-footer entry-footer">
         <div class="entry-categories-tags">
           <?php the_category_links(); //カテゴリの出力

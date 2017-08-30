@@ -1,14 +1,14 @@
 <a href="<?php the_permalink(); ?>" class="related-entry-card-wrap a-wrap cf" title="<?php the_title() ?>">
 <article class="related-entry-card cf">
 
-  <div class="related-entry-card-thumb">
+  <figure class="related-entry-card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
     <?php echo get_the_post_thumbnail($post->ID, array(160, 90), array('class' => 'related-entry-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image related-entry-card-no-image" width="160" height="90" />
     <?php endif; ?>
     <?php the_nolink_category(); //カテゴリラベルの取得 ?>
-  </div><!-- /.related-entry-thumb -->
+  </figure><!-- /.related-entry-thumb -->
 
   <div class="related-entry-card-content">
     <h3 class="related-entry-card-title">

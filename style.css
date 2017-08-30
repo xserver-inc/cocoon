@@ -47,6 +47,7 @@ body {
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 3px;
+  background-color: #fff;
 }
 
 /************************************
@@ -365,6 +366,7 @@ img {
   border: 1px solid transparent;
   padding: 9px;
   border-radius: 3px;
+  background-color: #fff;
 }
 .sidebar h3 {
   background-color: #f3f3f3;
@@ -549,7 +551,9 @@ img {
   text-align: center;
 }
 
-/*「次のページ」ページネーション*/
+/************************************
+** 「次のページ」ページネーション
+************************************/
 .pagination-next-link {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -563,6 +567,28 @@ img {
   display: block;
 }
 .pagination-next-link:hover {
+  background-color: #f3f3f3;
+  transition: all 0.3s ease 0s;
+}
+
+/************************************
+** マルチページのページャーリンク
+************************************/
+.pager-links {
+  margin: 30px 0;
+  clear: both;
+  text-align: center;
+}
+.pager-links span {
+  background-color: #ddd;
+}
+.pager-links a {
+  display: inline-block;
+}
+.pager-links a span {
+  background-color: #fff;
+}
+.pager-links a:hover span {
   background-color: #f3f3f3;
   transition: all 0.3s ease 0s;
 }
