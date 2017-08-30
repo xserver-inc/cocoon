@@ -44,7 +44,7 @@
         <?php get_template_part('tmp/navi') ?>
       </div><!-- /.header-container -->
 
-      <div id="content">
+      <div id="content" class="content cf">
 
         <div id="content-in" class="content-in wrap cf">
 
