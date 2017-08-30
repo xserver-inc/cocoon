@@ -627,8 +627,8 @@ img {
 ************************************/
 .footer-bottom {
   margin-top: 24px;
-  vertical-align: bottom;
   font-size: 14px;
+  padding-bottom: 8px;
 }
 
 .navi-footer {
