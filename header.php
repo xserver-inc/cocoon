@@ -24,24 +24,25 @@
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-    <div id="container">
+    <div id="container" class="container cf">
+      <div class="header-container">
+        <header id="header" class="header cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-      <header id="header" class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+          <div id="header-in" class="header-in wrap cf">
+            <div class="header-top"><div class="tagline"><?php bloginfo('description') ?></div></div>
 
-        <div id="header-in" class="header-in wrap cf">
-          <div class="header-top"><div class="tagline"><?php bloginfo('description') ?></div></div>
+            <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+            <div id="logo" class="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></div>
 
-          <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <div id="logo" class="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" class="site-name"><?php bloginfo('name'); ?></a></div>
+            <?php // if you'd like to use the site description you can un-comment it below ?>
+            <?php // bloginfo('description'); ?>
 
-          <?php // if you'd like to use the site description you can un-comment it below ?>
-          <?php // bloginfo('description'); ?>
+          </div>
 
-        </div>
+        </header>
 
-      </header>
-
-      <?php get_template_part('tmp/navi') ?>
+        <?php get_template_part('tmp/navi') ?>
+      </div><!-- /.header-container -->
 
       <div id="content">
 

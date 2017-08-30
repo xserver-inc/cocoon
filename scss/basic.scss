@@ -33,6 +33,11 @@ body {
   display: block;
 }
 
+.header-container,
+.footer{
+  background-color: #fff;
+}
+
 /* インナーを囲む */
 .wrap{
   width: $site_width;
