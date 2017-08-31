@@ -61,76 +61,6 @@ body {
 }
 
 /************************************
-** 投稿・固定ページで使うHTML要素
-************************************/
-p {
-  margin: 1em 0;
-}
-
-.article h3,
-.article h4,
-.article h5,
-.article h6 {
-  margin-top: 35px;
-  margin-bottom: 20px;
-}
-.article h4,
-.article h5,
-.article h6 {
-  font-size: 20px;
-  padding: 6px 10px;
-}
-.article h2 {
-  font-size: 26px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding: 25px 30px;
-  background-color: #f3f3f3;
-}
-.article h3 {
-  border-left: 5px solid #777;
-  font-size: 23px;
-  padding: 6px 30px;
-}
-.article h4 {
-  border-bottom: 2px solid #ccc;
-}
-.article h5 {
-  border-bottom: 2px dashed #ccc;
-}
-.article h6 {
-  border-bottom: 1px dashed #ccc;
-}
-
-/************************************
-** 引用（blockquote）
-************************************/
-blockquote {
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 10px;
-  position: relative;
-}
-blockquote::before, blockquote::after {
-  color: #C8C8C8;
-  content: "\"";
-  font-family: serif;
-  position: absolute;
-  font-size: 300%;
-}
-blockquote::before {
-  line-height: 1.1;
-  left: 10px;
-  top: 0;
-}
-blockquote::after {
-  line-height: 0;
-  right: 10px;
-  bottom: 0px;
-}
-
-/************************************
 ** 画像関係のスタイル
 ************************************/
 figure {
@@ -185,6 +115,16 @@ img {
 .navi-in > ul li:hover > ul {
   display: block;
 }
+.navi-in > ul > .menu-item-has-children {
+  position: relative;
+}
+.navi-in > ul > .menu-item-has-children > a::after {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  position: absolute;
+  right: 2px;
+}
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;
@@ -199,6 +139,16 @@ img {
 }
 .navi-in > ul .sub-menu li {
   width: auto;
+}
+.navi-in > ul .sub-menu .menu-item-has-children {
+  position: relative;
+}
+.navi-in > ul .sub-menu .menu-item-has-children > a::after {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  position: absolute;
+  right: 2px;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
@@ -353,14 +303,10 @@ img {
   margin-top: 24px;
 }
 
-.article {
-  margin-bottom: 60px;
-}
-
 /*エントリーの見出し*/
 .entry-title {
   font-size: 26px;
-  margin: 12px 0;
+  margin: 16px 0;
   line-height: 1.3;
 }
 
@@ -419,8 +365,105 @@ img {
 }
 
 /************************************
+** 投稿・固定ページで使うHTML要素
+************************************/
+p {
+  margin: 1em 0;
+}
+
+.article {
+  margin-bottom: 60px;
+}
+.article dl {
+  margin: 1em 0;
+}
+.article dd {
+  margin-left: 40px;
+}
+.article ul,
+.article ol {
+  margin: 1em 0;
+  padding-left: 40px;
+}
+.article ul li,
+.article ol li {
+  margin: 0.2em;
+}
+.article ul ul, .article ul ol,
+.article ol ul,
+.article ol ol {
+  margin: 0;
+}
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+.article h4,
+.article h5,
+.article h6 {
+  font-size: 20px;
+  padding: 6px 10px;
+}
+.article h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 25px 30px;
+  background-color: #f3f3f3;
+}
+.article h3 {
+  border-left: 5px solid #777;
+  font-size: 23px;
+  padding: 6px 30px;
+}
+.article h4 {
+  border-bottom: 2px solid #ccc;
+}
+.article h5 {
+  border-bottom: 2px dashed #ccc;
+}
+.article h6 {
+  border-bottom: 1px dashed #ccc;
+}
+
+/************************************
+** 引用（blockquote）
+************************************/
+blockquote {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 10px;
+  position: relative;
+}
+blockquote::before, blockquote::after {
+  color: #C8C8C8;
+  content: "\"";
+  font-family: serif;
+  position: absolute;
+  font-size: 300%;
+}
+blockquote::before {
+  line-height: 1.1;
+  left: 10px;
+  top: 0;
+}
+blockquote::after {
+  line-height: 0;
+  right: 10px;
+  bottom: 0px;
+}
+
+/************************************
 ** 関連記事
 ************************************/
+.related-entry-title {
+  margin: 22px 0;
+}
+
 .related-entry-card-thumb {
   float: left;
   margin-top: 4px;
@@ -811,6 +854,7 @@ img {
   line-height: 49px;
   border: none;
   color: #999;
+  padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }
 .search-submit::before {

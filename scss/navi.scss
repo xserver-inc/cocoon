@@ -3,6 +3,17 @@
 ************************************/
 $menu_height: 50px;
 $sub_menu_width: 240px;
+@mixin menu_item_has_children($unicode:''){
+  position: relative;
+  >a{
+    &::after{
+      @include fontawsome($unicode);
+      position: absolute;
+      right: 2px;
+    }
+  }
+}
+
 .navi-in{
   >ul{
     @include list_cancel;
@@ -27,6 +38,10 @@ $sub_menu_width: 240px;
       }
     }
 
+    >.menu-item-has-children{
+      @include menu_item_has_children('\f107');
+    }
+
     /*サブメニュー*/
     .sub-menu{
       display: none;
@@ -42,6 +57,9 @@ $sub_menu_width: 240px;
         width: auto;
       }
 
+      .menu-item-has-children{
+        @include menu_item_has_children('\f105');
+      }
       a{
         padding-left: 16px;
         padding-right: 16px;
