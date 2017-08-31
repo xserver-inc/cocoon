@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-08-29 22:31+0900\n"
-"PO-Revision-Date: 2017-08-29 22:35+0900\n"
+"PO-Revision-Date: 2017-08-31 23:03+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: index.php:15
 msgid "投稿が見つかりませんでした。"
-msgstr ""
+msgstr "Posts could not be found"
 
 #: lib/widget-areas.php:9
 msgid "サイドバー"
@@ -43,7 +43,6 @@ msgstr ""
 "Google AdSense here.)"
 
 #: lib/widget-areas.php:31
-#, fuzzy
 msgid "投稿パンくずリスト上"
 msgstr "Over Breadcrumbs"
 
@@ -57,7 +56,6 @@ msgstr ""
 "post."
 
 #: lib/widget-areas.php:42
-#, fuzzy
 msgid "投稿タイトル上"
 msgstr "Over Post Title"
 
@@ -68,12 +66,10 @@ msgid ""
 msgstr "Widget area displayed above a post title."
 
 #: lib/widget-areas.php:53
-#, fuzzy
 msgid "投稿本文上"
 msgstr "Post Content Top"
 
 #: lib/widget-areas.php:55
-#, fuzzy
 msgid ""
 "投稿本文上に表示されるウイジェット。設定しないと"
 "表示されません。"
@@ -81,12 +77,10 @@ msgstr ""
 "Widget area displayed on a post content top."
 
 #: lib/widget-areas.php:64
-#, fuzzy
 msgid "投稿本文中"
 msgstr "Post Content Middle"
 
 #: lib/widget-areas.php:66
-#, fuzzy
 msgid ""
 "投稿本文中に表示されるウイジェット。文中最初のH2"
 "タグの手前に表示されます。広告が表示されている場"
@@ -95,12 +89,10 @@ msgid ""
 msgstr "Widget area displayed in a post content."
 
 #: lib/widget-areas.php:75
-#, fuzzy
 msgid "投稿本文下"
 msgstr "Post Content Bottom"
 
 #: lib/widget-areas.php:77
-#, fuzzy
 msgid ""
 "投稿本文下に表示されるウイジェット。設定しないと"
 "表示されません。"
@@ -108,7 +100,6 @@ msgstr ""
 "Widget area displayed on a post content bottom."
 
 #: lib/widget-areas.php:86
-#, fuzzy
 msgid "投稿SNSボタン上"
 msgstr "Over Post SNS Buttons"
 
@@ -123,7 +114,6 @@ msgstr ""
 "bottom of a post."
 
 #: lib/widget-areas.php:97
-#, fuzzy
 msgid "投稿SNSボタン下"
 msgstr "Under Post SNS Buttons"
 
@@ -138,7 +128,6 @@ msgstr ""
 "the bottom of a post."
 
 #: lib/widget-areas.php:108
-#, fuzzy
 msgid "投稿関連記事下"
 msgstr "Under Related Posts"
 
@@ -152,7 +141,6 @@ msgstr ""
 "Widget area displayed below a related posts."
 
 #: lib/widget-areas.php:119
-#, fuzzy
 msgid "固定ページ本文上"
 msgstr "Page Content Top"
 
@@ -165,7 +153,6 @@ msgstr ""
 "Widget area displayed above a page content."
 
 #: lib/widget-areas.php:130
-#, fuzzy
 msgid "固定ページ本文中"
 msgstr "Page Content Middle"
 
@@ -181,7 +168,6 @@ msgstr ""
 "displayed before the first H2 tag in the content."
 
 #: lib/widget-areas.php:141
-#, fuzzy
 msgid "固定ページ本文下"
 msgstr "Page Content Bottom"
 
@@ -194,7 +180,6 @@ msgstr ""
 "Widget area displayed below a page content. "
 
 #: lib/widget-areas.php:152
-#, fuzzy
 msgid "固定ページSNSボタン上"
 msgstr "Over Page SNS Buttons"
 
@@ -210,7 +195,6 @@ msgstr ""
 "bottom of a page."
 
 #: lib/widget-areas.php:163
-#, fuzzy
 msgid "固定ページSNSボタン下"
 msgstr "Under Page SNS Buttons"
 
@@ -225,7 +209,6 @@ msgstr ""
 "bottom of a page."
 
 #: lib/widget-areas.php:174
-#, fuzzy
 msgid "インデックスリストトップ"
 msgstr "Index Top"
 
@@ -239,7 +222,6 @@ msgstr ""
 "Widget area displayed at the top of a index page."
 
 #: lib/widget-areas.php:185
-#, fuzzy
 msgid "インデックスリストミドル"
 msgstr "Index Middle"
 
@@ -256,7 +238,6 @@ msgstr ""
 "page."
 
 #: lib/widget-areas.php:196
-#, fuzzy
 msgid "インデックスリストボトム"
 msgstr "Index Bottom"
 
@@ -271,7 +252,6 @@ msgstr ""
 "page."
 
 #: lib/widget-areas.php:207
-#, fuzzy
 msgid "フッター左"
 msgstr "Footer Left"
 
@@ -283,7 +263,6 @@ msgstr ""
 "footer."
 
 #: lib/widget-areas.php:219
-#, fuzzy
 msgid "フッター中"
 msgstr "Footer Center"
 
@@ -295,7 +274,6 @@ msgstr ""
 "footer."
 
 #: lib/widget-areas.php:229
-#, fuzzy
 msgid "フッター右"
 msgstr "Footer Right"
 
@@ -308,7 +286,6 @@ msgstr ""
 "footer."
 
 #: lib/widget-areas.php:240
-#, fuzzy
 msgid "404ページ"
 msgstr "404 Page"
 
@@ -320,24 +297,21 @@ msgid ""
 msgstr "Widget area for customizing 404 pages."
 
 #: searchform.php:2
-#, fuzzy
 msgid "ブログ内を検索"
 msgstr "Search in the blog"
 
 #: tmp/breadcrumbs-page.php:6 tmp/breadcrumbs.php:7
-#, fuzzy
 msgid "ホーム"
 msgstr "Home"
 
 #: tmp/pagination.php:27
 msgid "次のページ"
-msgstr ""
+msgstr "Next Page"
 
 #: tmp/related-entries.php:2
-#, fuzzy
 msgid "関連記事"
 msgstr "Related Posts"
 
 #: tmp/related-entries.php:13
 msgid "関連記事は見つかりませんでした。"
-msgstr ""
+msgstr "Could not find related posts."

@@ -15,8 +15,8 @@
 /*タグクラウド*/
 .tagcloud {
   a {
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
+    background-color: $bg_white;
+    border: 1px solid $x_thin;
     border-radius: 2px;
     color: #555;
     display: inline-block;
@@ -35,10 +35,6 @@
 
     .tag-link-count{
       margin-left: 10px;
-      // background-color: #999;
-      // padding: 1px 2px;
-      // border-radius: 6px;
-      // color: #fff;
 
     }
   }
@@ -72,11 +68,6 @@
         .post-count{
           display: block;
           float: right;
-          // color: #fff;
-          // background-color: #999;
-          // font-size: 0.8em;
-          // padding: 0 6px;
-          // border-radius: 6px;
         }
       }
 
@@ -96,8 +87,8 @@
   border-right-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
-  border-top-color: #ddd;
-  border-right-color: #ddd;
+  border-top-color: $x_thin;
+  border-right-color: $x_thin;
   width: 100%;
   max-width: 400px;
 
@@ -107,12 +98,12 @@
   }
 
   #today  {
-    background-color: #FFE6B2;
+    background-color: #ffe6b2;
 
     a{
-      background-color: #FFE6B2;
+      background-color: #ffe6b2;
       &:hover{
-        background-color: #FFD67F;
+        background-color: #ffd67e;
       }
     }
   }
@@ -128,8 +119,8 @@
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: #ddd;
-    border-left-color: #ddd;
+    border-bottom-color: $x_thin;
+    border-left-color: $x_thin;
   }
 
   td {
@@ -139,8 +130,8 @@
     border-left-width: 1px;
     border-bottom-style: solid;
     border-left-style: solid;
-    border-bottom-color: #ddd;
-    border-left-color: #ddd;
+    border-bottom-color: $x_thin;
+    border-left-color: $x_thin;
 
     a{
       color: $text_color;

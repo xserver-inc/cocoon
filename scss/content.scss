@@ -30,7 +30,7 @@
   font-size: 12px;
   background-color: $text_color;
   border: 1px solid $text_color;
-  color: #fff;
+  color: $bg_white;
   border-radius: $badge_border_radius;
 
   &::before{
@@ -50,7 +50,7 @@
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  border: 1px solid #999;
+  border: 1px solid $x_pallid_text_color;
   border-radius: $badge_border_radius;
 
   &::before{
@@ -84,7 +84,7 @@ table {
   border-spacing: 0;
 
   th{
-    background-color: $xxx_thin;
+    background-color: $xx_thin;
   }
 
   tr{
@@ -177,7 +177,7 @@ table {
 ** 引用（blockquote）
 ************************************/
 blockquote {
-  background-color: #fafafa;
+  background-color: $xxx_thin;
   border: 1px solid $thin;
   margin: 1em 0;
   padding: 10px;

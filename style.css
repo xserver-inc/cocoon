@@ -132,7 +132,7 @@ img {
   min-width: 240px;
   list-style: none;
   padding-left: 0;
-  background-color: #fafafa;
+  background-color: #fafbfc;
   z-index: 99;
   text-align: left;
   /*サブメニューのサブメニュー*/
@@ -166,7 +166,7 @@ img {
   font-size: 16px;
 }
 .navi-in a:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 .navi-in a:hover > ul {
@@ -194,7 +194,7 @@ img {
   font-size: 14px;
 }
 .navi-footer-in a:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -209,7 +209,7 @@ img {
   margin-bottom: 20px;
 }
 .a-wrap:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -279,7 +279,7 @@ img {
 ************************************/
 #breadcrumb {
   margin-top: 20px;
-  color: #777;
+  color: #777879;
   font-size: 13px;
 }
 
@@ -293,7 +293,7 @@ img {
 
 #breadcrumb a {
   text-decoration: none;
-  color: #777;
+  color: #777879;
 }
 
 /************************************
@@ -338,7 +338,7 @@ img {
   padding-right: 3px;
 }
 .catlink:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333;
 }
@@ -351,7 +351,7 @@ img {
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  border: 1px solid #999;
+  border: 1px solid #999a9b;
   border-radius: 2px;
 }
 .taglink::before {
@@ -360,7 +360,7 @@ img {
   padding-right: 3px;
 }
 .taglink:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -372,8 +372,8 @@ p {
 }
 
 pre {
-  background-color: #f3f3f3;
-  border: 1px solid #ccc;
+  background-color: #f3f4f5;
+  border: 1px solid #cccdce;
   overflow: auto;
   padding: 10px;
 }
@@ -386,10 +386,10 @@ table {
   border-spacing: 0;
 }
 table th {
-  background-color: #fafafa;
+  background-color: #f3f4f5;
 }
 table tr:nth-of-type(2n+1) {
-  background-color: #fafafa;
+  background-color: #fafbfc;
 }
 table th,
 table td {
@@ -438,29 +438,29 @@ table td {
   margin-top: 40px;
   margin-bottom: 20px;
   padding: 25px;
-  background-color: #f3f3f3;
+  background-color: #f3f4f5;
 }
 .article h3 {
-  border-left: 5px solid #777;
+  border-left: 5px solid #777879;
   font-size: 23px;
   padding: 6px 20px;
 }
 .article h4 {
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #cccdce;
 }
 .article h5 {
-  border-bottom: 2px dashed #ccc;
+  border-bottom: 2px dashed #cccdce;
 }
 .article h6 {
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #cccdce;
 }
 
 /************************************
 ** 引用（blockquote）
 ************************************/
 blockquote {
-  background-color: #fafafa;
-  border: 1px solid #ccc;
+  background-color: #fafbfc;
+  border: 1px solid #cccdce;
   margin: 1em 0;
   padding: 10px;
   position: relative;
@@ -522,7 +522,7 @@ blockquote::after {
   background-color: #fff;
 }
 .sidebar h3 {
-  background-color: #f3f3f3;
+  background-color: #f3f4f5;
   padding: 16px 10px;
   margin: 21px 0;
 }
@@ -542,7 +542,7 @@ blockquote::after {
 /*タグクラウド*/
 .tagcloud a {
   background-color: #fff;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #dddedf;
   border-radius: 2px;
   color: #555;
   display: inline-block;
@@ -557,7 +557,7 @@ blockquote::after {
   padding-right: 3px;
 }
 .tagcloud a:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 .tagcloud a .tag-link-count {
@@ -597,7 +597,7 @@ blockquote::after {
 .widget_archive ul li a:hover,
 .widget_pages ul li a:hover,
 .widget_meta ul li a:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 .widget_recent_entries ul li a .post-count,
@@ -620,8 +620,8 @@ blockquote::after {
   border-right-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
-  border-top-color: #ddd;
-  border-right-color: #ddd;
+  border-top-color: #dddedf;
+  border-right-color: #dddedf;
   width: 100%;
   max-width: 400px;
 }
@@ -630,13 +630,13 @@ blockquote::after {
   text-align: center;
 }
 #wp-calendar #today {
-  background-color: #FFE6B2;
+  background-color: #ffe6b2;
 }
 #wp-calendar #today a {
-  background-color: #FFE6B2;
+  background-color: #ffe6b2;
 }
 #wp-calendar #today a:hover {
-  background-color: #FFD67F;
+  background-color: #ffd67e;
 }
 #wp-calendar tr:nth-of-type(2n+1) {
   background-color: transparent;
@@ -646,8 +646,8 @@ blockquote::after {
   border-left-width: 1px;
   border-bottom-style: solid;
   border-left-style: solid;
-  border-bottom-color: #ddd;
-  border-left-color: #ddd;
+  border-bottom-color: #dddedf;
+  border-left-color: #dddedf;
 }
 #wp-calendar td {
   text-align: center;
@@ -656,8 +656,8 @@ blockquote::after {
   border-left-width: 1px;
   border-bottom-style: solid;
   border-left-style: solid;
-  border-bottom-color: #ddd;
-  border-left-color: #ddd;
+  border-bottom-color: #dddedf;
+  border-left-color: #dddedf;
 }
 #wp-calendar td a {
   color: #333;
@@ -677,7 +677,7 @@ blockquote::after {
   text-align: center;
 }
 .pagination .current {
-  background-color: #ddd;
+  background-color: #eeeff0;
 }
 .pagination .prev::before {
   font-family: FontAwesome;
@@ -692,7 +692,7 @@ blockquote::after {
   padding-left: 3px;
 }
 .pagination a:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -702,7 +702,7 @@ blockquote::after {
   display: inline-block;
   height: 40px;
   width: 50px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccdce;
   margin-left: 3px;
   line-height: 40px;
   text-align: center;
@@ -713,7 +713,7 @@ blockquote::after {
 ************************************/
 .pagination-next-link {
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #cccdce;
   color: #333;
   display: block;
   font-size: 1.25em;
@@ -724,7 +724,7 @@ blockquote::after {
   display: block;
 }
 .pagination-next-link:hover {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -737,7 +737,7 @@ blockquote::after {
   text-align: center;
 }
 .pager-links span {
-  background-color: #ddd;
+  background-color: #eeeff0;
 }
 .pager-links a {
   display: inline-block;
@@ -746,7 +746,7 @@ blockquote::after {
   background-color: #fff;
 }
 .pager-links a:hover span {
-  background-color: #f3f3f3;
+  background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }
 
@@ -869,7 +869,7 @@ blockquote::after {
   width: 100%;
   padding: 12px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid #cccfd2;
   font-size: 16px;
   font-family: "Meiryo", sans-serif;
 }
@@ -882,7 +882,7 @@ blockquote::after {
   cursor: pointer;
   line-height: 49px;
   border: none;
-  color: #999;
+  color: #cccdce;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }

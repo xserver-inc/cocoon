@@ -4,22 +4,25 @@ $Meiryo_font: "Meiryo", sans-serif;
 
 //テキスト色
 $text_color: #333;
-$pallid_text_color: #777;
+$pallid_text_color: #777879;
+$x_pallid_text_color: #999a9b;
 
 //テキストサイズ
 $text_size_s: 0.8em;
 $text_size_xs: 0.6em;
 
 //ボーダー色
-$basic_border_color: #ccc;
+$basic_border_color: #cccfd2;
 $transparent_border_color: transparent;
 
 //色
-$middle_thickness: #777;
-$thin: #ccc;
-$x_thin: #ddd;
-$xx_thin: #f3f3f3;
-$xxx_thin: #fafafa;
+$middle_thickness: #777879;
+$thin: #cccdce;
+$x_thin: #dddedf;
+$xx_thin: #f3f4f5;
+$xxx_thin: #fafbfc;
+$bg_white: #fff;
+$current_bgc: #eeeff0;
 
 //要素の丸め
 $basic_border_radius: 3px;
@@ -49,7 +52,7 @@ $site_width: $main_width + $main_border_width*2 + $main_padding_width*2 +
 $emtry_card_thumb_margin_top: 4px;
 
 //背景ホバー
-$bgc_hover_color: #f3f3f3;
+$bgc_hover_color: #f5f8fa;
 $bgc_hover_anime: all 0.3s ease 0s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
