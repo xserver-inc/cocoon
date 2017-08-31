@@ -76,6 +76,34 @@ pre {
   padding: 10px;
 }
 
+table {
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  th{
+    background-color: $xxx_thin;
+  }
+
+  tr{
+    &:nth-of-type(2n+1){
+      background-color: $xxx_thin;
+    }
+
+    // &:hover{
+    //   @include bgc_hover;
+    // }
+  }
+
+  th,
+  td{
+    border: 1px solid #ddd;
+    padding: 6px;
+  }
+}
+
 
 .article{
   margin-bottom: 60px;

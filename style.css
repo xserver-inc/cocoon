@@ -378,6 +378,25 @@ pre {
   padding: 10px;
 }
 
+table {
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table th {
+  background-color: #fafafa;
+}
+table tr:nth-of-type(2n+1) {
+  background-color: #fafafa;
+}
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
 .article {
   margin-bottom: 60px;
 }
@@ -618,6 +637,9 @@ blockquote::after {
 }
 #wp-calendar #today a:hover {
   background-color: #FFD67F;
+}
+#wp-calendar tr:nth-of-type(2n+1) {
+  background-color: transparent;
 }
 #wp-calendar th {
   border-bottom-width: 1px;
