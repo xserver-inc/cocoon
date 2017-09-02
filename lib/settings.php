@@ -77,3 +77,6 @@ add_theme_support( 'custom-background', $custom_background_defaults );
 //ヘッダーに以下のようなタグが挿入されるWP4.4からの機能を解除
 //<link rel='https://api.w.org/' href='http:/xxxx/wordpress/wp-json/' />
 remove_action( 'wp_head', 'rest_output_link_wp_head' );
+
+//Wordpress3.5で廃止されたリンクマネージャを表示する
+add_filter('pre_option_link_manager_enabled','__return_true');

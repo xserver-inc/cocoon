@@ -19,3 +19,4 @@ require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'utils.php'; //Wordpressの設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
 require_once 'widget.php'; //ウィジェット操作関数
+require_once 'admin.php'; //管理者機能
