@@ -10,6 +10,7 @@ $sub_menu_width: 240px;
       @include fontawsome($unicode);
       position: absolute;
       right: 3px;
+      bottom: 0;
     }
   }
 }
@@ -33,6 +34,23 @@ $sub_menu_width: 240px;
         >ul{
           display: block;
         }
+      }
+    }
+
+    >.menu-item-has-description{
+      >a{
+        line-height: $menu_height / 2.6;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .item-label{
+        //line-height: 1;
+      }
+
+      .item-description{
+        font-size: 0.8em;
+        color: $pallid_text_color;
       }
     }
 

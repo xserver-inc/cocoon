@@ -11,6 +11,8 @@
         'fallback_cb' => false,
         //出力されるulに対してidやclassを表示しない
         'items_wrap' => '<ul>%3$s</ul>',
+        //説明出力用
+        'walker' => new menu_description_walker()
       )
     ); ?>
   </div><!-- /#navi-in -->

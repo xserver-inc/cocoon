@@ -123,6 +123,15 @@ img {
 .navi-in > ul li:hover > ul {
   display: block;
 }
+.navi-in > ul > .menu-item-has-description > a {
+  line-height: 19.23077px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.navi-in > ul > .menu-item-has-description .item-description {
+  font-size: 0.8em;
+  color: #777879;
+}
 .navi-in > ul > .menu-item-has-children {
   position: relative;
 }
@@ -132,6 +141,7 @@ img {
   padding-right: 3px;
   position: absolute;
   right: 3px;
+  bottom: 0;
 }
 .navi-in > ul .sub-menu {
   display: none;
@@ -157,6 +167,7 @@ img {
   padding-right: 3px;
   position: absolute;
   right: 3px;
+  bottom: 0;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
