@@ -2,6 +2,50 @@
 ** 入力フォーム
 ************************************/
 
+/*入力フォーム共通*/
+$form_padding: 12px;
+input[type='text'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+textarea,
+select{
+  padding: $form_padding;
+  box-sizing: border-box;
+  border: 2px solid $basic_border_color;
+  font-size: 16px;
+  //margin: 1em 0;
+}
+
+textarea{
+  min-height: 260px;
+}
+
+select{
+  padding: 0;
+}
+
+option{
+  padding: $form_padding;
+}
+
+input[type='submit']{
+  padding: $form_padding;
+}
+
+/*特定のエリアのフォーム*/
+.sidebar,
+.comment-respond{
+  input[type='text'],
+  input[type='password'],
+  input[type='search'],
+  input[type='number'],
+  textarea,
+  select{
+    width: 100%;
+  }
+}
+
 /*検索フォーム*/
 .search-form{
   margin: 2em 0;
@@ -9,11 +53,6 @@
 }
 
 .search-edit{
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-  border: 2px solid $basic_border_color;
-  font-size: 16px;
   font-family: $Meiryo_font;
   //border-radius: $basic_border_radius;
 }
@@ -33,4 +72,8 @@
   &::before{
     @include fontawsome('\f002');
   }
+}
+
+.comment-respond label{
+  display: block;
 }

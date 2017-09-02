@@ -2,6 +2,10 @@
 ** ウィジェット
 ************************************/
 
+label.screen-reader-text{
+  display: none;
+}
+
 /*ウィジェットリスト*/
 .widget{
   margin-bottom: 32px;

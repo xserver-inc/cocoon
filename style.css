@@ -393,7 +393,7 @@ table tr:nth-of-type(2n+1) {
 }
 table th,
 table td {
-  border: 1px solid #ddd;
+  border: 1px solid #dddedf;
   padding: 6px;
 }
 
@@ -486,7 +486,9 @@ blockquote::after {
 /************************************
 ** 関連記事
 ************************************/
-.related-entry-title {
+/*関連エントリーカード*/
+.related-entry-title,
+.comment-title {
   margin: 22px 0;
 }
 
@@ -511,6 +513,17 @@ blockquote::after {
 }
 
 /************************************
+** コメント
+************************************/
+.commets-list {
+  padding: 0;
+  list-style: none;
+}
+.commets-list .avatar {
+  float: right;
+}
+
+/************************************
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
@@ -530,6 +543,10 @@ blockquote::after {
 /************************************
 ** ウィジェット
 ************************************/
+label.screen-reader-text {
+  display: none;
+}
+
 /*ウィジェットリスト*/
 .widget {
   margin-bottom: 32px;
@@ -859,6 +876,51 @@ blockquote::after {
 /************************************
 ** 入力フォーム
 ************************************/
+/*入力フォーム共通*/
+input[type='text'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+textarea,
+select {
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #cccfd2;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 260px;
+}
+
+select {
+  padding: 0;
+}
+
+option {
+  padding: 12px;
+}
+
+input[type='submit'] {
+  padding: 12px;
+}
+
+/*特定のエリアのフォーム*/
+.sidebar input[type='text'],
+.sidebar input[type='password'],
+.sidebar input[type='search'],
+.sidebar input[type='number'],
+.sidebar textarea,
+.sidebar select,
+.comment-respond input[type='text'],
+.comment-respond input[type='password'],
+.comment-respond input[type='search'],
+.comment-respond input[type='number'],
+.comment-respond textarea,
+.comment-respond select {
+  width: 100%;
+}
+
 /*検索フォーム*/
 .search-form {
   margin: 2em 0;
@@ -866,11 +928,6 @@ blockquote::after {
 }
 
 .search-edit {
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-  border: 2px solid #cccfd2;
-  font-size: 16px;
   font-family: "Meiryo", sans-serif;
 }
 
@@ -890,4 +947,8 @@ blockquote::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
+}
+
+.comment-respond label {
+  display: block;
 }

@@ -29,7 +29,3 @@
     } // end while
   } //have_posts end if?>
 </article>
-
-<div class="under-entry-content">
-  <?php get_template_part('tmp/related-entries'); //関連記事の呼び出し ?>
-</div>
