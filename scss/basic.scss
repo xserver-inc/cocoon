@@ -4,6 +4,15 @@
 *{
   padding: 0;
   margin: 0;
+
+  &::selection {
+    background: #d8eaf2;
+    color: $text_color;
+  }
+  &::-moz-selection {
+    background: #d8eaf2;
+    color: $text_color;
+  }
 }
 
 body {

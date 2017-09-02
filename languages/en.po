@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-08-29 22:31+0900\n"
-"PO-Revision-Date: 2017-08-31 23:03+0900\n"
+"POT-Creation-Date: 2017-09-02 21:50+0900\n"
+"PO-Revision-Date: 2017-09-02 21:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,9 +15,81 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: comments.php:4
+msgid "コメント"
+msgstr "Comments"
+
+#: comments.php:23
+msgid "コメントをどうぞ"
+msgstr "Leave a Reply"
+
+#: comments.php:24
+msgid "コメントを送信"
+msgstr "Post Comment"
+
 #: index.php:15
 msgid "投稿が見つかりませんでした。"
 msgstr "Posts could not be found"
+
+#: lib/admin.php:23
+msgid "アイキャッチ"
+msgstr "Featured Image"
+
+#: lib/admin.php:56
+msgid "管理メニュー"
+msgstr "Admin Menus"
+
+#: lib/admin.php:68
+msgid "ダッシュボード"
+msgstr "Dashboard"
+
+#: lib/admin.php:75
+msgid "投稿一覧"
+msgstr "Posts"
+
+#: lib/admin.php:82
+msgid "固定ページ一覧"
+msgstr "Pages"
+
+#: lib/admin.php:89
+msgid "メディア一覧"
+msgstr "Media"
+
+#: lib/admin.php:96
+msgid "テーマ"
+msgstr "Themes"
+
+#: lib/admin.php:103
+msgid "カスタマイズ"
+msgstr "Customize"
+
+#: lib/admin.php:110
+msgid "ウィジェット"
+msgstr "Widgets"
+
+#: lib/admin.php:117
+msgid "メニュー"
+msgstr "Menus"
+
+#: lib/admin.php:124
+msgid "テーマの編集"
+msgstr "Edit themes"
+
+#: lib/admin.php:131
+msgid "プラグイン一覧"
+msgstr "Plugins"
+
+#: lib/admin.php:142
+msgid "公開"
+msgstr "Publish"
+
+#: lib/admin.php:143
+msgid "記事を公開してもよろしいですか？"
+msgstr "Are you sure to publish the page?"
+
+#: lib/admin.php:248
+msgid "カテゴリー検索"
+msgstr "Category Search"
 
 #: lib/widget-areas.php:9
 msgid "サイドバー"
@@ -34,13 +106,11 @@ msgstr "Scroll Following Area"
 #: lib/widget-areas.php:22
 #, fuzzy
 msgid ""
-"サイドバーで下にスクロールすると追いかけてくるエ"
-"リアです。※モバイルでは表示されません。（ここに"
-"Google AdSenseを貼るのはポリシー違反です。）"
+"サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示さ"
+"れません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
 msgstr ""
-"Sidebar bottom area. ※ It is not displayed on "
-"mobile. (It is a policy violation to paste "
-"Google AdSense here.)"
+"Sidebar bottom area. ※ It is not displayed on mobile. (It is a policy "
+"violation to paste Google AdSense here.)"
 
 #: lib/widget-areas.php:31
 msgid "投稿パンくずリスト上"
@@ -49,20 +119,15 @@ msgstr "Over Breadcrumbs"
 #: lib/widget-areas.php:33
 #, fuzzy
 msgid ""
-"投稿のパンくずリスト上に表示されるウイジェット。"
-"設定しないと表示されません。"
-msgstr ""
-"Widget area displayed above a breadcrumbs on a "
-"post."
+"投稿のパンくずリスト上に表示されるウイジェット。設定しないと表示されません。"
+msgstr "Widget area displayed above a breadcrumbs on a post."
 
 #: lib/widget-areas.php:42
 msgid "投稿タイトル上"
 msgstr "Over Post Title"
 
 #: lib/widget-areas.php:44
-msgid ""
-"投稿タイトル上に表示されるウイジェット。設定しな"
-"いと表示されません。"
+msgid "投稿タイトル上に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed above a post title."
 
 #: lib/widget-areas.php:53
@@ -70,11 +135,8 @@ msgid "投稿本文上"
 msgstr "Post Content Top"
 
 #: lib/widget-areas.php:55
-msgid ""
-"投稿本文上に表示されるウイジェット。設定しないと"
-"表示されません。"
-msgstr ""
-"Widget area displayed on a post content top."
+msgid "投稿本文上に表示されるウイジェット。設定しないと表示されません。"
+msgstr "Widget area displayed on a post content top."
 
 #: lib/widget-areas.php:64
 msgid "投稿本文中"
@@ -82,10 +144,9 @@ msgstr "Post Content Middle"
 
 #: lib/widget-areas.php:66
 msgid ""
-"投稿本文中に表示されるウイジェット。文中最初のH2"
-"タグの手前に表示されます。広告が表示されている場"
-"合は、広告の下に表示されます。設定しないと表示さ"
-"れません。"
+"投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広"
+"告が表示されている場合は、広告の下に表示されます。設定しないと表示されませ"
+"ん。"
 msgstr "Widget area displayed in a post content."
 
 #: lib/widget-areas.php:75
@@ -93,11 +154,8 @@ msgid "投稿本文下"
 msgstr "Post Content Bottom"
 
 #: lib/widget-areas.php:77
-msgid ""
-"投稿本文下に表示されるウイジェット。設定しないと"
-"表示されません。"
-msgstr ""
-"Widget area displayed on a post content bottom."
+msgid "投稿本文下に表示されるウイジェット。設定しないと表示されません。"
+msgstr "Widget area displayed on a post content bottom."
 
 #: lib/widget-areas.php:86
 msgid "投稿SNSボタン上"
@@ -106,12 +164,9 @@ msgstr "Over Post SNS Buttons"
 #: lib/widget-areas.php:88
 #, fuzzy
 msgid ""
-"投稿のメインカラムの一番下となるSNSボタンの上に表"
-"示されるウイジェット。広告を表示している場合は、"
-"広告の下になります。設定しないと表示されません。"
-msgstr ""
-"Widget area displayed above SNS buttons at the "
-"bottom of a post."
+"投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を"
+"表示している場合は、広告の下になります。設定しないと表示されません。"
+msgstr "Widget area displayed above SNS buttons at the bottom of a post."
 
 #: lib/widget-areas.php:97
 msgid "投稿SNSボタン下"
@@ -120,12 +175,9 @@ msgstr "Under Post SNS Buttons"
 #: lib/widget-areas.php:99
 #, fuzzy
 msgid ""
-"投稿のメインカラムの一番下となるSNSボタンの下に表"
-"示されるウイジェット。設定しないと表示されませ"
-"ん。"
-msgstr ""
-"Widget area displayed below the SNS buttons at "
-"the bottom of a post."
+"投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。設定し"
+"ないと表示されません。"
+msgstr "Widget area displayed below the SNS buttons at the bottom of a post."
 
 #: lib/widget-areas.php:108
 msgid "投稿関連記事下"
@@ -134,11 +186,9 @@ msgstr "Under Related Posts"
 #: lib/widget-areas.php:110
 #, fuzzy
 msgid ""
-"関連記事の下（広告を表示している場合はその下）に"
-"表示されるウイジェット。設定しないと表示されませ"
-"ん。"
-msgstr ""
-"Widget area displayed below a related posts."
+"関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。設定"
+"しないと表示されません。"
+msgstr "Widget area displayed below a related posts."
 
 #: lib/widget-areas.php:119
 msgid "固定ページ本文上"
@@ -146,11 +196,8 @@ msgstr "Page Content Top"
 
 #: lib/widget-areas.php:121
 #, fuzzy
-msgid ""
-"固定ページ本文上に表示されるウイジェット。設定し"
-"ないと表示されません。"
-msgstr ""
-"Widget area displayed above a page content."
+msgid "固定ページ本文上に表示されるウイジェット。設定しないと表示されません。"
+msgstr "Widget area displayed above a page content."
 
 #: lib/widget-areas.php:130
 msgid "固定ページ本文中"
@@ -159,13 +206,12 @@ msgstr "Page Content Middle"
 #: lib/widget-areas.php:132
 #, fuzzy
 msgid ""
-"固定ページ本文中に表示されるウイジェット。文中最"
-"初のH2タグの手前に表示されます。広告が表示されて"
-"いる場合は、広告の下に表示されます。設定しないと"
-"表示されません。"
+"固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されま"
+"す。広告が表示されている場合は、広告の下に表示されます。設定しないと表示され"
+"ません。"
 msgstr ""
-"Widget area displayed in a page content. It is "
-"displayed before the first H2 tag in the content."
+"Widget area displayed in a page content. It is displayed before the first H2 "
+"tag in the content."
 
 #: lib/widget-areas.php:141
 msgid "固定ページ本文下"
@@ -173,11 +219,8 @@ msgstr "Page Content Bottom"
 
 #: lib/widget-areas.php:143
 #, fuzzy
-msgid ""
-"固定ページ本文下に表示されるウイジェット。設定し"
-"ないと表示されません。"
-msgstr ""
-"Widget area displayed below a page content. "
+msgid "固定ページ本文下に表示されるウイジェット。設定しないと表示されません。"
+msgstr "Widget area displayed below a page content. "
 
 #: lib/widget-areas.php:152
 msgid "固定ページSNSボタン上"
@@ -186,13 +229,9 @@ msgstr "Over Page SNS Buttons"
 #: lib/widget-areas.php:154
 #, fuzzy
 msgid ""
-"固定ページのメインカラムの一番下となるSNSボタンの"
-"上に表示されるウイジェット。広告を表示している場"
-"合は、広告の下になります。設定しないと表示されま"
-"せん。"
-msgstr ""
-"Widget area displayed above SNS buttons at the "
-"bottom of a page."
+"固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。"
+"広告を表示している場合は、広告の下になります。設定しないと表示されません。"
+msgstr "Widget area displayed above SNS buttons at the bottom of a page."
 
 #: lib/widget-areas.php:163
 msgid "固定ページSNSボタン下"
@@ -201,12 +240,9 @@ msgstr "Under Page SNS Buttons"
 #: lib/widget-areas.php:165
 #, fuzzy
 msgid ""
-"固定ページのメインカラムの一番下となるSNSボタンの"
-"下に表示されるウイジェット。設定しないと表示され"
-"ません。"
-msgstr ""
-"Widget area displayed below SNS buttons at the "
-"bottom of a page."
+"固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+"設定しないと表示されません。"
+msgstr "Widget area displayed below SNS buttons at the bottom of a page."
 
 #: lib/widget-areas.php:174
 msgid "インデックスリストトップ"
@@ -215,11 +251,9 @@ msgstr "Index Top"
 #: lib/widget-areas.php:176
 #, fuzzy
 msgid ""
-"インデックスリストのトップに表示されるウイジェッ"
-"ト。広告が表示されているときは広告の下に表示され"
-"ます。設定しないと表示されません。"
-msgstr ""
-"Widget area displayed at the top of a index page."
+"インデックスリストのトップに表示されるウイジェット。広告が表示されているとき"
+"は広告の下に表示されます。設定しないと表示されません。"
+msgstr "Widget area displayed at the top of a index page."
 
 #: lib/widget-areas.php:185
 msgid "インデックスリストミドル"
@@ -228,14 +262,10 @@ msgstr "Index Middle"
 #: lib/widget-areas.php:187
 #, fuzzy
 msgid ""
-"インデックスリストの3つ目下に表示されるウイジェッ"
-"ト。「一覧リストのスタイル」が「サムネイルカー"
-"ド」の時のみの機能です。広告が表示されているとき"
-"は広告の下に表示されます。設定しないと表示されま"
-"せん。"
-msgstr ""
-"Widget area displayed at the middle of a index "
-"page."
+"インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」"
+"が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下"
+"に表示されます。設定しないと表示されません。"
+msgstr "Widget area displayed at the middle of a index page."
 
 #: lib/widget-areas.php:196
 msgid "インデックスリストボトム"
@@ -244,12 +274,9 @@ msgstr "Index Bottom"
 #: lib/widget-areas.php:198
 #, fuzzy
 msgid ""
-"インデックスリストのボトムに表示されるウイジェッ"
-"ト。広告が表示されているときは広告の下に表示され"
-"ます。設定しないと表示されません。"
-msgstr ""
-"Widget area displayed at the bottom of a index "
-"page."
+"インデックスリストのボトムに表示されるウイジェット。広告が表示されているとき"
+"は広告の下に表示されます。設定しないと表示されません。"
+msgstr "Widget area displayed at the bottom of a index page."
 
 #: lib/widget-areas.php:207
 msgid "フッター左"
@@ -258,9 +285,7 @@ msgstr "Footer Left"
 #: lib/widget-areas.php:209
 #, fuzzy
 msgid "フッター左側のウィジットエリアです。"
-msgstr ""
-"Widget area displayed at the left of this site "
-"footer."
+msgstr "Widget area displayed at the left of this site footer."
 
 #: lib/widget-areas.php:219
 msgid "フッター中"
@@ -269,9 +294,7 @@ msgstr "Footer Center"
 #: lib/widget-areas.php:220
 #, fuzzy
 msgid "フッター中間のウィジットエリアです。"
-msgstr ""
-"Widget area displayed at the center of this site "
-"footer."
+msgstr "Widget area displayed at the center of this site footer."
 
 #: lib/widget-areas.php:229
 msgid "フッター右"
@@ -279,11 +302,8 @@ msgstr "Footer Right"
 
 #: lib/widget-areas.php:231
 #, fuzzy
-msgid ""
-"フッター右側フッター中のウィジットエリアです。"
-msgstr ""
-"Widget area displayed at the right of this site "
-"footer."
+msgid "フッター右側フッター中のウィジットエリアです。"
+msgstr "Widget area displayed at the right of this site footer."
 
 #: lib/widget-areas.php:240
 msgid "404ページ"
@@ -291,9 +311,7 @@ msgstr "404 Page"
 
 #: lib/widget-areas.php:242
 #, fuzzy
-msgid ""
-"404ページをカスタマイズするためのウィジットエリア"
-"です。"
+msgid "404ページをカスタマイズするためのウィジットエリアです。"
 msgstr "Widget area for customizing 404 pages."
 
 #: searchform.php:2

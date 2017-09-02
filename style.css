@@ -18,6 +18,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding: 0;
   margin: 0;
 }
+*::selection {
+  background: #d8eaf2;
+  color: #333435;
+}
+*::-moz-selection {
+  background: #d8eaf2;
+  color: #333435;
+}
 
 body {
   /* フォントの種類 */
@@ -25,7 +33,7 @@ body {
   /* フォントのサイズ */
   font-size: 18px;
   /* フォントの色 */
-  color: #333;
+  color: #333435;
   /* カーニングの設定 */
   /* 行間の設定 */
   line-height: 1.75;
@@ -89,7 +97,7 @@ img {
 }
 
 .site-name {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   font-size: 40px;
 }
@@ -160,7 +168,7 @@ img {
   position: relative;
 }
 .navi-in a {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   display: block;
   font-size: 16px;
@@ -188,7 +196,7 @@ img {
   width: 100px;
 }
 .navi-footer-in a {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   display: block;
   font-size: 14px;
@@ -329,14 +337,14 @@ img {
 
 /*本文下カテゴリ*/
 .catlink {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   display: inline-block;
   margin-right: 5px;
   padding: 1px 5px;
   font-size: 12px;
-  background-color: #333;
-  border: 1px solid #333;
+  background-color: #333435;
+  border: 1px solid #333435;
   color: #fff;
   border-radius: 2px;
 }
@@ -348,12 +356,12 @@ img {
 .catlink:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
-  color: #333;
+  color: #333435;
 }
 
 /*本文下タグ*/
 .taglink {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   display: inline-block;
   margin-right: 5px;
@@ -558,7 +566,7 @@ label.screen-reader-text {
 
 /*ウィジェットリスト*/
 .widget {
-  margin-bottom: 32px;
+  margin-bottom: 38px;
 }
 .widget ul {
   padding: 0;
@@ -611,7 +619,7 @@ label.screen-reader-text {
 .widget_archive ul li a,
 .widget_pages ul li a,
 .widget_meta ul li a {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   padding: 10px 0;
   display: block;
@@ -686,7 +694,7 @@ label.screen-reader-text {
   border-left-color: #dddedf;
 }
 #wp-calendar td a {
-  color: #333;
+  color: #333435;
   display: block;
   background-color: #ffface;
 }
@@ -723,7 +731,7 @@ label.screen-reader-text {
 }
 
 .page-numbers {
-  color: #333;
+  color: #333435;
   text-decoration: none;
   display: inline-block;
   height: 40px;
@@ -740,7 +748,7 @@ label.screen-reader-text {
 .pagination-next-link {
   background-color: #f9f9f9;
   border: 1px solid #cccdce;
-  color: #333;
+  color: #333435;
   display: block;
   font-size: 1.25em;
   text-decoration: none;
