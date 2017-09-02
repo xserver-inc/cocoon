@@ -13,6 +13,10 @@
   }
 }
 
+.e-card{
+  position: relative;
+}
+
 .entry-card-thumb{
   width: 320px;
   float: left;
@@ -32,6 +36,7 @@
 
 .entry-card-content{
   margin-left: 330px;
+  padding-bottom: 1em;
 }
 
 .entry-card-title{
@@ -46,21 +51,29 @@
   font-size: $text_size_s;
 }
 
-.entry-card-meta{
-  //margin-top: 0.3em;
-  // text-overflow: ellipsis;
-  // white-space: nowrap;
-  // width: 100%;
-  div{
-    display: inline;
-  }
+// .entry-card-meta{
+//   //margin-top: 0.3em;
+//   // text-overflow: ellipsis;
+//   // white-space: nowrap;
+//   // width: 100%;
+//   div{
+//     display: inline;
+//   }
 
-}
+// }
 
 // .published::before,
 // .category::before{
 //   margin-right: 2px;
 // }
+
+.card-meta {
+  //text-align: right;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
 
 .published,
 .entry-category{

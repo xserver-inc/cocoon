@@ -213,6 +213,10 @@ img {
   transition: all 0.3s ease 0s;
 }
 
+.e-card {
+  position: relative;
+}
+
 .entry-card-thumb {
   width: 320px;
   float: left;
@@ -232,6 +236,7 @@ img {
 
 .entry-card-content {
   margin-left: 330px;
+  padding-bottom: 1em;
 }
 
 .entry-card-title {
@@ -246,8 +251,11 @@ img {
   font-size: 0.8em;
 }
 
-.entry-card-meta div {
-  display: inline;
+.card-meta {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
 }
 
 .published,
@@ -501,6 +509,7 @@ blockquote::after {
 
 .related-entry-card-content {
   margin-left: 170px;
+  padding-bottom: 1em;
 }
 
 .related-entry-card-title {
