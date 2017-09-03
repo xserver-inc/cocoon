@@ -141,7 +141,6 @@ img {
   padding-right: 3px;
   position: absolute;
   right: 3px;
-  bottom: 0;
 }
 .navi-in > ul .sub-menu {
   display: none;
@@ -167,7 +166,6 @@ img {
   padding-right: 3px;
   position: absolute;
   right: 3px;
-  bottom: 0;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
@@ -745,12 +743,17 @@ label.screen-reader-text {
   color: #333435;
   text-decoration: none;
   display: inline-block;
-  height: 40px;
+  height: 50px;
   width: 50px;
   border: 1px solid #cccdce;
   margin-left: 3px;
-  line-height: 40px;
+  line-height: 50px;
   text-align: center;
+}
+
+.page-numbers.dots {
+  opacity: 0.6;
+  background-color: #f3f4f5;
 }
 
 /************************************
@@ -791,6 +794,65 @@ label.screen-reader-text {
   background-color: #fff;
 }
 .pager-links a:hover span {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease 0s;
+}
+
+/************************************
+** 投稿ナビ
+************************************/
+.pager-post-navi {
+  margin: 38px 0;
+  display: flex;
+}
+.pager-post-navi a {
+  color: #333435;
+  text-decoration: none;
+  width: 50%;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+  font-size: 0.8em;
+}
+.pager-post-navi a::before {
+  font-size: 1.2em;
+}
+.pager-post-navi a.prev-post {
+  flex-direction: row;
+  padding-left: 5px;
+}
+.pager-post-navi a.prev-post::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  margin-right: 5px;
+  padding-right: 0;
+}
+.pager-post-navi a.prev-post .prev-post-title {
+  margin-left: 10px;
+}
+.pager-post-navi a.next-post {
+  flex-direction: row-reverse;
+  padding-right: 5px;
+}
+.pager-post-navi a.next-post::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  margin-left: 5px;
+  padding-right: 0;
+}
+.pager-post-navi a.next-post .next-post-title {
+  margin-right: 10px;
+}
+.pager-post-navi a.prev-next-home {
+  justify-content: center;
+  font-size: 50px;
+  text-align: center;
+  color: #777879;
+}
+.pager-post-navi a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
 }

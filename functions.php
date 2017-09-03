@@ -72,7 +72,7 @@ endif;
 //投稿ナビのサムネイルタグを取得する
 if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id){
-  $thumb = get_the_post_thumbnail( $id, array(160, 90), array('alt' => '') );
+  $thumb = get_the_post_thumbnail( $id, array(80, 45), array('alt' => '') );
   if ( !$thumb ) {
     $thumb = '<img src="'.get_template_directory_uri().'/images/no-image.png" alt="NO IMAGE" class="no-image post-navi-no-image" />';
   }

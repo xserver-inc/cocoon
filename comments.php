@@ -28,5 +28,4 @@
   echo '</aside>';
 
   ?>
-</div>
-<!-- /comment area -->
+</div><!-- /.comment area -->

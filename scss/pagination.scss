@@ -5,12 +5,12 @@
   text-align: center;
 }
 //ページネーションボタン
-$pagination_wh: 40px;
+$pagination_wh: 50px;
 @mixin pagination_button {
   @include link_cancel;
   display: inline-block;
   height: $pagination_wh;
-  width: 50px;
+  width: $pagination_wh;
   border: 1px solid $thin;
   margin-left: 3px;
   line-height: $pagination_wh;
@@ -49,10 +49,10 @@ $pagination_wh: 40px;
   @include pagination_button;
 }
 
-// .page-numbers.dots {
-//   border: medium none;
-//   width: 20px;
-// }
+.page-numbers.dots {
+  opacity: 0.6;
+  background-color: $xx_thin;
+}
 
 /************************************
 ** 「次のページ」ページネーション
@@ -100,4 +100,74 @@ $pagination_wh: 40px;
   //   @include pagination_button;
   // }
 
+}
+
+/************************************
+** 投稿ナビ
+************************************/
+$pn_margin_width: 10px;
+.pager-post-navi{
+  margin: 38px 0;
+  display: flex;
+
+  a{
+    @include link_cancel;
+    width: 50%;
+    padding: $pn_margin_width;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.2;
+    font-size: 0.8em;
+    // border: 1px solid $x_thin;
+
+    // &:first-child{
+    //   border-right: 0;
+    // }
+
+    &::before{
+      font-size: 1.2em;
+    }
+
+    &.prev-post{
+      flex-direction: row;
+      padding-left: $pn_margin_width / 2;
+
+      &::before{
+        @include fontawsome('\f104');
+        margin-right: $pn_margin_width / 2;
+        padding-right: 0;
+      }
+
+     .prev-post-title{
+        margin-left: $pn_margin_width;
+      }
+    }
+
+    &.next-post{
+      flex-direction: row-reverse;
+      padding-right: $pn_margin_width / 2;
+
+      &::before{
+        @include fontawsome('\f105');
+        margin-left: $pn_margin_width / 2;
+        padding-right: 0;
+      }
+
+      .next-post-title{
+        margin-right: $pn_margin_width;
+      }
+    }
+
+    &.prev-next-home{
+      justify-content: center;
+
+      font-size: 50px;
+      text-align: center;
+      color: $middle_thickness;
+    }
+
+    &:hover{
+      @include bgc_hover;
+    }
+  }
 }
