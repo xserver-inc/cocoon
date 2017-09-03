@@ -6,11 +6,11 @@
   margin: 0;
 
   &::selection {
-    background: #d8eaf2;
+    background: $select_bgc;
     color: $text_color;
   }
   &::-moz-selection {
-    background: #d8eaf2;
+    background: $select_bgc;
     color: $text_color;
   }
 }
@@ -20,7 +20,7 @@ body {
   font-family: $default_font;
 
   /* フォントのサイズ */
-  font-size: 18px;
+  font-size: $text_size_default;
 
   /* フォントの色 */
   color: $text_color;
@@ -38,6 +38,14 @@ body {
   //word-wrap: break-word;
   overflow-wrap: break-word;
 
+}
+
+a{
+  //color: #006FAB;
+
+  &:hover{
+    color: #BE0032;
+  }
 }
 
 /* クリアフィックス */

@@ -41,6 +41,10 @@ body {
   overflow-wrap: break-word;
 }
 
+a:hover {
+  color: #BE0032;
+}
+
 /* クリアフィックス */
 .cf::after {
   clear: both;
@@ -190,6 +194,7 @@ img {
 .navi-in a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 .navi-in a:hover > ul {
   display: block;
@@ -218,6 +223,7 @@ img {
 .navi-footer-in a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 /************************************
@@ -226,13 +232,14 @@ img {
 .a-wrap {
   text-decoration: none;
   display: block;
-  color: #333;
+  color: #333435;
   padding: 10px;
   margin-bottom: 20px;
 }
 .a-wrap:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 .e-card {
@@ -371,6 +378,7 @@ img {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333435;
+  color: #333435;
 }
 
 /*本文下タグ*/
@@ -392,6 +400,7 @@ img {
 .taglink:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 /************************************
@@ -607,6 +616,7 @@ label.screen-reader-text {
 .tagcloud a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 .tagcloud a .tag-link-count {
   margin-left: 10px;
@@ -647,6 +657,7 @@ label.screen-reader-text {
 .widget_meta ul li a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 .widget_recent_entries ul li a .post-count,
 .widget_categories ul li a .post-count,
@@ -742,6 +753,7 @@ label.screen-reader-text {
 .pagination a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 .page-numbers {
@@ -779,6 +791,7 @@ label.screen-reader-text {
 .pagination-next-link:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 /************************************
@@ -801,6 +814,7 @@ label.screen-reader-text {
 .pager-links a:hover span {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 /************************************
@@ -861,6 +875,7 @@ label.screen-reader-text {
 .pager-post-navi a:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
+  color: #333435;
 }
 
 /************************************
@@ -982,32 +997,43 @@ select {
   padding: 12px;
   box-sizing: border-box;
   border: 2px solid #cccfd2;
-  font-size: 16px;
+  font-size: 18px;
+}
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='number']:focus,
+textarea:focus,
+select:focus {
+  background-color: #fafbfc;
+  border: 2px solid #d8eaf2;
 }
 
 textarea {
   min-height: 260px;
 }
 
-select {
-  padding: 0;
-}
-
 option {
   padding: 12px;
 }
 
+/*Firefoxだけに適用されるCSSハック*/
+@-moz-document url-prefix() {
+  select {
+    padding: 0 12px;
+  }
+}
 input[type='submit'] {
   padding: 12px;
 }
 
 /*特定のエリアのフォーム*/
-.sidebar input[type='text'],
-.sidebar input[type='password'],
-.sidebar input[type='search'],
-.sidebar input[type='number'],
-.sidebar textarea,
-.sidebar select,
+.widget input[type='text'],
+.widget input[type='password'],
+.widget input[type='search'],
+.widget input[type='number'],
+.widget textarea,
+.widget select,
 .comment-respond input[type='text'],
 .comment-respond input[type='password'],
 .comment-respond input[type='search'],

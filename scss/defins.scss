@@ -8,6 +8,7 @@ $pallid_text_color: #777879;
 $x_pallid_text_color: #999a9b;
 
 //テキストサイズ
+$text_size_default: 18px;
 $text_size_s: 0.8em;
 $text_size_xs: 0.6em;
 
@@ -23,6 +24,7 @@ $xx_thin: #f3f4f5;
 $xxx_thin: #fafbfc;
 $bg_white: #fff;
 $current_bgc: #eeeff0;
+$select_bgc: #d8eaf2;
 
 //要素の丸め
 $basic_border_radius: 3px;
@@ -57,6 +59,7 @@ $bgc_hover_anime: all 0.3s ease 0s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
+  color: $text_color;
 }
 
 //Font Awesomeアイコンを出力するとき
