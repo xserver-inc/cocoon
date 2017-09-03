@@ -48,7 +48,13 @@ body {
   display: block;
 }
 
+.display-none {
+  display: none;
+}
+
 .header-container,
+.main,
+.sidebar
 .footer {
   background-color: #fff;
 }
@@ -65,7 +71,6 @@ body {
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 3px;
-  background-color: #fff;
 }
 
 /************************************
@@ -117,14 +122,14 @@ img {
 .navi-in > ul li {
   display: block;
   width: 176px;
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
 }
 .navi-in > ul li:hover > ul {
   display: block;
 }
 .navi-in > ul > .menu-item-has-description > a {
-  line-height: 19.23077px;
+  line-height: 23.07692px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
@@ -172,7 +177,7 @@ img {
   padding-right: 16px;
 }
 .navi-in > ul .sub-menu ul {
-  top: -50px;
+  top: -60px;
   left: 240px;
   position: relative;
 }
@@ -563,7 +568,7 @@ blockquote::after {
 .sidebar h3 {
   background-color: #f3f4f5;
   padding: 16px 10px;
-  margin: 21px 0;
+  margin: 16px 0;
 }
 
 /************************************
@@ -804,11 +809,11 @@ label.screen-reader-text {
 .pager-post-navi {
   margin: 38px 0;
   display: flex;
+  flex-direction: column;
 }
 .pager-post-navi a {
   color: #333435;
   text-decoration: none;
-  width: 50%;
   padding: 10px;
   display: inline-flex;
   align-items: center;
@@ -816,7 +821,8 @@ label.screen-reader-text {
   font-size: 0.8em;
 }
 .pager-post-navi a::before {
-  font-size: 1.2em;
+  font-size: 1.8em;
+  color: #cccdce;
 }
 .pager-post-navi a.prev-post {
   flex-direction: row;
@@ -824,7 +830,7 @@ label.screen-reader-text {
 }
 .pager-post-navi a.prev-post::before {
   font-family: FontAwesome;
-  content: "";
+  content: "";
   padding-right: 3px;
   margin-right: 5px;
   padding-right: 0;
@@ -838,7 +844,7 @@ label.screen-reader-text {
 }
 .pager-post-navi a.next-post::before {
   font-family: FontAwesome;
-  content: "";
+  content: "";
   padding-right: 3px;
   margin-left: 5px;
   padding-right: 0;

@@ -47,7 +47,13 @@ body {
   display: block;
 }
 
+.display-none{
+  display: none;
+}
+
 .header-container,
+.main,
+.sidebar
 .footer{
   background-color: $bg_white;
 }
@@ -64,7 +70,6 @@ body {
   padding: 20px $main_padding_width;
   border: $main_border_width $main_border_style $transparent_border_color;
   border-radius: $basic_border_radius;
-  background-color: $bg_white;
 }
 
 

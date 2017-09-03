@@ -109,15 +109,20 @@ $pn_margin_width: 10px;
 .pager-post-navi{
   margin: 38px 0;
   display: flex;
+  flex-direction: column;
 
   a{
     @include link_cancel;
-    width: 50%;
     padding: $pn_margin_width;
     display: inline-flex;
     align-items: center;
     line-height: 1.2;
     font-size: 0.8em;
+    //font-weight: bold;
+
+    // border-radius: 50%;
+    // overflow: hidden;
+
     // border: 1px solid $x_thin;
 
     // &:first-child{
@@ -125,7 +130,8 @@ $pn_margin_width: 10px;
     // }
 
     &::before{
-      font-size: 1.2em;
+      font-size: 1.8em;
+      color: $thin;
     }
 
     &.prev-post{
@@ -133,7 +139,7 @@ $pn_margin_width: 10px;
       padding-left: $pn_margin_width / 2;
 
       &::before{
-        @include fontawsome('\f104');
+        @include fontawsome('\f053');
         margin-right: $pn_margin_width / 2;
         padding-right: 0;
       }
@@ -148,7 +154,7 @@ $pn_margin_width: 10px;
       padding-right: $pn_margin_width / 2;
 
       &::before{
-        @include fontawsome('\f105');
+        @include fontawsome('\f054');
         margin-left: $pn_margin_width / 2;
         padding-right: 0;
       }

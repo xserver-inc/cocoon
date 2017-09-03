@@ -1,7 +1,7 @@
 /************************************
 ** グローバルメニュー
 ************************************/
-$menu_height: 50px;
+$menu_height: 60px;
 $sub_menu_width: 240px;
 @mixin menu_item_has_children($unicode:''){
   position: relative;

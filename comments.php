@@ -1,7 +1,7 @@
 <!-- comment area -->
-<div id="comment-area">
-  <section>
-    <h2 id="comments" class="comment-title"><?php _e( 'コメント', THEME_NAME ); ?></h2>
+<div id="comment-area" class="comment-area">
+  <section class="comment-list">
+    <h2 id="comment-title" class="comment-title"><?php _e( 'コメント', THEME_NAME ); ?></h2>
 
     <?php
     if(have_comments()): // コメントがあったら
@@ -23,7 +23,7 @@
     'title_reply'  => __( 'コメントをどうぞ', THEME_NAME ),
     'label_submit' => __( 'コメントを送信', THEME_NAME ),
   );
-  echo '<aside>';
+  echo '<aside class="comment-form">';
   comment_form($args);
   echo '</aside>';
 
