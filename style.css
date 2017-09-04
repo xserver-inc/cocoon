@@ -562,6 +562,10 @@ blockquote::after {
 .commets-list .avatar {
   float: right;
 }
+.commets-list .reply {
+  text-align: right;
+  font-size: 0.8em;
+}
 
 /************************************
 ** サイドバーのスタイル

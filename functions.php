@@ -123,3 +123,10 @@ class menu_description_walker extends Walker_Nav_Menu {
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
   }
 }
+
+//アップデートチェックの初期化
+require 'theme-update-checker.php'; //ライブラリのパス
+$example_update_checker = new ThemeUpdateChecker(
+  strtolower(THEME_NAME), //テーマフォルダ名
+  'http://example.com/example-theme/update-info.json' //JSONファイルのURL
+);
