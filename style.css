@@ -826,9 +826,8 @@ label.screen-reader-text {
   flex-direction: column;
 }
 .pager-post-navi a {
-  color: #333435;
-  text-decoration: none;
   padding: 10px;
+  margin: 0;
   display: inline-flex;
   align-items: center;
   line-height: 1.2;
@@ -871,11 +870,6 @@ label.screen-reader-text {
   font-size: 50px;
   text-align: center;
   color: #777879;
-}
-.pager-post-navi a:hover {
-  background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
-  color: #333435;
 }
 
 /************************************

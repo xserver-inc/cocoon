@@ -1,3 +1,4 @@
+<?php if (is_comment_allow() || have_comments()): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area">
   <section class="comment-list">
@@ -29,3 +30,5 @@
 
   ?>
 </div><!-- /.comment area -->
+<?php endif ?>
+

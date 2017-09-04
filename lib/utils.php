@@ -60,3 +60,12 @@ function get_the_tag_links(){
 function the_tag_links(){
   echo get_the_tag_links();
 }
+
+//コメントが許可されているか
+function is_comment_allow(){
+  global $post;
+  if ( isset($post->comment_status) ) {
+    return $post->comment_status == 'open';
+  }
+  return false;
+}
