@@ -58,7 +58,7 @@ a:hover {
 
 .header-container,
 .main,
-.sidebar
+.sidebar,
 .footer {
   background-color: #fff;
 }
@@ -69,12 +69,16 @@ a:hover {
   margin: 0 auto;
 }
 
+.content-in {
+  display: flex;
+}
+
 .main {
   width: 800px;
-  float: left;
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 3px;
+  margin-right: 20px;
 }
 
 /************************************
@@ -571,7 +575,6 @@ blockquote::after {
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
-  float: right;
   width: 336px;
   border: 1px solid transparent;
   padding: 9px;
@@ -915,6 +918,7 @@ label.screen-reader-text {
 
 .copyright {
   float: right;
+  margin-right: 10px;
 }
 
 /************************************!
@@ -1071,4 +1075,47 @@ input[type='submit'] {
 
 .comment-respond label {
   display: block;
+}
+
+@media screen and (max-width: 1240px) {
+  .content-in {
+    display: block;
+  }
+
+  .main,
+  .sidebar,
+  .wrap {
+    width: auto;
+    margin: 0;
+  }
+
+  .sidebar {
+    margin-top: 1em;
+    padding: 20px 29px;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .navi-footer,
+  .copyright {
+    float: none;
+    margin: 0;
+  }
+
+  .navi-footer-in > ul {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navi {
+    display: none;
+  }
+
+  .main {
+    padding: 5px;
+  }
+
+  .a-wrap {
+    padding: 0px;
+  }
 }

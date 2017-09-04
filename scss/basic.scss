@@ -61,7 +61,7 @@ a{
 
 .header-container,
 .main,
-.sidebar
+.sidebar,
 .footer{
   background-color: $bg_white;
 }
@@ -72,12 +72,17 @@ a{
   margin: 0 auto;
 }
 
+.content-in{
+  display: flex;
+}
+
 .main{
   width: $main_width;
-  float: left;
+  //float: left;
   padding: 20px $main_padding_width;
   border: $main_border_width $main_border_style $transparent_border_color;
   border-radius: $basic_border_radius;
+  margin-right: $main_sidebar;
 }
 
 

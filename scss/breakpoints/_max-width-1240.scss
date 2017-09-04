@@ -1,0 +1,15 @@
+.content-in{
+  display: block;
+}
+
+.main,
+.sidebar,
+.wrap{
+  width: auto;
+  margin: 0;
+}
+
+.sidebar{
+  margin-top: 1em;
+  padding: 20px $main_padding_width;
+}
