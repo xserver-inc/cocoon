@@ -274,6 +274,10 @@ img {
   color: #fff;
   background-color: rgba(51, 51, 51, 0.7);
   padding: 0px 4px;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .entry-card-content,
