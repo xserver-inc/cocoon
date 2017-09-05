@@ -13,15 +13,24 @@
   }
 }
 
-.e-card{
+.entry-card,
+.related-entry-card{
+  position: relative;
+}
+
+.entry-card-thumb,
+.related-entry-card-thumb{
+  float: left;
+  margin-top: $emtry_card_thumb_margin_top;
   position: relative;
 }
 
 .entry-card-thumb{
   width: 320px;
-  float: left;
-  margin-top: $emtry_card_thumb_margin_top;
-  position: relative;
+}
+
+.related-entry-card-thumb{
+  width: 160px;
 }
 
 .category-label{
@@ -34,9 +43,18 @@
   padding: 0px 4px;
 }
 
+.entry-card-content,
+.related-entry-card-content{
+  padding-bottom: 1.6em;
+}
+
 .entry-card-content{
   margin-left: 330px;
-  padding-bottom: 1em;
+}
+
+
+.related-entry-card-content{
+  margin-left: 170px;
 }
 
 .entry-card-title,
@@ -47,7 +65,8 @@
   margin-bottom: 5px;
 }
 
-.entry-card-snippet{
+.entry-card-snippet,
+.related-entry-card-snippet{
   font-size: $text_size_s;
 }
 
@@ -67,7 +86,8 @@
 //   margin-right: 2px;
 // }
 
-.card-meta {
+.entry-card-meta,
+.related-entry-card-meta {
   //text-align: right;
   bottom: 0;
   position: absolute;

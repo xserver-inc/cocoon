@@ -246,15 +246,24 @@ img {
   color: #333435;
 }
 
-.e-card {
+.entry-card,
+.related-entry-card {
+  position: relative;
+}
+
+.entry-card-thumb,
+.related-entry-card-thumb {
+  float: left;
+  margin-top: 4px;
   position: relative;
 }
 
 .entry-card-thumb {
   width: 320px;
-  float: left;
-  margin-top: 4px;
-  position: relative;
+}
+
+.related-entry-card-thumb {
+  width: 160px;
 }
 
 .category-label {
@@ -267,9 +276,17 @@ img {
   padding: 0px 4px;
 }
 
+.entry-card-content,
+.related-entry-card-content {
+  padding-bottom: 1.6em;
+}
+
 .entry-card-content {
   margin-left: 330px;
-  padding-bottom: 1em;
+}
+
+.related-entry-card-content {
+  margin-left: 170px;
 }
 
 .entry-card-title,
@@ -280,11 +297,13 @@ img {
   margin-bottom: 5px;
 }
 
-.entry-card-snippet {
+.entry-card-snippet,
+.related-entry-card-snippet {
   font-size: 0.8em;
 }
 
-.card-meta {
+.entry-card-meta,
+.related-entry-card-meta {
   bottom: 0;
   position: absolute;
   right: 0;
@@ -322,27 +341,6 @@ img {
 .related-entry-title,
 .comment-title {
   margin: 22px 0;
-}
-
-.related-entry-card-thumb {
-  float: left;
-  margin-top: 4px;
-  position: relative;
-  width: 160px;
-}
-
-.related-entry-card-content {
-  margin-left: 170px;
-  padding-bottom: 1em;
-}
-
-.related-entry-card-title {
-  font-size: 18px;
-  margin: 0;
-}
-
-.related-entry-card-snippet {
-  font-size: 0.8em;
 }
 
 /************************************
