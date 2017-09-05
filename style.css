@@ -372,8 +372,9 @@ img {
   margin-top: 24px;
 }
 
-/*エントリーの見出し*/
-.entry-title {
+/*エントリー・アーカイブの見出し*/
+.entry-title,
+.archive-title {
   font-size: 26px;
   margin: 16px 0;
   line-height: 1.3;

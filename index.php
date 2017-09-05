@@ -1,5 +1,15 @@
 <?php get_header(); ?>
 
+
+<?php
+////////////////////////////
+//アーカイブのタイトル
+////////////////////////////
+if (!is_home() && !is_search()) { ?>
+  <h1 id="archive-title" class="archive-title"><?php echo get_archive_chapter_text(); ?></h1>
+<?php } ?>
+
+
 <?php
 ////////////////////////////
 //一覧の繰り返し処理

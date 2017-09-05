@@ -130,3 +130,52 @@ $example_update_checker = new ThemeUpdateChecker(
   strtolower(THEME_NAME), //テーマフォルダ名
   'http://example.com/example-theme/update-info.json' //JSONファイルのURL
 );
+
+//アーカイブタイトルの取得
+if ( !function_exists( 'get_archive_chapter_title' ) ):
+function get_archive_chapter_title(){
+  $chapter_title = null;
+  if( is_category() ) {//カテゴリページの場合
+    $chapter_title .= single_cat_title( '<span class="fa fa-folder-open"></span>', false );
+  } elseif( is_tag() ) {//タグページの場合
+    $chapter_title .= single_tag_title( '<span class="fa fa-tags"></span>
+', false );
+  } elseif( is_tax() ) {//タクソノミページの場合
+    $chapter_title .= single_term_title( '', false );
+  } elseif (is_day()) {
+    //年月日のフォーマットを取得
+    $chapter_title .= '<span class="fa fa-calendar"></span>
+'.get_the_time('Y-m-n');
+  } elseif (is_month()) {
+    //年と月のフォーマットを取得
+    $chapter_title .= '<span class="fa fa-calendar"></span>
+'.get_the_time('Y-m');
+  } elseif (is_year()) {
+    //年のフォーマットを取得
+    $chapter_title .= '<span class="fa fa-calendar"></span>
+'.get_the_time('Y');
+  } elseif (is_author()) {//著書ページの場合
+    $chapter_title .= esc_html(get_queried_object()->display_name);
+  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+    $chapter_title .= 'Archives';
+  } else {
+    $chapter_title .= 'Archives';
+  }
+  return $chapter_title;
+}
+endif;
+
+//アーカイブ見出しの取得
+if ( !function_exists( 'get_archive_chapter_text' ) ):
+function get_archive_chapter_text(){
+  $chapter_text = null;
+  //アーカイブタイトル前
+  //$chapter_text .= '<span class="archive-title-pb">'.__( '"', THEME_NAME ).'</span><span class="archive-title-text">';
+  //アーカイブタイトルの取得
+  $chapter_text .= get_archive_chapter_title();
+  //アーカイブタイトル後
+  //$chapter_text .= '</span><span class="archive-title-pa">'.__( '"', THEME_NAME );//.'</span><span class="archive-title-list-text">'.get_theme_text_list().'</span>';
+  //返り値として返す
+  return $chapter_text;
+}
+endif;
