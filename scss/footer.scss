@@ -4,6 +4,7 @@
 
 .footer{
   margin-top: 20px;
+  padding-top: 10px;
 }
 
 .copyright{
@@ -12,14 +13,14 @@
 
 .footer-widgets {
   margin: 10px auto;
+  display: flex;
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
   box-sizing: border-box;
-  padding: 10px 15px;
-  float: left;
+  padding: 10px 16px;
   width: 33.33%;
 }
 

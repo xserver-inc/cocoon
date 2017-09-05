@@ -1,0 +1,40 @@
+.entry-card-snippet,
+.related-entry-card-snippet{
+	display: none;
+}
+
+.page-numbers{
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  margin-left: 0;
+}
+
+.pagination-next-link{
+  font-size: 1em;
+}
+
+
+.related-entry-card-thumb{
+  width: 38%;
+}
+
+.related-entry-card-content{
+  margin-left: 40%;
+}
+
+/*本文の見出し*/
+.entry-title,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6{
+	font-size: 20px;
+	padding: 8px;
+	margin: 6px 0 12px;
+}
+
+body{
+	font-size: 16px;
+}
