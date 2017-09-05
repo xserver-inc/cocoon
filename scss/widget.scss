@@ -49,7 +49,9 @@ label.screen-reader-text{
 .widget_categories,
 .widget_archive,
 .widget_pages,
-.widget_meta{
+.widget_meta,
+.widget_rss,
+.widget_nav_menu{
   ul{
     @include list_cancel;
 
@@ -78,6 +80,12 @@ label.screen-reader-text{
     }
   }
 
+}
+
+.widget_recent_comments{
+  li{
+    padding: 10px 0;
+  }
 }
 
 /*カレンダー*/
