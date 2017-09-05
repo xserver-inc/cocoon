@@ -7,7 +7,7 @@
 register_sidebars(1,
   array(
   'name' => __( 'サイドバー', THEME_NAME ),
-  'id' => 'sidebar-1',
+  'id' => 'sidebar',
   'description' => __( 'サイドバーのウィジットエリアです。', THEME_NAME ),
   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
   'after_widget' => '</aside>',

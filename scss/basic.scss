@@ -1,9 +1,11 @@
 /************************************
 ** 基本表示
 ************************************/
+/*初期化*/
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 
   &::selection {
     background: $select_bgc;
@@ -40,6 +42,7 @@ body {
 
 }
 
+/*デフォルトリンク*/
 a{
   //color: #006FAB;
 
@@ -72,17 +75,26 @@ a{
   margin: 0 auto;
 }
 
+/************************************
+** 本文部分
+************************************/
 .content-in{
   display: flex;
 }
 
 .main{
-  width: $main_width;
+  width: $main_outer_width;
+  height: 100%;
   //float: left;
   padding: 20px $main_padding_width;
   border: $main_border_width $main_border_style $transparent_border_color;
   border-radius: $basic_border_radius;
-  margin-right: $main_sidebar;
+  margin-right: $between_main_and_sidebar;
+}
+
+.main.no-sidebar{
+  margin: 0;
+  width: 100%;
 }
 
 

@@ -14,9 +14,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /************************************
 ** 基本表示
 ************************************/
+/*初期化*/
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 *::selection {
   background: #d8eaf2;
@@ -41,6 +43,7 @@ body {
   overflow-wrap: break-word;
 }
 
+/*デフォルトリンク*/
 a:hover {
   color: #BE0032;
 }
@@ -69,16 +72,25 @@ a:hover {
   margin: 0 auto;
 }
 
+/************************************
+** 本文部分
+************************************/
 .content-in {
   display: flex;
 }
 
 .main {
-  width: 800px;
+  width: 860px;
+  height: 100%;
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 3px;
   margin-right: 20px;
+}
+
+.main.no-sidebar {
+  margin: 0;
+  width: 100%;
 }
 
 /************************************
@@ -578,7 +590,7 @@ blockquote::after {
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
-  width: 336px;
+  width: 356px;
   border: 1px solid transparent;
   padding: 9px;
   border-radius: 3px;
@@ -902,7 +914,6 @@ label.screen-reader-text {
 .footer-left,
 .footer-center,
 .footer-right {
-  box-sizing: border-box;
   padding: 10px 16px;
   width: 33.33%;
 }
@@ -1001,7 +1012,6 @@ input[type='number'],
 textarea,
 select {
   padding: 12px;
-  box-sizing: border-box;
   border: 2px solid #cccfd2;
   font-size: 18px;
 }
