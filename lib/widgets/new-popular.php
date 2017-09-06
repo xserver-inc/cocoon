@@ -6,15 +6,15 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'new_popular',
-      __( '[S] 新着・人気記事', 'simplicity2' ),
-      array('description' => __( 'トップページで「人気記事」リストを、それ以外のページで「新着記事」リストを表示するSimplicityウィジェットです。（※要Wordpress Popular Postsプラグイン）', 'simplicity2' ))
+      __( '[S] 新着・人気記事', THEME_NAME ),
+      array('description' => __( 'トップページで「人気記事」リストを、それ以外のページで「新着記事」リストを表示するSimplicityウィジェットです。（※要Wordpress Popular Postsプラグイン）', THEME_NAME ))
     );
   }
   function widget($args, $instance) {
     extract( $args );
 
-    $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? __( '新着記事', 'simplicity2' ) : $instance['title_new'] );
-    $title_popular = apply_filters( 'widget_title_popular', empty($instance['title_popular']) ? __( '人気記事', 'simplicity2' ) : $instance['title_popular']);
+    $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? __( '新着記事', THEME_NAME ) : $instance['title_new'] );
+    $title_popular = apply_filters( 'widget_title_popular', empty($instance['title_popular']) ? __( '人気記事', THEME_NAME ) : $instance['title_popular']);
     $entry_count = empty($instance['entry_count']) ? 5 : absint( $instance['entry_count'] );
     $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? "default" : $instance['entry_type'], $instance );
     $is_pages_include = apply_filters( 'widget_is_pages_include', empty($instance['is_pages_include']) ? "" : $instance['is_pages_include'], $instance );
@@ -68,7 +68,7 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
           <?php if ($title_popular) {
             echo $title_popular;
           } else {
-            echo __( '人気記事', 'simplicity2' );
+            echo __( '人気記事', THEME_NAME );
           }
             ?>
           <?php echo $args['after_title']; ?>
@@ -97,7 +97,7 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
           <?php if ($title_new) {
             echo $title_new;
           } else {
-            echo __( '新着記事', 'simplicity2' );
+            echo __( '新着記事', THEME_NAME );
           }
             ?>
           <?php echo $args['after_title']; ?>
@@ -158,82 +158,82 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
     ?>
     <p>
       <label for="<?php echo $this->get_field_id('title_new'); ?>">
-        <?php _e( '新着記事のタイトル', 'simplicity2' ) ?>
+        <?php _e( '新着記事のタイトル', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('title_new'); ?>" name="<?php echo $this->get_field_name('title_new'); ?>" type="text" value="<?php echo $title_new; ?>" />
     </p>
 
     <p>
        <label for="<?php echo $this->get_field_id('title_popular'); ?>">
-        <?php _e( '人気記事のタイトル', 'simplicity2' ) ?>
+        <?php _e( '人気記事のタイトル', THEME_NAME ) ?>
        </label>
        <input class="widefat" id="<?php echo $this->get_field_id('title_popular'); ?>" name="<?php echo $this->get_field_name('title_popular'); ?>" type="text" value="<?php echo $title_popular; ?>" />
     </p>
     <?php //表示数入力フォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('entry_count'); ?>">
-        <?php _e( '表示数（半角数字、デフォルト：5）', 'simplicity2' ) ?>
+        <?php _e( '表示数（半角数字、デフォルト：5）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="text" value="<?php echo $entry_count; ?>" />
     </p>
     <?php //表示タイプフォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('entry_type'); ?>">
-        <?php _e( '表示タイプ', 'simplicity2' ) ?>
+        <?php _e( '表示タイプ', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="default" <?php echo ( ($entry_type == 'default' || !$entry_type ) ? ' checked="checked"' : ""); ?> /><?php _e( 'デフォルト', 'simplicity2' ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="large_thumb"<?php echo ($entry_type == 'large_thumb' ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', 'simplicity2' ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="large_thumb_on"<?php echo ($entry_type == 'large_thumb_on' ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', 'simplicity2' ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="default" <?php echo ( ($entry_type == 'default' || !$entry_type ) ? ' checked="checked"' : ""); ?> /><?php _e( 'デフォルト', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="large_thumb"<?php echo ($entry_type == 'large_thumb' ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="large_thumb_on"<?php echo ($entry_type == 'large_thumb_on' ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', THEME_NAME ) ?><br />
     </p>
     <?php //固定ページの表示 ?>
     <p>
       <label for="<?php echo $this->get_field_id('is_pages_include'); ?>">
-        <?php _e( '固定ページの表示（人気記事のみ）', 'simplicity2' ) ?>
+        <?php _e( '固定ページの表示（人気記事のみ）', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('is_pages_include'); ?>" name="<?php echo $this->get_field_name('is_pages_include'); ?>" type="checkbox" value="on"<?php echo ($is_pages_include ? ' checked="checked"' : ''); ?> /><?php _e( 'ランキングに固定ページを含める', 'simplicity2' ) ?>
+      <input class="widefat" id="<?php echo $this->get_field_id('is_pages_include'); ?>" name="<?php echo $this->get_field_name('is_pages_include'); ?>" type="checkbox" value="on"<?php echo ($is_pages_include ? ' checked="checked"' : ''); ?> /><?php _e( 'ランキングに固定ページを含める', THEME_NAME ) ?>
     </p>
     <?php //集計単位の指定 ?>
     <p>
       <label for="<?php echo $this->get_field_id('range'); ?>">
-        <?php _e( '集計単位（人気記事のみ）', 'simplicity2' ) ?>
+        <?php _e( '集計単位（人気記事のみ）', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="daily"<?php echo ($range == 'daily' ? ' checked="checked"' : ''); ?> /><?php _e( '1日', 'simplicity2' ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="weekly"<?php echo ($range == 'weekly' ? ' checked="checked"' : ''); ?> /><?php _e( '1週間', 'simplicity2' ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="monthly"<?php echo ($range == 'monthly' ? ' checked="checked"' : ''); ?> /><?php _e( '1ヶ月', 'simplicity2' ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="all"<?php echo ($range == null || $range == 'all' ? ' checked="checked"' : ''); ?> /><?php _e( '全期間', 'simplicity2' ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="daily"<?php echo ($range == 'daily' ? ' checked="checked"' : ''); ?> /><?php _e( '1日', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="weekly"<?php echo ($range == 'weekly' ? ' checked="checked"' : ''); ?> /><?php _e( '1週間', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="monthly"<?php echo ($range == 'monthly' ? ' checked="checked"' : ''); ?> /><?php _e( '1ヶ月', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('range'); ?>" name="<?php echo $this->get_field_name('range'); ?>" type="radio" value="all"<?php echo ($range == null || $range == 'all' ? ' checked="checked"' : ''); ?> /><?php _e( '全期間', THEME_NAME ) ?><br />
     </p>
     <?php //集計単位の表示 ?>
     <p>
       <label for="<?php echo $this->get_field_id('range_visible'); ?>">
-        <?php _e( '集計期間の表示（人気記事のみ）', 'simplicity2' ) ?>
+        <?php _e( '集計期間の表示（人気記事のみ）', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('range_visible'); ?>" name="<?php echo $this->get_field_name('range_visible'); ?>" type="checkbox" value="on"<?php echo ($range_visible ? ' checked="checked"' : ''); ?> /><?php _e( '集計単位の表示', 'simplicity2' ) ?>
+      <input class="widefat" id="<?php echo $this->get_field_id('range_visible'); ?>" name="<?php echo $this->get_field_name('range_visible'); ?>" type="checkbox" value="on"<?php echo ($range_visible ? ' checked="checked"' : ''); ?> /><?php _e( '集計単位の表示', THEME_NAME ) ?>
     </p>
     <?php //閲覧数の表示 ?>
     <p>
       <label for="<?php echo $this->get_field_id('is_views_visible'); ?>">
-        <?php _e( '閲覧数の表示（人気記事のみ）', 'simplicity2' ) ?>
+        <?php _e( '閲覧数の表示（人気記事のみ）', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('is_views_visible'); ?>" name="<?php echo $this->get_field_name('is_views_visible'); ?>" type="checkbox" value="on"<?php echo ($is_views_visible ? ' checked="checked"' : ''); ?> /><?php _e( '閲覧数の表示', 'simplicity2' ) ?>
+      <input class="widefat" id="<?php echo $this->get_field_id('is_views_visible'); ?>" name="<?php echo $this->get_field_name('is_views_visible'); ?>" type="checkbox" value="on"<?php echo ($is_views_visible ? ' checked="checked"' : ''); ?> /><?php _e( '閲覧数の表示', THEME_NAME ) ?>
     </p>
     <?php //ランキング順位の表示 ?>
     <p>
       <label for="<?php echo $this->get_field_id('is_ranking_visible'); ?>">
-        <?php _e( 'ランキング順位の表示（人気記事のみ）', 'simplicity2' ) ?>
+        <?php _e( 'ランキング順位の表示（人気記事のみ）', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('is_ranking_visible'); ?>" name="<?php echo $this->get_field_name('is_ranking_visible'); ?>" type="checkbox" value="on"<?php echo ($is_ranking_visible ? ' checked="checked"' : ''); ?> /><?php _e( 'ランキング順位の表示', 'simplicity2' ) ?>
+      <input class="widefat" id="<?php echo $this->get_field_id('is_ranking_visible'); ?>" name="<?php echo $this->get_field_name('is_ranking_visible'); ?>" type="checkbox" value="on"<?php echo ($is_ranking_visible ? ' checked="checked"' : ''); ?> /><?php _e( 'ランキング順位の表示', THEME_NAME ) ?>
     </p>
     <?php //除外する投稿ID（カンマ区切りで指定） ?>
     <p>
        <label for="<?php echo $this->get_field_id('exclude_ids'); ?>">
-        <?php _e( '除外する投稿ID（カンマ区切りで指定。※Popular Posts使用時のみ）', 'simplicity2' ) ?>
+        <?php _e( '除外する投稿ID（カンマ区切りで指定。※Popular Posts使用時のみ）', THEME_NAME ) ?>
        </label>
        <input class="widefat" id="<?php echo $this->get_field_id('exclude_ids'); ?>" name="<?php echo $this->get_field_name('exclude_ids'); ?>" type="text" value="<?php echo $exclude_ids; ?>" />
     </p>
     <?php //除外するカテゴリID（カンマ区切りで指定） ?>
     <p>
        <label for="<?php echo $this->get_field_id('exclude_category_ids'); ?>">
-        <?php _e( '除外するカテゴリID（カンマ区切りで指定。※Popular Posts使用時のみ）', 'simplicity2' ) ?>
+        <?php _e( '除外するカテゴリID（カンマ区切りで指定。※Popular Posts使用時のみ）', THEME_NAME ) ?>
        </label>
        <input class="widefat" id="<?php echo $this->get_field_id('exclude_category_ids'); ?>" name="<?php echo $this->get_field_name('exclude_category_ids'); ?>" type="text" value="<?php echo $exclude_category_ids; ?>" />
     </p>

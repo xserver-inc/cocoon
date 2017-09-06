@@ -6,7 +6,11 @@
 .sidebar,
 .wrap{
   width: auto;
-  margin: 0;
+}
+
+.main,
+.sidebar{
+  margin: 10px;
 }
 
 .sidebar{

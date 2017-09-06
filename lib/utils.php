@@ -69,3 +69,22 @@ function is_comment_allow(){
   }
   return false;
 }
+
+//現在のカテゴリをカンマ区切りテキストで取得する
+if ( !function_exists( 'get_category_ids' ) ):
+function get_category_ids(){
+  if ( is_single() ) {//投稿ページでは全カテゴリー取得
+    $categories = get_the_category();
+    $category_IDs = array();
+    foreach($categories as $category):
+      array_push( $category_IDs, $category -> cat_ID);
+    endforeach ;
+    return $category_IDs;
+  } elseif ( is_category() ) {//カテゴリページではトップカテゴリーのみ取得
+    $categories = get_the_category();
+    $cat_now = $categories[0];
+    return array( $cat_now->cat_ID );
+  }
+  return null;
+}
+endif;

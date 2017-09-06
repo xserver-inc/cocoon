@@ -19,7 +19,8 @@
 }
 
 .entry-card-thumb,
-.related-entry-card-thumb{
+.related-entry-card-thumb,
+.new-entry-card-thumb{
   float: left;
   margin-top: $emtry_card_thumb_margin_top;
   position: relative;
@@ -39,7 +40,7 @@
   left: 0px;
   font-size: 10px;
   color: $bg_white;
-  background-color: rgba(51,51,51,0.7);
+  background-color: $transpalent_black_bgc;
   padding: 0px 4px;
   max-width: 80%;
   white-space: nowrap;

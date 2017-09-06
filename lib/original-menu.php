@@ -10,7 +10,7 @@ add_action('admin_menu', 'add_original_menu_in_admin_page');
 //テーマ用のセッティングページメニューのページコンテンツを表示
 function add_theme_settings_page() {
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'original-page.php';
+  require_once 'original-pages.php';
 }
 
 ?>

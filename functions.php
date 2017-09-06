@@ -179,14 +179,3 @@ function get_archive_chapter_text(){
   return $chapter_text;
 }
 endif;
-
-if ( !function_exists( 'get_additional_main_classes' ) ):
-function get_additional_main_classes(){
-  $classes = null;
-  //サイドバーにウィジェットが入っていない場合
-  if (!is_active_sidebar( 'sidebar' )) {
-    $classes .= ' no-sidebar';
-  }
-  return $classes;
-}
-endif;

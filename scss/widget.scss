@@ -102,7 +102,7 @@ label.screen-reader-text{
   border-top-color: $x_thin;
   border-right-color: $x_thin;
   width: 100%;
-  max-width: 400px;
+  max-width: $widget_max_width;
 
   caption {
     font-weight: bold;
@@ -154,5 +154,83 @@ label.screen-reader-text{
       }
     }
 
+  }
+}
+
+/************************************
+** 新着記事ウィジェット（デフォルト）
+************************************/
+.new-entriy-cards{
+  .a-wrap{
+    padding: 5px 3px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .new-entry-card{
+    font-size: $text_size_s;
+  }
+
+  .new-entry-card-thumb{
+    width: 120px;
+  }
+
+  .new-entry-card-content{
+    margin-left: 124px;
+  }
+}
+
+/************************************
+** 新着記事ウィジェット（大きなサムネイル）
+************************************/
+.new-entriy-cards.not-default{
+  .a-wrap{
+    max-width: $widget_max_width;
+  }
+  .new-entry-card{
+    font-size: $text_size_default;
+  }
+
+  .new-entry-card-thumb{
+    float: none;
+    width: 100%;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .new-entry-card-content{
+    margin: 0 0 0.5em;
+  }
+}
+
+
+/************************************
+** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
+************************************/
+.new-entriy-cards.large-thumb-on{
+  .a-wrap{
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+
+  .new-entry-card{
+    position: relative;
+  }
+
+  .new-entry-card-content{
+    margin: 0;
+  }
+
+  .new-entry-card-title{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 5px;
+    background-color: $transpalent_black_bgc;
+    color: $white_text_color;
+    max-height: 30%;
   }
 }

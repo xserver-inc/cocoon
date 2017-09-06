@@ -6,6 +6,7 @@ $Meiryo_font: "Meiryo", sans-serif;
 $text_color: #333435;
 $pallid_text_color: #777879;
 $x_pallid_text_color: #999a9b;
+$white_text_color: #fff;
 
 //テキストサイズ
 $text_size_default: 18px;
@@ -25,6 +26,7 @@ $xxx_thin: #fafbfc;
 $bg_white: #fff;
 $current_bgc: #eeeff0;
 $select_bgc: #d8eaf2;
+$transpalent_black_bgc: rgba(51,51,51,0.7);
 
 //要素の丸め
 $basic_border_radius: 3px;
@@ -51,6 +53,9 @@ $main_outer_width: $main_inner_width + $main_border_width*2 + $main_padding_widt
 $sidebar_outer_width: $sidebar_inner_width + $sidebar_border_width*2 + $sidebar_padding_width*2;
 
 $site_width: $main_outer_width + $between_main_and_sidebar + $sidebar_outer_width;
+
+//ウィジェットの最大幅
+$widget_max_width: 400px;
 
 
 $emtry_card_thumb_margin_top: 4px;
