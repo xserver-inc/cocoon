@@ -36,7 +36,9 @@ function customize_admin_add_column($column_name, $post_id) {
 }
 //アイキャッチ画像の列の幅をCSSで調整
 function customize_admin_css_list() {
-    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
+    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+    //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
     //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
 //カラムの挿入

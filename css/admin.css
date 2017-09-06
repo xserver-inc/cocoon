@@ -13,3 +13,16 @@
   background-color: #ddd;
   padding: 12px;
 }
+
+/*設定項目のヒント*/
+.form-table td p.tips{
+  font-size: 12px;
+  font-style: italic;
+}
+
+.form-table td p.tips::before{
+  font-family: FontAwesome;
+  content: '\f05a';
+  margin-right: 4px;
+  font-style: normal;
+}
