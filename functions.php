@@ -1,5 +1,6 @@
 <?php
 require_once 'lib/defins.php'; //定数を定義
+require_once 'lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
 
 
 //本文部分の冒頭を綺麗に抜粋する
@@ -179,3 +180,4 @@ function get_archive_chapter_text(){
   return $chapter_text;
 }
 endif;
+

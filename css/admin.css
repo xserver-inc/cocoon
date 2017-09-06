@@ -1,0 +1,15 @@
+/*記事一覧のサムネイル幅*/
+.column-thumbnail{
+  width:80px;
+}
+
+.admin-custum-label{
+  margin-left: -30px;
+  margin-top: 20px;
+  margin-bottom: -16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #ddd;
+  padding: 12px;
+}
