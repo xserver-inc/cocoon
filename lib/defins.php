@@ -11,6 +11,8 @@ define('SETTING_NAME_TOP', THEME_NAME.__( ' 設定', THEME_NAME ));
 define('ET_DEFAULT', 'defalt');
 define('ET_LARGE_THUMB', 'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
+//ウィジェットモードデフォルト
+define('WM_DEFAULT', 'all');
 
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');

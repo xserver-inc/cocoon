@@ -13,13 +13,13 @@ class NewEntryWidgetItem extends WP_Widget {
   function widget($args, $instance) {
     extract( $args );
     //ウィジェットモード（全ての新着記事を表示するか、カテゴリ別に表示するか）
-    $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? 'all' : $instance['widget_mode'] );
+    $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
-    $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? __( '新着記事', THEME_NAME ) : $instance['title_new'] );
+    $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
     //表示数を取得
     $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? 5 : $instance['entry_count'] );
-    $is_top_visible = apply_filters( 'widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
-    $entry_type = apply_filters( 'widget_is_top_visible', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    //$is_top_visible = apply_filters( 'widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
+    $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //表示数をグローバル変数に格納
     //ウィジェットモード
     global $g_widget_mode;
@@ -28,7 +28,7 @@ class NewEntryWidgetItem extends WP_Widget {
     //表示タイプをグローバル変数に格納
     global $g_entry_type;
     //ウィジェットモードが設定されてない場合はall（全て表示）にする
-    if ( !$widget_mode ) $widget_mode = 'all';
+    if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
     $g_widget_mode = $widget_mode;
     //表示数が設定されていない時は5にする
     if ( !$entry_count ) $entry_count = 5;
@@ -39,7 +39,7 @@ class NewEntryWidgetItem extends WP_Widget {
 
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての新着記事」のとき
-               ( ($widget_mode == 'all') && ($is_top_visible || !is_home()) ) ||
+               ($widget_mode == WM_DEFAULT) ||
                //「表示モード」が「カテゴリ別新着記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
@@ -47,10 +47,10 @@ class NewEntryWidgetItem extends WP_Widget {
       if ($title_new) {
         echo $title_new;//タイトルが設定されている場合は使用する
       } else {
-        if ( $widget_mode == 'all' ) {//全ての表示モードの時は
-          echo __( '新着記事', THEME_NAME );
+        if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
+          _e( '新着記事', THEME_NAME );
         } else {
-          echo __( 'カテゴリー別新着記事', THEME_NAME );
+          _e( 'カテゴリー別新着記事', THEME_NAME );
         }
         //echo '新着記事';
       }
@@ -68,7 +68,7 @@ class NewEntryWidgetItem extends WP_Widget {
     $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
     $instance['title_new'] = strip_tags($new_instance['title_new']);
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
-    $instance['is_top_visible'] = strip_tags($new_instance['is_top_visible']);
+    //$instance['is_top_visible'] = strip_tags($new_instance['is_top_visible']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
       return $instance;
   }
@@ -78,14 +78,14 @@ class NewEntryWidgetItem extends WP_Widget {
         'widget_mode' => null,
         'title_new' => null,
         'entry_count' => null,
-        'is_top_visible' => null,
+        //'is_top_visible' => null,
         'entry_type' => null,
       );
     }
     $widget_mode = esc_attr($instance['widget_mode']);
     $title_new = esc_attr($instance['title_new']);
     $entry_count = esc_attr($instance['entry_count']);
-    $is_top_visible = esc_attr($instance['is_top_visible']);
+    //$is_top_visible = esc_attr($instance['is_top_visible']);
     $entry_type = esc_attr($instance['entry_type']);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -93,7 +93,7 @@ class NewEntryWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('widget_mode'); ?>">
         <?php _e( '表示モード', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="all" <?php echo ( ($widget_mode == 'all' || !$widget_mode ) ? ' checked="checked"' : ""); ?> /><?php _e( '全ての新着記事（全ページで表示）', THEME_NAME ) ?><br />
+      <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="all" <?php echo ( ($widget_mode == WM_DEFAULT || !$widget_mode ) ? ' checked="checked"' : ""); ?> /><?php _e( '全ての新着記事（全ページで表示）', THEME_NAME ) ?><br />
       <input class="widefat" id="<?php echo $this->get_field_id('widget_mode'); ?>" name="<?php echo $this->get_field_name('widget_mode'); ?>"  type="radio" value="category"<?php echo ($widget_mode == 'category' ? ' checked="checked"' : ""); ?> /><?php _e( 'カテゴリ別新着記事（投稿・カテゴリで表示）', THEME_NAME ) ?><br />
     </p>
     <?php //タイトル入力フォーム ?>
@@ -108,7 +108,7 @@ class NewEntryWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('entry_count'); ?>">
         <?php _e( '表示数（半角数字、デフォルト：5）', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="text" value="<?php echo $entry_count; ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : 5; ?>" />
     </p>
     <?php //表示タイプフォーム ?>
     <p>
@@ -119,16 +119,6 @@ class NewEntryWidgetItem extends WP_Widget {
       <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB; ?>"<?php echo ($entry_type == ET_LARGE_THUMB ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', THEME_NAME ) ?><br />
       <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB_ON; ?>"<?php echo ($entry_type == ET_LARGE_THUMB_ON ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', THEME_NAME ) ?><br />
     </p>
-    <?php //TOPページ表示 ?>
-    <?php if ( $widget_mode == 'all' || $widget_mode == null ): ?>
-    <p>
-      <label for="<?php echo $this->get_field_id('is_top_visible'); ?>">
-        <?php _e( '全てのページで表示', THEME_NAME ) ?>
-      </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('is_top_visible'); ?>" name="<?php echo $this->get_field_name('is_top_visible'); ?>" type="checkbox" value="on"<?php echo ($is_top_visible ? ' checked="checked"' : ''); ?> /><?php _e( '表示する<br>※新着順のインデックスリストが表示されるトップでも表示する場合はチェックしてください。<br>※「表示モード」が「全ての新着記事」のときのみ有効な機能です。', THEME_NAME ) ?>
-    </p>
-    <?php endif ?>
-
     <?php
   }
 }

@@ -900,7 +900,7 @@ label.screen-reader-text {
   font-size: 0.8em;
 }
 /* line 174, scss/widget.scss */
-.new-entriy-cards .new-entry-card-thumb {
+.new-entriy-cards figure {
   width: 120px;
 }
 /* line 178, scss/widget.scss */
@@ -915,41 +915,41 @@ label.screen-reader-text {
 .new-entriy-cards.not-default .a-wrap {
   max-width: 400px;
 }
-/* line 190, scss/widget.scss */
-.new-entriy-cards.not-default .new-entry-card {
+/* line 191, scss/widget.scss */
+.new-entriy-cards.not-default .e-card {
   font-size: 18px;
 }
-/* line 194, scss/widget.scss */
-.new-entriy-cards.not-default .new-entry-card-thumb {
+/* line 195, scss/widget.scss */
+.new-entriy-cards.not-default figure {
   float: none;
   width: 100%;
 }
-/* line 198, scss/widget.scss */
-.new-entriy-cards.not-default .new-entry-card-thumb img {
+/* line 199, scss/widget.scss */
+.new-entriy-cards.not-default figure img {
   width: 100%;
 }
-/* line 203, scss/widget.scss */
-.new-entriy-cards.not-default .new-entry-card-content {
+/* line 204, scss/widget.scss */
+.new-entriy-cards.not-default .card-content {
   margin: 0 0 0.5em;
 }
 
 /************************************
 ** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
 ************************************/
-/* line 214, scss/widget.scss */
+/* line 215, scss/widget.scss */
 .new-entriy-cards.large-thumb-on .a-wrap:hover {
   opacity: 0.7;
 }
-/* line 219, scss/widget.scss */
-.new-entriy-cards.large-thumb-on .new-entry-card {
+/* line 220, scss/widget.scss */
+.new-entriy-cards.large-thumb-on .e-card {
   position: relative;
 }
-/* line 223, scss/widget.scss */
-.new-entriy-cards.large-thumb-on .new-entry-card-content {
+/* line 224, scss/widget.scss */
+.new-entriy-cards.large-thumb-on .card-content {
   margin: 0;
 }
-/* line 227, scss/widget.scss */
-.new-entriy-cards.large-thumb-on .new-entry-card-title {
+/* line 228, scss/widget.scss */
+.new-entriy-cards.large-thumb-on .card-title {
   position: absolute;
   width: 100%;
   bottom: 0;

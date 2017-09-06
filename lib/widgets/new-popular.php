@@ -174,7 +174,7 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('entry_count'); ?>">
         <?php _e( '表示数（半角数字、デフォルト：5）', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="text" value="<?php echo $entry_count; ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count; ?>" />
     </p>
     <?php //表示タイプフォーム ?>
     <p>

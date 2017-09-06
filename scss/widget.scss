@@ -171,7 +171,7 @@ label.screen-reader-text{
     font-size: $text_size_s;
   }
 
-  .new-entry-card-thumb{
+  figure{
     width: 120px;
   }
 
@@ -187,11 +187,12 @@ label.screen-reader-text{
   .a-wrap{
     max-width: $widget_max_width;
   }
-  .new-entry-card{
+
+  .e-card{
     font-size: $text_size_default;
   }
 
-  .new-entry-card-thumb{
+  figure{
     float: none;
     width: 100%;
 
@@ -200,7 +201,7 @@ label.screen-reader-text{
     }
   }
 
-  .new-entry-card-content{
+  .card-content{
     margin: 0 0 0.5em;
   }
 }
@@ -216,15 +217,15 @@ label.screen-reader-text{
     }
   }
 
-  .new-entry-card{
+  .e-card{
     position: relative;
   }
 
-  .new-entry-card-content{
+  .card-content{
     margin: 0;
   }
 
-  .new-entry-card-title{
+  .card-title{
     position: absolute;
     width: 100%;
     bottom: 0;
