@@ -235,3 +235,71 @@ label.screen-reader-text{
     max-height: 30%;
   }
 }
+
+/************************************
+** 最近のコメントウィジェット
+************************************/
+.recent-comments{
+  line-height: 1.3;
+  .a-wrap{
+    &:hover{
+      .recent-comment-content{
+        background-color: $bgc_hover_color;
+      }
+    }
+  }
+}
+
+.recent-comment-avatar{
+  float: left;
+  margin-right: 10px;
+}
+
+.recent-comment-author{
+  font-weight: bold;
+}
+
+.recent-comment-info,
+.recent-comment-article{
+  font-size: $text_size_s;
+}
+
+.recent-comment-article{
+  margin-top: 3px;
+  &::before{
+    @include fontawsome('\f0c1');
+  }
+}
+
+.recent-comment-content {
+  position: relative;
+  background: $bg_white;
+  border: 2px solid $thin;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+  &::after, &::before {
+    top: 100%;
+    left: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: $bg_white;
+    border-width: 6px;
+    margin-left: -6px;
+  }
+  &::before {
+    border-color: rgba(221, 221, 221, 0);
+    border-top-color: $thin;
+    border-width: 9px;
+    margin-left: -9px;
+  }
+}

@@ -960,6 +960,81 @@ label.screen-reader-text {
 }
 
 /************************************
+** 最近のコメントウィジェット
+************************************/
+/* line 242, scss/widget.scss */
+.recent-comments {
+  line-height: 1.3;
+}
+/* line 246, scss/widget.scss */
+.recent-comments .a-wrap:hover .recent-comment-content {
+  background-color: #f5f8fa;
+}
+
+/* line 253, scss/widget.scss */
+.recent-comment-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 258, scss/widget.scss */
+.recent-comment-author {
+  font-weight: bold;
+}
+
+/* line 262, scss/widget.scss */
+.recent-comment-info,
+.recent-comment-article {
+  font-size: 0.8em;
+}
+
+/* line 267, scss/widget.scss */
+.recent-comment-article {
+  margin-top: 3px;
+}
+/* line 269, scss/widget.scss */
+.recent-comment-article::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+/* line 274, scss/widget.scss */
+.recent-comment-content {
+  position: relative;
+  background: #fff;
+  border: 2px solid #cccdce;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+/* line 282, scss/widget.scss */
+.recent-comment-content::after, .recent-comment-content::before {
+  top: 100%;
+  left: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 293, scss/widget.scss */
+.recent-comment-content::after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 6px;
+  margin-left: -6px;
+}
+/* line 299, scss/widget.scss */
+.recent-comment-content::before {
+  border-color: rgba(221, 221, 221, 0);
+  border-top-color: #cccdce;
+  border-width: 9px;
+  margin-left: -9px;
+}
+
+/************************************
 ** ページネーション
 ************************************/
 /* line 23, scss/pagination.scss */

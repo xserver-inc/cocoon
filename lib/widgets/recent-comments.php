@@ -34,7 +34,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
         }
         echo $args['after_title'];
         ?>
-        <dl class="recent-comments">
+        <dl class="recent-comments cf">
           <?php
           $comments_args = array(
             'author__not_in' => $author_not_in ? 1 : 0, // 管理者は除外
@@ -48,40 +48,51 @@ class RecentCommentsWidgetItem extends WP_Widget {
           //コメントループ
           if ( $comments ) {
             foreach ( $comments as $comment ) {
-              $url = get_permalink($comment->comment_post_ID);
-              echo '<dt>';
-              echo get_avatar( $comment, '38', null );
-              echo '</dt>';
+              //var_dump($comment);
+              $url = get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID;
+              $title = $comment->post_title;
+              $avatar = get_avatar( $comment, '42', null );
+              $author = get_comment_author($comment->comment_ID);
+              $date = get_comment_date( 'Y.m.d', $comment->comment_ID);
+              $comment_content = strip_tags($comment->comment_content);
+              if(mb_strlen($comment_content,"UTF-8") > $str_count) {
+                $comment_content = mb_substr($comment_content, 0, $str_count).'...';
+              }?>
+                <div class="recent-comments cf">
+                  <a class="recent-comment-link a-wrap cf" href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+                    <div class="recent-comment cf">
+                      <div class="recent-comment-content">
+                        <?php echo $comment_content; ?>
+                      </div>
+                      <div class="recent-comment-info cf">
+                        <figure class="recent-comment-avatar">
+                          <?php echo $avatar; ?>
+                        </figure>
+                        <div class="recent-comment-author">
+                          <?php echo $author; ?>
+                        </div>
+                        <div class="recent-comment-date">
+                          <?php echo $date; ?>
+                        </div>
+                      </div>
+                      <div class="recent-comment-article"><?php echo $title; ?>
+                      </div>
+                    </div><!-- /.recent-comment -->
+                  </a>
+                </div><!-- /.recent-comments -->
+                <?php
+              // } else {
+              //   echo $my_pre_comment_content;
+              // };
+              // echo '</div>';
 
-              echo '<dd>';
-              echo '<div class="recent-comment-author">';
-              comment_author($comment->comment_ID);
-              echo '</div>';
-
-              echo '<div class="recent-comment-date">';
-              echo comment_date( 'Y.m.d', $comment->comment_ID);
-              echo '</div>';
-
-              echo '<div class="recent-comment-title">';
-              echo '<a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.$comment->post_title.'</a>';
-              echo '</div>';
-
-              echo '<div class="recent-comment-content"><span class="fa fa-comment-o"></span>&nbsp;';
-              $my_pre_comment_content = strip_tags($comment->comment_content);
-              if(mb_strlen($my_pre_comment_content,"UTF-8") > $str_count) {
-                $my_comment_content = mb_substr($my_pre_comment_content, 0, $str_count) ; echo $my_comment_content. '...' ;
-              } else {
-                echo $my_pre_comment_content;
-              };
-              echo '</div>';
-
-              echo '</dd>';
+              // echo '</dd>';
             }
-          } else {
-            echo __( 'コメントなし', THEME_NAME );
+          } else { ?>
+            <p><?php _e( 'コメントなし', THEME_NAME ) ?></p>
+          <?php
           }
           ?>
-        </dl>
       <?php echo $args['after_widget']; ?>
     <?php
   }
