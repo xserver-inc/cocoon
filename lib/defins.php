@@ -34,3 +34,5 @@ require_once 'additional-classes.php'; //スタイリング用の追加クラス
 
 //新着記事ウィジェット
 require_once('widgets/new-entries.php');
+//最近のコメントウィジェット
+require_once('widgets/recent-comments.php');

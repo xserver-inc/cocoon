@@ -6,15 +6,15 @@ class RecentCommentsWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'recent_comments',
-      __( '[S] 最近のコメント', 'simplicity2' ),//ウイジェット名
-      array('description' => __( '最近投稿されたコメントを表示するウィジェットです。', 'simplicity2' ))
+      WIDGET_NAME_PREFIX.__( '最近のコメント', THEME_NAME ),//ウイジェット名
+      array('description' => __( '最近投稿されたコメントを表示するウィジェットです。', THEME_NAME ))
     );
   }
   function widget($args, $instance) {
     extract( $args );
 
     //タイトル名を取得
-    $title = apply_filters( 'widget_recent_comment_title', empty($instance['title']) ? __( '最近のコメント', 'simplicity2' ) : $instance['title'] );
+    $title = apply_filters( 'widget_recent_comment_title', empty($instance['title']) ? __( '最近のコメント', THEME_NAME ) : $instance['title'] );
     //コメント表示数
     $count = apply_filters( 'widget_recent_comment_count', empty($instance['count']) ? 5 : absint( $instance['count'] ) );
     //コメント文字数
@@ -30,7 +30,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
         if ($title) {
           echo $title;//タイトルが設定されている場合は使用する
         } else {
-          echo __( '最近のコメント', 'simplicity2' );
+          echo __( '最近のコメント', THEME_NAME );
         }
         echo $args['after_title'];
         ?>
@@ -59,7 +59,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
               echo '</div>';
 
               echo '<div class="recent-comment-date">';
-              echo comment_date( get_theme_text_date_format(), $comment->comment_ID);
+              echo comment_date( 'Y.m.d', $comment->comment_ID);
               echo '</div>';
 
               echo '<div class="recent-comment-title">';
@@ -78,7 +78,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
               echo '</dd>';
             }
           } else {
-            echo __( 'コメントなし', 'simplicity2' );
+            echo __( 'コメントなし', THEME_NAME );
           }
           ?>
         </dl>
@@ -110,30 +110,30 @@ class RecentCommentsWidgetItem extends WP_Widget {
     <?php //タイトル入力フォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('title'); ?>">
-      <?php _e( 'タイトル', 'simplicity2' ) ?>
+      <?php _e( 'タイトル', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>
     <?php //表示するコメント数 ?>
     <p>
       <label for="<?php echo $this->get_field_id('count'); ?>">
-        <?php _e( '表示するコメント数', 'simplicity2' ) ?>
+        <?php _e( '表示するコメント数', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" type="number" min="3" max="30" value="<?php echo $count; ?>" />
     </p>
     <?php //コメント文字数 ?>
     <p>
       <label for="<?php echo $this->get_field_id('str_count'); ?>">
-        <?php _e( 'コメント文字数', 'simplicity2' ) ?>
+        <?php _e( 'コメント文字数', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('str_count'); ?>" name="<?php echo $this->get_field_name('str_count'); ?>" type="number" min="30" value="<?php echo $str_count; ?>" />
     </p>
     <?php //管理者の除外 ?>
     <p>
       <label for="<?php echo $this->get_field_id('author_not_in'); ?>">
-        <?php _e( '管理者の除外', 'simplicity2' ) ?>
+        <?php _e( '管理者の除外', THEME_NAME ) ?>
       </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('author_not_in'); ?>" name="<?php echo $this->get_field_name('author_not_in'); ?>" type="checkbox" value="on"<?php echo ($author_not_in ? ' checked="checked"' : ''); ?> /><?php _e( '管理者のコメントを表示しない', 'simplicity2' ) ?>
+      <input class="widefat" id="<?php echo $this->get_field_id('author_not_in'); ?>" name="<?php echo $this->get_field_name('author_not_in'); ?>" type="checkbox" value="on"<?php echo ($author_not_in ? ' checked="checked"' : ''); ?> /><?php _e( '管理者のコメントを表示しない', THEME_NAME ) ?>
     </p>
     <?php
   }
