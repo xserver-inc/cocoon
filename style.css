@@ -1829,6 +1829,12 @@ input[type='submit'] {
   .entry-card-content {
     margin-left: 40%;
   }
+
+  table th,
+  table td {
+    padding: 3px;
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 480px) {
   .entry-card-snippet,

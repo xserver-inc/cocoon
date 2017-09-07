@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-09-02 21:50+0900\n"
-"PO-Revision-Date: 2017-09-02 21:52+0900\n"
+"POT-Creation-Date: 2017-09-07 21:52+0900\n"
+"PO-Revision-Date: 2017-09-07 22:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,81 +15,171 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: comments.php:4
+#: comments.php:5
 msgid "コメント"
 msgstr "Comments"
 
-#: comments.php:23
+#: comments.php:24
 msgid "コメントをどうぞ"
 msgstr "Leave a Reply"
 
-#: comments.php:24
+#: comments.php:25
 msgid "コメントを送信"
 msgstr "Post Comment"
 
-#: index.php:15
+#: index.php:25
 msgid "投稿が見つかりませんでした。"
 msgstr "Posts could not be found"
 
-#: lib/admin.php:23
+#: lib/admin.php:25
 msgid "アイキャッチ"
 msgstr "Featured Image"
 
-#: lib/admin.php:56
+#: lib/admin.php:79
 msgid "管理メニュー"
 msgstr "Admin Menus"
 
-#: lib/admin.php:68
+#: lib/admin.php:91
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:75
+#: lib/admin.php:98
 msgid "投稿一覧"
 msgstr "Posts"
 
-#: lib/admin.php:82
+#: lib/admin.php:105
 msgid "固定ページ一覧"
 msgstr "Pages"
 
-#: lib/admin.php:89
+#: lib/admin.php:112
 msgid "メディア一覧"
 msgstr "Media"
 
-#: lib/admin.php:96
+#: lib/admin.php:119
 msgid "テーマ"
 msgstr "Themes"
 
-#: lib/admin.php:103
+#: lib/admin.php:126
 msgid "カスタマイズ"
 msgstr "Customize"
 
-#: lib/admin.php:110
+#: lib/admin.php:133
 msgid "ウィジェット"
 msgstr "Widgets"
 
-#: lib/admin.php:117
+#: lib/admin.php:140
 msgid "メニュー"
 msgstr "Menus"
 
-#: lib/admin.php:124
+#: lib/admin.php:147
 msgid "テーマの編集"
 msgstr "Edit themes"
 
-#: lib/admin.php:131
+#: lib/admin.php:154
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:142
+#: lib/admin.php:172
 msgid "公開"
 msgstr "Publish"
 
-#: lib/admin.php:143
+#: lib/admin.php:173
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure to publish the page?"
 
-#: lib/admin.php:248
+#: lib/admin.php:278
 msgid "カテゴリー検索"
 msgstr "Category Search"
+
+#: lib/defins.php:10
+msgid " 設定"
+msgstr "Settings"
+
+#: lib/original-menu.php:14
+msgid "このページにアクセスする管理者権限がありません。"
+msgstr "You do not have administrator permissions to access this page."
+
+#: lib/original-pages.php:28
+msgid "設定は保存されました。"
+msgstr "Settings have been saved."
+
+#: lib/original-pages.php:43
+msgid "広告"
+msgstr "Ads"
+
+#: lib/original-pages.php:44 lib/widgets/mobile-text.php:53
+#: lib/widgets/pc-text.php:54 lib/widgets/recent-comments.php:124
+msgid "タイトル"
+msgstr "Title"
+
+#: lib/original-pages.php:45
+msgid "SEO"
+msgstr "SEO"
+
+#: lib/original-pages/ads-forms.php:7
+msgid "広告の表示"
+msgstr "Ads display"
+
+#: lib/original-pages/ads-forms.php:10
+#, fuzzy
+msgid "全ての広告を表示する"
+msgstr "To view all ads"
+
+#: lib/original-pages/ads-forms.php:11
+msgid "全ての広告の表示を切り替えます。"
+msgstr "Toggles display of all advertising."
+
+#: lib/original-pages/ads-forms.php:18
+msgid "広告コード"
+msgstr "Ad code"
+
+#: lib/original-pages/ads-forms.php:21
+msgid "AdSenseのレスポンシブコードを入力してください"
+msgstr "Enter your responsive AdSense code"
+
+#: lib/original-pages/ads-forms.php:22
+msgid "AdSenseのレスポンシブ広告コードを入力してください。"
+msgstr "Please enter a responsive AdSense ad code."
+
+#: lib/original-pages/ads-forms.php:30
+msgid "広告ラベル"
+msgstr "Ad label text"
+
+#: lib/original-pages/ads-forms.php:33
+msgid "「スポンサーリンク」か「広告」推奨"
+msgstr "\"Sponsored links\" or \"advertisements\" recommended"
+
+#: lib/original-pages/ads-forms.php:34
+#, fuzzy
+msgid "広告上部ラベルに表示されるテキストの入力です。"
+msgstr "Is the text that appears in the ad at the top labeled input."
+
+#: lib/original-pages/ads-forms.php:42
+msgid "広告除外記事ID"
+msgstr "Ad exclusion post IDs"
+
+#: lib/original-pages/ads-forms.php:45 lib/original-pages/ads-forms.php:56
+msgid "例：111,222,3333"
+msgstr "Ex: 111222, 3333"
+
+#: lib/original-pages/ads-forms.php:46
+#, fuzzy
+msgid ""
+"広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
+msgstr "ID of the ad to posts and static pages, (comma) should be separated."
+
+#: lib/original-pages/ads-forms.php:53
+msgid "広告除外カテゴリーID"
+msgstr "Ad exclusion category IDs"
+
+#: lib/original-pages/ads-forms.php:57
+#, fuzzy
+msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
+msgstr "The ID of the category to hide ads, (comma) should be separated."
+
+#: lib/original-pages/ads-funcs.php:32
+msgid "スポンサーリンク"
+msgstr "Sponsored Links"
 
 #: lib/widget-areas.php:9
 msgid "サイドバー"
@@ -314,6 +404,445 @@ msgstr "404 Page"
 msgid "404ページをカスタマイズするためのウィジットエリアです。"
 msgstr "Widget area for customizing 404 pages."
 
+#: lib/widgets/classic-text.php:8
+#, fuzzy
+msgid ""
+"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビ"
+"ジュアルエディターのないテキストウィジェット）。"
+msgstr "Old type text widget with only text editor (without visual editor)."
+
+#: lib/widgets/classic-text.php:10
+#, fuzzy
+msgid "[S] クラシックテキスト"
+msgstr "[S] Clasic Text"
+
+#: lib/widgets/classic-text.php:50
+#, fuzzy
+#| msgid "投稿タイトル上"
+msgid "タイトル："
+msgstr "Title:"
+
+#: lib/widgets/classic-text.php:53
+#, fuzzy
+msgid "内容："
+msgstr "Content :"
+
+#: lib/widgets/classic-text.php:56
+#, fuzzy
+msgid "自動的に段落を追加する"
+msgstr "Automatically add paragraphs"
+
+#: lib/widgets/facebook-page-like.php:9
+#, fuzzy
+msgid "[S] Facebookページ「いいね！」"
+msgstr "[S] Facebook 'LIKE!\" Button"
+
+#: lib/widgets/facebook-page-like.php:10
+#, fuzzy
+msgid ""
+"投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタン"
+"を表示するSimplicity用ウィジェットです。（※「Facebookページ」のみで利用できま"
+"す。「個人ページ」で設定されている場合は利用できません）"
+msgstr "Facebook page widget. (* It can be used only on \"Facebook page\".)"
+
+#: lib/widgets/facebook-page-like.php:55
+#, fuzzy
+msgid "タイトル（未入力で非表示）"
+msgstr "Title"
+
+#: lib/widgets/facebook-page-like.php:62
+#, fuzzy
+msgid "メッセージ"
+msgstr "Message"
+
+#: lib/widgets/facebook-page-like.php:65
+#, fuzzy, php-format
+msgid ""
+"この記事をお届けした<br>%sの最新ニュース情報を、<br><span class=\"bold-red\">"
+"いいね</span>してチェックしよう！"
+msgstr "aa"
+
+#: lib/widgets/mobile-ad.php:9
+#, fuzzy
+msgid "[S] モバイル用広告"
+msgstr "[S] Ad for Mobile"
+
+#: lib/widgets/mobile-ad.php:10
+#, fuzzy
+msgid ""
+"モバイルのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの場"
+"合は広告コードのみを記入してください。）"
+msgstr "Ad widget displayed on mobile only."
+
+#: lib/widgets/mobile-ad.php:64 lib/widgets/pc-ad.php:61
+#, fuzzy
+msgid "広告タグ"
+msgstr "Ad code"
+
+#: lib/widgets/mobile-ad.php:70 lib/widgets/pc-ad.php:67
+#, fuzzy
+msgid "左マージンのピクセル数（－指定で左に移動）"
+msgstr "Left margin pixels (move to the left by -)"
+
+#: lib/widgets/mobile-ad.php:80 lib/widgets/pc-ad.php:77
+#: lib/widgets/pc-double-ads.php:72
+#, fuzzy
+msgid "広告除外設定の適用"
+msgstr "Apply ad exclusion settings"
+
+#: lib/widgets/mobile-ad.php:82 lib/widgets/pc-ad.php:79
+#: lib/widgets/pc-double-ads.php:74
+#, fuzzy
+msgid "カスタマイザーの広告除外設定を適用する"
+msgstr "Apply customizer ad exclusion settings"
+
+#: lib/widgets/mobile-text.php:9
+#, fuzzy
+msgid "[S] モバイル用テキスト"
+msgstr "[S] Text for Mobile"
+
+#: lib/widgets/mobile-text.php:10
+#, fuzzy
+msgid "モバイルのみで表示されるSimplicity用のテキストウィジェットです。"
+msgstr "Text widget displayed on mobile only."
+
+#: lib/widgets/mobile-text.php:60 lib/widgets/pc-text.php:61
+#, fuzzy
+msgid "テキスト"
+msgstr "Text"
+
+#: lib/widgets/new-entries.php:9 lib/widgets/new-entries.php:51
+#: lib/widgets/new-popular.php:16 lib/widgets/new-popular.php:100
+#, fuzzy
+msgid "新着記事"
+msgstr "New Posts"
+
+#: lib/widgets/new-entries.php:10
+#, fuzzy
+msgid "新着記事リストをサムネイルつきで表示するウィジェットです。"
+msgstr "This is a widget to display a list of new articles with thumbnails."
+
+#: lib/widgets/new-entries.php:53
+#, fuzzy
+#| msgid "カテゴリー検索"
+msgid "カテゴリー別新着記事"
+msgstr "New posts by category"
+
+#: lib/widgets/new-entries.php:94 lib/widgets/popular-ranking.php:152
+#, fuzzy
+msgid "表示モード"
+msgstr "Display mode"
+
+#: lib/widgets/new-entries.php:96
+#, fuzzy
+msgid "全ての新着記事（全ページで表示）"
+msgstr "All New posts (displayed on all pages)"
+
+#: lib/widgets/new-entries.php:97
+#, fuzzy
+msgid "カテゴリ別新着記事（投稿・カテゴリで表示）"
+msgstr "New posts by category (displayed on posts and categories)"
+
+#: lib/widgets/new-entries.php:102 lib/widgets/new-popular.php:161
+#, fuzzy
+#| msgid "投稿タイトル上"
+msgid "新着記事のタイトル"
+msgstr "New posts title"
+
+#: lib/widgets/new-entries.php:109 lib/widgets/new-popular.php:175
+#: lib/widgets/popular-ranking.php:166
+#, fuzzy
+msgid "表示数（半角数字、デフォルト：5）"
+msgstr "Display count (default: 5)"
+
+#: lib/widgets/new-entries.php:116 lib/widgets/new-popular.php:182
+#: lib/widgets/popular-ranking.php:173
+#, fuzzy
+msgid "表示タイプ"
+msgstr "Display type:"
+
+#: lib/widgets/new-entries.php:118 lib/widgets/new-popular.php:184
+#: lib/widgets/popular-ranking.php:175
+#, fuzzy
+msgid "デフォルト"
+msgstr "Default"
+
+#: lib/widgets/new-entries.php:119 lib/widgets/new-popular.php:185
+#: lib/widgets/popular-ranking.php:176
+#, fuzzy
+msgid "大きなサムネイル"
+msgstr "Large thumbnail"
+
+#: lib/widgets/new-entries.php:120 lib/widgets/new-popular.php:186
+#: lib/widgets/popular-ranking.php:177
+#, fuzzy
+msgid "タイトルを重ねた大きなサムネイル"
+msgstr "Large thumbnails with overlapping title"
+
+#: lib/widgets/new-popular.php:9
+#, fuzzy
+msgid "[S] 新着・人気記事"
+msgstr "[S] New / Popular Posts"
+
+#: lib/widgets/new-popular.php:10
+#, fuzzy
+msgid ""
+"トップページで「人気記事」リストを、それ以外のページで「新着記事」リストを表"
+"示するSimplicityウィジェットです。（※要Wordpress Popular Postsプラグイン）"
+msgstr ""
+"\"popular posts\" or \"new posts\" widget. (* Wordpress Popular Posts plugin "
+"required)"
+
+#: lib/widgets/new-popular.php:17 lib/widgets/new-popular.php:71
+#: lib/widgets/popular-ranking.php:18 lib/widgets/popular-ranking.php:84
+#, fuzzy
+msgid "人気記事"
+msgstr "Popular Posts"
+
+#: lib/widgets/new-popular.php:168 lib/widgets/popular-ranking.php:159
+#, fuzzy
+msgid "人気記事のタイトル"
+msgstr "Popular posts title"
+
+#: lib/widgets/new-popular.php:191
+#, fuzzy
+msgid "固定ページの表示（人気記事のみ）"
+msgstr "Pages display (popular posts only)"
+
+#: lib/widgets/new-popular.php:193 lib/widgets/popular-ranking.php:184
+#, fuzzy
+msgid "ランキングに固定ページを含める"
+msgstr "Include pages in ranking"
+
+#: lib/widgets/new-popular.php:198
+#, fuzzy
+msgid "集計単位（人気記事のみ）"
+msgstr "Aggregation Period (popular posts only)"
+
+#: lib/widgets/new-popular.php:200 lib/widgets/popular-ranking.php:191
+#, fuzzy
+msgid "1日"
+msgstr "1 day"
+
+#: lib/widgets/new-popular.php:201 lib/widgets/popular-ranking.php:192
+#, fuzzy
+msgid "1週間"
+msgstr "1 week"
+
+#: lib/widgets/new-popular.php:202 lib/widgets/popular-ranking.php:193
+#, fuzzy
+msgid "1ヶ月"
+msgstr "1 month"
+
+#: lib/widgets/new-popular.php:203 lib/widgets/popular-ranking.php:194
+#, fuzzy
+msgid "全期間"
+msgstr "All"
+
+#: lib/widgets/new-popular.php:208
+#, fuzzy
+msgid "集計期間の表示（人気記事のみ）"
+msgstr "Display of Aggregation Period (popular posts only)"
+
+#: lib/widgets/new-popular.php:210 lib/widgets/popular-ranking.php:201
+#, fuzzy
+msgid "集計単位の表示"
+msgstr "Aggregation period display"
+
+#: lib/widgets/new-popular.php:215
+#, fuzzy
+msgid "閲覧数の表示（人気記事のみ）"
+msgstr "PV Display (popular posts only)"
+
+#: lib/widgets/new-popular.php:217 lib/widgets/popular-ranking.php:206
+#: lib/widgets/popular-ranking.php:208
+#, fuzzy
+msgid "閲覧数の表示"
+msgstr "PV display"
+
+#: lib/widgets/new-popular.php:222
+#, fuzzy
+msgid "ランキング順位の表示（人気記事のみ）"
+msgstr "Ranking Display (popular posts only)"
+
+#: lib/widgets/new-popular.php:224 lib/widgets/popular-ranking.php:213
+#: lib/widgets/popular-ranking.php:215
+#, fuzzy
+msgid "ランキング順位の表示"
+msgstr "Ranking display"
+
+#: lib/widgets/new-popular.php:229
+#, fuzzy
+msgid "除外する投稿ID（カンマ区切りで指定。※Popular Posts使用時のみ）"
+msgstr "Exclude Post IDs (separated by comma. * When using Popular Posts only)"
+
+#: lib/widgets/new-popular.php:236
+#, fuzzy
+msgid "除外するカテゴリID（カンマ区切りで指定。※Popular Posts使用時のみ）"
+msgstr ""
+"Exclude Category IDs (separated by comma. * When using Popular Posts only)"
+
+#: lib/widgets/pc-ad.php:9
+#, fuzzy
+msgid "[S] PC用広告"
+msgstr "[S] Ad for PC"
+
+#: lib/widgets/pc-ad.php:10
+#, fuzzy
+msgid ""
+"パソコンのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの場"
+"合は広告コードのみを記入してください。）"
+msgstr "Ad widget displayed only on PC."
+
+#: lib/widgets/pc-double-ads.php:9
+#, fuzzy
+msgid "[S] PC用広告ダブルレクタングル"
+msgstr "[S] Double rectangle Ads for PC"
+
+#: lib/widgets/pc-double-ads.php:10
+#, fuzzy
+msgid ""
+"パソコンのみで表示されるSimplicity用のダブルレクタングル広告ウィジェットで"
+"す。（※アドセンスの場合は広告コードのみを記入してください。）"
+msgstr "Double rectangle ads widget displayed only on PC."
+
+#: lib/widgets/pc-double-ads.php:58
+#, fuzzy
+msgid "広告タグ（左）"
+msgstr "Ad tag (left)"
+
+#: lib/widgets/pc-double-ads.php:65
+#, fuzzy
+msgid "広告タグ（右）"
+msgstr "Ad tag (right)"
+
+#: lib/widgets/pc-text.php:9
+#, fuzzy
+msgid "[S] PC用テキスト"
+msgstr "[S] Text for PC"
+
+#: lib/widgets/pc-text.php:10
+#, fuzzy
+msgid "パソコンのみで表示されるSimplicity用のテキストウィジェットです。"
+msgstr "Text widget displayed only on PC."
+
+#: lib/widgets/popular-ranking.php:9
+#, fuzzy
+msgid "[S] 人気記事"
+msgstr "[S] Popular Posts"
+
+#: lib/widgets/popular-ranking.php:10
+#, fuzzy
+msgid ""
+"人気記事リストを表示するSimplicityウィジェットです。（※要Wordpress Popular "
+"Postsプラグイン）"
+msgstr ""
+"Popular posts ranking list. (* Wordpress Popular Posts plugin required)"
+
+#: lib/widgets/popular-ranking.php:86
+#, fuzzy
+#| msgid "カテゴリー検索"
+msgid "カテゴリー別人気記事"
+msgstr "Popular posts by category"
+
+#: lib/widgets/popular-ranking.php:154
+#, fuzzy
+msgid "全ての人気記事（全ページで表示）"
+msgstr "All popular posts (displayed on all pages)"
+
+#: lib/widgets/popular-ranking.php:155
+#, fuzzy
+msgid "カテゴリ別人気記事（投稿・カテゴリで表示）"
+msgstr "Popular posts by category (displayed on posts and categories)"
+
+#: lib/widgets/popular-ranking.php:182
+#, fuzzy
+#| msgid "固定ページ一覧"
+msgid "固定ページの表示"
+msgstr "Pages display"
+
+#: lib/widgets/popular-ranking.php:189
+#, fuzzy
+msgid "集計単位"
+msgstr "Aggregation Period"
+
+#: lib/widgets/popular-ranking.php:199
+#, fuzzy
+msgid "集計期間の表示"
+msgstr "Aggregation period display"
+
+#: lib/widgets/popular-ranking.php:220
+#, fuzzy
+msgid "除外する投稿ID（カンマ区切りで指定）"
+msgstr "Excluded post IDs (specified by comma)"
+
+#: lib/widgets/popular-ranking.php:227
+#, fuzzy
+msgid "除外するカテゴリID（カンマ区切りで指定）"
+msgstr "Excluded category IDs (specified by comma)"
+
+#: lib/widgets/recent-comments.php:9 lib/widgets/recent-comments.php:17
+#: lib/widgets/recent-comments.php:33
+#, fuzzy
+#| msgid "コメント"
+msgid "最近のコメント"
+msgstr "Recent Comments"
+
+#: lib/widgets/recent-comments.php:10
+#, fuzzy
+msgid "最近投稿されたコメントを表示するウィジェットです。"
+msgstr "Recently posted comments widget."
+
+#: lib/widgets/recent-comments.php:92
+#, fuzzy
+#| msgid "コメント"
+msgid "コメントなし"
+msgstr "No Comments"
+
+#: lib/widgets/recent-comments.php:131
+#, fuzzy
+#| msgid "コメント"
+msgid "表示するコメント数"
+msgstr "Comment count"
+
+#: lib/widgets/recent-comments.php:138
+#, fuzzy
+#| msgid "コメント"
+msgid "コメント文字数"
+msgstr "Comment characters count"
+
+#: lib/widgets/recent-comments.php:145
+#, fuzzy
+msgid "管理者の除外"
+msgstr "Exclude administrators"
+
+#: lib/widgets/recent-comments.php:147
+#, fuzzy
+#| msgid "コメントをどうぞ"
+msgid "管理者のコメントを表示しない"
+msgstr "Nondisplay administrator's comment"
+
+#: lib/widgets/sns-follow-buttons.php:9
+#, fuzzy
+msgid "[S] SNSフォローボタン"
+msgstr "[S] SNS Follow Buttons"
+
+#: lib/widgets/sns-follow-buttons.php:10
+#, fuzzy
+msgid ""
+"SNSサービスのフォローアイコンボタンを表示するSimplicityウィジェットです。"
+msgstr "Follow icon buttons of SNS service."
+
+#: lib/widgets/sns-follow-buttons.php:21
+#, fuzzy
+msgid "SNSフォローボタン"
+msgstr "SNS follow Buttons"
+
+#: lib/widgets/sns-follow-buttons.php:43
+#, fuzzy
+msgid "SNSフォローボタンのタイトル"
+msgstr "SNS follow button title"
+
 #: searchform.php:2
 msgid "ブログ内を検索"
 msgstr "Search in the blog"
@@ -321,6 +850,12 @@ msgstr "Search in the blog"
 #: tmp/breadcrumbs-page.php:6 tmp/breadcrumbs.php:7
 msgid "ホーム"
 msgstr "Home"
+
+#: tmp/new-entries.php:33
+#, fuzzy
+#| msgid "関連記事は見つかりませんでした。"
+msgid "新着記事は見つかりませんでした。"
+msgstr "New article not found."
 
 #: tmp/pagination.php:27
 msgid "次のページ"

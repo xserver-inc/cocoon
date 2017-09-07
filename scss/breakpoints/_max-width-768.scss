@@ -29,3 +29,11 @@
 .related-entry-card-meta{
   //position: relative;
 }
+
+table{
+  th,
+  td{
+    padding: 3px;
+    font-size: $text_size_s;
+  }
+}

@@ -24,15 +24,13 @@
 ************************************/
 /*設定項目のヒント*/
 .form-table td p.tips {
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 }
-
 .form-table td p.tips::before {
   font-family: FontAwesome;
   content: '\f05a';
   margin-right: 4px;
-  font-style: normal;
 }
 
 form.admin-settings {
