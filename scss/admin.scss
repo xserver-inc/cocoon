@@ -1,0 +1,82 @@
+/************************************
+** Wordpress管理画面用のCSS
+** ※管理画面にしか適用されません
+************************************/
+
+/*記事一覧のサムネイル幅*/
+.column-thumbnail{
+  width:80px;
+}
+
+.admin-custum-label{
+  margin-left: -30px;
+  margin-top: 20px;
+  margin-bottom: -16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #ddd;
+  padding: 12px;
+}
+
+/************************************
+** テーマ設定画面
+************************************/
+
+/*設定項目のヒント*/
+.form-table td p.tips{
+  font-size: 12px;
+  font-style: italic;
+}
+
+.form-table td p.tips::before{
+  font-family: FontAwesome;
+  content: '\f05a';
+  margin-right: 4px;
+  font-style: normal;
+}
+
+form.admin-settings{
+  margin-top: 2em;
+}
+
+#tabs > div{
+  display: none;
+}
+
+.tabs-nav {
+  border-bottom: 1px solid #999;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+
+  li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: rgb(241, 241, 241);
+    border-color: transparent transparent currentcolor;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    padding: 5px 15px 3px;
+
+    &.selected{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #999 #999 currentcolor;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    margin-bottom: -1px;
+    padding-bottom: 4px;
+    }
+  }
+}
