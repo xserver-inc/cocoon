@@ -30,3 +30,43 @@
 form.admin-settings{
   margin-top: 2em;
 }
+
+#tabs > div{
+  display: none;
+}
+
+.tabs-nav {
+  border-bottom: 1px solid #999;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-nav li.selected {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #999 #999 currentcolor;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 1px medium;
+  margin-bottom: -1px;
+  padding-bottom: 4px;
+}
+
+.tabs-nav li {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: rgb(241, 241, 241);
+  border-color: transparent transparent currentcolor;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 1px medium;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 0 5px;
+  padding: 5px 15px 3px;
+}

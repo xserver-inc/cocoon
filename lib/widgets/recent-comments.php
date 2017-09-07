@@ -61,9 +61,6 @@ class RecentCommentsWidgetItem extends WP_Widget {
                 <div class="recent-comments cf">
                   <a class="recent-comment-link a-wrap cf" href="<?php echo $url; ?>" title="<?php echo $title; ?>">
                     <div class="recent-comment cf">
-                      <div class="recent-comment-content">
-                        <?php echo $comment_content; ?>
-                      </div>
                       <div class="recent-comment-info cf">
                         <figure class="recent-comment-avatar">
                           <?php echo $avatar; ?>
@@ -74,6 +71,9 @@ class RecentCommentsWidgetItem extends WP_Widget {
                         <div class="recent-comment-date">
                           <?php echo $date; ?>
                         </div>
+                      </div>
+                      <div class="recent-comment-content">
+                        <?php echo $comment_content; ?>
                       </div>
                       <div class="recent-comment-article"><?php echo $title; ?>
                       </div>
