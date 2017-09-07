@@ -33,34 +33,39 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <div class="wrap">
 <h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
 <?php var_dump($_POST) ?>
-<form name="form1" method="post" action="">
+<form name="form1" method="post" action="" class="admin-settings">
+<div id="tabs">
+<ul>
+  <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
+  <li><?php _e( 'タイトル', THEME_NAME ) ?></li>
+  <li><?php _e( 'SEO', THEME_NAME ) ?></li>
+</ul>
 
-<table class="form-table">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <label for="<?php echo AD_ADS_VISIBLE_NAME; ?>">広告の表示</label>
-      </th>
-      <td>
-        <input type="checkbox" name="<?php echo AD_ADS_VISIBLE_NAME; ?>" id="<?php echo AD_ADS_VISIBLE_NAME; ?>" value="1"<?php echo($ads_visible_val ? ' checked="checked"' : ''); ?>><?php _e("全ての広告を表示する",THEME_NAME ); ?>
-        <p class="tips"><?php _e( '全ての広告の表示を切り替えます。', THEME_NAME ) ?></p>
-      </td>
+<div class="ads">
+  <?php require_once 'original-pages/ads.php'; ?>
+</div>
 
-    </tr>
-    <tr>
-      <th scope="row">
-        <label for="<?php echo AD_AD_CODE_NAME; ?>">広告コード</label>
-      </th>
-      <td>
-        <textarea id="<?php echo AD_AD_CODE_NAME; ?>" name="<?php echo AD_AD_CODE_NAME; ?>" cols="46" rows="6" placeholder="AdSenseのレスポンシブコードを入力してください"><?php echo stripslashes_deep($ad_code_val); ?></textarea>
-        <p class="tips"><?php _e( 'AdSenseのレスポンシブ広告コードを入力してください。', THEME_NAME ) ?></p>
-      </td>
+<div>
+JavaScript is a prototype-based scripting language with dynamic typing and
+has first-class functions. Its syntax was influenced by C.
+JavaScript copies many names and naming conventions from Java,
+but the two languages are otherwise unrelated and have very different semantics.
+The key design principles within JavaScript are taken from the Self and Scheme programming languages.
+It is a multi-paradigm language, supporting object-oriented, imperative,
+and functional programming styles.
+</div>
 
-    </tr>
-  </tbody>
-</table>
+<div>
+The application of JavaScript to uses outside of web pages—for example,
+in PDF documents, site-specific browsers, and desktop widgets—is also significant.
+Newer and faster JavaScript VMs and frameworks built upon them (notably Node.js)
+have also increased the popularity of JavaScript for server-side web applications.
+</div>
+</div>
+
+
+
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-
 <p class="submit">
 <?php submit_button(); ?>
 </p>

@@ -78,7 +78,7 @@ input[type='submit']{
   background-color: rgba(255, 255, 255, 0);
 
   &::before{
-    @include fontawsome('\f002');
+    @include fontawesome('\f002');
   }
 }
 

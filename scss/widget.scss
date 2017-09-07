@@ -30,7 +30,7 @@ label.screen-reader-text{
     font-size: 12px;
 
     &::before{
-      @include fontawsome('\f02b');
+      @include fontawesome('\f02b');
     }
 
     &:hover {
@@ -261,13 +261,13 @@ label.screen-reader-text{
 
 .recent-comment-info,
 .recent-comment-article{
-  font-size: $text_size_s;
+  font-size: 16px;
 }
 
 .recent-comment-article{
   margin-top: 3px;
   &::before{
-    @include fontawsome('\f0c1');
+    @include fontawesome('\f0c1');
   }
 }
 

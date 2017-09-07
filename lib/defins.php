@@ -1,11 +1,13 @@
 <?php //定数をまとめて定義
 
 //テーマ名
-define('THEME_NAME', 'Cocoon');
+define('THEME_NAME', 'cocoon');
+//テーマ名
+define('THEME_NAME_CAMEL', 'Cocoon');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '[C] ');
 //トップレベルオリジナル設定名
-define('SETTING_NAME_TOP', THEME_NAME.__( ' 設定', THEME_NAME ));
+define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
 define('ET_DEFAULT', 'defalt');

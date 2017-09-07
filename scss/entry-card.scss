@@ -109,11 +109,11 @@
 }
 
 .published::before{
-  @include fontawsome('\f017');
+  @include fontawesome('\f017');
 }
 
 .entry-category::before{
-  @include fontawsome('\f07b');
+  @include fontawesome('\f07b');
 }
 
 .entry-card-meta .entry-card-categorys{

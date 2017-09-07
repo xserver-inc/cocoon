@@ -35,7 +35,7 @@
   border-radius: $badge_border_radius;
 
   &::before{
-    @include fontawsome('\f07b');
+    @include fontawesome('\f07b');
   }
 
   &:hover{
@@ -55,7 +55,7 @@
   border-radius: $badge_border_radius;
 
   &::before{
-    @include fontawsome('\f02b');
+    @include fontawesome('\f02b');
   }
 
   &:hover{

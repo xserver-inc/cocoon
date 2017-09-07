@@ -19,10 +19,18 @@ add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' 
 
 
 //投稿記事一覧にアイキャッチ画像を表示
+//カラムの挿入
+if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
     return $columns;
 }
+endif;
+add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
+
+
+//サムネイルの挿入
+if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
     if ( 'thumbnail' == $column_name) {
         //テーマで設定されているサムネイルを利用する場合
@@ -34,19 +42,32 @@ function customize_admin_add_column($column_name, $post_id) {
         echo $thum;
     }
 }
+endif;
+add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
+
 //アイキャッチ画像の列の幅をCSSで調整
-function customize_admin_css_list() {
+//投稿一覧のカラムの幅のスタイル調整
+if ( !function_exists( 'admin_print_styles_custom' ) ):
+function admin_print_styles_custom() {
     wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
     wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+
+    global $pagenow;
+    //var_dump($pagenow);
+    if ($pagenow == 'admin.php') {
+      wp_enqueue_script( 'tab-js-jquery', 'http://code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+      wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+      $data = 'jQuery(document).ready( function() {
+                 tabify("#tabs");
+               });';
+      wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+    }
+
     //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
     //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
-//カラムの挿入
-add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
-//サムネイルの挿入
-add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
-//投稿一覧のカラムの幅のスタイル調整
-add_action('admin_print_styles', 'customize_admin_css_list', 21);
+endif;
+add_action('admin_print_styles', 'admin_print_styles_custom', 21);
 
 
 //管理ツールバーにメニュー追加

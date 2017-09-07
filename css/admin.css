@@ -26,3 +26,7 @@
   margin-right: 4px;
   font-style: normal;
 }
+
+form.admin-settings{
+  margin-top: 2em;
+}

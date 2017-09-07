@@ -70,7 +70,7 @@ $bgc_hover_anime: all 0.3s ease 0s;
 }
 
 //Font Awesomeアイコンを出力するとき
-@mixin fontawsome($unicode:'/f004') {
+@mixin fontawesome($unicode:'/f004') {
   font-family: FontAwesome;
   content: $unicode;
   padding-right: 3px;

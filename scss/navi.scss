@@ -7,7 +7,7 @@ $sub_menu_width: 240px;
   position: relative;
   >a{
     &::after{
-      @include fontawsome($unicode);
+      @include fontawesome($unicode);
       position: absolute;
       right: 3px;
     }

@@ -11,7 +11,7 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   //テーマスタイルの呼び出し
   ///////////////////////////////////////////
-  wp_enqueue_style( 'simplicity-style', get_template_directory_uri() . '/style.css' );
+  wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );
 
   // ///////////////////////////////////////////
   // //Font Awesome
@@ -36,9 +36,9 @@ function cocoon_scripts() {
   if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
   ///////////////////////////////////////////
-  //Simplicity内で使用するJavaScript関数をまとめて定義する外部ファイルを呼び出す（javascript.js）
+  //テーマ内で使用するJavaScript関数をまとめて定義する外部ファイルを呼び出す（javascript.js）
   ///////////////////////////////////////////
-  wp_enqueue_script( 'simplicity-js', get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( THEME_NAME.'-js', get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
 
 }
 endif;

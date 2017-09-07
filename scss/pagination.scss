@@ -28,12 +28,12 @@ $pagination_wh: 50px;
   }
 
   .prev::before{
-    @include fontawsome('\f104');
+    @include fontawesome('\f104');
     padding-right: 3px;
   }
 
   .next::before{
-    @include fontawsome('\f105');
+    @include fontawesome('\f105');
     padding-left: 3px;
   }
 
@@ -139,7 +139,7 @@ $pn_margin_width: 10px;
       padding-left: $pn_margin_width / 2;
 
       &::before{
-        @include fontawsome('\f053');
+        @include fontawesome('\f053');
         margin-right: $pn_margin_width / 2;
         padding-right: 0;
       }
@@ -154,7 +154,7 @@ $pn_margin_width: 10px;
       padding-right: $pn_margin_width / 2;
 
       &::before{
-        @include fontawsome('\f054');
+        @include fontawesome('\f054');
         margin-left: $pn_margin_width / 2;
         padding-right: 0;
       }
