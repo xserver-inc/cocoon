@@ -2,6 +2,10 @@
 
 //管理画面の設定の隠しフィールド名
 define('HIDDEN_FIELD_NAME', strtolower(THEME_NAME).'_submit_hidden');
+//入力ボックスの横幅
+define('DEFAULT_INPUT_COLS', 46);
+//入力ボックスの縦幅
+define('DEFAULT_INPUT_ROWS', 6);
 
 //広告設定用の定数と関数の呼び出し
 require_once 'original-pages/ads-funcs.php';

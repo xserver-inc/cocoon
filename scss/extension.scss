@@ -1,0 +1,435 @@
+/*拡張クラスを追加するスタイルシート*/
+.sankou,
+.sanko,
+.reffer,
+.ref{
+  color: #fff;
+  background-color: #fc7a22;
+  padding: 1px 5px 0;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+/*太字*/
+.bold{
+  font-weight:bold;
+}
+
+/*赤色*/
+.red{
+  color:#E50202;
+}
+
+/*太字で赤色*/
+.bold-red{
+  font-weight:bold;
+  color:#E50202;
+}
+
+/*赤のアンダーライン*/
+.red-under{
+  border-bottom: 2px solid red;
+}
+
+/*マーカーの黄色のような色*/
+.marker{
+  background-color:#FF9;
+}
+
+/*下半分のマーカー色（km）*/
+.marker-under{
+  background: linear-gradient(transparent 60%, #ffff66 60%);
+}
+
+/*打ち消し線*/
+.strike{
+  text-decoration: line-through;
+}
+
+/*キーボードキーのスタイル*/
+.keyboard-key {
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(center top , #eee, #f9f9f9, #eee);
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px #ddd;
+  font-family: inherit;
+  font-size: 0.85em;
+  padding: 1px 3px;
+}
+
+/*ブートストラップのインフォメーションライクな囲みが表示される*/
+.sp-primary {
+  background-color: #428BCA;
+  color: #FFFFFF;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*サクセスメッセージ*/
+.sp-success {
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*インフォメッセージ*/
+.sp-info {
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*注意メッセージ*/
+.sp-warning {
+  background-color: #FCF8E3;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+  border-color: #FAEBCC;
+}
+
+/*警告メッセージ*/
+.sp-danger {
+  background-color: #F2DEDE;
+  border-color: #EBCCD1;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*******************************
+* 左からの吹き出し
+********************************/
+.left_balloon,
+.left-balloon {
+    position: relative;
+    background: #fff;
+    border: 1px solid #777;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 20%;
+    clear: both;
+    max-width: 500px;
+    float: left;
+}
+.left_balloon:after,
+.left_balloon:before,
+.left-balloon:after,
+.left-balloon:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.left_balloon:after,
+.left-balloon:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.left_balloon:before,
+.left-balloon:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #000;
+    border-width: 8px;
+    margin-top: -8px;
+}
+
+/*******************************
+* 右からの吹き出し
+********************************/
+.right_balloon,
+.right-balloon {
+    position: relative;
+    background: #85e249;
+    border: 1px solid #777;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 20%;
+    clear: both;
+    max-width: 500px;
+    float: right;
+}
+.right_balloon:after,
+.right_balloon:before,
+.right-balloon:after,
+.right-balloon:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.right_balloon:after,
+.right-balloon:after {
+    border-color: rgba(133, 226, 73, 0);
+    border-left-color: #85e249;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.right_balloon:before,
+.right-balloon:before {
+    border-color: rgba(119, 119, 119, 0);
+    border-left-color: #777;
+    border-width: 8px;
+    margin-top: -8px;
+}
+
+/*******************************
+* 割り込みを解除
+********************************/
+.clear_balloon,
+.clear-balloon{
+  clear: both;
+  margin: 20px;
+}
+
+/*******************************
+* LINEの背景っぽいもの
+********************************/
+.line_back,
+.line-back{
+  background-color: #7897C5;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+/*******************************
+* 補足説明
+********************************/
+.information,
+.question,
+.alert{
+  background-color: #F4F3EB;
+  padding: 20px 20px 20px 72px;
+  border-radius: 4px;
+  position: relative;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.alert{
+  background-color: #fdeff2;
+}
+
+.information::before,
+.question::before,
+.alert::before{
+  font-family: "FontAwesome";
+  font-size: 50px;
+  position: absolute;
+  top: 20px;
+  left: 13px;
+  color: #EAE3B4;
+}
+
+.information::before{
+  content: '\f05a';
+}
+
+.question::before{
+  content: '\f059';
+}
+
+.alert::before{
+  content: '\f06a';
+  color: #ee827c;
+}
+
+@media screen and (max-width:440px){
+  .information,
+  .question,
+  .alert{
+    padding: 10px 10px 10px 48px;
+  }
+
+  .information::before,
+  .question::before,
+  .alert::before{
+    top: 10px;
+    left: 10px;
+    font-size: 32px;
+  }
+}
+
+/*******************************
+* 続きはWEBで的な検索ボックス
+********************************/
+.search-form{
+  margin: 3em 0;
+}
+
+.search-form div{
+  border: 1px solid #555;
+  border-radius: 2px;
+  padding: 5px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.search-form div.sform{
+  min-width: 280px;
+  background-color: #fff;
+}
+
+.search-form div.sbtn{
+  background-color: #1155EE;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 30px;
+  position: absolute;
+}
+
+.search-form div.sbtn:before{
+  content: "\f002";
+  font-family: FontAwesome;
+  margin-right: 7px;
+}
+
+.search-form div.sbtn:after{
+  content: "\f25a";
+  font-family: FontAwesome;
+  color: #000;
+  position: absolute;
+  bottom: -28px;
+  font-size: 25px;
+}
+
+@media screen and (max-width:450px){
+  .search-form div{
+    padding: 3px 5px;
+    font-size: 75%;
+  }
+
+  .search-form div.sform{
+    min-width: 180px;
+  }
+
+  .search-form div.sbtn{
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .search-form div.sbtn:after{
+    font-size: 20px;
+    margin-left: -10px;
+  }
+}
+
+.btn{
+  color: #fff;
+  font-weight: bold;
+  margin: 1em;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  line-height: normal;
+  padding: 10px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid transparent;
+}
+
+.btn:before{
+  font-family: FontAwesome;
+  margin-right: 10px;
+}
+
+#container a.btn:hover{
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.btn-m{
+  padding: 16px 45px;
+  font-size: 16px;
+}
+
+.btn-l{
+  padding: 24px 0;
+  font-size: 18px;
+  display: block;
+}
+
+.btn-white{color: #333;background-color: #fff;}
+#container a.btn-white:hover{color: #333;}
+.btn-red{background-color: #f44336;}
+.btn-pink{background-color: #e91e63;}
+.btn-purple{background-color: #9C27B0;}
+.btn-deep{background-color: #673AB7;}
+.btn-indigo{background-color: #3F51B5;}
+.btn-blue{background-color: #2196F3;}
+.btn-light-blue{background-color: #03A9F4;}
+.btn-cyan{background-color: #00BCD4;}
+.btn-teal{background-color: #009688;}
+.btn-green{background-color: #4CAF50;}
+.btn-light-green{background-color: #8BC34A;}
+.btn-lime{background-color: #CDDC39;}
+.btn-yellow{background-color: #FFEB3B;}
+.btn-amber{background-color: #FFC107;}
+.btn-orange{background-color: #FF9800;}
+.btn-deep-orange{background-color: #FF5722;}
+.btn-brown{background-color: #795548;}
+.btn-grey{background-color: #9E9E9E;}
+.btn-blue-grey{background-color: #607D8B;}
+
+.btn-arrow-right:before{content: "\f061";}
+.btn-chevron-right:before{content: "\f054";}
+.btn-angle-right:before{content: "\f105";}
+.btn-caret-right:before{content: "\f0da";}
+.btn-long-arrow-right:before{content: "\f178";}
+.btn-chevron-circle-right:before{content: "\f138";}
+.btn-angle-double-right:before{content: "\f101";}
+.btn-arrow-circle-right:before{content: "\f0a9";}
+.btn-hand-o-right:before{content: "\f0a4";}
+.btn-arrow-circle-o-right:before{content: "\f18e";}
+.btn-caret-square-o-right:before{content: "\f152";}
+
+/*メインカランの2カラム化*/
+.half-half{
+}
+.half-l,
+.half-r{
+  margin: 1em 0;
+}
+.half-l{
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.half-r{
+  float: right;
+  width: 50%;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width:639px){
+  .half-l,
+  .half-r{
+    float: none;
+    width: auto;
+    padding: 0;
+  }
+}
