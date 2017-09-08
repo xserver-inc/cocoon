@@ -46,7 +46,7 @@
 
           <!-- インデックスページ -->
           <div>
-            <p><strong><?php _e( 'インデックスページでの広告表示位置', THEME_NAME ) ?></strong></p>
+            <p><strong><?php _e( 'インデックスページでの広告位置', THEME_NAME ) ?></strong></p>
             <ul>
               <li>
                 <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_top_visible()); ?>><?php _e('トップ' ,THEME_NAME ); ?>
@@ -68,7 +68,7 @@
 
           <!-- 投稿・固定ページ -->
           <div>
-            <p><strong><?php _e( '投稿・固定ページでの広告表示位置', THEME_NAME ) ?></strong></p>
+            <p><strong><?php _e( '投稿・固定ページでの広告位置', THEME_NAME ) ?></strong></p>
             <ul>
               <li>
                 <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_title_visible()); ?>><?php _e('タイトル上' ,THEME_NAME ); ?>
@@ -89,7 +89,7 @@
                 <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_SNS_BUTTONs_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_sns_buttons_visible()); ?>><?php _e('SNSボタン下（本文下部分）' ,THEME_NAME ); ?>
               </li>
               <li>
-                <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_related_posts_visible()); ?>><?php _e('投稿関連記事下（投稿ページのみ）' ,THEME_NAME ); ?>
+                <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_related_posts_visible()); ?>><?php _e('関連記事下（投稿ページのみ）' ,THEME_NAME ); ?>
               </li>
               <li>
                 <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
