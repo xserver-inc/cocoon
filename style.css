@@ -75,17 +75,12 @@ a:hover {
 /************************************
 ** 本文部分
 ************************************/
-.content-in {
-  display: flex;
-}
-
 .main {
   width: 860px;
-  height: 100%;
+  float: left;
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 3px;
-  margin-right: 20px;
 }
 
 .main.no-sidebar {
@@ -591,6 +586,7 @@ blockquote::after {
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
+  float: right;
   width: 356px;
   border: 1px solid transparent;
   padding: 9px;
@@ -1779,6 +1775,7 @@ input[type='submit'] {
   .main,
   .sidebar {
     margin: 10px;
+    float: none;
   }
 
   .sidebar {
