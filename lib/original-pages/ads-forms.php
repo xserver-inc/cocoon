@@ -7,7 +7,7 @@
         <label for="<?php echo OP_ALL_ADS_VISIBLE; ?>"><?php _e( '広告の表示', THEME_NAME ) ?></label>
       </th>
       <td>
-        <input type="checkbox" name="<?php echo OP_ALL_ADS_VISIBLE; ?>" value="1"<?php echo(is_all_ads_visible() ? ' checked="checked"' : ''); ?>><?php _e("全ての広告を表示する",THEME_NAME ); ?>
+        <input type="checkbox" name="<?php echo OP_ALL_ADS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_all_ads_visible()); ?>><?php _e("全ての広告を表示する",THEME_NAME ); ?>
         <p class="tips"><?php _e( '全ての広告の表示を切り替えます。', THEME_NAME ) ?></p>
       </td>
     </tr>
@@ -24,7 +24,7 @@
     </tr>
 
 
-    <!-- 広告コード -->
+    <!-- 広告ラベル -->
     <tr>
       <th scope="row">
         <label for="<?php echo OP_AD_LABEL; ?>"><?php _e( '広告ラベル', THEME_NAME ) ?></label>
@@ -35,6 +35,75 @@
       </td>
     </tr>
 
+    <!-- 広告の表示位置 -->
+    <tr>
+      <th scope="row">
+        <label for="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>"><?php _e( '広告の表示位置', THEME_NAME ) ?></label>
+      </th>
+      <td>
+
+        <div class="col-2">
+
+          <!-- インデックスページ -->
+          <div>
+            <p><strong><?php _e( 'インデックスページでの広告表示位置', THEME_NAME ) ?></strong></p>
+            <ul>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_top_visible()); ?>><?php _e('トップ' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_middle_visible()); ?>><?php _e('ミドル' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_bottom_visible()); ?>><?php _e('ボトム' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
+              </li>
+              <li></li>
+            </ul>
+
+            <p class="tips"><?php _e( 'インデックス・アーカイブページ等で広告を表示する位置を設定します。', THEME_NAME ) ?></p>
+          </div>
+
+          <!-- 投稿・固定ページ -->
+          <div>
+            <p><strong><?php _e( '投稿・固定ページでの広告表示位置', THEME_NAME ) ?></strong></p>
+            <ul>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_title_visible()); ?>><?php _e('タイトル上' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_top_visible()); ?>><?php _e('本文上' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_middle_visible()); ?>><?php _e('本文中' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_bottom_visible()); ?>><?php _e('本文下' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_sns_buttons_visible()); ?>><?php _e('SNSボタン上（本文下部分）' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_SNS_BUTTONs_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_sns_buttons_visible()); ?>><?php _e('SNSボタン下（本文下部分）' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_related_posts_visible()); ?>><?php _e('投稿関連記事下（投稿ページのみ）' ,THEME_NAME ); ?>
+              </li>
+              <li>
+                <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
+              </li>
+              <li></li>
+            </ul>
+
+            <p class="tips"><?php _e( '投稿・固定ページで広告を表示する位置を設定します。', THEME_NAME ) ?></p>
+          </div>
+        </div>
+
+
+      </td>
+    </tr>
 
     <!-- 広告除外記事ID -->
     <tr>

@@ -75,4 +75,12 @@ form.admin-settings {
   padding-bottom: 4px;
 }
 
+.col-2 {
+  display: flex;
+}
+.col-2 div {
+  width: 50%;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=admin.css.map */
