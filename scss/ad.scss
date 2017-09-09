@@ -2,6 +2,13 @@
 ** 広告
 ************************************/
 .ad-area{
-  margin: 30px 0;
+  margin: 0 0 32px;
   text-align: center;
+}
+
+.ad-sidebar-top,
+.ad-sidebar-bottom{
+  .ad-label{
+    display: none;
+  }
 }

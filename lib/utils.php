@@ -98,7 +98,7 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   //   echo '<div class="'.$wrap_class.'">';
   // }
   if (isset($wrap_class)) {
-    $wrap_class = ' '.$wrap_class;
+    $wrap_class = ' '.trim($wrap_class).' ad-'.$format;
   }
   //$format変数をテンプレートファイルに渡す
   set_query_var('format', $format);
