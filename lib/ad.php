@@ -119,3 +119,55 @@ function add_ads_before_1st_h2($the_content) {
 }
 endif;
 add_filter('the_content', 'add_ads_before_1st_h2');
+
+
+//インデックスページの最後のページかどうか
+if ( !function_exists( 'is_pagination_last_page' ) ):
+function is_pagination_last_page(){
+  global $wp_query;
+  //現在のページ数
+  $now_page = get_query_var('paged') ? get_query_var('paged') : 1;
+  //インデックスリストのページ数
+  $max_page = intval($wp_query->max_num_pages);
+  return ( $now_page == $max_page );
+}
+endif;
+
+//インデックスページの最後のページかどうか
+if ( !function_exists( 'is_posts_per_page_6_and_over' ) ):
+function is_posts_per_page_6_and_over(){
+  return ( intval(get_option('posts_per_page')) >= 6 );
+}
+endif;
+
+//全ての公開されている投稿の数
+if ( !function_exists( 'get_all_post_count_in_publish' ) ):
+function get_all_post_count_in_publish(){
+  global $wpdb;
+  return intval($wpdb->get_var("SELECT count(*) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post'"));
+}
+endif;
+
+//広告をトップページのリスト表示中間に掲載するか
+if ( !function_exists( 'is_index_middle_ad_visible' ) ):
+function is_index_middle_ad_visible($count){
+  if (
+      //広告表示設定が有効な時
+      is_ad_pos_index_top_visible() &&
+      //3個目の表示のときのみ
+      ($count == 3) &&
+      //トップページリストのみ
+      is_home() &&
+      //ページネーションの最終ページでないとき
+      !is_pagination_last_page() &&
+      //1ページに表示する最大投稿数が6以上の時
+      is_posts_per_page_6_and_over() &&
+      //エントリーカードタイプの一覧のとき
+      //is_list_style_entry_type() &&
+      //&&//公開記事が6以上の時
+      (get_all_post_count_in_publish() >= 6)
+  ) {
+    return true;
+  }
+}
+endif;

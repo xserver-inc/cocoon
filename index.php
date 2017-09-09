@@ -22,9 +22,16 @@ if (is_ad_pos_index_top_visible()){
 ////////////////////////////
 //一覧の繰り返し処理
 ////////////////////////////
+$count = 0;
 if (have_posts()) : // WordPress ループ
   while (have_posts()) : the_post(); // 繰り返し処理開始
+    $count++;
     get_template_part('tmp/entry-card');
+
+    //インデックスミドルに広告を表示してよいかの判別
+    if (is_index_middle_ad_visible($count)) {
+      get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-index-middle');
+    }
   endwhile; // 繰り返し処理終了 ?>
   <div class="clear"></div>
 <?php else : // ここから記事が見つからなかった場合の処理  ?>

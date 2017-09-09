@@ -26,6 +26,7 @@
 .form-table td p.tips, .form-table td p.alert {
   font-size: 12px;
   font-style: italic;
+  margin-bottom: 1em;
 }
 .form-table td p.tips::before, .form-table td p.alert::before {
   font-family: FontAwesome;
