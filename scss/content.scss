@@ -155,22 +155,27 @@ table {
   }
 
   h3 {
-    border-left: 5px solid $middle_thickness;
+    border-left: 6px solid $middle_thickness;
+    border-right: 1px solid $thin;
+    border-top: 1px solid $thin;
+    border-bottom: 1px solid $thin;
     font-size: 23px;
     padding: 6px 20px;
 
   }
 
   h4 {
+    border-top: 2px solid $thin;
     border-bottom: 2px solid $thin;
   }
 
   h5 {
-    border-bottom: 2px dashed $thin;
+    border-bottom: 2px solid $thin;
   }
 
   h6 {
-    border-bottom: 1px dashed $thin;
+    border-bottom: 2px dashed $thin;
+    //border-bottom: 1px dashed $thin;
   }
 }
 
