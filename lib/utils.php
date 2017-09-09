@@ -94,14 +94,19 @@ if ( !function_exists( 'get_template_part_with_ad_format' ) ):
 
 endif;
 function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null){
-  if ($wrap_class) {
-    echo '<div class="'.$wrap_class.'">';
+  // if ($wrap_class) {
+  //   echo '<div class="'.$wrap_class.'">';
+  // }
+  if (isset($wrap_class)) {
+    $wrap_class = ' '.$wrap_class;
   }
   //$format変数をテンプレートファイルに渡す
   set_query_var('format', $format);
+  //$format変数をテンプレートファイルに渡す
+  set_query_var('wrap_class', $wrap_class);
   //広告テンプレートの呼び出し
   get_template_part('tmp/ad');
-  if ($wrap_class) {
-    echo '</div>';
-  }
+  // if ($wrap_class) {
+  //   echo '</div>';
+  // }
 }
