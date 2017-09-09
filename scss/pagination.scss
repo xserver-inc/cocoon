@@ -134,6 +134,10 @@ $pn_margin_width: 10px;
       color: $thin;
     }
 
+    figure{
+      width: 120px;
+    }
+
     &.prev-post{
       flex-direction: row;
       padding-left: $pn_margin_width / 2;

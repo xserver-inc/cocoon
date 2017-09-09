@@ -75,7 +75,7 @@ if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id){
   $thumb = get_the_post_thumbnail( $id, array(120, 67), array('alt' => '') );
   if ( !$thumb ) {
-    $thumb = '<img src="'.get_template_directory_uri().'/images/no-image.png" alt="NO IMAGE" class="no-image post-navi-no-image" />';
+    $thumb = '<img src="'.get_template_directory_uri().'/images/no-image-160.png" alt="NO IMAGE" class="no-image post-navi-no-image" />';
   }
   return $thumb;
 }

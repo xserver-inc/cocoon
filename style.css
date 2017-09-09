@@ -997,6 +997,9 @@ label.screen-reader-text {
   font-size: 1.8em;
   color: #cccdce;
 }
+.pager-post-navi a figure {
+  width: 120px;
+}
 .pager-post-navi a.prev-post {
   flex-direction: row;
   padding-left: 5px;

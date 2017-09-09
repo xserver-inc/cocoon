@@ -23,14 +23,22 @@
 ** テーマ設定画面
 ************************************/
 /*設定項目のヒント*/
-.form-table td p.tips {
+.form-table td p.tips, .form-table td p.alert {
   font-size: 12px;
   font-style: italic;
 }
-.form-table td p.tips::before {
+.form-table td p.tips::before, .form-table td p.alert::before {
   font-family: FontAwesome;
-  content: '\f05a';
   margin-right: 4px;
+}
+.form-table td p.tips::before {
+  content: '\f05a';
+}
+.form-table td p.alert {
+  color: red;
+}
+.form-table td p.alert::before {
+  content: '\f071';
 }
 
 form.admin-settings {

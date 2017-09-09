@@ -24,15 +24,31 @@
 ************************************/
 
 /*設定項目のヒント*/
-.form-table td p.tips{
-  font-size: 12px;
-  font-style: italic;
+.form-table td p{
 
-  &::before{
-    font-family: FontAwesome;
-    content: '\f05a';
-    margin-right: 4px;
-    //font-style: normal;
+  &.tips,
+  &.alert{
+    font-size: 12px;
+    font-style: italic;
+
+    &::before{
+      font-family: FontAwesome;
+      margin-right: 4px;
+    }
+  }
+
+  &.tips{
+    &::before{
+      content: '\f05a';
+    }
+  }
+
+  &.alert{
+    color: red;
+
+    &::before{
+      content: '\f071';
+    }
   }
 }
 
