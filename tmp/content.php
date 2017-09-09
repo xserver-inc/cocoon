@@ -4,6 +4,12 @@
     while ( have_posts() ) {
       the_post();?>
 
+      <?php //タイトル上の広告表示
+      if (is_ad_pos_above_title_visible()){
+        //レスポンシブ広告のフォーマットにhorizontalを指定する
+        get_template_part_with_ad_format(DATA_AD_FORMAT_HORIZONTAL, 'ad-above-title');
+      }; ?>
+
       <header class="article-header entry-header">
         <h1 class="entry-title" itemprop="headline" rel="bookmark"><?php the_title() ?></h1>
 

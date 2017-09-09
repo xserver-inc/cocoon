@@ -9,6 +9,14 @@ if (!is_home() && !is_search()) { ?>
   <h1 id="archive-title" class="archive-title"><?php echo get_archive_chapter_text(); ?></h1>
 <?php } ?>
 
+<?php
+////////////////////////////
+//インデクストップ広告
+////////////////////////////
+if (is_ad_pos_index_top_visible()){
+  //レスポンシブ広告のフォーマットにhorizontalを指定する
+  get_template_part_with_ad_format(DATA_AD_FORMAT_HORIZONTAL, 'ad-index-top');
+}; ?>
 
 <?php
 ////////////////////////////
@@ -28,6 +36,19 @@ if (have_posts()) : // WordPress ループ
 endif;
 ?>
 
-<?php get_template_part('tmp/pagination') ?>
+<?php
+////////////////////////////
+//インデクストップ広告
+////////////////////////////
+if (is_ad_pos_index_bottom_visible()){
+  //レスポンシブ広告のフォーマットにrectangleを指定する
+  get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-index-bottom');
+}; ?>
+
+<?php
+////////////////////////////
+//ページネーション
+///////////////////////
+get_template_part('tmp/pagination') ?>
 
 <?php get_footer(); ?>
