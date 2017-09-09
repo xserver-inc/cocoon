@@ -43,6 +43,15 @@ endif;
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
+    <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
+    <li class="code"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
+    <li class="code"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
+    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
+    <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
+    <li class="amp"><?php _e( '高速化', THEME_NAME ) ?></li>
+    <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
+    <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
   <!-- 広告タブ -->
@@ -59,6 +68,7 @@ endif;
   <div class="seo">
 
   </div>
+
 </div><!-- /#tabs -->
 
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">

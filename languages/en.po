@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-09-07 21:52+0900\n"
-"PO-Revision-Date: 2017-09-07 22:00+0900\n"
+"POT-Creation-Date: 2017-09-08 23:19+0900\n"
+"PO-Revision-Date: 2017-09-08 23:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -116,6 +116,30 @@ msgstr "Title"
 msgid "SEO"
 msgstr "SEO"
 
+#: lib/original-pages.php:46
+msgid "アクセス解析"
+msgstr "Analysis"
+
+#: lib/original-pages.php:47
+msgid "画像"
+msgstr "Images"
+
+#: lib/original-pages.php:48
+msgid "コード"
+msgstr "Source Code"
+
+#: lib/original-pages.php:49
+msgid "AMP"
+msgstr "AMP"
+
+#: lib/original-pages.php:50
+msgid "管理者画面"
+msgstr "Admin screen"
+
+#: lib/original-pages.php:51
+msgid "その他"
+msgstr "Others"
+
 #: lib/original-pages/ads-forms.php:7
 msgid "広告の表示"
 msgstr "Ads display"
@@ -154,30 +178,98 @@ msgstr "\"Sponsored links\" or \"advertisements\" recommended"
 msgid "広告上部ラベルに表示されるテキストの入力です。"
 msgstr "Is the text that appears in the ad at the top labeled input."
 
-#: lib/original-pages/ads-forms.php:42
+#: lib/original-pages/ads-forms.php:41
+msgid "広告の表示位置"
+msgstr "Ads position"
+
+#: lib/original-pages/ads-forms.php:49
+msgid "インデックスページでの広告位置"
+msgstr "Ad position on index pages"
+
+#: lib/original-pages/ads-forms.php:52
+msgid "トップ"
+msgstr "Top"
+
+#: lib/original-pages/ads-forms.php:55
+msgid "ミドル"
+msgstr "Middle"
+
+#: lib/original-pages/ads-forms.php:58
+msgid "ボトム"
+msgstr "Bottom"
+
+#: lib/original-pages/ads-forms.php:61 lib/original-pages/ads-forms.php:95
+msgid "サイドバートップ"
+msgstr "Sidebar top"
+
+#: lib/original-pages/ads-forms.php:66
+#, fuzzy
+msgid "インデックス・アーカイブページ等で広告を表示する位置を設定します。"
+msgstr "Set the index and archive pages, etc. in the ad to appear."
+
+#: lib/original-pages/ads-forms.php:71
+msgid "投稿・固定ページでの広告位置"
+msgstr "Ad position in posts and pages"
+
+#: lib/original-pages/ads-forms.php:74
+msgid "タイトル上"
+msgstr "Above Title"
+
+#: lib/original-pages/ads-forms.php:77
+msgid "本文上"
+msgstr "Content Top"
+
+#: lib/original-pages/ads-forms.php:80
+msgid "本文中"
+msgstr "Content Middle"
+
+#: lib/original-pages/ads-forms.php:83
+msgid "本文下"
+msgstr "Content Bottom"
+
+#: lib/original-pages/ads-forms.php:86
+#, fuzzy
+msgid "SNSボタン上（本文下部分）"
+msgstr "Buttons on social networks (full text at the bottom:)"
+
+#: lib/original-pages/ads-forms.php:89
+#, fuzzy
+msgid "SNSボタン下（本文下部分）"
+msgstr "SNS button below (full text at the bottom:)"
+
+#: lib/original-pages/ads-forms.php:92
+msgid "関連記事下（投稿ページのみ）"
+msgstr "Below Related Posts (post page only)"
+
+#: lib/original-pages/ads-forms.php:100
+#, fuzzy
+msgid "投稿・固定ページで広告を表示する位置を設定します。"
+msgstr "Sets the position to display the ads in posts and static pages."
+
+#: lib/original-pages/ads-forms.php:111
 msgid "広告除外記事ID"
 msgstr "Ad exclusion post IDs"
 
-#: lib/original-pages/ads-forms.php:45 lib/original-pages/ads-forms.php:56
+#: lib/original-pages/ads-forms.php:114 lib/original-pages/ads-forms.php:125
 msgid "例：111,222,3333"
 msgstr "Ex: 111222, 3333"
 
-#: lib/original-pages/ads-forms.php:46
+#: lib/original-pages/ads-forms.php:115
 #, fuzzy
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "ID of the ad to posts and static pages, (comma) should be separated."
 
-#: lib/original-pages/ads-forms.php:53
+#: lib/original-pages/ads-forms.php:122
 msgid "広告除外カテゴリーID"
 msgstr "Ad exclusion category IDs"
 
-#: lib/original-pages/ads-forms.php:57
+#: lib/original-pages/ads-forms.php:126
 #, fuzzy
 msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
 msgstr "The ID of the category to hide ads, (comma) should be separated."
 
-#: lib/original-pages/ads-funcs.php:32
+#: lib/original-pages/ads-funcs.php:42
 msgid "スポンサーリンク"
 msgstr "Sponsored Links"
 
@@ -451,7 +543,6 @@ msgid "タイトル（未入力で非表示）"
 msgstr "Title"
 
 #: lib/widgets/facebook-page-like.php:62
-#, fuzzy
 msgid "メッセージ"
 msgstr "Message"
 
@@ -475,7 +566,6 @@ msgid ""
 msgstr "Ad widget displayed on mobile only."
 
 #: lib/widgets/mobile-ad.php:64 lib/widgets/pc-ad.php:61
-#, fuzzy
 msgid "広告タグ"
 msgstr "Ad code"
 
@@ -507,13 +597,11 @@ msgid "モバイルのみで表示されるSimplicity用のテキストウィジ
 msgstr "Text widget displayed on mobile only."
 
 #: lib/widgets/mobile-text.php:60 lib/widgets/pc-text.php:61
-#, fuzzy
 msgid "テキスト"
 msgstr "Text"
 
 #: lib/widgets/new-entries.php:9 lib/widgets/new-entries.php:51
 #: lib/widgets/new-popular.php:16 lib/widgets/new-popular.php:100
-#, fuzzy
 msgid "新着記事"
 msgstr "New Posts"
 
@@ -529,7 +617,6 @@ msgid "カテゴリー別新着記事"
 msgstr "New posts by category"
 
 #: lib/widgets/new-entries.php:94 lib/widgets/popular-ranking.php:152
-#, fuzzy
 msgid "表示モード"
 msgstr "Display mode"
 

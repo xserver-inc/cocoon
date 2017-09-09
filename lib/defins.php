@@ -10,11 +10,20 @@ define('WIDGET_NAME_PREFIX', '[C] ');
 define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
-define('ET_DEFAULT', 'defalt');
-define('ET_LARGE_THUMB', 'large_thumb');
+define('ET_DEFAULT',        'defalt');
+define('ET_LARGE_THUMB',    'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
 //ウィジェットモードデフォルト
 define('WM_DEFAULT', 'all');
+
+//アドセンスID名
+define('DATA_AD_CLIENT', 'data-ad-client');
+define('DATA_AD_SLOT',   'data-ad-slot');
+//レスポンシブ広告の表示フォーマット
+define('DATA_AD_FORMAT_AUTO', 'auto'); //おまかせ
+define('DATA_AD_FORMAT_RECTANGLE', 'rectangle'); //正方形に近い長方形
+define('DATA_AD_FORMAT_HORIZONTAL', 'horizontal'); //横長
+define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //正方形
 
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
@@ -26,6 +35,8 @@ define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-aweso
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 require_once 'settings.php'; //Wordpressの設定
 require_once 'seo.php';      //SEO関係の設定
+require_once 'ad.php';      //広告関係の設定
+require_once 'original-pages/ads-funcs.php'; //設定関係の広告関数の呼び出し
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'utils.php'; //Wordpressの設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定

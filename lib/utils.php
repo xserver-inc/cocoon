@@ -88,3 +88,20 @@ function get_category_ids(){
   return null;
 }
 endif;
+
+//フォーマットを指定して広告テンプレートファイル呼び出す
+if ( !function_exists( 'get_template_part_with_ad_format' ) ):
+
+endif;
+function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null){
+  if ($wrap_class) {
+    echo '<div class="'.$wrap_class.'">';
+  }
+  //$format変数をテンプレートファイルに渡す
+  set_query_var('format', $format);
+  //広告テンプレートの呼び出し
+  get_template_part('tmp/ad');
+  if ($wrap_class) {
+    echo '</div>';
+  }
+}
