@@ -14,6 +14,8 @@ update_theme_option(OP_AD_POS_INDEX_MIDDLE_VISIBLE);
 update_theme_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE);
 //インデックスサイドバートップの広告表示
 update_theme_option(OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE);
+//インデックスサイドバーボトムの広告表示
+update_theme_option(OP_AD_POS_INDEX_SIDEBAR_BOTTOM_VISIBLE);
 //投稿・固定ページタイトル上の広告表示
 update_theme_option(OP_AD_POS_ABOVE_TITLE_VISIBLE);
 //投稿・固定ページ本文上の広告表示
@@ -28,8 +30,8 @@ update_theme_option(OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE);
 update_theme_option(OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE);
 //投稿関連記事下の広告表示
 update_theme_option(OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE);
-//投稿・固定ページサイドバートップの広告表示
-update_theme_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE);
+// //投稿・固定ページサイドバートップの広告表示
+// update_theme_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE);
 //広告除外記事ID
 update_theme_option(OP_AD_EXCLUDE_POST_IDS);
 //広告除外カテゴリーID

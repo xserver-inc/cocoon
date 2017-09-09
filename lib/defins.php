@@ -23,7 +23,7 @@ define('DATA_AD_SLOT',   'data-ad-slot');
 define('DATA_AD_FORMAT_AUTO', 'auto'); //おまかせ
 define('DATA_AD_FORMAT_RECTANGLE', 'rectangle'); //正方形に近い長方形
 define('DATA_AD_FORMAT_HORIZONTAL', 'horizontal'); //横長
-define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //正方形
+define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //縦長
 
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
