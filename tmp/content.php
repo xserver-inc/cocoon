@@ -32,13 +32,11 @@
 
       <footer class="article-footer entry-footer">
 
-        <div class="ad-content-bottom">
-          <?php //本文下の広告表示
-          if (is_ad_pos_content_bottom_visible()){
-            //レスポンシブ広告のフォーマットにrectangleを指定する
-            get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-content-bottom');
-          }; ?>
-        </div>
+        <?php //本文下の広告表示
+        if (is_ad_pos_content_bottom_visible()){
+          //レスポンシブ広告のフォーマットにrectangleを指定する
+          get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-content-bottom');
+        }; ?>
 
         <div class="entry-categories-tags">
           <?php the_category_links(); //カテゴリの出力
