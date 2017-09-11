@@ -1,16 +1,16 @@
 <?php //オリジナル設定ページ
 
 //管理画面の設定の隠しフィールド名
-define('HIDDEN_FIELD_NAME', strtolower(THEME_NAME).'_submit_hidden');
+define('HIDDEN_FIELD_NAME', THEME_NAME.'_submit_hidden');
 //入力ボックスの横幅
 define('DEFAULT_INPUT_COLS', 60);
 //入力ボックスの縦幅
 define('DEFAULT_INPUT_ROWS', 10);
 
-//広告設定用の定数と関数の呼び出し
-require_once 'original-pages/ads-funcs.php';
-//アクセス解析設定用の定数と関数の呼び出し
-require_once 'original-pages/analytics-funcs.php';
+// //広告設定用の定数と関数の呼び出し
+// require_once 'original-pages/ads-funcs.php';
+// //アクセス解析設定用の定数と関数の呼び出し
+// require_once 'original-pages/analytics-funcs.php';
 
 
 // ユーザーが何か情報を POST したかどうかを確認
