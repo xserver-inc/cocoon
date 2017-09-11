@@ -9,6 +9,8 @@ define('DEFAULT_INPUT_ROWS', 10);
 
 //広告設定用の定数と関数の呼び出し
 require_once 'original-pages/ads-funcs.php';
+//アクセス解析設定用の定数と関数の呼び出し
+require_once 'original-pages/analytics-funcs.php';
 
 
 // ユーザーが何か情報を POST したかどうかを確認
@@ -18,6 +20,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
   //広告設定用の保存
   require_once 'original-pages/ads-posts.php';
+  //アクセス解析設定用の保存
+  require_once 'original-pages/analytics-posts.php';
 
 
 //画面に「設定は保存されました」メッセージを表示
@@ -55,19 +59,24 @@ endif;
   </ul>
 
   <!-- 広告タブ -->
-  <div class="ads">
+  <div class="ads metabox-holder">
     <?php require_once 'original-pages/ads-forms.php'; ?>
-  </div>
+  </div><!-- /.metabox-holder -->
 
   <!-- タイトルタブ -->
-  <div class="title">
+  <div class="title metabox-holder">
 
-  </div>
+  </div><!-- /.metabox-holder -->
 
   <!-- SEOタブ -->
-  <div class="seo">
+  <div class="seo metabox-holder">
 
-  </div>
+  </div><!-- /.metabox-holder -->
+
+  <!-- アクセス解析 -->
+  <div class="analytics metabox-holder">
+    <?php require_once 'original-pages/analytics-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->
 

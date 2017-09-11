@@ -1,4 +1,4 @@
-<?php //広告設定をデータベースに保存
+<?php //広告設定に必要な定数や関数
 
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
