@@ -25,6 +25,15 @@ define('DATA_AD_FORMAT_RECTANGLE', 'rectangle'); //正方形に近い長方形
 define('DATA_AD_FORMAT_HORIZONTAL', 'horizontal'); //横長
 define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //縦長
 
+//管理設定画面の隠しフィールド名
+define('HIDDEN_FIELD_NAME', THEME_NAME.'_submit_hidden');
+define('SELECT_INDEX_NAME', 'select_index');
+
+//入力ボックスの横幅
+define('DEFAULT_INPUT_COLS', 60);
+//入力ボックスの縦幅
+define('DEFAULT_INPUT_ROWS', 10);
+
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
 

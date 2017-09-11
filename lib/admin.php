@@ -57,10 +57,16 @@ function admin_print_styles_custom() {
     if ($pagenow == 'admin.php') {
       wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
       wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+      $select_index = 0;
+      if (isset($_POST['select_index'])) {
+        $select_index = intval($_POST[SELECT_INDEX_NAME]);
+        var_dump($select_index);
+      }
       $data = 'jQuery(document).ready( function() {
-                 tabify("#tabs");
+                 tabify("#tabs").select( '.$select_index.' );
                });';
       wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+      wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
     }
 
     //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
