@@ -33,6 +33,10 @@ if (!is_user_logged_in()) :
 </script>
 <!-- /Ptengine -->
 <?php endif ?>
-<?php //以下その他の解析コードなど ?>
-
-<?php endif; ?>
+<?php //以下その他の解析コードなど
+if (get_other_analytics_header_tags()) {
+  echo '<!-- Other Analytics -->'.PHP_EOL;
+  echo get_other_analytics_header_tags().PHP_EOL;
+  echo '<!-- /Other Analytics -->'.PHP_EOL;
+}?>
+<?php endif; //!is_user_logged_in() ?>
