@@ -1,3 +1,10 @@
+<div class="metabox-holder">
+
+<!-- アドセンス設定 -->
+<div id="ads" class="postbox">
+  <h2 class="hndle"><?php _e( 'アドセンス設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
 <table class="form-table">
   <tbody>
 
@@ -114,6 +121,19 @@
       </td>
     </tr>
 
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+<!-- 広告除外設定 -->
+<div id="exclude-ads" class="postbox">
+  <h2 class="hndle"><?php _e( '広告除外設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+<table class="form-table">
+  <tbody>
     <!-- 広告除外記事ID -->
     <tr>
       <th scope="row">
@@ -138,3 +158,8 @@
 
   </tbody>
 </table>
+
+  </div>
+</div>
+
+</div><!-- /.metabox-holder -->

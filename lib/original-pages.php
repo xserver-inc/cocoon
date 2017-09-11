@@ -3,9 +3,9 @@
 //管理画面の設定の隠しフィールド名
 define('HIDDEN_FIELD_NAME', strtolower(THEME_NAME).'_submit_hidden');
 //入力ボックスの横幅
-define('DEFAULT_INPUT_COLS', 46);
+define('DEFAULT_INPUT_COLS', 60);
 //入力ボックスの縦幅
-define('DEFAULT_INPUT_ROWS', 6);
+define('DEFAULT_INPUT_ROWS', 10);
 
 //広告設定用の定数と関数の呼び出し
 require_once 'original-pages/ads-funcs.php';
@@ -72,9 +72,9 @@ endif;
 </div><!-- /#tabs -->
 
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-<p class="submit">
+
 <?php submit_button(); ?>
-</p>
+
 
 </form>
 </div>
