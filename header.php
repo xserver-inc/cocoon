@@ -24,6 +24,9 @@
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
+    <?php //アクセス解析ヘッダータグの取得
+    get_template_part('tmp/analytics-header'); ?>
+
     <div id="container" class="container cf">
       <div class="header-container">
         <header id="header" class="header cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
@@ -42,7 +45,7 @@
 
         </header>
 
-        <?php get_template_part('tmp/navi') ?>
+        <?php get_template_part('tmp/navi'); ?>
       </div><!-- /.header-container -->
 
       <div id="content" class="content cf">
