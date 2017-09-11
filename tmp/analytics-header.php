@@ -1,7 +1,5 @@
-
-<?php
-if (!is_user_logged_in()) :
-?>
+<?php //ヘッダーのアクセス解析
+if (!is_user_logged_in()) : //ログインしていないユーザーのみ適用 ?>
 <?php if ( get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
 <!-- Google Analytics -->
 <script>
