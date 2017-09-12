@@ -322,3 +322,100 @@ jQuery(function($) {
 endif;
 add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
 add_action( 'admin_head-post.php', 'add_category_filter_form' );
+
+// ユーザープロフィールの項目のカスタマイズ
+if ( !function_exists( 'user_contactmethods_custom' ) ):
+function user_contactmethods_custom($wb){
+  //項目の追加
+  $wb['twitter_url'] = __( 'Twitter URL', THEME_NAME );
+  $wb['facebook_url'] = __( 'Facebook URL', THEME_NAME );
+  $wb['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
+  $wb['hatebu_url'] = __( 'はてブ URL', THEME_NAME );
+  $wb['instagram_url'] = __( 'Instagram URL', THEME_NAME );
+  $wb['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
+  $wb['youtube_url'] = __( 'YouTube URL', THEME_NAME );
+  $wb['flickr_url'] = __( 'Flickr URL', THEME_NAME );
+  $wb['line_t_url'] = __( 'LINE@ URL', THEME_NAME );
+  $wb['github_url'] = __( 'GitHub URL', THEME_NAME );
+
+  return $wb;
+}
+endif;
+add_filter('user_contactmethods', 'user_contactmethods_custom');
+
+//プロフィール画面で設定したTwitter URLの取得
+if ( !function_exists( 'get_the_author_twitter_url' ) ):
+function get_the_author_twitter_url(){
+  return get_the_author_meta('twitter_url');
+}
+endif;
+
+//プロフィール画面で設定したFacebook URLの取得
+if ( !function_exists( 'get_the_author_facebook_url' ) ):
+function get_the_author_facebook_url(){
+  return get_the_author_meta('facebook_url');
+}
+endif;
+
+//プロフィール画面で設定したGoogle+ URLの取得
+if ( !function_exists( 'get_the_author_google_plus_url' ) ):
+function get_the_author_google_plus_url(){
+  return get_the_author_meta('google_plus_url');
+}
+endif;
+
+//プロフィール画面で設定したはてブ URLの取得
+if ( !function_exists( 'get_the_author_hatebu_url' ) ):
+function get_the_author_hatebu_url(){
+  return get_the_author_meta('hatebu_url');
+}
+endif;
+
+//プロフィール画面で設定したInstagram URLの取得
+if ( !function_exists( 'get_the_author_instagram_url' ) ):
+function get_the_author_instagram_url(){
+  return get_the_author_meta('instagram_url');
+}
+endif;
+
+//プロフィール画面で設定したPinterest URLの取得
+if ( !function_exists( 'get_the_author_pinterest_url' ) ):
+function get_the_author_pinterest_url(){
+  return get_the_author_meta('pinterest_url');
+}
+endif;
+
+//プロフィール画面で設定したYouTube URLの取得
+if ( !function_exists( 'get_the_author_youtube_url' ) ):
+function get_the_author_youtube_url(){
+  return get_the_author_meta('youtube_url');
+}
+endif;
+
+//プロフィール画面で設定した立夏 URLの取得
+if ( !function_exists( 'get_the_author_flickr_url' ) ):
+function get_the_author_flickr_url(){
+  return get_the_author_meta('flickr_url');
+}
+endif;
+
+//プロフィール画面で設定したFacebook URLの取得
+if ( !function_exists( 'get_the_author_facebook_url' ) ):
+function get_the_author_facebook_url(){
+  return get_the_author_meta('facebook_url');
+}
+endif;
+
+//プロフィール画面で設定したLINE@ URLの取得
+if ( !function_exists( 'get_the_author_line_at_url' ) ):
+function get_the_author_line_at_url(){
+  return get_the_author_meta('line_at_url');
+}
+endif;
+
+//プロフィール画面で設定したGitHub URLの取得
+if ( !function_exists( 'get_the_author_github_url' ) ):
+function get_the_author_github_url(){
+  return get_the_author_meta('github_url');
+}
+endif;
