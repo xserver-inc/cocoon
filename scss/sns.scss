@@ -2,7 +2,7 @@
 ** SNSフォローボタン
 ************************************/
 .sns-pages{
-  margin: 1em 0;
+  margin: 36px 0;
   display: flex;
   align-items: center;
 
@@ -13,9 +13,9 @@
     background-color: #777;
     font-size: 30px;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 8px;
     @include link_cancel($white_text_color);
-    border-radius: $badge_border_radius;
+    border-radius: $basic_border_radius;
 
     &:last-child{
       margin-right: 0;

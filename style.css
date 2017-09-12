@@ -80,7 +80,7 @@ a:hover {
   float: left;
   padding: 20px 29px;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .main.no-sidebar {
@@ -596,7 +596,7 @@ blockquote::after {
   width: 356px;
   border: 1px solid transparent;
   padding: 9px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #fff;
 }
 .sidebar h3 {
@@ -1086,7 +1086,7 @@ label.screen-reader-text {
 ** SNSフォローボタン
 ************************************/
 .sns-pages {
-  margin: 1em 0;
+  margin: 36px 0;
   display: flex;
   align-items: center;
 }
@@ -1097,10 +1097,10 @@ label.screen-reader-text {
   background-color: #777;
   font-size: 30px;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 8px;
   color: #fff;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .sns-pages a:last-child {
   margin-right: 0;

@@ -15,6 +15,7 @@
 <?php if (  get_the_author_flickr_url() )://Flickrフォローボタンを表示するか ?><a href="<?php echo esc_html(  get_the_author_flickr_url() ); //YFlickrフォローIDの取得 ?>" class="flickr-page" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-flickr-logo"></span></a><?php endif; ?>
 <?php if ( get_the_author_line_at_url() )://LINE@フォローボタンを表示するか ?><a href="<?php echo esc_html(  get_the_author_line_at_url() ); //LINE@フォローURLの取得 ?>" class="line-at-page" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a><?php endif; ?>
 <?php if ( get_the_author_github_url() )://GitHubフォローボタンを表示するか ?><a href="<?php echo esc_html(  get_the_author_github_url() ); //GitHubフォローURLの取得 ?>" class="github-page" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-github-logo"></span></a><?php endif; ?>
-<?php if ( 0/*is_rss_follow_btn_visible()*/ )://RSSフォローボタンを表示するか ?><a href="<?php bloginfo('rss2_url'); ?>" class="rss-page" target="_blank" title="<?php _e( 'RSSで更新情報をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rss-logo"></span></a><?php endif; ?>
+<?php if ( 1/*is_feedly_follow_btn_visible()*/ )://feedlyフォローボタンを表示するか ?><a href="//feedly.com/i/subscription/feed/<?php bloginfo("rss2_url"); ?>" class="feedly-page" target="blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow"><span class="icon-feedly-logo"></span></a><?php endif; ?>
+<?php if ( 1/*is_rss_follow_btn_visible()*/ )://RSSフォローボタンを表示するか ?><a href="<?php bloginfo('rss2_url'); ?>" class="rss-page" target="_blank" title="<?php _e( 'RSSで更新情報をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rss-logo"></span></a><?php endif; ?>
 
 <?php endif; ?>
