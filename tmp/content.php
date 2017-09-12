@@ -42,6 +42,8 @@
           <?php the_category_links(); //カテゴリの出力
                 the_tag_links(); //タグの出力?>
         </div>
+        <?php //SNSフォローボタン
+          get_template_part('tmp/sns-follow-pages'); ?>
       </footer>
 
     <?php

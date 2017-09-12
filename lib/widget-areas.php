@@ -110,8 +110,8 @@ register_sidebars(1,
   'description' => __( '関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget-under-related-entries %2$s">',
   'after_widget' => '</div>',
-  'before_title' => '<div class="widget-under-related-entries-title main-widget-label">',
-  'after_title' => '</div>',
+  'before_title' => '<h2 class="widget-under-related-entries-title main-widget-label">',
+  'after_title' => '</h2>',
 ));
 
 register_sidebars(1,

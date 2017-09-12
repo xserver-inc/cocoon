@@ -40,6 +40,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "pagination";
 //フッター
 @import "footer";
+//SNS
+@import "sns";
 //広告
 @import "ad";
 //YouTube iframeのようなメディア表示
@@ -48,6 +50,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "forms";
 //拡張クラス
 @import "extension";
+//IcoMoon
+@import "icomoon";
 
 //1240px以下
 @media screen and (max-width: 1240px){

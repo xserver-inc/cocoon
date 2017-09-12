@@ -341,7 +341,19 @@ function user_contactmethods_custom($wb){
   return $wb;
 }
 endif;
-add_filter('user_contactmethods', 'user_contactmethods_custom');
+add_filter('user_contactmethods', 'user_contactmethods_custom', 10, 1);
+
+//ユーザーIDの取得
+if ( !function_exists( 'get_the_posts_author_id' ) ):
+function get_the_posts_author_id(){
+  global $post_id;
+  $post = get_post($post_id);
+  if ($post){
+    $author = get_userdata($post->post_author);
+    return $author->ID;
+  }
+}
+endif;
 
 //プロフィール画面で設定したTwitter URLの取得
 if ( !function_exists( 'get_the_author_twitter_url' ) ):
@@ -396,13 +408,6 @@ endif;
 if ( !function_exists( 'get_the_author_flickr_url' ) ):
 function get_the_author_flickr_url(){
   return get_the_author_meta('flickr_url');
-}
-endif;
-
-//プロフィール画面で設定したFacebook URLの取得
-if ( !function_exists( 'get_the_author_facebook_url' ) ):
-function get_the_author_facebook_url(){
-  return get_the_author_meta('facebook_url');
 }
 endif;
 
