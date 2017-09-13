@@ -63,7 +63,7 @@ form.admin-settings {
   -moz-border-top-colors: none;
   background-color: #f1f1f1;
   cursor: pointer;
-  display: inline-block;
+  display: inline-block !important;
   margin: 0 !important;
   padding: 5px 8px 3px !important;
   border-color: #999 #999 currentcolor;
@@ -82,5 +82,3 @@ form.admin-settings {
   width: 50%;
   padding: 10px;
 }
-
-/*# sourceMappingURL=admin.css.map */

@@ -1,8 +1,16 @@
 /************************************
 ** SNSフォローボタン
 ************************************/
-.sns-pages{
+.sns-follow{
   margin: 36px 0;
+}
+
+.sns-follow-message{
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.sns-follow-buttons{
   display: flex;
   align-items: center;
 

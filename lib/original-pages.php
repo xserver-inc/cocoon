@@ -41,10 +41,11 @@ endif;
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="sns"><?php _e( 'SNS', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
-    <li class="code"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
-    <li class="code"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
+    <li class="blog-card-in"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
+    <li class="blog-card-out"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( '高速化', THEME_NAME ) ?></li>
@@ -70,6 +71,11 @@ endif;
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
     <?php require_once 'original-pages/analytics-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- SNSタブ -->
+  <div class="sns metabox-holder">
+    <?php require_once 'original-pages/sns-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->
