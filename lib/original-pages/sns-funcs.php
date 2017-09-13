@@ -8,7 +8,23 @@ function get_sns_follow_message(){
 }
 endif;
 
-//投稿・固定ページ以外で表示する
+//feedlyフォローボタンの表示
+define('OP_FEEDLY_FOLLOW_BUTTON_VISIBLE', 'feedly_follow_button_visible');
+if ( !function_exists( 'is_feedly_follow_button_visible' ) ):
+function is_feedly_follow_button_visible(){
+  return get_option(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//RSS購読ボタンの表示
+define('OP_RSS_FOLLOW_BUTTON_VISIBLE', 'rss_follow_button_visible');
+if ( !function_exists( 'is_rss_follow_button_visible' ) ):
+function is_rss_follow_button_visible(){
+  return get_option(OP_RSS_FOLLOW_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//デフォルトフォローユーザー
 define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 if ( !function_exists( 'get_sns_default_follow_user' ) ):
 function get_sns_default_follow_user(){

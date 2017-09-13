@@ -112,8 +112,8 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
 }
 
 //セレクトボックスを手軽に作成する
-if ( !function_exists( 'get_selectbox_tag' ) ):
-function get_easy_selectbox_tag($name, $value){
+if ( !function_exists( 'get_author_list_selectbox_tag' ) ):
+function get_author_list_selectbox_tag($name, $value){
   $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
   $html = '<select id="'.$name.'" name="'.$name.'">'.PHP_EOL;
   foreach($users as $user) {

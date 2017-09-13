@@ -8,6 +8,18 @@
     <table class="form-table">
       <tbody>
 
+        <!-- プレビュー画面 -->
+        <tr>
+          <th scope="row">
+            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <div class="demo">
+            <?php get_template_part('/tmp/sns-follow-pages'); ?>
+            </div>
+          </td>
+        </tr>
+
         <!-- フォローメッセージ -->
         <tr>
           <th scope="row">
@@ -25,8 +37,9 @@
             <label><?php _e( 'SNSサービスのURL', THEME_NAME ) ?></label>
           </th>
           <td>
-            <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?></p>
-            <ul class="sns-follow-urls">
+            <p><?php echo THEME_NAME_CAMEL; ?><?php _e( 'は、ログインユーザーごとにフォローページを設定できます。', THEME_NAME ) ?></p>
+            <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?>(<a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>)</p>
+            <ul class="list-style-disc">
               <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
               <li><?php _e( 'Twitter', THEME_NAME ) ?></li>
               <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
@@ -39,7 +52,29 @@
               <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
             </ul>
             <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>から設定</p>
-            <p class="tips"><?php _e( '現在ログイン中のユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>
+            <p class="tips"><?php _e( '現ログインユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+        <!-- feedlyの表示 -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'feedlyの表示', THEME_NAME ) ?></label>
+          </th>
+          <td>
+             <input type="checkbox" name="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_feedly_follow_button_visible()); ?>><?php _e("feedlyフォローボタンを表示する",THEME_NAME ); ?>
+            <p class="tips"><?php _e( 'feedlyフォローボタンを表示します。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+        <!-- RSSの表示 -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'RSSの表示', THEME_NAME ) ?></label>
+          </th>
+          <td>
+             <input type="checkbox" name="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_rss_follow_button_visible()); ?>><?php _e("RSS購読ボタンを表示する",THEME_NAME ); ?>
+            <p class="tips"><?php _e( 'RSS購読料のボタンを表示します。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
@@ -49,18 +84,8 @@
             <label for="<?php echo OP_SNS_DEFAULT_FOLLOW_USER; ?>"><?php _e( 'デフォルトユーザー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <?php echo get_easy_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user()); ?>
-            <p class="tips"><?php _e( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
-          </td>
-        <!-- プレビュー画面 -->
-        <tr>
-          <th scope="row">
-            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
-          </th>
-          <td>
-            <div class="demo">
-            <?php get_template_part('/tmp/sns-follow-pages'); ?>
-            </div>
+            <?php echo get_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user()); ?>
+            <p class="tips"><?php _e( '投稿・固定ページ以内でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
