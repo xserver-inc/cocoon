@@ -21,7 +21,7 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   //IcoMoon
   ///////////////////////////////////////////
-  //wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+  wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
 
 ////////////////////////////////////////////////////////////////
 //

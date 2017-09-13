@@ -355,6 +355,13 @@ function get_the_posts_author_id(){
 }
 endif;
 
+//プロフィール画面で設定したウェブサイトURLの取得
+if ( !function_exists( 'get_the_author_website_url' ) ):
+function get_the_author_website_url(){
+  return get_the_author_meta('url');
+}
+endif;
+
 //プロフィール画面で設定したTwitter URLの取得
 if ( !function_exists( 'get_the_author_twitter_url' ) ):
 function get_the_author_twitter_url(){
