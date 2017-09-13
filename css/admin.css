@@ -1420,4 +1420,8 @@ form.admin-settings {
     width: 50%;
     padding: 10px; }
 
+.sns-follow-urls {
+  list-style-type: disc;
+  padding-left: 30px; }
+
 /*# sourceMappingURL=admin.css.map */

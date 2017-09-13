@@ -19,14 +19,27 @@
           </td>
         </tr>
 
-        <!-- フォローメッセージ -->
+        <!-- SNSサービスのURL -->
         <tr>
           <th scope="row">
-            <label><?php _e( 'フォローメッセージ', THEME_NAME ) ?></label>
+            <label><?php _e( 'SNSサービスのURL', THEME_NAME ) ?></label>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_SNS_FOLLOW_MESSAGE; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_sns_follow_message(); ?>" placeholder="<?php _e( 'フォローメッセージの入力', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '訪問者にフォローを促すメッセージを入力してください。', THEME_NAME ) ?></p>
+            <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?></p>
+            <ul class="sns-follow-urls">
+              <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
+              <li><?php _e( 'Twitter', THEME_NAME ) ?></li>
+              <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
+              <li><?php _e( 'Google+', THEME_NAME ) ?></li>
+              <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
+              <li><?php _e( 'Instagram', THEME_NAME ) ?></li>
+              <li><?php _e( 'Pinterest', THEME_NAME ) ?></li>
+              <li><?php _e( 'YouTube', THEME_NAME ) ?></li>
+              <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
+              <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
+            </ul>
+            <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>から設定</p>
+            <p class="tips"><?php _e( '現在ログイン中のユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
