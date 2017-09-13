@@ -114,3 +114,10 @@ function get_the_author_github_url(){
 }
 endif;
 
+//全てのフォローボタンのうちどれかが表示されているか
+if ( !function_exists( 'is_any_sns_follow_buttons_exist' ) ):
+function is_any_sns_follow_buttons_exist(){
+  return get_the_author_website_url() || get_the_author_twitter_url() || get_the_author_facebook_url() || get_the_author_google_plus_url() || get_the_author_hatebu_url() || get_the_author_instagram_url() || get_the_author_pinterest_url() || get_the_author_youtube_url() || get_the_author_flickr_url() || get_the_author_line_at_url() || get_the_author_github_url() || is_feedly_follow_button_visible() || is_rss_follow_button_visible();
+}
+endif;
+

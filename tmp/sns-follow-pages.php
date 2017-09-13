@@ -1,5 +1,5 @@
 <?php //SNSページのフォローボタン ?>
-<?php if ( 1/*is_all_sns_follow_btns_visible()*/ ): //全てのフォローボタンを表示するかどうか?>
+<?php if ( is_any_sns_follow_buttons_exist() ): //全てのフォローボタンを表示するかどうか?>
 <!-- SNSページ -->
 <div class="sns-follow">
 <?php if ( get_sns_follow_message() ): //フォローメッセージがあるか?>
