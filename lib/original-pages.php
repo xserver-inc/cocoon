@@ -15,6 +15,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/ads-posts.php';
   //アクセス解析設定用の保存
   require_once 'original-pages/analytics-posts.php';
+  //SNS設定用の保存
+  require_once 'original-pages/sns-posts.php';
 
 
 //画面に「設定は保存されました」メッセージを表示
@@ -86,7 +88,7 @@ endif;
 </div><!-- /#tabs -->
 
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-<input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="3">
+<input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
 
 <?php submit_button(); ?>
 

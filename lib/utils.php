@@ -110,3 +110,22 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   //   echo '</div>';
   // }
 }
+
+//セレクトボックスを手軽に作成する
+if ( !function_exists( 'get_selectbox_tag' ) ):
+function get_easy_selectbox_tag($name, $value){
+  $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
+  $html = '<select id="'.$name.'" name="'.$name.'">'.PHP_EOL;
+  foreach($users as $user) {
+    $uid = $user->ID;
+    if ($uid == intval($value)) {
+      $selected = " selected";
+    } else {
+      $selected = null;
+    }
+    $html .= '  <option value="'.$uid.'"'.$selected.'>'.$user->display_name.'</option>'.PHP_EOL;
+  } //foreach
+  $html .= '</select>'.PHP_EOL;
+  return $html;
+}
+endif;
