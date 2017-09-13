@@ -1,5 +1,18 @@
 <?php //SNS設定に必要な定数や関数
 
+
+///////////////////////////////////////
+// SNSフォローボタンの設定
+///////////////////////////////////////
+//本文下のフォローバターの表示
+define('OP_SNS_FOLLOW_BUTTONS_VISIBLE', 'sns_follow_buttons_visible');
+if ( !function_exists( 'get_sns_follow_buttons_visible' ) ):
+function is_sns_follow_buttons_visible(){
+  return get_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE, 1);
+}
+endif;
+
+
 //SNSフォローメッセージ
 define('OP_SNS_FOLLOW_MESSAGE', 'SNS_FOLLOW_MESSAGE');
 if ( !function_exists( 'get_sns_follow_message' ) ):

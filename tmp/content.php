@@ -43,6 +43,7 @@
                 the_tag_links(); //タグの出力?>
         </div>
         <?php //SNSフォローボタン
+        if (is_sns_follow_buttons_visible())
           get_template_part('tmp/sns-follow-pages'); ?>
       </footer>
 

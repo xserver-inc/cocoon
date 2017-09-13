@@ -15,8 +15,21 @@
           </th>
           <td>
             <div class="demo">
-            <?php get_template_part('/tmp/sns-follow-pages'); ?>
+            <?php //テンプレートの読み込み
+              if (is_sns_follow_buttons_visible())
+                get_template_part('/tmp/sns-follow-pages'); ?>
             </div>
+          </td>
+        </tr>
+
+        <!-- フォローボタンの表示 -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>"><?php _e( 'フォローボタンの表示', THEME_NAME ) ?></label>
+          </th>
+          <td>
+             <input type="checkbox" name="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_follow_buttons_visible()); ?>><?php _e("本文下のフォローボタンを表示する",THEME_NAME ); ?>
+            <p class="tips"><?php _e( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
