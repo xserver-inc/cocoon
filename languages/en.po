@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-09-08 23:19+0900\n"
-"PO-Revision-Date: 2017-09-08 23:26+0900\n"
+"POT-Creation-Date: 2017-09-14 08:56+0900\n"
+"PO-Revision-Date: 2017-09-14 09:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -27,7 +27,7 @@ msgstr "Leave a Reply"
 msgid "コメントを送信"
 msgstr "Post Comment"
 
-#: index.php:25
+#: index.php:40
 msgid "投稿が見つかりませんでした。"
 msgstr "Posts could not be found"
 
@@ -35,59 +35,59 @@ msgstr "Posts could not be found"
 msgid "アイキャッチ"
 msgstr "Featured Image"
 
-#: lib/admin.php:79
+#: lib/admin.php:87
 msgid "管理メニュー"
 msgstr "Admin Menus"
 
-#: lib/admin.php:91
+#: lib/admin.php:99
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:98
+#: lib/admin.php:106
 msgid "投稿一覧"
 msgstr "Posts"
 
-#: lib/admin.php:105
+#: lib/admin.php:113
 msgid "固定ページ一覧"
 msgstr "Pages"
 
-#: lib/admin.php:112
+#: lib/admin.php:120
 msgid "メディア一覧"
 msgstr "Media"
 
-#: lib/admin.php:119
+#: lib/admin.php:127
 msgid "テーマ"
 msgstr "Themes"
 
-#: lib/admin.php:126
+#: lib/admin.php:134
 msgid "カスタマイズ"
 msgstr "Customize"
 
-#: lib/admin.php:133
+#: lib/admin.php:141
 msgid "ウィジェット"
 msgstr "Widgets"
 
-#: lib/admin.php:140
+#: lib/admin.php:148
 msgid "メニュー"
 msgstr "Menus"
 
-#: lib/admin.php:147
+#: lib/admin.php:155
 msgid "テーマの編集"
 msgstr "Edit themes"
 
-#: lib/admin.php:154
+#: lib/admin.php:162
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:172
+#: lib/admin.php:180
 msgid "公開"
 msgstr "Publish"
 
-#: lib/admin.php:173
+#: lib/admin.php:181
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure to publish the page?"
 
-#: lib/admin.php:278
+#: lib/admin.php:286
 msgid "カテゴリー検索"
 msgstr "Category Search"
 
@@ -99,172 +99,221 @@ msgstr "Settings"
 msgid "このページにアクセスする管理者権限がありません。"
 msgstr "You do not have administrator permissions to access this page."
 
-#: lib/original-pages.php:28
+#: lib/original-pages.php:27
 msgid "設定は保存されました。"
 msgstr "Settings have been saved."
 
-#: lib/original-pages.php:43
+#: lib/original-pages.php:42
 msgid "広告"
 msgstr "Ads"
 
-#: lib/original-pages.php:44 lib/widgets/mobile-text.php:53
+#: lib/original-pages.php:43 lib/widgets/mobile-text.php:53
 #: lib/widgets/pc-text.php:54 lib/widgets/recent-comments.php:124
 msgid "タイトル"
 msgstr "Title"
 
-#: lib/original-pages.php:45
+#: lib/original-pages.php:44
 msgid "SEO"
 msgstr "SEO"
 
-#: lib/original-pages.php:46
+#: lib/original-pages.php:45
 msgid "アクセス解析"
 msgstr "Analysis"
+
+#: lib/original-pages.php:46
+msgid "SNS"
+msgstr "SNS"
 
 #: lib/original-pages.php:47
 msgid "画像"
 msgstr "Images"
 
 #: lib/original-pages.php:48
+msgid "OGP"
+msgstr "OGP"
+
+#: lib/original-pages.php:49
+#, fuzzy
+msgid "ブログカード（内部）"
+msgstr "Blog Cards (Internal Links)"
+
+#: lib/original-pages.php:50
+#, fuzzy
+msgid "ブログカード（外部）"
+msgstr "Blog card (external link)"
+
+#: lib/original-pages.php:51
 msgid "コード"
 msgstr "Source Code"
 
-#: lib/original-pages.php:49
+#: lib/original-pages.php:52
 msgid "AMP"
 msgstr "AMP"
 
-#: lib/original-pages.php:50
+#: lib/original-pages.php:53
+#, fuzzy
+msgid "高速化"
+msgstr "Get Fast"
+
+#: lib/original-pages.php:54
 msgid "管理者画面"
 msgstr "Admin screen"
 
-#: lib/original-pages.php:51
+#: lib/original-pages.php:55
 msgid "その他"
 msgstr "Others"
 
-#: lib/original-pages/ads-forms.php:7
+#: lib/original-pages/ads-forms.php:3
+msgid "アドセンス設定"
+msgstr "AdSense settings"
+
+#: lib/original-pages/ads-forms.php:12
 msgid "広告の表示"
 msgstr "Ads display"
 
-#: lib/original-pages/ads-forms.php:10
-#, fuzzy
+#: lib/original-pages/ads-forms.php:15
 msgid "全ての広告を表示する"
 msgstr "To view all ads"
 
-#: lib/original-pages/ads-forms.php:11
+#: lib/original-pages/ads-forms.php:16
 msgid "全ての広告の表示を切り替えます。"
 msgstr "Toggles display of all advertising."
 
-#: lib/original-pages/ads-forms.php:18
+#: lib/original-pages/ads-forms.php:23
 msgid "広告コード"
 msgstr "Ad code"
 
-#: lib/original-pages/ads-forms.php:21
+#: lib/original-pages/ads-forms.php:26
 msgid "AdSenseのレスポンシブコードを入力してください"
 msgstr "Enter your responsive AdSense code"
 
-#: lib/original-pages/ads-forms.php:22
+#: lib/original-pages/ads-forms.php:27
 msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgstr "Please enter a responsive AdSense ad code."
 
-#: lib/original-pages/ads-forms.php:30
+#: lib/original-pages/ads-forms.php:35
 msgid "広告ラベル"
 msgstr "Ad label text"
 
-#: lib/original-pages/ads-forms.php:33
+#: lib/original-pages/ads-forms.php:38
 msgid "「スポンサーリンク」か「広告」推奨"
 msgstr "\"Sponsored links\" or \"advertisements\" recommended"
 
-#: lib/original-pages/ads-forms.php:34
+#: lib/original-pages/ads-forms.php:39
 #, fuzzy
 msgid "広告上部ラベルに表示されるテキストの入力です。"
 msgstr "Is the text that appears in the ad at the top labeled input."
 
-#: lib/original-pages/ads-forms.php:41
+#: lib/original-pages/ads-forms.php:46
 msgid "広告の表示位置"
 msgstr "Ads position"
 
-#: lib/original-pages/ads-forms.php:49
-msgid "インデックスページでの広告位置"
-msgstr "Ad position on index pages"
+#: lib/original-pages/ads-forms.php:55
+#, fuzzy
+#| msgid "インデックスページでの広告位置"
+msgid "インデックスページの表示位置"
+msgstr "Position index page"
 
-#: lib/original-pages/ads-forms.php:52
+#: lib/original-pages/ads-forms.php:58
 msgid "トップ"
 msgstr "Top"
 
-#: lib/original-pages/ads-forms.php:55
+#: lib/original-pages/ads-forms.php:61
 msgid "ミドル"
 msgstr "Middle"
 
-#: lib/original-pages/ads-forms.php:58
+#: lib/original-pages/ads-forms.php:64
 msgid "ボトム"
 msgstr "Bottom"
 
-#: lib/original-pages/ads-forms.php:61 lib/original-pages/ads-forms.php:95
+#: lib/original-pages/ads-forms.php:69
+#, fuzzy
+#| msgid "サイドバー"
+msgid "サイドバーの表示位置"
+msgstr "Where to show the sidebar:"
+
+#: lib/original-pages/ads-forms.php:72 lib/original-pages/ads-forms.php:107
 msgid "サイドバートップ"
 msgstr "Sidebar top"
 
-#: lib/original-pages/ads-forms.php:66
+#: lib/original-pages/ads-forms.php:75
+msgid "サイドバーボトム"
+msgstr "Sidebar bottom"
+
+#: lib/original-pages/ads-forms.php:83
 #, fuzzy
-msgid "インデックス・アーカイブページ等で広告を表示する位置を設定します。"
-msgstr "Set the index and archive pages, etc. in the ad to appear."
+#| msgid "投稿・固定ページでの広告位置"
+msgid "投稿・固定ページの表示位置"
+msgstr "Display in posts and static pages"
 
-#: lib/original-pages/ads-forms.php:71
-msgid "投稿・固定ページでの広告位置"
-msgstr "Ad position in posts and pages"
-
-#: lib/original-pages/ads-forms.php:74
+#: lib/original-pages/ads-forms.php:86
 msgid "タイトル上"
 msgstr "Above Title"
 
-#: lib/original-pages/ads-forms.php:77
+#: lib/original-pages/ads-forms.php:89
 msgid "本文上"
 msgstr "Content Top"
 
-#: lib/original-pages/ads-forms.php:80
+#: lib/original-pages/ads-forms.php:92
 msgid "本文中"
 msgstr "Content Middle"
 
-#: lib/original-pages/ads-forms.php:83
+#: lib/original-pages/ads-forms.php:95
 msgid "本文下"
 msgstr "Content Bottom"
 
-#: lib/original-pages/ads-forms.php:86
+#: lib/original-pages/ads-forms.php:98
 #, fuzzy
 msgid "SNSボタン上（本文下部分）"
 msgstr "Buttons on social networks (full text at the bottom:)"
 
-#: lib/original-pages/ads-forms.php:89
+#: lib/original-pages/ads-forms.php:101
 #, fuzzy
 msgid "SNSボタン下（本文下部分）"
 msgstr "SNS button below (full text at the bottom:)"
 
-#: lib/original-pages/ads-forms.php:92
+#: lib/original-pages/ads-forms.php:104
 msgid "関連記事下（投稿ページのみ）"
 msgstr "Below Related Posts (post page only)"
 
-#: lib/original-pages/ads-forms.php:100
+#: lib/original-pages/ads-forms.php:115
 #, fuzzy
-msgid "投稿・固定ページで広告を表示する位置を設定します。"
-msgstr "Sets the position to display the ads in posts and static pages."
+msgid "それぞれのページで広告を表示する位置を設定します。"
+msgstr "Set the location to display ads on each page."
 
-#: lib/original-pages/ads-forms.php:111
+#: lib/original-pages/ads-forms.php:117
+#, fuzzy
+msgid ""
+"設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
+"動作確認をしてください。"
+msgstr ""
+"Because there may be violation of Adsense policies by setting after setting "
+"up please work carefully."
+
+#: lib/original-pages/ads-forms.php:130
+#, fuzzy
+msgid "広告除外設定"
+msgstr "Apply ad exclusion settings"
+
+#: lib/original-pages/ads-forms.php:138
 msgid "広告除外記事ID"
 msgstr "Ad exclusion post IDs"
 
-#: lib/original-pages/ads-forms.php:114 lib/original-pages/ads-forms.php:125
+#: lib/original-pages/ads-forms.php:141 lib/original-pages/ads-forms.php:152
 msgid "例：111,222,3333"
 msgstr "Ex: 111222, 3333"
 
-#: lib/original-pages/ads-forms.php:115
+#: lib/original-pages/ads-forms.php:142
 #, fuzzy
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "ID of the ad to posts and static pages, (comma) should be separated."
 
-#: lib/original-pages/ads-forms.php:122
+#: lib/original-pages/ads-forms.php:149
 msgid "広告除外カテゴリーID"
 msgstr "Ad exclusion category IDs"
 
-#: lib/original-pages/ads-forms.php:126
+#: lib/original-pages/ads-forms.php:153
 #, fuzzy
 msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
 msgstr "The ID of the category to hide ads, (comma) should be separated."
@@ -272,6 +321,328 @@ msgstr "The ID of the category to hide ads, (comma) should be separated."
 #: lib/original-pages/ads-funcs.php:42
 msgid "スポンサーリンク"
 msgstr "Sponsored Links"
+
+#: lib/original-pages/analytics-forms.php:5
+#, fuzzy
+msgid "Google Analytics設定"
+msgstr "Google Analytics Setup"
+
+#: lib/original-pages/analytics-forms.php:14
+#, fuzzy
+msgid "Google AnalyticsトラッキングID"
+msgstr "Google Analytics Tracking ID (UA-xxxxxxxx-x)"
+
+#: lib/original-pages/analytics-forms.php:17
+#, fuzzy
+msgid "UA-00000000-0"
+msgstr "UA-00000000-0"
+
+#: lib/original-pages/analytics-forms.php:18
+#, fuzzy
+#| msgid "AdSenseのレスポンシブコードを入力してください"
+msgid "Google AnalyticsのトラッキングIDを入力してください。"
+msgstr "Enter your Google Analytics tracking ID."
+
+#: lib/original-pages/analytics-forms.php:31
+#, fuzzy
+msgid "Google Search Console設定"
+msgstr "Google Search Console settings"
+
+#: lib/original-pages/analytics-forms.php:40
+#, fuzzy
+msgid "Google Search Console ID"
+msgstr "Google Search Console ID"
+
+#: lib/original-pages/analytics-forms.php:43
+#, fuzzy
+msgid "サイト認証IDのみ入力"
+msgstr "Only the site ID."
+
+#: lib/original-pages/analytics-forms.php:44
+#, fuzzy
+#| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
+msgid "Google Search Consoleのサイト認証IDを入力してください。"
+msgstr "Please enter a site ID of Google Search Console."
+
+#: lib/original-pages/analytics-forms.php:57
+#, fuzzy
+msgid "Ptengine設定"
+msgstr "Ptengine settings"
+
+#: lib/original-pages/analytics-forms.php:66
+#, fuzzy
+msgid "PtengineのトラッキングID"
+msgstr "Ptengine tracking ID"
+
+#: lib/original-pages/analytics-forms.php:69
+#, fuzzy
+msgid "PtengineのトラッキングIDのみ入力"
+msgstr "Enter tracking ID of Ptengine"
+
+#: lib/original-pages/analytics-forms.php:70
+#, fuzzy
+#| msgid "AdSenseのレスポンシブコードを入力してください"
+msgid "PtengineのトラッキングIDを入力してください。"
+msgstr "Please enter the tracking ID of the Ptengine."
+
+#: lib/original-pages/analytics-forms.php:83
+#, fuzzy
+#| msgid "アクセス解析"
+msgid "その他のアクセス解析設定"
+msgstr "Other analysis settings"
+
+#: lib/original-pages/analytics-forms.php:92
+#, fuzzy
+msgid "アクセス解析タグ（ヘッダー用）"
+msgstr "Access analysis tag (for headers)"
+
+#: lib/original-pages/analytics-forms.php:95
+#, fuzzy
+msgid "ヘッダー用のアクセス解析タグの入力"
+msgstr "Enter a tag header for access analysis"
+
+#: lib/original-pages/analytics-forms.php:96
+#, fuzzy
+msgid ""
+"ヘッダーに挿入する必要のある、その他アクセス解析タグを入力してください。"
+msgstr ""
+"Need to insert in the header, the other enter your access analysis tag."
+
+#: lib/original-pages/analytics-forms.php:103
+#, fuzzy
+msgid "アクセス解析タグ（フッター用）"
+msgstr "Access analysis tag (for the footer)"
+
+#: lib/original-pages/analytics-forms.php:106
+#, fuzzy
+msgid "フッター用のアクセス解析タグの入力"
+msgstr "Enter a footer for access analysis tag"
+
+#: lib/original-pages/analytics-forms.php:107
+#, fuzzy
+msgid ""
+"フッターに挿入する必要のある、その他アクセス解析タグを入力してください。"
+msgstr ""
+"Please enter the access analysis tag or other that must be inserted into the "
+"footer."
+
+#: lib/original-pages/sns-forms.php:5
+#, fuzzy
+msgid "フォローボタン"
+msgstr "SNS Follow Buttons"
+
+#: lib/original-pages/sns-forms.php:7
+#, fuzzy
+msgid "フォローボタンの表示に関する設定です"
+msgstr "It is set on the follow button"
+
+#: lib/original-pages/sns-forms.php:14
+#, fuzzy
+msgid "プレビュー"
+msgstr "Preview"
+
+#: lib/original-pages/sns-forms.php:28
+#, fuzzy
+msgid "フォローボタンの表示"
+msgstr "All follow buttons display"
+
+#: lib/original-pages/sns-forms.php:31
+#, fuzzy
+msgid "本文下のフォローボタンを表示する"
+msgstr "Switch follow buttons at entry content bottom."
+
+#: lib/original-pages/sns-forms.php:32
+#, fuzzy
+msgid "投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。"
+msgstr ""
+"Toggles the display of the follow button under the text in posts and static "
+"pages."
+
+#: lib/original-pages/sns-forms.php:39
+#, fuzzy
+#| msgid "メッセージ"
+msgid "フォローメッセージ"
+msgstr "Follow message"
+
+#: lib/original-pages/sns-forms.php:42
+#, fuzzy
+#| msgid "メッセージ"
+msgid "フォローメッセージの入力"
+msgstr "Type of follow-up messages"
+
+#: lib/original-pages/sns-forms.php:43
+#, fuzzy
+#| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
+msgid "訪問者にフォローを促すメッセージを入力してください。"
+msgstr "Please enter a prompt follow-up to the visitors."
+
+#: lib/original-pages/sns-forms.php:50
+#, fuzzy
+msgid "SNSサービスのURL"
+msgstr "The URL of the social services"
+
+#: lib/original-pages/sns-forms.php:53
+#, fuzzy
+msgid "は、ログインユーザーごとにフォローページを設定できます。"
+msgstr "You can set the follow pages for logged-in users."
+
+#: lib/original-pages/sns-forms.php:54
+#, fuzzy
+msgid ""
+"以下のアカウントURLを設定する場合は、プロフィールページから設定してください。"
+msgstr "If you want the account URL below must be from your profile page."
+
+#: lib/original-pages/sns-forms.php:54 lib/original-pages/sns-forms.php:67
+#, fuzzy
+msgid "あなたのプロフィール"
+msgstr "Edit Your Profile"
+
+#: lib/original-pages/sns-forms.php:56
+#, fuzzy
+msgid "ウェブサイト"
+msgstr "Website"
+
+#: lib/original-pages/sns-forms.php:57
+#, fuzzy
+msgid "Twitter"
+msgstr "Twitter type (high speed)"
+
+#: lib/original-pages/sns-forms.php:58
+#, fuzzy
+msgid "Facebook"
+msgstr "Facebook Like! button display"
+
+#: lib/original-pages/sns-forms.php:59
+#, fuzzy
+msgid "Google+"
+msgstr "Follow Google+"
+
+#: lib/original-pages/sns-forms.php:60
+#, fuzzy
+msgid "はてなブックマーク"
+msgstr "Add this entry to Hatena Bookmark"
+
+#: lib/original-pages/sns-forms.php:61
+#, fuzzy
+msgid "Instagram"
+msgstr "Follow Instagram"
+
+#: lib/original-pages/sns-forms.php:62
+#, fuzzy
+msgid "Pinterest"
+msgstr "Pinterest pin display"
+
+#: lib/original-pages/sns-forms.php:63
+#, fuzzy
+msgid "YouTube"
+msgstr "YouTube"
+
+#: lib/original-pages/sns-forms.php:64
+#, fuzzy
+msgid "Flickr"
+msgstr "Flickr"
+
+#: lib/original-pages/sns-forms.php:65
+#, fuzzy
+msgid "GitHub"
+msgstr "GitHub"
+
+#: lib/original-pages/sns-forms.php:68
+#, fuzzy
+msgid "現ログインユーザーのSNSフォローページを設定します。"
+msgstr "Sets the SNS follow-up on current logged-in user."
+
+#: lib/original-pages/sns-forms.php:75
+#, fuzzy
+msgid "feedlyの表示"
+msgstr "Feedly display"
+
+#: lib/original-pages/sns-forms.php:78
+#, fuzzy
+msgid "feedlyフォローボタンを表示する"
+msgstr "feedly follow button to display"
+
+#: lib/original-pages/sns-forms.php:79
+#, fuzzy
+msgid "feedlyフォローボタンを表示します。"
+msgstr "feedly follow button displays."
+
+#: lib/original-pages/sns-forms.php:86
+#, fuzzy
+msgid "RSSの表示"
+msgstr "RSS display"
+
+#: lib/original-pages/sns-forms.php:89
+#, fuzzy
+msgid "RSS購読ボタンを表示する"
+msgstr "To view the RSS subscribe button"
+
+#: lib/original-pages/sns-forms.php:90
+#, fuzzy
+msgid "RSS購読料のボタンを表示します。"
+msgstr "View the RSS subscription button."
+
+#: lib/original-pages/sns-forms.php:97
+#, fuzzy
+msgid "デフォルトユーザー"
+msgstr "Default user"
+
+#: lib/original-pages/sns-forms.php:101
+#, fuzzy
+msgid ""
+"投稿・固定ページ以内でフォローボタンを表示するユーザーを選択してください。"
+msgstr ""
+"Posts and static pages within please select a user to view the follow button."
+
+#: lib/sns.php:8
+#, fuzzy
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: lib/sns.php:9
+#, fuzzy
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: lib/sns.php:10
+#, fuzzy
+msgid "Google+ URL"
+msgstr "Google Plus URL"
+
+#: lib/sns.php:11
+#, fuzzy
+msgid "はてブ URL"
+msgstr "Hatena drive URL's"
+
+#: lib/sns.php:12
+#, fuzzy
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: lib/sns.php:13
+#, fuzzy
+msgid "Pinterest URL"
+msgstr "Pinterest URL"
+
+#: lib/sns.php:14
+#, fuzzy
+msgid "YouTube URL"
+msgstr "YouTube URL"
+
+#: lib/sns.php:15
+#, fuzzy
+msgid "Flickr URL"
+msgstr "Flickr Url"
+
+#: lib/sns.php:16
+#, fuzzy
+msgid "LINE@ URL"
+msgstr "Line URL"
+
+#: lib/sns.php:17
+#, fuzzy
+msgid "GitHub URL"
+msgstr "Github url"
 
 #: lib/widget-areas.php:9
 msgid "サイドバー"
@@ -955,3 +1326,72 @@ msgstr "Related Posts"
 #: tmp/related-entries.php:13
 msgid "関連記事は見つかりませんでした。"
 msgstr "Could not find related posts."
+
+#: tmp/sns-follow-pages.php:9
+#, fuzzy
+msgid "著者サイト"
+msgstr "Author Website"
+
+#: tmp/sns-follow-pages.php:10
+#, fuzzy
+msgid "Twitterをフォロー"
+msgstr "Follow Twitter"
+
+#: tmp/sns-follow-pages.php:11
+#, fuzzy
+msgid "Facebookをフォロー"
+msgstr "Follow facebook"
+
+#: tmp/sns-follow-pages.php:12
+#, fuzzy
+msgid "Google＋をフォロー"
+msgstr "Follow Google+"
+
+#: tmp/sns-follow-pages.php:13
+#, fuzzy
+msgid "はてブをフォロー"
+msgstr "Follow Hatena Bookmark"
+
+#: tmp/sns-follow-pages.php:14
+#, fuzzy
+msgid "Instagramをフォロー"
+msgstr "Follow Instagram"
+
+#: tmp/sns-follow-pages.php:15
+#, fuzzy
+msgid "Pinterestをフォロー"
+msgstr "Follow Pinterest"
+
+#: tmp/sns-follow-pages.php:16
+#, fuzzy
+msgid "YouTubeをフォロー"
+msgstr "Follow YouTube"
+
+#: tmp/sns-follow-pages.php:17
+#, fuzzy
+msgid "Flickrをフォロー"
+msgstr "Follow Flickr"
+
+#: tmp/sns-follow-pages.php:18
+#, fuzzy
+msgid "LINE@をフォロー"
+msgstr "Follow LINE@"
+
+#: tmp/sns-follow-pages.php:19
+#, fuzzy
+msgid "GitHubをフォロー"
+msgstr "Follow GitHub"
+
+#: tmp/sns-follow-pages.php:20
+#, fuzzy
+msgid "feedlyで更新情報を購読"
+msgstr "Subscribe to feedly"
+
+#: tmp/sns-follow-pages.php:21
+#, fuzzy
+msgid "RSSで更新情報をフォロー"
+msgstr "Subscribe to RSS"
+
+#, fuzzy
+#~ msgid "インデックス・アーカイブページ等で広告を表示する位置を設定します。"
+#~ msgstr "Set the index and archive pages, etc. in the ad to appear."

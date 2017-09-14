@@ -147,17 +147,8 @@
   * 続きはWEBで的な検索ボックス
   ********************************/
   /*メインカランの2カラム化*/
-  /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-  /* フォントのサイズ */
-  font-size: 18px;
-  /* フォントの色 */
-  color: #333435;
-  /* カーニングの設定 */
-  /* 行間の設定 */
-  line-height: 1.75;
-  margin: 0;
-  overflow-wrap: break-word; }
+  padding: 10px;
+  border: 2px solid #ddd; }
   .demo * {
     padding: 0;
     margin: 0;
@@ -168,7 +159,7 @@
     .demo *::-moz-selection {
       background: #d8eaf2;
       color: #333435; }
-  .demo body {
+  .demo body, .demo .demo {
     /* フォントの種類 */
     font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     /* フォントのサイズ */
@@ -1353,6 +1344,78 @@
       float: none;
       width: auto;
       padding: 0; } }
+  @media screen and (max-width: 1240px) {
+    .demo .content-in {
+      display: block; }
+    .demo .main,
+    .demo .sidebar,
+    .demo .wrap {
+      width: auto; }
+    .demo .main,
+    .demo .sidebar {
+      margin: 10px;
+      float: none; }
+    .demo .sidebar {
+      margin-top: 1em;
+      padding: 20px 29px; } }
+  @media screen and (max-width: 1030px) {
+    .demo .navi-footer,
+    .demo .copyright {
+      float: none;
+      margin: 0; }
+    .demo .navi-footer-in > ul {
+      justify-content: center;
+      padding: 1em; }
+    .demo .footer-widgets {
+      display: none; } }
+  @media screen and (max-width: 768px) {
+    .demo .navi {
+      display: none; }
+    .demo .main,
+    .demo .sidebar {
+      padding: 5px;
+      margin: 0; }
+    .demo .a-wrap {
+      padding: 0px; }
+    .demo .entry-card-title,
+    .demo .related-entry-card-title {
+      font-size: 18px; }
+    .demo .entry-card-thumb {
+      width: 38%; }
+    .demo .entry-card-content {
+      margin-left: 40%; }
+    .demo table th,
+    .demo table td {
+      padding: 3px;
+      font-size: 0.8em; } }
+  @media screen and (max-width: 480px) {
+    .demo {
+      /*本文の見出し*/ }
+      .demo .entry-card-snippet,
+      .demo .related-entry-card-snippet {
+        display: none; }
+      .demo .page-numbers {
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        margin-left: 0; }
+      .demo .pagination-next-link {
+        font-size: 1em; }
+      .demo .related-entry-card-thumb {
+        width: 38%; }
+      .demo .related-entry-card-content {
+        margin-left: 40%; }
+      .demo .entry-title,
+      .demo .article h2,
+      .demo .article h3,
+      .demo .article h4,
+      .demo .article h5,
+      .demo .article h6 {
+        font-size: 20px;
+        padding: 8px;
+        margin: 6px 0 12px; }
+      .demo body, .demo .demo {
+        font-size: 16px; } }
 
 /*記事一覧のサムネイル幅*/
 .column-thumbnail {

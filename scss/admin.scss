@@ -3,66 +3,35 @@
 ** ※管理画面にしか適用されません
 ************************************/
 .demo{
-  //固定値
-  @import "defins";
-  //基本表示
-  @import "basic";
-  //画像関係
-  @import "img";
-  //ヘッダー
-  @import "header";
-  //グローバルナビ
-  @import "navi";
-  //エントリーカード
-  @import "entry-card";
-  //関連記事
-  @import "related-entry-card";
-  //パンくずリスト
-  @import "breadcrumbs";
-  //コンテンツ
-  @import "content";
-  //コメント
-  @import "comments";
-  //サイドバー
-  @import "sidebar";
-  //ウィジェット
-  @import "widget";
-  //ページネーション
-  @import "pagination";
-  //フッター
-  @import "footer";
-  //SNS
-  @import "sns";
-  //広告
-  @import "ad";
-  //YouTube iframeのようなメディア表示
-  @import "media";
-  //入力フォーム
-  @import "forms";
-  //拡張クラス
-  @import "extension";
+  @import "imports";
 
-  /* フォントの種類 */
-  font-family: $default_font;
+  @extend body;
 
-  /* フォントのサイズ */
-  font-size: $text_size_default;
+  padding: 10px;
 
-  /* フォントの色 */
-  color: $text_color;
+  border: 2px solid #ddd;
 
-  /* カーニングの設定 */
-  //letter-spacing: 1.2px;
-  //font-feature-settings: "palt" 1;
-  //font-kerning: auto;
+  // /* フォントの種類 */
+  // font-family: $default_font;
 
-  /* 行間の設定 */
-  line-height: 1.75;
+  // /* フォントのサイズ */
+  // font-size: $text_size_default;
 
-  margin: 0;
+  // /* フォントの色 */
+  // color: $text_color;
 
-  //word-wrap: break-word;
-  overflow-wrap: break-word;
+  // /* カーニングの設定 */
+  // //letter-spacing: 1.2px;
+  // //font-feature-settings: "palt" 1;
+  // //font-kerning: auto;
+
+  // /* 行間の設定 */
+  // line-height: 1.75;
+
+  // margin: 0;
+
+  // //word-wrap: break-word;
+  // overflow-wrap: break-word;
 }
 
 /*記事一覧のサムネイル幅*/

@@ -4,7 +4,7 @@
 <div id="analytics" class="postbox">
   <h2 class="hndle"><?php _e( 'フォローボタン', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( 'フォローボタンの表示に関する設定です', THEME_NAME ) ?></p>
+    <p><?php _e( 'フォローボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 
