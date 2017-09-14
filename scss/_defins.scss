@@ -118,10 +118,43 @@ $bgc_hover_anime: all 0.3s ease 0s;
 }
 
 ///////////////////////////////////////
+// エントリーカード
+///////////////////////////////////////
+%card{
+  position: relative;
+}
+
+%card_thumb{
+  float: left;
+  margin-top: $emtry_card_thumb_margin_top;
+  position: relative;
+}
+
+%card_content{
+  padding-bottom: 1.6em;
+}
+
+%card_title{
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+%card_snippet{
+  font-size: $text_size_s;
+}
+
+%card_meta{
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+///////////////////////////////////////
 // SNS
 ///////////////////////////////////////
-
-//SNS
 %margin_top_and_bottom_in_content {
   margin: 36px 0;
 }
@@ -137,7 +170,6 @@ $bgc_hover_anime: all 0.3s ease 0s;
 
   a{
     display: block;
-    height: 45px;
     background-color: $middle_thickness;
     font-size: 30px;
     text-align: center;

@@ -160,6 +160,10 @@ label.screen-reader-text{
 /************************************
 ** 新着記事ウィジェット（デフォルト）
 ************************************/
+.new-entry-card-thumb{
+  @extend %card_thumb;
+}
+
 .new-entriy-cards{
   .a-wrap{
     padding: 5px 3px;

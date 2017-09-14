@@ -163,6 +163,26 @@
   overflow-wrap: break-word;
   padding: 10px;
   border: 2px solid #ddd; }
+  .demo .entry-card, .demo .related-entry-card {
+    position: relative; }
+  .demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .new-entry-card-thumb {
+    float: left;
+    margin-top: 4px;
+    position: relative; }
+  .demo .entry-card-content, .demo .related-entry-card-content {
+    padding-bottom: 1.6em; }
+  .demo .entry-card-title, .demo .related-entry-card-title {
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.2;
+    margin-bottom: 5px; }
+  .demo .entry-card-snippet, .demo .related-entry-card-snippet {
+    font-size: 0.8em; }
+  .demo .entry-card-meta, .demo .related-entry-card-meta {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    text-align: right; }
   .demo .sns-share, .demo .sns-follow {
     margin: 36px 0; }
   .demo .sns-share-message, .demo .sns-follow-message {
@@ -173,7 +193,6 @@
     align-items: center; }
     .demo .sns-share-buttons a, .demo .sns-follow-buttons a {
       display: block;
-      height: 45px;
       background-color: #777879;
       font-size: 30px;
       text-align: center;
@@ -345,15 +364,6 @@
       background-color: #f5f8fa;
       transition: all 0.3s ease 0s;
       color: #333435; }
-  .demo .entry-card,
-  .demo .related-entry-card {
-    position: relative; }
-  .demo .entry-card-thumb,
-  .demo .related-entry-card-thumb,
-  .demo .new-entry-card-thumb {
-    float: left;
-    margin-top: 4px;
-    position: relative; }
   .demo .entry-card-thumb {
     width: 320px; }
   .demo .related-entry-card-thumb {
@@ -370,28 +380,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-  .demo .entry-card-content,
-  .demo .related-entry-card-content {
-    padding-bottom: 1.6em; }
   .demo .entry-card-content {
     margin-left: 330px; }
-  .demo .related-entry-card-content {
-    margin-left: 170px; }
-  .demo .entry-card-title,
-  .demo .related-entry-card-title {
-    font-size: 20px;
-    margin: 0;
-    line-height: 1.2;
-    margin-bottom: 5px; }
-  .demo .entry-card-snippet,
-  .demo .related-entry-card-snippet {
-    font-size: 0.8em; }
-  .demo .entry-card-meta,
-  .demo .related-entry-card-meta {
-    bottom: 0;
-    position: absolute;
-    right: 0;
-    text-align: right; }
   .demo .published,
   .demo .entry-category {
     padding: 2px;
@@ -411,6 +401,8 @@
   .demo .related-entry-title,
   .demo .comment-title {
     margin: 22px 0; }
+  .demo .related-entry-card-content {
+    margin-left: 170px; }
   .demo #breadcrumb {
     margin-top: 20px;
     color: #777879;
@@ -914,13 +906,15 @@
     flex-wrap: wrap; }
     .demo .sns-share-buttons a {
       width: 32%;
+      height: 60px;
       margin-bottom: 8px; }
   .demo .sns-follow-buttons a {
-    width: 100%; }
+    width: 100%;
+    height: 45px; }
     .demo .sns-follow-buttons a:last-child {
       margin-right: 0; }
   .demo .ad-area {
-    margin: 0 0 32px;
+    margin: 16px 0;
     text-align: center; }
   .demo .ad-index-top .ad-label,
   .demo .ad-above-title .ad-label,

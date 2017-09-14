@@ -1,8 +1,8 @@
 /************************************
 ** 関連記事
 ************************************/
-.related-entries{
-
+.related-entry-card{
+  @extend %card;
 }
 
 /*関連エントリーカード*/
@@ -11,6 +11,27 @@
   margin: 22px 0;
 }
 
+.related-entry-card-thumb{
+  @extend %card_thumb;
+}
+
+.related-entry-card-content{
+  @extend %card_content;
+  margin-left: 170px;
+
+}
+
+.related-entry-card-title{
+  @extend %card_title;
+}
+
+.related-entry-card-snippet{
+  @extend %card_snippet;
+}
+
+.related-entry-card-meta {
+  @extend %card_meta;
+}
 // .related-entry-card-thumb{
 //   float: left;
 //   margin-top: $emtry_card_thumb_margin_top;

@@ -13,17 +13,17 @@
   }
 }
 
-.entry-card,
-.related-entry-card{
-  position: relative;
+.entry-card{
+  @extend %card;
 }
 
-.entry-card-thumb,
-.related-entry-card-thumb,
-.new-entry-card-thumb{
-  float: left;
-  margin-top: $emtry_card_thumb_margin_top;
-  position: relative;
+//.new-entry-card-thumb,
+//.related-entry-card-thumb,
+.entry-card-thumb{
+  @extend %card_thumb;
+  // float: left;
+  // margin-top: $emtry_card_thumb_margin_top;
+  // position: relative;
 }
 
 .entry-card-thumb{
@@ -48,31 +48,22 @@
   text-overflow: ellipsis;
 }
 
-.entry-card-content,
-.related-entry-card-content{
-  padding-bottom: 1.6em;
-}
+// .entry-card-content,
+// .related-entry-card-content{
+
+// }
 
 .entry-card-content{
+  @extend %card_content;
   margin-left: 330px;
 }
 
-
-.related-entry-card-content{
-  margin-left: 170px;
+.entry-card-title{
+  @extend %card_title;
 }
 
-.entry-card-title,
-.related-entry-card-title{
-  font-size: 20px;
-  margin: 0;
-  line-height: 1.2;
-  margin-bottom: 5px;
-}
-
-.entry-card-snippet,
-.related-entry-card-snippet{
-  font-size: $text_size_s;
+.entry-card-snippet{
+  @extend %card_snippet;
 }
 
 // .entry-card-meta{
@@ -91,13 +82,8 @@
 //   margin-right: 2px;
 // }
 
-.entry-card-meta,
-.related-entry-card-meta {
-  //text-align: right;
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  text-align: right;
+.entry-card-meta{
+  @extend %card_meta;
 }
 
 .published,
