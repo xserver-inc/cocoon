@@ -44,7 +44,7 @@
         </div>
         <?php //SNSフォローボタン
         if (is_sns_follow_buttons_visible())
-          get_template_part('tmp/sns-follow-pages'); ?>
+          get_template_part('tmp/sns-follow-buttons'); ?>
       </footer>
 
     <?php
