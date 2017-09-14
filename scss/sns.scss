@@ -1,40 +1,44 @@
 /************************************
+** SNSシェアボタン
+************************************/
+.sns-share{
+  @extend %margin_top_and_bottom_in_content;
+}
+
+.sns-share-message{
+  @extend %sns_message;
+}
+
+.sns-share-buttons{
+  @extend %sns_buttons;
+  flex-wrap: wrap;
+
+  a{
+    width: 32%;
+    margin-bottom: 8px;
+  }
+}
+
+/************************************
 ** SNSフォローボタン
 ************************************/
 .sns-follow{
-  margin: 36px 0;
+  @extend %margin_top_and_bottom_in_content;
+  //margin: 36px 0;
 }
 
 .sns-follow-message{
-  text-align: center;
-  margin-bottom: 3px;
+  @extend %sns_message;
 }
 
 .sns-follow-buttons{
-  display: flex;
-  align-items: center;
+  @extend %sns_buttons;
 
   a{
-    display: block;
     width: 100%;
-    height: 45px;
-    background-color: #777;
-    font-size: 30px;
-    text-align: center;
-    margin-right: 8px;
-    @include link_cancel($white_text_color);
-    border-radius: $basic_border_radius;
 
     &:last-child{
       margin-right: 0;
-    }
-
-    &:hover{
-      opacity: 0.7;
-    }
-
-    span{
-
     }
   }
 }

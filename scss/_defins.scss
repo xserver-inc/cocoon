@@ -116,3 +116,38 @@ $bgc_hover_anime: all 0.3s ease 0s;
   //word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+///////////////////////////////////////
+// SNS
+///////////////////////////////////////
+
+//SNS
+%margin_top_and_bottom_in_content {
+  margin: 36px 0;
+}
+
+%sns_message{
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+%sns_buttons{
+  display: flex;
+  align-items: center;
+
+  a{
+    display: block;
+    height: 45px;
+    background-color: $middle_thickness;
+    font-size: 30px;
+    text-align: center;
+    margin-right: 8px;
+    @include link_cancel($white_text_color);
+    border-radius: $basic_border_radius;
+
+    &:hover{
+      opacity: 0.7;
+      color: $white_text_color;
+    }
+  }
+}

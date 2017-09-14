@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- フォローボタン -->
-<div id="analytics" class="postbox">
+<div id="sns-share" class="postbox">
   <h2 class="hndle"><?php _e( 'フォローボタン', THEME_NAME ) ?></h2>
   <div class="inside">
     <p><?php _e( 'フォローボタンの表示に関する設定です。', THEME_NAME ) ?></p>
@@ -17,7 +17,7 @@
             <div class="demo">
             <?php //テンプレートの読み込み
               if (is_sns_follow_buttons_visible())
-                get_template_part('/tmp/sns-follow-buttons'); ?>
+                get_template_part('/tmp/sns-share-buttons'); ?>
             </div>
           </td>
         </tr>
@@ -69,38 +69,6 @@
           </td>
         </tr>
 
-        <!-- feedlyの表示 -->
-        <tr>
-          <th scope="row">
-            <label for="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'feedlyの表示', THEME_NAME ) ?></label>
-          </th>
-          <td>
-             <input type="checkbox" name="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_feedly_follow_button_visible()); ?>><?php _e("feedlyフォローボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( 'feedlyフォローボタンを表示します。', THEME_NAME ) ?></p>
-          </td>
-        </tr>
-
-        <!-- RSSの表示 -->
-        <tr>
-          <th scope="row">
-            <label for="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'RSSの表示', THEME_NAME ) ?></label>
-          </th>
-          <td>
-             <input type="checkbox" name="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_rss_follow_button_visible()); ?>><?php _e("RSS購読ボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( 'RSS購読料のボタンを表示します。', THEME_NAME ) ?></p>
-          </td>
-        </tr>
-
-        <!-- デフォルトユーザー -->
-        <tr>
-          <th scope="row">
-            <label for="<?php echo OP_SNS_DEFAULT_FOLLOW_USER; ?>"><?php _e( 'デフォルトユーザー', THEME_NAME ) ?></label>
-          </th>
-          <td>
-            <?php echo get_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user()); ?>
-            <p class="tips"><?php _e( '投稿・固定ページ以内でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
-          </td>
-        </tr>
 
       </tbody>
     </table>

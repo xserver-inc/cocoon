@@ -42,9 +42,15 @@
           <?php the_category_links(); //カテゴリの出力
                 the_tag_links(); //タグの出力?>
         </div>
+
+        <?php //SNSシェアボタン
+        if (1)
+          get_template_part('tmp/sns-share-buttons'); ?>
+
         <?php //SNSフォローボタン
         if (is_sns_follow_buttons_visible())
           get_template_part('tmp/sns-follow-buttons'); ?>
+
       </footer>
 
     <?php

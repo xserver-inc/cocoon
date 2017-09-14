@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- フォローボタン -->
-<div id="analytics" class="postbox">
+<div id="sns-follow" class="postbox">
   <h2 class="hndle"><?php _e( 'フォローボタン', THEME_NAME ) ?></h2>
   <div class="inside">
     <p><?php _e( 'フォローボタンの表示に関する設定です。', THEME_NAME ) ?></p>
