@@ -16,7 +16,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   //アクセス解析設定用の保存
   require_once 'original-pages/analytics-posts.php';
   //SNS設定用の保存
-  require_once 'original-pages/sns-posts.php';
+  require_once 'original-pages/sns-follow-posts.php';
 
 
 //画面に「設定は保存されました」メッセージを表示
@@ -43,7 +43,7 @@ endif;
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
-    <li class="sns"><?php _e( 'SNS', THEME_NAME ) ?></li>
+    <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
@@ -75,9 +75,9 @@ endif;
     <?php require_once 'original-pages/analytics-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- SNSタブ -->
-  <div class="sns metabox-holder">
-    <?php require_once 'original-pages/sns-forms.php'; ?>
+  <!-- SNSフォロータブ -->
+  <div class="sns-follow metabox-holder">
+    <?php require_once 'original-pages/sns-follow-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->
