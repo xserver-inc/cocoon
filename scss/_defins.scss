@@ -92,3 +92,27 @@ $bgc_hover_anime: all 0.3s ease 0s;
   padding: 0;
   list-style: none;
 }
+
+@mixin base_font{
+  /* フォントの種類 */
+  font-family: $default_font;
+
+  /* フォントのサイズ */
+  font-size: $text_size_default;
+
+  /* フォントの色 */
+  color: $text_color;
+
+  /* カーニングの設定 */
+  //letter-spacing: 1.2px;
+  //font-feature-settings: "palt" 1;
+  //font-kerning: auto;
+
+  /* 行間の設定 */
+  line-height: 1.75;
+
+  margin: 0;
+
+  //word-wrap: break-word;
+  overflow-wrap: break-word;
+}

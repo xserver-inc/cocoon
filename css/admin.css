@@ -147,6 +147,17 @@
   * 続きはWEBで的な検索ボックス
   ********************************/
   /*メインカランの2カラム化*/
+  /* フォントの種類 */
+  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  /* フォントのサイズ */
+  font-size: 18px;
+  /* フォントの色 */
+  color: #333435;
+  /* カーニングの設定 */
+  /* 行間の設定 */
+  line-height: 1.75;
+  margin: 0;
+  overflow-wrap: break-word;
   padding: 10px;
   border: 2px solid #ddd; }
   .demo * {
@@ -159,7 +170,7 @@
     .demo *::-moz-selection {
       background: #d8eaf2;
       color: #333435; }
-  .demo body, .demo .demo {
+  .demo body {
     /* フォントの種類 */
     font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
     /* フォントのサイズ */
@@ -1414,7 +1425,7 @@
         font-size: 20px;
         padding: 8px;
         margin: 6px 0 12px; }
-      .demo body, .demo .demo {
+      .demo body {
         font-size: 16px; } }
 
 /*記事一覧のサムネイル幅*/

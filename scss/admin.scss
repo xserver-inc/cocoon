@@ -5,7 +5,7 @@
 .demo{
   @import "imports";
 
-  @extend body;
+  @include base_font;
 
   padding: 10px;
 

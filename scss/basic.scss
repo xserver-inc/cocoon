@@ -18,28 +18,28 @@
 }
 
 body {
-  /* フォントの種類 */
-  font-family: $default_font;
+  @include base_font;
+  // /* フォントの種類 */
+  // font-family: $default_font;
 
-  /* フォントのサイズ */
-  font-size: $text_size_default;
+  // /* フォントのサイズ */
+  // font-size: $text_size_default;
 
-  /* フォントの色 */
-  color: $text_color;
+  // /* フォントの色 */
+  // color: $text_color;
 
-  /* カーニングの設定 */
-  //letter-spacing: 1.2px;
-  //font-feature-settings: "palt" 1;
-  //font-kerning: auto;
+  // /* カーニングの設定 */
+  // //letter-spacing: 1.2px;
+  // //font-feature-settings: "palt" 1;
+  // //font-kerning: auto;
 
-  /* 行間の設定 */
-  line-height: 1.75;
+  // /* 行間の設定 */
+  // line-height: 1.75;
 
-  margin: 0;
+  // margin: 0;
 
-  //word-wrap: break-word;
-  overflow-wrap: break-word;
-
+  // //word-wrap: break-word;
+  // overflow-wrap: break-word;
 }
 
 /*デフォルトリンク*/
