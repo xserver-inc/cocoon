@@ -925,12 +925,23 @@ label.screen-reader-text {
 /************************************
 ** SNSシェアボタン
 ************************************/
+.sns-share.sns-share-col-1 a {
+  width: 100%; }
+.sns-share.sns-share-col-2 a {
+  width: 49%; }
+.sns-share.sns-share-col-4 a {
+  width: 24%; }
+.sns-share.sns-share-col-5 a {
+  width: 19%; }
+.sns-share.sns-share-col-6 a {
+  width: 16%; }
+
 .sns-share-buttons {
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center; }
   .sns-share-buttons a {
-    width: 32.5%;
+    width: 32%;
     height: 45px;
     margin-bottom: 8px; }
 

@@ -1,7 +1,7 @@
 <?php //SNSページのフォローボタン ?>
 <?php if ( is_any_sns_follow_buttons_exist() ): //全てのフォローボタンを表示するかどうか?>
 <!-- SNSページ -->
-<div class="sns-follow">
+<aside class="sns-follow">
 
   <?php if ( get_sns_follow_message() ): //フォローメッセージがあるか?>
   <div class="sns-follow-message"><?php echo sprintf(get_sns_follow_message(), get_the_author_meta('display_name', get_the_posts_author_id())); //フォローメッセージの取得?></div>
@@ -62,5 +62,5 @@
 
   </div><!-- /.sns-follow-buttons -->
 
-</div><!-- /.sns-follow -->
+</aside><!-- /.sns-follow -->
 <?php endif; ?>

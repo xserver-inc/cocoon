@@ -96,7 +96,7 @@ endif;
 </div><!-- /#tabs -->
 
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-<input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
+<input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST && $_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
 
 <?php submit_button(); ?>
 

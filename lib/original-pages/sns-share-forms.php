@@ -64,6 +64,25 @@
         </tr>
 
 
+        <!-- カラム数 -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_SNS_SHARE_COLUMN_COUNT; ?>"><?php _e( 'カラム数', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <select name="<?php echo OP_SNS_SHARE_COLUMN_COUNT; ?>">
+              <option value="1"<?php the_option_selected(1, get_sns_share_column_count()); ?>>1列</option>
+              <option value="2"<?php the_option_selected(2, get_sns_share_column_count()); ?>>2列</option>
+              <option value="3"<?php the_option_selected(3, get_sns_share_column_count()); ?>>3列</option>
+              <option value="4"<?php the_option_selected(4, get_sns_share_column_count()); ?>>4列</option>
+              <option value="5"<?php the_option_selected(5, get_sns_share_column_count()); ?>>5列</option>
+              <option value="6"<?php the_option_selected(6, get_sns_share_column_count()); ?>>6列</option>
+            </select>
+            <p class="tips"><?php _e( 'シェアボタンのカラム数を選択してください。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+
       </tbody>
     </table>
 

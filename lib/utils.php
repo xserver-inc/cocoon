@@ -129,3 +129,30 @@ function get_author_list_selectbox_tag($name, $value){
   return $html;
 }
 endif;
+
+//オプションの値をデータベースに保存する
+if ( !function_exists( 'update_theme_option' ) ):
+function update_theme_option($option_name){
+  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : null;
+  update_option($option_name, $opt_val);
+}
+endif;
+
+//チェックボックスのチェックを付けるか
+if ( !function_exists( 'the_checkbox_checked' ) ):
+function the_checkbox_checked($value){
+  if ($value) {
+    echo ' checked="checked"';
+  }
+}
+endif;
+
+//セレクトボックスのチェックを付けるか
+if ( !function_exists( 'the_option_selected' ) ):
+function the_option_selected($val1, $val2){
+  if ($val1 == $val2) {
+    echo ' selected="selected"';
+  }
+}
+endif;
+

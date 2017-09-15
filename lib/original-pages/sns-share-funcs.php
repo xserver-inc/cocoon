@@ -13,7 +13,6 @@ function is_sns_share_buttons_visible(){
 }
 endif;
 
-
 //SNSシェァメッセージ
 define('OP_SNS_SHARE_MESSAGE', 'sns_share_message');
 if ( !function_exists( 'get_sns_share_message' ) ):
@@ -70,10 +69,10 @@ function is_line_at_share_button_visible(){
 }
 endif;
 
-// //デフォルトフォローユーザー
-// define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
-// if ( !function_exists( 'get_sns_default_follow_user' ) ):
-// function get_sns_default_follow_user(){
-//   return get_option(OP_SNS_DEFAULT_FOLLOW_USER, wp_get_current_user()->ID);
-// }
-// endif;
+//SNSシェァメッセージ
+define('OP_SNS_SHARE_COLUMN_COUNT', 'sns_share_column_count');
+if ( !function_exists( 'get_sns_share_column_count' ) ):
+function get_sns_share_column_count(){
+  return get_option(OP_SNS_SHARE_COLUMN_COUNT, 3);
+}
+endif;
