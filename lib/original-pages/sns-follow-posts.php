@@ -1,4 +1,4 @@
-<?php //アクセス解析設定をデータベースに保存
+<?php //SNSフォロー設定をデータベースに保存
 
 //本文下フォローボタンの表示
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE);

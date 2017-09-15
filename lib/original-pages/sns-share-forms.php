@@ -44,28 +44,22 @@
           </td>
         </tr>
 
-        <!-- SNSサービスのURL -->
+        <!-- 表示切替 -->
         <tr>
           <th scope="row">
-            <label><?php _e( 'SNSサービスのURL', THEME_NAME ) ?></label>
+            <label><?php _e( '表示切替', THEME_NAME ) ?></label>
           </th>
           <td>
-            <p><?php echo THEME_NAME_CAMEL; ?><?php _e( 'は、ログインユーザーごとにフォローページを設定できます。', THEME_NAME ) ?></p>
-            <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?>(<a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>)</p>
-            <ul class="list-style-disc">
-              <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
-              <li><?php _e( 'Twitter', THEME_NAME ) ?></li>
-              <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
-              <li><?php _e( 'Google+', THEME_NAME ) ?></li>
-              <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
-              <li><?php _e( 'Instagram', THEME_NAME ) ?></li>
-              <li><?php _e( 'Pinterest', THEME_NAME ) ?></li>
-              <li><?php _e( 'YouTube', THEME_NAME ) ?></li>
-              <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
-              <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
+            <p><?php _e( '個々のシェアボタンの表示切り替え。', THEME_NAME ) ?></p>
+            <ul>
+              <li><input type="checkbox" name="<?php echo OP_TWITTER_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_twitter_share_button_visible()); ?>><?php _e( 'Twitter', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_FACEBOOK_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_facebook_share_button_visible()); ?>><?php _e( 'Facebook', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_HATEBU_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_hatebu_share_button_visible()); ?>><?php _e( 'Google+', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_gooogle_plus_share_button_visible()); ?>><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_POCKET_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_pocket_share_button_visible()); ?>><?php _e( 'Pocket', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_LINE_AT_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_line_at_share_button_visible()); ?>><?php _e( 'LINE@', THEME_NAME ) ?></li>
             </ul>
-            <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>から設定</p>
-            <p class="tips"><?php _e( '現ログインユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>
+            <p><?php _e( '表示するシェアボタンを選択してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
 

@@ -46,6 +46,30 @@ function is_hatebu_share_button_visible(){
 }
 endif;
 
+//Google+シェアボタンの表示
+define('OP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'gooogle_plus_share_button_visible');
+if ( !function_exists( 'is_gooogle_plus_share_button_visible' ) ):
+function is_gooogle_plus_share_button_visible(){
+  return get_option(OP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//Pocketシェアボタンの表示
+define('OP_POCKET_SHARE_BUTTON_VISIBLE', 'pocket_share_button_visible');
+if ( !function_exists( 'is_pocket_share_button_visible' ) ):
+function is_pocket_share_button_visible(){
+  return get_option(OP_POCKET_SHARE_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//LINE@シェアボタンの表示
+define('OP_LINE_AT_SHARE_BUTTON_VISIBLE', 'line_at_share_button_visible');
+if ( !function_exists( 'is_line_at_share_button_visible' ) ):
+function is_line_at_share_button_visible(){
+  return get_option(OP_LINE_AT_SHARE_BUTTON_VISIBLE, 1);
+}
+endif;
+
 // //デフォルトフォローユーザー
 // define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 // if ( !function_exists( 'get_sns_default_follow_user' ) ):
