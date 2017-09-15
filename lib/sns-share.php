@@ -20,15 +20,15 @@ endif;
 
 //Twitter IDを含めるURLパラメータを取得
 function get_twitter_via_param(){
-  if ( get_the_author_twitter_id()/*is_twitter_id_include() && get_twitter_follow_id()*/ ) {
+  if ( get_the_author_twitter_id() && is_twitter_id_include() ) {
     return '&amp;via='.get_the_author_twitter_id();
   }
 }
 
 //ツイート後にフォローを促すパラメータを取得
 function get_twitter_related_param(){
-  if ( 1/*is_twitter_related_follow_enable() && get_twitter_follow_id()*/ ) {
-    return '&amp;related='.get_twitter_follow_id();//.':フォロー用の説明文';
+  if ( get_the_author_twitter_id() && is_twitter_related_follow_enable() ) {
+    return '&amp;related='.get_the_author_twitter_id();//.':フォロー用の説明文';
   }
 }
 
@@ -233,8 +233,14 @@ endif;
 //TwitterのシェアURLを取得
 if ( !function_exists( 'get_twitter_share_url' ) ):
 function get_twitter_share_url(){
+  if ( is_singular() ) {
+    $url = get_the_permalink();
+  } else {
+    $url = home_url();
+  }
+
   return 'https://twitter.com/intent/tweet?text='.urlencode( get_the_title() ).'&amp;url='.
-  urlencode( get_the_permalink() ).
+  urlencode( $url ).
   get_twitter_via_param(). //ツイートにメンションを含める
   get_twitter_related_param();//ツイート後にフォローを促す
 }

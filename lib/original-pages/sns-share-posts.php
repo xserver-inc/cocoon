@@ -18,3 +18,7 @@ update_theme_option(OP_POCKET_SHARE_BUTTON_VISIBLE);
 update_theme_option(OP_LINE_AT_SHARE_BUTTON_VISIBLE);
 //シェアボタンのカラム数
 update_theme_option(OP_SNS_SHARE_COLUMN_COUNT);
+//ツイートにメンションを含める
+update_theme_option(OP_TWITTER_ID_INCLUDE);
+//ツイート後にフォローを促す
+update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
