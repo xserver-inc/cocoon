@@ -2,13 +2,14 @@
 
 
 ///////////////////////////////////////
-// SNSフォローボタンの設定
+// SNSシェアボタンの設定
 ///////////////////////////////////////
-//本文下のフォローバターの表示
-define('OP_SNS_FOLLOW_BUTTONS_VISIBLE', 'sns_follow_buttons_visible');
-if ( !function_exists( 'get_sns_follow_buttons_visible' ) ):
-function is_sns_follow_buttons_visible(){
-  return get_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE, 1);
+
+//本文下のシェアボタンの表示
+define('OP_SNS_SHARE_BUTTONS_VISIBLE', 'sns_share_buttons_visible');
+if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
+function is_sns_share_buttons_visible(){
+  return get_option(OP_SNS_SHARE_BUTTONS_VISIBLE, 1);
 }
 endif;
 

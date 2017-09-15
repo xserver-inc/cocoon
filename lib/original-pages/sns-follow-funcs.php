@@ -4,9 +4,9 @@
 ///////////////////////////////////////
 // SNSフォローボタンの設定
 ///////////////////////////////////////
-//本文下のフォローバターの表示
+//本文下のフォローボタンの表示
 define('OP_SNS_FOLLOW_BUTTONS_VISIBLE', 'sns_follow_buttons_visible');
-if ( !function_exists( 'get_sns_follow_buttons_visible' ) ):
+if ( !function_exists( 'is_sns_follow_buttons_visible' ) ):
 function is_sns_follow_buttons_visible(){
   return get_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE, 1);
 }
@@ -17,7 +17,7 @@ endif;
 define('OP_SNS_FOLLOW_MESSAGE', 'SNS_FOLLOW_MESSAGE');
 if ( !function_exists( 'get_sns_follow_message' ) ):
 function get_sns_follow_message(){
-  return get_option(OP_SNS_FOLLOW_MESSAGE, 'フォローする');
+  return get_option(OP_SNS_FOLLOW_MESSAGE, __( '%sをフォローする', THEME_NAME ));
 }
 endif;
 

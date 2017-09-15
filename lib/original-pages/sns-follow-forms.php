@@ -40,7 +40,7 @@
           </th>
           <td>
             <input type="text" name="<?php echo OP_SNS_FOLLOW_MESSAGE; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_sns_follow_message(); ?>" placeholder="<?php _e( 'フォローメッセージの入力', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '訪問者にフォローを促すメッセージを入力してください。', THEME_NAME ) ?></p>
+            <p class="tips"><?php _e( '訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変換されます', THEME_NAME ) ?></p>
           </td>
         </tr>
 
