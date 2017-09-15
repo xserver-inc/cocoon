@@ -20,8 +20,8 @@ endif;
 
 //Twitter IDを含めるURLパラメータを取得
 function get_twitter_via_param(){
-  if ( 1/*is_twitter_id_include() && get_twitter_follow_id()*/ ) {
-    return '&amp;via='.get_twitter_follow_id();
+  if ( get_the_author_twitter_id()/*is_twitter_id_include() && get_twitter_follow_id()*/ ) {
+    return '&amp;via='.get_the_author_twitter_id();
   }
 }
 

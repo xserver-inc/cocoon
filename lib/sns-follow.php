@@ -51,6 +51,17 @@ function get_the_author_twitter_url(){
 }
 endif;
 
+//プロフィール画面で設定したTwitter URLからTwitter IDあの取得
+if ( !function_exists( 'get_the_author_twitter_id' ) ):
+function get_the_author_twitter_id(){
+  $url = get_the_author_twitter_url();
+  $res = preg_match('/twitter\.com\/(.+?)\/?$/i', $url, $m);
+  if ($res && $m && $m[1]) {
+    return $m[1];
+  }
+}
+endif;
+
 //プロフィール画面で設定したFacebook URLの取得
 if ( !function_exists( 'get_the_author_facebook_url' ) ):
 function get_the_author_facebook_url(){
