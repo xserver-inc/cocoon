@@ -1,5 +1,5 @@
-<?php //主にモバイル用に表情は早くするためのアイコンボタン ?>
-<?php if ( 1 ): ?>
+<?php //シェアボタン ?>
+<?php if ( is_sns_share_buttons_visible() ): ?>
 <div class="sns-share">
   <?php if ( 0 ): //シェアボタン用のメッセージを取得?>
     <p class="sns-share-message"><?php echo sprintf( get_share_message_label(), '' ) ?></p>

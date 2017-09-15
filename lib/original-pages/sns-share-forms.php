@@ -2,9 +2,9 @@
 
 <!-- フォローボタン -->
 <div id="sns-share" class="postbox">
-  <h2 class="hndle"><?php _e( 'フォローボタン', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'シェァボタン', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( 'フォローボタンの表示に関する設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'シェァボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 
@@ -22,14 +22,14 @@
           </td>
         </tr>
 
-        <!-- フォローボタンの表示 -->
+        <!-- シェァボタンの表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>"><?php _e( 'フォローボタンの表示', THEME_NAME ) ?></label>
+            <label for="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>"><?php _e( 'シェァボタンの表示', THEME_NAME ) ?></label>
           </th>
           <td>
-             <input type="checkbox" name="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_follow_buttons_visible()); ?>><?php _e("本文下のフォローボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ) ?></p>
+             <input type="checkbox" name="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_share_buttons_visible()); ?>><?php _e("メインカラムのシェァボタンを表示する",THEME_NAME ); ?>
+            <p class="tips"><?php _e( '投稿・固定ページのメインカラムにあるシェアボタンの表示を切り替えます。', THEME_NAME ) ?></p>
           </td>
         </tr>
 

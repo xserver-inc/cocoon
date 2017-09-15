@@ -46,9 +46,10 @@ require_once 'settings.php'; //Wordpressの設定
 require_once 'seo.php';      //SEO関係の設定
 require_once 'ad.php';      //広告関係の設定
 require_once 'sns.php';      //SNS関係の設定
-require_once 'original-pages/ads-funcs.php'; //広告設定関係の関数の呼び出し
-require_once 'original-pages/analytics-funcs.php'; //アクセス解析設定関係の関数の呼び出し
-require_once 'original-pages/sns-follow-funcs.php'; //SNS設定関係の関数の呼び出し
+require_once 'original-pages/ads-funcs.php'; //広告設定関係の関数
+require_once 'original-pages/analytics-funcs.php'; //アクセス解析設定関係の関数
+require_once 'original-pages/sns-share-funcs.php'; //SNSシェァ関数
+require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー関数
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'utils.php'; //Wordpressの設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定

@@ -11,11 +11,13 @@
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
     $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
 
-  //広告設定用の保存
+  //広告設定の保存
   require_once 'original-pages/ads-posts.php';
-  //アクセス解析設定用の保存
+  //アクセス解析設定の保存
   require_once 'original-pages/analytics-posts.php';
-  //SNS設定用の保存
+  //SNSシェァ設定の保存
+  require_once 'original-pages/sns-share-posts.php';
+  //SNSフォロー設定の保存
   require_once 'original-pages/sns-follow-posts.php';
 
 
