@@ -1,5 +1,36 @@
 <?php //管理画面関係の関数
 
+//管理画面に読み込むリソースの設定
+if ( !function_exists( 'admin_print_styles_custom' ) ):
+function admin_print_styles_custom() {
+    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+
+    global $pagenow;
+    //var_dump($pagenow);
+    if ($pagenow == 'admin.php') {
+      //IcoMoonの呼び出し
+      wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+      wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+      wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+      $select_index = 0;
+      if (isset($_POST['select_index'])) {
+        $select_index = intval($_POST[SELECT_INDEX_NAME]);
+        var_dump($select_index);
+      }
+      $data = 'jQuery(document).ready( function() {
+                 tabify("#tabs").select( '.$select_index.' );
+               });';
+      wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+      wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+    }
+
+    //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
+    //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
+}
+endif;
+add_action('admin_print_styles', 'admin_print_styles_custom');
+
 //メディアを挿入の初期表示を「この投稿へのアップロード」にする
 if ( !function_exists( 'customize_initial_view_of_media_uploader' ) ):
 function customize_initial_view_of_media_uploader() {
@@ -44,39 +75,6 @@ function customize_admin_add_column($column_name, $post_id) {
 }
 endif;
 add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
-
-//アイキャッチ画像の列の幅をCSSで調整
-//投稿一覧のカラムの幅のスタイル調整
-if ( !function_exists( 'admin_print_styles_custom' ) ):
-function admin_print_styles_custom() {
-    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
-    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
-
-    global $pagenow;
-    //var_dump($pagenow);
-    if ($pagenow == 'admin.php') {
-      //IcoMoonの呼び出し
-      wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
-      wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-      wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-      $select_index = 0;
-      if (isset($_POST['select_index'])) {
-        $select_index = intval($_POST[SELECT_INDEX_NAME]);
-        var_dump($select_index);
-      }
-      $data = 'jQuery(document).ready( function() {
-                 tabify("#tabs").select( '.$select_index.' );
-               });';
-      wp_add_inline_script( 'tab-js', $data, 'after' ) ;
-      wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
-    }
-
-    //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
-    //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
-}
-endif;
-add_action('admin_print_styles', 'admin_print_styles_custom', 21);
-
 
 //管理ツールバーにメニュー追加
 if ( !function_exists( 'customize_admin_bar_menu' ) ):

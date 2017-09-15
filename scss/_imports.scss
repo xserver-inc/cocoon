@@ -60,3 +60,8 @@
 @media screen and (max-width: 480px){
   @import "breakpoints/max-width-480";
 }
+
+//印刷用
+@media print{
+  @import "print";
+}

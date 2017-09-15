@@ -5,6 +5,10 @@
   margin-top: 24px;
 }
 
+.eye-catch{
+  @extend %bottom_margin;
+}
+
 /*エントリー・アーカイブの見出し*/
 .entry-title,
 .archive-title{
@@ -20,7 +24,7 @@
 /*本文下カテゴリとタグ*/
 .entry-categories-tags{
   font-family: $Meiryo_font;
-  margin: 1em 0;
+  @extend %bottom_margin;
 }
 
 /*本文下カテゴリ*/

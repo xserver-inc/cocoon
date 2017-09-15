@@ -2,7 +2,7 @@
 ** 広告
 ************************************/
 .ad-area{
-  margin: 16px 0;
+  @extend %bottom_margin;
   text-align: center;
 }
 

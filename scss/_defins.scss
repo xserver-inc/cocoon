@@ -152,11 +152,20 @@ $bgc_hover_anime: all 0.3s ease 0s;
   text-align: right;
 }
 
+
+///////////////////////////////////////
+// コンテンツ
+///////////////////////////////////////
+%bottom_margin{
+  margin-bottom: 18px;
+}
+
+
 ///////////////////////////////////////
 // SNS
 ///////////////////////////////////////
 %margin_top_and_bottom_in_content {
-  margin: 36px 0;
+  margin: 24px 0;
 }
 
 %sns_message{
@@ -173,7 +182,6 @@ $bgc_hover_anime: all 0.3s ease 0s;
     background-color: $middle_thickness;
     font-size: 30px;
     text-align: center;
-    margin-right: 8px;
     @include link_cancel($white_text_color);
     border-radius: $basic_border_radius;
 
