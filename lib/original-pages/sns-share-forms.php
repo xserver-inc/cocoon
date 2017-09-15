@@ -2,9 +2,9 @@
 
 <!-- フォローボタン -->
 <div id="sns-share" class="postbox">
-  <h2 class="hndle"><?php _e( 'シェァボタン', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'シェアボタン', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( 'シェァボタンの表示に関する設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'シェアボタンの表示に関する設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 
@@ -22,25 +22,25 @@
           </td>
         </tr>
 
-        <!-- シェァボタンの表示 -->
+        <!-- シェアボタンの表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>"><?php _e( 'シェァボタンの表示', THEME_NAME ) ?></label>
+            <label for="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>"><?php _e( 'シェアボタンの表示', THEME_NAME ) ?></label>
           </th>
           <td>
-             <input type="checkbox" name="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_share_buttons_visible()); ?>><?php _e("メインカラムのシェァボタンを表示する",THEME_NAME ); ?>
+             <input type="checkbox" name="<?php echo OP_SNS_SHARE_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_share_buttons_visible()); ?>><?php _e("メインカラムのシェアボタンを表示する",THEME_NAME ); ?>
             <p class="tips"><?php _e( '投稿・固定ページのメインカラムにあるシェアボタンの表示を切り替えます。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
-        <!-- シェァメッセージ -->
+        <!-- シェアメッセージ -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_SHARE_MESSAGE; ?>"><?php _e( 'シェァメッセージ', THEME_NAME ) ?></label>
+            <label for="<?php echo OP_SNS_SHARE_MESSAGE; ?>"><?php _e( 'シェアメッセージ', THEME_NAME ) ?></label>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_SNS_SHARE_MESSAGE; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_sns_share_message(); ?>" placeholder="<?php _e( 'シェァメッセージの入力', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '訪問者にシェァを促すメッセージを入力してください。', THEME_NAME ) ?></p>
+            <input type="text" name="<?php echo OP_SNS_SHARE_MESSAGE; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_sns_share_message(); ?>" placeholder="<?php _e( 'シェアメッセージの入力', THEME_NAME ); ?>">
+            <p class="tips"><?php _e( '訪問者にシェアを促すメッセージを入力してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
 

@@ -41,8 +41,17 @@
 
   a{
     width: 32%;
-    height: 45px;
     margin-bottom: 8px;
+    font-size: 18px;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    .button-caption{
+      font-size: 16px;
+      margin-left: 10px;
+    }
   }
 }
 
@@ -63,8 +72,8 @@
 
   a{
     width: 100%;
-    height: 45px;
     margin-right: 8px;
+    font-size: 30px;
 
     &:last-child{
       margin-right: 0;

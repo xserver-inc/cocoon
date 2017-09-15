@@ -180,10 +180,11 @@ $bgc_hover_anime: all 0.3s ease 0s;
   a{
     display: block;
     background-color: $middle_thickness;
-    font-size: 30px;
     text-align: center;
     @include link_cancel($white_text_color);
     border-radius: $basic_border_radius;
+    height: 45px;
+    line-height: 45px;
 
     &:hover{
       opacity: 0.7;

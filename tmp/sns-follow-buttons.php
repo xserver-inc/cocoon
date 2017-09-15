@@ -20,12 +20,12 @@
     <a href="<?php echo get_the_author_facebook_url(); //FacebookフォローIDの取得?>" class="follow-button facebook-follow-button" target="_blank" title="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-facebook-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_google_plus_url() )://Google＋フォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_google_plus_url(); //Google＋フォローIDの取得 ?>" class="follow-button google-plus-follow-button" target="_blank" title="<?php _e( 'Google＋をフォロー', THEME_NAME ) ?>" rel="nofollow publisher"><span class="icon-google-plus-logo"></span></a>
-  <?php endif; ?>
-
   <?php if ( get_the_author_hatebu_url() )://はてブフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_hatebu_url(); //はてブフォローIDの取得 ?>" class="follow-button hatebu-follow-button" target="_blank" title="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-hatebu-logo"></span></a>
+  <?php endif; ?>
+
+  <?php if ( get_the_author_google_plus_url() )://Google＋フォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_google_plus_url(); //Google＋フォローIDの取得 ?>" class="follow-button google-plus-follow-button" target="_blank" title="<?php _e( 'Google＋をフォロー', THEME_NAME ) ?>" rel="nofollow publisher"><span class="icon-google-plus-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_instagram_url() )://Instagramフォローボタンを表示するか ?>

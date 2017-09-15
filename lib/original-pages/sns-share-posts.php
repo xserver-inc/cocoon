@@ -2,7 +2,7 @@
 
 //シェアボタンの表示
 update_theme_option(OP_SNS_SHARE_BUTTONS_VISIBLE);
-//SNSシェァメッセージ
+//SNSシェアメッセージ
 update_theme_option(OP_SNS_SHARE_MESSAGE);
 //Twitterシェアボタンの表示
 update_theme_option(OP_TWITTER_SHARE_BUTTON_VISIBLE);

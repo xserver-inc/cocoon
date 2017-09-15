@@ -13,11 +13,11 @@ function is_sns_share_buttons_visible(){
 }
 endif;
 
-//SNSシェァメッセージ
+//SNSシェアメッセージ
 define('OP_SNS_SHARE_MESSAGE', 'sns_share_message');
 if ( !function_exists( 'get_sns_share_message' ) ):
 function get_sns_share_message(){
-  return get_option(OP_SNS_SHARE_MESSAGE, 'シェァする');
+  return get_option(OP_SNS_SHARE_MESSAGE, 'シェアする');
 }
 endif;
 
@@ -69,7 +69,7 @@ function is_line_at_share_button_visible(){
 }
 endif;
 
-//SNSシェァメッセージ
+//SNSシェアメッセージ
 define('OP_SNS_SHARE_COLUMN_COUNT', 'sns_share_column_count');
 if ( !function_exists( 'get_sns_share_column_count' ) ):
 function get_sns_share_column_count(){

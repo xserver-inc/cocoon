@@ -15,7 +15,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/ads-posts.php';
   //アクセス解析設定の保存
   require_once 'original-pages/analytics-posts.php';
-  //SNSシェァ設定の保存
+  //SNSシェア設定の保存
   require_once 'original-pages/sns-share-posts.php';
   //SNSフォロー設定の保存
   require_once 'original-pages/sns-follow-posts.php';
