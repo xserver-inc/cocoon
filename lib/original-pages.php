@@ -1,11 +1,5 @@
 <?php //オリジナル設定ページ
 
-// //広告設定用の定数と関数の呼び出し
-// require_once 'original-pages/ads-funcs.php';
-// //アクセス解析設定用の定数と関数の呼び出し
-// require_once 'original-pages/analytics-funcs.php';
-
-
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
