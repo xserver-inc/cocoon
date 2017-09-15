@@ -2,8 +2,8 @@
 
 //シェアボタンの表示
 update_theme_option(OP_SNS_SHARE_BUTTONS_VISIBLE);
-//SNSフォローメッセージ
-update_theme_option(OP_SNS_FOLLOW_MESSAGE);
+//SNSシェァメッセージ
+update_theme_option(OP_SNS_SHARE_MESSAGE);
 //feedlyフォローボタンの表示
 update_theme_option(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE);
 //RSSフォローボタンの表示

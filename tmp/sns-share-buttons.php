@@ -1,8 +1,8 @@
 <?php //シェアボタン ?>
 <?php if ( is_sns_share_buttons_visible() ): ?>
 <div class="sns-share">
-  <?php if ( 0 ): //シェアボタン用のメッセージを取得?>
-    <p class="sns-share-message"><?php echo sprintf( get_share_message_label(), '' ) ?></p>
+  <?php if ( get_sns_share_message() ): //シェアボタン用のメッセージを取得?>
+    <p class="sns-share-message"><?php echo get_sns_share_message(); ?></p>
   <?php endif; ?>
 
   <div class="sns-share-buttons">
