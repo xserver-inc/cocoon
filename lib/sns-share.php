@@ -1,32 +1,5 @@
 <?php //SNS関係の関数
 
-//はてブURL
-if ( !function_exists( 'get_hatebu_share_url' ) ):
-function get_hatebu_share_url(){
-  $url = get_share_page_url();
-  if (strpos($url, 'https://') === 0) {
-    $u = preg_replace('/https:\/\//', 's/', $url);
-  } else {
-    $u = preg_replace('/http:\/\//', '', $url);
-  }
-  return '//b.hatena.ne.jp/entry/'.$u;
-}
-endif;
-
-//Twitter IDを含めるURLパラメータを取得
-function get_twitter_via_param(){
-  if ( get_the_author_twitter_id() && is_twitter_id_include() ) {
-    return '&amp;via='.get_the_author_twitter_id();
-  }
-}
-
-//ツイート後にフォローを促すパラメータを取得
-function get_twitter_related_param(){
-  if ( get_the_author_twitter_id() && is_twitter_related_follow_enable() ) {
-    return '&amp;related='.get_the_author_twitter_id();//.':フォロー用の説明文';
-  }
-}
-
 //feedlyの購読者数取得
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
@@ -249,6 +222,20 @@ function get_line_share_url(){
 }
 endif;
 
+//Twitter IDを含めるURLパラメータを取得
+function get_twitter_via_param(){
+  if ( get_the_author_twitter_id() && is_twitter_id_include() ) {
+    return '&amp;via='.get_the_author_twitter_id();
+  }
+}
+
+//ツイート後にフォローを促すパラメータを取得
+function get_twitter_related_param(){
+  if ( get_the_author_twitter_id() && is_twitter_related_follow_enable() ) {
+    return '&amp;related='.get_the_author_twitter_id();//.':フォロー用の説明文';
+  }
+}
+
 //TwitterのシェアURLを取得
 if ( !function_exists( 'get_twitter_share_url' ) ):
 function get_twitter_share_url(){
@@ -263,5 +250,25 @@ endif;
 if ( !function_exists( 'get_facebook_share_url' ) ):
 function get_facebook_share_url(){
   return '//www.facebook.com/sharer/sharer.php?u='.urlencode( get_share_page_url() ).'&amp;t='. urlencode( get_share_page_title() );//ツイート後にフォローを促す
+}
+endif;
+
+//はてブのシェアURLを取得
+if ( !function_exists( 'get_hatebu_share_url' ) ):
+function get_hatebu_share_url(){
+  $url = get_share_page_url();
+  if (strpos($url, 'https://') === 0) {
+    $u = preg_replace('/https:\/\//', 's/', $url);
+  } else {
+    $u = preg_replace('/http:\/\//', '', $url);
+  }
+  return '//b.hatena.ne.jp/entry/'.$u;
+}
+endif;
+
+//Google+のシェアURLを取得
+if ( !function_exists( 'get_google_plus_share_url' ) ):
+function get_google_plus_share_url(){
+  return '//plus.google.com/share?url='.rawurlencode( get_share_page_url() );
 }
 endif;

@@ -19,7 +19,7 @@
     <?php endif; ?>
 
     <?php if ( is_gooogle_plus_share_button_visible() )://Google＋ボタンを表示するか ?>
-      <a href="//plus.google.com/share?url=<?php echo rawurlencode(get_permalink($post->ID)) ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button googleplus-share-button" target="blank" rel="nofollow"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count"></span></a>
+      <a href="//plus.google.com/share?url=<?php echo get_google_plus_share_url(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button googleplus-share-button" target="blank" rel="nofollow"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count"></span></a>
     <?php endif; ?>
 
     <?php if ( is_pocket_share_button_visible() )://pocketボタンを表示するか ?>
