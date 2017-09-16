@@ -1,6 +1,79 @@
 /************************************
 ** SNSシェアボタン
 ************************************/
+%sns_button_color{
+  //ボタンカラー
+  &.bc-brand-color{
+    .twitter-button{
+      background-color: $twitter_color;
+    }
+
+    .facebook-button{
+      background-color: $facebook_color;
+    }
+
+    .hatebu-button{
+      background-color: $hatebu_color;
+    }
+
+    .google-plus-button{
+      background-color: $google_plus_color;
+    }
+
+    .pocket-button{
+      background-color: $pocket_color;
+    }
+
+
+    .line-button{
+      background-color: $line_color;
+    }
+  }
+
+  &.bc-brand-color-white{
+    a{
+      background-color: $bg_white;
+      font-weight: 500;
+      &:hover{
+        @include bgc_hover;
+      }
+    }
+
+    .twitter-button{
+      color: $twitter_color;
+      border: 1px solid $twitter_color;
+    }
+
+    .facebook-button{
+      color: $facebook_color;
+      border: 1px solid $facebook_color;
+    }
+
+    .hatebu-button{
+      color: $hatebu_color;
+      border: 1px solid $hatebu_color;
+    }
+
+    .google-plus-button{
+      color: $google_plus_color;
+      border: 1px solid $google_plus_color;
+    }
+
+    .pocket-button{
+      color: $pocket_color;
+      border: 1px solid $pocket_color;
+    }
+
+
+    .line-button{
+      color: $line_color;
+      border: 1px solid $line_color;
+    }
+
+  }
+}
+
+
 .sns-share{
   @extend %margin_top_and_bottom_in_content;
   &.ss-top{
@@ -64,33 +137,79 @@
   }
 
   //ボタンカラー
-  &.ss-brand-color{
-    .twitter-share-button{
-      background-color: $twitter_color;
-    }
-
-    .facebook-share-button{
-      background-color: $facebook_color;
-    }
-
-    .hatebu-share-button{
-      background-color: $hatebu_color;
-    }
-
-    .google-plus-share-button{
-      background-color: $google_plus_color;
-    }
-
-    .pocket-share-button{
-      background-color: $pocket_color;
-    }
-
-
-    .line-share-button{
-      background-color: $line_color;
-    }
-
+  &{
+    @extend %sns_button_color;
   }
+
+  // //ボタンカラー
+  // &.ss-brand-color{
+  //   .twitter-share-button{
+  //     background-color: $twitter_color;
+  //   }
+
+  //   .facebook-share-button{
+  //     background-color: $facebook_color;
+  //   }
+
+  //   .hatebu-share-button{
+  //     background-color: $hatebu_color;
+  //   }
+
+  //   .google-plus-share-button{
+  //     background-color: $google_plus_color;
+  //   }
+
+  //   .pocket-share-button{
+  //     background-color: $pocket_color;
+  //   }
+
+
+  //   .line-share-button{
+  //     background-color: $line_color;
+  //   }
+  // }
+
+  // &.ss-brand-color-white{
+  //   a{
+  //     background-color: $bg_white;
+  //     font-weight: 500;
+  //     &:hover{
+  //       @include bgc_hover;
+  //     }
+  //   }
+
+  //   .twitter-share-button{
+  //     color: $twitter_color;
+  //     border: 1px solid $twitter_color;
+  //   }
+
+  //   .facebook-share-button{
+  //     color: $facebook_color;
+  //     border: 1px solid $facebook_color;
+  //   }
+
+  //   .hatebu-share-button{
+  //     color: $hatebu_color;
+  //     border: 1px solid $hatebu_color;
+  //   }
+
+  //   .google-plus-share-button{
+  //     color: $google_plus_color;
+  //     border: 1px solid $google_plus_color;
+  //   }
+
+  //   .pocket-share-button{
+  //     color: $pocket_color;
+  //     border: 1px solid $pocket_color;
+  //   }
+
+
+  //   .line-share-button{
+  //     color: $line_color;
+  //     border: 1px solid $line_color;
+  //   }
+
+  // }
 }
 
 .sns-share-message{
@@ -125,6 +244,11 @@
 .sns-follow{
   @extend %margin_top_and_bottom_in_content;
   //margin: 36px 0;
+
+  //ボタンカラー
+  &{
+    @extend %sns_button_color;
+  }
 }
 
 .sns-follow-message{

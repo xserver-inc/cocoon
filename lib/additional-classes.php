@@ -73,10 +73,10 @@ function get_additional_sns_share_button_classes($option = null){
   //ボタンカラー
   switch (get_sns_share_button_color()) {
     case 'brand_color':
-      $classes .= ' ss-brand-color';
+      $classes .= ' bc-brand-color';
       break;
     case 'brand_color_white':
-      $classes .= ' ss-brand-color-white';
+      $classes .= ' bc-brand-color-white';
       break;
     default:
 
