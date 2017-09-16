@@ -87,3 +87,27 @@ function get_additional_sns_share_button_classes($option = null){
   return $classes;
 }
 endif;
+
+//SNSフォローボタンのclass追加関数
+if ( !function_exists( 'get_additional_sns_follow_button_classes' ) ):
+function get_additional_sns_follow_button_classes($option = null){
+  $classes = null;
+
+  //ボタンカラー
+  switch (get_sns_follow_button_color()) {
+    case 'brand_color':
+      $classes .= ' bc-brand-color';
+      break;
+    case 'brand_color_white':
+      $classes .= ' bc-brand-color-white';
+      break;
+    default:
+
+      break;
+  }
+
+  $classes .= ' '.trim($option);
+  return $classes;
+}
+endif;
+

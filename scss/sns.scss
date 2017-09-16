@@ -24,9 +24,40 @@
       background-color: $pocket_color;
     }
 
-
     .line-button{
       background-color: $line_color;
+    }
+
+    .website-button{
+      background-color: $website_color;
+    }
+
+    .instagram-button{
+      background-color: $instagram_color;
+    }
+
+    .pinterest-button{
+      background-color: $pinterest_color;
+    }
+
+    .youtube-button{
+      background-color: $youtube_color;
+    }
+
+    .flickr-button{
+      background-color: $flickr_color;
+    }
+
+    .github-button{
+      background-color: $github_color;
+    }
+
+    .feedly-button{
+      background-color: $feedly_color;
+    }
+
+    .rss-button{
+      background-color: $rss_color;
     }
   }
 
@@ -64,6 +95,65 @@
       border: 1px solid $pocket_color;
     }
 
+    .line-button{
+      color: $line_color;
+      border: 1px solid $line_color;
+    }
+
+    .website-button{
+      color: $website_color;
+      border: 1px solid $website_color;
+    }
+
+    .instagram-button{
+      color: $instagram_color;
+      border: 1px solid $instagram_color;
+    }
+
+    .pinterest-button{
+      color: $pinterest_color;
+      border: 1px solid $pinterest_color;
+    }
+
+    .youtube-button{
+      color: $youtube_color;
+      border: 1px solid $youtube_color;
+    }
+
+    .flickr-button{
+      color: $flickr_color;
+      border: 1px solid $flickr_color;
+    }
+
+    .github-button{
+      color: $github_color;
+      border: 1px solid $github_color;
+    }
+
+    .feedly-button{
+      color: $feedly_color;
+      border: 1px solid $feedly_color;
+    }
+
+    .rss-button{
+      color: $rss_color;
+      border: 1px solid $rss_color;
+    }
+
+    .line-button{
+      color: $line_color;
+      border: 1px solid $line_color;
+    }
+
+    .line-button{
+      color: $line_color;
+      border: 1px solid $line_color;
+    }
+
+    .line-button{
+      color: $line_color;
+      border: 1px solid $line_color;
+    }
 
     .line-button{
       color: $line_color;
@@ -262,6 +352,7 @@
     width: 100%;
     margin-right: 8px;
     font-size: 30px;
+    line-height: 46px;
 
     &:last-child{
       margin-right: 0;

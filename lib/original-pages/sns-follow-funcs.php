@@ -37,6 +37,14 @@ function is_rss_follow_button_visible(){
 }
 endif;
 
+//ボタンカラー
+define('OP_SNS_FOLLOW_BUTTON_COLOR', 'sns_follow_button_color');
+if ( !function_exists( 'get_sns_follow_button_color' ) ):
+function get_sns_follow_button_color(){
+  return get_option(OP_SNS_FOLLOW_BUTTON_COLOR, 'brand_color');
+}
+endif;
+
 //デフォルトフォローユーザー
 define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 if ( !function_exists( 'get_sns_default_follow_user' ) ):

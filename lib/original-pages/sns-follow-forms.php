@@ -91,6 +91,23 @@
           </td>
         </tr>
 
+
+        <!-- ボタンカラー -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_SNS_FOLLOW_BUTTON_COLOR; ?>"><?php _e( 'ボタンカラー', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <select name="<?php echo OP_SNS_FOLLOW_BUTTON_COLOR; ?>">
+              <option value="monochrome"<?php the_option_selected('monochrome', get_sns_follow_button_color()); ?>>モノクロ</option>
+              <option value="brand_color"<?php the_option_selected('brand_color', get_sns_follow_button_color()); ?>>ブランドカラー</option>
+              <option value="brand_color_white"<?php the_option_selected('brand_color_white', get_sns_follow_button_color()); ?>>ブランドカラー（白抜き）</option>
+            </select>
+            <p class="tips"><?php _e( 'シェアボタンの配色を選択してください。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+
         <!-- デフォルトユーザー -->
         <tr>
           <th scope="row">
@@ -98,7 +115,7 @@
           </th>
           <td>
             <?php echo get_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user()); ?>
-            <p class="tips"><?php _e( '投稿・固定ページ以内でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
+            <p class="tips"><?php _e( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
