@@ -29,7 +29,7 @@ if (have_posts()) : // WordPress ループ
     get_template_part('tmp/entry-card');
 
     //インデックスミドルに広告を表示してよいかの判別
-    if (is_index_middle_ad_visible($count)) {
+    if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count)) {
       get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-index-middle');
     }
   endwhile; // 繰り返し処理終了 ?>
