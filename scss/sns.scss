@@ -12,6 +12,7 @@
     }
   }
 
+  //カラム数
   &.ss-col-1 a{
     width: 100%;
   }
@@ -36,9 +37,8 @@
     width: 16%;
   }
 
-  &.ss-high-and-low a{
+  %high_and_low{
     display: flex;
-    flex-direction: column;
     align-content: center;
 
     line-height: 16px;
@@ -50,6 +50,46 @@
         font-size: 12px;
       }
     }
+  }
+
+  //ロゴ・キャプション配置
+  &.ss-high-and-low-lc a{
+    @extend %high_and_low;
+    flex-direction: column;
+  }
+
+  &.ss-high-and-low-cl a{
+    @extend %high_and_low;
+    flex-direction: column-reverse;
+  }
+
+  //ボタンカラー
+  &.ss-brand-color{
+    .twitter-share-button{
+      background-color: $twitter_color;
+    }
+
+    .facebook-share-button{
+      background-color: $facebook_color;
+    }
+
+    .hatebu-share-button{
+      background-color: $hatebu_color;
+    }
+
+    .google-plus-share-button{
+      background-color: $google_plus_color;
+    }
+
+    .pocket-share-button{
+      background-color: $pocket_color;
+    }
+
+
+    .line-share-button{
+      background-color: $line_color;
+    }
+
   }
 }
 

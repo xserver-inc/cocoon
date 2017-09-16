@@ -57,9 +57,32 @@ function get_additional_sns_share_button_classes($option = null){
       break;
   }
 
-  if (get_sns_share_logo_caption_position() == 'high_and_low') {
-    $classes .= ' ss-high-and-low';
+  //ロゴとキャプションの配置
+  switch (get_sns_share_logo_caption_position()) {
+    case 'high_and_low_lc':
+      $classes .= ' ss-high-and-low-lc';
+      break;
+    case 'high_and_low_cl':
+      $classes .= ' ss-high-and-low-cl';
+      break;
+    default:
+
+      break;
   }
+
+  //ボタンカラー
+  switch (get_sns_share_button_color()) {
+    case 'brand_color':
+      $classes .= ' ss-brand-color';
+      break;
+    case 'brand_color_white':
+      $classes .= ' ss-brand-color-white';
+      break;
+    default:
+
+      break;
+  }
+
   $classes .= ' '.trim($option);
   return $classes;
 }
