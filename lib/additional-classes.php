@@ -2,19 +2,20 @@
 
 //メインカラムの追加関数
 if ( !function_exists( 'get_additional_main_classes' ) ):
-function get_additional_main_classes(){
+function get_additional_main_classes($option = null){
   $classes = null;
   //サイドバーにウィジェットが入っていない場合
   if (!is_active_sidebar( 'sidebar' )) {
     $classes .= ' no-sidebar';
   }
   return $classes;
+  $classes .= ' '.trim($option);
 }
 endif;
 
 //エントリーカードの追加関数
 if ( !function_exists( 'get_additional_new_entriy_cards_classes' ) ):
-function get_additional_new_entriy_cards_classes(){
+function get_additional_new_entriy_cards_classes($option = null){
   global $g_entry_type;
   $classes = null;
   if ($g_entry_type != ET_DEFAULT) {
@@ -25,13 +26,14 @@ function get_additional_new_entriy_cards_classes(){
       $classes .= ' large-thumb-on';
     }
   }
+  $classes .= ' '.trim($option);
   return $classes;
 }
 endif;
 
 //SNSシェアボタンの追加関数
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):
-function get_additional_sns_share_button_classes(){
+function get_additional_sns_share_button_classes($option = null){
   $classes = null;
   //カラム数
   switch (get_sns_share_column_count()) {
@@ -58,6 +60,7 @@ function get_additional_sns_share_button_classes(){
   if (get_sns_share_logo_caption_position() == 'high_and_low') {
     $classes .= ' ss-high-and-low';
   }
+  $classes .= ' '.trim($option);
   return $classes;
 }
 endif;
