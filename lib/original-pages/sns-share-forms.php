@@ -17,7 +17,7 @@
             <div class="demo">
             <?php //テンプレートの読み込み
               if (is_sns_follow_buttons_visible())
-                get_template_part('/tmp/sns-share-buttons'); ?>
+                get_template_part_with_option('tmp/sns-share-buttons', 'ss-bottom'); ?>
             </div>
           </td>
         </tr>

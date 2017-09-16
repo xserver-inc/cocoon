@@ -32,16 +32,16 @@
     <a href="<?php echo get_the_author_instagram_url(); //InstagramフォローIDの取得 ?>" class="follow-button instagram-follow-button" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-instagram-new"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_pinterest_url() )://Pinterestフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_pinterest_url(); //PinterestフォローIDの取得 ?>" class="follow-button pinterest-follow-button" target="_blank" title="<?php _e( 'Pinterestをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-pinterest-logo"></span></a>
-  <?php endif; ?>
-
   <?php if (  get_the_author_youtube_url() )://YouTubeフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_youtube_url(); //YouTubeフォローURLの取得 ?>" class="follow-button youtube-follow-button" target="_blank" title="<?php _e( 'YouTubeをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-youtube-logo"></span></a>
   <?php endif; ?>
 
   <?php if (  get_the_author_flickr_url() )://Flickrフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_flickr_url(); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-follow-button" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-flickr-logo"></span></a>
+  <?php endif; ?>
+
+  <?php if ( get_the_author_pinterest_url() )://Pinterestフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_pinterest_url(); //PinterestフォローIDの取得 ?>" class="follow-button pinterest-follow-button" target="_blank" title="<?php _e( 'Pinterestをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-pinterest-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_line_at_url() )://LINE@フォローボタンを表示するか ?>
