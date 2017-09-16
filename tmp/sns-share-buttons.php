@@ -23,11 +23,11 @@
     <?php endif; ?>
 
     <?php if ( is_pocket_share_button_visible() )://pocketボタンを表示するか ?>
-      <a href="//getpocket.com/edit?url=<?php the_permalink() ?>" class="share-button pocket-share-button" target="blank" rel="nofollow"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count"></span></a>
+      <a href="<?php echo get_pocket_share_url(); ?>" class="share-button pocket-share-button" target="blank" rel="nofollow"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count"></span></a>
     <?php endif; ?>
 
     <?php if ( is_line_at_share_button_visible() )://LINEボタンを表示するか ?>
-      <a href="<?php //echo get_line_share_url(); ?>" class="share-button line-share-button" target="blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span></a>
+      <a href="<?php echo get_line_share_url(); ?>" class="share-button line-share-button" target="blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span></a>
     <?php endif; ?>
 
   </div><!-- /.sns-share-buttons -->

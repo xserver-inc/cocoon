@@ -210,18 +210,6 @@ function get_share_page_title(){
 }
 endif;
 
-//LINEのシェアURLを取得
-if ( !function_exists( 'get_line_share_url' ) ):
-function get_line_share_url(){
-  // if (wp_is_mobile()) {
-  //   return '//line.me/R/msg/text/?'.get_the_title().'%0D%0A'.get_permalink();
-  // } else {
-  //   return '//lineit.line.me/share/ui?url='.get_the_permalink();
-  // }
-  return '//timeline.line.me/social-plugin/share?url='.urlencode(get_share_page_url());
-}
-endif;
-
 //Twitter IDを含めるURLパラメータを取得
 function get_twitter_via_param(){
   if ( get_the_author_twitter_id() && is_twitter_id_include() ) {
@@ -270,5 +258,19 @@ endif;
 if ( !function_exists( 'get_google_plus_share_url' ) ):
 function get_google_plus_share_url(){
   return '//plus.google.com/share?url='.rawurlencode( get_share_page_url() );
+}
+endif;
+
+//PocketのシェアURLを取得
+if ( !function_exists( 'get_pocket_share_url' ) ):
+function get_pocket_share_url(){
+  return '//getpocket.com/edit?url='.get_share_page_url();
+}
+endif;
+
+//LINEのシェアURLを取得
+if ( !function_exists( 'get_line_share_url' ) ):
+function get_line_share_url(){
+  return '//timeline.line.me/social-plugin/share?url='.urlencode(get_share_page_url());
 }
 endif;
