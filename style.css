@@ -1097,18 +1097,19 @@ label.screen-reader-text {
   width: 336px; }
 
 @media screen and (max-width: 692px) {
-  .ad-responsive {
+  .ad-dabble-rectangle .ad-responsive {
     width: 300px; } }
 @media screen and (max-width: 626px) {
-  .ad-responsive {
+  .ad-dabble-rectangle .ad-responsive {
     width: 250px; } }
 @media screen and (max-width: 556px) {
-  .ad-responsive {
+  .ad-dabble-rectangle .ad-wrap {
+    display: block; }
+  .ad-dabble-rectangle .ad-responsive {
     width: auto;
     max-width: none;
     margin: auto; }
-
-  .ad-rectangle-right {
+  .ad-dabble-rectangle .ad-rectangle-right {
     display: none; } }
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル

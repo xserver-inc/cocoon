@@ -3,6 +3,7 @@
 ************************************/
 .ad-area{
   @extend %bottom_margin;
+  //margin: 24px 0;
   text-align: center;
 }
 
@@ -37,26 +38,35 @@
 
 //692px以下
 @media screen and (max-width: 692px){
-  .ad-responsive{
-    width: 300px;
+  .ad-dabble-rectangle{
+    .ad-responsive{
+      width: 300px;
+    }
   }
 }
 
 //626px以下
 @media screen and (max-width: 626px){
-  .ad-responsive{
-    width: 250px;
+  .ad-dabble-rectangle{
+    .ad-responsive{
+      width: 250px;
+    }
   }
 }
 
 //556px以下
 @media screen and (max-width: 556px){
-  .ad-responsive{
-    width: auto;
-    max-width: none;
-    margin: auto;
-  }
-  .ad-rectangle-right{
-    display: none;
+  .ad-dabble-rectangle{
+    .ad-wrap{
+      display: block;
+    }
+    .ad-responsive{
+      width: auto;
+      max-width: none;
+      margin: auto;
+    }
+    .ad-rectangle-right{
+      display: none;
+    }
   }
 }
