@@ -3,12 +3,7 @@
 //はてブURL
 if ( !function_exists( 'get_hatebu_share_url' ) ):
 function get_hatebu_share_url(){
-  if (is_singular()) {
-    $url = get_permalink();
-  } else {
-    $url = home_url();
-  }
-
+  $url = get_share_page_url();
   if (strpos($url, 'https://') === 0) {
     $u = preg_replace('/https:\/\//', 's/', $url);
   } else {
@@ -218,6 +213,18 @@ function scc_push7_exists(){
 }
 
 
+//シェア対象ページのURLを取得する
+if ( !function_exists( 'get_share_page_url' ) ):
+function get_share_page_url(){
+  if ( is_singular() ) {
+    $url = get_the_permalink();
+  } else {
+    $url = home_url();
+  }
+  return $url;
+}
+endif;
+
 //LINEのシェアURLを取得
 if ( !function_exists( 'get_line_share_url' ) ):
 function get_line_share_url(){
@@ -226,21 +233,15 @@ function get_line_share_url(){
   // } else {
   //   return '//lineit.line.me/share/ui?url='.get_the_permalink();
   // }
-  return '//timeline.line.me/social-plugin/share?url='.urlencode(get_the_permalink());
+  return '//timeline.line.me/social-plugin/share?url='.urlencode(get_share_page_url());
 }
 endif;
 
 //TwitterのシェアURLを取得
 if ( !function_exists( 'get_twitter_share_url' ) ):
 function get_twitter_share_url(){
-  if ( is_singular() ) {
-    $url = get_the_permalink();
-  } else {
-    $url = home_url();
-  }
-
   return 'https://twitter.com/intent/tweet?text='.urlencode( get_the_title() ).'&amp;url='.
-  urlencode( $url ).
+  urlencode( get_share_page_url() ).
   get_twitter_via_param(). //ツイートにメンションを含める
   get_twitter_related_param();//ツイート後にフォローを促す
 }
