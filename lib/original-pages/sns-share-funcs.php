@@ -92,3 +92,11 @@ function is_twitter_related_follow_enable(){
   return get_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
 }
 endif;
+
+//SNSシェアボタンのロゴとキャプションの位置
+define('OP_SNS_SHARE_LOGO_CAPTION_POSITION', 'sns_share_logo_caption_position');
+if ( !function_exists( 'get_sns_share_logo_caption_position' ) ):
+function get_sns_share_logo_caption_position(){
+  return get_option(OP_SNS_SHARE_LOGO_CAPTION_POSITION, 'left_and_right');
+}
+endif;

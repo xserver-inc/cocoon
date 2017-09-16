@@ -36,23 +36,27 @@ function get_additional_sns_share_button_classes(){
   //カラム数
   switch (get_sns_share_column_count()) {
     case 1:
-      $classes .= ' sns-share-col-1';
+      $classes .= ' ss-col-1';
       break;
     case 2:
-      $classes .= ' sns-share-col-2';
+      $classes .= ' ss-col-2';
       break;
     case 3:
-      $classes .= ' sns-share-col-3';
+      $classes .= ' ss-col-3';
       break;
     case 4:
-      $classes .= ' sns-share-col-4';
+      $classes .= ' ss-col-4';
       break;
     case 5:
-      $classes .= ' sns-share-col-5';
+      $classes .= ' ss-col-5';
       break;
     default:
-      $classes .= ' sns-share-col-6';
+      $classes .= ' ss-col-6';
       break;
+  }
+
+  if (get_sns_share_logo_caption_position() == 'high_and_low') {
+    $classes .= ' ss-high-and-low';
   }
   return $classes;
 }

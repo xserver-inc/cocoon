@@ -83,6 +83,21 @@
         </tr>
 
 
+        <!-- ロゴ・キャプション愛知 -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_SNS_SHARE_LOGO_CAPTION_POSITION; ?>"><?php _e( 'ロゴ・キャプション配置', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <select name="<?php echo OP_SNS_SHARE_LOGO_CAPTION_POSITION; ?>">
+              <option value="left_and_right"<?php the_option_selected('left_and_right', get_sns_share_logo_caption_position()); ?>>左右</option>
+              <option value="high_and_low"<?php the_option_selected('high_and_low', get_sns_share_logo_caption_position()); ?>>上下</option>
+            </select>
+            <p class="tips"><?php _e( 'シェアボタンのロゴとキャプションの配置を選択してください。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+
       </tbody>
     </table>
 

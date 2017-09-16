@@ -4,28 +4,44 @@
 .sns-share{
   @extend %margin_top_and_bottom_in_content;
 
-  &.sns-share-col-1 a{
+  &.ss-col-1 a{
     width: 100%;
   }
 
-  &.sns-share-col-2 a{
+  &.ss-col-2 a{
     width: 49%;
   }
 
-  &.sns-share-col-3 a{
+  &.ss-col-3 a{
 
   }
 
-  &.sns-share-col-4 a{
+  &.ss-col-4 a{
     width: 24%;
   }
 
-  &.sns-share-col-5 a{
+  &.ss-col-5 a{
     width: 19%;
   }
 
-  &.sns-share-col-6 a{
+  &.ss-col-6 a{
     width: 16%;
+  }
+
+  &.ss-high-and-low a{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    line-height: 16px;
+    span{
+      display: block;
+      font-size: 16px;
+      margin: 0;
+      &.button-caption{
+        font-size: 12px;
+      }
+    }
   }
 }
 

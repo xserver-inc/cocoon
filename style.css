@@ -926,16 +926,27 @@ label.screen-reader-text {
 /************************************
 ** SNSシェアボタン
 ************************************/
-.sns-share.sns-share-col-1 a {
+.sns-share.ss-col-1 a {
   width: 100%; }
-.sns-share.sns-share-col-2 a {
+.sns-share.ss-col-2 a {
   width: 49%; }
-.sns-share.sns-share-col-4 a {
+.sns-share.ss-col-4 a {
   width: 24%; }
-.sns-share.sns-share-col-5 a {
+.sns-share.ss-col-5 a {
   width: 19%; }
-.sns-share.sns-share-col-6 a {
+.sns-share.ss-col-6 a {
   width: 16%; }
+.sns-share.ss-high-and-low a {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  line-height: 16px; }
+  .sns-share.ss-high-and-low a span {
+    display: block;
+    font-size: 16px;
+    margin: 0; }
+    .sns-share.ss-high-and-low a span.button-caption {
+      font-size: 12px; }
 
 .sns-share-buttons {
   flex-wrap: wrap;
