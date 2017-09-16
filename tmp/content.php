@@ -20,13 +20,20 @@
       }; ?>
 
         <?php get_template_part('tmp/eye-catch');//アイキャッチ挿入機能?>
+
+        <?php //SNSシェアボタン
+        if (is_sns_share_buttons_visible())
+          get_template_part_with_option('tmp/sns-share-buttons', 'ss-top'); ?>
+
+
+         <?php //本文上の広告表示
+        if (is_ad_pos_content_top_visible()){
+          //レスポンシブ広告のフォーマットにhorizontalを指定する
+          get_template_part_with_ad_format(DATA_AD_FORMAT_HORIZONTAL, 'ad-content-top');
+        }; ?>
       </header>
 
-      <?php //本文上の広告表示
-      if (is_ad_pos_content_top_visible()){
-        //レスポンシブ広告のフォーマットにhorizontalを指定する
-        get_template_part_with_ad_format(DATA_AD_FORMAT_HORIZONTAL, 'ad-content-top');
-      }; ?>
+
 
       <div class="entry-content cf" itemprop="articleBody">
       <?php //記事本文の表示
@@ -57,7 +64,7 @@
 
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
-          get_template_part('tmp/sns-share-buttons'); ?>
+          get_template_part_with_option('tmp/sns-share-buttons', 'ss-bottom'); ?>
 
         <?php //SNSフォローボタン
         if (is_sns_follow_buttons_visible())

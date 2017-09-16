@@ -91,8 +91,6 @@ endif;
 
 //フォーマットを指定して広告テンプレートファイル呼び出す
 if ( !function_exists( 'get_template_part_with_ad_format' ) ):
-
-endif;
 function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null){
   // if ($wrap_class) {
   //   echo '<div class="'.$wrap_class.'">';
@@ -110,8 +108,20 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   //   echo '</div>';
   // }
 }
+endif;
 
-//セレクトボックスを手軽に作成する
+//オプション付きのテンプレート呼び出し
+if ( !function_exists( 'get_template_part_with_option' ) ):
+function get_template_part_with_option($slug, $option = null){
+  //$option変数をテンプレートファイルに渡す
+  set_query_var('option', $option);
+  //広告テンプレートの呼び出し
+  get_template_part($slug);
+}
+endif;
+
+
+//著者セレクトボックスを手軽に作成する
 if ( !function_exists( 'get_author_list_selectbox_tag' ) ):
 function get_author_list_selectbox_tag($name, $value){
   $users = get_users( array('orderby'=>'ID','order'=>'ASC') );

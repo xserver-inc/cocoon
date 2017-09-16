@@ -1,6 +1,7 @@
 <?php //シェアボタン ?>
-<?php if ( is_sns_share_buttons_visible() ): ?>
-<aside class="sns-share<?php echo get_additional_sns_share_button_classes(); ?>">
+<?php if ( is_sns_share_buttons_visible() ):
+//var_dump($option) ?>
+<aside class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
   <?php if ( get_sns_share_message() ): //シェアボタン用のメッセージを取得?>
     <div class="sns-share-message"><?php echo get_sns_share_message(); ?></div>
   <?php endif; ?>

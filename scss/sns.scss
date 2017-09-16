@@ -3,6 +3,14 @@
 ************************************/
 .sns-share{
   @extend %margin_top_and_bottom_in_content;
+  &.ss-top{
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .sns-share-message{
+      display: none;
+    }
+  }
 
   &.ss-col-1 a{
     width: 100%;

@@ -37,7 +37,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   right: 0;
   text-align: right; }
 
-.eye-catch, .entry-categories-tags, .ad-area {
+.entry-categories-tags, .ad-area {
   margin-bottom: 18px; }
 
 .sns-share, .sns-follow {
@@ -926,6 +926,11 @@ label.screen-reader-text {
 /************************************
 ** SNSシェアボタン
 ************************************/
+.sns-share.ss-top {
+  margin-top: 0;
+  margin-bottom: 0; }
+  .sns-share.ss-top .sns-share-message {
+    display: none; }
 .sns-share.ss-col-1 a {
   width: 100%; }
 .sns-share.ss-col-2 a {

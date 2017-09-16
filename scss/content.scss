@@ -6,7 +6,8 @@
 }
 
 .eye-catch{
-  @extend %bottom_margin;
+  //@extend %bottom_margin;
+  //& +
 }
 
 /*エントリー・アーカイブの見出し*/
