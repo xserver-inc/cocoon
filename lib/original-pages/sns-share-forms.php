@@ -94,7 +94,7 @@
 <div id="sns-share" class="postbox">
   <h2 class="hndle"><?php _e( 'ツイート設定', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( 'ツイートの挙動の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'Twitter上でのツイート動作の設定です。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 

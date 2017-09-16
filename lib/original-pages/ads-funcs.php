@@ -72,6 +72,14 @@ function is_ad_pos_above_title_visible(){
 }
 endif;
 
+//投稿・固定ページタイトル下の広告表示
+define('OP_AD_POS_BELOW_TITLE_VISIBLE', 'ad_pos_below_title_visible');
+if ( !function_exists( 'is_ad_pos_below_title_visible' ) ):
+function is_ad_pos_below_title_visible(){
+  return get_option(OP_AD_POS_BELOW_TITLE_VISIBLE);
+}
+endif;
+
 //投稿・固定ページ本文上の広告表示
 define('OP_AD_POS_CONTENT_TOP_VISIBLE', 'ad_pos_content_top_visible');
 if ( !function_exists( 'is_ad_pos_content_top_visible' ) ):

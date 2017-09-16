@@ -141,7 +141,7 @@ endif;
 //チェックボックスのチェックを付けるか
 if ( !function_exists( 'the_checkbox_checked' ) ):
 function the_checkbox_checked($value){
-  if ($value) {
+  if ( intval($value) == 1 ) {
     echo ' checked="checked"';
   }
 }

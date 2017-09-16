@@ -18,6 +18,8 @@ update_theme_option(OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE);
 update_theme_option(OP_AD_POS_INDEX_SIDEBAR_BOTTOM_VISIBLE);
 //投稿・固定ページタイトル上の広告表示
 update_theme_option(OP_AD_POS_ABOVE_TITLE_VISIBLE);
+//投稿・固定ページタイトル下の広告表示
+update_theme_option(OP_AD_POS_BELOW_TITLE_VISIBLE);
 //投稿・固定ページ本文上の広告表示
 update_theme_option(OP_AD_POS_CONTENT_TOP_VISIBLE);
 //投稿・固定ページ本文中の広告表示
