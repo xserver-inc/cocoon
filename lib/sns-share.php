@@ -225,6 +225,18 @@ function get_share_page_url(){
 }
 endif;
 
+//シェア対象ページのタイトルを取得する
+if ( !function_exists( 'get_share_page_title' ) ):
+function get_share_page_title(){
+  if ( is_singular() ) {
+    $title = get_the_title();
+  } else {
+    $title = get_bloginfo('name');
+  }
+  return $title;
+}
+endif;
+
 //LINEのシェアURLを取得
 if ( !function_exists( 'get_line_share_url' ) ):
 function get_line_share_url(){
@@ -240,9 +252,16 @@ endif;
 //TwitterのシェアURLを取得
 if ( !function_exists( 'get_twitter_share_url' ) ):
 function get_twitter_share_url(){
-  return 'https://twitter.com/intent/tweet?text='.urlencode( get_the_title() ).'&amp;url='.
+  return 'https://twitter.com/intent/tweet?text='.urlencode( get_share_page_title() ).'&amp;url='.
   urlencode( get_share_page_url() ).
   get_twitter_via_param(). //ツイートにメンションを含める
   get_twitter_related_param();//ツイート後にフォローを促す
+}
+endif;
+
+//FacebookのシェアURLを取得
+if ( !function_exists( 'get_facebook_share_url' ) ):
+function get_facebook_share_url(){
+  return '//www.facebook.com/sharer/sharer.php?u='.urlencode( get_share_page_url() ).'&amp;t='. urlencode( get_share_page_title() );//ツイート後にフォローを促す
 }
 endif;

@@ -11,7 +11,7 @@
     <?php endif; ?>
 
     <?php if ( is_facebook_share_button_visible() )://Facebookボタンを表示するか ?>
-      <a href="//www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&amp;t=<?php echo urlencode( get_the_title() ); ?>" class="share-button facebook-share-button" target="blank" rel="nofollow"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count"></span></a>
+      <a href="<?php echo get_facebook_share_url(); ?>" class="share-button facebook-share-button" target="blank" rel="nofollow"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count"></span></a>
     <?php endif; ?>
 
     <?php if ( is_hatebu_share_button_visible() )://はてなボタンを表示するか ?>
