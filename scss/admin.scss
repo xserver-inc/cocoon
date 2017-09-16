@@ -94,39 +94,32 @@ form.admin-settings{
   display: none;
 }
 
-.tabs-nav {
-  border-bottom: 1px solid #999;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#tabs{
+  .tabs-nav {
+    border-bottom: 1px solid #999;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
 
-  li {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: rgb(241, 241, 241);
-    // border-color: transparent transparent currentcolor;
-    // border-image: none;
-    // border-style: solid solid none;
-    // border-width: 1px 1px medium;
-    cursor: pointer;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 5px 8px 3px !important;
-    border-color: #999 #999 currentcolor;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 1px 1px medium;
-    // margin-bottom: -1px;
-    // padding-bottom: 4px;
+    li {
+      background-color: rgb(241, 241, 241);
+      cursor: pointer;
+      display: inline-block !important;
+      margin: 0 !important;
+      padding: 5px 8px 3px !important;
+      border-color: #999 #999 currentcolor;
+      border-image: none;
+      border-style: solid solid none;
+      border-width: 1px 1px medium;
 
-    &.selected{
-      background-color: #fff;
+      &.selected{
+        background-color: #fff;
+      }
     }
   }
 }
+
 
 .col-2{
   display: flex;
@@ -140,4 +133,43 @@ form.admin-settings{
 .list-style-disc{
   list-style-type: disc;
   padding-left: 30px;
+}
+
+/************************************
+** トグル詳細設定
+************************************/
+.toggle{
+
+  .toggle-link{
+    font-size: 0.8em;
+    cursor: pointer;
+
+    margin-left: 6px;
+    // border: 1px solid #777;
+    // padding: 2px;
+    // background-color: #eee;
+
+    text-decoration: underline;
+    color: #0073aa;
+    transition-duration: 0.05s;
+    transition-property: border, background, color;
+    transition-timing-function: ease-in-out;
+
+    &:hover{
+      color: #00a0d2;
+    }
+  }
+
+  .toggle-content{
+    display: none;
+    width: 100%;
+  }
+  //
+  // color: blue;
+  // font-size: 0.8em;
+
+  // &:hover{
+  //   color: red;
+  // }
+
 }

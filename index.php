@@ -14,8 +14,8 @@ if (!is_home() && !is_search()) { ?>
 //インデクストップ広告
 ////////////////////////////
 if (is_ad_pos_index_top_visible()){
-  //レスポンシブ広告のフォーマットにhorizontalを指定する
-  get_template_part_with_ad_format(DATA_AD_FORMAT_HORIZONTAL, 'ad-index-top');
+  //レスポンシブ広告
+  get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top');
 }; ?>
 
 <?php
@@ -45,7 +45,7 @@ endif;
 
 <?php
 ////////////////////////////
-//インデクストップ広告
+//インデクスボトム広告
 ////////////////////////////
 if (is_ad_pos_index_bottom_visible()){
   //レスポンシブ広告のフォーマットにrectangleを指定する

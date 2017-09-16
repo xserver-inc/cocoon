@@ -32,6 +32,14 @@ function is_ad_pos_index_top_visible(){
 }
 endif;
 
+//インデックストップの広告フォーマット
+define('OP_AD_POS_INDEX_TOP_FORMAT', 'ad_pos_index_top_format');
+if ( !function_exists( 'get_ad_pos_index_top_format' ) ):
+function get_ad_pos_index_top_format(){
+  return get_option(OP_AD_POS_INDEX_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+}
+endif;
+
 //インデックスミドルの広告表示
 define('OP_AD_POS_INDEX_MIDDLE_VISIBLE', 'ad_pos_index_middle_visible');
 if ( !function_exists( 'is_ad_pos_index_middle_visible' ) ):

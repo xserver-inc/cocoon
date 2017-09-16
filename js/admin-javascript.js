@@ -8,4 +8,10 @@
     $('#select_index').val(index);
   });
 
+
+
+    $('.toggle-link').click(function(){
+      $(this).next('.toggle-content').toggle();
+    });
+
 })(jQuery);

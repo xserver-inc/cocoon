@@ -1086,6 +1086,30 @@ label.screen-reader-text {
 .ad-sidebar-bottom .ad-label {
   display: none; }
 
+.ad-single-rectangle .ad-responsive,
+.ad-dabble-rectangle .ad-responsive {
+  max-width: 336px;
+  margin: auto; }
+
+.ad-dabble-rectangle .ad-wrap {
+  display: flex; }
+.ad-dabble-rectangle .ad-responsive {
+  width: 336px; }
+
+@media screen and (max-width: 692px) {
+  .ad-responsive {
+    width: 300px; } }
+@media screen and (max-width: 626px) {
+  .ad-responsive {
+    width: 250px; } }
+@media screen and (max-width: 556px) {
+  .ad-responsive {
+    width: auto;
+    max-width: none;
+    margin: auto; }
+
+  .ad-rectangle-right {
+    display: none; } }
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
 ************************************/

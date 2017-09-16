@@ -15,3 +15,48 @@
     display: none;
   }
 }
+
+.ad-single-rectangle,
+.ad-dabble-rectangle{
+  .ad-responsive{
+    max-width: 336px;
+    margin: auto;
+  }
+}
+
+.ad-dabble-rectangle{
+  .ad-wrap{
+    display: flex;
+  }
+
+  .ad-responsive{
+    width: 336px;
+  }
+}
+
+
+//692px以下
+@media screen and (max-width: 692px){
+  .ad-responsive{
+    width: 300px;
+  }
+}
+
+//626px以下
+@media screen and (max-width: 626px){
+  .ad-responsive{
+    width: 250px;
+  }
+}
+
+//556px以下
+@media screen and (max-width: 556px){
+  .ad-responsive{
+    width: auto;
+    max-width: none;
+    margin: auto;
+  }
+  .ad-rectangle-right{
+    display: none;
+  }
+}

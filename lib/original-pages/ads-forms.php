@@ -56,9 +56,27 @@
                 <ul>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_top_visible()); ?>><?php _e('トップ' ,THEME_NAME ); ?>
+                    <span class="toggle">
+                      <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
+                      <div class="toggle-content">
+                        <?php _e( 'フォーマット：', THEME_NAME ) ?><select name="<?php echo OP_AD_POS_INDEX_TOP_FORMAT; ?>" >
+                          <option value="<?php echo DATA_AD_FORMAT_AUTO; ?>"<?php the_option_selected(DATA_AD_FORMAT_AUTO, get_ad_pos_index_top_format()) ?>><?php _e( 'おまかせ', THEME_NAME ) ?></option>
+                          <option value="<?php echo DATA_AD_FORMAT_HORIZONTAL; ?>"<?php the_option_selected(DATA_AD_FORMAT_HORIZONTAL, get_ad_pos_index_top_format()) ?>><?php _e( 'バナー', THEME_NAME ) ?></option>
+                          <option value="<?php echo DATA_AD_FORMAT_RECTANGLE; ?>"<?php the_option_selected(DATA_AD_FORMAT_RECTANGLE, get_ad_pos_index_top_format()) ?>><?php _e( 'レスポンシブレクタングル', THEME_NAME ) ?></option>
+                          <option value="<?php echo AD_FORMAT_SINGLE_RECTANGLE; ?>"<?php the_option_selected(AD_FORMAT_SINGLE_RECTANGLE, get_ad_pos_index_top_format()) ?>><?php _e( 'シングルレクタングル', THEME_NAME ) ?></option>
+                          <option value="<?php echo AD_FORMAT_DABBLE_RECTANGLE; ?>"<?php the_option_selected(AD_FORMAT_DABBLE_RECTANGLE, get_ad_pos_index_top_format()) ?>><?php _e( 'ダブルレクタングル', THEME_NAME ) ?></option>
+                        </select>
+                      </div>
+                    </span>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_middle_visible()); ?>><?php _e('ミドル' ,THEME_NAME ); ?>
+                    <span class="toggle">
+                      <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
+                      <div class="toggle-content">
+                        bbbbbbbbbb
+                      </div>
+                    </span>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_bottom_visible()); ?>><?php _e('ボトム' ,THEME_NAME ); ?>

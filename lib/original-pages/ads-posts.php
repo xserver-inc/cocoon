@@ -8,6 +8,8 @@ update_theme_option(OP_AD_CODE);
 update_theme_option(OP_AD_LABEL);
 //インデックストップの広告表示
 update_theme_option(OP_AD_POS_INDEX_TOP_VISIBLE);
+//インデックストップの広告フォーマット
+update_theme_option(OP_AD_POS_INDEX_TOP_FORMAT);
 //インデックスミドルの広告表示
 update_theme_option(OP_AD_POS_INDEX_MIDDLE_VISIBLE);
 //インデックスボトムの広告表示

@@ -89,6 +89,29 @@ function get_category_ids(){
 }
 endif;
 
+//AdSense用のフォーマットに変換
+if ( !function_exists( 'to_adsense_format' ) ):
+function to_adsense_format($format){
+  switch ($format) {
+    case DATA_AD_FORMAT_AUTO:
+      $format = DATA_AD_FORMAT_AUTO;
+      break;
+    case DATA_AD_FORMAT_RECTANGLE:
+      $format = DATA_AD_FORMAT_RECTANGLE;
+      break;
+    case DATA_AD_FORMAT_HORIZONTAL:
+      $format = DATA_AD_FORMAT_HORIZONTAL;
+      break;
+    case DATA_AD_FORMAT_VERTICAL:
+      $format = DATA_AD_FORMAT_VERTICAL;
+    default:
+      $format = DATA_AD_FORMAT_RECTANGLE;
+      break;
+  }
+  return $format;
+}
+endif;
+
 //フォーマットを指定して広告テンプレートファイル呼び出す
 if ( !function_exists( 'get_template_part_with_ad_format' ) ):
 function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null){
@@ -97,7 +120,10 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   // }
   if (isset($wrap_class)) {
     $wrap_class = ' '.trim($wrap_class).' ad-'.$format;
+
+
   }
+  //var_dump($format);
   //$format変数をテンプレートファイルに渡す
   set_query_var('format', $format);
   //$format変数をテンプレートファイルに渡す
