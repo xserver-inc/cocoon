@@ -75,10 +75,10 @@
                 <p><strong><?php _e( 'サイドバーの表示位置', THEME_NAME ) ?></strong></p>
                 <ul>
                   <li>
-                    <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
+                    <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
                   </li>
                   <li>
-                    <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_SIDEBAR_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_sidebar_bottom_visible()); ?>><?php _e('サイドバーボトム' ,THEME_NAME ); ?>
+                    <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_bottom_visible()); ?>><?php _e('サイドバーボトム' ,THEME_NAME ); ?>
                   </li>
                 </ul>
 
@@ -90,31 +90,44 @@
                 <ul>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_title_visible()); ?>><?php _e('タイトル上' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_TITLE_FORMAT, get_ad_pos_above_title_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_title_visible()); ?>><?php _e('タイトル下' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_TITLE_FORMAT, get_ad_pos_below_title_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_top_visible()); ?>><?php _e('本文上' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_TOP_FORMAT, get_ad_pos_content_top_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_middle_visible()); ?>><?php _e('本文中' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_MIDDLE_FORMAT, get_ad_pos_content_middle_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_bottom_visible()); ?>><?php _e('本文下' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_BOTTOM_FORMAT, get_ad_pos_content_bottom_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_sns_buttons_visible()); ?>><?php _e('SNSボタン上（本文下部分）' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, get_ad_pos_above_sns_buttons_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_sns_buttons_visible()); ?>><?php _e('SNSボタン下（本文下部分）' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, get_ad_pos_below_sns_buttons_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_related_posts_visible()); ?>><?php _e('関連記事下（投稿ページのみ）' ,THEME_NAME ); ?>
+                    <?php //詳細設定
+                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, get_ad_pos_below_related_posts_format()); ?>
                   </li>
-                  <!-- <li>
-                    <input type="checkbox" name="<?php //echo OP_AD_POS_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php //the_checkbox_checked(is_ad_pos_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
-                  </li> -->
                 </ul>
 
 

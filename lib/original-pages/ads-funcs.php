@@ -73,18 +73,18 @@ function get_ad_pos_index_bottom_format(){
 endif;
 
 //インデックスサイドバー上の広告表示
-define('OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE', 'ad_pos_index_sidebar_top_visible');
-if ( !function_exists( 'is_ad_pos_index_sidebar_top_visible' ) ):
-function is_ad_pos_index_sidebar_top_visible(){
-  return get_option(OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE, 1);
+define('OP_AD_POS_SIDEBAR_TOP_VISIBLE', 'ad_pos_sidebar_top_visible');
+if ( !function_exists( 'is_ad_pos_sidebar_top_visible' ) ):
+function is_ad_pos_sidebar_top_visible(){
+  return get_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE, 1);
 }
 endif;
 
 //インデックスサイドバー下の広告表示
-define('OP_AD_POS_INDEX_SIDEBAR_BOTTOM_VISIBLE', 'ad_pos_index_sidebar_bottom_visible');
-if ( !function_exists( 'is_ad_pos_index_sidebar_bottom_visible' ) ):
-function is_ad_pos_index_sidebar_bottom_visible(){
-  return get_option(OP_AD_POS_INDEX_SIDEBAR_BOTTOM_VISIBLE);
+define('OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE', 'ad_pos_sidebar_bottom_visible');
+if ( !function_exists( 'is_ad_pos_sidebar_bottom_visible' ) ):
+function is_ad_pos_sidebar_bottom_visible(){
+  return get_option(OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE);
 }
 endif;
 
@@ -96,6 +96,14 @@ function is_ad_pos_above_title_visible(){
 }
 endif;
 
+//投稿・固定ページタイトル上の広告フォーマット
+define('OP_AD_POS_ABOVE_TITLE_FORMAT', 'ad_pos_above_title_format');
+if ( !function_exists( 'get_ad_pos_above_title_format' ) ):
+function get_ad_pos_above_title_format(){
+  return get_option(OP_AD_POS_ABOVE_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+}
+endif;
+
 //投稿・固定ページタイトル下の広告表示
 define('OP_AD_POS_BELOW_TITLE_VISIBLE', 'ad_pos_below_title_visible');
 if ( !function_exists( 'is_ad_pos_below_title_visible' ) ):
@@ -104,11 +112,27 @@ function is_ad_pos_below_title_visible(){
 }
 endif;
 
+//投稿・固定ページタイトル下の広告フォーマット
+define('OP_AD_POS_BELOW_TITLE_FORMAT', 'ad_pos_below_title_format');
+if ( !function_exists( 'get_ad_pos_below_title_format' ) ):
+function get_ad_pos_below_title_format(){
+  return get_option(OP_AD_POS_BELOW_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+}
+endif;
+
 //投稿・固定ページ本文上の広告表示
 define('OP_AD_POS_CONTENT_TOP_VISIBLE', 'ad_pos_content_top_visible');
 if ( !function_exists( 'is_ad_pos_content_top_visible' ) ):
-function is_ad_pos_CONTENT_TOP_visible(){
+function is_ad_pos_content_top_visible(){
   return get_option(OP_AD_POS_CONTENT_TOP_VISIBLE);
+}
+endif;
+
+//投稿・固定ページ本文上の広告フォーマット
+define('OP_AD_POS_CONTENT_TOP_FORMAT', 'ad_pos_content_top_format');
+if ( !function_exists( 'get_ad_pos_content_top_format' ) ):
+function get_ad_pos_content_top_format(){
+  return get_option(OP_AD_POS_CONTENT_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
 }
 endif;
 
@@ -120,11 +144,27 @@ function is_ad_pos_content_middle_visible(){
 }
 endif;
 
+//投稿・固定ページ本文中の広告フォーマット
+define('OP_AD_POS_CONTENT_MIDDLE_FORMAT', 'ad_pos_content_middle_format');
+if ( !function_exists( 'get_ad_pos_content_middle_format' ) ):
+function get_ad_pos_content_middle_format(){
+  return get_option(OP_AD_POS_CONTENT_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+}
+endif;
+
 //投稿・固定ページ本文下の広告表示
 define('OP_AD_POS_CONTENT_BOTTOM_VISIBLE', 'ad_pos_content_bottom_visible');
 if ( !function_exists( 'is_ad_pos_content_bottom_visible' ) ):
 function is_ad_pos_content_bottom_visible(){
   return get_option(OP_AD_POS_CONTENT_BOTTOM_VISIBLE, 1);
+}
+endif;
+
+//投稿・固定ページ本文下の広告フォーマット
+define('OP_AD_POS_CONTENT_BOTTOM_FORMAT', 'ad_pos_content_bottom_format');
+if ( !function_exists( 'get_ad_pos_content_bottom_format' ) ):
+function get_ad_pos_content_bottom_format(){
+  return get_option(OP_AD_POS_CONTENT_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -136,11 +176,27 @@ function is_ad_pos_above_sns_buttons_visible(){
 }
 endif;
 
+//投稿・固定ページSNSボタン上の広告フォーマット
+define('OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT', 'ad_pos_above_sns_buttons_format');
+if ( !function_exists( 'get_ad_pos_above_sns_buttons_format' ) ):
+function get_ad_pos_above_sns_buttons_format(){
+  return get_option(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+}
+endif;
+
 //投稿・固定ページSNSボタン下の広告表示
 define('OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE', 'ad_pos_below_sns_buttons_visible');
 if ( !function_exists( 'is_ad_pos_below_sns_buttons_visible' ) ):
 function is_ad_pos_below_sns_buttons_visible(){
   return get_option(OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE);
+}
+endif;
+
+//投稿・固定ページSNSボタン下の広告フォーマット
+define('OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT', 'ad_pos_below_sns_buttons_format');
+if ( !function_exists( 'get_ad_pos_below_sns_buttons_format' ) ):
+function get_ad_pos_below_sns_buttons_format(){
+  return get_option(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -152,13 +208,13 @@ function is_ad_pos_below_related_posts_visible(){
 }
 endif;
 
-// //投稿・固定ページサイドバートップの広告表示
-// define('OP_AD_POS_SIDEBAR_TOP_VISIBLE', 'ad_pos_sidebar_top_visible');
-// if ( !function_exists( 'is_ad_pos_sidebar_top_visible' ) ):
-// function is_ad_pos_sidebar_top_visible(){
-//   return get_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE, 1);
-// }
-// endif;
+//投稿関連記事下の広告フォーマット
+define('OP_AD_POS_BELOW_RELATED_POSTS_FORMAT', 'ad_pos_below_related_posts_format');
+if ( !function_exists( 'get_ad_pos_below_related_posts_format' ) ):
+function get_ad_pos_below_related_posts_format(){
+  return get_option(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+}
+endif;
 
 //広告除外記事ID
 define('OP_AD_EXCLUDE_POST_IDS', 'ad_exclude_post_ids');

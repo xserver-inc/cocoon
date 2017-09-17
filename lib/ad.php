@@ -105,8 +105,7 @@ function add_ads_before_1st_h2($the_content) {
   ){
     //広告（AdSense）タグを記入
     ob_start();//バッファリング
-    //レスポンシブ広告のフォーマットにrectangleを指定する
-    get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-content-middle');
+    get_template_part_with_ad_format(get_ad_pos_content_middle_format(), 'ad-content-middle');
     $ad_template = ob_get_clean();
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
     if ( $h2result ) {//H2見出しが本文中にある場合のみ
