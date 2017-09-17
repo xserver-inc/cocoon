@@ -12,8 +12,12 @@ update_theme_option(OP_AD_POS_INDEX_TOP_VISIBLE);
 update_theme_option(OP_AD_POS_INDEX_TOP_FORMAT);
 //インデックスミドルの広告表示
 update_theme_option(OP_AD_POS_INDEX_MIDDLE_VISIBLE);
+//インデックスミドルの広告フォーマット
+update_theme_option(OP_AD_POS_INDEX_MIDDLE_FORMAT);
 //インデックスボトムの広告表示
 update_theme_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE);
+//インデックスボトムの広告フォーマット
+update_theme_option(OP_AD_POS_INDEX_BOTTOM_FORMAT);
 //インデックスサイドバートップの広告表示
 update_theme_option(OP_AD_POS_INDEX_SIDEBAR_TOP_VISIBLE);
 //インデックスサイドバーボトムの広告表示

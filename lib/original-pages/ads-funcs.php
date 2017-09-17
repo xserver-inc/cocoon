@@ -48,11 +48,27 @@ function is_ad_pos_index_middle_visible(){
 }
 endif;
 
+//インデックスミドルの広告フォーマット
+define('OP_AD_POS_INDEX_MIDDLE_FORMAT', 'ad_pos_index_middle_format');
+if ( !function_exists( 'get_ad_pos_index_middle_format' ) ):
+function get_ad_pos_index_middle_format(){
+  return get_option(OP_AD_POS_INDEX_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+}
+endif;
+
 //インデックスボトムの広告表示
 define('OP_AD_POS_INDEX_BOTTOM_VISIBLE', 'ad_pos_index_bottom_visible');
 if ( !function_exists( 'is_ad_pos_index_bottom_visible' ) ):
 function is_ad_pos_index_bottom_visible(){
   return get_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE);
+}
+endif;
+
+//インデックスボトムの広告フォーマット
+define('OP_AD_POS_INDEX_BOTTOM_FORMAT', 'ad_pos_index_bottom_format');
+if ( !function_exists( 'get_ad_pos_index_bottom_format' ) ):
+function get_ad_pos_index_bottom_format(){
+  return get_option(OP_AD_POS_INDEX_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -175,7 +191,7 @@ function echo_main_column_ad_detail_setting_forms($name, $value){ ?>
     </select>
   </div>
 </span>
-<?php 
+<?php
 }
 endif;
 

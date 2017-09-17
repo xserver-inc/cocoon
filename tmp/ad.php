@@ -2,6 +2,7 @@
 //レスポンシブAdSenseコードを取得
 $ad_code = generate_adsense_responsive_code(to_adsense_format($format));
 //AdSenseコード時なかった場合は設定コードをそのまま取得
+var_dump($format);
 if (!$ad_code) {
   $ad_code = get_ad_code();
 }

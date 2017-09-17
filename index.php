@@ -30,7 +30,7 @@ if (have_posts()) : // WordPress ループ
 
     //インデックスミドルに広告を表示してよいかの判別
     if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count)) {
-      get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-index-middle');
+      get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle');
     }
   endwhile; // 繰り返し処理終了 ?>
   <div class="clear"></div>
@@ -49,7 +49,7 @@ endif;
 ////////////////////////////
 if (is_ad_pos_index_bottom_visible()){
   //レスポンシブ広告のフォーマットにrectangleを指定する
-  get_template_part_with_ad_format(DATA_AD_FORMAT_RECTANGLE, 'ad-index-bottom');
+  get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom');
 }; ?>
 
 <?php
