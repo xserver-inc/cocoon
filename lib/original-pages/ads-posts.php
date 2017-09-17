@@ -38,6 +38,8 @@ update_theme_option(OP_AD_POS_CONTENT_TOP_FORMAT);
 update_theme_option(OP_AD_POS_CONTENT_MIDDLE_VISIBLE);
 //投稿・固定ページ本文中の広告フォーマット
 update_theme_option(OP_AD_POS_CONTENT_MIDDLE_FORMAT);
+//投稿・固定ページ本文中の全てのH2見出し手前に広告表示
+update_theme_option(OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE);
 //投稿・固定ページ本文下の広告表示
 update_theme_option(OP_AD_POS_CONTENT_BOTTOM_VISIBLE);
 //投稿・固定ページ本文下の広告フォーマット

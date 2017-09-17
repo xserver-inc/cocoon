@@ -152,6 +152,14 @@ function get_ad_pos_content_middle_format(){
 }
 endif;
 
+//投稿・固定ページ本文中のH2見出し全てに広告表示
+define('OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE', 'ad_pos_all_content_middle_visible');
+if ( !function_exists( 'is_ad_pos_all_content_middle_visible' ) ):
+function is_ad_pos_all_content_middle_visible(){
+  return get_option(OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE);
+}
+endif;
+
 //投稿・固定ページ本文下の広告表示
 define('OP_AD_POS_CONTENT_BOTTOM_VISIBLE', 'ad_pos_content_bottom_visible');
 if ( !function_exists( 'is_ad_pos_content_bottom_visible' ) ):
@@ -234,7 +242,7 @@ endif;
 
 //メインカラム広告の詳細設定フォーム
 if ( !function_exists( 'echo_main_column_ad_detail_setting_forms' ) ):
-function echo_main_column_ad_detail_setting_forms($name, $value){ ?>
+function echo_main_column_ad_detail_setting_forms($name, $value, $body_ad_name = null, $body_ad_value = null){ ?>
  <span class="toggle">
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
@@ -245,6 +253,10 @@ function echo_main_column_ad_detail_setting_forms($name, $value){ ?>
       <option value="<?php echo AD_FORMAT_SINGLE_RECTANGLE; ?>"<?php the_option_selected(AD_FORMAT_SINGLE_RECTANGLE, $value) ?>><?php _e( 'シングルレクタングル', THEME_NAME ) ?></option>
       <option value="<?php echo AD_FORMAT_DABBLE_RECTANGLE; ?>"<?php the_option_selected(AD_FORMAT_DABBLE_RECTANGLE, $value) ?>><?php _e( 'ダブルレクタングル', THEME_NAME ) ?></option>
     </select>
+   <?php //本文中広告用の設定
+   if (isset($body_ad_name) && isset($body_ad_value)): ?>
+      <p><input type="checkbox" name="<?php echo $body_ad_name; ?>" value="1"<?php the_checkbox_checked($body_ad_value); ?>><?php _e('全てのH2見出し手前に広告を挿入' ,THEME_NAME ); ?></p>
+   <?php endif ?>
   </div>
 </span>
 <?php

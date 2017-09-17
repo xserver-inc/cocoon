@@ -108,10 +108,19 @@ function add_ads_before_1st_h2($the_content) {
     get_template_part_with_ad_format(get_ad_pos_content_middle_format(), 'ad-content-middle');
     $ad_template = ob_get_clean();
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
-    if ( $h2result ) {//H2見出しが本文中にある場合のみ
-      //最初のH2の手前に広告を挿入（最初のH2を置換）
-      $count = 1;
-      $the_content = preg_replace(H2_REG, $ad_template.$h2result, $the_content, 1);
+    //H2見出しが本文中にある場合のみ
+    if ( $h2result ) {
+      //本文全てのH2見出し手前に広告を表示するか
+      if (is_ad_pos_all_content_middle_visible()) {
+        //無制限に置換する
+        $limit = -1;
+      } else {
+        //最初のH2の手前に広告を挿入（最初のH2を置換）
+        $limit = 1;
+      }
+      
+
+      $the_content = preg_replace(H2_REG, $ad_template.$h2result, $the_content, $limit);
     }
   }
   return $the_content;
