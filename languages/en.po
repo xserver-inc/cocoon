@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-09-15 23:41+0900\n"
-"PO-Revision-Date: 2017-09-15 23:53+0900\n"
+"POT-Creation-Date: 2017-09-16 22:59+0900\n"
+"PO-Revision-Date: 2017-09-16 23:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -220,66 +220,107 @@ msgstr "Index page position"
 msgid "トップ"
 msgstr "Top"
 
-#: lib/original-pages/ads-forms.php:61
+#: lib/original-pages/ads-forms.php:60 lib/original-pages/ads-forms.php:75
+msgid "詳細設定"
+msgstr ""
+
+#: lib/original-pages/ads-forms.php:62
+msgid "フォーマット："
+msgstr ""
+
+#: lib/original-pages/ads-forms.php:63
+#, fuzzy
+#| msgid "コード"
+msgid "オート"
+msgstr "Source Code"
+
+#: lib/original-pages/ads-forms.php:64
+#, fuzzy
+#| msgid "テーマ"
+msgid "バナー"
+msgstr "Themes"
+
+#: lib/original-pages/ads-forms.php:65
+#, fuzzy
+msgid "レスポンシブレクタングル"
+msgstr "[S] Double rectangle Ads for PC"
+
+#: lib/original-pages/ads-forms.php:66
+#, fuzzy
+msgid "シングルレクタングル"
+msgstr "[S] Double rectangle Ads for PC"
+
+#: lib/original-pages/ads-forms.php:67
+#, fuzzy
+msgid "ダブルレクタングル"
+msgstr "[S] Double rectangle Ads for PC"
+
+#: lib/original-pages/ads-forms.php:73
 msgid "ミドル"
 msgstr "Middle"
 
-#: lib/original-pages/ads-forms.php:64
+#: lib/original-pages/ads-forms.php:82
 msgid "ボトム"
 msgstr "Bottom"
 
-#: lib/original-pages/ads-forms.php:69
+#: lib/original-pages/ads-forms.php:87
 msgid "サイドバーの表示位置"
 msgstr "Sidebar position"
 
-#: lib/original-pages/ads-forms.php:72 lib/original-pages/ads-forms.php:107
+#: lib/original-pages/ads-forms.php:90 lib/original-pages/ads-forms.php:128
 msgid "サイドバートップ"
 msgstr "Sidebar top"
 
-#: lib/original-pages/ads-forms.php:75
+#: lib/original-pages/ads-forms.php:93
 msgid "サイドバーボトム"
 msgstr "Sidebar bottom"
 
-#: lib/original-pages/ads-forms.php:83
+#: lib/original-pages/ads-forms.php:101
 msgid "投稿・固定ページの表示位置"
 msgstr "Posts / pages position"
 
-#: lib/original-pages/ads-forms.php:86
+#: lib/original-pages/ads-forms.php:104
 msgid "タイトル上"
 msgstr "Above Title"
 
-#: lib/original-pages/ads-forms.php:89
+#: lib/original-pages/ads-forms.php:107
+#, fuzzy
+#| msgid "タイトル上"
+msgid "タイトル下"
+msgstr "Above Title"
+
+#: lib/original-pages/ads-forms.php:110
 msgid "本文上"
 msgstr "Content Top"
 
-#: lib/original-pages/ads-forms.php:92
+#: lib/original-pages/ads-forms.php:113
 msgid "本文中"
 msgstr "Content Middle"
 
-#: lib/original-pages/ads-forms.php:95
+#: lib/original-pages/ads-forms.php:116
 msgid "本文下"
 msgstr "Content Bottom"
 
-#: lib/original-pages/ads-forms.php:98
+#: lib/original-pages/ads-forms.php:119
 #, fuzzy
 msgid "SNSボタン上（本文下部分）"
 msgstr "Buttons on social networks (full text at the bottom:)"
 
-#: lib/original-pages/ads-forms.php:101
+#: lib/original-pages/ads-forms.php:122
 #, fuzzy
 msgid "SNSボタン下（本文下部分）"
 msgstr "SNS button below (full text at the bottom:)"
 
-#: lib/original-pages/ads-forms.php:104
+#: lib/original-pages/ads-forms.php:125
 msgid "関連記事下（投稿ページのみ）"
 msgstr "Below Related Posts (post page only)"
 
-#: lib/original-pages/ads-forms.php:115
+#: lib/original-pages/ads-forms.php:136
 #, fuzzy
 msgid "それぞれのページで広告を表示する位置を設定します。"
 msgstr "Set the location to display ads on each page."
 
-#: lib/original-pages/ads-forms.php:117
+#: lib/original-pages/ads-forms.php:138
 #, fuzzy
 msgid ""
 "設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
@@ -288,29 +329,29 @@ msgstr ""
 "Because there may be violation of Adsense policies by setting after setting "
 "up please work carefully."
 
-#: lib/original-pages/ads-forms.php:130
+#: lib/original-pages/ads-forms.php:151
 msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
-#: lib/original-pages/ads-forms.php:138
+#: lib/original-pages/ads-forms.php:159
 msgid "広告除外記事ID"
 msgstr "Ad exclusion post IDs"
 
-#: lib/original-pages/ads-forms.php:141 lib/original-pages/ads-forms.php:152
+#: lib/original-pages/ads-forms.php:162 lib/original-pages/ads-forms.php:173
 msgid "例：111,222,3333"
 msgstr "Ex: 111222, 3333"
 
-#: lib/original-pages/ads-forms.php:142
+#: lib/original-pages/ads-forms.php:163
 #, fuzzy
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "ID of the ad to posts and static pages, (comma) should be separated."
 
-#: lib/original-pages/ads-forms.php:149
+#: lib/original-pages/ads-forms.php:170
 msgid "広告除外カテゴリーID"
 msgstr "Ad exclusion category IDs"
 
-#: lib/original-pages/ads-forms.php:153
+#: lib/original-pages/ads-forms.php:174
 #, fuzzy
 msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
 msgstr "The ID of the category to hide ads, (comma) should be separated."
@@ -487,17 +528,17 @@ msgid "ウェブサイト"
 msgstr "Website"
 
 #: lib/original-pages/sns-follow-forms.php:57
-#: lib/original-pages/sns-share-forms.php:55 tmp/sns-share-buttons.php:10
+#: lib/original-pages/sns-share-forms.php:55 tmp/sns-share-buttons.php:11
 msgid "Twitter"
 msgstr "Twitter"
 
 #: lib/original-pages/sns-follow-forms.php:58
-#: lib/original-pages/sns-share-forms.php:56 tmp/sns-share-buttons.php:14
+#: lib/original-pages/sns-share-forms.php:56 tmp/sns-share-buttons.php:15
 msgid "Facebook"
 msgstr "Facebook"
 
 #: lib/original-pages/sns-follow-forms.php:59
-#: lib/original-pages/sns-share-forms.php:57 tmp/sns-share-buttons.php:22
+#: lib/original-pages/sns-share-forms.php:57 tmp/sns-share-buttons.php:23
 msgid "Google+"
 msgstr "Google+"
 
@@ -559,15 +600,27 @@ msgstr "To view the RSS subscribe button"
 msgid "RSS購読料のボタンを表示します。"
 msgstr "View the RSS subscription button."
 
-#: lib/original-pages/sns-follow-forms.php:97
+#: lib/original-pages/sns-follow-forms.php:98
+#: lib/original-pages/sns-share-forms.php:70
+msgid "ボタンカラー"
+msgstr ""
+
+#: lib/original-pages/sns-follow-forms.php:106
+#: lib/original-pages/sns-share-forms.php:78
+#, fuzzy
+#| msgid "AdSenseのレスポンシブコードを入力してください"
+msgid "シェアボタンの配色を選択してください。"
+msgstr "Please select the number of columns of the share button."
+
+#: lib/original-pages/sns-follow-forms.php:114
 #, fuzzy
 msgid "デフォルトユーザー"
 msgstr "Default user"
 
-#: lib/original-pages/sns-follow-forms.php:101
+#: lib/original-pages/sns-follow-forms.php:118
 #, fuzzy
 msgid ""
-"投稿・固定ページ以内でフォローボタンを表示するユーザーを選択してください。"
+"投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
 msgstr ""
 "Posts and static pages within please select a user to view the follow button."
 
@@ -632,7 +685,7 @@ msgstr "Switch view"
 msgid "個々のシェアボタンの表示切り替え。"
 msgstr "Toggle the display of each newsfeed."
 
-#: lib/original-pages/sns-share-forms.php:59 tmp/sns-share-buttons.php:26
+#: lib/original-pages/sns-share-forms.php:59 tmp/sns-share-buttons.php:27
 #, fuzzy
 msgid "Pocket"
 msgstr "Pocket"
@@ -647,53 +700,63 @@ msgstr "LINE"
 msgid "表示するシェアボタンを選択してください。"
 msgstr "Please select a newsfeed to display."
 
-#: lib/original-pages/sns-share-forms.php:70
+#: lib/original-pages/sns-share-forms.php:87
 #, fuzzy
 msgid "カラム数"
 msgstr "Columns Number"
 
-#: lib/original-pages/sns-share-forms.php:81
+#: lib/original-pages/sns-share-forms.php:98
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "シェアボタンのカラム数を選択してください。"
 msgstr "Please select the number of columns of the share button."
 
-#: lib/original-pages/sns-share-forms.php:95
+#: lib/original-pages/sns-share-forms.php:106
+msgid "ロゴ・キャプション配置"
+msgstr ""
+
+#: lib/original-pages/sns-share-forms.php:114
+#, fuzzy
+#| msgid "AdSenseのレスポンシブコードを入力してください"
+msgid "シェアボタンのロゴとキャプションの配置を選択してください。"
+msgstr "Please select the number of columns of the share button."
+
+#: lib/original-pages/sns-share-forms.php:128
 #, fuzzy
 msgid "ツイート設定"
 msgstr "Tweet set"
 
-#: lib/original-pages/sns-share-forms.php:97
+#: lib/original-pages/sns-share-forms.php:130
 #, fuzzy
 msgid "Twitter上でのツイート動作の設定です。"
 msgstr "It is a set of Tweets on Twitter."
 
-#: lib/original-pages/sns-share-forms.php:104
+#: lib/original-pages/sns-share-forms.php:137
 #, fuzzy
 msgid "メンション"
 msgstr "Mention"
 
-#: lib/original-pages/sns-share-forms.php:107
+#: lib/original-pages/sns-share-forms.php:140
 #, fuzzy
 msgid "ツイートにメンションを含める"
 msgstr "Mention tweet enable"
 
-#: lib/original-pages/sns-share-forms.php:108
+#: lib/original-pages/sns-share-forms.php:141
 #, fuzzy
 msgid "シェアされたツイートに著者のTwitter IDを含めます。"
 msgstr "Tweet share include the Twitter ID of the author."
 
-#: lib/original-pages/sns-share-forms.php:115
+#: lib/original-pages/sns-share-forms.php:148
 #, fuzzy
 msgid "プロモーション"
 msgstr "Promotion"
 
-#: lib/original-pages/sns-share-forms.php:118
+#: lib/original-pages/sns-share-forms.php:151
 #, fuzzy
 msgid "ツイート後にフォローを促す"
 msgstr "Urge follow up after tweet"
 
-#: lib/original-pages/sns-share-forms.php:119
+#: lib/original-pages/sns-share-forms.php:152
 #, fuzzy
 msgid "ツイート後に著者のフォローボタンを表示します。"
 msgstr "Tweet later displays the author follow button."
@@ -1463,18 +1526,18 @@ msgstr "Follow Instagram"
 
 #: tmp/sns-follow-buttons.php:36
 #, fuzzy
-msgid "Pinterestをフォロー"
-msgstr "Follow Pinterest"
-
-#: tmp/sns-follow-buttons.php:40
-#, fuzzy
 msgid "YouTubeをフォロー"
 msgstr "Follow YouTube"
 
-#: tmp/sns-follow-buttons.php:44
+#: tmp/sns-follow-buttons.php:40
 #, fuzzy
 msgid "Flickrをフォロー"
 msgstr "Follow Flickr"
+
+#: tmp/sns-follow-buttons.php:44
+#, fuzzy
+msgid "Pinterestをフォロー"
+msgstr "Follow Pinterest"
 
 #: tmp/sns-follow-buttons.php:48
 #, fuzzy
@@ -1496,12 +1559,12 @@ msgstr "Subscribe to feedly"
 msgid "RSSで更新情報をフォロー"
 msgstr "Subscribe to RSS"
 
-#: tmp/sns-share-buttons.php:18
+#: tmp/sns-share-buttons.php:19
 #, fuzzy
 msgid "はてブ"
 msgstr "Follow Hatena Bookmark"
 
-#: tmp/sns-share-buttons.php:30
+#: tmp/sns-share-buttons.php:31
 #, fuzzy
 msgid "LINE"
 msgstr "LINE"
