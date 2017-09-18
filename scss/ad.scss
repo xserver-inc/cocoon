@@ -25,6 +25,9 @@
   }
 }
 
+///////////////////////////////////////////
+// ダブルレクタングル
+///////////////////////////////////////////
 .ad-dabble-rectangle{
   .ad-wrap{
     display: flex;
@@ -65,8 +68,30 @@
       max-width: none;
       margin: auto;
     }
-    .ad-rectangle-right{
+    .ad-additional-double{
       display: none;
+    }
+  }
+}
+
+///////////////////////////////////////////
+// サイドバーのスカイスクレイパー
+///////////////////////////////////////////
+.sidebar{
+  .ad-additional-vertical{
+    display: none;
+  }
+}
+
+//768px以下
+@media screen and (max-width: 768px){
+  .sidebar{
+    .ad-usual{
+      display: none;
+    }
+
+    .ad-additional-vertical{
+      display: block;
     }
   }
 }

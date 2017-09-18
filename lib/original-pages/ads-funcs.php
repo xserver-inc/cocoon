@@ -88,11 +88,27 @@ function is_ad_pos_sidebar_top_visible(){
 }
 endif;
 
+//インデックスサイドバー上の広告フォーマット
+define('OP_AD_POS_SIDEBAR_TOP_FORMAT', 'ad_pos_sidebar_top_format');
+if ( !function_exists( 'get_ad_pos_sidebar_top_format' ) ):
+function get_ad_pos_sidebar_top_format(){
+  return get_option(OP_AD_POS_SIDEBAR_TOP_FORMAT, 1);
+}
+endif;
+
 //インデックスサイドバー下の広告表示
 define('OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE', 'ad_pos_sidebar_bottom_visible');
 if ( !function_exists( 'is_ad_pos_sidebar_bottom_visible' ) ):
 function is_ad_pos_sidebar_bottom_visible(){
   return get_option(OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE);
+}
+endif;
+
+//インデックスサイドバー下の広告フォーマット
+define('OP_AD_POS_SIDEBAR_BOTTOM_FORMAT', 'ad_pos_sidebar_bottom_format');
+if ( !function_exists( 'get_ad_pos_sidebar_bottom_format' ) ):
+function get_ad_pos_sidebar_bottom_format(){
+  return get_option(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT, 1);
 }
 endif;
 
@@ -255,7 +271,7 @@ function echo_main_column_ad_detail_setting_forms($name, $value, $body_ad_name =
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
     <?php _e( 'フォーマット：', THEME_NAME ) ?><select name="<?php echo $name; ?>" >
-      <option value="<?php echo DATA_AD_FORMAT_AUTO; ?>"<?php the_option_selected(DATA_AD_FORMAT_AUTO, $value) ?>><?php _e( 'オート', THEME_NAME ) ?></option>
+      <option value="<?php echo DATA_AD_FORMAT_AUTO; ?>"<?php the_option_selected(DATA_AD_FORMAT_AUTO, $value) ?>><?php _e( 'オート（AdSenseにおまかせ）', THEME_NAME ) ?></option>
       <option value="<?php echo DATA_AD_FORMAT_HORIZONTAL; ?>"<?php the_option_selected(DATA_AD_FORMAT_HORIZONTAL, $value) ?>><?php _e( 'バナー', THEME_NAME ) ?></option>
       <option value="<?php echo DATA_AD_FORMAT_RECTANGLE; ?>"<?php the_option_selected(DATA_AD_FORMAT_RECTANGLE, $value) ?>><?php _e( 'レスポンシブレクタングル', THEME_NAME ) ?></option>
       <option value="<?php echo AD_FORMAT_SINGLE_RECTANGLE; ?>"<?php the_option_selected(AD_FORMAT_SINGLE_RECTANGLE, $value) ?>><?php _e( 'シングルレクタングル', THEME_NAME ) ?></option>
@@ -271,3 +287,21 @@ function echo_main_column_ad_detail_setting_forms($name, $value, $body_ad_name =
 }
 endif;
 
+//サイドバー広告の詳細設定フォーム
+if ( !function_exists( 'echo_sidebar_ad_detail_setting_forms' ) ):
+  function echo_sidebar_ad_detail_setting_forms($name, $value){ ?>
+   <span class="toggle">
+    <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
+    <div class="toggle-content">
+      <?php _e( 'フォーマット：', THEME_NAME ) ?><select name="<?php echo $name; ?>" >
+        <option value="<?php echo DATA_AD_FORMAT_AUTO; ?>"<?php the_option_selected(DATA_AD_FORMAT_AUTO, $value) ?>><?php _e( 'オート（AdSenseにおまかせ）', THEME_NAME ) ?></option>
+        <option value="<?php echo DATA_AD_FORMAT_HORIZONTAL; ?>"<?php the_option_selected(DATA_AD_FORMAT_HORIZONTAL, $value) ?>><?php _e( 'バナー', THEME_NAME ) ?></option>
+        <option value="<?php echo DATA_AD_FORMAT_RECTANGLE; ?>"<?php the_option_selected(DATA_AD_FORMAT_RECTANGLE, $value) ?>><?php _e( 'レクタングル', THEME_NAME ) ?></option>
+        <option value="<?php echo DATA_AD_FORMAT_VERTICAL; ?>"<?php the_option_selected(DATA_AD_FORMAT_VERTICAL, $value) ?>><?php _e( 'ラージスカイスクレイパー', THEME_NAME ) ?></option>
+      </select>
+    </div>
+  </span>
+  <?php
+  }
+  endif;
+  

@@ -20,10 +20,14 @@ update_theme_option(OP_AD_POS_INDEX_MIDDLE_FORMAT);
 update_theme_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE);
 //インデックスボトムの広告フォーマット
 update_theme_option(OP_AD_POS_INDEX_BOTTOM_FORMAT);
-//インデックスサイドバートップの広告表示
+//サイドバートップの広告表示
 update_theme_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE);
-//インデックスサイドバーボトムの広告表示
+//サイドバートップの広告フォーマット
+update_theme_option(OP_AD_POS_SIDEBAR_TOP_FORMAT);
+//サイドバーボトムの広告表示
 update_theme_option(OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE);
+//サイドバーボトムの広告フォーマット
+update_theme_option(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT);
 //投稿・固定ページタイトル上の広告表示
 update_theme_option(OP_AD_POS_ABOVE_TITLE_VISIBLE);
 //投稿・固定ページタイトル上の広告フォーマット

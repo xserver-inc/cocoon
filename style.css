@@ -1109,8 +1109,16 @@ label.screen-reader-text {
     width: auto;
     max-width: none;
     margin: auto; }
-  .ad-dabble-rectangle .ad-rectangle-right {
+  .ad-dabble-rectangle .ad-additional-double {
     display: none; } }
+.sidebar .ad-additional-vertical {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  .sidebar .ad-usual {
+    display: none; }
+  .sidebar .ad-additional-vertical {
+    display: block; } }
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
 ************************************/

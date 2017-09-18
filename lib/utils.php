@@ -104,6 +104,7 @@ function to_adsense_format($format){
       break;
     case DATA_AD_FORMAT_VERTICAL:
       $format = DATA_AD_FORMAT_VERTICAL;
+      break;
     default:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
