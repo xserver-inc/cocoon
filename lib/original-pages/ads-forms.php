@@ -1,7 +1,9 @@
-<!-- アドセンス設定 -->
+<!-- 広告設定 -->
 <div id="ads" class="postbox">
-  <h2 class="hndle"><?php _e( '広告全体設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '広告設定', THEME_NAME ) ?></h2>
   <div class="inside">
+
+    <p><?php _e( '広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -17,7 +19,18 @@
           </td>
         </tr>
 
-        </tbody>
+        <!-- 広告ラベル -->
+        <tr>
+          <th scope="row">
+            <label for="<?php echo OP_AD_LABEL; ?>"><?php _e( '広告ラベル', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <input type="text" name="<?php echo OP_AD_LABEL; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_ad_label(); ?>" placeholder="<?php _e( '「スポンサーリンク」か「広告」推奨', THEME_NAME ); ?>">
+            <p class="tips"><?php _e( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+      </tbody>
     </table>
 
   </div>
@@ -27,6 +40,8 @@
 <div id="ads" class="postbox">
   <h2 class="hndle"><?php _e( 'アドセンス設定', THEME_NAME ) ?></h2>
   <div class="inside">
+
+    <p><?php _e( 'アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっています。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -50,18 +65,6 @@
           <td>
             <textarea name="<?php echo OP_AD_CODE; ?>" cols="<?php echo DEFAULT_INPUT_COLS; ?>" rows="<?php echo DEFAULT_INPUT_ROWS; ?>" placeholder="<?php _e( 'アドセンスのレスポンシブコードを入力してください', THEME_NAME ) ?>"><?php echo get_ad_code(); ?></textarea>
             <p class="tips"><?php _e( 'アドセンスのレスポンシブ広告コードを入力してください。', THEME_NAME ); ?></p>
-          </td>
-        </tr>
-
-
-        <!-- 広告ラベル -->
-        <tr>
-          <th scope="row">
-            <label for="<?php echo OP_AD_LABEL; ?>"><?php _e( '広告ラベル', THEME_NAME ) ?></label>
-          </th>
-          <td>
-            <input type="text" name="<?php echo OP_AD_LABEL; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_ad_label(); ?>" placeholder="<?php _e( '「スポンサーリンク」か「広告」推奨', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
@@ -180,6 +183,8 @@
 <div id="exclude-ads" class="postbox">
   <h2 class="hndle"><?php _e( '広告除外設定', THEME_NAME ) ?></h2>
   <div class="inside">
+
+    <p><?php _e( '広告を表示したくないページやカテゴリの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

@@ -5,6 +5,8 @@
   <h2 class="hndle"><?php _e( 'Google Analytics設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
+    <p><?php _e( 'Google Analyticsの解析タグの設定です。', THEME_NAME ) ?></p>
+
     <table class="form-table">
       <tbody>
 
@@ -30,6 +32,8 @@
 <div id="analytics" class="postbox">
   <h2 class="hndle"><?php _e( 'Google Search Console設定', THEME_NAME ) ?></h2>
   <div class="inside">
+    
+    <p><?php _e( 'Google Search Consoleのサイト認証タグの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -53,9 +57,11 @@
 
 
 <!-- Ptengine設定 -->
-<div id="analytics" class="postbox">
+<div id="ptengine" class="postbox">
   <h2 class="hndle"><?php _e( 'Ptengine設定', THEME_NAME ) ?></h2>
   <div class="inside">
+    
+    <p><?php _e( 'Ptengineの解析タグの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -79,9 +85,11 @@
 
 
 <!-- その他のアクセス解析設定 -->
-<div id="ptengine" class="postbox">
+<div id="other" class="postbox">
   <h2 class="hndle"><?php _e( 'その他のアクセス解析設定', THEME_NAME ) ?></h2>
   <div class="inside">
+    
+    <p><?php _e( 'ヘッダーやフッターに、その他サービスのアクセス解析タグをそのまま貼り付けます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
