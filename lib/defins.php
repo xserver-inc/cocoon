@@ -2,10 +2,10 @@
 
 //テーマ名
 define('THEME_NAME', 'cocoon');
-//テーマ名
-define('THEME_NAME_CAMEL', 'Cocoon');
+//テーマ名（最初の一文字だけ大文字）
+define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //ウィジェット名プレフィックス
-define('WIDGET_NAME_PREFIX', '[C] ');
+define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C] 
 //トップレベルオリジナル設定名
 define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
 
@@ -63,6 +63,6 @@ require_once 'additional-classes.php'; //スタイリング用の追加クラス
 
 
 //新着記事ウィジェット
-require_once('widgets/new-entries.php');
+require_once 'widgets/new-entries.php';
 //最近のコメントウィジェット
-require_once('widgets/recent-comments.php');
+require_once 'widgets/recent-comments.php';
