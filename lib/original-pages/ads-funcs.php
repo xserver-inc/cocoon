@@ -8,6 +8,14 @@ function is_all_ads_visible(){
 }
 endif;
 
+//アドセンス広告を全て表示するか
+define('OP_ALL_ADSENSES_VISIBLE', 'all_adsenses_visible');
+if ( !function_exists( 'is_all_adsenses_visible' ) ):
+function is_all_adsenses_visible(){
+  return get_option(OP_ALL_ADSENSES_VISIBLE, 1);
+}
+endif;
+
 //広告コード
 define('OP_AD_CODE', 'ad_code');
 if ( !function_exists( 'get_ad_code' ) ):

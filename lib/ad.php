@@ -101,7 +101,8 @@ function add_ads_before_1st_h2($the_content) {
   //   return $the_content;
   // }
   if ( is_singular() && //投稿日・固定ページのとき
-       is_ad_pos_content_middle_visible() //設定で表示が許可されているとき
+       is_ad_pos_content_middle_visible() &&//設定で表示が許可されているとき
+       is_all_adsenses_visible() //AdSense設定項目で表示が許可されているか
   ){
     //広告（AdSense）タグを記入
     ob_start();//バッファリング

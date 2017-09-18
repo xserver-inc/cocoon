@@ -7,7 +7,7 @@
   <?php get_template_part('tmp/related-entries'); //関連記事 ?>
 
   <?php //関連記事下の広告表示
-  if (is_ad_pos_below_related_posts_visible()){
+  if (is_ad_pos_below_related_posts_visible() && is_all_adsenses_visible()){
     get_template_part_with_ad_format(get_ad_pos_below_related_posts_format(), 'ad-below-related-posts');
   }; ?>
 

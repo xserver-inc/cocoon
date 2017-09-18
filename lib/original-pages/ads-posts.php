@@ -2,6 +2,8 @@
 
 //広告表示設定
 update_theme_option(OP_ALL_ADS_VISIBLE);
+//アドセンス広告表示設定
+update_theme_option(OP_ALL_ADSENSES_VISIBLE);
 //広告コード
 update_theme_option(OP_AD_CODE);
 //広告ラベル

@@ -5,7 +5,7 @@
       the_post();?>
 
       <?php //タイトル上の広告表示
-      if (is_ad_pos_above_title_visible()){
+      if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title');
       }; ?>
 
@@ -13,7 +13,7 @@
         <h1 class="entry-title" itemprop="headline" rel="bookmark"><?php the_title() ?></h1>
 
       <?php //タイトル下の広告表示
-      if (is_ad_pos_below_title_visible()){
+      if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
         get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title');
       }; ?>
 
@@ -25,7 +25,7 @@
 
 
          <?php //本文上の広告表示
-        if (is_ad_pos_content_top_visible()){
+        if (is_ad_pos_content_top_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top');
         }; ?>
       </header>
@@ -43,7 +43,7 @@
       <footer class="article-footer entry-footer">
 
         <?php //本文下の広告表示
-        if (is_ad_pos_content_bottom_visible()){
+        if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
           //レスポンシブ広告のフォーマットにrectangleを指定する
           get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom');
         }; ?>
@@ -54,7 +54,7 @@
         </div>
 
         <?php //SNSシェアボタン上の広告表示
-        if (is_ad_pos_above_sns_buttons_visible()){
+        if (is_ad_pos_above_sns_buttons_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_above_sns_buttons_format(), 'ad-above-sns-buttons');
         }; ?>
 
@@ -67,7 +67,7 @@
           get_template_part('tmp/sns-follow-buttons'); ?>
 
         <?php //SNSシェアボタン上の広告表示
-        if (is_ad_pos_below_sns_buttons_visible()){
+        if (is_ad_pos_below_sns_buttons_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons');
         }; ?>
 

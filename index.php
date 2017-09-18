@@ -13,7 +13,7 @@ if (!is_home() && !is_search()) { ?>
 ////////////////////////////
 //インデクストップ広告
 ////////////////////////////
-if (is_ad_pos_index_top_visible()){
+if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告
   get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top');
 }; ?>
@@ -29,7 +29,7 @@ if (have_posts()) : // WordPress ループ
     get_template_part('tmp/entry-card');
 
     //インデックスミドルに広告を表示してよいかの判別
-    if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count)) {
+    if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count) && is_all_adsenses_visible()) {
       get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle');
     }
   endwhile; // 繰り返し処理終了 ?>
@@ -47,7 +47,7 @@ endif;
 ////////////////////////////
 //インデクスボトム広告
 ////////////////////////////
-if (is_ad_pos_index_bottom_visible()){
+if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告のフォーマットにrectangleを指定する
   get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom');
 }; ?>
