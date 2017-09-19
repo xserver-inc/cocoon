@@ -1091,6 +1091,9 @@ label.screen-reader-text {
   max-width: 336px;
   margin: auto; }
 
+/************************************
+** ダブルレクタングル
+************************************/
 .ad-dabble-rectangle .ad-wrap {
   display: flex; }
 .ad-dabble-rectangle .ad-responsive {
@@ -1111,6 +1114,9 @@ label.screen-reader-text {
     margin: auto; }
   .ad-dabble-rectangle .ad-additional-double {
     display: none; } }
+/************************************
+** サイドバーのスカイスクレイパー
+************************************/
 .sidebar .ad-additional-vertical {
   display: none; }
 
