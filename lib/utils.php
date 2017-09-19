@@ -205,4 +205,22 @@ function genelate_selectbox_tag($name, $options, $now_value){?>
 }
 endif;
 
+//ソースコードのハイライト表示に必要なリソースの読み込み
+if ( !function_exists( 'wp_enqueue_hilight_js' ) ):
+function wp_enqueue_hilight_js(){
+  if ( is_code_highlight_enable() ) {
+    //ソースコードハイライト表示用のスタイル
+    wp_enqueue_style( 'code-highlight-style',  get_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css' );
+    wp_enqueue_script( 'code-highlight-js', get_template_directory_uri() . '/plugins/highlight-js/highlight.min.js', array( 'jquery' ), false, true );
+    $data = '
+      (function($){
+       $("'.get_code_highlight_css_selector().'").each(function(i, block) {
+        hljs.highlightBlock(block);
+       });
+      })(jQuery);
+    ';
+    wp_add_inline_script( 'code-highlight-js', $data, 'after' ) ;
+  }
+}
+endif;
 
