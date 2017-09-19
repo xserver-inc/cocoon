@@ -10,6 +10,29 @@
     <table class="form-table">
       <tbody>
 
+        <!-- プレビュー画面 -->
+        <tr>
+          <th scope="row">
+            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <?php $highlight_class = null;
+            if (is_code_highlight_enable()):
+               $highlight_class = ' entry-content'; ?>
+              <link rel="stylesheet" type="text/css" href="<?php echo get_highlight_js_css_url(); ?>">
+            <?php endif ?>
+
+            <div class="demo<?php echo $highlight_class; ?>">
+<pre id="highlight-demo">/* コメント */
+#container {
+  float: left;
+  margin: 0 -240px 0 0;
+  width: 100%;
+}</pre>
+            </div>
+          </td>
+        </tr>
+
         <!-- ソースコードのハイライト表示 -->
         <tr>
           <th scope="row">
@@ -39,7 +62,7 @@
           </th>
           <td>
             <input type="text" name="<?php echo OP_CODE_HIGHLIGHT_CSS_SELECTOR; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_code_highlight_css_selector(); ?>" placeholder="<?php _e( '.entry-content pre', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ) ?></p>
+            <p class="tips"><?php _e( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ) ?><br><?php _e( '※変更すると当設定ページのプレビュー機能は利用できなくなる可能性があります。', THEME_NAME ) ?></p>
           </td>
         </tr>
 

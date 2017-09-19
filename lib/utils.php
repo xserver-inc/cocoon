@@ -205,12 +205,26 @@ function genelate_selectbox_tag($name, $options, $now_value){?>
 }
 endif;
 
+//highlight-jsのCSS URLを取得
+if ( !function_exists( 'get_highlight_js_css_url' ) ):
+function get_highlight_js_css_url(){
+  return get_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css';
+}
+endif;
+
 //ソースコードのハイライト表示に必要なリソースの読み込み
-if ( !function_exists( 'wp_enqueue_hilight_js' ) ):
-function wp_enqueue_hilight_js(){
-  if ( is_code_highlight_enable() ) {
+if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
+function wp_enqueue_highlight_js(){
+  global $pagenow;
+  if ( is_code_highlight_enable() || (is_admin() && $pagenow == 'admin.php') ) {
+    // if (is_admin()) {
+    //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
+    // } else {
+    //   wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
+    // }
+
     //ソースコードハイライト表示用のスタイル
-    wp_enqueue_style( 'code-highlight-style',  get_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css' );
+    wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
     wp_enqueue_script( 'code-highlight-js', get_template_directory_uri() . '/plugins/highlight-js/highlight.min.js', array( 'jquery' ), false, true );
     $data = '
       (function($){

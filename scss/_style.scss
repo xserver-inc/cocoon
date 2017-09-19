@@ -12,5 +12,17 @@ License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+
+//固定値
+@import "defins";
 //importファイル
 @import "imports";
+@import "pre";
+
+// //管理画面で表示させたくない
+// pre {
+//   background-color: $xx_thin;
+//   border: 1px solid $thin;
+//   overflow: auto;
+//   padding: 10px;
+// }

@@ -4,7 +4,7 @@
 define('OP_CODE_HIGHLIGHT_ENABLE', 'code_highlight_enable');
 if ( !function_exists( 'is_code_highlight_enable' ) ):
 function is_code_highlight_enable(){
-  return get_option(OP_CODE_HIGHLIGHT_ENABLE);
+  return get_option(OP_CODE_HIGHLIGHT_ENABLE, 1);
 }
 endif;
 

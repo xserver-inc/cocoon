@@ -25,7 +25,22 @@ function admin_print_styles_custom() {
       //管理画面用のJavaScriptの読み込み
       wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
       //ソースコードハイライトリソースの読み込み
-      wp_enqueue_hilight_js();
+      wp_enqueue_highlight_js();
+
+      // ///////////////////////////////////
+      // //ソースコードのハイライト表示
+      // ///////////////////////////////////
+      // if ( is_code_highlight_enable() ){
+      //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
+      //   echo '<script src="'.get_template_directory_uri().'/plugins/highlight-js/highlight.min.js"></script>'.PHP_EOL;
+      //   echo '<script type="text/javascript">
+      //         (function($){
+      //          $("'.get_code_highlight_css_selector().'").each(function(i, block) {
+      //           hljs.highlightBlock(block);
+      //          });
+      //         })(jQuery);
+      //         </script>';
+      // }
     }
 
     //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
