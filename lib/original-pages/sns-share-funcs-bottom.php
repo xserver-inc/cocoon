@@ -46,10 +46,10 @@ function is_hatebu_share_button_visible(){
 endif;
 
 //Google+シェアボタンの表示
-define('OP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'gooogle_plus_share_button_visible');
-if ( !function_exists( 'is_gooogle_plus_share_button_visible' ) ):
-function is_gooogle_plus_share_button_visible(){
-  return get_option(OP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
+define('OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'google_plus_share_button_visible');
+if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
+function is_google_plus_share_button_visible(){
+  return get_option(OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 

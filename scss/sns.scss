@@ -175,159 +175,95 @@
     }
   }
 
-  //カラム数
-  &.ss-col-1 a{
-    width: 100%;
-  }
+  &.ss-top,
+  &.ss-bottom{
+    //カラム数
+    &.ss-col-1 a{
+      width: 100%;
+    }
 
-  &.ss-col-2 a{
-    width: 49%;
-  }
+    &.ss-col-2 a{
+      width: 49%;
+    }
 
-  &.ss-col-3 a{
+    &.ss-col-3 a{
 
-  }
+    }
 
-  &.ss-col-4 a{
-    width: 24%;
-  }
+    &.ss-col-4 a{
+      width: 24%;
+    }
 
-  &.ss-col-5 a{
-    width: 19%;
-  }
+    &.ss-col-5 a{
+      width: 19%;
+    }
 
-  &.ss-col-6 a{
-    width: 16%;
-  }
+    &.ss-col-6 a{
+      width: 16%;
+    }
 
-  %high_and_low{
-    display: flex;
-    align-content: center;
+    %high_and_low{
+      display: flex;
+      align-content: center;
 
-    line-height: 16px;
-    span{
-      display: block;
-      font-size: 16px;
-      margin: 0;
-      &.button-caption{
-        font-size: 12px;
+      line-height: 16px;
+      span{
+        display: block;
+        font-size: 16px;
+        margin: 0;
+        &.button-caption{
+          font-size: 12px;
+        }
       }
     }
+
+    //ロゴ・キャプション配置
+    &.ss-high-and-low-lc a{
+      @extend %high_and_low;
+      flex-direction: column;
+    }
+
+    &.ss-high-and-low-cl a{
+      @extend %high_and_low;
+      flex-direction: column-reverse;
+    }
+
+    //ボタンカラー
+    &{
+      @extend %sns_button_color;
+    }
   }
-
-  //ロゴ・キャプション配置
-  &.ss-high-and-low-lc a{
-    @extend %high_and_low;
-    flex-direction: column;
-  }
-
-  &.ss-high-and-low-cl a{
-    @extend %high_and_low;
-    flex-direction: column-reverse;
-  }
-
-  //ボタンカラー
-  &{
-    @extend %sns_button_color;
-  }
-
-  // //ボタンカラー
-  // &.ss-brand-color{
-  //   .twitter-share-button{
-  //     background-color: $twitter_color;
-  //   }
-
-  //   .facebook-share-button{
-  //     background-color: $facebook_color;
-  //   }
-
-  //   .hatebu-share-button{
-  //     background-color: $hatebu_color;
-  //   }
-
-  //   .google-plus-share-button{
-  //     background-color: $google_plus_color;
-  //   }
-
-  //   .pocket-share-button{
-  //     background-color: $pocket_color;
-  //   }
-
-
-  //   .line-share-button{
-  //     background-color: $line_color;
-  //   }
-  // }
-
-  // &.ss-brand-color-white{
-  //   a{
-  //     background-color: $bg_white;
-  //     font-weight: 500;
-  //     &:hover{
-  //       @include bgc_hover;
-  //     }
-  //   }
-
-  //   .twitter-share-button{
-  //     color: $twitter_color;
-  //     border: 1px solid $twitter_color;
-  //   }
-
-  //   .facebook-share-button{
-  //     color: $facebook_color;
-  //     border: 1px solid $facebook_color;
-  //   }
-
-  //   .hatebu-share-button{
-  //     color: $hatebu_color;
-  //     border: 1px solid $hatebu_color;
-  //   }
-
-  //   .google-plus-share-button{
-  //     color: $google_plus_color;
-  //     border: 1px solid $google_plus_color;
-  //   }
-
-  //   .pocket-share-button{
-  //     color: $pocket_color;
-  //     border: 1px solid $pocket_color;
-  //   }
-
-
-  //   .line-share-button{
-  //     color: $line_color;
-  //     border: 1px solid $line_color;
-  //   }
-
-  // }
 }
 
 .sns-share-message{
   @extend %sns_message;
 }
 
-.sns-share-buttons{
-  @extend %sns_buttons;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
 
-  a{
-    width: 32%;
-    margin-bottom: 8px;
-    font-size: 18px;
-    display: inline-flex;
+.ss-top,
+.ss-bottom{
+  .sns-share-buttons{
+    @extend %sns_buttons;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-content: center;
-    align-items: center;
-    justify-content: center;
 
-    .button-caption{
-      font-size: 16px;
-      margin-left: 10px;
+    a{
+      width: 32%;
+      margin-bottom: 8px;
+      font-size: 18px;
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+
+      .button-caption{
+        font-size: 16px;
+        margin-left: 10px;
+      }
     }
   }
 }
-
 /************************************
 ** SNSフォローボタン
 ************************************/

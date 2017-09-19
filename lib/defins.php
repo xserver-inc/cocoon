@@ -37,6 +37,10 @@ define('DEFAULT_INPUT_COLS', 60);
 //入力ボックスの縦幅
 define('DEFAULT_INPUT_ROWS', 10);
 
+//SNSシェアオプション
+define('SS_TOP', 'ss-top');
+define('SS_BOTTOM', 'ss-bottom');
+
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
 

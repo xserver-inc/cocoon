@@ -21,7 +21,7 @@
 
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
-          get_template_part_with_option('tmp/sns-share-buttons', 'ss-top'); ?>
+          get_template_part_with_option('tmp/sns-share-buttons', SS_TOP); ?>
 
 
          <?php //本文上の広告表示
@@ -60,7 +60,7 @@
 
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
-          get_template_part_with_option('tmp/sns-share-buttons', 'ss-bottom'); ?>
+          get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM); ?>
 
         <?php //SNSフォローボタン
         if (is_sns_follow_buttons_visible())

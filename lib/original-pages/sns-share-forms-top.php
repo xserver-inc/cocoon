@@ -15,7 +15,7 @@
             <div class="demo">
             <?php //テンプレートの読み込み
               if (is_sns_follow_buttons_visible())
-                get_template_part_with_option('tmp/sns-share-buttons', 'ss-top'); ?>
+                get_template_part_with_option('tmp/sns-share-buttons', SS_TOP); ?>
             </div>
           </td>
         </tr>
@@ -42,7 +42,7 @@
               <li><input type="checkbox" name="<?php echo OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_twitter_share_button_visible()); ?>><?php _e( 'Twitter', THEME_NAME ) ?></li>
               <li><input type="checkbox" name="<?php echo OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_facebook_share_button_visible()); ?>><?php _e( 'Facebook', THEME_NAME ) ?></li>
               <li><input type="checkbox" name="<?php echo OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_hatebu_share_button_visible()); ?>><?php _e( 'Google+', THEME_NAME ) ?></li>
-              <li><input type="checkbox" name="<?php echo OP_TOP_GOOOGLE_PLUS_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_gooogle_plus_share_button_visible()); ?>><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
+              <li><input type="checkbox" name="<?php echo OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_google_plus_share_button_visible()); ?>><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
               <li><input type="checkbox" name="<?php echo OP_TOP_POCKET_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_pocket_share_button_visible()); ?>><?php _e( 'Pocket', THEME_NAME ) ?></li>
               <li><input type="checkbox" name="<?php echo OP_TOP_LINE_AT_SHARE_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_top_line_at_share_button_visible()); ?>><?php _e( 'LINE@', THEME_NAME ) ?></li>
             </ul>
