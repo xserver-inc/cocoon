@@ -68,7 +68,7 @@ endif;
 define('OP_AD_POS_INDEX_BOTTOM_VISIBLE', 'ad_pos_index_bottom_visible');
 if ( !function_exists( 'is_ad_pos_index_bottom_visible' ) ):
 function is_ad_pos_index_bottom_visible(){
-  return get_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE);
+  return get_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE, 1);
 }
 endif;
 

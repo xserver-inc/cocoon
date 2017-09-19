@@ -59,6 +59,7 @@ require_once 'original-pages/ads-funcs.php'; //広告設定関係の関数
 require_once 'original-pages/analytics-funcs.php'; //アクセス解析設定関係の関数
 require_once 'original-pages/sns-share-funcs.php'; //SNSシェア関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー関数
+require_once 'original-pages/code-funcs.php'; //コード関数
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
 require_once 'widget.php'; //ウィジェット操作関数

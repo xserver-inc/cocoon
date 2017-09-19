@@ -41,11 +41,11 @@ endif;
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
+    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
     <li class="blog-card-out"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
-    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
@@ -80,6 +80,11 @@ endif;
   <!-- SNSフォロータブ -->
   <div class="sns-follow metabox-holder">
     <?php require_once 'original-pages/sns-follow-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- コードタブ -->
+  <div class="code metabox-holder">
+    <?php require_once 'original-pages/code-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->

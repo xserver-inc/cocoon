@@ -1,6 +1,6 @@
 <?php if (is_ads_visible()):
 //レスポンシブAdSenseコードを取得
-var_dump(to_adsense_format($format));
+//var_dump(to_adsense_format($format));
 $ad_code = generate_adsense_responsive_code(to_adsense_format($format));
 //AdSenseコード時なかった場合は設定コードをそのまま取得
 //var_dump(htmlspecialchars($ad_code));

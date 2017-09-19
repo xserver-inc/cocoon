@@ -193,3 +193,16 @@ function the_option_selected($val1, $val2){
 }
 endif;
 
+//セレクトボックスの生成
+if ( !function_exists( 'genelate_selectbox_tag' ) ):
+function genelate_selectbox_tag($name, $options, $now_value){?>
+<select name="<?php echo $name; ?>">
+  <?php foreach ($options as $value => $label) { ?>
+  <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?>><?php echo $label; ?></option>
+  <?php } ?>
+</select>
+<?php
+}
+endif;
+
+
