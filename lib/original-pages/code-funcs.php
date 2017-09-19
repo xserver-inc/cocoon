@@ -1,26 +1,26 @@
 <?php //コード設定に必要な定数や関数
 
 //ソースコードをハイライト表示するか
-define('OP_SOURCE_CODE_HIGHLIGHT_ENABLE', 'source_code_highlight_enable');
-if ( !function_exists( 'is_source_code_highlight_enable' ) ):
-function is_source_code_highlight_enable(){
-  return get_option(OP_SOURCE_CODE_HIGHLIGHT_ENABLE);
+define('OP_CODE_HIGHLIGHT_ENABLE', 'code_highlight_enable');
+if ( !function_exists( 'is_code_highlight_enable' ) ):
+function is_code_highlight_enable(){
+  return get_option(OP_CODE_HIGHLIGHT_ENABLE);
 }
 endif;
 
 //ソースコードのハイライトタイプ
-define('OP_SOURCE_CODE_HIGHLIGHT_STYLE', 'source_code_highlight_style');
-if ( !function_exists( 'get_source_code_highlight_style' ) ):
-function get_source_code_highlight_style(){
-  return get_option(OP_SOURCE_CODE_HIGHLIGHT_STYLE, 'monokai');
+define('OP_CODE_HIGHLIGHT_STYLE', 'code_highlight_style');
+if ( !function_exists( 'get_code_highlight_style' ) ):
+function get_code_highlight_style(){
+  return get_option(OP_CODE_HIGHLIGHT_STYLE, 'monokai');
 }
 endif;
 
 //ソースコードをハイライト表示するCSSセレクタ
-define('OP_SOURCE_CODE_HIGHLIGHT_CSS_SELECTOR', 'source_code_highlight_css_selector');
-if ( !function_exists( 'get_source_code_highlight_css_selector' ) ):
-function get_source_code_highlight_css_selector(){
-  return get_option(OP_SOURCE_CODE_HIGHLIGHT_CSS_SELECTOR, '.entry-content pre');
+define('OP_CODE_HIGHLIGHT_CSS_SELECTOR', 'code_highlight_css_selector');
+if ( !function_exists( 'get_code_highlight_css_selector' ) ):
+function get_code_highlight_css_selector(){
+  return get_option(OP_CODE_HIGHLIGHT_CSS_SELECTOR, '.entry-content pre');
 }
 endif;
 

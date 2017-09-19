@@ -13,6 +13,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/sns-share-posts.php';
   //SNSフォロー設定の保存
   require_once 'original-pages/sns-follow-posts.php';
+  //ソースコード設定の保存
+  require_once 'original-pages/code-posts.php';
 
 
 //画面に「設定は保存されました」メッセージを表示
