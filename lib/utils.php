@@ -177,8 +177,8 @@ endif;
 
 //チェックボックスのチェックを付けるか
 if ( !function_exists( 'the_checkbox_checked' ) ):
-function the_checkbox_checked($value){
-  if ( intval($value) == 1 ) {
+function the_checkbox_checked($val1, $val2 = 1){
+  if ( $val1 == $val2 ) {
     echo ' checked="checked"';
   }
 }
@@ -216,14 +216,16 @@ endif;
 //ラジオボックスの生成
 if ( !function_exists( 'genelate_radiobox_tag' ) ):
 function genelate_radiobox_tag($name, $options, $now_value){?>
+<ul>
   <?php foreach ($options as $value => $caption) { ?>
-  <input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?>><?php echo $caption; ?>
+  <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
   <?php } ?>
+</ul>
   <?php
 }
 endif;
 
-//チェックボックスの生成
+//ラベルの生成
 if ( !function_exists( 'genelate_label_tag' ) ):
 function genelate_label_tag($name, $caption){?>
   <label for="<?php echo $name; ?>"><?php echo $caption; ?></label>
@@ -231,7 +233,15 @@ function genelate_label_tag($name, $caption){?>
 }
 endif;
 
-//チェックボックスの生成
+//説明文の生成
+if ( !function_exists( 'genelate_tips_tag' ) ):
+function genelate_tips_tag($caption){?>
+  <p class="tips"><?php echo $caption; ?></p>
+  <?php
+}
+endif;
+  
+//テキストボックスの生成
 if ( !function_exists( 'genelate_textbox_tag' ) ):
 function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
   <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>">

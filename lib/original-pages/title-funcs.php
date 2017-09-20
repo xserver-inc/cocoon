@@ -4,7 +4,7 @@
 define('OP_TITLE_SEPARATOR', 'title_separator');
 if ( !function_exists( 'get_title_separator' ) ):
 function get_title_separator(){
-  return get_option(OP_TITLE_SEPARATOR);
+  return get_option(OP_TITLE_SEPARATOR, '｜');
 }
 endif;
 
@@ -12,7 +12,21 @@ endif;
 define('OP_FRONT_PAGE_TITLE_FORMAT', 'front_page_title_format');
 if ( !function_exists( 'get_front_page_title_format' ) ):
 function get_front_page_title_format(){
-  return get_option(OP_FRONT_PAGE_TITLE_FORMAT);
+  return get_option(OP_FRONT_PAGE_TITLE_FORMAT, 'sitename_tagline');
+}
+endif;
+//フロントページタイトルのキャプションを取得する
+if ( !function_exists( 'get_front_page_title_caption' ) ):
+function get_front_page_title_caption(){
+  switch (get_front_page_title_format()) {
+    case 'sitename_tagline':
+      $title = get_bloginfo('name').get_title_separator().get_bloginfo('description');
+      break;
+    default:
+      $title = get_bloginfo('name');
+      break;
+  }
+  return $title;
 }
 endif;
 

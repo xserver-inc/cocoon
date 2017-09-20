@@ -7,6 +7,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
   //広告設定の保存
   require_once 'original-pages/ads-posts.php';
+  //タイトル設定の保存
+  require_once 'original-pages/title-posts.php';
   //アクセス解析設定の保存
   require_once 'original-pages/analytics-posts.php';
   //SNSシェア設定の保存
@@ -61,7 +63,7 @@ endif;
 
   <!-- タイトルタブ -->
   <div class="title metabox-holder">
-
+    <?php require_once 'original-pages/title-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SEOタブ -->
