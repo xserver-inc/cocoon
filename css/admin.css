@@ -1404,7 +1404,7 @@
 .demo input[type='number'],
 .demo textarea,
 .demo select {
-  padding: 12px;
+  padding: 14px;
   border: 2px solid #cccfd2;
   font-size: 18px;
 }
@@ -1429,7 +1429,7 @@
   }
 }
 .demo input[type='submit'] {
-  padding: 12px;
+  padding: 14px;
 }
 .demo .widget input[type='text'],
 .demo .widget input[type='password'],

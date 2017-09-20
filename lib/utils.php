@@ -197,13 +197,48 @@ endif;
 if ( !function_exists( 'genelate_selectbox_tag' ) ):
 function genelate_selectbox_tag($name, $options, $now_value){?>
 <select name="<?php echo $name; ?>">
-  <?php foreach ($options as $value => $label) { ?>
-  <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?>><?php echo $label; ?></option>
+  <?php foreach ($options as $value => $caption) { ?>
+  <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?>><?php echo $caption; ?></option>
   <?php } ?>
 </select>
 <?php
 }
 endif;
+
+//チェックボックスの生成
+if ( !function_exists( 'genelate_checkbox_tag' ) ):
+function genelate_checkbox_tag($name, $now_value, $label){?>
+  <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
+  <?php
+}
+endif;
+
+//ラジオボックスの生成
+if ( !function_exists( 'genelate_radiobox_tag' ) ):
+function genelate_radiobox_tag($name, $options, $now_value){?>
+  <?php foreach ($options as $value => $caption) { ?>
+  <input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?>><?php echo $caption; ?>
+  <?php } ?>
+  <?php
+}
+endif;
+
+//チェックボックスの生成
+if ( !function_exists( 'genelate_label_tag' ) ):
+function genelate_label_tag($name, $caption){?>
+  <label for="<?php echo $name; ?>"><?php echo $caption; ?></label>
+  <?php
+}
+endif;
+
+//チェックボックスの生成
+if ( !function_exists( 'genelate_textbox_tag' ) ):
+function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
+  <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>">
+  <?php
+}
+endif;
+  
 
 //highlight-jsのCSS URLを取得
 if ( !function_exists( 'get_highlight_js_css_url' ) ):

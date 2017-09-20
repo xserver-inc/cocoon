@@ -1450,7 +1450,7 @@ input[type='search'],
 input[type='number'],
 textarea,
 select {
-  padding: 12px;
+  padding: 14px;
   border: 2px solid #cccfd2;
   font-size: 18px;
 }
@@ -1479,7 +1479,7 @@ option {
   }
 }
 input[type='submit'] {
-  padding: 12px;
+  padding: 14px;
 }
 
 /*特定のエリアのフォーム*/
