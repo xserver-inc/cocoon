@@ -30,7 +30,7 @@
 
     <?php if ( (is_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_hatebu_share_button_visible() && $option == SS_TOP) )://はてなボタンを表示するか ?>
-      <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatebu-share-button" data-hatena-bookmark-layout="simple" title="<?php the_title(); ?>" target="blank" rel="nofollow"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"></span></a>
+      <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatebu-share-button hatena-bookmark-button" data-hatena-bookmark-layout="simple" title="<?php the_title(); ?>" target="blank" rel="nofollow"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"></span></a>
     <?php endif; ?>
 
     <?php if ( (is_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
