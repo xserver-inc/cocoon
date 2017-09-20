@@ -168,7 +168,7 @@
   @extend %margin_top_and_bottom_in_content;
   &.ss-top{
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1em;
 
     .sns-share-message{
       display: none;

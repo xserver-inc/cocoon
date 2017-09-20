@@ -1225,7 +1225,7 @@
 }
 .demo .sns-share.ss-top {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 .demo .sns-share.ss-top .sns-share-message {
   display: none;
@@ -1299,6 +1299,7 @@
 }
 .demo .ad-index-top .ad-label,
 .demo .ad-above-title .ad-label,
+.demo .ad-below-title .ad-label,
 .demo .ad-content-top .ad-label,
 .demo .ad-sidebar-top .ad-label,
 .demo .ad-sidebar-bottom .ad-label {
@@ -1445,8 +1446,8 @@
 .demo .comment-respond select {
   width: 100%;
 }
-.demo .search-form {
-  margin: 2em 0;
+.demo .search-box {
+  margin: 1em 0 2em;
   position: relative;
 }
 .demo .search-edit {
