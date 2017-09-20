@@ -18,27 +18,29 @@
     padding: 10px;
   }
 
-  // /* フォントの種類 */
-  // font-family: $default_font;
+  .search-result{
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: arial,sans-serif;
+    max-width: 600px;
 
-  // /* フォントのサイズ */
-  // font-size: $text_size_default;
 
-  // /* フォントの色 */
-  // color: $text_color;
+    .title{
+      color: #1a0dab;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-  // /* カーニングの設定 */
-  // //letter-spacing: 1.2px;
-  // //font-feature-settings: "palt" 1;
-  // //font-kerning: auto;
+    .url{
+      color: #006621;
+      font-size: 14px;
+    }
 
-  // /* 行間の設定 */
-  // line-height: 1.75;
-
-  // margin: 0;
-
-  // //word-wrap: break-word;
-  // overflow-wrap: break-word;
+    .description{
+      font-size: 14px;
+    }
+  }
 }
 
 //管理画面でプレビューできないので.demo内で読みみたくない

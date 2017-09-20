@@ -240,7 +240,7 @@ function genelate_tips_tag($caption){?>
   <?php
 }
 endif;
-  
+
 //テキストボックスの生成
 if ( !function_exists( 'genelate_textbox_tag' ) ):
 function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
@@ -248,7 +248,6 @@ function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
   <?php
 }
 endif;
-  
 
 //highlight-jsのCSS URLを取得
 if ( !function_exists( 'get_highlight_js_css_url' ) ):
