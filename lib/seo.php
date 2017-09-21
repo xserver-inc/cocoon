@@ -13,7 +13,7 @@ endif;
 //Wordpress4.4以上でのタイトルセパレーターの設定
 if ( !function_exists( 'title_separator_custom' ) ):
 function title_separator_custom( $sep ){
-    $sep = ' | ';
+    $sep = get_title_separator_caption();
     return $sep;
 }
 endif;
@@ -29,9 +29,10 @@ function title_parts_custom( $title ){
   if(is_front_page()): //フロントページ
     $title['title'] = $site_name;
     $title['site'] = '';
-    // if ( is_catch_phrase_to_frontpage_title() )://キャッチフレーズを追加する場合
-    //   $title['tagline'] = trim( get_bloginfo('description') );
-    // endif;
+
+    if ( is_tagline_to_front_page_title() )://キャッチフレーズを追加する場合
+      $title['tagline'] = trim( get_bloginfo('description') );
+    endif;
   elseif(is_singular()): //投稿・固定ページ
     $title['title'] = trim( get_the_title() );
     //SEO向けのタイトルが設定されているとき
@@ -39,9 +40,31 @@ function title_parts_custom( $title ){
     //   $title['title'] = get_seo_title_singular_page();
     // }
     $title['site'] = '';
+    switch (get_singular_page_title_format()) {
+      case 'pagetitle_sitename':
+        $title['site'] = $site_name;
+        break;
+      case 'sitename_pagetitle':
+        $title['title'] = $site_name;
+        $title['site'] = trim( get_the_title() );
+        break;
+    }
     // if ( is_site_name_to_singular_title() )://サイト名を追加する場合
     //   $title['site'] = $site_name;
     // endif;
+  elseif (is_category()):
+    $cat_name = $title['title'];
+    $title['site'] = '';
+    switch (get_category_page_title_format()) {
+      case 'category_sitename':
+        $title['site'] = $site_name;
+        break;
+      case 'sitename_category':
+        $title['title'] = $site_name;
+        $title['site'] = $cat_name;
+        break;
+    }
+
   endif;
 
   return $title;

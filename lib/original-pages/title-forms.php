@@ -287,8 +287,8 @@
           <td>
             <?php
             $options = array(
-              'pipe' => '｜（パイプ）',
-              'hyphen' => ' - （ハイフン）',
+              'pipe'   => __( ' | （パイプ）', THEME_NAME ),
+              'hyphen' => __( ' - （ハイフン）', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_TITLE_SEPARATOR, $options, get_title_separator());
             genelate_tips_tag(__( 'タイトルの区切りとなる文字を設定してください。', THEME_NAME ));

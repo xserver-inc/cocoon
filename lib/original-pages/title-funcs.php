@@ -15,7 +15,7 @@ function get_title_separator_caption(){
       $separator = __( ' - ', THEME_NAME );
       break;
     default:
-      $separator = __( '｜', THEME_NAME );
+      $separator = __( ' | ', THEME_NAME );
       break;
   }
   return $separator;
@@ -41,6 +41,12 @@ function get_front_page_title_caption(){
       break;
   }
   return $title;
+}
+endif;
+//キャッチフレーズをフロントページタイトルに含める場合
+if ( !function_exists( 'is_tagline_to_front_page_title' ) ):
+function is_tagline_to_front_page_title(){
+  return get_front_page_title_format() == 'sitename_tagline';
 }
 endif;
 
