@@ -35,7 +35,7 @@
             <?php
             $options = array(
               'sitename' => 'サイト名',
-              'sitename_tagline' => 'サイト名'.get_title_separator().'キャッチフレーズ',
+              'sitename_tagline' => 'サイト名'.get_title_separator_caption().'キャッチフレーズ',
             );
             genelate_radiobox_tag(OP_FRONT_PAGE_TITLE_FORMAT, $options, get_front_page_title_format());
             genelate_tips_tag(__( 'フロントページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
@@ -128,8 +128,8 @@
             <?php
             $options = array(
               'pagetitle_only' => 'ページタイトル',
-              'pagetitle_sitename' => 'ページタイトル'.get_title_separator().'サイト名',
-              'sitename_pagetitle' => 'サイト名'.get_title_separator().'ページタイトル',
+              'pagetitle_sitename' => 'ページタイトル'.get_title_separator_caption().'サイト名',
+              'sitename_pagetitle' => 'サイト名'.get_title_separator_caption().'ページタイトル',
             );
             genelate_radiobox_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, $options, get_singular_page_title_format());
             genelate_tips_tag(__( '投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
@@ -171,7 +171,7 @@
 
 
 <!-- カテゴリーページタイトル設定 -->
-<div id="title-singular" class="postbox">
+<div id="title-category" class="postbox">
   <h2 class="hndle"><?php _e( 'カテゴリーページ設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -228,8 +228,8 @@
             <?php
             $options = array(
               'category_only' => 'ページタイトル',
-              'category_sitename' => 'ページタイトル'.get_title_separator().'サイト名',
-              'sitename_category' => 'サイト名'.get_title_separator().'ページタイトル',
+              'category_sitename' => 'ページタイトル'.get_title_separator_caption().'サイト名',
+              'sitename_category' => 'サイト名'.get_title_separator_caption().'ページタイトル',
             );
             genelate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
             genelate_tips_tag(__( 'カテゴリーページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
@@ -269,4 +269,36 @@
   </div>
 </div>
 
+<!-- タイトル共通設定 -->
+<div id="title-common" class="postbox">
+  <h2 class="hndle"><?php _e( 'タイトル共通設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'タイトルで使用される区切り文字の設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- セパレーター  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_TITLE_SEPARATOR, __( 'セパレーター', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'pipe' => '｜（パイプ）',
+              'hyphen' => ' - （ハイフン）',
+            );
+            genelate_radiobox_tag(OP_TITLE_SEPARATOR, $options, get_title_separator());
+            genelate_tips_tag(__( 'タイトルの区切りとなる文字を設定してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
 </div><!-- /.metabox-holder -->

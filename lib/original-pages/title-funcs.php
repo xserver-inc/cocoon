@@ -4,7 +4,21 @@
 define('OP_TITLE_SEPARATOR', 'title_separator');
 if ( !function_exists( 'get_title_separator' ) ):
 function get_title_separator(){
-  return get_option(OP_TITLE_SEPARATOR, '｜');
+  return get_option(OP_TITLE_SEPARATOR, 'pipe');
+}
+endif;
+//タイトルセパレーターのキャプションを取得する
+if ( !function_exists( 'get_title_separator_caption' ) ):
+function get_title_separator_caption(){
+  switch (get_title_separator()) {
+    case 'hyphen':
+      $separator = __( ' - ', THEME_NAME );
+      break;
+    default:
+      $separator = __( '｜', THEME_NAME );
+      break;
+  }
+  return $separator;
 }
 endif;
 
@@ -20,7 +34,7 @@ if ( !function_exists( 'get_front_page_title_caption' ) ):
 function get_front_page_title_caption(){
   switch (get_front_page_title_format()) {
     case 'sitename_tagline':
-      $title = get_bloginfo('name').get_title_separator().get_bloginfo('description');
+      $title = get_bloginfo('name').get_title_separator_caption().get_bloginfo('description');
       break;
     default:
       $title = get_bloginfo('name');
@@ -58,10 +72,10 @@ if ( !function_exists( 'get_singular_title_caption' ) ):
 function get_singular_title_caption($post){
   switch (get_singular_page_title_format()) {
     case 'pagetitle_sitename':
-      $title = $post->post_title.get_title_separator().get_bloginfo('name');
+      $title = $post->post_title.get_title_separator_caption().get_bloginfo('name');
       break;
     case 'sitename_pagetitle':
-      $title = get_bloginfo('name').get_title_separator().$post->post_title;
+      $title = get_bloginfo('name').get_title_separator_caption().$post->post_title;
       break;
     default:
       $title = $post->post_title;
@@ -99,10 +113,10 @@ if ( !function_exists( 'get_category_title_caption' ) ):
 function get_category_title_caption($category){
   switch (get_category_page_title_format()) {
     case 'category_sitename':
-      $title = $category->name.get_title_separator().get_bloginfo('name');
+      $title = $category->name.get_title_separator_caption().get_bloginfo('name');
       break;
     case 'sitename_category':
-      $title = get_bloginfo('name').get_title_separator().$category->name;
+      $title = get_bloginfo('name').get_title_separator_caption().$category->name;
       break;
     default:
       $title = $category->name;

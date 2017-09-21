@@ -1,7 +1,7 @@
 <?php //タイトル設定をデータベースに保存
 
 //タイトルセパレーター
-update_theme_option(OP_TITLE_SINGULAR);
+update_theme_option(OP_TITLE_SEPARATOR);
 //フロントページのタイトル
 update_theme_option(OP_FRONT_PAGE_TITLE_FORMAT);
 //フロントページのメタディスクリプション
