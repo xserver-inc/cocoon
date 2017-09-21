@@ -92,18 +92,18 @@ function get_singular_title_caption($post){
 endif;
 
 //投稿・固定ページにメタディスクリプションを含める
-define('OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR', 'include_meta_description_to_singular');
-if ( !function_exists( 'is_include_meta_description_to_singular' ) ):
-function is_include_meta_description_to_singular(){
-  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR, 1);
+define('OP_META_DESCRIPTION_TO_SINGULAR', 'meta_description_to_singular');
+if ( !function_exists( 'is_meta_description_to_singular' ) ):
+function is_meta_description_to_singular(){
+  return get_option(OP_META_DESCRIPTION_TO_SINGULAR, 1);
 }
 endif;
 
 //投稿・固定ページにメタキーワードを含める
-define('OP_INCLUDE_KEYWORDS_TO_SINGULAR', 'include_keywords_to_singular');
-if ( !function_exists( 'is_include_keywords_to_singular' ) ):
-function is_include_keywords_to_singular(){
-  return get_option(OP_INCLUDE_KEYWORDS_TO_SINGULAR);
+define('OP_META_KEYWORDS_TO_SINGULAR', 'meta_keywords_to_singular');
+if ( !function_exists( 'is_meta_keywords_to_singular' ) ):
+function is_meta_keywords_to_singular(){
+  return get_option(OP_META_KEYWORDS_TO_SINGULAR);
 }
 endif;
 
@@ -134,17 +134,17 @@ endif;
 
 
 //カテゴリページにメタディスクリプションを含める
-define('OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY', 'include_meta_description_to_category');
-if ( !function_exists( 'is_include_meta_description_to_category' ) ):
-function is_include_meta_description_to_category(){
-  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY, 1);
+define('OP_META_DESCRIPTION_TO_CATEGORY', 'meta_description_to_category');
+if ( !function_exists( 'is_meta_description_to_category' ) ):
+function is_meta_description_to_category(){
+  return get_option(OP_META_DESCRIPTION_TO_CATEGORY, 1);
 }
 endif;
 
 //カテゴリページにメタキーワードを含める
-define('OP_INCLUDE_KEYWORDS_TO_CATEGORY', 'include_keywords_to_category');
-if ( !function_exists( 'is_include_keywords_to_category' ) ):
-function is_include_keywords_to_category(){
-  return get_option(OP_INCLUDE_KEYWORDS_TO_CATEGORY);
+define('OP_META_KEYWORDS_TO_CATEGORY', 'meta_keywords_to_category');
+if ( !function_exists( 'is_meta_keywords_to_category' ) ):
+function is_meta_keywords_to_category(){
+  return get_option(OP_META_KEYWORDS_TO_CATEGORY);
 }
 endif;

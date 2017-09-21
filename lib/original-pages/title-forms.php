@@ -102,7 +102,7 @@
                   <div class="url"><?php the_permalink($rand_post->ID); ?></div>
                   <div class="description">
                     <?php
-                    if (is_include_meta_description_to_singular()) {
+                    if (is_meta_description_to_singular()) {
                       echo 'SEO設定のメタディスクリプション';
                     } else {
                       echo  get_content_excerpt( $rand_post->post_content, 100 );
@@ -140,11 +140,11 @@
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR, is_include_meta_description_to_singular(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            genelate_checkbox_tag(OP_META_DESCRIPTION_TO_SINGULAR, is_meta_description_to_singular(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
             genelate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
             ?>
           </td>
@@ -153,11 +153,11 @@
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_INCLUDE_KEYWORDS_TO_SINGULAR, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_META_KEYWORDS_TO_SINGULAR, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_INCLUDE_KEYWORDS_TO_SINGULAR, is_include_keywords_to_singular(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            genelate_checkbox_tag(OP_META_KEYWORDS_TO_SINGULAR, is_meta_keywords_to_singular(), __( 'メタキーワードタグを出力する', THEME_NAME ));
             genelate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
             ?>
           </td>
@@ -203,7 +203,7 @@
                   <div class="url"><?php echo get_category_link($rand_category->term_id); ?></div>
                   <div class="description">
                     <?php
-                    if (is_include_meta_description_to_category()) {
+                    if (is_meta_description_to_category()) {
                       echo $rand_category->description;
                     } else {
                       echo $rand_category->name.__( 'の一覧', THEME_NAME );
@@ -240,11 +240,11 @@
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY, is_include_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            genelate_checkbox_tag(OP_META_DESCRIPTION_TO_CATEGORY, is_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
             genelate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
             ?>
           </td>
@@ -253,11 +253,11 @@
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_INCLUDE_KEYWORDS_TO_CATEGORY, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_META_KEYWORDS_TO_CATEGORY, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_INCLUDE_KEYWORDS_TO_CATEGORY, is_include_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            genelate_checkbox_tag(OP_META_KEYWORDS_TO_CATEGORY, is_meta_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
             genelate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
             ?>
           </td>
