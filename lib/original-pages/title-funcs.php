@@ -50,7 +50,24 @@ endif;
 define('OP_SINGULAR_PAGE_TITLE_FORMAT', 'singular_page_title_format');
 if ( !function_exists( 'get_singular_page_title_format' ) ):
 function get_singular_page_title_format(){
-  return get_option(OP_SINGULAR_PAGE_TITLE_FORMAT);
+  return get_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
+}
+endif;
+//フロントページタイトルのキャプションを取得する
+if ( !function_exists( 'get_singular_title_caption' ) ):
+function get_singular_title_caption($post){
+  switch (get_singular_page_title_format()) {
+    case 'pagetitle_sitename':
+      $title = $post->post_title.get_title_separator().get_bloginfo('name');
+      break;
+    case 'sitename_pagetitle':
+      $title = get_bloginfo('name').get_title_separator().$post->post_title;
+      break;
+    default:
+      $title = $post->post_title;
+      break;
+  }
+  return $title;
 }
 endif;
 
@@ -58,7 +75,7 @@ endif;
 define('OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR', 'include_meta_description_to_singular');
 if ( !function_exists( 'is_include_meta_description_to_singular' ) ):
 function is_include_meta_description_to_singular(){
-  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR);
+  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_SINGULAR, 1);
 }
 endif;
 
@@ -74,7 +91,7 @@ endif;
 define('OP_CATEGORY_PAGE_TITLE_FORMAT', 'category_page_title_format');
 if ( !function_exists( 'get_category_page_title_format' ) ):
 function get_category_page_title_format(){
-  return get_option(OP_CATEGORY_PAGE_TITLE_FORMAT);
+  return get_option(OP_CATEGORY_PAGE_TITLE_FORMAT, 'category_sitename');
 }
 endif;
 
@@ -82,7 +99,7 @@ endif;
 define('OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY', 'include_meta_description_to_category');
 if ( !function_exists( 'is_include_meta_description_to_category' ) ):
 function is_include_meta_description_to_category(){
-  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY);
+  return get_option(OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY, 1);
 }
 endif;
 
