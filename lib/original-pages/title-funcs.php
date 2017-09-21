@@ -53,7 +53,7 @@ function get_singular_page_title_format(){
   return get_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
 }
 endif;
-//フロントページタイトルのキャプションを取得する
+//投稿・固定ページタイトルのキャプションを取得する
 if ( !function_exists( 'get_singular_title_caption' ) ):
 function get_singular_title_caption($post){
   switch (get_singular_page_title_format()) {
@@ -94,6 +94,24 @@ function get_category_page_title_format(){
   return get_option(OP_CATEGORY_PAGE_TITLE_FORMAT, 'category_sitename');
 }
 endif;
+//カテゴリーページタイトルのキャプションを取得する
+if ( !function_exists( 'get_category_title_caption' ) ):
+function get_category_title_caption($category){
+  switch (get_category_page_title_format()) {
+    case 'category_sitename':
+      $title = $category->name.get_title_separator().get_bloginfo('name');
+      break;
+    case 'sitename_category':
+      $title = get_bloginfo('name').get_title_separator().$category->name;
+      break;
+    default:
+      $title = $category->name;
+      break;
+  }
+  return $title;
+}
+endif;
+
 
 //カテゴリページにメタディスクリプションを含める
 define('OP_INCLUDE_META_DESCRIPTION_TO_CATEGORY', 'include_meta_description_to_category');

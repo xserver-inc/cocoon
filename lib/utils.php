@@ -282,6 +282,7 @@ function wp_enqueue_highlight_js(){
 }
 endif;
 
+//投稿を1つランダム取得
 if ( !function_exists( 'get_random_1_post' ) ):
 function get_random_1_post(){
   $posts = get_posts('numberposts=1&orderby=rand');
