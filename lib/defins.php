@@ -5,7 +5,7 @@ define('THEME_NAME', 'cocoon');
 //テーマ名（最初の一文字だけ大文字）
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //ウィジェット名プレフィックス
-define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C] 
+define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
 //トップレベルオリジナル設定名
 define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
 
@@ -51,16 +51,17 @@ define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-aweso
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 require_once 'settings.php'; //Wordpressの設定
 require_once 'utils.php'; //ユーティリティー関数
-require_once 'seo.php';      //SEO関係の設定
 require_once 'ad.php';      //広告関係の設定
 require_once 'sns-share.php';  //SNSシェア関数
 require_once 'sns-follow.php'; //SNSフォロー関数
 require_once 'original-pages/ads-funcs.php'; //広告設定関係の関数
 require_once 'original-pages/title-funcs.php'; //タイトル設定関係の関数
+require_once 'original-pages/seo-funcs.php'; //SEO設定関係の関数
 require_once 'original-pages/analytics-funcs.php'; //アクセス解析設定関係の関数
 require_once 'original-pages/sns-share-funcs.php'; //SNSシェア関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー関数
 require_once 'original-pages/code-funcs.php'; //コード関数
+require_once 'seo.php';      //SEO関係の設定
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
 require_once 'widget.php'; //ウィジェット操作関数

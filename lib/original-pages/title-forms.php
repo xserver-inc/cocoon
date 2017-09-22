@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- フロントページタイトル設定 -->
-<div id="titlefront" class="postbox">
+<div id="title-front" class="postbox">
   <h2 class="hndle"><?php _e( 'フロントページ設定', THEME_NAME ) ?></h2>
   <div class="inside">
 

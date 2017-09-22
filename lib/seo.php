@@ -85,20 +85,33 @@ function is_noindex_page(){
 endif;
 
 
+//noindexページを出力する
+if ( !function_exists( 'the_noindex_follow_tag' ) ):
+function the_noindex_follow_tag(){
+  if (is_noindex_page()) {
+    echo '<!-- '.THEME_NAME_CAMEL.' noindex -->'.PHP_EOL;
+    echo '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+  }
+}
+endif;
+add_action( 'wp_head', 'the_noindex_follow_tag' );
+
 ////ページネーションと分割ページ（マルチページ）タグを出力
 if ( !function_exists( 'the_prev_next_link_tag' ) ):
 function the_prev_next_link_tag() {
   //1ページを複数に分けた分割ページ
   if(is_single() || is_page()) {
     global $wp_query;
-    $multipage = check_multi_page();
+    $multipage = get_the_post_has_multi_page();
     if($multipage[0] > 1) {
       $prev = generate_multipage_url('prev');
       $next = generate_multipage_url('next');
       if($prev) {
+      echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
         echo '<link rel="prev" href="'.$prev.'" />'.PHP_EOL;
       }
       if($next) {
+        echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
         echo '<link rel="next" href="'.$next.'" />'.PHP_EOL;
       }
     }
@@ -106,9 +119,11 @@ function the_prev_next_link_tag() {
     //トップページやカテゴリページなどの分割ページの設定
     global $paged;
     if ( get_previous_posts_link() ){
+      echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
       echo '<link rel="prev" href="'.get_pagenum_link( $paged - 1 ).'" />'.PHP_EOL;
     }
     if ( get_next_posts_link() ){
+      echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
       echo '<link rel="next" href="'.get_pagenum_link( $paged + 1 ).'" />'.PHP_EOL;
     }
   }
@@ -129,7 +144,7 @@ if ( !function_exists( 'generate_multipage_url' ) ):
 function generate_multipage_url($rel='prev') {
   global $post;
   $url = '';
-  $multipage = check_multi_page();
+  $multipage = get_the_post_has_multi_page();
   if($multipage[0] > 1) {
     $numpages = $multipage[0];
     $page = $multipage[1] == 0 ? 1 : $multipage[1];
@@ -152,8 +167,8 @@ endif;
 
 
 //分割ページ（マルチページ）かチェックする
-if ( !function_exists( 'check_multi_page' ) ):
-function check_multi_page() {
+if ( !function_exists( 'get_the_post_has_multi_page' ) ):
+function get_the_post_has_multi_page() {
   $num_pages    = substr_count(
       $GLOBALS['post']->post_content,
       '<!--nextpage-->'
@@ -163,9 +178,6 @@ function check_multi_page() {
 }
 endif;
 
-
-//デフォルトのcanonicalタグ削除
-//remove_action('wp_head', 'rel_canonical');
 
 //canonical URLの生成
 if ( !function_exists( 'generate_canonical_url' ) ):
@@ -177,7 +189,7 @@ function generate_canonical_url(){
   //アーカイブはnoindexにしているけどcanonicalタグは必要か？
   //タグページはnoindexにしているけどcanonicalタグは必要か？
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
-  $canonical_url = home_url();
+  $canonical_url = null;
   if (is_home()) {
     $canonical_url = home_url();
   } elseif (is_category()) {
@@ -192,23 +204,28 @@ function generate_canonical_url(){
   }
 
   if ($canonical_url && ( $paged >= 2 || $page >= 2)) {
-    $canonical_url = $canonical_url.'/page/'.max( $paged, $page ).'';
+    $canonical_url = home_url().'/page/'.max( $paged, $page ).'';
   }
 
   return $canonical_url;
-
 }
 endif;
-
 
 //canonicalタグの取得
 //取得条件；http://bazubu.com/seo101/how-to-use-canonical
 if ( !function_exists( 'the_canonical_tag' ) ):
 function the_canonical_tag(){
   $canonical_url = generate_canonical_url();
+  var_dump($canonical_url);
   if ( $canonical_url ) {
+    echo '<!-- '.THEME_NAME_CAMEL.' canonical -->'.PHP_EOL;
     echo '<link rel="canonical" href="'.$canonical_url.'">'.PHP_EOL;
   }
 }
 endif;
-
+if (is_canonical_tag_enable()) {
+  //デフォルトのcanonicalタグ削除
+  remove_action('wp_head', 'rel_canonical');
+  //分割ページのみnext/prevを表示
+  add_action( 'wp_head', 'the_canonical_tag' );
+}
