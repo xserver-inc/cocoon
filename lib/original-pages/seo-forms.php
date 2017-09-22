@@ -41,5 +41,39 @@
   </div>
 </div>
 
+<!-- 日付の設定 -->
+<div id="seo-head" class="postbox">
+  <h2 class="hndle"><?php _e( '日付の設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- headタグに挿入  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '検索エンジンに伝える日付', THEME_NAME ) ); ?>
+          </th>
+          <td>
+
+            <?php
+            $options = array(
+              'post_date' => '投稿日',
+              'update_date' => '更新日',
+              'update_date_only' => '更新日のみ表示',
+            );
+            genelate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
+            genelate_tips_tag(__( 'timeタグを付加する日付の設定です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 
 </div><!-- /.metabox-holder -->

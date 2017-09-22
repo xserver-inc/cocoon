@@ -16,10 +16,46 @@ function is_prev_next_enable(){
 }
 endif;
 
-//カテゴリページの2ページ目以降をnoindexとする 
+//カテゴリページの2ページ目以降をnoindexとする
 define('OP_PAGED_CATEGORY_PAGE_NOINDEX', 'paged_category_page_noindex');
 if ( !function_exists( 'is_paged_category_page_noindex' ) ):
 function is_paged_category_page_noindex(){
   return get_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
+}
+endif;
+
+//検索エンジンに知らせる日付
+define('OP_SEO_DATE_TYPE', 'seo_date_type');
+if ( !function_exists( 'get_seo_date_type' ) ):
+function get_seo_date_type(){
+  return get_option(OP_SEO_DATE_TYPE, 'post_date');
+}
+endif;
+//投稿日・更新日タグを取得する
+if ( !function_exists( 'get_the_date_tags' ) ):
+function get_the_date_tags(){
+  $time_post_date_tag = '<span class="post-date"><time class="entry-date date published updated" datetime="'.get_the_time('c').'">'.get_the_time('Y.m.d').'</time></span>';
+  $post_date_tag = '<span class="post-date"><span class="entry-date date published">'.get_the_time('Y.m.d').'</span></span>';
+  $time_update_date_tag = '<span class="post-update"><time class="entry-date date updated" datetime="'.get_update_time('c').'">'.get_update_time('Y.m.d').'</time></span>';
+  $update_date_tag = '<span class="post-update"><span class="entry-date date updated">'.get_update_time('Y.m.d').'</span></span>';
+  switch (get_seo_date_type()) {
+    //投稿日を伝える
+    case 'post_date':
+      $date_tags = $time_post_date_tag;
+      //更新日があるとき
+      if (get_update_time()) {
+        $date_tags .= $update_date_tag;
+      }
+      break;
+    //更新日を伝える
+    case 'update_date':
+      $date_tags = $post_date_tag.$time_update_date_tag;
+      break;
+    //更新日のみを伝える
+    default:
+      $date_tags = $time_update_date_tag;
+      break;
+  }
+  return $date_tags;
 }
 endif;

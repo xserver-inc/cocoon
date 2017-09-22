@@ -20,3 +20,5 @@ update_theme_option(OP_CATEGORY_PAGE_TITLE_FORMAT);
 update_theme_option(OP_META_DESCRIPTION_TO_CATEGORY);
 //カテゴリページにメタキーワードを含める
 update_theme_option(OP_META_KEYWORDS_TO_CATEGORY);
+//検索エンジンに知らせる日付
+update_theme_option(OP_SEO_DATE_TYPE);

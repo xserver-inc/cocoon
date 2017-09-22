@@ -291,3 +291,23 @@ function get_random_1_post(){
   }
 }
 endif;
+
+/*
+  get_the_modified_time()の結果がget_the_time()より古い場合はget_the_time()を返す。
+  同じ場合はnullをかえす。
+  それ以外はget_the_modified_time()をかえす。
+*/
+if ( !function_exists( 'get_update_time' ) ):
+function get_update_time($format = 'Y.m.d') {
+  $mtime = get_the_modified_time('Ymd');
+  $ptime = get_the_time('Ymd');
+  if ($ptime > $mtime) {
+    return get_the_time($format);
+  } elseif ($ptime === $mtime) {
+    return null;
+  } else {
+    return get_the_modified_time($format);
+  }
+}
+endif;
+
