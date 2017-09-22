@@ -88,9 +88,21 @@ endif;
 //noindexページを出力する
 if ( !function_exists( 'the_noindex_follow_tag' ) ):
 function the_noindex_follow_tag(){
+  $tag = null;
   if (is_noindex_page()) {
-    echo '<!-- '.THEME_NAME_CAMEL.' noindex -->'.PHP_EOL;
-    echo '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+    $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
+  } else {
+    // if ( is_noindex_singular_page() && is_nofollow_singular_page()) {
+    //   return '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
+    // } elseif ( is_noindex_singular_page() ) {
+    //   return '<meta name="robots" content="noindex">'.PHP_EOL;
+    // } elseif ( is_nofollow_singular_page() ) {
+    //   return '<meta name="robots" content="nofollow">'.PHP_EOL;
+    // }
+  }
+  if ($tag) {
+    $tag .= '<!-- '.THEME_NAME_CAMEL.' noindex -->'.PHP_EOL;
+    echo $tag;
   }
 }
 endif;
@@ -107,7 +119,7 @@ function the_prev_next_link_tag() {
       $prev = generate_multipage_url('prev');
       $next = generate_multipage_url('next');
       if($prev) {
-      echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
+        echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
         echo '<link rel="prev" href="'.$prev.'" />'.PHP_EOL;
       }
       if($next) {
@@ -229,3 +241,93 @@ if (is_canonical_tag_enable()) {
   //分割ページのみnext/prevを表示
   add_action( 'wp_head', 'the_canonical_tag' );
 }
+
+
+//カテゴリーメタディスクリプション用の説明文を取得
+if ( !function_exists( 'get_category_meta_description' ) ):
+function get_category_meta_description($category = null){
+  $cat_desc = trim( strip_tags( category_description() ) );
+  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+    return htmlspecialchars($cat_desc);
+  }
+  if ($category) {
+    $cat_name = $category->name;
+  } else {
+    $cat_name = single_cat_title('', false);
+  }
+
+  $cat_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
+  return htmlspecialchars($cat_desc);
+}
+endif;
+
+
+//カテゴリーメタディスクリプション用の説明文を取得
+if ( !function_exists( 'get_category_meta_keywords' ) ):
+function get_category_meta_keywords(){
+  return single_cat_title('', false);
+}
+endif;
+
+
+//投稿・固定ページのメタキーワードの取得
+if ( !function_exists( 'get_singular_meta_keywores' ) ):
+function get_singular_meta_keywores(){
+  global $post;
+  $keywords = '';//get_meta_keywords_singular_page();
+  if (!$keywords) {
+    $categories = get_the_category($post->ID);
+    $category_names = array();
+    foreach($categories as $category):
+      array_push( $category_names, $category -> cat_name);
+    endforeach ;
+    $keywords = implode($category_names, ',');
+  }
+  return $keywords;
+}
+endif;
+
+//メタディスクリプションタグを出力する
+if ( !function_exists( 'the_meta_description_tag' ) ):
+function the_meta_description_tag() {
+  $description = null;
+  if (is_front_page() && get_front_page_meta_description()) {
+    $description = get_front_page_meta_description();
+  } elseif (is_singular() && is_meta_description_to_singular()) {
+    $description = null;
+  } elseif (is_category() && is_meta_description_to_category()) {
+    $description = get_category_meta_description();
+  } else {
+
+  }
+  if ($description) {
+    echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
+    var_dump('<meta name="description" content="'.$description.'">');
+    echo '<meta name="description" content="'.$description.'">'.PHP_EOL;
+  }
+}
+endif;
+add_action( 'wp_head', 'the_meta_description_tag' );
+
+
+//メタキーワードタグを出力する
+if ( !function_exists( 'the_meta_keywords_tag' ) ):
+function the_meta_keywords_tag() {
+  $keywords = null;
+  if (is_front_page() && get_front_page_meta_keywords()) {
+    $keywords = get_front_page_meta_keywords();
+  } elseif (is_singular() && is_meta_keywords_to_singular()) {
+    $keywords = get_singular_meta_keywores();
+  } elseif (is_category() && is_meta_keywords_to_category()) {
+    $keywords = get_category_meta_keywords();
+  } else {
+
+  }
+  if ($keywords) {
+    echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
+    var_dump('<meta name="keywords" content="'.$keywords.'">');
+    echo '<meta name="keywords" content="'.$keywords.'">'.PHP_EOL;
+  }
+}
+endif;
+add_action( 'wp_head', 'the_meta_keywords_tag' );

@@ -204,9 +204,7 @@
                   <div class="description">
                     <?php
                     if (is_meta_description_to_category()) {
-                      echo $rand_category->description;
-                    } else {
-                      echo $rand_category->name.__( 'の一覧', THEME_NAME );
+                      echo get_category_meta_description($rand_category);
                     } ?>
                   </div>
                 </div>
