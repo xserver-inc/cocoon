@@ -3,48 +3,48 @@
 //管理画面に読み込むリソースの設定
 if ( !function_exists( 'admin_print_styles_custom' ) ):
 function admin_print_styles_custom() {
-    wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
-    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+  wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
 
-    global $pagenow;
-    //var_dump($pagenow);
-    if ($pagenow == 'admin.php') {
-      //IcoMoonの呼び出し
-      wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
-      //タブの読み込み
-      wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-      wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-      $select_index = 0;
-      if (isset($_POST['select_index'])) {
-        $select_index = intval($_POST[SELECT_INDEX_NAME]);
-      }
-      $data = 'jQuery(document).ready( function() {
-                 tabify("#tabs").select( '.$select_index.' );
-               });';
-      wp_add_inline_script( 'tab-js', $data, 'after' ) ;
-      //管理画面用のJavaScriptの読み込み
-      wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
-      //ソースコードハイライトリソースの読み込み
-      wp_enqueue_highlight_js();
-
-      // ///////////////////////////////////
-      // //ソースコードのハイライト表示
-      // ///////////////////////////////////
-      // if ( is_code_highlight_enable() ){
-      //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
-      //   echo '<script src="'.get_template_directory_uri().'/plugins/highlight-js/highlight.min.js"></script>'.PHP_EOL;
-      //   echo '<script type="text/javascript">
-      //         (function($){
-      //          $("'.get_code_highlight_css_selector().'").each(function(i, block) {
-      //           hljs.highlightBlock(block);
-      //          });
-      //         })(jQuery);
-      //         </script>';
-      // }
+  global $pagenow;
+  //var_dump($pagenow);
+  if ($pagenow == 'admin.php') {
+    //IcoMoonの呼び出し
+    wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+    //タブの読み込み
+    wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+    $select_index = 0;
+    if (isset($_POST['select_index'])) {
+    $select_index = intval($_POST[SELECT_INDEX_NAME]);
     }
+    $data = 'jQuery(document).ready( function() {
+         tabify("#tabs").select( '.$select_index.' );
+         });';
+    wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+    //管理画面用のJavaScriptの読み込み
+    wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+    //ソースコードハイライトリソースの読み込み
+    wp_enqueue_highlight_js();
 
-    //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
-    //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
+    // ///////////////////////////////////
+    // //ソースコードのハイライト表示
+    // ///////////////////////////////////
+    // if ( is_code_highlight_enable() ){
+    //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
+    //   echo '<script src="'.get_template_directory_uri().'/plugins/highlight-js/highlight.min.js"></script>'.PHP_EOL;
+    //   echo '<script type="text/javascript">
+    //     (function($){
+    //      $("'.get_code_highlight_css_selector().'").each(function(i, block) {
+    //       hljs.highlightBlock(block);
+    //      });
+    //     })(jQuery);
+    //     </script>';
+    // }
+  }
+
+  //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
+  //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
 endif;
 add_action('admin_print_styles', 'admin_print_styles_custom');
@@ -55,9 +55,9 @@ function customize_initial_view_of_media_uploader() {
 echo "<script type='text/javascript'>
  //<![CDATA[
 jQuery(function($) {
-        $('#wpcontent').ajaxSuccess(function() {
-                $('select.attachment-filters [value=\"uploaded\"]').attr( 'selected', true ).parent().trigger('change');
-        });
+    $('#wpcontent').ajaxSuccess(function() {
+        $('select.attachment-filters [value=\"uploaded\"]').attr( 'selected', true ).parent().trigger('change');
+    });
 });
   //]]>
 </script>";
@@ -71,8 +71,8 @@ add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' 
 //カラムの挿入
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
-    $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
-    return $columns;
+  $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
+  return $columns;
 }
 endif;
 add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
@@ -81,15 +81,15 @@ add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 //サムネイルの挿入
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
-    if ( 'thumbnail' == $column_name) {
-        //テーマで設定されているサムネイルを利用する場合
-        $thum = get_the_post_thumbnail($post_id, 'thumb100', array( 'style'=>'width:75px;height:auto;' ));
-        //Wordpressで設定されているサムネイル（小）を利用する場合
-        //$thum = get_the_post_thumbnail($post_id, 'small', array( 'style'=>'width:75px;height:auto;' ));
-    }
-    if ( isset($thum) && $thum ) {
-        echo $thum;
-    }
+  if ( 'thumbnail' == $column_name) {
+    //テーマで設定されているサムネイルを利用する場合
+    $thum = get_the_post_thumbnail($post_id, 'thumb100', array( 'style'=>'width:75px;height:auto;' ));
+    //Wordpressで設定されているサムネイル（小）を利用する場合
+    //$thum = get_the_post_thumbnail($post_id, 'small', array( 'style'=>'width:75px;height:auto;' ));
+  }
+  if ( isset($thum) && $thum ) {
+    echo $thum;
+  }
 }
 endif;
 add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
@@ -99,91 +99,91 @@ if ( !function_exists( 'customize_admin_bar_menu' ) ):
 function customize_admin_bar_menu($wp_admin_bar){
   //バーにメニューを追加
   $title = sprintf(
-      '<span class="ab-label">%s</span>',
-      __( '管理メニュー', THEME_NAME )//親メニューラベル
+    '<span class="ab-label">%s</span>',
+    __( '管理メニュー', THEME_NAME )//親メニューラベル
   );
   $wp_admin_bar->add_menu(array(
-      'id'    => 'dashboard_menu',
-      'meta'  => array(),
-      'title' => $title
+    'id'  => 'dashboard_menu',
+    'meta'  => array(),
+    'title' => $title
   ));
   //サブメニューを追加
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-dashboard', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'ダッシュボード', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-dashboard', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'ダッシュボード', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-singles', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( '投稿一覧', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/edit.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-singles', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( '投稿一覧', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/edit.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-pages', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( '固定ページ一覧', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/edit.php?post_type=page') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-pages', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( '固定ページ一覧', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/edit.php?post_type=page') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-medias', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'メディア一覧', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/upload.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-medias', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'メディア一覧', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/upload.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-themes', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'テーマ', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/themes.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-themes', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'テーマ', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/themes.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-customize', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'カスタマイズ', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/customize.php?return=' . esc_url(site_url('/wp-admin/themes.php'))) // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-customize', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'カスタマイズ', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/customize.php?return=' . esc_url(site_url('/wp-admin/themes.php'))) // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-widget', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'ウィジェット', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/widgets.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-widget', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'ウィジェット', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/widgets.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-nav-menus', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'メニュー', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/nav-menus.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-nav-menus', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'メニュー', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/nav-menus.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-theme-editor', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'テーマの編集', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/theme-editor.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-theme-editor', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'テーマの編集', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/theme-editor.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-plugins', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( 'プラグイン一覧', THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/plugins.php') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-plugins', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( 'プラグイン一覧', THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/plugins.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
-      'parent' => 'dashboard_menu', // 親メニューID
-      'id'     => 'dashboard_menu-theme-settings', // 子メニューID
-      'meta'   => array(),
-      'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
-      'href'   => site_url('/wp-admin/admin.php?page=theme-settings') // ページURL
+    'parent' => 'dashboard_menu', // 親メニューID
+    'id'   => 'dashboard_menu-theme-settings', // 子メニューID
+    'meta'   => array(),
+    'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
+    'href'   => site_url('/wp-admin/admin.php?page=theme-settings') // ページURL
   ));
 }
 endif;
@@ -193,33 +193,33 @@ add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
 //記事公開前に確認アラートを出す
 if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
 function publish_confirm_admin_print_scripts() {
-    $post_text = __( '公開', THEME_NAME );
-    $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
-    echo <<< EOM
+  $post_text = __( '公開', THEME_NAME );
+  $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
+  echo <<< EOM
 <script type="text/javascript">
 <!--
 window.onload = function() {
-    var id = document.getElementById('publish');
-    if (id.value.indexOf("$post_text", 0) != -1) {
-        id.onclick = publish_confirm;
-    }
+  var id = document.getElementById('publish');
+  if (id.value.indexOf("$post_text", 0) != -1) {
+    id.onclick = publish_confirm;
+  }
 }
 function publish_confirm() {
-    if (window.confirm("$confirm_text")) {
-        return true;
-    } else {
-        var elements = document.getElementsByTagName('span');
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            if (element.className.indexOf("spinner", 0) != -1) {
-                element.classList.remove('spinner');
-            }
-        }
-        document.getElementById('publish').classList.remove('button-primary-disabled');
-        document.getElementById('save-post').classList.remove('button-disabled');
-
-            return false;
+  if (window.confirm("$confirm_text")) {
+    return true;
+  } else {
+    var elements = document.getElementsByTagName('span');
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.className.indexOf("spinner", 0) != -1) {
+        element.classList.remove('spinner');
+      }
     }
+    document.getElementById('publish').classList.remove('button-primary-disabled');
+    document.getElementById('save-post').classList.remove('button-disabled');
+
+      return false;
+  }
 }
 // -->
 </script>
@@ -233,25 +233,25 @@ if ( !function_exists( 'custmuize_restrict_manage_posts' ) ):
 function custmuize_restrict_manage_posts(){
   global $post_type, $tag;
   if ( is_object_in_taxonomy( $post_type, 'post_tag' ) ) {
-    $dropdown_options = array(
-      'show_option_all' => get_taxonomy( 'post_tag' )->labels->all_items,
-      'hide_empty' => 0,
-      'hierarchical' => 1,
-      'show_count' => 0,
-      'orderby' => 'name',
-      'selected' => $tag,
-      'name' => 'tag',
-      'taxonomy' => 'post_tag',
-      'value_field' => 'slug'
-    );
-    wp_dropdown_categories( $dropdown_options );
+  $dropdown_options = array(
+    'show_option_all' => get_taxonomy( 'post_tag' )->labels->all_items,
+    'hide_empty' => 0,
+    'hierarchical' => 1,
+    'show_count' => 0,
+    'orderby' => 'name',
+    'selected' => $tag,
+    'name' => 'tag',
+    'taxonomy' => 'post_tag',
+    'value_field' => 'slug'
+  );
+  wp_dropdown_categories( $dropdown_options );
   }
 
   wp_dropdown_users(
-    array(
-      'show_option_all' => 'すべてのユーザー',
-      'name' => 'author'
-    )
+  array(
+    'show_option_all' => 'すべてのユーザー',
+    'name' => 'author'
+  )
   );
 }
 endif;
@@ -261,7 +261,7 @@ add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');
 if ( !function_exists( 'custmuize_load_edit_php' ) ):
 function custmuize_load_edit_php(){
   if (isset($_GET['tag']) && '0' === $_GET['tag']) {
-    unset ($_GET['tag']);
+  unset ($_GET['tag']);
   }
 }
 endif;
@@ -292,46 +292,46 @@ function add_category_filter_form() {
 <script type="text/javascript">
 jQuery(function($) {
   function zenToHan(text) {
-    return text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
-          return String.fromCharCode(s.charCodeAt(0) - 65248);
-      });
-  }
-
-  function catFilter( header, list ) {
-    var form  = $('<form>').attr({'class':'filterform', 'action':'#'}).css({'position':'absolute', 'top':'38px'}),
-        input = $('<input>').attr({'class':'filterinput', 'type':'text', 'placeholder':'<?php _e( 'カテゴリー検索', THEME_NAME ) ?>' });
-    $(form).append(input).appendTo(header);
-    $(header).css({'padding-top':'42px'});
-    $(input).change(function() {
-      var filter = $(this).val();
-      filter = zenToHan(filter).toLowerCase();
-      if( filter ) {
-        //ラベルテキストから検索文字の見つからなかった場合は非表示
-        $(list).find('label').filter(
-          function (index) {
-            var labelText = zenToHan($(this).text()).toLowerCase();
-            return labelText.indexOf(filter) == -1;
-          }
-        ).hide();
-        //ラベルテキストから検索文字の見つかった場合は表示
-        $(list).find('label').filter(
-          function (index) {
-            var labelText = zenToHan($(this).text()).toLowerCase();
-            return labelText.indexOf(filter) != -1;
-          }
-        ).show();
-      } else {
-        $(list).find('label').show();
-      }
-      return false;
-    })
-    .keyup(function() {
-      $(this).change();
+  return text.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+      return String.fromCharCode(s.charCodeAt(0) - 65248);
     });
   }
 
+  function catFilter( header, list ) {
+  var form  = $('<form>').attr({'class':'filterform', 'action':'#'}).css({'position':'absolute', 'top':'38px'}),
+    input = $('<input>').attr({'class':'filterinput', 'type':'text', 'placeholder':'<?php _e( 'カテゴリー検索', THEME_NAME ) ?>' });
+  $(form).append(input).appendTo(header);
+  $(header).css({'padding-top':'42px'});
+  $(input).change(function() {
+    var filter = $(this).val();
+    filter = zenToHan(filter).toLowerCase();
+    if( filter ) {
+    //ラベルテキストから検索文字の見つからなかった場合は非表示
+    $(list).find('label').filter(
+      function (index) {
+      var labelText = zenToHan($(this).text()).toLowerCase();
+      return labelText.indexOf(filter) == -1;
+      }
+    ).hide();
+    //ラベルテキストから検索文字の見つかった場合は表示
+    $(list).find('label').filter(
+      function (index) {
+      var labelText = zenToHan($(this).text()).toLowerCase();
+      return labelText.indexOf(filter) != -1;
+      }
+    ).show();
+    } else {
+    $(list).find('label').show();
+    }
+    return false;
+  })
+  .keyup(function() {
+    $(this).change();
+  });
+  }
+
   $(function() {
-    catFilter( $('#category-all'), $('#categorychecklist') );
+  catFilter( $('#category-all'), $('#categorychecklist') );
   });
 });
 </script>
@@ -340,3 +340,64 @@ jQuery(function($) {
 endif;
 add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
 add_action( 'admin_head-post.php', 'add_category_filter_form' );
+
+
+//デフォルトの抜粋入力欄をビジュアルエディターにする
+if ( !class_exists( 'VisualEditorExcerpt' ) ):
+class VisualEditorExcerpt{
+  public static function switch_boxes()
+  {
+    if ( ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )
+    {
+      return;
+    }
+
+    remove_meta_box(
+      'postexcerpt' // ID
+    ,   ''      // Screen, empty to support all post types
+    ,   'normal'    // Context
+    );
+
+    add_meta_box(
+      'postexcerpt2'   // Reusing just 'postexcerpt' doesn't work.
+    ,   __( 'Excerpt' )  // Title
+    ,   array ( __CLASS__, 'show' ) // Display function
+    ,   null        // Screen, we use all screens with meta boxes.
+    ,   'normal'      // Context
+    ,   'core'      // Priority
+    );
+  }
+
+
+  //メタボックスの出力
+  public static function show( $post )  {
+  ?>
+    <label class="screen-reader-text" for="excerpt"><?php
+    _e( 'Excerpt' )
+    ?></label>
+    <?php
+    // We use the default name, 'excerpt', so we don’t have to care about
+    // saving, other filters etc.
+    wp_editor(
+      self::unescape( $post->post_excerpt ),
+      'excerpt',
+      array (
+      'textarea_rows' => 15
+    ,   'media_buttons' => false
+    ,   'teeny'     => true
+    ,   'tinymce'     => true
+      )
+    );
+  }
+
+  //エスケープ解除
+  public static function unescape( $str )  {
+    return str_replace(
+      array ( '&lt;', '&gt;', '&quot;', '&amp;', '&nbsp;', '&amp;nbsp;' )
+    ,   array ( '<',  '>',  '"',    '&',   ' ', ' ' )
+    ,   $str
+    );
+  }
+}
+endif;
+add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
