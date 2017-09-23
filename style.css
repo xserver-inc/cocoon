@@ -348,20 +348,33 @@ img {
   margin-left: 330px;
 }
 
+.entry-category, .post-date,
+.post-update {
+  padding: 2px;
+  margin-right: 8px;
+  display: inline;
+  font-size: 14px;
+}
+
+.entry-category::before, .post-date::before,
+.post-update::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+.entry-card-meta .entry-card-categorys {
+  display: none;
+}
+
+/************************************
+** 日付関係のスタイル
+************************************/
 .date-tags {
   text-align: right;
   position: absolute;
   right: 3px;
   top: 3px;
-}
-
-.post-date,
-.post-update,
-.entry-category {
-  padding: 2px;
-  margin-right: 8px;
-  display: inline;
-  font-size: 14px;
 }
 
 .post-date::before {
@@ -374,16 +387,6 @@ img {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
-}
-
-.entry-category::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-
-.entry-card-meta .entry-card-categorys {
-  display: none;
 }
 
 /************************************
@@ -606,6 +609,20 @@ blockquote::after {
   line-height: 0;
   right: 10px;
   bottom: 0px;
+}
+
+/*本文下情報*/
+.footer-meta {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+/*投稿者*/
+.post-author::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  padding-right: 0;
 }
 
 /************************************

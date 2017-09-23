@@ -1,0 +1,23 @@
+/************************************
+** 日付関係のスタイル
+************************************/
+
+.date-tags{
+  text-align: right;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.post-date,
+.post-update{
+  @extend .entry-category;
+}
+
+.post-date::before{
+  @include fontawesome('\f017');
+}
+
+.post-update::before{
+  @include fontawesome('\f1da');
+}

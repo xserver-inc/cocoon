@@ -97,6 +97,9 @@
   ** エントリーカードの設定
   ************************************/
   /************************************
+  ** 日付関係のスタイル
+  ************************************/
+  /************************************
   ** 関連記事
   ************************************/
   /*関連エントリーカード*/
@@ -116,6 +119,8 @@
   /************************************
   ** 引用（blockquote）
   ************************************/
+  /*本文下情報*/
+  /*投稿者*/
   /************************************
   ** コメント
   ************************************/
@@ -460,19 +465,27 @@
 .demo .entry-card-content {
   margin-left: 330px;
 }
+.demo .entry-category, .demo .post-date,
+.demo .post-update {
+  padding: 2px;
+  margin-right: 8px;
+  display: inline;
+  font-size: 14px;
+}
+.demo .entry-category::before, .demo .post-date::before,
+.demo .post-update::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+.demo .entry-card-meta .entry-card-categorys {
+  display: none;
+}
 .demo .date-tags {
   text-align: right;
   position: absolute;
   right: 3px;
   top: 3px;
-}
-.demo .post-date,
-.demo .post-update,
-.demo .entry-category {
-  padding: 2px;
-  margin-right: 8px;
-  display: inline;
-  font-size: 14px;
 }
 .demo .post-date::before {
   font-family: FontAwesome;
@@ -483,14 +496,6 @@
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
-}
-.demo .entry-category::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-.demo .entry-card-meta .entry-card-categorys {
-  display: none;
 }
 .demo .related-entry-title,
 .demo .comment-title {
@@ -677,6 +682,16 @@
   line-height: 0;
   right: 10px;
   bottom: 0px;
+}
+.demo .footer-meta {
+  font-size: 0.8em;
+  text-align: right;
+}
+.demo .post-author::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  padding-right: 0;
 }
 .demo .commets-list {
   padding: 0;

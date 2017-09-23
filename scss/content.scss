@@ -210,3 +210,15 @@ blockquote {
     bottom: 0px;
   }
 }
+
+/*本文下情報*/
+.footer-meta{
+  font-size: 0.8em;
+  text-align: right;
+}
+
+/*投稿者*/
+.post-author::before{
+  @include fontawesome('\f040');
+  padding-right: 0;
+}

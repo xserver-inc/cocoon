@@ -74,6 +74,9 @@
           get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons');
         }; ?>
 
+        <?php //投稿者等表示用のテンプレート
+        get_template_part('tmp/footer-meta'); ?>
+
       </footer>
 
     <?php
