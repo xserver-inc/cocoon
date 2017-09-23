@@ -93,16 +93,17 @@ function the_noindex_follow_tag(){
   if (is_noindex_page()) {
     $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
   } else {
-    // if ( is_noindex_singular_page() && is_nofollow_singular_page()) {
-    //   return '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
-    // } elseif ( is_noindex_singular_page() ) {
-    //   return '<meta name="robots" content="noindex">'.PHP_EOL;
-    // } elseif ( is_nofollow_singular_page() ) {
-    //   return '<meta name="robots" content="nofollow">'.PHP_EOL;
-    // }
+    if ( is_singular_page_noindex() && is_singular_page_nofollow()) {
+      $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
+    } elseif ( is_singular_page_noindex() ) {
+      $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
+    } elseif ( is_singular_page_nofollow() ) {
+      $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
+    }
   }
   if ($tag) {
-    $tag .= '<!-- '.THEME_NAME_CAMEL.' noindex -->'.PHP_EOL;
+    //var_dump($tag);
+    $tag = '<!-- '.THEME_NAME_CAMEL.' noindex nofollow -->'.PHP_EOL.$tag;
     echo $tag;
   }
 }
