@@ -484,8 +484,8 @@
 .demo .date-tags {
   text-align: right;
   position: absolute;
-  right: 3px;
-  top: 3px;
+  right: 0;
+  top: 0;
 }
 .demo .post-date::before {
   font-family: FontAwesome;
@@ -2212,4 +2212,37 @@ form.admin-settings {
 .toggle .toggle-content {
   display: none;
   width: 100%;
+}
+
+/*カスタムボックスラベル*/
+.box-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*文字数カウントエリア*/
+.str-count {
+  margin-left: 10px;
+  background-color: #f7f7f7;
+  padding: 1px 2px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-weight: normal;
+}
+
+.seo-title-count,
+.meta-description-count,
+.wp-title-count {
+  margin-left: 5px;
+}
+
+.str-wp-title-count {
+  position: absolute;
+  top: -23px;
+  right: 0;
+  color: #666;
+  background-color: #f7f7f7;
+  padding: 1px 2px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }

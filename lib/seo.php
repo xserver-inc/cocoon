@@ -2,24 +2,25 @@
 
 //Wordpress4.1からのタイトル自動作成
 //https://www.nxworld.net/wordpress/wp-custom-title-tag.html
+add_action( 'after_setup_theme', 'setup_theme_custum' );
 if ( !function_exists( 'setup_theme_custum' ) ):
 function setup_theme_custum() {
   add_theme_support( 'title-tag' );
 }
-add_action( 'after_setup_theme', 'setup_theme_custum' );
 endif;
 
 //Wordpress4.4以上でのタイトルセパレーターの設定
+add_filter( 'document_title_separator', 'title_separator_custom' );
 if ( !function_exists( 'title_separator_custom' ) ):
 function title_separator_custom( $sep ){
     $sep = get_title_separator_caption();
     return $sep;
 }
 endif;
-add_filter( 'document_title_separator', 'title_separator_custom' );
 
 
 //Wordpress4.4以上でのタイトルカスタマイズ
+add_filter( 'document_title_parts', 'title_parts_custom' );
 if ( !function_exists( 'title_parts_custom' ) ):
 function title_parts_custom( $title ){
   $site_name = trim( get_bloginfo('name') );
@@ -69,7 +70,6 @@ function title_parts_custom( $title ){
   return $title;
 }
 endif;
-add_filter( 'document_title_parts', 'title_parts_custom' );
 
 
 //noindexページの判別関数
@@ -86,6 +86,7 @@ endif;
 
 
 //noindexページを出力する
+add_action( 'wp_head', 'the_noindex_follow_tag' );
 if ( !function_exists( 'the_noindex_follow_tag' ) ):
 function the_noindex_follow_tag(){
   $tag = null;
@@ -106,9 +107,14 @@ function the_noindex_follow_tag(){
   }
 }
 endif;
-add_action( 'wp_head', 'the_noindex_follow_tag' );
 
 ////ページネーションと分割ページ（マルチページ）タグを出力
+if ( is_prev_next_enable() ) {
+  //デフォルトのrel="next"/"prev"を消す
+  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+  //分割ページのみnext/prevを表示
+  add_action( 'wp_head', 'the_prev_next_link_tag' );
+}
 if ( !function_exists( 'the_prev_next_link_tag' ) ):
 function the_prev_next_link_tag() {
   //1ページを複数に分けた分割ページ
@@ -141,13 +147,6 @@ function the_prev_next_link_tag() {
   }
 }
 endif;
-
-if ( is_prev_next_enable() ) {
-  //デフォルトのrel="next"/"prev"を消す
-  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
-  //分割ページのみnext/prevを表示
-  add_action( 'wp_head', 'the_prev_next_link_tag' );
-}
 
 //分割ページ（マルチページ）URLの取得
 //参考ページ：
@@ -225,6 +224,12 @@ endif;
 
 //canonicalタグの取得
 //取得条件；http://bazubu.com/seo101/how-to-use-canonical
+if (is_canonical_tag_enable()) {
+  //デフォルトのcanonicalタグ削除
+  remove_action('wp_head', 'rel_canonical');
+  //分割ページのみnext/prevを表示
+  add_action( 'wp_head', 'the_canonical_tag' );
+}
 if ( !function_exists( 'the_canonical_tag' ) ):
 function the_canonical_tag(){
   $canonical_url = generate_canonical_url();
@@ -235,12 +240,6 @@ function the_canonical_tag(){
   }
 }
 endif;
-if (is_canonical_tag_enable()) {
-  //デフォルトのcanonicalタグ削除
-  remove_action('wp_head', 'rel_canonical');
-  //分割ページのみnext/prevを表示
-  add_action( 'wp_head', 'the_canonical_tag' );
-}
 
 
 //カテゴリーメタディスクリプション用の説明文を取得
@@ -288,6 +287,7 @@ function get_singular_meta_keywores(){
 endif;
 
 //メタディスクリプションタグを出力する
+add_action( 'wp_head', 'the_meta_description_tag' );
 if ( !function_exists( 'the_meta_description_tag' ) ):
 function the_meta_description_tag() {
   $description = null;
@@ -307,10 +307,10 @@ function the_meta_description_tag() {
   }
 }
 endif;
-add_action( 'wp_head', 'the_meta_description_tag' );
 
 
 //メタキーワードタグを出力する
+add_action( 'wp_head', 'the_meta_keywords_tag' );
 if ( !function_exists( 'the_meta_keywords_tag' ) ):
 function the_meta_keywords_tag() {
   $keywords = null;
@@ -330,4 +330,3 @@ function the_meta_keywords_tag() {
   }
 }
 endif;
-add_action( 'wp_head', 'the_meta_keywords_tag' );

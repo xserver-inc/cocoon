@@ -373,8 +373,8 @@ img {
 .date-tags {
   text-align: right;
   position: absolute;
-  right: 3px;
-  top: 3px;
+  right: 0;
+  top: 0;
 }
 
 .post-date::before {
