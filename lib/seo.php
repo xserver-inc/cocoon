@@ -318,7 +318,7 @@ function the_meta_keywords_tag() {
   if (is_front_page() && get_front_page_meta_keywords()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
-    $keywords = get_singular_meta_keywores();
+    $keywords = get_the_description();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
   } else {
@@ -329,5 +329,60 @@ function the_meta_keywords_tag() {
     var_dump('<meta name="keywords" content="'.$keywords.'">');
     echo '<meta name="keywords" content="'.$keywords.'">'.PHP_EOL;
   }
+}
+endif;
+
+//json-ldタグを出力する
+add_action( 'wp_head', 'the_json_ld_tag' );
+if ( !function_exists( 'the_json_ld_tag' ) ):
+function the_json_ld_tag() {
+  if (is_singular()) {
+    echo '<!-- '.THEME_NAME_CAMEL.' JSON-LD -->'.PHP_EOL;
+    get_template_part('tmp/json-ld');
+  }
+}
+endif;
+
+
+//サイト概要の取得
+if ( !function_exists( 'get_the_description' ) ):
+function get_the_description(){
+  global $post;
+
+  //抜粋を取得
+  $desc = trim(strip_tags( $post->post_excerpt ));
+  //投稿・固定ページにメタディスクリプションが設定してあれば取得
+  if (get_singular_page_meta_description()) {
+    $desc = get_singular_page_meta_description();
+  }
+  if ( !$desc ) {//投稿で抜粋が設定されていない場合は、110文字の冒頭の抽出分
+    $desc = strip_shortcodes(get_the_custom_excerpt( $post->post_content, 150 ));
+    $desc = mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags($desc)), 0, 120);
+
+  }
+  $desc = htmlspecialchars($desc);
+  return $desc;
+}
+endif;
+
+
+//本文抜粋を取得する関数
+//使用方法：http://nelog.jp/get_the_custom_excerpt
+if ( !function_exists( 'get_the_custom_excerpt' ) ):
+function get_the_custom_excerpt($content, $length = 70, $is_card = false) {
+  global $post;
+  //SEO設定のディスクリプション取得
+  $description = get_blogcard_snippet_meta_description($post->ID);
+  //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
+  if (!$description) {
+    if (class_exists( 'All_in_One_SEO_Pack' )) {
+      $aioseop_description = get_post_meta($post->ID, '_aioseop_description', true);
+      if ($aioseop_description) {
+        $description = $aioseop_description;
+      }
+    }
+  }
+  //SEO設定のディスクリプションがない場合は「抜粋」を取得
+  return htmlspecialchars(get_content_excerpt($content, $length));
 }
 endif;

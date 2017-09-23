@@ -1,6 +1,7 @@
 <?php
 
 //リンクのないカテゴリーの取得（複数）
+if ( !function_exists( 'get_the_nolink_categories' ) ):
 function get_the_nolink_categories(){
   $categories = null;
   foreach((get_the_category()) as $category){
@@ -9,12 +10,20 @@ function get_the_nolink_categories(){
   return $categories;
 }
 
+endif;
+
+
 //リンクのないカテゴリーの出力（複数）
+if ( !function_exists( 'the_nolink_categories' ) ):
 function the_nolink_categories(){
   echo get_the_nolink_categories();
 }
+endif;
+
+
 
 //カテゴリリンクの取得
+if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
@@ -22,13 +31,19 @@ function get_the_category_links(){
   }
   return $categories;
 }
+endif;
+
 
 //カテゴリリンクの出力
+if ( !function_exists( 'the_category_links' ) ):
 function the_category_links(){
   echo get_the_category_links();
 }
+endif;
+
 
 //リンクのないカテゴリーの取得
+if ( !function_exists( 'get_the_nolink_category' ) ):
 function get_the_nolink_category(){
   $categories = get_the_category();
   //var_dump($categories);
@@ -37,14 +52,20 @@ function get_the_nolink_category(){
     return '<span class="category-label">'.$category->cat_name.'</span>';
   }
 }
+endif;
+
 
 //リンクのないカテゴリーの出力
+if ( !function_exists( 'the_nolink_category' ) ):
 function the_nolink_category(){
   echo get_the_nolink_category();
 }
 
+endif;
+
 
 //タグリンクの取得
+if ( !function_exists( 'get_the_tag_links' ) ):
 function get_the_tag_links(){
   $tags = null;
   $posttags = get_the_tags();
@@ -55,13 +76,19 @@ function get_the_tag_links(){
   }
   return $tags;
 }
+endif;
+
 
 //タグリンクの出力
+if ( !function_exists( 'the_tag_links' ) ):
 function the_tag_links(){
   echo get_the_tag_links();
 }
+endif;
+
 
 //コメントが許可されているか
+if ( !function_exists( 'is_comment_allow' ) ):
 function is_comment_allow(){
   global $post;
   if ( isset($post->comment_status) ) {
@@ -69,6 +96,8 @@ function is_comment_allow(){
   }
   return false;
 }
+endif;
+
 
 //現在のカテゴリをカンマ区切りテキストで取得する
 if ( !function_exists( 'get_category_ids' ) ):
@@ -88,6 +117,7 @@ function get_category_ids(){
   return null;
 }
 endif;
+
 
 //AdSense用のフォーマットに変換
 if ( !function_exists( 'to_adsense_format' ) ):
@@ -137,6 +167,7 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
 }
 endif;
 
+
 //オプション付きのテンプレート呼び出し
 if ( !function_exists( 'get_template_part_with_option' ) ):
 function get_template_part_with_option($slug, $option = null){
@@ -167,6 +198,7 @@ function get_author_list_selectbox_tag($name, $value){
 }
 endif;
 
+
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
@@ -174,6 +206,7 @@ function update_theme_option($option_name){
   update_option($option_name, $opt_val);
 }
 endif;
+
 
 //チェックボックスのチェックを付けるか
 if ( !function_exists( 'the_checkbox_checked' ) ):
@@ -184,6 +217,7 @@ function the_checkbox_checked($val1, $val2 = 1){
 }
 endif;
 
+
 //セレクトボックスのチェックを付けるか
 if ( !function_exists( 'the_option_selected' ) ):
 function the_option_selected($val1, $val2){
@@ -192,6 +226,7 @@ function the_option_selected($val1, $val2){
   }
 }
 endif;
+
 
 //セレクトボックスの生成
 if ( !function_exists( 'genelate_selectbox_tag' ) ):
@@ -205,6 +240,7 @@ function genelate_selectbox_tag($name, $options, $now_value){?>
 }
 endif;
 
+
 //チェックボックスの生成
 if ( !function_exists( 'genelate_checkbox_tag' ) ):
 function genelate_checkbox_tag($name, $now_value, $label){?>
@@ -212,6 +248,7 @@ function genelate_checkbox_tag($name, $now_value, $label){?>
   <?php
 }
 endif;
+
 
 //ラジオボックスの生成
 if ( !function_exists( 'genelate_radiobox_tag' ) ):
@@ -225,6 +262,7 @@ function genelate_radiobox_tag($name, $options, $now_value){?>
 }
 endif;
 
+
 //ラベルの生成
 if ( !function_exists( 'genelate_label_tag' ) ):
 function genelate_label_tag($name, $caption){?>
@@ -232,6 +270,7 @@ function genelate_label_tag($name, $caption){?>
   <?php
 }
 endif;
+
 
 //説明文の生成
 if ( !function_exists( 'genelate_tips_tag' ) ):
@@ -241,6 +280,7 @@ function genelate_tips_tag($caption){?>
 }
 endif;
 
+
 //テキストボックスの生成
 if ( !function_exists( 'genelate_textbox_tag' ) ):
 function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
@@ -249,12 +289,14 @@ function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
 }
 endif;
 
+
 //highlight-jsのCSS URLを取得
 if ( !function_exists( 'get_highlight_js_css_url' ) ):
 function get_highlight_js_css_url(){
   return get_template_directory_uri() . '/plugins/highlight-js/styles/'.get_code_highlight_style().'.css';
 }
 endif;
+
 
 //ソースコードのハイライト表示に必要なリソースの読み込み
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
@@ -282,6 +324,7 @@ function wp_enqueue_highlight_js(){
 }
 endif;
 
+
 //投稿を1つランダム取得
 if ( !function_exists( 'get_random_1_post' ) ):
 function get_random_1_post(){
@@ -292,11 +335,8 @@ function get_random_1_post(){
 }
 endif;
 
-/*
-  get_the_modified_time()の結果がget_the_time()より古い場合はget_the_time()を返す。
-  同じ場合はnullをかえす。
-  それ以外はget_the_modified_time()をかえす。
-*/
+
+//更新日の取得（更新日がない場合はnullを返す）
 if ( !function_exists( 'get_update_time' ) ):
 function get_update_time($format = 'Y.m.d') {
   $mtime = get_the_modified_time('Ymd');
@@ -307,6 +347,56 @@ function get_update_time($format = 'Y.m.d') {
     return null;
   } else {
     return get_the_modified_time($format);
+  }
+}
+endif;
+
+
+
+//サイトアドレスが含まれているか
+if ( !function_exists( 'includes_site_url' ) ):
+function includes_site_url($url){
+  //URLにサイトアドレスが含まれていない場合
+  if (strpos($url, site_url()) === false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+endif;
+
+
+//内部URLをローカルパスに変更
+if ( !function_exists( 'url_to_local' ) ):
+function url_to_local($url){
+  //URLにサイトアドレスが含まれていない場合
+  if (!includes_site_url($url)) {
+    return false;
+  }
+  $path = str_replace(content_url(), WP_CONTENT_DIR, $url);
+  $path = str_replace('\\', '/', $path);
+  return $path;
+}
+endif;
+
+
+//画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
+if ( !function_exists( 'get_image_width_and_height' ) ):
+function get_image_width_and_height($image_url){
+  //URLにサイトアドレスが含まれていない場合
+  if (!includes_site_url($image_url)) {
+    return false;
+  }
+  $wp_upload_dir = wp_upload_dir();
+  $uploads_dir = $wp_upload_dir['basedir'];
+  $uploads_url = $wp_upload_dir['baseurl'];
+  $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
+  $imagesize = getimagesize($image_file);
+  if ($imagesize) {
+    $res = array();
+    $res['width'] = $imagesize[0];
+    $res['height'] = $imagesize[1];
+    return $res;
   }
 }
 endif;

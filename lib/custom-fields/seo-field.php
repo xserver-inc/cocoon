@@ -162,7 +162,7 @@ function get_singular_page_meta_description(){
 }
 
 //メタディスクリプションを取得
-function get_meta_description_blogcard_snippet($id){
+function get_blogcard_snippet_meta_description($id){
   return trim(get_post_meta($id, 'seo_meta_description', true));
 }
 
