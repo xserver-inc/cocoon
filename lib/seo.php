@@ -92,7 +92,7 @@ function the_noindex_follow_tag(){
   $tag = null;
   if (is_noindex_page()) {
     $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
-  } else {
+  } elseif (is_singular()) {
     if ( is_singular_page_noindex() && is_singular_page_nofollow()) {
       $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
     } elseif ( is_singular_page_noindex() ) {
@@ -295,7 +295,7 @@ function the_meta_description_tag() {
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
-    $description = null;
+    $description = get_singular_page_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
   } else {
@@ -325,7 +325,7 @@ function the_meta_keywords_tag() {
 
   }
   if ($keywords) {
-    echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
+    echo '<!-- '.THEME_NAME_CAMEL.' meta keywords -->'.PHP_EOL;
     var_dump('<meta name="keywords" content="'.$keywords.'">');
     echo '<meta name="keywords" content="'.$keywords.'">'.PHP_EOL;
   }

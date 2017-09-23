@@ -47,7 +47,7 @@ jQuery(document).ready(function($){
   count_characters("#meta-description", ".meta-description-count");
 
   //Wordpressタイトルの文字数
-  $('#titlewrap').after('<div class="str-wp-title-count"><?php _e( '文字数', THEME_NAME ); ?>:<span class="wp-title-count">0</span></div>');
+  $('#titlewrap').after('<div class="str-wp-title-cou" style="position:absolute;top:-23px;right:0;color:#666;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;"><?php _e( '文字数', THEME_NAME ); ?>:<span class="wp-title-count">0</span></div>');
   $('#title').bind("keydown keyup keypress change",function(){
     count_characters('#title', '.wp-title-count');
   });
@@ -157,7 +157,7 @@ function get_seo_title_singular_page(){
 }
 
 //メタディスクリプションを取得
-function get_meta_description_singular_page(){
+function get_singular_page_meta_description(){
   return trim(get_post_meta(get_the_ID(), 'seo_meta_description', true));
 }
 
