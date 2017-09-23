@@ -1,6 +1,7 @@
 <?php //管理画面関係の関数
 
 //管理画面に読み込むリソースの設定
+add_action('admin_print_styles', 'admin_print_styles_custom');
 if ( !function_exists( 'admin_print_styles_custom' ) ):
 function admin_print_styles_custom() {
   wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
@@ -47,9 +48,10 @@ function admin_print_styles_custom() {
   //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
 endif;
-add_action('admin_print_styles', 'admin_print_styles_custom');
 
 //メディアを挿入の初期表示を「この投稿へのアップロード」にする
+add_action( 'admin_footer-post-new.php', 'customize_initial_view_of_media_uploader' );
+add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' );
 if ( !function_exists( 'customize_initial_view_of_media_uploader' ) ):
 function customize_initial_view_of_media_uploader() {
 echo "<script type='text/javascript'>
@@ -63,22 +65,21 @@ jQuery(function($) {
 </script>";
 }
 endif;
-add_action( 'admin_footer-post-new.php', 'customize_initial_view_of_media_uploader' );
-add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' );
 
 
 //投稿記事一覧にアイキャッチ画像を表示
 //カラムの挿入
+add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
   $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
   return $columns;
 }
 endif;
-add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 
 
-//サムネイルの挿入
+//管理画面の記事一覧テーブルにサムネイルの挿入
+add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
   if ( 'thumbnail' == $column_name) {
@@ -92,9 +93,9 @@ function customize_admin_add_column($column_name, $post_id) {
   }
 }
 endif;
-add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 
 //管理ツールバーにメニュー追加
+add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
 if ( !function_exists( 'customize_admin_bar_menu' ) ):
 function customize_admin_bar_menu($wp_admin_bar){
   //バーにメニューを追加
@@ -187,10 +188,10 @@ function customize_admin_bar_menu($wp_admin_bar){
   ));
 }
 endif;
-add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
 
 
 //記事公開前に確認アラートを出す
+add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
 if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
 function publish_confirm_admin_print_scripts() {
   $post_text = __( '公開', THEME_NAME );
@@ -226,9 +227,9 @@ function publish_confirm() {
 EOM;
 }
 endif;
-add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
 
 //投稿一覧リストの上にタグフィルターと管理者フィルターを追加する
+add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');
 if ( !function_exists( 'custmuize_restrict_manage_posts' ) ):
 function custmuize_restrict_manage_posts(){
   global $post_type, $tag;
@@ -255,9 +256,9 @@ function custmuize_restrict_manage_posts(){
   );
 }
 endif;
-add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');
 
 //投稿一覧で「全てのタグ」選択時は$_GET['tag']をセットしない
+add_action('load-edit.php', 'custmuize_load_edit_php');
 if ( !function_exists( 'custmuize_load_edit_php' ) ):
 function custmuize_load_edit_php(){
   if (isset($_GET['tag']) && '0' === $_GET['tag']) {
@@ -265,27 +266,29 @@ function custmuize_load_edit_php(){
   }
 }
 endif;
-add_action('load-edit.php', 'custmuize_load_edit_php');
 
 // ビジュアルエディタにHTMLを直挿入するためのボタンを追加
+add_filter( 'mce_buttons', 'add_insert_html_button' );
 if ( !function_exists( 'add_insert_html_button' ) ):
 function add_insert_html_button( $buttons ) {
   $buttons[] = 'button_insert_html';
   return $buttons;
 }
 endif;
-add_filter( 'mce_buttons', 'add_insert_html_button' );
 
+//ビジュアルエディターにHTML挿入ボタン動作を行うJavaScriptを追加する
+add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
 if ( !function_exists( 'add_insert_html_button_plugin' ) ):
 function add_insert_html_button_plugin( $plugin_array ) {
   $plugin_array['custom_button_script'] =  get_template_directory_uri() . "/js/button-insert-html.js";
   return $plugin_array;
 }
 endif;
-add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
 
 
 //投稿管理画面のカテゴリー選択にフィルタリング機能を付ける
+add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
+add_action( 'admin_head-post.php', 'add_category_filter_form' );
 if ( !function_exists( 'add_category_filter_form' ) ):
 function add_category_filter_form() {
 ?>
@@ -338,11 +341,11 @@ jQuery(function($) {
 <?php
 }
 endif;
-add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
-add_action( 'admin_head-post.php', 'add_category_filter_form' );
 
 
 //デフォルトの抜粋入力欄をビジュアルエディターにする
+
+add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
 if ( !class_exists( 'VisualEditorExcerpt' ) ):
 class VisualEditorExcerpt{
   public static function switch_boxes()
@@ -400,4 +403,15 @@ class VisualEditorExcerpt{
   }
 }
 endif;
-add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
+
+
+
+//テーマの編集機能で編集できるファイルを追加する wp4.4以降
+add_filter('wp_theme_editor_filetypes', 'wp_theme_editor_filetypes_custom');
+if ( !function_exists( 'wp_theme_editor_filetypes_custom' ) ):
+function wp_theme_editor_filetypes_custom($default_types){
+  $default_types[] = 'js';
+  $default_types[] = 'scss';
+  return $default_types;
+}
+endif;
