@@ -34,9 +34,15 @@ endif;
 //投稿日・更新日タグを取得する
 if ( !function_exists( 'get_the_date_tags' ) ):
 function get_the_date_tags(){
-  $time_post_date_tag = '<span class="post-date"><time class="entry-date date published updated" datetime="'.get_the_time('c').'">'.get_the_time('Y.m.d').'</time></span>';
+  //更新日が存在するときは、投稿日にupdatedクラスを出力しない
+  $updated = get_update_time() ? null : ' updated';
+  //timeタグがある投稿日
+  $time_post_date_tag = '<span class="post-date"><time class="entry-date date published'.$updated.'" datetime="'.get_the_time('c').'">'.get_the_time('Y.m.d').'</time></span>';
+  //通常の投稿日
   $post_date_tag = '<span class="post-date"><span class="entry-date date published">'.get_the_time('Y.m.d').'</span></span>';
+  //timeタグがある更新日
   $time_update_date_tag = '<span class="post-update"><time class="entry-date date updated" datetime="'.get_update_time('c').'">'.get_update_time('Y.m.d').'</time></span>';
+  //通常の更新日
   $update_date_tag = '<span class="post-update"><span class="entry-date date updated">'.get_update_time('Y.m.d').'</span></span>';
   switch (get_seo_date_type()) {
     //投稿日を伝える
@@ -53,7 +59,14 @@ function get_the_date_tags(){
       break;
     //更新日のみを伝える
     default:
-      $date_tags = $time_update_date_tag;
+      //更新日がある場合
+      if (get_update_time()) {
+        $date_tags = $time_update_date_tag;
+      } else {
+        $date_tags = $time_post_date_tag;
+      }
+
+
       break;
   }
   return $date_tags;

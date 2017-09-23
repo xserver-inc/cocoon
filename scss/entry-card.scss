@@ -86,7 +86,15 @@
   @extend %card_meta;
 }
 
-.published,
+.date-tags{
+  text-align: right;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.post-date,
+.post-update,
 .entry-category{
   padding: 2px;
   margin-right: 8px;
@@ -94,8 +102,12 @@
   font-size: 14px;
 }
 
-.published::before{
+.post-date::before{
   @include fontawesome('\f017');
+}
+
+.post-update::before{
+  @include fontawesome('\f1da');
 }
 
 .entry-category::before{

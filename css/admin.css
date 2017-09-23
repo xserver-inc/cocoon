@@ -290,6 +290,7 @@
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 4px;
+  position: relative;
 }
 .demo .main.no-sidebar {
   margin: 0;
@@ -459,16 +460,28 @@
 .demo .entry-card-content {
   margin-left: 330px;
 }
-.demo .published,
+.demo .date-tags {
+  text-align: right;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+.demo .post-date,
+.demo .post-update,
 .demo .entry-category {
   padding: 2px;
   margin-right: 8px;
   display: inline;
   font-size: 14px;
 }
-.demo .published::before {
+.demo .post-date::before {
   font-family: FontAwesome;
   content: "";
+  padding-right: 3px;
+}
+.demo .post-update::before {
+  font-family: FontAwesome;
+  content: "";
   padding-right: 3px;
 }
 .demo .entry-category::before {

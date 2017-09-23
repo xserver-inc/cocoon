@@ -148,6 +148,7 @@ a:hover {
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 4px;
+  position: relative;
 }
 
 .main.no-sidebar {
@@ -347,7 +348,15 @@ img {
   margin-left: 330px;
 }
 
-.published,
+.date-tags {
+  text-align: right;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.post-date,
+.post-update,
 .entry-category {
   padding: 2px;
   margin-right: 8px;
@@ -355,9 +364,15 @@ img {
   font-size: 14px;
 }
 
-.published::before {
+.post-date::before {
   font-family: FontAwesome;
   content: "";
+  padding-right: 3px;
+}
+
+.post-update::before {
+  font-family: FontAwesome;
+  content: "";
   padding-right: 3px;
 }
 

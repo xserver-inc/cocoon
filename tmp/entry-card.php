@@ -15,7 +15,7 @@
         <?php echo get_content_excerpt( get_the_content(''), 100 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <div class="entry-card-meta card-meta">
-        <div class="entry-card-day"><span class="published"><?php the_time('Y.m.d'); ?></span></div>
+        <div class="entry-card-day"><span class="post-date"><?php the_time('Y.m.d'); ?></span></div>
         <div class="entry-card-categorys"><?php the_nolink_categories() ?></div>
       </div>
     </div><!-- /.entry-card-content -->
