@@ -16,21 +16,25 @@
           </th>
           <td>
             <div class="demo">
-              <div class="entry-demo<?php echo get_additional_entry_content_classes(); ?>">
+              <?php $class = is_baguettebox_effect_enable() ? 'entry-demo' : null; ?>
+              <div class="<?php echo $class; ?><?php echo get_additional_entry_content_classes(); ?>">
               <?php if (add_lightbox_property( '$content' )): ?>
 
               <?php endif ?>
               <?php if (is_eyecatch_visible()){
               $content = '<a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
-                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-300.jpg" alt="デモ画像">
-                </a>';
+                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-370.jpg" alt="デモ画像">
+                </a>&nbsp;
+                <a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree.jpg" target="_blank">
+                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree300.jpg" alt="デモ画像">
+                </a>
+                ';
                 if (is_lightbox_effect_enable()) {
                   $content = add_lightbox_property($content);
                 }
                 if (is_lity_effect_enable()) {
                   $content = add_lity_property($content);
                 }
-                //the_zoom_effect_link_tag();
                 echo $content;
               } ?>
               </div>
@@ -94,9 +98,9 @@
             <?php
             $options = array(
               'none' => 'なし',
-              'lightbox' => 'Lightbox',
-              'lity' => 'Lity（軽量）',
-              'shadow' => 'シャドー',
+              'baguettebox' => __( 'baguetteBox（スマホ向け）', THEME_NAME ),
+              'lity' => __( 'Lity（単機能・軽量）', THEME_NAME ),
+              'lightbox' => __( 'Lightbox', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());
             genelate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));

@@ -368,6 +368,31 @@ function wp_enqueue_lity(){
 endif;
 
 
+//baguetteboxの読み込み
+if ( !function_exists( 'wp_enqueue_baguettebox' ) ):
+function wp_enqueue_baguettebox(){
+ if ( ((is_baguettebox_effect_enable() && is_singular()) || is_admin_php_page()) ) {
+    //baguetteboxスタイルの呼び出し
+    wp_enqueue_style( 'baguettebox-style', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.css' );
+    //baguetteboxスクリプトの呼び出し
+    wp_enqueue_script( 'baguettebox-js', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.js', array( 'jquery' ), false, true  );
+    if (is_singular()) {
+      $selector = '.entry-content';
+    } else {
+      $selector = '.entry-demo';
+    }
+    $data = '
+      (function($){
+       baguetteBox.run("'.$selector.'");
+      })(jQuery);
+    ';
+    wp_add_inline_script( 'baguettebox-js', $data, 'after' ) ;
+
+  }
+}
+endif;
+
+
 
 //投稿を1つランダム取得
 if ( !function_exists( 'get_random_1_post' ) ):

@@ -43,3 +43,9 @@ function is_lity_effect_enable(){
   return get_image_zoom_effect() == 'lity';
 }
 endif;
+//baguetteboxが有効
+if ( !function_exists( 'is_baguettebox_effect_enable' ) ):
+function is_baguettebox_effect_enable(){
+  return get_image_zoom_effect() == 'baguettebox';
+}
+endif;
