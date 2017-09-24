@@ -37,3 +37,9 @@ function is_lightbox_effect_enable(){
   return get_image_zoom_effect() == 'lightbox';
 }
 endif;
+//lityが有効
+if ( !function_exists( 'is_lity_effect_enable' ) ):
+function is_lity_effect_enable(){
+  return get_image_zoom_effect() == 'lity';
+}
+endif;

@@ -343,7 +343,7 @@ endif;
 // }
 // endif;
 
-//ソースコードのハイライト表示に必要なリソースの読み込み
+//Lightboxの読み込み
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
 function wp_enqueue_lightbox(){
  if ( ((is_lightbox_effect_enable() && is_singular()) || is_admin()) ) {
@@ -354,6 +354,19 @@ function wp_enqueue_lightbox(){
   }
 }
 endif;
+
+//lityの読み込み
+if ( !function_exists( 'wp_enqueue_lity' ) ):
+function wp_enqueue_lity(){
+ if ( ((is_lity_effect_enable() && is_singular()) || is_admin()) ) {
+    //lityスタイルの呼び出し
+    wp_enqueue_style( 'lity-style', get_template_directory_uri() . '/plugins/lity/dist/lity.min.css' );
+    //lityスクリプトの呼び出し
+    wp_enqueue_script( 'lity-js', get_template_directory_uri() . '/plugins/lity/dist/lity.min.js', array( 'jquery' ), false, true  );
+  }
+}
+endif;
+
 
 
 //投稿を1つランダム取得

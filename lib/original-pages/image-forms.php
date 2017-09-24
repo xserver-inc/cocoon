@@ -25,7 +25,10 @@
                   <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-300.jpg" alt="デモ画像">
                 </a>';
                 if (is_lightbox_effect_enable()) {
-                  $content = add_lightbox_property( $content );
+                  $content = add_lightbox_property($content);
+                }
+                if (is_lity_effect_enable()) {
+                  $content = add_lity_property($content);
                 }
                 //the_zoom_effect_link_tag();
                 echo $content;
@@ -92,7 +95,7 @@
             $options = array(
               'none' => 'なし',
               'lightbox' => 'Lightbox',
-              'lity' => 'Lity',
+              'lity' => 'Lity（軽量）',
               'shadow' => 'シャドー',
             );
             genelate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());
