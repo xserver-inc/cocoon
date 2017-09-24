@@ -31,3 +31,9 @@ function get_image_zoom_effect(){
   return get_option(OP_IMAGE_ZOOM_EFFECT, 'none');
 }
 endif;
+//Lightboxが有効
+if ( !function_exists( 'is_lightbox_effect_enable' ) ):
+function is_lightbox_effect_enable(){
+  return get_image_zoom_effect() == 'lightbox';
+}
+endif;

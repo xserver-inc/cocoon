@@ -66,6 +66,7 @@ require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'seo.php';      //SEO関係の設定
 require_once 'scripts.php'; //スクリプト関係の関数
+require_once 'image.php';   //画像関係の設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
 require_once 'widget.php'; //ウィジェット操作関数
 require_once 'original-menu.php'; //オリジナルメニューによる設定項目

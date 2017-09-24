@@ -28,6 +28,18 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   wp_enqueue_highlight_js();
 
+  ///////////////////////////////////
+  //画像リンク拡大効果がLightboxのとき
+  ///////////////////////////////////
+  if ( is_lightbox_effect_enable() && //Lightboxが有効のとき
+   //投稿・固定ページか
+   is_singular() ) {
+    //Lightboxスタイルの呼び出し
+    wp_enqueue_style( 'lightbox-style',  get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.css' );
+    //Lightboxスクリプトの呼び出し
+    wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/plugins/lightbox2/dist/js/lightbox.js', array( 'jquery' ), false, true  );
+  }
+
 ////////////////////////////////////////////////////////////////
 //
 //Wordpress関係スクリプトの呼び出し
