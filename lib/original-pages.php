@@ -19,7 +19,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/sns-follow-posts.php';
   //ソースコード設定の保存
   require_once 'original-pages/code-posts.php';
-
+  //画像設定の保存
+  require_once 'original-pages/image-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -91,6 +92,11 @@ endif;
   <!-- コードタブ -->
   <div class="code metabox-holder">
     <?php require_once 'original-pages/code-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 画像タブ -->
+  <div class="image metabox-holder">
+    <?php require_once 'original-pages/image-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->

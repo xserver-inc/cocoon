@@ -19,7 +19,7 @@ function is_ads_visible(){
 
   return is_all_ads_visible() &&
     !$is_exclude_ids && //除外ページでない場合広告を表示
-    //!is_ads_removed_in_page() && //ページで除外していない場合
+    is_the_page_ads_visible() && //ページで除外していない場合
     !is_attachment() && //添付ページではない場合
     !is_404() && //404ページではない場合
     !is_search(); //検索結果ページで無い場合

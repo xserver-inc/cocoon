@@ -1,4 +1,4 @@
-<?php //アクセス解析設定に必要な定数や関数
+<?php //タイトル設定に必要な定数や関数
 
 //タイトルセパレーター
 define('OP_TITLE_SEPARATOR', 'title_separator');
