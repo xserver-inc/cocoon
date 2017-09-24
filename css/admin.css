@@ -246,7 +246,7 @@
   margin: 0;
   overflow-wrap: break-word;
   overflow: auto;
-  resize: horizontal;
+  resize: both;
   padding: 10px;
   border: 2px solid #ddd;
 }
