@@ -36,9 +36,9 @@ function title_parts_custom( $title ){
   elseif(is_singular()): //投稿・固定ページ
     $title['title'] = trim( get_the_title() );
     //SEO向けのタイトルが設定されているとき
-    // if (get_seo_title_singular_page()) {
-    //   $title['title'] = get_seo_title_singular_page();
-    // }
+    if (get_the_page_seo_title()) {
+      $title['title'] = get_the_page_seo_title();
+    }
     $title['site'] = '';
     switch (get_singular_page_title_format()) {
       case 'pagetitle_sitename':
@@ -93,11 +93,11 @@ function the_noindex_follow_tag(){
   if (is_noindex_page()) {
     $tag .= '<meta name="robots" content="noindex,follow">'.PHP_EOL;
   } elseif (is_singular()) {
-    if ( is_singular_page_noindex() && is_singular_page_nofollow()) {
+    if ( is_the_page_noindex() && is_the_page_nofollow()) {
       $tag = '<meta name="robots" content="noindex,nofollow">'.PHP_EOL;
-    } elseif ( is_singular_page_noindex() ) {
+    } elseif ( is_the_page_noindex() ) {
       $tag = '<meta name="robots" content="noindex">'.PHP_EOL;
-    } elseif ( is_singular_page_nofollow() ) {
+    } elseif ( is_the_page_nofollow() ) {
       $tag = '<meta name="robots" content="nofollow">'.PHP_EOL;
     }
   }
@@ -271,10 +271,10 @@ endif;
 
 
 //投稿・固定ページのメタキーワードの取得
-if ( !function_exists( 'get_singular_meta_keywores' ) ):
-function get_singular_meta_keywores(){
+if ( !function_exists( 'get_the_meta_keywores' ) ):
+function get_the_meta_keywores(){
   global $post;
-  $keywords = '';//get_meta_keywords_singular_page();
+  $keywords =  get_the_page_meta_keywords();
   if (!$keywords) {
     $categories = get_the_category($post->ID);
     $category_names = array();
@@ -295,7 +295,7 @@ function the_meta_description_tag() {
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
-    $description = get_singular_page_meta_description();
+    $description = get_the_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
   } else {
@@ -318,7 +318,7 @@ function the_meta_keywords_tag() {
   if (is_front_page() && get_front_page_meta_keywords()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
-    $keywords = get_the_description();
+    $keywords = get_the_meta_keywores();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
   } else {
@@ -345,15 +345,15 @@ endif;
 
 
 //サイト概要の取得
-if ( !function_exists( 'get_the_description' ) ):
-function get_the_description(){
+if ( !function_exists( 'get_the_meta_description' ) ):
+function get_the_meta_description(){
   global $post;
 
   //抜粋を取得
   $desc = trim(strip_tags( $post->post_excerpt ));
   //投稿・固定ページにメタディスクリプションが設定してあれば取得
-  if (get_singular_page_meta_description()) {
-    $desc = get_singular_page_meta_description();
+  if (get_the_page_meta_description()) {
+    $desc = get_the_page_meta_description();
   }
   if ( !$desc ) {//投稿で抜粋が設定されていない場合は、110文字の冒頭の抽出分
     $desc = strip_shortcodes(get_the_custom_excerpt( $post->post_content, 150 ));

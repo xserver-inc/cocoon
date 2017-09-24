@@ -62,6 +62,7 @@ require_once 'original-pages/sns-share-funcs.php'; //SNSシェア関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー関数
 require_once 'original-pages/code-funcs.php'; //コード関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
+require_once 'custom-fields/ad-field.php'; //広告のページ設定
 require_once 'seo.php';      //SEO関係の設定
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
