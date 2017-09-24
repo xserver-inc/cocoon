@@ -13,6 +13,31 @@ function get_additional_main_classes($option = null){
 }
 endif;
 
+//メインカラムの追加関数
+if ( !function_exists( 'get_additional_entry_content_classes' ) ):
+function get_additional_entry_content_classes($option = null){
+  $classes = null;
+  //画像の枠線エフェクトが設定されている場合
+  switch (get_image_wrap_effect()) {
+    case 'border':
+      $classes .= ' iwe-border';
+      break;
+    case 'border_bold':
+      $classes .= ' iwe-border-bold';
+      break;
+    case 'shadow':
+      $classes .= ' iwe-shadow';
+      break;
+    default:
+
+      break;
+  }
+
+  $classes .= ' '.trim($option);
+  return $classes;
+}
+endif;
+
 //エントリーカードの追加関数
 if ( !function_exists( 'get_additional_new_entriy_cards_classes' ) ):
 function get_additional_new_entriy_cards_classes($option = null){
@@ -40,7 +65,7 @@ function get_additional_sns_share_button_classes($option = null){
     $value = get_sns_top_share_column_count();
   } else {
     $value = get_sns_share_column_count();
-  }  
+  }
   switch ($value) {
     case 1:
       $classes .= ' ss-col-1';
@@ -67,7 +92,7 @@ function get_additional_sns_share_button_classes($option = null){
     $value = get_sns_top_share_logo_caption_position();
   } else {
     $value = get_sns_share_logo_caption_position();
-  }  
+  }
   switch ($value) {
     case 'high_and_low_lc':
       $classes .= ' ss-high-and-low-lc';
@@ -85,7 +110,7 @@ function get_additional_sns_share_button_classes($option = null){
     $value = get_sns_top_share_button_color();
   } else {
     $value = get_sns_share_button_color();
-  }  
+  }
   switch ($value) {
     case 'brand_color':
       $classes .= ' bc-brand-color';

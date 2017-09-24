@@ -20,7 +20,10 @@
         get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title');
       }; ?>
 
-        <?php get_template_part('tmp/eye-catch');//アイキャッチ挿入機能?>
+        <?php
+        if (is_eyecatch_visible()) {
+          get_template_part('tmp/eye-catch');//アイキャッチ挿入
+        } ?>
 
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
@@ -35,7 +38,7 @@
 
 
 
-      <div class="entry-content cf" itemprop="articleBody">
+      <div class="entry-content cf<?php echo get_additional_entry_content_classes(); ?>" itemprop="articleBody">
       <?php //記事本文の表示
         the_content(); ?>
       </div>

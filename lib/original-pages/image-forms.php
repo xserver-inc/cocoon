@@ -16,7 +16,13 @@
           </th>
           <td>
             <div class="demo">
-
+              <div class="entry-demo<?php echo get_additional_entry_content_classes(); ?>">
+              <?php if (is_eyecatch_visible()): ?>
+                <a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
+                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-300.jpg" alt="デモ画像">
+                </a>
+              <?php endif ?>
+              </div>
             </div>
           </td>
         </tr>
@@ -58,9 +64,9 @@
             <?php
             $options = array(
               'none' => 'なし',
-              'border' => 'ボーダー',
-              'border_bold' => 'ボーダー',
-              'shadow' => 'シャドー',
+              'border' => 'ボーダー（薄い枠線）',
+              'border_bold' => 'ボーダー（薄い太線）',
+              'shadow' => 'シャドー（薄い影）',
             );
             genelate_radiobox_tag(OP_IMAGE_WRAP_EFFECT, $options, get_image_wrap_effect());
             genelate_tips_tag(__( '画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。', THEME_NAME ));

@@ -10,3 +10,20 @@ img{
   height: auto;
 }
 
+/************************************
+** 画像の囲み効果
+************************************/
+/*ボーダー*/
+.iwe-border img{
+  border: 1px solid $basic_border_color;
+}
+
+/*ボーダー（太線）*/
+.iwe-border-bold img{
+  border: 4px solid $current_bgc;
+}
+/*シャドー*/
+.iwe-shadow img{
+  box-shadow: 5px 5px 15px $x_thin;
+}
+
