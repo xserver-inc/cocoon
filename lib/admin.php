@@ -7,9 +7,9 @@ function admin_print_styles_custom() {
   wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
   wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
 
-  global $pagenow;
+  //global $pagenow;
   //var_dump($pagenow);
-  if ($pagenow == 'admin.php') {
+  if (is_admin_php_page()/*$pagenow == 'admin.php'*/) {
     //IcoMoonの呼び出し
     wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
     //タブの読み込み
@@ -27,6 +27,8 @@ function admin_print_styles_custom() {
     wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
     //ソースコードハイライトリソースの読み込み
     wp_enqueue_highlight_js();
+    //画像リンク拡大効果がLightboxのとき
+    wp_enqueue_lightbox();
 
     // ///////////////////////////////////
     // //ソースコードのハイライト表示

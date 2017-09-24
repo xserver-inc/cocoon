@@ -234,6 +234,7 @@
   * 続きはWEBで的な検索ボックス
   ********************************/
   /*メインカランの2カラム化*/
+  @import url(../plugins/lightbox2/dist/css/lightbox.css);
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   /* フォントのサイズ */

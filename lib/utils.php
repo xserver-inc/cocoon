@@ -301,8 +301,8 @@ endif;
 //ソースコードのハイライト表示に必要なリソースの読み込み
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
-  global $pagenow;
-  if ( is_code_highlight_enable() || (is_admin() && $pagenow == 'admin.php') ) {
+  //global $pagenow;
+  if ( is_code_highlight_enable() || is_admin_php_page() ) {
     // if (is_admin()) {
     //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
     // } else {
@@ -320,6 +320,37 @@ function wp_enqueue_highlight_js(){
       })(jQuery);
     ';
     wp_add_inline_script( 'code-highlight-js', $data, 'after' ) ;
+  }
+}
+endif;
+
+// //LightboxプラグインURLの取得
+// if ( !function_exists( 'get_lightbox_css_url' ) ):
+// function get_lightbox_css_url(){
+//   return get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css';
+// }
+// endif;
+
+// //画像ズームエフェクト用のスタイルタグを出力（管理画面用）
+// if ( !function_exists( 'the_zoom_effect_link_tag' ) ):
+// function the_zoom_effect_link_tag(){
+//   if (is_admin_php_page()) {
+//     if (is_lightbox_effect_enable()) {
+//       echo '<link rel="stylesheet" href="'.get_lightbox_css_url().'" type="text/css" />';
+//     }
+//   }
+
+// }
+// endif;
+
+//ソースコードのハイライト表示に必要なリソースの読み込み
+if ( !function_exists( 'wp_enqueue_lightbox' ) ):
+function wp_enqueue_lightbox(){
+ if ( ((is_lightbox_effect_enable() && is_singular()) || is_admin()) ) {
+    //Lightboxスタイルの呼び出し
+    wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
+    //Lightboxスクリプトの呼び出し
+    wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/plugins/lightbox2/dist/js/lightbox.min.js', array( 'jquery' ), false, true  );
   }
 }
 endif;
@@ -401,3 +432,9 @@ function get_image_width_and_height($image_url){
 }
 endif;
 
+if ( !function_exists( 'is_admin_php_page' ) ):
+function is_admin_php_page(){
+  global $pagenow;
+  return $pagenow == 'admin.php';
+}
+endif;

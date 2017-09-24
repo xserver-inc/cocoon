@@ -17,11 +17,19 @@
           <td>
             <div class="demo">
               <div class="entry-demo<?php echo get_additional_entry_content_classes(); ?>">
-              <?php if (is_eyecatch_visible()): ?>
-                <a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
-                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-300.jpg" alt="デモ画像">
-                </a>
+              <?php if (add_lightbox_property( '$content' )): ?>
+
               <?php endif ?>
+              <?php if (is_eyecatch_visible()){
+              $content = '<a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
+                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-300.jpg" alt="デモ画像">
+                </a>';
+                if (is_lightbox_effect_enable()) {
+                  $content = add_lightbox_property( $content );
+                }
+                //the_zoom_effect_link_tag();
+                echo $content;
+              } ?>
               </div>
             </div>
           </td>
