@@ -1,0 +1,51 @@
+{
+  "name": "baguettebox.js",
+  "version": "1.9.0",
+  "author": "feimosi",
+  "description": "Simple and easy to use lightbox script written in pure JavaScript",
+  "license": "MIT",
+  "homepage": "https://github.com/feimosi/baguetteBox.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feimosi/baguetteBox.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feimosi/baguetteBox.js/issues"
+  },
+  "main": "dist/baguetteBox.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "gulp",
+    "lint": "gulp lint",
+    "test": "gulp test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "~2.18.13",
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "~4.0.0",
+    "gulp-bump": "~2.7.0",
+    "gulp-concat": "~2.6.1",
+    "gulp-cssmin": "~0.2.0",
+    "gulp-eslint": "~4.0.0",
+    "gulp-gh-pages": "~0.5.4",
+    "gulp-if": "~2.0.2",
+    "gulp-inject-version": "~1.0.0",
+    "gulp-load-plugins": "~1.5.0",
+    "gulp-rimraf": "~0.2.1",
+    "gulp-sass": "~3.1.0",
+    "gulp-uglify": "~3.0.0",
+    "gulp-usemin": "~0.3.28",
+    "jsonfile": "~4.0.0",
+    "run-sequence": "~2.1.0"
+  },
+  "keywords": [
+    "lightbox",
+    "gallery",
+    "modal",
+    "responsive"
+  ]
+}

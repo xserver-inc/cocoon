@@ -302,7 +302,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
   //global $pagenow;
-  if ( is_code_highlight_enable() || is_admin_php_page() ) {
+  if ( (is_code_highlight_enable() && is_singular()) || is_admin_php_page() ) {
     // if (is_admin()) {
     //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
     // } else {
@@ -346,7 +346,7 @@ endif;
 //Lightboxの読み込み
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
 function wp_enqueue_lightbox(){
- if ( ((is_lightbox_effect_enable() && is_singular()) || is_admin()) ) {
+ if ( ((is_lightbox_effect_enable() && is_singular()) || is_admin_php_page()) ) {
     //Lightboxスタイルの呼び出し
     wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
     //Lightboxスクリプトの呼び出し
@@ -358,7 +358,7 @@ endif;
 //lityの読み込み
 if ( !function_exists( 'wp_enqueue_lity' ) ):
 function wp_enqueue_lity(){
- if ( ((is_lity_effect_enable() && is_singular()) || is_admin()) ) {
+ if ( ((is_lity_effect_enable() && is_singular()) || is_admin_php_page()) ) {
     //lityスタイルの呼び出し
     wp_enqueue_style( 'lity-style', get_template_directory_uri() . '/plugins/lity/dist/lity.min.css' );
     //lityスクリプトの呼び出し
