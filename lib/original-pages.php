@@ -5,22 +5,27 @@
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
     $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
 
-  //広告設定の保存
+  ///////////////////////////////////////
+  // 設定の保存
+  ///////////////////////////////////////
+  //広告
   require_once 'original-pages/ads-posts.php';
-  //タイトル設定の保存
+  //タイトル
   require_once 'original-pages/title-posts.php';
-  //SEO設定の保存
+  //SEO
   require_once 'original-pages/seo-posts.php';
-  //アクセス解析設定の保存
+  //アクセス解析
   require_once 'original-pages/analytics-posts.php';
-  //SNSシェア設定の保存
+  //SNSシェア
   require_once 'original-pages/sns-share-posts.php';
-  //SNSフォロー設定の保存
+  //SNSフォロー
   require_once 'original-pages/sns-follow-posts.php';
-  //ソースコード設定の保存
+  //ソースコード
   require_once 'original-pages/code-posts.php';
-  //画像設定の保存
+  //画像
   require_once 'original-pages/image-posts.php';
+  //OGP
+  require_once 'original-pages/ogp-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -54,8 +59,17 @@ endif;
     <li class="blog-card-in"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
     <li class="blog-card-out"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
-    <li class="amp"><?php _e( '高速化', THEME_NAME ) ?></li>
+    <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
+    <li class="header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
+    <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
+    <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li>
+    <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
+    <li class="content"><?php _e( 'コンテンツ', THEME_NAME ) ?></li>
+    <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
+    <li class="other"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
+    <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
+    <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
@@ -101,7 +115,7 @@ endif;
 
   <!-- OGP -->
   <div class="ogp metabox-holder">
-
+    <?php require_once 'original-pages/ogp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->

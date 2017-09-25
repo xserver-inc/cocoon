@@ -28,7 +28,7 @@ endif;
 define('OP_IMAGE_ZOOM_EFFECT', 'image_zoom_effect');
 if ( !function_exists( 'get_image_zoom_effect' ) ):
 function get_image_zoom_effect(){
-  return get_option(OP_IMAGE_ZOOM_EFFECT, 'none');
+  return get_option(OP_IMAGE_ZOOM_EFFECT, 'baguettebox');
 }
 endif;
 //Lightboxが有効

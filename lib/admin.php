@@ -350,30 +350,28 @@ endif;
 
 
 //デフォルトの抜粋入力欄をビジュアルエディターにする
-
 add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
 if ( !class_exists( 'VisualEditorExcerpt' ) ):
 class VisualEditorExcerpt{
   public static function switch_boxes()
   {
-    if ( ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )
-    {
+    if ( ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )    {
       return;
     }
 
     remove_meta_box(
       'postexcerpt' // ID
-    ,   ''      // Screen, empty to support all post types
-    ,   'normal'    // Context
+    ,   ''      // スクリーン、空だと全ての投稿タイプをサポート
+    ,   'normal'    // コンテキスト
     );
 
     add_meta_box(
       'postexcerpt2'   // Reusing just 'postexcerpt' doesn't work.
-    ,   __( 'Excerpt' )  // Title
-    ,   array ( __CLASS__, 'show' ) // Display function
-    ,   null        // Screen, we use all screens with meta boxes.
-    ,   'normal'      // Context
-    ,   'core'      // Priority
+    ,   __( 'Excerpt' )  // タイトル
+    ,   array ( __CLASS__, 'show' ) // 表示関数
+    ,   null          // スクリーン
+    ,   'normal'      // コンテキスト
+    ,   'core'        // 優先度
     );
   }
 
@@ -385,8 +383,7 @@ class VisualEditorExcerpt{
     _e( 'Excerpt' )
     ?></label>
     <?php
-    // We use the default name, 'excerpt', so we don’t have to care about
-    // saving, other filters etc.
+    //デフォルト名の'excerpt'を使用
     wp_editor(
       self::unescape( $post->post_excerpt ),
       'excerpt',

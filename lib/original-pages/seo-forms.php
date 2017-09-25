@@ -13,7 +13,7 @@
         <!-- headタグに挿入  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_CANONICAL_TAG_ENABLE, __( 'headタグに挿入', THEME_NAME ) ); ?>
+            <?php genelate_label_tag('', __( 'headタグに挿入', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -49,7 +49,7 @@
     <table class="form-table">
       <tbody>
 
-        <!-- headタグに挿入  -->
+        <!-- 検索エンジンに伝える日付  -->
         <tr>
           <th scope="row">
             <?php genelate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '検索エンジンに伝える日付', THEME_NAME ) ); ?>
@@ -58,9 +58,9 @@
 
             <?php
             $options = array(
-              'post_date' => '投稿日',
-              'update_date' => '更新日',
-              'update_date_only' => '更新日のみ表示',
+              'post_date' => __( '投稿日', THEME_NAME ),
+              'update_date' => __( '更新日', THEME_NAME ),
+              'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
             genelate_tips_tag(__( 'timeタグを付加する日付の設定です。', THEME_NAME ));

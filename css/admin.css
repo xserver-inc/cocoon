@@ -247,6 +247,7 @@
   overflow-wrap: break-word;
   overflow: auto;
   resize: both;
+  background-color: #fafbfc;
   padding: 10px;
   border: 2px solid #ddd;
 }
