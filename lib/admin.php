@@ -34,6 +34,12 @@ function admin_print_styles_custom() {
     //画像リンク拡大効果がbaguetteboxのとき
     wp_enqueue_baguettebox();
 
+    //メディアアップローダの javascript API
+    wp_enqueue_media();
+
+    // //作成した javascript
+    // wp_enqueue_script( 'mediauploader' );
+
     // ///////////////////////////////////
     // //ソースコードのハイライト表示
     // ///////////////////////////////////

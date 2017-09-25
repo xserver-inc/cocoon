@@ -11,3 +11,6 @@ update_theme_option(OP_TWITTER_CARD_ENABLE);
 
 //Twitterカードタイプ
 update_theme_option(OP_TWITTER_CARD_TYPE);
+
+//ホームイメージ
+update_theme_option(OP_OGP_HOME_IMAGE_URL);

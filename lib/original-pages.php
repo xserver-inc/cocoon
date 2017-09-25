@@ -69,7 +69,7 @@ endif;
     <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
-    <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
+    <li class="to-top"><?php _e( 'トップに戻る', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 

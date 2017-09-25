@@ -3,7 +3,7 @@
 <?php
 if (is_singular()){//単一記事ページの場合
   if(have_posts()): while(have_posts()): the_post();
-    echo '<meta property="og:description" content="'.get_the_description().'">';echo "\n";//抜粋を表示
+    echo '<meta property="og:description" content="'.get_the_meta_description().'">';echo "\n";//抜粋を表示
   endwhile; endif;
   $title = get_the_title();
   if ( is_front_page() ) {
