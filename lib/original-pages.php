@@ -62,8 +62,7 @@ endif;
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
-    <li class="blog-card-in"><?php _e( 'ブログカード（内部）', THEME_NAME ) ?></li>
-    <li class="blog-card-out"><?php _e( 'ブログカード（外部）', THEME_NAME ) ?></li>
+    <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
@@ -79,6 +78,9 @@ endif;
     <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( '関連記事', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( 'レイアウト', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( '目次', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( '全体', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( 'エントリーカード', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 

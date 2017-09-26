@@ -7,9 +7,9 @@ add_action('admin_menu', 'add_seo_custom_box');
 if ( !function_exists( 'add_seo_custom_box' ) ):
 function add_seo_custom_box(){
   //SEOボックス
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'post', 'normal', 'high' );
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'page', 'normal', 'high' );
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'topic', 'normal', 'high' );
+  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'post', 'normal', 'core' );
+  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'page', 'normal', 'core' );
+  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'topic', 'normal', 'core' );
 }
 endif;
 

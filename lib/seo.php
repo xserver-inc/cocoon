@@ -387,21 +387,30 @@ if ( !function_exists( 'get_the_custom_excerpt' ) ):
 function get_the_custom_excerpt($content, $length = 70) {
   global $post;
   //SEO設定のディスクリプション取得
-  //$description = get_the_meta_description();
+  $description = get_blogcard_snippet_meta_description($post->ID);
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
-    if (class_exists( 'All_in_One_SEO_Pack' )) {
-      $aioseop_description = get_post_meta($post->ID, '_aioseop_description', true);
-      if ($aioseop_description) {
-        $description = $aioseop_description;
-      }
-    }
+    $description = get_the_all_in_one_seo_pack_meta_description();
   }
   //SEO設定のディスクリプションがない場合は「抜粋」を取得
   if (!$description) {
     $description = htmlspecialchars(get_content_excerpt($content, $length));
   }
   return $description;
+}
+endif;
+
+//本文抜粋を取得する関数
+//使用方法：http://nelog.jp/get_the_custom_excerpt
+if ( !function_exists( 'get_the_all_in_one_seo_pack_meta_description' ) ):
+function get_the_all_in_one_seo_pack_meta_description() {
+  global $post;
+  if (class_exists( 'All_in_One_SEO_Pack' )) {
+    $aioseop_description = get_post_meta($post->ID, '_aioseop_description', true);
+    if ($aioseop_description) {
+      return $aioseop_description;
+    }
+  }
 }
 endif;
 

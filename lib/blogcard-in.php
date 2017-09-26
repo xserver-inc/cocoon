@@ -18,16 +18,17 @@ function url_to_internal_blogcard_tag($url){
 
   //メタディスクリプションの取得
   $snipet = get_blogcard_snippet_meta_description($id);
+  //投稿管理画面の抜粋を取得
+  if (!$snipet) {
+    $snipet = $post_data->post_excerpt;
+  }
+  //記事本文の抜粋文を取得
   if (!$snipet) {
     $snipet = get_content_excerpt($post_data->post_content, 150);
   }
 
   //ブログカードのサムネイルを右側に
   $additional_class = get_additional_internal_blogcard_classes();
-  // $additional_class = ' internal-blogcard-thumbnail-left';
-  // if ( is_blog_card_thumbnail_right() ) {
-  //   $additional_class = ' internal-blogcard-thumbnail-right';
-  // }
 
   //新しいタブで開く場合
   $target = is_internal_blogcard_target_blank() ? ' target="_blank"' : '';
@@ -102,8 +103,8 @@ function url_to_internal_blogcard($the_content) {
 }
 endif;
 if ( is_internal_blogcard_enable() ) {
-  add_filter('the_content', 'url_to_internal_blogcard', 9999999);//本文表示をフック
-  add_filter('widget_text', 'url_to_internal_blogcard', 9999999);//テキストウィジェットをフック
+  add_filter('the_content', 'url_to_internal_blogcard', 9999999);
+  add_filter('widget_text', 'url_to_internal_blogcard', 9999999);
   add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 9999999);
   add_filter('widget_classic_text', 'url_to_internal_blogcard', 9999999);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 9999999);
