@@ -2,7 +2,7 @@
 
 <!-- 内部ブログカード設定 -->
 <div id="title-front" class="postbox">
-  <h2 class="hndle"><?php _e( '内部リンクブログカード設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '内部ブログカード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( 'URLやURLリンクをブログカード形式で表示するための設定です。', THEME_NAME ) ?></p>
@@ -16,7 +16,14 @@
           </th>
           <td>
             <div class="demo">
+            <?php
+            $rand_post = get_random_1_post();
+            if ($rand_post) {
+              echo url_to_internal_blogcard_tag(get_the_permalink($rand_post->ID));
+            }
+            genelate_tips_tag(__( 'ランダムで投稿を取得しています。', THEME_NAME ));
 
+            ?>
             </div>
           </td>
         </tr>

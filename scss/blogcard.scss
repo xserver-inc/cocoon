@@ -4,6 +4,7 @@
   margin: 24px auto;
   padding: 0;
   width: 90%;
+  background-color: $bg_white;
 }
 
 .blogcard{
@@ -64,10 +65,10 @@
 }
 
 /************************************
-** ブログカードのサムネイルスタイル
+** 内部ブログカードのサムネイルスタイル
 ************************************/
 
-.bts-right{
+.ib-right{
 
   .blogcard-thumbnail{
     float: right;

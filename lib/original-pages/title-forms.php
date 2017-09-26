@@ -114,7 +114,7 @@
             <?php endif ?>
 
             <?php
-            genelate_tips_tag(__( '投稿ページのランダム表示です。', THEME_NAME ));
+            genelate_tips_tag(__( 'ランダムで投稿を取得しています。', THEME_NAME ));
             genelate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>

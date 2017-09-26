@@ -23,7 +23,7 @@ function url_to_internal_blogcard_tag($url){
   }
 
   //ブログカードのサムネイルを右側に
-  $additional_class = get_additional_blogcard_classes();
+  $additional_class = get_additional_internal_blogcard_classes();
   // $additional_class = ' internal-blogcard-thumbnail-left';
   // if ( is_blog_card_thumbnail_right() ) {
   //   $additional_class = ' internal-blogcard-thumbnail-right';
@@ -49,7 +49,7 @@ function url_to_internal_blogcard_tag($url){
   //サムネイルの取得（要160×90のサムネイル設定）
   $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
   if ( !$thumbnail ) {//サムネイルが存在しない場合
-    $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image"'.get_noimage_sizes_attr($no_image).' />';
+    $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成
