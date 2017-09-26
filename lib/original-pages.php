@@ -26,6 +26,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/image-posts.php';
   //OGP
   require_once 'original-pages/ogp-posts.php';
+  //内部ブログカード
+  require_once 'original-pages/blogcard-in-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -38,6 +40,10 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 </div>
 <?php
 endif;
+
+///////////////////////////////////////
+// 入力フォーム
+///////////////////////////////////////
 ?>
 <div class="wrap">
 <h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
@@ -70,6 +76,9 @@ endif;
     <li class="other"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="to-top"><?php _e( 'トップに戻る', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( '関連記事', THEME_NAME ) ?></li>
+    <li class="heading"><?php _e( 'レイアウト', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
@@ -116,6 +125,11 @@ endif;
   <!-- OGP -->
   <div class="ogp metabox-holder">
     <?php require_once 'original-pages/ogp-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 内部ブログカード -->
+  <div class="blog-card-in metabox-holder">
+    <?php require_once 'original-pages/blogcard-in-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->

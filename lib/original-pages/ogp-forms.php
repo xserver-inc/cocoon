@@ -86,7 +86,7 @@
               'summary' => __( 'サマリー（summary）', THEME_NAME ),
               'summary_large_image' => __( '大きな画像のサマリー（summary_large_image）', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_TWITTER_CARD_TYPE, $options, get_seo_date_type());
+            genelate_radiobox_tag(OP_TWITTER_CARD_TYPE, $options, get_twitter_card_type());
             genelate_tips_tag(__( 'Twitterカードの表示形式の設定です。', THEME_NAME ).'<a href="https://dev.twitter.com/ja/cards/types" target="_blank">'.__( 'カードタイプ', THEME_NAME ).'</a>');
             ?>
           </td>
