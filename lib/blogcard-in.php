@@ -17,7 +17,7 @@ function url_to_internal_blogcard_tag($url){
   $title = $post_data->post_title;//タイトルの取得
 
   //メタディスクリプションの取得
-  $snipet = get_blogcard_snippet_meta_description($id);
+  $snipet = get_the_page_meta_description($id);
   //投稿管理画面の抜粋を取得
   if (!$snipet) {
     $snipet = $post_data->post_excerpt;

@@ -387,7 +387,7 @@ if ( !function_exists( 'get_the_custom_excerpt' ) ):
 function get_the_custom_excerpt($content, $length = 70) {
   global $post;
   //SEO設定のディスクリプション取得
-  $description = get_blogcard_snippet_meta_description($post->ID);
+  $description = get_the_page_meta_description($post->ID);
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
     $description = get_the_all_in_one_seo_pack_meta_description();
@@ -414,7 +414,3 @@ function get_the_all_in_one_seo_pack_meta_description() {
 }
 endif;
 
-// //メタディスクリプションを取得
-// function get_blogcard_snippet_meta_description($id){
-//   return trim(get_post_meta($id, 'the_page_meta_description', true));
-// }

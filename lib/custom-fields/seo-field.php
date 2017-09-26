@@ -161,16 +161,11 @@ endif;
 
 //メタディスクリプションを取得
 if ( !function_exists( 'get_the_page_meta_description' ) ):
-function get_the_page_meta_description(){
-  return trim(get_post_meta(get_the_ID(), 'the_page_meta_description', true));
+function get_the_page_meta_description($id = null){
+  $the_id = $id ? $id : get_the_ID();
+  return trim(get_post_meta($the_id, 'the_page_meta_description', true));
 }
 endif;
-
-
-//メタディスクリプションを取得
-function get_blogcard_snippet_meta_description($id){
-  return trim(get_post_meta($id, 'the_page_meta_description', true));
-}
 
 //メタキーワードを取得
 if ( !function_exists( 'get_the_page_meta_keywords' ) ):
