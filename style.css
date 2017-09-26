@@ -647,6 +647,7 @@ blockquote::after {
   margin: 24px auto;
   padding: 0;
   width: 90%;
+  background-color: #fff;
 }
 
 .blogcard {
@@ -700,12 +701,12 @@ blockquote::after {
 }
 
 /************************************
-** ブログカードのサムネイルスタイル
+** 内部ブログカードのサムネイルスタイル
 ************************************/
-.bts-right .blogcard-thumbnail {
+.ib-right .blogcard-thumbnail {
   float: right;
 }
-.bts-right .blogcard-content {
+.ib-right .blogcard-content {
   margin-left: 0;
   margin-right: 170px;
 }

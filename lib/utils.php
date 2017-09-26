@@ -289,7 +289,6 @@ function wp_enqueue_baguettebox(){
 endif;
 
 
-
 //投稿を1つランダム取得
 if ( !function_exists( 'get_random_1_post' ) ):
 function get_random_1_post(){
@@ -299,6 +298,18 @@ function get_random_1_post(){
   }
 }
 endif;
+
+
+//最新の投稿を取得
+if ( !function_exists( 'get_latest_1_post' ) ):
+function get_latest_1_post(){
+  $posts = get_posts('numberposts=1');
+  foreach( $posts as $post ) {
+    return $post;
+  }
+}
+endif;
+
 
 
 //更新日の取得（更新日がない場合はnullを返す）
