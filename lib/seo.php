@@ -332,6 +332,20 @@ function the_meta_keywords_tag() {
 }
 endif;
 
+
+//タグメタディスクリプション用の説明文を取得
+if ( !function_exists( 'get_tag_meta_description' ) ):
+function get_tag_meta_description(){
+  $tag_desc = trim( strip_tags( tag_description() ) );
+  if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
+    return htmlspecialchars($tag_desc);
+  }
+  $tag_desc = sprintf( __( '「%s」の記事一覧です。', 'simplicity2' ), single_cat_title('', false) );
+  return htmlspecialchars($tag_desc);
+}
+endif;
+
+
 //json-ldタグを出力する
 add_action( 'wp_head', 'the_json_ld_tag' );
 if ( !function_exists( 'the_json_ld_tag' ) ):

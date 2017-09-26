@@ -372,3 +372,12 @@ function is_admin_php_page(){
   return $pagenow == 'admin.php';
 }
 endif;
+
+
+
+//サイトのドメインを取得
+function get_the_site_domain(){
+  // //ドメイン情報を$results[1]に取得する
+  preg_match( '/https?:\/\/(.+?)\//i', admin_url(), $results );
+  return $results[1];
+}

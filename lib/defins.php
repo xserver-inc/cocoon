@@ -49,10 +49,11 @@ define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-aweso
 
 
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
-require_once 'settings.php'; //Wordpressの設定
-require_once 'utils.php'; //ユーティリティー関数
+require_once 'settings.php';   //Wordpressの設定
+require_once 'utils.php';      //ユーティリティー関数
 require_once 'html-forms.php'; //HTMLフォーム生成関数
-require_once 'ad.php';      //広告関係の設定
+require_once 'ad.php';         //広告関係の設定
+require_once 'sns.php';        //SNS関係の設定
 require_once 'sns-share.php';  //SNSシェア関数
 require_once 'sns-follow.php'; //SNSフォロー関数
 require_once 'original-pages/ads-funcs.php';        //広告設定関数
@@ -67,6 +68,7 @@ require_once 'original-pages/ogp-funcs.php';        //OGP設定関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'seo.php';      //SEO関係の設定
+require_once 'ogp.php';      //OGP関係の設定
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'image.php';   //画像関係の設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
