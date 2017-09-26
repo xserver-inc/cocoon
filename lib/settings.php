@@ -83,3 +83,14 @@ remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 //Wordpress3.5で廃止されたリンクマネージャを表示する
 add_filter('pre_option_link_manager_enabled','__return_true');
+
+//はてな oEmbed対応
+wp_oembed_add_provider('https://*', 'https://hatenablog.com/oembed');
+//oembed無効
+add_filter( 'embed_oembed_discover', '__return_false' );
+//Embeds
+remove_action( 'parse_query', 'wp_oembed_parse_query' );
+remove_action( 'wp_head', 'wp_oembed_remove_discovery_links' );
+remove_action( 'wp_head', 'wp_oembed_remove_host_js' );
+//本文中のURLが内部リンクの場合にWordpressがoembedをしてしまうのを解除(WP4.5.3向けの対策)
+remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result' );

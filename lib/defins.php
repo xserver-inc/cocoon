@@ -68,8 +68,9 @@ require_once 'original-pages/ogp-funcs.php';        //OGP設定関数
 require_once 'original-pages/blogcard-in-funcs.php'; //OGP設定関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
-require_once 'seo.php';      //SEO関係の設定
-require_once 'ogp.php';      //OGP関係の設定
+require_once 'seo.php';      //SEO関数
+require_once 'ogp.php';      //OGP関数
+require_once 'blogcard-in.php';      //内部ブログカード関数
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'image.php';   //画像関係の設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
