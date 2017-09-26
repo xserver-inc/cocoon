@@ -2264,3 +2264,8 @@ form.admin-settings {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
+.uploded-thumbnail img {
+  max-width: 400px;
+  height: auto;
+}

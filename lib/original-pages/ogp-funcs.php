@@ -37,7 +37,7 @@ endif;
 define('OP_OGP_HOME_IMAGE_URL', 'ogp_home_image_url');
 if ( !function_exists( 'get_ogp_home_image_url' ) ):
 function get_ogp_home_image_url(){
-  return get_option(OP_OGP_HOME_IMAGE_URL, 'summary');
+  return get_option(OP_OGP_HOME_IMAGE_URL, get_template_directory_uri().'/screenshot.jpg');
 }
 endif;
 

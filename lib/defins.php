@@ -51,6 +51,7 @@ define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-aweso
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 require_once 'settings.php'; //Wordpressの設定
 require_once 'utils.php'; //ユーティリティー関数
+require_once 'html-forms.php'; //HTMLフォーム生成関数
 require_once 'ad.php';      //広告関係の設定
 require_once 'sns-share.php';  //SNSシェア関数
 require_once 'sns-follow.php'; //SNSフォロー関数

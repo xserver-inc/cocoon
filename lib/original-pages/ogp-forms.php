@@ -115,85 +115,14 @@
         <!-- Twitterカードの有効化 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TWITTER_CARD_ENABLE, __( '画像のアップロード', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_OGP_HOME_IMAGE_URL, __( '画像のアップロード', THEME_NAME ) ); ?>
           </th>
           <td>
 
+          <?php
+            genelate_upload_image(OP_OGP_HOME_IMAGE_URL, get_ogp_home_image_url());
+           ?>
 
-<input name="mediaid" type="text" value="" />
-<input type="button" name="media" value="<?php _e( '選択', THEME_NAME ) ?>" />
-<input type="button" name="media-clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
-<div id="media" class="uploded-thumbnail"></div>
-
-
-<script type="text/javascript">
-(function ($) {
-
-    var custom_uploader;
-
-    $("input:button[name=media]").click(function(e) {
-
-        e.preventDefault();
-
-        if (custom_uploader) {
-
-            custom_uploader.open();
-            return;
-
-        }
-
-        custom_uploader = wp.media({
-
-            title: "Choose Image",
-
-            /* ライブラリの一覧は画像のみにする */
-            library: {
-                type: "image"
-            },
-
-            button: {
-                text: "<?php _e( '画像の選択', THEME_NAME ) ?>"
-            },
-
-            /* 選択できる画像は 1 つだけにする */
-            multiple: false
-
-        });
-
-        custom_uploader.on("select", function() {
-
-            var images = custom_uploader.state().get("selection");
-
-            /* file の中に選択された画像の各種情報が入っている */
-            images.each(function(file){
-
-                /* テキストフォームと表示されたサムネイル画像があればクリア */
-                $("input:text[name=mediaid]").val("");
-                $("#media").empty();
-
-                /* テキストフォームに画像の URL を表示 */
-                $("input:text[name=mediaid]").val(file.attributes.sizes.full.url);
-
-                /* プレビュー用に選択されたサムネイル画像を表示 */
-                $("#media").append('<img src="'+file.attributes.sizes.full.url+'" />');
-
-            });
-        });
-
-        custom_uploader.open();
-
-    });
-
-    /* クリアボタンを押した時の処理 */
-    $("input:button[name=media-clear]").click(function() {
-
-        $("input:text[name=mediaid]").val("");
-        $("#media").empty();
-
-    });
-
-})(jQuery);
-</script>
           </td>
         </tr>
 
