@@ -15,7 +15,8 @@
       <?php the_title(); //記事のタイトル?>
     </h3>
     <div class="related-entry-card-snippet card-snippet">
-   <?php echo get_content_excerpt( $post->post_content, 100 ); //カスタマイズで指定した文字の長さだけ本文抜粋?></div>
+      <?php echo get_the_custom_excerpt( get_the_content(), 150 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+    </div>
 
     <div class="related-entry-card-meta card-meta">
       <div class="related-entry-card-day"><span class="post-date"><?php the_time('Y.m.d'); ?></span></div>

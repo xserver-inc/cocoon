@@ -17,14 +17,6 @@
   font-size: 18px;
 }
 
-.entry-card-thumb{
-  width: 38%;
-}
-
-.entry-card-content{
-  margin-left: 40%;
-}
-
 .entry-card-meta,
 .related-entry-card-meta{
   //position: relative;
@@ -36,4 +28,22 @@ table{
     padding: 3px;
     font-size: $text_size_s;
   }
+}
+
+.blogcard-wrap{
+  width: 100%;
+}
+
+.blogcard{
+  //font-size: 0.9em;
+}
+
+.blogcard-thumbnail{
+  width: 23%;
+}
+
+.blogcard-content{
+  width: 76%;
+  margin-left: 24%;
+  max-height: 90px;
 }
