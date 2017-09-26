@@ -2,23 +2,41 @@
   display: block;
 }
 
-.main,
-.sidebar,
+// .main,
+// .sidebar,
 .wrap{
   width: auto;
 }
 
 .main,
 .sidebar{
-  margin: 10px;
-  float: none;
+  margin: 0 10px;
+  //float: none;
 }
+
+.main{
+  width: 66%;
+}
+
 
 .sidebar{
   margin-top: 1em;
-  padding: 20px $main_padding_width;
+  padding: 0px 10px;
+  width: 30%;
+  margin: 0 10px;
 }
 
-// .ad-sidebar-top{
-//   display: none;
+
+.entry-card-thumb{
+  width: 38%;
+}
+
+.entry-card-content{
+  margin-left: 40%;
+}
+
+
+// .main,
+// .wrap{
+//   width: auto;
 // }

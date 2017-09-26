@@ -48,7 +48,7 @@ function url_to_internal_blogcard_tag($url){
   $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
 
   //サムネイルの取得（要160×90のサムネイル設定）
-  $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
+  $thumbnail = get_the_post_thumbnail($id, array(160, 90), array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
   if ( !$thumbnail ) {//サムネイルが存在しない場合
     $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
   }
@@ -57,7 +57,7 @@ function url_to_internal_blogcard_tag($url){
   $tag =
   '<a href="'.$url.'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
     '<div class="blogcard internal-blogcard cf'.$additional_class.'">'.
-      '<div class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</div>'.
+      '<figure class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content internal-blogcard-content">'.
         '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.
         '<div class="blogcard-snipet internal-blogcard-snipet">'.$snipet.'</div>'.
