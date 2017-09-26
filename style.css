@@ -172,17 +172,17 @@ img {
 ** 画像の囲み効果
 ************************************/
 /*ボーダー*/
-.iwe-border img {
+.iwe-border img:not(.blogcard-thumb-image) {
   border: 1px solid #cccfd2;
 }
 
 /*ボーダー（太線）*/
-.iwe-border-bold img {
+.iwe-border-bold img:not(.blogcard-thumb-image) {
   border: 4px solid #eeeff0;
 }
 
 /*シャドー*/
-.iwe-shadow img {
+.iwe-shadow img:not(.blogcard-thumb-image) {
   box-shadow: 5px 5px 15px #dddedf;
 }
 
@@ -643,15 +643,71 @@ blockquote::after {
   padding-right: 0;
 }
 
-.internal-blogcard-wrap {
+.blogcard-wrap {
   margin: 24px auto;
   padding: 0;
   width: 90%;
 }
 
 .blogcard {
-  padding: 12px;
+  padding: 8px 12px;
   border: 1px solid #cccfd2;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+.blogcard-thumbnail {
+  float: left;
+  margin-top: 4px;
+}
+
+.blogcard-content {
+  margin-left: 170px;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.blogcard-title {
+  font-weight: bold;
+}
+
+.blogcard-snipet {
+  font-size: 0.8em;
+}
+
+.blogcard-footer {
+  clear: both;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.blogcard-site {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.blogcard-date {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.blogcard-favicon {
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+/************************************
+** ブログカードのサムネイルスタイル
+************************************/
+.bts-right .blogcard-thumbnail {
+  float: right;
+}
+.bts-right .blogcard-content {
+  margin-left: 0;
+  margin-right: 170px;
 }
 
 /************************************

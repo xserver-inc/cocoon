@@ -17,46 +17,53 @@ function url_to_internal_blogcard_tag($url){
   $title = $post_data->post_title;//タイトルの取得
 
   //メタディスクリプションの取得
-  $snipet = get_the_meta_description();
+  $snipet = get_blogcard_snippet_meta_description($id);
+  if (!$snipet) {
+    $snipet = get_content_excerpt($post_data->post_content, 150);
+  }
 
   //ブログカードのサムネイルを右側に
-  $thumbnail_class = null;
-  // $thumbnail_class = ' internal-blogcard-thumbnail-left';
+  $additional_class = get_additional_blogcard_classes();
+  // $additional_class = ' internal-blogcard-thumbnail-left';
   // if ( is_blog_card_thumbnail_right() ) {
-  //   $thumbnail_class = ' internal-blogcard-thumbnail-right';
+  //   $additional_class = ' internal-blogcard-thumbnail-right';
   // }
 
   //新しいタブで開く場合
   $target = is_internal_blogcard_target_blank() ? ' target="_blank"' : '';
 
   //ファビコン
-  $favicon_tag = '<span class="internal-blogcard-favicon"><img src="//www.google.com/s2/favicons?domain='.get_the_site_domain().'" class="internal-blogcard-favicon-img" alt="" width="16" height="16" /></span>';
+  $favicon_tag =
+  '<div class="blogcard-favicon internal-blogcard-favicon">'.
+    '<img src="//www.google.com/s2/favicons?domain='.get_the_site_domain().'" class="blogcard-favicon-image internal-blogcard-favicon-image" alt="" width="16" height="16" />'.
+  '</div>';
 
   //サイトロゴ
-  $site_logo_tag = '<span class="internal-blogcard-domain">'.get_the_site_domain().'</span>';
-  $site_logo_tag = '<div class="internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
+  $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.get_the_site_domain().'</div>';
+  $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
 
-  $date = mysql2date('Y.m.d', $post_data->post_date);//投稿日の取得
-  $date_tag = '<div class="internal-blogcard-date">'.$date.'</div>';
+  $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.mysql2date('Y.m.d', $post_data->post_date).'</div>';//投稿日の取得
+  $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
 
   //サムネイルの取得（要160×90のサムネイル設定）
-  $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'internal-blogcard-thumb-image', 'alt' => ''));
+  $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
   if ( !$thumbnail ) {//サムネイルが存在しない場合
-    $thumbnail = '<img src="'.$no_image.'" alt="" class="internal-blogcard-thumb-image"'.get_noimage_sizes_attr($no_image).' />';
+    $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image"'.get_noimage_sizes_attr($no_image).' />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成
   $tag =
-  '<a href="'.$url.'" class="internal-blogcard-wrap a-wrap cf"'.$target.'>'.
-    '<div class="blogcard internal-blogcard'.$thumbnail_class.$wide_class.'">'.
-      '<div class="internal-blogcard-thumbnail">'.$thumbnail.'</div>'.
-      '<div class="internal-blogcard-content">'.
-        '<div class="internal-blogcard-title">'.$title.'</div>'.
-        '<div class="internal-blogcard-snipet">'.$snipet.'</div>'.
-        '<div class="internal-blogcard-footer">'.
-          $site_logo_tag.$hatebu_tag.$date_tag.
-        '</div>'.
+  '<a href="'.$url.'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
+    '<div class="blogcard internal-blogcard cf'.$additional_class.'">'.
+      '<div class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</div>'.
+      '<div class="blogcard-content internal-blogcard-content">'.
+        '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.
+        '<div class="blogcard-snipet internal-blogcard-snipet">'.$snipet.'</div>'.
+
+      '</div>'.
+      '<div class="blogcard-footer internal-blogcard-footer cf">'.
+        $site_logo_tag.$date_tag.
       '</div>'.
     '</div>'.
   '</a>';

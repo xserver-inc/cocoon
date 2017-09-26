@@ -8,9 +8,11 @@ function get_additional_main_classes($option = null){
   if (!is_active_sidebar( 'sidebar' )) {
     $classes .= ' no-sidebar';
   }
-  return $classes;
-  $classes .= ' '.trim($option);
-}
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;}
 endif;
 
 //メインカラムの追加関数
@@ -33,7 +35,9 @@ function get_additional_entry_content_classes($option = null){
       break;
   }
 
-  $classes .= ' '.trim($option);
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
   return $classes;
 }
 endif;
@@ -51,7 +55,10 @@ function get_additional_new_entriy_cards_classes($option = null){
       $classes .= ' large-thumb-on';
     }
   }
-  $classes .= ' '.trim($option);
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
   return $classes;
 }
 endif;
@@ -123,7 +130,9 @@ function get_additional_sns_share_button_classes($option = null){
       break;
   }
 
-  $classes .= ' '.trim($option);
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
   return $classes;
 }
 endif;
@@ -146,7 +155,31 @@ function get_additional_sns_follow_button_classes($option = null){
       break;
   }
 
-  $classes .= ' '.trim($option);
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+//SNSフォローボタンのclass追加関数
+if ( !function_exists( 'get_additional_blogcard_classes' ) ):
+function get_additional_blogcard_classes($option = null){
+  $classes = null;
+
+  //ボタンカラー
+  switch (get_internal_blogcard_thumbnail_style()) {
+    case 'right':
+      $classes .= ' bts-right';
+      break;
+    default: //left
+      $classes .= ' bts-left';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
   return $classes;
 }
 endif;

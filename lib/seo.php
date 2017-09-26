@@ -369,6 +369,7 @@ function get_the_meta_description(){
   if (get_the_page_meta_description()) {
     $desc = get_the_page_meta_description();
   }
+
   if ( !$desc ) {//投稿で抜粋が設定されていない場合は、110文字の冒頭の抽出分
     $desc = strip_shortcodes(get_the_custom_excerpt( $post->post_content, 150 ));
     $desc = mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags($desc)), 0, 120);
@@ -383,10 +384,10 @@ endif;
 //本文抜粋を取得する関数
 //使用方法：http://nelog.jp/get_the_custom_excerpt
 if ( !function_exists( 'get_the_custom_excerpt' ) ):
-function get_the_custom_excerpt($content, $length = 70, $is_card = false) {
+function get_the_custom_excerpt($content, $length = 70) {
   global $post;
   //SEO設定のディスクリプション取得
-  $description = get_blogcard_snippet_meta_description($post->ID);
+  //$description = get_the_meta_description();
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
     if (class_exists( 'All_in_One_SEO_Pack' )) {
@@ -397,6 +398,14 @@ function get_the_custom_excerpt($content, $length = 70, $is_card = false) {
     }
   }
   //SEO設定のディスクリプションがない場合は「抜粋」を取得
-  return htmlspecialchars(get_content_excerpt($content, $length));
+  if (!$description) {
+    $description = htmlspecialchars(get_content_excerpt($content, $length));
+  }
+  return $description;
 }
 endif;
+
+// //メタディスクリプションを取得
+// function get_blogcard_snippet_meta_description($id){
+//   return trim(get_post_meta($id, 'the_page_meta_description', true));
+// }
