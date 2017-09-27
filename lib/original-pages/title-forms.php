@@ -226,8 +226,8 @@
             <?php
             $options = array(
               'category_only' => __( 'ページタイトル', THEME_NAME ),
-              'category_sitename' => _( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
-              'sitename_category' => __( 'サイト名', THEME_NAME ).get_title_separator_caption()._( 'ページタイトル', THEME_NAME ),
+              'category_sitename' => __( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
+              'sitename_category' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
             genelate_tips_tag(__( 'カテゴリーページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
