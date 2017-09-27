@@ -29,7 +29,7 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD', 'external_blogcard_cache_retention_period');
 if ( !function_exists( 'get_external_blogcard_cache_retention_period' ) ):
 function get_external_blogcard_cache_retention_period(){
-  return get_option(OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE, 30);
+  return get_option(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, 30);
 }
 endif;
 
@@ -37,6 +37,6 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_REFRESH_MODE', 'external_blogcard_refresh_mode');
 if ( !function_exists( 'is_external_blogcard_refresh_mode' ) ):
 function is_external_blogcard_refresh_mode(){
-  return get_option(OP_EXTERNAL_BLOGCARD_REFRESH_MODE, 1);
+  return get_option(OP_EXTERNAL_BLOGCARD_REFRESH_MODE);
 }
 endif;

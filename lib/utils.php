@@ -182,6 +182,9 @@ endif;
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
   $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : null;
+  // if (OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD == $option_name) {
+  //   var_dump($opt_val);
+  // }
   update_option($option_name, $opt_val);
 }
 endif;

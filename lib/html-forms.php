@@ -105,6 +105,16 @@ function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
 endif;
 
 
+
+//テキストボックスの生成
+if ( !function_exists( 'genelate_number_tag' ) ):
+function genelate_number_tag($name, $value, $min = 1, $max = 100){?>
+  <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>">
+  <?php
+}
+endif;
+
+
 //画像をアップロードボックス生成
 if ( !function_exists( 'genelate_upload_image_tag' ) ):
 function genelate_upload_image_tag($name, $value){?>

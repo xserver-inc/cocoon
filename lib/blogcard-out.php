@@ -163,7 +163,7 @@ function url_to_external_ogp_blogcard_tag($url){
     }
 
     set_transient( $url_hash, $ogp,
-                   60 * 60 * 24 * get_external_blogcard_cache_retention_period() );
+                   60 * 60 * 24 * intval(get_external_blogcard_cache_retention_period()) );
 
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない
@@ -226,7 +226,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $tag =
   '<a href="'.$url.'" class="blogcard-wrap external-blogcard-wrap a-wrap cf"'.$target.$nofollow.'>'.
     '<div class="blogcard external-blogcard'.$thumbnail_class.' cf">'.
-      '<div class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</div>'.
+      '<figure class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content external-blogcard-content">'.
         '<div class="blogcard-title external-blogcard-title">'.$title.'</div>'.
         '<div class="blogcard-snipet external-blogcard-snipet">'.$snipet.'</div>'.

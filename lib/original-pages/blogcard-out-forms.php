@@ -77,6 +77,33 @@
           </td>
         </tr>
 
+
+        <!-- キャッシュの保存期間 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, __( 'キャッシュの保存期間', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_number_tag(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, get_external_blogcard_cache_retention_period(), 1, 365);
+            genelate_tips_tag(__( 'ブログカードキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!--  キャッシュの更新 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_EXTERNAL_BLOGCARD_REFRESH_MODE, __( 'キャッシュの更新', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_EXTERNAL_BLOGCARD_REFRESH_MODE, is_external_blogcard_refresh_mode(), __( 'キャッシュ更新モードを有効にする', THEME_NAME ));
+            genelate_tips_tag(__( 'キャッシュ更新モードを有効にした状態でページを開くと、ページ上の外部ブログカードキャッシュを新たに取得します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
