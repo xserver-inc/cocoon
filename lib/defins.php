@@ -65,7 +65,8 @@ require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー設定関�
 require_once 'original-pages/code-funcs.php';       //コード設定関数
 require_once 'original-pages/image-funcs.php';      //画像設定関数
 require_once 'original-pages/ogp-funcs.php';        //OGP設定関数
-require_once 'original-pages/blogcard-in-funcs.php'; //OGP設定関数
+require_once 'original-pages/blogcard-in-funcs.php';  //内部ブログカード設定関数
+require_once 'original-pages/blogcard-out-funcs.php'; //外部ブログカード設定関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'seo.php';      //SEO関数

@@ -106,8 +106,8 @@ endif;
 
 
 //画像をアップロードボックス生成
-if ( !function_exists( 'genelate_upload_image' ) ):
-  function genelate_upload_image($name, $value){?>
+if ( !function_exists( 'genelate_upload_image_tag' ) ):
+function genelate_upload_image_tag($name, $value){?>
   <input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>" />
   <input type="button" name="<?php echo $name; ?>_slect" value="<?php _e( '選択', THEME_NAME ) ?>" />
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />

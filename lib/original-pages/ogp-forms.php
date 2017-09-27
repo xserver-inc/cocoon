@@ -120,7 +120,7 @@
           <td>
 
           <?php
-            genelate_upload_image(OP_OGP_HOME_IMAGE_URL, get_ogp_home_image_url());
+            genelate_upload_image_tag(OP_OGP_HOME_IMAGE_URL, get_ogp_home_image_url());
            ?>
 
           </td>

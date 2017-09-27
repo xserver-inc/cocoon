@@ -28,6 +28,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/ogp-posts.php';
   //内部ブログカード
   require_once 'original-pages/blogcard-in-posts.php';
+  //外部ブログカード
+  require_once 'original-pages/blogcard-out-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -129,9 +131,10 @@ endif;
     <?php require_once 'original-pages/ogp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- 内部ブログカード -->
+  <!-- 内部・外部ブログカード -->
   <div class="blog-card-in metabox-holder">
     <?php require_once 'original-pages/blogcard-in-forms.php'; ?>
+    <?php require_once 'original-pages/blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->
