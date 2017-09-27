@@ -24,3 +24,19 @@ function is_external_blogcard_target_blank(){
   return get_option(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, 1);
 }
 endif;
+
+//外部ブログカードキャッシュの保存期間
+define('OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD', 'external_blogcard_cache_retention_period');
+if ( !function_exists( 'get_external_blogcard_cache_retention_period' ) ):
+function get_external_blogcard_cache_retention_period(){
+  return get_option(OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE, 30);
+}
+endif;
+
+//外部ブログカードがリフレッシュモードか
+define('OP_EXTERNAL_BLOGCARD_REFRESH_MODE', 'external_blogcard_refresh_mode');
+if ( !function_exists( 'is_external_blogcard_refresh_mode' ) ):
+function is_external_blogcard_refresh_mode(){
+  return get_option(OP_EXTERNAL_BLOGCARD_REFRESH_MODE, 1);
+}
+endif;

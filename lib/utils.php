@@ -387,8 +387,62 @@ endif;
 
 
 //サイトのドメインを取得
+if ( !function_exists( 'get_the_site_domain' ) ):
 function get_the_site_domain(){
   // //ドメイン情報を$results[1]に取得する
   preg_match( '/https?:\/\/(.+?)\//i', admin_url(), $results );
   return $results[1];
 }
+endif;
+
+
+
+//URLからドメインを取得
+if ( !function_exists( 'get_domain_name' ) ):
+function get_domain_name($url){
+  return parse_url($url, PHP_URL_HOST);
+}
+endif;
+
+
+//拡張子のみを取得する
+if ( !function_exists( 'get_extention' ) ):
+function get_extention($filename){
+  return preg_replace('/^.*\.([^.]+)$/D', '$1', $filename);
+}
+endif;
+
+
+//ファイル名のみを取得する
+if ( !function_exists( 'get_basename' ) ):
+function get_basename($filename){
+  $p = pathinfo($filename);
+  return basename ( $filename, ".{$p['extension']}" );
+}
+endif;
+
+//bbPressのページかどうか
+if ( !function_exists( 'is_bbpress_page' ) ):
+function is_bbpress_page(){
+  if (function_exists('bbp_is_topic')) {
+    if (bbp_is_topic() ||
+        bbp_is_forum() ||
+        bbp_is_forum_archive() ||
+        bbp_is_single_forum() ||
+        bbp_is_forum_edit() ||
+        bbp_is_single_topic() ||
+        bbp_is_topic_archive() ||
+        bbp_is_topic_edit() ||
+        bbp_is_topic_tag() ||
+        bbp_is_topic_tag_edit() ||
+        bbp_is_reply()||
+        bbp_is_reply_edit() ||
+        bbp_is_single_reply() ||
+        bbp_is_favorites() ||
+        bbp_is_subscriptions()) {
+      return true;
+    }
+  }
+}
+endif;
+

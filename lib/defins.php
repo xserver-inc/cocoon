@@ -56,6 +56,8 @@ require_once 'ad.php';         //広告関係の設定
 require_once 'sns.php';        //SNS関係の設定
 require_once 'sns-share.php';  //SNSシェア関数
 require_once 'sns-follow.php'; //SNSフォロー関数
+require_once 'open-graph.php'; //OGP取得ライブラリ
+require_once 'punycode.php'; //ピュニコードライブラリ
 require_once 'original-pages/ads-funcs.php';        //広告設定関数
 require_once 'original-pages/title-funcs.php';      //タイトル設定関数
 require_once 'original-pages/seo-funcs.php';        //SEO設定関数
@@ -71,7 +73,8 @@ require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'seo.php';      //SEO関数
 require_once 'ogp.php';      //OGP関数
-require_once 'blogcard-in.php';      //内部ブログカード関数
+require_once 'blogcard-in.php';  //内部ブログカード関数
+require_once 'blogcard-out.php'; //外部ブログカード関数
 require_once 'scripts.php'; //スクリプト関係の関数
 require_once 'image.php';   //画像関係の設定
 require_once 'widget-areas.php'; //ウィジェットエリアの指定
