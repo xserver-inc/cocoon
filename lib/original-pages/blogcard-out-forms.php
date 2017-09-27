@@ -17,15 +17,13 @@
           <td>
             <div class="demo">
             <?php
-            $rand_post = get_random_1_post();
-            if ($rand_post) {
-              // if (is_external_blogcard_enable()) {
-              //   echo url_to_external_blogcard_tag(get_the_permalink($rand_post->ID));
-              // } else {
-              //   echo '<a href="'.get_the_permalink($rand_post->ID).'">'.get_the_permalink($rand_post->ID).'</a>';
-              // }
+            $url = 'https://wp-simplicity.com/';
+            if (is_external_blogcard_enable()) {
+              echo url_to_external_ogp_blogcard_tag($url);
+            } else {
+              echo '<a href="'.$url.'">'.$url.'</a>';
             }
-            genelate_tips_tag(__( 'ランダムで投稿を取得しています。', THEME_NAME ));
+            genelate_tips_tag(__( '外部リンクのブログカードです。', THEME_NAME ));
 
             ?>
             </div>
