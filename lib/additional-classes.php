@@ -162,7 +162,7 @@ function get_additional_sns_follow_button_classes($option = null){
 }
 endif;
 
-//SNSフォローボタンのclass追加関数
+//内部ブログカードのclass追加関数
 if ( !function_exists( 'get_additional_internal_blogcard_classes' ) ):
 function get_additional_internal_blogcard_classes($option = null){
   $classes = null;
@@ -174,6 +174,28 @@ function get_additional_internal_blogcard_classes($option = null){
       break;
     default: //left
       $classes .= ' ib-left';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+//外部ブログカードのclass追加関数
+if ( !function_exists( 'get_additional_external_blogcard_classes' ) ):
+function get_additional_external_blogcard_classes($option = null){
+  $classes = null;
+
+  //ボタンカラー
+  switch (get_external_blogcard_thumbnail_style()) {
+    case 'right':
+      $classes .= ' eb-right';
+      break;
+    default: //left
+      $classes .= ' eb-left';
       break;
   }
 

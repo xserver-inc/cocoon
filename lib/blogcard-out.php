@@ -219,13 +219,13 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //サムネイルを取得できた場合
   if ( $image ) {
-    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" height="160" width="90" />';
+    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成
   $tag =
   '<a href="'.$url.'" class="blogcard-wrap external-blogcard-wrap a-wrap cf"'.$target.$nofollow.'>'.
-    '<div class="blogcard external-blogcard'.$thumbnail_class.' cf">'.
+    '<div class="blogcard external-blogcard'.get_additional_external_blogcard_classes().' cf">'.
       '<figure class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content external-blogcard-content">'.
         '<div class="blogcard-title external-blogcard-title">'.$title.'</div>'.

@@ -56,7 +56,7 @@ function url_to_internal_blogcard_tag($url){
   //取得した情報からブログカードのHTMLタグを作成
   $tag =
   '<a href="'.$url.'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
-    '<div class="blogcard internal-blogcard cf'.$additional_class.'">'.
+    '<div class="blogcard internal-blogcard'.$additional_class.' cf">'.
       '<figure class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content internal-blogcard-content">'.
         '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.

@@ -703,10 +703,12 @@ blockquote::after {
 /************************************
 ** 内部ブログカードのサムネイルスタイル
 ************************************/
-.ib-right .blogcard-thumbnail {
+.ib-right .blogcard-thumbnail,
+.eb-right .blogcard-thumbnail {
   float: right;
 }
-.ib-right .blogcard-content {
+.ib-right .blogcard-content,
+.eb-right .blogcard-content {
   margin-left: 0;
   margin-right: 170px;
 }
