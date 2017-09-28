@@ -44,6 +44,9 @@
   <?php //アクセス解析フッタータグの取得
   get_template_part('tmp/footer-analytics'); ?>
 
+  <?php //フッター挿入用のユーザー用テンプレート
+  get_template_part('tmp-user/footer-insert'); ?>
+
 </body>
 
 </html>

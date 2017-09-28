@@ -20,6 +20,9 @@ if ( get_google_search_console_id() ): ?>
 
 <?php wp_head(); ?>
 
+<?php //ヘッドタグ内挿入用のユーザー用テンプレート
+get_template_part('tmp-user/head-insert'); ?>
+
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -33,5 +36,8 @@ if ( get_google_search_console_id() ): ?>
     <div id="content" class="content cf">
 
       <div id="content-in" class="content-in wrap cf">
+
+          <?php //メインカラム手前に挿入するユーザー用テンプレート
+          get_template_part('tmp-user/main-before'); ?>
 
           <main id="main" class="main<?php echo get_additional_main_classes(); ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
