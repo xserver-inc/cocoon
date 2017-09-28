@@ -55,6 +55,7 @@ endif;
 <!-- タブ機能の実装 -->
 <div id="tabs">
   <ul>
+    <li class="header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
@@ -68,7 +69,6 @@ endif;
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
-    <li class="header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
@@ -85,6 +85,11 @@ endif;
     <li class="heading"><?php _e( 'エントリーカード', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
+
+  <!-- ヘッダータブ -->
+  <div class="ads metabox-holder">
+    <?php require_once 'original-pages/header-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->
   <div class="ads metabox-holder">

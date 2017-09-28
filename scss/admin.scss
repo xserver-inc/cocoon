@@ -232,3 +232,48 @@ form.admin-settings{
   max-width: 400px;
   height: auto;
 }
+
+.tooltip{
+  position: relative;
+
+  &:hover .tip-content{
+    display: inline;
+  }
+
+
+
+  .tip-content {
+    background: #ffffeb;
+    border: 1px solid #878787;
+    display: none;
+    width: 500px;
+    padding: 8px;
+    position: absolute;
+    bottom: 1em;
+    left: -15px;
+  }
+
+  .tip-content:after, .tip-content:before {
+    top: 100%;
+    left: 20px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .tip-content:after {
+    border-color: rgba(255, 255, 235, 0);
+    border-top-color: #ffffeb;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+  .tip-content:before {
+    border-color: rgba(135, 135, 135, 0);
+    border-top-color: #878787;
+    border-width: 6px;
+    margin-left: -6px;
+  }
+}

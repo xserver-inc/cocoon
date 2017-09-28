@@ -105,11 +105,24 @@ function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
 endif;
 
 
-
 //テキストボックスの生成
 if ( !function_exists( 'genelate_number_tag' ) ):
 function genelate_number_tag($name, $value, $min = 1, $max = 100){?>
   <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>">
+  <?php
+}
+endif;
+
+
+
+//ツールチップの生成
+if ( !function_exists( 'genelate_tooltip_tag' ) ):
+function genelate_tooltip_tag($content){?>
+  <span class="tooltip fa fa-question-circle">
+    <span class="tip-content">
+      <?php echo $content; ?>
+    </span>
+  </span>
   <?php
 }
 endif;
