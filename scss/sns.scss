@@ -239,7 +239,7 @@
   @extend %sns_message;
 }
 
-
+$sns_button_margin_bottom: 8px;
 .ss-top,
 .ss-bottom{
   .sns-share-buttons{
@@ -250,7 +250,7 @@
 
     a{
       width: 32%;
-      margin-bottom: 8px;
+      margin-bottom: $sns_button_margin_bottom;
       font-size: 18px;
       display: inline-flex;
       align-content: center;
@@ -287,6 +287,7 @@
   a{
     width: 100%;
     margin-right: 8px;
+    margin-bottom: $sns_button_margin_bottom;
     font-size: 30px;
     line-height: 46px;
 
