@@ -1,0 +1,72 @@
+//.article内専用のタグ
+
+$margin-bottom: 60px;
+
+dl{
+  margin: 1em 0;
+}
+
+dd{
+  margin-left: 40px;
+}
+
+ul,
+ol{
+  margin: 1em 0;
+  padding-left: 40px;
+
+  li{
+    margin: 0.2em;
+  }
+
+  ul, ol{
+    margin: 0;
+  }
+}
+
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+h4,
+h5,
+h6{
+  font-size: 20px;
+  padding: 6px 10px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: $xx_thin;
+}
+
+h3 {
+  border-left: 6px solid $middle_thickness;
+  border-right: 1px solid $thin;
+  border-top: 1px solid $thin;
+  border-bottom: 1px solid $thin;
+  font-size: 23px;
+  padding: 6px 20px;
+
+}
+
+h4 {
+  border-top: 2px solid $thin;
+  border-bottom: 2px solid $thin;
+}
+
+h5 {
+  border-bottom: 2px solid $thin;
+}
+
+h6 {
+  border-bottom: 2px dashed $thin;
+  //border-bottom: 1px dashed $thin;
+}
