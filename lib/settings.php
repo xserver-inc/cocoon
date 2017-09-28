@@ -21,6 +21,7 @@ remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
 //ビジュアルエディターとテーマ表示のスタイルを合わせる
 add_editor_style();
+add_editor_style( 'style.css' );
 
 // RSS2 の feed リンクを出力
 add_theme_support( 'automatic-feed-links' );

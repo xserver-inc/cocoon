@@ -424,3 +424,15 @@ function wp_theme_editor_filetypes_custom($default_types){
   return $default_types;
 }
 endif;
+
+
+//ビジュアルエディターのクラス名に任意のclassを追加する
+//add_filter( 'teeny_mce_before_init', 'abc' );
+add_filter( 'tiny_mce_before_init', 'tiny_mce_before_init_custom' );
+if ( !function_exists( 'tiny_mce_before_init_custom' ) ):
+function tiny_mce_before_init_custom( $mceInit ) {
+  //var_dump($mceInit );
+  $mceInit['body_class'] .= ' main article';
+  return $mceInit;
+}
+endif;

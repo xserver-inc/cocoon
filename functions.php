@@ -180,4 +180,3 @@ function get_archive_chapter_text(){
   return $chapter_text;
 }
 endif;
-
