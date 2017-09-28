@@ -685,19 +685,18 @@ blockquote::after {
 .blogcard-site {
   float: left;
   display: flex;
-  align-items: center;
+  align-content: center;
 }
 
 .blogcard-date {
   float: right;
   display: flex;
-  align-items: center;
-  margin-top: 3px;
+  align-content: center;
 }
 
 .blogcard-favicon {
-  margin-right: 5px;
-  margin-top: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
 }
 
 /************************************

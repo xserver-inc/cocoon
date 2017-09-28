@@ -47,7 +47,7 @@ if (is_singular()){//単一記事ページの場合
   } else if ( get_ogp_home_image_url() ){//ホームイメージが設定されている場合
     echo '<meta property="og:image" content="'.get_ogp_home_image_url().'">';echo "\n";
   } else {//投稿にサムネイルも画像も無い場合の処理
-    $ogp_image = get_template_directory_uri().'/images/og-image.jpg';
+    $ogp_image = get_template_directory_uri().'/images/no-image-320.png';
     echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）

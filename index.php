@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 
+<div id="list" class="list">
 <?php
 ////////////////////////////
 //アーカイブのタイトル
@@ -42,6 +43,7 @@ if (have_posts()) : // WordPress ループ
 <?php
 endif;
 ?>
+</div>
 
 <?php
 ////////////////////////////
