@@ -27,9 +27,10 @@ get_template_part('tmp-user/head-insert'); ?>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-  <?php //アクセス解析ヘッダータグの取得
-  get_template_part('tmp/header-analytics'); ?>
+<?php //アクセス解析ヘッダータグの取得
+get_template_part('tmp/header-analytics'); ?>
 
+<div id="container" class="container cf">
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 
