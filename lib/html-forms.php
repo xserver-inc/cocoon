@@ -113,6 +113,25 @@ function genelate_number_tag($name, $value, $min = 1, $max = 100){?>
 }
 endif;
 
+//テキストボックスの生成
+if ( !function_exists( 'genelate_the_site_logo_tag' ) ):
+function genelate_the_site_logo_tag(){
+  $tag = 'div';
+  if (!is_singular()) {
+    $tag = 'h1';
+  }
+  $logo_before_tag = '<'.$tag.' id="logo" class="logo" itemscope itemtype="http://schema.org/Organization">';
+  $logo_after_tag = '</'.$tag.'>';
+  if (get_the_site_logo_url()) {
+    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name"><img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"></a>';
+  } else {
+    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name">'.get_bloginfo('name').'</a>';
+  }
+  echo $logo_before_tag.$site_logo_tag.$logo_after_tag;
+}
+endif;
+
+
 
 
 //ツールチップの生成
