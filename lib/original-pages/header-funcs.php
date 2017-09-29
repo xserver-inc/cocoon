@@ -8,6 +8,14 @@ function get_the_site_logo_url(){
 }
 endif;
 
+//ヘッダー背景イメージ
+define('OP_HEADER_BACKGROUND_IMAGE_URL', 'header_background_image_url');
+if ( !function_exists( 'get_header_background_image_url' ) ):
+function get_header_background_image_url(){
+  return get_option(OP_HEADER_BACKGROUND_IMAGE_URL);
+}
+endif;
+
 //ヘッダーの種類
 define('OP_HEADER_TYPE', 'header_type');
 if ( !function_exists( 'get_header_type' ) ):
