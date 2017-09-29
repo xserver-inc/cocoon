@@ -449,3 +449,10 @@ function is_bbpress_page(){
 }
 endif;
 
+
+//子テーマが存在するか
+if ( !function_exists( 'is_child_theme_exist' ) ):
+function is_child_theme_exists(){
+  return get_template_directory_uri() != get_stylesheet_directory_uri();
+}
+endif;
