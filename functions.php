@@ -1,5 +1,5 @@
 <?php
-require_once 'lib/defins.php'; //定数を定義
+require_once 'lib/_defins.php'; //定数を定義
 require_once 'lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
 
 
