@@ -139,7 +139,9 @@ function genelate_upload_image_tag($name, $value){?>
       <img src="<?php echo $value; ?>" alt="選択中の画像">
     <?php endif ?>
   </div>
-
+  <?php if ($value): ?>
+    <?php genelate_tips_tag(__( '大きな画像は縮小して表示されます。', THEME_NAME )) ?>
+  <?php endif ?>
 
   <script type="text/javascript">
   (function ($) {

@@ -6,7 +6,7 @@
   <div class="inside">
 
     <p><?php _e( 'ヘッダーの表示設定を行います。', THEME_NAME ) ?></p>
-
+    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo">
       <?php get_template_part('tmp/header-container'); ?>
     </div>
@@ -14,27 +14,16 @@
     <table class="form-table">
       <tbody>
 
-        <!-- headタグに挿入  -->
+        <!-- ヘッダーロゴ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'headタグに挿入', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_THE_SITE_LOGO_URL, __( 'ヘッダーロゴ', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-
-            //canonicalタグ
-            genelate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグの追加', THEME_NAME ));
-            genelate_tips_tag(__( 'Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
-
-            //prev nextタグ
-            genelate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
-            genelate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。', THEME_NAME ));
-
-            //カテゴリページの2ページ目以降をnoindexとする
-            genelate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
-            genelate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
-
+            genelate_upload_image_tag(OP_THE_SITE_LOGO_URL, get_the_site_logo_url());
             ?>
+
           </td>
         </tr>
 

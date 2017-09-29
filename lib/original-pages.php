@@ -8,6 +8,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
+  //ヘッダー
+  require_once 'original-pages/header-posts.php';
   //広告
   require_once 'original-pages/ads-posts.php';
   //タイトル

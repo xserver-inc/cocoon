@@ -58,6 +58,7 @@ require_once 'sns-share.php';  //SNSシェア関数
 require_once 'sns-follow.php'; //SNSフォロー関数
 require_once 'open-graph.php'; //OGP取得ライブラリ
 require_once 'punycode.php'; //ピュニコードライブラリ
+require_once 'original-pages/header-funcs.php';     //ヘッダー設定関数
 require_once 'original-pages/ads-funcs.php';        //広告設定関数
 require_once 'original-pages/title-funcs.php';      //タイトル設定関数
 require_once 'original-pages/seo-funcs.php';        //SEO設定関数

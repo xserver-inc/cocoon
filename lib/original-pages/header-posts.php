@@ -1,10 +1,7 @@
 <?php //タイトル設定をデータベースに保存
 
-//canonicalタグの追加
-update_theme_option(OP_CANONICAL_TAG_ENABLE);
+//サイトロゴ
+update_theme_option(OP_THE_SITE_LOGO_URL);
 
-//分割ページにrel="next"/"prev"タグの追加
-update_theme_option(OP_PREV_NEXT_ENABLE);
-
-//カテゴリページの2ページ目以降をnoindexとする
-update_theme_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
+//ヘッダーの種類
+update_theme_option(OP_HEADER_TYPE);
