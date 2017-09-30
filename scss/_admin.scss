@@ -54,6 +54,10 @@
   .wrap{
     width: 100%;
   }
+
+  .demo .navi-in > ul > .menu-item-has-children > a::after{
+    display: none;
+  }
 }
 
 //管理画面でプレビューできないので.demo内で読みみたくない
