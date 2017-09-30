@@ -291,6 +291,19 @@ function wp_enqueue_baguettebox(){
 }
 endif;
 
+//設定変更CSSを読み込む
+if ( !function_exists( 'wp_add_css_custome_to_inline_style' ) ):
+function wp_add_css_custome_to_inline_style(){
+  ob_start();//バッファリング
+  get_template_part('tmp/css-custom');
+  $css_custom = ob_get_clean();
+  //CSSの縮小化
+  $css_custom = minify_css($css_custom);
+  //HTMLにインラインでスタイルを書く
+  wp_add_inline_style( 'font-awesome-style', $css_custom );
+}
+endif;
+
 
 //投稿を1つランダム取得
 if ( !function_exists( 'get_random_1_post' ) ):

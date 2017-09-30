@@ -10,6 +10,8 @@ function admin_print_styles_custom() {
   //global $pagenow;
   //var_dump($pagenow);
   if (is_admin_php_page()/*$pagenow == 'admin.php'*/) {
+    //設定変更CSSの読み込み
+    wp_add_css_custome_to_inline_style();
     //IcoMoonの呼び出し
     wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
     //タブの読み込み
