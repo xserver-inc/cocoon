@@ -17,12 +17,15 @@ endif;
 // SEO設定
 ///////////////////////////////////////
 //SEO設定の文字カウント
-add_action( 'admin_head-post-new.php', 'seo_settings_admin_script' );
-add_action( 'admin_head-post.php', 'seo_settings_admin_script' );
-add_action( 'admin_head-page-new.php', 'seo_settings_admin_script' );
-add_action( 'admin_head-page.php', 'seo_settings_admin_script' );
-add_action( 'admin_head-topic-new.php', 'seo_settings_admin_script' );
-add_action( 'admin_head-topic.php', 'seo_settings_admin_script' );
+if (is_admin_editor_counter_visible()) {
+  add_action( 'admin_head-post-new.php', 'seo_settings_admin_script' );
+  add_action( 'admin_head-post.php', 'seo_settings_admin_script' );
+  add_action( 'admin_head-page-new.php', 'seo_settings_admin_script' );
+  add_action( 'admin_head-page.php', 'seo_settings_admin_script' );
+  add_action( 'admin_head-topic-new.php', 'seo_settings_admin_script' );
+  add_action( 'admin_head-topic.php', 'seo_settings_admin_script' );
+}
+
 if ( !function_exists( 'seo_settings_admin_script' ) ):
 function seo_settings_admin_script() {?>
 <script type="text/javascript">
@@ -69,13 +72,21 @@ function seo_custom_box_view(){
   $the_page_nofollow = get_post_meta(get_the_ID(), 'the_page_nofollow', true);
 
   //タイトル
-  echo '<label class="box-label">'.__( 'SEOタイトル', THEME_NAME ).'<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="seo-title-count">0</span></span></label>';
+  echo '<label class="box-label">'.__( 'SEOタイトル', THEME_NAME );
+  if (is_admin_editor_counter_visible()) {
+    echo '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="seo-title-count">0</span></span>';
+  }
+  echo '</label>';
   echo '<input id="seo-title" type="text" style="width:100%" placeholder="'.__( 'タイトルを入力してください。', THEME_NAME ).'" name="the_page_seo_title" value="'.$the_page_seo_title.'" />';
   echo '<p class="howto">'.__( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）', THEME_NAME ).'</p>';
 
 
   //メタディスクリプション
-  echo '<label class="box-label">'.__( 'メタディスクリプション', THEME_NAME ).'<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="meta-description-count">0</span></span></label>';
+  echo '<label class="box-label">'.__( 'メタディスクリプション', THEME_NAME );
+  if (is_admin_editor_counter_visible()) {
+    echo '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="meta-description-count">0</span></span>';
+  }
+  echo '</label>';
   echo '<textarea id="meta-description" style="width:100%" placeholder="'.__( '記事の説明文を入力してください。', THEME_NAME ).'" name="the_page_meta_description" rows="3">'.$the_page_meta_description.'</textarea>';
   echo '<p class="howto">'.__( '記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。', THEME_NAME ).'</p>';
 

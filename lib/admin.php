@@ -109,7 +109,9 @@ function customize_admin_add_column($column_name, $post_id) {
 endif;
 
 //管理ツールバーにメニュー追加
-add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
+if (is_admin_tool_menu_visible()) {
+  add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
+}
 if ( !function_exists( 'customize_admin_bar_menu' ) ):
 function customize_admin_bar_menu($wp_admin_bar){
   //バーにメニューを追加
@@ -205,7 +207,9 @@ endif;
 
 
 //記事公開前に確認アラートを出す
-add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
+if (is_confirmation_before_publish()) {
+  add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
+}
 if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
 function publish_confirm_admin_print_scripts() {
   $post_text = __( '公開', THEME_NAME );
