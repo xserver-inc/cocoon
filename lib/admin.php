@@ -39,6 +39,9 @@ function admin_print_styles_custom() {
     //メディアアップローダの javascript API
     wp_enqueue_media();
 
+    wp_enqueue_style( 'wp-color-picker' );
+    // wp_enqueue_script( 'wp-color-picker' );
+
     // //作成した javascript
     // wp_enqueue_script( 'mediauploader' );
 

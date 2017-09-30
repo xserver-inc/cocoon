@@ -182,3 +182,13 @@ function get_archive_chapter_text(){
   return $chapter_text;
 }
 endif;
+
+// add_action('admin_print_styles', 'my_admin_print_styles');
+// function my_admin_print_styles() {
+//  wp_enqueue_style( 'wp-color-picker' );
+// }
+add_action('admin_enqueue_scripts', 'admin_scripts');
+function admin_scripts($hook) {
+    wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js',
+    array( 'wp-color-picker' ), false, true);
+}

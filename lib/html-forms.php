@@ -147,6 +147,29 @@ function genelate_tooltip_tag($content){?>
 endif;
 
 
+//カラーピッカーの生成
+if ( !function_exists( 'genelate_color_picker_tag' ) ):
+function genelate_color_picker_tag($name, $value, $label){?>
+  <p><label for="<?php echo $name; ?>"><?php echo $label; ?></label></p>
+  <p><input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" ></p>
+  <?php wp_enqueue_script( 'wp-color-picker' );
+  $data = '(function( $ ) {
+      var options = {
+          defaultColor: false,
+          change: function(event, ui){},
+          clear: function() {},
+          hide: true,
+          palettes: true
+      };
+      $("input:text[name='.$name.']").wpColorPicker(options);
+  })( jQuery );';
+    wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
+
+}
+endif;
+
+
+
 //画像をアップロードボックス生成
 if ( !function_exists( 'genelate_upload_image_tag' ) ):
 function genelate_upload_image_tag($name, $value){?>
