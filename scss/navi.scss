@@ -73,9 +73,9 @@ $icon_height: 16px;
       }
     }
 
-    >.menu-item-has-children{
-      @include menu_item_has_children('\f107');
-    }
+    // >.menu-item-has-children{
+    //   @include menu_item_has_children('\f107');
+    // }
 
     /*サブメニュー*/
     .sub-menu{

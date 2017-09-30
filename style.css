@@ -257,17 +257,6 @@ img {
   font-size: 0.7em;
   color: #777879;
 }
-.navi-in > ul > .menu-item-has-children {
-  position: relative;
-}
-.navi-in > ul > .menu-item-has-children > a::after {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-  position: absolute;
-  right: 3px;
-  top: 0;
-}
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;

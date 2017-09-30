@@ -32,6 +32,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/blogcard-in-posts.php';
   //外部ブログカード
   require_once 'original-pages/blogcard-out-posts.php';
+  //管理画面
+  require_once 'original-pages/admin-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -68,9 +70,9 @@ endif;
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
+    <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
-    <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
@@ -143,6 +145,12 @@ endif;
     <?php require_once 'original-pages/blogcard-in-forms.php'; ?>
     <?php require_once 'original-pages/blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
+
+  <!-- OGP -->
+  <div class="admin metabox-holder">
+    <?php require_once 'original-pages/admin-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
 
 </div><!-- /#tabs -->
 
