@@ -116,8 +116,10 @@ class menu_description_walker extends Walker_Nav_Menu {
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
+    $item_output .= '<div class="caption-wrap">';
     $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
     $item_output .= $description.$args->link_after;
+    $item_output .= '</div>';
     $item_output .= '</a>';
     $item_output .= $args->after;
 

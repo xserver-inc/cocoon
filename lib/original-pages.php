@@ -57,7 +57,7 @@ endif;
 <!-- タブ機能の実装 -->
 <div id="tabs">
   <ul>
-    <li class="header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
+    <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
@@ -89,7 +89,7 @@ endif;
   </ul>
 
   <!-- ヘッダータブ -->
-  <div class="ads metabox-holder">
+  <div class="theme-header metabox-holder">
     <?php require_once 'original-pages/header-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
