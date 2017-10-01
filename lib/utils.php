@@ -27,7 +27,7 @@ if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<a class="catlink" href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
+    $categories .= '<a class="catlink catlink-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
   }
   return $categories;
 }
@@ -49,7 +49,7 @@ function get_the_nolink_category(){
   //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
-    return '<span class="category-label">'.$category->cat_name.'</span>';
+    return '<span class="category-label category-label-'.$category->cat_ID.'">'.$category->cat_name.'</span>';
   }
 }
 endif;
@@ -71,7 +71,7 @@ function get_the_tag_links(){
   $posttags = get_the_tags();
   if ( $posttags ) {
     foreach(get_the_tags() as $tag){
-      $tags .= '<a class="taglink" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
+      $tags .= '<a class="taglink taglink-'.$tag->term_id.'" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
     }
   }
   return $tags;
