@@ -206,3 +206,21 @@ function get_additional_external_blogcard_classes($option = null){
 }
 endif;
 
+
+//ヘッダーのclass追加関数
+if ( !function_exists( 'get_additional_header_classes' ) ):
+function get_additional_header_classes($option = null){
+  $classes = null;
+
+  //ヘッダーを固定にする場合
+  if (is_header_background_attachment_fixed()) {
+    $classes .= ' hba-fixed';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+

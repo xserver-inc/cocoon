@@ -16,6 +16,14 @@ function get_header_background_image_url(){
 }
 endif;
 
+//ヘッダー背景を固定にするか
+define('OP_HEADER_BACKGROUND_ATTACHMENT_FIXED', 'header_background_attachment_fixed');
+if ( !function_exists( 'is_header_background_attachment_fixed' ) ):
+function is_header_background_attachment_fixed(){
+  return get_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
+}
+endif;
+
 //ヘッダーの種類
 define('OP_HEADER_TYPE', 'header_type');
 if ( !function_exists( 'get_header_type' ) ):

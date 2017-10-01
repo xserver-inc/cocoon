@@ -1,6 +1,6 @@
 <?php //ヘッダーエリア ?>
 <div class="header-container">
-  <header id="header" class="header cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+  <header id="header" class="header<?php echo get_additional_header_classes(); ?> cf" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
     <div id="header-in" class="header-in wrap cf">
       <div class="header-top"><div class="tagline"><?php bloginfo('description') ?></div></div>

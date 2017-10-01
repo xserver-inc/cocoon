@@ -36,6 +36,10 @@
             <?php
             genelate_upload_image_tag(OP_HEADER_BACKGROUND_IMAGE_URL, get_header_background_image_url());
             genelate_tips_tag(__( 'ヘッダー背景として表示する画像を設定します。', THEME_NAME ));
+
+            //ヘッダー背景画像の固定
+            genelate_checkbox_tag(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED, is_header_background_attachment_fixed(), __( 'ヘッダー背景画像の固定', THEME_NAME ));
+            genelate_tips_tag(__( 'ヘッダーに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ));
             ?>
           </td>
         </tr>
