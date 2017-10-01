@@ -1220,13 +1220,12 @@ label.screen-reader-text {
   padding-bottom: 8px;
 }
 
-.navi-footer {
+.footer-bottom-logo {
   float: left;
 }
-
-.copyright {
-  float: right;
-  margin-right: 10px;
+.footer-bottom-logo img {
+  height: 50px;
+  width: auto;
 }
 
 /************************************

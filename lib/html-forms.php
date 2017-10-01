@@ -115,12 +115,17 @@ endif;
 
 //テキストボックスの生成
 if ( !function_exists( 'genelate_the_site_logo_tag' ) ):
-function genelate_the_site_logo_tag(){
+function genelate_the_site_logo_tag($is_header = true){
   $tag = 'div';
-  if (!is_singular()) {
+  if (!is_singular() && $is_header) {
     $tag = 'h1';
   }
-  $logo_before_tag = '<'.$tag.' id="logo" class="logo" itemscope itemtype="http://schema.org/Organization">';
+  if ($is_header) {
+    $class = ' logo-header';
+  } else {
+    $class = ' logo-footer';
+  }
+  $logo_before_tag = '<'.$tag.' class="logo'.$class.'" itemscope itemtype="http://schema.org/Organization">';
   $logo_after_tag = '</'.$tag.'>';
   if (get_the_site_logo_url()) {
     $site_logo_tag = '<a href="'.get_home_url().'" class="site-name"><img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"></a>';

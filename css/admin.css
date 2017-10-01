@@ -1004,11 +1004,11 @@
     margin-top: 24px;
     font-size: 14px;
     padding-bottom: 8px; }
-  .demo .navi-footer {
+  .demo .footer-bottom-logo {
     float: left; }
-  .demo .copyright {
-    float: right;
-    margin-right: 10px; }
+    .demo .footer-bottom-logo img {
+      height: 50px;
+      width: auto; }
   .demo .bc-brand-color.sns-share.ss-top .twitter-button, .demo .bc-brand-color.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color.sns-follow .twitter-button {
     background-color: #1da1f2; }
   .demo .bc-brand-color.sns-share.ss-top .facebook-button, .demo .bc-brand-color.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color.sns-follow .facebook-button {
