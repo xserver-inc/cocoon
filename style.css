@@ -212,7 +212,6 @@ img {
 
 .logo {
   text-align: center;
-  min-height: 100px;
 }
 
 .site-name {
@@ -220,6 +219,51 @@ img {
   text-decoration: none;
   font-size: 40px;
   font-weight: normal;
+}
+
+/************************************
+** ヘッダーレイアウト
+************************************/
+.header-container-in.hlt-top-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.header-container-in.hlt-top-menu .wrap {
+  width: auto;
+}
+.header-container-in.hlt-top-menu .header {
+  background-image: none;
+}
+.header-container-in.hlt-top-menu .site-name {
+  font-size: 32px;
+  margin: 0 20px;
+}
+.header-container-in.hlt-top-menu .header-top {
+  display: none;
+}
+.header-container-in.hlt-top-menu .logo-header {
+  height: 60px;
+}
+.header-container-in.hlt-top-menu .logo-header img {
+  height: 100%;
+  width: auto;
+}
+
+.header-container-in.hlt-top-menu.hlt-tm-small .site-name {
+  font-size: 26px;
+  margin: 0 16px;
+}
+.header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
+  height: 40px;
+}
+.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
+.header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
+  line-height: 40px;
+  height: 40px;
+  display: block;
+}
+.header-container-in.hlt-top-menu.hlt-tm-small .item-description {
+  display: none;
 }
 
 /************************************

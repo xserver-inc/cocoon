@@ -82,6 +82,9 @@
   ** ヘッダー
   ************************************/
   /************************************
+  ** ヘッダーレイアウト
+  ************************************/
+  /************************************
   ** グローバルメニュー
   ************************************/
   /************************************
@@ -315,13 +318,41 @@
   .demo .tagline {
     margin-left: 30px; }
   .demo .logo {
-    text-align: center;
-    min-height: 100px; }
+    text-align: center; }
   .demo .site-name {
     color: #333435;
     text-decoration: none;
     font-size: 40px;
     font-weight: normal; }
+  .demo .header-container-in.hlt-top-menu {
+    display: flex;
+    justify-content: space-between; }
+    .demo .header-container-in.hlt-top-menu .wrap {
+      width: auto; }
+    .demo .header-container-in.hlt-top-menu .header {
+      background-image: none; }
+    .demo .header-container-in.hlt-top-menu .site-name {
+      font-size: 32px;
+      margin: 0 20px; }
+    .demo .header-container-in.hlt-top-menu .header-top {
+      display: none; }
+    .demo .header-container-in.hlt-top-menu .logo-header {
+      height: 60px; }
+      .demo .header-container-in.hlt-top-menu .logo-header img {
+        height: 100%;
+        width: auto; }
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
+    font-size: 26px;
+    margin: 0 16px; }
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
+    height: 40px; }
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
+    line-height: 40px;
+    height: 40px;
+    display: block; }
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
+    display: none; }
   .demo .navi-in > ul {
     padding: 0;
     list-style: none;

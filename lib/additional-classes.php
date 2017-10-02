@@ -224,3 +224,29 @@ function get_additional_header_classes($option = null){
 }
 endif;
 
+
+
+//ヘッダーコンテナのclass追加関数
+if ( !function_exists( 'get_additional_header_container_classes' ) ):
+function get_additional_header_container_classes($option = null){
+  $classes = null;
+
+  switch (get_header_layout_type()) {
+    case 'top_menu':
+      $classes .= ' hlt-top-menu wrap';
+      break;
+    case 'top_menu_small':
+      $classes .= ' hlt-top-menu hlt-tm-small wrap';
+      break;
+    default://'center_logo'デフォルト
+      $classes .= ' hlt-center-logo';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+

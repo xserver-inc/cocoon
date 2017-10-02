@@ -234,7 +234,7 @@ if (is_canonical_tag_enable()) {
 if ( !function_exists( 'the_canonical_tag' ) ):
 function the_canonical_tag(){
   $canonical_url = generate_canonical_url();
-  var_dump($canonical_url);
+  // var_dump($canonical_url);
   if ( $canonical_url ) {
     echo '<!-- '.THEME_NAME_CAMEL.' canonical -->'.PHP_EOL;
     echo '<link rel="canonical" href="'.$canonical_url.'">'.PHP_EOL;
@@ -303,7 +303,7 @@ function the_meta_description_tag() {
   }
   if ($description) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
-    var_dump('<meta name="description" content="'.$description.'">');
+    //var_dump('<meta name="description" content="'.$description.'">');
     echo '<meta name="description" content="'.$description.'">'.PHP_EOL;
   }
 }
@@ -326,7 +326,7 @@ function the_meta_keywords_tag() {
   }
   if ($keywords) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta keywords -->'.PHP_EOL;
-    var_dump('<meta name="keywords" content="'.$keywords.'">');
+    //var_dump('<meta name="keywords" content="'.$keywords.'">');
     echo '<meta name="keywords" content="'.$keywords.'">'.PHP_EOL;
   }
 }

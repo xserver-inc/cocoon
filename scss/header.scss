@@ -29,11 +29,67 @@
 
 .logo{
   text-align: center;
-  min-height: 100px;
+  //min-height: 100px;
 }
 
 .site-name{
   @include link_cancel;
   font-size: 40px;
   font-weight: normal;
+}
+
+/************************************
+** ヘッダーレイアウト
+************************************/
+.header-container-in.hlt-top-menu{
+  display: flex;
+  justify-content: space-between;
+
+  .wrap{
+    width: auto;
+  }
+
+  .header{
+    background-image: none;
+  }
+
+  .site-name{
+    font-size: 32px;
+    margin: 0 20px;
+  }
+
+  .header-top{
+    display: none;
+  }
+
+  .logo-header{
+    height: 60px;
+    img{
+      //margin: 10px;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.header-container-in.hlt-top-menu.hlt-tm-small{
+  .site-name{
+    font-size: 26px;
+    margin: 0 16px;
+  }
+
+  .logo-header{
+    height: 40px;
+  }
+
+  .navi-in > ul > li,
+  .navi-in > ul > .menu-item-has-description > a > .caption-wrap{
+    line-height: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .item-description{
+    display: none;
+  }
 }
