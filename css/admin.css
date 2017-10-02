@@ -391,8 +391,7 @@
       .demo .navi-in > ul > .menu-item-has-description .caption-wrap div {
         width: 100%; }
     .demo .navi-in > ul > .menu-item-has-description .item-description {
-      font-size: 0.7em;
-      color: #777879; }
+      font-size: 0.7em; }
     .demo .navi-in > ul .sub-menu {
       display: none;
       position: absolute;
