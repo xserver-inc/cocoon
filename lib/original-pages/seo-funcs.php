@@ -1,4 +1,4 @@
-<?php //アクセス解析設定に必要な定数や関数
+<?php //SEO設定に必要な定数や関数
 
 //canonicalタグの追加
 define('OP_CANONICAL_TAG_ENABLE', 'canonical_tag_enable');

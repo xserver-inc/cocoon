@@ -10,6 +10,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   ///////////////////////////////////////
   //ヘッダー
   require_once 'original-pages/header-posts.php';
+  //グローバルナビ
+  require_once 'original-pages/navi-posts.php';
   //広告
   require_once 'original-pages/ads-posts.php';
   //タイトル
@@ -60,6 +62,7 @@ endif;
 <div id="tabs">
   <ul>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
+    <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li>
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
@@ -74,7 +77,6 @@ endif;
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
-    <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="content"><?php _e( 'コンテンツ', THEME_NAME ) ?></li>
     <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
@@ -93,6 +95,11 @@ endif;
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
     <?php require_once 'original-pages/header-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- グローバルナビタブ -->
+  <div class="theme-header metabox-holder">
+    <?php require_once 'original-pages/navi-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->

@@ -1,4 +1,4 @@
-<?php //タイトル設定をデータベースに保存
+<?php //OGP設定をデータベースに保存
 
 //Facebook OGPを有効
 update_theme_option(OP_FACEBOOK_OGP_ENABLE);

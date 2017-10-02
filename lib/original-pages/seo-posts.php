@@ -1,4 +1,4 @@
-<?php //タイトル設定をデータベースに保存
+<?php //SEO設定をデータベースに保存
 
 //canonicalタグの追加
 update_theme_option(OP_CANONICAL_TAG_ENABLE);

@@ -1,4 +1,4 @@
-<?php //アクセス解析設定に必要な定数や関数
+<?php //ヘッダー設定に必要な定数や関数
 
 //サイトロゴ
 define('OP_THE_SITE_LOGO_URL', 'the_site_logo_url');
@@ -36,7 +36,7 @@ endif;
 define('OP_HEADER_BACKGROUND_COLOR', 'header_background_color');
 if ( !function_exists( 'get_header_background_color' ) ):
 function get_header_background_color(){
-  return get_option(OP_HEADER_BACKGROUND_COLOR, 'transparent');
+  return get_option(OP_HEADER_BACKGROUND_COLOR);
 }
 endif;
 
@@ -44,7 +44,7 @@ endif;
 define('OP_HEADER_TEXT_COLOR', 'header_text_color');
 if ( !function_exists( 'get_header_text_color' ) ):
 function get_header_text_color(){
-  return get_option(OP_HEADER_TEXT_COLOR, 'transparent');
+  return get_option(OP_HEADER_TEXT_COLOR);
 }
 endif;
 
