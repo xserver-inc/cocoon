@@ -30,11 +30,6 @@
             genelate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
             genelate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
 
-            genelate_color_picker_tag("aaaaaaaa", null, 'abc');
-
-
-            genelate_color_picker_tag("bbbbbbbbbbb", null, 'lkj');
-
             ?>
 
 

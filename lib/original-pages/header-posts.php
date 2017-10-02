@@ -10,4 +10,4 @@ update_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL);
 update_theme_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
 
 //ヘッダーの種類
-update_theme_option(OP_HEADER_TYPE);
+update_theme_option(OP_HEADER_LAYOUT_TYPE);

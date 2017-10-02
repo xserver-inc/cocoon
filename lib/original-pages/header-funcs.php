@@ -25,9 +25,9 @@ function is_header_background_attachment_fixed(){
 endif;
 
 //ヘッダーの種類
-define('OP_HEADER_TYPE', 'header_type');
-if ( !function_exists( 'get_header_type' ) ):
-function get_header_type(){
-  return get_option(OP_HEADER_TYPE);
+define('OP_HEADER_LAYOUT_TYPE', 'header_layout_type');
+if ( !function_exists( 'get_header_layout_type' ) ):
+function get_header_layout_type(){
+  return get_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
 }
 endif;

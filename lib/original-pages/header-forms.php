@@ -44,6 +44,24 @@
           </td>
         </tr>
 
+        <!-- ヘッダーレイアウト -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_HEADER_LAYOUT_TYPE, __( 'ヘッダーレイアウト', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'center_logo' => 'センターロゴ',
+              'top_menu' => 'トップメニュー',
+              'top_menu_small' => 'トップメニュー（小）',
+            );
+            genelate_radiobox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
+            genelate_tips_tag(__( 'ヘッダーの表示形式を選択します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>
