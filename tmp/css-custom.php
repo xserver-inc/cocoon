@@ -5,6 +5,14 @@ if (get_header_background_image_url()): ?>
   background-image: url(<?php echo get_header_background_image_url(); ?>);
 }
 <?php endif ?>
+<?php //ヘッダー全体背景色
+if (get_header_container_background_color()): ?>
+.header-container,
+.demo .header-container,
+.navi .navi-in > ul .sub-menu{
+  background-color: <?php echo get_header_container_background_color(); ?>;
+}
+<?php endif ?>
 <?php //ヘッダー背景色
 if (get_header_background_color()): ?>
 .header{

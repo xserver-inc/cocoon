@@ -69,10 +69,15 @@
           </th>
           <td>
             <?php
-            genelate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), '背景色');
+
+            genelate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), 'ヘッダー全体色');
+            genelate_tips_tag(__( 'ロゴ部分やグローバルなり全てを含めた背景色を選択します。', THEME_NAME ));
+
+
+            genelate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), 'ロゴエリア背景色');
             genelate_tips_tag(__( 'グローバルナビ上のヘッダー背景色を選択します。', THEME_NAME ));
 
-            genelate_color_picker_tag(OP_HEADER_TEXT_COLOR,  get_header_text_color(), '文字色');
+            genelate_color_picker_tag(OP_HEADER_TEXT_COLOR,  get_header_text_color(), 'ロゴエリア文字色');
             genelate_tips_tag(__( 'グローバルナビ上のヘッダーテキスト色を選択します。', THEME_NAME ));
             ?>
           </td>

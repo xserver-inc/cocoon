@@ -32,6 +32,14 @@ function get_header_layout_type(){
 }
 endif;
 
+//ヘッダー全体の背景色
+define('OP_HEADER_CONTAINER_BACKGROUND_COLOR', 'header_container_background_color');
+if ( !function_exists( 'get_header_container_background_color' ) ):
+function get_header_container_background_color(){
+  return get_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR);
+}
+endif;
+
 //ヘッダー背景色
 define('OP_HEADER_BACKGROUND_COLOR', 'header_background_color');
 if ( !function_exists( 'get_header_background_color' ) ):
