@@ -34,16 +34,27 @@
 
 .site-name{
   @include link_cancel;
+  color: unset;
   font-size: 40px;
   font-weight: normal;
+
+  &:hover{
+    color: unset;
+  }
 }
 
 .logo-text{
-  margin: 20px 0;
+  padding: 20px 0 30px;
 }
+
+.logo-image{
+  padding: 10px 0;
+}
+
 /************************************
 ** ヘッダーレイアウト
 ************************************/
+//トップメニュー
 .header-container-in.hlt-top-menu{
   display: flex;
   justify-content: space-between;
@@ -58,7 +69,9 @@
     background-image: none;
   }
 
-  .logo-text{
+  .logo-text,
+  .logo-image{
+    padding: 0;
     margin: 0;
   }
 
@@ -81,10 +94,11 @@
   }
 }
 
+//トップメニュー（小）
 .header-container-in.hlt-top-menu.hlt-tm-small{
   .site-name{
     font-size: 26px;
-    margin: 0 16px;
+    //margin: 0 16px;
   }
 
   .logo-header{

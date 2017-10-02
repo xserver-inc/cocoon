@@ -11,3 +11,9 @@ update_theme_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
 
 //ヘッダーの種類
 update_theme_option(OP_HEADER_LAYOUT_TYPE);
+
+//ヘッダー背景色
+update_theme_option(OP_HEADER_BACKGROUND_COLOR);
+
+//ヘッダーテキスト色
+update_theme_option(OP_HEADER_TEXT_COLOR);

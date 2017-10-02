@@ -125,7 +125,9 @@ function genelate_the_site_logo_tag($is_header = true){
   } else {
     $class = ' logo-footer';
   }
-  if (!get_the_site_logo_url()) {
+  if (get_the_site_logo_url()) {
+    $class .= ' logo-image';
+  } else {
     $class .= ' logo-text';
   }
 

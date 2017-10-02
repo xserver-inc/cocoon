@@ -62,6 +62,22 @@
           </td>
         </tr>
 
+        <!-- ヘッダー色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag('', __( 'ヘッダー色', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), '背景色');
+            genelate_tips_tag(__( 'グローバルナビ上のヘッダー背景色を選択します。', THEME_NAME ));
+
+            genelate_color_picker_tag(OP_HEADER_TEXT_COLOR,  get_header_text_color(), '文字色');
+            genelate_tips_tag(__( 'グローバルナビ上のヘッダーテキスト色を選択します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

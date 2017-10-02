@@ -322,10 +322,15 @@
   .demo .site-name {
     color: #333435;
     text-decoration: none;
+    color: unset;
     font-size: 40px;
     font-weight: normal; }
+    .demo .site-name:hover {
+      color: unset; }
   .demo .logo-text {
-    margin: 20px 0; }
+    padding: 20px 0 30px; }
+  .demo .logo-image {
+    padding: 10px 0; }
   .demo .header-container-in.hlt-top-menu {
     display: flex;
     justify-content: space-between;
@@ -335,7 +340,9 @@
       width: auto; }
     .demo .header-container-in.hlt-top-menu .header {
       background-image: none; }
-    .demo .header-container-in.hlt-top-menu .logo-text {
+    .demo .header-container-in.hlt-top-menu .logo-text,
+    .demo .header-container-in.hlt-top-menu .logo-image {
+      padding: 0;
       margin: 0; }
     .demo .header-container-in.hlt-top-menu .site-name {
       font-size: 32px;
@@ -348,8 +355,7 @@
         height: 100%;
         width: auto; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
-    font-size: 26px;
-    margin: 0 16px; }
+    font-size: 26px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
     height: 40px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,

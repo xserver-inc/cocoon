@@ -217,12 +217,20 @@ img {
 .site-name {
   color: #333435;
   text-decoration: none;
+  color: unset;
   font-size: 40px;
   font-weight: normal;
 }
+.site-name:hover {
+  color: unset;
+}
 
 .logo-text {
-  margin: 20px 0;
+  padding: 20px 0 30px;
+}
+
+.logo-image {
+  padding: 10px 0;
 }
 
 /************************************
@@ -240,7 +248,9 @@ img {
 .header-container-in.hlt-top-menu .header {
   background-image: none;
 }
-.header-container-in.hlt-top-menu .logo-text {
+.header-container-in.hlt-top-menu .logo-text,
+.header-container-in.hlt-top-menu .logo-image {
+  padding: 0;
   margin: 0;
 }
 .header-container-in.hlt-top-menu .site-name {
@@ -260,7 +270,6 @@ img {
 
 .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
   font-size: 26px;
-  margin: 0 16px;
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
   height: 40px;

@@ -31,3 +31,20 @@ function get_header_layout_type(){
   return get_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
 }
 endif;
+
+//ヘッダー背景色
+define('OP_HEADER_BACKGROUND_COLOR', 'header_background_color');
+if ( !function_exists( 'get_header_background_color' ) ):
+function get_header_background_color(){
+  return get_option(OP_HEADER_BACKGROUND_COLOR, 'transparent');
+}
+endif;
+
+//ヘッダーテキスト色
+define('OP_HEADER_TEXT_COLOR', 'header_text_color');
+if ( !function_exists( 'get_header_text_color' ) ):
+function get_header_text_color(){
+  return get_option(OP_HEADER_TEXT_COLOR, 'transparent');
+}
+endif;
+
