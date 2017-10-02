@@ -221,18 +221,27 @@ img {
   font-weight: normal;
 }
 
+.logo-text {
+  margin: 20px 0;
+}
+
 /************************************
 ** ヘッダーレイアウト
 ************************************/
 .header-container-in.hlt-top-menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 .header-container-in.hlt-top-menu .wrap {
   width: auto;
 }
 .header-container-in.hlt-top-menu .header {
   background-image: none;
+}
+.header-container-in.hlt-top-menu .logo-text {
+  margin: 0;
 }
 .header-container-in.hlt-top-menu .site-name {
   font-size: 32px;

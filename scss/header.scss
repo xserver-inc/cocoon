@@ -38,12 +38,17 @@
   font-weight: normal;
 }
 
+.logo-text{
+  margin: 20px 0;
+}
 /************************************
 ** ヘッダーレイアウト
 ************************************/
 .header-container-in.hlt-top-menu{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
 
   .wrap{
     width: auto;
@@ -51,6 +56,10 @@
 
   .header{
     background-image: none;
+  }
+
+  .logo-text{
+    margin: 0;
   }
 
   .site-name{

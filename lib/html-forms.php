@@ -125,12 +125,16 @@ function genelate_the_site_logo_tag($is_header = true){
   } else {
     $class = ' logo-footer';
   }
+  if (!get_the_site_logo_url()) {
+    $class .= ' logo-text';
+  }
+
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'" itemscope itemtype="http://schema.org/Organization">';
   $logo_after_tag = '</'.$tag.'>';
   if (get_the_site_logo_url()) {
     $site_logo_tag = '<a href="'.get_home_url().'" class="site-name"><img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"></a>';
   } else {
-    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name">'.get_bloginfo('name').'</a>';
+    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-text">'.get_bloginfo('name').'</a>';
   }
   echo $logo_before_tag.$site_logo_tag.$logo_after_tag;
 }
