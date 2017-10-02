@@ -267,6 +267,9 @@ img {
   height: 100%;
   width: auto;
 }
+.header-container-in.hlt-top-menu .navi {
+  width: 100%;
+}
 
 .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
   font-size: 26px;

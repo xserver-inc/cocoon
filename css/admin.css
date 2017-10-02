@@ -354,6 +354,8 @@
       .demo .header-container-in.hlt-top-menu .logo-header img {
         height: 100%;
         width: auto; }
+    .demo .header-container-in.hlt-top-menu .navi {
+      width: 100%; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
     font-size: 26px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {

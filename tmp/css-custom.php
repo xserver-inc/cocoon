@@ -37,3 +37,18 @@ if (get_global_navi_hover_background_color()): ?>
   background-color: <?php echo get_global_navi_hover_background_color(); ?>;
 }
 <?php endif ?>
+<?php //グローバルナビメニュー幅
+if (get_global_navi_menu_width()): ?>
+.navi .navi-in > ul > li{
+  width: <?php echo get_global_navi_menu_width(); ?>px;
+}
+<?php endif ?>
+<?php //グローバルナビサブメニュー幅
+if (get_global_navi_sub_menu_width()): ?>
+.navi .navi-in > ul .sub-menu{
+  min-width: <?php echo get_global_navi_sub_menu_width(); ?>px;
+}
+.navi .navi-in > ul .sub-menu ul{
+  left: <?php echo get_global_navi_sub_menu_width(); ?>px;
+}
+<?php endif ?>

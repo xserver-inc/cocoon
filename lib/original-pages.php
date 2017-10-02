@@ -1,3 +1,4 @@
+
 <?php //オリジナル設定ページ
 
 // ユーザーが何か情報を POST したかどうかを確認
@@ -169,3 +170,7 @@ endif;
 
 </form>
 </div>
+
+<style type="text/css">
+  <?php get_template_part('tmp/css-custom'); ?>
+</style>

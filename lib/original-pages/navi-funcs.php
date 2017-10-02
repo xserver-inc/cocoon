@@ -34,9 +34,9 @@ function get_global_navi_menu_width(){
 endif;
 
 //グローバルナビサブメニュー幅
-define('OP_GLOBAL_NAVI_SUB_MENU_WIDTH', 'global_navi_SUB_menu_width');
-if ( !function_exists( 'get_global_navi_SUB_menu_width' ) ):
-function get_global_navi_SUB_menu_width(){
+define('OP_GLOBAL_NAVI_SUB_MENU_WIDTH', 'global_navi_sub_menu_width');
+if ( !function_exists( 'get_global_navi_sub_menu_width' ) ):
+function get_global_navi_sub_menu_width(){
   return get_option(OP_GLOBAL_NAVI_SUB_MENU_WIDTH);
 }
 endif;
