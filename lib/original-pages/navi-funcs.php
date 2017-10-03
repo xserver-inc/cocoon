@@ -16,13 +16,13 @@ function get_global_navi_text_color(){
 }
 endif;
 
-//グローバルナビホバー背景色
-define('OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR', 'global_navi_hover_background_color');
-if ( !function_exists( 'get_global_navi_hover_background_color' ) ):
-function get_global_navi_hover_background_color(){
-  return get_option(OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR);
-}
-endif;
+// //グローバルナビホバー背景色
+// define('OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR', 'global_navi_hover_background_color');
+// if ( !function_exists( 'get_global_navi_hover_background_color' ) ):
+// function get_global_navi_hover_background_color(){
+//   return get_option(OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR);
+// }
+// endif;
 
 
 //グローバルナビメニュー幅

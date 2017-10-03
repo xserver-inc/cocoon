@@ -27,8 +27,8 @@
             genelate_color_picker_tag(OP_GLOBAL_NAVI_TEXT_COLOR,  get_global_navi_text_color(), '文字色');
             genelate_tips_tag(__( 'グローバルナビ全体のテキスト色を選択します。', THEME_NAME ));
 
-            genelate_color_picker_tag(OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR,  get_global_navi_hover_background_color(), 'メニュー背景ホバー色');
-            genelate_tips_tag(__( 'グローバルナビメニューにマウスカーソルを置いたときの背景色を選択します。', THEME_NAME ));
+            // genelate_color_picker_tag(OP_GLOBAL_NAVI_HOVER_BACKGROUND_COLOR,  get_global_navi_hover_background_color(), 'メニュー背景ホバー色');
+            // genelate_tips_tag(__( 'グローバルナビメニューにマウスカーソルを置いたときの背景色を選択します。', THEME_NAME ));
             ?>
           </td>
         </tr>

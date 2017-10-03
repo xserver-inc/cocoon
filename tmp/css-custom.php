@@ -40,9 +40,9 @@ if (get_global_navi_text_color()): ?>
 }
 <?php endif ?>
 <?php //グローバルナビホバー背景色
-if (get_global_navi_hover_background_color()): ?>
+if (get_header_container_background_color() || get_header_background_color() || get_global_navi_background_color()): ?>
 .navi .navi-in a:hover{
-  background-color: <?php echo get_global_navi_hover_background_color(); ?>;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 <?php endif ?>
 <?php //グローバルナビメニュー幅
