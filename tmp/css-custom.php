@@ -16,6 +16,7 @@ if (get_header_container_background_color()): ?>
 <?php //ヘッダー全体文字色
 if (get_header_container_text_color()): ?>
 .header,
+.header .site-name-text,
 .navi .navi-in a,
 .navi .navi-in a:hover{
   color: <?php echo get_header_container_text_color(); ?>;
@@ -29,10 +30,8 @@ if (get_header_background_color()): ?>
 <?php endif ?>
 <?php //ヘッダー文字色
 if (get_header_text_color()): ?>
-.header{
-  color: <?php echo get_header_text_color(); ?>;
-}
-.demo .site-name-text{
+.header,
+.header .site-name-text{
   color: <?php echo get_header_text_color(); ?>;
 }
 <?php endif ?>

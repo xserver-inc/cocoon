@@ -96,6 +96,7 @@
           </td>
         </tr>
 
+        <?php require_once 'navi-forms.php'; ?>
 
       </tbody>
     </table>
