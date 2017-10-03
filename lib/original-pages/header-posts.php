@@ -15,6 +15,9 @@ update_theme_option(OP_HEADER_LAYOUT_TYPE);
 //ヘッダー全体の背景色
 update_theme_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR);
 
+//ヘッダー全体の文字色
+update_theme_option(OP_HEADER_CONTAINER_TEXT_COLOR);
+
 //ヘッダー背景色
 update_theme_option(OP_HEADER_BACKGROUND_COLOR);
 

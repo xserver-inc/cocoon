@@ -43,11 +43,11 @@
             <?php
             genelate_label_tag(OP_GLOBAL_NAVI_MENU_WIDTH, __( 'トップメニュー幅', THEME_NAME ) );
             genelate_number_tag(OP_GLOBAL_NAVI_MENU_WIDTH,  get_global_navi_menu_width(), 100, 300);
-            genelate_tips_tag(__( 'グローバルナビのメニュー幅をpx数で指定します。', THEME_NAME ));
+            genelate_tips_tag(__( 'グローバルナビのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
             genelate_label_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH, __( 'サブメニュー幅', THEME_NAME ) );
             genelate_number_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH,  get_global_navi_sub_menu_width(), 100, 500);
-            genelate_tips_tag(__( 'グローバルナビのサブメニュー幅をpx数で指定します。', THEME_NAME ));
+            genelate_tips_tag(__( 'グローバルナビのサブメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
             ?>
           </td>

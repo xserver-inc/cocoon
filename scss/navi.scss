@@ -18,6 +18,8 @@ $icon_height: 16px;
 }
 
 .navi-in{
+  //font-family: $Meiryo_font;
+
   >ul{
     @include list_cancel;
 

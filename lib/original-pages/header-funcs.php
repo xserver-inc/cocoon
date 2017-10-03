@@ -40,6 +40,14 @@ function get_header_container_background_color(){
 }
 endif;
 
+//ヘッダー全体の文字色
+define('OP_HEADER_CONTAINER_TEXT_COLOR', 'header_container_text_color');
+if ( !function_exists( 'get_header_container_text_color' ) ):
+function get_header_container_text_color(){
+  return get_option(OP_HEADER_CONTAINER_TEXT_COLOR);
+}
+endif;
+
 //ヘッダー背景色
 define('OP_HEADER_BACKGROUND_COLOR', 'header_background_color');
 if ( !function_exists( 'get_header_background_color' ) ):

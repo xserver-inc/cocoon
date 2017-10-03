@@ -248,14 +248,20 @@ img {
 .header-container-in.hlt-top-menu .header {
   background-image: none;
 }
-.header-container-in.hlt-top-menu .logo-text,
+.header-container-in.hlt-top-menu .logo-text {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
 .header-container-in.hlt-top-menu .logo-image {
   padding: 0;
   margin: 0;
 }
-.header-container-in.hlt-top-menu .site-name {
+.header-container-in.hlt-top-menu .site-name-text {
   font-size: 32px;
-  margin: 0 20px;
+  margin: 0 16px;
+  display: block;
 }
 .header-container-in.hlt-top-menu .header-top {
   display: none;
@@ -271,8 +277,9 @@ img {
   width: 100%;
 }
 
-.header-container-in.hlt-top-menu.hlt-tm-small .site-name {
+.header-container-in.hlt-top-menu.hlt-tm-small .site-name-text {
   font-size: 26px;
+  margin: 0 16px;
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
   height: 40px;

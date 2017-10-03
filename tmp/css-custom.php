@@ -13,6 +13,14 @@ if (get_header_container_background_color()): ?>
   background-color: <?php echo get_header_container_background_color(); ?>;
 }
 <?php endif ?>
+<?php //ヘッダー全体文字色
+if (get_header_container_text_color()): ?>
+.header,
+.navi .navi-in a,
+.navi .navi-in a:hover{
+  color: <?php echo get_header_container_text_color(); ?>;
+}
+<?php endif ?>
 <?php //ヘッダー背景色
 if (get_header_background_color()): ?>
 .header{
@@ -22,6 +30,9 @@ if (get_header_background_color()): ?>
 <?php //ヘッダー文字色
 if (get_header_text_color()): ?>
 .header{
+  color: <?php echo get_header_text_color(); ?>;
+}
+.demo .site-name-text{
   color: <?php echo get_header_text_color(); ?>;
 }
 <?php endif ?>

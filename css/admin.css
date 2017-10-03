@@ -340,13 +340,18 @@
       width: auto; }
     .demo .header-container-in.hlt-top-menu .header {
       background-image: none; }
-    .demo .header-container-in.hlt-top-menu .logo-text,
+    .demo .header-container-in.hlt-top-menu .logo-text {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      align-content: center; }
     .demo .header-container-in.hlt-top-menu .logo-image {
       padding: 0;
       margin: 0; }
-    .demo .header-container-in.hlt-top-menu .site-name {
+    .demo .header-container-in.hlt-top-menu .site-name-text {
       font-size: 32px;
-      margin: 0 20px; }
+      margin: 0 16px;
+      display: block; }
     .demo .header-container-in.hlt-top-menu .header-top {
       display: none; }
     .demo .header-container-in.hlt-top-menu .logo-header {
@@ -356,8 +361,9 @@
         width: auto; }
     .demo .header-container-in.hlt-top-menu .navi {
       width: 100%; }
-  .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name {
-    font-size: 26px; }
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name-text {
+    font-size: 26px;
+    margin: 0 16px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
     height: 40px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .navi-in > ul > li,

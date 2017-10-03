@@ -62,6 +62,23 @@
           </td>
         </tr>
 
+        <!-- ヘッダー全体色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag('', __( 'ヘッダー全体色', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+
+            genelate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), 'ヘッダー全体背景色');
+            genelate_tips_tag(__( 'ロゴ部分やグローバルナビ全てを含めた背景色を選択します。', THEME_NAME ));
+
+            genelate_color_picker_tag(OP_HEADER_CONTAINER_TEXT_COLOR,  get_header_container_text_color(), 'ヘッダー全体文字色');
+            genelate_tips_tag(__( 'ロゴ部分やグローバルナビ全てを含めたテキスト色を選択します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- ヘッダー色 -->
         <tr>
           <th scope="row">
@@ -69,10 +86,6 @@
           </th>
           <td>
             <?php
-
-            genelate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), 'ヘッダー全体色');
-            genelate_tips_tag(__( 'ロゴ部分やグローバルなり全てを含めた背景色を選択します。', THEME_NAME ));
-
 
             genelate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), 'ロゴエリア背景色');
             genelate_tips_tag(__( 'グローバルナビ上のヘッダー背景色を選択します。', THEME_NAME ));
