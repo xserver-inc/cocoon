@@ -28,6 +28,6 @@ endif;
 define('OP_USER_CREDIT_NOTATION', 'user_credit_notation');
 if ( !function_exists( 'get_user_credit_notation' ) ):
 function get_user_credit_notation(){
-  return get_option(OP_USER_CREDIT_NOTATION);
+  return stripslashes_deep(get_option(OP_USER_CREDIT_NOTATION));
 }
 endif;

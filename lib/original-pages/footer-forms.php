@@ -19,7 +19,7 @@
             <?php
 
             $options = array(
-              'logo_enable' => 'ロゴあり',
+              'logo_enable' => 'ロゴ＆メニュー＆クレジット',
               'left_and_right' => 'メニュー＆クレジット（左右）',
               'up_and_down' => 'メニュー＆クレジット（中央揃え）',
             );
@@ -47,7 +47,7 @@
               'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.',
               'user_credit' => '独自表記',
             );
-            genelate_radiobox_tag(OP_FOP_CREDIT_NOTATION, $options, get_credit_notation());
+            genelate_radiobox_tag(OP_CREDIT_NOTATION, $options, get_credit_notation());
 
             genelate_label_tag(OP_USER_CREDIT_NOTATION, __( '上記設定で「独自表記」と入力した場合', THEME_NAME ));
             echo '<br>';
