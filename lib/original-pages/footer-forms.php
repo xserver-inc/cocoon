@@ -1,42 +1,61 @@
 <div class="metabox-holder">
 
-<!-- 管理画面設定 -->
-<div id="admin" class="postbox">
-  <h2 class="hndle"><?php _e( '管理画面設定', THEME_NAME ) ?></h2>
+<!-- フッター設定 -->
+<div id="footer" class="postbox">
+  <h2 class="hndle"><?php _e( 'フッター設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '管理画面の機能設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'フッターやクレジット表示設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
 
-        <!-- 管理者向け設定  -->
+        <!-- フッター表示タイプ  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( '管理者向け設定', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_FOOTER_DISPLAY_TYPE, __( 'フッター表示タイプ', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
 
-            //アドミンバーに独自管理メニューを表示
-            genelate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'アドミンバーに独自管理メニューを表示', THEME_NAME ));
-            genelate_tips_tag(__( '管理者バーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
-
-            //ページ公開前に確認アラートを出す
-            genelate_checkbox_tag(OP_CONFIRMATION_BEFORE_PUBLISH, is_confirmation_before_publish(), __( 'ページ公開前に確認アラートを出す', THEME_NAME ));
-            genelate_tips_tag(__( '記事を投稿する前に確認ダイアログを表示します。', THEME_NAME ));
-
-            //タイトル等の文字数カウンター表示
-            genelate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
-            genelate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
+            $options = array(
+              'logo_enable' => 'ロゴあり',
+              'left_and_right' => 'メニュー＆クレジット（左右）',
+              'up_and_down' => 'メニュー＆クレジット（中央揃え）',
+            );
+            genelate_radiobox_tag(OP_FOOTER_DISPLAY_TYPE, $options, get_footer_display_type())
 
             ?>
-
-
           </td>
         </tr>
 
 
+        <!-- クレジット表記  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag('', __( 'クレジット表記', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_label_tag(OP_SITE_INITIATION_YEAR, __( 'サイト開設年：', THEME_NAME ));
+            genelate_number_tag(OP_SITE_INITIATION_YEAR, get_site_initiation_year(), 1970, intval(date('Y')));
+
+            $options = array(
+              'simple' => '© '.get_site_initiation_year().' '.get_bloginfo('name'),
+              'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name'),
+              'full' => 'Copyright © '.get_site_initiation_year().' '.get_bloginfo('name').' All Rights Reserved.',
+              'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.',
+              'user_credit' => '独自表記',
+            );
+            genelate_radiobox_tag(OP_FOP_CREDIT_NOTATION, $options, get_credit_notation());
+
+            genelate_label_tag(OP_USER_CREDIT_NOTATION, __( '上記設定で「独自表記」と入力した場合', THEME_NAME ));
+            echo '<br>';
+            genelate_textbox_tag(OP_USER_CREDIT_NOTATION, get_user_credit_notation(), __( 'クレジット表記を入力してください。タグ入力も可能です。', THEME_NAME ))
+
+            ?>
+          </td>
+        </tr>
       </tbody>
     </table>
 

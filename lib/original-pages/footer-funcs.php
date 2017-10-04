@@ -1,26 +1,33 @@
-<?php //管理画面設定に必要な定数や関数
+<?php //フッター設定に必要な定数や関数
 
-//アドミンバーに独自管理メニューを表示
-define('OP_ADMIN_TOOL_MENU_VISIBLE', 'admin_tool_menu_visible');
-if ( !function_exists( 'is_admin_tool_menu_visible' ) ):
-function is_admin_tool_menu_visible(){
-  return get_option(OP_ADMIN_TOOL_MENU_VISIBLE, 1);
+//フッターの表示タイプ
+define('OP_FOOTER_DISPLAY_TYPE', 'footer_display_type');
+if ( !function_exists( 'get_footer_display_type' ) ):
+function get_footer_display_type(){
+  return get_option(OP_FOOTER_DISPLAY_TYPE, 'logo_enable');
 }
 endif;
 
-//ページ公開前に確認アラートを出す
-define('OP_CONFIRMATION_BEFORE_PUBLISH', 'confirmation_before_publish');
-if ( !function_exists( 'is_confirmation_before_publish' ) ):
-function is_confirmation_before_publish(){
-  return get_option(OP_CONFIRMATION_BEFORE_PUBLISH, 1);
+//サイト開始日
+define('OP_SITE_INITIATION_YEAR', 'site_initiation_year');
+if ( !function_exists( 'get_site_initiation_year' ) ):
+function get_site_initiation_year(){
+  return get_option(OP_SITE_INITIATION_YEAR, date('Y'));
 }
 endif;
 
-//タイトル等の文字数カウンター表示
-define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
-if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
-function is_admin_editor_counter_visible(){
-  return get_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE, 1);
+//クレジット表記
+define('OP_CREDIT_NOTATION', 'credit_notation');
+if ( !function_exists( 'get_credit_notation' ) ):
+function get_credit_notation(){
+  return get_option(OP_CREDIT_NOTATION, 'simple');
 }
 endif;
 
+//ユーザークレジット表記
+define('OP_USER_CREDIT_NOTATION', 'user_credit_notation');
+if ( !function_exists( 'get_user_credit_notation' ) ):
+function get_user_credit_notation(){
+  return get_option(OP_USER_CREDIT_NOTATION);
+}
+endif;

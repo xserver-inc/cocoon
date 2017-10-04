@@ -1,10 +1,13 @@
-<?php //管理画面設定をデータベースに保存
+<?php //フッター設定をデータベースに保存
 
-//アドミンバーに独自管理メニューを表示
-update_theme_option(OP_ADMIN_TOOL_MENU_VISIBLE);
+//フッターの表示タイプ
+update_theme_option(OP_FOOTER_DISPLAY_TYPE);
 
-//ページ公開前に確認アラートを出す
-update_theme_option(OP_CONFIRMATION_BEFORE_PUBLISH);
+//サイト開始日
+update_theme_option(OP_SITE_INITIATION_YEAR);
 
-//タイトル等の文字数カウンター表示
-update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
+//クレジット表記
+update_theme_option(OP_CREDIT_NOTATION);
+
+//ユーザークレジット表記
+update_theme_option(OP_USER_CREDIT_NOTATION);

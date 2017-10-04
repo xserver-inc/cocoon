@@ -35,6 +35,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/blogcard-in-posts.php';
   //外部ブログカード
   require_once 'original-pages/blogcard-out-posts.php';
+  //フッター
+  require_once 'original-pages/footer-posts.php';
   //管理画面
   require_once 'original-pages/admin-posts.php';
 
@@ -74,10 +76,10 @@ endif;
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
+    <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
-    <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="content"><?php _e( 'コンテンツ', THEME_NAME ) ?></li>
     <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
@@ -149,7 +151,12 @@ endif;
     <?php require_once 'original-pages/blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- OGP -->
+  <!-- フッター -->
+  <div class="admin metabox-holder">
+    <?php require_once 'original-pages/footer-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 管理画面 -->
   <div class="admin metabox-holder">
     <?php require_once 'original-pages/admin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
