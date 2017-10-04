@@ -1,5 +1,4 @@
-.navi-footer,
-.copyright{
+.navi-footer{
   float: none;
   margin: 0;
 }
@@ -19,4 +18,22 @@
   margin: 10px;
   float: none;
   width: auto;
+}
+
+.footer-bottom-logo,
+.footer-bottom-content{
+  float: none;
+}
+
+.footer-bottom-logo{
+  line-height: 1;
+  .logo-image{
+    .site-name{
+      font-size: 1em;
+    }
+  }
+}
+
+.footer-bottom-content{
+  text-align: center;
 }

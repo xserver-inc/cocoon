@@ -1283,6 +1283,8 @@ label.screen-reader-text {
 ************************************/
 .footer-bottom {
   margin-top: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 14px;
 }
 
@@ -2305,8 +2307,7 @@ input[type='submit'] {
   }
 }
 @media screen and (max-width: 1030px) {
-  .navi-footer,
-  .copyright {
+  .navi-footer {
     float: none;
     margin: 0;
   }
@@ -2325,6 +2326,22 @@ input[type='submit'] {
     margin: 10px;
     float: none;
     width: auto;
+  }
+
+  .footer-bottom-logo,
+  .footer-bottom-content {
+    float: none;
+  }
+
+  .footer-bottom-logo {
+    line-height: 1;
+  }
+  .footer-bottom-logo .logo-image .site-name {
+    font-size: 1em;
+  }
+
+  .footer-bottom-content {
+    text-align: center;
   }
 }
 @media screen and (max-width: 768px) {
