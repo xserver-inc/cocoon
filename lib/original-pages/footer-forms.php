@@ -51,7 +51,7 @@
 
             genelate_label_tag(OP_USER_CREDIT_NOTATION, __( '上記設定で「独自表記」と入力した場合', THEME_NAME ));
             echo '<br>';
-            genelate_textbox_tag(OP_USER_CREDIT_NOTATION, get_user_credit_notation(), __( 'クレジット表記を入力してください。タグ入力も可能です。', THEME_NAME ))
+            genelate_textarea_tag(OP_USER_CREDIT_NOTATION, get_user_credit_notation(), __( 'クレジット表記を入力してください。タグ入力も可能です。', THEME_NAME ), 4)
 
             ?>
           </td>

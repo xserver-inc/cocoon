@@ -104,6 +104,14 @@ function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
 }
 endif;
 
+//テキストエリアの生成
+if ( !function_exists( 'genelate_textarea_tag' ) ):
+function genelate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS){?>
+  <textarea name="<?php echo $name; ?>" placeholder="<?php echo $placeholder; ?>" rows="<?php echo $rows; ?>" cols="<?php echo $cols; ?>"><?php echo $value; ?></textarea>
+  <?php
+}
+endif;
+
 
 //ナンバーボックスの生成
 if ( !function_exists( 'genelate_number_tag' ) ):
