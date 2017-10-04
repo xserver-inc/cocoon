@@ -7,9 +7,9 @@
   padding-top: 10px;
 }
 
-.copyright{
-  text-align: center;
-}
+// .copyright{
+//   text-align: center;
+// }
 
 .footer-widgets {
   margin: 10px auto;
@@ -31,16 +31,34 @@
   //vertical-align: bottom;
   //position: relative;
   font-size: 14px;
-  padding-bottom: 8px;
+  // padding-bottom: 8px;
+  // display: flex;
+  // justify-content: space-between;
 }
 
 .footer-bottom-logo{
   float: left;
+  .logo-text{
+    padding: 0;
+    ;
+  }
+  .site-name-text{
+    font-size: 26px
+  }
+
+  .logo-image{
+    padding: 0;
+  }
   img{
     height: 50px;
     width: auto;
   }
 
+}
+
+.footer-bottom-content{
+  float: right;
+  text-align: right;
 }
 
 

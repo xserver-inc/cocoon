@@ -453,7 +453,7 @@ img {
   padding: 2px;
   margin-right: 8px;
   display: inline;
-  font-size: 14px;
+  font-size: 0.7em;
 }
 
 .entry-category::before, .post-date::before,
@@ -1266,10 +1266,6 @@ label.screen-reader-text {
   padding-top: 10px;
 }
 
-.copyright {
-  text-align: center;
-}
-
 .footer-widgets {
   margin: 10px auto;
   display: flex;
@@ -1288,15 +1284,28 @@ label.screen-reader-text {
 .footer-bottom {
   margin-top: 24px;
   font-size: 14px;
-  padding-bottom: 8px;
 }
 
 .footer-bottom-logo {
   float: left;
 }
+.footer-bottom-logo .logo-text {
+  padding: 0;
+}
+.footer-bottom-logo .site-name-text {
+  font-size: 26px;
+}
+.footer-bottom-logo .logo-image {
+  padding: 0;
+}
 .footer-bottom-logo img {
   height: 50px;
   width: auto;
+}
+
+.footer-bottom-content {
+  float: right;
+  text-align: right;
 }
 
 /************************************

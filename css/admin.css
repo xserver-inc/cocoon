@@ -491,7 +491,7 @@
     padding: 2px;
     margin-right: 8px;
     display: inline;
-    font-size: 14px; }
+    font-size: 0.7em; }
   .demo .entry-category::before, .demo .post-date::before,
   .demo .post-update::before {
     font-family: FontAwesome;
@@ -1040,8 +1040,6 @@
   .demo .footer {
     margin-top: 20px;
     padding-top: 10px; }
-  .demo .copyright {
-    text-align: center; }
   .demo .footer-widgets {
     margin: 10px auto;
     display: flex; }
@@ -1052,13 +1050,21 @@
     width: 33.33%; }
   .demo .footer-bottom {
     margin-top: 24px;
-    font-size: 14px;
-    padding-bottom: 8px; }
+    font-size: 14px; }
   .demo .footer-bottom-logo {
     float: left; }
+    .demo .footer-bottom-logo .logo-text {
+      padding: 0; }
+    .demo .footer-bottom-logo .site-name-text {
+      font-size: 26px; }
+    .demo .footer-bottom-logo .logo-image {
+      padding: 0; }
     .demo .footer-bottom-logo img {
       height: 50px;
       width: auto; }
+  .demo .footer-bottom-content {
+    float: right;
+    text-align: right; }
   .demo .bc-brand-color.sns-share.ss-top .twitter-button, .demo .bc-brand-color.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color.sns-follow .twitter-button {
     background-color: #1da1f2; }
   .demo .bc-brand-color.sns-share.ss-top .facebook-button, .demo .bc-brand-color.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color.sns-follow .facebook-button {
