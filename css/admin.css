@@ -319,13 +319,13 @@
     margin-left: 30px; }
   .demo .logo {
     text-align: center; }
-  .demo .site-name {
+  .demo .site-name-text-link {
     color: #333435;
     text-decoration: none;
     color: unset;
     font-size: 40px;
     font-weight: normal; }
-    .demo .site-name:hover {
+    .demo .site-name-text-link:hover {
       color: unset; }
   .demo .logo-text {
     padding: 20px 0 30px; }
@@ -348,7 +348,7 @@
     .demo .header-container-in.hlt-top-menu .logo-image {
       padding: 0;
       margin: 0; }
-    .demo .header-container-in.hlt-top-menu .site-name-text {
+    .demo .header-container-in.hlt-top-menu .site-name-text-link {
       font-size: 32px;
       margin: 0 16px;
       display: block; }
@@ -361,7 +361,7 @@
         width: auto; }
     .demo .header-container-in.hlt-top-menu .navi {
       width: 100%; }
-  .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name-text {
+  .demo .header-container-in.hlt-top-menu.hlt-tm-small .site-name-text-link {
     font-size: 26px;
     margin: 0 16px; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
@@ -1072,7 +1072,7 @@
     float: left; }
     .demo .footer-bottom-logo .logo-text {
       padding: 0; }
-    .demo .footer-bottom-logo .site-name-text {
+    .demo .footer-bottom-logo .site-name-text-link {
       font-size: 26px; }
     .demo .footer-bottom-logo .logo-image {
       padding: 0; }
@@ -1740,8 +1740,6 @@
       float: none; }
     .demo .footer-bottom-logo {
       line-height: 1; }
-      .demo .footer-bottom-logo .logo-image .site-name {
-        font-size: 1em; }
     .demo .footer-bottom-content {
       text-align: center; } }
   @media screen and (max-width: 768px) {

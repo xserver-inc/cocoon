@@ -32,7 +32,7 @@
   //min-height: 100px;
 }
 
-.site-name{
+.site-name-text-link{
   @include link_cancel;
   color: unset;
   font-size: 40px;
@@ -81,7 +81,7 @@
     margin: 0;
   }
 
-  .site-name-text{
+  .site-name-text-link{
     font-size: 32px;
     margin: 0 16px;
     display: block;
@@ -107,7 +107,7 @@
 
 //トップメニュー（小）
 .header-container-in.hlt-top-menu.hlt-tm-small{
-  .site-name-text{
+  .site-name-text-link{
     font-size: 26px;
     margin: 0 16px;
   }
