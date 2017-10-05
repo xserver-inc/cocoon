@@ -187,8 +187,23 @@ endif;
 // function my_admin_print_styles() {
 //  wp_enqueue_style( 'wp-color-picker' );
 // }
-add_action('admin_enqueue_scripts', 'admin_scripts');
-function admin_scripts($hook) {
-    wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js',
-    array( 'wp-color-picker' ), false, true);
+// add_action('admin_enqueue_scripts', 'admin_scripts');
+// function admin_scripts($hook) {
+//     wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js',
+//     array( 'wp-color-picker' ), false, true);
+// }
+
+//不要なテーマカスタマイザー項目を削除
+//https://tenman.info/labo/snip/archives/8682
+add_action( "customize_register", "customize_register_custom" );
+if ( !function_exists( 'customize_register_custom' ) ):
+function customize_register_custom( $wp_customize ) {
+  $wp_customize->remove_control("header_image");
+  //$wp_customize->remove_panel("widgets");
+  $wp_customize->remove_section("colors");
+  $wp_customize->remove_section("background_image");
+  //$wp_customize->remove_section("static_front_page");
+  //$wp_customize->remove_section("title_tagline");
+  //$wp_customize->remove_control('nav');
 }
+endif;
