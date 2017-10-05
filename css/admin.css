@@ -1717,18 +1717,13 @@
   .demo .js-clingify-wrapper {
     width: 100%; }
   .demo .sidebar .js-clingify-wrapper {
-    width: 356px; }
+    width: 336px; }
   .demo .js-clingify-locked {
     left: 0;
     position: fixed;
     top: 0; }
   .demo .sidebar .js-clingify-locked {
-    margin-left: -10px;
-    left: auto;
-    width: 356px;
-    border: 1px solid transparent;
-    padding: 9px;
-    background-color: #fff; }
+    left: auto; }
   @media screen and (max-width: 1240px) {
     .demo .content-in {
       display: block; }

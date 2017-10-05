@@ -2316,7 +2316,7 @@ input[type='submit'] {
 }
 
 .sidebar .js-clingify-wrapper {
-  width: 356px;
+  width: 336px;
 }
 
 .js-clingify-locked {
@@ -2326,12 +2326,7 @@ input[type='submit'] {
 }
 
 .sidebar .js-clingify-locked {
-  margin-left: -10px;
   left: auto;
-  width: 356px;
-  border: 1px solid transparent;
-  padding: 9px;
-  background-color: #fff;
 }
 
 @media screen and (max-width: 1240px) {

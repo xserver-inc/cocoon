@@ -295,28 +295,43 @@ endif;
 //clingifyの読み込み
 if ( !function_exists( 'wp_enqueue_clingify' ) ):
 function wp_enqueue_clingify(){
+  $browser_info = get_browser_info();
+  $is_ie = $browser_info['browser_name'] == 'IE';
+  $is_edge_less_than_13 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 14);
   //グローバルナビ追従が有効な時
- if ( is_global_navi_fixed() ) {
+  if ( is_global_navi_fixed() || is_active_sidebar('sidebar-scroll') ) {
     //clingifyスタイルの呼び出し
     //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
     wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.js', array( 'jquery' ), false, true  );
-    switch (get_header_layout_type()) {
-      case 'center_logo':
-        $selector = '.navi';
-        break;
+    if (is_global_navi_fixed()) {
+      switch (get_header_layout_type()) {
+        case 'center_logo':
+          $selector = '.navi';
+          break;
 
-      default:
-        $selector = '.header-container';
-        break;
+        default:
+          $selector = '.header-container';
+          break;
+      }
+      //$selector = '.sidebar-scroll';
+      $data = '
+        (function($){
+         $("'.$selector.'").clingify();
+        })(jQuery);
+      ';
+      wp_add_inline_script( 'clingify-js', $data, 'after' );
     }
-    //$selector = '.sidebar-scroll';
-    $data = '
-      (function($){
-       $("'.$selector.'").clingify();
-      })(jQuery);
-    ';
-    wp_add_inline_script( 'clingify-js', $data, 'after' ) ;
+
+    //position: sticky;に対応していないブラウザの場合はclingifyを実行
+    if (is_active_sidebar('sidebar-scroll') && ($is_ie || $is_edge_less_than_13)) {
+      $data = '
+        (function($){
+         $(".sidebar-scroll").clingify();
+        })(jQuery);
+      ';
+      wp_add_inline_script( 'clingify-js', $data, 'after' );
+    }
 
   }
 }
@@ -501,3 +516,110 @@ function is_child_theme_exists(){
   return get_template_directory_uri() != get_stylesheet_directory_uri();
 }
 endif;
+
+function get_browser_info(){
+
+  $ua = $_SERVER['HTTP_USER_AGENT'];
+  $browser_name = $browser_version = $webkit_version = $platform = NULL;
+  $is_webkit = false;
+
+  //Browser
+  if(preg_match('/Edge/i', $ua)){
+
+    $browser_name = 'Edge';
+
+    if(preg_match('/Edge\/([0-9.]*/', $ua, $match)){
+
+      $browser_version = $match[1];
+    }
+
+  }elseif(preg_match('/(MSIE|Trident)/i', $ua)){
+
+    $browser_name = 'IE';
+
+    if(preg_match('/MSIE\s([0-9.]*)/', $ua, $match)){
+
+      $browser_version = $match[1];
+
+    }elseif(preg_match('/Trident\/7/', $ua, $match)){
+
+      $browser_version = 11;
+    }
+
+  }elseif(preg_match('/Presto|OPR|OPiOS/i', $ua)){
+
+    $browser_name = 'Opera';
+
+    if(preg_match('/(Opera|OPR|OPiOS)\/([0-9.]*)/', $ua, $match)) $browser_version = $match[2];
+
+  }elseif(preg_match('/Firefox/i', $ua)){
+
+    $browser_name = 'Firefox';
+
+    if(preg_match('/Firefox\/([0-9.]*)/', $ua, $match)) $browser_version = $match[1];
+
+  }elseif(preg_match('/Chrome|CriOS/i', $ua)){
+
+    $browser_name = 'Chrome';
+
+    if(preg_match('/(Chrome|CriOS)\/([0-9.]*)/', $ua, $match)) $browser_version = $match[2];
+
+  }elseif(preg_match('/Safari/i', $ua)){
+
+    $browser_name = 'Safari';
+
+    if(preg_match('/Version\/([0-9.]*)/', $ua, $match)) $browser_version = $match[1];
+  }
+
+  //Webkit
+  if(preg_match('/AppleWebkit/i', $ua)){
+
+    $is_webkit = true;
+
+    if(preg_match('/AppleWebKit\/([0-9.]*)/', $ua, $match)) $webkit_version = $match[1];
+  }
+
+  //Platform
+  if(preg_match('/ipod/i', $ua)){
+
+    $platform = 'iPod';
+
+  }elseif(preg_match('/iphone/i', $ua)){
+
+    $platform = 'iPhone';
+
+  }elseif(preg_match('/ipad/i', $ua)){
+
+    $platform = 'iPad';
+
+  }elseif(preg_match('/android/i', $ua)){
+
+    $platform = 'Android';
+
+  }elseif(preg_match('/windows phone/i', $ua)){
+
+    $platform = 'Windows Phone';
+
+  }elseif(preg_match('/linux/i', $ua)){
+
+    $platform = 'Linux';
+
+  }elseif(preg_match('/macintosh|mac os/i', $ua)) {
+
+    $platform = 'Mac';
+
+  }elseif(preg_match('/windows/i', $ua)){
+
+    $platform = 'Windows';
+  }
+
+  return array(
+
+    'ua' => $ua,
+    'browser_name' => $browser_name,
+    'browser_version' => intval($browser_version),
+    'is_webkit' => $is_webkit,
+    'webkit_version' => intval($webkit_version),
+    'platform' => $platform
+  );
+}//get_info()
