@@ -228,6 +228,9 @@
   * 続きはWEBで的な検索ボックス
   ********************************/
   /*メインカランの2カラム化*/
+  /************************************
+  ** clingify
+  ************************************/
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   /* フォントのサイズ */
@@ -375,8 +378,6 @@
     display: none; }
   .demo .navi {
     background-color: #fff; }
-  .demo .js-clingify-wrapper {
-    z-index: 99999; }
   .demo .navi-in > ul {
     padding: 0;
     list-style: none;
@@ -732,6 +733,11 @@
       background-color: #f3f4f5;
       padding: 16px 10px;
       margin: 16px 0; }
+  .demo .sidebar-scroll {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0; }
   .demo label.screen-reader-text {
     display: none; }
   .demo .widget {
@@ -1706,6 +1712,22 @@
       float: none;
       width: auto;
       padding: 0; } }
+  .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
+    z-index: 99999; }
+  .demo .js-clingify-wrapper {
+    width: 100%; }
+  .demo .sidebar .js-clingify-wrapper {
+    width: 356px; }
+  .demo .js-clingify-locked {
+    left: 0;
+    position: fixed;
+    top: 0; }
+  .demo .sidebar .js-clingify-locked {
+    left: auto;
+    width: 356px;
+    border: 1px solid transparent;
+    padding: 9px;
+    background-color: #fff; }
   @media screen and (max-width: 1240px) {
     .demo .content-in {
       display: block; }

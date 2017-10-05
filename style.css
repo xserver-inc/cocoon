@@ -301,10 +301,6 @@ img {
   background-color: #fff;
 }
 
-.js-clingify-wrapper {
-  z-index: 99999;
-}
-
 .navi-in > ul {
   padding: 0;
   list-style: none;
@@ -829,6 +825,13 @@ blockquote::after {
   background-color: #f3f4f5;
   padding: 16px 10px;
   margin: 16px 0;
+}
+
+.sidebar-scroll {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 /************************************
@@ -2301,6 +2304,35 @@ input[type='submit'] {
     padding: 0;
   }
 }
+/************************************
+** clingify
+************************************/
+.js-clingify-ztransform, .js-clingify-wrapper {
+  z-index: 99999;
+}
+
+.js-clingify-wrapper {
+  width: 100%;
+}
+
+.sidebar .js-clingify-wrapper {
+  width: 356px;
+}
+
+.js-clingify-locked {
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+
+.sidebar .js-clingify-locked {
+  left: auto;
+  width: 356px;
+  border: 1px solid transparent;
+  padding: 9px;
+  background-color: #fff;
+}
+
 @media screen and (max-width: 1240px) {
   .content-in {
     display: block;

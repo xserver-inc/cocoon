@@ -1,0 +1,37 @@
+/************************************
+** clingify
+************************************/
+.js-clingify-ztransform, .js-clingify-wrapper {
+  // -webkit-transform: translateZ(0);
+  // -moz-transform: translateZ(0);
+  // -ms-transform: translateZ(0);
+  // -o-transform: translateZ(0);
+  // transform: translateZ(0);
+  z-index: 99999;
+}
+
+.js-clingify-wrapper {
+  width: 100%;
+}
+
+.sidebar{
+  .js-clingify-wrapper {
+    width: $sidebar_outer_width;
+  }
+}
+
+.js-clingify-locked {
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+
+.sidebar{
+  .js-clingify-locked {
+    left: auto;
+    width: $sidebar_outer_width;
+    border: $sidebar_border_width $sidebar_border_style $transparent_border_color;
+    padding: $sidebar_padding_width;
+    background-color: $bg_white;
+  }
+}

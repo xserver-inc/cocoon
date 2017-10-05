@@ -298,7 +298,7 @@ function wp_enqueue_clingify(){
  if ( is_active_sidebar('sidebar-scroll') || //スクロール追従領域が有効な時
       1 ) {
     //clingifyスタイルの呼び出し
-    wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
+    //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
     wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.js', array( 'jquery' ), false, true  );
     switch (get_header_layout_type()) {
@@ -310,6 +310,7 @@ function wp_enqueue_clingify(){
         $selector = '.header-container';
         break;
     }
+    //$selector = '.sidebar-scroll';
     $data = '
       (function($){
        $("'.$selector.'").clingify();
