@@ -225,7 +225,6 @@ function get_additional_header_classes($option = null){
 endif;
 
 
-
 //ヘッダーコンテナのclass追加関数
 if ( !function_exists( 'get_additional_header_container_classes' ) ):
 function get_additional_header_container_classes($option = null){
@@ -249,4 +248,30 @@ function get_additional_header_container_classes($option = null){
   return $classes;
 }
 endif;
+
+
+//フッターボトムのclass追加関数
+if ( !function_exists( 'get_additional_footer_bottom_classes' ) ):
+function get_additional_footer_bottom_classes($option = null){
+  $classes = null;
+
+  switch (get_footer_display_type()) {
+    case 'left_and_right':
+      $classes .= ' fdt-left-and-right';
+      break;
+    case 'up_and_down':
+      $classes .= ' fdt-up-and-down';
+      break;
+    default://デフォルト
+      $classes .= ' fdt-logo';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
 

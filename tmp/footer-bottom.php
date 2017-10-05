@@ -1,5 +1,5 @@
 <?php //フッターの最下部のテンプレート ?>
-<div class="footer-bottom cf">
+<div class="footer-bottom<?php echo get_additional_footer_bottom_classes(); ?> cf">
   <div class="footer-bottom-logo">
     <?php genelate_the_site_logo_tag(false); ?>
   </div>
