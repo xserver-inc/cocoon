@@ -23,11 +23,12 @@
     $sidebar_h = $sidebar.height() + sidebar_other_height();
     $diff = main_other_height() - sidebar_other_height();
 
-    if ($main_h > $sidebar_h) {
-      if ($sidebar.css('float') != 'none') {
-        $sidebar.height($main.height() + $diff);
+    if ($sidebar.css('float') != 'none') {
+      if ($main_h > $sidebar_h) {
+          $sidebar.height($main.height() + $diff);
       }
-
+    } else {
+      $sidebar.css('height', 'auto');
     }
   }
   adjust_sidebar_height();
