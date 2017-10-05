@@ -31,3 +31,28 @@ function get_user_credit_notation(){
   return stripslashes_deep(get_option(OP_USER_CREDIT_NOTATION));
 }
 endif;
+
+
+if ( !function_exists( 'get_the_site_credit' ) ):
+function get_the_site_credit(){
+  $credit = null;
+  switch (get_credit_notation()) {
+    case 'simple':
+      $credit = '© '.get_site_initiation_year().' '.get_bloginfo('name');
+      break;
+    case 'simple_year_begin_to_now':
+      $credit = '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name');
+      break;
+    case 'full':
+      $credit = 'Copyright © '.get_site_initiation_year().' '.get_bloginfo('name').' All Rights Reserved.';
+      break;
+    case 'full_year_begin_to_now':
+      $credit = 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.';
+      break;
+    default:
+      $credit = get_user_credit_notation();
+      break;
+  }
+  return $credit;
+}
+endif;
