@@ -517,6 +517,9 @@ function is_child_theme_exists(){
 }
 endif;
 
+//ブラウザ情報の取得
+//http://web-pixy.com/php-device-browser/
+if ( !function_exists( 'get_browser_info' ) ):
 function get_browser_info(){
 
   $ua = $_SERVER['HTTP_USER_AGENT'];
@@ -622,4 +625,5 @@ function get_browser_info(){
     'webkit_version' => intval($webkit_version),
     'platform' => $platform
   );
-}//get_info()
+}//get_browser_info()
+endif;
