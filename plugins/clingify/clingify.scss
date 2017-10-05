@@ -1,0 +1,29 @@
+@import "compass/css3/transform";
+
+.js-clingify-ztransform  {
+	@include transform(translateZ(0));
+	// Transform necessary because position: fixed and CSS transitions don't play together nicely
+    // Prevents bug where wrapper is invisible after onhashchange event
+}
+
+/* Baseline selectors */
+.js-clingify-wrapper {
+	width: 100%;
+    @extend .js-clingify-ztransform;
+}
+.js-clingify-locked {
+	left: 0;
+	position: fixed;
+	top: 0;	
+	z-index: 99999;
+}
+/* Advanced selectors */
+.js-clingify-placeholder {
+	// Who knows, maybe you can find a use for this?
+}
+.js-clingify-wrapper.js-clingify-locked {
+	// Wrapper goes full width but is transparent by default.
+	// If your Clingify element is fixed-width, you could
+	// set a background color here to create a banner 
+	// across the top of the screen
+}

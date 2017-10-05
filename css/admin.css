@@ -373,6 +373,8 @@
     display: block; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
     display: none; }
+  .demo .navi {
+    background-color: #fff; }
   .demo .navi-in > ul {
     padding: 0;
     list-style: none;

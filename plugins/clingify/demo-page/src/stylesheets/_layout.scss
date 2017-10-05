@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 90%;
+
+    @media #{$mobileish} {
+        width: 95%;
+    }
+}
+.primary-content {
+    float: left;
+    width: 66%;
+    padding: 1rem 5vw;
+    @media #{$mobileish} {
+    	clear: both;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    section {
+        padding: 3.5rem 0 0;
+    }
+}
+.secondary-content {
+	float: left;
+    margin: 9rem 0 0;
+    padding: 1rem 5vw 1rem 0;
+    width: 33%;
+
+    @media #{$mobileish} {
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%
+    }
+}

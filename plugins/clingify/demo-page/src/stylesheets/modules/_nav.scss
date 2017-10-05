@@ -1,0 +1,26 @@
+.github-link {
+	@extend %linkbutton;
+    margin: 0 0 2rem;
+ }
+ nav {
+ 	ul {
+ 		margin: 0;
+ 		padding: 0;
+ 	}
+ 	li {
+ 		display: inline-block;
+ 		padding: 0.25rem 0.25rem;
+
+ 		&:first-child {
+ 			padding-left: 0;
+ 		}
+ 		&:last-child {
+ 			padding-right: 0;
+ 		}
+
+ 		a {
+ 			@extend %linkbutton;
+ 		}
+ 	}
+
+ }

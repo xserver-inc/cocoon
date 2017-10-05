@@ -1,0 +1,32 @@
+{
+    "name": "clingify",
+    "title": "Clingify",
+    "description": "jQuery plugin for sticky page elements",
+    "keywords": [
+        "sticky",
+        "clingy",
+        "ui",
+        "scroll",
+        "resize",
+        "fixed"
+    ],
+    "version": "1.0.1",
+    "author": {
+        "name": "Andrew Theroux",
+        "url": "https://github.com/theroux"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/theroux/clingify/issues",
+    "homepage": "https://github.com/theroux/clingify",
+    "docs": "https://github.com/theroux/clingify",
+    "demo": "http://theroux.github.io/clingify/",
+    "download": "https://github.com/theroux/clingify",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}

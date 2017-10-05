@@ -291,6 +291,36 @@ function wp_enqueue_baguettebox(){
 }
 endif;
 
+
+//clingifyの読み込み
+if ( !function_exists( 'wp_enqueue_clingify' ) ):
+function wp_enqueue_clingify(){
+ if ( is_active_sidebar('sidebar-scroll') || //スクロール追従領域が有効な時
+      1 ) {
+    //clingifyスタイルの呼び出し
+    wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
+    //clingifyスクリプトの呼び出し
+    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.js', array( 'jquery' ), false, true  );
+    switch (get_header_layout_type()) {
+      case 'center_logo':
+        $selector = '.navi';
+        break;
+
+      default:
+        $selector = '.header-container';
+        break;
+    }
+    $data = '
+      (function($){
+       $("'.$selector.'").clingify();
+      })(jQuery);
+    ';
+    wp_add_inline_script( 'clingify-js', $data, 'after' ) ;
+
+  }
+}
+endif;
+
 //設定変更CSSを読み込む
 if ( !function_exists( 'wp_add_css_custome_to_inline_style' ) ):
 function wp_add_css_custome_to_inline_style(){
