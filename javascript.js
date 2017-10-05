@@ -16,7 +16,7 @@
     return get_width($sidebar, 'padding-top') + get_width($sidebar, 'padding-bottom') + get_width($sidebar, 'border-top-width') + get_width($sidebar, 'border-bottom-width');
   }
 
-  setInterval(function(){
+  function adjust_sidebar_height() {
     $main = $('.main');
     $sidebar = $('.sidebar');
     $main_h = $main.height() + main_other_height();
@@ -26,5 +26,10 @@
     if ($main_h > $sidebar_h) {
       $sidebar.height($main.height() + $diff);
     }
+  }
+  adjust_sidebar_height();
+  setInterval(function(){
+    adjust_sidebar_height();
   },1000);
+
 })(jQuery);
