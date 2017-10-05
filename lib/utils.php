@@ -299,7 +299,7 @@ function wp_enqueue_clingify(){
   $is_ie = $browser_info['browser_name'] == 'IE';
   $is_edge_less_than_13 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 14);
   //グローバルナビ追従が有効な時
-  if ( is_global_navi_fixed() || is_active_sidebar('sidebar-scroll') ) {
+  if ( is_global_navi_fixed() || is_scrollable_sidebar_enable() ) {
     //clingifyスタイルの呼び出し
     //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
@@ -324,7 +324,7 @@ function wp_enqueue_clingify(){
     }
 
     //position: sticky;に対応していないブラウザの場合はclingifyを実行
-    if (is_active_sidebar('sidebar-scroll') && ($is_ie || $is_edge_less_than_13)) {
+    if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_less_than_13)) {
       $data = '
         (function($){
          $(".sidebar-scroll").clingify();
@@ -511,9 +511,16 @@ endif;
 
 
 //子テーマが存在するか
-if ( !function_exists( 'is_child_theme_exist' ) ):
+if ( !function_exists( 'is_child_theme_exists' ) ):
 function is_child_theme_exists(){
   return get_template_directory_uri() != get_stylesheet_directory_uri();
+}
+endif;
+
+//スクロール追従領域が有効化
+if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
+function is_scrollable_sidebar_enable(){
+  return is_active_sidebar('sidebar-scroll');
 }
 endif;
 
