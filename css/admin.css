@@ -375,6 +375,8 @@
     display: none; }
   .demo .navi {
     background-color: #fff; }
+  .demo .js-clingify-wrapper {
+    z-index: 99999; }
   .demo .navi-in > ul {
     padding: 0;
     list-style: none;

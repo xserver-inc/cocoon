@@ -301,6 +301,10 @@ img {
   background-color: #fff;
 }
 
+.js-clingify-wrapper {
+  z-index: 99999;
+}
+
 .navi-in > ul {
   padding: 0;
   list-style: none;
