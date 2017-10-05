@@ -39,3 +39,17 @@
             ?>
           </td>
         </tr>
+
+        <!-- グローバルナビの固定  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag('', __( 'グローバルナビの固定', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_GLOBAL_NAVI_FIXED, is_global_navi_fixed(), __( 'グローバルナビメニューを固定する', THEME_NAME ));
+            genelate_tips_tag(__( 'ページをスクロールしても、メニューが追従してきます。', THEME_NAME ));
+
+            ?>
+          </td>
+        </tr>

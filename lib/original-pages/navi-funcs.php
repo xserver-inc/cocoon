@@ -40,3 +40,12 @@ function get_global_navi_sub_menu_width(){
   return get_option(OP_GLOBAL_NAVI_SUB_MENU_WIDTH);
 }
 endif;
+
+//グローバルナビメニューの固定
+define('OP_GLOBAL_NAVI_FIXED', 'global_navi_fixed');
+if ( !function_exists( 'is_global_navi_fixed' ) ):
+function is_global_navi_fixed(){
+  return get_option(OP_GLOBAL_NAVI_FIXED);
+}
+endif;
+

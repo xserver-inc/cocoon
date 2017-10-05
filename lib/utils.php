@@ -295,8 +295,8 @@ endif;
 //clingifyの読み込み
 if ( !function_exists( 'wp_enqueue_clingify' ) ):
 function wp_enqueue_clingify(){
- if ( is_active_sidebar('sidebar-scroll') || //スクロール追従領域が有効な時
-      1 ) {
+  //グローバルナビ追従が有効な時
+ if ( is_global_navi_fixed() ) {
     //clingifyスタイルの呼び出し
     //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
