@@ -36,6 +36,34 @@
   // padding-bottom: 8px;
   // display: flex;
   // justify-content: space-between;
+  &.fdt-left-and-right{
+    .footer-bottom-logo{
+      display: none;
+    }
+
+    .footer-bottom-content{
+      float: none;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &.fdt-up-and-down{
+    .footer-bottom-logo{
+      display: none;
+    }
+
+    .footer-bottom-content{
+      float: none;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .navi-footer-in > ul{
+        justify-content: center;
+      }
+    }
+  }
 }
 
 .footer-bottom-logo{

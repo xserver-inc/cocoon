@@ -6,6 +6,10 @@
   <div class="inside">
 
     <p><?php _e( 'フッターやクレジット表示設定です。', THEME_NAME ) ?></p>
+    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+    <div class="demo">
+      <?php get_template_part('tmp/footer-bottom'); ?>
+    </div>
 
     <table class="form-table">
       <tbody>

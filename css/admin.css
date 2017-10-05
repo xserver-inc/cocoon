@@ -1053,6 +1053,21 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: 14px; }
+    .demo .footer-bottom.fdt-left-and-right .footer-bottom-logo {
+      display: none; }
+    .demo .footer-bottom.fdt-left-and-right .footer-bottom-content {
+      float: none;
+      display: flex;
+      justify-content: space-between; }
+    .demo .footer-bottom.fdt-up-and-down .footer-bottom-logo {
+      display: none; }
+    .demo .footer-bottom.fdt-up-and-down .footer-bottom-content {
+      float: none;
+      display: flex;
+      flex-direction: column;
+      text-align: center; }
+      .demo .footer-bottom.fdt-up-and-down .footer-bottom-content .navi-footer-in > ul {
+        justify-content: center; }
   .demo .footer-bottom-logo {
     float: left; }
     .demo .footer-bottom-logo .logo-text {
