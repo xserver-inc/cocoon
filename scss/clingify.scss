@@ -14,11 +14,11 @@
   width: 100%;
 }
 
-// .sidebar{
-//   .js-clingify-wrapper {
-//     width: $sidebar_outer_width;
-//   }
-// }
+.sidebar{
+  .js-clingify-wrapper {
+    width: $sidebar_outer_width;
+  }
+}
 
 .js-clingify-locked {
   left: 0;
@@ -26,12 +26,13 @@
   top: 0;
 }
 
-// .sidebar{
-//   .js-clingify-locked {
-//     left: auto;
-//     width: $sidebar_outer_width;
-//     border: $sidebar_border_width $sidebar_border_style $transparent_border_color;
-//     padding: $sidebar_padding_width;
-//     background-color: $bg_white;
-//   }
-// }
+.sidebar{
+  .js-clingify-locked {
+    margin-left: -($sidebar_padding_width + $sidebar_border_width);
+    left: auto;
+    width: $sidebar_outer_width;
+    border: $sidebar_border_width $sidebar_border_style $transparent_border_color;
+    padding: $sidebar_padding_width;
+    background-color: $bg_white;
+  }
+}
