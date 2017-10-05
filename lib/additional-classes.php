@@ -1,13 +1,34 @@
 <?php //スタイリング用の追加クラス関数
 
+//bodyクラスの追加関数
+add_filter('body_class', 'body_class_additional');
+if ( !function_exists( 'body_class_additional' ) ):
+function body_class_additional($classes) {
+  global $post;
+  //カテゴリ入りクラスの追加
+  if ( is_single() ) {
+    foreach((get_the_category($post->ID)) as $category)
+      $classes[] = 'categoryid-'.$category->cat_ID;
+  }
+
+  //サイドバーにウィジェットが入っていない場合
+  if (!is_active_sidebar( 'sidebar' )) {
+    $classes[] = 'no-sidebar';
+  }
+
+  return $classes;
+}
+endif;
+
+
 //メインカラムの追加関数
 if ( !function_exists( 'get_additional_main_classes' ) ):
 function get_additional_main_classes($option = null){
   $classes = null;
-  //サイドバーにウィジェットが入っていない場合
-  if (!is_active_sidebar( 'sidebar' )) {
-    $classes .= ' no-sidebar';
-  }
+  // //サイドバーにウィジェットが入っていない場合
+  // if (!is_active_sidebar( 'sidebar' )) {
+  //   $classes .= ' no-sidebar';
+  // }
 
   if ($option) {
     $classes .= ' '.trim($option);
