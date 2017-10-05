@@ -211,13 +211,13 @@ function wp_enqueue_highlight_js(){
     //ソースコードハイライト表示用のスタイル
     wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
     wp_enqueue_script( 'code-highlight-js', get_template_directory_uri() . '/plugins/highlight-js/highlight.min.js', array( 'jquery' ), false, true );
-    $data = '
-      (function($){
-       $("'.get_code_highlight_css_selector().'").each(function(i, block) {
-        hljs.highlightBlock(block);
-       });
-      })(jQuery);
-    ';
+    $data = minify_js('
+          (function($){
+           $("'.get_code_highlight_css_selector().'").each(function(i, block) {
+            hljs.highlightBlock(block);
+           });
+          })(jQuery);
+        ');
     wp_add_inline_script( 'code-highlight-js', $data, 'after' ) ;
   }
 }
@@ -280,11 +280,11 @@ function wp_enqueue_baguettebox(){
     } else {
       $selector = '.entry-demo';
     }
-    $data = '
-      (function($){
-       baguetteBox.run("'.$selector.'");
-      })(jQuery);
-    ';
+    $data = minify_js('
+          (function($){
+           baguetteBox.run("'.$selector.'");
+          })(jQuery);
+        ');
     wp_add_inline_script( 'baguettebox-js', $data, 'after' ) ;
 
   }
@@ -315,21 +315,21 @@ function wp_enqueue_clingify(){
           break;
       }
       //$selector = '.sidebar-scroll';
-      $data = '
-        (function($){
-         $("'.$selector.'").clingify();
-        })(jQuery);
-      ';
+      $data = minify_js('
+              (function($){
+               $("'.$selector.'").clingify();
+              })(jQuery);
+            ');
       wp_add_inline_script( 'clingify-js', $data, 'after' );
     }
 
     //position: sticky;に対応していないブラウザの場合はclingifyを実行
     if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_less_than_13)) {
-      $data = '
-        (function($){
-         $(".sidebar-scroll").clingify();
-        })(jQuery);
-      ';
+      $data = minify_js('
+              (function($){
+               $(".sidebar-scroll").clingify();
+              })(jQuery);
+            ');
       wp_add_inline_script( 'clingify-js', $data, 'after' );
     }
 
