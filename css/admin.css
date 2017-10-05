@@ -1716,18 +1716,10 @@
     z-index: 99999; }
   .demo .js-clingify-wrapper {
     width: 100%; }
-  .demo .sidebar .js-clingify-wrapper {
-    width: 356px; }
   .demo .js-clingify-locked {
     left: 0;
     position: fixed;
     top: 0; }
-  .demo .sidebar .js-clingify-locked {
-    left: auto;
-    width: 356px;
-    border: 1px solid transparent;
-    padding: 9px;
-    background-color: #fff; }
   @media screen and (max-width: 1240px) {
     .demo .content-in {
       display: block; }
