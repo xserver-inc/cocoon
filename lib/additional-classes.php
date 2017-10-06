@@ -16,6 +16,11 @@ function body_class_additional($classes) {
     $classes[] = 'no-sidebar';
   }
 
+  //サイドバー追従領域にウィジェットが入っていない場合
+  if (!is_scrollable_sidebar_enable()) {
+    $classes[] = 'no-scrollable-sidebar';
+  }
+
   return $classes;
 }
 endif;

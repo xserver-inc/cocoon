@@ -737,6 +737,8 @@
       background-color: #f3f4f5;
       padding: 16px 10px;
       margin: 16px 0; }
+  .demo .no-scrollable-sidebar .sidebar {
+    height: 100%; }
   .demo .sidebar-scroll {
     position: -webkit-sticky;
     /* Safari */

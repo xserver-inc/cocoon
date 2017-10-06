@@ -17,6 +17,10 @@
   }
 }
 
+.no-scrollable-sidebar .sidebar{
+  height: 100%;
+}
+
 .sidebar-scroll{
   position: -webkit-sticky; /* Safari */
   position: sticky;

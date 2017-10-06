@@ -833,6 +833,10 @@ blockquote::after {
   margin: 16px 0;
 }
 
+.no-scrollable-sidebar .sidebar {
+  height: 100%;
+}
+
 .sidebar-scroll {
   position: -webkit-sticky;
   /* Safari */
