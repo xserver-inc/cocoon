@@ -1,5 +1,5 @@
 .content-in{
-  display: block;
+  //display: block;
 }
 
 // .main,
@@ -10,20 +10,19 @@
 
 .main,
 .sidebar{
-  margin: 0 10px;
+  margin: 0 0.5%;
   //float: none;
 }
 
 .main{
-  width: 66%;
+  width: 67%;
 }
 
 
 .sidebar{
-  margin-top: 1em;
   padding: 0px 10px;
   width: 30%;
-  margin: 0 10px;
+  //overflow: hidden;
 }
 
 

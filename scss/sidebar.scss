@@ -2,7 +2,7 @@
 ** サイドバーのスタイル
 ************************************/
 .sidebar{
-  float: right;
+  //float: right;
   width: $sidebar_outer_width;
   border: $sidebar_border_width $sidebar_border_style $transparent_border_color;
   padding: $sidebar_padding_width;

@@ -142,9 +142,16 @@ a:hover {
 /************************************
 ** 本文部分
 ************************************/
+.content-in {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .main {
   width: 860px;
-  float: left;
+  margin-right: 20px;
+  height: 100%;
   padding: 20px 29px;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -814,7 +821,6 @@ blockquote::after {
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
-  float: right;
   width: 356px;
   border: 1px solid transparent;
   padding: 9px;
@@ -2330,28 +2336,22 @@ input[type='submit'] {
 }
 
 @media screen and (max-width: 1240px) {
-  .content-in {
-    display: block;
-  }
-
   .wrap {
     width: auto;
   }
 
   .main,
   .sidebar {
-    margin: 0 10px;
+    margin: 0 0.5%;
   }
 
   .main {
-    width: 66%;
+    width: 67%;
   }
 
   .sidebar {
-    margin-top: 1em;
     padding: 0px 10px;
     width: 30%;
-    margin: 0 10px;
   }
 
   .entry-card-thumb {
@@ -2377,10 +2377,13 @@ input[type='submit'] {
     display: none;
   }
 
+  .content-in {
+    flex-direction: column;
+  }
+
   .main,
   .sidebar {
     margin: 10px;
-    float: none;
     width: auto;
   }
 
@@ -2405,7 +2408,7 @@ input[type='submit'] {
   .main,
   .sidebar {
     padding: 5px;
-    margin: 0;
+    margin: 10px 0;
   }
 
   .article ul,

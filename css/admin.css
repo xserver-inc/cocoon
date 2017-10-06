@@ -285,9 +285,14 @@
   .demo .wrap {
     width: 1236px;
     margin: 0 auto; }
+  .demo .content-in {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
   .demo .main {
     width: 860px;
-    float: left;
+    margin-right: 20px;
+    height: 100%;
     padding: 20px 29px;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -723,7 +728,6 @@
       text-align: right;
       font-size: 0.8em; }
   .demo .sidebar {
-    float: right;
     width: 356px;
     border: 1px solid transparent;
     padding: 9px;
@@ -1725,20 +1729,16 @@
   .demo .sidebar .js-clingify-locked {
     left: auto; }
   @media screen and (max-width: 1240px) {
-    .demo .content-in {
-      display: block; }
     .demo .wrap {
       width: auto; }
     .demo .main,
     .demo .sidebar {
-      margin: 0 10px; }
+      margin: 0 0.5%; }
     .demo .main {
-      width: 66%; }
+      width: 67%; }
     .demo .sidebar {
-      margin-top: 1em;
       padding: 0px 10px;
-      width: 30%;
-      margin: 0 10px; }
+      width: 30%; }
     .demo .entry-card-thumb {
       width: 38%; }
     .demo .entry-card-content {
@@ -1752,10 +1752,11 @@
       padding: 1em; }
     .demo .footer-widgets {
       display: none; }
+    .demo .content-in {
+      flex-direction: column; }
     .demo .main,
     .demo .sidebar {
       margin: 10px;
-      float: none;
       width: auto; }
     .demo .footer-bottom-logo,
     .demo .footer-bottom-content {
@@ -1770,7 +1771,7 @@
     .demo .main,
     .demo .sidebar {
       padding: 5px;
-      margin: 0; }
+      margin: 10px 0; }
     .demo .article ul,
     .demo .article ol {
       padding-left: 20px; }

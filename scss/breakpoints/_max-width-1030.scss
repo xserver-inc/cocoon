@@ -12,11 +12,13 @@
   display: none;
 }
 
+.content-in{
+  flex-direction: column;
+}
 
 .main,
 .sidebar{
   margin: 10px;
-  float: none;
   width: auto;
 }
 
