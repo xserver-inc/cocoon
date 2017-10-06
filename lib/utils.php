@@ -297,7 +297,7 @@ if ( !function_exists( 'wp_enqueue_clingify' ) ):
 function wp_enqueue_clingify(){
   $browser_info = get_browser_info();
   $is_ie = $browser_info['browser_name'] == 'IE';
-  $is_edge_less_than_13 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 14);
+  $is_edge_version_under_16 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 16);
   //グローバルナビ追従が有効な時
   if ( is_global_navi_fixed() || is_scrollable_sidebar_enable() ) {
     //clingifyスタイルの呼び出し
@@ -324,7 +324,7 @@ function wp_enqueue_clingify(){
     }
 
     //position: sticky;に対応していないブラウザの場合はclingifyを実行
-    if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_less_than_13)) {
+    if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_version_under_16)) {
       $data = minify_js('
               (function($){
                $(".sidebar-scroll").clingify();
