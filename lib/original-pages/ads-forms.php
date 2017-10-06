@@ -26,7 +26,8 @@
           <th scope="row">
             <?php genelate_label_tag(OP_AD_LABEL, __( '広告ラベル', THEME_NAME )); ?>
           </th>
-          <td>            <?php
+          <td>
+            <?php
             genelate_textbox_tag(OP_AD_LABEL, get_ad_label(), __( '「スポンサーリンク」か「広告」推奨', THEME_NAME ));
             genelate_tips_tag(__( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ));
             ?>
@@ -194,22 +195,26 @@
         <!-- 広告除外記事ID -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_AD_EXCLUDE_POST_IDS; ?>"><?php _e( '広告除外記事ID', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_AD_EXCLUDE_POST_IDS, __( '広告除外記事ID', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_AD_EXCLUDE_POST_IDS; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_ad_exclude_post_ids(); ?>" placeholder="<?php _e( '例：111,222,3333', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。', THEME_NAME ) ?></p>
+            <?php
+            genelate_textbox_tag(OP_AD_EXCLUDE_POST_IDS, get_ad_exclude_post_ids(), __( '例：111,222,3333', THEME_NAME ));
+            genelate_tips_tag(__( '広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- 広告除外カテゴリーID -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_AD_EXCLUDE_CATEGORY_IDS; ?>"><?php _e( '広告除外カテゴリーID', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_AD_EXCLUDE_CATEGORY_IDS, __( '広告除外カテゴリーID', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_AD_EXCLUDE_CATEGORY_IDS; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_ad_exclude_category_ids(); ?>" placeholder="<?php _e( '例：111,222,3333', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。', THEME_NAME ) ?></p>
+            <?php
+            genelate_textbox_tag(OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), __( '例：111,222,3333', THEME_NAME ));
+            genelate_tips_tag(__( '広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
