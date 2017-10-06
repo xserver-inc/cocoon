@@ -2327,6 +2327,7 @@ input[type='submit'] {
 
 .sidebar .js-clingify-wrapper {
   width: 336px;
+  z-index: 9999;
 }
 
 .js-clingify-locked {

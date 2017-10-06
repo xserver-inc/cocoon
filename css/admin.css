@@ -1723,7 +1723,8 @@
   .demo .js-clingify-wrapper {
     width: 100%; }
   .demo .sidebar .js-clingify-wrapper {
-    width: 336px; }
+    width: 336px;
+    z-index: 9999; }
   .demo .js-clingify-locked {
     left: 0;
     position: fixed;

@@ -17,6 +17,7 @@
 .sidebar{
   .js-clingify-wrapper {
     width: $sidebar_inner_width;
+    z-index: 9999;
   }
 }
 
