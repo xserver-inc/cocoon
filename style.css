@@ -845,6 +845,17 @@ blockquote::after {
 }
 
 /************************************
+** サイドバーの位置
+************************************/
+.sidebar-left .content-in {
+  flex-direction: row-reverse;
+}
+.sidebar-left .main {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/************************************
 ** ウィジェット
 ************************************/
 label.screen-reader-text {
@@ -2346,7 +2357,9 @@ input[type='submit'] {
   }
 
   .main,
-  .sidebar {
+  .sidebar,
+  .sidebar-left .main,
+  .sidebar-left .sidebar {
     margin: 0 0.5%;
   }
 

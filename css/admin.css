@@ -128,6 +128,9 @@
   ** サイドバーのスタイル
   ************************************/
   /************************************
+  ** サイドバーの位置
+  ************************************/
+  /************************************
   ** ウィジェット
   ************************************/
   /*ウィジェットリスト*/
@@ -744,6 +747,11 @@
     /* Safari */
     position: sticky;
     top: 0; }
+  .demo .sidebar-left .content-in {
+    flex-direction: row-reverse; }
+  .demo .sidebar-left .main {
+    margin-right: 0;
+    margin-left: 20px; }
   .demo label.screen-reader-text {
     display: none; }
   .demo .widget {
@@ -1735,7 +1743,9 @@
     .demo .wrap {
       width: auto; }
     .demo .main,
-    .demo .sidebar {
+    .demo .sidebar,
+    .demo .sidebar-left .main,
+    .demo .sidebar-left .sidebar {
       margin: 0 0.5%; }
     .demo .main {
       width: 67%; }

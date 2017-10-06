@@ -31,3 +31,18 @@
 // .sidebar-scroll{
 //   background-color: $bg_white;
 // }
+
+/************************************
+** サイドバーの位置
+************************************/
+.sidebar-left{
+  .content-in{
+    flex-direction: row-reverse;
+
+  }
+
+  .main{
+    margin-right: 0;
+    margin-left: $between_main_and_sidebar;
+  }
+}

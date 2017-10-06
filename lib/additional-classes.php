@@ -21,6 +21,15 @@ function body_class_additional($classes) {
     $classes[] = 'no-scrollable-sidebar';
   }
 
+  switch (get_sidebar_position()) {
+    case 'sidebar_left':
+      $classes[] = 'sidebar-left';
+      break;
+    default: //sidebar_right
+      $classes[] = 'sidebar-right';
+      break;
+  }
+
   return $classes;
 }
 endif;
