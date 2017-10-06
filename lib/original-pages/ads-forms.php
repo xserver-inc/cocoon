@@ -11,22 +11,25 @@
         <!-- 広告の表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_ALL_ADS_VISIBLE; ?>"><?php _e( '広告の表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_ALL_ADS_VISIBLE, __( '広告の表示', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="checkbox" name="<?php echo OP_ALL_ADS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_all_ads_visible()); ?>><?php _e("全ての広告を表示",THEME_NAME ); ?>
-            <p class="tips"><?php _e( 'アドセンス設定、ウィジェット設定等、全ての広告の表示を切り替えます。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag(OP_ALL_ADS_VISIBLE, is_all_ads_visible(), __("全ての広告を表示",THEME_NAME ));
+            genelate_tips_tag(__( 'アドセンス設定、ウィジェット設定等、全ての広告の表示を切り替えます。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- 広告ラベル -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_AD_LABEL; ?>"><?php _e( '広告ラベル', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_AD_LABEL, __( '広告ラベル', THEME_NAME )); ?>
           </th>
-          <td>
-            <input type="text" name="<?php echo OP_AD_LABEL; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_ad_label(); ?>" placeholder="<?php _e( '「スポンサーリンク」か「広告」推奨', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ) ?></p>
+          <td>            <?php
+            genelate_textbox_tag(OP_AD_LABEL, get_ad_label(), __( '「スポンサーリンク」か「広告」推奨', THEME_NAME ));
+            genelate_tips_tag(__( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
