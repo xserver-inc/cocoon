@@ -9,6 +9,7 @@ if (get_header_background_image_url()): ?>
 if (get_header_container_background_color()): ?>
 .header-container,
 .demo .header-container,
+.navi,
 .navi .navi-in > ul .sub-menu{
   background-color: <?php echo get_header_container_background_color(); ?>;
 }
