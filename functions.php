@@ -187,11 +187,12 @@ endif;
 // function my_admin_print_styles() {
 //  wp_enqueue_style( 'wp-color-picker' );
 // }
-// add_action('admin_enqueue_scripts', 'admin_scripts');
-// function admin_scripts($hook) {
-//     wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js',
-//     array( 'wp-color-picker' ), false, true);
-// }
+
+//'wp-color-picker'の呼び出し順操作（最初の方に読み込む）
+add_action('admin_enqueue_scripts', 'admin_scripts');
+function admin_scripts($hook) {
+    wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
+}
 
 //不要なテーマカスタマイザー項目を削除
 //https://tenman.info/labo/snip/archives/8682

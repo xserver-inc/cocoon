@@ -68,6 +68,7 @@
             <?php genelate_label_tag('', __( 'ヘッダー全体色', THEME_NAME ) ); ?>
           </th>
           <td>
+
             <?php
 
             genelate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), 'ヘッダー全体背景色');
