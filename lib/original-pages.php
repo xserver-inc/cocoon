@@ -9,6 +9,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
+  //全体
+  require_once 'original-pages/all-posts.php';
   //ヘッダー
   require_once 'original-pages/header-posts.php';
   //グローバルナビ
@@ -64,6 +66,7 @@ endif;
 <!-- タブ機能の実装 -->
 <div id="tabs">
   <ul>
+    <li class="all"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
     <!-- <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li> -->
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
@@ -90,10 +93,14 @@ endif;
     <li class="heading"><?php _e( '関連記事', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( 'レイアウト', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( '目次', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( 'エントリーカード', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
+
+  <!-- 全体タブ -->
+  <div class="all metabox-holder">
+    <?php require_once 'original-pages/all-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
 
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
