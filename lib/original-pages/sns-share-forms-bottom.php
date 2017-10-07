@@ -61,10 +61,10 @@
                 <?php genelate_checkbox_tag(OP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>
-                <?php genelate_checkbox_tag(OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
+                <?php genelate_checkbox_tag(OP_HATEBU_SHARE_BUTTON_VISIBLE, is_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
               </li>
               <li>
-                <?php genelate_checkbox_tag(OP_HATEBU_SHARE_BUTTON_VISIBLE, is_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
+                <?php genelate_checkbox_tag(OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
               </li>
               <li>
                 <?php genelate_checkbox_tag(OP_POCKET_SHARE_BUTTON_VISIBLE, is_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>

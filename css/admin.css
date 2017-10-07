@@ -1252,7 +1252,10 @@
     margin-right: 8px;
     margin-bottom: 8px;
     font-size: 30px;
-    line-height: 46px; }
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center; }
     .demo .sns-follow-buttons a:last-child {
       margin-right: 0; }
   .demo .ad-area {

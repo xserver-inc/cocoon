@@ -41,7 +41,6 @@
           <td>
             <p><?php _e( '個々のシェアボタンの表示切り替え。', THEME_NAME ) ?></p>
             <ul>
-            <ul>
               <li>
                 <?php genelate_checkbox_tag(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE, is_top_twitter_share_button_visible(), __( 'Twitter', THEME_NAME )); ?>
               </li>
@@ -49,10 +48,10 @@
                 <?php genelate_checkbox_tag(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>
-                <?php genelate_checkbox_tag(OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_top_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
+                <?php genelate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
               </li>
               <li>
-                <?php genelate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
+                <?php genelate_checkbox_tag(OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_top_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
               </li>
               <li>
                 <?php genelate_checkbox_tag(OP_TOP_POCKET_SHARE_BUTTON_VISIBLE, is_top_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
