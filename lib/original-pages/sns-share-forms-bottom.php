@@ -70,7 +70,6 @@
                 <?php genelate_checkbox_tag(OP_POCKET_SHARE_BUTTON_VISIBLE, is_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li>
               <li>
-
                 <?php genelate_checkbox_tag(OP_LINE_AT_SHARE_BUTTON_VISIBLE, is_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
               </li>
             </ul>
@@ -92,7 +91,7 @@
               'brand_color_white' => 'ブランドカラー（白抜き）',
             );
             genelate_selectbox_tag(OP_SNS_SHARE_BUTTON_COLOR, $options, get_sns_share_button_color());
-            genelate_tips_tag(__( 'シェアボタンの配色を選択してください。', THEME_NAME ));
+            genelate_tips_tag(__( '本文下シェアボタンの配色を選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
