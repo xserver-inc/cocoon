@@ -10,10 +10,10 @@
     <table class="form-table">
       <tbody>
 
-        <!-- サイドバー表示  -->
+        <!-- サイドバーの位置  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SIDEBAR_POSITION, __( 'サイドバー表示', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_SIDEBAR_POSITION, __( 'サイドバーの位置', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -24,6 +24,28 @@
             //アドミンバーに独自管理メニューを表示
             genelate_radiobox_tag(OP_SIDEBAR_POSITION, $options, get_sidebar_position());
             genelate_tips_tag(__( 'サイドバーの表示位置の設定です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- サイドバーの表示状態  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SIDEBAR_DISPLAY_TYPE, __( 'サイドバーの表示状態', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'display_all' => __( '全てのページで表示', THEME_NAME ),
+              'non_display_all' => __( '全てのページで非表示', THEME_NAME ),
+              'non_display_front_page_only' => __( 'フロントページで非表示（固定ページがトップページの場合）', THEME_NAME ),
+              'non_display_index_page_only' => __( 'インデックスページで非表示', THEME_NAME ),
+              'non_display_page_only' => __( '固定ページで非表示', THEME_NAME ),
+              'non_display_single_only' => __( '投稿ページで非表示', THEME_NAME ),
+            );
+            //アドミンバーに独自管理メニューを表示
+            genelate_radiobox_tag(OP_SIDEBAR_DISPLAY_TYPE, $options, get_sidebar_display_type());
+            genelate_tips_tag(__( 'サイドバーを表示するページの設定です。', THEME_NAME ));
             ?>
           </td>
         </tr>

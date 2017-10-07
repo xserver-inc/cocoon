@@ -1,7 +1,5 @@
 <?php //HTMLフォーム生成関数
 
-
-
 //著者セレクトボックスを手軽に作成する
 if ( !function_exists( 'get_author_list_selectbox_tag' ) ):
 function get_author_list_selectbox_tag($name, $value){
@@ -200,7 +198,7 @@ function genelate_upload_image_tag($name, $value){?>
       <img src="<?php echo $value; ?>" alt="選択中の画像">
     <?php endif ?>
   </div>
-  <?php if ($value): ?>
+  <?php if (0/*$value*/): ?>
     <?php genelate_tips_tag(__( '大きな画像は縮小して表示されます。', THEME_NAME )) ?>
   <?php endif ?>
 
