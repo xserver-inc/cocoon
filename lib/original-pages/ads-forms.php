@@ -53,11 +53,13 @@
       <!-- アドセンス広告表示 -->
       <tr>
           <th scope="row">
-            <label for="<?php echo OP_ALL_ADSENSES_VISIBLE; ?>"><?php _e( 'アドセンス広告の表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_ALL_ADSENSES_VISIBLE, __( 'アドセンス広告の表示', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="checkbox" name="<?php echo OP_ALL_ADSENSES_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_all_adsenses_visible()); ?>><?php _e("全てのアドセンス広告を表示",THEME_NAME ); ?>
-            <p class="tips"><?php _e( '「アドセンス設定」で設定した、アドセンス広告全ての表示を切り替えます。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag( OP_ALL_ADSENSES_VISIBLE, is_all_adsenses_visible(), __( '全てのアドセンス広告を表示', THEME_NAME ));
+            genelate_tips_tag(__( '「アドセンス設定」で設定した、アドセンス広告全ての表示を切り替えます。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
@@ -67,15 +69,17 @@
             <label for="<?php echo OP_AD_CODE; ?>"><?php _e( '広告コード', THEME_NAME ) ?></label>
           </th>
           <td>
-            <textarea name="<?php echo OP_AD_CODE; ?>" cols="<?php echo DEFAULT_INPUT_COLS; ?>" rows="<?php echo DEFAULT_INPUT_ROWS; ?>" placeholder="<?php _e( 'アドセンスのレスポンシブコードを入力してください', THEME_NAME ) ?>"><?php echo get_ad_code(); ?></textarea>
-            <p class="tips"><?php _e( 'アドセンスのレスポンシブ広告コードを入力してください。', THEME_NAME ); ?></p>
+            <?php
+            genelate_textarea_tag(OP_AD_CODE, get_ad_code(), __( 'アドセンスのレスポンシブコードを入力してください', THEME_NAME )) ;
+            genelate_tips_tag(__( 'アドセンスのレスポンシブ広告コードを入力してください。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- 広告の表示位置 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>"><?php _e( '広告の表示位置', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_AD_POS_INDEX_TOP_VISIBLE, __( '広告の表示位置', THEME_NAME )); ?>
           </th>
           <td>
 
@@ -88,17 +92,19 @@
                 <ul>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_top_visible()); ?>><?php _e('トップ' ,THEME_NAME ); ?>
-                    <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_TOP_FORMAT, get_ad_pos_index_top_format()); ?>
+                    <?php
+                    //詳細設定
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_TOP_FORMAT, get_ad_pos_index_top_format());
+                    ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_middle_visible()); ?>><?php _e('ミドル' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_MIDDLE_FORMAT, get_ad_pos_index_middle_format()); ?>              </li>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_MIDDLE_FORMAT, get_ad_pos_index_middle_format()); ?>              </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_INDEX_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_index_bottom_visible()); ?>><?php _e('ボトム' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_BOTTOM_FORMAT, get_ad_pos_index_bottom_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_INDEX_BOTTOM_FORMAT, get_ad_pos_index_bottom_format()); ?>
 
                   </li>
                 </ul>
@@ -109,12 +115,12 @@
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_top_visible()); ?>><?php _e('サイドバートップ' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_sidebar_ad_detail_setting_forms(OP_AD_POS_SIDEBAR_TOP_FORMAT, get_ad_pos_sidebar_top_format()); ?>
+                    genelate_sidebar_ad_detail_setting_forms(OP_AD_POS_SIDEBAR_TOP_FORMAT, get_ad_pos_sidebar_top_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_sidebar_bottom_visible()); ?>><?php _e('サイドバーボトム' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_sidebar_ad_detail_setting_forms(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT, get_ad_pos_sidebar_bottom_format()); ?>
+                    genelate_sidebar_ad_detail_setting_forms(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT, get_ad_pos_sidebar_bottom_format()); ?>
                   </li>
                 </ul>
 
@@ -127,42 +133,42 @@
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_title_visible()); ?>><?php _e('タイトル上' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_TITLE_FORMAT, get_ad_pos_above_title_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_TITLE_FORMAT, get_ad_pos_above_title_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_TITLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_title_visible()); ?>><?php _e('タイトル下' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_TITLE_FORMAT, get_ad_pos_below_title_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_TITLE_FORMAT, get_ad_pos_below_title_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_TOP_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_top_visible()); ?>><?php _e('本文上' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_TOP_FORMAT, get_ad_pos_content_top_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_TOP_FORMAT, get_ad_pos_content_top_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_MIDDLE_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_middle_visible()); ?>><?php _e('本文中' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_MIDDLE_FORMAT, get_ad_pos_content_middle_format(), OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE, is_ad_pos_all_content_middle_visible()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_MIDDLE_FORMAT, get_ad_pos_content_middle_format(), OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE, is_ad_pos_all_content_middle_visible()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_CONTENT_BOTTOM_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_content_bottom_visible()); ?>><?php _e('本文下' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_BOTTOM_FORMAT, get_ad_pos_content_bottom_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_CONTENT_BOTTOM_FORMAT, get_ad_pos_content_bottom_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_above_sns_buttons_visible()); ?>><?php _e('SNSボタン上（本文下部分）' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, get_ad_pos_above_sns_buttons_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, get_ad_pos_above_sns_buttons_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_sns_buttons_visible()); ?>><?php _e('SNSボタン下（本文下部分）' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, get_ad_pos_below_sns_buttons_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, get_ad_pos_below_sns_buttons_format()); ?>
                   </li>
                   <li>
                     <input type="checkbox" name="<?php echo OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_ad_pos_below_related_posts_visible()); ?>><?php _e('関連記事下（投稿ページのみ）' ,THEME_NAME ); ?>
                     <?php //詳細設定
-                    echo_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, get_ad_pos_below_related_posts_format()); ?>
+                    genelate_main_column_ad_detail_setting_forms(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, get_ad_pos_below_related_posts_format()); ?>
                   </li>
                 </ul>
 

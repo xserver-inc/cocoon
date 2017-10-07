@@ -193,6 +193,58 @@ function genelate_color_picker_tag($name, $value, $label){?>
 endif;
 
 
+//メインカラム広告の詳細設定フォーム
+if ( !function_exists( 'genelate_main_column_ad_detail_setting_forms' ) ):
+function genelate_main_column_ad_detail_setting_forms($name, $value, $body_ad_name = null, $body_ad_value = null){ ?>
+ <span class="toggle">
+  <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
+  <div class="toggle-content">
+    <?php _e( 'フォーマット：', THEME_NAME ) ?>
+    <?php
+    $options = array(
+      DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+      DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+      DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
+      AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
+      AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
+    );
+    genelate_selectbox_tag($name, $options, $value);
+    //本文中広告用の設定
+    if (isset($body_ad_name) && isset($body_ad_value)){
+      echo '<p>';
+      genelate_checkbox_tag( $body_ad_name, $body_ad_value, __( '全てのH2見出し手前に広告を挿入', THEME_NAME ));
+      echo '</p>';
+    }
+    ?>
+  </div>
+</span>
+<?php
+}
+endif;
+
+//サイドバー広告の詳細設定フォーム
+if ( !function_exists( 'genelate_sidebar_ad_detail_setting_forms' ) ):
+function genelate_sidebar_ad_detail_setting_forms($name, $value){ ?>
+ <span class="toggle">
+  <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
+  <div class="toggle-content">
+    <?php _e( 'フォーマット：', THEME_NAME ) ?>
+    <?php
+    $options = array(
+      DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+      DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+      DATA_AD_FORMAT_RECTANGLE => 'レクタングル',
+      DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
+    );
+    genelate_selectbox_tag($name, $options, $value);
+    ?>
+  </div>
+</span>
+<?php
+}
+endif;
+
+
 
 //画像をアップロードボックス生成
 if ( !function_exists( 'genelate_upload_image_tag' ) ):
