@@ -103,7 +103,7 @@
         <!-- ボタンカラー -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_FOLLOW_BUTTON_COLOR; ?>"><?php _e( 'ボタンカラー', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_SNS_FOLLOW_BUTTON_COLOR, __( 'ボタンカラー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
