@@ -158,7 +158,7 @@ a:hover {
   position: relative;
 }
 
-.no-sidebar .main {
+.no-sidebar .content .main {
   margin: 0;
   width: 100%;
 }
@@ -842,6 +842,13 @@ blockquote::after {
   /* Safari */
   position: sticky;
   top: 0;
+}
+
+/************************************
+** サイドバーの非表示
+************************************/
+.no-sidebar .sidebar {
+  display: none;
 }
 
 /************************************

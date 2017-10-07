@@ -4,4 +4,4 @@
 update_theme_option(OP_SIDEBAR_POSITION);
 
 //サイドバーの表示状態の設定
-update_theme_option(OP_SIDEBAR_DISPLAY);
+update_theme_option(OP_SIDEBAR_DISPLAY_TYPE);

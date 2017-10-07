@@ -37,11 +37,11 @@
             <?php
             $options = array(
               'display_all' => __( '全てのページで表示', THEME_NAME ),
-              'non_display_all' => __( '全てのページで非表示', THEME_NAME ),
-              'non_display_front_page_only' => __( 'フロントページで非表示（固定ページがトップページの場合）', THEME_NAME ),
-              'non_display_index_page_only' => __( 'インデックスページで非表示', THEME_NAME ),
-              'non_display_page_only' => __( '固定ページで非表示', THEME_NAME ),
-              'non_display_single_only' => __( '投稿ページで非表示', THEME_NAME ),
+              'no_display_all' => __( '全てのページで非表示', THEME_NAME ),
+              'no_display_front_page' => __( 'フロントページで非表示（固定ページがトップページの場合）', THEME_NAME ),
+              'no_display_index_pages' => __( 'インデックスページで非表示', THEME_NAME ),
+              'no_display_pages' => __( '固定ページで非表示', THEME_NAME ),
+              'no_display_singles' => __( '投稿ページで非表示', THEME_NAME ),
             );
             //アドミンバーに独自管理メニューを表示
             genelate_radiobox_tag(OP_SIDEBAR_DISPLAY_TYPE, $options, get_sidebar_display_type());
