@@ -17,11 +17,9 @@
           </th>
           <td>
             <?php
-
             //OGPタグ
             genelate_checkbox_tag(OP_FACEBOOK_OGP_ENABLE, is_facebook_ogp_enable(), __( 'OGPタグの挿入', THEME_NAME ));
             genelate_tips_tag(__( 'headタグ内にFacebookや外部サイトなどに、ページの概要情報伝えるタグを挿入します。', THEME_NAME ));
-
             ?>
           </td>
         </tr>

@@ -25,22 +25,26 @@
         <!-- フォローボタンの表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>"><?php _e( 'フォローボタンの表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_SNS_FOLLOW_BUTTONS_VISIBLE, __( 'フォローボタンの表示', THEME_NAME )); ?>
           </th>
           <td>
-             <input type="checkbox" name="<?php echo OP_SNS_FOLLOW_BUTTONS_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_sns_follow_buttons_visible()); ?>><?php _e("本文下のフォローボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag( OP_SNS_FOLLOW_BUTTONS_VISIBLE, is_sns_follow_buttons_visible(), __( '本文下のフォローボタンを表示する', THEME_NAME ));
+            genelate_tips_tag(__( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- フォローメッセージ -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_FOLLOW_MESSAGE; ?>"><?php _e( 'フォローメッセージ', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_SNS_FOLLOW_MESSAGE, __( 'フォローメッセージ', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_SNS_FOLLOW_MESSAGE; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_sns_follow_message(); ?>" placeholder="<?php _e( 'フォローメッセージの入力', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( '訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変換されます', THEME_NAME ) ?></p>
+            <?php
+            genelate_textbox_tag(OP_SNS_FOLLOW_MESSAGE, get_sns_follow_message(), __( 'フォローメッセージの入力', THEME_NAME ));
+            genelate_tips_tag(__( '訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変換されます。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
@@ -72,22 +76,26 @@
         <!-- feedlyの表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'feedlyの表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, __( 'feedlyの表示', THEME_NAME )); ?>
           </th>
           <td>
-             <input type="checkbox" name="<?php echo OP_FEEDLY_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_feedly_follow_button_visible()); ?>><?php _e("feedlyフォローボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( 'feedlyフォローボタンを表示します。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag( OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, is_feedly_follow_button_visible(), __( 'feedlyフォローボタンを表示する', THEME_NAME ));
+            genelate_tips_tag(__( 'feedlyフォローボタンを表示します。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- RSSの表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>"><?php _e( 'RSSの表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_RSS_FOLLOW_BUTTON_VISIBLE, __( 'RSSの表示', THEME_NAME )); ?>
           </th>
           <td>
-             <input type="checkbox" name="<?php echo OP_RSS_FOLLOW_BUTTON_VISIBLE; ?>" value="1"<?php the_checkbox_checked(is_rss_follow_button_visible()); ?>><?php _e("RSS購読ボタンを表示する",THEME_NAME ); ?>
-            <p class="tips"><?php _e( 'RSS購読料のボタンを表示します。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag( OP_RSS_FOLLOW_BUTTON_VISIBLE, is_rss_follow_button_visible(), __( 'RSS購読ボタンを表示する', THEME_NAME ));
+            genelate_tips_tag(__( 'RSS購読料のボタンを表示します。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
@@ -98,24 +106,28 @@
             <label for="<?php echo OP_SNS_FOLLOW_BUTTON_COLOR; ?>"><?php _e( 'ボタンカラー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <select name="<?php echo OP_SNS_FOLLOW_BUTTON_COLOR; ?>">
-              <option value="monochrome"<?php the_option_selected('monochrome', get_sns_follow_button_color()); ?>>モノクロ</option>
-              <option value="brand_color"<?php the_option_selected('brand_color', get_sns_follow_button_color()); ?>>ブランドカラー</option>
-              <option value="brand_color_white"<?php the_option_selected('brand_color_white', get_sns_follow_button_color()); ?>>ブランドカラー（白抜き）</option>
-            </select>
-            <p class="tips"><?php _e( 'シェアボタンの配色を選択してください。', THEME_NAME ) ?></p>
+            <?php
+            $options = array(
+              'monochrome' => 'モノクロ',
+              'brand_color' => 'ブランドカラー',
+              'brand_color_white' => 'ブランドカラー（白抜き）',
+            );
+            genelate_selectbox_tag(OP_SNS_FOLLOW_BUTTON_COLOR, $options, get_sns_follow_button_color());
+            genelate_tips_tag(__( 'シェアボタンの配色を選択してください。', THEME_NAME ));
+            ?>
           </td>
         </tr>
-
 
         <!-- デフォルトユーザー -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_SNS_DEFAULT_FOLLOW_USER; ?>"><?php _e( 'デフォルトユーザー', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_SNS_DEFAULT_FOLLOW_USER, __( 'デフォルトユーザー', THEME_NAME )); ?>
           </th>
           <td>
-            <?php echo get_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user()); ?>
-            <p class="tips"><?php _e( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ) ?></p>
+            <?php
+            genelate_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user());
+            genelate_tips_tag(__( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ));
+             ?>
           </td>
         </tr>
 

@@ -1,6 +1,6 @@
 <?php //HTMLフォーム生成関数
 
-//著者セレクトボックスを手軽に作成する
+//著者セレクトボックスをの取得
 if ( !function_exists( 'get_author_list_selectbox_tag' ) ):
 function get_author_list_selectbox_tag($name, $value){
   $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
@@ -16,6 +16,13 @@ function get_author_list_selectbox_tag($name, $value){
   } //foreach
   $html .= '</select>'.PHP_EOL;
   return $html;
+}
+endif;
+
+//著者セレクトボックスをの取得
+if ( !function_exists( 'genelate_author_list_selectbox_tag' ) ):
+function genelate_author_list_selectbox_tag($name, $value){
+  echo get_author_list_selectbox_tag($name, $value);
 }
 endif;
 

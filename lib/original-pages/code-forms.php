@@ -36,33 +36,39 @@
         <!-- ソースコードのハイライト表示 -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_CODE_HIGHLIGHT_ENABLE; ?>"><?php _e( 'ハイライト表示', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_CODE_HIGHLIGHT_ENABLE, __( 'ハイライト表示', THEME_NAME )); ?>
           </th>
           <td>
-          <input type="checkbox" name="<?php echo OP_CODE_HIGHLIGHT_ENABLE; ?>" value="1"<?php the_checkbox_checked(is_code_highlight_enable()); ?>><?php _e("ソースコードをハイライト表示",THEME_NAME ); ?>
-          <p class="tips"><?php _e( '本文中に表示されているpreタグ中のソースコードをハイライト表示します。', THEME_NAME ) ?></p>
+            <?php
+            genelate_checkbox_tag( OP_CODE_HIGHLIGHT_ENABLE, is_code_highlight_enable(), __( 'ソースコードをハイライト表示', THEME_NAME ));
+            genelate_tips_tag(__( '本文中に表示されているpreタグ中のソースコードをハイライト表示します。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- ハイライトスタイル -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_CODE_HIGHLIGHT_STYLE; ?>"><?php _e( 'ハイライトスタイル', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_CODE_HIGHLIGHT_STYLE, __( 'ハイライトスタイル', THEME_NAME )); ?>
           </th>
           <td>
-          <?php genelate_selectbox_tag(OP_CODE_HIGHLIGHT_STYLE, HIGHLIGHT_STYLES, get_code_highlight_style()) ?>
-          <p class="tips"><?php _e( 'ソースコードのハイライトテーマです。スタイルについては、<a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo</a>を参照してください。。', THEME_NAME ) ?></p>
+            <?php
+            genelate_selectbox_tag(OP_CODE_HIGHLIGHT_STYLE, HIGHLIGHT_STYLES, get_code_highlight_style());
+            genelate_tips_tag(__( 'ソースコードのハイライトテーマです。スタイルについては、<a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo</a>を参照してください。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
         <!-- ハイライト表示するCSSセレクタ -->
         <tr>
           <th scope="row">
-            <label for="<?php echo OP_CODE_HIGHLIGHT_CSS_SELECTOR; ?>"><?php _e( 'ハイライト表示するCSSセレクタ', THEME_NAME ) ?></label>
+            <?php genelate_label_tag(OP_CODE_HIGHLIGHT_CSS_SELECTOR, __( 'ハイライト表示するCSSセレクタ', THEME_NAME )); ?>
           </th>
           <td>
-            <input type="text" name="<?php echo OP_CODE_HIGHLIGHT_CSS_SELECTOR; ?>" size="<?php echo DEFAULT_INPUT_COLS; ?>" value="<?php echo get_code_highlight_css_selector(); ?>" placeholder="<?php _e( '.entry-content pre', THEME_NAME ); ?>">
-            <p class="tips"><?php _e( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ) ?><br><?php _e( '※変更すると当設定ページのプレビュー機能は利用できなくなる可能性があります。', THEME_NAME ) ?></p>
+            <?php
+            genelate_textbox_tag( OP_CODE_HIGHLIGHT_CSS_SELECTOR, get_code_highlight_css_selector(), __( '.entry-content pre', THEME_NAME ));
+            genelate_tips_tag(__( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ).'<br>'.__( '※変更すると当設定ページのプレビュー機能は利用できなくなる可能性があります。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
