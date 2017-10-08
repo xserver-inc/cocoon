@@ -10,6 +10,20 @@
     <table class="form-table">
       <tbody>
 
+        <!-- サイト幅を揃える  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_ALIGN_SITE_WIDTH, __('サイト幅', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_ALIGN_SITE_WIDTH, is_align_site_width(), __( 'サイト幅を揃える', THEME_NAME ));
+            genelate_tips_tag(__('サイト全体の幅をコンテンツ幅で統一します。', THEME_NAME));
+            ?>
+
+          </td>
+        </tr>
+
         <!-- サイドバーの位置  -->
         <tr>
           <th scope="row">
