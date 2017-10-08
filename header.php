@@ -30,7 +30,7 @@ get_template_part('tmp-user/head-insert'); ?>
 <?php //アクセス解析ヘッダータグの取得
 get_template_part('tmp/header-analytics'); ?>
 
-<div id="container" class="container cf">
+<div id="container" class="container<?php echo get_additional_container_classes(); ?> cf">
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 

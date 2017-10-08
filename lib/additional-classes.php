@@ -295,6 +295,24 @@ function get_additional_header_classes($option = null){
 endif;
 
 
+//斎藤サイト全体コンテナのclass追加関数
+if ( !function_exists( 'get_additional_container_classes' ) ):
+function get_additional_container_classes($option = null){
+  $classes = null;
+
+  //サイト幅を揃える
+  if (is_align_site_width()) {
+    $classes .= ' wrap';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
 //ヘッダーコンテナのclass追加関数
 if ( !function_exists( 'get_additional_header_container_classes' ) ):
 function get_additional_header_container_classes($option = null){
