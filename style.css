@@ -396,7 +396,7 @@ img {
   background-color: #fff;
 }
 
-.navi-in > ul {
+.navi-in > .menu-header {
   padding: 0;
   list-style: none;
   display: flex;
@@ -405,16 +405,16 @@ img {
   text-align: center;
   /*サブメニュー*/
 }
-.navi-in > ul li {
+.navi-in > .menu-header li {
   display: block;
   width: 176px;
   height: 60px;
   line-height: 60px;
 }
-.navi-in > ul li:hover > ul {
+.navi-in > .menu-header li:hover > ul {
   display: block;
 }
-.navi-in > ul > .menu-item-has-description > a > .caption-wrap {
+.navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap {
   line-height: 21.42857px;
   display: flex;
   flex-wrap: wrap;
@@ -423,13 +423,13 @@ img {
   align-content: center;
   height: 60px;
 }
-.navi-in > ul > .menu-item-has-description > a > .caption-wrap div {
+.navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap div {
   width: 100%;
 }
-.navi-in > ul > .menu-item-has-description .item-description {
+.navi-in > .menu-header > .menu-item-has-description .item-description {
   font-size: 0.7em;
 }
-.navi-in > ul .sub-menu {
+.navi-in > .menu-header .sub-menu {
   display: none;
   position: absolute;
   margin-left: 0;
@@ -441,13 +441,13 @@ img {
   text-align: left;
   /*サブメニューのサブメニュー*/
 }
-.navi-in > ul .sub-menu li {
+.navi-in > .menu-header .sub-menu li {
   width: auto;
 }
-.navi-in > ul .sub-menu .menu-item-has-children {
+.navi-in > .menu-header .sub-menu .menu-item-has-children {
   position: relative;
 }
-.navi-in > ul .sub-menu .menu-item-has-children > a::after {
+.navi-in > .menu-header .sub-menu .menu-item-has-children > a::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
@@ -455,11 +455,11 @@ img {
   right: 3px;
   top: 0;
 }
-.navi-in > ul .sub-menu a {
+.navi-in > .menu-header .sub-menu a {
   padding-left: 16px;
   padding-right: 16px;
 }
-.navi-in > ul .sub-menu ul {
+.navi-in > .menu-header .sub-menu ul {
   top: -60px;
   left: 240px;
   position: relative;
@@ -482,7 +482,7 @@ img {
 /************************************
 ** フッターメニュー
 ************************************/
-.navi-footer-in > ul {
+.navi-footer-in > .menu-footer {
   padding: 0;
   list-style: none;
   display: flex;
@@ -490,8 +490,12 @@ img {
   text-align: center;
   margin: 0;
 }
-.navi-footer-in > ul li {
-  width: 100px;
+.navi-footer-in > .menu-footer li {
+  width: 120px;
+  border-left: 1px solid #cccdce;
+}
+.navi-footer-in > .menu-footer li:last-child {
+  border-right: 1px solid #cccdce;
 }
 .navi-footer-in a {
   color: #333435;
@@ -1391,6 +1395,10 @@ label.screen-reader-text {
 .footer {
   margin-top: 20px;
   padding-top: 10px;
+}
+
+.copyright {
+  margin-top: 10px;
 }
 
 .footer-widgets {

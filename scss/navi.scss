@@ -29,7 +29,7 @@ $icon_height: 16px;
 .navi-in{
   //font-family: $Meiryo_font;
 
-  >ul{
+  >.menu-header{
     @include list_cancel;
 
     display: flex;
@@ -150,7 +150,7 @@ $icon_height: 16px;
 ** フッターメニュー
 ************************************/
 .navi-footer-in{
-  >ul{
+  >.menu-footer{
     @include list_cancel;
 
     display: flex;
@@ -160,7 +160,12 @@ $icon_height: 16px;
     margin: 0;
 
     li{
-      width: 100px;
+      width: 120px;
+      border-left: 1px solid $thin;
+
+      &:last-child{
+        border-right: 1px solid $thin;
+      }
     }
 
   }
