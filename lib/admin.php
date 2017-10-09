@@ -39,7 +39,11 @@ function admin_print_styles_custom() {
     //メディアアップローダの javascript API
     wp_enqueue_media();
 
+    //カラーピッカー
     wp_enqueue_style( 'wp-color-picker' );
+
+    //Google Fonts
+    wp_enqueue_google_fonts();
 
     // wp_enqueue_script( 'wp-color-picker' );
 

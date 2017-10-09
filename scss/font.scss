@@ -1,0 +1,38 @@
+
+//フォント
+$default_font: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$Meiryo_font: "Meiryo", sans-serif;
+
+//フォントサイズ
+@for $i from 12 through 22 {
+  .fz-#{$i}px { font-size: #{$i}px; }
+}
+
+//フォントファミリー
+.ff-meiryo{
+  font-family: "メイリオ", "Meiryo",  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+}
+.ff-ms-pgothic{
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
+}
+.ff-noto-sans-jp{
+  font-family: "Noto Sans JP" ,sans-serif;
+}
+.ff-mplus-1p{
+  font-family: "Mplus 1p" ,sans-serif;
+}
+.ff-rounded-mplus-1c{
+  font-family: "Rounded Mplus 1c" ,sans-serif;
+}
+.ff-hannari{
+  font-family: "Hannari" ,sans-serif;
+}
+.ff-kokoro{
+  font-family: "Kokoro" ,sans-serif;
+}
+.ff-sawarabi-gothic{
+  font-family: "Sawarabi Gothic" ,sans-serif;
+}
+.ff-sawarabi-mincho{
+  font-family: "Sawarabi Mincho" ,sans-serif;
+}

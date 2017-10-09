@@ -337,6 +337,17 @@ function wp_enqueue_clingify(){
 }
 endif;
 
+
+//Google Fontsの読み込み
+if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
+function wp_enqueue_google_fonts(){
+  if (!is_site_font_family_local()) {
+    wp_enqueue_style( 'google-fonts-'.get_site_font_source(), get_site_font_source_url() );
+  }
+}
+endif;
+
+
 //設定変更CSSを読み込む
 if ( !function_exists( 'wp_add_css_custome_to_inline_style' ) ):
 function wp_add_css_custome_to_inline_style(){

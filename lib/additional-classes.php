@@ -1,5 +1,20 @@
 <?php //スタイリング用の追加クラス関数
 
+//フォントファミリークラスの取得
+if ( !function_exists( 'get_site_font_family_class' ) ):
+function get_site_font_family_class(){
+  return 'ff-'.str_replace('_', '-', get_site_font_family());
+}
+endif;
+
+//フォントサイズクラスの取得
+if ( !function_exists( 'get_site_font_size_class' ) ):
+function get_site_font_size_class(){
+  return 'fz-'.get_site_font_size();
+}
+endif;
+
+
 //bodyクラスの追加関数
 add_filter('body_class', 'body_class_additional');
 if ( !function_exists( 'body_class_additional' ) ):
@@ -12,10 +27,10 @@ function body_class_additional($classes) {
   }
 
   //フォントファミリー
-  $classes[] = 'ff-'.str_replace('_', '-', get_site_font_family());
+  $classes[] = get_site_font_family_class();
 
   //フォントサイズ
-  $classes[] = 'fz-'.get_site_font_size();
+  $classes[] = get_site_font_size_class();
 
   //サイドバー表示設定
   $add_no_sidebar = false;

@@ -54,12 +54,17 @@
 
               </div>
               <div style="width: auto">
+                <?php if (!is_site_font_family_local()): ?>
+                  <link rel="stylesheet" type="text/css" href="<?php echo get_site_font_source_url(); ?>">
+                <?php endif ?>
                 <p class="preview-label">プレビュー</p>
                 <div class="demo" style="width: 100%">
+                  <div class="<?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?>">
                   <p>1234567890</p>
                   <p>abcdefghijklmnopqrstuvwxyz</p>
                   <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                   <p>吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -66,9 +66,7 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   //Google Fonts
   ///////////////////////////////////////////
-  if (!is_site_font_family_local()) {
-    wp_enqueue_style( 'google-fonts-'.get_site_font_source(), get_site_font_source_url() );
-  }
+  wp_enqueue_google_fonts();
 
 ////////////////////////////////////////////////////////////////
 //

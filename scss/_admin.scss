@@ -60,6 +60,13 @@
   }
 }
 
+.form-table td p{
+  font-size: unset;
+}
+#all .demo{
+  @import "font";
+}
+
 //管理画面でプレビューできないので.demo内で読みみたくない
 @import "pre";
 
