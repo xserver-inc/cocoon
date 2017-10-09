@@ -74,7 +74,7 @@
         <!-- サイト幅を揃える  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_ALIGN_SITE_WIDTH, __('サイト幅', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_ALIGN_SITE_WIDTH, __('サイト幅の均一化', THEME_NAM) ); ?>
           </th>
           <td>
             <?php

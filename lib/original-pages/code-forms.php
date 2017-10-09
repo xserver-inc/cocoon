@@ -16,13 +16,11 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <?php $highlight_class = null;
-            if (is_code_highlight_enable()):
-               $highlight_class = ' entry-content'; ?>
+            <?php $
+            if (is_code_highlight_enable()): ?>
               <link rel="stylesheet" type="text/css" href="<?php echo get_highlight_js_css_url(); ?>">
             <?php endif ?>
-
-            <div class="demo<?php echo $highlight_class; ?>">
+            <div class="demo entry-content">
 <pre id="highlight-demo">/* コメント */
 #container {
   float: left;

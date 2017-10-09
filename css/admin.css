@@ -2109,18 +2109,18 @@ form.admin-settings {
   list-style-type: none;
   margin: 0;
   padding: 0; }
-  #tabs .tabs-nav li {
-    background-color: #f1f1f1;
-    cursor: pointer;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 5px 8px 3px !important;
-    border-color: #999 #999 currentcolor;
-    border-image: none;
-    border-style: solid solid none;
-    border-width: 1px 1px medium; }
-    #tabs .tabs-nav li.selected {
-      background-color: #fff; }
+#tabs > ul > li {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 5px 8px 3px !important;
+  border-color: #999 #999 currentcolor;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 1px medium; }
+  #tabs > ul > li.selected {
+    background-color: #fff; }
 
 .col-2 {
   display: flex; }

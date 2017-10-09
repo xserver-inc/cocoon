@@ -27,6 +27,22 @@ function get_site_font_size(){
 }
 endif;
 
+//サイト背景色
+define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');
+if ( !function_exists( 'get_site_background_color' ) ):
+function get_site_background_color(){
+  return get_option(OP_SITE_BACKGROUND_COLOR);
+}
+endif;
+
+//サイト背景画像
+define('OP_SITE_BACKGROUND_IMAGE_URL', 'site_background_image_url');
+if ( !function_exists( 'get_site_background_image_url' ) ):
+function get_site_background_image_url(){
+  return get_option(OP_SITE_BACKGROUND_IMAGE_URL);
+}
+endif;
+
 //サイト幅を揃える
 define('OP_ALIGN_SITE_WIDTH', 'align_site_width');
 if ( !function_exists( 'is_align_site_width' ) ):

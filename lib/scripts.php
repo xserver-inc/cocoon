@@ -37,7 +37,7 @@ function cocoon_scripts() {
   wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
 
   ///////////////////////////////////////////
-  //ソースコードのハイライト表示が有効のとき
+  //ソースコードのハイライト表示
   ///////////////////////////////////////////
   wp_enqueue_highlight_js();
 

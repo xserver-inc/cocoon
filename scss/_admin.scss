@@ -141,22 +141,21 @@ form.admin-settings{
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
 
+  > ul > li {
+    background-color: rgb(241, 241, 241);
+    cursor: pointer;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 5px 8px 3px !important;
+    border-color: #999 #999 currentcolor;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
 
-    li {
-      background-color: rgb(241, 241, 241);
-      cursor: pointer;
-      display: inline-block !important;
-      margin: 0 !important;
-      padding: 5px 8px 3px !important;
-      border-color: #999 #999 currentcolor;
-      border-image: none;
-      border-style: solid solid none;
-      border-width: 1px 1px medium;
-
-      &.selected{
-        background-color: #fff;
-      }
+    &.selected{
+      background-color: #fff;
     }
   }
 }
