@@ -16,7 +16,7 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <?php $
+            <?php
             if (is_code_highlight_enable()): ?>
               <link rel="stylesheet" type="text/css" href="<?php echo get_highlight_js_css_url(); ?>">
             <?php endif ?>
@@ -65,7 +65,7 @@
           <td>
             <?php
             genelate_textbox_tag( OP_CODE_HIGHLIGHT_CSS_SELECTOR, get_code_highlight_css_selector(), __( '.entry-content pre', THEME_NAME ));
-            genelate_tips_tag(__( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ).'<br>'.__( '※変更すると当設定ページのプレビュー機能は利用できなくなる可能性があります。', THEME_NAME ));
+            genelate_tips_tag(__( 'ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない場合は変更しないでください。', THEME_NAME ));
             ?>
           </td>
         </tr>

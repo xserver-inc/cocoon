@@ -12,7 +12,7 @@ endif;
 define('OP_AUTO_POST_THUMBNAIL_ENABLE', 'auto_post_thumbnail_enable');
 if ( !function_exists( 'is_auto_post_thumbnail_enable' ) ):
 function is_auto_post_thumbnail_enable(){
-  return get_option(OP_AUTO_POST_THUMBNAIL_ENABLE, 1);
+  return get_option(OP_AUTO_POST_THUMBNAIL_ENABLE);
 }
 endif;
 
