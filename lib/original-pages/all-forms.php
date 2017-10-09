@@ -13,7 +13,7 @@
         <!-- サイトフォント  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_FONT, __('サイトフォント', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_FONT_FAMILY, __('サイトフォント', THEME_NAM) ); ?>
           </th>
           <td>
             <div class="col-2">
@@ -31,7 +31,7 @@
                   'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
                   'sawarabi_mincho' => __( 'さわらび明朝（WEBフォント）', THEME_NAME ),
                 );
-                genelate_selectbox_tag(OP_SITE_FONT, $options, get_site_font());
+                genelate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family());
                 genelate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
 
                 $options = array(

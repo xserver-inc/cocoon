@@ -634,3 +634,25 @@ function get_browser_info(){
   );
 }//get_browser_info()
 endif;
+
+
+//サイトフォントソースコードの取得
+if ( !function_exists( 'get_site_font_source' ) ):
+function get_site_font_source(){
+  $font_source = get_site_font_family();
+  //空白を取り除く
+  $font_source = str_replace('_', '', $font_source);
+  //大文字を小文字に
+  $font_source = strtolower($font_source);
+  return $font_source;
+}
+endif;
+
+
+//サイトフォントソースコードURLの取得
+if ( !function_exists( 'get_site_font_source_url' ) ):
+function get_site_font_source_url(){
+  return 'https://fonts.googleapis.com/earlyaccess/'.get_site_font_source().'.css';
+}
+endif;
+

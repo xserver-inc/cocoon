@@ -1,7 +1,7 @@
 <?php //全体設定をデータベースに保存
 
 //フォント
-update_theme_option(OP_SITE_FONT);
+update_theme_option(OP_SITE_FONT_FAMILY);
 
 //フォントサイズ
 update_theme_option(OP_SITE_FONT_SIZE);

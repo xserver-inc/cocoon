@@ -11,6 +11,86 @@ Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+.fz-12px {
+  font-size: 12px;
+}
+
+.fz-13px {
+  font-size: 13px;
+}
+
+.fz-14px {
+  font-size: 14px;
+}
+
+.fz-15px {
+  font-size: 15px;
+}
+
+.fz-16px {
+  font-size: 16px;
+}
+
+.fz-17px {
+  font-size: 17px;
+}
+
+.fz-18px {
+  font-size: 18px;
+}
+
+.fz-19px {
+  font-size: 19px;
+}
+
+.fz-20px {
+  font-size: 20px;
+}
+
+.fz-21px {
+  font-size: 21px;
+}
+
+.fz-22px {
+  font-size: 22px;
+}
+
+.ff-meiryo {
+  font-family: "メイリオ", "Meiryo",  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+}
+
+.ff-ms-pgothic {
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+.ff-noto-sans-jp {
+  font-family: "Noto Sans JP" ,sans-serif;
+}
+
+.ff-mplus-1p {
+  font-family: "Mplus 1p" ,sans-serif;
+}
+
+.ff-rounded-mplus-1c {
+  font-family: "Rounded Mplus 1c" ,sans-serif;
+}
+
+.ff-hannari {
+  font-family: "Hannari" ,sans-serif;
+}
+
+.ff-kokoro {
+  font-family: "Kokoro" ,sans-serif;
+}
+
+.ff-sawarabi-gothic {
+  font-family: "Sawarabi Gothic" ,sans-serif;
+}
+
+.ff-sawarabi-mincho {
+  font-family: "Sawarabi Mincho" ,sans-serif;
+}
+
 .entry-card, .related-entry-card {
   position: relative;
 }

@@ -1,10 +1,21 @@
 <?php //全体設定に必要な定数や関数
 
 //フォント
-define('OP_SITE_FONT', 'site_font');
-if ( !function_exists( 'get_site_font' ) ):
-function get_site_font(){
-  return get_option(OP_SITE_FONT, 'yu_gothic');
+define('OP_SITE_FONT_FAMILY', 'site_font_family');
+if ( !function_exists( 'get_site_font_family' ) ):
+function get_site_font_family(){
+  return get_option(OP_SITE_FONT_FAMILY, 'yu_gothic');
+}
+endif;
+if ( !function_exists( 'is_site_font_family_local' ) ):
+function is_site_font_family_local(){
+  switch (get_site_font_family()) {
+    case 'yu_gothic':
+    case 'meiryo':
+    case 'ms_pgothic':
+      return true;
+      break;
+  }
 }
 endif;
 

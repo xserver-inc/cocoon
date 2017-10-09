@@ -11,6 +11,12 @@ function body_class_additional($classes) {
       $classes[] = 'categoryid-'.$category->cat_ID;
   }
 
+  //フォントファミリー
+  $classes[] = 'ff-'.str_replace('_', '-', get_site_font_family());
+
+  //フォントサイズ
+  $classes[] = 'fz-'.get_site_font_size();
+
   //サイドバー表示設定
   $add_no_sidebar = false;
   //var_dump(get_sidebar_display_type());
@@ -56,6 +62,7 @@ function body_class_additional($classes) {
     $classes[] = 'no-scrollable-sidebar';
   }
 
+  //サイドバーの位置
   switch (get_sidebar_position()) {
     case 'sidebar_left':
       $classes[] = 'sidebar-left';
