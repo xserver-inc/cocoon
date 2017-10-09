@@ -71,6 +71,33 @@
           </td>
         </tr>
 
+        <!-- サイト背景色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_BACKGROUND_COLOR, __('サイト背景色', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_SITE_BACKGROUND_COLOR,  get_site_background_color(), '背景色');
+            genelate_tips_tag(__( 'サイト全体の背景色を選択します。', THEME_NAME ));
+            ?>
+
+          </td>
+        </tr>
+
+        <!-- サイト背景画像 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_BACKGROUND_IMAGE_URL, __('サイト背景画像', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_upload_image_tag(OP_SITE_BACKGROUND_IMAGE_URL, get_site_background_image_url());
+            genelate_tips_tag(__( 'サイト全体の背景画像を選択します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- サイト幅を揃える  -->
         <tr>
           <th scope="row">
