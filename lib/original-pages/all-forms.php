@@ -17,7 +17,7 @@
           </th>
           <td>
             <div class="col-2">
-              <div>
+              <div style="min-width: 270px;">
                 <?php
                 $options = array(
                   'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
@@ -53,7 +53,7 @@
                 ?>
 
               </div>
-              <div>
+              <div style="width: auto">
                 <p class="preview-label">プレビュー</p>
                 <div class="demo" style="width: 100%">
                   <p>1234567890</p>

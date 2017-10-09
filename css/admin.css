@@ -2020,7 +2020,7 @@ form.admin-settings {
 
 .col-2 {
   display: flex; }
-  .col-2 div {
+  .col-2 > div {
     width: 50%;
     padding: 10px; }
 
