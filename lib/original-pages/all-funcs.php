@@ -8,6 +8,14 @@ function get_site_font(){
 }
 endif;
 
+//フォントサイズ
+define('OP_SITE_FONT_SIZE', 'site_font_size');
+if ( !function_exists( 'get_site_font_size' ) ):
+function get_site_font_size(){
+  return get_option(OP_SITE_FONT_SIZE, '18px');
+}
+endif;
+
 //サイト幅を揃える
 define('OP_ALIGN_SITE_WIDTH', 'align_site_width');
 if ( !function_exists( 'is_align_site_width' ) ):

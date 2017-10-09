@@ -20,19 +20,36 @@
               <div>
                 <?php
                 $options = array(
-                  'yu_gothic' => '游ゴシック体, ヒラギノ角ゴ',
-                  'meiryo' => 'メイリオ, ヒラギノ角ゴ',
-                  'ms_pgothic' => 'ＭＳ Ｐゴシック, ヒラギノ角ゴ',
-                  'noto_sans_jp' => '源ノ角ゴシック（WEBフォント）',
-                  'mplus_1p' => 'Mplus 1p（WEBフォント）',
-                  'rounded_mplus_1c' => 'Rounded Mplus 1c（WEBフォント）',
-                  'hannari' => 'はんなり明朝（WEBフォント）',
-                  'kokoro' => 'こころ明朝（WEBフォント）',
-                  'sawarabi_gothic' => 'さわらびゴシック（WEBフォント）',
-                  'sawarabi_mincho' => 'さわらび明朝（WEBフォント）',
+                  'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
+                  'meiryo' => __( 'メイリオ, ヒラギノ角ゴ', THEME_NAME ),
+                  'ms_pgothic' => __( 'ＭＳ Ｐゴシック, ヒラギノ角ゴ', THEME_NAME ),
+                  'noto_sans_jp' => __( '源ノ角ゴシック（WEBフォント）', THEME_NAME ),
+                  'mplus_1p' => __( 'Mplus 1p（WEBフォント）', THEME_NAME ),
+                  'rounded_mplus_1c' => __( 'Rounded Mplus 1c（WEBフォント）', THEME_NAME ),
+                  'hannari' => __( 'はんなり明朝（WEBフォント）', THEME_NAME ),
+                  'kokoro' => __( 'こころ明朝（WEBフォント）', THEME_NAME ),
+                  'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
+                  'sawarabi_mincho' => __( 'さわらび明朝（WEBフォント）', THEME_NAME ),
                 );
                 genelate_selectbox_tag(OP_SITE_FONT, $options, get_site_font());
                 genelate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
+
+                $options = array(
+                  '12px' => __( '12px', THEME_NAME ),
+                  '13px' => __( '13px', THEME_NAME ),
+                  '14px' => __( '14px', THEME_NAME ),
+                  '15px' => __( '15px', THEME_NAME ),
+                  '16px' => __( '16px', THEME_NAME ),
+                  '17px' => __( '17px', THEME_NAME ),
+                  '18px' => __( '18px', THEME_NAME ),
+                  '19px' => __( '19px', THEME_NAME ),
+                  '20px' => __( '20px', THEME_NAME ),
+                  '21px' => __( '21px', THEME_NAME ),
+                  '22px' => __( '22px', THEME_NAME ),
+                );
+                genelate_selectbox_tag(OP_SITE_FONT_SIZE, $options, get_site_font_size());
+                genelate_tips_tag(__( 'サイト全体のフォントサイズを変更します。', THEME_NAME ));
+
                 ?>
 
               </div>

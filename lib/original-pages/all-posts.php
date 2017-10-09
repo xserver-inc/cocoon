@@ -3,6 +3,9 @@
 //フォント
 update_theme_option(OP_SITE_FONT);
 
+//フォントサイズ
+update_theme_option(OP_SITE_FONT_SIZE);
+
 //サイト幅を揃える
 update_theme_option(OP_ALIGN_SITE_WIDTH);
 
