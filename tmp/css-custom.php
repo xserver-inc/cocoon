@@ -1,5 +1,17 @@
 <?php //CSS設定用 ?>
-<?php //背景画像の指定
+<?php //サイト背景色
+if (get_site_background_color()): ?>
+body.public-page{
+  background-color: <?php echo get_site_background_color(); ?>;
+}
+<?php endif ?>
+<?php //サイト背景画像
+if (get_site_background_image_url()): ?>
+body.public-page{
+  background-image: url(<?php echo get_site_background_image_url(); ?>);
+}
+<?php endif ?>
+<?php //ヘッダー背景画像
 if (get_header_background_image_url()): ?>
 .header{
   background-image: url(<?php echo get_header_background_image_url(); ?>);

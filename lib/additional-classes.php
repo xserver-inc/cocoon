@@ -20,6 +20,10 @@ add_filter('body_class', 'body_class_additional');
 if ( !function_exists( 'body_class_additional' ) ):
 function body_class_additional($classes) {
   global $post;
+
+  //管理画面との差別用
+  $classes[] = 'public-page';
+
   //カテゴリ入りクラスの追加
   if ( is_single() ) {
     foreach((get_the_category($post->ID)) as $category)

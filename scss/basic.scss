@@ -19,27 +19,17 @@
 
 body {
   @include base_font;
-  // /* フォントの種類 */
-  // font-family: $default_font;
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: top center;
 
-  // /* フォントのサイズ */
-  // font-size: $text_size_default;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
 
-  // /* フォントの色 */
-  // color: $text_color;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
 
-  // /* カーニングの設定 */
-  // //letter-spacing: 1.2px;
-  // //font-feature-settings: "palt" 1;
-  // //font-kerning: auto;
-
-  // /* 行間の設定 */
-  // line-height: 1.75;
-
-  // margin: 0;
-
-  // //word-wrap: break-word;
-  // overflow-wrap: break-word;
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
 }
 
 /*デフォルトリンク*/
