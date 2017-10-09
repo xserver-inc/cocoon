@@ -10,6 +10,45 @@
     <table class="form-table">
       <tbody>
 
+        <!-- サイトフォント  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_FONT, __('サイトフォント', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <div class="col-2">
+              <div>
+                <?php
+                $options = array(
+                  'yu_gothic' => '游ゴシック体, ヒラギノ角ゴ',
+                  'meiryo' => 'メイリオ, ヒラギノ角ゴ',
+                  'ms_pgothic' => 'ＭＳ Ｐゴシック, ヒラギノ角ゴ',
+                  'noto_sans_jp' => '源ノ角ゴシック（WEBフォント）',
+                  'mplus_1p' => 'Mplus 1p（WEBフォント）',
+                  'rounded_mplus_1c' => 'Rounded Mplus 1c（WEBフォント）',
+                  'hannari' => 'はんなり明朝（WEBフォント）',
+                  'kokoro' => 'こころ明朝（WEBフォント）',
+                  'sawarabi_gothic' => 'さわらびゴシック（WEBフォント）',
+                  'sawarabi_mincho' => 'さわらび明朝（WEBフォント）',
+                );
+                genelate_selectbox_tag(OP_SITE_FONT, $options, get_site_font());
+                genelate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
+                ?>
+
+              </div>
+              <div>
+                <p class="preview-label">プレビュー</p>
+                <div class="demo" style="width: 100%">
+                  <p>1234567890</p>
+                  <p>abcdefghijklmnopqrstuvwxyz</p>
+                  <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                  <p>吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
         <!-- サイト幅を揃える  -->
         <tr>
           <th scope="row">

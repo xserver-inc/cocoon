@@ -1,5 +1,8 @@
 <?php //全体設定をデータベースに保存
 
+//フォント
+update_theme_option(OP_SITE_FONT);
+
 //サイト幅を揃える
 update_theme_option(OP_ALIGN_SITE_WIDTH);
 
