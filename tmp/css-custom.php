@@ -1,13 +1,13 @@
 <?php //CSS設定用 ?>
 <?php //サイトキー背景色
-if (get_site_key_background_color()): ?>
+if (get_site_key_color()): ?>
 .header-container,
 .demo .header-container,
 .header-container .navi,
 .navi .navi-in > ul .sub-menu,
 .article h2,
 .sidebar h3{
-  background-color: <?php echo get_site_key_background_color(); ?>;
+  background-color: <?php echo get_site_key_color(); ?>;
 }
 .navi .navi-in a:hover{
   background-color: rgba(255, 255, 255, 0.2);
@@ -16,7 +16,7 @@ if (get_site_key_background_color()): ?>
 .article h4,
 .article h5,
 .article h6{
-  border-color: <?php echo get_site_key_background_color(); ?>;
+  border-color: <?php echo get_site_key_color(); ?>;
 }
 <?php endif ?>
 <?php //サイトキー文字色

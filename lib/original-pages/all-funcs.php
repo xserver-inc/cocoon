@@ -1,10 +1,10 @@
 <?php //全体設定に必要な定数や関数
 
 //サイトキーカラー
-define('OP_SITE_KEY_BACKGROUND_COLOR', 'site_key_background_color');
-if ( !function_exists( 'get_site_key_background_color' ) ):
-function get_site_key_background_color(){
-  return get_option(OP_SITE_KEY_BACKGROUND_COLOR);
+define('OP_SITE_KEY_COLOR', 'site_key_color');
+if ( !function_exists( 'get_site_key_color' ) ):
+function get_site_key_color(){
+  return get_option(OP_SITE_KEY_COLOR);
 }
 endif;
 
