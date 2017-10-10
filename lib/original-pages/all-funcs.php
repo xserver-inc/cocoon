@@ -1,5 +1,21 @@
 <?php //全体設定に必要な定数や関数
 
+//サイトキーカラー
+define('OP_SITE_KEY_BACKGROUND_COLOR', 'site_key_background_color');
+if ( !function_exists( 'get_site_key_background_color' ) ):
+function get_site_key_background_color(){
+  return get_option(OP_SITE_KEY_BACKGROUND_COLOR);
+}
+endif;
+
+//サイトキーテキストカラー
+define('OP_SITE_KEY_TEXT_COLOR', 'site_key_text_color');
+if ( !function_exists( 'get_site_key_text_color' ) ):
+function get_site_key_text_color(){
+  return get_option(OP_SITE_KEY_TEXT_COLOR);
+}
+endif;
+
 //フォント
 define('OP_SITE_FONT_FAMILY', 'site_font_family');
 if ( !function_exists( 'get_site_font_family' ) ):

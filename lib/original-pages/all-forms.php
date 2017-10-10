@@ -9,6 +9,23 @@
     <table class="form-table">
       <tbody>
 
+        <!-- キーカラー -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_KEY_BACKGROUND_COLOR, __('キーカラー', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_SITE_KEY_BACKGROUND_COLOR,  get_site_key_background_color(), 'サイトキーカラー');
+            genelate_tips_tag(__( 'サイト全体のポイントとなる部分に適用される背景色を指定します。', THEME_NAME ));
+
+            genelate_color_picker_tag(OP_SITE_KEY_TEXT_COLOR,  get_site_key_text_color(), 'サイトキーカラー');
+            genelate_tips_tag(__( 'サイト全体のポイントとなる部分に適用されるテキスト色を指定します。', THEME_NAME ));
+            ?>
+
+          </td>
+        </tr>
+
         <!-- サイトフォント  -->
         <tr>
           <th scope="row">

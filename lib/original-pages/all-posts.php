@@ -1,5 +1,11 @@
 <?php //全体設定をデータベースに保存
 
+//サイトキーカラー
+update_theme_option(OP_SITE_KEY_BACKGROUND_COLOR);
+
+//サイトキーテキストカラー
+update_theme_option(OP_SITE_KEY_TEXT_COLOR);
+
 //フォント
 update_theme_option(OP_SITE_FONT_FAMILY);
 
