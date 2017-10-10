@@ -1,12 +1,14 @@
 <?php //CSS設定用 ?>
 <?php //サイトキー色
-if (get_site_key_color()): ?>
+if (get_site_key_color() && !is_admin_php_page()): ?>
 .header-container,
 .demo .header-container,
 .header-container .navi,
 .navi .navi-in > ul .sub-menu,
 .article h2,
-.sidebar h3{
+.sidebar h3,
+.catlink,
+.category-label{
   background-color: <?php echo get_site_key_color(); ?>;
 }
 .navi .navi-in a:hover{
@@ -15,9 +17,55 @@ if (get_site_key_color()): ?>
 .article h3,
 .article h4,
 .article h5,
-.article h6{
+.article h6,
+.catlink,
+.taglink{
   border-color: <?php echo get_site_key_color(); ?>;
 }
+
+
+blockquote::before, blockquote::after,
+.pager-post-navi a::before {
+  color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+}
+blockquote,
+.pagination-next-link {
+  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+}
+pre,
+.pager-links span,
+table th,
+.pagination .current {
+  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.1); ?>;
+  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
+}
+table th,
+table td,
+.page-numbers,
+.page-numbers.dots,
+.tagcloud a{
+  border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
+}
+table tr:nth-of-type(2n+1),
+.page-numbers.dots,
+.a-wrap:hover,
+.pagination a:hover,
+.pagination-next-link:hover,
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover,
+.pager-links a:hover span,
+.catlink:hover,
+.taglink:hover,
+.tagcloud a:hover{
+  background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
+}
+
 <?php endif ?>
 <?php //サイトキー文字色
 if (get_site_key_text_color()): ?>

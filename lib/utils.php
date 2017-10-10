@@ -673,3 +673,22 @@ function get_site_font_source_url(){
 }
 endif;
 
+//カラーコードをRGBに変換
+if ( !function_exists( 'colorcode_to_rgb' ) ):
+function colorcode_to_rgb($colorcode){
+  $colorcode = str_replace('#', '', $colorcode);
+  $a['red'] = hexdec(substr($colorcode, 0, 2));
+  $a['green'] = hexdec(substr($colorcode, 2, 2));
+  $a['blue'] = hexdec(substr($colorcode, 4, 2));
+  return $a;
+}
+endif;
+
+//カラーコードをRGBのCSSコードに変換
+if ( !function_exists( 'colorcode_to_rgb_css_code' ) ):
+function colorcode_to_rgb_css_code($colorcode, $opacity = 0.2){
+  $a = colorcode_to_rgb($colorcode);
+  return 'rgba('.$a['red'].', '.$a['green'].', '.$a['blue'].', '.$opacity.')';
+}
+endif;
+
