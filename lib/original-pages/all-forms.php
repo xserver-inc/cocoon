@@ -6,7 +6,6 @@
   <div class="inside">
 
     <p><?php _e( 'ページ全体の表示に関する設定です。', THEME_NAME ) ?></p>
-
     <table class="form-table">
       <tbody>
 
@@ -88,7 +87,7 @@
         <!-- サイト背景画像 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_BACKGROUND_IMAGE_URL, __('サイト背景画像', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_BACKGROUND_IMAGE_URL, __('サイト背景画像', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -101,7 +100,7 @@
         <!-- サイト幅を揃える  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_ALIGN_SITE_WIDTH, __('サイト幅の均一化', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_ALIGN_SITE_WIDTH, __('サイト幅の均一化', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -152,6 +151,20 @@
           </td>
         </tr>
 
+
+        <!-- サイトアイコン -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_ICON_URL, __('サイトアイコン', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            //var_dump(get_site_icon_url());
+            genelate_upload_image_tag(OP_SITE_ICON_URL, get_site_icon_url2());
+            genelate_tips_tag(__( 'サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
       </tbody>
     </table>

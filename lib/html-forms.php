@@ -250,7 +250,7 @@ endif;
 if ( !function_exists( 'genelate_upload_image_tag' ) ):
 function genelate_upload_image_tag($name, $value){?>
   <input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>" />
-  <input type="button" name="<?php echo $name; ?>_slect" value="<?php _e( '選択', THEME_NAME ) ?>" />
+  <input type="button" name="<?php echo $name; ?>_select" value="<?php _e( '選択', THEME_NAME ) ?>" />
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
   <div id="<?php echo $name; ?>_thumbnail" class="uploded-thumbnail">
     <?php if ($value): ?>
@@ -266,7 +266,7 @@ function genelate_upload_image_tag($name, $value){?>
 
       var custom_uploader;
 
-      $("input:button[name=<?php echo $name; ?>_slect]").click(function(e) {
+      $("input:button[name=<?php echo $name; ?>_select]").click(function(e) {
 
           e.preventDefault();
 
@@ -333,3 +333,27 @@ function genelate_upload_image_tag($name, $value){?>
 }
 endif;
 
+
+//カテゴリチェックリストの作成
+//require_once( ABSPATH . '/wp-admin/includes/template.php' );
+//add_shortcode('frontend-category-checklist', 'frontend_category_checklist');
+if ( !function_exists( 'genelate_category_checklist' ) ):
+function genelate_category_checklist( $post_id = 0, $descendants_and_self = 0, $selected_cats = false,
+        $popular_cats = false, $walker = null, $checked_ontop = true) {
+    //wp_category_checklist()定義ファイルの呼び出し
+    require_once( ABSPATH . '/wp-admin/includes/template.php' ); ?>
+    <div class="category-checklist-wrap">
+        <ul id="category-checklist" data-wp-lists="list:category" class="category-checklist form-no-clear">
+            <?php wp_category_checklist(
+                $post_id,
+                $descendants_and_self,
+                $selected_cats,
+                $popular_cats,
+                $walker,
+                $checked_ontop
+            );  ?>
+        </ul>
+    </div>
+  <?php
+}
+endif;

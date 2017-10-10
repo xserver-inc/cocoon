@@ -67,3 +67,13 @@ function get_sidebar_display_type(){
 }
 endif;
 
+//サイトアイコン
+define('OP_SITE_ICON_URL', 'site_icon_url');
+//Wordpressデフォルトのget_site_icon_url関数とかぶるため名前変更
+if ( !function_exists( 'get_site_icon_url2' ) ):
+function get_site_icon_url2(){
+  return get_option(OP_SITE_ICON_URL, get_template_directory_uri().'/images/site-icon.png');
+}
+endif;
+
+
