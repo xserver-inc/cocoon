@@ -97,7 +97,6 @@
             genelate_color_picker_tag(OP_SITE_BACKGROUND_COLOR,  get_site_background_color(), '背景色');
             genelate_tips_tag(__( 'サイト全体の背景色を選択します。', THEME_NAME ));
             ?>
-
           </td>
         </tr>
 
@@ -125,6 +124,19 @@
             genelate_tips_tag(__('サイト全体の幅をコンテンツ幅で統一します。', THEME_NAME));
             ?>
 
+          </td>
+        </tr>
+
+        <!-- サイトリンク色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SITE_LINK_COLOR, __('サイトリンク色', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_SITE_LINK_COLOR,  get_site_link_color(), 'リンク色');
+            genelate_tips_tag(__( 'サイトで利用されるリンク色を選択します。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 

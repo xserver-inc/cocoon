@@ -15,6 +15,9 @@ update_theme_option(OP_SITE_FONT_SIZE);
 //サイト背景色
 update_theme_option(OP_SITE_BACKGROUND_COLOR);
 
+//サイトリンク色
+update_theme_option(OP_SITE_LINK_COLOR);
+
 //サイト背景画像
 update_theme_option(OP_SITE_BACKGROUND_IMAGE_URL);
 

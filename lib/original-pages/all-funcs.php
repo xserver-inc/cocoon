@@ -59,6 +59,14 @@ function get_site_background_image_url(){
 }
 endif;
 
+//サイトリンク色
+define('OP_SITE_LINK_COLOR', 'site_link_color');
+if ( !function_exists( 'get_site_link_color' ) ):
+function get_site_link_color(){
+  return get_option(OP_SITE_LINK_COLOR);
+}
+endif;
+
 //サイト幅を揃える
 define('OP_ALIGN_SITE_WIDTH', 'align_site_width');
 if ( !function_exists( 'is_align_site_width' ) ):
