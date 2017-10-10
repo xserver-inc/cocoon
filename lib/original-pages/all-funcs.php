@@ -99,6 +99,7 @@ endif;
 
 //noindexページを出力する
 add_action( 'wp_head', 'the_site_icon_tag' );
+add_action( 'admin_print_styles', 'the_site_icon_tag' );
 if ( !function_exists( 'the_site_icon_tag' ) ):
 function the_site_icon_tag(){
   $tag = null;
