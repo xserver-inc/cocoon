@@ -912,6 +912,9 @@ blockquote::after {
   text-align: right;
   font-size: 0.8em;
 }
+.commets-list .comment-meta {
+  font-size: 0.8em;
+}
 
 /************************************
 ** サイドバーのスタイル
