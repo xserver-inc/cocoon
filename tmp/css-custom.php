@@ -36,6 +36,12 @@ body.public-page{
   background-color: <?php echo get_site_background_color(); ?>;
 }
 <?php endif ?>
+<?php //サイトリンク色
+if (get_site_link_color()): ?>
+a{
+  color: <?php echo get_site_link_color(); ?>;
+}
+<?php endif ?>
 <?php //サイト背景画像
 if (get_site_background_image_url()): ?>
 body.public-page{
