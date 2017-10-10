@@ -1,4 +1,35 @@
 <?php //CSS設定用 ?>
+<?php //サイトキー背景色
+if (get_site_key_background_color()): ?>
+.header-container,
+.demo .header-container,
+.header-container .navi,
+.navi .navi-in > ul .sub-menu,
+.article h2,
+.sidebar h3{
+  background-color: <?php echo get_site_key_background_color(); ?>;
+}
+.navi .navi-in a:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.article h3,
+.article h4,
+.article h5,
+.article h6{
+  border-color: <?php echo get_site_key_background_color(); ?>;
+}
+<?php endif ?>
+<?php //サイトキー文字色
+if (get_site_key_text_color()): ?>
+.header,
+.header .site-name-text-link,
+.navi .navi-in a,
+.navi .navi-in a:hover,
+.article h2,
+.sidebar h3{
+  color: <?php echo get_site_key_text_color(); ?>;
+}
+<?php endif ?>
 <?php //サイト背景色
 if (get_site_background_color()): ?>
 body.public-page{
