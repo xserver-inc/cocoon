@@ -1,5 +1,5 @@
 <?php //CSS設定用 ?>
-<?php //サイトキー背景色
+<?php //サイトキー色
 if (get_site_key_color()): ?>
 .header-container,
 .demo .header-container,
