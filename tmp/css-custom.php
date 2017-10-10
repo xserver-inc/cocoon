@@ -1,6 +1,6 @@
 <?php //CSS設定用 ?>
 <?php //サイトキー色
-if (get_site_key_color() && !is_admin_php_page()): ?>
+if (get_site_key_color()): ?>
 .header-container,
 .demo .header-container,
 .header-container .navi,
