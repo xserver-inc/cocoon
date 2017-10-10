@@ -72,8 +72,33 @@ define('OP_SITE_ICON_URL', 'site_icon_url');
 //Wordpressデフォルトのget_site_icon_url関数とかぶるため名前変更
 if ( !function_exists( 'get_site_icon_url2' ) ):
 function get_site_icon_url2(){
-  return get_option(OP_SITE_ICON_URL, get_template_directory_uri().'/images/site-icon.png');
+  return get_option(OP_SITE_ICON_URL, get_default_site_icon_url());
 }
 endif;
+if ( !function_exists( 'get_default_site_icon_url' ) ):
+function get_default_site_icon_url(){
+  return get_template_directory_uri().'/images/site-icon.png';
+}
+endif;
+
+//noindexページを出力する
+add_action( 'wp_head', 'the_site_icon_tag' );
+if ( !function_exists( 'the_site_icon_tag' ) ):
+function the_site_icon_tag(){
+  $tag = null;
+  if (get_site_icon_url2()) {
+    $tag .= '<link rel="shortcut icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
+    $tag .= '<link rel="apple-touch-icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
+  } elseif (is_singular()) {
+    $tag = '<link rel="shortcut icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
+    $tag = '<link rel="apple-touch-icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
+  }
+  if ($tag) {
+    $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL.$tag;
+    echo $tag;
+  }
+}
+endif;
+
 
 
