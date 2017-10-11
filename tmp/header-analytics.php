@@ -1,5 +1,13 @@
+
 <?php //ヘッダーのアクセス解析
 if (!is_user_logged_in()) : //ログインしていないユーザーのみ適用 ?>
+<?php //Google Tag Manager (noscript)
+if ( get_google_tag_manager_tracking_id() )://トラッキングIDが設定されているとき ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo get_google_tag_manager_tracking_id(); ?>"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php endif; ?>
 <?php if ( get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
 <!-- Google Analytics -->
 <script>
