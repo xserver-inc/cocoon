@@ -1,7 +1,36 @@
 <div class="metabox-holder">
 
+<!-- Google Tag Manager設定 -->
+<div id="gtm" class="postbox">
+  <h2 class="hndle"><?php _e( 'Google Tag Manager設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'Google Tag Managerの解析タグの設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- Google Tag ManagerトラッキングID -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, __( 'Google Tag Manager ID', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, get_google_tag_manager_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
+            genelate_tips_tag(__( 'Google Tag ManagerのトラッキングIDを入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 <!-- Google Analytics設定 -->
-<div id="analytics" class="postbox">
+<div id="ga" class="postbox">
   <h2 class="hndle"><?php _e( 'Google Analytics設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -31,7 +60,7 @@
 
 
 <!-- Google Search Console設定 -->
-<div id="analytics" class="postbox">
+<div id="gsc" class="postbox">
   <h2 class="hndle"><?php _e( 'Google Search Console設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
