@@ -23,6 +23,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/seo-posts.php';
   //アクセス解析
   require_once 'original-pages/analytics-posts.php';
+  //投稿
+  require_once 'original-pages/single-posts.php';
   //SNSシェア
   require_once 'original-pages/sns-share-posts.php';
   //SNSフォロー
@@ -68,11 +70,11 @@ endif;
   <ul>
     <li class="all"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
-    <!-- <li class="navi"><?php _e( 'グローバルナビ', THEME_NAME ) ?></li> -->
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
@@ -125,6 +127,11 @@ endif;
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
     <?php require_once 'original-pages/analytics-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 投稿 -->
+  <div class="single-page metabox-holder">
+    <?php require_once 'original-pages/single-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSシェアタブ -->

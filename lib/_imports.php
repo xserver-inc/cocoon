@@ -18,6 +18,7 @@ require_once 'original-pages/ads-funcs.php';        //広告設定関数
 require_once 'original-pages/title-funcs.php';      //タイトル設定関数
 require_once 'original-pages/seo-funcs.php';        //SEO設定関数
 require_once 'original-pages/analytics-funcs.php';  //アクセス解析設定関数
+require_once 'original-pages/single-funcs.php';     //投稿設定関数
 require_once 'original-pages/sns-share-funcs.php';  //SNSシェア設定関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー設定関数
 require_once 'original-pages/code-funcs.php';       //コード設定関数
