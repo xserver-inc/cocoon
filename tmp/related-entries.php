@@ -1,3 +1,4 @@
+<?php if (is_related_entries_visible()): ?>
 <aside id="related-entries" class="related-entries">
   <h2 class="related-entry-title"><?php _e( '関連記事', THEME_NAME ) ?></h2>
   <?php //カテゴリ情報から関連記事をランダムに呼び出す
@@ -16,3 +17,4 @@
   wp_reset_postdata();
   ?>
 </aside>
+<?php endif //is_related_entries_visible ?>

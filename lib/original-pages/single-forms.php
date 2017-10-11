@@ -21,6 +21,19 @@
           </td>
         </tr>
 
+        <!-- 関連記事の表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_RELATED_ENTRIES_VISIBLE, __('関連記事の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_RELATED_ENTRIES_VISIBLE , is_related_entries_visible(), __( '関連記事を表示する', THEME_NAME ));
+            genelate_tips_tag(__( '投稿ページの関連記事を表示するか07', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
