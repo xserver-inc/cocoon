@@ -24,6 +24,10 @@ endif;
 if ( !function_exists( 'get_related_wp_query_args' ) ):
 function get_related_wp_query_args(){
   global $post;
+  if (!$post) {
+    $post = get_random_posts(1);
+  }
+  //var_dump($post);
   if ( true ) {
   //if ( is_related_entry_association_category() ) {
     //カテゴリ情報から関連記事をランダムに呼び出す
@@ -35,8 +39,7 @@ function get_related_wp_query_args(){
     if ( empty($category_IDs) ) return;
     return $args = array(
       'post__not_in' => array($post->ID),
-      'posts_per_page'=> intval(10),
-      //'posts_per_page'=> intval(get_related_entry_count()),
+      'posts_per_page'=> intval(get_related_entry_count()),
       'category__in' => $category_IDs,
       'orderby' => 'rand',
     );

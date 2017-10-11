@@ -2026,6 +2026,13 @@
   .demo .demo .navi-in > ul > .menu-item-has-children > a::after {
     display: none; }
 
+.demo #related-entries h2 {
+  font-size: 1.3em;
+  margin: 1em 0;
+  font-weight: bold;
+  line-height: unset;
+  margin: unset; }
+
 .form-table td p {
   font-size: unset; }
 

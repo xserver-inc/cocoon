@@ -368,12 +368,19 @@ endif;
 
 
 //投稿を1つランダム取得
-if ( !function_exists( 'get_random_1_post' ) ):
-function get_random_1_post(){
+if ( !function_exists( 'get_random_posts' ) ):
+function get_random_posts($count = 1){
+  $count = intval($count);
   $posts = get_posts('numberposts=1&orderby=rand');
-  foreach( $posts as $post ) {
-    return $post;
+  if ($couut == 1) {
+    foreach( $posts as $post ) {
+      return $post;
+    }
+  } else {
+    return $posts;
   }
+
+
 }
 endif;
 

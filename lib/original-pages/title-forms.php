@@ -92,7 +92,7 @@
           </th>
           <td>
             <?php
-            $rand_post = get_random_1_post();
+            $rand_post = get_random_posts(1);
             //var_dump($rand_post)
              ?>
             <?php if ($rand_post): ?>
