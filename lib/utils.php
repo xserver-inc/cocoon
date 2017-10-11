@@ -315,7 +315,6 @@ function wp_enqueue_clingify(){
         case 'center_logo':
           $selector = '.navi';
           break;
-
         default:
           $selector = '.header-container';
           break;

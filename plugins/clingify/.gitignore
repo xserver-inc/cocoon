@@ -1,6 +1,0 @@
-node_modules
-.tmp
-.sass-cache
-demo-page/app/bower_components
-app/bower_components
-*.sublime-*
