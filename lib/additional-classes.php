@@ -389,3 +389,18 @@ function get_additional_footer_bottom_classes($option = null){
 endif;
 
 
+//フッターボトムのclass追加関数
+if ( !function_exists( 'get_additional_related_entries_classes' ) ):
+function get_additional_related_entries_classes($option = null){
+  $classes = null;
+
+  $classes .= ' related-'.str_replace('_', '-', get_related_entry_type());
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
