@@ -8,7 +8,8 @@ if (get_site_key_color()): ?>
 .article h2,
 .sidebar h3,
 .catlink,
-.category-label{
+.category-label,
+.demo .category-label{
   background-color: <?php echo get_site_key_color(); ?>;
 }
 .navi .navi-in a:hover{
