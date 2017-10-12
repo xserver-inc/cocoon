@@ -164,6 +164,9 @@
   ************************************/
   /*関連エントリーカード*/
   /************************************
+  ** 関連記事表示タイプがミニカードの時
+  ************************************/
+  /************************************
   ** パンくずリスト
   ************************************/
   /************************************
@@ -607,6 +610,19 @@
     margin: 22px 0; }
   .demo .related-entry-card-content {
     margin-left: 170px; }
+  .demo .related-mini-card .related-list {
+    display: flex;
+    flex-wrap: wrap; }
+  .demo .related-mini-card .related-entry-card-wrap {
+    width: 49%; }
+  .demo .related-mini-card .related-entry-card-thumb {
+    width: 120px; }
+  .demo .related-mini-card .related-entry-card-content {
+    margin-left: 130px; }
+  .demo .related-mini-card .related-entry-card-title {
+    font-size: 16px; }
+  .demo .related-mini-card .related-entry-card-snippet {
+    display: none; }
   .demo #breadcrumb {
     margin-top: 20px;
     color: #777879;

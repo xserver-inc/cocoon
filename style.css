@@ -610,6 +610,29 @@ img {
 }
 
 /************************************
+** 関連記事表示タイプがミニカードの時
+************************************/
+.related-mini-card .related-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.related-mini-card .related-entry-card-wrap {
+  width: 49%;
+}
+.related-mini-card .related-entry-card-thumb {
+  width: 120px;
+}
+.related-mini-card .related-entry-card-content {
+  margin-left: 130px;
+}
+.related-mini-card .related-entry-card-title {
+  font-size: 16px;
+}
+.related-mini-card .related-entry-card-snippet {
+  display: none;
+}
+
+/************************************
 ** パンくずリスト
 ************************************/
 #breadcrumb {

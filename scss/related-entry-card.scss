@@ -51,3 +51,32 @@
 // .related-entry-card-snippet{
 //   font-size: $text_size_s;
 // }
+
+/************************************
+** 関連記事表示タイプがミニカードの時
+************************************/
+.related-mini-card{
+  .related-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .related-entry-card-wrap{
+    width: 49%;
+  }
+
+  .related-entry-card-thumb{
+    width: 120px;
+  }
+
+  .related-entry-card-content{
+    margin-left: 130px;
+  }
+
+  .related-entry-card-title{
+    font-size: 16px;
+  }
+
+  .related-entry-card-snippet{
+    display: none;
+  }
+}
