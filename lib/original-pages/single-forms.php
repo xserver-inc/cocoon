@@ -45,7 +45,8 @@
             $options = array(
               'entry_card' => __( 'エントリーカード', THEME_NAME ),
               'mini_card' => __( 'ミニカード', THEME_NAME ),
-              'vartical_card' => __( '縦型カード', THEME_NAME ),
+              'vartical_card_3' => __( '縦型カード（3列）', THEME_NAME ),
+              'vartical_card_4' => __( '縦型カード（4列）', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_RELATED_ENTRY_TYPE, $options, get_related_entry_type());
             genelate_tips_tag(__( '関連記事の表示タイプを選択します。', THEME_NAME ));

@@ -80,3 +80,53 @@
     display: none;
   }
 }
+
+/************************************
+** Comment
+************************************/
+.related-vartical-card{
+  .related-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .related-entry-card-wrap{
+    padding: 5px;
+  }
+
+  .related-entry-card-thumb{
+    float: none;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+
+  .related-entry-card-content{
+    margin: 0;
+    padding: 0;
+  }
+
+  .related-entry-card-title{
+    font-size: 16px;
+  }
+
+  .related-entry-card-snippet{
+    display: none;
+  }
+
+  .related-entry-card-meta{
+    display: none;
+  }
+}
+
+.related-vartical-card-3{
+  .related-entry-card-wrap{
+    width: 33%;
+  }
+}
+
+.related-vartical-card-4{
+  .related-entry-card-wrap{
+    width: 25%;
+  }
+}

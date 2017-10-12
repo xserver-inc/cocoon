@@ -393,7 +393,12 @@ endif;
 if ( !function_exists( 'get_additional_related_entries_classes' ) ):
 function get_additional_related_entries_classes($option = null){
   $classes = null;
-
+  switch (get_related_entry_type()) {
+    case 'vartical_card_3':
+    case 'vartical_card_4':
+      $classes .= ' related-vartical-card';
+      break;
+  }
   $classes .= ' related-'.str_replace('_', '-', get_related_entry_type());
 
   if ($option) {

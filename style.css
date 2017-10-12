@@ -633,6 +633,45 @@ img {
 }
 
 /************************************
+** Comment
+************************************/
+.related-vartical-card .related-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.related-vartical-card .related-entry-card-wrap {
+  padding: 5px;
+}
+.related-vartical-card .related-entry-card-thumb {
+  float: none;
+  width: 100%;
+}
+.related-vartical-card .related-entry-card-thumb img {
+  width: 100%;
+}
+.related-vartical-card .related-entry-card-content {
+  margin: 0;
+  padding: 0;
+}
+.related-vartical-card .related-entry-card-title {
+  font-size: 16px;
+}
+.related-vartical-card .related-entry-card-snippet {
+  display: none;
+}
+.related-vartical-card .related-entry-card-meta {
+  display: none;
+}
+
+.related-vartical-card-3 .related-entry-card-wrap {
+  width: 33%;
+}
+
+.related-vartical-card-4 .related-entry-card-wrap {
+  width: 25%;
+}
+
+/************************************
 ** パンくずリスト
 ************************************/
 #breadcrumb {

@@ -167,6 +167,9 @@
   ** 関連記事表示タイプがミニカードの時
   ************************************/
   /************************************
+  ** Comment
+  ************************************/
+  /************************************
   ** パンくずリスト
   ************************************/
   /************************************
@@ -623,6 +626,29 @@
     font-size: 16px; }
   .demo .related-mini-card .related-entry-card-snippet {
     display: none; }
+  .demo .related-vartical-card .related-list {
+    display: flex;
+    flex-wrap: wrap; }
+  .demo .related-vartical-card .related-entry-card-wrap {
+    padding: 5px; }
+  .demo .related-vartical-card .related-entry-card-thumb {
+    float: none;
+    width: 100%; }
+    .demo .related-vartical-card .related-entry-card-thumb img {
+      width: 100%; }
+  .demo .related-vartical-card .related-entry-card-content {
+    margin: 0;
+    padding: 0; }
+  .demo .related-vartical-card .related-entry-card-title {
+    font-size: 16px; }
+  .demo .related-vartical-card .related-entry-card-snippet {
+    display: none; }
+  .demo .related-vartical-card .related-entry-card-meta {
+    display: none; }
+  .demo .related-vartical-card-3 .related-entry-card-wrap {
+    width: 33%; }
+  .demo .related-vartical-card-4 .related-entry-card-wrap {
+    width: 25%; }
   .demo #breadcrumb {
     margin-top: 20px;
     color: #777879;
