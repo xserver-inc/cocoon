@@ -37,6 +37,8 @@ $Meiryo_font: "Meiryo", sans-serif;
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 
-.item-description{
-  font-family: "Comic Sans MS", "MV Boli", "KaiTi", "Lucida Console", "Arial", "Impact", $default_font;
+.sub-caption{
+  font-family: "KaiTi", "MV Boli", "Comic Sans MS", "Lucida Console", "Arial", "Impact", $default_font;
+  font-weight: normal;
+  font-size: 0.8em;
 }

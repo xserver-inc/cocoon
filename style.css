@@ -91,8 +91,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 
-.item-description {
-  font-family: "Comic Sans MS", "MV Boli", "KaiTi", "Lucida Console", "Arial", "Impact", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+.sub-caption {
+  font-family: "KaiTi", "MV Boli", "Comic Sans MS", "Lucida Console", "Arial", "Impact", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: normal;
+  font-size: 0.8em;
 }
 
 .entry-card, .related-entry-card {
@@ -600,7 +602,7 @@ img {
 ** 関連記事
 ************************************/
 /*関連エントリーカード*/
-.related-entry-title,
+.related-entry-heading,
 .comment-title {
   margin: 22px 0;
 }

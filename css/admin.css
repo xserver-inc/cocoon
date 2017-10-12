@@ -63,8 +63,10 @@
 .ff-sawarabi-mincho {
   font-family: "Sawarabi Mincho" ,sans-serif; }
 
-.item-description {
-  font-family: "Comic Sans MS", "MV Boli", "KaiTi", "Lucida Console", "Arial", "Impact", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; }
+.sub-caption {
+  font-family: "KaiTi", "MV Boli", "Comic Sans MS", "Lucida Console", "Arial", "Impact", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: normal;
+  font-size: 0.8em; }
 
 .demo .entry-card, .demo .related-entry-card {
   position: relative; }
@@ -608,7 +610,7 @@
     font-family: FontAwesome;
     content: "";
     padding-right: 3px; }
-  .demo .related-entry-title,
+  .demo .related-entry-heading,
   .demo .comment-title {
     margin: 22px 0; }
   .demo .related-entry-card-content {

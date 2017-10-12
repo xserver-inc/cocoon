@@ -9,18 +9,18 @@ function is_related_entries_visible(){
 endif;
 
 //関連記事のタイトル
-define('OP_RELATED_ENTRIES_HEADING', 'related_entries_heading');
-if ( !function_exists( 'get_related_entries_heading' ) ):
-function get_related_entries_heading(){
-  return get_option(OP_RELATED_ENTRIES_HEADING, __( '関連記事', THEME_NAME ));
+define('OP_RELATED_ENTRY_HEADING', 'related_entry_heading');
+if ( !function_exists( 'get_related_entry_heading' ) ):
+function get_related_entry_heading(){
+  return get_option(OP_RELATED_ENTRY_HEADING, __( '関連記事', THEME_NAME ));
 }
 endif;
 
 //関連記事のサブタイトル
-define('OP_RELATED_ENTRIES_SUB_HEADING', 'related_entries_sub_heading');
-if ( !function_exists( 'get_related_entries_sub_heading' ) ):
-function get_related_entries_sub_heading(){
-  return get_option(OP_RELATED_ENTRIES_SUB_HEADING);
+define('OP_RELATED_ENTRY_SUB_HEADING', 'related_entry_sub_heading');
+if ( !function_exists( 'get_related_entry_sub_heading' ) ):
+function get_related_entry_sub_heading(){
+  return get_option(OP_RELATED_ENTRY_SUB_HEADING);
 }
 endif;
 

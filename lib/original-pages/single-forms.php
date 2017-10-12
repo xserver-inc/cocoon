@@ -38,13 +38,13 @@
         <!-- 関連記事見出し -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_RELATED_ENTRIES_HEADING, __('関連記事見出し', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_RELATED_ENTRY_HEADING, __('関連記事見出し', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_RELATED_ENTRIES_HEADING, get_related_entries_heading(), __( '見出し', THEME_NAME ));
+            genelate_textbox_tag(OP_RELATED_ENTRY_HEADING, get_related_entry_heading(), __( '見出し', THEME_NAME ));
             genelate_tips_tag(__( '', THEME_NAME ));
-            genelate_textbox_tag(OP_RELATED_ENTRIES_SUB_HEADING, get_related_entries_sub_heading(), __( 'サブ見出し', THEME_NAME ));
+            genelate_textbox_tag(OP_RELATED_ENTRY_SUB_HEADING, get_related_entry_sub_heading(), __( 'サブ見出し', THEME_NAME ));
             genelate_tips_tag(__( '', THEME_NAME ));
             ?>
           </td>
