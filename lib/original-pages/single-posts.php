@@ -3,6 +3,12 @@
 //関連記事の表示
 update_theme_option(OP_RELATED_ENTRIES_VISIBLE);
 
+//関連記事のタイトル
+update_theme_option(OP_RELATED_ENTRIES_HEADING);
+
+//関連記事のサブタイトル
+update_theme_option(OP_RELATED_ENTRIES_SUB_HEADING);
+
 //関連記事の表示数
 update_theme_option(OP_RELATED_ENTRY_COUNT);
 
