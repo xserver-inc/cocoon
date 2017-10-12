@@ -39,3 +39,11 @@ function get_related_entry_count(){
   return get_option(OP_RELATED_ENTRY_COUNT, 6);
 }
 endif;
+
+//関連記事抜粋文の最大文字数
+define('OP_RELATED_EXCERPT_MAX_LENGTH', 'related_excerpt_max_length');
+if ( !function_exists( 'get_related_excerpt_max_length' ) ):
+function get_related_excerpt_max_length(){
+  return get_option(OP_RELATED_EXCERPT_MAX_LENGTH, 120);
+}
+endif;

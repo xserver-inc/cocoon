@@ -82,6 +82,20 @@
           </td>
         </tr>
 
+        <!-- 最大抜粋文字数 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_RELATED_EXCERPT_MAX_LENGTH, __('最大抜粋文字数', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 30, 500);
+            genelate_tips_tag(__( '「エントリーカード」でば水分を表示する時の最大文字数を
+              設定します。（最小：30、最大：500）', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
