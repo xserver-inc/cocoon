@@ -3,7 +3,7 @@
 
   <figure class="related-entry-card-thumb card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
-    <?php echo get_the_post_thumbnail($post->ID, array(160, 90), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
+    <?php echo get_the_post_thumbnail($post->ID, array(320, 180), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image related-entry-card-no-image" width="160" height="90" />
     <?php endif; ?>
@@ -15,7 +15,7 @@
       <?php the_title(); //記事のタイトル?>
     </h3>
     <div class="related-entry-card-snippet card-snippet">
-      <?php echo get_the_custom_excerpt( get_the_content(), 150 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+      <?php echo get_the_snipet( get_the_content(), 150 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
 
     <div class="related-entry-card-meta card-meta">

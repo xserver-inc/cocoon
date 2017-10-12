@@ -12,7 +12,7 @@
     <div class="entry-card-content card-content">
       <h2 class="entry-card-title card-title" itemprop="headline"><?php the_title() ?></h2>
       <div class="entry-card-snippet card-snippet">
-        <?php echo get_the_custom_excerpt( get_the_content(), 150 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+        <?php echo get_the_snipet( get_the_content(), 150 ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <div class="entry-card-meta card-meta">
         <div class="entry-card-day"><span class="post-date"><?php the_time('Y.m.d'); ?></span></div>

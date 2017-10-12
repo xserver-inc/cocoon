@@ -371,7 +371,7 @@ function get_the_meta_description(){
   }
 
   if ( !$desc ) {//投稿で抜粋が設定されていない場合は、110文字の冒頭の抽出分
-    $desc = strip_shortcodes(get_the_custom_excerpt( $post->post_content, 150 ));
+    $desc = strip_shortcodes(get_the_snipet( $post->post_content, 150 ));
     $desc = mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags($desc)), 0, 120);
 
   }
@@ -382,9 +382,8 @@ endif;
 
 
 //本文抜粋を取得する関数
-//使用方法：http://nelog.jp/get_the_custom_excerpt
-if ( !function_exists( 'get_the_custom_excerpt' ) ):
-function get_the_custom_excerpt($content, $length = 70) {
+if ( !function_exists( 'get_the_snipet' ) ):
+function get_the_snipet($content, $length = 70) {
   global $post;
   //SEO設定のディスクリプション取得
   $description = get_the_page_meta_description($post->ID);
@@ -401,7 +400,7 @@ function get_the_custom_excerpt($content, $length = 70) {
 endif;
 
 //本文抜粋を取得する関数
-//使用方法：http://nelog.jp/get_the_custom_excerpt
+//使用方法：http://nelog.jp/get_the_snipet
 if ( !function_exists( 'get_the_all_in_one_seo_pack_meta_description' ) ):
 function get_the_all_in_one_seo_pack_meta_description() {
   global $post;

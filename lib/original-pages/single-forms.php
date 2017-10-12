@@ -43,9 +43,9 @@
           <td>
             <?php
             genelate_textbox_tag(OP_RELATED_ENTRY_HEADING, get_related_entry_heading(), __( '見出し', THEME_NAME ));
-            genelate_tips_tag(__( '', THEME_NAME ));
+            genelate_tips_tag(__( '関連記事の見出しを入力してください。', THEME_NAME ));
             genelate_textbox_tag(OP_RELATED_ENTRY_SUB_HEADING, get_related_entry_sub_heading(), __( 'サブ見出し', THEME_NAME ));
-            genelate_tips_tag(__( '', THEME_NAME ));
+            genelate_tips_tag(__( '関連記事の補助となる見出しを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -66,7 +66,14 @@ table tr:nth-of-type(2n+1),
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
 }
-
+.header,
+.header .site-name-text-link,
+.navi .navi-in a,
+.navi .navi-in a:hover,
+.article h2,
+.sidebar h3{
+  color: #fff;
+}
 <?php endif ?>
 <?php //サイトキー文字色
 if (get_site_key_text_color()): ?>

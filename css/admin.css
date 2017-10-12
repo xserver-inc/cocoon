@@ -64,9 +64,9 @@
   font-family: "Sawarabi Mincho" ,sans-serif; }
 
 .sub-caption {
-  font-family: "KaiTi", "MV Boli", "Comic Sans MS", "Lucida Console", "Arial", "Impact", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "MV Boli", "KaiTi", "Comic Sans MS", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   font-weight: normal;
-  font-size: 0.8em; }
+  font-size: 0.7em; }
 
 .demo .entry-card, .demo .related-entry-card {
   position: relative; }
@@ -771,7 +771,7 @@
   .demo .article h5 {
     border-bottom: 2px solid #cccdce; }
   .demo .article h6 {
-    border-bottom: 2px dashed #cccdce; }
+    border-bottom: 1px solid #cccdce; }
   .demo blockquote {
     background-color: #fafbfc;
     border: 1px solid #cccdce;
