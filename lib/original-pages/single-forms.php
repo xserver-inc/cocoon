@@ -131,9 +131,9 @@
           </th>
           <td>
             <div class="demo">
-              <?php //get_template_part('tmp/') ?>
+              <?php get_template_part('tmp/pager-post-navi') ?>
             </div>
-            <?php genelate_tips_tag(__( 'デモの関連記事はランダムです。', THEME_NAME )); ?>
+            <?php genelate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
           </td>
         </tr>
 

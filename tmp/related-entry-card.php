@@ -19,7 +19,7 @@
     </div>
 
     <div class="related-entry-card-meta card-meta">
-      <div class="related-entry-card-day"><span class="post-date"><?php the_time('Y.m.d'); ?></span></div>
+      <div class="related-entry-card-day"><span class="related-entry-post-date post-date"><?php the_time('Y.m.d'); ?></span></div>
     </div>
 
   </div><!-- /.related-entry-card-content -->

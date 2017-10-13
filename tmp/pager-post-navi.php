@@ -1,3 +1,4 @@
+<?php if (is_post_navi_visible()): ?>
 <div id="pager-post-navi" class="pager-post-navi cf">
 <?php
 $prevpost = get_adjacent_post(false, '', true); //前の記事
@@ -27,3 +28,4 @@ if ( $nextpost ) { //次の記事が存在しているとき
 ?>
 <?php } ?>
 </div><!-- /.pager-post-navi -->
+<?php endif //is_post_navi_visible ?>

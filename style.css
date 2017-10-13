@@ -592,6 +592,10 @@ img {
   margin-right: 8px;
 }
 
+.related-entry-post-date {
+  margin-right: 0;
+}
+
 .post-date::before {
   font-family: FontAwesome;
   content: "";

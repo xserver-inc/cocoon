@@ -14,6 +14,10 @@
   margin-right: 8px;
 }
 
+.related-entry-post-date{
+  margin-right: 0;
+}
+
 .post-date::before{
   @include fontawesome('\f017');
 }

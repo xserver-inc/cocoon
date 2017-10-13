@@ -609,6 +609,8 @@
   .demo .post-date,
   .demo .post-update {
     margin-right: 8px; }
+  .demo .related-entry-post-date {
+    margin-right: 0; }
   .demo .post-date::before {
     font-family: FontAwesome;
     content: "";
