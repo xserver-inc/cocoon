@@ -83,3 +83,30 @@ table{
     width: 48%;
   }
 }
+
+/************************************
+** 関連記事
+************************************/
+.related-vartical-card{
+  .related-entry-card-wrap{
+    width: 49%;
+  }
+}
+
+.related-mini-card{
+  .related-entry-card-wrap{
+    margin-bottom: 10px;
+  }
+
+  .category-label{
+    font-size: 8px;
+  }
+
+  .related-entry-card-thumb{
+    width: 30%;
+  }
+
+  .related-entry-card-content{
+    margin-left: 32%;
+  }
+}

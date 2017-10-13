@@ -1,3 +1,12 @@
+h2, h3{
+  font-size: 20px;
+}
+
+.related-entry-heading,
+.comment-title{
+  margin: 6px 0 12px;
+}
+
 .entry-card-snippet,
 .related-entry-card-snippet,
 .blogcard-snipet{
@@ -72,4 +81,13 @@ body{
 ///////////////////////////////////////
 .pager-post-navi a figure{
   width: 20%;
+}
+
+///////////////////////////////////////
+// 関連記事ミニカード
+///////////////////////////////////////
+.related-mini-card{
+  .related-entry-card-wrap{
+    width: 100%;
+  }
 }

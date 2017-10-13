@@ -99,6 +99,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .entry-card, .related-entry-card {
   position: relative;
+  height: 100%;
 }
 
 .entry-card-thumb, .related-entry-card-thumb, .new-entry-card-thumb {
@@ -621,6 +622,7 @@ img {
 }
 .related-mini-card .related-entry-card-wrap {
   width: 49.5%;
+  padding: 7px;
 }
 .related-mini-card .related-entry-card-thumb {
   width: 120px;
@@ -636,7 +638,7 @@ img {
 }
 
 /************************************
-** Comment
+** 縦型カード
 ************************************/
 .related-vartical-card .related-list {
   display: flex;
@@ -676,7 +678,7 @@ img {
 }
 
 /************************************
-** Comment
+** 関連記事ボーダー
 ************************************/
 .related-entry-border .related-entry-card-wrap {
   border: 1px solid #cccfd2;
@@ -2677,8 +2679,37 @@ input[type='submit'] {
     margin-right: 0;
     width: 48%;
   }
+
+  /************************************
+  ** 関連記事
+  ************************************/
+  .related-vartical-card .related-entry-card-wrap {
+    width: 49%;
+  }
+
+  .related-mini-card .related-entry-card-wrap {
+    margin-bottom: 10px;
+  }
+  .related-mini-card .category-label {
+    font-size: 8px;
+  }
+  .related-mini-card .related-entry-card-thumb {
+    width: 30%;
+  }
+  .related-mini-card .related-entry-card-content {
+    margin-left: 32%;
+  }
 }
 @media screen and (max-width: 480px) {
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  .related-entry-heading,
+  .comment-title {
+    margin: 6px 0 12px;
+  }
+
   .entry-card-snippet,
   .related-entry-card-snippet,
   .blogcard-snipet {
@@ -2744,6 +2775,10 @@ input[type='submit'] {
 
   .pager-post-navi a figure {
     width: 20%;
+  }
+
+  .related-mini-card .related-entry-card-wrap {
+    width: 100%;
   }
 }
 @media print {
