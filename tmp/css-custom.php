@@ -43,7 +43,8 @@ table th,
 table td,
 .page-numbers,
 .page-numbers.dots,
-.tagcloud a{
+.tagcloud a,
+.related-entry-border .related-entry-card-wrap{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
 }
 table tr:nth-of-type(2n+1),
