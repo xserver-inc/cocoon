@@ -23,8 +23,6 @@ if (get_site_key_color()): ?>
 .taglink{
   border-color: <?php echo get_site_key_color(); ?>;
 }
-
-
 blockquote::before, blockquote::after,
 .pager-post-navi a::before {
   color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
@@ -115,8 +113,14 @@ if (get_header_container_background_color()): ?>
 .header-container,
 .demo .header-container,
 .header-container .navi,
-.navi .navi-in > ul .sub-menu{
+.navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo get_header_container_background_color(); ?>;
+}
+.header,
+.header .site-name-text-link,
+.navi .navi-in a,
+.navi .navi-in a:hover{
+  color: #fff;
 }
 <?php endif ?>
 <?php //ヘッダー全体文字色
@@ -144,8 +148,13 @@ if (get_header_text_color()): ?>
 <?php //グローバルナビ背景色
 if (get_global_navi_background_color()): ?>
 .navi,
-.navi .navi-in > ul .sub-menu{
+.demo .navi,
+.navi .navi-in > .menu-header .sub-menu{
   background-color: <?php echo get_global_navi_background_color(); ?>;
+}
+.navi .navi-in a,
+.navi .navi-in a:hover{
+  color: #fff;
 }
 <?php endif ?>
 <?php //グローバルナビ文字色
