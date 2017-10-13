@@ -44,7 +44,8 @@ table td,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
-.related-entry-border .related-entry-card-wrap{
+.related-entry-border .related-entry-card-wrap,
+input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
 }
 table tr:nth-of-type(2n+1),
