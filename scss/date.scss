@@ -12,6 +12,7 @@
 .post-date,
 .post-update{
   @extend .entry-category;
+  margin-right: 8px;
 }
 
 .post-date::before{

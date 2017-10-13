@@ -587,6 +587,11 @@ img {
   top: 0;
 }
 
+.post-date,
+.post-update {
+  margin-right: 8px;
+}
+
 .post-date::before {
   font-family: FontAwesome;
   content: "";

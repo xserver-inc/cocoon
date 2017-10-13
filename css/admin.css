@@ -606,6 +606,9 @@
     position: absolute;
     right: 0;
     top: 0; }
+  .demo .post-date,
+  .demo .post-update {
+    margin-right: 8px; }
   .demo .post-date::before {
     font-family: FontAwesome;
     content: "";
