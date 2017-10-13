@@ -400,6 +400,9 @@ function get_additional_related_entries_classes($option = null){
       break;
   }
   $classes .= ' related-'.str_replace('_', '-', get_related_entry_type());
+  if (is_related_entry_border_visible()) {
+    $classes .= ' related-entry-border';
+  }
 
   if ($option) {
     $classes .= ' '.trim($option);

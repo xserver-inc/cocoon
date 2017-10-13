@@ -59,9 +59,10 @@
   .related-list{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .related-entry-card-wrap{
-    width: 49%;
+    width: 49.5%;
   }
 
   .related-entry-card-thumb{
@@ -88,6 +89,7 @@
   .related-list{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   .related-entry-card-wrap{
     padding: 5px;
@@ -127,6 +129,15 @@
 
 .related-vartical-card-4{
   .related-entry-card-wrap{
-    width: 25%;
+    width: 24.5%;
+  }
+}
+
+/************************************
+** Comment
+************************************/
+.related-entry-border{
+  .related-entry-card-wrap{
+    border: 1px solid $basic_border_color;
   }
 }

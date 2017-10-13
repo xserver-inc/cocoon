@@ -15,5 +15,8 @@ update_theme_option(OP_RELATED_ENTRY_COUNT);
 //関連記事の表示タイプ
 update_theme_option(OP_RELATED_ENTRY_TYPE);
 
+//関連記事枠線の表示
+update_theme_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
+
 //関連記事抜粋文の最大文字数
 update_theme_option(OP_RELATED_EXCERPT_MAX_LENGTH);

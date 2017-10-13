@@ -40,6 +40,14 @@ function get_related_entry_count(){
 }
 endif;
 
+//関連記事枠線の表示
+define('OP_RELATED_ENTRY_BORDER_VISIBLE', 'related_entry_border_visible');
+if ( !function_exists( 'is_related_entry_border_visible' ) ):
+function is_related_entry_border_visible(){
+  return get_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
+}
+endif;
+
 //関連記事抜粋文の最大文字数
 define('OP_RELATED_EXCERPT_MAX_LENGTH', 'related_excerpt_max_length');
 if ( !function_exists( 'get_related_excerpt_max_length' ) ):

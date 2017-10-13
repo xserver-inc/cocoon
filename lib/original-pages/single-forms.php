@@ -82,6 +82,19 @@
           </td>
         </tr>
 
+        <!-- 枠線の表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_RELATED_ENTRY_BORDER_VISIBLE, __('枠線の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_RELATED_ENTRY_BORDER_VISIBLE , is_related_entry_border_visible(), __( 'カードの枠線を表示する', THEME_NAME ));
+            genelate_tips_tag(__( '投稿エントリーカードの枠となる罫線を表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 最大抜粋文字数 -->
         <tr>
           <th scope="row">

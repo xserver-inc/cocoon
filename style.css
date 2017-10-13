@@ -617,9 +617,10 @@ img {
 .related-mini-card .related-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .related-mini-card .related-entry-card-wrap {
-  width: 49%;
+  width: 49.5%;
 }
 .related-mini-card .related-entry-card-thumb {
   width: 120px;
@@ -640,6 +641,7 @@ img {
 .related-vartical-card .related-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .related-vartical-card .related-entry-card-wrap {
   padding: 5px;
@@ -670,7 +672,14 @@ img {
 }
 
 .related-vartical-card-4 .related-entry-card-wrap {
-  width: 25%;
+  width: 24.5%;
+}
+
+/************************************
+** Comment
+************************************/
+.related-entry-border .related-entry-card-wrap {
+  border: 1px solid #cccfd2;
 }
 
 /************************************
