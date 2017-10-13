@@ -137,6 +137,19 @@
           </td>
         </tr>
 
+        <!-- 表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_POST_NAVI_VISIBLE, __('表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_POST_NAVI_VISIBLE , is_post_navi_visible(), __( 'ページ送りナビを表示する', THEME_NAME ));
+            genelate_tips_tag(__( '[前ページ][次ページ]ナビを表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

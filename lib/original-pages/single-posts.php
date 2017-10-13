@@ -1,4 +1,7 @@
 <?php //タイトル設定をデータベースに保存
+///////////////////////////////////////
+// 関連記事
+///////////////////////////////////////
 
 //関連記事の表示
 update_theme_option(OP_RELATED_ENTRIES_VISIBLE);
@@ -20,3 +23,10 @@ update_theme_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
 
 //関連記事抜粋文の最大文字数
 update_theme_option(OP_RELATED_EXCERPT_MAX_LENGTH);
+
+///////////////////////////////////////
+// ページ送りナビ
+///////////////////////////////////////
+
+//ページ送りナビの表示
+update_theme_option(OP_POST_NAVI_VISIBLE);

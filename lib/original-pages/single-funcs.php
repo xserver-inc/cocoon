@@ -1,4 +1,7 @@
 <?php //投稿設定に必要な定数や関数
+///////////////////////////////////////
+// 関連記事
+///////////////////////////////////////
 
 //関連記事の表示
 define('OP_RELATED_ENTRIES_VISIBLE', 'related_entries_visible');
@@ -53,5 +56,17 @@ define('OP_RELATED_EXCERPT_MAX_LENGTH', 'related_excerpt_max_length');
 if ( !function_exists( 'get_related_excerpt_max_length' ) ):
 function get_related_excerpt_max_length(){
   return get_option(OP_RELATED_EXCERPT_MAX_LENGTH, 120);
+}
+endif;
+
+///////////////////////////////////////
+// ページ送りナビ
+///////////////////////////////////////
+
+//ページ送りナビの表示
+define('OP_POST_NAVI_VISIBLE', 'post_navi_visible');
+if ( !function_exists( 'is_post_navi_visible' ) ):
+function is_post_navi_visible(){
+  return get_option(OP_POST_NAVI_VISIBLE, 1);
 }
 endif;
