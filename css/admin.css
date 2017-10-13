@@ -93,7 +93,8 @@
   bottom: 0;
   position: absolute;
   right: 0;
-  text-align: right; }
+  text-align: right;
+  line-height: 1; }
 
 .demo .entry-categories-tags, .demo .ad-area {
   margin-bottom: 18px; }
@@ -591,7 +592,6 @@
   .demo .entry-category, .demo .post-date,
   .demo .post-update {
     padding: 2px;
-    margin-right: 8px;
     display: inline;
     font-size: 0.7em; }
   .demo .entry-category::before, .demo .post-date::before,
@@ -1932,7 +1932,7 @@
       .demo .article ol {
         padding-left: 20px; }
       .demo .a-wrap {
-        padding: 0px; }
+        padding: 7px; }
       .demo .entry-card-content,
       .demo .related-entry-card-content {
         overflow: hidden; }

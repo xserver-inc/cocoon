@@ -128,6 +128,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   position: absolute;
   right: 0;
   text-align: right;
+  line-height: 1;
 }
 
 .entry-categories-tags, .ad-area {
@@ -561,7 +562,6 @@ img {
 .entry-category, .post-date,
 .post-update {
   padding: 2px;
-  margin-right: 8px;
   display: inline;
   font-size: 0.7em;
 }
@@ -2623,7 +2623,7 @@ input[type='submit'] {
   }
 
   .a-wrap {
-    padding: 0px;
+    padding: 7px;
   }
 
   .entry-card-content,
