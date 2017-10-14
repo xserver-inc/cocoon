@@ -1,0 +1,76 @@
+
+/************************************
+** 投稿ナビ
+************************************/
+$pn_margin_width: 10px;
+.pager-post-navi{
+  margin: 38px 0;
+  display: flex;
+  flex-direction: column;
+
+  a{
+    padding: $pn_margin_width;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.2;
+    font-size: 0.8em;
+    //font-weight: bold;
+
+    // border-radius: 50%;
+    // overflow: hidden;
+
+    // border: 1px solid $x_thin;
+
+    // &:first-child{
+    //   border-right: 0;
+    // }
+
+    &::before{
+      font-size: 1.8em;
+      color: $thin;
+    }
+
+    figure{
+      width: 120px;
+    }
+
+    &.prev-post{
+      flex-direction: row;
+      padding-left: $pn_margin_width / 2;
+
+      &::before{
+        @include fontawesome('\f053');
+        margin-right: $pn_margin_width / 2;
+        padding-right: 0;
+      }
+
+     .prev-post-title{
+        margin-left: $pn_margin_width;
+      }
+    }
+
+    &.next-post{
+      flex-direction: row-reverse;
+      padding-right: $pn_margin_width / 2;
+
+      &::before{
+        @include fontawesome('\f054');
+        margin-left: $pn_margin_width / 2;
+        padding-right: 0;
+      }
+
+      .next-post-title{
+        margin-right: $pn_margin_width;
+      }
+    }
+
+    &.prev-next-home{
+      justify-content: center;
+
+      font-size: 50px;
+      text-align: center;
+      color: $middle_thickness;
+    }
+  }
+}

@@ -412,3 +412,26 @@ function get_additional_related_entries_classes($option = null){
 endif;
 
 
+//フッターボトムのclass追加関数
+if ( !function_exists( 'get_additional_post_navi_classes' ) ):
+function get_additional_post_navi_classes($option = null){
+  $classes = null;
+  // switch (get_post_navi_type()) {
+  //   case 'vartical_card_3':
+  //   case 'vartical_card_4':
+  //     $classes .= ' related-vartical-card';
+  //     break;
+  // }
+  $classes .= ' post-navi-'.str_replace('_', '-', get_post_navi_type());
+  if (is_post_navi_border_visible()) {
+    $classes .= ' post-navi-border';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+

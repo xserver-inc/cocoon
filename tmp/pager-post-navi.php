@@ -1,5 +1,5 @@
 <?php if (is_post_navi_visible()): ?>
-<div id="pager-post-navi" class="pager-post-navi cf">
+<div id="pager-post-navi" class="pager-post-navi<?php echo get_additional_post_navi_classes(); ?> cf">
 <?php
 $prevpost = get_adjacent_post(false, '', true); //前の記事
 $nextpost = get_adjacent_post(false, '', false); //次の記事
