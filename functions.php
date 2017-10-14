@@ -78,7 +78,18 @@ if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id, $width = 120, $height = 67){
   $thumb = get_the_post_thumbnail( $id, array($width, $height), array('alt' => '') );
   if ( !$thumb ) {
-    $thumb = '<img src="'.get_template_directory_uri().'/images/no-image-160.png" alt="NO IMAGE" class="no-image post-navi-no-image" />';
+    $image = get_template_directory_uri().'/images/no-image-%s.png';
+    //表示タイプ＝デフォルト
+    if ($width == 120) {
+      $w = '160';
+      $image = sprintf($image, $w);
+      $wh_attr = ' srcset="'.$image.' 120w" width="120" height="67" sizes="(max-width: 120px) 120vw, 67px"';
+    } else {//表示タイプ＝スクエア
+      $w = '150';
+      $image = sprintf($image, $w);
+      $wh_attr = ' srcset="'.$image.' 120w" width="120" height="120" sizes="(max-width: 120px) 120vw, 120px"';
+    }
+    $thumb = '<img src="'.$image.'" alt="NO IMAGE" class="no-image post-navi-no-image"'.$wh_attr.' />';
   }
   return $thumb;
 }

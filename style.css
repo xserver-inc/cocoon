@@ -1511,6 +1511,20 @@ label.screen-reader-text {
   border-top-width: 0px;
 }
 
+.pager-post-navi.post-navi-square {
+  flex-direction: row;
+}
+.pager-post-navi.post-navi-square a {
+  width: 50%;
+}
+
+.post-navi-square.post-navi-border a {
+  border: 1px solid #cccfd2;
+}
+.post-navi-square.post-navi-border .next-post {
+  border-left: none;
+}
+
 /************************************
 ** フッター
 ************************************/

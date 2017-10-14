@@ -84,3 +84,25 @@ $pn_margin_width: 10px;
     border-top-width: 0px;
   }
 }
+
+.pager-post-navi.post-navi-square{
+  flex-direction: row;
+  a{
+    width: 50%;
+  }
+  // a.prev-post::before{
+  //   @include fontawesome('\f104');
+  // }
+  // a.prev-post::before{
+
+  // }
+}
+
+.post-navi-square.post-navi-border{
+  a{
+    border: 1px solid $basic_border_color;
+  }
+  .next-post{
+    border-left: none;
+  }
+}

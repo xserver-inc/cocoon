@@ -1222,6 +1222,14 @@
     border-bottom: 1px solid #cccfd2; }
   .demo .post-navi-default.post-navi-border a:last-child {
     border-top-width: 0px; }
+  .demo .pager-post-navi.post-navi-square {
+    flex-direction: row; }
+    .demo .pager-post-navi.post-navi-square a {
+      width: 50%; }
+  .demo .post-navi-square.post-navi-border a {
+    border: 1px solid #cccfd2; }
+  .demo .post-navi-square.post-navi-border .next-post {
+    border-left: none; }
   .demo .footer {
     margin-top: 20px;
     padding-top: 10px; }
