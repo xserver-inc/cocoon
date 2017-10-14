@@ -98,8 +98,12 @@ body{
     width: 100%;
     padding: 7px;
   }
-  .next-post{
+  a:last-child{
     border-top-width: 0;
-    border-left: 1px solid;
+    border-left-width: 1px;
   }
+
+  // a.prev-next-home{
+  //   display: none;
+  // }
 }

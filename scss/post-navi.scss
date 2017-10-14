@@ -105,10 +105,7 @@ $pn_margin_width: 10px;
   a{
     border: 1px solid $basic_border_color;
   }
-  .next-post{
+  a:last-child{
     border-left-width: 0px;
-  }
-  .next-post:first-child{
-    border-left-width: 1px;
   }
 }

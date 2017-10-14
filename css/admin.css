@@ -1230,10 +1230,8 @@
       width: 50%; }
   .demo .post-navi-square.post-navi-border a {
     border: 1px solid #cccfd2; }
-  .demo .post-navi-square.post-navi-border .next-post {
+  .demo .post-navi-square.post-navi-border a:last-child {
     border-left-width: 0px; }
-  .demo .post-navi-square.post-navi-border .next-post:first-child {
-    border-left-width: 1px; }
   .demo .footer {
     margin-top: 20px;
     padding-top: 10px; }
@@ -2073,9 +2071,9 @@
         .demo .pager-post-navi.post-navi-square a {
           width: 100%;
           padding: 7px; }
-        .demo .pager-post-navi.post-navi-square .next-post {
+        .demo .pager-post-navi.post-navi-square a:last-child {
           border-top-width: 0;
-          border-left: 1px solid; } }
+          border-left-width: 1px; } }
   @media print {
     .demo {
       /************************************

@@ -78,6 +78,11 @@ function get_post_navi_type(){
   return get_option(OP_POST_NAVI_TYPE, 'default');
 }
 endif;
+if ( !function_exists( 'is_post_navi_type_spuare' ) ):
+function is_post_navi_type_spuare(){
+  return get_post_navi_type() == 'square';
+}
+endif;
 
 //ページ送りナビ枠線の表示
 define('OP_POST_NAVI_BORDER_VISIBLE', 'post_navi_border_visible');

@@ -21,7 +21,9 @@ if ( $prevpost ) { //前の記事が存在しているとき
         '</figure>
         <div class="prev-post-title">' . get_the_title($prevpost->ID) . '</div></a>';
 } else { //前の記事が存在しないとき
-//echo  '<a href="' .home_url('/'). '" id="prev-next-home" class="prev-next-home a-wrap"><span class="fa fa-home"></span></a>';
+  if (is_post_navi_type_spuare()) {
+    echo  '<a href="' .home_url('/'). '" id="prev-next-home" class="prev-next-home a-wrap"><span class="fa fa-home"></span></a>';
+  }
 }
 if ( $nextpost ) { //次の記事が存在しているとき
   echo '<a href="' . get_permalink($nextpost->ID) . '" title="'. get_the_title($nextpost->ID) . '" class="next-post a-wrap cf">
@@ -31,7 +33,10 @@ if ( $nextpost ) { //次の記事が存在しているとき
         '</figure>
 <div class="next-post-title">'. get_the_title($nextpost->ID) . '</div></a>';
 } else { //次の記事が存在しないとき
-//echo '<a href="' .home_url('/'). '" id="prev-next-home" class="prev-next-home a-wrap"><span class="fa fa-home"></span></a>';
+  if (is_post_navi_type_spuare()) {
+    echo '<a href="' .home_url('/'). '" id="prev-next-home" class="prev-next-home a-wrap"><span class="fa fa-home"></span></a>';
+  }
+
 }
 ?>
 <?php } ?>
