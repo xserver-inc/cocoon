@@ -150,6 +150,23 @@
           </td>
         </tr>
 
+        <!-- 表示タイプ -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_POST_NAVI_TYPE, __('表示タイプ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'default' => __( 'デフォルト', THEME_NAME ),
+              'square' => __( 'サムネイル正方形', THEME_NAME ),
+            );
+            genelate_radiobox_tag(OP_POST_NAVI_TYPE, $options, get_post_navi_type());
+            genelate_tips_tag(__( 'ページ送りナビの見た目を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

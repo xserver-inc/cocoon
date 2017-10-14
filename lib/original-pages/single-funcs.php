@@ -70,3 +70,11 @@ function is_post_navi_visible(){
   return get_option(OP_POST_NAVI_VISIBLE, 1);
 }
 endif;
+
+//ページ送りナビの表示タイプ
+define('OP_POST_NAVI_TYPE', 'post_navi_type');
+if ( !function_exists( 'get_post_navi_type' ) ):
+function get_post_navi_type(){
+  return get_option(OP_POST_NAVI_TYPE, 'default');
+}
+endif;

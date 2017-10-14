@@ -30,3 +30,6 @@ update_theme_option(OP_RELATED_EXCERPT_MAX_LENGTH);
 
 //ページ送りナビの表示
 update_theme_option(OP_POST_NAVI_VISIBLE);
+
+//ページ送りナビの表示タイプ
+update_theme_option(OP_POST_NAVI_TYPE);
