@@ -238,6 +238,9 @@
   ** マルチページのページャーリンク
   ************************************/
   /************************************
+  ** マルチページのページャーリンク
+  ************************************/
+  /************************************
   ** 投稿ナビ
   ************************************/
   /************************************
@@ -1157,6 +1160,20 @@
         background-color: #f5f8fa;
         transition: all 0.3s ease 0s;
         color: #333435; }
+  .demo .pager-links {
+    margin: 30px 0;
+    clear: both;
+    text-align: center; }
+    .demo .pager-links span {
+      background-color: #eeeff0; }
+    .demo .pager-links a {
+      display: inline-block; }
+      .demo .pager-links a span {
+        background-color: #fff; }
+      .demo .pager-links a:hover span {
+        background-color: #f5f8fa;
+        transition: all 0.3s ease 0s;
+        color: #333435; }
   .demo .pager-post-navi {
     margin: 38px 0;
     display: flex;
@@ -1200,6 +1217,11 @@
         font-size: 50px;
         text-align: center;
         color: #777879; }
+  .demo .post-navi-default.post-navi-border a {
+    border-top: 1px solid #cccfd2;
+    border-bottom: 1px solid #cccfd2; }
+  .demo .post-navi-default.post-navi-border a:last-child {
+    border-top-width: 0px; }
   .demo .footer {
     margin-top: 20px;
     padding-top: 10px; }

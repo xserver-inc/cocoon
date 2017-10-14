@@ -1423,6 +1423,29 @@ label.screen-reader-text {
 }
 
 /************************************
+** マルチページのページャーリンク
+************************************/
+.pager-links {
+  margin: 30px 0;
+  clear: both;
+  text-align: center;
+}
+.pager-links span {
+  background-color: #eeeff0;
+}
+.pager-links a {
+  display: inline-block;
+}
+.pager-links a span {
+  background-color: #fff;
+}
+.pager-links a:hover span {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease 0s;
+  color: #333435;
+}
+
+/************************************
 ** 投稿ナビ
 ************************************/
 .pager-post-navi {
@@ -1478,6 +1501,14 @@ label.screen-reader-text {
   font-size: 50px;
   text-align: center;
   color: #777879;
+}
+
+.post-navi-default.post-navi-border a {
+  border-top: 1px solid #cccfd2;
+  border-bottom: 1px solid #cccfd2;
+}
+.post-navi-default.post-navi-border a:last-child {
+  border-top-width: 0px;
 }
 
 /************************************
