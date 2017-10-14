@@ -91,3 +91,15 @@ body{
     width: 100%;
   }
 }
+
+.pager-post-navi.post-navi-square{
+  flex-direction: column;
+  a{
+    width: 100%;
+    padding: 7px;
+  }
+  .next-post{
+    border-top-width: 0;
+    border-left: 1px solid;
+  }
+}

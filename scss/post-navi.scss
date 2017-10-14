@@ -80,8 +80,11 @@ $pn_margin_width: 10px;
     border-top: 1px solid $basic_border_color;
     border-bottom: 1px solid $basic_border_color;
   }
-  a:last-child{
+  .next-post{
     border-top-width: 0px;
+  }
+  .next-post:first-child{
+    border-top-width: 1px;
   }
 }
 
@@ -103,6 +106,9 @@ $pn_margin_width: 10px;
     border: 1px solid $basic_border_color;
   }
   .next-post{
-    border-left: none;
+    border-left-width: 0px;
+  }
+  .next-post:first-child{
+    border-left-width: 1px;
   }
 }
