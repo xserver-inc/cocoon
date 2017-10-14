@@ -24,7 +24,7 @@ if (get_site_key_color()): ?>
   border-color: <?php echo get_site_key_color(); ?>;
 }
 blockquote::before, blockquote::after,
-.pager-post-navi a::before {
+.pager-post-navi a.a-wrap::before {
   color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
 }
 blockquote,
@@ -44,8 +44,8 @@ table td,
 .page-numbers,
 .page-numbers.dots,
 .tagcloud a,
-.related-entry-border .related-entry-card-wrap,
-.pager-post-navi a.a-wrap,
+.related-entries.related-entry-border .related-entry-card-wrap,
+#pager-post-navi.pager-post-navi a.a-wrap,
 .a-wrap .blogcard,
 input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
