@@ -33,3 +33,6 @@ update_theme_option(OP_POST_NAVI_VISIBLE);
 
 //ページ送りナビの表示タイプ
 update_theme_option(OP_POST_NAVI_TYPE);
+
+//ページ送りナビ枠線の表示
+update_theme_option(OP_POST_NAVI_BORDER_VISIBLE);

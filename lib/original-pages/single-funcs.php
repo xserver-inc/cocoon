@@ -78,3 +78,11 @@ function get_post_navi_type(){
   return get_option(OP_POST_NAVI_TYPE, 'default');
 }
 endif;
+
+//ページ送りナビ枠線の表示
+define('OP_POST_NAVI_BORDER_VISIBLE', 'post_navi_border_visible');
+if ( !function_exists( 'is_post_navi_border_visible' ) ):
+function is_post_navi_border_visible(){
+  return get_option(OP_POST_NAVI_BORDER_VISIBLE);
+}
+endif;

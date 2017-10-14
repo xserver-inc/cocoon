@@ -167,6 +167,19 @@
           </td>
         </tr>
 
+        <!-- 枠線表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_POST_NAVI_BORDER_VISIBLE, __('枠線表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_POST_NAVI_BORDER_VISIBLE , is_post_navi_border_visible(), __( 'ページ送りナビの枠線を表示する', THEME_NAME ));
+            genelate_tips_tag(__( 'ページ送りナビを囲む枠線を表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
