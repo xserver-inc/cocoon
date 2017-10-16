@@ -11,3 +11,6 @@ update_theme_option(OP_COMMENT_FORM_HEADING);
 
 //ウェブサイト入力欄表示
 update_theme_option(OP_COMMENT_WEBSITE_VISIBLE);
+
+//コメント送信ボタンのラベル
+update_theme_option(OP_COMMENT_SUBMIT_LABEL);

@@ -872,6 +872,8 @@
       font-size: 0.8em; }
   .demo .comment-form .required {
     color: red; }
+  .demo .comment-area.website-hide .comment-form-url {
+    display: none; }
   .demo .sidebar {
     width: 356px;
     border: 1px solid transparent;

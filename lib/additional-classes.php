@@ -435,3 +435,21 @@ function get_additional_post_navi_classes($option = null){
 endif;
 
 
+//フッターボトムのclass追加関数
+if ( !function_exists( 'get_additional_comment_area_classes' ) ):
+function get_additional_comment_area_classes($option = null){
+  $classes = null;
+
+  if (!is_comment_website_visible()) {
+    $classes .= ' website-hide';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
+

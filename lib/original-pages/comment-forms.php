@@ -32,7 +32,7 @@
             <?php
             genelate_textbox_tag(OP_COMMENT_HEADING, get_comment_heading(), __( '見出し', THEME_NAME ));
             genelate_tips_tag(__( 'コメント一覧の見出しを入力してください。', THEME_NAME ));
-            genelate_textbox_tag(OP_RELATED_ENTRY_SUB_HEADING, get_comment_sub_heading(), __( 'サブ見出し', THEME_NAME ));
+            genelate_textbox_tag(OP_COMMENT_SUB_HEADING, get_comment_sub_heading(), __( 'サブ見出し', THEME_NAME ));
             genelate_tips_tag(__( 'コメント一覧の補助となる見出しを入力してください。', THEME_NAME ));
             ?>
           </td>
@@ -60,6 +60,19 @@
             <?php
             genelate_checkbox_tag(OP_COMMENT_WEBSITE_VISIBLE , is_comment_website_visible(), __( 'ウェブサイト入力ボックスを表示する', THEME_NAME ));
             genelate_tips_tag(__( 'ウェブサイト入力欄を表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- コメント送信ボタンラベル -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_COMMENT_SUBMIT_LABEL, __('送信ボタンラベル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_COMMENT_SUBMIT_LABEL, get_comment_submit_label(), __( 'コメントを送信', THEME_NAME ));
+            genelate_tips_tag(__( 'コメントの送信ボタンのラベルテキストを入力しているなさい。', THEME_NAME ));
             ?>
           </td>
         </tr>

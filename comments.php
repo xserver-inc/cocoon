@@ -1,8 +1,13 @@
 <?php if ( (is_comment_allow() || have_comments()) && (is_single() && is_single_comment_visible()) ): ?>
 <!-- comment area -->
-<div id="comment-area" class="comment-area">
+<div id="comment-area" class="comment-area<?php echo get_additional_comment_area_classes(); ?>">
   <section class="comment-list">
-    <h2 id="comment-title" class="comment-title"><?php _e( 'コメント', THEME_NAME ); ?></h2>
+    <h2 id="comment-title" class="comment-title">
+      <?php echo get_comment_heading(); ?>
+      <?php if (get_comment_sub_heading()): ?>
+        <span class="comment-sub-heading sub-caption"><?php echo get_comment_sub_heading(); ?></span>
+      <?php endif ?>
+    </h2>
 
     <?php
     if(have_comments()): // コメントがあったら
@@ -21,8 +26,8 @@
 
   // ここからコメントフォーム
   $args = array(
-    'title_reply'  => __( 'コメントをどうぞ', THEME_NAME ),
-    'label_submit' => __( 'コメントを送信', THEME_NAME ),
+    'title_reply'  => get_comment_form_heading(),
+    'label_submit' => get_comment_submit_label(),
   );
   echo '<aside class="comment-form">';
   comment_form($args);

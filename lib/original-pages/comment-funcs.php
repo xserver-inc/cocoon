@@ -31,3 +31,11 @@ function is_comment_website_visible(){
   return get_option(OP_COMMENT_WEBSITE_VISIBLE, 1);
 }
 endif;
+
+//コメント送信ボタンのラベル
+define('OP_COMMENT_SUBMIT_LABEL', 'comment_submit_label');
+if ( !function_exists( 'get_comment_submit_label' ) ):
+function get_comment_submit_label(){
+  return get_option(OP_COMMENT_SUBMIT_LABEL, __( 'コメントを送信', THEME_NAME ));
+}
+endif;
