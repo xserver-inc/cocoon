@@ -21,6 +21,7 @@ require_once 'original-pages/analytics-funcs.php';  //アクセス解析設定�
 require_once 'original-pages/single-funcs.php';     //投稿設定関数
 require_once 'original-pages/sns-share-funcs.php';  //SNSシェア設定関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー設定関数
+require_once 'original-pages/comment-funcs.php';    //コメント設定関数
 require_once 'original-pages/code-funcs.php';       //コード設定関数
 require_once 'original-pages/image-funcs.php';      //画像設定関数
 require_once 'original-pages/ogp-funcs.php';        //OGP設定関数

@@ -29,6 +29,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/sns-share-posts.php';
   //SNSフォロー
   require_once 'original-pages/sns-follow-posts.php';
+  //コメント
+  require_once 'original-pages/comment-posts.php';
   //ソースコード
   require_once 'original-pages/code-posts.php';
   //画像
@@ -77,6 +79,7 @@ endif;
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
+    <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
@@ -142,6 +145,11 @@ endif;
   <!-- SNSフォロータブ -->
   <div class="sns-follow metabox-holder">
     <?php require_once 'original-pages/sns-follow-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- コメントタブ -->
+  <div class="comment metabox-holder">
+    <?php require_once 'original-pages/comment-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コードタブ -->
