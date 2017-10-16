@@ -17,3 +17,9 @@
     font-size:$text_size_s;
   }
 }
+
+.comment-form{
+  .required{
+    color: red;
+  }
+}

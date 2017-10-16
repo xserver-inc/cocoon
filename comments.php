@@ -1,4 +1,4 @@
-<?php if (is_comment_allow() || have_comments()): ?>
+<?php if ( (is_comment_allow() || have_comments()) && (is_single() && is_single_comment_visible()) ): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area">
   <section class="comment-list">

@@ -870,6 +870,8 @@
       font-size: 0.8em; }
     .demo .commets-list .comment-meta {
       font-size: 0.8em; }
+  .demo .comment-form .required {
+    color: red; }
   .demo .sidebar {
     width: 356px;
     border: 1px solid transparent;

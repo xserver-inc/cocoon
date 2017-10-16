@@ -36,3 +36,23 @@ update_theme_option(OP_POST_NAVI_TYPE);
 
 //ページ送りナビ枠線の表示
 update_theme_option(OP_POST_NAVI_BORDER_VISIBLE);
+
+
+///////////////////////////////////////
+// コメント
+///////////////////////////////////////
+
+//コメント表示
+update_theme_option(OP_SINGLE_COMMENT_VISIBLE);
+
+//コメントの見出し
+update_theme_option(OP_SINGLE_COMMENT_HEADING);
+
+//コメントのサブ見出し
+update_theme_option(OP_SINGLE_COMMENT_SUB_HEADING);
+
+//コメント入力欄の見出し
+update_theme_option(OP_SINGLE_COMMENT_FORM_HEADING);
+
+//ウェブサイト入力欄表示
+update_theme_option(OP_SINGLE_COMMENT_WEBSITE_VISIBLE);

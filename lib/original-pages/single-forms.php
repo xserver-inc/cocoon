@@ -186,4 +186,32 @@
   </div>
 </div>
 
+<!-- コメント -->
+<div id="single-page" class="postbox">
+  <h2 class="hndle"><?php _e( 'コメント設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '投稿のコメント表示設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- 表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SINGLE_COMMENT_VISIBLE, __('表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_SINGLE_COMMENT_VISIBLE , is_single_comment_visible(), __( 'コメントを表示する', THEME_NAME ));
+            genelate_tips_tag(__( '投稿ページにコメントを表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 </div><!-- /.metabox-holder -->
