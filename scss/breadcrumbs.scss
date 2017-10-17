@@ -20,8 +20,10 @@
   color: $pallid_text_color;
 }
 
-.breadcrumb-category.sbp-main-before,
-.breadcrumb-category.sbp-footer-before{
+.breadcrumb.sbp-main-before,
+.breadcrumb.sbp-footer-before,
+.breadcrumb.pbp-main-before,
+.breadcrumb.pbp-footer-before{
   background-color: $bg_white;
   margin: inherit auto;
   padding: 5px;

@@ -44,9 +44,14 @@ get_template_part('tmp/header-analytics'); ?>
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 
-    <?php //パンくずリストがメイン手前の場合
+    <?php //投稿パンくずリストがメイン手前の場合
     if (is_single() && is_single_breadcrumbs_position_main_before()){
       get_template_part('tmp/breadcrumbs');
+    } ?>
+
+    <?php //固定ページパンくずリストがメイン手前の場合
+    if (is_page() && is_page_breadcrumbs_position_main_before()){
+      get_template_part('tmp/breadcrumbs-page');
     } ?>
 
     <?php //メインカラム手前に挿入するユーザー用テンプレート

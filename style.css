@@ -715,8 +715,10 @@ img {
   color: #777879;
 }
 
-.breadcrumb-category.sbp-main-before,
-.breadcrumb-category.sbp-footer-before {
+.breadcrumb.sbp-main-before,
+.breadcrumb.sbp-footer-before,
+.breadcrumb.pbp-main-before,
+.breadcrumb.pbp-footer-before {
   background-color: #fff;
   margin: inherit auto;
   padding: 5px;

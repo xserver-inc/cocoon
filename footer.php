@@ -7,9 +7,14 @@
 
     </div>
 
-    <?php //パンくずリストがフッター手前の場合
+    <?php //投稿パンくずリストがフッター手前の場合
     if (is_single() && is_single_breadcrumbs_position_footer_before()){
       get_template_part('tmp/breadcrumbs');
+    } ?>
+
+    <?php //固定ページパンくずリストがフッター手前の場合
+    if (is_page() && is_page_breadcrumbs_position_footer_before()){
+      get_template_part('tmp/breadcrumbs-page');
     } ?>
 
     <footer id="footer" class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">

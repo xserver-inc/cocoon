@@ -679,8 +679,10 @@
   .demo .breadcrumb a {
     text-decoration: none;
     color: #777879; }
-  .demo .breadcrumb-category.sbp-main-before,
-  .demo .breadcrumb-category.sbp-footer-before {
+  .demo .breadcrumb.sbp-main-before,
+  .demo .breadcrumb.sbp-footer-before,
+  .demo .breadcrumb.pbp-main-before,
+  .demo .breadcrumb.pbp-footer-before {
     background-color: #fff;
     margin: inherit auto;
     padding: 5px; }

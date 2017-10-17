@@ -474,5 +474,27 @@ function get_additional_single_breadcrumbs_classes($option = null){
 endif;
 
 
+//固定ページパンくずリストのclass追加関数
+if ( !function_exists( 'get_additional_page_breadcrumbs_classes' ) ):
+function get_additional_page_breadcrumbs_classes($option = null){
+  $classes = null;
+
+  $classes .= ' pbp-'.str_replace('_', '-', get_page_breadcrumbs_position());
+
+  switch (get_page_breadcrumbs_position()) {
+    case 'main_before':
+    case 'footer_before':
+      $classes .= ' wrap';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
 
 
