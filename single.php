@@ -19,7 +19,11 @@ get_template_part('tmp/content') ?>
 
   <?php get_template_part('tmp/pager-post-navi'); //投稿ナビ ?>
 
-  <?php comments_template(); //コメントテンプレート?>
+  <?php //コメントを表示する場合
+  if (is_single_comment_visible()) {
+    comments_template(); //コメントテンプレート
+  } ?>
+
 </div>
 
 <?php //パンくずリストがメインボトムの場合
