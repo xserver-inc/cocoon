@@ -58,7 +58,7 @@
           <td>
             <?php
             $options = array(
-              'entry_card' => __( 'エントリーカード', THEME_NAME ),
+              'entry_card' => __( 'エントリーカード（デフォルト）', THEME_NAME ),
               'mini_card' => __( 'ミニカード（推奨：表示数偶数）', THEME_NAME ),
               'vartical_card_3' => __( '縦型カード3列（推奨：表示数 6, 12, 18...）', THEME_NAME ),
               'vartical_card_4' => __( '縦型カード4列（推奨：表示数 4, 8, 12...）', THEME_NAME ),
@@ -204,6 +204,41 @@
             <?php
             genelate_checkbox_tag(OP_SINGLE_COMMENT_VISIBLE , is_single_comment_visible(), __( 'コメントを表示する', THEME_NAME ));
             genelate_tips_tag(__( '投稿ページにコメントを表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<!-- パンくずリスト -->
+<div id="single-page" class="postbox">
+  <h2 class="hndle"><?php _e( 'パンくずリスト設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '投稿のパンくずリスト設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- 表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_SINGLE_BREADCRUMBS_POSITION, __('パンくずリストの配置', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'none' => __( '表示しない', THEME_NAME ),
+              'main_before' => __( 'メインカラム手前', THEME_NAME ),
+              'main_top' => __( 'メインカラムトップ', THEME_NAME ),
+              'main_bottom' => __( 'メインカラムボトム（デフォルト）', THEME_NAME ),
+              'footer_before' => __( 'フッター手前', THEME_NAME ),
+            );
+            genelate_radiobox_tag(OP_SINGLE_BREADCRUMBS_POSITION, $options, get_single_breadcrumbs_position());
+            genelate_tips_tag(__( '投稿のパンくずリスト表示位置を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>

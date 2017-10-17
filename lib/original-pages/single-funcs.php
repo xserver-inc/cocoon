@@ -92,7 +92,6 @@ function is_post_navi_border_visible(){
 }
 endif;
 
-
 ///////////////////////////////////////
 // コメント
 ///////////////////////////////////////
@@ -105,34 +104,14 @@ function is_single_comment_visible(){
 }
 endif;
 
-//コメントの見出し
-define('OP_SINGLE_COMMENT_HEADING', 'single_comment_heading');
-if ( !function_exists( 'get_single_comment_heading' ) ):
-function get_single_comment_heading(){
-  return get_option(OP_SINGLE_COMMENT_HEADING, __( 'コメント', THEME_NAME ));
-}
-endif;
+///////////////////////////////////////
+// パンくずリスト
+//////////////////////////////////////
 
-//コメントのサブ見出し
-define('OP_SINGLE_COMMENT_SUB_HEADING', 'single_comment_sub_heading');
-if ( !function_exists( 'get_single_comment_sub_heading' ) ):
-function get_single_comment_sub_heading(){
-  return get_option(OP_SINGLE_COMMENT_SUB_HEADING);
-}
-endif;
-
-//コメント入力欄の見出し
-define('OP_SINGLE_COMMENT_FORM_HEADING', 'single_comment_form_heading');
-if ( !function_exists( 'get_single_comment_form_heading' ) ):
-function get_single_comment_form_heading(){
-  return get_option(OP_SINGLE_COMMENT_FORM_HEADING, __( 'コメントをどうぞ', THEME_NAME ));
-}
-endif;
-
-//ウェブサイト入力欄表示
-define('OP_SINGLE_COMMENT_WEBSITE_VISIBLE', 'single_comment_website_visible');
-if ( !function_exists( 'is_single_comment_website_visible' ) ):
-function is_single_comment_website_visible(){
-  return get_option(OP_SINGLE_COMMENT_WEBSITE_VISIBLE, 1);
+//パンくずリストの位置
+define('OP_SINGLE_BREADCRUMBS_POSITION', 'single_breadcrumbs_position');
+if ( !function_exists( 'get_single_breadcrumbs_position' ) ):
+function get_single_breadcrumbs_position(){
+  return get_option(OP_SINGLE_BREADCRUMBS_POSITION, 'main_bottom');
 }
 endif;
