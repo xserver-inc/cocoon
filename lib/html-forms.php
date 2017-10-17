@@ -149,7 +149,7 @@ function genelate_the_site_logo_tag($is_header = true){
   if (get_the_site_logo_url()) {
     $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-image-link"><img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"></a>';
   } else {
-    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-text">'.get_bloginfo('name').'</a>';
+    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-text-link">'.get_bloginfo('name').'</a>';
   }
   echo $logo_before_tag.$site_logo_tag.$logo_after_tag;
 }
