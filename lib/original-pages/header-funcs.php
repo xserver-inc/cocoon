@@ -1,5 +1,13 @@
 <?php //ヘッダー設定に必要な定数や関数
 
+//ヘッダーの種類
+define('OP_HEADER_LAYOUT_TYPE', 'header_layout_type');
+if ( !function_exists( 'get_header_layout_type' ) ):
+function get_header_layout_type(){
+  return get_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
+}
+endif;
+
 //サイトロゴ
 define('OP_THE_SITE_LOGO_URL', 'the_site_logo_url');
 if ( !function_exists( 'get_the_site_logo_url' ) ):
@@ -44,14 +52,6 @@ define('OP_HEADER_BACKGROUND_ATTACHMENT_FIXED', 'header_background_attachment_fi
 if ( !function_exists( 'is_header_background_attachment_fixed' ) ):
 function is_header_background_attachment_fixed(){
   return get_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
-}
-endif;
-
-//ヘッダーの種類
-define('OP_HEADER_LAYOUT_TYPE', 'header_layout_type');
-if ( !function_exists( 'get_header_layout_type' ) ):
-function get_header_layout_type(){
-  return get_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
 }
 endif;
 

@@ -1,5 +1,8 @@
 <?php //ヘッダー設定をデータベースに保存
 
+//ヘッダーの種類
+update_theme_option(OP_HEADER_LAYOUT_TYPE);
+
 //サイトロゴ
 update_theme_option(OP_THE_SITE_LOGO_URL);
 
@@ -11,9 +14,6 @@ update_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL);
 
 //ヘッダー背景を固定にするか
 update_theme_option(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED);
-
-//ヘッダーの種類
-update_theme_option(OP_HEADER_LAYOUT_TYPE);
 
 //ヘッダー全体の背景色
 update_theme_option(OP_HEADER_CONTAINER_BACKGROUND_COLOR);

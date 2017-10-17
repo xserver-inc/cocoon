@@ -14,6 +14,24 @@
     <table class="form-table">
       <tbody>
 
+        <!-- ヘッダーレイアウト -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_HEADER_LAYOUT_TYPE, __( 'ヘッダーレイアウト', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'center_logo' => 'センターロゴ（デフォルト）',
+              'top_menu' => 'トップメニュー',
+              'top_menu_small' => 'トップメニュー（小）',
+            );
+            genelate_radiobox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
+            genelate_tips_tag(__( 'ヘッダーの表示形式を選択します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- ヘッダーロゴ -->
         <tr>
           <th scope="row">
@@ -40,7 +58,7 @@
               'header_bottom' => __( 'ヘッダーボトム', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_TAGLINE_POSITION, $options, get_tagline_position());
-            genelate_tips_tag(__( 'キャッチフレーズの表示位置を設定します。', THEME_NAME ));
+            genelate_tips_tag(__( 'キャッチフレーズの表示位置を設定します。※「ヘッダーレイアウト」が「センターロゴ」の場合。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -58,24 +76,6 @@
             //ヘッダー背景画像の固定
             genelate_checkbox_tag(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED, is_header_background_attachment_fixed(), __( 'ヘッダー背景画像の固定', THEME_NAME ));
             genelate_tips_tag(__( 'ヘッダーに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
-        <!-- ヘッダーレイアウト -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_HEADER_LAYOUT_TYPE, __( 'ヘッダーレイアウト', THEME_NAME ) ); ?>
-          </th>
-          <td>
-            <?php
-            $options = array(
-              'center_logo' => 'センターロゴ',
-              'top_menu' => 'トップメニュー',
-              'top_menu_small' => 'トップメニュー（小）',
-            );
-            genelate_radiobox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
-            genelate_tips_tag(__( 'ヘッダーの表示形式を選択します。', THEME_NAME ));
             ?>
           </td>
         </tr>
