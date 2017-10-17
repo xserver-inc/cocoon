@@ -40,6 +40,7 @@
         </tr>
 
         <!-- グローバルナビの固定  -->
+        <!--
         <tr>
           <th scope="row">
             <?php genelate_label_tag('', __( 'グローバルナビの固定', THEME_NAME ) ); ?>
@@ -52,3 +53,4 @@
             ?>
           </td>
         </tr>
+        -->
