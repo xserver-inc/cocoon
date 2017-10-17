@@ -115,3 +115,28 @@ function get_single_breadcrumbs_position(){
   return get_option(OP_SINGLE_BREADCRUMBS_POSITION, 'main_bottom');
 }
 endif;
+if ( !function_exists( 'is_single_breadcrumbs_visible' ) ):
+function is_single_breadcrumbs_visible(){
+  return get_single_breadcrumbs_position() != 'none';
+}
+endif;
+if ( !function_exists( 'is_single_breadcrumbs_position_main_before' ) ):
+function is_single_breadcrumbs_position_main_befpre(){
+  return get_single_breadcrumbs_position() == 'main_before';
+}
+endif;
+if ( !function_exists( 'is_single_breadcrumbs_position_main_top' ) ):
+function is_single_breadcrumbs_position_main_top(){
+  return get_single_breadcrumbs_position() == 'main_top';
+}
+endif;
+if ( !function_exists( 'is_single_breadcrumbs_position_main_bottom' ) ):
+function is_single_breadcrumbs_position_main_bottom(){
+  return get_single_breadcrumbs_position() == 'main_bottom';
+}
+endif;
+if ( !function_exists( 'is_single_breadcrumbs_position_footer_before' ) ):
+function is_single_breadcrumbs_position_footer_before(){
+  return get_single_breadcrumbs_position() == 'footer_before';
+}
+endif;
