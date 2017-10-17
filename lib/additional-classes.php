@@ -459,6 +459,13 @@ function get_additional_single_breadcrumbs_classes($option = null){
 
   $classes .= ' sbp-'.str_replace('_', '-', get_single_breadcrumbs_position());
 
+  switch (get_single_breadcrumbs_position()) {
+    case 'main_before':
+    case 'footer_before':
+      $classes .= ' wrap';
+      break;
+  }
+
   if ($option) {
     $classes .= ' '.trim($option);
   }

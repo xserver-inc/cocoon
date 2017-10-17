@@ -6,6 +6,12 @@
       </div>
 
     </div>
+
+    <?php //パンくずリストがフッター手前の場合
+    if (is_single() && is_single_breadcrumbs_position_footer_before()){
+      get_template_part('tmp/breadcrumbs');
+    } ?>
+
     <footer id="footer" class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
       <div id="footer-in" class="footer-in wrap cf">

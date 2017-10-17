@@ -696,23 +696,30 @@ img {
 /************************************
 ** パンくずリスト
 ************************************/
-#breadcrumb {
+.breadcrumb {
   margin-top: 20px;
   color: #777879;
   font-size: 13px;
 }
 
-#breadcrumb div {
+.breadcrumb div {
   display: inline;
 }
 
-#breadcrumb span.sp {
+.breadcrumb span.sp {
   margin: 0 10px;
 }
 
-#breadcrumb a {
+.breadcrumb a {
   text-decoration: none;
   color: #777879;
+}
+
+.breadcrumb-category.sbp-main-before,
+.breadcrumb-category.sbp-footer-before {
+  background-color: #fff;
+  margin: inherit auto;
+  padding: 5px;
 }
 
 /************************************

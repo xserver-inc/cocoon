@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 
-<?php get_template_part('tmp/content') ?>
+<?php //パンくずリストがメイントップの場合
+if (is_single_breadcrumbs_position_main_top()){
+  get_template_part('tmp/breadcrumbs');
+} ?>
+
+<?php //本文テンプレート
+get_template_part('tmp/content') ?>
 
 
 <div class="under-entry-content">
@@ -16,6 +22,9 @@
   <?php comments_template(); //コメントテンプレート?>
 </div>
 
-<?php get_template_part('tmp/breadcrumbs') ?>
+<?php //パンくずリストがメインボトムの場合
+if (is_single_breadcrumbs_position_main_bottom()){
+  get_template_part('tmp/breadcrumbs');
+} ?>
 
 <?php get_footer(); ?>

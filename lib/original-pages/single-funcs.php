@@ -121,7 +121,7 @@ function is_single_breadcrumbs_visible(){
 }
 endif;
 if ( !function_exists( 'is_single_breadcrumbs_position_main_before' ) ):
-function is_single_breadcrumbs_position_main_befpre(){
+function is_single_breadcrumbs_position_main_before(){
   return get_single_breadcrumbs_position() == 'main_before';
 }
 endif;

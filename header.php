@@ -44,11 +44,16 @@ get_template_part('tmp/header-analytics'); ?>
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 
+    <?php //パンくずリストがメイン手前の場合
+    if (is_single() && is_single_breadcrumbs_position_main_before()){
+      get_template_part('tmp/breadcrumbs');
+    } ?>
+
+    <?php //メインカラム手前に挿入するユーザー用テンプレート
+    get_template_part('tmp-user/main-before'); ?>
+
     <div id="content" class="content cf">
 
       <div id="content-in" class="content-in wrap cf">
-
-          <?php //メインカラム手前に挿入するユーザー用テンプレート
-          get_template_part('tmp-user/main-before'); ?>
 
           <main id="main" class="main<?php echo get_additional_main_classes(); ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
