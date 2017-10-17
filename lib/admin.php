@@ -203,13 +203,15 @@ function customize_admin_bar_menu($wp_admin_bar){
     'title'  => __( 'プラグイン一覧', THEME_NAME ), // ラベル
     'href'   => site_url('/wp-admin/plugins.php') // ページURL
   ));
-  $wp_admin_bar->add_menu(array(
-    'parent' => 'dashboard_menu', // 親メニューID
-    'id'   => 'dashboard_menu-theme-settings', // 子メニューID
-    'meta'   => array(),
-    'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
-    'href'   => site_url('/wp-admin/admin.php?page=theme-settings') // ページURL
-  ));
+  if (current_user_can('manage_options')) {//管理者権限がある場合
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-settings', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-settings') // ページURL
+    ));
+  }
 }
 endif;
 
