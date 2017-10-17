@@ -2334,3 +2334,10 @@ form.admin-settings {
 #tabs table th,
 #tabs table tr:nth-of-type(2n+1) {
   background-color: unset; }
+
+p.submit {
+  margin: 2px 0;
+  padding: 3px 0; }
+
+#wpbody-content .metabox-holder {
+  padding: 0; }

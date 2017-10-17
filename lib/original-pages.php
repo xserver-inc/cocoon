@@ -105,6 +105,8 @@ endif;
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
+  <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
+
   <!-- 全体タブ -->
   <div class="all metabox-holder">
     <?php require_once 'original-pages/all-forms.php'; ?>
@@ -193,11 +195,10 @@ endif;
 
 
 </div><!-- /#tabs -->
-
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
 <input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST && $_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
 
-<?php submit_button(); ?>
+<?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
 
 
 </form>
