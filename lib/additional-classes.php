@@ -452,4 +452,20 @@ function get_additional_comment_area_classes($option = null){
 endif;
 
 
+//投稿パンくずリストのclass追加関数
+if ( !function_exists( 'get_additional_single_breadcrumbs_classes' ) ):
+function get_additional_single_breadcrumbs_classes($option = null){
+  $classes = null;
+
+  $classes .= ' sbp-'.str_replace('_', '-', get_single_breadcrumbs_position());
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
+
 
