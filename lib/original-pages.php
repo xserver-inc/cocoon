@@ -25,6 +25,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/analytics-posts.php';
   //投稿
   require_once 'original-pages/single-posts.php';
+  //固定ページ
+  require_once 'original-pages/page-posts.php';
   //SNSシェア
   require_once 'original-pages/sns-share-posts.php';
   //SNSフォロー
@@ -77,6 +79,7 @@ endif;
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
+    <li class="page-page"><?php _e( '固定ページ', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
@@ -135,6 +138,11 @@ endif;
   <!-- 投稿 -->
   <div class="single-page metabox-holder">
     <?php require_once 'original-pages/single-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 固定ページ -->
+  <div class="page-page metabox-holder">
+    <?php require_once 'original-pages/page-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSシェアタブ -->

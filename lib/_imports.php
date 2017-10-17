@@ -19,6 +19,7 @@ require_once 'original-pages/title-funcs.php';      //タイトル設定関数
 require_once 'original-pages/seo-funcs.php';        //SEO設定関数
 require_once 'original-pages/analytics-funcs.php';  //アクセス解析設定関数
 require_once 'original-pages/single-funcs.php';     //投稿設定関数
+require_once 'original-pages/page-funcs.php';       //固定ページ設定関数
 require_once 'original-pages/sns-share-funcs.php';  //SNSシェア設定関数
 require_once 'original-pages/sns-follow-funcs.php'; //SNSフォロー設定関数
 require_once 'original-pages/comment-funcs.php';    //コメント設定関数
