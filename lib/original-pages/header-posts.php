@@ -3,6 +3,9 @@
 //サイトロゴ
 update_theme_option(OP_THE_SITE_LOGO_URL);
 
+//キャッチフレーズ位置
+update_theme_option(OP_CATCH_PHRASE_POSITION);
+
 //ヘッダー背景イメージ
 update_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL);
 

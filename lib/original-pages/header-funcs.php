@@ -8,6 +8,14 @@ function get_the_site_logo_url(){
 }
 endif;
 
+//キャッチフレーズ位置
+define('OP_CATCH_PHRASE_POSITION', 'catch_phrase_position');
+if ( !function_exists( 'get_catch_phrase_position' ) ):
+function get_catch_phrase_position(){
+  return get_option(OP_CATCH_PHRASE_POSITION, 'header_top');
+}
+endif;
+
 //ヘッダー背景イメージ
 define('OP_HEADER_BACKGROUND_IMAGE_URL', 'header_background_image_url');
 if ( !function_exists( 'get_header_background_image_url' ) ):
