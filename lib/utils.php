@@ -314,7 +314,7 @@ function wp_enqueue_clingify(){
     //clingifyスタイルの呼び出し
     //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
-    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.min.js', array( 'jquery' ), false, true  );
     if (is_global_navi_fixed()) {
       switch (get_header_layout_type()) {
         case 'center_logo':
