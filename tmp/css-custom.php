@@ -4,7 +4,7 @@ if (get_site_key_color()): ?>
 .header-container,
 .demo .header-container,
 .header-container .navi,
-.navi .navi-in > ul .sub-menu,
+.navi .navi-in > .menu-header .sub-menu,
 .article h2,
 .sidebar h3,
 .catlink,
