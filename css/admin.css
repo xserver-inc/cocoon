@@ -2022,7 +2022,9 @@
       .demo .related-mini-card .related-entry-card-thumb {
         width: 30%; }
       .demo .related-mini-card .related-entry-card-content {
-        margin-left: 32%; } }
+        margin-left: 32%; }
+      .demo .header-container-in.hlt-top-menu {
+        flex-direction: column; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

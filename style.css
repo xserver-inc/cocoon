@@ -2770,6 +2770,10 @@ input[type='submit'] {
   .related-mini-card .related-entry-card-content {
     margin-left: 32%;
   }
+
+  .header-container-in.hlt-top-menu {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 480px) {
   h2, h3 {
