@@ -4,7 +4,7 @@
 define('OP_ALL_ADS_VISIBLE', 'all_ads_visible');
 if ( !function_exists( 'is_all_ads_visible' ) ):
 function is_all_ads_visible(){
-  return get_option(OP_ALL_ADS_VISIBLE, 1);
+  return get_theme_option(OP_ALL_ADS_VISIBLE, 1);
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_ALL_ADSENSES_VISIBLE', 'all_adsenses_visible');
 if ( !function_exists( 'is_all_adsenses_visible' ) ):
 function is_all_adsenses_visible(){
-  return get_option(OP_ALL_ADSENSES_VISIBLE, 1);
+  return get_theme_option(OP_ALL_ADSENSES_VISIBLE, 1);
 }
 endif;
 
@@ -28,7 +28,7 @@ endif;
 define('OP_AD_LABEL', 'ad_label');
 if ( !function_exists( 'get_ad_label' ) ):
 function get_ad_label(){
-  return get_option(OP_AD_LABEL, __( 'スポンサーリンク', THEME_NAME ));
+  return get_theme_option(OP_AD_LABEL, __( 'スポンサーリンク', THEME_NAME ));
 }
 endif;
 
@@ -36,7 +36,7 @@ endif;
 define('OP_AD_POS_INDEX_TOP_VISIBLE', 'ad_pos_index_top_visible');
 if ( !function_exists( 'is_ad_pos_index_top_visible' ) ):
 function is_ad_pos_index_top_visible(){
-  return get_option(OP_AD_POS_INDEX_TOP_VISIBLE, 1);
+  return get_theme_option(OP_AD_POS_INDEX_TOP_VISIBLE, 1);
 }
 endif;
 
@@ -44,7 +44,7 @@ endif;
 define('OP_AD_POS_INDEX_TOP_FORMAT', 'ad_pos_index_top_format');
 if ( !function_exists( 'get_ad_pos_index_top_format' ) ):
 function get_ad_pos_index_top_format(){
-  return get_option(OP_AD_POS_INDEX_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+  return get_theme_option(OP_AD_POS_INDEX_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
 }
 endif;
 
@@ -52,7 +52,7 @@ endif;
 define('OP_AD_POS_INDEX_MIDDLE_VISIBLE', 'ad_pos_index_middle_visible');
 if ( !function_exists( 'is_ad_pos_index_middle_visible' ) ):
 function is_ad_pos_index_middle_visible(){
-  return get_option(OP_AD_POS_INDEX_MIDDLE_VISIBLE);
+  return get_theme_option(OP_AD_POS_INDEX_MIDDLE_VISIBLE);
 }
 endif;
 
@@ -60,7 +60,7 @@ endif;
 define('OP_AD_POS_INDEX_MIDDLE_FORMAT', 'ad_pos_index_middle_format');
 if ( !function_exists( 'get_ad_pos_index_middle_format' ) ):
 function get_ad_pos_index_middle_format(){
-  return get_option(OP_AD_POS_INDEX_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_INDEX_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -68,7 +68,7 @@ endif;
 define('OP_AD_POS_INDEX_BOTTOM_VISIBLE', 'ad_pos_index_bottom_visible');
 if ( !function_exists( 'is_ad_pos_index_bottom_visible' ) ):
 function is_ad_pos_index_bottom_visible(){
-  return get_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE, 1);
+  return get_theme_option(OP_AD_POS_INDEX_BOTTOM_VISIBLE, 1);
 }
 endif;
 
@@ -76,7 +76,7 @@ endif;
 define('OP_AD_POS_INDEX_BOTTOM_FORMAT', 'ad_pos_index_bottom_format');
 if ( !function_exists( 'get_ad_pos_index_bottom_format' ) ):
 function get_ad_pos_index_bottom_format(){
-  return get_option(OP_AD_POS_INDEX_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_INDEX_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -84,7 +84,7 @@ endif;
 define('OP_AD_POS_SIDEBAR_TOP_VISIBLE', 'ad_pos_sidebar_top_visible');
 if ( !function_exists( 'is_ad_pos_sidebar_top_visible' ) ):
 function is_ad_pos_sidebar_top_visible(){
-  return get_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE, 1);
+  return get_theme_option(OP_AD_POS_SIDEBAR_TOP_VISIBLE, 1);
 }
 endif;
 
@@ -92,7 +92,7 @@ endif;
 define('OP_AD_POS_SIDEBAR_TOP_FORMAT', 'ad_pos_sidebar_top_format');
 if ( !function_exists( 'get_ad_pos_sidebar_top_format' ) ):
 function get_ad_pos_sidebar_top_format(){
-  return get_option(OP_AD_POS_SIDEBAR_TOP_FORMAT, 1);
+  return get_theme_option(OP_AD_POS_SIDEBAR_TOP_FORMAT, 1);
 }
 endif;
 
@@ -100,7 +100,7 @@ endif;
 define('OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE', 'ad_pos_sidebar_bottom_visible');
 if ( !function_exists( 'is_ad_pos_sidebar_bottom_visible' ) ):
 function is_ad_pos_sidebar_bottom_visible(){
-  return get_option(OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE);
+  return get_theme_option(OP_AD_POS_SIDEBAR_BOTTOM_VISIBLE);
 }
 endif;
 
@@ -108,7 +108,7 @@ endif;
 define('OP_AD_POS_SIDEBAR_BOTTOM_FORMAT', 'ad_pos_sidebar_bottom_format');
 if ( !function_exists( 'get_ad_pos_sidebar_bottom_format' ) ):
 function get_ad_pos_sidebar_bottom_format(){
-  return get_option(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT, 1);
+  return get_theme_option(OP_AD_POS_SIDEBAR_BOTTOM_FORMAT, 1);
 }
 endif;
 
@@ -116,7 +116,7 @@ endif;
 define('OP_AD_POS_ABOVE_TITLE_VISIBLE', 'ad_pos_above_title_visible');
 if ( !function_exists( 'is_ad_pos_above_title_visible' ) ):
 function is_ad_pos_above_title_visible(){
-  return get_option(OP_AD_POS_ABOVE_TITLE_VISIBLE);
+  return get_theme_option(OP_AD_POS_ABOVE_TITLE_VISIBLE);
 }
 endif;
 
@@ -124,7 +124,7 @@ endif;
 define('OP_AD_POS_ABOVE_TITLE_FORMAT', 'ad_pos_above_title_format');
 if ( !function_exists( 'get_ad_pos_above_title_format' ) ):
 function get_ad_pos_above_title_format(){
-  return get_option(OP_AD_POS_ABOVE_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+  return get_theme_option(OP_AD_POS_ABOVE_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
 }
 endif;
 
@@ -132,7 +132,7 @@ endif;
 define('OP_AD_POS_BELOW_TITLE_VISIBLE', 'ad_pos_below_title_visible');
 if ( !function_exists( 'is_ad_pos_below_title_visible' ) ):
 function is_ad_pos_below_title_visible(){
-  return get_option(OP_AD_POS_BELOW_TITLE_VISIBLE);
+  return get_theme_option(OP_AD_POS_BELOW_TITLE_VISIBLE);
 }
 endif;
 
@@ -140,7 +140,7 @@ endif;
 define('OP_AD_POS_BELOW_TITLE_FORMAT', 'ad_pos_below_title_format');
 if ( !function_exists( 'get_ad_pos_below_title_format' ) ):
 function get_ad_pos_below_title_format(){
-  return get_option(OP_AD_POS_BELOW_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+  return get_theme_option(OP_AD_POS_BELOW_TITLE_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
 }
 endif;
 
@@ -148,7 +148,7 @@ endif;
 define('OP_AD_POS_CONTENT_TOP_VISIBLE', 'ad_pos_content_top_visible');
 if ( !function_exists( 'is_ad_pos_content_top_visible' ) ):
 function is_ad_pos_content_top_visible(){
-  return get_option(OP_AD_POS_CONTENT_TOP_VISIBLE);
+  return get_theme_option(OP_AD_POS_CONTENT_TOP_VISIBLE);
 }
 endif;
 
@@ -156,7 +156,7 @@ endif;
 define('OP_AD_POS_CONTENT_TOP_FORMAT', 'ad_pos_content_top_format');
 if ( !function_exists( 'get_ad_pos_content_top_format' ) ):
 function get_ad_pos_content_top_format(){
-  return get_option(OP_AD_POS_CONTENT_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
+  return get_theme_option(OP_AD_POS_CONTENT_TOP_FORMAT, DATA_AD_FORMAT_HORIZONTAL);
 }
 endif;
 
@@ -164,7 +164,7 @@ endif;
 define('OP_AD_POS_CONTENT_MIDDLE_VISIBLE', 'ad_pos_content_middle_visible');
 if ( !function_exists( 'is_ad_pos_content_middle_visible' ) ):
 function is_ad_pos_content_middle_visible(){
-  return get_option(OP_AD_POS_CONTENT_MIDDLE_VISIBLE);
+  return get_theme_option(OP_AD_POS_CONTENT_MIDDLE_VISIBLE);
 }
 endif;
 
@@ -172,7 +172,7 @@ endif;
 define('OP_AD_POS_CONTENT_MIDDLE_FORMAT', 'ad_pos_content_middle_format');
 if ( !function_exists( 'get_ad_pos_content_middle_format' ) ):
 function get_ad_pos_content_middle_format(){
-  return get_option(OP_AD_POS_CONTENT_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_CONTENT_MIDDLE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -180,7 +180,7 @@ endif;
 define('OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE', 'ad_pos_all_content_middle_visible');
 if ( !function_exists( 'is_ad_pos_all_content_middle_visible' ) ):
 function is_ad_pos_all_content_middle_visible(){
-  return get_option(OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE);
+  return get_theme_option(OP_AD_POS_ALL_CONTENT_MIDDLE_VISIBLE);
 }
 endif;
 
@@ -188,7 +188,7 @@ endif;
 define('OP_AD_POS_CONTENT_BOTTOM_VISIBLE', 'ad_pos_content_bottom_visible');
 if ( !function_exists( 'is_ad_pos_content_bottom_visible' ) ):
 function is_ad_pos_content_bottom_visible(){
-  return get_option(OP_AD_POS_CONTENT_BOTTOM_VISIBLE, 1);
+  return get_theme_option(OP_AD_POS_CONTENT_BOTTOM_VISIBLE, 1);
 }
 endif;
 
@@ -196,7 +196,7 @@ endif;
 define('OP_AD_POS_CONTENT_BOTTOM_FORMAT', 'ad_pos_content_bottom_format');
 if ( !function_exists( 'get_ad_pos_content_bottom_format' ) ):
 function get_ad_pos_content_bottom_format(){
-  return get_option(OP_AD_POS_CONTENT_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_CONTENT_BOTTOM_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -204,7 +204,7 @@ endif;
 define('OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE', 'ad_pos_above_sns_buttons_visible');
 if ( !function_exists( 'is_ad_pos_above_sns_buttons_visible' ) ):
 function is_ad_pos_above_sns_buttons_visible(){
-  return get_option(OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE);
+  return get_theme_option(OP_AD_POS_ABOVE_SNS_BUTTONS_VISIBLE);
 }
 endif;
 
@@ -212,7 +212,7 @@ endif;
 define('OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT', 'ad_pos_above_sns_buttons_format');
 if ( !function_exists( 'get_ad_pos_above_sns_buttons_format' ) ):
 function get_ad_pos_above_sns_buttons_format(){
-  return get_option(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_ABOVE_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -220,7 +220,7 @@ endif;
 define('OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE', 'ad_pos_below_sns_buttons_visible');
 if ( !function_exists( 'is_ad_pos_below_sns_buttons_visible' ) ):
 function is_ad_pos_below_sns_buttons_visible(){
-  return get_option(OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE);
+  return get_theme_option(OP_AD_POS_BELOW_SNS_BUTTONS_VISIBLE);
 }
 endif;
 
@@ -228,7 +228,7 @@ endif;
 define('OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT', 'ad_pos_below_sns_buttons_format');
 if ( !function_exists( 'get_ad_pos_below_sns_buttons_format' ) ):
 function get_ad_pos_below_sns_buttons_format(){
-  return get_option(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_BELOW_SNS_BUTTONS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -236,7 +236,7 @@ endif;
 define('OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE', 'ad_pos_below_related_posts_visible');
 if ( !function_exists( 'is_ad_pos_below_related_posts_visible' ) ):
 function is_ad_pos_below_related_posts_visible(){
-  return get_option(OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE, 1);
+  return get_theme_option(OP_AD_POS_BELOW_RELATED_POSTS_VISIBLE, 1);
 }
 endif;
 
@@ -244,7 +244,7 @@ endif;
 define('OP_AD_POS_BELOW_RELATED_POSTS_FORMAT', 'ad_pos_below_related_posts_format');
 if ( !function_exists( 'get_ad_pos_below_related_posts_format' ) ):
 function get_ad_pos_below_related_posts_format(){
-  return get_option(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+  return get_theme_option(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT, DATA_AD_FORMAT_RECTANGLE);
 }
 endif;
 
@@ -252,7 +252,7 @@ endif;
 define('OP_AD_EXCLUDE_POST_IDS', 'ad_exclude_post_ids');
 if ( !function_exists( 'get_ad_exclude_post_ids' ) ):
 function get_ad_exclude_post_ids(){
-  return get_option(OP_AD_EXCLUDE_POST_IDS);
+  return get_theme_option(OP_AD_EXCLUDE_POST_IDS);
 }
 endif;
 
@@ -260,6 +260,6 @@ endif;
 define('OP_AD_EXCLUDE_CATEGORY_IDS', 'ad_exclude_category_ids');
 if ( !function_exists( 'get_ad_exclude_category_ids' ) ):
 function get_ad_exclude_category_ids(){
-  return get_option(OP_AD_EXCLUDE_CATEGORY_IDS);
+  return get_theme_option(OP_AD_EXCLUDE_CATEGORY_IDS);
 }
 endif;

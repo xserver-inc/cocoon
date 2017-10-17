@@ -7,7 +7,7 @@
 define('OP_PAGE_COMMENT_VISIBLE', 'page_comment_visible');
 if ( !function_exists( 'is_page_comment_visible' ) ):
 function is_page_comment_visible(){
-  return get_option(OP_PAGE_COMMENT_VISIBLE);
+  return get_theme_option(OP_PAGE_COMMENT_VISIBLE);
 }
 endif;
 
@@ -19,7 +19,7 @@ endif;
 define('OP_PAGE_BREADCRUMBS_POSITION', 'page_breadcrumbs_position');
 if ( !function_exists( 'get_page_breadcrumbs_position' ) ):
 function get_page_breadcrumbs_position(){
-  return get_option(OP_PAGE_BREADCRUMBS_POSITION, 'main_bottom');
+  return get_theme_option(OP_PAGE_BREADCRUMBS_POSITION, 'main_bottom');
 }
 endif;
 if ( !function_exists( 'is_page_breadcrumbs_visible' ) ):
