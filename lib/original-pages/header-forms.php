@@ -30,7 +30,7 @@
         <!-- キャッチフレーズの配置 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_CATCH_PHRASE_POSITION, __('キャッチフレーズの配置', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_TAGLINE_POSITION, __('キャッチフレーズの配置', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -39,7 +39,7 @@
               'header_top' => __( 'ヘッダートップ（デフォルト）', THEME_NAME ),
               'header_bottom' => __( 'ヘッダーボトム', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_CATCH_PHRASE_POSITION, $options, get_catch_phrase_position());
+            genelate_radiobox_tag(OP_TAGLINE_POSITION, $options, get_tagline_position());
             genelate_tips_tag(__( 'キャッチフレーズの表示位置を設定します。', THEME_NAME ));
             ?>
           </td>

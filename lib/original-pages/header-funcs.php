@@ -9,10 +9,25 @@ function get_the_site_logo_url(){
 endif;
 
 //キャッチフレーズ位置
-define('OP_CATCH_PHRASE_POSITION', 'catch_phrase_position');
-if ( !function_exists( 'get_catch_phrase_position' ) ):
-function get_catch_phrase_position(){
-  return get_option(OP_CATCH_PHRASE_POSITION, 'header_top');
+define('OP_TAGLINE_POSITION', 'tagline_position');
+if ( !function_exists( 'get_tagline_position' ) ):
+function get_tagline_position(){
+  return get_option(OP_TAGLINE_POSITION, 'header_top');
+}
+endif;
+if ( !function_exists( 'is_tagline_visible' ) ):
+function is_tagline_visible(){
+  return get_tagline_position() != 'none';
+}
+endif;
+if ( !function_exists( 'is_tagline_position_header_top' ) ):
+function is_tagline_position_header_top(){
+  return get_tagline_position() == 'header_top';
+}
+endif;
+if ( !function_exists( 'is_tagline_position_header_bottom' ) ):
+function is_tagline_position_header_bottom(){
+  return get_tagline_position() == 'header_bottom';
 }
 endif;
 
