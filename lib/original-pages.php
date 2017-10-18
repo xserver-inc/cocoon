@@ -5,6 +5,7 @@
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
     $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
+  //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
   // 設定の保存
@@ -47,13 +48,20 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/footer-posts.php';
   //管理画面
   require_once 'original-pages/admin-posts.php';
+  //リセット
+  require_once 'original-pages/reset-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
 <div class="updated">
   <p>
     <strong>
-      <?php _e('設定は保存されました。', THEME_NAME ); ?>
+      <?php
+      if ($_POST[OP_RESET_ALL_SETTINGS] && $_POST[OP_CONFIRM_RESET_ALL_SETTINGS]) {
+         _e('設定はリセットされました。', THEME_NAME );
+       } else {
+         _e('設定は保存されました。', THEME_NAME );
+       } ?>
     </strong>
   </p>
 </div>
@@ -89,6 +97,8 @@ endif;
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
+    <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
+    <li class="backup"><?php _e( 'バックアップ', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
@@ -191,6 +201,11 @@ endif;
   <!-- 管理画面 -->
   <div class="admin metabox-holder">
     <?php require_once 'original-pages/admin-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- リセット -->
+  <div class="reset metabox-holder">
+    <?php require_once 'original-pages/reset-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 

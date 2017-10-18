@@ -12,7 +12,7 @@ endif;
 define('OP_THE_SITE_LOGO_URL', 'the_site_logo_url');
 if ( !function_exists( 'get_the_site_logo_url' ) ):
 function get_the_site_logo_url(){
-  return get_theme_option(OP_THE_SITE_LOGO_URL);
+  return get_theme_option(OP_THE_SITE_LOGO_URL, '');
 }
 endif;
 
@@ -43,7 +43,7 @@ endif;
 define('OP_HEADER_BACKGROUND_IMAGE_URL', 'header_background_image_url');
 if ( !function_exists( 'get_header_background_image_url' ) ):
 function get_header_background_image_url(){
-  return get_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL);
+  return get_theme_option(OP_HEADER_BACKGROUND_IMAGE_URL, '');
 }
 endif;
 
