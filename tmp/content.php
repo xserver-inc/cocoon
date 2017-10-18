@@ -4,9 +4,6 @@
     while ( have_posts() ) {
       the_post();?>
 
-      <?php //投稿日と更新日テンプレート
-      get_template_part('tmp/date-tags'); ?>
-
       <?php //タイトル上の広告表示
       if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title');
@@ -28,6 +25,10 @@
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
           get_template_part_with_option('tmp/sns-share-buttons', SS_TOP); ?>
+
+
+        <?php //投稿日と更新日テンプレート
+        get_template_part('tmp/date-tags'); ?>
 
 
          <?php //本文上の広告表示

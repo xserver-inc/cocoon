@@ -612,6 +612,7 @@
     display: none; }
   .demo .date-tags {
     line-height: 0;
+    margin-top: -8px;
     text-align: right; }
     .demo .date-tags span:last-child {
       margin-right: 0; }
@@ -2078,8 +2079,11 @@
       .demo .article h5,
       .demo .article h6 {
         font-size: 20px;
-        padding: 8px;
+        padding: 6px;
         margin: 6px 0 12px; }
+      .demo .entry-title {
+        margin: 0;
+        margin-bottom: 6px; }
       .demo body {
         font-size: 16px; }
       .demo .ss-top .sns-share-buttons a,
