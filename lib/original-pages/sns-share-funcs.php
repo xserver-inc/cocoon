@@ -12,7 +12,7 @@ require_once 'sns-share-funcs-bottom.php';
 define('OP_TWITTER_ID_INCLUDE', 'twitter_id_include');
 if ( !function_exists( 'is_twitter_id_include' ) ):
 function is_twitter_id_include(){
-  return get_option(OP_TWITTER_ID_INCLUDE);
+  return get_theme_option(OP_TWITTER_ID_INCLUDE);
 }
 endif;
 
@@ -20,6 +20,6 @@ endif;
 define('OP_TWITTER_RELATED_FOLLOW_ENABLE', 'twitter_related_follow_enable');
 if ( !function_exists( 'is_twitter_related_follow_enable' ) ):
 function is_twitter_related_follow_enable(){
-  return get_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
+  return get_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
 }
 endif;

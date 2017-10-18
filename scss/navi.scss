@@ -27,9 +27,9 @@ $icon_height: 16px;
 // }
 
 .navi-in{
-  //font-family: $Meiryo_font;
+  //font-family: $meiryo_font;
 
-  >.menu-header{
+  >ul{
     @include list_cancel;
 
     display: flex;
@@ -48,6 +48,14 @@ $icon_height: 16px;
           display: block;
         }
       }
+
+
+      // &.fa{
+      //   font-family: $navi_font;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
     }
 
 
@@ -144,6 +152,16 @@ $icon_height: 16px;
   //   }
 
   // }
+}
+
+/************************************
+** モバイルメニュー
+************************************/
+.navi-in > .menu-mobile{
+  display: none;
+  .sub-menu{
+    display: none;
+  }
 }
 
 /************************************

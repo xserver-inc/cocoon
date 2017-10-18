@@ -4,7 +4,7 @@
 define('OP_TITLE_SEPARATOR', 'title_separator');
 if ( !function_exists( 'get_title_separator' ) ):
 function get_title_separator(){
-  return get_option(OP_TITLE_SEPARATOR, 'pipe');
+  return get_theme_option(OP_TITLE_SEPARATOR, 'pipe');
 }
 endif;
 //タイトルセパレーターのキャプションを取得する
@@ -26,7 +26,7 @@ endif;
 define('OP_FRONT_PAGE_TITLE_FORMAT', 'front_page_title_format');
 if ( !function_exists( 'get_front_page_title_format' ) ):
 function get_front_page_title_format(){
-  return get_option(OP_FRONT_PAGE_TITLE_FORMAT, 'sitename_tagline');
+  return get_theme_option(OP_FRONT_PAGE_TITLE_FORMAT, 'sitename_tagline');
 }
 endif;
 //フロントページタイトルのキャプションを取得する
@@ -54,7 +54,7 @@ endif;
 define('OP_FRONT_PAGE_META_DESCRIPTION', 'front_page_meta_description');
 if ( !function_exists( 'get_front_page_meta_description' ) ):
 function get_front_page_meta_description(){
-  return get_option(OP_FRONT_PAGE_META_DESCRIPTION);
+  return get_theme_option(OP_FRONT_PAGE_META_DESCRIPTION);
 }
 endif;
 
@@ -62,7 +62,7 @@ endif;
 define('OP_FRONT_PAGE_META_KEYWORDS', 'front_page_meta_keywords');
 if ( !function_exists( 'get_front_page_meta_keywords' ) ):
 function get_front_page_meta_keywords(){
-  return get_option(OP_FRONT_PAGE_META_KEYWORDS);
+  return get_theme_option(OP_FRONT_PAGE_META_KEYWORDS);
 }
 endif;
 
@@ -70,7 +70,7 @@ endif;
 define('OP_SINGULAR_PAGE_TITLE_FORMAT', 'singular_page_title_format');
 if ( !function_exists( 'get_singular_page_title_format' ) ):
 function get_singular_page_title_format(){
-  return get_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
+  return get_theme_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
 }
 endif;
 //投稿・固定ページタイトルのキャプションを取得する
@@ -95,7 +95,7 @@ endif;
 define('OP_META_DESCRIPTION_TO_SINGULAR', 'meta_description_to_singular');
 if ( !function_exists( 'is_meta_description_to_singular' ) ):
 function is_meta_description_to_singular(){
-  return get_option(OP_META_DESCRIPTION_TO_SINGULAR, 1);
+  return get_theme_option(OP_META_DESCRIPTION_TO_SINGULAR, 1);
 }
 endif;
 
@@ -103,7 +103,7 @@ endif;
 define('OP_META_KEYWORDS_TO_SINGULAR', 'meta_keywords_to_singular');
 if ( !function_exists( 'is_meta_keywords_to_singular' ) ):
 function is_meta_keywords_to_singular(){
-  return get_option(OP_META_KEYWORDS_TO_SINGULAR);
+  return get_theme_option(OP_META_KEYWORDS_TO_SINGULAR);
 }
 endif;
 
@@ -111,7 +111,7 @@ endif;
 define('OP_CATEGORY_PAGE_TITLE_FORMAT', 'category_page_title_format');
 if ( !function_exists( 'get_category_page_title_format' ) ):
 function get_category_page_title_format(){
-  return get_option(OP_CATEGORY_PAGE_TITLE_FORMAT, 'category_sitename');
+  return get_theme_option(OP_CATEGORY_PAGE_TITLE_FORMAT, 'category_sitename');
 }
 endif;
 //カテゴリーページタイトルのキャプションを取得する
@@ -137,7 +137,7 @@ endif;
 define('OP_META_DESCRIPTION_TO_CATEGORY', 'meta_description_to_category');
 if ( !function_exists( 'is_meta_description_to_category' ) ):
 function is_meta_description_to_category(){
-  return get_option(OP_META_DESCRIPTION_TO_CATEGORY, 1);
+  return get_theme_option(OP_META_DESCRIPTION_TO_CATEGORY, 1);
 }
 endif;
 
@@ -145,6 +145,6 @@ endif;
 define('OP_META_KEYWORDS_TO_CATEGORY', 'meta_keywords_to_category');
 if ( !function_exists( 'is_meta_keywords_to_category' ) ):
 function is_meta_keywords_to_category(){
-  return get_option(OP_META_KEYWORDS_TO_CATEGORY);
+  return get_theme_option(OP_META_KEYWORDS_TO_CATEGORY);
 }
 endif;

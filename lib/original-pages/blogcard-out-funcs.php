@@ -5,7 +5,7 @@
 define('OP_EXTERNAL_BLOGCARD_ENABLE', 'external_blogcard_enable');
 if ( !function_exists( 'is_external_blogcard_enable' ) ):
 function is_external_blogcard_enable(){
-  return get_option(OP_EXTERNAL_BLOGCARD_ENABLE, 1);
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_ENABLE, 1);
 }
 endif;
 
@@ -13,7 +13,7 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE', 'external_blogcard_thumbnail_style');
 if ( !function_exists( 'get_external_blogcard_thumbnail_style' ) ):
 function get_external_blogcard_thumbnail_style(){
-  return get_option(OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE, 'left');
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE, 'left');
 }
 endif;
 
@@ -21,7 +21,7 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_TARGET_BLANK', 'external_blogcard_target_blank');
 if ( !function_exists( 'is_external_blogcard_target_blank' ) ):
 function is_external_blogcard_target_blank(){
-  return get_option(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, 1);
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, 1);
 }
 endif;
 
@@ -29,7 +29,7 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD', 'external_blogcard_cache_retention_period');
 if ( !function_exists( 'get_external_blogcard_cache_retention_period' ) ):
 function get_external_blogcard_cache_retention_period(){
-  return get_option(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, 30);
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, 30);
 }
 endif;
 
@@ -37,6 +37,6 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_REFRESH_MODE', 'external_blogcard_refresh_mode');
 if ( !function_exists( 'is_external_blogcard_refresh_mode' ) ):
 function is_external_blogcard_refresh_mode(){
-  return get_option(OP_EXTERNAL_BLOGCARD_REFRESH_MODE);
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_REFRESH_MODE);
 }
 endif;

@@ -33,8 +33,9 @@ add_theme_support( 'menus' );
 //register_nav_menu( 'header-navi', 'ヘッダーナビゲーション' );
 register_nav_menus(
   array(
-    'navi-header' => 'ヘッダーナビ',
-    'navi-footer' => 'フッターナビ（サブメニュー不可）',
+    'navi-header' => __( 'ヘッダーナビ', THEME_NAME ),
+    'navi-mobile' => __( 'モバイルヘッダーナビ（サブ不可）', THEME_NAME ),
+    'navi-footer' => __( 'フッターナビ（サブ不可）', THEME_NAME ),
   )
 );
 

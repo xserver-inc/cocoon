@@ -8,16 +8,16 @@
 define('OP_SNS_FOLLOW_BUTTONS_VISIBLE', 'sns_follow_buttons_visible');
 if ( !function_exists( 'is_sns_follow_buttons_visible' ) ):
 function is_sns_follow_buttons_visible(){
-  return get_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE, 1);
+  return get_theme_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE, 1);
 }
 endif;
 
 
 //SNSフォローメッセージ
-define('OP_SNS_FOLLOW_MESSAGE', 'SNS_FOLLOW_MESSAGE');
+define('OP_SNS_FOLLOW_MESSAGE', 'sns_follow_message');
 if ( !function_exists( 'get_sns_follow_message' ) ):
 function get_sns_follow_message(){
-  return get_option(OP_SNS_FOLLOW_MESSAGE, __( '%sをフォローする', THEME_NAME ));
+  return get_theme_option(OP_SNS_FOLLOW_MESSAGE, __( '%sをフォローする', THEME_NAME ));
 }
 endif;
 
@@ -25,7 +25,7 @@ endif;
 define('OP_FEEDLY_FOLLOW_BUTTON_VISIBLE', 'feedly_follow_button_visible');
 if ( !function_exists( 'is_feedly_follow_button_visible' ) ):
 function is_feedly_follow_button_visible(){
-  return get_option(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, 1);
 }
 endif;
 
@@ -33,7 +33,7 @@ endif;
 define('OP_RSS_FOLLOW_BUTTON_VISIBLE', 'rss_follow_button_visible');
 if ( !function_exists( 'is_rss_follow_button_visible' ) ):
 function is_rss_follow_button_visible(){
-  return get_option(OP_RSS_FOLLOW_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_RSS_FOLLOW_BUTTON_VISIBLE, 1);
 }
 endif;
 
@@ -41,7 +41,7 @@ endif;
 define('OP_SNS_FOLLOW_BUTTON_COLOR', 'sns_follow_button_color');
 if ( !function_exists( 'get_sns_follow_button_color' ) ):
 function get_sns_follow_button_color(){
-  return get_option(OP_SNS_FOLLOW_BUTTON_COLOR, 'brand_color');
+  return get_theme_option(OP_SNS_FOLLOW_BUTTON_COLOR, 'brand_color');
 }
 endif;
 
@@ -49,6 +49,6 @@ endif;
 define('OP_SNS_DEFAULT_FOLLOW_USER', 'sns_default_follow_user');
 if ( !function_exists( 'get_sns_default_follow_user' ) ):
 function get_sns_default_follow_user(){
-  return get_option(OP_SNS_DEFAULT_FOLLOW_USER, wp_get_current_user()->ID);
+  return get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER, wp_get_current_user()->ID);
 }
 endif;

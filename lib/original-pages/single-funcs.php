@@ -7,7 +7,7 @@
 define('OP_RELATED_ENTRIES_VISIBLE', 'related_entries_visible');
 if ( !function_exists( 'is_related_entries_visible' ) ):
 function is_related_entries_visible(){
-  return get_option(OP_RELATED_ENTRIES_VISIBLE, 1);
+  return get_theme_option(OP_RELATED_ENTRIES_VISIBLE, 1);
 }
 endif;
 
@@ -15,7 +15,7 @@ endif;
 define('OP_RELATED_ENTRY_HEADING', 'related_entry_heading');
 if ( !function_exists( 'get_related_entry_heading' ) ):
 function get_related_entry_heading(){
-  return get_option(OP_RELATED_ENTRY_HEADING, __( '関連記事', THEME_NAME ));
+  return get_theme_option(OP_RELATED_ENTRY_HEADING, __( '関連記事', THEME_NAME ));
 }
 endif;
 
@@ -23,7 +23,7 @@ endif;
 define('OP_RELATED_ENTRY_SUB_HEADING', 'related_entry_sub_heading');
 if ( !function_exists( 'get_related_entry_sub_heading' ) ):
 function get_related_entry_sub_heading(){
-  return get_option(OP_RELATED_ENTRY_SUB_HEADING);
+  return get_theme_option(OP_RELATED_ENTRY_SUB_HEADING);
 }
 endif;
 
@@ -31,7 +31,7 @@ endif;
 define('OP_RELATED_ENTRY_TYPE', 'related_entry_type');
 if ( !function_exists( 'get_related_entry_type' ) ):
 function get_related_entry_type(){
-  return get_option(OP_RELATED_ENTRY_TYPE, 'entry_card');
+  return get_theme_option(OP_RELATED_ENTRY_TYPE, 'entry_card');
 }
 endif;
 
@@ -39,7 +39,7 @@ endif;
 define('OP_RELATED_ENTRY_COUNT', 'related_entry_count');
 if ( !function_exists( 'get_related_entry_count' ) ):
 function get_related_entry_count(){
-  return get_option(OP_RELATED_ENTRY_COUNT, 6);
+  return get_theme_option(OP_RELATED_ENTRY_COUNT, 6);
 }
 endif;
 
@@ -47,7 +47,7 @@ endif;
 define('OP_RELATED_ENTRY_BORDER_VISIBLE', 'related_entry_border_visible');
 if ( !function_exists( 'is_related_entry_border_visible' ) ):
 function is_related_entry_border_visible(){
-  return get_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
+  return get_theme_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
 }
 endif;
 
@@ -55,7 +55,7 @@ endif;
 define('OP_RELATED_EXCERPT_MAX_LENGTH', 'related_excerpt_max_length');
 if ( !function_exists( 'get_related_excerpt_max_length' ) ):
 function get_related_excerpt_max_length(){
-  return get_option(OP_RELATED_EXCERPT_MAX_LENGTH, 120);
+  return get_theme_option(OP_RELATED_EXCERPT_MAX_LENGTH, 120);
 }
 endif;
 
@@ -67,7 +67,7 @@ endif;
 define('OP_POST_NAVI_VISIBLE', 'post_navi_visible');
 if ( !function_exists( 'is_post_navi_visible' ) ):
 function is_post_navi_visible(){
-  return get_option(OP_POST_NAVI_VISIBLE, 1);
+  return get_theme_option(OP_POST_NAVI_VISIBLE, 1);
 }
 endif;
 
@@ -75,7 +75,7 @@ endif;
 define('OP_POST_NAVI_TYPE', 'post_navi_type');
 if ( !function_exists( 'get_post_navi_type' ) ):
 function get_post_navi_type(){
-  return get_option(OP_POST_NAVI_TYPE, 'default');
+  return get_theme_option(OP_POST_NAVI_TYPE, 'default');
 }
 endif;
 if ( !function_exists( 'is_post_navi_type_spuare' ) ):
@@ -88,7 +88,7 @@ endif;
 define('OP_POST_NAVI_BORDER_VISIBLE', 'post_navi_border_visible');
 if ( !function_exists( 'is_post_navi_border_visible' ) ):
 function is_post_navi_border_visible(){
-  return get_option(OP_POST_NAVI_BORDER_VISIBLE);
+  return get_theme_option(OP_POST_NAVI_BORDER_VISIBLE);
 }
 endif;
 
@@ -100,7 +100,7 @@ endif;
 define('OP_SINGLE_COMMENT_VISIBLE', 'single_comment_visible');
 if ( !function_exists( 'is_single_comment_visible' ) ):
 function is_single_comment_visible(){
-  return get_option(OP_SINGLE_COMMENT_VISIBLE, 1);
+  return get_theme_option(OP_SINGLE_COMMENT_VISIBLE, 1);
 }
 endif;
 
@@ -112,7 +112,7 @@ endif;
 define('OP_SINGLE_BREADCRUMBS_POSITION', 'single_breadcrumbs_position');
 if ( !function_exists( 'get_single_breadcrumbs_position' ) ):
 function get_single_breadcrumbs_position(){
-  return get_option(OP_SINGLE_BREADCRUMBS_POSITION, 'main_bottom');
+  return get_theme_option(OP_SINGLE_BREADCRUMBS_POSITION, 'main_bottom');
 }
 endif;
 if ( !function_exists( 'is_single_breadcrumbs_visible' ) ):

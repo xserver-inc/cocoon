@@ -4,7 +4,7 @@
 define('OP_FOOTER_DISPLAY_TYPE', 'footer_display_type');
 if ( !function_exists( 'get_footer_display_type' ) ):
 function get_footer_display_type(){
-  return get_option(OP_FOOTER_DISPLAY_TYPE, 'logo_enable');
+  return get_theme_option(OP_FOOTER_DISPLAY_TYPE, 'logo_enable');
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_SITE_INITIATION_YEAR', 'site_initiation_year');
 if ( !function_exists( 'get_site_initiation_year' ) ):
 function get_site_initiation_year(){
-  return get_option(OP_SITE_INITIATION_YEAR, date('Y'));
+  return get_theme_option(OP_SITE_INITIATION_YEAR, date('Y'));
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_CREDIT_NOTATION', 'credit_notation');
 if ( !function_exists( 'get_credit_notation' ) ):
 function get_credit_notation(){
-  return get_option(OP_CREDIT_NOTATION, 'simple');
+  return get_theme_option(OP_CREDIT_NOTATION, 'simple');
 }
 endif;
 

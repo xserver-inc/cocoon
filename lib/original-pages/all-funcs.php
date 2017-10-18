@@ -4,7 +4,7 @@
 define('OP_SITE_KEY_COLOR', 'site_key_color');
 if ( !function_exists( 'get_site_key_color' ) ):
 function get_site_key_color(){
-  return get_option(OP_SITE_KEY_COLOR);
+  return get_theme_option(OP_SITE_KEY_COLOR);
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_SITE_KEY_TEXT_COLOR', 'site_key_text_color');
 if ( !function_exists( 'get_site_key_text_color' ) ):
 function get_site_key_text_color(){
-  return get_option(OP_SITE_KEY_TEXT_COLOR);
+  return get_theme_option(OP_SITE_KEY_TEXT_COLOR);
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_SITE_FONT_FAMILY', 'site_font_family');
 if ( !function_exists( 'get_site_font_family' ) ):
 function get_site_font_family(){
-  return get_option(OP_SITE_FONT_FAMILY, 'yu_gothic');
+  return get_theme_option(OP_SITE_FONT_FAMILY, 'yu_gothic');
 }
 endif;
 if ( !function_exists( 'is_site_font_family_local' ) ):
@@ -39,7 +39,7 @@ endif;
 define('OP_SITE_FONT_SIZE', 'site_font_size');
 if ( !function_exists( 'get_site_font_size' ) ):
 function get_site_font_size(){
-  return get_option(OP_SITE_FONT_SIZE, '18px');
+  return get_theme_option(OP_SITE_FONT_SIZE, '18px');
 }
 endif;
 
@@ -47,7 +47,7 @@ endif;
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');
 if ( !function_exists( 'get_site_background_color' ) ):
 function get_site_background_color(){
-  return get_option(OP_SITE_BACKGROUND_COLOR);
+  return get_theme_option(OP_SITE_BACKGROUND_COLOR);
 }
 endif;
 
@@ -55,7 +55,7 @@ endif;
 define('OP_SITE_BACKGROUND_IMAGE_URL', 'site_background_image_url');
 if ( !function_exists( 'get_site_background_image_url' ) ):
 function get_site_background_image_url(){
-  return get_option(OP_SITE_BACKGROUND_IMAGE_URL);
+  return get_theme_option(OP_SITE_BACKGROUND_IMAGE_URL);
 }
 endif;
 
@@ -63,7 +63,7 @@ endif;
 define('OP_SITE_LINK_COLOR', 'site_link_color');
 if ( !function_exists( 'get_site_link_color' ) ):
 function get_site_link_color(){
-  return get_option(OP_SITE_LINK_COLOR);
+  return get_theme_option(OP_SITE_LINK_COLOR);
 }
 endif;
 
@@ -71,7 +71,7 @@ endif;
 define('OP_ALIGN_SITE_WIDTH', 'align_site_width');
 if ( !function_exists( 'is_align_site_width' ) ):
 function is_align_site_width(){
-  return get_option(OP_ALIGN_SITE_WIDTH);
+  return get_theme_option(OP_ALIGN_SITE_WIDTH);
 }
 endif;
 
@@ -79,7 +79,7 @@ endif;
 define('OP_SIDEBAR_POSITION', 'sidebar_position');
 if ( !function_exists( 'get_sidebar_position' ) ):
 function get_sidebar_position(){
-  return get_option(OP_SIDEBAR_POSITION, 'sidebar_right');
+  return get_theme_option(OP_SIDEBAR_POSITION, 'sidebar_right');
 }
 endif;
 
@@ -87,7 +87,7 @@ endif;
 define('OP_SIDEBAR_DISPLAY_TYPE', 'sidebar_display_type');
 if ( !function_exists( 'get_sidebar_display_type' ) ):
 function get_sidebar_display_type(){
-  return get_option(OP_SIDEBAR_DISPLAY_TYPE, 'display_all');
+  return get_theme_option(OP_SIDEBAR_DISPLAY_TYPE, 'display_all');
 }
 endif;
 
@@ -96,7 +96,7 @@ define('OP_SITE_ICON_URL', 'site_icon_url');
 //Wordpressデフォルトのget_site_icon_url関数とかぶるため名前変更
 if ( !function_exists( 'get_site_icon_url2' ) ):
 function get_site_icon_url2(){
-  return get_option(OP_SITE_ICON_URL, get_default_site_icon_url());
+  return get_theme_option(OP_SITE_ICON_URL, get_default_site_icon_url());
 }
 endif;
 if ( !function_exists( 'get_default_site_icon_url' ) ):

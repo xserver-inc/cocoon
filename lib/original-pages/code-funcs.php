@@ -4,7 +4,7 @@
 define('OP_CODE_HIGHLIGHT_ENABLE', 'code_highlight_enable');
 if ( !function_exists( 'is_code_highlight_enable' ) ):
 function is_code_highlight_enable(){
-  return get_option(OP_CODE_HIGHLIGHT_ENABLE, 1);
+  return get_theme_option(OP_CODE_HIGHLIGHT_ENABLE, 1);
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_CODE_HIGHLIGHT_STYLE', 'code_highlight_style');
 if ( !function_exists( 'get_code_highlight_style' ) ):
 function get_code_highlight_style(){
-  return get_option(OP_CODE_HIGHLIGHT_STYLE, 'monokai');
+  return get_theme_option(OP_CODE_HIGHLIGHT_STYLE, 'monokai');
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_CODE_HIGHLIGHT_CSS_SELECTOR', 'code_highlight_css_selector');
 if ( !function_exists( 'get_code_highlight_css_selector' ) ):
 function get_code_highlight_css_selector(){
-  return get_option(OP_CODE_HIGHLIGHT_CSS_SELECTOR, '.entry-content pre');
+  return get_theme_option(OP_CODE_HIGHLIGHT_CSS_SELECTOR, '.entry-content pre');
 }
 endif;
 

@@ -4,7 +4,7 @@
 define('OP_CANONICAL_TAG_ENABLE', 'canonical_tag_enable');
 if ( !function_exists( 'is_canonical_tag_enable' ) ):
 function is_canonical_tag_enable(){
-  return get_option(OP_CANONICAL_TAG_ENABLE, 1);
+  return get_theme_option(OP_CANONICAL_TAG_ENABLE, 1);
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_PREV_NEXT_ENABLE', 'prev_next_enable');
 if ( !function_exists( 'is_prev_next_enable' ) ):
 function is_prev_next_enable(){
-  return get_option(OP_PREV_NEXT_ENABLE, 1);
+  return get_theme_option(OP_PREV_NEXT_ENABLE, 1);
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_PAGED_CATEGORY_PAGE_NOINDEX', 'paged_category_page_noindex');
 if ( !function_exists( 'is_paged_category_page_noindex' ) ):
 function is_paged_category_page_noindex(){
-  return get_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
+  return get_theme_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
 }
 endif;
 
@@ -28,7 +28,7 @@ endif;
 define('OP_SEO_DATE_TYPE', 'seo_date_type');
 if ( !function_exists( 'get_seo_date_type' ) ):
 function get_seo_date_type(){
-  return get_option(OP_SEO_DATE_TYPE, 'post_date');
+  return get_theme_option(OP_SEO_DATE_TYPE, 'post_date');
 }
 endif;
 //投稿日・更新日タグを取得する

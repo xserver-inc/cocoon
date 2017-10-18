@@ -181,11 +181,16 @@ endif;
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
-  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : null;
-  // if (OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD == $option_name) {
-  //   var_dump($opt_val);
-  // }
-  update_option($option_name, $opt_val);
+  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
+  //update_option($option_name, $opt_val);
+  set_theme_mod($option_name, $opt_val);
+}
+endif;
+
+//オプションの値をデータベースから取得する
+if ( !function_exists( 'get_theme_option' ) ):
+function get_theme_option($option_name, $default = null){
+  return get_theme_mod($option_name, $default);
 }
 endif;
 
@@ -309,7 +314,7 @@ function wp_enqueue_clingify(){
     //clingifyスタイルの呼び出し
     //wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
-    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.js', array( 'jquery' ), false, true  );
+    wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.min.js', array( 'jquery' ), false, true  );
     if (is_global_navi_fixed()) {
       switch (get_header_layout_type()) {
         case 'center_logo':

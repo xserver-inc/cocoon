@@ -4,7 +4,7 @@
 define('OP_GOOGLE_TAG_MANAGER_TRACKING_ID', 'google_tag_manager_tracking_id');
 if ( !function_exists( 'get_google_tag_manager_tracking_id' ) ):
 function get_google_tag_manager_tracking_id(){
-  return get_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
+  return get_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
 }
 endif;
 
@@ -12,7 +12,7 @@ endif;
 define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
 if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
 function get_google_analytics_tracking_id(){
-  return get_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
+  return get_theme_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_GOOGLE_SEARCH_CONSOLE_ID', 'google_search_console_id');
 if ( !function_exists( 'get_google_search_console_id' ) ):
 function get_google_search_console_id(){
-  return get_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
+  return get_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
 }
 endif;
 
@@ -28,7 +28,7 @@ endif;
 define('OP_PTENGINE_TRACKING_ID', 'ptengine_tracking_id');
 if ( !function_exists( 'get_ptengine_tracking_id' ) ):
 function get_ptengine_tracking_id(){
-  return get_option(OP_PTENGINE_TRACKING_ID);
+  return get_theme_option(OP_PTENGINE_TRACKING_ID);
 }
 endif;
 
