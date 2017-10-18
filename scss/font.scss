@@ -1,7 +1,8 @@
 
 //フォント
 $default_font: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-$Meiryo_font: "Meiryo", sans-serif;
+$meiryo_font: "Meiryo", sans-serif;
+$navi_font: FontAwesome, $default_font;
 
 //フォントサイズ
 @for $i from 12 through 22 {

@@ -611,10 +611,10 @@
   .demo .entry-card-meta .entry-card-categorys {
     display: none; }
   .demo .date-tags {
-    text-align: right;
-    position: absolute;
-    right: 0;
-    top: 0; }
+    line-height: 0;
+    text-align: right; }
+    .demo .date-tags span:last-child {
+      margin-right: 0; }
   .demo .post-date,
   .demo .post-update {
     margin-right: 8px; }

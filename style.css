@@ -588,10 +588,11 @@ img {
 ** 日付関係のスタイル
 ************************************/
 .date-tags {
+  line-height: 0;
   text-align: right;
-  position: absolute;
-  right: 0;
-  top: 0;
+}
+.date-tags span:last-child {
+  margin-right: 0;
 }
 
 .post-date,

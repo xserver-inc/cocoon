@@ -27,7 +27,7 @@ $icon_height: 16px;
 // }
 
 .navi-in{
-  //font-family: $Meiryo_font;
+  //font-family: $meiryo_font;
 
   >ul{
     @include list_cancel;
@@ -48,6 +48,14 @@ $icon_height: 16px;
           display: block;
         }
       }
+
+
+      // &.fa{
+      //   font-family: $navi_font;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
     }
 
 
