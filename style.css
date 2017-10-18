@@ -401,7 +401,7 @@ img {
   background-color: #fff;
 }
 
-.navi-in > .menu-header {
+.navi-in > ul {
   padding: 0;
   list-style: none;
   display: flex;
@@ -410,16 +410,16 @@ img {
   text-align: center;
   /*サブメニュー*/
 }
-.navi-in > .menu-header li {
+.navi-in > ul li {
   display: block;
   width: 176px;
   height: 60px;
   line-height: 60px;
 }
-.navi-in > .menu-header li:hover > ul {
+.navi-in > ul li:hover > ul {
   display: block;
 }
-.navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap {
+.navi-in > ul > .menu-item-has-description > a > .caption-wrap {
   line-height: 21.42857px;
   display: flex;
   flex-wrap: wrap;
@@ -428,13 +428,13 @@ img {
   align-content: center;
   height: 60px;
 }
-.navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap div {
+.navi-in > ul > .menu-item-has-description > a > .caption-wrap div {
   width: 100%;
 }
-.navi-in > .menu-header > .menu-item-has-description .item-description {
+.navi-in > ul > .menu-item-has-description .item-description {
   font-size: 0.8em;
 }
-.navi-in > .menu-header .sub-menu {
+.navi-in > ul .sub-menu {
   display: none;
   position: absolute;
   margin-left: 0;
@@ -446,13 +446,13 @@ img {
   text-align: left;
   /*サブメニューのサブメニュー*/
 }
-.navi-in > .menu-header .sub-menu li {
+.navi-in > ul .sub-menu li {
   width: auto;
 }
-.navi-in > .menu-header .sub-menu .menu-item-has-children {
+.navi-in > ul .sub-menu .menu-item-has-children {
   position: relative;
 }
-.navi-in > .menu-header .sub-menu .menu-item-has-children > a::after {
+.navi-in > ul .sub-menu .menu-item-has-children > a::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
@@ -460,11 +460,11 @@ img {
   right: 3px;
   top: 0;
 }
-.navi-in > .menu-header .sub-menu a {
+.navi-in > ul .sub-menu a {
   padding-left: 16px;
   padding-right: 16px;
 }
-.navi-in > .menu-header .sub-menu ul {
+.navi-in > ul .sub-menu ul {
   top: -60px;
   left: 240px;
   position: relative;
@@ -482,6 +482,16 @@ img {
 }
 .navi-in a:hover > ul {
   display: block;
+}
+
+/************************************
+** モバイルメニュー
+************************************/
+.navi-in > .menu-mobile {
+  display: none;
+}
+.navi-in > .menu-mobile .sub-menu {
+  display: none;
 }
 
 /************************************
@@ -2678,8 +2688,24 @@ input[type='submit'] {
   }
 }
 @media screen and (max-width: 768px) {
-  .navi {
+  .navi-in > .menu-header {
     display: none;
+  }
+
+  .navi-in > .menu-mobile {
+    display: flex;
+  }
+  .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
+    height: 40px;
+    line-height: 16px;
+  }
+  .navi-in > .menu-mobile li {
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+  }
+  .navi-in > .menu-mobile li a {
+    font-size: 14px;
   }
 
   .main,

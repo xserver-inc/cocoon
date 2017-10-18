@@ -155,6 +155,9 @@
   ** グローバルメニュー
   ************************************/
   /************************************
+  ** モバイルメニュー
+  ************************************/
+  /************************************
   ** フッターメニュー
   ************************************/
   /************************************
@@ -475,7 +478,7 @@
     display: none; }
   .demo .navi {
     background-color: #fff; }
-  .demo .navi-in > .menu-header {
+  .demo .navi-in > ul {
     padding: 0;
     list-style: none;
     display: flex;
@@ -483,14 +486,14 @@
     justify-content: center;
     text-align: center;
     /*サブメニュー*/ }
-    .demo .navi-in > .menu-header li {
+    .demo .navi-in > ul li {
       display: block;
       width: 176px;
       height: 60px;
       line-height: 60px; }
-      .demo .navi-in > .menu-header li:hover > ul {
+      .demo .navi-in > ul li:hover > ul {
         display: block; }
-    .demo .navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap {
+    .demo .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
       line-height: 21.42857px;
       display: flex;
       flex-wrap: wrap;
@@ -498,11 +501,11 @@
       align-items: center;
       align-content: center;
       height: 60px; }
-      .demo .navi-in > .menu-header > .menu-item-has-description > a > .caption-wrap div {
+      .demo .navi-in > ul > .menu-item-has-description > a > .caption-wrap div {
         width: 100%; }
-    .demo .navi-in > .menu-header > .menu-item-has-description .item-description {
+    .demo .navi-in > ul > .menu-item-has-description .item-description {
       font-size: 0.8em; }
-    .demo .navi-in > .menu-header .sub-menu {
+    .demo .navi-in > ul .sub-menu {
       display: none;
       position: absolute;
       margin-left: 0;
@@ -513,21 +516,21 @@
       z-index: 99;
       text-align: left;
       /*サブメニューのサブメニュー*/ }
-      .demo .navi-in > .menu-header .sub-menu li {
+      .demo .navi-in > ul .sub-menu li {
         width: auto; }
-      .demo .navi-in > .menu-header .sub-menu .menu-item-has-children {
+      .demo .navi-in > ul .sub-menu .menu-item-has-children {
         position: relative; }
-        .demo .navi-in > .menu-header .sub-menu .menu-item-has-children > a::after {
+        .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after {
           font-family: FontAwesome;
           content: "";
           padding-right: 3px;
           position: absolute;
           right: 3px;
           top: 0; }
-      .demo .navi-in > .menu-header .sub-menu a {
+      .demo .navi-in > ul .sub-menu a {
         padding-left: 16px;
         padding-right: 16px; }
-      .demo .navi-in > .menu-header .sub-menu ul {
+      .demo .navi-in > ul .sub-menu ul {
         top: -60px;
         left: 240px;
         position: relative; }
@@ -542,6 +545,10 @@
       color: #333435; }
       .demo .navi-in a:hover > ul {
         display: block; }
+  .demo .navi-in > .menu-mobile {
+    display: none; }
+    .demo .navi-in > .menu-mobile .sub-menu {
+      display: none; }
   .demo .navi-footer-in > .menu-footer {
     padding: 0;
     list-style: none;
@@ -1969,8 +1976,19 @@
       /************************************
       ** 関連記事
       ************************************/ }
-      .demo .navi {
+      .demo .navi-in > .menu-header {
         display: none; }
+      .demo .navi-in > .menu-mobile {
+        display: flex; }
+        .demo .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
+          height: 40px;
+          line-height: 16px; }
+        .demo .navi-in > .menu-mobile li {
+          width: 50%;
+          height: 40px;
+          line-height: 40px; }
+          .demo .navi-in > .menu-mobile li a {
+            font-size: 14px; }
       .demo .main,
       .demo .sidebar {
         padding: 5px;
