@@ -2258,6 +2258,8 @@ form.admin-settings {
   border-width: 1px 1px medium; }
   #tabs > ul > li.selected {
     background-color: #fff; }
+#tabs input[type="text"], #tabs input[type="password"], #tabs input[type="search"], #tabs input[type="number"], #tabs textarea, #tabs select {
+  border-color: #ddd; }
 
 .col-2 {
   display: flex; }

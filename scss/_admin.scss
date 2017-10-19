@@ -167,6 +167,10 @@ form.admin-settings{
       background-color: #fff;
     }
   }
+
+  input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
+    border-color: #ddd;
+  }
 }
 
 
@@ -321,3 +325,5 @@ p.submit{
 #wpbody-content .metabox-holder{
   padding: 0;
 }
+
+

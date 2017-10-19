@@ -3,7 +3,8 @@
 
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
-if( $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
+if( $_POST[HIDDEN_FIELD_NAME] == 'Y' &&
+    $_FILES['settings']['name'] != '' ){
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
@@ -22,7 +23,7 @@ if( $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
   </p>
 </div>
 <?php
-endif;
+}
 
 ///////////////////////////////////////
 // 入力フォーム
