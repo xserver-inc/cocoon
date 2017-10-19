@@ -11,47 +11,47 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   // 設定の保存
   ///////////////////////////////////////
   //全体
-  require_once 'original-pages/all-posts.php';
+  require_once 'all-posts.php';
   //ヘッダー
-  require_once 'original-pages/header-posts.php';
+  require_once 'header-posts.php';
   //グローバルナビ
-  require_once 'original-pages/navi-posts.php';
+  require_once 'navi-posts.php';
   //広告
-  require_once 'original-pages/ads-posts.php';
+  require_once 'ads-posts.php';
   //タイトル
-  require_once 'original-pages/title-posts.php';
+  require_once 'title-posts.php';
   //SEO
-  require_once 'original-pages/seo-posts.php';
+  require_once 'seo-posts.php';
   //アクセス解析
-  require_once 'original-pages/analytics-posts.php';
+  require_once 'analytics-posts.php';
   //投稿
-  require_once 'original-pages/single-posts.php';
+  require_once 'single-posts.php';
   //固定ページ
-  require_once 'original-pages/page-posts.php';
+  require_once 'page-posts.php';
   //SNSシェア
-  require_once 'original-pages/sns-share-posts.php';
+  require_once 'sns-share-posts.php';
   //SNSフォロー
-  require_once 'original-pages/sns-follow-posts.php';
+  require_once 'sns-follow-posts.php';
   //コメント
-  require_once 'original-pages/comment-posts.php';
+  require_once 'comment-posts.php';
   //ソースコード
-  require_once 'original-pages/code-posts.php';
+  require_once 'code-posts.php';
   //画像
-  require_once 'original-pages/image-posts.php';
+  require_once 'image-posts.php';
   //OGP
-  require_once 'original-pages/ogp-posts.php';
+  require_once 'ogp-posts.php';
   //内部ブログカード
-  require_once 'original-pages/blogcard-in-posts.php';
+  require_once 'blogcard-in-posts.php';
   //外部ブログカード
-  require_once 'original-pages/blogcard-out-posts.php';
+  require_once 'blogcard-out-posts.php';
   //フッター
-  require_once 'original-pages/footer-posts.php';
+  require_once 'footer-posts.php';
   //管理画面
-  require_once 'original-pages/admin-posts.php';
+  require_once 'admin-posts.php';
   //リセット
-  require_once 'original-pages/reset-posts.php';
+  require_once 'reset-posts.php';
   //バックアップ
-  require_once 'original-pages/backup-posts.php';
+  require_once 'backup-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -121,98 +121,98 @@ endif;
 
   <!-- 全体タブ -->
   <div class="all metabox-holder">
-    <?php require_once 'original-pages/all-forms.php'; ?>
+    <?php require_once 'all-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
-    <?php require_once 'original-pages/header-forms.php'; ?>
+    <?php require_once 'header-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->
   <div class="ads metabox-holder">
-    <?php require_once 'original-pages/ads-forms.php'; ?>
+    <?php require_once 'ads-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- タイトルタブ -->
   <div class="title metabox-holder">
-    <?php require_once 'original-pages/title-forms.php'; ?>
+    <?php require_once 'title-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SEOタブ -->
   <div class="seo metabox-holder">
-    <?php require_once 'original-pages/seo-forms.php'; ?>
+    <?php require_once 'seo-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
-    <?php require_once 'original-pages/analytics-forms.php'; ?>
+    <?php require_once 'analytics-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 投稿 -->
   <div class="single-page metabox-holder">
-    <?php require_once 'original-pages/single-forms.php'; ?>
+    <?php require_once 'single-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 固定ページ -->
   <div class="page-page metabox-holder">
-    <?php require_once 'original-pages/page-forms.php'; ?>
+    <?php require_once 'page-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSシェアタブ -->
   <div class="sns-share metabox-holder">
-    <?php require_once 'original-pages/sns-share-forms.php'; ?>
+    <?php require_once 'sns-share-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSフォロータブ -->
   <div class="sns-follow metabox-holder">
-    <?php require_once 'original-pages/sns-follow-forms.php'; ?>
+    <?php require_once 'sns-follow-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コメントタブ -->
   <div class="comment metabox-holder">
-    <?php require_once 'original-pages/comment-forms.php'; ?>
+    <?php require_once 'comment-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コードタブ -->
   <div class="code metabox-holder">
-    <?php require_once 'original-pages/code-forms.php'; ?>
+    <?php require_once 'code-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 画像タブ -->
   <div class="image metabox-holder">
-    <?php require_once 'original-pages/image-forms.php'; ?>
+    <?php require_once 'image-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->
   <div class="ogp metabox-holder">
-    <?php require_once 'original-pages/ogp-forms.php'; ?>
+    <?php require_once 'ogp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 内部・外部ブログカード -->
   <div class="blog-card-in metabox-holder">
-    <?php require_once 'original-pages/blogcard-in-forms.php'; ?>
-    <?php require_once 'original-pages/blogcard-out-forms.php'; ?>
+    <?php require_once 'blogcard-in-forms.php'; ?>
+    <?php require_once 'blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- フッター -->
   <div class="admin metabox-holder">
-    <?php require_once 'original-pages/footer-forms.php'; ?>
+    <?php require_once 'footer-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->
   <div class="admin metabox-holder">
-    <?php require_once 'original-pages/admin-forms.php'; ?>
+    <?php require_once 'admin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- リセット -->
   <div class="reset metabox-holder">
-    <?php require_once 'original-pages/reset-forms.php'; ?>
+    <?php require_once 'reset-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- バックアップ -->
   <div class="backup metabox-holder">
-    <?php require_once 'original-pages/backup-forms.php'; ?>
+    <?php require_once 'backup-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 

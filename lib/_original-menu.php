@@ -38,7 +38,7 @@ function add_theme_settings_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'original-pages/_settings_page.php';
+  require_once 'original-pages.php';
 }
 endif;
 
@@ -50,6 +50,6 @@ function add_theme_backup_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'original-pages/_settings_page.php';
+  require_once 'original-pages/_original-pages.php';
 }
 endif;
