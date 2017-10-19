@@ -50,6 +50,6 @@ function add_theme_backup_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-settings/_top-page.php';
+  require_once 'page-backup/_top-page.php';
 }
 endif;
