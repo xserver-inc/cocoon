@@ -208,6 +208,11 @@ endif;
     <?php require_once 'original-pages/reset-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
+  <!-- バックアップ -->
+  <div class="backup metabox-holder">
+    <?php require_once 'original-pages/backup-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
 
 </div><!-- /#tabs -->
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
