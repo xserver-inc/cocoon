@@ -50,6 +50,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'original-pages/admin-posts.php';
   //リセット
   require_once 'original-pages/reset-posts.php';
+  //バックアップ
+  require_once 'original-pages/backup-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>

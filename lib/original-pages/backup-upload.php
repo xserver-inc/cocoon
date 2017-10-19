@@ -1,4 +1,7 @@
-<?php //リセットの実行
+<?php
+//外部のphpからWordpress のAPIを扱う
+require_once('../../../../../wp-load.php');
+require_once('../_defins.php');
 //管理者権限を持っているログインユーザーかどうか
 if (is_user_logged_in() && current_user_can('manage_options')) {
   global $wpdb;
@@ -12,10 +15,9 @@ if (is_user_logged_in() && current_user_can('manage_options')) {
   // があります。
 
   $uploaddir = wp_upload_dir();
-  $uploaddir = $uploaddir['basedir'].'/';
+  var_dump($uploaddir);
   $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-  var_dump($uploadfile);
   echo '<pre>';
   if (move_uploaded_file($_FILES['settings']['tmp_name'], $uploadfile)) {
       echo "File is valid, and was successfully uploaded.\n";
@@ -30,3 +32,6 @@ if (is_user_logged_in() && current_user_can('manage_options')) {
 
 
 }
+exit;
+
+?>

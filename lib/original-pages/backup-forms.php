@@ -10,13 +10,29 @@
     <table class="form-table">
       <tbody>
 
-        <!-- リセット  -->
+        <!-- バックアップ  -->
         <tr>
           <th scope="row">
             <?php genelate_label_tag('', __( 'バックアップ', THEME_NAME ) ); ?>
           </th>
           <td>
-            <a href="<?php echo get_template_directory_uri().'/lib/original-pages/download-settings.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
+            <a href="<?php echo get_template_directory_uri().'/lib/original-pages/backup-download.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
+          </td>
+        </tr>
+
+        <!-- レストア  -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag('', __( 'レストア', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <form enctype="multipart/form-data" action="<?php echo get_template_directory_uri().'/lib/original-pages/backup-upload.php'; ?>" method="POST">
+                <!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
+                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
+                このファイルをアップロード: <input name="settings" type="file" /><br>
+                <input type="submit" class="button" value="ファイルを送信" />
+            </form>
           </td>
         </tr>
 
