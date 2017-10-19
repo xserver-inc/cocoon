@@ -27,12 +27,14 @@
           </th>
           <td>
             <form enctype="multipart/form-data" action="" method="POST">
-                <!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
-                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
-                このファイルをアップロード: <input name="settings" type="file" /><br>
-                <input type="submit" class="button" value="ファイルを送信" />
+                <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                <?php _e( 'このファイルをアップロード: ', THEME_NAME ) ?>
+                <input name="settings" type="file" /><br>
+                <input type="submit" class="button" value="<?php _e( '設定の復元', THEME_NAME ) ?>" />
                 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+                <?php
+                genelate_tips_tag(__( '参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してください。', THEME_NAME ));
+                 ?>
             </form>
           </td>
         </tr>
