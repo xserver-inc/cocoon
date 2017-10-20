@@ -376,7 +376,7 @@ endif;
 if ( !function_exists( 'get_random_posts' ) ):
 function get_random_posts($count = 1){
   $count = intval($count);
-  $posts = get_posts('numberposts=1&orderby=rand');
+  $posts = get_posts('numberposts='.$count.'&orderby=rand');
   if ($couut == 1) {
     foreach( $posts as $post ) {
       return $post;
@@ -384,18 +384,21 @@ function get_random_posts($count = 1){
   } else {
     return $posts;
   }
-
-
 }
 endif;
 
 
 //最新の投稿を取得
-if ( !function_exists( 'get_latest_1_post' ) ):
-function get_latest_1_post(){
-  $posts = get_posts('numberposts=1');
-  foreach( $posts as $post ) {
-    return $post;
+if ( !function_exists( 'get_latest_posts' ) ):
+function get_latest_posts($count = 1){
+  $count = intval($count);
+  $posts = get_posts('numberposts='.$count);
+  if ($couut == 1) {
+    foreach( $posts as $post ) {
+      return $post;
+    }
+  } else {
+    return $posts;
   }
 }
 endif;

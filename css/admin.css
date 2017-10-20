@@ -2178,6 +2178,8 @@
     width: 100%; }
   .demo .demo .navi-in > ul > .menu-item-has-children > a::after {
     display: none; }
+  .demo .archive-title {
+    display: none; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;

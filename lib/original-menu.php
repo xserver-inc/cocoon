@@ -20,6 +20,15 @@ function add_original_menu_in_admin_page() {
     //ソーシャルカウントサブメニューを追加
     add_submenu_page('theme-settings', __('ソーシャルカウント', THEME_NAME), __('ソーシャルカウント', THEME_NAME), 'manage_options', 'theme-sns-count', 'add_theme_sns_count_page');
 
+    //ランキング作成サブメニューを追加
+    add_submenu_page('theme-settings', __('ランキング作成', THEME_NAME), __('ランキング作成', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_ranking_page');
+
+    //CTAサブメニューを追加
+    add_submenu_page('theme-settings', __('CTA', THEME_NAME), __('CTA', THEME_NAME), 'manage_options', 'theme-cta', 'add_theme_cta_page');
+
+    //高速化サブメニューを追加
+    add_submenu_page('theme-settings', __('高速化', THEME_NAME), __('高速化', THEME_NAME), 'manage_options', 'theme-speed-up', 'add_theme_speed_up_page');
+
     //バックアップサブメニューを追加
     add_submenu_page('theme-settings', __('バックアップ', THEME_NAME), __('バックアップ', THEME_NAME), 'manage_options', 'theme-backup', 'add_theme_backup_page');
 

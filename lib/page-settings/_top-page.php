@@ -24,6 +24,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'seo-posts.php';
   //アクセス解析
   require_once 'analytics-posts.php';
+  //インデックス
+  require_once 'index-posts.php';
   //投稿
   require_once 'single-posts.php';
   //固定ページ
@@ -86,6 +88,7 @@ endif;
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="page-page"><?php _e( '固定ページ', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
@@ -144,6 +147,11 @@ endif;
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
     <?php require_once 'analytics-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- インデックス -->
+  <div class="index-page metabox-holder">
+    <?php require_once 'index-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 投稿 -->
