@@ -18,6 +18,7 @@ require_once 'page-settings/ads-funcs.php';        //広告設定関数
 require_once 'page-settings/title-funcs.php';      //タイトル設定関数
 require_once 'page-settings/seo-funcs.php';        //SEO設定関数
 require_once 'page-settings/analytics-funcs.php';  //アクセス解析設定関数
+require_once 'page-settings/index-funcs.php';      //インデックス設定関数
 require_once 'page-settings/single-funcs.php';     //投稿設定関数
 require_once 'page-settings/page-funcs.php';       //固定ページ設定関数
 require_once 'page-settings/sns-share-funcs.php';  //SNSシェア設定関数
