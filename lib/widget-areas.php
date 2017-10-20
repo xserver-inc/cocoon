@@ -11,18 +11,29 @@ register_sidebars(1,
   'description' => __( 'サイドバーのウィジットエリアです。', THEME_NAME ),
   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
   'after_widget' => '</aside>',
-  'before_title'  => '<h3 class="widget_title sidebar_widget_title">',
+  'before_title'  => '<h3 class="widget-title sidebar_widget-title">',
   'after_title'   => '</h3>',
 ));
 
 register_sidebars(1,
   array(
-  'name' => __( 'スクロール追従領域', THEME_NAME ),
+  'name' => __( 'サイドバースクロール追従領域', THEME_NAME ),
   'id' => 'sidebar-scroll',
   'description' => __( 'サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）', THEME_NAME ),
   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
   'after_widget' => '</aside>',
-  'before_title' => '<h3 class="widget_title sidebar_widget_title">',
+  'before_title' => '<h3 class="widget-title sidebar_widget-title">',
+  'after_title' => '</h3>',
+));
+
+register_sidebars(1,
+  array(
+  'name' => __( 'メンインカラムスクロール追従領域', THEME_NAME ),
+  'id' => 'man-scroll',
+  'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。※モバイルでは表示されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）', THEME_NAME ),
+  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+  'after_widget' => '</aside>',
+  'before_title' => '<div class="widget-omain-scroll main-widget-label">',
   'after_title' => '</h3>',
 ));
 
