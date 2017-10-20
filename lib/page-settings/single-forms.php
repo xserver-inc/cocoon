@@ -59,9 +59,9 @@
             <?php
             $options = array(
               'entry_card' => __( 'エントリーカード（デフォルト）', THEME_NAME ),
-              'mini_card' => __( 'ミニカード（推奨：表示数偶数）', THEME_NAME ),
-              'vartical_card_3' => __( '縦型カード3列（推奨：表示数 6, 12, 18...）', THEME_NAME ),
-              'vartical_card_4' => __( '縦型カード4列（推奨：表示数 4, 8, 12...）', THEME_NAME ),
+              'mini_card' => __( 'ミニカード（推奨表示数：偶数）', THEME_NAME ),
+              'vartical_card_3' => __( '縦型カード3列（推奨表示数：6, 12, 18...）', THEME_NAME ),
+              'vartical_card_4' => __( '縦型カード4列（推奨表示数：4, 8, 12...）', THEME_NAME ),
             );
             genelate_radiobox_tag(OP_RELATED_ENTRY_TYPE, $options, get_related_entry_type());
             genelate_tips_tag(__( '関連記事の表示タイプを選択します。', THEME_NAME ));
