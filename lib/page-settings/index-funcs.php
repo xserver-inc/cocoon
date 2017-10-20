@@ -2,10 +2,10 @@
 ///////////////////////////////////////
 // リスト表示
 ///////////////////////////////////////
-//リスト表示タイプ
-define('OP_INDEX_LIST_TYPE', 'index_list_type');
-if ( !function_exists( 'get_index_list_type' ) ):
-function get_index_list_type(){
-  return get_theme_option(OP_INDEX_LIST_TYPE, 'entry_card');
+//エントリーカードタイプ
+define('OP_ENTRY_CARD_TYPE', 'entry_card_type');
+if ( !function_exists( 'get_entry_card_type' ) ):
+function get_entry_card_type(){
+  return get_theme_option(OP_ENTRY_CARD_TYPE, 'entry_card');
 }
 endif;

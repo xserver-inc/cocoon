@@ -496,5 +496,26 @@ function get_additional_page_breadcrumbs_classes($option = null){
 endif;
 
 
+//いっそタイプのclass追加関数
+if ( !function_exists( 'get_additional_entry_card_classes' ) ):
+function get_additional_entry_card_classes($option = null){
+  $classes = null;
+
+  $classes .= ' ect-'.str_replace('_', '-', get_entry_card_type());
+  switch (get_entry_card_type()) {
+    case 'vertical_card_2':
+    case 'vertical_card_3':
+      $classes .= ' etc-vartical-card';
+      break;
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
 
 

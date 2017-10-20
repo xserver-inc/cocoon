@@ -22,10 +22,10 @@
           </td>
         </tr>
 
-        <!-- リストタイプ -->
+        <!-- カードタイプ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_INDEX_LIST_TYPE, __('リストタイプ', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_ENTRY_CARD_TYPE, __('カードタイプ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -34,7 +34,7 @@
               'vertical_card_2' => __( '縦型カード2列（推奨：表示数偶数）', THEME_NAME ),
               'vertical_card_3' => __( '縦型カード3列（推奨：3, 6, 9, 12, ...）', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_INDEX_LIST_TYPE, $options, get_index_list_type());
+            genelate_radiobox_tag(OP_ENTRY_CARD_TYPE, $options, get_entry_card_type());
             genelate_tips_tag(__( '一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページに表示する最大投稿数」から変更してください。', THEME_NAME ));
             ?>
           </td>
