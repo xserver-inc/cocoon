@@ -585,6 +585,45 @@ img {
 }
 
 /************************************
+** エントリーカードタイプ
+************************************/
+.ect-vertical-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ect-vertical-card .entry-card-wrap {
+  width: 49.5%;
+  display: inline-block;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-thumb {
+  width: 100%;
+  float: none;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-thumb img {
+  width: 100%;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-content {
+  margin: 0;
+  padding-bottom: 1em;
+}
+.ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
+  margin-right: 0;
+}
+
+.ect-vertical-card {
+  justify-content: space-around;
+}
+.ect-vertical-card .entry-card-wrap {
+  width: 33%;
+  padding: 7px;
+}
+.ect-vertical-card .entry-card-snippet {
+  max-height: 4em;
+  overflow: hidden;
+}
+
+/************************************
 ** 日付関係のスタイル
 ************************************/
 .date-tags {

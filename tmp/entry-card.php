@@ -1,5 +1,5 @@
 <a href="<?php the_permalink(); ?>" class="entry-card-wrap a-wrap cf" title="<?php the_title() ?>">
-  <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card<?php echo get_additional_entry_card_classes(); ?> cf">
+  <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card cf">
     <figure class="entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき?>
         <?php the_post_thumbnail('thumb320' , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>

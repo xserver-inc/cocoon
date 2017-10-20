@@ -100,3 +100,42 @@
 .entry-card-meta .entry-card-categorys{
   display: none;
 }
+
+/************************************
+** エントリーカードタイプ
+************************************/
+.ect-vertical-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .entry-card-wrap{
+    width: 49.5%;
+    display: inline-block;
+    .entry-card-thumb{
+      width: 100%;
+      float: none;
+      img{
+        width: 100%;
+      }
+    }
+    .entry-card-content{
+      margin: 0;
+      padding-bottom: 1em;
+    }
+    .post-date, .post-update{
+      margin-right: 0;
+    }
+  }
+}
+
+.ect-vertical-card{
+  justify-content: space-around;
+  .entry-card-wrap{
+    width: 33%;
+    padding: 7px;
+  }
+  .entry-card-snippet{
+    max-height: 4em;
+    overflow: hidden;
+  }
+}

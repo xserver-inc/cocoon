@@ -505,7 +505,7 @@ function get_additional_entry_card_classes($option = null){
   switch (get_entry_card_type()) {
     case 'vertical_card_2':
     case 'vertical_card_3':
-      $classes .= ' etc-vartical-card';
+      $classes .= ' ect-vertical-card';
       break;
   }
 

@@ -164,6 +164,9 @@
   ** エントリーカードの設定
   ************************************/
   /************************************
+  ** エントリーカードタイプ
+  ************************************/
+  /************************************
   ** 日付関係のスタイル
   ************************************/
   /************************************
@@ -610,6 +613,31 @@
     padding-right: 3px; }
   .demo .entry-card-meta .entry-card-categorys {
     display: none; }
+  .demo .ect-vertical-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .demo .ect-vertical-card .entry-card-wrap {
+      width: 49.5%;
+      display: inline-block; }
+      .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb {
+        width: 100%;
+        float: none; }
+        .demo .ect-vertical-card .entry-card-wrap .entry-card-thumb img {
+          width: 100%; }
+      .demo .ect-vertical-card .entry-card-wrap .entry-card-content {
+        margin: 0;
+        padding-bottom: 1em; }
+      .demo .ect-vertical-card .entry-card-wrap .post-date, .demo .ect-vertical-card .entry-card-wrap .post-update {
+        margin-right: 0; }
+  .demo .ect-vertical-card {
+    justify-content: space-around; }
+    .demo .ect-vertical-card .entry-card-wrap {
+      width: 33%;
+      padding: 7px; }
+    .demo .ect-vertical-card .entry-card-snippet {
+      max-height: 4em;
+      overflow: hidden; }
   .demo .date-tags {
     line-height: 0;
     margin-top: -8px;
