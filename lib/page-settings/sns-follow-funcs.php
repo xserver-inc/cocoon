@@ -14,10 +14,16 @@ endif;
 
 
 //SNSフォローメッセージ
+define('REP_AUTHOR', '#{author}');
 define('OP_SNS_FOLLOW_MESSAGE', 'sns_follow_message');
 if ( !function_exists( 'get_sns_follow_message' ) ):
 function get_sns_follow_message(){
-  return get_theme_option(OP_SNS_FOLLOW_MESSAGE, __( '%sをフォローする', THEME_NAME ));
+  return get_theme_option(OP_SNS_FOLLOW_MESSAGE, REP_AUTHOR.__( 'をフォローする', THEME_NAME ));
+}
+endif;
+if ( !function_exists( 'get_sns_follow_display_message' ) ):
+function get_sns_follow_display_message(){
+  return str_replace(REP_AUTHOR, get_the_author_meta('display_name', get_the_posts_author_id()), get_sns_follow_message());
 }
 endif;
 

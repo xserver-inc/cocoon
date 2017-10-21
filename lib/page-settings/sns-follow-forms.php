@@ -42,8 +42,9 @@
           </th>
           <td>
             <?php
+            //var_dump(get_sns_follow_message());
             genelate_textbox_tag(OP_SNS_FOLLOW_MESSAGE, get_sns_follow_message(), __( 'フォローメッセージの入力', THEME_NAME ));
-            genelate_tips_tag(__( '訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変換されます。', THEME_NAME ));
+            genelate_tips_tag(__( '訪問者にフォローを促すメッセージを入力してください。', THEME_NAME ).REP_AUTHOR.__( 'には、投稿者のそれぞれの表示名が入ります。', THEME_NAME ));
             ?>
           </td>
         </tr>

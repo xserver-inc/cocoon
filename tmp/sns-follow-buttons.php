@@ -4,7 +4,7 @@
 <aside class="sns-follow<?php echo get_additional_sns_follow_button_classes(); ?>">
 
   <?php if ( get_sns_follow_message() ): //フォローメッセージがあるか?>
-  <div class="sns-follow-message"><?php echo sprintf(get_sns_follow_message(), get_the_author_meta('display_name', get_the_posts_author_id())); //フォローメッセージの取得?></div>
+  <div class="sns-follow-message"><?php echo get_sns_follow_display_message(); //フォローメッセージの取得?></div>
   <?php endif; ?>
   <div class="sns-follow-buttons">
 
