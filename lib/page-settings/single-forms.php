@@ -102,9 +102,9 @@
           </th>
           <td>
             <?php
-            genelate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 30, 500);
+            genelate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 0, 500);
             genelate_tips_tag(__( '「エントリーカード」で、抜粋文を表示する場合の最大文字数を
-              設定します。（最小：30、最大：500）', THEME_NAME ));
+              設定します。（最小：0、最大：500）', THEME_NAME ));
             ?>
           </td>
         </tr>
