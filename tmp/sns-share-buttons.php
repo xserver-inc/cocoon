@@ -12,7 +12,7 @@
 <?php if ( (is_sns_share_buttons_visible() && $option == SS_BOTTOM) ||
            (is_sns_top_share_buttons_visible() && $option == SS_TOP) ):
 //var_dump($option) ?>
-<aside class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
+<div class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
   <?php if ( get_sns_share_message() && $option == SS_BOTTOM ): //シェアボタン用のメッセージを取得?>
     <div class="sns-share-message"><?php echo get_sns_share_message(); ?></div>
   <?php endif; ?>
@@ -50,5 +50,5 @@
 
   </div><!-- /.sns-share-buttons -->
 
-</aside><!-- /.sns-share -->
+</div><!-- /.sns-share -->
 <?php endif; ?>
