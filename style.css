@@ -611,16 +611,20 @@ img {
   margin-right: 0;
 }
 
-.ect-vertical-card {
+.ect-vertical-card-3 {
   justify-content: space-around;
 }
-.ect-vertical-card .entry-card-wrap {
+.ect-vertical-card-3 .entry-card-wrap {
   width: 33%;
   padding: 7px;
 }
-.ect-vertical-card .entry-card-snippet {
+.ect-vertical-card-3 .entry-card-snippet {
   max-height: 4em;
   overflow: hidden;
+}
+
+.entry-card-border .entry-card-wrap {
+  border: 1px solid #cccfd2;
 }
 
 /************************************

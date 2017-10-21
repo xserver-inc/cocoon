@@ -128,7 +128,7 @@
   }
 }
 
-.ect-vertical-card{
+.ect-vertical-card-3{
   justify-content: space-around;
   .entry-card-wrap{
     width: 33%;
@@ -137,5 +137,12 @@
   .entry-card-snippet{
     max-height: 4em;
     overflow: hidden;
+  }
+}
+
+//エントリーカードの枠線
+.entry-card-border{
+  .entry-card-wrap{
+    border: 1px solid $basic_border_color;
   }
 }

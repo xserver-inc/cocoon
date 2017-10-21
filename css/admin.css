@@ -630,14 +630,16 @@
         padding-bottom: 1em; }
       .demo .ect-vertical-card .entry-card-wrap .post-date, .demo .ect-vertical-card .entry-card-wrap .post-update {
         margin-right: 0; }
-  .demo .ect-vertical-card {
+  .demo .ect-vertical-card-3 {
     justify-content: space-around; }
-    .demo .ect-vertical-card .entry-card-wrap {
+    .demo .ect-vertical-card-3 .entry-card-wrap {
       width: 33%;
       padding: 7px; }
-    .demo .ect-vertical-card .entry-card-snippet {
+    .demo .ect-vertical-card-3 .entry-card-snippet {
       max-height: 4em;
       overflow: hidden; }
+  .demo .entry-card-border .entry-card-wrap {
+    border: 1px solid #cccfd2; }
   .demo .date-tags {
     line-height: 0;
     margin-top: -8px;
