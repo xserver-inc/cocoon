@@ -727,7 +727,7 @@ add_filter('the_content', 'add_toc_before_1st_h2');
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
 
-  $content     = get_the_content();
+  $content     = $the_content;
   $headers     = array();
   $html        = '';
   $toc_list    = '';
@@ -761,6 +761,10 @@ function add_toc_before_1st_h2($the_content){
   $prev_depth             = $top_level - 1;
   $max_depth              = (($depth == 0) ? 6 : intval($depth)) - $top_level + 1;
 
+
+  if($header_count > 0){
+    $toc_list .= '<ol' . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
+  }
   for($i=0;$i < $header_count;$i++){
     $depth = 0;
     switch(strtolower($headers[1][$i])){
@@ -771,6 +775,7 @@ function add_toc_before_1st_h2($the_content){
       case 'h5': $depth = 5 - $top_level + 1; break;
       case 'h6': $depth = 6 - $top_level + 1; break;
     }
+    //var_dump($depth);
     if($depth >= 1 && $depth <= $max_depth){
       if($current_depth == $depth){$toc_list .= '</li>';}
       while($current_depth > $depth){
@@ -779,8 +784,8 @@ function add_toc_before_1st_h2($the_content){
         $counters[$current_depth] = 0;
       }
       if($current_depth != $prev_depth){$toc_list .= '</li>';}
-      if($current_depth <= $depth){
-        $toc_list .= '<ol' . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
+      if($current_depth < $depth){
+        $toc_list .= '<ol>';
         $current_depth++;
       }
       $counters[$current_depth - 1] ++;
