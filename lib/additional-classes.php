@@ -76,9 +76,18 @@ function body_class_additional($classes) {
     $classes[] = 'no-sidebar';
   }
 
-  //サイドバー追従領域にウィジェットが入っていない場合
-  if (!is_scrollable_sidebar_enable()) {
+  //サイドバー追従領域のウィジェット状態
+  if (is_scrollable_sidebar_enable()) {
+    $classes[] = 'scrollable-sidebar';
+  } else {
     $classes[] = 'no-scrollable-sidebar';
+  }
+
+  //メイン追従領域のウィジェット状態
+  if (is_scrollable_main_enable()) {
+    $classes[] = 'scrollable-main';
+  } else {
+    $classes[] = 'no-scrollable-main';
   }
 
   //サイドバーの位置

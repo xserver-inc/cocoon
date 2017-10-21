@@ -21,12 +21,20 @@
   }
 }
 
+.main{
+  .js-clingify-wrapper {
+    width: $main_inner_width;
+    z-index: 9999;
+  }
+}
+
 .js-clingify-locked {
   left: 0;
   position: fixed;
   top: 0;
 }
 
+.main,
 .sidebar{
   .js-clingify-locked {
     left: auto;

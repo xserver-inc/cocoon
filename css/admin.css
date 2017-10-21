@@ -391,7 +391,6 @@
   .demo .main {
     width: 860px;
     margin-right: 20px;
-    height: 100%;
     padding: 20px 29px;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -399,6 +398,12 @@
   .demo .no-sidebar .content .main {
     margin: 0;
     width: 100%; }
+  .demo .no-scrollable-main .main {
+    height: 100%; }
+  .demo .main-scroll {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; }
   .demo figure {
     margin: 0; }
   .demo img {
@@ -1957,10 +1962,14 @@
   .demo .sidebar .js-clingify-wrapper {
     width: 336px;
     z-index: 9999; }
+  .demo .main .js-clingify-wrapper {
+    width: 800px;
+    z-index: 9999; }
   .demo .js-clingify-locked {
     left: 0;
     position: fixed;
     top: 0; }
+  .demo .main .js-clingify-locked,
   .demo .sidebar .js-clingify-locked {
     left: auto; }
   @media screen and (max-width: 1240px) {

@@ -342,6 +342,14 @@ function wp_enqueue_clingify(){
             ');
       wp_add_inline_script( 'clingify-js', $data, 'after' );
     }
+    if (is_scrollable_main_enable() && ($is_ie || $is_edge_version_under_16)) {
+      $data = minify_js('
+              (function($){
+               $(".main-scroll").clingify();
+              })(jQuery);
+            ');
+      wp_add_inline_script( 'clingify-js', $data, 'after' );
+    }
 
   }
 }
@@ -552,6 +560,13 @@ endif;
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){
   return is_active_sidebar('sidebar-scroll');
+}
+endif;
+
+//スクロール追従領域が有効化
+if ( !function_exists( 'is_scrollable_main_enable' ) ):
+function is_scrollable_main_enable(){
+  return is_active_sidebar('main-scroll');
 }
 endif;
 
