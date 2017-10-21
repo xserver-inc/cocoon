@@ -40,6 +40,33 @@
           </td>
         </tr>
 
+        <!-- 枠線の表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_ENTRY_CARD_BORDER_VISIBLE, __('枠線の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_ENTRY_CARD_BORDER_VISIBLE , is_entry_card_border_visible(), __( 'カードの枠線を表示する', THEME_NAME ));
+            genelate_tips_tag(__( '投稿エントリーカードの枠となる罫線を表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 最大抜粋文字数 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH, __('最大抜粋文字数', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_number_tag(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 30, 500);
+            genelate_tips_tag(__( '「エントリーカード」で、抜粋文を表示する場合の最大文字数を
+              設定します。（最小：30、最大：500）', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

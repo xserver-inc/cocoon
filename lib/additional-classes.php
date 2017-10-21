@@ -508,6 +508,9 @@ function get_additional_entry_card_classes($option = null){
       $classes .= ' ect-vertical-card';
       break;
   }
+  if (is_entry_card_border_visible()) {
+    $classes .= ' entry-card-border';
+  }
 
   if ($option) {
     $classes .= ' '.trim($option);
