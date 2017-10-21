@@ -2860,6 +2860,10 @@ input[type='submit'] {
   .header-container-in.hlt-top-menu {
     flex-direction: column;
   }
+
+  .ect-vertical-card-3 .entry-card-wrap {
+    width: 49%;
+  }
 }
 @media screen and (max-width: 480px) {
   h2, h3 {

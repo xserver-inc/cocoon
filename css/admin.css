@@ -2082,7 +2082,9 @@
       .demo .related-mini-card .related-entry-card-content {
         margin-left: 32%; }
       .demo .header-container-in.hlt-top-menu {
-        flex-direction: column; } }
+        flex-direction: column; }
+      .demo .ect-vertical-card-3 .entry-card-wrap {
+        width: 49%; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }
