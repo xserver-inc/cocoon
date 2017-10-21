@@ -87,7 +87,7 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   //テーマ内で使用するJavaScript関数をまとめて定義する外部ファイルを呼び出す（javascript.js）
   ///////////////////////////////////////////
-  wp_enqueue_script( THEME_NAME.'-js', get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( THEME_JS, get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
 
   ///////////////////////////////////
   //はてブシェアボタン用のスクリプト呼び出し

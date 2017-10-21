@@ -4,6 +4,8 @@
 define('THEME_NAME', 'cocoon');
 //テーマ名（最初の一文字だけ大文字）
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
+
+define('THEME_JS', THEME_NAME.'-js');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
 //トップレベルオリジナル設定名
