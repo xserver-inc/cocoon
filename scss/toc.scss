@@ -1,0 +1,69 @@
+/************************************
+** 目次
+************************************/
+.toc{
+  border: 1px solid $basic_border_color;
+  font-size: 0.9em;
+  line-height: 1.5;
+  padding: 8px;
+
+  ul, ol{
+    padding-left: 20px;
+    list-style: none;
+    li:before{
+      margin-right: 6px;
+    }
+  }
+
+  ol{
+    /************************************
+    ** h2-h6の見出し目次に連番を振る
+    ************************************/
+    >li{
+      counter-increment: counter-h2;
+      counter-reset: counter-h3;
+    }
+
+    >li:before{
+      content: counter(counter-h2);
+    }
+
+    >li > ol > li{
+      counter-increment: counter-h3;
+      counter-reset: counter-h4;
+    }
+
+    >li > ol > li:before{
+      content: counter(counter-h2)"."counter(counter-h3);
+    }
+
+    >li > ol > li > ol > li{
+      counter-increment: counter-h4;
+      counter-reset: counter-h5;
+    }
+
+    >li > ol > li > ol > li:before{
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4);
+    }
+
+    >li > ol > li > ol > li > ol > li{
+      counter-increment: counter-h5;
+      counter-reset: counter-h6;
+    }
+
+    >li > ol > li > ol > li > ol > li:before{
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5);
+    }
+
+    >li > ol > li > ol > li > ol > li > ol > li{
+      counter-increment: counter-h6;
+    }
+
+    >li > ol > li > ol > li > ol > li > ol > li:before{
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)"."counter(counter-h6);
+    }
+
+  }
+
+
+}

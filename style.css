@@ -1053,6 +1053,62 @@ blockquote::after {
 }
 
 /************************************
+** 目次
+************************************/
+.toc {
+  border: 1px solid #cccfd2;
+  font-size: 0.9em;
+  line-height: 1.5;
+  padding: 8px;
+}
+.toc ul, .toc ol {
+  padding-left: 20px;
+  list-style: none;
+}
+.toc ul li:before, .toc ol li:before {
+  margin-right: 6px;
+}
+.toc ol {
+  /************************************
+  ** h2-h6の見出し目次に連番を振る
+  ************************************/
+}
+.toc ol > li {
+  counter-increment: counter-h2;
+  counter-reset: counter-h3;
+}
+.toc ol > li:before {
+  content: counter(counter-h2);
+}
+.toc ol > li > ol > li {
+  counter-increment: counter-h3;
+  counter-reset: counter-h4;
+}
+.toc ol > li > ol > li:before {
+  content: counter(counter-h2) "." counter(counter-h3);
+}
+.toc ol > li > ol > li > ol > li {
+  counter-increment: counter-h4;
+  counter-reset: counter-h5;
+}
+.toc ol > li > ol > li > ol > li:before {
+  content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4);
+}
+.toc ol > li > ol > li > ol > li > ol > li {
+  counter-increment: counter-h5;
+  counter-reset: counter-h6;
+}
+.toc ol > li > ol > li > ol > li > ol > li:before {
+  content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5);
+}
+.toc ol > li > ol > li > ol > li > ol > li > ol > li {
+  counter-increment: counter-h6;
+}
+.toc ol > li > ol > li > ol > li > ol > li > ol > li:before {
+  content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5) "." counter(counter-h6);
+}
+
+/************************************
 ** コメント
 ************************************/
 .commets-list {

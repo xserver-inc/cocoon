@@ -47,6 +47,7 @@ table td,
 .list.entry-card-border .entry-card-wrap,
 .related-entries.related-entry-border .related-entry-card-wrap,
 .pager-post-navi.post-navi-border a.a-wrap,
+.entry-content .toc,
 .a-wrap .blogcard,
 input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
