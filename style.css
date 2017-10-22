@@ -429,7 +429,7 @@ img {
 .navi-in > ul li:hover > ul {
   display: block;
 }
-.navi-in > ul > .menu-item-has-description > a > .caption-wrap {
+.navi-in > ul > .menu-item-has-description a > .caption-wrap {
   line-height: 21.42857px;
   display: flex;
   flex-wrap: wrap;
@@ -438,11 +438,22 @@ img {
   align-content: center;
   height: 60px;
 }
-.navi-in > ul > .menu-item-has-description > a > .caption-wrap div {
+.navi-in > ul > .menu-item-has-description a > .caption-wrap div {
   width: 100%;
 }
 .navi-in > ul > .menu-item-has-description .item-description {
   font-size: 0.8em;
+}
+.navi-in > ul > .menu-item-has-children {
+  position: relative;
+}
+.navi-in > ul > .menu-item-has-children > a::after {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  position: absolute;
+  right: 3px;
+  top: 0;
 }
 .navi-in > ul .sub-menu {
   display: none;

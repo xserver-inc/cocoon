@@ -125,9 +125,9 @@ class menu_description_walker extends Walker_Nav_Menu {
     $append = '</div>';
     $description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_attr( $item->description ).'</div>' : '';
 
-    if($depth != 0) {
-      $description = $append = $prepend = "";
-    }
+    // if($depth != 0) {
+    //   $description = $append = $prepend = "";
+    // }
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';

@@ -73,6 +73,10 @@
       display: none;
     }
   }
+
+  &.header{
+    overflow: visible;
+  }
 }
 
 .demo #related-entries h2{

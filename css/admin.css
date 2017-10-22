@@ -508,7 +508,7 @@
       line-height: 60px; }
       .demo .navi-in > ul li:hover > ul {
         display: block; }
-    .demo .navi-in > ul > .menu-item-has-description > a > .caption-wrap {
+    .demo .navi-in > ul > .menu-item-has-description a > .caption-wrap {
       line-height: 21.42857px;
       display: flex;
       flex-wrap: wrap;
@@ -516,10 +516,19 @@
       align-items: center;
       align-content: center;
       height: 60px; }
-      .demo .navi-in > ul > .menu-item-has-description > a > .caption-wrap div {
+      .demo .navi-in > ul > .menu-item-has-description a > .caption-wrap div {
         width: 100%; }
     .demo .navi-in > ul > .menu-item-has-description .item-description {
       font-size: 0.8em; }
+    .demo .navi-in > ul > .menu-item-has-children {
+      position: relative; }
+      .demo .navi-in > ul > .menu-item-has-children > a::after {
+        font-family: FontAwesome;
+        content: "";
+        padding-right: 3px;
+        position: absolute;
+        right: 3px;
+        top: 0; }
     .demo .navi-in > ul .sub-menu {
       display: none;
       position: absolute;
@@ -2275,6 +2284,8 @@
   .demo.toc .entry-header,
   .demo.toc .entry-footer {
     display: none; }
+  .demo.header {
+    overflow: visible; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;
