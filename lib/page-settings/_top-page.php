@@ -113,10 +113,6 @@ endif;
     <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="to-top"><?php _e( 'トップに戻る', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( '関連記事', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( 'レイアウト', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( '目次', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( 'エントリーカード', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 

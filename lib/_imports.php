@@ -1,6 +1,7 @@
 <?php //ファイル読み込み用
 
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
+require_once 'language.php';   //マルチ言語設定
 require_once 'settings.php';   //Wordpressの設定
 require_once 'utils.php';      //ユーティリティー関数
 require_once 'html-forms.php'; //HTMLフォーム生成関数
