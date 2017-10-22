@@ -35,6 +35,52 @@
           </td>
         </tr>
 
+        <!-- 目次タイトル -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_TOC_TITLE, __('目次タイトル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_TOC_TITLE, get_toc_title(), __( '目次', THEME_NAME ));
+            genelate_tips_tag(__( '目次の上にラベル表示されるタイトルを入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 目次表示の深さ -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_TOC_DEPTH, __('目次表示の深さ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              '2' => __( 'H2見出しまで', THEME_NAME ),
+              '3' => __( 'H3見出しまで', THEME_NAME ),
+              '4' => __( 'H4見出しまで', THEME_NAME ),
+              '5' => __( 'H5見出しまで', THEME_NAME ),
+              '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
+            );
+            genelate_selectbox_tag(OP_TOC_DEPTH, $options, get_toc_depth());
+            genelate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 目次ナンバーの表示 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_TOC_NUMBER_VISIBLE, __('目次ナンバーの表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_TOC_NUMBER_VISIBLE , is_toc_number_visible(), __( '目次ナンバーを表示する', THEME_NAME ));
+            genelate_tips_tag(__( '目次項目手前の数字を表示するかを設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

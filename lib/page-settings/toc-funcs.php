@@ -4,7 +4,7 @@
 define('OP_TOC_VISIBLE', 'toc_visible');
 if ( !function_exists( 'is_toc_visible' ) ):
 function is_toc_visible(){
-  return get_theme_option(OP_TOC_VISIBLE);
+  return get_theme_option(OP_TOC_VISIBLE, 1);
 }
 endif;
 
@@ -20,7 +20,7 @@ endif;
 define('OP_TOC_DEPTH', 'toc_depth');
 if ( !function_exists( 'get_toc_depth' ) ):
 function get_toc_depth(){
-  return get_theme_option(OP_TOC_DEPTH, 2);
+  return get_theme_option(OP_TOC_DEPTH, 0);
 }
 endif;
 
