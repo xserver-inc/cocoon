@@ -95,7 +95,7 @@ function get_h2_included_in_body( $the_content ){
 endif;
 
 //最初のH2の手前に広告を挿入（最初のH2を置換）
-add_filter('the_content', 'add_ads_before_1st_h2');
+add_filter('the_content', 'add_ads_before_1st_h2', 10);
 if ( !function_exists( 'add_ads_before_1st_h2' ) ):
 function add_ads_before_1st_h2($the_content) {
   // if ( is_amp() ) {

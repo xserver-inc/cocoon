@@ -1060,6 +1060,7 @@ blockquote::after {
   font-size: 0.9em;
   line-height: 1.5;
   padding: 8px;
+  margin-bottom: 1em;
 }
 .toc ul, .toc ol {
   padding-left: 20px;

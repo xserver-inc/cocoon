@@ -226,7 +226,13 @@ endif;
 
 //最初のH2タグの前に目次を挿入する
 if (is_toc_visible()) {
-  add_filter('the_content', 'add_toc_before_1st_h2');
+  //優先順位の設定
+  if (is_toc_before_ads()) {
+    $priority = 9;
+  } else {
+    $priority = 10;
+  }
+  add_filter('the_content', 'add_toc_before_1st_h2', $priority);
 }
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){

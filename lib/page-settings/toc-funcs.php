@@ -36,3 +36,11 @@ function is_toc_number_visible(){
   return get_toc_number_type() != 'none';
 }
 endif;
+
+//目次を広告の手前に表示
+define('OP_TOC_BEFORE_ADS', 'toc_before_ads');
+if ( !function_exists( 'is_toc_before_ads' ) ):
+function is_toc_before_ads(){
+  return get_theme_option(OP_TOC_BEFORE_ADS);
+}
+endif;

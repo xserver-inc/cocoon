@@ -919,7 +919,8 @@
     border: 1px solid #cccfd2;
     font-size: 0.9em;
     line-height: 1.5;
-    padding: 8px; }
+    padding: 8px;
+    margin-bottom: 1em; }
     .demo .toc ul, .demo .toc ol {
       padding-left: 20px; }
     .demo .toc ul {

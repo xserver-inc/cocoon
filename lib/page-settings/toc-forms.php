@@ -86,6 +86,19 @@
           </td>
         </tr>
 
+        <!-- 目次の表示順 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_TOC_BEFORE_ADS, __('目次の表示順', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_TOC_BEFORE_ADS , is_toc_before_ads(), __( '広告の手前に目次を表示する', THEME_NAME ));
+            genelate_tips_tag(__( '広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されているとき', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>
