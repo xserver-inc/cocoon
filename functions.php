@@ -344,3 +344,15 @@ function add_toc_before_1st_h2($the_content){
   return $the_content;
 }
 endif;
+
+//投稿を管理画面のカテゴリリストの階層を保つ
+add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
+if ( !function_exists( 'solecolor_wp_terms_checklist_args' ) ):
+function solecolor_wp_terms_checklist_args( $args, $post_id ){
+ if ( $args['checked_ontop'] !== false ){
+    $args['checked_ontop'] = false;
+ }
+ return $args;
+}
+endif;
+

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-10-11 17:50+0900\n"
-"PO-Revision-Date: 2017-10-11 18:00+0900\n"
+"POT-Creation-Date: 2017-10-22 20:46+0900\n"
+"PO-Revision-Date: 2017-10-22 22:02+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,23 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: comments.php:5
-msgid "コメント"
-msgstr "Comments"
-
-#: comments.php:24
-msgid "コメントをどうぞ"
-msgstr "Leave a Reply"
-
-#: comments.php:25
-msgid "コメントを送信"
-msgstr "Post Comment"
-
-#: index.php:41
-msgid "投稿が見つかりませんでした。"
-msgstr "Posts could not be found"
-
-#: lib/_defins.php:10
+#: lib/_defins.php:12
 msgid " 設定"
 msgstr "Settings"
 
@@ -83,28 +67,27 @@ msgstr "Edit themes"
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:223
+#: lib/admin.php:225
 msgid "公開"
 msgstr "Publish"
 
-#: lib/admin.php:224
+#: lib/admin.php:226
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure to publish the page?"
 
-#: lib/admin.php:331
+#: lib/admin.php:333
 msgid "カテゴリー検索"
 msgstr "Category Search"
 
-#: lib/admin.php:390 lib/admin.php:403
-#, fuzzy
+#: lib/admin.php:392 lib/admin.php:405
 msgid "Excerpt"
 msgstr "Excerpt"
 
-#: lib/admin.php:463
+#: lib/admin.php:465
 msgid "Description"
 msgstr "Description"
 
-#: lib/admin.php:470
+#: lib/admin.php:472
 #, fuzzy
 msgid ""
 "The description is not prominent by default; however, some themes may show "
@@ -176,7 +159,7 @@ msgstr ""
 "as a snippet for blog cards. If it is not filled in, \"Excerpt\" is used as "
 "the Meta Description."
 
-#: lib/custom-fields/seo-field.php:94 lib/original-pages/title-forms.php:62
+#: lib/custom-fields/seo-field.php:94 lib/page-settings/title-forms.php:62
 msgid "メタキーワード"
 msgstr "Meta Keywords"
 
@@ -217,9 +200,8 @@ msgid "詳細設定"
 msgstr "Advanced"
 
 #: lib/html-forms.php:202 lib/html-forms.php:231
-#, fuzzy
 msgid "フォーマット："
-msgstr "Index: Year format"
+msgstr "Format: "
 
 #: lib/html-forms.php:215
 #, fuzzy
@@ -227,9 +209,8 @@ msgid "全てのH2見出し手前に広告を挿入"
 msgstr "Insert advertisement before all headings H2"
 
 #: lib/html-forms.php:253
-#, fuzzy
 msgid "選択"
-msgstr "SELECT"
+msgstr "Select"
 
 #: lib/html-forms.php:254
 msgid "クリア"
@@ -241,204 +222,283 @@ msgid "大きな画像は縮小して表示されます。"
 msgstr "Large images are displayed in reduced size."
 
 #: lib/html-forms.php:282
-#, fuzzy
 msgid "画像を選択してください"
-msgstr "Select Images"
+msgstr "Select Image"
 
 #: lib/html-forms.php:290
-#, fuzzy
 msgid "画像の選択"
-msgstr "Select Images"
+msgstr "Select Image"
 
-#: lib/original-menu.php:14
-msgid "このページにアクセスする管理者権限がありません。"
-msgstr "You do not have administrator permissions to access this page."
+#: lib/original-menu.php:12
+msgid "吹き出し"
+msgstr "Speech balloon"
 
-#: lib/original-pages.php:50
-msgid "設定は保存されました。"
-msgstr "Settings have been saved."
-
-#: lib/original-pages.php:69
-msgid "全体"
-msgstr "All"
-
-#: lib/original-pages.php:70
-msgid "ヘッダー"
-msgstr "Header"
-
-#: lib/original-pages.php:71
+#: lib/original-menu.php:15
 #, fuzzy
-msgid "グローバルナビ"
-msgstr "Global navigation color"
+#| msgid "テキスト"
+msgid "使いまわしテキスト"
+msgstr "Text data"
 
-#: lib/original-pages.php:72
-msgid "広告"
-msgstr "Ads"
+#: lib/original-menu.php:18
+msgid "アクセス分析"
+msgstr "Access analysis"
 
-#: lib/original-pages.php:73 lib/widgets/mobile-text.php:53
-#: lib/widgets/pc-text.php:54 lib/widgets/recent-comments.php:124
-msgid "タイトル"
-msgstr "Title"
+#: lib/original-menu.php:21
+msgid "ソーシャルカウント"
+msgstr "Social count"
 
-#: lib/original-pages.php:74
-msgid "SEO"
-msgstr "SEO"
-
-#: lib/original-pages.php:75
-msgid "アクセス解析"
-msgstr "Analysis"
-
-#: lib/original-pages.php:76
-msgid "SNSシェア"
-msgstr "SNS Share Buttons"
-
-#: lib/original-pages.php:77
-msgid "SNSフォロー"
-msgstr "SNS Follow Buttons"
-
-#: lib/original-pages.php:78
-msgid "コード"
-msgstr "Source Code"
-
-#: lib/original-pages.php:79
-msgid "画像"
-msgstr "Images"
-
-#: lib/original-pages.php:80
-msgid "OGP"
-msgstr "OGP"
-
-#: lib/original-pages.php:81
+#: lib/original-menu.php:24
 #, fuzzy
-msgid "ブログカード"
-msgstr "Blog card enable"
+#| msgid "ランキング順位の表示"
+msgid "ランキング作成"
+msgstr "Creating a ranking"
 
-#: lib/original-pages.php:82
-#, fuzzy
-#| msgid "フッター左"
-msgid "フッター"
-msgstr "Footer Left"
+#: lib/original-menu.php:27
+msgid "CTA"
+msgstr "CTA"
 
-#: lib/original-pages.php:83
-msgid "管理者画面"
-msgstr "Admin screen"
-
-#: lib/original-pages.php:84
-msgid "AMP"
-msgstr "AMP"
-
-#: lib/original-pages.php:85
+#: lib/original-menu.php:30 lib/page-settings/_top-page.php:108
 #, fuzzy
 msgid "高速化"
 msgstr "Get Fast"
 
-#: lib/original-pages.php:86
+#: lib/original-menu.php:33 lib/page-backup/_top-page.php:33
+#: lib/page-backup/backup-forms.php:16
+msgid "バックアップ"
+msgstr "Backup"
+
+#: lib/original-menu.php:44 lib/original-menu.php:56
+msgid "このページにアクセスする管理者権限がありません。"
+msgstr "You do not have administrator permissions to access this page."
+
+#: lib/page-backup/_top-page.php:21
+msgid "設定をレストアしました。"
+msgstr "Settings were restored."
+
+#: lib/page-backup/backup-forms.php:5
+msgid "バックアップ・レストア"
+msgstr "Backup and restore"
+
+#: lib/page-backup/backup-forms.php:8
+#, fuzzy
+msgid "設定情報のバックアップやレストアを行います。"
+msgstr "Configuration backup and restore."
+
+#: lib/page-backup/backup-forms.php:19
+#, fuzzy
+msgid "バックアップファイルの取得"
+msgstr "Retrieving backed up files"
+
+#: lib/page-backup/backup-forms.php:26
+msgid "レストア"
+msgstr "Restoration"
+
+#: lib/page-backup/backup-forms.php:31
+msgid "このファイルをアップロード: "
+msgstr "Upload this file to:"
+
+#: lib/page-backup/backup-forms.php:33
+msgid "設定の復元"
+msgstr "Restore"
+
+#: lib/page-backup/backup-forms.php:36
+#, fuzzy
+msgid ""
+"参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してくださ"
+"い。"
+msgstr ""
+"Theme configuration file browse button and then press \"restore settings\" "
+"button."
+
+#: lib/page-settings/_top-page.php:65
+msgid "設定はリセットされました。"
+msgstr "Settings have been reset."
+
+#: lib/page-settings/_top-page.php:67
+msgid "設定は保存されました。"
+msgstr "Settings have been saved."
+
+#: lib/page-settings/_top-page.php:87
+msgid "全体"
+msgstr "All"
+
+#: lib/page-settings/_top-page.php:88
+msgid "ヘッダー"
+msgstr "Header"
+
+#: lib/page-settings/_top-page.php:89
+msgid "広告"
+msgstr "Ads"
+
+#: lib/page-settings/_top-page.php:90 lib/widgets/mobile-text.php:53
+#: lib/widgets/pc-text.php:54 lib/widgets/recent-comments.php:124
+msgid "タイトル"
+msgstr "Title"
+
+#: lib/page-settings/_top-page.php:91
+msgid "SEO"
+msgstr "SEO"
+
+#: lib/page-settings/_top-page.php:92
+msgid "アクセス解析"
+msgstr "Analysis"
+
+#: lib/page-settings/_top-page.php:93
+msgid "インデックス"
+msgstr "Index"
+
+#: lib/page-settings/_top-page.php:94
+msgid "投稿"
+msgstr "Posts"
+
+#: lib/page-settings/_top-page.php:95
+msgid "固定ページ"
+msgstr "Pages"
+
+#: lib/page-settings/_top-page.php:96 lib/page-settings/toc-forms.php:46
+#: lib/page-settings/toc-funcs.php:15
+msgid "目次"
+msgstr "Contents"
+
+#: lib/page-settings/_top-page.php:97
+msgid "SNSシェア"
+msgstr "SNS Share Buttons"
+
+#: lib/page-settings/_top-page.php:98
+msgid "SNSフォロー"
+msgstr "SNS Follow Buttons"
+
+#: lib/page-settings/_top-page.php:99 lib/page-settings/comment-funcs.php:7
+msgid "コメント"
+msgstr "Comments"
+
+#: lib/page-settings/_top-page.php:100
+msgid "コード"
+msgstr "Source Code"
+
+#: lib/page-settings/_top-page.php:101
+msgid "画像"
+msgstr "Images"
+
+#: lib/page-settings/_top-page.php:102
+msgid "OGP"
+msgstr "OGP"
+
+#: lib/page-settings/_top-page.php:103
+msgid "ブログカード"
+msgstr "Blog card"
+
+#: lib/page-settings/_top-page.php:104
+msgid "フッター"
+msgstr "Footer"
+
+#: lib/page-settings/_top-page.php:105
+msgid "管理者画面"
+msgstr "Admin screen"
+
+#: lib/page-settings/_top-page.php:106 lib/page-settings/reset-forms.php:16
+msgid "リセット"
+msgstr "Reset"
+
+#: lib/page-settings/_top-page.php:107
+msgid "AMP"
+msgstr "AMP"
+
+#: lib/page-settings/_top-page.php:109
 msgid "スキン"
 msgstr "Skins"
 
-#: lib/original-pages.php:87
+#: lib/page-settings/_top-page.php:110
 msgid "コンテンツ"
 msgstr "Content"
 
-#: lib/original-pages.php:88 lib/widget-areas.php:9
+#: lib/page-settings/_top-page.php:111 lib/widget-areas.php:10
 msgid "サイドバー"
 msgstr "Sidebar"
 
-#: lib/original-pages.php:89
+#: lib/page-settings/_top-page.php:112
 #, fuzzy
 msgid "アピールエリア"
 msgstr "Appeal Area"
 
-#: lib/original-pages.php:90
+#: lib/page-settings/_top-page.php:113
 #, fuzzy
 msgid "カルーセル"
 msgstr "Carousel"
 
-#: lib/original-pages.php:91
+#: lib/page-settings/_top-page.php:114
 #, fuzzy
 msgid "トップに戻る"
 msgstr "Standard link color.(default:#aaaaaa)"
 
-#: lib/original-pages.php:92
+#: lib/page-settings/_top-page.php:115 lib/page-settings/comment-forms.php:33
+#: lib/page-settings/comment-forms.php:48 lib/page-settings/single-forms.php:45
 #, fuzzy
 msgid "見出し"
 msgstr "Change H2 heading above comments."
 
-#: lib/original-pages.php:93 tmp/related-entries.php:2
-msgid "関連記事"
-msgstr "Related Posts"
-
-#: lib/original-pages.php:94
-#, fuzzy
-msgid "レイアウト"
-msgstr "Layout (Whole / Index)"
-
-#: lib/original-pages.php:95
-msgid "目次"
-msgstr "Contents"
-
-#: lib/original-pages.php:96
-#, fuzzy
-msgid "エントリーカード"
-msgstr "Link the entire entry cards"
-
-#: lib/original-pages.php:97
+#: lib/page-settings/_top-page.php:116
 msgid "その他"
 msgstr "Others"
 
-#: lib/original-pages/admin-forms.php:5
+#: lib/page-settings/_top-page.php:119 lib/page-settings/_top-page.php:227
+#, fuzzy
+msgid "変更をまとめて保存"
+msgstr "Save all changes"
+
+#: lib/page-settings/admin-forms.php:5
 #, fuzzy
 msgid "管理画面設定"
 msgstr "Administration screen setting"
 
-#: lib/original-pages/admin-forms.php:8
+#: lib/page-settings/admin-forms.php:8
 #, fuzzy
 msgid "管理画面の機能設定です。"
 msgstr "It is a function setting of the management screen."
 
-#: lib/original-pages/admin-forms.php:16
+#: lib/page-settings/admin-forms.php:16
 #, fuzzy
 msgid "管理者向け設定"
 msgstr "Setting for administrator"
 
-#: lib/original-pages/admin-forms.php:22
+#: lib/page-settings/admin-forms.php:22
 msgid "アドミンバーに独自管理メニューを表示"
 msgstr "Admin bar menu display"
 
-#: lib/original-pages/admin-forms.php:23
+#: lib/page-settings/admin-forms.php:23
 #, fuzzy
 msgid "管理者バーに手軽に設定画面にアクセスできるメニューを表示します。"
 msgstr ""
 "Displays a menu that allows you to easily access the setting screen in the "
 "administrator bar."
 
-#: lib/original-pages/admin-forms.php:26
+#: lib/page-settings/admin-forms.php:26
 msgid "ページ公開前に確認アラートを出す"
 msgstr "Confirm before page publication"
 
-#: lib/original-pages/admin-forms.php:27
+#: lib/page-settings/admin-forms.php:27
 #, fuzzy
 msgid "記事を投稿する前に確認ダイアログを表示します。"
 msgstr "A confirmation dialog will be displayed before posting the article."
 
-#: lib/original-pages/admin-forms.php:30
+#: lib/page-settings/admin-forms.php:30
 #, fuzzy
 msgid "タイトル等の文字数カウンター表示"
 msgstr "Number of characters such as titles Counter display"
 
-#: lib/original-pages/admin-forms.php:31
+#: lib/page-settings/admin-forms.php:31
 #, fuzzy
 msgid "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。"
 msgstr ""
 "It displays the title, the SEO title, and the number of characters of the "
 "meta description."
 
-#: lib/original-pages/ads-forms.php:3
+#: lib/page-settings/ads-forms.php:3
 #, fuzzy
 msgid "広告設定"
 msgstr "Advertisement settings"
 
-#: lib/original-pages/ads-forms.php:6
+#: lib/page-settings/ads-forms.php:6
 #, fuzzy
 msgid ""
 "広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。"
@@ -446,15 +506,15 @@ msgstr ""
 "It is setting concerning general advertisement. Adsense settings and widget "
 "settings are also included."
 
-#: lib/original-pages/ads-forms.php:14
+#: lib/page-settings/ads-forms.php:14
 msgid "広告の表示"
 msgstr "Ads display"
 
-#: lib/original-pages/ads-forms.php:18
+#: lib/page-settings/ads-forms.php:18
 msgid "全ての広告を表示"
 msgstr "To view all ads"
 
-#: lib/original-pages/ads-forms.php:19
+#: lib/page-settings/ads-forms.php:19
 #, fuzzy
 #| msgid "全ての広告の表示を切り替えます。"
 msgid "アドセンス設定、ウィジェット設定等、全ての広告の表示を切り替えます。"
@@ -462,24 +522,24 @@ msgstr ""
 "Adsense setting, widget setting etc. Switch the display of all "
 "advertisements."
 
-#: lib/original-pages/ads-forms.php:27
+#: lib/page-settings/ads-forms.php:27
 msgid "広告ラベル"
 msgstr "Ad label text"
 
-#: lib/original-pages/ads-forms.php:31
+#: lib/page-settings/ads-forms.php:31
 msgid "「スポンサーリンク」か「広告」推奨"
 msgstr "\"Sponsored links\" or \"advertisements\" recommended"
 
-#: lib/original-pages/ads-forms.php:32
+#: lib/page-settings/ads-forms.php:32
 #, fuzzy
 msgid "広告上部ラベルに表示されるテキストの入力です。"
 msgstr "Enter text that appears on the top ad label."
 
-#: lib/original-pages/ads-forms.php:45
+#: lib/page-settings/ads-forms.php:45
 msgid "アドセンス設定"
 msgstr "AdSense settings"
 
-#: lib/original-pages/ads-forms.php:48
+#: lib/page-settings/ads-forms.php:48
 #, fuzzy
 msgid ""
 "アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっていま"
@@ -488,108 +548,108 @@ msgstr ""
 "It is setting related to adsense advertisement. It is supposed to be "
 "available for regular advertisement."
 
-#: lib/original-pages/ads-forms.php:56
+#: lib/page-settings/ads-forms.php:56
 msgid "アドセンス広告の表示"
 msgstr "AdSense display"
 
-#: lib/original-pages/ads-forms.php:60
+#: lib/page-settings/ads-forms.php:60
 msgid "全てのアドセンス広告を表示"
 msgstr "To view all AdSenses"
 
-#: lib/original-pages/ads-forms.php:61
+#: lib/page-settings/ads-forms.php:61
 #, fuzzy
 msgid "「アドセンス設定」で設定した、アドセンス広告全ての表示を切り替えます。"
 msgstr ""
 "Switch the display of all adsense advertisements set in \"Adsense setting\"."
 
-#: lib/original-pages/ads-forms.php:69
+#: lib/page-settings/ads-forms.php:69
 msgid "広告コード"
 msgstr "Ad code"
 
-#: lib/original-pages/ads-forms.php:73
+#: lib/page-settings/ads-forms.php:73
 msgid "アドセンスのレスポンシブコードを入力してください"
 msgstr "Enter your AdSense responsive code"
 
-#: lib/original-pages/ads-forms.php:74
+#: lib/page-settings/ads-forms.php:74
 msgid "アドセンスのレスポンシブ広告コードを入力してください。"
 msgstr "Please enter a responsive AdSense ad code."
 
-#: lib/original-pages/ads-forms.php:82
+#: lib/page-settings/ads-forms.php:82
 msgid "広告の表示位置"
 msgstr "Ads position"
 
-#: lib/original-pages/ads-forms.php:91
+#: lib/page-settings/ads-forms.php:91
 msgid "インデックスページの表示位置"
 msgstr "Index page position"
 
-#: lib/original-pages/ads-forms.php:94
+#: lib/page-settings/ads-forms.php:94
 msgid "トップ"
 msgstr "Top"
 
-#: lib/original-pages/ads-forms.php:101
+#: lib/page-settings/ads-forms.php:101
 msgid "ミドル"
 msgstr "Middle"
 
-#: lib/original-pages/ads-forms.php:105
+#: lib/page-settings/ads-forms.php:105
 msgid "ボトム"
 msgstr "Bottom"
 
-#: lib/original-pages/ads-forms.php:113
+#: lib/page-settings/ads-forms.php:113
 msgid "サイドバーの表示位置"
 msgstr "Sidebar position"
 
-#: lib/original-pages/ads-forms.php:116
+#: lib/page-settings/ads-forms.php:116
 msgid "サイドバートップ"
 msgstr "Sidebar top"
 
-#: lib/original-pages/ads-forms.php:121
+#: lib/page-settings/ads-forms.php:121
 msgid "サイドバーボトム"
 msgstr "Sidebar bottom"
 
-#: lib/original-pages/ads-forms.php:131
+#: lib/page-settings/ads-forms.php:131
 msgid "投稿・固定ページの表示位置"
 msgstr "Posts / pages position"
 
-#: lib/original-pages/ads-forms.php:134
+#: lib/page-settings/ads-forms.php:134
 msgid "タイトル上"
 msgstr "Above Title"
 
-#: lib/original-pages/ads-forms.php:139
+#: lib/page-settings/ads-forms.php:139
 msgid "タイトル下"
 msgstr "Below Title"
 
-#: lib/original-pages/ads-forms.php:144
+#: lib/page-settings/ads-forms.php:144
 msgid "本文上"
 msgstr "Content Top"
 
-#: lib/original-pages/ads-forms.php:149
+#: lib/page-settings/ads-forms.php:149
 msgid "本文中"
 msgstr "Content Middle"
 
-#: lib/original-pages/ads-forms.php:154
+#: lib/page-settings/ads-forms.php:154
 msgid "本文下"
 msgstr "Content Bottom"
 
-#: lib/original-pages/ads-forms.php:159
+#: lib/page-settings/ads-forms.php:159
 #, fuzzy
 msgid "SNSボタン上（本文下部分）"
 msgstr "SNS button on (bottom part of the text)"
 
-#: lib/original-pages/ads-forms.php:164
+#: lib/page-settings/ads-forms.php:164
 #, fuzzy
 msgid "SNSボタン下（本文下部分）"
 msgstr "SNS button below (bottom part of the text)"
 
-#: lib/original-pages/ads-forms.php:169
+#: lib/page-settings/ads-forms.php:169
 msgid "関連記事下（投稿ページのみ）"
 msgstr "Below Related Posts (post page only)"
 
-#: lib/original-pages/ads-forms.php:179
+#: lib/page-settings/ads-forms.php:179
 #, fuzzy
 msgid "それぞれのページで広告を表示する位置を設定します。"
 msgstr "Set the position where advertisement is displayed on each page."
 
-#: lib/original-pages/ads-forms.php:181
+#: lib/page-settings/ads-forms.php:181
 #, fuzzy
 msgid ""
 "設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
@@ -598,196 +658,185 @@ msgstr ""
 "Depending on the setting, it may be a violation of adsense policy, so please "
 "carefully check the operation after setting."
 
-#: lib/original-pages/ads-forms.php:194
+#: lib/page-settings/ads-forms.php:194
 msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
-#: lib/original-pages/ads-forms.php:197
+#: lib/page-settings/ads-forms.php:197
 #, fuzzy
 msgid "広告を表示したくないページやカテゴリの設定です。"
 msgstr ""
 "This is a setting for pages or categories you do not want your ads to show."
 
-#: lib/original-pages/ads-forms.php:204
+#: lib/page-settings/ads-forms.php:204
 msgid "広告除外記事ID"
 msgstr "Ad exclusion post IDs"
 
-#: lib/original-pages/ads-forms.php:208 lib/original-pages/ads-forms.php:221
+#: lib/page-settings/ads-forms.php:208 lib/page-settings/ads-forms.php:221
 msgid "例：111,222,3333"
 msgstr "Ex: 111222, 3333"
 
-#: lib/original-pages/ads-forms.php:209
+#: lib/page-settings/ads-forms.php:209
 #, fuzzy
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr ""
 "Hide ads Please specify the ID of posts / fixed pages with (comma) delimiter."
 
-#: lib/original-pages/ads-forms.php:217
+#: lib/page-settings/ads-forms.php:217
 msgid "広告除外カテゴリーID"
 msgstr "Ad exclusion category IDs"
 
-#: lib/original-pages/ads-forms.php:222
+#: lib/page-settings/ads-forms.php:222
 #, fuzzy
 msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
 msgstr ""
 "Please specify the IDs of categories to hide advertisements, separated by "
 "(comma)."
 
-#: lib/original-pages/ads-funcs.php:31
+#: lib/page-settings/ads-funcs.php:31
 msgid "スポンサーリンク"
 msgstr "Sponsored Links"
 
-#: lib/original-pages/all-forms.php:5
+#: lib/page-settings/all-forms.php:5
 #, fuzzy
 msgid "全体設定"
 msgstr "Global settings"
 
-#: lib/original-pages/all-forms.php:8
+#: lib/page-settings/all-forms.php:8
 #, fuzzy
 msgid "ページ全体の表示に関する設定です。"
 msgstr "Settings related to the display of the entire page."
 
-#: lib/original-pages/all-forms.php:15
+#: lib/page-settings/all-forms.php:15
 #, fuzzy
 msgid "キーカラー"
 msgstr "Key color"
 
-#: lib/original-pages/all-forms.php:20
+#: lib/page-settings/all-forms.php:20
 #, fuzzy
 msgid "サイト全体のポイントとなる部分に適用される背景色を指定します。"
 msgstr ""
 "Specify the background color to be applied to the part that becomes the "
 "point of the entire site."
 
-#: lib/original-pages/all-forms.php:23
+#: lib/page-settings/all-forms.php:23
 #, fuzzy
 msgid "サイト全体のポイントとなる部分に適用されるテキスト色を指定します。"
 msgstr ""
 "Specify the text color to be applied to the part that becomes the point of "
 "the whole site."
 
-#: lib/original-pages/all-forms.php:32
+#: lib/page-settings/all-forms.php:32
 msgid "サイトフォント"
 msgstr "Site font"
 
-#: lib/original-pages/all-forms.php:39
+#: lib/page-settings/all-forms.php:39
 #, fuzzy
 msgid "游ゴシック体, ヒラギノ角ゴ"
 msgstr "Yellow Gothic body, Hiragino horn"
 
-#: lib/original-pages/all-forms.php:40
+#: lib/page-settings/all-forms.php:40
 #, fuzzy
 msgid "メイリオ, ヒラギノ角ゴ"
 msgstr "Meiryo, Hiragino Sharpo"
 
-#: lib/original-pages/all-forms.php:41
+#: lib/page-settings/all-forms.php:41
 #, fuzzy
 msgid "ＭＳ Ｐゴシック, ヒラギノ角ゴ"
 msgstr "MS P Gothic, Hiragino Square Go"
 
-#: lib/original-pages/all-forms.php:42
+#: lib/page-settings/all-forms.php:42
 #, fuzzy
 msgid "源ノ角ゴシック（WEBフォント）"
 msgstr "Source no gothic (WEB font)"
 
-#: lib/original-pages/all-forms.php:43
-#, fuzzy
+#: lib/page-settings/all-forms.php:43
 msgid "Mplus 1p（WEBフォント）"
 msgstr "Mplus 1p (WEB font)"
 
-#: lib/original-pages/all-forms.php:44
+#: lib/page-settings/all-forms.php:44
 #, fuzzy
 msgid "Rounded Mplus 1c（WEBフォント）"
 msgstr "Rounded Mplus 1c (WEB font)"
 
-#: lib/original-pages/all-forms.php:45
+#: lib/page-settings/all-forms.php:45
 #, fuzzy
 msgid "はんなり明朝（WEBフォント）"
 msgstr "Hanpei Mincho (WEB font)"
 
-#: lib/original-pages/all-forms.php:46
+#: lib/page-settings/all-forms.php:46
 #, fuzzy
 msgid "こころ明朝（WEBフォント）"
 msgstr "Kokoro Mincho (WEB font)"
 
-#: lib/original-pages/all-forms.php:47
+#: lib/page-settings/all-forms.php:47
 #, fuzzy
 msgid "さわらびゴシック（WEBフォント）"
 msgstr "Sawari Gothic (WEB font)"
 
-#: lib/original-pages/all-forms.php:48
+#: lib/page-settings/all-forms.php:48
 #, fuzzy
 msgid "さわらび明朝（WEBフォント）"
 msgstr "Sawayama Mincho (WEB font)"
 
-#: lib/original-pages/all-forms.php:51
-#, fuzzy
+#: lib/page-settings/all-forms.php:51
 msgid "サイト全体適用されるフォントを選択します。"
 msgstr "Select the font to be applied to the entire site."
 
-#: lib/original-pages/all-forms.php:54
-#, fuzzy
+#: lib/page-settings/all-forms.php:54
 msgid "12px"
 msgstr "12 px"
 
-#: lib/original-pages/all-forms.php:55
-#, fuzzy
+#: lib/page-settings/all-forms.php:55
 msgid "13px"
-msgstr "13px"
+msgstr "13 px"
 
-#: lib/original-pages/all-forms.php:56
+#: lib/page-settings/all-forms.php:56
 msgid "14px"
 msgstr "14 px"
 
-#: lib/original-pages/all-forms.php:57
+#: lib/page-settings/all-forms.php:57
 msgid "15px"
 msgstr "15 px"
 
-#: lib/original-pages/all-forms.php:58
-#, fuzzy
+#: lib/page-settings/all-forms.php:58
 msgid "16px"
-msgstr "16px"
+msgstr "16 px"
 
-#: lib/original-pages/all-forms.php:59
+#: lib/page-settings/all-forms.php:59
 msgid "17px"
 msgstr "17 px"
 
-#: lib/original-pages/all-forms.php:60
+#: lib/page-settings/all-forms.php:60
 msgid "18px"
 msgstr "18 px"
 
-#: lib/original-pages/all-forms.php:61
+#: lib/page-settings/all-forms.php:61
 msgid "19px"
 msgstr "19 px"
 
-#: lib/original-pages/all-forms.php:62
-#, fuzzy
+#: lib/page-settings/all-forms.php:62
 msgid "20px"
-msgstr "20px"
+msgstr "20 px"
 
-#: lib/original-pages/all-forms.php:63
-#, fuzzy
+#: lib/page-settings/all-forms.php:63
 msgid "21px"
-msgstr "21px"
+msgstr "21 px"
 
-#: lib/original-pages/all-forms.php:64
-#, fuzzy
+#: lib/page-settings/all-forms.php:64
 msgid "22px"
-msgstr "22px"
+msgstr "22 px"
 
-#: lib/original-pages/all-forms.php:67
-#, fuzzy
+#: lib/page-settings/all-forms.php:67
 msgid "サイト全体のフォントサイズを変更します。"
 msgstr "Change the font size of the entire site."
 
-#: lib/original-pages/all-forms.php:76
-#, fuzzy
-#| msgid "プレビュー"
+#: lib/page-settings/all-forms.php:76
 msgid "フォントプレビュー"
 msgstr "Font preview"
 
-#: lib/original-pages/all-forms.php:82
+#: lib/page-settings/all-forms.php:82
 #, fuzzy
 msgid ""
 "吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗"
@@ -799,123 +848,107 @@ msgstr ""
 "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
 "consequat."
 
-#: lib/original-pages/all-forms.php:93
-#, fuzzy
+#: lib/page-settings/all-forms.php:93
 msgid "サイト背景色"
 msgstr "Site background color"
 
-#: lib/original-pages/all-forms.php:98
+#: lib/page-settings/all-forms.php:98
 #, fuzzy
 msgid "サイト全体の背景色を選択します。"
 msgstr "Select the background color of the entire site."
 
-#: lib/original-pages/all-forms.php:106
-#, fuzzy
+#: lib/page-settings/all-forms.php:106
 msgid "サイト背景画像"
 msgstr "Site background image"
 
-#: lib/original-pages/all-forms.php:111
+#: lib/page-settings/all-forms.php:111
 #, fuzzy
 msgid "サイト全体の背景画像を選択します。"
 msgstr "Select the background image of the whole site."
 
-#: lib/original-pages/all-forms.php:119
+#: lib/page-settings/all-forms.php:119
 #, fuzzy
 msgid "サイト幅の均一化"
 msgstr "Uniform site width"
 
-#: lib/original-pages/all-forms.php:123
+#: lib/page-settings/all-forms.php:123
 #, fuzzy
 msgid "サイト幅を揃える"
 msgstr "Match the site width"
 
-#: lib/original-pages/all-forms.php:124
+#: lib/page-settings/all-forms.php:124
 #, fuzzy
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr "Unify the width of the entire site with the content width."
 
-#: lib/original-pages/all-forms.php:133
+#: lib/page-settings/all-forms.php:133
 #, fuzzy
 msgid "サイトリンク色"
 msgstr "Site link color"
 
-#: lib/original-pages/all-forms.php:138
+#: lib/page-settings/all-forms.php:138
 #, fuzzy
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr "Select the link color to be used at the site."
 
-#: lib/original-pages/all-forms.php:146
+#: lib/page-settings/all-forms.php:146
 #, fuzzy
 #| msgid "サイドバーの表示位置"
 msgid "サイドバーの位置"
 msgstr "Sidebar Position"
 
-#: lib/original-pages/all-forms.php:151
-#, fuzzy
-#| msgid "サイドバー"
+#: lib/page-settings/all-forms.php:151
 msgid "サイドバー右"
 msgstr "Sidebar Right"
 
-#: lib/original-pages/all-forms.php:152
-#, fuzzy
-#| msgid "サイドバー"
+#: lib/page-settings/all-forms.php:152
 msgid "サイドバー左"
-msgstr "Left sidebar"
+msgstr "Sidebar Left"
 
-#: lib/original-pages/all-forms.php:156
+#: lib/page-settings/all-forms.php:156
 #, fuzzy
 #| msgid "サイドバーの表示位置"
 msgid "サイドバーの表示位置の設定です。"
 msgstr "It is setting of the side bar display position."
 
-#: lib/original-pages/all-forms.php:164
-#, fuzzy
-#| msgid "サイドバーの表示位置"
+#: lib/page-settings/all-forms.php:164
 msgid "サイドバーの表示状態"
 msgstr "Display status of sidebar"
 
-#: lib/original-pages/all-forms.php:169
+#: lib/page-settings/all-forms.php:169
 msgid "全てのページで表示"
 msgstr "Display on all pages"
 
-#: lib/original-pages/all-forms.php:170
-#, fuzzy
+#: lib/page-settings/all-forms.php:170
 msgid "全てのページで非表示"
 msgstr "Hidden on all pages"
 
-#: lib/original-pages/all-forms.php:171
-#, fuzzy
+#: lib/page-settings/all-forms.php:171
 msgid "フロントページで非表示（固定ページがトップページの場合）"
 msgstr "Hide on front page (when fixed page is top page)"
 
-#: lib/original-pages/all-forms.php:172
-#, fuzzy
-#| msgid "インデックスページの表示位置"
+#: lib/page-settings/all-forms.php:172
 msgid "インデックスページで非表示"
 msgstr "Hidden on index page"
 
-#: lib/original-pages/all-forms.php:173
-#, fuzzy
-#| msgid "固定ページ一覧"
+#: lib/page-settings/all-forms.php:173
 msgid "固定ページで非表示"
 msgstr "Hidden on fixed page"
 
-#: lib/original-pages/all-forms.php:174
-#, fuzzy
+#: lib/page-settings/all-forms.php:174
 msgid "投稿ページで非表示"
 msgstr "Hide on post page"
 
-#: lib/original-pages/all-forms.php:178
+#: lib/page-settings/all-forms.php:178
 #, fuzzy
 msgid "サイドバーを表示するページの設定です。"
 msgstr "This is the page setting of the sidebar."
 
-#: lib/original-pages/all-forms.php:187
-#, fuzzy
+#: lib/page-settings/all-forms.php:187
 msgid "サイトアイコン"
-msgstr "SITE ICON"
+msgstr "Site Icon"
 
-#: lib/original-pages/all-forms.php:193
+#: lib/page-settings/all-forms.php:193
 #, fuzzy
 msgid ""
 "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイ"
@@ -924,110 +957,103 @@ msgstr ""
 "The site icon will be used as the site's app and browser icon. Icons are "
 "square, and both width and height must be 512 pixels or more."
 
-#: lib/original-pages/analytics-forms.php:5
-#, fuzzy
-#| msgid "Google Search Console設定"
+#: lib/page-settings/analytics-forms.php:5
 msgid "Google Tag Manager設定"
 msgstr "Google Tag Manager settings"
 
-#: lib/original-pages/analytics-forms.php:8
+#: lib/page-settings/analytics-forms.php:8
 #, fuzzy
 msgid "Google Tag Managerの解析タグの設定です。"
 msgstr "It is setting of analysis tag of Google Tag Manager."
 
-#: lib/original-pages/analytics-forms.php:16
-#, fuzzy
-#| msgid "Google Search Console ID"
+#: lib/page-settings/analytics-forms.php:16
 msgid "Google Tag Manager ID"
 msgstr "Google Tag Manager ID"
 
-#: lib/original-pages/analytics-forms.php:20
-#, fuzzy
+#: lib/page-settings/analytics-forms.php:20
 msgid "GTM-XXXXXXX"
 msgstr "GTM-XXXXXXX"
 
-#: lib/original-pages/analytics-forms.php:21
+#: lib/page-settings/analytics-forms.php:21
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "Google Tag ManagerのトラッキングIDを入力してください。"
 msgstr "Please enter the tracking ID of Google Tag Manager."
 
-#: lib/original-pages/analytics-forms.php:34
+#: lib/page-settings/analytics-forms.php:34
 msgid "Google Analytics設定"
 msgstr "Google Analytics Settings"
 
-#: lib/original-pages/analytics-forms.php:37
+#: lib/page-settings/analytics-forms.php:37
 #, fuzzy
 #| msgid "Google Analytics設定"
 msgid "Google Analyticsの解析タグの設定です。"
 msgstr "It is setting of analysis tag of Google Analytics."
 
-#: lib/original-pages/analytics-forms.php:45
+#: lib/page-settings/analytics-forms.php:45
 msgid "Google AnalyticsトラッキングID"
 msgstr "Google Analytics Tracking ID"
 
-#: lib/original-pages/analytics-forms.php:49
+#: lib/page-settings/analytics-forms.php:49
 msgid "UA-00000000-0"
 msgstr "UA-00000000-0"
 
-#: lib/original-pages/analytics-forms.php:50
+#: lib/page-settings/analytics-forms.php:50
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "Google AnalyticsのトラッキングIDを入力してください。"
 msgstr "Please enter your Google Analytics tracking ID."
 
-#: lib/original-pages/analytics-forms.php:64
+#: lib/page-settings/analytics-forms.php:64
 msgid "Google Search Console設定"
 msgstr "Google Search Console settings"
 
-#: lib/original-pages/analytics-forms.php:67
+#: lib/page-settings/analytics-forms.php:67
 #, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "Google Search Consoleのサイト認証タグの設定です。"
 msgstr "This is the site authentication tag setting in Google Search Console."
 
-#: lib/original-pages/analytics-forms.php:75
+#: lib/page-settings/analytics-forms.php:75
 msgid "Google Search Console ID"
 msgstr "Google Search Console ID"
 
-#: lib/original-pages/analytics-forms.php:79
+#: lib/page-settings/analytics-forms.php:79
 msgid "サイト認証IDのみ入力"
 msgstr "Enter only site authentication ID"
 
-#: lib/original-pages/analytics-forms.php:80
+#: lib/page-settings/analytics-forms.php:80
 #, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "Google Search Consoleのサイト認証IDを入力してください。"
 msgstr "Please enter the site authentication ID of Google Search Console."
 
-#: lib/original-pages/analytics-forms.php:94
+#: lib/page-settings/analytics-forms.php:94
 msgid "Ptengine設定"
 msgstr "Ptengine settings"
 
-#: lib/original-pages/analytics-forms.php:97
+#: lib/page-settings/analytics-forms.php:97
 #, fuzzy
 msgid "Ptengineの解析タグの設定です。"
 msgstr "It is setting of analysis tag of Ptengine."
 
-#: lib/original-pages/analytics-forms.php:105
+#: lib/page-settings/analytics-forms.php:105
 msgid "PtengineのトラッキングID"
 msgstr "Ptengine tracking ID"
 
-#: lib/original-pages/analytics-forms.php:109
+#: lib/page-settings/analytics-forms.php:109
 msgid "PtengineのトラッキングIDのみ入力"
 msgstr "Enter only tracking ID of Ptengine"
 
-#: lib/original-pages/analytics-forms.php:110
-#, fuzzy
-#| msgid "AdSenseのレスポンシブコードを入力してください"
+#: lib/page-settings/analytics-forms.php:110
 msgid "PtengineのトラッキングIDを入力してください。"
 msgstr "Please enter Ptengine's tracking ID."
 
-#: lib/original-pages/analytics-forms.php:124
+#: lib/page-settings/analytics-forms.php:124
 msgid "その他のアクセス解析設定"
 msgstr "Other analysis settings"
 
-#: lib/original-pages/analytics-forms.php:127
+#: lib/page-settings/analytics-forms.php:127
 #, fuzzy
 msgid ""
 "ヘッダーやフッターに、その他サービスのアクセス解析タグをそのまま貼り付けま"
@@ -1036,15 +1062,15 @@ msgstr ""
 "Paste the access analysis tag of other service as it is in the header or "
 "footer."
 
-#: lib/original-pages/analytics-forms.php:135
+#: lib/page-settings/analytics-forms.php:135
 msgid "アクセス解析タグ（ヘッダー用）"
 msgstr "Access analysis tag (for headers)"
 
-#: lib/original-pages/analytics-forms.php:139
+#: lib/page-settings/analytics-forms.php:139
 msgid "ヘッダー用のアクセス解析タグの入力"
 msgstr "Enter header codes for access analysis"
 
-#: lib/original-pages/analytics-forms.php:140
+#: lib/page-settings/analytics-forms.php:140
 #, fuzzy
 msgid ""
 "ヘッダーに挿入する必要のある、その他アクセス解析タグを入力してください。"
@@ -1052,15 +1078,15 @@ msgstr ""
 "Please enter other access analysis tags that need to be inserted in the "
 "header."
 
-#: lib/original-pages/analytics-forms.php:148
+#: lib/page-settings/analytics-forms.php:148
 msgid "アクセス解析タグ（フッター用）"
 msgstr "Access analysis tag (for the footer)"
 
-#: lib/original-pages/analytics-forms.php:152
+#: lib/page-settings/analytics-forms.php:152
 msgid "フッター用のアクセス解析タグの入力"
 msgstr "Enter footer codes for access analysis tag"
 
-#: lib/original-pages/analytics-forms.php:153
+#: lib/page-settings/analytics-forms.php:153
 #, fuzzy
 msgid ""
 "フッターに挿入する必要のある、その他アクセス解析タグを入力してください。"
@@ -1068,122 +1094,124 @@ msgstr ""
 "Please enter other access analysis tags that need to be inserted in the "
 "footer."
 
-#: lib/original-pages/blogcard-in-forms.php:5
+#: lib/page-settings/blogcard-in-forms.php:5
 #, fuzzy
 msgid "内部ブログカード設定"
 msgstr "Internal blog card settings"
 
-#: lib/original-pages/blogcard-in-forms.php:8
+#: lib/page-settings/blogcard-in-forms.php:8
 #, fuzzy
 msgid "URLやURLリンクをブログカード形式で表示するための設定です。"
 msgstr ""
 "This is a setting for displaying URLs and URL links in blog card format."
 
-#: lib/original-pages/blogcard-in-forms.php:15
-#: lib/original-pages/blogcard-out-forms.php:15
-#: lib/original-pages/code-forms.php:16 lib/original-pages/footer-forms.php:9
-#: lib/original-pages/header-forms.php:9 lib/original-pages/image-forms.php:15
-#: lib/original-pages/sns-follow-forms.php:14
-#: lib/original-pages/sns-share-forms-bottom.php:12
-#: lib/original-pages/sns-share-forms-top.php:12
-#: lib/original-pages/title-forms.php:15 lib/original-pages/title-forms.php:91
-#: lib/original-pages/title-forms.php:185
+#: lib/page-settings/blogcard-in-forms.php:15
+#: lib/page-settings/blogcard-out-forms.php:15
+#: lib/page-settings/code-forms.php:16 lib/page-settings/comment-forms.php:16
+#: lib/page-settings/footer-forms.php:9 lib/page-settings/header-forms.php:9
+#: lib/page-settings/image-forms.php:15 lib/page-settings/index-forms.php:15
+#: lib/page-settings/single-forms.php:15 lib/page-settings/single-forms.php:130
+#: lib/page-settings/sns-follow-forms.php:14
+#: lib/page-settings/sns-share-forms-bottom.php:12
+#: lib/page-settings/sns-share-forms-top.php:12
+#: lib/page-settings/title-forms.php:15 lib/page-settings/title-forms.php:91
+#: lib/page-settings/title-forms.php:185 lib/page-settings/toc-forms.php:15
 msgid "プレビュー"
 msgstr "Preview"
 
-#: lib/original-pages/blogcard-in-forms.php:28
-#: lib/original-pages/title-forms.php:117
+#: lib/page-settings/blogcard-in-forms.php:28
+#: lib/page-settings/title-forms.php:117
 #, fuzzy
 msgid "ランダムで投稿を取得しています。"
 msgstr "I get posts randomly."
 
-#: lib/original-pages/blogcard-in-forms.php:38
-#: lib/original-pages/blogcard-out-forms.php:36
+#: lib/page-settings/blogcard-in-forms.php:38
+#: lib/page-settings/blogcard-out-forms.php:36
 #, fuzzy
 msgid "ブログカード表示"
 msgstr "Blog card display"
 
-#: lib/original-pages/blogcard-in-forms.php:42
-#: lib/original-pages/blogcard-out-forms.php:40
+#: lib/page-settings/blogcard-in-forms.php:42
+#: lib/page-settings/blogcard-out-forms.php:40
 #, fuzzy
 msgid "ブログカード表示を有効にする"
 msgstr "Enable blog card display"
 
-#: lib/original-pages/blogcard-in-forms.php:43
+#: lib/page-settings/blogcard-in-forms.php:43
 #, fuzzy
 msgid "本文中のURLやURLリンクをブログカード表示します。"
 msgstr "We display blog card URLs and URL links in the text."
 
-#: lib/original-pages/blogcard-in-forms.php:52
-#: lib/original-pages/blogcard-out-forms.php:50
+#: lib/page-settings/blogcard-in-forms.php:52
+#: lib/page-settings/blogcard-out-forms.php:50
 #, fuzzy
 msgid "サムネイルスタイル"
 msgstr "Thumbnails Style"
 
-#: lib/original-pages/blogcard-in-forms.php:57
-#: lib/original-pages/blogcard-out-forms.php:55
+#: lib/page-settings/blogcard-in-forms.php:57
+#: lib/page-settings/blogcard-out-forms.php:55
 #, fuzzy
 msgid "左側"
 msgstr "Widget area displayed at the left of this site footer."
 
-#: lib/original-pages/blogcard-in-forms.php:58
-#: lib/original-pages/blogcard-out-forms.php:56
+#: lib/page-settings/blogcard-in-forms.php:58
+#: lib/page-settings/blogcard-out-forms.php:56
 #, fuzzy
 msgid "右側"
 msgstr "Right Side"
 
-#: lib/original-pages/blogcard-in-forms.php:61
-#: lib/original-pages/blogcard-out-forms.php:59
+#: lib/page-settings/blogcard-in-forms.php:61
+#: lib/page-settings/blogcard-out-forms.php:59
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "サムネイルの表示位置を選択してください。"
 msgstr "Please select the thumbnail display position."
 
-#: lib/original-pages/blogcard-in-forms.php:70
-#: lib/original-pages/blogcard-out-forms.php:68
+#: lib/page-settings/blogcard-in-forms.php:70
+#: lib/page-settings/blogcard-out-forms.php:68
 #, fuzzy
 msgid "リンクの開き方"
 msgstr "Open links in"
 
-#: lib/original-pages/blogcard-in-forms.php:74
-#: lib/original-pages/blogcard-out-forms.php:72
+#: lib/page-settings/blogcard-in-forms.php:74
+#: lib/page-settings/blogcard-out-forms.php:72
 msgid "新しいタブで開く"
 msgstr "Open in new tab"
 
-#: lib/original-pages/blogcard-in-forms.php:75
-#: lib/original-pages/blogcard-out-forms.php:73
+#: lib/page-settings/blogcard-in-forms.php:75
+#: lib/page-settings/blogcard-out-forms.php:73
 #, fuzzy
 msgid "ブログカードクリック時に新規タブを開きます。"
 msgstr "Open a new tab when a blog card is clicked."
 
-#: lib/original-pages/blogcard-out-forms.php:5
+#: lib/page-settings/blogcard-out-forms.php:5
 #, fuzzy
 msgid "外部ブログカード設定"
 msgstr "External blog card settings"
 
-#: lib/original-pages/blogcard-out-forms.php:8
+#: lib/page-settings/blogcard-out-forms.php:8
 #, fuzzy
 msgid "外部のURLやURLリンクをブログカード形式で表示するための設定です。"
 msgstr ""
 "This is a setting for displaying external URLs and URL links in blog card "
 "format."
 
-#: lib/original-pages/blogcard-out-forms.php:26
+#: lib/page-settings/blogcard-out-forms.php:26
 #, fuzzy
 msgid "外部リンクのブログカードです。"
 msgstr "It is an external link's blog card."
 
-#: lib/original-pages/blogcard-out-forms.php:41
+#: lib/page-settings/blogcard-out-forms.php:41
 #, fuzzy
 msgid "本文中にある外部サイトのURLやURLリンクをブログカード表示します。"
 msgstr "We display blog card URL or URL link of external site in text."
 
-#: lib/original-pages/blogcard-out-forms.php:82
+#: lib/page-settings/blogcard-out-forms.php:82
 #, fuzzy
 msgid "キャッシュの保存期間"
 msgstr "Cache retention period"
 
-#: lib/original-pages/blogcard-out-forms.php:87
+#: lib/page-settings/blogcard-out-forms.php:87
 #, fuzzy
 msgid ""
 "ブログカードキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べま"
@@ -1192,19 +1220,19 @@ msgstr ""
 "Sets the refresh interval of the blog card cache. You can choose the "
 "interval from 1 to 365 days."
 
-#: lib/original-pages/blogcard-out-forms.php:95
+#: lib/page-settings/blogcard-out-forms.php:95
 #, fuzzy
 msgid "キャッシュの更新"
 msgstr ""
 "When the external blog card page is viewed with \"Cache update mode\" "
 "enabled, the OGP cache is updated. (* Only for viewing by administrators)"
 
-#: lib/original-pages/blogcard-out-forms.php:99
+#: lib/page-settings/blogcard-out-forms.php:99
 #, fuzzy
 msgid "キャッシュ更新モードを有効にする"
 msgstr "Enable cache update mode"
 
-#: lib/original-pages/blogcard-out-forms.php:100
+#: lib/page-settings/blogcard-out-forms.php:100
 #, fuzzy
 msgid ""
 "キャッシュ更新モードを有効にした状態でページを開くと、ページ上の外部ブログ"
@@ -1213,12 +1241,12 @@ msgstr ""
 "If you open the page with the cache update mode enabled, you will get a new "
 "external blog card cache on the page."
 
-#: lib/original-pages/code-forms.php:5
+#: lib/page-settings/code-forms.php:5
 #, fuzzy
 msgid "ソースコード設定"
 msgstr "Source code setting"
 
-#: lib/original-pages/code-forms.php:8
+#: lib/page-settings/code-forms.php:8
 #, fuzzy
 msgid ""
 "ソースコードのハイライト表示の設定です。ハイライト表示には、<a href="
@@ -1228,26 +1256,26 @@ msgstr ""
 "It is setting of highlight display of source code. Highlight.js is used for "
 "<a href=\"https://highlightjs.org/\" target=\"_blank\">highlight</a> display."
 
-#: lib/original-pages/code-forms.php:37
+#: lib/page-settings/code-forms.php:37
 #, fuzzy
 msgid "ハイライト表示"
 msgstr "Highlighted"
 
-#: lib/original-pages/code-forms.php:41
+#: lib/page-settings/code-forms.php:41
 msgid "ソースコードをハイライト表示"
 msgstr "Highlight source code"
 
-#: lib/original-pages/code-forms.php:42
+#: lib/page-settings/code-forms.php:42
 #, fuzzy
 #| msgid "投稿本文上に表示されるウイジェット。設定しないと表示されません。"
 msgid "本文中に表示されているpreタグ中のソースコードをハイライト表示します。"
 msgstr "Highlight the source code in the pre tag displayed in the text."
 
-#: lib/original-pages/code-forms.php:50
+#: lib/page-settings/code-forms.php:50
 msgid "ハイライトスタイル"
 msgstr "Highlight style"
 
-#: lib/original-pages/code-forms.php:55
+#: lib/page-settings/code-forms.php:55
 msgid ""
 "ソースコードのハイライトテーマです。スタイルについては、<a href=\"https://"
 "highlightjs.org/static/demo/\" target=\"_blank\">highlight.js demo</a>を参照"
@@ -1256,17 +1284,17 @@ msgstr ""
 "Highlight theme of source codes. For styling , see <a href=\"https://"
 "highlightjs.org/static/demo/\" target=\"_blank\">highlight.js demo</a> ."
 
-#: lib/original-pages/code-forms.php:63
+#: lib/page-settings/code-forms.php:63
 #, fuzzy
 msgid "ハイライト表示するCSSセレクタ"
 msgstr "CSS selector to highlight display"
 
-#: lib/original-pages/code-forms.php:67
+#: lib/page-settings/code-forms.php:67
 #, fuzzy
 msgid ".entry-content pre"
 msgstr ".entry-content pre"
 
-#: lib/original-pages/code-forms.php:68
+#: lib/page-settings/code-forms.php:68
 msgid ""
 "ソースコードをハイライトするCSSセレクターを細かく設定できます。よくわからない"
 "場合は変更しないでください。"
@@ -1274,78 +1302,207 @@ msgstr ""
 "Set the CSS selector to be highlighted. Please do not change if you do not "
 "understand well."
 
-#: lib/original-pages/footer-forms.php:5
+#: lib/page-settings/comment-forms.php:6 lib/page-settings/page-forms.php:5
+#: lib/page-settings/single-forms.php:191
+#, fuzzy
+#| msgid "コメント"
+msgid "コメント設定"
+msgstr "Comment Setting"
+
+#: lib/page-settings/comment-forms.php:9
+#, fuzzy
+msgid "コメント一覧や入力欄のみタグに関する設定です。"
+msgstr "Comments list and input field is set on the tag."
+
+#: lib/page-settings/comment-forms.php:22
+#: lib/page-settings/single-forms.php:136
+#, fuzzy
+msgid "デモはランダム表示です。"
+msgstr "Demo is a random display."
+
+#: lib/page-settings/comment-forms.php:29
+#, fuzzy
+#| msgid "コメントなし"
+msgid "コメント一覧見出し"
+msgstr "Comment heading"
+
+#: lib/page-settings/comment-forms.php:34
+#, fuzzy
+#| msgid "タイトルを入力してください。"
+msgid "コメント一覧の見出しを入力してください。"
+msgstr "Please enter a comment list heading."
+
+#: lib/page-settings/comment-forms.php:35 lib/page-settings/single-forms.php:47
+#, fuzzy
+msgid "サブ見出し"
+msgstr "Sub Heading"
+
+#: lib/page-settings/comment-forms.php:36
+#, fuzzy
+#| msgid "AdSenseのレスポンシブコードを入力してください"
+msgid "コメント一覧の補助となる見出しを入力してください。"
+msgstr "Please enter a heading will assist in the comments list."
+
+#: lib/page-settings/comment-forms.php:44
+#, fuzzy
+#| msgid "コメントなし"
+msgid "コメント入力欄見出し"
+msgstr "Comments enter column headings"
+
+#: lib/page-settings/comment-forms.php:49
+#, fuzzy
+#| msgid "タイトルを入力してください。"
+msgid "コメント入力欄の見出しを入力してください。"
+msgstr "Please enter a comment field heading."
+
+#: lib/page-settings/comment-forms.php:57
+#, fuzzy
+#| msgid "ウェブサイト"
+msgid "ウェブサイトの表示"
+msgstr "View website"
+
+#: lib/page-settings/comment-forms.php:61
+#, fuzzy
+#| msgid "feedlyフォローボタンを表示する"
+msgid "ウェブサイト入力ボックスを表示する"
+msgstr "To view the website input box"
+
+#: lib/page-settings/comment-forms.php:62
+#, fuzzy
+msgid "ウェブサイト入力欄を表示するか。"
+msgstr "To view the website input field?"
+
+#: lib/page-settings/comment-forms.php:70
+#, fuzzy
+msgid "送信ボタンラベル"
+msgstr "Submit button label"
+
+#: lib/page-settings/comment-forms.php:74
+#: lib/page-settings/comment-funcs.php:39
+msgid "コメントを送信"
+msgstr "Post Comment"
+
+#: lib/page-settings/comment-forms.php:75
+#, fuzzy
+#| msgid "アドセンスのレスポンシブ広告コードを入力してください。"
+msgid "コメントの送信ボタンのラベルテキストを入力しているなさい。"
+msgstr "Enter the label text of the submit button on the comments please."
+
+#: lib/page-settings/comment-funcs.php:23
+msgid "コメントをどうぞ"
+msgstr "Leave a Reply"
+
+#: lib/page-settings/footer-forms.php:5
 #, fuzzy
 #| msgid "フッター左"
 msgid "フッター設定"
 msgstr "Footer Settings"
 
-#: lib/original-pages/footer-forms.php:8
+#: lib/page-settings/footer-forms.php:8
 #, fuzzy
 msgid "フッターやクレジット表示設定です。"
 msgstr "It is a footer and credit display setting."
 
-#: lib/original-pages/footer-forms.php:20
+#: lib/page-settings/footer-forms.php:20
 #, fuzzy
 msgid "フッター表示タイプ"
 msgstr "Footer display type"
 
-#: lib/original-pages/footer-forms.php:40
+#: lib/page-settings/footer-forms.php:40
 #, fuzzy
 msgid "クレジット表記"
 msgstr "Credit notation"
 
-#: lib/original-pages/footer-forms.php:44
+#: lib/page-settings/footer-forms.php:44
 #, fuzzy
 msgid "サイト開設年："
 msgstr "Site opening year:"
 
-#: lib/original-pages/footer-forms.php:56
+#: lib/page-settings/footer-forms.php:56
 #, fuzzy
 msgid "上記設定で「独自表記」と入力した場合"
 msgstr "When inputting \"custom notation\" in the above setting"
 
-#: lib/original-pages/footer-forms.php:58
+#: lib/page-settings/footer-forms.php:58
 #, fuzzy
 msgid "クレジット表記を入力してください。タグ入力も可能です。"
 msgstr "Please enter credit notation. Tag input is also possible."
 
-#: lib/original-pages/header-forms.php:5
+#: lib/page-settings/header-forms.php:5
 #, fuzzy
 msgid "ヘッダー設定"
 msgstr "Header setting"
 
-#: lib/original-pages/header-forms.php:8
+#: lib/page-settings/header-forms.php:8
 #, fuzzy
 msgid "ヘッダーの表示設定を行います。"
 msgstr "Configure the header display setting."
 
-#: lib/original-pages/header-forms.php:20
+#: lib/page-settings/header-forms.php:20
+#, fuzzy
+msgid "ヘッダーレイアウト"
+msgstr "Header layout"
+
+#: lib/page-settings/header-forms.php:30
+#, fuzzy
+msgid "ヘッダーの表示形式を選択します。"
+msgstr "Select the display format of the header."
+
+#: lib/page-settings/header-forms.php:38
 #, fuzzy
 msgid "ヘッダーロゴ"
 msgstr "Header Logo"
 
-#: lib/original-pages/header-forms.php:25
+#: lib/page-settings/header-forms.php:43
 #, fuzzy
 msgid "ヘッダー部分に表示する画像を設定します。"
 msgstr "Sets the image to display in the header part."
 
-#: lib/original-pages/header-forms.php:33
+#: lib/page-settings/header-forms.php:51
+#, fuzzy
+msgid "キャッチフレーズの配置"
+msgstr "Tagline placement"
+
+#: lib/page-settings/header-forms.php:56 lib/page-settings/page-forms.php:48
+#: lib/page-settings/single-forms.php:234 lib/page-settings/toc-forms.php:80
+msgid "表示しない"
+msgstr "Nondisplay"
+
+#: lib/page-settings/header-forms.php:57
+#, fuzzy
+msgid "ヘッダートップ（デフォルト）"
+msgstr "Top header (default)"
+
+#: lib/page-settings/header-forms.php:58
+#, fuzzy
+msgid "ヘッダーボトム"
+msgstr "Header bottom"
+
+#: lib/page-settings/header-forms.php:61
+#, fuzzy
+msgid ""
+"キャッチフレーズの表示位置を設定します。※「ヘッダーレイアウト」が「センターロ"
+"ゴ」の場合。"
+msgstr ""
+"Sets the display position of the catch phrase. * When \"Center logo\" is a "
+"\"header layout\"."
+
+#: lib/page-settings/header-forms.php:69
 #, fuzzy
 msgid "ヘッダー背景画像"
 msgstr "Mobile header background image"
 
-#: lib/original-pages/header-forms.php:38
+#: lib/page-settings/header-forms.php:74
 #, fuzzy
 msgid "ヘッダー背景として表示する画像を設定します。"
 msgstr "Header Set the image to display as the background."
 
-#: lib/original-pages/header-forms.php:41
+#: lib/page-settings/header-forms.php:77
 #, fuzzy
 msgid "ヘッダー背景画像の固定"
 msgstr "Fixing the header background image"
 
-#: lib/original-pages/header-forms.php:42
+#: lib/page-settings/header-forms.php:78
 #, fuzzy
 msgid ""
 "ヘッダーに設定した背景画像を固定します。上下にスクロールしたときに背景画像が"
@@ -1354,85 +1511,75 @@ msgstr ""
 "Fixes the background image set in the header. The background image does not "
 "move when scrolling up and down."
 
-#: lib/original-pages/header-forms.php:50
-#, fuzzy
-msgid "ヘッダーレイアウト"
-msgstr "Header layout"
-
-#: lib/original-pages/header-forms.php:60
-#, fuzzy
-msgid "ヘッダーの表示形式を選択します。"
-msgstr "Select the display format of the header."
-
-#: lib/original-pages/header-forms.php:68
+#: lib/page-settings/header-forms.php:86
 #, fuzzy
 msgid "ヘッダー全体色"
 msgstr "Header Overall Color"
 
-#: lib/original-pages/header-forms.php:75
+#: lib/page-settings/header-forms.php:93
 #, fuzzy
 msgid "ロゴ部分やグローバルナビ全てを含めた背景色を選択します。"
 msgstr ""
 "Select the background color including the logo part and global navi all."
 
-#: lib/original-pages/header-forms.php:78
+#: lib/page-settings/header-forms.php:96
 #, fuzzy
 msgid "ロゴ部分やグローバルナビ全てを含めたテキスト色を選択します。"
 msgstr "Select text color including logo part and global navi all."
 
-#: lib/original-pages/header-forms.php:86
+#: lib/page-settings/header-forms.php:104
 #, fuzzy
-msgid "ヘッダー色"
-msgstr "Header color:"
+msgid "ヘッダー色（ロゴ部）"
+msgstr "Header colors (logo Department)"
 
-#: lib/original-pages/header-forms.php:92
+#: lib/page-settings/header-forms.php:110
 #, fuzzy
 msgid "グローバルナビ上のヘッダー背景色を選択します。"
 msgstr "Select the header background color on the Global Navi."
 
-#: lib/original-pages/header-forms.php:95
+#: lib/page-settings/header-forms.php:113
 #, fuzzy
 msgid "グローバルナビ上のヘッダーテキスト色を選択します。"
 msgstr "Select the header text color on the Global Navi."
 
-#: lib/original-pages/image-forms.php:5
+#: lib/page-settings/image-forms.php:5
 #, fuzzy
 msgid "本文画像設定"
 msgstr "Text image setting"
 
-#: lib/original-pages/image-forms.php:8
+#: lib/page-settings/image-forms.php:8
 #, fuzzy
 msgid "投稿・固定ページの本文部分に関する画像の設定です。"
 msgstr "Post · Fixed Setting of image related to the body part of fixed page."
 
-#: lib/original-pages/image-forms.php:48
+#: lib/page-settings/image-forms.php:48
 #, fuzzy
 #| msgid "アイキャッチ"
 msgid "アイキャッチの表示"
 msgstr "Display of eye catch"
 
-#: lib/original-pages/image-forms.php:53
+#: lib/page-settings/image-forms.php:53
 #, fuzzy
 msgid "本文上にアイキャッチを表示する"
 msgstr "Display eye catch on the body"
 
-#: lib/original-pages/image-forms.php:54
+#: lib/page-settings/image-forms.php:54
 #, fuzzy
 msgid "投稿・固定ページトップにアイキャッチを表示します。"
 msgstr "Post · Fixed Display eye catch on the top of the page."
 
-#: lib/original-pages/image-forms.php:62
+#: lib/page-settings/image-forms.php:62
 #, fuzzy
 #| msgid "アイキャッチ"
 msgid "アイキャッチの自動設定"
 msgstr "Auto setting of eye catch"
 
-#: lib/original-pages/image-forms.php:67
+#: lib/page-settings/image-forms.php:67
 #, fuzzy
 msgid "アイキャッチ自動設定を有効にする"
 msgstr "Enable eye catch automatic setting"
 
-#: lib/original-pages/image-forms.php:68
+#: lib/page-settings/image-forms.php:68
 #, fuzzy
 msgid ""
 "記事を保存したり後悔したりするときに、本文中に最初に出てくる画像をアイキャッ"
@@ -1441,12 +1588,12 @@ msgstr ""
 "When saving the article or regretting it, I will catch the first image in "
 "the text. * It is not reflected in the preview."
 
-#: lib/original-pages/image-forms.php:76
+#: lib/page-settings/image-forms.php:76
 #, fuzzy
 msgid "画像の囲み効果"
 msgstr "Image enclosure effect"
 
-#: lib/original-pages/image-forms.php:87
+#: lib/page-settings/image-forms.php:87
 #, fuzzy
 msgid ""
 "画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。"
@@ -1454,58 +1601,127 @@ msgstr ""
 "It is the setting of the border of the image. If it is enabled, it will be "
 "easier to recognize white-based images as images."
 
-#: lib/original-pages/image-forms.php:95
+#: lib/page-settings/image-forms.php:95
 #, fuzzy
 msgid "画像の拡大効果"
 msgstr "Image magnification effect"
 
-#: lib/original-pages/image-forms.php:101
+#: lib/page-settings/image-forms.php:101
 #, fuzzy
 msgid "baguetteBox（スマホ向け）"
 msgstr "baguetteBox (for smartphone)"
 
-#: lib/original-pages/image-forms.php:102
+#: lib/page-settings/image-forms.php:102
 #, fuzzy
 msgid "Lity（単機能・軽量）"
 msgstr "Lity (single function · light weight)"
 
-#: lib/original-pages/image-forms.php:103
+#: lib/page-settings/image-forms.php:103
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: lib/original-pages/image-forms.php:106
+#: lib/page-settings/image-forms.php:106
 #, fuzzy
 msgid "リンク画像をクリックしたときの拡大効果の設定です。"
 msgstr ""
 "It is a setting of the enlargement effect when clicking the link image."
 
-#: lib/original-pages/navi-forms.php:5
+#: lib/page-settings/index-forms.php:5 lib/page-settings/toc-forms.php:5
+#, fuzzy
+msgid "リスト設定"
+msgstr "List settings"
+
+#: lib/page-settings/index-forms.php:8 lib/page-settings/toc-forms.php:8
+#, fuzzy
+#| msgid "サイドバーの表示位置"
+msgid "リスト表示の設定です。"
+msgstr "This is a list view settings."
+
+#: lib/page-settings/index-forms.php:28 lib/page-settings/ogp-forms.php:88
+#, fuzzy
+msgid "カードタイプ"
+msgstr "Card Type:"
+
+#: lib/page-settings/index-forms.php:33 lib/page-settings/single-forms.php:61
+msgid "エントリーカード（デフォルト）"
+msgstr "Entry card (default)"
+
+#: lib/page-settings/index-forms.php:34
+#, fuzzy
+msgid "縦型カード2列（推奨表示数：偶数）"
+msgstr "Vertical card 2 columns (recommended viewing: even-numbered)"
+
+#: lib/page-settings/index-forms.php:35
+#, fuzzy
+msgid "縦型カード3列（推奨表示数：3, 6, 9, 12, ...）"
+msgstr "Vertical card 3-column (number of recommendations: 3, 6, 9, 12,...)"
+
+#: lib/page-settings/index-forms.php:38
+#, fuzzy
+msgid ""
+"一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ペー"
+"ジに表示する最大投稿数」から変更してください。"
+msgstr ""
+"Change the cards on the list. Change from \"Settings-page 1 to the maximum "
+"number of posts to display\" to change the number of cards."
+
+#: lib/page-settings/index-forms.php:46 lib/page-settings/single-forms.php:88
+#, fuzzy
+msgid "枠線の表示"
+msgstr "Display of gridlines"
+
+#: lib/page-settings/index-forms.php:50 lib/page-settings/single-forms.php:92
+#, fuzzy
+#| msgid "feedlyフォローボタンを表示する"
+msgid "カードの枠線を表示する"
+msgstr "To display the border of the card"
+
+#: lib/page-settings/index-forms.php:51 lib/page-settings/single-forms.php:93
+#, fuzzy
+msgid "投稿エントリーカードの枠となる罫線を表示するか。"
+msgstr "To display borders and by entry card?"
+
+#: lib/page-settings/index-forms.php:59 lib/page-settings/single-forms.php:101
+#, fuzzy
+msgid "最大抜粋文字数"
+msgstr "Excerpts from letters maximum"
+
+#: lib/page-settings/index-forms.php:64 lib/page-settings/single-forms.php:106
+#, fuzzy
+msgid ""
+"「エントリーカード」で、抜粋文を表示する場合の最大文字数を\n"
+"              設定します。（最小：0、最大：500）"
+msgstr ""
+"Sets the maximum number of characters when displaying the excerpt, \"entry "
+"cards\". (Min: 0, Max: 500)"
+
+#: lib/page-settings/navi-forms.php:5
 #, fuzzy
 msgid "グローバルナビメニュー"
 msgstr "Global navigation menu"
 
-#: lib/original-pages/navi-forms.php:10
+#: lib/page-settings/navi-forms.php:10
 #, fuzzy
 msgid "グローバルナビ全体の背景色を選択します。"
 msgstr "Select the background color of the entire Global Navi."
 
-#: lib/original-pages/navi-forms.php:13
+#: lib/page-settings/navi-forms.php:13
 #, fuzzy
 msgid "グローバルナビ全体のテキスト色を選択します。"
 msgstr "Select the text color of the entire Global Navigation."
 
-#: lib/original-pages/navi-forms.php:25
+#: lib/page-settings/navi-forms.php:25
 #, fuzzy
 msgid "グローバルナビメニュー幅"
 msgstr "Global navi menu width"
 
-#: lib/original-pages/navi-forms.php:29
+#: lib/page-settings/navi-forms.php:29
 #, fuzzy
 #| msgid "メニュー"
 msgid "トップメニュー幅"
 msgstr "Top menu width"
 
-#: lib/original-pages/navi-forms.php:32
+#: lib/page-settings/navi-forms.php:32
 #, fuzzy
 msgid ""
 "グローバルナビのメニュー幅をpx数で指定します。未記入でデフォルト幅になりま"
@@ -1514,13 +1730,13 @@ msgstr ""
 "Specify the menu width of Global Navi by px number. It is blank and it "
 "becomes the default width."
 
-#: lib/original-pages/navi-forms.php:34
+#: lib/page-settings/navi-forms.php:34
 #, fuzzy
 #| msgid "メニュー"
 msgid "サブメニュー幅"
 msgstr "Submenu width"
 
-#: lib/original-pages/navi-forms.php:37
+#: lib/page-settings/navi-forms.php:37
 #, fuzzy
 msgid ""
 "グローバルナビのサブメニュー幅をpx数で指定します。未記入でデフォルト幅になり"
@@ -1529,27 +1745,27 @@ msgstr ""
 "Specify the submenu width of Global Navi by px number. It is blank and it "
 "becomes the default width."
 
-#: lib/original-pages/navi-forms.php:46
+#: lib/page-settings/navi-forms.php:46
 #, fuzzy
 msgid "グローバルナビの固定"
 msgstr "Fixing Global Navi"
 
-#: lib/original-pages/navi-forms.php:50
+#: lib/page-settings/navi-forms.php:50
 #, fuzzy
 msgid "グローバルナビメニューを固定する"
 msgstr "Fix the Global Navigation Menu"
 
-#: lib/original-pages/navi-forms.php:51
+#: lib/page-settings/navi-forms.php:51
 #, fuzzy
 msgid "ページをスクロールしても、メニューが追従してきます。"
 msgstr "Even if you scroll the page, the menu will follow up."
 
-#: lib/original-pages/ogp-forms.php:5
+#: lib/page-settings/ogp-forms.php:5
 #, fuzzy
 msgid "OGP設定"
 msgstr "OGP setting"
 
-#: lib/original-pages/ogp-forms.php:8
+#: lib/page-settings/ogp-forms.php:8
 #, fuzzy
 msgid ""
 "OGPとは「Open Graph protocol」の略称です。 FacebookやTwitterなどのSNSでシェア"
@@ -1560,17 +1776,17 @@ msgstr ""
 "as Facebook and Twitter, it is a mechanism to correctly display the title, "
 "URL, outline, eye catch image (thumbnail) of the page as intended."
 
-#: lib/original-pages/ogp-forms.php:16
+#: lib/page-settings/ogp-forms.php:16
 #, fuzzy
 msgid "OGPの有効化"
 msgstr "Enable OGP"
 
-#: lib/original-pages/ogp-forms.php:21
+#: lib/page-settings/ogp-forms.php:21
 #, fuzzy
 msgid "OGPタグの挿入"
 msgstr "Insert OGP tag"
 
-#: lib/original-pages/ogp-forms.php:22
+#: lib/page-settings/ogp-forms.php:22
 #, fuzzy
 msgid ""
 "headタグ内にFacebookや外部サイトなどに、ページの概要情報伝えるタグを挿入しま"
@@ -1579,117 +1795,213 @@ msgstr ""
 "In the head tag, insert tags to convey page summary information to Facebook, "
 "external sites, etc."
 
-#: lib/original-pages/ogp-forms.php:30
+#: lib/page-settings/ogp-forms.php:30
 #, fuzzy
 #| msgid "Facebook"
 msgid "Facebook APP ID"
 msgstr "Facebook App ID"
 
-#: lib/original-pages/ogp-forms.php:34
+#: lib/page-settings/ogp-forms.php:34
 #, fuzzy
 msgid "fb:app_idを入力"
 msgstr "Enter fb: app_id"
 
-#: lib/original-pages/ogp-forms.php:35
+#: lib/page-settings/ogp-forms.php:35
 #, fuzzy
 msgid "fb:appidは、FacebookにOGPを表示させるためには必須の設定になります。"
 msgstr "fb: appid will be mandatory for Facebook to display OGP."
 
-#: lib/original-pages/ogp-forms.php:51
+#: lib/page-settings/ogp-forms.php:51
 #, fuzzy
 msgid "Twitterカード設定"
 msgstr "Twitter card settings"
 
-#: lib/original-pages/ogp-forms.php:54
+#: lib/page-settings/ogp-forms.php:54
 #, fuzzy
 msgid "Twitter上で利用するOGP情報のようなものです。"
 msgstr "It is like OGP information to use on Twitter."
 
-#: lib/original-pages/ogp-forms.php:62
+#: lib/page-settings/ogp-forms.php:62
 #, fuzzy
 msgid "Twitterカードの有効化"
 msgstr "Activate Twitter card"
 
-#: lib/original-pages/ogp-forms.php:68
+#: lib/page-settings/ogp-forms.php:68
 #, fuzzy
 msgid "Twitterカードタグの挿入"
 msgstr "Insert Twitter card tag"
 
-#: lib/original-pages/ogp-forms.php:69
+#: lib/page-settings/ogp-forms.php:69
 #, fuzzy
 msgid "headタグ内にTwitterに対して、ページの概要情報伝えるタグを挿入します。"
 msgstr ""
 "Insert the tag that conveys the summary information of the page to Twitter "
 "in the head tag."
 
-#: lib/original-pages/ogp-forms.php:78
+#: lib/page-settings/ogp-forms.php:78
 msgid "Twitterカードタイプ"
 msgstr "Twitter card type"
 
-#: lib/original-pages/ogp-forms.php:84
+#: lib/page-settings/ogp-forms.php:84
 msgid "サマリー（summary）"
 msgstr "Summary (summary)"
 
-#: lib/original-pages/ogp-forms.php:85
+#: lib/page-settings/ogp-forms.php:85
 #, fuzzy
 msgid "大きな画像のサマリー（summary_large_image）"
 msgstr "A large image summary (summary_large_image)"
 
-#: lib/original-pages/ogp-forms.php:88
+#: lib/page-settings/ogp-forms.php:88
 #, fuzzy
 msgid "Twitterカードの表示形式の設定です。"
 msgstr "It is setting of display format of Twitter card."
 
-#: lib/original-pages/ogp-forms.php:88
-#, fuzzy
-msgid "カードタイプ"
-msgstr "Card Type:"
-
-#: lib/original-pages/ogp-forms.php:105
+#: lib/page-settings/ogp-forms.php:105
 #, fuzzy
 msgid "ホームイメージ"
 msgstr "Home image"
 
-#: lib/original-pages/ogp-forms.php:108
+#: lib/page-settings/ogp-forms.php:108
 #, fuzzy
 msgid "トップページのOGPやTwitter Cardsで表示する画像の設定です。"
 msgstr ""
 "It is the setting of the image to be displayed on the top page OGP or "
 "Twitter Cards."
 
-#: lib/original-pages/ogp-forms.php:116
+#: lib/page-settings/ogp-forms.php:116
 #, fuzzy
 msgid "画像のアップロード"
 msgstr "Upload image"
 
-#: lib/original-pages/seo-forms.php:5
+#: lib/page-settings/page-forms.php:8
+#, fuzzy
+msgid "固定ページのコメント表示設定です。"
+msgstr "This is the comment display settings for static pages."
+
+#: lib/page-settings/page-forms.php:15 lib/page-settings/single-forms.php:28
+#: lib/page-settings/single-forms.php:143
+#: lib/page-settings/single-forms.php:201
+#, fuzzy
+#| msgid "RSSの表示"
+msgid "表示"
+msgstr "Excerpt display"
+
+#: lib/page-settings/page-forms.php:19 lib/page-settings/single-forms.php:205
+#, fuzzy
+#| msgid "コメントをどうぞ"
+msgid "コメントを表示する"
+msgstr "Display comment area."
+
+#: lib/page-settings/page-forms.php:20
+#, fuzzy
+msgid "固定ページページにコメントを表示するか。"
+msgstr "Fixed page displaying comments?"
+
+#: lib/page-settings/page-forms.php:33 lib/page-settings/single-forms.php:219
+#, fuzzy
+#| msgid "投稿パンくずリスト上"
+msgid "パンくずリスト設定"
+msgstr "Breadcrumbs Settings"
+
+#: lib/page-settings/page-forms.php:36
+#, fuzzy
+msgid "固定ページのパンくずリスト設定です。"
+msgstr "Is a bread crumb list settings for static pages."
+
+#: lib/page-settings/page-forms.php:43 lib/page-settings/single-forms.php:229
+#, fuzzy
+#| msgid "投稿パンくずリスト上"
+msgid "パンくずリストの配置"
+msgstr "Breadcrumb navigation deployment"
+
+#: lib/page-settings/page-forms.php:49 lib/page-settings/single-forms.php:235
+#, fuzzy
+msgid "メインカラム手前"
+msgstr "Front of the main column"
+
+#: lib/page-settings/page-forms.php:50 lib/page-settings/single-forms.php:236
+#, fuzzy
+msgid "メインカラムトップ"
+msgstr "Main column top"
+
+#: lib/page-settings/page-forms.php:51 lib/page-settings/single-forms.php:237
+#, fuzzy
+msgid "メインカラムボトム（デフォルト）"
+msgstr "Main Colombo time (default)"
+
+#: lib/page-settings/page-forms.php:52 lib/page-settings/single-forms.php:238
+#, fuzzy
+#| msgid "フッター左"
+msgid "フッター手前"
+msgstr "Footer top"
+
+#: lib/page-settings/page-forms.php:55
+#, fuzzy
+msgid "固定ページのパンくずリスト表示位置を設定します。"
+msgstr "Set the bread crumbs list position of the fixed page."
+
+#: lib/page-settings/reset-forms.php:5
+#, fuzzy
+msgid "設定のリセット"
+msgstr "Reset settings"
+
+#: lib/page-settings/reset-forms.php:8
+#, fuzzy
+msgid "全ての設定内容をリセットします。"
+msgstr "Reset all the settings."
+
+#: lib/page-settings/reset-forms.php:21
+#, fuzzy
+msgid "全ての設定をリセットする"
+msgstr "To reset all of the settings"
+
+#: lib/page-settings/reset-forms.php:22
+#, fuzzy
+msgid ""
+"テーマ設定をデフォルト状態に戻します。チェックをつけて設定の保存を行ってくだ"
+"さい。"
+msgstr ""
+"Theme settings to their default state. To check, try to save the settings."
+
+#: lib/page-settings/reset-forms.php:23
+#, fuzzy
+msgid "リセット動作の確認"
+msgstr "Confirm the reset action"
+
+#: lib/page-settings/reset-forms.php:24
+#, fuzzy
+msgid ""
+"誤って設定を削除するのを防ぐために確認のためもう一度チェックしてください。"
+msgstr "To prevent the accidental deletion of you to confirm again check out."
+
+#: lib/page-settings/seo-forms.php:5
 #, fuzzy
 msgid "headタグ設定"
 msgstr "head tag setting"
 
-#: lib/original-pages/seo-forms.php:8
+#: lib/page-settings/seo-forms.php:8
 #, fuzzy
 msgid "headタグ内に追加するlinkタグの設定です。"
 msgstr "The setting of the link tag to be added in the head tag."
 
-#: lib/original-pages/seo-forms.php:16
+#: lib/page-settings/seo-forms.php:16
 #, fuzzy
 msgid "headタグに挿入"
 msgstr "Insert in head tag"
 
-#: lib/original-pages/seo-forms.php:22
+#: lib/page-settings/seo-forms.php:22
 #, fuzzy
 msgid "canonicalタグの追加"
 msgstr "Addition of canonical tag"
 
-#: lib/original-pages/seo-forms.php:23
+#: lib/page-settings/seo-forms.php:23
 #, fuzzy
 msgid ""
 "Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
 msgstr ""
 "Wordpress By default, the canonical tag is inserted on posting / fixed page."
 
-#: lib/original-pages/seo-forms.php:23
+#: lib/page-settings/seo-forms.php:23
 #, fuzzy
 msgid ""
 "この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入さ"
@@ -1698,213 +2010,374 @@ msgstr ""
 "When this function is enabled, canonical tags are also inserted in top page, "
 "category page, etc."
 
-#: lib/original-pages/seo-forms.php:26
+#: lib/page-settings/seo-forms.php:26
 msgid "分割ページにrel=\"next\"/\"prev\"タグの追加"
 msgstr "Add [rel=\"next\"/\"prev\"] tag on split page"
 
-#: lib/original-pages/seo-forms.php:27
+#: lib/page-settings/seo-forms.php:27
 #, fuzzy
 msgid "検索エンジンに続き物ページの順番を知らせます。"
 msgstr "I inform the search engine of the order of the consecutive pages."
 
-#: lib/original-pages/seo-forms.php:30
+#: lib/page-settings/seo-forms.php:30
 msgid "カテゴリページの2ページ目以降をnoindexとする"
 msgstr "Index only category 1st page"
 
-#: lib/original-pages/seo-forms.php:31
+#: lib/page-settings/seo-forms.php:31
 #, fuzzy
 msgid "カテゴリページのトップページ以外はnoindex設定にします。"
 msgstr "Set the noindex setting except for the top page of the category page."
 
-#: lib/original-pages/seo-forms.php:46
+#: lib/page-settings/seo-forms.php:46
 #, fuzzy
 msgid "日付の設定"
 msgstr "Set Date of Month"
 
-#: lib/original-pages/seo-forms.php:55
+#: lib/page-settings/seo-forms.php:55
 msgid "検索エンジンに伝える日付"
 msgstr "Date to tell search engines"
 
-#: lib/original-pages/seo-forms.php:61
+#: lib/page-settings/seo-forms.php:61
 #, fuzzy
 msgid "投稿日"
 msgstr "Post:"
 
-#: lib/original-pages/seo-forms.php:62
+#: lib/page-settings/seo-forms.php:62
 msgid "更新日"
 msgstr "Update date"
 
-#: lib/original-pages/seo-forms.php:63
+#: lib/page-settings/seo-forms.php:63
 #, fuzzy
 msgid "更新日のみ表示"
 msgstr "Display only update date"
 
-#: lib/original-pages/seo-forms.php:66
+#: lib/page-settings/seo-forms.php:66
 #, fuzzy
 msgid "timeタグを付加する日付の設定です。"
 msgstr "time This is the setting of the date to which the tag is attached."
 
-#: lib/original-pages/sns-follow-forms.php:5
+#: lib/page-settings/single-forms.php:5
+#, fuzzy
+#| msgid "関連記事"
+msgid "関連記事設定"
+msgstr "Article-related settings"
+
+#: lib/page-settings/single-forms.php:8
+#, fuzzy
+msgid "関連記事の表示に関する設定です。"
+msgstr "Are the settings for the display of related posts."
+
+#: lib/page-settings/single-forms.php:21
+#, fuzzy
+msgid "デモの関連記事はランダムです。"
+msgstr "Related articles demo is random."
+
+#: lib/page-settings/single-forms.php:32
+#, fuzzy
+#| msgid "関連記事"
+msgid "関連記事を表示する"
+msgstr "To view related article"
+
+#: lib/page-settings/single-forms.php:33
+#, fuzzy
+msgid "投稿ページの関連記事を表示するか。"
+msgstr "How to show related posts on post pages."
+
+#: lib/page-settings/single-forms.php:41
+#, fuzzy
+#| msgid "関連記事"
+msgid "関連記事見出し"
+msgstr "Related headlines"
+
+#: lib/page-settings/single-forms.php:46
+#, fuzzy
+#| msgid "記事の説明文を入力してください。"
+msgid "関連記事の見出しを入力してください。"
+msgstr "Please enter a related articles."
+
+#: lib/page-settings/single-forms.php:48
+#, fuzzy
+#| msgid "記事の説明文を入力してください。"
+msgid "関連記事の補助となる見出しを入力してください。"
+msgstr "Please enter a heading would be related to accessibility."
+
+#: lib/page-settings/single-forms.php:56 lib/page-settings/single-forms.php:156
+#: lib/widgets/new-entries.php:116 lib/widgets/new-popular.php:182
+#: lib/widgets/popular-ranking.php:173
+msgid "表示タイプ"
+msgstr "Display type:"
+
+#: lib/page-settings/single-forms.php:62
+#, fuzzy
+msgid "ミニカード（推奨表示数：偶数）"
+msgstr "Mini Card (recommended viewing: even-numbered)"
+
+#: lib/page-settings/single-forms.php:63
+#, fuzzy
+msgid "縦型カード3列（推奨表示数：6, 12, 18...）"
+msgstr "Vertical card 3-column (number of recommendations: 6, 12, 18...)"
+
+#: lib/page-settings/single-forms.php:64
+#, fuzzy
+msgid "縦型カード4列（推奨表示数：4, 8, 12...）"
+msgstr "Vertical card 4 column (number of recommended: 4, 8, 12...)"
+
+#: lib/page-settings/single-forms.php:67
+#, fuzzy
+msgid "関連記事の表示タイプを選択します。"
+msgstr "Select the display type of the related articles."
+
+#: lib/page-settings/single-forms.php:75
+#, fuzzy
+#| msgid "表示切替"
+msgid "表示数"
+msgstr "Thumbnail 3 columns (Recommended 3, 6, 9)"
+
+#: lib/page-settings/single-forms.php:80
+#, fuzzy
+msgid "関連記事で表示する投稿数の設定です。（最小：2、最大：30）"
+msgstr ""
+"It is a set number of posts to display related articles. (Minimum: 2, "
+"maximum: 30)"
+
+#: lib/page-settings/single-forms.php:120
+#, fuzzy
+msgid "ページ送りナビ設定"
+msgstr "Page navigation settings"
+
+#: lib/page-settings/single-forms.php:123
+#, fuzzy
+msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
+msgstr "[Previous page] Is sent to the [next page] navigation settings."
+
+#: lib/page-settings/single-forms.php:147
+#, fuzzy
+#| msgid "feedlyフォローボタンを表示する"
+msgid "ページ送りナビを表示する"
+msgstr "To display the navigation page feed"
+
+#: lib/page-settings/single-forms.php:148
+#, fuzzy
+msgid "[前ページ][次ページ]ナビを表示するか。"
+msgstr "[Previous page] To view next page navigation?"
+
+#: lib/page-settings/single-forms.php:161 lib/widgets/new-entries.php:118
+#: lib/widgets/new-popular.php:184 lib/widgets/popular-ranking.php:175
+msgid "デフォルト"
+msgstr "Default"
+
+#: lib/page-settings/single-forms.php:162
+#, fuzzy
+msgid "サムネイル正方形"
+msgstr "Square thumbnails"
+
+#: lib/page-settings/single-forms.php:165
+#, fuzzy
+msgid "ページ送りナビの見た目を変更します。"
+msgstr "Change the look of page feed."
+
+#: lib/page-settings/single-forms.php:173
+#, fuzzy
+msgid "枠線表示"
+msgstr "Frame lines visible"
+
+#: lib/page-settings/single-forms.php:177
+#, fuzzy
+msgid "ページ送りナビの枠線を表示する"
+msgstr "To view the page feed highlight border"
+
+#: lib/page-settings/single-forms.php:178
+#, fuzzy
+msgid "ページ送りナビを囲む枠線を表示するか。"
+msgstr "Whether to display a border around the page feed information."
+
+#: lib/page-settings/single-forms.php:194
+#, fuzzy
+msgid "投稿のコメント表示設定です。"
+msgstr "This is a post comment display settings."
+
+#: lib/page-settings/single-forms.php:206
+#, fuzzy
+msgid "投稿ページにコメントを表示するか。"
+msgstr "To view the comments on the post page?"
+
+#: lib/page-settings/single-forms.php:222
+#, fuzzy
+#| msgid "投稿パンくずリスト上"
+msgid "投稿のパンくずリスト設定です。"
+msgstr "By bread crumbs list setting is."
+
+#: lib/page-settings/single-forms.php:241
+#, fuzzy
+msgid "投稿のパンくずリスト表示位置を設定します。"
+msgstr "Set the bread crumbs list position of the post."
+
+#: lib/page-settings/single-funcs.php:18
+msgid "関連記事"
+msgstr "Related Posts"
+
+#: lib/page-settings/sns-follow-forms.php:5
 msgid "フォローボタン"
 msgstr "SNS Follow Buttons"
 
-#: lib/original-pages/sns-follow-forms.php:7
+#: lib/page-settings/sns-follow-forms.php:7
 #, fuzzy
 msgid "フォローボタンの表示に関する設定です。"
 msgstr "Settings related to the display of the follow button."
 
-#: lib/original-pages/sns-follow-forms.php:28
+#: lib/page-settings/sns-follow-forms.php:28
 msgid "フォローボタンの表示"
 msgstr "All follow buttons display"
 
-#: lib/original-pages/sns-follow-forms.php:32
+#: lib/page-settings/sns-follow-forms.php:32
 #, fuzzy
 msgid "本文下のフォローボタンを表示する"
 msgstr "Switch follow buttons at entry content bottom."
 
-#: lib/original-pages/sns-follow-forms.php:33
+#: lib/page-settings/sns-follow-forms.php:33
 #, fuzzy
 msgid "投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。"
 msgstr ""
 "Switch the display of the follow button under the text of the posted / fixed "
 "page."
 
-#: lib/original-pages/sns-follow-forms.php:41
+#: lib/page-settings/sns-follow-forms.php:41
 msgid "フォローメッセージ"
 msgstr "Follow message"
 
-#: lib/original-pages/sns-follow-forms.php:45
+#: lib/page-settings/sns-follow-forms.php:46
 msgid "フォローメッセージの入力"
 msgstr "Type of follow-up messages"
 
-#: lib/original-pages/sns-follow-forms.php:46
-#, fuzzy, php-format
+#: lib/page-settings/sns-follow-forms.php:47
+#, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
-msgid ""
-"訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変"
-"換されます。"
-msgstr ""
-"Please enter a message urging visitors to follow up. %s will be converted to "
-"the display name of the contributor."
+msgid "訪問者にフォローを促すメッセージを入力してください。"
+msgstr "Please enter a prompt follow-up to the visitors."
 
-#: lib/original-pages/sns-follow-forms.php:54
+#: lib/page-settings/sns-follow-forms.php:47
+#, fuzzy
+msgid "には、投稿者のそれぞれの表示名が入ります。"
+msgstr "To enter the display name for each author."
+
+#: lib/page-settings/sns-follow-forms.php:55
 #, fuzzy
 msgid "SNSサービスのURL"
 msgstr "SNS service URL"
 
-#: lib/original-pages/sns-follow-forms.php:57
+#: lib/page-settings/sns-follow-forms.php:58
 #, fuzzy
 msgid "は、ログインユーザーごとにフォローページを設定できます。"
 msgstr "You can set follow page for each login user."
 
-#: lib/original-pages/sns-follow-forms.php:58
+#: lib/page-settings/sns-follow-forms.php:59
 #, fuzzy
 msgid ""
 "以下のアカウントURLを設定する場合は、プロフィールページから設定してください。"
 msgstr "To set the following account URL, please set it from the profile page."
 
-#: lib/original-pages/sns-follow-forms.php:58
-#: lib/original-pages/sns-follow-forms.php:71
+#: lib/page-settings/sns-follow-forms.php:59
+#: lib/page-settings/sns-follow-forms.php:72
 msgid "あなたのプロフィール"
 msgstr "Edit Your Profile"
 
-#: lib/original-pages/sns-follow-forms.php:60
+#: lib/page-settings/sns-follow-forms.php:61
 msgid "ウェブサイト"
 msgstr "Website"
 
-#: lib/original-pages/sns-follow-forms.php:61
-#: lib/original-pages/sns-share-forms-bottom.php:58
-#: lib/original-pages/sns-share-forms-top.php:45 tmp/sns-share-buttons.php:23
+#: lib/page-settings/sns-follow-forms.php:62
+#: lib/page-settings/sns-share-forms-bottom.php:58
+#: lib/page-settings/sns-share-forms-top.php:45 tmp/sns-share-buttons.php:23
 msgid "Twitter"
 msgstr "Twitter"
 
-#: lib/original-pages/sns-follow-forms.php:62
-#: lib/original-pages/sns-share-forms-bottom.php:61
-#: lib/original-pages/sns-share-forms-top.php:48 tmp/sns-share-buttons.php:28
+#: lib/page-settings/sns-follow-forms.php:63
+#: lib/page-settings/sns-share-forms-bottom.php:61
+#: lib/page-settings/sns-share-forms-top.php:48 tmp/sns-share-buttons.php:28
 msgid "Facebook"
 msgstr "Facebook"
 
-#: lib/original-pages/sns-follow-forms.php:63 tmp/sns-share-buttons.php:38
+#: lib/page-settings/sns-follow-forms.php:64 tmp/sns-share-buttons.php:38
 msgid "Google+"
 msgstr "Google+"
 
-#: lib/original-pages/sns-follow-forms.php:64
-#: lib/original-pages/sns-share-forms-bottom.php:64
-#: lib/original-pages/sns-share-forms-top.php:51
+#: lib/page-settings/sns-follow-forms.php:65
+#: lib/page-settings/sns-share-forms-bottom.php:64
+#: lib/page-settings/sns-share-forms-top.php:51
 msgid "はてなブックマーク"
 msgstr "Hatena"
 
-#: lib/original-pages/sns-follow-forms.php:65
+#: lib/page-settings/sns-follow-forms.php:66
 msgid "Instagram"
 msgstr "Instagram"
 
-#: lib/original-pages/sns-follow-forms.php:66
+#: lib/page-settings/sns-follow-forms.php:67
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: lib/original-pages/sns-follow-forms.php:67
+#: lib/page-settings/sns-follow-forms.php:68
 msgid "YouTube"
 msgstr "YouTube"
 
-#: lib/original-pages/sns-follow-forms.php:68
+#: lib/page-settings/sns-follow-forms.php:69
 msgid "Flickr"
 msgstr "Flickr"
 
-#: lib/original-pages/sns-follow-forms.php:69
+#: lib/page-settings/sns-follow-forms.php:70
 msgid "GitHub"
 msgstr "GitHub"
 
-#: lib/original-pages/sns-follow-forms.php:72
+#: lib/page-settings/sns-follow-forms.php:73
 #, fuzzy
 msgid "現ログインユーザーのSNSフォローページを設定します。"
 msgstr "Sets the SNS follow page of the currently logged-in user."
 
-#: lib/original-pages/sns-follow-forms.php:79
+#: lib/page-settings/sns-follow-forms.php:80
 msgid "feedlyの表示"
 msgstr "Feedly display"
 
-#: lib/original-pages/sns-follow-forms.php:83
+#: lib/page-settings/sns-follow-forms.php:84
 msgid "feedlyフォローボタンを表示する"
 msgstr "feedly follow button display"
 
-#: lib/original-pages/sns-follow-forms.php:84
+#: lib/page-settings/sns-follow-forms.php:85
 #, fuzzy
 msgid "feedlyフォローボタンを表示します。"
 msgstr "feedly Display the follow button."
 
-#: lib/original-pages/sns-follow-forms.php:92
+#: lib/page-settings/sns-follow-forms.php:93
 msgid "RSSの表示"
 msgstr "RSS display"
 
-#: lib/original-pages/sns-follow-forms.php:96
+#: lib/page-settings/sns-follow-forms.php:97
 #, fuzzy
 msgid "RSS購読ボタンを表示する"
 msgstr "Display RSS subscription button"
 
-#: lib/original-pages/sns-follow-forms.php:97
+#: lib/page-settings/sns-follow-forms.php:98
 #, fuzzy
 msgid "RSS購読料のボタンを表示します。"
 msgstr "RSS Subscription fee button is displayed."
 
-#: lib/original-pages/sns-follow-forms.php:106
-#: lib/original-pages/sns-share-forms-bottom.php:84
-#: lib/original-pages/sns-share-forms-top.php:71
+#: lib/page-settings/sns-follow-forms.php:107
+#: lib/page-settings/sns-share-forms-bottom.php:84
+#: lib/page-settings/sns-share-forms-top.php:71
 #, fuzzy
 msgid "ボタンカラー"
 msgstr "Button Colors"
 
-#: lib/original-pages/sns-follow-forms.php:116
+#: lib/page-settings/sns-follow-forms.php:117
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "シェアボタンの配色を選択してください。"
 msgstr "Please select the color scheme of the share button."
 
-#: lib/original-pages/sns-follow-forms.php:124
+#: lib/page-settings/sns-follow-forms.php:125
 #, fuzzy
 msgid "デフォルトユーザー"
 msgstr "Default user"
 
-#: lib/original-pages/sns-follow-forms.php:129
+#: lib/page-settings/sns-follow-forms.php:130
 #, fuzzy
 msgid ""
 "投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
@@ -1912,33 +2385,33 @@ msgstr ""
 "Please select the user who will show the follow buttons other than post · "
 "fixed page."
 
-#: lib/original-pages/sns-follow-funcs.php:20
-#, fuzzy, php-format
-msgid "%sをフォローする"
-msgstr "Follow%s"
+#: lib/page-settings/sns-follow-funcs.php:21
+#, fuzzy
+msgid "をフォローする"
+msgstr "To follow"
 
-#: lib/original-pages/sns-share-forms-bottom.php:3
+#: lib/page-settings/sns-share-forms-bottom.php:3
 #, fuzzy
 msgid "本文下シェアボタン"
 msgstr "Bottom share buttons display"
 
-#: lib/original-pages/sns-share-forms-bottom.php:5
+#: lib/page-settings/sns-share-forms-bottom.php:5
 #, fuzzy
 msgid "本文下シェアボタンの表示に関する設定です。"
 msgstr ""
 "It is setting concerning the display of the share button under the text."
 
-#: lib/original-pages/sns-share-forms-bottom.php:26
+#: lib/page-settings/sns-share-forms-bottom.php:26
 #, fuzzy
 msgid "本文下シェアボタンの表示"
 msgstr "Display of the share button below the text"
 
-#: lib/original-pages/sns-share-forms-bottom.php:30
+#: lib/page-settings/sns-share-forms-bottom.php:30
 #, fuzzy
 msgid "メインカラム本文下シェアボタンを表示"
 msgstr "Show main column bottom share button"
 
-#: lib/original-pages/sns-share-forms-bottom.php:31
+#: lib/page-settings/sns-share-forms-bottom.php:31
 #, fuzzy
 msgid ""
 "投稿・固定ページのメインカラムにある本文下シェアボタンの表示を切り替えます。"
@@ -1946,82 +2419,82 @@ msgstr ""
 "Switch the display of the bottom share button on the main body of the post · "
 "fixed page."
 
-#: lib/original-pages/sns-share-forms-bottom.php:39
+#: lib/page-settings/sns-share-forms-bottom.php:39
 msgid "シェアメッセージ"
 msgstr "Share Message"
 
-#: lib/original-pages/sns-share-forms-bottom.php:43
+#: lib/page-settings/sns-share-forms-bottom.php:43
 #, fuzzy
 #| msgid "メッセージ"
 msgid "シェアメッセージの入力"
 msgstr "Entering a share message"
 
-#: lib/original-pages/sns-share-forms-bottom.php:44
+#: lib/page-settings/sns-share-forms-bottom.php:44
 #, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "訪問者にシェアを促すメッセージを入力してください。"
 msgstr "Please enter a message urging visitors to share."
 
-#: lib/original-pages/sns-share-forms-bottom.php:52
-#: lib/original-pages/sns-share-forms-top.php:39
+#: lib/page-settings/sns-share-forms-bottom.php:52
+#: lib/page-settings/sns-share-forms-top.php:39
 msgid "表示切替"
 msgstr "Switch view"
 
-#: lib/original-pages/sns-share-forms-bottom.php:55
-#: lib/original-pages/sns-share-forms-top.php:42
+#: lib/page-settings/sns-share-forms-bottom.php:55
+#: lib/page-settings/sns-share-forms-top.php:42
 #, fuzzy
 #| msgid "全ての広告の表示を切り替えます。"
 msgid "個々のシェアボタンの表示切り替え。"
 msgstr "Switch display of individual share button."
 
-#: lib/original-pages/sns-share-forms-bottom.php:67
-#: lib/original-pages/sns-share-forms-top.php:54
+#: lib/page-settings/sns-share-forms-bottom.php:67
+#: lib/page-settings/sns-share-forms-top.php:54
 #, fuzzy
 #| msgid "Google+"
 msgid "Google"
 msgstr "Google+"
 
-#: lib/original-pages/sns-share-forms-bottom.php:70
-#: lib/original-pages/sns-share-forms-top.php:57 tmp/sns-share-buttons.php:43
+#: lib/page-settings/sns-share-forms-bottom.php:70
+#: lib/page-settings/sns-share-forms-top.php:57 tmp/sns-share-buttons.php:43
 msgid "Pocket"
 msgstr "Pocket"
 
-#: lib/original-pages/sns-share-forms-bottom.php:73
-#: lib/original-pages/sns-share-forms-top.php:60
+#: lib/page-settings/sns-share-forms-bottom.php:73
+#: lib/page-settings/sns-share-forms-top.php:60
 msgid "LINE@"
 msgstr "LINE"
 
-#: lib/original-pages/sns-share-forms-bottom.php:76
+#: lib/page-settings/sns-share-forms-bottom.php:76
 #, fuzzy
 msgid "本文下に表示するシェアボタンを選択してください。"
 msgstr "Please select the share button to be displayed below the text."
 
-#: lib/original-pages/sns-share-forms-bottom.php:94
+#: lib/page-settings/sns-share-forms-bottom.php:94
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文下シェアボタンの配色を選択してください。"
 msgstr "Please select the color scheme of the bottom share button in the text."
 
-#: lib/original-pages/sns-share-forms-bottom.php:102
-#: lib/original-pages/sns-share-forms-top.php:91
+#: lib/page-settings/sns-share-forms-bottom.php:102
+#: lib/page-settings/sns-share-forms-top.php:91
 #, fuzzy
 msgid "カラム数"
 msgstr "Columns Number"
 
-#: lib/original-pages/sns-share-forms-bottom.php:115
+#: lib/page-settings/sns-share-forms-bottom.php:115
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文下シェアボタンのカラム数を選択してください。"
 msgstr ""
 "Please select the number of columns of the bottom share button in the text."
 
-#: lib/original-pages/sns-share-forms-bottom.php:123
-#: lib/original-pages/sns-share-forms-top.php:113
+#: lib/page-settings/sns-share-forms-bottom.php:123
+#: lib/page-settings/sns-share-forms-top.php:113
 #, fuzzy
 msgid "ロゴ・キャプション配置"
 msgstr "Logo / Caption placement"
 
-#: lib/original-pages/sns-share-forms-bottom.php:133
+#: lib/page-settings/sns-share-forms-bottom.php:133
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文下シェアボタンのロゴとキャプションの配置を選択してください。"
@@ -2029,27 +2502,27 @@ msgstr ""
 "Please select the logo of the share button on the bottom of the text and the "
 "arrangement of the caption."
 
-#: lib/original-pages/sns-share-forms-top.php:3
+#: lib/page-settings/sns-share-forms-top.php:3
 #, fuzzy
 msgid "本文上シェアボタン"
 msgstr "Share on the main body button"
 
-#: lib/original-pages/sns-share-forms-top.php:5
+#: lib/page-settings/sns-share-forms-top.php:5
 #, fuzzy
 msgid "本文上シェアボタンの表示に関する設定です。"
 msgstr "It is setting concerning the display of the share button on the body."
 
-#: lib/original-pages/sns-share-forms-top.php:26
+#: lib/page-settings/sns-share-forms-top.php:26
 #, fuzzy
 msgid "本文上シェアボタンの表示"
 msgstr "Display of share button on body"
 
-#: lib/original-pages/sns-share-forms-top.php:30
+#: lib/page-settings/sns-share-forms-top.php:30
 #, fuzzy
 msgid "メインカラム本文上シェアボタンを表示"
 msgstr "Show share button on main column body"
 
-#: lib/original-pages/sns-share-forms-top.php:31
+#: lib/page-settings/sns-share-forms-top.php:31
 #, fuzzy
 msgid ""
 "投稿・固定ページのメインカラムにある本文上シェアボタンの表示を切り替えます。"
@@ -2057,24 +2530,24 @@ msgstr ""
 "Switch the display of the share button on the body in the main column of "
 "post · fixed page."
 
-#: lib/original-pages/sns-share-forms-top.php:63
+#: lib/page-settings/sns-share-forms-top.php:63
 #, fuzzy
 msgid "表示するシェアボタンを選択してください。"
 msgstr "Please select the share button to display."
 
-#: lib/original-pages/sns-share-forms-top.php:81
+#: lib/page-settings/sns-share-forms-top.php:81
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文上シェアボタンの配色を選択してください。"
 msgstr "Please select the color scheme of the share button on the body."
 
-#: lib/original-pages/sns-share-forms-top.php:104
+#: lib/page-settings/sns-share-forms-top.php:104
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文上シェアボタンのカラム数を選択してください。"
 msgstr "Please select the column number of the share button in the body."
 
-#: lib/original-pages/sns-share-forms-top.php:123
+#: lib/page-settings/sns-share-forms-top.php:123
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "本文上シェアボタンのロゴとキャプションの配置を選択してください。"
@@ -2082,48 +2555,48 @@ msgstr ""
 "Please select the logo of the share button and the arrangement of the "
 "caption in the body."
 
-#: lib/original-pages/sns-share-forms.php:12
+#: lib/page-settings/sns-share-forms.php:12
 #, fuzzy
 msgid "ツイート設定"
 msgstr "Tweet Settings"
 
-#: lib/original-pages/sns-share-forms.php:14
+#: lib/page-settings/sns-share-forms.php:14
 #, fuzzy
 msgid "Twitter上でのツイート動作の設定です。"
 msgstr "It is setting tweet action on Twitter."
 
-#: lib/original-pages/sns-share-forms.php:21
+#: lib/page-settings/sns-share-forms.php:21
 msgid "メンション"
 msgstr "Mention"
 
-#: lib/original-pages/sns-share-forms.php:25
+#: lib/page-settings/sns-share-forms.php:25
 msgid "ツイートにメンションを含める"
 msgstr "Include mentions in tweets"
 
-#: lib/original-pages/sns-share-forms.php:26
+#: lib/page-settings/sns-share-forms.php:26
 #, fuzzy
 msgid "シェアされたツイートに著者のTwitter"
 msgstr "Author's Twitter to share Tweet"
 
-#: lib/original-pages/sns-share-forms.php:34
+#: lib/page-settings/sns-share-forms.php:34
 msgid "プロモーション"
 msgstr "Promotion"
 
-#: lib/original-pages/sns-share-forms.php:38
+#: lib/page-settings/sns-share-forms.php:38
 msgid "ツイート後にフォローを促す"
 msgstr "Urge follow up after tweet"
 
-#: lib/original-pages/sns-share-forms.php:39
+#: lib/page-settings/sns-share-forms.php:39
 #, fuzzy
 msgid "ツイート後に著者のフォローボタンを表示します。"
 msgstr "Follow-up button of author after tweet."
 
-#: lib/original-pages/title-forms.php:5
+#: lib/page-settings/title-forms.php:5
 #, fuzzy
 msgid "フロントページ設定"
-msgstr "Frontpage settings"
+msgstr "Frontpage Settings"
 
-#: lib/original-pages/title-forms.php:8
+#: lib/page-settings/title-forms.php:8
 #, fuzzy
 msgid ""
 "フロントページの、タイトル、メタディスクリプション、メタキーワードの設定で"
@@ -2131,8 +2604,8 @@ msgid ""
 msgstr ""
 "It is setting of the front page, title, meta description, meta keyword."
 
-#: lib/original-pages/title-forms.php:25 lib/original-pages/title-forms.php:118
-#: lib/original-pages/title-forms.php:216
+#: lib/page-settings/title-forms.php:25 lib/page-settings/title-forms.php:118
+#: lib/page-settings/title-forms.php:216
 #, fuzzy
 msgid ""
 "プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があ"
@@ -2140,41 +2613,39 @@ msgid ""
 msgstr ""
 "Preview is a guide only. The display may be changed by the search engine."
 
-#: lib/original-pages/title-forms.php:32
+#: lib/page-settings/title-forms.php:32
 #, fuzzy
 msgid "フロントページタイトル"
 msgstr "Front Page Title"
 
-#: lib/original-pages/title-forms.php:37 lib/original-pages/title-forms.php:38
-#: lib/original-pages/title-forms.php:131
-#: lib/original-pages/title-forms.php:132
-#: lib/original-pages/title-forms.php:229
-#: lib/original-pages/title-forms.php:230
+#: lib/page-settings/title-forms.php:37 lib/page-settings/title-forms.php:38
+#: lib/page-settings/title-forms.php:131 lib/page-settings/title-forms.php:132
+#: lib/page-settings/title-forms.php:229 lib/page-settings/title-forms.php:230
 #, fuzzy
 msgid "サイト名"
 msgstr "It will be a title like \"Site name | Tagline\"."
 
-#: lib/original-pages/title-forms.php:38
+#: lib/page-settings/title-forms.php:38
 #, fuzzy
 msgid "キャッチフレーズ"
 msgstr "It will be a title like \"Site name | Tagline\"."
 
-#: lib/original-pages/title-forms.php:41
+#: lib/page-settings/title-forms.php:41
 #, fuzzy
 msgid "フロントページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr "Please select the title tag format to be output on the front page."
 
-#: lib/original-pages/title-forms.php:49
+#: lib/page-settings/title-forms.php:49
 #, fuzzy
 msgid "サイトの説明"
 msgstr "Site description"
 
-#: lib/original-pages/title-forms.php:53
+#: lib/page-settings/title-forms.php:53
 #, fuzzy
 msgid "メタディスクリプションを入力"
 msgstr "Enter meta description"
 
-#: lib/original-pages/title-forms.php:54
+#: lib/page-settings/title-forms.php:54
 #, fuzzy
 msgid ""
 "フロントページで出力するメタディスクリプションタグの内容を入力してください。"
@@ -2183,12 +2654,12 @@ msgstr ""
 "Please enter the content of the meta description tag to be output on the "
 "front page. When not entering, meta tag is not output."
 
-#: lib/original-pages/title-forms.php:66
+#: lib/page-settings/title-forms.php:66
 #, fuzzy
 msgid "キーワード1,キーワード2,キーワード3,..."
 msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
-#: lib/original-pages/title-forms.php:67
+#: lib/page-settings/title-forms.php:67
 #, fuzzy
 msgid ""
 "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力して"
@@ -2199,13 +2670,13 @@ msgstr ""
 "page, separated by (comma). When not entering, meta tag is not output. * I "
 "think that it is almost meaningless setting like SEO."
 
-#: lib/original-pages/title-forms.php:81
+#: lib/page-settings/title-forms.php:81
 #, fuzzy
 #| msgid "投稿・固定ページの表示位置"
 msgid "投稿・固定ページ設定"
 msgstr "Post · fixed page setting"
 
-#: lib/original-pages/title-forms.php:84
+#: lib/page-settings/title-forms.php:84
 #, fuzzy
 msgid ""
 "投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定で"
@@ -2213,43 +2684,38 @@ msgid ""
 msgstr ""
 "It is setting of posting / fixed page, title, meta description, meta keyword."
 
-#: lib/original-pages/title-forms.php:125
+#: lib/page-settings/title-forms.php:125
 #, fuzzy
 #| msgid "投稿・固定ページの表示位置"
 msgid "投稿・固定ページタイトル"
 msgstr "It will be a title like \"Page Title | Site Name\"."
 
-#: lib/original-pages/title-forms.php:130
-#: lib/original-pages/title-forms.php:131
-#: lib/original-pages/title-forms.php:132
-#: lib/original-pages/title-forms.php:228
-#: lib/original-pages/title-forms.php:229
-#: lib/original-pages/title-forms.php:230
+#: lib/page-settings/title-forms.php:130 lib/page-settings/title-forms.php:131
+#: lib/page-settings/title-forms.php:132 lib/page-settings/title-forms.php:228
+#: lib/page-settings/title-forms.php:229 lib/page-settings/title-forms.php:230
 #, fuzzy
 #| msgid "タイトル"
 msgid "ページタイトル"
 msgstr "It will be a title like \"Page Title | Site Name\"."
 
-#: lib/original-pages/title-forms.php:135
+#: lib/page-settings/title-forms.php:135
 #, fuzzy
 msgid ""
 "投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr ""
 "Please select the format of the title tag to be output on post · fixed page."
 
-#: lib/original-pages/title-forms.php:143
-#: lib/original-pages/title-forms.php:241
+#: lib/page-settings/title-forms.php:143 lib/page-settings/title-forms.php:241
 #, fuzzy
 msgid "メタディスクリプションの出力"
 msgstr "Output of meta description"
 
-#: lib/original-pages/title-forms.php:147
-#: lib/original-pages/title-forms.php:245
+#: lib/page-settings/title-forms.php:147 lib/page-settings/title-forms.php:245
 #, fuzzy
 msgid "メタディスクリプションタグを出力する"
 msgstr "Output meta description tag"
 
-#: lib/original-pages/title-forms.php:148
+#: lib/page-settings/title-forms.php:148
 #, fuzzy
 msgid ""
 "投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力する"
@@ -2258,19 +2724,17 @@ msgstr ""
 "Do you output the meta description tag in the head tag of the posted / fixed "
 "page page?"
 
-#: lib/original-pages/title-forms.php:156
-#: lib/original-pages/title-forms.php:254
+#: lib/page-settings/title-forms.php:156 lib/page-settings/title-forms.php:254
 #, fuzzy
 msgid "メタキーワードの出力"
 msgstr "Output of meta keyword"
 
-#: lib/original-pages/title-forms.php:160
-#: lib/original-pages/title-forms.php:258
+#: lib/page-settings/title-forms.php:160 lib/page-settings/title-forms.php:258
 #, fuzzy
 msgid "メタキーワードタグを出力する"
 msgstr "Output meta keyword tag"
 
-#: lib/original-pages/title-forms.php:161
+#: lib/page-settings/title-forms.php:161
 #, fuzzy
 msgid ""
 "投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO"
@@ -2279,12 +2743,12 @@ msgstr ""
 "Do you output the meta keyword tag in the head tag of the post / fixed page "
 "page? * I think that it is almost meaningless setting like SEO."
 
-#: lib/original-pages/title-forms.php:175
+#: lib/page-settings/title-forms.php:175
 #, fuzzy
 msgid "カテゴリーページ設定"
 msgstr "Category page setting"
 
-#: lib/original-pages/title-forms.php:178
+#: lib/page-settings/title-forms.php:178
 #, fuzzy
 msgid ""
 "カテゴリーページの、タイトル、メタディスクリプション、メタキーワードの設定で"
@@ -2292,24 +2756,24 @@ msgid ""
 msgstr ""
 "It is setting of title, meta description, meta keyword of category page."
 
-#: lib/original-pages/title-forms.php:215
+#: lib/page-settings/title-forms.php:215
 #, fuzzy
 msgid "投稿ページのランダム表示です。"
 msgstr "It is a random display of the post page."
 
-#: lib/original-pages/title-forms.php:223
+#: lib/page-settings/title-forms.php:223
 #, fuzzy
 msgid "カテゴリーページタイトル"
 msgstr "Category pages titles"
 
-#: lib/original-pages/title-forms.php:233
+#: lib/page-settings/title-forms.php:233
 #, fuzzy
 msgid ""
 "カテゴリーページで出力するタイトルタグのフォーマットを選択してください。"
 msgstr ""
 "Please select the format of the title tag to be output on the category page."
 
-#: lib/original-pages/title-forms.php:246
+#: lib/page-settings/title-forms.php:246
 #, fuzzy
 msgid ""
 "カテゴリーページのページのheadタグ内に、メタディスクリプションタグを出力する"
@@ -2318,7 +2782,7 @@ msgstr ""
 "Do you output the meta description tag in the head tag of the category page "
 "page? * I think that it is almost meaningless setting like SEO."
 
-#: lib/original-pages/title-forms.php:259
+#: lib/page-settings/title-forms.php:259
 #, fuzzy
 msgid ""
 "カテゴリーページのページのheadタグ内に、メタキーワードタグを出力するか。"
@@ -2326,49 +2790,175 @@ msgstr ""
 "Do you output the meta keyword tag inside the head tag of the category page "
 "page?"
 
-#: lib/original-pages/title-forms.php:272
+#: lib/page-settings/title-forms.php:272
 #, fuzzy
 #| msgid "タイトル"
 msgid "タイトル共通設定"
 msgstr "Title common setting"
 
-#: lib/original-pages/title-forms.php:275
+#: lib/page-settings/title-forms.php:275
 #, fuzzy
 msgid "タイトルで使用される区切り文字の設定です。"
 msgstr "Sets the delimiter used in the title."
 
-#: lib/original-pages/title-forms.php:283
+#: lib/page-settings/title-forms.php:283
 msgid "セパレーター"
 msgstr "Seperator"
 
-#: lib/original-pages/title-forms.php:288
+#: lib/page-settings/title-forms.php:288
 #, fuzzy
 msgid " | （パイプ）"
 msgstr "Pipe"
 
-#: lib/original-pages/title-forms.php:289
+#: lib/page-settings/title-forms.php:289
 #, fuzzy
 msgid " - （ハイフン）"
 msgstr "Hyphen"
 
-#: lib/original-pages/title-forms.php:292
+#: lib/page-settings/title-forms.php:292
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "Please set letters to separate titles."
 
-#: lib/original-pages/title-funcs.php:15
+#: lib/page-settings/title-funcs.php:15
 msgid " - "
 msgstr "-"
 
-#: lib/original-pages/title-funcs.php:18
+#: lib/page-settings/title-funcs.php:18
 msgid " | "
 msgstr "|"
+
+#: lib/page-settings/toc-forms.php:22
+#, fuzzy
+msgid "デモの記事はランダムです。H2見出しがない本文には目次は表示されません。"
+msgstr ""
+"Demo post is random. There is no H2 heading text hides the table of contents."
+
+#: lib/page-settings/toc-forms.php:29
+#, fuzzy
+msgid "目次の表示"
+msgstr "Show table of contents"
+
+#: lib/page-settings/toc-forms.php:33
+#, fuzzy
+msgid "目次を表示する"
+msgstr "To view the table of contents"
+
+#: lib/page-settings/toc-forms.php:34
+#, fuzzy
+msgid "投稿・固定ページの内容から目次を自動付加します。"
+msgstr ""
+"Automatically add a table of contents from the content of posts and static "
+"pages."
+
+#: lib/page-settings/toc-forms.php:42
+#, fuzzy
+#| msgid "タイトル"
+msgid "目次タイトル"
+msgstr "Table of contents title"
+
+#: lib/page-settings/toc-forms.php:47
+#, fuzzy
+#| msgid "タイトルを入力してください。"
+msgid "目次の上にラベル表示されるタイトルを入力してください。"
+msgstr "Please enter a label displayed in the table of contents on the title."
+
+#: lib/page-settings/toc-forms.php:55
+#, fuzzy
+msgid "目次表示の深さ"
+msgstr "The depth of the table of contents view"
+
+#: lib/page-settings/toc-forms.php:60
+#, fuzzy
+msgid "H2見出しまで"
+msgstr "To the H2 headings"
+
+#: lib/page-settings/toc-forms.php:61
+#, fuzzy
+msgid "H3見出しまで"
+msgstr "To your H3 header"
+
+#: lib/page-settings/toc-forms.php:62
+#, fuzzy
+msgid "H4見出しまで"
+msgstr "Up to H4 headings"
+
+#: lib/page-settings/toc-forms.php:63
+#, fuzzy
+msgid "H5見出しまで"
+msgstr "H5 heading up"
+
+#: lib/page-settings/toc-forms.php:64
+#, fuzzy
+msgid "H6見出しまで（デフォルト）"
+msgstr "Up to H6 heading (default)."
+
+#: lib/page-settings/toc-forms.php:67
+#, fuzzy
+msgid "どの見出しの深さまで表示するかを設定します。"
+msgstr "Want to show up to a depth of headlines."
+
+#: lib/page-settings/toc-forms.php:75
+#, fuzzy
+#| msgid "サイドバーの表示位置"
+msgid "目次ナンバーの表示"
+msgstr "View table of contents No."
+
+#: lib/page-settings/toc-forms.php:81
+#, fuzzy
+#| msgid "デフォルト"
+msgid "数字（デフォルト）"
+msgstr "Number (default)"
+
+#: lib/page-settings/toc-forms.php:82
+#, fuzzy
+msgid "数字詳細（ex: 1.2.3）"
+msgstr "For more information number (ex: version 1.2.3)"
+
+#: lib/page-settings/toc-forms.php:85
+#, fuzzy
+msgid "設定項目手前の数字の表示形式を設定します。"
+msgstr "Sets the display format for numbers of configuration items."
+
+#: lib/page-settings/toc-forms.php:93
+#, fuzzy
+msgid "目次の表示順"
+msgstr "Order of the table of contents"
+
+#: lib/page-settings/toc-forms.php:97
+#, fuzzy
+msgid "広告の手前に目次を表示する"
+msgstr "To view the table of contents in front of the ad"
+
+#: lib/page-settings/toc-forms.php:98
+#, fuzzy
+msgid ""
+"広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されてい"
+"るとき"
+msgstr ""
+"Displays the table of contents on top of ads or widgets. The first H2 when "
+"displayed in front of the heading"
 
 #: lib/seo.php:259 lib/seo.php:343
 #, php-format
 msgid "「%s」の記事一覧です。"
 msgstr "Articles of \"%s\"."
+
+#: lib/settings.php:36
+#, fuzzy
+msgid "ヘッダーナビ"
+msgstr "Header Nabi"
+
+#: lib/settings.php:37
+#, fuzzy
+msgid "モバイルヘッダーナビ（サブ不可）"
+msgstr "Mobile header Nabi (non-sub)"
+
+#: lib/settings.php:38
+#, fuzzy
+msgid "フッターナビ（サブ不可）"
+msgstr "Footer navigation (non-sub)"
 
 #: lib/sns-follow.php:8
 msgid "Twitter URL"
@@ -2410,15 +3000,17 @@ msgstr "LINE@ URL"
 msgid "GitHub URL"
 msgstr "Github url"
 
-#: lib/widget-areas.php:11
+#: lib/widget-areas.php:12
 msgid "サイドバーのウィジットエリアです。"
 msgstr "Widget area of sidebar."
 
-#: lib/widget-areas.php:20
-msgid "スクロール追従領域"
-msgstr "Scroll Following Area"
+#: lib/widget-areas.php:26
+#, fuzzy
+#| msgid "サイドバートップ"
+msgid "サイドバースクロール追従"
+msgstr "Sidebar scroll tracking"
 
-#: lib/widget-areas.php:22
+#: lib/widget-areas.php:28
 msgid ""
 "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示さ"
 "れません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
@@ -2426,93 +3018,113 @@ msgstr ""
 "Sidebar bottom area. ※ It is not displayed on mobile. (It is a policy "
 "violation to paste Google AdSense here.)"
 
-#: lib/widget-areas.php:31
+#: lib/widget-areas.php:42
+#, fuzzy
+#| msgid "スクロール追従領域"
+msgid "メンインカラムスクロール追従"
+msgstr "Men in column scroll tracking"
+
+#: lib/widget-areas.php:44
+#, fuzzy
+#| msgid ""
+#| "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表"
+#| "示されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
+msgid ""
+"メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が"
+"長い場合に追従してきます。※モバイルでは表示されません。（ここにGoogle AdSense"
+"を貼るのはポリシー違反です。）"
+msgstr ""
+"It is chasing and scroll down in the main column area. You can follow the "
+"sidebar is longer. * Will not be displayed in the mobile. (Put Google "
+"AdSense on here is a violation of policy. )"
+
+#: lib/widget-areas.php:58
 msgid "投稿パンくずリスト上"
 msgstr "Over Breadcrumbs"
 
-#: lib/widget-areas.php:33
+#: lib/widget-areas.php:60
 msgid ""
 "投稿のパンくずリスト上に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed above a breadcrumbs on a post."
 
-#: lib/widget-areas.php:42
+#: lib/widget-areas.php:74
 msgid "投稿タイトル上"
 msgstr "Over Post Title"
 
-#: lib/widget-areas.php:44
+#: lib/widget-areas.php:76
 msgid "投稿タイトル上に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed above a post title."
 
-#: lib/widget-areas.php:53
+#: lib/widget-areas.php:90
 msgid "投稿本文上"
 msgstr "Post Content Top"
 
-#: lib/widget-areas.php:55
+#: lib/widget-areas.php:92
 msgid "投稿本文上に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed on a post content top."
 
-#: lib/widget-areas.php:64
+#: lib/widget-areas.php:106
 msgid "投稿本文中"
 msgstr "Post Content Middle"
 
-#: lib/widget-areas.php:66
+#: lib/widget-areas.php:108
 msgid ""
 "投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広"
 "告が表示されている場合は、広告の下に表示されます。設定しないと表示されませ"
 "ん。"
 msgstr "Widget area displayed in a post content."
 
-#: lib/widget-areas.php:75
+#: lib/widget-areas.php:122
 msgid "投稿本文下"
 msgstr "Post Content Bottom"
 
-#: lib/widget-areas.php:77
+#: lib/widget-areas.php:124
 msgid "投稿本文下に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed on a post content bottom."
 
-#: lib/widget-areas.php:86
+#: lib/widget-areas.php:138
 msgid "投稿SNSボタン上"
 msgstr "Over Post SNS Buttons"
 
-#: lib/widget-areas.php:88
+#: lib/widget-areas.php:140
 msgid ""
 "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を"
 "表示している場合は、広告の下になります。設定しないと表示されません。"
 msgstr "Widget area displayed above SNS buttons at the bottom of a post."
 
-#: lib/widget-areas.php:97
+#: lib/widget-areas.php:154
 msgid "投稿SNSボタン下"
 msgstr "Under Post SNS Buttons"
 
-#: lib/widget-areas.php:99
+#: lib/widget-areas.php:156
 msgid ""
 "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。設定し"
 "ないと表示されません。"
 msgstr "Widget area displayed below the SNS buttons at the bottom of a post."
 
-#: lib/widget-areas.php:108
+#: lib/widget-areas.php:170
 msgid "投稿関連記事下"
 msgstr "Under Related Posts"
 
-#: lib/widget-areas.php:110
+#: lib/widget-areas.php:172
 msgid ""
 "関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。設定"
 "しないと表示されません。"
 msgstr "Widget area displayed below a related posts."
 
-#: lib/widget-areas.php:119
+#: lib/widget-areas.php:186
 msgid "固定ページ本文上"
 msgstr "Page Content Top"
 
-#: lib/widget-areas.php:121
+#: lib/widget-areas.php:188
 msgid "固定ページ本文上に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed above a page content."
 
-#: lib/widget-areas.php:130
+#: lib/widget-areas.php:202
 msgid "固定ページ本文中"
 msgstr "Page Content Middle"
 
-#: lib/widget-areas.php:132
+#: lib/widget-areas.php:204
 msgid ""
 "固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されま"
 "す。広告が表示されている場合は、広告の下に表示されます。設定しないと表示され"
@@ -2521,94 +3133,94 @@ msgstr ""
 "Widget area displayed in a page content. It is displayed before the first H2 "
 "tag in the content."
 
-#: lib/widget-areas.php:141
+#: lib/widget-areas.php:218
 msgid "固定ページ本文下"
 msgstr "Page Content Bottom"
 
-#: lib/widget-areas.php:143
+#: lib/widget-areas.php:220
 msgid "固定ページ本文下に表示されるウイジェット。設定しないと表示されません。"
 msgstr "Widget area displayed below a page content. "
 
-#: lib/widget-areas.php:152
+#: lib/widget-areas.php:235
 msgid "固定ページSNSボタン上"
 msgstr "Over Page SNS Buttons"
 
-#: lib/widget-areas.php:154
+#: lib/widget-areas.php:237
 msgid ""
 "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。"
 "広告を表示している場合は、広告の下になります。設定しないと表示されません。"
 msgstr "Widget area displayed above SNS buttons at the bottom of a page."
 
-#: lib/widget-areas.php:163
+#: lib/widget-areas.php:251
 msgid "固定ページSNSボタン下"
 msgstr "Under Page SNS Buttons"
 
-#: lib/widget-areas.php:165
+#: lib/widget-areas.php:253
 msgid ""
 "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
 "設定しないと表示されません。"
 msgstr "Widget area displayed below SNS buttons at the bottom of a page."
 
-#: lib/widget-areas.php:174
+#: lib/widget-areas.php:267
 msgid "インデックスリストトップ"
 msgstr "Index Top"
 
-#: lib/widget-areas.php:176
+#: lib/widget-areas.php:269
 msgid ""
 "インデックスリストのトップに表示されるウイジェット。広告が表示されているとき"
 "は広告の下に表示されます。設定しないと表示されません。"
 msgstr "Widget area displayed at the top of a index page."
 
-#: lib/widget-areas.php:185
+#: lib/widget-areas.php:283
 msgid "インデックスリストミドル"
 msgstr "Index Middle"
 
-#: lib/widget-areas.php:187
+#: lib/widget-areas.php:285
 msgid ""
 "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」"
 "が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下"
 "に表示されます。設定しないと表示されません。"
 msgstr "Widget area displayed at the middle of a index page."
 
-#: lib/widget-areas.php:196
+#: lib/widget-areas.php:299
 msgid "インデックスリストボトム"
 msgstr "Index Bottom"
 
-#: lib/widget-areas.php:198
+#: lib/widget-areas.php:301
 msgid ""
 "インデックスリストのボトムに表示されるウイジェット。広告が表示されているとき"
 "は広告の下に表示されます。設定しないと表示されません。"
 msgstr "Widget area displayed at the bottom of a index page."
 
-#: lib/widget-areas.php:207
+#: lib/widget-areas.php:315
 msgid "フッター左"
 msgstr "Footer Left"
 
-#: lib/widget-areas.php:209
+#: lib/widget-areas.php:317
 msgid "フッター左側のウィジットエリアです。"
 msgstr "Widget area displayed at the left of this site footer."
 
-#: lib/widget-areas.php:219
+#: lib/widget-areas.php:332
 msgid "フッター中"
 msgstr "Footer Center"
 
-#: lib/widget-areas.php:220
+#: lib/widget-areas.php:333
 msgid "フッター中間のウィジットエリアです。"
 msgstr "Widget area displayed at the center of this site footer."
 
-#: lib/widget-areas.php:229
+#: lib/widget-areas.php:347
 msgid "フッター右"
 msgstr "Footer Right"
 
-#: lib/widget-areas.php:231
+#: lib/widget-areas.php:349
 msgid "フッター右側フッター中のウィジットエリアです。"
 msgstr "Widget area displayed at the right of this site footer."
 
-#: lib/widget-areas.php:240
+#: lib/widget-areas.php:364
 msgid "404ページ"
 msgstr "404 Page"
 
-#: lib/widget-areas.php:242
+#: lib/widget-areas.php:366
 msgid "404ページをカスタマイズするためのウィジットエリアです。"
 msgstr "Widget area for customizing 404 pages."
 
@@ -2619,6 +3231,7 @@ msgid ""
 msgstr "Old type text widget with only text editor (without visual editor)."
 
 #: lib/widgets/classic-text.php:10
+#, fuzzy
 msgid "[S] クラシックテキスト"
 msgstr "[S] Clasic Text"
 
@@ -2635,6 +3248,7 @@ msgid "自動的に段落を追加する"
 msgstr "Automatically add paragraphs"
 
 #: lib/widgets/facebook-page-like.php:9
+#, fuzzy
 msgid "[S] Facebookページ「いいね！」"
 msgstr "[S] Facebook 'LIKE!\" Button"
 
@@ -2661,6 +3275,7 @@ msgid ""
 msgstr ""
 
 #: lib/widgets/mobile-ad.php:9
+#, fuzzy
 msgid "[S] モバイル用広告"
 msgstr "[S] Ad for Mobile"
 
@@ -2735,16 +3350,6 @@ msgstr "New posts title"
 #: lib/widgets/popular-ranking.php:166
 msgid "表示数（半角数字、デフォルト：5）"
 msgstr "Display count (default: 5)"
-
-#: lib/widgets/new-entries.php:116 lib/widgets/new-popular.php:182
-#: lib/widgets/popular-ranking.php:173
-msgid "表示タイプ"
-msgstr "Display type:"
-
-#: lib/widgets/new-entries.php:118 lib/widgets/new-popular.php:184
-#: lib/widgets/popular-ranking.php:175
-msgid "デフォルト"
-msgstr "Default"
 
 #: lib/widgets/new-entries.php:119 lib/widgets/new-popular.php:185
 #: lib/widgets/popular-ranking.php:176
@@ -2984,9 +3589,13 @@ msgstr "<div>"
 msgid "ブログ内を検索"
 msgstr "Search in the blog"
 
-#: tmp/breadcrumbs-page.php:6 tmp/breadcrumbs.php:7
+#: tmp/breadcrumbs-page.php:8 tmp/breadcrumbs.php:8
 msgid "ホーム"
 msgstr "Home"
+
+#: tmp/list.php:39
+msgid "投稿が見つかりませんでした。"
+msgstr "Posts could not be found"
 
 #: tmp/new-entries.php:33
 #, fuzzy
@@ -2998,7 +3607,7 @@ msgstr "No new arrivals were found."
 msgid "次のページ"
 msgstr "Next Page"
 
-#: tmp/related-entries.php:13
+#: tmp/related-entries.php:20
 msgid "関連記事は見つかりませんでした。"
 msgstr "Could not find related posts."
 
@@ -3059,9 +3668,29 @@ msgid "はてブ"
 msgstr "Hatena"
 
 #: tmp/sns-share-buttons.php:48
-#, fuzzy
 msgid "LINE"
 msgstr "LINE"
+
+#, fuzzy
+#~ msgid "グローバルナビ"
+#~ msgstr "Global navigation color"
+
+#, fuzzy
+#~ msgid "レイアウト"
+#~ msgstr "Layout (Whole / Index)"
+
+#, fuzzy
+#~ msgid "ヘッダー色"
+#~ msgstr "Header color:"
+
+#, fuzzy
+#~| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
+#~ msgid ""
+#~ "訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に"
+#~ "変換されます。"
+#~ msgstr ""
+#~ "Please enter a message urging visitors to follow up. %s will be converted "
+#~ "to the display name of the contributor."
 
 #, fuzzy
 #~ msgid "ブログカード（外部）"
