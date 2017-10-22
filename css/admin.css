@@ -1534,6 +1534,8 @@
   .demo .ad-sidebar-top .ad-label,
   .demo .ad-sidebar-bottom .ad-label {
     display: none; }
+  .demo .ad-content-top {
+    margin-top: 1em; }
   .demo .ad-single-rectangle .ad-responsive,
   .demo .ad-dabble-rectangle .ad-responsive {
     max-width: 336px;

@@ -1970,6 +1970,10 @@ label.screen-reader-text {
   display: none;
 }
 
+.ad-content-top {
+  margin-top: 1em;
+}
+
 .ad-single-rectangle .ad-responsive,
 .ad-dabble-rectangle .ad-responsive {
   max-width: 336px;
