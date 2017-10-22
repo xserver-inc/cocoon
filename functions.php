@@ -247,7 +247,13 @@ function add_toc_before_1st_h2($the_content){
   $depth       = intval(get_toc_depth()); //2-6 0で全て
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
-  $number_visible   = true; //見出しの数字を表示するか
+  $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
+  if ($number_visible) {
+    $list_tag = 'ol';
+  } else {
+    $list_tag = 'ul';
+  }
+
 
   if($targetclass===''){$targetclass = get_post_type();}
   for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
@@ -268,7 +274,7 @@ function add_toc_before_1st_h2($the_content){
 
 
   if($header_count > 0){
-    $toc_list .= '<ol' . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
+    $toc_list .= '<' . $list_tag . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
   }
   for($i=0;$i < $header_count;$i++){
     $depth = 0;
@@ -284,13 +290,13 @@ function add_toc_before_1st_h2($the_content){
     if($depth >= 1 && $depth <= $max_depth){
       if($current_depth == $depth){$toc_list .= '</li>';}
       while($current_depth > $depth){
-        $toc_list .= '</li></ol>';
+        $toc_list .= '</li></'.$list_tag.'>';
         $current_depth--;
         $counters[$current_depth] = 0;
       }
       if($current_depth != $prev_depth){$toc_list .= '</li>';}
       if($current_depth < $depth){
-        $toc_list .= '<ol>';
+        $toc_list .= '<'.$list_tag.'>';
         $current_depth++;
       }
       $counters[$current_depth - 1] ++;
@@ -300,7 +306,7 @@ function add_toc_before_1st_h2($the_content){
     }
   }
   while($current_depth >= 1 ){
-    $toc_list .= '</li></ol>';
+    $toc_list .= '</li></'.$list_tag.'>';
     $current_depth--;
   }
   if($counter >= $showcount){
