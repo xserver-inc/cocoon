@@ -21,6 +21,7 @@ require_once 'page-settings/analytics-funcs.php';  //アクセス解析設定関
 require_once 'page-settings/index-funcs.php';      //インデックス設定関数
 require_once 'page-settings/single-funcs.php';     //投稿設定関数
 require_once 'page-settings/page-funcs.php';       //固定ページ設定関数
+require_once 'page-settings/toc-funcs.php';        //目次設定関数
 require_once 'page-settings/sns-share-funcs.php';  //SNSシェア設定関数
 require_once 'page-settings/sns-follow-funcs.php'; //SNSフォロー設定関数
 require_once 'page-settings/comment-funcs.php';    //コメント設定関数

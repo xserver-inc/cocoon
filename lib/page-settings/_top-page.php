@@ -30,6 +30,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'single-posts.php';
   //固定ページ
   require_once 'page-posts.php';
+  //目次
+  require_once 'toc-posts.php';
   //SNSシェア
   require_once 'sns-share-posts.php';
   //SNSフォロー
@@ -91,6 +93,7 @@ endif;
     <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="page-page"><?php _e( '固定ページ', THEME_NAME ) ?></li>
+    <li class="page-page"><?php _e( '目次', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
@@ -162,6 +165,11 @@ endif;
   <!-- 固定ページ -->
   <div class="page-page metabox-holder">
     <?php require_once 'page-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 目次 -->
+  <div class="toc-page metabox-holder">
+    <?php require_once 'toc-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSシェアタブ -->
