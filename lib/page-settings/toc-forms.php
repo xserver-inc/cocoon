@@ -71,12 +71,17 @@
         <!-- 目次ナンバーの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_NUMBER_VISIBLE, __('目次ナンバーの表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_TOC_NUMBER_TYPE, __('目次ナンバーの表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_TOC_NUMBER_VISIBLE , is_toc_number_visible(), __( '目次ナンバーを表示する', THEME_NAME ));
-            genelate_tips_tag(__( '目次項目手前の数字を表示するかを設定します。', THEME_NAME ));
+            $options = array(
+              'none' => __( '表示しない', THEME_NAME ),
+              'number' => __( '数字（デフォルト）', THEME_NAME ),
+              'number_detail' => __( '数字詳細（ex: 1.2.3）', THEME_NAME ),
+            );
+            genelate_selectbox_tag(OP_TOC_NUMBER_TYPE, $options, get_toc_number_type());
+            genelate_tips_tag(__( '設定項目手前の数字の表示形式を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>

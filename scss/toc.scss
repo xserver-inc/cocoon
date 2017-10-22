@@ -9,6 +9,21 @@
 
   ul, ol{
     padding-left: 20px;
+  }
+
+  ul{
+    list-style: none;
+  }
+}
+
+/************************************
+** h2-h6の見出し目次に連番を振る
+************************************/
+.toc.tnt-number-detail{
+  >ol{
+    padding-left: 0;
+  }
+  ol{
     list-style: none;
     li:before{
       margin-right: 6px;
@@ -16,9 +31,6 @@
   }
 
   ol{
-    /************************************
-    ** h2-h6の見出し目次に連番を振る
-    ************************************/
     >li{
       counter-increment: counter-h2;
       counter-reset: counter-h3;
@@ -34,7 +46,7 @@
     }
 
     >li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3);
+      content: counter(counter-h2)"."counter(counter-h3)".";
     }
 
     >li > ol > li > ol > li{
@@ -43,7 +55,7 @@
     }
 
     >li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4);
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)".";
     }
 
     >li > ol > li > ol > li > ol > li{
@@ -52,7 +64,7 @@
     }
 
     >li > ol > li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5);
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)".";
     }
 
     >li > ol > li > ol > li > ol > li > ol > li{
@@ -60,10 +72,7 @@
     }
 
     >li > ol > li > ol > li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)"."counter(counter-h6);
+      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)"."counter(counter-h6)".";
     }
-
   }
-
-
 }

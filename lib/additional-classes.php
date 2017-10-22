@@ -505,7 +505,7 @@ function get_additional_page_breadcrumbs_classes($option = null){
 endif;
 
 
-//いっそタイプのclass追加関数
+//エントリーカードのclass追加関数
 if ( !function_exists( 'get_additional_entry_card_classes' ) ):
 function get_additional_entry_card_classes($option = null){
   $classes = null;
@@ -521,6 +521,20 @@ function get_additional_entry_card_classes($option = null){
     $classes .= ' entry-card-border';
   }
 
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
+//目次のclass追加関数
+if ( !function_exists( 'get_additional_toc_classes' ) ):
+function get_additional_toc_classes($option = null){
+  $classes = null;
+
+  $classes .= ' tnt-'.str_replace('_', '-', get_toc_number_type());
   if ($option) {
     $classes .= ' '.trim($option);
   }

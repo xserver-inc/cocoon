@@ -25,9 +25,14 @@ function get_toc_depth(){
 endif;
 
 //目次の数字の表示
-define('OP_TOC_NUMBER_VISIBLE', 'toc_number_visible');
+define('OP_TOC_NUMBER_TYPE', 'toc_number_type');
+if ( !function_exists( 'get_toc_number_type' ) ):
+function get_toc_number_type(){
+  return get_theme_option(OP_TOC_NUMBER_TYPE, 'number');
+}
+endif;
 if ( !function_exists( 'is_toc_number_visible' ) ):
 function is_toc_number_visible(){
-  return get_theme_option(OP_TOC_NUMBER_VISIBLE, 1);
+  return get_toc_number_type() != 'none';
 }
 endif;

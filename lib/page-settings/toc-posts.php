@@ -9,4 +9,4 @@ update_theme_option(OP_TOC_TITLE);
 update_theme_option(OP_TOC_DEPTH);
 
 //目次の数字の表示
-update_theme_option(OP_TOC_NUMBER_VISIBLE);
+update_theme_option(OP_TOC_NUMBER_TYPE);

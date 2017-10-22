@@ -207,6 +207,9 @@
   ** 目次
   ************************************/
   /************************************
+  ** h2-h6の見出し目次に連番を振る
+  ************************************/
+  /************************************
   ** コメント
   ************************************/
   /************************************
@@ -918,38 +921,39 @@
     line-height: 1.5;
     padding: 8px; }
     .demo .toc ul, .demo .toc ol {
-      padding-left: 20px;
+      padding-left: 20px; }
+    .demo .toc ul {
       list-style: none; }
-      .demo .toc ul li:before, .demo .toc ol li:before {
-        margin-right: 6px; }
-    .demo .toc ol {
-      /************************************
-      ** h2-h6の見出し目次に連番を振る
-      ************************************/ }
-      .demo .toc ol > li {
-        counter-increment: counter-h2;
-        counter-reset: counter-h3; }
-      .demo .toc ol > li:before {
-        content: counter(counter-h2); }
-      .demo .toc ol > li > ol > li {
-        counter-increment: counter-h3;
-        counter-reset: counter-h4; }
-      .demo .toc ol > li > ol > li:before {
-        content: counter(counter-h2) "." counter(counter-h3); }
-      .demo .toc ol > li > ol > li > ol > li {
-        counter-increment: counter-h4;
-        counter-reset: counter-h5; }
-      .demo .toc ol > li > ol > li > ol > li:before {
-        content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4); }
-      .demo .toc ol > li > ol > li > ol > li > ol > li {
-        counter-increment: counter-h5;
-        counter-reset: counter-h6; }
-      .demo .toc ol > li > ol > li > ol > li > ol > li:before {
-        content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5); }
-      .demo .toc ol > li > ol > li > ol > li > ol > li > ol > li {
-        counter-increment: counter-h6; }
-      .demo .toc ol > li > ol > li > ol > li > ol > li > ol > li:before {
-        content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5) "." counter(counter-h6); }
+  .demo .toc.tnt-number-detail > ol {
+    padding-left: 0; }
+  .demo .toc.tnt-number-detail ol {
+    list-style: none; }
+    .demo .toc.tnt-number-detail ol li:before {
+      margin-right: 6px; }
+  .demo .toc.tnt-number-detail ol > li {
+    counter-increment: counter-h2;
+    counter-reset: counter-h3; }
+  .demo .toc.tnt-number-detail ol > li:before {
+    content: counter(counter-h2); }
+  .demo .toc.tnt-number-detail ol > li > ol > li {
+    counter-increment: counter-h3;
+    counter-reset: counter-h4; }
+  .demo .toc.tnt-number-detail ol > li > ol > li:before {
+    content: counter(counter-h2) "." counter(counter-h3) "."; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li {
+    counter-increment: counter-h4;
+    counter-reset: counter-h5; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li:before {
+    content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "."; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li {
+    counter-increment: counter-h5;
+    counter-reset: counter-h6; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before {
+    content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5) "."; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li {
+    counter-increment: counter-h6; }
+  .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before {
+    content: counter(counter-h2) "." counter(counter-h3) "." counter(counter-h4) "." counter(counter-h5) "." counter(counter-h6) "."; }
   .demo .commets-list {
     padding: 0;
     list-style: none; }

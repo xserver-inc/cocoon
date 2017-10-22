@@ -312,7 +312,7 @@ function add_toc_before_1st_h2($the_content){
   if($counter >= $showcount){
     if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
     $html .= '
-    <div' . $id . ' class="' . $class . '">
+    <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">
       <div class="toc-title">' . $title . '</div>
       ' . $toc_list .'
     </div>';
