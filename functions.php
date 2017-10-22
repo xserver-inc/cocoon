@@ -244,7 +244,7 @@ function add_toc_before_1st_h2($the_content){
   $class       = 'toc';
   $title       = get_toc_title(); //目次タイトル
   $showcount   = 0;
-  $depth       = 0; //2-6 0で全て
+  $depth       = intval(get_toc_depth()); //2-6 0で全て
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
   $number_visible   = true; //見出しの数字を表示するか
