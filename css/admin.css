@@ -409,7 +409,8 @@
   .demo .main-scroll {
     position: -webkit-sticky;
     position: sticky;
-    top: 0; }
+    top: 0;
+    margin-top: 2em; }
   .demo figure {
     margin: 0; }
   .demo img {

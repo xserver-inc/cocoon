@@ -31,4 +31,7 @@ if (is_single_breadcrumbs_position_main_bottom()){
   get_template_part('tmp/breadcrumbs');
 } ?>
 
+<?php //メインカラム追従領域
+get_template_part('tmp/main-scroll'); ?>
+
 <?php get_footer(); ?>

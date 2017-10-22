@@ -19,17 +19,12 @@ if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-get_template_part('tmp/pagination') ?>
-
+get_template_part('tmp/pagination'); ?>
 
 <?php
 ////////////////////////////
 //メインカラム追従領域
 ////////////////////////////
-if ( is_active_sidebar( 'main-scroll' ) ) : ?>
-<div id="main-scroll" class="main-scroll">
-  <?php dynamic_sidebar( 'main-scroll' ); ?>
-</div>
-<?php endif; ?>
+get_template_part('tmp/main-scroll'); ?>
 
 <?php get_footer(); ?>

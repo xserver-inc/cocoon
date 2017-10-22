@@ -13,12 +13,5 @@
     get_template_part_with_ad_format(get_ad_pos_sidebar_bottom_format(), 'ad-sidebar-bottom');
   }; ?>
 
-  <?php if (is_scrollable_sidebar_enable()): ?>
-  <!--スクロール追従領域-->
-  <div class="sidebar-scroll">
-    <?php dynamic_sidebar('sidebar-scroll');?>
-  </div>
-  <?php endif; ?>
-
 </div>
 <?php endif; ?>
