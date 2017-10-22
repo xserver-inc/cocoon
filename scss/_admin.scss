@@ -63,6 +63,16 @@
     display: none;
   }
 
+  .ad-area{
+    display: none;
+  }
+
+  &.toc{
+    .entry-header,
+    .entry-footer{
+      display: none;
+    }
+  }
 }
 
 .demo #related-entries h2{

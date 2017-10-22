@@ -15,10 +15,11 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <div class="demo" style="height: 300px;overflow: auto;">
-              <?php query_posts(''); ?>
-              <?php //echo add_toc_before_1st_h2(get_latest_posts(1)->post_content); ?>
+            <div class="demo toc" style="height: 300px;overflow: auto;">
+              <?php query_posts('posts_per_page=1&orderby=rand'); ?>
+              <?php get_template_part('tmp/content') ?>
             </div>
+            <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
           </td>
         </tr>
 

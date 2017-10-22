@@ -2267,6 +2267,11 @@
     display: none; }
   .demo .archive-title {
     display: none; }
+  .demo .ad-area {
+    display: none; }
+  .demo.toc .entry-header,
+  .demo.toc .entry-footer {
+    display: none; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;
