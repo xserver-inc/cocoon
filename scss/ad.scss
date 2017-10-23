@@ -2,9 +2,10 @@
 ** 広告
 ************************************/
 .ad-area{
-  @extend %bottom_margin;
+  //@extend %bottom_margin;
   //margin: 24px 0;
   text-align: center;
+  margin-bottom: 1.8em;
 }
 
 .ad-label-invisible{

@@ -146,3 +146,9 @@
     border: 1px solid $basic_border_color;
   }
 }
+
+.entry-card-day{
+  span:last-child{
+    margin-right: 0;
+  }
+}

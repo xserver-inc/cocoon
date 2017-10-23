@@ -96,7 +96,7 @@
   text-align: right;
   line-height: 1; }
 
-.demo .entry-categories-tags, .demo .ad-area {
+.demo .entry-categories-tags {
   margin-bottom: 18px; }
 
 .demo .sns-share, .demo .sns-follow {
@@ -661,6 +661,8 @@
       overflow: hidden; }
   .demo .entry-card-border .entry-card-wrap {
     border: 1px solid #cccfd2; }
+  .demo .entry-card-day span:last-child {
+    margin-right: 0; }
   .demo .date-tags {
     line-height: 0;
     margin-top: -8px;
@@ -1536,7 +1538,8 @@
     .demo .sns-follow-buttons a:last-child {
       margin-right: 0; }
   .demo .ad-area {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 1.8em; }
   .demo .ad-label-invisible .ad-label {
     display: none; }
   .demo .ad-content-top {

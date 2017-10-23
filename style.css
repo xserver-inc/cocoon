@@ -131,7 +131,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   line-height: 1;
 }
 
-.entry-categories-tags, .ad-area {
+.entry-categories-tags {
   margin-bottom: 18px;
 }
 
@@ -646,6 +646,10 @@ img {
 
 .entry-card-border .entry-card-wrap {
   border: 1px solid #cccfd2;
+}
+
+.entry-card-day span:last-child {
+  margin-right: 0;
 }
 
 /************************************
@@ -1971,6 +1975,7 @@ label.screen-reader-text {
 ************************************/
 .ad-area {
   text-align: center;
+  margin-bottom: 1.8em;
 }
 
 .ad-label-invisible .ad-label {
