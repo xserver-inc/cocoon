@@ -12,7 +12,7 @@ get_template_part('tmp/list') ?>
 ////////////////////////////
 if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告のフォーマットにrectangleを指定する
-  get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom');
+  get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom', is_ad_pos_index_bottom_label_visible());
 }; ?>
 
 <?php

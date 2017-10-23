@@ -1973,12 +1973,7 @@ label.screen-reader-text {
   text-align: center;
 }
 
-.ad-index-top .ad-label,
-.ad-above-title .ad-label,
-.ad-below-title .ad-label,
-.ad-content-top .ad-label,
-.ad-sidebar-top .ad-label,
-.ad-sidebar-bottom .ad-label {
+.ad-label-invisible .ad-label {
   display: none;
 }
 

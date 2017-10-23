@@ -6,7 +6,7 @@
 
       <?php //タイトル上の広告表示
       if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
-        get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title');
+        get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title', is_ad_pos_above_title_label_visible());
       }; ?>
 
       <header class="article-header entry-header">
@@ -14,7 +14,7 @@
 
       <?php //タイトル下の広告表示
       if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
-        get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title');
+        get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
       }; ?>
 
         <?php
@@ -33,7 +33,7 @@
 
          <?php //本文上の広告表示
         if (is_ad_pos_content_top_visible() && is_all_adsenses_visible()){
-          get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top');
+          get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top', is_ad_pos_content_top_label_visible());
         }; ?>
       </header>
 
@@ -52,7 +52,7 @@
         <?php //本文下の広告表示
         if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
           //レスポンシブ広告のフォーマットにrectangleを指定する
-          get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom');
+          get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom', is_ad_pos_content_bottom_label_visible());
         }; ?>
 
         <div class="entry-categories-tags">
@@ -62,7 +62,7 @@
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_above_sns_buttons_visible() && is_all_adsenses_visible()){
-          get_template_part_with_ad_format(get_ad_pos_above_sns_buttons_format(), 'ad-above-sns-buttons');
+          get_template_part_with_ad_format(get_ad_pos_above_sns_buttons_format(), 'ad-above-sns-buttons', is_ad_pos_above_sns_buttons_label_visible());
         }; ?>
 
         <?php //SNSシェアボタン
@@ -75,7 +75,7 @@
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_below_sns_buttons_visible() && is_all_adsenses_visible()){
-          get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons');
+          get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons', is_ad_pos_below_sns_buttons_label_visible());
         }; ?>
 
         <?php //投稿者等表示用のテンプレート

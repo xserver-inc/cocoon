@@ -1537,12 +1537,7 @@
       margin-right: 0; }
   .demo .ad-area {
     text-align: center; }
-  .demo .ad-index-top .ad-label,
-  .demo .ad-above-title .ad-label,
-  .demo .ad-below-title .ad-label,
-  .demo .ad-content-top .ad-label,
-  .demo .ad-sidebar-top .ad-label,
-  .demo .ad-sidebar-bottom .ad-label {
+  .demo .ad-label-invisible .ad-label {
     display: none; }
   .demo .ad-content-top {
     margin-top: 1em; }
@@ -2473,3 +2468,9 @@ p.submit {
 
 #wpbody-content .metabox-holder {
   padding: 0; }
+
+.detail-area {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background-color: #eee;
+  border: 1px solid #cccfd2; }

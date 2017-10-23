@@ -145,14 +145,17 @@ endif;
 
 //フォーマットを指定して広告テンプレートファイル呼び出す
 if ( !function_exists( 'get_template_part_with_ad_format' ) ):
-function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null){
+function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null, $label_visible = 1){
   // if ($wrap_class) {
   //   echo '<div class="'.$wrap_class.'">';
   // }
   if (isset($wrap_class)) {
     $wrap_class = ' '.trim($wrap_class).' ad-'.$format;
-
-
+  }
+  if ($label_visible) {
+    $wrap_class .= ' ad-label-visible';
+  } else {
+    $wrap_class .= ' ad-label-invisible';
   }
   //var_dump($format);
   //$format変数をテンプレートファイルに渡す

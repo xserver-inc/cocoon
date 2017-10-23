@@ -9,6 +9,11 @@ function get_entry_card_type(){
   return get_theme_option(OP_ENTRY_CARD_TYPE, 'entry_card');
 }
 endif;
+if ( !function_exists( 'is_entry_card_type_entry_card' ) ):
+function is_entry_card_type_entry_card(){
+  return get_entry_card_type() == 'entry_card';
+}
+endif;
 
 //エントリーカード枠線の表示
 define('OP_ENTRY_CARD_BORDER_VISIBLE', 'entry_card_border_visible');

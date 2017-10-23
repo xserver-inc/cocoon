@@ -44,8 +44,8 @@ function register_main_scroll_widget_area(){
     'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。※モバイルでは表示されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-main-scroll %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<div class="widget-main-scroll-title main-widget-label">',
-    'after_title' => '</h3>',
+    'before_title' => '<h2 class="widget-main-scroll-title main-widget-label">',
+    'after_title' => '</h2>',
   ));
 }
 endif;

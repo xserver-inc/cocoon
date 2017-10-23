@@ -13,7 +13,7 @@ if (!is_home() && !is_search()) { ?>
 ////////////////////////////
 if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告
-  get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top');
+  get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top', is_ad_pos_index_top_label_visible());
 }; ?>
 
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
@@ -29,7 +29,7 @@ if (have_posts()) : // WordPress ループ
 
     //インデックスミドルに広告を表示してよいかの判別
     if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count) && is_all_adsenses_visible()) {
-      get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle');
+      get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle', is_ad_pos_index_middle_label_visible());
     }
   endwhile; // 繰り返し処理終了 ?>
   <div class="clear"></div>

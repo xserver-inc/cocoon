@@ -107,7 +107,7 @@ function add_ads_before_1st_h2($the_content) {
   ){
     //広告（AdSense）タグを記入
     ob_start();//バッファリング
-    get_template_part_with_ad_format(get_ad_pos_content_middle_format(), 'ad-content-middle');
+    get_template_part_with_ad_format(get_ad_pos_content_middle_format(), 'ad-content-middle', is_ad_pos_content_middle_label_visible());
     $ad_template = ob_get_clean();
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
     //H2見出しが本文中にある場合のみ
@@ -172,7 +172,7 @@ function is_index_middle_ad_visible($count){
       //1ページに表示する最大投稿数が6以上の時
       is_posts_per_page_6_and_over() &&
       //エントリーカードタイプの一覧のとき
-      //is_list_style_entry_type() &&
+      is_entry_card_type_entry_card() &&
       //&&//公開記事が6以上の時
       (get_all_post_count_in_publish() >= 6)
   ) {
