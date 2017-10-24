@@ -350,3 +350,14 @@ p.submit{
   background-color: #eee;
   border: 1px solid $basic_border_color;
 }
+
+select option.fa{
+  display: block;
+
+  &:before{
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+  }
+}

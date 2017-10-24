@@ -55,7 +55,7 @@
               'fa-long-arrow-up' => __( 'fa-long-arrow-up', THEME_NAME ),
               'fa-caret-square-o-up' => __( 'fa-caret-square-o-up', THEME_NAME ),
             );
-            genelate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font());
+            genelate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), true);
             genelate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
             ?>
           </td>

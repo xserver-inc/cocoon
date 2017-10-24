@@ -2477,3 +2477,11 @@ p.submit {
   margin-bottom: 10px;
   background-color: #eee;
   border: 1px solid #cccfd2; }
+
+select option.fa {
+  display: block; }
+  select option.fa:before {
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px; }
