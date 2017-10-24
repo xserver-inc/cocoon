@@ -8,14 +8,23 @@
   bottom: 10px;
 }
 .go-to-top-button{
-  color: $white_text_color;
+  background-color: #eee;
+  color: #333;
   padding: 7px;
   text-decoration: none;
   display: block;
   cursor: pointer;
   text-align: center;
-  background-color: #aaa;
   line-height: 1;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 22px;
+  &:hover{
+    color: #333;
+  }
+}
+
+.go-to-top-button-image{
+  background-color: transparent;
+  padding: 0;
+  max-width: 120px;
 }

@@ -1686,16 +1686,22 @@
     right: 10px;
     bottom: 10px; }
   .demo .go-to-top-button {
-    color: #fff;
+    background-color: #eee;
+    color: #333;
     padding: 7px;
     text-decoration: none;
     display: block;
     cursor: pointer;
     text-align: center;
-    background-color: #aaa;
     line-height: 1;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 22px; }
+    .demo .go-to-top-button:hover {
+      color: #333; }
+  .demo .go-to-top-button-image {
+    background-color: transparent;
+    padding: 0;
+    max-width: 120px; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,

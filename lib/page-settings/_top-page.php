@@ -51,7 +51,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   //フッター
   require_once 'footer-posts.php';
   //ボタン
-  require_once 'buttons-funcs.php';
+  require_once 'buttons-posts.php';
   //管理画面
   require_once 'admin-posts.php';
   //リセット
