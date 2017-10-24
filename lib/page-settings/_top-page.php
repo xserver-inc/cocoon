@@ -50,6 +50,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'blogcard-out-posts.php';
   //フッター
   require_once 'footer-posts.php';
+  //ボタン
+  require_once 'buttons-funcs.php';
   //管理画面
   require_once 'admin-posts.php';
   //リセット
@@ -102,6 +104,7 @@ endif;
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
+    <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
@@ -111,7 +114,6 @@ endif;
     <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
-    <li class="to-top"><?php _e( 'トップに戻る', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
@@ -205,8 +207,13 @@ endif;
   </div><!-- /.metabox-holder -->
 
   <!-- フッター -->
-  <div class="admin metabox-holder">
+  <div class="footer metabox-holder">
     <?php require_once 'footer-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- ボタン -->
+  <div class="buttons metabox-holder">
+    <?php require_once 'buttons-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->

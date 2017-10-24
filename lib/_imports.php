@@ -32,6 +32,7 @@ require_once 'page-settings/ogp-funcs.php';        //OGP設定関数
 require_once 'page-settings/blogcard-in-funcs.php';  //内部ブログカード設定関数
 require_once 'page-settings/blogcard-out-funcs.php'; //外部ブログカード設定関数
 require_once 'page-settings/footer-funcs.php';      //フッター設定関数
+require_once 'page-settings/buttons-funcs.php';     //ボタン設定関数
 require_once 'page-settings/admin-funcs.php';       //管理画面設定関数
 require_once 'page-settings/reset-funcs.php';       //リセット設定関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
