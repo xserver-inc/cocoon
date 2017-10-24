@@ -61,6 +61,22 @@
           </td>
         </tr>
 
+        <!-- 色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAM) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_GO_TO_TOP_BACKGROUND_COLOR,  get_go_to_top_background_color(), '背景色');
+            genelate_tips_tag(__( 'ボタンが背景色を設定します。', THEME_NAME ));
+
+            genelate_color_picker_tag(OP_GO_TO_TOP_TEXT_COLOR,  get_go_to_top_text_color(), '文字色');
+            genelate_tips_tag(__( 'ボタンの文字色を設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- ボタン画像 -->
         <tr>
           <th scope="row">
