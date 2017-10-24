@@ -16,7 +16,7 @@
           </th>
           <td>
             <div class="demo go-to-top" style="">
-              <?php //get_template_part('tmp/content') ?>
+              <?php get_template_part('tmp/button-go-to-top') ?>
             </div>
             <?php genelate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
           </td>

@@ -77,6 +77,13 @@
   &.header{
     overflow: visible;
   }
+
+  .go-to-top{
+    position: relative;
+    display: inline-block;
+    bottom: auto;
+    right: auto;
+  }
 }
 
 .demo #related-entries h2{

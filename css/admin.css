@@ -2309,6 +2309,11 @@
     display: none; }
   .demo.header {
     overflow: visible; }
+  .demo .go-to-top {
+    position: relative;
+    display: inline-block;
+    bottom: auto;
+    right: auto; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;
