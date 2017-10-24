@@ -191,3 +191,15 @@ if (get_global_navi_sub_menu_width()): ?>
   left: <?php echo get_global_navi_sub_menu_width(); ?>px;
 }
 <?php endif ?>
+<?php //トップへ戻るボタンは背景色
+if (get_go_to_top_background_color()): ?>
+.go-to-top .go-to-top-button{
+  background-color: <?php echo get_go_to_top_background_color(); ?>;
+}
+<?php endif ?>
+<?php //トップへ戻るボタン文字色
+if (get_go_to_top_text_color()): ?>
+.go-to-top .go-to-top-button{
+  color: <?php echo get_go_to_top_text_color(); ?>;
+}
+<?php endif ?>
