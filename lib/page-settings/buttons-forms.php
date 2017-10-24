@@ -1,11 +1,11 @@
 <div class="metabox-holder">
 
-<!-- 目次 -->
+<!-- トップへ戻るボタン -->
 <div id="toc" class="postbox">
-  <h2 class="hndle"><?php _e( 'リスト設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'トップへ戻るボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'リスト表示の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ページトップにスクロール移動するかボタンの設定です。。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -15,91 +15,64 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <div class="demo toc" style="height: 300px;overflow: auto;">
-              <?php query_posts('posts_per_page=1&orderby=rand'); ?>
-              <?php get_template_part('tmp/content') ?>
+            <div class="demo go-to-top" style="">
+              <?php //get_template_part('tmp/content') ?>
             </div>
-            <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
+            <?php genelate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
           </td>
         </tr>
 
-        <!-- 目次の表示 -->
+        <!-- トップへ戻るボタンの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_VISIBLE, __('目次の表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_VISIBLE, __('トップへ戻るボタンの表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_TOC_VISIBLE , is_toc_visible(), __( '目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページの内容から目次を自動付加します。', THEME_NAME ));
+            genelate_checkbox_tag(OP_GO_TO_TOP_BUTTON_VISIBLE , is_go_to_top_button_visible(), __( 'トップへ戻るボタンを表示する', THEME_NAME ));
+            genelate_tips_tag(__( 'トップへスクロール移動するボタンを表示するかどうか。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次タイトル -->
+        <!-- ボタンのアイコンフォント -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_TITLE, __('目次タイトル', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            genelate_textbox_tag(OP_TOC_TITLE, get_toc_title(), __( '目次', THEME_NAME ));
-            genelate_tips_tag(__( '目次の上にラベル表示されるタイトルを入力してください。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
-        <!-- 目次表示の深さ -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_TOC_DEPTH, __('目次表示の深さ', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, __('ボタンのアイコンフォント', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             $options = array(
-              '2' => __( 'H2見出しまで', THEME_NAME ),
-              '3' => __( 'H3見出しまで', THEME_NAME ),
-              '4' => __( 'H4見出しまで', THEME_NAME ),
-              '5' => __( 'H5見出しまで', THEME_NAME ),
-              '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
+              'fa-angle-double-up' => __( 'fa-angle-double-up', THEME_NAME ),
+              'fa-angle-up' => __( 'fa-angle-up', THEME_NAME ),
+              'fa-arrow-circle-up' => __( 'fa-arrow-circle-up', THEME_NAME ),
+              'fa-arrow-up' => __( 'fa-arrow-up', THEME_NAME ),
+              'fa-caret-up' => __( 'fa-caret-up', THEME_NAME ),
+              'fa-caret-square-o-up' => __( 'fa-caret-square-o-up', THEME_NAME ),
+              'fa-chevron-circle-up' => __( 'fa-chevron-circle-up', THEME_NAME ),
+              'fa-chevron-up' => __( 'fa-chevron-up', THEME_NAME ),
+              'fa-hand-o-up' => __( 'fa-hand-o-up', THEME_NAME ),
+              'fa-long-arrow-up' => __( 'fa-long-arrow-up', THEME_NAME ),
+              'fa-caret-square-o-up' => __( 'fa-caret-square-o-up', THEME_NAME ),
             );
-            genelate_selectbox_tag(OP_TOC_DEPTH, $options, get_toc_depth());
-            genelate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ));
+            genelate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font());
+            genelate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次ナンバーの表示 -->
+        <!-- ボタン画像 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_NUMBER_TYPE, __('目次ナンバーの表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, __('ボタン画像', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            $options = array(
-              'none' => __( '表示しない', THEME_NAME ),
-              'number' => __( '数字（デフォルト）', THEME_NAME ),
-              'number_detail' => __( '数字詳細（ex: 1.2.3）', THEME_NAME ),
-            );
-            genelate_selectbox_tag(OP_TOC_NUMBER_TYPE, $options, get_toc_number_type());
-            genelate_tips_tag(__( '設定項目手前の数字の表示形式を設定します。', THEME_NAME ));
+            genelate_upload_image_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, get_go_to_top_button_image_url());
+            genelate_tips_tag(__( 'トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。', THEME_NAME ));
             ?>
           </td>
         </tr>
-
-        <!-- 目次の表示順 -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_TOC_BEFORE_ADS, __('目次の表示順', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            genelate_checkbox_tag(OP_TOC_BEFORE_ADS , is_toc_before_ads(), __( '広告の手前に目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されているとき', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
 
       </tbody>
     </table>

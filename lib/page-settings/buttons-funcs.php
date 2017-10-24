@@ -17,9 +17,9 @@ function get_go_to_top_button_icon_font(){
 endif;
 
 //トップへ戻るボタンの画像
-define('OP_GET_GO_TO_TOP_BUTTON_IMAGE_URL', 'get_go_to_top_button_image_url');
-if ( !function_exists( 'get_get_go_to_top_button_image_url' ) ):
-function get_get_go_to_top_button_image_url(){
-  return get_theme_option(OP_GET_GO_TO_TOP_BUTTON_IMAGE_URL);
+define('OP_GO_TO_TOP_BUTTON_IMAGE_URL', 'go_to_top_button_image_url');
+if ( !function_exists( 'get_go_to_top_button_image_url' ) ):
+function get_go_to_top_button_image_url(){
+  return get_theme_option(OP_GO_TO_TOP_BUTTON_IMAGE_URL);
 }
 endif;
