@@ -2195,6 +2195,29 @@ input[type='submit'] {
   display: block;
 }
 
+/************************************
+** トップへ戻るボタン
+************************************/
+.go-to-top {
+  position: fixed;
+  display: none;
+  right: 10px;
+  bottom: 10px;
+}
+
+.go-to-top-button {
+  color: #fff;
+  padding: 7px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  background-color: #aaa;
+  line-height: 1;
+  border-radius: 4px;
+  font-size: 22px;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .sankou,
 .sanko,

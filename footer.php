@@ -50,7 +50,11 @@
 
   </div>
 
+  <?php //トップへ戻るボタンテンプレート
+  get_template_part('tmp/button-go-to-top'); ?>
+
   <?php wp_footer(); ?>
+
 
   <?php //アクセス解析フッタータグの取得
   get_template_part('tmp/footer-analytics'); ?>

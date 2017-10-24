@@ -1,0 +1,21 @@
+/************************************
+** トップへ戻るボタン
+************************************/
+.go-to-top{
+  position: fixed;
+  display: none;
+  right: 10px;
+  bottom: 10px;
+}
+.go-to-top-button{
+  color: $white_text_color;
+  padding: 7px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  background-color: #aaa;
+  line-height: 1;
+  border-radius: 4px;
+  font-size: 22px;
+}

@@ -292,6 +292,9 @@
   /*Firefoxだけに適用されるCSSハック*/
   /*特定のエリアのフォーム*/
   /*検索フォーム*/
+  /************************************
+  ** トップへ戻るボタン
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -1677,6 +1680,22 @@
       padding-right: 3px; }
   .demo .comment-respond label {
     display: block; }
+  .demo .go-to-top {
+    position: fixed;
+    display: none;
+    right: 10px;
+    bottom: 10px; }
+  .demo .go-to-top-button {
+    color: #fff;
+    padding: 7px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #aaa;
+    line-height: 1;
+    border-radius: 4px;
+    font-size: 22px; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
