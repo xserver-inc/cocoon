@@ -95,5 +95,25 @@
 
   </div>
 </div>
+<?php
 
+    hierarchical_category_tree( 0 ); // the function call; 0 for all categories; or cat ID
+
+function hierarchical_category_tree( $cat ) {
+    // wpse-41548 // alchymyth // a hierarchical list of all categories //
+
+  $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
+
+  if( $next ) :
+    foreach( $next as $cat ) :
+    echo '<ul><li><strong>' . $cat->name . '</strong>';
+    echo ' / <a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $cat->name ) . '" ' . '>View ( '. $cat->count . ' posts )</a>  ';
+    echo ' / <a href="'. get_admin_url().'edit-tags.php?action=edit&taxonomy=category&tag_ID='.$cat->term_id.'&post_type=post" title="Edit Category">Edit</a>';
+    hierarchical_category_tree( $cat->term_id );
+    endforeach;
+  endif;
+
+  echo '</li></ul>'; echo "\n";
+}
+?>
 </div><!-- /.metabox-holder -->

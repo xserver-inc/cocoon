@@ -22,6 +22,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'title-posts.php';
   //SEO
   require_once 'seo-posts.php';
+  //OGP
+  require_once 'ogp-posts.php';
   //アクセス解析
   require_once 'analytics-posts.php';
   //インデックス
@@ -36,18 +38,18 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'sns-share-posts.php';
   //SNSフォロー
   require_once 'sns-follow-posts.php';
-  //コメント
-  require_once 'comment-posts.php';
-  //ソースコード
-  require_once 'code-posts.php';
   //画像
   require_once 'image-posts.php';
-  //OGP
-  require_once 'ogp-posts.php';
   //内部ブログカード
   require_once 'blogcard-in-posts.php';
   //外部ブログカード
   require_once 'blogcard-out-posts.php';
+  //ソースコード
+  require_once 'code-posts.php';
+  //コメント
+  require_once 'comment-posts.php';
+  //アピールエリア
+  require_once 'appeal-posts.php';
   //フッター
   require_once 'footer-posts.php';
   //ボタン
@@ -91,6 +93,7 @@ endif;
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
+    <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
     <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
@@ -98,11 +101,11 @@ endif;
     <li class="page-page"><?php _e( '目次', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
-    <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
-    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
-    <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
+    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
+    <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
+    <li class="appeal"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
@@ -145,6 +148,11 @@ endif;
     <?php require_once 'seo-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
+  <!-- OGP -->
+  <div class="ogp metabox-holder">
+    <?php require_once 'ogp-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
     <?php require_once 'analytics-forms.php'; ?>
@@ -180,9 +188,15 @@ endif;
     <?php require_once 'sns-follow-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- コメントタブ -->
-  <div class="comment metabox-holder">
-    <?php require_once 'comment-forms.php'; ?>
+  <!-- 画像タブ -->
+  <div class="image metabox-holder">
+    <?php require_once 'image-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 内部・外部ブログカード -->
+  <div class="blog-card-in metabox-holder">
+    <?php require_once 'blogcard-in-forms.php'; ?>
+    <?php require_once 'blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コードタブ -->
@@ -190,20 +204,14 @@ endif;
     <?php require_once 'code-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- 画像タブ -->
-  <div class="image metabox-holder">
-    <?php require_once 'image-forms.php'; ?>
+  <!-- コメントタブ -->
+  <div class="comment metabox-holder">
+    <?php require_once 'comment-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <!-- OGP -->
-  <div class="ogp metabox-holder">
-    <?php require_once 'ogp-forms.php'; ?>
-  </div><!-- /.metabox-holder -->
-
-  <!-- 内部・外部ブログカード -->
-  <div class="blog-card-in metabox-holder">
-    <?php require_once 'blogcard-in-forms.php'; ?>
-    <?php require_once 'blogcard-out-forms.php'; ?>
+  <!-- アピールエリア -->
+  <div class="appeal metabox-holder">
+    <?php require_once 'appeal-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- フッター -->

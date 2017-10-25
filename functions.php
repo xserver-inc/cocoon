@@ -225,6 +225,7 @@ function customize_register_custom( $wp_customize ) {
 endif;
 
 //最初のH2タグの前に目次を挿入する
+//ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 if (is_toc_visible()) {
   //優先順位の設定
   if (is_toc_before_ads()) {

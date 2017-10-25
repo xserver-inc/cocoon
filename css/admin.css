@@ -935,11 +935,21 @@
     font-size: 0.9em;
     line-height: 1.5;
     padding: 8px;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    display: table; }
     .demo .toc ul, .demo .toc ol {
-      padding-left: 20px; }
+      padding-left: 20px;
+      margin-top: 0; }
     .demo .toc ul {
-      list-style: none; }
+      list-style: none;
+      padding-left: 5px; }
+    .demo .toc a {
+      color: #333435;
+      text-decoration: none; }
+      .demo .toc a:hover {
+        text-decoration: underline; }
+  .demo .toc-title {
+    font-size: 1.1em; }
   .demo .toc.tnt-number-detail > ol {
     padding-left: 0; }
   .demo .toc.tnt-number-detail ol {
