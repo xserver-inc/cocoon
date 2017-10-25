@@ -323,25 +323,52 @@ function add_toc_before_1st_h2($the_content){
       <div class="toc-title">' . $title . '</div>
       ' . $toc_list .'
     </div>';
-    $script = '
-    (function($){
-      $(document).ready(function(){
-        var hxs = $(".'.$targetclass.'").find("' . implode(',', $harray) . '");
-        //console.log(hxs);
-        hxs.each(function(i, e) {
-          //console.log(e);
-          //console.log(i+1);
-          $(e).attr("id", "toc"+(i+1));
-        });
-      });
-    })(jQuery);';
-    //JavaScriptの縮小化
-    $script_min = minify_js($script);
-    //javascript.jsの後に読み込む
-    wp_add_inline_script( THEME_JS, $script_min, 'after' ) ;
+    ///////////////////////////////////////
+    // jQueryの見出し処理（PHPの置換処理と比べてこちらの方が信頼度高い）
+    ///////////////////////////////////////
+    // $script = '
+    // (function($){
+    //   $(document).ready(function(){
+    //     var hxs = $(".'.$targetclass.'").find("' . implode(',', $harray) . '");
+    //     //console.log(hxs);
+    //     hxs.each(function(i, e) {
+    //       //console.log(e);
+    //       //console.log(i+1);
+    //       $(e).attr("id", "toc"+(i+1));
+    //     });
+    //   });
+    // })(jQuery);';
+    // //JavaScriptの縮小化
+    // $script_min = minify_js($script);
+    // //javascript.jsの後に読み込む
+    // wp_add_inline_script( THEME_JS, $script_min, 'after' ) ;
+
+    ///////////////////////////////////////
+    // PHPの見出し処理（条件によっては失敗するかも）
+    ///////////////////////////////////////
+    $res = preg_match_all('/<('.implode('|', $harray).')[^>]*?>.*?<\/h[2-6]>/i', $the_content, $m);
+    // var_dump($harray);
+    // var_dump($res);
+    //var_dump($m);
+    if ($res && $m[0] && $m[1]) {
+      $i = 0;
+      foreach ($m[0] as $value) {
+        //var_dump($m[0][$i]);
+        $h_tag = $m[1][$i];
+        $new = str_replace('<'.$h_tag, '<'.$h_tag.' id="toc'.strval($i+1).'"', $value);
+        // var_dump($value);
+        // var_dump($new);
+
+        $the_content = str_replace($value, $new, $the_content);
+
+        $i++;
+      }
+    }
+
   }
   $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
   $the_content = preg_replace(H2_REG, $html.$h2result, $the_content, 1);
+  //var_dump($the_content);
   return $the_content;
 }
 endif;
