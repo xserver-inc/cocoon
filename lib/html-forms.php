@@ -376,3 +376,32 @@ function genelate_category_checklist( $post_id = 0, $descendants_and_self = 0, $
   <?php
 }
 endif;
+
+if ( !function_exists( 'genelate_hierarchical_category_check_list' ) ):
+function genelate_hierarchical_category_check_list( $cat, $name, $checks, $width = auto ) {
+  echo '<div class="category-check-list '.$name.'-list" style="width: '.$width.';">';
+  hierarchical_category_check_list( $cat, $name, $checks );
+  echo '</div>';
+}
+endif;
+
+if ( !function_exists( 'hierarchical_category_check_list' ) ):
+function hierarchical_category_check_list( $cat, $name, $checks ) {
+    // wpse-41548 // alchymyth // a hierarchical list of all categories //
+
+  $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
+
+  if( $next ) :
+    foreach( $next as $cat ) :
+      $checked = '';
+      if (in_array($cat->term_id, $checks)) {
+        $checked = ' checked="checked"';
+      }
+      echo '<ul><li><input type="checkbox" name="'.$name.'[]" value="'.$cat->term_id.'"'.$checked.'>' . $cat->name . '';
+      hierarchical_category_check_list( $cat->term_id, $name, $checks );
+    endforeach;
+  endif;
+
+  echo '</li></ul>'; echo "\n";
+}
+endif;

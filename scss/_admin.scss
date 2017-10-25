@@ -368,3 +368,23 @@ select option.fa{
     margin-right: 5px;
   }
 }
+
+.category-check-list{
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #fff;
+
+  ul{
+    margin: 0;
+    padding-left: 20px;
+    li{
+      margin-bottom: 3px;
+    }
+  }
+  >ul{
+    padding-left: 0;
+  }
+}
