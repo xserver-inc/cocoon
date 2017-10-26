@@ -402,6 +402,7 @@ img {
 ** アピールエリア
 ************************************/
 .appeal-in {
+  display: flex;
   min-height: 200px;
   padding: 3% 5%;
 }
@@ -3024,6 +3025,10 @@ input[type='submit'] {
 
   .ect-vertical-card-3 .entry-card-wrap {
     width: 49%;
+  }
+
+  div.appeal .appeal-in {
+    min-height: auto;
   }
 }
 @media screen and (max-width: 480px) {

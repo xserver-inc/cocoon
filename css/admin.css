@@ -493,6 +493,7 @@
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
     display: none; }
   .demo .appeal-in {
+    display: flex;
     min-height: 200px;
     padding: 3% 5%; }
   .demo .appeal-content {
@@ -2202,7 +2203,9 @@
       .demo .header-container-in.hlt-top-menu {
         flex-direction: column; }
       .demo .ect-vertical-card-3 .entry-card-wrap {
-        width: 49%; } }
+        width: 49%; }
+      .demo div.appeal .appeal-in {
+        min-height: auto; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }
