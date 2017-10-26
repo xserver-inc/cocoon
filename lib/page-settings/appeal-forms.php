@@ -18,7 +18,6 @@
             <div class="demo appeal-area-demo" style="">
               <?php get_template_part('tmp/appeal') ?>
             </div>
-            <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
           </td>
         </tr>
 

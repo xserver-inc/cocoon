@@ -83,7 +83,7 @@
         <!-- ヘッダー全体色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'ヘッダー全体色', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR, __( 'ヘッダー全体色', THEME_NAME ) ); ?>
           </th>
           <td>
 

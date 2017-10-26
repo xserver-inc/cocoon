@@ -3,5 +3,51 @@
 ************************************/
 .appeal{
   @extend %background_image;
+}
+
+.appeal-in{
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // align-content: center;
+  // flex-wrap: wrap;
+  position: relative;
   height: 300px;
+}
+
+.appeal-content{
+  width: 50%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: $basic_border_radius;
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  //color: #fff;
+}
+
+.appeal-button{
+  @include link_cancel($white_text_color);
+
+  background-color: $google_plus_color;
+  font-weight: bold;
+  text-align: center;
+  line-height: 3;
+  display: block;
+  width: 80%;
+  margin: auto;
+  border-radius: $basic_border_radius;
+  &:hover{
+    color: $white_text_color;
+    opacity: 0.7;
+  }
 }
