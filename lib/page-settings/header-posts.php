@@ -3,6 +3,9 @@
 //ヘッダーの種類
 update_theme_option(OP_HEADER_LAYOUT_TYPE);
 
+//ヘッダーの高さ
+update_theme_option(OP_HEADER_AREA_HEIGHT);
+
 //サイトロゴ
 update_theme_option(OP_THE_SITE_LOGO_URL);
 

@@ -34,6 +34,19 @@
           </td>
         </tr>
 
+        <!-- 高さ -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_APPEAL_AREA_HEIGHT, __('高さ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_number_tag(OP_APPEAL_AREA_HEIGHT,  get_appeal_area_height(), 200, 800);
+            genelate_tips_tag(__( 'アピールエリアの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- エリア画像 -->
         <tr>
           <th scope="row">
@@ -47,18 +60,6 @@
             //ヘッダー背景画像の固定
             genelate_checkbox_tag(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED, is_appeal_area_background_attachment_fixed(), __( 'アピールエリア背景画像の固定', THEME_NAME ));
             genelate_tips_tag(__( 'アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-        <!-- 高さ -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_APPEAL_AREA_HEIGHT, __('高さ', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            genelate_number_tag(OP_APPEAL_AREA_HEIGHT,  get_appeal_area_height(), 200, 800);
-            genelate_tips_tag(__( 'アピールエリアの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）', THEME_NAME ));
             ?>
           </td>
         </tr>

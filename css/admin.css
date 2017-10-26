@@ -2347,7 +2347,7 @@
   .demo.toc .entry-header,
   .demo.toc .entry-footer {
     display: none; }
-  .demo.header {
+  .demo.header-demo {
     overflow: visible; }
   .demo .go-to-top {
     position: relative;

@@ -8,19 +8,19 @@ function is_appeal_area_visible(){
 }
 endif;
 
-//アピールエリア画像
-define('OP_APPEAL_AREA_IMAGE_URL', 'appeal_area_image_url');
-if ( !function_exists( 'get_appeal_area_image_url' ) ):
-function get_appeal_area_image_url(){
-  return get_theme_option(OP_APPEAL_AREA_IMAGE_URL);
-}
-endif;
-
 //アピールエリアの高さ
 define('OP_APPEAL_AREA_HEIGHT', 'appeal_area_height');
 if ( !function_exists( 'get_appeal_area_height' ) ):
 function get_appeal_area_height(){
   return get_theme_option(OP_APPEAL_AREA_HEIGHT);
+}
+endif;
+
+//アピールエリア画像
+define('OP_APPEAL_AREA_IMAGE_URL', 'appeal_area_image_url');
+if ( !function_exists( 'get_appeal_area_image_url' ) ):
+function get_appeal_area_image_url(){
+  return get_theme_option(OP_APPEAL_AREA_IMAGE_URL);
 }
 endif;
 

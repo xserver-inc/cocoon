@@ -32,6 +32,19 @@
           </td>
         </tr>
 
+        <!-- 高さ -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_HEADER_AREA_HEIGHT, __('高さ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_number_tag(OP_HEADER_AREA_HEIGHT,  get_header_area_height(), 200, 800);
+            genelate_tips_tag(__( 'ヘッダーの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- ヘッダーロゴ -->
         <tr>
           <th scope="row">
