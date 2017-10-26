@@ -2939,6 +2939,9 @@ input[type='submit'] {
   .navi-in > .menu-mobile li a {
     font-size: 14px;
   }
+  .navi-in > .menu-mobile li a:after {
+    display: none;
+  }
 
   .main,
   .sidebar {

@@ -2154,6 +2154,8 @@
           line-height: 40px; }
           .demo .navi-in > .menu-mobile li a {
             font-size: 14px; }
+            .demo .navi-in > .menu-mobile li a:after {
+              display: none; }
       .demo .main,
       .demo .sidebar {
         padding: 5px;
