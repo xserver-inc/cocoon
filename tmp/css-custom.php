@@ -108,6 +108,12 @@ body.public-page{
   background-image: url(<?php echo get_site_background_image_url(); ?>);
 }
 <?php endif ?>
+<?php //ヘッダーの高さ
+if (get_header_area_height()): ?>
+.header .header-in{
+  min-height: <?php echo get_header_area_height(); ?>px;
+}
+<?php endif ?>
 <?php //ヘッダー背景画像
 if (get_header_background_image_url()): ?>
 .header{

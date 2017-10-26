@@ -6,6 +6,12 @@
   @extend %background_image;
 }
 
+.header-in{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .tagline{
   text-align: center;
   font-size: 14px;

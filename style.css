@@ -309,6 +309,12 @@ img {
 /************************************
 ** ヘッダー
 ************************************/
+.header-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .tagline {
   text-align: center;
   font-size: 14px;
@@ -3027,7 +3033,8 @@ input[type='submit'] {
     width: 49%;
   }
 
-  div.appeal .appeal-in {
+  .header div.header-in,
+  .appeal div.appeal-in {
     min-height: auto;
   }
 }
