@@ -2399,7 +2399,8 @@ pre {
 ************************************/
 .preview-label {
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 0; }
 
 /*設定項目のヒント*/
 .form-table td p.tips, .form-table td p.alert {

@@ -6,20 +6,13 @@
   <div class="inside">
 
     <p><?php _e( 'ヘッダー下でアピールしたい内容を入力します。', THEME_NAME ) ?></p>
+    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+    <div class="demo appeal-area-demo" style="">
+      <?php get_template_part('tmp/appeal') ?>
+    </div>
 
     <table class="form-table">
       <tbody>
-        <!-- プレビュー画面 -->
-        <tr>
-          <th scope="row">
-            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
-          </th>
-          <td>
-            <div class="demo appeal-area-demo" style="">
-              <?php get_template_part('tmp/appeal') ?>
-            </div>
-          </td>
-        </tr>
 
         <!-- アピールエリアの表示 -->
         <tr>
