@@ -16,6 +16,14 @@ function get_appeal_area_image_url(){
 }
 endif;
 
+//アピールエリアの高さ
+define('OP_APPEAL_AREA_HEIGHT', 'appeal_area_height');
+if ( !function_exists( 'get_appeal_area_height' ) ):
+function get_appeal_area_height(){
+  return get_theme_option(OP_APPEAL_AREA_HEIGHT);
+}
+endif;
+
 //アピールエリア背景を固定にするか
 define('OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED', 'appeal_area_background_attachment_fixed');
 if ( !function_exists( 'is_appeal_area_background_attachment_fixed' ) ):

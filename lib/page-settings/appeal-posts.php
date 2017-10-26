@@ -9,6 +9,9 @@ update_theme_option(OP_APPEAL_AREA_IMAGE_URL);
 //アピールエリア背景を固定にするか
 update_theme_option(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED);
 
+//アピールエリアの高さ
+update_theme_option(OP_APPEAL_AREA_HEIGHT);
+
 //アピールエリアメッセージ
 update_theme_option(OP_APPEAL_AREA_MESSAGE);
 
