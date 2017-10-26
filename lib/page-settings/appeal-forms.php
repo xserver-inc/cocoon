@@ -87,7 +87,7 @@
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_APPEAL_AREA_BUTTON_MESSAGE, get_appeal_area_button_message(), __( '', THEME_NAME ));
+            genelate_textbox_tag(OP_APPEAL_AREA_BUTTON_MESSAGE, get_appeal_area_button_message(), __( '例：詳細はこちら', THEME_NAME ));
             genelate_tips_tag(__( 'ボタンに表示する文字を入力してください。', THEME_NAME ));
             ?>
           </td>

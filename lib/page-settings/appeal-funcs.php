@@ -49,7 +49,7 @@ endif;
 define('OP_APPEAL_AREA_MESSAGE', 'appeal_area_message');
 if ( !function_exists( 'get_appeal_area_message' ) ):
 function get_appeal_area_message(){
-  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_MESSAGE));
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_MESSAGE, __( '詳細はこちら', THEME_NAME )));
 }
 endif;
 
