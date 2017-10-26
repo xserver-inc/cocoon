@@ -496,6 +496,8 @@
     display: block; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
     display: none; }
+  .demo .no-appeal-area .appeal {
+    display: none; }
   .demo .appeal-in {
     display: flex;
     min-height: 200px;

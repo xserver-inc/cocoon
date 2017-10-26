@@ -5,6 +5,10 @@
   @extend %background_image;
 }
 
+.no-appeal-area .appeal{
+  display: none;
+}
+
 .appeal-in{
   display: flex;
   // justify-content: center;

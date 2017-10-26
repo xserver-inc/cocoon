@@ -1,10 +1,23 @@
 <?php //アピールエリア設定に必要な定数や関数
 
+// //アピールエリアの表示
+// define('OP_APPEAL_AREA_VISIBLE', 'appeal_area_visible');
+// if ( !function_exists( 'is_appeal_area_visible' ) ):
+// function is_appeal_area_visible(){
+//   return get_theme_option(OP_APPEAL_AREA_VISIBLE, 1);
+// }
+// endif;
+
 //アピールエリアの表示
-define('OP_APPEAL_AREA_VISIBLE', 'appeal_area_visible');
+define('OP_APPEAL_AREA_DISPLAY_TYPE', 'appeal_area_display_type');
+if ( !function_exists( 'get_appeal_area_display_type' ) ):
+function get_appeal_area_display_type(){
+  return get_theme_option(OP_APPEAL_AREA_DISPLAY_TYPE, 'none');
+}
+endif;
 if ( !function_exists( 'is_appeal_area_visible' ) ):
 function is_appeal_area_visible(){
-  return get_theme_option(OP_APPEAL_AREA_VISIBLE, 1);
+  return get_appeal_area_display_type() != 'none';
 }
 endif;
 

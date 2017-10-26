@@ -17,12 +17,22 @@
         <!-- アピールエリアの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_APPEAL_AREA_VISIBLE, __('アピールエリアの表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_DISPLAY_TYPE, __('アピールエリアの表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_APPEAL_AREA_VISIBLE , is_appeal_area_visible(), __( 'アピールエリアを表示する', THEME_NAME ));
-            genelate_tips_tag(__( 'アピールエリア全体の表示を切り替えます。', THEME_NAME ));
+            $options = array(
+              'none' => __( '表示しない', THEME_NAME ),
+              'all_page' => __( '全ページで表示', THEME_NAME ),
+              'front_page_only' => __( 'フロントページのみで表示', THEME_NAME ),
+              'not_singular' => __( '投稿・固定ページ以外で表示', THEME_NAME ),
+            );
+            genelate_selectbox_tag(OP_APPEAL_AREA_DISPLAY_TYPE, $options, get_appeal_area_display_type());
+            genelate_tips_tag(__( 'アピールエリアを表示するページを設定します', THEME_NAME ));
+            ?>
+            <?php
+            // genelate_checkbox_tag(OP_APPEAL_AREA_VISIBLE , is_appeal_area_visible(), __( 'アピールエリアを表示する', THEME_NAME ));
+            // genelate_tips_tag(__( 'アピールエリア全体の表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>

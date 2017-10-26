@@ -407,6 +407,10 @@ img {
 /************************************
 ** アピールエリア
 ************************************/
+.no-appeal-area .appeal {
+  display: none;
+}
+
 .appeal-in {
   display: flex;
   min-height: 200px;

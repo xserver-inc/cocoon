@@ -71,7 +71,7 @@ function body_class_additional($classes) {
       break;
   }
 
-  //vサイドバー非表示のフラグが立っている場合はクラスを追加
+  //サイドバー非表示のフラグが立っている場合はクラスを追加
   if ($add_no_sidebar) {
     $classes[] = 'no-sidebar';
   }
@@ -100,6 +100,27 @@ function body_class_additional($classes) {
       break;
   }
 
+  //アピールエリア表示設定
+  $add_no_appeal_area = false;
+  switch (get_appeal_area_display_type()) {
+    //フロントページ以外では表示しない
+    case 'front_page_only':
+      if (!(is_front_page() && !is_paged())) {
+        $add_no_appeal_area = true;
+      }
+      break;
+    //投稿・固定ページで表示しない
+    case 'not_singular':
+      if (is_singular()) {
+        $add_no_appeal_area = true;
+      }
+      break;
+  }
+
+  //サイドバー非表示のフラグが立っている場合はクラスを追加
+  if ($add_no_appeal_area) {
+    $classes[] = 'no-appeal-area';
+  }
   return $classes;
 }
 endif;
@@ -547,6 +568,9 @@ endif;
 if ( !function_exists( 'get_additional_appeal_area_classes' ) ):
 function get_additional_appeal_area_classes($option = null){
   $classes = null;
+
+  $classes .= ' adt-'.str_replace('_', '-', get_appeal_area_display_type());
+
 
   //背景画像の固定
   if (is_appeal_area_background_attachment_fixed()) {

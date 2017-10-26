@@ -1,7 +1,7 @@
 <?php //アピールエリア設定をデータベースに保存
 
 //アピールエリアの表示
-update_theme_option(OP_APPEAL_AREA_VISIBLE);
+update_theme_option(OP_APPEAL_AREA_DISPLAY_TYPE);
 
 //アピールエリアの高さ
 update_theme_option(OP_APPEAL_AREA_HEIGHT);
