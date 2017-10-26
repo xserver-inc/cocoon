@@ -2,10 +2,10 @@
 
 <!-- 設定のリセット -->
 <div id="reset" class="postbox">
-  <h2 class="hndle"><?php _e( '設定のリセット', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'テーマ設定のリセット', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '全ての設定内容をリセットします。', THEME_NAME ) ?></p>
+    <p><?php _e( '全テーマ設定の内容をリセットします。リセットを行う前にバックアップ機能を用いて設定の保存をしておくことをおすすめします。そうすれば、レストアも可能です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

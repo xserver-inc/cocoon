@@ -9,6 +9,7 @@ if (get_site_key_color()): ?>
 .sidebar h3,
 .catlink,
 .category-label,
+.appeal-content .appeal-button,
 .demo .category-label{
   background-color: <?php echo get_site_key_color(); ?>;
 }
@@ -85,6 +86,7 @@ if (get_site_key_text_color()): ?>
 .header .site-name-text-link,
 .navi .navi-in a,
 .navi .navi-in a:hover,
+.appeal-content .appeal-button,
 .article h2,
 .sidebar h3{
   color: <?php echo get_site_key_text_color(); ?>;
