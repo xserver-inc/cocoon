@@ -166,6 +166,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   color: #fff;
 }
 
+body, .header, .appeal {
+  /* 画像を常に左右の中央に配置 */
+  background-position: top center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+}
+body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+}
+
 /************************************
 ** 基本表示
 ************************************/
@@ -196,12 +209,6 @@ body {
   line-height: 1.75;
   margin: 0;
   overflow-wrap: break-word;
-  /* 画像を常に天地左右の中央に配置 */
-  background-position: top center;
-  /* 画像をタイル状に繰り返し表示しない */
-  background-repeat: no-repeat;
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
 }
@@ -302,19 +309,6 @@ img {
 /************************************
 ** ヘッダー
 ************************************/
-.header {
-  /* 画像を常に天地左右の中央に配置 */
-  background-position: top center;
-  /* 画像をタイル状に繰り返し表示しない */
-  background-repeat: no-repeat;
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
-}
-.header.hba-fixed {
-  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-  background-attachment: fixed;
-}
-
 .tagline {
   text-align: center;
   font-size: 14px;
@@ -402,6 +396,13 @@ img {
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
   display: none;
+}
+
+/************************************
+** アピールエリア
+************************************/
+.appeal {
+  height: 300px;
 }
 
 /************************************

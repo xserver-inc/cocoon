@@ -125,6 +125,17 @@
       opacity: 0.7;
       color: #fff; }
 
+.demo body, .demo .header, .demo .appeal {
+  /* 画像を常に左右の中央に配置 */
+  background-position: top center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover; }
+  .demo body.ba-fixed, .demo .ba-fixed.header, .demo .ba-fixed.appeal {
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed; }
+
 .demo {
   /************************************
   ** 基本表示
@@ -150,6 +161,9 @@
   ************************************/
   /************************************
   ** ヘッダーレイアウト
+  ************************************/
+  /************************************
+  ** アピールエリア
   ************************************/
   /************************************
   ** グローバルメニュー
@@ -369,12 +383,6 @@
     line-height: 1.75;
     margin: 0;
     overflow-wrap: break-word;
-    /* 画像を常に天地左右の中央に配置 */
-    background-position: top center;
-    /* 画像をタイル状に繰り返し表示しない */
-    background-repeat: no-repeat;
-    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-    background-size: cover;
     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
     background-attachment: fixed; }
   .demo a:hover {
@@ -425,16 +433,6 @@
     border: 4px solid #eeeff0; }
   .demo .iwe-shadow img:not(.blogcard-thumb-image) {
     box-shadow: 5px 5px 15px #dddedf; }
-  .demo .header {
-    /* 画像を常に天地左右の中央に配置 */
-    background-position: top center;
-    /* 画像をタイル状に繰り返し表示しない */
-    background-repeat: no-repeat;
-    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-    background-size: cover; }
-    .demo .header.hba-fixed {
-      /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-      background-attachment: fixed; }
   .demo .tagline {
     text-align: center;
     font-size: 14px; }
@@ -494,6 +492,8 @@
     display: block; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
     display: none; }
+  .demo .appeal {
+    height: 300px; }
   .demo .navi {
     background-color: #fff; }
   .demo .navi-in > ul {

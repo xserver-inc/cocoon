@@ -105,7 +105,7 @@ endif;
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
-    <li class="appeal"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
+    <li class="appeal-area"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
@@ -210,7 +210,7 @@ endif;
   </div><!-- /.metabox-holder -->
 
   <!-- アピールエリア -->
-  <div class="appeal metabox-holder">
+  <div class="appeal-area metabox-holder">
     <?php require_once 'appeal-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 

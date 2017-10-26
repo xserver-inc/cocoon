@@ -319,7 +319,7 @@ function get_additional_header_classes($option = null){
 
   //ヘッダーを固定にする場合
   if (is_header_background_attachment_fixed()) {
-    $classes .= ' hba-fixed';
+    $classes .= ' ba-fixed';
   }
 
   if ($option) {
@@ -541,6 +541,25 @@ function get_additional_toc_classes($option = null){
   return $classes;
 }
 endif;
+
+
+//アピールエリアのclass追加関数
+if ( !function_exists( 'get_additional_appeal_area_classes' ) ):
+function get_additional_appeal_area_classes($option = null){
+  $classes = null;
+
+  //背景画像の固定
+  if (is_appeal_area_background_attachment_fixed()) {
+    $classes .= ' ba-fixed';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
 
 
 

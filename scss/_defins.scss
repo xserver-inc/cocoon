@@ -197,3 +197,18 @@ $bgc_hover_anime: all 0.3s ease 0s;
   }
 }
 
+%background_image{
+  /* 画像を常に左右の中央に配置 */
+  background-position: top center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  &.ba-fixed{
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+  }
+}

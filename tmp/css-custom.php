@@ -203,3 +203,9 @@ if (get_go_to_top_text_color()): ?>
   color: <?php echo get_go_to_top_text_color(); ?>;
 }
 <?php endif ?>
+<?php //アピールエリア画像
+if (get_appeal_area_image_url()): ?>
+.appeal{
+  background-image: url(<?php echo get_appeal_area_image_url(); ?>);
+}
+<?php endif ?>

@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- アピールエリア -->
-<div id="appeal" class="postbox">
+<div id="appeal-area" class="postbox">
   <h2 class="hndle"><?php _e( 'アピールエリア設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -15,7 +15,7 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <div class="demo appeal" style="">
+            <div class="demo appeal-area-demo" style="">
               <?php get_template_part('tmp/appeal') ?>
             </div>
             <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
@@ -44,6 +44,10 @@
             <?php
             genelate_upload_image_tag(OP_APPEAL_AREA_IMAGE_URL, get_appeal_area_image_url());
             genelate_tips_tag(__( 'アピールエリアの背景に表示する画像を設定します。', THEME_NAME ));
+
+            //ヘッダー背景画像の固定
+            genelate_checkbox_tag(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED, is_appeal_area_background_attachment_fixed(), __( 'アピールエリア背景画像の固定', THEME_NAME ));
+            genelate_tips_tag(__( 'アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ));
             ?>
           </td>
         </tr>
