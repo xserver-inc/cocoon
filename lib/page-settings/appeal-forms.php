@@ -1,11 +1,11 @@
 <div class="metabox-holder">
 
-<!-- 目次 -->
-<div id="toc" class="postbox">
-  <h2 class="hndle"><?php _e( 'リスト設定', THEME_NAME ) ?></h2>
+<!-- アピールエリア -->
+<div id="appeal" class="postbox">
+  <h2 class="hndle"><?php _e( 'アピールエリア設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'リスト表示の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ヘッダー下でアピールしたい内容を入力します。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -15,87 +15,87 @@
             <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
           </th>
           <td>
-            <div class="demo toc" style="height: 300px;overflow: auto;">
-              <?php query_posts('posts_per_page=1&orderby=rand'); ?>
-              <?php get_template_part('tmp/content') ?>
+            <div class="demo appeal" style="">
+              <?php get_template_part('tmp/appeal') ?>
             </div>
             <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
           </td>
         </tr>
 
-        <!-- 目次の表示 -->
+        <!-- アピールエリアの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_VISIBLE, __('目次の表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_VISIBLE, __('アピールエリアの表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_TOC_VISIBLE , is_toc_visible(), __( '目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページの内容から目次を自動付加します。', THEME_NAME ));
+            genelate_checkbox_tag(OP_APPEAL_AREA_VISIBLE , is_appeal_area_visible(), __( 'アピールエリアを表示する', THEME_NAME ));
+            genelate_tips_tag(__( 'アピールエリア全体の表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次タイトル -->
+        <!-- エリア画像 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_TITLE, __('目次タイトル', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_IMAGE_URL, __('エリア画像', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_TOC_TITLE, get_toc_title(), __( '目次', THEME_NAME ));
-            genelate_tips_tag(__( '目次の上にラベル表示されるタイトルを入力してください。', THEME_NAME ));
+            genelate_upload_image_tag(OP_APPEAL_AREA_IMAGE_URL, get_appeal_area_image_url());
+            genelate_tips_tag(__( 'アピールエリアの背景に表示する画像を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次表示の深さ -->
+        <!-- メッセージ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_DEPTH, __('目次表示の深さ', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_MESSAGE, __('メッセージ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            $options = array(
-              '2' => __( 'H2見出しまで', THEME_NAME ),
-              '3' => __( 'H3見出しまで', THEME_NAME ),
-              '4' => __( 'H4見出しまで', THEME_NAME ),
-              '5' => __( 'H5見出しまで', THEME_NAME ),
-              '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
-            );
-            genelate_selectbox_tag(OP_TOC_DEPTH, $options, get_toc_depth());
-            genelate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ));
+            genelate_textarea_tag(OP_APPEAL_AREA_MESSAGE, get_appeal_area_message(), __( '', THEME_NAME )) ;
+            genelate_tips_tag(__( 'アピールエリアに表示するメッセージを入力してください。HTMLの入力も可能です。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次ナンバーの表示 -->
+        <!-- ボタンメッセージ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_NUMBER_TYPE, __('目次ナンバーの表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_MESSAGE, __('ボタンメッセージ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            $options = array(
-              'none' => __( '表示しない', THEME_NAME ),
-              'number' => __( '数字（デフォルト）', THEME_NAME ),
-              'number_detail' => __( '数字詳細（ex: 1.2.3）', THEME_NAME ),
-            );
-            genelate_selectbox_tag(OP_TOC_NUMBER_TYPE, $options, get_toc_number_type());
-            genelate_tips_tag(__( '設定項目手前の数字の表示形式を設定します。', THEME_NAME ));
+            genelate_textbox_tag(OP_APPEAL_AREA_BUTTON_MESSAGE, get_appeal_area_button_message(), __( '', THEME_NAME ));
+            genelate_tips_tag(__( 'ボタンに表示する文字を入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次の表示順 -->
+        <!-- ボタンリンク先 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_BEFORE_ADS, __('目次の表示順', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_URL, __('ボタンリンク先', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_TOC_BEFORE_ADS , is_toc_before_ads(), __( '広告の手前に目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されているとき', THEME_NAME ));
+            genelate_textbox_tag(OP_APPEAL_AREA_BUTTON_URL, get_appeal_area_button_url(), __( '', THEME_NAME ));
+            genelate_tips_tag(__( 'ボタンのリンク先となるURLを入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- ボタン色 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_COLOR, __('ボタン色', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_color_picker_tag(OP_APPEAL_AREA_BUTTON_COLOR,  get_appeal_area_button_color(), 'ボタン色');
+            genelate_tips_tag(__( 'ボタン全体の色を選択してください。文字は白色となるので濃いめの色を設定することをおすすめします。', THEME_NAME ));
             ?>
           </td>
         </tr>

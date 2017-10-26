@@ -20,7 +20,7 @@ endif;
 define('OP_APPEAL_AREA_MESSAGE', 'appeal_area_message');
 if ( !function_exists( 'get_appeal_area_message' ) ):
 function get_appeal_area_message(){
-  return get_theme_option(OP_APPEAL_AREA_MESSAGE);
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_MESSAGE));
 }
 endif;
 
@@ -41,9 +41,9 @@ function get_appeal_area_button_url(){
 endif;
 
 //アピールエリアボタン色
-define('OP_APPEAL_AREA_BUTTON_COLOR', 'appeal_area_button_COLOR');
-if ( !function_exists( 'get_appeal_area_button_COLOR' ) ):
-function get_appeal_area_button_COLOR(){
+define('OP_APPEAL_AREA_BUTTON_COLOR', 'appeal_area_button_color');
+if ( !function_exists( 'get_appeal_area_button_color' ) ):
+function get_appeal_area_button_color(){
   return get_theme_option(OP_APPEAL_AREA_BUTTON_COLOR);
 }
 endif;
