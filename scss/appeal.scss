@@ -11,21 +11,23 @@
   // align-items: center;
   // align-content: center;
   // flex-wrap: wrap;
-  position: relative;
-  height: 300px;
+  // position: relative;
+  min-height: 200px;
+  padding: 3% 5%;
 }
 
 .appeal-content{
-  width: 50%;
-  height: 60%;
+  // width: 50%;
+  // height: 60%;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  max-width: 800px;
   background-color: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   margin: auto;
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
   border-radius: $basic_border_radius;
 
@@ -35,16 +37,20 @@
   //color: #fff;
 }
 
+.appeal-message{
+  margin-bottom: 1em;
+}
+
 .appeal-button{
   @include link_cancel($white_text_color);
 
   background-color: $google_plus_color;
   font-weight: bold;
   text-align: center;
-  line-height: 3;
   display: block;
-  width: 80%;
+  max-width: 80%;
   margin: auto;
+  padding: 10px 2em;
   border-radius: $basic_border_radius;
   &:hover{
     color: $white_text_color;

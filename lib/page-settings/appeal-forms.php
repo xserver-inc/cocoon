@@ -58,7 +58,7 @@
           </th>
           <td>
             <?php
-            genelate_textarea_tag(OP_APPEAL_AREA_MESSAGE, get_appeal_area_message(), __( '', THEME_NAME )) ;
+            genelate_textarea_tag(OP_APPEAL_AREA_MESSAGE, get_appeal_area_message(), __( '', THEME_NAME ), 3) ;
             genelate_tips_tag(__( 'アピールエリアに表示するメッセージを入力してください。HTMLの入力も可能です。', THEME_NAME ));
             ?>
           </td>
@@ -93,11 +93,11 @@
         <!-- ボタン色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_COLOR, __('ボタン色', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_color_picker_tag(OP_APPEAL_AREA_BUTTON_COLOR,  get_appeal_area_button_color(), 'ボタン色');
+            genelate_color_picker_tag(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR,  get_appeal_area_button_background_color(), 'ボタン色');
             genelate_tips_tag(__( 'ボタン全体の色を選択してください。文字は白色となるので濃いめの色を設定することをおすすめします。', THEME_NAME ));
             ?>
           </td>

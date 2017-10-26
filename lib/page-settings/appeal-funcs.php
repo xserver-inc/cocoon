@@ -49,9 +49,9 @@ function get_appeal_area_button_url(){
 endif;
 
 //アピールエリアボタン色
-define('OP_APPEAL_AREA_BUTTON_COLOR', 'appeal_area_button_color');
-if ( !function_exists( 'get_appeal_area_button_color' ) ):
-function get_appeal_area_button_color(){
-  return get_theme_option(OP_APPEAL_AREA_BUTTON_COLOR);
+define('OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR', 'appeal_area_button_background_color');
+if ( !function_exists( 'get_appeal_area_button_background_color' ) ):
+function get_appeal_area_button_background_color(){
+  return get_theme_option(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR);
 }
 endif;

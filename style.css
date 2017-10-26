@@ -402,26 +402,24 @@ img {
 ** アピールエリア
 ************************************/
 .appeal-in {
-  position: relative;
-  height: 300px;
+  min-height: 200px;
+  padding: 3% 5%;
 }
 
 .appeal-content {
-  width: 50%;
-  height: 60%;
+  max-width: 800px;
   background-color: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   margin: auto;
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-content: space-between;
+}
+
+.appeal-message {
+  margin-bottom: 1em;
 }
 
 .appeal-button {
@@ -430,10 +428,10 @@ img {
   background-color: #dd4b39;
   font-weight: bold;
   text-align: center;
-  line-height: 3;
   display: block;
-  width: 80%;
+  max-width: 80%;
   margin: auto;
+  padding: 10px 2em;
   border-radius: 4px;
 }
 .appeal-button:hover {

@@ -19,4 +19,4 @@ update_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE);
 update_theme_option(OP_APPEAL_AREA_BUTTON_URL);
 
 //アピールエリアボタン色
-update_theme_option(OP_APPEAL_AREA_BUTTON_COLOR);
+update_theme_option(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR);
