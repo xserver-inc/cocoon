@@ -378,7 +378,12 @@ function genelate_category_checklist( $post_id = 0, $descendants_and_self = 0, $
 endif;
 
 if ( !function_exists( 'genelate_hierarchical_category_check_list' ) ):
-function genelate_hierarchical_category_check_list( $cat, $name, $checks, $width = auto ) {
+function genelate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
   echo '<div class="category-check-list '.$name.'-list" style="width: '.$width.';">';
   hierarchical_category_check_list( $cat, $name, $checks );
   echo '</div>';
@@ -394,6 +399,9 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
   if( $next ) :
     foreach( $next as $cat ) :
       $checked = '';
+      if (is_string($checks)) {
+        $checks = array();
+      }
       if (in_array($cat->term_id, $checks)) {
         $checked = ' checked="checked"';
       }

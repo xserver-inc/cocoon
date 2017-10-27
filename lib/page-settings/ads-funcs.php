@@ -364,6 +364,6 @@ endif;
 define('OP_AD_EXCLUDE_CATEGORY_IDS', 'ad_exclude_category_ids');
 if ( !function_exists( 'get_ad_exclude_category_ids' ) ):
 function get_ad_exclude_category_ids(){
-  return get_theme_option(OP_AD_EXCLUDE_CATEGORY_IDS);
+  return get_theme_option(OP_AD_EXCLUDE_CATEGORY_IDS, array());
 }
 endif;

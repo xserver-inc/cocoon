@@ -218,8 +218,9 @@
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), __( '例：111,222,3333', THEME_NAME ));
-            genelate_tips_tag(__( '広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。', THEME_NAME ));
+            genelate_hierarchical_category_check_list( 0, OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), 300 );
+            //genelate_textbox_tag(OP_AD_EXCLUDE_CATEGORY_IDS, get_ad_exclude_category_ids(), __( '例：111,222,3333', THEME_NAME ));
+            genelate_tips_tag(__( '広告を表示するカテゴリを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

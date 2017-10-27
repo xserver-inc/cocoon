@@ -5,7 +5,7 @@ if ( !function_exists( 'is_ads_visible' ) ):
 function is_ads_visible(){
   //$ads_visible = is_all_ads_visible();
   $post_ids = explode(',', get_ad_exclude_post_ids());
-  $category_ids = explode(',', get_ad_exclude_category_ids());
+  $category_ids = get_ad_exclude_category_ids();
 
   //広告の除外（いずれかがあてはまれば表示しない）
   $is_exclude_ids = (
