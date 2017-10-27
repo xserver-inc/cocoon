@@ -64,11 +64,23 @@ function body_class_additional($classes) {
       }
       break;
     default:
-      //サイドバーにウィジェットが入っていない場合
-      if (!is_active_sidebar( 'sidebar' )) {
-        $add_no_sidebar = true;
-      }
+
       break;
+  }
+
+  //投稿管理画面で「1カラム」が選択されている場合
+  if (is_singular_page_type_column1()) {
+    $add_no_sidebar = true;
+  }
+
+  //投稿管理画面で「本文のみ」が選択されている場合
+  if (is_singular_page_type_content_only()) {
+    $add_no_sidebar = true;
+    $classes[] = 'content-only';
+  }
+  //サイドバーにウィジェットが入っていない場合
+  if (!is_active_sidebar( 'sidebar' )) {
+    $add_no_sidebar = true;
   }
 
   //サイドバー非表示のフラグが立っている場合はクラスを追加
