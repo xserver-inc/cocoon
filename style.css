@@ -429,6 +429,11 @@ img {
   align-content: space-between;
 }
 
+.appeal-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 .appeal-message {
   margin-bottom: 1em;
 }

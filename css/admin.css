@@ -512,6 +512,9 @@
     display: flex;
     flex-direction: column;
     align-content: space-between; }
+  .demo .appeal-title {
+    font-size: 1.1em;
+    font-weight: bold; }
   .demo .appeal-message {
     margin-bottom: 1em; }
   .demo .appeal-button {

@@ -4,6 +4,12 @@ if (is_appeal_area_visible()): ?>
 <div id="appeal" class="appeal<?php echo get_additional_appeal_area_classes(); ?>">
   <div id="appeal-in" class="appeal-in wrap">
     <div class="appeal-content">
+      <?php //タイトルが存在するか
+      if (get_appeal_area_title()): ?>
+      <div class="appeal-title">
+        <?php echo get_appeal_area_title(); ?>
+      </div>
+      <?php endif ?>
       <?php //メッセージが存在するか
       if (get_appeal_area_message()): ?>
       <div class="appeal-message">
