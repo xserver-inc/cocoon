@@ -154,3 +154,24 @@ blockquote {
   @include fontawesome('\f040');
   padding-right: 0;
 }
+
+/************************************
+** ページ管理画面の設定で「本文のみ」表示
+************************************/
+.content-only{
+  .header-container,
+  .appeal,
+  .ad-area,
+  .sns-share,
+  .date-tags,
+  .sns-follow,
+  .article-footer,
+  .under-entry-content,
+  .breadcrumb,
+  .main-scroll,
+  .footer,
+  .go-to-top-button
+  {
+    display: none;
+  }
+}

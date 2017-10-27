@@ -215,6 +215,9 @@
   /*本文下情報*/
   /*投稿者*/
   /************************************
+  ** ページ管理画面の設定で「本文のみ」表示
+  ************************************/
+  /************************************
   ** 内部ブログカードのサムネイルスタイル
   ************************************/
   /************************************
@@ -422,6 +425,10 @@
     position: sticky;
     top: 0;
     margin-top: 2em; }
+  .demo .display-block {
+    display: block; }
+  .demo .display-none {
+    display: none; }
   .demo figure {
     margin: 0; }
   .demo img {
@@ -924,6 +931,19 @@
     content: "";
     padding-right: 3px;
     padding-right: 0; }
+  .demo .content-only .header-container,
+  .demo .content-only .appeal,
+  .demo .content-only .ad-area,
+  .demo .content-only .sns-share,
+  .demo .content-only .date-tags,
+  .demo .content-only .sns-follow,
+  .demo .content-only .article-footer,
+  .demo .content-only .under-entry-content,
+  .demo .content-only .breadcrumb,
+  .demo .content-only .main-scroll,
+  .demo .content-only .footer,
+  .demo .content-only .go-to-top-button {
+    display: none; }
   .demo .blogcard-wrap {
     margin: 24px auto;
     padding: 0;

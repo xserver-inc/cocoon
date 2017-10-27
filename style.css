@@ -276,6 +276,14 @@ a:hover {
   margin-top: 2em;
 }
 
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/
@@ -1048,6 +1056,24 @@ blockquote::after {
   content: "";
   padding-right: 3px;
   padding-right: 0;
+}
+
+/************************************
+** ページ管理画面の設定で「本文のみ」表示
+************************************/
+.content-only .header-container,
+.content-only .appeal,
+.content-only .ad-area,
+.content-only .sns-share,
+.content-only .date-tags,
+.content-only .sns-follow,
+.content-only .article-footer,
+.content-only .under-entry-content,
+.content-only .breadcrumb,
+.content-only .main-scroll,
+.content-only .footer,
+.content-only .go-to-top-button {
+  display: none;
 }
 
 .blogcard-wrap {
