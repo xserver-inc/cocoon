@@ -45,6 +45,14 @@ function is_appeal_area_background_attachment_fixed(){
 }
 endif;
 
+//アピールエリアタイトル
+define('OP_APPEAL_AREA_TITLE', 'appeal_area_title');
+if ( !function_exists( 'get_appeal_area_title' ) ):
+function get_appeal_area_title(){
+  return get_theme_option(OP_APPEAL_AREA_TITLE);
+}
+endif;
+
 //アピールエリアメッセージ
 define('OP_APPEAL_AREA_MESSAGE', 'appeal_area_message');
 if ( !function_exists( 'get_appeal_area_message' ) ):

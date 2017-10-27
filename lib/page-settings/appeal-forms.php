@@ -67,6 +67,19 @@
           </td>
         </tr>
 
+        <!-- タイトル -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_APPEAL_AREA_TITLE, __('タイトル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_APPEAL_AREA_TITLE, get_appeal_area_title(), __( '', THEME_NAME ));
+            genelate_tips_tag(__( 'アピールエリアのタイトルを入力してください。入力しない場合は表示されません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- メッセージ -->
         <tr>
           <th scope="row">
