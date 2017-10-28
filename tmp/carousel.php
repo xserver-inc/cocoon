@@ -1,7 +1,7 @@
-<?php if (is_carousel_visible()): ?>
+<?php if (is_carousel_visible() && get_carousel_category_ids()): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
-  'cat' => array(1),
+  'cat' => get_carousel_category_ids(),
 );
 $query = new WP_Query( $args );
 // var_dump($query -> have_posts());

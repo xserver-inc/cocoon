@@ -368,11 +368,16 @@ function wp_enqueue_slick(){
     wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
     //baguetteboxスクリプトの呼び出し
     wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+    $autoplay = null;
+    if (is_carousel_autoplay_enable()) {
+      $autoplay = 'autoplay: true,';
+    }
     $data = minify_js('
               (function($){
                 $(".carousel-content").slick({
-                  dots: true,
-                  //autoplay: true,
+                  dots: true,'.
+                  $autoplay.
+                  'autoplaySpeed: 5000,
                   infinite: true,
                   slidesToShow: 6,
                   slidesToScroll: 6,

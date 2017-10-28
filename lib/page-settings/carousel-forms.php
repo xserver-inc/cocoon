@@ -36,12 +36,25 @@
         <!-- カルーセルカテゴリーID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_CAROUSEL_CATEGORY_IDS, __( 'カルーセルカテゴリー', THEME_NAME )); ?>
+            <?php genelate_label_tag(OP_CAROUSEL_CATEGORY_IDS, __( '表示カテゴリー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
             genelate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
             genelate_tips_tag(__( 'カルーセルと関連付けるカテゴリを選択してください。アピールしたいカテゴリを選ぶと良いかもしれません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- オートプレイ-->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_CAROUSEL_AUTOPLAY_ENABLE, __( 'オートプレイ', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag( OP_CAROUSEL_AUTOPLAY_ENABLE, is_carousel_autoplay_enable(), __( 'オートプレイを実行', THEME_NAME ));
+            genelate_tips_tag(__( 'カルーセルが自動的に送られます。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -17,6 +17,14 @@ endif;
 define('OP_CAROUSEL_CATEGORY_IDS', 'carousel_category_ids');
 if ( !function_exists( 'get_carousel_category_ids' ) ):
 function get_carousel_category_ids(){
-  return get_theme_option(OP_CAROUSEL_CATEGORY_IDS, 'none');
+  return get_theme_option(OP_CAROUSEL_CATEGORY_IDS, array());
+}
+endif;
+
+//カルーセルオートプレイ
+define('OP_CAROUSEL_AUTOPLAY_ENABLE', 'carousel_autoplay_enable');
+if ( !function_exists( 'is_carousel_autoplay_enable' ) ):
+function is_carousel_autoplay_enable(){
+  return get_theme_option(OP_CAROUSEL_AUTOPLAY_ENABLE);
 }
 endif;
