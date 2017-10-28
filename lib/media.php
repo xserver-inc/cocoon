@@ -1,8 +1,8 @@
 <?php //YouTubeの動画など
 
 //iframeのレスポンシブ対応
-if ( !function_exists( 'wrap_iframe_in_div' ) ):
 add_filter('the_content','wrap_iframe_in_div');
+if ( !function_exists( 'wrap_iframe_in_div' ) ):
 function wrap_iframe_in_div($the_content) {
   if ( is_singular() ) {
     //YouTube動画にラッパーを装着
@@ -15,8 +15,8 @@ function wrap_iframe_in_div($the_content) {
 endif;
 
 //pixivの埋め込みの大きさ変換
-if ( !function_exists( 'pixiv_embed_changer' ) ):
 //add_filter('the_content','pixiv_embed_changer');
+if ( !function_exists( 'pixiv_embed_changer' ) ):
 function pixiv_embed_changer($the_content){
   if ( strstr($the_content, 'http://source.pixiv.net/source/embed.js') )  {
     $patterns = array();
