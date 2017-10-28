@@ -85,9 +85,9 @@
     right: auto;
   }
 
-  // .slick-slide{
-  //   display: block;
-  // }
+  .slick-slide{
+    display: block;
+  }
 }
 
 .demo #related-entries h2{
@@ -134,7 +134,9 @@
   margin-bottom: 0;
 }
 
+
 /*設定項目のヒント*/
+p,
 .form-table td p{
 
   &.tips,

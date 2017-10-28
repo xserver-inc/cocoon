@@ -2482,6 +2482,8 @@
     display: inline-block;
     bottom: auto;
     right: auto; }
+  .demo .slick-slide {
+    display: block; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;
@@ -2526,17 +2528,24 @@ pre {
   margin-bottom: 0; }
 
 /*設定項目のヒント*/
-.form-table td p.tips, .form-table td p.alert {
+p.tips, p.alert,
+.form-table td p.tips,
+.form-table td p.alert {
   font-size: 14px;
   font-style: italic;
   margin-bottom: 1em; }
-  .form-table td p.tips::before, .form-table td p.alert::before {
+  p.tips::before, p.alert::before,
+  .form-table td p.tips::before,
+  .form-table td p.alert::before {
     font-family: FontAwesome;
     margin-right: 4px; }
+p.tips::before,
 .form-table td p.tips::before {
   content: '\f05a'; }
+p.alert,
 .form-table td p.alert {
   color: red; }
+  p.alert::before,
   .form-table td p.alert::before {
     content: '\f071'; }
 

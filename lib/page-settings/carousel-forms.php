@@ -8,8 +8,9 @@
     <p><?php _e( 'ヘッダー下でカルーセル表示させたい投稿の設定を行います。', THEME_NAME ) ?></p>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo carousel-area-demo" style="">
-      <?php get_template_part('tmp/carousel') ?>
+      <?php get_template_part('tmp/carousel'); ?>
     </div>
+    <?php genelate_tips_tag(__( '設定が反映されない場合はリロードしてみてください。', THEME_NAME )); ?>
 
     <table class="form-table">
       <tbody>
