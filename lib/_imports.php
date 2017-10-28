@@ -32,6 +32,7 @@ require_once 'page-settings/blogcard-out-funcs.php'; //外部ブログカード�
 require_once 'page-settings/code-funcs.php';       //コード設定関数
 require_once 'page-settings/comment-funcs.php';    //コメント設定関数
 require_once 'page-settings/appeal-funcs.php';     //アピールエリア設定関数
+require_once 'page-settings/carousel-funcs.php';   //カルーセル設定関数
 require_once 'page-settings/footer-funcs.php';     //フッター設定関数
 require_once 'page-settings/buttons-funcs.php';    //ボタン設定関数
 require_once 'page-settings/admin-funcs.php';      //管理画面設定関数

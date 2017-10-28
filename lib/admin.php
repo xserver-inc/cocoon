@@ -35,6 +35,8 @@ function admin_print_styles_custom() {
     wp_enqueue_lity();
     //画像リンク拡大効果がbaguetteboxのとき
     wp_enqueue_baguettebox();
+    //カルーセル用
+    wp_enqueue_slick();
 
     //メディアアップローダの javascript API
     wp_enqueue_media();

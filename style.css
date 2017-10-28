@@ -1063,6 +1063,7 @@ blockquote::after {
 ************************************/
 .content-only .header-container,
 .content-only .appeal,
+.content-only .carousel,
 .content-only .ad-area,
 .content-only .sns-share,
 .content-only .date-tags,
@@ -2349,6 +2350,13 @@ input[type='submit'] {
 .carousel-entry-card-title {
   font-size: 16px;
   margin-top: 4px;
+}
+
+/************************************
+** カルーセルの非表示設定
+************************************/
+.no-carousel .carousel {
+  display: none;
 }
 
 /*拡張クラスを追加するスタイルシート*/

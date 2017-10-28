@@ -10,8 +10,14 @@
 
 
 
-    $('.toggle-link').click(function(){
-      $(this).next('.toggle-content').toggle();
-    });
+  $('.toggle-link').click(function(){
+    $(this).next('.toggle-content').toggle();
+  });
+
+
+// $(".carousel-area").on("click", function() {
+//     $(".slick-slide").css("display", "block");
+// });
+
 
 })(jQuery);

@@ -129,9 +129,32 @@ function body_class_additional($classes) {
       break;
   }
 
-  //サイドバー非表示のフラグが立っている場合はクラスを追加
+  //アピールエリア表示のフラグが立っている場合はクラスを追加
   if ($add_no_appeal_area) {
     $classes[] = 'no-appeal-area';
+  }
+
+
+  //カルーセル表示設定
+  $add_no_carousel = false;
+  switch (get_carousel_display_type()) {
+    //フロントページ以外では表示しない
+    case 'front_page_only':
+      if (!(is_front_page() && !is_paged())) {
+        $add_no_carousel = true;
+      }
+      break;
+    //投稿・固定ページで表示しない
+    case 'not_singular':
+      if (is_singular()) {
+        $add_no_carousel = true;
+      }
+      break;
+  }
+
+  //カルーセル表示のフラグが立っている場合はクラスを追加
+  if ($add_no_carousel) {
+    $classes[] = 'no-carousel';
   }
   return $classes;
 }

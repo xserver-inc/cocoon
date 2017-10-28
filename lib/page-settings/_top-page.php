@@ -50,6 +50,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'comment-posts.php';
   //アピールエリア
   require_once 'appeal-posts.php';
+  //カルーセル
+  require_once 'carousel-posts.php';
   //フッター
   require_once 'footer-posts.php';
   //ボタン
@@ -106,6 +108,7 @@ endif;
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
     <li class="appeal-area"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
+    <li class="carousel-area"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
@@ -211,6 +214,11 @@ endif;
   <!-- アピールエリア -->
   <div class="appeal-area metabox-holder">
     <?php require_once 'appeal-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- カルーセル -->
+  <div class="carousel-area metabox-holder">
+    <?php require_once 'carousel-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- フッター -->

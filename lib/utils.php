@@ -370,41 +370,44 @@ function wp_enqueue_slick(){
     wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
     $data = minify_js('
               (function($){
-               $(".carousel-content").slick({
-  infinite: true,
-  slidesToShow: 6,
-  slidesToScroll: 6,
-  responsive: [
-      {
-        breakpoint: 1240,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5
-        }
-      },
-      {
-        breakpoint: 1030,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      }
-    ]
-});
+                $(".carousel-content").slick({
+                  dots: true,
+                  //autoplay: true,
+                  infinite: true,
+                  slidesToShow: 6,
+                  slidesToScroll: 6,
+                  responsive: [
+                      {
+                        breakpoint: 1240,
+                        settings: {
+                          slidesToShow: 5,
+                          slidesToScroll: 5
+                        }
+                      },
+                      {
+                        breakpoint: 1030,
+                        settings: {
+                          slidesToShow: 4,
+                          slidesToScroll: 4
+                        }
+                      },
+                      {
+                        breakpoint: 768,
+                        settings: {
+                          slidesToShow: 3,
+                          slidesToScroll: 3
+                        }
+                      },
+                      {
+                        breakpoint: 480,
+                        settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 2
+                        }
+                      }
+                    ]
+                });
+
               })(jQuery);
             ');
     wp_add_inline_script( 'slick-js', $data, 'after' ) ;

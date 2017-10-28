@@ -315,6 +315,9 @@
   /************************************
   ** カルーセル
   ************************************/
+  /************************************
+  ** カルーセルの非表示設定
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -937,6 +940,7 @@
     padding-right: 0; }
   .demo .content-only .header-container,
   .demo .content-only .appeal,
+  .demo .content-only .carousel,
   .demo .content-only .ad-area,
   .demo .content-only .sns-share,
   .demo .content-only .date-tags,
@@ -1791,6 +1795,8 @@
   .demo .carousel-entry-card-title {
     font-size: 16px;
     margin-top: 4px; }
+  .demo .no-carousel .carousel {
+    display: none; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
