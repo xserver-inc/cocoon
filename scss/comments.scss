@@ -16,11 +16,25 @@
   .comment-meta{
     font-size:$text_size_s;
   }
+
+  .comment-body{
+    margin-bottom: 1em;
+  }
+
+  .children{
+    list-style: none;
+    padding-left: 20px;
+  }
 }
 
 .comment-form{
   .required{
     color: red;
+  }
+
+  .logged-in-as{
+    margin: 0.2em;
+    font-size: 0.8em;
   }
 }
 

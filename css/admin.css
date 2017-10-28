@@ -1055,8 +1055,16 @@
       font-size: 0.8em; }
     .demo .commets-list .comment-meta {
       font-size: 0.8em; }
+    .demo .commets-list .comment-body {
+      margin-bottom: 1em; }
+    .demo .commets-list .children {
+      list-style: none;
+      padding-left: 20px; }
   .demo .comment-form .required {
     color: red; }
+  .demo .comment-form .logged-in-as {
+    margin: 0.2em;
+    font-size: 0.8em; }
   .demo .comment-area.website-hide .comment-form-url {
     display: none; }
   .demo .sidebar {

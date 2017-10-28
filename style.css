@@ -1241,9 +1241,20 @@ blockquote::after {
 .commets-list .comment-meta {
   font-size: 0.8em;
 }
+.commets-list .comment-body {
+  margin-bottom: 1em;
+}
+.commets-list .children {
+  list-style: none;
+  padding-left: 20px;
+}
 
 .comment-form .required {
   color: red;
+}
+.comment-form .logged-in-as {
+  margin: 0.2em;
+  font-size: 0.8em;
 }
 
 .comment-area.website-hide .comment-form-url {
