@@ -2311,9 +2311,12 @@ input[type='submit'] {
 .go-to-top-button {
   background-color: #eee;
   color: #333;
-  padding: 7px;
   text-decoration: none;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   text-align: center;
   line-height: 1;
