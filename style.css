@@ -2325,18 +2325,30 @@ input[type='submit'] {
   margin-top: 10px;
   line-height: 1.1;
 }
+.carousel .category-label {
+  display: none;
+}
+.carousel .slick-arrow:before {
+  color: #cccdce;
+}
+
+.carousel-in {
+  background-color: #fff;
+  padding: 2px 0;
+}
 
 .carousel-content {
   margin: 0 30px;
 }
 
-.carousel-entry-card-wrap {
-  padding: 5px;
+.carousel-entry-card-wrap.a-wrap {
+  padding: 0.05% 0.1%;
   margin: 0;
 }
 
 .carousel-entry-card-title {
   font-size: 16px;
+  margin-top: 4px;
 }
 
 /*拡張クラスを追加するスタイルシート*/

@@ -373,7 +373,37 @@ function wp_enqueue_slick(){
                $(".carousel-content").slick({
   infinite: true,
   slidesToShow: 6,
-  slidesToScroll: 6
+  slidesToScroll: 6,
+  responsive: [
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5
+        }
+      },
+      {
+        breakpoint: 1030,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
 });
               })(jQuery);
             ');

@@ -1776,13 +1776,21 @@
   .demo .carousel {
     margin-top: 10px;
     line-height: 1.1; }
+    .demo .carousel .category-label {
+      display: none; }
+    .demo .carousel .slick-arrow:before {
+      color: #cccdce; }
+  .demo .carousel-in {
+    background-color: #fff;
+    padding: 2px 0; }
   .demo .carousel-content {
     margin: 0 30px; }
-  .demo .carousel-entry-card-wrap {
-    padding: 5px;
+  .demo .carousel-entry-card-wrap.a-wrap {
+    padding: 0.05% 0.1%;
     margin: 0; }
   .demo .carousel-entry-card-title {
-    font-size: 16px; }
+    font-size: 16px;
+    margin-top: 4px; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
