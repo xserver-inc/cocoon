@@ -1803,9 +1803,13 @@
   .demo .carousel-entry-card-wrap.a-wrap {
     padding: 0.05% 0.1%;
     margin: 0; }
+  .demo .carousel-entry-card-thumb {
+    float: none; }
   .demo .carousel-entry-card-title {
     font-size: 16px;
-    margin-top: 4px; }
+    margin-top: 4px;
+    max-height: 3.2em;
+    overflow: hidden; }
   .demo .no-carousel .carousel {
     display: none; }
   .demo .sankou,

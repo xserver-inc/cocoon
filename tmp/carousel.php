@@ -2,6 +2,7 @@
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
   'cat' => get_carousel_category_ids(),
+  'orderby' => 'rand', //ランダム表示
 );
 $query = new WP_Query( $args );
 // var_dump($query -> have_posts());

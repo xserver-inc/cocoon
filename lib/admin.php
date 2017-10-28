@@ -460,6 +460,7 @@ remove_filter( 'pre_term_description', 'wp_filter_kses' );
 remove_filter( 'term_description', 'wp_kses_data' );
 
 add_filter('edit_category_form_fields', 'cat_description');
+if ( !function_exists( 'cat_description' ) ):
 function cat_description($tag){
   ?>
     <table class="form-table">
@@ -477,6 +478,8 @@ function cat_description($tag){
     </table>
   <?php
 }
+endif;
+
 
 add_action('admin_head', 'remove_default_category_description');
 function remove_default_category_description(){

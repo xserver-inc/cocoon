@@ -2361,9 +2361,15 @@ input[type='submit'] {
   margin: 0;
 }
 
+.carousel-entry-card-thumb {
+  float: none;
+}
+
 .carousel-entry-card-title {
   font-size: 16px;
   margin-top: 4px;
+  max-height: 3.2em;
+  overflow: hidden;
 }
 
 /************************************
