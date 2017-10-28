@@ -214,7 +214,7 @@
         <!-- 広告除外カテゴリーID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_AD_EXCLUDE_CATEGORY_IDS, __( '広告除外カテゴリーID', THEME_NAME )); ?>
+            <?php genelate_label_tag(OP_AD_EXCLUDE_CATEGORY_IDS, __( '広告除外カテゴリー', THEME_NAME )); ?>
           </th>
           <td>
             <?php

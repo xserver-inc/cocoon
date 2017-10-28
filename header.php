@@ -47,6 +47,9 @@ get_template_part('tmp/header-analytics'); ?>
   <?php //アピールエリア
   get_template_part('tmp/appeal'); ?>
 
+  <?php //カルーセル
+  get_template_part('tmp/carousel'); ?>
+
   <?php //投稿パンくずリストがメイン手前の場合
   if (is_single() && is_single_breadcrumbs_position_main_before()){
     get_template_part('tmp/breadcrumbs');

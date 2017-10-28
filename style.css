@@ -102,7 +102,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   height: 100%;
 }
 
-.entry-card-thumb, .related-entry-card-thumb, .new-entry-card-thumb {
+.entry-card-thumb, .related-entry-card-thumb, .new-entry-card-thumb, .carousel-entry-card-thumb {
   float: left;
   margin-top: 4px;
   position: relative;
@@ -2318,6 +2318,27 @@ input[type='submit'] {
   max-width: 120px;
 }
 
+/************************************
+** カルーセル
+************************************/
+.carousel {
+  margin-top: 10px;
+  line-height: 1.1;
+}
+
+.carousel-content {
+  margin: 0 30px;
+}
+
+.carousel-entry-card-wrap {
+  padding: 5px;
+  margin: 0;
+}
+
+.carousel-entry-card-title {
+  font-size: 16px;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .sankou,
 .sanko,
@@ -2881,6 +2902,99 @@ input[type='submit'] {
 .main .js-clingify-locked,
 .sidebar .js-clingify-locked {
   left: auto;
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
 }
 
 @media screen and (max-width: 1240px) {

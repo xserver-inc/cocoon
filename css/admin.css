@@ -72,7 +72,7 @@
   position: relative;
   height: 100%; }
 
-.demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .new-entry-card-thumb {
+.demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .new-entry-card-thumb, .demo .carousel-entry-card-thumb {
   float: left;
   margin-top: 4px;
   position: relative; }
@@ -312,6 +312,9 @@
   /************************************
   ** トップへ戻るボタン
   ************************************/
+  /************************************
+  ** カルーセル
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -348,6 +351,7 @@
   /************************************
   ** clingify
   ************************************/
+  /* Slider */
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   /* フォントのサイズ */
@@ -1769,6 +1773,16 @@
     background-color: transparent;
     padding: 0;
     max-width: 120px; }
+  .demo .carousel {
+    margin-top: 10px;
+    line-height: 1.1; }
+  .demo .carousel-content {
+    margin: 0 30px; }
+  .demo .carousel-entry-card-wrap {
+    padding: 5px;
+    margin: 0; }
+  .demo .carousel-entry-card-title {
+    font-size: 16px; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
@@ -2120,6 +2134,74 @@
   .demo .main .js-clingify-locked,
   .demo .sidebar .js-clingify-locked {
     left: auto; }
+  .demo .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent; }
+  .demo .slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0; }
+    .demo .slick-list:focus {
+      outline: none; }
+    .demo .slick-list.dragging {
+      cursor: pointer;
+      cursor: hand; }
+  .demo .slick-slider .slick-track,
+  .demo .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .demo .slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+    .demo .slick-track:before, .demo .slick-track:after {
+      content: "";
+      display: table; }
+    .demo .slick-track:after {
+      clear: both; }
+    .slick-loading .demo .slick-track {
+      visibility: hidden; }
+  .demo .slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none; }
+    [dir="rtl"] .demo .slick-slide {
+      float: right; }
+    .demo .slick-slide img {
+      display: block; }
+    .demo .slick-slide.slick-loading img {
+      display: none; }
+    .demo .slick-slide.dragging img {
+      pointer-events: none; }
+    .slick-initialized .demo .slick-slide {
+      display: block; }
+    .slick-loading .demo .slick-slide {
+      visibility: hidden; }
+    .slick-vertical .demo .slick-slide {
+      display: block;
+      height: auto;
+      border: 1px solid transparent; }
+  .demo .slick-arrow.slick-hidden {
+    display: none; }
   @media screen and (max-width: 1240px) {
     .demo .wrap {
       width: auto; }

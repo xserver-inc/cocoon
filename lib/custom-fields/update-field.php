@@ -17,36 +17,36 @@ if( !function_exists( 'update_custom_box_view' ) ):
 function update_custom_box_view() {
   global $post;
 ?>
-<div style="padding-top: 5px; overflow: hidden;">
-<div style="padding:5px 0"><input name="update_level" type="radio" value="high" checked="checked" /><?php _e( '更新', THEME_NAME ) ?></div>
-<div style="padding: 5px 0"><input name="update_level" type="radio" value="low" /><?php _e( '更新しない', THEME_NAME ) ?></div>
-<div style="padding: 5px 0"><input name="update_level" type="radio" value="del" /><?php _e( '更新日の消去', THEME_NAME ) ?></div>
-<div style="padding: 5px 0; margin-bottom: 10px"><input id="update_level_edit" name="update_level" type="radio" value="edit" /><?php _e( '更新日を設定', THEME_NAME ) ?></div>
-<?php
-  if( get_the_modified_date( 'c' ) ) {
-    $stamp = __( '更新日時:', THEME_NAME ).' <span style="font-weight:bold">' . get_the_modified_date( __( 'M j, Y @ H:i' ) ) . '</span>';
-  }
-  else {
-    $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">未更新</span>';
-  }
-  $date = date_i18n( get_option('date_format') . ' @ ' . get_option('time_format'), strtotime( $post->post_modified ) );
-?>
-<style>
-.modtime { padding: 2px 0 1px 0; display: inline !important; height: auto !important; }
-.modtime:before { font: normal 20px/1 'dashicons'; content: '\f145'; color: #888; padding: 0 5px 0 0; top: -1px; left: -1px; position: relative; vertical-align: top; }
-#timestamp_mod_div { padding-top: 5px; line-height: 23px; }
-#timestamp_mod_div p { margin: 8px 0 6px; }
-#timestamp_mod_div input { border-width: 1px; border-style: solid; }
-#timestamp_mod_div select { height: 21px; line-height: 14px; padding: 0; vertical-align: top;font-size: 12px; }
-#aa_mod, #jj_mod, #hh_mod, #mn_mod { padding: 1px; font-size: 12px; }
-#jj_mod, #hh_mod, #mn_mod { width: 2em; }
-#aa_mod { width: 3.4em; }
-</style>
-<span class="modtime"><?php printf( $stamp, $date ); ?></span>
-<div id="timestamp_mod_div" onkeydown="document.getElementById('update_level_edit').checked=true" onclick="document.getElementById('update_level_edit').checked=true">
-<?php time_mod_form_view(); ?>
-</div>
-</div>
+  <div style="padding-top: 5px; overflow: hidden;">
+  <div style="padding:5px 0"><input name="update_level" type="radio" value="high" checked="checked" /><?php _e( '更新', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0"><input name="update_level" type="radio" value="low" /><?php _e( '更新しない', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0"><input name="update_level" type="radio" value="del" /><?php _e( '更新日の消去', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0; margin-bottom: 10px"><input id="update_level_edit" name="update_level" type="radio" value="edit" /><?php _e( '更新日を設定', THEME_NAME ) ?></div>
+  <?php
+    if( get_the_modified_date( 'c' ) ) {
+      $stamp = __( '更新日時:', THEME_NAME ).' <span style="font-weight:bold">' . get_the_modified_date( __( 'M j, Y @ H:i' ) ) . '</span>';
+    }
+    else {
+      $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">未更新</span>';
+    }
+    $date = date_i18n( get_option('date_format') . ' @ ' . get_option('time_format'), strtotime( $post->post_modified ) );
+  ?>
+  <style>
+  .modtime { padding: 2px 0 1px 0; display: inline !important; height: auto !important; }
+  .modtime:before { font: normal 20px/1 'dashicons'; content: '\f145'; color: #888; padding: 0 5px 0 0; top: -1px; left: -1px; position: relative; vertical-align: top; }
+  #timestamp_mod_div { padding-top: 5px; line-height: 23px; }
+  #timestamp_mod_div p { margin: 8px 0 6px; }
+  #timestamp_mod_div input { border-width: 1px; border-style: solid; }
+  #timestamp_mod_div select { height: 21px; line-height: 14px; padding: 0; vertical-align: top;font-size: 12px; }
+  #aa_mod, #jj_mod, #hh_mod, #mn_mod { padding: 1px; font-size: 12px; }
+  #jj_mod, #hh_mod, #mn_mod { width: 2em; }
+  #aa_mod { width: 3.4em; }
+  </style>
+  <span class="modtime"><?php printf( $stamp, $date ); ?></span>
+  <div id="timestamp_mod_div" onkeydown="document.getElementById('update_level_edit').checked=true" onclick="document.getElementById('update_level_edit').checked=true">
+  <?php time_mod_form_view(); ?>
+  </div>
+  </div>
 <?php
 }
 endif;

@@ -359,6 +359,31 @@ function wp_enqueue_clingify(){
 endif;
 
 
+//Slickの読み込み
+if ( !function_exists( 'wp_enqueue_slick' ) ):
+function wp_enqueue_slick(){
+ if ( 1 ) {
+    //clingifyスタイルの呼び出し
+    //wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/plugins/slick/slick.css' );
+    wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
+    //baguetteboxスクリプトの呼び出し
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+    $data = minify_js('
+              (function($){
+               $(".carousel-content").slick({
+  infinite: true,
+  slidesToShow: 6,
+  slidesToScroll: 6
+});
+              })(jQuery);
+            ');
+    wp_add_inline_script( 'slick-js', $data, 'after' ) ;
+
+  }
+}
+endif;
+
+
 //Google Fontsの読み込み
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
 function wp_enqueue_google_fonts(){

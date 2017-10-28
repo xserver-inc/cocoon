@@ -1,0 +1,24 @@
+/************************************
+** カルーセル
+************************************/
+.carousel{
+  margin-top: 10px;
+  line-height: 1.1;
+}
+
+.carousel-content{
+  margin: 0 30px;
+}
+
+.carousel-entry-card-wrap{
+  padding: 5px;
+  margin: 0;
+}
+
+.carousel-entry-card-thumb{
+  @extend %card_thumb;
+}
+
+.carousel-entry-card-title{
+  font-size: 16px;
+}

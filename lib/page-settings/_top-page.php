@@ -115,7 +115,6 @@ endif;
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="content"><?php _e( 'コンテンツ', THEME_NAME ) ?></li>
     <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
-    <li class="other"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
