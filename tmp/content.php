@@ -69,6 +69,11 @@
           get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom', is_ad_pos_content_bottom_label_visible());
         }; ?>
 
+        <?php //投稿本文下ウイジェット
+        if ( is_single() && is_active_sidebar( 'single-content-bottom' ) ): ?>
+          <?php dynamic_sidebar( 'single-content-bottom' ); ?>
+        <?php endif; ?>
+
         <div class="entry-categories-tags">
           <?php the_category_links(); //カテゴリの出力
                 the_tag_links(); //タグの出力?>
