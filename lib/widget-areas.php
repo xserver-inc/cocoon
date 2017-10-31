@@ -168,7 +168,7 @@ function register_below_single_sns_buttons_widget_area(){
   register_sidebars(1,
     array(
     'name' => __( '投稿SNSボタン下', THEME_NAME ),
-    'id' => 'below-sns-buttons',
+    'id' => 'below-single-sns-buttons',
     'description' => __( '投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
     'before_widget' => '<div id="%1$s" class="widget widget-below-sns-buttons %2$s">',
     'after_widget' => '</div>',
@@ -184,7 +184,7 @@ function register_below_single_related_entries_widget_area(){
 register_sidebars(1,
   array(
   'name' => __( '投稿関連記事下', THEME_NAME ),
-  'id' => 'below-related-entries',
+  'id' => 'below-single-related-entries',
   'description' => __( '関連記事の下（広告を表示している場合はその下）に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
   'before_widget' => '<div id="%1$s" class="widget widget-below-related-entries %2$s">',
   'after_widget' => '</div>',

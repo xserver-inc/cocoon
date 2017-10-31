@@ -102,6 +102,11 @@
           get_template_part_with_ad_format(get_ad_pos_below_sns_buttons_format(), 'ad-below-sns-buttons', is_ad_pos_below_sns_buttons_label_visible());
         }; ?>
 
+        <?php //投稿SNSボタン下ウイジェット
+        if ( is_single() && is_active_sidebar( 'below-single-sns-buttons' ) ): ?>
+          <?php dynamic_sidebar( 'below-single-sns-buttons' ); ?>
+        <?php endif; ?>
+
         <?php //投稿者等表示用のテンプレート
         get_template_part('tmp/footer-meta'); ?>
 
