@@ -99,6 +99,11 @@
           <?php dynamic_sidebar( 'above-single-sns-buttons' ); ?>
         <?php endif; ?>
 
+        <?php //固定ページSNSボタン上ウイジェット
+        if ( is_page() && is_active_sidebar( 'above-page-sns-buttons' ) ): ?>
+          <?php dynamic_sidebar( 'above-page-sns-buttons' ); ?>
+        <?php endif; ?>
+
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
           get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM); ?>
