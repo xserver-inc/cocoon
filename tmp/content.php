@@ -84,6 +84,11 @@
           get_template_part_with_ad_format(get_ad_pos_above_sns_buttons_format(), 'ad-above-sns-buttons', is_ad_pos_above_sns_buttons_label_visible());
         }; ?>
 
+        <?php //投稿SNSボタン上ウイジェット
+        if ( is_single() && is_active_sidebar( 'above-single-sns-buttons' ) ): ?>
+          <?php dynamic_sidebar( 'above-single-sns-buttons' ); ?>
+        <?php endif; ?>
+
         <?php //SNSシェアボタン
         if (is_sns_share_buttons_visible())
           get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM); ?>
