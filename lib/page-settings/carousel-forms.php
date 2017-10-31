@@ -42,7 +42,7 @@
           <td>
             <?php
             genelate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
-            genelate_tips_tag(__( 'カルーセルと関連付けるカテゴリを選択してください。アピールしたいカテゴリを選ぶと良いかもしれません。', THEME_NAME ));
+            genelate_tips_tag(__( 'カルーセルと関連付けるカテゴリを選択してください。最大10個までランダムで表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

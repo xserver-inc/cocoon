@@ -83,6 +83,22 @@ function register_above_single_content_title_widget_area(){
 endif;
 register_above_single_content_title_widget_area();
 
+if ( !function_exists( 'register_below_single_content_title_widget_area' ) ):
+function register_below_single_content_title_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( '投稿タイトル下', THEME_NAME ),
+    'id' => 'below-single-content-title',
+    'description' => __( '投稿タイトル下に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
+    'before_widget' => '<div id="%1$s" class="widget widget-below-single-content %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="widget-below-single-content-title main-widget-label">',
+    'after_title' => '</div>',
+  ));
+}
+endif;
+register_below_single_content_title_widget_area();
+
 if ( !function_exists( 'register_single_content_top_widget_area' ) ):
 function register_single_content_top_widget_area(){
   register_sidebars(1,

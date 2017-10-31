@@ -9,13 +9,24 @@
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title', is_ad_pos_above_title_label_visible());
       }; ?>
 
+      <?php //投稿タイトル上ウイジェット
+      if ( is_single() && is_active_sidebar( 'above-single-content-title' ) ): ?>
+        <?php dynamic_sidebar( 'above-single-content-title' ); ?>
+      <?php endif; ?>
+
       <header class="article-header entry-header">
         <h1 class="entry-title" itemprop="headline" rel="bookmark"><?php the_title() ?></h1>
 
-      <?php //タイトル下の広告表示
-      if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
-        get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
-      }; ?>
+        <?php //タイトル下の広告表示
+        if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
+          get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
+        }; ?>
+
+        <?php //below-single-content-titleウイジェット
+        if ( is_single() && is_active_sidebar( 'below-single-content-title' ) ): ?>
+          <?php dynamic_sidebar( 'below-single-content-title' ); ?>
+        <?php endif; ?>
+
 
         <?php
         if (is_eyecatch_visible()) {
