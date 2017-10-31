@@ -39,6 +39,14 @@ if (have_posts()) : // WordPress ループ
     if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count) && is_all_adsenses_visible()) {
       get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle', is_ad_pos_index_middle_label_visible());
     }
+
+    ////////////////////////////
+    //インデックスリストミドルウィジェット
+    ////////////////////////////
+    if ( is_active_sidebar( 'index-middle' ) && is_index_middle_ad_visible($count) ){
+      dynamic_sidebar( 'index-middle' );
+    };
+
   endwhile; // 繰り返し処理終了 ?>
   <div class="clear"></div>
 <?php else : // ここから記事が見つからなかった場合の処理  ?>
