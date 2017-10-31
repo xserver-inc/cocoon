@@ -16,6 +16,14 @@ if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
   get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top', is_ad_pos_index_top_label_visible());
 }; ?>
 
+<?php
+////////////////////////////
+//インデックスリストトップウィジェット
+////////////////////////////
+if ( is_active_sidebar( 'index-top' ) ){
+  dynamic_sidebar( 'index-top' );
+}; ?>
+
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
 <?php
 ////////////////////////////
