@@ -2668,18 +2668,25 @@ form.admin-settings {
   height: auto; }
 
 .tooltip {
-  position: relative; }
+  position: relative;
+  color: orange;
+  top: 3px;
+  margin-left: 3px; }
   .tooltip:hover .tip-content {
-    display: inline; }
+    display: block; }
   .tooltip .tip-content {
     background: #ffffeb;
     border: 1px solid #878787;
+    color: #333;
     display: none;
     width: 500px;
     padding: 8px;
     position: absolute;
     bottom: 1em;
     left: -15px; }
+    .tooltip .tip-content img {
+      width: 100%;
+      height: auto; }
   .tooltip .tip-content:after, .tooltip .tip-content:before {
     top: 100%;
     left: 20px;

@@ -5,6 +5,7 @@ require_once 'language.php';   //マルチ言語設定
 require_once 'settings.php';   //Wordpressの設定
 require_once 'utils.php';      //ユーティリティー関数
 require_once 'html-forms.php'; //HTMLフォーム生成関数
+require_once 'html-tooltips.php'; //HTMLツールチップ生成関数
 require_once 'ad.php';         //広告関係の設定
 require_once 'sns.php';        //SNS関係の設定
 require_once 'sns-share.php';  //SNSシェア関数

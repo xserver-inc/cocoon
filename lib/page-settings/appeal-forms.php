@@ -119,6 +119,7 @@
         <tr>
           <th scope="row">
             <?php genelate_label_tag(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
+            <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
             <?php

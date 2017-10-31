@@ -299,9 +299,12 @@ form.admin-settings{
 
 .tooltip{
   position: relative;
+  color: orange;
+  top: 3px;
+  margin-left: 3px;
 
   &:hover .tip-content{
-    display: inline;
+    display: block;
   }
 
 
@@ -309,12 +312,18 @@ form.admin-settings{
   .tip-content {
     background: #ffffeb;
     border: 1px solid #878787;
+    color: #333;
     display: none;
     width: 500px;
     padding: 8px;
     position: absolute;
     bottom: 1em;
     left: -15px;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
 
   .tip-content:after, .tip-content:before {

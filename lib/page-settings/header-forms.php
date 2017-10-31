@@ -97,6 +97,7 @@
         <tr>
           <th scope="row">
             <?php genelate_label_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR, __( 'ヘッダー全体色', THEME_NAME ) ); ?>
+            <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
 
@@ -115,6 +116,7 @@
         <tr>
           <th scope="row">
             <?php genelate_label_tag('', __( 'ヘッダー色（ロゴ部）', THEME_NAME ) ); ?>
+            <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
             <?php

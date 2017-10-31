@@ -2,7 +2,8 @@
         <!-- グローバルナビ宇メニュー色設定 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'グローバルナビメニュー', THEME_NAME ) ); ?>
+            <?php genelate_label_tag('', __( 'グローバルナビメニュー色', THEME_NAME ) ); ?>
+            <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
             <?php

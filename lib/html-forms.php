@@ -167,7 +167,7 @@ endif;
 //ツールチップの生成
 if ( !function_exists( 'genelate_tooltip_tag' ) ):
 function genelate_tooltip_tag($content){?>
-  <span class="tooltip fa fa-question-circle">
+  <span class="tooltip fa fa-exclamation-triangle">
     <span class="tip-content">
       <?php echo $content; ?>
     </span>
