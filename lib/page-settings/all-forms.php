@@ -179,7 +179,6 @@
           </td>
         </tr>
 
-
         <!-- サイトアイコン -->
         <tr>
           <th scope="row">
@@ -190,6 +189,19 @@
             //var_dump(get_site_icon_url());
             genelate_upload_image_tag(OP_SITE_ICON_URL, get_site_icon_url2());
             genelate_tips_tag(__( 'サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 404ページ画像 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_404_IMAGE_URL, __('404ページ画像', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_upload_image_tag(OP_404_IMAGE_URL, get_404_image_url());
+            genelate_tips_tag(__( '404ページで表示する画像を選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -32,3 +32,6 @@ update_theme_option(OP_SIDEBAR_DISPLAY_TYPE);
 
 //サイトアイコン
 update_theme_option(OP_SITE_ICON_URL);
+
+//404ページ画像
+update_theme_option(OP_404_IMAGE_URL);
