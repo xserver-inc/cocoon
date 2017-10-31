@@ -2364,6 +2364,11 @@ input[type='submit'] {
 
 .carousel-content {
   margin: 0 30px;
+  padding-bottom: 4px;
+}
+.carousel-content a {
+  float: left;
+  width: 10%;
 }
 
 .carousel-entry-card-wrap.a-wrap {

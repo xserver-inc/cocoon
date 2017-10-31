@@ -1805,7 +1805,11 @@
     background-color: #fff;
     padding: 2px 0; }
   .demo .carousel-content {
-    margin: 0 30px; }
+    margin: 0 30px;
+    padding-bottom: 4px; }
+    .demo .carousel-content a {
+      float: left;
+      width: 10%; }
   .demo .carousel-entry-card-wrap.a-wrap {
     padding: 0.05% 0.1%;
     margin: 0; }

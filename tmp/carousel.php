@@ -11,7 +11,7 @@ $query = new WP_Query( $args );
 ?>
 <div id="carousel" class="carousel">
   <div id="carousel-in" class="carousel-in wrap">
-    <div class="carousel-content">
+    <div class="carousel-content cf">
       <?php while ($query -> have_posts()) : $query -> the_post(); ?>
         <?php //カルーセルカードの取得
         get_template_part('tmp/carousel-entry-card'); ?>
