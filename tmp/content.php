@@ -79,6 +79,11 @@
           <?php dynamic_sidebar( 'single-content-bottom' ); ?>
         <?php endif; ?>
 
+        <?php //固定ページ本文上ウイジェット
+        if ( is_page() && is_active_sidebar( 'page-content-top' ) ): ?>
+          <?php dynamic_sidebar( 'page-content-top' ); ?>
+        <?php endif; ?>
+
         <div class="entry-categories-tags">
           <?php the_category_links(); //カテゴリの出力
                 the_tag_links(); //タグの出力?>
