@@ -122,6 +122,11 @@
           <?php dynamic_sidebar( 'below-single-sns-buttons' ); ?>
         <?php endif; ?>
 
+        <?php //固定ページSNSボタン下ウイジェット
+        if ( is_page() && is_active_sidebar( 'below-page-sns-buttons' ) ): ?>
+          <?php dynamic_sidebar( 'below-page-sns-buttons' ); ?>
+        <?php endif; ?>
+
         <?php //投稿者等表示用のテンプレート
         get_template_part('tmp/footer-meta'); ?>
 
