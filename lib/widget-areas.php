@@ -373,6 +373,23 @@ function register_footer_right_widget_area(){
 endif;
 register_footer_right_widget_area();
 
+if ( !function_exists( 'register_footer_mobile_widget_area' ) ):
+function register_footer_mobile_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( 'フッター（モバイル用）', THEME_NAME ),
+    'id' => 'footer-mobile',
+    'description' => __( 'モバイルで表示するウィジットエリアです。768px以下で表示されます。', THEME_NAME ),
+    'before_widget' => '<aside id="%1$s" class="widget widget-footer-right %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-footer-right-title footer-title">',
+    'after_title' => '</h3>',
+  ));
+
+}
+endif;
+register_footer_mobile_widget_area();
+
 if ( !function_exists( 'register_404_page_widget_area' ) ):
 function register_404_page_widget_area(){
   register_sidebars(1,

@@ -11,18 +11,30 @@
   margin-top: 10px;
 }
 
-.footer-widgets {
+.footer-widgets,
+.footer-widgets-mobile {
   margin: 10px auto;
   display: flex;
+}
+
+%footer_widget{
+  padding: 10px 16px;
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
-  padding: 10px 16px;
+  @extend %footer_widget;
   width: 33.33%;
 }
 
+.footer-widgets-mobile{
+  display: none;
+}
+
+.footer-mobile {
+  @extend %footer_widget;
+}
 /************************************
 ** フッターボトム
 ************************************/

@@ -41,6 +41,15 @@
           </div>
         <?php endif; ?>
 
+        <?php //モバイルウィジェット
+        if (is_active_sidebar('footer-mobile')): ?>
+          <div class="footer-widgets-mobile cf">
+             <div class="footer-mobile">
+             <?php dynamic_sidebar('footer-mobile'); ?>
+             </div>
+          </div>
+        <?php endif ?>
+
         <?php //フッターの最下部（フッターメニューやクレジットなど）
         get_template_part('tmp/footer-bottom'); ?>
 

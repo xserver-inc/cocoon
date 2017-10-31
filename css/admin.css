@@ -1434,14 +1434,20 @@
     padding-top: 10px; }
   .demo .copyright {
     margin-top: 10px; }
-  .demo .footer-widgets {
+  .demo .footer-widgets,
+  .demo .footer-widgets-mobile {
     margin: 10px auto;
     display: flex; }
   .demo .footer-left,
   .demo .footer-center,
+  .demo .footer-right, .demo .footer-mobile {
+    padding: 10px 16px; }
+  .demo .footer-left,
+  .demo .footer-center,
   .demo .footer-right {
-    padding: 10px 16px;
     width: 33.33%; }
+  .demo .footer-widgets-mobile {
+    display: none; }
   .demo .footer-bottom {
     margin-top: 24px;
     margin-left: 10px;
@@ -2256,7 +2262,9 @@
       justify-content: center;
       padding: 1em; }
     .demo .footer-widgets {
-      display: none; }
+      flex-direction: column; }
+      .demo .footer-widgets div {
+        width: 100%; }
     .demo .content-in {
       flex-direction: column; }
     .demo .main,
@@ -2348,7 +2356,11 @@
         width: 49%; }
       .demo .header div.header-in,
       .demo .appeal div.appeal-in {
-        min-height: auto; } }
+        min-height: auto; }
+      .demo .footer-widgets {
+        display: none; }
+      .demo .footer-widgets-mobile {
+        display: block; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

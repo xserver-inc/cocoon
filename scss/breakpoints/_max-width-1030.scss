@@ -9,7 +9,10 @@
 }
 
 .footer-widgets{
-  display: none;
+  flex-direction: column;
+  div{
+    width: 100%;
+  }
 }
 
 .content-in{
