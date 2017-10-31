@@ -17,6 +17,11 @@ get_template_part('tmp/content') ?>
     get_template_part_with_ad_format(get_ad_pos_below_related_posts_format(), 'ad-below-related-posts', is_ad_pos_below_related_posts_label_visible());
   }; ?>
 
+  <?php //投稿関連記事下ウイジェット
+  if ( is_active_sidebar( 'below-single-related-entries' ) ): ?>
+    <?php dynamic_sidebar( 'below-single-related-entries' ); ?>
+  <?php endif; ?>
+
   <?php get_template_part('tmp/pager-post-navi'); //投稿ナビ ?>
 
   <?php //コメントを表示する場合

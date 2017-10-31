@@ -51,6 +51,11 @@
           <?php dynamic_sidebar( 'single-content-top' ); ?>
         <?php endif; ?>
 
+        <?php //固定ページ本文上ウイジェット
+        if ( is_page() && is_active_sidebar( 'page-content-top' ) ): ?>
+          <?php dynamic_sidebar( 'page-content-top' ); ?>
+        <?php endif; ?>
+
       </header>
 
       <div class="entry-content cf<?php echo get_additional_entry_content_classes(); ?>" itemprop="articleBody">
