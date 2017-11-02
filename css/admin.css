@@ -258,6 +258,9 @@
   ** 最近のコメントウィジェット
   ************************************/
   /************************************
+  ** フォーローボタウィジェット
+  ************************************/
+  /************************************
   ** ページネーション
   ************************************/
   /************************************
@@ -1295,6 +1298,12 @@
       border-bottom-color: #cccdce;
       border-width: 9px;
       margin-left: -9px; }
+  .demo .sidebar .sns-follow-buttons {
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .demo .sidebar .sns-follow-buttons a {
+      width: 49%;
+      margin-right: 0; }
   .demo .pagination {
     margin: 30px 0;
     clear: both;

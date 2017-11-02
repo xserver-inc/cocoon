@@ -60,3 +60,5 @@ require_once 'auto-post-thumbnail.php'; //アイキャッチ自動追加関数
 require_once 'widgets/new-entries.php';
 //最近のコメントウィジェット
 require_once 'widgets/recent-comments.php';
+//フォローボタンウィジェット
+require_once 'widgets/sns-follow-buttons.php';

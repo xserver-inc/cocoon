@@ -1594,6 +1594,18 @@ label.screen-reader-text {
 }
 
 /************************************
+** フォーローボタウィジェット
+************************************/
+.sidebar .sns-follow-buttons {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sidebar .sns-follow-buttons a {
+  width: 49%;
+  margin-right: 0;
+}
+
+/************************************
 ** ページネーション
 ************************************/
 .pagination {

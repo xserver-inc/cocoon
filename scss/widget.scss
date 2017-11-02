@@ -307,3 +307,18 @@ label.screen-reader-text{
     margin-left: -9px;
   }
 }
+
+/************************************
+** フォーローボタウィジェット
+************************************/
+.sidebar{
+  .sns-follow-buttons{
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    a{
+      width: 49%;
+      margin-right: 0;
+    }
+  }
+}

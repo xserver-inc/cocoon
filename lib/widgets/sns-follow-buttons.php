@@ -2,12 +2,12 @@
 ///////////////////////////////////////////////////
 //SNSフォローボタン
 ///////////////////////////////////////////////////
-class SimplicitySocialFollowWidgetItem extends WP_Widget {
+class SocialFollowWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'sns_follow_buttons',
-      __( '[S] SNSフォローボタン', 'simplicity2' ),
-      array('description' => __( 'SNSサービスのフォローアイコンボタンを表示するSimplicityウィジェットです。', 'simplicity2' ))
+      WIDGET_NAME_PREFIX.__( 'SNSフォローボタン', THEME_NAME ),
+      array('description' => __( 'SNSサービスのフォローアイコンボタンを表示するウィジェットです。', THEME_NAME ))
     );
   }
   function widget($args, $instance) {
@@ -18,10 +18,10 @@ class SimplicitySocialFollowWidgetItem extends WP_Widget {
     if ($title_popular) {
       echo $title_popular;
     } else {
-      echo __( 'SNSフォローボタン', 'simplicity2' );
+      echo __( 'SNSフォローボタン', THEME_NAME );
     }
     echo $args['after_title'];
-    get_template_part('sns-pages'); //SNSフォローボタン
+    get_template_part('tmp/sns-follow-buttons'); //SNSフォローボタン
     echo $args['after_widget']; ?>
   <?php
   }
@@ -40,11 +40,11 @@ class SimplicitySocialFollowWidgetItem extends WP_Widget {
     ?>
     <p>
        <label for="<?php echo $this->get_field_id('title_social_follow'); ?>">
-        <?php _e( 'SNSフォローボタンのタイトル', 'simplicity2' ) ?>
+        <?php _e( 'SNSフォローボタンのタイトル', THEME_NAME ) ?>
        </label>
        <input class="widefat" id="<?php echo $this->get_field_id('title_social_follow'); ?>" name="<?php echo $this->get_field_name('title_social_follow'); ?>" type="text" value="<?php echo $title_social_follow; ?>" />
     </p>
     <?php
   }
 }
-add_action('widgets_init', create_function('', 'return register_widget("SimplicitySocialFollowWidgetItem");'));
+add_action('widgets_init', create_function('', 'return register_widget("SocialFollowWidgetItem");'));
