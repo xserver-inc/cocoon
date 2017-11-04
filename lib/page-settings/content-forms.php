@@ -18,7 +18,7 @@
           <td>
             <?php
             $options = array(
-              'keep_as_is' => __( '変更しない', THEME_NAME ),
+              'default' => __( '変更しない', THEME_NAME ),
               'blank' => __( '新しいタブで開く（_blank）', THEME_NAME ),
               'self' => __( '同じタブで開く（_self）', THEME_NAME ),
             );
@@ -36,7 +36,7 @@
           <td>
             <?php
             $options = array(
-              'keep_as_is' => __( '変更しない', THEME_NAME ),
+              'default' => __( '変更しない', THEME_NAME ),
               'nofollow' => __( 'フォローしない（nofollow）', THEME_NAME ),
               'follow' => __( 'フォローする（follow）', THEME_NAME ),
             );
