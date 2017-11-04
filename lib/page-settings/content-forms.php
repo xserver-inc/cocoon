@@ -1,37 +1,28 @@
 <div class="metabox-holder">
 
 <!-- 目次 -->
-<div id="toc" class="postbox">
-  <h2 class="hndle"><?php _e( 'リスト設定', THEME_NAME ) ?></h2>
+<div id="external-link" class="postbox">
+  <h2 class="hndle"><?php _e( '外部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'リスト表示の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '外部リンク動作の設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
-        <!-- プレビュー画面 -->
-        <tr>
-          <th scope="row">
-            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
-          </th>
-          <td>
-            <div class="demo toc" style="height: 300px;overflow: auto;">
-              <?php query_posts('posts_per_page=1&orderby=rand'); ?>
-              <?php get_template_part('tmp/content') ?>
-            </div>
-            <?php genelate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
-          </td>
-        </tr>
-
         <!-- 目次の表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_VISIBLE, __('目次の表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_EXTERNAL_LINK_OPEN_TYPE, __('外部リンクの開き方', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_TOC_VISIBLE , is_toc_visible(), __( '目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページの内容から目次を自動付加します。', THEME_NAME ));
+            $options = array(
+              'keep_as_is' => __( '変更しない', THEME_NAME ),
+              'blank' => __( '新しいタブで開く（_blank）', THEME_NAME ),
+              'self' => __( '同じタブで開く（_self）', THEME_NAME ),
+            );
+            genelate_selectbox_tag(OP_EXTERNAL_LINK_OPEN_TYPE, $options, get_external_link_open_type());
+            genelate_tips_tag(__( '本文内の外部リンクをどのように開くか。', THEME_NAME ));
             ?>
           </td>
         </tr>

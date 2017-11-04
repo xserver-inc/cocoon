@@ -16,6 +16,14 @@ function get_external_link_follow_type(){
 }
 endif;
 
+
+//外部リンクアイコン表示
+define('OP_EXTERNAL_LINK_ICON_VISIBLE', 'external_link_icon_visible');
+if ( !function_exists( 'is_external_link_icon_visible' ) ):
+function is_external_link_icon_visible(){
+  return get_theme_option(OP_EXTERNAL_LINK_ICON_VISIBLE, 'none');
+}
+endif;
 //外部リンクアイコン
 define('OP_EXTERNAL_LINK_ICON', 'external_link_icon');
 if ( !function_exists( 'get_external_link_icon' ) ):

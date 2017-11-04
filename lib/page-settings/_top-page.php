@@ -32,6 +32,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'single-posts.php';
   //固定ページ
   require_once 'page-posts.php';
+  //本文
+  require_once 'content-posts.php';
   //目次
   require_once 'toc-posts.php';
   //SNSシェア
@@ -100,7 +102,8 @@ endif;
     <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="page-page"><?php _e( '固定ページ', THEME_NAME ) ?></li>
-    <li class="page-page"><?php _e( '目次', THEME_NAME ) ?></li>
+    <li class="content-page"><?php _e( '本文', THEME_NAME ) ?></li>
+    <li class="toc-page"><?php _e( '目次', THEME_NAME ) ?></li>
     <li class="sns-share"><?php _e( 'SNSシェア', THEME_NAME ) ?></li>
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
@@ -174,6 +177,11 @@ endif;
   <!-- 固定ページ -->
   <div class="page-page metabox-holder">
     <?php require_once 'page-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 本文 -->
+  <div class="content-page metabox-holder">
+    <?php require_once 'content-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 目次 -->
