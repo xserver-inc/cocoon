@@ -4,12 +4,12 @@
 define('OP_EXTERNAL_LINK_OPEN_TYPE', 'external_link_open_type');
 if ( !function_exists( 'get_external_link_open_type' ) ):
 function get_external_link_open_type(){
-  return get_theme_option(OP_EXTERNAL_LINK_OPEN_TYPE, 'defalt');
+  return get_theme_option(OP_EXTERNAL_LINK_OPEN_TYPE, 'default');
 }
 endif;
 if ( !function_exists( 'get_external_link_open_type_default' ) ):
 function get_external_link_open_type_default(){
-  return get_external_link_open_type() == 'defalt';
+  return get_external_link_open_type() == 'default';
 }
 endif;
 
@@ -17,7 +17,12 @@ endif;
 define('OP_EXTERNAL_LINK_FOLLOW_TYPE', 'external_link_follow_type');
 if ( !function_exists( 'get_external_link_follow_type' ) ):
 function get_external_link_follow_type(){
-  return get_theme_option(OP_EXTERNAL_LINK_FOLLOW_TYPE, 'defalt');
+  return get_theme_option(OP_EXTERNAL_LINK_FOLLOW_TYPE, 'default');
+}
+endif;
+if ( !function_exists( 'get_external_link_follow_type_default' ) ):
+function get_external_link_follow_type_default(){
+  return get_external_link_follow_type() == 'default';
 }
 endif;
 
