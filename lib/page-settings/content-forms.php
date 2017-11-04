@@ -9,7 +9,8 @@
 
     <table class="form-table">
       <tbody>
-        <!-- 目次の表示 -->
+
+        <!-- 外部リンクの開き方 -->
         <tr>
           <th scope="row">
             <?php genelate_label_tag(OP_EXTERNAL_LINK_OPEN_TYPE, __('外部リンクの開き方', THEME_NAME) ); ?>
@@ -27,70 +28,61 @@
           </td>
         </tr>
 
-        <!-- 目次タイトル -->
+        <!-- フォロータイプ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_TITLE, __('目次タイトル', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            genelate_textbox_tag(OP_TOC_TITLE, get_toc_title(), __( '目次', THEME_NAME ));
-            genelate_tips_tag(__( '目次の上にラベル表示されるタイトルを入力してください。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
-        <!-- 目次表示の深さ -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_TOC_DEPTH, __('目次表示の深さ', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_EXTERNAL_LINK_FOLLOW_TYPE, __('フォロータイプ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             $options = array(
-              '2' => __( 'H2見出しまで', THEME_NAME ),
-              '3' => __( 'H3見出しまで', THEME_NAME ),
-              '4' => __( 'H4見出しまで', THEME_NAME ),
-              '5' => __( 'H5見出しまで', THEME_NAME ),
-              '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
+              'keep_as_is' => __( '変更しない', THEME_NAME ),
+              'nofollow' => __( 'フォローしない（nofollow）', THEME_NAME ),
+              'follow' => __( 'フォローする（follow）', THEME_NAME ),
             );
-            genelate_selectbox_tag(OP_TOC_DEPTH, $options, get_toc_depth());
-            genelate_tips_tag(__( 'どの見出しの深さまで表示するかを設定します。', THEME_NAME ));
+            genelate_selectbox_tag(OP_EXTERNAL_LINK_FOLLOW_TYPE, $options, get_external_link_follow_type());
+            genelate_tips_tag(__( '本文内の外部リンクのフォロー状態を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- 目次ナンバーの表示 -->
+
+        <!-- アイコン表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TOC_NUMBER_TYPE, __('目次ナンバーの表示', THEME_NAME) ); ?>
+            <?php genelate_label_tag(OP_EXTERNAL_LINK_ICON_VISIBLE, __('アイコン表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_EXTERNAL_LINK_ICON_VISIBLE , is_external_link_icon_visible(), __( 'アイコンの表示', THEME_NAME ));
+            genelate_tips_tag(__( '外部リンクの右部にFont Awesomeアイコンを表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- アイコン -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_EXTERNAL_LINK_ICON, __('アイコン', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             $options = array(
-              'none' => __( '表示しない', THEME_NAME ),
-              'number' => __( '数字（デフォルト）', THEME_NAME ),
-              'number_detail' => __( '数字詳細（ex: 1.2.3）', THEME_NAME ),
+              'fa-link' => __( '&#xf0c1', THEME_NAME ),
+              'fa-level-up' => __( '&#xf148', THEME_NAME ),
+              'fa-share' => __( '&#xf064', THEME_NAME ),
+              'fa-share-square-o' => __( '&#xf045', THEME_NAME ),
+              'fa-share-square' => __( '&#xf14d', THEME_NAME ),
+              'fa-sign-out' => __( '&#xf08b', THEME_NAME ),
+              'fa-plane' => __( '&#xf072', THEME_NAME ),
+              'fa-rocket' => __( '&#xf135', THEME_NAME ),
             );
-            genelate_selectbox_tag(OP_TOC_NUMBER_TYPE, $options, get_toc_number_type());
-            genelate_tips_tag(__( '設定項目手前の数字の表示形式を設定します。', THEME_NAME ));
+
+            genelate_selectbox_tag(OP_EXTERNAL_LINK_ICON, $options, get_external_link_icon(), true);
+            genelate_tips_tag(__( '外部リンクの右部に表示するFont Awesomeアイコンを設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
-
-        <!-- 目次の表示順 -->
-        <tr>
-          <th scope="row">
-            <?php genelate_label_tag(OP_TOC_BEFORE_ADS, __('目次の表示順', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            genelate_checkbox_tag(OP_TOC_BEFORE_ADS , is_toc_before_ads(), __( '広告の手前に目次を表示する', THEME_NAME ));
-            genelate_tips_tag(__( '広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されているとき', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
 
       </tbody>
     </table>
