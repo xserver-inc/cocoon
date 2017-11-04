@@ -43,17 +43,17 @@
           <td>
             <?php
             $options = array(
-              'fa-angle-double-up' => __( 'fa-angle-double-up', THEME_NAME ),
-              'fa-angle-up' => __( 'fa-angle-up', THEME_NAME ),
-              'fa-arrow-circle-up' => __( 'fa-arrow-circle-up', THEME_NAME ),
-              'fa-arrow-up' => __( 'fa-arrow-up', THEME_NAME ),
-              'fa-caret-up' => __( 'fa-caret-up', THEME_NAME ),
-              'fa-caret-square-o-up' => __( 'fa-caret-square-o-up', THEME_NAME ),
-              'fa-chevron-circle-up' => __( 'fa-chevron-circle-up', THEME_NAME ),
-              'fa-chevron-up' => __( 'fa-chevron-up', THEME_NAME ),
-              'fa-hand-o-up' => __( 'fa-hand-o-up', THEME_NAME ),
-              'fa-long-arrow-up' => __( 'fa-long-arrow-up', THEME_NAME ),
-              'fa-caret-square-o-up' => __( 'fa-caret-square-o-up', THEME_NAME ),
+              'fa-angle-double-up' => __( '&#xf102', THEME_NAME ),
+              'fa-angle-up' => __( '&#xf106', THEME_NAME ),
+              'fa-arrow-circle-up' => __( '&#xf0aa', THEME_NAME ),
+              'fa-arrow-up' => __( '&#xf062', THEME_NAME ),
+              'fa-caret-up' => __( '&#xf0d8', THEME_NAME ),
+              'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
+              'fa-chevron-circle-up' => __( '&#xf139', THEME_NAME ),
+              'fa-chevron-up' => __( '&#xf077', THEME_NAME ),
+              'fa-hand-o-up' => __( '&#xf0a6', THEME_NAME ),
+              'fa-long-arrow-up' => __( '&#xf176', THEME_NAME ),
+              'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
             );
             genelate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), true);
             genelate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));

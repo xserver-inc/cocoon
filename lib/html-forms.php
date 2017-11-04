@@ -50,15 +50,21 @@ endif;
 
 //セレクトボックスの生成
 if ( !function_exists( 'genelate_selectbox_tag' ) ):
-function genelate_selectbox_tag($name, $options, $now_value, $icon_font_visible = false){?>
-<select name="<?php echo $name; ?>">
+function genelate_selectbox_tag($name, $options, $now_value, $icon_font_visible = false){
+$style = null;
+if ($icon_font_visible) {
+  $style = ' style="font-family: FontAwesome;font-size: 20px;text-align: center;"';
+}
+?>
+<select name="<?php echo $name; ?>"<?php echo $style; ?>>
   <?php
   foreach ($options as $value => $caption) {
     //アイコンフォントを利用する場合
     $add_option_class = null;
-    if ($icon_font_visible) {
-      $add_option_class = ' class="fa '.$caption.'"';
-    } ?>
+    // if ($icon_font_visible) {
+    //   $add_option_class = ' class="fa '.$caption.'"';
+    // }
+    ?>
     <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?><?php echo $add_option_class; ?>><?php echo $caption; ?></option>
   <?php } ?>
 </select>
