@@ -62,6 +62,6 @@ endif;
 define('OP_EXTERNAL_LINK_ICON', 'external_link_icon');
 if ( !function_exists( 'get_external_link_icon' ) ):
 function get_external_link_icon(){
-  return get_theme_option(OP_EXTERNAL_LINK_ICON, 'fa-sign-out');
+  return get_theme_option(OP_EXTERNAL_LINK_ICON, 'fa-share-square-o');
 }
 endif;

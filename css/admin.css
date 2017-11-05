@@ -218,6 +218,9 @@
   ** ページ管理画面の設定で「本文のみ」表示
   ************************************/
   /************************************
+  ** 外部リンク・内部リンク
+  ************************************/
+  /************************************
   ** 内部ブログカードのサムネイルスタイル
   ************************************/
   /************************************
@@ -955,6 +958,10 @@
   .demo .content-only .footer,
   .demo .content-only .go-to-top-button {
     display: none; }
+  .demo span.external-icon,
+  .demo span.internal-icon {
+    margin-left: 3px;
+    font-size: 0.8em; }
   .demo .blogcard-wrap {
     margin: 24px auto;
     padding: 0;

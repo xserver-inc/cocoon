@@ -1077,6 +1077,15 @@ blockquote::after {
   display: none;
 }
 
+/************************************
+** 外部リンク・内部リンク
+************************************/
+span.external-icon,
+span.internal-icon {
+  margin-left: 3px;
+  font-size: 0.8em;
+}
+
 .blogcard-wrap {
   margin: 24px auto;
   padding: 0;

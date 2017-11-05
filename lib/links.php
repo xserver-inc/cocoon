@@ -113,6 +113,11 @@ function replace_anchor_links($the_content) {
         $new_a = preg_replace('/ *rel="[^"]*?"/i', '', $new_a);
         $new_a = str_replace('<a', '<a rel="'.implode(' ', $rels).'"', $new_a);
 
+        //アイコフォントの表示
+        if (is_external_link_icon_visible()) {
+          $new_a = str_replace('</a>', '<span class="fa '.get_external_link_icon().' external-icon"></span></a>', $new_a);
+        }
+
         //何かしらの変更があった場合
         if ($old_a != $new_a) {
           $the_content = str_replace($old_a, $new_a, $the_content);
