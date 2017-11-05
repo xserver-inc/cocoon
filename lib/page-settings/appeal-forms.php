@@ -10,6 +10,9 @@
     <div class="demo appeal-area-demo" style="">
       <?php get_template_part('tmp/appeal') ?>
     </div>
+    <?php
+    genelate_tips_tag(__( 'デモの表示は実際の表示と多少変わる可能性があります。', THEME_NAME ));
+    ?>
 
     <table class="form-table">
       <tbody>

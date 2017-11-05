@@ -44,7 +44,7 @@
           <td>
             <?php
             genelate_textarea_tag(OP_404_PAGE_MESSAGE, get_404_page_message(), __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
-            genelate_tips_tag(__( '404ページに表示するメッセージを入力します。タグ入力可能です。', THEME_NAME ));
+            genelate_tips_tag(__( '404ページに表示するメッセージを入力します。タグ入力可能です。入力されたテキストには自動的に段落が付加されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
