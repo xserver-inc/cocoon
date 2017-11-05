@@ -58,6 +58,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'footer-posts.php';
   //ボタン
   require_once 'buttons-posts.php';
+  //404ページ
+  require_once '404-posts.php';
   //管理画面
   require_once 'admin-posts.php';
   //リセット
@@ -118,12 +120,8 @@ endif;
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
-    <li class="speed"><?php _e( '高速化', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
-    <li class="content"><?php _e( 'コンテンツ', THEME_NAME ) ?></li>
-    <li class="sidebar"><?php _e( 'サイドバー', THEME_NAME ) ?></li>
-    <li class="other"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
-    <li class="heading"><?php _e( '見出し', THEME_NAME ) ?></li>
+    <li class="mobile-buttons"><?php _e( 'モバイルボタン', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
@@ -242,7 +240,7 @@ endif;
 
   <!-- 404ページ -->
   <div class="page-404 metabox-holder">
-    <?php //require_once 'page-404-forms.php'; ?>
+    <?php require_once '404-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->

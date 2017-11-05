@@ -105,7 +105,7 @@ function get_default_site_icon_url(){
 }
 endif;
 
-//noindexページを出力する
+//サイトアイコンの設定
 add_action( 'wp_head', 'the_site_icon_tag' );
 add_action( 'admin_print_styles', 'the_site_icon_tag' );
 if ( !function_exists( 'the_site_icon_tag' ) ):
@@ -122,19 +122,6 @@ function the_site_icon_tag(){
     $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL.$tag;
     echo $tag;
   }
-}
-endif;
-
-//404ページ画像
-define('OP_404_IMAGE_URL', '404_image_url');
-if ( !function_exists( 'get_404_image_url' ) ):
-function get_404_image_url(){
-  return get_theme_option(OP_404_IMAGE_URL, get_default_404_image_url());
-}
-endif;
-if ( !function_exists( 'get_default_404_image_url' ) ):
-function get_default_404_image_url(){
-  return get_template_directory_uri().'/images/404.png';
 }
 endif;
 
