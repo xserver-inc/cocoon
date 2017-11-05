@@ -33,42 +33,85 @@ function replace_anchor_links($the_content) {
           }
         }
 
+        //rel属性値の取得
+        $rels = array();
+        $res = preg_match('/ *rel="([^"]*?)"/i', $new_a, $m);
+        //rel属性があれば値を取得する
+        if ($res && $m[1]) {
+          $rels = explode(' ', $m[1]);
+        }
+
         //フォロータイプの設定
         if (!get_external_link_follow_type_default()) {
-          $rels = array();
-          $res = preg_match('/ *rel="([^"]*?)"/i', $new_a, $m);
-          //var_dump($new_a);
-          if ($res && $m[1]) {
-            $rels = explode(' ', $m[1]);
-            //var_dump($rels);
-            switch (get_external_link_follow_type()) {
-              case 'nofollow':
-                //nofollowの追加
-                if (!in_array('nofollow', $rels)) {
-                  $rels[] = 'nofollow';
-                }
-                //followがある場合は削除
-                if(($key = array_search('follow', $rels)) !== false) {
-                    unset($rels[$key]);
-                }
-                break;
-              case 'follow':
-                if (!in_array('follow', $rels)) {
-                  $rels[] = 'follow';
-                }
-                //nofollowがある場合は削除
-                if(($key = array_search('nofollow', $rels)) !== false) {
-                    unset($rels[$key]);
-                }
-                break;
-            }
-            //フォローを変更変更する場合はrel属性のクリアを行う
-            $new_a = preg_replace('/ *rel="[^"]*?"/i', '', $new_a);
-            $new_a = str_replace('<a', '<a rel="'.implode(' ', $rels).'"', $new_a);
-            //var_dump($new_a);
+
+          //var_dump($rels);
+          switch (get_external_link_follow_type()) {
+            case 'nofollow':
+              //nofollowの追加
+              if (!in_array('nofollow', $rels)) {
+                $rels[] = 'nofollow';
+              }
+              //followがある場合は削除
+              if(($key = array_search('follow', $rels)) !== false) {
+                unset($rels[$key]);
+              }
+              break;
+            case 'follow':
+              //followの追加
+              if (!in_array('follow', $rels)) {
+                $rels[] = 'follow';
+              }
+              //nofollowがある場合は削除
+              if(($key = array_search('nofollow', $rels)) !== false) {
+                unset($rels[$key]);
+              }
+              break;
+          }
+
+        }//!get_external_link_follow_type_default
+
+        //noopenerの追加と削除
+        if (is_external_link_noopener_enable()) {
+          //noopenerの追加
+          if (!in_array('noopener', $rels)) {
+            $rels[] = 'noopener';
+          }
+        } else {
+          //noopenerの削除
+          if(($key = array_search('noopener', $rels)) !== false) {
+            unset($rels[$key]);
           }
         }
 
+        //noreferrerの追加と削除
+        if (is_external_link_noreferrer_enable()) {
+          //noreferrerの追加
+          if (!in_array('noreferrer', $rels)) {
+            $rels[] = 'noreferrer';
+          }
+        } else {
+          //noreferrerの削除
+          if(($key = array_search('noreferrer', $rels)) !== false) {
+            unset($rels[$key]);
+          }
+        }
+
+        //externalの追加と削除
+        if (is_external_link_external_enable()) {
+          //externalの追加
+          if (!in_array('external', $rels)) {
+            $rels[] = 'external';
+          }
+        } else {
+          //externalの削除
+          if(($key = array_search('external', $rels)) !== false) {
+            unset($rels[$key]);
+          }
+        }
+
+        //フォローを変更変更する場合はrel属性のクリアを行う
+        $new_a = preg_replace('/ *rel="[^"]*?"/i', '', $new_a);
+        $new_a = str_replace('<a', '<a rel="'.implode(' ', $rels).'"', $new_a);
 
         //何かしらの変更があった場合
         if ($old_a != $new_a) {

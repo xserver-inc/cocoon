@@ -46,6 +46,22 @@
           </td>
         </tr>
 
+        <!-- 追加rel属性 -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_EXTERNAL_LINK_NOOPENER_ENABLE, __('追加rel属性', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_checkbox_tag(OP_EXTERNAL_LINK_NOOPENER_ENABLE, is_external_link_noopener_enable(), __( 'noopenerを追加', THEME_NAME ));
+            genelate_tips_tag(__( 'rel属性にnoopenerを追加します。', THEME_NAME ));
+            genelate_checkbox_tag(OP_EXTERNAL_LINK_NOREFERRER_ENABLE, is_external_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
+            genelate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));
+            genelate_checkbox_tag(OP_EXTERNAL_LINK_EXTERNAL_ENABLE, is_external_link_external_enable(), __( 'externalを追加', THEME_NAME ));
+            genelate_tips_tag(__( 'rel属性にexternalを追加します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
         <!-- アイコン表示 -->
         <tr>
