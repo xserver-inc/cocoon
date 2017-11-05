@@ -9,7 +9,7 @@
     <img class="not-found" src="<?php echo get_template_directory_uri() ?>/images/404.png" alt="404 Not Found" />
   <?php endif ?>
 
-  <p><?php echo get_404_page_message(); ?></p>
+  <?php echo wpautop(get_404_page_message()); ?>
 
   <?php //404ページウィジェット
   if ( is_active_sidebar( '404-page' ) ): ?>
