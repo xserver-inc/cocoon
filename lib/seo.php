@@ -26,14 +26,14 @@ function title_parts_custom( $title ){
   $site_name = trim( get_bloginfo('name') );
   $title['tagline'] = '';
 
-  if(is_front_page()): //フロントページ
+  if(is_front_page()){ //フロントページ
     $title['title'] = $site_name;
     $title['site'] = '';
 
     if ( is_tagline_to_front_page_title() )://キャッチフレーズを追加する場合
       $title['tagline'] = trim( get_bloginfo('description') );
     endif;
-  elseif(is_singular()): //投稿・固定ページ
+  } elseif (is_singular()) { //投稿・固定ページ
     $title['title'] = trim( get_the_title() );
     //SEO向けのタイトルが設定されているとき
     if (get_the_page_seo_title()) {
@@ -52,7 +52,7 @@ function title_parts_custom( $title ){
     // if ( is_site_name_to_singular_title() )://サイト名を追加する場合
     //   $title['site'] = $site_name;
     // endif;
-  elseif (is_category()):
+  } elseif (is_category()) {
     $cat_name = $title['title'];
     $title['site'] = '';
     switch (get_category_page_title_format()) {
@@ -64,8 +64,9 @@ function title_parts_custom( $title ){
         $title['site'] = $cat_name;
         break;
     }
-
-  endif;
+  } elseif (is_404()) {
+    $title['title'] = get_404_page_title();
+  };
 
   return $title;
 }
