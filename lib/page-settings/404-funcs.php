@@ -12,3 +12,19 @@ function get_default_404_image_url(){
   return get_template_directory_uri().'/images/404.png';
 }
 endif;
+
+//404ページタイトル
+define('OP_404_PAGE_TITLE', '404_page_title');
+if ( !function_exists( 'get_404_page_title' ) ):
+function get_404_page_title(){
+  return get_theme_option(OP_404_PAGE_TITLE, __( '404 NOT FOUND', THEME_NAME ));
+}
+endif;
+
+//404ページメッセージ
+define('OP_404_PAGE_MESSAGE', '404_page_message');
+if ( !function_exists( 'get_404_page_message' ) ):
+function get_404_page_message(){
+  return get_theme_option(OP_404_PAGE_MESSAGE, __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
+}
+endif;

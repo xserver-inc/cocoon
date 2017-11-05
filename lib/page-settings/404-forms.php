@@ -23,6 +23,33 @@
           </td>
         </tr>
 
+        <!-- 404ページタイトル -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_404_PAGE_TITLE, __('404ページタイトル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_404_PAGE_TITLE, get_404_page_title(), __( '404 NOT FOUND', THEME_NAME ));
+            genelate_tips_tag(__( '404ページに表示するタイトルを入力します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 404ページメッセージ -->
+        <tr>
+          <th scope="row">
+            <?php genelate_label_tag(OP_404_PAGE_MESSAGE, __('404ページメッセージ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            genelate_textbox_tag(OP_404_PAGE_MESSAGE, get_404_page_message(), __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
+            genelate_tips_tag(__( '404ページに表示するメッセージを入力します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
       </tbody>
     </table>
 
