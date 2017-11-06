@@ -7,7 +7,7 @@ class MobileAdWidgetItem extends WP_Widget {
     parent::__construct(
       'mobile_ad',
       WIDGET_NAME_PREFIX.__( 'モバイル用広告', THEME_NAME ), //ウイジェット名
-      array('description' => __( 'モバイルのみで表示される広告ウィジェットです。（※アドセンスの場合は広告コードのみを記入してください。）', THEME_NAME )),
+      array('description' => __( 'モバイルのみで表示される広告ウィジェットです。768px以下で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }
@@ -19,7 +19,7 @@ class MobileAdWidgetItem extends WP_Widget {
          is_all_ads_visible() //広告表示がオンのとき
        ):
        echo $args['before_widget']; ?>
-        <div class="ad-space ad-widget">
+        <div class="ad-area ad-widget">
           <div class="ad-label"><?php echo get_ad_label() ?></div>
           <div class="ad-responsive ad-mobile"><?php echo $ad; ?></div>
         </div>

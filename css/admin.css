@@ -2385,7 +2385,8 @@
       .demo .footer-widgets-mobile {
         display: block; }
       .demo .widget_pc_text,
-      .demo .widget_pc_ad {
+      .demo .widget_pc_ad,
+      .demo .widget_pc_double_ads {
         display: none; }
       .demo .widget_mobile_text,
       .demo .widget_mobile_ad {

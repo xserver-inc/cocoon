@@ -3283,7 +3283,8 @@ input[type='submit'] {
   }
 
   .widget_pc_text,
-  .widget_pc_ad {
+  .widget_pc_ad,
+  .widget_pc_double_ads {
     display: none;
   }
 

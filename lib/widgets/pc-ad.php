@@ -18,7 +18,7 @@ class PcAdWidgetItem extends WP_Widget {
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() ):
       echo $args['before_widget']; ?>
-      <div class="ad-space ad-widget">
+      <div class="ad-area ad-widget">
         <div class="ad-label"><?php echo get_ad_label() ?></div>
         <div class="ad-responsive ad-pc"><?php echo $ad; ?></div>
       </div>
