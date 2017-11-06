@@ -65,6 +65,9 @@
   <?php wp_footer(); ?>
 
 
+  <?php //カスタムフィールドの挿入（カスタムフィールド名：footer_custom）
+  get_template_part('tmp/footer-custom-field');?>
+
   <?php //アクセス解析フッタータグの取得
   get_template_part('tmp/footer-analytics'); ?>
 
