@@ -3277,7 +3277,8 @@ input[type='submit'] {
     display: block;
   }
 
-  .widget_pc_text {
+  .widget_pc_text,
+  .widget_pc_ad {
     display: none;
   }
 }

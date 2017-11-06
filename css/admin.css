@@ -2381,7 +2381,8 @@
         display: none; }
       .demo .footer-widgets-mobile {
         display: block; }
-      .demo .widget_pc_text {
+      .demo .widget_pc_text,
+      .demo .widget_pc_ad {
         display: none; } }
   @media screen and (max-width: 480px) {
     .demo {
