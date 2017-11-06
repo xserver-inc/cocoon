@@ -6,21 +6,19 @@ class PcTextWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
       'pc_text',
-      __( '[S] PC用テキスト', 'simplicity2' ),//ウイジェット名
-      array('description' => __( 'パソコンのみで表示されるSimplicity用のテキストウィジェットです。', 'simplicity2' ))
+      WIDGET_NAME_PREFIX.__( 'PC用テキスト', THEME_NAME ),//ウイジェット名
+      array('description' => __( 'パソコンのみで表示されるテキストウィジェットです。768pxより大きな画面で表示されます。', THEME_NAME )),
+      array( 'width' => 400, 'height' => 350 )
     );
   }
   function widget($args, $instance) {
     extract( $args );
-    // //タイトル名を取得
-    // $title = apply_filters( 'widget_title_pc_text', $instance['title_pc_text'] );
     //タイトル名を取得
     $title = apply_filters( 'widget_title_pc_text', empty($instance['title_pc_text']) ? "" : $instance['title_pc_text'] );
     $widget_text = isset( $instance['text_pc_text'] ) ? $instance['text_pc_text'] : '';
     $text = apply_filters( 'widget_text_pc_text', $widget_text, $instance, $this );
 
-    //classにwidgetと一意となるクラス名を追加する
-    if ( !is_mobile() && !is_404() ): //パソコン表示かつ404ページでないとき
+    if ( !is_404() ): //パソコン表示かつ404ページでないとき
       echo $args['before_widget'];
       if ($title) {
         echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
@@ -29,7 +27,7 @@ class PcTextWidgetItem extends WP_Widget {
         <?php echo $text; ?>
       </div>
       <?php echo $args['after_widget'];
-    endif //!is_mobile ?>
+    endif //!is_404 ?>
     <?php
   }
   function update($new_instance, $old_instance) {
@@ -51,14 +49,14 @@ class PcTextWidgetItem extends WP_Widget {
     <?php //タイトル入力フォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('title_pc_text'); ?>">
-        <?php _e( 'タイトル', 'simplicity2' ) ?>
+        <?php _e( 'タイトル', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('title_pc_text'); ?>" name="<?php echo $this->get_field_name('title_pc_text'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>
     <?php //テキスト入力フォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('text_pc_text'); ?>">
-        <?php _e( 'テキスト', 'simplicity2' ) ?>
+        <?php _e( 'テキスト', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('text_pc_text'); ?>" name="<?php echo $this->get_field_name('text_pc_text'); ?>" cols="20" rows="16"><?php echo $text; ?></textarea>
     </p>

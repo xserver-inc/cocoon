@@ -3276,6 +3276,10 @@ input[type='submit'] {
   .footer-widgets-mobile {
     display: block;
   }
+
+  .widget_pc_text {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   h2, h3 {

@@ -65,6 +65,8 @@ require_once 'widgets/new-entries.php';
 require_once 'widgets/recent-comments.php';
 //フォローボタンウィジェット
 require_once 'widgets/sns-follow-buttons.php';
+//PCテキストウィジェット
+require_once 'widgets/pc-text.php';
 
 
 //require_once 'admin.php'; //管理者機能

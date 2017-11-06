@@ -2380,7 +2380,9 @@
       .demo .footer-widgets {
         display: none; }
       .demo .footer-widgets-mobile {
-        display: block; } }
+        display: block; }
+      .demo .widget_pc_text {
+        display: none; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

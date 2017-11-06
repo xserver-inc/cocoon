@@ -9,7 +9,7 @@ function register_sidebar_widget_area(){
     array(
     'name' => __( 'サイドバー', THEME_NAME ),
     'id' => 'sidebar',
-    'description' => __( 'サイドバーのウィジットエリアです。', THEME_NAME ),
+    'description' => __( 'サイドバーのウィジットエリアです。ウィジェットを入れていない場合は1カラム表示になります。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-sidebar %2$s">',
     'after_widget' => '</aside>',
     'before_title'  => '<h3 class="widget-sidebar-title widget-title">',
