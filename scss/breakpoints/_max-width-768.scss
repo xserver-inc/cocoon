@@ -161,9 +161,14 @@ table{
 }
 
 ///////////////////////////////////////
-// PCウィジェット
+// テーマ独自ウィジェット
 ///////////////////////////////////////
 .widget_pc_text,
 .widget_pc_ad{
   display: none;
+}
+
+
+.widget_mobile_text{
+  display: block;
 }

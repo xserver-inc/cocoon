@@ -69,6 +69,8 @@ require_once 'widgets/sns-follow-buttons.php';
 require_once 'widgets/pc-text.php';
 //PC用広告ウィジェット
 require_once 'widgets/pc-ad.php';
+//モバイル用テキストウィジェット
+require_once 'widgets/mobile-text.php';
 
 
 //require_once 'admin.php'; //管理者機能

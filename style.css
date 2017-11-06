@@ -1614,6 +1614,10 @@ label.screen-reader-text {
   margin-right: 0;
 }
 
+.widget_mobile_text {
+  display: none;
+}
+
 /************************************
 ** ページネーション
 ************************************/
@@ -3280,6 +3284,10 @@ input[type='submit'] {
   .widget_pc_text,
   .widget_pc_ad {
     display: none;
+  }
+
+  .widget_mobile_text {
+    display: block;
   }
 }
 @media screen and (max-width: 480px) {
