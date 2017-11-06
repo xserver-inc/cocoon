@@ -1614,7 +1614,8 @@ label.screen-reader-text {
   margin-right: 0;
 }
 
-.widget_mobile_text {
+.widget_mobile_text,
+.widget_mobile_ad {
   display: none;
 }
 
@@ -3286,7 +3287,8 @@ input[type='submit'] {
     display: none;
   }
 
-  .widget_mobile_text {
+  .widget_mobile_text,
+  .widget_mobile_ad {
     display: block;
   }
 }

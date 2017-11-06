@@ -1311,7 +1311,8 @@
     .demo .sidebar .sns-follow-buttons a {
       width: 49%;
       margin-right: 0; }
-  .demo .widget_mobile_text {
+  .demo .widget_mobile_text,
+  .demo .widget_mobile_ad {
     display: none; }
   .demo .pagination {
     margin: 30px 0;
@@ -2386,7 +2387,8 @@
       .demo .widget_pc_text,
       .demo .widget_pc_ad {
         display: none; }
-      .demo .widget_mobile_text {
+      .demo .widget_mobile_text,
+      .demo .widget_mobile_ad {
         display: block; } }
   @media screen and (max-width: 480px) {
     .demo {
