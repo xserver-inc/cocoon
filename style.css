@@ -1168,7 +1168,7 @@ span.internal-icon {
 }
 .toc ul, .toc ol {
   padding-left: 20px;
-  margin-top: 0;
+  margin-top: 0.5em;
 }
 .toc ul {
   list-style: none;
@@ -1184,6 +1184,7 @@ span.internal-icon {
 
 .toc-title {
   font-size: 1.1em;
+  text-align: center;
 }
 
 /************************************

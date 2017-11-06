@@ -21,7 +21,13 @@ function replace_anchor_links($the_content) {
         $rels = explode(' ', $m[1]);
       }
 
-      if (strpos($value, '//'.get_the_site_domain()) !== false) {//内部リンクの場合
+      //目次リンクの場合
+      //var_dump(strpos($value, '#'));
+      if ((strpos($value, 'href="#toc') > 0)) {
+        continue;
+      }
+
+      if ((strpos($value, '//'.get_the_site_domain()) !== false) ) {//内部リンクの場合
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
 
