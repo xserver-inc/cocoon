@@ -33,7 +33,6 @@ function get_adsense_ids($code = null){
     $code = get_ad_code();
   }
 
-  $code = get_ad_code();
   //AdSenseコードからIDを取得する
   $res = preg_match(
     '/'.preg_quote(DATA_AD_CLIENT).'="([^"]+?)".+?'.preg_quote(DATA_AD_SLOT).'="([^"]+?)"/is', $code, $m);
@@ -69,7 +68,9 @@ endif;
 //アドセンスのレスポンシブコードを生成する
 if ( !function_exists( 'generate_adsense_responsive_code' ) ):
 function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
-  if (get_adsense_ids()) {
+  // _v($code);
+  // _v(get_adsense_ids($code));
+  if (get_adsense_ids($code)) {
     return
 '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- レスポンシブコード -->

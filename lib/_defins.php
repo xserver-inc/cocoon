@@ -30,6 +30,39 @@ define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //縦長
 define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレクタングル
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
 
+//メインカラム用の広告フォーマット集
+define('MAIN_DATA_AD_FORMATS', array(
+  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
+  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
+  AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
+));
+//サイドバー用の広告フォーマット集
+define('SIDEBAR_DATA_AD_FORMATS', array(
+  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+  DATA_AD_FORMAT_RECTANGLE => 'レクタングル',
+  DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
+));
+//PCウィジェット用の広告フォーマット集
+define('PC_WIDGET_DATA_AD_FORMATS', array(
+  'none' => '広告コードをそのまま表示',
+  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
+  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
+  AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
+));
+//モバイル用の広告フォーマット集
+define('MOBILE_WIDGET_DATA_AD_FORMATS', array(
+  'none' => '広告コードをそのまま表示',
+  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
+  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
+  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
+  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
+));
+
 //管理設定画面の隠しフィールド名
 define('HIDDEN_FIELD_NAME', THEME_NAME.'_submit_hidden');
 define('SELECT_INDEX_NAME', 'select_index');

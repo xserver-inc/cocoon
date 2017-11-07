@@ -207,25 +207,21 @@ endif;
 
 //メインカラム広告の詳細設定フォーム
 if ( !function_exists( 'genelate_main_column_ad_detail_setting_forms' ) ):
-function genelate_main_column_ad_detail_setting_forms($name, $value, $label_name, $label_value, $body_ad_name = null, $body_ad_value = null){ ?>
+function genelate_main_column_ad_detail_setting_forms($name, $value, $label_name = null, $label_value = null, $body_ad_name = null, $body_ad_value = null){ ?>
  <span class="toggle">
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
     <div class="detail-area">
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
-    $options = array(
-      DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-      DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-      DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
-      AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
-      AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
-    );
+    $options = MAIN_DATA_AD_FORMATS;
     genelate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
-    echo '<p>';
-    genelate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
-    echo '</p>';
+    if ($label_name) {
+      echo '<p>';
+      genelate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
+      echo '</p>';
+    }
 
     //本文中広告用の設定
     if (isset($body_ad_name)){
@@ -250,12 +246,7 @@ function genelate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
     <div class="detail-area">
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
-    $options = array(
-      DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-      DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-      DATA_AD_FORMAT_RECTANGLE => 'レクタングル',
-      DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
-    );
+    $options = SIDEBAR_DATA_AD_FORMATS;
     genelate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
     echo '<p>';
