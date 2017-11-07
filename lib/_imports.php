@@ -71,7 +71,7 @@ require_once 'widgets/pc-text.php';
 //PC用広告ウィジェット
 require_once 'widgets/pc-ad.php';
 //PC用ダブルレクタングル広告ウィジェット
-require_once 'widgets/pc-double-ads.php';
+//require_once 'widgets/pc-double-ads.php';
 //モバイル用テキストウィジェット
 require_once 'widgets/mobile-text.php';
 //モバイル用広告ウィジェット
