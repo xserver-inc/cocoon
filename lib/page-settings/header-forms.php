@@ -24,9 +24,11 @@
             $options = array(
               'center_logo' => 'センターロゴ（デフォルト）',
               'top_menu' => 'トップメニュー',
-              'top_menu_small' => 'トップメニュー（小）',
+              'top_menu_right' => 'トップメニュー（右寄せ）',
+              'top_menu_small' => 'トップメニュー小',
+              'top_menu_small_right' => 'トップメニュー小（右寄せ）',
             );
-            genelate_radiobox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
+            genelate_selectbox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
             genelate_tips_tag(__( 'ヘッダーの表示形式を選択します。', THEME_NAME ));
             ?>
           </td>

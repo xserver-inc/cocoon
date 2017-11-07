@@ -25,7 +25,12 @@ class PcAdWidgetItem extends WP_Widget {
 
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() ):
-      echo $args['before_widget']; ?>
+      echo $args['before_widget'];
+      get_template_part_with_ad_format($format, 'pc-ad-widget', 1/*ラベルの表示*/, $ad);
+       ?>
+
+      <?php //以前のHTMLタグは使用しない
+      if (0): ?>
       <div class="ad-area ad-pc ad-widget ad-<?php echo $format; ?>">
         <div class="ad-label"><?php echo get_ad_label() ?></div>
         <div class="ad-wrap">
@@ -35,6 +40,8 @@ class PcAdWidgetItem extends WP_Widget {
           <?php endif ?>
         </div>
       </div>
+      <?php endif ?>
+
       <?php echo $args['after_widget'];
     endif //!is_404 ?>
   <?php
@@ -60,7 +67,7 @@ class PcAdWidgetItem extends WP_Widget {
   <label for="<?php echo $this->get_field_id('ad_text'); ?>">
     <?php _e( '広告タグ', THEME_NAME ) ?>
   </label>
-  <textarea class="widefat" id="<?php echo $this->get_field_id('ad_text'); ?>" name="<?php echo $this->get_field_name('ad_text'); ?>" cols="20" rows="16" placeholder="<?php _e( 'AdSenseの場合はレスポンシブタグを挿入してください。', THEME_NAME ) ?>"><?php echo $ad; ?></textarea>
+  <textarea class="widefat" id="<?php echo $this->get_field_id('ad_text'); ?>" name="<?php echo $this->get_field_name('ad_text'); ?>" cols="20" rows="16" placeholder="<?php _e( 'AdSenseの場合はレスポンシブタグを挿入してください。未記入の場合は、設定項目に指定したAdSenseコードが利用されます。', THEME_NAME ) ?>"><?php echo $ad; ?></textarea>
 </p>
 <?php //広告表示フォーマット ?>
 <p>

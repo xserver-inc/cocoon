@@ -297,6 +297,9 @@
   ** ダブルレクタングル
   ************************************/
   /************************************
+  ** サイドバーのダブルレクタングル
+  ************************************/
+  /************************************
   ** サイドバーのスカイスクレイパー
   ************************************/
   /************************************!
@@ -516,6 +519,8 @@
     display: block; }
   .demo .header-container-in.hlt-top-menu.hlt-tm-small .item-description {
     display: none; }
+  .demo .hlt-tm-right .navi-in > ul {
+    justify-content: flex-end; }
   .demo .no-appeal-area .appeal {
     display: none; }
   .demo .appeal-in {
@@ -1679,6 +1684,8 @@
       margin: auto; }
     .demo .ad-dabble-rectangle .ad-additional-double {
       display: none; } }
+  .demo .sidebar .ad-additional-double {
+    display: none; }
   .demo .sidebar .ad-additional-vertical {
     display: none; }
   @media screen and (max-width: 768px) {

@@ -145,7 +145,7 @@ endif;
 
 //フォーマットを指定して広告テンプレートファイル呼び出す
 if ( !function_exists( 'get_template_part_with_ad_format' ) ):
-function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null, $label_visible = 1){
+function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null, $label_visible = 1, $ad_code = null){
   // if ($wrap_class) {
   //   echo '<div class="'.$wrap_class.'">';
   // }
@@ -160,8 +160,10 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   //var_dump($format);
   //$format変数をテンプレートファイルに渡す
   set_query_var('format', $format);
-  //$format変数をテンプレートファイルに渡す
+  //$wrap_class変数をテンプレートファイルに渡す
   set_query_var('wrap_class', $wrap_class);
+  //$ad_code変数をテンプレートファイルに渡す
+  set_query_var('ad_code', $ad_code);
   //広告テンプレートの呼び出し
   get_template_part('tmp/ad');
   // if ($wrap_class) {
