@@ -28,7 +28,11 @@ endif;
 
 //アドセンスID（data-ad-clientとdata-ad-slot）を取得する
 if ( !function_exists( 'get_adsense_ids' ) ):
-function get_adsense_ids(){
+function get_adsense_ids($code = null){
+  if (!$code) {
+    $code = get_ad_code();
+  }
+
   $code = get_ad_code();
   //AdSenseコードからIDを取得する
   $res = preg_match(
@@ -44,8 +48,8 @@ endif;
 
 //アドセンスのdata-ad-clientを取得する
 if ( !function_exists( 'get_adsense_data_ad_client' ) ):
-function get_adsense_data_ad_client(){
-  $ids = get_adsense_ids();
+function get_adsense_data_ad_client($code = null){
+  $ids = get_adsense_ids($code);
   if ($ids && isset($ids[DATA_AD_CLIENT])) {
     return $ids[DATA_AD_CLIENT];
   }
@@ -54,8 +58,8 @@ endif;
 
 //アドセンスのdata-ad-slotを取得する
 if ( !function_exists( 'get_adsense_data_ad_slot' ) ):
-function get_adsense_data_ad_slot(){
-  $ids = get_adsense_ids();
+function get_adsense_data_ad_slot($code = null){
+  $ids = get_adsense_ids($code);
   if ($ids && isset($ids[DATA_AD_SLOT])) {
     return $ids[DATA_AD_SLOT];
   }
@@ -64,20 +68,21 @@ endif;
 
 //アドセンスのレスポンシブコードを生成する
 if ( !function_exists( 'generate_adsense_responsive_code' ) ):
-function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO){
+function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
   if (get_adsense_ids()) {
     return
 '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- レスポンシブコード -->
 <ins class="adsbygoogle"
      style="display:block"
-     data-ad-client="'.get_adsense_data_ad_client().'"
-     data-ad-slot="'.get_adsense_data_ad_slot().'"
+     data-ad-client="'.get_adsense_data_ad_client($code).'"
+     data-ad-slot="'.get_adsense_data_ad_slot($code).'"
      data-ad-format="'.$format.'"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
   }
+  return $code;
 }
 endif;
 

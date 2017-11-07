@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <?php wp_head(); ?>
 
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
-get_template_part('tmp/head-custom-field');）?>
+get_template_part('tmp/head-custom-field'); ?>
 
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
 get_template_part('tmp-user/head-insert'); ?>

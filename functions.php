@@ -1,4 +1,5 @@
 <?php
+//require_once 'lib/debug.php'; //edump用のデバッグコード
 require_once 'lib/_defins.php'; //定数を定義
 require_once 'lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
 require_once 'lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能（functions.phpで呼ばないと動作しないので）
@@ -248,4 +249,3 @@ function replace_directory_uri($code){
   return $code;
 }
 endif;
-
