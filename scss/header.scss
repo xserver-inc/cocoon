@@ -117,3 +117,9 @@
     display: none;
   }
 }
+
+.hlt-tm-right{
+  .navi-in > ul{
+    justify-content: flex-end;
+  }
+}

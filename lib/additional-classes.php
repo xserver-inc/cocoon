@@ -386,7 +386,7 @@ function get_additional_header_classes($option = null){
 endif;
 
 
-//斎藤サイト全体コンテナのclass追加関数
+//サイト全体コンテナのclass追加関数
 if ( !function_exists( 'get_additional_container_classes' ) ):
 function get_additional_container_classes($option = null){
   $classes = null;
@@ -413,8 +413,14 @@ function get_additional_header_container_classes($option = null){
     case 'top_menu':
       $classes .= ' hlt-top-menu wrap';
       break;
+    case 'top_menu_right':
+      $classes .= ' hlt-top-menu hlt-tm-right wrap';
+      break;
     case 'top_menu_small':
       $classes .= ' hlt-top-menu hlt-tm-small wrap';
+      break;
+    case 'top_menu_small_right':
+      $classes .= ' hlt-top-menu hlt-tm-right hlt-tm-small wrap';
       break;
     default://'center_logo'デフォルト
       $classes .= ' hlt-center-logo';
