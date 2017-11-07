@@ -7,6 +7,11 @@
 
     <p><?php _e( 'ページが見つからなかった場合の404ページの表示設定です。', THEME_NAME ) ?></p>
 
+    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+    <div class="demo page-404-demo">
+      <iframe id="page-404-demo" src="<?php echo home_url().'/404'; ?>" width="1000" height="400"></iframe>
+    </div>
+
     <table class="form-table">
       <tbody>
 

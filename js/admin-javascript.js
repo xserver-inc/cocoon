@@ -30,6 +30,7 @@ function delete_wp_adminbar(selector) {
 }
 delete_wp_adminbar('#all-demo');
 delete_wp_adminbar('#mobile-demo');
+delete_wp_adminbar('#page-404-demo');
 
 // $('#all-demo').on('load', function(){
 //   $('#all-demo').contents().find('#wpadminbar').hide();

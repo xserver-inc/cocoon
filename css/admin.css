@@ -2551,7 +2551,9 @@
     display: block; }
   .demo .widget {
     display: none; }
-  .demo.all-demo iframe, .demo.mobile-demo iframe {
+  .demo #all-demo,
+  .demo #mobile-demo,
+  .demo #mobile-demo {
     width: 100%; }
 
 .demo #related-entries h2 {
