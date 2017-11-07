@@ -491,7 +491,7 @@ if ( !function_exists( 'get_random_posts' ) ):
 function get_random_posts($count = 1){
   $count = intval($count);
   $posts = get_posts('numberposts='.$count.'&orderby=rand');
-  if ($couut == 1) {
+  if ($count == 1) {
     foreach( $posts as $post ) {
       return $post;
     }

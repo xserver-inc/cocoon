@@ -18,7 +18,7 @@
         <!-- キーカラー -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_KEY_COLOR, __('キーカラー', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_KEY_COLOR, __('キーカラー', THEME_NAME) ); ?>
             <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
@@ -36,7 +36,7 @@
         <!-- サイトフォント  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_FONT_FAMILY, __('サイトフォント', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_FONT_FAMILY, __('サイトフォント', THEME_NAME) ); ?>
           </th>
           <td>
             <div class="col-2">
@@ -97,7 +97,7 @@
         <!-- サイト背景色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_BACKGROUND_COLOR, __('サイト背景色', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_BACKGROUND_COLOR, __('サイト背景色', THEME_NAME) ); ?>
             <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>
@@ -138,7 +138,7 @@
         <!-- サイトリンク色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SITE_LINK_COLOR, __('サイトリンク色', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_SITE_LINK_COLOR, __('サイトリンク色', THEME_NAME) ); ?>
             <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>

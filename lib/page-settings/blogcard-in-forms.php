@@ -18,6 +18,7 @@
             <div class="demo">
             <?php
             $rand_post = get_random_posts(1);
+            //_v($rand_post[0]);
             if ($rand_post) {
               if (is_internal_blogcard_enable()) {
                 echo url_to_internal_blogcard_tag(get_the_permalink($rand_post->ID));

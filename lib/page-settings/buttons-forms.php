@@ -64,7 +64,7 @@
         <!-- 色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAM) ); ?>
+            <?php genelate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
             <?php genelate_select_colortooltip_tag(); ?>
           </th>
           <td>

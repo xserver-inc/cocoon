@@ -13,8 +13,8 @@ class MobileAdWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    $ad = apply_filters( 'widget_mobile_ad_text', $instance['ad_text'] );
-    $format = apply_filters( 'widget_pc_ad_format', $instance['ad_format'] );
+    $ad = apply_filters( 'widget_mobile_ad_text', isset($instance['ad_text']) ? $instance['ad_text'] : '' );
+    $format = apply_filters( 'widget_pc_ad_format', isset($instance['ad_format']) ? $instance['ad_format'] : 'none' );
 
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() //広告表示がオンのとき
@@ -47,8 +47,8 @@ class MobileAdWidgetItem extends WP_Widget {
         'ad_format' => 'none',
       );
     }
-    $ad = esc_attr($instance['ad_text']);
-    $format = esc_attr($instance['ad_format']);
+    $ad = esc_attr(isset($instance['ad_text']) ? $instance['ad_text'] : '');
+    $format = esc_attr(isset($instance['ad_format']) ? $instance['ad_format'] : 'none');
 ?>
 <?php //広告入力フォーム ?>
 <p>

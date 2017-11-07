@@ -91,7 +91,8 @@ function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code =
 endif;
 
 //H2見出しを判別する正規表現を定数にする
-define('H2_REG', '/^<h2/im');//H2見出しのパターン
+if ( !defined('H2_REG') )
+  define('H2_REG', '/^<h2/im');//H2見出しのパターン
 
 //本文中にH2見出しが最初に含まれている箇所を返す（含まれない場合はnullを返す）
 //H3-H6しか使っていない場合は、h2部分を変更してください

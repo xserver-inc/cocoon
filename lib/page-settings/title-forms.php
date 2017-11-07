@@ -29,7 +29,7 @@
         <!-- フロントページタイトル  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_FRONT_PAGE_TITLE_FORMA, __( 'フロントページタイトル', THEME_NAME ) ); ?>
+            <?php genelate_label_tag(OP_FRONT_PAGE_TITLE_FORMAT, __( 'フロントページタイトル', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
