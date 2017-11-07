@@ -26,7 +26,7 @@ class PcAdWidgetItem extends WP_Widget {
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() ):
       echo $args['before_widget'];
-      get_template_part_with_ad_format($format, 'pc-ad-widget', 1/*ラベルの表示*/, $ad)
+      get_template_part_with_ad_format($format, 'pc-ad-widget', 1/*ラベルの表示*/, $ad);
        ?>
 
       <?php //以前のHTMLタグは使用しない

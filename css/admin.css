@@ -297,6 +297,9 @@
   ** ダブルレクタングル
   ************************************/
   /************************************
+  ** サイドバーのダブルレクタングル
+  ************************************/
+  /************************************
   ** サイドバーのスカイスクレイパー
   ************************************/
   /************************************!
@@ -1679,6 +1682,8 @@
       margin: auto; }
     .demo .ad-dabble-rectangle .ad-additional-double {
       display: none; } }
+  .demo .sidebar .ad-additional-double {
+    display: none; }
   .demo .sidebar .ad-additional-vertical {
     display: none; }
   @media screen and (max-width: 768px) {
