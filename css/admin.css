@@ -2551,7 +2551,7 @@
     display: block; }
   .demo .widget {
     display: none; }
-  .demo.all-demo iframe {
+  .demo.all-demo iframe, .demo.mobile-demo iframe {
     width: 100%; }
 
 .demo #related-entries h2 {

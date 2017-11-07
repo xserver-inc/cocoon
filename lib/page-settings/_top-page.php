@@ -58,6 +58,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'footer-posts.php';
   //ボタン
   require_once 'buttons-posts.php';
+  //モバイルボタン
+  require_once 'mobile-buttons-posts.php';
   //404ページ
   require_once '404-posts.php';
   //管理画面

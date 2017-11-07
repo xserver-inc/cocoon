@@ -94,7 +94,8 @@
   }
 
 
-  &.all-demo iframe{
+  &.all-demo iframe,
+  &.mobile-demo iframe{
     width: 100%;
   }
 }
