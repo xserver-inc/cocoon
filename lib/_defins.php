@@ -53,6 +53,7 @@ define('PC_WIDGET_DATA_AD_FORMATS', array(
   DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
   AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
   AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
+  DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
 ));
 //モバイル用の広告フォーマット集
 define('MOBILE_WIDGET_DATA_AD_FORMATS', array(

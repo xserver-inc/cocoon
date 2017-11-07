@@ -70,6 +70,8 @@ if ( !function_exists( 'generate_adsense_responsive_code' ) ):
 function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
   // _v($code);
   // _v(get_adsense_ids($code));
+
+  //$codeに広告コードが入っている場合はそこから取得する（無い場合はテーマ設定のAdSenseコードを利用）
   if (get_adsense_ids($code)) {
     return
 '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -83,6 +85,7 @@ function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code =
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
   }
+  //AdSense広告でない場合はそのままコードを出力する
   return $code;
 }
 endif;
