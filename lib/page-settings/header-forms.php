@@ -6,6 +6,7 @@
   <div class="inside">
 
     <p><?php _e( 'ヘッダーの表示設定を行います。', THEME_NAME ) ?></p>
+
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo header-demo">
       <?php get_template_part('tmp/header-container'); ?>

@@ -2551,6 +2551,8 @@
     display: block; }
   .demo .widget {
     display: none; }
+  .demo.all-demo iframe {
+    width: 100%; }
 
 .demo #related-entries h2 {
   font-size: 1.3em;

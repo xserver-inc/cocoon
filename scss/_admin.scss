@@ -92,6 +92,11 @@
   .widget{
     display: none;
   }
+
+
+  &.all-demo iframe{
+    width: 100%;
+  }
 }
 
 .demo #related-entries h2{

@@ -6,6 +6,12 @@
   <div class="inside">
 
     <p><?php _e( 'ページ全体の表示に関する設定です。', THEME_NAME ) ?></p>
+
+    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+    <div class="demo all-demo">
+      <iframe id="all-demo" src="<?php echo site_url(); ?>" width="1000" height="400"></iframe>
+    </div>
+
     <table class="form-table">
       <tbody>
 
