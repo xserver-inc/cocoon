@@ -23,8 +23,8 @@ $(".carousel-area").on("click", function() {
 });
 
 $('#all-demo').on('load', function(){
-    $('#all-demo').contents().find('#wpadminbar').hide();
-    $('#all-demo').contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
+  $('#all-demo').contents().find('#wpadminbar').hide();
+  $('#all-demo').contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
 });
 // $(function(){
 //     setInterval(function(){

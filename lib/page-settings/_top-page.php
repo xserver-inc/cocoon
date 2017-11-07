@@ -116,12 +116,12 @@ endif;
     <li class="carousel-area"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
+    <li class="mobile-buttons"><?php _e( 'モバイルボタン', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
-    <li class="mobile-buttons"><?php _e( 'モバイルボタン', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
   </ul>
 
@@ -236,6 +236,11 @@ endif;
   <!-- ボタン -->
   <div class="buttons metabox-holder">
     <?php require_once 'buttons-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- モバイルボタン -->
+  <div class="mobile-buttons metabox-holder">
+    <?php require_once 'mobile-buttons-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 404ページ -->
