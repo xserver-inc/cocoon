@@ -3297,6 +3297,10 @@ input[type='submit'] {
   margin-left: 1em;
 }
 
+.slicknav_menu {
+  display: none;
+}
+
 @media screen and (max-width: 1240px) {
   .wrap {
     width: auto;
@@ -3509,6 +3513,10 @@ input[type='submit'] {
 
   .widget_mobile_text,
   .widget_mobile_ad {
+    display: block;
+  }
+
+  .slicknav_menu {
     display: block;
   }
 }

@@ -2406,6 +2406,8 @@
     display: inline; }
   .demo .slicknav_nav .item-description {
     margin-left: 1em; }
+  .demo .slicknav_menu {
+    display: none; }
   @media screen and (max-width: 1240px) {
     .demo .wrap {
       width: auto; }
@@ -2536,6 +2538,8 @@
         display: none; }
       .demo .widget_mobile_text,
       .demo .widget_mobile_ad {
+        display: block; }
+      .demo .slicknav_menu {
         display: block; } }
   @media screen and (max-width: 480px) {
     .demo {
