@@ -73,7 +73,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   <p>
     <strong>
       <?php
-      if ($_POST[OP_RESET_ALL_SETTINGS] && $_POST[OP_CONFIRM_RESET_ALL_SETTINGS]) {
+      if (isset($_POST[OP_RESET_ALL_SETTINGS]) && isset($_POST[OP_CONFIRM_RESET_ALL_SETTINGS])) {
          _e('設定はリセットされました。', THEME_NAME );
        } else {
          _e('設定は保存されました。', THEME_NAME );
