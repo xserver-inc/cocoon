@@ -841,4 +841,3 @@ function colorcode_to_rgb_css_code($colorcode, $opacity = 0.2){
   return 'rgba('.$a['red'].', '.$a['green'].', '.$a['blue'].', '.$opacity.')';
 }
 endif;
-
