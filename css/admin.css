@@ -364,6 +364,17 @@
   ** clingify
   ************************************/
   /* Slider */
+  /*
+      Mobile Menu Core Style
+  */
+  /* IE6/7 support */
+  /* 
+      User Default Style
+      Change the following styles to modify the appearance of the menu.
+  */
+  /* Button */
+  /* Button Text */
+  /* Button Lines */
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   /* フォントのサイズ */
@@ -2268,6 +2279,127 @@
       border: 1px solid transparent; }
   .demo .slick-arrow.slick-hidden {
     display: none; }
+  .demo .slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: 0.438em 0.625em 0.438em 0.625em;
+    line-height: 1.125em;
+    cursor: pointer; }
+  .demo .slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left; }
+  .demo .slicknav_menu .slicknav_icon {
+    float: left;
+    margin: 0.188em 0 0 0.438em; }
+  .demo .slicknav_menu .slicknav_no-text {
+    margin: 0; }
+  .demo .slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: 0.125em;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+  .demo .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em; }
+  .demo .slicknav_nav {
+    clear: both; }
+  .demo .slicknav_nav ul,
+  .demo .slicknav_nav li {
+    display: block; }
+  .demo .slicknav_nav .slicknav_arrow {
+    font-size: 0.8em;
+    margin: 0 0 0 0.4em; }
+  .demo .slicknav_nav .slicknav_item {
+    cursor: pointer; }
+  .demo .slicknav_nav .slicknav_row {
+    display: block; }
+  .demo .slicknav_nav a {
+    display: block; }
+  .demo .slicknav_nav .slicknav_item a,
+  .demo .slicknav_nav .slicknav_parent-link a {
+    display: inline; }
+  .demo .slicknav_brand {
+    float: left; }
+  .demo .slicknav_menu:before,
+  .demo .slicknav_menu:after {
+    content: " ";
+    display: table; }
+  .demo .slicknav_menu:after {
+    clear: both; }
+  .demo .slicknav_menu {
+    *zoom: 1; }
+  .demo .slicknav_menu {
+    font-size: 16px;
+    box-sizing: border-box; }
+  .demo .slicknav_menu * {
+    box-sizing: border-box; }
+  .demo .slicknav_btn {
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #222222; }
+  .demo .slicknav_menu .slicknav_menutxt {
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 0 1px 3px #000; }
+  .demo .slicknav_menu .slicknav_icon-bar {
+    background-color: #f5f5f5; }
+  .demo .slicknav_menu {
+    background: #4c4c4c;
+    padding: 5px; }
+  .demo .slicknav_nav {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em; }
+  .demo .slicknav_nav, .demo .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden; }
+  .demo .slicknav_nav ul {
+    padding: 0;
+    margin: 0 0 0 20px; }
+  .demo .slicknav_nav .slicknav_row {
+    padding: 5px 10px;
+    margin: 2px 5px; }
+  .demo .slicknav_nav a {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: #fff; }
+  .demo .slicknav_nav .slicknav_item a,
+  .demo .slicknav_nav .slicknav_parent-link a {
+    padding: 0;
+    margin: 0; }
+  .demo .slicknav_nav .slicknav_row:hover {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #ccc;
+    color: #fff; }
+  .demo .slicknav_nav a:hover {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #ccc;
+    color: #222; }
+  .demo .slicknav_nav .slicknav_txtnode {
+    margin-left: 15px; }
+  .demo .slicknav_brand {
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 7px 12px;
+    height: 44px; }
   @media screen and (max-width: 1240px) {
     .demo .wrap {
       width: auto; }
