@@ -3184,7 +3184,7 @@ input[type='submit'] {
   *zoom: 1;
 }
 
-/* 
+/*
     User Default Style
     Change the following styles to modify the appearance of the menu.
 */
@@ -3286,6 +3286,15 @@ input[type='submit'] {
   line-height: 30px;
   padding: 7px 12px;
   height: 44px;
+}
+
+.slicknav_nav .caption-wrap,
+.slicknav_nav .item-label,
+.slicknav_nav .item-description {
+  display: inline;
+}
+.slicknav_nav .item-description {
+  margin-left: 1em;
 }
 
 @media screen and (max-width: 1240px) {

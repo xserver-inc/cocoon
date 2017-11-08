@@ -368,7 +368,7 @@
       Mobile Menu Core Style
   */
   /* IE6/7 support */
-  /* 
+  /*
       User Default Style
       Change the following styles to modify the appearance of the menu.
   */
@@ -2400,6 +2400,12 @@
     line-height: 30px;
     padding: 7px 12px;
     height: 44px; }
+  .demo .slicknav_nav .caption-wrap,
+  .demo .slicknav_nav .item-label,
+  .demo .slicknav_nav .item-description {
+    display: inline; }
+  .demo .slicknav_nav .item-description {
+    margin-left: 1em; }
   @media screen and (max-width: 1240px) {
     .demo .wrap {
       width: auto; }

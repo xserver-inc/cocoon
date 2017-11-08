@@ -364,62 +364,74 @@ endif;
 //Slickの読み込み
 if ( !function_exists( 'wp_enqueue_slick' ) ):
 function wp_enqueue_slick(){
- if ( 1 ) {
-    //clingifyスタイルの呼び出し
-    //wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/plugins/slick/slick.css' );
-    wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
-    //baguetteboxスクリプトの呼び出し
-    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
-    $autoplay = null;
-    if (is_carousel_autoplay_enable()) {
-      $autoplay = 'autoplay: true,';
-    }
-    $data = minify_js('
-              (function($){
-                $(".carousel-content").slick({
-                  dots: true,'.
-                  $autoplay.
-                  'autoplaySpeed: 5000,
-                  infinite: true,
-                  slidesToShow: 6,
-                  slidesToScroll: 6,
-                  responsive: [
-                      {
-                        breakpoint: 1240,
-                        settings: {
-                          slidesToShow: 5,
-                          slidesToScroll: 5
-                        }
-                      },
-                      {
-                        breakpoint: 1030,
-                        settings: {
-                          slidesToShow: 4,
-                          slidesToScroll: 4
-                        }
-                      },
-                      {
-                        breakpoint: 768,
-                        settings: {
-                          slidesToShow: 3,
-                          slidesToScroll: 3
-                        }
-                      },
-                      {
-                        breakpoint: 480,
-                        settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 2
-                        }
-                      }
-                    ]
-                });
-
-              })(jQuery);
-            ');
-    wp_add_inline_script( 'slick-js', $data, 'after' ) ;
-
+  //wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/plugins/slick/slick.css' );
+  wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
+  //Slickスクリプトの呼び出し
+  wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+  $autoplay = null;
+  if (is_carousel_autoplay_enable()) {
+    $autoplay = 'autoplay: true,';
   }
+  $data = minify_js('
+            (function($){
+              $(".carousel-content").slick({
+                dots: true,'.
+                $autoplay.
+                'autoplaySpeed: 5000,
+                infinite: true,
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                responsive: [
+                    {
+                      breakpoint: 1240,
+                      settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5
+                      }
+                    },
+                    {
+                      breakpoint: 1030,
+                      settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                      }
+                    }
+                  ]
+              });
+
+            })(jQuery);
+          ');
+  wp_add_inline_script( 'slick-js', $data, 'after' ) ;
+}
+endif;
+
+//SlickNav
+if ( !function_exists( 'wp_enqueue_slicknav' ) ):
+function wp_enqueue_slicknav(){
+  //wp_enqueue_style( 'slicknav-style', get_template_directory_uri() . '/plugins/slicknav/slicknav.css' );
+  //SlickNavスクリプトの呼び出し
+  wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
+  $data = minify_js('
+            (function($){
+              $(".menu-header").slicknav();
+            })(jQuery);
+          ');
+  wp_add_inline_script( 'slicknav-js', $data, 'after' ) ;
+
 }
 endif;
 

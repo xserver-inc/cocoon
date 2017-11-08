@@ -24,7 +24,7 @@
 /* IE6/7 support */
 .slicknav_menu { *zoom: 1 }
 
-/* 
+/*
     User Default Style
     Change the following styles to modify the appearance of the menu.
 */
@@ -43,7 +43,7 @@
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    border-radius: 4px;  
+    border-radius: 4px;
     background-color: #222222;
 }
 /* Button Text */
@@ -104,7 +104,7 @@
     color:#222;
 }
 .slicknav_nav .slicknav_txtnode {
-    margin-left:15px;   
+    margin-left:15px;
 }
 .slicknav_brand {
 	color:#fff;
@@ -112,4 +112,15 @@
 	line-height:30px;
 	padding:7px 12px;
 	height:44px;
+}
+
+.slicknav_nav{
+  .caption-wrap,
+  .item-label,
+  .item-description{
+    display: inline;
+  }
+  .item-description{
+    margin-left: 1em;
+  }
 }
