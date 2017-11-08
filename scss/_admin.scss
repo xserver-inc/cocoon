@@ -94,10 +94,20 @@
   }
 
 
+  &.all-demo,
+  &.page-404-demo{
+    height: 400px;
+  }
+
+  &.mobile-demo{
+    height: 640px;
+  }
+
   #all-demo,
   #mobile-demo,
   #page-404-demo{
     width: 100%;
+    height: 100%;
   }
 }
 
