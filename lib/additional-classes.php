@@ -410,6 +410,9 @@ function get_additional_header_container_classes($option = null){
   $classes = null;
 
   switch (get_header_layout_type()) {
+    case 'center_logo_top_menu':
+      $classes .= ' hlt-center-logo-top-menu';
+      break;
     case 'top_menu':
       $classes .= ' hlt-top-menu wrap';
       break;

@@ -123,3 +123,11 @@
     justify-content: flex-end;
   }
 }
+
+/************************************
+** センターロゴ（トップメニュー）
+************************************/
+.header-container-in.hlt-center-logo-top-menu{
+  display: flex;
+  flex-direction: column-reverse;
+}

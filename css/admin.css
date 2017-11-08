@@ -163,6 +163,9 @@
   ** ヘッダーレイアウト
   ************************************/
   /************************************
+  ** センターロゴ（トップメニュー）
+  ************************************/
+  /************************************
   ** アピールエリア
   ************************************/
   /************************************
@@ -532,6 +535,9 @@
     display: none; }
   .demo .hlt-tm-right .navi-in > ul {
     justify-content: flex-end; }
+  .demo .header-container-in.hlt-center-logo-top-menu {
+    display: flex;
+    flex-direction: column-reverse; }
   .demo .no-appeal-area .appeal {
     display: none; }
   .demo .appeal-in {

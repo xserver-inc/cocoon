@@ -24,6 +24,7 @@
             <?php
             $options = array(
               'center_logo' => 'センターロゴ（デフォルト）',
+              'center_logo_top_menu' => 'センターロゴ（トップメニュー）',
               'top_menu' => 'トップメニュー',
               'top_menu_right' => 'トップメニュー（右寄せ）',
               'top_menu_small' => 'トップメニュー小',
