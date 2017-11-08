@@ -17,7 +17,7 @@
           </th>
           <td>
             <div class="demo">
-              <?php get_template_part('comment8') ?>
+              <?php get_template_part('comments'); ?>
             </div>
             <?php genelate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
           </td>
