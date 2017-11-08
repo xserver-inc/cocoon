@@ -37,6 +37,8 @@ function admin_print_styles_custom() {
     wp_enqueue_baguettebox();
     //カルーセル用
     wp_enqueue_slick();
+    //ツリー型モバイルボタン
+    wp_enqueue_slicknav();
 
     //メディアアップローダの javascript API
     wp_enqueue_media();

@@ -7,3 +7,14 @@ function get_mobile_button_layout_type(){
   return get_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE, 'slidein');
 }
 endif;
+if ( !function_exists( 'is_slicknav_visible' ) ):
+function is_slicknav_visible(){
+  switch (get_mobile_button_layout_type()) {
+    case 'top':
+    case 'top_slidein':
+      return true;
+      break;
+  }
+  return false;
+}
+endif;

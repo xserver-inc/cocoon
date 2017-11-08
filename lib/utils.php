@@ -422,17 +422,20 @@ endif;
 //SlickNav
 if ( !function_exists( 'wp_enqueue_slicknav' ) ):
 function wp_enqueue_slicknav(){
-  //wp_enqueue_style( 'slicknav-style', get_template_directory_uri() . '/plugins/slicknav/slicknav.css' );
-  //SlickNavスクリプトの呼び出し
-  wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
-  $data = minify_js('
-            (function($){
-              $(".menu-header").slicknav();
-            })(jQuery);
-          ');
-  wp_add_inline_script( 'slicknav-js', $data, 'after' ) ;
+  if (is_slicknav_visible() || is_admin_php_page()) {
+    //wp_enqueue_style( 'slicknav-style', get_template_directory_uri() . '/plugins/slicknav/slicknav.css' );
+    //SlickNavスクリプトの呼び出し
+    wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/plugins/slicknav/jquery.slicknav.min.js', array( 'jquery' ), false, true  );
+    $data = minify_js('
+              (function($){
+                $(".menu-header").slicknav();
+              })(jQuery);
+            ');
+    wp_add_inline_script( 'slicknav-js', $data, 'after' ) ;
 
-}
+  }
+  }
+
 endif;
 
 
