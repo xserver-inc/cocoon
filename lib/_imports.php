@@ -48,6 +48,7 @@ require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'custom-fields/page-field.php';//投稿・固定ページのページ設定
 require_once 'custom-fields/update-field.php'; //アップデートのページ設定
+require_once 'custom-fields/custom-css-field.php'; //カスタムCSS設定
 require_once 'seo.php';      //SEO関数
 require_once 'ogp.php';      //OGP関数
 require_once 'blogcard-in.php';  //内部ブログカード関数
