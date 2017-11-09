@@ -5,7 +5,7 @@ if (get_site_key_color()): ?>
 .demo .header-container,
 .header-container .navi,
 .navi .navi-in > .menu-header .sub-menu,
-.article .entry-content h2,
+.article h2,
 .sidebar h3,
 .catlink,
 .category-label,
@@ -16,10 +16,10 @@ if (get_site_key_color()): ?>
 .navi .navi-in a:hover{
   background-color: rgba(255, 255, 255, 0.2);
 }
-.article .entry-content h3,
-.article .entry-content h4,
-.article .entry-content h5,
-.article .entry-content h6,
+.article h3,
+.article h4,
+.article h5,
+.article h6,
 .catlink,
 .taglink{
   border-color: <?php echo get_site_key_color(); ?>;
@@ -48,7 +48,7 @@ table td,
 .list.entry-card-border .entry-card-wrap,
 .related-entries.related-entry-border .related-entry-card-wrap,
 .pager-post-navi.post-navi-border a.a-wrap,
-.entry-content .toc,
+.article .toc,
 .a-wrap .blogcard,
 input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
