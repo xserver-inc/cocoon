@@ -32,8 +32,11 @@ if ( !function_exists( 'insert_custom_css' ) ):
 function insert_custom_css() {
   if ( is_page() || is_single() ) {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
-      echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
-      echo '<style type="text/css">' . get_post_meta(get_the_ID(), '_custom_css', true) . '</style>'.PHP_EOL;
+      $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);
+      if ($custom_css) {
+        echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
+        echo '<style type="text/css">' . $custom_css . '</style>'.PHP_EOL;
+      }
     endwhile; endif;
     rewind_posts();
   }
