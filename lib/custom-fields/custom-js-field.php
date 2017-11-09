@@ -1,41 +1,42 @@
-<?php //Custom CSS
-add_action( 'admin_menu', 'add_custom_css_custom_box' );
-if ( !function_exists( 'add_custom_css_custom_box' ) ):
-function add_custom_css_custom_box() {
-  add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'post', 'normal', 'high' );
-  add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'page', 'normal', 'high' );
+<?php //Custom JS Widget
+
+add_action( 'admin_menu', 'add_custom_js_custom_box' );
+if ( !function_exists( 'add_custom_js_custom_box' ) ):
+function add_custom_js_custom_box() {
+  add_meta_box( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'post', 'normal', 'low' );
+  add_meta_box( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'page', 'normal', 'low' );
 }
 endif;
 
-if ( !function_exists( 'view_custom_css_custom_box' ) ):
-function view_custom_css_custom_box() {
+if ( !function_exists( 'view_custom_js_custom_box' ) ):
+function view_custom_js_custom_box() {
   global $post;
-  echo '<input type="hidden" name="custom_css_noncename" id="custom_css_noncename" value="'.wp_create_nonce('custom-css').'" />';
-  echo '<textarea name="custom_css" id="custom_css" rows="5" cols="30" style="width:100%;">'.get_post_meta($post->ID,'_custom_css',true).'</textarea>';
+  echo '<input type="hidden" name="custom_js_noncename" id="custom_js_noncename" value="'.wp_create_nonce('custom-js').'" />';
+  echo '<textarea name="custom_js" id="custom_js" rows="5" cols="30" style="width:100%;">'.get_post_meta($post->ID,'_custom_js',true).'</textarea>';
 }
 endif;
 
-
-add_action( 'save_post', 'custom_css_custom_box_save_data' );
-if ( !function_exists( 'custom_css_custom_box_save_data' ) ):
-function custom_css_custom_box_save_data($post_id) {
-  $custom_css_noncename = isset($_POST['custom_css_noncename']) ? $_POST['custom_css_noncename'] : null;
-  if ( !wp_verify_nonce( $custom_css_noncename, 'custom-css' ) ) return $post_id;
-  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE) return $post_id;
-  $custom_css = $_POST['custom_css'];
-  update_post_meta( $post_id, '_custom_css', $custom_css );
+add_action( 'save_post', 'custom_js_custom_box_save_data' );
+if ( !function_exists( 'custom_js_custom_box_save_data' ) ):
+function custom_js_custom_box_save_data($post_id) {
+  $custom_js_noncename = isset($_POST['custom_js_noncename']) ? $_POST['custom_js_noncename'] : null;
+  if (!wp_verify_nonce($custom_js_noncename, 'custom-js')) return $post_id;
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
+  $custom_js = $_POST['custom_js'];
+  update_post_meta($post_id, '_custom_js', $custom_js);
 }
 endif;
 
-add_action( 'wp_head','insert_custom_css' );
-if ( !function_exists( 'insert_custom_css' ) ):
-function insert_custom_css() {
+add_action( 'wp_head','insert_custom_js' );
+if ( !function_exists( 'insert_custom_js' ) ):
+function insert_custom_js() {
   if ( is_page() || is_single() ) {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
-      echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
-      echo '<style type="text/css">' . get_post_meta(get_the_ID(), '_custom_css', true) . '</style>'.PHP_EOL;
+      echo '<!-- '.THEME_NAME.' Custom JS -->'.PHP_EOL;
+      echo '<script type="text/javascript">' . get_post_meta(get_the_ID(), '_custom_js', true) . '</script>'.PHP_EOL;
     endwhile; endif;
     rewind_posts();
   }
 }
 endif;
+
