@@ -55,6 +55,11 @@ class AuthorBoxWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('widget_name'); ?>" name="<?php echo $this->get_field_name('widget_name'); ?>" type="text" value="<?php echo $widget_name; ?>" placeholder="<?php _e( '例：この記事を書いた人', THEME_NAME ) ?>" />
     </p>
+    <?php //プロフィールページへの誘導 ?>
+    <p>
+      <?php _e( '※「プロフィール情報」や、「フォローボタン」はプロフィールページにて変更してください。', THEME_NAME ) ?><br>
+      <a href="profile.php" target="_blank"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>
+    </p>
     <?php
   }
 }
