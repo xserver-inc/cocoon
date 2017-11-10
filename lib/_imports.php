@@ -80,6 +80,9 @@ require_once 'widgets/pc-ad.php';
 require_once 'widgets/mobile-text.php';
 //モバイル用広告ウィジェット
 require_once 'widgets/mobile-ad.php';
+//プロフィールウィジェット
+require_once 'widgets/author-box.php';
+
 
 
 //require_once 'admin.php'; //管理者機能

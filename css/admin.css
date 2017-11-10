@@ -1872,7 +1872,8 @@
   .demo .author-box {
     border: 2px solid #cccfd2;
     padding: 10px;
-    line-height: 1.4; }
+    line-height: 1.4;
+    position: relative; }
     .demo .author-box .sns-follow {
       margin: 0; }
     .demo .author-box .sns-follow-message {

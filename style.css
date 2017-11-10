@@ -2447,6 +2447,7 @@ input[type='submit'] {
   border: 2px solid #cccfd2;
   padding: 10px;
   line-height: 1.4;
+  position: relative;
 }
 .author-box .sns-follow {
   margin: 0;

@@ -4,23 +4,6 @@
     while ( have_posts() ) {
       the_post();?>
 
-      <div class="author-box">
-        <figure class="author-thumb">
-          <?php echo get_avatar( get_the_author_id(), 120 ); ?>
-        </figure>
-        <div class="author-content">
-          <div class="author-display-name">
-            <?php the_author_posts_link(); ?>
-          </div>
-          <div class="author-description">
-            <?php the_author_meta( 'description', get_the_author_id() ); ?>
-          </div>
-          <div class="author-follows">
-            <?php get_template_part('tmp/sns-follow-buttons'); ?>
-          </div>
-        </div>
-      </div>
-
       <?php //タイトル上の広告表示
       if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title', is_ad_pos_above_title_label_visible());
