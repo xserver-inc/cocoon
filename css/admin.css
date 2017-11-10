@@ -1879,7 +1879,8 @@
     .demo .author-box .sns-follow-message {
       display: none; }
     .demo .author-box .sns-follow-buttons {
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      justify-content: flex-start; }
       .demo .author-box .sns-follow-buttons a {
         font-size: 18px;
         width: 25px;
@@ -1888,14 +1889,22 @@
         margin-right: 4px; }
   .demo .author-thumb {
     float: left;
-    margin-top: 4px; }
+    margin-top: 4px;
+    width: 120px; }
   .demo .author-content {
     margin-left: 130px; }
   .demo .author-display-name {
     font-size: 1.1em;
     font-weight: bold; }
   .demo .author-description {
-    margin-bottom: 0.8em; }
+    margin-bottom: 0.6em; }
+  .demo .sidebar .author-thumb {
+    float: none;
+    width: auto;
+    text-align: center; }
+  .demo .sidebar .author-content {
+    float: none;
+    margin: 0; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,

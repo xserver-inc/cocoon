@@ -2457,6 +2457,7 @@ input[type='submit'] {
 }
 .author-box .sns-follow-buttons {
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .author-box .sns-follow-buttons a {
   font-size: 18px;
@@ -2469,6 +2470,7 @@ input[type='submit'] {
 .author-thumb {
   float: left;
   margin-top: 4px;
+  width: 120px;
 }
 
 .author-content {
@@ -2481,7 +2483,17 @@ input[type='submit'] {
 }
 
 .author-description {
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em;
+}
+
+.sidebar .author-thumb {
+  float: none;
+  width: auto;
+  text-align: center;
+}
+.sidebar .author-content {
+  float: none;
+  margin: 0;
 }
 
 /*拡張クラスを追加するスタイルシート*/

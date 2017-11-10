@@ -28,6 +28,7 @@
   }
   .sns-follow-buttons{
     flex-wrap: wrap;
+    justify-content: flex-start;
     a{
       font-size: 18px;
       width: 25px;
@@ -41,6 +42,7 @@
 .author-thumb{
   float: left;
   margin-top: 4px;
+  width: 120px;
 }
 
 .author-content{
@@ -53,5 +55,18 @@
 }
 
 .author-description{
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em;
+}
+
+.sidebar{
+  .author-thumb{
+    float: none;
+    width: auto;
+    text-align: center;
+  }
+
+  .author-content{
+    float: none;
+    margin: 0;
+  }
 }

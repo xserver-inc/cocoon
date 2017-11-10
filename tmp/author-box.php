@@ -8,7 +8,7 @@
     </div>
   <?php endif ?>
   <figure class="author-thumb">
-    <?php echo get_avatar( get_the_author_id(), 120 ); ?>
+    <?php echo get_avatar( get_the_author_id(), 200 ); ?>
   </figure>
   <div class="author-content">
     <div class="author-display-name">
