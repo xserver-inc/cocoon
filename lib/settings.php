@@ -7,11 +7,12 @@ add_theme_support('post-thumbnails');
 add_image_size('thumb100', 100, 100, true);
 add_image_size('thumb150', 150, 150, true);
 add_image_size('thumb80',   80,  45, true);
+add_image_size('thumb120', 120,  67, true);
 add_image_size('thumb160', 160,  90, true);
 add_image_size('thumb320', 320, 180, true);
 add_image_size('thumb640', 640, 360, true);
 add_image_size('thumb960', 960, 540, true);
-add_image_size('thumb320_raw', 320, 0, false);
+//add_image_size('thumb320_raw', 320, 0, false);
 
 //コンテンツの幅の指定
 if ( ! isset( $content_width ) ) $content_width = 800;

@@ -330,6 +330,9 @@
   /************************************
   ** カルーセルの非表示設定
   ************************************/
+  /************************************
+  ** プロフィルボックス
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -1866,6 +1869,32 @@
     overflow: hidden; }
   .demo .no-carousel .carousel {
     display: none; }
+  .demo .author-box {
+    border: 2px solid #cccfd2;
+    padding: 10px;
+    line-height: 1.4; }
+    .demo .author-box .sns-follow {
+      margin: 0; }
+    .demo .author-box .sns-follow-message {
+      display: none; }
+    .demo .author-box .sns-follow-buttons {
+      flex-wrap: wrap; }
+      .demo .author-box .sns-follow-buttons a {
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+        margin-bottom: 4px;
+        margin-right: 4px; }
+  .demo .author-thumb {
+    float: left;
+    margin-top: 4px; }
+  .demo .author-content {
+    margin-left: 130px; }
+  .demo .author-display-name {
+    font-size: 1.1em;
+    font-weight: bold; }
+  .demo .author-description {
+    margin-bottom: 0.8em; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,

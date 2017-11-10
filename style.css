@@ -2440,6 +2440,49 @@ input[type='submit'] {
   display: none;
 }
 
+/************************************
+** プロフィルボックス
+************************************/
+.author-box {
+  border: 2px solid #cccfd2;
+  padding: 10px;
+  line-height: 1.4;
+}
+.author-box .sns-follow {
+  margin: 0;
+}
+.author-box .sns-follow-message {
+  display: none;
+}
+.author-box .sns-follow-buttons {
+  flex-wrap: wrap;
+}
+.author-box .sns-follow-buttons a {
+  font-size: 18px;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+
+.author-thumb {
+  float: left;
+  margin-top: 4px;
+}
+
+.author-content {
+  margin-left: 130px;
+}
+
+.author-display-name {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.author-description {
+  margin-bottom: 0.8em;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .sankou,
 .sanko,

@@ -4,7 +4,7 @@
 define('OP_MOBILE_BUTTON_LAYOUT_TYPE', 'mobile_button_layout_type');
 if ( !function_exists( 'get_mobile_button_layout_type' ) ):
 function get_mobile_button_layout_type(){
-  return get_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE, 'slidein');
+  return get_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE, 'top');
 }
 endif;
 if ( !function_exists( 'is_slicknav_visible' ) ):
