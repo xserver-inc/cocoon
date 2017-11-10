@@ -2491,6 +2491,10 @@ input[type='submit'] {
   width: auto;
   text-align: center;
 }
+.sidebar .author-widget-name,
+.sidebar .author-display-name {
+  text-align: center;
+}
 .sidebar .author-content {
   float: none;
   margin: 0;
@@ -3680,6 +3684,22 @@ input[type='submit'] {
   .pager-post-navi.post-navi-square a:last-child {
     border-top-width: 0;
     border-left-width: 1px;
+  }
+
+  .author-thumb {
+    float: none;
+    width: auto;
+    text-align: center;
+  }
+
+  .author-widget-name,
+  .author-display-name {
+    text-align: center;
+  }
+
+  .author-content {
+    float: none;
+    margin: 0;
   }
 }
 @media print {

@@ -112,3 +112,9 @@ body{
   //   display: none;
   // }
 }
+
+
+@include author_box_nallow;
+// .article{
+//   @extend %author_box_nallow;
+// }

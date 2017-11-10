@@ -59,14 +59,5 @@
 }
 
 .sidebar{
-  .author-thumb{
-    float: none;
-    width: auto;
-    text-align: center;
-  }
-
-  .author-content{
-    float: none;
-    margin: 0;
-  }
+  @include author_box_nallow;
 }

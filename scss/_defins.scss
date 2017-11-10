@@ -212,3 +212,24 @@ $bgc_hover_anime: all 0.3s ease 0s;
     background-attachment: fixed;
   }
 }
+
+///////////////////////////////////////
+// プロフィールボックス
+///////////////////////////////////////
+@mixin author_box_nallow{
+  .author-thumb{
+    float: none;
+    width: auto;
+    text-align: center;
+  }
+
+  .author-widget-name,
+  .author-display-name{
+    text-align: center;
+  }
+
+  .author-content{
+    float: none;
+    margin: 0;
+  }
+}

@@ -1902,6 +1902,9 @@
     float: none;
     width: auto;
     text-align: center; }
+  .demo .sidebar .author-widget-name,
+  .demo .sidebar .author-display-name {
+    text-align: center; }
   .demo .sidebar .author-content {
     float: none;
     margin: 0; }
@@ -2649,7 +2652,17 @@
           padding: 7px; }
         .demo .pager-post-navi.post-navi-square a:last-child {
           border-top-width: 0;
-          border-left-width: 1px; } }
+          border-left-width: 1px; }
+      .demo .author-thumb {
+        float: none;
+        width: auto;
+        text-align: center; }
+      .demo .author-widget-name,
+      .demo .author-display-name {
+        text-align: center; }
+      .demo .author-content {
+        float: none;
+        margin: 0; } }
   @media print {
     .demo {
       /************************************
