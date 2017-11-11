@@ -45,7 +45,7 @@
   <?php endif; ?>
 
   <?php if ( get_the_author_line_at_url() )://LINE@フォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_line_at_url(); //LINE@フォローURLの取得 ?>" class="follow-button line-at-button line-follow-button-sq" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a>
+    <a href="<?php echo get_the_author_line_at_url(); //LINE@フォローURLの取得 ?>" class="follow-button line-button line-follow-button-sq" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_github_url() )://GitHubフォローボタンを表示するか ?>
