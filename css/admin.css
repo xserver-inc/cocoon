@@ -1911,14 +1911,13 @@
   .demo .fb-like-box {
     background-color: #333;
     color: #fff;
-    display: flex;
-    flex-wrap: nowrap; }
-    .demo .fb-like-box .fb-like-thumb,
-    .demo .fb-like-box .fb-like-content {
-      width: 100%; }
+    display: flex; }
     .demo .fb-like-box img {
       display: block; }
+  .demo .fb-like-thumb {
+    width: 56%; }
   .demo .fb-like-content {
+    width: 44%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1927,20 +1926,28 @@
     text-align: center; }
     .demo .fb-like-content > div {
       height: 100%;
-      padding: 10px; }
+      margin-top: 8px; }
   .demo .fb-like-message {
     color: #eee;
     font-size: 0.9em; }
   .demo .fb-like-sub-message {
     color: #ccc;
     font-size: 0.7em; }
-  .demo .fb-like-buttons > div {
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .demo .fb-like-buttons > div > * {
-      height: 100%; }
+  .demo .fb-like-buttons {
+    padding: 0; }
+    .demo .fb-like-buttons > div {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .demo .fb-like-buttons > div > * {
+        height: 100%; }
+  .demo .sidebar .fb-like-box {
+    max-width: 640px;
+    flex-direction: column; }
+    .demo .sidebar .fb-like-box > div,
+    .demo .sidebar .fb-like-box > figure {
+      width: 100%; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
@@ -2505,7 +2512,9 @@
     .demo .entry-card-thumb {
       width: 38%; }
     .demo .entry-card-content {
-      margin-left: 40%; } }
+      margin-left: 40%; }
+    .demo .fb-like-thumb img {
+      height: 100%; } }
   @media screen and (max-width: 1030px) {
     .demo .navi-footer {
       float: none;
@@ -2529,7 +2538,10 @@
     .demo .footer-bottom-logo {
       line-height: 1; }
     .demo .footer-bottom-content {
-      text-align: center; } }
+      text-align: center; }
+    .demo .fb-like-message {
+      font-size: 0.8em;
+      line-height: 1.4; } }
   @media screen and (max-width: 768px) {
     .demo {
       /************************************
@@ -2621,7 +2633,17 @@
       .demo .widget_mobile_ad {
         display: block; }
       .demo .slicknav_menu {
-        display: block; } }
+        display: block; }
+      .demo .fb-like-box {
+        max-width: 640px;
+        flex-direction: column; }
+        .demo .fb-like-box > div,
+        .demo .fb-like-box > figure {
+          width: 100%; }
+      .demo .fb-like-box {
+        max-width: none; }
+      .demo .fb-like-thumb {
+        display: none; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

@@ -181,3 +181,15 @@ table{
 .slicknav_menu{
   display: block;
 }
+
+
+///////////////////////////////////////
+// Facebookボックス
+///////////////////////////////////////
+@include fb_like_box;
+.fb-like-box{
+  max-width: none;
+}
+.fb-like-thumb{
+  display: none;
+}

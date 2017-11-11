@@ -82,6 +82,8 @@ require_once 'widgets/mobile-text.php';
 require_once 'widgets/mobile-ad.php';
 //プロフィールウィジェット
 require_once 'widgets/author-box.php';
+//Facebookボックス
+require_once 'widgets/fb-like-box.php';
 
 
 

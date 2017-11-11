@@ -27,8 +27,8 @@ class AuthorBoxWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['widget_name'] = $new_instance['widget_name'];
+    $instance['title'] = strip_tags(isset($new_instance['title']) ? $new_instance['title'] : '');
+    $instance['widget_name'] = isset($new_instance['widget_name']) ? $new_instance['widget_name'] : '';
       return $instance;
   }
   function form($instance) {

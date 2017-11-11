@@ -2,11 +2,11 @@
   background-color: #333;
   color: $white_text_color;
   display: flex;
-  flex-wrap: nowrap;
-  .fb-like-thumb,
-  .fb-like-content{
-    width: 100%;
-  }
+  //flex-wrap: nowrap;
+  // .fb-like-thumb,
+  // .fb-like-content{
+  //   width: 100%;
+  // }
 
   img{
     display: block;
@@ -15,7 +15,12 @@
 
 }
 
+.fb-like-thumb{
+  width: 56%;
+}
+
 .fb-like-content{
+  width: 44%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +30,8 @@
 
   >div{
     height: 100%;
-    padding: 10px;
+    margin-top: 8px;
+    //margin: 10px;
   }
 }
 
@@ -40,6 +46,7 @@
 }
 
 .fb-like-buttons{
+  padding: 0;
   >div{
     margin: 10px;
     display: flex;
@@ -58,3 +65,10 @@
 // .line-it-button{
 //   display: none;
 // }
+
+///////////////////////////////////////
+// サイドバーのFacebookボックス
+///////////////////////////////////////
+.sidebar{
+  @include fb_like_box;
+}
