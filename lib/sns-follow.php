@@ -51,7 +51,7 @@ function get_the_author_twitter_url(){
 }
 endif;
 
-//プロフィール画面で設定したTwitter URLからTwitter IDあの取得
+//プロフィール画面で設定したTwitter URLからTwitter IDの取得
 if ( !function_exists( 'get_the_author_twitter_id' ) ):
 function get_the_author_twitter_id($url = null){
   if (!$url) {
@@ -117,6 +117,22 @@ endif;
 if ( !function_exists( 'get_the_author_line_at_url' ) ):
 function get_the_author_line_at_url(){
   return esc_html(get_the_author_meta('line_at_url', get_the_posts_author_id()));
+}
+endif;
+//プロフィール画面で設定したTwitter URLからLINE IDの取得
+if ( !function_exists( 'get_the_author_line_id' ) ):
+function get_the_author_line_id($url = null){
+  if (!$url) {
+   $url = get_the_author_line_at_url();
+  }
+  $res = preg_match('{.*@([^/]+)/?$}i', $url, $m);
+  //URLでなかった場合は文字列をそのままIDとして取得
+  if (!$res) {
+    return $url;
+  }
+  if ($res && $m && $m[1]) {
+    return $m[1];
+  }
 }
 endif;
 

@@ -35,7 +35,7 @@
                 </div>
               <?php endif ?>
               <div class="fb-like-line">
-                <div class="line-it-button" style="display: none;" data-lang="ja" data-type="friend" data-lineid="@lineteamjp"></div>
+                <div class="line-it-button" style="display: none;" data-lang="ja" data-type="friend" data-lineid="@<?php echo get_the_author_line_id(); ?>"></div>
  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
               </div>
             </div>
