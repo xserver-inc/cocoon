@@ -1,0 +1,50 @@
+.fb-like-box{
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  .fb-like-thumb,
+  .fb-like-content{
+    width: 100%;
+  }
+
+  img{
+    display: block;
+  }
+
+
+}
+
+.fb-like-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  text-align: center;
+
+  >div{
+    height: 100%;
+    padding: 10px;
+  }
+}
+
+.fb-like-message{
+  color: #eee;
+  font-size: 0.9em;
+}
+
+.fb-like-sub-message{
+  color: #ccc;
+  font-size: 0.7em;
+}
+
+.fb-like-buttons{
+  >div{
+    margin: 6px;
+  }
+}
+
+// .line-it-button{
+//   display: none;
+// }

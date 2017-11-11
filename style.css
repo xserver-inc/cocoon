@@ -2500,6 +2500,47 @@ input[type='submit'] {
   margin: 0;
 }
 
+.fb-like-box {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.fb-like-box .fb-like-thumb,
+.fb-like-box .fb-like-content {
+  width: 100%;
+}
+.fb-like-box img {
+  display: block;
+}
+
+.fb-like-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  text-align: center;
+}
+.fb-like-content > div {
+  height: 100%;
+  padding: 10px;
+}
+
+.fb-like-message {
+  color: #eee;
+  font-size: 0.9em;
+}
+
+.fb-like-sub-message {
+  color: #ccc;
+  font-size: 0.7em;
+}
+
+.fb-like-buttons > div {
+  margin: 6px;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .sankou,
 .sanko,

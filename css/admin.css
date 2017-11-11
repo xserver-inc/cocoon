@@ -1908,6 +1908,34 @@
   .demo .sidebar .author-content {
     float: none;
     margin: 0; }
+  .demo .fb-like-box {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap; }
+    .demo .fb-like-box .fb-like-thumb,
+    .demo .fb-like-box .fb-like-content {
+      width: 100%; }
+    .demo .fb-like-box img {
+      display: block; }
+  .demo .fb-like-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    text-align: center; }
+    .demo .fb-like-content > div {
+      height: 100%;
+      padding: 10px; }
+  .demo .fb-like-message {
+    color: #eee;
+    font-size: 0.9em; }
+  .demo .fb-like-sub-message {
+    color: #ccc;
+    font-size: 0.7em; }
+  .demo .fb-like-buttons > div {
+    margin: 6px; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
