@@ -2504,17 +2504,19 @@ input[type='submit'] {
   background-color: #333;
   color: #fff;
   display: flex;
+  flex-wrap: nowrap;
+}
+.fb-like-box .fb-like-thumb,
+.fb-like-box .fb-like-content {
+  width: 100%;
 }
 .fb-like-box img {
   display: block;
-}
-
-.fb-like-thumb {
-  width: 56%;
+  width: 100%;
+  height: 100%;
 }
 
 .fb-like-content {
-  width: 44%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3456,10 +3458,6 @@ input[type='submit'] {
 
   .entry-card-content {
     margin-left: 40%;
-  }
-
-  .fb-like-thumb img {
-    height: 100%;
   }
 }
 @media screen and (max-width: 1030px) {
