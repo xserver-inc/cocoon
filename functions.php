@@ -358,3 +358,39 @@ if (is_easy_ssl_enable()) {
   add_filter('widget_text_mobile_text', 'chagne_site_url_html_to_https', 1);
   add_filter('comment_text', 'chagne_site_url_html_to_https', 1);
 }
+
+
+
+
+add_action('comment_form','google_recaptcha_script');
+function google_recaptcha_script(){
+  echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
+}
+
+add_action('comment_form','display_google_recaptcha');
+function display_google_recaptcha() { ?>
+  <div class="g-recaptcha" data-sitekey="6LehHTgUAAAAALR98L7a600Cgqlf2aV3zMFhBWzV"></div>
+<?php }
+
+
+
+add_action('pre_comment_on_post', 'verify_google_recaptcha');
+function verify_google_recaptcha($comment_post_ID)
+{
+  if (isset($_POST['g-recaptcha-response'])) {
+    $secret_key = '6LehHTgUAAAAAEkr_HmJ7WkkICDgEMb1Pt92g4H2';
+    $response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=". $secret_key ."&response=". $_POST['g-recaptcha-response']);
+    $response = json_decode($response["body"], true);
+    if ($response["success"] == true) {
+      return;
+    } else {
+      // $errors->add("reCaptcha Invalid", __("Ошибка Регистрации: Похоже вы не человек.","textdomain"));
+      wp_die(__( 'reCaptchaにより投稿が拒否されました。', THEME_NAME ));
+    }
+  } else {
+    //$errors->add("reCaptcha Invalid", __("Ошибка Регистрации: Похоже вы бот. Если у вас отключен JavaScript","textdomain"));
+    wp_die(__( 'reCaptchaにより投稿が拒否されました。', THEME_NAME ));
+  }
+  return;
+}
+
