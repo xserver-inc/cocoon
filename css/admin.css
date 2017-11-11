@@ -1935,7 +1935,12 @@
     color: #ccc;
     font-size: 0.7em; }
   .demo .fb-like-buttons > div {
-    margin: 6px; }
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .demo .fb-like-buttons > div > * {
+      height: 100%; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,

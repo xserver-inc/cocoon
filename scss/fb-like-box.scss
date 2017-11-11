@@ -1,6 +1,6 @@
 .fb-like-box{
   background-color: #333;
-  color: #fff;
+  color: $white_text_color;
   display: flex;
   flex-wrap: nowrap;
   .fb-like-thumb,
@@ -41,8 +41,18 @@
 
 .fb-like-buttons{
   >div{
-    margin: 6px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >*{
+      height: 100%;
+    }
   }
+  // .fb-like-twitter{
+  //   margin-top: 7px;
+  // }
 }
 
 // .line-it-button{

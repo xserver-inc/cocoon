@@ -2538,7 +2538,13 @@ input[type='submit'] {
 }
 
 .fb-like-buttons > div {
-  margin: 6px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fb-like-buttons > div > * {
+  height: 100%;
 }
 
 /*拡張クラスを追加するスタイルシート*/
