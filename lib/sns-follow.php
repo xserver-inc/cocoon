@@ -13,7 +13,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
   $prof_items['youtube_url'] = __( 'YouTube URL', THEME_NAME );
   $prof_items['flickr_url'] = __( 'Flickr URL', THEME_NAME );
-  $prof_items['line_t_url'] = __( 'LINE@ URL', THEME_NAME );
+  $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
   $prof_items['github_url'] = __( 'GitHub URL', THEME_NAME );
 
   return $prof_items;
