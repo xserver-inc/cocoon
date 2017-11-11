@@ -361,7 +361,7 @@ if (is_easy_ssl_enable()) {
 
 
 
-
+/*
 add_action('comment_form','google_recaptcha_script');
 function google_recaptcha_script(){
   echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
@@ -393,4 +393,4 @@ function verify_google_recaptcha($comment_post_ID)
   }
   return;
 }
-
+*/
