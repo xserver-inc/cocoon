@@ -63,7 +63,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
         <?php _e( 'メッセージ', THEME_NAME ) ?>
       <?php
         if ( !$text ) {
-          $text = sprintf( __( 'この記事をお届けした<br>%sの最新ニュース情報を、<br><span class="bold-red">いいね</span>してチェックしよう！', THEME_NAME ), get_bloginfo('name') );
+          $text = __( 'この記事が気に入ったら最新ニュース情報を、<br><span class="bold-red">いいね</span>してチェックしよう！', THEME_NAME );
         }?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('text_facebook_page_like'); ?>" name="<?php echo $this->get_field_name('text_facebook_page_like'); ?>" cols="20" rows="4"><?php echo $text; ?></textarea>
