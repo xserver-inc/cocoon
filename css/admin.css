@@ -333,6 +333,12 @@
   /************************************
   ** プロフィルボックス
   ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル
+  ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -1952,6 +1958,104 @@
     .demo .sidebar .fb-like-box > div,
     .demo .sidebar .fb-like-box > figure {
       width: 100%; }
+  .demo div.fb-like-mobile {
+    display: none; }
+  .demo .article-like {
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    clear: both; }
+  .demo .article-like-thumb {
+    float: left;
+    width: 100px; }
+  .demo .article-like-thumb img {
+    display: block; }
+  .demo .article-like-body {
+    margin-right: 140px;
+    float: none;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.3em;
+    height: 100px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+    box-sizing: border-box; }
+  .demo .article-like-body::after {
+    content: '\f054';
+    position: absolute;
+    right: 110px;
+    top: 27px;
+    color: #ccc;
+    font-size: 50px;
+    font-family: FontAwesome;
+    line-height: 100%; }
+  .demo .article-like-button {
+    background-color: #f3f3f3;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    float: right;
+    padding-top: 27px;
+    box-sizing: border-box;
+    /*  display: -webkit-flex;
+      display:         flex;
+      -webkit-align-items: center;
+              align-items: center;
+      -webkit-justify-content: center;
+              justify-content: center;*/ }
+  .demo .article-like-button iframe {
+    background-color: #fff; }
+  .demo .article-like-arrow-box {
+    float: left;
+    position: relative;
+    border: 1px solid #bbb;
+    margin-left: 12px;
+    width: calc(100% - 114px);
+    border-radius: 5px; }
+  .demo .article-like-arrow-box-in {
+    border-radius: 5px;
+    overflow: hidden; }
+  .demo .article-like-arrow-box:after, .demo .article-like-arrow-box:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  .demo .article-like-arrow-box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 10px;
+    margin-top: -10px; }
+  .demo .article-like-arrow-box:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: #bbb;
+    border-width: 11px;
+    margin-top: -11px; }
+  .demo .sidebar .article-like-body::after {
+    display: none; }
+  .demo .sidebar .article-like-body {
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.1em;
+    margin-right: 0;
+    height: 70px; }
+  .demo .sidebar .article-like-arrow-box {
+    height: 100px; }
+  .demo .sidebar .article-like-button {
+    float: none;
+    width: 100%;
+    height: 30px;
+    display: block;
+    line-height: 24px;
+    padding-top: 0; }
+  .demo .sidebar div.fb-like-mobile {
+    display: block; }
+  .demo .sidebar div.fb-like-pc {
+    display: none; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
