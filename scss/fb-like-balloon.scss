@@ -4,20 +4,20 @@
 div.fb-like-mobile{
   display: none;
 }
-.article-like{
+.fb-like-balloon{
   height: 100px;
   margin-top: 30px;
   margin-bottom: 30px;
   clear: both;
 }
-.article-like-thumb{
+.fb-like-balloon-thumb{
   float: left;
   width: 100px;
 }
-.article-like-thumb img{
+.fb-like-balloon-thumb img{
   display: block;
 }
-.article-like-body{
+.fb-like-balloon-body{
   margin-right: 140px;
   float: none;
   padding: 10px;
@@ -29,7 +29,7 @@ div.fb-like-mobile{
   color: #000;
   box-sizing: border-box;
 }
-.article-like-body::after{
+.fb-like-balloon-body::after{
   content: '\f054';
   position: absolute;
   right: 110px;
@@ -39,7 +39,7 @@ div.fb-like-mobile{
   font-family: FontAwesome;
   line-height: 100%;
 }
-.article-like-button {
+.fb-like-balloon-button {
   background-color: #f3f3f3;
   width: 100px;
   height: 100px;
@@ -55,11 +55,11 @@ div.fb-like-mobile{
           justify-content: center;*/
 }
 
-.article-like-button iframe{
+.fb-like-balloon-button iframe{
   background-color: #fff;
 }
 
-.article-like-arrow-box {
+.fb-like-balloon-arrow-box {
   float: left;
   position: relative;
   border: 1px solid #bbb;
@@ -67,11 +67,11 @@ div.fb-like-mobile{
   width: calc(100% - 114px);
   border-radius: 5px;
 }
-.article-like-arrow-box-in{
+.fb-like-balloon-arrow-box-in{
   border-radius: 5px;
   overflow: hidden;
 }
-.article-like-arrow-box:after, .article-like-arrow-box:before {
+.fb-like-balloon-arrow-box:after, .fb-like-balloon-arrow-box:before {
   right: 100%;
   top: 50%;
   border: solid transparent;
@@ -81,13 +81,13 @@ div.fb-like-mobile{
   position: absolute;
   pointer-events: none;
 }
-.article-like-arrow-box:after {
+.fb-like-balloon-arrow-box:after {
   border-color: rgba(255, 255, 255, 0);
   border-right-color: #fff;
   border-width: 10px;
   margin-top: -10px;
 }
-.article-like-arrow-box:before {
+.fb-like-balloon-arrow-box:before {
   border-color: rgba(221, 221, 221, 0);
   border-right-color: #bbb;
   border-width: 11px;
@@ -98,20 +98,20 @@ div.fb-like-mobile{
 /************************************
 ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
 ************************************/
-.sidebar .article-like-body::after{
+.sidebar .fb-like-balloon-body::after{
   display: none;
 }
-.sidebar .article-like-body{
+.sidebar .fb-like-balloon-body{
   font-size: 0.8em;
   padding: 5px;
   line-height: 1.1em;
   margin-right: 0;
   height: 70px;
 }
-.sidebar .article-like-arrow-box{
+.sidebar .fb-like-balloon-arrow-box{
   height: 100px;
 }
-.sidebar .article-like-button{
+.sidebar .fb-like-balloon-button{
   float: none;
   width: 100%;
   height: 30px;
@@ -124,4 +124,44 @@ div.fb-like-mobile{
 }
 .sidebar div.fb-like-pc{
   display: none;
+}
+/************************************
+** Facebookページを「いいね！」するエリアのスタイル
+************************************/
+@media screen and (max-width: 639px){
+  .fb-like-balloon-body{
+    margin-right: 100px;
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+  .fb-like-balloon-body::after{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 440px){
+  .fb-like-balloon-body{
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.1em;
+    margin-right: 0;
+    height: 70px;
+  }
+  .fb-like-balloon-arrow-box{
+    height: 100px;
+  }
+  .fb-like-balloon-button{
+    float: none;
+    width: 100%;
+    height: 30px;
+    display: block;
+    padding-top: 0;
+    line-height: 24px;
+  }
+  div.fb-like-mobile{
+    display: block;
+  }
+  div.fb-like-pc{
+    display: none;
+  }
 }

@@ -339,6 +339,9 @@
   /************************************
   ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
   ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -1960,17 +1963,17 @@
       width: 100%; }
   .demo div.fb-like-mobile {
     display: none; }
-  .demo .article-like {
+  .demo .fb-like-balloon {
     height: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
     clear: both; }
-  .demo .article-like-thumb {
+  .demo .fb-like-balloon-thumb {
     float: left;
     width: 100px; }
-  .demo .article-like-thumb img {
+  .demo .fb-like-balloon-thumb img {
     display: block; }
-  .demo .article-like-body {
+  .demo .fb-like-balloon-body {
     margin-right: 140px;
     float: none;
     padding: 10px;
@@ -1981,7 +1984,7 @@
     background-color: #fff;
     color: #000;
     box-sizing: border-box; }
-  .demo .article-like-body::after {
+  .demo .fb-like-balloon-body::after {
     content: '\f054';
     position: absolute;
     right: 110px;
@@ -1990,7 +1993,7 @@
     font-size: 50px;
     font-family: FontAwesome;
     line-height: 100%; }
-  .demo .article-like-button {
+  .demo .fb-like-balloon-button {
     background-color: #f3f3f3;
     width: 100px;
     height: 100px;
@@ -2004,19 +2007,19 @@
               align-items: center;
       -webkit-justify-content: center;
               justify-content: center;*/ }
-  .demo .article-like-button iframe {
+  .demo .fb-like-balloon-button iframe {
     background-color: #fff; }
-  .demo .article-like-arrow-box {
+  .demo .fb-like-balloon-arrow-box {
     float: left;
     position: relative;
     border: 1px solid #bbb;
     margin-left: 12px;
     width: calc(100% - 114px);
     border-radius: 5px; }
-  .demo .article-like-arrow-box-in {
+  .demo .fb-like-balloon-arrow-box-in {
     border-radius: 5px;
     overflow: hidden; }
-  .demo .article-like-arrow-box:after, .demo .article-like-arrow-box:before {
+  .demo .fb-like-balloon-arrow-box:after, .demo .fb-like-balloon-arrow-box:before {
     right: 100%;
     top: 50%;
     border: solid transparent;
@@ -2025,27 +2028,27 @@
     width: 0;
     position: absolute;
     pointer-events: none; }
-  .demo .article-like-arrow-box:after {
+  .demo .fb-like-balloon-arrow-box:after {
     border-color: rgba(255, 255, 255, 0);
     border-right-color: #fff;
     border-width: 10px;
     margin-top: -10px; }
-  .demo .article-like-arrow-box:before {
+  .demo .fb-like-balloon-arrow-box:before {
     border-color: rgba(221, 221, 221, 0);
     border-right-color: #bbb;
     border-width: 11px;
     margin-top: -11px; }
-  .demo .sidebar .article-like-body::after {
+  .demo .sidebar .fb-like-balloon-body::after {
     display: none; }
-  .demo .sidebar .article-like-body {
+  .demo .sidebar .fb-like-balloon-body {
     font-size: 0.8em;
     padding: 5px;
     line-height: 1.1em;
     margin-right: 0;
     height: 70px; }
-  .demo .sidebar .article-like-arrow-box {
+  .demo .sidebar .fb-like-balloon-arrow-box {
     height: 100px; }
-  .demo .sidebar .article-like-button {
+  .demo .sidebar .fb-like-balloon-button {
     float: none;
     width: 100%;
     height: 30px;
@@ -2056,6 +2059,33 @@
     display: block; }
   .demo .sidebar div.fb-like-pc {
     display: none; }
+  @media screen and (max-width: 639px) {
+    .demo .fb-like-balloon-body {
+      margin-right: 100px;
+      font-size: 1em;
+      line-height: 1.2em; }
+    .demo .fb-like-balloon-body::after {
+      display: none; } }
+  @media screen and (max-width: 440px) {
+    .demo .fb-like-balloon-body {
+      font-size: 0.8em;
+      padding: 5px;
+      line-height: 1.1em;
+      margin-right: 0;
+      height: 70px; }
+    .demo .fb-like-balloon-arrow-box {
+      height: 100px; }
+    .demo .fb-like-balloon-button {
+      float: none;
+      width: 100%;
+      height: 30px;
+      display: block;
+      padding-top: 0;
+      line-height: 24px; }
+    .demo div.fb-like-mobile {
+      display: block; }
+    .demo div.fb-like-pc {
+      display: none; } }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,
