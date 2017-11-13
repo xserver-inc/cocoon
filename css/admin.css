@@ -342,6 +342,9 @@
   /************************************
   ** Facebookページを「いいね！」するエリアのスタイル
   ************************************/
+  /************************************
+  ** Call to Action
+  ************************************/
   /*拡張クラスを追加するスタイルシート*/
   /*太字*/
   /*赤色*/
@@ -2086,6 +2089,19 @@
       display: block; }
     .demo div.fb-like-pc {
       display: none; } }
+  .demo .cta-box {
+    background-color: #444;
+    color: #fff;
+    padding: 20px; }
+  .demo .cta-heading {
+    font-size: 26px;
+    padding: 12px;
+    margin-bottom: 1em;
+    font-weight: bold; }
+  .demo .cta-thumb {
+    text-align: center; }
+  .demo .cta-button {
+    margin-top: 2em; }
   .demo .sankou,
   .demo .sanko,
   .demo .reffer,

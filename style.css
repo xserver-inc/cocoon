@@ -2748,6 +2748,30 @@ div.fb-like-mobile {
     display: none;
   }
 }
+/************************************
+** Call to Action
+************************************/
+.cta-box {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+
+.cta-heading {
+  font-size: 26px;
+  padding: 12px;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.cta-thumb {
+  text-align: center;
+}
+
+.cta-button {
+  margin-top: 2em;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .sankou,
 .sanko,
