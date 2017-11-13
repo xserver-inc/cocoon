@@ -7,6 +7,12 @@ function admin_print_styles_custom() {
   wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
   wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
 
+  //メディアアップローダの javascript API
+  wp_enqueue_media();
+  // wp_enqueue_script( 'media-widgets' );
+  // wp_enqueue_script( 'media-upload');
+  //_v("ha");
+
   //global $pagenow;
   //var_dump($pagenow);
   if (is_admin_php_page()/*$pagenow == 'admin.php'*/) {
@@ -39,9 +45,6 @@ function admin_print_styles_custom() {
     wp_enqueue_slick();
     //ツリー型モバイルボタン（iframeで読み込むので不要）
     //wp_enqueue_slicknav();
-
-    //メディアアップローダの javascript API
-    wp_enqueue_media();
 
     //カラーピッカー
     wp_enqueue_style( 'wp-color-picker' );

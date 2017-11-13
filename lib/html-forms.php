@@ -282,7 +282,7 @@ function genelate_upload_image_tag($name, $value){?>
 
       var custom_uploader;
 
-      $("input:button[name=<?php echo $name; ?>_select]").click(function(e) {
+      $("input:button[name='<?php echo $name; ?>_select']").click(function(e) {
 
           e.preventDefault();
 
@@ -319,11 +319,11 @@ function genelate_upload_image_tag($name, $value){?>
               images.each(function(file){
 
                   /* テキストフォームと表示されたサムネイル画像があればクリア */
-                  $("input:text[name=<?php echo $name; ?>]").val("");
+                  $("input:text[name='<?php echo $name; ?>']").val("");
                   $("#<?php echo $name; ?>_thumbnail").empty();
 
                   /* テキストフォームに画像の URL を表示 */
-                  $("input:text[name=<?php echo $name; ?>]").val(file.attributes.sizes.full.url);
+                  $("input:text[name='<?php echo $name; ?>']").val(file.attributes.sizes.full.url);
 
                   /* プレビュー用に選択されたサムネイル画像を表示 */
                   $("#<?php echo $name; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" />');
@@ -336,9 +336,9 @@ function genelate_upload_image_tag($name, $value){?>
       });
 
       /* クリアボタンを押した時の処理 */
-      $("input:button[name=<?php echo $name; ?>_clear]").click(function() {
+      $("input:button[name='<?php echo $name; ?>_clear']").click(function() {
 
-          $("input:text[name=<?php echo $name; ?>]").val("");
+          $("input:text[name='<?php echo $name; ?>']").val("");
           $("#<?php echo $name; ?>_thumbnail").empty();
 
       });

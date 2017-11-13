@@ -86,6 +86,8 @@ require_once 'widgets/author-box.php';
 require_once 'widgets/fb-like-box.php';
 //Facebookバルーン
 require_once 'widgets/fb-like-balloon.php';
+//CTAボックス
+require_once 'widgets/cta-box.php';
 
 
 
