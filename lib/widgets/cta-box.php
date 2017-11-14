@@ -107,7 +107,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'cta-left-and-right' => __( '画像・メッセージを左右に配置', THEME_NAME ),
         'cta-right-and-left' => __( 'メッセージ・画像を左右に配置', THEME_NAME ),
       );
-      genelate_selectbox_tag($this->get_field_name('layout'), $options, $layout);
+      generate_selectbox_tag($this->get_field_name('layout'), $options, $layout);
       ?>
     </p>
     <?php //画像 ?>
@@ -117,7 +117,7 @@ class CTABoxWidgetItem extends WP_Widget {
       </label><br>
 
       <?php
-      genelate_upload_image_tag($this->get_field_name('image_url'),$image_url); ?>
+      generate_upload_image_tag($this->get_field_name('image_url'),$image_url); ?>
     </p>
     <?php //メッセージ?>
     <p>
@@ -167,7 +167,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'btn-brown' => __( '茶色', THEME_NAME ),
         'btn-grey' => __( '藍色', THEME_NAME ),
       );
-      genelate_selectbox_tag($this->get_field_name('button_color_class'), $options, $button_color_class);
+      generate_selectbox_tag($this->get_field_name('button_color_class'), $options, $button_color_class);
       ?>
     </p>
     <?php

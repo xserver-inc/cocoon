@@ -25,12 +25,12 @@
         <!-- フォローボタンの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SNS_FOLLOW_BUTTONS_VISIBLE, __( 'フォローボタンの表示', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_FOLLOW_BUTTONS_VISIBLE, __( 'フォローボタンの表示', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag( OP_SNS_FOLLOW_BUTTONS_VISIBLE, is_sns_follow_buttons_visible(), __( '本文下のフォローボタンを表示する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ));
+            generate_checkbox_tag( OP_SNS_FOLLOW_BUTTONS_VISIBLE, is_sns_follow_buttons_visible(), __( '本文下のフォローボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの本文下にあるフォローボタンの表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -38,13 +38,13 @@
         <!-- フォローメッセージ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SNS_FOLLOW_MESSAGE, __( 'フォローメッセージ', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_FOLLOW_MESSAGE, __( 'フォローメッセージ', THEME_NAME )); ?>
           </th>
           <td>
             <?php
             //var_dump(get_sns_follow_message());
-            genelate_textbox_tag(OP_SNS_FOLLOW_MESSAGE, get_sns_follow_message(), __( 'フォローメッセージの入力', THEME_NAME ));
-            genelate_tips_tag(__( '訪問者にフォローを促すメッセージを入力してください。', THEME_NAME ).REP_AUTHOR.__( 'には、投稿者のそれぞれの表示名が入ります。', THEME_NAME ));
+            generate_textbox_tag(OP_SNS_FOLLOW_MESSAGE, get_sns_follow_message(), __( 'フォローメッセージの入力', THEME_NAME ));
+            generate_tips_tag(__( '訪問者にフォローを促すメッセージを入力してください。', THEME_NAME ).REP_AUTHOR.__( 'には、投稿者のそれぞれの表示名が入ります。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -77,12 +77,12 @@
         <!-- feedlyの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, __( 'feedlyの表示', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, __( 'feedlyの表示', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag( OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, is_feedly_follow_button_visible(), __( 'feedlyフォローボタンを表示する', THEME_NAME ));
-            genelate_tips_tag(__( 'feedlyフォローボタンを表示します。', THEME_NAME ));
+            generate_checkbox_tag( OP_FEEDLY_FOLLOW_BUTTON_VISIBLE, is_feedly_follow_button_visible(), __( 'feedlyフォローボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'feedlyフォローボタンを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -90,12 +90,12 @@
         <!-- RSSの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_RSS_FOLLOW_BUTTON_VISIBLE, __( 'RSSの表示', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_RSS_FOLLOW_BUTTON_VISIBLE, __( 'RSSの表示', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag( OP_RSS_FOLLOW_BUTTON_VISIBLE, is_rss_follow_button_visible(), __( 'RSS購読ボタンを表示する', THEME_NAME ));
-            genelate_tips_tag(__( 'RSS購読料のボタンを表示します。', THEME_NAME ));
+            generate_checkbox_tag( OP_RSS_FOLLOW_BUTTON_VISIBLE, is_rss_follow_button_visible(), __( 'RSS購読ボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'RSS購読料のボタンを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -104,7 +104,7 @@
         <!-- ボタンカラー -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SNS_FOLLOW_BUTTON_COLOR, __( 'ボタンカラー', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_FOLLOW_BUTTON_COLOR, __( 'ボタンカラー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
@@ -113,8 +113,8 @@
               'brand_color' => 'ブランドカラー',
               'brand_color_white' => 'ブランドカラー（白抜き）',
             );
-            genelate_selectbox_tag(OP_SNS_FOLLOW_BUTTON_COLOR, $options, get_sns_follow_button_color());
-            genelate_tips_tag(__( 'シェアボタンの配色を選択してください。', THEME_NAME ));
+            generate_selectbox_tag(OP_SNS_FOLLOW_BUTTON_COLOR, $options, get_sns_follow_button_color());
+            generate_tips_tag(__( 'シェアボタンの配色を選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -122,12 +122,12 @@
         <!-- デフォルトユーザー -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SNS_DEFAULT_FOLLOW_USER, __( 'デフォルトユーザー', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_DEFAULT_FOLLOW_USER, __( 'デフォルトユーザー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user());
-            genelate_tips_tag(__( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ));
+            generate_author_list_selectbox_tag(OP_SNS_DEFAULT_FOLLOW_USER, get_sns_default_follow_user());
+            generate_tips_tag(__( '投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。', THEME_NAME ));
              ?>
           </td>
         </tr>

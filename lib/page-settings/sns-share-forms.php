@@ -18,12 +18,12 @@ require_once 'sns-share-forms-bottom.php';
         <!-- メンション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TWITTER_ID_INCLUDE, __( 'メンション', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_TWITTER_ID_INCLUDE, __( 'メンション', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag( OP_TWITTER_ID_INCLUDE, is_twitter_id_include(), __( 'ツイートにメンションを含める', THEME_NAME ));
-            genelate_tips_tag(__( 'シェアされたツイートに著者のTwitter', THEME_NAME ));
+            generate_checkbox_tag( OP_TWITTER_ID_INCLUDE, is_twitter_id_include(), __( 'ツイートにメンションを含める', THEME_NAME ));
+            generate_tips_tag(__( 'シェアされたツイートに著者のTwitter', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -31,12 +31,12 @@ require_once 'sns-share-forms-bottom.php';
         <!-- プロモーション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TWITTER_RELATED_FOLLOW_ENABLE, __( 'プロモーション', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_TWITTER_RELATED_FOLLOW_ENABLE, __( 'プロモーション', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag( OP_TWITTER_RELATED_FOLLOW_ENABLE, is_twitter_related_follow_enable(), __( 'ツイート後にフォローを促す', THEME_NAME ));
-            genelate_tips_tag(__( 'ツイート後に著者のフォローボタンを表示します。', THEME_NAME ));
+            generate_checkbox_tag( OP_TWITTER_RELATED_FOLLOW_ENABLE, is_twitter_related_follow_enable(), __( 'ツイート後にフォローを促す', THEME_NAME ));
+            generate_tips_tag(__( 'ツイート後に著者のフォローボタンを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>

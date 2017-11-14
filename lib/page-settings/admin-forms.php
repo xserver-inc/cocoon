@@ -13,22 +13,22 @@
         <!-- 管理者向け設定  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( '管理者向け設定', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( '管理者向け設定', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
 
             //アドミンバーに独自管理メニューを表示
-            genelate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'アドミンバーに独自管理メニューを表示', THEME_NAME ));
-            genelate_tips_tag(__( '管理者バーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_TOOL_MENU_VISIBLE, is_admin_tool_menu_visible(), __( 'アドミンバーに独自管理メニューを表示', THEME_NAME ));
+            generate_tips_tag(__( '管理者バーに手軽に設定画面にアクセスできるメニューを表示します。', THEME_NAME ));
 
             //ページ公開前に確認アラートを出す
-            genelate_checkbox_tag(OP_CONFIRMATION_BEFORE_PUBLISH, is_confirmation_before_publish(), __( 'ページ公開前に確認アラートを出す', THEME_NAME ));
-            genelate_tips_tag(__( '記事を投稿する前に確認ダイアログを表示します。', THEME_NAME ));
+            generate_checkbox_tag(OP_CONFIRMATION_BEFORE_PUBLISH, is_confirmation_before_publish(), __( 'ページ公開前に確認アラートを出す', THEME_NAME ));
+            generate_tips_tag(__( '記事を投稿する前に確認ダイアログを表示します。', THEME_NAME ));
 
             //タイトル等の文字数カウンター表示
-            genelate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
-            genelate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
+            generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
 
             ?>
 

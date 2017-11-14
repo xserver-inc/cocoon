@@ -13,7 +13,7 @@
         <!-- モバイルボタンレイアウト -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルボタンレイアウト', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルボタンレイアウト', THEME_NAME) ); ?>
           </th>
           <td>
             <div class="col-2">
@@ -25,8 +25,8 @@
                   // 'slidein' => __( 'スライドインメニューボタン', THEME_NAME ),
                   // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
                 );
-                genelate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
-                genelate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。', THEME_NAME ));
+                generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
+                generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。', THEME_NAME ));
                 ?>
               </div>
               <div>

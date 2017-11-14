@@ -422,8 +422,8 @@ function widget_logic_in_widget_form1( $widget, $return, $instance ){
           'hide' => __( 'チェックしたページで非表示', THEME_NAME ),
           'show' => __( 'チェックしたページで表示', THEME_NAME ),
         );
-        genelate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
-        genelate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
+        generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
 
        ?>
       <textarea class="widefat" name="<?php echo $widget->get_field_name('widget_logic'); ?>" id="<?php echo $widget->get_field_id('widget_logic'); ?>"><?php echo esc_textarea( $widget_logic ) ?></textarea>

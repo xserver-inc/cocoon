@@ -1,7 +1,7 @@
 <?php //フッターの最下部のテンプレート ?>
 <div class="footer-bottom<?php echo get_additional_footer_bottom_classes(); ?> cf">
   <div class="footer-bottom-logo">
-    <?php genelate_the_site_logo_tag(false); ?>
+    <?php generate_the_site_logo_tag(false); ?>
   </div>
 
   <div class="footer-bottom-content">

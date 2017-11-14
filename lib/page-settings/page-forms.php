@@ -12,12 +12,12 @@
         <!-- 表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_PAGE_COMMENT_VISIBLE, __('表示', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_PAGE_COMMENT_VISIBLE, __('表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_PAGE_COMMENT_VISIBLE , is_page_comment_visible(), __( 'コメントを表示する', THEME_NAME ));
-            genelate_tips_tag(__( '固定ページページにコメントを表示するか。', THEME_NAME ));
+            generate_checkbox_tag(OP_PAGE_COMMENT_VISIBLE , is_page_comment_visible(), __( 'コメントを表示する', THEME_NAME ));
+            generate_tips_tag(__( '固定ページページにコメントを表示するか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -40,7 +40,7 @@
         <!-- 表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_PAGE_BREADCRUMBS_POSITION, __('パンくずリストの配置', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_PAGE_BREADCRUMBS_POSITION, __('パンくずリストの配置', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -51,8 +51,8 @@
               'main_bottom' => __( 'メインカラムボトム（デフォルト）', THEME_NAME ),
               'footer_before' => __( 'フッター手前', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_PAGE_BREADCRUMBS_POSITION, $options, get_page_breadcrumbs_position());
-            genelate_tips_tag(__( '固定ページのパンくずリスト表示位置を設定します。', THEME_NAME ));
+            generate_radiobox_tag(OP_PAGE_BREADCRUMBS_POSITION, $options, get_page_breadcrumbs_position());
+            generate_tips_tag(__( '固定ページのパンくずリスト表示位置を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>

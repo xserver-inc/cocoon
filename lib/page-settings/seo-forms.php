@@ -13,22 +13,22 @@
         <!-- headタグに挿入  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'headタグに挿入', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'headタグに挿入', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
 
             //canonicalタグ
-            genelate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグの追加', THEME_NAME ));
-            genelate_tips_tag(__( 'Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
+            generate_checkbox_tag(OP_CANONICAL_TAG_ENABLE, is_canonical_tag_enable(), __( 'canonicalタグの追加', THEME_NAME ));
+            generate_tips_tag(__( 'Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。', THEME_NAME ).'<br>'.__( 'この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入されます。', THEME_NAME ));
 
             //prev nextタグ
-            genelate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
-            genelate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。', THEME_NAME ));
+            generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
+            generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。', THEME_NAME ));
 
             //カテゴリページの2ページ目以降をnoindexとする
-            genelate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
-            genelate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+            generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
 
             ?>
           </td>
@@ -52,7 +52,7 @@
         <!-- 検索エンジンに伝える日付  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '検索エンジンに伝える日付', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '検索エンジンに伝える日付', THEME_NAME ) ); ?>
           </th>
           <td>
 
@@ -62,8 +62,8 @@
               'update_date' => __( '更新日', THEME_NAME ),
               'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
-            genelate_tips_tag(__( 'timeタグを付加する日付の設定です。', THEME_NAME ));
+            generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
+            generate_tips_tag(__( 'timeタグを付加する日付の設定です。', THEME_NAME ));
             ?>
           </td>
         </tr>

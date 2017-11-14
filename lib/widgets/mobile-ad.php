@@ -61,9 +61,9 @@ class MobileAdWidgetItem extends WP_Widget {
 <p>
   <?php
     //_V($format);
-    genelate_label_tag($this->get_field_id('ad_format'), __('広告フォーマット（AdSenseコード入力時のみ有効）', THEME_NAME) );
+    generate_label_tag($this->get_field_id('ad_format'), __('広告フォーマット（AdSenseコード入力時のみ有効）', THEME_NAME) );
     $options = MOBILE_WIDGET_DATA_AD_FORMATS;
-    genelate_selectbox_tag($this->get_field_name('ad_format'), $options, $format);
+    generate_selectbox_tag($this->get_field_name('ad_format'), $options, $format);
    ?>
 </p>
 <?php

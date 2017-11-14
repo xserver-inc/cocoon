@@ -32,8 +32,8 @@ function view_ad_custom_box(){
   //   'display' => '表示する',
   //   'nondisplay' => '表示しない',
   // );
-  // genelate_radiobox_tag('the_page_ads_novisible', $options, $the_page_ads_novisible);
-  // genelate_tips_tag(__( 'ページ上の広告（AdSenseなど）をページ上から取り除きます。テーマカスタマイザーの「広告」項目からカテゴリごとの設定も行えます。', THEME_NAME ));
+  // generate_radiobox_tag('the_page_ads_novisible', $options, $the_page_ads_novisible);
+  // generate_tips_tag(__( 'ページ上の広告（AdSenseなど）をページ上から取り除きます。テーマカスタマイザーの「広告」項目からカテゴリごとの設定も行えます。', THEME_NAME ));
 }
 endif;
 

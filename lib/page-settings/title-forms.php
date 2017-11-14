@@ -22,14 +22,14 @@
                 <div class="description"><?php echo get_front_page_meta_description(); ?></div>
               </div>
             </div>
-            <?php genelate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )) ?>
+            <?php generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )) ?>
           </td>
         </tr>
 
         <!-- フロントページタイトル  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_FRONT_PAGE_TITLE_FORMAT, __( 'フロントページタイトル', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_FRONT_PAGE_TITLE_FORMAT, __( 'フロントページタイトル', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -37,8 +37,8 @@
               'sitename' => __( 'サイト名', THEME_NAME ),
               'sitename_tagline' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'キャッチフレーズ', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_FRONT_PAGE_TITLE_FORMAT, $options, get_front_page_title_format());
-            genelate_tips_tag(__( 'フロントページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+            generate_radiobox_tag(OP_FRONT_PAGE_TITLE_FORMAT, $options, get_front_page_title_format());
+            generate_tips_tag(__( 'フロントページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -46,12 +46,12 @@
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_FRONT_PAGE_META_DESCRIPTION, __( 'サイトの説明', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_FRONT_PAGE_META_DESCRIPTION, __( 'サイトの説明', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
-            genelate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。入力しない場合は、メタタグは出力されません。', THEME_NAME ));
+            generate_textbox_tag(OP_FRONT_PAGE_META_DESCRIPTION, get_front_page_meta_description(), __( 'メタディスクリプションを入力', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページで出力するメタディスクリプションタグの内容を入力してください。入力しない場合は、メタタグは出力されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -59,12 +59,12 @@
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_FRONT_PAGE_META_KEYWORDS, __( 'メタキーワード', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_FRONT_PAGE_META_KEYWORDS, __( 'メタキーワード', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_FRONT_PAGE_META_KEYWORDS, get_front_page_meta_keywords(), __( 'キーワード1,キーワード2,キーワード3,...', THEME_NAME ));
-            genelate_tips_tag(__( 'フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
+            generate_textbox_tag(OP_FRONT_PAGE_META_KEYWORDS, get_front_page_meta_keywords(), __( 'キーワード1,キーワード2,キーワード3,...', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -114,15 +114,15 @@
             <?php endif ?>
 
             <?php
-            genelate_tips_tag(__( 'ランダムで投稿を取得しています。', THEME_NAME ));
-            genelate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
+            generate_tips_tag(__( 'ランダムで投稿を取得しています。', THEME_NAME ));
+            generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>
 
         <!-- 投稿・固定ページタイトル  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, __( '投稿・固定ページタイトル', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, __( '投稿・固定ページタイトル', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -131,8 +131,8 @@
               'pagetitle_sitename' => __( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
               'sitename_pagetitle' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, $options, get_singular_page_title_format());
-            genelate_tips_tag(__( '投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+            generate_radiobox_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, $options, get_singular_page_title_format());
+            generate_tips_tag(__( '投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -140,12 +140,12 @@
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_META_DESCRIPTION_TO_SINGULAR, is_meta_description_to_singular(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
+            generate_checkbox_tag(OP_META_DESCRIPTION_TO_SINGULAR, is_meta_description_to_singular(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -153,12 +153,12 @@
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_META_KEYWORDS_TO_SINGULAR, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_KEYWORDS_TO_SINGULAR, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_META_KEYWORDS_TO_SINGULAR, is_meta_keywords_to_singular(), __( 'メタキーワードタグを出力する', THEME_NAME ));
-            genelate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
+            generate_checkbox_tag(OP_META_KEYWORDS_TO_SINGULAR, is_meta_keywords_to_singular(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -212,15 +212,15 @@
             <?php endif ?>
 
             <?php
-            genelate_tips_tag(__( '投稿ページのランダム表示です。', THEME_NAME ));
-            genelate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
+            generate_tips_tag(__( '投稿ページのランダム表示です。', THEME_NAME ));
+            generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>
 
         <!-- カテゴリーページタイトル  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, __( 'カテゴリーページタイトル', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, __( 'カテゴリーページタイトル', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -229,8 +229,8 @@
               'category_sitename' => __( 'ページタイトル', THEME_NAME ).get_title_separator_caption().__( 'サイト名', THEME_NAME ),
               'sitename_category' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
-            genelate_tips_tag(__( 'カテゴリーページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+            generate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
+            generate_tips_tag(__( 'カテゴリーページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -238,12 +238,12 @@
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_META_DESCRIPTION_TO_CATEGORY, is_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
-            genelate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタディスクリプションタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
+            generate_checkbox_tag(OP_META_DESCRIPTION_TO_CATEGORY, is_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタディスクリプションタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -251,12 +251,12 @@
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_META_KEYWORDS_TO_CATEGORY, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_KEYWORDS_TO_CATEGORY, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_META_KEYWORDS_TO_CATEGORY, is_meta_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
-            genelate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            generate_checkbox_tag(OP_META_KEYWORDS_TO_CATEGORY, is_meta_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -280,7 +280,7 @@
         <!-- セパレーター  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_TITLE_SEPARATOR, __( 'セパレーター', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_TITLE_SEPARATOR, __( 'セパレーター', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -288,8 +288,8 @@
               'pipe'   => __( ' | （パイプ）', THEME_NAME ),
               'hyphen' => __( ' - （ハイフン）', THEME_NAME ),
             );
-            genelate_radiobox_tag(OP_TITLE_SEPARATOR, $options, get_title_separator());
-            genelate_tips_tag(__( 'タイトルの区切りとなる文字を設定してください。', THEME_NAME ));
+            generate_radiobox_tag(OP_TITLE_SEPARATOR, $options, get_title_separator());
+            generate_tips_tag(__( 'タイトルの区切りとなる文字を設定してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

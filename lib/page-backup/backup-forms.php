@@ -13,7 +13,7 @@
         <!-- バックアップ  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'バックアップ', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'バックアップ', THEME_NAME ) ); ?>
           </th>
           <td>
             <a href="<?php echo get_template_directory_uri().'/lib/page-backup/backup-download.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
@@ -23,7 +23,7 @@
         <!-- レストア  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag('', __( 'レストア', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'レストア', THEME_NAME ) ); ?>
           </th>
           <td>
             <form enctype="multipart/form-data" action="" method="POST">
@@ -33,7 +33,7 @@
                 <input type="submit" class="button" value="<?php _e( '設定の復元', THEME_NAME ) ?>" />
                 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
                 <?php
-                genelate_tips_tag(__( '参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してください。', THEME_NAME ));
+                generate_tips_tag(__( '参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してください。', THEME_NAME ));
                  ?>
             </form>
           </td>

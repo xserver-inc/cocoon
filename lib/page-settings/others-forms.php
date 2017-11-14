@@ -13,12 +13,12 @@
         <!-- 簡単SSL対応 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_EASY_SSL_ENABLE, __('簡単SSL対応', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_EASY_SSL_ENABLE, __('簡単SSL対応', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_EASY_SSL_ENABLE , is_easy_ssl_enable(), __( '内部URLをSSL対応（簡易版）', THEME_NAME ));
-            genelate_tips_tag(__( 'サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではありません）。', THEME_NAME ));
+            generate_checkbox_tag(OP_EASY_SSL_ENABLE , is_easy_ssl_enable(), __( '内部URLをSSL対応（簡易版）', THEME_NAME ));
+            generate_tips_tag(__( 'サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではありません）。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -18,19 +18,19 @@
             <div class="demo go-to-top" style="">
               <?php get_template_part('tmp/button-go-to-top') ?>
             </div>
-            <?php genelate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
+            <?php generate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
           </td>
         </tr>
 
         <!-- トップへ戻るボタンの表示 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_VISIBLE, __('トップへ戻るボタンの表示', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_GO_TO_TOP_BUTTON_VISIBLE, __('トップへ戻るボタンの表示', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_checkbox_tag(OP_GO_TO_TOP_BUTTON_VISIBLE , is_go_to_top_button_visible(), __( 'トップへ戻るボタンを表示する', THEME_NAME ));
-            genelate_tips_tag(__( 'トップへスクロール移動するボタンを表示するかどうか。', THEME_NAME ));
+            generate_checkbox_tag(OP_GO_TO_TOP_BUTTON_VISIBLE , is_go_to_top_button_visible(), __( 'トップへ戻るボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'トップへスクロール移動するボタンを表示するかどうか。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -38,7 +38,7 @@
         <!-- ボタンのアイコンフォント -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, __('ボタンのアイコンフォント', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, __('ボタンのアイコンフォント', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -55,8 +55,8 @@
               'fa-long-arrow-up' => __( '&#xf176', THEME_NAME ),
               'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
             );
-            genelate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), true);
-            genelate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
+            generate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), true);
+            generate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -64,16 +64,16 @@
         <!-- 色 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
-            <?php genelate_select_colortooltip_tag(); ?>
+            <?php generate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
+            <?php generate_select_colortooltip_tag(); ?>
           </th>
           <td>
             <?php
-            genelate_color_picker_tag(OP_GO_TO_TOP_BACKGROUND_COLOR,  get_go_to_top_background_color(), '背景色');
-            genelate_tips_tag(__( 'ボタンが背景色を設定します。', THEME_NAME ));
+            generate_color_picker_tag(OP_GO_TO_TOP_BACKGROUND_COLOR,  get_go_to_top_background_color(), '背景色');
+            generate_tips_tag(__( 'ボタンが背景色を設定します。', THEME_NAME ));
 
-            genelate_color_picker_tag(OP_GO_TO_TOP_TEXT_COLOR,  get_go_to_top_text_color(), '文字色');
-            genelate_tips_tag(__( 'ボタンの文字色を設定します。', THEME_NAME ));
+            generate_color_picker_tag(OP_GO_TO_TOP_TEXT_COLOR,  get_go_to_top_text_color(), '文字色');
+            generate_tips_tag(__( 'ボタンの文字色を設定します。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -81,12 +81,12 @@
         <!-- ボタン画像 -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, __('ボタン画像', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, __('ボタン画像', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            genelate_upload_image_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, get_go_to_top_button_image_url());
-            genelate_tips_tag(__( 'トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。こちらに画像を設定するとアイコンフォントボタンは表示されません。最大横幅は120pxになります。', THEME_NAME ));
+            generate_upload_image_tag(OP_GO_TO_TOP_BUTTON_IMAGE_URL, get_go_to_top_button_image_url());
+            generate_tips_tag(__( 'トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。こちらに画像を設定するとアイコンフォントボタンは表示されません。最大横幅は120pxになります。', THEME_NAME ));
             ?>
           </td>
         </tr>

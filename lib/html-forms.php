@@ -20,8 +20,8 @@ function get_author_list_selectbox_tag($name, $value){
 endif;
 
 //著者セレクトボックスをの取得
-if ( !function_exists( 'genelate_author_list_selectbox_tag' ) ):
-function genelate_author_list_selectbox_tag($name, $value){
+if ( !function_exists( 'generate_author_list_selectbox_tag' ) ):
+function generate_author_list_selectbox_tag($name, $value){
   echo get_author_list_selectbox_tag($name, $value);
 }
 endif;
@@ -49,8 +49,8 @@ endif;
 
 
 //セレクトボックスの生成
-if ( !function_exists( 'genelate_selectbox_tag' ) ):
-function genelate_selectbox_tag($name, $options, $now_value, $icon_font_visible = false){
+if ( !function_exists( 'generate_selectbox_tag' ) ):
+function generate_selectbox_tag($name, $options, $now_value, $icon_font_visible = false){
 $style = null;
 if ($icon_font_visible) {
   $style = ' style="font-family: FontAwesome;font-size: 20px;text-align: center;"';
@@ -74,8 +74,8 @@ endif;
 
 
 //チェックボックスの生成
-if ( !function_exists( 'genelate_checkbox_tag' ) ):
-function genelate_checkbox_tag($name, $now_value, $label){?>
+if ( !function_exists( 'generate_checkbox_tag' ) ):
+function generate_checkbox_tag($name, $now_value, $label){?>
   <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
   <?php
 }
@@ -83,8 +83,8 @@ endif;
 
 
 //ラジオボックスの生成
-if ( !function_exists( 'genelate_radiobox_tag' ) ):
-function genelate_radiobox_tag($name, $options, $now_value){?>
+if ( !function_exists( 'generate_radiobox_tag' ) ):
+function generate_radiobox_tag($name, $options, $now_value){?>
 <ul>
   <?php foreach ($options as $value => $caption) { ?>
   <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
@@ -96,8 +96,8 @@ endif;
 
 
 //ラベルの生成
-if ( !function_exists( 'genelate_label_tag' ) ):
-function genelate_label_tag($name, $caption){?>
+if ( !function_exists( 'generate_label_tag' ) ):
+function generate_label_tag($name, $caption){?>
   <label for="<?php echo $name; ?>"><?php echo $caption; ?></label>
   <?php
 }
@@ -105,8 +105,8 @@ endif;
 
 
 //説明文の生成
-if ( !function_exists( 'genelate_tips_tag' ) ):
-function genelate_tips_tag($caption){?>
+if ( !function_exists( 'generate_tips_tag' ) ):
+function generate_tips_tag($caption){?>
   <p class="tips"><?php echo $caption; ?></p>
   <?php
 }
@@ -114,16 +114,16 @@ endif;
 
 
 //テキストボックスの生成
-if ( !function_exists( 'genelate_textbox_tag' ) ):
-function genelate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
+if ( !function_exists( 'generate_textbox_tag' ) ):
+function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
   <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>">
   <?php
 }
 endif;
 
 //テキストエリアの生成
-if ( !function_exists( 'genelate_textarea_tag' ) ):
-function genelate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS){?>
+if ( !function_exists( 'generate_textarea_tag' ) ):
+function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS){?>
   <textarea name="<?php echo $name; ?>" placeholder="<?php echo $placeholder; ?>" rows="<?php echo $rows; ?>" cols="<?php echo $cols; ?>"><?php echo $value; ?></textarea>
   <?php
 }
@@ -131,16 +131,16 @@ endif;
 
 
 //ナンバーボックスの生成
-if ( !function_exists( 'genelate_number_tag' ) ):
-function genelate_number_tag($name, $value, $min = 1, $max = 100){?>
+if ( !function_exists( 'generate_number_tag' ) ):
+function generate_number_tag($name, $value, $min = 1, $max = 100){?>
   <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>">
   <?php
 }
 endif;
 
 //サイトロゴの生成
-if ( !function_exists( 'genelate_the_site_logo_tag' ) ):
-function genelate_the_site_logo_tag($is_header = true){
+if ( !function_exists( 'generate_the_site_logo_tag' ) ):
+function generate_the_site_logo_tag($is_header = true){
   $tag = 'div';
   if (!is_singular() && $is_header) {
     $tag = 'h1';
@@ -171,8 +171,8 @@ endif;
 
 
 //ツールチップの生成
-if ( !function_exists( 'genelate_tooltip_tag' ) ):
-function genelate_tooltip_tag($content){?>
+if ( !function_exists( 'generate_tooltip_tag' ) ):
+function generate_tooltip_tag($content){?>
   <span class="tooltip fa fa-exclamation-triangle">
     <span class="tip-content">
       <?php echo $content; ?>
@@ -184,8 +184,8 @@ endif;
 
 
 //カラーピッカーの生成
-if ( !function_exists( 'genelate_color_picker_tag' ) ):
-function genelate_color_picker_tag($name, $value, $label){?>
+if ( !function_exists( 'generate_color_picker_tag' ) ):
+function generate_color_picker_tag($name, $value, $label){?>
   <p><label for="<?php echo $name; ?>"><?php echo $label; ?></label></p>
   <p><input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" ></p>
   <?php wp_enqueue_script( 'wp-color-picker' );
@@ -206,8 +206,8 @@ endif;
 
 
 //メインカラム広告の詳細設定フォーム
-if ( !function_exists( 'genelate_main_column_ad_detail_setting_forms' ) ):
-function genelate_main_column_ad_detail_setting_forms($name, $value, $label_name = null, $label_value = null, $body_ad_name = null, $body_ad_value = null){ ?>
+if ( !function_exists( 'generate_main_column_ad_detail_setting_forms' ) ):
+function generate_main_column_ad_detail_setting_forms($name, $value, $label_name = null, $label_value = null, $body_ad_name = null, $body_ad_value = null){ ?>
  <span class="toggle">
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
@@ -215,18 +215,18 @@ function genelate_main_column_ad_detail_setting_forms($name, $value, $label_name
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
     $options = MAIN_DATA_AD_FORMATS;
-    genelate_selectbox_tag($name, $options, $value);
+    generate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
     if ($label_name) {
       echo '<p>';
-      genelate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
+      generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
       echo '</p>';
     }
 
     //本文中広告用の設定
     if (isset($body_ad_name)){
       echo '<p>';
-      genelate_checkbox_tag( $body_ad_name, $body_ad_value, __( '全てのH2見出し手前に広告を挿入', THEME_NAME ));
+      generate_checkbox_tag( $body_ad_name, $body_ad_value, __( '全てのH2見出し手前に広告を挿入', THEME_NAME ));
       echo '</p>';
     }
     ?>
@@ -238,8 +238,8 @@ function genelate_main_column_ad_detail_setting_forms($name, $value, $label_name
 endif;
 
 //サイドバー広告の詳細設定フォーム
-if ( !function_exists( 'genelate_sidebar_ad_detail_setting_forms' ) ):
-function genelate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $label_value){ ?>
+if ( !function_exists( 'generate_sidebar_ad_detail_setting_forms' ) ):
+function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $label_value){ ?>
  <span class="toggle">
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
@@ -247,10 +247,10 @@ function genelate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
     $options = SIDEBAR_DATA_AD_FORMATS;
-    genelate_selectbox_tag($name, $options, $value);
+    generate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
     echo '<p>';
-    genelate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
+    generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
     echo '</p>';
     ?>
     </div>
@@ -263,8 +263,8 @@ endif;
 
 
 //画像をアップロードボックス生成
-if ( !function_exists( 'genelate_upload_image_tag' ) ):
-function genelate_upload_image_tag($name, $value){?>
+if ( !function_exists( 'generate_upload_image_tag' ) ):
+function generate_upload_image_tag($name, $value){?>
   <input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>" />
   <input type="button" name="<?php echo $name; ?>_select" value="<?php _e( '選択', THEME_NAME ) ?>" />
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
@@ -274,7 +274,7 @@ function genelate_upload_image_tag($name, $value){?>
     <?php endif ?>
   </div>
   <?php if (0/*$value*/): ?>
-    <?php genelate_tips_tag(__( '大きな画像は縮小して表示されます。', THEME_NAME )) ?>
+    <?php generate_tips_tag(__( '大きな画像は縮小して表示されます。', THEME_NAME )) ?>
   <?php endif ?>
 
   <script type="text/javascript">
@@ -353,8 +353,8 @@ endif;
 //カテゴリチェックリストの作成
 //require_once( ABSPATH . '/wp-admin/includes/template.php' );
 //add_shortcode('frontend-category-checklist', 'frontend_category_checklist');
-if ( !function_exists( 'genelate_category_checklist' ) ):
-function genelate_category_checklist( $post_id = 0, $descendants_and_self = 0, $selected_cats = false,
+if ( !function_exists( 'generate_category_checklist' ) ):
+function generate_category_checklist( $post_id = 0, $descendants_and_self = 0, $selected_cats = false,
         $popular_cats = false, $walker = null, $checked_ontop = true) {
     //wp_category_checklist()定義ファイルの呼び出し
     require_once( ABSPATH . '/wp-admin/includes/template.php' ); ?>
@@ -374,8 +374,8 @@ function genelate_category_checklist( $post_id = 0, $descendants_and_self = 0, $
 }
 endif;
 
-if ( !function_exists( 'genelate_hierarchical_category_check_list' ) ):
-function genelate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
+if ( !function_exists( 'generate_hierarchical_category_check_list' ) ):
+function generate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
   if ($width == 0) {
     $width = 'auto';
   } else {

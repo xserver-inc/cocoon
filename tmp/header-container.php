@@ -11,7 +11,7 @@
         } ?>
 
         <?php //ロゴタグの生成
-        genelate_the_site_logo_tag(); ?>
+        generate_the_site_logo_tag(); ?>
 
         <?php //キャッチフレーズがヘッダー下部のとき
         if (is_tagline_position_header_bottom()) {

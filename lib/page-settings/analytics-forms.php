@@ -13,12 +13,12 @@
         <!-- Google Tag ManagerトラッキングID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, __( 'Google Tag Manager ID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, __( 'Google Tag Manager ID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, get_google_tag_manager_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
-            genelate_tips_tag(__( 'Google Tag ManagerのトラッキングIDを入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, get_google_tag_manager_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
+            generate_tips_tag(__( 'Google Tag ManagerのトラッキングIDを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -42,12 +42,12 @@
         <!-- Google AnalyticsトラッキングID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, __( 'Google AnalyticsトラッキングID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, __( 'Google AnalyticsトラッキングID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
-            genelate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
+            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -72,12 +72,12 @@
         <!-- Google Search Console ID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_GOOGLE_SEARCH_CONSOLE_ID, __( 'Google Search Console ID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_SEARCH_CONSOLE_ID, __( 'Google Search Console ID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_GOOGLE_SEARCH_CONSOLE_ID, get_google_search_console_id(), __( 'サイト認証IDのみ入力', THEME_NAME ));
-            genelate_tips_tag(__( 'Google Search Consoleのサイト認証IDを入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_GOOGLE_SEARCH_CONSOLE_ID, get_google_search_console_id(), __( 'サイト認証IDのみ入力', THEME_NAME ));
+            generate_tips_tag(__( 'Google Search Consoleのサイト認証IDを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -102,12 +102,12 @@
         <!-- PtengineのトラッキングID -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_PTENGINE_TRACKING_ID, __( 'PtengineのトラッキングID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_PTENGINE_TRACKING_ID, __( 'PtengineのトラッキングID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textbox_tag(OP_PTENGINE_TRACKING_ID, get_ptengine_tracking_id(), __( 'PtengineのトラッキングIDのみ入力', THEME_NAME ));
-            genelate_tips_tag(__( 'PtengineのトラッキングIDを入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_PTENGINE_TRACKING_ID, get_ptengine_tracking_id(), __( 'PtengineのトラッキングIDのみ入力', THEME_NAME ));
+            generate_tips_tag(__( 'PtengineのトラッキングIDを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -132,12 +132,12 @@
         <!-- アクセス解析ヘッダータグ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, __( 'アクセス解析タグ（ヘッダー用）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, __( 'アクセス解析タグ（ヘッダー用）', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textarea_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, get_other_analytics_header_tags(), __( 'ヘッダー用のアクセス解析タグの入力', THEME_NAME )) ;
-            genelate_tips_tag(__( 'ヘッダーに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_textarea_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, get_other_analytics_header_tags(), __( 'ヘッダー用のアクセス解析タグの入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'ヘッダーに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -145,12 +145,12 @@
         <!-- アクセス解析フッタータグ -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, __( 'アクセス解析タグ（フッター用）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, __( 'アクセス解析タグ（フッター用）', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            genelate_textarea_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, get_other_analytics_footer_tags(), __( 'フッター用のアクセス解析タグの入力', THEME_NAME )) ;
-            genelate_tips_tag(__( 'フッターに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_textarea_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, get_other_analytics_footer_tags(), __( 'フッター用のアクセス解析タグの入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'フッターに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

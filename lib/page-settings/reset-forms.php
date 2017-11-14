@@ -13,15 +13,15 @@
         <!-- リセット  -->
         <tr>
           <th scope="row">
-            <?php genelate_label_tag(OP_RESET_ALL_SETTINGS, __( 'リセット', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_RESET_ALL_SETTINGS, __( 'リセット', THEME_NAME ) ); ?>
           </th>
           <td>
             <!-- <input name="reset_all_settings111" value="1" type="checkbox"> -->
             <?php
-            genelate_checkbox_tag(OP_RESET_ALL_SETTINGS , 0, __( '全ての設定をリセットする', THEME_NAME ));
-            genelate_tips_tag(__( 'テーマ設定をデフォルト状態に戻します。チェックをつけて設定の保存を行ってください。', THEME_NAME ));
-            genelate_checkbox_tag(OP_CONFIRM_RESET_ALL_SETTINGS , 0, __( 'リセット動作の確認', THEME_NAME ));
-            genelate_tips_tag(__( '誤って設定を削除するのを防ぐために確認のためもう一度チェックしてください。', THEME_NAME ));
+            generate_checkbox_tag(OP_RESET_ALL_SETTINGS , 0, __( '全ての設定をリセットする', THEME_NAME ));
+            generate_tips_tag(__( 'テーマ設定をデフォルト状態に戻します。チェックをつけて設定の保存を行ってください。', THEME_NAME ));
+            generate_checkbox_tag(OP_CONFIRM_RESET_ALL_SETTINGS , 0, __( 'リセット動作の確認', THEME_NAME ));
+            generate_tips_tag(__( '誤って設定を削除するのを防ぐために確認のためもう一度チェックしてください。', THEME_NAME ));
             ?>
           </td>
         </tr>
