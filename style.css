@@ -2500,6 +2500,9 @@ input[type='submit'] {
   float: none;
   margin: 0;
 }
+.sidebar .author-description {
+  font-size: 0.84em;
+}
 
 .fb-like-box {
   background-color: #333;
@@ -4065,6 +4068,10 @@ div.fb-like-mobile {
   .author-content {
     float: none;
     margin: 0;
+  }
+
+  .author-description {
+    font-size: 0.84em;
   }
 }
 @media print {

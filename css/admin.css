@@ -1921,6 +1921,8 @@
   .demo .sidebar .author-content {
     float: none;
     margin: 0; }
+  .demo .sidebar .author-description {
+    font-size: 0.84em; }
   .demo .fb-like-box {
     background-color: #333;
     color: #fff;
@@ -2916,7 +2918,9 @@
         text-align: center; }
       .demo .author-content {
         float: none;
-        margin: 0; } }
+        margin: 0; }
+      .demo .author-description {
+        font-size: 0.84em; } }
   @media print {
     .demo {
       /************************************
