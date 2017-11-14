@@ -36,10 +36,13 @@ class PcTextWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title_pc_text'] = strip_tags($new_instance['title_pc_text']);
-    $instance['text_pc_text'] = $new_instance['text_pc_text'];
-    $instance['filter'] = !empty( $new_instance['filter'] );
-      return $instance;
+    if (isset($new_instance['title_pc_text']))
+      $instance['title_pc_text'] = strip_tags($new_instance['title_pc_text']);
+    if (isset($new_instance['title_pc_text']))
+      $instance['text_pc_text'] = $new_instance['text_pc_text'];
+    if (isset($new_instance['filter']))
+      $instance['filter'] = !empty( $new_instance['filter'] );
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避
@@ -49,9 +52,9 @@ class PcTextWidgetItem extends WP_Widget {
         'filter' => null,
       );
     }
-    $title = esc_attr($instance['title_pc_text']);
-    $text = esc_attr($instance['text_pc_text']);
-    $filter = esc_attr($instance['filter']);
+    $title = esc_attr(!empty($instance['title_pc_text']) ? $instance['title_pc_text'] : '');
+    $text = esc_attr(!empty($instance['text_pc_text']) ? $instance['text_pc_text'] : '');
+    $filter = esc_attr(!empty($instance['filter']) ? $instance['filter'] : '');
     ?>
     <?php //タイトル入力フォーム ?>
     <p>

@@ -46,9 +46,9 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
         'facebook_url' => null,
       );
     }
-    $title = esc_attr($instance['title_facebook_page_like']);
-    $text = esc_attr($instance['text_facebook_page_like']);
-    $facebook_url = esc_attr($instance['facebook_url']);
+    $title = esc_attr(!empty($instance['title_facebook_page_like']) ? $instance['title_facebook_page_like'] : '');
+    $text = esc_attr(!empty($instance['text_facebook_page_like']) ? $instance['text_facebook_page_like'] : '');
+    $facebook_url = esc_attr(!empty($instance['facebook_url']) ? $instance['facebook_url'] : '');
     ?>
     <?php //タイトル入力フォーム ?>
     <p>

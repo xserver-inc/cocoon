@@ -36,10 +36,13 @@ class MobileTextWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title_mobile_text'] = strip_tags($new_instance['title_mobile_text']);
-    $instance['text_mobile_text'] = $new_instance['text_mobile_text'];
-    $instance['filter'] = ! empty( $new_instance['filter'] );
-      return $instance;
+    if (isset($new_instance['title_mobile_text']))
+      $instance['title_mobile_text'] = strip_tags($new_instance['title_mobile_text']);
+    if (isset($new_instance['text_mobile_text']))
+      $instance['text_mobile_text'] = $new_instance['text_mobile_text'];
+    $instance['filter'] = !empty( $new_instance['filter'] );
+
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避
@@ -49,9 +52,9 @@ class MobileTextWidgetItem extends WP_Widget {
         'filter' => null,
       );
     }
-    $title = esc_attr($instance['title_mobile_text']);
-    $text = esc_attr($instance['text_mobile_text']);
-    $filter = esc_attr($instance['filter']);
+    $title = esc_attr(!empty($instance['title_mobile_text']) ? $instance['title_mobile_text'] : '');
+    $text = esc_attr(!empty($instance['text_mobile_text']) ? $instance['text_mobile_text'] : '');
+    $filter = esc_attr(!empty($instance['filter']) ? $instance['filter'] : 0);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
