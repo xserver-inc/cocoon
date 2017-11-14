@@ -74,7 +74,10 @@ class FBLikeBoxWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('message'); ?>">
         <?php _e( 'メッセージ', THEME_NAME ) ?>
       </label>
+      <?php if (0): ?>
       <input class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" type="text" value="<?php echo $message; ?>" placeholder="<?php _e( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME ) ?>" />
+      <?php endif ?>
+      <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="4" placeholder="<?php _e( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME ) ?>"><?php echo $message; ?></textarea>
     </p>
     <?php //サブメッセージ ?>
     <p>
