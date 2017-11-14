@@ -374,6 +374,48 @@ function generate_category_checklist( $post_id = 0, $descendants_and_self = 0, $
 }
 endif;
 
+// if ( !function_exists( 'get_hierarchical_category_check_list_box' ) ):
+// function get_hierarchical_category_check_list_box( $cat, $name, $checks, $width = 0 ) {
+//   if ($width == 0) {
+//     $width = 'auto';
+//   } else {
+//     $width = $width.'px';
+//   }
+//   $res = '';
+//   $res .= '<div class="category-check-list '.$name.'-list" style="width: '.$width.';">';
+//   $res .= get_hierarchical_category_check_list( $cat, $name, $checks );
+//   $res .= '</div>';
+//   return $res;
+// }
+// endif;
+
+// if ( !function_exists( 'get_hierarchical_category_check_list' ) ):
+// function get_hierarchical_category_check_list( $cat, $name, $checks ) {
+//     // wpse-41548 // alchymyth // a hierarchical list of all categories //
+
+//   $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
+//   $res = '';
+//   if( $next ) :
+//     foreach( $next as $cat ) :
+//       $checked = '';
+//       if (is_string($checks)) {
+//         $checks = array();
+//       }
+//       if (in_array($cat->term_id, $checks)) {
+//         $checked = ' checked="checked"';
+//       }
+//      $res .= '<ul><li><input type="checkbox" name="'.$name.'[]" value="'.$cat->term_id.'"'.$checked.'>' . $cat->name . '';
+//       $res .= get_hierarchical_category_check_list( $cat->term_id, $name, $checks );
+//     endforeach;
+//   endif;
+
+//   $res .= '</li></ul>'; echo "\n";
+//   return $res;
+// }
+// endif;
+
+
+
 if ( !function_exists( 'generate_hierarchical_category_check_list' ) ):
 function generate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
   if ($width == 0) {

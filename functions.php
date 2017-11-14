@@ -403,8 +403,11 @@ function widget_logic_in_widget_form1( $widget, $return, $instance ){
   $widget_action_def = 'hide';
   $widget_categories_def = array();
   if ($info) {
-    if ($info['widget_action']) {
+    if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
+    }
+    if (isset($info['widget_categories'])) {
+      $widget_categories_def = $info['widget_categories'];
     }
   }
 
@@ -423,6 +426,7 @@ function widget_logic_in_widget_form1( $widget, $return, $instance ){
           'show' => __( 'チェックしたページで表示', THEME_NAME ),
         );
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
 
        ?>
@@ -440,6 +444,9 @@ function widget_logic_update_callback1( $instance, $new_instance, $old_instance,
     $instance['widget_logic'] = $new_instance['widget_logic'];
   if ( isset( $new_instance['widget_action'] ) )
     $instance['widget_action'] = $new_instance['widget_action'];
+  if ( isset( $new_instance['widget_categories'] ) )
+    $instance['widget_categories'] = $new_instance['widget_categories'];
+
 
   return $instance;
 }
