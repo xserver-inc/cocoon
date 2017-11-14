@@ -845,7 +845,7 @@ img {
 ** パンくずリスト
 ************************************/
 .breadcrumb {
-  margin-top: 1em;
+  margin-top: 20px;
   margin-bottom: 1em;
   color: #777879;
   font-size: 13px;
@@ -2765,12 +2765,55 @@ div.fb-like-mobile {
   font-weight: bold;
 }
 
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.cta-content div {
+  width: 100%;
+}
+
+.cta-left-and-right .cta-content,
+.cta-right-and-left .cta-content {
+  flex-direction: row;
+}
+.cta-left-and-right .cta-content div,
+.cta-right-and-left .cta-content div {
+  width: 49%;
+}
+.cta-left-and-right .cta-content .cta-message p:first-child,
+.cta-right-and-left .cta-content .cta-message p:first-child {
+  margin-top: 0;
+}
+
+.cta-right-and-left .cta-content {
+  flex-direction: row-reverse;
+}
+
 .cta-thumb {
   text-align: center;
 }
 
 .cta-button {
   margin-top: 2em;
+}
+
+.sidebar .cta-box {
+  font-size: 0.8em;
+}
+.sidebar .cta-heading {
+  font-size: 20px;
+  padding: 8px;
+}
+.sidebar .cta-left-and-right .cta-content,
+.sidebar .cta-right-and-left .cta-content {
+  flex-direction: column;
+}
+.sidebar .cta-left-and-right .cta-content div,
+.sidebar .cta-right-and-left .cta-content div {
+  width: 100%;
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -3139,12 +3182,12 @@ div.fb-like-mobile {
 }
 
 .btn-m {
-  padding: 16px 45px;
+  padding: 14px 45px;
   font-size: 16px;
 }
 
 .btn-l {
-  padding: 24px 0;
+  padding: 20px 0;
   font-size: 18px;
   display: block;
 }

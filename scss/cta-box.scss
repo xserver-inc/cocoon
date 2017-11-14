@@ -14,10 +14,68 @@
   font-weight: bold;
 }
 
+.cta-content{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  div{
+    width: 100%;
+  }
+}
+
+.cta-left-and-right,
+.cta-right-and-left {
+  .cta-content{
+    flex-direction: row;
+    div{
+      width: 49%;
+    }
+
+    .cta-message{
+      p:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.cta-right-and-left {
+  .cta-content{
+    flex-direction: row-reverse;
+  }
+}
+
 .cta-thumb{
   text-align: center;
 }
 
 .cta-button{
   margin-top: 2em;
+}
+
+///////////////////////////////////////
+// サイドバー
+///////////////////////////////////////
+.sidebar{
+  .cta-box{
+    font-size: 0.8em;
+  }
+  .cta-heading{
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .cta-left-and-right,
+  .cta-right-and-left {
+    .cta-content{
+      flex-direction: column;
+
+      div{
+        width: 100%;
+      }
+    }
+  }
+
+
 }

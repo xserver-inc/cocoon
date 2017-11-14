@@ -16,13 +16,17 @@ class CTABoxWidgetItem extends WP_Widget {
     //タイトル名を取得
     $title = !empty($instance['title']) ? $instance['title'] : '';
     $heading = !empty($instance['heading']) ? $instance['heading'] : '';
+    $layout = !empty( $instance['layout'] ) ? $instance['layout'] : '';
     $image_url = !empty($instance['image_url']) ? $instance['image_url'] : '';
     $message = !empty( $instance['message'] ) ? $instance['message'] : '';
-    $layout = !empty( $instance['layout'] ) ? $instance['layout'] : '';
-    $button_text = !empty( $instance['button_text'] ) ? $instance['button_text'] : '';
+    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : null;
+    $button_text = !empty( $instance['button_text'] ) ? $instance['button_text'] : __( '詳細はこちら', THEME_NAME );
     $button_url = !empty( $instance['button_url'] ) ? $instance['button_url'] : '';
     $button_color_class = !empty( $instance['button_color_class'] ) ? $instance['button_color_class'] : 'btn-red';
 
+    if ($filter) {
+      $message = wpautop($message);
+    }
 
     echo $args['before_widget'];
     if ($title) {
@@ -45,9 +49,10 @@ class CTABoxWidgetItem extends WP_Widget {
     $instance = $old_instance;
     $instance['title'] = strip_tags(!empty($new_instance['title']) ? $new_instance['title'] : '');
     $instance['heading'] = strip_tags(!empty($new_instance['heading']) ? $new_instance['heading'] : '');
+    $instance['layout'] = strip_tags(!empty( $new_instance['layout'] ) ? $new_instance['layout'] : '');
     $instance['image_url'] = strip_tags(!empty( $new_instance['image_url'] ) ? $new_instance['image_url'] : '');
     $instance['message'] = !empty( $new_instance['message'] ) ? $new_instance['message'] : '';
-    $instance['layout'] = strip_tags(!empty( $new_instance['layout'] ) ? $new_instance['layout'] : '');
+    $instance['filter'] = !empty( $new_instance['filter'] ) ;
     $instance['button_text'] = strip_tags(!empty($new_instance['button_text']) ? $new_instance['button_text'] : '');
     $instance['button_url'] = strip_tags(!empty($new_instance['button_url']) ? $new_instance['button_url'] : '');
     $instance['button_color_class'] = strip_tags(!empty($new_instance['button_color_class']) ? $new_instance['button_color_class'] : '');
@@ -58,22 +63,24 @@ class CTABoxWidgetItem extends WP_Widget {
       $instance = array(
         'title' => null,
         'heading' => null,
+        'layout' => null,
         'image_url' => null,
         'message' => null,
-        'layout' => null,
+        'filter' => null,
         'button_text' => null,
         'button_url' => null,
         'button_color_class' => 'btn-red',
       );
     }
-    $title = esc_attr(isset($instance['title']) ? $instance['title'] : null);
-    $heading = esc_attr(isset($instance['heading']) ? $instance['heading'] : null);
-    $image_url = esc_attr(isset($instance['image_url']) ? $instance['image_url'] : null);
-    $message = esc_attr(isset($instance['message']) ? $instance['message'] : null);
-    $layout = esc_attr(isset($instance['layout']) ? $instance['layout'] : null);
-    $button_text = esc_attr(isset($instance['button_text']) ? $instance['button_text'] : null);
-    $button_url = esc_attr(isset($instance['button_url']) ? $instance['button_url'] : null);
-    $button_color_class = esc_attr(isset($instance['button_color_class']) ? $instance['button_color_class'] : null);
+    $title = esc_attr(!empty($instance['title']) ? $instance['title'] : null);
+    $heading = esc_attr(!empty($instance['heading']) ? $instance['heading'] : null);
+    $layout = esc_attr(!empty($instance['layout']) ? $instance['layout'] : null);
+    $image_url = esc_attr(!empty($instance['image_url']) ? $instance['image_url'] : null);
+    $message = esc_attr(!empty($instance['message']) ? $instance['message'] : null);
+    $filter = esc_attr(!empty($instance['filter']) ? $instance['filter'] : 0);
+    $button_text = esc_attr(!empty($instance['button_text']) ? $instance['button_text'] : null);
+    $button_url = esc_attr(!empty($instance['button_url']) ? $instance['button_url'] : null);
+    $button_color_class = esc_attr(!empty($instance['button_color_class']) ? $instance['button_color_class'] : null);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -88,6 +95,20 @@ class CTABoxWidgetItem extends WP_Widget {
         <?php _e( 'CTA見出し', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('heading'); ?>" name="<?php echo $this->get_field_name('heading'); ?>" type="text" value="<?php echo $heading; ?>" />
+    </p>
+    <?php //レイアウト?>
+    <p>
+      <label for="<?php echo $this->get_field_id('layout'); ?>">
+        <?php _e( '画像とメッセージのレイアウト（サイドバー以外）', THEME_NAME ) ?>
+      </label><br>
+      <?php
+      $options = array(
+        'cta-top-and-bottom' => __( '画像・メッセージを上下に配置', THEME_NAME ),
+        'cta-left-and-right' => __( '画像・メッセージを左右に配置', THEME_NAME ),
+        'cta-right-and-left' => __( 'メッセージ・画像を左右に配置', THEME_NAME ),
+      );
+      genelate_selectbox_tag($this->get_field_name('layout'), $options, $layout);
+      ?>
     </p>
     <?php //画像 ?>
     <p>
@@ -104,20 +125,7 @@ class CTABoxWidgetItem extends WP_Widget {
         <?php _e( 'CTAメッセージ', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" cols="20" rows="6"><?php echo $message; ?></textarea>
-    </p>
-    <?php //レイアウト?>
-    <p>
-      <label for="<?php echo $this->get_field_id('layout'); ?>">
-        <?php _e( '画像とメッセージのレイアウト', THEME_NAME ) ?>
-      </label><br>
-      <?php
-      $options = array(
-        'top_and_bottom' => __( '画像・メッセージを上下に配置', THEME_NAME ),
-        'left_and_right' => __( '画像・メッセージを左右に配置', THEME_NAME ),
-        'right_and_left' => __( 'メッセージ・画像を左右に配置', THEME_NAME ),
-      );
-      genelate_selectbox_tag($this->get_field_name('layout'), $options, $layout);
-      ?>
+      <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter );//_v($filter) ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
     </p>
     <?php //ボタンテキスト ?>
     <p>

@@ -55,12 +55,12 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         'line_id' => null,
       );
     }
-    $title = esc_attr(isset($instance['title']) ? $instance['title'] : null);
-    $message = esc_attr(isset($instance['message']) ? $instance['message'] : null);
-    $sub_message = esc_attr(isset($instance['sub_message']) ? $instance['sub_message'] : null);
-    $facebook_url = esc_attr(isset($instance['facebook_url']) ? $instance['facebook_url'] : null);
-    $twitter_id = esc_attr(isset($instance['twitter_id']) ? $instance['twitter_id'] : null);
-    $line_id = esc_attr(isset($instance['line_id']) ? $instance['line_id'] : null);
+    $title = esc_attr(!empty($instance['title']) ? $instance['title'] : null);
+    $message = esc_attr(!empty($instance['message']) ? $instance['message'] : null);
+    $sub_message = esc_attr(!empty($instance['sub_message']) ? $instance['sub_message'] : null);
+    $facebook_url = esc_attr(!empty($instance['facebook_url']) ? $instance['facebook_url'] : null);
+    $twitter_id = esc_attr(!empty($instance['twitter_id']) ? $instance['twitter_id'] : null);
+    $line_id = esc_attr(!empty($instance['line_id']) ? $instance['line_id'] : null);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>

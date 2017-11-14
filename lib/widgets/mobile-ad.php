@@ -47,8 +47,8 @@ class MobileAdWidgetItem extends WP_Widget {
         'ad_format' => 'none',
       );
     }
-    $ad = esc_attr(isset($instance['ad_text']) ? $instance['ad_text'] : '');
-    $format = esc_attr(isset($instance['ad_format']) ? $instance['ad_format'] : 'none');
+    $ad = esc_attr(!empty($instance['ad_text']) ? $instance['ad_text'] : '');
+    $format = esc_attr(!empty($instance['ad_format']) ? $instance['ad_format'] : 'none');
 ?>
 <?php //広告入力フォーム ?>
 <p>

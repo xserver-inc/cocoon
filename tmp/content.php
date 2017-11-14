@@ -4,26 +4,6 @@
     while ( have_posts() ) {
       the_post();?>
 
-      <div class="cta-box">
-        <div class="cta-heading">
-          Call to Action見出し
-        </div>
-        <div class="cta-content">
-          <div class="cta-thumb">
-            <img src="http://cocoon.dev/wp-content/uploads/2017/09/cup.jpeg" alt="cup.jpeg (JPEG 画像, 1260x681 px)" />
-          </div>
-          <div class="cta-message">
-            <p>すると作成済みのCTAのタイトルが表示されるので選択しよう。最後に更新内容を保存しないとCTAは反映されないので、ページ上部の「更新」ボタンを忘れずにクリックしよう。これでCTAが表示される。
-２−２．各記事に独自のCTAを設定する</p>
-            <p>CTA設定にはもう一つ、記事に直接 CTA を作成して設置することができる。</p>
-            <p>下図の通り先ほどの項目にある「このページ独自のCTAを作る」を選択するとCTAの入力欄が表示される。ここは上記で解説した「１．CTAの作り方」と同じように入力すると良い。</p>
-          </div>
-        </div>
-        <div class="cta-button">
-          <a href="#" class="btn btn-red btn-l">ボタンテスト</a>
-        </div>
-      </div>
-
       <?php //タイトル上の広告表示
       if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
         get_template_part_with_ad_format(get_ad_pos_above_title_format(), 'ad-above-title', is_ad_pos_above_title_label_visible());
