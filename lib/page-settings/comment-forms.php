@@ -10,6 +10,7 @@
 
     <table class="form-table">
       <tbody>
+        <?php if (0): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -22,6 +23,8 @@
             <?php genelate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif ?>
+
 
         <!-- コメント一覧見出し -->
         <tr>
