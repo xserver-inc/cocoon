@@ -255,7 +255,7 @@ $bgc_hover_anime: all 0.3s ease 0s;
 ///////////////////////////////////////
 // CTAボックス
 ///////////////////////////////////////
-@mixin cta_box{
+@mixin cta_box_nallow{
   .cta-box{
     font-size: 0.8em;
   }
