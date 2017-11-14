@@ -51,31 +51,12 @@
 }
 
 .cta-button{
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 ///////////////////////////////////////
 // サイドバー
 ///////////////////////////////////////
 .sidebar{
-  .cta-box{
-    font-size: 0.8em;
-  }
-  .cta-heading{
-    font-size: 20px;
-    padding: 8px;
-  }
-
-  .cta-left-and-right,
-  .cta-right-and-left {
-    .cta-content{
-      flex-direction: column;
-
-      div{
-        width: 100%;
-      }
-    }
-  }
-
-
+  @include cta_box;
 }

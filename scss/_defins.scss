@@ -247,3 +247,34 @@ $bgc_hover_anime: all 0.3s ease 0s;
     }
   }
 }
+
+///////////////////////////////////////
+// CTAボックス
+///////////////////////////////////////
+@mixin cta_box{
+  .cta-box{
+    font-size: 0.8em;
+  }
+  .cta-heading{
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .cta-left-and-right,
+  .cta-right-and-left {
+    .cta-content{
+      flex-direction: column;
+
+      div{
+        width: 100%;
+      }
+    }
+  }
+
+  .cta-button{
+    .btn-l{
+      padding: 1em;
+      font-size: 16px;
+    }
+  }
+}

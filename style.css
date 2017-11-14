@@ -2797,7 +2797,7 @@ div.fb-like-mobile {
 }
 
 .cta-button {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .sidebar .cta-box {
@@ -2814,6 +2814,10 @@ div.fb-like-mobile {
 .sidebar .cta-left-and-right .cta-content div,
 .sidebar .cta-right-and-left .cta-content div {
   width: 100%;
+}
+.sidebar .cta-button .btn-l {
+  padding: 1em;
+  font-size: 16px;
 }
 
 /*拡張クラスを追加するスタイルシート*/
@@ -3924,6 +3928,29 @@ div.fb-like-mobile {
 
   .fb-like-thumb {
     display: none;
+  }
+
+  .cta-box {
+    font-size: 0.8em;
+  }
+
+  .cta-heading {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .cta-left-and-right .cta-content,
+  .cta-right-and-left .cta-content {
+    flex-direction: column;
+  }
+  .cta-left-and-right .cta-content div,
+  .cta-right-and-left .cta-content div {
+    width: 100%;
+  }
+
+  .cta-button .btn-l {
+    padding: 1em;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
