@@ -845,7 +845,8 @@ img {
 ** パンくずリスト
 ************************************/
 .breadcrumb {
-  margin-top: 20px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   color: #777879;
   font-size: 13px;
 }

@@ -1,6 +1,6 @@
 <?php //カテゴリ用のパンくずリスト
-if (is_single_breadcrumbs_visible()):
-$cat = is_single() ? get_the_category() : array(get_category($cat));
+if (is_single_breadcrumbs_visible() && is_single()):
+$cat = get_the_category();
 if($cat && !is_wp_error($cat)){
   $echo = null;
   $par = get_category($cat[0]->parent);
