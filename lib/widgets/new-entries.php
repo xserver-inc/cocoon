@@ -7,7 +7,8 @@ class NewEntryWidgetItem extends WP_Widget {
     parent::__construct(
       'new_entries',
       WIDGET_NAME_PREFIX.__( '新着記事', THEME_NAME ),
-      array('description' => __( '新着記事リストをサムネイルつきで表示するウィジェットです。', THEME_NAME ))
+      array('description' => __( '新着記事リストをサムネイルつきで表示するウィジェットです。', THEME_NAME )),
+      array( 'width' => 400, 'height' => 350 )
     );//ウイジェット名
   }
   function widget($args, $instance) {

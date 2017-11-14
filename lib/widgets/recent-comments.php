@@ -7,7 +7,8 @@ class RecentCommentsWidgetItem extends WP_Widget {
      parent::__construct(
       'recent_comments',
       WIDGET_NAME_PREFIX.__( '最近のコメント', THEME_NAME ),//ウイジェット名
-      array('description' => __( '最近投稿されたコメントを表示するウィジェットです。', THEME_NAME ))
+      array('description' => __( '最近投稿されたコメントを表示するウィジェットです。', THEME_NAME )),
+      array( 'width' => 400, 'height' => 350 )
     );
   }
   function widget($args, $instance) {

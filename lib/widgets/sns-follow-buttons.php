@@ -7,7 +7,8 @@ class SocialFollowWidgetItem extends WP_Widget {
     parent::__construct(
       'sns_follow_buttons',
       WIDGET_NAME_PREFIX.__( 'SNSフォローボタン', THEME_NAME ),
-      array('description' => __( 'SNSサービスのフォローアイコンボタンを表示するウィジェットです。', THEME_NAME ))
+      array('description' => __( 'SNSサービスのフォローアイコンボタンを表示するウィジェットです。', THEME_NAME )),
+      array( 'width' => 400, 'height' => 350 )
     );
   }
   function widget($args, $instance) {
