@@ -17,6 +17,10 @@ class MobileTextWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title_mobile_text', $instance['title_mobile_text'] );
     $widget_text = isset( $instance['text_mobile_text'] ) ? $instance['text_mobile_text'] : '';
     $text = apply_filters( 'widget_text_mobile_text', $widget_text, $instance, $this );
+    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : 0;
+    if ($filter) {
+      $text = wpautop($text);
+    }
 
     if ( !is_404() ): //404ページでないとき
       echo $args['before_widget'];
@@ -34,6 +38,7 @@ class MobileTextWidgetItem extends WP_Widget {
     $instance = $old_instance;
     $instance['title_mobile_text'] = strip_tags($new_instance['title_mobile_text']);
     $instance['text_mobile_text'] = $new_instance['text_mobile_text'];
+    $instance['filter'] = ! empty( $new_instance['filter'] );
       return $instance;
   }
   function form($instance) {
@@ -41,10 +46,12 @@ class MobileTextWidgetItem extends WP_Widget {
       $instance = array(
         'title_mobile_text' => null,
         'text_mobile_text' => null,
+        'filter' => null,
       );
     }
     $title = esc_attr($instance['title_mobile_text']);
     $text = esc_attr($instance['text_mobile_text']);
+    $filter = esc_attr($instance['filter']);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -59,6 +66,7 @@ class MobileTextWidgetItem extends WP_Widget {
       <?php _e( 'テキスト', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('text_mobile_text'); ?>" name="<?php echo $this->get_field_name('text_mobile_text'); ?>" cols="20" rows="16"><?php echo $text; ?></textarea>
+      <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter );//_v($filter) ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
     </p>
     <?php
   }

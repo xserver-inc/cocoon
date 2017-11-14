@@ -19,7 +19,7 @@ class CTABoxWidgetItem extends WP_Widget {
     $layout = !empty( $instance['layout'] ) ? $instance['layout'] : '';
     $image_url = !empty($instance['image_url']) ? $instance['image_url'] : '';
     $message = !empty( $instance['message'] ) ? $instance['message'] : '';
-    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : null;
+    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : 0;
     $button_text = !empty( $instance['button_text'] ) ? $instance['button_text'] : __( '詳細はこちら', THEME_NAME );
     $button_url = !empty( $instance['button_url'] ) ? $instance['button_url'] : '';
     $button_color_class = !empty( $instance['button_color_class'] ) ? $instance['button_color_class'] : 'btn-red';

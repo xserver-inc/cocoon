@@ -17,6 +17,10 @@ class PcTextWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title_pc_text', empty($instance['title_pc_text']) ? "" : $instance['title_pc_text'] );
     $widget_text = isset( $instance['text_pc_text'] ) ? $instance['text_pc_text'] : '';
     $text = apply_filters( 'widget_text_pc_text', $widget_text, $instance, $this );
+    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : 0;
+    if ($filter) {
+      $text = wpautop($text);
+    }
 
     if ( !is_404() ): //パソコン表示かつ404ページでないとき
       echo $args['before_widget'];
@@ -34,6 +38,7 @@ class PcTextWidgetItem extends WP_Widget {
     $instance = $old_instance;
     $instance['title_pc_text'] = strip_tags($new_instance['title_pc_text']);
     $instance['text_pc_text'] = $new_instance['text_pc_text'];
+    $instance['filter'] = !empty( $new_instance['filter'] );
       return $instance;
   }
   function form($instance) {
@@ -41,10 +46,12 @@ class PcTextWidgetItem extends WP_Widget {
       $instance = array(
         'title_pc_text' => null,
         'text_pc_text' => null,
+        'filter' => null,
       );
     }
     $title = esc_attr($instance['title_pc_text']);
     $text = esc_attr($instance['text_pc_text']);
+    $filter = esc_attr($instance['filter']);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -59,6 +66,7 @@ class PcTextWidgetItem extends WP_Widget {
         <?php _e( 'テキスト', THEME_NAME ) ?>
       </label>
       <textarea class="widefat" id="<?php echo $this->get_field_id('text_pc_text'); ?>" name="<?php echo $this->get_field_name('text_pc_text'); ?>" cols="20" rows="16"><?php echo $text; ?></textarea>
+      <input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox"<?php checked( $filter );//_v($filter) ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e( '自動的に段落を追加する', THEME_NAME ) ?></label>
     </p>
     <?php
   }
