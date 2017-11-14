@@ -3249,3 +3249,6 @@ select option.fa {
       margin-bottom: 3px; }
   .category-check-list > ul {
     padding-left: 0; }
+
+.widget-content select {
+  width: 100%; }

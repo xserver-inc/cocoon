@@ -394,3 +394,183 @@ function verify_google_recaptcha($comment_post_ID)
   return;
 }
 */
+
+add_filter( 'in_widget_form', 'widget_logic_in_widget_form1', 10, 3 );
+function widget_logic_in_widget_form1( $widget, $return, $instance ){
+  $info = widget_info_by_id( $widget->id );
+  //var_dump($info);
+  //値の初期化
+  $widget_action_def = 'hide';
+  $widget_categories_def = array();
+  if ($info) {
+    if ($info['widget_action']) {
+      $widget_action_def = $info['widget_action'];
+    }
+  }
+
+  $widget_logic = isset( $instance['widget_logic'] ) ? $instance['widget_logic'] : widget_logic_by_id( $widget->id );
+  $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
+  $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
+
+  ?>
+    <p>
+      <label for="<?php echo $widget->get_field_id('widget_logic'); ?>">
+        <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
+      </label>
+      <?php
+        $options = array(
+          'hide' => __( 'チェックしたページで非表示', THEME_NAME ),
+          'show' => __( 'チェックしたページで表示', THEME_NAME ),
+        );
+        genelate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        genelate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
+
+       ?>
+      <textarea class="widefat" name="<?php echo $widget->get_field_name('widget_logic'); ?>" id="<?php echo $widget->get_field_id('widget_logic'); ?>"><?php echo esc_textarea( $widget_logic ) ?></textarea>
+      <!-- <textarea class="widefat" name="<?php echo $widget->get_field_name('widget_action'); ?>" id="<?php echo $widget->get_field_id('widget_action'); ?>"><?php echo esc_textarea( $widget_action ) ?></textarea> -->
+    </p>
+  <?php
+  return;
+}
+
+add_filter( 'widget_update_callback', 'widget_logic_update_callback1', 10, 4);
+function widget_logic_update_callback1( $instance, $new_instance, $old_instance, $this_widget )
+{
+  if ( isset( $new_instance['widget_logic'] ) )
+    $instance['widget_logic'] = $new_instance['widget_logic'];
+  if ( isset( $new_instance['widget_action'] ) )
+    $instance['widget_action'] = $new_instance['widget_action'];
+
+  return $instance;
+}
+
+function widget_logic_check_logic( $logic )
+{
+  return $logic != 'a';
+  // $logic = @trim( (string)$logic );
+  // $logic = apply_filters( "widget_logic_eval_override", $logic );
+
+  // if ( is_bool( $logic ) )
+  //   return $logic;
+
+  // if ( $logic === '' )
+  //   return true;
+
+  // if ( stristr( $logic, "return" ) === false )
+  //   $logic = "return ( $logic );";
+
+  // //set_error_handler( 'widget_logic_error_handler' );
+
+  // //try {
+  //   $show_widget = eval($logic);
+  // //}
+
+  // return $show_widget;
+}
+
+// CALLED ON 'sidebars_widgets' FILTER
+if (!is_admin()) {
+  add_filter( 'sidebars_widgets', 'widget_logic_filter_sidebars_widgets', 10);
+}
+function widget_logic_filter_sidebars_widgets( $sidebars_widgets )
+{
+  global $wp_reset_query_is_done, $wl_options, $wl_in_customizer;
+
+  if ( $wl_in_customizer )
+    return $sidebars_widgets;
+
+  // reset any database queries done now that we're about to make decisions based on the context given in the WP query for the page
+  if ( !empty( $wl_options['widget_logic-options-wp_reset_query'] ) && empty( $wp_reset_query_is_done ) )
+  {
+    wp_reset_query();
+    $wp_reset_query_is_done = true;
+  }
+
+  // loop through every widget in every sidebar (barring 'wp_inactive_widgets') checking WL for each one
+  foreach($sidebars_widgets as $widget_area => $widget_list)  {
+    if ($widget_area=='wp_inactive_widgets' || empty($widget_list))
+      continue;
+
+    foreach($widget_list as $pos => $widget_id)    {
+      //$logic = 'a';
+      $logic = widget_logic_by_id( $widget_id );
+      //_v($logic);
+
+      if ( !widget_logic_check_logic( $logic ) )
+        unset($sidebars_widgets[$widget_area][$pos]);
+    }
+  }
+  return $sidebars_widgets;
+}
+
+function widget_logic_by_id( $widget_id ){
+  global $wl_options;
+
+  if ( preg_match( '/^(.+)-(\d+)$/', $widget_id, $m ) )  {
+    $widget_class = $m[1];
+    $widget_i = $m[2];
+
+    $info = get_option( 'widget_'.$widget_class );
+    if ( empty( $info[ $widget_i ] ) )
+      return '';
+
+    $info = $info[ $widget_i ];
+  }
+  else {
+    $info = (array)get_option( 'widget_'.$widget_id, array() );
+  }
+
+  //var_dump($info);
+  if ( isset( $info['widget_logic'] ) ){
+    $logic = $info['widget_logic'];
+  }
+  elseif ( isset( $wl_options[ $widget_id ] ) )
+  {
+    $logic = stripslashes( $wl_options[ $widget_id ] );
+    widget_logic_save( $widget_id, $logic );
+
+    unset( $wl_options[ $widget_id ] );
+    update_option( 'widget_logic', $wl_options );
+  }
+
+  else {
+    $logic = '';
+  }
+
+  return $logic;
+}
+
+if ( !function_exists( 'widget_info_by_id' ) ):
+function widget_info_by_id( $widget_id ){
+  global $wl_options;
+
+  if ( preg_match( '/^(.+)-(\d+)$/', $widget_id, $m ) )  {
+    $widget_class = $m[1];
+    $widget_i = $m[2];
+
+    $info = get_option( 'widget_'.$widget_class );
+    if ( empty( $info[ $widget_i ] ) )
+      return '';
+
+    $info = $info[ $widget_i ];
+  }
+  else {
+    $info = (array)get_option( 'widget_'.$widget_id, array() );
+  }
+
+  // //var_dump($info);
+  // if ( isset( $info['widget_logic'] ) ){
+  //   $logic = $info['widget_logic'];
+  // }  elseif ( isset( $wl_options[ $widget_id ] ) )  {
+  //   // $logic = stripslashes( $wl_options[ $widget_id ] );
+  //   // widget_logic_save( $widget_id, $logic );
+
+  //   // unset( $wl_options[ $widget_id ] );
+  //   // update_option( 'widget_logic', $wl_options );
+  // } else {
+  //   $logic = '';
+  // }
+
+  return $info;
+}
+endif;
