@@ -73,7 +73,7 @@
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_APPEAL_AREA_TITLE, get_appeal_area_title(), __( '', THEME_NAME ));
+            generate_textbox_tag(OP_APPEAL_AREA_TITLE, get_appeal_area_title(), __( 'アピールエリアタイトル', THEME_NAME ));
             generate_tips_tag(__( 'アピールエリアのタイトルを入力してください。入力しない場合は表示されません。', THEME_NAME ));
             ?>
           </td>
@@ -86,7 +86,7 @@
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_APPEAL_AREA_MESSAGE, get_appeal_area_message(), __( '', THEME_NAME ), 3) ;
+            generate_textarea_tag(OP_APPEAL_AREA_MESSAGE, get_appeal_area_message(), __( '訪問者にアピールしたい内容を入力してください。', THEME_NAME ), 3) ;
             generate_tips_tag(__( 'アピールエリアに表示するメッセージを入力してください。HTMLの入力も可能です。', THEME_NAME ));
             ?>
           </td>
@@ -112,7 +112,7 @@
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_APPEAL_AREA_BUTTON_URL, get_appeal_area_button_url(), __( '', THEME_NAME ));
+            generate_textbox_tag(OP_APPEAL_AREA_BUTTON_URL, get_appeal_area_button_url(), __( 'https://xxxxxxxx.com/xxxxx/', THEME_NAME ));
             generate_tips_tag(__( 'ボタンのリンク先となるURLを入力してください。', THEME_NAME ));
             ?>
           </td>
