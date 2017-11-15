@@ -88,6 +88,8 @@ require_once 'widgets/fb-like-box.php';
 require_once 'widgets/fb-like-balloon.php';
 //CTAボックス
 require_once 'widgets/cta-box.php';
+//ウィジェットの表示制御
+require_once 'widgets/display-widgets.php';
 
 
 
