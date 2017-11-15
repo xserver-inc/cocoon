@@ -4,7 +4,7 @@
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
       <?php the_post_thumbnail( 'thumb100', array('class' => 'fb-like-balloon-entry-thumnail', 'alt' => '') ); ?>
     <?php else: // サムネイルを持っていない ?>
-      <img src="<?php echo get_template_directory_uri();//get_stylesheet_directory_uri();子テーマに画像を置いた場合 ?>/images/no-image.png" alt="NO IMAGE" class="fb-like-balloon-entry-thumnail no-image" />
+      <img src="<?php echo get_template_directory_uri();//get_stylesheet_directory_uri();子テーマに画像を置いた場合 ?>/images/no-image-150.png" alt="NO IMAGE" class="fb-like-balloon-entry-thumnail no-image" />
     <?php endif; ?>
   </div>
   <div class="fb-like-balloon-arrow-box">

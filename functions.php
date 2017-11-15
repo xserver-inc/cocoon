@@ -411,7 +411,7 @@ function widget_logic_in_widget_form1( $widget, $return, $instance ){
     }
   }
 
-  $widget_logic = isset( $instance['widget_logic'] ) ? $instance['widget_logic'] : widget_logic_by_id( $widget->id );
+  $widget_logic = isset( $instance['widget_logic'] ) ? $instance['widget_logic'] : widget_info_by_id( $widget->id );
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
   $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
 
@@ -451,36 +451,36 @@ function widget_logic_update_callback1( $instance, $new_instance, $old_instance,
   return $instance;
 }
 
-function widget_logic_check_logic( $logic )
-{
-  return $logic != 'a';
-  // $logic = @trim( (string)$logic );
-  // $logic = apply_filters( "widget_logic_eval_override", $logic );
+function is_widget_visible( $info ){
+  $widget_action = !empty($info['widget_action']) ? $info['widget_action'] : 'hide';
+  $widget_categories = !empty($info['widget_categories']) ? $info['widget_categories'] : array();
 
-  // if ( is_bool( $logic ) )
-  //   return $logic;
-
-  // if ( $logic === '' )
-  //   return true;
-
-  // if ( stristr( $logic, "return" ) === false )
-  //   $logic = "return ( $logic );";
-
-  // //set_error_handler( 'widget_logic_error_handler' );
-
-  // //try {
-  //   $show_widget = eval($logic);
-  // //}
-
-  // return $show_widget;
+  $display = true;
+  //ウィジェットを表示する条件
+  if ($widget_action == 'show') {
+    if (empty($widget_categories)) {
+      $display = false;
+    } else {
+      $display = is_category($widget_categories) || in_category($widget_categories);
+    }
+  } elseif ($widget_action == 'hide') {
+    if (empty($widget_categories)) {
+      $display = true;
+    } else {
+      $display = !is_category($widget_categories) && !in_category($widget_categories);
+    }
+  }
+  // var_dump($widget_action);
+  // var_dump($widget_categories);
+  // var_dump($display);
+  return $display;
 }
 
 // CALLED ON 'sidebars_widgets' FILTER
 if (!is_admin()) {
   add_filter( 'sidebars_widgets', 'widget_logic_filter_sidebars_widgets', 10);
 }
-function widget_logic_filter_sidebars_widgets( $sidebars_widgets )
-{
+function widget_logic_filter_sidebars_widgets( $sidebars_widgets ){
   global $wp_reset_query_is_done, $wl_options, $wl_in_customizer;
 
   if ( $wl_in_customizer )
@@ -500,17 +500,17 @@ function widget_logic_filter_sidebars_widgets( $sidebars_widgets )
 
     foreach($widget_list as $pos => $widget_id)    {
       //$logic = 'a';
-      $logic = widget_logic_by_id( $widget_id );
-      //_v($logic);
+      $info = widget_info_by_id( $widget_id );
+      //_v($info);
 
-      if ( !widget_logic_check_logic( $logic ) )
+      if ( !is_widget_visible( $info ) )
         unset($sidebars_widgets[$widget_area][$pos]);
     }
   }
   return $sidebars_widgets;
 }
 
-function widget_logic_by_id( $widget_id ){
+function widget_info_by_id( $widget_id ){
   global $wl_options;
 
   if ( preg_match( '/^(.+)-(\d+)$/', $widget_id, $m ) )  {
@@ -527,24 +527,22 @@ function widget_logic_by_id( $widget_id ){
     $info = (array)get_option( 'widget_'.$widget_id, array() );
   }
 
-  //var_dump($info);
-  if ( isset( $info['widget_logic'] ) ){
-    $logic = $info['widget_logic'];
-  }
-  elseif ( isset( $wl_options[ $widget_id ] ) )
-  {
-    $logic = stripslashes( $wl_options[ $widget_id ] );
-    widget_logic_save( $widget_id, $logic );
+  // //var_dump($info);
+  // if ( isset( $info['widget_logic'] ) ){
+  //   $logic = $info['widget_logic'];
+  // }
+  // elseif ( isset( $wl_options[ $widget_id ] ) )  {
+  //   $logic = stripslashes( $wl_options[ $widget_id ] );
+  //   widget_logic_save( $widget_id, $logic );
 
-    unset( $wl_options[ $widget_id ] );
-    update_option( 'widget_logic', $wl_options );
-  }
+  //   unset( $wl_options[ $widget_id ] );
+  //   update_option( 'widget_logic', $wl_options );
+  // }
+  // else {
+  //   $logic = '';
+  // }
 
-  else {
-    $logic = '';
-  }
-
-  return $logic;
+  return $info;
 }
 
 if ( !function_exists( 'widget_info_by_id' ) ):
