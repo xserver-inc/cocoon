@@ -3235,19 +3235,23 @@ select option.fa {
     text-align: center;
     margin-right: 5px; }
 
-.category-check-list {
+.category-check-list,
+.page-display-check-list {
   height: 200px;
   overflow: auto;
   border: 1px solid #ccc;
   padding: 5px;
   margin: 5px 0;
   background-color: #fff; }
-  .category-check-list ul {
+  .category-check-list ul,
+  .page-display-check-list ul {
     margin: 0;
     padding-left: 20px; }
-    .category-check-list ul li {
+    .category-check-list ul li,
+    .page-display-check-list ul li {
       margin-bottom: 3px; }
-  .category-check-list > ul {
+  .category-check-list > ul,
+  .page-display-check-list > ul {
     padding-left: 0; }
 
 .widget-content select {

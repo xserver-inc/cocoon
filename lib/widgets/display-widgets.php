@@ -37,6 +37,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
+        generate_page_display_check_list($widget->get_field_name('widget_pagess'), array('is_category', 'is_archive'))
        ?>
     </div>
   <?php

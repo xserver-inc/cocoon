@@ -415,7 +415,7 @@ endif;
 // endif;
 
 
-
+//階層化カテゴリチェックリストの出力
 if ( !function_exists( 'generate_hierarchical_category_check_list' ) ):
 function generate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
   if ($width == 0) {
@@ -429,6 +429,7 @@ function generate_hierarchical_category_check_list( $cat, $name, $checks, $width
 }
 endif;
 
+//階層化カテゴリチェックリストの出力の再帰関数
 if ( !function_exists( 'hierarchical_category_check_list' ) ):
 function hierarchical_category_check_list( $cat, $name, $checks ) {
     // wpse-41548 // alchymyth // a hierarchical list of all categories //
@@ -450,5 +451,52 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
   endif;
 
   echo '</li></ul>'; echo "\n";
+}
+endif;
+
+//ページ表示チェックリスト
+if ( !function_exists( 'generate_page_display_check_list' ) ):
+function generate_page_display_check_list( $name, $checks, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  echo '<div class="page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" ';
+  checked(in_array('is_single', $checks));
+  echo '>' . __( '投稿', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_page" ';
+  checked(in_array('is_page', $checks));
+  echo '>' . __( '固定ページ', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_category" ';
+  checked(in_array('is_category', $checks));
+  echo '>' . __( 'カテゴリ一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_tag" ';
+  checked(in_array('is_tag', $checks));
+  echo '>' . __( 'タグ一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_author" ';
+  checked(in_array('is_author', $checks));
+  echo '>' . __( '著者一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_archive" ';
+  checked(in_array('is_archive', $checks));
+  echo '>' . __( 'アーカイブ一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_search" ';
+  checked(in_array('is_search', $checks));
+  echo '>' . __( '検索結果一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_404" ';
+  checked(in_array('is_404', $checks));
+  echo '>' . __( '404ページ一覧', THEME_NAME ) . '</li>';
+
+  echo '</ul></div>';
 }
 endif;
