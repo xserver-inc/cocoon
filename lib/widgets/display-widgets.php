@@ -105,12 +105,15 @@ function is_display_widgets_widget_visible( $info ){
   //     $display = !(in_category($widget_categories) || is_category($widget_categories));
   //   }
   // }
-
+//var_dump(($widget_categories));
   // //チェックリストすべてが空かどうか
   $is_all_checks_empty = empty($widget_categories) && empty($widget_pages);
   //カテゴリーリストに何かチェックがついている場合
   if (!empty($widget_categories)) {
     $display = in_category($widget_categories) || is_category($widget_categories);
+    // if ($widget_action == 'hide') {
+    //   $display = $display || is_single();
+    // }
   }
   //ページリストに何かチェックがついている場合
   if (!empty($widget_pages)) {

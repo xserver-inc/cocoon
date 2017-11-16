@@ -442,6 +442,10 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
       if (is_string($checks)) {
         $checks = array();
       }
+      //デフォルトのカテゴリは誤動作を起こすので除外
+      if ($cat->term_id == 1) {
+        continue;
+      }
       if (in_array($cat->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
