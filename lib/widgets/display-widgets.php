@@ -11,6 +11,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   //値の初期化
   $widget_action_def = 'hide';
   $widget_categories_def = array();
+  $widget_pages_def = array();
   if ($info) {
     if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
@@ -18,15 +19,19 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     if (isset($info['widget_categories'])) {
       $widget_categories_def = $info['widget_categories'];
     }
+    if (isset($info['widget_pages'])) {
+      $widget_pages_def = $info['widget_pages'];
+    }
   }
 
   //$widget_logic = isset( $instance['widget_logic'] ) ? $instance['widget_logic'] : display_widgets_info_by_id( $widget->id );
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
   $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
+  $widget_pages = isset( $instance['widget_pages'] ) ? $instance['widget_pages'] : $widget_pages_def;
 
   ?>
     <div class="display-widgets-area">
-      <label for="<?php echo $widget->get_field_id('widget_logic'); ?>">
+      <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
       </label>
       <?php
@@ -37,7 +42,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
-        generate_page_display_check_list($widget->get_field_name('widget_pagess'), array('is_category', 'is_archive'))
+        //var_dump($widget_pages);
+        generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
        ?>
     </div>
   <?php
@@ -57,6 +63,10 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
     $instance['widget_action'] = $new_instance['widget_action'];
   if ( isset( $new_instance['widget_categories'] ) )
     $instance['widget_categories'] = $new_instance['widget_categories'];
+  if ( isset( $new_instance['widget_pages'] ) )
+    $instance['widget_pages'] = $new_instance['widget_pages'];
+
+  //var_dump($instance['widget_pages']);
 
 
   return $instance;

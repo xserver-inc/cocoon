@@ -463,6 +463,10 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
     $width = $width.'px';
   }
 
+  if (empty($checks)) {
+    $checks = array();
+  }
+
   echo '<div class="page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" ';
