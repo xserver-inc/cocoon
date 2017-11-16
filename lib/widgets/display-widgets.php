@@ -24,7 +24,6 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     }
   }
 
-  //$widget_logic = isset( $instance['widget_logic'] ) ? $instance['widget_logic'] : display_widgets_info_by_id( $widget->id );
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
   $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
   $widget_pages = isset( $instance['widget_pages'] ) ? $instance['widget_pages'] : $widget_pages_def;
@@ -57,14 +56,23 @@ endif;
 add_filter( 'widget_update_callback', 'display_widgets_update_callback', 10, 4);
 if ( !function_exists( 'display_widgets_update_callback' ) ):
 function display_widgets_update_callback( $instance, $new_instance, $old_instance, $this_widget ){
-  if ( isset( $new_instance['widget_logic'] ) )
-    $instance['widget_logic'] = $new_instance['widget_logic'];
+  //実行条件
   if ( isset( $new_instance['widget_action'] ) )
     $instance['widget_action'] = $new_instance['widget_action'];
+  else
+    $instance['widget_action'] = 'hide';
+
+  //カテゴリ条件
   if ( isset( $new_instance['widget_categories'] ) )
     $instance['widget_categories'] = $new_instance['widget_categories'];
+  else
+    $instance['widget_categories'] = array();
+
+  //ページ条件
   if ( isset( $new_instance['widget_pages'] ) )
     $instance['widget_pages'] = $new_instance['widget_pages'];
+  else
+    $instance['widget_pages'] = array();
 
   //var_dump($instance['widget_pages']);
 
@@ -78,24 +86,78 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'is_display_widgets_widget_visible' ) ):
 function is_display_widgets_widget_visible( $info ){
-  $widget_action = !empty($info['widget_action']) ? $info['widget_action'] : 'hide';
-  $widget_categories = !empty($info['widget_categories']) ? $info['widget_categories'] : array();
+  $widget_action = isset($info['widget_action']) ? $info['widget_action'] : 'hide';
+  $widget_categories = isset($info['widget_categories']) ? $info['widget_categories'] : array();
+  $widget_pages = isset($info['widget_pages']) ? $info['widget_pages'] : array();
 
-  $display = true;
-  //ウィジェットを表示する条件
-  if ($widget_action == 'show') {
-    if (empty($widget_categories)) {
-      $display = false;
-    } else {
-      $display = is_category($widget_categories) || in_category($widget_categories);
-    }
-  } elseif ($widget_action == 'hide') {
-    if (empty($widget_categories)) {
-      $display = true;
-    } else {
-      $display = !is_category($widget_categories) && !in_category($widget_categories);
+  $display = false;
+  // //ウィジェットを表示する条件
+  // if ($widget_action == 'show') {
+  //   if (empty($widget_categories)) {
+  //     $display = false;
+  //   } else {
+  //     $display = in_category($widget_categories);// || is_category($widget_categories);
+  //   }
+  // } elseif ($widget_action == 'hide') {
+  //   if (empty($widget_categories)) {
+  //     $display = true;
+  //   } else {
+  //     $display = !(in_category($widget_categories) || is_category($widget_categories));
+  //   }
+  // }
+
+  // //チェックリストすべてが空かどうか
+  $is_all_checks_empty = empty($widget_categories) && empty($widget_pages);
+  //カテゴリーリストに何かチェックがついている場合
+  if (!empty($widget_categories)) {
+    $display = in_category($widget_categories) || is_category($widget_categories);
+  }
+  //ページリストに何かチェックがついている場合
+  if (!empty($widget_pages)) {
+    foreach ($widget_pages as $value) {
+      switch ($value) {
+        case 'is_single':
+          $display = $display || is_single();
+          break;
+        case 'is_page':
+          $display = $display || is_page();
+          break;
+        case 'is_category':
+          $display = $display || is_category();
+          break;
+        case 'is_tag':
+          $display = $display || is_tag();
+          break;
+        case 'is_author':
+          $display = $display || is_author();
+          break;
+        case 'is_archive':
+          $display = $display || is_archive();
+          break;
+        case 'is_search':
+          $display = $display || is_search();
+          break;
+        case 'is_404':
+          $display = $display || is_404();
+          break;
+      }
     }
   }
+  //ウィジェットを表示する条件
+  if ($widget_action == 'show') {
+    if ($is_all_checks_empty) {
+      $display = false;
+    } else {
+      $display = $display;
+    }
+  } elseif ($widget_action == 'hide') {
+    if ($is_all_checks_empty) {
+      $display = true;
+    } else {
+      $display = !$display;
+    }
+  }
+
   // var_dump($widget_action);
   // var_dump($widget_categories);
   // var_dump($display);
