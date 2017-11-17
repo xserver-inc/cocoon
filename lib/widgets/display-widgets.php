@@ -6,6 +6,9 @@
 add_filter( 'in_widget_form', 'display_widgets_in_widget_form', 10, 3 );
 if ( !function_exists( 'display_widgets_in_widget_form' ) ):
 function display_widgets_in_widget_form( $widget, $return, $instance ){
+  // var_dump($widget);
+  // var_dump($return);
+  // var_dump($instance);
   $info = display_widgets_info_by_id( $widget->id );
   //var_dump($info);
   //値の初期化
@@ -34,6 +37,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
 
   ?>
+
     <div class="display-widgets-area">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
@@ -43,15 +47,40 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           'hide' => __( 'チェックしたページで非表示', THEME_NAME ),
           'show' => __( 'チェックしたページで表示', THEME_NAME ),
         );
-        generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);?>
+        <div id="tabs-<?php echo $widget->get_field_id('display_widgets'); ?>" class="tabs-widget">
+        <ul>
+          <li><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
+          <li><?php _e( 'ページ', THEME_NAME ) ?></li>
+          <li><?php _e( '著者', THEME_NAME ) ?></li>
+        </ul>
+        <?php
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
         //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
         generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
        ?>
+      </div>
     </div>
+<?php if ($widget->updated): ?>
+  <script type='text/javascript' src='//code.jquery.com/jquery.min.js'></script>
+  <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.tabs.js'></script>
+  <script type='text/javascript'>
+    tabify("#tabs-<?php echo $widget->get_field_id('display_widgets'); ?>");
+  </script>
+<?php else:
+  //タブの読み込み
+  wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+  $data = 'jQuery(document).ready( function() {
+             tabify("#tabs-'.$widget->get_field_id('display_widgets').'");
+           });';
+  wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+endif ?>
+
   <?php
+
   return;
 }
 endif;
@@ -85,9 +114,6 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
     $instance['widget_authors'] = $new_instance['widget_authors'];
   else
     $instance['widget_authors'] = array();
-
-  //var_dump($instance['widget_pages']);
-
 
   return $instance;
 }

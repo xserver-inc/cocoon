@@ -3260,3 +3260,6 @@ select option.fa {
 
 .widget-content select {
   width: 100%; }
+
+.tabs-widget {
+  padding-top: 6px; }

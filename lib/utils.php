@@ -599,10 +599,19 @@ function get_image_width_and_height($image_url){
 }
 endif;
 
+//テーマ設定ページか
 if ( !function_exists( 'is_admin_php_page' ) ):
 function is_admin_php_page(){
   global $pagenow;
   return $pagenow == 'admin.php';
+}
+endif;
+
+//ウィジェットページか
+if ( !function_exists( 'is_widgets_php_page' ) ):
+function is_widgets_php_page(){
+  global $pagenow;
+  return $pagenow == 'widgets.php';
 }
 endif;
 
