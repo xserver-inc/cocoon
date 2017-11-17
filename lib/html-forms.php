@@ -508,3 +508,30 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   echo '</ul></div>';
 }
 endif;
+
+//投稿者チェックリスト
+if ( !function_exists( 'generate_author_check_list' ) ):
+function generate_author_check_list( $name, $checks, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  if (empty($checks)) {
+    $checks = array();
+  }
+
+  echo '<div class="author-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
+
+  $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
+  foreach($users as $user) {
+    $uid = $user->ID;
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="'.$uid.'" ';
+    checked(in_array($uid, $checks));
+    echo '>' . $user->display_name . '</li>';
+  } //foreach
+
+  echo '</ul></div>';
+}
+endif;

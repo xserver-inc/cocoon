@@ -841,3 +841,31 @@ function colorcode_to_rgb_css_code($colorcode, $opacity = 0.2){
   return 'rgba('.$a['red'].', '.$a['green'].', '.$a['blue'].', '.$opacity.')';
 }
 endif;
+
+//投稿者が書いたページかどうか
+if ( !function_exists( 'in_authors' ) ):
+function in_authors($authers){
+  global $post;
+  if ($post) {
+    //$author = get_userdata($post->post_author);
+    // var_dump($post->post_author);
+    // var_dump($authers);
+    // var_dump(in_array($post->post_author, $authers));
+    return in_array($post->post_author, $authers);
+  } else {
+    return false;
+  }
+}
+endif;
+
+//投稿者リストページか
+if ( !function_exists( 'is_authors' ) ):
+function is_authors($authers){
+  foreach ($authers as $auther) {
+    if (is_author($auther)) {
+      return true;
+    }
+  }
+  return false;
+}
+endif;

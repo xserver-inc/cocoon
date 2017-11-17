@@ -12,6 +12,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_action_def = 'hide';
   $widget_categories_def = array();
   $widget_pages_def = array();
+  $widget_authors_def = array();
   if ($info) {
     if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
@@ -22,11 +23,15 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     if (isset($info['widget_pages'])) {
       $widget_pages_def = $info['widget_pages'];
     }
+    if (isset($info['widget_authors'])) {
+      $widget_authors_def = $info['widget_authors'];
+    }
   }
 
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
   $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
   $widget_pages = isset( $instance['widget_pages'] ) ? $instance['widget_pages'] : $widget_pages_def;
+  $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
 
   ?>
     <div class="display-widgets-area">
@@ -43,6 +48,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
         //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
+        generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
        ?>
     </div>
   <?php
@@ -74,6 +80,12 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
   else
     $instance['widget_pages'] = array();
 
+  //投稿者条件
+  if ( isset( $new_instance['widget_authors'] ) )
+    $instance['widget_authors'] = $new_instance['widget_authors'];
+  else
+    $instance['widget_authors'] = array();
+
   //var_dump($instance['widget_pages']);
 
 
@@ -89,6 +101,7 @@ function is_display_widgets_widget_visible( $info ){
   $widget_action = isset($info['widget_action']) ? $info['widget_action'] : 'hide';
   $widget_categories = isset($info['widget_categories']) ? $info['widget_categories'] : array();
   $widget_pages = isset($info['widget_pages']) ? $info['widget_pages'] : array();
+  $widget_authors = isset($info['widget_authors']) ? $info['widget_authors'] : array();
 
   $display = false;
   // //ウィジェットを表示する条件
@@ -106,6 +119,7 @@ function is_display_widgets_widget_visible( $info ){
   //   }
   // }
 //var_dump(($widget_categories));
+
   // //チェックリストすべてが空かどうか
   $is_all_checks_empty = empty($widget_categories) && empty($widget_pages);
   //カテゴリーリストに何かチェックがついている場合
@@ -115,6 +129,7 @@ function is_display_widgets_widget_visible( $info ){
     //   $display = $display || is_single();
     // }
   }
+
   //ページリストに何かチェックがついている場合
   if (!empty($widget_pages)) {
     foreach ($widget_pages as $value) {
@@ -146,6 +161,14 @@ function is_display_widgets_widget_visible( $info ){
       }
     }
   }
+
+  //投稿者リストに何かチェックがついている場合
+  if (!empty($widget_authors)) {
+    $display = in_authors($widget_authors) || is_authors($widget_authors);
+    //var_dump($display);
+    //var_dump(is_author(2));
+  }
+
   //ウィジェットを表示する条件
   if ($widget_action == 'show') {
     if ($is_all_checks_empty) {
