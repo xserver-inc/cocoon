@@ -1,4 +1,3 @@
-
 (function($){
   /////////////////////////////////
   //管理タブの何番目がクリックされたか
@@ -10,10 +9,18 @@
 
 
 
+  /////////////////////////////////
+  //トグルスイッチ
+  /////////////////////////////////
   $('.toggle-link').click(function(){
     $(this).next('.toggle-content').toggle();
   });
 
+  //$(".display-widgets-toggle").insertBefore(".widget-control-save");
+
+  /////////////////////////////////
+  //カルーセルエリアの不具合処理（無理やり）
+  /////////////////////////////////
   $(".carousel-area").on("click", function() {
     $(function(){
       $('.slick-arrow').delay(10).queue(function(){

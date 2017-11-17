@@ -3258,8 +3258,38 @@ select option.fa {
   .author-check-list > ul {
     padding-left: 0; }
 
+.page-display-check-list,
+.author-check-list,
+.display-widgets-area {
+  display: none; }
+
+.display-widgets-toggle {
+  cursor: pointer;
+  padding: 3px 10px;
+  background: #1b95e0 -moz-linear-gradient(center top, #f9f9f9 5%, #e9e9e9 100%) repeat scroll 0 0;
+  border: 1px solid #bbb;
+  text-align: center;
+  margin-bottom: 1em;
+  border-radius: 3px; }
+  .display-widgets-toggle:hover {
+    border-color: #333; }
+
 .widget-content select {
   width: 100%; }
 
 .tabs-widget {
   padding-top: 6px; }
+  .tabs-widget > ul > li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f1f1f1;
+    border-color: transparent transparent -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    padding: 5px 15px 3px; }

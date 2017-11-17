@@ -37,8 +37,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
 
   ?>
-
-    <div class="display-widgets-area">
+    <div class="display-widgets-toggle toggle-link"><?php _e( '表示設定', THEME_NAME ) ?></div>
+    <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
       </label>
@@ -69,16 +69,23 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   <script type='text/javascript'>
     tabify("#tabs-<?php echo $widget->get_field_id('display_widgets'); ?>");
   </script>
+  <script type="text/javascript">
+    $(".toggle-link").click(function(){
+      $(this).next(".toggle-content").toggle();
+    });
+  </script>
 <?php else:
   //タブの読み込み
   wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
   wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-  $data = 'jQuery(document).ready( function() {
+  $data = '$(document).ready( function() {
              tabify("#tabs-'.$widget->get_field_id('display_widgets').'");
            });';
   wp_add_inline_script( 'tab-js', $data, 'after' ) ;
-endif ?>
 
+    //管理画面用のJavaScriptの読み込み
+    wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+endif ?>
   <?php
 
   return;
