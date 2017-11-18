@@ -5,7 +5,7 @@ update_theme_option(OP_SNS_TOP_SHARE_BUTTONS_VISIBLE);
 //SNSシェアメッセージ
 update_theme_option(OP_SNS_TOP_SHARE_MESSAGE);
 //Twitterシェアボタンの表示
-update_theme_option(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE);
+update_theme_option(OP_TOP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE);
 //Facebookシェアボタンの表示
 update_theme_option(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE);
 //はてなブックマークシェアボタンの表示
