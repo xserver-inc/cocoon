@@ -81,7 +81,7 @@
         <!-- ボタンカラー -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SNS_SHARE_BUTTON_COLOR, __( 'ボタンカラー', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR, __( 'ボタンカラー', THEME_NAME )); ?>
           </th>
           <td>
             <?php
@@ -90,7 +90,7 @@
               'brand_color' => 'ブランドカラー',
               'brand_color_white' => 'ブランドカラー（白抜き）',
             );
-            generate_selectbox_tag(OP_SNS_SHARE_BUTTON_COLOR, $options, get_sns_share_button_color());
+            generate_selectbox_tag(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR, $options, get_sns_share_button_color());
             generate_tips_tag(__( '本文下シェアボタンの配色を選択してください。', THEME_NAME ));
             ?>
           </td>

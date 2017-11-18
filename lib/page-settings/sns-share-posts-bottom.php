@@ -17,7 +17,7 @@ update_theme_option(OP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE);
 //LINE@シェアボタンの表示
 update_theme_option(OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE);
 //SNSシェアボタンカラー
-update_theme_option(OP_SNS_SHARE_BUTTON_COLOR);
+update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR);
 //シェアボタンのカラム数
 update_theme_option(OP_SNS_SHARE_COLUMN_COUNT);
 //SNSシェアボタンのロゴとキャプションの位置
