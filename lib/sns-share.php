@@ -274,3 +274,19 @@ function get_line_share_url(){
   return '//timeline.line.me/social-plugin/share?url='.urlencode(get_share_page_url());
 }
 endif;
+
+//シェアボタンを表示するか
+if ( !function_exists( 'is_all_sns_buttons_visible' ) ):
+function is_all_sns_buttons_visible($option){
+  return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
+         (is_sns_top_share_buttons_visible() && $option == SS_TOP);
+}
+endif;
+
+//Twitterツイッターシェアボタンを表示するか
+if ( !function_exists( 'is_all_sns_buttons_visible' ) ):
+function is_all_sns_buttons_visible($option){
+  return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
+         (is_sns_top_share_buttons_visible() && $option == SS_TOP);
+}
+endif;

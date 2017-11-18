@@ -8,9 +8,10 @@
 //   global $option;
 //   return $option == SS_BOTTOM;
 // }
+// var_dump((is_sns_top_share_buttons_visible() && $option == SS_TOP));
+// var_dump((is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM));
 ?>
-<?php if ( (is_sns_share_buttons_visible() && $option == SS_BOTTOM) ||
-           (is_sns_top_share_buttons_visible() && $option == SS_TOP) ):
+<?php if ( is_all_sns_buttons_visible($option) ):
 //var_dump($option) ?>
 <div class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
   <?php if ( get_sns_share_message() && $option == SS_BOTTOM ): //シェアボタン用のメッセージを取得?>
@@ -20,7 +21,7 @@
   <div class="sns-share-buttons">
     <?php if ( (is_twitter_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_twitter_share_button_visible() && $option == SS_TOP) )://Twitterボタンを表示するか ?>
-      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count">0</span></a>
+      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><?php if ( 1 ): ?><span class="share-count twitter-share-count">0</span><?php endif ?></a>
     <?php endif; ?>
 
     <?php if ( (is_facebook_share_button_visible() && $option == SS_BOTTOM) ||

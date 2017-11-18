@@ -22,4 +22,5 @@ update_theme_option(OP_SNS_TOP_SHARE_BUTTON_COLOR);
 update_theme_option(OP_SNS_TOP_SHARE_COLUMN_COUNT);
 //SNSシェアボタンのロゴとキャプションの位置
 update_theme_option(OP_SNS_TOP_SHARE_LOGO_CAPTION_POSITION);
-
+//SNSトップシェア数の表示
+update_theme_option(OP_SNS_TOP_SHARE_BUTTONS_COUNT_VISIBLE);

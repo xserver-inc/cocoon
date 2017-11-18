@@ -1,7 +1,7 @@
 <?php //SNSシェア設定をデータベースに保存
 
 //シェアボタンの表示
-update_theme_option(OP_SNS_SHARE_BUTTONS_VISIBLE);
+update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE);
 //SNSシェアメッセージ
 update_theme_option(OP_SNS_SHARE_MESSAGE);
 //Twitterシェアボタンの表示

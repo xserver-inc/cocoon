@@ -23,11 +23,11 @@
         <!-- 本文下シェアボタンの表示 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SNS_SHARE_BUTTONS_VISIBLE, __( '本文下シェアボタンの表示', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE, __( '本文下シェアボタンの表示', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_SNS_SHARE_BUTTONS_VISIBLE, is_sns_share_buttons_visible(), __( 'メインカラム本文下シェアボタンを表示', THEME_NAME ));
+            generate_checkbox_tag( OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE, is_sns_bottom_share_buttons_visible(), __( 'メインカラム本文下シェアボタンを表示', THEME_NAME ));
             generate_tips_tag(__( '投稿・固定ページのメインカラムにある本文下シェアボタンの表示を切り替えます。', THEME_NAME ));
             ?>
           </td>

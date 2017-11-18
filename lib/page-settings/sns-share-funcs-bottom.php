@@ -1,14 +1,14 @@
-<?php //SNS設定に必要な定数や関数
+<?php //NS設定に必要な定数や関数
 
-//シェアボタンの表示
-define('OP_SNS_SHARE_BUTTONS_VISIBLE', 'sns_share_buttons_visible');
-if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
-function is_sns_share_buttons_visible(){
-  return get_theme_option(OP_SNS_SHARE_BUTTONS_VISIBLE, 1);
+//ボトムシェアボタンの表示
+define('OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE', 'sns_bottom_share_buttons_visible');
+if ( !function_exists( 'is_sns_bottom_share_buttons_visible' ) ):
+function is_sns_bottom_share_buttons_visible(){
+  return get_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE, 1);
 }
 endif;
 
-//SNSシェアメッセージ
+//ボトムSNSシェアメッセージ
 define('OP_SNS_SHARE_MESSAGE', 'sns_share_message');
 if ( !function_exists( 'get_sns_share_message' ) ):
 function get_sns_share_message(){
@@ -16,7 +16,7 @@ function get_sns_share_message(){
 }
 endif;
 
-//Twitterシェアボタンの表示
+//ボトムTwitterシェアボタンの表示
 define('OP_TWITTER_SHARE_BUTTON_VISIBLE', 'twitter_share_button_visible');
 if ( !function_exists( 'is_twitter_share_button_visible' ) ):
 function is_twitter_share_button_visible(){
@@ -24,7 +24,7 @@ function is_twitter_share_button_visible(){
 }
 endif;
 
-//Facebookシェアボタンの表示
+//ボトムFacebookシェアボタンの表示
 define('OP_FACEBOOK_SHARE_BUTTON_VISIBLE', 'facebook_share_button_visible');
 if ( !function_exists( 'is_facebook_share_button_visible' ) ):
 function is_facebook_share_button_visible(){
@@ -32,7 +32,7 @@ function is_facebook_share_button_visible(){
 }
 endif;
 
-//はてなブックマークシェアボタンの表示
+//ボトムはてなブックマークシェアボタンの表示
 define('OP_HATEBU_SHARE_BUTTON_VISIBLE', 'hatebu_share_button_visible');
 if ( !function_exists( 'is_hatebu_share_button_visible' ) ):
 function is_hatebu_share_button_visible(){
@@ -40,7 +40,7 @@ function is_hatebu_share_button_visible(){
 }
 endif;
 
-//Google+シェアボタンの表示
+//ボトムGoogle+シェアボタンの表示
 define('OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'google_plus_share_button_visible');
 if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
 function is_google_plus_share_button_visible(){
@@ -48,7 +48,7 @@ function is_google_plus_share_button_visible(){
 }
 endif;
 
-//Pocketシェアボタンの表示
+//ボトムPocketシェアボタンの表示
 define('OP_POCKET_SHARE_BUTTON_VISIBLE', 'pocket_share_button_visible');
 if ( !function_exists( 'is_pocket_share_button_visible' ) ):
 function is_pocket_share_button_visible(){
@@ -56,7 +56,7 @@ function is_pocket_share_button_visible(){
 }
 endif;
 
-//LINE@シェアボタンの表示
+//ボトムLINE@シェアボタンの表示
 define('OP_LINE_AT_SHARE_BUTTON_VISIBLE', 'line_at_share_button_visible');
 if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible(){
@@ -64,7 +64,7 @@ function is_line_at_share_button_visible(){
 }
 endif;
 
-//SNSシェアボタンカラー
+//ボトムSNSシェアボタンカラー
 define('OP_SNS_SHARE_BUTTON_COLOR', 'sns_share_button_color');
 if ( !function_exists( 'get_sns_share_button_color' ) ):
 function get_sns_share_button_color(){
@@ -72,7 +72,7 @@ function get_sns_share_button_color(){
 }
 endif;
 
-//SNSシェアボタンのカラム数
+//ボトムSNSシェアボタンのカラム数
 define('OP_SNS_SHARE_COLUMN_COUNT', 'sns_share_column_count');
 if ( !function_exists( 'get_sns_share_column_count' ) ):
 function get_sns_share_column_count(){
@@ -80,7 +80,7 @@ function get_sns_share_column_count(){
 }
 endif;
 
-//SNSシェアボタンのロゴとキャプションの位置
+//ボトムSNSシェアボタンのロゴとキャプションの位置
 define('OP_SNS_SHARE_LOGO_CAPTION_POSITION', 'sns_share_logo_caption_position');
 if ( !function_exists( 'get_sns_share_logo_caption_position' ) ):
 function get_sns_share_logo_caption_position(){

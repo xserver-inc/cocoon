@@ -33,7 +33,7 @@
         } ?>
 
         <?php //SNSシェアボタン
-        if (is_sns_share_buttons_visible())
+        if (is_sns_top_share_buttons_visible())
           get_template_part_with_option('tmp/sns-share-buttons', SS_TOP); ?>
 
 
@@ -105,7 +105,7 @@
         <?php endif; ?>
 
         <?php //SNSシェアボタン
-        if (is_sns_share_buttons_visible())
+        if (is_sns_bottom_share_buttons_visible())
           get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM); ?>
 
         <?php //SNSフォローボタン
