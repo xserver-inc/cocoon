@@ -73,10 +73,10 @@ function get_sns_bottom_share_button_color(){
 endif;
 
 //ボトムSNSシェアボタンのカラム数
-define('OP_SNS_SHARE_COLUMN_COUNT', 'sns_share_column_count');
+define('OP_SNS_BOTTOM_SHARE_COLUMN_COUNT', 'sns_share_column_count');
 if ( !function_exists( 'get_sns_share_column_count' ) ):
 function get_sns_share_column_count(){
-  return get_theme_option(OP_SNS_SHARE_COLUMN_COUNT, 3);
+  return get_theme_option(OP_SNS_BOTTOM_SHARE_COLUMN_COUNT, 3);
 }
 endif;
 
