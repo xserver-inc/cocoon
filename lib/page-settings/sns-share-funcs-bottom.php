@@ -41,10 +41,10 @@ function is_bottom_hatebu_share_button_visible(){
 endif;
 
 //ボトムGoogle+シェアボタンの表示
-define('OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'google_plus_share_button_visible');
+define('OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'google_plus_share_button_visible');
 if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
 function is_google_plus_share_button_visible(){
-  return get_theme_option(OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 
