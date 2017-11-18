@@ -25,9 +25,9 @@ function is_bottom_twitter_share_button_visible(){
 endif;
 
 //ボトムFacebookシェアボタンの表示
-define('OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE', 'facebook_share_button_visible');
-if ( !function_exists( 'is_facebook_share_button_visible' ) ):
-function is_facebook_share_button_visible(){
+define('OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE', 'bottom_facebook_share_button_visible');
+if ( !function_exists( 'is_bottom_facebook_share_button_visible' ) ):
+function is_bottom_facebook_share_button_visible(){
   return get_theme_option(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
