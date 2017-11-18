@@ -276,17 +276,17 @@ function get_line_share_url(){
 endif;
 
 //シェアボタンを表示するか
-if ( !function_exists( 'is_all_sns_buttons_visible' ) ):
-function is_all_sns_buttons_visible($option){
+if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
+function is_sns_share_buttons_visible($option){
   return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
          (is_sns_top_share_buttons_visible() && $option == SS_TOP);
 }
 endif;
 
 //Twitterツイッターシェアボタンを表示するか
-if ( !function_exists( 'is_all_sns_buttons_visible' ) ):
-function is_all_sns_buttons_visible($option){
-  return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
-         (is_sns_top_share_buttons_visible() && $option == SS_TOP);
+if ( !function_exists( 'is_twitter_share_button_visible' ) ):
+function is_twitter_share_button_visible($option){
+  return (is_bottom_twitter_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_twitter_share_button_visible() && $option == SS_TOP);
 }
 endif;
