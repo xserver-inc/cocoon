@@ -283,10 +283,18 @@ function is_sns_share_buttons_visible($option){
 }
 endif;
 
-//Twitterツイッターシェアボタンを表示するか
+//Twitterシェアボタンを表示するか
 if ( !function_exists( 'is_twitter_share_button_visible' ) ):
 function is_twitter_share_button_visible($option){
   return (is_bottom_twitter_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_twitter_share_button_visible() && $option == SS_TOP);
+}
+endif;
+
+//Facebookシェアボタンを表示するか
+if ( !function_exists( 'is_facebook_share_button_visible' ) ):
+function is_facebook_share_button_visible($option){
+  return (is_bottom_facebook_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_facebook_share_button_visible() && $option == SS_TOP);
 }
 endif;

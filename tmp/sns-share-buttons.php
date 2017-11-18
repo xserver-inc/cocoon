@@ -23,8 +23,7 @@
       <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><?php if ( 1 ): ?><span class="share-count twitter-share-count">0</span><?php endif ?></a>
     <?php endif; ?>
 
-    <?php if ( (is_bottom_facebook_share_button_visible() && $option == SS_BOTTOM) ||
-               (is_top_facebook_share_button_visible() && $option == SS_TOP) )://Facebookボタンを表示するか ?>
+    <?php if ( is_facebook_share_button_visible($option) )://Facebookボタンを表示するか ?>
       <a href="<?php echo get_facebook_share_url(); ?>" class="share-button facebook-button facebook-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count">0</span></a>
     <?php endif; ?>
 
