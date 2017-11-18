@@ -17,9 +17,9 @@ function get_sns_bottom_share_message(){
 endif;
 
 //ボトムTwitterシェアボタンの表示
-define('OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE', 'twitter_share_button_visible');
-if ( !function_exists( 'is_twitter_share_button_visible' ) ):
-function is_twitter_share_button_visible(){
+define('OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE', 'bottom_twitter_share_button_visible');
+if ( !function_exists( 'is_bottom_twitter_share_button_visible' ) ):
+function is_bottom_twitter_share_button_visible(){
   return get_theme_option(OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
