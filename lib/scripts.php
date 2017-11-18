@@ -106,7 +106,7 @@ function cocoon_scripts() {
   ///////////////////////////////////
   //はてブシェアボタン用のスクリプト呼び出し
   ///////////////////////////////////
-  if ( is_hatebu_share_button_visible() && is_singular() ){
+  if ( is_bottom_hatebu_share_button_visible() && is_singular() ){
     wp_enqueue_script( 'st-hatena-js', '//b.st-hatena.com/js/bookmark_button.js', array(), false, true );
   }
 

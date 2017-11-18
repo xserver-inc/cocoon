@@ -45,19 +45,19 @@
                 <?php generate_checkbox_tag(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE, is_top_twitter_share_button_visible(), __( 'Twitter', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_top_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_top_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_POCKET_SHARE_BUTTON_VISIBLE, is_top_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE, is_top_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_LINE_AT_SHARE_BUTTON_VISIBLE, is_top_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE, is_top_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
               </li>
             </ul>
             <p><?php _e( '表示するシェアボタンを選択してください。', THEME_NAME ) ?></p>
