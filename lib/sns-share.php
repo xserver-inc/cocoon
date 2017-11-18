@@ -298,3 +298,20 @@ function is_facebook_share_button_visible($option){
          (is_top_facebook_share_button_visible() && $option == SS_TOP);
 }
 endif;
+
+//はてブシェアボタンを表示するか
+if ( !function_exists( 'is_hatebu_share_button_visible' ) ):
+function is_hatebu_share_button_visible($option){
+  return (is_bottom_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_hatebu_share_button_visible() && $option == SS_TOP);
+}
+endif;
+
+//Google+シェアボタンを表示するか
+if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
+function is_google_plus_share_button_visible($option){
+  return (is_bottom_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_google_plus_share_button_visible() && $option == SS_TOP);
+}
+endif;
+
