@@ -36,11 +36,11 @@
         <!-- シェアメッセージ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SNS_SHARE_MESSAGE, __( 'シェアメッセージ', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_BOTTOM_SHARE_MESSAGE, __( 'シェアメッセージ', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_SNS_SHARE_MESSAGE, get_sns_share_message(), __( 'シェアメッセージの入力', THEME_NAME ));
+            generate_textbox_tag(OP_SNS_BOTTOM_SHARE_MESSAGE, get_sns_bottom_share_message(), __( 'シェアメッセージの入力', THEME_NAME ));
             generate_tips_tag(__( '訪問者にシェアを促すメッセージを入力してください。', THEME_NAME ));
             ?>
           </td>

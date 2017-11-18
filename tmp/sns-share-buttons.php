@@ -14,8 +14,8 @@
 <?php if ( is_all_sns_buttons_visible($option) ):
 //var_dump($option) ?>
 <div class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
-  <?php if ( get_sns_share_message() && $option == SS_BOTTOM ): //シェアボタン用のメッセージを取得?>
-    <div class="sns-share-message"><?php echo get_sns_share_message(); ?></div>
+  <?php if ( get_sns_bottom_share_message() && $option == SS_BOTTOM ): //シェアボタン用のメッセージを取得?>
+    <div class="sns-share-message"><?php echo get_sns_bottom_share_message(); ?></div>
   <?php endif; ?>
 
   <div class="sns-share-buttons">

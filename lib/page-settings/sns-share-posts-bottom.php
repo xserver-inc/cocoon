@@ -3,7 +3,7 @@
 //シェアボタンの表示
 update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_VISIBLE);
 //SNSシェアメッセージ
-update_theme_option(OP_SNS_SHARE_MESSAGE);
+update_theme_option(OP_SNS_BOTTOM_SHARE_MESSAGE);
 //Twitterシェアボタンの表示
 update_theme_option(OP_TWITTER_SHARE_BUTTON_VISIBLE);
 //Facebookシェアボタンの表示

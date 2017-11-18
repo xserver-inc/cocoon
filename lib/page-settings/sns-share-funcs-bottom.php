@@ -9,10 +9,10 @@ function is_sns_bottom_share_buttons_visible(){
 endif;
 
 //ボトムSNSシェアメッセージ
-define('OP_SNS_SHARE_MESSAGE', 'sns_share_message');
-if ( !function_exists( 'get_sns_share_message' ) ):
-function get_sns_share_message(){
-  return get_theme_option(OP_SNS_SHARE_MESSAGE, 'シェアする');
+define('OP_SNS_BOTTOM_SHARE_MESSAGE', 'sns_bottom_share_message');
+if ( !function_exists( 'get_sns_bottom_share_message' ) ):
+function get_sns_bottom_share_message(){
+  return get_theme_option(OP_SNS_BOTTOM_SHARE_MESSAGE, 'シェアする');
 }
 endif;
 
