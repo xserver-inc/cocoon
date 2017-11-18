@@ -49,10 +49,10 @@ function is_bottom_google_plus_share_button_visible(){
 endif;
 
 //ボトムPocketシェアボタンの表示
-define('OP_POCKET_SHARE_BUTTON_VISIBLE', 'bottom_pocket_share_button_visible');
+define('OP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE', 'bottom_pocket_share_button_visible');
 if ( !function_exists( 'is_bottom_pocket_share_button_visible' ) ):
 function is_bottom_pocket_share_button_visible(){
-  return get_theme_option(OP_POCKET_SHARE_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 
