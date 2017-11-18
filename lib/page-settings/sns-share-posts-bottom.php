@@ -9,7 +9,7 @@ update_theme_option(OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE);
 //Facebookシェアボタンの表示
 update_theme_option(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE);
 //はてなブックマークシェアボタンの表示
-update_theme_option(OP_HATEBU_SHARE_BUTTON_VISIBLE);
+update_theme_option(OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE);
 //Google+シェアボタンの表示
 update_theme_option(OP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE);
 //Pocketシェアボタンの表示
