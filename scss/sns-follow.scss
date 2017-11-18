@@ -1,0 +1,41 @@
+/************************************
+** SNSフォローボタン
+************************************/
+.sns-follow{
+  @extend %margin_top_and_bottom_in_content;
+  //margin: 36px 0;
+
+  //ボタンカラー
+  &{
+    @extend %sns_button_color;
+  }
+}
+
+.sns-follow-message{
+  @extend %sns_message;
+}
+
+.sns-follow-buttons{
+  @extend %sns_buttons;
+
+  a{
+    width: 100%;
+    margin-right: 8px;
+    margin-bottom: $sns_button_margin_bottom;
+    font-size: 30px;
+    //line-height: 46px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    .follow-count{
+      @include service_count;
+    }
+  }
+}
