@@ -57,7 +57,7 @@
                 <?php generate_checkbox_tag(OP_TOP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE, is_top_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_LINE_AT_SHARE_BUTTON_VISIBLE, is_top_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE, is_top_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
               </li>
             </ul>
             <p><?php _e( '表示するシェアボタンを選択してください。', THEME_NAME ) ?></p>

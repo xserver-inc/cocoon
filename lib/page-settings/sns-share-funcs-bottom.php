@@ -57,10 +57,10 @@ function is_bottom_pocket_share_button_visible(){
 endif;
 
 //ボトムLINE@シェアボタンの表示
-define('OP_LINE_AT_SHARE_BUTTON_VISIBLE', 'bottom_line_at_share_button_visible');
+define('OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE', 'bottom_line_at_share_button_visible');
 if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible(){
-  return get_theme_option(OP_LINE_AT_SHARE_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 
