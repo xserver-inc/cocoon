@@ -20,27 +20,27 @@
   <div class="sns-share-buttons">
     <?php if ( (is_twitter_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_twitter_share_button_visible() && $option == SS_TOP) )://Twitterボタンを表示するか ?>
-      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count"></span></a>
+      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( (is_facebook_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_facebook_share_button_visible() && $option == SS_TOP) )://Facebookボタンを表示するか ?>
-      <a href="<?php echo get_facebook_share_url(); ?>" class="share-button facebook-button facebook-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count"></span></a>
+      <a href="<?php echo get_facebook_share_url(); ?>" class="share-button facebook-button facebook-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( (is_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_hatebu_share_button_visible() && $option == SS_TOP) )://はてなボタンを表示するか ?>
-      <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="<?php the_title(); ?>" target="blank" rel="nofollow"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"></span></a>
+      <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="<?php the_title(); ?>" target="blank" rel="nofollow"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( (is_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_google_plus_share_button_visible() && $option == SS_TOP) )://Google＋ボタンを表示するか ?>
-      <a href="//plus.google.com/share?url=<?php echo get_google_plus_share_url(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button google-plus-button google-plus-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count"></span></a>
+      <a href="//plus.google.com/share?url=<?php echo get_google_plus_share_url(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button google-plus-button google-plus-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( (is_pocket_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_pocket_share_button_visible() && $option == SS_TOP) )://pocketボタンを表示するか ?>
-      <a href="<?php echo get_pocket_share_url(); ?>" class="share-button pocket-button pocket-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count"></span></a>
+      <a href="<?php echo get_pocket_share_url(); ?>" class="share-button pocket-button pocket-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( (is_line_at_share_button_visible() && $option == SS_BOTTOM) ||

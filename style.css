@@ -158,7 +158,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   text-decoration: none;
   border-radius: 4px;
   height: 45px;
-  line-height: 45px;
 }
 .ss-top .sns-share-buttons a:hover,
 .ss-bottom .sns-share-buttons a:hover, .sns-follow-buttons a:hover {
@@ -2069,12 +2068,36 @@ label.screen-reader-text {
   align-content: center;
   line-height: 16px;
 }
-.sns-share.ss-top.ss-high-and-low-lc a span, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a span, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a span, .sns-share.ss-top.ss-high-and-low-cl a span, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a span, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a span, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a span, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a span, .sns-share.ss-bottom.ss-high-and-low-lc a span, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a span, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a span, .sns-share.ss-bottom.ss-high-and-low-cl a span {
+.sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon, .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon,
+.sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption,
+.sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption {
   display: block;
   font-size: 16px;
   margin: 0;
 }
-.sns-share.ss-top.ss-high-and-low-lc a span.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a span.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a span.button-caption, .sns-share.ss-top.ss-high-and-low-cl a span.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a span.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a span.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a span.button-caption, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a span.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc a span.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a span.button-caption, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a span.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl a span.button-caption {
+.sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon.button-caption,
+.sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption {
   font-size: 12px;
 }
 .sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-bottom.ss-high-and-low-lc a {
@@ -2099,11 +2122,21 @@ label.screen-reader-text {
   align-content: center;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .ss-top .sns-share-buttons a .button-caption,
 .ss-bottom .sns-share-buttons a .button-caption {
   font-size: 16px;
   margin-left: 10px;
+}
+.ss-top .sns-share-buttons a .share-count,
+.ss-bottom .sns-share-buttons a .share-count {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
 }
 
 /************************************

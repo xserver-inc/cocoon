@@ -207,7 +207,8 @@
       align-content: center;
 
       line-height: 16px;
-      span{
+      .social-icon,
+      .button-caption{
         display: block;
         font-size: 16px;
         margin: 0;
@@ -256,14 +257,26 @@ $sns_button_margin_bottom: 8px;
       align-content: center;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       .button-caption{
         font-size: 16px;
         margin-left: 10px;
       }
+
+      .share-count{
+        font-family: Arial, sans-serif;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        font-size: 12px;
+        line-height: 1;
+      }
     }
   }
 }
+
+
 /************************************
 ** SNSフォローボタン
 ************************************/
