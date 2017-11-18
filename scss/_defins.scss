@@ -282,3 +282,15 @@ $bgc_hover_anime: all 0.3s ease 0s;
     }
   }
 }
+
+///////////////////////////////////////
+// Comment
+///////////////////////////////////////
+@mixin service_count {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
+}

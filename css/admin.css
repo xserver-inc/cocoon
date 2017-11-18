@@ -106,12 +106,10 @@
   text-align: center;
   margin-bottom: 3px; }
 
-.demo .ss-top .sns-share-buttons,
-.demo .ss-bottom .sns-share-buttons, .demo .sns-follow-buttons {
+.demo .sns-share-buttons, .demo .sns-follow-buttons {
   display: flex;
   align-items: center; }
-  .demo .ss-top .sns-share-buttons a,
-  .demo .ss-bottom .sns-share-buttons a, .demo .sns-follow-buttons a {
+  .demo .sns-share-buttons a, .demo .sns-follow-buttons a {
     display: block;
     background-color: #777879;
     text-align: center;
@@ -119,8 +117,7 @@
     text-decoration: none;
     border-radius: 4px;
     height: 45px; }
-    .demo .ss-top .sns-share-buttons a:hover,
-    .demo .ss-bottom .sns-share-buttons a:hover, .demo .sns-follow-buttons a:hover {
+    .demo .sns-share-buttons a:hover, .demo .sns-follow-buttons a:hover {
       opacity: 0.7;
       color: #fff; }
 
@@ -1681,13 +1678,11 @@
     flex-direction: column; }
   .demo .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-bottom.ss-high-and-low-cl a {
     flex-direction: column-reverse; }
-  .demo .ss-top .sns-share-buttons,
-  .demo .ss-bottom .sns-share-buttons {
+  .demo .sns-share-buttons {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center; }
-    .demo .ss-top .sns-share-buttons a,
-    .demo .ss-bottom .sns-share-buttons a {
+    .demo .sns-share-buttons a {
       width: 32%;
       margin-bottom: 8px;
       font-size: 18px;
@@ -1696,12 +1691,10 @@
       align-items: center;
       justify-content: center;
       position: relative; }
-      .demo .ss-top .sns-share-buttons a .button-caption,
-      .demo .ss-bottom .sns-share-buttons a .button-caption {
+      .demo .sns-share-buttons a .button-caption {
         font-size: 16px;
         margin-left: 10px; }
-      .demo .ss-top .sns-share-buttons a .share-count,
-      .demo .ss-bottom .sns-share-buttons a .share-count {
+      .demo .sns-share-buttons a .share-count {
         font-family: Arial, sans-serif;
         position: absolute;
         right: 3px;
@@ -1716,9 +1709,17 @@
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: center; }
+    justify-content: center;
+    position: relative; }
     .demo .sns-follow-buttons a:last-child {
       margin-right: 0; }
+    .demo .sns-follow-buttons a .follow-count {
+      font-family: Arial, sans-serif;
+      position: absolute;
+      right: 3px;
+      bottom: 3px;
+      font-size: 12px;
+      line-height: 1; }
   .demo .ad-area {
     text-align: center;
     margin-bottom: 1.8em; }

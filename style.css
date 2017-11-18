@@ -144,13 +144,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin-bottom: 3px;
 }
 
-.ss-top .sns-share-buttons,
-.ss-bottom .sns-share-buttons, .sns-follow-buttons {
+.sns-share-buttons, .sns-follow-buttons {
   display: flex;
   align-items: center;
 }
-.ss-top .sns-share-buttons a,
-.ss-bottom .sns-share-buttons a, .sns-follow-buttons a {
+.sns-share-buttons a, .sns-follow-buttons a {
   display: block;
   background-color: #777879;
   text-align: center;
@@ -159,8 +157,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   border-radius: 4px;
   height: 45px;
 }
-.ss-top .sns-share-buttons a:hover,
-.ss-bottom .sns-share-buttons a:hover, .sns-follow-buttons a:hover {
+.sns-share-buttons a:hover, .sns-follow-buttons a:hover {
   opacity: 0.7;
   color: #fff;
 }
@@ -2107,14 +2104,12 @@ label.screen-reader-text {
   flex-direction: column-reverse;
 }
 
-.ss-top .sns-share-buttons,
-.ss-bottom .sns-share-buttons {
+.sns-share-buttons {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
 }
-.ss-top .sns-share-buttons a,
-.ss-bottom .sns-share-buttons a {
+.sns-share-buttons a {
   width: 32%;
   margin-bottom: 8px;
   font-size: 18px;
@@ -2124,13 +2119,11 @@ label.screen-reader-text {
   justify-content: center;
   position: relative;
 }
-.ss-top .sns-share-buttons a .button-caption,
-.ss-bottom .sns-share-buttons a .button-caption {
+.sns-share-buttons a .button-caption {
   font-size: 16px;
   margin-left: 10px;
 }
-.ss-top .sns-share-buttons a .share-count,
-.ss-bottom .sns-share-buttons a .share-count {
+.sns-share-buttons a .share-count {
   font-family: Arial, sans-serif;
   position: absolute;
   right: 3px;
@@ -2151,9 +2144,18 @@ label.screen-reader-text {
   align-items: center;
   align-content: center;
   justify-content: center;
+  position: relative;
 }
 .sns-follow-buttons a:last-child {
   margin-right: 0;
+}
+.sns-follow-buttons a .follow-count {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
 }
 
 /************************************
