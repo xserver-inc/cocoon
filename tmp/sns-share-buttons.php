@@ -44,7 +44,7 @@
       <a href="<?php echo get_pocket_share_url(); ?>" class="share-button pocket-button pocket-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count">0</span></a>
     <?php endif; ?>
 
-    <?php if ( (is_line_at_share_button_visible() && $option == SS_BOTTOM) ||
+    <?php if ( (is_bottom_line_at_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_line_at_share_button_visible() && $option == SS_TOP) )://LINEボタンを表示するか ?>
       <a href="<?php echo get_line_share_url(); ?>" class="share-button line-button line-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span></a>
     <?php endif; ?>
