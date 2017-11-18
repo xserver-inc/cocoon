@@ -33,9 +33,9 @@ function is_bottom_facebook_share_button_visible(){
 endif;
 
 //ボトムはてなブックマークシェアボタンの表示
-define('OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE', 'hatebu_share_button_visible');
-if ( !function_exists( 'is_hatebu_share_button_visible' ) ):
-function is_hatebu_share_button_visible(){
+define('OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE', 'bottom_hatebu_share_button_visible');
+if ( !function_exists( 'is_bottom_hatebu_share_button_visible' ) ):
+function is_bottom_hatebu_share_button_visible(){
   return get_theme_option(OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
