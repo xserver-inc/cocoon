@@ -45,7 +45,7 @@
                 <?php generate_checkbox_tag(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE, is_top_twitter_share_button_visible(), __( 'Twitter', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_TOP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, is_top_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
               </li>
               <li>
                 <?php generate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>

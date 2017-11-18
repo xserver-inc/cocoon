@@ -28,10 +28,10 @@ function is_top_twitter_share_button_visible(){
 endif;
 
 //Facebookシェアボタンの表示
-define('OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE', 'top_facebook_share_button_visible');
+define('OP_TOP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE', 'top_facebook_share_button_visible');
 if ( !function_exists( 'is_top_facebook_share_button_visible' ) ):
 function is_top_facebook_share_button_visible(){
-  return get_theme_option(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE, 1);
+  return get_theme_option(OP_TOP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 
