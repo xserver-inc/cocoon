@@ -267,17 +267,14 @@ $sns_button_margin_bottom: 8px;
 
       .share-count{
         @include service_count;
-        // font-family: Arial, sans-serif;
-        // position: absolute;
-        // right: 3px;
-        // bottom: 3px;
-        // font-size: 12px;
-        // line-height: 1;
       }
     }
   }
 // }
 
+.sbc-hide .share-count{
+  display: none;
+}
 
 /************************************
 ** SNSフォローボタン

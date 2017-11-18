@@ -1701,6 +1701,8 @@
         bottom: 3px;
         font-size: 12px;
         line-height: 1; }
+  .demo .sbc-hide .share-count {
+    display: none; }
   .demo .sns-follow-buttons a {
     width: 100%;
     margin-right: 8px;

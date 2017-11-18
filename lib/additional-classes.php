@@ -291,6 +291,19 @@ function get_additional_sns_share_button_classes($option = null){
       break;
   }
 
+  //ボタンカラー
+  if ($option == SS_TOP) {
+    $value = is_sns_top_share_buttons_count_visible();
+  } else {
+    $value = is_sns_bottom_share_buttons_count_visible();
+  }
+  if ($value) {
+    $classes .= ' sbc-show';
+  } else {
+    $classes .= ' sbc-hide';
+  }
+
+
   if ($option) {
     $classes .= ' '.trim($option);
   }
