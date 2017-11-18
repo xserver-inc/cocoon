@@ -67,7 +67,7 @@
                 <?php generate_checkbox_tag(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_bottom_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
               </li>
               <li>
-                <?php generate_checkbox_tag(OP_POCKET_SHARE_BUTTON_VISIBLE, is_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
+                <?php generate_checkbox_tag(OP_POCKET_SHARE_BUTTON_VISIBLE, is_bottom_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li>
               <li>
                 <?php generate_checkbox_tag(OP_LINE_AT_SHARE_BUTTON_VISIBLE, is_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
