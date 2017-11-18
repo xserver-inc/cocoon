@@ -135,6 +135,19 @@
           </td>
         </tr>
 
+        <!-- シェア数の表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE, __( 'シェア数の表示', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE, is_sns_bottom_share_buttons_count_visible(), __( 'メインカラム本文上シェア数を表示', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページのメインカラムにある本文上シェアボタンの表示を切り替えます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

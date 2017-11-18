@@ -22,8 +22,10 @@ update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR);
 update_theme_option(OP_SNS_BOTTOM_SHARE_COLUMN_COUNT);
 //SNSシェアボタンのロゴとキャプションの位置
 update_theme_option(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION);
-//ツイートにメンションを含める
-update_theme_option(OP_TWITTER_ID_INCLUDE);
-//ツイート後にフォローを促す
-update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
+//SNSボトムシェア数の表示
+update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE);
+// //ツイートにメンションを含める
+// update_theme_option(OP_TWITTER_ID_INCLUDE);
+// //ツイート後にフォローを促す
+// update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
 

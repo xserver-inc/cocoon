@@ -87,3 +87,11 @@ function get_sns_bottom_share_logo_caption_position(){
   return get_theme_option(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION, 'left_and_right');
 }
 endif;
+
+//SNSボトムシェア数の表示
+define('OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE', 'sns_bottom_share_buttons_count_visible');
+if ( !function_exists( 'is_sns_bottom_share_buttons_count_visible' ) ):
+function is_sns_bottom_share_buttons_count_visible(){
+  return get_theme_option(OP_SNS_BOTTOM_SHARE_BUTTONS_COUNT_VISIBLE, 1);
+}
+endif;
