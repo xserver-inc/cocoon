@@ -277,7 +277,7 @@ function get_additional_sns_share_button_classes($option = null){
   if ($option == SS_TOP) {
     $value = get_sns_top_share_button_color();
   } else {
-    $value = get_sns_share_button_color();
+    $value = get_sns_bottom_share_button_color();
   }
   switch ($value) {
     case 'brand_color':

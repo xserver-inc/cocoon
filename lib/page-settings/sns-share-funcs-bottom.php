@@ -65,9 +65,9 @@ function is_bottom_line_at_share_button_visible(){
 endif;
 
 //ボトムSNSシェアボタンカラー
-define('OP_SNS_BOTTOM_SHARE_BUTTON_COLOR', 'sns_share_button_color');
-if ( !function_exists( 'get_sns_share_button_color' ) ):
-function get_sns_share_button_color(){
+define('OP_SNS_BOTTOM_SHARE_BUTTON_COLOR', 'sns_bottom_share_button_color');
+if ( !function_exists( 'get_sns_bottom_share_button_color' ) ):
+function get_sns_bottom_share_button_color(){
   return get_theme_option(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR, 'brand_color');
 }
 endif;
