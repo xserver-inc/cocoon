@@ -34,7 +34,7 @@
       <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="<?php the_title(); ?>" target="blank" rel="nofollow"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count">0</span></a>
     <?php endif; ?>
 
-    <?php if ( (is_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
+    <?php if ( (is_bottom_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
                (is_top_google_plus_share_button_visible() && $option == SS_TOP) )://Google＋ボタンを表示するか ?>
       <a href="//plus.google.com/share?url=<?php echo get_google_plus_share_url(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button google-plus-button google-plus-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count">0</span></a>
     <?php endif; ?>

@@ -41,15 +41,15 @@ function is_bottom_hatebu_share_button_visible(){
 endif;
 
 //ボトムGoogle+シェアボタンの表示
-define('OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'google_plus_share_button_visible');
-if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
-function is_google_plus_share_button_visible(){
+define('OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'bottom_google_plus_share_button_visible');
+if ( !function_exists( 'is_bottom_google_plus_share_button_visible' ) ):
+function is_bottom_google_plus_share_button_visible(){
   return get_theme_option(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 1);
 }
 endif;
 
 //ボトムPocketシェアボタンの表示
-define('OP_POCKET_SHARE_BUTTON_VISIBLE', 'pocket_share_button_visible');
+define('OP_POCKET_SHARE_BUTTON_VISIBLE', 'bottom_pocket_share_button_visible');
 if ( !function_exists( 'is_pocket_share_button_visible' ) ):
 function is_pocket_share_button_visible(){
   return get_theme_option(OP_POCKET_SHARE_BUTTON_VISIBLE, 1);
@@ -57,7 +57,7 @@ function is_pocket_share_button_visible(){
 endif;
 
 //ボトムLINE@シェアボタンの表示
-define('OP_LINE_AT_SHARE_BUTTON_VISIBLE', 'line_at_share_button_visible');
+define('OP_LINE_AT_SHARE_BUTTON_VISIBLE', 'bottom_line_at_share_button_visible');
 if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible(){
   return get_theme_option(OP_LINE_AT_SHARE_BUTTON_VISIBLE, 1);
