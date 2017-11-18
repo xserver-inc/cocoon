@@ -20,7 +20,7 @@
 
   <div class="sns-share-buttons">
     <?php if ( is_twitter_share_button_visible($option) )://Twitterボタンを表示するか ?>
-      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><?php if ( 1 ): ?><span class="share-count twitter-share-count">0</span><?php endif ?></a>
+      <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count">0</span></a>
     <?php endif; ?>
 
     <?php if ( is_facebook_share_button_visible($option) )://Facebookボタンを表示するか ?>
