@@ -111,7 +111,7 @@
               '5' => '5列',
               '6' => '6列',
             );
-            generate_selectbox_tag(OP_SNS_BOTTOM_SHARE_COLUMN_COUNT, $options, get_sns_share_column_count());
+            generate_selectbox_tag(OP_SNS_BOTTOM_SHARE_COLUMN_COUNT, $options, get_sns_bottom_share_column_count());
             generate_tips_tag(__( '本文下シェアボタンのカラム数を選択してください。', THEME_NAME ));
             ?>
           </td>
