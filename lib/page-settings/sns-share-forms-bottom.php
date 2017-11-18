@@ -120,7 +120,7 @@
         <!-- ロゴ・キャプション配置 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SNS_SHARE_LOGO_CAPTION_POSITION, __( 'ロゴ・キャプション配置', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION, __( 'ロゴ・キャプション配置', THEME_NAME )); ?>
           </th>
           <td>
             <?php
@@ -129,7 +129,7 @@
               'high_and_low_lc' => 'ロゴ・キャプション 上下',
               'high_and_low_cl' => 'キャプション・ロゴ 上下',
             );
-            generate_selectbox_tag(OP_SNS_SHARE_LOGO_CAPTION_POSITION, $options, get_sns_share_logo_caption_position());
+            generate_selectbox_tag(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION, $options, get_sns_share_logo_caption_position());
             generate_tips_tag(__( '本文下シェアボタンのロゴとキャプションの配置を選択してください。', THEME_NAME ));
             ?>
           </td>

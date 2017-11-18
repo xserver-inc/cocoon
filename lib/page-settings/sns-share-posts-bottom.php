@@ -21,7 +21,7 @@ update_theme_option(OP_SNS_BOTTOM_SHARE_BUTTON_COLOR);
 //シェアボタンのカラム数
 update_theme_option(OP_SNS_BOTTOM_SHARE_COLUMN_COUNT);
 //SNSシェアボタンのロゴとキャプションの位置
-update_theme_option(OP_SNS_SHARE_LOGO_CAPTION_POSITION);
+update_theme_option(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION);
 //ツイートにメンションを含める
 update_theme_option(OP_TWITTER_ID_INCLUDE);
 //ツイート後にフォローを促す
