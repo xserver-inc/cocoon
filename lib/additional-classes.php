@@ -259,7 +259,7 @@ function get_additional_sns_share_button_classes($option = null){
   if ($option == SS_TOP) {
     $value = get_sns_top_share_logo_caption_position();
   } else {
-    $value = get_sns_share_logo_caption_position();
+    $value = get_sns_bottom_share_logo_caption_position();
   }
   switch ($value) {
     case 'high_and_low_lc':
