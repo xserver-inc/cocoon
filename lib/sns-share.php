@@ -2,7 +2,10 @@
 
 //Google＋カウントの取得
 if ( !function_exists( 'fetch_google_plus_count' ) ):
-function fetch_google_plus_count($url) {
+function fetch_google_plus_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
   $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
   //URL（クエリ）先の情報を取得
   $args = array( 'sslverify' => false );
@@ -14,9 +17,23 @@ function fetch_google_plus_count($url) {
 }
 endif;
 
+//Google＋カウントの取得
+if ( !function_exists( 'get_google_plus_count' ) ):
+function get_google_plus_count($url = null) {
+  if (is_scc_gplus_exists()) {
+    return scc_get_share_gplus();
+  } else {
+    return fetch_google_plus_count($url);
+  }
+}
+endif;
+
 //Pocketカウントの取得
 if ( !function_exists( 'fetch_pocket_count' ) ):
-function fetch_pocket_count($url) {
+function fetch_pocket_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
   if ( WP_Filesystem() ) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //$query = 'http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url=' . $url;
@@ -37,7 +54,10 @@ endif;
 
 //count.jsoonからTwitterのツイート数を取得
 if ( !function_exists( 'fetch_twitter_count' ) ):
-function fetch_twitter_count($url){
+function fetch_twitter_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
   $url = rawurlencode( $url );
   $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
@@ -53,7 +73,10 @@ endif;
 
 //Facebookシェア数を取得する
 if ( !function_exists( 'fetch_facebook_count' ) ):
-function fetch_facebook_count($url) {
+function fetch_facebook_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
   //URLをURLエンコード
   $encoded_url = rawurlencode( $url );
   //オプションの設定
