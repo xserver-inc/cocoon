@@ -52,7 +52,7 @@ function fetch_pocket_count($url = null) {
 }
 endif;
 
-//Google＋カウントの取得
+//Pocketカウントの取得
 if ( !function_exists( 'get_pocket_count' ) ):
 function get_pocket_count($url = null) {
   if (is_scc_pocket_exists()) {
@@ -79,6 +79,17 @@ function fetch_twitter_count($url = null) {
     $res = ($json->{"count"} ? $json->{"count"} : '0');
   }
   return $res;
+}
+endif;
+
+//Twitterカウントの取得
+if ( !function_exists( 'get_twitter_count' ) ):
+function get_twitter_count($url = null) {
+  if (is_scc_twitter_exists()) {
+    return scc_get_share_gplus();
+  } else {
+    return null;
+  }
 }
 endif;
 
