@@ -2499,12 +2499,22 @@ input[type='submit'] {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.author-box .sns-follow-buttons a {
+.author-box .sns-follow-buttons a.follow-button {
   font-size: 18px;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   margin-bottom: 4px;
   margin-right: 4px;
+  background-color: #fff;
+  color: #777879;
+  border: 1px solid #777879;
+  border-radius: 2px;
+}
+.author-box .sns-follow-buttons a.follow-button:hover {
+  background-color: #fafbfc;
+}
+.author-box .sns-follow-buttons a.follow-button .follow-count {
+  display: none;
 }
 
 .author-thumb {

@@ -29,12 +29,23 @@
   .sns-follow-buttons{
     flex-wrap: wrap;
     justify-content: flex-start;
-    a{
+    a.follow-button{
       font-size: 18px;
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       margin-bottom: 4px;
       margin-right: 4px;
+      background-color: $bg_white;
+      color: $pallid_text_color;
+      border: 1px solid $pallid_text_color;
+      border-radius: 2px;
+      &:hover{
+        background-color: $xxx_thin;
+      }
+
+      .follow-count{
+        display: none;
+      }
     }
   }
 }

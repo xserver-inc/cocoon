@@ -1929,12 +1929,20 @@
     .demo .author-box .sns-follow-buttons {
       flex-wrap: wrap;
       justify-content: flex-start; }
-      .demo .author-box .sns-follow-buttons a {
+      .demo .author-box .sns-follow-buttons a.follow-button {
         font-size: 18px;
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
         margin-bottom: 4px;
-        margin-right: 4px; }
+        margin-right: 4px;
+        background-color: #fff;
+        color: #777879;
+        border: 1px solid #777879;
+        border-radius: 2px; }
+        .demo .author-box .sns-follow-buttons a.follow-button:hover {
+          background-color: #fafbfc; }
+        .demo .author-box .sns-follow-buttons a.follow-button .follow-count {
+          display: none; }
   .demo .author-thumb {
     float: left;
     margin-top: 4px;
