@@ -56,7 +56,7 @@ endif;
 if ( !function_exists( 'get_pocket_count' ) ):
 function get_pocket_count($url = null) {
   if (is_scc_pocket_exists()) {
-    return scc_get_share_gplus();
+    return scc_get_share_pocket();
   } else {
     return fetch_pocket_count($url);
   }
@@ -114,6 +114,17 @@ function fetch_facebook_count($url = null) {
     $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
   }
   return $res;
+}
+endif;
+
+//Facebookカウントの取得
+if ( !function_exists( 'get_facebook_count' ) ):
+function get_facebook_count($url = null) {
+  if (is_scc_facebook_exists()) {
+    return scc_get_share_facebook();
+  } else {
+    return fetch_facebook_count($url);
+  }
 }
 endif;
 
