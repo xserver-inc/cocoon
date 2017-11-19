@@ -10,7 +10,7 @@ function fetch_feedly_count(){
   }
   $feed_url = rawurlencode( get_bloginfo( 'rss2_url' ) );
   $res = 0;
-  $args = array( 'sslverify' => is_ssl_verification_enable() );
+  $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "http://cloud.feedly.com/v3/feeds/feed%2F$feed_url", $args );
   if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
     $subscribers = json_decode( $subscribers['body'] );
@@ -24,12 +24,16 @@ function fetch_feedly_count(){
 }
 endif;
 
-// //SSLの検証をするか
-// if ( !function_exists( 'fetch_push7_info' ) ):
-// function ssl_verification(){
-//   return true;
-// }
-// endif;
+//feedlyの購読者数の取得
+if ( !function_exists( 'get_feedly_count' ) ):
+function get_feedly_count(){
+  if (is_scc_feedly_exists()) {
+    return scc_get_follow_feedly();
+  } else {
+    return fetch_feedly_count();
+  }
+}
+endif;
 
 //Push7情報取得
 if ( !function_exists( 'fetch_push7_info' ) ):
@@ -43,7 +47,7 @@ function fetch_push7_info(){
   $app_no = get_push7_follow_app_no();
   if ( $app_no ) {
     $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
-    $args = array( 'sslverify' => is_ssl_verification_enable() );
+    $args = array( 'sslverify' => false );
     //$args = array('sslverify' => false);
     $info = wp_remote_get( $url, $args );
     if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
@@ -60,20 +64,12 @@ function fetch_push7_info(){
 }
 endif;
 
-//不具合対策用のfeedlyの購読者数取得の別名
-if ( !function_exists( 'get_feedly_count' ) ):
-function get_feedly_count(){
-  return fetch_feedly_count();
-}
-endif;
-
-
 //Google＋カウントの取得
 if ( !function_exists( 'fetch_google_plus_count' ) ):
 function fetch_google_plus_count($url) {
   $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
   //URL（クエリ）先の情報を取得
-  $args = array( 'sslverify' => is_ssl_verification_enable() );
+  $args = array( 'sslverify' => false );
   $result = wp_remote_get($query, $args);
   // 正規表現でカウント数のところだけを抽出
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
@@ -91,7 +87,7 @@ function fetch_pocket_count($url) {
     $url = urlencode($url);
     $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
     //URL（クエリ）先の情報を取得
-    $args = array( 'sslverify' => is_ssl_verification_enable() );
+    $args = array( 'sslverify' => false );
     $result = wp_remote_get($query, $args);
     //var_dump($result["body"]);
     // 正規表現でカウント数のところだけを抽出
@@ -107,7 +103,7 @@ endif;
 if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url){
   $url = rawurlencode( $url );
-  $args = array( 'sslverify' => is_ssl_verification_enable() );
+  $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
   $res = '0';
   if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
@@ -125,7 +121,7 @@ function fetch_facebook_count($url) {
   //URLをURLエンコード
   $encoded_url = rawurlencode( $url );
   //オプションの設定
-  $args = array( 'sslverify' => is_ssl_verification_enable() );
+  $args = array( 'sslverify' => false );
   //Facebookにリクエストを送る
   $response = wp_remote_get( 'http://graph.facebook.com/?id='.$encoded_url, $args );
   $res = 0;
@@ -141,47 +137,47 @@ function fetch_facebook_count($url) {
 endif;
 
 //SNS Count Cacheプラグインはインストールされているか
-function scc_exists(){
+function is_scc_exists(){
   return function_exists('scc_get_share_twitter');
 }
 
 //ツイート数取得関数が存在しているか
-function scc_twitter_exists(){
+function is_scc_twitter_exists(){
   return function_exists('scc_get_share_twitter');
 }
 
 //Facebookシェア数取得関数が存在しているか
-function scc_facebook_exists(){
+function is_scc_facebook_exists(){
   return function_exists('scc_get_share_facebook');
 }
 
 //Google＋シェア数取得関数が存在しているか
-function scc_gplus_exists(){
+function is_scc_gplus_exists(){
   return function_exists('scc_get_share_gplus');
 }
 
 //はてブ数取得関数が存在しているか
-function scc_hatebu_exists(){
+function is_scc_hatebu_exists(){
   return function_exists('scc_get_share_hatebu');
 }
 
 //Pocketストック数取得関数が存在しているか
-function scc_pocket_exists(){
+function is_scc_pocket_exists(){
   return function_exists('scc_get_share_pocket');
 }
 
 //トータルシェア数取得関数が存在しているか
-function scc_total_exists(){
+function is_scc_total_exists(){
   return function_exists('scc_get_share_total');
 }
 
 //feedly購読者数取得関数が存在しているか
-function scc_feedly_exists(){
+function is_scc_feedly_exists(){
   return function_exists('scc_get_follow_feedly');
 }
 
 //Push7購読者数取得関数が存在しているか
-function scc_push7_exists(){
+function is_scc_push7_exists(){
   return function_exists('scc_get_follow_push7');
 }
 
