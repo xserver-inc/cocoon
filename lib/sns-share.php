@@ -1,68 +1,5 @@
 <?php //SNS関係の関数
 
-//Google＋カウントの取得
-if ( !function_exists( 'fetch_google_plus_count' ) ):
-function fetch_google_plus_count($url = null) {
-  if (!$url) {
-    $url = get_the_permalink();
-  }
-  $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
-  //URL（クエリ）先の情報を取得
-  $args = array( 'sslverify' => false );
-  $result = wp_remote_get($query, $args);
-  // 正規表現でカウント数のところだけを抽出
-  preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
-  // 共有数を表示
-  return isset($count[1]) ? intval($count[1]) : 0;
-}
-endif;
-
-//Google＋カウントの取得
-if ( !function_exists( 'get_google_plus_count' ) ):
-function get_google_plus_count($url = null) {
-  if (is_scc_gplus_exists()) {
-    return scc_get_share_gplus();
-  } else {
-    return fetch_google_plus_count($url);
-  }
-}
-endif;
-
-//Pocketカウントの取得
-if ( !function_exists( 'fetch_pocket_count' ) ):
-function fetch_pocket_count($url = null) {
-  if (!$url) {
-    $url = get_the_permalink();
-  }
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    //$query = 'http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url=' . $url;
-    $url = urlencode($url);
-    $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
-    //URL（クエリ）先の情報を取得
-    $args = array( 'sslverify' => false );
-    $result = wp_remote_get($query, $args);
-    //var_dump($result["body"]);
-    // 正規表現でカウント数のところだけを抽出
-    preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-    // 共有数を表示
-    return isset($count[1]) ? intval($count[1]) : 0;
-  }
-  return 0;
-}
-endif;
-
-//Pocketカウントの取得
-if ( !function_exists( 'get_pocket_count' ) ):
-function get_pocket_count($url = null) {
-  if (is_scc_pocket_exists()) {
-    return scc_get_share_pocket();
-  } else {
-    return fetch_pocket_count($url);
-  }
-}
-endif;
-
 //count.jsoonからTwitterのツイート数を取得
 if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url = null) {
@@ -104,7 +41,7 @@ function fetch_facebook_count($url = null) {
   //オプションの設定
   $args = array( 'sslverify' => false );
   //Facebookにリクエストを送る
-  $response = wp_remote_get( 'http://graph.facebook.com/?id='.$encoded_url, $args );
+  $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
   $res = 0;
 
   //取得に成功した場合
@@ -124,6 +61,104 @@ function get_facebook_count($url = null) {
     return scc_get_share_facebook();
   } else {
     return fetch_facebook_count($url);
+  }
+}
+endif;
+
+if ( !function_exists( 'fetch_hatebu_count' ) ):
+function fetch_hatebu_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
+  //取得するURL(ついでにURLエンコード)
+  $encoded_url = rawurlencode($url);
+  //オプションの設定
+  $args = array( 'sslverify' => false );
+  //Facebookにリクエストを送る
+  $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
+  $res = 0;
+
+  //取得に成功した場合
+  if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+    $body = $response['body'];
+    if (!empty($body)) {
+      $res = $body;
+    }
+  }
+  return $res;
+}
+endif;
+
+//はてブカウントの取得
+if ( !function_exists( 'get_hatebu_count' ) ):
+function get_hatebu_count($url = null) {
+  if (is_scc_hatebu_exists()) {
+    return scc_get_share_hatebu();
+  } else {
+    return fetch_hatebu_count($url);
+  }
+}
+endif;
+
+//Google＋カウントの取得
+if ( !function_exists( 'fetch_google_plus_count' ) ):
+function fetch_google_plus_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
+  $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
+  //URL（クエリ）先の情報を取得
+  $args = array( 'sslverify' => false );
+  $result = wp_remote_get($query, $args);
+  // 正規表現でカウント数のところだけを抽出
+  preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
+  // 共有数を表示
+  return isset($count[1]) ? intval($count[1]) : 0;
+}
+endif;
+
+//Google＋カウントの取得
+if ( !function_exists( 'get_google_plus_count' ) ):
+function get_google_plus_count($url = null) {
+  if (is_scc_gplus_exists()) {
+    return scc_get_share_gplus();
+  } else {
+    return null;
+  }
+}
+endif;
+
+//Pocketカウントの取得
+if ( !function_exists( 'fetch_pocket_count' ) ):
+function fetch_pocket_count($url = null) {
+  if (!$url) {
+    $url = get_the_permalink();
+  }
+  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    //$query = 'http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url=' . $url;
+    $url = urlencode($url);
+    $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
+    //URL（クエリ）先の情報を取得
+    $args = array( 'sslverify' => false );
+    $result = wp_remote_get($query, $args);
+    //var_dump($result["body"]);
+    // 正規表現でカウント数のところだけを抽出
+    preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
+    // 共有数を表示
+    return isset($count[1]) ? intval($count[1]) : 0;
+  }
+  return 0;
+}
+endif;
+
+//Pocketカウントの取得
+if ( !function_exists( 'get_pocket_count' ) ):
+function get_pocket_count($url = null) {
+  if (is_scc_pocket_exists()) {
+    return scc_get_share_pocket();
+  } else {
+    return fetch_pocket_count($url);
   }
 }
 endif;
