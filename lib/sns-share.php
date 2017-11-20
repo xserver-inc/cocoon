@@ -1,5 +1,11 @@
 <?php //SNS関係の関数
 
+if ( !function_exists( 'is_sns_share_buttons_count_visible' ) ):
+function is_sns_share_buttons_count_visible(){
+  return is_sns_top_share_buttons_count_visible() || is_sns_bottom_share_buttons_count_visible();
+}
+endif;
+
 //count.jsoonからTwitterのツイート数を取得
 if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url = null) {
@@ -22,6 +28,9 @@ endif;
 //Twitterカウントの取得
 if ( !function_exists( 'get_twitter_count' ) ):
 function get_twitter_count($url = null) {
+  if (!is_sns_share_buttons_count_visible())
+    return null;
+
   if (is_scc_twitter_exists()) {
     return scc_get_share_gplus();
   } else {
@@ -57,6 +66,9 @@ endif;
 //Facebookカウントの取得
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
+  if (!is_sns_share_buttons_count_visible())
+    return null;
+
   if (is_scc_facebook_exists()) {
     return scc_get_share_facebook();
   } else {
@@ -92,6 +104,9 @@ endif;
 //はてブカウントの取得
 if ( !function_exists( 'get_hatebu_count' ) ):
 function get_hatebu_count($url = null) {
+  if (!is_sns_share_buttons_count_visible())
+    return null;
+
   if (is_scc_hatebu_exists()) {
     return scc_get_share_hatebu();
   } else {
@@ -120,6 +135,9 @@ endif;
 //Google＋カウントの取得
 if ( !function_exists( 'get_google_plus_count' ) ):
 function get_google_plus_count($url = null) {
+  if (!is_sns_share_buttons_count_visible())
+    return null;
+
   if (is_scc_gplus_exists()) {
     return scc_get_share_gplus();
   } else {
@@ -155,6 +173,9 @@ endif;
 //Pocketカウントの取得
 if ( !function_exists( 'get_pocket_count' ) ):
 function get_pocket_count($url = null) {
+  if (!is_sns_share_buttons_count_visible())
+    return null;
+
   if (is_scc_pocket_exists()) {
     return scc_get_share_pocket();
   } else {

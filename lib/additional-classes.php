@@ -329,6 +329,14 @@ function get_additional_sns_follow_button_classes($option = null){
       break;
   }
 
+  //フォロー数表示
+  if (is_sns_follow_buttons_count_visible()) {
+    $classes .= ' fbc-show';
+  } else {
+    $classes .= ' fbc-hide';
+  }
+
+
   if ($option) {
     $classes .= ' '.trim($option);
   }

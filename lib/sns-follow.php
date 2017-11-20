@@ -3,6 +3,9 @@
 //feedlyの購読者数取得
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
+  if (is_sns_follow_buttons_count_visible())
+    return null;
+
   //DBキャッシュからカウントの取得
   $subscribers = get_transient( 'feedly_subscribers' );
   if ( $subscribers ) {

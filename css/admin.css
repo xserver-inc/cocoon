@@ -1721,6 +1721,8 @@
       bottom: 3px;
       font-size: 12px;
       line-height: 1; }
+  .demo .fbc-hide .follow-count {
+    display: none; }
   .demo .ad-area {
     text-align: center;
     margin-bottom: 1.8em; }

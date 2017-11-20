@@ -2161,6 +2161,10 @@ label.screen-reader-text {
   line-height: 1;
 }
 
+.fbc-hide .follow-count {
+  display: none;
+}
+
 /************************************
 ** 広告
 ************************************/
