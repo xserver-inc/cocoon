@@ -5,20 +5,28 @@ function is_sns_share_buttons_count_visible(){
   return is_sns_top_share_buttons_count_visible() || is_sns_bottom_share_buttons_count_visible();
 }
 endif;
-
+//_vis_numeric(0));
 //count.jsoonからTwitterのツイート数を取得
 if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url = null) {
+
+  global $post;
+  $transient_id = THEME_NAME.'_share_count_twitter_'.$post->ID;
+  //DBキャッシュからカウントの取得
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
+    }
+  }
+
   if (!$url) {
     $url = get_the_permalink();
   }
-
-  //DBキャッシュからカウントの取得
-  $count = get_transient( THEME_NAME.'_twitter_count' );
-  if ( $count ) {
-    return $count;
-  }
-
   $url = rawurlencode( $url );
   $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
@@ -27,8 +35,12 @@ function fetch_twitter_count($url = null) {
        $body = $subscribers['body'];
     $json = json_decode( $body );
     $res = ($json->{"count"} ? $json->{"count"} : '0');
+
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_twitter_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
+    if (is_sns_share_count_cache_enable()) {
+      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    }
+
   }
   return $res;
 }
@@ -51,16 +63,25 @@ endif;
 //Facebookシェア数を取得する
 if ( !function_exists( 'fetch_facebook_count' ) ):
 function fetch_facebook_count($url = null) {
+
+  global $post;
+  $transient_id = THEME_NAME.'_share_count_facebook_'.$post->ID;
+  //DBキャッシュからカウントの取得
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
+    }
+  }
+
+
   if (!$url) {
     $url = get_the_permalink();
   }
-
-  //DBキャッシュからカウントの取得
-  $count = get_transient( THEME_NAME.'_facebook_count' );
-  if ( $count ) {
-    return $count;
-  }
-
   //URLをURLエンコード
   $encoded_url = rawurlencode( $url );
   //オプションの設定
@@ -74,8 +95,11 @@ function fetch_facebook_count($url = null) {
     $body = $response['body'];
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
     $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
+
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_facebook_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
+    if (is_sns_share_count_cache_enable()) {
+      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    }
   }
   return $res;
 }
@@ -97,16 +121,25 @@ endif;
 
 if ( !function_exists( 'fetch_hatebu_count' ) ):
 function fetch_hatebu_count($url = null) {
+
+  global $post;
+  $transient_id = THEME_NAME.'_share_count_hatebu_'.$post->ID;
+  //DBキャッシュからカウントの取得
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
+    }
+  }
+
+
   if (!$url) {
     $url = get_the_permalink();
   }
-
-  //DBキャッシュからカウントの取得
-  $count = get_transient( THEME_NAME.'_hatebu_count' );
-  if ( $count ) {
-    return $count;
-  }
-
   //取得するURL(ついでにURLエンコード)
   $encoded_url = rawurlencode($url);
   //オプションの設定
@@ -118,10 +151,11 @@ function fetch_hatebu_count($url = null) {
   //取得に成功した場合
   if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
     $body = $response['body'];
-    if (!empty($body)) {
-      $res = $body;
-      //DBキャッシュへ保存
-      set_transient( THEME_NAME.'_hatebu_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
+    $res = !empty($body) ? $body : 0;
+
+    //DBキャッシュへ保存
+    if (is_sns_share_count_cache_enable()) {
+      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
     }
   }
   return $res;
@@ -146,10 +180,18 @@ endif;
 if ( !function_exists( 'fetch_google_plus_count' ) ):
 function fetch_google_plus_count($url = null) {
 
+  global $post;
+  $transient_id = THEME_NAME.'_share_count_google_plus_'.$post->ID;
   //DBキャッシュからカウントの取得
-  $count = get_transient( THEME_NAME.'_google_plus_count' );
-  if ( $count ) {
-    return $count;
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
+    }
   }
 
   if (!$url) {
@@ -163,8 +205,12 @@ function fetch_google_plus_count($url = null) {
   // 正規表現でカウント数のところだけを抽出
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
   $res = isset($count[1]) ? intval($count[1]) : 0;
+
   //DBキャッシュへ保存
-  set_transient( THEME_NAME.'_google_plus_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
+  if (is_sns_share_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+  }
+
   // 共有数を表示
   return $res;
 }
@@ -188,11 +234,20 @@ endif;
 if ( !function_exists( 'fetch_pocket_count' ) ):
 function fetch_pocket_count($url = null) {
 
+  global $post;
+  $transient_id = THEME_NAME.'_share_count_pocket_'.$post->ID;
   //DBキャッシュからカウントの取得
-  $count = get_transient( THEME_NAME.'_pocket_count' );
-  if ( $count ) {
-    return $count;
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
+    }
   }
+
 
   if (!$url) {
     $url = get_the_permalink();
@@ -210,8 +265,12 @@ function fetch_pocket_count($url = null) {
     // 正規表現でカウント数のところだけを抽出
     preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
     $res = isset($count[1]) ? intval($count[1]) : 0;
+
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_pocket_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
+    if (is_sns_share_count_cache_enable()) {
+      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    }
+
     // 共有数を表示
     return $res;
   }

@@ -4,11 +4,17 @@
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
 
+  $transient_id = THEME_NAME.'_follow_count_feedly';
   //DBキャッシュからカウントの取得
   if (is_sns_follow_count_cache_enable()) {
-    $subscribers = get_transient( THEME_NAME.'_feedly_subscribers' );
-    if ( $subscribers ) {
-      return $subscribers;
+    $count = get_transient( $transient_id );
+    //_v($count);
+    if ( is_numeric($count) ) {
+      _edump(
+        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+        'label', 'tag', 'ade5ac'
+      );
+      return $count;
     }
   }
 
@@ -20,15 +26,18 @@ function fetch_feedly_count(){
     $subscribers = json_decode( $subscribers['body'] );
     if ( $subscribers ) {
       $subscribers = $subscribers->subscribers;
-
-      //DBキャッシュにカウントを保存
-      if (is_sns_follow_count_cache_enable()) {
-        set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+      if ($subscribers) {
+        $res = $subscribers;
       }
-
-      $res = ($subscribers ? $subscribers : 0);
     }
+
   }
+
+  //DBキャッシュにカウントを保存
+  if (is_sns_follow_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_follow_count_cache_interval() );
+  }
+
   return $res;
 }
 endif;
@@ -53,9 +62,10 @@ function fetch_push7_info(){
   if (!is_sns_follow_buttons_count_visible())
     return null;
 
+  $transient_id = THEME_NAME.'_follow_info_push7';
   //DBキャッシュからカウントの取得
   if (is_sns_follow_count_cache_enable()) {
-    $info = get_transient( THEME_NAME.'_push7_info' );
+    $info = get_transient( $transient_id  );
     if ( $info ) {
       return $info;
     }
@@ -73,7 +83,7 @@ function fetch_push7_info(){
       if ( $info ) {
         //Push7情報をキャッシュに保存
         if (is_sns_follow_count_cache_enable()) {
-          set_transient( THEME_NAME.'_push7_info', $info, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+          set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
         }
 
         $res = $info;
