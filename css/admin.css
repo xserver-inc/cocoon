@@ -757,8 +757,7 @@
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
   .demo .date-tags {
-    line-height: 0;
-    margin-top: -8px;
+    line-height: 1;
     text-align: right; }
     .demo .date-tags span:last-child {
       margin-right: 0; }
@@ -1627,7 +1626,7 @@
     border: 1px solid #00c300; }
   .demo .sns-share.ss-top {
     margin-top: 0;
-    margin-bottom: 1em; }
+    margin-bottom: 0; }
     .demo .sns-share.ss-top .sns-share-message {
       display: none; }
   .demo .sns-share.ss-top.ss-col-1 a, .demo .sns-share.ss-bottom.ss-col-1 a {

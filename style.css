@@ -723,8 +723,7 @@ img {
 ** 日付関係のスタイル
 ************************************/
 .date-tags {
-  line-height: 0;
-  margin-top: -8px;
+  line-height: 1;
   text-align: right;
 }
 .date-tags span:last-child {
@@ -2040,7 +2039,7 @@ label.screen-reader-text {
 
 .sns-share.ss-top {
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0;
 }
 .sns-share.ss-top .sns-share-message {
   display: none;
