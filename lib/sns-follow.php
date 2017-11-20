@@ -3,14 +3,15 @@
 //feedlyの購読者数取得
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
-  if (is_sns_follow_buttons_count_visible())
-    return null;
 
   //DBキャッシュからカウントの取得
-  $subscribers = get_transient( THEME_NAME.'_feedly_subscribers' );
-  if ( $subscribers ) {
-    return $subscribers;
+  if (is_sns_follow_count_cache_enable()) {
+    $subscribers = get_transient( THEME_NAME.'_feedly_subscribers' );
+    if ( $subscribers ) {
+      return $subscribers;
+    }
   }
+
   $feed_url = rawurlencode( get_bloginfo( 'rss2_url' ) );
   $res = 0;
   $args = array( 'sslverify' => false );
@@ -19,7 +20,12 @@ function fetch_feedly_count(){
     $subscribers = json_decode( $subscribers['body'] );
     if ( $subscribers ) {
       $subscribers = $subscribers->subscribers;
-      set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+
+      //DBキャッシュにカウントを保存
+      if (is_sns_follow_count_cache_enable()) {
+        set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+      }
+
       $res = ($subscribers ? $subscribers : 0);
     }
   }
@@ -30,6 +36,9 @@ endif;
 //feedlyの購読者数の取得
 if ( !function_exists( 'get_feedly_count' ) ):
 function get_feedly_count(){
+  if (!is_sns_follow_buttons_count_visible())
+    return null;
+
   if (is_scc_feedly_exists()) {
     return scc_get_follow_feedly();
   } else {
@@ -41,11 +50,17 @@ endif;
 //Push7情報取得
 if ( !function_exists( 'fetch_push7_info' ) ):
 function fetch_push7_info(){
+  if (!is_sns_follow_buttons_count_visible())
+    return null;
+
   //DBキャッシュからカウントの取得
-  $info = get_transient( 'push7_info' );
-  if ( $info ) {
-    return $info;
+  if (is_sns_follow_count_cache_enable()) {
+    $info = get_transient( THEME_NAME.'_push7_info' );
+    if ( $info ) {
+      return $info;
+    }
   }
+
   $res = null;
   $app_no = get_push7_follow_app_no();
   if ( $app_no ) {
@@ -57,7 +72,9 @@ function fetch_push7_info(){
       $info = json_decode( $info['body'] );
       if ( $info ) {
         //Push7情報をキャッシュに保存
-        set_transient( 'push7_info', $info, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+        if (is_sns_follow_count_cache_enable()) {
+          set_transient( THEME_NAME.'_push7_info', $info, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
+        }
 
         $res = $info;
       }
