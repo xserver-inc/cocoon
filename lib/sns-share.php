@@ -28,7 +28,7 @@ function fetch_twitter_count($url = null) {
     $json = json_decode( $body );
     $res = ($json->{"count"} ? $json->{"count"} : '0');
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_twitter_count', $res, 60 * 60 * 2 );
+    set_transient( THEME_NAME.'_twitter_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
   }
   return $res;
 }
@@ -75,7 +75,7 @@ function fetch_facebook_count($url = null) {
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
     $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_facebook_count', $res, 60 * 60 * 2 );
+    set_transient( THEME_NAME.'_facebook_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
   }
   return $res;
 }
@@ -121,7 +121,7 @@ function fetch_hatebu_count($url = null) {
     if (!empty($body)) {
       $res = $body;
       //DBキャッシュへ保存
-      set_transient( THEME_NAME.'_hatebu_count', $res, 60 * 60 * 2 );
+      set_transient( THEME_NAME.'_hatebu_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
     }
   }
   return $res;
@@ -164,7 +164,7 @@ function fetch_google_plus_count($url = null) {
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
   $res = isset($count[1]) ? intval($count[1]) : 0;
   //DBキャッシュへ保存
-  set_transient( THEME_NAME.'_google_plus_count', $res, 60 * 60 * 2 );
+  set_transient( THEME_NAME.'_google_plus_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
   // 共有数を表示
   return $res;
 }
@@ -211,7 +211,7 @@ function fetch_pocket_count($url = null) {
     preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
     $res = isset($count[1]) ? intval($count[1]) : 0;
     //DBキャッシュへ保存
-    set_transient( THEME_NAME.'_pocket_count', $res, 60 * 60 * 2 );
+    set_transient( THEME_NAME.'_pocket_count', $res, 60 * 60 * intval(get_sns_share_count_cache_interval()) );
     // 共有数を表示
     return $res;
   }

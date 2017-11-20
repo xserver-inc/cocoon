@@ -19,7 +19,7 @@ function fetch_feedly_count(){
     $subscribers = json_decode( $subscribers['body'] );
     if ( $subscribers ) {
       $subscribers = $subscribers->subscribers;
-      set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * 12 );
+      set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
       $res = ($subscribers ? $subscribers : 0);
     }
   }
@@ -57,7 +57,7 @@ function fetch_push7_info(){
       $info = json_decode( $info['body'] );
       if ( $info ) {
         //Push7情報をキャッシュに保存
-        set_transient( 'push7_info', $info, 60 * 60 * 12 );
+        set_transient( 'push7_info', $info, 60 * 60 * intval(get_sns_follow_count_cache_interval()) );
 
         $res = $info;
       }
