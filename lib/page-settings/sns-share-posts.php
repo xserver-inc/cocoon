@@ -10,3 +10,8 @@ update_theme_option(OP_TWITTER_ID_INCLUDE);
 //ツイート後にフォローを促す
 update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
 
+//SNSシェア数キャッシュ有効
+update_theme_option(OP_SNS_SHARE_COUNT_CACHE_ENABLE);
+//SNSシェア数キャッシュ取得間隔
+update_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL);
+

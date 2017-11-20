@@ -66,3 +66,19 @@ function is_sns_follow_buttons_count_visible(){
   return get_theme_option(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE, 1);
 }
 endif;
+
+//SNSフォロー数キャッシュ有効
+define('OP_SNS_FOLLOW_COUNT_CACHE_ENABLE', 'sns_follow_count_cache_enable');
+if ( !function_exists( 'is_sns_follow_count_cache_enable' ) ):
+function is_sns_follow_count_cache_enable(){
+  return get_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE, 1);
+}
+endif;
+
+//SNSフォロー数キャッシュ取得間隔
+define('OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL', 'sns_follow_count_cache_interval');
+if ( !function_exists( 'get_sns_follow_count_cache_interval' ) ):
+function get_sns_follow_count_cache_interval(){
+  return get_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL, 12);
+}
+endif;

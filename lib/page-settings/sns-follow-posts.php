@@ -14,3 +14,8 @@ update_theme_option(OP_SNS_FOLLOW_BUTTON_COLOR);
 update_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
 //本文下のフォローボタンシェア数の表示
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE);
+
+//SNSフォロー数キャッシュ有効
+update_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE);
+//SNSフォロー数キャッシュ取得間隔
+update_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL);

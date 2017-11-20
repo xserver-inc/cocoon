@@ -152,6 +152,55 @@
 </div>
 
 
+<!-- キャッシュ設定 -->
+<div id="sns-follow-cache" class="postbox">
+  <h2 class="hndle"><?php _e( 'キャッシュ設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+    <p><?php _e( 'フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピードを多少なりともあげることができます。', THEME_NAME ) ?></p>
+    <table class="form-table">
+      <tbody>
+
+        <!-- キャシュの有効化 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE, __( 'キャシュの有効化', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_SNS_FOLLOW_COUNT_CACHE_ENABLE, is_sns_follow_count_cache_enable(), __( 'キャッシュを有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'SNSシェア数をキャッシュ化することでページ表示スピードの短縮化を図ります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- キャッシュ間隔 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL, __('キャッシュ間隔', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              '8' => __( '6時間', THEME_NAME ),
+              '12' => __( '12時間', THEME_NAME ),
+              '18' => __( '18時間', THEME_NAME ),
+              '24' => __( '24時間', THEME_NAME ),
+              '48' => __( '2日間', THEME_NAME ),
+              '36' => __( '3日間', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL, $options, get_sns_follow_count_cache_interval());
+            generate_tips_tag(__( 'キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担は増えます（主に相手サーバー）。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 
 
 </div><!-- /.metabox-holder -->

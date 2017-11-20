@@ -23,3 +23,19 @@ function is_twitter_related_follow_enable(){
   return get_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE, 1);
 }
 endif;
+
+//SNSシェア数キャッシュ有効
+define('OP_SNS_SHARE_COUNT_CACHE_ENABLE', 'sns_share_count_cache_enable');
+if ( !function_exists( 'is_sns_share_count_cache_enable' ) ):
+function is_sns_share_count_cache_enable(){
+  return get_theme_option(OP_SNS_SHARE_COUNT_CACHE_ENABLE, 1);
+}
+endif;
+
+//SNSシェア数キャッシュ取得間隔
+define('OP_SNS_SHARE_COUNT_CACHE_INTERVAL', 'sns_share_count_cache_interval');
+if ( !function_exists( 'get_sns_share_count_cache_interval' ) ):
+function get_sns_share_count_cache_interval(){
+  return get_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL, 2);
+}
+endif;
