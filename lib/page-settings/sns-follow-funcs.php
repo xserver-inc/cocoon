@@ -58,3 +58,11 @@ function get_sns_default_follow_user(){
   return get_theme_option(OP_SNS_DEFAULT_FOLLOW_USER, wp_get_current_user()->ID);
 }
 endif;
+
+//本文下のフォローボタンシェア数の表示
+define('OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE', 'sns_follow_buttons_count_visible');
+if ( !function_exists( 'is_sns_follow_buttons_count_visible' ) ):
+function is_sns_follow_buttons_count_visible(){
+  return get_theme_option(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE, 1);
+}
+endif;

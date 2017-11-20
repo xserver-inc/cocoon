@@ -723,7 +723,7 @@ img {
 ** 日付関係のスタイル
 ************************************/
 .date-tags {
-  line-height: 1;
+  line-height: 0.8;
   text-align: right;
 }
 .date-tags span:last-child {

@@ -757,7 +757,7 @@
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
   .demo .date-tags {
-    line-height: 1;
+    line-height: 0.8;
     text-align: right; }
     .demo .date-tags span:last-child {
       margin-right: 0; }

@@ -132,6 +132,19 @@
           </td>
         </tr>
 
+        <!-- フォロー数の表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE, __( 'フォロー数の表示', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE, is_sns_follow_buttons_count_visible(), __( 'フォロー数を表示する', THEME_NAME ));
+            generate_tips_tag(__( '本文下やウィジェットなどのフォロー数表示を切り替えます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

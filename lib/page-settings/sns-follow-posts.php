@@ -12,3 +12,5 @@ update_theme_option(OP_RSS_FOLLOW_BUTTON_VISIBLE);
 update_theme_option(OP_SNS_FOLLOW_BUTTON_COLOR);
 //デフォルトユーザー
 update_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
+//本文下のフォローボタンシェア数の表示
+update_theme_option(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE);
