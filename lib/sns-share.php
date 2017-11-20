@@ -12,6 +12,13 @@ function fetch_twitter_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
+
+  //DBキャッシュからカウントの取得
+  $count = get_transient( THEME_NAME.'_twitter_count' );
+  if ( $count ) {
+    return $count;
+  }
+
   $url = rawurlencode( $url );
   $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
@@ -20,6 +27,8 @@ function fetch_twitter_count($url = null) {
        $body = $subscribers['body'];
     $json = json_decode( $body );
     $res = ($json->{"count"} ? $json->{"count"} : '0');
+    //DBキャッシュへ保存
+    set_transient( THEME_NAME.'_twitter_count', $res, 60 * 60 * 2 );
   }
   return $res;
 }
@@ -45,6 +54,13 @@ function fetch_facebook_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
+
+  //DBキャッシュからカウントの取得
+  $count = get_transient( THEME_NAME.'_facebook_count' );
+  if ( $count ) {
+    return $count;
+  }
+
   //URLをURLエンコード
   $encoded_url = rawurlencode( $url );
   //オプションの設定
@@ -58,6 +74,8 @@ function fetch_facebook_count($url = null) {
     $body = $response['body'];
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
     $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
+    //DBキャッシュへ保存
+    set_transient( THEME_NAME.'_facebook_count', $res, 60 * 60 * 2 );
   }
   return $res;
 }
@@ -82,6 +100,13 @@ function fetch_hatebu_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
+
+  //DBキャッシュからカウントの取得
+  $count = get_transient( THEME_NAME.'_hatebu_count' );
+  if ( $count ) {
+    return $count;
+  }
+
   //取得するURL(ついでにURLエンコード)
   $encoded_url = rawurlencode($url);
   //オプションの設定
@@ -95,6 +120,8 @@ function fetch_hatebu_count($url = null) {
     $body = $response['body'];
     if (!empty($body)) {
       $res = $body;
+      //DBキャッシュへ保存
+      set_transient( THEME_NAME.'_hatebu_count', $res, 60 * 60 * 2 );
     }
   }
   return $res;
@@ -118,17 +145,28 @@ endif;
 //Google＋カウントの取得
 if ( !function_exists( 'fetch_google_plus_count' ) ):
 function fetch_google_plus_count($url = null) {
+
+  //DBキャッシュからカウントの取得
+  $count = get_transient( THEME_NAME.'_google_plus_count' );
+  if ( $count ) {
+    return $count;
+  }
+
   if (!$url) {
     $url = get_the_permalink();
   }
+
   $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
   //URL（クエリ）先の情報を取得
   $args = array( 'sslverify' => false );
   $result = wp_remote_get($query, $args);
   // 正規表現でカウント数のところだけを抽出
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
+  $res = isset($count[1]) ? intval($count[1]) : 0;
+  //DBキャッシュへ保存
+  set_transient( THEME_NAME.'_google_plus_count', $res, 60 * 60 * 2 );
   // 共有数を表示
-  return isset($count[1]) ? intval($count[1]) : 0;
+  return $res;
 }
 endif;
 
@@ -149,9 +187,17 @@ endif;
 //Pocketカウントの取得
 if ( !function_exists( 'fetch_pocket_count' ) ):
 function fetch_pocket_count($url = null) {
+
+  //DBキャッシュからカウントの取得
+  $count = get_transient( THEME_NAME.'_pocket_count' );
+  if ( $count ) {
+    return $count;
+  }
+
   if (!$url) {
     $url = get_the_permalink();
   }
+
   if ( WP_Filesystem() ) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //$query = 'http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url=' . $url;
@@ -163,8 +209,11 @@ function fetch_pocket_count($url = null) {
     //var_dump($result["body"]);
     // 正規表現でカウント数のところだけを抽出
     preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
+    $res = isset($count[1]) ? intval($count[1]) : 0;
+    //DBキャッシュへ保存
+    set_transient( THEME_NAME.'_pocket_count', $res, 60 * 60 * 2 );
     // 共有数を表示
-    return isset($count[1]) ? intval($count[1]) : 0;
+    return $res;
   }
   return 0;
 }

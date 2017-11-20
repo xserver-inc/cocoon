@@ -7,7 +7,7 @@ function fetch_feedly_count(){
     return null;
 
   //DBキャッシュからカウントの取得
-  $subscribers = get_transient( 'feedly_subscribers' );
+  $subscribers = get_transient( THEME_NAME.'_feedly_subscribers' );
   if ( $subscribers ) {
     return $subscribers;
   }
@@ -19,7 +19,7 @@ function fetch_feedly_count(){
     $subscribers = json_decode( $subscribers['body'] );
     if ( $subscribers ) {
       $subscribers = $subscribers->subscribers;
-      set_transient( 'feedly_subscribers', $subscribers, 60 * 60 * 12 );
+      set_transient( THEME_NAME.'_feedly_subscribers', $subscribers, 60 * 60 * 12 );
       $res = ($subscribers ? $subscribers : 0);
     }
   }
