@@ -16,10 +16,10 @@ function fetch_twitter_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }
@@ -70,10 +70,10 @@ function fetch_facebook_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }
@@ -128,10 +128,10 @@ function fetch_hatebu_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }
@@ -186,10 +186,10 @@ function fetch_google_plus_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }
@@ -240,10 +240,10 @@ function fetch_pocket_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }

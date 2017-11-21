@@ -10,10 +10,10 @@ function fetch_feedly_count(){
     $count = get_transient( $transient_id );
     //_v($count);
     if ( is_numeric($count) ) {
-      _edump(
-        array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-        'label', 'tag', 'ade5ac'
-      );
+      // _edump(
+      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
+      //   'label', 'tag', 'ade5ac'
+      // );
       return $count;
     }
   }
