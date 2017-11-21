@@ -48,7 +48,7 @@ function add_theme_settings_page() {
 }
 endif;
 
-//テーマ用のセッティングページメニューのページコンテンツを表示
+//テーマ用バックアップ設定項目の表示
 if ( !function_exists( 'add_theme_backup_page' ) ):
 function add_theme_backup_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
@@ -57,5 +57,17 @@ function add_theme_backup_page() {
   }
   //以下のテンプレートファイルで設定ページを作成する
   require_once 'page-backup/_top-page.php';
+}
+endif;
+
+//テーマ用高速化設定項目の表示
+if ( !function_exists( 'add_theme_speed_up_page' ) ):
+function add_theme_speed_up_page() {
+  // ユーザーが必要な権限を持つか確認する必要がある
+  if (!current_user_can('manage_options'))  {
+    wp_die( __('このページにアクセスする管理者権限がありません。') );
+  }
+  //以下のテンプレートファイルで設定ページを作成する
+  require_once 'page-speed-up/_top-page.php';
 }
 endif;
