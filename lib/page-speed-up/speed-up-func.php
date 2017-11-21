@@ -41,39 +41,46 @@ function code_mintify_call_back($buffer) {
   }
 
   //HTMLの縮小化
-  $buffer = minify_html($buffer);
+  if (is_html_mintify_enable()) {
+    $buffer = minify_html($buffer);
+  }
+
 
   //CSSの縮小化
-  $pattern = '{<style[^>]*?>(.*?)</style>}is';
-  $subject = $buffer;
-  $res = preg_match_all($pattern, $subject, $m);
-  //_v($m[1]);
-  if ($res && isset($m[1])) {
-    foreach ($m[1] as $match) {
-      if (empty($match)) {
-        continue;
+  if (is_css_mintify_enable()) {
+    $pattern = '{<style[^>]*?>(.*?)</style>}is';
+    $subject = $buffer;
+    $res = preg_match_all($pattern, $subject, $m);
+    //_v($m[1]);
+    if ($res && isset($m[1])) {
+      foreach ($m[1] as $match) {
+        if (empty($match)) {
+          continue;
+        }
+        $buffer = str_replace($match, minify_css($match), $buffer);
+        //_v($match);
       }
-      $buffer = str_replace($match, minify_css($match), $buffer);
-      //_v($match);
     }
   }
 
+
   //JavaScriptの縮小化
-  $pattern = '{<script[^>]*?>(.*?)</script>}is';
-  $subject = $buffer;
-  $res = preg_match_all($pattern, $subject, $m);
-  //_v($m);
-  if ($res && isset($m[1])) {
-    foreach ($m[1] as $match) {
-      if (empty($match)) {
-        continue;
+  if (is_js_mintify_enable()) {
+    $pattern = '{<script[^>]*?>(.*?)</script>}is';
+    $subject = $buffer;
+    $res = preg_match_all($pattern, $subject, $m);
+    //_v($m);
+    if ($res && isset($m[1])) {
+      foreach ($m[1] as $match) {
+        if (empty($match)) {
+          continue;
+        }
+        //_v($match);
+        $buffer = str_replace($match, minify_js($match), $buffer);
       }
-      //_v($match);
-      $buffer = str_replace($match, minify_js($match), $buffer);
     }
   }
-  //$buffer = minify_js($buffer);
-  //$buffer = minify_css($buffer);
+
   //_v($buffer);
   return $buffer;
 }
