@@ -32,7 +32,7 @@
               <div>
                 <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
                 <div class="demo mobile-demo" style="width: 370px;">
-                  <iframe id="mobile-demo" src="<?php echo site_url(); ?>" width="360" height="640"></iframe>
+                  <iframe id="mobile-demo" class="iframe-demo" src="<?php echo site_url(); ?>" width="360" height="640"></iframe>
                 </div>
               </div>
             </div>

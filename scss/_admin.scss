@@ -94,8 +94,7 @@
   }
 
 
-  &.all-demo,
-  &.page-404-demo{
+  &.iframe-standard-demo{
     height: 400px;
   }
 
@@ -103,9 +102,7 @@
     height: 640px;
   }
 
-  #all-demo,
-  #mobile-demo,
-  #page-404-demo{
+  .iframe-demo{
     width: 100%;
     height: 100%;
   }

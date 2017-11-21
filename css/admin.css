@@ -3053,13 +3053,11 @@
     display: block; }
   .demo .widget {
     display: none; }
-  .demo.all-demo, .demo.page-404-demo {
+  .demo.iframe-standard-demo {
     height: 400px; }
   .demo.mobile-demo {
     height: 640px; }
-  .demo #all-demo,
-  .demo #mobile-demo,
-  .demo #page-404-demo {
+  .demo .iframe-demo {
     width: 100%;
     height: 100%; }
 

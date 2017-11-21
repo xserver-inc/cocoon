@@ -35,9 +35,10 @@
       $(selector).contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
     });
   }
-  delete_wp_adminbar('#all-demo');
-  delete_wp_adminbar('#mobile-demo');
-  delete_wp_adminbar('#page-404-demo');
+  delete_wp_adminbar('.iframe-demo');
+  // delete_wp_adminbar('#all-demo');
+  // delete_wp_adminbar('#mobile-demo');
+  // delete_wp_adminbar('#page-404-demo');
 
 // $('#all-demo').on('load', function(){
 //   $('#all-demo').contents().find('#wpadminbar').hide();
