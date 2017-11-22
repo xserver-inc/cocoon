@@ -104,6 +104,7 @@ function code_mintify_buffer_end() {
   if (ob_get_length()){
     ob_end_flush();
   }
+
   // _edump(
   //   array('value' => 2, 'file' => __FILE__, 'line' => __LINE__),
   //   'label', 'tag', 'ade5ac'
@@ -114,5 +115,93 @@ endif;
 
 
 
+//CSSファイルの縮小化
+add_filter( 'style_loader_src', 'mintify_all_css', 9999);
+if ( !function_exists( 'mintify_all_css' ) ):
+function mintify_all_css( $src ) {
+  if (is_css_mintify_enable()) {
+    //除外設定
+    if (
+      //ベーススタイルは除外
+      (strpos($src, 'css/base-style.css') !== false) ||
+      //アドミンバースタイルのときは除外
+      (strpos($src, 'admin-bar.min.css') !== false) ||
+      //ダッシュアイコンは除外
+      (strpos($src, 'dashicons.min.css') !== false)
+    ) {
+      return $src;
+    }
+
+  //_v($src);
+    //読み込まれるCSSファイルがサイト内ファイルであるとき
+    if(strpos($src, site_url()) !== false){
+      $removed_src = remove_query_arg( 'ver', $src );
+      _v($removed_src);
+      $local_src = str_replace(site_url(), ABSPATH, $removed_src);
+      $local_src = str_replace('//', '/', $local_src);
+      $local_src = str_replace('\\', '/', $local_src);
+      //_v($local_src);
+
+      if ( WP_Filesystem() && file_exists($local_src) ) {//WP_Filesystemの初期化
+        global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+        $css = $wp_filesystem->get_contents($local_src);
+        //文字セットの除去
+        $css = preg_replace('{@charset[^;]+?;}i', '', $css);
+        //コメントの除去
+        $css = preg_replace('{/\*.+?\*/}is', '', $css);
+
+        //CSSファイルの置いてあるパス取得
+        $css_path = str_replace(basename($removed_src), '', $removed_src);
+        //_v($css_path);
+
+        //CSS内容を縮小化して書式を統一化する
+        $css = minify_css($css);
+
+        //url(./xxxxxx)をurl(xxxxxx)に統一化
+        $css = str_replace('url(./', 'url(', $css);
+        $css = str_replace('url(/', 'url(', $css);
+
+        $pattern = '{url\((.+?)\)}i';
+        $subject = $css;
+        $res = preg_match_all($pattern, $subject, $m);
+        if ($res && $m[0] ) {
+          foreach ($m[0] as $match) {
+            if (
+              //url()中にURLが指定されていない
+              //url(http://xxxxx)形式でない
+              !preg_match('{https?://}i', $match) &&
+              //URIスキームの指定ではない
+              //url(data:XXXXX)形式でない
+              !preg_match('{data:}i', $match)
+            ) {
+              //url(xxxxx)をurl(http://xxxxx)に変更
+              $url = str_replace('url(', 'url('.$css_path, $match);
+              //_v($url);
+              //縮小化したCSSのurl(xxxxx)を置換
+              $css = str_replace($match, $url, $css);
+            }
+          }
+        }
 
 
+        //_v($m);
+        // _v($local_src);
+        // _v($css_path);
+        // _v($local_src);
+        // _v($removed_src);
+        // _v(file_exists($local_src));
+        //_v($css);
+        wp_enqueue_style( 'base-style', get_template_directory_uri() . '/css/base-style.css' );
+        wp_add_inline_style( 'base-style', $css );
+        $src = null;
+
+
+      }
+    }
+  }
+    //_v($src);
+  return $src;
+}
+endif;
+//add_filter( 'style_loader_src', 'mintify_all_css', 9999);
+//add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );

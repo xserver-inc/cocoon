@@ -3,7 +3,8 @@
 
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
-if( $_POST[HIDDEN_FIELD_NAME] == 'Y' ){
+if( isset($_POST[HIDDEN_FIELD_NAME]) &&
+          $_POST[HIDDEN_FIELD_NAME] == 'Y' ){
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
