@@ -49,7 +49,7 @@ function code_mintify_call_back($buffer) {
     $buffer = minify_html($buffer);
   }
 
-
+  /*
   //CSSの縮小化
   if (is_css_mintify_enable()) {
     $pattern = '{<style[^>]*?>(.*?)</style>}is';
@@ -84,6 +84,7 @@ function code_mintify_call_back($buffer) {
       }
     }
   }
+  */
 
   //_v($buffer);
   return $buffer;
@@ -258,15 +259,50 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'wp_head_minify' ) ):
 function wp_head_minify($buffer) {
-  //最終出力縮小化CSSコード
-  $last_minfified_css = null;
-  //最終出力縮小化JSコード
-  $last_minfified_js = null;
 
-  ///////////////////////////////////////
-  // CSSファイルとインラインCSSの縮小化
-  ///////////////////////////////////////
+  //ヘッダーコードのCSS縮小化
   if (is_css_mintify_enable()) {
+    $buffer = tag_code_to_mintify_css($buffer);
+  }
+
+  //ヘッダーコードのJS縮小化
+  if (is_js_mintify_enable()) {
+    $buffer = tag_code_to_mintify_js($buffer);
+  }
+
+  //_v($buffer);
+  return $buffer;
+}
+endif;
+
+if ( !function_exists( 'wp_footer_minify' ) ):
+function wp_footer_minify($buffer) {
+
+  //ヘッダーコードのCSS縮小化
+  if (is_css_mintify_enable()) {
+    //$buffer = tag_code_to_mintify_css($buffer);
+  }
+
+  //ヘッダーコードのJS縮小化
+  if (is_js_mintify_enable()) {
+    //$buffer = tag_code_to_mintify_js($buffer);
+  }
+
+  //_v($buffer);
+  return $buffer;
+}
+endif;
+
+
+///////////////////////////////////////
+// CSSファイルとインラインCSSの縮小化
+///////////////////////////////////////
+if ( !function_exists( 'tag_code_to_mintify_css' ) ):
+function tag_code_to_mintify_css($buffer) {
+  if (is_css_mintify_enable()) {
+    //最終出力縮小化CSSコード
+    $last_minfified_css = null;
+
     //CSSファイル
     $pattern = '{<link.+?stylesheet.+?href=[\'"]([^\'"]+?)[\'"][^>]+?>}i';
     $subject = $buffer;
@@ -339,45 +375,122 @@ function wp_head_minify($buffer) {
         //_v($match);
       }
     }
+    //縮小化したCSSをデータの最後に付け加える
+    $buffer = $buffer.PHP_EOL.'<style type="text/css">'.$last_minfified_css.'</style>';
   }//is_css_mintify_enable()
 
-
-
-  ///////////////////////////////////////
-  // JavaScriptファイルとインラインJavaScriptの縮小化
-  ///////////////////////////////////////
-
-
-  //縮小化したCSSをデータの最後に付け加える
-  if (is_css_mintify_enable()) {
-    $buffer = $buffer.PHP_EOL.'<style type="text/css">'.$last_minfified_css.'</style>';
-  }
-
-  //_v($buffer);
   return $buffer;
 }
 endif;
 
-if ( !function_exists( 'wp_footer_minify' ) ):
-function wp_footer_minify($buffer) {
-  // _edump(
-  //   array('value' => 'wp_footer_minify', 'file' => __FILE__, 'line' => __LINE__),
-  //   'label', 'tag', 'ade5ac'
-  // );
+///////////////////////////////////////
+// JSファイルとインラインJSの縮小化
+///////////////////////////////////////
+if ( !function_exists( 'tag_code_to_mintify_js' ) ):
+function tag_code_to_mintify_js($buffer) {
+  if (is_js_mintify_enable()) {
+    //最終出力縮小化JSコード
+    $last_minfified_js = null;
+
+    //JSファイル
+    $pattern = '{<script.+?javascript.+?src=[\'"]([^\'"]+?)[\'"].*?>.*?</script>}i';//[^>]*?
+    $subject = $buffer;
+    $res = preg_match_all($pattern, $subject, $m);
+    //_v($m);
+    if ($res && isset($m[1])) {
+      $i = 0;
+      foreach ($m[1] as $match) {
+        //JSファイルURL
+        $url = $match;
+        //JSファイル読み込みタグ（<script type='text/javascript' src='http://xxx/jquery-migrate.min.js?ver=1.4.1'></script>）
+        $script_link_tag = $m[0][$i];
+        //_v($script_link_tag);
+        ++$i;
+
+        //サイトのURLが含まれているものだけ処理
+        if (strpos($url, site_url()) !== false) {
+          //除外処理
+          if (
+            //jQueryは除外
+            (strpos($url, 'js/jquery/jquery.js') !== false) ||
+            (strpos($url, 'plugins/highlight-js/highlight.min.js') !== false) ||
+            (strpos($url, 'plugins/baguettebox/dist/baguetteBox.min.js') !== false) ||
+            (strpos($url, 'plugins/stickyfill/dist/stickyfill.min.js') !== false) ||
+            (strpos($url, 'plugins/slick/slick.min.js') !== false) ||
+            (strpos($url, 'js/jquery/jquery.js') !== false) ||
+            //アドミンバーのJSは除外
+            (strpos($url, 'js/admin-bar.min.js') !== false) //||
+            //jQueryマイグレートは除外
+            //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
+          ) {
+            continue;
+          }
+
+          //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
+          $url = preg_replace('/\?.*$/m', '', $url);
+          _v($url);//JSコード変換するURL
+
+          //JS URLからJSコードの取得
+          $js = js_url_to_js_mintify_code( $url );
+          //縮小化可能ななJSだと時
+          if ($js) {
+            //_v($js);//変換したJSコード
+
+            //JSを縮小化したJSファイルURL linkタグを削除する
+            $buffer = str_replace($script_link_tag, '', $buffer);
+
+
+            $last_minfified_js .= $js;
+          }//$js
+
+        }//strpos($url, site_url()) !== false
+
+      }//foreach
+    }//$res && isset($m[1])
+
+
+    //JSインラインスタイル
+    $pattern = '{<script[^>]*?>(.*?)</script>}is';
+    $subject = $buffer;
+    $res = preg_match_all($pattern, $subject, $m);
+    //_v($m);
+    if ($res && isset($m[1])) {
+      $i = 0;
+      foreach ($m[1] as $match) {
+        //jsコード
+        $js = $match;
+        //_v($js);
+        //JSタグ（<script type="text/javascript"></script>）
+        $script_tag = $m[0][$i];
+        //_v($script_tag);
+        ++$i;
+        //_v($match);
+        if (empty($js)) {
+          continue;
+        }
+
+        //最終出力縮小化JSコードに縮小化したJSコードを加える
+        $last_minfified_js .= minify_css($js);
+        //ヘッダー出力コードからscriptタグを削除
+        $buffer = str_replace($script_tag, '', $buffer);
+      }
+    }
+
+    //縮小化したJavaScriptをデータの最後に付け加える
+    $buffer = $buffer.PHP_EOL.'<script type="text/javascript">'.$last_minfified_js.'</script>';
+  }//is_js_mintify_enable()
   return $buffer;
 }
 endif;
-
-
-
 
 if ( !function_exists( 'css_url_to_css_mintify_code' ) ):
 function css_url_to_css_mintify_code( $url ) {
   $css = false;
   //URLファイルをローカルファイルパスに変更
-  $local_file = str_replace(site_url(), ABSPATH, $url);
-  $local_file = str_replace('//', '/', $local_file);
-  $local_file = str_replace('\\', '/', $local_file);
+  $local_file = url_to_local($url);
+  // $local_file = str_replace(site_url(), ABSPATH, $url);
+  // $local_file = str_replace('//', '/', $local_file);
+  // $local_file = str_replace('\\', '/', $local_file);
   //_v($local_file);
 
   if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
@@ -427,5 +540,25 @@ function css_url_to_css_mintify_code( $url ) {
     }//$res && $m[0]
   }//WP_Filesystem
   return $css;
+}
+endif;
+
+
+if ( !function_exists( 'js_url_to_js_mintify_code' ) ):
+function js_url_to_js_mintify_code( $url ) {
+  $js = false;
+  //URLファイルをローカルファイルパスに変更
+  $local_file = url_to_local($url);
+  //_v($local_file);
+
+  if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $js = $wp_filesystem->get_contents($local_file);
+
+    //CSS内容を縮小化して書式を統一化する
+    $js = minify_css($js);
+
+  }//WP_Filesystem
+  return $js;
 }
 endif;

@@ -571,8 +571,13 @@ function url_to_local($url){
   if (!includes_site_url($url)) {
     return false;
   }
-  $path = str_replace(content_url(), WP_CONTENT_DIR, $url);
+
+  $path = str_replace(site_url(), ABSPATH, $url);
+  $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
+
+  // $path = str_replace(content_url(), WP_CONTENT_DIR, $url);
+  // $path = str_replace('\\', '/', $path);
   return $path;
 }
 endif;
