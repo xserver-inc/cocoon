@@ -270,7 +270,7 @@ function wp_head_minify($buffer) {
     $buffer = tag_code_to_mintify_js($buffer);
   }
 
-  //_v($buffer);
+  _v($buffer);
   return $buffer;
 }
 endif;
@@ -363,6 +363,11 @@ function tag_code_to_mintify_css($buffer) {
         $style_tag = $m[0][$i];
         //_v($style_tag);
         ++$i;
+
+        //除外インラインCSSコード（プリント用のスタイルは除外）
+        if (preg_match('{media=[\'"].*?print.*?[\'"]}i', $style_tag)) {
+          continue;
+        }
 
         //空の場合は除外
         if (empty($css)) {
