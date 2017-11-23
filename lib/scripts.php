@@ -20,16 +20,9 @@ function cocoon_scripts() {
   wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );
 
   ///////////////////////////////////////////
-  //設定変更に必要なCSS
-  ///////////////////////////////////////////
-  wp_add_css_custome_to_inline_style();
-
-
-  ///////////////////////////////////////////
   //Font Awesome
   ///////////////////////////////////////////
   wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
-
 
   ///////////////////////////////////////////
   //設定変更に必要なCSS
