@@ -1151,7 +1151,8 @@
     margin-bottom: 5px;
     padding: 4px 8px;
     text-decoration: none;
-    font-size: 12px; }
+    font-size: 12px;
+    margin-right: 3px; }
     .demo .tagcloud a::before {
       font-family: FontAwesome;
       content: "";

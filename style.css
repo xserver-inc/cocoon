@@ -1351,6 +1351,7 @@ label.screen-reader-text {
   padding: 4px 8px;
   text-decoration: none;
   font-size: 12px;
+  margin-right: 3px;
 }
 .tagcloud a::before {
   font-family: FontAwesome;

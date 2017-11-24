@@ -29,6 +29,7 @@ add_filter( 'get_archives_link',  'remove_post_count_parentheses' );
 if ( !function_exists( 'wp_tag_cloud_custom' ) ):
 function wp_tag_cloud_custom( $output ) {
   //style属性を取り除く
+  //_v($output);
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //カッコを取り除く
   $output = str_replace( ' (', '',  $output);
