@@ -48,10 +48,9 @@ function code_mintify_call_back($buffer) {
   if (is_html_mintify_enable()) {
     $buffer = minify_html($buffer);
   }
-
   /*
   //CSSの縮小化
-  if (is_css_mintify_enable()) {
+  if (0&&is_css_mintify_enable()) {
     $pattern = '{<style[^>]*?>(.*?)</style>}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
@@ -69,7 +68,7 @@ function code_mintify_call_back($buffer) {
 
 
   //JavaScriptの縮小化
-  if (is_js_mintify_enable()) {
+  if (0&&is_js_mintify_enable()) {
     $pattern = '{<script[^>]*?>(.*?)</script>}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
@@ -85,7 +84,6 @@ function code_mintify_call_back($buffer) {
     }
   }
   */
-
   //_v($buffer);
   return $buffer;
 }
@@ -270,7 +268,7 @@ function wp_head_minify($buffer) {
     $buffer = tag_code_to_mintify_js($buffer);
   }
 
-  _v($buffer);
+  //_v($buffer);
   return $buffer;
 }
 endif;
@@ -278,14 +276,14 @@ endif;
 if ( !function_exists( 'wp_footer_minify' ) ):
 function wp_footer_minify($buffer) {
 
-  //ヘッダーコードのCSS縮小化
+  //フッターコードのCSS縮小化
   if (is_css_mintify_enable()) {
-    //$buffer = tag_code_to_mintify_css($buffer);
+    $buffer = tag_code_to_mintify_css($buffer);
   }
 
-  //ヘッダーコードのJS縮小化
+  //フッターコードのJS縮小化
   if (is_js_mintify_enable()) {
-    //$buffer = tag_code_to_mintify_js($buffer);
+    $buffer = tag_code_to_mintify_js($buffer);
   }
 
   //_v($buffer);
@@ -393,6 +391,105 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'tag_code_to_mintify_js' ) ):
 function tag_code_to_mintify_js($buffer) {
+
+
+  if (is_js_mintify_enable()) {
+    //最終出力縮小化JSコード
+    //$last_minfified_js = null;
+
+    //JSファイルパターン
+    $js_file_pattern = '<script[^>]+?javascript[^>]+?src=[\'"]([^\'"]+?)[\'"][^>]*?></script>';
+    //JSインラインパターン
+    $js_inline_pattern = '<script[^>]*?>(.*?)</script>';
+    //JS正規表現パターン
+    $pattern = '{'.$js_file_pattern.'|'.$js_inline_pattern.'}is';
+    $subject = $buffer;
+    $res = preg_match_all($pattern, $subject, $m);
+    //_v($m);
+    $all = 0;  //scriptタグ全体にマッチ
+    $flie = 1; //src内のファイルURLにマッチ
+    $code = 2; //scriptタグ内のコードにマッチ
+    if ($res && isset($m[$all], $m[$flie], $m[$code])) {
+      $i = 0;
+      foreach ($m[$all] as $match) {
+        //scriptタグ全体
+        $script_tag = $match;
+        //_v($script_tag);
+        //JSファイルURL
+        $url = $m[$flie][$i];
+        //JSコード
+        $js_code = $m[$code][$i];
+        //_v($script_link_tag);
+        ++$i;
+
+
+        //ファイルタイプのscriptタグだった場合
+        if ($url) {
+          //サイトのURLが含まれているものだけ処理
+          if (strpos($url, site_url()) !== false) {
+            //_v($url);
+            //除外処理
+            if (
+              //jQueryは除外
+              //(strpos($url, 'js/jquery/jquery.js') !== false) ||
+              //アドミンバーのJSは除外
+              (strpos($url, 'js/admin-bar.min.js') !== false) //||
+              //jQueryマイグレートは除外
+              //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
+            ) {
+              continue;
+            }
+
+            // if (
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/slick/slick.min.js') === false) &&
+            //   (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
+            //   (strpos($url, THEME_NAME.'/javascript.js') === false) &&
+            //   (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
+            // ) {
+            //   continue;
+            // }
+
+            //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
+            $url = preg_replace('/\?.*$/m', '', $url);
+            //_v($url);//JSコード変換するURL
+
+            //JS URLからJSコードの取得
+            $js = js_url_to_js_mintify_code( $url );
+            //縮小化可能ななJSだと時
+            if ($js) {
+              //_v($js);//変換したJSコード
+
+              //JSを縮小化したJSファイルURL linkタグをインラインにする
+              $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+
+
+              //$last_minfified_js .= $js;
+            }//$js
+
+          }//strpos($url, site_url()) !== false
+        }//url
+
+
+        //インラインタイプのJavaScriptコードだった場合
+        if ($js_code) {
+          //_v($js_code);
+          $js = minify_js($js_code);
+          //インラインタイプのscriptタグを縮小化して置換する
+          $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+        }
+
+      }//foreach
+    }//$res && isset($m[1])
+  }//is_js_mintify_enable()
+
+
+  /*
   if (is_js_mintify_enable()) {
     //最終出力縮小化JSコード
     $last_minfified_js = null;
@@ -484,6 +581,8 @@ function tag_code_to_mintify_js($buffer) {
     //縮小化したJavaScriptをデータの最後に付け加える
     $buffer = $buffer.PHP_EOL.'<script type="text/javascript">'.$last_minfified_js.'</script>';
   }//is_js_mintify_enable()
+  */
+  //_v($buffer);
   return $buffer;
 }
 endif;
@@ -560,10 +659,28 @@ function js_url_to_js_mintify_code( $url ) {
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $js = $wp_filesystem->get_contents($local_file);
 
+    //コメントの除去
+    $js = remove_code_comments($js);
+    // $js = preg_replace('{/\*.+?\*/}is', '', $js);
+    // $js = preg_replace('{^\s+//.+$}im', '', $js);
     //CSS内容を縮小化して書式を統一化する
-    $js = minify_css($js);
+    $js = minify_js($js);
+    //コード内scriptタグの処理
+    $js = str_replace('"<script>"', '"</script"+">"', $js);
+    $js = str_replace("'<script>'", "'</script'+'>'", $js);
+    $js = str_replace('"</script>"', '"</script"+">"', $js);
+    $js = str_replace("'</script>'", "'</script'+'>'", $js);
+
 
   }//WP_Filesystem
   return $js;
+}
+endif;
+
+if ( !function_exists( 'remove_code_comments' ) ):
+function remove_code_comments($code){
+  $code = preg_replace('{/\*.+?\*/}is', '', $code);
+  $code = preg_replace('{^\s+//.+$}im', '', $code);
+  return $code;
 }
 endif;
