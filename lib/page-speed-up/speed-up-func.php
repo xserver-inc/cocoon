@@ -433,27 +433,28 @@ function tag_code_to_mintify_js($buffer) {
               //jQueryは除外
               //(strpos($url, 'js/jquery/jquery.js') !== false) ||
               //アドミンバーのJSは除外
-              (strpos($url, 'js/admin-bar.min.js') !== false) //||
+              (strpos($url, 'js/admin-bar.min.js') !== false) ||
+              (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
             ) {
               continue;
             }
 
-            if (
-              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-              //(strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
-              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-              (strpos($url, '/plugins/slick/slick.min.js') === false) &&
-              (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
-              (strpos($url, THEME_NAME.'/javascript.js') === false) &&
-              (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
-            ) {
-              continue;
-            }
+            // if (
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   //(strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
+            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+            //   (strpos($url, '/plugins/slick/slick.min.js') === false) &&
+            //   (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
+            //   (strpos($url, THEME_NAME.'/javascript.js') === false) &&
+            //   (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
+            // ) {
+            //   continue;
+            // }
 
             //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
             $url = preg_replace('/\?.*$/m', '', $url);
