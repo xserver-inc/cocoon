@@ -440,20 +440,20 @@ function tag_code_to_mintify_js($buffer) {
               continue;
             }
 
-            // if (
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/slick/slick.min.js') === false) &&
-            //   (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
-            //   (strpos($url, THEME_NAME.'/javascript.js') === false) &&
-            //   (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
-            // ) {
-            //   continue;
-            // }
+            if (
+              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+              //(strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
+              (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
+              (strpos($url, '/plugins/slick/slick.min.js') === false) &&
+              (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
+              (strpos($url, THEME_NAME.'/javascript.js') === false) &&
+              (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
+            ) {
+              continue;
+            }
 
             //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
             $url = preg_replace('/\?.*$/m', '', $url);
@@ -670,6 +670,8 @@ function js_url_to_js_mintify_code( $url ) {
     $js = str_replace("'<script>'", "'</script'+'>'", $js);
     $js = str_replace('"</script>"', '"</script"+">"', $js);
     $js = str_replace("'</script>'", "'</script'+'>'", $js);
+    $js = preg_replace('{"<([^>]+?)>"}i', '"<$1"+">"', $js);
+    $js = preg_replace("{'<([^>]+?)>'}i", "'<$1'+'>'", $js);
 
 
   }//WP_Filesystem
