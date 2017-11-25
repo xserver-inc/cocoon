@@ -55,6 +55,11 @@ function tag_code_to_mintify_js($buffer) {
               continue;
             }
 
+            //除外リストにマッチするCSS URLは縮小化しない
+            if (is_url_matche_list($url, get_js_mintify_exclude_list())) {
+              continue;
+            }
+
             // if (
             //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
             //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
