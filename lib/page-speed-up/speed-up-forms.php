@@ -64,6 +64,10 @@
             <?php
             generate_checkbox_tag(OP_CSS_MINTIFY_ENABLE , is_css_mintify_enable(), __( 'CSSを縮小化する', THEME_NAME ));
             generate_tips_tag(__( 'CSSの余分な改行や余白を削除することによりソースコードのサイズを減らします。', THEME_NAME ));
+
+            generate_textarea_tag(OP_CSS_MINTIFY_EXCLUDE_LIST, get_css_mintify_exclude_list(), __( '縮小化除外CSSファイルの文字列を入力', THEME_NAME ) , 3);
+            generate_tips_tag(__( '縮小化しないCSSファイルのパス、もしくはパスの一部を改行で区切って入力してください。', THEME_NAME ));
+
             ?>
           </td>
         </tr>
@@ -77,6 +81,10 @@
             <?php
             generate_checkbox_tag(OP_JS_MINTIFY_ENABLE , is_js_mintify_enable(), __( 'JavaScriptを縮小化する', THEME_NAME ));
             generate_tips_tag(__( 'JavaScript（jQuery）の余分な改行や余白を削除することによりソースコードのサイズを減らします。', THEME_NAME ));
+
+            generate_textarea_tag(OP_JS_MINTIFY_EXCLUDE_LIST, get_js_mintify_exclude_list(), __( '縮小化除外JavaScriptファイルの文字列を入力', THEME_NAME ) , 3);
+            generate_tips_tag(__( '縮小化しないJavaScriptファイルのパス、もしくはパスの一部を改行で区切って入力してください。', THEME_NAME ));
+
             ?>
           </td>
         </tr>

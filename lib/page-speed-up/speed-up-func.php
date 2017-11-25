@@ -28,10 +28,26 @@ function is_css_mintify_enable(){
 }
 endif;
 
+//CSSS縮小化除外ファイルリスト
+define('OP_CSS_MINTIFY_EXCLUDE_LIST', 'css_mintify_exclude_list');
+if ( !function_exists( 'get_css_mintify_exclude_list' ) ):
+function get_css_mintify_exclude_list(){
+  return get_theme_option(OP_CSS_MINTIFY_EXCLUDE_LIST);
+}
+endif;
+
 //JSを縮小化するか
 define('OP_JS_MINTIFY_ENABLE', 'js_mintify_enable');
 if ( !function_exists( 'is_js_mintify_enable' ) ):
 function is_js_mintify_enable(){
   return get_theme_option(OP_JS_MINTIFY_ENABLE);
+}
+endif;
+
+//JS縮小化除外ファイルリスト
+define('OP_JS_MINTIFY_EXCLUDE_LIST', 'js_mintify_exclude_list');
+if ( !function_exists( 'get_js_mintify_exclude_list' ) ):
+function get_js_mintify_exclude_list(){
+  return get_theme_option(OP_JS_MINTIFY_EXCLUDE_LIST);
 }
 endif;
