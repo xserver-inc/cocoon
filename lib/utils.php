@@ -894,3 +894,10 @@ function list_text_to_array($list){
   return $array;
 }
 endif;
+
+//Rubyタイプのデバッグ関数
+if ( !function_exists( 'p' ) ):
+function p($value){
+  var_dump($value);
+}
+endif;
