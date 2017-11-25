@@ -48,9 +48,25 @@ function tag_code_to_mintify_css($buffer) {
               //アドミンバースタイルは除外
               (strpos($url, 'admin-bar.min.css') !== false) ||
               //ダッシュアイコンは除外
-              (strpos($url, 'dashicons.min.css') !== false)) {
+              (strpos($url, 'dashicons.min.css') !== false)
+            ) {
               continue;
             }
+
+            //除外リストにマッチするCSS URLは縮小化しない
+            if (is_url_matche_list($url, get_css_mintify_exclude_list())) {
+              continue;
+            }
+            // $excludes = list_text_to_array(get_css_mintify_exclude_list());
+            // foreach ($excludes as $exclude_str) {
+            //   if (strpos($url, $exclude_str) !== false) {
+            //   _v($url);
+            //   _v($exclude_str);
+            //   _v(strpos($url, $exclude_str) !== false);
+            //     continue;
+            //   }
+            // }
+
             //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
             $url = preg_replace('/\?.*$/m', '', $url);
             //_v($url);//CSSコード変換するURL

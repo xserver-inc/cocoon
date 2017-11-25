@@ -883,3 +883,14 @@ function is_authors($authers){
   return false;
 }
 endif;
+
+//テキストリストを配列に変換
+if ( !function_exists( 'list_text_to_array' ) ):
+function list_text_to_array($list){
+  $array = explode("\n", $list); // とりあえず行に分割
+  $array = array_map('trim', $array); // 各行にtrim()をかける
+  $array = array_filter($array, 'strlen'); // 文字数が0の行を取り除く
+  $array = array_values($array); // これはキーを連番に振りなおしてるだけ
+  return $array;
+}
+endif;
