@@ -55,7 +55,7 @@ endif;
 define('HTACCESS_FILE', ABSPATH.'.htaccess');
 define('THEME_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTACCESS');
 define('THEME_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTACCESS');
-define('THEME_HTACCESS_REG', '{\n'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s');
+define('THEME_HTACCESS_REG', '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s');
 
 
 
@@ -94,23 +94,23 @@ function add_browser_cache_to_htaccess(){
 
         //テーマファイル用のブラウザキャッシュコードが書き込まれている場合
         if ($res && isset($m[0])) {
-          //正規表現にマッチした.htaccessに書き込まれている現在のブラウザキャッシュを取得
-          $current_browser_cache = $m[0];
-          //現在のブラウザキャッシュと新しいブラウザキャッシュが違えば置換する
-          if ($current_browser_cache != $new_browser_cache) {
-            //新しいブラウザキャッシュで古いブラウザキャッシュを置換する
-            $last_htaccess = str_replace($current_browser_cache, $new_browser_cache, $current_htaccess);
-            //ブラウザキャッシュを.htaccessファイルに書き込む
-            $wp_filesystem->put_contents(
-              HTACCESS_FILE,
-               $last_htaccess,
-              0644
-            );
-          } else {
-            //新しいブラウザキャッシュと書き込まれたブラウザキャッシュが同じなら何もしない
-            //_v('何もしない');
-            //$last_htaccess = $current_htaccess;
-          }
+          // //正規表現にマッチした.htaccessに書き込まれている現在のブラウザキャッシュを取得
+          // $current_browser_cache = $m[0];
+          // //現在のブラウザキャッシュと新しいブラウザキャッシュが違えば置換する
+          // if ($current_browser_cache != $new_browser_cache) {
+          //   //新しいブラウザキャッシュで古いブラウザキャッシュを置換する
+          //   $last_htaccess = str_replace($current_browser_cache, $new_browser_cache, $current_htaccess);
+          //   //ブラウザキャッシュを.htaccessファイルに書き込む
+          //   $wp_filesystem->put_contents(
+          //     HTACCESS_FILE,
+          //      $last_htaccess,
+          //     0644
+          //   );
+          // } else {
+          //   //新しいブラウザキャッシュと書き込まれたブラウザキャッシュが同じなら何もしない
+          //   //_v('何もしない');
+          //   //$last_htaccess = $current_htaccess;
+          // }
         } else {//書き込まれていない場合
           //.htaccessにブラウザキャッシュの書き込みがなかった場合には単に追記する
           $last_htaccess = $current_htaccess.PHP_EOL.
