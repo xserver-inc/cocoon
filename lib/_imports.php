@@ -44,6 +44,7 @@ require_once 'page-settings/404-funcs.php';        //404ページ設定関数
 require_once 'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once 'page-settings/others-funcs.php';     //その他設定関数
 require_once 'page-settings/reset-funcs.php';      //リセット設定関数
+//require_once 'page-func-text/_top-page.php';     //使いまわしテキスト関数
 require_once 'page-speed-up/speed-up-func.php';  //高速化設定関数
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定

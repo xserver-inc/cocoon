@@ -12,7 +12,7 @@ function add_original_menu_in_admin_page() {
     add_submenu_page('theme-settings', __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'theme-balloon', 'add_theme_balloon_page');
 
     //使いまわしテキストサブメニューを追加
-    add_submenu_page('theme-settings', __('使いまわしテキスト', THEME_NAME), __('使いまわしテキスト', THEME_NAME), 'manage_options', 'theme-text-func', 'add_theme_text_func_page');
+    add_submenu_page('theme-settings', __('使いまわしテキスト', THEME_NAME), __('使いまわしテキスト', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
 
     //アクセス分析サブメニューを追加
     add_submenu_page('theme-settings', __('アクセス分析', THEME_NAME), __('アクセス分析', THEME_NAME), 'manage_options', 'theme-analytics', 'add_theme_analytics_page');
@@ -51,6 +51,18 @@ function add_theme_backup_page() {
   }
   //以下のテンプレートファイルで設定ページを作成する
   require_once 'page-backup/_top-page.php';
+}
+endif;
+
+//テーマ用使いまわしテキストの登録
+if ( !function_exists( 'add_theme_func_text_page' ) ):
+function add_theme_func_text_page() {
+  // ユーザーが必要な権限を持つか確認する必要がある
+  if (!current_user_can('manage_options'))  {
+    wp_die( __('このページにアクセスする管理者権限がありません。') );
+  }
+  //以下のテンプレートファイルで設定ページを作成する
+  require_once 'page-func-text/_top-page.php';
 }
 endif;
 
