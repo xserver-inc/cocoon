@@ -1,15 +1,29 @@
 <?php //関数テキスト関係の関数
 
+//関数テキストテーブルのバージョン
+define('FUNCTION_TEXTS_TABLE_VERSION', '0.1');
+define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . 'function_texts');
+//_v(FUNCTION_TEXTS_TABLE_NAME);
+
+//関数テキストテーブルのバージョン取得
+define('OP_FUNCTION_TEXTS_TABLE_VERSION', 'function_texts_table_version');
+if ( !function_exists( 'get_function_texts_table_version' ) ):
+function get_function_texts_table_version(){
+  return get_theme_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+}
+endif;
+
+
 //関数テキストテーブルの作成
-if ( !function_exists( 'create_function_text_table' ) ):
-function create_function_text_table() {
+if ( !function_exists( 'create_function_texts_table' ) ):
+function create_function_texts_table() {
    global $wpdb;
    //_v('$wpdb');
    $sql = "";
    $charset_collate = "";
 
-   // 接頭辞の追加（socal_count_cache）
-   $table_name = $wpdb->prefix . 'function_texts';
+   // // 接頭辞の追加（socal_count_cache）
+   // $table_name = $wpdb->prefix . 'function_texts';
 
    // charsetを指定する
    if ( !empty($wpdb->charset) )
@@ -20,19 +34,46 @@ function create_function_text_table() {
       $charset_collate .= "COLLATE {$wpdb->collate}";
 
     // SQL文でテーブルを作る
-    $sql = "CREATE TABLE $table_name (
+    $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
       id mediumint(9) NOT NULL AUTO_INCREMENT,
       date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
       modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+      title varchar(126),
       text text NOT NULL,
       #categories varchar(200),
-      PRIMARY KEY (id)
+      PRIMARY KEY (id),
+      INDEX (title)
     ) $charset_collate;";
 
    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-   _v($sql);
+   //_v($sql);
    $res = dbDelta( $sql );
-   _v($res);
+   //_v($res);
+
+   set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );
 }
 endif;
-create_function_text_table();
+
+//関数テキストテーブルのアップデート
+if ( !function_exists( 'update_function_texts_table' ) ):
+function update_function_texts_table() {
+  // オプションに登録されたデータベースのバージョンを取得
+  $installed_ver = get_function_texts_table_version();
+  $now_ver = FUNCTION_TEXTS_TABLE_VERSION;
+  if ( $installed_ver != $now_ver ) {
+    create_function_texts_table();
+  }
+}
+endif;
+
+//関数テキストテーブルのアンインストール
+if ( !function_exists( 'uninstall_function_texts_table' ) ):
+function uninstall_function_texts_table() {
+  global $wpdb;
+  //$table_name = $wpdb->prefix . 'oxy_table';
+
+  $wpdb->query("DROP TABLE IF EXISTS ".FUNCTION_TEXTS_TABLE_NAME);
+
+  //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+}
+endif;
