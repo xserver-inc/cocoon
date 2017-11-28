@@ -113,6 +113,35 @@ function generate_tips_tag($caption){?>
 endif;
 
 
+//通知メッセージのの生成
+if ( !function_exists( 'generate_notice_message_tag' ) ):
+function generate_notice_message_tag($caption){?>
+  <div class="updated">
+    <p>
+      <strong>
+        <?php echo $caption; ?>
+      </strong>
+    </p>
+  </div>
+  <?php
+}
+endif;
+
+//エラーメッセージのの生成
+if ( !function_exists( 'generate_error_message_tag' ) ):
+function generate_error_message_tag($caption){?>
+  <div class="error">
+    <p>
+      <strong>
+        <?php echo $caption; ?>
+      </strong>
+    </p>
+  </div>
+  <?php
+}
+endif;
+
+
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
 function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>

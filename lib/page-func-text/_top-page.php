@@ -9,19 +9,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
-  //バックアップ
-  require_once 'func-text-posts.php';
+  require_once 'posts.php';
 
-//画面に「設定は保存されました」メッセージを表示
-?>
-<div class="updated">
-  <p>
-    <strong>
-      <?php _e('内容を保存しました。', THEME_NAME ); ?>
-    </strong>
-  </p>
-</div>
-<?php
 }
 
 ///////////////////////////////////////
