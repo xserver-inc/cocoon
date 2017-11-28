@@ -17,7 +17,7 @@
   }
 
   echo '<h2>'.__( 'タイトル', THEME_NAME ).'</h2>';
-  generate_textbox_tag('title', $title, __( '', THEME_NAME ));
+  generate_textbox_tag('title', $title, __( 'タイトルの入力（126文字まで）', THEME_NAME ));
   generate_tips_tag(__( '表示ラベルとなるタイトルを入力してください。タイトルは一覧表示用です。', THEME_NAME ));
 
   _v($_POST);
