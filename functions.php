@@ -212,17 +212,27 @@ function admin_scripts($hook) {
 }
 
 //不要なテーマカスタマイザー項目を削除
-//https://tenman.info/labo/snip/archives/8682
-add_action( "customize_register", "customize_register_custom" );
+add_action( 'customize_register', 'customize_register_custom' );
 if ( !function_exists( 'customize_register_custom' ) ):
 function customize_register_custom( $wp_customize ) {
-  $wp_customize->remove_control("header_image");
-  //$wp_customize->remove_panel("widgets");
-  $wp_customize->remove_section("colors");
-  $wp_customize->remove_section("background_image");
-  //$wp_customize->remove_section("static_front_page");
-  //$wp_customize->remove_section("title_tagline");
-  //$wp_customize->remove_control('nav');
+  //サイト基本情報
+  $wp_customize->remove_section('title_tagline');
+  //色
+  $wp_customize->remove_section('colors');
+  //背景画像がある場合
+  $wp_customize->remove_section('background_image');
+  //ヘッダーメディア
+  $wp_customize->remove_section('header_image');
+  //メニュー
+  //$wp_customize->remove_panel('nav_menus');
+  //↑こちのコードでは消えなかった
+  //remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
+  // //ウィジェット
+  // $wp_customize->remove_panel('widgets');
+  // //固定フロントページ
+  // $wp_customize->remove_section('static_front_page');
+  // //追加CSS
+  // $wp_customize->remove_section('custom_css');
 }
 endif;
 

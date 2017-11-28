@@ -53,5 +53,8 @@ if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action']
   if (empty($_POST['text'])) {
     $message .= __( '内容が入力されていません。', THEME_NAME ).'<br>';
   }
+  if (empty($_POST['action'])) {
+    $message .= __( '入力内容が不正です。', THEME_NAME ).'<br>';
+  }
   generate_error_message_tag($message);
 }
