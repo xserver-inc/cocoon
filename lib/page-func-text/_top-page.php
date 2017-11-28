@@ -17,7 +17,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <div class="updated">
   <p>
     <strong>
-      <?php _e('設定をレストアしました。', THEME_NAME ); ?>
+      <?php _e('内容を保存しました。', THEME_NAME ); ?>
     </strong>
   </p>
 </div>
@@ -30,11 +30,9 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 ?>
 <div class="wrap">
 <h1><?php _e( '使いまわしテキスト（関数テキスト）', THEME_NAME ) ?></h1>
-  <form name="form1" method="post" action="" class="admin-settings">
     <!-- 使いまわしテキスト（関数テキスト） -->
     <div class="func-text metabox-holder">
-      <?php require_once 'func-text-forms.php'; ?>
+      <?php //require_once 'func-text-forms.php'; ?>
+      <?php require_once 'form.php'; ?>
     </div><!-- /.metabox-holder -->
-    <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-  </form>
 </div>

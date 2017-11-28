@@ -2,7 +2,7 @@
 
 //関数テキストテーブルのバージョン
 define('FUNCTION_TEXTS_TABLE_VERSION', '0.1');
-define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . 'function_texts');
+define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 
 //関数テキストテーブルのバージョン取得
@@ -12,7 +12,6 @@ function get_function_texts_table_version(){
   return get_theme_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
 }
 endif;
-
 
 //関数テキストテーブルの作成
 if ( !function_exists( 'create_function_texts_table' ) ):
@@ -53,6 +52,7 @@ function create_function_texts_table() {
    set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );
 }
 endif;
+//create_function_texts_table();
 
 //関数テキストテーブルのアップデート
 if ( !function_exists( 'update_function_texts_table' ) ):
@@ -77,3 +77,4 @@ function uninstall_function_texts_table() {
   //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
 }
 endif;
+
