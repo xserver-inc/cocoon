@@ -369,8 +369,6 @@ if (is_easy_ssl_enable()) {
   add_filter('comment_text', 'chagne_site_url_html_to_https', 1);
 }
 
-
-
 /*
 add_action('comment_form','google_recaptcha_script');
 function google_recaptcha_script(){

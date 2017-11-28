@@ -563,6 +563,17 @@ function includes_site_url($url){
 }
 endif;
 
+//Wordpressインストールフォルダが含まれているか
+if ( !function_exists( 'includes_abspath' ) ):
+function includes_abspath($local){
+  //URLにサイトアドレスが含まれていない場合
+  if (strpos($local, ABSPATH) === false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+endif;
 
 //内部URLをローカルパスに変更
 if ( !function_exists( 'url_to_local' ) ):
@@ -581,6 +592,79 @@ function url_to_local($url){
   return $path;
 }
 endif;
+
+//ローカルパスを内部URLに変更
+if ( !function_exists( 'local_to_url' ) ):
+function local_to_url($local){
+  //URLにサイトアドレスが含まれていない場合
+  if (!includes_abspath($local)) {
+    return false;
+  }
+  $url = str_replace(ABSPATH, site_url().'/', $local);
+  //$url = str_replace('//', '/', $url);
+  $url = str_replace('\\', '/', $url);
+  // _v($local);
+  // _v(ABSPATH);
+  // _v(site_url());
+  // _v($url);
+
+  return $url;
+}
+endif;
+
+
+//テーマのリソースディレクトリ
+if ( !function_exists( 'get_theme_resources_dir' ) ):
+function get_theme_resources_dir(){
+  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
+  if (!file_exists($dir)) mkdir($dir, 0777);
+  return $dir;
+}
+endif;
+
+//テーマの汎用キャッシュディレクトリ
+if ( !function_exists( 'get_theme_cache_dir' ) ):
+function get_theme_cache_dir(){
+  $dir = get_theme_resources_dir().'cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777);
+  return $dir;
+}
+endif;
+
+//テーマのブログカードキャッシュディレクトリ
+if ( !function_exists( 'get_theme_blog_card_cache_dir' ) ):
+function get_theme_blog_card_cache_dir(){
+  $dir = get_theme_resources_dir().'blog-card-cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777);
+  return $dir;
+}
+endif;
+
+//テーマのCSSキャッシュディレクトリ
+if ( !function_exists( 'get_theme_css_cache_dir' ) ):
+function get_theme_css_cache_dir(){
+  $dir = get_theme_resources_dir().'css-cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777);
+  return $dir;
+}
+endif;
+
+//テーマのカスタムCSSファイル
+if ( !function_exists( 'get_theme_css_cache_file' ) ):
+function get_theme_css_cache_file(){
+  $dir = get_theme_css_cache_dir().'css-custom.css';
+  return $dir;
+}
+endif;
+
+//テーマのカスタムCSSファイルURL
+if ( !function_exists( 'get_theme_css_cache_file_url' ) ):
+function get_theme_css_cache_file_url(){
+  $url = local_to_url(get_theme_css_cache_file());
+  return $url;
+}
+endif;
+
 
 
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）

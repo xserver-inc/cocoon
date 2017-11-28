@@ -20,9 +20,30 @@ if ( ! isset( $content_width ) ) $content_width = 800;
 //カテゴリー説明文でHTMLタグを使う
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
-//ビジュアルエディターとテーマ表示のスタイルを合わせる
-add_editor_style();
-add_editor_style( 'style.css' );
+///////////////////////////////////////
+// ビジュアルエディターのCSSの読み込み順を変更する
+///////////////////////////////////////
+add_filter( 'editor_stylesheets', 'editor_stylesheets_custom');
+if ( !function_exists( 'editor_stylesheets_custom' ) ):
+function editor_stylesheets_custom($stylesheets) {
+  array_push($stylesheets,
+    get_template_directory_uri().'/style.css',
+    get_theme_css_cache_file_url(), //テーマ設定で変更したスタイル
+    get_template_directory_uri().'/editor-style.css'
+  );
+  //子テーマがある場合、子テーマ内のスタイルも読み込む
+  if (is_child_theme()) {
+    array_push($stylesheets,
+      get_stylesheet_directory_uri().'/style.css',
+      get_stylesheet_directory_uri().'/editor-style.css'
+    );
+  }
+  //_v($stylesheets);
+  return $stylesheets;
+}
+endif;
+// add_editor_style( 'style.css' );
+
 
 // RSS2 の feed リンクを出力
 add_theme_support( 'automatic-feed-links' );

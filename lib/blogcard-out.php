@@ -57,43 +57,6 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
   add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 9999);
 }
 
-//テーマのリソースディレクトリ
-if ( !function_exists( 'get_theme_resources_dir' ) ):
-function get_theme_resources_dir(){
-  $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
-  return $dir;
-}
-endif;
-
-//テーマの汎用キャッシュディレクトリ
-if ( !function_exists( 'get_theme_cache_dir' ) ):
-function get_theme_cache_dir(){
-  $dir = get_theme_resources_dir().'cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
-  return $dir;
-}
-endif;
-
-//テーマのブログカードキャッシュディレクトリ
-if ( !function_exists( 'get_theme_blog_card_cache_dir' ) ):
-function get_theme_blog_card_cache_dir(){
-  $dir = get_theme_resources_dir().'blog-card-cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
-  return $dir;
-}
-endif;
-
-//テーマのブログカードキャッシュディレクトリ
-if ( !function_exists( 'get_theme_css_cache_dir' ) ):
-function get_theme_css_cache_dir(){
-  $dir = get_theme_resources_dir().'css-cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
-  return $dir;
-}
-endif;
-
-
 
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):

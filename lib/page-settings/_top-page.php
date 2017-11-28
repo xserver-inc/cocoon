@@ -69,6 +69,21 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   //リセット
   require_once 'reset-posts.php';
 
+  ///////////////////////////////////////
+  // ビジュアルエディター用のカスタマイズCSS出力
+  ///////////////////////////////////////
+  ob_start();
+  get_template_part('tmp/css-custom');
+  $custum_css = ob_get_clean();
+  if ($custum_css && WP_Filesystem()) {
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $custum_css_file = get_theme_css_cache_file();
+    //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
+    $wp_filesystem->put_contents($custum_css_file, $custum_css);
+  }
+
+  //_v($custum_css);
+
 //画面に「設定は保存されました」メッセージを表示
 ?>
 <div class="updated">
