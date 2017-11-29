@@ -53,6 +53,8 @@ function title_parts_custom( $title ){
     //   $title['site'] = $site_name;
     // endif;
   } elseif (is_category()) {
+    $cat_id = get_query_var('cat');
+    _v($cat_id);
     $cat_name = $title['title'];
     $title['site'] = '';
     switch (get_category_page_title_format()) {

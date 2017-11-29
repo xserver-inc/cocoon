@@ -20,8 +20,8 @@ function get_category_meta($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_meta_color' ) ):
-function get_category_meta_color($cat_id){
+if ( !function_exists( 'get_category_color' ) ):
+function get_category_color($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['color']))
     return $meta['color'];
@@ -29,8 +29,8 @@ function get_category_meta_color($cat_id){
 endif;
 
 //カテゴリタイトルの取得
-if ( !function_exists( 'get_category_meta_title' ) ):
-function get_category_meta_title($cat_id){
+if ( !function_exists( 'get_category_title' ) ):
+function get_category_title($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['title']))
     return $meta['title'];
@@ -38,8 +38,8 @@ function get_category_meta_title($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_meta_content' ) ):
-function get_category_meta_content($cat_id){
+if ( !function_exists( 'get_category_content' ) ):
+function get_category_content($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['content']))
     return $meta['content'];
@@ -47,8 +47,8 @@ function get_category_meta_content($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_meta_eye_catch' ) ):
-function get_category_meta_eye_catch($cat_id){
+if ( !function_exists( 'get_category_eye_catch' ) ):
+function get_category_eye_catch($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['eye_catch']))
     return $meta['eye_catch'];
@@ -56,8 +56,8 @@ function get_category_meta_eye_catch($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_meta_description' ) ):
-function get_category_meta_description($cat_id){
+if ( !function_exists( 'get_category_description' ) ):
+function get_category_description($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['description']))
     return $meta['description'];
@@ -65,8 +65,8 @@ function get_category_meta_description($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_meta_keywords' ) ):
-function get_category_meta_keywords($cat_id){
+if ( !function_exists( 'get_category_keywords' ) ):
+function get_category_keywords($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['keywords']))
     return $meta['keywords'];
