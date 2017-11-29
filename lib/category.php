@@ -21,7 +21,15 @@ function get_category_meta($cat_id = null){
   }
   //カテゴリIDが正常な場合
   if ($cat_id) {
-    return get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+    $res = get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+    //_v($res);
+    if (is_array($res)) {
+      return $res;
+    } else {
+      return array();
+    }
+
+
   }
 }
 endif;
@@ -150,15 +158,18 @@ add_action ( 'edited_term', 'save_extra_category_fileds');
 if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
   if ( isset( $_POST['cat_meta'] ) ) {
+    // //_v($_POST['cat_meta']);
     $cat_id = $term_id;
-    $cat_meta = get_category_meta($cat_id);
-    $cat_keys = array_keys($_POST['cat_meta']);
-    //_v($cat_keys);
-    foreach ($cat_keys as $key){
-      if (isset($_POST['cat_meta'][$key])){
-         $cat_meta[$key] = $_POST['cat_meta'][$key];
-      }
-    }
+    $cat_meta = $_POST['cat_meta'];
+    // //_v($cat_id);
+    // $cat_meta = get_category_meta($cat_id);
+    // $cat_keys = array_keys($_POST['cat_meta']);
+    // //_v($cat_meta);
+    // foreach ($cat_keys as $key){
+    //   if (isset($_POST['cat_meta'][$key])){
+    //     $cat_meta[$key] = $_POST['cat_meta'][$key];
+    //   }
+    // }
     update_term_meta( $cat_id, get_category_meta_key($cat_id), $cat_meta );
   }
 }

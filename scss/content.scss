@@ -45,8 +45,10 @@
   }
 
   &:hover{
-    @include bgc_hover;
-    color: $text_color;
+    opacity: 0.5;
+    color: $white_text_color;
+    // @include bgc_hover;
+    // color: $text_color;
   }
 }
 

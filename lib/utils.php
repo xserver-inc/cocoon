@@ -1,5 +1,16 @@
 <?php
 
+//カテゴリーラベルのスタイルタグ属性を取得
+if ( !function_exists( 'get_category_label_style_attr' ) ):
+function get_category_label_style_attr($cat_id){
+  $color = get_category_color($cat_id);
+  if ($color) {
+   return ' style="background-color: '.$color.';border-color: '.$color.';"';
+  }
+}
+endif;
+
+
 //リンクのないカテゴリーの取得（複数）
 if ( !function_exists( 'get_the_nolink_categories' ) ):
 function get_the_nolink_categories(){
@@ -27,7 +38,8 @@ if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<a class="catlink catlink-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'">'.$category->cat_name.'</a>';
+    $style = get_category_label_style_attr($category->cat_ID);
+    $categories .= '<a class="catlink catlink-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
   }
   return $categories;
 }
@@ -41,7 +53,6 @@ function the_category_links(){
 }
 endif;
 
-
 //リンクのないカテゴリーの取得
 if ( !function_exists( 'get_the_nolink_category' ) ):
 function get_the_nolink_category(){
@@ -49,7 +60,8 @@ function get_the_nolink_category(){
   //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
-    return '<span class="category-label category-label-'.$category->cat_ID.'">'.$category->cat_name.'</span>';
+    $style = get_category_label_style_attr($category->cat_ID);
+    return '<span class="category-label category-label-'.$category->cat_ID.'"'.$style.'>'.$category->cat_name.'</span>';
   }
 }
 endif;

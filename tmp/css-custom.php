@@ -66,7 +66,7 @@ table tr:nth-of-type(2n+1),
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover,
 .pager-links a:hover span,
-.catlink:hover,
+/*.catlink:hover,*/
 .taglink:hover,
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;

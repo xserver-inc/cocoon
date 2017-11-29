@@ -911,10 +911,8 @@ img {
   padding-right: 3px;
 }
 .catlink:hover {
-  background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
-  color: #333435;
-  color: #333435;
+  opacity: 0.5;
+  color: #fff;
 }
 
 /*本文下タグ*/
