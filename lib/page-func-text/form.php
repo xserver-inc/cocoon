@@ -22,7 +22,7 @@
 
   echo '<h2>'.__( '内容', THEME_NAME ).'</h2>';
   //_v($_POST);
-  generate_visuel_editor_tag('text', $text 'func-text');
+  generate_visuel_editor_tag('text', $text,  'func-text');
   // $editor_id = 'func-text'; //エディターを区別するために、IDを指定する
   // $settings = array( 'textarea_name' => 'text' ); //配列としてデータを渡すためname属性を指定する
   // wp_editor( $text, $editor_id, $settings );

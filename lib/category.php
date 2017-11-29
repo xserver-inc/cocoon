@@ -21,27 +21,46 @@ function extra_category_fields( $tag ) {
     _v($cat_meta);
 ?>
 <tr class="form-field">
-  <th><label for="category_color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
+  <th><label for="color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
   <td><?php
-    $category_color = !empty($cat_meta['category_color']) ? $cat_meta['category_color'] : '';
-    generate_color_picker_tag('cat_meta[category_color]',  $category_color, '');
+    $color = !empty($cat_meta['color']) ? $cat_meta['color'] : '';
+    generate_color_picker_tag('cat_meta[color]',  $color, '');
   ?>
     <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field">
-    <th><label for="category_title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
-    <td>
-      <input type="text" name="cat_meta[category_title]" id="category_title" size="25" value="<?php if(isset ( $cat_meta['category_title'])) echo esc_html($cat_meta['category_title']) ?>" />
-      <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
-    </td>
+  <th><label for="title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
+  <td>
+    <input type="text" name="cat_meta[title]" id="title" size="25" value="<?php if(isset ( $cat_meta['title'])) echo esc_html($cat_meta['title']) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
+  </td>
 </tr>
 <tr class="form-field">
-    <th><label for="category_content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
-    <td><?php
-      $category_content = isset($cat_meta['category_content']) ? $cat_meta['category_content'] : '';
-      generate_visuel_editor_tag('cat_meta[category_content]', $category_content, 'category_content');
-     ?></td>
+  <th><label for="content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
+  <td><?php
+    $content = isset($cat_meta['content']) ? $cat_meta['content'] : '';
+    generate_visuel_editor_tag('cat_meta[content]', $content, 'content');
+   ?>
+    <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
+   </td>
+</tr>
+<tr class="form-field">
+  <th><label for="meta_discription"><?php _e( 'メタディスクリプション', THEME_NAME ) ?></label></th>
+  <td>
+    <?php
+    $meta_discription = isset($cat_meta['meta_discription']) ? $cat_meta['meta_discription'] : '';
+    generate_textarea_tag('cat_meta[meta_discription]', $meta_discription, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
+     ?>
+    <p class="description"><?php _e( 'カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
+  </td>
+</tr>
+<tr class="form-field">
+  <th><label for="meta_keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
+  <td>
+    <input type="text" name="cat_meta[meta_keywords]" id="meta_keywords" size="25" value="<?php if(isset ( $cat_meta['meta_keywords'])) echo esc_html($cat_meta['meta_keywords']) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
+    <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
+  </td>
 </tr>
 <?php
 }
