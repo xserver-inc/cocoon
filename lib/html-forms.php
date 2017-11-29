@@ -234,6 +234,14 @@ function generate_color_picker_tag($name, $value, $label){?>
 endif;
 
 
+//ビジュアルエディターの生成
+if ( !function_exists( 'generate_visuel_editor_tag' ) ):
+function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor'){
+  $settings = array( 'textarea_name' => $name ); //配列としてデータを渡すためname属性を指定する
+  wp_editor( $content, $editor_id, $settings );
+}
+endif;
+
 //メインカラム広告の詳細設定フォーム
 if ( !function_exists( 'generate_main_column_ad_detail_setting_forms' ) ):
 function generate_main_column_ad_detail_setting_forms($name, $value, $label_name = null, $label_value = null, $body_ad_name = null, $body_ad_value = null){ ?>

@@ -3336,3 +3336,6 @@ select option.fa {
     display: inline-block;
     margin: 0 0 0 5px;
     padding: 5px 15px 3px; }
+
+#edittag {
+  max-width: 1200px; }
