@@ -252,6 +252,12 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
+  //カテゴリー設定ページのディスクリプションを取得
+  $cat_desc = trim( strip_tags( get_category_description() ) );
+  if ( $cat_desc ) {//ディスクリプションが設定されている場合
+    return htmlspecialchars($cat_desc);
+  }
+  //カテゴリ説明文を取得
   $cat_desc = trim( strip_tags( category_description() ) );
   if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
@@ -271,7 +277,11 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_keywords' ) ):
 function get_category_meta_keywords(){
-  return single_cat_title('', false);
+  if ($keywords = get_category_keywords()) {
+    return $keywords;
+  } else {
+    return single_cat_title('', false);
+  }
 }
 endif;
 

@@ -14,34 +14,41 @@ endif;
 
 //カテゴリメタ情報の取得
 if ( !function_exists( 'get_category_meta' ) ):
-function get_category_meta($cat_id){
-  return get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+function get_category_meta($cat_id = null){
+  if (empty($cat_id) && is_category()) {
+    //カテゴリがないときはカテゴリIDを取得
+    $cat_id = get_query_var('cat');
+  }
+  //カテゴリIDが正常な場合
+  if ($cat_id) {
+    return get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+  }
 }
 endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_category_color' ) ):
-function get_category_color($cat_id){
+function get_category_color($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['color']))
+  if (!empty($meta['color']))
     return $meta['color'];
 }
 endif;
 
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_category_title' ) ):
-function get_category_title($cat_id){
+function get_category_title($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['title']))
+  if (!empty($meta['title']))
     return $meta['title'];
 }
 endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_category_content' ) ):
-function get_category_content($cat_id){
+function get_category_content($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['content']))
+  if (!empty($meta['content']))
     return $meta['content'];
   else
     return category_description();
@@ -50,27 +57,27 @@ endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_category_eye_catch' ) ):
-function get_category_eye_catch($cat_id){
+function get_category_eye_catch($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['eye_catch']))
+  if (!empty($meta['eye_catch']))
     return $meta['eye_catch'];
 }
 endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_category_description' ) ):
-function get_category_description($cat_id){
+function get_category_description($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['description']))
+  if (!empty($meta['description']))
     return $meta['description'];
 }
 endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_category_keywords' ) ):
-function get_category_keywords($cat_id){
+function get_category_keywords($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (isset($meta['keywords']))
+  if (!empty($meta['keywords']))
     return $meta['keywords'];
 }
 endif;
