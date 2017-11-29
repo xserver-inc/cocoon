@@ -54,11 +54,14 @@ function title_parts_custom( $title ){
     // endif;
   } elseif (is_category()) {
     $cat_id = get_query_var('cat');
-    _v($cat_id);
     $cat_name = $title['title'];
+    if ($cat_id && get_category_title($cat_id)) {
+      $cat_name = get_category_title($cat_id);
+    }
     $title['site'] = '';
     switch (get_category_page_title_format()) {
       case 'category_sitename':
+        $title['title'] = $cat_name;
         $title['site'] = $site_name;
         break;
       case 'sitename_category':
