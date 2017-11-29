@@ -20,11 +20,56 @@ function get_category_meta($cat_id){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_color' ) ):
-function get_category_color($cat_id){
+if ( !function_exists( 'get_category_meta_color' ) ):
+function get_category_meta_color($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['color']))
     return $meta['color'];
+}
+endif;
+
+//カテゴリタイトルの取得
+if ( !function_exists( 'get_category_meta_title' ) ):
+function get_category_meta_title($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['title']))
+    return $meta['title'];
+}
+endif;
+
+//カテゴリ色の取得
+if ( !function_exists( 'get_category_meta_content' ) ):
+function get_category_meta_content($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['content']))
+    return $meta['content'];
+}
+endif;
+
+//カテゴリ色の取得
+if ( !function_exists( 'get_category_meta_eye_catch' ) ):
+function get_category_meta_eye_catch($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['eye_catch']))
+    return $meta['eye_catch'];
+}
+endif;
+
+//カテゴリ色の取得
+if ( !function_exists( 'get_category_meta_description' ) ):
+function get_category_meta_description($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['description']))
+    return $meta['description'];
+}
+endif;
+
+//カテゴリ色の取得
+if ( !function_exists( 'get_category_meta_keywords' ) ):
+function get_category_meta_keywords($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['keywords']))
+    return $meta['keywords'];
 }
 endif;
 
@@ -71,19 +116,19 @@ function extra_category_fields( $tag ) {
    </td>
 </tr>
 <tr class="form-field">
-  <th><label for="meta_discription"><?php _e( 'メタディスクリプション', THEME_NAME ) ?></label></th>
+  <th><label for="description"><?php _e( 'メタディスクリプション', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $meta_discription = isset($cat_meta['meta_discription']) ? $cat_meta['meta_discription'] : '';
-    generate_textarea_tag('cat_meta[meta_discription]', $meta_discription, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
+    $description = isset($cat_meta['description']) ? $cat_meta['description'] : '';
+    generate_textarea_tag('cat_meta[description]', $description, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
      ?>
     <p class="description"><?php _e( 'カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field">
-  <th><label for="meta_keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
+  <th><label for="keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
   <td>
-    <input type="text" name="cat_meta[meta_keywords]" id="meta_keywords" size="25" value="<?php if(isset ( $cat_meta['meta_keywords'])) echo esc_html($cat_meta['meta_keywords']) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
+    <input type="text" name="cat_meta[keywords]" id="keywords" size="25" value="<?php if(isset ( $cat_meta['keywords'])) echo esc_html($cat_meta['keywords']) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
