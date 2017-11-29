@@ -204,7 +204,7 @@ if ( !function_exists( 'generate_tooltip_tag' ) ):
 function generate_tooltip_tag($content){?>
   <span class="tooltip fa fa-exclamation-triangle">
     <span class="tip-content">
-      <?php echo $content; ?>
+      <?php echo esc_html($content); ?>
     </span>
   </span>
   <?php
@@ -216,7 +216,7 @@ endif;
 if ( !function_exists( 'generate_color_picker_tag' ) ):
 function generate_color_picker_tag($name, $value, $label){?>
   <p><label for="<?php echo $name; ?>"><?php echo $label; ?></label></p>
-  <p><input type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>" ></p>
+  <p><input type="text" name="<?php echo $name; ?>" value="<?php echo esc_html($value); ?>" ></p>
   <?php wp_enqueue_script( 'wp-color-picker' );
   $data = minify_js('(function( $ ) {
         var options = {
@@ -226,7 +226,7 @@ function generate_color_picker_tag($name, $value, $label){?>
             hide: true,
             palettes: true
         };
-        $("input:text[name='.$name.']").wpColorPicker(options);
+        $("input:text[name=\''.$name.'\']").wpColorPicker(options);
     })( jQuery );');
     wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
 
