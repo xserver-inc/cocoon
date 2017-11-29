@@ -4,7 +4,7 @@
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
 
-  $transient_id = THEME_NAME.'_follow_count_feedly';
+  $transient_id = TRANSIENT_FOLLOW_PREFIX.'feedly';
   //DBキャッシュからカウントの取得
   if (is_sns_follow_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -62,7 +62,7 @@ function fetch_push7_info(){
   if (!is_sns_follow_buttons_count_visible())
     return null;
 
-  $transient_id = THEME_NAME.'_follow_info_push7';
+  $transient_id = TRANSIENT_FOLLOW_PREFIX.'_push7_info';
   //DBキャッシュからカウントの取得
   if (is_sns_follow_count_cache_enable()) {
     $info = get_transient( $transient_id  );

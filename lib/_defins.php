@@ -79,6 +79,13 @@ define('DEFAULT_INPUT_ROWS', 10);
 define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
 
+//シェアカウントキャッシュのプレフィックス
+define('TRANSIENT_SHARE_PREFIX', THEME_NAME.'_share_count_');
+//フォローカウントキャッシュのプレフィックス
+define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
+
+
+
 //URLの正規表現
 define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
 

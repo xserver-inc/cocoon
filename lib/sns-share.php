@@ -11,7 +11,7 @@ if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url = null) {
 
   global $post;
-  $transient_id = THEME_NAME.'_share_count_twitter_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'twitter_'.$post->ID;
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -65,7 +65,7 @@ if ( !function_exists( 'fetch_facebook_count' ) ):
 function fetch_facebook_count($url = null) {
 
   global $post;
-  $transient_id = THEME_NAME.'_share_count_facebook_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'facebook_'.$post->ID;
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -123,7 +123,7 @@ if ( !function_exists( 'fetch_hatebu_count' ) ):
 function fetch_hatebu_count($url = null) {
 
   global $post;
-  $transient_id = THEME_NAME.'_share_count_hatebu_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'hatebu_'.$post->ID;
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -181,7 +181,7 @@ if ( !function_exists( 'fetch_google_plus_count' ) ):
 function fetch_google_plus_count($url = null) {
 
   global $post;
-  $transient_id = THEME_NAME.'_share_count_google_plus_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'google_plus_'.$post->ID;
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -235,7 +235,7 @@ if ( !function_exists( 'fetch_pocket_count' ) ):
 function fetch_pocket_count($url = null) {
 
   global $post;
-  $transient_id = THEME_NAME.'_share_count_pocket_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'pocket_'.$post->ID;
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );

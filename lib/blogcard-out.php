@@ -231,21 +231,3 @@ function url_to_external_ogp_blogcard_tag($url){
   return $tag;
 }
 endif;
-
-//transientキャッシュの削除
-if ( !function_exists( 'delete_blogcard_cache_transients' ) ):
-function delete_blogcard_cache_transients(){
-  global $wpdb;
-  $wpdb->query("DELETE FROM $wpdb->options WHERE (`option_name` LIKE '%_transient_bcc_%') OR (`option_name` LIKE '%_transient_timeout_bcc_%')");
-}
-endif;
-
-
-//テーマを変更時にブログカードのキャッシュを削除
-add_action('switch_theme', 'delete_blogcard_caches');
-if ( !function_exists( 'delete_blogcard_caches' ) ):
-function delete_blogcard_caches() {
-  delete_blogcard_cache_transients();
-  remove_directory(get_simplicity_cache_dir());
-}
-endif;

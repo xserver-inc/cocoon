@@ -985,3 +985,20 @@ function p($value){
   var_dump($value);
 }
 endif;
+
+//テーマを変更時にテーマのリソースキャッシュを削除
+add_action('switch_theme', 'delete_theme_resource_caches');
+if ( !function_exists( 'delete_theme_resource_caches' ) ):
+function delete_theme_resource_caches() {
+  delete_blogcard_cache_transients();
+  remove_directory(get_simplicity_cache_dir());
+}
+endif;
+
+//transientキャッシュの削除
+if ( !function_exists( 'delete_blogcard_cache_transients' ) ):
+function delete_blogcard_cache_transients(){
+  global $wpdb;
+  $wpdb->query("DELETE FROM $wpdb->options WHERE (`option_name` LIKE '%_transient_bcc_%') OR (`option_name` LIKE '%_transient_timeout_bcc_%')");
+}
+endif;

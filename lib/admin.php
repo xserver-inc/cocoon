@@ -464,6 +464,9 @@ function tiny_mce_before_init_custom( $mceInit ) {
 }
 endif;
 
+
+//カテゴリ説明文をビジュアルエディターにするカスタマイズ
+/*
 // remove the html filtering
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 remove_filter( 'term_description', 'wp_kses_data' );
@@ -504,3 +507,4 @@ function remove_default_category_description(){
   <?php
   }
 }
+*/
