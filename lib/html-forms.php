@@ -301,11 +301,13 @@ endif;
 
 //画像をアップロードボックス生成
 if ( !function_exists( 'generate_upload_image_tag' ) ):
-function generate_upload_image_tag($name, $value){?>
+function generate_upload_image_tag($name, $value, $id = null){
+  $thumb_id = isset($id) ? $id : $name;
+  ?>
   <input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>" />
   <input type="button" name="<?php echo $name; ?>_select" value="<?php _e( '選択', THEME_NAME ) ?>" />
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
-  <div id="<?php echo $name; ?>_thumbnail" class="uploded-thumbnail">
+  <div id="<?php echo $thumb_id; ?>_thumbnail" class="uploded-thumbnail">
     <?php if ($value): ?>
       <img src="<?php echo $value; ?>" alt="選択中の画像">
     <?php endif ?>
@@ -357,13 +359,13 @@ function generate_upload_image_tag($name, $value){?>
 
                   /* テキストフォームと表示されたサムネイル画像があればクリア */
                   $("input:text[name='<?php echo $name; ?>']").val("");
-                  $("#<?php echo $name; ?>_thumbnail").empty();
+                  $("#<?php echo $thumb_id; ?>_thumbnail").empty();
 
                   /* テキストフォームに画像の URL を表示 */
                   $("input:text[name='<?php echo $name; ?>']").val(file.attributes.sizes.full.url);
 
                   /* プレビュー用に選択されたサムネイル画像を表示 */
-                  $("#<?php echo $name; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" />');
+                  $("#<?php echo $thumb_id; ?>_thumbnail").append('<img src="'+file.attributes.sizes.full.url+'" />');
 
               });
           });
@@ -376,7 +378,7 @@ function generate_upload_image_tag($name, $value){?>
       $("input:button[name='<?php echo $name; ?>_clear']").click(function() {
 
           $("input:text[name='<?php echo $name; ?>']").val("");
-          $("#<?php echo $name; ?>_thumbnail").empty();
+          $("#<?php echo $thumb_id; ?>_thumbnail").empty();
 
       });
 

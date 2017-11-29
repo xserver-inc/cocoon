@@ -12,13 +12,29 @@ function get_category_meta_key($cat_id){
 }
 endif;
 
+//カテゴリメタ情報の取得
+if ( !function_exists( 'get_category_meta' ) ):
+function get_category_meta($cat_id){
+  return get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+}
+endif;
+
+//カテゴリ色の取得
+if ( !function_exists( 'get_category_color' ) ):
+function get_category_color($cat_id){
+  $meta = get_category_meta($cat_id);
+  if (isset($meta['color']))
+    return $meta['color'];
+}
+endif;
+
 //拡張カテゴリ編集フォーム
 add_action ( 'edit_category_form_fields', 'extra_category_fields');
 if ( !function_exists( 'extra_category_fields' ) ):
 function extra_category_fields( $tag ) {
     $cat_id = $tag->term_id;
-    $cat_meta = get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
-    _v($cat_meta);
+    $cat_meta = get_category_meta($cat_id);
+    //_v($cat_meta);
 ?>
 <tr class="form-field">
   <th><label for="color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
@@ -43,6 +59,15 @@ function extra_category_fields( $tag ) {
     generate_visuel_editor_tag('cat_meta[content]', $content, 'content');
    ?>
     <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
+   </td>
+</tr>
+<tr class="form-field">
+  <th><label for="eye_catch"><?php _e( 'アイキャッチ', THEME_NAME ) ?></label></th>
+  <td><?php
+    $eye_catch = isset($cat_meta['eye_catch']) ? $cat_meta['eye_catch'] : '';
+    generate_upload_image_tag('cat_meta[eye_catch]', $eye_catch, 'eye_catch');
+   ?>
+    <p class="description"><?php _e( 'タイトル下に表示されるアイキャッチ画像を選択してください。', THEME_NAME ) ?></p>
    </td>
 </tr>
 <tr class="form-field">
@@ -72,7 +97,7 @@ if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
   if ( isset( $_POST['cat_meta'] ) ) {
     $cat_id = $term_id;
-    $cat_meta = get_term_meta( $cat_id, get_category_meta_key($cat_id), true);
+    $cat_meta = get_category_meta($cat_id);
     $cat_keys = array_keys($_POST['cat_meta']);
     //_v($cat_keys);
     foreach ($cat_keys as $key){
