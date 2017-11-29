@@ -43,6 +43,8 @@ function get_category_content($cat_id){
   $meta = get_category_meta($cat_id);
   if (isset($meta['content']))
     return $meta['content'];
+  else
+    return category_description();
 }
 endif;
 

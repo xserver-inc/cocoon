@@ -24,6 +24,14 @@ if ( is_active_sidebar( 'index-top' ) ){
   dynamic_sidebar( 'index-top' );
 }; ?>
 
+<?php
+////////////////////////////
+//カテゴリページのコンテンツ
+////////////////////////////
+if ( is_category() ){
+  get_template_part('tmp/category-content');
+}; ?>
+
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
 <?php
 ////////////////////////////
