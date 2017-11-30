@@ -54,6 +54,7 @@ function url_to_internal_blogcard_tag($url){
   }
 
   //取得した情報からブログカードのHTMLタグを作成
+  //_v($url);
   $tag =
   '<a href="'.$url.'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
     '<div class="blogcard internal-blogcard'.$additional_class.' cf">'.
@@ -68,6 +69,7 @@ function url_to_internal_blogcard_tag($url){
       '</div>'.
     '</div>'.
   '</a>';
+  //var_dump($tag);
 
   return $tag;
 }
@@ -103,11 +105,11 @@ function url_to_internal_blogcard($the_content) {
 }
 endif;
 if ( is_internal_blogcard_enable() ) {
-  add_filter('the_content', 'url_to_internal_blogcard', 9);
-  add_filter('widget_text', 'url_to_internal_blogcard', 9);
-  add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 9);
-  add_filter('widget_classic_text', 'url_to_internal_blogcard', 9);
-  add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 9);
+  add_filter('the_content', 'url_to_internal_blogcard', 11);
+  add_filter('widget_text', 'url_to_internal_blogcard', 11);
+  add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 11);
+  add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
+  add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
 }
 
 //本文中のURLショートコードをブログカードタグに変更する
