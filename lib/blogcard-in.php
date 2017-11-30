@@ -103,11 +103,11 @@ function url_to_internal_blogcard($the_content) {
 }
 endif;
 if ( is_internal_blogcard_enable() ) {
-  add_filter('the_content', 'url_to_internal_blogcard', 9999999);
-  add_filter('widget_text', 'url_to_internal_blogcard', 9999999);
-  add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 9999999);
-  add_filter('widget_classic_text', 'url_to_internal_blogcard', 9999999);
-  add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 9999999);
+  add_filter('the_content', 'url_to_internal_blogcard', 9);
+  add_filter('widget_text', 'url_to_internal_blogcard', 9);
+  add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 9);
+  add_filter('widget_classic_text', 'url_to_internal_blogcard', 9);
+  add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 9);
 }
 
 //本文中のURLショートコードをブログカードタグに変更する

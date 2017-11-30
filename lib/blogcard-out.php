@@ -50,11 +50,11 @@ function url_to_external_blog_card($the_content) {
 }
 endif;
 if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有効のとき
-  add_filter('the_content','url_to_external_blog_card', 9999);//本文表示をフック
-  add_filter('widget_text', 'url_to_external_blog_card', 9999);//テキストウィジェットをフック
-  add_filter('widget_text_pc_text', 'url_to_external_blog_card', 9999);
-  add_filter('widget_classic_text', 'url_to_external_blog_card', 9999);
-  add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 9999);
+  add_filter('the_content','url_to_external_blog_card', 9);//本文表示をフック
+  add_filter('widget_text', 'url_to_external_blog_card', 9);//テキストウィジェットをフック
+  add_filter('widget_text_pc_text', 'url_to_external_blog_card', 9);
+  add_filter('widget_classic_text', 'url_to_external_blog_card', 9);
+  add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 9);
 }
 
 
