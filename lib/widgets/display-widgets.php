@@ -7,6 +7,7 @@ add_filter( 'in_widget_form', 'display_widgets_in_widget_form', 10, 3 );
 if ( !function_exists( 'display_widgets_in_widget_form' ) ):
 function display_widgets_in_widget_form( $widget, $return, $instance ){
   // var_dump($widget);
+  // var_dump($widget->get_settings());
   // var_dump($return);
   // var_dump($instance);
   $info = display_widgets_info_by_id( $widget->id );
@@ -37,7 +38,22 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
 
   ?>
-    <div class="display-widgets-toggle toggle-link"><?php _e( '表示設定', THEME_NAME ) ?></div>
+  <?php
+  //ウィジェットIDを取得
+  $widget_id = $widget->id;
+  //ウィジェットナンバーを取得
+  $widget_number = $widget->number;
+  //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
+  if (preg_match('/__i__/', $widget_id)) {
+    foreach( $widget->get_settings() as $index => $settings ) {
+      $widget_number = $index + 1;
+    }
+    $widget_id = str_replace('__i__', $widget_number, $widget_id);
+  }
+  //var_dump($widget_id);
+  $toggle_name = 'tlink-'.$widget_id;
+   ?>
+    <div class="display-widgets-toggle toggle-link" id="<?php echo $toggle_name; ?>"><?php _e( '表示設定', THEME_NAME ) ?></div>
     <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
@@ -48,11 +64,11 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           'show' => __( 'チェックしたページで表示', THEME_NAME ),
         );
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);?>
-        <div id="tabs-<?php echo $widget->get_field_id('display_widgets'); ?>" class="tabs-widget">
+        <div id="tabs-<?php echo $widget_id; ?>" class="tabs-widget">
         <ul>
-          <li><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
-          <li><?php _e( 'ページ', THEME_NAME ) ?></li>
-          <li><?php _e( '著者', THEME_NAME ) ?></li>
+          <li id="cat-<?php echo $widget_id; ?>" class="cat-tab"><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
+          <li id="page-<?php echo $widget_id; ?>" class="page-tab"><?php _e( 'ページ', THEME_NAME ) ?></li>
+          <li id="author-<?php echo $widget_id; ?>" class="author-tab"><?php _e( '著者', THEME_NAME ) ?></li>
         </ul>
         <?php
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
@@ -60,14 +76,81 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
         generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
+
+        //_enqueue_script( 'tab-js-jquery', 'https://code.jquery.com/jquery.min.js');
+
        ?>
       </div>
     </div>
+<!--   <script type="text/javascript">
+    // $(".toggle-link").click(function(){
+    //   $(this).next(".toggle-content").show();
+    // });
+    //$(document).ready(function(){
+    //setTimeout(function(){
+      //console.log('aaa');
+    $("#<?php echo $toggle_name; ?>").click(function(){
+      //console.log('a');
+      $(this).next(".toggle-content").toggle();
+    });
+    //},6000);
+    //});
+
+  </script> -->
+  <?php
+  $parent = '#tabs-'.$widget_id;
+   ?>
+<!--   <script type='text/javascript'>
+    // $(".cat-tab").click(function(){
+    //   $('.category-check-list').show();
+    //   $('.page-display-check-list').hide();
+    //   $('.author-check-list').hide();
+    // });
+    // $(".page-tab").click(function(){
+    //   //console.log($(this).next('.page-display-check-list'));
+    //   $('.category-check-list').hide();
+    //   $('.page-display-check-list').show();
+    //   $('.author-check-list').hide();
+    // });
+    // $(".author-tab").click(function(){
+    //   $('.category-check-list').hide();
+    //   $('.page-display-check-list').hide();
+    //   $('.author-check-list').show();
+    // });
+
+    $("#cat-<?php echo $widget_id; ?>").click(function(){
+      $('<?php echo $parent; ?> .category-check-list').show();
+      $('<?php echo $parent; ?> .page-display-check-list').hide();
+      $('<?php echo $parent; ?> .author-check-list').hide();
+    });
+    $("#page-<?php echo $widget_id; ?>").click(function(){
+      //console.log($(this).next('.page-display-check-list'));
+      $('<?php echo $parent; ?> .category-check-list').hide();
+      $('<?php echo $parent; ?> .page-display-check-list').show();
+      $('<?php echo $parent; ?> .author-check-list').hide();
+    });
+    $("#author-<?php echo $widget_id; ?>").click(function(){
+      $('<?php echo $parent; ?> .category-check-list').hide();
+      $('<?php echo $parent; ?> .page-display-check-list').hide();
+      $('<?php echo $parent; ?> .author-check-list').show();
+    });
+  </script> -->
+
+
+<!--
+  <script type="text/javascript">
+    $('.tabs-widget li').on('click', function(e) {
+      var index = $('.tabs-widget').index(this);
+      console.log(index)
+      //console.log(e.target);
+      //_v($this);
+    });
+  </script> -->
 <?php if ($widget->updated): ?>
   <script type='text/javascript' src='//code.jquery.com/jquery.min.js'></script>
   <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.tabs.js'></script>
   <script type='text/javascript'>
-    tabify("#tabs-<?php echo $widget->get_field_id('display_widgets'); ?>");
+    tabify("#tabs-<?php echo $widget_id; ?>");
   </script>
   <script type="text/javascript">
     $(".toggle-link").click(function(){
@@ -79,18 +162,55 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
   wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
   $data = '$(document).ready( function() {
-             tabify("#tabs-'.$widget->get_field_id('display_widgets').'");
+             tabify("#tabs-'.$widget_id.'");
            });';
   wp_add_inline_script( 'tab-js', $data, 'after' ) ;
 
     //管理画面用のJavaScriptの読み込み
     wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
 endif ?>
+
   <?php
 
   return;
 }
 endif;
+
+add_action( 'admin_footer', 'my_widget_script' );
+
+function my_widget_script() {
+?>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  function load_scripts() {
+    $(".toggle-link").click(function(){
+      $(this).next(".toggle-content").toggle();
+    });
+  }
+  // 1. when dropped in
+  $('div.widgets-sortables').bind('sortstop',function(event,ui){
+    console.log('just dropped in');
+    load_scripts();
+  });
+  // 2. do some stuff on load
+  console.log('onLoad');
+  // 3. on action
+  $(document).delegate('.our_widget_class', 'change', function(ev) {
+    // you have to find the parent widget here,
+    // and do something for it. And this is not easy
+    // because the widget shouldn't have it's ID yet, but still possible.
+    // This is actually the safest part of the whole process (maybe just for me)
+    console.log('the element changed');
+  });
+  // 4. on save
+  $('body').ajaxSuccess(function(evt, request, settings) {
+    console.log('saved');
+    //load_scripts();
+  });
+});
+</script>
+<?php
+}
 
 ///////////////////////////////////////
 // ウィジェット保存時のコールバック
