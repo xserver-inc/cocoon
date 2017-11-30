@@ -408,7 +408,8 @@
   .demo * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    word-wrap: break-word; }
     .demo *::selection {
       background: #d8eaf2;
       color: #333435; }
