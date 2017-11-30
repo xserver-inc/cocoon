@@ -454,6 +454,10 @@ select option.fa{
 
 .tabs-widget{
   padding-top: 6px;
+  >ul{
+    margin-bottom: 3px;
+  }
+
 
   >ul > li {
       -moz-border-bottom-colors: none;
@@ -469,6 +473,13 @@ select option.fa{
       display: inline-block;
       margin: 0 0 0 5px;
       padding: 5px 15px 3px;
+      border-color: #333;
+      background-color: #f1f1f1;
+
+      &.cat-tab{
+        border-color: #aaa;
+        background-color: #fff;
+      }
   }
 }
 

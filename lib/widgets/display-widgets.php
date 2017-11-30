@@ -82,59 +82,61 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
        ?>
       </div>
     </div>
-<!--   <script type="text/javascript">
-    // $(".toggle-link").click(function(){
-    //   $(this).next(".toggle-content").show();
-    // });
-    //$(document).ready(function(){
-    //setTimeout(function(){
-      //console.log('aaa');
-    $("#<?php echo $toggle_name; ?>").click(function(){
-      //console.log('a');
-      $(this).next(".toggle-content").toggle();
-    });
-    //},6000);
-    //});
 
-  </script> -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // $(".toggle-link").click(function(){
+      //   if ($(".toggle-link").is(":hidden")) {
+      //       //非表示のときの処理をする
+      //     $(this).next(".toggle-content").toggle();
+      //   } else {
+      //       //表示しているときの処理をする
+      //     $(this).next(".toggle-content").toggle();
+      //   }
+      // });
+      //setTimeout(function(){
+        //console.log('aaa');
+      $("#<?php echo $toggle_name; ?>").click(function(){
+        //console.log('a');
+        $(this).next(".toggle-content").toggle();
+      });
+      //},6000);
+    });
+
+  </script>
   <?php
   $parent = '#tabs-'.$widget_id;
    ?>
-<!--   <script type='text/javascript'>
-    // $(".cat-tab").click(function(){
-    //   $('.category-check-list').show();
-    //   $('.page-display-check-list').hide();
-    //   $('.author-check-list').hide();
-    // });
-    // $(".page-tab").click(function(){
-    //   //console.log($(this).next('.page-display-check-list'));
-    //   $('.category-check-list').hide();
-    //   $('.page-display-check-list').show();
-    //   $('.author-check-list').hide();
-    // });
-    // $(".author-tab").click(function(){
-    //   $('.category-check-list').hide();
-    //   $('.page-display-check-list').hide();
-    //   $('.author-check-list').show();
-    // });
+  <script type='text/javascript'>
+    $(document).ready(function(){
+      function set_tab_css(ele) {
+        $('<?php echo $parent; ?> > ul > li').css('border-color', '#333');
+        $(ele).css('border-color', '#aaa');
+        $('<?php echo $parent; ?> > ul > li').css('background-color', '#f1f1f1');
+        $(ele).css('background-color', '#fff');
+      }
+      //タグ制御
+      $("#cat-<?php echo $widget_id; ?>").click(function(){
+        set_tab_css(this);
+        $('<?php echo $parent; ?> .category-check-list').show();
+        $('<?php echo $parent; ?> .page-display-check-list').hide();
+        $('<?php echo $parent; ?> .author-check-list').hide();
+      });
+      $("#page-<?php echo $widget_id; ?>").click(function(){
+        set_tab_css(this);
+        $('<?php echo $parent; ?> .category-check-list').hide();
+        $('<?php echo $parent; ?> .page-display-check-list').show();
+        $('<?php echo $parent; ?> .author-check-list').hide();
+      });
+      $("#author-<?php echo $widget_id; ?>").click(function(){
+        set_tab_css(this);
+        $('<?php echo $parent; ?> .category-check-list').hide();
+        $('<?php echo $parent; ?> .page-display-check-list').hide();
+        $('<?php echo $parent; ?> .author-check-list').show();
+      });
 
-    $("#cat-<?php echo $widget_id; ?>").click(function(){
-      $('<?php echo $parent; ?> .category-check-list').show();
-      $('<?php echo $parent; ?> .page-display-check-list').hide();
-      $('<?php echo $parent; ?> .author-check-list').hide();
     });
-    $("#page-<?php echo $widget_id; ?>").click(function(){
-      //console.log($(this).next('.page-display-check-list'));
-      $('<?php echo $parent; ?> .category-check-list').hide();
-      $('<?php echo $parent; ?> .page-display-check-list').show();
-      $('<?php echo $parent; ?> .author-check-list').hide();
-    });
-    $("#author-<?php echo $widget_id; ?>").click(function(){
-      $('<?php echo $parent; ?> .category-check-list').hide();
-      $('<?php echo $parent; ?> .page-display-check-list').hide();
-      $('<?php echo $parent; ?> .author-check-list').show();
-    });
-  </script> -->
+  </script>
 
 
 <!--
@@ -147,7 +149,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     });
   </script> -->
 <?php if ($widget->updated): ?>
-  <script type='text/javascript' src='//code.jquery.com/jquery.min.js'></script>
+<!--   <script type='text/javascript' src='//code.jquery.com/jquery.min.js'></script>
   <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.tabs.js'></script>
   <script type='text/javascript'>
     tabify("#tabs-<?php echo $widget_id; ?>");
@@ -156,18 +158,18 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     $(".toggle-link").click(function(){
       $(this).next(".toggle-content").toggle();
     });
-  </script>
+  </script> -->
 <?php else:
-  //タブの読み込み
-  wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-  wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-  $data = '$(document).ready( function() {
-             tabify("#tabs-'.$widget_id.'");
-           });';
-  wp_add_inline_script( 'tab-js', $data, 'after' ) ;
+  // //タブの読み込み
+  // wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
+  // wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
+  // $data = '$(document).ready( function() {
+  //            tabify("#tabs-'.$widget_id.'");
+  //          });';
+  // wp_add_inline_script( 'tab-js', $data, 'after' ) ;
 
-    //管理画面用のJavaScriptの読み込み
-    wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+  //   //管理画面用のJavaScriptの読み込み
+  //   wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
 endif ?>
 
   <?php
@@ -176,41 +178,92 @@ endif ?>
 }
 endif;
 
-add_action( 'admin_footer', 'my_widget_script' );
-
-function my_widget_script() {
+//ウィジェットのD&D時に適用するスクリプト
+add_action( 'admin_footer', 'widget_custom_script' );
+if ( !function_exists( 'widget_custom_script' ) ):
+function widget_custom_script() {
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-  function load_scripts() {
-    $(".toggle-link").click(function(){
-      $(this).next(".toggle-content").toggle();
+  function get_target_id(ui, selector) {
+    return "#"+$(ui.item.context).find(selector)[0].id;
+  }
+
+
+  function set_click_events(ui) {
+    //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
+    var btn_id = get_target_id(ui, ".toggle-link");
+    $(document).on("click", btn_id, function(){
+        $(this).next(".toggle-content").toggle();
     });
+
+
+    var parent_id = get_target_id(ui, ".tabs-widget");
+    var cat_tab_id = get_target_id(ui, ".cat-tab");
+    var page_tab_id = get_target_id(ui, ".page-tab");
+    var author_tab_id = get_target_id(ui, ".author-tab");
+
+
+    function set_tab_css(ele) {
+      $(parent_id+' > ul > li').css('border-color', '#333');
+      $(ele).css('border-color', '#aaa');
+      $(parent_id+' > ul > li').css('background-color', '#f1f1f1');
+      $(ele).css('background-color', '#fff');
+    }
+
+    // var parent_id = "#"+$(ui.item.context).find(".tabs-widget")[0].id;
+    // var cat_tab_id = "#"+$(ui.item.context).find(".cat-tab")[0].id;
+    // var page_tab_id = "#"+$(ui.item.context).find(".page-tab")[0].id;
+    // var author_tab_id = "#"+$(ui.item.context).find(".author-tab")[0].id;
+    // console.log(cat_tab);
+    // console.log(tabs_widget_id);
+    $(document).on("click", cat_tab_id, function(){
+      set_tab_css(this);
+      $(parent_id+' .category-check-list').show();
+      $(parent_id+' .page-display-check-list').hide();
+      $(parent_id+' .author-check-list').hide();
+    });
+    $(document).on("click", page_tab_id, function(){
+      set_tab_css(this);
+      $(parent_id+' .category-check-list').hide();
+      $(parent_id+' .page-display-check-list').show();
+      $(parent_id+' .author-check-list').hide();
+    });
+    $(document).on("click", author_tab_id, function(){
+      set_tab_css(this);
+      $(parent_id+' .category-check-list').hide();
+      $(parent_id+' .page-display-check-list').hide();
+      $(parent_id+' .author-check-list').show();
+    });
+
   }
   // 1. when dropped in
   $('div.widgets-sortables').bind('sortstop',function(event,ui){
-    console.log('just dropped in');
-    load_scripts();
+    //console.log('just dropped in');
+    set_click_events(ui);
   });
   // 2. do some stuff on load
-  console.log('onLoad');
+  //console.log('onLoad');
+    //set_click_events(ui);
   // 3. on action
   $(document).delegate('.our_widget_class', 'change', function(ev) {
     // you have to find the parent widget here,
     // and do something for it. And this is not easy
     // because the widget shouldn't have it's ID yet, but still possible.
     // This is actually the safest part of the whole process (maybe just for me)
-    console.log('the element changed');
+    //console.log('the element changed');
   });
   // 4. on save
   $('body').ajaxSuccess(function(evt, request, settings) {
-    console.log('saved');
+    //console.log('saved');
+    //set_click_events(ui);
     //load_scripts();
   });
 });
 </script>
 <?php
 }
+endif;
 
 ///////////////////////////////////////
 // ウィジェット保存時のコールバック

@@ -3321,6 +3321,8 @@ select option.fa {
 
 .tabs-widget {
   padding-top: 6px; }
+  .tabs-widget > ul {
+    margin-bottom: 3px; }
   .tabs-widget > ul > li {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
@@ -3334,7 +3336,12 @@ select option.fa {
     cursor: pointer;
     display: inline-block;
     margin: 0 0 0 5px;
-    padding: 5px 15px 3px; }
+    padding: 5px 15px 3px;
+    border-color: #333;
+    background-color: #f1f1f1; }
+    .tabs-widget > ul > li.cat-tab {
+      border-color: #aaa;
+      background-color: #fff; }
 
 #edittag {
   max-width: 1200px; }
