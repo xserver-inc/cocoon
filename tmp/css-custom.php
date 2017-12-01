@@ -50,7 +50,8 @@ table td,
 .pager-post-navi.post-navi-border a.a-wrap,
 .article .toc,
 .a-wrap .blogcard,
-input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{
+input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select,
+.author-box{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
 }
 table tr:nth-of-type(2n+1),

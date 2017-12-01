@@ -39,7 +39,6 @@ function create_function_texts_table() {
       modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
       title varchar(126),
       text text NOT NULL,
-      #categories varchar(200),
       PRIMARY KEY (id),
       INDEX (title)
     ) $charset_collate;";
@@ -75,6 +74,20 @@ function uninstall_function_texts_table() {
   $wpdb->query("DROP TABLE IF EXISTS ".FUNCTION_TEXTS_TABLE_NAME);
 
   //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+}
+endif;
+
+//関数テキストレコードの取得
+if ( !function_exists( 'get_function_texts' ) ):
+function get_function_texts( $where = null ) {
+  global $wpdb;
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+
+  $query = "SELECT * FROM {$table_name} ".$where;
+
+  $records = $wpdb->get_results( $query );
+
+  return $records;
 }
 endif;
 

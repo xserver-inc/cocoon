@@ -21,7 +21,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <h1><?php _e( '使いまわしテキスト（関数テキスト）', THEME_NAME ) ?></h1>
     <!-- 使いまわしテキスト（関数テキスト） -->
     <div class="func-text metabox-holder">
-      <?php //require_once 'func-text-forms.php'; ?>
+      <?php require_once 'list.php'; ?>
       <?php require_once 'form.php'; ?>
     </div><!-- /.metabox-holder -->
 </div>
