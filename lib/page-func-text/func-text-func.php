@@ -91,3 +91,17 @@ function get_function_texts( $where = null ) {
 }
 endif;
 
+//関数テキストレコードの取得
+if ( !function_exists( 'get_function_text' ) ):
+function get_function_text( $id ) {
+  global $wpdb;
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+
+  $query = "SELECT * FROM {$table_name}  WHERE id = {$id}";
+
+  $record = $wpdb->get_row( $query );
+
+  return $record;
+}
+endif;
+

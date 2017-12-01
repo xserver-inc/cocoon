@@ -1,0 +1,26 @@
+///////////////////////////////////////
+// 関数テキスト関係のCSS
+///////////////////////////////////////
+.ft-list{
+  padding: 20px;
+  display: flex;
+
+}
+
+.ft-wrap{
+  width: 240px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.ft-title,
+.ft-short-code{
+  margin-bottom: 6px;
+}
+
+.ft-content{
+  max-height: 100px;
+  overflow: hidden;
+}

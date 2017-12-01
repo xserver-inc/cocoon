@@ -2,12 +2,12 @@
   <?php
 
   if (isset($_GET['id'])) {
-    $action = 'new';
+    $action = 'edit';
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
     $query = "SELECT date, modified, title, text FROM {FUNCTION_TEXTS_TABLE_NAME} WHERE id = {$id}";
-    $result = $wpdb->get_row( $query );
-    $title = isset($result->title) ? $result->title : '';
-    $text = isset($result->text) ? stripslashes_deep($result->text) : '';
+    $recode = get_function_text($id);
+    $title = isset($recode->title) ? $recode->title : '';
+    $text = isset($recode->text) ? stripslashes_deep($recode->text) : '';
 
   } else {
     $action = 'new';

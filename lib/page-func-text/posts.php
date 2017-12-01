@@ -2,6 +2,7 @@
 //_v(isset($_POST['title'], $_POST['text'], $_POST['action']));
 if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action'])) {
   global $wpdb;
+  //var_dump($_POST);
 
   $now = current_time('mysql');
   $table = FUNCTION_TEXTS_TABLE_NAME;
