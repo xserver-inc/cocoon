@@ -16,11 +16,43 @@
 }
 
 .ft-title,
-.ft-short-code{
+.ft-short-code,
+.ft-content{
   margin-bottom: 6px;
+}
+
+.ft-short-code{
+  input{
+    width: 120px;
+  }
 }
 
 .ft-content{
   max-height: 100px;
   overflow: hidden;
+}
+
+.ft-input{
+  margin: 4px 0;
+  padding: 5px;
+
+  a{
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #fff;
+    border: 2px solid #ccc;
+  }
+}
+
+.ft-message{
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+}
+
+.ft-menu{
+  text-align: right;
+  a{
+    margin-left: 8px;
+  }
 }

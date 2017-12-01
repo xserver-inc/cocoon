@@ -21,7 +21,16 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <h1><?php _e( '使いまわしテキスト（関数テキスト）', THEME_NAME ) ?></h1>
     <!-- 使いまわしテキスト（関数テキスト） -->
     <div class="func-text metabox-holder">
-      <?php require_once 'list.php'; ?>
-      <?php require_once 'form.php'; ?>
+      <div class="ft-input">
+        <a href="<?php echo add_query_arg(array('action' => false, 'id' => false)); ?>"><?php _e( '一覧ページへ', THEME_NAME ) ?></a>
+        <a href="<?php echo add_query_arg(array('action' => 'new', 'id' => false)); ?>"><?php _e( '新規追加', THEME_NAME ) ?></a>
+      </div>
+
+      <?php //一覧リストの表示
+      if (!isset($_GET['action'])) {
+        require_once 'list.php';
+      } else {//入力フォームの表示
+        require_once 'form.php';
+      }?>
     </div><!-- /.metabox-holder -->
 </div>
