@@ -83,7 +83,9 @@ function get_function_texts( $where = null ) {
   global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
 
-  $query = "SELECT * FROM {$table_name} ".$where;
+  $query = "SELECT * FROM {$table_name} ".esc_sql($where);
+  //$query = "SELECT * FROM {$table_name}";
+  //_v($query);
 
   $records = $wpdb->get_results( $query );
 
@@ -97,7 +99,9 @@ function get_function_text( $id ) {
   global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
 
-  $query = "SELECT * FROM {$table_name}  WHERE id = {$id}";
+  //$query = ("SELECT * FROM {$table_name}  WHERE id = {intval($id)}");
+  $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
+  //_v($query);
 
   $record = $wpdb->get_row( $query );
 
@@ -105,3 +109,23 @@ function get_function_text( $id ) {
 }
 endif;
 
+//関数テキストレコードの取得
+if ( !function_exists( 'delete_function_text' ) ):
+function delete_function_text( $id ) {
+  global $wpdb;
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+
+  $res = $wpdb->delete( $table_name, array(
+      'id' => $id,
+    ),
+    array('%d')
+  );
+  return $res;
+}
+endif;
+
+if ( !function_exists( 'goto_function_text_list_page' ) ):
+function goto_function_text_list_page(){
+
+}
+endif;

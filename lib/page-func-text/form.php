@@ -4,7 +4,7 @@
   if (isset($_GET['id'])) {
     $action = 'edit';
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
-    $query = "SELECT date, modified, title, text FROM {FUNCTION_TEXTS_TABLE_NAME} WHERE id = {$id}";
+    //$query = "SELECT date, modified, title, text FROM {FUNCTION_TEXTS_TABLE_NAME} WHERE id = {$id}";
     $recode = get_function_text($id);
     $title = isset($recode->title) ? $recode->title : '';
     $text = isset($recode->text) ? stripslashes_deep($recode->text) : '';

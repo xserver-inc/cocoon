@@ -63,3 +63,20 @@
     margin-left: 8px;
   }
 }
+
+.ft-confirm-wrap{
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+
+  .ft-confirm-title{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .ft-confirm-text{
+    pre{
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+}

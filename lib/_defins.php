@@ -68,6 +68,7 @@ define('MOBILE_WIDGET_DATA_AD_FORMATS', array(
 
 //管理設定画面の隠しフィールド名
 define('HIDDEN_FIELD_NAME', THEME_NAME.'_submit_hidden');
+define('HIDDEN_DELETE_FIELD_NAME', THEME_NAME.'_delete_hidden');
 define('SELECT_INDEX_NAME', 'select_index');
 
 //入力ボックスの横幅

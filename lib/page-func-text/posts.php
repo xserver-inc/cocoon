@@ -1,4 +1,4 @@
-<?php //
+<?php //内容の保存
 //_v(isset($_POST['title'], $_POST['text'], $_POST['action']));
 if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action'])) {
   global $wpdb;

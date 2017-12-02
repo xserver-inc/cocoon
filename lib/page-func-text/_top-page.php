@@ -1,17 +1,26 @@
 
 <?php //オリジナル設定ページ
+if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+  if( isset($_POST[HIDDEN_DELETE_FIELD_NAME]) &&
+    $_POST[HIDDEN_DELETE_FIELD_NAME] == 'Y' ){
 
-// ユーザーが何か情報を POST したかどうかを確認
-// POST していれば、隠しフィールドに 'Y' が設定されている
-if( isset($_POST[HIDDEN_FIELD_NAME]) &&
+    ///////////////////////////////////////
+    // 内容の削除
+    ///////////////////////////////////////
+    require_once 'posts-delete.php';
+  }
+} else {
+  if( isset($_POST[HIDDEN_FIELD_NAME]) &&
     $_POST[HIDDEN_FIELD_NAME] == 'Y' ){
 
-  ///////////////////////////////////////
-  // 設定の保存
-  ///////////////////////////////////////
-  require_once 'posts.php';
-
+    ///////////////////////////////////////
+    // 内容の保存
+    ///////////////////////////////////////
+    require_once 'posts.php';
+  }
 }
+
+
 
 ///////////////////////////////////////
 // 入力フォーム
@@ -27,10 +36,18 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
       </div>
 
       <?php //一覧リストの表示
-      if (!isset($_GET['action'])) {
-        require_once 'list.php';
-      } else {//入力フォームの表示
-        require_once 'form.php';
-      }?>
+      $action = isset($_GET['action']) ? $_GET['action'] : null;
+      if ($action == 'delete') {
+        require_once 'form-delete.php';
+      } else {
+        if (!isset($action)) {
+          require_once 'list.php';
+        } else {//入力フォームの表示
+          require_once 'form.php';
+        }
+      }
+
+
+      ?>
     </div><!-- /.metabox-holder -->
 </div>
