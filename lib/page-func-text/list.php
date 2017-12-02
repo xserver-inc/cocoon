@@ -12,7 +12,8 @@ $records = get_function_texts();
 <div class="ft-list">
   <?php foreach ($records as $record):
   //var_dump($record);
-  $edit_url = add_query_arg(array('action' => 'edit', 'id' => $record->id));
+  $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
+  $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>
     <div class="ft-wrap">
       <div class="ft-title">
@@ -26,7 +27,7 @@ $records = get_function_texts();
       </div>
       <div class="ft-menu">
         <a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a>
-        <a href="<?php echo $edit_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
+        <a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
       </div>
     </div>
   <?php endforeach ?>
