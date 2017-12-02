@@ -1,4 +1,4 @@
-<form name="form1" method="post" action="" class="admin-settings">
+<form name="form1" method="post" action="">
   <?php
 
   if (isset($_GET['id'])) {

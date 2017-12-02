@@ -192,6 +192,9 @@
     max-height: 300px;
     overflow: auto; }
 
+.ft-option {
+  text-align: right; }
+
 .demo {
   /************************************
   ** 基本表示
@@ -2403,7 +2406,7 @@
     font-family: "FontAwesome";
     font-size: 50px;
     position: absolute;
-    top: 20px;
+    top: 0px;
     left: 13px;
     color: #EAE3B4; }
   .demo .information::before {

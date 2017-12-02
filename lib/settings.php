@@ -27,6 +27,7 @@ add_filter( 'editor_stylesheets', 'editor_stylesheets_custom');
 if ( !function_exists( 'editor_stylesheets_custom' ) ):
 function editor_stylesheets_custom($stylesheets) {
   array_push($stylesheets,
+    FONT_AWESOME_CDN_URL,
     get_template_directory_uri().'/style.css',
     get_theme_css_cache_file_url(), //テーマ設定で変更したスタイル
     get_template_directory_uri().'/editor-style.css'

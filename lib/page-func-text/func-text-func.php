@@ -5,6 +5,12 @@ define('FUNCTION_TEXTS_TABLE_VERSION', '0.1');
 define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 
+//関数テキスト移動用URL
+define('FT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('FT_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
+// define('FT_EDIT_URL',   add_query_arg(array('action' => 'edit',  'id' => $record->id)));
+// define('FT_DELETE_URL', add_query_arg(array('action' => 'delete','id' => $record->id)));
+
 //関数テキストテーブルのバージョン取得
 define('OP_FUNCTION_TEXTS_TABLE_VERSION', 'function_texts_table_version');
 if ( !function_exists( 'get_function_texts_table_version' ) ):
@@ -79,13 +85,23 @@ endif;
 
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_texts' ) ):
-function get_function_texts( $where = null ) {
+function get_function_texts( $keyword = null, $order_by = null ) {
   global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
+  $where = null;
+  if ($keyword) {
+    $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
+    //$where = (" WHERE title LIKE %%$keyword%%");
+  }
+  if ($order_by) {
+    $order_by = esc_sql(" ORDER BY $order_by");
+  }
+  $query = "SELECT * FROM {$table_name}".
+              $where.
+              $order_by;
 
-  $query = "SELECT * FROM {$table_name} ".esc_sql($where);
   //$query = "SELECT * FROM {$table_name}";
-  //_v($query);
+  //var_dump($query);
 
   $records = $wpdb->get_results( $query );
 
@@ -124,12 +140,6 @@ function delete_function_text( $id ) {
     array('%d')
   );
   return $res;
-}
-endif;
-
-if ( !function_exists( 'goto_function_text_list_page' ) ):
-function goto_function_text_list_page(){
-
 }
 endif;
 

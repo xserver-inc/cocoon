@@ -1021,4 +1021,11 @@ function remove_all_directory($dir) {
   }
 }
 endif;
-
+//リダイレクト
+if ( !function_exists( 'redirect_to_url' ) ):
+function redirect_to_url($url){
+  header( "HTTP/1.1 302 Moved Permanently" );
+  header( "location: " . $url  );
+  exit;
+}
+endif;

@@ -1,6 +1,6 @@
 <?php
 //一覧ページへのURL
-$list_url = add_query_arg(array('action' => false, 'id' => false));
+$list_url = FT_LIST_URL;
  ?>
 <form name="form1" method="post" action="<?php echo $list_url; ?>" class="admin-settings">
   <?php
@@ -10,9 +10,7 @@ $list_url = add_query_arg(array('action' => false, 'id' => false));
     $recode = get_function_text($id);
     if (!$recode) {
       //指定IDの関数テキストが存在しない場合は一覧にリダイレクト
-      header( "HTTP/1.1 301 Moved Permanently" );
-      header( "location: " . $list_url  );
-      exit;
+      redirect_to_url($list_url);
     }
 
   }
