@@ -20,7 +20,7 @@ $records = get_function_texts();
         <a href="<?php echo $edit_url; ?>"><?php echo esc_html($record->title); ?></a>
       </div>
       <div class="ft-short-code">
-        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="[ft=<?php echo esc_html($record->id); ?>]">
+        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="[ft id=<?php echo esc_html($record->id); ?>]">
       </div>
       <div class="ft-content">
         <?php echo strip_tags($record->text); ?>

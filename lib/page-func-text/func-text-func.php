@@ -104,6 +104,8 @@ function get_function_text( $id ) {
   //_v($query);
 
   $record = $wpdb->get_row( $query );
+  $record->title = stripslashes_deep($record->title);
+  $record->text = wpautop(stripslashes_deep($record->text));
 
   return $record;
 }
@@ -126,6 +128,21 @@ endif;
 
 if ( !function_exists( 'goto_function_text_list_page' ) ):
 function goto_function_text_list_page(){
+
+}
+endif;
+
+add_shortcode('ft', 'function_text_shortcode');
+if ( !function_exists( 'function_text_shortcode' ) ):
+function function_text_shortcode($atts) {
+  extract(shortcode_atts(array(
+    'id' => 0,
+  ), $atts));
+  if ($id) {
+    if ($recode = get_function_text($id)) {
+      return $recode->text;
+    }
+  }
 
 }
 endif;
