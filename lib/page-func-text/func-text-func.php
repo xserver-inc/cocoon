@@ -104,7 +104,8 @@ function get_function_text( $id ) {
   //_v($query);
 
   $record = $wpdb->get_row( $query );
-  $record->title = stripslashes_deep($record->title);
+  $record->title = esc_attr(stripslashes_deep($record->title));
+  //_v($record->title);
   $record->text = wpautop(stripslashes_deep($record->text));
 
   return $record;
