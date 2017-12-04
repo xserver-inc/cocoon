@@ -62,10 +62,16 @@ endif;
 //関数テキストテーブルのアップデート
 if ( !function_exists( 'update_function_texts_table' ) ):
 function update_function_texts_table() {
+  if ( function_exists( '_v' ) ):
+    _v(THEME_NAME.'アップデートチェック');
+  endif;
   // オプションに登録されたデータベースのバージョンを取得
   $installed_ver = get_function_texts_table_version();
   $now_ver = FUNCTION_TEXTS_TABLE_VERSION;
   if ( $installed_ver != $now_ver ) {
+    if ( function_exists( '_v' ) ):
+      _v(THEME_NAME.'がアップデートされました');
+    endif;
     create_function_texts_table();
   }
 }
@@ -87,6 +93,7 @@ endif;
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_texts' ) ):
 function get_function_texts( $keyword = null, $order_by = null ) {
+  update_function_texts_table();
   global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   $where = null;
