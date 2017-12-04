@@ -80,5 +80,6 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
   }
 }
 if ( get_the_author_facebook_url() ) {//Facebookページ言われるか設定されている時
-  add_action('widgets_init', create_function('', 'return register_widget("FBLikeBallooneWidgetItem");'));
+  //add_action('widgets_init', create_function('', 'return register_widget("FBLikeBallooneWidgetItem");'));
+  add_action('widgets_init', function(){register_widget('FBLikeBallooneWidgetItem');});
 }

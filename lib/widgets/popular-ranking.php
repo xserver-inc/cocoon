@@ -2,7 +2,7 @@
 ///////////////////////////////////////////////////
 //人気記事（Popular Posts）ウイジェットの追加
 ///////////////////////////////////////////////////
-class SimplicityPopularPostsCategoryWidgetItem extends WP_Widget {
+class PopularPostsCategoryWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'popular_ranking',
@@ -60,7 +60,7 @@ class SimplicityPopularPostsCategoryWidgetItem extends WP_Widget {
     global $g_range;
     $g_range = ($range ? $range : 'all');
     global $g_widget_item;
-    $g_widget_item = 'SimplicityPopularPostsCategoryWidgetItem';
+    $g_widget_item = 'PopularPostsCategoryWidgetItem';
     //除外ID
     global $g_exclude_ids;
     $g_exclude_ids = $exclude_ids;
@@ -233,5 +233,6 @@ class SimplicityPopularPostsCategoryWidgetItem extends WP_Widget {
 }
 //Wordpress Popular Postsが有効になっていない場合は表示しない
 if ( is_wpp_enable() ):
-  add_action('widgets_init', create_function('', 'return register_widget("SimplicityPopularPostsCategoryWidgetItem");'));
+  //add_action('widgets_init', create_function('', 'return register_widget("PopularPostsCategoryWidgetItem");'));
+  add_action('widgets_init', function(){register_widget('PopularPostsCategoryWidgetItem');});
 endif;

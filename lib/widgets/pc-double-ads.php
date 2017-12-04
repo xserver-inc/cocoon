@@ -64,4 +64,5 @@ class PcDoubleAdsWidgetItem extends WP_Widget {
 <?php
   }
 }
-add_action('widgets_init', create_function('', 'return register_widget("PcDoubleAdsWidgetItem");'));
+//add_action('widgets_init', create_function('', 'return register_widget("PcDoubleAdsWidgetItem");'));
+add_action('widgets_init', function(){register_widget('PcDoubleAdsWidgetItem');});

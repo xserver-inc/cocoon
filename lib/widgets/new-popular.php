@@ -2,7 +2,7 @@
 ///////////////////////////////////////////////////
 //新着・人気ウイジェットの追加
 ///////////////////////////////////////////////////
-class SimplicityNewPopularWidgetItem extends WP_Widget {
+class NewPopularWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'new_popular',
@@ -49,7 +49,7 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
     global $g_range;
     $g_range = ($range ? $range : 'all');
     global $g_widget_item;
-    $g_widget_item = 'SimplicityNewPopularWidgetItem';
+    $g_widget_item = 'NewPopularWidgetItem';
     //除外ID
     global $g_exclude_ids;
     $g_exclude_ids = $exclude_ids;
@@ -240,4 +240,5 @@ class SimplicityNewPopularWidgetItem extends WP_Widget {
     <?php
   }
 }
-add_action('widgets_init', create_function('', 'return register_widget("SimplicityNewPopularWidgetItem");'));
+//add_action('widgets_init', create_function('', 'return register_widget("NewPopularWidgetItem");'));
+add_action('widgets_init', function(){register_widget('NewPopularWidgetItem');});

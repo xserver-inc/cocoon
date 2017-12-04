@@ -2,12 +2,12 @@
 ///////////////////////////////////////////////////
 //クラシックテキストウイジェットの追加
 ///////////////////////////////////////////////////
-class SimplicityClassicTextWidget extends WP_Widget {
+class ClassicTextWidget extends WP_Widget {
 
     public function __construct() {
         $widget_ops = array( 'classname' => 'classic-textwidget', 'description' => __( 'テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビジュアルエディターのないテキストウィジェット）。', 'simplicity2' ) );
         $control_ops = array( 'width' => 400, 'height' => 350 );
-        parent::__construct( 'SimplicityClassicTextWidget', __( '[S] クラシックテキスト', 'simplicity2' ), $widget_ops, $control_ops );
+        parent::__construct( 'ClassicTextWidget', __( '[S] クラシックテキスト', 'simplicity2' ), $widget_ops, $control_ops );
     }
 
     public function widget( $args, $instance ) {
@@ -58,5 +58,6 @@ class SimplicityClassicTextWidget extends WP_Widget {
 
     }
 }
-add_action('widgets_init', create_function('', 'return register_widget("SimplicityClassicTextWidget");'));
+//add_action('widgets_init', create_function('', 'return register_widget("ClassicTextWidget");'));
+add_action('widgets_init', function(){register_widget('ClassicTextWidget');});
 
