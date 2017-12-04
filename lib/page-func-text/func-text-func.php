@@ -1,15 +1,14 @@
 <?php //関数テキスト関係の関数
 
 //関数テキストテーブルのバージョン
-define('FUNCTION_TEXTS_TABLE_VERSION', '0.1');
+define('FUNCTION_TEXTS_TABLE_VERSION', '0.0');
 define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 
 //関数テキスト移動用URL
 define('FT_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
 define('FT_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
-// define('FT_EDIT_URL',   add_query_arg(array('action' => 'edit',  'id' => $record->id)));
-// define('FT_DELETE_URL', add_query_arg(array('action' => 'delete','id' => $record->id)));
+
 
 //関数テキストテーブルのバージョン取得
 define('OP_FUNCTION_TEXTS_TABLE_VERSION', 'function_texts_table_version');

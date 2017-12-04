@@ -167,6 +167,34 @@ function generate_number_tag($name, $value, $min = 1, $max = 100){?>
 }
 endif;
 
+
+//チェックボックスの生成
+if ( !function_exists( 'generate_sort_options_tag' ) ):
+function generate_sort_options_tag($keyword = null, $order_by = null){?>
+  <!-- 抽出フォーム -->
+  <div class="sort-options">
+    <form method="post" action="">
+    <input type="text" name="s" value="<?php echo $keyword; ?>" placeholder="<?php _e( 'タイトル検索', THEME_NAME ) ?>">
+    <?php
+
+      $options = array(
+        'title' => __( 'タイトル昇順', THEME_NAME ),
+        'title DESC' => __( 'タイトル降順', THEME_NAME ),
+        'date' => __( '作成日昇順', THEME_NAME ),
+        'date DESC' => __( '作成日降順', THEME_NAME ),
+        'modified' => __( '編集日昇順', THEME_NAME ),
+        'modified DESC' => __( '編集日降順', THEME_NAME ),
+      );
+      generate_selectbox_tag('order', $options, $order_by);
+     ?>
+     <input type="submit" name="" value="<?php _e( '抽出', THEME_NAME ) ?>">
+     </form>
+  </div>
+  <?php
+}
+endif;
+
+
 //サイトロゴの生成
 if ( !function_exists( 'generate_the_site_logo_tag' ) ):
 function generate_the_site_logo_tag($is_header = true){

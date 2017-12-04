@@ -33,18 +33,6 @@
   overflow: hidden;
 }
 
-.ft-input{
-  margin: 4px 0;
-  padding: 5px;
-
-  a{
-    padding: 5px 10px;
-    font-weight: bold;
-    background-color: #fff;
-    border: 2px solid #ccc;
-  }
-}
-
 .ft-message{
   text-align: center;
   font-size: 16px;
@@ -81,6 +69,18 @@
   }
 }
 
-.ft-option{
+.operation-buttons{
+  margin: 4px 0;
+  padding: 5px;
+
+  a{
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #fff;
+    border: 2px solid #ccc;
+  }
+}
+
+.sort-options{
   text-align: right;
 }

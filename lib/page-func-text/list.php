@@ -5,28 +5,9 @@ $order_by = isset($_POST['order']) ? $_POST['order'] : 'title';
 //var_dump($order_by);
 $records = get_function_texts($keyword, $order_by);
 //var_dump($records);
+//並び替えオプション
+generate_sort_options_tag($keyword, $order_by);
 ?>
-
-<!-- 抽出フォーム -->
-<div class="ft-option">
-  <form method="post" action="">
-  <input type="text" name="s" value="<?php echo $keyword; ?>" placeholder="<?php _e( 'タイトル検索', THEME_NAME ) ?>">
-  <?php
-
-    $options = array(
-      'title' => __( 'タイトル昇順', THEME_NAME ),
-      'title DESC' => __( 'タイトル降順', THEME_NAME ),
-      'date' => __( '作成日昇順', THEME_NAME ),
-      'date DESC' => __( '作成日降順', THEME_NAME ),
-      'modified' => __( '編集日昇順', THEME_NAME ),
-      'modified DESC' => __( '編集日降順', THEME_NAME ),
-    );
-    generate_selectbox_tag('order', $options, $order_by);
-   ?>
-   <input type="submit" name="" value="<?php _e( '抽出', THEME_NAME ) ?>">
-   </form>
-</div>
-
 <!-- メッセージ -->
 <?php if ($records): ?>
   <p class="ft-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>

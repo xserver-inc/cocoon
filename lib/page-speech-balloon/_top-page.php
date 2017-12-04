@@ -27,12 +27,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
 ///////////////////////////////////////
 ?>
 <div class="wrap">
-<h1><?php _e( '使いまわしテキスト（関数テキスト）', THEME_NAME ) ?></h1>
+<h1><?php _e( '吹き出し', THEME_NAME ) ?></h1>
     <!-- 使いまわしテキスト（関数テキスト） -->
-    <div class="func-text metabox-holder">
+    <div class="speech-balloon metabox-holder">
       <div class="operation-buttons">
-        <a href="<?php echo FT_LIST_URL; ?>"><?php _e( '一覧ページへ', THEME_NAME ) ?></a>
-        <a href="<?php echo FT_NEW_URL; ?>"><?php _e( '新規追加', THEME_NAME ) ?></a>
+        <a href="<?php echo SB_LIST_URL; ?>"><?php _e( '一覧ページへ', THEME_NAME ) ?></a>
+        <a href="<?php echo SB_NEW_URL; ?>"><?php _e( '新規追加', THEME_NAME ) ?></a>
       </div>
 
       <?php //一覧リストの表示

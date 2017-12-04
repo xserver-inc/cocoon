@@ -9,7 +9,7 @@ function add_original_menu_in_admin_page() {
     //var_dump('aaaaaaaa');
 
     //吹き出しサブメニューを追加
-    add_submenu_page('theme-settings', __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'theme-balloon', 'add_theme_balloon_page');
+    add_submenu_page('theme-settings', __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'speech-balloon', 'add_theme_speech_balloon_page');
 
     //使いまわしテキストサブメニューを追加
     add_submenu_page('theme-settings', __('使いまわしテキスト', THEME_NAME), __('使いまわしテキスト', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
@@ -51,6 +51,18 @@ function add_theme_backup_page() {
   }
   //以下のテンプレートファイルで設定ページを作成する
   require_once 'page-backup/_top-page.php';
+}
+endif;
+
+//吹き出し設定
+if ( !function_exists( 'add_theme_speech_balloon_page' ) ):
+function add_theme_speech_balloon_page() {
+  // ユーザーが必要な権限を持つか確認する必要がある
+  if (!current_user_can('manage_options'))  {
+    wp_die( __('このページにアクセスする管理者権限がありません。') );
+  }
+  //以下のテンプレートファイルで設定ページを作成する
+  require_once 'page-speech-balloon/_top-page.php';
 }
 endif;
 
