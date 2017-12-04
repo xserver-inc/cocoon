@@ -6,7 +6,7 @@
 add_filter( 'in_widget_form', 'display_widgets_in_widget_form', 10, 3 );
 if ( !function_exists( 'display_widgets_in_widget_form' ) ):
 function display_widgets_in_widget_form( $widget, $return, $instance ){
-  // var_dump($widget);
+  //var_dump($widget);
   // var_dump($widget->get_settings());
   // var_dump($return);
   // var_dump($instance);
@@ -41,6 +41,9 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   <?php
   //ウィジェットIDを取得
   $widget_id = $widget->id;
+  //フィールドID
+  $field_id = $widget->get_field_id('toggle-link');
+  //var_dump($field_id);
   //ウィジェットナンバーを取得
   $widget_number = $widget->number;
   //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
@@ -84,25 +87,15 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     </div>
 
   <script type="text/javascript">
+    // $(document).on("click", "#<?php echo $toggle_name; ?>", function(){
+    //     $(this).next(".toggle-content").toggle();
+    // });
     $(document).ready(function(){
-      // $(".toggle-link").click(function(){
-      //   if ($(".toggle-link").is(":hidden")) {
-      //       //非表示のときの処理をする
-      //     $(this).next(".toggle-content").toggle();
-      //   } else {
-      //       //表示しているときの処理をする
-      //     $(this).next(".toggle-content").toggle();
-      //   }
-      // });
-      //setTimeout(function(){
-        //console.log('aaa');
       $("#<?php echo $toggle_name; ?>").click(function(){
         //console.log('a');
         $(this).next(".toggle-content").toggle();
       });
-      //},6000);
     });
-
   </script>
   <?php
   $parent = '#tabs-'.$widget_id;

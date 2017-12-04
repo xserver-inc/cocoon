@@ -144,13 +144,6 @@ class menu_description_walker extends Walker_Nav_Menu {
   }
 }
 
-//アップデートチェックの初期化
-require 'theme-update-checker.php'; //ライブラリのパス
-$example_update_checker = new ThemeUpdateChecker(
-  strtolower(THEME_NAME), //テーマフォルダ名
-  'http://example.com/example-theme/update-info.json' //JSONファイルのURL
-);
-
 //アーカイブタイトルの取得
 if ( !function_exists( 'get_archive_chapter_title' ) ):
 function get_archive_chapter_title(){

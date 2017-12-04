@@ -70,6 +70,7 @@ function update_function_texts_table() {
   }
 }
 endif;
+//update_function_texts_table();
 
 //関数テキストテーブルのアンインストール
 if ( !function_exists( 'uninstall_function_texts_table' ) ):
