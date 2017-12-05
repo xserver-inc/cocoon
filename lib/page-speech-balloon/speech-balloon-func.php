@@ -66,7 +66,7 @@ function uninstall_speech_balloons_table() {
 endif;
 
 
-//関数テキストレコードの取得
+//吹き出しテーブルレコードの取得
 if ( !function_exists( 'get_speech_balloons' ) ):
 function get_speech_balloons( $keyword = null, $order_by = null ) {
   update_speech_balloons_table();
@@ -87,5 +87,22 @@ function get_speech_balloons( $keyword = null, $order_by = null ) {
   $records = $wpdb->get_results( $query );
 
   return $records;
+}
+endif;
+
+
+//吹き出しテーブルレコードの取得
+if ( !function_exists( 'get_speech_balloon' ) ):
+function get_speech_balloon( $id ) {
+  // global $wpdb;
+  // //$query = ("SELECT * FROM {$table_name}  WHERE id = {intval($id)}");
+  // $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
+  // //_v($query);
+  // $record = $wpdb->get_row( $query );
+
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+  $record = get_db_table_record( $table_name, $id );
+
+  return $record;
 }
 endif;

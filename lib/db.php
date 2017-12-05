@@ -65,13 +65,25 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
 endif;
 
 
-//関数テキストテーブルのアンインストール
+//吹き出しテーブルのアンインストール
 if ( !function_exists( 'uninstall_db_table' ) ):
 function uninstall_db_table($table_name) {
   global $wpdb;
 
   $wpdb->query('DROP TABLE IF EXISTS '.$table_name);
+}
+endif;
 
-  //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+
+//吹き出しテーブルレコードの取得
+if ( !function_exists( 'get_db_table_record' ) ):
+function get_db_table_record( $table_name, $id ) {
+  global $wpdb;
+
+  $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
+
+  $record = $wpdb->get_row( $query );
+
+  return $record;
 }
 endif;

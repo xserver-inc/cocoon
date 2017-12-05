@@ -49,18 +49,6 @@ function update_function_texts_table() {
     create_function_texts_table();
   }
 
-  // if ( function_exists( '_v' ) ):
-  //   _v(THEME_NAME.'アップデートチェック');
-  // endif;
-  // // オプションに登録されたデータベースのバージョンを取得
-  // $installed_ver = get_function_texts_table_version();
-  // $now_ver = FUNCTION_TEXTS_TABLE_VERSION;
-  // if ( $installed_ver != $now_ver ) {
-  //   if ( function_exists( '_v' ) ):
-  //     _v(THEME_NAME.'がアップデートされました');
-  //   endif;
-  //   create_function_texts_table();
-  // }
 }
 endif;
 //update_function_texts_table();
@@ -103,14 +91,15 @@ endif;
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_text' ) ):
 function get_function_text( $id ) {
-  global $wpdb;
+  // global $wpdb;
+  // //$query = ("SELECT * FROM {$table_name}  WHERE id = {intval($id)}");
+  // $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
+  // //_v($query);
+  // $record = $wpdb->get_row( $query );
+
+
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
-
-  //$query = ("SELECT * FROM {$table_name}  WHERE id = {intval($id)}");
-  $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
-  //_v($query);
-
-  $record = $wpdb->get_row( $query );
+  $record = get_db_table_record( $table_name, $id );
   $record->title = esc_attr(stripslashes_deep($record->title));
   //_v($record->title);
   $record->text = wpautop(stripslashes_deep($record->text));
@@ -119,7 +108,7 @@ function get_function_text( $id ) {
 }
 endif;
 
-//関数テキストレコードの取得
+//関数テキストレコードの削除
 if ( !function_exists( 'delete_function_text' ) ):
 function delete_function_text( $id ) {
   global $wpdb;
