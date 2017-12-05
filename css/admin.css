@@ -134,7 +134,8 @@
 
 .ft-list {
   padding: 20px;
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 .ft-wrap {
   width: 240px;
