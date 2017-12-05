@@ -60,4 +60,18 @@ function create_speech_balloons_table() {
    set_theme_mod( OP_SPEECH_BALLOONS_TABLE_VERSION, SPEECH_BALLOONS_TABLE_VERSION );
 }
 endif;
-create_speech_balloons_table();
+//create_speech_balloons_table();
+
+
+//吹き出しテーブルのアップデート
+if ( !function_exists( 'update_speech_balloons_table' ) ):
+function update_speech_balloons_table() {
+  // オプションに登録されたデータベースのバージョンを取得
+  $installed_ver = get_speech_balloons_table_version();
+  $now_ver = speech_balloons_TABLE_VERSION;
+  if ( $installed_ver != $now_ver ) {
+    create_speech_balloons_table();
+  }
+}
+endif;
+//update_speech_balloons_table();
