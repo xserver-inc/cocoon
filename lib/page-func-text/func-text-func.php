@@ -111,18 +111,20 @@ endif;
 //関数テキストレコードの削除
 if ( !function_exists( 'delete_function_text' ) ):
 function delete_function_text( $id ) {
-  global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
+  return delete_db_table_record( $table_name, $id );
 
-  $res = $wpdb->delete( $table_name, array(
-      'id' => $id,
-    ),
-    array('%d')
-  );
-  return $res;
+  // global $wpdb;
+  // $res = $wpdb->delete( $table_name, array(
+  //     'id' => $id,
+  //   ),
+  //   array('%d')
+  // );
+  // return $res;
 }
 endif;
 
+//関数テキストショートコード関数
 add_shortcode('ft', 'function_text_shortcode');
 if ( !function_exists( 'function_text_shortcode' ) ):
 function function_text_shortcode($atts) {

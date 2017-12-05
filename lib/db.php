@@ -75,7 +75,7 @@ function uninstall_db_table($table_name) {
 endif;
 
 
-//吹き出しテーブルレコードの取得
+//テーブルレコードの取得
 if ( !function_exists( 'get_db_table_record' ) ):
 function get_db_table_record( $table_name, $id ) {
   global $wpdb;
@@ -85,5 +85,19 @@ function get_db_table_record( $table_name, $id ) {
   $record = $wpdb->get_row( $query );
 
   return $record;
+}
+endif;
+
+
+//テーブルレコードの削除
+if ( !function_exists( 'delete_db_table_record' ) ):
+function delete_db_table_record( $table_name, $id ) {
+  global $wpdb;
+  $res = $wpdb->delete( $table_name, array(
+      'id' => $id,
+    ),
+    array('%d')
+  );
+  return $res;
 }
 endif;
