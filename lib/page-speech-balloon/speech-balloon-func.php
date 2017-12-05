@@ -49,7 +49,7 @@ function update_speech_balloons_table() {
   // オプションに登録されたデータベースのバージョンを取得
   $installed_ver = get_speech_balloons_table_version();
   $now_ver = SPEECH_BALLOONS_TABLE_VERSION;
-  if ( $installed_ver != $now_ver ) {
+  if ( is_update_db_table($installed_ver, $now_ver) ) {
     create_speech_balloons_table();
   }
 }

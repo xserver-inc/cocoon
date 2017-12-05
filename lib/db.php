@@ -23,6 +23,24 @@ function create_db_table( $sql ){
 }
 endif;
 
+//関数テキストテーブルのアップデート
+if ( !function_exists( 'is_update_db_table' ) ):
+function is_update_db_table($installed_ver, $now_ver) {
+  // if ( function_exists( '_v' ) ):
+  //   _v(THEME_NAME.'アップデートチェック');
+  // endif;
+  // オプションに登録されたデータベースのバージョンを取得
+  // $installed_ver = get_function_texts_table_version();
+  // $now_ver = FUNCTION_TEXTS_TABLE_VERSION;
+  if ( $installed_ver != $now_ver ) {
+    // if ( function_exists( '_v' ) ):
+    //   _v(THEME_NAME.'がアップデートされました');
+    // endif;
+    return true;
+  }
+}
+endif;
+
 
 //汎用的なテーブルからレコードの取得
 if ( !function_exists( 'get_db_table_records' ) ):
