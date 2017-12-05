@@ -56,6 +56,16 @@ function update_speech_balloons_table() {
 endif;
 //update_speech_balloons_table();
 
+
+//吹き出しテーブルのアンインストール
+if ( !function_exists( 'uninstall_speech_balloons_table' ) ):
+function uninstall_speech_balloons_table() {
+  uninstall_db_table(SPEECH_BALLOONS_TABLE_NAME);
+  remove_theme_mod(OP_SPEECH_BALLOONS_TABLE_VERSION);
+}
+endif;
+
+
 //関数テキストレコードの取得
 if ( !function_exists( 'get_speech_balloons' ) ):
 function get_speech_balloons( $keyword = null, $order_by = null ) {

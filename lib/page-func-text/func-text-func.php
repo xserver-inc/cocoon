@@ -68,12 +68,8 @@ endif;
 //関数テキストテーブルのアンインストール
 if ( !function_exists( 'uninstall_function_texts_table' ) ):
 function uninstall_function_texts_table() {
-  global $wpdb;
-  //$table_name = $wpdb->prefix . 'oxy_table';
-
-  $wpdb->query("DROP TABLE IF EXISTS ".FUNCTION_TEXTS_TABLE_NAME);
-
-  //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+  uninstall_db_table(FUNCTION_TEXTS_TABLE_NAME);
+  remove_theme_mod(OP_FUNCTION_TEXTS_TABLE_VERSION);
 }
 endif;
 

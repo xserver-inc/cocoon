@@ -63,3 +63,15 @@ function get_db_table_records( $table_name, $column, $keyword = null, $order_by 
   return $records;
 }
 endif;
+
+
+//関数テキストテーブルのアンインストール
+if ( !function_exists( 'uninstall_db_table' ) ):
+function uninstall_db_table($table_name) {
+  global $wpdb;
+
+  $wpdb->query('DROP TABLE IF EXISTS '.$table_name);
+
+  //delete_option(OP_FUNCTION_TEXTS_TABLE_VERSION);
+}
+endif;
