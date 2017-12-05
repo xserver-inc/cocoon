@@ -21,46 +21,26 @@ endif;
 //吹き出しテーブルの作成
 if ( !function_exists( 'create_speech_balloons_table' ) ):
 function create_speech_balloons_table() {
-   global $wpdb;
-   //_v('$wpdb');
-   $sql = "";
-   $charset_collate = "";
+  // SQL文でテーブルを作る
+  $sql = "CREATE TABLE ".SPEECH_BALLOONS_TABLE_NAME." (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    title varchar(126),
+    name varchar(36),
+    icon varchar(256),
+    type varchar(20),
+    subtype varchar(20),
+    PRIMARY KEY (id),
+    INDEX (title),
+    INDEX (name)
+  )";
+  create_db_table($sql);
 
-   // // 接頭辞の追加（socal_count_cache）
-   // $table_name = $wpdb->prefix . 'speech_balloons';
-
-   // charsetを指定する
-   if ( !empty($wpdb->charset) )
-      $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} ";
-
-   // 照合順序を指定する（ある場合。通常デフォルトのutf8_general_ci）
-   if ( !empty($wpdb->collate) )
-      $charset_collate .= "COLLATE {$wpdb->collate}";
-
-    // SQL文でテーブルを作る
-    $sql = "CREATE TABLE ".SPEECH_BALLOONS_TABLE_NAME." (
-      id mediumint(9) NOT NULL AUTO_INCREMENT,
-      date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-      modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-      title varchar(126),
-      name varchar(36),
-      icon varchar(256),
-      type varchar(20),
-      subtype varchar(20),
-      PRIMARY KEY (id),
-      INDEX (title),
-      INDEX (name)
-    ) $charset_collate;";
-
-   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-   //_v($sql);
-   $res = dbDelta( $sql );
-   //_v($res);
-
-   set_theme_mod( OP_SPEECH_BALLOONS_TABLE_VERSION, SPEECH_BALLOONS_TABLE_VERSION );
+  set_theme_mod( OP_SPEECH_BALLOONS_TABLE_VERSION, SPEECH_BALLOONS_TABLE_VERSION );
 }
 endif;
-//create_speech_balloons_table();
+create_speech_balloons_table();
 
 
 //吹き出しテーブルのアップデート
@@ -68,7 +48,7 @@ if ( !function_exists( 'update_speech_balloons_table' ) ):
 function update_speech_balloons_table() {
   // オプションに登録されたデータベースのバージョンを取得
   $installed_ver = get_speech_balloons_table_version();
-  $now_ver = speech_balloons_TABLE_VERSION;
+  $now_ver = SPEECH_BALLOONS_TABLE_VERSION;
   if ( $installed_ver != $now_ver ) {
     create_speech_balloons_table();
   }

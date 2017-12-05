@@ -21,24 +21,8 @@ endif;
 //関数テキストテーブルの作成
 if ( !function_exists( 'create_function_texts_table' ) ):
 function create_function_texts_table() {
-   global $wpdb;
-   //_v('$wpdb');
-   $sql = "";
-   $charset_collate = "";
-
-   // // 接頭辞の追加（socal_count_cache）
-   // $table_name = $wpdb->prefix . 'function_texts';
-
-   // charsetを指定する
-   if ( !empty($wpdb->charset) )
-      $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} ";
-
-   // 照合順序を指定する（ある場合。通常デフォルトのutf8_general_ci）
-   if ( !empty($wpdb->collate) )
-      $charset_collate .= "COLLATE {$wpdb->collate}";
-
-    // SQL文でテーブルを作る
-    $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
+  // SQL文でテーブルを作る
+  $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
       id mediumint(9) NOT NULL AUTO_INCREMENT,
       date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
       modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
@@ -46,14 +30,10 @@ function create_function_texts_table() {
       text text NOT NULL,
       PRIMARY KEY (id),
       INDEX (title)
-    ) $charset_collate;";
+    )";
+  create_db_table($sql);
 
-   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-   //_v($sql);
-   $res = dbDelta( $sql );
-   //_v($res);
-
-   set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );
+  set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );
 }
 endif;
 //create_function_texts_table();
@@ -94,7 +74,6 @@ if ( !function_exists( 'get_function_texts' ) ):
 function get_function_texts( $keyword = null, $order_by = null ) {
   update_function_texts_table();
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
-  _v($order_by);
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
   // $where = null;
   // if ($keyword) {
