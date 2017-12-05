@@ -93,26 +93,27 @@ endif;
 if ( !function_exists( 'get_function_texts' ) ):
 function get_function_texts( $keyword = null, $order_by = null ) {
   update_function_texts_table();
-  global $wpdb;
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
-  $where = null;
-  if ($keyword) {
-    $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
-    //$where = (" WHERE title LIKE %%$keyword%%");
-  }
-  if ($order_by) {
-    $order_by = esc_sql(" ORDER BY $order_by");
-  }
-  $query = "SELECT * FROM {$table_name}".
-              $where.
-              $order_by;
+  _v($order_by);
+  return get_db_table_records($table_name, 'title', $keyword, $order_by);
+  // $where = null;
+  // if ($keyword) {
+  //   $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
+  //   //$where = (" WHERE title LIKE %%$keyword%%");
+  // }
+  // if ($order_by) {
+  //   $order_by = esc_sql(" ORDER BY $order_by");
+  // }
+  // $query = "SELECT * FROM {$table_name}".
+  //             $where.
+  //             $order_by;
 
-  //$query = "SELECT * FROM {$table_name}";
-  //var_dump($query);
+  // //$query = "SELECT * FROM {$table_name}";
+  // //var_dump($query);
 
-  $records = $wpdb->get_results( $query );
+  // $records = $wpdb->get_results( $query );
 
-  return $records;
+  // return $records;
 }
 endif;
 
