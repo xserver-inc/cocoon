@@ -41,6 +41,7 @@ endif;
 add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
+  //_v($init_array);
   //追加するスタイルの配列を作成
   $style_formats = array(
     array(
