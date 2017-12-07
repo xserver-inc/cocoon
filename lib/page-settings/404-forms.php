@@ -9,7 +9,12 @@
 
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo iframe-standard-demo page-404-demo">
-      <iframe id="page-404-demo" class="iframe-demo" src="<?php echo home_url().'/404'; ?>" width="1000" height="400"></iframe>
+      <?php
+          //iframeから404ページを呼び出すと以下のPHP警告が出る
+          //unlink(/app/public/wp-content/temp-write-test-1512636307): Text file busy
+          //原因はよくわからないけど警告なので様子見
+       ?>
+      <iframe id="page-404-demo" class="iframe-demo" src="<?php echo home_url().'/404/'; ?>" width="1000" height="400"></iframe>
     </div>
 
     <table class="form-table">
