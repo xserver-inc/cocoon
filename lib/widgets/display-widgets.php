@@ -17,6 +17,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_categories_def = array();
   $widget_pages_def = array();
   $widget_authors_def = array();
+  $widget_posts_def = '';
+  $widget_fixed_pages_def = '';
   if ($info) {
     if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
@@ -30,12 +32,20 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     if (isset($info['widget_authors'])) {
       $widget_authors_def = $info['widget_authors'];
     }
+    if (!empty($info['widget_posts'])) {
+      $widget_posts_def = $info['widget_posts'];
+    }
+    if (!empty($info['widget_fixed_pages'])) {
+      $widget_fixed_pages_def = $info['widget_fixed_pages'];
+    }
   }
 
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
   $widget_categories = isset( $instance['widget_categories'] ) ? $instance['widget_categories'] : $widget_categories_def;
   $widget_pages = isset( $instance['widget_pages'] ) ? $instance['widget_pages'] : $widget_pages_def;
   $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
+  $widget_posts = !empty( $instance['widget_posts'] ) ? $instance['widget_posts'] : $widget_posts_def;
+  $widget_fixed_pages = !empty( $instance['widget_fixed_pages'] ) ? $instance['widget_fixed_pages'] : $widget_fixed_pages_def;
 
   ?>
   <?php
@@ -72,6 +82,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           <li id="cat-<?php echo $widget_id; ?>" class="cat-tab"><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
           <li id="page-<?php echo $widget_id; ?>" class="page-tab"><?php _e( 'ページ', THEME_NAME ) ?></li>
           <li id="author-<?php echo $widget_id; ?>" class="author-tab"><?php _e( '著者', THEME_NAME ) ?></li>
+          <li id="post-<?php echo $widget_id; ?>" class="post-tab"><?php _e( '投稿', THEME_NAME ) ?></li>
+          <li id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab"><?php _e( '固定ページ', THEME_NAME ) ?></li>
         </ul>
         <?php
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
@@ -79,9 +91,10 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
         generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
+        generate_post_check_list($widget->get_field_name('widget_posts'), $widget_posts);
+        generate_fixed_page_check_list($widget->get_field_name('widget_fixed_pages'), $widget_fixed_pages);
 
         //_enqueue_script( 'tab-js-jquery', 'https://code.jquery.com/jquery.min.js');
-
        ?>
       </div>
     </div>
@@ -108,24 +121,46 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         $('<?php echo $parent; ?> > ul > li').css('background-color', '#f1f1f1');
         $(ele).css('background-color', '#fff');
       }
-      //タグ制御
+      //タブ制御
       $("#cat-<?php echo $widget_id; ?>").click(function(){
         set_tab_css(this);
         $('<?php echo $parent; ?> .category-check-list').show();
         $('<?php echo $parent; ?> .page-display-check-list').hide();
         $('<?php echo $parent; ?> .author-check-list').hide();
+        $('<?php echo $parent; ?> .post-check-list').hide();
+        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
       });
       $("#page-<?php echo $widget_id; ?>").click(function(){
         set_tab_css(this);
         $('<?php echo $parent; ?> .category-check-list').hide();
         $('<?php echo $parent; ?> .page-display-check-list').show();
         $('<?php echo $parent; ?> .author-check-list').hide();
+        $('<?php echo $parent; ?> .post-check-list').hide();
+        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
       });
       $("#author-<?php echo $widget_id; ?>").click(function(){
         set_tab_css(this);
         $('<?php echo $parent; ?> .category-check-list').hide();
         $('<?php echo $parent; ?> .page-display-check-list').hide();
         $('<?php echo $parent; ?> .author-check-list').show();
+        $('<?php echo $parent; ?> .post-check-list').hide();
+        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+      });
+      $("#post-<?php echo $widget_id; ?>").click(function(){
+        set_tab_css(this);
+        $('<?php echo $parent; ?> .category-check-list').hide();
+        $('<?php echo $parent; ?> .page-display-check-list').hide();
+        $('<?php echo $parent; ?> .author-check-list').hide();
+        $('<?php echo $parent; ?> .post-check-list').show();
+        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+      });
+      $("#fixed-page-<?php echo $widget_id; ?>").click(function(){
+        set_tab_css(this);
+        $('<?php echo $parent; ?> .category-check-list').hide();
+        $('<?php echo $parent; ?> .page-display-check-list').hide();
+        $('<?php echo $parent; ?> .author-check-list').hide();
+        $('<?php echo $parent; ?> .post-check-list').hide();
+        $('<?php echo $parent; ?> .fixed-page-check-list').show();
       });
 
     });
@@ -287,6 +322,18 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
     $instance['widget_authors'] = $new_instance['widget_authors'];
   else
     $instance['widget_authors'] = array();
+
+  //投稿ページ条件
+  if ( isset( $new_instance['widget_posts'] ) )
+    $instance['widget_posts'] = $new_instance['widget_posts'];
+  else
+    $instance['widget_posts'] = array();
+
+  //固定ページ条件
+  if ( isset( $new_instance['widget_fixed_pages'] ) )
+    $instance['widget_fixed_pages'] = $new_instance['widget_fixed_pages'];
+  else
+    $instance['widget_fixed_pages'] = array();
 
   return $instance;
 }

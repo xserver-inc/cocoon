@@ -602,3 +602,40 @@ function generate_author_check_list( $name, $checks, $width = 0 ) {
   echo '</ul></div>';
 }
 endif;
+
+//投稿ページリスト
+if ( !function_exists( 'generate_post_check_list' ) ):
+function generate_post_check_list( $name, $value, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  echo '<div class="post-check-list '.$name.'-list" style="width: '.$width.';">';
+
+  echo '<p>投稿IDをカンマ区切りで入力してください。</p>';
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+
+  echo '</div>';
+}
+endif;
+
+
+//固定ページリスト
+if ( !function_exists( 'generate_fixed_page_check_list' ) ):
+function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  echo '<div class="fixed-page-check-list '.$name.'-list" style="width: '.$width.';">';
+
+  echo '<p>固定ページIDをカンマ区切りで入力してください。</p>';
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+
+  echo '</div>';
+}
+endif;
