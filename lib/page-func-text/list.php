@@ -10,9 +10,9 @@ generate_sort_options_tag($keyword, $order_by);
 ?>
 <!-- メッセージ -->
 <?php if ($records): ?>
-  <p class="ft-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
 <?php else: ?>
-  <p class="ft-message"><?php _e( '「使いまわしテキスト」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( '「使いまわしテキスト」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
 <?php endif ?>
 
 <div class="ft-list">

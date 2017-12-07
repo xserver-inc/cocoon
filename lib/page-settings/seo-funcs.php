@@ -57,6 +57,10 @@ function get_the_date_tags(){
     case 'update_date':
       $date_tags = $post_date_tag.$time_update_date_tag;
       break;
+    //投稿日のみを伝える
+    case 'post_date_only':
+      $date_tags = $time_post_date_tag;
+      break;
     //更新日のみを伝える
     default:
       //更新日がある場合

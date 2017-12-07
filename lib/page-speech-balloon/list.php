@@ -1,43 +1,34 @@
 <?php //
 //var_dump($_POST);
 $keyword = !empty($_POST['s']) ? $_POST['s'] : null;
-$order_by = isset($_POST['order']) ? $_POST['order'] : 'title';
+$order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC';
 //var_dump($order_by);
-$records = get_function_texts($keyword, $order_by);
+$records = get_speech_balloons($keyword, $order_by);
 //var_dump($records);
 //並び替えオプション
 generate_sort_options_tag($keyword, $order_by);
 ?>
 <!-- メッセージ -->
 <?php if ($records): ?>
-  <p class="ft-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
 <?php else: ?>
-  <p class="ft-message"><?php _e( '「使いまわしテキスト」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
 <?php endif ?>
 
-<div class="ft-list">
+<table class="sb-list">
   <?php foreach ($records as $record):
   //var_dump($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
   $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>
-    <div class="ft-wrap">
-      <div class="ft-title">
-        <a href="<?php echo $edit_url; ?>"><?php echo esc_html(stripslashes_deep($record->title)); ?></a>
-      </div>
-      <div class="ft-short-code">
-        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="[ft id=<?php echo esc_html($record->id); ?>]">
-      </div>
-      <div class="ft-content">
-        <?php
-        $text = strip_tags(stripslashes_deep($record->text));
-        $text = mb_substr($text, 0, 200);;
-        echo $text; ?>
-      </div>
-      <div class="ft-menu">
-        <a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a>
-        <a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
-      </div>
-    </div>
+  <tr>
+    <td>
+
+    </td>
+    <td class="sb-list-option">
+      <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
+      <p><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></p>
+    </td>
+  </tr>
   <?php endforeach ?>
-</div>
+</table>

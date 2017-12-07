@@ -1,3 +1,117 @@
 ///////////////////////////////////////
 // 吹き出しスタイル
 ///////////////////////////////////////
+/* 吹き出しのCSS　*/
+.entry-content .l-fuki,
+.entry-content .r-fuki {
+  position: relative;
+  width: 80%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px solid #999;
+  box-shadow: 1px 1px 5px #aaa;
+  background-color: #fff;
+  z-index: 1;
+}
+.entry-content .l-fuki {
+  margin: 20px 20% 40px 0;
+}
+.entry-content .r-fuki {
+  margin: 20px 0 40px 19%;
+}
+.entry-content .l-fuki::before,
+.entry-content .r-fuki::before {
+  position: absolute;
+  content: "";
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  background-color: #fff;
+  z-index: 2;
+}
+.entry-content .l-fuki::before {
+  right: -7px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.entry-content .r-fuki::before {
+  left: -7px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.entry-content .l-fuki::after,
+.entry-content .r-fuki::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  top: -10px;
+  border-radius: 40px;
+  border: 3px solid #fff;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 5px #aaa;
+}
+.entry-content .l-fuki::after {
+  right: -110px;
+}
+.entry-content .r-fuki::after {
+  left: -110px;
+}
+@media screen and (max-width: 620px) {
+  .entry-content .l-fuki,
+  .entry-content .r-fuki {
+    width: 70%
+  }
+  .entry-content .l-fuki {
+    margin-right: 30%;
+  }
+  .entry-content .r-fuki {
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 478px) {
+  .entry-content .l-fuki::after,
+  .entry-content .r-fuki::after {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+  .entry-content .l-fuki::after {
+    right: -84px;
+  }
+  .entry-content .r-fuki::after {
+    left: -84px;
+  }
+}
+.クラス名::after {background-image:url(画像のURL);}
+.クラス名::after {background-image:url(画像のURL);}
+
+
+.test{
+  border: 2px solid #ddd;
+  height: 60px;
+  padding: 10px;
+  position: relative;
+  margin-right: 70px;
+
+  &:after{
+    content: "name";
+    position: absolute;
+    right: -70px;
+    top: 0px;
+    height: 60px;
+    background-color: #ddd;
+    left: calc(100% + 10px);
+    display: table;
+    //vertical-align: bottom;
+    border-radius: 35px;
+    padding-top: 60px;
+    background-image: url(http://cocoon.dev/wp-content/uploads/2017/04/pexels-photo-247978-320x180.jpeg);
+  }
+}

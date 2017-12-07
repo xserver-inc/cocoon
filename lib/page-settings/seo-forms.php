@@ -60,6 +60,7 @@
             $options = array(
               'post_date' => __( '投稿日', THEME_NAME ),
               'update_date' => __( '更新日', THEME_NAME ),
+              'post_date_only' => __( '投稿日のみ表示', THEME_NAME ),
               'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());

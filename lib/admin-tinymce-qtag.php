@@ -127,7 +127,8 @@ function initialize_tinymce_styles($init_array) {
     array(
       'title' => __( 'dangerボックス', THEME_NAME ),
       'block' => 'div',
-      'classes' => 'sp-danger'
+      'classes' => 'sp-danger',
+      //'wrapper' => true,
     ),
   );
   //JSONに変換
