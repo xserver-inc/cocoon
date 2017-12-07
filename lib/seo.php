@@ -132,7 +132,7 @@ function the_prev_next_link_tag() {
       $prev = generate_multipage_url('prev');
       $next = generate_multipage_url('next');
       if($prev) {
-        echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
+        echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
         echo '<link rel="prev" href="'.$prev.'" />'.PHP_EOL;
       }
       if($next) {
