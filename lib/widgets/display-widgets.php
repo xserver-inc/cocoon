@@ -73,8 +73,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
       </label>
       <?php
         $options = array(
-          'hide' => __( 'チェックしたページで非表示', THEME_NAME ),
-          'show' => __( 'チェックしたページで表示', THEME_NAME ),
+          'hide' => __( 'チェック・入力したページで非表示', THEME_NAME ),
+          'show' => __( 'チェック・入力したページで表示', THEME_NAME ),
         );
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);?>
         <div id="tabs-<?php echo $widget_id; ?>" class="tabs-widget">
@@ -348,6 +348,8 @@ function is_display_widgets_widget_visible( $info ){
   $widget_categories = isset($info['widget_categories']) ? $info['widget_categories'] : array();
   $widget_pages = isset($info['widget_pages']) ? $info['widget_pages'] : array();
   $widget_authors = isset($info['widget_authors']) ? $info['widget_authors'] : array();
+  $widget_posts = isset($info['widget_posts']) ? $info['widget_posts'] : '';
+  $widget_fixed_pages = isset($info['widget_fixed_pages']) ? $info['widget_fixed_pages'] : '';
 
   $display = false;
   // //ウィジェットを表示する条件
@@ -367,10 +369,10 @@ function is_display_widgets_widget_visible( $info ){
 //var_dump(($widget_categories));
 
   // //チェックリストすべてが空かどうか
-  $is_all_checks_empty = empty($widget_categories) && empty($widget_pages);
+  $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages);
   //カテゴリーリストに何かチェックがついている場合
   if (!empty($widget_categories)) {
-    $display = in_category($widget_categories) || is_category($widget_categories);
+    $display = $display || in_category($widget_categories) || is_category($widget_categories);
     // if ($widget_action == 'hide') {
     //   $display = $display || is_single();
     // }
@@ -410,20 +412,34 @@ function is_display_widgets_widget_visible( $info ){
 
   //投稿者リストに何かチェックがついている場合
   if (!empty($widget_authors)) {
-    $display = in_authors($widget_authors) || is_authors($widget_authors);
+    $display = $display || in_authors($widget_authors) || is_authors($widget_authors);
     //var_dump($display);
     //var_dump(is_author(2));
   }
 
+  //投稿IDが設定されているとき
+  if (!empty($widget_posts)) {
+    $widget_posts = sanitize_comma_text($widget_posts);
+    $widget_posts = explode(',', $widget_posts);
+    $display = $display || is_single($widget_posts);
+  }
+
+  //固定ページIDが設定されているとき
+  if (!empty($widget_fixed_pages)) {
+    $widget_fixed_pages = sanitize_comma_text($widget_fixed_pages);
+    $widget_fixed_pages = explode(',', $widget_fixed_pages);
+    $display = $display || is_page($widget_fixed_pages);
+  }
+
   //ウィジェットを表示する条件
   if ($widget_action == 'show') {
-    if ($is_all_checks_empty) {
+    if ($is_all_empty) {
       $display = false;
     } else {
       $display = $display;
     }
   } elseif ($widget_action == 'hide') {
-    if ($is_all_checks_empty) {
+    if ($is_all_empty) {
       $display = true;
     } else {
       $display = !$display;

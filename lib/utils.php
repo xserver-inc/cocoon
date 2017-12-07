@@ -1021,11 +1021,21 @@ function remove_all_directory($dir) {
   }
 }
 endif;
+
 //リダイレクト
 if ( !function_exists( 'redirect_to_url' ) ):
 function redirect_to_url($url){
-  header( "HTTP/1.1 302 Moved Permanently" );
+  header( "HTTP/1.1 301 Moved Permanently" );
   header( "location: " . $url  );
   exit;
+}
+endif;
+
+//
+if ( !function_exists( 'sanitize_comma_text' ) ):
+function sanitize_comma_text($value){
+  $value = str_replace(' ', '', $value);
+  $value = str_replace('、', ',', $value);
+  return trim($value);
 }
 endif;
