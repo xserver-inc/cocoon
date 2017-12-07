@@ -614,8 +614,9 @@ function generate_post_check_list( $name, $value, $width = 0 ) {
 
   echo '<div class="post-check-list '.$name.'-list" style="width: '.$width.';">';
 
-  echo '<p>投稿IDをカンマ区切りで入力してください。</p>';
+  echo '<p>'.__( '投稿ID入力', THEME_NAME ).'</p>';
   generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  echo '<p>'.__( '投稿IDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
 
   echo '</div>';
 }
@@ -633,8 +634,9 @@ function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
 
   echo '<div class="fixed-page-check-list '.$name.'-list" style="width: '.$width.';">';
 
-  echo '<p>固定ページIDをカンマ区切りで入力してください。</p>';
+  echo '<p>'.__( '固定ページID入力', THEME_NAME ).'</p>';
   generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  echo '<p>'.__( '固定ページIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
 
   echo '</div>';
 }

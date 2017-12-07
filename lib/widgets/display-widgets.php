@@ -230,6 +230,8 @@ jQuery(document).ready(function($){
     var cat_tab_id = get_target_id(ui, ".cat-tab");
     var page_tab_id = get_target_id(ui, ".page-tab");
     var author_tab_id = get_target_id(ui, ".author-tab");
+    var post_tab_id = get_target_id(ui, ".post-tab");
+    var fixed_page_tab_id = get_target_id(ui, ".fixed-page-tab");
 
 
     function set_tab_css(ele) {
@@ -250,18 +252,40 @@ jQuery(document).ready(function($){
       $(parent_id+' .category-check-list').show();
       $(parent_id+' .page-display-check-list').hide();
       $(parent_id+' .author-check-list').hide();
+      $(parent_id+' .post-check-list').hide();
+      $(parent_id+' .fixed-page-check-list').hide();
     });
     $(document).on("click", page_tab_id, function(){
       set_tab_css(this);
       $(parent_id+' .category-check-list').hide();
       $(parent_id+' .page-display-check-list').show();
       $(parent_id+' .author-check-list').hide();
+      $(parent_id+' .post-check-list').hide();
+      $(parent_id+' .fixed-page-check-list').hide();
     });
     $(document).on("click", author_tab_id, function(){
       set_tab_css(this);
       $(parent_id+' .category-check-list').hide();
       $(parent_id+' .page-display-check-list').hide();
       $(parent_id+' .author-check-list').show();
+      $(parent_id+' .post-check-list').hide();
+      $(parent_id+' .fixed-page-check-list').hide();
+    });
+    $(document).on("click", post_tab_id, function(){
+      set_tab_css(this);
+      $(parent_id+' .category-check-list').hide();
+      $(parent_id+' .page-display-check-list').hide();
+      $(parent_id+' .author-check-list').hide();
+      $(parent_id+' .post-check-list').show();
+      $(parent_id+' .fixed-page-check-list').hide();
+    });
+    $(document).on("click", fixed_page_tab_id, function(){
+      set_tab_css(this);
+      $(parent_id+' .category-check-list').hide();
+      $(parent_id+' .page-display-check-list').hide();
+      $(parent_id+' .author-check-list').hide();
+      $(parent_id+' .post-check-list').hide();
+      $(parent_id+' .fixed-page-check-list').show();
     });
 
   }
