@@ -29,14 +29,14 @@
 }
 
 /*本文下カテゴリ*/
-.catlink{
+.cat-link{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;
-  padding: 1px 5px;
+  padding: 2px 6px;
   font-size: 12px;
   background-color: $text_color;
-  border: 1px solid $text_color;
+  //border: 1px solid $text_color;
   color: $bg_white;
   border-radius: $badge_border_radius;
 
@@ -53,7 +53,7 @@
 }
 
 /*本文下タグ*/
-.taglink{
+.tag-link{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;

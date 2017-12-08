@@ -34,14 +34,14 @@
   width: 160px;
 }
 
-.category-label{
+.cat-label{
   position: absolute;
   top: 0px;
   left: 0px;
-  font-size: 10px;
+  font-size: 11px;
   color: $bg_white;
   background-color: $transpalent_black_bgc;
-  padding: 0px 4px;
+  padding: 1px 5px;
   max-width: 80%;
   white-space: nowrap;
   overflow: hidden;

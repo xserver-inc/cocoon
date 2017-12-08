@@ -7,10 +7,10 @@ if (get_site_key_color()): ?>
 .navi .navi-in > .menu-header .sub-menu,
 .article h2,
 .sidebar h3,
-.catlink,
-.category-label,
+.cat-link,
+.cat-label,
 .appeal-content .appeal-button,
-.demo .category-label{
+.demo .cat-label{
   background-color: <?php echo get_site_key_color(); ?>;
 }
 .navi .navi-in a:hover{
@@ -20,8 +20,8 @@ if (get_site_key_color()): ?>
 .article h4,
 .article h5,
 .article h6,
-.catlink,
-.taglink{
+.cat-link,
+.tag-link{
   border-color: <?php echo get_site_key_color(); ?>;
 }
 blockquote::before, blockquote::after,
@@ -67,8 +67,8 @@ table tr:nth-of-type(2n+1),
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover,
 .pager-links a:hover span,
-/*.catlink:hover,*/
-.taglink:hover,
+/*.cat-link:hover,*/
+.tag-link:hover,
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
 }
@@ -230,3 +230,31 @@ if (get_appeal_area_button_background_color()): ?>
   background-color: <?php echo get_appeal_area_button_background_color(); ?>;
 }
 <?php endif ?>
+<?php //カテゴリー色の設定
+$cats = get_categories();
+$colors = array();
+//カテゴリ色の振り分け
+foreach ($cats as $cat) {
+  $color = get_category_color($cat->cat_ID);
+  $cat_label_pre = '.cat-label-';
+  $cat_link_pre = '.cat-link-';
+  if ($color) {
+    $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
+    if (isset($colors[$color])) {
+      array_push($colors[$color], $selectors);
+    } else {
+      $colors[$color] = array($selectors);
+    }
+  }
+}
+//CSSの生成
+$css = '';
+foreach ($colors as $color_code => $ids) {
+  $selector = implode(', ', $ids);
+  $css .= $selector.'{'.PHP_EOL.
+    '  background-color: '.$color_code.';'.PHP_EOL.
+    //'  border-color: '.$color_code.';'.PHP_EOL.
+  '}'.PHP_EOL.PHP_EOL;
+}
+echo $css;
+ ?>

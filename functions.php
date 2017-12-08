@@ -401,3 +401,8 @@ function verify_google_recaptcha($comment_post_ID)
   return;
 }
 */
+
+// remove_action('do_feed_rdf', 'do_feed_rdf');
+// remove_action('do_feed_rss', 'do_feed_rss');
+// remove_action('do_feed_rss2', 'do_feed_rss2');
+// remove_action('do_feed_atom', 'do_feed_atom');

@@ -767,14 +767,14 @@
     width: 320px; }
   .demo .related-entry-card-thumb {
     width: 160px; }
-  .demo .category-label {
+  .demo .cat-label {
     position: absolute;
     top: 0px;
     left: 0px;
-    font-size: 10px;
+    font-size: 11px;
     color: #fff;
     background-color: rgba(51, 51, 51, 0.7);
-    padding: 0px 4px;
+    padding: 1px 5px;
     max-width: 80%;
     white-space: nowrap;
     overflow: hidden;
@@ -916,25 +916,24 @@
     margin-bottom: 3em; }
   .demo .entry-categories-tags {
     font-family: "Meiryo", sans-serif; }
-  .demo .catlink {
+  .demo .cat-link {
     color: #333435;
     text-decoration: none;
     display: inline-block;
     margin-right: 5px;
-    padding: 1px 5px;
+    padding: 2px 6px;
     font-size: 12px;
     background-color: #333435;
-    border: 1px solid #333435;
     color: #fff;
     border-radius: 2px; }
-    .demo .catlink::before {
+    .demo .cat-link::before {
       font-family: FontAwesome;
       content: "";
       padding-right: 3px; }
-    .demo .catlink:hover {
+    .demo .cat-link:hover {
       opacity: 0.5;
       color: #fff; }
-  .demo .taglink {
+  .demo .tag-link {
     color: #333435;
     text-decoration: none;
     display: inline-block;
@@ -943,11 +942,11 @@
     font-size: 12px;
     border: 1px solid #999a9b;
     border-radius: 2px; }
-    .demo .taglink::before {
+    .demo .tag-link::before {
       font-family: FontAwesome;
       content: "";
       padding-right: 3px; }
-    .demo .taglink:hover {
+    .demo .tag-link:hover {
       background-color: #f5f8fa;
       transition: all 0.3s ease 0s;
       color: #333435; }
@@ -1958,7 +1957,7 @@
   .demo .carousel {
     margin-top: 10px;
     line-height: 1.1; }
-    .demo .carousel .category-label {
+    .demo .carousel .cat-label {
       display: none; }
     .demo .carousel .slick-arrow:before {
       color: #cccdce; }
@@ -2996,7 +2995,7 @@
         width: 49%; }
       .demo .related-mini-card .related-entry-card-wrap {
         margin-bottom: 10px; }
-      .demo .related-mini-card .category-label {
+      .demo .related-mini-card .cat-label {
         font-size: 8px; }
       .demo .related-mini-card .related-entry-card-thumb {
         width: 30%; }
@@ -3058,7 +3057,7 @@
       .demo .related-entry-card-snippet,
       .demo .blogcard-snipet {
         display: none; }
-      .demo .category-label {
+      .demo .cat-label {
         font-size: 8px;
         padding: 0 3px; }
       .demo .page-numbers {

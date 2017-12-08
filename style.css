@@ -637,14 +637,14 @@ img {
   width: 160px;
 }
 
-.category-label {
+.cat-label {
   position: absolute;
   top: 0px;
   left: 0px;
-  font-size: 10px;
+  font-size: 11px;
   color: #fff;
   background-color: rgba(51, 51, 51, 0.7);
-  padding: 0px 4px;
+  padding: 1px 5px;
   max-width: 80%;
   white-space: nowrap;
   overflow: hidden;
@@ -894,30 +894,29 @@ img {
 }
 
 /*本文下カテゴリ*/
-.catlink {
+.cat-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
   margin-right: 5px;
-  padding: 1px 5px;
+  padding: 2px 6px;
   font-size: 12px;
   background-color: #333435;
-  border: 1px solid #333435;
   color: #fff;
   border-radius: 2px;
 }
-.catlink::before {
+.cat-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.catlink:hover {
+.cat-link:hover {
   opacity: 0.5;
   color: #fff;
 }
 
 /*本文下タグ*/
-.taglink {
+.tag-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -927,12 +926,12 @@ img {
   border: 1px solid #999a9b;
   border-radius: 2px;
 }
-.taglink::before {
+.tag-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.taglink:hover {
+.tag-link:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333435;
@@ -2439,7 +2438,7 @@ input[type='submit'] {
   margin-top: 10px;
   line-height: 1.1;
 }
-.carousel .category-label {
+.carousel .cat-label {
   display: none;
 }
 .carousel .slick-arrow:before {
@@ -4052,7 +4051,7 @@ div.fb-like-mobile {
   .related-mini-card .related-entry-card-wrap {
     margin-bottom: 10px;
   }
-  .related-mini-card .category-label {
+  .related-mini-card .cat-label {
     font-size: 8px;
   }
   .related-mini-card .related-entry-card-thumb {
@@ -4154,7 +4153,7 @@ div.fb-like-mobile {
     display: none;
   }
 
-  .category-label {
+  .cat-label {
     font-size: 8px;
     padding: 0 3px;
   }
