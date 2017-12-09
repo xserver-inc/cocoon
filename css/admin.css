@@ -155,7 +155,8 @@
 
 .ft-content {
   max-height: 100px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 20px; }
 
 .op-message {
   text-align: center;

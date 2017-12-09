@@ -124,6 +124,48 @@ function delete_function_text( $id ) {
 }
 endif;
 
+//レコードを追加
+if ( !function_exists( 'insert_function_text_record' ) ):
+function insert_function_text_record($posts){
+  $table = FUNCTION_TEXTS_TABLE_NAME;
+  $now = current_time('mysql');
+  $data = array(
+    'date' => $now,
+    'modified' => $now,
+    'title' => $posts['title'],
+    'text' => $posts['text'],
+  );
+  $format = array(
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+  );
+  return insert_db_table_record($table, $data, $format);
+}
+endif;
+
+//レコードの編集
+if ( !function_exists( 'update_function_text_record' ) ):
+function update_function_text_record($id, $posts){
+  $table = FUNCTION_TEXTS_TABLE_NAME;
+  $now = current_time('mysql');
+  $data = array(
+    'modified' => $now,
+    'title' => $posts['title'],
+    'text' => $posts['text'],
+  );
+  $where = array('id' => $id);
+  $format = array(
+    '%s',
+    '%s',
+    '%s',
+  );
+  $where_format = array('%d');
+  return update_db_table_record($table, $data, $where, $format, $where_format);
+}
+endif;
+
 //関数テキストショートコード関数
 add_shortcode('ft', 'function_text_shortcode');
 if ( !function_exists( 'function_text_shortcode' ) ):
