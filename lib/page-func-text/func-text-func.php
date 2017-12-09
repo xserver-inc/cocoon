@@ -18,9 +18,21 @@ function get_function_texts_table_version(){
 }
 endif;
 
+//関数テキストテーブルが存在するか
+if ( !function_exists( 'is_function_texts_table_exist' ) ):
+function is_function_texts_table_exist(){
+  return is_db_table_exist(FUNCTION_TEXTS_TABLE_NAME);
+}
+endif;
+
 //関数テキストテーブルの作成
 if ( !function_exists( 'create_function_texts_table' ) ):
 function create_function_texts_table() {
+  $add_default_records = false;
+  //テーブルが存在しない場合初期データを挿入（テーブル作成時のみ挿入）
+  if (!is_function_texts_table_exist()) {
+    $add_default_records = true;
+  }
   // SQL文でテーブルを作る
   $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
       id mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -31,9 +43,15 @@ function create_function_texts_table() {
       PRIMARY KEY (id),
       INDEX (title)
     )";
-  create_db_table($sql);
+  $res = create_db_table($sql);
+
+  //初期データの挿入
+  if ($res && $add_default_records) {
+    //データ挿入処理
+  }
 
   set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );
+  return $res;
 }
 endif;
 //create_function_texts_table();

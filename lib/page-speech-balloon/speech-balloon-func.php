@@ -31,9 +31,21 @@ function get_speech_balloons_table_version(){
 }
 endif;
 
+//吹き出しテーブルが存在するか
+if ( !function_exists( 'is_speech_balloons_table_exist' ) ):
+function is_speech_balloons_table_exist(){
+  return is_db_table_exist(SPEECH_BALLOONS_TABLE_NAME);
+}
+endif;
+
 //吹き出しテーブルの作成
 if ( !function_exists( 'create_speech_balloons_table' ) ):
 function create_speech_balloons_table() {
+  $add_default_records = false;
+  //テーブルが存在しない場合初期データを挿入（テーブル作成時のみ挿入）
+  if (!is_speech_balloons_table_exist()) {
+    $add_default_records = true;
+  }
   // SQL文でテーブルを作る
   $sql = "CREATE TABLE ".SPEECH_BALLOONS_TABLE_NAME." (
     id mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -48,9 +60,15 @@ function create_speech_balloons_table() {
     INDEX (title),
     INDEX (name)
   )";
-  create_db_table($sql);
+  $res = create_db_table($sql);
+
+  //初期データの挿入
+  if ($res && $add_default_records) {
+    //データ挿入処理
+  }
 
   set_theme_mod( OP_SPEECH_BALLOONS_TABLE_VERSION, SPEECH_BALLOONS_TABLE_VERSION );
+  return $res;
 }
 endif;
 create_speech_balloons_table();
