@@ -23,7 +23,14 @@ generate_sort_options_tag($keyword, $order_by);
    ?>
   <tr>
     <td>
-
+      <?php //吹き出しの表示
+      generate_speech_balloon_tag(
+        $records->name,
+        $records->icon,
+        $records->style,
+        $records->position,
+        'あああああああああああああああああああああああああああああああ'
+      ); ?>
     </td>
     <td class="sb-list-option">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>

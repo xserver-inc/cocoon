@@ -20,8 +20,8 @@ define('SBS_LINE', 'line');
 define('SBS_THINK', 'think');
 
 //サブタイプ
-define('SBP_LEFT', 'L');
-define('SBP_RIGHT', 'R');
+define('SBP_LEFT', 'l');
+define('SBP_RIGHT', 'r');
 
 //吹き出しテーブルのバージョン取得
 define('OP_SPEECH_BALLOONS_TABLE_VERSION', 'speech_balloons_table_version');
@@ -115,5 +115,25 @@ function get_speech_balloon( $id ) {
   $recode->position = !empty($recode->position) ? $recode->position : SBP_LEFT;
 
   return $record;
+}
+endif;
+
+//吹き出しHTMLを生成
+if ( !function_exists( 'generate_speech_balloon_tag' ) ):
+function generate_speech_balloon_tag($name, $icon, $style, $position, $voice){?>
+  <div class="speech-wrap sbs-<?php echo $style; ?> sbp-<?php echo $position; ?>">
+    <div class="speech-person">
+      <figure class="speech-icon">
+        <img src="<?php echo $icon; ?>" alt="<?php echo $name; ?>">
+      </figure>
+      <div class="speech-name">
+        <?php echo $name; ?>
+      </div>
+    </div>
+    <div class="speech-balloon">
+      <?php echo $voice; ?>
+    </div>
+  </div>
+<?php
 }
 endif;
