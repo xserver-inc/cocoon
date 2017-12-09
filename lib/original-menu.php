@@ -11,8 +11,8 @@ function add_original_menu_in_admin_page() {
     //吹き出しサブメニューを追加
     add_submenu_page('theme-settings', __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'speech-balloon', 'add_theme_speech_balloon_page');
 
-    //使いまわしテキストサブメニューを追加
-    add_submenu_page('theme-settings', __('使いまわしテキスト', THEME_NAME), __('使いまわしテキスト', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
+    //テンプレートサブメニューを追加
+    add_submenu_page('theme-settings', __('テンプレート', THEME_NAME), __('テンプレート', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
 
     //アクセス分析サブメニューを追加
     add_submenu_page('theme-settings', __('アクセス分析', THEME_NAME), __('アクセス分析', THEME_NAME), 'manage_options', 'theme-analytics', 'add_theme_analytics_page');
@@ -66,7 +66,7 @@ function add_theme_speech_balloon_page() {
 }
 endif;
 
-//テーマ用使いまわしテキストの登録
+//テーマ用テンプレートの登録
 if ( !function_exists( 'add_theme_func_text_page' ) ):
 function add_theme_func_text_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
