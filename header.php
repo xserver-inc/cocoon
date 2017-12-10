@@ -2,6 +2,8 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+<?php //body最初に挿入するアクセス解析ヘッダータグの取得
+get_template_part('tmp/head-analytics'); ?>
 <meta charset="utf-8">
 <?php //Google Search Consoleのサイト認証IDの表示
 if ( get_google_search_console_id() ): ?>
@@ -40,8 +42,8 @@ get_template_part('tmp-user/head-insert'); ?>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<?php //アクセス解析ヘッダータグの取得
-get_template_part('tmp/header-analytics'); ?>
+<?php //body最初に挿入するアクセス解析ヘッダータグの取得
+get_template_part('tmp/body-top-analytics'); ?>
 
 <div id="container" class="container<?php echo get_additional_container_classes(); ?> cf">
   <?php //サイトヘッダー
