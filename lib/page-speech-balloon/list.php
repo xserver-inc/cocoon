@@ -33,6 +33,10 @@ generate_sort_options_tag($keyword, $order_by);
   <p class="op-message"><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
 <?php endif ?>
 
+<div id="sb-list" class="postbox" style="max-width: 980px; margin-top: 20px;">
+  <h2 class="hndle"><?php _e( '吹き出し一覧', THEME_NAME ) ?></h2>
+  <div class="inside">
+
 <table class="sb-list">
   <?php foreach ($records as $record):
   //var_dump($record);
@@ -57,3 +61,6 @@ generate_sort_options_tag($keyword, $order_by);
   </tr>
   <?php endforeach ?>
 </table>
+
+  </div>
+</div>

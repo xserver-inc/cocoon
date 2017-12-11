@@ -139,8 +139,6 @@ function create_speech_balloons_table() {
   )";
   $res = create_db_table($sql);
 
-  _v($res);
-  _v($add_default_records);
   //初期データの挿入
   if ($res && $add_default_records) {
     //データ挿入処理
@@ -207,10 +205,10 @@ if ( !function_exists( 'get_speech_balloon' ) ):
 function get_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
-  $recode->name = !empty($recode->name) ? $recode->name : SB_DEFAULT_NAME;
-  $recode->icon = !empty($recode->icon) ? $recode->icon : SB_DEFAULT_MAN_ICON;
-  $recode->style = !empty($recode->style) ? $recode->style : SBS_FLAT;
-  $recode->position = !empty($recode->position) ? $recode->position : SBP_LEFT;
+  $record->name = !empty($record->name) ? $record->name : SB_DEFAULT_NAME;
+  $record->icon = !empty($record->icon) ? $record->icon : SB_DEFAULT_MAN_ICON;
+  $record->style = !empty($record->style) ? $record->style : SBS_FLAT;
+  $record->position = !empty($record->position) ? $record->position : SBP_LEFT;
 
   return $record;
 }

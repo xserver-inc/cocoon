@@ -5,11 +5,13 @@
   if (isset($_GET['id'])) {
     $action = 'edit';
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
-    $recode = get_speech_balloon($id);
-    $name = $recode->name;
-    $icon = $recode->icon;
-    $style = $recode->style;
-    $posision = $recode->posision;
+    $record = get_speech_balloon($id);
+    $name = $record->name;
+    $icon = $record->icon;
+    $style = $record->style;
+    $position = $record->position;
+    _v($record);
+    _v($position);
 
   } else {
     $action = 'new';
@@ -17,7 +19,7 @@
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $icon = isset($_POST['icon']) ? $_POST['icon'] : '';
     $style = isset($_POST['style']) ? $_POST['style'] : '';
-    $posision = isset($_POST['posision']) ? $_POST['posision'] : '';
+    $position = isset($_POST['position']) ? $_POST['position'] : '';
   }?>
 
   <table class="form-table speech-balloon">
@@ -66,7 +68,7 @@
 
       <tr>
         <th scope="row">
-          <?php generate_label_tag('posision', __( '人物位置', THEME_NAME )); ?>
+          <?php generate_label_tag('position', __( '人物位置', THEME_NAME )); ?>
         </th>
         <td>
           <?php
@@ -74,7 +76,7 @@
             SBP_LEFT => __( '左', THEME_NAME ),
             SBP_RIGHT => __( '右', THEME_NAME ),
           );
-          generate_selectbox_tag('posision', $options, $posision);
+          generate_selectbox_tag('position', $options, $position);
           generate_tips_tag(__( 'アイコンを表示するポジションを設定します。', THEME_NAME ));
           ?>
         </td>
