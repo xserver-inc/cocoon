@@ -217,17 +217,17 @@ endif;
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):
 function generate_speech_balloon_tag($name, $icon, $style, $position, $voice){?>
-  <div class="speech-wrap sbs-<?php echo $style; ?> sbp-<?php echo $position; ?>">
+  <div class="speech-wrap sbs-<?php echo esc_html($style); ?> sbp-<?php echo esc_html($position); ?>">
     <div class="speech-person">
       <figure class="speech-icon">
-        <img src="<?php echo $icon; ?>" alt="<?php echo $name; ?>">
+        <img src="<?php echo esc_html($icon); ?>" alt="<?php echo esc_html($name); ?>">
       </figure>
       <div class="speech-name">
-        <?php echo $name; ?>
+        <?php echo esc_html($name); ?>
       </div>
     </div>
     <div class="speech-balloon">
-      <?php echo $voice; ?>
+      <?php echo esc_html($voice); ?>
     </div>
   </div>
 <?php

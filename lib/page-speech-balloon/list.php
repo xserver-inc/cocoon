@@ -37,7 +37,7 @@ generate_sort_options_tag($keyword, $order_by);
   <h2 class="hndle"><?php _e( '吹き出し一覧', THEME_NAME ) ?></h2>
   <div class="inside">
 
-<table class="sb-list">
+<table class="sb-list" style="width: 100%;">
   <?php foreach ($records as $record):
   //var_dump($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
@@ -53,8 +53,9 @@ generate_sort_options_tag($keyword, $order_by);
         $record->position,
         SB_SAMPLE_TEXTS[rand(0, 12)]
       ); ?>
+      <div style="margin-top: 12px"><?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value='[speech name="<?php echo esc_html($record->name); ?>" icon="<?php echo esc_html($record->icon); ?>" style="<?php echo esc_html($record->style); ?>" position="<?php echo esc_html($record->position); ?>"]VOICE[/speech]' style="width: 80%;"></div>
     </td>
-    <td class="sb-list-option">
+    <td class="sb-list-option" style="width: 50px;">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
       <p><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></p>
     </td>
