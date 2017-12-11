@@ -1,7 +1,7 @@
 <?php //関数テキスト関係の関数
 
 //関数テキストテーブルのバージョン
-define('FUNCTION_TEXTS_TABLE_VERSION', '0.0');
+define('FUNCTION_TEXTS_TABLE_VERSION', rand(0, 99));//'0.0'
 define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 
@@ -22,6 +22,16 @@ endif;
 if ( !function_exists( 'is_function_texts_table_exist' ) ):
 function is_function_texts_table_exist(){
   return is_db_table_exist(FUNCTION_TEXTS_TABLE_NAME);
+}
+endif;
+
+//初期データの入力
+if ( !function_exists( 'add_default_function_text_records' ) ):
+function add_default_function_text_records(){
+  $posts = array();
+  $posts['title'] = __( 'Wordpressカスタマイズ注意文サンプル', THEME_NAME );
+  $posts['text'] = '<p class="alert">'.__( 'Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください。 ', THEME_NAME ).'</p>';
+  insert_function_text_record($posts);
 }
 endif;
 
@@ -48,6 +58,7 @@ function create_function_texts_table() {
   //初期データの挿入
   if ($res && $add_default_records) {
     //データ挿入処理
+    add_default_function_text_records();
   }
 
   set_theme_mod( OP_FUNCTION_TEXTS_TABLE_VERSION, FUNCTION_TEXTS_TABLE_VERSION );

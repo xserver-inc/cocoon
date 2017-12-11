@@ -20,6 +20,7 @@ function create_db_table( $sql ){
    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
    //_v($sql);
    $res = dbDelta( $sql );
+   return $res;
 }
 endif;
 

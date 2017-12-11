@@ -1,7 +1,7 @@
 <?php //吹き出し関係の関数
 
 //関数テキストテーブルのバージョン
-define('SPEECH_BALLOONS_TABLE_VERSION', '0.1');
+define('SPEECH_BALLOONS_TABLE_VERSION', rand(0, 99));
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 
 //関数テキスト移動用URL
@@ -11,7 +11,9 @@ define('SB_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false))
 //デフォルトの名前
 define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
 //デフォルトアイコン
-define('SB_DEFAULT_ICON', get_template_directory_uri().'images/man.png');
+define('SB_DEFAULT_MAN_ICON', get_template_directory_uri().'/images/man.png');
+
+define('SB_DEFAULT_WOMAN_ICON', get_template_directory_uri().'/images/woman.png');
 
 //スタイル
 define('SBS_STANDARD', 'standard');
@@ -35,6 +37,80 @@ endif;
 if ( !function_exists( 'is_speech_balloons_table_exist' ) ):
 function is_speech_balloons_table_exist(){
   return is_db_table_exist(SPEECH_BALLOONS_TABLE_NAME);
+}
+endif;
+
+//レコードを追加
+if ( !function_exists( 'insert_speech_balloon_record' ) ):
+function insert_speech_balloon_record($posts){
+  $table = SPEECH_BALLOONS_TABLE_NAME;
+  $now = current_time('mysql');
+  $data = array(
+    'date' => $now,
+    'modified' => $now,
+    'title' => $posts['title'],
+    'name' => $posts['name'],
+    'icon' => $posts['icon'],
+    'style' => $posts['style'],
+    'position' => $posts['position'],
+  );
+  $format = array(
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+  );
+  return insert_db_table_record($table, $data, $format);
+}
+endif;
+
+//レコードの編集
+if ( !function_exists( 'update_speech_balloon_record' ) ):
+function update_speech_balloon_record($id, $posts){
+  $table = SPEECH_BALLOONS_TABLE_NAME;
+  $now = current_time('mysql');
+  $data = array(
+    'modified' => $now,
+    'title' => $posts['title'],
+    'name' => $posts['name'],
+    'icon' => $posts['icon'],
+    'style' => $posts['style'],
+    'position' => $posts['position'],
+  );
+  $where = array('id' => $id);
+  $format = array(
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+    '%s',
+  );
+  $where_format = array('%d');
+  return update_db_table_record($table, $data, $where, $format, $where_format);
+}
+endif;
+
+//初期データの入力
+if ( !function_exists( 'add_default_speech_balloon_records' ) ):
+function add_default_speech_balloon_records(){
+  $posts = array();
+  $posts['title'] = __( '男性デフォルトサンプル（左）', THEME_NAME );
+  $posts['name']  = __( '太郎', THEME_NAME );
+  $posts['icon']  = SB_DEFAULT_MAN_ICON;
+  $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_LEFT;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '女性デフォルトサンプル（右）', THEME_NAME );
+  $posts['name']  = __( '花子', THEME_NAME );
+  $posts['icon']  = SB_DEFAULT_WOMAN_ICON;
+  $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_RIGHT;
+  insert_speech_balloon_record($posts);
 }
 endif;
 
@@ -62,9 +138,12 @@ function create_speech_balloons_table() {
   )";
   $res = create_db_table($sql);
 
+  _v($res);
+  _v($add_default_records);
   //初期データの挿入
   if ($res && $add_default_records) {
     //データ挿入処理
+    add_default_speech_balloon_records();
   }
 
   set_theme_mod( OP_SPEECH_BALLOONS_TABLE_VERSION, SPEECH_BALLOONS_TABLE_VERSION );
@@ -128,68 +207,13 @@ function get_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
   $recode->name = !empty($recode->name) ? $recode->name : SB_DEFAULT_NAME;
-  $recode->icon = !empty($recode->icon) ? $recode->icon : SB_DEFAULT_ICON;
+  $recode->icon = !empty($recode->icon) ? $recode->icon : SB_DEFAULT_MAN_ICON;
   $recode->style = !empty($recode->style) ? $recode->style : SBS_FLAT;
   $recode->position = !empty($recode->position) ? $recode->position : SBP_LEFT;
 
   return $record;
 }
 endif;
-
-//レコードを追加
-if ( !function_exists( 'insert_speech_balloon_record' ) ):
-function insert_speech_balloon_record($posts){
-  $table = SPEECH_BALLOONS_TABLE_NAME;
-  $now = current_time('mysql');
-  $data = array(
-    'date' => $now,
-    'modified' => $now,
-    'title' => $posts['title'],
-    'name' => $posts['name'],
-    'icon' => $posts['icon'],
-    'style' => $posts['style'],
-    'position' => $posts['position'],
-  );
-  $format = array(
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-  );
-  return insert_db_table_record($table, $data, $format);
-}
-endif;
-
-//レコードの編集
-if ( !function_exists( 'update_speech_balloon_record' ) ):
-function update_speech_balloon_record($id, $posts){
-  $table = SPEECH_BALLOONS_TABLE_NAME;
-  $now = current_time('mysql');
-  $data = array(
-    'modified' => $now,
-    'title' => $posts['title'],
-    'name' => $posts['name'],
-    'icon' => $posts['icon'],
-    'style' => $posts['style'],
-    'position' => $posts['position'],
-  );
-  $where = array('id' => $id);
-  $format = array(
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-    '%s',
-  );
-  $where_format = array('%d');
-  return update_db_table_record($table, $data, $where, $format, $where_format);
-}
-endif;
-
 
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):

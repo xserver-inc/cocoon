@@ -25,10 +25,10 @@ generate_sort_options_tag($keyword, $order_by);
     <td>
       <?php //吹き出しの表示
       generate_speech_balloon_tag(
-        $records->name,
-        $records->icon,
-        $records->style,
-        $records->position,
+        $record->name,
+        $record->icon,
+        $record->style,
+        $record->position,
         'あああああああああああああああああああああああああああああああ'
       ); ?>
     </td>
