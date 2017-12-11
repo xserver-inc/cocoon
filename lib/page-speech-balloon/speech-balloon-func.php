@@ -25,6 +25,7 @@ define('SBS_THINK', 'think');
 define('SBP_LEFT', 'l');
 define('SBP_RIGHT', 'r');
 
+
 //吹き出しテーブルのバージョン取得
 define('OP_SPEECH_BALLOONS_TABLE_VERSION', 'speech_balloons_table_version');
 if ( !function_exists( 'get_speech_balloons_table_version' ) ):
