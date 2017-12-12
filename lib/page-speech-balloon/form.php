@@ -58,7 +58,7 @@
         <td>
           <?php
           generate_upload_image_tag('icon', $icon);
-          generate_tips_tag(__( 'アイコンとなる画像を選択してください。200pxの正方形画像を設定してください。', THEME_NAME ));
+          generate_tips_tag(__( 'アイコンとなる画像を選択してください。160px以上の正方形画像を設定してください。', THEME_NAME ));
           ?>
         </td>
       </tr>
