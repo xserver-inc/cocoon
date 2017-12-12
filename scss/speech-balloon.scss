@@ -83,3 +83,25 @@
   }
 
 }
+
+///////////////////////////////////////
+// アイコンスタイル
+///////////////////////////////////////
+.sbis-sn{
+  .speech-icon-image{
+    border-radius: 0;
+    border-style: none;
+  }
+}
+
+.sbis-sb{
+  .speech-icon-image{
+    border-radius: 0;
+  }
+}
+
+.sbis-cn{
+  .speech-icon-image{
+    border-style: none;
+  }
+}

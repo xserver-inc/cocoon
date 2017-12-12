@@ -97,6 +97,24 @@
         </td>
       </tr>
 
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag('iconstyle', __( 'アイコンスタイル', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+          $options = array(
+            SBIS_SQUARE_NONE   => __( '四角（枠線なし）', THEME_NAME ),
+            SBIS_SQUARE_BORDER => __( '四角（枠線あり）', THEME_NAME ),
+            SBIS_CIRCLE_NONE   => __( '丸（枠線なし）', THEME_NAME ),
+            SBIS_CIRCLE_BORDER => __( '丸（枠線あり）', THEME_NAME ),
+          );
+          generate_selectbox_tag('iconstyle', $options, $iconstyle);
+          generate_tips_tag(__( 'アイコンの形や枠線を指定します。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
     </tbody>
   </table>
   <input type="hidden" name="action" value="<?php echo $action; ?>">

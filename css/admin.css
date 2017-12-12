@@ -2637,6 +2637,13 @@
       left: auto;
       border-left: 12px solid #fff;
       border-right: none; }
+  .demo .sbis-sn .speech-icon-image {
+    border-radius: 0;
+    border-style: none; }
+  .demo .sbis-sb .speech-icon-image {
+    border-radius: 0; }
+  .demo .sbis-cn .speech-icon-image {
+    border-style: none; }
   .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
     z-index: 99999; }
   .demo .js-clingify-wrapper {
