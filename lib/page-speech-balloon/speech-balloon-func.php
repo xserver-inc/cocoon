@@ -21,9 +21,15 @@ define('SBS_FLAT', 'flat');
 define('SBS_LINE', 'line');
 define('SBS_THINK', 'think');
 
-//サブタイプ
+//ポジション
 define('SBP_LEFT', 'l');
 define('SBP_RIGHT', 'r');
+
+//アイコンスタイル
+define('SBIS_SQUARE_NONE', 'sn');
+define('SBIS_SQUARE_BORDER', 'sb');
+define('SBIS_CIRCLE_NONE', 'cn');
+define('SBIS_CIRCLE_BORDER', 'cb');
 
 
 //吹き出しテーブルのバージョン取得
@@ -54,8 +60,10 @@ function insert_speech_balloon_record($posts){
     'icon' => $posts['icon'],
     'style' => $posts['style'],
     'position' => $posts['position'],
+    'iconstyle' => $posts['iconstyle'],
   );
   $format = array(
+    '%s',
     '%s',
     '%s',
     '%s',
@@ -80,9 +88,11 @@ function update_speech_balloon_record($id, $posts){
     'icon' => $posts['icon'],
     'style' => $posts['style'],
     'position' => $posts['position'],
+    'iconstyle' => $posts['iconstyle'],
   );
   $where = array('id' => $id);
   $format = array(
+    '%s',
     '%s',
     '%s',
     '%s',
@@ -104,6 +114,7 @@ function add_default_speech_balloon_records(){
   $posts['icon']  = SB_DEFAULT_MAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '女性デフォルトサンプル（右）', THEME_NAME );
@@ -111,6 +122,7 @@ function add_default_speech_balloon_records(){
   $posts['icon']  = SB_DEFAULT_WOMAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);
 }
 endif;
@@ -133,6 +145,7 @@ function create_speech_balloons_table() {
     icon varchar(256),
     style varchar(20),
     position varchar(20),
+    iconstyle varchar(20),
     PRIMARY KEY (id),
     INDEX (title),
     INDEX (name)

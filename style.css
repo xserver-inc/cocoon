@@ -3430,6 +3430,7 @@ div.fb-like-mobile {
 
 .speech-balloon {
   margin-left: 100px;
+  margin-right: 100px;
   position: relative;
   padding: 10px;
   background-color: #fff;
@@ -3444,11 +3445,11 @@ div.fb-like-mobile {
   display: block;
   width: 0;
   height: 0;
-  left: -15px;
+  left: -12px;
   top: 10px;
-  border-right: 15px solid #cccfd2;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  border-right: 12px solid #cccfd2;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
 .speech-balloon::after {
@@ -3457,11 +3458,30 @@ div.fb-like-mobile {
   display: block;
   width: 0;
   height: 0;
-  left: -12px;
+  left: -9px;
   top: 10px;
-  border-right: 15px solid #fff;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  border-right: 12px solid #fff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.sbp-r {
+  /* アイコンを右に表示 */
+}
+.sbp-r .speech-person {
+  float: right;
+}
+.sbp-r .speech-balloon::before {
+  right: -12px;
+  left: auto;
+  border-left: 12px solid #cccfd2;
+  border-right: none;
+}
+.sbp-r .speech-balloon::after {
+  right: -9px;
+  left: auto;
+  border-left: 12px solid #fff;
+  border-right: none;
 }
 
 /************************************
