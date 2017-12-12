@@ -141,11 +141,11 @@ function create_speech_balloons_table() {
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     title varchar(126),
-    name varchar(36),
-    icon varchar(256),
-    style varchar(20),
-    position varchar(20),
-    iconstyle varchar(20),
+    name varchar(36) DEFAULT '".SB_DEFAULT_NAME."',
+    icon varchar(256) DEFAULT '".SB_DEFAULT_MAN_ICON."',
+    style varchar(20) DEFAULT '".SBS_STANDARD."',
+    position varchar(20) DEFAULT '".SBP_LEFT."',
+    iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."',
     PRIMARY KEY (id),
     INDEX (title),
     INDEX (name)
@@ -191,24 +191,29 @@ endif;
 //吹き出しテーブルレコードの取得
 if ( !function_exists( 'get_speech_balloons' ) ):
 function get_speech_balloons( $keyword = null, $order_by = null ) {
+
   update_speech_balloons_table();
-  global $wpdb;
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
-  $where = null;
-  if ($keyword) {
-    $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
-    //$where = (" WHERE title LIKE %%$keyword%%");
-  }
-  if ($order_by) {
-    $order_by = esc_sql(" ORDER BY $order_by");
-  }
-  $query = "SELECT * FROM {$table_name}".
-              $where.
-              $order_by;
+  return get_db_table_records($table_name, 'title', $keyword, $order_by);
 
-  $records = $wpdb->get_results( $query );
+  // update_speech_balloons_table();
+  // global $wpdb;
+  // $table_name = SPEECH_BALLOONS_TABLE_NAME;
+  // $where = null;
+  // if ($keyword) {
+  //   $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
+  //   //$where = (" WHERE title LIKE %%$keyword%%");
+  // }
+  // if ($order_by) {
+  //   $order_by = esc_sql(" ORDER BY $order_by");
+  // }
+  // $query = "SELECT * FROM {$table_name}".
+  //             $where.
+  //             $order_by;
 
-  return $records;
+  // $records = $wpdb->get_results( $query );
+
+  // return $records;
 }
 endif;
 

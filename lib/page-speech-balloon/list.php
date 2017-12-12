@@ -40,6 +40,7 @@ generate_sort_options_tag($keyword, $order_by);
 <table class="sb-list" style="width: 100%;">
   <?php foreach ($records as $record):
   //var_dump($record);
+  _v($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
   $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>
