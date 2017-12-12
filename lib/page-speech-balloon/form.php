@@ -73,7 +73,7 @@
             SBS_STANDARD => __( 'デフォルト', THEME_NAME ),
             SBS_FLAT => __( 'フラット', THEME_NAME ),
             SBS_LINE => __( 'LINE', THEME_NAME ),
-            SBS_THINK => __( '考え事', THEME_NAME ),
+            //SBS_THINK => __( '考え事', THEME_NAME ),
           );
           generate_selectbox_tag('style', $options, $style);
           generate_tips_tag(__( '吹き出しのスタイルを設定します。', THEME_NAME ));

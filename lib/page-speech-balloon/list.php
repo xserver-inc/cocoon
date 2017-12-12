@@ -53,10 +53,7 @@ generate_sort_options_tag($keyword, $order_by);
       <div class="demo">
       <?php //吹き出しの表示
       generate_speech_balloon_tag(
-        $record->name,
-        $record->icon,
-        $record->style,
-        $record->position,
+        $record,
         SB_SAMPLE_TEXTS[rand(0, 12)]
       ); ?>
       </div>
