@@ -218,10 +218,12 @@ if ( !function_exists( 'get_speech_balloon' ) ):
 function get_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
+  $record->title = !empty($record->title) ? $record->title : '';
   $record->name = !empty($record->name) ? $record->name : SB_DEFAULT_NAME;
   $record->icon = !empty($record->icon) ? $record->icon : SB_DEFAULT_MAN_ICON;
   $record->style = !empty($record->style) ? $record->style : SBS_FLAT;
   $record->position = !empty($record->position) ? $record->position : SBP_LEFT;
+  $record->iconstyle = !empty($record->iconstyle) ? $record->iconstyle : SBIS_CIRCLE_BORDER;
 
   return $record;
 }

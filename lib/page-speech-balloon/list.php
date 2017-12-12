@@ -45,6 +45,11 @@ generate_sort_options_tag($keyword, $order_by);
    ?>
   <tr style="margin-bottom: 20px">
     <td>
+      <?php if ($record->title): ?>
+      <div>
+        <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
+      </div>
+      <?php endif ?>
       <div class="demo">
       <?php //吹き出しの表示
       generate_speech_balloon_tag(
@@ -55,7 +60,7 @@ generate_sort_options_tag($keyword, $order_by);
         SB_SAMPLE_TEXTS[rand(0, 12)]
       ); ?>
       </div>
-      <div class="shortcode"><?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value='[speech name="<?php echo esc_html($record->name); ?>" icon="<?php echo esc_html($record->icon); ?>" style="<?php echo esc_html($record->style); ?>" position="<?php echo esc_html($record->position); ?>"]VOICE[/speech]' style="width: 80%;"></div>
+      <div class="shortcode"><?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value='[speech name="<?php echo esc_html($record->name); ?>" icon="<?php echo esc_html($record->icon); ?>" style="<?php echo esc_html($record->style); ?>" pos="<?php echo esc_html($record->position); ?>" is="<?php echo esc_html($record->iconstyle); ?>"]VOICE[/speech]' style="width: 80%;"></div>
     </td>
     <td class="sb-list-option" style="width: 50px;">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>

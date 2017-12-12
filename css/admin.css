@@ -3471,7 +3471,8 @@ select option.fa {
 .sb-list .demo {
   background-color: #fff;
   resize: none;
-  border-style: none; }
+  border-style: none;
+  padding-bottom: 0; }
 .sb-list .demo .speech-wrap {
   margin: 0; }
 .sb-list .shortcode {
