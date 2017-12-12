@@ -232,7 +232,7 @@ endif;
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):
 function generate_speech_balloon_tag($record, $voice){?>
-  <div class="speech-wrap sbs-<?php echo esc_html($record->style); ?> sbp-<?php echo esc_html($record->position); ?> cf">
+  <div class="speech-wrap sb-id-<?php echo esc_html($record->id); ?> sbs-<?php echo esc_html($record->style); ?> sbp-<?php echo esc_html($record->position); ?> sbis-<?php echo esc_html($record->iconstyle); ?> cf">
     <div class="speech-person">
       <figure class="speech-icon">
         <img src="<?php echo esc_html($record->icon); ?>" alt="<?php echo esc_html($record->name); ?>" class="speech-icon-image">
