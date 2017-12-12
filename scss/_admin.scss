@@ -278,6 +278,10 @@ form.admin-settings{
 
 }
 
+// .sb-demo{
+//   @import "speech-balloon";
+// }
+
 /*カスタムボックスラベル*/
 .box-label{
   font-weight: bold;
@@ -487,4 +491,19 @@ select option.fa{
 //カテゴリ編集ページの横幅
 #edittag{
   max-width: 1200px;
+}
+
+.sb-list{
+  .demo{
+    background-color: #fff;
+    resize: none;
+    border-style: none;
+  }
+
+  .demo .speech-wrap{
+    margin: 0;
+  }
+  .shortcode{
+    margin-bottom: 20px;
+  }
 }

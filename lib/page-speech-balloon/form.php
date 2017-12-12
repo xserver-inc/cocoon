@@ -10,8 +10,6 @@
     $icon = $record->icon;
     $style = $record->style;
     $position = $record->position;
-    _v($record);
-    _v($position);
 
   } else {
     $action = 'new';

@@ -16,7 +16,7 @@ define('SB_DEFAULT_MAN_ICON', get_template_directory_uri().'/images/man.png');
 define('SB_DEFAULT_WOMAN_ICON', get_template_directory_uri().'/images/woman.png');
 
 //スタイル
-define('SBS_STANDARD', 'standard');
+define('SBS_STANDARD', 'stn');
 define('SBS_FLAT', 'flat');
 define('SBS_LINE', 'line');
 define('SBS_THINK', 'think');
@@ -217,10 +217,10 @@ endif;
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):
 function generate_speech_balloon_tag($name, $icon, $style, $position, $voice){?>
-  <div class="speech-wrap sbs-<?php echo esc_html($style); ?> sbp-<?php echo esc_html($position); ?>">
+  <div class="speech-wrap sbs-<?php echo esc_html($style); ?> sbp-<?php echo esc_html($position); ?> cf">
     <div class="speech-person">
       <figure class="speech-icon">
-        <img src="<?php echo esc_html($icon); ?>" alt="<?php echo esc_html($name); ?>">
+        <img src="<?php echo esc_html($icon); ?>" alt="<?php echo esc_html($name); ?>" class="speech-icon-image">
       </figure>
       <div class="speech-name">
         <?php echo esc_html($name); ?>

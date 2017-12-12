@@ -439,7 +439,7 @@
   * 続きはWEBで的な検索ボックス
   ********************************/
   /*メインカランの2カラム化*/
-  /* 吹き出しのCSS　*/
+  /* アイコンを左に表示 */
   /************************************
   ** clingify
   ************************************/
@@ -2580,98 +2580,48 @@
       float: none;
       width: auto;
       padding: 0; } }
-  .demo .entry-content .l-fuki,
-  .demo .entry-content .r-fuki {
+  .demo .speech-wrap {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 16px; }
+  .demo .speech-person {
+    float: left;
+    width: 80px; }
+  .demo .speech-icon-image {
+    border-radius: 50%;
+    border: 2px solid #cccfd2; }
+  .demo .speech-name {
+    text-align: center;
+    font-size: 13px; }
+  .demo .speech-balloon {
+    margin-left: 100px;
     position: relative;
-    width: 80%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    padding: 20px;
-    border-radius: 6px;
-    border: 2px solid #999;
-    box-shadow: 1px 1px 5px #aaa;
-    background-color: #fff;
-    z-index: 1; }
-  .demo .entry-content .l-fuki {
-    margin: 20px 20% 40px 0; }
-  .demo .entry-content .r-fuki {
-    margin: 20px 0 40px 19%; }
-  .demo .entry-content .l-fuki::before,
-  .demo .entry-content .r-fuki::before {
-    position: absolute;
-    content: "";
-    top: 16px;
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid #999;
-    border-bottom: 2px solid #999;
-    background-color: #fff;
-    z-index: 2; }
-  .demo .entry-content .l-fuki::before {
-    right: -7px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg); }
-  .demo .entry-content .r-fuki::before {
-    left: -7px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg); }
-  .demo .entry-content .l-fuki::after,
-  .demo .entry-content .r-fuki::after {
-    position: absolute;
-    content: "";
-    width: 80px;
-    height: 80px;
-    top: -10px;
-    border-radius: 40px;
-    border: 3px solid #fff;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    box-shadow: 1px 1px 5px #aaa; }
-  .demo .entry-content .l-fuki::after {
-    right: -110px; }
-  .demo .entry-content .r-fuki::after {
-    left: -110px; }
-  @media screen and (max-width: 620px) {
-    .demo .entry-content .l-fuki,
-    .demo .entry-content .r-fuki {
-      width: 70%; }
-    .demo .entry-content .l-fuki {
-      margin-right: 30%; }
-    .demo .entry-content .r-fuki {
-      margin-left: 30%; } }
-  @media screen and (max-width: 478px) {
-    .demo .entry-content .l-fuki::after,
-    .demo .entry-content .r-fuki::after {
-      width: 60px;
-      height: 60px;
-      border-radius: 30px; }
-    .demo .entry-content .l-fuki::after {
-      right: -84px; }
-    .demo .entry-content .r-fuki::after {
-      left: -84px; } }
-  .demo .クラス名::after {
-    background-image: url(画像のURL); }
-  .demo .クラス名::after {
-    background-image: url(画像のURL); }
-  .demo .test {
-    border: 2px solid #ddd;
-    height: 60px;
     padding: 10px;
-    position: relative;
-    margin-right: 70px; }
-    .demo .test:after {
-      content: "name";
-      position: absolute;
-      right: -70px;
-      top: 0px;
-      height: 60px;
-      background-color: #ddd;
-      left: calc(100% + 10px);
-      display: table;
-      border-radius: 35px;
-      padding-top: 60px;
-      background-image: url(http://cocoon.dev/wp-content/uploads/2017/04/pexels-photo-247978-320x180.jpeg); }
+    background-color: #fff;
+    border: 2px solid #cccfd2;
+    border-radius: 6px; }
+  .demo .speech-balloon::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 10px;
+    border-right: 15px solid #cccfd2;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; }
+  .demo .speech-balloon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -12px;
+    top: 10px;
+    border-right: 15px solid #fff;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent; }
   .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
     z-index: 99999; }
   .demo .js-clingify-wrapper {
@@ -3502,3 +3452,12 @@ select option.fa {
 
 #edittag {
   max-width: 1200px; }
+
+.sb-list .demo {
+  background-color: #fff;
+  resize: none;
+  border-style: none; }
+.sb-list .demo .speech-wrap {
+  margin: 0; }
+.sb-list .shortcode {
+  margin-bottom: 20px; }
