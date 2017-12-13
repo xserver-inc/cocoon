@@ -14,7 +14,7 @@
     $iconstyle = $record->iconstyle;
 
     //吹き出しデモの表示
-    require_once 'demo.php';
+    //require_once 'demo.php';
 
   } else {
     $action = 'new';
@@ -123,5 +123,5 @@
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-   <?php submit_button(__( '保存', THEME_NAME )); ?>
+  <?php submit_button(__( '保存', THEME_NAME )); ?>
 </form>
