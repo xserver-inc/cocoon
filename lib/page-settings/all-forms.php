@@ -57,7 +57,7 @@
                 generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family());
                 generate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
 
-                $options = array(
+                $font_options = array(
                   '12px' => __( '12px', THEME_NAME ),
                   '13px' => __( '13px', THEME_NAME ),
                   '14px' => __( '14px', THEME_NAME ),
@@ -70,7 +70,7 @@
                   '21px' => __( '21px', THEME_NAME ),
                   '22px' => __( '22px', THEME_NAME ),
                 );
-                generate_selectbox_tag(OP_SITE_FONT_SIZE, $options, get_site_font_size());
+                generate_selectbox_tag(OP_SITE_FONT_SIZE, $font_options, get_site_font_size());
                 generate_tips_tag(__( 'サイト全体のフォントサイズを変更します。', THEME_NAME ));
 
                 ?>
@@ -93,6 +93,20 @@
             </div>
           </td>
         </tr>
+
+        <!-- モバイルサイトフォント -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_MOBILE_SITE_FONT_SIZE, __('モバイルサイトフォント', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+                generate_selectbox_tag(OP_MOBILE_SITE_FONT_SIZE, $font_options, get_mobile_site_font_size());
+              generate_tips_tag(__( 'モバイル端末でのフォントサイズを変更します（横幅が480px以下の端末）。', THEME_NAME ));
+             ?>
+          </td>
+        </tr>
+
 
         <!-- サイト背景色 -->
         <tr>

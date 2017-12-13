@@ -1,4 +1,13 @@
 <?php //CSS設定用 ?>
+<?php //モバイルサイトフォント
+if (get_mobile_site_font_size()): ?>
+@media screen and (max-width: 480px){
+  .page-body{
+    font-size: <?php echo get_mobile_site_font_size(); ?>;
+  }
+}
+}
+<?php endif ?>
 <?php //サイトキー色
 if (get_site_key_color()): ?>
 .header-container,

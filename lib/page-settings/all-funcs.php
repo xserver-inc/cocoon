@@ -43,6 +43,14 @@ function get_site_font_size(){
 }
 endif;
 
+//フォントサイズ
+define('OP_MOBILE_SITE_FONT_SIZE', 'mobile_site_font_size');
+if ( !function_exists( 'get_mobile_site_font_size' ) ):
+function get_mobile_site_font_size(){
+  return get_theme_option(OP_MOBILE_SITE_FONT_SIZE, '16px');
+}
+endif;
+
 //サイト背景色
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');
 if ( !function_exists( 'get_site_background_color' ) ):
