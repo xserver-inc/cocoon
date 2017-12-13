@@ -234,6 +234,14 @@ function get_speech_balloon( $id ) {
 }
 endif;
 
+//関数テキストレコードの削除
+if ( !function_exists( 'delete_peech_balloon' ) ):
+function delete_peech_balloon( $id ) {
+  $table_name = SPEECH_BALLOONS_TABLE_NAME;
+  return delete_db_table_record( $table_name, $id );
+}
+endif;
+
 //吹き出しHTMLを生成
 if ( !function_exists( 'generate_speech_balloon_tag' ) ):
 function generate_speech_balloon_tag($record, $voice){?>

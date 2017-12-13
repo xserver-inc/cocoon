@@ -1,7 +1,7 @@
 <?php //
 define('SB_SAMPLE_TEXTS',
   array(
-    __( '吾輩わがはいは猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。', THEME_NAME ),
+    __( '吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。', THEME_NAME ),
     __( '雨ニモマケズ 風ニモマケズ 雪ニモ夏ノ暑サニモマケヌ 丈夫ナカラダヲモチ 慾ハナク 決シテ瞋ラズ ツモシヅカニワラッテヰル', THEME_NAME ),
     __( '私わたくしはその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本名は打ち明けない。', THEME_NAME ),
     __( 'メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。メロスには政治がわからぬ。', THEME_NAME ),
@@ -39,7 +39,6 @@ generate_sort_options_tag($keyword, $order_by);
 <table class="sb-list" style="width: 100%;">
   <?php foreach ($records as $record):
   //var_dump($record);
-  _v($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
   $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>

@@ -7,7 +7,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
     ///////////////////////////////////////
     // 内容の削除
     ///////////////////////////////////////
-    require_once 'posts-delete.php';
+    require_once 'post-delete.php';
   }
 } else {
   if( isset($_POST[HIDDEN_FIELD_NAME]) &&
@@ -16,7 +16,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
     ///////////////////////////////////////
     // 内容の保存
     ///////////////////////////////////////
-    require_once 'posts.php';
+    require_once 'post.php';
   }
 }
 
