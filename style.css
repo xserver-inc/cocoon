@@ -4125,6 +4125,14 @@ div.fb-like-mobile {
     padding: 1em;
     font-size: 16px;
   }
+
+  .sbp-l .speech-balloon {
+    margin-right: auto;
+  }
+
+  .sbp-r .speech-balloon {
+    margin-left: auto;
+  }
 }
 @media screen and (max-width: 480px) {
   h2, h3 {
@@ -4242,6 +4250,42 @@ div.fb-like-mobile {
 
   .author-description {
     font-size: 0.84em;
+  }
+
+  .speech-person {
+    width: 40px;
+  }
+
+  .speech-wrap .speech-balloon {
+    font-size: 0.8em;
+    padding: 7px;
+  }
+  .speech-wrap .speech-balloon::before, .speech-wrap .speech-balloon::after {
+    border-bottom-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 7px;
+  }
+  .speech-wrap .speech-balloon::before {
+    left: -7px;
+  }
+  .speech-wrap .speech-balloon::after {
+    left: -5px;
+  }
+  .speech-wrap.sbp-l .speech-balloon {
+    margin-left: 50px;
+  }
+  .speech-wrap.sbp-r .speech-balloon {
+    margin-right: 50px;
+  }
+  .speech-wrap.sbp-r .speech-balloon::before {
+    right: -7px;
+    left: auto;
+    border-left-width: 7px;
+  }
+  .speech-wrap.sbp-r .speech-balloon::after {
+    border-left-width: 7px;
+    right: -5px;
+    left: auto;
   }
 }
 @media print {

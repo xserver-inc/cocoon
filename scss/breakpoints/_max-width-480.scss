@@ -118,3 +118,83 @@ body{
 // .article{
 //   @extend %author_box_nallow;
 // }
+
+///////////////////////////////////////
+// 吹き出し
+///////////////////////////////////////
+.speech-person{
+  width: 40px;
+}
+
+.speech-wrap{
+  .speech-balloon{
+    font-size: 0.8em;
+    padding: 7px;
+
+    &::before,
+    &::after{
+      border-bottom-width: 7px;
+      border-right-width: 7px;
+      border-top-width: 7px;
+    }
+    &::before{
+      left: -7px;
+    }
+    &::after{
+      left: -5px;
+    }
+
+  }
+
+  &.sbp-l{
+    .speech-balloon{
+      margin-left: 50px;
+    }
+  }
+  &.sbp-r{
+    .speech-balloon{
+      margin-right: 50px;
+
+      &::before{
+        right: -7px;
+        left: auto;
+        border-left-width: 7px;
+      }
+      &::after{
+        border-left-width: 7px;
+        right: -5px;
+        left: auto;
+      }
+    }
+  }
+}
+
+
+
+// .speech-balloon::before {
+//     border-bottom: 7px solid transparent;
+//     border-right: 7px solid #cccfd2;
+//     border-top: 7px solid transparent;
+//     content: "";
+//     display: block;
+//     height: 0;
+//     left: -7px;
+//     position: absolute;
+//     top: 10px;
+//     width: 0;
+// }
+// .sbs-line .speech-balloon::after {
+//     left: -5px;
+// }
+// .speech-balloon::after {
+//     border-bottom: 7px solid transparent;
+//     border-right: 7px solid #fff;
+//     border-top: 7px solid transparent;
+//     content: "";
+//     display: block;
+//     height: 0;
+//     left: -5px;
+//     position: absolute;
+//     top: 10px;
+//     width: 0;
+// }
