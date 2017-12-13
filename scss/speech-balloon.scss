@@ -105,3 +105,46 @@
     border-style: none;
   }
 }
+
+///////////////////////////////////////
+// 吹き出しスタイル
+///////////////////////////////////////
+.sbs-flat{
+  .speech-balloon{
+    background-color: #f1f1f1;
+    border-color: #f1f1f1;
+
+    &::before,
+    &::after{
+      border-right-color: #f1f1f1;
+      border-left-color: #f1f1f1;
+    }
+  }
+}
+
+.sbs-line{
+  .speech-balloon{
+    border-width: 1px;
+
+    &::after{
+      left: -10px;
+    }
+  }
+}
+
+.sbs-line.sbp-r{
+  .speech-balloon{
+    background-color: #85e249;
+    border-color: #85e249;
+
+    &::after{
+      left: auto;
+      right: -10px;
+    }
+    &::before,
+    &::after{
+      border-right-color: #85e249;
+      border-left-color: #85e249;
+    }
+  }
+}

@@ -14,7 +14,7 @@
     $iconstyle = $record->iconstyle;
 
     //吹き出しデモの表示
-    //require_once 'demo.php';
+    require_once 'demo.php';
 
   } else {
     $action = 'new';
@@ -75,7 +75,7 @@
           $options = array(
             SBS_STANDARD => __( 'デフォルト', THEME_NAME ),
             SBS_FLAT => __( 'フラット', THEME_NAME ),
-            SBS_LINE => __( 'LINE', THEME_NAME ),
+            SBS_LINE => __( 'LINE風', THEME_NAME ),
             //SBS_THINK => __( '考え事', THEME_NAME ),
           );
           generate_selectbox_tag('style', $options, $style);
