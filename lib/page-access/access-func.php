@@ -123,6 +123,7 @@ function update_accesses_table() {
 endif;
 update_accesses_table();
 //_v( date('Y-m-d', strtotime(date('Y-m-d').' -99 day')) );
+_v(date('Y-m-d'));
 
 //DBにアクセスをカウントするし
 if ( !function_exists( 'count_this_page_access' ) ):
@@ -131,7 +132,7 @@ function count_this_page_access(){
   if (is_singular() && is_access_count_enable()) {
     global $post;
     $post_id = $post->ID;
-    $date = date('Y-m-d');
+    $date = current_time('Y-m-d');
     $last_ip = $_SERVER['REMOTE_ADDR'];
 
     $record = get_accesse_from_post_id_and_date($post_id, $date);
@@ -197,7 +198,7 @@ function get_todays_access_count($post_id = null){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $date = date('Y-m-d');
+    $date = current_time('Y-m-d');
 
     $record = get_accesse_from_post_id_and_date($post_id, $date);
     $res = $record->count;
@@ -217,8 +218,8 @@ function get_several_access_count($post_id = null, $range = 'all'){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $date = date('Y-m-d');
-    $date_before = date('Y-m-d', strtotime(date('Y-m-d').' -'.$range.' day'));
+    $date = current_time('Y-m-d');
+    $date_before = date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$range.' day'));
     $table_name = ACCESSES_TABLE_NAME;
 
     if ($range == 'all') {
@@ -252,5 +253,11 @@ endif;
 if ( !function_exists( 'get_all_access_count' ) ):
 function get_all_access_count($post_id = null){
   return get_several_access_count($post_id, 'all');
+}
+endif;
+
+if ( !function_exists( 'func_name' ) ):
+function func_name($value){
+
 }
 endif;
