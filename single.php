@@ -1,15 +1,4 @@
-<?php get_header();
-
-if (is_access_count_enable()) {
-  count_this_page_access();
-
-  // var_dump(get_todays_access_count());
-  // var_dump(get_last_7days_access_count());
-  // var_dump(get_last_30days_access_count());
-  // var_dump(get_all_access_count());
-}
-
- ?>
+<?php get_header(); ?>
 
 <?php //パンくずリストがメイントップの場合
 if (is_single_breadcrumbs_position_main_top()){

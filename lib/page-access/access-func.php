@@ -227,7 +227,7 @@ function get_several_access_count($post_id = null, $range = 'all'){
       $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d AND date BETWEEN %s AND %s", $post_id, $date_before, $date);
     }
 
-    $res = $wpdb->get_row( $query );
+    $res = $wpdb->get_var( $query );
     //_v($query );
   }
   return $res;

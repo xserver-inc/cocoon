@@ -74,6 +74,9 @@
   <?php //フッター挿入用のユーザー用テンプレート
   get_template_part('tmp-user/footer-insert'); ?>
 
+  <?php //管理者用パネル
+  get_template_part('tmp/admin-panel'); ?>
+
 </body>
 
 </html>
