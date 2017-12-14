@@ -1,14 +1,14 @@
 <?php //アクセス数
 
 //関数テキストテーブルのバージョン
-define('ACCESSES_TABLE_VERSION', rand(0, 99));
+define('ACCESSES_TABLE_VERSION', '0.0.0');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
 //アクセス数を取得するか
 define('OP_ACCESS_COUNT_ENABLE', 'access_count_enable');
 if ( !function_exists( 'is_access_count_enable' ) ):
 function is_access_count_enable(){
-  return get_theme_option(OP_ACCESS_COUNT_ENABLE);
+  return get_theme_option(OP_ACCESS_COUNT_ENABLE, 1);
 }
 endif;
 
@@ -24,6 +24,44 @@ endif;
 if ( !function_exists( 'is_accesses_table_exist' ) ):
 function is_accesses_table_exist(){
   return is_db_table_exist(ACCESSES_TABLE_NAME);
+}
+endif;
+
+//レコードを追加
+if ( !function_exists( 'insert_accesses_record' ) ):
+function insert_accesses_record($posts){
+  $table = ACCESSES_TABLE_NAME;
+  $data = array(
+    'post_id' => $posts['post_id'],
+    'date' => $posts['date'],
+    'count' => $posts['count'],
+    'last_ip' => $posts['last_ip'],
+  );
+  $format = array(
+    '%d',
+    '%s',
+    '%d',
+    '%s',
+  );
+  return insert_db_table_record($table, $data, $format);
+}
+endif;
+
+//レコードの編集
+if ( !function_exists( 'update_accesses_record' ) ):
+function update_accesses_record($id, $posts){
+  $table = ACCESSES_TABLE_NAME;
+  $data = array(
+    'count' => $posts['count'],
+    'last_ip' => $posts['last_ip'],
+  );
+  $where = array('id' => $id);
+  $format = array(
+    '%d',
+    '%s',
+  );
+  $where_format = array('%d');
+  return update_db_table_record($table, $data, $where, $format, $where_format);
 }
 endif;
 
@@ -84,15 +122,135 @@ function update_accesses_table() {
 }
 endif;
 update_accesses_table();
-//_v(date("Y-m-d",strtotime("+_37 day")));
+//_v( date('Y-m-d', strtotime(date('Y-m-d').' -99 day')) );
 
 //DBにアクセスをカウントするし
 if ( !function_exists( 'count_this_page_access' ) ):
-function count_this_page_access($post_id){
+function count_this_page_access(){
   //投稿・固定ページのみでカウントする
-  if (is_singular()) {
-    # code...
+  if (is_singular() && is_access_count_enable()) {
+    global $post;
+    $post_id = $post->ID;
+    $date = date('Y-m-d');
+    $last_ip = $_SERVER['REMOTE_ADDR'];
+
+    $record = get_accesse_from_post_id_and_date($post_id, $date);
+
+    $posts = array();
+
+    $res = false;
+    if ($record) {
+      //アクセスカウントの連続カウント防止
+      if ($record->last_ip != $last_ip) {
+        $id = $record->id;
+        $posts['last_ip'] = $last_ip;
+        $posts['count'] = intval($record->count) + 1;
+        $res = update_accesses_record($id, $posts);
+      }
+    } else {
+      $posts['post_id'] = $post_id;
+      $posts['date'] = $date;
+      $posts['last_ip'] = $last_ip;
+      $posts['count'] = 1;
+      $res = insert_accesses_record($posts);
+    }
+
+    return $res;
+    // _v($query);
+    // _v($record);
   }
 
+}
+endif;
+// _v(is_singular());
+// count_this_page_access();
+
+//投稿IDと日付からレコードを取得
+if ( !function_exists( 'get_accesse_record' ) ):
+function get_accesse_from_post_id_and_date($post_id, $date){
+  global $wpdb;
+  $table_name = ACCESSES_TABLE_NAME;
+
+  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d AND date = %s", $post_id, $date);
+
+  $record = $wpdb->get_row( $query );
+
+  return $record;
+}
+endif;
+
+//IDからレコードを取得
+if ( !function_exists( 'get_accesse_from_id' ) ):
+function get_accesse_from_id($id){
+  $table_name = ACCESSES_TABLE_NAME;
+  $record = get_db_table_record( $table_name, $id );
+  return $record;
+}
+endif;
+
+//今日のアクセス数を取得
+if ( !function_exists( 'get_todays_access_count' ) ):
+function get_todays_access_count($post_id = null){
+  $res = 0;
+  if (is_singular()) {
+    global $post;
+    if (!$post_id) {
+      $post_id = $post->ID;
+    }
+    $date = date('Y-m-d');
+
+    $record = get_accesse_from_post_id_and_date($post_id, $date);
+    $res = $record->count;
+  }
+  return $res;
+}
+endif;
+
+//アクセス取得関数（$rangeに取得する日数を入力、もしくはallで全取得）
+if ( !function_exists( 'get_several_access_count' ) ):
+function get_several_access_count($post_id = null, $range = 'all'){
+  $res = 0;
+  if (is_singular()) {
+    global $post;
+    global $wpdb;
+
+    if (!$post_id) {
+      $post_id = $post->ID;
+    }
+    $date = date('Y-m-d');
+    $date_before = date('Y-m-d', strtotime(date('Y-m-d').' -'.$range.' day'));
+    $table_name = ACCESSES_TABLE_NAME;
+
+    if ($range == 'all') {
+      $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d", $post_id);
+    } else {
+      $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d AND date BETWEEN %s AND %s", $post_id, $date_before, $date);
+    }
+
+    $res = $wpdb->get_row( $query );
+    //_v($query );
+  }
+  return $res;
+}
+endif;
+
+//直近7日間のアクセス数を取得
+if ( !function_exists( 'get_last_7days_access_count' ) ):
+function get_last_7days_access_count($post_id = null){
+  return get_several_access_count($post_id, 7);
+}
+endif;
+
+//直近30日間のアクセス数を取得
+if ( !function_exists( 'get_last_30days_access_count' ) ):
+function get_last_30days_access_count($post_id = null){
+  return get_several_access_count($post_id, 30);
+}
+endif;
+
+//全期間のアクセス数を取得
+if ( !function_exists( 'get_all_access_count' ) ):
+function get_all_access_count($post_id = null){
+  return get_several_access_count($post_id, 'all');
 }
 endif;
