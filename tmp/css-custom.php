@@ -6,7 +6,6 @@ if (get_mobile_site_font_size()): ?>
     font-size: <?php echo get_mobile_site_font_size(); ?>;
   }
 }
-}
 <?php endif ?>
 <?php //サイトキー色
 if (get_site_key_color()): ?>

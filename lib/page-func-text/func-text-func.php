@@ -45,7 +45,7 @@ function create_function_texts_table() {
   }
   // SQL文でテーブルを作る
   $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
-      id mediumint(9) NOT NULL AUTO_INCREMENT,
+      id bigint(20) NOT NULL AUTO_INCREMENT,
       date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
       modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
       title varchar(126),

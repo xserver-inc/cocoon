@@ -49,6 +49,7 @@ require_once 'db.php';  //データベース操作関数
 require_once 'page-func-text/func-text-func.php';  //使いまわしテキスト関数
 require_once 'page-speech-balloon/speech-balloon-func.php';  //吹き出し関数
 require_once 'page-speed-up/speed-up-func.php';  //高速化設定関数
+require_once 'page-access/access-func.php';  //アクセス数統計
 require_once 'custom-fields/seo-field.php'; //SEOのページ設定
 require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'custom-fields/page-field.php';//投稿・固定ページのページ設定
