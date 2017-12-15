@@ -4,9 +4,10 @@
 define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
-define('INDEX_ACCESSES_PID', 'index_pid');
-define('INDEX_ACCESSES_PID_DATE', 'index_pid_date');
-define('INDEX_ACCESSES_PID_DATE_PTYPE', 'index_pid_date_ptype');
+// define('INDEX_ACCESSES_PID', 'index_pid');
+// define('INDEX_ACCESSES_PID_PTYPE', 'index_pid_ptype');
+// define('INDEX_ACCESSES_PID_DATE', 'index_pid_date');
+define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
 
 
 //アクセス数を取得するか
@@ -28,9 +29,12 @@ endif;
 //ページタイプの取得
 if ( !function_exists( 'get_accesses_page_type' ) ):
 function get_accesses_page_type(){
-  $res = 's';
-  if (is_page()) {
-    $res = 'p';
+  if (is_single()) {
+    $res = 's'; //single
+  } elseif (is_page()) {
+    $res = 'p'; //page
+  } else {
+    $res = 'n'; //none
   }
   return $res;
 }
@@ -102,14 +106,12 @@ function create_accesses_table() {
   $sql = "CREATE TABLE ".ACCESSES_TABLE_NAME." (
       id bigint(20) NOT NULL AUTO_INCREMENT,
       post_id bigint(20),
-      date varchar(20),
       page_type varchar(2) DEFAULT 's',
+      date varchar(20),
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
-      INDEX ".INDEX_ACCESSES_PID." (post_id),
-      INDEX ".INDEX_ACCESSES_PID_DATE." (post_id,date),
-      INDEX ".INDEX_ACCESSES_PID_DATE_PTYPE." (post_id,date,page_type)
+      INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,page_type,date)
     )";
   $res = create_db_table($sql);
   //_v($res);
@@ -194,16 +196,10 @@ function get_accesse_record_from($post_id, $date, $page_type = 's'){
   global $wpdb;
   $add_where = '';
   $table_name = ACCESSES_TABLE_NAME;
-  if ($page_type) {
-    $index = INDEX_ACCESSES_PID_DATE_PTYPE;
-    $add_where = " AND page_type = '$page_type'";
-    $args = array($post_id, $date, $page_type);
-  } else {
-    $index = INDEX_ACCESSES_PID_DATE;
-    $args = array($post_id, $date);
-  }
+  $index = INDEX_ACCESSES_PID_PTYPE_DATE;
+  $args = array($post_id, $date, $page_type);
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s".$add_where, $args);
+  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND page_type = '$page_type'", $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);
@@ -238,11 +234,13 @@ function get_todays_access_count($post_id = null){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $date = current_time('Y-m-d');
-    $page_type = get_accesses_page_type();
+    // $date = current_time('Y-m-d');
+    // $page_type = get_accesses_page_type();
 
-    $record = get_accesse_record_from($post_id, $date, $page_type);
-    $res = $record->count;
+    // $record = get_accesse_record_from($post_id, $date, $page_type);
+    // $res = $record->count;
+
+    $res = get_several_access_count($post_id, 1);
   }
   return $res;
 }
@@ -264,12 +262,25 @@ function get_several_access_count($post_id = null, $days = 'all'){
     $date = get_current_db_date();
     $date_before = get_current_db_date_before($days);
     $table_name = ACCESSES_TABLE_NAME;
+    $page_type = get_accesses_page_type();
 
-    if ($days == 'all') {
-      $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(".INDEX_ACCESSES_PID_DATE.") WHERE post_id = %d", $post_id);
-    } else {
-      $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(".INDEX_ACCESSES_PID_DATE.") WHERE post_id = %d AND date BETWEEN %s AND %s", $post_id, $date_before, $date);
+    $add_where = '';
+    switch ($days) {
+      case 'all':
+        $args = array($post_id, $page_type);
+        break;
+      case 1:
+        $add_where = " AND date = %s";
+        $args = array($post_id, $page_type, $date);
+        break;
+      default:
+        $add_where = " AND date BETWEEN %s AND %s";
+        $args = array($post_id, $page_type, $date_before, $date);
+        break;
     }
+    //_v($days);
+
+    $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} WHERE post_id = %d AND page_type = %s".$add_where, $args);
 
     $res = $wpdb->get_var( $query );
     //_v($query );
@@ -299,24 +310,30 @@ function get_all_access_count($post_id = null){
 }
 endif;
 
+//アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
 function get_access_ranking_records($days = 'all', $limit = 5){
+  //ページの判別ができない場合はDBにアクセスしない
+  if (!is_singular()) {
+    return null;
+  }
   global $wpdb;
   $table_name = ACCESSES_TABLE_NAME;
-  $where = '';
+  $page_type = get_accesses_page_type();
+  $where = " WHERE page_type = '$page_type'";
   if ($days != 'all') {
     $date = get_current_db_date();
     $date_before = get_current_db_date_before($days);
-    $where = " WHERE date BETWEEN $date AND $date_before ";
+    $where = " AND date BETWEEN $date AND $date_before ";
   }
   if (!is_numeric($limit)) {
     $limit = 5;
   }
-  $query = esc_sql("SELECT post_id, SUM(count) AS sum_count FROM $table_name $where GROUP BY post_id ORDER BY sum_count DESC LIMIT $limit;");
+  $query = ("SELECT post_id, SUM(count) AS sum_count FROM $table_name $where GROUP BY post_id ORDER BY sum_count DESC LIMIT $limit;");
   $records = $wpdb->get_results( $query );
   // _v($query);
   // _v($records);
   return $records;
 }
 endif;
-get_access_ranking_records();
+//get_access_ranking_records();

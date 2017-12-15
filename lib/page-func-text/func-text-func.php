@@ -1,7 +1,7 @@
 <?php //関数テキスト関係の関数
 
 //関数テキストテーブルのバージョン
-define('FUNCTION_TEXTS_TABLE_VERSION', rand(0, 99));//'0.0'
+define('FUNCTION_TEXTS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('FUNCTION_TEXTS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_function_texts');
 //_v(FUNCTION_TEXTS_TABLE_NAME);
 

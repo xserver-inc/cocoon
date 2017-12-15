@@ -24,12 +24,21 @@ ol{
   }
 }
 
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-    margin-top: 35px;
-    margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 35px;
+  margin-bottom: 20px;
 }
 
 h4,

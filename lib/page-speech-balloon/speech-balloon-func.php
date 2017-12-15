@@ -1,7 +1,7 @@
 <?php //吹き出し関係の関数
 
 //関数テキストテーブルのバージョン
-define('SPEECH_BALLOONS_TABLE_VERSION', rand(0, 99));
+define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 
 //関数テキスト移動用URL

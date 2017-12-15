@@ -982,6 +982,13 @@
     .demo .article ol ul,
     .demo .article ol ol {
       margin: 0; }
+  .demo .article h1,
+  .demo .article h2,
+  .demo .article h3,
+  .demo .article h4,
+  .demo .article h5,
+  .demo .article h6 {
+    line-height: 1.25; }
   .demo .article h3,
   .demo .article h4,
   .demo .article h5,
