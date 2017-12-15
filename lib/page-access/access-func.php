@@ -25,6 +25,17 @@ function get_accesses_table_version(){
 }
 endif;
 
+//ページタイプの取得
+if ( !function_exists( 'get_accesses_page_type' ) ):
+function get_accesses_page_type(){
+  $res = 's';
+  if (is_page()) {
+    $res = 'p';
+  }
+  return $res;
+}
+endif;
+
 //テーブルが存在するか
 if ( !function_exists( 'is_accesses_table_exist' ) ):
 function is_accesses_table_exist(){
@@ -39,11 +50,13 @@ function insert_accesses_record($posts){
   $data = array(
     'post_id' => $posts['post_id'],
     'date' => $posts['date'],
+    'page_type' => $posts['page_type'],
     'count' => $posts['count'],
     'last_ip' => $posts['last_ip'],
   );
   $format = array(
     '%d',
+    '%s',
     '%s',
     '%d',
     '%s',
@@ -140,9 +153,10 @@ function count_this_page_access(){
     global $post;
     $post_id = $post->ID;
     $date = current_time('Y-m-d');
+    $page_type = get_accesses_page_type();
     $last_ip = $_SERVER['REMOTE_ADDR'];
 
-    $record = get_accesse_from_post_id_and_date($post_id, $date);
+    $record = get_accesse_record_from($post_id, $date, $page_type);
 
     $posts = array();
 
@@ -158,6 +172,7 @@ function count_this_page_access(){
     } else {
       $posts['post_id'] = $post_id;
       $posts['date'] = $date;
+      $posts['page_type'] = $page_type;
       $posts['last_ip'] = $last_ip;
       $posts['count'] = 1;
       $res = insert_accesses_record($posts);
@@ -175,11 +190,20 @@ endif;
 
 //投稿IDと日付からレコードを取得
 if ( !function_exists( 'get_accesse_record' ) ):
-function get_accesse_from_post_id_and_date($post_id, $date){
+function get_accesse_record_from($post_id, $date, $page_type = 's'){
   global $wpdb;
+  $add_where = '';
   $table_name = ACCESSES_TABLE_NAME;
+  if ($page_type) {
+    $index = INDEX_ACCESSES_PID_DATE_PTYPE;
+    $add_where = " AND page_type = '$page_type'";
+    $args = array($post_id, $date, $page_type);
+  } else {
+    $index = INDEX_ACCESSES_PID_DATE;
+    $args = array($post_id, $date);
+  }
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX(".INDEX_ACCESSES_PID_DATE.") WHERE post_id = %d AND date = %s", $post_id, $date);
+  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s".$add_where, $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);
@@ -215,8 +239,9 @@ function get_todays_access_count($post_id = null){
       $post_id = $post->ID;
     }
     $date = current_time('Y-m-d');
+    $page_type = get_accesses_page_type();
 
-    $record = get_accesse_from_post_id_and_date($post_id, $date);
+    $record = get_accesse_record_from($post_id, $date, $page_type);
     $res = $record->count;
   }
   return $res;

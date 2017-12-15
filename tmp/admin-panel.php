@@ -1,5 +1,5 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
-if (is_singular()):
+if (is_singular() && is_user_logged_in()):
   //アクセス数のカウント
   if (is_access_count_enable()) {
     count_this_page_access();
