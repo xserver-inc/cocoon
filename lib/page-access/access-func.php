@@ -142,7 +142,7 @@ function count_this_page_access(){
     $res = false;
     if ($record) {
       //アクセスカウントの連続カウント防止
-      if ($record->last_ip != $last_ip) {
+      if (($record->last_ip != $last_ip) || DEBUG_MODE) {
         $id = $record->id;
         $posts['last_ip'] = $last_ip;
         $posts['count'] = intval($record->count) + 1;
@@ -189,6 +189,14 @@ function get_accesse_from_id($id){
 }
 endif;
 
+//テーブルのアンインストール
+if ( !function_exists( 'uninstall_accesses_table' ) ):
+function uninstall_accesses_table() {
+  uninstall_db_table(ACCESSES_TABLE_NAME);
+  remove_theme_mod(OP_ACCESSES_TABLE_VERSION);
+}
+endif;
+
 //今日のアクセス数を取得
 if ( !function_exists( 'get_todays_access_count' ) ):
 function get_todays_access_count($post_id = null){
@@ -207,9 +215,9 @@ function get_todays_access_count($post_id = null){
 }
 endif;
 
-//アクセス取得関数（$rangeに取得する日数を入力、もしくはallで全取得）
+//アクセス取得関数（$daysに取得する日数を入力、もしくはallで全取得）
 if ( !function_exists( 'get_several_access_count' ) ):
-function get_several_access_count($post_id = null, $range = 'all'){
+function get_several_access_count($post_id = null, $days = 'all'){
   $res = 0;
   if (is_singular()) {
     global $post;
@@ -218,11 +226,13 @@ function get_several_access_count($post_id = null, $range = 'all'){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    $date = current_time('Y-m-d');
-    $date_before = date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$range.' day'));
+    // $date = current_time('Y-m-d');
+    // $date_before = date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
+    $date = get_current_db_date();
+    $date_before = get_current_db_date_before($days);
     $table_name = ACCESSES_TABLE_NAME;
 
-    if ($range == 'all') {
+    if ($days == 'all') {
       $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d", $post_id);
     } else {
       $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} USE INDEX(idx_post_id_and_date) WHERE post_id = %d AND date BETWEEN %s AND %s", $post_id, $date_before, $date);
@@ -256,8 +266,24 @@ function get_all_access_count($post_id = null){
 }
 endif;
 
-if ( !function_exists( 'func_name' ) ):
-function func_name($value){
-
+if ( !function_exists( 'get_access_ranking_records' ) ):
+function get_access_ranking_records($days = 'all', $limit = 5){
+  global $wpdb;
+  $table_name = ACCESSES_TABLE_NAME;
+  $where = '';
+  if ($days != 'all') {
+    $date = get_current_db_date();
+    $date_before = get_current_db_date_before($days);
+    $where = " WHERE date BETWEEN $date AND $date_before ";
+  }
+  if (!is_numeric($limit)) {
+    $limit = 5;
+  }
+  $query = esc_sql("SELECT post_id, SUM(count) AS sum_count FROM $table_name $where GROUP BY post_id ORDER BY sum_count DESC LIMIT $limit;");
+  $records = $wpdb->get_results( $query );
+  _v($query);
+  _v($records);
+  return $records;
 }
 endif;
+get_access_ranking_records();

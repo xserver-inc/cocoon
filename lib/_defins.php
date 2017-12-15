@@ -1,5 +1,8 @@
 <?php //定数をまとめて定義
 
+//デバッグモード
+define('DEBUG_MODE', 1);
+
 //テーマ名
 define('THEME_NAME', 'cocoon');
 //テーマ名（最初の一文字だけ大文字）

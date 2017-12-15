@@ -1031,11 +1031,25 @@ function redirect_to_url($url){
 }
 endif;
 
-//
+//カンマテキストのサニタイズ
 if ( !function_exists( 'sanitize_comma_text' ) ):
 function sanitize_comma_text($value){
   $value = str_replace(' ', '', $value);
   $value = str_replace('、', ',', $value);
   return trim($value);
+}
+endif;
+
+//アクセステーブル用の現在の日時文字列
+if ( !function_exists( 'get_current_db_date' ) ):
+function get_current_db_date(){
+  return current_time('Y-m-d');
+}
+endif;
+
+//アクセステーブル用の現在の日時文字列（$days日前）
+if ( !function_exists( 'get_current_db_date_before' ) ):
+function get_current_db_date_before($days){
+  return date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
 }
 endif;
