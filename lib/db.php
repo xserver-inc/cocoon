@@ -1,5 +1,17 @@
 <?php //データベース共通関数
 
+// wp-admin以下の全てのページが表示されたらDBのアップデートチェックをする
+add_action('admin_head', 'update_db_tables');
+if ( !function_exists( 'update_db_tables' ) ):
+function update_db_tables(){
+  if (is_admin()) {
+    //アクセス数テーブル
+    update_accesses_table();
+    //_v('update_accesses_table');
+  }
+}
+endif;
+
 //テーブル作成関数
 if ( !function_exists( 'create_db_table' ) ):
 function create_db_table( $sql ){

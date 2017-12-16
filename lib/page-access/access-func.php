@@ -359,18 +359,22 @@ function get_access_ranking_records($days = 'all', $limit = 5, $in_category = fa
     $query = "
       SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count
         FROM (
+
           #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
           SELECT {$access_table}.post_id, {$access_table}.count /* *でもいいけど */ FROM {$term_table}
             INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
             WHERE {$term_table}.term_taxonomy_id IN (
+
               #投稿IDに紐ついているカテゴリIDをカンマ区切り（GROUP_CONCAT）で取得
               SELECT GROUP_CONCAT(term_taxonomy_id)
                 FROM {$term_table}
                 WHERE object_id = {intval($post->ID)}
                 GROUP BY object_id
+
             )
             $where #WHERE句
             GROUP BY {$access_table}.id
+
         ) AS {$joined_table} #カテゴリとアクセステーブルを内部結合した仮の名前
 
         GROUP BY {$joined_table}.post_id
