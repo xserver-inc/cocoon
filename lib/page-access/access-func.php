@@ -310,30 +310,92 @@ function get_all_access_count($post_id = null){
 }
 endif;
 
+if ( !function_exists( 'wrap_joined_wp_posts_sql' ) ):
+function wrap_joined_wp_posts_query($query){
+  global $wpdb;
+  $wp_posts = $wpdb->posts;
+  $ranks_posts = 'ranks_posts';
+  $query = "
+    SELECT * FROM (
+      {$query}
+    ) AS {$ranks_posts}
+    INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
+  ";
+  return $query;
+}
+endif;
+
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5){
+function get_access_ranking_records($days = 'all', $limit = 5, $in_category = false){
   //ページの判別ができない場合はDBにアクセスしない
   if (!is_singular()) {
     return null;
   }
   global $wpdb;
-  $table_name = ACCESSES_TABLE_NAME;
+  $access_table = ACCESSES_TABLE_NAME;
   $page_type = get_accesses_page_type();
-  $where = " WHERE page_type = '$page_type'";
+  $date = get_current_db_date();
+
+
+  $where = " WHERE {$access_table}.page_type = '$page_type'";
   if ($days != 'all') {
-    $date = get_current_db_date();
     $date_before = get_current_db_date_before($days);
-    $where = " AND date BETWEEN $date AND $date_before ";
+    $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ";
+  }
+  if ($days == 1) {
+    $where .= " AND {$access_table}.date = '$date' ";
   }
   if (!is_numeric($limit)) {
     $limit = 5;
   }
-  $query = ("SELECT post_id, SUM(count) AS sum_count FROM $table_name $where GROUP BY post_id ORDER BY sum_count DESC LIMIT $limit;");
+  //カテゴリを指定する場合
+  if ($in_category) {
+    global $post;
+    $term_table = $wpdb->term_relationships;
+    $joined_table = 'terms_accesses';
+    //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
+    $where = str_replace('WHERE', 'AND', $where);
+    $query = "
+      SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count
+        FROM (
+          #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
+          SELECT {$access_table}.post_id, {$access_table}.count /* *でもいいけど */ FROM {$term_table}
+            INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
+            WHERE {$term_table}.term_taxonomy_id IN (
+              #投稿IDに紐ついているカテゴリIDをカンマ区切り（GROUP_CONCAT）で取得
+              SELECT GROUP_CONCAT(term_taxonomy_id)
+                FROM {$term_table}
+                WHERE object_id = {intval($post->ID)}
+                GROUP BY object_id
+            )
+            $where #WHERE句
+            GROUP BY {$access_table}.id
+        ) AS {$joined_table} #カテゴリとアクセステーブルを内部結合した仮の名前
+
+        GROUP BY {$joined_table}.post_id
+        ORDER BY sum_count DESC
+        LIMIT $limit
+    ";
+    $query = wrap_joined_wp_posts_query($query);
+  } else {
+    $query = "
+      SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
+        FROM {$access_table} $where
+        GROUP BY {$access_table}.post_id
+        ORDER BY sum_count DESC
+        LIMIT $limit
+    ";
+    $query = wrap_joined_wp_posts_query($query);
+  }
+
+
   $records = $wpdb->get_results( $query );
-  // _v($query);
+  _v($query);
   // _v($records);
   return $records;
 }
 endif;
 //get_access_ranking_records();
+// global $wpdb;
+// var_dump($wpdb->term_relationships);

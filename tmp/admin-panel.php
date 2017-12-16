@@ -4,6 +4,12 @@ if (is_singular() && is_user_logged_in()):
   if (is_access_count_enable()) {
     count_this_page_access();
 
+    $time_start = microtime(true);
+
+    get_access_ranking_records();
+
+    $time = microtime(true) - $time_start;
+    _v($time);
     // var_dump(get_todays_access_count());
     // var_dump(get_last_7days_access_count());
     // var_dump(get_last_30days_access_count());
