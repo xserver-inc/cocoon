@@ -74,6 +74,8 @@ require_once 'update.php'; //アップデート関係の処理
 
 //新着記事ウィジェット
 require_once 'widgets/new-entries.php';
+//人気記事ウィジェット
+require_once 'widgets/popular-entries.php';
 //最近のコメントウィジェット
 require_once 'widgets/recent-comments.php';
 //フォローボタンウィジェット

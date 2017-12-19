@@ -226,6 +226,27 @@ function get_additional_new_entriy_cards_classes($option = null){
 }
 endif;
 
+//エントリーカードの追加関数
+if ( !function_exists( 'get_additional_popular_entriy_cards_classes' ) ):
+function get_additional_popular_entriy_cards_classes($option = null){
+  global $_ENTRY_TYPE;
+  $classes = null;
+  if ($_ENTRY_TYPE != ET_DEFAULT) {
+    $classes .= ' not-default';
+    if ($_ENTRY_TYPE == ET_LARGE_THUMB) {
+      $classes .= ' large-thumb';
+    } else if ($_ENTRY_TYPE == ET_LARGE_THUMB_ON) {
+      $classes .= ' large-thumb-on';
+    }
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
 //SNSシェアボタンの追加関数
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):
 function get_additional_sns_share_button_classes($option = null){

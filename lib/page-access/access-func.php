@@ -327,7 +327,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $in_category = false){
+function get_access_ranking_records($days = 'all', $limit = 5, $categories = array()){
   //ページの判別ができない場合はDBにアクセスしない
   if (!is_singular()) {
     return null;
@@ -350,10 +350,11 @@ function get_access_ranking_records($days = 'all', $limit = 5, $in_category = fa
     $limit = 5;
   }
   //カテゴリを指定する場合
-  if ($in_category) {
+  if (!empty($categories)) {
     global $post;
     $term_table = $wpdb->term_relationships;
     $joined_table = 'terms_accesses';
+    $cat_ids = explode(',', $categories);
     //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
     $where = str_replace('WHERE', 'AND', $where);
     $query = "
@@ -363,15 +364,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $in_category = fa
           #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
           SELECT {$access_table}.post_id, {$access_table}.count /* *でもいいけど */ FROM {$term_table}
             INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
-            WHERE {$term_table}.term_taxonomy_id IN (
-
-              #投稿IDに紐ついているカテゴリIDをカンマ区切り（GROUP_CONCAT）で取得
-              SELECT GROUP_CONCAT(term_taxonomy_id)
-                FROM {$term_table}
-                WHERE object_id = {intval($post->ID)}
-                GROUP BY object_id
-
-            )
+            WHERE {$term_table}.term_taxonomy_id IN ({$cat_ids})
             $where #WHERE句
             GROUP BY {$access_table}.id
 
@@ -381,6 +374,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $in_category = fa
         ORDER BY sum_count DESC
         LIMIT $limit
     ";
+    //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query);
   } else {
     $query = "
@@ -390,6 +384,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $in_category = fa
         ORDER BY sum_count DESC
         LIMIT $limit
     ";
+    //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query);
   }
 

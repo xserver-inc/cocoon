@@ -22,6 +22,10 @@ define('ET_LARGE_THUMB',    'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
 //ウィジェットモードデフォルト
 define('WM_DEFAULT', 'all');
+//人気ウィジェット集計期間デフォルト
+define('PCD_DEFAULT', 30);
+//新着・人気ウィジェットのデフォルト表示数字
+define('EC_DEFAULT', 5);
 
 //アドセンスID名
 define('DATA_AD_CLIENT', 'data-ad-client');
