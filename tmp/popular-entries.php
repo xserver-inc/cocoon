@@ -11,7 +11,12 @@ if ($_WIDGET_MODE == 'category') {
   $cat_ids = get_category_ids();//カテゴリ配列の取得
 }
 //var_dump($cat_ids);
+
+// $time_start = microtime(true);
 $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
+// $time = microtime(true) - $time_start;
+// var_dump($time);
+
 //var_dump($records);
 ?>
 <div class="popular-entriy-cards widget-entriy-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">

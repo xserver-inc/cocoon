@@ -87,10 +87,15 @@ define('DEFAULT_INPUT_ROWS', 10);
 define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
 
+///////////////////////////////////////
+// キャッシュ
+///////////////////////////////////////
 //シェアカウントキャッシュのプレフィックス
 define('TRANSIENT_SHARE_PREFIX', THEME_NAME.'_share_count_');
 //フォローカウントキャッシュのプレフィックス
 define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
+//人気記事ウィジェットのプレフィックス
+define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
 
 
 

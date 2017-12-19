@@ -316,10 +316,11 @@ function wrap_joined_wp_posts_query($query){
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
   $query = "
-    SELECT * FROM (
+    SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
+    #WHERE post_status = 'publish'
   ";
   return $query;
 }
@@ -332,6 +333,16 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
   // if (!is_singular()) {
   //   return null;
   // }
+  $cats = implode(',', $categories);
+  $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&cats='.$cats;
+  $cache = get_transient( $transient_id );
+  if ($cache) {
+    // _v($transient_id);
+    // _v($cache);
+    return $cache;
+  }
+
+
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
   $page_type = get_accesses_page_type();
@@ -393,7 +404,10 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
 
 
   $records = $wpdb->get_results( $query );
-  //_v($query);
+  _v($query);
+  if ($records) {
+    set_transient( $transient_id, $records, 60 * 60 );
+  }
   // _v($records);
   return $records;
 }

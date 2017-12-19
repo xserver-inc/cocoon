@@ -65,6 +65,8 @@ class PopularEntryWidgetItem extends WP_Widget {
         //echo '人気記事';
       }
       echo $args['after_title'];
+      // $transient_id = TRANSIENT_SHARE_PREFIX;
+      // var_dump($instance);
 
       get_template_part('tmp/popular-entries');
 
