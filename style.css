@@ -1495,22 +1495,22 @@ label.screen-reader-text {
 /************************************
 ** 新着記事ウィジェット（デフォルト）
 ************************************/
-.widget-entriy-cards .a-wrap {
+.widget-entry-cards .a-wrap {
   padding: 5px 3px;
   line-height: 1.3;
   margin-bottom: 4px;
 }
-.widget-entriy-cards .widget-entry-card {
+.widget-entry-cards .widget-entry-card {
   font-size: 0.8em;
   position: relative;
 }
-.widget-entriy-cards figure {
+.widget-entry-cards figure {
   width: 120px;
 }
-.widget-entriy-cards .widget-entry-card-content {
+.widget-entry-cards .widget-entry-card-content {
   margin-left: 124px;
 }
-.widget-entriy-cards .widget-entry-card-pv {
+.widget-entry-cards .widget-entry-card-pv {
   margin-left: 5px;
   font-style: italic;
   font-size: 0.8em;
@@ -1519,36 +1519,45 @@ label.screen-reader-text {
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
-.widget-entriy-cards.not-default .a-wrap {
+.widget-entry-cards.not-default .a-wrap {
   max-width: 400px;
 }
-.widget-entriy-cards.not-default .e-card {
+.widget-entry-cards.not-default .e-card {
   font-size: 18px;
 }
-.widget-entriy-cards.not-default figure {
+.widget-entry-cards.not-default figure {
   float: none;
   width: 100%;
 }
-.widget-entriy-cards.not-default figure img {
+.widget-entry-cards.not-default figure img {
   width: 100%;
 }
-.widget-entriy-cards.not-default .card-content {
+.widget-entry-cards.not-default .card-content {
   margin: 0 0 0.5em;
+}
+.widget-entry-cards.not-default .widget-entry-card-pv {
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 6px;
+  background-color: #333;
+  color: #fff;
 }
 
 /************************************
 ** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
 ************************************/
-.widget-entriy-cards.large-thumb-on .a-wrap:hover {
+.widget-entry-cards.large-thumb-on .a-wrap:hover {
   opacity: 0.7;
 }
-.widget-entriy-cards.large-thumb-on .e-card {
+.widget-entry-cards.large-thumb-on .e-card {
   position: relative;
 }
-.widget-entriy-cards.large-thumb-on .card-content {
+.widget-entry-cards.large-thumb-on .card-content {
   margin: 0;
 }
-.widget-entriy-cards.large-thumb-on .card-title {
+.widget-entry-cards.large-thumb-on .card-title {
   position: absolute;
   width: 100%;
   bottom: 0;

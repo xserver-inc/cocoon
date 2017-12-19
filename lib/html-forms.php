@@ -671,7 +671,7 @@ function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 
 
   //var_dump($records);
   ?>
-  <div class="popular-entriy-cards widget-entriy-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">
+  <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">
   <?php if ( $records ) :
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
@@ -695,7 +695,7 @@ function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 
       //var_dump($permalink);
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo $title; ?>">
-    <div class="popular-entry-card widget-entriy-cards e-card cf">
+    <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php echo $post_thumbnail_img; ?>
       </figure><!-- /.popular-entry-card-thumb -->
@@ -727,7 +727,7 @@ function generate_new_entries_tag($entry_count, $categories){
     $args += array('category__in' => $categories);
   }
   query_posts( $args ); //クエリの作成?>
-  <div class="new-entriy-cards widget-entriy-cards cf<?php echo get_additional_new_entriy_cards_classes(); ?>">
+  <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes(); ?>">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
     <div class="new-entry-card widget-entry-card e-card cf">
