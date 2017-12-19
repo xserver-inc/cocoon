@@ -119,3 +119,29 @@ remove_action( 'wp_head', 'wp_oembed_remove_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_remove_host_js' );
 //本文中のURLが内部リンクの場合にWordpressがoembedをしてしまうのを解除(WP4.5.3向けの対策)
 remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result' );
+
+
+//不要なテーマカスタマイザー項目を削除
+add_action( 'customize_register', 'customize_register_custom' );
+if ( !function_exists( 'customize_register_custom' ) ):
+function customize_register_custom( $wp_customize ) {
+  //サイト基本情報
+  $wp_customize->remove_section('title_tagline');
+  //色
+  $wp_customize->remove_section('colors');
+  //背景画像がある場合
+  $wp_customize->remove_section('background_image');
+  //ヘッダーメディア
+  $wp_customize->remove_section('header_image');
+  //メニュー
+  //$wp_customize->remove_panel('nav_menus');
+  //↑こちのコードでは消えなかった
+  //remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
+  // //ウィジェット
+  // $wp_customize->remove_panel('widgets');
+  // //固定フロントページ
+  // $wp_customize->remove_section('static_front_page');
+  // //追加CSS
+  // $wp_customize->remove_section('custom_css');
+}
+endif;

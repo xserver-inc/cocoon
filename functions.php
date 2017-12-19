@@ -199,42 +199,13 @@ function get_archive_chapter_text(){
 }
 endif;
 
-// add_action('admin_print_styles', 'my_admin_print_styles');
-// function my_admin_print_styles() {
-//  wp_enqueue_style( 'wp-color-picker' );
-// }
-
 //'wp-color-picker'の呼び出し順操作（最初の方に読み込む）
-add_action('admin_enqueue_scripts', 'admin_scripts');
-function admin_scripts($hook) {
+add_action('admin_enqueue_scripts', 'admin_enqueue_scripts_custom');
+if ( !function_exists( 'admin_enqueue_scripts_custom' ) ):
+function admin_enqueue_scripts_custom($hook) {
     wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
 }
-
-//不要なテーマカスタマイザー項目を削除
-add_action( 'customize_register', 'customize_register_custom' );
-if ( !function_exists( 'customize_register_custom' ) ):
-function customize_register_custom( $wp_customize ) {
-  //サイト基本情報
-  $wp_customize->remove_section('title_tagline');
-  //色
-  $wp_customize->remove_section('colors');
-  //背景画像がある場合
-  $wp_customize->remove_section('background_image');
-  //ヘッダーメディア
-  $wp_customize->remove_section('header_image');
-  //メニュー
-  //$wp_customize->remove_panel('nav_menus');
-  //↑こちのコードでは消えなかった
-  //remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
-  // //ウィジェット
-  // $wp_customize->remove_panel('widgets');
-  // //固定フロントページ
-  // $wp_customize->remove_section('static_front_page');
-  // //追加CSS
-  // $wp_customize->remove_section('custom_css');
-}
 endif;
-
 
 //投稿管理画面のカテゴリリストの階層を保つ
 add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
