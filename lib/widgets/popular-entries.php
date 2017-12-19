@@ -33,8 +33,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     // global $_WIDGET_MODE;
     // //後で使用するテンプレートファイルへの受け渡し
     // global $_ENTRY_COUNT;
-    // //表示タイプをグローバル変数に格納
-    // global $_ENTRY_TYPE;
+    //表示タイプをグローバル変数に格納
+    global $_ENTRY_TYPE;
     // //集計期間をグローバル変数に格納
     // global $_COUNT_DAYS;
     // //ウィジェットモードが設定されてない場合はall（全て表示）にする
@@ -43,9 +43,9 @@ class PopularEntryWidgetItem extends WP_Widget {
     // //表示数が設定されていない時は5にする
     // if ( !$entry_count ) $entry_count = EC_DEFAULT;
     // $_ENTRY_COUNT = $entry_count;
-    // //表示タイプのデフォルト設定
-    // if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    // $_ENTRY_TYPE = $entry_type;
+    //表示タイプのデフォルト設定
+    if ( !$entry_type ) $entry_type = ET_DEFAULT;
+    $_ENTRY_TYPE = $entry_type;
     // //表示タイプのデフォルト設定
     // if ( !$count_days ) $count_days = PCD_DEFAULT;
     // $_COUNT_DAYS = $count_days;

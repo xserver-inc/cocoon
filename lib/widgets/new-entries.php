@@ -18,25 +18,33 @@ class NewEntryWidgetItem extends WP_Widget {
     //タイトル名を取得
     $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
     //表示数を取得
-    $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? 5 : $instance['entry_count'] );
+    $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //$is_top_visible = apply_filters( 'widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
     $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
-    //表示数をグローバル変数に格納
-    //ウィジェットモード
-    global $g_widget_mode;
-    //後で使用するテンプレートファイルへの受け渡し
-    global $g_entry_count;
+    // //表示数をグローバル変数に格納
+    // //ウィジェットモード
+    // global $g_widget_mode;
+    // //後で使用するテンプレートファイルへの受け渡し
+    // global $g_entry_count;
+    // //ウィジェットモードが設定されてない場合はall（全て表示）にする
+    // if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
+    // $g_widget_mode = $widget_mode;
+    // //表示数が設定されていない時は5にする
+    // if ( !$entry_count ) $entry_count = EC_DEFAULT;
+    // $g_entry_count = $entry_count;
+
     //表示タイプをグローバル変数に格納
-    global $g_entry_type;
-    //ウィジェットモードが設定されてない場合はall（全て表示）にする
-    if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
-    $g_widget_mode = $widget_mode;
-    //表示数が設定されていない時は5にする
-    if ( !$entry_count ) $entry_count = EC_DEFAULT;
-    $g_entry_count = $entry_count;
+    global $_ENTRY_TYPE;
     //表示タイプのデフォルト設定
     if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    $g_entry_type = $entry_type;
+    $_ENTRY_TYPE = $entry_type;
+
+    //現在のカテゴリを取得
+    $categories = array();
+    if ($widget_mode == 'category') {
+      $categories = get_category_ids();//カテゴリ配列の取得
+    }
+
 
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての新着記事」のとき
@@ -56,10 +64,12 @@ class NewEntryWidgetItem extends WP_Widget {
         //echo '新着記事';
       }
       echo $args['after_title'];
-      //新着記事表示用の処理を書くところだけど
-      //コード量も多く、インデントが深くなり読みづらくなるので
-      //テンプレートファイル側に書く
-      get_template_part('tmp/new-entries');
+
+      //get_template_part('tmp/new-entries');
+
+      //新着記事リストの作成
+      generate_new_entries_tag($entry_count, $categories);
+
       echo $args['after_widget']; ?>
     <?php endif; ?>
   <?php
@@ -69,7 +79,6 @@ class NewEntryWidgetItem extends WP_Widget {
     $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
     $instance['title_new'] = strip_tags($new_instance['title_new']);
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
-    //$instance['is_top_visible'] = strip_tags($new_instance['is_top_visible']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
       return $instance;
   }
@@ -85,7 +94,6 @@ class NewEntryWidgetItem extends WP_Widget {
     $widget_mode = esc_attr($instance['widget_mode']);
     $title_new = esc_attr($instance['title_new']);
     $entry_count = esc_attr($instance['entry_count']);
-    //$is_top_visible = esc_attr($instance['is_top_visible']);
     $entry_type = esc_attr($instance['entry_type']);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -122,5 +130,4 @@ class NewEntryWidgetItem extends WP_Widget {
     <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("NewEntryWidgetItem");'));
 add_action('widgets_init', function(){register_widget('NewEntryWidgetItem');});
