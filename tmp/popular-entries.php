@@ -10,7 +10,7 @@ if ($_WIDGET_MODE == 'category') {
 $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
 //var_dump($records);
 ?>
-<div class="popular-entriy-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">
+<div class="popular-entriy-cards widget-entriy-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">
 <?php if ( $records ) :
   foreach ($records as $post):
     $permalink = get_permalink( $post->ID );
@@ -29,7 +29,7 @@ $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
     ?>
 <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo $title; ?>">
   <div class="popular-entry-card widget-entriy-cards e-card cf">
-    <figure class="popular-entry-card-thumb widefat-entry-card-thumb card-thumb">
+    <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
     <?php echo $post_thumbnail_img; ?>
     </figure><!-- /.popular-entry-card-thumb -->
 

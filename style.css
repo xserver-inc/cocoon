@@ -102,7 +102,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   height: 100%;
 }
 
-.entry-card-thumb, .related-entry-card-thumb, .new-entry-card-thumb, .carousel-entry-card-thumb {
+.entry-card-thumb, .related-entry-card-thumb, .widget-entry-card-thumb, .carousel-entry-card-thumb {
   float: left;
   margin-top: 4px;
   position: relative;
@@ -1495,54 +1495,54 @@ label.screen-reader-text {
 /************************************
 ** 新着記事ウィジェット（デフォルト）
 ************************************/
-.new-entriy-cards .a-wrap {
+.widget-entriy-cards .a-wrap {
   padding: 5px 3px;
   line-height: 1.3;
   margin-bottom: 4px;
 }
-.new-entriy-cards .new-entry-card {
+.widget-entriy-cards .widget-entry-card {
   font-size: 0.8em;
 }
-.new-entriy-cards figure {
+.widget-entriy-cards figure {
   width: 120px;
 }
-.new-entriy-cards .new-entry-card-content {
+.widget-entriy-cards .widget-entry-card-content {
   margin-left: 124px;
 }
 
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
-.new-entriy-cards.not-default .a-wrap {
+.widget-entriy-cards.not-default .a-wrap {
   max-width: 400px;
 }
-.new-entriy-cards.not-default .e-card {
+.widget-entriy-cards.not-default .e-card {
   font-size: 18px;
 }
-.new-entriy-cards.not-default figure {
+.widget-entriy-cards.not-default figure {
   float: none;
   width: 100%;
 }
-.new-entriy-cards.not-default figure img {
+.widget-entriy-cards.not-default figure img {
   width: 100%;
 }
-.new-entriy-cards.not-default .card-content {
+.widget-entriy-cards.not-default .card-content {
   margin: 0 0 0.5em;
 }
 
 /************************************
 ** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
 ************************************/
-.new-entriy-cards.large-thumb-on .a-wrap:hover {
+.widget-entriy-cards.large-thumb-on .a-wrap:hover {
   opacity: 0.7;
 }
-.new-entriy-cards.large-thumb-on .e-card {
+.widget-entriy-cards.large-thumb-on .e-card {
   position: relative;
 }
-.new-entriy-cards.large-thumb-on .card-content {
+.widget-entriy-cards.large-thumb-on .card-content {
   margin: 0;
 }
-.new-entriy-cards.large-thumb-on .card-title {
+.widget-entriy-cards.large-thumb-on .card-title {
   position: absolute;
   width: 100%;
   bottom: 0;
