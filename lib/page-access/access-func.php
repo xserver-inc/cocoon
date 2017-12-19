@@ -18,6 +18,14 @@ function is_access_count_enable(){
 }
 endif;
 
+//アクセス数のキャッシュインターバル（分）
+define('OP_ACCESS_COUNT_CACHE_INTERVAL', 'access_count_cache_interval');
+if ( !function_exists( 'get_access_count_cache_interval' ) ):
+function get_access_count_cache_interval(){
+  return get_theme_option(OP_ACCESS_COUNT_CACHE_INTERVAL, 60);
+}
+endif;
+
 //トテーブルのバージョン取得
 define('OP_ACCESSES_TABLE_VERSION', 'accesses_table_version');
 if ( !function_exists( 'get_accesses_table_version' ) ):
@@ -406,7 +414,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
   $records = $wpdb->get_results( $query );
   _v($query);
   if ($records) {
-    set_transient( $transient_id, $records, 60 * 60 );
+    set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
   }
   // _v($records);
   return $records;
