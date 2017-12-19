@@ -11,20 +11,20 @@ if ( $has_cat_ids ) {
   $args += array('category__in' => $cat_ids);
 }
 query_posts( $args ); //クエリの作成?>
-<div class="new-entriy-cards cf<?php echo get_additional_new_entriy_cards_classes(); ?>">
+<div class="new-entriy-cards widget-entriy-cards cf<?php echo get_additional_new_entriy_cards_classes(); ?>">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<a href="<?php the_permalink(); ?>" class="new-entry-card-link a-wrap" title="<?php the_title(); ?>">
-  <div class="new-entry-card e-card cf">
-    <figure class="new-entry-card-thumb card-thumb">
+<a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
+  <div class="new-entry-card widget-entry-card e-card cf">
+    <figure class="new-entry-card-thumb widget-entry-card-thumb card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
       <?php the_post_thumbnail( array(320, 180), array('alt' => '') ); ?>
     <?php else: // サムネイルを持っていないときの処理 ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image new-list-no-image" width="320" height="180" />
+      <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
     <?php endif; ?>
     </figure><!-- /.new-entry-card-thumb -->
 
-    <div class="new-entry-card-content card-content">
-      <div class="new-entry-card-title card-title"><?php the_title();?></div>
+    <div class="new-entry-card-content widget-entry-card-content card-content">
+      <div class="new-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
     </div><!-- /.new-entry-content -->
   </div><!-- /.new-entry-card -->
 </a><!-- /.new-entry-card-link -->

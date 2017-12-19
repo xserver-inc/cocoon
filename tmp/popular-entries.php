@@ -20,7 +20,7 @@ $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
     if ($post_thumbnail) {
       $post_thumbnail_img = $post_thumbnail;
     } else {
-      $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="NO IMAGE" class="no-image popular-list-no-image" width="320" height="180" />';
+      $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="NO IMAGE" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />';
     }
 
     //_v($post_thumbnail_img);
@@ -28,13 +28,13 @@ $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
     //var_dump($permalink);
     ?>
 <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo $title; ?>">
-  <div class="popular-entry-card e-card cf">
-    <figure class="popular-entry-card-thumb card-thumb">
+  <div class="popular-entry-card widget-entriy-cards e-card cf">
+    <figure class="popular-entry-card-thumb widefat-entry-card-thumb card-thumb">
     <?php echo $post_thumbnail_img; ?>
     </figure><!-- /.popular-entry-card-thumb -->
 
-    <div class="popular-entry-card-content card-content">
-      <div class="popular-entry-card-title card-title"><?php echo $title;?></div>
+    <div class="popular-entry-card-content widget-entry-card-content card-content">
+      <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
     </div><!-- /.popular-entry-content -->
   </div><!-- /.popular-entry-card -->
 </a><!-- /.popular-entry-card-link -->
