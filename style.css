@@ -3544,7 +3544,6 @@ div.fb-like-mobile {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 4px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -3557,9 +3556,10 @@ div.fb-like-mobile {
 .admin-pv,
 .admin-edit,
 .admin-amp {
-  padding: 3px 6px;
-  border: 1px solid #fff;
-  margin: 0 3px;
+  border-radius: 3px;
+  padding: 3px 10px;
+  border: 1px solid #ccc;
+  margin: 0 4px;
 }
 
 .today-pv,

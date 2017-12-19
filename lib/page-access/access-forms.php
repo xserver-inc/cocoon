@@ -57,6 +57,9 @@
               '720' => __( '12時間', THEME_NAME ),
               '1080' => __( '18時間', THEME_NAME ),
               '1440' => __( '24時間', THEME_NAME ),
+              '2880' => __( '2日', THEME_NAME ),
+              '4320' => __( '3日', THEME_NAME ),
+              '10080' => __( '1週間', THEME_NAME ),
             );
             generate_selectbox_tag(OP_ACCESS_COUNT_CACHE_INTERVAL, $options, get_access_count_cache_interval());
             generate_tips_tag(__( '設定間隔ごとに新しいキャッシュを生成します', THEME_NAME ));

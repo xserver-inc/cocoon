@@ -17,6 +17,7 @@ if (DEBUG_MODE) {
 }
 
 $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
+
 if (DEBUG_MODE) {
   $time = microtime(true) - $time_start;
   echo('<pre>');

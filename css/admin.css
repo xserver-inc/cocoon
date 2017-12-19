@@ -2680,7 +2680,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 4px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2690,9 +2689,10 @@
   .demo .admin-pv,
   .demo .admin-edit,
   .demo .admin-amp {
-    padding: 3px 6px;
-    border: 1px solid #fff;
-    margin: 0 3px; }
+    border-radius: 3px;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    margin: 0 4px; }
   .demo .today-pv,
   .demo .week-pv,
   .demo .month-pv {
