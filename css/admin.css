@@ -322,6 +322,9 @@
   ** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
   ************************************/
   /************************************
+  ** 人気記事ウィジェットランキング表示
+  ************************************/
+  /************************************
   ** 最近のコメントウィジェット
   ************************************/
   /************************************
@@ -1378,6 +1381,23 @@
     background-color: rgba(51, 51, 51, 0.7);
     color: #fff;
     max-height: 30%; }
+  .demo .widget-entry-cards.ranking-visible {
+    counter-reset: popular-rank; }
+    .demo .widget-entry-cards.ranking-visible .widget-entry-card-thumb {
+      counter-increment: popular-rank; }
+      .demo .widget-entry-cards.ranking-visible .widget-entry-card-thumb::before {
+        content: counter(popular-rank);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 4px;
+        width: 20px;
+        height: 20px;
+        background-color: #333;
+        color: #fff;
+        opacity: 0.7;
+        text-align: center;
+        font-size: 0.8em; }
   .demo .recent-comments {
     line-height: 1.3; }
     .demo .recent-comments .a-wrap:hover .recent-comment-content {

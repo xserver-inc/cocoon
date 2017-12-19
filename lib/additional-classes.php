@@ -230,6 +230,8 @@ endif;
 if ( !function_exists( 'get_additional_popular_entriy_cards_classes' ) ):
 function get_additional_popular_entriy_cards_classes($option = null){
   global $_ENTRY_TYPE;
+  global $_RANKING_VISIBLE;
+
   $classes = null;
   if ($_ENTRY_TYPE != ET_DEFAULT) {
     $classes .= ' not-default';
@@ -238,6 +240,10 @@ function get_additional_popular_entriy_cards_classes($option = null){
     } else if ($_ENTRY_TYPE == ET_LARGE_THUMB_ON) {
       $classes .= ' large-thumb-on';
     }
+  }
+
+  if ($_RANKING_VISIBLE) {
+    $classes .= ' ranking-visible';
   }
 
   if ($option) {
