@@ -1502,12 +1502,18 @@ label.screen-reader-text {
 }
 .widget-entriy-cards .widget-entry-card {
   font-size: 0.8em;
+  position: relative;
 }
 .widget-entriy-cards figure {
   width: 120px;
 }
 .widget-entriy-cards .widget-entry-card-content {
   margin-left: 124px;
+}
+.widget-entriy-cards .widget-entry-card-pv {
+  margin-left: 5px;
+  font-style: italic;
+  font-size: 0.8em;
 }
 
 /************************************

@@ -1335,11 +1335,16 @@
     line-height: 1.3;
     margin-bottom: 4px; }
   .demo .widget-entriy-cards .widget-entry-card {
-    font-size: 0.8em; }
+    font-size: 0.8em;
+    position: relative; }
   .demo .widget-entriy-cards figure {
     width: 120px; }
   .demo .widget-entriy-cards .widget-entry-card-content {
     margin-left: 124px; }
+  .demo .widget-entriy-cards .widget-entry-card-pv {
+    margin-left: 5px;
+    font-style: italic;
+    font-size: 0.8em; }
   .demo .widget-entriy-cards.not-default .a-wrap {
     max-width: 400px; }
   .demo .widget-entriy-cards.not-default .e-card {

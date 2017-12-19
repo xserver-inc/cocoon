@@ -654,7 +654,7 @@ endif;
 
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
-function generate_popular_entries_tag($days, $limit, $categories){
+function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 0){
   if (DEBUG_MODE) {
     $time_start = microtime(true);
   }
@@ -678,12 +678,18 @@ function generate_popular_entries_tag($days, $limit, $categories){
       $title = $post->post_title;
       $no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
       $post_thumbnail = get_the_post_thumbnail( $post->ID, array(320, 180), array('alt' => '') );
+      $pv = $post->sum_count;
+
       if ($post_thumbnail) {
         $post_thumbnail_img = $post_thumbnail;
       } else {
         $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="NO IMAGE" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />';
       }
 
+      // $pv_tag = '';
+      // if ($pv_visible) {
+      //   $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$post->sum_count.'</span>';
+      // }
       //_v($post_thumbnail_img);
 
       //var_dump($permalink);
@@ -695,7 +701,10 @@ function generate_popular_entries_tag($days, $limit, $categories){
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
-        <div class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <sphn class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></sphn>
+        <?php if ($pv_visible): ?>
+          <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.'view' : $pv.'views';?></span>
+        <?php endif ?>
       </div><!-- /.popular-entry-content -->
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
