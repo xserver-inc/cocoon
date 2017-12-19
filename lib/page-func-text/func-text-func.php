@@ -129,9 +129,11 @@ function get_function_text( $id ) {
 
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
-  $record->title = esc_attr(stripslashes_deep($record->title));
-  //_v($record->title);
-  $record->text = wpautop(stripslashes_deep($record->text));
+  if (!empty($record->title))
+    $record->title = esc_attr(stripslashes_deep($record->title));
+
+  if (!empty($record->text))
+    $record->text = wpautop(stripslashes_deep($record->text));
 
   return $record;
 }

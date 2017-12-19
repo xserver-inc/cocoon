@@ -23,27 +23,32 @@ class PopularEntryWidgetItem extends WP_Widget {
     $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //集計期間
     $count_days = apply_filters( 'widget_count_days', empty($instance['count_days']) ? PCD_DEFAULT : $instance['count_days'] );
-    //表示数をグローバル変数に格納
-    //ウィジェットモード
-    global $_WIDGET_MODE;
-    //後で使用するテンプレートファイルへの受け渡し
-    global $_ENTRY_COUNT;
-    //表示タイプをグローバル変数に格納
-    global $_ENTRY_TYPE;
-    //集計期間をグローバル変数に格納
-    global $_COUNT_DAYS;
-    //ウィジェットモードが設定されてない場合はall（全て表示）にする
-    if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
-    $_WIDGET_MODE = $widget_mode;
-    //表示数が設定されていない時は5にする
-    if ( !$entry_count ) $entry_count = EC_DEFAULT;
-    $_ENTRY_COUNT = $entry_count;
-    //表示タイプのデフォルト設定
-    if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    $_ENTRY_TYPE = $entry_type;
-    //表示タイプのデフォルト設定
-    if ( !$count_days ) $count_days = PCD_DEFAULT;
-    $_COUNT_DAYS = $count_days;
+
+    $cat_ids = array();
+    if ($widget_mode == 'category') {
+      $cat_ids = get_category_ids();//カテゴリ配列の取得
+    }
+    // //表示数をグローバル変数に格納
+    // //ウィジェットモード
+    // global $_WIDGET_MODE;
+    // //後で使用するテンプレートファイルへの受け渡し
+    // global $_ENTRY_COUNT;
+    // //表示タイプをグローバル変数に格納
+    // global $_ENTRY_TYPE;
+    // //集計期間をグローバル変数に格納
+    // global $_COUNT_DAYS;
+    // //ウィジェットモードが設定されてない場合はall（全て表示）にする
+    // if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
+    // $_WIDGET_MODE = $widget_mode;
+    // //表示数が設定されていない時は5にする
+    // if ( !$entry_count ) $entry_count = EC_DEFAULT;
+    // $_ENTRY_COUNT = $entry_count;
+    // //表示タイプのデフォルト設定
+    // if ( !$entry_type ) $entry_type = ET_DEFAULT;
+    // $_ENTRY_TYPE = $entry_type;
+    // //表示タイプのデフォルト設定
+    // if ( !$count_days ) $count_days = PCD_DEFAULT;
+    // $_COUNT_DAYS = $count_days;
 
     //_v($count_days);
 
@@ -62,13 +67,11 @@ class PopularEntryWidgetItem extends WP_Widget {
         } else {
           _e( 'カテゴリー別人気記事', THEME_NAME );
         }
-        //echo '人気記事';
       }
       echo $args['after_title'];
-      // $transient_id = TRANSIENT_SHARE_PREFIX;
-      // var_dump($instance);
 
-      get_template_part('tmp/popular-entries');
+      //get_template_part('tmp/popular-entries');
+      generate_popular_entries_tag($count_days, $entry_count, $cat_ids);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>
