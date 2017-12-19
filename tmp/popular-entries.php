@@ -12,10 +12,18 @@ if ($_WIDGET_MODE == 'category') {
 }
 //var_dump($cat_ids);
 
-// $time_start = microtime(true);
+if (DEBUG_MODE) {
+  $time_start = microtime(true);
+}
+
 $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
-// $time = microtime(true) - $time_start;
-// var_dump($time);
+if (DEBUG_MODE) {
+  $time = microtime(true) - $time_start;
+  echo('<pre>');
+  echo($time);
+  echo('</pre>');
+}
+
 
 //var_dump($records);
 ?>

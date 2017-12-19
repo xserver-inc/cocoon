@@ -18,6 +18,14 @@ function is_access_count_enable(){
 }
 endif;
 
+//アクセス数のキャッシュ有効
+define('OP_ACCESS_COUNT_CACHE_ENABLE', 'access_count_cache_enable');
+if ( !function_exists( 'is_access_count_cache_enable' ) ):
+function is_access_count_cache_enable(){
+  return get_theme_option(OP_ACCESS_COUNT_CACHE_ENABLE, 1);
+}
+endif;
+
 //アクセス数のキャッシュインターバル（分）
 define('OP_ACCESS_COUNT_CACHE_INTERVAL', 'access_count_cache_interval');
 if ( !function_exists( 'get_access_count_cache_interval' ) ):
@@ -341,14 +349,25 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
   // if (!is_singular()) {
   //   return null;
   // }
-  $cats = implode(',', $categories);
-  $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&cats='.$cats;
-  $cache = get_transient( $transient_id );
-  if ($cache) {
-    // _v($transient_id);
-    // _v($cache);
-    return $cache;
+
+  //アクセスキャッシュを有効にしている場合
+  if (is_access_count_cache_enable()) {
+    $cats = implode(',', $categories);
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&cats='.$cats;
+    //_v($transient_id);
+    $cache = get_transient( $transient_id );
+    if ($cache) {
+      if (DEBUG_MODE) {
+        echo('<pre>');
+        echo $transient_id;
+        echo('</pre>');
+      }
+      // _v($transient_id);
+      // _v($cache);
+      return $cache;
+    }
   }
+
 
 
   global $wpdb;
@@ -412,8 +431,8 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
 
 
   $records = $wpdb->get_results( $query );
-  _v($query);
-  if ($records) {
+  //_v($query);
+  if (is_access_count_cache_enable() && $records) {
     set_transient( $transient_id, $records, 60 * get_access_count_cache_interval() );
   }
   // _v($records);
