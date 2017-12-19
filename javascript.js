@@ -34,4 +34,23 @@
             scrollTop: 1
         }, 800);
   });
-})(jQuery,document,window);
+
+
+  //下にスクロールで管理パネルを隠す
+  //上にスクロールで管理パネルを表示
+  var panel = $("#admin-panel");
+  var menuHeight = panel.height()+50;
+  var startPos = 0;
+  $(window).scroll(function(){
+    var currentPos = $(this).scrollTop();
+    if (currentPos > startPos) {
+      if($(window).scrollTop() >= 200) {
+        //console.log(currentPos);
+        panel.css("bottom", "-" + menuHeight + "px");
+      }
+    } else {
+      panel.css("bottom", 0 + "px");
+    }
+    startPos = currentPos;
+  });
+})(jQuery);

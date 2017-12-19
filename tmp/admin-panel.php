@@ -17,7 +17,7 @@ if (is_singular() && is_user_logged_in()):
     // var_dump(get_all_access_count());
   }
 ?>
-<div class="admin-panel">
+<div id="admin-panel" class="admin-panel">
   <div class="admin-pv">
     <span class="fa fa-signal fa-fw"></span>
     <span class="today-pv">
@@ -41,7 +41,7 @@ if (is_singular() && is_user_logged_in()):
   <div class="admin-edit">
     <span class="fa fa-edit fa-fw"></span>
     <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
-    <span class="post-wlw-edit"><?php edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
+    <span class="post-wlw-edit"><?php wlw_edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
   </div>
 
   <div class="admin-amp">

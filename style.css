@@ -3548,6 +3548,7 @@ div.fb-like-mobile {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  transition: .3s;
 }
 .admin-panel a {
   color: #fff;

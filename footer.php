@@ -62,6 +62,12 @@
   <?php //トップへ戻るボタンテンプレート
   get_template_part('tmp/button-go-to-top'); ?>
 
+  <?php //フッター挿入用のユーザー用テンプレート
+  get_template_part('tmp-user/footer-insert'); ?>
+
+  <?php //管理者用パネル
+  get_template_part('tmp/admin-panel'); ?>
+
   <?php wp_footer(); ?>
 
 
@@ -70,12 +76,6 @@
 
   <?php //アクセス解析フッタータグの取得
   get_template_part('tmp/footer-analytics'); ?>
-
-  <?php //フッター挿入用のユーザー用テンプレート
-  get_template_part('tmp-user/footer-insert'); ?>
-
-  <?php //管理者用パネル
-  get_template_part('tmp/admin-panel'); ?>
 
 </body>
 

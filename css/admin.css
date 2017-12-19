@@ -2683,7 +2683,8 @@
     border-radius: 4px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    transition: .3s; }
     .demo .admin-panel a {
       color: #fff; }
   .demo .admin-pv,
