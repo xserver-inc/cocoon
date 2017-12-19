@@ -439,6 +439,7 @@ function get_image_width_and_height($image_url){
 }
 
 //AMPページではCrayon Syntax Highlighterを表示しない
+add_action( 'wp_loaded','remove_crayon_syntax_highlighter' );
 if ( !function_exists( 'remove_crayon_syntax_highlighter' ) ):
 function remove_crayon_syntax_highlighter() {
   if (isset($_GET['amp']) && $_GET['amp'] === '1') {
@@ -447,7 +448,6 @@ function remove_crayon_syntax_highlighter() {
   }
 }
 endif;
-add_action( 'wp_loaded','remove_crayon_syntax_highlighter' );
 
 // //AMPページでFont AwesomeやGoogle Fontsを利用する
 // if ( !function_exists( 'add_simplicity_amp_fonts' ) ):

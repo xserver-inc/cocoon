@@ -406,3 +406,20 @@ function verify_google_recaptcha($comment_post_ID)
 // remove_action('do_feed_rss', 'do_feed_rss');
 // remove_action('do_feed_rss2', 'do_feed_rss2');
 // remove_action('do_feed_atom', 'do_feed_atom');
+
+//wp 関数内でクエリが解析されて投稿が読み込まれ、テンプレートが実行されるまでの間に実行する。出力にテンプレートを必要しないデータにアクセスする場合に活用できる。
+add_action( 'wp','do_access_counting' );
+if ( !function_exists( 'do_access_counting' ) ):
+function do_access_counting() {
+    // _v(!is_admin());
+    // _v(is_singular());
+  if (!is_admin() && is_singular()) {
+    //アクセス数のカウント
+    if (is_access_count_enable()) {
+
+      count_this_page_access();
+    }
+  }
+}
+endif;
+
