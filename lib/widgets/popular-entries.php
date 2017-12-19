@@ -23,6 +23,10 @@ class PopularEntryWidgetItem extends WP_Widget {
     $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //集計期間
     $count_days = apply_filters( 'widget_count_days', empty($instance['count_days']) ? PCD_DEFAULT : $instance['count_days'] );
+    //ランキング表示
+    $ranking_visible = apply_filters( 'widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
+    //PV表示
+    $pv_visible = apply_filters( 'widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
 
     $cat_ids = array();
     if ($widget_mode == 'category') {
@@ -84,6 +88,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
     $instance['count_days'] = strip_tags($new_instance['count_days']);
+    $instance['ranking_visible'] = strip_tags($new_instance['ranking_visible']);
+    $instance['pv_visible'] = strip_tags($new_instance['pv_visible']);
       return $instance;
   }
   function form($instance) {
@@ -94,6 +100,8 @@ class PopularEntryWidgetItem extends WP_Widget {
         'entry_count' => EC_DEFAULT,
         'entry_type' => ET_DEFAULT,
         'count_days' => PCD_DEFAULT,
+        'ranking_visible' => 0,
+        'pv_visible' => 0,
       );
     }
     $widget_mode = esc_attr($instance['widget_mode']);
@@ -101,6 +109,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     $entry_count = esc_attr($instance['entry_count']);
     $entry_type = esc_attr($instance['entry_type']);
     $count_days = esc_attr($instance['count_days']);
+    $ranking_visible = esc_attr($instance['ranking_visible']);
+    $pv_visible = esc_attr($instance['pv_visible']);
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -136,10 +146,9 @@ class PopularEntryWidgetItem extends WP_Widget {
     </p>
     <?php //集計期間 ?>
     <p>
-      <label for="<?php echo $this->get_field_id('count_days'); ?>">
-          <?php _e( '集計期間', THEME_NAME ) ?>
-        </label><br />
       <?php
+        generate_label_tag($this->get_field_id('count_days'), __('集計期間', THEME_NAME) );
+
         $options = array(
           '1' => __( '本日', THEME_NAME ),
           '7' => __( '7日間', THEME_NAME ),
@@ -147,6 +156,18 @@ class PopularEntryWidgetItem extends WP_Widget {
           'all' => __( '全期間', THEME_NAME ),
         );
         generate_selectbox_tag($this->get_field_name('count_days'), $options, $count_days);
+       ?>
+    </p>
+    <?php //ランキング表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('ranking_visible') , $ranking_visible, __( 'ランキング表示', THEME_NAME ));
+       ?>
+    </p>
+    <?php //PV表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV表示', THEME_NAME ));
        ?>
     </p>
     <?php
