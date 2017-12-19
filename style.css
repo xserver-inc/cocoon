@@ -3534,6 +3534,43 @@ div.fb-like-mobile {
   border-left-color: #85e249;
 }
 
+.admin-panel {
+  background-color: #333435;
+  color: #fff;
+  opacity: 0.8;
+  padding: 10px;
+  font-size: 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.admin-panel a {
+  color: #fff;
+}
+
+.admin-pv,
+.admin-edit,
+.admin-amp {
+  padding: 3px 6px;
+  border: 1px solid #fff;
+  margin: 0 3px;
+}
+
+.today-pv,
+.week-pv,
+.month-pv {
+  margin-right: 8px;
+}
+
+.post-edit {
+  margin-right: 8px;
+}
+
 /************************************
 ** clingify
 ************************************/

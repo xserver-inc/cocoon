@@ -2670,6 +2670,34 @@
     .demo .sbs-line.sbp-r .speech-balloon::before, .demo .sbs-line.sbp-r .speech-balloon::after {
       border-right-color: #85e249;
       border-left-color: #85e249; }
+  .demo .admin-panel {
+    background-color: #333435;
+    color: #fff;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .demo .admin-panel a {
+      color: #fff; }
+  .demo .admin-pv,
+  .demo .admin-edit,
+  .demo .admin-amp {
+    padding: 3px 6px;
+    border: 1px solid #fff;
+    margin: 0 3px; }
+  .demo .today-pv,
+  .demo .week-pv,
+  .demo .month-pv {
+    margin-right: 8px; }
+  .demo .post-edit {
+    margin-right: 8px; }
   .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
     z-index: 99999; }
   .demo .js-clingify-wrapper {

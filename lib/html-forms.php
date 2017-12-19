@@ -641,3 +641,13 @@ function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
   echo '</div>';
 }
 endif;
+
+//Windows Live Writerで編集するためのリンクを作成する
+if ( !function_exists( 'wlw_edit_post_link' ) ):
+function wlw_edit_post_link($link, $before = '', $after = ''){
+  $query = ( is_single() ? 'postid' : 'pageid' );
+  echo $before.'<a href="wlw://'.get_this_site_domain().'/?'.$query.'=';
+  echo the_ID();
+  echo '">WLWで編集</a>'.$after;
+}
+endif;

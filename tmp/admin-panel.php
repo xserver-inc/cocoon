@@ -19,6 +19,7 @@ if (is_singular() && is_user_logged_in()):
 ?>
 <div class="admin-panel">
   <div class="admin-pv">
+    <span class="fa fa-signal fa-fw"></span>
     <span class="today-pv">
       <span class="today-pv-label"><?php _e( '本日', THEME_NAME ) ?></span>
       <span class="today-pv-count"><?php echo get_todays_access_count(); ?></span>
@@ -35,6 +36,17 @@ if (is_singular() && is_user_logged_in()):
       <span class="all-pv-label"><?php _e( '全体', THEME_NAME ) ?></span>
       <span class="all-pv-count"><?php echo get_all_access_count(); ?></span>
     </span>
+  </div>
+
+  <div class="admin-edit">
+    <span class="fa fa-edit fa-fw"></span>
+    <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
+    <span class="post-wlw-edit"><?php edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
+  </div>
+
+  <div class="admin-amp">
+    <span class="fa fa-bolt fa-fw"></span>
+    AMP
   </div>
 </div>
 <?php endif //is_singular ?>
