@@ -122,9 +122,17 @@ function get_category_ids(){
     endforeach ;
     return $category_IDs;
   } elseif ( is_category() ) {//カテゴリページではトップカテゴリーのみ取得
-    $categories = get_the_category();
-    $cat_now = $categories[0];
-    return array( $cat_now->cat_ID );
+    // $categories = get_the_category();
+    // //_v($categories);
+    // $cat_now = $categories[0];
+    // //_v($cat_now->cat_ID);
+    // return array( $cat_now->cat_ID );
+    // global $cat;
+    // return $cat;
+    // $cat_info = get_category( $cat );
+    // _v($cat_info);
+    $obj = get_queried_object();
+    return array( $obj->cat_ID );
   }
   return null;
 }

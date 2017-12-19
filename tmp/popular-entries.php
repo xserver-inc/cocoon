@@ -4,9 +4,13 @@ global $_WIDGET_MODE;//ウィジェットモード（全て表示するか、カ
 global $_ENTRY_COUNT;
 global $_COUNT_DAYS;
 $cat_ids = array();
+
+// _v(is_category());
+// _v(get_category_ids());
 if ($_WIDGET_MODE == 'category') {
   $cat_ids = get_category_ids();//カテゴリ配列の取得
 }
+//var_dump($cat_ids);
 $records = get_access_ranking_records($_COUNT_DAYS, $_ENTRY_COUNT, $cat_ids);
 //var_dump($records);
 ?>

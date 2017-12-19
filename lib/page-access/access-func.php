@@ -328,13 +328,16 @@ endif;
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
 function get_access_ranking_records($days = 'all', $limit = 5, $categories = array()){
-  //ページの判別ができない場合はDBにアクセスしない
-  if (!is_singular()) {
-    return null;
-  }
+  // //ページの判別ができない場合はDBにアクセスしない
+  // if (!is_singular()) {
+  //   return null;
+  // }
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
   $page_type = get_accesses_page_type();
+  if (is_category()) {
+    $page_type = 's';
+  }
   $date = get_current_db_date();
 
 
@@ -354,7 +357,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
     global $post;
     $term_table = $wpdb->term_relationships;
     $joined_table = 'terms_accesses';
-    $cat_ids = explode(',', $categories);
+    $cat_ids = implode(',', $categories);
     //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
     $where = str_replace('WHERE', 'AND', $where);
     $query = "
@@ -390,7 +393,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
 
 
   $records = $wpdb->get_results( $query );
-  _v($query);
+  //_v($query);
   // _v($records);
   return $records;
 }
