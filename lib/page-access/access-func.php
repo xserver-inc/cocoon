@@ -442,3 +442,58 @@ endif;
 //get_access_ranking_records();
 // global $wpdb;
 // var_dump($wpdb->term_relationships);
+
+
+//Jetpackがインストールされているかどうか
+if ( !function_exists( 'is_jetpack_stats_module_active' ) ):
+function is_jetpack_stats_module_active(){
+  return class_exists( 'jetpack' ) &&
+    Jetpack::is_module_active( 'stats' );
+}
+endif;
+
+//Jetpackアクセス数取得関数
+if ( !function_exists( 'get_several_jetpack_access_count' ) ):
+function get_several_jetpack_access_count($post_id = null, $days = -1){
+  $views = 0;
+  if (is_jetpack_stats_module_active()) {
+    if (!$post_id) {
+      global $post;
+      $post_id = $post->ID;
+    }
+    $jetpack_views = stats_get_csv('postviews', array('days' => $days, 'limit' => 1, 'post_id' => $post_id ));
+    if (isset($jetpack_views[0]['views'])) {
+      $views = $jetpack_views[0]['views'];
+    }
+  }
+  return $views;
+}
+endif;
+
+//今日のJetpackアクセス数を取得
+if ( !function_exists( 'get_todays_jetpack_access_count' ) ):
+function get_todays_jetpack_access_count($post_id = null){
+  return get_several_jetpack_access_count($post_id, 1);
+}
+endif;
+
+//直近7日間Jetpackアクセス数を取得
+if ( !function_exists( 'get_last_7days_jetpack_access_count' ) ):
+function get_last_7days_jetpack_access_count($post_id = null){
+  return get_several_jetpack_access_count($post_id, 7);
+}
+endif;
+
+//直近30日間Jetpackアクセス数を取得
+if ( !function_exists( 'get_last_30days_jetpack_access_count' ) ):
+function get_last_30days_jetpack_access_count($post_id = null){
+  return get_several_jetpack_access_count($post_id, 30);
+}
+endif;
+
+//全てのJetpackアクセス数を取得
+if ( !function_exists( 'get_all_jetpack_access_count' ) ):
+function get_all_jetpack_access_count($post_id = null){
+  return get_several_jetpack_access_count($post_id, -1);
+}
+endif;
