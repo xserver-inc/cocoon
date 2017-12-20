@@ -1065,6 +1065,6 @@ endif;
 //ユーザーが管理者か
 if ( !function_exists( 'is_user_administrator' ) ):
 function is_user_administrator(){
-  return current_user_can( 'manage_options' );
+  return current_user_can( 'administrator' );
 }
 endif;

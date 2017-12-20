@@ -373,7 +373,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
   $page_type = get_accesses_page_type();
-  if (is_category()) {
+  if (!is_page()) {
     $page_type = 's';
   }
   $date = get_current_db_date();
