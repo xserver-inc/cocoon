@@ -232,7 +232,7 @@ if ( !function_exists( 'generate_tooltip_tag' ) ):
 function generate_tooltip_tag($content){?>
   <span class="tooltip fa fa-exclamation-triangle">
     <span class="tip-content">
-      <?php echo esc_html($content); ?>
+      <?php echo $content; ?>
     </span>
   </span>
   <?php
