@@ -1,5 +1,5 @@
 <?php //ヘッダーのアクセス解析
-if (!is_user_logged_in()) : //ログインしていないユーザーのみ適用 ?>
+if (!is_user_administrator()) : //ログインしていないユーザーのみ適用 ?>
 <?php //Google Tag Manager (noscript)
 if ( get_google_tag_manager_tracking_id() )://トラッキングIDが設定されているとき ?>
 <!-- Google Tag Manager (noscript) -->
@@ -31,4 +31,4 @@ if (get_other_analytics_header_tags()) {
   echo get_other_analytics_header_tags().PHP_EOL;
   echo '<!-- /Other Analytics -->'.PHP_EOL;
 }?>
-<?php endif; //!is_user_logged_in() ?>
+<?php endif; //!is_user_administrator() ?>

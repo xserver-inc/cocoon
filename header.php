@@ -12,7 +12,7 @@ if ( get_google_search_console_id() ): ?>
 <!-- /Google Search Console -->
 <?php endif;//Google Search Console終了 ?>
 <?php //Google Tag Manager
-if (!is_user_logged_in() && get_google_tag_manager_tracking_id()): ?>
+if (!is_user_administrator() && get_google_tag_manager_tracking_id()): ?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

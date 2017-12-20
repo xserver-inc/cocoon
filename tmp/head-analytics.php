@@ -1,5 +1,5 @@
 <?php //ログインユーザー以外
-if (!is_user_logged_in()): ?>
+if (!is_user_administrator()): ?>
   <?php //Google Analytics(gtag.js)
   if ( get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->

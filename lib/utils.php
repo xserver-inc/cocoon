@@ -1061,3 +1061,10 @@ function get_current_db_date_before($days){
   return date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
 }
 endif;
+
+//ユーザーが管理者か
+if ( !function_exists( 'is_user_administrator' ) ):
+function is_user_administrator(){
+  return current_user_can( 'manage_options' );
+}
+endif;

@@ -1,6 +1,6 @@
 <?php //リセットの実行
 //管理者権限を持っているログインユーザーかどうか
-if (is_user_logged_in() && current_user_can('manage_options')) {
+if (is_user_administrator()) {
 
   require_once(ABSPATH . 'wp-admin/includes/file.php');//WP_Filesystemの使用
 
