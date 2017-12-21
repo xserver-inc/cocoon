@@ -3606,4 +3606,6 @@ select option.fa {
 .indent {
   padding-left: 40px; }
 
-/*# sourceMappingURL=admin.css.map */
+.red {
+  color: red;
+  margin-left: 1em; }

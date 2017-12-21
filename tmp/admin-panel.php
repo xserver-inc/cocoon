@@ -30,8 +30,14 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
   if (is_admin_panel_edit_area_visible()): ?>
     <div class="admin-edit">
       <span class="fa fa-edit fa-fw"></span>
-      <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
-      <span class="post-wlw-edit"><?php wlw_edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
+      <?php //投稿編集リンクの表示
+      if (is_admin_panel_wp_edit_visible()): ?>
+        <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
+      <?php endif ?>
+      <?php //Windows Live Writer編集リンクの表示
+      if (is_admin_panel_wlw_edit_visible()): ?>
+        <span class="post-wlw-edit"><?php wlw_edit_post_link(__( 'WLWで編集', THEME_NAME )); ?></span>
+      <?php endif ?>
     </div>
   <?php endif ?>
 

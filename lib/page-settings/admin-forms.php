@@ -79,6 +79,7 @@
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ));
             ?>
             <div class="indent">
+              <spag><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
               <?php
               $theme = '';
               //テーマのアクセス取得が有効でないとき
@@ -114,7 +115,13 @@
             generate_tips_tag(__( '管理者パネル内の編集エリアを表示します。', THEME_NAME ));
             ?>
             <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_ADMIN_PANEL_WP_EDIT_VISIBLE , is_admin_panel_wp_edit_visible(), __( '投稿編集リンクの表示', THEME_NAME ));
+              generate_tips_tag(__( 'Wordpress管理画面で投稿内容を編集するためのリンクです。', THEME_NAME ));
 
+              generate_checkbox_tag(OP_ADMIN_PANEL_WLW_EDIT_VISIBLE , is_admin_panel_wlw_edit_visible(), __( 'WLW編集リンクの表示', THEME_NAME ));
+              generate_tips_tag(__( 'Windows Live Writerで投稿内容を編集するためのリンクです。', THEME_NAME ));
+               ?>
             </div>
           </td>
         </tr>
