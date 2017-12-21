@@ -39,7 +39,7 @@
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
   var panel = $("#admin-panel");
-  var menuHeight = panel.height()+50;
+  var menuHeight = panel.height()*2;
   var startPos = 0;
   $(window).scroll(function(){
     var currentPos = $(this).scrollTop();

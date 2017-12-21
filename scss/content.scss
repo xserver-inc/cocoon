@@ -6,6 +6,21 @@
 }
 
 .eye-catch{
+  position: relative;
+  display: inline-block;
+
+  .cat-label{
+    position: absolute;
+    right: 0.4em;
+    top: 0.4em;
+    left: auto;
+    font-size: 14px;
+    padding: 4px 8px;
+    opacity: 0.9;
+    //border-radius: 2px;
+    border: 1px solid #ccc;
+  }
+
   //@extend %bottom_margin;
   //& +
 }

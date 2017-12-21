@@ -911,6 +911,18 @@
     padding: 5px; }
   .demo .content {
     margin-top: 24px; }
+  .demo .eye-catch {
+    position: relative;
+    display: inline-block; }
+    .demo .eye-catch .cat-label {
+      position: absolute;
+      right: 0.4em;
+      top: 0.4em;
+      left: auto;
+      font-size: 14px;
+      padding: 4px 8px;
+      opacity: 0.9;
+      border: 1px solid #ccc; }
   .demo .entry-title,
   .demo .archive-title {
     font-size: 26px;
@@ -1999,8 +2011,6 @@
   .demo .carousel {
     margin-top: 10px;
     line-height: 1.1; }
-    .demo .carousel .cat-label {
-      display: none; }
     .demo .carousel .slick-arrow:before {
       color: #cccdce; }
   .demo .carousel-in {
@@ -2724,9 +2734,9 @@
   .demo .admin-edit,
   .demo .admin-amp {
     border-radius: 3px;
-    padding: 3px 10px;
+    padding: 0 10px;
     border: 1px solid #ccc;
-    margin: 0 4px; }
+    margin: 6px 4px; }
     .demo .admin-pv > span,
     .demo .admin-edit > span,
     .demo .admin-amp > span {
@@ -3218,7 +3228,9 @@
         .demo .speech-wrap.sbp-r .speech-balloon::after {
           border-left-width: 7px;
           right: -5px;
-          left: auto; } }
+          left: auto; }
+      .demo .admin-panel {
+        flex-direction: column; } }
   @media print {
     .demo {
       /************************************

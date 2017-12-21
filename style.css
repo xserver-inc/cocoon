@@ -876,6 +876,21 @@ img {
   margin-top: 24px;
 }
 
+.eye-catch {
+  position: relative;
+  display: inline-block;
+}
+.eye-catch .cat-label {
+  position: absolute;
+  right: 0.4em;
+  top: 0.4em;
+  left: auto;
+  font-size: 14px;
+  padding: 4px 8px;
+  opacity: 0.9;
+  border: 1px solid #ccc;
+}
+
 /*エントリー・アーカイブの見出し*/
 .entry-title,
 .archive-title {
@@ -2486,9 +2501,6 @@ input[type='submit'] {
   margin-top: 10px;
   line-height: 1.1;
 }
-.carousel .cat-label {
-  display: none;
-}
 .carousel .slick-arrow:before {
   color: #cccdce;
 }
@@ -3597,9 +3609,9 @@ div.fb-like-mobile {
 .admin-edit,
 .admin-amp {
   border-radius: 3px;
-  padding: 3px 10px;
+  padding: 0 10px;
   border: 1px solid #ccc;
-  margin: 0 4px;
+  margin: 6px 4px;
 }
 .admin-pv > span,
 .admin-edit > span,
@@ -4379,6 +4391,10 @@ div.fb-like-mobile {
     border-left-width: 7px;
     right: -5px;
     left: auto;
+  }
+
+  .admin-panel {
+    flex-direction: column;
   }
 }
 @media print {
