@@ -71,6 +71,7 @@ require_once 'additional-classes.php'; //スタイリング用の追加クラス
 require_once 'auto-post-thumbnail.php'; //アイキャッチ自動追加関数
 require_once 'update.php'; //アップデート関係の処理
 require_once 'ssl.php'; //SSL関係の処理
+//require_once 'profile.php'; //プロフィール関係の処理
 
 
 //新着記事ウィジェット

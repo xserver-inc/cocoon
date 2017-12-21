@@ -244,8 +244,8 @@ $colors = array();
 //カテゴリ色の振り分け
 foreach ($cats as $cat) {
   $color = get_category_color($cat->cat_ID);
-  $cat_label_pre = '.cat-label-';
-  $cat_link_pre = '.cat-link-';
+  $cat_label_pre = '.cat-label.cat-label-';
+  $cat_link_pre = '.cat-label.cat-link-';
   if ($color) {
     $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
     if (isset($colors[$color])) {
