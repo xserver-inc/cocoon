@@ -497,3 +497,67 @@ function get_all_jetpack_access_count($post_id = null){
   return get_several_jetpack_access_count($post_id, -1);
 }
 endif;
+
+//今日のアクセス数取得
+if ( !function_exists( 'get_todays_pv' ) ):
+function get_todays_pv(){
+  $res = 0;
+  switch (get_admin_panel_pv_type()) {
+    case 'jetpack':
+      $res = get_todays_jetpack_access_count();
+      break;
+    default:
+      $res = get_todays_access_count();
+      break;
+  }
+  return $res;
+}
+endif;
+
+//直近7日間のアクセス数取得
+if ( !function_exists( 'get_last_7days_pv' ) ):
+function get_last_7days_pv(){
+  $res = 0;
+  switch (get_admin_panel_pv_type()) {
+    case 'jetpack':
+      $res = get_last_7days_jetpack_access_count();
+      break;
+    default:
+      $res = get_last_7days_access_count();
+      break;
+  }
+  return $res;
+}
+endif;
+
+//直近30日間のアクセス数取得
+if ( !function_exists( 'get_last_30days_pv' ) ):
+function get_last_30days_pv(){
+  $res = 0;
+  switch (get_admin_panel_pv_type()) {
+    case 'jetpack':
+      $res = get_last_30days_jetpack_access_count();
+      break;
+    default:
+      $res = get_last_30days_access_count();
+      break;
+  }
+  return $res;
+}
+endif;
+
+//全期間のアクセス数取得
+if ( !function_exists( 'get_all_pv' ) ):
+function get_all_pv(){
+  $res = 0;
+  switch (get_admin_panel_pv_type()) {
+    case 'jetpack':
+      $res = get_all_jetpack_access_count();
+      break;
+    default:
+      $res = get_all_access_count();
+      break;
+  }
+  return $res;
+}
+endif;
