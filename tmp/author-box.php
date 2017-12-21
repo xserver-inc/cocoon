@@ -15,7 +15,13 @@
       <?php the_author_posts_link(); ?>
     </div>
     <div class="author-description">
-      <?php the_author_meta( 'description', get_the_author_id() ); ?>
+      <?php echo get_the_author_meta( 'description', get_the_author_id() ); ?>
+      <?php if (0&&get_the_author_website_url()): ?>
+        <span class="site-url">
+          <a href="<?php echo get_the_author_website_url(); ?>" target="_blank"><?php echo get_the_author_website_url(); ?></a>
+        </span>
+      <?php endif ?>
+
     </div>
     <div class="author-follows">
       <?php get_template_part('tmp/sns-follow-buttons'); ?>
