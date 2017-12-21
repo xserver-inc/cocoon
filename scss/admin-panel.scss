@@ -36,6 +36,19 @@
   margin: 0 4px;
 }
 
+.admin-pv{
+  position: relative;
+
+  .admin-pv-by{
+    position: absolute;
+    bottom: -1em;
+    right: 0.4em;
+    font-size: 0.6em;
+    background-color: $text_color;
+    padding: 0 6px;
+  }
+}
+
 .today-pv,
 .week-pv,
 .month-pv{

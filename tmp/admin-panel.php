@@ -6,6 +6,13 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
   <?php //PVエリアの表示
   if (is_admin_panel_pv_area_visible()): ?>
     <div class="admin-pv">
+      <span class="admin-pv-by">
+        <?php if (get_admin_panel_pv_type() == THEME_NAME): ?>
+          by <?php echo THEME_NAME_CAMEL; ?>
+        <?php else: ?>
+          by Jetpack
+        <?php endif ?>
+      </span>
       <span class="fa fa-signal fa-fw"></span>
       <span class="today-pv">
         <span class="today-pv-label"><?php _e( '本日', THEME_NAME ) ?></span>

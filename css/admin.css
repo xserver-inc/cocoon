@@ -2727,6 +2727,15 @@
     padding: 3px 10px;
     border: 1px solid #ccc;
     margin: 0 4px; }
+  .demo .admin-pv {
+    position: relative; }
+    .demo .admin-pv .admin-pv-by {
+      position: absolute;
+      bottom: -1em;
+      right: 0.4em;
+      font-size: 0.6em;
+      background-color: #333435;
+      padding: 0 6px; }
   .demo .today-pv,
   .demo .week-pv,
   .demo .month-pv {
