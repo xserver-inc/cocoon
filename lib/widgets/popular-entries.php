@@ -88,14 +88,22 @@ class PopularEntryWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['entry_count'] = strip_tags($new_instance['entry_count']);
-    $instance['entry_type'] = strip_tags($new_instance['entry_type']);
-    $instance['count_days'] = strip_tags($new_instance['count_days']);
-    $instance['ranking_visible'] = strip_tags($new_instance['ranking_visible']);
-    $instance['pv_visible'] = strip_tags($new_instance['pv_visible']);
-      return $instance;
+    if (isset($new_instance['widget_mode']))
+      $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
+    if (isset($new_instance['title']))
+      $instance['title'] = strip_tags($new_instance['title']);
+    if (isset($new_instance['entry_count']))
+      $instance['entry_count'] = strip_tags($new_instance['entry_count']);
+    if (isset($new_instance['entry_type']))
+      $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+    if (isset($new_instance['count_days']))
+      $instance['count_days'] = strip_tags($new_instance['count_days']);
+    if (isset($new_instance['ranking_visible']))
+      $instance['ranking_visible'] = strip_tags($new_instance['ranking_visible']);
+    if (isset($new_instance['pv_visible']))
+      $instance['pv_visible'] = strip_tags($new_instance['pv_visible']);
+
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){
@@ -109,13 +117,13 @@ class PopularEntryWidgetItem extends WP_Widget {
         'pv_visible' => 0,
       );
     }
-    $widget_mode = esc_attr($instance['widget_mode']);
-    $title = esc_attr($instance['title']);
-    $entry_count = esc_attr($instance['entry_count']);
-    $entry_type = esc_attr($instance['entry_type']);
-    $count_days = esc_attr($instance['count_days']);
-    $ranking_visible = esc_attr($instance['ranking_visible']);
-    $pv_visible = esc_attr($instance['pv_visible']);
+    $widget_mode = isset($instance['widget_mode']) ? esc_attr($instance['widget_mode']) : WM_DEFAULT;
+    $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+    $entry_count = isset($instance['entry_count']) ? esc_attr($instance['entry_count']) : EC_DEFAULT;
+    $entry_type = isset($instance['entry_type']) ? esc_attr($instance['entry_type']) : ET_DEFAULT;
+    $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
+    $ranking_visible = isset($instance['ranking_visible']) ? esc_attr($instance['ranking_visible']) : 0;
+    $pv_visible = isset($instance['pv_visible']) ? esc_attr($instance['pv_visible']) : 0;
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
