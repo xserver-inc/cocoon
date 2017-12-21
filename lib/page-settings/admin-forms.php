@@ -45,4 +45,36 @@
 
 
 
+<!-- 管理者パネル -->
+<div id="admin-panel" class="postbox">
+  <h2 class="hndle"><?php _e( '管理者パネル', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '管理者向けのPV表示や編集リンクの表示です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 管理者パネルの表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_PANEL_VISIBLE, __( '管理者パネルの表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_PANEL_VISIBLE, is_admin_panel_visible(), __( '管理者パネルを表示する', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページ下部に管理者向けの情報をエリアを表示します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
 </div><!-- /.metabox-holder -->
