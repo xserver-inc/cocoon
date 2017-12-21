@@ -13,7 +13,7 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
           by Jetpack
         <?php endif ?>
       </span>
-      <span class="fa fa-signal fa-fw"></span>
+      <span class="fa fa-bar-chart fa-fw"></span>
       <span class="today-pv">
         <span class="today-pv-label"><?php _e( '本日', THEME_NAME ) ?></span>
         <span class="today-pv-count"><?php echo get_todays_pv(); ?></span>
@@ -30,6 +30,12 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
         <span class="all-pv-label"><?php _e( '全体', THEME_NAME ) ?></span>
         <span class="all-pv-count"><?php echo get_all_pv(); ?></span>
       </span>
+      <?php //Jetpackチャート表示
+      if ((get_admin_panel_pv_type() == 'jetpack') &&
+          //Jetpackが有効の場合
+          is_jetpack_stats_module_active()) {
+        echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', 'simplicity2' ).'" target="_blank"><span class="fa fa-line-chart"></span></a></span>';
+      } ?>
     </div>
   <?php endif ?>
 

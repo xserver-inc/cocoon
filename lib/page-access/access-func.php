@@ -266,7 +266,7 @@ endif;
 if ( !function_exists( 'get_several_access_count' ) ):
 function get_several_access_count($post_id = null, $days = 'all'){
   $res = 0;
-  if (is_singular()) {
+  if (is_singular() && is_access_count_enable()) {
     global $post;
     global $wpdb;
 
