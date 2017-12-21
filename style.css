@@ -498,7 +498,7 @@ img {
   display: block;
 }
 .navi-in > ul > .menu-item-has-description a > .caption-wrap {
-  line-height: 21.42857px;
+  line-height: 21.4285714286px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -3068,7 +3068,7 @@ div.fb-like-mobile {
 
 .left_balloon:before,
 .left-balloon:before {
-  border-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
   border-right-color: #000;
   border-width: 8px;
   margin-top: -8px;

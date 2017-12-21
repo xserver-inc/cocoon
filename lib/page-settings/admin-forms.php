@@ -78,6 +78,27 @@
             generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), __( 'PVエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ));
             ?>
+            <div class="indent">
+              <?php
+              $theme = '';
+              //テーマのアクセス取得が有効でないとき
+              if (!is_access_count_enable()) {
+                $theme = '<span class="red">'.__( '※テーマのアクセス集計が有効になっていません。', THEME_NAME ).'</span>';
+              }
+              $jet = '';
+              //Jetpackの統計機能が有効でないとき
+              if (!is_jetpack_stats_module_active()) {
+                $jet = '<span class="red">'.__( '※Jetpackの統計機能が有効になっていません。', THEME_NAME ).'</span>';
+              }
+              $options = array(
+                THEME_NAME => __( 'テーマ独自', THEME_NAME ).$theme,
+                'jetpack' => __( 'Jetpack', THEME_NAME ).$jet,
+              );
+              generate_radiobox_tag(OP_ADMIN_PANEL_PV_TYPE, $options, get_admin_panel_pv_type());
+              generate_tips_tag(__( '管理者パネルで表示するPVの取得方法を選択します。', THEME_NAME ));
+
+               ?>
+            </div>
           </td>
         </tr>
 

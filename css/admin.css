@@ -672,7 +672,7 @@
       .demo .navi-in > ul li:hover > ul {
         display: block; }
     .demo .navi-in > ul > .menu-item-has-description a > .caption-wrap {
-      line-height: 21.42857px;
+      line-height: 21.4285714286px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -2382,7 +2382,7 @@
     margin-top: -7px; }
   .demo .left_balloon:before,
   .demo .left-balloon:before {
-    border-color: transparent;
+    border-color: rgba(0, 0, 0, 0);
     border-right-color: #000;
     border-width: 8px;
     margin-top: -8px; }
@@ -3602,3 +3602,8 @@ select option.fa {
   margin: 0; }
 .sb-list .htmlcode {
   margin-bottom: 20px; }
+
+.indent {
+  padding-left: 40px; }
+
+/*# sourceMappingURL=admin.css.map */
