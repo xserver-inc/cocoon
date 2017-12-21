@@ -33,7 +33,7 @@ endif;
 define('OP_ADMIN_PANEL_VISIBLE', 'admin_panel_visible');
 if ( !function_exists( 'is_admin_panel_visible' ) ):
 function is_admin_panel_visible(){
-  return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1) && is_singular() && is_user_administrator();
+  return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1);
 }
 endif;
 
@@ -50,14 +50,6 @@ define('OP_ADMIN_PANEL_PV_TYPE', 'admin_panel_pv_type');
 if ( !function_exists( 'get_admin_panel_pv_type' ) ):
 function get_admin_panel_pv_type(){
   return get_theme_option(OP_ADMIN_PANEL_PV_TYPE, THEME_NAME);
-}
-endif;
-
-//管理者パネル編集エリアの表示
-define('OP_ADMIN_PANEL_EDIT_AREA_VISIBLE', 'admin_panel_edit_area_visible');
-if ( !function_exists( 'is_admin_panel_edit_area_visible' ) ):
-function is_admin_panel_edit_area_visible(){
-  return get_theme_option(OP_ADMIN_PANEL_EDIT_AREA_VISIBLE, 1);
 }
 endif;
 

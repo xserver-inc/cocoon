@@ -68,6 +68,36 @@
           </td>
         </tr>
 
+        <!-- PVの表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, __( 'PVの表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), __( 'PVエリアを表示する', THEME_NAME ));
+            generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+        <!-- 編集エリアの表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_PANEL_EDIT_AREA_VISIBLE, __( '編集エリアの表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_PANEL_EDIT_AREA_VISIBLE, is_admin_panel_edit_area_visible(), __( '編集エリアを表示する', THEME_NAME ));
+            generate_tips_tag(__( '管理者パネル内の編集エリアを表示します。', THEME_NAME ));
+            ?>
+            <div class="indent">
+
+            </div>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>
