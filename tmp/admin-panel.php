@@ -41,10 +41,13 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
     </div>
   <?php endif ?>
 
+  <?php //AMPエリアの表示
+  if (is_admin_panel_amp_area_visible()): ?>
+    <div class="admin-amp">
+      <span class="fa fa-bolt fa-fw"></span>
+      AMP
+    </div>
+  <?php endif ?>
 
-  <div class="admin-amp">
-    <span class="fa fa-bolt fa-fw"></span>
-    AMP
-  </div>
 </div>
 <?php endif //is_singular ?>

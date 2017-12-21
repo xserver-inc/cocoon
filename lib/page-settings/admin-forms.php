@@ -126,6 +126,19 @@
           </td>
         </tr>
 
+        <!-- AMPエリアの表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, __( 'AMPエリアの表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, is_admin_panel_amp_area_visible(), __( 'AMPエリア表示する', THEME_NAME ));
+            generate_tips_tag(__( 'AMP動作確認・テストリンクなどを表示します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>
