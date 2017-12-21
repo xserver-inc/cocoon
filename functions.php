@@ -287,12 +287,15 @@ function do_access_counting() {
 endif;
 
 ///////////////////////////////////////
-// 姉妹でプロフィール画像のアップロード
+// 自前でプロフィール画像のアップロード
 ///////////////////////////////////////
 //プロフィール画面で設定したプロフィール画像
 if ( !function_exists( 'get_the_author_upladed_avatar_url' ) ):
-function get_the_author_upladed_avatar_url(){
-  return esc_html(get_the_author_meta('upladed_avatar', get_the_posts_author_id()));
+function get_the_author_upladed_avatar_url($user_id){
+  if (!$user_id) {
+    $user_id = get_the_posts_author_id();
+  }
+  return esc_html(get_the_author_meta('upladed_avatar', $user_id));
 }
 endif;
 
@@ -334,11 +337,20 @@ endif;
 add_filter( 'get_avatar' , 'get_uploaded_user_profile_avatar' , 1 , 5 );
 if ( !function_exists( 'get_uploaded_user_profile_avatar' ) ):
 function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
-  //_v(get_the_author_upladed_avatar_url());
-  if (get_the_author_upladed_avatar_url()) {
-    $alt = !empty($alt) ? $alt : get_the_author_meta( 'display_name', get_the_posts_author_id() );;
-    $author_class = is_author( get_the_posts_author_id() ) ? ' current-author' : '' ;
-    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_upladed_avatar_url() ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
+  if ( is_numeric( $id_or_email ) )
+    $user_id = (int) $id_or_email;
+  elseif ( is_string( $id_or_email ) && ( $user = get_user_by( 'email', $id_or_email ) ) )
+    $user_id = $user->ID;
+  elseif ( is_object( $id_or_email ) && ! empty( $id_or_email->user_id ) )
+    $user_id = (int) $id_or_email->user_id;
+
+  if ( empty( $user_id ) )
+    return $avatar;
+
+  if (get_the_author_upladed_avatar_url($user_id)) {
+    $alt = !empty($alt) ? $alt : get_the_author_meta( 'display_name', $user_id );;
+    $author_class = is_author( $user_id ) ? ' current-author' : '' ;
+    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_upladed_avatar_url($user_id) ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
   }
 
   return $avatar;
