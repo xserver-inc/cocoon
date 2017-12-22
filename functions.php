@@ -275,6 +275,7 @@ if ( !function_exists( 'do_access_counting' ) ):
 function do_access_counting() {
     // _v(!is_admin());
     // _v(is_singular());
+  //アクセス数をカウントする
   if (!is_admin() && is_singular()) {
     //アクセス数のカウント
     if (is_access_count_enable()) {
@@ -282,9 +283,18 @@ function do_access_counting() {
       count_this_page_access();
     }
   }
+
+  //リダイレクト
+  if (is_singular() && $redirect_url = get_singular_redirect_url()) {
+    //URL形式にマッチする場合
+    if (preg_match(URL_REG, $redirect_url)) {
+      redirect_to_url($redirect_url);
+    }
+
+  }
 }
 endif;
-
+/*
 ///////////////////////////////////////
 // 自前でプロフィール画像のアップロード
 ///////////////////////////////////////
@@ -355,3 +365,4 @@ function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $defaul
   return $avatar;
 }
 endif;
+*/

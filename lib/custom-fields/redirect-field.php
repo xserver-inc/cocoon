@@ -45,7 +45,7 @@ endif;
 //リダイレクトURLの取得
 if ( !function_exists( 'get_singular_redirect_url' ) ):
 function get_singular_redirect_url(){
-  return get_post_meta(get_the_ID(), 'redirect_url', true);
+  return trim(get_post_meta(get_the_ID(), 'redirect_url', true));
 }
 endif;
 
