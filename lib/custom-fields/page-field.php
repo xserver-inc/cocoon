@@ -6,10 +6,6 @@
 add_action('admin_menu', 'add_page_custom_box');
 if ( !function_exists( 'add_page_custom_box' ) ):
 function add_page_custom_box(){
-  //ページボックス
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'post', 'normal', 'core' );
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'page', 'normal', 'core' );
-  add_meta_box( 'singular_seo_settings',__( 'SEO設定', THEME_NAME ), 'seo_custom_box_view', 'topic', 'normal', 'core' );
 
   //ページ設定
   add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'post', 'side' );

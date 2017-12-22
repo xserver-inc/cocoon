@@ -3628,3 +3628,6 @@ select option.fa {
 .red {
   color: red;
   margin-left: 1em; }
+
+#singular_redirect_settings input[type="text"] {
+  width: 100%; }
