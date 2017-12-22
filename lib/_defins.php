@@ -11,6 +11,7 @@ define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 define('THEME_NAME_UPPER', strtoupper(THEME_NAME));
 
 define('THEME_JS', THEME_NAME.'-js');
+define('THEME_CHILD_JS', THEME_NAME.'-child-js');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
 //トップレベルオリジナル設定名

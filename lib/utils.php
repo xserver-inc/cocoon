@@ -789,14 +789,6 @@ function is_bbpress_page(){
 }
 endif;
 
-
-//子テーマが存在するか
-if ( !function_exists( 'is_child_theme_exists' ) ):
-function is_child_theme_exists(){
-  return get_template_directory_uri() != get_stylesheet_directory_uri();
-}
-endif;
-
 //スクロール追従領域が有効化
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){
