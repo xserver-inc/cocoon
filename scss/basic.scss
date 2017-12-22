@@ -28,7 +28,12 @@ body {
 
 /*デフォルトリンク*/
 a{
-  //color: #006FAB;
+  color: #0000ee;
+
+
+  // &:visited{
+  //   color: blue;
+  // }
 
   &:hover{
     color: #BE0032;

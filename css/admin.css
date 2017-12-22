@@ -499,8 +499,10 @@
     overflow-wrap: break-word;
     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
     background-attachment: fixed; }
-  .demo a:hover {
-    color: #BE0032; }
+  .demo a {
+    color: #0000ee; }
+    .demo a:hover {
+      color: #BE0032; }
   .demo .cf::after {
     clear: both;
     content: "";
