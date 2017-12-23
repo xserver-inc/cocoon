@@ -8,6 +8,13 @@ function get_skin_url(){
 }
 endif;
 
+//スキンのjavascript.jsを取得を
+if ( !function_exists( 'get_skin_js_url' ) ):
+function get_skin_js_url(){
+  return str_ireplace('style.css', 'javascript.js', get_skin_url());
+}
+endif;
+
 
 //スキンファイルリストの並べ替え用の関数
 if ( !function_exists( 'skin_files_comp' ) ):
@@ -119,8 +126,8 @@ function get_skin_infos(){
           }
 
 
-          $file_url = str_replace(get_theme_root(), get_theme_root_uri() , $style_css_file);
-          $dir_url = str_replace(get_theme_root(), get_theme_root_uri() , $dir);
+          $file_url = local_to_url($style_css_file);
+          $dir_url = local_to_url($dir);
           if (is_child_theme() && strpos($file_url, get_stylesheet_directory_uri()) !== false) {
             $skin_name = '[Child]'.$skin_name;
           }

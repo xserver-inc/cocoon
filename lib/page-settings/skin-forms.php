@@ -5,7 +5,7 @@
   <h2 class="hndle"><?php _e( 'スキン設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'スキンを変更することで、サイトのデザインを手軽に変更できます。。', THEME_NAME ) ?></p>
+    <p><?php _e( 'スキンを変更することで、サイトのデザインを手軽に変更できます。', THEME_NAME ) ?></p>
 
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo iframe-standard-demo skin-demo">
