@@ -42,8 +42,7 @@
 
               $author_text = $author.' ';
               if ($author_uri) {
-                $author_text = '[<span class="fa fa-user"></span>
-<a href="'.$author_uri.'" target="_blank">'.$author.'</a>] ';
+                $author_text = '&nbsp;&nbsp;<span style="font-style: italic;font-size: 0.9em;">['.__( '作者', THEME_NAME ).': <a href="'.$author_uri.'" target="_blank">'.$author.'</a>]</span>';
               }
 
               if ($version) {
