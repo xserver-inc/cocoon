@@ -16,12 +16,18 @@
     $all .= __( 'サイトURL：', THEME_NAME ).site_url().PHP_EOL;
     $all .= __( 'Wordpressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
-    $all .= __( 'ブラウザ：', THEME_NAME ).$_SERVER['HTTP_USER_AGENT'].PHP_EOL;
-    $all .= __( 'サーバーソフト：', THEME_NAME ).$_SERVER['SERVER_SOFTWARE'].PHP_EOL;
-    $all .= __( 'サーバープロトコル：', THEME_NAME ).$_SERVER['SERVER_PROTOCOL'].PHP_EOL;
-    $all .= __( '文字セット：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_CHARSET'].PHP_EOL;
-    $all .= __( 'エンコーディング：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_ENCODING'].PHP_EOL;
-    $all .= __( '言語：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_LANGUAGE'].PHP_EOL;
+    if (isset($_SERVER['HTTP_USER_AGENT']))
+      $all .= __( 'ブラウザ：', THEME_NAME ).$_SERVER['HTTP_USER_AGENT'].PHP_EOL;
+    if (isset($_SERVER['SERVER_SOFTWARE']))
+      $all .= __( 'サーバーソフト：', THEME_NAME ).$_SERVER['SERVER_SOFTWARE'].PHP_EOL;
+    if (isset($_SERVER['SERVER_PROTOCOL']))
+      $all .= __( 'サーバープロトコル：', THEME_NAME ).$_SERVER['SERVER_PROTOCOL'].PHP_EOL;
+    if (isset($_SERVER['HTTP_ACCEPT_CHARSET']))
+      $all .= __( '文字セット：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_CHARSET'].PHP_EOL;
+    if (isset($_SERVER['HTTP_ACCEPT_ENCODING']))
+      $all .= __( 'エンコーディング：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_ENCODING'].PHP_EOL;
+    if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+      $all .= __( '言語：', THEME_NAME ).$_SERVER['HTTP_ACCEPT_LANGUAGE'].PHP_EOL;
 
     $all .= $sep;
 

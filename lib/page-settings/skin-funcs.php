@@ -87,14 +87,14 @@ function get_skin_infos(){
 
     //スキンフォルダ内にstyle.cssがある場合
     if (file_exists($style_css_file)){
-      // if ( WP_F ilesystem() ) {//WP_F ilesystemの初期化
-      //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-      //   $css = $wp_filesystem->get_contents($style_css_file);
+      if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+        global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+        $css = $wp_filesystem->get_contents($style_css_file);
 
-      //CSS内容の取得
-      $css = get_source_cord($style_css_file);
+      // //CSS内容の取得
+      // $css = get_file_contents($style_css_file);
 
-      if ( $css ) {
+      // if ( $css ) {
         //Skin Name:の記述があるとき
         if (preg_match('/(Skin )?Name: *(.+)/i', $css, $matches)) {
           $skin_name = trim(strip_tags($matches[2]));

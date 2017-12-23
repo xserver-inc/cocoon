@@ -3,9 +3,10 @@
 if ( !function_exists( 'get_theme_info' ) ):
 function get_theme_info($file){
   if (file_exists($file)) {
-    ob_start();
-    require_once($file);
-    $text = ob_get_clean();
+    // ob_start();
+    // require_once($file);
+    // $text = ob_get_clean();
+    $text = get_file_contents($file);
     if ($text) {
       $info = array();
       if (preg_match('/Theme Name: *(.+)/i', $text, $m)) {
