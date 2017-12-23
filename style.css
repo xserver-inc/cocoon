@@ -1648,9 +1648,10 @@ label.screen-reader-text {
 .recent-comment-content {
   position: relative;
   background: #fff;
-  border: 2px solid #cccdce;
-  padding: 5px;
+  border: 1px solid #cccdce;
+  padding: 6px;
   margin-top: 4px;
+  font-size: 0.9em;
   border-radius: 5px;
 }
 .recent-comment-content::after, .recent-comment-content::before {
@@ -2549,7 +2550,7 @@ input[type='submit'] {
 ** プロフィルボックス
 ************************************/
 .author-box {
-  border: 2px solid #cccfd2;
+  border: 1px solid #cccfd2;
   padding: 10px;
   line-height: 1.4;
   position: relative;
