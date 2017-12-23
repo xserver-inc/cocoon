@@ -7,7 +7,7 @@
 
     <p><?php echo THEME_NAME_CAMEL; ?><?php _e( 'テーマに関する情報です。', THEME_NAME ) ?></p>
     <?php
-    $sep = '------------------------------'.PHP_EOL;
+    $sep = '----------------------------------------------'.PHP_EOL;
     $all = $sep;
 
 

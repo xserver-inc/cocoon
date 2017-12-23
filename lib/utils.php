@@ -1062,3 +1062,16 @@ function is_user_administrator(){
   return current_user_can( 'administrator' );
 }
 endif;
+
+//ソースコードの取得
+if ( !function_exists( 'get_source_cord' ) ):
+function get_source_cord($file){
+  if (file_exists($file)) {
+    ob_start();
+    require_once($file);
+    $source_cord = ob_get_clean();
+    return $source_cord;
+  }
+
+}
+endif;
