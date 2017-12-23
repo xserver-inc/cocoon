@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/************************************
+** 見出し
+************************************/
+
+.article h3 {
+  border-top: none;
+  border-bottom: 2px solid #474a4d;
+}
+
+.article h4 {
+  border: none;
+}
+
+
+/************************************
+** レイアウト
+************************************/
+
+#body {
+  margin-top: 0;
+}
+
+#main {
+  margin-bottom: 10px;
+}
+
+#navi ul li a {
+  background-color: #2b2b2b;
+}
+
+#navi ul.sub-menu, #navi ul.children {
+  background-color: #2b2b2b;
+}
+
+
+/************************************
+** #main内
+************************************/
+
+.entry-read a {
+  border-radius: 0;
+  background-color: #ddd;
+}
+
+.entry-read a:after {
+  color: #2b2b2b;
+}
+
+.entry-read a:hover {
+  color: #c03;
+}
+
+.entry-read a:hover:after {
+  color: #c03;
+}

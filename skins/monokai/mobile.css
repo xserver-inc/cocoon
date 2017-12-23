@@ -1,0 +1,34 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+
+#navi ul li a,
+#navi ul,
+#navi ul.sub-menu, #navi ul.children{
+  background-color: #39382E;
+}
+
+.entry-read a, .related-entry-read a{
+  color: #AE81FF;
+  background-color: #39382E;
+  border-color: #777;
+}
+
+.entry-read a:hover, .related-entry-read a:hover{
+  background-color: #777;
+}
+
+div#navi.sidr ul li.current_page_item a{
+  background-color: #2095F0;
+}
+
+div#navi.sidr ul li.current_page_item a:after{
+  content: '';
+  font-size: 1em;
+  margin-left: 0;
+}
+
+div#navi ul li a::before{
+  content: "\f07b";
+  font-family: FontAwesome;
+  margin-right: 5px;
+  color: #3173C7;
+}

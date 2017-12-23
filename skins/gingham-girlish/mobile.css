@@ -1,0 +1,19 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+
+#navi,
+#navi ul{
+  border:0;
+}
+
+#navi.sidr .menu li a {
+  border-right: none;
+  padding: 10px;
+}
+
+#navi.sidr .menu li a:hover{
+  color: #fff;
+}
+
+#navi.sidr .menu li:first-child{
+  border-left: none;
+}

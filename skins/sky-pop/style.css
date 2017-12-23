@@ -1,0 +1,593 @@
+@charset "UTF-8";
+
+/*
+  Name: Sky Pop
+  Priority: 3.2
+
+  by 第0版 https://0edition.net/
+*/
+
+
+/*************************************************************************************************************************
+ 全体
+*************************************************************************************************************************/
+body{
+	background-image: url("//bibolog.xyz/wp-content/uploads/2017/09/bg-2.png");
+	background-position: left top;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+a{
+	color: #6C9BD2;
+	text-decoration: underline;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+
+a:hover{
+	color: #D04255;
+}
+
+
+/*************************************************************************************************************************
+ ヘッダー
+*************************************************************************************************************************/
+#header{
+	background: transparent;
+}
+
+
+/*************************************************************************************************************************
+ グローバルナビメニュー
+*************************************************************************************************************************/
+#navi{
+	border-bottom: 1px dotted #9FD9F6;
+	background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+#navi .sub-menu li,
+#navi .children li{
+	height: 44px;
+}
+
+#navi ul{
+	background: none;
+	border: none;
+}
+
+#navi ul li{
+	padding: 5px;
+}
+
+#navi ul li a{
+	padding: 10px;
+}
+
+#navi ul li a:hover{
+	background-color: #9FD9F6;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#navi ul.sub-menu, #navi ul.children{
+	border: none;
+	background-color: #EAF6FD;
+	opacity: 0.95;
+}
+
+#navi ul.sub-menu li a:hover {
+	background-color: #9FD9F6;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#navi-in{
+	width: 1000px;
+}
+
+
+/*************************************************************************************************************************
+ body
+*************************************************************************************************************************/
+#body{
+	margin-top: 0px;
+}
+
+
+/*************************************************************************************************************************
+ 記事共通
+*************************************************************************************************************************/
+#main{
+	border: none;
+	border-left: 1px dotted #9FD9F6;
+	border-right: 1px dotted #9FD9F6;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background-color: rgba( 255, 255, 255, 0.95 );
+	margin: 0px;
+	position: relative;
+}
+
+div#main:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 60px;
+	position: absolute;
+	top: -30px;
+	left: -27px;
+}
+
+div#main:after{
+	font-family: 'FontAwesome';
+	content: '\f08d';
+	color: #FFF;
+	font-size: 30px;
+	position: absolute;
+	top: -15px;
+	left: -11px;
+	-webkit-transform:rotate(315deg);
+	-moz-transform:rotate(3155deg);
+	transform:rotate(315deg);
+}
+
+/*************************************************************************************************************************
+ 記事一覧
+*************************************************************************************************************************/
+#main .entry{
+	border: none !important;
+}
+
+h1.entry-title a{
+	font-size: 24px;
+}
+
+h2 a.entry-title{
+	font-size: 18px;
+}
+
+h2 a.entry-title:before{
+	font-family: 'FontAwesome';
+	content: '\f1d8';
+	color: #9FD9F6;
+	margin-right: 10px;
+}
+
+h2 a.entry-title:hover:before{
+	color: #D04255;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.entry-thumb a:hover,
+.related-entry-thumb a:hover{
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha(opacity=70)";
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+
+
+/*************************************************************************************************************************
+ パンくずリスト
+*************************************************************************************************************************/
+#breadcrumb span,
+#breadcrumb a{
+	font-size: 12px;
+	color: #999;
+}
+
+
+/*************************************************************************************************************************
+ 個別記事見出し
+*************************************************************************************************************************/
+.article h1{
+	background-color: #EAF6FD;
+	font-size: 24px;
+	margin: 30px -29px 20px;
+	padding: 10px 10px 10px 40px;
+	position: relative
+}
+
+.article h1:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 52px;
+	position: absolute;
+	left: -22px;
+}
+
+.article h1:after{
+	font-family: 'FontAwesome';
+	content: '\f1d8';
+	color: #FFF;
+	font-size: 25px;
+	position: absolute;
+	top: 11px;
+	left: -14px;
+}
+
+.article h2{
+	font-size: 22px !important;
+	margin: 20px -29px;
+	padding: 10px 10px 2px 40px;
+	border: none;
+	border-bottom: 1px solid #9FD9F6;
+	position: relative;
+}
+
+.article h2:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 40px;
+	position: absolute;
+	left: -17px;
+}
+
+.article h2:after{
+	font-family: 'FontAwesome';
+	content: '\f0c2';
+	color: #FFF;
+	font-size: 23px;
+	position: absolute;
+	top: 10px;
+	left: -12px;
+}
+
+.article h3{
+	font-size: 20px;
+	margin: 20px -29px;
+	padding: 10px 10px 1px 40px;
+	border: none;
+	border-bottom: 1px dashed #9FD9F6;
+	position: relative;
+}
+
+.article h3:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #FFF;
+	font-size: 35px;
+	position: absolute;
+	left: -15px;
+}
+
+.article h3:after{
+	font-family: 'FontAwesome';
+	content: '\f10c';
+	color: #9FD9F6;
+	font-size: 35px;
+	position: absolute;
+	top: 8px;
+	left: -15px;
+}
+
+.article h4{
+	font-size: 18px;
+	margin: 20px 0px;
+	padding: 0px 10px;
+	border: none;
+	position: relative;
+}
+
+.article h4:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 20px;
+	position: absolute;
+	left: -38px;
+}
+
+.article h5{
+	font-size: 16px;
+	margin: 20px 0px;
+	padding: 0px 10px;
+	border: none;
+}
+
+.article h6{
+	font-size: 14px;
+	margin: 20px 0px;
+	padding: 0px 10px;
+	border: none;
+}
+
+
+/*************************************************************************************************************************
+ 投稿日・カテゴリ
+*************************************************************************************************************************/
+.post-meta{
+	padding: 3px;
+	border-style: dotted;
+	border-width: 2px 0px;
+	border-color: #9FD9F6;
+	background: none;
+}
+
+.post-meta span,
+.post-meta time,
+.post-meta a{
+	font-size: 13px;
+}
+
+
+/*************************************************************************************************************************
+ 続きを読む
+*************************************************************************************************************************/
+.entry-read,
+.related-entry-read{
+	width: 100%;
+	text-align: right;
+	margin: 10px 0px;
+}
+
+a.entry-read-link:before,
+.related-entry-read a:before{
+	font-family: 'FontAwesome';
+	content: '\f01d';
+	margin-right: 5px;
+}
+
+a.entry-read-link,
+.related-entry-read a{
+	padding: 5px 10px;
+	color: #555;
+	text-decoration: none;
+	border-radius: 5px;
+	background-color: #EAF6FD;
+	border: 1px solid #EAF6FD;
+}
+
+a:hover.entry-read-link,
+.related-entry-read a:hover{
+	background-color: #9FD9F6;
+	border: 1px solid #9FD9F6;
+}
+
+
+/*************************************************************************************************************************
+ SNS
+*************************************************************************************************************************/
+ul.snsb li a span{
+	color: inherit;
+	font-size: inherit;
+}
+
+ul.snsp li a{
+	color: inherit;
+}
+
+
+/*************************************************************************************************************************
+ 関連記事
+*************************************************************************************************************************/
+#related-entries h2{
+	font-size: 22px;
+	position: relative;
+}
+
+#related-entries h2:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 40px;
+	position: absolute;
+	left: -46px;
+}
+
+#related-entries h2:after{
+	font-family: 'FontAwesome';
+	content: '\f0c2';
+	color: #FFF;
+	font-size: 23px;
+	position: absolute;
+	left: -41px;
+}
+
+
+/*************************************************************************************************************************
+ コメント
+*************************************************************************************************************************/
+#reply-title{
+	font-size: 22px;
+	position: relative;
+}
+
+#reply-title:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #9FD9F6;
+	font-size: 40px;
+	position: absolute;
+	left: -46px;
+}
+
+#reply-title:after{
+	font-family: 'FontAwesome';
+	content: '\f0c2';
+	color: #FFF;
+	font-size: 23px;
+	position: absolute;
+	left: -41px;
+}
+
+/*************************************************************************************************************************
+ ナビゲーション
+*************************************************************************************************************************/
+.navigation a:hover{
+  background: #EAF6FD;
+}
+
+/*************************************************************************************************************************
+ ページネーション
+*************************************************************************************************************************/
+.pagination a{
+	border: none;
+	font-size: 16px;
+}
+
+.pagination a:hover{
+	background-color: #9FD9F6;
+}
+
+.pagination li{
+	border-bottom: 1px solid #9FD9F6;
+}
+
+.pagination li.first{
+	position: relative;
+}
+
+.pagination li.first:before{
+	font-family: 'FontAwesome';
+	content: '\f0c2';
+	color: #9FD9F6;
+	font-size: 20px;
+	position: absolute;
+	left: -14px;
+	bottom: -10.3px;
+}
+
+.pagination li.last{
+	position: relative;
+}
+
+.pagination li.last:after{
+	font-family: 'FontAwesome';
+	content: '\f0c2';
+	color: #9FD9F6;
+	font-size: 20px;
+	position: absolute;
+	right: -14px;
+	bottom: -10.3px;
+}
+
+.pagination li:not([class*="current"]) a:hover{
+	background-color: #9FD9F6;
+}
+
+.pagination li.current a{
+	background-color: #EAF6FD;
+}
+
+
+/*************************************************************************************************************************
+ サイドバー
+*************************************************************************************************************************/
+#sidebar{
+	margin: 0px;
+	padding: 0px 15px;	/* 何かの設定の際にサイドバーが並ばなくなったら15pxの値を小さくしてください */
+	background-color: rgba( 255, 255, 255, 0.95 );
+}
+
+#sidebar .widget{
+	margin-bottom: 20px;
+}
+
+#sidebar aside{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#sidebar aside h3{
+	margin-top: 10px;
+	padding-left: 5px;
+	border-bottom: 1px dotted #EAF6FD;
+	font-size: 20px;
+	position: relative;
+}
+
+#sidebar aside h3:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #FFF;
+	font-size: 30px;
+	position: absolute;
+	left: -28px;
+}
+
+#sidebar aside h3:after{
+	font-family: 'FontAwesome';
+	content: '\f1db';
+	color: #9FD9F6;
+	font-size: 30px;
+	position: absolute;
+	top: -2px;
+	left: -28px;
+}
+
+#sidebar-widget{
+	overflow: initial;
+}
+
+#sidebar.sidr aside h3{
+	padding-left: 0;
+}
+
+#sidebar.sidr aside h3::before,
+#sidebar.sidr aside h3::after{
+	display: none;
+}
+
+
+/*************************************************************************************************************************
+ フッター
+*************************************************************************************************************************/
+#footer{
+	background-color: rgba(255, 255, 255, 0.5);
+	border-top: 1px dotted #9FD9F6;
+	color: #333;
+}
+
+#footer h3{
+	color: #333;
+}
+
+#footer a{
+	color: #6C9BD2;
+}
+
+#copyright a{
+	color: #6C9BD2;
+	text-decoration: underline;
+}
+#footer-widget{
+	color: #333;
+}
+
+
+/*************************************************************************************************************************
+ トップに戻る
+*************************************************************************************************************************/
+#page-top a{
+	border-radius: 5px;
+	background-color: #eee;
+	color: #333
+}
+
+
+/*************************************************************************************************************************
+ Amazon JS
+*************************************************************************************************************************/
+.amazonjs_item .amazonjs_info h4:before{
+	content: '';
+}
+

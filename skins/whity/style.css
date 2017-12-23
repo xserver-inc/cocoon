@@ -1,0 +1,52 @@
+/*
+  Name: ホワイティー
+  Priority: 80
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+#navi ul {
+  background-color:transparent;
+  border-color:transparent;
+}
+
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#fff;
+}
+
+#main{
+  border-color:transparent;
+}
+
+.post-meta{
+  background-color:transparent;
+}
+
+input[type="text"], input[type="url"], input[type="password"], input[type="email"], input[type="search"], input[type="tel"], textarea{
+  background-color:#fff;
+}
+
+/************************************
+** フッター(footer)
+************************************/
+#footer {
+  background-color: transparent;
+  color: #000;
+}
+
+#footer-widget {
+  color: #000;
+}
+
+#footer a {
+  color: #2098A8;
+}
+
+#footer h3{
+  color:#333;
+}
+
+#copyright a{
+  color:#111;
+}

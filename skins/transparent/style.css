@@ -1,0 +1,70 @@
+/*
+  Name:Transparent
+  Priority:6.1
+  Author:TONE
+  Author URI:https://tone-log.com
+*/
+
+/*全体の設定*/
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+body{font-family:'Noto Sans JP',sans-serif;background-color:#f7f7f7}
+#main{border-color:#ececec}
+
+a:hover:not(.balloon-btn-link):not(.btn-icon-link):not(.arrow-box-link),.widget_new_entries a:hover,.widget_new_popular a:hover,.widget_popular_ranking a:hover,.wpp-list a:hover,.entry-read a:hover,.entry .post-meta a:hover,.related-entry-read a:hover,.entry a:hover,.related-entry-title a:hover,.navigation a:hover,#footer a:hover,.article-list .entry-title a:hover{color:#7fb6bd}
+.hover-card .entry:hover,.hover-card .related-entry:hover,.hover-card .related-entry-thumbnail:hover,.hover-card .blog-card:hover,a,a img{
+-webkit-transition:0.1s ease-out;
+-moz-transition:0.1s ease-out;
+-o-transition:0.1s ease-out;
+transition:0.1s ease-out}
+#body a:hover img{
+filter:alpha(opacity="85");
+opacity:0.85;
+-ms-filter:alpha(opacity="85")}
+#s,input[type="text"],input[type="url"],input[type="password"],input[type="email"],input[type="search"],input[type="tel"],textarea{border-color:#ccc}
+
+/*ヘッダーの設定*/
+#h-top{min-height:40px;padding: 30px 0 25px 0}
+@media screen and (max-width:639px){#h-top #site-title a{font-size:24px !important}#h-top{padding:20px 0 18px 0}}
+@media screen and (max-width:500px){#h-top #site-title a{font-size:22px !important}}
+#header{background-color:#fff}
+#header{background-position:0 0;background-size:100% auto;background-repeat:no-repeat}/*ヘッダー背景画像*/
+
+/*サイトタイトルの設定*/
+#site-title{margin-top:0px;margin-bottom:0px}
+#site-title a{
+font-size:40px;
+font-weight:900;
+-moz-font-feature-settings:"palt";
+-webkit-font-feature-settings:"palt";
+font-feature-settings:"palt"}
+#site-description{margin-top:10px;margin-bottom:0px !important}
+#header .alignleft{margin-left:20px}
+@media screen and (min-width:790px){#header #h-top .alignleft{margin-left:3px}}
+
+/*グローバルナビの設定*/
+#navi ul{width:auto}
+#navi li{white-space:nowrap}
+#navi ul li a{font-weight:bold;font-size:15px;padding:0.4em 1em}
+@media screen and (max-width:500px){
+#navi ul li a{padding:5px 7px}
+#navi .sub-menu li, #navi .children li{padding-left:15px}}
+#navi ul.menu > li > a{padding:0.5em 1em 0.6em 1em;font-size:16px}
+#navi .sub-menu li,#navi .children li{height:auto}
+@media screen and (max-width:1110px){
+#navi{border:none !important}
+#navi li{white-space:normal !important}
+#navi ul.sub-menu a:before{content:"-";position:absolute;left:25px}
+#navi .sub-menu li,#navi .children li{background-color:transparent}
+#navi ul li a{overflow:visible}}
+@media screen and (max-width:500px){#navi ul.sub-menu a:before{left:10px}}
+#mobile-menu a{margin-top:0;top:-20px}
+@media screen and (max-width:639px){#mobile-menu a{top:-10px}}
+
+/*見出しの設定*/
+.entry-content h2{
+padding: 0.5em;
+background:#f7f7f7;
+border-left:solid 10px #666}
+.widget_title{
+padding:0.5em 0.5em 0.3em 0.5em;
+border-bottom:solid 1px}

@@ -1,0 +1,275 @@
+/*
+  Name: Monokai
+  Priority: 100
+*/
+
+/*以下にスタイルシートを記入してください*/
+
+body,
+#main,
+#sharebar,
+.page-link a span, .comment-page-link a,
+.pager a,
+.pager .current,
+#prev-next #prev-title, #prev-next #next-title{
+  background-color: #272822;
+  color: #F8F8F2;
+}
+
+.blog-card-excerpt,
+.related-entry-snippet,
+.entry-snippet,
+#mobile-menu a,
+.pagination a{
+  color: #F8F8F2;
+}
+
+.pagination li.current a{
+  background-color: #555;
+}
+
+.pagination li:not([class*="current"]) a:hover{
+  background-color: #444;
+}
+
+.post-meta,
+.post-meta a,
+.entry .post-meta a,
+.footer-post-meta a,
+.footer-post-meta,
+#site-description{
+  color: #52D9EF;
+}
+
+h1, h2, h3, h4, h5, h6,
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6{
+  color: #A6E22E;
+}
+
+.article h2{
+  background-color: #444;
+  border-left: none;
+}
+
+a,
+.blog-card-title a,
+.widget_new_entries a,
+.widget_new_popular a,
+.widget_popular_ranking a,
+.wpp-list a, .entry-read a, .related-entry-read a, .article-list .entry-title a,
+.related-entry-title a,
+.entry h2 a,
+.blog-card-site a{
+  color: #F92672;
+}
+
+#breadcrumb,
+#breadcrumb a,
+.blog-card-footer,
+.related-entry-read a,
+.entry-read a{
+  color: #AE81FF;
+}
+
+#main,
+#sharebar,
+.article h3,
+.article h4,
+.article h3, #comment-area h2, #related-entries h2,
+.internal-blog-card,
+.external-blog-card,
+.page-link span, .comment-page-link span, .comment-page-link a,
+.article th,
+.article td,
+.pager a,
+.pager .current,
+#navi ul,
+#navi ul.sub-menu, #navi ul.children,
+a.balloon-btn-link,
+.arrow-box,
+.navigation > div,
+#prev-next #prev,
+#main .entry.masonry-brick,
+.category-description,
+.pagination a{
+  border-color: #777;
+}
+
+.page-link span, .comment-page-link span, .comment-page-link a,
+.pager .current{
+  background-color: #777;
+}
+
+.post-meta,
+pre,
+.page-link a span, .comment-page-link a,
+blockquote,
+#footer,
+.article th,
+.pager a,
+.category-description,
+#prev-next #prev:hover, #prev-next #next:hover,
+.pager a:hover
+/*,
+.arrow-box,
+.arrow-box::after*/{
+  background-color: #39382E;
+}
+
+
+/*a.balloon-btn-link,
+.arrow-box,
+.arrow-box::before,
+#sns-group-top .arrow-box-link,
+#sns-group-top .arrow-box::before{
+  background-color: #272822;
+}*/
+
+#navi ul{
+  background-color: #131416;
+  border: none;
+  border-bottom: 8px solid #4B4F53;
+}
+
+#navi ul li a{
+  color: #F8F8F2;
+  margin: 3px 3px 0;
+  background-color: #32363B;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+#navi ul li a:hover{
+  background-color: #4B4F53;
+}
+
+#navi ul li.current_page_item > a,
+#navi ul li.current-menu-item > a{
+  background-color: #555;
+}
+
+#navi ul li.current_page_item > a:after,
+#navi ul li.current-menu-item > a:after{
+  content: '●';
+  color: #E37234;
+  font-size: 80%;
+  margin-left: 12px;
+}
+
+#navi ul.sub-menu li a,
+#navi ul.children li a{
+  margin: 0;
+  border-radius: 0;
+}
+
+#navi ul.sub-menu li a:after,
+#navi ul.children li a:after{
+  margin: 0;
+  content: '';
+}
+
+blockquote,
+blockquote::before,
+blockquote::after,
+#site-title a{
+  border: none;
+  color: #E6DB74;
+}
+
+#page-top a{
+  background-color: #E6DB74;
+  color: #272822;
+}
+
+.arrow-box{
+  border-color: #555 !important;
+}
+
+a.arrow-box-link{
+  color: #AE81FF;
+  background-color: #272822;
+
+}
+
+.arrow-box::before{
+  border-color: #555 rgba(187, 187, 187, 0) rgba(187, 187, 187, 0);
+}
+
+.arrow-box::after{
+  border-color: #272822 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+}
+
+#sns-group-top .arrow-box::before{
+  border-color: rgba(119, 119, 119, 0) #555 rgba(119, 119, 119, 0) rgba(119, 119, 119, 0);
+}
+
+#sns-group-top .arrow-box::after{
+  border-color: rgba(255, 255, 255, 0) #272822 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+}
+
+a.balloon-btn-link{
+  background-color: #333 !important;
+  color: #E6DB74;
+}
+
+
+.balloon-btn-set a.balloon-btn-link{
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  border: #555 solid 1px;
+}
+
+
+ul.snsp li a span{
+  background-color: #E6DB74;
+  color: #272822;
+}
+
+input[type="text"], input[type="url"], input[type="password"], input[type="email"], input[type="search"], input[type="tel"], textarea,
+#commentform input, #commentform textarea{
+  background-color: #666 !important;
+  color: #F8F8F2 !important;
+  border-color: #777;
+}
+
+.sp-warning{
+  background-color: #4C4100;
+}
+
+.sp-success{
+  background-color: #264a2e;
+}
+
+.sp-info{
+  background-color: #22205B;
+}
+
+.sp-danger{
+  background-color: #280B11;
+}
+
+#bbpress-forums div.bbp-forum-content,
+#bbpress-forums div.bbp-topic-content,
+#bbpress-forums div.bbp-reply-content,
+#bbpress-forums div.even, #bbpress-forums ul.even,
+#bbpress-forums li.bbp-header,
+#bbpress-forums div.bbp-forum-header, #bbpress-forums div.bbp-topic-header, #bbpress-forums div.bbp-reply-header,
+#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer,
+#bbpress-forums div.odd, #bbpress-forums ul.odd{
+  background-color: #272822 !important;
+
+}
+
+#bbpress-forums .status-closed, #bbpress-forums .status-closed a{
+  color: #aaa !important;
+}
+
+.bbp-meta a{
+  color: #999 !important;
+}

@@ -1,0 +1,25 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+#h-top,
+.entry-read a, .related-entry-read a{
+  background-color:#F2F8FC;
+  border-color:#89BDDE;
+}
+
+.entry-read a:hover, .related-entry-read a:hover{
+  background-color:#89BDDE;
+}
+
+#navi ul li a,
+#navi ul.sub-menu,
+#navi ul.children,
+#navi ul > li{
+  background-color:#89BDDE;
+}
+
+#navi ul li a:hover{
+  background-color:#5DACDD;
+}
+
+#navi ul li a {
+  border-bottom: 1px solid #5DACDD;
+}

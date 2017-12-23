@@ -1,0 +1,98 @@
+/*
+  Name: 淡桜
+  Priority: 30
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+a{
+  color:#F9456C;
+}
+
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children,
+.post-meta,
+blockquote,
+.article th,
+#s,
+#comment-area input[type="text"], #comment-area textarea,
+input[type="text"], input[type="url"], input[type="password"], input[type="email"], input[type="search"], input[type="tel"], textarea,
+#footer,
+.category-description{
+  background-color:#FCF1F5;
+  border-color:#FCF1F5;
+}
+
+.navigation a:hover,
+.pagination li:not([class*="current"]) a:hover{
+  background-color:#FCF1F5;
+}
+
+#main,
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children,
+.article th,
+.article td,
+.article h3, #comment-area h2, #related-entries h2,
+.article h4,
+a.page-numbers, .pager .current,
+.page-link span, .comment-page-link span, .comment-page-link a,
+.navigation > div,
+.navigation > div + div,
+#s,
+#comment-area input[type="text"], #comment-area textarea,
+input[type="text"], input[type="url"], input[type="password"], input[type="email"], input[type="search"], textarea,
+.pagination a{
+  border-color:#F9CFD7;
+}
+
+#navi ul li a:hover,
+.pager a:hover,
+.pager .current,
+.page-link span, .comment-page-link span, .comment-page-link a,
+.page-link a span:hover,
+.comment-page-link a:hover,
+.pagination li.current a{
+  background-color:#F9CFD7;
+}
+
+blockquote:before,
+blockquote:after,
+.navigation a i{
+  color:#F9CFD7;
+}
+
+ul.snsp li a span{
+  background-color:#ED7B8C;/*桃紅色*/
+}
+
+.article h2{
+  border-left:#ED7B8C solid 3px;/*桃紅色*/
+}
+
+#page-top a{
+  background-color:#ED7B8C;/*桃紅色*/
+}
+
+#navi .menu{
+  border-radius:5px;
+}
+
+#navi .menu > li > a{
+  padding:0.5em 0.7em;
+}
+
+#footer,
+#footer a {
+  color: #111;
+}
+
+#footer h3 {
+  color: #FC6C85;
+}
+
+#main #list .entry{
+  border-color:#f9cfd7;
+}

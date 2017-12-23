@@ -1,0 +1,5 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+
+#header, #header-in, #navi-in, #navi, #navi-in, #body-in, #footer-in {
+    width: auto;
+}

@@ -1,0 +1,51 @@
+/*
+  Name: 深紅きなり
+  Priority: 20
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+body{
+  background-color:#F7F6EB;/*生成り色*/
+}
+
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#9B1C38;/*真紅*/
+  border-color:#9B1C38;/*真紅*/
+}
+
+#navi .menu{
+  border-radius:5px;
+}
+
+#footer,
+#page-top a,
+#mobile-menu a{
+  background-color:#9B1C38;/*真紅*/
+}
+
+#page-top a,
+#mobile-menu a{
+  color: #fff;
+}
+
+#navi ul li a{
+  color:#fff;
+}
+
+#navi .menu > li > a{
+  padding:0.5em 0.7em;
+}
+
+#navi ul li a:hover,
+#page-top a:hover,
+#mobile-menu a:hover{
+  background-color:#AF384D;
+}
+
+#s {
+  background-color: #FFFFFF;
+  border-color: #AAAAAA;
+}

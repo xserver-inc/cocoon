@@ -1,0 +1,31 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+#h-top,
+.entry-read a, .related-entry-read a{
+  background-color:#FFFBE5;
+  border-color:#FFE74C;
+}
+
+.entry-read a:hover, .related-entry-read a:hover{
+  background-color:#F9CFD7;
+}
+
+#navi ul li a{
+  background-color:#D9CA00;
+}
+
+#navi ul li a:hover{
+  background-color:#E5D150;
+}
+
+#navi ul > li{
+  border-color:#D9CA00;
+}
+
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#D9CA00;
+}
+
+#navi ul li a {
+  border-bottom: 1px solid #FFE900;
+}

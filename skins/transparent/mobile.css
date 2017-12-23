@@ -1,0 +1,15 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+#h-top{min-height:40px;padding:30px 0}
+@media screen and (max-width:639px){#h-top{padding:20px 0 18px 0}}
+@media screen and (min-width:790px){#header .alignleft{margin-left:20px !important}}
+#site-title{margin-top:0px;margin-bottom:0px}
+#site-description{margin-top:10px;margin-bottom:0px !important}
+#navi ul,#navi ul li a,#navi ul.sub-menu,#navi ul.children,#navi .sub-menu li,#navi .children li{background-color:transparent}
+#navi ul li a{border-color:transparent;overflow:visible;color:#111}
+#navi ul li a:hover{background-color:#ddd}
+@media screen and (max-width:500px){
+#navi ul li a{padding:5px 7px}
+#navi .sub-menu li, #navi .children li{padding-left:15px}}
+#navi ul.sub-menu a:before{content:"-";position:absolute;left:25px}
+@media screen and (max-width:500px){#navi ul.sub-menu a:before{left:10px}}
+#mobile-menu{display:block;position:relative}

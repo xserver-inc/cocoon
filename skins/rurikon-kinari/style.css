@@ -1,0 +1,51 @@
+/*
+  Name: 瑠璃紺きなり
+  Priority: 10
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+body{
+  background-color:#F7F6EB;/*生成り色*/
+}
+
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#1D417A;/*瑠璃紺*/
+  border-color:#1D417A;/*瑠璃紺*/
+}
+
+#navi .menu{
+  border-radius:5px;
+}
+
+#footer,
+#page-top a,
+#mobile-menu a{
+  background-color:#1D417A;/*瑠璃紺*/
+}
+
+#page-top a,
+#mobile-menu a{
+  color: #fff;
+}
+
+#navi ul li a{
+  color:#fff;
+}
+
+#navi .menu > li > a{
+  padding:0.5em 0.7em;
+}
+
+#navi ul li a:hover,
+#page-top a:hover,
+#mobile-menu a:hover{
+  background-color:#3F63A8;
+}
+
+#s {
+  background-color: #FFFFFF;
+  border-color: #AAAAAA;
+}

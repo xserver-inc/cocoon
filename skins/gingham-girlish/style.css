@@ -1,0 +1,226 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+/*
+  Name: ギンガムチェック(ガーリー)
+  Priority: 5.2
+  Author: mtdkei
+  Author URI: http://usort.jp/
+*/
+
+body {
+  font-family: 'Noto Sans Japanese','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+  background-color: #fbf8f5;
+  background-image: linear-gradient(90deg, rgba(225, 171, 191, 0.05) 50%, transparent 50%), linear-gradient(rgba(225, 171, 191, 0.05) 50%, transparent 50%);
+  background-size: 50px 50px;
+}
+
+a {
+  color: #3ea9cd;
+  text-decoration: none;
+}
+
+
+/************************************
+** ヘッダー(header)
+************************************/
+#header{
+  background-color: #ff70ad;
+  background-image: linear-gradient(90deg, rgba(189, 54, 109, 0.5) 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(rgba(255, 0, 107, 0.5) 50%, rgba(0, 0, 0, 0) 50%);
+  background-size: 50px 50px;
+}
+
+#site-title a {
+  text-shadow: 0 0 10px #642c2d;
+  color: #fff;
+  font-weight: 500;
+}
+
+#site-description {
+  margin-top: 0;
+  text-shadow: 0 0 3px #642c2d;
+  color: #fff;
+}
+
+ul.snsp li a {
+  color: #faf4f2;
+}
+
+ul.snsp li a span {
+  background-color: #642c2d;
+}
+
+/************************************
+** ナビゲーション(navi)
+************************************/
+#navi,
+#navi ul {
+  background-color: #bde3f0;
+  border-top: 1px solid #fbf8f5;
+  border-bottom:1px solid #fbf8f5;
+}
+
+#navi ul {
+  border: 0;
+}
+
+#navi .menu {
+  border-radius: 0;
+}
+
+#navi ul li a {
+  color:#663e1e;
+}
+
+
+#navi ul li a:hover {
+  color:#663e1e;
+}
+
+
+#navi .menu li a {
+  padding: 1em 1.5em;
+  border-right: 1px solid #fbf8f5;
+}
+
+#navi .menu li:first-child{
+  border-left: 1px solid #fbf8f5;
+}
+
+#navi .sub-menu li, #navi .children li {
+  height: auto;
+}
+
+#mobile-menu a {
+  color: #de377c;
+  background: #bde3f0;
+  border: 1px solid #fff;
+}
+
+/************************************
+** メイン(main)
+************************************/
+#main .entry {
+  margin-bottom: 4em;
+}
+
+.post-meta {
+  background-color: #fcf7f9;
+}
+
+.entry-read {
+  text-align: right;
+}
+
+.entry-read a {
+  padding: .3em .5em;
+  background: #642c2d !important;
+  border-radius: 5px;
+  color: #fff !important;
+  font-size: 14px;
+}
+
+.masonry .entry-read a.entry-read-link {
+  padding: 0 5px !important;
+}
+
+.pagination li.current a {
+  background-color: #bde3f0;
+}
+
+#page-top a {
+  color: #642c2d;
+  background-color: #bde3f0;
+}
+
+
+/************************************
+** サイドバー(sidebar)
+************************************/
+#sidebar h3 {
+  background: #bde3f0;
+  color: #fff;
+  padding: .3em .5em;
+}
+
+#sidebar a {
+  color: #e41152;
+}
+
+#sidebar {
+  background-color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+
+/************************************
+** 記事、固定ページ(entry)
+************************************/
+.related-entry-read {
+  text-align: right;
+}
+
+.related-entry-read a {
+  padding: .3em .5em;
+  background: #642c2d !important;
+  border-radius: 5px;
+  color: #fff !important;
+}
+
+/* 見出し */
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  color: #642c2d;
+}
+
+
+.article h1:first-letter {
+  font-size: 1.5em;
+  color: #38a6cc;
+}
+
+.article h2 {
+  border: 0;
+  background: #f9f1f0;
+}
+
+.article h3 {
+  font-size: 23px;
+  border-top: 5px solid #f06fa5;
+  border-bottom: 1px solid #ffdeec;
+  padding: 10px;
+}
+
+.article h4 {
+  border: 0;
+  border-left: 5px solid #f06fa5;
+  padding: 10px;
+}
+
+
+
+/************************************
+** フッター(footer)
+************************************/
+#footer {
+  background-color:#642c2d;
+}
+
+
+/************************************
+** レスポンシブデザインスタイル読込
+************************************/
+@media screen and (max-width:1110px){
+  #navi,
+  #navi ul,
+  #navi ul li,
+  #navi ul li a {
+    border: 0 !important;
+  }
+}
+

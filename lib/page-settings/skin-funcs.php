@@ -1,0 +1,154 @@
+<?php //スキン設定に必要な定数や関数
+
+//スキンIDの取得
+define('OP_SKIN_URL', 'skin_url');
+if ( !function_exists( 'get_skin_url' ) ):
+function get_skin_url(){
+  return get_theme_option(OP_SKIN_URL, '');
+}
+endif;
+
+
+//スキンファイルリストの並べ替え用の関数
+if ( !function_exists( 'skin_files_comp' ) ):
+function skin_files_comp($a, $b) {
+  $f1 = (float)$a['priority'];
+  $f2 = (float)$b['priority'];
+  //優先度（priority）で比較する
+  if ($f1 == $f2) {
+      return 0;
+  }
+  return ($f1 < $f2) ? -1 : 1;
+}
+endif;
+
+
+//フォルダ以下のファイルをすべて取得
+if ( !function_exists( 'get_skin_dirs' ) ):
+function get_skin_dirs($dir) {
+  $list = array();
+  $files = scandir($dir);
+  foreach($files as $file){
+    if($file == '.' || $file == '..'){
+      continue;
+    } else if (is_dir($dir . $file)){
+      $list[] = $dir . $file;
+    }
+  }
+  return $list;
+}
+endif;
+
+//var_dump(get_skin_dirs($dir = get_template_directory().'/skins/'));
+
+
+//スキン情報の取得
+if ( !function_exists( 'get_skin_infos' ) ):
+function get_skin_infos(){
+  define( 'FS_METHOD', 'direct' );
+
+  $parent = true;
+  // 子テーマで 親skins の取得有無の設定
+  if(function_exists('include_parent_skins')){
+    $parent = include_parent_skins();
+  }
+
+  $skin_dirs  = array();
+  $child_dirs  = array();
+  $parent_dirs  = array();
+
+  //子skinsフォルダ内を検索
+  $dir = get_stylesheet_directory().'/skins/';
+  if(is_child_theme() && file_exists($dir)){
+    $child_dirs = get_skin_dirs($dir);
+  }
+
+  //親skinsフォルダ内を検索
+  if ( $parent || !is_child_theme() ){//排除フラグが立っていないときと親テーマのときは取得
+    $dir = get_template_directory().'/skins/';
+    $parent_dirs = get_skin_dirs($dir);
+  }
+
+  //親テーマと子テーマのファイル配列をマージ
+  $skin_dirs = array_merge( $child_dirs, $parent_dirs );
+
+  $results = array();
+  foreach($skin_dirs as $dir){
+    $dir = str_replace('\\', '/', $dir);
+    $style_css_file = $dir.'/style.css';
+    //var_dump($style_css_file);
+
+    //スキンフォルダ内にstyle.cssがある場合
+    if (file_exists($style_css_file)){
+      if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+        global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+        $css = $wp_filesystem->get_contents($style_css_file);
+        //Skin Name:の記述があるとき
+        if (preg_match('/(Skin )?Name: *(.+)/i', $css, $matches)) {
+          $skin_name = trim(strip_tags($matches[2]));
+          //優先度（順番）が設定されている場合は順番取得
+          if (preg_match('/Priority: *(.+)/i', $css, $m)) {
+            $priority = floatval($m[1]);
+          } else {
+            $priority = 9999999;
+          }
+          //説明文が設定されている場合
+          $description = null;
+          if (preg_match('/Description: *(.+)/i', $css, $m)) {
+            $description = $m[1];
+          }
+          //スキンURLが設定されている場合
+          $skin_page_uri = null;
+          if (preg_match('/Skin (Page )?URI: *(.+)/i', $css, $m)) {
+            $skin_page_uri = $m[2];
+          }
+          //作者が設定されている場合
+          $author = null;
+          if (preg_match('/Author: *(.+)/i', $css, $m)) {
+            $author = $m[1];
+          }
+          //作者サイトが設定されている場合
+          $author_uri = null;
+          if (preg_match('/Author URI: *(.+)/i', $css, $m)) {
+            $author_uri = $m[1];
+          }
+          //バージョンが設定されている場合
+          $version = null;
+          if (preg_match('/Version: *(.+)/i', $css, $m)) {
+            $version = $m[1];
+          }
+
+
+          $file_url = str_replace(get_theme_root(), get_theme_root_uri() , $style_css_file);
+          $dir_url = str_replace(get_theme_root(), get_theme_root_uri() , $dir);
+          if (is_child_theme() && strpos($file_url, get_stylesheet_directory_uri()) !== false) {
+            $skin_name = '[Child]'.$skin_name;
+          }
+          //返り値の設定
+          $results[] = array(
+            'skin_name' => $skin_name,
+            'description' => $description,
+            'dir_url' => $dir_url,
+            'priority' => $priority,
+            'file_url' => $file_url,
+            'skin_page_uri' => $skin_page_uri,
+            'author' => $author,
+            'author_uri' => $author_uri,
+            'version' => $version,
+          );
+        }
+      }
+    }
+  }
+  uasort($results, 'skin_files_comp');//スキンを優先度順に並び替え
+
+  return $results;
+}
+endif;
+
+// if ( !function_exists( 'get_skin_options' ) ):
+// function get_skin_options($value){
+
+// }
+// endif;
+//var_dump(get_skin_infos());

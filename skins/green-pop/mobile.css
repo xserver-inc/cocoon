@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+/*************************************************************************************************************************
+ グローバルナビゲーション
+*************************************************************************************************************************/
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children{
+	background: none;
+}
+
+#navi ul li a{
+	color: #333;
+	background: none;
+	background-color: #EBF5EC;
+	border: none;
+	border-radius: 5px;
+}
+
+#navi ul li a:hover{
+	color: #333;
+	background-color: #A5D4AD;
+	-webkit-tap-highlight-color: #A5D4AD;
+}
+
+#navi ul.sub-menu{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#navi ul.sub-menu li{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*************************************************************************************************************************
+ 記事共通
+*************************************************************************************************************************/
+#main{
+	border-left: 1px dotted #A5D4AD;
+	border-right: 1px dotted #A5D4AD;
+}
+
+div#main:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 60px;
+	position: absolute;
+	top: -30px;
+	left: -27px;
+}
+
+div#main:after{
+	content: none;
+}
+
+/*************************************************************************************************************************
+ 個別記事見出し
+*************************************************************************************************************************/
+.article h1{
+	position: relative;
+	background-color: #EBF5EC;
+	margin: 20px 0px 20px 12px;
+}
+
+.article h1:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 53px;
+	position:absolute;
+	top: 11px;
+	left: -20px;
+}
+
+.article h1:after{
+	font-family: 'FontAwesome';
+	content: '\f1bb';
+	color: #FFF;
+	font-size: 25px;
+	position:absolute;
+	top: 12px;
+	left: -8px;
+}
+
+.article h2{
+	font-size: 22px;
+	margin: 20px 0px 20px 10px;
+	padding: 10px 5px 2px 30px;
+	border: none;
+	border-bottom: 1px solid #A5D4AD;
+	position: relative;
+}
+
+.article h2:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 40px;
+	position:absolute;
+	left: -15px;
+}
+
+.article h2:after{
+	font-family: 'FontAwesome';
+	content: '\f06c';
+	color: #FFF;
+	font-size: 23px;
+	position:absolute;
+	top: 10px;
+	left: -10px;
+}
+
+.article h3{
+	font-size: 20px;
+	margin: 20px 0px 20px 10px;
+	padding: 10px 5px 1px 25px;
+	border: none;
+	border-bottom: 1px dashed #A5D4AD;
+	position: relative;
+}
+
+.article h3:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #FFF;
+	font-size: 35px;
+	position:absolute;
+	top: 10px;
+	left: -15px;
+}
+
+.article h3:after{
+	font-family: 'FontAwesome';
+	content: '\f10c';
+	color: #A5D4AD;
+	font-size: 35px;
+	position:absolute;
+	top: 8px;
+	left: -15px;
+}
+
+.article h4{
+	font-size: 18px;
+	margin: 20px 0px 20px 5px;
+	padding: 0px 5px 1px 25px;
+	border: none;
+	position: relative;
+}
+
+.article h4:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 20px;
+	position:absolute;
+	left: -5px;
+}
+
+/*************************************************************************************************************************
+ 続きを読む
+*************************************************************************************************************************/
+a.entry-read-link,
+.entry-read-link a,
+.related-entry-read a{
+	background-color: #EBF5EC;
+	border: 1px solid #EBF5EC;
+}
+
+a:hover.entry-read-link,
+.entry-read-link a:hover,
+.related-entry-read a:hover{
+	background-color: #A5D4AD;
+	-webkit-tap-highlight-color: #A5D4AD;
+}
+
+.entry-read-link a:active,
+.related-entry-read a:active{
+	background-color: #A5D4AD;
+	border: 1px solid #A5D4AD;
+}
+
+/*************************************************************************************************************************
+ 関連記事
+*************************************************************************************************************************/
+#related-entries h2{
+	position: relative;
+}
+
+#related-entries h2:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 40px;
+	position:absolute;
+	left: -15px;
+}
+
+#related-entries h2:after{
+	font-family: 'FontAwesome';
+	content: '\f06c';
+	color: #FFF;
+	font-size: 23px;
+	position:absolute;
+	left: -10px;
+}
+
+/*************************************************************************************************************************
+ コメント
+*************************************************************************************************************************/
+#reply-title{
+	position: relative;
+}
+
+#reply-title:before{
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: #A5D4AD;
+	font-size: 40px;
+	position:absolute;
+	left: -15px;
+}
+
+#reply-title:after{
+	font-family: 'FontAwesome';
+	content: '\f06c';
+	color: #FFF;
+	font-size: 23px;
+	position:absolute;
+	left: -10px;
+}
+
+/*************************************************************************************************************************
+ ページネーション
+*************************************************************************************************************************/
+.pagination li:not([class*="current"]) a:hover{
+	background-color: #A5D4AD;
+	-webkit-tap-highlight-color: #A5D4AD;
+}
+
+.pagination li:not([class*="current"]) a:active{
+	background-color: #A5D4AD;
+	-webkit-tap-highlight-color: #A5D4AD;
+}
+
+/*************************************************************************************************************************
+ サイドバー
+*************************************************************************************************************************/
+#sidebar aside h3{
+	padding-left: 20px;
+}
+
+#sidebar aside h3::before,
+#sidebar aside h3::after{
+	left: -12px;
+	top: -2px;
+}
+
+/*************************************************************************************************************************
+ トップに戻る
+*************************************************************************************************************************/
+#page-top a{
+	background-color: #EBF5EC;
+}
+

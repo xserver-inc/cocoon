@@ -1,0 +1,10 @@
+/*スキンのモバイル用のスタイルの記入してください*/
+
+#navi{
+  background-color:transparent;
+}
+
+#navi ul li {
+  display:block;
+}
+

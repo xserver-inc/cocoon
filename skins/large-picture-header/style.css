@@ -1,0 +1,59 @@
+/*
+  Name: ラージピクチャーヘッダー
+  Priority: 60
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+#header{
+  background-image:url('//bibolog.xyz/wp-content/uploads/2017/09/top.jpg');
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: 100% auto;
+}
+
+#h-top{
+  min-height:180px;
+}
+
+#navi,
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#555;
+  border-color:#555;
+}
+
+#navi .menu{
+  border-radius:0px;
+}
+
+#footer{
+  background-color:#555;
+}
+
+#page-top a,
+#mobile-menu a{
+  color: #fff;
+  background-color:#333;
+}
+
+#navi ul li a{
+  color:#fff;
+}
+
+#navi .menu > li > a{
+  padding:0.5em 0.7em;
+}
+
+#navi ul li a:hover,
+#page-top a:hover,
+#mobile-menu a:hover{
+  background-color:#666;
+}
+
+#s {
+  background-color: #FFFFFF;
+  border-color: #AAAAAA;
+  border-radius: 3px;
+}

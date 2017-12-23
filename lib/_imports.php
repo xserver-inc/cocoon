@@ -18,6 +18,7 @@ require_once 'category.php';   //カテゴリー関係の関数
 require_once 'php-html-css-js-minifier.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once 'page-settings/all-funcs.php';        //全体設定関数
 require_once 'page-settings/header-funcs.php';     //ヘッダー設定関数
+require_once 'page-settings/skin-funcs.php';       //スキン設定関数
 require_once 'page-settings/navi-funcs.php';       //グローバルナビ設定関数
 require_once 'page-settings/ads-funcs.php';        //広告設定関数
 require_once 'page-settings/title-funcs.php';      //タイトル設定関数

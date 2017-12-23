@@ -1,0 +1,63 @@
+/*
+  Name: ラージピクチャー（ストロベリー）
+  Priority: 70
+  Author: yhira
+  Author URI: http://nelog.jp/
+*/
+
+#header{
+  background-image:url('//bibolog.xyz/wp-content/uploads/2017/09/top-1.jpg');
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: 100% auto;
+}
+
+#h-top{
+  min-height:180px;
+}
+
+#navi,
+#navi ul,
+#navi ul.sub-menu,
+#navi ul.children{
+  background-color:#BB004B;
+  border-color:#BB004B;
+}
+
+#navi .menu{
+  border-radius:0px;
+}
+
+#footer{
+  background-color:#BB004B;
+}
+
+#page-top a,
+#mobile-menu a{
+  color: #fff;
+  background-color:#b40926;
+}
+
+#page-top a:hover,
+#mobile-menu a:hover{
+  background-color:#D64C5F;
+  border-color:#D64C5F;
+}
+
+#navi ul li a{
+  color:#fff;
+}
+
+#navi .menu > li > a{
+  padding:0.5em 0.7em;
+}
+
+#navi ul li a:hover{
+  background-color:#007BC3;
+}
+
+#s {
+  background-color: #FFFFFF;
+  border-color: #AAAAAA;
+  border-radius: 3px;
+}

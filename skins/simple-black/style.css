@@ -1,0 +1,333 @@
+@charset "UTF-8";
+
+/*
+  Name: SIMPLE BLACK
+  Priority: 4.1
+  Author: aoi
+  Author URI: https://neko-life.com/
+  Version: 20160421
+*/
+
+
+/************************************
+** 見出し（H1-6）
+************************************/
+
+.article h1 {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #474a4d;
+  font-size: 24px;
+}
+
+#archive-title, .article h2 {
+  font-size: 24px;
+}
+
+.article h2 {
+  position: relative;
+  margin: 40px -19px 30px;
+  padding: 12px 10px;
+  border-left: none;
+}
+
+.article h2::before, .article h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  content: "";
+}
+
+.article h2::before {
+  z-index: 2;
+  width: 30%;
+  background-color: #474a4d;
+}
+
+.article h2::after {
+  width: 100%;
+  background: -webkit-repeating-linear-gradient(-45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
+  background:         repeating-linear-gradient(-45deg, #fff, #fff 2px, #aaa 2px, #aaa 4px);
+}
+
+.article h3 {
+  padding: 14px 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+.article h4 {
+  border-bottom: 2px solid #ccc;
+}
+
+
+/************************************
+** アンカー
+************************************/
+
+a {
+  color: #00afcc;
+}
+
+.entry-card .entry-snippet {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.entry-tile .entry-read {
+  margin-bottom: 7px;
+}
+
+.entry-tile .entry-read a.entry-read-link {
+  padding: 2px 25px;
+}
+
+.entry-read a {
+  padding: 4px 25px;
+  border-radius: 3px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.entry-read a:after {
+  margin-left: 10px;
+  color: #00afcc;
+  font-family: "FontAwesome";
+  content: "\f054";
+}
+
+.entry-read a:hover {
+  color: #fff;
+}
+
+.entry-read a:hover:after {
+  color: #c03;
+}
+
+
+/************************************
+** レイアウト（Layout）
+************************************/
+
+#header-in, #navi-in, #body-in, #footer-in {
+  width: 1106px;
+}
+
+@media screen and (max-width: 1110px) {
+  #header-in, #navi-in, #body-in, #footer-in {
+    width: 740px;
+  }
+  #sidebar {
+    width: auto;
+  }
+}
+
+#header {
+  background-color: #060000;
+}
+
+#main {
+  padding: 20px 30px;
+  border: none;
+}
+
+#sidebar {
+  width: 336px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+/************************************
+** ヘッダー(header)
+************************************/
+
+#site-title a {
+  color: #fff;
+}
+
+#site-description {
+  color: #eee;
+}
+
+
+/************************************
+** グローバルナビメニュー（menu）
+************************************/
+
+#navi {
+  border-top: 1px solid #474a4d;
+  border-bottom: 1px solid #474a4d;
+  background-color: #2b2b2b;
+}
+
+#navi ul {
+  border: none;
+  background: none;
+}
+
+#navi ul li a {
+  color: #fff;
+}
+
+#navi ul li a:hover {
+  background-color: #454545;
+}
+
+#navi ul.sub-menu, #navi ul.children {
+  border-top-color: #474a4d;
+  background-color: #2b2b2b;
+}
+
+#navi .sub-menu li, #navi .children li {
+  height: auto;
+}
+
+#navi .sub-menu li a, #navi .children li a {
+  padding: 14px 10px;
+}
+
+
+/************************************
+** メインカラム（#main、記事、固定ページなど）
+************************************/
+
+.post-meta {
+  margin-top: 0;
+  font-size: 13px;
+}
+
+.hentry .post-meta {
+  margin-bottom: 0;
+  background-color: #060000;
+  color: #fff;
+  font-size: 13px;
+}
+
+.list .post-meta {
+  background: none;
+  color: #9f9f98;
+}
+
+
+/************************************
+** index.phpのリスト
+************************************/
+
+.entry .post-meta {
+  border-top: 1px dotted #dddcd6;
+  border-bottom: 1px dotted #dddcd6;
+}
+
+.entry .post-meta a {
+  color: #9f9f98;
+}
+
+.entry h2 a {
+  font-size: 18px;
+  line-height: 110%;
+}
+
+
+/************************************
+** 前の記事へ、次の記事へ
+************************************/
+
+.navigation a span {
+  color: #2b2b2b;
+}
+
+
+/************************************
+** 関連記事（Relation）
+************************************/
+
+#related-entries {
+  padding-top: 20px;
+  border-top: 1px solid #474a4d;
+}
+
+.related-entry {
+  line-height: 130%;
+}
+
+.related-entry-snippet {
+  font-size: 14px;
+}
+
+
+/************************************
+** サイドバー（Sidebar）・ウィジェットなど
+************************************/
+
+#sidebar h3 {
+  border-bottom: 1px solid #474a4d;
+  font-size: 18px;
+}
+
+
+/************************************
+** フッター(footer)
+************************************/
+
+#footer {
+  background-color: #060000;
+}
+
+
+/************************************
+** TOPへ戻るボタン（Go to top）
+************************************/
+
+#page-top a {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #00afcc;
+}
+
+
+/************************************
+** モバイルメニュー
+************************************/
+
+#mobile-menu a {
+  color: #fff;
+}
+
+
+/************************************
+** レスポンシブページネーション
+************************************/
+
+.pagination a {
+  border: none;
+}
+
+.pagination li.current a {
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  background-color: #757575;
+  color: #fff;
+}
+
+.pagination > li:first-child > a {
+  font-weight: bold;
+}
+
+.pagination > li:last-child > a {
+  font-weight: bold;
+}
+
+
+/************************************
+** アイキャッチ
+************************************/
+
+.eye-catch {
+  margin-bottom: 30px;
+}
