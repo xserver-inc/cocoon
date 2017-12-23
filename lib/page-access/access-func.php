@@ -30,7 +30,7 @@ endif;
 define('OP_ACCESS_COUNT_CACHE_INTERVAL', 'access_count_cache_interval');
 if ( !function_exists( 'get_access_count_cache_interval' ) ):
 function get_access_count_cache_interval(){
-  return get_theme_option(OP_ACCESS_COUNT_CACHE_INTERVAL, 60);
+  return get_theme_option(OP_ACCESS_COUNT_CACHE_INTERVAL, 360);
 }
 endif;
 

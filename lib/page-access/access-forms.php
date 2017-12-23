@@ -30,7 +30,7 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ACCESS_COUNT_CACHE_ENABLE , is_access_count_cache_enable(), __( 'アクセス集計の有効化', THEME_NAME ));
+            generate_checkbox_tag(OP_ACCESS_COUNT_CACHE_ENABLE , is_access_count_cache_enable(), __( 'アクセスキャッシュの有効化', THEME_NAME ));
             generate_tips_tag(__( 'アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利用をおすすめします。', THEME_NAME ));
             ?>
           </td>
