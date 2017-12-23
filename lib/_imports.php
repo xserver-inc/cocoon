@@ -46,6 +46,7 @@ require_once 'page-settings/404-funcs.php';        //404ページ設定関数
 require_once 'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once 'page-settings/others-funcs.php';     //その他設定関数
 require_once 'page-settings/reset-funcs.php';      //リセット設定関数
+require_once 'page-settings/about-funcs.php';      //テーマ情報設定関数
 require_once 'db.php';  //データベース操作関数
 require_once 'page-func-text/func-text-func.php';  //使いまわしテキスト関数
 require_once 'page-speech-balloon/speech-balloon-func.php';  //吹き出し関数
