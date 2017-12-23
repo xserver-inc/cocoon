@@ -1,10 +1,38 @@
-<?php //404ページ設定をデータベースに保存
+<?php //カラム設定をデータベースに保存
+///////////////////////////////////////
+// メインカラム
+///////////////////////////////////////
 
-//404ページ画像
-update_theme_option(OP_404_IMAGE_URL);
+//メインカラム幅
+update_theme_option(OP_MAIN_COLUMN_WIDTH);
 
-//404ページタイトル
-update_theme_option(OP_404_PAGE_TITLE);
+//メインカラム外側余白
+update_theme_option(OP_MAIN_COLUMN_MARGIN);
 
-//404ページメッセージ
-update_theme_option(OP_404_PAGE_MESSAGE);
+//メインカラム内側余白
+update_theme_option(OP_MAIN_COLUMN_PADDING);
+
+//メインカラム枠線幅
+update_theme_option(OP_MAIN_COLUMN_BORDER_WIDTH);
+
+//メインカラム枠線色
+update_theme_option(OP_MAIN_COLUMN_BORDER_COLOR);
+
+///////////////////////////////////////
+// サイドバー
+///////////////////////////////////////
+
+//サイドバー幅
+update_theme_option(OP_SIDEBAR_WIDTH);
+
+//サイドバー外側余白
+update_theme_option(OP_SIDEBAR_MARGIN);
+
+//サイドバー内側余白
+update_theme_option(OP_SIDEBAR_PADDING);
+
+//サイドバー枠線幅
+update_theme_option(OP_SIDEBAR_BORDER_WIDTH);
+
+//サイドバー枠線色
+update_theme_option(OP_SIDEBAR_BORDER_COLOR);
