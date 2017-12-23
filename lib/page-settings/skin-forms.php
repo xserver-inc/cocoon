@@ -15,10 +15,10 @@
     <table class="form-table">
       <tbody>
 
-        <!-- スキン -->
+        <!-- スキン一覧 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SKIN_URL, __('スキン', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_SKIN_URL, __('スキン一覧', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
@@ -62,6 +62,24 @@
             generate_radiobox_tag(OP_SKIN_URL, $options, get_skin_url());
             generate_tips_tag(__( 'スキンを選択してください。', THEME_NAME ));
 
+            ?>
+          </td>
+        </tr>
+
+        <!-- 表示スキン -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_INCLUDE_SKIN_TYPE, __('表示スキン', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'all' => __( '全てのスキンを表示', THEME_NAME ),
+              'parent_only' => __( '親テーマのスキンのみ表示', THEME_NAME ),
+              'child_only' => __( '子テーマのスキンのみ表示', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_INCLUDE_SKIN_TYPE, $options, get_include_skin_type());
+            generate_tips_tag(__( 'スキン一覧に含めて表示するスキンを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

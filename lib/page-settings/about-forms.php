@@ -2,10 +2,10 @@
 
 <!-- テーマ情報 -->
 <div id="theme-about" class="postbox">
-  <h2 class="hndle"><?php _e( 'テーマ情報', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( '環境情報', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php echo THEME_NAME_CAMEL; ?><?php _e( 'テーマに関する情報です。', THEME_NAME ) ?></p>
+    <p><?php echo THEME_NAME_CAMEL; ?><?php _e( '環境に関する情報です。', THEME_NAME ) ?></p>
     <?php
     $sep = '----------------------------------------------'.PHP_EOL;
     $all = $sep;

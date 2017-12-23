@@ -15,6 +15,34 @@ function get_skin_js_url(){
 }
 endif;
 
+//親フォルダのスキンを含める
+define('OP_INCLUDE_SKIN_TYPE', 'include_skin_type');
+if ( !function_exists( 'get_include_skin_type' ) ):
+function get_include_skin_type(){
+  return get_theme_option(OP_INCLUDE_SKIN_TYPE, 'all');
+}
+endif;
+
+//全てのスキンを有効
+if ( !function_exists( 'is_all_skins_enable' ) ):
+function is_all_skins_enable(){
+  return get_include_skin_type() == 'all';
+}
+endif;
+
+//親テーマのスキンのみ有効
+if ( !function_exists( 'is_parent_skins_only_enable' ) ):
+function is_parent_skins_only_enable(){
+  return get_include_skin_type() == 'parent_only';
+}
+endif;
+
+//子テーマのスキンのみ有効
+if ( !function_exists( 'is_child_skins_only_enable' ) ):
+function is_child_skins_only_enable(){
+  return get_include_skin_type() == 'child_only';
+}
+endif;
 
 //スキンファイルリストの並べ替え用の関数
 if ( !function_exists( 'skin_files_comp' ) ):
@@ -54,11 +82,11 @@ if ( !function_exists( 'get_skin_infos' ) ):
 function get_skin_infos(){
   define( 'FS_METHOD', 'direct' );
 
-  $parent = true;
-  // 子テーマで 親skins の取得有無の設定
-  if(function_exists('include_parent_skins')){
-    $parent = include_parent_skins();
-  }
+  // $parent = true;
+  // // 子テーマで 親skins の取得有無の設定
+  // if(function_exists('include_parent_skins')){
+  //   $parent = include_parent_skins();
+  // }
 
   $skin_dirs  = array();
   $child_dirs  = array();
@@ -67,11 +95,14 @@ function get_skin_infos(){
   //子skinsフォルダ内を検索
   $dir = get_stylesheet_directory().'/skins/';
   if(is_child_theme() && file_exists($dir)){
-    $child_dirs = get_skin_dirs($dir);
+    if (!is_parent_skins_only_enable()) {
+      $child_dirs = get_skin_dirs($dir);
+    }
+
   }
 
   //親skinsフォルダ内を検索
-  if ( $parent || !is_child_theme() ){//排除フラグが立っていないときと親テーマのときは取得
+  if ( !is_child_skins_only_enable() || !is_child_theme() ){
     $dir = get_template_directory().'/skins/';
     $parent_dirs = get_skin_dirs($dir);
   }
