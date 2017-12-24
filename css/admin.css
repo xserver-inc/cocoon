@@ -3093,23 +3093,6 @@
     color: #15b0e7;
     background: #ffffff;
     border: 2px solid #15b0e7; }
-  @media screen and (max-width: 1240px) {
-    .demo div.wrap {
-      width: auto; }
-    .demo main.main,
-    .demo div.sidebar,
-    .demo .sidebar-left .main,
-    .demo .sidebar-left .sidebar {
-      margin: 0 0.5%; }
-    .demo main.main {
-      width: 67%; }
-    .demo div.sidebar {
-      padding: 0px 10px;
-      width: 30%; }
-    .demo .entry-card-thumb {
-      width: 38%; }
-    .demo .entry-card-content {
-      margin-left: 40%; } }
   @media screen and (max-width: 1030px) {
     .demo .navi-footer {
       float: none;

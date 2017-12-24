@@ -337,3 +337,7 @@ if (is_clumns_changed() && !is_admin()): ?>
   width: <?php echo get_site_wrap_width(); ?>px;
 }
 <?php endif ?>
+<?php //レスポンシブ ?>
+@media screen and (max-width: <?php echo get_site_wrap_width() + 4; ?>px){
+  <?php echo get_file_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+}

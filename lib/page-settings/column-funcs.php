@@ -132,8 +132,8 @@ endif;
 
 if ( !function_exists( 'get_site_wrap_width' ) ):
 function get_site_wrap_width(){
-  _v(get_main_column_width());
-  _v(get_sidebar_width());
+  // _v(get_main_column_width());
+  // _v(get_sidebar_width());
   $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
   return get_main_column_width() +
          get_sidebar_width() +
