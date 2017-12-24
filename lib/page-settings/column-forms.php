@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- メインカラム -->
-<div id="column" class="postbox">
+<div id="main-column" class="postbox">
   <h2 class="hndle"><?php _e( 'メインカラム設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -23,11 +23,11 @@
         <!-- コンテンツ幅 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_MAIN_COLUMN_WIDTH, __('コンテンツ幅', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH, __('コンテンツ幅', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_WIDTH,  get_main_column_width(), 800, 500, 1200, 10);
+            generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 500, 1200, 10);
             generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：500px、最大：1200px）', THEME_NAME ));
             ?>
           </td>
@@ -81,7 +81,7 @@
 
 
 <!-- サイドバー -->
-<div id="column" class="postbox">
+<div id="sidebar-column" class="postbox">
   <h2 class="hndle"><?php _e( 'サイドバー設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -93,11 +93,11 @@
         <!-- コンテンツ幅 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_SIDEBAR_WIDTH, __('サイドバー幅', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_SIDEBAR_CONTENTS_WIDTH, __('サイドバー幅', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_WIDTH,  get_sidebar_width(), 336, 300, 500, 10);
+            generate_number_tag(OP_SIDEBAR_CONTENTS_WIDTH,  get_sidebar_contents_width(), 336, 300, 500, 10);
             generate_tips_tag(__( 'サイドバーコンテンツ部分の幅を設定します。（最小：300px、最大：500px）', THEME_NAME ));
             ?>
           </td>
@@ -138,6 +138,36 @@
             <?php
             generate_color_picker_tag(OP_SIDEBAR_BORDER_COLOR,  get_sidebar_border_color(), 'ボーダー色');
             generate_tips_tag(__( 'サイドバーのボーダー色を設定します。未入力でデフォルトの透過色になります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!-- カラム間余白 -->
+<div id="main-sidebar" class="postbox">
+  <h2 class="hndle"><?php _e( 'カラム間余白設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'メインカラムとサイドバーの間隔設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- コンテンツ幅 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_MAIN_SIDEBAR_MARGIN, __('カラム間の幅', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_number_tag(OP_MAIN_SIDEBAR_MARGIN,  get_main_sidebar_margin(), 20, 5, 50);
+            generate_tips_tag(__( 'メインカラムとサイドバーの間の幅を設定します。（最小：5px、最大：50px）', THEME_NAME ));
             ?>
           </td>
         </tr>

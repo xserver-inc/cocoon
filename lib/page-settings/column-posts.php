@@ -4,7 +4,7 @@
 ///////////////////////////////////////
 
 //メインカラム幅
-update_theme_option(OP_MAIN_COLUMN_WIDTH);
+update_theme_option(OP_MAIN_COLUMN_CONTENTS_WIDTH);
 
 //メインカラム外側余白
 update_theme_option(OP_MAIN_COLUMN_MARGIN);
@@ -23,7 +23,7 @@ update_theme_option(OP_MAIN_COLUMN_BORDER_COLOR);
 ///////////////////////////////////////
 
 //サイドバー幅
-update_theme_option(OP_SIDEBAR_WIDTH);
+update_theme_option(OP_SIDEBAR_CONTENTS_WIDTH);
 
 //サイドバー外側余白
 update_theme_option(OP_SIDEBAR_MARGIN);
@@ -36,3 +36,7 @@ update_theme_option(OP_SIDEBAR_BORDER_WIDTH);
 
 //サイドバー枠線色
 update_theme_option(OP_SIDEBAR_BORDER_COLOR);
+
+
+//メインカラムとサイドバーの間隔
+update_theme_option(OP_MAIN_SIDEBAR_MARGIN);

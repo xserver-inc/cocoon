@@ -325,3 +325,15 @@ if (get_sidebar_border_color()): ?>
   border-color: <?php echo get_sidebar_border_color(); ?>;
 }
 <?php endif ?>
+<?php //カラム間の幅
+if (get_main_sidebar_margin()): ?>
+.main{
+  margin-right: <?php echo get_main_sidebar_margin(); ?>px;
+}
+<?php endif ?>
+<?php //サイト幅
+if (is_clumns_changed() && !is_admin()): ?>
+.wrap{
+  width: <?php echo get_site_wrap_width(); ?>px;
+}
+<?php endif ?>
