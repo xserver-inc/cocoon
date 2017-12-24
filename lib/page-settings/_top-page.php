@@ -26,6 +26,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'ogp-posts.php';
   //アクセス解析
   require_once 'analytics-posts.php';
+  //カラム
+  require_once 'column-posts.php';
   //インデックス
   require_once 'index-posts.php';
   //投稿
@@ -122,6 +124,7 @@ endif;
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
     <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="column"><?php _e( 'カラム', THEME_NAME ) ?></li>
     <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>
     <li class="page-page"><?php _e( '固定ページ', THEME_NAME ) ?></li>
@@ -182,6 +185,11 @@ endif;
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
     <?php require_once 'analytics-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- カラム -->
+  <div class="column metabox-holder">
+    <?php require_once 'column-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- インデックス -->

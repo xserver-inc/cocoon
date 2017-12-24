@@ -366,3 +366,15 @@ function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $defaul
 }
 endif;
 */
+
+// add_action( 'wp_loaded','my_minify_html' );
+// function my_minify_html() {
+//   // Use html_compress($html) function to minify html codes.
+//   ob_start('html_compress');
+// }
+
+// function html_compress( $html ) {
+//   // Some minify codes here...
+//   _v($html);
+//   return $html;
+// }

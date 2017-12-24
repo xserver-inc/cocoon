@@ -164,7 +164,7 @@ function wp_footer_minify($buffer) {
 }
 endif;
 
-if ( !function_exists( '' ) ):
+if ( !function_exists( 'is_url_matche_list' ) ):
 function is_url_matche_list($url, $list){
   //除外リストにマッチするCSS URLは縮小化しない
   $excludes = list_text_to_array($list);

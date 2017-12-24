@@ -1063,8 +1063,7 @@
   .demo .post-author::before {
     font-family: FontAwesome;
     content: "";
-    padding-right: 3px;
-    padding-right: 0; }
+    padding-right: 3px; }
   .demo .content-only .header-container,
   .demo .content-only .appeal,
   .demo .content-only .carousel,

@@ -161,8 +161,8 @@ endif;
 
 //ナンバーボックスの生成
 if ( !function_exists( 'generate_number_tag' ) ):
-function generate_number_tag($name, $value, $min = 1, $max = 100){?>
-  <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>">
+function generate_number_tag($name, $value, $min = 1, $max = 100, $step = 1){?>
+  <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>">
   <?php
 }
 endif;
