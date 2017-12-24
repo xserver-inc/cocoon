@@ -43,7 +43,7 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_HEADER_AREA_HEIGHT,  get_header_area_height(), 0, 800);
+            generate_number_tag(OP_HEADER_AREA_HEIGHT,  get_header_area_height(), '', 0, 800);
             generate_tips_tag(__( 'ヘッダーの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：0px、最大：800px）', THEME_NAME ));
             ?>
           </td>

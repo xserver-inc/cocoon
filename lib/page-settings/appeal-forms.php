@@ -43,7 +43,7 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_APPEAL_AREA_HEIGHT,  get_appeal_area_height(), 200, 800);
+            generate_number_tag(OP_APPEAL_AREA_HEIGHT, get_appeal_area_height(), '', 200, 800);
             generate_tips_tag(__( 'アピールエリアの高さをpx数で指定します。モバイル環境では高さは無効になります。（最小：200px、最大：800px）', THEME_NAME ));
             ?>
           </td>

@@ -169,7 +169,7 @@ blockquote {
 /*投稿者*/
 .post-author::before{
   @include fontawesome('\f040');
-  padding-right: 0;
+  //padding-right: 3px;
 }
 
 /************************************

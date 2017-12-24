@@ -238,7 +238,10 @@ if (get_appeal_area_button_background_color()): ?>
   background-color: <?php echo get_appeal_area_button_background_color(); ?>;
 }
 <?php endif ?>
-<?php //カテゴリー色の設定
+<?php
+///////////////////////////////////////
+// カテゴリー色の設定
+///////////////////////////////////////
 $cats = get_categories();
 $colors = array();
 //カテゴリ色の振り分け
@@ -266,3 +269,80 @@ foreach ($colors as $color_code => $ids) {
 }
 echo $css;
  ?>
+<?php
+///////////////////////////////////////
+// メインカラムの設定
+///////////////////////////////////////?>
+<?php //カラム幅
+if (get_main_column_width()): ?>
+.main{
+  width: <?php echo get_main_column_width(); ?>px;
+}
+<?php endif ?>
+<?php //パディング
+if (get_main_column_padding()): ?>
+.main{
+  padding: 20px <?php echo get_main_column_padding(); ?>px;
+}
+<?php endif ?>
+<?php //枠線の幅
+if (get_main_column_border_width()): ?>
+.main{
+  border-width: <?php echo get_main_column_border_width(); ?>px;
+}
+<?php endif ?>
+<?php //枠線の色
+if (get_main_column_border_color()): ?>
+.main{
+  border-color: <?php echo get_main_column_border_color(); ?>;
+}
+<?php endif ?>
+<?php
+///////////////////////////////////////
+// サイドバーの設定
+///////////////////////////////////////?>
+<?php //カラム幅
+if (get_sidebar_width()): ?>
+.sidebar{
+  width: <?php echo get_sidebar_width(); ?>px;
+}
+<?php endif ?>
+<?php //パディング
+if (get_sidebar_padding()): ?>
+.sidebar{
+  padding: 20px <?php echo get_sidebar_padding(); ?>px;
+}
+<?php endif ?>
+<?php //枠線の幅
+if (get_sidebar_border_width()): ?>
+.sidebar{
+  border-width: <?php echo get_sidebar_border_width(); ?>px;
+}
+<?php endif ?>
+<?php //枠線の色
+if (get_sidebar_border_color()): ?>
+.sidebar{
+  border-color: <?php echo get_sidebar_border_color(); ?>;
+}
+<?php endif ?>
+<?php //カラム間の幅
+if (get_main_sidebar_margin()): ?>
+.main{
+  margin-right: <?php echo get_main_sidebar_margin(); ?>px;
+}
+<?php endif ?>
+<?php //サイト幅
+if (is_clumns_changed() && !is_admin()): ?>
+.wrap{
+  width: <?php echo get_site_wrap_width(); ?>px;
+}
+<?php endif ?>
+<?php //レスポンシブ
+$responsive_width = get_site_wrap_width() + 4;
+//次のブレークポイント（1030px）より幅が狭い場合はブレークポイントの値にする
+if ($responsive_width <= 1030) {
+  $responsive_width = 1030;
+} ?>
+@media screen and (max-width: <?php echo $responsive_width; ?>px){
+  <?php echo get_file_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+}

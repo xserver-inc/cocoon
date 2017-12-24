@@ -1,9 +1,7 @@
-.content-in{
-  //display: block;
-}
+/************************************
+** ファイルで直接読み込むのでSCSSではなくCSS形式で書く
+************************************/
 
-// .main,
-// .sidebar,
 .wrap{
   width: auto;
 }
@@ -13,7 +11,6 @@
 .sidebar-left .main,
 .sidebar-left .sidebar{
   margin: 0 0.5%;
-  //float: none;
 }
 
 .main{
@@ -24,7 +21,6 @@
 .sidebar{
   padding: 0px 10px;
   width: 30%;
-  //overflow: hidden;
 }
 
 

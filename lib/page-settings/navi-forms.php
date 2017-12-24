@@ -29,12 +29,12 @@
             <?php
             generate_label_tag(OP_GLOBAL_NAVI_MENU_WIDTH, __( 'トップメニュー幅', THEME_NAME ) );
             echo '<br>';
-            generate_number_tag(OP_GLOBAL_NAVI_MENU_WIDTH,  get_global_navi_menu_width(), 100, 300);
+            generate_number_tag(OP_GLOBAL_NAVI_MENU_WIDTH,  get_global_navi_menu_width(), 176, 100, 300);
             generate_tips_tag(__( 'グローバルナビのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
             generate_label_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH, __( 'サブメニュー幅', THEME_NAME ) );
             echo '<br>';
-            generate_number_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH,  get_global_navi_sub_menu_width(), 100, 500);
+            generate_number_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH,  get_global_navi_sub_menu_width(), 240, 100, 500);
             generate_tips_tag(__( 'グローバルナビのサブメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
             ?>
           </td>

@@ -23,10 +23,11 @@
 }
 
 
-.main,
-.sidebar{
+main.main,
+div.sidebar{
   padding: 5px;
   margin: 10px 0;
+  border-width: 0;
 }
 
 .article ul,

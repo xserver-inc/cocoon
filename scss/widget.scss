@@ -323,9 +323,10 @@ label.screen-reader-text{
 .recent-comment-content {
   position: relative;
   background: $bg_white;
-  border: 2px solid $thin;
-  padding: 5px;
+  border: 1px solid $thin;
+  padding: 6px;
   margin-top: 4px;
+  font-size: 0.9em;
   border-radius: 5px;
 
   &::after, &::before {

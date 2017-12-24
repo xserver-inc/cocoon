@@ -1087,7 +1087,6 @@ blockquote::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
-  padding-right: 0;
 }
 
 /************************************
@@ -1648,9 +1647,10 @@ label.screen-reader-text {
 .recent-comment-content {
   position: relative;
   background: #fff;
-  border: 2px solid #cccdce;
-  padding: 5px;
+  border: 1px solid #cccdce;
+  padding: 6px;
   margin-top: 4px;
+  font-size: 0.9em;
   border-radius: 5px;
 }
 .recent-comment-content::after, .recent-comment-content::before {
@@ -2549,7 +2549,7 @@ input[type='submit'] {
 ** プロフィルボックス
 ************************************/
 .author-box {
-  border: 2px solid #cccfd2;
+  border: 1px solid #cccfd2;
   padding: 10px;
   line-height: 1.4;
   position: relative;
@@ -4165,35 +4165,6 @@ div.fb-like-mobile {
   border: 2px solid #15b0e7;
 }
 
-@media screen and (max-width: 1240px) {
-  .wrap {
-    width: auto;
-  }
-
-  .main,
-  .sidebar,
-  .sidebar-left .main,
-  .sidebar-left .sidebar {
-    margin: 0 0.5%;
-  }
-
-  .main {
-    width: 67%;
-  }
-
-  .sidebar {
-    padding: 0px 10px;
-    width: 30%;
-  }
-
-  .entry-card-thumb {
-    width: 38%;
-  }
-
-  .entry-card-content {
-    margin-left: 40%;
-  }
-}
 @media screen and (max-width: 1030px) {
   .navi-footer {
     float: none;
@@ -4216,8 +4187,8 @@ div.fb-like-mobile {
     flex-direction: column;
   }
 
-  .main,
-  .sidebar {
+  main.main,
+  div.sidebar {
     margin: 10px;
     width: auto;
   }
@@ -4264,10 +4235,11 @@ div.fb-like-mobile {
     display: none;
   }
 
-  .main,
-  .sidebar {
+  main.main,
+  div.sidebar {
     padding: 5px;
     margin: 10px 0;
+    border-width: 0;
   }
 
   .article ul,
@@ -4462,7 +4434,6 @@ div.fb-like-mobile {
     width: 34px;
     height: 34px;
     line-height: 34px;
-    margin-left: 0;
   }
 
   .pagination-next-link {
