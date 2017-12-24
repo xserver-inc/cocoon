@@ -343,6 +343,9 @@ $responsive_width = get_site_wrap_width() + 4;
 if ($responsive_width <= 1030) {
   $responsive_width = 1030;
 } ?>
+<?php if (!is_admin()): ?>
 @media screen and (max-width: <?php echo $responsive_width; ?>px){
   <?php echo get_file_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
 }
+<?php endif ?>
+
