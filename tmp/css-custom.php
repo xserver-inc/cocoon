@@ -337,7 +337,12 @@ if (is_clumns_changed() && !is_admin()): ?>
   width: <?php echo get_site_wrap_width(); ?>px;
 }
 <?php endif ?>
-<?php //レスポンシブ ?>
-@media screen and (max-width: <?php echo get_site_wrap_width() + 4; ?>px){
+<?php //レスポンシブ
+$responsive_width = get_site_wrap_width() + 4;
+//次のブレークポイント（1030px）より幅が狭い場合はブレークポイントの値にする
+if ($responsive_width <= 1030) {
+  $responsive_width = 1030;
+} ?>
+@media screen and (max-width: <?php echo $responsive_width; ?>px){
   <?php echo get_file_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
 }

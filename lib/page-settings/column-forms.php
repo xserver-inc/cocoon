@@ -27,8 +27,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 500, 1000, 10);
-            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：500px、最大：1000px）', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 600, 1000, 10);
+            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：600px、最大：1000px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -40,8 +40,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_PADDING,  get_main_column_padding(), 29, 10, 50);
-            generate_tips_tag(__( 'メインカラムコンテンツ両サイドの余白幅を設定します。（最小：10px、最大：50px）', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_PADDING,  get_main_column_padding(), 29, 10, 80);
+            generate_tips_tag(__( 'メインカラムコンテンツ両サイドの余白幅を設定します。（最小：10px、最大：80px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -110,8 +110,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 9, 5, 50);
-            generate_tips_tag(__( 'サイドバーコンテンツ両サイドの余白幅を設定します。（最小：5px、最大：50px）', THEME_NAME ));
+            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 9, 5, 40);
+            generate_tips_tag(__( 'サイドバーコンテンツ両サイドの余白幅を設定します。（最小：5px、最大：40px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -166,8 +166,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_SIDEBAR_MARGIN,  get_main_sidebar_margin(), 20, 5, 50);
-            generate_tips_tag(__( 'メインカラムとサイドバーの間の幅を設定します。（最小：5px、最大：50px）', THEME_NAME ));
+            generate_number_tag(OP_MAIN_SIDEBAR_MARGIN,  get_main_sidebar_margin(), 20, 0, 60);
+            generate_tips_tag(__( 'メインカラムとサイドバーの間の幅を設定します。（最小：0px、最大：60px）', THEME_NAME ));
             ?>
           </td>
         </tr>
