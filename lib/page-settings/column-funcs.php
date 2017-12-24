@@ -122,7 +122,7 @@ endif;
 if ( !function_exists( 'get_sidebar_width' ) ):
 function get_sidebar_width(){
   $sidebar_contents_width = get_sidebar_contents_width() ? get_sidebar_contents_width() : 336;
-  $sidebar_padding = get_sidebar_padding() ? get_sidebar_padding() : 10;
+  $sidebar_padding = get_sidebar_padding() ? get_sidebar_padding() : 9;
   $sidebar_border_width = get_sidebar_border_width() ? get_sidebar_border_width() : 1;
   return intval($sidebar_contents_width) +
          (intval($sidebar_padding) * 2) +
@@ -132,10 +132,11 @@ endif;
 
 if ( !function_exists( 'get_site_wrap_width' ) ):
 function get_site_wrap_width(){
-  // _v(get_main_column_width());
-  // _v(get_sidebar_width());
+  _v(get_main_column_width());
+  _v(get_sidebar_width());
+  $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
   return get_main_column_width() +
          get_sidebar_width() +
-         intval(get_main_sidebar_margin());
+         intval($main_sidebar_margin) + 2;
 }
 endif;

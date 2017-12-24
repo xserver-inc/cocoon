@@ -4166,22 +4166,22 @@ div.fb-like-mobile {
 }
 
 @media screen and (max-width: 1240px) {
-  .wrap {
+  div.wrap {
     width: auto;
   }
 
-  .main,
-  .sidebar,
+  main.main,
+  div.sidebar,
   .sidebar-left .main,
   .sidebar-left .sidebar {
     margin: 0 0.5%;
   }
 
-  .main {
+  main.main {
     width: 67%;
   }
 
-  .sidebar {
+  div.sidebar {
     padding: 0px 10px;
     width: 30%;
   }
@@ -4216,8 +4216,8 @@ div.fb-like-mobile {
     flex-direction: column;
   }
 
-  .main,
-  .sidebar {
+  main.main,
+  div.sidebar {
     margin: 10px;
     width: auto;
   }
@@ -4264,10 +4264,11 @@ div.fb-like-mobile {
     display: none;
   }
 
-  .main,
-  .sidebar {
+  main.main,
+  div.sidebar {
     padding: 5px;
     margin: 10px 0;
+    border-width: 0;
   }
 
   .article ul,

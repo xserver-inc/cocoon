@@ -3094,16 +3094,16 @@
     background: #ffffff;
     border: 2px solid #15b0e7; }
   @media screen and (max-width: 1240px) {
-    .demo .wrap {
+    .demo div.wrap {
       width: auto; }
-    .demo .main,
-    .demo .sidebar,
+    .demo main.main,
+    .demo div.sidebar,
     .demo .sidebar-left .main,
     .demo .sidebar-left .sidebar {
       margin: 0 0.5%; }
-    .demo .main {
+    .demo main.main {
       width: 67%; }
-    .demo .sidebar {
+    .demo div.sidebar {
       padding: 0px 10px;
       width: 30%; }
     .demo .entry-card-thumb {
@@ -3123,8 +3123,8 @@
         width: 100%; }
     .demo .content-in {
       flex-direction: column; }
-    .demo .main,
-    .demo .sidebar {
+    .demo main.main,
+    .demo div.sidebar {
       margin: 10px;
       width: auto; }
     .demo .footer-bottom-logo,
@@ -3157,10 +3157,11 @@
             font-size: 14px; }
             .demo .navi-in > .menu-mobile li a:after {
               display: none; }
-      .demo .main,
-      .demo .sidebar {
+      .demo main.main,
+      .demo div.sidebar {
         padding: 5px;
-        margin: 10px 0; }
+        margin: 10px 0;
+        border-width: 0; }
       .demo .article ul,
       .demo .article ol {
         padding-left: 20px; }

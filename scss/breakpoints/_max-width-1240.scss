@@ -4,24 +4,24 @@
 
 // .main,
 // .sidebar,
-.wrap{
+div.wrap{
   width: auto;
 }
 
-.main,
-.sidebar,
+main.main,
+div.sidebar,
 .sidebar-left .main,
 .sidebar-left .sidebar{
   margin: 0 0.5%;
   //float: none;
 }
 
-.main{
+main.main{
   width: 67%;
 }
 
 
-.sidebar{
+div.sidebar{
   padding: 0px 10px;
   width: 30%;
   //overflow: hidden;
