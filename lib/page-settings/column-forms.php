@@ -27,8 +27,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_WIDTH,  get_main_column_width(), 500, 1200, 10);
-            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。未入力でデフォルトの800pxになります。', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_WIDTH,  get_main_column_width(), 800, 500, 1200, 10);
+            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：500px、最大：1200px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -40,8 +40,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_PADDING,  get_main_column_padding(), 10, 100);
-            generate_tips_tag(__( 'メインカラムコンテンツ両サイドの余白幅を設定します。未入力でデフォルトの29pxになります。', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_PADDING,  get_main_column_padding(), 29, 10, 100);
+            generate_tips_tag(__( 'メインカラムコンテンツ両サイドの余白幅を設定します。（最小：10px、最大：100px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -53,8 +53,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_BORDER_WIDTH,  get_main_column_border_width(), 0, 10);
-            generate_tips_tag(__( 'メインカラムのボーダー幅を設定します。未入力でデフォルトの1pxになります。', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_BORDER_WIDTH,  get_main_column_border_width(), 1, 0, 10);
+            generate_tips_tag(__( 'メインカラムのボーダー幅を設定します。（最小：0px、最大：10px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -97,8 +97,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_WIDTH,  get_sidebar_width(), 300, 500, 10);
-            generate_tips_tag(__( 'サイドバーコンテンツ部分の幅を設定します。未入力でデフォルトの336pxになります。', THEME_NAME ));
+            generate_number_tag(OP_SIDEBAR_WIDTH,  get_sidebar_width(), 336, 300, 500, 10);
+            generate_tips_tag(__( 'サイドバーコンテンツ部分の幅を設定します。（最小：300px、最大：500px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -110,8 +110,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 5, 50);
-            generate_tips_tag(__( 'サイドバーコンテンツ両サイドの余白幅を設定します。未入力でデフォルトの9pxになります。', THEME_NAME ));
+            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 9, 5, 50);
+            generate_tips_tag(__( 'サイドバーコンテンツ両サイドの余白幅を設定します。（最小：5px、最大：50px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -123,8 +123,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_BORDER_WIDTH,  get_sidebar_border_width(), 0, 10);
-            generate_tips_tag(__( 'サイドバーのボーダー幅を設定します。未入力でデフォルトの1pxになります。', THEME_NAME ));
+            generate_number_tag(OP_SIDEBAR_BORDER_WIDTH,  get_sidebar_border_width(), 1, 0, 10);
+            generate_tips_tag(__( 'サイドバーのボーダー幅を設定します。（最小：0px、最大：10px）', THEME_NAME ));
             ?>
           </td>
         </tr>

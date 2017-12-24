@@ -76,7 +76,7 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_RELATED_ENTRY_COUNT,  get_related_entry_count(), 2, 30);
+            generate_number_tag(OP_RELATED_ENTRY_COUNT,  get_related_entry_count(), 6, 2, 30);
             generate_tips_tag(__( '関連記事で表示する投稿数の設定です。（最小：2、最大：30）', THEME_NAME ));
             ?>
           </td>
@@ -102,7 +102,7 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 0, 500);
+            generate_number_tag(OP_RELATED_EXCERPT_MAX_LENGTH,  get_related_excerpt_max_length(), 120, 0, 500);
             generate_tips_tag(__( '「エントリーカード」で、抜粋文を表示する場合の最大文字数を
               設定します。（最小：0、最大：500）', THEME_NAME ));
             ?>
