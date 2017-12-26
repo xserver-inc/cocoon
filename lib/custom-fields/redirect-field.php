@@ -22,7 +22,7 @@ function redirect_custom_box_view(){
   $redirect_url = get_post_meta(get_the_ID(),'redirect_url', true);
 
   generate_label_tag('redirect_url', __('リダイレクトURL', THEME_NAME) );
-  generate_textbox_tag('redirect_url', $redirect_url, __( '', THEME_NAME ));
+  generate_textbox_tag('redirect_url', $redirect_url, __( 'https://', THEME_NAME ));
   echo '<p class="howto">'.__( 'このページに訪れるユーザーを設定したURLに301リダイレクトします。', THEME_NAME ).'</p>';
 
 }
