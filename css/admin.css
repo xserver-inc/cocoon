@@ -3734,3 +3734,6 @@ select option.fa {
 
 #singular_redirect_settings input[type="text"] {
   width: 100%; }
+
+table.sb-list td {
+  padding: 12px 0; }
