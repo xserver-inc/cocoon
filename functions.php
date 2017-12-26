@@ -398,18 +398,10 @@ endif;
 
 
 /*
- * Place JS in the Admin Head
- */
   add_action('admin_head', 'better_shortcodes_in_js');
   add_action('admin_head', 'better_tinymce');
 
-/*
- * Pass Options and Variables to betterDrop.js
- */
   function better_shortcodes_in_js(){
-  /*
-   * set JS variables
-   */
     $listTitle = trim(esc_attr(get_option('btslb_listTitle')));
     if(!$listTitle){
       $listTitle = "タグ";
@@ -426,9 +418,6 @@ endif;
 <?php
 }
 
-/*
- * Make Drop Down List Work
- */
   function better_tinymce() {
     add_filter('mce_external_plugins', 'better_tinymce_plugin');
     add_filter('mce_buttons_2', 'better_tinymce_button');
@@ -443,7 +432,7 @@ endif;
     array_push($buttons, 'shortcodedrop');
     return $buttons;
   }
-
+*/
 
 
 
@@ -471,8 +460,10 @@ function shortcode_button()
 
 function add_buttons( $plugin_array )
     {
+       //$path=get_template_directory_uri() . '/lib/tinymce/rashortcodes.php';
        $path=get_template_directory_uri() . '/js/shortcode-tinymce-button.js';
         $plugin_array['rashortcodes'] = $path;
+      //_v($plugin_array);
 
         return $plugin_array;
     }

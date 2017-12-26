@@ -17,7 +17,7 @@
 						onclick     : function(){editor.focus();},
             onselect: function(e) {
             //_v(e);
-            _v(shortcodeValues);
+            //_v(shortcodeValues);
             var selected_text = editor.selection.getContent();
             //_v(selected_text);
             var v = e.control.settings.text;
