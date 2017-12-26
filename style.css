@@ -2554,6 +2554,9 @@ input[type='submit'] {
   line-height: 1.4;
   position: relative;
 }
+.author-box p {
+  margin-top: 0.3em;
+}
 .author-box .sns-follow {
   margin: 0;
 }

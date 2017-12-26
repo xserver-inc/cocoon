@@ -2041,6 +2041,8 @@
     padding: 10px;
     line-height: 1.4;
     position: relative; }
+    .demo .author-box p {
+      margin-top: 0.3em; }
     .demo .author-box .sns-follow {
       margin: 0; }
     .demo .author-box .sns-follow-message {
