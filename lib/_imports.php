@@ -79,6 +79,8 @@ require_once 'ssl.php'; //SSL関係の処理
 require_once get_template_directory().'/lib/profile.php'; //プロフィール関係の処理
 require_once get_template_directory().'/lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
 require_once get_template_directory().'/lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能
+//TinyMCE
+require_once 'tinymce/insert-html.php'; //HTML追加ボタン
 
 
 //新着記事ウィジェット
