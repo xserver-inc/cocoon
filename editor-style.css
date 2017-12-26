@@ -1,5 +1,5 @@
 @charset "UTF-8";
 /*ビジュアルエディターのスタイルを書く*/
 body#tinymce.wp-autoresize {
-    padding: 0 29px !important;
+    padding: 20px !important;
 }

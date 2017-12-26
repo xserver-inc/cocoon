@@ -2601,21 +2601,15 @@ input[type='submit'] {
   margin-bottom: 0.6em;
 }
 
-.sidebar .author-thumb {
-  float: none;
-  width: auto;
-  text-align: center;
+.sidebar {
+  font-size: 0.84em;
+  line-height: 1.3;
 }
-.sidebar .author-widget-name,
-.sidebar .author-display-name {
-  text-align: center;
+.sidebar .author-thumb {
+  width: 24%;
 }
 .sidebar .author-content {
-  float: none;
-  margin: 0;
-}
-.sidebar .author-description {
-  font-size: 0.84em;
+  margin-left: 26%;
 }
 
 .fb-like-box {
@@ -4506,24 +4500,14 @@ div.fb-like-mobile {
     border-left-width: 1px;
   }
 
+  font-size: 0.84em;
+  line-height: 1.3;
   .author-thumb {
-    float: none;
-    width: auto;
-    text-align: center;
-  }
-
-  .author-widget-name,
-  .author-display-name {
-    text-align: center;
+    width: 24%;
   }
 
   .author-content {
-    float: none;
-    margin: 0;
-  }
-
-  .author-description {
-    font-size: 0.84em;
+    margin-left: 26%;
   }
 
   .speech-person {

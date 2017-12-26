@@ -2073,18 +2073,13 @@
     font-weight: bold; }
   .demo .author-description {
     margin-bottom: 0.6em; }
-  .demo .sidebar .author-thumb {
-    float: none;
-    width: auto;
-    text-align: center; }
-  .demo .sidebar .author-widget-name,
-  .demo .sidebar .author-display-name {
-    text-align: center; }
-  .demo .sidebar .author-content {
-    float: none;
-    margin: 0; }
-  .demo .sidebar .author-description {
-    font-size: 0.84em; }
+  .demo .sidebar {
+    font-size: 0.84em;
+    line-height: 1.3; }
+    .demo .sidebar .author-thumb {
+      width: 24%; }
+    .demo .sidebar .author-content {
+      margin-left: 26%; }
   .demo .fb-like-box {
     background-color: #333;
     color: #fff;
@@ -3243,7 +3238,9 @@
         margin-left: auto; } }
   @media screen and (max-width: 480px) {
     .demo {
-      /*本文の見出し*/ }
+      /*本文の見出し*/
+      font-size: 0.84em;
+      line-height: 1.3; }
       .demo h2, .demo h3 {
         font-size: 20px; }
       .demo .related-entry-heading,
@@ -3305,17 +3302,9 @@
           border-top-width: 0;
           border-left-width: 1px; }
       .demo .author-thumb {
-        float: none;
-        width: auto;
-        text-align: center; }
-      .demo .author-widget-name,
-      .demo .author-display-name {
-        text-align: center; }
+        width: 24%; }
       .demo .author-content {
-        float: none;
-        margin: 0; }
-      .demo .author-description {
-        font-size: 0.84em; }
+        margin-left: 26%; }
       .demo .speech-person {
         width: 40px; }
       .demo .speech-wrap .speech-balloon {
