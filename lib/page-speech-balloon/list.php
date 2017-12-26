@@ -27,7 +27,7 @@ generate_sort_options_tag($keyword, $order_by);
 ?>
 <!-- メッセージ -->
 <?php if ($records): ?>
-  <p class="op-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( '設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタンから追加できます。', THEME_NAME ) ?></p>
 <?php else: ?>
   <p class="op-message"><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
 <?php endif ?>

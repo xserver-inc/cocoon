@@ -200,7 +200,7 @@ function add_default_speech_balloon_records(){
   $posts['title'] = __( '犬（左）', THEME_NAME );
   $posts['name']  = __( 'いぬ', THEME_NAME );
   $posts['icon']  = get_template_directory_uri().'/images/dog.png';
-  $posts['style'] = SBS_STANDARD;
+  $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);
@@ -208,7 +208,7 @@ function add_default_speech_balloon_records(){
   $posts['title'] = __( 'ウサギ（右）', THEME_NAME );
   $posts['name']  = __( 'うさぎ', THEME_NAME );
   $posts['icon']  = get_template_directory_uri().'/images/rabbit.png';
-  $posts['style'] = SBS_STANDARD;
+  $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);
