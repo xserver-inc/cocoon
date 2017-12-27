@@ -45,13 +45,14 @@ function create_function_texts_table() {
   }
   // SQL文でテーブルを作る
   $sql = "CREATE TABLE ".FUNCTION_TEXTS_TABLE_NAME." (
-      id bigint(20) NOT NULL AUTO_INCREMENT,
-      date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-      modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-      title varchar(126),
-      text text NOT NULL,
-      PRIMARY KEY (id),
-      INDEX (title)
+    id bigint(20) NOT NULL AUTO_INCREMENT,
+    date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    title varchar(126),
+    text text NOT NULL,
+    visible bit(1) DEFAULT 1,
+    PRIMARY KEY (id),
+    INDEX (title)
     )";
   $res = create_db_table($sql);
 
@@ -96,37 +97,12 @@ function get_function_texts( $keyword = null, $order_by = null ) {
   update_function_texts_table();
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
-  // $where = null;
-  // if ($keyword) {
-  //   $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
-  //   //$where = (" WHERE title LIKE %%$keyword%%");
-  // }
-  // if ($order_by) {
-  //   $order_by = esc_sql(" ORDER BY $order_by");
-  // }
-  // $query = "SELECT * FROM {$table_name}".
-  //             $where.
-  //             $order_by;
-
-  // //$query = "SELECT * FROM {$table_name}";
-  // //var_dump($query);
-
-  // $records = $wpdb->get_results( $query );
-
-  // return $records;
 }
 endif;
 
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_text' ) ):
 function get_function_text( $id ) {
-  // global $wpdb;
-  // //$query = ("SELECT * FROM {$table_name}  WHERE id = {intval($id)}");
-  // $query = $wpdb->prepare("SELECT * FROM {$table_name}  WHERE id = %d", $id);
-  // //_v($query);
-  // $record = $wpdb->get_row( $query );
-
-
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
   if (!empty($record->title))
@@ -144,14 +120,6 @@ if ( !function_exists( 'delete_function_text' ) ):
 function delete_function_text( $id ) {
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   return delete_db_table_record( $table_name, $id );
-
-  // global $wpdb;
-  // $res = $wpdb->delete( $table_name, array(
-  //     'id' => $id,
-  //   ),
-  //   array('%d')
-  // );
-  // return $res;
 }
 endif;
 
@@ -165,12 +133,14 @@ function insert_function_text_record($posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
+    'visible' => $posts['visible'],
   );
   $format = array(
     '%s',
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   return insert_db_table_record($table, $data, $format);
 }
@@ -185,12 +155,14 @@ function update_function_text_record($id, $posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
+    'visible' => $posts['visible'],
   );
   $where = array('id' => $id);
   $format = array(
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   $where_format = array('%d');
   return update_db_table_record($table, $data, $where, $format, $where_format);

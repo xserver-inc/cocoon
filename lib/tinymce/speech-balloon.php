@@ -34,39 +34,38 @@ endif;
 if ( !function_exists( 'generate_speech_balloons_is' ) ):
 function generate_speech_balloons_is($value){
   $records = get_speech_balloons(null, 'title');
-  if ($records) {
-    echo '<script type="text/javascript">
-    var speech_balloons_title = "'.__( '吹き出しの挿入', THEME_NAME ).'";
-    var speech_balloons = new Array();';
 
-    $count = 0;
+  echo '<script type="text/javascript">
+  var speech_balloons_title = "'.__( '吹き出しの挿入', THEME_NAME ).'";
+  var speech_balloons = new Array();';
 
-    foreach($records as $record){
-      //非表示の場合は跳ばす
-      if (!$record->visible) {
-        continue;
-      }
-      ob_start();
-      generate_speech_balloon_tag($record, 'VOICE');
-      $speech_balloon_tag = ob_get_clean();
-      $speech_balloon_tag_split = explode('VOICE', $speech_balloon_tag);
-      //JavaScriptで改行エラーになるため取り除く
-      $sb_tag_before = minify_js($speech_balloon_tag_split[0]);
-      $sb_tag_after  = minify_js($speech_balloon_tag_split[1]);
-      ?>
+  $count = 0;
 
-      var count = <?php echo $count; ?>;
-      speech_balloons[count] = new Array();
-      speech_balloons[count].title  = '<?php echo $record->title; ?>';
-      speech_balloons[count].id     = '<?php echo $record->id; ?>';
-      speech_balloons[count].before = '<?php echo $sb_tag_before; ?>';
-      speech_balloons[count].after  = '<?php echo $sb_tag_after; ?>';
-
-      <?php
-      $count++;
+  foreach($records as $record){
+    //非表示の場合は跳ばす
+    if (!$record->visible) {
+      continue;
     }
-    echo '</script>';
+    ob_start();
+    generate_speech_balloon_tag($record, 'VOICE');
+    $speech_balloon_tag = ob_get_clean();
+    $speech_balloon_tag_split = explode('VOICE', $speech_balloon_tag);
+    //JavaScriptで改行エラーになるため取り除く
+    $sb_tag_before = minify_js($speech_balloon_tag_split[0]);
+    $sb_tag_after  = minify_js($speech_balloon_tag_split[1]);
+    ?>
+
+    var count = <?php echo $count; ?>;
+    speech_balloons[count] = new Array();
+    speech_balloons[count].title  = '<?php echo $record->title; ?>';
+    speech_balloons[count].id     = '<?php echo $record->id; ?>';
+    speech_balloons[count].before = '<?php echo $sb_tag_before; ?>';
+    speech_balloons[count].after  = '<?php echo $sb_tag_after; ?>';
+
+    <?php
+    $count++;
   }
+  echo '</script>';
 }
 endif;
 

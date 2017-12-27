@@ -3738,3 +3738,7 @@ select option.fa {
 
 table.sb-list td {
   padding: 12px 0; }
+
+.list-option {
+  width: 50px;
+  text-align: center; }

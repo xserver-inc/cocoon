@@ -47,9 +47,6 @@ generate_sort_options_tag($keyword, $order_by);
       <?php if ($record->title): ?>
       <div>
         <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
-        <?php if (!$record->visible): ?>
-          <span class="tiny-visible"><?php _e( ' [ビジュアルエディターで非表示]', THEME_NAME ) ?></span>
-        <?php endif ?>
       </div>
       <?php endif ?>
       <div class="demo">
@@ -73,9 +70,12 @@ generate_sort_options_tag($keyword, $order_by);
       <?php endif ?>
 
     </td>
-    <td class="sb-list-option" style="width: 50px;">
+    <td class="list-option" style="width: 50px;">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
       <p><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></p>
+      <?php if (!$record->visible): ?>
+        <p>[<?php _e( '非表示', THEME_NAME ) ?>]</p>
+      <?php endif ?>
     </td>
   </tr>
   <?php endforeach ?>
