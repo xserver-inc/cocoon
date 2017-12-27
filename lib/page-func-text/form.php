@@ -8,12 +8,14 @@
     $recode = get_function_text($id);
     $title = isset($recode->title) ? $recode->title : '';
     $text = isset($recode->text) ? stripslashes_deep($recode->text) : '';
+    $visible = !empty($recode->visible) ? $recode->visible : 0;
 
   } else {
     $action = 'new';
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $text = isset($_POST['text']) ? stripslashes_deep($_POST['text']) : '';
+    $visible = !empty($_POST['visible']) ? $_POST['visible'] : 0;
   }
 
   echo '<h2>'.__( 'タイトル', THEME_NAME ).'</h2>';
@@ -26,9 +28,13 @@
   // $editor_id = 'func-text'; //エディターを区別するために、IDを指定する
   // $settings = array( 'textarea_name' => 'text' ); //配列としてデータを渡すためname属性を指定する
   // wp_editor( $text, $editor_id, $settings );
-  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME )); ?>
+  generate_tips_tag(__( '関数化するテキストを入力してください。', THEME_NAME ));
+
+  //TinyMCE表示
+  generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
+  generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストにに表示しなくて良い場合は、無効にしてください。', THEME_NAME )); ?>
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
-  <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+  <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y"><br>
   <?php submit_button(__( '保存', THEME_NAME )); ?>
 </form>

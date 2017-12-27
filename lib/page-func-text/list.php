@@ -35,6 +35,10 @@ generate_sort_options_tag($keyword, $order_by);
         echo $text; ?>
       </div>
       <div class="ft-menu">
+        <?php if (!$record->visible): ?>
+          <div class="ft-menu-left">[<?php _e( '非表示', THEME_NAME ) ?>]</div>
+        <?php endif ?>
+
         <a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a>
         <a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
       </div>

@@ -173,6 +173,9 @@
   background-color: #fff; }
   .ft-menu a {
     margin-left: 8px; }
+  .ft-menu .ft-menu-left {
+    position: absolute;
+    left: 10px; }
 
 .ft-confirm-wrap {
   border: 1px solid #ccc;
