@@ -18,11 +18,13 @@
 			fixedWidth  : true,
 			onclick     : function(){editor.focus();},
       onselect: function(e) {
-        var selected_text = editor.selection.getContent();
-        //_v(e);
+        var selectedText = editor.selection.getContent();
+        if (!selectedText) {
+          selectedText = speech_balloons_empty_text;
+        }
         var before = e.control.settings.before;
         var after  = e.control.settings.after ;
-        tinyMCE.activeEditor.selection.setContent(before + selected_text + after + "\n\n");
+        tinyMCE.activeEditor.selection.setContent(before + selectedText + after + "\n\n");
       },
       values: dropdownValues
     });
