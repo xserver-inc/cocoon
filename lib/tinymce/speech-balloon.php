@@ -36,9 +36,9 @@ function generate_speech_balloons_is($value){
   $records = get_speech_balloons(null, 'title');
 
   echo '<script type="text/javascript">
-  var speech_balloons_title = "'.__( '吹き出しの挿入', THEME_NAME ).'";
-  var speech_balloons_empty_text = "'.__( '内容を入力してください。', THEME_NAME ).'";
-  var speech_balloons = new Array();';
+  var speechBalloonsTitle = "'.__( '吹き出しの挿入', THEME_NAME ).'";
+  var speechBalloonsEmptyText = "'.__( '内容を入力してください。', THEME_NAME ).'";
+  var speechBalloons = new Array();';
 
   $count = 0;
 
@@ -57,11 +57,11 @@ function generate_speech_balloons_is($value){
     ?>
 
     var count = <?php echo $count; ?>;
-    speech_balloons[count] = new Array();
-    speech_balloons[count].title  = '<?php echo $record->title; ?>';
-    speech_balloons[count].id     = '<?php echo $record->id; ?>';
-    speech_balloons[count].before = '<?php echo $sb_tag_before; ?>';
-    speech_balloons[count].after  = '<?php echo $sb_tag_after; ?>';
+    speechBalloons[count] = new Array();
+    speechBalloons[count].title  = '<?php echo $record->title; ?>';
+    speechBalloons[count].id     = '<?php echo $record->id; ?>';
+    speechBalloons[count].before = '<?php echo $sb_tag_before; ?>';
+    speechBalloons[count].after  = '<?php echo $sb_tag_after; ?>';
 
     <?php
     $count++;
