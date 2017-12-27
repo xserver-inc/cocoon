@@ -31,6 +31,7 @@ function add_default_function_text_records(){
   $posts = array();
   $posts['title'] = __( 'Wordpressカスタマイズ注意文サンプル', THEME_NAME );
   $posts['text'] = '<p class="alert">'.__( 'Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください。 ', THEME_NAME ).'</p>';
+  $posts['visible'] = 1;
   insert_function_text_record($posts);
 }
 endif;
@@ -48,9 +49,9 @@ function create_function_texts_table() {
     id bigint(20) NOT NULL AUTO_INCREMENT,
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-    title varchar(126),
+    title varchar(126) NOT NULL,
     text text NOT NULL,
-    visible bit(1) DEFAULT 1,
+    visible bit(1) DEFAULT 1 NOT NULL,
     PRIMARY KEY (id),
     INDEX (title)
     )";
