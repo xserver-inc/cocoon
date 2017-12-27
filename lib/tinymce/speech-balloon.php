@@ -42,6 +42,10 @@ function generate_speech_balloons_is($value){
     $count = 0;
 
     foreach($records as $record){
+      //非表示の場合は跳ばす
+      if (!$record->visible) {
+        continue;
+      }
       ob_start();
       generate_speech_balloon_tag($record, 'VOICE');
       $speech_balloon_tag = ob_get_clean();

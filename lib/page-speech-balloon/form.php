@@ -12,6 +12,7 @@
     $style = $record->style;
     $position = $record->position;
     $iconstyle = $record->iconstyle;
+    $visible = $record->visible;
 
     //吹き出しデモの表示
     require_once 'demo.php';
@@ -25,6 +26,7 @@
     $style = isset($_POST['style']) ? $_POST['style'] : '';
     $position = isset($_POST['position']) ? $_POST['position'] : '';
     $iconstyle = isset($_POST['iconstyle']) ? $_POST['iconstyle'] : '';
+    $visible = isset($_POST['visible']) ? $_POST['visible'] : 0;
   }?>
 
   <table class="form-table speech-balloon">
@@ -114,6 +116,18 @@
           );
           generate_selectbox_tag('iconstyle', $options, $iconstyle);
           generate_tips_tag(__( 'アイコンの形や枠線を指定します。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag('visible', __( 'TinyMCE', THEME_NAME )); ?>
+        </th>
+        <td>
+          <?php
+          generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
+          generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストにに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
           ?>
         </td>
       </tr>

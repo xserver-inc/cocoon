@@ -18,7 +18,7 @@ define('SB_SAMPLE_TEXTS',
 );
 //var_dump($_POST);
 $keyword = !empty($_POST['s']) ? $_POST['s'] : null;
-$order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC';
+$order_by = isset($_POST['order']) ? $_POST['order'] : 'title';
 //var_dump($order_by);
 $records = get_speech_balloons($keyword, $order_by);
 //var_dump($records);
@@ -47,6 +47,9 @@ generate_sort_options_tag($keyword, $order_by);
       <?php if ($record->title): ?>
       <div>
         <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
+        <?php if (!$record->visible): ?>
+          <span class="tiny-visible"><?php _e( ' [ビジュアルエディターで非表示]', THEME_NAME ) ?></span>
+        <?php endif ?>
       </div>
       <?php endif ?>
       <div class="demo">

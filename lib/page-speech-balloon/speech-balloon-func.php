@@ -61,6 +61,7 @@ function insert_speech_balloon_record($posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
+    'visible' => $posts['visible'],
   );
   $format = array(
     '%s',
@@ -71,6 +72,7 @@ function insert_speech_balloon_record($posts){
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   return insert_db_table_record($table, $data, $format);
 }
@@ -89,6 +91,7 @@ function update_speech_balloon_record($id, $posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
+    'visible' => $posts['visible'],
   );
   $where = array('id' => $id);
   $format = array(
@@ -99,6 +102,7 @@ function update_speech_balloon_record($id, $posts){
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   $where_format = array('%d');
   return update_db_table_record($table, $data, $where, $format, $where_format);
@@ -234,6 +238,7 @@ function create_speech_balloons_table() {
     style varchar(20) DEFAULT '".SBS_STANDARD."',
     position varchar(20) DEFAULT '".SBP_LEFT."',
     iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."',
+    visible bit(1) DEFAULT 1,
     PRIMARY KEY (id),
     INDEX (title),
     INDEX (name)
@@ -317,6 +322,7 @@ function get_speech_balloon( $id ) {
   $record->style = !empty($record->style) ? $record->style : SBS_FLAT;
   $record->position = !empty($record->position) ? $record->position : SBP_LEFT;
   $record->iconstyle = !empty($record->iconstyle) ? $record->iconstyle : SBIS_CIRCLE_BORDER;
+  $record->visible = !empty($record->visible) ? 1 : 0;
 
   return $record;
 }
