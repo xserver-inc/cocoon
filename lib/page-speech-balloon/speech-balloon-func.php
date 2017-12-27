@@ -109,7 +109,7 @@ endif;
 if ( !function_exists( 'add_default_speech_balloon_records' ) ):
 function add_default_speech_balloon_records(){
   $posts = array();
-  $posts['title'] = __( '男性デフォルトサンプル（左）', THEME_NAME );
+  $posts['title'] = __( '[01]男性（左）', THEME_NAME );
   $posts['name']  = __( '太郎', THEME_NAME );
   $posts['icon']  = SB_DEFAULT_MAN_ICON;
   $posts['style'] = SBS_STANDARD;
@@ -117,10 +117,98 @@ function add_default_speech_balloon_records(){
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '女性デフォルトサンプル（右）', THEME_NAME );
+  $posts['title'] = __( '[02]女性（右）', THEME_NAME );
   $posts['name']  = __( '花子', THEME_NAME );
   $posts['icon']  = SB_DEFAULT_WOMAN_ICON;
   $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_RIGHT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[03]少年（左）', THEME_NAME );
+  $posts['name']  = __( 'たけし', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/boy.png';
+  $posts['style'] = SBS_LINE;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[04]少女（右）', THEME_NAME );
+  $posts['name']  = __( 'えり', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/girl.png';
+  $posts['style'] = SBS_LINE;
+  $posts['position'] = SBP_RIGHT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[05]おじさん（左）', THEME_NAME );
+  $posts['name']  = __( '一郎', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/ojisan.png';
+  $posts['style'] = SBS_FLAT;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[06]おばさん（左）', THEME_NAME );
+  $posts['name']  = __( 'よし江', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/obasan.png';
+  $posts['style'] = SBS_FLAT;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[07]男性医師（左）', THEME_NAME );
+  $posts['name']  = __( '主治医', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/doctor-man.png';
+  $posts['style'] = SBS_LINE;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[08]女性医師（右）', THEME_NAME );
+  $posts['name']  = __( '主治医', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/doctor-woman.png';
+  $posts['style'] = SBS_LINE;
+  $posts['position'] = SBP_RIGHT;
+  $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[09]どや顔男性（左）', THEME_NAME );
+  $posts['name']  = __( 'どや男', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/doya.png';
+  $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[10]熊（左）', THEME_NAME );
+  $posts['name']  = __( 'くま', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/bear.png';
+  $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[11]猫（右）', THEME_NAME );
+  $posts['name']  = __( 'ねこ', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/cat.png';
+  $posts['style'] = SBS_STANDARD;
+  $posts['position'] = SBP_RIGHT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[12]犬（左）', THEME_NAME );
+  $posts['name']  = __( 'いぬ', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/dog.png';
+  $posts['style'] = SBS_FLAT;
+  $posts['position'] = SBP_LEFT;
+  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  insert_speech_balloon_record($posts);
+
+  $posts['title'] = __( '[13]ウサギ（右）', THEME_NAME );
+  $posts['name']  = __( 'うさぎ', THEME_NAME );
+  $posts['icon']  = get_template_directory_uri().'/images/rabbit.png';
+  $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   insert_speech_balloon_record($posts);

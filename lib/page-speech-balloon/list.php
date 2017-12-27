@@ -27,7 +27,7 @@ generate_sort_options_tag($keyword, $order_by);
 ?>
 <!-- メッセージ -->
 <?php if ($records): ?>
-  <p class="op-message"><?php _e( 'ショートコードをコピーして本文の表示したい部分に貼り付けてください。', THEME_NAME ) ?></p>
+  <p class="op-message"><?php _e( '設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタンから追加できます。', THEME_NAME ) ?></p>
 <?php else: ?>
   <p class="op-message"><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
 <?php endif ?>
@@ -56,6 +56,7 @@ generate_sort_options_tag($keyword, $order_by);
         SB_SAMPLE_TEXTS[rand(0, 11)]
       ); ?>
       </div>
+      <?php if (0): ?>
       <div class="shortcode"><?php _e( 'ショートコード：', THEME_NAME ) ?><br><input type="text" name="" value='[speech name="<?php echo esc_html($record->name); ?>" icon="<?php echo esc_html($record->icon); ?>" style="<?php echo esc_html($record->style); ?>" pos="<?php echo esc_html($record->position); ?>" is="<?php echo esc_html($record->iconstyle); ?>"]VOICE[/speech]' style="width: 100%;"></div>
       <div class="htmlcode">
         <?php _e( 'HTMLコード：', THEME_NAME ) ?><br>
@@ -66,6 +67,8 @@ generate_sort_options_tag($keyword, $order_by);
             );
         ?></textarea>
       </div>
+      <?php endif ?>
+
     </td>
     <td class="sb-list-option" style="width: 50px;">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
