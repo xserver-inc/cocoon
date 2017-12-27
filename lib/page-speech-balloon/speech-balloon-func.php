@@ -83,6 +83,7 @@ if ( !function_exists( 'update_speech_balloon_record' ) ):
 function update_speech_balloon_record($id, $posts){
   $table = SPEECH_BALLOONS_TABLE_NAME;
   $now = current_time('mysql');
+  $visible = $posts['visible'] ? 1 : 0;
   $data = array(
     'modified' => $now,
     'title' => $posts['title'],
@@ -119,6 +120,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[02]女性（右）', THEME_NAME );
@@ -127,6 +129,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[03]少年（左）', THEME_NAME );
@@ -135,6 +138,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[04]少女（右）', THEME_NAME );
@@ -143,6 +147,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[05]おじさん（左）', THEME_NAME );
@@ -151,6 +156,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[06]おばさん（左）', THEME_NAME );
@@ -159,6 +165,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[07]男性医師（左）', THEME_NAME );
@@ -167,6 +174,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[08]女性医師（右）', THEME_NAME );
@@ -175,6 +183,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[09]どや顔男性（左）', THEME_NAME );
@@ -183,6 +192,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[10]熊（左）', THEME_NAME );
@@ -191,6 +201,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[11]猫（右）', THEME_NAME );
@@ -199,6 +210,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[12]犬（左）', THEME_NAME );
@@ -207,6 +219,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[13]ウサギ（右）', THEME_NAME );
@@ -215,6 +228,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 }
 endif;
@@ -233,12 +247,12 @@ function create_speech_balloons_table() {
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     title varchar(126),
-    name varchar(36) DEFAULT '".SB_DEFAULT_NAME."',
-    icon varchar(256) DEFAULT '".SB_DEFAULT_MAN_ICON."',
-    style varchar(20) DEFAULT '".SBS_STANDARD."',
-    position varchar(20) DEFAULT '".SBP_LEFT."',
-    iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."',
-    visible bit(1) DEFAULT 1,
+    name varchar(36) DEFAULT '".SB_DEFAULT_NAME."' NOT NULL,
+    icon varchar(256) DEFAULT '".SB_DEFAULT_MAN_ICON."' NOT NULL,
+    style varchar(20) DEFAULT '".SBS_STANDARD."' NOT NULL,
+    position varchar(20) DEFAULT '".SBP_LEFT."' NOT NULL,
+    iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."' NOT NULL,
+    visible bit(1) DEFAULT 1 NOT NULL,
     PRIMARY KEY (id),
     INDEX (title),
     INDEX (name)
