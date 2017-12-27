@@ -19,7 +19,8 @@ function add_insert_html_button_plugin( $plugin_array ) {
 endif;
 
 //ビジュアルエディターにHTML挿入ボタンで出てくるダイアログにラベルを設定する
-add_action('admin_head', 'generate_insert_html_label_js');
+if (is_admin())
+  add_action('admin_head', 'generate_insert_html_label_js');
 if ( !function_exists( 'generate_insert_html_label_js' ) ):
 function generate_insert_html_label_js($value){
   echo '<script type="text/javascript">

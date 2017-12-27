@@ -2604,14 +2604,14 @@ input[type='submit'] {
   margin-bottom: 0.6em;
 }
 
-.sidebar {
-  font-size: 0.84em;
+.sidebar .author-box {
+  font-size: 0.74em;
   line-height: 1.3;
 }
-.sidebar .author-thumb {
+.sidebar .author-box .author-thumb {
   width: 24%;
 }
-.sidebar .author-content {
+.sidebar .author-box .author-content {
   margin-left: 26%;
 }
 
@@ -4503,13 +4503,14 @@ div.fb-like-mobile {
     border-left-width: 1px;
   }
 
-  font-size: 0.84em;
-  line-height: 1.3;
-  .author-thumb {
+  .author-box {
+    font-size: 0.74em;
+    line-height: 1.3;
+  }
+  .author-box .author-thumb {
     width: 24%;
   }
-
-  .author-content {
+  .author-box .author-content {
     margin-left: 26%;
   }
 
