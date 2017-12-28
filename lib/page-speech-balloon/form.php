@@ -23,10 +23,11 @@
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $icon = isset($_POST['icon']) ? $_POST['icon'] : '';
-    $style = isset($_POST['style']) ? $_POST['style'] : '';
-    $position = isset($_POST['position']) ? $_POST['position'] : '';
-    $iconstyle = isset($_POST['iconstyle']) ? $_POST['iconstyle'] : '';
-    $visible = isset($_POST['visible']) ? $_POST['visible'] : 0;
+    $style = isset($_POST['style']) ? $_POST['style'] : SBS_STANDARD;
+    $position = isset($_POST['position']) ? $_POST['position'] : SBP_LEFT;
+    $iconstyle = isset($_POST['iconstyle']) ? $_POST['iconstyle'] : SBIS_CIRCLE_BORDER;
+    $visible = isset($_POST['visible']) ? $_POST['visible'] : 1;
+    //_v($visible);
   }?>
 
   <table class="form-table speech-balloon">

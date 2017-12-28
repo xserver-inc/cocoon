@@ -52,6 +52,7 @@ if ( !function_exists( 'insert_speech_balloon_record' ) ):
 function insert_speech_balloon_record($posts){
   $table = SPEECH_BALLOONS_TABLE_NAME;
   $now = current_time('mysql');
+  //_v($posts);
   $data = array(
     'date' => $now,
     'modified' => $now,
@@ -61,7 +62,7 @@ function insert_speech_balloon_record($posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
-    'visible' => $posts['visible'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
   );
   $format = array(
     '%s',
@@ -92,7 +93,7 @@ function update_speech_balloon_record($id, $posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
-    'visible' => $posts['visible'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
   );
   $where = array('id' => $id);
   $format = array(

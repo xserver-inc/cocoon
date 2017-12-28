@@ -25,6 +25,7 @@ if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action']
     //_v($wpdb->insert_id);
     //編集モードに変更
     if ($result) {
+      global $wpdb;
       $_GET['action'] = 'edit';
       $_GET['id'] = $wpdb->insert_id;
       generate_notice_message_tag(__( 'テキストを新規作成しました。', THEME_NAME ));

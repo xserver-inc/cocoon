@@ -181,9 +181,9 @@ function generate_sort_options_tag($keyword = null, $order_by = null){?>
         'title' => __( 'タイトル昇順', THEME_NAME ),
         'title DESC' => __( 'タイトル降順', THEME_NAME ),
         'date' => __( '作成日昇順', THEME_NAME ),
-        'date DESC' => __( '作成日降順', THEME_NAME ),
+        'date DESC, id DESC' => __( '作成日降順', THEME_NAME ),
         'modified' => __( '編集日昇順', THEME_NAME ),
-        'modified DESC' => __( '編集日降順', THEME_NAME ),
+        'modified DESC, id DESC' => __( '編集日降順', THEME_NAME ),
       );
       generate_selectbox_tag('order', $options, $order_by);
      ?>

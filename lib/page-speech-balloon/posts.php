@@ -6,6 +6,7 @@ if (!empty($_POST['name']) &&
     $result = insert_speech_balloon_record($_POST);
     //編集モードに変更
     if ($result) {
+      global $wpdb;
       $_GET['action'] = 'edit';
       $_GET['id'] = $wpdb->insert_id;
       generate_notice_message_tag(__( '吹き出しを新規作成しました。', THEME_NAME ));

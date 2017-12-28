@@ -18,7 +18,7 @@ define('SB_SAMPLE_TEXTS',
 );
 //var_dump($_POST);
 $keyword = !empty($_POST['s']) ? $_POST['s'] : null;
-$order_by = isset($_POST['order']) ? $_POST['order'] : 'title';
+$order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC, id DESC';
 //var_dump($order_by);
 $records = get_speech_balloons($keyword, $order_by);
 //var_dump($records);

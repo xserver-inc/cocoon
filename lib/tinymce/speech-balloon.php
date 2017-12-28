@@ -36,7 +36,7 @@ function generate_speech_balloons_is($value){
   $records = get_speech_balloons(null, 'title');
 
   echo '<script type="text/javascript">
-  var speechBalloonsTitle = "'.__( '吹き出しの挿入', THEME_NAME ).'";
+  var speechBalloonsTitle = "'.__( '吹き出し', THEME_NAME ).'";
   var speechBalloonsEmptyText = "'.__( '内容を入力してください。', THEME_NAME ).'";
   var speechBalloons = new Array();';
 
@@ -52,8 +52,8 @@ function generate_speech_balloons_is($value){
     $speech_balloon_tag = ob_get_clean();
     $speech_balloon_tag_split = explode('VOICE', $speech_balloon_tag);
     //JavaScriptで改行エラーになるため取り除く
-    $sb_tag_before = minify_js($speech_balloon_tag_split[0]);
-    $sb_tag_after  = minify_js($speech_balloon_tag_split[1]);
+    $sb_tag_before = minify_html($speech_balloon_tag_split[0]);
+    $sb_tag_after  = minify_html($speech_balloon_tag_split[1]);
     ?>
 
     var count = <?php echo $count; ?>;

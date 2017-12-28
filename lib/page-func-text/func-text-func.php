@@ -134,7 +134,7 @@ function insert_function_text_record($posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
-    'visible' => $posts['visible'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
   );
   $format = array(
     '%s',
@@ -156,7 +156,7 @@ function update_function_text_record($id, $posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
-    'visible' => $posts['visible'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
   );
   $where = array('id' => $id);
   $format = array(

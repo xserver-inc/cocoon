@@ -15,7 +15,7 @@
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $text = isset($_POST['text']) ? stripslashes_deep($_POST['text']) : '';
-    $visible = !empty($_POST['visible']) ? $_POST['visible'] : 0;
+    $visible = !empty($_POST['visible']) ? $_POST['visible'] : 1;
   }
 
   echo '<h2>'.__( 'タイトル', THEME_NAME ).'</h2>';
