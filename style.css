@@ -2946,6 +2946,38 @@ div.fb-like-mobile {
   font-size: 12px;
 }
 
+.ref-red {
+  background-color: #f44336;
+}
+
+.ref-pink {
+  background-color: #e91e63;
+}
+
+.ref-purple {
+  background-color: #9C27B0;
+}
+
+.ref-blue {
+  background-color: #2196F3;
+}
+
+.ref-green {
+  background-color: #4CAF50;
+}
+
+.ref-yellow {
+  background-color: #FFEB3B;
+}
+
+.ref-brown {
+  background-color: #795548;
+}
+
+.ref-grey {
+  background-color: #9E9E9E;
+}
+
 /*太字*/
 .bold {
   font-weight: bold;
@@ -3293,7 +3325,7 @@ div.fb-like-mobile {
   margin-right: 10px;
 }
 
-#container a.btn:hover {
+#container .btn:hover {
   color: #333;
   background-color: #fff;
   border: 2px solid #000;
@@ -3315,7 +3347,7 @@ div.fb-like-mobile {
   background-color: #fff;
 }
 
-#container a.btn-white:hover {
+#container .btn-white:hover {
   color: #333;
 }
 
