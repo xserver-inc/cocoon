@@ -52,7 +52,7 @@ function generate_function_texts_is($value){
     functionTexts[count] = new Array();
     functionTexts[count].title  = '<?php echo $record->title; ?>';
     functionTexts[count].id     = '<?php echo $record->id; ?>';
-    functionTexts[count].text   = '<?php echo $record->text; ?>';
+    functionTexts[count].shrotecode = '<?php echo get_function_text_shortcode($record->id); ?>';
 
     <?php
     $count++;

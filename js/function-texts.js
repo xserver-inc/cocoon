@@ -5,7 +5,7 @@
         dropdownValues.push({
           text:   functionTexts[i]['title'],
           value:  functionTexts[i]['id'],
-          template:  functionTexts[i]['text']
+          shrotecode:  functionTexts[i]['shrotecode']
         });
     });
 
@@ -16,8 +16,8 @@
 			fixedWidth  : true,
 			onclick     : function(){editor.focus();},
       onselect: function(e) {
-        var template  = e.control.settings.template ;
-        tinyMCE.activeEditor.selection.setContent(template + "\n\n");
+        var shrotecode = e.control.settings.shrotecode;
+        tinyMCE.activeEditor.selection.setContent(shrotecode);
       },
       values: dropdownValues
     });

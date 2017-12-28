@@ -26,7 +26,7 @@ generate_sort_options_tag($keyword, $order_by);
         <a href="<?php echo $edit_url; ?>"><?php echo esc_html(stripslashes_deep($record->title)); ?></a>
       </div>
       <div class="ft-short-code">
-        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="[ft id=<?php echo esc_html($record->id); ?>]">
+        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="<?php echo get_function_text_shortcode($record->id); ?>">
       </div>
       <div class="ft-content">
         <?php

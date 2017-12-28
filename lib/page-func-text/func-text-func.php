@@ -185,3 +185,9 @@ function function_text_shortcode($atts) {
 
 }
 endif;
+
+if ( !function_exists( 'get_function_text_shortcode' ) ):
+function get_function_text_shortcode($id) {
+  return "[ft id={$id}]";
+}
+endif;
