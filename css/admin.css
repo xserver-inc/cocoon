@@ -444,7 +444,6 @@
   /*******************************
   * 続きはWEBで的な検索ボックス
   ********************************/
-  /*メインカランの2カラム化*/
   /* アイコンを左に表示 */
   /************************************
   ** clingify
@@ -2630,25 +2629,14 @@
     content: "\f18e"; }
   .demo .btn-caret-square-o-right:before {
     content: "\f152"; }
-  .demo .half-l,
-  .demo .half-r {
-    margin: 1em 0; }
-  .demo .half-l {
-    float: left;
-    width: 50%;
-    padding-right: 10px;
-    box-sizing: border-box; }
-  .demo .half-r {
-    float: right;
-    width: 50%;
-    padding-left: 10px;
-    box-sizing: border-box; }
-  @media screen and (max-width: 639px) {
-    .demo .half-l,
-    .demo .half-r {
-      float: none;
-      width: auto;
-      padding: 0; } }
+  .demo .column-2,
+  .demo .column-3 {
+    display: flex;
+    position: relative; }
+    .demo .column-2 div,
+    .demo .column-3 div {
+      width: 100%;
+      padding: 1em 1.2%; }
   .demo .speech-wrap {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -3256,7 +3244,10 @@
       .demo .sbp-l .speech-balloon {
         margin-right: auto; }
       .demo .sbp-r .speech-balloon {
-        margin-left: auto; } }
+        margin-left: auto; }
+      .demo .column-2,
+      .demo .column-3 {
+        flex-direction: column; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

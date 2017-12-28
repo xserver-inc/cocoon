@@ -84,6 +84,7 @@ if (is_admin()) {
   require_once 'tinymce/insert-html.php'; //HTML追加ボタン
   require_once 'tinymce/speech-balloons.php'; //吹き出し追加
   require_once 'tinymce/function-texts.php'; //吹き出し追加
+  require_once 'tinymce/html-tags.php'; //拡張タグ追加
 }
 
 

@@ -3471,34 +3471,17 @@ div.fb-like-mobile {
   content: "\f152";
 }
 
-/*メインカランの2カラム化*/
-.half-l,
-.half-r {
-  margin: 1em 0;
+.column-2,
+.column-3 {
+  display: flex;
+  position: relative;
+}
+.column-2 div,
+.column-3 div {
+  width: 100%;
+  padding: 1em 1.2%;
 }
 
-.half-l {
-  float: left;
-  width: 50%;
-  padding-right: 10px;
-  box-sizing: border-box;
-}
-
-.half-r {
-  float: right;
-  width: 50%;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 639px) {
-  .half-l,
-  .half-r {
-    float: none;
-    width: auto;
-    padding: 0;
-  }
-}
 .speech-wrap {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -4436,6 +4419,11 @@ div.fb-like-mobile {
 
   .sbp-r .speech-balloon {
     margin-left: auto;
+  }
+
+  .column-2,
+  .column-3 {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 480px) {

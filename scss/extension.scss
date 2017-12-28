@@ -414,32 +414,32 @@
 .btn-arrow-circle-o-right:before{content: "\f18e";}
 .btn-caret-square-o-right:before{content: "\f152";}
 
-/*メインカランの2カラム化*/
-.half-half{
-}
-.half-l,
-.half-r{
-  margin: 1em 0;
-}
-.half-l{
-  float: left;
-  width: 50%;
-  padding-right: 10px;
-  box-sizing: border-box;
-}
+// /*メインカランの2カラム化*/
+// .half-half{
+// }
+// .half-l,
+// .half-r{
+//   margin: 1em 0;
+// }
+// .half-l{
+//   float: left;
+//   width: 50%;
+//   padding-right: 10px;
+//   box-sizing: border-box;
+// }
 
-.half-r{
-  float: right;
-  width: 50%;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
+// .half-r{
+//   float: right;
+//   width: 50%;
+//   padding-left: 10px;
+//   box-sizing: border-box;
+// }
 
-@media screen and (max-width:639px){
-  .half-l,
-  .half-r{
-    float: none;
-    width: auto;
-    padding: 0;
-  }
-}
+// @media screen and (max-width:639px){
+//   .half-l,
+//   .half-r{
+//     float: none;
+//     width: auto;
+//     padding: 0;
+//   }
+// }

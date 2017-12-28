@@ -1,0 +1,11 @@
+
+.column-2,
+.column-3{
+  display: flex;
+  position: relative;
+
+  div{
+    width: 100%;
+    padding: 1em 1.2%;
+  }
+}

@@ -3,3 +3,29 @@
 body#tinymce.wp-autoresize {
     padding: 20px !important;
 }
+
+.column-2::before,
+.column-3::before{
+  content: "Coloring is Editor Only.";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1em;
+  font-size: 0.8em;
+  padding: 4px 8px;
+  background-color: #ccc;
+  width: 30%;
+  text-align: center;
+}
+
+.column-left{
+  background-color: #c7e1ef;
+}
+
+.column-center{
+  background-color: #c9e8d8;
+}
+
+.column-right{
+  background-color: #ffecd3;
+}
