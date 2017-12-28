@@ -6,7 +6,7 @@ body#tinymce.wp-autoresize {
 
 .column-2::before,
 .column-3::before{
-  content: "Coloring is Editor Only.";
+  content: "カラム色はエディター上のみ";
   position: absolute;
   left: 0;
   right: 0;
@@ -16,6 +16,11 @@ body#tinymce.wp-autoresize {
   background-color: #ccc;
   width: 30%;
   text-align: center;
+}
+
+html[lang="en"] .column-2::before,
+html[lang="en"] .column-3::before{
+  content: "Coloring is Editor Only.";
 }
 
 .column-left{
