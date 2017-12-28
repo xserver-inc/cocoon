@@ -9,6 +9,8 @@ require_once 'sns-share-posts-bottom.php';
 update_theme_option(OP_TWITTER_ID_INCLUDE);
 //ツイート後にフォローを促す
 update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
+//ツイートに含めるハッシュタグ
+update_theme_option(OP_TWITTER_HASH_TAG);
 
 //SNSシェア数キャッシュ有効
 update_theme_option(OP_SNS_SHARE_COUNT_CACHE_ENABLE);

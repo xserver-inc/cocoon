@@ -41,6 +41,20 @@ require_once 'sns-share-forms-bottom.php';
           </td>
         </tr>
 
+
+        <!-- ハッシュタグ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_TWITTER_HASH_TAG, __( 'ハッシュタグ', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_textbox_tag(OP_TWITTER_HASH_TAG, get_twitter_hash_tag(), '#'.get_bloginfo('name').' '.__( '#ハッシュタグ', THEME_NAME ));
+            generate_tips_tag(__( 'ツイート時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。140文字を超える場合は正常動作しない可能性もあります。', THEME_NAME ));
+
+            ?>
+          </td>
+        </tr>
       </tbody>
     </table>
 

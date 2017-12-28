@@ -24,6 +24,14 @@ function is_twitter_related_follow_enable(){
 }
 endif;
 
+//ツイートに含めらハッシュタグ
+define('OP_TWITTER_HASH_TAG', 'twitter_hash_tag');
+if ( !function_exists( 'get_twitter_hash_tag' ) ):
+function get_twitter_hash_tag(){
+  return get_theme_option(OP_TWITTER_HASH_TAG);
+}
+endif;
+
 //SNSシェア数キャッシュ有効
 define('OP_SNS_SHARE_COUNT_CACHE_ENABLE', 'sns_share_count_cache_enable');
 if ( !function_exists( 'is_sns_share_count_cache_enable' ) ):

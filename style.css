@@ -1125,7 +1125,7 @@ span.internal-icon {
 }
 
 .blogcard {
-  padding: 1.26% 1.8%;
+  padding: 1.3% 2%;
   border: 1px solid #cccfd2;
   border-radius: 4px;
   line-height: 1.3;
@@ -2552,7 +2552,7 @@ input[type='submit'] {
   border: 1px solid #cccfd2;
   line-height: 1.4;
   position: relative;
-  padding: 1.26% 1.8%;
+  padding: 1.3% 2%;
 }
 .author-box p {
   margin-top: 0.3em;
