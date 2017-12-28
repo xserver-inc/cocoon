@@ -1,12 +1,13 @@
 /************************************
-** プロフィルボックス
+** プロフィールボックス
 ************************************/
 .author-box{
   border: 1px solid $basic_border_color;
-  padding: 10px;
+  //padding: 1.2% 1.6%;
   //display: flex;
   line-height: 1.4;
   position: relative;
+  @include card_padding;
 
   p{
     margin-top: 0.3em;

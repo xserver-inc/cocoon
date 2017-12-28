@@ -90,6 +90,11 @@ $bgc_hover_anime: all 0.3s ease 0s;
   list-style: none;
 }
 
+//リストキャンセル
+@mixin card_padding {
+  padding: 1.26% 1.8%;
+}
+
 %list_cancel {
   padding: 0;
   list-style: none;

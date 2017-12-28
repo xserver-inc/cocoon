@@ -398,7 +398,7 @@
   ** カルーセルの非表示設定
   ************************************/
   /************************************
-  ** プロフィルボックス
+  ** プロフィールボックス
   ************************************/
   /************************************
   ** Facebookページを「いいね！」するエリアのスタイル
@@ -1091,7 +1091,7 @@
     width: 90%;
     background-color: #fff; }
   .demo .blogcard {
-    padding: 8px 12px;
+    padding: 1.26% 1.8%;
     border: 1px solid #cccfd2;
     border-radius: 4px;
     line-height: 1.3; }
@@ -2041,9 +2041,9 @@
     display: none; }
   .demo .author-box {
     border: 1px solid #cccfd2;
-    padding: 10px;
     line-height: 1.4;
-    position: relative; }
+    position: relative;
+    padding: 1.26% 1.8%; }
     .demo .author-box p {
       margin-top: 0.3em; }
     .demo .author-box .sns-follow {
