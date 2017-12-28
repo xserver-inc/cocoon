@@ -444,7 +444,7 @@ endif;
 
 
 
-
+/*
 add_action('admin_init', 'shortcode_button');
 add_action('admin_head', 'get_shortcodes');
 
@@ -497,3 +497,4 @@ function get_shortcodes()
         echo '</script>';
     }
 
+*/

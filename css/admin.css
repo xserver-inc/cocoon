@@ -3739,8 +3739,13 @@ select option.fa {
 #singular_redirect_settings input[type="text"] {
   width: 100%; }
 
-table.sb-list td {
-  padding: 12px 0; }
+table.sb-list {
+  border-collapse: collapse; }
+  table.sb-list td {
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc; }
+  table.sb-list td:first-child {
+    border-top: 1px solid #ccc; }
 
 .list-option {
   width: 50px;

@@ -1,4 +1,4 @@
-<?php //ビジュアルエディターの吹き出し挿入ドロップダウン
+<?php //ビジュアルエディターのテンプレート挿入ドロップダウン
 
 add_action('admin_init', 'add_speech_balloons_dropdown');
 add_action('admin_head', 'generate_speech_balloons_is');

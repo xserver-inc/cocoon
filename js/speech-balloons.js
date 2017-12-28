@@ -1,5 +1,5 @@
 (function() {
-  tinymce.PluginManager.add('speech_bolloons', function( editor, url )  {
+  tinymce.PluginManager.add('speech_balloons', function( editor, url )  {
 		//console.log(editor);
     var dropdownValues = [];
     jQuery.each(speechBalloons, function(i)    {
@@ -11,7 +11,7 @@
         });
     });
 
-    editor.addButton('speech_bolloons', {
+    editor.addButton('speech_balloons', {
       type: 'listbox',
       text: speechBalloonsTitle,
 			icon				: false,

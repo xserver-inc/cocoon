@@ -8,7 +8,7 @@
     $recode = get_function_text($id);
     $title = isset($recode->title) ? $recode->title : '';
     $text = isset($recode->text) ? stripslashes_deep($recode->text) : '';
-    $visible = !empty($recode->visible) ? $recode->visible : 0;
+    $visible = !empty($recode->visible) ? $recode->visible : 1;
 
   } else {
     $action = 'new';

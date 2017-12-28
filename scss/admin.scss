@@ -524,10 +524,14 @@ select option.fa{
 
 
 table.sb-list{
+  border-collapse: collapse;
   td{
     padding: 12px 0;
+    border-bottom: 1px solid #ccc;
   }
-
+  td:first-child{
+    border-top: 1px solid #ccc;
+  }
 
 }
 .list-option{
