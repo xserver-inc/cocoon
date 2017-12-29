@@ -176,9 +176,14 @@ function affiliate_tag_shortcode($atts) {
   ), $atts));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
+      global $post;
       $atag = $recode->text;
+      $post_id = null;
+      if (isset($post->ID)) {
+        $post_id = 'data-post-id="'.$post->ID.'" ';
+      }
       //計測用の属性付与
-      $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" ', $atag);
+      $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" '.$post_id, $atag);
       return $atag;
     }
   }
