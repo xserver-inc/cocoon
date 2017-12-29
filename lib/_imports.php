@@ -84,7 +84,8 @@ if (is_admin()) {
   require_once get_template_directory().'/lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能
   require_once 'tinymce/insert-html.php'; //HTML追加ボタン
   require_once 'tinymce/speech-balloons.php'; //吹き出し追加
-  require_once 'tinymce/function-texts.php'; //吹き出し追加
+  require_once 'tinymce/function-texts.php'; //テンプレート追加
+  require_once 'tinymce/affiliate-tags.php'; //アフィリエイトタグ追加
   require_once 'tinymce/html-tags.php'; //拡張タグ追加
 }
 
