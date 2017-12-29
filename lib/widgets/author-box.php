@@ -15,32 +15,32 @@ class AuthorBoxWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = isset($instance['title']) ? $instance['title'] : '';
-    $widget_name = isset( $instance['widget_name'] ) ? $instance['widget_name'] : '';
+    $label = isset( $instance['label'] ) ? $instance['label'] : '';
 
     echo $args['before_widget'];
     if ($title) {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
-    //set_query_var('_WIDGET_NAME', $widget_name);
+    //set_query_var('_WIDGET_NAME', $label);
     //get_template_part('tmp/author-box');
-    generate_author_box_tag($widget_name);
+    generate_author_box_tag($label);
     echo $args['after_widget'];
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] = strip_tags(isset($new_instance['title']) ? $new_instance['title'] : '');
-    $instance['widget_name'] = isset($new_instance['widget_name']) ? $new_instance['widget_name'] : '';
+    $instance['label'] = isset($new_instance['label']) ? $new_instance['label'] : '';
       return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避
       $instance = array(
         'title' => null,
-        'widget_name' => null,
+        'label' => null,
       );
     }
     $title = esc_attr($instance['title']);
-    $widget_name = esc_attr($instance['widget_name']);
+    $label = esc_attr($instance['label']);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -51,10 +51,10 @@ class AuthorBoxWidgetItem extends WP_Widget {
     </p>
     <?php //ウィジェット名 ?>
     <p>
-      <label for="<?php echo $this->get_field_id('widget_name'); ?>">
-        <?php _e( 'ウィジェット名', THEME_NAME ) ?>
+      <label for="<?php echo $this->get_field_id('label'); ?>">
+        <?php _e( '肩書きラベル', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('widget_name'); ?>" name="<?php echo $this->get_field_name('widget_name'); ?>" type="text" value="<?php echo $widget_name; ?>" placeholder="<?php _e( '例：この記事を書いた人', THEME_NAME ) ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('label'); ?>" name="<?php echo $this->get_field_name('label'); ?>" type="text" value="<?php echo $label; ?>" placeholder="<?php _e( '例：この記事を書いた人', THEME_NAME ) ?>" />
     </p>
     <?php //プロフィールページへの誘導 ?>
     <p>

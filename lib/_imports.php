@@ -76,6 +76,7 @@ require_once 'additional-classes.php'; //スタイリング用の追加クラス
 require_once 'auto-post-thumbnail.php'; //アイキャッチ自動追加関数
 require_once 'update.php'; //アップデート関係の処理
 require_once 'ssl.php'; //SSL関係の処理
+require_once 'shortcodes.php'; //ショートコード関係の処理
 //フルパスを指定しないとうまくいかないファイル
 require_once get_template_directory().'/lib/profile.php'; //プロフィール関係の処理
 require_once get_template_directory().'/lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）

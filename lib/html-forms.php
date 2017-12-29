@@ -756,12 +756,12 @@ endif;
 
 //プロフィールボックス生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
-function generate_author_box_tag($widget_name){?>
+function generate_author_box_tag($label){?>
   <div class="author-box cf">
     <?php //ウィジェット名がある場合
-    if ($widget_name): ?>
+    if ($label): ?>
       <div class="author-widget-name">
-        <?php echo $widget_name; ?>
+        <?php echo $label; ?>
       </div>
     <?php endif ?>
     <figure class="author-thumb">
