@@ -42,11 +42,12 @@
           <td>
             <?php
             generate_label_tag(OP_SITE_INITIATION_YEAR, __( 'サイト開設年：', THEME_NAME ));
-            generate_number_tag(OP_SITE_INITIATION_YEAR, '', get_site_initiation_year(), 1970, intval(date('Y')));
+            generate_number_tag(OP_SITE_INITIATION_YEAR, get_site_initiation_year(), '', 1970, intval(date('Y')));
 
             $options = array(
-              'simple' => '© '.get_site_initiation_year().' '.get_bloginfo('name'),
-              'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name'),
+              'simple' => '© '.get_site_initiation_year().' '.get_bloginfo('name').'.',
+              //'simple_year' => '© '.get_site_initiation_year().' '.get_bloginfo('name'),
+              'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').'.',
               'full' => 'Copyright © '.get_site_initiation_year().' '.get_bloginfo('name').' All Rights Reserved.',
               'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.',
               'user_credit' => '独自表記',

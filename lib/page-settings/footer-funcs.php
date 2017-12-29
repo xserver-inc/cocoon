@@ -12,7 +12,7 @@ endif;
 define('OP_SITE_INITIATION_YEAR', 'site_initiation_year');
 if ( !function_exists( 'get_site_initiation_year' ) ):
 function get_site_initiation_year(){
-  return get_theme_option(OP_SITE_INITIATION_YEAR, date('Y'));
+  return get_theme_option(OP_SITE_INITIATION_YEAR, get_first_post_year() ? get_first_post_year() : date('Y'));
 }
 endif;
 
@@ -40,6 +40,9 @@ function get_the_site_credit(){
     case 'simple':
       $credit = '© '.get_site_initiation_year().' '.get_bloginfo('name').'.';
       break;
+    // case 'simple_year':
+    //   $credit = '© '.get_site_initiation_year().' '.get_bloginfo('name').'.';
+    //   break;
     case 'simple_year_begin_to_now':
       $credit = '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').'.';
       break;
