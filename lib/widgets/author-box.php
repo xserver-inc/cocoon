@@ -21,8 +21,9 @@ class AuthorBoxWidgetItem extends WP_Widget {
     if ($title) {
       echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する
     }
-    set_query_var('_WIDGET_NAME', $widget_name);
-    get_template_part('tmp/author-box');
+    //set_query_var('_WIDGET_NAME', $widget_name);
+    //get_template_part('tmp/author-box');
+    generate_author_box_tag($widget_name);
     echo $args['after_widget'];
   }
   function update($new_instance, $old_instance) {

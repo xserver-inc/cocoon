@@ -753,3 +753,38 @@ function generate_new_entries_tag($entry_count, $categories){
 <?php
 }
 endif;
+
+//プロフィールボックス生成関数
+if ( !function_exists( 'generate_author_box_tag' ) ):
+function generate_author_box_tag($widget_name){?>
+  <div class="author-box cf">
+    <?php //ウィジェット名がある場合
+    if ($widget_name): ?>
+      <div class="author-widget-name">
+        <?php echo $widget_name; ?>
+      </div>
+    <?php endif ?>
+    <figure class="author-thumb">
+      <?php echo get_avatar( get_the_author_id(), 200 ); ?>
+    </figure>
+    <div class="author-content">
+      <div class="author-display-name">
+        <?php the_author_posts_link(); ?>
+      </div>
+      <div class="author-description">
+        <?php echo get_the_author_meta( 'description', get_the_author_id() ); ?>
+        <?php if (0&&get_the_author_website_url()): ?>
+          <span class="site-url">
+            <a href="<?php echo get_the_author_website_url(); ?>" target="_blank"><?php echo get_the_author_website_url(); ?></a>
+          </span>
+        <?php endif ?>
+
+      </div>
+      <div class="author-follows">
+        <?php get_template_part('tmp/sns-follow-buttons'); ?>
+      </div>
+    </div>
+  </div>
+<?php
+}
+endif;
