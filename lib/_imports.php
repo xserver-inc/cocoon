@@ -50,6 +50,7 @@ require_once 'page-settings/reset-funcs.php';      //リセット設定関数
 require_once 'page-settings/about-funcs.php';      //テーマ情報設定関数
 require_once 'db.php';  //データベース操作関数
 require_once 'page-func-text/func-text-func.php';  //使いまわしテキスト関数
+require_once 'page-affiliate-tag/affiliate-tag-func.php';  //アフィリエイトタグ関数
 require_once 'page-speech-balloon/speech-balloon-func.php';  //吹き出し関数
 require_once 'page-speed-up/speed-up-func.php';  //高速化設定関数
 require_once 'page-access/access-func.php';  //アクセス数統計

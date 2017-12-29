@@ -3,7 +3,7 @@
 $keyword = !empty($_POST['s']) ? $_POST['s'] : null;
 $order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC';
 //var_dump($order_by);
-$records = get_function_texts($keyword, $order_by);
+$records = get_affiliate_tags($keyword, $order_by);
 //var_dump($records);
 //並び替えオプション
 generate_sort_options_tag($keyword, $order_by);
@@ -26,7 +26,7 @@ generate_sort_options_tag($keyword, $order_by);
         <a href="<?php echo $edit_url; ?>"><?php echo esc_html(stripslashes_deep($record->title)); ?></a>
       </div>
       <div class="snipet-short-code">
-        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="<?php echo get_function_text_shortcode($record->id); ?>">
+        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="<?php echo get_affiliate_tag_shortcode($record->id); ?>">
       </div>
       <div class="snipet-content">
         <?php

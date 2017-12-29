@@ -1,14 +1,14 @@
 ///////////////////////////////////////
 // 関数テキスト関係のCSS
 ///////////////////////////////////////
-.ft-list{
+.snipet-list{
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
 
 }
 
-.ft-wrap{
+.snipet-wrap{
   width: 240px;
   margin: 5px;
   padding: 10px;
@@ -17,19 +17,19 @@
   position: relative;
 }
 
-.ft-title,
-.ft-short-code,
-.ft-content{
+.snipet-title,
+.snipet-short-code,
+.snipet-content{
   margin-bottom: 6px;
 }
 
-.ft-short-code{
+.snipet-short-code{
   input{
     width: 120px;
   }
 }
 
-.ft-content{
+.snipet-content{
   max-height: 100px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -41,7 +41,7 @@
   margin: 0;
 }
 
-.ft-menu{
+.snipet-menu{
   text-align: right;
   position: absolute;
   bottom: 0;
@@ -53,22 +53,22 @@
     margin-left: 8px;
   }
 
-  .ft-menu-left{
+  .snipet-menu-left{
     position: absolute;
     left: 10px;
   }
 }
 
-.ft-confirm-wrap{
+.snipet-confirm-wrap{
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 20px;
 
-  .ft-confirm-title{
+  .snipet-confirm-title{
     font-size: 16px;
     font-weight: bold;
   }
-  .ft-confirm-text{
+  .snipet-confirm-text{
     pre{
       max-height: 300px;
       overflow: auto;

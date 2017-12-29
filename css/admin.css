@@ -132,12 +132,12 @@
     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
     background-attachment: fixed; }
 
-.ft-list {
+.snipet-list {
   padding: 20px;
   display: flex;
   flex-wrap: wrap; }
 
-.ft-wrap {
+.snipet-wrap {
   width: 240px;
   margin: 5px;
   padding: 10px;
@@ -145,15 +145,15 @@
   background-color: #fff;
   position: relative; }
 
-.ft-title,
-.ft-short-code,
-.ft-content {
+.snipet-title,
+.snipet-short-code,
+.snipet-content {
   margin-bottom: 6px; }
 
-.ft-short-code input {
+.snipet-short-code input {
   width: 120px; }
 
-.ft-content {
+.snipet-content {
   max-height: 100px;
   overflow: hidden;
   margin-bottom: 20px; }
@@ -163,7 +163,7 @@
   font-size: 16px;
   margin: 0; }
 
-.ft-menu {
+.snipet-menu {
   text-align: right;
   position: absolute;
   bottom: 0;
@@ -171,20 +171,20 @@
   right: 0;
   padding: 5px;
   background-color: #fff; }
-  .ft-menu a {
+  .snipet-menu a {
     margin-left: 8px; }
-  .ft-menu .ft-menu-left {
+  .snipet-menu .snipet-menu-left {
     position: absolute;
     left: 10px; }
 
-.ft-confirm-wrap {
+.snipet-confirm-wrap {
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 20px; }
-  .ft-confirm-wrap .ft-confirm-title {
+  .snipet-confirm-wrap .snipet-confirm-title {
     font-size: 16px;
     font-weight: bold; }
-  .ft-confirm-wrap .ft-confirm-text pre {
+  .snipet-confirm-wrap .snipet-confirm-text pre {
     max-height: 300px;
     overflow: auto; }
 

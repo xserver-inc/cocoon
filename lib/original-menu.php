@@ -14,11 +14,14 @@ function add_original_menu_in_admin_page() {
     //テンプレートサブメニューを追加
     add_submenu_page('theme-settings', __('テンプレート', THEME_NAME), __('テンプレート', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
 
-    //アクセス集計サブメニューを追加
-    add_submenu_page('theme-settings', __('アクセス集計', THEME_NAME), __('アクセス集計', THEME_NAME), 'manage_options', 'theme-access', 'add_theme_access_page');
+    //アフィリエイトタグサブメニューを追加
+    add_submenu_page('theme-settings', __('アフィリエイトタグ', THEME_NAME), __('アフィリエイトタグ', THEME_NAME), 'manage_options', 'theme-affiliate-tag', 'add_theme_affiliate_tag_page');
 
     //ランキング作成サブメニューを追加
     add_submenu_page('theme-settings', __('ランキング作成', THEME_NAME), __('ランキング作成', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_ranking_page');
+
+    //アクセス集計サブメニューを追加
+    add_submenu_page('theme-settings', __('アクセス集計', THEME_NAME), __('アクセス集計', THEME_NAME), 'manage_options', 'theme-access', 'add_theme_access_page');
 
     //高速化サブメニューを追加
     add_submenu_page('theme-settings', __('高速化', THEME_NAME), __('高速化', THEME_NAME), 'manage_options', 'theme-speed-up', 'add_theme_speed_up_page');
@@ -75,6 +78,18 @@ function add_theme_func_text_page() {
   }
   //以下のテンプレートファイルで設定ページを作成する
   require_once 'page-func-text/_top-page.php';
+}
+endif;
+
+//アフィリエイトタグの登録
+if ( !function_exists( 'add_theme_affiliate_tag_page' ) ):
+function add_theme_affiliate_tag_page() {
+  // ユーザーが必要な権限を持つか確認する必要がある
+  if (!current_user_can('manage_options'))  {
+    wp_die( __('このページにアクセスする管理者権限がありません。') );
+  }
+  //以下のテンプレートファイルで設定ページを作成する
+  require_once 'page-affiliate-tag/_top-page.php';
 }
 endif;
 
