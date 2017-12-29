@@ -19,7 +19,7 @@ define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
 define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
-define('ET_DEFAULT',        'defalt');
+define('ET_DEFAULT',        'default');
 define('ET_LARGE_THUMB',    'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
 //ウィジェットモードデフォルト

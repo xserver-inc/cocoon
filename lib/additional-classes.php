@@ -207,20 +207,15 @@ endif;
 
 //エントリーカードの追加関数
 if ( !function_exists( 'get_additional_new_entriy_cards_classes' ) ):
-function get_additional_new_entriy_cards_classes($option = null){
-  global $_ENTRY_TYPE;
+function get_additional_new_entriy_cards_classes($entry_type){
   $classes = null;
-  if ($_ENTRY_TYPE != ET_DEFAULT) {
+  if ($entry_type != ET_DEFAULT) {
     $classes .= ' not-default';
-    if ($_ENTRY_TYPE == ET_LARGE_THUMB) {
+    if ($entry_type == ET_LARGE_THUMB) {
       $classes .= ' large-thumb';
-    } else if ($_ENTRY_TYPE == ET_LARGE_THUMB_ON) {
+    } else if ($entry_type == ET_LARGE_THUMB_ON) {
       $classes .= ' large-thumb-on';
     }
-  }
-
-  if ($option) {
-    $classes .= ' '.trim($option);
   }
   return $classes;
 }

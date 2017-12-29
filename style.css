@@ -3476,8 +3476,8 @@ div.fb-like-mobile {
   display: flex;
   position: relative;
 }
-.column-2 div,
-.column-3 div {
+.column-2 > div,
+.column-3 > div {
   width: 100%;
   padding: 1em 1.2%;
 }

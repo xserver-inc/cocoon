@@ -2633,8 +2633,8 @@
   .demo .column-3 {
     display: flex;
     position: relative; }
-    .demo .column-2 div,
-    .demo .column-3 div {
+    .demo .column-2 > div,
+    .demo .column-3 > div {
       width: 100%;
       padding: 1em 1.2%; }
   .demo .speech-wrap {

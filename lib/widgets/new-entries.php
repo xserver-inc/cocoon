@@ -33,11 +33,11 @@ class NewEntryWidgetItem extends WP_Widget {
     // if ( !$entry_count ) $entry_count = EC_DEFAULT;
     // $g_entry_count = $entry_count;
 
-    //表示タイプをグローバル変数に格納
-    global $_ENTRY_TYPE;
-    //表示タイプのデフォルト設定
-    if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    $_ENTRY_TYPE = $entry_type;
+    // //表示タイプをグローバル変数に格納
+    // global $_ENTRY_TYPE;
+    // //表示タイプのデフォルト設定
+    // if ( !$entry_type ) $entry_type = ET_DEFAULT;
+    // $_ENTRY_TYPE = $entry_type;
 
     //現在のカテゴリを取得
     $categories = array();
@@ -68,7 +68,7 @@ class NewEntryWidgetItem extends WP_Widget {
       //get_template_part('tmp/new-entries');
 
       //新着記事リストの作成
-      generate_new_entries_tag($entry_count, $categories);
+      generate_new_entries_tag($entry_count, $entry_type, $categories);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>

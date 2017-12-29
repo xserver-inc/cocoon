@@ -719,7 +719,8 @@ function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 
 endif;
 
 if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count, $categories){
+function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array()){
+
   $args = array(
     'posts_per_page' => $entry_count,
   );
@@ -727,7 +728,7 @@ function generate_new_entries_tag($entry_count, $categories){
     $args += array('category__in' => $categories);
   }
   query_posts( $args ); //クエリの作成?>
-  <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes(); ?>">
+  <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
     <div class="new-entry-card widget-entry-card e-card cf">
