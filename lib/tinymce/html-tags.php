@@ -43,8 +43,8 @@ function generate_html_tags_is($value){
    ?>;
 
   <?php //２カラムレイアウト
-  $before = '<div class="column-2"><div class="column-left">';
-  $after = '</div><div class="column-right">'.$right_msg.'</div></div>';
+  $before = '<div class="column-2"><div class="column-left"><p>';
+  $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[0] = new Array();
   htmlTags[0].title  = '<?php echo __( '2カラム', THEME_NAME ); ?>';
@@ -53,8 +53,8 @@ function generate_html_tags_is($value){
   htmlTags[0].after = '<?php echo $after; ?>';
 
   <?php //3カラムレイアウト
-  $before = '<div class="column-3"><div class="column-left">';
-  $after = '</div><div class="column-center">'.$right_msg.'</div><div class="column-right">'.$right_msg.'</div></div>';
+  $before = '<div class="column-3"><div class="column-left"><p>';
+  $after = '</p></div><div class="column-center"><p>'.$right_msg.'</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[1] = new Array();
   htmlTags[1].title  = '<?php echo __( '3カラム', THEME_NAME ); ?>';
@@ -67,7 +67,7 @@ function generate_html_tags_is($value){
   $after = '</div><div class="sbtn">'.__( '検索', THEME_NAME ).'</div></div>';
    ?>
   htmlTags[2] = new Array();
-  htmlTags[2].title  = '<?php echo __( '疑似検索フォーム', THEME_NAME ); ?>';
+  htmlTags[2].title  = '<?php echo __( '検索フォーム風', THEME_NAME ); ?>';
   htmlTags[2].tag = '<?php echo $before.$keyword_msg.$after; ?>';
   htmlTags[2].before = '<?php echo $before; ?>';
   htmlTags[2].after = '<?php echo $after; ?>';
