@@ -4,23 +4,28 @@ body#tinymce.wp-autoresize {
     padding: 20px !important;
 }
 
+.column-2,
+.column-3{
+  margin: 16px 0;
+}
+
 .column-2::before,
 .column-3::before{
-  content: "カラム色はエディター上のみ";
+  content: "※カラムへの着色はエディタのみ";
   position: absolute;
   left: 0;
   right: 0;
   top: -1em;
+  width: 31%;
   font-size: 0.8em;
   padding: 4px 8px;
   background-color: #f7dde4;
-  width: 30%;
   text-align: center;
 }
 
 html[lang="en"] .column-2::before,
 html[lang="en"] .column-3::before{
-  content: "Coloring is Editor Only.";
+  content: "* Coloring is Editor Only.";
 }
 
 .column-left{
