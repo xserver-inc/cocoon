@@ -1,7 +1,7 @@
 <?php //定数をまとめて定義
 
 //デバッグモード
-define('DEBUG_MODE', 1);
+define('DEBUG_MODE', WP_DEBUG);
 
 //テーマ名
 define('THEME_NAME', 'cocoon');

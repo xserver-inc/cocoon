@@ -39,8 +39,12 @@ class AuthorBoxWidgetItem extends WP_Widget {
         'label' => null,
       );
     }
-    $title = esc_attr($instance['title']);
-    $label = esc_attr($instance['label']);
+    $title = null;
+    $label = null;
+    if (isset($instance['title']))
+      $title = esc_attr($instance['title']);
+    if (isset($instance['label']))
+      $label = esc_attr($instance['label']);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>

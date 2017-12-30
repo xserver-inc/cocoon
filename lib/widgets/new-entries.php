@@ -86,11 +86,15 @@ class NewEntryWidgetItem extends WP_Widget {
     if(empty($instance)){
       $instance = array(
         'widget_mode' => WM_DEFAULT,
-        'title' => '',
+        'title'       => '',
         'entry_count' => EC_DEFAULT,
-        'entry_type' => ET_DEFAULT,
+        'entry_type'  => ET_DEFAULT,
       );
     }
+    $widget_mode = WM_DEFAULT;
+    $title_new   = '';
+    $entry_count = EC_DEFAULT;
+    $entry_type  = ET_DEFAULT;
     if ($instance['widget_mode'])
       $widget_mode = esc_attr($instance['widget_mode']);
     if ($instance['title_new'])
