@@ -20,7 +20,7 @@ function add_quicktags_to_text_editor() {
       QTags.addButton('qt-marker','<?php _e( '黄色マーカー', THEME_NAME ); ?>','<span class="marker">','</span>');
       QTags.addButton('qt-marker-under','<?php _e( '黄色アンダーマーカー', THEME_NAME ); ?>','<span class="marker-under">','</span>');
       QTags.addButton('qt-strike','<?php _e( '打ち消し線', THEME_NAME ); ?>','<span class="strike">','</span>');
-      QTags.addButton('qt-ref','<?php _e( 'バッジ', THEME_NAME ); ?>','<span class="ref">','</span>');
+      QTags.addButton('qt-badge','<?php _e( 'バッジ', THEME_NAME ); ?>','<span class="badge">','</span>');
       QTags.addButton('qt-keyboard-key','<?php _e( 'キーボード', THEME_NAME ); ?>','<span class="keyboard-key">','</span>');
       QTags.addButton('qt-information','<?php _e( '補足情報(i)', THEME_NAME ); ?>','<div class="information">','</div>');
       QTags.addButton('qt-question','<?php _e( '補足情報(?)', THEME_NAME ); ?>','<div class="question">','</div>');
@@ -101,12 +101,12 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( '補足情報(i)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'information'
+          'classes' => 'information-box'
         ),
         array(
           'title' => __( '補足情報(?)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'question'
+          'classes' => 'question-box'
         ),
         array(
           'title' => __( '補足情報(!)', THEME_NAME ),
@@ -114,29 +114,29 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'alert'
         ),
         array(
-          'title' => __( 'primaryボックス', THEME_NAME ),
+          'title' => __( 'Primaryボックス', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'sp-primary'
+          'classes' => 'primary-box'
         ),
         array(
-          'title' => __( 'successボックス', THEME_NAME ),
+          'title' => __( 'Successボックス', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'sp-success'
+          'classes' => 'success-box'
         ),
         array(
-          'title' => __( 'infoボックス', THEME_NAME ),
+          'title' => __( 'Infoボックス', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'sp-info'
+          'classes' => 'info-box'
         ),
         array(
-          'title' => __( 'warningボックス', THEME_NAME ),
+          'title' => __( 'Warningボックス', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'sp-warning'
+          'classes' => 'warning-box'
         ),
         array(
-          'title' => __( 'dangerボックス', THEME_NAME ),
+          'title' => __( 'Dangerボックス', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'sp-danger',
+          'classes' => 'danger-box',
         ),
       ),
     ),
@@ -146,47 +146,47 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'バッジ（オレンジ）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref'
+          'classes' => 'badge'
         ),
         array(
           'title' => __( 'バッジ（レッド）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-red'
+          'classes' => 'badge badge-red'
         ),
         array(
           'title' => __( 'バッジ（ピンク）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-pink'
+          'classes' => 'badge badge-pink'
         ),
         array(
           'title' => __( 'バッジ（パープル）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-purple'
+          'classes' => 'badge badge-purple'
         ),
         array(
           'title' => __( 'バッジ（ブルー）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-blue'
+          'classes' => 'badge badge-blue'
         ),
         array(
           'title' => __( 'バッジ（グリーン）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-green'
+          'classes' => 'badge badge-green'
         ),
         array(
           'title' => __( 'バッジ（イエロー）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-yellow'
+          'classes' => 'badge badge-yellow'
         ),
         array(
           'title' => __( 'バッジ（ブラウン）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-brown'
+          'classes' => 'badge badge-brown'
         ),
         array(
           'title' => __( 'バッジ（グレー）', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'ref ref-grey'
+          'classes' => 'badge badge-grey'
         ),
       ),
     ),

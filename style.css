@@ -2958,10 +2958,7 @@ div.fb-like-mobile {
 }
 
 /*拡張クラスを追加するスタイルシート*/
-.sankou,
-.sanko,
-.reffer,
-.ref {
+.badge {
   color: #fff;
   background-color: #fc7a22;
   padding: 1px 5px 0;
@@ -2969,35 +2966,35 @@ div.fb-like-mobile {
   font-size: 12px;
 }
 
-.ref-red {
+.badge-red {
   background-color: #f44336;
 }
 
-.ref-pink {
+.badge-pink {
   background-color: #e91e63;
 }
 
-.ref-purple {
+.badge-purple {
   background-color: #9C27B0;
 }
 
-.ref-blue {
+.badge-blue {
   background-color: #2196F3;
 }
 
-.ref-green {
+.badge-green {
   background-color: #4CAF50;
 }
 
-.ref-yellow {
+.badge-yellow {
   background-color: #FFEB3B;
 }
 
-.ref-brown {
+.badge-brown {
   background-color: #795548;
 }
 
-.ref-grey {
+.badge-grey {
   background-color: #9E9E9E;
 }
 
@@ -3050,7 +3047,7 @@ div.fb-like-mobile {
 }
 
 /*ブートストラップのインフォメーションライクな囲みが表示される*/
-.sp-primary {
+.primary-box {
   background-color: #428BCA;
   color: #FFFFFF;
   padding: 15px;
@@ -3059,7 +3056,7 @@ div.fb-like-mobile {
 }
 
 /*サクセスメッセージ*/
-.sp-success {
+.success-box {
   background-color: #DFF0D8;
   border-color: #D6E9C6;
   padding: 15px;
@@ -3068,7 +3065,7 @@ div.fb-like-mobile {
 }
 
 /*インフォメッセージ*/
-.sp-info {
+.info-box {
   background-color: #D9EDF7;
   border-color: #BCE8F1;
   padding: 15px;
@@ -3077,7 +3074,7 @@ div.fb-like-mobile {
 }
 
 /*注意メッセージ*/
-.sp-warning {
+.warning-box {
   background-color: #FCF8E3;
   padding: 15px;
   border-radius: 4px;
@@ -3086,7 +3083,7 @@ div.fb-like-mobile {
 }
 
 /*警告メッセージ*/
-.sp-danger {
+.danger-box {
   background-color: #F2DEDE;
   border-color: #EBCCD1;
   padding: 15px;
@@ -3095,124 +3092,11 @@ div.fb-like-mobile {
 }
 
 /*******************************
-* 左からの吹き出し
-********************************/
-.left_balloon,
-.left-balloon {
-  position: relative;
-  background: #fff;
-  border: 1px solid #777;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
-  margin-right: 20%;
-  clear: both;
-  max-width: 500px;
-  float: left;
-}
-
-.left_balloon:after,
-.left_balloon:before,
-.left-balloon:after,
-.left-balloon:before {
-  right: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.left_balloon:after,
-.left-balloon:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-right-color: #fff;
-  border-width: 7px;
-  margin-top: -7px;
-}
-
-.left_balloon:before,
-.left-balloon:before {
-  border-color: rgba(0, 0, 0, 0);
-  border-right-color: #000;
-  border-width: 8px;
-  margin-top: -8px;
-}
-
-/*******************************
-* 右からの吹き出し
-********************************/
-.right_balloon,
-.right-balloon {
-  position: relative;
-  background: #85e249;
-  border: 1px solid #777;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
-  margin-left: 20%;
-  clear: both;
-  max-width: 500px;
-  float: right;
-}
-
-.right_balloon:after,
-.right_balloon:before,
-.right-balloon:after,
-.right-balloon:before {
-  left: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.right_balloon:after,
-.right-balloon:after {
-  border-color: rgba(133, 226, 73, 0);
-  border-left-color: #85e249;
-  border-width: 7px;
-  margin-top: -7px;
-}
-
-.right_balloon:before,
-.right-balloon:before {
-  border-color: rgba(119, 119, 119, 0);
-  border-left-color: #777;
-  border-width: 8px;
-  margin-top: -8px;
-}
-
-/*******************************
-* 割り込みを解除
-********************************/
-.clear_balloon,
-.clear-balloon {
-  clear: both;
-  margin: 20px;
-}
-
-/*******************************
-* LINEの背景っぽいもの
-********************************/
-.line_back,
-.line-back {
-  background-color: #7897C5;
-  padding: 10px;
-  padding-bottom: 20px;
-}
-
-/*******************************
 * 補足説明
 ********************************/
-.information,
-.question,
-.alert {
+.information-box,
+.question-box,
+.alert-box {
   background-color: #F4F3EB;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
@@ -3222,13 +3106,13 @@ div.fb-like-mobile {
   margin-bottom: 1em;
 }
 
-.alert {
+.alert-box {
   background-color: #fdeff2;
 }
 
-.information::before,
-.question::before,
-.alert::before {
+.information-box::before,
+.question-box::before,
+.alert-box::before {
   font-family: "FontAwesome";
   font-size: 50px;
   position: absolute;
@@ -3237,29 +3121,29 @@ div.fb-like-mobile {
   color: #EAE3B4;
 }
 
-.information::before {
+.information-box::before {
   content: '\f05a';
 }
 
-.question::before {
+.question-box::before {
   content: '\f059';
 }
 
-.alert::before {
+.alert-box::before {
   content: '\f06a';
   color: #ee827c;
 }
 
 @media screen and (max-width: 440px) {
-  .information,
-  .question,
-  .alert {
+  .information-box,
+  .question-box,
+  .alert-box {
     padding: 10px 10px 10px 48px;
   }
 
-  .information::before,
-  .question::before,
-  .alert::before {
+  .information-box::before,
+  .question-box::before,
+  .alert-box::before {
     top: 10px;
     left: 10px;
     font-size: 32px;

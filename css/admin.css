@@ -430,18 +430,6 @@
   /*注意メッセージ*/
   /*警告メッセージ*/
   /*******************************
-  * 左からの吹き出し
-  ********************************/
-  /*******************************
-  * 右からの吹き出し
-  ********************************/
-  /*******************************
-  * 割り込みを解除
-  ********************************/
-  /*******************************
-  * LINEの背景っぽいもの
-  ********************************/
-  /*******************************
   * 補足説明
   ********************************/
   /*******************************
@@ -2315,30 +2303,27 @@
   .demo .sidebar .cta-button .btn-l {
     padding: 1em;
     font-size: 16px; }
-  .demo .sankou,
-  .demo .sanko,
-  .demo .reffer,
-  .demo .ref {
+  .demo .badge {
     color: #fff;
     background-color: #fc7a22;
     padding: 1px 5px 0;
     border-radius: 2px;
     font-size: 12px; }
-  .demo .ref-red {
+  .demo .badge-red {
     background-color: #f44336; }
-  .demo .ref-pink {
+  .demo .badge-pink {
     background-color: #e91e63; }
-  .demo .ref-purple {
+  .demo .badge-purple {
     background-color: #9C27B0; }
-  .demo .ref-blue {
+  .demo .badge-blue {
     background-color: #2196F3; }
-  .demo .ref-green {
+  .demo .badge-green {
     background-color: #4CAF50; }
-  .demo .ref-yellow {
+  .demo .badge-yellow {
     background-color: #FFEB3B; }
-  .demo .ref-brown {
+  .demo .badge-brown {
     background-color: #795548; }
-  .demo .ref-grey {
+  .demo .badge-grey {
     background-color: #9E9E9E; }
   .demo .bold {
     font-weight: bold; }
@@ -2364,120 +2349,39 @@
     font-family: inherit;
     font-size: 0.85em;
     padding: 1px 3px; }
-  .demo .sp-primary {
+  .demo .primary-box {
     background-color: #428BCA;
     color: #FFFFFF;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px; }
-  .demo .sp-success {
+  .demo .success-box {
     background-color: #DFF0D8;
     border-color: #D6E9C6;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px; }
-  .demo .sp-info {
+  .demo .info-box {
     background-color: #D9EDF7;
     border-color: #BCE8F1;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px; }
-  .demo .sp-warning {
+  .demo .warning-box {
     background-color: #FCF8E3;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px;
     border-color: #FAEBCC; }
-  .demo .sp-danger {
+  .demo .danger-box {
     background-color: #F2DEDE;
     border-color: #EBCCD1;
     padding: 15px;
     border-radius: 4px;
     margin-bottom: 20px; }
-  .demo .left_balloon,
-  .demo .left-balloon {
-    position: relative;
-    background: #fff;
-    border: 1px solid #777;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    margin-right: 20%;
-    clear: both;
-    max-width: 500px;
-    float: left; }
-  .demo .left_balloon:after,
-  .demo .left_balloon:before,
-  .demo .left-balloon:after,
-  .demo .left-balloon:before {
-    right: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none; }
-  .demo .left_balloon:after,
-  .demo .left-balloon:after {
-    border-color: rgba(255, 255, 255, 0);
-    border-right-color: #fff;
-    border-width: 7px;
-    margin-top: -7px; }
-  .demo .left_balloon:before,
-  .demo .left-balloon:before {
-    border-color: rgba(0, 0, 0, 0);
-    border-right-color: #000;
-    border-width: 8px;
-    margin-top: -8px; }
-  .demo .right_balloon,
-  .demo .right-balloon {
-    position: relative;
-    background: #85e249;
-    border: 1px solid #777;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    margin-left: 20%;
-    clear: both;
-    max-width: 500px;
-    float: right; }
-  .demo .right_balloon:after,
-  .demo .right_balloon:before,
-  .demo .right-balloon:after,
-  .demo .right-balloon:before {
-    left: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none; }
-  .demo .right_balloon:after,
-  .demo .right-balloon:after {
-    border-color: rgba(133, 226, 73, 0);
-    border-left-color: #85e249;
-    border-width: 7px;
-    margin-top: -7px; }
-  .demo .right_balloon:before,
-  .demo .right-balloon:before {
-    border-color: rgba(119, 119, 119, 0);
-    border-left-color: #777;
-    border-width: 8px;
-    margin-top: -8px; }
-  .demo .clear_balloon,
-  .demo .clear-balloon {
-    clear: both;
-    margin: 20px; }
-  .demo .line_back,
-  .demo .line-back {
-    background-color: #7897C5;
-    padding: 10px;
-    padding-bottom: 20px; }
-  .demo .information,
-  .demo .question,
-  .demo .alert {
+  .demo .information-box,
+  .demo .question-box,
+  .demo .alert-box {
     background-color: #F4F3EB;
     padding: 20px 20px 20px 72px;
     border-radius: 4px;
@@ -2485,32 +2389,32 @@
     display: block;
     margin-top: 1em;
     margin-bottom: 1em; }
-  .demo .alert {
+  .demo .alert-box {
     background-color: #fdeff2; }
-  .demo .information::before,
-  .demo .question::before,
-  .demo .alert::before {
+  .demo .information-box::before,
+  .demo .question-box::before,
+  .demo .alert-box::before {
     font-family: "FontAwesome";
     font-size: 50px;
     position: absolute;
     top: 0px;
     left: 13px;
     color: #EAE3B4; }
-  .demo .information::before {
+  .demo .information-box::before {
     content: '\f05a'; }
-  .demo .question::before {
+  .demo .question-box::before {
     content: '\f059'; }
-  .demo .alert::before {
+  .demo .alert-box::before {
     content: '\f06a';
     color: #ee827c; }
   @media screen and (max-width: 440px) {
-    .demo .information,
-    .demo .question,
-    .demo .alert {
+    .demo .information-box,
+    .demo .question-box,
+    .demo .alert-box {
       padding: 10px 10px 10px 48px; }
-    .demo .information::before,
-    .demo .question::before,
-    .demo .alert::before {
+    .demo .information-box::before,
+    .demo .question-box::before,
+    .demo .alert-box::before {
       top: 10px;
       left: 10px;
       font-size: 32px; } }
