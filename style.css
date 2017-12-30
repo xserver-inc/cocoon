@@ -2262,6 +2262,13 @@ label.screen-reader-text {
   width: 336px;
 }
 
+/************************************
+** Comment
+************************************/
+.ad-fluid .ad-responsive {
+  height: 280px;
+}
+
 @media screen and (max-width: 692px) {
   .ad-dabble-rectangle .ad-responsive {
     width: 300px;

@@ -158,6 +158,9 @@ function to_adsense_format($format){
     case DATA_AD_FORMAT_AUTORELAXED:
       $format = DATA_AD_FORMAT_AUTORELAXED;
       break;
+    case DATA_AD_FORMAT_FLUID:
+      $format = DATA_AD_FORMAT_FLUID;
+      break;
     default:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;

@@ -41,41 +41,43 @@ define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //縦長
 define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレクタングル
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
 //広告ユニット以外
-define('DATA_AD_FORMAT_IN_ARTICLE_FLUID', 'in-article-fluid'); //記事中広告
+define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
 define('DATA_AD_FORMAT_AUTORELAXED', 'autorelaxed'); //関連記事
 
 //メインカラム用の広告フォーマット集
 define('MAIN_DATA_AD_FORMATS', array(
-  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
-  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
-  AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
+  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
 ));
 //サイドバー用の広告フォーマット集
 define('SIDEBAR_DATA_AD_FORMATS', array(
-  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-  DATA_AD_FORMAT_RECTANGLE => 'レクタングル',
-  DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
+  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+  DATA_AD_FORMAT_RECTANGLE => __( 'レクタングル', THEME_NAME ),
+  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
 ));
 //PCウィジェット用の広告フォーマット集
 define('PC_WIDGET_DATA_AD_FORMATS', array(
-  'none' => '広告コードをそのまま表示',
-  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
-  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
-  AD_FORMAT_DABBLE_RECTANGLE => 'ダブルレクタングル',
-  DATA_AD_FORMAT_VERTICAL => 'ラージスカイスクレイパー',
+  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
+  AD_FORMAT_DABBLE_RECTANGLE => __( 'ダブルレクタングル', THEME_NAME ),
+  DATA_AD_FORMAT_VERTICAL => __( 'ラージスカイスクレイパー', THEME_NAME ),
+  DATA_AD_FORMAT_FLUID => __( '記事内広告', THEME_NAME ),
 ));
 //モバイル用の広告フォーマット集
 define('MOBILE_WIDGET_DATA_AD_FORMATS', array(
-  'none' => '広告コードをそのまま表示',
-  DATA_AD_FORMAT_AUTO => 'オート（AdSenseにおまかせ）',
-  DATA_AD_FORMAT_HORIZONTAL => 'バナー',
-  DATA_AD_FORMAT_RECTANGLE => 'レスポンシブレクタングル',
-  AD_FORMAT_SINGLE_RECTANGLE => 'シングルレクタングル',
+  'none' => __( '広告コードをそのまま表示', THEME_NAME ),
+  DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
+  DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
+  DATA_AD_FORMAT_RECTANGLE => __( 'レスポンシブレクタングル', THEME_NAME ),
+  AD_FORMAT_SINGLE_RECTANGLE => __( 'シングルレクタングル', THEME_NAME ),
 ));
 
 //管理設定画面の隠しフィールド名

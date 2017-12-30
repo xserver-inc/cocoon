@@ -367,6 +367,9 @@
   ** ダブルレクタングル
   ************************************/
   /************************************
+  ** Comment
+  ************************************/
+  /************************************
   ** サイドバーのダブルレクタングル
   ************************************/
   /************************************
@@ -1860,6 +1863,8 @@
     display: flex; }
   .demo .ad-dabble-rectangle .ad-responsive {
     width: 336px; }
+  .demo .ad-fluid .ad-responsive {
+    height: 280px; }
   @media screen and (max-width: 692px) {
     .demo .ad-dabble-rectangle .ad-responsive {
       width: 300px; } }
