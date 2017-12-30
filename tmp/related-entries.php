@@ -7,20 +7,15 @@
     <?php endif ?>
   </h2>
   <div class="related-list">
-  <?php //カテゴリ情報から関連記事をランダムに呼び出す
-  $args = get_related_wp_query_args();
-  $query = new WP_Query( $args ); ?>
-    <?php if( $query -> have_posts() && !empty($args) ): //関連記事があるとき?>
-    <?php while ($query -> have_posts()) : $query -> the_post(); ?>
-      <?php //関連記事表示タイプ
-      get_template_part('tmp/related-entry-card'); ?>
-    <?php endwhile;?>
-
-    <?php else:?>
-    <p><?php _e( '関連記事は見つかりませんでした。', THEME_NAME ) ?></p>
-    <?php
-  endif;
-  wp_reset_postdata();
+  <?php //関連コンテンツユニット以外
+    if (get_related_entry_type() != DATA_AD_FORMAT_AUTORELAXED) {
+      get_template_part('tmp/related-list');
+    } else {//関連コンテンツユニットの場合
+      //AdSense広告表示が許可されている場合
+      if (is_all_adsenses_visible()) {
+        get_template_part_with_ad_format(DATA_AD_FORMAT_AUTORELAXED, 'ad-related-autorelaxed', false);
+      }
+    }
   ?>
   </div>
 </aside>
