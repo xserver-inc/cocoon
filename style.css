@@ -2263,12 +2263,8 @@ label.screen-reader-text {
 }
 
 /************************************
-** Comment
+** 記事内広告
 ************************************/
-.ad-fluid .ad-responsive {
-  height: 280px;
-}
-
 @media screen and (max-width: 692px) {
   .ad-dabble-rectangle .ad-responsive {
     width: 300px;
