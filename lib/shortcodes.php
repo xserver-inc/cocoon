@@ -33,3 +33,26 @@ function new_entries_shortcode($atts) {
   return $res;
 }
 endif;
+
+//人気記事ショートコード関数
+add_shortcode('popular_entries', 'popular_entries_shortcode');
+if ( !function_exists( 'popular_entries_shortcode' ) ):
+function popular_entries_shortcode($atts) {
+  extract(shortcode_atts(array(
+    'days' => 'all',
+    'count' => 5,
+    'type' => 'default',
+    'rank' => 0,
+    'pv' => 0,
+    'cats' => array(),
+  ), $atts));
+  $categories = array();
+  if ($cats) {
+    $categories = explode(',', $cats);
+  }
+  ob_start();
+  generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
+  $res = ob_get_clean();
+  return $res;
+}
+endif;
