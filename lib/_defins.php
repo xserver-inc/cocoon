@@ -40,6 +40,9 @@ define('DATA_AD_FORMAT_VERTICAL', 'vertical'); //縦長
 //Googleで定義されていないフォーマットはDATA_無し
 define('AD_FORMAT_SINGLE_RECTANGLE', 'single-rectangle'); //シングルレクタングル
 define('AD_FORMAT_DABBLE_RECTANGLE', 'dabble-rectangle'); //ダブルレクタングル
+//広告ユニット以外
+define('DATA_AD_FORMAT_IN_ARTICLE_FLUID', 'in-article-fluid'); //記事中広告
+define('DATA_AD_FORMAT_AUTORELAXED', 'autorelaxed'); //関連記事
 
 //メインカラム用の広告フォーマット集
 define('MAIN_DATA_AD_FORMATS', array(
