@@ -617,6 +617,8 @@
   .demo .notice-area-wrap {
     display: block;
     text-decoration: none; }
+    .demo .notice-area-wrap:hover {
+      opacity: 0.8; }
   .demo .notice-area {
     color: #fff;
     text-align: center;

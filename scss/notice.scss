@@ -3,6 +3,9 @@
 .notice-area-wrap{
   display: block;
   text-decoration: none;
+  &:hover{
+    opacity: 0.8;
+  }
 }
 
 .notice-area{

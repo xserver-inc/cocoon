@@ -428,6 +428,9 @@ img {
   display: block;
   text-decoration: none;
 }
+.notice-area-wrap:hover {
+  opacity: 0.8;
+}
 
 .notice-area {
   color: #fff;
