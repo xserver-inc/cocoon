@@ -2262,6 +2262,9 @@ label.screen-reader-text {
   width: 336px;
 }
 
+/************************************
+** 記事内広告
+************************************/
 @media screen and (max-width: 692px) {
   .ad-dabble-rectangle .ad-responsive {
     width: 300px;
