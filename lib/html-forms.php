@@ -773,7 +773,13 @@ function generate_author_box_tag($label){?>
         <?php the_author_posts_link(); ?>
       </div>
       <div class="author-description">
-        <?php echo get_the_author_meta( 'description', get_the_author_id() ); ?>
+        <?php $description = get_the_author_meta( 'description', get_the_author_id() );
+        if ($description) {
+          echo $description;
+        } elseif (is_user_logged_in()) {
+          echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_id().'">'.__( プロフィール設定画面, THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
+        }
+        ?>
         <?php if (0&&get_the_author_website_url()): ?>
           <span class="site-url">
             <a href="<?php echo get_the_author_website_url(); ?>" target="_blank"><?php echo get_the_author_website_url(); ?></a>
