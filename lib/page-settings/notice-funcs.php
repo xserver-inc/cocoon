@@ -16,6 +16,14 @@ function get_notice_area_message(){
 }
 endif;
 
+//通知エリアURL
+define('OP_NOTICE_AREA_URL', 'notice_area_url');
+if ( !function_exists( 'get_notice_area_url' ) ):
+function get_notice_area_url(){
+  return get_theme_option(OP_NOTICE_AREA_URL);
+}
+endif;
+
 //通知タイプ
 define('OP_NOTICE_TYPE', 'notice_type');
 if ( !function_exists( 'get_notice_type' ) ):
@@ -24,10 +32,18 @@ function get_notice_type(){
 }
 endif;
 
-//通知エリア色
-define('OP_NOTICE_AREA_COLOR', 'notice_area_color');
-if ( !function_exists( 'get_notice_area_color' ) ):
-function get_notice_area_color(){
-  return get_theme_option(OP_NOTICE_AREA_COLOR);
+//通知エリア背景色
+define('OP_NOTICE_AREA_BACKGROUND_COLOR', 'notice_area_background_color');
+if ( !function_exists( 'get_notice_area_background_color' ) ):
+function get_notice_area_background_color(){
+  return get_theme_option(OP_NOTICE_AREA_BACKGROUND_COLOR);
+}
+endif;
+
+//通知エリアテキスト色
+define('OP_NOTICE_AREA_TEXT_COLOR', 'notice_area_text_color');
+if ( !function_exists( 'get_notice_area_text_color' ) ):
+function get_notice_area_text_color(){
+  return get_theme_option(OP_NOTICE_AREA_TEXT_COLOR);
 }
 endif;

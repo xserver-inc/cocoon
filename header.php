@@ -49,6 +49,9 @@ get_template_part('tmp/body-top-analytics'); ?>
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 
+  <?php //通知エリア
+  get_template_part('tmp/notice'); ?>
+
   <?php //アピールエリア
   get_template_part('tmp/appeal'); ?>
 

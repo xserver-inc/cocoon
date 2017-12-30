@@ -626,6 +626,19 @@
   .demo .header-container-in.hlt-center-logo-top-menu {
     display: flex;
     flex-direction: column-reverse; }
+  .demo .notice-area-wrap {
+    display: block;
+    text-decoration: none; }
+  .demo .notice-area {
+    color: #fff;
+    text-align: center;
+    background-color: #4cae4c;
+    padding: 0.6em;
+    font-size: 0.8em; }
+    .demo .notice-area.nt-warning {
+      background-color: #f7ab00; }
+    .demo .notice-area.nt-danger {
+      background-color: #ff6666; }
   .demo .no-appeal-area .appeal {
     display: none; }
   .demo .appeal-in {

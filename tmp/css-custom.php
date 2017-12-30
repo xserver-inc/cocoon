@@ -348,4 +348,15 @@ if ($responsive_width <= 1030) {
   <?php echo get_file_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
 }
 <?php endif ?>
-
+<?php //通知エリア背景色
+if ($color = get_notice_area_background_color()): ?>
+#notice-area{
+  background-color: <?php echo $color; ?>;
+}
+<?php endif ?>
+<?php //通知エリア文字色
+if ($color = get_notice_area_text_color()): ?>
+#notice-area{
+  color: <?php echo $color; ?>;
+}
+<?php endif ?>

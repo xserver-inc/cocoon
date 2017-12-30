@@ -52,6 +52,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'code-posts.php';
   //コメント
   require_once 'comment-posts.php';
+  //通知
+  require_once 'notice-posts.php';
   //アピールエリア
   require_once 'appeal-posts.php';
   //カルーセル
@@ -136,6 +138,7 @@ endif;
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
     <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
+    <li class="notice-area"><?php _e( '通知', THEME_NAME ) ?></li>
     <li class="appeal-area"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
     <li class="carousel-area"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
@@ -246,6 +249,11 @@ endif;
   <!-- コメントタブ -->
   <div class="comment metabox-holder">
     <?php require_once 'comment-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- 通知エリア -->
+  <div class="notice-area metabox-holder">
+    <?php require_once 'notice-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- アピールエリア -->
