@@ -39,6 +39,7 @@ function generate_html_tags_is($value){
   $left_msg = __( '左側に入力する内容', THEME_NAME );
   $center_msg = __( '中央に入力する内容', THEME_NAME );
   $right_msg = __( '右側に入力する内容', THEME_NAME );
+  $keyword_msg = __( 'キーワード', THEME_NAME );
    ?>;
 
   <?php //２カラムレイアウト
@@ -67,7 +68,7 @@ function generate_html_tags_is($value){
    ?>
   htmlTags[2] = new Array();
   htmlTags[2].title  = '<?php echo __( '疑似検索フォーム', THEME_NAME ); ?>';
-  htmlTags[2].tag = '<?php echo $before.$left_msg.$after; ?>';
+  htmlTags[2].tag = '<?php echo $before.$keyword_msg.$after; ?>';
   htmlTags[2].before = '<?php echo $before; ?>';
   htmlTags[2].after = '<?php echo $after; ?>';
 

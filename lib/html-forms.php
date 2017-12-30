@@ -654,12 +654,12 @@ endif;
 
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
-function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 0){
+function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $categories = array()){
   if (DEBUG_MODE) {
     $time_start = microtime(true);
   }
 
-  $records = get_access_ranking_records($days, $limit, $categories);
+  $records = get_access_ranking_records($days, $entry_count, $categories);
 
   if (DEBUG_MODE) {
     $time = microtime(true) - $time_start;
@@ -671,7 +671,7 @@ function generate_popular_entries_tag($days, $limit, $categories, $pv_visible = 
 
   //var_dump($records);
   ?>
-  <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes(); ?>">
+  <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
