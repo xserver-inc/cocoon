@@ -1,4 +1,4 @@
-<?php
+<?php //AMP
 
 //AMP判別関数
 if ( !function_exists( 'is_amp' ) ):
@@ -16,7 +16,7 @@ function is_amp(){
   }
 
   // ampのパラメーターが1かつ
-  // かつsingleページのみ$is_ampをtrueにする
+  // かつsingularページのみ$is_ampをtrueにする
   if(is_amp_enable() && //AMPがカスタマイザーの有効化されているか
      is_singular() &&
      $_GET['amp'] === '1' &&//URLにamp=1パラメータがあるとき
@@ -31,7 +31,7 @@ endif;
 //AMPページがある投稿ページか
 if ( !function_exists( 'has_amp_page' ) ):
 function has_amp_page(){
-  $category_ids =get_noamp_category_ids();
+  $category_ids = get_noamp_category_ids();
   return is_singular() &&
     is_amp_enable() &&
     is_amp_page_enable() &&
@@ -41,6 +41,7 @@ function has_amp_page(){
 endif;
 
 //AMP用にコンテンツを変換する
+add_filter('the_content','convert_content_for_amp', 999999999);
 if ( !function_exists( 'convert_content_for_amp' ) ):
 function convert_content_for_amp($the_content){
   if ( !is_amp() ) {
@@ -348,7 +349,6 @@ function convert_content_for_amp($the_content){
   return $the_content;
 }
 endif;
-add_filter('the_content','convert_content_for_amp', 999999999);
 
 //テンプレートの中身をAMP化する
 if ( !function_exists( 'get_template_part_amp' ) ):
@@ -419,24 +419,24 @@ function get_amp_permalink(){
 }
 endif;
 
-//画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
-function get_image_width_and_height($image_url){
-  //URLにサイトアドレスが含まれていない場合
-  if (!includes_site_url($image_url)) {
-    return false;
-  }
-  $wp_upload_dir = wp_upload_dir();
-  $uploads_dir = $wp_upload_dir['basedir'];
-  $uploads_url = $wp_upload_dir['baseurl'];
-  $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
-  $imagesize = getimagesize($image_file);
-  if ($imagesize) {
-    $res = array();
-    $res['width'] = $imagesize[0];
-    $res['height'] = $imagesize[1];
-    return $res;
-  }
-}
+// //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
+// function get_image_width_and_height($image_url){
+//   //URLにサイトアドレスが含まれていない場合
+//   if (!includes_site_url($image_url)) {
+//     return false;
+//   }
+//   $wp_upload_dir = wp_upload_dir();
+//   $uploads_dir = $wp_upload_dir['basedir'];
+//   $uploads_url = $wp_upload_dir['baseurl'];
+//   $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
+//   $imagesize = getimagesize($image_file);
+//   if ($imagesize) {
+//     $res = array();
+//     $res['width'] = $imagesize[0];
+//     $res['height'] = $imagesize[1];
+//     return $res;
+//   }
+// }
 
 //AMPページではCrayon Syntax Highlighterを表示しない
 add_action( 'wp_loaded','remove_crayon_syntax_highlighter' );
@@ -448,17 +448,3 @@ function remove_crayon_syntax_highlighter() {
   }
 }
 endif;
-
-// //AMPページでFont AwesomeやGoogle Fontsを利用する
-// if ( !function_exists( 'add_simplicity_amp_fonts' ) ):
-// function add_simplicity_amp_fonts($data) {
-//   $data['font_urls'] = array(
-//       'FontAwesome' => 'https://max'.'cdn.boot'.'strapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-//   );
-//   if (!is_site_font_default()) {
-//     $data['font_urls'] += array(get_site_font_source() => get_site_font_source_url());
-//   }
-//   return $data;
-// }
-// endif;
-// add_action( 'amp_post_template_data', 'add_simplicity_amp_fonts');
