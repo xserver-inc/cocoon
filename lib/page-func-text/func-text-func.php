@@ -52,8 +52,7 @@ function create_function_texts_table() {
     title varchar(126) NOT NULL,
     text text NOT NULL,
     visible bit(1) DEFAULT 1 NOT NULL,
-    PRIMARY KEY (id),
-    INDEX (title)
+    PRIMARY KEY (id)
     )";
   $res = create_db_table($sql);
 
@@ -95,7 +94,6 @@ endif;
 //関数テキストレコードの取得
 if ( !function_exists( 'get_function_texts' ) ):
 function get_function_texts( $keyword = null, $order_by = null ) {
-  update_function_texts_table();
   $table_name = FUNCTION_TEXTS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
 }

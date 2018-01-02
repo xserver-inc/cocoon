@@ -254,9 +254,7 @@ function create_speech_balloons_table() {
     position varchar(20) DEFAULT '".SBP_LEFT."' NOT NULL,
     iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."' NOT NULL,
     visible bit(1) DEFAULT 1 NOT NULL,
-    PRIMARY KEY (id),
-    INDEX (title),
-    INDEX (name)
+    PRIMARY KEY (id)
   )";
   $res = create_db_table($sql);
 
@@ -300,7 +298,6 @@ endif;
 if ( !function_exists( 'get_speech_balloons' ) ):
 function get_speech_balloons( $keyword = null, $order_by = null ) {
 
-  update_speech_balloons_table();
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
 

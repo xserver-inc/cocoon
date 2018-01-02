@@ -7,6 +7,12 @@ function update_db_tables(){
   if (is_admin()) {
     //アクセス数テーブル
     update_accesses_table();
+
+    update_speech_balloons_table();
+
+    update_affiliate_tags_table();
+
+    update_function_texts_table();
     //_v('update_accesses_table');
   }
 }

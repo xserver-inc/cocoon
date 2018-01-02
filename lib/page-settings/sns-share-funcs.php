@@ -44,6 +44,6 @@ endif;
 define('OP_SNS_SHARE_COUNT_CACHE_INTERVAL', 'sns_share_count_cache_interval');
 if ( !function_exists( 'get_sns_share_count_cache_interval' ) ):
 function get_sns_share_count_cache_interval(){
-  return intval(get_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL, 2));
+  return intval(get_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL, 6));
 }
 endif;

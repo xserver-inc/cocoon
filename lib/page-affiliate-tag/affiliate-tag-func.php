@@ -51,8 +51,7 @@ function create_affiliate_tags_table() {
     title varchar(126) NOT NULL,
     text text NOT NULL,
     visible bit(1) DEFAULT 1 NOT NULL,
-    PRIMARY KEY (id),
-    INDEX (title)
+    PRIMARY KEY (id)
     )";
   $res = create_db_table($sql);
 
@@ -92,7 +91,6 @@ endif;
 //レコードの取得
 if ( !function_exists( 'get_affiliate_tags' ) ):
 function get_affiliate_tags( $keyword = null, $order_by = null ) {
-  update_affiliate_tags_table();
   $table_name = AFFILIATE_TAGS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
 }
