@@ -20,7 +20,7 @@ endif;
 define('OP_AD_CODE', 'ad_code');
 if ( !function_exists( 'get_ad_code' ) ):
 function get_ad_code(){
-  return stripslashes_deep(get_option(OP_AD_CODE));
+  return stripslashes_deep(get_theme_option(OP_AD_CODE));
 }
 endif;
 

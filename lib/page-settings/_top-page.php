@@ -68,6 +68,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once '404-posts.php';
   //スキン
   require_once 'skin-posts.php';
+  //AMP
+  require_once 'amp-posts.php';
   //管理画面
   require_once 'admin-posts.php';
   //その他
@@ -146,11 +148,11 @@ endif;
     <li class="mobile-buttons"><?php _e( 'モバイルボタン', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
+    <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="about"><?php _e( 'テーマ情報', THEME_NAME ) ?></li>
-    <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
   </ul>
 
   <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
@@ -289,6 +291,11 @@ endif;
   <!-- スキン -->
   <div class="skin metabox-holder">
     <?php require_once 'skin-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- AMP -->
+  <div class="amp metabox-holder">
+    <?php require_once 'amp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->

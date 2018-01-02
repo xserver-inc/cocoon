@@ -19,7 +19,6 @@ require_once 'amp.php';        //AMP関係の関数
 require_once 'php-html-css-js-minifier.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once 'page-settings/all-funcs.php';        //全体設定関数
 require_once 'page-settings/header-funcs.php';     //ヘッダー設定関数
-require_once 'page-settings/skin-funcs.php';       //スキン設定関数
 require_once 'page-settings/navi-funcs.php';       //グローバルナビ設定関数
 require_once 'page-settings/ads-funcs.php';        //広告設定関数
 require_once 'page-settings/title-funcs.php';      //タイトル設定関数
@@ -46,6 +45,8 @@ require_once 'page-settings/footer-funcs.php';     //フッター設定関数
 require_once 'page-settings/buttons-funcs.php';    //ボタン設定関数
 require_once 'page-settings/mobile-buttons-funcs.php'; //モバイルボタン設定関数
 require_once 'page-settings/404-funcs.php';        //404ページ設定関数
+require_once 'page-settings/skin-funcs.php';       //スキン設定関数
+require_once 'page-settings/amp-funcs.php';        //AMP設定関数
 require_once 'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once 'page-settings/others-funcs.php';     //その他設定関数
 require_once 'page-settings/reset-funcs.php';      //リセット設定関数
