@@ -95,6 +95,6 @@ endif;
 define('OP_SNS_TOP_SHARE_BUTTONS_COUNT_VISIBLE', 'sns_top_share_buttons_count_visible');
 if ( !function_exists( 'is_sns_top_share_buttons_count_visible' ) ):
 function is_sns_top_share_buttons_count_visible(){
-  return get_theme_option(OP_SNS_TOP_SHARE_BUTTONS_COUNT_VISIBLE, 1);
+  return get_theme_option(OP_SNS_TOP_SHARE_BUTTONS_COUNT_VISIBLE);
 }
 endif;
