@@ -1,4 +1,4 @@
-<?php if (is_carousel_visible() && get_carousel_category_ids()): ?>
+<?php if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
   'cat' => get_carousel_category_ids(),
