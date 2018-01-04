@@ -85,8 +85,8 @@
         <?php endif; ?>
 
         <div class="entry-categories-tags">
-          <?php the_category_links(); //カテゴリの出力
-                the_tag_links(); //タグの出力?>
+          <div class="entry-categories"><?php the_category_links() ?></div>
+          <div class="entry-tags"><?php the_tag_links() ?></div>
         </div>
 
         <?php //SNSシェアボタン上の広告表示
