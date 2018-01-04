@@ -101,6 +101,24 @@ remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'rsd_link');
 //wlwmanifest を削除
 remove_action('wp_head', 'wlwmanifest_link');
+// Embed WPのブログカード。他サイトのアイキャッチ画像や抜粋自動埋め込み
+remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
+// 管理画面絵文字削除
+add_action('init', 'remove_action_emoji');
+if ( !function_exists( 'remove_action_emoji' ) ):
+function remove_action_emoji(){
+  remove_action('wp_head', 'print_emoji_detection_script', 7);
+  remove_action('admin_print_scripts', 'print_emoji_detection_script');
+  remove_action('wp_print_styles', 'print_emoji_styles');
+  remove_action('admin_print_styles', 'print_emoji_styles');
+  remove_filter('the_content_feed', 'wp_staticize_emoji');
+  remove_filter('comment_text_rss', 'wp_staticize_emoji');
+  remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+}
+endif;
+
 
 //カスタム背景
 $custom_background_defaults = array(
