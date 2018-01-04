@@ -448,3 +448,83 @@ function remove_crayon_syntax_highlighter() {
   }
 }
 endif;
+
+if ( !function_exists( 'get_the_page_content' ) ):
+function get_the_singular_content(){
+  $all_content = null;
+  while(have_posts()): the_post();
+    ob_start();//バッファリング
+    get_template_part('tmp/body-top');//bodyタグ直下から本文まで
+    $body_top_content = ob_get_clean();
+    ob_start();//バッファリング
+    if (is_single()) {
+      get_template_part('tmp/single-contents');
+    } else {
+      get_template_part('tmp/page-contents');
+    }
+    $body_content = ob_get_clean();
+    $all_content = $body_top_content.$body_content;
+  endwhile;
+  return $all_content;
+}
+endif;
+
+//<style amp-custom>タグの作成
+if ( !function_exists( 'generate_style_amp_custom_tag' ) ):
+function generate_style_amp_custom_tag(){?>
+  <style amp-custom>
+  <?php
+  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $css_all = '';
+    //AMPスタイルの取得
+    $css_file = get_template_directory().'/amp.css';
+    if ( file_exists($css_file) ) {
+      $css = $wp_filesystem->get_contents($css_file);//ファイルの読み込み
+      $css_all .= $css;
+    }
+
+    ///////////////////////////////////////////
+    //スキンのスタイル
+    ///////////////////////////////////////////
+    if ( get_skin_url() ) {//設定されたスキンがある場合
+      //通常のスキンスタイル
+      $skin_file = url_to_local(get_skin_url());
+      $amp_css_file = str_replace('style.css', 'amp.css', $skin_file);
+      if (file_exists($amp_css_file)) {
+        $amp_css = $wp_filesystem->get_contents($amp_css_file);//ファイルの読み込み
+        $css_all .= $amp_css;
+      }
+    }
+
+    ///////////////////////////////////////////
+    //カスタマイザーのスタイル
+    ///////////////////////////////////////////
+    ob_start();//バッファリング
+    get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
+    $css_custom = ob_get_clean();
+    $css_all .= $css_custom;
+
+    ///////////////////////////////////////////
+    //子テーマのスタイル
+    ///////////////////////////////////////////
+    if ( is_child_theme() ) {
+      $css_file_child = get_stylesheet_directory().'/amp.css';
+      if ( file_exists($css_file_child) ) {
+        $css_child = $wp_filesystem->get_contents($css_file_child);//ファイルの読み込み
+        $css_all .= $css_child;
+      }
+    }
+    //!importantの除去
+    $css_all = preg_replace('/!important/i', '', $css_all);
+
+    //CSSの縮小化
+    $css_all = minify_css($css_all);
+
+    //全てのCSSの出力
+    echo $css_all;
+  }?>
+  </style>
+<?php
+}
+endif;
