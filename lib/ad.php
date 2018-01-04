@@ -65,11 +65,9 @@ function get_adsense_data_ad_slot($code = null){
 }
 endif;
 
-//アドセンスのレスポンシブコードを生成する
-if ( !function_exists( 'generate_adsense_responsive_code' ) ):
-function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
-  // _v($code);
-  // _v(get_adsense_ids($code));
+//アドセンスの通常ページ用レスポンシブコードを生成する
+if ( !function_exists( 'get_normal_adsense_responsive_code' ) ):
+function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
 
   //$codeに広告コードが入っている場合はそこから取得する（無い場合はテーマ設定のAdSenseコードを利用）
   if (get_adsense_ids($code)) {
@@ -92,6 +90,64 @@ function generate_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code =
   }
   //AdSense広告でない場合はそのままコードを出力する
   return $code;
+}
+endif;
+
+//アドセンスのAMP用レスポンシブコードを生成する
+if ( !function_exists( 'get_amp_adsense_responsive_code' ) ):
+function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
+  //$codeに広告コードが入っている場合はそこから取得する
+  if (get_adsense_ids($code)) {
+    return
+      '<amp-ad
+      layout="responsive"
+      height=280
+      type="adsense"
+      data-ad-client="'.get_adsense_data_ad_client($code).'"
+      data-ad-slot="'.get_adsense_data_ad_slot($code).'">
+      </amp-ad>';
+  }
+  //AdSense広告でない場合はそのままコードを出力する
+  return $code;
+}
+endif;
+
+//アドセンスのレスポンシブコードを生成する
+if ( !function_exists( 'get_adsense_responsive_code' ) ):
+function get_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
+  if (!is_amp()) {
+    //通常ページの場合
+    $ad = get_normal_adsense_responsive_code($format, $code);
+  } else {
+    //AMPページの場合
+    $ad = get_amp_adsense_responsive_code($format, $code);
+  }
+  return $ad;
+
+//   // _v($code);
+//   // _v(get_adsense_ids($code));
+
+//   //$codeに広告コードが入っている場合はそこから取得する（無い場合はテーマ設定のAdSenseコードを利用）
+//   if (get_adsense_ids($code)) {
+//     $data_ad_layout = null;
+//     if ($format == DATA_AD_FORMAT_FLUID) {
+//       $data_ad_layout = '     data-ad-layout="in-article"';
+//     }
+//     return
+// '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+// <!-- レスポンシブコード -->
+// <ins class="adsbygoogle"
+//      style="display:block"
+//      data-ad-client="'.get_adsense_data_ad_client($code).'"
+//      data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
+//      $data_ad_layout.'
+//      data-ad-format="'.$format.'"></ins>
+// <script>
+// (adsbygoogle = window.adsbygoogle || []).push({});
+// </script>';
+//   }
+//   //AdSense広告でない場合はそのままコードを出力する
+//   return $code;
 }
 endif;
 

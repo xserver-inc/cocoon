@@ -463,7 +463,10 @@ function get_the_singular_content(){
       get_template_part('tmp/page-contents');
     }
     $body_content = ob_get_clean();
-    $all_content = $body_top_content.$body_content;
+    ob_start();//バッファリング
+    get_template_part('footer');//フッター
+    $footer_content = ob_get_clean();
+    $all_content = $body_top_content.$body_content.$footer_content;
   endwhile;
   return $all_content;
 }

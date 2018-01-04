@@ -238,11 +238,6 @@ if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
   //global $pagenow;
   if ( (is_code_highlight_enable() && is_singular()) || is_admin_php_page() ) {
-    // if (is_admin()) {
-    //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
-    // } else {
-    //   wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
-    // }
 
     //ソースコードハイライト表示用のスタイル
     wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
