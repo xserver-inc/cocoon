@@ -62,6 +62,7 @@ require_once 'custom-fields/ad-field.php';  //広告のページ設定
 require_once 'custom-fields/page-field.php';//投稿・固定ページのページ設定
 require_once 'custom-fields/update-field.php'; //アップデートのページ設定
 require_once 'custom-fields/redirect-field.php'; //アップデートのページ設定
+require_once 'custom-fields/amp-field.php'; //AMPのページ設定
 require_once 'custom-fields/custom-css-field.php'; //カスタムCSS設定
 require_once 'custom-fields/custom-js-field.php';  //カスタJS設定
 require_once 'seo.php';      //SEO関数

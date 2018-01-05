@@ -9,6 +9,7 @@ function is_amp(){
       return false;
     }
   }
+
   //AMPチェック
   $is_amp = false;
   if ( empty($_GET['amp']) ) {
@@ -31,10 +32,10 @@ endif;
 //AMPページがある投稿ページか
 if ( !function_exists( 'has_amp_page' ) ):
 function has_amp_page(){
-  $category_ids = get_noamp_category_ids();
+  $category_ids = get_amp_exclude_category_ids();
   return is_singular() &&
     is_amp_enable() &&
-    is_amp_page_enable() &&
+    is_the_page_amp_enable() &&
     !in_category( $category_ids ) && //除外カテゴリではAMPページを生成しない
     (!function_exists('is_bbpress') || !is_bbpress());
 }
