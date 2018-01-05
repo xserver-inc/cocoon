@@ -100,8 +100,8 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
   if (get_adsense_ids($code)) {
     return
       '<amp-ad
-      layout="responsive"
-      height=280
+      width="300"
+      height="250"
       type="adsense"
       data-ad-client="'.get_adsense_data_ad_client($code).'"
       data-ad-slot="'.get_adsense_data_ad_slot($code).'">
@@ -121,6 +121,7 @@ function get_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null
   } else {
     //AMPページの場合
     $ad = get_amp_adsense_responsive_code($format, $code);
+    //var_dump($ad);
   }
   return $ad;
 

@@ -33,6 +33,7 @@ endif;
 if ( !function_exists( 'has_amp_page' ) ):
 function has_amp_page(){
   $category_ids = get_amp_exclude_category_ids();
+
   return is_singular() &&
     is_amp_enable() &&
     is_the_page_amp_enable() &&
@@ -453,10 +454,11 @@ endif;
 if ( !function_exists( 'get_the_page_content' ) ):
 function get_the_singular_content(){
   $all_content = null;
-  while(have_posts()): the_post();
+  //while(have_posts()): the_post();
     ob_start();//バッファリング
     get_template_part('tmp/body-top');//bodyタグ直下から本文まで
     $body_top_content = ob_get_clean();
+
     ob_start();//バッファリング
     if (is_single()) {
       get_template_part('tmp/single-contents');
@@ -464,11 +466,12 @@ function get_the_singular_content(){
       get_template_part('tmp/page-contents');
     }
     $body_content = ob_get_clean();
+
     ob_start();//バッファリング
     get_template_part('footer');//フッター
     $footer_content = ob_get_clean();
     $all_content = $body_top_content.$body_content.$footer_content;
-  endwhile;
+  //endwhile;
   return $all_content;
 }
 endif;

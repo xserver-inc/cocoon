@@ -1,5 +1,5 @@
 <?php
-_v(is_amp());
+
 if (!is_amp()) {
    get_header();
  } else {

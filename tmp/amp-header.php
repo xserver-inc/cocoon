@@ -6,46 +6,32 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <?php if ( is_facebook_ogp_enable() ) //Facebook OGPタグ挿入がオンのとき
 get_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート?>
-<?php if ( is_twitter_cards_enable() ) //Twitterカードタグ挿入がオンのとき
+<?php if ( is_twitter_card_enable() ) //Twitterカードタグ挿入がオンのとき
 get_template_part('tmp/header-twitter-card');//Twitterカード用のタグテンプレート?>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <?php
-// while(have_posts()): the_post();
-//   $all_content = '';
-//   ob_start();//バッファリング
-//   get_template_part('tmp/body-top');//bodyタグ直下から本文まで
-//   $body_top_content = ob_get_clean();
-//   ob_start();//バッファリング
-//   if (is_single()) {
-//     get_template_part('tmp/single-contents');
-//   } else {
-//     get_template_part('tmp/page-contents');
+// //投稿・固定ページのページ内容全てを取得する
+// $all_content = get_the_singular_content();
+// $elements = array(
+//   //'amp-analytics' => 'amp-analytics-0.1.js',
+//   'amp-facebook' => 'amp-facebook-0.1.js',
+//   'amp-youtube' => 'amp-youtube-0.1.js',
+//   'amp-vine' => 'amp-vine-0.1.js',
+//   'amp-twitter' => 'amp-twitter-0.1.js',
+//   'amp-instagram' => 'amp-instagram-0.1.js',
+//   'amp-social-share' => 'amp-social-share-0.1.js',
+//   'amp-ad' => 'amp-ad-0.1.js',
+//   'amp-iframe' => 'amp-iframe-0.1.js',
+// );
+
+// //var_dump($the_content);
+// foreach( $elements as $key => $val ) {
+//   if( strpos($all_content, '<'.$key) !== false ) {
+//     echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
+
 //   }
-//   $body_content = ob_get_clean();
-//   $all_content = $body_top_content.$body_content;
-// endwhile;
+// }
 
-//投稿・固定ページのページ内容全てを取得する
-$all_content = get_the_singular_content();
-$elements = array(
-  //'amp-analytics' => 'amp-analytics-0.1.js',
-  'amp-facebook' => 'amp-facebook-0.1.js',
-  'amp-youtube' => 'amp-youtube-0.1.js',
-  'amp-vine' => 'amp-vine-0.1.js',
-  'amp-twitter' => 'amp-twitter-0.1.js',
-  'amp-instagram' => 'amp-instagram-0.1.js',
-  'amp-social-share' => 'amp-social-share-0.1.js',
-  'amp-ad' => 'amp-ad-0.1.js',
-  'amp-iframe' => 'amp-iframe-0.1.js',
-);
-
-//var_dump($the_content);
-foreach( $elements as $key => $val ) {
-  if( strpos($all_content, '<'.$key) !== false ) {
-    echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
-
-  }
-}
 //AMP Analytics・Google Tag Manager用のライブラリ
 if ( !is_user_admin() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id()) )  {
   echo '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'.PHP_EOL;
