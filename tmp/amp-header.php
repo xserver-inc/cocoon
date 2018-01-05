@@ -2,6 +2,7 @@
 <html amp>
 <head>
 <meta charset="utf-8">
+<title><?php echo wp_get_document_title(); ?></title>
 <link rel="canonical" href="<?php the_permalink() ?>" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <?php if ( is_facebook_ogp_enable() ) //Facebook OGPタグ挿入がオンのとき
