@@ -11,27 +11,27 @@ get_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート
 get_template_part('tmp/header-twitter-card');//Twitterカード用のタグテンプレート?>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <?php
-// //投稿・固定ページのページ内容全てを取得する
-// $all_content = get_the_singular_content();
-// $elements = array(
-//   //'amp-analytics' => 'amp-analytics-0.1.js',
-//   'amp-facebook' => 'amp-facebook-0.1.js',
-//   'amp-youtube' => 'amp-youtube-0.1.js',
-//   'amp-vine' => 'amp-vine-0.1.js',
-//   'amp-twitter' => 'amp-twitter-0.1.js',
-//   'amp-instagram' => 'amp-instagram-0.1.js',
-//   'amp-social-share' => 'amp-social-share-0.1.js',
-//   'amp-ad' => 'amp-ad-0.1.js',
-//   'amp-iframe' => 'amp-iframe-0.1.js',
-// );
+//投稿・固定ページのページ内容全てを取得する
+$all_content = get_the_singular_content();
+$elements = array(
+  //'amp-analytics' => 'amp-analytics-0.1.js',
+  'amp-facebook' => 'amp-facebook-0.1.js',
+  'amp-youtube' => 'amp-youtube-0.1.js',
+  'amp-vine' => 'amp-vine-0.1.js',
+  'amp-twitter' => 'amp-twitter-0.1.js',
+  'amp-instagram' => 'amp-instagram-0.1.js',
+  'amp-social-share' => 'amp-social-share-0.1.js',
+  'amp-ad' => 'amp-ad-0.1.js',
+  'amp-iframe' => 'amp-iframe-0.1.js',
+);
 
-// //var_dump($the_content);
-// foreach( $elements as $key => $val ) {
-//   if( strpos($all_content, '<'.$key) !== false ) {
-//     echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
+//var_dump($the_content);
+foreach( $elements as $key => $val ) {
+  if( strpos($all_content, '<'.$key) !== false ) {
+    echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
 
-//   }
-// }
+  }
+}
 
 //AMP Analytics・Google Tag Manager用のライブラリ
 if ( !is_user_admin() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id()) )  {

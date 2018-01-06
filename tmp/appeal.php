@@ -1,6 +1,6 @@
 <?php //アピールエリアテンプレート ?>
 <?php //アピールエリアを表示するか
-if (is_appeal_area_visible()): ?>
+if (is_appeal_area_visible() && !is_amp()): ?>
 <div id="appeal" class="appeal<?php echo get_additional_appeal_area_classes(); ?>">
   <div id="appeal-in" class="appeal-in wrap">
     <div class="appeal-content">

@@ -468,9 +468,20 @@ function get_the_singular_content(){
     $body_content = ob_get_clean();
 
     ob_start();//バッファリング
-    get_template_part('footer');//フッター
-    $footer_content = ob_get_clean();
-    $all_content = $body_top_content.$body_content.$footer_content;
+    dynamic_sidebar( 'sidebar' );
+    $sidebar_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    dynamic_sidebar( 'sidebar-scroll' );
+    $sidebar_scroll_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    dynamic_sidebar('footer-left');
+    dynamic_sidebar('footer-center');
+    dynamic_sidebar('footer-right');
+    $sidebar_scroll_content = ob_get_clean();
+
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content;
   //endwhile;
   return $all_content;
 }

@@ -1,6 +1,6 @@
 <?php //通知テンプレート
 $msg = get_notice_area_message();
-if (is_notice_area_visible() && $msg):
+if (is_notice_area_visible() && $msg && !is_amp()):
   $url = get_notice_area_url();
  ?>
 
