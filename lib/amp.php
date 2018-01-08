@@ -586,3 +586,14 @@ function html_ampfy_call_back( $html ) {
 }
 endif;
 
+
+// //AMPタグを出力する
+// add_action( 'wp_head', 'the_amp_page_tag' );
+// if ( !function_exists( 'the_amp_page_tag' ) ):
+// function the_amp_page_tag() {
+//   if (has_amp_page()) {
+//     echo '<!-- '.THEME_NAME_CAMEL.' AMP -->'.PHP_EOL;
+//     echo '<link rel="amphtml" href="'.get_amp_permalink().'">'.PHP_EOL;
+//   }
+// }
+// endif;

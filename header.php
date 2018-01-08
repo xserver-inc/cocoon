@@ -5,6 +5,10 @@
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
 get_template_part('tmp/head-analytics'); ?>
 <meta charset="utf-8">
+<?php //AMPの案内タグを出力
+if ( has_amp_page() ): ?>
+<link rel="amphtml" href="<?php echo get_amp_permalink(); ?>">
+<?php endif ?>
 <?php //Google Search Consoleのサイト認証IDの表示
 if ( get_google_search_console_id() ): ?>
 <!-- Google Search Console -->

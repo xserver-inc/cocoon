@@ -60,21 +60,6 @@ function tag_code_to_minify_js($buffer) {
               continue;
             }
 
-            // if (
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   //(strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/slick/slick.min.js') === false) &&
-            //   (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
-            //   (strpos($url, THEME_NAME.'/javascript.js') === false) &&
-            //   (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
-            // ) {
-            //   continue;
-            // }
-
             //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
             $url = preg_replace('/\?.*$/m', '', $url);
             //_v($url);//JSコード変換するURL
@@ -82,7 +67,7 @@ function tag_code_to_minify_js($buffer) {
             //JS URLからJSコードの取得
             $js = js_url_to_js_minify_code( $url );
             //縮小化可能ななJSだと時
-            if ($js) {
+            if ($js !== false) {
               //_v($js);//変換したJSコード
 
               //JSを縮小化したJSファイルURL linkタグをインラインにする
