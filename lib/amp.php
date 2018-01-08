@@ -105,6 +105,10 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ *?target=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ *?target=[\'][^\']*?[\']/i', '', $the_content);
 
+  //rel属性を取り除く
+  $the_content = preg_replace('/ *?rel=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ *?rel=[\'][^\']*?[\']/i', '', $the_content);
+
   //onclick属性を取り除く
   $the_content = preg_replace('/ *?onclick=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ *?onclick=[\'][^\']*?[\']/i', '', $the_content);
@@ -125,24 +129,12 @@ function convert_content_for_amp($the_content){
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
   $the_content = str_replace(' class="youtube-player" type="text/html"', ' class="youtube-player"', $the_content);
 
-  //単純に耐える属性を取り除いたらAMPエラーが出た
-  //typeが不要なタグと必要なタグもあるみたい
-  // //type属性を取り除く
-  // $the_content = preg_replace('/ *? type=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ *? type=[\'][^\']*?[\']/i', '', $the_content);
-
   //FONTタグを取り除く
   $the_content = preg_replace('/<font[^>]+?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
-  // //カエレバ・ヨメレバのAmazon商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/ecx.images-amazon.com/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://ecx.images-amazon.com', $the_content);
-  // //カエレバ・ヨメレバのAmazon商品画像にwidthとhightを追加する（SSL用）
-  // $the_content = preg_replace('/ src="(https:)?\/\/images-fe.ssl-images-amazon.com/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="https://images-fe.ssl-images-amazon.com', $the_content);
-  // //カエレバ・ヨメレバの楽天商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/thumbnail.image.rakuten.co.jp/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://thumbnail.image.rakuten.co.jp', $the_content);
-  // //カエレバ・ヨメレバのYahoo!ショッピング商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/item.shopping.c.yimg.jp/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://item.shopping.c.yimg.jp', $the_content);
+  //formタグを取り除く
+  $the_content = preg_replace('{<form.+?</form>}is', '', $the_content);
 
   //アプリーチの画像対応
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
