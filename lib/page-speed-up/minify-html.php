@@ -12,6 +12,7 @@ function code_minify_call_back($buffer) {
     return $buffer;
   }
 
+  //_v('$buffer');
   //HTMLの縮小化
   if (is_html_minify_enable()) {
     $buffer = minify_html($buffer);

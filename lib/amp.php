@@ -546,3 +546,51 @@ function generate_style_amp_custom_tag(){?>
 <?php
 }
 endif;
+
+add_action( 'wp_loaded','wp_loaded_ampfy_html', 1 );
+if ( !function_exists( 'wp_loaded_ampfy_html' ) ):
+function wp_loaded_ampfy_html() {
+  ob_start('html_ampfy_call_back');
+}
+endif;
+
+if ( !function_exists( 'html_ampfy_call_back' ) ):
+function html_ampfy_call_back( $html ) {
+  if (is_admin()) {
+    return $html;
+  }
+  //_v('$html');
+
+  if (!is_amp()) {
+    return $html;
+  }
+
+  $head = null;
+  $body = null;
+  //ヘッダータグの取得
+  if (preg_match('{<!doctype html>.+</head>}is', $html, $m)) {
+    if (isset($m[0])) {
+      $head = $m[0];
+    }
+  }
+
+  //ボディータグの取得
+  if (preg_match('{<body .+</html>}is', $html, $m)) {
+    if (isset($m[0])) {
+      $body = $m[0];
+    }
+  }
+
+  if ($head && $body) {
+    //bodyタグ内をAMP化
+    $body = convert_content_for_amp($body);
+    return $head . $body;
+  }
+
+  //_v($body);
+  //_v('$html');
+
+  return $html;
+}
+endif;
+
