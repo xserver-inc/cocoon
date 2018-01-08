@@ -4,10 +4,10 @@
 ///////////////////////////////////////
 // CSSファイルとインラインCSSの縮小化
 ///////////////////////////////////////
-if ( !function_exists( 'tag_code_to_mintify_css' ) ):
-function tag_code_to_mintify_css($buffer) {
+if ( !function_exists( 'tag_code_to_minify_css' ) ):
+function tag_code_to_minify_css($buffer) {
 
-  if (is_css_mintify_enable()) {
+  if (is_css_minify_enable()) {
     //最終出力縮小化CSSコード
     $last_minfified_css = null;
 
@@ -54,10 +54,10 @@ function tag_code_to_mintify_css($buffer) {
             }
 
             //除外リストにマッチするCSS URLは縮小化しない
-            if (is_url_matche_list($url, get_css_mintify_exclude_list())) {
+            if (is_url_matche_list($url, get_css_minify_exclude_list())) {
               continue;
             }
-            // $excludes = list_text_to_array(get_css_mintify_exclude_list());
+            // $excludes = list_text_to_array(get_css_minify_exclude_list());
             // foreach ($excludes as $exclude_str) {
             //   if (strpos($url, $exclude_str) !== false) {
             //   _v($url);
@@ -72,7 +72,7 @@ function tag_code_to_mintify_css($buffer) {
             //_v($url);//CSSコード変換するURL
 
             //CSS URLからCSSコードの取得
-            $css = css_url_to_css_mintify_code( $url );
+            $css = css_url_to_css_minify_code( $url );
             //縮小化可能ななCSSだと時
             if ($css) {
               //_v($css);//変換したCSSコード
@@ -151,9 +151,9 @@ function tag_code_to_mintify_css($buffer) {
       $buffer = $buffer.PHP_EOL.'<style type="text/css">'.$last_minfified_css.'</style>';
     }
 
-  }//is_css_mintify_enable()
+  }//is_css_minify_enable()
   /*
-  if (is_css_mintify_enable()) {
+  if (is_css_minify_enable()) {
     //最終出力縮小化CSSコード
     $last_minfified_css = null;
 
@@ -185,7 +185,7 @@ function tag_code_to_mintify_css($buffer) {
           //_v($url);//CSSコード変換するURL
 
           //CSS URLからCSSコードの取得
-          $css = css_url_to_css_mintify_code( $url );
+          $css = css_url_to_css_minify_code( $url );
           //縮小化可能ななCSSだと時
           if ($css) {
             //_v($css);//変換したCSSコード
@@ -236,7 +236,7 @@ function tag_code_to_mintify_css($buffer) {
     }
     //縮小化したCSSをデータの最後に付け加える
     $buffer = $buffer.PHP_EOL.'<style type="text/css">'.$last_minfified_css.'</style>';
-  }//is_css_mintify_enable()
+  }//is_css_minify_enable()
   */
   //_v($buffer);
   return $buffer;
@@ -244,8 +244,8 @@ function tag_code_to_mintify_css($buffer) {
 endif;
 
 //CSS URLからコードを取り出して縮小化コードを返す
-if ( !function_exists( 'css_url_to_css_mintify_code' ) ):
-function css_url_to_css_mintify_code( $url ) {
+if ( !function_exists( 'css_url_to_css_minify_code' ) ):
+function css_url_to_css_minify_code( $url ) {
   $css = false;
   //URLファイルをローカルファイルパスに変更
   $local_file = url_to_local($url);
@@ -307,12 +307,12 @@ endif;
 
 
 // //CSSファイルの縮小化
-// if (is_css_mintify_enable()) {
-//   //add_filter( 'style_loader_src', 'mintify_all_css', 9999);
-//   //add_filter( 'print_styles_array', 'mintify_all_css', 9999);
+// if (is_css_minify_enable()) {
+//   //add_filter( 'style_loader_src', 'minify_all_css', 9999);
+//   //add_filter( 'print_styles_array', 'minify_all_css', 9999);
 // }
-// if ( !function_exists( 'mintify_all_css' ) ):
-// function mintify_all_css( $src ) {
+// if ( !function_exists( 'minify_all_css' ) ):
+// function minify_all_css( $src ) {
 //   //除外設定
 //   if (
 //     //ベーススタイルは除外
@@ -395,7 +395,7 @@ endif;
 //   return $src;
 // }
 // endif;
-// //add_filter( 'style_loader_src', 'mintify_all_css', 9999);
+// //add_filter( 'style_loader_src', 'minify_all_css', 9999);
 // //add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 
 

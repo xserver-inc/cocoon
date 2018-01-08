@@ -3,11 +3,11 @@
 ///////////////////////////////////////
 // JSファイルとインラインJSの縮小化
 ///////////////////////////////////////
-if ( !function_exists( 'tag_code_to_mintify_js' ) ):
-function tag_code_to_mintify_js($buffer) {
+if ( !function_exists( 'tag_code_to_minify_js' ) ):
+function tag_code_to_minify_js($buffer) {
 
 
-  if (is_js_mintify_enable()) {
+  if (is_js_minify_enable()) {
     //最終出力縮小化JSコード
     //$last_minfified_js = null;
 
@@ -56,7 +56,7 @@ function tag_code_to_mintify_js($buffer) {
             }
 
             //除外リストにマッチするCSS URLは縮小化しない
-            if (is_url_matche_list($url, get_js_mintify_exclude_list())) {
+            if (is_url_matche_list($url, get_js_minify_exclude_list())) {
               continue;
             }
 
@@ -80,7 +80,7 @@ function tag_code_to_mintify_js($buffer) {
             //_v($url);//JSコード変換するURL
 
             //JS URLからJSコードの取得
-            $js = js_url_to_js_mintify_code( $url );
+            $js = js_url_to_js_minify_code( $url );
             //縮小化可能ななJSだと時
             if ($js) {
               //_v($js);//変換したJSコード
@@ -106,11 +106,11 @@ function tag_code_to_mintify_js($buffer) {
 
       }//foreach
     }//$res && isset($m[1])
-  }//is_js_mintify_enable()
+  }//is_js_minify_enable()
 
 
   /*
-  if (is_js_mintify_enable()) {
+  if (is_js_minify_enable()) {
     //最終出力縮小化JSコード
     $last_minfified_js = null;
 
@@ -153,7 +153,7 @@ function tag_code_to_mintify_js($buffer) {
           _v($url);//JSコード変換するURL
 
           //JS URLからJSコードの取得
-          $js = js_url_to_js_mintify_code( $url );
+          $js = js_url_to_js_minify_code( $url );
           //縮小化可能ななJSだと時
           if ($js) {
             //_v($js);//変換したJSコード
@@ -200,7 +200,7 @@ function tag_code_to_mintify_js($buffer) {
 
     //縮小化したJavaScriptをデータの最後に付け加える
     $buffer = $buffer.PHP_EOL.'<script type="text/javascript">'.$last_minfified_js.'</script>';
-  }//is_js_mintify_enable()
+  }//is_js_minify_enable()
   */
   //_v($buffer);
   return $buffer;
@@ -209,8 +209,8 @@ endif;
 
 
 //JavaScript URLからコードを取り出して縮小化コードを返す
-if ( !function_exists( 'js_url_to_js_mintify_code' ) ):
-function js_url_to_js_mintify_code( $url ) {
+if ( !function_exists( 'js_url_to_js_minify_code' ) ):
+function js_url_to_js_minify_code( $url ) {
   $js = false;
   //URLファイルをローカルファイルパスに変更
   $local_file = url_to_local($url);
