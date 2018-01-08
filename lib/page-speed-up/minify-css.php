@@ -57,6 +57,7 @@ function tag_code_to_minify_css($buffer) {
             if (is_url_matche_list($url, get_css_minify_exclude_list())) {
               continue;
             }
+
             // $excludes = list_text_to_array(get_css_minify_exclude_list());
             // foreach ($excludes as $exclude_str) {
             //   if (strpos($url, $exclude_str) !== false) {
@@ -74,7 +75,7 @@ function tag_code_to_minify_css($buffer) {
             //CSS URLからCSSコードの取得
             $css = css_url_to_css_minify_code( $url );
             //縮小化可能ななCSSだと時
-            if ($css) {
+            if ($css !== false) {
               //_v($css);//変換したCSSコード
 
               //CSSを縮小化したCSSファイルURL linkタグを削除する
