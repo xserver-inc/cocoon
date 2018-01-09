@@ -1,5 +1,5 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
-if (is_admin_panel_visible()):
+if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_amp()):
 ?>
 <div id="admin-panel" class="admin-panel">
 

@@ -122,7 +122,7 @@ function wp_enqueue_scripts_custom() {
   //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
   if (!is_admin()) {
     wp_deregister_script('jquery');
-    wp_deregister_script('jquery-core');
+    //wp_deregister_script('jquery-core');
     wp_deregister_script('jquery-migrate');
 
     wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);

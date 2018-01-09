@@ -33,7 +33,7 @@ endif;
 define('OP_ADMIN_PANEL_VISIBLE', 'admin_panel_visible');
 if ( !function_exists( 'is_admin_panel_visible' ) ):
 function is_admin_panel_visible(){
-  return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1) && is_singular() && is_user_administrator() && !is_amp();
+  return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1);
 }
 endif;
 
