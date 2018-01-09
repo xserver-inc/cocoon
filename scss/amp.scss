@@ -3,3 +3,41 @@
 //importファイル
 @import "amp-imports";
 @import "pre";
+
+
+img{
+  border-width:0px;
+}
+
+amp-img {
+  max-width: 100%;
+}
+
+.entry-content amp-img{
+  display: inline-block;
+}
+
+amp-img[width|="0"],
+amp-img[height|="0"],
+amp-img[width|="1"],
+amp-img[height|="1"] {
+  display: inline-block;
+}
+
+amp-img[src*="ad.jp.ap.valuecommerce.com"]{
+  display: none;
+}
+
+.eye-catch{
+  margin: 0;
+  // amp-img{
+  //   width: 100%;
+  //   height: auto;
+  // }
+  //display: block;
+  // img{
+  //   width: 100%;
+  //   height: auto;
+  // }
+
+}

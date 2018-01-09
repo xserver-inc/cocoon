@@ -834,17 +834,21 @@ img {
 
 .eye-catch {
   position: relative;
-  display: inline-block;
+  margin-bottom: 1em;
 }
 .eye-catch .cat-label {
   position: absolute;
-  right: 0.3em;
-  top: 0.3em;
-  left: auto;
+  right: auto;
+  top: 0.4em;
+  bottom: auto;
+  left: 0.4em;
   font-size: 14px;
   padding: 4px 8px;
   opacity: 0.9;
   border: 1px solid #ccc;
+}
+.eye-catch img {
+  display: block;
 }
 
 /*エントリー・アーカイブの見出し*/

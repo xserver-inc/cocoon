@@ -7,19 +7,38 @@
 
 .eye-catch{
   position: relative;
-  display: inline-block;
+  margin-bottom: 1em;
+  //display: block;
+  //display: inline-block;
 
   .cat-label{
     position: absolute;
-    right: 0.3em;
-    top: 0.3em;
-    left: auto;
+    // right: 0.4em;
+    // top: 0.4em;
+    // bottom: auto;
+    // left: auto;
+    right: auto;
+    top: 0.4em;
+    bottom: auto;
+    left: 0.4em;
     font-size: 14px;
     padding: 4px 8px;
     opacity: 0.9;
     //border-radius: 2px;
     border: 1px solid #ccc;
+
   }
+
+  img{
+    // width: 100%;
+    // height: auto;
+    display: block;
+  }
+
+  // img{
+  //   width: 100%;
+  //   height: auto;
+  // }
 
   //@extend %bottom_margin;
   //& +

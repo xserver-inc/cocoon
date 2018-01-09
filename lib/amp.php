@@ -43,12 +43,13 @@ function has_amp_page(){
 endif;
 
 //AMP用にコンテンツを変換する
-add_filter('the_content','convert_content_for_amp', 999999999);
+//add_filter('the_content','convert_content_for_amp', 999999999);
 if ( !function_exists( 'convert_content_for_amp' ) ):
 function convert_content_for_amp($the_content){
   if ( !is_amp() ) {
     return $the_content;
   }
+
 
 
 
