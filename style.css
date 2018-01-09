@@ -2916,6 +2916,10 @@ div.fb-like-mobile {
     background-color: #333435;
     padding: 0 5px; }
 
+.admin-amp a {
+  margin: 0 6px;
+  font-size: 0.9em; }
+
 /************************************
 ** clingify
 ************************************/

@@ -12,7 +12,7 @@ endif;
 define('OP_AMP_LOGO_IMAGE_URL', 'amp_logo_image_url');
 if ( !function_exists( 'get_amp_logo_image_url' ) ):
 function get_amp_logo_image_url(){
-  return get_theme_option(OP_AMP_LOGO_IMAGE_URL);
+  return get_theme_option(OP_AMP_LOGO_IMAGE_URL, get_template_directory_uri().'/images/no-amp-logo.png');
 }
 endif;
 

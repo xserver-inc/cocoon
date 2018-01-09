@@ -2686,6 +2686,9 @@
       font-size: 0.6em;
       background-color: #333435;
       padding: 0 5px; }
+  .demo .admin-amp a {
+    margin: 0 6px;
+    font-size: 0.9em; }
   .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
     z-index: 99999; }
   .demo .js-clingify-wrapper {
