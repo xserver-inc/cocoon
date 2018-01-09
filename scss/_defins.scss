@@ -308,3 +308,10 @@ $bgc_hover_anime: all 0.3s ease 0s;
   font-size: 12px;
   line-height: 1;
 }
+
+%entry_category{
+  padding: 2px;
+  //margin-right: 8px;
+  display: inline;
+  font-size: 0.7em;
+}

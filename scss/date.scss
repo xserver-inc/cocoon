@@ -17,7 +17,8 @@
 .post-date,
 .post-update,
 .amp-back {
-  @extend .entry-category;
+  //@extend .entry-category;
+  @extend %entry_category;
   margin-right: 8px;
 }
 

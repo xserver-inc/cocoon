@@ -132,6 +132,13 @@
     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
     background-attachment: fixed; }
 
+.demo .entry-category, .demo .post-date,
+.demo .post-update,
+.demo .amp-back {
+  padding: 2px;
+  display: inline;
+  font-size: 0.7em; }
+
 .snipet-list {
   padding: 20px;
   display: flex;
@@ -821,15 +828,7 @@
     text-overflow: ellipsis; }
   .demo .entry-card-content {
     margin-left: 330px; }
-  .demo .entry-category, .demo .post-date,
-  .demo .post-update,
-  .demo .amp-back {
-    padding: 2px;
-    display: inline;
-    font-size: 0.7em; }
-  .demo .entry-category::before, .demo .post-date::before,
-  .demo .post-update::before,
-  .demo .amp-back::before {
+  .demo .entry-category::before {
     font-family: FontAwesome;
     content: "";
     padding-right: 3px; }

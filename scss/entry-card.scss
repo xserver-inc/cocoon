@@ -87,10 +87,11 @@
 }
 
 .entry-category{
-  padding: 2px;
-  //margin-right: 8px;
-  display: inline;
-  font-size: 0.7em;
+  @extend %entry_category;
+  // padding: 2px;
+  // //margin-right: 8px;
+  // display: inline;
+  // font-size: 0.7em;
 }
 
 .entry-category::before{
