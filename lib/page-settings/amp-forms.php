@@ -35,6 +35,7 @@
         </tr>
 
         <!-- AMPバリデーター -->
+        <!--
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_AMP_VALIDATOR, __('AMPバリデーター', THEME_NAME) ); ?>
@@ -51,7 +52,7 @@
             ?>
 
           </td>
-        </tr>
+        </tr> -->
 
         <!-- AMP除外カテゴリーID -->
         <tr>

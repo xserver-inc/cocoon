@@ -68,7 +68,7 @@
   <?php //管理者用パネル
   get_template_part('tmp/admin-panel'); ?>
 
-  <?php wp_footer(); ?>
+  <?php if (!is_amp()) wp_footer(); ?>
 
 
   <?php //カスタムフィールドの挿入（カスタムフィールド名：footer_custom）

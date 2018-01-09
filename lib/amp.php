@@ -9,6 +9,7 @@ function is_amp(){
       return false;
     }
   }
+
   //AMPチェック
   $is_amp = false;
   if ( empty($_GET['amp']) ) {
@@ -31,10 +32,11 @@ endif;
 //AMPページがある投稿ページか
 if ( !function_exists( 'has_amp_page' ) ):
 function has_amp_page(){
-  $category_ids = get_noamp_category_ids();
+  $category_ids = get_amp_exclude_category_ids();
+
   return is_singular() &&
     is_amp_enable() &&
-    is_amp_page_enable() &&
+    is_the_page_amp_enable() &&
     !in_category( $category_ids ) && //除外カテゴリではAMPページを生成しない
     (!function_exists('is_bbpress') || !is_bbpress());
 }
@@ -103,6 +105,10 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ *?target=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ *?target=[\'][^\']*?[\']/i', '', $the_content);
 
+  //rel属性を取り除く
+  $the_content = preg_replace('/ *?rel=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ *?rel=[\'][^\']*?[\']/i', '', $the_content);
+
   //onclick属性を取り除く
   $the_content = preg_replace('/ *?onclick=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ *?onclick=[\'][^\']*?[\']/i', '', $the_content);
@@ -123,24 +129,12 @@ function convert_content_for_amp($the_content){
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
   $the_content = str_replace(' class="youtube-player" type="text/html"', ' class="youtube-player"', $the_content);
 
-  //単純に耐える属性を取り除いたらAMPエラーが出た
-  //typeが不要なタグと必要なタグもあるみたい
-  // //type属性を取り除く
-  // $the_content = preg_replace('/ *? type=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ *? type=[\'][^\']*?[\']/i', '', $the_content);
-
   //FONTタグを取り除く
   $the_content = preg_replace('/<font[^>]+?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
-  // //カエレバ・ヨメレバのAmazon商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/ecx.images-amazon.com/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://ecx.images-amazon.com', $the_content);
-  // //カエレバ・ヨメレバのAmazon商品画像にwidthとhightを追加する（SSL用）
-  // $the_content = preg_replace('/ src="(https:)?\/\/images-fe.ssl-images-amazon.com/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="https://images-fe.ssl-images-amazon.com', $the_content);
-  // //カエレバ・ヨメレバの楽天商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/thumbnail.image.rakuten.co.jp/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://thumbnail.image.rakuten.co.jp', $the_content);
-  // //カエレバ・ヨメレバのYahoo!ショッピング商品画像にwidthとhightを追加する
-  // $the_content = preg_replace('/ src="(http:)?\/\/item.shopping.c.yimg.jp/i', ' width="75" height="75" sizes="(max-width: 75px) 100vw, 75px" src="http://item.shopping.c.yimg.jp', $the_content);
+  //formタグを取り除く
+  $the_content = preg_replace('{<form.+?</form>}is', '', $the_content);
 
   //アプリーチの画像対応
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
@@ -448,3 +442,158 @@ function remove_crayon_syntax_highlighter() {
   }
 }
 endif;
+
+if ( !function_exists( 'get_the_page_content' ) ):
+function get_the_singular_content(){
+  $all_content = null;
+  //while(have_posts()): the_post();
+    ob_start();//バッファリング
+    get_template_part('tmp/body-top');//bodyタグ直下から本文まで
+    $body_top_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    if (is_single()) {
+      get_template_part('tmp/single-contents');
+    } else {
+      get_template_part('tmp/page-contents');
+    }
+    $body_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    dynamic_sidebar( 'sidebar' );
+    $sidebar_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    dynamic_sidebar( 'sidebar-scroll' );
+    $sidebar_scroll_content = ob_get_clean();
+
+    ob_start();//バッファリング
+    dynamic_sidebar('footer-left');
+    dynamic_sidebar('footer-center');
+    dynamic_sidebar('footer-right');
+    $sidebar_scroll_content = ob_get_clean();
+
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content;
+  //endwhile;
+  return $all_content;
+}
+endif;
+
+//<style amp-custom>タグの作成
+if ( !function_exists( 'generate_style_amp_custom_tag' ) ):
+function generate_style_amp_custom_tag(){?>
+  <style amp-custom>
+  <?php
+  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $css_all = '';
+    //AMPスタイルの取得
+    $css_file = get_template_directory().'/amp.css';
+    if ( file_exists($css_file) ) {
+      $css = $wp_filesystem->get_contents($css_file);//ファイルの読み込み
+      $css_all .= $css;
+    }
+
+    ///////////////////////////////////////////
+    //スキンのスタイル
+    ///////////////////////////////////////////
+    if ( get_skin_url() ) {//設定されたスキンがある場合
+      //通常のスキンスタイル
+      $skin_file = url_to_local(get_skin_url());
+      $amp_css_file = str_replace('style.css', 'amp.css', $skin_file);
+      if (file_exists($amp_css_file)) {
+        $amp_css = $wp_filesystem->get_contents($amp_css_file);//ファイルの読み込み
+        $css_all .= $amp_css;
+      }
+    }
+
+    ///////////////////////////////////////////
+    //カスタマイザーのスタイル
+    ///////////////////////////////////////////
+    ob_start();//バッファリング
+    get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
+    $css_custom = ob_get_clean();
+    $css_all .= $css_custom;
+
+    ///////////////////////////////////////////
+    //子テーマのスタイル
+    ///////////////////////////////////////////
+    if ( is_child_theme() ) {
+      $css_file_child = get_stylesheet_directory().'/amp.css';
+      if ( file_exists($css_file_child) ) {
+        $css_child = $wp_filesystem->get_contents($css_file_child);//ファイルの読み込み
+        $css_all .= $css_child;
+      }
+    }
+    //!importantの除去
+    $css_all = preg_replace('/!important/i', '', $css_all);
+
+    //CSSの縮小化
+    $css_all = minify_css($css_all);
+
+    //全てのCSSの出力
+    echo $css_all;
+  }?>
+  </style>
+<?php
+}
+endif;
+
+add_action( 'wp_loaded','wp_loaded_ampfy_html', 1 );
+if ( !function_exists( 'wp_loaded_ampfy_html' ) ):
+function wp_loaded_ampfy_html() {
+  ob_start('html_ampfy_call_back');
+}
+endif;
+
+if ( !function_exists( 'html_ampfy_call_back' ) ):
+function html_ampfy_call_back( $html ) {
+  if (is_admin()) {
+    return $html;
+  }
+  //_v('$html');
+
+  if (!is_amp()) {
+    return $html;
+  }
+
+  $head = null;
+  $body = null;
+  //ヘッダータグの取得
+  if (preg_match('{<!doctype html>.+</head>}is', $html, $m)) {
+    if (isset($m[0])) {
+      $head = $m[0];
+    }
+  }
+
+  //ボディータグの取得
+  if (preg_match('{<body .+</html>}is', $html, $m)) {
+    if (isset($m[0])) {
+      $body = $m[0];
+    }
+  }
+
+  if ($head && $body) {
+    //bodyタグ内をAMP化
+    $body = convert_content_for_amp($body);
+    return $head . $body;
+  }
+
+  //_v($body);
+  //_v('$html');
+
+  return $html;
+}
+endif;
+
+
+// //AMPタグを出力する
+// add_action( 'wp_head', 'the_amp_page_tag' );
+// if ( !function_exists( 'the_amp_page_tag' ) ):
+// function the_amp_page_tag() {
+//   if (has_amp_page()) {
+//     echo '<!-- '.THEME_NAME_CAMEL.' AMP -->'.PHP_EOL;
+//     echo '<link rel="amphtml" href="'.get_amp_permalink().'">'.PHP_EOL;
+//   }
+// }
+// endif;

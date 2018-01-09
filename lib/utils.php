@@ -238,11 +238,6 @@ if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
   //global $pagenow;
   if ( (is_code_highlight_enable() && is_singular()) || is_admin_php_page() ) {
-    // if (is_admin()) {
-    //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
-    // } else {
-    //   wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
-    // }
 
     //ソースコードハイライト表示用のスタイル
     wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
@@ -522,7 +517,7 @@ function wp_add_css_custome_to_inline_style(){
   //CSSの縮小化
   $css_custom = minify_css($css_custom);
   //HTMLにインラインでスタイルを書く
-  wp_add_inline_style( 'font-awesome-style', $css_custom );
+  wp_add_inline_style( THEME_NAME.'-style', $css_custom );
 }
 endif;
 
@@ -1072,17 +1067,17 @@ endif;
 //ソースコードの取得
 if ( !function_exists( 'get_file_contents' ) ):
 function get_file_contents($file){
-  // if (WP_Filesystem()) {
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   $contents = $wp_filesystem->get_contents($file);
-  //   return $contents;
-  // }
-  if (file_exists($file)) {
-    ob_start();
-    include($file);
-    $contents = ob_get_clean();
+  if (WP_Filesystem()) {
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $contents = $wp_filesystem->get_contents($file);
     return $contents;
   }
+  // if (file_exists($file)) {
+  //   ob_start();
+  //   include($file);
+  //   $contents = ob_get_clean();
+  //   return $contents;
+  // }
 
 }
 endif;

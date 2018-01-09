@@ -1,5 +1,5 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
-if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
+if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_amp()):
 ?>
 <div id="admin-panel" class="admin-panel">
 
@@ -58,7 +58,14 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator()):
   if (is_admin_panel_amp_area_visible()): ?>
     <div class="admin-amp">
       <span class="fa fa-bolt fa-fw"></span>
-      AMP
+      <a href="<?php echo get_amp_permalink(); ?> "><?php _e( 'AMPページへ', THEME_NAME ) ?></a>
+      <?php
+        $encoded_url = str_replace('&amp;', '&', get_amp_permalink());
+        $encoded_url = urlencode($encoded_url);
+      ?>
+      <a href="https://search.google.com/test/amp?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Google AMPテスト', THEME_NAME ) ?></a>
+      <a href="https://validator.ampproject.org/#url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'The AMP Validator', THEME_NAME ) ?></a>
+      <a href="https://ampbench.appspot.com/validate?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( ' AMPBench', THEME_NAME ) ?></a>
     </div>
   <?php endif ?>
 

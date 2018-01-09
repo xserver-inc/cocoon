@@ -2,7 +2,7 @@
 <div id="sns-share-top" class="postbox">
   <h2 class="hndle"><?php _e( '本文上シェアボタン', THEME_NAME ) ?></h2>
   <div class="inside">
-    <p><?php _e( '本文上シェアボタンの表示に関する設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '本文上シェアボタンの表示に関する設定です。※AMPページでスタイルは反映されません。', THEME_NAME ) ?></p>
     <table class="form-table">
       <tbody>
 

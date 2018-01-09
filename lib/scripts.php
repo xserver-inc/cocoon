@@ -1,7 +1,8 @@
 <?php //CSSやJSファイルの呼び出し
 
-if ( !function_exists( 'cocoon_scripts' ) ):
-function cocoon_scripts() {
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_scripts_custom', 1 );
+if ( !function_exists( 'wp_enqueue_scripts_custom' ) ):
+function wp_enqueue_scripts_custom() {
 ////////////////////////////////////////////////////////////////
 //
 //スタイルシートの呼び出し
@@ -116,7 +117,21 @@ function cocoon_scripts() {
   ///////////////////////////////////////////
   //jQueryの読み込み
   ///////////////////////////////////////////
-  wp_enqueue_script('jquery');
+  //wp_enqueue_script('jquery');
+
+  //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
+  if (!is_admin()) {
+    wp_deregister_script('jquery');
+    //wp_deregister_script('jquery-core');
+    wp_deregister_script('jquery-migrate');
+
+    wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
+    wp_enqueue_script('jquery');
+
+    wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
+    wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
+  }
+
 
   ///////////////////////////////////////////
   //コメント返信時のフォームの移動（WPライブラリから呼び出し）
@@ -171,4 +186,14 @@ function cocoon_scripts() {
 
 }
 endif;
-add_action( 'wp_enqueue_scripts', 'cocoon_scripts', 1 );
+
+
+
+// add_filter( 'script_loader_tag', 'lagy_script_loader_tag', 10, 3 );
+// if ( !function_exists( 'script_loader_tag' ) ):
+// function lagy_script_loader_tag( $tag, $handle, $src ) {
+
+//         return '<script type="text/javascript" src="' . $src . '" async defer></script>' . "\n";
+
+// }
+// endif;

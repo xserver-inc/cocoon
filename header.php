@@ -5,6 +5,10 @@
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
 get_template_part('tmp/head-analytics'); ?>
 <meta charset="utf-8">
+<?php //AMPの案内タグを出力
+if ( has_amp_page() ): ?>
+<link rel="amphtml" href="<?php echo get_amp_permalink(); ?>">
+<?php endif ?>
 <?php //Google Search Consoleのサイト認証IDの表示
 if ( get_google_search_console_id() ): ?>
 <!-- Google Search Console -->
@@ -45,34 +49,5 @@ get_template_part('tmp-user/head-insert'); ?>
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
 get_template_part('tmp/body-top-analytics'); ?>
 
-<div id="container" class="container<?php echo get_additional_container_classes(); ?> cf">
-  <?php //サイトヘッダー
-  get_template_part('tmp/header-container'); ?>
-
-  <?php //通知エリア
-  get_template_part('tmp/notice'); ?>
-
-  <?php //アピールエリア
-  get_template_part('tmp/appeal'); ?>
-
-  <?php //カルーセル
-  get_template_part('tmp/carousel'); ?>
-
-  <?php //投稿パンくずリストがメイン手前の場合
-  if (is_single() && is_single_breadcrumbs_position_main_before()){
-    get_template_part('tmp/breadcrumbs');
-  } ?>
-
-  <?php //固定ページパンくずリストがメイン手前の場合
-  if (is_page() && is_page_breadcrumbs_position_main_before()){
-    get_template_part('tmp/breadcrumbs-page');
-  } ?>
-
-  <?php //メインカラム手前に挿入するユーザー用テンプレート
-  get_template_part('tmp-user/main-before'); ?>
-
-  <div id="content" class="content cf">
-
-    <div id="content-in" class="content-in wrap cf">
-
-        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
+get_template_part('tmp/body-top'); ?>

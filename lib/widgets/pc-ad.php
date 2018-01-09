@@ -17,7 +17,7 @@ class PcAdWidgetItem extends WP_Widget {
     $format = apply_filters( 'widget_pc_ad_format', $instance['ad_format'] );
     //フォーマットが指定されているときはAdSenseコードフォーマットに合わせる
     if ($format != 'none') {
-      $ad = generate_adsense_responsive_code(to_adsense_format($format), $ad);
+      $ad = get_adsense_responsive_code(to_adsense_format($format), $ad);
     }
 
 

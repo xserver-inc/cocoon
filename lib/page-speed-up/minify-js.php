@@ -3,11 +3,11 @@
 ///////////////////////////////////////
 // JSファイルとインラインJSの縮小化
 ///////////////////////////////////////
-if ( !function_exists( 'tag_code_to_mintify_js' ) ):
-function tag_code_to_mintify_js($buffer) {
+if ( !function_exists( 'tag_code_to_minify_js' ) ):
+function tag_code_to_minify_js($buffer) {
 
 
-  if (is_js_mintify_enable()) {
+  if (is_js_minify_enable()) {
     //最終出力縮小化JSコード
     //$last_minfified_js = null;
 
@@ -47,8 +47,9 @@ function tag_code_to_mintify_js($buffer) {
               //jQueryは除外
               //(strpos($url, 'js/jquery/jquery.js') !== false) ||
               //アドミンバーのJSは除外
-              (strpos($url, 'js/admin-bar.min.js') !== false) ||
-              (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+              (strpos($url, 'js/admin-bar.min.js') !== false)
+              || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
             ) {
@@ -56,37 +57,22 @@ function tag_code_to_mintify_js($buffer) {
             }
 
             //除外リストにマッチするCSS URLは縮小化しない
-            if (is_url_matche_list($url, get_js_mintify_exclude_list())) {
+            if (is_url_matche_list($url, get_js_minify_exclude_list())) {
               continue;
             }
-
-            // if (
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   //(strpos($url, '/plugins/highlight-js/highlight.min.js') === false) &&
-            //   (strpos($url, '/plugins/stickyfill/dist/stickyfill.min.js') === false) &&
-            //   (strpos($url, '/plugins/slick/slick.min.js') === false) &&
-            //   (strpos($url, '/plugins/slicknav/jquery.slicknav.min.js') === false) &&
-            //   (strpos($url, THEME_NAME.'/javascript.js') === false) &&
-            //   (strpos($url, '/plugins/baguettebox/dist/baguetteBox.min.js') === false)
-            // ) {
-            //   continue;
-            // }
 
             //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
             $url = preg_replace('/\?.*$/m', '', $url);
             //_v($url);//JSコード変換するURL
 
             //JS URLからJSコードの取得
-            $js = js_url_to_js_mintify_code( $url );
+            $js = js_url_to_js_minify_code( $url );
             //縮小化可能ななJSだと時
-            if ($js) {
+            if ($js !== false) {
               //_v($js);//変換したJSコード
 
               //JSを縮小化したJSファイルURL linkタグをインラインにする
-              $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+              $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
 
 
               //$last_minfified_js .= $js;
@@ -101,16 +87,16 @@ function tag_code_to_mintify_js($buffer) {
           //_v($js_code);
           $js = minify_js($js_code);
           //インラインタイプのscriptタグを縮小化して置換する
-          $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+          $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
         }
 
       }//foreach
     }//$res && isset($m[1])
-  }//is_js_mintify_enable()
+  }//is_js_minify_enable()
 
 
   /*
-  if (is_js_mintify_enable()) {
+  if (is_js_minify_enable()) {
     //最終出力縮小化JSコード
     $last_minfified_js = null;
 
@@ -153,7 +139,7 @@ function tag_code_to_mintify_js($buffer) {
           _v($url);//JSコード変換するURL
 
           //JS URLからJSコードの取得
-          $js = js_url_to_js_mintify_code( $url );
+          $js = js_url_to_js_minify_code( $url );
           //縮小化可能ななJSだと時
           if ($js) {
             //_v($js);//変換したJSコード
@@ -200,7 +186,7 @@ function tag_code_to_mintify_js($buffer) {
 
     //縮小化したJavaScriptをデータの最後に付け加える
     $buffer = $buffer.PHP_EOL.'<script type="text/javascript">'.$last_minfified_js.'</script>';
-  }//is_js_mintify_enable()
+  }//is_js_minify_enable()
   */
   //_v($buffer);
   return $buffer;
@@ -209,8 +195,8 @@ endif;
 
 
 //JavaScript URLからコードを取り出して縮小化コードを返す
-if ( !function_exists( 'js_url_to_js_mintify_code' ) ):
-function js_url_to_js_mintify_code( $url ) {
+if ( !function_exists( 'js_url_to_js_minify_code' ) ):
+function js_url_to_js_minify_code( $url ) {
   $js = false;
   //URLファイルをローカルファイルパスに変更
   $local_file = url_to_local($url);
@@ -245,5 +231,34 @@ function remove_code_comments($code){
   $code = preg_replace('{/\*.+?\*/}is', '', $code);
   $code = preg_replace('{^\s+//.+$}im', '', $code);
   return $code;
+}
+endif;
+
+/*async defer*/
+add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );
+if ( !function_exists( 'add_defer_async_scripts' ) ):
+function add_defer_async_scripts( $tag, $handle, $src ) {
+  $async_defer = array(
+    'jquery',
+    'jquery-migrate',
+    'jquery-core',
+  );
+  $async_scripts = array(
+    //'crayon_js',
+  );
+  $defer_scripts = array(
+    //'code-highlight-js',
+  );
+    if ( in_array( $handle, $async_defer ) ) {
+        return '<script type="text/javascript" src="' . $src . '" async defer></script>' . PHP_EOL;
+    }
+    if ( in_array( $handle, $async_scripts ) ) {
+        return '<script type="text/javascript" src="' . $src . '" async></script>' . PHP_EOL;
+    }
+    if ( in_array( $handle, $defer_scripts ) ) {
+        return '<script type="text/javascript" src="' . $src . '" defer></script>' . PHP_EOL;
+    }
+
+    return $tag;
 }
 endif;
