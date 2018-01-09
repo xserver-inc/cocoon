@@ -12,6 +12,10 @@ function code_minify_call_back($buffer) {
     return $buffer;
   }
 
+  if (is_amp()) {
+    return $buffer;
+  }
+
   //_v('$buffer');
   //HTMLの縮小化
   if (is_html_minify_enable()) {

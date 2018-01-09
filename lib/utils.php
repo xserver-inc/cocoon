@@ -517,7 +517,7 @@ function wp_add_css_custome_to_inline_style(){
   //CSSの縮小化
   $css_custom = minify_css($css_custom);
   //HTMLにインラインでスタイルを書く
-  wp_add_inline_style( 'font-awesome-style', $css_custom );
+  wp_add_inline_style( THEME_NAME.'-style', $css_custom );
 }
 endif;
 
@@ -1067,17 +1067,17 @@ endif;
 //ソースコードの取得
 if ( !function_exists( 'get_file_contents' ) ):
 function get_file_contents($file){
-  // if (WP_Filesystem()) {
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   $contents = $wp_filesystem->get_contents($file);
-  //   return $contents;
-  // }
-  if (file_exists($file)) {
-    ob_start();
-    include($file);
-    $contents = ob_get_clean();
+  if (WP_Filesystem()) {
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $contents = $wp_filesystem->get_contents($file);
     return $contents;
   }
+  // if (file_exists($file)) {
+  //   ob_start();
+  //   include($file);
+  //   $contents = ob_get_clean();
+  //   return $contents;
+  // }
 
 }
 endif;

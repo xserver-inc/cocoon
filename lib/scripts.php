@@ -1,8 +1,8 @@
 <?php //CSSやJSファイルの呼び出し
 
-add_action( 'wp_enqueue_scripts', 'cocoon_scripts', 1 );
-if ( !function_exists( 'cocoon_scripts' ) ):
-function cocoon_scripts() {
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_scripts_custom', 1 );
+if ( !function_exists( 'wp_enqueue_scripts_custom' ) ):
+function wp_enqueue_scripts_custom() {
 ////////////////////////////////////////////////////////////////
 //
 //スタイルシートの呼び出し
@@ -186,3 +186,14 @@ function cocoon_scripts() {
 
 }
 endif;
+
+
+
+// add_filter( 'script_loader_tag', 'lagy_script_loader_tag', 10, 3 );
+// if ( !function_exists( 'script_loader_tag' ) ):
+// function lagy_script_loader_tag( $tag, $handle, $src ) {
+
+//         return '<script type="text/javascript" src="' . $src . '" async defer></script>' . "\n";
+
+// }
+// endif;

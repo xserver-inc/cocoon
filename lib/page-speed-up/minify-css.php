@@ -31,6 +31,8 @@ function tag_code_to_minify_css($buffer) {
         $tag = $match;
         //CSSファイルURL
         $url = $m[$file][$i];
+        //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
+        $url = preg_replace('/\?.*$/m', '', $url);
         //_v($url);
         //CSSコード
         $css_inline_code = $m[$code][$i];
@@ -58,8 +60,6 @@ function tag_code_to_minify_css($buffer) {
               continue;
             }
 
-            //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
-            $url = preg_replace('/\?.*$/m', '', $url);
             //_v($url);//CSSコード変換するURL
 
             //CSS URLからCSSコードの取得
@@ -75,7 +75,19 @@ function tag_code_to_minify_css($buffer) {
               $last_minfified_css .= $css;
             }
 
-          }//strpos($url, site_url()) !== false
+          } else {//strpos($url, site_url()) !== false
+            //外部ファイル名の場合
+            //_v($url);
+            if (strpos($url, FONT_AWESOME_CDN_URL) !== false) {
+              _v(get_template_directory().'/css/fontawesome.min.css');
+              $css = get_file_contents(get_template_directory().'/css/fontawesome.min.css');
+              if ($css !== false) {
+                //ヘッダー出力コードからstyleタグを削除
+                $buffer = str_replace($tag, '', $buffer);
+                $last_minfified_css .= $css;
+              }
+            }
+          }//外部URLの場合終了
         }//$url
 
         ////////////////////////////////
