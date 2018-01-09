@@ -98,10 +98,18 @@ if ( !function_exists( 'get_amp_adsense_responsive_code' ) ):
 function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
   //$codeに広告コードが入っている場合はそこから取得する
   if (get_adsense_ids($code)) {
+    //関連コンテンツユニットの場合
+    if ($format == DATA_AD_FORMAT_AUTORELAXED) {
+      $layout = ' layout="fixed-height" height="600" ';
+    } else {
+      $layout = ' width="300" height="250" ';
+      //$layout = ' layout="responsive" width="300" height="250" ';
+      //$layout = ' layout="fixed-height" height="280" ';
+    }
+
     return
       '<amp-ad
-      width="300"
-      height="250"
+      '.$layout.'
       type="adsense"
       data-ad-client="'.get_adsense_data_ad_client($code).'"
       data-ad-slot="'.get_adsense_data_ad_slot($code).'">
