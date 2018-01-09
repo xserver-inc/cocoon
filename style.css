@@ -720,8 +720,9 @@ img {
 
 .cat-label {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0.3em;
+  left: 0.3em;
+  border: 1px solid #eee;
   font-size: 11px;
   color: #fff;
   background-color: rgba(51, 51, 51, 0.7);
@@ -845,7 +846,7 @@ img {
   font-size: 14px;
   padding: 4px 8px;
   opacity: 0.9;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
 }
 .eye-catch img {
   display: block;

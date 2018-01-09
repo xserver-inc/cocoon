@@ -36,8 +36,9 @@
 
 .cat-label{
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0.3em;
+  left: 0.3em;
+  border: 1px solid #eee;
   font-size: 11px;
   color: $bg_white;
   background-color: $transpalent_black_bgc;
