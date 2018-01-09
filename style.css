@@ -56,11 +56,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .ff-meiryo {
-  font-family: "メイリオ", "Meiryo",  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
 }
 
 .ff-ms-pgothic {
-  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
+  font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
 }
 
 .ff-noto-sans-jp {
@@ -92,7 +92,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .sub-caption {
-  font-family: "MV Boli", "KaiTi", "Comic Sans MS", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Comic Sans MS", "KaiTi", "MV Boli", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-weight: normal;
   font-size: 0.7em;
 }
@@ -204,7 +204,7 @@ body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
 
 body {
   /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   /* フォントのサイズ */
   font-size: 18px;
   /* フォントの色 */

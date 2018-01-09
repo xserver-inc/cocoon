@@ -6,7 +6,7 @@
 // @import "fontawesome";
 
 //フォント
-$default_font: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$default_font: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
 $meiryo_font: "Meiryo", sans-serif;
 $navi_font: FontAwesome, $default_font;
 
@@ -17,10 +17,10 @@ $navi_font: FontAwesome, $default_font;
 
 //フォントファミリー
 .ff-meiryo{
-  font-family: "メイリオ", "Meiryo",  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
 }
 .ff-ms-pgothic{
-  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
+  font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
 }
 .ff-noto-sans-jp{
   font-family: "Noto Sans JP" ,sans-serif;
@@ -45,7 +45,7 @@ $navi_font: FontAwesome, $default_font;
 }
 
 .sub-caption{
-  font-family: "MV Boli", "KaiTi", "Comic Sans MS", "Lucida Console", "Arial", $default_font;
+  font-family: "Comic Sans MS", "KaiTi", "MV Boli", "Lucida Console", "Arial", $default_font;
   font-weight: normal;
   font-size: 0.7em;
 }

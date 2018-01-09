@@ -37,10 +37,10 @@
   font-size: 22px; }
 
 .ff-meiryo {
-  font-family: "メイリオ", "Meiryo",  "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
 
 .ff-ms-pgothic {
-  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "メイリオ", "Meiryo", sans-serif; }
+  font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
 
 .ff-noto-sans-jp {
   font-family: "Noto Sans JP" ,sans-serif; }
@@ -64,7 +64,7 @@
   font-family: "Sawarabi Mincho" ,sans-serif; }
 
 .sub-caption {
-  font-family: "MV Boli", "KaiTi", "Comic Sans MS", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Comic Sans MS", "KaiTi", "MV Boli", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-weight: normal;
   font-size: 0.7em; }
 
@@ -459,7 +459,7 @@
   /* Button Text */
   /* Button Lines */
   /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   /* フォントのサイズ */
   font-size: 18px;
   /* フォントの色 */
@@ -487,7 +487,7 @@
       color: #333435; }
   .demo body {
     /* フォントの種類 */
-    font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
     /* フォントのサイズ */
     font-size: 18px;
     /* フォントの色 */
