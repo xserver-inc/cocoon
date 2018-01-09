@@ -78,8 +78,7 @@ function tag_code_to_minify_css($buffer) {
           } else {//strpos($url, site_url()) !== false
             //外部ファイル名の場合
             //_v($url);
-            if (strpos($url, FONT_AWESOME_CDN_URL) !== false) {
-              _v(get_template_directory().'/css/fontawesome.min.css');
+            if (!is_amp() && strpos($url, FONT_AWESOME_CDN_URL) !== false) {
               $css = get_file_contents(get_template_directory().'/css/fontawesome.min.css');
               if ($css !== false) {
                 //ヘッダー出力コードからstyleタグを削除
