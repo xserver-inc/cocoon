@@ -15,7 +15,8 @@
 }
 
 .post-date,
-.post-update{
+.post-update,
+.amp-back {
   @extend .entry-category;
   margin-right: 8px;
 }
@@ -30,4 +31,8 @@
 
 .post-update::before{
   @include fontawesome('\f1da');
+}
+
+.amp-back::before{
+  @include fontawesome('\f0e7');
 }

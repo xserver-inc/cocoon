@@ -822,12 +822,14 @@
   .demo .entry-card-content {
     margin-left: 330px; }
   .demo .entry-category, .demo .post-date,
-  .demo .post-update {
+  .demo .post-update,
+  .demo .amp-back {
     padding: 2px;
     display: inline;
     font-size: 0.7em; }
   .demo .entry-category::before, .demo .post-date::before,
-  .demo .post-update::before {
+  .demo .post-update::before,
+  .demo .amp-back::before {
     font-family: FontAwesome;
     content: "";
     padding-right: 3px; }
@@ -1246,7 +1248,8 @@
     .demo .date-tags span:last-child {
       margin-right: 0; }
   .demo .post-date,
-  .demo .post-update {
+  .demo .post-update,
+  .demo .amp-back {
     margin-right: 8px; }
   .demo .related-entry-post-date {
     margin-right: 0; }
@@ -1257,6 +1260,10 @@
   .demo .post-update::before {
     font-family: FontAwesome;
     content: "";
+    padding-right: 3px; }
+  .demo .amp-back::before {
+    font-family: FontAwesome;
+    content: "";
     padding-right: 3px; }
   .demo .related-entry-heading,
   .demo .comment-title {

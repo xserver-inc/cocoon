@@ -47,8 +47,9 @@ function tag_code_to_minify_js($buffer) {
               //jQueryは除外
               //(strpos($url, 'js/jquery/jquery.js') !== false) ||
               //アドミンバーのJSは除外
-              (strpos($url, 'js/admin-bar.min.js') !== false) ||
-              (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+              (strpos($url, 'js/admin-bar.min.js') !== false)
+              || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
             ) {
@@ -71,7 +72,7 @@ function tag_code_to_minify_js($buffer) {
               //_v($js);//変換したJSコード
 
               //JSを縮小化したJSファイルURL linkタグをインラインにする
-              $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+              $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
 
 
               //$last_minfified_js .= $js;
@@ -86,7 +87,7 @@ function tag_code_to_minify_js($buffer) {
           //_v($js_code);
           $js = minify_js($js_code);
           //インラインタイプのscriptタグを縮小化して置換する
-          $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+          $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
         }
 
       }//foreach
@@ -230,5 +231,34 @@ function remove_code_comments($code){
   $code = preg_replace('{/\*.+?\*/}is', '', $code);
   $code = preg_replace('{^\s+//.+$}im', '', $code);
   return $code;
+}
+endif;
+
+/*async defer*/
+add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );
+if ( !function_exists( 'add_defer_async_scripts' ) ):
+function add_defer_async_scripts( $tag, $handle, $src ) {
+  $async_defer = array(
+    'jquery',
+    'jquery-migrate',
+    'jquery-core',
+  );
+  $async_scripts = array(
+    //'crayon_js',
+  );
+  $defer_scripts = array(
+    //'code-highlight-js',
+  );
+    if ( in_array( $handle, $async_defer ) ) {
+        return '<script type="text/javascript" src="' . $src . '" async defer></script>' . PHP_EOL;
+    }
+    if ( in_array( $handle, $async_scripts ) ) {
+        return '<script type="text/javascript" src="' . $src . '" async></script>' . PHP_EOL;
+    }
+    if ( in_array( $handle, $defer_scripts ) ) {
+        return '<script type="text/javascript" src="' . $src . '" defer></script>' . PHP_EOL;
+    }
+
+    return $tag;
 }
 endif;

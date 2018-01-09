@@ -58,7 +58,7 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
   if (is_admin_panel_amp_area_visible()): ?>
     <div class="admin-amp">
       <span class="fa fa-bolt fa-fw"></span>
-      AMP
+      <a href="<?php echo get_amp_permalink(); ?> "><?php _e( 'AMPページへ', THEME_NAME ) ?></a>
     </div>
   <?php endif ?>
 

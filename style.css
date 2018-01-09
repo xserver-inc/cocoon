@@ -597,13 +597,15 @@ img {
   margin-left: 330px; }
 
 .entry-category, .post-date,
-.post-update {
+.post-update,
+.amp-back {
   padding: 2px;
   display: inline;
   font-size: 0.7em; }
 
 .entry-category::before, .post-date::before,
-.post-update::before {
+.post-update::before,
+.amp-back::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px; }
@@ -1091,7 +1093,8 @@ span.internal-icon {
     margin-right: 0; }
 
 .post-date,
-.post-update {
+.post-update,
+.amp-back {
   margin-right: 8px; }
 
 .related-entry-post-date {
@@ -1105,6 +1108,11 @@ span.internal-icon {
 .post-update::before {
   font-family: FontAwesome;
   content: "";
+  padding-right: 3px; }
+
+.amp-back::before {
+  font-family: FontAwesome;
+  content: "";
   padding-right: 3px; }
 
 /************************************
