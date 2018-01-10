@@ -496,6 +496,14 @@ function generate_style_amp_custom_tag(){?>
     }
 
     ///////////////////////////////////////////
+    //IcoMoonのスタイル
+    ///////////////////////////////////////////
+    $css_icomoom = css_url_to_css_minify_code(get_template_directory_uri().'/webfonts/icomoon/style.css');
+    if ($css_icomoom !== false) {
+      $css_all .= $css_icomoom;
+    }
+
+    ///////////////////////////////////////////
     //スキンのスタイル
     ///////////////////////////////////////////
     if ( get_skin_url() ) {//設定されたスキンがある場合
@@ -526,6 +534,7 @@ function generate_style_amp_custom_tag(){?>
         $css_all .= $css_child;
       }
     }
+
     //!importantの除去
     $css_all = preg_replace('/!important/i', '', $css_all);
 
