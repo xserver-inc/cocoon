@@ -549,6 +549,15 @@ function generate_style_amp_custom_tag(){?>
 }
 endif;
 
+//AMP用のCSSから不要なCSSコードを取り除く（なるべくAMPの50KB制限に引っかからないようにサイズ節約）
+if ( !function_exists( 'get_dieted_amp_css_tag' ) ):
+function get_dieted_amp_css_tag($amp_css_tag, $body_html){
+  $css = $amp_css_tag;
+  $b = $body_html;
+  return $css;
+}
+endif;
+
 add_action( 'wp_loaded','wp_loaded_ampfy_html', 1 );
 if ( !function_exists( 'wp_loaded_ampfy_html' ) ):
 function wp_loaded_ampfy_html() {
