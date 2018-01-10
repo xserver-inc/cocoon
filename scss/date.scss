@@ -36,4 +36,5 @@
 
 .amp-back::before{
   @include fontawesome('\f0e7');
+  padding-right: 0;
 }

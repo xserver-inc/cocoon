@@ -710,6 +710,7 @@ img {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
+  padding-right: 0;
 }
 
 /************************************

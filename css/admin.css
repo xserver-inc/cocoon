@@ -807,7 +807,8 @@
   .demo .amp-back::before {
     font-family: FontAwesome;
     content: "";
-    padding-right: 3px; }
+    padding-right: 3px;
+    padding-right: 0; }
   .demo .related-entry-heading,
   .demo .comment-title {
     margin: 22px 0; }
