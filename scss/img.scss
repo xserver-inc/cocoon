@@ -14,16 +14,16 @@ img{
 ** 画像の囲み効果
 ************************************/
 /*ボーダー*/
-.iwe-border img:not(.blogcard-thumb-image){
+.iwe-border p img{
   border: 1px solid $basic_border_color;
 }
 
 /*ボーダー（太線）*/
-.iwe-border-bold img:not(.blogcard-thumb-image){
+.iwe-border-bold p img{
   border: 4px solid $current_bgc;
 }
 /*シャドー*/
-.iwe-shadow img:not(.blogcard-thumb-image){
+.iwe-shadow p img{
   box-shadow: 5px 5px 15px $x_thin;
 }
 

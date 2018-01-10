@@ -544,11 +544,11 @@
   .demo img {
     max-width: 100%;
     height: auto; }
-  .demo .iwe-border img:not(.blogcard-thumb-image) {
+  .demo .iwe-border p img {
     border: 1px solid #cccfd2; }
-  .demo .iwe-border-bold img:not(.blogcard-thumb-image) {
+  .demo .iwe-border-bold p img {
     border: 4px solid #eeeff0; }
-  .demo .iwe-shadow img:not(.blogcard-thumb-image) {
+  .demo .iwe-shadow p img {
     box-shadow: 5px 5px 15px #dddedf; }
   .demo .header-in {
     display: flex;
