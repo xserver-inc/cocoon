@@ -30,7 +30,17 @@
     'label_submit' => get_comment_submit_label(),
   );
   echo '<aside class="comment-form">';
-  comment_form($args);
+  if (!is_amp()) {
+    //通常ページ
+    comment_form($args);
+  } else {
+    //AMPページ?>
+    <h3 id="reply-title" class="comment-reply-title"><?php echo get_comment_form_heading(); ?></h3>
+    <a class="amp-comment-btn" href="<?php echo get_permalink().'#respond'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
+    <?php
+  }
+
+
   echo '</aside>';
 
   ?>
