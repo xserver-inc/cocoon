@@ -6,10 +6,6 @@
 @import "img";
 //ヘッダー
 @import "header";
-// //通知
-// @import "notice";
-// //アピールエリア
-// @import "appeal";
 //グローバルナビ
 @import "navi";
 //エントリーカード
@@ -40,26 +36,12 @@
 @import "post-navi";
 //フッター
 @import "footer";
-// //SNSシェア
-// @import "sns-share";
-// //SNSフォロー
-// @import "sns-follow";
 //広告
 @import "ad";
 //YouTube iframeのようなメディア表示
 @import "media";
-// //入力フォーム
-// @import "forms";
-//ボタン
-// @import "buttons";
-// //カルーセル
-// @import "carousel";
 //プロフィールボックス
 @import "author-box";
-// //Facebookボックス
-// @import "fb-like-box";
-// //Facebookバルーン
-// @import "fb-like-balloon";
 //CTAボックス
 @import "cta-box";
 //拡張クラス
@@ -68,6 +50,26 @@
 @import "extension-layout";
 //吹き出し
 @import "speech-balloon";
+//カエレバ・ヨメレバ
+@import "kaereba";
+// //通知
+// @import "notice";
+// //アピールエリア
+// @import "appeal";
+// //SNSシェア
+// @import "sns-share";
+// //SNSフォロー
+// @import "sns-follow";
+// //入力フォーム
+// @import "forms";
+//ボタン
+// @import "buttons";
+// //カルーセル
+// @import "carousel";
+// //Facebookボックス
+// @import "fb-like-box";
+// //Facebookバルーン
+// @import "fb-like-balloon";
 // //管理パネル
 // @import "admin-panel";
 // //Lightbox
@@ -82,28 +84,26 @@
 // @import "slick";
 // //SlickNav
 // @import "slicknav";
-//カエレバ・ヨメレバ
-@import "kaereba";
 
-// //1240px以下
-// @media screen and (max-width: 1240px){
-//   @import "breakpoints/max-width-1240";
+// // //1240px以下
+// // @media screen and (max-width: 1240px){
+// //   @import "breakpoints/max-width-1240";
+// // }
+
+// //1030px以下
+// @media screen and (max-width: 1030px){
+//   @import "breakpoints/max-width-1030";
 // }
 
-//1030px以下
-@media screen and (max-width: 1030px){
-  @import "breakpoints/max-width-1030";
-}
+// //768px以下
+// @media screen and (max-width: 768px){
+//   @import "breakpoints/max-width-768";
+// }
 
-//768px以下
-@media screen and (max-width: 768px){
-  @import "breakpoints/max-width-768";
-}
-
-//480px以下
-@media screen and (max-width: 480px){
-  @import "breakpoints/max-width-480";
-}
+// //480px以下
+// @media screen and (max-width: 480px){
+//   @import "breakpoints/max-width-480";
+// }
 
 // //印刷用
 // @media print{

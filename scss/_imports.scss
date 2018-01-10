@@ -1,109 +1,146 @@
 //読み込みSCSSファイルまとめ
 
-//基本表示
-@import "basic";
-//画像関係
-@import "img";
-//ヘッダー
-@import "header";
-//グローバルナビ
-@import "navi";
+// //基本表示
+// @import "basic";
+// //画像関係
+// @import "img";
+// //ヘッダー
+// @import "header";
+// //グローバルナビ
+// @import "navi";
+// //通知
+// @import "notice";
+// //アピールエリア
+// @import "appeal";
+// //カルーセル
+// @import "carousel";
+// //エントリーカード
+// @import "entry-card";
+// //パンくずリスト
+// @import "breadcrumbs";
+// //コンテンツ
+// @import "content";
+// //SNSシェア
+// @import "sns-share";
+// //SNSフォロー
+// @import "sns-follow";
+// //日付など
+// @import "date";
+// //関連記事
+// @import "related-entry-card";
+// //ブログカード
+// @import "blogcard";
+// //目次
+// @import "toc";
+// //コメント
+// @import "comments";
+// //サイドバー
+// @import "sidebar";
+// //ウィジェット
+// @import "widget";
+// //ページネーション
+// @import "pagination";
+// //マルチページナビ
+// @import "pager-links";
+// //投稿ナビ
+// @import "post-navi";
+// //フッター
+// @import "footer";
+// //広告
+// @import "ad";
+// //YouTube iframeのようなメディア表示
+// @import "media";
+// //入力フォーム
+// @import "forms";
+// //ボタン
+// @import "buttons";
+// //プロフィールボックス
+// @import "author-box";
+// //Facebookボックス
+// @import "fb-like-box";
+// //Facebookバルーン
+// @import "fb-like-balloon";
+// //CTAボックス
+// @import "cta-box";
+// //拡張クラス
+// @import "extension";
+// //拡張クラス（レイアウト）
+// @import "extension-layout";
+// //吹き出し
+// @import "speech-balloon";
+// //管理パネル
+// @import "admin-panel";
+// // //Lightbox
+// // @import "lightbox";
+// //lity
+// //@import "lity";
+// //IcoMoon
+// //@import "icomoon";
+// //Clingify
+// @import "clingify";
+// //Slick
+// @import "slick";
+// //SlickNav
+// @import "slicknav";
+// //カエレバ・ヨメレバ
+// @import "kaereba";
+
+///////////////////////////////////////
+// 通常ページ・AMPページ共通
+///////////////////////////////////////
+@import "amp-imports";
+
+
 //通知
 @import "notice";
 //アピールエリア
 @import "appeal";
-//カルーセル
-@import "carousel";
-//エントリーカード
-@import "entry-card";
-//パンくずリスト
-@import "breadcrumbs";
-//コンテンツ
-@import "content";
 //SNSシェア
 @import "sns-share";
 //SNSフォロー
 @import "sns-follow";
-//日付など
-@import "date";
-//関連記事
-@import "related-entry-card";
-//ブログカード
-@import "blogcard";
-//目次
-@import "toc";
-//コメント
-@import "comments";
-//サイドバー
-@import "sidebar";
-//ウィジェット
-@import "widget";
-//ページネーション
-@import "pagination";
-//マルチページナビ
-@import "pager-links";
-//投稿ナビ
-@import "post-navi";
-//フッター
-@import "footer";
-//広告
-@import "ad";
-//YouTube iframeのようなメディア表示
-@import "media";
 //入力フォーム
 @import "forms";
 //ボタン
 @import "buttons";
-//プロフィールボックス
-@import "author-box";
+//カルーセル
+@import "carousel";
 //Facebookボックス
 @import "fb-like-box";
 //Facebookバルーン
 @import "fb-like-balloon";
-//CTAボックス
-@import "cta-box";
-//拡張クラス
-@import "extension";
-//拡張クラス（レイアウト）
-@import "extension-layout";
-//吹き出し
-@import "speech-balloon";
 //管理パネル
 @import "admin-panel";
-// //Lightbox
-// @import "lightbox";
-//lity
-//@import "lity";
-//IcoMoon
-//@import "icomoon";
-//Clingify
-@import "clingify";
 //Slick
 @import "slick";
 //SlickNav
 @import "slicknav";
-//カエレバ・ヨメレバ
-@import "kaereba";
 
-// //1240px以下
-// @media screen and (max-width: 1240px){
-//   @import "breakpoints/max-width-1240";
+// // //1240px以下
+// // @media screen and (max-width: 1240px){
+// //   @import "breakpoints/max-width-1240";
+// // }
+
+// //1030px以下
+// @media screen and (max-width: 1030px){
+//   @import "breakpoints/max-width-1030";
 // }
 
-//1030px以下
-@media screen and (max-width: 1030px){
-  @import "breakpoints/max-width-1030";
-}
+// //768px以下
+// @media screen and (max-width: 768px){
+//   @import "breakpoints/max-width-768";
+// }
 
-//768px以下
-@media screen and (max-width: 768px){
-  @import "breakpoints/max-width-768";
-}
+// //480px以下
+// @media screen and (max-width: 480px){
+//   @import "breakpoints/max-width-480";
+// }
 
-//480px以下
-@media screen and (max-width: 480px){
-  @import "breakpoints/max-width-480";
-}
+///////////////////////////////////////
+// メディアクエリ
+///////////////////////////////////////
+@import "breakpoints/breakpoints";
+
 
 //印刷用
 @media print{

@@ -4,6 +4,10 @@
 @import "amp-imports";
 @import "pre";
 
+///////////////////////////////////////
+// メディアクエリ
+///////////////////////////////////////
+@import "breakpoints/breakpoints";
 
 img{
   border-width:0px;

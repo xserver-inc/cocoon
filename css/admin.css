@@ -72,7 +72,7 @@
   position: relative;
   height: 100%; }
 
-.demo .carousel-entry-card-thumb, .demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .widget-entry-card-thumb {
+.demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .widget-entry-card-thumb, .demo .carousel-entry-card-thumb {
   float: left;
   margin-top: 4px;
   position: relative; }
@@ -246,19 +246,26 @@
   ** フッターメニュー
   ************************************/
   /************************************
-  ** アピールエリア
-  ************************************/
-  /************************************
-  ** カルーセル
-  ************************************/
-  /************************************
-  ** カルーセルの非表示設定
-  ************************************/
-  /************************************
   ** エントリーカードの設定
   ************************************/
   /************************************
   ** エントリーカードタイプ
+  ************************************/
+  /************************************
+  ** 日付関係のスタイル
+  ************************************/
+  /************************************
+  ** 関連記事
+  ************************************/
+  /*関連エントリーカード*/
+  /************************************
+  ** 関連記事表示タイプがミニカードの時
+  ************************************/
+  /************************************
+  ** 縦型カード
+  ************************************/
+  /************************************
+  ** 関連記事ボーダー
   ************************************/
   /************************************
   ** パンくずリスト
@@ -283,28 +290,6 @@
   ************************************/
   /************************************
   ** 外部リンク・内部リンク
-  ************************************/
-  /************************************
-  ** SNSシェアボタン
-  ************************************/
-  /************************************
-  ** SNSフォローボタン
-  ************************************/
-  /************************************
-  ** 日付関係のスタイル
-  ************************************/
-  /************************************
-  ** 関連記事
-  ************************************/
-  /*関連エントリーカード*/
-  /************************************
-  ** 関連記事表示タイプがミニカードの時
-  ************************************/
-  /************************************
-  ** 縦型カード
-  ************************************/
-  /************************************
-  ** 関連記事ボーダー
   ************************************/
   /************************************
   ** 内部ブログカードのサムネイルスタイル
@@ -398,26 +383,7 @@
   /*!動画を囲んでいるdiv目一杯に広げる*/
   /*!Twitterビデオの最小幅を上書き変更*/
   /************************************
-  ** 入力フォーム
-  ************************************/
-  /*入力フォーム共通*/
-  /*Firefoxだけに適用されるCSSハック*/
-  /*特定のエリアのフォーム*/
-  /*検索フォーム*/
-  /************************************
-  ** トップへ戻るボタン
-  ************************************/
-  /************************************
   ** プロフィールボックス
-  ************************************/
-  /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル
-  ************************************/
-  /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
-  ************************************/
-  /************************************
-  ** Facebookページを「いいね！」するエリアのスタイル
   ************************************/
   /************************************
   ** Call to Action
@@ -444,7 +410,38 @@
   ********************************/
   /* アイコンを左に表示 */
   /************************************
-  ** clingify
+  ** アピールエリア
+  ************************************/
+  /************************************
+  ** SNSシェアボタン
+  ************************************/
+  /************************************
+  ** SNSフォローボタン
+  ************************************/
+  /************************************
+  ** 入力フォーム
+  ************************************/
+  /*入力フォーム共通*/
+  /*Firefoxだけに適用されるCSSハック*/
+  /*特定のエリアのフォーム*/
+  /*検索フォーム*/
+  /************************************
+  ** トップへ戻るボタン
+  ************************************/
+  /************************************
+  ** カルーセル
+  ************************************/
+  /************************************
+  ** カルーセルの非表示設定
+  ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル
+  ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+  ************************************/
+  /************************************
+  ** Facebookページを「いいね！」するエリアのスタイル
   ************************************/
   /* Slider */
   /*
@@ -724,82 +721,6 @@
       background-color: #f5f8fa;
       transition: all 0.3s ease 0s;
       color: #333435; }
-  .demo .notice-area-wrap {
-    display: block;
-    text-decoration: none; }
-    .demo .notice-area-wrap:hover {
-      opacity: 0.8; }
-  .demo .notice-area {
-    color: #fff;
-    text-align: center;
-    background-color: #4cae4c;
-    padding: 0.6em;
-    font-size: 0.8em; }
-    .demo .notice-area.nt-warning {
-      background-color: #f7ab00; }
-    .demo .notice-area.nt-danger {
-      background-color: #ff6666; }
-  .demo .no-appeal-area .appeal {
-    display: none; }
-  .demo .appeal-in {
-    display: flex;
-    min-height: 200px;
-    padding: 3% 5%; }
-  .demo .appeal-content {
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin: auto;
-    padding: 1em;
-    text-align: center;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between; }
-  .demo .appeal-title {
-    font-size: 1.1em;
-    font-weight: bold; }
-  .demo .appeal-message {
-    margin-bottom: 1em; }
-  .demo .appeal-button {
-    color: #fff;
-    text-decoration: none;
-    background-color: #dd4b39;
-    font-weight: bold;
-    text-align: center;
-    display: block;
-    max-width: 80%;
-    margin: auto;
-    padding: 10px 2em;
-    border-radius: 4px; }
-    .demo .appeal-button:hover {
-      color: #fff;
-      opacity: 0.7; }
-  .demo .carousel {
-    margin-top: 10px;
-    line-height: 1.1; }
-    .demo .carousel .slick-arrow:before {
-      color: #cccdce; }
-  .demo .carousel-in {
-    background-color: #fff;
-    padding: 2px 0; }
-  .demo .carousel-content {
-    margin: 0 30px;
-    padding-bottom: 4px; }
-    .demo .carousel-content a {
-      float: left;
-      width: 10%; }
-  .demo .carousel-entry-card-wrap.a-wrap {
-    padding: 0.05% 0.1%;
-    margin: 0; }
-  .demo .carousel-entry-card-thumb {
-    float: none; }
-  .demo .carousel-entry-card-title {
-    font-size: 16px;
-    margin-top: 4px;
-    max-height: 3.2em;
-    overflow: hidden; }
-  .demo .no-carousel .carousel {
-    display: none; }
   .demo .a-wrap {
     text-decoration: none;
     display: block;
@@ -864,6 +785,75 @@
     border: 1px solid #cccfd2; }
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
+  .demo .date-tags {
+    line-height: 0.8;
+    text-align: right; }
+    .demo .date-tags span:last-child {
+      margin-right: 0; }
+  .demo .post-date,
+  .demo .post-update,
+  .demo .amp-back {
+    margin-right: 8px; }
+  .demo .related-entry-post-date {
+    margin-right: 0; }
+  .demo .post-date::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px; }
+  .demo .post-update::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px; }
+  .demo .amp-back::before {
+    font-family: FontAwesome;
+    content: "";
+    padding-right: 3px; }
+  .demo .related-entry-heading,
+  .demo .comment-title {
+    margin: 22px 0; }
+  .demo .related-entry-card-content {
+    margin-left: 170px; }
+  .demo .related-mini-card .related-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .demo .related-mini-card .related-entry-card-wrap {
+    width: 49.5%;
+    padding: 7px; }
+  .demo .related-mini-card .related-entry-card-thumb {
+    width: 120px; }
+  .demo .related-mini-card .related-entry-card-content {
+    margin-left: 130px; }
+  .demo .related-mini-card .related-entry-card-title {
+    font-size: 16px; }
+  .demo .related-mini-card .related-entry-card-snippet {
+    display: none; }
+  .demo .related-vartical-card .related-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  .demo .related-vartical-card .related-entry-card-wrap {
+    padding: 5px; }
+  .demo .related-vartical-card .related-entry-card-thumb {
+    float: none;
+    width: 100%; }
+    .demo .related-vartical-card .related-entry-card-thumb img {
+      width: 100%; }
+  .demo .related-vartical-card .related-entry-card-content {
+    margin: 0;
+    padding: 0; }
+  .demo .related-vartical-card .related-entry-card-title {
+    font-size: 16px; }
+  .demo .related-vartical-card .related-entry-card-snippet {
+    display: none; }
+  .demo .related-vartical-card .related-entry-card-meta {
+    display: none; }
+  .demo .related-vartical-card-3 .related-entry-card-wrap {
+    width: 33%; }
+  .demo .related-vartical-card-4 .related-entry-card-wrap {
+    width: 24.5%; }
+  .demo .related-entry-border .related-entry-card-wrap {
+    border: 1px solid #cccfd2; }
   .demo .breadcrumb {
     margin-top: 20px;
     margin-bottom: 1em;
@@ -1057,263 +1047,6 @@
   .demo span.internal-icon {
     margin-left: 3px;
     font-size: 0.8em; }
-  .demo .bc-brand-color.sns-share.ss-top .twitter-button, .demo .bc-brand-color.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color.sns-follow .twitter-button {
-    background-color: #1da1f2; }
-  .demo .bc-brand-color.sns-share.ss-top .facebook-button, .demo .bc-brand-color.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color.sns-follow .facebook-button {
-    background-color: #3b5998; }
-  .demo .bc-brand-color.sns-share.ss-top .hatebu-button, .demo .bc-brand-color.sns-share.ss-bottom .hatebu-button, .demo .bc-brand-color.sns-follow .hatebu-button {
-    background-color: #2c6ebd; }
-  .demo .bc-brand-color.sns-share.ss-top .google-plus-button, .demo .bc-brand-color.sns-share.ss-bottom .google-plus-button, .demo .bc-brand-color.sns-follow .google-plus-button {
-    background-color: #dd4b39; }
-  .demo .bc-brand-color.sns-share.ss-top .pocket-button, .demo .bc-brand-color.sns-share.ss-bottom .pocket-button, .demo .bc-brand-color.sns-follow .pocket-button {
-    background-color: #ef4056; }
-  .demo .bc-brand-color.sns-share.ss-top .line-button, .demo .bc-brand-color.sns-share.ss-bottom .line-button, .demo .bc-brand-color.sns-follow .line-button {
-    background-color: #00c300; }
-  .demo .bc-brand-color.sns-share.ss-top .website-button, .demo .bc-brand-color.sns-share.ss-bottom .website-button, .demo .bc-brand-color.sns-follow .website-button {
-    background-color: #002561; }
-  .demo .bc-brand-color.sns-share.ss-top .instagram-button, .demo .bc-brand-color.sns-share.ss-bottom .instagram-button, .demo .bc-brand-color.sns-follow .instagram-button {
-    background-color: #405de6; }
-  .demo .bc-brand-color.sns-share.ss-top .pinterest-button, .demo .bc-brand-color.sns-share.ss-bottom .pinterest-button, .demo .bc-brand-color.sns-follow .pinterest-button {
-    background-color: #bd081c; }
-  .demo .bc-brand-color.sns-share.ss-top .youtube-button, .demo .bc-brand-color.sns-share.ss-bottom .youtube-button, .demo .bc-brand-color.sns-follow .youtube-button {
-    background-color: #cd201f; }
-  .demo .bc-brand-color.sns-share.ss-top .flickr-button, .demo .bc-brand-color.sns-share.ss-bottom .flickr-button, .demo .bc-brand-color.sns-follow .flickr-button {
-    background-color: #111; }
-  .demo .bc-brand-color.sns-share.ss-top .github-button, .demo .bc-brand-color.sns-share.ss-bottom .github-button, .demo .bc-brand-color.sns-follow .github-button {
-    background-color: #4078c0; }
-  .demo .bc-brand-color.sns-share.ss-top .feedly-button, .demo .bc-brand-color.sns-share.ss-bottom .feedly-button, .demo .bc-brand-color.sns-follow .feedly-button {
-    background-color: #2bb24c; }
-  .demo .bc-brand-color.sns-share.ss-top .rss-button, .demo .bc-brand-color.sns-share.ss-bottom .rss-button, .demo .bc-brand-color.sns-follow .rss-button {
-    background-color: #f26522; }
-  .demo .bc-brand-color-white.sns-share.ss-top a, .demo .bc-brand-color-white.sns-share.ss-bottom a, .demo .bc-brand-color-white.sns-follow a {
-    background-color: #fff;
-    font-weight: 500; }
-    .demo .bc-brand-color-white.sns-share.ss-top a:hover, .demo .bc-brand-color-white.sns-share.ss-bottom a:hover, .demo .bc-brand-color-white.sns-follow a:hover {
-      background-color: #f5f8fa;
-      transition: all 0.3s ease 0s;
-      color: #333435; }
-  .demo .bc-brand-color-white.sns-share.ss-top .twitter-button, .demo .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color-white.sns-follow .twitter-button {
-    color: #1da1f2;
-    border: 1px solid #1da1f2; }
-  .demo .bc-brand-color-white.sns-share.ss-top .facebook-button, .demo .bc-brand-color-white.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color-white.sns-follow .facebook-button {
-    color: #3b5998;
-    border: 1px solid #3b5998; }
-  .demo .bc-brand-color-white.sns-share.ss-top .hatebu-button, .demo .bc-brand-color-white.sns-share.ss-bottom .hatebu-button, .demo .bc-brand-color-white.sns-follow .hatebu-button {
-    color: #2c6ebd;
-    border: 1px solid #2c6ebd; }
-  .demo .bc-brand-color-white.sns-share.ss-top .google-plus-button, .demo .bc-brand-color-white.sns-share.ss-bottom .google-plus-button, .demo .bc-brand-color-white.sns-follow .google-plus-button {
-    color: #dd4b39;
-    border: 1px solid #dd4b39; }
-  .demo .bc-brand-color-white.sns-share.ss-top .pocket-button, .demo .bc-brand-color-white.sns-share.ss-bottom .pocket-button, .demo .bc-brand-color-white.sns-follow .pocket-button {
-    color: #ef4056;
-    border: 1px solid #ef4056; }
-  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
-    color: #00c300;
-    border: 1px solid #00c300; }
-  .demo .bc-brand-color-white.sns-share.ss-top .website-button, .demo .bc-brand-color-white.sns-share.ss-bottom .website-button, .demo .bc-brand-color-white.sns-follow .website-button {
-    color: #002561;
-    border: 1px solid #002561; }
-  .demo .bc-brand-color-white.sns-share.ss-top .instagram-button, .demo .bc-brand-color-white.sns-share.ss-bottom .instagram-button, .demo .bc-brand-color-white.sns-follow .instagram-button {
-    color: #405de6;
-    border: 1px solid #405de6; }
-  .demo .bc-brand-color-white.sns-share.ss-top .pinterest-button, .demo .bc-brand-color-white.sns-share.ss-bottom .pinterest-button, .demo .bc-brand-color-white.sns-follow .pinterest-button {
-    color: #bd081c;
-    border: 1px solid #bd081c; }
-  .demo .bc-brand-color-white.sns-share.ss-top .youtube-button, .demo .bc-brand-color-white.sns-share.ss-bottom .youtube-button, .demo .bc-brand-color-white.sns-follow .youtube-button {
-    color: #cd201f;
-    border: 1px solid #cd201f; }
-  .demo .bc-brand-color-white.sns-share.ss-top .flickr-button, .demo .bc-brand-color-white.sns-share.ss-bottom .flickr-button, .demo .bc-brand-color-white.sns-follow .flickr-button {
-    color: #111;
-    border: 1px solid #111; }
-  .demo .bc-brand-color-white.sns-share.ss-top .github-button, .demo .bc-brand-color-white.sns-share.ss-bottom .github-button, .demo .bc-brand-color-white.sns-follow .github-button {
-    color: #4078c0;
-    border: 1px solid #4078c0; }
-  .demo .bc-brand-color-white.sns-share.ss-top .feedly-button, .demo .bc-brand-color-white.sns-share.ss-bottom .feedly-button, .demo .bc-brand-color-white.sns-follow .feedly-button {
-    color: #2bb24c;
-    border: 1px solid #2bb24c; }
-  .demo .bc-brand-color-white.sns-share.ss-top .rss-button, .demo .bc-brand-color-white.sns-share.ss-bottom .rss-button, .demo .bc-brand-color-white.sns-follow .rss-button {
-    color: #f26522;
-    border: 1px solid #f26522; }
-  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
-    color: #00c300;
-    border: 1px solid #00c300; }
-  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
-    color: #00c300;
-    border: 1px solid #00c300; }
-  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
-    color: #00c300;
-    border: 1px solid #00c300; }
-  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
-    color: #00c300;
-    border: 1px solid #00c300; }
-  .demo .sns-share.ss-top {
-    margin-top: 0;
-    margin-bottom: 0; }
-    .demo .sns-share.ss-top .sns-share-message {
-      display: none; }
-  .demo .sns-share.ss-top.ss-col-1 a, .demo .sns-share.ss-bottom.ss-col-1 a {
-    width: 100%; }
-  .demo .sns-share.ss-top.ss-col-2 a, .demo .sns-share.ss-bottom.ss-col-2 a {
-    width: 49%; }
-  .demo .sns-share.ss-top.ss-col-4 a, .demo .sns-share.ss-bottom.ss-col-4 a {
-    width: 24%; }
-  .demo .sns-share.ss-top.ss-col-5 a, .demo .sns-share.ss-bottom.ss-col-5 a {
-    width: 19%; }
-  .demo .sns-share.ss-top.ss-col-6 a, .demo .sns-share.ss-bottom.ss-col-6 a {
-    width: 16%; }
-  .demo .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a, .demo .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a, .demo .sns-share.ss-bottom.ss-high-and-low-lc a, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a, .demo .sns-share.ss-bottom.ss-high-and-low-cl a {
-    display: flex;
-    align-content: center;
-    line-height: 16px; }
-    .demo .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon,
-    .demo .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
-    .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
-    .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption,
-    .demo .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
-    .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption,
-    .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon,
-    .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
-    .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption,
-    .demo .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
-    .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
-    .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption,
-    .demo .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption {
-      display: block;
-      font-size: 16px;
-      margin: 0; }
-      .demo .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon.button-caption,
-      .demo .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
-      .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
-      .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption.button-caption,
-      .demo .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
-      .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption,
-      .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption.button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption,
-      .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
-      .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption.button-caption,
-      .demo .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
-      .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
-      .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption.button-caption,
-      .demo .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption {
-        font-size: 12px; }
-  .demo .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-bottom.ss-high-and-low-lc a {
-    flex-direction: column; }
-  .demo .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-bottom.ss-high-and-low-cl a {
-    flex-direction: column-reverse; }
-  .demo .sns-share-buttons {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center; }
-    .demo .sns-share-buttons a {
-      width: 32%;
-      margin-bottom: 8px;
-      font-size: 18px;
-      display: inline-flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      position: relative; }
-      .demo .sns-share-buttons a .button-caption {
-        font-size: 16px;
-        margin-left: 10px; }
-      .demo .sns-share-buttons a .share-count {
-        font-family: Arial, sans-serif;
-        position: absolute;
-        right: 3px;
-        bottom: 3px;
-        font-size: 12px;
-        line-height: 1; }
-  .demo .sbc-hide .share-count {
-    display: none; }
-  .demo .sns-follow-buttons a {
-    width: 100%;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    position: relative; }
-    .demo .sns-follow-buttons a:last-child {
-      margin-right: 0; }
-    .demo .sns-follow-buttons a .follow-count {
-      font-family: Arial, sans-serif;
-      position: absolute;
-      right: 3px;
-      bottom: 3px;
-      font-size: 12px;
-      line-height: 1; }
-  .demo .fbc-hide .follow-count {
-    display: none; }
-  .demo .date-tags {
-    line-height: 0.8;
-    text-align: right; }
-    .demo .date-tags span:last-child {
-      margin-right: 0; }
-  .demo .post-date,
-  .demo .post-update,
-  .demo .amp-back {
-    margin-right: 8px; }
-  .demo .related-entry-post-date {
-    margin-right: 0; }
-  .demo .post-date::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px; }
-  .demo .post-update::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px; }
-  .demo .amp-back::before {
-    font-family: FontAwesome;
-    content: "";
-    padding-right: 3px; }
-  .demo .related-entry-heading,
-  .demo .comment-title {
-    margin: 22px 0; }
-  .demo .related-entry-card-content {
-    margin-left: 170px; }
-  .demo .related-mini-card .related-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-  .demo .related-mini-card .related-entry-card-wrap {
-    width: 49.5%;
-    padding: 7px; }
-  .demo .related-mini-card .related-entry-card-thumb {
-    width: 120px; }
-  .demo .related-mini-card .related-entry-card-content {
-    margin-left: 130px; }
-  .demo .related-mini-card .related-entry-card-title {
-    font-size: 16px; }
-  .demo .related-mini-card .related-entry-card-snippet {
-    display: none; }
-  .demo .related-vartical-card .related-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-  .demo .related-vartical-card .related-entry-card-wrap {
-    padding: 5px; }
-  .demo .related-vartical-card .related-entry-card-thumb {
-    float: none;
-    width: 100%; }
-    .demo .related-vartical-card .related-entry-card-thumb img {
-      width: 100%; }
-  .demo .related-vartical-card .related-entry-card-content {
-    margin: 0;
-    padding: 0; }
-  .demo .related-vartical-card .related-entry-card-title {
-    font-size: 16px; }
-  .demo .related-vartical-card .related-entry-card-snippet {
-    display: none; }
-  .demo .related-vartical-card .related-entry-card-meta {
-    display: none; }
-  .demo .related-vartical-card-3 .related-entry-card-wrap {
-    width: 33%; }
-  .demo .related-vartical-card-4 .related-entry-card-wrap {
-    width: 24.5%; }
-  .demo .related-entry-border .related-entry-card-wrap {
-    border: 1px solid #cccfd2; }
   .demo .blogcard-wrap {
     margin: 24px auto;
     padding: 0;
@@ -1968,92 +1701,6 @@
     min-width: 200px !important; }
   .demo .pixiv-embed iframe {
     max-width: 100%; }
-  .demo input[type='text'],
-  .demo input[type='password'],
-  .demo input[type='search'],
-  .demo input[type='number'],
-  .demo textarea,
-  .demo select {
-    padding: 14px;
-    border: 2px solid #cccfd2;
-    font-size: 18px; }
-    .demo input[type='text']:focus,
-    .demo input[type='password']:focus,
-    .demo input[type='search']:focus,
-    .demo input[type='number']:focus,
-    .demo textarea:focus,
-    .demo select:focus {
-      background-color: #fafbfc;
-      border: 2px solid #d8eaf2; }
-  .demo textarea {
-    min-height: 260px; }
-  .demo option {
-    padding: 12px; }
-@-moz-document url-prefix() {
-  .demo select {
-    padding: 0 12px; } }
-  .demo input[type='submit'] {
-    padding: 14px; }
-  .demo .widget input[type='text'],
-  .demo .widget input[type='password'],
-  .demo .widget input[type='search'],
-  .demo .widget input[type='number'],
-  .demo .widget textarea,
-  .demo .widget select,
-  .demo .comment-respond input[type='text'],
-  .demo .comment-respond input[type='password'],
-  .demo .comment-respond input[type='search'],
-  .demo .comment-respond input[type='number'],
-  .demo .comment-respond textarea,
-  .demo .comment-respond select {
-    width: 100%; }
-  .demo .search-box {
-    margin: 1em 0 2em;
-    position: relative; }
-  .demo .search-edit {
-    font-family: "Meiryo", sans-serif; }
-  .demo .search-submit {
-    position: absolute;
-    right: 1px;
-    top: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    line-height: 49px;
-    border: none;
-    color: #cccdce;
-    padding: 0 8px;
-    background-color: rgba(255, 255, 255, 0); }
-    .demo .search-submit::before {
-      font-family: FontAwesome;
-      content: "";
-      padding-right: 3px; }
-  .demo .comment-respond label {
-    display: block; }
-  .demo .go-to-top {
-    position: fixed;
-    display: none;
-    right: 10px;
-    bottom: 10px; }
-  .demo .go-to-top-button {
-    background-color: #eee;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 1;
-    border-radius: 5px;
-    font-size: 22px; }
-    .demo .go-to-top-button:hover {
-      color: #333; }
-  .demo .go-to-top-button-image {
-    background-color: transparent;
-    padding: 0;
-    max-width: 120px; }
   .demo .author-box {
     border: 1px solid #cccfd2;
     margin: 1em 0;
@@ -2101,175 +1748,6 @@
       width: 24%; }
     .demo .sidebar .author-box .author-content {
       margin-left: 26%; }
-  .demo .fb-like-box {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    flex-wrap: nowrap; }
-    .demo .fb-like-box .fb-like-thumb,
-    .demo .fb-like-box .fb-like-content {
-      width: 100%; }
-    .demo .fb-like-box img {
-      display: block;
-      width: 100%;
-      height: 100%; }
-  .demo .fb-like-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: space-around;
-    text-align: center; }
-    .demo .fb-like-content > div {
-      height: 100%;
-      margin-top: 8px; }
-  .demo .fb-like-message {
-    color: #eee;
-    font-size: 0.9em; }
-  .demo .fb-like-sub-message {
-    color: #ccc;
-    font-size: 0.7em;
-    margin-bottom: 8px; }
-  .demo .fb-like-buttons {
-    padding: 0; }
-    .demo .fb-like-buttons > div {
-      margin: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .demo .fb-like-buttons > div > * {
-        height: 100%; }
-  .demo .sidebar .fb-like-box {
-    max-width: 640px;
-    flex-direction: column; }
-    .demo .sidebar .fb-like-box > div,
-    .demo .sidebar .fb-like-box > figure {
-      width: 100%; }
-  .demo div.fb-like-mobile {
-    display: none; }
-  .demo .fb-like-balloon {
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    clear: both; }
-  .demo .fb-like-balloon-thumb {
-    float: left;
-    width: 100px; }
-  .demo .fb-like-balloon-thumb img {
-    display: block; }
-  .demo .fb-like-balloon-body {
-    margin-right: 140px;
-    float: none;
-    padding: 10px;
-    font-size: 18px;
-    line-height: 1.3em;
-    height: 100px;
-    overflow: hidden;
-    background-color: #fff;
-    color: #000;
-    box-sizing: border-box; }
-  .demo .fb-like-balloon-body::after {
-    content: '\f054';
-    position: absolute;
-    right: 110px;
-    top: 27px;
-    color: #ccc;
-    font-size: 50px;
-    font-family: FontAwesome;
-    line-height: 100%; }
-  .demo .fb-like-balloon-button {
-    background-color: #f3f3f3;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    float: right;
-    padding-top: 27px;
-    box-sizing: border-box;
-    /*  display: -webkit-flex;
-      display:         flex;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-justify-content: center;
-              justify-content: center;*/ }
-  .demo .fb-like-balloon-button iframe {
-    background-color: #fff; }
-  .demo .fb-like-balloon-arrow-box {
-    float: left;
-    position: relative;
-    border: 1px solid #bbb;
-    margin-left: 12px;
-    width: calc(100% - 114px);
-    border-radius: 5px; }
-  .demo .fb-like-balloon-arrow-box-in {
-    border-radius: 5px;
-    overflow: hidden; }
-  .demo .fb-like-balloon-arrow-box:after, .demo .fb-like-balloon-arrow-box:before {
-    right: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none; }
-  .demo .fb-like-balloon-arrow-box:after {
-    border-color: rgba(255, 255, 255, 0);
-    border-right-color: #fff;
-    border-width: 10px;
-    margin-top: -10px; }
-  .demo .fb-like-balloon-arrow-box:before {
-    border-color: rgba(221, 221, 221, 0);
-    border-right-color: #bbb;
-    border-width: 11px;
-    margin-top: -11px; }
-  .demo .sidebar .fb-like-balloon-body::after {
-    display: none; }
-  .demo .sidebar .fb-like-balloon-body {
-    font-size: 0.8em;
-    padding: 5px;
-    line-height: 1.1em;
-    margin-right: 0;
-    height: 70px; }
-  .demo .sidebar .fb-like-balloon-arrow-box {
-    height: 100px; }
-  .demo .sidebar .fb-like-balloon-button {
-    float: none;
-    width: 100%;
-    height: 30px;
-    display: block;
-    line-height: 24px;
-    padding-top: 0; }
-  .demo .sidebar div.fb-like-mobile {
-    display: block; }
-  .demo .sidebar div.fb-like-pc {
-    display: none; }
-  @media screen and (max-width: 639px) {
-    .demo .fb-like-balloon-body {
-      margin-right: 100px;
-      font-size: 1em;
-      line-height: 1.2em; }
-    .demo .fb-like-balloon-body::after {
-      display: none; } }
-  @media screen and (max-width: 440px) {
-    .demo .fb-like-balloon-body {
-      font-size: 0.8em;
-      padding: 5px;
-      line-height: 1.1em;
-      margin-right: 0;
-      height: 70px; }
-    .demo .fb-like-balloon-arrow-box {
-      height: 100px; }
-    .demo .fb-like-balloon-button {
-      float: none;
-      width: 100%;
-      height: 30px;
-      display: block;
-      padding-top: 0;
-      line-height: 24px; }
-    .demo div.fb-like-mobile {
-      display: block; }
-    .demo div.fb-like-pc {
-      display: none; } }
   .demo .cta-box {
     background-color: #444;
     color: #fff;
@@ -2653,6 +2131,652 @@
     .demo .sbs-line.sbp-r .speech-balloon::before, .demo .sbs-line.sbp-r .speech-balloon::after {
       border-right-color: #85e249;
       border-left-color: #85e249; }
+  .demo .booklink-box, .demo .kaerebalink-box {
+    padding: 22px 25px 22px 25px;
+    width: 94%;
+    margin: 0 auto 15px;
+    border: 3px solid #dfdfdf;
+    box-sizing: border-box;
+    text-align: center; }
+  .demo .booklink-image, .demo .kaerebalink-image {
+    width: 100%;
+    margin: 0 0 5px 0; }
+  .demo .booklink-info, .demo .kaerebalink-info {
+    line-height: 125%;
+    width: 100%; }
+  .demo .booklink-name, .demo .kaerebalink-name {
+    margin: 0 0 4px 0; }
+  .demo .booklink-name a, .demo .kaerebalink-name a {
+    color: #0066cc;
+    text-decoration: underline; }
+  .demo .booklink-name > a, .demo .kaerebalink-name > a {
+    font-size: 16px; }
+  .demo .booklink-name a:hover, .demo .kaerebalink-name a:hover {
+    color: #FF9900; }
+  .demo .booklink-powered-date, .demo .kaerebalink-powered-date {
+    font-size: 8px; }
+  .demo .booklink-detail, .demo .kaerebalink-detail {
+    color: #333333;
+    font-size: 12px;
+    margin: 0 0 10px 0; }
+  .demo .booklink-link2 a, .demo .kaerebalink-link1 a {
+    width: 90%;
+    display: block;
+    margin: 0px auto 8px;
+    padding: 10px 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold; }
+  .demo .booklink-link2 a:hover, .demo .kaerebalink-link1 a:hover {
+    opacity: 0.6; }
+  @media screen and (min-width: 800px) {
+    .demo .booklink-box, .demo .kaerebalink-box {
+      text-align: left;
+      display: table; }
+    .demo .booklink-image, .demo .kaerebalink-image {
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 111px;
+      text-align: center;
+      margin: 0; }
+    .demo .booklink-image img, .demo .kaerebalink-image img {
+      max-width: 100%; }
+    .demo .booklink-info, .demo .kaerebalink-info {
+      line-height: 125%;
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      padding-left: 25px;
+      width: auto; }
+    .demo .booklink-name, .demo .kaerebalink-name {
+      margin: 0 0 24px 0; }
+    .demo .booklink-name > a, .demo .kaerebalink-name > a {
+      font-size: 16px; }
+    .demo .booklink-powered-date, .demo .kaerebalink-powered-date {
+      margin: 6px 0 0 0; }
+    .demo .booklink-detail, .demo .kaerebalink-detail {
+      margin: 0 0 14px 0; }
+    .demo .booklink-link2 a, .demo .kaerebalink-link1 a {
+      width: auto;
+      text-align: center;
+      margin: 0; }
+    .demo .booklink-link2 > div, .demo .kaerebalink-link1 > div {
+      width: 32%;
+      padding: 0 5px 5px 0;
+      box-sizing: border-box;
+      float: left; } }
+  .demo .shoplinkamazon a {
+    color: #ff9901;
+    background: #ffffff;
+    border: 2px solid #ff9901; }
+  .demo .shoplinkrakuten a {
+    color: #bf0000;
+    background: #ffffff;
+    border: 2px solid #bf0000; }
+  .demo .shoplinkyahoo a {
+    color: #ff0033;
+    background: #ffffff;
+    border: 2px solid #ff0033; }
+  .demo .shoplinkseven a {
+    color: #008837;
+    background: #ffffff;
+    border: 2px solid #008837; }
+  .demo .shoplinkbellemaison a {
+    color: #80bd22;
+    background: #ffffff;
+    border: 2px solid #80bd22; }
+  .demo .shoplinkcecile a {
+    color: #8d124b;
+    background: #ffffff;
+    border: 2px solid #8d124b; }
+  .demo .shoplinkkakakucom a {
+    color: #051d93;
+    background: #ffffff;
+    border: 2px solid #051d93; }
+  .demo .shoplinkkindle a {
+    color: #0074c1;
+    background: #ffffff;
+    border: 2px solid #0074c1; }
+  .demo .shoplinkrakukobo a {
+    color: #bf0000;
+    background: #ffffff;
+    border: 2px solid #bf0000; }
+  .demo .shoplinkbk1 a {
+    color: #0085cd;
+    background: #ffffff;
+    border: 2px solid #0085cd; }
+  .demo .shoplinkehon a {
+    color: #000066;
+    background: #ffffff;
+    border: 2px solid #000066; }
+  .demo .shoplinkkino a {
+    color: #004097;
+    background: #ffffff;
+    border: 2px solid #004097; }
+  .demo .shoplinktoshokan a {
+    color: #15b0e7;
+    background: #ffffff;
+    border: 2px solid #15b0e7; }
+  .demo .notice-area-wrap {
+    display: block;
+    text-decoration: none; }
+    .demo .notice-area-wrap:hover {
+      opacity: 0.8; }
+  .demo .notice-area {
+    color: #fff;
+    text-align: center;
+    background-color: #4cae4c;
+    padding: 0.6em;
+    font-size: 0.8em; }
+    .demo .notice-area.nt-warning {
+      background-color: #f7ab00; }
+    .demo .notice-area.nt-danger {
+      background-color: #ff6666; }
+  .demo .no-appeal-area .appeal {
+    display: none; }
+  .demo .appeal-in {
+    display: flex;
+    min-height: 200px;
+    padding: 3% 5%; }
+  .demo .appeal-content {
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+    padding: 1em;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between; }
+  .demo .appeal-title {
+    font-size: 1.1em;
+    font-weight: bold; }
+  .demo .appeal-message {
+    margin-bottom: 1em; }
+  .demo .appeal-button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #dd4b39;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    max-width: 80%;
+    margin: auto;
+    padding: 10px 2em;
+    border-radius: 4px; }
+    .demo .appeal-button:hover {
+      color: #fff;
+      opacity: 0.7; }
+  .demo .bc-brand-color.sns-share.ss-top .twitter-button, .demo .bc-brand-color.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color.sns-follow .twitter-button {
+    background-color: #1da1f2; }
+  .demo .bc-brand-color.sns-share.ss-top .facebook-button, .demo .bc-brand-color.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color.sns-follow .facebook-button {
+    background-color: #3b5998; }
+  .demo .bc-brand-color.sns-share.ss-top .hatebu-button, .demo .bc-brand-color.sns-share.ss-bottom .hatebu-button, .demo .bc-brand-color.sns-follow .hatebu-button {
+    background-color: #2c6ebd; }
+  .demo .bc-brand-color.sns-share.ss-top .google-plus-button, .demo .bc-brand-color.sns-share.ss-bottom .google-plus-button, .demo .bc-brand-color.sns-follow .google-plus-button {
+    background-color: #dd4b39; }
+  .demo .bc-brand-color.sns-share.ss-top .pocket-button, .demo .bc-brand-color.sns-share.ss-bottom .pocket-button, .demo .bc-brand-color.sns-follow .pocket-button {
+    background-color: #ef4056; }
+  .demo .bc-brand-color.sns-share.ss-top .line-button, .demo .bc-brand-color.sns-share.ss-bottom .line-button, .demo .bc-brand-color.sns-follow .line-button {
+    background-color: #00c300; }
+  .demo .bc-brand-color.sns-share.ss-top .website-button, .demo .bc-brand-color.sns-share.ss-bottom .website-button, .demo .bc-brand-color.sns-follow .website-button {
+    background-color: #002561; }
+  .demo .bc-brand-color.sns-share.ss-top .instagram-button, .demo .bc-brand-color.sns-share.ss-bottom .instagram-button, .demo .bc-brand-color.sns-follow .instagram-button {
+    background-color: #405de6; }
+  .demo .bc-brand-color.sns-share.ss-top .pinterest-button, .demo .bc-brand-color.sns-share.ss-bottom .pinterest-button, .demo .bc-brand-color.sns-follow .pinterest-button {
+    background-color: #bd081c; }
+  .demo .bc-brand-color.sns-share.ss-top .youtube-button, .demo .bc-brand-color.sns-share.ss-bottom .youtube-button, .demo .bc-brand-color.sns-follow .youtube-button {
+    background-color: #cd201f; }
+  .demo .bc-brand-color.sns-share.ss-top .flickr-button, .demo .bc-brand-color.sns-share.ss-bottom .flickr-button, .demo .bc-brand-color.sns-follow .flickr-button {
+    background-color: #111; }
+  .demo .bc-brand-color.sns-share.ss-top .github-button, .demo .bc-brand-color.sns-share.ss-bottom .github-button, .demo .bc-brand-color.sns-follow .github-button {
+    background-color: #4078c0; }
+  .demo .bc-brand-color.sns-share.ss-top .feedly-button, .demo .bc-brand-color.sns-share.ss-bottom .feedly-button, .demo .bc-brand-color.sns-follow .feedly-button {
+    background-color: #2bb24c; }
+  .demo .bc-brand-color.sns-share.ss-top .rss-button, .demo .bc-brand-color.sns-share.ss-bottom .rss-button, .demo .bc-brand-color.sns-follow .rss-button {
+    background-color: #f26522; }
+  .demo .bc-brand-color-white.sns-share.ss-top a, .demo .bc-brand-color-white.sns-share.ss-bottom a, .demo .bc-brand-color-white.sns-follow a {
+    background-color: #fff;
+    font-weight: 500; }
+    .demo .bc-brand-color-white.sns-share.ss-top a:hover, .demo .bc-brand-color-white.sns-share.ss-bottom a:hover, .demo .bc-brand-color-white.sns-follow a:hover {
+      background-color: #f5f8fa;
+      transition: all 0.3s ease 0s;
+      color: #333435; }
+  .demo .bc-brand-color-white.sns-share.ss-top .twitter-button, .demo .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color-white.sns-follow .twitter-button {
+    color: #1da1f2;
+    border: 1px solid #1da1f2; }
+  .demo .bc-brand-color-white.sns-share.ss-top .facebook-button, .demo .bc-brand-color-white.sns-share.ss-bottom .facebook-button, .demo .bc-brand-color-white.sns-follow .facebook-button {
+    color: #3b5998;
+    border: 1px solid #3b5998; }
+  .demo .bc-brand-color-white.sns-share.ss-top .hatebu-button, .demo .bc-brand-color-white.sns-share.ss-bottom .hatebu-button, .demo .bc-brand-color-white.sns-follow .hatebu-button {
+    color: #2c6ebd;
+    border: 1px solid #2c6ebd; }
+  .demo .bc-brand-color-white.sns-share.ss-top .google-plus-button, .demo .bc-brand-color-white.sns-share.ss-bottom .google-plus-button, .demo .bc-brand-color-white.sns-follow .google-plus-button {
+    color: #dd4b39;
+    border: 1px solid #dd4b39; }
+  .demo .bc-brand-color-white.sns-share.ss-top .pocket-button, .demo .bc-brand-color-white.sns-share.ss-bottom .pocket-button, .demo .bc-brand-color-white.sns-follow .pocket-button {
+    color: #ef4056;
+    border: 1px solid #ef4056; }
+  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
+    color: #00c300;
+    border: 1px solid #00c300; }
+  .demo .bc-brand-color-white.sns-share.ss-top .website-button, .demo .bc-brand-color-white.sns-share.ss-bottom .website-button, .demo .bc-brand-color-white.sns-follow .website-button {
+    color: #002561;
+    border: 1px solid #002561; }
+  .demo .bc-brand-color-white.sns-share.ss-top .instagram-button, .demo .bc-brand-color-white.sns-share.ss-bottom .instagram-button, .demo .bc-brand-color-white.sns-follow .instagram-button {
+    color: #405de6;
+    border: 1px solid #405de6; }
+  .demo .bc-brand-color-white.sns-share.ss-top .pinterest-button, .demo .bc-brand-color-white.sns-share.ss-bottom .pinterest-button, .demo .bc-brand-color-white.sns-follow .pinterest-button {
+    color: #bd081c;
+    border: 1px solid #bd081c; }
+  .demo .bc-brand-color-white.sns-share.ss-top .youtube-button, .demo .bc-brand-color-white.sns-share.ss-bottom .youtube-button, .demo .bc-brand-color-white.sns-follow .youtube-button {
+    color: #cd201f;
+    border: 1px solid #cd201f; }
+  .demo .bc-brand-color-white.sns-share.ss-top .flickr-button, .demo .bc-brand-color-white.sns-share.ss-bottom .flickr-button, .demo .bc-brand-color-white.sns-follow .flickr-button {
+    color: #111;
+    border: 1px solid #111; }
+  .demo .bc-brand-color-white.sns-share.ss-top .github-button, .demo .bc-brand-color-white.sns-share.ss-bottom .github-button, .demo .bc-brand-color-white.sns-follow .github-button {
+    color: #4078c0;
+    border: 1px solid #4078c0; }
+  .demo .bc-brand-color-white.sns-share.ss-top .feedly-button, .demo .bc-brand-color-white.sns-share.ss-bottom .feedly-button, .demo .bc-brand-color-white.sns-follow .feedly-button {
+    color: #2bb24c;
+    border: 1px solid #2bb24c; }
+  .demo .bc-brand-color-white.sns-share.ss-top .rss-button, .demo .bc-brand-color-white.sns-share.ss-bottom .rss-button, .demo .bc-brand-color-white.sns-follow .rss-button {
+    color: #f26522;
+    border: 1px solid #f26522; }
+  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
+    color: #00c300;
+    border: 1px solid #00c300; }
+  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
+    color: #00c300;
+    border: 1px solid #00c300; }
+  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
+    color: #00c300;
+    border: 1px solid #00c300; }
+  .demo .bc-brand-color-white.sns-share.ss-top .line-button, .demo .bc-brand-color-white.sns-share.ss-bottom .line-button, .demo .bc-brand-color-white.sns-follow .line-button {
+    color: #00c300;
+    border: 1px solid #00c300; }
+  .demo .sns-share.ss-top {
+    margin-top: 0;
+    margin-bottom: 0; }
+    .demo .sns-share.ss-top .sns-share-message {
+      display: none; }
+  .demo .sns-share.ss-top.ss-col-1 a, .demo .sns-share.ss-bottom.ss-col-1 a {
+    width: 100%; }
+  .demo .sns-share.ss-top.ss-col-2 a, .demo .sns-share.ss-bottom.ss-col-2 a {
+    width: 49%; }
+  .demo .sns-share.ss-top.ss-col-4 a, .demo .sns-share.ss-bottom.ss-col-4 a {
+    width: 24%; }
+  .demo .sns-share.ss-top.ss-col-5 a, .demo .sns-share.ss-bottom.ss-col-5 a {
+    width: 19%; }
+  .demo .sns-share.ss-top.ss-col-6 a, .demo .sns-share.ss-bottom.ss-col-6 a {
+    width: 16%; }
+  .demo .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a, .demo .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a, .demo .sns-share.ss-bottom.ss-high-and-low-lc a, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a, .demo .sns-share.ss-bottom.ss-high-and-low-cl a {
+    display: flex;
+    align-content: center;
+    line-height: 16px; }
+    .demo .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon,
+    .demo .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+    .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+    .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption,
+    .demo .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+    .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption,
+    .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon, .demo .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon,
+    .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+    .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption,
+    .demo .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+    .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+    .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption,
+    .demo .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption {
+      display: block;
+      font-size: 16px;
+      margin: 0; }
+      .demo .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon.button-caption,
+      .demo .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+      .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+      .demo .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption.button-caption,
+      .demo .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+      .demo .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption,
+      .demo .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption.button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon.button-caption, .demo .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption,
+      .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+      .demo .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption.button-caption,
+      .demo .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+      .demo .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+      .demo .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption.button-caption,
+      .demo .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption {
+        font-size: 12px; }
+  .demo .sns-share.ss-top.ss-high-and-low-lc a, .demo .sns-share.ss-bottom.ss-high-and-low-lc a {
+    flex-direction: column; }
+  .demo .sns-share.ss-top.ss-high-and-low-cl a, .demo .sns-share.ss-bottom.ss-high-and-low-cl a {
+    flex-direction: column-reverse; }
+  .demo .sns-share-buttons {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center; }
+    .demo .sns-share-buttons a {
+      width: 32%;
+      margin-bottom: 8px;
+      font-size: 18px;
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      position: relative; }
+      .demo .sns-share-buttons a .button-caption {
+        font-size: 16px;
+        margin-left: 10px; }
+      .demo .sns-share-buttons a .share-count {
+        font-family: Arial, sans-serif;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        font-size: 12px;
+        line-height: 1; }
+  .demo .sbc-hide .share-count {
+    display: none; }
+  .demo .sns-follow-buttons a {
+    width: 100%;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: relative; }
+    .demo .sns-follow-buttons a:last-child {
+      margin-right: 0; }
+    .demo .sns-follow-buttons a .follow-count {
+      font-family: Arial, sans-serif;
+      position: absolute;
+      right: 3px;
+      bottom: 3px;
+      font-size: 12px;
+      line-height: 1; }
+  .demo .fbc-hide .follow-count {
+    display: none; }
+  .demo input[type='text'],
+  .demo input[type='password'],
+  .demo input[type='search'],
+  .demo input[type='number'],
+  .demo textarea,
+  .demo select {
+    padding: 14px;
+    border: 2px solid #cccfd2;
+    font-size: 18px; }
+    .demo input[type='text']:focus,
+    .demo input[type='password']:focus,
+    .demo input[type='search']:focus,
+    .demo input[type='number']:focus,
+    .demo textarea:focus,
+    .demo select:focus {
+      background-color: #fafbfc;
+      border: 2px solid #d8eaf2; }
+  .demo textarea {
+    min-height: 260px; }
+  .demo option {
+    padding: 12px; }
+@-moz-document url-prefix() {
+  .demo select {
+    padding: 0 12px; } }
+  .demo input[type='submit'] {
+    padding: 14px; }
+  .demo .widget input[type='text'],
+  .demo .widget input[type='password'],
+  .demo .widget input[type='search'],
+  .demo .widget input[type='number'],
+  .demo .widget textarea,
+  .demo .widget select,
+  .demo .comment-respond input[type='text'],
+  .demo .comment-respond input[type='password'],
+  .demo .comment-respond input[type='search'],
+  .demo .comment-respond input[type='number'],
+  .demo .comment-respond textarea,
+  .demo .comment-respond select {
+    width: 100%; }
+  .demo .search-box {
+    margin: 1em 0 2em;
+    position: relative; }
+  .demo .search-edit {
+    font-family: "Meiryo", sans-serif; }
+  .demo .search-submit {
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 49px;
+    border: none;
+    color: #cccdce;
+    padding: 0 8px;
+    background-color: rgba(255, 255, 255, 0); }
+    .demo .search-submit::before {
+      font-family: FontAwesome;
+      content: "";
+      padding-right: 3px; }
+  .demo .comment-respond label {
+    display: block; }
+  .demo .go-to-top {
+    position: fixed;
+    display: none;
+    right: 10px;
+    bottom: 10px; }
+  .demo .go-to-top-button {
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    border-radius: 5px;
+    font-size: 22px; }
+    .demo .go-to-top-button:hover {
+      color: #333; }
+  .demo .go-to-top-button-image {
+    background-color: transparent;
+    padding: 0;
+    max-width: 120px; }
+  .demo .carousel {
+    margin-top: 10px;
+    line-height: 1.1; }
+    .demo .carousel .slick-arrow:before {
+      color: #cccdce; }
+  .demo .carousel-in {
+    background-color: #fff;
+    padding: 2px 0; }
+  .demo .carousel-content {
+    margin: 0 30px;
+    padding-bottom: 4px; }
+    .demo .carousel-content a {
+      float: left;
+      width: 10%; }
+  .demo .carousel-entry-card-wrap.a-wrap {
+    padding: 0.05% 0.1%;
+    margin: 0; }
+  .demo .carousel-entry-card-thumb {
+    float: none; }
+  .demo .carousel-entry-card-title {
+    font-size: 16px;
+    margin-top: 4px;
+    max-height: 3.2em;
+    overflow: hidden; }
+  .demo .no-carousel .carousel {
+    display: none; }
+  .demo .fb-like-box {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap; }
+    .demo .fb-like-box .fb-like-thumb,
+    .demo .fb-like-box .fb-like-content {
+      width: 100%; }
+    .demo .fb-like-box img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .demo .fb-like-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    text-align: center; }
+    .demo .fb-like-content > div {
+      height: 100%;
+      margin-top: 8px; }
+  .demo .fb-like-message {
+    color: #eee;
+    font-size: 0.9em; }
+  .demo .fb-like-sub-message {
+    color: #ccc;
+    font-size: 0.7em;
+    margin-bottom: 8px; }
+  .demo .fb-like-buttons {
+    padding: 0; }
+    .demo .fb-like-buttons > div {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .demo .fb-like-buttons > div > * {
+        height: 100%; }
+  .demo .sidebar .fb-like-box {
+    max-width: 640px;
+    flex-direction: column; }
+    .demo .sidebar .fb-like-box > div,
+    .demo .sidebar .fb-like-box > figure {
+      width: 100%; }
+  .demo div.fb-like-mobile {
+    display: none; }
+  .demo .fb-like-balloon {
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    clear: both; }
+  .demo .fb-like-balloon-thumb {
+    float: left;
+    width: 100px; }
+  .demo .fb-like-balloon-thumb img {
+    display: block; }
+  .demo .fb-like-balloon-body {
+    margin-right: 140px;
+    float: none;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.3em;
+    height: 100px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+    box-sizing: border-box; }
+  .demo .fb-like-balloon-body::after {
+    content: '\f054';
+    position: absolute;
+    right: 110px;
+    top: 27px;
+    color: #ccc;
+    font-size: 50px;
+    font-family: FontAwesome;
+    line-height: 100%; }
+  .demo .fb-like-balloon-button {
+    background-color: #f3f3f3;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    float: right;
+    padding-top: 27px;
+    box-sizing: border-box;
+    /*  display: -webkit-flex;
+      display:         flex;
+      -webkit-align-items: center;
+              align-items: center;
+      -webkit-justify-content: center;
+              justify-content: center;*/ }
+  .demo .fb-like-balloon-button iframe {
+    background-color: #fff; }
+  .demo .fb-like-balloon-arrow-box {
+    float: left;
+    position: relative;
+    border: 1px solid #bbb;
+    margin-left: 12px;
+    width: calc(100% - 114px);
+    border-radius: 5px; }
+  .demo .fb-like-balloon-arrow-box-in {
+    border-radius: 5px;
+    overflow: hidden; }
+  .demo .fb-like-balloon-arrow-box:after, .demo .fb-like-balloon-arrow-box:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  .demo .fb-like-balloon-arrow-box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fff;
+    border-width: 10px;
+    margin-top: -10px; }
+  .demo .fb-like-balloon-arrow-box:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: #bbb;
+    border-width: 11px;
+    margin-top: -11px; }
+  .demo .sidebar .fb-like-balloon-body::after {
+    display: none; }
+  .demo .sidebar .fb-like-balloon-body {
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.1em;
+    margin-right: 0;
+    height: 70px; }
+  .demo .sidebar .fb-like-balloon-arrow-box {
+    height: 100px; }
+  .demo .sidebar .fb-like-balloon-button {
+    float: none;
+    width: 100%;
+    height: 30px;
+    display: block;
+    line-height: 24px;
+    padding-top: 0; }
+  .demo .sidebar div.fb-like-mobile {
+    display: block; }
+  .demo .sidebar div.fb-like-pc {
+    display: none; }
+  @media screen and (max-width: 639px) {
+    .demo .fb-like-balloon-body {
+      margin-right: 100px;
+      font-size: 1em;
+      line-height: 1.2em; }
+    .demo .fb-like-balloon-body::after {
+      display: none; } }
+  @media screen and (max-width: 440px) {
+    .demo .fb-like-balloon-body {
+      font-size: 0.8em;
+      padding: 5px;
+      line-height: 1.1em;
+      margin-right: 0;
+      height: 70px; }
+    .demo .fb-like-balloon-arrow-box {
+      height: 100px; }
+    .demo .fb-like-balloon-button {
+      float: none;
+      width: 100%;
+      height: 30px;
+      display: block;
+      padding-top: 0;
+      line-height: 24px; }
+    .demo div.fb-like-mobile {
+      display: block; }
+    .demo div.fb-like-pc {
+      display: none; } }
   .demo .admin-panel {
     background-color: #333435;
     color: #fff;
@@ -2692,23 +2816,6 @@
   .demo .admin-amp a {
     margin: 0 6px;
     font-size: 0.9em; }
-  .demo .js-clingify-ztransform, .demo .js-clingify-wrapper {
-    z-index: 99999; }
-  .demo .js-clingify-wrapper {
-    width: 100%; }
-  .demo .sidebar .js-clingify-wrapper {
-    width: 336px;
-    z-index: 9999; }
-  .demo .main .js-clingify-wrapper {
-    width: 800px;
-    z-index: 9999; }
-  .demo .js-clingify-locked {
-    left: 0;
-    position: fixed;
-    top: 0; }
-  .demo .main .js-clingify-locked,
-  .demo .sidebar .js-clingify-locked {
-    left: auto; }
   .demo .slick-slider {
     position: relative;
     display: block;
@@ -2906,133 +3013,6 @@
     margin-left: 1em; }
   .demo .slicknav_menu {
     display: none; }
-  .demo .booklink-box, .demo .kaerebalink-box {
-    padding: 22px 25px 22px 25px;
-    width: 94%;
-    margin: 0 auto 15px;
-    border: 3px solid #dfdfdf;
-    box-sizing: border-box;
-    text-align: center; }
-  .demo .booklink-image, .demo .kaerebalink-image {
-    width: 100%;
-    margin: 0 0 5px 0; }
-  .demo .booklink-info, .demo .kaerebalink-info {
-    line-height: 125%;
-    width: 100%; }
-  .demo .booklink-name, .demo .kaerebalink-name {
-    margin: 0 0 4px 0; }
-  .demo .booklink-name a, .demo .kaerebalink-name a {
-    color: #0066cc;
-    text-decoration: underline; }
-  .demo .booklink-name > a, .demo .kaerebalink-name > a {
-    font-size: 16px; }
-  .demo .booklink-name a:hover, .demo .kaerebalink-name a:hover {
-    color: #FF9900; }
-  .demo .booklink-powered-date, .demo .kaerebalink-powered-date {
-    font-size: 8px; }
-  .demo .booklink-detail, .demo .kaerebalink-detail {
-    color: #333333;
-    font-size: 12px;
-    margin: 0 0 10px 0; }
-  .demo .booklink-link2 a, .demo .kaerebalink-link1 a {
-    width: 90%;
-    display: block;
-    margin: 0px auto 8px;
-    padding: 10px 1px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold; }
-  .demo .booklink-link2 a:hover, .demo .kaerebalink-link1 a:hover {
-    opacity: 0.6; }
-  @media screen and (min-width: 800px) {
-    .demo .booklink-box, .demo .kaerebalink-box {
-      text-align: left;
-      display: table; }
-    .demo .booklink-image, .demo .kaerebalink-image {
-      vertical-align: top;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 111px;
-      text-align: center;
-      margin: 0; }
-    .demo .booklink-image img, .demo .kaerebalink-image img {
-      max-width: 100%; }
-    .demo .booklink-info, .demo .kaerebalink-info {
-      line-height: 125%;
-      vertical-align: top;
-      box-sizing: border-box;
-      display: table-cell;
-      padding-left: 25px;
-      width: auto; }
-    .demo .booklink-name, .demo .kaerebalink-name {
-      margin: 0 0 24px 0; }
-    .demo .booklink-name > a, .demo .kaerebalink-name > a {
-      font-size: 16px; }
-    .demo .booklink-powered-date, .demo .kaerebalink-powered-date {
-      margin: 6px 0 0 0; }
-    .demo .booklink-detail, .demo .kaerebalink-detail {
-      margin: 0 0 14px 0; }
-    .demo .booklink-link2 a, .demo .kaerebalink-link1 a {
-      width: auto;
-      text-align: center;
-      margin: 0; }
-    .demo .booklink-link2 > div, .demo .kaerebalink-link1 > div {
-      width: 32%;
-      padding: 0 5px 5px 0;
-      box-sizing: border-box;
-      float: left; } }
-  .demo .shoplinkamazon a {
-    color: #ff9901;
-    background: #ffffff;
-    border: 2px solid #ff9901; }
-  .demo .shoplinkrakuten a {
-    color: #bf0000;
-    background: #ffffff;
-    border: 2px solid #bf0000; }
-  .demo .shoplinkyahoo a {
-    color: #ff0033;
-    background: #ffffff;
-    border: 2px solid #ff0033; }
-  .demo .shoplinkseven a {
-    color: #008837;
-    background: #ffffff;
-    border: 2px solid #008837; }
-  .demo .shoplinkbellemaison a {
-    color: #80bd22;
-    background: #ffffff;
-    border: 2px solid #80bd22; }
-  .demo .shoplinkcecile a {
-    color: #8d124b;
-    background: #ffffff;
-    border: 2px solid #8d124b; }
-  .demo .shoplinkkakakucom a {
-    color: #051d93;
-    background: #ffffff;
-    border: 2px solid #051d93; }
-  .demo .shoplinkkindle a {
-    color: #0074c1;
-    background: #ffffff;
-    border: 2px solid #0074c1; }
-  .demo .shoplinkrakukobo a {
-    color: #bf0000;
-    background: #ffffff;
-    border: 2px solid #bf0000; }
-  .demo .shoplinkbk1 a {
-    color: #0085cd;
-    background: #ffffff;
-    border: 2px solid #0085cd; }
-  .demo .shoplinkehon a {
-    color: #000066;
-    background: #ffffff;
-    border: 2px solid #000066; }
-  .demo .shoplinkkino a {
-    color: #004097;
-    background: #ffffff;
-    border: 2px solid #004097; }
-  .demo .shoplinktoshokan a {
-    color: #15b0e7;
-    background: #ffffff;
-    border: 2px solid #15b0e7; }
   @media screen and (max-width: 1030px) {
     .demo .navi-footer {
       float: none;

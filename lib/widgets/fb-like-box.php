@@ -114,6 +114,6 @@ class FBLikeBoxWidgetItem extends WP_Widget {
   }
 }
 if ( !is_amp()) {
-  add_action('widgets_init', function(){register_widget('FBLikeBoxWidgetItem')
+  add_action('widgets_init', function(){register_widget('FBLikeBoxWidgetItem');});
 }
-;});
+

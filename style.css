@@ -102,7 +102,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   height: 100%;
 }
 
-.carousel-entry-card-thumb, .entry-card-thumb, .related-entry-card-thumb, .widget-entry-card-thumb {
+.entry-card-thumb, .related-entry-card-thumb, .widget-entry-card-thumb, .carousel-entry-card-thumb {
   float: left;
   margin-top: 4px;
   position: relative;
@@ -573,127 +573,6 @@ img {
   color: #333435;
 }
 
-.notice-area-wrap {
-  display: block;
-  text-decoration: none;
-}
-.notice-area-wrap:hover {
-  opacity: 0.8;
-}
-
-.notice-area {
-  color: #fff;
-  text-align: center;
-  background-color: #4cae4c;
-  padding: 0.6em;
-  font-size: 0.8em;
-}
-.notice-area.nt-warning {
-  background-color: #f7ab00;
-}
-.notice-area.nt-danger {
-  background-color: #ff6666;
-}
-
-/************************************
-** アピールエリア
-************************************/
-.no-appeal-area .appeal {
-  display: none;
-}
-
-.appeal-in {
-  display: flex;
-  min-height: 200px;
-  padding: 3% 5%;
-}
-
-.appeal-content {
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.7);
-  margin: auto;
-  padding: 1em;
-  text-align: center;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-
-.appeal-title {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.appeal-message {
-  margin-bottom: 1em;
-}
-
-.appeal-button {
-  color: #fff;
-  text-decoration: none;
-  background-color: #dd4b39;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  max-width: 80%;
-  margin: auto;
-  padding: 10px 2em;
-  border-radius: 4px;
-}
-.appeal-button:hover {
-  color: #fff;
-  opacity: 0.7;
-}
-
-/************************************
-** カルーセル
-************************************/
-.carousel {
-  margin-top: 10px;
-  line-height: 1.1;
-}
-.carousel .slick-arrow:before {
-  color: #cccdce;
-}
-
-.carousel-in {
-  background-color: #fff;
-  padding: 2px 0;
-}
-
-.carousel-content {
-  margin: 0 30px;
-  padding-bottom: 4px;
-}
-.carousel-content a {
-  float: left;
-  width: 10%;
-}
-
-.carousel-entry-card-wrap.a-wrap {
-  padding: 0.05% 0.1%;
-  margin: 0;
-}
-
-.carousel-entry-card-thumb {
-  float: none;
-}
-
-.carousel-entry-card-title {
-  font-size: 16px;
-  margin-top: 4px;
-  max-height: 3.2em;
-  overflow: hidden;
-}
-
-/************************************
-** カルーセルの非表示設定
-************************************/
-.no-carousel .carousel {
-  display: none;
-}
-
 /************************************
 ** エントリーカードの設定
 ************************************/
@@ -792,6 +671,130 @@ img {
 
 .entry-card-day span:last-child {
   margin-right: 0;
+}
+
+/************************************
+** 日付関係のスタイル
+************************************/
+.date-tags {
+  line-height: 0.8;
+  text-align: right;
+}
+.date-tags span:last-child {
+  margin-right: 0;
+}
+
+.post-date,
+.post-update,
+.amp-back {
+  margin-right: 8px;
+}
+
+.related-entry-post-date {
+  margin-right: 0;
+}
+
+.post-date::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+.post-update::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+.amp-back::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+/************************************
+** 関連記事
+************************************/
+/*関連エントリーカード*/
+.related-entry-heading,
+.comment-title {
+  margin: 22px 0;
+}
+
+.related-entry-card-content {
+  margin-left: 170px;
+}
+
+/************************************
+** 関連記事表示タイプがミニカードの時
+************************************/
+.related-mini-card .related-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.related-mini-card .related-entry-card-wrap {
+  width: 49.5%;
+  padding: 7px;
+}
+.related-mini-card .related-entry-card-thumb {
+  width: 120px;
+}
+.related-mini-card .related-entry-card-content {
+  margin-left: 130px;
+}
+.related-mini-card .related-entry-card-title {
+  font-size: 16px;
+}
+.related-mini-card .related-entry-card-snippet {
+  display: none;
+}
+
+/************************************
+** 縦型カード
+************************************/
+.related-vartical-card .related-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.related-vartical-card .related-entry-card-wrap {
+  padding: 5px;
+}
+.related-vartical-card .related-entry-card-thumb {
+  float: none;
+  width: 100%;
+}
+.related-vartical-card .related-entry-card-thumb img {
+  width: 100%;
+}
+.related-vartical-card .related-entry-card-content {
+  margin: 0;
+  padding: 0;
+}
+.related-vartical-card .related-entry-card-title {
+  font-size: 16px;
+}
+.related-vartical-card .related-entry-card-snippet {
+  display: none;
+}
+.related-vartical-card .related-entry-card-meta {
+  display: none;
+}
+
+.related-vartical-card-3 .related-entry-card-wrap {
+  width: 33%;
+}
+
+.related-vartical-card-4 .related-entry-card-wrap {
+  width: 24.5%;
+}
+
+/************************************
+** 関連記事ボーダー
+************************************/
+.related-entry-border .related-entry-card-wrap {
+  border: 1px solid #cccfd2;
 }
 
 /************************************
@@ -1073,385 +1076,6 @@ span.external-icon,
 span.internal-icon {
   margin-left: 3px;
   font-size: 0.8em;
-}
-
-/************************************
-** SNSシェアボタン
-************************************/
-.bc-brand-color.sns-share.ss-top .twitter-button, .bc-brand-color.sns-share.ss-bottom .twitter-button, .bc-brand-color.sns-follow .twitter-button {
-  background-color: #1da1f2;
-}
-.bc-brand-color.sns-share.ss-top .facebook-button, .bc-brand-color.sns-share.ss-bottom .facebook-button, .bc-brand-color.sns-follow .facebook-button {
-  background-color: #3b5998;
-}
-.bc-brand-color.sns-share.ss-top .hatebu-button, .bc-brand-color.sns-share.ss-bottom .hatebu-button, .bc-brand-color.sns-follow .hatebu-button {
-  background-color: #2c6ebd;
-}
-.bc-brand-color.sns-share.ss-top .google-plus-button, .bc-brand-color.sns-share.ss-bottom .google-plus-button, .bc-brand-color.sns-follow .google-plus-button {
-  background-color: #dd4b39;
-}
-.bc-brand-color.sns-share.ss-top .pocket-button, .bc-brand-color.sns-share.ss-bottom .pocket-button, .bc-brand-color.sns-follow .pocket-button {
-  background-color: #ef4056;
-}
-.bc-brand-color.sns-share.ss-top .line-button, .bc-brand-color.sns-share.ss-bottom .line-button, .bc-brand-color.sns-follow .line-button {
-  background-color: #00c300;
-}
-.bc-brand-color.sns-share.ss-top .website-button, .bc-brand-color.sns-share.ss-bottom .website-button, .bc-brand-color.sns-follow .website-button {
-  background-color: #002561;
-}
-.bc-brand-color.sns-share.ss-top .instagram-button, .bc-brand-color.sns-share.ss-bottom .instagram-button, .bc-brand-color.sns-follow .instagram-button {
-  background-color: #405de6;
-}
-.bc-brand-color.sns-share.ss-top .pinterest-button, .bc-brand-color.sns-share.ss-bottom .pinterest-button, .bc-brand-color.sns-follow .pinterest-button {
-  background-color: #bd081c;
-}
-.bc-brand-color.sns-share.ss-top .youtube-button, .bc-brand-color.sns-share.ss-bottom .youtube-button, .bc-brand-color.sns-follow .youtube-button {
-  background-color: #cd201f;
-}
-.bc-brand-color.sns-share.ss-top .flickr-button, .bc-brand-color.sns-share.ss-bottom .flickr-button, .bc-brand-color.sns-follow .flickr-button {
-  background-color: #111;
-}
-.bc-brand-color.sns-share.ss-top .github-button, .bc-brand-color.sns-share.ss-bottom .github-button, .bc-brand-color.sns-follow .github-button {
-  background-color: #4078c0;
-}
-.bc-brand-color.sns-share.ss-top .feedly-button, .bc-brand-color.sns-share.ss-bottom .feedly-button, .bc-brand-color.sns-follow .feedly-button {
-  background-color: #2bb24c;
-}
-.bc-brand-color.sns-share.ss-top .rss-button, .bc-brand-color.sns-share.ss-bottom .rss-button, .bc-brand-color.sns-follow .rss-button {
-  background-color: #f26522;
-}
-.bc-brand-color-white.sns-share.ss-top a, .bc-brand-color-white.sns-share.ss-bottom a, .bc-brand-color-white.sns-follow a {
-  background-color: #fff;
-  font-weight: 500;
-}
-.bc-brand-color-white.sns-share.ss-top a:hover, .bc-brand-color-white.sns-share.ss-bottom a:hover, .bc-brand-color-white.sns-follow a:hover {
-  background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
-  color: #333435;
-}
-.bc-brand-color-white.sns-share.ss-top .twitter-button, .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
-  color: #1da1f2;
-  border: 1px solid #1da1f2;
-}
-.bc-brand-color-white.sns-share.ss-top .facebook-button, .bc-brand-color-white.sns-share.ss-bottom .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
-  color: #3b5998;
-  border: 1px solid #3b5998;
-}
-.bc-brand-color-white.sns-share.ss-top .hatebu-button, .bc-brand-color-white.sns-share.ss-bottom .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
-  color: #2c6ebd;
-  border: 1px solid #2c6ebd;
-}
-.bc-brand-color-white.sns-share.ss-top .google-plus-button, .bc-brand-color-white.sns-share.ss-bottom .google-plus-button, .bc-brand-color-white.sns-follow .google-plus-button {
-  color: #dd4b39;
-  border: 1px solid #dd4b39;
-}
-.bc-brand-color-white.sns-share.ss-top .pocket-button, .bc-brand-color-white.sns-share.ss-bottom .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
-  color: #ef4056;
-  border: 1px solid #ef4056;
-}
-.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share.ss-top .website-button, .bc-brand-color-white.sns-share.ss-bottom .website-button, .bc-brand-color-white.sns-follow .website-button {
-  color: #002561;
-  border: 1px solid #002561;
-}
-.bc-brand-color-white.sns-share.ss-top .instagram-button, .bc-brand-color-white.sns-share.ss-bottom .instagram-button, .bc-brand-color-white.sns-follow .instagram-button {
-  color: #405de6;
-  border: 1px solid #405de6;
-}
-.bc-brand-color-white.sns-share.ss-top .pinterest-button, .bc-brand-color-white.sns-share.ss-bottom .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
-  color: #bd081c;
-  border: 1px solid #bd081c;
-}
-.bc-brand-color-white.sns-share.ss-top .youtube-button, .bc-brand-color-white.sns-share.ss-bottom .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
-  color: #cd201f;
-  border: 1px solid #cd201f;
-}
-.bc-brand-color-white.sns-share.ss-top .flickr-button, .bc-brand-color-white.sns-share.ss-bottom .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
-  color: #111;
-  border: 1px solid #111;
-}
-.bc-brand-color-white.sns-share.ss-top .github-button, .bc-brand-color-white.sns-share.ss-bottom .github-button, .bc-brand-color-white.sns-follow .github-button {
-  color: #4078c0;
-  border: 1px solid #4078c0;
-}
-.bc-brand-color-white.sns-share.ss-top .feedly-button, .bc-brand-color-white.sns-share.ss-bottom .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
-  color: #2bb24c;
-  border: 1px solid #2bb24c;
-}
-.bc-brand-color-white.sns-share.ss-top .rss-button, .bc-brand-color-white.sns-share.ss-bottom .rss-button, .bc-brand-color-white.sns-follow .rss-button {
-  color: #f26522;
-  border: 1px solid #f26522;
-}
-.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-
-.sns-share.ss-top {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.sns-share.ss-top .sns-share-message {
-  display: none;
-}
-.sns-share.ss-top.ss-col-1 a, .sns-share.ss-bottom.ss-col-1 a {
-  width: 100%;
-}
-.sns-share.ss-top.ss-col-2 a, .sns-share.ss-bottom.ss-col-2 a {
-  width: 49%;
-}
-.sns-share.ss-top.ss-col-4 a, .sns-share.ss-bottom.ss-col-4 a {
-  width: 24%;
-}
-.sns-share.ss-top.ss-col-5 a, .sns-share.ss-bottom.ss-col-5 a {
-  width: 19%;
-}
-.sns-share.ss-top.ss-col-6 a, .sns-share.ss-bottom.ss-col-6 a {
-  width: 16%;
-}
-.sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a, .sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a, .sns-share.ss-bottom.ss-high-and-low-lc a, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a, .sns-share.ss-bottom.ss-high-and-low-cl a {
-  display: flex;
-  align-content: center;
-  line-height: 16px;
-}
-.sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon, .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon,
-.sns-share.ss-top.ss-high-and-low-lc a .button-caption,
-.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
-.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption,
-.sns-share.ss-top.ss-high-and-low-cl a .button-caption,
-.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption,
-.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon,
-.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
-.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption,
-.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
-.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
-.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption,
-.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption {
-  display: block;
-  font-size: 16px;
-  margin: 0;
-}
-.sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon.button-caption,
-.sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
-.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
-.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption.button-caption,
-.sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
-.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption,
-.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption,
-.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
-.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption.button-caption,
-.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
-.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
-.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption.button-caption,
-.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption {
-  font-size: 12px;
-}
-.sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-bottom.ss-high-and-low-lc a {
-  flex-direction: column;
-}
-.sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-bottom.ss-high-and-low-cl a {
-  flex-direction: column-reverse;
-}
-
-.sns-share-buttons {
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-}
-.sns-share-buttons a {
-  width: 32%;
-  margin-bottom: 8px;
-  font-size: 18px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.sns-share-buttons a .button-caption {
-  font-size: 16px;
-  margin-left: 10px;
-}
-.sns-share-buttons a .share-count {
-  font-family: Arial, sans-serif;
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-  font-size: 12px;
-  line-height: 1;
-}
-
-.sbc-hide .share-count {
-  display: none;
-}
-
-/************************************
-** SNSフォローボタン
-************************************/
-.sns-follow-buttons a {
-  width: 100%;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  position: relative;
-}
-.sns-follow-buttons a:last-child {
-  margin-right: 0;
-}
-.sns-follow-buttons a .follow-count {
-  font-family: Arial, sans-serif;
-  position: absolute;
-  right: 3px;
-  bottom: 3px;
-  font-size: 12px;
-  line-height: 1;
-}
-
-.fbc-hide .follow-count {
-  display: none;
-}
-
-/************************************
-** 日付関係のスタイル
-************************************/
-.date-tags {
-  line-height: 0.8;
-  text-align: right;
-}
-.date-tags span:last-child {
-  margin-right: 0;
-}
-
-.post-date,
-.post-update,
-.amp-back {
-  margin-right: 8px;
-}
-
-.related-entry-post-date {
-  margin-right: 0;
-}
-
-.post-date::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-
-.post-update::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-
-.amp-back::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-
-/************************************
-** 関連記事
-************************************/
-/*関連エントリーカード*/
-.related-entry-heading,
-.comment-title {
-  margin: 22px 0;
-}
-
-.related-entry-card-content {
-  margin-left: 170px;
-}
-
-/************************************
-** 関連記事表示タイプがミニカードの時
-************************************/
-.related-mini-card .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.related-mini-card .related-entry-card-wrap {
-  width: 49.5%;
-  padding: 7px;
-}
-.related-mini-card .related-entry-card-thumb {
-  width: 120px;
-}
-.related-mini-card .related-entry-card-content {
-  margin-left: 130px;
-}
-.related-mini-card .related-entry-card-title {
-  font-size: 16px;
-}
-.related-mini-card .related-entry-card-snippet {
-  display: none;
-}
-
-/************************************
-** 縦型カード
-************************************/
-.related-vartical-card .related-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.related-vartical-card .related-entry-card-wrap {
-  padding: 5px;
-}
-.related-vartical-card .related-entry-card-thumb {
-  float: none;
-  width: 100%;
-}
-.related-vartical-card .related-entry-card-thumb img {
-  width: 100%;
-}
-.related-vartical-card .related-entry-card-content {
-  margin: 0;
-  padding: 0;
-}
-.related-vartical-card .related-entry-card-title {
-  font-size: 16px;
-}
-.related-vartical-card .related-entry-card-snippet {
-  display: none;
-}
-.related-vartical-card .related-entry-card-meta {
-  display: none;
-}
-
-.related-vartical-card-3 .related-entry-card-wrap {
-  width: 33%;
-}
-
-.related-vartical-card-4 .related-entry-card-wrap {
-  width: 24.5%;
-}
-
-/************************************
-** 関連記事ボーダー
-************************************/
-.related-entry-border .related-entry-card-wrap {
-  border: 1px solid #cccfd2;
 }
 
 .blogcard-wrap {
@@ -2458,131 +2082,6 @@ label.screen-reader-text {
 }
 
 /************************************
-** 入力フォーム
-************************************/
-/*入力フォーム共通*/
-input[type='text'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
-textarea,
-select {
-  padding: 14px;
-  border: 2px solid #cccfd2;
-  font-size: 18px;
-}
-input[type='text']:focus,
-input[type='password']:focus,
-input[type='search']:focus,
-input[type='number']:focus,
-textarea:focus,
-select:focus {
-  background-color: #fafbfc;
-  border: 2px solid #d8eaf2;
-}
-
-textarea {
-  min-height: 260px;
-}
-
-option {
-  padding: 12px;
-}
-
-/*Firefoxだけに適用されるCSSハック*/
-@-moz-document url-prefix() {
-  select {
-    padding: 0 12px;
-  }
-}
-input[type='submit'] {
-  padding: 14px;
-}
-
-/*特定のエリアのフォーム*/
-.widget input[type='text'],
-.widget input[type='password'],
-.widget input[type='search'],
-.widget input[type='number'],
-.widget textarea,
-.widget select,
-.comment-respond input[type='text'],
-.comment-respond input[type='password'],
-.comment-respond input[type='search'],
-.comment-respond input[type='number'],
-.comment-respond textarea,
-.comment-respond select {
-  width: 100%;
-}
-
-/*検索フォーム*/
-.search-box {
-  margin: 1em 0 2em;
-  position: relative;
-}
-
-.search-edit {
-  font-family: "Meiryo", sans-serif;
-}
-
-.search-submit {
-  position: absolute;
-  right: 1px;
-  top: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 49px;
-  border: none;
-  color: #cccdce;
-  padding: 0 8px;
-  background-color: rgba(255, 255, 255, 0);
-}
-.search-submit::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
-}
-
-.comment-respond label {
-  display: block;
-}
-
-/************************************
-** トップへ戻るボタン
-************************************/
-.go-to-top {
-  position: fixed;
-  display: none;
-  right: 10px;
-  bottom: 10px;
-}
-
-.go-to-top-button {
-  background-color: #eee;
-  color: #333;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 1;
-  border-radius: 5px;
-  font-size: 22px;
-}
-.go-to-top-button:hover {
-  color: #333;
-}
-
-.go-to-top-button-image {
-  background-color: transparent;
-  padding: 0;
-  max-width: 120px;
-}
-
-/************************************
 ** プロフィールボックス
 ************************************/
 .author-box {
@@ -2653,254 +2152,6 @@ input[type='submit'] {
   margin-left: 26%;
 }
 
-.fb-like-box {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  flex-wrap: nowrap;
-}
-.fb-like-box .fb-like-thumb,
-.fb-like-box .fb-like-content {
-  width: 100%;
-}
-.fb-like-box img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.fb-like-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: space-around;
-  text-align: center;
-}
-.fb-like-content > div {
-  height: 100%;
-  margin-top: 8px;
-}
-
-.fb-like-message {
-  color: #eee;
-  font-size: 0.9em;
-}
-
-.fb-like-sub-message {
-  color: #ccc;
-  font-size: 0.7em;
-  margin-bottom: 8px;
-}
-
-.fb-like-buttons {
-  padding: 0;
-}
-.fb-like-buttons > div {
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fb-like-buttons > div > * {
-  height: 100%;
-}
-
-.sidebar .fb-like-box {
-  max-width: 640px;
-  flex-direction: column;
-}
-.sidebar .fb-like-box > div,
-.sidebar .fb-like-box > figure {
-  width: 100%;
-}
-
-/************************************
-** Facebookページを「いいね！」するエリアのスタイル
-************************************/
-div.fb-like-mobile {
-  display: none;
-}
-
-.fb-like-balloon {
-  height: 100px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  clear: both;
-}
-
-.fb-like-balloon-thumb {
-  float: left;
-  width: 100px;
-}
-
-.fb-like-balloon-thumb img {
-  display: block;
-}
-
-.fb-like-balloon-body {
-  margin-right: 140px;
-  float: none;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 1.3em;
-  height: 100px;
-  overflow: hidden;
-  background-color: #fff;
-  color: #000;
-  box-sizing: border-box;
-}
-
-.fb-like-balloon-body::after {
-  content: '\f054';
-  position: absolute;
-  right: 110px;
-  top: 27px;
-  color: #ccc;
-  font-size: 50px;
-  font-family: FontAwesome;
-  line-height: 100%;
-}
-
-.fb-like-balloon-button {
-  background-color: #f3f3f3;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  float: right;
-  padding-top: 27px;
-  box-sizing: border-box;
-  /*  display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;*/
-}
-
-.fb-like-balloon-button iframe {
-  background-color: #fff;
-}
-
-.fb-like-balloon-arrow-box {
-  float: left;
-  position: relative;
-  border: 1px solid #bbb;
-  margin-left: 12px;
-  width: calc(100% - 114px);
-  border-radius: 5px;
-}
-
-.fb-like-balloon-arrow-box-in {
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.fb-like-balloon-arrow-box:after, .fb-like-balloon-arrow-box:before {
-  right: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-.fb-like-balloon-arrow-box:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-right-color: #fff;
-  border-width: 10px;
-  margin-top: -10px;
-}
-
-.fb-like-balloon-arrow-box:before {
-  border-color: rgba(221, 221, 221, 0);
-  border-right-color: #bbb;
-  border-width: 11px;
-  margin-top: -11px;
-}
-
-/************************************
-** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
-************************************/
-.sidebar .fb-like-balloon-body::after {
-  display: none;
-}
-
-.sidebar .fb-like-balloon-body {
-  font-size: 0.8em;
-  padding: 5px;
-  line-height: 1.1em;
-  margin-right: 0;
-  height: 70px;
-}
-
-.sidebar .fb-like-balloon-arrow-box {
-  height: 100px;
-}
-
-.sidebar .fb-like-balloon-button {
-  float: none;
-  width: 100%;
-  height: 30px;
-  display: block;
-  line-height: 24px;
-  padding-top: 0;
-}
-
-.sidebar div.fb-like-mobile {
-  display: block;
-}
-
-.sidebar div.fb-like-pc {
-  display: none;
-}
-
-/************************************
-** Facebookページを「いいね！」するエリアのスタイル
-************************************/
-@media screen and (max-width: 639px) {
-  .fb-like-balloon-body {
-    margin-right: 100px;
-    font-size: 1em;
-    line-height: 1.2em;
-  }
-
-  .fb-like-balloon-body::after {
-    display: none;
-  }
-}
-@media screen and (max-width: 440px) {
-  .fb-like-balloon-body {
-    font-size: 0.8em;
-    padding: 5px;
-    line-height: 1.1em;
-    margin-right: 0;
-    height: 70px;
-  }
-
-  .fb-like-balloon-arrow-box {
-    height: 100px;
-  }
-
-  .fb-like-balloon-button {
-    float: none;
-    width: 100%;
-    height: 30px;
-    display: block;
-    padding-top: 0;
-    line-height: 24px;
-  }
-
-  div.fb-like-mobile {
-    display: block;
-  }
-
-  div.fb-like-pc {
-    display: none;
-  }
-}
 /************************************
 ** Call to Action
 ************************************/
@@ -3523,6 +2774,950 @@ div.fb-like-mobile {
   border-left-color: #85e249;
 }
 
+.booklink-box, .kaerebalink-box {
+  padding: 22px 25px 22px 25px;
+  width: 94%;
+  margin: 0 auto 15px;
+  border: 3px solid #dfdfdf;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.booklink-image, .kaerebalink-image {
+  width: 100%;
+  margin: 0 0 5px 0;
+}
+
+.booklink-info, .kaerebalink-info {
+  line-height: 125%;
+  width: 100%;
+}
+
+.booklink-name, .kaerebalink-name {
+  margin: 0 0 4px 0;
+}
+
+.booklink-name a, .kaerebalink-name a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.booklink-name > a, .kaerebalink-name > a {
+  font-size: 16px;
+}
+
+.booklink-name a:hover, .kaerebalink-name a:hover {
+  color: #FF9900;
+}
+
+.booklink-powered-date, .kaerebalink-powered-date {
+  font-size: 8px;
+}
+
+.booklink-detail, .kaerebalink-detail {
+  color: #333333;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+
+.booklink-link2 a, .kaerebalink-link1 a {
+  width: 90%;
+  display: block;
+  margin: 0px auto 8px;
+  padding: 10px 1px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.booklink-link2 a:hover, .kaerebalink-link1 a:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 800px) {
+  .booklink-box, .kaerebalink-box {
+    text-align: left;
+    display: table;
+  }
+
+  .booklink-image, .kaerebalink-image {
+    vertical-align: top;
+    box-sizing: border-box;
+    display: table-cell;
+    width: 111px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .booklink-image img, .kaerebalink-image img {
+    max-width: 100%;
+  }
+
+  .booklink-info, .kaerebalink-info {
+    line-height: 125%;
+    vertical-align: top;
+    box-sizing: border-box;
+    display: table-cell;
+    padding-left: 25px;
+    width: auto;
+  }
+
+  .booklink-name, .kaerebalink-name {
+    margin: 0 0 24px 0;
+  }
+
+  .booklink-name > a, .kaerebalink-name > a {
+    font-size: 16px;
+  }
+
+  .booklink-powered-date, .kaerebalink-powered-date {
+    margin: 6px 0 0 0;
+  }
+
+  .booklink-detail, .kaerebalink-detail {
+    margin: 0 0 14px 0;
+  }
+
+  .booklink-link2 a, .kaerebalink-link1 a {
+    width: auto;
+    text-align: center;
+    margin: 0;
+  }
+
+  .booklink-link2 > div, .kaerebalink-link1 > div {
+    width: 32%;
+    padding: 0 5px 5px 0;
+    box-sizing: border-box;
+    float: left;
+  }
+}
+.shoplinkamazon a {
+  color: #ff9901;
+  background: #ffffff;
+  border: 2px solid #ff9901;
+}
+
+.shoplinkrakuten a {
+  color: #bf0000;
+  background: #ffffff;
+  border: 2px solid #bf0000;
+}
+
+.shoplinkyahoo a {
+  color: #ff0033;
+  background: #ffffff;
+  border: 2px solid #ff0033;
+}
+
+.shoplinkseven a {
+  color: #008837;
+  background: #ffffff;
+  border: 2px solid #008837;
+}
+
+.shoplinkbellemaison a {
+  color: #80bd22;
+  background: #ffffff;
+  border: 2px solid #80bd22;
+}
+
+.shoplinkcecile a {
+  color: #8d124b;
+  background: #ffffff;
+  border: 2px solid #8d124b;
+}
+
+.shoplinkkakakucom a {
+  color: #051d93;
+  background: #ffffff;
+  border: 2px solid #051d93;
+}
+
+.shoplinkkindle a {
+  color: #0074c1;
+  background: #ffffff;
+  border: 2px solid #0074c1;
+}
+
+.shoplinkrakukobo a {
+  color: #bf0000;
+  background: #ffffff;
+  border: 2px solid #bf0000;
+}
+
+.shoplinkbk1 a {
+  color: #0085cd;
+  background: #ffffff;
+  border: 2px solid #0085cd;
+}
+
+.shoplinkehon a {
+  color: #000066;
+  background: #ffffff;
+  border: 2px solid #000066;
+}
+
+.shoplinkkino a {
+  color: #004097;
+  background: #ffffff;
+  border: 2px solid #004097;
+}
+
+.shoplinktoshokan a {
+  color: #15b0e7;
+  background: #ffffff;
+  border: 2px solid #15b0e7;
+}
+
+.notice-area-wrap {
+  display: block;
+  text-decoration: none;
+}
+.notice-area-wrap:hover {
+  opacity: 0.8;
+}
+
+.notice-area {
+  color: #fff;
+  text-align: center;
+  background-color: #4cae4c;
+  padding: 0.6em;
+  font-size: 0.8em;
+}
+.notice-area.nt-warning {
+  background-color: #f7ab00;
+}
+.notice-area.nt-danger {
+  background-color: #ff6666;
+}
+
+/************************************
+** アピールエリア
+************************************/
+.no-appeal-area .appeal {
+  display: none;
+}
+
+.appeal-in {
+  display: flex;
+  min-height: 200px;
+  padding: 3% 5%;
+}
+
+.appeal-content {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.appeal-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.appeal-message {
+  margin-bottom: 1em;
+}
+
+.appeal-button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #dd4b39;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  max-width: 80%;
+  margin: auto;
+  padding: 10px 2em;
+  border-radius: 4px;
+}
+.appeal-button:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/************************************
+** SNSシェアボタン
+************************************/
+.bc-brand-color.sns-share.ss-top .twitter-button, .bc-brand-color.sns-share.ss-bottom .twitter-button, .bc-brand-color.sns-follow .twitter-button {
+  background-color: #1da1f2;
+}
+.bc-brand-color.sns-share.ss-top .facebook-button, .bc-brand-color.sns-share.ss-bottom .facebook-button, .bc-brand-color.sns-follow .facebook-button {
+  background-color: #3b5998;
+}
+.bc-brand-color.sns-share.ss-top .hatebu-button, .bc-brand-color.sns-share.ss-bottom .hatebu-button, .bc-brand-color.sns-follow .hatebu-button {
+  background-color: #2c6ebd;
+}
+.bc-brand-color.sns-share.ss-top .google-plus-button, .bc-brand-color.sns-share.ss-bottom .google-plus-button, .bc-brand-color.sns-follow .google-plus-button {
+  background-color: #dd4b39;
+}
+.bc-brand-color.sns-share.ss-top .pocket-button, .bc-brand-color.sns-share.ss-bottom .pocket-button, .bc-brand-color.sns-follow .pocket-button {
+  background-color: #ef4056;
+}
+.bc-brand-color.sns-share.ss-top .line-button, .bc-brand-color.sns-share.ss-bottom .line-button, .bc-brand-color.sns-follow .line-button {
+  background-color: #00c300;
+}
+.bc-brand-color.sns-share.ss-top .website-button, .bc-brand-color.sns-share.ss-bottom .website-button, .bc-brand-color.sns-follow .website-button {
+  background-color: #002561;
+}
+.bc-brand-color.sns-share.ss-top .instagram-button, .bc-brand-color.sns-share.ss-bottom .instagram-button, .bc-brand-color.sns-follow .instagram-button {
+  background-color: #405de6;
+}
+.bc-brand-color.sns-share.ss-top .pinterest-button, .bc-brand-color.sns-share.ss-bottom .pinterest-button, .bc-brand-color.sns-follow .pinterest-button {
+  background-color: #bd081c;
+}
+.bc-brand-color.sns-share.ss-top .youtube-button, .bc-brand-color.sns-share.ss-bottom .youtube-button, .bc-brand-color.sns-follow .youtube-button {
+  background-color: #cd201f;
+}
+.bc-brand-color.sns-share.ss-top .flickr-button, .bc-brand-color.sns-share.ss-bottom .flickr-button, .bc-brand-color.sns-follow .flickr-button {
+  background-color: #111;
+}
+.bc-brand-color.sns-share.ss-top .github-button, .bc-brand-color.sns-share.ss-bottom .github-button, .bc-brand-color.sns-follow .github-button {
+  background-color: #4078c0;
+}
+.bc-brand-color.sns-share.ss-top .feedly-button, .bc-brand-color.sns-share.ss-bottom .feedly-button, .bc-brand-color.sns-follow .feedly-button {
+  background-color: #2bb24c;
+}
+.bc-brand-color.sns-share.ss-top .rss-button, .bc-brand-color.sns-share.ss-bottom .rss-button, .bc-brand-color.sns-follow .rss-button {
+  background-color: #f26522;
+}
+.bc-brand-color-white.sns-share.ss-top a, .bc-brand-color-white.sns-share.ss-bottom a, .bc-brand-color-white.sns-follow a {
+  background-color: #fff;
+  font-weight: 500;
+}
+.bc-brand-color-white.sns-share.ss-top a:hover, .bc-brand-color-white.sns-share.ss-bottom a:hover, .bc-brand-color-white.sns-follow a:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease 0s;
+  color: #333435;
+}
+.bc-brand-color-white.sns-share.ss-top .twitter-button, .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+}
+.bc-brand-color-white.sns-share.ss-top .facebook-button, .bc-brand-color-white.sns-share.ss-bottom .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
+  color: #3b5998;
+  border: 1px solid #3b5998;
+}
+.bc-brand-color-white.sns-share.ss-top .hatebu-button, .bc-brand-color-white.sns-share.ss-bottom .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
+  color: #2c6ebd;
+  border: 1px solid #2c6ebd;
+}
+.bc-brand-color-white.sns-share.ss-top .google-plus-button, .bc-brand-color-white.sns-share.ss-bottom .google-plus-button, .bc-brand-color-white.sns-follow .google-plus-button {
+  color: #dd4b39;
+  border: 1px solid #dd4b39;
+}
+.bc-brand-color-white.sns-share.ss-top .pocket-button, .bc-brand-color-white.sns-share.ss-bottom .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
+  color: #ef4056;
+  border: 1px solid #ef4056;
+}
+.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
+  color: #00c300;
+  border: 1px solid #00c300;
+}
+.bc-brand-color-white.sns-share.ss-top .website-button, .bc-brand-color-white.sns-share.ss-bottom .website-button, .bc-brand-color-white.sns-follow .website-button {
+  color: #002561;
+  border: 1px solid #002561;
+}
+.bc-brand-color-white.sns-share.ss-top .instagram-button, .bc-brand-color-white.sns-share.ss-bottom .instagram-button, .bc-brand-color-white.sns-follow .instagram-button {
+  color: #405de6;
+  border: 1px solid #405de6;
+}
+.bc-brand-color-white.sns-share.ss-top .pinterest-button, .bc-brand-color-white.sns-share.ss-bottom .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
+  color: #bd081c;
+  border: 1px solid #bd081c;
+}
+.bc-brand-color-white.sns-share.ss-top .youtube-button, .bc-brand-color-white.sns-share.ss-bottom .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
+  color: #cd201f;
+  border: 1px solid #cd201f;
+}
+.bc-brand-color-white.sns-share.ss-top .flickr-button, .bc-brand-color-white.sns-share.ss-bottom .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
+  color: #111;
+  border: 1px solid #111;
+}
+.bc-brand-color-white.sns-share.ss-top .github-button, .bc-brand-color-white.sns-share.ss-bottom .github-button, .bc-brand-color-white.sns-follow .github-button {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+.bc-brand-color-white.sns-share.ss-top .feedly-button, .bc-brand-color-white.sns-share.ss-bottom .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
+  color: #2bb24c;
+  border: 1px solid #2bb24c;
+}
+.bc-brand-color-white.sns-share.ss-top .rss-button, .bc-brand-color-white.sns-share.ss-bottom .rss-button, .bc-brand-color-white.sns-follow .rss-button {
+  color: #f26522;
+  border: 1px solid #f26522;
+}
+.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
+  color: #00c300;
+  border: 1px solid #00c300;
+}
+.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
+  color: #00c300;
+  border: 1px solid #00c300;
+}
+.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
+  color: #00c300;
+  border: 1px solid #00c300;
+}
+.bc-brand-color-white.sns-share.ss-top .line-button, .bc-brand-color-white.sns-share.ss-bottom .line-button, .bc-brand-color-white.sns-follow .line-button {
+  color: #00c300;
+  border: 1px solid #00c300;
+}
+
+.sns-share.ss-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sns-share.ss-top .sns-share-message {
+  display: none;
+}
+.sns-share.ss-top.ss-col-1 a, .sns-share.ss-bottom.ss-col-1 a {
+  width: 100%;
+}
+.sns-share.ss-top.ss-col-2 a, .sns-share.ss-bottom.ss-col-2 a {
+  width: 49%;
+}
+.sns-share.ss-top.ss-col-4 a, .sns-share.ss-bottom.ss-col-4 a {
+  width: 24%;
+}
+.sns-share.ss-top.ss-col-5 a, .sns-share.ss-bottom.ss-col-5 a {
+  width: 19%;
+}
+.sns-share.ss-top.ss-col-6 a, .sns-share.ss-bottom.ss-col-6 a {
+  width: 16%;
+}
+.sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a, .sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a, .sns-share.ss-bottom.ss-high-and-low-lc a, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a, .sns-share.ss-bottom.ss-high-and-low-cl a {
+  display: flex;
+  align-content: center;
+  line-height: 16px;
+}
+.sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon, .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon,
+.sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption,
+.sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption,
+.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption {
+  display: block;
+  font-size: 16px;
+  margin: 0;
+}
+.sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .social-icon.button-caption,
+.sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc .sns-share.ss-top a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-top .sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl .sns-share.ss-top a .button-caption.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .social-icon.button-caption, .sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .social-icon.button-caption, .sns-share.ss-bottom.ss-high-and-low-cl a .social-icon.button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-lc .sns-share.ss-bottom a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-lc a .button-caption.button-caption,
+.sns-share.ss-bottom .sns-share.ss-top.ss-high-and-low-cl a .button-caption.button-caption,
+.sns-share.ss-top.ss-high-and-low-cl .sns-share.ss-bottom a .button-caption.button-caption,
+.sns-share.ss-bottom.ss-high-and-low-cl a .button-caption.button-caption {
+  font-size: 12px;
+}
+.sns-share.ss-top.ss-high-and-low-lc a, .sns-share.ss-bottom.ss-high-and-low-lc a {
+  flex-direction: column;
+}
+.sns-share.ss-top.ss-high-and-low-cl a, .sns-share.ss-bottom.ss-high-and-low-cl a {
+  flex-direction: column-reverse;
+}
+
+.sns-share-buttons {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+.sns-share-buttons a {
+  width: 32%;
+  margin-bottom: 8px;
+  font-size: 18px;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sns-share-buttons a .button-caption {
+  font-size: 16px;
+  margin-left: 10px;
+}
+.sns-share-buttons a .share-count {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.sbc-hide .share-count {
+  display: none;
+}
+
+/************************************
+** SNSフォローボタン
+************************************/
+.sns-follow-buttons a {
+  width: 100%;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+.sns-follow-buttons a:last-child {
+  margin-right: 0;
+}
+.sns-follow-buttons a .follow-count {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.fbc-hide .follow-count {
+  display: none;
+}
+
+/************************************
+** 入力フォーム
+************************************/
+/*入力フォーム共通*/
+input[type='text'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+textarea,
+select {
+  padding: 14px;
+  border: 2px solid #cccfd2;
+  font-size: 18px;
+}
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='number']:focus,
+textarea:focus,
+select:focus {
+  background-color: #fafbfc;
+  border: 2px solid #d8eaf2;
+}
+
+textarea {
+  min-height: 260px;
+}
+
+option {
+  padding: 12px;
+}
+
+/*Firefoxだけに適用されるCSSハック*/
+@-moz-document url-prefix() {
+  select {
+    padding: 0 12px;
+  }
+}
+input[type='submit'] {
+  padding: 14px;
+}
+
+/*特定のエリアのフォーム*/
+.widget input[type='text'],
+.widget input[type='password'],
+.widget input[type='search'],
+.widget input[type='number'],
+.widget textarea,
+.widget select,
+.comment-respond input[type='text'],
+.comment-respond input[type='password'],
+.comment-respond input[type='search'],
+.comment-respond input[type='number'],
+.comment-respond textarea,
+.comment-respond select {
+  width: 100%;
+}
+
+/*検索フォーム*/
+.search-box {
+  margin: 1em 0 2em;
+  position: relative;
+}
+
+.search-edit {
+  font-family: "Meiryo", sans-serif;
+}
+
+.search-submit {
+  position: absolute;
+  right: 1px;
+  top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 49px;
+  border: none;
+  color: #cccdce;
+  padding: 0 8px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.search-submit::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
+.comment-respond label {
+  display: block;
+}
+
+/************************************
+** トップへ戻るボタン
+************************************/
+.go-to-top {
+  position: fixed;
+  display: none;
+  right: 10px;
+  bottom: 10px;
+}
+
+.go-to-top-button {
+  background-color: #eee;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  border-radius: 5px;
+  font-size: 22px;
+}
+.go-to-top-button:hover {
+  color: #333;
+}
+
+.go-to-top-button-image {
+  background-color: transparent;
+  padding: 0;
+  max-width: 120px;
+}
+
+/************************************
+** カルーセル
+************************************/
+.carousel {
+  margin-top: 10px;
+  line-height: 1.1;
+}
+.carousel .slick-arrow:before {
+  color: #cccdce;
+}
+
+.carousel-in {
+  background-color: #fff;
+  padding: 2px 0;
+}
+
+.carousel-content {
+  margin: 0 30px;
+  padding-bottom: 4px;
+}
+.carousel-content a {
+  float: left;
+  width: 10%;
+}
+
+.carousel-entry-card-wrap.a-wrap {
+  padding: 0.05% 0.1%;
+  margin: 0;
+}
+
+.carousel-entry-card-thumb {
+  float: none;
+}
+
+.carousel-entry-card-title {
+  font-size: 16px;
+  margin-top: 4px;
+  max-height: 3.2em;
+  overflow: hidden;
+}
+
+/************************************
+** カルーセルの非表示設定
+************************************/
+.no-carousel .carousel {
+  display: none;
+}
+
+.fb-like-box {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.fb-like-box .fb-like-thumb,
+.fb-like-box .fb-like-content {
+  width: 100%;
+}
+.fb-like-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fb-like-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  text-align: center;
+}
+.fb-like-content > div {
+  height: 100%;
+  margin-top: 8px;
+}
+
+.fb-like-message {
+  color: #eee;
+  font-size: 0.9em;
+}
+
+.fb-like-sub-message {
+  color: #ccc;
+  font-size: 0.7em;
+  margin-bottom: 8px;
+}
+
+.fb-like-buttons {
+  padding: 0;
+}
+.fb-like-buttons > div {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fb-like-buttons > div > * {
+  height: 100%;
+}
+
+.sidebar .fb-like-box {
+  max-width: 640px;
+  flex-direction: column;
+}
+.sidebar .fb-like-box > div,
+.sidebar .fb-like-box > figure {
+  width: 100%;
+}
+
+/************************************
+** Facebookページを「いいね！」するエリアのスタイル
+************************************/
+div.fb-like-mobile {
+  display: none;
+}
+
+.fb-like-balloon {
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  clear: both;
+}
+
+.fb-like-balloon-thumb {
+  float: left;
+  width: 100px;
+}
+
+.fb-like-balloon-thumb img {
+  display: block;
+}
+
+.fb-like-balloon-body {
+  margin-right: 140px;
+  float: none;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.3em;
+  height: 100px;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.fb-like-balloon-body::after {
+  content: '\f054';
+  position: absolute;
+  right: 110px;
+  top: 27px;
+  color: #ccc;
+  font-size: 50px;
+  font-family: FontAwesome;
+  line-height: 100%;
+}
+
+.fb-like-balloon-button {
+  background-color: #f3f3f3;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  float: right;
+  padding-top: 27px;
+  box-sizing: border-box;
+  /*  display: -webkit-flex;
+    display:         flex;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: center;
+            justify-content: center;*/
+}
+
+.fb-like-balloon-button iframe {
+  background-color: #fff;
+}
+
+.fb-like-balloon-arrow-box {
+  float: left;
+  position: relative;
+  border: 1px solid #bbb;
+  margin-left: 12px;
+  width: calc(100% - 114px);
+  border-radius: 5px;
+}
+
+.fb-like-balloon-arrow-box-in {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fb-like-balloon-arrow-box:after, .fb-like-balloon-arrow-box:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.fb-like-balloon-arrow-box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #fff;
+  border-width: 10px;
+  margin-top: -10px;
+}
+
+.fb-like-balloon-arrow-box:before {
+  border-color: rgba(221, 221, 221, 0);
+  border-right-color: #bbb;
+  border-width: 11px;
+  margin-top: -11px;
+}
+
+/************************************
+** Facebookページを「いいね！」するエリアのスタイル（サイドバーの時）
+************************************/
+.sidebar .fb-like-balloon-body::after {
+  display: none;
+}
+
+.sidebar .fb-like-balloon-body {
+  font-size: 0.8em;
+  padding: 5px;
+  line-height: 1.1em;
+  margin-right: 0;
+  height: 70px;
+}
+
+.sidebar .fb-like-balloon-arrow-box {
+  height: 100px;
+}
+
+.sidebar .fb-like-balloon-button {
+  float: none;
+  width: 100%;
+  height: 30px;
+  display: block;
+  line-height: 24px;
+  padding-top: 0;
+}
+
+.sidebar div.fb-like-mobile {
+  display: block;
+}
+
+.sidebar div.fb-like-pc {
+  display: none;
+}
+
+/************************************
+** Facebookページを「いいね！」するエリアのスタイル
+************************************/
+@media screen and (max-width: 639px) {
+  .fb-like-balloon-body {
+    margin-right: 100px;
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  .fb-like-balloon-body::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 440px) {
+  .fb-like-balloon-body {
+    font-size: 0.8em;
+    padding: 5px;
+    line-height: 1.1em;
+    margin-right: 0;
+    height: 70px;
+  }
+
+  .fb-like-balloon-arrow-box {
+    height: 100px;
+  }
+
+  .fb-like-balloon-button {
+    float: none;
+    width: 100%;
+    height: 30px;
+    display: block;
+    padding-top: 0;
+    line-height: 24px;
+  }
+
+  div.fb-like-mobile {
+    display: block;
+  }
+
+  div.fb-like-pc {
+    display: none;
+  }
+}
 .admin-panel {
   background-color: #333435;
   color: #fff;
@@ -3571,38 +3766,6 @@ div.fb-like-mobile {
 .admin-amp a {
   margin: 0 6px;
   font-size: 0.9em;
-}
-
-/************************************
-** clingify
-************************************/
-.js-clingify-ztransform, .js-clingify-wrapper {
-  z-index: 99999;
-}
-
-.js-clingify-wrapper {
-  width: 100%;
-}
-
-.sidebar .js-clingify-wrapper {
-  width: 336px;
-  z-index: 9999;
-}
-
-.main .js-clingify-wrapper {
-  width: 800px;
-  z-index: 9999;
-}
-
-.js-clingify-locked {
-  left: 0;
-  position: fixed;
-  top: 0;
-}
-
-.main .js-clingify-locked,
-.sidebar .js-clingify-locked {
-  left: auto;
 }
 
 /* Slider */
@@ -3907,201 +4070,6 @@ div.fb-like-mobile {
 
 .slicknav_menu {
   display: none;
-}
-
-.booklink-box, .kaerebalink-box {
-  padding: 22px 25px 22px 25px;
-  width: 94%;
-  margin: 0 auto 15px;
-  border: 3px solid #dfdfdf;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.booklink-image, .kaerebalink-image {
-  width: 100%;
-  margin: 0 0 5px 0;
-}
-
-.booklink-info, .kaerebalink-info {
-  line-height: 125%;
-  width: 100%;
-}
-
-.booklink-name, .kaerebalink-name {
-  margin: 0 0 4px 0;
-}
-
-.booklink-name a, .kaerebalink-name a {
-  color: #0066cc;
-  text-decoration: underline;
-}
-
-.booklink-name > a, .kaerebalink-name > a {
-  font-size: 16px;
-}
-
-.booklink-name a:hover, .kaerebalink-name a:hover {
-  color: #FF9900;
-}
-
-.booklink-powered-date, .kaerebalink-powered-date {
-  font-size: 8px;
-}
-
-.booklink-detail, .kaerebalink-detail {
-  color: #333333;
-  font-size: 12px;
-  margin: 0 0 10px 0;
-}
-
-.booklink-link2 a, .kaerebalink-link1 a {
-  width: 90%;
-  display: block;
-  margin: 0px auto 8px;
-  padding: 10px 1px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.booklink-link2 a:hover, .kaerebalink-link1 a:hover {
-  opacity: 0.6;
-}
-
-@media screen and (min-width: 800px) {
-  .booklink-box, .kaerebalink-box {
-    text-align: left;
-    display: table;
-  }
-
-  .booklink-image, .kaerebalink-image {
-    vertical-align: top;
-    box-sizing: border-box;
-    display: table-cell;
-    width: 111px;
-    text-align: center;
-    margin: 0;
-  }
-
-  .booklink-image img, .kaerebalink-image img {
-    max-width: 100%;
-  }
-
-  .booklink-info, .kaerebalink-info {
-    line-height: 125%;
-    vertical-align: top;
-    box-sizing: border-box;
-    display: table-cell;
-    padding-left: 25px;
-    width: auto;
-  }
-
-  .booklink-name, .kaerebalink-name {
-    margin: 0 0 24px 0;
-  }
-
-  .booklink-name > a, .kaerebalink-name > a {
-    font-size: 16px;
-  }
-
-  .booklink-powered-date, .kaerebalink-powered-date {
-    margin: 6px 0 0 0;
-  }
-
-  .booklink-detail, .kaerebalink-detail {
-    margin: 0 0 14px 0;
-  }
-
-  .booklink-link2 a, .kaerebalink-link1 a {
-    width: auto;
-    text-align: center;
-    margin: 0;
-  }
-
-  .booklink-link2 > div, .kaerebalink-link1 > div {
-    width: 32%;
-    padding: 0 5px 5px 0;
-    box-sizing: border-box;
-    float: left;
-  }
-}
-.shoplinkamazon a {
-  color: #ff9901;
-  background: #ffffff;
-  border: 2px solid #ff9901;
-}
-
-.shoplinkrakuten a {
-  color: #bf0000;
-  background: #ffffff;
-  border: 2px solid #bf0000;
-}
-
-.shoplinkyahoo a {
-  color: #ff0033;
-  background: #ffffff;
-  border: 2px solid #ff0033;
-}
-
-.shoplinkseven a {
-  color: #008837;
-  background: #ffffff;
-  border: 2px solid #008837;
-}
-
-.shoplinkbellemaison a {
-  color: #80bd22;
-  background: #ffffff;
-  border: 2px solid #80bd22;
-}
-
-.shoplinkcecile a {
-  color: #8d124b;
-  background: #ffffff;
-  border: 2px solid #8d124b;
-}
-
-.shoplinkkakakucom a {
-  color: #051d93;
-  background: #ffffff;
-  border: 2px solid #051d93;
-}
-
-.shoplinkkindle a {
-  color: #0074c1;
-  background: #ffffff;
-  border: 2px solid #0074c1;
-}
-
-.shoplinkrakukobo a {
-  color: #bf0000;
-  background: #ffffff;
-  border: 2px solid #bf0000;
-}
-
-.shoplinkbk1 a {
-  color: #0085cd;
-  background: #ffffff;
-  border: 2px solid #0085cd;
-}
-
-.shoplinkehon a {
-  color: #000066;
-  background: #ffffff;
-  border: 2px solid #000066;
-}
-
-.shoplinkkino a {
-  color: #004097;
-  background: #ffffff;
-  border: 2px solid #004097;
-}
-
-.shoplinktoshokan a {
-  color: #15b0e7;
-  background: #ffffff;
-  border: 2px solid #15b0e7;
 }
 
 @media screen and (max-width: 1030px) {
