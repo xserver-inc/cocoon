@@ -56,10 +56,10 @@
 // @import "carousel";
 //プロフィールボックス
 @import "author-box";
-//Facebookボックス
-@import "fb-like-box";
-//Facebookバルーン
-@import "fb-like-balloon";
+// //Facebookボックス
+// @import "fb-like-box";
+// //Facebookバルーン
+// @import "fb-like-balloon";
 //CTAボックス
 @import "cta-box";
 //拡張クラス
@@ -105,7 +105,7 @@
   @import "breakpoints/max-width-480";
 }
 
-//印刷用
-@media print{
-  @import "print";
-}
+// //印刷用
+// @media print{
+//   @import "print";
+// }
