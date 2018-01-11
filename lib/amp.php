@@ -663,11 +663,12 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
     //   _v($m[0]);
     // }
   }
-  _v($css);
+  //_v($css);
   return $css;
 }
 endif;
 
+//AMP化コールバックの開始
 add_action( 'wp_loaded','wp_loaded_ampfy_html', 1 );
 if ( !function_exists( 'wp_loaded_ampfy_html' ) ):
 function wp_loaded_ampfy_html() {
@@ -675,6 +676,7 @@ function wp_loaded_ampfy_html() {
 }
 endif;
 
+//AMP化処理
 if ( !function_exists( 'html_ampfy_call_back' ) ):
 function html_ampfy_call_back( $html ) {
   if (is_admin()) {
@@ -728,15 +730,3 @@ function html_ampfy_call_back( $html ) {
   return $html;
 }
 endif;
-
-
-// //AMPタグを出力する
-// add_action( 'wp_head', 'the_amp_page_tag' );
-// if ( !function_exists( 'the_amp_page_tag' ) ):
-// function the_amp_page_tag() {
-//   if (has_amp_page()) {
-//     echo '<!-- '.THEME_NAME_CAMEL.' AMP -->'.PHP_EOL;
-//     echo '<link rel="amphtml" href="'.get_amp_permalink().'">'.PHP_EOL;
-//   }
-// }
-// endif;

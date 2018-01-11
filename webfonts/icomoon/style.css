@@ -39,10 +39,10 @@
 
 .icon-amp-logo2:before {
   content: "\e93c";
-}
+}/*
 .icon-amp-logo:before {
   content: "\e93b";
-}
+}*/
 .icon-facebook-logo:before {
   content: "\e92d";
 }
@@ -91,51 +91,6 @@
 .icon-twitter:before {
   content: "\e91c";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .icon-pinterest:before {
   content: "\e92c";
 }
