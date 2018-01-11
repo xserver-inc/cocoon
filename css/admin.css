@@ -900,6 +900,8 @@
     margin-bottom: 3em; }
   .demo .entry-categories-tags {
     font-family: "Meiryo", sans-serif; }
+    .demo .entry-categories-tags div {
+      margin-bottom: 0.5em; }
   .demo .cat-link {
     color: #333435;
     text-decoration: none;

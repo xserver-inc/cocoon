@@ -32,20 +32,6 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   display: none;
 }
 
-.eye-catch{
-  margin: 0;
-  // amp-img{
-  //   width: 100%;
-  //   height: auto;
-  // }
-  //display: block;
-  // img{
-  //   width: 100%;
-  //   height: auto;
-  // }
-
-}
-
 .amp-comment-btn{
   @extend .pagination-next-link;
   margin: 24px 0;
