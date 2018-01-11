@@ -3,7 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title><?php echo wp_get_document_title(); ?></title>
-<link rel="canonical" href="<?php the_permalink() ?>" />
+<?php //canonicalタグの出力
+the_canonical_tag() ?>
+<?php //メタディスクリプションタグ
+the_meta_description_tag() ?>
+<?php //メタキーワードタグ
+the_meta_keywords_tag() ?>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <?php if ( is_facebook_ogp_enable() ) //Facebook OGPタグ挿入がオンのとき
 get_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート?>
@@ -43,13 +48,7 @@ echo '<link rel="stylesheet" href="'.FONT_AWESOME_CDN_URL.'">'.PHP_EOL;
 if (!is_site_font_family_local()) {
   echo '<link rel="stylesheet" href="'.get_site_font_source_url().'">'.PHP_EOL;
 }
- ?>
-<?php //canonicalタグの出力
-the_canonical_tag() ?>
-<?php //メタディスクリプションタグ
-the_meta_description_tag() ?>
-<?php //メタキーワードタグ
-the_meta_keywords_tag() ?>
+?>
 <?php //JSON-LDの読み込み
 get_template_part('tmp/json-ld'); ?>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
