@@ -9,7 +9,7 @@
   <div class="sns-follow-buttons">
 
   <?php if ( get_the_author_website_url() )://ウェブサイトフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="fa fa-home"></span></a>
+    <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_twitter_url() )://Twitterフォローボタンを表示するか ?>

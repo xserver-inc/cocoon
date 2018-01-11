@@ -9,6 +9,7 @@
   &{
     @extend %sns_button_color;
   }
+
 }
 
 .sns-follow-message{
@@ -38,6 +39,10 @@
       @include service_count;
     }
   }
+
+  // .website-button{
+  //   font-size: 1.4em;
+  // }
 }
 
 .fbc-hide .follow-count{

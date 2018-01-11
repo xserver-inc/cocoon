@@ -94,6 +94,9 @@
 .icon-pinterest:before {
   content: "\e92c";
 }
+.icon-home:before {
+  content: "\e900";
+}
 .icon-googleplus:before {
   content: "\ea8b";
 }
