@@ -565,11 +565,96 @@ function generate_style_amp_custom_tag(){?>
 }
 endif;
 
+if ( !function_exists( 'get_cleaned_css_selector' ) ):
+function get_cleaned_css_selector($selector){
+  //class用のドットを取り除く
+  $selector = str_replace('.', '', $selector);
+  //ID用のシャープを取り除く
+  $selector = str_replace('#', '', $selector);
+  //>をスペースに変換
+  $selector = str_replace('>', ' ', $selector);
+  //:hoverを取り除く
+  $selector = str_replace(':hover', '', $selector);
+  //:beforeを取り除く
+  $selector = str_replace(':before', '', $selector);
+  //:afterを取り除く
+  $selector = str_replace(':after', '', $selector);
+  //:を取り除く
+  $selector = str_replace(':', '', $selector);
+  //$selector = str_replace('  ', ' ', $selector);
+  return $selector;
+}
+endif;
+
+//CSSセレクターセットが本文内に存在するか（厳密な判別ではない、結構大ざっぱ）
+if ( !function_exists( 'is_comma_spleted_selector_exists_in_body_tag' ) ):
+function is_comma_spleted_selector_exists_in_body_tag($comma_spleted_selector, $body_tag){
+  $space_spleted_selectors = explode(' ', $comma_spleted_selector);
+  // if (count($space_spleted_selectors) > 1) {
+  //   _v($comma_spleted_selector);
+  // }
+  foreach ($space_spleted_selectors as $selector) {
+    $selector = get_cleaned_css_selector($selector);
+    //本文内にセレクタータグが存在しない場合
+    if (strpos($body_tag, $selector) === false) {
+      return false;
+    }
+  }
+  return true;
+}
+endif;
+
 //AMP用のCSSから不要なCSSコードを取り除く（なるべくAMPの50KB制限に引っかからないようにサイズ節約）
 if ( !function_exists( 'get_dieted_amp_css_tag' ) ):
-function get_dieted_amp_css_tag($amp_css_tag, $body_html){
-  $css = $amp_css_tag;
-  $b = $body_html;
+function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
+  $css = $style_amp_custom_tag;
+  if (preg_match_all('/\}([\.#\-a-zA-Z0-9\s>,:]+?)\{/i', $css, $m)
+      && isset($m[1])) {
+    $selectors = $m[1];
+    //重複は統一
+    $selectors = array_unique($selectors);
+    //_v($selectors);
+    $delete_target_selectors = array();
+    //セレクター判別用の清掃
+    foreach ($selectors as $selector) {
+      //カンマで区切られたCSS配列を分割
+      $comma_spleted_selectors = explode(',', $selector);
+      $comma_spleted_selectors = array_unique($comma_spleted_selectors);
+
+      foreach ($comma_spleted_selectors as $comma_spleted_selector) {
+        //置換用のターゲットCSSセレクタの保存
+        $delete_target_selector = $comma_spleted_selector;
+        if (!is_comma_spleted_selector_exists_in_body_tag($comma_spleted_selector, $body_tag)) {
+          $delete_target_selectors[] = $delete_target_selector;
+        }
+      }
+
+
+    }
+    //_v($delete_target_selectors);
+    //削除候補のCSSセレクタを置換で削除
+    foreach ($delete_target_selectors as $delete_target_selector) {
+      $css = preg_replace('/\}'.preg_quote($delete_target_selector, '/').',/i', '}', $css);
+      $css = preg_replace('/\}'.preg_quote($delete_target_selector, '/').'{/i', '}{', $css);
+    }
+    //カッコ{css codf}のみになっているCSSを削除
+    $css = preg_replace('/\}\{.+?\}/i', '}', $css);
+    $css = preg_replace('/\}\{.+?\}/i', '}', $css);
+    $css = preg_replace('/\}\{.+?\}/i', '}', $css);
+    $css = preg_replace('/\}\{.+?\}/i', '}', $css);
+    $css = preg_replace('/\}\{.+?\}/i', '}', $css);
+    // if (preg_match_all('/\}(\{.+?\})/i', $css, $m) && $m[1]) {
+    //   //_v($m[1]);
+    //   $delete_css_codes = $m[1];
+    //   foreach ($delete_css_codes as $delete_css_code) {
+    //     $css = str_replace($delete_css_code, '', $css);
+    //   }
+    // }
+    // if (preg_match_all('/[\.#\-a-zA-Z0-9\s>,:@]+?\{.+?\}/i', $css, $m)) {
+    //   _v($m[0]);
+    // }
+  }
+  //_v($css);
   return $css;
 }
 endif;
@@ -592,34 +677,40 @@ function html_ampfy_call_back( $html ) {
     return $html;
   }
 
-  $head = null;
-  $body = null;
+  $head_tag = null;
+  $body_tag = null;
   $style_amp_custom_tag = null;
   //ヘッダータグの取得
   if (preg_match('{<!doctype html>.+</head>}is', $html, $m)) {
     if (isset($m[0])) {
-      $head = $m[0];
-    }
-  }
-
-  //ボディータグの取得
-  if (preg_match('{<style amp-custom>.+</style>}is', $head, $m)) {
-    if (isset($m[0])) {
-      $style_amp_custom_tag = $m[0];
+      $head_tag = $m[0];
     }
   }
 
   //AMP用CSSスタイルの取得
   if (preg_match('{<body .+</html>}is', $html, $m)) {
     if (isset($m[0])) {
-      $body = $m[0];
+      $body_tag = $m[0];
     }
   }
 
-  if ($head && $body) {
+  //ボディータグの取得
+  if (preg_match('{<style amp-custom>.+</style>}is', $head_tag, $m)) {
+    if (isset($m[0])) {
+      $default_style_amp_custom_tag = $m[0];
+      //_v($default_style_amp_custom_tag);
+      //不要なCSSを削除してサイズ削減
+      $dieted_style_amp_custom_tag = get_dieted_amp_css_tag($default_style_amp_custom_tag, $body_tag);
+      //_v($dieted_style_amp_custom_tag);
+      //ヘッダーの<style amp-custom>をサイズ削減したものに入れ替える
+      $head_tag = str_replace($default_style_amp_custom_tag, $dieted_style_amp_custom_tag, $head_tag);
+    }
+  }
+
+  if ($head_tag && $body_tag) {
     //bodyタグ内をAMP化
-    $body = convert_content_for_amp($body);
-    return $head . $body;
+    $body_tag = convert_content_for_amp($body_tag);
+    return $head_tag . $body_tag;
   }
 
   //_v($body);
