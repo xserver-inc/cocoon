@@ -49,22 +49,24 @@
     <table class="form-table">
       <tbody>
 
-        <!-- 検索エンジンに伝える日付  -->
+        <!-- 表示する日付  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '検索エンジンに伝える日付', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_CANONICAL_TAG_ENABLE, __( '表示する日付', THEME_NAME ) ); ?>
           </th>
           <td>
 
             <?php
             $options = array(
-              'post_date' => __( '投稿日', THEME_NAME ),
-              'update_date' => __( '更新日', THEME_NAME ),
+              'both_date' => __( '投稿日・更新日を表示', THEME_NAME ),
+              // 'post_date' => __( '投稿日', THEME_NAME ),
+              // 'update_date' => __( '更新日', THEME_NAME ),
               'post_date_only' => __( '投稿日のみ表示', THEME_NAME ),
               'update_date_only' => __( '更新日のみ表示', THEME_NAME ),
+              'none' => __( '表示しない', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SEO_DATE_TYPE, $options, get_seo_date_type());
-            generate_tips_tag(__( 'timeタグを付加する日付の設定です。', THEME_NAME ));
+            generate_tips_tag(__( '表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方が変わります。', THEME_NAME ));
             ?>
           </td>
         </tr>
