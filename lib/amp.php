@@ -485,15 +485,21 @@ if ( !function_exists( 'generate_style_amp_custom_tag' ) ):
 function generate_style_amp_custom_tag(){?>
   <style amp-custom>
   <?php
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+
     $css_all = '';
     //AMPスタイルの取得
-    $css_file = get_template_directory().'/amp.css';
-    if ( file_exists($css_file) ) {
-      $css = $wp_filesystem->get_contents($css_file);//ファイルの読み込み
+    $css_url = get_template_directory_uri().'/amp.css';
+    $css = css_url_to_css_minify_code($css_url);
+    if ($css !== false) {
       $css_all .= $css;
     }
+    // $css_file = get_template_directory().'/amp.css';
+    // if ( file_exists($css_file) ) {
+    //   $css = $wp_filesystem->get_contents($css_file);//ファイルの読み込み
+    //   $css_all .= $css;
+    // }
 
     ///////////////////////////////////////////
     //IcoMoonのスタイル
@@ -506,14 +512,18 @@ function generate_style_amp_custom_tag(){?>
     ///////////////////////////////////////////
     //スキンのスタイル
     ///////////////////////////////////////////
-    if ( get_skin_url() ) {//設定されたスキンがある場合
+    if ( $skin_url = get_skin_url() ) {//設定されたスキンがある場合
       //通常のスキンスタイル
-      $skin_file = url_to_local(get_skin_url());
-      $amp_css_file = str_replace('style.css', 'amp.css', $skin_file);
-      if (file_exists($amp_css_file)) {
-        $amp_css = $wp_filesystem->get_contents($amp_css_file);//ファイルの読み込み
+      $amp_css = css_url_to_css_minify_code($skin_url);
+      if ($amp_css !== false) {
         $css_all .= $amp_css;
       }
+      // $skin_file = url_to_local(get_skin_url());
+      // $amp_css_file = str_replace('style.css', 'amp.css', $skin_file);
+      // if (file_exists($amp_css_file)) {
+      //   $amp_css = $wp_filesystem->get_contents($amp_css_file);//ファイルの読み込み
+      //   $css_all .= $amp_css;
+      // }
     }
 
     ///////////////////////////////////////////
@@ -522,17 +532,23 @@ function generate_style_amp_custom_tag(){?>
     ob_start();//バッファリング
     get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
     $css_custom = ob_get_clean();
-    $css_all .= $css_custom;
+    $css_all .= minify_css($css_custom);
 
     ///////////////////////////////////////////
     //子テーマのスタイル
     ///////////////////////////////////////////
     if ( is_child_theme() ) {
-      $css_file_child = get_stylesheet_directory().'/amp.css';
-      if ( file_exists($css_file_child) ) {
-        $css_child = $wp_filesystem->get_contents($css_file_child);//ファイルの読み込み
-        $css_all .= $css_child;
+      //通常のスキンスタイル
+      $css_child_url = get_stylesheet_directory_uri().'/amp.css';
+      $child_css = css_url_to_css_minify_code($css_child_url);
+      if ($child_css !== false) {
+        $css_all .= $child_css;
       }
+      // $css_file_child = get_stylesheet_directory().'/amp.css';
+      // if ( file_exists($css_file_child) ) {
+      //   $css_child = $wp_filesystem->get_contents($css_file_child);//ファイルの読み込み
+      //   $css_all .= $css_child;
+      // }
     }
 
     //!importantの除去
@@ -543,7 +559,7 @@ function generate_style_amp_custom_tag(){?>
 
     //全てのCSSの出力
     echo $css_all;
-  }?>
+  //}?>
   </style>
 <?php
 }
@@ -578,6 +594,7 @@ function html_ampfy_call_back( $html ) {
 
   $head = null;
   $body = null;
+  $style_amp_custom_tag = null;
   //ヘッダータグの取得
   if (preg_match('{<!doctype html>.+</head>}is', $html, $m)) {
     if (isset($m[0])) {
@@ -586,6 +603,13 @@ function html_ampfy_call_back( $html ) {
   }
 
   //ボディータグの取得
+  if (preg_match('{<style amp-custom>.+</style>}is', $head, $m)) {
+    if (isset($m[0])) {
+      $style_amp_custom_tag = $m[0];
+    }
+  }
+
+  //AMP用CSSスタイルの取得
   if (preg_match('{<body .+</html>}is', $html, $m)) {
     if (isset($m[0])) {
       $body = $m[0];
