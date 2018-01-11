@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
