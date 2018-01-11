@@ -568,9 +568,9 @@ endif;
 if ( !function_exists( 'get_cleaned_css_selector' ) ):
 function get_cleaned_css_selector($selector){
   //class用のドットを取り除く
-  $selector = str_replace('.', '', $selector);
+  $selector = str_replace('.', ' ', $selector);
   //ID用のシャープを取り除く
-  $selector = str_replace('#', '', $selector);
+  $selector = str_replace('#', ' ', $selector);
   //>をスペースに変換
   $selector = str_replace('>', ' ', $selector);
   //:hoverを取り除く
@@ -581,22 +581,31 @@ function get_cleaned_css_selector($selector){
   $selector = str_replace(':after', '', $selector);
   //:を取り除く
   $selector = str_replace(':', '', $selector);
-  //$selector = str_replace('  ', ' ', $selector);
+  $selector = str_replace('  ', ' ', $selector);
   return $selector;
 }
 endif;
 
 //CSSセレクターセットが本文内に存在するか（厳密な判別ではない、結構大ざっぱ）
-if ( !function_exists( 'is_comma_spleted_selector_exists_in_body_tag' ) ):
-function is_comma_spleted_selector_exists_in_body_tag($comma_spleted_selector, $body_tag){
-  $space_spleted_selectors = explode(' ', $comma_spleted_selector);
-  // if (count($space_spleted_selectors) > 1) {
-  //   _v($comma_spleted_selector);
+if ( !function_exists( 'is_comma_splited_selector_exists_in_body_tag' ) ):
+function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $body_tag){
+  //amp-imgが含まれるCSSセレクタは除外しない
+  if (strpos($comma_splited_selector, 'amp-img') !== false) {
+    return true;
+  }
+  $comma_splited_selector = get_cleaned_css_selector($comma_splited_selector);
+  $space_splited_selectors = explode(' ', $comma_splited_selector);
+  // if (count($space_splited_selectors) > 8) {
+  //   _v($comma_splited_selector);
   // }
-  foreach ($space_spleted_selectors as $selector) {
-    $selector = get_cleaned_css_selector($selector);
+  foreach ($space_splited_selectors as $selector) {
+    // if (preg_match('/amp-img/', $selector)) {
+    //   _v(strpos($body_tag, $selector) !== false);
+    //   _v($body_tag);
+    // }
+    //$selector = get_cleaned_css_selector($selector);
     //本文内にセレクタータグが存在しない場合
-    if (strpos($body_tag, $selector) === false) {
+    if ($selector && strpos($body_tag, $selector) === false) {
       return false;
     }
   }
@@ -618,13 +627,13 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
     //セレクター判別用の清掃
     foreach ($selectors as $selector) {
       //カンマで区切られたCSS配列を分割
-      $comma_spleted_selectors = explode(',', $selector);
-      $comma_spleted_selectors = array_unique($comma_spleted_selectors);
+      $comma_splited_selectors = explode(',', $selector);
+      $comma_splited_selectors = array_unique($comma_splited_selectors);
 
-      foreach ($comma_spleted_selectors as $comma_spleted_selector) {
+      foreach ($comma_splited_selectors as $comma_splited_selector) {
         //置換用のターゲットCSSセレクタの保存
-        $delete_target_selector = $comma_spleted_selector;
-        if (!is_comma_spleted_selector_exists_in_body_tag($comma_spleted_selector, $body_tag)) {
+        $delete_target_selector = $comma_splited_selector;
+        if (!is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $body_tag)) {
           $delete_target_selectors[] = $delete_target_selector;
         }
       }
