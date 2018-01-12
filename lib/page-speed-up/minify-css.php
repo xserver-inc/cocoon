@@ -115,12 +115,12 @@ function tag_code_to_minify_css($buffer) {
 
     //縮小化したCSSをデータの最後に付け加える
     if ($last_minfified_css) {
-      $buffer = $buffer.PHP_EOL.'<style type="text/css">'.$last_minfified_css.'</style>';
+      $buffer = $buffer.PHP_EOL.'<style>'.$last_minfified_css.'</style>';
 
-     //$buffer = '<style type="text/css">'.$last_minfified_css.'</style>'.PHP_EOL.$buffer;
+     //$buffer = '<style>'.$last_minfified_css.'</style>'.PHP_EOL.$buffer;
 
       // $title_end = '</title>';
-      // $all_style_tag = '<style type="text/css">'.$last_minfified_css.'</style>';
+      // $all_style_tag = '<style>'.$last_minfified_css.'</style>';
       // $buffer = str_replace($title_end, $title_end.PHP_EOL.$all_style_tag, $buffer);
     }
 

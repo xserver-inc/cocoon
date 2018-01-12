@@ -18,7 +18,7 @@
           <td>
             <?php
             if (is_code_highlight_enable()): ?>
-              <link rel="stylesheet" type="text/css" href="<?php echo get_highlight_js_css_url(); ?>">
+              <link rel="stylesheet" href="<?php echo get_highlight_js_css_url(); ?>">
             <?php endif ?>
             <div class="demo entry-content">
 <pre id="highlight-demo">/* コメント */

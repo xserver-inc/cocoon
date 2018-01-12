@@ -272,7 +272,7 @@ endif;
 // function the_zoom_effect_link_tag(){
 //   if (is_admin_php_page()) {
 //     if (is_lightbox_effect_enable()) {
-//       echo '<link rel="stylesheet" href="'.get_lightbox_css_url().'" type="text/css" />';
+//       echo '<link rel="stylesheet" href="'.get_lightbox_css_url().'" />';
 //     }
 //   }
 

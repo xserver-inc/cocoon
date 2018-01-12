@@ -68,7 +68,7 @@ function admin_print_styles_custom() {
     // //ソースコードのハイライト表示
     // ///////////////////////////////////
     // if ( is_code_highlight_enable() ){
-    //   echo '<link rel="stylesheet" type="text/css" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
+    //   echo '<link rel="stylesheet" href="'. get_highlight_js_css_url().'">'.PHP_EOL;
     //   echo '<script src="'.get_template_directory_uri().'/plugins/highlight-js/highlight.min.js"></script>'.PHP_EOL;
     //   echo '<script type="text/javascript">
     //     (function($){
@@ -81,7 +81,7 @@ function admin_print_styles_custom() {
   }
 
   //echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/admin.css" />'.PHP_EOL;
-  //echo '<style TYPE="text/css">.column-thumbnail{width:80px;}</style>'.PHP_EOL;
+  //echo '<style>.column-thumbnail{width:80px;}</style>'.PHP_EOL;
 }
 endif;
 

@@ -328,6 +328,6 @@ endif;
 </form>
 </div>
 
-<style type="text/css">
+<style>
   <?php get_template_part('tmp/css-custom'); ?>
 </style>

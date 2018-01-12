@@ -78,7 +78,7 @@
               </div>
               <div style="width: auto">
                 <?php if (!is_site_font_family_local()): ?>
-                  <link rel="stylesheet" type="text/css" href="<?php echo get_site_font_source_url(); ?>">
+                  <link rel="stylesheet" href="<?php echo get_site_font_source_url(); ?>">
                 <?php endif ?>
                 <p class="preview-label"><?php _e( 'フォントプレビュー', THEME_NAME ) ?></p>
                 <div class="demo" style="width: 100%">
