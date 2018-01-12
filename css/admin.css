@@ -1030,7 +1030,7 @@
   .demo .footer-meta {
     font-size: 0.8em;
     text-align: right; }
-  .demo .post-author::before {
+  .demo .author-info::before {
     font-family: FontAwesome;
     content: "";
     padding-right: 3px; }

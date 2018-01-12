@@ -189,7 +189,7 @@ blockquote {
 }
 
 /*投稿者*/
-.post-author::before{
+.author-info::before{
   @include fontawesome('\f040');
   //padding-right: 3px;
 }

@@ -1052,7 +1052,7 @@ blockquote::after {
 }
 
 /*投稿者*/
-.post-author::before {
+.author-info::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
