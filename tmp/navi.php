@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav id="navi" class="navi cf" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+<nav id="navi" class="navi cf" itemscope itemtype="http://schema.org/SiteNavigationElement">
   <div id="navi-in" class="navi-in wrap cf">
     <?php //ヘッダーナビ
     wp_nav_menu(

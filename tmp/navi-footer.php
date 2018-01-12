@@ -1,4 +1,4 @@
-<nav id="navi-footer" class="navi-footer" role="navigation">
+<nav id="navi-footer" class="navi-footer">
   <div id="navi-footer-in" class="navi-footer-in">
     <?php wp_nav_menu(
       array (

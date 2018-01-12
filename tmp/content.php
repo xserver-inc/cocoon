@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
@@ -15,7 +15,7 @@
       <?php endif; ?>
 
       <header class="article-header entry-header">
-        <h1 class="entry-title" itemprop="headline" rel="bookmark"><?php the_title() ?></h1>
+        <h1 class="entry-title" itemprop="headline"><?php the_title() ?></h1>
 
         <?php //タイトル下の広告表示
         if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
@@ -138,12 +138,13 @@
         $height = isset($size['height']) ? $size['height'] : 600;
          ?>
         <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-            <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-               <span itemprop="url" content="<?php echo get_ogp_home_image_url(); ?>">
-                  <img src="<?php echo get_ogp_home_image_url(); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
-               </span>
-            </span>
-                <span itemprop="name"><?php bloginfo('name'); ?></span>
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+              <img src="<?php echo $home_image_url; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" alt="">
+              <meta itemprop="url" content="<?php echo $home_image_url; ?>">
+              <meta itemprop="width" content="<?php echo $width; ?>">
+              <meta itemprop="height" content="<?php echo $height; ?>">
+            </div>
+            <div itemprop="name"><?php bloginfo('name'); ?></div>
         </div>
       </footer>
 

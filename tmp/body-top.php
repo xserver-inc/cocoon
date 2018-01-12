@@ -28,4 +28,4 @@
 
     <div id="content-in" class="content-in wrap cf">
 
-        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" role="main" itemscope itemtype="http://schema.org/Blog">
+        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="http://schema.org/Blog">
