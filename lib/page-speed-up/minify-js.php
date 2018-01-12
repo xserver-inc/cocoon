@@ -72,7 +72,7 @@ function tag_code_to_minify_js($buffer) {
               //_v($js);//変換したJSコード
 
               //JSを縮小化したJSファイルURL linkタグをインラインにする
-              $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
+              $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
 
 
               //$last_minfified_js .= $js;
@@ -87,7 +87,7 @@ function tag_code_to_minify_js($buffer) {
           //_v($js_code);
           $js = minify_js($js_code);
           //インラインタイプのscriptタグを縮小化して置換する
-          $buffer = str_replace($script_tag, '<script type="text/javascript" async defer>'.$js.'</script>', $buffer);
+          $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
         }
 
       }//foreach

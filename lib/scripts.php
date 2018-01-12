@@ -186,14 +186,3 @@ function wp_enqueue_scripts_custom() {
 
 }
 endif;
-
-
-
-// add_filter( 'script_loader_tag', 'lagy_script_loader_tag', 10, 3 );
-// if ( !function_exists( 'script_loader_tag' ) ):
-// function lagy_script_loader_tag( $tag, $handle, $src ) {
-
-//         return '<script type="text/javascript" src="' . $src . '" async defer></script>' . "\n";
-
-// }
-// endif;
