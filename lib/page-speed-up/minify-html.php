@@ -21,6 +21,13 @@ function code_minify_call_back($buffer) {
   if (is_html_minify_enable()) {
     $buffer = minify_html($buffer);
   }
+
+  //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
+  $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
+  //Wordpressが出力する type='text/javascript'を削除
+  $buffer = str_replace("<script type='text/javascript'", '<script', $buffer);
+  $buffer = str_replace('<script type="text/javascript"', '<script', $buffer);
+
   /*
   //CSSの縮小化
   if (0&&is_css_minify_enable()) {
