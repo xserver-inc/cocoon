@@ -70,45 +70,27 @@ function get_the_date_tags(){
   // //通常の更新日
   // $update_date_tag = '<span class="post-update"><time class="entry-date date updated" datetime="'.get_update_time('c').'" itemprop="dateModified">'.get_update_time('Y.m.d').'</time></span>';
   switch (get_seo_date_type()) {
-    //投稿日・更新日を伝える
-    case 'both_date':
-    case 'none':
-      $date_tags = $time_post_date_tag;
-      //更新日があるとき
-      if ($update_time) {
-        $date_tags .= $time_update_date_tag;
-      }
-      break;
-    // //投稿日を伝える
-    // case 'post_date':
-    //   $date_tags = $time_post_date_tag;
-    //   //更新日があるとき
-    //   if ($update_time) {
-    //     $date_tags .= $time_update_date_tag;
-    //   }
-    //   break;
-    // //更新日を伝える
-    // case 'update_date':
-    //   //$date_tags = $post_date_tag;
-    //   if ($update_time) {
-    //     $date_tags = $time_post_date_tag.$time_update_date_tag; //更新時
-    //   } else {
-    //     $date_tags = $time_post_date_tag;  //投稿日
-    //   }
-    //   break;
     //投稿日のみを伝える
     case 'post_date_only':
       $date_tags = $time_post_date_tag;
       break;
     //更新日のみを伝える
-    default:
+    case 'update_date_only':
       //更新日がある場合
       if ($update_time) {
         $date_tags = $time_update_date_tag;
       } else {
         $date_tags = $time_post_date_tag;
       }
-
+      break;
+    //更新日・投稿日を伝える
+    default:
+      $date_tags = $time_post_date_tag;
+      //更新日があるとき
+      if ($update_time) {
+        $date_tags .= $time_update_date_tag;
+      }
+      break;
 
       break;
   }

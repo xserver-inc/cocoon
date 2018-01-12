@@ -3747,7 +3747,8 @@ input[type='submit'] {
 
 .admin-pv,
 .admin-edit,
-.admin-amp {
+.admin-amp,
+.admin-checks {
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid #ccc;
@@ -3755,7 +3756,8 @@ input[type='submit'] {
 }
 .admin-pv > span,
 .admin-edit > span,
-.admin-amp > span {
+.admin-amp > span,
+.admin-checks > span {
   padding: 0 4px;
 }
 
@@ -3771,7 +3773,8 @@ input[type='submit'] {
   padding: 0 5px;
 }
 
-.admin-amp a {
+.admin-amp a,
+.admin-checks a {
   margin: 0 6px;
   font-size: 0.9em;
 }

@@ -29,7 +29,8 @@
 
 .admin-pv,
 .admin-edit,
-.admin-amp{
+.admin-amp,
+.admin-checks{
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid #ccc;
@@ -53,7 +54,8 @@
   }
 }
 
-.admin-amp{
+.admin-amp,
+.admin-checks{
   a{
     margin: 0 6px;
     font-size: 0.9em;
