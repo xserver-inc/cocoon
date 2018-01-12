@@ -539,6 +539,8 @@
     display: block; }
   .demo .display-none {
     display: none; }
+  .demo .publisher {
+    display: none; }
   .demo figure {
     margin: 0; }
   .demo img {

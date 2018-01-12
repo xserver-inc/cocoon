@@ -695,16 +695,19 @@ function get_image_width_and_height($image_url){
   if (!includes_site_url($image_url)) {
     return false;
   }
-  $wp_upload_dir = wp_upload_dir();
-  $uploads_dir = $wp_upload_dir['basedir'];
-  $uploads_url = $wp_upload_dir['baseurl'];
-  $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
+  // $wp_upload_dir = wp_upload_dir();
+  // $uploads_dir = $wp_upload_dir['basedir'];
+  // $uploads_url = $wp_upload_dir['baseurl'];
+  // $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
+  $image_file = url_to_local($image_url);
+  //_v($image_file);
   if (file_exists($image_file)) {
     $imagesize = getimagesize($image_file);
     if ($imagesize) {
       $res = array();
       $res['width'] = $imagesize[0];
       $res['height'] = $imagesize[1];
+      //_v($res);
       return $res;
     }
   }

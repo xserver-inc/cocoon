@@ -130,6 +130,21 @@
         <?php //投稿者等表示用のテンプレート
         get_template_part('tmp/footer-meta'); ?>
 
+        <!-- publisher設定 -->
+        <?php
+        $home_image_url = get_ogp_home_image_url();
+        $size = get_image_width_and_height($home_image_url);
+        $width = isset($size['width']) ? $size['width'] : 800;
+        $height = isset($size['height']) ? $size['height'] : 600;
+         ?>
+        <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+               <span itemprop="url" content="<?php echo get_ogp_home_image_url(); ?>">
+                  <img src="<?php echo get_ogp_home_image_url(); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+               </span>
+            </span>
+                <span itemprop="name"><?php bloginfo('name'); ?></span>
+        </div>
       </footer>
 
     <?php
