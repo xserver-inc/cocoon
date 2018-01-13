@@ -14,13 +14,17 @@
         <?php if ($_FACEBOOK_URL): ?>
           <div class="fb-like-facebook">
             <div class="fb-like" data-href="<?php echo $_FACEBOOK_URL; ?>" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-
-            <?php generate_facebook_sdk_code(); ?>
+            <?php //通常ページの場合
+            if (!is_amp()): ?>
+              <?php generate_facebook_sdk_code(); ?>
+            <?php else: //AMPページの場合 ?>
+              <a class="facebook-follow-button" href="<?php echo $_FACEBOOK_URL; ?>"><?php _e( 'いいね！', THEME_NAME ) ?></a>
+            <?php endif ?>
           </div>
         <?php endif ?>
         <?php if ($_TWITTER_ID): ?>
           <div class="fb-like-twitter">
-            <a href="https://twitter.com/<?php echo $_TWITTER_ID; ?>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @<?php echo $_TWITTER_ID; ?></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/<?php echo $_TWITTER_ID; ?>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"><?php _e( 'フォロー', THEME_NAME ) ?> @<?php echo $_TWITTER_ID; ?></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         <?php endif ?>
         <?php if ($_LINE_ID): ?>

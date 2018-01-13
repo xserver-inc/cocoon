@@ -49,8 +49,7 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   // cursor: pointer;
 }
 
-//Facebookボタン
-.facebook-follow-btn{
+%follow_amp_button{
   text-decoration: none;
   text-align: center;
   margin: 0 auto;
@@ -59,17 +58,34 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   font-size: 14px;
   font-weight: bold;
   color: $white_text_color;
-  background-color: $facebook_color;
   position: relative;
   border-radius: $basic_border_radius;
-  &::before{
-    @include fontawesome('\f087');
-    margin-right: 5px;
-    font-weight: normal;
-  }
 
   &:hover{
     color: $white_text_color;
   }
+}
 
+@mixin follow_amp_button($unicode, $bc_color){
+  background-color: $bc_color;
+  &::before{
+    @include fontawesome($unicode);
+    margin: 0 3px;
+    font-weight: normal;
+  }
+}
+
+//Facebookボタン
+.facebook-follow-button{
+  @extend %follow_amp_button;
+
+  @include follow_amp_button('\f087', $facebook_color);
+}
+
+//Twitterボタン
+.twitter-follow-button{
+  @extend %follow_amp_button;
+  font-weight: normal;
+
+  @include follow_amp_button('\f099', $twitter_color);
 }

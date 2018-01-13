@@ -17,7 +17,7 @@
         if (!is_amp()): ?>
           <?php generate_facebook_sdk_code(); ?>
         <?php else: //AMPページの場合 ?>
-          <a class="facebook-follow-btn" href="<?php echo $_FACEBOOK_URL; ?>"><?php _e( 'いいね！', THEME_NAME ) ?></a>
+          <a class="facebook-follow-button" href="<?php echo $_FACEBOOK_URL; ?>"><?php _e( 'いいね！', THEME_NAME ) ?></a>
         <?php endif ?>
       </div>
       <div class="fb-like-balloon-body">
