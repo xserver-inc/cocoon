@@ -2463,6 +2463,8 @@
       display: block;
       width: 100%;
       height: 100%; }
+  .demo .fb-like-thumb {
+    max-width: 56%; }
   .demo .fb-like-content {
     display: flex;
     flex-direction: column;

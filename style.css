@@ -3248,6 +3248,10 @@ label.screen-reader-text {
   height: 100%;
 }
 
+.fb-like-thumb {
+  max-width: 56%;
+}
+
 .fb-like-content {
   display: flex;
   flex-direction: column;
