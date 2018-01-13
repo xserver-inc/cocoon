@@ -95,13 +95,13 @@ class NewEntryWidgetItem extends WP_Widget {
     $title_new   = '';
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
-    if ($instance['widget_mode'])
+    if (isset($instance['widget_mode']))
       $widget_mode = esc_attr($instance['widget_mode']);
-    if ($instance['title_new'])
+    if (isset($instance['title_new']))
       $title_new = esc_attr($instance['title_new']);
-    if ($instance['entry_count'])
+    if (isset($instance['entry_count']))
       $entry_count = esc_attr($instance['entry_count']);
-    if ($instance['entry_type'])
+    if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
