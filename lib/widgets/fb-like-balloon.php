@@ -19,7 +19,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
 
     //classにwidgetと一意となるクラス名を追加する
-    if ( is_singular() ): //投稿・固定ページのトップ表示
+    if ( is_singular() && $facebook_url ): //投稿・固定ページのトップ表示
       echo $args['before_widget'];
       if ($title) {
         echo $args['before_title'].$title.$args['after_title'];//タイトルが設定されている場合は使用する

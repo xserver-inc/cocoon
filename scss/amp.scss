@@ -48,3 +48,28 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   // text-align: center;
   // cursor: pointer;
 }
+
+//Facebookボタン
+.facebook-follow-btn{
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px 6px;
+  top: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $white_text_color;
+  background-color: $facebook_color;
+  position: relative;
+  border-radius: $basic_border_radius;
+  &::before{
+    @include fontawesome('\f087');
+    margin-right: 5px;
+    font-weight: normal;
+  }
+
+  &:hover{
+    color: $white_text_color;
+  }
+
+}

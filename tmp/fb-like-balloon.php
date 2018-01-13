@@ -13,9 +13,12 @@
         <div class="fb-like fb-like-pc" data-href="<?php echo $_FACEBOOK_URL; ?>" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
 
         <div class="fb-like fb-like-mobile" data-href="<?php echo $_FACEBOOK_URL; ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-        <?php generate_facebook_sdk_code(); ?>
-
+        <?php //通常ページの場合
+        if (!is_amp()): ?>
+          <?php generate_facebook_sdk_code(); ?>
+        <?php else: //AMPページの場合 ?>
+          <a class="facebook-follow-btn" href="<?php echo $_FACEBOOK_URL; ?>"><?php _e( 'いいね！', THEME_NAME ) ?></a>
+        <?php endif ?>
       </div>
       <div class="fb-like-balloon-body">
         <?php //メッセージの呼び出し
