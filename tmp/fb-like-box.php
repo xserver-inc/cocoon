@@ -29,8 +29,13 @@
         <?php endif ?>
         <?php if ($_LINE_ID): ?>
           <div class="fb-like-line">
-            <div class="line-it-button" style="display: none;" data-lang="ja" data-type="friend" data-lineid="@<?php echo $_LINE_ID; ?>"></div>
-  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+            <?php //通常ページの場合
+            if (!is_amp()): ?>
+              <div class="line-it-button" style="display: none;" data-lang="ja" data-type="friend" data-lineid="@<?php echo $_LINE_ID; ?>"></div>
+    <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+            <?php else: //AMPページの場合 ?>
+              <a class="line-follow-button" href="http://line.naver.jp/ti/p/@<?php echo $_LINE_ID; ?>"><?php _e( '友だち追加', THEME_NAME ) ?></a>
+            <?php endif ?>
           </div>
         <?php endif ?>
 

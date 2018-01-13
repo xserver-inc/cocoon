@@ -89,3 +89,11 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
 
   @include follow_amp_button('\f099', $twitter_color);
 }
+
+//LINEボタン
+.line-follow-button{
+  @extend %follow_amp_button;
+  font-weight: normal;
+
+  @include follow_amp_button('\f075', $line_color);
+}
