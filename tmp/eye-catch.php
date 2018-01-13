@@ -1,6 +1,6 @@
 <?php //投稿・固定ページのアイキャッチ
 //アイキャッチがない場合は非表示クラスを追加
-$display_none = has_post_thumbnail() ? '' : ' display-none'; ?>
+$display_none = has_post_thumbnail() ? null : ' display-none'; ?>
 <figure class="eye-catch<?php echo $display_none; ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
   <?php
   if (has_post_thumbnail()) {
@@ -15,7 +15,7 @@ $display_none = has_post_thumbnail() ? '' : ' display-none'; ?>
     $height = $eye_img[2];
   } else {
     $url = get_ogp_home_image_url();
-    $size = get_image_width_and_height($home_image_url);
+    $size = get_image_width_and_height($url);
     $width = isset($size['width']) ? $size['width'] : 800;
     $height = isset($size['height']) ? $size['height'] : 600;
     echo ' <img src="'.$url.'" width="'.$width.'" height="'.$height.'" alt="">';
