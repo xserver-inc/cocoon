@@ -251,18 +251,14 @@ function add_defer_async_scripts( $tag, $handle, $src ) {
   );
 
   if ( in_array( $handle, $async_defer ) ) {
-      return '<script src="' . $src . '" async defer></script>' . PHP_EOL;
+      return '<script type="text/javascript" src="' . $src . '" async defer></script>' . PHP_EOL;
   }
   if ( in_array( $handle, $async_scripts ) ) {
-      return '<script src="' . $src . '" async></script>' . PHP_EOL;
+      return '<script type="text/javascript" src="' . $src . '" async></script>' . PHP_EOL;
   }
   if ( in_array( $handle, $defer_scripts ) ) {
-      return '<script src="' . $src . '" defer></script>' . PHP_EOL;
+      return '<script type="text/javascript" src="' . $src . '" defer></script>' . PHP_EOL;
   }
-
-  // //Wordpressが出力する type='text/javascript'を削除
-  // $tag = str_replace(" type='text/javascript'", '', $tag);
-  // $tag = str_replace(' type="text/javascript"', '', $tag);
 
   return $tag;
 }
