@@ -69,20 +69,23 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
     </div>
   <?php endif ?>
 
+  <?php if (is_admin_panel_check_tools_area_visible()): ?>
     <div class="admin-checks">
       <span class="fa fa-check"></span>
       <?php
         $encoded_url = str_replace('&amp;', '&', get_permalink());
         $encoded_url = urlencode($encoded_url);
       ?>
-      <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
-      <a href="https://search.google.com/structured-data/testing-tool#url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( '構造化', THEME_NAME ) ?></a>
-      <a href="https://validator.w3.org/nu/?doc=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'HTML5', THEME_NAME ) ?></a>
-      <a href="https://gsnedders.html5.org/outliner/process.py?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'アウトライン', THEME_NAME ) ?></a>
-      <a href="https://twitter.com/search?f=tweets&q=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'ツイート検索', THEME_NAME ) ?></a>
+      <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" class="pagespeed"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
+      <a href="https://search.google.com/structured-data/testing-tool#url=<?php echo $encoded_url; ?> " target="_blank" class="structured-data"><?php _e( '構造化', THEME_NAME ) ?></a>
+      <a href="https://validator.w3.org/nu/?doc=<?php echo $encoded_url; ?> " target="_blank" class="validator-w3"><?php _e( 'HTML5', THEME_NAME ) ?></a>
+      <a href="https://gsnedders.html5.org/outliner/process.py?url=<?php echo $encoded_url; ?> " target="_blank" class="outliner"><?php _e( 'アウトライン', THEME_NAME ) ?></a>
+      <a href="https://twitter.com/search?f=tweets&q=<?php echo $encoded_url; ?> " target="_blank" class="tweets"><?php _e( 'ツイート検索', THEME_NAME ) ?></a>
 <!--
-      <a href="<?php echo $encoded_url; ?> " target="_blank"><?php _e( '', THEME_NAME ) ?></a>
+      <a href="<?php echo $encoded_url; ?> " target="_blank" class=""><?php _e( '', THEME_NAME ) ?></a>
  -->
+  <?php endif ?>
+
 </div>
 
 </div>

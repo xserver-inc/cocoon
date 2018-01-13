@@ -84,3 +84,11 @@ function is_admin_panel_amp_area_visible(){
   return get_theme_option(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, 1);
 }
 endif;
+
+//管理者パネルチェックツールエリアの表示
+define('OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE', 'admin_panel_check_tools_area_visible');
+if ( !function_exists( 'is_admin_panel_check_tools_area_visible' ) ):
+function is_admin_panel_check_tools_area_visible(){
+  return get_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);
+}
+endif;
