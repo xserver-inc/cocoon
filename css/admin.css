@@ -1439,7 +1439,7 @@
   .demo .widget_mobile_ad {
     display: none; }
   .demo .pagination {
-    margin: 30px 0;
+    margin: 24px 0;
     clear: both;
     text-align: center; }
     .demo .pagination .current {
@@ -1487,7 +1487,7 @@
       transition: all 0.3s ease 0s;
       color: #333435; }
   .demo .pager-links {
-    margin: 30px 0;
+    margin: 24px 0;
     clear: both;
     text-align: center; }
     .demo .pager-links span {
@@ -1501,7 +1501,7 @@
         transition: all 0.3s ease 0s;
         color: #333435; }
   .demo .pager-links {
-    margin: 30px 0;
+    margin: 24px 0;
     clear: both;
     text-align: center; }
     .demo .pager-links span {
@@ -1514,6 +1514,10 @@
         background-color: #f5f8fa;
         transition: all 0.3s ease 0s;
         color: #333435; }
+  .demo .pager-prev-next a {
+    width: 30%; }
+  .demo .pager-prev-next span {
+    width: 100%; }
   .demo .pager-post-navi {
     margin: 38px 0;
     display: flex;

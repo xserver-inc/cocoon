@@ -270,10 +270,12 @@ function verify_google_recaptcha($comment_post_ID)
 
 //wp 関数内でクエリが解析されて投稿が読み込まれ、テンプレートが実行されるまでの間に実行する。
 //出力にテンプレートを必要しないデータにアクセスする場合に活用できる。
-add_action( 'wp','do_access_counting' );
+add_action( 'wp','do_access_counting', 1 );
 if ( !function_exists( 'do_access_counting' ) ):
 function do_access_counting() {
-    // _v(!is_admin());
+  // global $post;
+  // _v($post);
+  //_v(!is_admin());
     // _v(is_singular());
   //アクセス数をカウントする
   if (!is_admin() && is_singular()) {
@@ -283,14 +285,19 @@ function do_access_counting() {
       count_this_page_access();
     }
   }
+}
+endif;
 
+//リダイレクト
+add_action( 'wp','wp_singular_page_redirect', 0 );
+if ( !function_exists( 'wp_singular_page_redirect' ) ):
+function wp_singular_page_redirect() {
   //リダイレクト
   if (is_singular() && $redirect_url = get_singular_redirect_url()) {
     //URL形式にマッチする場合
     if (preg_match(URL_REG, $redirect_url)) {
       redirect_to_url($redirect_url);
     }
-
   }
 }
 endif;

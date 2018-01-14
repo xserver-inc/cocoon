@@ -1666,7 +1666,7 @@ label.screen-reader-text {
 ** ページネーション
 ************************************/
 .pagination {
-  margin: 30px 0;
+  margin: 24px 0;
   clear: both;
   text-align: center;
 }
@@ -1733,7 +1733,7 @@ label.screen-reader-text {
 ** マルチページのページャーリンク
 ************************************/
 .pager-links {
-  margin: 30px 0;
+  margin: 24px 0;
   clear: both;
   text-align: center;
 }
@@ -1756,7 +1756,7 @@ label.screen-reader-text {
 ** マルチページのページャーリンク
 ************************************/
 .pager-links {
-  margin: 30px 0;
+  margin: 24px 0;
   clear: both;
   text-align: center;
 }
@@ -1773,6 +1773,13 @@ label.screen-reader-text {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333435;
+}
+
+.pager-prev-next a {
+  width: 30%;
+}
+.pager-prev-next span {
+  width: 100%;
 }
 
 /************************************
