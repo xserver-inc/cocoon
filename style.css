@@ -720,6 +720,10 @@ img {
 /************************************
 ** 関連記事
 ************************************/
+.related-entry-card .cat-label {
+  font-size: 9px;
+}
+
 /*関連エントリーカード*/
 .related-entry-heading,
 .comment-title {

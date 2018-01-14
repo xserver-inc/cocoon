@@ -3,6 +3,10 @@
 ************************************/
 .related-entry-card{
   @extend %card;
+
+  .cat-label{
+    font-size: 9px;
+  }
 }
 
 /*関連エントリーカード*/
