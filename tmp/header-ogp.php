@@ -77,4 +77,18 @@ if (is_singular()){//単一記事ページの場合
 <?php endif; ?>
 <meta property="article:published_time" content="<?php echo get_seo_post_time(); ?>" />
 <meta property="article:modified_time" content="<?php echo get_seo_update_time(); ?>" />
+<?php //カテゴリー
+$cats = get_the_category();
+if ($cats) {
+  foreach($cats as $cat) {
+    echo '<meta property="article:section" content="' . $cat->name . '">'.PHP_EOL;
+  }
+} ?>
+<?php //タグ
+$tags = get_the_tags();
+if ($tags) {
+  foreach($tags as $tag) {
+    echo '<meta property="article:tag" content="' . $tag->name . '">'.PHP_EOL;
+  }
+} ?>
 <!-- /OGP -->
