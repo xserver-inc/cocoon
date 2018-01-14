@@ -75,4 +75,6 @@ if (is_singular()){//単一記事ページの場合
 <?php if ( get_facebook_app_id() ): //fb:app_idの取得?>
 <meta property="fb:app_id" content="<?php echo get_facebook_app_id(); ?>">
 <?php endif; ?>
+<meta property="article:published_time" content="<?php echo get_seo_post_time(); ?>" />
+<meta property="article:modified_time" content="<?php echo get_seo_update_time(); ?>" />
 <!-- /OGP -->

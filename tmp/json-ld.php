@@ -46,9 +46,9 @@ if ($image && file_exists($image_file)) {
     "height": <?php echo $height; ?>
 
   },
-  "datePublished": "<?php echo (get_the_time('c') ? get_the_time('c') : get_the_modified_time('c')); ?>",<?php  // 記事投稿時間（分岐しているのbbPressのトピック対策） ?>
+  "datePublished": "<?php echo get_seo_post_time(); ?>",<?php  // 記事投稿時間（分岐しているのbbPressのトピック対策） ?>
 
-  "dateModified": "<?php echo get_the_modified_time('c'); ?>",<?php  // 記事更新時間 ?>
+  "dateModified": "<?php echo get_seo_update_time(); ?>",<?php  // 記事更新時間 ?>
 
   "author": {
     "@type": "Person",

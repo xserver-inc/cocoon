@@ -433,3 +433,27 @@ function get_the_all_in_one_seo_pack_meta_description() {
 }
 endif;
 
+//SEO的な投稿日取得
+if ( !function_exists( 'get_seo_post_time' ) ):
+function get_seo_post_time(){
+  $update_time = get_update_time('c');
+  if (is_seo_date_type_update_date_only() && $update_time) {
+    $res = $update_time;
+  } else {
+    $res = get_the_time('c');
+  }
+  return $res;
+}
+endif;
+
+//SEO的な更新日取得
+if ( !function_exists( 'get_seo_update_time' ) ):
+function get_seo_update_time(){
+  if (is_seo_date_type_post_date_only()) {
+    $res = get_the_time('c');
+  } else {
+    $res = get_update_time('c');
+  }
+  return $res;
+}
+endif;
