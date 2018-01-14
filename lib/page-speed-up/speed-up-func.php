@@ -20,6 +20,14 @@ function is_html_minify_enable(){
 }
 endif;
 
+//AMP HTMLを縮小化するか
+define('OP_HTML_MINIFY_AMP_ENABLE', 'html_minify_amp_enable');
+if ( !function_exists( 'is_html_minify_amp_enable' ) ):
+function is_html_minify_amp_enable(){
+  return get_theme_option(OP_HTML_MINIFY_AMP_ENABLE);
+}
+endif;
+
 //CSSを縮小化するか
 define('OP_CSS_MINIFY_ENABLE', 'css_minify_enable');
 if ( !function_exists( 'is_css_minify_enable' ) ):

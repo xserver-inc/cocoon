@@ -12,9 +12,9 @@ function code_minify_call_back($buffer) {
     return $buffer;
   }
 
-  if (is_amp()) {
-    return $buffer;
-  }
+  // if (is_amp() && !is_html_minify_amp_enable()) {
+  //   return $buffer;
+  // }
 
   //_v('$buffer');
   //HTMLの縮小化
