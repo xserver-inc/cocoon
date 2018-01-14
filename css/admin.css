@@ -1887,17 +1887,18 @@
     position: relative;
     display: block;
     margin-top: 1em;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    overflow: hidden; }
   .demo .alert-box {
     background-color: #fdeff2; }
   .demo .information-box::before,
   .demo .question-box::before,
   .demo .alert-box::before {
     font-family: "FontAwesome";
-    font-size: 50px;
+    font-size: 80px;
     position: absolute;
-    top: 0px;
-    left: 13px;
+    top: -25px;
+    left: -10px;
     color: #EAE3B4; }
   .demo .information-box::before {
     content: '\f05a'; }
@@ -1910,13 +1911,16 @@
     .demo .information-box,
     .demo .question-box,
     .demo .alert-box {
-      padding: 10px 10px 10px 48px; }
+      padding: 6px 6px 6px 24px; }
     .demo .information-box::before,
     .demo .question-box::before,
     .demo .alert-box::before {
-      top: 10px;
-      left: 10px;
-      font-size: 32px; } }
+      top: 6px;
+      left: 6px;
+      font-size: 1em; }
+    .demo .information-box::before,
+    .demo .question-box::before {
+      color: #D3C463; } }
   .demo .search-form {
     margin: 3em 0; }
   .demo .search-form div {

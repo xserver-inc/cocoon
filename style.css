@@ -2385,6 +2385,7 @@ label.screen-reader-text {
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 
 .alert-box {
@@ -2395,10 +2396,10 @@ label.screen-reader-text {
 .question-box::before,
 .alert-box::before {
   font-family: "FontAwesome";
-  font-size: 50px;
+  font-size: 80px;
   position: absolute;
-  top: 0px;
-  left: 13px;
+  top: -25px;
+  left: -10px;
   color: #EAE3B4;
 }
 
@@ -2419,15 +2420,20 @@ label.screen-reader-text {
   .information-box,
   .question-box,
   .alert-box {
-    padding: 10px 10px 10px 48px;
+    padding: 6px 6px 6px 24px;
   }
 
   .information-box::before,
   .question-box::before,
   .alert-box::before {
-    top: 10px;
-    left: 10px;
-    font-size: 32px;
+    top: 6px;
+    left: 6px;
+    font-size: 1em;
+  }
+
+  .information-box::before,
+  .question-box::before {
+    color: #D3C463;
   }
 }
 /*******************************
