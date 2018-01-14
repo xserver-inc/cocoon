@@ -1969,10 +1969,18 @@
     text-decoration: none;
     text-align: center;
     font-size: 14px;
-    border: 2px solid transparent; }
-  .demo .btn:before {
+    border: 2px solid transparent;
+    position: relative; }
+  .demo .btn:before,
+  .demo .btn:after {
     font-family: FontAwesome;
     margin-right: 10px; }
+  .demo .btn.btn-l:after {
+    content: "\f105";
+    position: absolute;
+    right: 0;
+    top: 18px;
+    font-size: 30px; }
   .demo #container .btn:hover {
     color: #333;
     background-color: #fff;

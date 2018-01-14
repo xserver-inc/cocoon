@@ -2506,11 +2506,21 @@ label.screen-reader-text {
   text-align: center;
   font-size: 14px;
   border: 2px solid transparent;
+  position: relative;
 }
 
-.btn:before {
+.btn:before,
+.btn:after {
   font-family: FontAwesome;
   margin-right: 10px;
+}
+
+.btn.btn-l:after {
+  content: "\f105";
+  position: absolute;
+  right: 0;
+  top: 18px;
+  font-size: 30px;
 }
 
 #container .btn:hover {
