@@ -1906,7 +1906,7 @@
     content: '\f059'; }
   .demo .alert-box::before {
     content: '\f06a';
-    color: #ee827c; }
+    color: #f3aca9; }
   @media screen and (max-width: 440px) {
     .demo .information-box,
     .demo .question-box,
@@ -1920,7 +1920,7 @@
       font-size: 1em; }
     .demo .information-box::before,
     .demo .question-box::before {
-      color: #D3C463; } }
+      color: #d3c463; } }
   .demo .search-form {
     margin: 3em 0; }
   .demo .search-form div {
