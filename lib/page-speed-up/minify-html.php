@@ -22,6 +22,10 @@ function code_minify_call_back($buffer) {
     $buffer = minify_html($buffer);
   }
 
+  // if (is_amp() && is_js_minify_enable()) {
+  //   $buffer = minify_js($buffer);
+  // }
+
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
   $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
 
@@ -48,8 +52,9 @@ function code_minify_call_back($buffer) {
   }
 
 
+  */
   //JavaScriptの縮小化
-  if (0&&is_js_minify_enable()) {
+  if (is_amp() && is_js_minify_enable()) {
     $pattern = '{<script[^>]*?>(.*?)</script>}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
@@ -64,7 +69,6 @@ function code_minify_call_back($buffer) {
       }
     }
   }
-  */
   //_v($buffer);
   return $buffer;
 }
