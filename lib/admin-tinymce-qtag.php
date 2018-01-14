@@ -22,14 +22,14 @@ function add_quicktags_to_text_editor() {
       QTags.addButton('qt-strike','<?php _e( '打ち消し線', THEME_NAME ); ?>','<span class="strike">','</span>');
       QTags.addButton('qt-badge','<?php _e( 'バッジ', THEME_NAME ); ?>','<span class="badge">','</span>');
       QTags.addButton('qt-keyboard-key','<?php _e( 'キーボード', THEME_NAME ); ?>','<span class="keyboard-key">','</span>');
-      QTags.addButton('qt-information','<?php _e( '補足情報(i)', THEME_NAME ); ?>','<div class="information">','</div>');
-      QTags.addButton('qt-question','<?php _e( '補足情報(?)', THEME_NAME ); ?>','<div class="question">','</div>');
-      QTags.addButton('qt-alert','<?php _e( '補足情報(!)', THEME_NAME ); ?>','<div class="alert">','</div>');
-      QTags.addButton('qt-sp-primary','<?php _e( 'primary', THEME_NAME ); ?>','<div class="sp-primary">','</div>');
-      QTags.addButton('qt-sp-success','<?php _e( 'success', THEME_NAME ); ?>','<div class="sp-success">','</div>');
-      QTags.addButton('qt-sp-info','info','<div class="sp-info">','</div>');
-      QTags.addButton('qt-sp-warning','<?php _e( 'warning', THEME_NAME ); ?>','<div class="sp-warning">','</div>');
-      QTags.addButton('qt-sp-danger','<?php _e( 'danger', THEME_NAME ); ?>','<div class="sp-danger">','</div>');
+      QTags.addButton('qt-information','<?php _e( '補足情報(i)', THEME_NAME ); ?>','<div class="information-box">','</div>');
+      QTags.addButton('qt-question','<?php _e( '補足情報(?)', THEME_NAME ); ?>','<div class="question-box">','</div>');
+      QTags.addButton('qt-alert','<?php _e( '補足情報(!)', THEME_NAME ); ?>','<div class="alert-box">','</div>');
+      QTags.addButton('qt-sp-primary','<?php _e( 'primary', THEME_NAME ); ?>','<div class="primary-box">','</div>');
+      QTags.addButton('qt-sp-success','<?php _e( 'success', THEME_NAME ); ?>','<div class="success-box">','</div>');
+      QTags.addButton('qt-sp-info','info','<div class="info-box">','</div>');
+      QTags.addButton('qt-sp-warning','<?php _e( 'warning', THEME_NAME ); ?>','<div class="warning-box">','</div>');
+      QTags.addButton('qt-sp-danger','<?php _e( 'danger', THEME_NAME ); ?>','<div class="danger-box">','</div>');
     </script>
   <?php
   }
@@ -111,7 +111,7 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( '補足情報(!)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'alert'
+          'classes' => 'alert-box'
         ),
         array(
           'title' => __( 'Primaryボックス', THEME_NAME ),

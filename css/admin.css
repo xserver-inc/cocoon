@@ -1974,7 +1974,7 @@
   .demo .btn:before,
   .demo .btn:after {
     font-family: FontAwesome;
-    margin-right: 10px; }
+    margin-right: 12px; }
   .demo .btn.btn-l:after {
     content: "\f105";
     position: absolute;
