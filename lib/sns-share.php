@@ -6,27 +6,9 @@ function is_sns_share_buttons_count_visible(){
 }
 endif;
 //_vis_numeric(0));
-//count.jsoonからTwitterのツイート数を取得
-if ( !function_exists( 'fetch_twitter_count' ) ):
-function fetch_twitter_count($url = null) {
 
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'twitter_'.$post->ID;
-  //DBキャッシュからカウントの取得
-  if (is_sns_share_count_cache_enable()) {
-    $count = get_transient( $transient_id );
-    if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
-      return $count;
-    }
-  }
-
-  if (!$url) {
-    $url = get_the_permalink();
-  }
+if ( !function_exists( 'fetch_twitter_count_raw' ) ):
+function fetch_twitter_count_raw($url){
   $url = rawurlencode( $url );
   $args = array( 'sslverify' => false );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
@@ -35,13 +17,50 @@ function fetch_twitter_count($url = null) {
        $body = $subscribers['body'];
     $json = json_decode( $body );
     $res = ($json->{"count"} ? $json->{"count"} : '0');
-
-    //DBキャッシュへ保存
-    if (is_sns_share_count_cache_enable()) {
-      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-    }
-
   }
+  return $res;
+}
+endif;
+
+//count.jsoonからTwitterのツイート数を取得
+if ( !function_exists( 'fetch_twitter_count' ) ):
+function fetch_twitter_count($url = null) {
+
+  //_v('$res');
+  global $post;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'twitter_'.$post->ID;
+  //DBキャッシュからカウントの取得
+  if (is_sns_share_count_cache_enable()) {
+    $count = get_transient( $transient_id );
+    if ( is_numeric($count) ) {
+      return $count;
+    }
+  }
+
+  if (!$url) {
+    $url = get_the_permalink();
+  }
+  $res = fetch_twitter_count_raw($url);
+
+  //DBキャッシュへ保存
+  if (is_sns_share_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+  }
+  // $url = rawurlencode( $url );
+  // $args = array( 'sslverify' => false );
+  // $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
+  // $res = '0';
+  // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
+  //      $body = $subscribers['body'];
+  //   $json = json_decode( $body );
+  //   $res = ($json->{"count"} ? $json->{"count"} : '0');
+
+  //   //DBキャッシュへ保存
+  //   if (is_sns_share_count_cache_enable()) {
+  //     set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+  //   }
+
+  // }
   return $res;
 }
 endif;
@@ -60,10 +79,29 @@ function get_twitter_count($url = null) {
 }
 endif;
 
+if ( !function_exists( 'fetch_facebook_count_raw' ) ):
+function fetch_facebook_count_raw($url){
+  //URLをURLエンコード
+  $encoded_url = rawurlencode( $url );
+  //オプションの設定
+  $args = array( 'sslverify' => false );
+  //Facebookにリクエストを送る
+  $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
+  $res = 0;
+
+  //取得に成功した場合
+  if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+    $body = $response['body'];
+    $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
+    $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
+  }
+  return $res;
+}
+endif;
+
 //Facebookシェア数を取得する
 if ( !function_exists( 'fetch_facebook_count' ) ):
 function fetch_facebook_count($url = null) {
-
   global $post;
   $transient_id = TRANSIENT_SHARE_PREFIX.'facebook_'.$post->ID;
   //DBキャッシュからカウントの取得
@@ -82,25 +120,32 @@ function fetch_facebook_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
-  //URLをURLエンコード
-  $encoded_url = rawurlencode( $url );
-  //オプションの設定
-  $args = array( 'sslverify' => false );
-  //Facebookにリクエストを送る
-  $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
-  $res = 0;
+  $res = fetch_facebook_count_raw($url);
+  //_v($res);
 
-  //取得に成功した場合
-  if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
-    $body = $response['body'];
-    $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
-    $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
-
-    //DBキャッシュへ保存
-    if (is_sns_share_count_cache_enable()) {
-      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-    }
+  //DBキャッシュへ保存
+  if (is_sns_share_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
   }
+  // //URLをURLエンコード
+  // $encoded_url = rawurlencode( $url );
+  // //オプションの設定
+  // $args = array( 'sslverify' => false );
+  // //Facebookにリクエストを送る
+  // $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
+  // $res = 0;
+
+  // //取得に成功した場合
+  // if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+  //   $body = $response['body'];
+  //   $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
+  //   $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
+
+  //   //DBキャッシュへ保存
+  //   if (is_sns_share_count_cache_enable()) {
+  //     set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+  //   }
+  // }
   return $res;
 }
 endif;
@@ -109,7 +154,7 @@ endif;
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
   if (!is_sns_share_buttons_count_visible())
-    return null;
+    return 0;
 
   if (is_scc_facebook_exists()) {
     return scc_get_share_facebook();
