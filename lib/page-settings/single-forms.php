@@ -1,5 +1,54 @@
 <div class="metabox-holder">
 
+<!-- カテゴリ・タグ表示 -->
+<div id="cat-tag-page" class="postbox">
+  <h2 class="hndle"><?php _e( 'カテゴリ・タグ表示設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '投稿本文下のカテゴリとタグの表示を設定します。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- プレビュー画面 -->
+        <tr>
+          <th scope="row">
+            <label><?php _e( 'プレビュー', THEME_NAME ) ?></label>
+          </th>
+          <td>
+            <div class="demo" style="overflow: auto;">
+              <?php get_template_part('tmp/categories-tags'); ?>
+            </div>
+            <?php generate_tips_tag(__( 'デモはランダムです。', THEME_NAME )); ?>
+          </td>
+        </tr>
+
+        <!-- カテゴリ・タグ表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CATEGORY_TAG_DISPLAY_TYPE, __('カテゴリ・タグ表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'two_rows' => __( 'カテゴリ・タグ2列', THEME_NAME ),
+              'one_row' => __( 'カテゴリ・タグ1列', THEME_NAME ),
+              'category_only' => __( 'カテゴリのみ', THEME_NAME ),
+              'tag_only' => __( 'タグのみ', THEME_NAME ),
+              'none' => __( 'カテゴリもタグも表示しない', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_CATEGORY_TAG_DISPLAY_TYPE, $options, get_category_tag_display_type());
+            generate_tips_tag(__( 'カテゴリとタグの表示を制御します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <!-- 関連記事 -->
 <div id="single-page" class="postbox">
   <h2 class="hndle"><?php _e( '関連記事設定', THEME_NAME ) ?></h2>

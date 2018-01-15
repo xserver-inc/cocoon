@@ -678,6 +678,22 @@ function get_additional_appeal_area_classes($option = null){
 endif;
 
 
+//アピールエリアのclass追加関数
+if ( !function_exists( 'get_additional_categories_tags_area_classes' ) ):
+function get_additional_categories_tags_area_classes($option = null){
+  $classes = null;
+
+  $classes .= ' ctdt-'.str_replace('_', '-', get_category_tag_display_type());
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
+
 
 
 

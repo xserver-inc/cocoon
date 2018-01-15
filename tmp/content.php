@@ -84,10 +84,8 @@
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
 
-        <div class="entry-categories-tags">
-          <div class="entry-categories"><?php the_category_links() ?></div>
-          <div class="entry-tags"><?php the_tag_links() ?></div>
-        </div>
+        <?php //カテゴリー・タグ
+        get_template_part('tmp/categories-tags'); ?>
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_above_sns_buttons_visible() && is_all_adsenses_visible()){

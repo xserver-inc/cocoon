@@ -60,9 +60,31 @@
 .entry-categories-tags{
   font-family: $meiryo_font;
   @extend %bottom_margin;
-  div{
+  >div{
     margin-bottom: 0.5em;
   }
+}
+
+.ctdt-one-row{
+  >div{
+    display: inline-block;
+  }
+}
+
+.ctdt-category-only{
+  .entry-tags{
+    display: none;
+  }
+}
+
+.ctdt-tag-only{
+  .entry-tags{
+    display: none;
+  }
+}
+
+.ctdt-none{
+  display: none;
 }
 
 /*本文下カテゴリ*/
