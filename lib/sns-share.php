@@ -164,6 +164,25 @@ function get_facebook_count($url = null) {
 }
 endif;
 
+if ( !function_exists( 'fetch_hatebu_count_raw' ) ):
+function fetch_hatebu_count_raw($url){
+  //取得するURL(ついでにURLエンコード)
+  $encoded_url = rawurlencode($url);
+  //オプションの設定
+  $args = array( 'sslverify' => false );
+  //Facebookにリクエストを送る
+  $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
+  $res = 0;
+
+  //取得に成功した場合
+  if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+    $body = $response['body'];
+    $res = !empty($body) ? $body : 0;
+  }
+  return $res;
+}
+endif;
+
 if ( !function_exists( 'fetch_hatebu_count' ) ):
 function fetch_hatebu_count($url = null) {
 
@@ -185,24 +204,26 @@ function fetch_hatebu_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
-  //取得するURL(ついでにURLエンコード)
-  $encoded_url = rawurlencode($url);
-  //オプションの設定
-  $args = array( 'sslverify' => false );
-  //Facebookにリクエストを送る
-  $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
-  $res = 0;
+  $res = fetch_hatebu_count_raw($url);
+  // //取得するURL(ついでにURLエンコード)
+  // $encoded_url = rawurlencode($url);
+  // //オプションの設定
+  // $args = array( 'sslverify' => false );
+  // //Facebookにリクエストを送る
+  // $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
+  // $res = 0;
 
-  //取得に成功した場合
-  if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
-    $body = $response['body'];
-    $res = !empty($body) ? $body : 0;
+  // //取得に成功した場合
+  // if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+  //   $body = $response['body'];
+  //   $res = !empty($body) ? $body : 0;
+  // }
 
-    //DBキャッシュへ保存
-    if (is_sns_share_count_cache_enable()) {
-      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-    }
+  //DBキャッシュへ保存
+  if (is_sns_share_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
   }
+
   return $res;
 }
 endif;
@@ -218,6 +239,12 @@ function get_hatebu_count($url = null) {
   } else {
     return fetch_hatebu_count($url);
   }
+}
+endif;
+
+if ( !function_exists( 'fetch_google_plus_count_raw' ) ):
+function fetch_google_plus_count_raw($url){
+
 }
 endif;
 
