@@ -310,6 +310,21 @@ function get_google_plus_count($url = null) {
 }
 endif;
 
+if ( !function_exists( 'fetch_pocket_count_raw' ) ):
+function fetch_pocket_count_raw($url){
+  $url = urlencode($url);
+  $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
+  //URL（クエリ）先の情報を取得
+  $args = array( 'sslverify' => false );
+  $result = wp_remote_get($query, $args);
+  //var_dump($result["body"]);
+  // 正規表現でカウント数のところだけを抽出
+  preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
+  $res = isset($count[1]) ? intval($count[1]) : 0;
+  return $res;
+}
+endif;
+
 //Pocketカウントの取得
 if ( !function_exists( 'fetch_pocket_count' ) ):
 function fetch_pocket_count($url = null) {
@@ -327,34 +342,30 @@ function fetch_pocket_count($url = null) {
       return $count;
     }
   }
-
+  $res = 0;
 
   if (!$url) {
     $url = get_the_permalink();
   }
+  $res = fetch_pocket_count_raw($url);
 
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    //$query = 'http://widgets.getpocket.com/v1/button?v=1&count=horizontal&url=' . $url;
-    $url = urlencode($url);
-    $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
-    //URL（クエリ）先の情報を取得
-    $args = array( 'sslverify' => false );
-    $result = wp_remote_get($query, $args);
-    //var_dump($result["body"]);
-    // 正規表現でカウント数のところだけを抽出
-    preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-    $res = isset($count[1]) ? intval($count[1]) : 0;
+  // $url = urlencode($url);
+  // $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
+  // //URL（クエリ）先の情報を取得
+  // $args = array( 'sslverify' => false );
+  // $result = wp_remote_get($query, $args);
+  // //var_dump($result["body"]);
+  // // 正規表現でカウント数のところだけを抽出
+  // preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
+  // $res = isset($count[1]) ? intval($count[1]) : 0;
 
-    //DBキャッシュへ保存
-    if (is_sns_share_count_cache_enable()) {
-      set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-    }
-
-    // 共有数を表示
-    return $res;
+  //DBキャッシュへ保存
+  if (is_sns_share_count_cache_enable()) {
+    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
   }
-  return 0;
+
+  // 共有数を表示
+  return $res;
 }
 endif;
 
