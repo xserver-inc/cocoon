@@ -1,5 +1,22 @@
 <?php //SNS用の関数など
 
+if ( !function_exists( 'fetch_feedly_count_raw' ) ):
+function fetch_feedly_count_raw($url){
+  $res = 0;
+  $args = array( 'sslverify' => false );
+  $subscribers = wp_remote_get( '.$urlhttp://cloud.feedly.com/v3/feeds/feed%2F'.$url, $args );
+  if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
+    $subscribers = json_decode( $subscribers['body'] );
+    if ( $subscribers ) {
+      $subscribers = $subscribers->subscribers;
+      if ($subscribers) {
+        $res = $subscribers;
+      }
+    }
+  }
+}
+endif;
+
 //feedlyの購読者数取得
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
@@ -10,28 +27,24 @@ function fetch_feedly_count(){
     $count = get_transient( $transient_id );
     //_v($count);
     if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
       return $count;
     }
   }
 
   $feed_url = rawurlencode( get_bloginfo( 'rss2_url' ) );
-  $res = 0;
-  $args = array( 'sslverify' => false );
-  $subscribers = wp_remote_get( "http://cloud.feedly.com/v3/feeds/feed%2F$feed_url", $args );
-  if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
-    $subscribers = json_decode( $subscribers['body'] );
-    if ( $subscribers ) {
-      $subscribers = $subscribers->subscribers;
-      if ($subscribers) {
-        $res = $subscribers;
-      }
-    }
-
-  }
+  $res = fetch_feedly_count_raw($url);
+  // $res = 0;
+  // $args = array( 'sslverify' => false );
+  // $subscribers = wp_remote_get( "http://cloud.feedly.com/v3/feeds/feed%2F$feed_url", $args );
+  // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
+  //   $subscribers = json_decode( $subscribers['body'] );
+  //   if ( $subscribers ) {
+  //     $subscribers = $subscribers->subscribers;
+  //     if ($subscribers) {
+  //       $res = $subscribers;
+  //     }
+  //   }
+  // }
 
   //DBキャッシュにカウントを保存
   if (is_sns_follow_count_cache_enable()) {
@@ -56,6 +69,26 @@ function get_feedly_count(){
 }
 endif;
 
+if ( !function_exists( 'fetch_push7_info_raw' ) ):
+function fetch_push7_info_raw($app_no){
+  $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
+  $args = array( 'sslverify' => false );
+  //$args = array('sslverify' => false);
+  $info = wp_remote_get( $url, $args );
+  if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
+    $info = json_decode( $info['body'] );
+    if ( $info ) {
+      //Push7情報をキャッシュに保存
+      if (is_sns_follow_count_cache_enable()) {
+        set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
+      }
+
+      $res = $info;
+    }
+  }
+}
+endif;
+
 //Push7情報取得
 if ( !function_exists( 'fetch_push7_info' ) ):
 function fetch_push7_info(){
@@ -74,21 +107,22 @@ function fetch_push7_info(){
   $res = null;
   $app_no = get_push7_follow_app_no();
   if ( $app_no ) {
-    $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
-    $args = array( 'sslverify' => false );
-    //$args = array('sslverify' => false);
-    $info = wp_remote_get( $url, $args );
-    if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
-      $info = json_decode( $info['body'] );
-      if ( $info ) {
-        //Push7情報をキャッシュに保存
-        if (is_sns_follow_count_cache_enable()) {
-          set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
-        }
+    $res = fetch_push7_info_raw($app_no);
+    // $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
+    // $args = array( 'sslverify' => false );
+    // //$args = array('sslverify' => false);
+    // $info = wp_remote_get( $url, $args );
+    // if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
+    //   $info = json_decode( $info['body'] );
+    //   if ( $info ) {
+    //     //Push7情報をキャッシュに保存
+    //     if (is_sns_follow_count_cache_enable()) {
+    //       set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
+    //     }
 
-        $res = $info;
-      }
-    }
+    //     $res = $info;
+    //   }
+    // }
   }
   return $res;
 }

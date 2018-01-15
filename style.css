@@ -923,7 +923,7 @@ img {
 }
 
 /*本文下タグ*/
-.tag-link {
+.tag-link, .comment-reply-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -933,12 +933,12 @@ img {
   border: 1px solid #999a9b;
   border-radius: 2px;
 }
-.tag-link::before {
+.tag-link::before, .comment-reply-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.tag-link:hover {
+.tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333435;
@@ -1289,6 +1289,13 @@ span.internal-icon {
 
 .comment-area.website-hide .comment-form-url {
   display: none;
+}
+
+.comment-reply-link {
+  font-size: 14px;
+}
+.comment-reply-link:before {
+  content: '\f0e5';
 }
 
 /************************************

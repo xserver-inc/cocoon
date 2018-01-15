@@ -931,7 +931,7 @@
     .demo .cat-link:hover {
       opacity: 0.5;
       color: #fff; }
-  .demo .tag-link {
+  .demo .tag-link, .demo .comment-reply-link {
     color: #333435;
     text-decoration: none;
     display: inline-block;
@@ -940,11 +940,11 @@
     font-size: 12px;
     border: 1px solid #999a9b;
     border-radius: 2px; }
-    .demo .tag-link::before {
+    .demo .tag-link::before, .demo .comment-reply-link::before {
       font-family: FontAwesome;
       content: "";
       padding-right: 3px; }
-    .demo .tag-link:hover {
+    .demo .tag-link:hover, .demo .comment-reply-link:hover {
       background-color: #f5f8fa;
       transition: all 0.3s ease 0s;
       color: #333435; }
@@ -1178,6 +1178,10 @@
     font-size: 0.8em; }
   .demo .comment-area.website-hide .comment-form-url {
     display: none; }
+  .demo .comment-reply-link {
+    font-size: 14px; }
+    .demo .comment-reply-link:before {
+      content: '\f0e5'; }
   .demo .sidebar {
     width: 356px;
     border: 1px solid transparent;
