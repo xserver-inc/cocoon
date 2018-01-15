@@ -244,7 +244,14 @@ endif;
 
 if ( !function_exists( 'fetch_google_plus_count_raw' ) ):
 function fetch_google_plus_count_raw($url){
-
+  $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
+  //URL（クエリ）先の情報を取得
+  $args = array( 'sslverify' => false );
+  $result = wp_remote_get($query, $args);
+  // 正規表現でカウント数のところだけを抽出
+  preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
+  $res = isset($count[1]) ? intval($count[1]) : 0;
+  return $res;
 }
 endif;
 
@@ -269,14 +276,15 @@ function fetch_google_plus_count($url = null) {
   if (!$url) {
     $url = get_the_permalink();
   }
+  $res = fetch_google_plus_count_raw($url);
 
-  $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
-  //URL（クエリ）先の情報を取得
-  $args = array( 'sslverify' => false );
-  $result = wp_remote_get($query, $args);
-  // 正規表現でカウント数のところだけを抽出
-  preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
-  $res = isset($count[1]) ? intval($count[1]) : 0;
+  // $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
+  // //URL（クエリ）先の情報を取得
+  // $args = array( 'sslverify' => false );
+  // $result = wp_remote_get($query, $args);
+  // // 正規表現でカウント数のところだけを抽出
+  // preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
+  // $res = isset($count[1]) ? intval($count[1]) : 0;
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
