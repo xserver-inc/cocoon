@@ -3534,48 +3534,33 @@ div.fb-like-mobile {
     display: none;
   }
 }
-.mobile-menu {
-  padding: 10px;
-  background: skyblue;
-  width: 50px;
+.mobile-menu-buttons {
+  background: #eee;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  line-height: 1.4;
 }
-
-.navi-menu-button {
-  position: relative;
-}
-
-.nav-unshown {
-  display: none;
-}
-
-/*アイコンのスペース*/
-#navi-menu-open {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
-}
-
-/*ハンバーガーアイコンをCSSだけで表現*/
-#navi-menu-open span, #navi-menu-open span:before, #navi-menu-open span:after {
-  position: absolute;
-  height: 3px;
-  /*線の太さ*/
-  width: 25px;
-  /*長さ*/
-  border-radius: 3px;
-  background: #555;
+.mobile-menu-buttons .navi-open {
   display: block;
-  content: '';
+  padding: 4px 6px;
+  text-align: center;
   cursor: pointer;
+  font-size: 14px;
+}
+.mobile-menu-buttons .navi-open::before {
+  font-family: FontAwesome;
+  font-size: 1.4em;
+}
+.mobile-menu-buttons .navi-button {
+  position: relative;
+  width: 100%;
 }
 
-#navi-menu-open span:before {
-  bottom: -8px;
-}
-
-#navi-menu-open span:after {
-  bottom: -16px;
+#navi-menu-open::before {
+  content: '\f0c9';
 }
 
 /*閉じる用の薄黒カバー*/
@@ -3639,7 +3624,7 @@ div.fb-like-mobile {
 .menu-drawer a {
   color: #333435;
   text-decoration: none;
-  padding: 3px 6px;
+  padding: 6px;
   display: block;
 }
 .menu-drawer a:hover {

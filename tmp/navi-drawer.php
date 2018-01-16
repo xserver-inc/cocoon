@@ -1,8 +1,10 @@
-<div class="mobile-menu">
+<div class="mobile-menu-buttons">
   <!-- メニューボタン -->
-  <div class="navi-menu-button">
+  <div class="navi-menu-button navi-button">
       <input id="navi-menu-input" type="checkbox" class="display-none">
-      <label id="navi-menu-open" for="navi-menu-input"><span></span></label>
+      <label id="navi-menu-open" class="navi-open" for="navi-menu-input">
+        <div class="navi-menu-caption navi-caption"><?php _e( 'メニュー', THEME_NAME ) ?></div>
+      </label>
       <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
       <div id="navi-menu-content">
         <label class="navi-close-button" for="navi-menu-input"></label>

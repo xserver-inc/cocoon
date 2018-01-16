@@ -424,8 +424,6 @@
   /************************************
   ** Facebookページを「いいね！」するエリアのスタイル
   ************************************/
-  /*アイコンのスペース*/
-  /*ハンバーガーアイコンをCSSだけで表現*/
   /*閉じる用の薄黒カバー*/
   /*中身*/
   /*チェックが入ったらもろもろ表示*/
@@ -2657,34 +2655,28 @@
       display: block; }
     .demo div.fb-like-pc {
       display: none; } }
-  .demo .mobile-menu {
-    padding: 10px;
-    background: skyblue;
-    width: 50px; }
-  .demo .navi-menu-button {
-    position: relative; }
-  .demo .nav-unshown {
-    display: none; }
-  .demo #navi-menu-open {
-    display: inline-block;
-    width: 30px;
-    height: 22px;
-    vertical-align: middle; }
-  .demo #navi-menu-open span, .demo #navi-menu-open span:before, .demo #navi-menu-open span:after {
-    position: absolute;
-    height: 3px;
-    /*線の太さ*/
-    width: 25px;
-    /*長さ*/
-    border-radius: 3px;
-    background: #555;
-    display: block;
-    content: '';
-    cursor: pointer; }
-  .demo #navi-menu-open span:before {
-    bottom: -8px; }
-  .demo #navi-menu-open span:after {
-    bottom: -16px; }
+  .demo .mobile-menu-buttons {
+    background: #eee;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    line-height: 1.4; }
+    .demo .mobile-menu-buttons .navi-open {
+      display: block;
+      padding: 4px 6px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px; }
+      .demo .mobile-menu-buttons .navi-open::before {
+        font-family: FontAwesome;
+        font-size: 1.4em; }
+    .demo .mobile-menu-buttons .navi-button {
+      position: relative;
+      width: 100%; }
+  .demo #navi-menu-open::before {
+    content: '\f0c9'; }
   .demo #navi-menu-close {
     display: none;
     /*はじめは隠しておく*/
@@ -2733,7 +2725,7 @@
   .demo .menu-drawer a {
     color: #333435;
     text-decoration: none;
-    padding: 3px 6px;
+    padding: 6px;
     display: block; }
     .demo .menu-drawer a:hover {
       background-color: #f5f8fa;

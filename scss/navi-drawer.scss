@@ -1,43 +1,70 @@
-.mobile-menu {
-  padding:10px;
-  background: skyblue;
-  width: 50px;
+.mobile-menu-buttons {
+  background: #eee;
+  position: fixed;
+  // display: block;
+  // width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+
+  line-height: 1.4;
+
+  .navi-open{
+    display: block;
+    padding: 4px 6px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+
+    &::before{
+      font-family: FontAwesome;
+      font-size: 1.4em;
+    }
+  }
+
+  .navi-button {
+    position: relative;
+    width: 100%;
+  }
+
+  // .navi-caption{
+  //   font-size: 16px;
+  // }
 }
 
-.navi-menu-button {
-  position: relative;
+#navi-menu-open{
+  &::before{
+    content: '\f0c9';
+  }
 }
 
-//チェックボックス等は非表示に
-.nav-unshown {
-  display:none;
-}
+// /*アイコンのスペース*/
+// #navi-menu-open {
+//   display: block;
+//   width: 30px;
+//   height: 22px;
+//   vertical-align: middle;
+// }
 
-/*アイコンのスペース*/
-#navi-menu-open {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
-}
-
-/*ハンバーガーアイコンをCSSだけで表現*/
-#navi-menu-open span, #navi-menu-open span:before, #navi-menu-open span:after {
-  position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
-  border-radius: 3px;
-  background: #555;
-  display: block;
-  content: '';
-  cursor: pointer;
-}
-#navi-menu-open span:before {
-  bottom: -8px;
-}
-#navi-menu-open span:after {
-  bottom: -16px;
-}
+// /*ハンバーガーアイコンをCSSだけで表現*/
+// #navi-menu-open span, #navi-menu-open span:before, #navi-menu-open span:after {
+//   position: absolute;
+//   height: 3px;/*線の太さ*/
+//   width: 25px;/*長さ*/
+//   border-radius: 3px;
+//   background: #555;
+//   display: block;
+//   content: '';
+//   cursor: pointer;
+// }
+// #navi-menu-open span:before {
+//   bottom: -8px;
+// }
+// #navi-menu-open span:after {
+//   bottom: -16px;
+// }
 
 /*閉じる用の薄黒カバー*/
 #navi-menu-close {
@@ -93,7 +120,7 @@
 
   a{
     @include link_cancel;
-    padding: 3px 6px;
+    padding: 6px;
     display: block;
     &:hover{
       @include bgc_hover;
