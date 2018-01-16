@@ -1098,3 +1098,19 @@ function get_first_post_year(){
   return $year;
 }
 endif;
+
+//URLエンコード後の文字列を返す
+if ( !function_exists( 'get_encoded_url' ) ):
+function get_encoded_url($url){
+  $url = str_replace('&amp;', '&', $url);
+  $url = urlencode($url);
+  return $url;
+}
+endif;
+
+//現在表示しているページのURL
+if ( !function_exists( 'get_requested_url' ) ):
+function get_requested_url(){
+  return (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}
+endif;

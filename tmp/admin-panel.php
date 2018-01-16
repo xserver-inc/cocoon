@@ -1,10 +1,10 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
-if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_amp()):
+if (is_admin_panel_visible() && is_user_administrator() && !is_amp()):
 ?>
 <div id="admin-panel" class="admin-panel">
 
   <?php //PVエリアの表示
-  if (is_admin_panel_pv_area_visible()): ?>
+  if (is_admin_panel_pv_area_visible() && is_singular()): ?>
     <div class="admin-pv">
       <span class="admin-pv-by">
         <?php if (get_admin_panel_pv_type() == THEME_NAME): ?>
@@ -40,7 +40,7 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
   <?php endif ?>
 
   <?php //編集エリアの表示
-  if (is_admin_panel_edit_area_visible()): ?>
+  if (is_admin_panel_edit_area_visible() && is_singular()): ?>
     <div class="admin-edit">
       <span class="fa fa-edit fa-fw"></span>
       <?php //投稿編集リンクの表示
@@ -55,13 +55,12 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
   <?php endif ?>
 
   <?php //AMPエリアの表示
-  if (is_admin_panel_amp_area_visible()): ?>
+  if (is_admin_panel_amp_area_visible() && is_singular()): ?>
     <div class="admin-amp">
       <span class="icon-amp-logo2"></span>
       <a href="<?php echo get_amp_permalink(); ?> "><?php _e( 'AMPページへ', THEME_NAME ) ?></a>
       <?php
-        $encoded_url = str_replace('&amp;', '&', get_amp_permalink());
-        $encoded_url = urlencode($encoded_url);
+        $encoded_url = get_encoded_url(get_amp_permalink());
       ?>
       <a href="https://search.google.com/test/amp?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Google AMPテスト', THEME_NAME ) ?></a>
       <a href="https://validator.ampproject.org/#url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'The AMP Validator', THEME_NAME ) ?></a>
@@ -73,8 +72,7 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
     <div class="admin-checks">
       <span class="fa fa-check"></span>
       <?php
-        $encoded_url = str_replace('&amp;', '&', get_permalink());
-        $encoded_url = urlencode($encoded_url);
+        $encoded_url = get_encoded_url(get_requested_url());
       ?>
       <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" class="pagespeed"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
       <a href="https://search.google.com/structured-data/testing-tool#url=<?php echo $encoded_url; ?> " target="_blank" class="structured-data"><?php _e( '構造化', THEME_NAME ) ?></a>
@@ -84,6 +82,19 @@ if (is_admin_panel_visible() && is_singular() && is_user_administrator() && !is_
 <!--
       <a href="<?php echo $encoded_url; ?> " target="_blank" class=""><?php _e( '', THEME_NAME ) ?></a>
  -->
+    </div>
+  <?php endif ?>
+
+  <?php if (1): ?>
+    <div class="admin-cresponsive">
+      <span class="fa fa-tablet"></span>
+      <?php
+        $encoded_url = get_encoded_url(get_requested_url());
+      ?>
+      <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
+      <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Sizzy', THEME_NAME ) ?></a>
+      <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
+    </div>
   <?php endif ?>
 
 </div>

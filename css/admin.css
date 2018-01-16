@@ -2941,7 +2941,8 @@
   .demo .admin-pv,
   .demo .admin-edit,
   .demo .admin-amp,
-  .demo .admin-checks {
+  .demo .admin-checks,
+  .demo .admin-cresponsive {
     border-radius: 3px;
     padding: 0 10px;
     border: 1px solid #ccc;
@@ -2949,8 +2950,14 @@
     .demo .admin-pv > span,
     .demo .admin-edit > span,
     .demo .admin-amp > span,
-    .demo .admin-checks > span {
+    .demo .admin-checks > span,
+    .demo .admin-cresponsive > span {
       padding: 0 4px; }
+  .demo .admin-amp a,
+  .demo .admin-checks a,
+  .demo .admin-cresponsive a {
+    margin: 0 4px;
+    font-size: 0.8em; }
   .demo .admin-pv {
     position: relative; }
     .demo .admin-pv .admin-pv-by {
@@ -2960,10 +2967,6 @@
       font-size: 0.6em;
       background-color: #333435;
       padding: 0 5px; }
-  .demo .admin-amp a,
-  .demo .admin-checks a {
-    margin: 0 4px;
-    font-size: 0.8em; }
   .demo .slick-slider {
     position: relative;
     display: block;

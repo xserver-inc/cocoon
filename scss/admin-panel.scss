@@ -30,7 +30,8 @@
 .admin-pv,
 .admin-edit,
 .admin-amp,
-.admin-checks{
+.admin-checks,
+.admin-cresponsive{
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid #ccc;
@@ -38,6 +39,15 @@
 
   >span{
     padding: 0 4px;
+  }
+}
+
+.admin-amp,
+.admin-checks,
+.admin-cresponsive{
+  a{
+    margin: 0 4px;
+    font-size: 0.8em;
   }
 }
 
@@ -51,13 +61,5 @@
     font-size: 0.6em;
     background-color: $text_color;
     padding: 0 5px;
-  }
-}
-
-.admin-amp,
-.admin-checks{
-  a{
-    margin: 0 4px;
-    font-size: 0.8em;
   }
 }

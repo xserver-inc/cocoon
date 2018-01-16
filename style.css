@@ -3943,7 +3943,8 @@ input[type='submit'] {
 .admin-pv,
 .admin-edit,
 .admin-amp,
-.admin-checks {
+.admin-checks,
+.admin-cresponsive {
   border-radius: 3px;
   padding: 0 10px;
   border: 1px solid #ccc;
@@ -3952,8 +3953,16 @@ input[type='submit'] {
 .admin-pv > span,
 .admin-edit > span,
 .admin-amp > span,
-.admin-checks > span {
+.admin-checks > span,
+.admin-cresponsive > span {
   padding: 0 4px;
+}
+
+.admin-amp a,
+.admin-checks a,
+.admin-cresponsive a {
+  margin: 0 4px;
+  font-size: 0.8em;
 }
 
 .admin-pv {
@@ -3966,12 +3975,6 @@ input[type='submit'] {
   font-size: 0.6em;
   background-color: #333435;
   padding: 0 5px;
-}
-
-.admin-amp a,
-.admin-checks a {
-  margin: 0 4px;
-  font-size: 0.8em;
 }
 
 /* Slider */

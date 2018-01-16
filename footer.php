@@ -69,7 +69,7 @@
   get_template_part('tmp/admin-panel'); ?>
 
   <?php //ナビゲーションドロワー
-  get_template_part('tmp/navi-drawer'); ?>
+  //get_template_part('tmp/navi-drawer'); ?>
 
   <?php if (!is_amp()) wp_footer(); ?>
 
