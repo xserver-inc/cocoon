@@ -3543,14 +3543,14 @@ div.fb-like-mobile {
   display: flex;
   line-height: 1.4;
 }
-.mobile-menu-buttons .navi-open {
+.mobile-menu-buttons .menu-open {
   display: block;
   padding: 4px 6px;
   text-align: center;
   cursor: pointer;
   font-size: 14px;
 }
-.mobile-menu-buttons .navi-open::before {
+.mobile-menu-buttons .menu-open::before {
   font-family: FontAwesome;
   font-size: 1.4em;
 }
@@ -3558,13 +3558,23 @@ div.fb-like-mobile {
   position: relative;
   width: 100%;
 }
+.mobile-menu-buttons .navi-button:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease 0s;
+  color: #333435;
+}
 
 #navi-menu-open::before {
   content: '\f0c9';
 }
 
+#sidebar-menu-open::before {
+  content: '\f03b';
+}
+
 /*閉じる用の薄黒カバー*/
-#navi-menu-close {
+#navi-menu-close,
+#sidebar-menu-close {
   display: none;
   /*はじめは隠しておく*/
   position: fixed;
@@ -3580,35 +3590,45 @@ div.fb-like-mobile {
 }
 
 /*中身*/
-#navi-menu-content {
+.menu-content {
   overflow: auto;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 9999;
   /*最前面に*/
   width: 90%;
   /*右側に隙間を作る（閉じるカバーを表示）*/
-  max-width: 330px;
+  max-width: 400px;
   /*最大幅（調整してください）*/
   height: 100%;
   background: #fff;
   /*背景色*/
   transition: .3s ease-in-out;
   /*滑らかに表示*/
+}
+
+.navi-menu-content {
+  left: 0;
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
-  /*左に隠しておく*/
+}
+
+.sidebar-menu-content {
+  right: 0;
+  -webkit-transform: translateX(105%);
+  transform: translateX(105%);
 }
 
 /*チェックが入ったらもろもろ表示*/
-#navi-menu-input:checked ~ #navi-menu-close {
+#navi-menu-input:checked ~ #navi-menu-close,
+#sidebar-menu-input:checked ~ #sidebar-menu-close {
   display: block;
   /*カバーを表示*/
   opacity: .5;
 }
 
-#navi-menu-input:checked ~ #navi-menu-content {
+#navi-menu-input:checked ~ #navi-menu-content,
+#sidebar-menu-input:checked ~ #sidebar-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   /*中身を表示（右へスライド）*/
@@ -3636,12 +3656,12 @@ div.fb-like-mobile {
   padding-left: 20px;
 }
 
-.navi-close-button {
+.menu-close-button {
   display: block;
   cursor: pointer;
   text-align: center;
 }
-.navi-close-button::before {
+.menu-close-button::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
