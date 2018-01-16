@@ -7,6 +7,7 @@ function is_sns_share_buttons_count_visible(){
 endif;
 //_vis_numeric(0));
 
+//ツイート数取得
 if ( !function_exists( 'fetch_twitter_count_raw' ) ):
 function fetch_twitter_count_raw($url){
   $url = rawurlencode( $url );
@@ -79,6 +80,7 @@ function get_twitter_count($url = null) {
 }
 endif;
 
+//Facebookシェア数の取得
 if ( !function_exists( 'fetch_facebook_count_raw' ) ):
 function fetch_facebook_count_raw($url){
   //URLをURLエンコード
@@ -164,6 +166,7 @@ function get_facebook_count($url = null) {
 }
 endif;
 
+//はてブ数の取得
 if ( !function_exists( 'fetch_hatebu_count_raw' ) ):
 function fetch_hatebu_count_raw($url){
   //取得するURL(ついでにURLエンコード)
@@ -242,6 +245,7 @@ function get_hatebu_count($url = null) {
 }
 endif;
 
+//Google+シェア数の取得
 if ( !function_exists( 'fetch_google_plus_count_raw' ) ):
 function fetch_google_plus_count_raw($url){
   $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
@@ -310,6 +314,7 @@ function get_google_plus_count($url = null) {
 }
 endif;
 
+//Pocketストック数の取得
 if ( !function_exists( 'fetch_pocket_count_raw' ) ):
 function fetch_pocket_count_raw($url){
   $url = urlencode($url);

@@ -68,6 +68,9 @@
   <?php //管理者用パネル
   get_template_part('tmp/admin-panel'); ?>
 
+  <?php //ナビゲーションドロワー
+  get_template_part('tmp/navi-drawer'); ?>
+
   <?php if (!is_amp()) wp_footer(); ?>
 
 

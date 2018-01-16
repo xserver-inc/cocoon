@@ -1,5 +1,6 @@
 <?php //SNS用の関数など
 
+//feedly購読者数の取得
 if ( !function_exists( 'fetch_feedly_count_raw' ) ):
 function fetch_feedly_count_raw($url){
   $url = rawurlencode( $url );
@@ -71,6 +72,7 @@ function get_feedly_count(){
 }
 endif;
 
+//Push7情報の取得
 if ( !function_exists( 'fetch_push7_info_raw' ) ):
 function fetch_push7_info_raw($app_no){
   $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
