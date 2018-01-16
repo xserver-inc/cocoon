@@ -33,5 +33,14 @@ update_theme_option(OP_ADMIN_PANEL_WLW_EDIT_VISIBLE);
 //管理者パネルAMPエリアの表示
 update_theme_option(OP_ADMIN_PANEL_AMP_AREA_VISIBLE);
 
+//Google AMPテストリンクの表示
+update_theme_option(OP_ADMIN_GOOGLE_AMP_TEST_VISIBLE);
+
+//The AMP Validatorリンクの表示
+update_theme_option(OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE);
+
+//AMPBenchリンクの表示
+update_theme_option(OP_ADMIN_AMPBENCH_VISIBLE);
+
 //管理者パネルチェックツールエリアの表示
 update_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);

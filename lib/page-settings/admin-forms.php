@@ -79,7 +79,7 @@
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ));
             ?>
             <div class="indent">
-              <spag><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
+              <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
               <?php
               $theme = '';
               //テーマのアクセス取得が有効でないとき
@@ -136,6 +136,18 @@
             generate_checkbox_tag(OP_ADMIN_PANEL_AMP_AREA_VISIBLE, is_admin_panel_amp_area_visible(), __( 'AMPエリア表示する', THEME_NAME ));
             generate_tips_tag(__( 'AMP動作確認・テストリンクなどを表示します。', THEME_NAME ));
             ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_ADMIN_GOOGLE_AMP_TEST_VISIBLE, is_admin_google_amp_test_visible(), __( 'Google AMPテストを表示', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://search.google.com/test/amp" target="_blank">AMP テスト - Google Search Console</a>でチェックするためのリンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE, is_admin_the_amp_validator_visible(), __( 'The AMP Validatorを表示', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://validator.ampproject.org/#" target="_blank">The AMP Validator</a>でチェックするためのリンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_AMPBENCH_VISIBLE, is_admin_ampbench_visible(), __( 'AMPBenchを表示', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://ampbench.appspot.com/" target="_blank">AMPBench</a>でチェックするためのリンクの表示。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 

@@ -62,9 +62,15 @@ if (is_admin_panel_visible() && is_user_administrator() && !is_amp()):
       <?php
         $encoded_url = get_encoded_url(get_amp_permalink());
       ?>
-      <a href="https://search.google.com/test/amp?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Google AMPテスト', THEME_NAME ) ?></a>
-      <a href="https://validator.ampproject.org/#url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'The AMP Validator', THEME_NAME ) ?></a>
-      <a href="https://ampbench.appspot.com/validate?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( ' AMPBench', THEME_NAME ) ?></a>
+      <?php if (is_admin_google_amp_test_visible()): ?>
+        <a href="https://search.google.com/test/amp?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Google AMPテスト', THEME_NAME ) ?></a>
+      <?php endif ?>
+      <?php if (is_admin_the_amp_validator_visible()): ?>
+        <a href="https://validator.ampproject.org/#url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'The AMP Validator', THEME_NAME ) ?></a>
+      <?php endif ?>
+      <?php if (is_admin_ampbench_visible()): ?>
+        <a href="https://ampbench.appspot.com/validate?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'AMPBench', THEME_NAME ) ?></a>
+      <?php endif ?>
     </div>
   <?php endif ?>
 
