@@ -21,7 +21,7 @@
             'fallback_cb' => false,
           )
         ); ?>
-        <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
+        <!-- <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label> -->
       </div>
   </div>
 
@@ -36,19 +36,8 @@
       <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
         <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
         <?php //サイドバー
-        wp_nav_menu(
-          array (
-            //カスタムメニュー名
-            'theme_location' => 'navi-header',
-            //ul 要素に適用するCSS クラス名
-            'menu_class' => 'menu-drawer',
-            //コンテナを表示しない
-            'container' => false,
-            //カスタムメニューを設定しない際に固定ページでメニューを作成しない
-            'fallback_cb' => false,
-          )
-        ); ?>
-        <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
+        get_template_part('sidebar'); ?>
+        <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
       </div>
   </div>
 

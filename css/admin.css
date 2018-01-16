@@ -2679,6 +2679,8 @@
         background-color: #f5f8fa;
         transition: all 0.3s ease 0s;
         color: #333435; }
+    .demo .mobile-menu-buttons .ad-area {
+      display: none; }
   .demo #navi-menu-open::before {
     content: '\f0c9'; }
   .demo #sidebar-menu-open::before {
@@ -2703,7 +2705,7 @@
     top: 0;
     z-index: 9999;
     /*最前面に*/
-    width: 90%;
+    width: 100%;
     /*右側に隙間を作る（閉じるカバーを表示）*/
     max-width: 400px;
     /*最大幅（調整してください）*/
@@ -2712,6 +2714,8 @@
     /*背景色*/
     transition: .3s ease-in-out;
     /*滑らかに表示*/ }
+    .demo .menu-content .sidebar {
+      width: 100%; }
   .demo .navi-menu-content {
     left: 0;
     -webkit-transform: translateX(-105%);

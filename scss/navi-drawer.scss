@@ -31,6 +31,10 @@
       @include bgc_hover;
     }
   }
+
+  .ad-area{
+    display: none;
+  }
 }
 
 #navi-menu-open{
@@ -67,11 +71,15 @@
   position: fixed;
   top: 0;
   z-index: 9999;/*最前面に*/
-  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  width: 100%;/*右側に隙間を作る（閉じるカバーを表示）*/
   max-width: 400px;/*最大幅（調整してください）*/
   height: 100%;
   background: #fff;/*背景色*/
   transition: .3s ease-in-out;/*滑らかに表示*/
+
+  .sidebar{
+    width: 100%;
+  }
 
 }
 .navi-menu-content{
