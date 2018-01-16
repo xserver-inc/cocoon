@@ -91,15 +91,23 @@ if (is_admin_panel_visible() && is_user_administrator() && !is_amp()):
     </div>
   <?php endif ?>
 
-  <?php if (1): ?>
+  <?php if (is_admin_panel_responsive_tools_area_visible()): ?>
     <div class="admin-cresponsive">
       <span class="fa fa-tablet"></span>
       <?php
         $encoded_url = get_encoded_url(get_requested_url());
       ?>
-      <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
-      <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Sizzy', THEME_NAME ) ?></a>
-      <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
+      <?php if (is_admin_responsinator_visible()): ?>
+        <a href="http://www.responsinator.com/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'レスポンシブテスト', THEME_NAME ) ?></a>
+      <?php endif ?>
+      <?php if (is_admin_sizzy_visible()): ?>
+        <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Sizzy', THEME_NAME ) ?></a>
+      <?php endif ?>
+      <?php
+      if (is_admin_multi_screen_resolution_test_visible()): ?>
+         <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
+      <?php endif ?>
+
     </div>
   <?php endif ?>
 

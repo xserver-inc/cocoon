@@ -44,3 +44,15 @@ update_theme_option(OP_ADMIN_AMPBENCH_VISIBLE);
 
 //管理者パネルチェックツールエリアの表示
 update_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);
+
+//管理者パネルレスポンシブツールエリアの表示
+update_theme_option(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE);
+
+//Responsinatorリンクの表示
+update_theme_option(OP_ADMIN_RESPONSINATOR_VISIBLE);
+
+//Sizzyリンクの表示
+update_theme_option(OP_ADMIN_SIZZY_VISIBLE);
+
+//Multi_Screen_Resolution_Testリンクの表示
+update_theme_option(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE);

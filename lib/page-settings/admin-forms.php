@@ -164,6 +164,32 @@
           </td>
         </tr>
 
+        <!-- レスポンシブツールエリアの表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, __( 'レスポンシブツールエリアの表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェック表示する', THEME_NAME ));
+            generate_tips_tag(__( 'レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。', THEME_NAME ));
+            ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_ADMIN_RESPONSINATOR_VISIBLE, is_admin_responsinator_visible(), __( 'Responsinatorチェック表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="http://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_SIZZY_VISIBLE, is_admin_sizzy_visible(), __( 'Sizyチェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="http://sizzy.co/" target="_blank">Sizzy</a>チェック用リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, is_admin_multi_screen_resolution_test_visible(), __( 'Sizyチェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="http://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
+              ?>
+
+            </div>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

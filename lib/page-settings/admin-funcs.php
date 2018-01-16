@@ -117,3 +117,35 @@ function is_admin_panel_check_tools_area_visible(){
   return get_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);
 }
 endif;
+
+//管理者パネルレスポンシブツールエリアの表示
+define('OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE', 'admin_panel_responsive_tools_area_visible');
+if ( !function_exists( 'is_admin_panel_responsive_tools_area_visible' ) ):
+function is_admin_panel_responsive_tools_area_visible(){
+  return get_theme_option(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, 1);
+}
+endif;
+
+//Responsinatorリンクの表示
+define('OP_ADMIN_RESPONSINATOR_VISIBLE', 'admin_responsinator_visible');
+if ( !function_exists( 'is_admin_responsinator_visible' ) ):
+function is_admin_responsinator_visible(){
+  return get_theme_option(OP_ADMIN_RESPONSINATOR_VISIBLE, 1);
+}
+endif;
+
+//Sizzyリンクの表示
+define('OP_ADMIN_SIZZY_VISIBLE', 'admin_sizzy_visible');
+if ( !function_exists( 'is_admin_sizzy_visible' ) ):
+function is_admin_sizzy_visible(){
+  return get_theme_option(OP_ADMIN_SIZZY_VISIBLE, 1);
+}
+endif;
+
+//Multi_Screen_Resolution_Testリンクの表示
+define('OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE', 'admin_multi_screen_resolution_test_visible');
+if ( !function_exists( 'is_admin_multi_screen_resolution_test_visible' ) ):
+function is_admin_multi_screen_resolution_test_visible(){
+  return get_theme_option(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, 1);
+}
+endif;
