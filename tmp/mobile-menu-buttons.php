@@ -35,12 +35,31 @@
   </div>
 
   <!-- 検索ボタン -->
+<!--
   <div class="search-menu-button menu-button">
     <a href="<?php echo site_url(); ?>">
       <div class="search-menu-icon menu-icon"></div>
       <div class="search-menu-caption menu-caption"><?php _e( '検索', THEME_NAME ) ?></div>
     </a>
   </div>
+ -->
+  <?php if (!is_amp()): ?>
+    <!-- 検索ボタン -->
+    <div class="search-menu-button menu-button">
+      <input id="search-menu-input" type="checkbox" class="display-none">
+      <label id="search-menu-open" class="menu-open" for="search-menu-input">
+      <div class="search-menu-icon menu-icon"></div>
+      <div class="search-menu-caption menu-caption"><?php _e( '検索', THEME_NAME ) ?></div>
+      </label>
+      <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
+      <div id="search-menu-content" class="search-menu-content">
+        <?php //検索フォーム
+        get_template_part('searchform') ?>
+      </div>
+    </div>
+  <?php endif ?>
+
+
 
   <?php if (!is_amp()): ?>
   <!-- トップボタン -->

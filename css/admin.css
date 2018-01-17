@@ -2695,7 +2695,8 @@
   .demo .sidebar-menu-icon::before {
     content: '\f03b'; }
   .demo #navi-menu-close,
-  .demo #sidebar-menu-close {
+  .demo #sidebar-menu-close,
+  .demo #search-menu-close {
     display: none;
     /*はじめは隠しておく*/
     position: fixed;
@@ -2733,16 +2734,29 @@
     right: 0;
     -webkit-transform: translateX(105%);
     transform: translateX(105%); }
+  .demo .search-menu-content {
+    transition: .3s ease-in-out;
+    position: fixed;
+    top: 40%;
+    z-index: 9999;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    -webkit-transform: translateY(600%);
+    transform: translateY(600%); }
+    .demo .search-menu-content .search-edit {
+      width: 100%; }
   .demo #navi-menu-input:checked ~ #navi-menu-close,
-  .demo #sidebar-menu-input:checked ~ #sidebar-menu-close {
+  .demo #sidebar-menu-input:checked ~ #sidebar-menu-close,
+  .demo #search-menu-input:checked ~ #search-menu-close {
     display: block;
     /*カバーを表示*/
     opacity: .5; }
   .demo #navi-menu-input:checked ~ #navi-menu-content,
-  .demo #sidebar-menu-input:checked ~ #sidebar-menu-content {
+  .demo #sidebar-menu-input:checked ~ #sidebar-menu-content,
+  .demo #search-menu-input:checked ~ #search-menu-content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
-    /*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15); }
   .demo .menu-drawer ul {
     list-style: none; }
