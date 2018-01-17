@@ -1,17 +1,18 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
 if (is_user_administrator()
   && !is_amp()
-  && (
-    //全てで表示する場合
-    is_admin_panel_all_visible()
-    //パソコンのみ表示の場合
-    || (is_admin_panel_pc_only_visible() && !wp_is_mobile())
-    //モバイルのみ表示の場合
-    || (is_admin_panel_mobile_only_visible() && wp_is_mobile())
-  )
+  && is_admin_panel_visible()
+  // && (
+  //   //全てで表示する場合
+  //   is_admin_panel_all_visible()
+  //   //パソコンのみ表示の場合
+  //   || (is_admin_panel_pc_only_visible() && !wp_is_mobile())
+  //   //モバイルのみ表示の場合
+  //   || (is_admin_panel_mobile_only_visible() && wp_is_mobile())
+  // )
 ):
 ?>
-<div id="admin-panel" class="admin-panel">
+<div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
 
   <?php //PVエリアの表示
   if (is_admin_panel_pv_area_visible() && is_singular()): ?>

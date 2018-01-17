@@ -693,6 +693,21 @@ function get_additional_categories_tags_area_classes($option = null){
 endif;
 
 
+//管理パネルエリアのclass追加関数
+if ( !function_exists( 'get_additional_admin_panel_area_classes' ) ):
+function get_additional_admin_panel_area_classes($option = null){
+  $classes = null;
+
+  $classes .= ' apdt-'.str_replace('_', '-', get_admin_panel_display_type());
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;
+
+
 
 
 

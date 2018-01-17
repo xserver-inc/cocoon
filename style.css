@@ -3977,6 +3977,14 @@ input[type='submit'] {
   padding: 0 5px;
 }
 
+.apdt-pc-only {
+  display: flex;
+}
+
+.apdt-mobile-only {
+  display: none;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -4537,6 +4545,14 @@ input[type='submit'] {
   }
   .admin-panel > div {
     margin: 3px;
+  }
+
+  .apdt-pc-only {
+    display: none;
+  }
+
+  .apdt-mobile-only {
+    display: flex;
   }
 }
 @media screen and (max-width: 480px) {

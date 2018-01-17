@@ -2967,6 +2967,10 @@
       font-size: 0.6em;
       background-color: #333435;
       padding: 0 5px; }
+  .demo .apdt-pc-only {
+    display: flex; }
+  .demo .apdt-mobile-only {
+    display: none; }
   .demo .slick-slider {
     position: relative;
     display: block;
@@ -3320,7 +3324,11 @@
         font-size: 14px;
         line-height: 1.4; }
         .demo .admin-panel > div {
-          margin: 3px; } }
+          margin: 3px; }
+      .demo .apdt-pc-only {
+        display: none; }
+      .demo .apdt-mobile-only {
+        display: flex; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }
