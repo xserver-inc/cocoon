@@ -118,6 +118,46 @@ function is_admin_panel_check_tools_area_visible(){
 }
 endif;
 
+//PageSpeed Insightsリンクの表示
+define('OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE', 'admin_pagespeed_insights_visible');
+if ( !function_exists( 'is_admin_pagespeed_insights_visible' ) ):
+function is_admin_pagespeed_insights_visible(){
+  return get_theme_option(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE, 1);
+}
+endif;
+
+//構造化チェックリンクの表示
+define('OP_ADMIN_STRUCTURED_DATA_VISIBLE', 'admin_structured_data_visible');
+if ( !function_exists( 'is_admin_structured_data_visible' ) ):
+function is_admin_structured_data_visible(){
+  return get_theme_option(OP_ADMIN_STRUCTURED_DATA_VISIBLE, 1);
+}
+endif;
+
+//HTML5チェックリンクの表示
+define('OP_ADMIN_NU_HTML_CHECKER_VISIBLE', 'admin_nu_html_checker_visible');
+if ( !function_exists( 'is_admin_nu_html_checker_visible' ) ):
+function is_admin_nu_html_checker_visible(){
+  return get_theme_option(OP_ADMIN_NU_HTML_CHECKER_VISIBLE, 1);
+}
+endif;
+
+//HTML5アウトラインチェックリンクの表示
+define('OP_ADMIN_HTML5_OUTLINER_VISIBLE', 'admin_html5_outliner_visible');
+if ( !function_exists( 'is_admin_html5_outliner_visible' ) ):
+function is_admin_html5_outliner_visible(){
+  return get_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE, 1);
+}
+endif;
+
+//ツイートチェックリンクの表示
+define('OP_ADMIN_TWEET_CHECK_VISIBLE', 'admin_tweet_check_visible');
+if ( !function_exists( 'is_admin_tweet_check_visible' ) ):
+function is_admin_tweet_check_visible(){
+  return get_theme_option(OP_ADMIN_TWEET_CHECK_VISIBLE, 1);
+}
+endif;
+
 //管理者パネルレスポンシブツールエリアの表示
 define('OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE', 'admin_panel_responsive_tools_area_visible');
 if ( !function_exists( 'is_admin_panel_responsive_tools_area_visible' ) ):

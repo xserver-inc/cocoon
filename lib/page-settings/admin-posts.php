@@ -45,6 +45,21 @@ update_theme_option(OP_ADMIN_AMPBENCH_VISIBLE);
 //管理者パネルチェックツールエリアの表示
 update_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);
 
+//PageSpeed Insightsリンクの表示
+update_theme_option(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE);
+
+//構造化チェックリンクの表示
+update_theme_option(OP_ADMIN_STRUCTURED_DATA_VISIBLE);
+
+//HTML5チェックリンクの表示
+update_theme_option(OP_ADMIN_NU_HTML_CHECKER_VISIBLE);
+
+//HTML5アウトラインチェックリンクの表示
+update_theme_option(OP_ADMIN_HTML5_OUTLINER_VISIBLE);
+
+//ツイートチェックリンクの表示
+update_theme_option(OP_ADMIN_TWEET_CHECK_VISIBLE);
+
 //管理者パネルレスポンシブツールエリアの表示
 update_theme_option(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE);
 

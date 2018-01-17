@@ -161,6 +161,24 @@
             generate_checkbox_tag(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE, is_admin_panel_check_tools_area_visible(), __( 'チェックツールエリア表示する', THEME_NAME ));
             generate_tips_tag(__( 'ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反応など。', THEME_NAME ));
             ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE, is_admin_pagespeed_insights_visible(), __( 'PageSpeed Insightsを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true" target="_blank">PageSpeed Insights</a>リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_STRUCTURED_DATA_VISIBLE, is_admin_structured_data_visible(), __( '構造化データチェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://search.google.com/structured-data/testing-tool#" target="_blank">構造化データ テストツール</a>リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_NU_HTML_CHECKER_VISIBLE, is_admin_nu_html_checker_visible(), __( 'HTML5チェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://validator.w3.org/nu/" target="_blank">Nu Html Checker</a>リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_HTML5_OUTLINER_VISIBLE, is_admin_html5_outliner_visible(), __( 'HTML5アウトラインチェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://gsnedders.html5.org/outliner/" target="_blank">HTML 5 Outliner</a>リンクの表示。', THEME_NAME ));
+
+              generate_checkbox_tag(OP_ADMIN_TWEET_CHECK_VISIBLE, is_admin_tweet_check_visible(), __( 'ツイートチェックを表示する', THEME_NAME ));
+              generate_tips_tag(__( '投稿・固定ページに対するツイートチェックリンクの表示。', THEME_NAME ));
+               ?>
+            </div>
           </td>
         </tr>
 
@@ -171,12 +189,12 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェック表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_PANEL_RESPONSIVE_TOOLS_AREA_VISIBLE, is_admin_panel_responsive_tools_area_visible(), __( 'レスポンシブチェックを表示する', THEME_NAME ));
             generate_tips_tag(__( 'レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えます。', THEME_NAME ));
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag(OP_ADMIN_RESPONSINATOR_VISIBLE, is_admin_responsinator_visible(), __( 'Responsinatorチェック表示する', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_RESPONSINATOR_VISIBLE, is_admin_responsinator_visible(), __( 'Responsinatorチェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="http://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_SIZZY_VISIBLE, is_admin_sizzy_visible(), __( 'Sizyチェックを表示する', THEME_NAME ));
