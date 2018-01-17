@@ -154,6 +154,9 @@ function body_class_additional($classes) {
       break;
   }
 
+  //モバイルボタンタイプ
+  $classes[] = 'mblt-'.str_replace('_', '-', get_mobile_button_layout_type());
+
   //カルーセル表示のフラグが立っている場合はクラスを追加
   if ($add_no_carousel) {
     $classes[] = 'no-carousel';

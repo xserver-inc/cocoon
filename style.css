@@ -3540,8 +3540,9 @@ div.fb-like-mobile {
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: none;
   line-height: 1.4;
+  height: 50px;
 }
 .mobile-menu-buttons .menu-icon {
   margin-top: 3px;
@@ -4588,6 +4589,14 @@ input[type='submit'] {
 
   .apdt-mobile-only {
     display: flex;
+  }
+
+  .mobile-menu-buttons {
+    display: flex;
+  }
+
+  .mblt-slide-in {
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 480px) {

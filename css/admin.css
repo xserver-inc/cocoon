@@ -2661,8 +2661,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    line-height: 1.4; }
+    display: none;
+    line-height: 1.4;
+    height: 50px; }
     .demo .mobile-menu-buttons .menu-icon {
       margin-top: 3px;
       text-align: center; }
@@ -3352,7 +3353,11 @@
       .demo .apdt-pc-only {
         display: none; }
       .demo .apdt-mobile-only {
-        display: flex; } }
+        display: flex; }
+      .demo .mobile-menu-buttons {
+        display: flex; }
+      .demo .mblt-slide-in {
+        margin-bottom: 50px; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

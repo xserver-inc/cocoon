@@ -69,7 +69,9 @@
   get_template_part('tmp/admin-panel'); ?>
 
   <?php //モバイルメニューボタン
-  get_template_part('tmp/mobile-menu-buttons'); ?>
+  if (is_mobile_button_layout_type_slide_in()) {
+    get_template_part('tmp/mobile-menu-buttons');
+  } ?>
 
   <?php if (!is_amp()) wp_footer(); ?>
 

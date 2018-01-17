@@ -22,6 +22,7 @@
                 $options = array(
                   'none' => __( 'ボタンを表示しない（ミドルメニューのみ）', THEME_NAME ),
                   'top' => __( 'トップボタン', THEME_NAME ),
+                  'slide_in' => __( 'スライドインボタン', THEME_NAME ),
                   // 'slidein' => __( 'スライドインメニューボタン', THEME_NAME ),
                   // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
                 );
