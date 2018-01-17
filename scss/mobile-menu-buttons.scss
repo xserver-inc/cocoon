@@ -6,7 +6,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 14px;
 
   display: flex;
 
@@ -14,17 +13,22 @@
 
   .menu-icon{
     margin-top: 3px;
+    text-align: center;
     &::before{
       font-family: FontAwesome;
-      font-size: 1.4em;
+      font-size: 1em;
     }
+  }
+
+  .menu-caption{
+    font-size: 12px;
+    text-align: center;
   }
 
   .menu-button {
     position: relative;
     width: 100%;
-    text-align: center;
-    a{
+    >a{
       @include link_cancel;
     }
     &:hover{
@@ -36,9 +40,6 @@
     display: none;
   }
 
-  .menu-caption{
-    font-size: 12px;
-  }
 }
 
 .navi-menu-icon{
@@ -52,6 +53,19 @@
     content: '\f015';
   }
 }
+
+.search-menu-icon{
+  &::before{
+    content: '\f002';
+  }
+}
+
+.top-menu-icon{
+  &::before{
+    content: '\f062';
+  }
+}
+
 .sidebar-menu-icon{
   &::before{
     content: '\f03b';

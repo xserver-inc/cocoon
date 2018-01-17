@@ -2661,19 +2661,21 @@
     bottom: 0;
     left: 0;
     right: 0;
-    font-size: 14px;
     display: flex;
     line-height: 1.4; }
     .demo .mobile-menu-buttons .menu-icon {
-      margin-top: 3px; }
+      margin-top: 3px;
+      text-align: center; }
       .demo .mobile-menu-buttons .menu-icon::before {
         font-family: FontAwesome;
-        font-size: 1.4em; }
+        font-size: 1em; }
+    .demo .mobile-menu-buttons .menu-caption {
+      font-size: 12px;
+      text-align: center; }
     .demo .mobile-menu-buttons .menu-button {
       position: relative;
-      width: 100%;
-      text-align: center; }
-      .demo .mobile-menu-buttons .menu-button a {
+      width: 100%; }
+      .demo .mobile-menu-buttons .menu-button > a {
         color: #333435;
         text-decoration: none; }
       .demo .mobile-menu-buttons .menu-button:hover {
@@ -2682,12 +2684,14 @@
         color: #333435; }
     .demo .mobile-menu-buttons .ad-area {
       display: none; }
-    .demo .mobile-menu-buttons .menu-caption {
-      font-size: 12px; }
   .demo .navi-menu-icon::before {
     content: '\f0c9'; }
   .demo .home-menu-icon::before {
     content: '\f015'; }
+  .demo .search-menu-icon::before {
+    content: '\f002'; }
+  .demo .top-menu-icon::before {
+    content: '\f062'; }
   .demo .sidebar-menu-icon::before {
     content: '\f03b'; }
   .demo #navi-menu-close,

@@ -3540,23 +3540,26 @@ div.fb-like-mobile {
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 14px;
   display: flex;
   line-height: 1.4;
 }
 .mobile-menu-buttons .menu-icon {
   margin-top: 3px;
+  text-align: center;
 }
 .mobile-menu-buttons .menu-icon::before {
   font-family: FontAwesome;
-  font-size: 1.4em;
+  font-size: 1em;
+}
+.mobile-menu-buttons .menu-caption {
+  font-size: 12px;
+  text-align: center;
 }
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 100%;
-  text-align: center;
 }
-.mobile-menu-buttons .menu-button a {
+.mobile-menu-buttons .menu-button > a {
   color: #333435;
   text-decoration: none;
 }
@@ -3568,9 +3571,6 @@ div.fb-like-mobile {
 .mobile-menu-buttons .ad-area {
   display: none;
 }
-.mobile-menu-buttons .menu-caption {
-  font-size: 12px;
-}
 
 .navi-menu-icon::before {
   content: '\f0c9';
@@ -3578,6 +3578,14 @@ div.fb-like-mobile {
 
 .home-menu-icon::before {
   content: '\f015';
+}
+
+.search-menu-icon::before {
+  content: '\f002';
+}
+
+.top-menu-icon::before {
+  content: '\f062';
 }
 
 .sidebar-menu-icon::before {

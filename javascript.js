@@ -28,7 +28,7 @@
     prevScrollTop = scrollTop;
   });
   //ボタン(.go-to-top-button)のクリックイベント
-  $('.go-to-top-button').click(function(){
+  $('.go-to-top-button, .top-menu-button').click(function(){
   //ページトップへ移動する
     $('body,html').animate({
             scrollTop: 1
