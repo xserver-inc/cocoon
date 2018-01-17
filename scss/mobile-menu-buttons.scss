@@ -6,27 +6,27 @@
   bottom: 0;
   left: 0;
   right: 0;
+  font-size: 14px;
 
   display: flex;
 
   line-height: 1.4;
 
-  .menu-open{
-    display: block;
-    padding: 4px 6px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 14px;
-
+  .menu-icon{
+    margin-top: 3px;
     &::before{
       font-family: FontAwesome;
       font-size: 1.4em;
     }
   }
 
-  .navi-button {
+  .menu-button {
     position: relative;
     width: 100%;
+    text-align: center;
+    a{
+      @include link_cancel;
+    }
     &:hover{
       @include bgc_hover;
     }
@@ -35,15 +35,24 @@
   .ad-area{
     display: none;
   }
+
+  .menu-caption{
+    font-size: 12px;
+  }
 }
 
-#navi-menu-open{
+.navi-menu-icon{
   &::before{
     content: '\f0c9';
   }
 }
 
-#sidebar-menu-open{
+.home-menu-icon{
+  &::before{
+    content: '\f015';
+  }
+}
+.sidebar-menu-icon{
   &::before{
     content: '\f03b';
   }

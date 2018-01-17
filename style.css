@@ -3540,25 +3540,27 @@ div.fb-like-mobile {
   bottom: 0;
   left: 0;
   right: 0;
+  font-size: 14px;
   display: flex;
   line-height: 1.4;
 }
-.mobile-menu-buttons .menu-open {
-  display: block;
-  padding: 4px 6px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 14px;
+.mobile-menu-buttons .menu-icon {
+  margin-top: 3px;
 }
-.mobile-menu-buttons .menu-open::before {
+.mobile-menu-buttons .menu-icon::before {
   font-family: FontAwesome;
   font-size: 1.4em;
 }
-.mobile-menu-buttons .navi-button {
+.mobile-menu-buttons .menu-button {
   position: relative;
   width: 100%;
+  text-align: center;
 }
-.mobile-menu-buttons .navi-button:hover {
+.mobile-menu-buttons .menu-button a {
+  color: #333435;
+  text-decoration: none;
+}
+.mobile-menu-buttons .menu-button:hover {
   background-color: #f5f8fa;
   transition: all 0.3s ease 0s;
   color: #333435;
@@ -3566,12 +3568,19 @@ div.fb-like-mobile {
 .mobile-menu-buttons .ad-area {
   display: none;
 }
+.mobile-menu-buttons .menu-caption {
+  font-size: 12px;
+}
 
-#navi-menu-open::before {
+.navi-menu-icon::before {
   content: '\f0c9';
 }
 
-#sidebar-menu-open::before {
+.home-menu-icon::before {
+  content: '\f015';
+}
+
+.sidebar-menu-icon::before {
   content: '\f03b';
 }
 
@@ -3935,6 +3944,7 @@ input[type='submit'] {
   flex-direction: row;
   flex-wrap: wrap;
   transition: .3s;
+  z-index: 9999;
 }
 .admin-panel a {
   color: #fff;
@@ -4701,6 +4711,10 @@ input[type='submit'] {
 
   .admin-panel {
     flex-direction: column;
+  }
+
+  .menu-content {
+    max-width: 260px;
   }
 }
 @media print {
