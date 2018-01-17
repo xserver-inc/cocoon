@@ -67,7 +67,7 @@
               'mobile_only' => __( 'モバイルのみ表示', THEME_NAME ),
               'none' => __( '表示しない', THEME_NAME ),
             );
-            generate_selectbox_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, $options, is_admin_panel_display_type());
+            generate_selectbox_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, $options, get_admin_panel_display_type());
             generate_tips_tag(__( '管理者パネルの表示形式を選択します。', THEME_NAME ));
 
             // generate_checkbox_tag(OP_ADMIN_PANEL_VISIBLE, is_admin_panel_visible(), __( '管理者パネルを表示する', THEME_NAME ));

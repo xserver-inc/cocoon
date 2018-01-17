@@ -31,24 +31,29 @@ endif;
 
 //管理者パネルを表示タイプ
 define('OP_ADMIN_PANEL_DISPLAY_TYPE', 'admin_panel_display_type');
-if ( !function_exists( 'is_admin_panel_display_type' ) ):
-function is_admin_panel_display_type(){
+if ( !function_exists( 'get_admin_panel_display_type' ) ):
+function get_admin_panel_display_type(){
   return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'all');
 }
 endif;
 if ( !function_exists( 'is_admin_panel_all_visible' ) ):
 function is_admin_panel_all_visible(){
-  return is_admin_panel_display_type() == 'all';
+  return get_admin_panel_display_type() == 'all';
 }
 endif;
 if ( !function_exists( 'is_admin_panel_pc_only_visible' ) ):
 function is_admin_panel_pc_only_visible(){
-  return is_admin_panel_display_type() == 'pc_only';
+  return get_admin_panel_display_type() == 'pc_only';
 }
 endif;
 if ( !function_exists( 'is_admin_panel_mobile_only_visible' ) ):
 function is_admin_panel_mobile_only_visible(){
-  return is_admin_panel_display_type() == 'mobile_only';
+  return get_admin_panel_display_type() == 'mobile_only';
+}
+endif;
+if ( !function_exists( 'is_admin_panel_visible' ) ):
+function is_admin_panel_visible(){
+  return get_admin_panel_display_type() != 'none';
 }
 endif;
 
