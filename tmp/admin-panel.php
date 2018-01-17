@@ -83,8 +83,11 @@ if (is_admin_panel_visible() && is_user_administrator() && !is_amp()):
       <?php if (is_admin_pagespeed_insights_visible()): ?>
         <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" class="pagespeed"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
       <?php endif ?>
+      <?php if (1): ?>
+        <a href="https://search.google.com/test/mobile-friendly?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'モバイルフレンドリー', THEME_NAME ) ?></a>
+      <?php endif ?>
       <?php if (is_admin_structured_data_visible()): ?>
-        <a href="https://search.google.com/structured-data/testing-tool#url=<?php echo $encoded_url; ?> " target="_blank" class="structured-data"><?php _e( '構造化', THEME_NAME ) ?></a>
+
       <?php endif ?>
       <?php if (is_admin_nu_html_checker_visible()): ?>
         <a href="https://validator.w3.org/nu/?doc=<?php echo $encoded_url; ?> " target="_blank" class="validator-w3"><?php _e( 'HTML5', THEME_NAME ) ?></a>

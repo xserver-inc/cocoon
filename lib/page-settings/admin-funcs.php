@@ -126,6 +126,14 @@ function is_admin_pagespeed_insights_visible(){
 }
 endif;
 
+//モバイルフレンドリーリンクの表示
+define('OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE', 'admin_mobile_friendly_test_visible');
+if ( !function_exists( 'is_admin_mobile_friendly_test_visible' ) ):
+function is_admin_mobile_friendly_test_visible(){
+  return get_theme_option(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE, 1);
+}
+endif;
+
 //構造化チェックリンクの表示
 define('OP_ADMIN_STRUCTURED_DATA_VISIBLE', 'admin_structured_data_visible');
 if ( !function_exists( 'is_admin_structured_data_visible' ) ):
