@@ -29,13 +29,36 @@ endif;
 // 管理者パネル
 ///////////////////////////////////////
 
-//管理者パネルを表示
-define('OP_ADMIN_PANEL_VISIBLE', 'admin_panel_visible');
-if ( !function_exists( 'is_admin_panel_visible' ) ):
-function is_admin_panel_visible(){
-  return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1);
+//管理者パネルを表示タイプ
+define('OP_ADMIN_PANEL_DISPLAY_TYPE', 'admin_panel_display_type');
+if ( !function_exists( 'is_admin_panel_display_type' ) ):
+function is_admin_panel_display_type(){
+  return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'all');
 }
 endif;
+if ( !function_exists( 'is_admin_panel_all_visible' ) ):
+function is_admin_panel_all_visible(){
+  return is_admin_panel_display_type() == 'all';
+}
+endif;
+if ( !function_exists( 'is_admin_panel_pc_only_visible' ) ):
+function is_admin_panel_pc_only_visible(){
+  return is_admin_panel_display_type() == 'pc_only';
+}
+endif;
+if ( !function_exists( 'is_admin_panel_mobile_only_visible' ) ):
+function is_admin_panel_mobile_only_visible(){
+  return is_admin_panel_display_type() == 'mobile_only';
+}
+endif;
+
+// //管理者パネルを表示
+// define('OP_ADMIN_PANEL_VISIBLE', 'admin_panel_visible');
+// if ( !function_exists( 'is_admin_panel_visible' ) ):
+// function is_admin_panel_visible(){
+//   return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1);
+// }
+// endif;
 
 //管理者パネルのPVを表示
 define('OP_ADMIN_PANEL_PV_AREA_VISIBLE', 'admin_panel_pv_area_visible');

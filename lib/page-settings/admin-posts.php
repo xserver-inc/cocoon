@@ -12,8 +12,12 @@ update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 ///////////////////////////////////////
 // 管理者パネル
 ///////////////////////////////////////
-//管理者パネルを表示
-update_theme_option(OP_ADMIN_PANEL_VISIBLE);
+
+//管理者パネルを表示タイプ
+update_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE);
+
+// //管理者パネルを表示
+// update_theme_option(OP_ADMIN_PANEL_VISIBLE);
 
 //管理者パネルのPVを表示
 update_theme_option(OP_ADMIN_PANEL_PV_AREA_VISIBLE);

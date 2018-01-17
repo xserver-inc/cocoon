@@ -58,12 +58,20 @@
         <!-- 管理者パネルの表示  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_ADMIN_PANEL_VISIBLE, __( '管理者パネルの表示', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, __( '管理者パネルの表示', THEME_NAME ) ); ?>
           </th>
           <td>
-            <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_VISIBLE, is_admin_panel_visible(), __( '管理者パネルを表示する', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページ下部に管理者向けの情報をエリアを表示します。', THEME_NAME ));
+            <?php            $options = array(
+              'all' => __( '全て表示', THEME_NAME ),
+              'pc_only' => __( 'PCのみ表示', THEME_NAME ),
+              'mobile_only' => __( 'モバイルのみ表示', THEME_NAME ),
+              'none' => __( '表示しない', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, $options, is_admin_panel_display_type());
+            generate_tips_tag(__( '管理者パネルの表示形式を選択します。', THEME_NAME ));
+
+            // generate_checkbox_tag(OP_ADMIN_PANEL_VISIBLE, is_admin_panel_visible(), __( '管理者パネルを表示する', THEME_NAME ));
+            // generate_tips_tag(__( '投稿・固定ページ下部に管理者向けの情報をエリアを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>

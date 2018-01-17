@@ -1,5 +1,15 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
-if (is_admin_panel_visible() && is_user_administrator() && !is_amp()):
+if (is_user_administrator()
+  && !is_amp()
+  && (
+    //全てで表示する場合
+    is_admin_panel_all_visible()
+    //パソコンのみ表示の場合
+    || (is_admin_panel_pc_only_visible() && !wp_is_mobile())
+    //モバイルのみ表示の場合
+    || (is_admin_panel_mobile_only_visible() && wp_is_mobile())
+  )
+):
 ?>
 <div id="admin-panel" class="admin-panel">
 
