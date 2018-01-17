@@ -4529,6 +4529,15 @@ input[type='submit'] {
   .column-3 {
     flex-direction: column;
   }
+
+  .admin-panel {
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .admin-panel > div {
+    margin: 3px;
+  }
 }
 @media screen and (max-width: 480px) {
   h2, h3 {

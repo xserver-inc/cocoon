@@ -3314,7 +3314,13 @@
         margin-left: auto; }
       .demo .column-2,
       .demo .column-3 {
-        flex-direction: column; } }
+        flex-direction: column; }
+      .demo .admin-panel {
+        padding: 5px;
+        font-size: 14px;
+        line-height: 1.4; }
+        .demo .admin-panel > div {
+          margin: 3px; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }

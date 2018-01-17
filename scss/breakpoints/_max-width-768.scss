@@ -219,3 +219,13 @@ table{
 .column-3{
   flex-direction: column;
 }
+
+//モバイル用管理パネル
+.admin-panel{
+  padding: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+  >div{
+    margin: 3px;
+  }
+}
