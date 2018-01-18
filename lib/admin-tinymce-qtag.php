@@ -196,289 +196,290 @@ function initialize_tinymce_styles($init_array) {
 
         array(
           'title' => __( 'レッド（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-red'
         ),
         array(
           'title' => __( 'レッド（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-red btn-m'
         ),
         array(
           'title' => __( 'レッド（大）', THEME_NAME ),
-          'inline' => 'span',
-          'classes' => 'btn btn-red btn-l'
+          'inline' => 'a',
+          'classes' => 'btn btn-red btn-l',
+          'wrapper' => true,
         ),
 
         array(
           'title' => __( 'ピンク（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-pink'
         ),
         array(
           'title' => __( 'ピンク（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-pink btn-m'
         ),
         array(
           'title' => __( 'ピンク（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-pink btn-l'
         ),
 
         array(
           'title' => __( 'パープル（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-purple'
         ),
         array(
           'title' => __( 'パープル（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-purple btn-m'
         ),
         array(
           'title' => __( 'パープル（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-purple btn-l'
         ),
 
         array(
           'title' => __( 'ディープパープル（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep'
         ),
         array(
           'title' => __( 'ディープパープル（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep btn-m'
         ),
         array(
           'title' => __( 'ディープパープル（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep btn-l'
         ),
 
         array(
           'title' => __( 'インディゴ[紺色]（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-indigo'
         ),
         array(
           'title' => __( 'インディゴ[紺色]（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-indigo btn-m'
         ),
         array(
           'title' => __( 'インディゴ[紺色]（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-indigo btn-l'
         ),
 
         array(
           'title' => __( 'ブルー（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-blue'
         ),
         array(
           'title' => __( 'ブルー（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-blue btn-m'
         ),
         array(
           'title' => __( 'ブルー（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-blue btn-l'
         ),
 
         array(
           'title' => __( 'ライトブルー（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-blue'
         ),
         array(
           'title' => __( 'ライトブルー（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-blue btn-m'
         ),
         array(
           'title' => __( 'ライトブルー（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-blue btn-l'
         ),
 
         array(
           'title' => __( 'シアン（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-cyan'
         ),
         array(
           'title' => __( 'シアン（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-cyan btn-m'
         ),
         array(
           'title' => __( 'シアン（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-cyan btn-l'
         ),
 
         array(
           'title' => __( 'ティール[緑色がかった青]（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-teal'
         ),
         array(
           'title' => __( 'ティール[緑色がかった青]（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-teal btn-m'
         ),
         array(
           'title' => __( 'ティール[緑色がかった青]（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-teal btn-l'
         ),
 
         array(
           'title' => __( 'グリーン（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-green'
         ),
         array(
           'title' => __( 'グリーン（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-green btn-m'
         ),
         array(
           'title' => __( 'グリーン（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-green btn-l'
         ),
 
         array(
           'title' => __( 'ライトグリーン（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-green'
         ),
         array(
           'title' => __( 'ライトグリーン（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-green btn-m'
         ),
         array(
           'title' => __( 'ライトグリーン（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-light-green btn-l'
         ),
 
         array(
           'title' => __( 'ライム（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-lime'
         ),
         array(
           'title' => __( 'ライム（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-lime btn-m'
         ),
         array(
           'title' => __( 'ライム（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-lime btn-l'
         ),
 
         array(
           'title' => __( 'イエロー（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-yellow'
         ),
         array(
           'title' => __( 'イエロー（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-yellow btn-m'
         ),
         array(
           'title' => __( 'イエロー（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-yellow btn-l'
         ),
 
         array(
           'title' => __( 'アンバー[琥珀色]（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-amber'
         ),
         array(
           'title' => __( 'アンバー[琥珀色]（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-amber btn-m'
         ),
         array(
           'title' => __( 'アンバー[琥珀色]（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-amber btn-l'
         ),
 
         array(
           'title' => __( 'オレンジ（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-orange'
         ),
         array(
           'title' => __( 'オレンジ（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-orange btn-m'
         ),
         array(
           'title' => __( 'オレンジ（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-orange btn-l'
         ),
 
         array(
           'title' => __( 'ディープオレンジ（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep-orange'
         ),
         array(
           'title' => __( 'ディープオレンジ（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep-orange btn-m'
         ),
         array(
           'title' => __( 'ディープオレンジ（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-deep-orange btn-l'
         ),
 
         array(
           'title' => __( 'ブラウン（小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-brown'
         ),
         array(
           'title' => __( 'ブラウン（中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-brown btn-m'
         ),
         array(
           'title' => __( 'ブラウン（大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-brown btn-l'
         ),
 
         array(
           'title' => __( 'グレー小）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-grey'
         ),
         array(
           'title' => __( 'グレー中）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-grey btn-m'
         ),
         array(
           'title' => __( 'グレー大）', THEME_NAME ),
-          'inline' => 'span',
+          'inline' => 'a',
           'classes' => 'btn btn-grey btn-l'
         ),
 

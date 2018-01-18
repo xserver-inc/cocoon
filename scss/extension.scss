@@ -253,6 +253,14 @@
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+
+  // a{
+  //   @include link_cancel;
+
+  //   color: #fff;
+  //   display: block;
+  //   height: 100%;
+  // }
 }
 
 .btn:before,
