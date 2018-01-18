@@ -154,3 +154,9 @@
     margin-right: 0;
   }
 }
+
+.card-thumb{
+  img:hover{
+    animation: 1s ease 0s normal none 1 running flash;
+  }
+}

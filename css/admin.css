@@ -458,6 +458,7 @@
   /* Button */
   /* Button Text */
   /* Button Lines */
+  /*bbPressのスタイルを整える*/
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   /* フォントのサイズ */
@@ -790,6 +791,8 @@
     border: 1px solid #cccfd2; }
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
+  .demo .card-thumb img:hover {
+    animation: 1s ease 0s normal none 1 running flash; }
   .demo .date-tags {
     line-height: 0.8;
     text-align: right; }
@@ -3193,6 +3196,45 @@
     margin-left: 1em; }
   .demo .slicknav_menu {
     display: none; }
+  .demo .bbp-breadcrumb-home,
+  .demo .bbp-breadcrumb-home + .bbp-breadcrumb-sep,
+  .demo .topic .post-date,
+  .demo .topic .post-update,
+  .demo .topic .footer-post-meta,
+  .demo .post-0 .post-date,
+  .demo .post-0 .post-update,
+  .demo .post-0 .footer-post-meta,
+  .demo .forum .post-date,
+  .demo .forum .post-update,
+  .demo .forum .footer-post-meta {
+    display: none; }
+  .demo #bbp_search {
+    font-size: 17px;
+    height: 28px; }
+  .demo .post-0 .post-meta {
+    height: 27px; }
+  .demo .bbp-reply-content {
+    font-size: 16px;
+    line-height: 170%; }
+  .demo .bbp-forum-title {
+    font-size: 16px; }
+  .demo .bbp-topic-permalink {
+    font-size: 14px; }
+  .demo #bbpress-forums .status-closed,
+  .demo #bbpress-forums .status-closed a {
+    color: #555; }
+  .demo #bbpress-forums a.bbp-topic-permalink {
+    text-decoration: none; }
+  .demo #bbpress-forums a.bbp-topic-permalink:before {
+    content: " \f096";
+    font-family: FontAwesome;
+    margin-right: 3px; }
+  .demo #bbpress-forums .status-closed a.bbp-topic-permalink:before {
+    content: " \f046";
+    font-family: FontAwesome; }
+  .demo #bbpress-forums .status-closed .bbp-reply-content:before {
+    content: " \f046\00A0 Closed";
+    font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif; }
   @media screen and (max-width: 1030px) {
     .demo .navi-footer {
       float: none;

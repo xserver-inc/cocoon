@@ -677,6 +677,10 @@ img {
   margin-right: 0;
 }
 
+.card-thumb img:hover {
+  animation: 1s ease 0s normal none 1 running flash;
+}
+
 /************************************
 ** 日付関係のスタイル
 ************************************/
@@ -4323,6 +4327,68 @@ input[type='submit'] {
 
 .slicknav_menu {
   display: none;
+}
+
+/*bbPressのスタイルを整える*/
+.bbp-breadcrumb-home,
+.bbp-breadcrumb-home + .bbp-breadcrumb-sep,
+.topic .post-date,
+.topic .post-update,
+.topic .footer-post-meta,
+.post-0 .post-date,
+.post-0 .post-update,
+.post-0 .footer-post-meta,
+.forum .post-date,
+.forum .post-update,
+.forum .footer-post-meta {
+  display: none;
+}
+
+#bbp_search {
+  font-size: 17px;
+  height: 28px;
+}
+
+.post-0 .post-meta {
+  height: 27px;
+}
+
+.bbp-reply-content {
+  font-size: 16px;
+  line-height: 170%;
+}
+
+.bbp-forum-title {
+  font-size: 16px;
+}
+
+.bbp-topic-permalink {
+  font-size: 14px;
+}
+
+#bbpress-forums .status-closed,
+#bbpress-forums .status-closed a {
+  color: #555;
+}
+
+#bbpress-forums a.bbp-topic-permalink {
+  text-decoration: none;
+}
+
+#bbpress-forums a.bbp-topic-permalink:before {
+  content: " \f096";
+  font-family: FontAwesome;
+  margin-right: 3px;
+}
+
+#bbpress-forums .status-closed a.bbp-topic-permalink:before {
+  content: " \f046";
+  font-family: FontAwesome;
+}
+
+#bbpress-forums .status-closed .bbp-reply-content:before {
+  content: " \f046\00A0 Closed";
+  font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
 }
 
 @media screen and (max-width: 1030px) {

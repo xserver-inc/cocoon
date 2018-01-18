@@ -76,7 +76,9 @@ if (is_singular()){//単一記事ページの場合
 <meta property="fb:app_id" content="<?php echo get_facebook_app_id(); ?>">
 <?php endif; ?>
 <meta property="article:published_time" content="<?php echo get_seo_post_time(); ?>" />
-<meta property="article:modified_time" content="<?php echo get_seo_update_time(); ?>" />
+<?php if ($update_time = get_seo_update_time()): ?>
+<meta property="article:modified_time" content="<?php echo $update_time; ?>" />
+<?php endif ?>
 <?php //カテゴリー
 $cats = get_the_category();
 if ($cats) {
