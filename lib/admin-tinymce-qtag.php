@@ -191,7 +191,7 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
-      'title' => __( 'ボタン', THEME_NAME ),
+      'title' => __( 'ボタン（β機能）', THEME_NAME ),
       'items' => array(
 
         array(
@@ -208,7 +208,6 @@ function initialize_tinymce_styles($init_array) {
           'title' => __( 'レッド（大）', THEME_NAME ),
           'inline' => 'a',
           'classes' => 'btn btn-red btn-l',
-          'wrapper' => true,
         ),
 
         array(

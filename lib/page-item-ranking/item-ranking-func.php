@@ -1,39 +1,39 @@
 <?php //ランキング関係の関数
 
 //関数テキストテーブルのバージョン
-define('RANKINGS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
-define('RANKINGS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_rankings');
+define('ITEM_RANKINGS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
+define('ITEM_RANKINGS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_item_rankings');
 
 //関数テキスト移動用URL
-define('RKG_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
-define('RKG_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
+define('IR_LIST_URL',   add_query_arg(array('action' => false,   'id' => false)));
+define('IR_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false)));
 
 //テーブルのバージョン取得
-define('OP_RANKINGS_TABLE_VERSION', 'rankings_table_version');
-if ( !function_exists( 'get_rankings_table_version' ) ):
-function get_rankings_table_version(){
-  return get_theme_option(OP_RANKINGS_TABLE_VERSION);
+define('OP_ITEM_RANKINGS_TABLE_VERSION', 'item_rankings_table_version');
+if ( !function_exists( 'get_item_rankings_table_version' ) ):
+function get_item_rankings_table_version(){
+  return get_theme_option(OP_ITEM_RANKINGS_TABLE_VERSION);
 }
 endif;
 
 //テーブルが存在するか
-if ( !function_exists( 'is_rankings_table_exist' ) ):
-function is_rankings_table_exist(){
-  return is_db_table_exist(RANKINGS_TABLE_NAME);
+if ( !function_exists( 'is_item_rankings_table_exist' ) ):
+function is_item_rankings_table_exist(){
+  return is_db_table_exist(ITEM_RANKINGS_TABLE_NAME);
 }
 endif;
 
 //レコードを追加
-if ( !function_exists( 'insert_ranking_record' ) ):
-function insert_ranking_record($posts){
-  $table = RANKINGS_TABLE_NAME;
+if ( !function_exists( 'insert_item_ranking_record' ) ):
+function insert_item_ranking_record($posts){
+  $table = ITEM_RANKINGS_TABLE_NAME;
   $now = current_time('mysql');
   //_v($posts);
   $data = array(
     'date' => $now,
     'modified' => $now,
     'title' => $posts['title'],
-    'ranking' => $posts['ranking'],
+    'item_ranking' => $posts['item_ranking'],
   );
   $format = array(
     '%s',
@@ -46,15 +46,15 @@ function insert_ranking_record($posts){
 endif;
 
 //レコードの編集
-if ( !function_exists( 'update_ranking_record' ) ):
-function update_ranking_record($id, $posts){
-  $table = RANKINGS_TABLE_NAME;
+if ( !function_exists( 'update_item_ranking_record' ) ):
+function update_item_ranking_record($id, $posts){
+  $table = ITEM_RANKINGS_TABLE_NAME;
   $now = current_time('mysql');
   $visible = $posts['visible'] ? 1 : 0;
   $data = array(
     'modified' => $now,
     'title' => $posts['title'],
-    'ranking' => $posts['ranking'],
+    'item_ranking' => $posts['item_ranking'],
   );
   $where = array('id' => $id);
   $format = array(
@@ -68,8 +68,8 @@ function update_ranking_record($id, $posts){
 endif;
 
 //初期データの入力
-if ( !function_exists( 'add_default_ranking_records' ) ):
-function add_default_ranking_records(){
+if ( !function_exists( 'add_default_item_ranking_records' ) ):
+function add_default_item_ranking_records(){
   // $posts = array();
   // $posts['title'] = __( '[SAMPLE 01] 男性（左）', THEME_NAME );
   // $posts['name']  = __( '太郎', THEME_NAME );
@@ -78,25 +78,25 @@ function add_default_ranking_records(){
   // $posts['position'] = SBP_LEFT;
   // $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
   // $posts['visible'] = 1;
-  // insert_ranking_record($posts);
+  // insert_item_ranking_record($posts);
 }
 endif;
 
 //テーブルの作成
-if ( !function_exists( 'create_rankings_table' ) ):
-function create_rankings_table() {
+if ( !function_exists( 'create_item_rankings_table' ) ):
+function create_item_rankings_table() {
   $add_default_records = false;
   //テーブルが存在しない場合初期データを挿入（テーブル作成時のみ挿入）
-  if (!is_rankings_table_exist()) {
+  if (!is_item_rankings_table_exist()) {
     $add_default_records = true;
   }
   // SQL文でテーブルを作る
-  $sql = "CREATE TABLE ".RANKINGS_TABLE_NAME." (
+  $sql = "CREATE TABLE ".ITEM_RANKINGS_TABLE_NAME." (
     id bigint(20) NOT NULL AUTO_INCREMENT,
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     title varchar(126),
-    ranking text NOT NULL,
+    item_ranking text NOT NULL,
     PRIMARY KEY (id)
   )";
   $res = create_db_table($sql);
@@ -104,56 +104,56 @@ function create_rankings_table() {
   //初期データの挿入
   if ($res && $add_default_records) {
     //データ挿入処理
-    add_default_ranking_records();
+    add_default_item_ranking_records();
   }
 
-  set_theme_mod( OP_RANKINGS_TABLE_VERSION, RANKINGS_TABLE_VERSION );
+  set_theme_mod( OP_ITEM_RANKINGS_TABLE_VERSION, ITEM_RANKINGS_TABLE_VERSION );
   return $res;
 }
 endif;
-create_rankings_table();
+create_item_rankings_table();
 
 
 //テーブルのアップデート
-if ( !function_exists( 'update_rankings_table' ) ):
-function update_rankings_table() {
+if ( !function_exists( 'update_item_rankings_table' ) ):
+function update_item_rankings_table() {
   // オプションに登録されたデータベースのバージョンを取得
-  $installed_ver = get_rankings_table_version();
-  $now_ver = RANKINGS_TABLE_VERSION;
+  $installed_ver = get_item_rankings_table_version();
+  $now_ver = ITEM_RANKINGS_TABLE_VERSION;
   if ( is_update_db_table($installed_ver, $now_ver) ) {
-    create_rankings_table();
+    create_item_rankings_table();
   }
 }
 endif;
-update_rankings_table();
+update_item_rankings_table();
 
 
 //テーブルのアンインストール
-if ( !function_exists( 'uninstall_rankings_table' ) ):
-function uninstall_rankings_table() {
-  uninstall_db_table(RANKINGS_TABLE_NAME);
-  remove_theme_mod(OP_RANKINGS_TABLE_VERSION);
+if ( !function_exists( 'uninstall_item_rankings_table' ) ):
+function uninstall_item_rankings_table() {
+  uninstall_db_table(ITEM_RANKINGS_TABLE_NAME);
+  remove_theme_mod(OP_ITEM_RANKINGS_TABLE_VERSION);
 }
 endif;
 
 
 //テーブルレコードの取得
-if ( !function_exists( 'get_rankings' ) ):
-function get_rankings( $keyword = null, $order_by = null ) {
+if ( !function_exists( 'get_item_rankings' ) ):
+function get_item_rankings( $keyword = null, $order_by = null ) {
 
-  $table_name = RANKINGS_TABLE_NAME;
+  $table_name = ITEM_RANKINGS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
 }
 endif;
 
 
 //テーブルレコードの取得
-if ( !function_exists( 'get_ranking' ) ):
-function get_ranking( $id ) {
-  $table_name = RANKINGS_TABLE_NAME;
+if ( !function_exists( 'get_item_ranking' ) ):
+function get_item_ranking( $id ) {
+  $table_name = ITEM_RANKINGS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
   $record->title = !empty($record->title) ? $record->title : '';
-  $record->ranking = !empty($record->ranking) ? $record->ranking : '';
+  $record->item_ranking = !empty($record->item_ranking) ? $record->item_ranking : '';
 
   return $record;
 }
@@ -162,14 +162,14 @@ endif;
 //関数テキストレコードの削除
 if ( !function_exists( 'delete_peech_balloon' ) ):
 function delete_peech_balloon( $id ) {
-  $table_name = RANKINGS_TABLE_NAME;
+  $table_name = ITEM_RANKINGS_TABLE_NAME;
   return delete_db_table_record( $table_name, $id );
 }
 endif;
 
 //HTMLを生成
-if ( !function_exists( 'generate_ranking_tag' ) ):
-function generate_ranking_tag($record, $voice){?>
+if ( !function_exists( 'generate_item_ranking_tag' ) ):
+function generate_item_ranking_tag($record, $voice){?>
 
 <?php
 }
