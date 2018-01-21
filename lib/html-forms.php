@@ -86,7 +86,10 @@ endif;
 if ( !function_exists( 'generate_radiobox_tag' ) ):
 function generate_radiobox_tag($name, $options, $now_value){?>
 <ul>
-  <?php foreach ($options as $value => $caption) { ?>
+  <?php foreach ($options as $value => $caption) {
+_v($value.' == '.$now_value);
+_v($value == $now_value);
+   ?>
   <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
   <?php } ?>
 </ul>
@@ -264,8 +267,11 @@ endif;
 
 //ビジュアルエディターの生成
 if ( !function_exists( 'generate_visuel_editor_tag' ) ):
-function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor'){
-  $settings = array( 'textarea_name' => $name ); //配列としてデータを渡すためname属性を指定する
+function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor', $textarea_rows = 10){
+  $settings = array(
+    'textarea_name' => $name,
+    'textarea_rows' => $textarea_rows,
+  ); //配列としてデータを渡すためname属性を指定する
   wp_editor( $content, $editor_id, $settings );
 }
 endif;

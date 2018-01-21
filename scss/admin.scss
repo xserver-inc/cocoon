@@ -7,6 +7,7 @@
 @import "defins";
 @import "admin-snipets";
 .demo{
+  @import "amp-imports";
   @import "imports";
 
   @include base_font;
@@ -541,10 +542,23 @@ table.sb-list{
 
 //ランキング入力フォーム
 #ranking-items{
-  input[type='text']{
-    padding: 6px;
+  .demo{
+    font-size: 14px;
+  }
+
+  .ranking-item{
+    margin-bottom: 1em;
+  }
+
+  input[type='text'],
+  textarea{
     width: 100%;
-    border-color: #333;
+    font-size: 14px;
+  }
+
+  input[type='text']{
+    padding: 10px;
+    border-width: 2px;
   }
 
   .ranking-item{
@@ -561,6 +575,9 @@ table.sb-list{
     margin: 0;
   }
   .ranking-item-rating{
+    label{
+      float: left;
+    }
     ul{
       margin: 0;
       display: flex;
@@ -568,6 +585,15 @@ table.sb-list{
         margin-right: 1em;
       }
     }
+  }
 
+  textarea{
+    min-height: 60px;
+    max-height: 120px
+  }
+
+  .ranking-item-img-desc > div,
+  .ranking-item-link-buttons > div{
+    padding: 0 6px;
   }
 }

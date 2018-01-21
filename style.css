@@ -3714,6 +3714,16 @@ div.fb-like-mobile {
   font-size: 2em;
 }
 
+.ranking-item-img-desc,
+.ranking-item-link-buttons {
+  display: flex;
+}
+.ranking-item-img-desc > div,
+.ranking-item-link-buttons > div {
+  width: 100%;
+  padding: 10px;
+}
+
 .notice-area-wrap {
   display: block;
   text-decoration: none;
