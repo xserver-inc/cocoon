@@ -268,7 +268,6 @@ function create_speech_balloons_table() {
   return $res;
 }
 endif;
-create_speech_balloons_table();
 
 
 //吹き出しテーブルのアップデート
@@ -282,7 +281,6 @@ function update_speech_balloons_table() {
   }
 }
 endif;
-//update_speech_balloons_table();
 
 
 //吹き出しテーブルのアンインストール

@@ -111,7 +111,6 @@ function create_item_rankings_table() {
   return $res;
 }
 endif;
-create_item_rankings_table();
 
 
 //テーブルのアップデート
@@ -125,7 +124,6 @@ function update_item_rankings_table() {
   }
 }
 endif;
-update_item_rankings_table();
 
 
 //テーブルのアンインストール

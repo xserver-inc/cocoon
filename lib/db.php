@@ -7,13 +7,14 @@ function update_db_tables(){
   if (is_admin()) {
     //アクセス数テーブル
     update_accesses_table();
-
+    //吹き出しテーブル
     update_speech_balloons_table();
-
+    //アフィリエイトタグテーブル
     update_affiliate_tags_table();
-
+    //テンプレートテーブル
     update_function_texts_table();
-    //_v('update_accesses_table');
+    //アイテムランキングテーブル
+    update_item_rankings_table();
   }
 }
 endif;
