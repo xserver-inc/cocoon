@@ -542,12 +542,34 @@ table.sb-list{
 
 //ランキング入力フォーム
 #ranking-items{
-  .demo{
-    font-size: 14px;
-  }
+  counter-reset: ranking-item-number;
 
   .ranking-item{
     margin-bottom: 1em;
+    position: relative;
+    overflow: visible;
+    //padding-left: 20px;
+    &::before{
+      counter-increment: ranking-item-number;      /* ranking-item-number カウンタの増加数をセット */
+      content: counter(ranking-item-number);      /* 表示形式を指定 */
+      position: absolute;
+      font-size: 18px;
+      background-color: #777;
+      color: #fff;
+      padding: 6px;
+      top: -15px;
+      left: -15px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      //border-radius: 50%;
+    }
+
+  }
+  .demo{
+    font-size: 14px;
   }
 
   input[type='text'],

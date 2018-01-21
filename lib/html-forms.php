@@ -87,8 +87,8 @@ if ( !function_exists( 'generate_radiobox_tag' ) ):
 function generate_radiobox_tag($name, $options, $now_value){?>
 <ul>
   <?php foreach ($options as $value => $caption) {
-_v($value.' == '.$now_value);
-_v($value == $now_value);
+  // _v($value.' == '.$now_value);
+  // _v($value == $now_value);
    ?>
   <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
   <?php } ?>

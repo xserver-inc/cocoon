@@ -6,3 +6,142 @@
     padding: 10px;
   }
 }
+
+.ranking-item-name{
+  display: flex;
+}
+
+.ranking-item-name-text{
+  width: 100%;
+}
+
+%ranking-crown{
+  width: 0;
+  height: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 35px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: relative;
+  margin-right: 10px;
+}
+
+%ranking-crown-after{
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+
+%ranking-crown-circle{
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: -5px;
+  left: -21px;
+}
+
+%ranking-crown-circle-before{
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 19px;
+}
+
+%ranking-crown-circle-after{
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 38px;
+}
+
+.g-crown {
+  @extend %ranking-crown;
+  border-bottom: 35px solid #bfa930;
+}
+
+.g-crown:after {
+  @extend %ranking-crown-after;
+  border-bottom: 20px solid #ffe973;
+  border-left: 20px solid #ffe973;
+  border-right: 20px solid #ffd700;
+}
+
+.g-crown-circle {
+  @extend %ranking-crown-circle;
+  background-color: #a68c00;
+}
+
+.g-crown-circle:before {
+  @extend %ranking-crown-circle-before;
+  background-color: #a68c00;
+}
+
+.g-crown-circle:after {
+  @extend %ranking-crown-circle-after;
+  background-color: #a68c00;
+}
+
+.s-crown {
+  @extend %ranking-crown;
+  border-bottom: 35px solid #909090;
+}
+
+.s-crown:after {
+  @extend %ranking-crown-after;
+  border-bottom: 20px solid #e0e0e0;
+  border-left: 20px solid #e0e0e0;
+  border-right: 20px solid silver;
+}
+
+.s-crown-circle {
+  @extend %ranking-crown-circle;
+  background-color: #909090;
+}
+
+.s-crown-circle:before {
+  @extend %ranking-crown-circle-before;
+  background-color: #909090;
+}
+
+.s-crown-circle:after {
+  @extend %ranking-crown-circle-after;
+  background-color: #909090;
+}
+
+.c-crown {
+  @extend %ranking-crown;
+  border-bottom: 35px solid #69433f;
+}
+
+.c-crown:after {
+  @extend %ranking-crown-after;
+  border-bottom: 20px solid #8c4841;
+  border-left: 20px solid #8c4841;
+  border-right: 20px solid #5b1c15;
+}
+
+.c-crown-circle {
+  @extend %ranking-crown-circle;
+  background-color: #69433f;
+}
+
+.c-crown-circle:before {
+  @extend %ranking-crown-circle-before;
+  background-color: #69433f;
+}
+
+.c-crown-circle:after {
+  @extend %ranking-crown-circle-after;
+  background-color: #69433f;
+}

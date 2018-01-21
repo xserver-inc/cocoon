@@ -1,4 +1,4 @@
-<p><?php _e( '吹き出し用の設定です。', THEME_NAME ) ?></p>
+<p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
 <form name="form1" id="ranking-items" method="post" action="">
   <?php
 
@@ -38,7 +38,7 @@
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
-    $description = isset($items[$i]['description']) ? $items[$i]['description'] : __( '説明文を入力', THEME_NAME );
+    $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
    ?>
@@ -47,7 +47,14 @@
 
       <div class="ranking-item demo">
         <div class="ranking-item-name">
-          <?php generate_textbox_tag('ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME )); ?>
+          <div class="g-crown"><div class="g-crown-circle"></div></div>
+          <div class="ranking-item-name-text">
+          <?php
+          //generate_label_tag('', __('名前：', THEME_NAME) );
+          generate_textbox_tag('ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME ));
+           ?>
+          </div>
+
         </div>
         <div class="ranking-item-rating">
           <?php
