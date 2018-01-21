@@ -1,14 +1,18 @@
 <?php //定数をまとめて定義
 
-//デバッグモード
-define('DEBUG_MODE', 0);
-
 //テーマ名
 define('THEME_NAME', 'cocoon');
 //テーマ名（最初の一文字だけ大文字）
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //テーマ名（大文字）
 define('THEME_NAME_UPPER', strtoupper(THEME_NAME));
+
+//開発関係の場合デバッグ値を有効にする
+define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.dev' ? 1 : 0);
+
+//デバッグモード
+define('DEBUG_MODE', DEBAG_VALU);
+
 
 define('THEME_JS', THEME_NAME.'-js');
 define('THEME_CHILD_JS', THEME_NAME.'-child-js');
