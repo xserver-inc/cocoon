@@ -1,5 +1,5 @@
 <p><?php _e( '吹き出し用の設定です。', THEME_NAME ) ?></p>
-<form name="form1" method="post" action="">
+<form name="form1" id="ranking-items" method="post" action="">
   <?php
 
   if (isset($_GET['id'])) {
@@ -8,7 +8,7 @@
     $record = get_item_ranking($id);
     $title = $record->title;
     $ranking = $record->ranking;
-    $items = $ranking['items'];
+    $items = isset($ranking['items']) ? $ranking['items'] : array();
     $count = isset($ranking['count']) ? intval($ranking['count'] + 1) : 1;
 
     //吹き出しデモの表示
@@ -19,12 +19,14 @@
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $ranking = isset($_POST['ranking']) ? $_POST['ranking'] : '';
-    $items = $ranking['items'];
+    $items = isset($ranking['items']) ? $ranking['items'] : array();
     $count = 1;
   }?>
 
   <div class="ranking-title">
     <?php
+    generate_label_tag('title', __('タイトル', THEME_NAME) );
+    echo '<br>';
     generate_textbox_tag('title', $title,  __('タイトルを入力',THEME_NAME ));
     generate_tips_tag(__( 'ランキングを識別するためのタイトルを入力してください。', THEME_NAME ));
     ?>
@@ -35,16 +37,16 @@
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
-    $description = isset($items[$i]['description']) : $items[$i]['description'] : '';
+    $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
    ?>
-  <div id="ranking-items" class="postbox">
+  <div class="postbox">
     <div class="inside">
 
-      <div id="ranking-item-<?php echo $i; ?>">
+      <div class="ranking-item">
         <div class="ranking-item-name">
-          <?php generate_textbox_tag('ranking[$i][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME )); ?>
+          <?php generate_textbox_tag('ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME )); ?>
         </div>
         <div class="ranking-item-rating">
           <?php
@@ -62,7 +64,7 @@
             '4.5' => __( '4.5', THEME_NAME ),
             '5' => __( '5', THEME_NAME ),
           );
-          generate_radiobox_tag('ranking[$i][rating]', $options, $rating);
+          generate_radiobox_tag('ranking['.$i.'][rating]', $options, $rating);
           generate_tips_tag(__( '商品等を星の数で評価します。「なし」を選択した場合は表示されません。', THEME_NAME ));
           ?>
         </div>

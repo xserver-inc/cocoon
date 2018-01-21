@@ -538,3 +538,36 @@ table.sb-list{
   width: 50px;
   text-align: center;
 }
+
+//ランキング入力フォーム
+#ranking-items{
+  input[type='text']{
+    padding: 6px;
+    width: 100%;
+    border-color: #333;
+  }
+
+  .ranking-item{
+    >div{
+      padding: 4px;
+    }
+  }
+
+  .ranking-item-name{
+
+  }
+
+  .tips{
+    margin: 0;
+  }
+  .ranking-item-rating{
+    ul{
+      margin: 0;
+      display: flex;
+      li{
+        margin-right: 1em;
+      }
+    }
+
+  }
+}

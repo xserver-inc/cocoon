@@ -3911,3 +3911,17 @@ table.sb-list {
 .list-option {
   width: 50px;
   text-align: center; }
+
+#ranking-items input[type='text'] {
+  padding: 6px;
+  width: 100%;
+  border-color: #333; }
+#ranking-items .ranking-item > div {
+  padding: 4px; }
+#ranking-items .tips {
+  margin: 0; }
+#ranking-items .ranking-item-rating ul {
+  margin: 0;
+  display: flex; }
+  #ranking-items .ranking-item-rating ul li {
+    margin-right: 1em; }
