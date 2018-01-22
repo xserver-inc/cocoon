@@ -47,7 +47,7 @@
   for ($i = 1; $i <= $count; $i++):
     //var_dump($i);
     //$index = $i - 1;
-    $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
+    $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';

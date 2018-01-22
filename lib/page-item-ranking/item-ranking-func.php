@@ -156,8 +156,8 @@ if ( !function_exists( 'get_item_ranking' ) ):
 function get_item_ranking( $id ) {
   $table_name = ITEM_RANKINGS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
-  $record->title = !empty($record->title) ? $record->title : '';
-  $record->item_ranking = !empty($record->item_ranking) ? unserialize($record->item_ranking) : array();
+  $record->title = !empty($record->title) ? stripslashes_deep($record->title) : '';
+  $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(unserialize($record->item_ranking)) : array();
   $record->count = !empty($record->count) ? $record->count : 1;
 
   //var_dump($record);
