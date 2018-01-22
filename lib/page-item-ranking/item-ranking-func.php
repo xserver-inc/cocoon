@@ -154,7 +154,7 @@ function get_item_ranking( $id ) {
   $record->title = !empty($record->title) ? $record->title : '';
   $record->item_ranking = !empty($record->item_ranking) ? unserialize($record->item_ranking) : array();
 
-  var_dump($record);
+  //var_dump($record);
 
   return $record;
 }

@@ -24,7 +24,7 @@
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
     $items = isset($item_ranking['items']) ? $item_ranking['items'] : array();
-    $count = 5;
+    $count = 1;
   }
   ?>
 
@@ -39,20 +39,16 @@
   </div>
 
   <?php
-  var_dump($count);
-  for ($i=0; $i < 5; $i++) {?>
-    a
-    <?php
-  }
+  //var_dump($count);
   for ($i = 1; $i <= $count; $i++):
-    var_dump($i);
+    //var_dump($i);
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
-    $submit_text = ($i = $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
+    $submit_text = ($i == $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
    ?>
   <div class="postbox">
     <div class="inside">
