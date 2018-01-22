@@ -6666,3 +6666,5 @@ table.sb-list {
   #ranking-items .ranking-item-img-desc > div,
   #ranking-items .ranking-item-link-buttons > div {
     padding: 0 6px; }
+  #ranking-items input[type="submit"] {
+    padding: 0 10px 1px; }

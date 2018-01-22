@@ -33,8 +33,9 @@ function insert_item_ranking_record($posts){
     'date' => $now,
     'modified' => $now,
     'title' => $posts['title'],
-    'item_ranking' => $posts['item_ranking'],
+    'item_ranking' => serialize($posts['item_ranking']),
   );
+  //_v($data);
   $format = array(
     '%s',
     '%s',
@@ -50,11 +51,11 @@ if ( !function_exists( 'update_item_ranking_record' ) ):
 function update_item_ranking_record($id, $posts){
   $table = ITEM_RANKINGS_TABLE_NAME;
   $now = current_time('mysql');
-  $visible = $posts['visible'] ? 1 : 0;
+
   $data = array(
     'modified' => $now,
     'title' => $posts['title'],
-    'item_ranking' => $posts['item_ranking'],
+    'item_ranking' => serialize($posts['item_ranking']),
   );
   $where = array('id' => $id);
   $format = array(
@@ -151,7 +152,9 @@ function get_item_ranking( $id ) {
   $table_name = ITEM_RANKINGS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
   $record->title = !empty($record->title) ? $record->title : '';
-  $record->item_ranking = !empty($record->item_ranking) ? $record->item_ranking : '';
+  $record->item_ranking = !empty($record->item_ranking) ? unserialize($record->item_ranking) : array();
+
+  var_dump($record);
 
   return $record;
 }

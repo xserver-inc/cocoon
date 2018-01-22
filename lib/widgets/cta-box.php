@@ -152,7 +152,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'btn-pink' => __( 'ピンク', THEME_NAME ),
         'btn-purple' => __( '紫色', THEME_NAME ),
         'btn-deep' => __( '深紫', THEME_NAME ),
-        'btn-indigo' => __( '紺色（（インディゴ）', THEME_NAME ),
+        'btn-indigo' => __( '紺色（インディゴ）', THEME_NAME ),
         'btn-blue' => __( '青色', THEME_NAME ),
         'btn-light-blue' => __( '水色', THEME_NAME ),
         'btn-cyan' => __( '明るい青（シアン）', THEME_NAME ),

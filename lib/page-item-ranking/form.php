@@ -7,21 +7,26 @@
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
     $record = get_item_ranking($id);
     $title = $record->title;
-    $ranking = $record->ranking;
-    $items = isset($ranking['items']) ? $ranking['items'] : array();
-    $count = isset($ranking['count']) ? intval($ranking['count'] + 1) : 1;
+    $item_ranking = $record->item_ranking;
+    $items = isset($item_ranking['items']) ? $item_ranking['items'] : array();
+    $count = isset($item_ranking['count']) ? intval($item_ranking['count'] + 1) : 1;
+    //_v($items);
+  // _v($action);
+  // _v($count);
+  // _v($record);
 
     //吹き出しデモの表示
-    require_once 'demo.php';
+    //require_once 'demo.php';
 
   } else {
     $action = 'new';
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
-    $ranking = isset($_POST['ranking']) ? $_POST['ranking'] : '';
-    $items = isset($ranking['items']) ? $ranking['items'] : array();
-    $count = 1;
-  }?>
+    $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
+    $items = isset($item_ranking['items']) ? $item_ranking['items'] : array();
+    $count = 5;
+  }
+  ?>
 
   <div class="ranking-title">
     <?php
@@ -34,13 +39,20 @@
   </div>
 
   <?php
+  var_dump($count);
+  for ($i=0; $i < 5; $i++) {?>
+    a
+    <?php
+  }
   for ($i = 1; $i <= $count; $i++):
+    var_dump($i);
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
+    $submit_text = ($i = $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
    ?>
   <div class="postbox">
     <div class="inside">
@@ -51,7 +63,7 @@
           <div class="ranking-item-name-text">
           <?php
           //generate_label_tag('', __('名前：', THEME_NAME) );
-          generate_textbox_tag('ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME ));
+          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME ));
            ?>
           </div>
 
@@ -74,7 +86,7 @@
             '5.0' => __( '5', THEME_NAME ),
           );
           //_v($rating);
-          generate_radiobox_tag('ranking['.$i.'][rating]', $options, $rating);
+          generate_radiobox_tag('item_ranking['.$i.'][rating]', $options, $rating);
           generate_tips_tag(__( '商品等を星の数で評価します。「なし」を選択した場合は表示されません。', THEME_NAME ));
           ?>
         </div>
@@ -83,15 +95,16 @@
             <?php
             generate_label_tag('', __('画像・バナータグ', THEME_NAME) );
             echo '<br>';
-            generate_textarea_tag('ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグ等を入力してください。', THEME_NAME ), 5) ;
-            //generate_tips_tag(__( '', THEME_NAME ));
+            generate_textarea_tag('item_ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグ等を入力してください。', THEME_NAME ), 5) ;
+            generate_tips_tag(__( 'イメージ画像のタグを入力してください。※入力していない場合は表示されません。', THEME_NAME ));
             ?>
           </div>
           <div class="ranking-item-description">
             <?php
             generate_label_tag('', __('説明文', THEME_NAME) );
             echo '<br>';
-            generate_textarea_tag('ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
+            generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
+            generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
              ?>
           </div>
         </div>
@@ -100,7 +113,7 @@
             <?php
             generate_label_tag('', __('詳細ページURL', THEME_NAME) );
             echo '<br>';
-            generate_textbox_tag('ranking['.$i.'][detail_url]', $detail_url,  __('http://',THEME_NAME ));
+            generate_textbox_tag('item_ranking['.$i.'][detail_url]', $detail_url,  __('http://',THEME_NAME ));
             generate_tips_tag(__( '詳細ページへリンクするためのURLを入力してください。', THEME_NAME ));
             ?>
           </div>
@@ -108,21 +121,21 @@
             <?php
             generate_label_tag('', __('リンクタグ', THEME_NAME) );
             echo '<br>';
-            generate_textarea_tag('ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 5) ;
+            generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 5) ;
             generate_tips_tag(__( '直接リンクを入力する場合はタグを入力してください。※入力しない場合はボタンが表示されません。', THEME_NAME ));
             ?>
           </div>
         </div>
-
+        <?php submit_button($submit_text); ?>
       </div>
 
     </div>
   </div>
   <?php endfor ?>
 
-  <input type="hidden" name="ranking[count]" value="<?php echo $count; ?>">
+  <input type="hidden" name="item_ranking[count]" value="<?php echo $count; ?>">
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-  <?php submit_button(__( '保存', THEME_NAME )); ?>
+
 </form>
