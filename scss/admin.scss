@@ -544,10 +544,21 @@ table.sb-list{
 #ranking-items{
   counter-reset: ranking-item-number;
 
+  // .ranking-item:last-of-type{
+  //   background-color: #FDF1F5;
+  // }
+
   .ranking-item{
     margin-bottom: 1em;
     position: relative;
     overflow: visible;
+    //background-color: #FDF1F5;
+
+
+    &:last-of-type{
+      background-color: #FDF1F5;
+    }
+
     //padding-left: 20px;
     &::before{
       counter-increment: ranking-item-number;      /* ranking-item-number カウンタの増加数をセット */
@@ -568,6 +579,7 @@ table.sb-list{
     }
 
   }
+
   .demo{
     font-size: 14px;
   }

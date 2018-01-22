@@ -33,7 +33,7 @@
   <div class="ranking-title">
     <?php
     echo '<h2>';
-    generate_label_tag('title', __('タイトル', THEME_NAME) );
+    generate_label_tag('title', __('タイトル（※必須）', THEME_NAME) );
     echo '</h2>';
     generate_textbox_tag('title', $title,  __('タイトルを入力',THEME_NAME ));
     generate_tips_tag(__( 'ランキングを識別するためのタイトルを入力してください。', THEME_NAME ));echo '<br>';
@@ -63,7 +63,7 @@
           <div class="ranking-item-name-text">
           <?php
           //generate_label_tag('', __('名前：', THEME_NAME) );
-          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（必須入力）',THEME_NAME ));
+          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（※必須）',THEME_NAME ));
            ?>
           </div>
 
@@ -101,7 +101,7 @@
           </div>
           <div class="ranking-item-description">
             <?php
-            generate_label_tag('', __('説明文（必須入力）', THEME_NAME) );
+            generate_label_tag('', __('説明文（※必須）', THEME_NAME) );
             echo '<br>';
             generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
             generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
