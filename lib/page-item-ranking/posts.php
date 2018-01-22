@@ -30,6 +30,14 @@ if (!empty($title) &&
     //_v('edit');
     $id = isset($_POST['id']) ? intval($_POST['id']) : '';
     if ($id) {
+      $result = null;
+      //最後尾のアイテムが有効でなかったら配列を削除しカウント数を一つマイナスする
+      if (is_ranking_item_available($last_item)) {
+        unset($_POST['item_ranking'][$count]);
+        $_POST['count'] = intval($_POST['count']) - 1;
+        generate_notice_message_tag(__( '新規アイテム追加は行っていません。', THEME_NAME ));
+        echo '<br>';
+      }
       $result = update_item_ranking_record($id, $_POST);
       //_v($_POST);
       if ($result) {
