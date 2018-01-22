@@ -35,7 +35,7 @@ if (!empty($title) &&
       if (is_ranking_item_available($last_item)) {
         unset($_POST['item_ranking'][$count]);
         $_POST['count'] = intval($_POST['count']) - 1;
-        generate_notice_message_tag(__( '新規アイテム追加は行っていません。', THEME_NAME ));
+        generate_notice_message_tag(__( sprintf('%d位のアイテム「名前」や「説明文」が入力されていないため追加は行っていません。', $count), THEME_NAME ));
         echo '<br>';
       }
       $result = update_item_ranking_record($id, $_POST);

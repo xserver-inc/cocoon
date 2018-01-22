@@ -27,6 +27,8 @@
     $count = 1;
   }
   ?>
+<div class="postbox">
+  <div class="inside">
 
   <div class="ranking-title">
     <?php
@@ -54,16 +56,14 @@
     $submit_text = ($i == $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
     //var_dump($items);
    ?>
-  <div class="postbox">
-    <div class="inside">
 
       <div class="ranking-item demo">
         <div class="ranking-item-name">
-          <div class="g-crown"><div class="g-crown-circle"></div></div>
+          <?php generate_ranking_crown_tag($i); ?>
           <div class="ranking-item-name-text">
           <?php
           //generate_label_tag('', __('名前：', THEME_NAME) );
-          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください',THEME_NAME ));
+          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（必須入力）',THEME_NAME ));
            ?>
           </div>
 
@@ -101,7 +101,7 @@
           </div>
           <div class="ranking-item-description">
             <?php
-            generate_label_tag('', __('説明文', THEME_NAME) );
+            generate_label_tag('', __('説明文（必須入力）', THEME_NAME) );
             echo '<br>';
             generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
             generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
@@ -129,8 +129,6 @@
         <?php submit_button($submit_text); ?>
       </div>
 
-    </div>
-  </div>
   <?php endfor ?>
 
   <input type="hidden" name="count" value="<?php echo $count; ?>">
@@ -138,4 +136,6 @@
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
 
+  </div>
+</div>
 </form>

@@ -195,3 +195,22 @@ function is_ranking_item_available($item){
   return empty($item['name']) && empty($item['description']);
 }
 endif;
+
+if ( !function_exists( 'generate_ranking_crown_tag' ) ):
+function generate_ranking_crown_tag($ranking_number){
+  switch ($ranking_number) {
+    case 1:
+      echo '<div class="g-crown"><div class="g-crown-circle"></div></div>';
+      break;
+    case 2:
+      echo '<div class="s-crown"><div class="s-crown-circle"></div></div>';
+      break;
+    case 3:
+      echo '<div class="c-crown"><div class="c-crown-circle"></div></div>';
+      break;
+    default:
+
+      break;
+  }
+}
+endif;
