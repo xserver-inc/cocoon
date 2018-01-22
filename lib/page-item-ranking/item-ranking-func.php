@@ -34,6 +34,7 @@ function insert_item_ranking_record($posts){
     'modified' => $now,
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
+    'count' => $posts['count'],
   );
   //_v($data);
   $format = array(
@@ -41,6 +42,7 @@ function insert_item_ranking_record($posts){
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   return insert_db_table_record($table, $data, $format);
 }
@@ -56,12 +58,14 @@ function update_item_ranking_record($id, $posts){
     'modified' => $now,
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
+    'count' => $posts['count'],
   );
   $where = array('id' => $id);
   $format = array(
     '%s',
     '%s',
     '%s',
+    '%d',
   );
   $where_format = array('%d');
   return update_db_table_record($table, $data, $where, $format, $where_format);
@@ -98,6 +102,7 @@ function create_item_rankings_table() {
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     title varchar(126),
     item_ranking text NOT NULL,
+    count bigint(20) DEFAULT 1,
     PRIMARY KEY (id)
   )";
   $res = create_db_table($sql);
@@ -153,6 +158,7 @@ function get_item_ranking( $id ) {
   $record = get_db_table_record( $table_name, $id );
   $record->title = !empty($record->title) ? $record->title : '';
   $record->item_ranking = !empty($record->item_ranking) ? unserialize($record->item_ranking) : array();
+  $record->count = !empty($record->count) ? $record->count : 1;
 
   //var_dump($record);
 
@@ -173,5 +179,19 @@ if ( !function_exists( 'generate_item_ranking_tag' ) ):
 function generate_item_ranking_tag($record, $voice){?>
 
 <?php
+}
+endif;
+
+//ランキングアイテム入力項目が全て空か
+if ( !function_exists( 'is_ranking_item_all_empty' ) ):
+function is_ranking_item_all_empty($item){
+  return empty($item['name']) && empty($item['image_tag']) && empty($item['description']) && empty($item['detail_url']) && empty($item['link_tag']);
+}
+endif;
+
+//ランキングアイテム入力項目が有効か
+if ( !function_exists( 'is_ranking_item_available' ) ):
+function is_ranking_item_available($item){
+  return empty($item['name']) && empty($item['description']);
 }
 endif;

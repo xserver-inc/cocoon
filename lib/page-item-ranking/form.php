@@ -7,13 +7,13 @@
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
     $record = get_item_ranking($id);
     $title = $record->title;
-    $item_ranking = $record->item_ranking;
-    $items = isset($item_ranking['items']) ? $item_ranking['items'] : array();
-    $count = isset($item_ranking['count']) ? intval($item_ranking['count'] + 1) : 1;
+    //$item_ranking = $record->item_ranking;
+    $items = isset($record->item_ranking) ? $record->item_ranking : array();
+    $count = isset($record->count) ? intval($record->count) + 1 : 1;
     //_v($items);
   // _v($action);
   // _v($count);
-  // _v($record);
+    //var_dump($record);
 
     //吹き出しデモの表示
     //require_once 'demo.php';
@@ -23,7 +23,7 @@
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
-    $items = isset($item_ranking['items']) ? $item_ranking['items'] : array();
+    $items = $item_ranking;
     $count = 1;
   }
   ?>
@@ -39,9 +39,12 @@
   </div>
 
   <?php
-  //var_dump($count);
+  var_dump('$count:'.$count);
+  var_dump('$action:'.$action);
+  var_dump('$id:'.$id);
   for ($i = 1; $i <= $count; $i++):
     //var_dump($i);
+    //$index = $i - 1;
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
@@ -49,6 +52,7 @@
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
     $submit_text = ($i == $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
+    //var_dump($items);
    ?>
   <div class="postbox">
     <div class="inside">
@@ -129,7 +133,7 @@
   </div>
   <?php endfor ?>
 
-  <input type="hidden" name="item_ranking[count]" value="<?php echo $count; ?>">
+  <input type="hidden" name="count" value="<?php echo $count; ?>">
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
