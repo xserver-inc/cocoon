@@ -12,8 +12,14 @@ if (!empty($title) &&
 
   var_dump($_POST);
   if ($_POST['action'] == 'new') {
+    $result = null;
     //_v('new');
-    $result = insert_item_ranking_record($_POST);
+    //var_dump($last_item);
+    var_dump(is_ranking_item_available($last_item));
+    if (is_ranking_item_available($last_item)) {
+      $result = insert_item_ranking_record($_POST);
+    }
+
     //_v($_POST);
     //_v($result);
     //編集モードに変更
@@ -23,6 +29,8 @@ if (!empty($title) &&
       $_GET['id'] = $wpdb->insert_id;
       generate_notice_message_tag(__( 'ランキングを新規作成しました。', THEME_NAME ));
     } else {
+      generate_error_message_tag(__( '「名前」と「説明文」は必須入力項目です。', THEME_NAME ));
+      echo '<br>';
       generate_error_message_tag(__( 'ランキングを新規作成できませんでした。', THEME_NAME ));
     }
     //_v($result);
@@ -31,13 +39,16 @@ if (!empty($title) &&
     $id = isset($_POST['id']) ? intval($_POST['id']) : '';
     if ($id) {
       $result = null;
+
       //最後尾のアイテムが有効でなかったら配列を削除しカウント数を一つマイナスする
-      if (is_ranking_item_available($last_item)) {
+      if (!is_ranking_item_available($last_item)) {
         unset($_POST['item_ranking'][$count]);
         $_POST['count'] = intval($_POST['count']) - 1;
         generate_notice_message_tag(__( sprintf('%d位のアイテム「名前」や「説明文」が入力されていないため追加は行っていません。', $count), THEME_NAME ));
         echo '<br>';
       }
+
+      //データベースのアップデート処理
       $result = update_item_ranking_record($id, $_POST);
       //_v($_POST);
       if ($result) {
@@ -50,6 +61,8 @@ if (!empty($title) &&
   }
 } else {
   $message = '';
+  $_POST['title'] = !empty($_POST['title']) ? stripslashes_deep($_POST['title']) : null;
+  $_POST['item_ranking'] = !empty($_POST['item_ranking']) ? stripslashes_deep($_POST['item_ranking']) : null;
   if (empty($title)) {
     $message .= __( 'タイトルが入力されていません。', THEME_NAME ).'<br>';
   }

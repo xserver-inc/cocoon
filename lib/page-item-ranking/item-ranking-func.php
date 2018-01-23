@@ -192,7 +192,7 @@ endif;
 //ランキングアイテム入力項目が有効か
 if ( !function_exists( 'is_ranking_item_available' ) ):
 function is_ranking_item_available($item){
-  return empty($item['name']) && empty($item['description']);
+  return !empty($item['name']) && !empty($item['description']);
 }
 endif;
 
