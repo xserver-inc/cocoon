@@ -6665,6 +6665,8 @@ table.sb-list {
   #ranking-items textarea {
     min-height: 60px;
     max-height: 120px; }
+  #ranking-items .ranking-item-link-tag textarea {
+    max-height: 80px; }
   #ranking-items .ranking-item-img-desc > div,
   #ranking-items .ranking-item-link-buttons > div {
     padding: 0 6px; }

@@ -52,6 +52,7 @@
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
+    $link_url = isset($items[$i]['link_url']) ? $items[$i]['link_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
     $submit_text = ($i == $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
     //var_dump($items);
@@ -119,10 +120,20 @@
           </div>
           <div class="ranking-item-link-tag">
             <?php
+            generate_label_tag('', __('ページURL', THEME_NAME) );
+            echo '<br>';
+            generate_textbox_tag('item_ranking['.$i.'][link_url]', $link_url,  __('http://',THEME_NAME ));
+            generate_tips_tag(__( '公式ページ等へ行くするためのURLを入力してください。「リンクタグ」と双方入力されている場合は樹脂こちらが優先されます。', THEME_NAME ));
+
+            $style = $link_tag ? ' style="display: block;"' : '';
+            echo '<span class="toggle"><span class="toggle-link">'.__( 'タグで入力', THEME_NAME ).'</span><div class="toggle-content"'.$style.'>';
+
             generate_label_tag('', __('リンクタグ', THEME_NAME) );
             echo '<br>';
-            generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 5) ;
-            generate_tips_tag(__( '直接リンクを入力する場合はタグを入力してください。※入力しない場合はボタンが表示されません。', THEME_NAME ));
+            generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 3) ;
+            generate_tips_tag(__( 'アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。', THEME_NAME ));
+
+            echo '</div></span>'
             ?>
           </div>
         </div>
