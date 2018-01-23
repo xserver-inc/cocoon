@@ -42,7 +42,7 @@
 }
 
 .ranking-item-image-tag{
-  max-width: 300px;
+  max-width: 302px;
   margin-right: 1em;
 }
 
@@ -51,6 +51,7 @@
 }
 
 .ranking-item-link-buttons{
+  margin-top: 6px;
   >div{
     padding: 0 3px;
   }
@@ -68,7 +69,7 @@
 
 .ranking-item-detail{
   a{
-    @extend .btn-indigo;
+    @extend .btn-blue;
   }
 }
 

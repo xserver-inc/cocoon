@@ -2603,11 +2603,11 @@ label.screen-reader-text {
   background-color: #673AB7;
 }
 
-.btn-indigo, .ranking-item-detail a {
+.btn-indigo {
   background-color: #3F51B5;
 }
 
-.btn-blue {
+.btn-blue, .ranking-item-detail a {
   background-color: #2196F3;
 }
 
@@ -3760,7 +3760,7 @@ div.fb-like-mobile {
 }
 
 .ranking-item-image-tag {
-  max-width: 300px;
+  max-width: 302px;
   margin-right: 1em;
 }
 
@@ -3768,6 +3768,9 @@ div.fb-like-mobile {
   width: 100px;
 }
 
+.ranking-item-link-buttons {
+  margin-top: 6px;
+}
 .ranking-item-link-buttons > div {
   padding: 0 3px;
 }

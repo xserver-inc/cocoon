@@ -2249,9 +2249,9 @@
     background-color: #9C27B0; }
   .demo .btn-deep {
     background-color: #673AB7; }
-  .demo .btn-indigo, .demo .ranking-item-detail a {
+  .demo .btn-indigo {
     background-color: #3F51B5; }
-  .demo .btn-blue {
+  .demo .btn-blue, .demo .ranking-item-detail a {
     background-color: #2196F3; }
   .demo .btn-light-blue {
     background-color: #03A9F4; }
@@ -3034,17 +3034,19 @@
   .demo .ranking-item-name-text {
     width: 100%; }
   .demo .ranking-item-image-tag {
-    max-width: 300px;
+    max-width: 302px;
     margin-right: 1em; }
   .demo .ranking-item-description {
     width: 100px; }
-  .demo .ranking-item-link-buttons > div {
-    padding: 0 3px; }
-  .demo .ranking-item-link-buttons a {
-    margin: 0; }
-    .demo .ranking-item-link-buttons a:hover {
-      opacity: 0.7;
-      transition: all 0.5s ease 0s; }
+  .demo .ranking-item-link-buttons {
+    margin-top: 6px; }
+    .demo .ranking-item-link-buttons > div {
+      padding: 0 3px; }
+    .demo .ranking-item-link-buttons a {
+      margin: 0; }
+      .demo .ranking-item-link-buttons a:hover {
+        opacity: 0.7;
+        transition: all 0.5s ease 0s; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -4675,9 +4677,9 @@
     background-color: #9C27B0; }
   .demo .btn-deep {
     background-color: #673AB7; }
-  .demo .btn-indigo, .demo .ranking-item-detail a {
+  .demo .btn-indigo {
     background-color: #3F51B5; }
-  .demo .btn-blue {
+  .demo .btn-blue, .demo .ranking-item-detail a {
     background-color: #2196F3; }
   .demo .btn-light-blue {
     background-color: #03A9F4; }
@@ -5460,17 +5462,19 @@
   .demo .ranking-item-name-text {
     width: 100%; }
   .demo .ranking-item-image-tag {
-    max-width: 300px;
+    max-width: 302px;
     margin-right: 1em; }
   .demo .ranking-item-description {
     width: 100px; }
-  .demo .ranking-item-link-buttons > div {
-    padding: 0 3px; }
-  .demo .ranking-item-link-buttons a {
-    margin: 0; }
-    .demo .ranking-item-link-buttons a:hover {
-      opacity: 0.7;
-      transition: all 0.5s ease 0s; }
+  .demo .ranking-item-link-buttons {
+    margin-top: 6px; }
+    .demo .ranking-item-link-buttons > div {
+      padding: 0 3px; }
+    .demo .ranking-item-link-buttons a {
+      margin: 0; }
+      .demo .ranking-item-link-buttons a:hover {
+        opacity: 0.7;
+        transition: all 0.5s ease 0s; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -6736,6 +6740,6 @@ table.sb-list {
     padding: 0 10px 1px; }
 
 .ir-list-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  margin: 1em 0 0.4em; }
+  padding: 1em 0 0.6em; }
