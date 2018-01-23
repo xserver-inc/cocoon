@@ -118,16 +118,30 @@ add_action( 'wp_head', 'the_site_icon_tag' );
 add_action( 'admin_print_styles', 'the_site_icon_tag' );
 if ( !function_exists( 'the_site_icon_tag' ) ):
 function the_site_icon_tag(){
-  $tag = null;
+  //$tag = null;
+  // if (get_site_icon_url2()) {
+  //   $tag .= '<link rel="shortcut icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
+  //   $tag .= '<link rel="apple-touch-icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
+  //   $tag .= '<meta name="msapplication-TileImage" content="'.get_site_icon_url2().'">'.PHP_EOL;
+  // } else {
+  //   $tag .= '<link rel="shortcut icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
+  //   $tag .= '<link rel="apple-touch-icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
+  //   $tag .= '<meta name="msapplication-TileImage" content="'.get_default_site_icon_url().'">'.PHP_EOL;
+  // }
+  // if ($tag) {
+  //   $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL.$tag;
+  //   echo $tag;
+  // }
   if (get_site_icon_url2()) {
-    $tag .= '<link rel="shortcut icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
-    $tag .= '<link rel="apple-touch-icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
-  } elseif (is_singular()) {
-    $tag = '<link rel="shortcut icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
-    $tag = '<link rel="apple-touch-icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
+    $url = get_site_icon_url2();
+  } else {
+    $url = get_default_site_icon_url();
   }
-  if ($tag) {
-    $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL.$tag;
+  if ($url) {
+    $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL;
+    $tag .= '<link rel="shortcut icon" href="'.$url.'">'.PHP_EOL;
+    $tag .= '<link rel="apple-touch-icon" href="'.$url.'">'.PHP_EOL;
+    $tag .= '<meta name="msapplication-TileImage" content="'.$url.'">'.PHP_EOL;
     echo $tag;
   }
 }

@@ -169,3 +169,13 @@ function customize_register_custom( $wp_customize ) {
   // $wp_customize->remove_section('custom_css');
 }
 endif;
+
+//Wordpressデフォルトが出力するサイトアイコンを表示しない
+remove_action ('wp_head', 'wp_site_icon');
+add_filter('site_icon_meta_tags', 'filter_site_icon_meta_tags');
+if ( !function_exists( 'filter_site_icon_meta_tags' ) ):
+function filter_site_icon_meta_tags($meta_tags) {
+ //array_splice($meta_tags, 2);
+  return array();
+}
+endif;
