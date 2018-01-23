@@ -2038,7 +2038,7 @@
     .demo .sidebar .cta-left-and-right .cta-content div,
     .demo .sidebar .cta-right-and-left .cta-content div {
       width: 100%; }
-  .demo .sidebar .cta-button .btn-l {
+  .demo .sidebar .cta-button .btn-l, .demo .sidebar .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .sidebar .cta-button a {
     padding: 1em;
     font-size: 16px; }
   .demo .badge {
@@ -2200,7 +2200,7 @@
     .demo .search-form div.sbtn:after {
       font-size: 20px;
       margin-left: -10px; } }
-  .demo .btn {
+  .demo .btn, .demo .ranking-item-link-buttons a {
     color: #fff;
     font-weight: bold;
     margin: 1em;
@@ -2214,24 +2214,25 @@
     font-size: 14px;
     border: 2px solid transparent;
     position: relative; }
-  .demo .btn:before,
-  .demo .btn:after {
+  .demo .btn:before, .demo .ranking-item-link-buttons a:before,
+  .demo .btn:after,
+  .demo .ranking-item-link-buttons a:after {
     font-family: FontAwesome;
     margin-right: 12px; }
-  .demo .btn.btn-l:after {
+  .demo .btn.btn-l:after, .demo .ranking-item-link-buttons a:after {
     content: "\f105";
     position: absolute;
     right: 0;
     top: 18px;
     font-size: 30px; }
-  .demo #container .btn:hover {
+  .demo #container .btn:hover, .demo #container .ranking-item-link-buttons a:hover, .demo .ranking-item-link-buttons #container a:hover {
     color: #333;
     background-color: #fff;
     border: 2px solid #000; }
   .demo .btn-m {
     padding: 14px 45px;
     font-size: 16px; }
-  .demo .btn-l {
+  .demo .btn-l, .demo .ranking-item-link-buttons a {
     padding: 20px 0;
     font-size: 18px;
     display: block; }
@@ -2240,7 +2241,7 @@
     background-color: #fff; }
   .demo #container .btn-white:hover {
     color: #333; }
-  .demo .btn-red {
+  .demo .btn-red, .demo .ranking-item-link a {
     background-color: #f44336; }
   .demo .btn-pink {
     background-color: #e91e63; }
@@ -2248,7 +2249,7 @@
     background-color: #9C27B0; }
   .demo .btn-deep {
     background-color: #673AB7; }
-  .demo .btn-indigo {
+  .demo .btn-indigo, .demo .ranking-item-detail a {
     background-color: #3F51B5; }
   .demo .btn-blue {
     background-color: #2196F3; }
@@ -3006,17 +3007,44 @@
       padding-right: 3px;
       padding: 0;
       font-size: 2em; }
+  .demo .ranking-items {
+    line-height: 1.4; }
+    .demo .ranking-items p {
+      font-size: 18px;
+      margin-top: 0; }
+  .demo .ranking-item {
+    padding: 2%; }
+  .demo .ranking-item-name-text {
+    font-size: 24px;
+    font-weight: bold; }
+  .demo .ranking-item-rating {
+    color: #f5bc55;
+    font-size: 1.2em; }
   .demo .ranking-item-img-desc,
   .demo .ranking-item-link-buttons {
     display: flex; }
     .demo .ranking-item-img-desc > div,
     .demo .ranking-item-link-buttons > div {
       width: 100%;
-      padding: 10px; }
+      padding: 2px 0; }
   .demo .ranking-item-name {
     display: flex; }
+  .demo .ranking-item-name-crown {
+    margin-right: 10px; }
   .demo .ranking-item-name-text {
     width: 100%; }
+  .demo .ranking-item-image-tag {
+    max-width: 300px;
+    margin-right: 1em; }
+  .demo .ranking-item-description {
+    width: 100px; }
+  .demo .ranking-item-link-buttons > div {
+    padding: 0 3px; }
+  .demo .ranking-item-link-buttons a {
+    margin: 0; }
+    .demo .ranking-item-link-buttons a:hover {
+      opacity: 0.7;
+      transition: all 0.5s ease 0s; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -3024,8 +3052,7 @@
     border-bottom-width: 35px;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    position: relative;
-    margin-right: 10px; }
+    position: relative; }
   .demo .g-crown:after, .demo .s-crown:after, .demo .c-crown:after {
     width: 0;
     height: 0;
@@ -4437,7 +4464,7 @@
     .demo .sidebar .cta-left-and-right .cta-content div,
     .demo .sidebar .cta-right-and-left .cta-content div {
       width: 100%; }
-  .demo .sidebar .cta-button .btn-l {
+  .demo .sidebar .cta-button .btn-l, .demo .sidebar .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .sidebar .cta-button a {
     padding: 1em;
     font-size: 16px; }
   .demo .badge {
@@ -4599,7 +4626,7 @@
     .demo .search-form div.sbtn:after {
       font-size: 20px;
       margin-left: -10px; } }
-  .demo .btn {
+  .demo .btn, .demo .ranking-item-link-buttons a {
     color: #fff;
     font-weight: bold;
     margin: 1em;
@@ -4613,24 +4640,25 @@
     font-size: 14px;
     border: 2px solid transparent;
     position: relative; }
-  .demo .btn:before,
-  .demo .btn:after {
+  .demo .btn:before, .demo .ranking-item-link-buttons a:before,
+  .demo .btn:after,
+  .demo .ranking-item-link-buttons a:after {
     font-family: FontAwesome;
     margin-right: 12px; }
-  .demo .btn.btn-l:after {
+  .demo .btn.btn-l:after, .demo .ranking-item-link-buttons a:after {
     content: "\f105";
     position: absolute;
     right: 0;
     top: 18px;
     font-size: 30px; }
-  .demo #container .btn:hover {
+  .demo #container .btn:hover, .demo #container .ranking-item-link-buttons a:hover, .demo .ranking-item-link-buttons #container a:hover {
     color: #333;
     background-color: #fff;
     border: 2px solid #000; }
   .demo .btn-m {
     padding: 14px 45px;
     font-size: 16px; }
-  .demo .btn-l {
+  .demo .btn-l, .demo .ranking-item-link-buttons a {
     padding: 20px 0;
     font-size: 18px;
     display: block; }
@@ -4639,7 +4667,7 @@
     background-color: #fff; }
   .demo #container .btn-white:hover {
     color: #333; }
-  .demo .btn-red {
+  .demo .btn-red, .demo .ranking-item-link a {
     background-color: #f44336; }
   .demo .btn-pink {
     background-color: #e91e63; }
@@ -4647,7 +4675,7 @@
     background-color: #9C27B0; }
   .demo .btn-deep {
     background-color: #673AB7; }
-  .demo .btn-indigo {
+  .demo .btn-indigo, .demo .ranking-item-detail a {
     background-color: #3F51B5; }
   .demo .btn-blue {
     background-color: #2196F3; }
@@ -5405,17 +5433,44 @@
       padding-right: 3px;
       padding: 0;
       font-size: 2em; }
+  .demo .ranking-items {
+    line-height: 1.4; }
+    .demo .ranking-items p {
+      font-size: 18px;
+      margin-top: 0; }
+  .demo .ranking-item {
+    padding: 2%; }
+  .demo .ranking-item-name-text {
+    font-size: 24px;
+    font-weight: bold; }
+  .demo .ranking-item-rating {
+    color: #f5bc55;
+    font-size: 1.2em; }
   .demo .ranking-item-img-desc,
   .demo .ranking-item-link-buttons {
     display: flex; }
     .demo .ranking-item-img-desc > div,
     .demo .ranking-item-link-buttons > div {
       width: 100%;
-      padding: 10px; }
+      padding: 2px 0; }
   .demo .ranking-item-name {
     display: flex; }
+  .demo .ranking-item-name-crown {
+    margin-right: 10px; }
   .demo .ranking-item-name-text {
     width: 100%; }
+  .demo .ranking-item-image-tag {
+    max-width: 300px;
+    margin-right: 1em; }
+  .demo .ranking-item-description {
+    width: 100px; }
+  .demo .ranking-item-link-buttons > div {
+    padding: 0 3px; }
+  .demo .ranking-item-link-buttons a {
+    margin: 0; }
+    .demo .ranking-item-link-buttons a:hover {
+      opacity: 0.7;
+      transition: all 0.5s ease 0s; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -5423,8 +5478,7 @@
     border-bottom-width: 35px;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    position: relative;
-    margin-right: 10px; }
+    position: relative; }
   .demo .g-crown:after, .demo .s-crown:after, .demo .c-crown:after {
     width: 0;
     height: 0;
@@ -6081,7 +6135,7 @@
         .demo .cta-left-and-right .cta-content div,
         .demo .cta-right-and-left .cta-content div {
           width: 100%; }
-      .demo .cta-button .btn-l {
+      .demo .cta-button .btn-l, .demo .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .cta-button a {
         padding: 1em;
         font-size: 16px; }
       .demo .sbp-l .speech-balloon {
@@ -6619,10 +6673,15 @@ table.sb-list {
 
 #ranking-items {
   counter-reset: ranking-item-number; }
+  #ranking-items .ranking-items .ranking-item::before {
+    display: none; }
+  #ranking-items .ranking-items .ranking-item:last-of-type {
+    background-color: #fff; }
   #ranking-items .ranking-item {
     margin-bottom: 1em;
     position: relative;
-    overflow: visible; }
+    overflow: visible;
+    background-color: #fff; }
     #ranking-items .ranking-item:last-of-type {
       background-color: #FDF1F5; }
     #ranking-items .ranking-item::before {
@@ -6644,6 +6703,11 @@ table.sb-list {
       text-align: center; }
   #ranking-items .demo {
     font-size: 14px; }
+  #ranking-items .ranking-title input[type=text] {
+    font-weight: bold; }
+  #ranking-items .ranking-item-rating {
+    color: #333;
+    font-size: 1em; }
   #ranking-items input[type='text'],
   #ranking-items textarea {
     width: 100%;
@@ -6651,8 +6715,6 @@ table.sb-list {
   #ranking-items input[type='text'] {
     padding: 10px;
     border-width: 2px; }
-  #ranking-items .ranking-item > div {
-    padding: 4px; }
   #ranking-items .tips {
     margin: 0; }
   #ranking-items .ranking-item-rating label {
@@ -6675,4 +6737,5 @@ table.sb-list {
 
 .ir-list-title {
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 1em 0 0.4em; }

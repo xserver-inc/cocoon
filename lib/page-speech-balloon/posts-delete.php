@@ -2,7 +2,7 @@
 if (!empty($_POST['id']) && !empty($_POST['action'])) {
   $result = null;
   $id = isset($_POST['id']) ? intval($_POST['id']) : '';
-  $result = delete_peech_balloon( $id );
+  $result = delete_speech_balloon( $id );
 
   //設定保存メッセージ
   if ($result) {

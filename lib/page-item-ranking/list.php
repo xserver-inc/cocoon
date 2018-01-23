@@ -28,10 +28,13 @@ generate_sort_options_tag($keyword, $order_by);
   <tr style="margin-bottom: 20px">
     <td>
       <?php if ($record->title): ?>
-      <div>
-        <a href="<?php echo $edit_url; ?>" class="ir-list-title"><?php echo $record->title; ?></a>
+      <div class="ir-list-title">
+        <a href="<?php echo $edit_url; ?>" class="ir-list-title-link"><?php echo $record->title; ?></a>
       </div>
       <?php endif ?>
+      <div class="demo">
+        <?php generate_item_ranking_tag($record->id, true) ?>
+      </div>
     </td>
     <td class="list-option" style="width: 50px;">
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>

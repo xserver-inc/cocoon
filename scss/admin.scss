@@ -548,11 +548,20 @@ table.sb-list{
   //   background-color: #FDF1F5;
   // }
 
+  .ranking-items .ranking-item{
+    &::before{
+      display: none;
+    }
+    &:last-of-type{
+      background-color: #fff;
+    }
+  }
+
   .ranking-item{
     margin-bottom: 1em;
     position: relative;
     overflow: visible;
-    //background-color: #FDF1F5;
+    background-color: #fff;
 
 
     &:last-of-type{
@@ -584,6 +593,17 @@ table.sb-list{
     font-size: 14px;
   }
 
+  .ranking-title{
+    input[type=text]{
+      font-weight: bold;
+    }
+  }
+
+  .ranking-item-rating{
+    color: #333;
+    font-size: 1em;
+  }
+
   input[type='text'],
   textarea{
     width: 100%;
@@ -595,11 +615,11 @@ table.sb-list{
     border-width: 2px;
   }
 
-  .ranking-item{
-    >div{
-      padding: 4px;
-    }
-  }
+  // .ranking-item{
+  //   >div{
+  //     padding: 4px;
+  //   }
+  // }
 
   .ranking-item-name{
 
@@ -643,4 +663,5 @@ table.sb-list{
 .ir-list-title{
   font-size: 20px;
   font-weight: bold;
+  margin: 1em 0 0.4em;
 }

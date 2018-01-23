@@ -176,55 +176,114 @@ endif;
 
 //HTMLを生成
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
-function generate_item_ranking_tag($id){
+function generate_item_ranking_tag($id, $is_demo = false){
   $record = get_item_ranking($id);
   $items = isset($record->item_ranking) ? $record->item_ranking : array();
   $count = isset($record->count) ? intval($record->count) : 1;
+  //$demo_class = $is_demo ? ' demo' : '';
   ?>
   <?php //アイテムが存在している場合
   if (!empty($items)): ?>
   <div class="ranking-items">
   <?php
   for ($i = 1; $i <= $count; $i++):
-    //var_dump($i);
-    //$index = $i - 1;
+    if ($first_only && $i > 1) {
+      break;
+    }
     $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
-    $image_tag = apply_filters( 'ranking_item_image_tag', $image_tag );
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
-    $description = apply_filters( 'ranking_item_description', $description );
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_url = isset($items[$i]['link_url']) ? $items[$i]['link_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
-    $link_tag = apply_filters( 'ranking_item_link_tag', $link_tag );
+    //ショートコード実行用フィルター
+    $image_tag   = apply_filters( 'ranking_item_image_tag',   $image_tag   );
+    $description = apply_filters( 'ranking_item_description', wpautop($description) );
+    $link_tag    = apply_filters( 'ranking_item_link_tag',    $link_tag    );
    ?>
 
     <div class="ranking-item">
+
       <div class="ranking-item-name">
-
+        <div class="ranking-item-name-crown">
+          <?php generate_ranking_crown_tag($i); ?>
         </div>
-
+        <div class="ranking-item-name-text">
+          <?php echo $name; ?>
+        </div>
       </div>
+
+      <?php //評価が設定されている場合
+      if ($rating != 'none'): ?>
       <div class="ranking-item-rating">
-
+        <?php
+        $rates = explode('.', $rating);
+        //var_dump($rates);
+        $has_herf = count($rates) == 2;
+        if ($has_herf) {
+          $before = intval($rates[0]);
+          $middle = 1;
+          $after = 5 - 1 - $before;
+        } else {
+          $before = intval($rating);
+          $middle = 0;
+          $after = 5 - $before;
+        }
+        for ($i=1; $i <= $before; $i++) {
+          echo '<span class="fa fa-star"></span>';
+        }
+        for ($i=1; $i <= $middle; $i++) {
+          echo '<span class="fa fa-star-half-o"></span>';
+        }
+        for ($i=1; $i <= $after; $i++) {
+          echo '<span class="fa fa-star-o"></span>';
+        }
+         ?>
       </div>
+      <?php endif ?>
+
       <div class="ranking-item-img-desc">
+
+        <?php //画像タグ情報があるとき
+        if ($image_tag): ?>
         <div class="ranking-item-image-tag">
-
+          <?php echo $image_tag; ?>
         </div>
+        <?php endif ?>
+
         <div class="ranking-item-description">
-
+          <?php echo $description; ?>
         </div>
+
       </div>
+
+      <?php //ボタン情報があるとき
+      if ($detail_url || $link_url || $link_tag): ?>
       <div class="ranking-item-link-buttons">
-        <div class="ranking-item-detail-url">
 
+        <?php //詳細ページURLがあるとき
+        if ($detail_url): ?>
+        <div class="ranking-item-detail">
+          <a href="<?php echo $detail_url; ?>"><?php _e( '詳細ページ', THEME_NAME ) ?></a>
         </div>
-        <div class="ranking-item-link-tag">
+        <?php endif ?>
 
+
+        <?php //リンク情報があるとき
+        if ($link_url || $link_tag): ?>
+        <div class="ranking-item-link">
+          <?php if ($link_url): ?>
+            <a href="<?php echo $link_url; ?>" target="_blank"><?php _e( '公式ページ', THEME_NAME ) ?></a>
+          <?php else: ?>
+            <?php echo $link_tag; ?>
+          <?php endif ?>
         </div>
+        <?php endif ?>
+
       </div>
+      <?php endif ?>
+
     </div>
 
   <?php endfor ?>

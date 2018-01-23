@@ -2264,7 +2264,7 @@ label.screen-reader-text {
 .sidebar .cta-right-and-left .cta-content div {
   width: 100%;
 }
-.sidebar .cta-button .btn-l {
+.sidebar .cta-button .btn-l, .sidebar .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .sidebar .cta-button a {
   padding: 1em;
   font-size: 16px;
 }
@@ -2530,7 +2530,7 @@ label.screen-reader-text {
     margin-left: -10px;
   }
 }
-.btn {
+.btn, .ranking-item-link-buttons a {
   color: #fff;
   font-weight: bold;
   margin: 1em;
@@ -2546,13 +2546,14 @@ label.screen-reader-text {
   position: relative;
 }
 
-.btn:before,
-.btn:after {
+.btn:before, .ranking-item-link-buttons a:before,
+.btn:after,
+.ranking-item-link-buttons a:after {
   font-family: FontAwesome;
   margin-right: 12px;
 }
 
-.btn.btn-l:after {
+.btn.btn-l:after, .ranking-item-link-buttons a:after {
   content: "\f105";
   position: absolute;
   right: 0;
@@ -2560,7 +2561,7 @@ label.screen-reader-text {
   font-size: 30px;
 }
 
-#container .btn:hover {
+#container .btn:hover, #container .ranking-item-link-buttons a:hover, .ranking-item-link-buttons #container a:hover {
   color: #333;
   background-color: #fff;
   border: 2px solid #000;
@@ -2571,7 +2572,7 @@ label.screen-reader-text {
   font-size: 16px;
 }
 
-.btn-l {
+.btn-l, .ranking-item-link-buttons a {
   padding: 20px 0;
   font-size: 18px;
   display: block;
@@ -2586,7 +2587,7 @@ label.screen-reader-text {
   color: #333;
 }
 
-.btn-red {
+.btn-red, .ranking-item-link a {
   background-color: #f44336;
 }
 
@@ -2602,7 +2603,7 @@ label.screen-reader-text {
   background-color: #673AB7;
 }
 
-.btn-indigo {
+.btn-indigo, .ranking-item-detail a {
   background-color: #3F51B5;
 }
 
@@ -3714,6 +3715,28 @@ div.fb-like-mobile {
   font-size: 2em;
 }
 
+.ranking-items {
+  line-height: 1.4;
+}
+.ranking-items p {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.ranking-item {
+  padding: 2%;
+}
+
+.ranking-item-name-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ranking-item-rating {
+  color: #f5bc55;
+  font-size: 1.2em;
+}
+
 .ranking-item-img-desc,
 .ranking-item-link-buttons {
   display: flex;
@@ -3721,15 +3744,39 @@ div.fb-like-mobile {
 .ranking-item-img-desc > div,
 .ranking-item-link-buttons > div {
   width: 100%;
-  padding: 10px;
+  padding: 2px 0;
 }
 
 .ranking-item-name {
   display: flex;
 }
 
+.ranking-item-name-crown {
+  margin-right: 10px;
+}
+
 .ranking-item-name-text {
   width: 100%;
+}
+
+.ranking-item-image-tag {
+  max-width: 300px;
+  margin-right: 1em;
+}
+
+.ranking-item-description {
+  width: 100px;
+}
+
+.ranking-item-link-buttons > div {
+  padding: 0 3px;
+}
+.ranking-item-link-buttons a {
+  margin: 0;
+}
+.ranking-item-link-buttons a:hover {
+  opacity: 0.7;
+  transition: all 0.5s ease 0s;
 }
 
 .g-crown, .s-crown, .c-crown {
@@ -3740,7 +3787,6 @@ div.fb-like-mobile {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   position: relative;
-  margin-right: 10px;
 }
 
 .g-crown:after, .s-crown:after, .c-crown:after {
@@ -4756,7 +4802,7 @@ input[type='submit'] {
     width: 100%;
   }
 
-  .cta-button .btn-l {
+  .cta-button .btn-l, .cta-button .ranking-item-link-buttons a, .ranking-item-link-buttons .cta-button a {
     padding: 1em;
     font-size: 16px;
   }

@@ -339,8 +339,8 @@ function get_speech_balloon( $id ) {
 endif;
 
 //関数テキストレコードの削除
-if ( !function_exists( 'delete_peech_balloon' ) ):
-function delete_peech_balloon( $id ) {
+if ( !function_exists( 'delete_speech_balloon' ) ):
+function delete_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   return delete_db_table_record( $table_name, $id );
 }
