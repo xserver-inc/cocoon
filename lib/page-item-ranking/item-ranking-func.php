@@ -190,7 +190,7 @@ function generate_item_ranking_tag($id, $is_demo = false){
     if ($first_only && $i > 1) {
       break;
     }
-    $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
+    $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';

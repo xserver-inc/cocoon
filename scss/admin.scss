@@ -565,7 +565,7 @@ table.sb-list{
 
 
     &:last-of-type{
-      background-color: #FDF1F5;
+      background-color: #eaf5fa;
     }
 
     //padding-left: 20px;
@@ -573,24 +573,25 @@ table.sb-list{
       counter-increment: ranking-item-number;      /* ranking-item-number カウンタの増加数をセット */
       content: counter(ranking-item-number);      /* 表示形式を指定 */
       position: absolute;
-      font-size: 18px;
+      font-size: 15px;
       background-color: #777;
       color: #fff;
       padding: 6px;
       top: -15px;
       left: -15px;
       display: block;
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
       text-align: center;
-      //border-radius: 50%;
+      border-radius: 4px;
     }
 
   }
 
   .demo{
     font-size: 14px;
+    padding: 12px 18px;
   }
 
   .ranking-title{

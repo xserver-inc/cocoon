@@ -13,6 +13,12 @@
 .ranking-item-name-text{
   font-size: 24px;
   font-weight: bold;
+  // a{
+  //   @include link_cancel;
+  //   &:hover{
+  //     text-decoration: underline;
+  //   }
+  // }
 }
 
 .ranking-item-rating{
