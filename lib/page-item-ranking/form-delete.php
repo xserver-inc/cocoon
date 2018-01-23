@@ -18,7 +18,7 @@ $list_url = IR_LIST_URL;
   <p><?php _e( '以下の内容を削除しますか？', THEME_NAME ) ?></p>
 
   <div id="sb-list" class="postbox" style="max-width: 800px; padding: 20px;">
-    <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
+    <a href="<?php echo $edit_url; ?>" class="ir-list-title"><?php echo $record->title; ?></a>
   </div>
   <?php //デモの表示
   //require_once 'demo.php'; ?>

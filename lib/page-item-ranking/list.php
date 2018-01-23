@@ -29,7 +29,7 @@ generate_sort_options_tag($keyword, $order_by);
     <td>
       <?php if ($record->title): ?>
       <div>
-        <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
+        <a href="<?php echo $edit_url; ?>" class="ir-list-title"><?php echo $record->title; ?></a>
       </div>
       <?php endif ?>
     </td>
