@@ -39,13 +39,18 @@ if (!empty($title) &&
     $id = isset($_POST['id']) ? intval($_POST['id']) : '';
     if ($id) {
       $result = null;
+      $tmp_item = null;
 
       //最後尾のアイテムが有効でなかったら配列を削除しカウント数を一つマイナスする
       if (!is_ranking_item_available($last_item)) {
-        unset($_POST['item_ranking'][$count]);
+        $tmp_item = $_POST['item_ranking'][$count];
+        unset($tmp_item);
         $_POST['count'] = intval($_POST['count']) - 1;
-        generate_notice_message_tag(__( sprintf('%d位のアイテム「名前」や「説明文」が入力されていないため追加は行っていません。', $count), THEME_NAME ));
+        generate_notice_message_tag(__( sprintf('%d位のアイテムは、「名前」や「説明文」が入力されていないため追加保存は行っていません。', $count), THEME_NAME ));
         echo '<br>';
+        if ($tmp_item) {
+          $_POST['item_ranking'][$count] = $tmp_item;
+        }
       }
 
       //データベースのアップデート処理
