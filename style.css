@@ -3747,6 +3747,10 @@ div.fb-like-mobile {
   padding: 2px 0;
 }
 
+.ranking-item-img-desc {
+  margin-top: 6px;
+}
+
 .ranking-item-name {
   display: flex;
 }

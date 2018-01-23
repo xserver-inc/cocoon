@@ -197,10 +197,15 @@ function generate_item_ranking_tag($id, $is_demo = false){
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
     $link_url = isset($items[$i]['link_url']) ? $items[$i]['link_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
+    //改行を取り除く
+    $name      = preg_replace('/\n/', '', $name);
+    $image_tag = preg_replace('/\n/', '', $image_tag);
+    $link_tag  = preg_replace('/\n/', '', $link_tag);
     //ショートコード実行用フィルター
-    $image_tag   = apply_filters( 'ranking_item_image_tag',   $image_tag   );
+    $name        = apply_filters( 'ranking_item_name',        $name                 );
+    $image_tag   = apply_filters( 'ranking_item_image_tag',   $image_tag            );
     $description = apply_filters( 'ranking_item_description', wpautop($description) );
-    $link_tag    = apply_filters( 'ranking_item_link_tag',    $link_tag    );
+    $link_tag    = apply_filters( 'ranking_item_link_tag',    $link_tag             );
    ?>
 
     <div class="ranking-item">

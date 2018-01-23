@@ -3027,6 +3027,8 @@
     .demo .ranking-item-link-buttons > div {
       width: 100%;
       padding: 2px 0; }
+  .demo .ranking-item-img-desc {
+    margin-top: 6px; }
   .demo .ranking-item-name {
     display: flex; }
   .demo .ranking-item-name-crown {
@@ -5455,6 +5457,8 @@
     .demo .ranking-item-link-buttons > div {
       width: 100%;
       padding: 2px 0; }
+  .demo .ranking-item-img-desc {
+    margin-top: 6px; }
   .demo .ranking-item-name {
     display: flex; }
   .demo .ranking-item-name-crown {
