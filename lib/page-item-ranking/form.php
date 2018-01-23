@@ -7,7 +7,6 @@
     $id = isset($_GET['id']) ? intval($_GET['id']) : '';
     $record = get_item_ranking($id);
     $title = $record->title;
-    //$item_ranking = $record->item_ranking;
     $items = isset($record->item_ranking) ? $record->item_ranking : array();
     $count = isset($record->count) ? intval($record->count) + 1 : 1;
     //_v($items);
@@ -58,87 +57,87 @@
     //var_dump($items);
    ?>
 
-      <div class="ranking-item demo">
-        <div class="ranking-item-name">
-          <?php generate_ranking_crown_tag($i); ?>
-          <div class="ranking-item-name-text">
-          <?php
-          //generate_label_tag('', __('名前：', THEME_NAME) );
-          generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（※必須）',THEME_NAME ));
-           ?>
-          </div>
-
+    <div class="ranking-item demo">
+      <div class="ranking-item-name">
+        <?php generate_ranking_crown_tag($i); ?>
+        <div class="ranking-item-name-text">
+        <?php
+        //generate_label_tag('', __('名前：', THEME_NAME) );
+        generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（※必須）',THEME_NAME ));
+         ?>
         </div>
-        <div class="ranking-item-rating">
+
+      </div>
+      <div class="ranking-item-rating">
+        <?php
+        generate_label_tag('', __('評価：', THEME_NAME) );
+        $options = array(
+          'none' => __( 'なし', THEME_NAME ),
+          '0.0' => __( '0', THEME_NAME ),
+          '0.5' => __( '0.5', THEME_NAME ),
+          '1.0' => __( '1', THEME_NAME ),
+          '1.5' => __( '1.5', THEME_NAME ),
+          '2.0' => __( '2', THEME_NAME ),
+          '2.5' => __( '2.5', THEME_NAME ),
+          '3.0' => __( '3', THEME_NAME ),
+          '3.5' => __( '3.5', THEME_NAME ),
+          '4.0' => __( '4', THEME_NAME ),
+          '4.5' => __( '4.5', THEME_NAME ),
+          '5.0' => __( '5', THEME_NAME ),
+        );
+        //_v($rating);
+        generate_radiobox_tag('item_ranking['.$i.'][rating]', $options, $rating);
+        generate_tips_tag(__( '商品等を星の数で評価します。「なし」を選択した場合は表示されません。', THEME_NAME ));
+        ?>
+      </div>
+      <div class="ranking-item-img-desc">
+        <div class="ranking-item-image-tag">
           <?php
-          generate_label_tag('', __('評価：', THEME_NAME) );
-          $options = array(
-            'none' => __( 'なし', THEME_NAME ),
-            '0.0' => __( '0', THEME_NAME ),
-            '0.5' => __( '0.5', THEME_NAME ),
-            '1.0' => __( '1', THEME_NAME ),
-            '1.5' => __( '1.5', THEME_NAME ),
-            '2.0' => __( '2', THEME_NAME ),
-            '2.5' => __( '2.5', THEME_NAME ),
-            '3.0' => __( '3', THEME_NAME ),
-            '3.5' => __( '3.5', THEME_NAME ),
-            '4.0' => __( '4', THEME_NAME ),
-            '4.5' => __( '4.5', THEME_NAME ),
-            '5.0' => __( '5', THEME_NAME ),
-          );
-          //_v($rating);
-          generate_radiobox_tag('item_ranking['.$i.'][rating]', $options, $rating);
-          generate_tips_tag(__( '商品等を星の数で評価します。「なし」を選択した場合は表示されません。', THEME_NAME ));
+          generate_label_tag('', __('画像・バナータグ', THEME_NAME) );
+          echo '<br>';
+          generate_textarea_tag('item_ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグ等を入力してください。', THEME_NAME ), 5) ;
+          generate_tips_tag(__( 'イメージ画像のタグを入力してください。※入力していない場合は表示されません。', THEME_NAME ));
           ?>
         </div>
-        <div class="ranking-item-img-desc">
-          <div class="ranking-item-image-tag">
-            <?php
-            generate_label_tag('', __('画像・バナータグ', THEME_NAME) );
-            echo '<br>';
-            generate_textarea_tag('item_ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグ等を入力してください。', THEME_NAME ), 5) ;
-            generate_tips_tag(__( 'イメージ画像のタグを入力してください。※入力していない場合は表示されません。', THEME_NAME ));
-            ?>
-          </div>
-          <div class="ranking-item-description">
-            <?php
-            generate_label_tag('', __('説明文（※必須）', THEME_NAME) );
-            echo '<br>';
-            generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
-            generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
-             ?>
-          </div>
+        <div class="ranking-item-description">
+          <?php
+          generate_label_tag('', __('説明文（※必須）', THEME_NAME) );
+          echo '<br>';
+          generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
+          generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
+           ?>
         </div>
-        <div class="ranking-item-link-buttons">
-          <div class="ranking-item-detail-url">
-            <?php
-            generate_label_tag('', __('詳細ページURL', THEME_NAME) );
-            echo '<br>';
-            generate_textbox_tag('item_ranking['.$i.'][detail_url]', $detail_url,  __('http://',THEME_NAME ));
-            generate_tips_tag(__( '詳細ページへリンクするためのURLを入力してください。', THEME_NAME ));
-            ?>
-          </div>
-          <div class="ranking-item-link-tag">
-            <?php
-            generate_label_tag('', __('ページURL', THEME_NAME) );
-            echo '<br>';
-            generate_textbox_tag('item_ranking['.$i.'][link_url]', $link_url,  __('http://',THEME_NAME ));
-            generate_tips_tag(__( '公式ページ等へ行くするためのURLを入力してください。「リンクタグ」と双方入力されている場合は樹脂こちらが優先されます。', THEME_NAME ));
-
-            $style = $link_tag ? ' style="display: block;"' : '';
-            echo '<span class="toggle"><span class="toggle-link">'.__( 'タグで入力', THEME_NAME ).'</span><div class="toggle-content"'.$style.'>';
-
-            generate_label_tag('', __('リンクタグ', THEME_NAME) );
-            echo '<br>';
-            generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 3) ;
-            generate_tips_tag(__( 'アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。', THEME_NAME ));
-
-            echo '</div></span>'
-            ?>
-          </div>
-        </div>
-        <?php submit_button($submit_text); ?>
       </div>
+      <div class="ranking-item-link-buttons">
+        <div class="ranking-item-detail-url">
+          <?php
+          generate_label_tag('', __('詳細ページURL', THEME_NAME) );
+          echo '<br>';
+          generate_textbox_tag('item_ranking['.$i.'][detail_url]', $detail_url,  __('http://',THEME_NAME ));
+          generate_tips_tag(__( '詳細ページへリンクするためのURLを入力してください。', THEME_NAME ));
+          ?>
+        </div>
+        <div class="ranking-item-link-tag">
+          <?php
+          generate_label_tag('', __('ページURL', THEME_NAME) );
+          echo '<br>';
+          generate_textbox_tag('item_ranking['.$i.'][link_url]', $link_url,  __('http://',THEME_NAME ));
+          generate_tips_tag(__( '公式ページ等へ行くするためのURLを入力してください。「リンクタグ」と双方入力されている場合は樹脂こちらが優先されます。', THEME_NAME ));
+
+          $style = $link_tag ? ' style="display: block;"' : '';
+          echo '<span class="toggle"><span class="toggle-link">'.__( 'タグで入力', THEME_NAME ).'</span><div class="toggle-content"'.$style.'>';
+
+          generate_label_tag('', __('リンクタグ', THEME_NAME) );
+          echo '<br>';
+          generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 3) ;
+          generate_tips_tag(__( 'アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。', THEME_NAME ));
+
+          echo '</div></span>'
+          ?>
+        </div>
+      </div>
+      <?php submit_button($submit_text); ?>
+    </div>
 
   <?php endfor ?>
 

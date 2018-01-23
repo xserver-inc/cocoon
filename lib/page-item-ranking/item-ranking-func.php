@@ -176,7 +176,61 @@ endif;
 
 //HTMLを生成
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
-function generate_item_ranking_tag($record, $voice){?>
+function generate_item_ranking_tag($id){
+  $record = get_item_ranking($id);
+  $items = isset($record->item_ranking) ? $record->item_ranking : array();
+  $count = isset($record->count) ? intval($record->count) : 1;
+  ?>
+  <?php //アイテムが存在している場合
+  if (!empty($items)): ?>
+  <div class="ranking-items">
+  <?php
+  for ($i = 1; $i <= $count; $i++):
+    //var_dump($i);
+    //$index = $i - 1;
+    $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
+    $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
+    $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
+    $image_tag = apply_filters( 'ranking_item_image_tag', $image_tag );
+    $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
+    $description = apply_filters( 'ranking_item_description', $description );
+    $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
+    $link_url = isset($items[$i]['link_url']) ? $items[$i]['link_url'] : '';
+    $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
+    $link_tag = apply_filters( 'ranking_item_link_tag', $link_tag );
+   ?>
+
+    <div class="ranking-item">
+      <div class="ranking-item-name">
+
+        </div>
+
+      </div>
+      <div class="ranking-item-rating">
+
+      </div>
+      <div class="ranking-item-img-desc">
+        <div class="ranking-item-image-tag">
+
+        </div>
+        <div class="ranking-item-description">
+
+        </div>
+      </div>
+      <div class="ranking-item-link-buttons">
+        <div class="ranking-item-detail-url">
+
+        </div>
+        <div class="ranking-item-link-tag">
+
+        </div>
+      </div>
+    </div>
+
+  <?php endfor ?>
+
+  </div>
+  <?php endif ?>
 
 <?php
 }
