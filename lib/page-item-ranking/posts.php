@@ -10,7 +10,7 @@ if (!empty($title) &&
     !empty($_POST['action'])
    ) {
 
-  var_dump($_POST);
+  //var_dump($_POST);
   if ($_POST['action'] == 'new') {
     $result = null;
     //_v('new');

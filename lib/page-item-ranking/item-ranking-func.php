@@ -167,8 +167,8 @@ function get_item_ranking( $id ) {
 endif;
 
 //関数テキストレコードの削除
-if ( !function_exists( 'delete_peech_balloon' ) ):
-function delete_peech_balloon( $id ) {
+if ( !function_exists( 'delete_item_ranking' ) ):
+function delete_item_ranking( $id ) {
   $table_name = ITEM_RANKINGS_TABLE_NAME;
   return delete_db_table_record( $table_name, $id );
 }

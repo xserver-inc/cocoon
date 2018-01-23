@@ -41,9 +41,9 @@
   </div>
 
   <?php
-  var_dump('$count:'.$count);
-  var_dump('$action:'.$action);
-  var_dump('$id:'.$id);
+  // var_dump('$count:'.$count);
+  // var_dump('$action:'.$action);
+  // var_dump('$id:'.$id);
   for ($i = 1; $i <= $count; $i++):
     //var_dump($i);
     //$index = $i - 1;

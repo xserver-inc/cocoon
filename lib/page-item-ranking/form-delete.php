@@ -1,24 +1,27 @@
 <?php
 //一覧ページへのURL
-$list_url = SB_LIST_URL;
+$list_url = IR_LIST_URL;
  ?>
-<form name="form1" method="post" action="<?php echo $list_url; ?>" class="admin-settings">
+<form name="form1" method="post" action="<?php echo $list_url; ?>" class="item-ranking-delete">
   <?php
   $id = isset($_GET['id']) ? $_GET['id'] : null;
 
   if ($id) {
-    $record = get_speech_balloon($id);
+    $record = get_item_ranking($id);
     if (!$record) {
       //指定IDの関数テキストが存在しない場合は一覧にリダイレクト
       redirect_to_url($list_url);
     }
-
+    $edit_url = add_query_arg(array('action' => 'edit',   'id' => $id));
   }
   ?>
   <p><?php _e( '以下の内容を削除しますか？', THEME_NAME ) ?></p>
 
-  <?php //吹き出しデモの表示
-  require_once 'demo.php'; ?>
+  <div id="sb-list" class="postbox" style="max-width: 800px; padding: 20px;">
+    <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
+  </div>
+  <?php //デモの表示
+  //require_once 'demo.php'; ?>
 
   <div class="yes-back">
     <?php submit_button(__( '削除する', THEME_NAME )); ?>
