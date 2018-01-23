@@ -497,6 +497,42 @@ function wp_enqueue_stickyfill(){
 endif;
 
 
+//投稿画面ポスト時の確認ダイアログ
+if ( !function_exists( 'wp_enqueue_confirmation_before_publish' ) ):
+function wp_enqueue_confirmation_before_publish(){
+  if (is_confirmation_before_publish()) {
+    $post_text = __( '公開', THEME_NAME );
+    $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
+    $data = <<< EOM
+window.onload = function() {
+  var id = document.getElementById('publish');
+  if (id.value.indexOf("$post_text", 0) != -1) {
+    id.onclick = publish_confirm;
+  }
+}
+function publish_confirm() {
+  if (window.confirm("$confirm_text")) {
+    return true;
+  } else {
+    var elements = document.getElementsByTagName('span');
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.className.indexOf("spinner", 0) != -1) {
+        element.classList.remove('spinner');
+      }
+    }
+    document.getElementById('publish').classList.remove('button-primary-disabled');
+    document.getElementById('save-post').classList.remove('button-disabled');
+
+      return false;
+  }
+}
+EOM;
+    wp_add_inline_script( 'admin-javascript', $data, 'after' ) ;
+  }
+}
+endif;
+
 
 //Google Fontsの読み込み
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):

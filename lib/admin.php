@@ -21,6 +21,14 @@ function admin_print_styles_custom() {
   //global $pagenow;
   //var_dump($pagenow);
 
+  ///////////////////////////////////////
+  // 管理画面でのJavaScript読み込み
+  ///////////////////////////////////////
+  //管理画面用での独自JavaScriptの読み込み
+  wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
+  //投稿時に記事公開確認処理
+  wp_enqueue_confirmation_before_publish();
+
   if (is_admin_php_page()/* || is_widgets_php_page()*/) {
     //タブの読み込み
     wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
@@ -40,8 +48,6 @@ function admin_print_styles_custom() {
          tabify("#tabs").select( '.$select_index.' );
          });';
     wp_add_inline_script( 'tab-js', $data, 'after' ) ;
-    //管理画面用のJavaScriptの読み込み
-    wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
     //ソースコードハイライトリソースの読み込み
     wp_enqueue_highlight_js();
     //画像リンク拡大効果がLightboxのとき
@@ -230,45 +236,44 @@ function customize_admin_bar_menu($wp_admin_bar){
 endif;
 
 
-//記事公開前に確認アラートを出す
-if (is_confirmation_before_publish()) {
-  add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
-}
-if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
-function publish_confirm_admin_print_scripts() {
-  $post_text = __( '公開', THEME_NAME );
-  $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
-  echo <<< EOM
-<script type="text/javascript">
-<!--
-window.onload = function() {
-  var id = document.getElementById('publish');
-  if (id.value.indexOf("$post_text", 0) != -1) {
-    id.onclick = publish_confirm;
-  }
-}
-function publish_confirm() {
-  if (window.confirm("$confirm_text")) {
-    return true;
-  } else {
-    var elements = document.getElementsByTagName('span');
-    for (var i = 0; i < elements.length; i++) {
-      var element = elements[i];
-      if (element.className.indexOf("spinner", 0) != -1) {
-        element.classList.remove('spinner');
-      }
-    }
-    document.getElementById('publish').classList.remove('button-primary-disabled');
-    document.getElementById('save-post').classList.remove('button-disabled');
+// //記事公開前に確認アラートを出す
+// if (is_confirmation_before_publish()) {
+//   add_action('admin_print_scripts', 'publish_confirm_admin_print_scripts');
+// }
+// if ( !function_exists( 'publish_confirm_admin_print_scripts' ) ):
+// function publish_confirm_admin_print_scripts() {
+//   $post_text = __( '公開', THEME_NAME );
+//   $confirm_text = __( '記事を公開してもよろしいですか？', THEME_NAME );
+//   echo <<< EOM
+// <script type="text/javascript">
+// //console.log("id");
+// window.onload = function() {
+//   var id = document.getElementById('publish');
+//   if (id.value.indexOf("$post_text", 0) != -1) {
+//     id.onclick = publish_confirm;
+//   }
+// }
+// function publish_confirm() {
+//   if (window.confirm("$confirm_text")) {
+//     return true;
+//   } else {
+//     var elements = document.getElementsByTagName('span');
+//     for (var i = 0; i < elements.length; i++) {
+//       var element = elements[i];
+//       if (element.className.indexOf("spinner", 0) != -1) {
+//         element.classList.remove('spinner');
+//       }
+//     }
+//     document.getElementById('publish').classList.remove('button-primary-disabled');
+//     document.getElementById('save-post').classList.remove('button-disabled');
 
-      return false;
-  }
-}
-// -->
-</script>
-EOM;
-}
-endif;
+//       return false;
+//   }
+// }
+// </script>
+// EOM;
+// }
+// endif;
 
 //投稿一覧リストの上にタグフィルターと管理者フィルターを追加する
 add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');
