@@ -6028,7 +6028,9 @@
       text-align: center; }
     .demo .fb-like-message {
       font-size: 0.8em;
-      line-height: 1.4; } }
+      line-height: 1.4; }
+    .demo .sidebar-scroll {
+      position: static; } }
   @media screen and (max-width: 768px) {
     .demo {
       /************************************

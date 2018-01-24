@@ -357,13 +357,12 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
-      if (DEBUG_MODE) {
-        echo('<pre>');
-        echo $transient_id;
-        echo('</pre>');
-      }
-      // _v($transient_id);
-      // _v($cache);
+      // if (DEBUG_MODE) {
+      //   echo('<pre>');
+      //   echo $transient_id;
+      //   echo('</pre>');
+      // }
+
       return $cache;
     }
   }

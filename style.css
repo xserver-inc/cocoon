@@ -4623,6 +4623,10 @@ input[type='submit'] {
     font-size: 0.8em;
     line-height: 1.4;
   }
+
+  .sidebar-scroll {
+    position: static;
+  }
 }
 @media screen and (max-width: 768px) {
   .navi-in > .menu-header {

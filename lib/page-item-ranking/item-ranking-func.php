@@ -176,18 +176,18 @@ endif;
 
 //HTMLを生成
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
-function generate_item_ranking_tag($id, $is_demo = false){
+function generate_item_ranking_tag($id, $is_first_only = false){
   $record = get_item_ranking($id);
   $items = isset($record->item_ranking) ? $record->item_ranking : array();
   $count = isset($record->count) ? intval($record->count) : 1;
-  //$demo_class = $is_demo ? ' demo' : '';
+  //$demo_class = $is_first_only ? ' demo' : '';
   ?>
   <?php //アイテムが存在している場合
   if (!empty($items)): ?>
   <div class="ranking-items">
   <?php
   for ($i = 1; $i <= $count; $i++):
-    if ($first_only && $i > 1) {
+    if ($is_first_only && $i > 1) {
       break;
     }
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';

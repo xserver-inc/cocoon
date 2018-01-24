@@ -23,7 +23,7 @@ require_once 'sns-share-forms-bottom.php';
           <td>
             <?php
             generate_checkbox_tag( OP_TWITTER_ID_INCLUDE, is_twitter_id_include(), __( 'ツイートにメンションを含める', THEME_NAME ));
-            generate_tips_tag(__( 'シェアされたツイートに著者のTwitter', THEME_NAME ));
+            generate_tips_tag(__( 'シェアされたツイートに著者のTwitter IDを含める。', THEME_NAME ));
             ?>
           </td>
         </tr>
