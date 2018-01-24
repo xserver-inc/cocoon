@@ -204,7 +204,7 @@
         </tr>
 
         <!-- サイトアイコン -->
-        <tr>
+        <!-- <tr>
           <th scope="row">
             <?php generate_label_tag(OP_SITE_ICON_URL, __('サイトアイコン', THEME_NAME) ); ?>
           </th>
@@ -215,7 +215,7 @@
             generate_tips_tag(__( 'サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。', THEME_NAME ));
             ?>
           </td>
-        </tr>
+        </tr> -->
 
       </tbody>
     </table>

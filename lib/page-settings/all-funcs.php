@@ -104,7 +104,8 @@ define('OP_SITE_ICON_URL', 'site_icon_url');
 //Wordpressデフォルトのget_site_icon_url関数とかぶるため名前変更
 if ( !function_exists( 'get_site_icon_url2' ) ):
 function get_site_icon_url2(){
-  return get_theme_option(OP_SITE_ICON_URL, get_default_site_icon_url());
+  //return get_theme_option(OP_SITE_ICON_URL, get_default_site_icon_url());
+  return ;
 }
 endif;
 if ( !function_exists( 'get_default_site_icon_url' ) ):
@@ -114,24 +115,10 @@ function get_default_site_icon_url(){
 endif;
 
 //サイトアイコンの設定
-add_action( 'wp_head', 'the_site_icon_tag' );
-add_action( 'admin_print_styles', 'the_site_icon_tag' );
+// add_action( 'wp_head', 'the_site_icon_tag' );
+// add_action( 'admin_print_styles', 'the_site_icon_tag' );
 if ( !function_exists( 'the_site_icon_tag' ) ):
 function the_site_icon_tag(){
-  //$tag = null;
-  // if (get_site_icon_url2()) {
-  //   $tag .= '<link rel="shortcut icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
-  //   $tag .= '<link rel="apple-touch-icon" href="'.get_site_icon_url2().'">'.PHP_EOL;
-  //   $tag .= '<meta name="msapplication-TileImage" content="'.get_site_icon_url2().'">'.PHP_EOL;
-  // } else {
-  //   $tag .= '<link rel="shortcut icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
-  //   $tag .= '<link rel="apple-touch-icon" href="'.get_default_site_icon_url().'">'.PHP_EOL;
-  //   $tag .= '<meta name="msapplication-TileImage" content="'.get_default_site_icon_url().'">'.PHP_EOL;
-  // }
-  // if ($tag) {
-  //   $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL.$tag;
-  //   echo $tag;
-  // }
   if (get_site_icon_url2()) {
     $url = get_site_icon_url2();
   } else {

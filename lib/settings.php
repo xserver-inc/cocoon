@@ -154,7 +154,7 @@ add_action( 'customize_register', 'customize_register_custom' );
 if ( !function_exists( 'customize_register_custom' ) ):
 function customize_register_custom( $wp_customize ) {
   //サイト基本情報
-  $wp_customize->remove_section('title_tagline');
+  //$wp_customize->remove_section('title_tagline');
   //色
   $wp_customize->remove_section('colors');
   //背景画像がある場合
@@ -174,12 +174,12 @@ function customize_register_custom( $wp_customize ) {
 }
 endif;
 
-//Wordpressデフォルトが出力するサイトアイコンを表示しない
-remove_action ('wp_head', 'wp_site_icon');
-add_filter('site_icon_meta_tags', 'filter_site_icon_meta_tags');
-if ( !function_exists( 'filter_site_icon_meta_tags' ) ):
-function filter_site_icon_meta_tags($meta_tags) {
- //array_splice($meta_tags, 2);
-  return array();
-}
-endif;
+// //Wordpressデフォルトが出力するサイトアイコンを表示しない
+// remove_action ('wp_head', 'wp_site_icon');
+// add_filter('site_icon_meta_tags', 'filter_site_icon_meta_tags');
+// if ( !function_exists( 'filter_site_icon_meta_tags' ) ):
+// function filter_site_icon_meta_tags($meta_tags) {
+//  //array_splice($meta_tags, 2);
+//   return array();
+// }
+// endif;

@@ -30,5 +30,5 @@ update_theme_option(OP_SIDEBAR_POSITION);
 //サイドバーの表示状態の設定
 update_theme_option(OP_SIDEBAR_DISPLAY_TYPE);
 
-//サイトアイコン
-update_theme_option(OP_SITE_ICON_URL);
+// //サイトアイコン
+// update_theme_option(OP_SITE_ICON_URL);
