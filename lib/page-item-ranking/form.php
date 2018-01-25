@@ -60,7 +60,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     //var_dump($i);
     //$index = $i - 1;
     $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
-    $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
+    $rating = !empty($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
     $description = isset($items[$i]['description']) ? $items[$i]['description'] : '';
     $detail_url = isset($items[$i]['detail_url']) ? $items[$i]['detail_url'] : '';
@@ -88,17 +88,17 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
         generate_label_tag('', __('評価：', THEME_NAME) );
         $options = array(
           'none' => __( 'なし', THEME_NAME ),
-          '0'    => __( '0',    THEME_NAME ),
+          '0.0'    => __( '0',    THEME_NAME ),
           '0.5'  => __( '0.5',  THEME_NAME ),
-          '1'    => __( '1',    THEME_NAME ),
+          '1.0'    => __( '1',    THEME_NAME ),
           '1.5'  => __( '1.5',  THEME_NAME ),
-          '2'    => __( '2',    THEME_NAME ),
+          '2.0'    => __( '2',    THEME_NAME ),
           '2.5'  => __( '2.5',  THEME_NAME ),
-          '3'    => __( '3',    THEME_NAME ),
+          '3.0'    => __( '3',    THEME_NAME ),
           '3.5'  => __( '3.5',  THEME_NAME ),
-          '4'    => __( '4',    THEME_NAME ),
+          '4.0'    => __( '4',    THEME_NAME ),
           '4.5'  => __( '4.5',  THEME_NAME ),
-          '5'    => __( '5',    THEME_NAME ),
+          '5.0'    => __( '5',    THEME_NAME ),
         );
         //_v($rating);
         generate_radiobox_tag('item_ranking['.$i.'][rating]', $options, $rating);

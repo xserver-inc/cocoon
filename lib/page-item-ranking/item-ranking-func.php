@@ -174,6 +174,13 @@ function delete_item_ranking( $id ) {
 }
 endif;
 
+//ショートコードの取得
+if ( !function_exists( 'get_item_ranking_shortcode' ) ):
+function get_item_ranking_shortcode($id) {
+  return "[rank id={$id}]";
+}
+endif;
+
 //HTMLを生成
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
 function generate_item_ranking_tag($id, $is_first_only = false){
@@ -233,7 +240,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
         <?php
         $rates = explode('.', $rating);
         //var_dump($rates);
-        $has_herf = count($rates) == 2;
+        $has_herf = intval($rates[1]) == 5;
         if ($has_herf) {
           $before = intval($rates[0]);
           $middle = 1;

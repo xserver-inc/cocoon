@@ -184,6 +184,7 @@ function function_text_shortcode($atts) {
 }
 endif;
 
+//ショートコードの取得
 if ( !function_exists( 'get_function_text_shortcode' ) ):
 function get_function_text_shortcode($id) {
   return "[ft id={$id}]";

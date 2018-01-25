@@ -60,7 +60,8 @@ table td,
 .a-wrap .blogcard,
 input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select,
 .author-box,
-.comment-reply-link{
+.comment-reply-link,
+.ranking-item{
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>
 }
 table tr:nth-of-type(2n+1),

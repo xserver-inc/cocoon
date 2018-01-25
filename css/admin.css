@@ -3013,7 +3013,9 @@
       font-size: 18px;
       margin-top: 0; }
   .demo .ranking-item {
-    padding: 2%; }
+    padding: 2%;
+    margin-bottom: 20px;
+    border: 1px solid #cccfd2; }
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }
@@ -5443,7 +5445,9 @@
       font-size: 18px;
       margin-top: 0; }
   .demo .ranking-item {
-    padding: 2%; }
+    padding: 2%;
+    margin-bottom: 20px;
+    border: 1px solid #cccfd2; }
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }

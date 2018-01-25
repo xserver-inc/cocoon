@@ -32,6 +32,11 @@ generate_sort_options_tag($keyword, $order_by);
         <a href="<?php echo $edit_url; ?>" class="ir-list-title-link"><?php echo $record->title; ?></a>
       </div>
       <?php endif ?>
+      <?php if ($record->id): ?>
+      <div class="ir-list-shortcode">
+        <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="<?php echo get_item_ranking_shortcode($record->id); ?>">
+      </div>
+      <?php endif ?>
       <div class="demo">
         <?php generate_item_ranking_tag($record->id, true) ?>
       </div>

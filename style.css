@@ -3725,6 +3725,8 @@ div.fb-like-mobile {
 
 .ranking-item {
   padding: 2%;
+  margin-bottom: 20px;
+  border: 1px solid #cccfd2;
 }
 
 .ranking-item-name-text {
