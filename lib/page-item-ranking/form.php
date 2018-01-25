@@ -2,7 +2,7 @@
 <?php //IDがある場合はIDの取得（編集モードの場合）
 $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
 <?php if ($id): ?>
-  <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+  <p class="preview-label" style="max-width: 1000px;"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
   <div class="demo" style="max-width: 1000px; max-height: 400px;margin-bottom: 2em;">
   <?php generate_item_ranking_tag($id); ?>
   </div>

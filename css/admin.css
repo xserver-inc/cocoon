@@ -3019,6 +3019,8 @@
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }
+  .demo .ranking-item-name {
+    padding: 3px 2px 6px; }
   .demo .ranking-item-rating {
     color: #f5bc55;
     font-size: 1.2em; }
@@ -5451,6 +5453,8 @@
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }
+  .demo .ranking-item-name {
+    padding: 3px 2px 6px; }
   .demo .ranking-item-rating {
     color: #f5bc55;
     font-size: 1.2em; }

@@ -3734,6 +3734,10 @@ div.fb-like-mobile {
   font-weight: bold;
 }
 
+.ranking-item-name {
+  padding: 3px 2px 6px;
+}
+
 .ranking-item-rating {
   color: #f5bc55;
   font-size: 1.2em;
