@@ -7,7 +7,7 @@ if ( !function_exists( 'add_speech_balloons_dropdown' ) ):
 function add_speech_balloons_dropdown(){
   if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
     add_filter( 'mce_external_plugins',  'add_speech_balloons_to_mce_external_plugins' );
-    add_filter( 'mce_buttons_2',  'register_speech_balloons' );
+    add_filter( 'mce_buttons_3',  'register_speech_balloons' );
   }
 }
 endif;

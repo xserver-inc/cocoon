@@ -7,7 +7,7 @@ if ( !function_exists( 'add_html_tags_dropdown' ) ):
 function add_html_tags_dropdown(){
   if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
     add_filter( 'mce_external_plugins',  'add_html_tags_to_mce_external_plugins' );
-    add_filter( 'mce_buttons_2',  'register_html_tags' );
+    add_filter( 'mce_buttons_3',  'register_html_tags' );
   }
 }
 endif;

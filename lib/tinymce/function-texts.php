@@ -7,7 +7,7 @@ if ( !function_exists( 'add_function_texts_dropdown' ) ):
 function add_function_texts_dropdown(){
   if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
     add_filter( 'mce_external_plugins',  'add_function_texts_to_mce_external_plugins' );
-    add_filter( 'mce_buttons_2',  'register_function_texts' );
+    add_filter( 'mce_buttons_3',  'register_function_texts' );
   }
 }
 endif;

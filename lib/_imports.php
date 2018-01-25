@@ -92,6 +92,7 @@ if (is_admin()) {
   require_once 'tinymce/speech-balloons.php'; //吹き出し追加
   require_once 'tinymce/function-texts.php'; //テンプレート追加
   require_once 'tinymce/affiliate-tags.php'; //アフィリエイトタグ追加
+  require_once 'tinymce/item-rankings.php'; //ランキングタグ追加
   require_once 'tinymce/html-tags.php'; //拡張タグ追加
 }
 
