@@ -1,10 +1,21 @@
 <p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
+<?php //IDがある場合はIDの取得（編集モードの場合）
+$id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
+<?php if ($id): ?>
+  <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+  <div class="demo" style="max-width: 1000px; max-height: 400px;margin-bottom: 2em;">
+  <?php generate_item_ranking_tag($id); ?>
+  </div>
+<?php endif ?>
+
+
+
 <form name="form1" id="ranking-items" method="post" action="">
   <?php
 
-  if (isset($_GET['id'])) {
+  if ($id) {
     $action = 'edit';
-    $id = isset($_GET['id']) ? intval($_GET['id']) : '';
+
     $record = get_item_ranking($id);
     $title = $record->title;
     $items = isset($record->item_ranking) ? $record->item_ranking : array();
@@ -26,6 +37,8 @@
     $count = 1;
   }
   ?>
+
+
 <div class="postbox">
   <div class="inside">
 

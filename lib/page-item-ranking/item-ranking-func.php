@@ -187,9 +187,16 @@ function generate_item_ranking_tag($id, $is_first_only = false){
   <div class="ranking-items">
   <?php
   for ($i = 1; $i <= $count; $i++):
+    // if ($i == 2) {
+    //   break;
+    // }
+    // var_dump($items);
+    //var_dump($count);
+
     if ($is_first_only && $i > 1) {
       break;
     }
+
     $name = isset($items[$i]['name']) ? $items[$i]['name'] : '';
     $rating = isset($items[$i]['rating']) ? $items[$i]['rating'] : 'none';
     $image_tag = isset($items[$i]['image_tag']) ? $items[$i]['image_tag'] : '';
@@ -206,6 +213,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
     $image_tag   = apply_filters( 'ranking_item_image_tag',   $image_tag            );
     $description = apply_filters( 'ranking_item_description', wpautop($description) );
     $link_tag    = apply_filters( 'ranking_item_link_tag',    $link_tag             );
+
    ?>
 
     <div class="ranking-item">
@@ -235,18 +243,20 @@ function generate_item_ranking_tag($id, $is_first_only = false){
           $middle = 0;
           $after = 5 - $before;
         }
-        for ($i=1; $i <= $before; $i++) {
+        for ($j=1; $j <= $before; $j++) {
           echo '<span class="fa fa-star"></span>';
         }
-        for ($i=1; $i <= $middle; $i++) {
+        for ($j=1; $j <= $middle; $j++) {
           echo '<span class="fa fa-star-half-o"></span>';
         }
-        for ($i=1; $i <= $after; $i++) {
+        for ($j=1; $j <= $after; $j++) {
           echo '<span class="fa fa-star-o"></span>';
         }
          ?>
       </div>
       <?php endif ?>
+
+      <?php //continue; ?>
 
       <div class="ranking-item-img-desc">
 
@@ -261,7 +271,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
           <?php echo $description; ?>
         </div>
 
-      </div>
+      </div><!-- ./ranking-item-img-desc -->
 
       <?php //ボタン情報があるとき
       if ($detail_url || $link_url || $link_tag): ?>
@@ -286,14 +296,14 @@ function generate_item_ranking_tag($id, $is_first_only = false){
         </div>
         <?php endif ?>
 
-      </div>
+      </div><!-- /.ranking-item-link-buttons -->
       <?php endif ?>
 
-    </div>
+    </div><!-- /.ranking-item -->
 
   <?php endfor ?>
 
-  </div>
+  </div><!-- /.ranking-items -->
   <?php endif ?>
 
 <?php
