@@ -10,6 +10,13 @@
   padding: 2%;
   margin-bottom: 20px;
   border: 1px solid $basic_border_color;
+
+  img[width="1"],
+  img[height="1"]{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .ranking-item-name-text{
@@ -60,16 +67,19 @@
 .ranking-item-image-tag{
   max-width: 302px;
   margin-right: 1em;
+  position: relative;
 }
 
 .ranking-item-description{
   width: 100px;
+  position: relative;
 }
 
 .ranking-item-link-buttons{
   margin-top: 6px;
   >div{
     padding: 0 3px;
+    position: relative;
   }
 
   a{

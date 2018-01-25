@@ -3728,6 +3728,12 @@ div.fb-like-mobile {
   margin-bottom: 20px;
   border: 1px solid #cccfd2;
 }
+.ranking-item img[width="1"],
+.ranking-item img[height="1"] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
 .ranking-item-name-text {
   font-size: 24px;
@@ -3772,10 +3778,12 @@ div.fb-like-mobile {
 .ranking-item-image-tag {
   max-width: 302px;
   margin-right: 1em;
+  position: relative;
 }
 
 .ranking-item-description {
   width: 100px;
+  position: relative;
 }
 
 .ranking-item-link-buttons {
@@ -3783,6 +3791,7 @@ div.fb-like-mobile {
 }
 .ranking-item-link-buttons > div {
   padding: 0 3px;
+  position: relative;
 }
 .ranking-item-link-buttons a {
   margin: 0;

@@ -3016,6 +3016,11 @@
     padding: 2%;
     margin-bottom: 20px;
     border: 1px solid #cccfd2; }
+    .demo .ranking-item img[width="1"],
+    .demo .ranking-item img[height="1"] {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }
@@ -3041,13 +3046,16 @@
     width: 100%; }
   .demo .ranking-item-image-tag {
     max-width: 302px;
-    margin-right: 1em; }
+    margin-right: 1em;
+    position: relative; }
   .demo .ranking-item-description {
-    width: 100px; }
+    width: 100px;
+    position: relative; }
   .demo .ranking-item-link-buttons {
     margin-top: 6px; }
     .demo .ranking-item-link-buttons > div {
-      padding: 0 3px; }
+      padding: 0 3px;
+      position: relative; }
     .demo .ranking-item-link-buttons a {
       margin: 0; }
       .demo .ranking-item-link-buttons a:hover {
@@ -5450,6 +5458,11 @@
     padding: 2%;
     margin-bottom: 20px;
     border: 1px solid #cccfd2; }
+    .demo .ranking-item img[width="1"],
+    .demo .ranking-item img[height="1"] {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
   .demo .ranking-item-name-text {
     font-size: 24px;
     font-weight: bold; }
@@ -5475,13 +5488,16 @@
     width: 100%; }
   .demo .ranking-item-image-tag {
     max-width: 302px;
-    margin-right: 1em; }
+    margin-right: 1em;
+    position: relative; }
   .demo .ranking-item-description {
-    width: 100px; }
+    width: 100px;
+    position: relative; }
   .demo .ranking-item-link-buttons {
     margin-top: 6px; }
     .demo .ranking-item-link-buttons > div {
-      padding: 0 3px; }
+      padding: 0 3px;
+      position: relative; }
     .demo .ranking-item-link-buttons a {
       margin: 0; }
       .demo .ranking-item-link-buttons a:hover {
