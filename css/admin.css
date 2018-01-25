@@ -6716,6 +6716,10 @@ table.sb-list {
       line-height: 16px;
       text-align: center;
       border-radius: 4px; }
+    #ranking-items .ranking-item .toggle .toggle-link {
+      margin: 0;
+      font-size: 1em;
+      font-weight: bold; }
   #ranking-items .demo {
     font-size: 14px;
     padding: 12px 18px; }
