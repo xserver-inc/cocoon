@@ -20,6 +20,8 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     $title = $record->title;
     $items = isset($record->item_ranking) ? $record->item_ranking : array();
     $count = isset($record->count) ? intval($record->count) + 1 : 1;
+    //var_dump($record);
+    $visible = $record->visible;
     //_v($items);
   // _v($action);
   // _v($count);
@@ -35,6 +37,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
     $items = $item_ranking;
     $count = 1;
+    $visible = 1;
   }
   ?>
 
@@ -48,7 +51,16 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     generate_label_tag('title', __('タイトル（※必須）', THEME_NAME) );
     echo '</h2>';
     generate_textbox_tag('title', $title,  __('タイトルを入力',THEME_NAME ));
-    generate_tips_tag(__( 'ランキングを識別するためのタイトルを入力してください。', THEME_NAME ));echo '<br>';
+    generate_tips_tag(__( 'ランキングを識別するためのタイトルを入力してください。', THEME_NAME ));
+    echo '<br>';
+
+    //TinyMCE表示
+    generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
+    generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストにに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
+    echo '<br>';
+
+    submit_button('保存');
+    echo '<br>';
     ?>
   </div>
 

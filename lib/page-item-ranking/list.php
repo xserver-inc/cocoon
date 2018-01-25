@@ -42,6 +42,10 @@ generate_sort_options_tag($keyword, $order_by);
       </div>
     </td>
     <td class="list-option" style="width: 50px;">
+      <?php if (!$record->visible): ?>
+        <div class="item-hidden">[<?php _e( '非表示', THEME_NAME ) ?>]</div>
+      <?php endif ?>
+
       <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
       <p><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></p>
     </td>

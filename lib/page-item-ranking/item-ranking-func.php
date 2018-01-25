@@ -35,6 +35,7 @@ function insert_item_ranking_record($posts){
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
     'count' => $posts['count'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 0,
   );
   //_v($data);
   $format = array(
@@ -42,6 +43,7 @@ function insert_item_ranking_record($posts){
     '%s',
     '%s',
     '%s',
+    '%d',
     '%d',
   );
   return insert_db_table_record($table, $data, $format);
@@ -59,12 +61,14 @@ function update_item_ranking_record($id, $posts){
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
     'count' => $posts['count'],
+    'visible' => isset($posts['visible']) ? $posts['visible'] : 0,
   );
   $where = array('id' => $id);
   $format = array(
     '%s',
     '%s',
     '%s',
+    '%d',
     '%d',
   );
   $where_format = array('%d');
@@ -103,6 +107,7 @@ function create_item_rankings_table() {
     title varchar(126),
     item_ranking text NOT NULL,
     count bigint(20) DEFAULT 1,
+    visible bit(1) DEFAULT 1 NOT NULL,
     PRIMARY KEY (id)
   )";
   $res = create_db_table($sql);
@@ -159,6 +164,7 @@ function get_item_ranking( $id ) {
   $record->title = !empty($record->title) ? stripslashes_deep($record->title) : '';
   $record->item_ranking = !empty($record->item_ranking) ? stripslashes_deep(unserialize($record->item_ranking)) : array();
   $record->count = !empty($record->count) ? $record->count : 1;
+  $record->visible = !empty($record->visible) ? $record->visible : 0;
 
   //var_dump($record);
 

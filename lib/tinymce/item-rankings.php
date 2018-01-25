@@ -33,30 +33,32 @@ endif;
 if ( !function_exists( 'generate_item_rankings' ) ):
 function generate_item_rankings($value){
   $records = get_item_rankings(null, 'title');
+  if ($records) {
+    echo '<script type="text/javascript">
+    var itemRankingsTitle = "'.__( 'ランキング', THEME_NAME ).'";
+    var itemRankings = new Array();';
 
-  echo '<script type="text/javascript">
-  var itemRankingsTitle = "'.__( 'ランキング', THEME_NAME ).'";
-  var itemRankings = new Array();';
+    $count = 0;
 
-  $count = 0;
+    foreach($records as $record){
+      //非表示の場合は跳ばす
+      if (!$record->visible) {
+        continue;
+      }
+      ?>
 
-  foreach($records as $record){
-    //非表示の場合は跳ばす
-    // if (!$record->visible) {
-    //   continue;
-    // }
-    ?>
+      var count = <?php echo $count; ?>;
+      itemRankings[count] = new Array();
+      itemRankings[count].title  = '<?php echo $record->title; ?>';
+      itemRankings[count].id     = '<?php echo $record->id; ?>';
+      itemRankings[count].shrotecode = '<?php echo get_item_ranking_shortcode($record->id); ?>';
 
-    var count = <?php echo $count; ?>;
-    itemRankings[count] = new Array();
-    itemRankings[count].title  = '<?php echo $record->title; ?>';
-    itemRankings[count].id     = '<?php echo $record->id; ?>';
-    itemRankings[count].shrotecode = '<?php echo get_item_ranking_shortcode($record->id); ?>';
-
-    <?php
-    $count++;
+      <?php
+      $count++;
+    }
+    echo '</script>';
   }
-  echo '</script>';
+
 }
 endif;
 
