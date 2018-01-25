@@ -212,7 +212,7 @@
             <?php endif ?>
 
             <?php
-            generate_tips_tag(__( '投稿ページのランダム表示です。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリーページのランダム表示です。', THEME_NAME ));
             generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>

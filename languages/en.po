@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-01-24 09:06+0900\n"
-"PO-Revision-Date: 2018-01-24 09:08+0900\n"
+"POT-Creation-Date: 2018-01-25 09:10+0900\n"
+"PO-Revision-Date: 2018-01-25 09:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -174,7 +174,6 @@ msgid "バッジ（レッド）"
 msgstr "Badge (red)"
 
 #: lib/admin-tinymce-qtag.php:157
-#, fuzzy
 msgid "バッジ（ピンク）"
 msgstr "Badge (Pink)"
 
@@ -412,18 +411,21 @@ msgstr "Brown (large)"
 
 #: lib/admin-tinymce-qtag.php:470
 #, fuzzy
-msgid "グレー小）"
-msgstr "Gray small)"
+#| msgid "ブルー（小）"
+msgid "グレー（小）"
+msgstr "Blue (small)"
 
 #: lib/admin-tinymce-qtag.php:475
 #, fuzzy
-msgid "グレー中）"
-msgstr "In the gray)"
+#| msgid "ブルー（中）"
+msgid "グレー（中）"
+msgstr "Blue (medium)"
 
 #: lib/admin-tinymce-qtag.php:480
 #, fuzzy
-msgid "グレー大）"
-msgstr "Gray large)"
+#| msgid "ブルー（大）"
+msgid "グレー（大）"
+msgstr "Blue (large)"
 
 #: lib/admin.php:117 lib/category.php:127
 msgid "アイキャッチ"
@@ -482,8 +484,6 @@ msgid "Excerpt"
 msgstr "Excerpt"
 
 #: lib/category.php:102
-#, fuzzy
-#| msgid "カテゴリー検索"
 msgid "カテゴリ色"
 msgstr "Category color"
 
@@ -493,12 +493,10 @@ msgid "カテゴリの色を指定します。"
 msgstr "Specifies the color of the category."
 
 #: lib/category.php:111
-#, fuzzy
 msgid "カテゴリタイトル"
-msgstr "Page Category Title"
+msgstr "Category Title"
 
 #: lib/category.php:113
-#, fuzzy
 msgid "カテゴリページのタイトル"
 msgstr "The title of the category page"
 
@@ -512,10 +510,8 @@ msgstr ""
 "you enter here will be applied."
 
 #: lib/category.php:118
-#, fuzzy
-#| msgid "カテゴリー検索"
 msgid "カテゴリ本文"
-msgstr "Category text"
+msgstr "Category Content"
 
 #: lib/category.php:123
 #, fuzzy
@@ -582,13 +578,10 @@ msgstr "All ads on this page will be removed."
 
 #: lib/custom-fields/amp-field.php:10 lib/custom-fields/amp-field.php:11
 #: lib/custom-fields/amp-field.php:12
-#, fuzzy
 msgid "AMPの設定"
 msgstr "AMP settings"
 
 #: lib/custom-fields/amp-field.php:26
-#, fuzzy
-#| msgid "表示しない"
 msgid "AMP表示しない"
 msgstr "AMP display does not"
 
@@ -599,7 +592,6 @@ msgstr "Disable the page to check AMP."
 
 #: lib/custom-fields/custom-css-field.php:5
 #: lib/custom-fields/custom-css-field.php:6
-#, fuzzy
 msgid "カスタムCSS"
 msgstr "Custom CSS"
 
@@ -612,7 +604,6 @@ msgstr ""
 
 #: lib/custom-fields/custom-js-field.php:6
 #: lib/custom-fields/custom-js-field.php:7
-#, fuzzy
 msgid "カスタムJavaScript"
 msgstr "Custom JavaScript Code"
 
@@ -641,14 +632,12 @@ msgid "デフォルト"
 msgstr "Default"
 
 #: lib/custom-fields/page-field.php:38
-#, fuzzy
 msgid "1カラム"
-msgstr "One Column"
+msgstr "1 Column"
 
 #: lib/custom-fields/page-field.php:46
-#, fuzzy
 msgid "本文のみ"
-msgstr "Full text only"
+msgstr "Body content only"
 
 #: lib/custom-fields/page-field.php:48
 msgid ""
@@ -663,9 +652,8 @@ msgid "リダイレクト"
 msgstr "Redirect"
 
 #: lib/custom-fields/redirect-field.php:24
-#, fuzzy
 msgid "リダイレクトURL"
-msgstr "Custom Redirect URL"
+msgstr "Redirect URL"
 
 #: lib/custom-fields/redirect-field.php:25
 #, fuzzy
@@ -755,30 +743,24 @@ msgstr ""
 
 #: lib/custom-fields/update-field.php:9 lib/custom-fields/update-field.php:10
 #: lib/custom-fields/update-field.php:11
-#, fuzzy
 msgid "更新方法"
-msgstr "Update Instructions"
+msgstr "Update Method"
 
 #: lib/custom-fields/update-field.php:21
-#, fuzzy
-#| msgid "更新日"
 msgid "更新"
 msgstr "Updated date"
 
 #: lib/custom-fields/update-field.php:22
-#, fuzzy
 msgid "更新しない"
-msgstr "Do not update"
+msgstr "Do not update date"
 
 #: lib/custom-fields/update-field.php:23
-#, fuzzy
 msgid "更新日の消去"
-msgstr "Updating, erasure"
+msgstr "Delete update date"
 
 #: lib/custom-fields/update-field.php:24
-#, fuzzy
 msgid "更新日を設定"
-msgstr "Update date"
+msgstr "Update date setting"
 
 #: lib/custom-fields/update-field.php:27 lib/custom-fields/update-field.php:30
 #, fuzzy
@@ -786,16 +768,14 @@ msgid "更新日時:"
 msgstr "Time"
 
 #: lib/custom-fields/update-field.php:27
-#, fuzzy
 msgid "M j, Y @ H:i"
 msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:72 lib/custom-fields/update-field.php:74
-#, fuzzy
 msgid "年"
-msgstr "F Y"
+msgstr "Year"
 
-#: lib/custom-fields/update-field.php:76 tmp/admin-panel.php:37
+#: lib/custom-fields/update-field.php:76 tmp/admin-panel.php:38
 msgid "月"
 msgstr "Month"
 
@@ -804,40 +784,30 @@ msgid "日"
 msgstr "Day"
 
 #: lib/html-forms.php:180
-#, fuzzy
-#| msgid "タイトル"
 msgid "タイトル検索"
-msgstr "Search title"
+msgstr "Title Search"
 
 #: lib/html-forms.php:184
-#, fuzzy
-#| msgid "タイトル"
 msgid "タイトル昇順"
 msgstr "Title ascending"
 
 #: lib/html-forms.php:185
-#, fuzzy
-#| msgid "タイトル"
 msgid "タイトル降順"
 msgstr "Title descending"
 
 #: lib/html-forms.php:186
-#, fuzzy
 msgid "作成日昇順"
-msgstr "Creation date ASC"
+msgstr "Creation date ascending"
 
 #: lib/html-forms.php:187
-#, fuzzy
 msgid "作成日降順"
-msgstr "Creation date DESC"
+msgstr "Creation date descending"
 
 #: lib/html-forms.php:188
-#, fuzzy
 msgid "編集日昇順"
 msgstr "Edit date ascending"
 
 #: lib/html-forms.php:189
-#, fuzzy
 msgid "編集日降順"
 msgstr "Edit date descending"
 
@@ -854,15 +824,12 @@ msgid "フォーマット："
 msgstr "Format: "
 
 #: lib/html-forms.php:293 lib/html-forms.php:324
-#, fuzzy
-#| msgid "広告ラベル"
 msgid "広告ラベルを表示"
-msgstr "Advertising labels"
+msgstr "Ad labels visible"
 
 #: lib/html-forms.php:300
-#, fuzzy
 msgid "全てのH2見出し手前に広告を挿入"
-msgstr "Insert advertisement before all headings H2"
+msgstr "Insert ad before all headings H2"
 
 #: lib/html-forms.php:342
 msgid "選択"
@@ -896,47 +863,36 @@ msgid "固定ページ"
 msgstr "Pages"
 
 #: lib/html-forms.php:559
-#, fuzzy
-#| msgid "カテゴリー検索"
 msgid "カテゴリ一覧"
-msgstr "All categories"
+msgstr "Categories list"
 
 #: lib/html-forms.php:563
-#, fuzzy
 msgid "タグ一覧"
-msgstr "A list of tags used"
+msgstr "Tags list"
 
 #: lib/html-forms.php:567
-#, fuzzy
 msgid "著者一覧"
-msgstr "Authors List"
+msgstr "Authors list"
 
 #: lib/html-forms.php:571
-#, fuzzy
 msgid "アーカイブ一覧"
-msgstr "Archive list"
+msgstr "Archives list"
 
 #: lib/html-forms.php:575
-#, fuzzy
 msgid "検索結果一覧"
 msgstr "Search results list"
 
 #: lib/html-forms.php:579
-#, fuzzy
-#| msgid "404ページ"
 msgid "404ページ一覧"
-msgstr "List of 404 pages"
+msgstr "404 pages list"
 
 #: lib/html-forms.php:623
-#, fuzzy
 msgid "投稿ID入力"
-msgstr "Post ID type"
+msgstr "Post IDs"
 
 #: lib/html-forms.php:624 lib/html-forms.php:644
-#, fuzzy
-#| msgid "例：111,222,3333"
 msgid "例：111,222,333"
-msgstr "Example: 111222, 333"
+msgstr "Example: 111, 222, 333"
 
 #: lib/html-forms.php:625
 #, fuzzy
@@ -945,10 +901,8 @@ msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Post ID to enter in the comma-separated values."
 
 #: lib/html-forms.php:643
-#, fuzzy
-#| msgid "固定ページ"
 msgid "固定ページID入力"
-msgstr "Fixed page ID type"
+msgstr "Fixed page IDs"
 
 #: lib/html-forms.php:645
 #, fuzzy
@@ -974,10 +928,8 @@ msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Change your profile from the management screen it is possible to"
 
 #: lib/html-forms.php:786
-#, fuzzy
-#| msgid "プロフィール画像"
 msgid "プロフィール設定画面"
-msgstr "Profile settings screen"
+msgstr "Profile settings"
 
 #: lib/html-forms.php:786
 #, fuzzy
@@ -1006,27 +958,21 @@ msgid "テンプレート"
 msgstr "Template"
 
 #: lib/original-menu.php:18 lib/tinymce/affiliate-tags.php:38
-#, fuzzy
 msgid "アフィリエイトタグ"
 msgstr "Affiliate tag"
 
 #: lib/original-menu.php:21
-#, fuzzy
-#| msgid "ランキング順位の表示"
 msgid "ランキング作成"
-msgstr "Creating a ranking"
+msgstr "Creatie Ranking"
 
 #: lib/original-menu.php:24 lib/page-access/_top-page.php:33
 #: lib/page-access/access-forms.php:5 lib/page-access/access-forms.php:16
-#, fuzzy
-#| msgid "アクセス分析"
 msgid "アクセス集計"
-msgstr "Access aggregations"
+msgstr "Access Statistics"
 
 #: lib/original-menu.php:27
-#, fuzzy
 msgid "高速化"
-msgstr "Get Fast"
+msgstr "Speed Up"
 
 #: lib/original-menu.php:30 lib/page-backup/_top-page.php:34
 #: lib/page-backup/backup-forms.php:16
@@ -1321,14 +1267,12 @@ msgstr "Shortcode:"
 
 #: lib/page-affiliate-tag/list.php:39 lib/page-func-text/list.php:39
 #: lib/page-speech-balloon/list.php:77
-#, fuzzy
-#| msgid "RSSの表示"
 msgid "非表示"
-msgstr "Hidden on index page"
+msgstr "Hidden"
 
 #: lib/page-affiliate-tag/list.php:42 lib/page-func-text/list.php:42
 #: lib/page-item-ranking/list.php:40 lib/page-speech-balloon/list.php:74
-#: tmp/admin-panel.php:59
+#: tmp/admin-panel.php:60
 msgid "編集"
 msgstr "Edit"
 
@@ -1482,10 +1426,8 @@ msgid "内容が入力されていません。"
 msgstr "Content is not entered."
 
 #: lib/page-item-ranking/_top-page.php:30
-#, fuzzy
-#| msgid "ランキング順位の表示"
 msgid "ランキング"
-msgstr "Ranking display"
+msgstr "Ranking"
 
 #: lib/page-item-ranking/demo.php:2 lib/page-speech-balloon/demo.php:2
 msgid "デモ"
@@ -1505,10 +1447,8 @@ msgid "タイトル（※必須）"
 msgstr "Title:"
 
 #: lib/page-item-ranking/form.php:37
-#, fuzzy
-#| msgid "タイトル"
 msgid "タイトルを入力"
-msgstr "Register Title"
+msgstr "Enter Title"
 
 #: lib/page-item-ranking/form.php:38
 #, fuzzy
@@ -1517,9 +1457,8 @@ msgid "ランキングを識別するためのタイトルを入力してくだ�
 msgstr "Please enter a title that identifies the ranking."
 
 #: lib/page-item-ranking/form.php:56
-#, fuzzy
 msgid "追加"
-msgstr "Add Friends"
+msgstr "Add"
 
 #: lib/page-item-ranking/form.php:68
 #, fuzzy
@@ -1617,9 +1556,8 @@ msgstr "Details page URL"
 
 #: lib/page-item-ranking/form.php:118 lib/page-item-ranking/form.php:126
 #: lib/page-settings/notice-forms.php:52
-#, fuzzy
 msgid "http://"
-msgstr "Set the type of light box. Each is a jQuery library name."
+msgstr "http://"
 
 #: lib/page-item-ranking/form.php:119
 #, fuzzy
@@ -1661,8 +1599,6 @@ msgid "アフィリエイトタグを直接入力する場合。タグ変更が�
 msgstr "Enter your affiliate tag."
 
 #: lib/page-item-ranking/item-ranking-func.php:273
-#, fuzzy
-#| msgid "詳細ページURL"
 msgid "詳細ページ"
 msgstr "Details page URL"
 
@@ -1829,7 +1765,7 @@ msgstr "Settings have been reset."
 msgid "設定は保存されました。"
 msgstr "Settings have been saved."
 
-#: lib/page-settings/_top-page.php:124 tmp/admin-panel.php:41
+#: lib/page-settings/_top-page.php:124 tmp/admin-panel.php:42
 msgid "全体"
 msgstr "All"
 
@@ -2936,12 +2872,12 @@ msgstr ""
 msgid "AMPバリデーター"
 msgstr "AMP Validator"
 
-#: lib/page-settings/amp-forms.php:46 tmp/admin-panel.php:77
+#: lib/page-settings/amp-forms.php:46 tmp/admin-panel.php:78
 #, fuzzy
 msgid "Google AMPテスト"
 msgstr "Google AMP test (default)"
 
-#: lib/page-settings/amp-forms.php:47 tmp/admin-panel.php:80
+#: lib/page-settings/amp-forms.php:47 tmp/admin-panel.php:81
 msgid "The AMP Validator"
 msgstr "The AMP Validator"
 
@@ -5859,7 +5795,7 @@ msgstr "Is the setting of the category page, title, meta, meta keywords."
 
 #: lib/page-settings/title-forms.php:215
 #, fuzzy
-msgid "投稿ページのランダム表示です。"
+msgid "カテゴリーページのランダム表示です。"
 msgstr "It is a random display of submission."
 
 #: lib/page-settings/title-forms.php:223
@@ -7392,7 +7328,7 @@ msgstr "Popular posts title"
 msgid "集計期間"
 msgstr "Total"
 
-#: lib/widgets/popular-entries.php:166 tmp/admin-panel.php:29
+#: lib/widgets/popular-entries.php:166 tmp/admin-panel.php:30
 msgid "本日"
 msgstr "12-hour clock"
 
@@ -7479,59 +7415,59 @@ msgstr "<div></div>"
 msgid "ブログ内を検索"
 msgstr "Search in the blog"
 
-#: tmp/admin-panel.php:33
+#: tmp/admin-panel.php:34
 msgid "週"
 msgstr "Week"
 
-#: tmp/admin-panel.php:48
+#: tmp/admin-panel.php:49
 msgid "Jetpackの統計"
 msgstr "Jetpack statistics"
 
-#: tmp/admin-panel.php:63
+#: tmp/admin-panel.php:64
 msgid "WLWで編集"
 msgstr "Edit by WLW"
 
-#: tmp/admin-panel.php:72
+#: tmp/admin-panel.php:73
 msgid "AMPページへ"
 msgstr "AMP Page"
 
-#: tmp/admin-panel.php:83
+#: tmp/admin-panel.php:84
 msgid "AMPBench"
 msgstr "AMPBench"
 
-#: tmp/admin-panel.php:95
+#: tmp/admin-panel.php:96
 msgid "ja"
 msgstr "en"
 
-#: tmp/admin-panel.php:95
+#: tmp/admin-panel.php:96
 msgid "ページスピード"
 msgstr "Page Speed"
 
-#: tmp/admin-panel.php:98
+#: tmp/admin-panel.php:99
 msgid "モバイルフレンドリー"
 msgstr "Mobile Friendly"
 
-#: tmp/admin-panel.php:104
+#: tmp/admin-panel.php:105
 msgid "HTML5"
 msgstr "HTML5"
 
-#: tmp/admin-panel.php:107
+#: tmp/admin-panel.php:108
 msgid "アウトライン"
 msgstr "Outline"
 
-#: tmp/admin-panel.php:110
+#: tmp/admin-panel.php:111
 msgid "ツイート検索"
 msgstr "Tweets"
 
-#: tmp/admin-panel.php:122
+#: tmp/admin-panel.php:123
 msgid "レスポンシブテスト"
 msgstr "Responsive test"
 
-#: tmp/admin-panel.php:125
+#: tmp/admin-panel.php:126
 msgid "Sizzy"
 msgstr "Sizzy"
 
-#: tmp/admin-panel.php:129
+#: tmp/admin-panel.php:130
 msgid "Resolution Test"
 msgstr "Resolution Test"
 
@@ -7640,6 +7576,18 @@ msgstr "Hatena"
 #: tmp/sns-share-buttons.php:43
 msgid "LINE"
 msgstr "LINE"
+
+#, fuzzy
+#~ msgid "グレー小）"
+#~ msgstr "Gray small)"
+
+#, fuzzy
+#~ msgid "グレー中）"
+#~ msgstr "In the gray)"
+
+#, fuzzy
+#~ msgid "グレー大）"
+#~ msgstr "Gray large)"
 
 #, fuzzy
 #~ msgid "本文下シェア数を表示"

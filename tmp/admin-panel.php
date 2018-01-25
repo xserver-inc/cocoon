@@ -1,7 +1,8 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
 if (is_user_administrator()
-  && !is_amp()
   && is_admin_panel_visible()
+  && !is_amp()
+  //&& !is_admin()
   // && (
   //   //全てで表示する場合
   //   is_admin_panel_all_visible()
@@ -66,7 +67,7 @@ if (is_user_administrator()
   <?php endif ?>
 
   <?php //AMPエリアの表示
-  if (is_admin_panel_amp_area_visible() && is_singular()): ?>
+  if (is_admin_panel_amp_area_visible() && is_singular() && has_amp_page()): ?>
     <div class="admin-amp">
       <span class="icon-amp-logo2"></span>
       <a href="<?php echo get_amp_permalink(); ?> "><?php _e( 'AMPページへ', THEME_NAME ) ?></a>
