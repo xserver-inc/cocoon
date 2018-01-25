@@ -37,7 +37,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
     $items = $item_ranking;
     $count = 1;
-    $visible = !empty($_POST['visible']) ? 1 : 0;
+    $visible = 1;
   }
   ?>
 
