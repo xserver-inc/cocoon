@@ -8,14 +8,14 @@
     $recode = get_function_text($id);
     $title = isset($recode->title) ? $recode->title : '';
     $text = isset($recode->text) ? stripslashes_deep($recode->text) : '';
-    $visible = !empty($recode->visible) ? $recode->visible : 1;
+    $visible = $recode->visible;
 
   } else {
     $action = 'new';
     $id = '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $text = isset($_POST['text']) ? stripslashes_deep($_POST['text']) : '';
-    $visible = !empty($_POST['visible']) ? $_POST['visible'] : 1;
+    $visible = !empty($_POST['visible']) ? 1 : 0;
   }
 
   echo '<h2>'.__( 'タイトル', THEME_NAME ).'</h2>';

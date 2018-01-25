@@ -129,7 +129,7 @@ function insert_affiliate_tag_record($posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
-    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
+    'visible' => !empty($posts['visible']) ? 1 : 0,
   );
   $format = array(
     '%s',
@@ -151,7 +151,7 @@ function update_affiliate_tag_record($id, $posts){
     'modified' => $now,
     'title' => $posts['title'],
     'text' => $posts['text'],
-    'visible' => isset($posts['visible']) ? $posts['visible'] : 1,
+    'visible' => !empty($posts['visible']) ? 1 : 0,
   );
   $where = array('id' => $id);
   $format = array(

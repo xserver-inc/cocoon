@@ -35,7 +35,7 @@ function insert_item_ranking_record($posts){
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
     'count' => $posts['count'],
-    'visible' => isset($posts['visible']) ? $posts['visible'] : 0,
+    'visible' => !empty($posts['visible']) ? $posts['visible'] : 0,
   );
   //_v($data);
   $format = array(
@@ -61,7 +61,7 @@ function update_item_ranking_record($id, $posts){
     'title' => $posts['title'],
     'item_ranking' => serialize($posts['item_ranking']),
     'count' => $posts['count'],
-    'visible' => isset($posts['visible']) ? $posts['visible'] : 0,
+    'visible' => !empty($posts['visible']) ? $posts['visible'] : 0,
   );
   $where = array('id' => $id);
   $format = array(

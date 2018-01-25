@@ -37,7 +37,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     $item_ranking = isset($_POST['item_ranking']) ? $_POST['item_ranking'] : '';
     $items = $item_ranking;
     $count = 1;
-    $visible = 1;
+    $visible = !empty($_POST['visible']) ? 1 : 0;
   }
   ?>
 
@@ -91,6 +91,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
         <?php
         //generate_label_tag('', __('名前：', THEME_NAME) );
         generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（※必須）',THEME_NAME ));
+        generate_tips_tag(__( '項目の名前です。タグ入力も可能です。', THEME_NAME ));
          ?>
         </div>
 

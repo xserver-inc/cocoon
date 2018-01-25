@@ -26,7 +26,7 @@
     $style = isset($_POST['style']) ? $_POST['style'] : SBS_STANDARD;
     $position = isset($_POST['position']) ? $_POST['position'] : SBP_LEFT;
     $iconstyle = isset($_POST['iconstyle']) ? $_POST['iconstyle'] : SBIS_CIRCLE_BORDER;
-    $visible = isset($_POST['visible']) ? $_POST['visible'] : 1;
+    $visible = !empty($_POST['visible']) ? 1 : 0;
     //_v($visible);
   }?>
 

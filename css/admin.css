@@ -6711,6 +6711,8 @@ table.sb-list {
     display: none; }
   #ranking-items .ranking-items .ranking-item:last-of-type {
     background-color: #fff; }
+  #ranking-items .ranking-item-name-text .tips {
+    font-weight: normal; }
   #ranking-items .ranking-item {
     margin-bottom: 1em;
     position: relative;
