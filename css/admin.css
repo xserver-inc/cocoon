@@ -2223,7 +2223,7 @@
     content: "\f105";
     position: absolute;
     right: 0;
-    top: 18px;
+    margin-top: -1px;
     font-size: 30px; }
   .demo #container .btn:hover, .demo #container .ranking-item-link-buttons a:hover, .demo .ranking-item-link-buttons #container a:hover {
     color: #333;
@@ -3057,7 +3057,8 @@
       padding: 0 3px;
       position: relative; }
     .demo .ranking-item-link-buttons a {
-      margin: 0; }
+      margin: 0 0 8px;
+      padding: 14px 0; }
       .demo .ranking-item-link-buttons a:hover {
         opacity: 0.7;
         transition: all 0.5s ease 0s; }
@@ -3136,6 +3137,11 @@
     background-color: #69433f; }
   .demo .c-crown-circle:after {
     background-color: #69433f; }
+  .demo .widget_item_ranking .main-widget-label {
+    font-size: 23px;
+    padding: 6px;
+    margin: 28px 0 12px;
+    font-weight: bold; }
   .demo * {
     padding: 0;
     margin: 0;
@@ -4665,7 +4671,7 @@
     content: "\f105";
     position: absolute;
     right: 0;
-    top: 18px;
+    margin-top: -1px;
     font-size: 30px; }
   .demo #container .btn:hover, .demo #container .ranking-item-link-buttons a:hover, .demo .ranking-item-link-buttons #container a:hover {
     color: #333;
@@ -5499,7 +5505,8 @@
       padding: 0 3px;
       position: relative; }
     .demo .ranking-item-link-buttons a {
-      margin: 0; }
+      margin: 0 0 8px;
+      padding: 14px 0; }
       .demo .ranking-item-link-buttons a:hover {
         opacity: 0.7;
         transition: all 0.5s ease 0s; }
@@ -5578,6 +5585,11 @@
     background-color: #69433f; }
   .demo .c-crown-circle:after {
     background-color: #69433f; }
+  .demo .widget_item_ranking .main-widget-label {
+    font-size: 23px;
+    padding: 6px;
+    margin: 28px 0 12px;
+    font-weight: bold; }
   .demo .notice-area-wrap {
     display: block;
     text-decoration: none; }
@@ -6192,11 +6204,16 @@
       .demo .mobile-menu-buttons {
         display: flex; }
       .demo .mblt-slide-in {
-        margin-bottom: 50px; } }
+        margin-bottom: 50px; }
+      .demo .ranking-item-image-tag {
+        max-width: 30%; } }
   @media screen and (max-width: 480px) {
     .demo {
       /*本文の見出し*/ }
-      .demo h2, .demo h3 {
+      .demo h2,
+      .demo h3,
+      .demo .ranking-item-name-text,
+      .demo .widget_item_ranking .main-widget-label {
         font-size: 20px; }
       .demo .related-entry-heading,
       .demo .comment-title {
@@ -6291,7 +6308,12 @@
       .demo .admin-panel {
         flex-direction: column; }
       .demo .menu-content {
-        max-width: 260px; } }
+        max-width: 260px; }
+      .demo .ranking-item-img-desc,
+      .demo .ranking-item-link-buttons {
+        display: block; }
+      .demo .ranking-item-image-tag {
+        max-width: 100%; } }
   @media print {
     .demo {
       /************************************

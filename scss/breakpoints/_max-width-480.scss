@@ -1,4 +1,7 @@
-h2, h3{
+h2,
+h3,
+.ranking-item-name-text,
+.widget_item_ranking .main-widget-label{
   font-size: 20px;
 }
 
@@ -205,4 +208,14 @@ body{
 
 .menu-content{
   max-width: 260px;
+}
+
+//ランキングウィジェット
+.ranking-item-img-desc,
+.ranking-item-link-buttons{
+  display: block;
+}
+
+.ranking-item-image-tag{
+  max-width: 100%;
 }
