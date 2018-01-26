@@ -1293,7 +1293,7 @@
     width: 90%;
     background-color: #fff; }
   .demo .blogcard {
-    padding: 1.3% 2%;
+    padding: 1.3% 2% 2%;
     border: 1px solid #cccfd2;
     border-radius: 4px;
     line-height: 1.3; }
@@ -1965,7 +1965,7 @@
     margin: 1em 0;
     line-height: 1.4;
     position: relative;
-    padding: 1.3% 2%; }
+    padding: 1.3% 2% 2%; }
     .demo .author-box p {
       margin-top: 0.3em; }
     .demo .author-box .sns-follow {
@@ -2049,6 +2049,8 @@
     .demo .sidebar .cta-left-and-right .cta-content div,
     .demo .sidebar .cta-right-and-left .cta-content div {
       width: 100%; }
+  .demo .sidebar .cta-message {
+    margin-top: 1em; }
   .demo .sidebar .cta-button .btn-l, .demo .sidebar .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .sidebar .cta-button a {
     padding: 1em;
     font-size: 16px; }
@@ -3753,7 +3755,7 @@
     width: 90%;
     background-color: #fff; }
   .demo .blogcard {
-    padding: 1.3% 2%;
+    padding: 1.3% 2% 2%;
     border: 1px solid #cccfd2;
     border-radius: 4px;
     line-height: 1.3; }
@@ -4425,7 +4427,7 @@
     margin: 1em 0;
     line-height: 1.4;
     position: relative;
-    padding: 1.3% 2%; }
+    padding: 1.3% 2% 2%; }
     .demo .author-box p {
       margin-top: 0.3em; }
     .demo .author-box .sns-follow {
@@ -4509,6 +4511,8 @@
     .demo .sidebar .cta-left-and-right .cta-content div,
     .demo .sidebar .cta-right-and-left .cta-content div {
       width: 100%; }
+  .demo .sidebar .cta-message {
+    margin-top: 1em; }
   .demo .sidebar .cta-button .btn-l, .demo .sidebar .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .sidebar .cta-button a {
     padding: 1em;
     font-size: 16px; }
@@ -6205,6 +6209,8 @@
         .demo .cta-left-and-right .cta-content div,
         .demo .cta-right-and-left .cta-content div {
           width: 100%; }
+      .demo .cta-message {
+        margin-top: 1em; }
       .demo .cta-button .btn-l, .demo .cta-button .ranking-item-link-buttons a, .demo .ranking-item-link-buttons .cta-button a {
         padding: 1em;
         font-size: 16px; }
@@ -6338,7 +6344,9 @@
         max-width: 100%; }
       .demo .ranking-item-name-text,
       .demo .widget_item_ranking .main-widget-label {
-        font-size: 20px; } }
+        font-size: 20px; }
+      .demo a.facebook-follow-button {
+        top: 3px; } }
   @media print {
     .demo {
       /************************************
