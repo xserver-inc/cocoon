@@ -86,7 +86,7 @@ require_once 'shortcodes.php'; //ショートコード関係の処理
 require_once get_template_directory().'/lib/profile.php'; //プロフィール関係の処理
 require_once get_template_directory().'/lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
 //TinyMCE
-if (is_admin()) {
+if (is_admin()) {;
   require_once get_template_directory().'/lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能
   require_once 'tinymce/insert-html.php'; //HTML追加ボタン
   require_once 'tinymce/speech-balloons.php'; //吹き出し追加
@@ -124,9 +124,7 @@ require_once 'widgets/fb-like-box.php';
 require_once 'widgets/fb-like-balloon.php';
 //CTAボックス
 require_once 'widgets/cta-box.php';
+//ランキング
+require_once 'widgets/item-ranking.php';
 //ウィジェットの表示制御
 require_once 'widgets/display-widgets.php';
-
-
-
-//require_once 'admin.php'; //管理者機能

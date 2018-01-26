@@ -6717,7 +6717,7 @@ table.sb-list {
     margin-bottom: 1em;
     position: relative;
     overflow: visible;
-    background-color: #fff; }
+    background-color: #fafafa; }
     #ranking-items .ranking-item:last-of-type {
       background-color: #eaf5fa; }
     #ranking-items .ranking-item::before {
