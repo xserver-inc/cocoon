@@ -1347,6 +1347,24 @@ span.internal-icon {
   margin-left: 20px;
 }
 
+.sidebar .ranking-item-img-desc,
+.sidebar .ranking-item-link-buttons {
+  display: block;
+}
+
+.sidebar .ranking-item-image-tag {
+  max-width: 100%;
+}
+
+.sidebar .ranking-item-name-text,
+.sidebar .widget_item_ranking .main-widget-label {
+  font-size: 20px;
+}
+
+.sidebar .ranking-item-description p {
+  font-size: 0.9em;
+}
+
 /************************************
 ** ウィジェット
 ************************************/
@@ -2132,6 +2150,7 @@ label.screen-reader-text {
 ************************************/
 .author-box {
   border: 1px solid #cccfd2;
+  border-radius: 4px;
   margin: 1em 0;
   line-height: 1.4;
   position: relative;
@@ -3727,6 +3746,7 @@ div.fb-like-mobile {
   padding: 2%;
   margin-bottom: 20px;
   border: 1px solid #cccfd2;
+  border-radius: 4px;
 }
 .ranking-item img[width="1"],
 .ranking-item img[height="1"] {
@@ -4885,9 +4905,7 @@ input[type='submit'] {
 }
 @media screen and (max-width: 480px) {
   h2,
-  h3,
-  .ranking-item-name-text,
-  .widget_item_ranking .main-widget-label {
+  h3 {
     font-size: 20px;
   }
 
@@ -5045,6 +5063,11 @@ input[type='submit'] {
 
   .ranking-item-image-tag {
     max-width: 100%;
+  }
+
+  .ranking-item-name-text,
+  .widget_item_ranking .main-widget-label {
+    font-size: 20px;
   }
 }
 @media print {

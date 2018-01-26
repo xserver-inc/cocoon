@@ -1431,6 +1431,16 @@
   .demo .sidebar-left .main {
     margin-right: 0;
     margin-left: 20px; }
+  .demo .sidebar .ranking-item-img-desc,
+  .demo .sidebar .ranking-item-link-buttons {
+    display: block; }
+  .demo .sidebar .ranking-item-image-tag {
+    max-width: 100%; }
+  .demo .sidebar .ranking-item-name-text,
+  .demo .sidebar .widget_item_ranking .main-widget-label {
+    font-size: 20px; }
+  .demo .sidebar .ranking-item-description p {
+    font-size: 0.9em; }
   .demo label.screen-reader-text {
     display: none; }
   .demo .widget {
@@ -1951,6 +1961,7 @@
     max-width: 100%; }
   .demo .author-box {
     border: 1px solid #cccfd2;
+    border-radius: 4px;
     margin: 1em 0;
     line-height: 1.4;
     position: relative;
@@ -3015,7 +3026,8 @@
   .demo .ranking-item {
     padding: 2%;
     margin-bottom: 20px;
-    border: 1px solid #cccfd2; }
+    border: 1px solid #cccfd2;
+    border-radius: 4px; }
     .demo .ranking-item img[width="1"],
     .demo .ranking-item img[height="1"] {
       position: absolute;
@@ -3879,6 +3891,16 @@
   .demo .sidebar-left .main {
     margin-right: 0;
     margin-left: 20px; }
+  .demo .sidebar .ranking-item-img-desc,
+  .demo .sidebar .ranking-item-link-buttons {
+    display: block; }
+  .demo .sidebar .ranking-item-image-tag {
+    max-width: 100%; }
+  .demo .sidebar .ranking-item-name-text,
+  .demo .sidebar .widget_item_ranking .main-widget-label {
+    font-size: 20px; }
+  .demo .sidebar .ranking-item-description p {
+    font-size: 0.9em; }
   .demo label.screen-reader-text {
     display: none; }
   .demo .widget {
@@ -4399,6 +4421,7 @@
     max-width: 100%; }
   .demo .author-box {
     border: 1px solid #cccfd2;
+    border-radius: 4px;
     margin: 1em 0;
     line-height: 1.4;
     position: relative;
@@ -5463,7 +5486,8 @@
   .demo .ranking-item {
     padding: 2%;
     margin-bottom: 20px;
-    border: 1px solid #cccfd2; }
+    border: 1px solid #cccfd2;
+    border-radius: 4px; }
     .demo .ranking-item img[width="1"],
     .demo .ranking-item img[height="1"] {
       position: absolute;
@@ -6211,9 +6235,7 @@
     .demo {
       /*本文の見出し*/ }
       .demo h2,
-      .demo h3,
-      .demo .ranking-item-name-text,
-      .demo .widget_item_ranking .main-widget-label {
+      .demo h3 {
         font-size: 20px; }
       .demo .related-entry-heading,
       .demo .comment-title {
@@ -6313,7 +6335,10 @@
       .demo .ranking-item-link-buttons {
         display: block; }
       .demo .ranking-item-image-tag {
-        max-width: 100%; } }
+        max-width: 100%; }
+      .demo .ranking-item-name-text,
+      .demo .widget_item_ranking .main-widget-label {
+        font-size: 20px; } }
   @media print {
     .demo {
       /************************************

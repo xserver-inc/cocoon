@@ -56,6 +56,20 @@
 }
 
 
-///////////////////////////////////////
-// スクロール追従領域
-///////////////////////////////////////
+.sidebar .ranking-item-img-desc,
+.sidebar .ranking-item-link-buttons{
+  display: block;
+}
+
+.sidebar .ranking-item-image-tag{
+  max-width: 100%;
+}
+
+.sidebar .ranking-item-name-text,
+.sidebar .widget_item_ranking .main-widget-label{
+  font-size: 20px;
+}
+
+.sidebar .ranking-item-description p{
+  font-size: 0.9em;
+}

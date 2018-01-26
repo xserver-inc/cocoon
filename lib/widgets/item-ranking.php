@@ -57,7 +57,7 @@ class ItemRankingWidgetItem extends WP_Widget {
     <?php //ランキングリスト ?>
     <p>
       <?php
-      generate_label_tag($this->get_field_id('ranking_id'), __('タイトル', THEME_NAME) );
+      generate_label_tag($this->get_field_id('ranking_id'), __('ランキング', THEME_NAME) );
       $records = get_item_rankings(null, 'title');
       if ($records) {
         $options = array();
