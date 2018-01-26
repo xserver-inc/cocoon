@@ -98,3 +98,7 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
 
   @include follow_amp_button('\f075', $line_color);
 }
+
+.comment-reply-link{
+  display: none;
+}
