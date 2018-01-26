@@ -164,9 +164,3 @@ function update_affiliate_tag_record($id, $posts){
   return update_db_table_record($table, $data, $where, $format, $where_format);
 }
 endif;
-
-if ( !function_exists( 'get_affiliate_tag_shortcode' ) ):
-function get_affiliate_tag_shortcode($id) {
-  return "[atag id={$id}]";
-}
-endif;

@@ -57,8 +57,9 @@ function popular_entries_shortcode($atts) {
 }
 endif;
 
+define('AFFI_SHORTCODE', 'affi');
 //アフィリエイトタグショートコード関数
-add_shortcode('affi', 'affiliate_tag_shortcode');
+add_shortcode(AFFI_SHORTCODE, 'affiliate_tag_shortcode');
 if ( !function_exists( 'affiliate_tag_shortcode' ) ):
 function affiliate_tag_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -66,8 +67,8 @@ function affiliate_tag_shortcode($atts) {
   ), $atts));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
-      //無限ループ回避
-      if ($recode->id == $id) return;
+      // //無限ループ回避
+      // if ($recode->id == $id) return;
 
       global $post;
       $atag = $recode->text;
@@ -83,9 +84,16 @@ function affiliate_tag_shortcode($atts) {
 
 }
 endif;
+//アフィリエイトショートコードの生成
+if ( !function_exists( 'get_affiliate_tag_shortcode' ) ):
+function get_affiliate_tag_shortcode($id) {
+  return "[".AFFI_SHORTCODE." id={$id}]";
+}
+endif;
 
+define('TEMPLATE_SHORTCODE', 'temp');
 //関数テキストショートコード関数
-add_shortcode('temp', 'function_text_shortcode');
+add_shortcode(TEMPLATE_SHORTCODE, 'function_text_shortcode');
 if ( !function_exists( 'function_text_shortcode' ) ):
 function function_text_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -93,8 +101,8 @@ function function_text_shortcode($atts) {
   ), $atts));
   if ($id) {
     if ($recode = get_function_text($id)) {
-      //無限ループ回避
-      if ($recode->id == $id) return;
+      // //無限ループ回避
+      // if ($recode->id == $id) return;
 
       return $recode->text;
     }
@@ -103,21 +111,36 @@ function function_text_shortcode($atts) {
 }
 endif;
 
+//テンプレートショートコードの取得
+if ( !function_exists( 'get_function_text_shortcode' ) ):
+function get_function_text_shortcode($id) {
+  return "[".TEMPLATE_SHORTCODE." id={$id}]";
+}
+endif;
+
+define('RANKING_SHORTCODE', 'rank');
 //ランキングショートコード関数
-add_shortcode('rank', 'item_ranking_shortcode');
+add_shortcode(RANKING_SHORTCODE, 'item_ranking_shortcode');
 if ( !function_exists( 'item_ranking_shortcode' ) ):
 function item_ranking_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
   ), $atts));
   if ($id) {
-    //無限ループ回避
-    if ($recode->id == $id) return;
+    // //無限ループ回避
+    // if ($recode->id == $id) return;
 
     ob_start();
     generate_item_ranking_tag($id);
     return ob_get_clean();
   }
 
+}
+endif;
+
+//ショートコードの取得
+if ( !function_exists( 'get_item_ranking_shortcode' ) ):
+function get_item_ranking_shortcode($id) {
+  return "[".RANKING_SHORTCODE." id={$id}]";
 }
 endif;

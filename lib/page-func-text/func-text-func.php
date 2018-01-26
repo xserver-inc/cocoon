@@ -167,10 +167,3 @@ function update_function_text_record($id, $posts){
   return update_db_table_record($table, $data, $where, $format, $where_format);
 }
 endif;
-
-//ショートコードの取得
-if ( !function_exists( 'get_function_text_shortcode' ) ):
-function get_function_text_shortcode($id) {
-  return "[ft id={$id}]";
-}
-endif;
