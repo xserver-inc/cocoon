@@ -64,7 +64,7 @@ $emtry_card_thumb_margin_top: 4px;
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;
-$bgc_hover_anime: all 0.3s ease 0s;
+$bgc_hover_anime: all 0.5s ease 0s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
@@ -198,6 +198,7 @@ $bgc_hover_anime: all 0.3s ease 0s;
     &:hover{
       opacity: 0.7;
       color: $white_text_color;
+      transition: $bgc_hover_anime;
     }
   }
 }

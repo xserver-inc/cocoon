@@ -165,30 +165,6 @@ function update_affiliate_tag_record($id, $posts){
 }
 endif;
 
-//ショートコード関数
-add_shortcode('atag', 'affiliate_tag_shortcode');
-if ( !function_exists( 'affiliate_tag_shortcode' ) ):
-function affiliate_tag_shortcode($atts) {
-  extract(shortcode_atts(array(
-    'id' => 0,
-  ), $atts));
-  if ($id) {
-    if ($recode = get_affiliate_tag($id)) {
-      global $post;
-      $atag = $recode->text;
-      $post_id = null;
-      if (isset($post->ID)) {
-        $post_id = 'data-post-id="'.$post->ID.'" ';
-      }
-      //計測用の属性付与
-      $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" '.$post_id, $atag);
-      return $atag;
-    }
-  }
-
-}
-endif;
-
 if ( !function_exists( 'get_affiliate_tag_shortcode' ) ):
 function get_affiliate_tag_shortcode($id) {
   return "[atag id={$id}]";

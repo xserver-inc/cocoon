@@ -168,22 +168,6 @@ function update_function_text_record($id, $posts){
 }
 endif;
 
-//関数テキストショートコード関数
-add_shortcode('ft', 'function_text_shortcode');
-if ( !function_exists( 'function_text_shortcode' ) ):
-function function_text_shortcode($atts) {
-  extract(shortcode_atts(array(
-    'id' => 0,
-  ), $atts));
-  if ($id) {
-    if ($recode = get_function_text($id)) {
-      return $recode->text;
-    }
-  }
-
-}
-endif;
-
 //ショートコードの取得
 if ( !function_exists( 'get_function_text_shortcode' ) ):
 function get_function_text_shortcode($id) {

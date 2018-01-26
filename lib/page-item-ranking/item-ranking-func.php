@@ -180,22 +180,6 @@ function delete_item_ranking( $id ) {
 }
 endif;
 
-//ランキングショートコード関数
-add_shortcode('rank', 'item_ranking_shortcode');
-if ( !function_exists( 'item_ranking_shortcode' ) ):
-function item_ranking_shortcode($atts) {
-  extract(shortcode_atts(array(
-    'id' => 0,
-  ), $atts));
-  if ($id) {
-    ob_start();
-    generate_item_ranking_tag($id);
-    return ob_get_clean();
-  }
-
-}
-endif;
-
 //ショートコードの取得
 if ( !function_exists( 'get_item_ranking_shortcode' ) ):
 function get_item_ranking_shortcode($id) {

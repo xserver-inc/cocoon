@@ -15,7 +15,7 @@ function author_box_shortcode($atts) {
 endif;
 
 //新着記事ショートコード関数
-add_shortcode('new_entries', 'new_entries_shortcode');
+add_shortcode('new_list', 'new_entries_shortcode');
 if ( !function_exists( 'new_entries_shortcode' ) ):
 function new_entries_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -35,7 +35,7 @@ function new_entries_shortcode($atts) {
 endif;
 
 //人気記事ショートコード関数
-add_shortcode('popular_entries', 'popular_entries_shortcode');
+add_shortcode('popular_list', 'popular_entries_shortcode');
 if ( !function_exists( 'popular_entries_shortcode' ) ):
 function popular_entries_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -54,5 +54,70 @@ function popular_entries_shortcode($atts) {
   generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
   $res = ob_get_clean();
   return $res;
+}
+endif;
+
+//アフィリエイトタグショートコード関数
+add_shortcode('affi', 'affiliate_tag_shortcode');
+if ( !function_exists( 'affiliate_tag_shortcode' ) ):
+function affiliate_tag_shortcode($atts) {
+  extract(shortcode_atts(array(
+    'id' => 0,
+  ), $atts));
+  if ($id) {
+    if ($recode = get_affiliate_tag($id)) {
+      //無限ループ回避
+      if ($recode->id == $id) return;
+
+      global $post;
+      $atag = $recode->text;
+      $post_id = null;
+      if (isset($post->ID)) {
+        $post_id = 'data-post-id="'.$post->ID.'" ';
+      }
+      //計測用の属性付与
+      $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" '.$post_id, $atag);
+      return $atag;
+    }
+  }
+
+}
+endif;
+
+//関数テキストショートコード関数
+add_shortcode('temp', 'function_text_shortcode');
+if ( !function_exists( 'function_text_shortcode' ) ):
+function function_text_shortcode($atts) {
+  extract(shortcode_atts(array(
+    'id' => 0,
+  ), $atts));
+  if ($id) {
+    if ($recode = get_function_text($id)) {
+      //無限ループ回避
+      if ($recode->id == $id) return;
+
+      return $recode->text;
+    }
+  }
+
+}
+endif;
+
+//ランキングショートコード関数
+add_shortcode('rank', 'item_ranking_shortcode');
+if ( !function_exists( 'item_ranking_shortcode' ) ):
+function item_ranking_shortcode($atts) {
+  extract(shortcode_atts(array(
+    'id' => 0,
+  ), $atts));
+  if ($id) {
+    //無限ループ回避
+    if ($recode->id == $id) return;
+
+    ob_start();
+    generate_item_ranking_tag($id);
+    return ob_get_clean();
+  }
+
 }
 endif;

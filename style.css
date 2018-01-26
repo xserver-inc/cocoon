@@ -160,6 +160,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .sns-share-buttons a:hover, .sns-follow-buttons a:hover {
   opacity: 0.7;
   color: #fff;
+  transition: all 0.5s ease 0s;
 }
 
 body, .header, .appeal {
@@ -530,7 +531,7 @@ img {
 }
 .navi-in a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .navi-in a:hover > ul {
@@ -573,7 +574,7 @@ img {
 }
 .navi-footer-in a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -589,7 +590,7 @@ img {
 }
 .a-wrap:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -944,7 +945,7 @@ img {
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -1401,7 +1402,7 @@ label.screen-reader-text {
 }
 .tagcloud a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .tagcloud a .tag-link-count {
@@ -1450,7 +1451,7 @@ label.screen-reader-text {
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .widget_recent_entries ul li a .post-count,
@@ -1635,7 +1636,7 @@ label.screen-reader-text {
 }
 .recent-comments .a-wrap:hover .recent-comment-content {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -1736,7 +1737,7 @@ label.screen-reader-text {
 }
 .pagination a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -1774,7 +1775,7 @@ label.screen-reader-text {
 }
 .pagination-next-link:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -1797,7 +1798,7 @@ label.screen-reader-text {
 }
 .pager-links a:hover span {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -1820,7 +1821,7 @@ label.screen-reader-text {
 }
 .pager-links a:hover span {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 
@@ -2587,6 +2588,7 @@ label.screen-reader-text {
   color: #333;
   background-color: #fff;
   border: 2px solid #000;
+  transition: all 0.5s ease 0s;
 }
 
 .btn-m {
@@ -3105,7 +3107,7 @@ label.screen-reader-text {
 }
 .bc-brand-color-white.sns-share.ss-top a:hover, .bc-brand-color-white.sns-share.ss-bottom a:hover, .bc-brand-color-white.sns-follow a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .bc-brand-color-white.sns-share.ss-top .twitter-button, .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
@@ -3310,7 +3312,7 @@ label.screen-reader-text {
 }
 
 .fb-like-box {
-  background-color: #333;
+  background-color: #444;
   color: #fff;
   display: flex;
   flex-wrap: nowrap;
@@ -3593,7 +3595,7 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-button:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .mobile-menu-buttons .ad-area {
@@ -3717,7 +3719,7 @@ div.fb-like-mobile {
 }
 .menu-drawer a:hover {
   background-color: #f5f8fa;
-  transition: all 0.3s ease 0s;
+  transition: all 0.5s ease 0s;
   color: #333435;
 }
 .menu-drawer .sub-menu {
