@@ -2140,18 +2140,17 @@
     position: relative;
     display: block;
     margin-top: 1em;
-    margin-bottom: 1em;
-    overflow: hidden; }
+    margin-bottom: 1em; }
   .demo .alert-box {
     background-color: #fdeff2; }
   .demo .information-box::before,
   .demo .question-box::before,
   .demo .alert-box::before {
     font-family: "FontAwesome";
-    font-size: 80px;
+    font-size: 50px;
     position: absolute;
-    top: -25px;
-    left: -10px;
+    top: -13px;
+    left: 13px;
     color: #EAE3B4; }
   .demo .information-box::before {
     content: '\f05a'; }
@@ -4603,18 +4602,17 @@
     position: relative;
     display: block;
     margin-top: 1em;
-    margin-bottom: 1em;
-    overflow: hidden; }
+    margin-bottom: 1em; }
   .demo .alert-box {
     background-color: #fdeff2; }
   .demo .information-box::before,
   .demo .question-box::before,
   .demo .alert-box::before {
     font-family: "FontAwesome";
-    font-size: 80px;
+    font-size: 50px;
     position: absolute;
-    top: -25px;
-    left: -10px;
+    top: -13px;
+    left: 13px;
     color: #EAE3B4; }
   .demo .information-box::before {
     content: '\f05a'; }

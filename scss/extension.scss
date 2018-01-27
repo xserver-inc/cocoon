@@ -122,7 +122,7 @@
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .alert-box{
@@ -133,11 +133,11 @@
 .question-box::before,
 .alert-box::before{
   font-family: "FontAwesome";
-  font-size: 80px;
+  font-size: 50px;
   position: absolute;
   //top: 20px;
-  top: -25px;
-  left: -10px;
+  top: -13px;
+  left: 13px;
   color: #EAE3B4;
 }
 
