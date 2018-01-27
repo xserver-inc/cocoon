@@ -349,3 +349,38 @@ function generate_ranking_crown_tag($ranking_number){
   }
 }
 endif;
+
+//ランキングアイテムの移動
+if ( !function_exists( 'move_item_ranking' ) ):
+function move_item_ranking($id, $from, $to){
+  $record = get_item_ranking($id);
+  if ($record) {
+    $items = isset($record->item_ranking) ? $record->item_ranking : array();
+    if (!empty($items)) {
+      //相手の入れ替え
+      $tmp_item = $items[$to];
+      $items[$to] = $items[$from];
+      $items[$from] = $tmp_item;
+      //オブジェクトを開いても配列に変換
+      $posts = object_to_array($record);
+      //アイテムランキングの更新
+      $posts['item_ranking'] = $items;
+      $res = update_item_ranking_record($id, $posts);
+
+      if ($res) {
+        $url = add_query_arg(
+          array(
+            'action' => 'edit',
+            'id' => $id,
+            'from' => null,
+            'to' => null
+          )
+        );
+        redirect_to_url($url);
+        exit;
+      }
+
+    }
+  }
+}
+endif;
