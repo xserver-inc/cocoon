@@ -353,6 +353,10 @@ endif;
 //ランキングアイテムの移動
 if ( !function_exists( 'move_item_ranking' ) ):
 function move_item_ranking($id, $from, $to){
+  //管理者以外が操作しようとした場合は何もしない
+  if (!is_user_administrator()) {
+    return;
+  }
   $record = get_item_ranking($id);
   if ($record) {
     $items = isset($record->item_ranking) ? $record->item_ranking : array();
