@@ -4,8 +4,15 @@
 add_action('admin_menu', 'add_original_menu_in_admin_page');
 if ( !function_exists( 'add_original_menu_in_admin_page' ) ):
 function add_original_menu_in_admin_page() {
+    //_v($GLOBALS['menu']);
+
+    //セパレーターの挿入
+    add_admin_menu_separator(26);
     //トップレベルメニューを追加する
-    add_menu_page(SETTING_NAME_TOP, SETTING_NAME_TOP, 'manage_options', 'theme-settings', 'add_theme_settings_page' );
+    add_menu_page(SETTING_NAME_TOP, SETTING_NAME_TOP, 'manage_options', 'theme-settings', 'add_theme_settings_page', get_template_directory_uri().'/images/admin-menu-logo.png', 27 );
+
+
+    //add_menu_page();
     //var_dump('aaaaaaaa');
 
     //吹き出しサブメニューを追加

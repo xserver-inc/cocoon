@@ -272,7 +272,6 @@ function replace_ad_shortcode_to_advertisement($the_content){
     get_template_part_with_ad_format(get_ad_shortcode_format(), 'ad-shortcode', is_ad_shortcode_label_visible());
     //get_template_part('tmp/ad');//通常ページ用広告コード
     $ad_template = ob_get_clean();
-    _v($ad_template);
     $the_content = preg_replace('{^(<p>)?'.preg_quote($ad_shortcode).'(</p>)?$}m', $ad_template, $the_content);
 
     return $the_content;
