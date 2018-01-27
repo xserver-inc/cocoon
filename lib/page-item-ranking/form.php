@@ -1,6 +1,42 @@
 <p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
 <?php //IDがある場合はIDの取得（編集モードの場合）
-$id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
+$id = isset($_GET['id']) ? intval($_GET['id']) : null;
+$action = isset($_GET['action']) ? intval($_GET['action']) : null;
+//アイテムの移動
+if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) {
+  $from = $_GET['from'];
+  $to = $_GET['to'];
+  $record = get_item_ranking($id);
+  if ($record) {
+    $items = isset($record->item_ranking) ? $record->item_ranking : array();
+    if (!empty($items)) {
+      //相手の入れ替え
+      $tmp_item = $items[$to];
+      $items[$to] = $items[$from];
+      $items[$from] = $tmp_item;
+      //オブジェクトを開いても配列に変換
+      $posts = object_to_array($record);
+      //アイテムランキングの更新
+      $posts['item_ranking'] = $items;
+      $res = update_item_ranking_record($id, $posts);
+      _v($posts);
+      if ($res) {
+        $url = add_query_arg(
+          array(
+            'action' => 'edit',
+            'id' => $id,
+            'from' => null,
+            'to' => null
+          )
+        );
+        redirect_to_url($url);
+        exit;
+      }
+
+    }
+  }
+}
+ ?>
 <?php if ($id): ?>
   <p class="preview-label" style="max-width: 1000px;"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
   <div class="demo" style="max-width: 1000px; max-height: 400px;margin-bottom: 2em;">
@@ -177,7 +213,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
         if ($is_move_link_visible):
           $move_url = add_query_arg(
             array(
-              'action' => 'edit',
+              'action' => 'move',
               'id' => $id,
               'from' => $i,
               'to' => $i - 1,

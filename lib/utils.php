@@ -1150,3 +1150,9 @@ function get_requested_url(){
   return (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
 endif;
+
+if ( !function_exists( 'object_to_array' ) ):
+function object_to_array($object){
+  return json_decode(json_encode($object), true);
+}
+endif;
