@@ -352,6 +352,30 @@ function is_ad_pos_below_related_posts_label_visible(){
 }
 endif;
 
+//[ad]ショートコードを有効
+define('OP_AD_SHORTCODE_ENABLE', 'ad_shortcode_enable');
+if ( !function_exists( 'is_ad_shortcode_enable' ) ):
+function is_ad_shortcode_enable(){
+  return get_theme_option(OP_AD_SHORTCODE_ENABLE, 1);
+}
+endif;
+
+//[ad]ショートコード広告フォーマット
+define('OP_AD_SHORTCODE_FORMAT', 'ad_shortcode_format');
+if ( !function_exists( 'get_ad_shortcode_format' ) ):
+function get_ad_shortcode_format(){
+  return get_theme_option(OP_AD_SHORTCODE_FORMAT, DATA_AD_FORMAT_RECTANGLE);
+}
+endif;
+
+//[ad]ショートコード広告ラベル表示
+define('OP_AD_SHORTCODE_LABEL_VISIBLE', 'ad_shortcode_label_visible');
+if ( !function_exists( 'is_ad_shortcode_label_visible' ) ):
+function is_ad_shortcode_label_visible(){
+  return get_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE, 1);
+}
+endif;
+
 //広告除外記事ID
 define('OP_AD_EXCLUDE_POST_IDS', 'ad_exclude_post_ids');
 if ( !function_exists( 'get_ad_exclude_post_ids' ) ):

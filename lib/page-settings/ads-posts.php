@@ -102,6 +102,13 @@ update_theme_option(OP_AD_POS_BELOW_RELATED_POSTS_FORMAT);
 //投稿関連記事下の広告ラベル表示
 update_theme_option(OP_AD_POS_BELOW_RELATED_POSTS_LABEL_VISIBLE);
 
+//[ad]ショートコードを有効
+update_theme_option(OP_AD_SHORTCODE_ENABLE);
+//[ad]ショートコード広告フォーマット
+update_theme_option(OP_AD_SHORTCODE_FORMAT);
+//[ad]ショートコード広告ラベル表示
+update_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE);
+
 //広告除外記事ID
 update_theme_option(OP_AD_EXCLUDE_POST_IDS);
 //広告除外カテゴリーID
