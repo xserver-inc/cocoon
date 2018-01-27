@@ -6832,6 +6832,13 @@ table.sb-list {
     padding: 0 6px; }
   #ranking-items input[type="submit"] {
     padding: 0 10px 1px; }
+  #ranking-items .opration-area {
+    display: flex; }
+    #ranking-items .opration-area .opration-submit {
+      width: 120px; }
+    #ranking-items .opration-area .opration-menu-links {
+      width: 100%;
+      text-align: right; }
 
 .ir-list-title {
   font-size: 22px;

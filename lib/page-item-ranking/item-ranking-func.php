@@ -199,6 +199,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
     // var_dump($items);
     //var_dump($count);
 
+
     if ($is_first_only && $i > 1) {
       break;
     }

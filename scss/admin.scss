@@ -669,6 +669,18 @@ table.sb-list{
   input[type="submit"]{
     padding: 0 10px 1px;
   }
+
+
+ .opration-area{
+  display: flex;
+  .opration-submit{
+    width: 120px;
+  }
+  .opration-menu-links{
+    width: 100%;
+    text-align: right;
+  }
+ }
 }
 
 .ir-list-title{

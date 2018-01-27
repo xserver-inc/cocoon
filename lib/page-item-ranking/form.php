@@ -69,6 +69,9 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
   // var_dump('$action:'.$action);
   // var_dump('$id:'.$id);
   for ($i = 1; $i <= $count; $i++):
+
+    //先頭と最後にはアイテム移動リンクを表示しないための判別
+    $is_move_link_visible = ($i != 1) && ($i != $count);
     //var_dump($i);
     //$index = $i - 1;
     $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
@@ -79,6 +82,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
     $link_url = isset($items[$i]['link_url']) ? $items[$i]['link_url'] : '';
     $link_tag = isset($items[$i]['link_tag']) ? $items[$i]['link_tag'] : '';
     $submit_text = ($i == $count) ? __( '追加', THEME_NAME ) : __( '変更を保存', THEME_NAME );
+
     //var_dump($items);
    ?>
 
@@ -164,7 +168,29 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : null; ?>
           ?>
         </div>
       </div>
-      <?php submit_button($submit_text); ?>
+      <div class="opration-area">
+        <div class="opration-submit">
+          <?php submit_button($submit_text); ?>
+        </div>
+
+        <?php //アイテム移動リンクなど
+        if ($is_move_link_visible):
+          $move_url = add_query_arg(
+            array(
+              'action' => 'edit',
+              'id' => $id,
+              'from' => $i,
+              'to' => $i - 1,
+            )
+          );
+         ?>
+        <div class="opration-menu-links">
+          <a href="<?php echo $move_url; ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+        </div>
+        <?php endif ?>
+
+      </div>
+
     </div>
 
   <?php endfor ?>
