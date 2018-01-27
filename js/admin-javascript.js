@@ -32,6 +32,7 @@
   function delete_wp_adminbar(selector) {
     $(selector).on('load', function(){
       $(selector).contents().find('#wpadminbar').hide();
+      $(selector).contents().find('.admin-panel').hide();
       $(selector).contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
     });
   }
