@@ -116,14 +116,14 @@ function get_default_site_icon_url(){
 endif;
 
 //デフォルトサイトアイコンの設定
-if (!get_site_icon_url()) {
+if (!get_site_icon_url()) {//カスタマイザーでサイトアイコンが設定されてないとき
   add_action( 'wp_head', 'add_default_site_icon_tag' );
   add_action( 'admin_print_styles', 'add_default_site_icon_tag' );
 }
 if ( !function_exists( 'add_default_site_icon_tag' ) ):
 function add_default_site_icon_tag(){
   $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL;
-  $tag .= '<link rel="icon" href="'.get_template_directory_uri().'images/site-icon32x32.png'.'" sizes="32x32" />'.PHP_EOL;
+  $tag .= '<link rel="icon" href="'.get_template_directory_uri().'/images/site-icon32x32.png'.'" sizes="32x32" />'.PHP_EOL;
   $tag .= '<link rel="icon" href="'.get_template_directory_uri().'/images/site-icon192x192.png'.'" sizes="192x192" />'.PHP_EOL;
   $tag .= '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/images/site-icon180x180.png'.'" />'.PHP_EOL;
   $tag .= '<meta name="msapplication-TileImage" content="'.get_template_directory_uri().'/images/site-icon270x270.png'.'" />'.PHP_EOL;
