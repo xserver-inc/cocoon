@@ -104,7 +104,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .entry-card-thumb, .related-entry-card-thumb, .widget-entry-card-thumb, .carousel-entry-card-thumb {
   float: left;
-  margin-top: 4px;
+  margin-top: 3px;
   position: relative;
 }
 
@@ -1127,7 +1127,7 @@ span.internal-icon {
 
 .blogcard-thumbnail {
   float: left;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .blogcard-content {
@@ -2190,7 +2190,7 @@ label.screen-reader-text {
 
 .author-thumb {
   float: left;
-  margin-top: 4px;
+  margin-top: 3px;
   width: 120px;
 }
 

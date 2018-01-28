@@ -74,7 +74,7 @@
 
 .demo .entry-card-thumb, .demo .related-entry-card-thumb, .demo .widget-entry-card-thumb, .demo .carousel-entry-card-thumb {
   float: left;
-  margin-top: 4px;
+  margin-top: 3px;
   position: relative; }
 
 .demo .entry-card-content, .demo .related-entry-card-content {
@@ -1300,7 +1300,7 @@
     line-height: 1.3; }
   .demo .blogcard-thumbnail {
     float: left;
-    margin-top: 4px; }
+    margin-top: 3px; }
   .demo .blogcard-content {
     margin-left: 170px;
     max-height: 120px;
@@ -1992,7 +1992,7 @@
           display: none; }
   .demo .author-thumb {
     float: left;
-    margin-top: 4px;
+    margin-top: 3px;
     width: 120px; }
   .demo .author-content {
     margin-left: 130px; }
@@ -3762,7 +3762,7 @@
     line-height: 1.3; }
   .demo .blogcard-thumbnail {
     float: left;
-    margin-top: 4px; }
+    margin-top: 3px; }
   .demo .blogcard-content {
     margin-left: 170px;
     max-height: 120px;
@@ -4454,7 +4454,7 @@
           display: none; }
   .demo .author-thumb {
     float: left;
-    margin-top: 4px;
+    margin-top: 3px;
     width: 120px; }
   .demo .author-content {
     margin-left: 130px; }
