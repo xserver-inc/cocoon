@@ -10,24 +10,29 @@
 .cta-heading{
   font-size: 26px;
   padding: 12px;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
   font-weight: bold;
 }
 
 .cta-content{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  div{
-    width: 100%;
-  }
+  display: block;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: nowrap;
+  // justify-content: space-between;
+  // div{
+  //   width: 100%;
+  // }
 }
 
 .cta-left-and-right,
 .cta-right-and-left {
   .cta-content{
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
     div{
       width: 49%;
     }

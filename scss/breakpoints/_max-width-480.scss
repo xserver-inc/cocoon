@@ -201,7 +201,12 @@ body{
 // }
 
 .admin-panel{
-  flex-direction: column;
+  // flex-direction: column;
+  display: block;
+  >div{
+    margin-bottom: 0.6em;
+    padding: 2px;
+  }
 }
 
 .menu-content{

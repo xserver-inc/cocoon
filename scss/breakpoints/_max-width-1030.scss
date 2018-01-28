@@ -9,14 +9,16 @@
 }
 
 .footer-widgets{
-  flex-direction: column;
-  div{
+  display: block;
+  // flex-direction: column;
+  >div{
     width: 100%;
   }
 }
 
 .content-in{
-  flex-direction: column;
+  display: block;
+  //flex-direction: column;
 }
 
 main.main,

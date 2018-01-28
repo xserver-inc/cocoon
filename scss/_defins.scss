@@ -259,7 +259,8 @@ $bgc_hover_anime: all 0.5s ease 0s;
 @mixin fb_like_box{
   .fb-like-box{
     max-width: 640px;
-    flex-direction: column;
+    display: block;
+    //flex-direction: column;
     >div,
     >figure{
       width: 100%;
@@ -282,7 +283,8 @@ $bgc_hover_anime: all 0.5s ease 0s;
   .cta-left-and-right,
   .cta-right-and-left {
     .cta-content{
-      flex-direction: column;
+      display: block;
+      //flex-direction: column;
 
       div{
         width: 100%;

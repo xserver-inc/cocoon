@@ -35,9 +35,10 @@
   text-align: center;
   border-radius: $basic_border_radius;
 
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
+  display: block;
+  // display: flex;
+  // flex-direction: column;
+  // align-content: space-between;
   //color: #fff;
 }
 

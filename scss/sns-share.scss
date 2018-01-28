@@ -222,6 +222,9 @@
     &.ss-high-and-low-lc a{
       @extend %high_and_low;
       flex-direction: column;
+      >span{
+        padding-top: 3px;
+      }
     }
 
     &.ss-high-and-low-cl a{
