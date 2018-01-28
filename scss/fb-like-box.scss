@@ -52,8 +52,18 @@
 
 .fb-like-buttons{
   padding: 0;
+  text-align: center;
+  // >div{
+  //   line-height: 32px;
+  // }
   >div{
-    margin: 10px;
+    margin: 8px;
+    // position: relative;
+
+    // >iframe{
+    //   line-height: 32px;
+    // }
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,9 +72,11 @@
       height: 100%;
     }
   }
-  // .fb-like-twitter{
-  //   margin-top: 7px;
-  // }
+
+}
+
+.fb-like-facebook{
+  margin-bottom: -7px;
 }
 
 // .line-it-button{

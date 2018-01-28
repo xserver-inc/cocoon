@@ -102,3 +102,10 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
 .comment-reply-link{
   display: none;
 }
+
+
+.fb-like-buttons{
+  >div{
+    display: block;
+  }
+}

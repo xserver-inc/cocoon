@@ -1439,7 +1439,8 @@
     display: block; }
   .demo .sidebar .ranking-item-image-tag,
   .demo .footer .ranking-item-image-tag {
-    max-width: 100%; }
+    max-width: 100%;
+    text-align: center; }
   .demo .sidebar .ranking-item-name-text,
   .demo .sidebar .widget_item_ranking .main-widget-label,
   .demo .footer .ranking-item-name-text,
@@ -2755,14 +2756,17 @@
     font-size: 0.7em;
     margin-bottom: 8px; }
   .demo .fb-like-buttons {
-    padding: 0; }
+    padding: 0;
+    text-align: center; }
     .demo .fb-like-buttons > div {
-      margin: 10px;
+      margin: 8px;
       display: flex;
       align-items: center;
       justify-content: center; }
       .demo .fb-like-buttons > div > * {
         height: 100%; }
+  .demo .fb-like-facebook {
+    margin-bottom: -7px; }
   .demo .sidebar .fb-like-box {
     max-width: 640px;
     display: block; }
@@ -3903,7 +3907,8 @@
     display: block; }
   .demo .sidebar .ranking-item-image-tag,
   .demo .footer .ranking-item-image-tag {
-    max-width: 100%; }
+    max-width: 100%;
+    text-align: center; }
   .demo .sidebar .ranking-item-name-text,
   .demo .sidebar .widget_item_ranking .main-widget-label,
   .demo .footer .ranking-item-name-text,
@@ -5219,14 +5224,17 @@
     font-size: 0.7em;
     margin-bottom: 8px; }
   .demo .fb-like-buttons {
-    padding: 0; }
+    padding: 0;
+    text-align: center; }
     .demo .fb-like-buttons > div {
-      margin: 10px;
+      margin: 8px;
       display: flex;
       align-items: center;
       justify-content: center; }
       .demo .fb-like-buttons > div > * {
         height: 100%; }
+  .demo .fb-like-facebook {
+    margin-bottom: -7px; }
   .demo .sidebar .fb-like-box {
     max-width: 640px;
     display: block; }

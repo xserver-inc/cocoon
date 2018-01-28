@@ -1358,6 +1358,7 @@ span.internal-icon {
 .sidebar .ranking-item-image-tag,
 .footer .ranking-item-image-tag {
   max-width: 100%;
+  text-align: center;
 }
 
 .sidebar .ranking-item-name-text,
@@ -3358,15 +3359,20 @@ label.screen-reader-text {
 
 .fb-like-buttons {
   padding: 0;
+  text-align: center;
 }
 .fb-like-buttons > div {
-  margin: 10px;
+  margin: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .fb-like-buttons > div > * {
   height: 100%;
+}
+
+.fb-like-facebook {
+  margin-bottom: -7px;
 }
 
 .sidebar .fb-like-box {
