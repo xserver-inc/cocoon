@@ -623,6 +623,13 @@ function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $
     //   _v($body_tag);
     // }
     //$selector = get_cleaned_css_selector($selector);
+
+    //調べるまでもなく最初から存在するとわかっているセレクターは次に飛ばす（多少なりとも処理時間の短縮）
+    $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3');
+    if (in_array($selector, $elements)) {
+      continue;
+    }
+
     //本文内にセレクタータグが存在しない場合
     if ($selector && strpos($body_tag, $selector) === false) {
       return false;
