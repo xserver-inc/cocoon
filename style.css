@@ -1359,6 +1359,8 @@ span.internal-icon {
 .footer .ranking-item-image-tag {
   max-width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .sidebar .ranking-item-name-text,
@@ -5089,6 +5091,9 @@ input[type='submit'] {
 
   .ranking-item-image-tag {
     max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .ranking-item-name-text,
