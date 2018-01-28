@@ -1349,20 +1349,26 @@ span.internal-icon {
 }
 
 .sidebar .ranking-item-img-desc,
-.sidebar .ranking-item-link-buttons {
+.sidebar .ranking-item-link-buttons,
+.footer .ranking-item-img-desc,
+.footer .ranking-item-link-buttons {
   display: block;
 }
 
-.sidebar .ranking-item-image-tag {
+.sidebar .ranking-item-image-tag,
+.footer .ranking-item-image-tag {
   max-width: 100%;
 }
 
 .sidebar .ranking-item-name-text,
-.sidebar .widget_item_ranking .main-widget-label {
+.sidebar .widget_item_ranking .main-widget-label,
+.footer .ranking-item-name-text,
+.footer .widget_item_ranking .main-widget-label {
   font-size: 20px;
 }
 
-.sidebar .ranking-item-description p {
+.sidebar .ranking-item-description p,
+.footer .ranking-item-description p {
   font-size: 0.9em;
 }
 
@@ -1698,11 +1704,13 @@ label.screen-reader-text {
 /************************************
 ** フォーローボタウィジェット
 ************************************/
-.sidebar .sns-follow-buttons {
+.sidebar .sns-follow-buttons,
+.footer .sns-follow-buttons {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.sidebar .sns-follow-buttons a {
+.sidebar .sns-follow-buttons a,
+.footer .sns-follow-buttons a {
   width: 49%;
   margin-right: 0;
 }
@@ -3741,7 +3749,7 @@ div.fb-like-mobile {
 }
 
 .ranking-item {
-  padding: 2%;
+  padding: 3%;
   margin-bottom: 20px;
   border: 1px solid #cccfd2;
   border-radius: 4px;

@@ -357,7 +357,8 @@ label.screen-reader-text{
 /************************************
 ** フォーローボタウィジェット
 ************************************/
-.sidebar{
+.sidebar,
+.footer{
   .sns-follow-buttons{
     flex-wrap: wrap;
     justify-content: space-between;
