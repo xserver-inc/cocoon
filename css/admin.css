@@ -2447,7 +2447,8 @@
     padding: 10px 1px;
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center; }
   .demo .booklink-link2 a:hover, .demo .kaerebalink-link1 a:hover {
     opacity: 0.6; }
   @media screen and (min-width: 800px) {
@@ -4915,7 +4916,8 @@
     padding: 10px 1px;
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center; }
   .demo .booklink-link2 a:hover, .demo .kaerebalink-link1 a:hover {
     opacity: 0.6; }
   @media screen and (min-width: 800px) {
@@ -6350,7 +6352,7 @@
           margin-bottom: 0.6em;
           padding: 2px; }
       .demo .menu-content {
-        max-width: 260px; }
+        max-width: 84%; }
       .demo .ranking-item-img-desc,
       .demo .ranking-item-link-buttons {
         display: block; }

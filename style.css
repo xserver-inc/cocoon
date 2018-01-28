@@ -2919,6 +2919,7 @@ label.screen-reader-text {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
+  text-align: center;
 }
 
 .booklink-link2 a:hover, .kaerebalink-link1 a:hover {
@@ -5071,7 +5072,7 @@ input[type='submit'] {
   }
 
   .menu-content {
-    max-width: 260px;
+    max-width: 84%;
   }
 
   .ranking-item-img-desc,

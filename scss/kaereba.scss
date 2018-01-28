@@ -40,7 +40,7 @@
     font-size: 12px;
     margin: 0 0 10px 0;
 }
-.booklink-link2, .kaerebalink-link1 {}
+
 .booklink-link2 a, .kaerebalink-link1 a {
     width: 90%;
     display: block;
@@ -49,7 +49,7 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-
+    text-align: center;
 
 
 }
@@ -112,6 +112,10 @@
     padding: 0 5px 5px 0;
     box-sizing: border-box;
     float: left;
+    // a{
+    //   text-align: center;
+    // }
+
 }
 
 }
