@@ -3,185 +3,192 @@
 ///////////////////////////////////////
 
 .booklink-box, .kaerebalink-box {
-    padding: 22px 25px 22px 25px;
-    width: 94%;
-    margin: 0 auto 15px;
-    border: 3px solid #dfdfdf;
-    box-sizing: border-box;
-    text-align: center;
+  padding: 22px 25px 22px 25px;
+  width: 94%;
+  margin: 0 auto 15px;
+  border: 3px solid #dfdfdf;
+  box-sizing: border-box;
+  text-align: center;
 }
 .booklink-image, .kaerebalink-image {
-    width: 100%;
-    margin: 0 0 5px 0;
+  width: 100%;
+  margin: 0 0 5px 0;
+  text-align: center;
 }
 .booklink-image img, .kaerebalink-image img {}
 .booklink-info, .kaerebalink-info {
-    line-height: 125%;
-    width: 100%;
+  line-height: 125%;
+  width: 100%;
 }
 .booklink-name, .kaerebalink-name {
-    margin: 0 0 4px 0;
+  margin: 0 0 4px 0;
 }
 .booklink-name a, .kaerebalink-name a {
-    color: #0066cc;
-    text-decoration: underline;
+  color: #0066cc;
+  text-decoration: underline;
 }
 .booklink-name > a, .kaerebalink-name > a {
-    font-size: 16px;
+  font-size: 16px;
 }
 .booklink-name a:hover, .kaerebalink-name a:hover {
-    color: #FF9900;
+  color: #FF9900;
 }
 .booklink-powered-date, .kaerebalink-powered-date {
-     font-size: 8px;
+   font-size: 8px;
 }
 .booklink-detail, .kaerebalink-detail {
-    color: #333333;
-    font-size: 12px;
-    margin: 0 0 10px 0;
+  color: #333333;
+  font-size: 12px;
+  margin: 0 0 10px 0;
 }
 
 .booklink-link2 a, .kaerebalink-link1 a {
-    width: 90%;
-    display: block;
-    margin: 0px auto 8px;
-    padding: 10px 1px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
+  width: 90%;
+  display: block;
+  margin: 0px auto 8px;
+  padding: 10px 1px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
 
 
 }
 .booklink-link2 a:hover, .kaerebalink-link1 a:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 800px) {
 
 .booklink-box, .kaerebalink-box {
-    text-align: left;
-    display: table;
+  text-align: left;
+  display: table;
 }
 .booklink-image, .kaerebalink-image {
-    vertical-align: top;
-    box-sizing: border-box;
-    display: table-cell;
-    width: 111px;
-    text-align: center;
-    margin: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+  display: table-cell;
+  width: 111px;
+  text-align: center;
+  margin: 0;
 }
 
 .booklink-image img, .kaerebalink-image img {
-    max-width: 100%
+  max-width: 100%
 }
 
 .booklink-info, .kaerebalink-info {
-    line-height: 125%;
-    vertical-align: top;
-    box-sizing: border-box;
-    display: table-cell;
-    padding-left: 25px;
-    width: auto;
+  line-height: 125%;
+  vertical-align: top;
+  box-sizing: border-box;
+  display: table-cell;
+  padding-left: 25px;
+  width: auto;
 }
 
 .booklink-name, .kaerebalink-name {
-    margin: 0 0 24px 0;
+  margin: 0 0 24px 0;
 }
 
 .booklink-name > a, .kaerebalink-name > a {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .booklink-powered-date, .kaerebalink-powered-date {
-    margin: 6px 0 0 0;
+  margin: 6px 0 0 0;
 }
 
 .booklink-detail, .kaerebalink-detail {
-    margin: 0 0 14px 0;
+  margin: 0 0 14px 0;
 }
 
 .booklink-link2 a, .kaerebalink-link1 a {
-    width: auto;
-    text-align: center;
-    margin: 0;
+  width: auto;
+  text-align: center;
+  margin: 0;
 }
 
 .booklink-link2 > div, .kaerebalink-link1 > div {
-    width: 32%;
-    padding: 0 5px 5px 0;
-    box-sizing: border-box;
-    float: left;
-    // a{
-    //   text-align: center;
-    // }
+  width: 32%;
+  padding: 0 5px 5px 0;
+  box-sizing: border-box;
+  float: left;
+  // a{
+  //   text-align: center;
+  // }
 
 }
 
 }
 
 .shoplinkamazon a {
-    color: #ff9901;
-    background: #ffffff;
-    border: 2px solid #ff9901;
+  color: #ff9901;
+  background: #ffffff;
+  border: 2px solid #ff9901;
 }
 .shoplinkrakuten a {
-    color: #bf0000;
-    background: #ffffff;
-    border: 2px solid #bf0000;
+  color: #bf0000;
+  background: #ffffff;
+  border: 2px solid #bf0000;
 }
 .shoplinkyahoo a {
-    color: #ff0033;
-    background: #ffffff;
-    border: 2px solid #ff0033;
+  color: #ff0033;
+  background: #ffffff;
+  border: 2px solid #ff0033;
+  position: relative;
+  img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 .shoplinkseven a {
-    color: #008837;
-    background: #ffffff;
-    border: 2px solid #008837;
+  color: #008837;
+  background: #ffffff;
+  border: 2px solid #008837;
 }
 .shoplinkbellemaison a {
-    color: #80bd22;
-    background: #ffffff;
-    border: 2px solid #80bd22;
+  color: #80bd22;
+  background: #ffffff;
+  border: 2px solid #80bd22;
 }
 .shoplinkcecile a {
-    color: #8d124b;
-    background: #ffffff;
-    border: 2px solid #8d124b;
+  color: #8d124b;
+  background: #ffffff;
+  border: 2px solid #8d124b;
 }
 .shoplinkkakakucom a {
-    color: #051d93;
-    background: #ffffff;
-    border: 2px solid #051d93;
+  color: #051d93;
+  background: #ffffff;
+  border: 2px solid #051d93;
 }
 .shoplinkkindle a {
-    color: #0074c1;
-    background: #ffffff;
-    border: 2px solid #0074c1;
+  color: #0074c1;
+  background: #ffffff;
+  border: 2px solid #0074c1;
 }
 .shoplinkrakukobo a {
-    color: #bf0000;
-    background: #ffffff;
-    border: 2px solid #bf0000;
+  color: #bf0000;
+  background: #ffffff;
+  border: 2px solid #bf0000;
 }
 .shoplinkbk1 a {
-    color: #0085cd;
-    background: #ffffff;
-    border: 2px solid #0085cd;
+  color: #0085cd;
+  background: #ffffff;
+  border: 2px solid #0085cd;
 }
 .shoplinkehon a {
-    color: #000066;
-    background: #ffffff;
-    border: 2px solid #000066;
+  color: #000066;
+  background: #ffffff;
+  border: 2px solid #000066;
 }
 .shoplinkkino a {
-    color: #004097;
-    background: #ffffff;
-    border: 2px solid #004097;
+  color: #004097;
+  background: #ffffff;
+  border: 2px solid #004097;
 }
 .shoplinktoshokan a {
-    color: #15b0e7;
-    background: #ffffff;
-    border: 2px solid #15b0e7;
+  color: #15b0e7;
+  background: #ffffff;
+  border: 2px solid #15b0e7;
 }

@@ -2877,6 +2877,7 @@ label.screen-reader-text {
 .booklink-image, .kaerebalink-image {
   width: 100%;
   margin: 0 0 5px 0;
+  text-align: center;
 }
 
 .booklink-info, .kaerebalink-info {
@@ -2999,6 +3000,12 @@ label.screen-reader-text {
   color: #ff0033;
   background: #ffffff;
   border: 2px solid #ff0033;
+  position: relative;
+}
+.shoplinkyahoo a img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .shoplinkseven a {

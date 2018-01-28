@@ -2421,7 +2421,8 @@
     text-align: center; }
   .demo .booklink-image, .demo .kaerebalink-image {
     width: 100%;
-    margin: 0 0 5px 0; }
+    margin: 0 0 5px 0;
+    text-align: center; }
   .demo .booklink-info, .demo .kaerebalink-info {
     line-height: 125%;
     width: 100%; }
@@ -2499,7 +2500,12 @@
   .demo .shoplinkyahoo a {
     color: #ff0033;
     background: #ffffff;
-    border: 2px solid #ff0033; }
+    border: 2px solid #ff0033;
+    position: relative; }
+    .demo .shoplinkyahoo a img {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
   .demo .shoplinkseven a {
     color: #008837;
     background: #ffffff;
@@ -4890,7 +4896,8 @@
     text-align: center; }
   .demo .booklink-image, .demo .kaerebalink-image {
     width: 100%;
-    margin: 0 0 5px 0; }
+    margin: 0 0 5px 0;
+    text-align: center; }
   .demo .booklink-info, .demo .kaerebalink-info {
     line-height: 125%;
     width: 100%; }
@@ -4968,7 +4975,12 @@
   .demo .shoplinkyahoo a {
     color: #ff0033;
     background: #ffffff;
-    border: 2px solid #ff0033; }
+    border: 2px solid #ff0033;
+    position: relative; }
+    .demo .shoplinkyahoo a img {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
   .demo .shoplinkseven a {
     color: #008837;
     background: #ffffff;
