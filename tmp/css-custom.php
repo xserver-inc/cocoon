@@ -58,7 +58,9 @@ table td,
 .pager-post-navi.post-navi-border a.a-wrap,
 .article .toc,
 .a-wrap .blogcard,
+/*
 input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select,
+*/
 .author-box,
 .comment-reply-link,
 .ranking-item{

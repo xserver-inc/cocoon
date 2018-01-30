@@ -46,7 +46,22 @@ div#bbpress-forums{
 
 #bbpress-forums{
 
-  button{
+  // .bbp-the-content-wrapper{
+  //   border-bottom: 2px solid $basic_border_color !important;
+  // }
+
+  #bbp-user-wrapper{
+    margin-top: 1.6em;
+  }
+
+  .entry-title{
+    background-color: transparent;
+    color: #333;
+    padding-left: 0;
+    //padding: 0.6em !important;
+  }
+
+  #bbp_topic_submit{
     padding: 12px 24px;
   }
 

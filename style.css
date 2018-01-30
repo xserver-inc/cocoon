@@ -4623,7 +4623,15 @@ div#bbpress-forums .bbp-topic-permalink {
   font-size: 16px;
 }
 
-#bbpress-forums button {
+#bbpress-forums #bbp-user-wrapper {
+  margin-top: 1.6em;
+}
+#bbpress-forums .entry-title {
+  background-color: transparent;
+  color: #333;
+  padding-left: 0;
+}
+#bbpress-forums #bbp_topic_submit {
   padding: 12px 24px;
 }
 #bbpress-forums input[type=text] {

@@ -6084,7 +6084,13 @@
     font-size: 16px; }
     .demo div#bbpress-forums .bbp-topic-permalink {
       font-size: 16px; }
-  .demo #bbpress-forums button {
+  .demo #bbpress-forums #bbp-user-wrapper {
+    margin-top: 1.6em; }
+  .demo #bbpress-forums .entry-title {
+    background-color: transparent;
+    color: #333;
+    padding-left: 0; }
+  .demo #bbpress-forums #bbp_topic_submit {
     padding: 12px 24px; }
   .demo #bbpress-forums input[type=text] {
     width: 100%; }

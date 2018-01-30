@@ -49,6 +49,7 @@ function tag_code_to_minify_js($buffer) {
               //アドミンバーのJSは除外
               (strpos($url, 'js/admin-bar.min.js') !== false)
               || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+              || (strpos($url, '/plugins/image-upload-for-bbpress/js/bbp-image-upload.js') !== false)
 
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
