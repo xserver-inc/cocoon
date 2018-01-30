@@ -13,7 +13,7 @@ if (is_user_administrator()
   //   || (is_admin_panel_mobile_only_visible() && wp_is_mobile())
   // )
 ):
-  _v($_GET);
+  //_v($_GET);
 ?>
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
 
