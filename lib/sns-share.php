@@ -437,11 +437,12 @@ function is_scc_push7_exists(){
 //シェア対象ページのURLを取得する
 if ( !function_exists( 'get_share_page_url' ) ):
 function get_share_page_url(){
-  if ( is_singular() ) {
-    $url = get_the_permalink();
-  } else {
-    $url = home_url();
-  }
+  // if ( is_singular() ) {
+  //   $url = get_the_permalink();
+  // } else {
+  //   $url = home_url();
+  // }
+  $url = get_requested_url();
   return $url;
 }
 endif;
@@ -452,7 +453,7 @@ function get_share_page_title(){
   if ( is_singular() ) {
     $title = get_the_title();
   } else {
-    $title = get_bloginfo('name');
+    $title = wp_get_document_title();
   }
   return $title;
 }
