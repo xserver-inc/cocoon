@@ -49,8 +49,9 @@ function tag_code_to_minify_js($buffer) {
               //アドミンバーのJSは除外
               (strpos($url, 'js/admin-bar.min.js') !== false)
               || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
-              || (strpos($url, '/plugins/image-upload-for-bbpress/') !== false)
-              || (strpos($url, '/js/tinymce/') !== false)
+              // || (strpos($url, '/plugins/bbpress/templates/default/js/editor.js') !== false)
+              // || (strpos($url, '/plugins/image-upload-for-bbpress/') !== false)
+              || (function_exists('is_bbpress') && is_bbpress())
 
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
