@@ -4663,6 +4663,23 @@ div#bbpress-forums .bbp-topic-permalink {
   font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
 }
 
+#buddypress h2 {
+  background-color: transparent;
+  color: #333435;
+  padding: 0;
+}
+#buddypress #members-friends {
+  margin-left: 6px;
+}
+#buddypress #members-friends select,
+#buddypress #members-friends option {
+  padding: 3px;
+  font-size: 16px;
+}
+#buddypress div.item-list-tabs ul li.last select {
+  min-width: 210px;
+}
+
 @media screen and (max-width: 1030px) {
   .navi-footer {
     float: none;

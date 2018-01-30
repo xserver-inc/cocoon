@@ -1,0 +1,22 @@
+#buddypress{
+  h2{
+    background-color: transparent;
+    color: $text_color;
+    padding: 0;
+  }
+
+  #members-friends{
+    margin-left: 6px;
+
+    select,
+    option{
+      padding: 3px;
+      font-size: 16px;
+    }
+  }
+
+  div.item-list-tabs ul li.last select{
+    min-width: 210px;
+  }
+
+}
