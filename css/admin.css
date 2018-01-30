@@ -6080,6 +6080,10 @@
     font-size: 16px; }
   .demo .bbp-topic-permalink {
     font-size: 14px; }
+  .demo div#bbpress-forums {
+    font-size: 16px; }
+    .demo div#bbpress-forums .bbp-topic-permalink {
+      font-size: 16px; }
   .demo #bbpress-forums button {
     padding: 12px 24px; }
   .demo #bbpress-forums input[type=text] {

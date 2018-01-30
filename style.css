@@ -4616,6 +4616,13 @@ input[type='submit'] {
   font-size: 14px;
 }
 
+div#bbpress-forums {
+  font-size: 16px;
+}
+div#bbpress-forums .bbp-topic-permalink {
+  font-size: 16px;
+}
+
 #bbpress-forums button {
   padding: 12px 24px;
 }
