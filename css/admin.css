@@ -6080,6 +6080,14 @@
     font-size: 16px; }
   .demo .bbp-topic-permalink {
     font-size: 14px; }
+  .demo #bbpress-forums button {
+    padding: 12px 24px; }
+  .demo #bbpress-forums input[type=text] {
+    width: 100%; }
+  .demo #bbpress-forums div.odd,
+  .demo #bbpress-forums ul.odd {
+    background-color: #fefefe; }
+  .demo #bbpress-forums span.bbp-admin-links a,
   .demo #bbpress-forums .status-closed,
   .demo #bbpress-forums .status-closed a {
     color: #555; }

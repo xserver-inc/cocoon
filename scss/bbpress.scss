@@ -35,27 +35,46 @@
     font-size: 14px;
 }
 
-#bbpress-forums .status-closed,
-#bbpress-forums .status-closed a {
-    color: #555;
-}
 
-#bbpress-forums a.bbp-topic-permalink {
-  text-decoration:none;
-}
 
-#bbpress-forums a.bbp-topic-permalink:before {
-  content: " \f096";
-  font-family: FontAwesome;
-  margin-right:3px;
-}
+#bbpress-forums{
 
-#bbpress-forums .status-closed a.bbp-topic-permalink:before {
-  content: " \f046";
-  font-family: FontAwesome;
-}
+  button{
+    padding: 12px 24px;
+  }
 
-#bbpress-forums .status-closed .bbp-reply-content:before{
-  content: " \f046\00A0 Closed";
-  font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  input[type=text]{
+    width: 100%;
+  }
+
+  div.odd,
+  ul.odd{
+    background-color: #fefefe;
+  }
+
+  span.bbp-admin-links a,
+  .status-closed,
+  .status-closed a {
+      color: #555;
+  }
+
+  a.bbp-topic-permalink {
+    text-decoration:none;
+  }
+
+  a.bbp-topic-permalink:before {
+    content: " \f096";
+    font-family: FontAwesome;
+    margin-right:3px;
+  }
+
+  .status-closed a.bbp-topic-permalink:before {
+    content: " \f046";
+    font-family: FontAwesome;
+  }
+
+  .status-closed .bbp-reply-content:before{
+    content: " \f046\00A0 Closed";
+    font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  }
 }
