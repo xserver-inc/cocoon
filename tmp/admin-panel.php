@@ -129,7 +129,7 @@ if (is_user_administrator()
       <?php endif ?>
       <?php
       if (is_admin_multi_screen_resolution_test_visible()): ?>
-         <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
+         <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?>&w=414&h=736" target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
       <?php endif ?>
 
     </div>

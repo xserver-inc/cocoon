@@ -6,6 +6,7 @@ add_theme_support('post-thumbnails');
 //サムネイルサイズ
 add_image_size('thumb100', 100, 100, true);
 add_image_size('thumb150', 150, 150, true);
+//add_image_size('thumb200', 200, 200, true);
 add_image_size('thumb80',   80,  45, true);
 add_image_size('thumb120', 120,  67, true);
 add_image_size('thumb160', 160,  90, true);

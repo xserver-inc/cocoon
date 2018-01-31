@@ -132,8 +132,8 @@
         <?php
         $home_image_url = get_ogp_home_image_url();
         $size = get_image_width_and_height($home_image_url);
-        $width = isset($size['width']) ? $size['width'] : 800;
-        $height = isset($size['height']) ? $size['height'] : 600;
+        $width = isset($size['width']) ? $size['width'] : 880;
+        $height = isset($size['height']) ? $size['height'] : 660;
          ?>
         <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">

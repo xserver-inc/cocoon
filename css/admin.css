@@ -6125,6 +6125,12 @@
       font-size: 16px; }
   .demo #buddypress div.item-list-tabs ul li.last select {
     min-width: 210px; }
+  .demo .live-writer .main {
+    max-width: 860px;
+    width: 860px;
+    min-width: 860px; }
+  .demo .live-writer .article {
+    width: 800px; }
   @media screen and (max-width: 1030px) {
     .demo .navi-footer {
       float: none;

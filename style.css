@@ -4680,6 +4680,15 @@ div#bbpress-forums .bbp-topic-permalink {
   min-width: 210px;
 }
 
+.live-writer .main {
+  max-width: 860px;
+  width: 860px;
+  min-width: 860px;
+}
+.live-writer .article {
+  width: 800px;
+}
+
 @media screen and (max-width: 1030px) {
   .navi-footer {
     float: none;

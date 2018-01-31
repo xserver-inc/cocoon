@@ -51,7 +51,7 @@ function tag_code_to_minify_js($buffer) {
               || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               // || (strpos($url, '/plugins/bbpress/templates/default/js/editor.js') !== false)
               // || (strpos($url, '/plugins/image-upload-for-bbpress/') !== false)
-              || (is_bbpress_page())
+              //|| (is_bbpress_page())
 
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)

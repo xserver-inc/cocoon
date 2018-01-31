@@ -154,6 +154,11 @@ function body_class_additional($classes) {
       break;
   }
 
+  //Live Writer用クラス
+  if (is_user_agent_live_writer()) {
+    $classes[] = 'live-writer';
+  }
+
   //モバイルボタンタイプ
   $classes[] = 'mblt-'.str_replace('_', '-', get_mobile_button_layout_type());
 
