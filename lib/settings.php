@@ -183,3 +183,12 @@ endif;
 //   return array();
 // }
 // endif;
+
+//Live Writerでテーマ取得する際は、RSSを出力しない
+if (is_user_agent_live_writer()) {
+  //RSSフィードの停止
+  remove_action('do_feed_rdf', 'do_feed_rdf');
+  remove_action('do_feed_rss', 'do_feed_rss');
+  remove_action('do_feed_rss2', 'do_feed_rss2');
+  remove_action('do_feed_atom', 'do_feed_atom');
+}
