@@ -1172,3 +1172,16 @@ function add_admin_menu_separator($position) {
   ksort( $menu );
 }
 endif;
+
+//ユーザーエージェントが、Windows Live Writer、もしくはOpen Live Writerかどうか
+if ( !function_exists( 'is_user_agent_live_writer' ) ):
+function is_user_agent_live_writer(){
+  $ua = $_SERVER['HTTP_USER_AGENT'];// ユーザエージェントを取得
+  if((strpos($ua, 'Windows Live Writer') !== false)
+      || (strpos($ua, 'Open Live Writer') !== false)
+    ){
+    return true;
+  }
+  return false;
+}
+endif;
