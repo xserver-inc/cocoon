@@ -46,14 +46,14 @@ function tag_code_to_minify_css($buffer) {
         if ($url) {
           //サイトのURLが含まれているものだけ処理
           if (strpos($url, site_url()) !== false) {
-            if (
-              //アドミンバースタイルは除外
-              (strpos($url, 'admin-bar.min.css') !== false) ||
-              //ダッシュアイコンは除外
-              (strpos($url, 'dashicons.min.css') !== false)
-            ) {
-              continue;
-            }
+            // if (
+            //   //アドミンバースタイルは除外
+            //   (strpos($url, 'admin-bar.min.css') !== false) ||
+            //   //ダッシュアイコンは除外
+            //   (strpos($url, 'dashicons.min.css') !== false)
+            // ) {
+            //   continue;
+            // }
 
             //除外リストにマッチするCSS URLは縮小化しない
             if (is_url_matche_list($url, get_css_minify_exclude_list())) {
