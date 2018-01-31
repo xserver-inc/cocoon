@@ -338,6 +338,14 @@ function get_speech_balloon( $id ) {
 }
 endif;
 
+//テーブルのレコードが空か
+if ( !function_exists( 'is_speech_balloons_record_empty' ) ):
+function is_speech_balloons_record_empty(){
+  $table_name = SPEECH_BALLOONS_TABLE_NAME;
+  return is_db_table_record_empty($table_name);
+}
+endif;
+
 //関数テキストレコードの削除
 if ( !function_exists( 'delete_speech_balloon' ) ):
 function delete_speech_balloon( $id ) {

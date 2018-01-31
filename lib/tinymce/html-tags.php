@@ -1,4 +1,4 @@
-<?php //ビジュアルエディターの吹き出し挿入ドロップダウン
+<?php //よく利用するHTML（レイアウトなど）
 
 add_action('admin_init', 'add_html_tags_dropdown');
 add_action('admin_head', 'generate_html_tags_is');

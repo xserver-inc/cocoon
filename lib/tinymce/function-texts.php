@@ -1,7 +1,10 @@
 <?php //ビジュアルエディターのテンプレート挿入ドロップダウン
 
-add_action('admin_init', 'add_function_texts_dropdown');
-add_action('admin_head', 'generate_function_texts_is');
+//テーブル内にレコードが存在するとき
+if (!is_function_texts_record_empty()) {
+  add_action('admin_init', 'add_function_texts_dropdown');
+  add_action('admin_head', 'generate_function_texts_is');
+}
 
 if ( !function_exists( 'add_function_texts_dropdown' ) ):
 function add_function_texts_dropdown(){

@@ -1,7 +1,10 @@
 <?php //ビジュアルエディターのテンプレート挿入ドロップダウン
 
-add_action('admin_init', 'add_affiliate_tags_dropdown');
-add_action('admin_head', 'generate_affiliate_tags');
+//テーブル内にレコードが存在するとき
+if (!is_affiliate_tags_record_empty()) {
+  add_action('admin_init', 'add_affiliate_tags_dropdown');
+  add_action('admin_head', 'generate_affiliate_tags');
+}
 
 if ( !function_exists( 'add_affiliate_tags_dropdown' ) ):
 function add_affiliate_tags_dropdown(){

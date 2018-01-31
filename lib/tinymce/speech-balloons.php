@@ -1,7 +1,11 @@
 <?php //ビジュアルエディターの吹き出し挿入ドロップダウン
 
-add_action('admin_init', 'add_speech_balloons_dropdown');
-add_action('admin_head', 'generate_speech_balloons_is');
+//テーブル内にレコードが存在するとき
+if (!is_speech_balloons_record_empty()) {
+  add_action('admin_init', 'add_speech_balloons_dropdown');
+  add_action('admin_head', 'generate_speech_balloons_is');
+}
+
 
 if ( !function_exists( 'add_speech_balloons_dropdown' ) ):
 function add_speech_balloons_dropdown(){

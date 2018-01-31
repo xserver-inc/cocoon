@@ -172,10 +172,9 @@ function get_item_ranking( $id ) {
 }
 endif;
 
-
 //テーブルのレコードが空か
-if ( !function_exists( 'is_item_ranking_record_empty' ) ):
-function is_item_ranking_record_empty(){
+if ( !function_exists( 'is_item_rankings_record_empty' ) ):
+function is_item_rankings_record_empty(){
   $table_name = ITEM_RANKINGS_TABLE_NAME;
   return is_db_table_record_empty($table_name);
 }

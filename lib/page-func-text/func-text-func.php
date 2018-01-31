@@ -114,6 +114,14 @@ function get_function_text( $id ) {
 }
 endif;
 
+//テーブルのレコードが空か
+if ( !function_exists( 'is_function_texts_record_empty' ) ):
+function is_function_texts_record_empty(){
+  $table_name = FUNCTION_TEXTS_TABLE_NAME;
+  return is_db_table_record_empty($table_name);
+}
+endif;
+
 //関数テキストレコードの削除
 if ( !function_exists( 'delete_function_text' ) ):
 function delete_function_text( $id ) {

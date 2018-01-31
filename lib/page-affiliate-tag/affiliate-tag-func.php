@@ -111,6 +111,14 @@ function get_affiliate_tag( $id ) {
 }
 endif;
 
+//テーブルのレコードが空か
+if ( !function_exists( 'is_affiliate_tags_record_empty' ) ):
+function is_affiliate_tags_record_empty(){
+  $table_name = AFFILIATE_TAGS_TABLE_NAME;
+  return is_db_table_record_empty($table_name);
+}
+endif;
+
 //レコードの削除
 if ( !function_exists( 'delete_affiliate_tag' ) ):
 function delete_affiliate_tag( $id ) {
