@@ -6,7 +6,7 @@
 ///////////////////////////////////////
 //参考：http://mio-koduki.blogspot.jp/2012/05/php-httpbuildurl.html
 //PECLのhttp_build_urlがある可能性があるためチェックする
-if(!function_exists('http_build_url')){
+if(!function_exists('puny_http_build_url')){
   //フラグの定数を設定
   define('HTTP_URL_REPLACE',1);
   define('HTTP_URL_JOIN_PATH',2);
@@ -19,7 +19,7 @@ if(!function_exists('http_build_url')){
   define('HTTP_URL_STRIP_QUERY',128);
   define('HTTP_URL_STRIP_FRAGMENT',256);
   define('HTTP_URL_STRIP_ALL',504);
-  function http_build_url($url,$parts=array(),$flags=HTTP_URL_REPLACE,&$new_url=array())  {
+  function puny_http_build_url($url,$parts=array(),$flags=HTTP_URL_REPLACE,&$new_url=array())  {
     //置き換えるキー
     $key=array('user','pass','port','path','query','fragment');
     //urlをパースする
@@ -80,7 +80,7 @@ function convert_punycode($url, $is_encode = true){
     $host = $Punycode->decode($url_parts['host']);
   }
   $url_parts['host'] = $host;
-  return http_build_url($url, $url_parts);
+  return puny_http_build_url($url, $url_parts);
 }
 
 ///////////////////////////////////////
