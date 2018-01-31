@@ -1,7 +1,11 @@
 <?php //ビジュアルエディターのランキングドロップダウン
 
-add_action('admin_init', 'add_item_rankings_dropdown');
-add_action('admin_head', 'generate_item_rankings');
+//var_dump(is_item_ranking_record_empty());
+if (!is_item_ranking_record_empty()) {
+  add_action('admin_init', 'add_item_rankings_dropdown');
+  add_action('admin_head', 'generate_item_rankings');
+}
+
 
 if ( !function_exists( 'add_item_rankings_dropdown' ) ):
 function add_item_rankings_dropdown(){
@@ -17,6 +21,7 @@ if ( !function_exists( 'add_item_rankings_to_mce_external_plugins' ) ):
 function add_item_rankings_to_mce_external_plugins( $plugin_array ){
   $path=get_template_directory_uri() . '/js/item-rankings.js';
   $plugin_array['item_rankings'] = $path;
+
   return $plugin_array;
 }
 endif;
@@ -33,6 +38,7 @@ endif;
 if ( !function_exists( 'generate_item_rankings' ) ):
 function generate_item_rankings($value){
   $records = get_item_rankings(null, 'title');
+  //_v($records);
   if ($records) {
     echo '<script type="text/javascript">
     var itemRankingsTitle = "'.__( 'ランキング', THEME_NAME ).'";

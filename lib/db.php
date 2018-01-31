@@ -138,6 +138,25 @@ function update_db_table_record($table, $data, $where, $format, $where_format){
 }
 endif;
 
+//レコード数を取得
+if ( !function_exists( 'get_db_table_record_count' ) ):
+function get_db_table_record_count($table){
+  global $wpdb;
+  $query = "SELECT COUNT(id) FROM {$table}";
+  $count = $wpdb->get_var( $query );
+  //var_dump($count);
+
+  return intval($count);
+}
+endif;
+
+//テーブルのレコードが空か
+if ( !function_exists( 'is_db_table_record_empty' ) ):
+function is_db_table_record_empty($table){
+  return get_db_table_record_count($table) <= 0;
+}
+endif;
+
 //データベースにテーブルが存在するかどうか
 if ( !function_exists( 'is_db_table_exist' ) ):
 function is_db_table_exist($table){

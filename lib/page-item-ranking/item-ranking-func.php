@@ -172,6 +172,15 @@ function get_item_ranking( $id ) {
 }
 endif;
 
+
+//テーブルのレコードが空か
+if ( !function_exists( 'is_item_ranking_record_empty' ) ):
+function is_item_ranking_record_empty(){
+  $table_name = ITEM_RANKINGS_TABLE_NAME;
+  return is_db_table_record_empty($table_name);
+}
+endif;
+
 //関数テキストレコードの削除
 if ( !function_exists( 'delete_item_ranking' ) ):
 function delete_item_ranking( $id ) {
