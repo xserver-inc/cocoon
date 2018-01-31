@@ -291,9 +291,10 @@ endif;
 
 
 //投稿・固定ページのメタキーワードの取得
-if ( !function_exists( 'get_the_meta_keywores' ) ):
-function get_the_meta_keywores(){
-  global $post;
+if ( !function_exists( 'get_the_meta_keywords' ) ):
+function get_the_meta_keywords(){
+  //global $post;
+  //var_dump(get_the_page_meta_keywords());
   $keywords =  get_the_page_meta_keywords();
   if (!$keywords) {
     $categories = get_the_category($post->ID);
@@ -335,10 +336,11 @@ add_action( 'wp_head', 'the_meta_keywords_tag' );
 if ( !function_exists( 'the_meta_keywords_tag' ) ):
 function the_meta_keywords_tag() {
   $keywords = null;
+  //var_dump(get_the_meta_keywords());
   if (is_front_page() && get_front_page_meta_keywords()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
-    $keywords = get_the_meta_keywores();
+    $keywords = get_the_meta_keywords();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
   } else {

@@ -103,7 +103,7 @@ endif;
 define('OP_META_KEYWORDS_TO_SINGULAR', 'meta_keywords_to_singular');
 if ( !function_exists( 'is_meta_keywords_to_singular' ) ):
 function is_meta_keywords_to_singular(){
-  return get_theme_option(OP_META_KEYWORDS_TO_SINGULAR);
+  return get_theme_option(OP_META_KEYWORDS_TO_SINGULAR, 1);
 }
 endif;
 
@@ -145,6 +145,6 @@ endif;
 define('OP_META_KEYWORDS_TO_CATEGORY', 'meta_keywords_to_category');
 if ( !function_exists( 'is_meta_keywords_to_category' ) ):
 function is_meta_keywords_to_category(){
-  return get_theme_option(OP_META_KEYWORDS_TO_CATEGORY);
+  return get_theme_option(OP_META_KEYWORDS_TO_CATEGORY, 1);
 }
 endif;
