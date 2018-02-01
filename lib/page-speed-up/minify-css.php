@@ -128,13 +128,17 @@ function tag_code_to_minify_css($buffer) {
     // CSSエラー除外
     ///////////////////////////////////////
     //bbPressのCSSエラー
-    $buffer = str_replace('@media screen and (max-device-width:480px),screen and (-webkit-min-device-pixel-ratio:2){-webkit-text-size-adjust:none}', '', $buffer);
-    $buffer = str_replace('.navi-in>ul>.menu-item-has-children>a::after{font-family:FontAwesome;content:"";padding-right:3px;position:absolute;right:3px;top:0}', '', $buffer);
+    if (is_bbpress_exist()) {
+      $buffer = str_replace('@media screen and (max-device-width:480px),screen and (-webkit-min-device-pixel-ratio:2){-webkit-text-size-adjust:none}', '', $buffer);
+    }
     //BuddyPressのCSSエラー
-    $buffer = str_replace('.1s ease-in 0;', '.1s ease-in;', $buffer);
-    $buffer = str_replace('#wpadminbar*', '#wpadminbar div', $buffer);
-    $buffer = str_replace('*html #wpadminbar', 'html #wpadminbar', $buffer);
-    $buffer = str_replace('*html body{', 'html body{', $buffer);
+    if (is_buddypress_exist()) {
+      $buffer = str_replace('.1s ease-in 0;', '.1s ease-in;', $buffer);
+      $buffer = str_replace('#wpadminbar*', '#wpadminbar div', $buffer);
+      $buffer = str_replace('*html #wpadminbar', 'html #wpadminbar', $buffer);
+      $buffer = str_replace('*html body{', 'html body{', $buffer);
+    }
+
 
     // $buffer = str_replace('#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}}', '#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}', $buffer);
 

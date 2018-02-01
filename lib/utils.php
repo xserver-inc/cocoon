@@ -804,10 +804,17 @@ function get_basename($filename){
 }
 endif;
 
+//bbPressがインストールされているか
+if ( !function_exists( 'is_bbpress_exist' ) ):
+function is_bbpress_exist(){
+  return class_exists( 'bbPress' );
+}
+endif;
+
 //bbPressのページかどうか
 if ( !function_exists( 'is_bbpress_page' ) ):
 function is_bbpress_page(){
-  if (function_exists('bbp_is_topic')) {
+  if (is_bbpress_exist()) {
     if (bbp_is_topic() ||
         bbp_is_forum() ||
         bbp_is_forum_archive() ||
@@ -826,6 +833,13 @@ function is_bbpress_page(){
       return true;
     }
   }
+}
+endif;
+
+//BuddyPressが存在するか
+if ( !function_exists( 'is_buddypress_exist' ) ):
+function is_buddypress_exist(){
+  return class_exists('BuddyPress');
 }
 endif;
 

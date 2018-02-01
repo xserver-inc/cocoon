@@ -4,7 +4,7 @@
 if ( !function_exists( 'is_amp' ) ):
 function is_amp(){
   //bbPressがインストールされていて、トピックの時は除外
-  if (function_exists('bbp_is_topic')) {
+  if (is_bbpress_exist()) {
     if (bbp_is_topic()) {
       return false;
     }
