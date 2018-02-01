@@ -6,7 +6,10 @@ function fetch_feedly_count_raw($url){
   $url = rawurlencode( $url );
   $res = 0;
   $args = array( 'sslverify' => false );
-  $subscribers = wp_remote_get( '.$urlhttp://cloud.feedly.com/v3/feeds/feed%2F'.$url, $args );
+  $subscribers = wp_remote_get( 'http://cloud.feedly.com/v3/feeds/feed%2F'.$url, $args );
+  //var_dump($subscribers);
+  // _v('http://cloud.feedly.com/v3/feeds/feed%2F'.$url);
+  // _v($subscribers);
   if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
     $subscribers = json_decode( $subscribers['body'] );
     if ( $subscribers ) {
@@ -16,14 +19,15 @@ function fetch_feedly_count_raw($url){
       }
     }
   }
+  return $res;
 }
 endif;
 
 //feedlyの購読者数取得
 if ( !function_exists( 'fetch_feedly_count' ) ):
 function fetch_feedly_count(){
-
-  $transient_id = TRANSIENT_FOLLOW_PREFIX.'feedly';
+  $count = 0;
+  $transient_id = TRANSIENT_FOLLOW_PREFIX.'_feedly';
   //DBキャッシュからカウントの取得
   if (is_sns_follow_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -61,6 +65,7 @@ endif;
 //feedlyの購読者数の取得
 if ( !function_exists( 'get_feedly_count' ) ):
 function get_feedly_count(){
+  //_v(is_sns_follow_buttons_count_visible());
   if (!is_sns_follow_buttons_count_visible())
     return null;
 
