@@ -149,29 +149,25 @@ function get_archive_chapter_title(){
   $chapter_title = null;
   if( is_category() ) {//カテゴリページの場合
     $cat_id = get_query_var('cat');
-    $icon_font = '<span class="fa fa-folder-open"></span>';
+    $icon_font = '<span class="fa fa-folder-open"></span> ';
     if ($cat_id && get_category_title($cat_id)) {
       $chapter_title .= $icon_font.get_category_title($cat_id);
     } else {
       $chapter_title .= single_cat_title( $icon_font, false );
     }
   } elseif( is_tag() ) {//タグページの場合
-    $chapter_title .= single_tag_title( '<span class="fa fa-tags"></span>
-', false );
+    $chapter_title .= single_tag_title( '<span class="fa fa-tags"></span> ', false );
   } elseif( is_tax() ) {//タクソノミページの場合
     $chapter_title .= single_term_title( '', false );
   } elseif (is_day()) {
     //年月日のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>
-'.get_the_time('Y-m-n');
+    $chapter_title .= '<span class="fa fa-calendar"></span> '.get_the_time('Y-m-n');
   } elseif (is_month()) {
     //年と月のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>
-'.get_the_time('Y-m');
+    $chapter_title .= '<span class="fa fa-calendar"></span> '.get_the_time('Y-m');
   } elseif (is_year()) {
     //年のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>
-'.get_the_time('Y');
+    $chapter_title .= '<span class="fa fa-calendar"></span> '.get_the_time('Y');
   } elseif (is_author()) {//著書ページの場合
     $chapter_title .= esc_html(get_queried_object()->display_name);
   } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {

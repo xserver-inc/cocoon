@@ -52,14 +52,15 @@ function get_category_title($cat_id = null){
 }
 endif;
 
-//カテゴリ色の取得
+//カテゴリ本文の取得
 if ( !function_exists( 'get_category_content' ) ):
 function get_category_content($cat_id = null){
   $meta = get_category_meta($cat_id);
   if (!empty($meta['content']))
-    return $meta['content'];
+    $content = $meta['content'];
   else
-    return category_description();
+    $content = category_description();
+  return wpautop($content);
 }
 endif;
 
