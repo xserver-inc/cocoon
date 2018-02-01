@@ -134,9 +134,9 @@ function tag_code_to_minify_css($buffer) {
     //BuddyPressのCSSエラー
     if (is_buddypress_exist()) {
       $buffer = str_replace('.1s ease-in 0;', '.1s ease-in;', $buffer);
-      $buffer = str_replace('#wpadminbar*', '#wpadminbar div', $buffer);
-      $buffer = str_replace('*html #wpadminbar', 'html #wpadminbar', $buffer);
-      $buffer = str_replace('*html body{', 'html body{', $buffer);
+      $buffer = str_replace('#wpadminbar*', '#wpadminbar *', $buffer);
+      $buffer = str_replace('*html #wpadminbar', '* html #wpadminbar', $buffer);
+      $buffer = str_replace('*html body{', '* html body{', $buffer);
     }
 
 
