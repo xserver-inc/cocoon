@@ -71,7 +71,9 @@ function add_toc_before_1st_h2($the_content){
     }
     //var_dump($depth);
     if($depth >= 1 && $depth <= $max_depth){
-      if($current_depth == $depth){$toc_list .= '</li>';}
+      if($current_depth == $depth && $i != 0){
+        $toc_list .= '</li>';
+      }
       while($current_depth > $depth){
         $toc_list .= '</li></'.$list_tag.'>';
         $current_depth--;
