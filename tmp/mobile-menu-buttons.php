@@ -80,9 +80,15 @@
     <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
       <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
       <?php //サイドバー
-      get_template_part('sidebar'); ?>
+      ob_start();
+      get_template_part('sidebar');
+      $sidebar = ob_get_clean();
+      //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
+      $sidebar = preg_replace('/ id="[^"]+?"/i', '', $sidebar);
+      echo $sidebar;
+       ?>
       <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
     </div>
   </div>
 
-</div onclose="">
+</div>
