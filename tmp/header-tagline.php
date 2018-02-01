@@ -1,4 +1,4 @@
 <?php //キャッチフレーズ ?>
 <?php if (is_tagline_visible()): ?>
-<div class="tagline"><?php bloginfo('description') ?></div>
+<div class="tagline" itemprop="alternativeHeadline"><?php bloginfo('description') ?></div>
 <?php endif ?>

@@ -216,12 +216,12 @@ function generate_the_site_logo_tag($is_header = true){
     $class .= ' logo-text';
   }
 
-  $logo_before_tag = '<'.$tag.' class="logo'.$class.'" itemscope itemtype="http://schema.org/Organization">';
-  $logo_after_tag = '</'.$tag.'>';
+  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.get_home_url().'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
+  $logo_after_tag = '</span></a></'.$tag.'>';
   if (get_the_site_logo_url()) {
-    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-image-link"><img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"></a>';
+    $site_logo_tag = '<img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'">';
   } else {
-    $site_logo_tag = '<a href="'.get_home_url().'" class="site-name site-name-text-link">'.get_bloginfo('name').'</a>';
+    $site_logo_tag = get_bloginfo('name');
   }
   echo $logo_before_tag.$site_logo_tag.$logo_after_tag;
 }
