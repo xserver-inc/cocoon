@@ -15,6 +15,7 @@
   .menu-icon{
     margin-top: 3px;
     text-align: center;
+    display: block;
     &::before{
       font-family: FontAwesome;
       font-size: 1em;
@@ -24,6 +25,7 @@
   .menu-caption{
     font-size: 12px;
     text-align: center;
+    display: block;
   }
 
   .menu-button {

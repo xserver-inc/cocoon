@@ -3593,6 +3593,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-icon {
   margin-top: 3px;
   text-align: center;
+  display: block;
 }
 .mobile-menu-buttons .menu-icon::before {
   font-family: FontAwesome;
@@ -3601,6 +3602,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-caption {
   font-size: 12px;
   text-align: center;
+  display: block;
 }
 .mobile-menu-buttons .menu-button {
   position: relative;

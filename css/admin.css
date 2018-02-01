@@ -2918,13 +2918,15 @@
     height: 50px; }
     .demo .mobile-menu-buttons .menu-icon {
       margin-top: 3px;
-      text-align: center; }
+      text-align: center;
+      display: block; }
       .demo .mobile-menu-buttons .menu-icon::before {
         font-family: FontAwesome;
         font-size: 1em; }
     .demo .mobile-menu-buttons .menu-caption {
       font-size: 12px;
-      text-align: center; }
+      text-align: center;
+      display: block; }
     .demo .mobile-menu-buttons .menu-button {
       position: relative;
       width: 100%; }
@@ -5395,13 +5397,15 @@
     height: 50px; }
     .demo .mobile-menu-buttons .menu-icon {
       margin-top: 3px;
-      text-align: center; }
+      text-align: center;
+      display: block; }
       .demo .mobile-menu-buttons .menu-icon::before {
         font-family: FontAwesome;
         font-size: 1em; }
     .demo .mobile-menu-buttons .menu-caption {
       font-size: 12px;
-      text-align: center; }
+      text-align: center;
+      display: block; }
     .demo .mobile-menu-buttons .menu-button {
       position: relative;
       width: 100%; }
