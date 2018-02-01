@@ -22,12 +22,12 @@
 
               <?php endif ?>
               <?php if (is_eyecatch_visible()){
-              $content = '<a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
+              $content = '<p><a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
                   <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-370.jpg" alt="デモ画像">
                 </a>&nbsp;
                 <a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree.jpg" target="_blank">
                   <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree300.jpg" alt="デモ画像">
-                </a>
+                </a></p>
                 ';
                 if (is_lightbox_effect_enable()) {
                   $content = add_lightbox_property($content);
