@@ -8,8 +8,8 @@ if (!$ad_code) {
   $ad_code = get_ad_code();
 }
  ?>
-<div class="ad-area<?php echo $wrap_class ?> cf">
-  <div class="ad-label"><?php echo get_ad_label();//広告ラベルの取得 ?></div>
+<div class="ad-area<?php echo $wrap_class ?> cf" itemscope itemtype="https://schema.org/WPAdBlock">
+  <div class="ad-label" itemprop="name"><?php echo get_ad_label();//広告ラベルの取得 ?></div>
   <div class="ad-wrap">
     <div class="ad-responsive ad-usual"><?php echo $ad_code;//広告コードの取得 ?></div>
     <?php //ダブルレクタングルの場合
