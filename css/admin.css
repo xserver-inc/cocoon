@@ -765,6 +765,8 @@
     display: none; }
   .demo .publisher {
     display: none; }
+  .demo #wpadminbar {
+    font-size: 16px; }
   .demo figure {
     margin: 0; }
   .demo img {
@@ -3242,6 +3244,8 @@
     display: none; }
   .demo .publisher {
     display: none; }
+  .demo #wpadminbar {
+    font-size: 16px; }
   .demo figure {
     margin: 0; }
   .demo img {
