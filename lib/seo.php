@@ -451,10 +451,11 @@ endif;
 //SEO的な更新日取得
 if ( !function_exists( 'get_seo_update_time' ) ):
 function get_seo_update_time(){
-  if (is_seo_date_type_post_date_only()) {
+  $update_time = get_update_time('c');
+  if (is_seo_date_type_post_date_only() || !$update_time) {
     $res = get_the_time('c');
   } else {
-    $res = get_update_time('c');
+    $res = $update_time;
   }
   return $res;
 }
