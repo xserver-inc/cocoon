@@ -120,7 +120,7 @@
     .demo .sns-share-buttons a:hover, .demo .sns-follow-buttons a:hover {
       opacity: 0.7;
       color: #fff;
-      transition: all 0.5s ease 0s; }
+      transition: all 0.5s ease; }
 
 .demo body, .demo .header, .demo .appeal {
   /* 画像を常に左右の中央に配置 */
@@ -918,7 +918,7 @@
     font-size: 16px; }
     .demo .navi-in a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
       .demo .navi-in a:hover > ul {
         display: block; }
@@ -945,7 +945,7 @@
     font-size: 14px; }
     .demo .navi-footer-in a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .a-wrap {
     text-decoration: none;
@@ -955,7 +955,7 @@
     margin-bottom: 20px; }
     .demo .a-wrap:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .entry-card-thumb {
     width: 320px; }
@@ -1011,8 +1011,6 @@
     border: 1px solid #cccfd2; }
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
-  .demo .card-thumb img:hover {
-    animation: 1s ease 0s normal none 1 running flash; }
   .demo .date-tags {
     line-height: 0.8;
     text-align: right; }
@@ -1102,7 +1100,7 @@
   .demo .breadcrumb.pbp-main-before,
   .demo .breadcrumb.pbp-footer-before {
     background-color: #fff;
-    margin: inherit auto;
+    margin: auto;
     padding: 5px; }
   .demo .content {
     margin-top: 24px; }
@@ -1172,7 +1170,7 @@
       padding-right: 3px; }
     .demo .tag-link:hover, .demo .comment-reply-link:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo p {
     margin: 1em 0; }
@@ -1475,7 +1473,7 @@
       padding-right: 3px; }
     .demo .tagcloud a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
     .demo .tagcloud a .tag-link-count {
       margin-left: 10px; }
@@ -1517,7 +1515,7 @@
       .demo .widget_rss ul li a:hover,
       .demo .widget_nav_menu ul li a:hover {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
       .demo .widget_recent_entries ul li a .post-count,
       .demo .widget_categories ul li a .post-count,
@@ -1645,7 +1643,7 @@
     line-height: 1.3; }
     .demo .recent-comments .a-wrap:hover .recent-comment-content {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .recent-comment-avatar {
     float: left;
@@ -1717,7 +1715,7 @@
       padding-left: 3px; }
     .demo .pagination a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .page-numbers {
     color: #333435;
@@ -1745,7 +1743,7 @@
     display: block; }
     .demo .pagination-next-link:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .pager-links {
     margin: 24px 0;
@@ -1759,7 +1757,7 @@
         background-color: #fff; }
       .demo .pager-links a:hover span {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
   .demo .pager-links {
     margin: 24px 0;
@@ -1773,7 +1771,7 @@
         background-color: #fff; }
       .demo .pager-links a:hover span {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
   .demo .pager-prev-next a {
     width: 30%; }
@@ -2250,7 +2248,7 @@
     color: #333;
     background-color: #fff;
     border: 2px solid #000;
-    transition: all 0.5s ease 0s; }
+    transition: all 0.5s ease; }
   .demo .btn-m {
     padding: 14px 45px;
     font-size: 16px; }
@@ -2581,7 +2579,7 @@
     font-weight: 500; }
     .demo .bc-brand-color-white.sns-share.ss-top a:hover, .demo .bc-brand-color-white.sns-share.ss-bottom a:hover, .demo .bc-brand-color-white.sns-follow a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .bc-brand-color-white.sns-share.ss-top .twitter-button, .demo .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color-white.sns-follow .twitter-button {
     color: #1da1f2;
@@ -2935,7 +2933,7 @@
         text-decoration: none; }
       .demo .mobile-menu-buttons .menu-button:hover {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
     .demo .mobile-menu-buttons .ad-area {
       display: none; }
@@ -3024,7 +3022,7 @@
     display: block; }
     .demo .menu-drawer a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .menu-drawer .sub-menu {
     padding-left: 20px; }
@@ -3093,7 +3091,7 @@
       padding: 14px 0; }
       .demo .ranking-item-link-buttons a:hover {
         opacity: 0.7;
-        transition: all 0.5s ease 0s; }
+        transition: all 0.5s ease; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -3397,7 +3395,7 @@
     font-size: 16px; }
     .demo .navi-in a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
       .demo .navi-in a:hover > ul {
         display: block; }
@@ -3424,7 +3422,7 @@
     font-size: 14px; }
     .demo .navi-footer-in a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .a-wrap {
     text-decoration: none;
@@ -3434,7 +3432,7 @@
     margin-bottom: 20px; }
     .demo .a-wrap:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .entry-card-thumb {
     width: 320px; }
@@ -3490,8 +3488,6 @@
     border: 1px solid #cccfd2; }
   .demo .entry-card-day span:last-child {
     margin-right: 0; }
-  .demo .card-thumb img:hover {
-    animation: 1s ease 0s normal none 1 running flash; }
   .demo .date-tags {
     line-height: 0.8;
     text-align: right; }
@@ -3581,7 +3577,7 @@
   .demo .breadcrumb.pbp-main-before,
   .demo .breadcrumb.pbp-footer-before {
     background-color: #fff;
-    margin: inherit auto;
+    margin: auto;
     padding: 5px; }
   .demo .content {
     margin-top: 24px; }
@@ -3651,7 +3647,7 @@
       padding-right: 3px; }
     .demo .tag-link:hover, .demo .comment-reply-link:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo p {
     margin: 1em 0; }
@@ -3954,7 +3950,7 @@
       padding-right: 3px; }
     .demo .tagcloud a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
     .demo .tagcloud a .tag-link-count {
       margin-left: 10px; }
@@ -3996,7 +3992,7 @@
       .demo .widget_rss ul li a:hover,
       .demo .widget_nav_menu ul li a:hover {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
       .demo .widget_recent_entries ul li a .post-count,
       .demo .widget_categories ul li a .post-count,
@@ -4124,7 +4120,7 @@
     line-height: 1.3; }
     .demo .recent-comments .a-wrap:hover .recent-comment-content {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .recent-comment-avatar {
     float: left;
@@ -4196,7 +4192,7 @@
       padding-left: 3px; }
     .demo .pagination a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .page-numbers {
     color: #333435;
@@ -4224,7 +4220,7 @@
     display: block; }
     .demo .pagination-next-link:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .pager-links {
     margin: 24px 0;
@@ -4238,7 +4234,7 @@
         background-color: #fff; }
       .demo .pager-links a:hover span {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
   .demo .pager-links {
     margin: 24px 0;
@@ -4252,7 +4248,7 @@
         background-color: #fff; }
       .demo .pager-links a:hover span {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
   .demo .pager-prev-next a {
     width: 30%; }
@@ -4729,7 +4725,7 @@
     color: #333;
     background-color: #fff;
     border: 2px solid #000;
-    transition: all 0.5s ease 0s; }
+    transition: all 0.5s ease; }
   .demo .btn-m {
     padding: 14px 45px;
     font-size: 16px; }
@@ -5060,7 +5056,7 @@
     font-weight: 500; }
     .demo .bc-brand-color-white.sns-share.ss-top a:hover, .demo .bc-brand-color-white.sns-share.ss-bottom a:hover, .demo .bc-brand-color-white.sns-follow a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .bc-brand-color-white.sns-share.ss-top .twitter-button, .demo .bc-brand-color-white.sns-share.ss-bottom .twitter-button, .demo .bc-brand-color-white.sns-follow .twitter-button {
     color: #1da1f2;
@@ -5414,7 +5410,7 @@
         text-decoration: none; }
       .demo .mobile-menu-buttons .menu-button:hover {
         background-color: #f5f8fa;
-        transition: all 0.5s ease 0s;
+        transition: all 0.5s ease;
         color: #333435; }
     .demo .mobile-menu-buttons .ad-area {
       display: none; }
@@ -5503,7 +5499,7 @@
     display: block; }
     .demo .menu-drawer a:hover {
       background-color: #f5f8fa;
-      transition: all 0.5s ease 0s;
+      transition: all 0.5s ease;
       color: #333435; }
   .demo .menu-drawer .sub-menu {
     padding-left: 20px; }
@@ -5572,7 +5568,7 @@
       padding: 14px 0; }
       .demo .ranking-item-link-buttons a:hover {
         opacity: 0.7;
-        transition: all 0.5s ease 0s; }
+        transition: all 0.5s ease; }
   .demo .g-crown, .demo .s-crown, .demo .c-crown {
     width: 0;
     height: 0;
@@ -5885,8 +5881,7 @@
     .demo .slick-list:focus {
       outline: none; }
     .demo .slick-list.dragging {
-      cursor: pointer;
-      cursor: hand; }
+      cursor: pointer; }
   .demo .slick-slider .slick-track,
   .demo .slick-slider .slick-list {
     -webkit-transform: translate3d(0, 0, 0);
@@ -5989,8 +5984,6 @@
     *zoom: 1; }
   .demo .slicknav_menu {
     font-size: 16px;
-    box-sizing: border-box; }
-  .demo .slicknav_menu * {
     box-sizing: border-box; }
   .demo .slicknav_btn {
     margin: 5px 5px 6px;

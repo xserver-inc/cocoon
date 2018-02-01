@@ -124,6 +124,14 @@ function tag_code_to_minify_css($buffer) {
       // $buffer = str_replace($title_end, $title_end.PHP_EOL.$all_style_tag, $buffer);
     }
 
+    ///////////////////////////////////////
+    // CSSエラー除外
+    ///////////////////////////////////////
+    //bbPressのCSSエラー
+    $buffer = str_replace('@media screen and (max-device-width:480px),screen and (-webkit-min-device-pixel-ratio:2){-webkit-text-size-adjust:none}', '', $buffer);
+    $buffer = str_replace('.navi-in>ul>.menu-item-has-children>a::after{font-family:FontAwesome;content:"";padding-right:3px;position:absolute;right:3px;top:0}', '', $buffer);
+    // $buffer = str_replace('#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}}', '#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}', $buffer);
+
   }//is_css_minify_enable()
 
 

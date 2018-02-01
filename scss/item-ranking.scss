@@ -90,7 +90,7 @@
     padding: 14px 0;
     &:hover{
       opacity: 0.7;
-      transition: all 0.5s ease 0s;
+      transition: $bgc_hover_anime;
     }
   }
 }

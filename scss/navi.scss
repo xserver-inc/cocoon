@@ -135,9 +135,6 @@ $icon_height: 16px;
     font-size: 16px;
     &:hover{
       @include bgc_hover;
-      // background: rgba(255, 255, 255, 0.15) none repeat scroll 0 0;
-      // transition: all 0.5s ease 0s;
-      //text-decoration: underline;
 
       >ul{
         display: block;
