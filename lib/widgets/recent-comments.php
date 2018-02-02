@@ -35,7 +35,6 @@ class RecentCommentsWidgetItem extends WP_Widget {
         }
         echo $args['after_title'];
         ?>
-        <dl class="recent-comments cf">
           <?php
           $comments_args = array(
             'author__not_in' => $author_not_in ? 1 : 0, // 管理者は除外

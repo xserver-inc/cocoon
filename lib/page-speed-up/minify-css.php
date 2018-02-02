@@ -46,14 +46,14 @@ function tag_code_to_minify_css($buffer) {
         if ($url) {
           //サイトのURLが含まれているものだけ処理
           if (strpos($url, site_url()) !== false) {
-            // if (
-            //   //アドミンバースタイルは除外
-            //   (strpos($url, 'admin-bar.min.css') !== false) ||
-            //   //ダッシュアイコンは除外
-            //   (strpos($url, 'dashicons.min.css') !== false)
-            // ) {
-            //   continue;
-            // }
+            if (
+              //アドミンバースタイルは除外
+              (strpos($url, 'admin-bar.min.css') !== false) ||
+              //ダッシュアイコンは除外
+              (strpos($url, 'dashicons.min.css') !== false)
+            ) {
+              continue;
+            }
 
             //除外リストにマッチするCSS URLは縮小化しない
             if (is_url_matche_list($url, get_css_minify_exclude_list())) {
@@ -208,6 +208,22 @@ function css_url_to_css_minify_code( $url ) {
     }//$res && $m[0]
   }//WP_Filesystem
   return $css;
+}
+endif;
+
+//ログインユーザー以外には管理用CSSを表示しない
+if (!is_user_logged_in()) {
+  add_filter( 'style_loader_tag', 'remove_admin_link_tag' );
+}
+if ( !function_exists( 'remove_admin_link_tag' ) ):
+function remove_admin_link_tag( $tag ) {
+  if (strpos($tag, 'admin-bar.min.css') !== false) {
+    $tag = null;
+  }
+  if (strpos($tag, 'dashicons.min.css') !== false) {
+    $tag = null;
+  }
+  return $tag;
 }
 endif;
 

@@ -40,6 +40,51 @@ function code_minify_call_back($buffer) {
   $buffer = str_replace(" type='text/css'>", '>', $buffer);
   $buffer = str_replace(' type="text/css">', '>', $buffer);
 
+  ///////////////////////////////////////
+  // HTML5エラー除外
+  ///////////////////////////////////////
+  //BuddyPressのHTML5エラー
+  if (is_buddypress_exist()) {
+    //$buffer = str_replace('<input name="rememberme" type="checkbox" value="forever" />', '<input id="bp-login-widget-rememberme" name="rememberme" type="checkbox" value="forever" />', $buffer);
+    $buffer = str_replace('<label for="bp-login-widget-rememberme">', '<label>', $buffer);
+  }
+
+  ///////////////////////////////////////
+  // CSSのダイエット（遅い）
+  ///////////////////////////////////////
+  // if (is_css_minify_enable()) {
+  // $body_tag = null;
+  //   //ボディータグの取得
+  //   if (preg_match('{<body .+</html>}is', $buffer, $m)) {
+  //     if (isset($m[0])) {
+  //       $body_tag = $m[0];
+  //     }
+  //   }
+
+  //   //_v(strlen($buffer));
+  //   //CSSスタイルの取得
+  //   if (preg_match('{<style>.+</style>}is', $buffer, $m)) {
+  //     if (isset($m[0])) {
+  //       $default_style_tag = minify_css($m[0]);
+  //       //_v($default_style_tag);
+  //       //_v(strlen($default_style_tag));
+  //       // $time_start = microtime(true);
+  //       //不要なCSSを削除してサイズ削減
+  //       $dieted_style_tag = get_dieted_amp_css_tag($default_style_tag, $body_tag);
+  //       // $time = microtime(true) - $time_start;
+  //       // var_dump($time);
+  //       // var_dump('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+  //       //_v(strlen($dieted_style_tag));
+  //       //_v($dieted_style_tag);
+  //       //ヘッダーの<style>をサイズ削減したものに入れ替える
+  //       // $buffer = str_replace($default_style_tag, $dieted_style_tag, $buffer);
+  //       // $s = $buffer;
+  //       // _v(strlen($s));
+  //     }
+  //   }
+  // }
+
+
   /*
   //CSSの縮小化
   if (0&&is_css_minify_enable()) {

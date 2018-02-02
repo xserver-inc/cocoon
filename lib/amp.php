@@ -745,14 +745,14 @@ function html_ampfy_call_back( $html ) {
     }
   }
 
-  //AMP用CSSスタイルの取得
+  //ボディータグの取得
   if (preg_match('{<body .+</html>}is', $html, $m)) {
     if (isset($m[0])) {
       $body_tag = $m[0];
     }
   }
 
-  //ボディータグの取得
+  //AMP用CSSスタイルの取得
   if (preg_match('{<style amp-custom>.+</style>}is', $head_tag, $m)) {
     if (isset($m[0])) {
       $default_style_amp_custom_tag = $m[0];
