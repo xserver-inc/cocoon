@@ -297,3 +297,16 @@ function wp_singular_page_redirect() {
   }
 }
 endif;
+
+// add_filter( 'widget_archives_args', 'hook_widget_archives_args' );
+// //add_filter( 'widget_archives_dropdown_args', 'hook_widget_archives_args' );
+// function hook_widget_archives_args( $args ) {
+//     _v($args);
+//     // デフォルトの月別(type=monthly)から年別のアーカイブに変更
+//     $args['type'] = 'yearly';
+
+//     $args['format'] = 'html';
+//     // 最大出力件数を5件までに制限
+//     $args['limit'] = 5;
+//     return $args;
+// }

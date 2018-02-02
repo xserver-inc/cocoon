@@ -82,7 +82,7 @@ function code_minify_call_back($buffer) {
 endif;
 
 //最終HTML取得開始
-add_action('after_setup_theme', 'code_minify_buffer_start');
+add_action('after_setup_theme', 'code_minify_buffer_start', 99999999);
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
   // _edump(
@@ -114,10 +114,10 @@ endif;
 
 // wp_head 出力フィルタリング・ハンドラ追加
 add_action( 'wp_head', 'wp_head_buffer_start', 1 );
-add_action( 'wp_head', 'wp_head_buffer_end', 9999 );
+add_action( 'wp_head', 'wp_head_buffer_end', 99999999 );
 // wp_footer 出力フィルタリング・ハンドラ追加
 add_action( 'wp_footer', 'wp_footer_buffer_start', 1 );
-add_action( 'wp_footer', 'wp_footer_buffer_end', 9999 );
+add_action( 'wp_footer', 'wp_footer_buffer_end', 99999999 );
 
 
 ///////////////////////////////////////

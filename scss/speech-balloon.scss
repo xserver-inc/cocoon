@@ -30,6 +30,9 @@
   background-color: $bg_white;
   border: 2px solid $basic_border_color;
   border-radius: 6px;
+  p{
+    margin: 0;
+  }
 }
 
 /* アイコンを左に表示 */

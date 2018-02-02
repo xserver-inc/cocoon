@@ -39,8 +39,8 @@
         </th>
         <td>
           <?php
-          generate_textbox_tag('title', $title,  __('未入力でも可',THEME_NAME ));
-          generate_tips_tag(__( '吹き出しのタイトルを入力してください。タイトルは管理画面（検索など）でしか利用されません。', THEME_NAME ));
+          generate_textbox_tag('title', $title,  __('タイトル入力',THEME_NAME ));
+          generate_tips_tag(__( '吹き出しのタイトルを入力してください。タイトルは管理画面（検索など）で利用されます', THEME_NAME ));
           ?>
         </td>
       </tr>

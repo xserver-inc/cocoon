@@ -362,7 +362,7 @@ function generate_speech_balloon_tag($record, $voice){?>
     <figure class="speech-icon"><img src="<?php echo esc_html($record->icon); ?>" alt="<?php echo esc_html($record->name); ?>" class="speech-icon-image"></figure>
     <div class="speech-name"><?php echo esc_html($record->name); ?></div>
   </div>
-  <div class="speech-balloon"><?php echo esc_html($voice); ?></div>
+  <div class="speech-balloon"><p><?php echo esc_html($voice); ?></p></div>
 </div>
 <?php
 }

@@ -2778,6 +2778,9 @@ label.screen-reader-text {
   border: 2px solid #cccfd2;
   border-radius: 6px;
 }
+.speech-balloon p {
+  margin: 0;
+}
 
 /* アイコンを左に表示 */
 .speech-balloon::before {

@@ -134,8 +134,27 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<font[^>]+?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
+  //ドロップダウンのアーカイブウィジェットは削除
+  $pattern = '{<aside id="archives-.+?archives-dropdown.+?</aside>}is';
+  $append = '';
+  $the_content = preg_replace($pattern, $append, $the_content);
+  $pattern = '{<div id="archives-.+?<select id="archives-dropdown-.+?</div>}is';
+  $append = '';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
+  //ドロップダウンのカテゴリウィジェットは削除
+  $pattern = '{<aside id="categories-.+?categories-dropdown.+?</aside>}is';
+  $append = '';
+  $the_content = preg_replace($pattern, $append, $the_content);
+  $pattern = '{<div id="categories.+?categories-dropdown.+?</div>}is';
+  $append = '';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   //formタグを取り除く
   $the_content = preg_replace('{<form.+?</form>}is', '', $the_content);
+
+  //selectタグを取り除く
+  $the_content = preg_replace('{<select.+?</select>}is', '', $the_content);
 
   //アプリーチの画像対応
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
@@ -336,6 +355,7 @@ function convert_content_for_amp($the_content){
   $pattern = '{<p></p>}i';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
+
 
   // echo('<pre>');
   // var_dump(htmlspecialchars($the_content));
