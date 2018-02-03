@@ -3,7 +3,20 @@
 
   <figure class="related-entry-card-thumb card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
-    <?php echo get_the_post_thumbnail($post->ID, array(320, 180), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
+    <?php
+    //適切なサムネイルサイズの選択
+    switch (get_related_entry_type()) {
+      case 'vartical_card_3':
+        $thumb_size = array(320, 180);
+        break;
+      case 'mini_card':
+        $thumb_size = array(120, 67);
+        break;
+      default:
+        $thumb_size = array(160, 90);
+        break;
+    }
+    echo get_the_post_thumbnail($post->ID, $thumb_size, array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image related-entry-card-no-image" width="160" height="90" />
     <?php endif; ?>
