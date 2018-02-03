@@ -12,50 +12,48 @@
 @import "entry-card";
 //日付など
 @import "date";
-//関連記事
-@import "related-entry-card";
 //パンくずリスト
 @import "breadcrumbs";
+//SNSシェア
+@import "sns-share";
 //コンテンツ
 @import "content";
+//広告
+@import "ad";
 //ブログカード
 @import "blogcard";
 //目次
 @import "toc";
-//コメント
-@import "comments";
 //サイドバー
 @import "sidebar";
 //ウィジェット
 @import "widget";
+//拡張クラス
+@import "extension";
+//拡張クラス（レイアウト）
+@import "extension-layout";
+//SNSフォロー
+@import "sns-follow";
+//関連記事
+@import "related-entry-card";
+//コメント
+@import "comments";
 //ページネーション
 @import "pagination";
 //マルチページナビ
 @import "pager-links";
 //投稿ナビ
 @import "post-navi";
-//フッター
-@import "footer";
-//広告
-@import "ad";
 //YouTube iframeのようなメディア表示
 @import "media";
 //プロフィールボックス
 @import "author-box";
 //CTAボックス
 @import "cta-box";
-//拡張クラス
-@import "extension";
-//拡張クラス（レイアウト）
-@import "extension-layout";
 //吹き出し
 @import "speech-balloon";
 //カエレバ・ヨメレバ
 @import "kaereba";
-//SNSシェア
-@import "sns-share";
-//SNSフォロー
-@import "sns-follow";
 //Facebookボックス
 @import "fb-like-box";
 //Facebookバルーン
@@ -64,6 +62,8 @@
 @import "mobile-menu-buttons";
 //アイテムランキング
 @import "item-ranking";
+//フッター
+@import "footer";
 //@import "icomoon";
 // //通知
 // @import "notice";

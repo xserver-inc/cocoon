@@ -676,6 +676,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
 
   //var_dump($records);
+  $thumb_size = ET_DEFAULT ? array(120, 67) : array(320, 180);
   ?>
   <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
@@ -683,7 +684,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
       $no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
-      $post_thumbnail = get_the_post_thumbnail( $post->ID, array(320, 180), array('alt' => '') );
+      $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
       $pv = $post->sum_count;
 
       if ($post_thumbnail) {
@@ -733,6 +734,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
   if ( $categories ) {
     $args += array('category__in' => $categories);
   }
+  $thumb_size = ET_DEFAULT ? array(120, 67) : array(320, 180);
   query_posts( $args ); //クエリの作成?>
   <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -740,7 +742,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
     <div class="new-entry-card widget-entry-card e-card cf">
       <figure class="new-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
-        <?php the_post_thumbnail( array(320, 180), array('alt' => '') ); ?>
+        <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
       <?php else: // サムネイルを持っていないときの処理 ?>
         <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
       <?php endif; ?>
