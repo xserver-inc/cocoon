@@ -9,4 +9,17 @@
   .article{
     width: 800px;
   }
+
+
+  blockquote,
+  .information-box,
+  .question-box,
+  .alert-box{
+    padding: 10px;
+
+    &::before,
+    &::after{
+      display: none;
+    }
+  }
 }

@@ -4688,6 +4688,21 @@ div#bbpress-forums .bbp-topic-permalink {
 .live-writer .article {
   width: 800px;
 }
+.live-writer blockquote,
+.live-writer .information-box,
+.live-writer .question-box,
+.live-writer .alert-box {
+  padding: 10px;
+}
+.live-writer blockquote::before, .live-writer blockquote::after,
+.live-writer .information-box::before,
+.live-writer .information-box::after,
+.live-writer .question-box::before,
+.live-writer .question-box::after,
+.live-writer .alert-box::before,
+.live-writer .alert-box::after {
+  display: none;
+}
 
 @media screen and (max-width: 1030px) {
   .navi-footer {
