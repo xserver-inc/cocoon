@@ -227,6 +227,17 @@ function remove_admin_link_tag( $tag ) {
 }
 endif;
 
+// //type='text/css'属性を取り除く
+// add_filter( 'style_loader_tag', 'remove_type_text_css', 9999 );
+// if ( !function_exists( 'remove_type_text_css' ) ):
+// function remove_type_text_css( $tag ) {
+//   $tag = str_replace(" type='text/css'", '', $tag);
+//   $tag = str_replace(' type="text/css"', '', $tag);
+
+//   return $tag;
+// }
+// endif;
+
 // /*async defer*/
 // add_filter( 'script_loader_tag', 'defer_async_scripts', 10, 3 );
 // function defer_async_scripts( $tag, $handle, $src ) {

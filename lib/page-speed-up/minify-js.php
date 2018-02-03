@@ -139,7 +139,7 @@ function tag_code_to_minify_js($buffer) {
 
           //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
           $url = preg_replace('/\?.*$/m', '', $url);
-          _v($url);//JSコード変換するURL
+          //_v($url);//JSコード変換するURL
 
           //JS URLからJSコードの取得
           $js = js_url_to_js_minify_code( $url );
@@ -236,6 +236,18 @@ function remove_code_comments($code){
   return $code;
 }
 endif;
+
+// //type='text/javascript'の除去
+// add_filter( 'script_loader_tag', 'remove_type_text_javascript', 9999);
+// if ( !function_exists( 'remove_type_text_javascript' ) ):
+// function remove_type_text_javascript( $tag ) {
+//   //var_dump($tag);
+//   $tag = str_replace(" type='text/javascript'", '', $tag);
+//   $tag = str_replace(' type="text/javascript"', '', $tag);
+//   return $tag;
+// }
+// endif;
+
 
 /*async defer*/
 //add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );

@@ -30,15 +30,19 @@ function code_minify_call_back($buffer) {
   $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
   $buffer = str_replace('aria-required="true" required="required">', 'aria-required="true">', $buffer);
 
-  //Wordpressが出力する type='text/javascript'を削除
-  $buffer = str_replace("<script type='text/javascript'", '<script', $buffer);
-  $buffer = str_replace('<script type="text/javascript"', '<script', $buffer);
+  // //Wordpressが出力する type='text/javascript'を削除
+  // $buffer = str_replace(" type='text/javascript'", '', $buffer);
+  // $buffer = str_replace(' type="text/javascript"', '', $buffer);
+  // // $buffer = str_replace("<script type='text/javascript'", '<script', $buffer);
+  // // $buffer = str_replace('<script type="text/javascript"', '<script', $buffer);
 
-  //Wordpressが出力する type='text/css'を削除
-  $buffer = str_replace("<style type='text/css'", '<style', $buffer);
-  $buffer = str_replace('<style type="text/css"', '<style', $buffer);
-  $buffer = str_replace(" type='text/css'>", '>', $buffer);
-  $buffer = str_replace(' type="text/css">', '>', $buffer);
+  // //Wordpressが出力する type='text/css'を削除
+  // $buffer = str_replace(" type='text/css'", '', $buffer);
+  // $buffer = str_replace(' type="text/css"', '', $buffer);
+  // // $buffer = str_replace("<style type='text/css'", '<style', $buffer);
+  // // $buffer = str_replace('<style type="text/css"', '<style', $buffer);
+  // // $buffer = str_replace(" type='text/css'>", '>', $buffer);
+  // // $buffer = str_replace(' type="text/css">', '>', $buffer);
 
   ///////////////////////////////////////
   // HTML5エラー除外
@@ -209,6 +213,12 @@ function wp_head_minify($buffer) {
   if (is_js_minify_enable()) {
     $buffer = tag_code_to_minify_js($buffer);
   }
+  //Wordpressが出力する type='text/javascript'を削除
+  $buffer = str_replace(" type='text/javascript'", '', $buffer);
+  $buffer = str_replace(' type="text/javascript"', '', $buffer);
+  //Wordpressが出力する type='text/css'を削除
+  $buffer = str_replace(" type='text/css'", '', $buffer);
+  $buffer = str_replace(' type="text/css"', '', $buffer);
 
   //_v($buffer);
   return $buffer;
@@ -227,6 +237,10 @@ function wp_footer_minify($buffer) {
   if (is_js_minify_enable()) {
     $buffer = tag_code_to_minify_js($buffer);
   }
+
+  //Wordpressが出力する type='text/javascript'を削除
+  $buffer = str_replace(" type='text/javascript'", '', $buffer);
+  $buffer = str_replace(' type="text/javascript"', '', $buffer);
 
   //_v($buffer);
   return $buffer;
