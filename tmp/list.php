@@ -28,7 +28,7 @@ if ( is_active_sidebar( 'index-top' ) ){
 ////////////////////////////
 //カテゴリページのコンテンツ
 ////////////////////////////
-if ( is_category() ){
+if ( is_category() && !is_paged() ){
   get_template_part('tmp/category-content');
 }; ?>
 
