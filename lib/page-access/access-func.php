@@ -336,8 +336,10 @@ function wrap_joined_wp_posts_query($query){
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
-    #WHERE post_status = 'publish'
+    WHERE post_status = 'publish'
   ";
+  //_v($query);
+  //var_dump($query);
   return $query;
 }
 endif;
@@ -428,7 +430,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
     $query = wrap_joined_wp_posts_query($query);
   }
 
-
+  //_v($query);
   $records = $wpdb->get_results( $query );
   //_v($query);
   if (is_access_count_cache_enable() && $records) {
