@@ -106,7 +106,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'Twitter ID（＠は不要です）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('twitter_id'); ?>" name="<?php echo $this->get_field_name('twitter_id'); ?>" type="text" value="<?php echo $twitter_id; ?>" placeholder="<?php _e( 'XXXXXXX', THEME_NAME ) ?>" /><br>
-      <?php _e( '同上設定。※「0」を入力で非表示。', THEME_NAME ) ?>
+      <?php _e( '同上。※「0」を入力で非表示。', THEME_NAME ) ?>
     </p>
     <?php //LINE ID ?>
     <p>
@@ -114,7 +114,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'LINE ID（＠は不要です）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('line_id'); ?>" name="<?php echo $this->get_field_name('line_id'); ?>" type="text" value="<?php echo $line_id; ?>" placeholder="<?php _e( 'XXXXXXX', THEME_NAME ) ?>" /><br>
-      <?php _e( '同上設定。※「0」を入力で非表示。', THEME_NAME ) ?>
+      <?php _e( '同上。※「0」を入力で非表示。', THEME_NAME ) ?>
     </p>
     <?php
   }
