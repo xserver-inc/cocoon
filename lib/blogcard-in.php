@@ -78,29 +78,27 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  if ( is_singular() || is_category() ) {//投稿ページもしくは固定ページのとき
-    //1行にURLのみが期待されている行（URL）を全て$mに取得
+  //1行にURLのみが期待されている行（URL）を全て$mに取得
+  $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
+  foreach ($m[0] as $match) {
 
-    $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
-    foreach ($m[0] as $match) {
-
-      //マッチしたpタグが適正でないときはブログカード化しない
-      if ( !is_p_tag_appropriate($match) ) {
-        continue;
-      }
-
-      $url = strip_tags($match);//URL
-
-      $tag = url_to_internal_blogcard_tag($url);
-
-      if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
-
-      //本文中のURLをブログカードタグで置換
-      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
-      wp_reset_postdata();
-
+    //マッチしたpタグが適正でないときはブログカード化しない
+    if ( !is_p_tag_appropriate($match) ) {
+      continue;
     }
+
+    $url = strip_tags($match);//URL
+
+    $tag = url_to_internal_blogcard_tag($url);
+
+    if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
+
+    //本文中のURLをブログカードタグで置換
+    $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+    wp_reset_postdata();
+
   }
+
   return $the_content;//置換後のコンテンツを返す
 }
 endif;
@@ -116,27 +114,24 @@ if ( is_internal_blogcard_enable() ) {
 //本文中のURLショートコードをブログカードタグに変更する
 if ( !function_exists( 'url_shortcode_to_internal_blogcard' ) ):
 function url_shortcode_to_internal_blogcard($the_content) {
-  if ( is_singular() || is_category() ) {//投稿ページもしくは固定ページのとき
+  //1行にURLのみが期待されている行（URL）を全て$mに取得
+  $res = preg_match_all('/(<p>)?(<br ? \/?>)?\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\](<br ? \/?>)?(<\/p>)?/im', $the_content, $m);
+  foreach ($m[0] as $match) {
+  //マッチしたURL一つ一つをループしてカードを作成
+    $url = strip_tags($match);//URL
+    $url = preg_replace('/[\[\]]/', '', $url);//[と]の除去
+    $url = str_replace('?', '%3F', $url);//?をエンコード
 
-    //1行にURLのみが期待されている行（URL）を全て$mに取得
-    $res = preg_match_all('/(<p>)?(<br ? \/?>)?\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\](<br ? \/?>)?(<\/p>)?/im', $the_content, $m);
-    foreach ($m[0] as $match) {
-    //マッチしたURL一つ一つをループしてカードを作成
-      $url = strip_tags($match);//URL
-      $url = preg_replace('/[\[\]]/', '', $url);//[と]の除去
-      $url = str_replace('?', '%3F', $url);//?をエンコード
+    //取得した内部URLからブログカードのHTMLタグを作成
+    $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
+    //URLをブログカードに変換
+    if ( !$tag ) {//取得したURLが外部URLだった場合
+      $tag = url_to_external_blog_card($url);//外部ブログカードタグに変換
+    }
 
-      //取得した内部URLからブログカードのHTMLタグを作成
-      $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
-      //URLをブログカードに変換
-      if ( !$tag ) {//取得したURLが外部URLだった場合
-        $tag = url_to_external_blog_card($url);//外部ブログカードタグに変換
-      }
-
-      if ( $tag ) {//内部・外部ブログカードどちらかでタグを作成できた場合
-        //本文中のURLをブログカードタグで置換
-        $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
-      }
+    if ( $tag ) {//内部・外部ブログカードどちらかでタグを作成できた場合
+      //本文中のURLをブログカードタグで置換
+      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
     }
   }
 

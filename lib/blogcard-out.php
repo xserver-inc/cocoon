@@ -23,29 +23,28 @@ endif;
 //本文中の外部URLをはてなブログカードタグに変更する
 if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
-  if ( is_singular() || is_category()  ) {//投稿ページもしくは固定ページのとき
-    //1行にURLのみが期待されている行（URL）を全て$mに取得
-    $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
-    //マッチしたURL一つ一つをループしてカードを作成
-    foreach ($m[0] as $match) {
+  //1行にURLのみが期待されている行（URL）を全て$mに取得
+  $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
+  //マッチしたURL一つ一つをループしてカードを作成
+  foreach ($m[0] as $match) {
 
-      //マッチしたpタグが適正でないときはブログカード化しない
-      if ( !is_p_tag_appropriate($match) ) {
-        continue;
-      }
-
-      $url = strip_tags($match);//URL
-      //var_dump(htmlentities($match));
-
-      $tag = url_to_external_blog_card_tag($url);
-      //$tag = $tag.htmlspecialchars($tag);
-
-      if ( !$tag ) continue;
-
-      //本文中のURLをブログカードタグで置換
-      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+    //マッチしたpタグが適正でないときはブログカード化しない
+    if ( !is_p_tag_appropriate($match) ) {
+      continue;
     }
+
+    $url = strip_tags($match);//URL
+    //var_dump(htmlentities($match));
+
+    $tag = url_to_external_blog_card_tag($url);
+    //$tag = $tag.htmlspecialchars($tag);
+
+    if ( !$tag ) continue;
+
+    //本文中のURLをブログカードタグで置換
+    $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
   }
+
   return $the_content;//置換後のコンテンツを返す
 }
 endif;
