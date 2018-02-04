@@ -23,7 +23,7 @@ endif;
 //本文中の外部URLをはてなブログカードタグに変更する
 if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
-  if ( is_singular() ) {//投稿ページもしくは固定ページのとき
+  if ( is_singular() || is_category()  ) {//投稿ページもしくは固定ページのとき
     //1行にURLのみが期待されている行（URL）を全て$mに取得
     $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
     //マッチしたURL一つ一つをループしてカードを作成
@@ -55,6 +55,7 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
   add_filter('widget_text_pc_text', 'url_to_external_blog_card', 11);
   add_filter('widget_classic_text', 'url_to_external_blog_card', 11);
   add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 11);
+  add_filter('the_category_content', 'url_to_external_blog_card', 11);
 }
 
 

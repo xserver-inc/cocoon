@@ -78,7 +78,7 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  if ( is_singular() ) {//投稿ページもしくは固定ページのとき
+  if ( is_singular() || is_category() ) {//投稿ページもしくは固定ページのとき
     //1行にURLのみが期待されている行（URL）を全て$mに取得
 
     $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
@@ -110,12 +110,13 @@ if ( is_internal_blogcard_enable() ) {
   add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
+  add_filter('the_category_content', 'url_to_internal_blogcard', 11);
 }
 
 //本文中のURLショートコードをブログカードタグに変更する
 if ( !function_exists( 'url_shortcode_to_internal_blogcard' ) ):
 function url_shortcode_to_internal_blogcard($the_content) {
-  if ( is_singular() ) {//投稿ページもしくは固定ページのとき
+  if ( is_singular() || is_category() ) {//投稿ページもしくは固定ページのとき
 
     //1行にURLのみが期待されている行（URL）を全て$mに取得
     $res = preg_match_all('/(<p>)?(<br ? \/?>)?\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\](<br ? \/?>)?(<\/p>)?/im', $the_content, $m);
@@ -148,6 +149,7 @@ add_filter('widget_text_pc_text', 'url_shortcode_to_internal_blogcard', 9999);
 add_filter('widget_classic_text', 'url_shortcode_to_internal_blogcard', 9999);
 add_filter('widget_text_mobile_text', 'url_shortcode_to_internal_blogcard', 9999);
 add_filter('comment_text', 'url_shortcode_to_internal_blogcard', 9999);
+add_filter('the_category_content', 'url_shortcode_to_internal_blogcard', 9999);
 
 
 //ブログカード置換用テキストにpタグが含まれているかどうか

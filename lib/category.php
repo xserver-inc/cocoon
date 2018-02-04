@@ -60,7 +60,10 @@ function get_category_content($cat_id = null){
     $content = $meta['content'];
   else
     $content = category_description();
-  return wpautop($content);
+
+  $content = wpautop($content);
+  $content = apply_filters( 'the_category_content', $content );
+  return $content;
 }
 endif;
 

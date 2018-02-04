@@ -103,6 +103,8 @@ add_filter('widget_pc_double_ad2_text', 'do_shortcode');
 add_filter('ranking_item_image_tag', 'do_shortcode');
 add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
+//カテゴリ
+add_filter('the_category_content', 'do_shortcode');
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');

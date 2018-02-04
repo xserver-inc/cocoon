@@ -30,7 +30,7 @@ if ( !function_exists( 'add_default_function_text_records' ) ):
 function add_default_function_text_records(){
   $posts = array();
   $posts['title'] = __( 'Wordpressカスタマイズ注意文サンプル', THEME_NAME );
-  $posts['text'] = '<p class="alert">'.__( 'Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください。 ', THEME_NAME ).'</p>';
+  $posts['text'] = '<p class="alert-box">'.__( 'Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください。 ', THEME_NAME ).'</p>';
   $posts['visible'] = 1;
   insert_function_text_record($posts);
 }
