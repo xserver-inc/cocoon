@@ -137,7 +137,7 @@ function customize_admin_add_column($column_name, $post_id) {
 endif;
 
 //管理ツールバーにメニュー追加
-if (is_admin_tool_menu_visible()) {
+if (is_admin_tool_menu_visible() && is_user_administrator()) {
   add_action('admin_bar_menu', 'customize_admin_bar_menu', 9999);
 }
 if ( !function_exists( 'customize_admin_bar_menu' ) ):

@@ -199,3 +199,9 @@ if (is_user_agent_live_writer()) {
   remove_action('do_feed_rss2', 'do_feed_rss2');
   remove_action('do_feed_atom', 'do_feed_atom');
 }
+
+//show_admin_bar( false );
+//ログインユーザー以外はBuddyPressの管理バーを除去する
+if (!is_user_logged_in()) {
+  remove_action('init', 'bp_core_load_admin_bar', 9);
+}
