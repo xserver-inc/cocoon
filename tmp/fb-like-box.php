@@ -1,6 +1,6 @@
 <?php //Facebookボックス ?>
 <?php if (is_singular() && ($_FACEBOOK_URL || $_TWITTER_ID || $_TWITTER_ID)): ?>
-  <?php $thumb = get_the_post_thumbnail(get_the_ID(), array(640, 360), array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '') ) ?>
+  <?php $thumb = get_the_post_thumbnail(get_the_ID(), array(320, 180), array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '') ) ?>
   <div class="fb-like-box cf">
     <?php //アイキャッチがある場合
     if ($thumb): ?>

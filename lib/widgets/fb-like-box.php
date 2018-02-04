@@ -19,7 +19,13 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     $sub_message = !empty( $instance['sub_message'] ) ? $instance['sub_message'] : __( '最新情報をお届けします。', THEME_NAME );
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
     $twitter_id = !empty( $instance['twitter_id'] ) ? $instance['twitter_id'] : get_the_author_twitter_id();
+    if (isset($instance['twitter_id']) && $instance['twitter_id'] == 0) {
+      $twitter_id = null;
+    }
     $line_id = !empty( $instance['line_id'] ) ? $instance['line_id'] : get_the_author_line_id();
+    if (isset($instance['line_id']) && $instance['line_id'] == 0) {
+      $line_id = null;
+    }
 
     echo $args['before_widget'];
     if ($title) {
@@ -40,8 +46,8 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     $instance['message'] = !empty( $new_instance['message'] ) ? $new_instance['message'] : '';
     $instance['sub_message'] = !empty( $new_instance['sub_message'] ) ? $new_instance['sub_message'] : '';
     $instance['facebook_url'] = strip_tags(!empty($new_instance['facebook_url']) ? $new_instance['facebook_url'] : '');
-    $instance['twitter_id'] = strip_tags(!empty($new_instance['twitter_id']) ? $new_instance['twitter_id'] : '');
-    $instance['line_id'] = strip_tags(!empty($new_instance['line_id']) ? $new_instance['line_id'] : '');
+    $instance['twitter_id'] = strip_tags(!empty($new_instance['twitter_id']) ? $new_instance['twitter_id'] : 0);
+    $instance['line_id'] = strip_tags(!empty($new_instance['line_id']) ? $new_instance['line_id'] : 0);
       return $instance;
   }
   function form($instance) {
@@ -51,16 +57,16 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         'message' => null,
         'sub_message' => null,
         'facebook_url' => null,
-        'twitter_id' => null,
-        'line_id' => null,
+        'twitter_id' => 0,
+        'line_id' => 0,
       );
     }
     $title = esc_attr(!empty($instance['title']) ? $instance['title'] : null);
     $message = esc_attr(!empty($instance['message']) ? $instance['message'] : null);
     $sub_message = esc_attr(!empty($instance['sub_message']) ? $instance['sub_message'] : null);
     $facebook_url = esc_attr(!empty($instance['facebook_url']) ? $instance['facebook_url'] : null);
-    $twitter_id = esc_attr(!empty($instance['twitter_id']) ? $instance['twitter_id'] : null);
-    $line_id = esc_attr(!empty($instance['line_id']) ? $instance['line_id'] : null);
+    $twitter_id = esc_attr(!empty($instance['twitter_id']) ? $instance['twitter_id'] : 0);
+    $line_id = esc_attr(!empty($instance['line_id']) ? $instance['line_id'] : 0);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -92,7 +98,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'FacebookページURL', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('facebook_url'); ?>" name="<?php echo $this->get_field_name('facebook_url'); ?>" type="text" value="<?php echo $facebook_url; ?>" placeholder="<?php _e( 'https://www.facebook.com/XXXXXXX', THEME_NAME ) ?>" /><br>
-      <?php _e( '※未入力だとプロフィールページで設定されているものを利用。', THEME_NAME ) ?>
+      <?php _e( '未入力だとプロフィールページで設定されているものを利用。', THEME_NAME ) ?>
     </p>
     <?php //Twitter ID ?>
     <p>
@@ -100,7 +106,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'Twitter ID（＠は不要です）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('twitter_id'); ?>" name="<?php echo $this->get_field_name('twitter_id'); ?>" type="text" value="<?php echo $twitter_id; ?>" placeholder="<?php _e( 'XXXXXXX', THEME_NAME ) ?>" /><br>
-      <?php _e( '※未入力だとプロフィールページで設定されているものを利用。', THEME_NAME ) ?>
+      <?php _e( '同上設定。※「0」を入力で非表示。', THEME_NAME ) ?>
     </p>
     <?php //LINE ID ?>
     <p>
@@ -108,7 +114,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         <?php _e( 'LINE ID（＠は不要です）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('line_id'); ?>" name="<?php echo $this->get_field_name('line_id'); ?>" type="text" value="<?php echo $line_id; ?>" placeholder="<?php _e( 'XXXXXXX', THEME_NAME ) ?>" /><br>
-      <?php _e( '※未入力だとプロフィールページで設定されているものを利用。', THEME_NAME ) ?>
+      <?php _e( '同上設定。※「0」を入力で非表示。', THEME_NAME ) ?>
     </p>
     <?php
   }
