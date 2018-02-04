@@ -3271,6 +3271,9 @@ label.screen-reader-text {
   width: 100%;
   height: 100%;
 }
+.fb-like-box .fb_reset {
+  display: none;
+}
 
 .fb-like-thumb {
   max-width: 56%;
