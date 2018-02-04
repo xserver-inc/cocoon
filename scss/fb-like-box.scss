@@ -27,12 +27,12 @@
 
 .fb-like-content{
 //  width: 44%;
-  display: block;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // align-content: space-around;
+  //display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
   text-align: center;
 
   >div{

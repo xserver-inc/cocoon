@@ -3280,7 +3280,11 @@ label.screen-reader-text {
 }
 
 .fb-like-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
   text-align: center;
 }
 .fb-like-content > div {
