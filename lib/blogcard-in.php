@@ -18,13 +18,16 @@ function url_to_internal_blogcard_tag($url){
 
   //メタディスクリプションの取得
   $snipet = get_the_page_meta_description($id);
+  // _v($id);
+  // _v($snipet);
+  //$snipet = get_the_snipet( get_the_content(), get_entry_card_excerpt_max_length() );
   //投稿管理画面の抜粋を取得
   if (!$snipet) {
     $snipet = $post_data->post_excerpt;
   }
   //記事本文の抜粋文を取得
   if (!$snipet) {
-    $snipet = get_content_excerpt($post_data->post_content, 150);
+    $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
   }
 
   //ブログカードのサムネイルを右側に
