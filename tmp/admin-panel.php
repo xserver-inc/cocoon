@@ -112,6 +112,9 @@ if (is_user_administrator()
       <?php if (is_admin_html5_outliner_visible()): ?>
         <a href="https://gsnedders.html5.org/outliner/process.py?url=<?php echo $encoded_url; ?> " target="_blank" class="outliner"><?php _e( 'アウトライン', THEME_NAME ) ?></a>
       <?php endif ?>
+      <?php if (is_admin_seocheki_visible()): ?>
+        <a href="http://seocheki.net/site-check.php?u=<?php echo $encoded_url; ?> " target="_blank" class="seocheki"><?php _e( 'SEOチェキ', THEME_NAME ) ?></a>
+      <?php endif ?>
       <?php if (is_admin_tweet_check_visible()): ?>
         <a href="https://twitter.com/search?f=tweets&q=<?php echo $encoded_url; ?> " target="_blank" class="tweets"><?php _e( 'ツイート検索', THEME_NAME ) ?></a>
       <?php endif ?>

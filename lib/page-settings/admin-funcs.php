@@ -186,6 +186,14 @@ function is_admin_nu_html_checker_visible(){
 }
 endif;
 
+//SEOチェキリンクの表示
+define('OP_ADMIN_SEOCHEKI_VISIBLE', 'admin_seocheki_visible');
+if ( !function_exists( 'is_admin_seocheki_visible' ) ):
+function is_admin_seocheki_visible(){
+  return get_theme_option(OP_ADMIN_SEOCHEKI_VISIBLE, 1);
+}
+endif;
+
 //HTML5アウトラインチェックリンクの表示
 define('OP_ADMIN_HTML5_OUTLINER_VISIBLE', 'admin_html5_outliner_visible');
 if ( !function_exists( 'is_admin_html5_outliner_visible' ) ):

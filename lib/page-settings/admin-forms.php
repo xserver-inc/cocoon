@@ -189,6 +189,9 @@
               generate_checkbox_tag(OP_ADMIN_HTML5_OUTLINER_VISIBLE, is_admin_html5_outliner_visible(), __( 'HTML5アウトラインチェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://gsnedders.html5.org/outliner/" target="_blank">HTML 5 Outliner</a>リンクの表示。', THEME_NAME ));
 
+              generate_checkbox_tag(OP_ADMIN_SEOCHEKI_VISIBLE, is_admin_seocheki_visible(), __( 'SEOチェキを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="http://seocheki.net/" target="_blank">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。', THEME_NAME ));
+
               generate_checkbox_tag(OP_ADMIN_TWEET_CHECK_VISIBLE, is_admin_tweet_check_visible(), __( 'ツイートチェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '投稿・固定ページに対するツイートチェックリンクの表示。', THEME_NAME ));
                ?>
