@@ -174,6 +174,9 @@
               generate_checkbox_tag(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE, is_admin_pagespeed_insights_visible(), __( 'PageSpeed Insightsを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true" target="_blank">PageSpeed Insights</a>リンクの表示。', THEME_NAME ));
 
+              generate_checkbox_tag(OP_ADMIN_GTMETRIX_VISIBLE, is_admin_gtmetrix_visible(), __( 'GTmetrixを表示する', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://gtmetrix.com/" target="_blank">GTmetrix</a>リンクの表示。', THEME_NAME ));
+
               generate_checkbox_tag(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE, is_admin_mobile_friendly_test_visible(), __( 'モバイルフレンドリーテストを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://search.google.com/test/mobile-friendly" target="_blank">モバイルフレンドリーテスト</a>リンクの表示。', THEME_NAME ));
 

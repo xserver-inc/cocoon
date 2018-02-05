@@ -272,7 +272,7 @@ function do_access_counting() {
   // global $post;
   // _v($post);
   //_v(!is_admin());
-    // _v(is_singular());
+  //_v(is_singular());
   //アクセス数をカウントする
   if (!is_admin() && is_singular()) {
     //アクセス数のカウント
@@ -309,4 +309,9 @@ endif;
 //     // 最大出力件数を5件までに制限
 //     $args['limit'] = 5;
 //     return $args;
+// }
+
+// add_action( 'litespeed_init','litespeed_before_init_custom', 1 );
+// function litespeed_before_init_custom(){
+//   var_dump('litespeed_before_init');
 // }

@@ -154,6 +154,14 @@ function is_admin_pagespeed_insights_visible(){
 }
 endif;
 
+//GTmetrixリンクの表示
+define('OP_ADMIN_GTMETRIX_VISIBLE', 'admin_gtmetrix_visible');
+if ( !function_exists( 'is_admin_gtmetrix_visible' ) ):
+function is_admin_gtmetrix_visible(){
+  return get_theme_option(OP_ADMIN_GTMETRIX_VISIBLE, 1);
+}
+endif;
+
 //モバイルフレンドリーリンクの表示
 define('OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE', 'admin_mobile_friendly_test_visible');
 if ( !function_exists( 'is_admin_mobile_friendly_test_visible' ) ):

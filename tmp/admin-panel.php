@@ -97,6 +97,9 @@ if (is_user_administrator()
       <?php if (is_admin_pagespeed_insights_visible()): ?>
         <a href="https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true&hl=<?php _e( 'ja', THEME_NAME ) ?>&url=<?php echo $encoded_url; ?> " target="_blank" class="pagespeed"><?php _e( 'ページスピード', THEME_NAME ) ?></a>
       <?php endif ?>
+      <?php if (is_admin_gtmetrix_visible()): ?>
+        <a href="https://gtmetrix.com/?url=<?php echo $encoded_url; ?> " target="_blank" class="gtmetrix"><?php _e( 'GTmetrix', THEME_NAME ) ?></a>
+      <?php endif ?>
       <?php if (is_admin_mobile_friendly_test_visible()): ?>
         <a href="https://search.google.com/test/mobile-friendly?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'モバイルフレンドリー', THEME_NAME ) ?></a>
       <?php endif ?>

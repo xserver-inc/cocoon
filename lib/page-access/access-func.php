@@ -165,13 +165,14 @@ update_accesses_table();
 
 //DBにアクセスをカウントするし
 if ( !function_exists( 'count_this_page_access' ) ):
-function count_this_page_access(){
+function count_this_page_access($post_id = null, $page_type = 's'){
   //投稿・固定ページのみでカウントする
   if (is_singular() && is_access_count_enable()) {
     global $post;
     $post_id = $post->ID;
-    $date = current_time('Y-m-d');
     $page_type = get_accesses_page_type();
+
+    $date = current_time('Y-m-d');
     $last_ip = $_SERVER['REMOTE_ADDR'];
 
     $record = get_accesse_record_from($post_id, $date, $page_type);

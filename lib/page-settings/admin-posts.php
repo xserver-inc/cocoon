@@ -52,6 +52,9 @@ update_theme_option(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE);
 //PageSpeed Insightsリンクの表示
 update_theme_option(OP_ADMIN_PAGESPEED_INSIGHTS_VISIBLE);
 
+//GTmetrixsリンクの表示
+update_theme_option(OP_ADMIN_GTMETRIX_VISIBLE);
+
 //モバイルフレンドリーリンクの表示
 update_theme_option(OP_ADMIN_MOBILE_FRIENDLY_TEST_VISIBLE);
 
