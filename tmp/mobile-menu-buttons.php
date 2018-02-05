@@ -11,6 +11,7 @@
       <div id="navi-menu-content" class="navi-menu-content menu-content">
         <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
         <?php //ヘッダーナビ
+        ob_start();
         wp_nav_menu(
           array (
             //カスタムメニュー名
@@ -22,7 +23,13 @@
             //カスタムメニューを設定しない際に固定ページでメニューを作成しない
             'fallback_cb' => false,
           )
-        ); ?>
+        );
+        $wp_nav_menu = ob_get_clean();
+        //ドロワーメニュー用のグローバルナビからIDを削除（IDの重複HTML5エラー対応）
+        $wp_nav_menu = preg_replace('/ id="[^"]+?"/i', '', $wp_nav_menu);
+        //_v($wp_nav_menu);
+        echo $wp_nav_menu;
+         ?>
         <!-- <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label> -->
       </div>
     </div>
