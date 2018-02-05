@@ -2946,7 +2946,7 @@ label.screen-reader-text {
   width: 80px;
 }
 
-.speech-icon-image {
+.speech-icon img {
   border-radius: 50%;
   border: 2px solid #cccfd2;
 }
