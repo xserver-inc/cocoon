@@ -86,7 +86,7 @@ function add_toc_before_1st_h2($the_content){
       }
       $counters[$current_depth - 1] ++;
       $counter++;
-      $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . $headers[2][$i] . '</a>';
+      $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
       $prev_depth = $depth;
     }
   }
