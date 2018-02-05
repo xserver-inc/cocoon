@@ -142,19 +142,13 @@ function seo_custom_box_save_data(){
     update_post_meta($id, $the_page_meta_keywords_key, $the_page_meta_keywords);
   }
   //noindex
-  $the_page_noindex = null;
-  if ( isset( $_POST['the_page_noindex'] ) ){
-    $the_page_noindex = $_POST['the_page_noindex'];
-  }
+  $the_page_noindex = !empty($_POST['the_page_noindex']) ? 1 : 0;
   $the_page_noindex_key = 'the_page_noindex';
   add_post_meta($id, $the_page_noindex_key, $the_page_noindex, true);
   update_post_meta($id, $the_page_noindex_key, $the_page_noindex);
 
   //nofollow
-  $the_page_nofollow = null;
-  if ( isset( $_POST['the_page_nofollow'] ) ){
-    $the_page_nofollow = $_POST['the_page_nofollow'];
-  }
+  $the_page_nofollow = !empty($_POST['the_page_nofollow']) ? 1 : 0;
   $the_page_nofollow_key = 'the_page_nofollow';
   add_post_meta($id, $the_page_nofollow_key, $the_page_nofollow, true);
   update_post_meta($id, $the_page_nofollow_key, $the_page_nofollow);

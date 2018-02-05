@@ -43,10 +43,7 @@ if ( !function_exists( 'ad_custom_box_save_data' ) ):
 function ad_custom_box_save_data(){
   $id = get_the_ID();
   //広告の除外
-  $the_page_ads_novisible = null;
-  if ( isset( $_POST['the_page_ads_novisible'] ) ){
-    $the_page_ads_novisible = $_POST['the_page_ads_novisible'];
-  }
+  $the_page_ads_novisible = !empty($_POST['the_page_ads_novisible']) ? 1 : 0;
   $the_page_ads_novisible_key = 'the_page_ads_novisible';
   add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
   update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);

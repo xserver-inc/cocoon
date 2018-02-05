@@ -34,10 +34,7 @@ if ( !function_exists( 'amp_custom_box_save_data' ) ):
 function amp_custom_box_save_data(){
   $id = get_the_ID();
   //AMPの除外
-  $the_page_no_amp = null;
-  if ( isset( $_POST['the_page_no_amp'] ) ){
-    $the_page_no_amp = $_POST['the_page_no_amp'];
-  }
+  $the_page_no_amp = !empty($_POST['the_page_no_amp']) ? 1 : 0;
   $the_page_no_amp_key = 'the_page_no_amp';
   add_post_meta($id, $the_page_no_amp_key, $the_page_no_amp, true);
   update_post_meta($id, $the_page_no_amp_key, $the_page_no_amp);
