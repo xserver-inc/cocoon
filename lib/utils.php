@@ -307,12 +307,12 @@ endif;
 //baguetteboxの読み込み
 if ( !function_exists( 'wp_enqueue_baguettebox' ) ):
 function wp_enqueue_baguettebox(){
- if ( ((is_baguettebox_effect_enable() && is_singular()) || is_admin_php_page()) ) {
+ if ( ((is_baguettebox_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
     //baguetteboxスタイルの呼び出し
     wp_enqueue_style( 'baguettebox-style', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.css' );
     //baguetteboxスクリプトの呼び出し
     wp_enqueue_script( 'baguettebox-js', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.js', array( 'jquery' ), false, true  );
-    if (is_singular()) {
+    if (is_singular() || is_category()) {
       $selector = '.entry-content';
     } else {
       $selector = '.entry-demo';
