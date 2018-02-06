@@ -1,7 +1,7 @@
 <?php //アクセス数
 
 //関数テキストテーブルのバージョン
-define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');//rand(0, 99)
+define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
 // define('INDEX_ACCESSES_PID', 'index_pid');
@@ -43,14 +43,12 @@ function get_accesses_table_version(){
 endif;
 
 //ページタイプの取得
-if ( !function_exists( 'get_accesses_page_type' ) ):
-function get_accesses_page_type(){
-  if (is_single()) {
-    $res = 's'; //single
-  } elseif (is_page()) {
-    $res = 'p'; //page
+if ( !function_exists( 'get_accesses_post_type' ) ):
+function get_accesses_post_type(){
+  if (is_page()) {
+    $res = 'page'; //page
   } else {
-    $res = 'n'; //none
+    $res = 'post'; //single
   }
   return $res;
 }
@@ -70,7 +68,7 @@ function insert_accesses_record($posts){
   $data = array(
     'post_id' => $posts['post_id'],
     'date' => $posts['date'],
-    'page_type' => $posts['page_type'],
+    'post_type' => $posts['post_type'],
     'count' => $posts['count'],
     'last_ip' => $posts['last_ip'],
   );
@@ -122,13 +120,14 @@ function create_accesses_table() {
   $sql = "CREATE TABLE ".ACCESSES_TABLE_NAME." (
       id bigint(20) NOT NULL AUTO_INCREMENT,
       post_id bigint(20),
-      page_type varchar(2) DEFAULT 's',
+      post_type varchar(10) DEFAULT 'post',
       date varchar(20),
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
-      INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,page_type,date)
+      INDEX ".INDEX_ACCESSES_PID_PTYPE_DATE." (post_id,post_type,date)
     )";
+  //_v($sql);
   $res = create_db_table($sql);
   //_v($res);
 
@@ -152,6 +151,7 @@ function update_accesses_table() {
 
   // オプションに登録されたデータベースのバージョンを取得
   $installed_ver = get_accesses_table_version();
+  //_v($installed_ver);
   $now_ver = ACCESSES_TABLE_VERSION;
   if (is_update_db_table($installed_ver, $now_ver)) {
     create_accesses_table();
@@ -159,32 +159,32 @@ function update_accesses_table() {
 
 }
 endif;
-update_accesses_table();
+//update_accesses_table();
 //_v( date('Y-m-d', strtotime(date('Y-m-d').' -99 day')) );
 //_v(date('Y-m-d'));
 
-//DBにアクセスをカウントするし
+//DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
-function logging_page_access($id = null, $type = 's'){
+function logging_page_access($post_id = null, $post_type = 'post'){
   $res = false;
   //投稿・固定ページのみでカウントする
   if (is_access_count_enable()
       //サイト管理者でないとき
       && (!is_user_administrator() || DEBUG_MODE)
     ) {
-    // _v($id);
-    // _v($type);
-    if (!$id || !$type ) {
+    // _v($post_id);
+    // _v($post_type);
+    if (!$post_id || !$post_type ) {
       global $post;
-      $id = $post->ID;
-      $type = get_accesses_page_type();
+      $post_id = $post->ID;
+      $post_type = get_accesses_post_type();
     }
     //IDとページタイプが取得できたとき
-    if ($id && $type) {
+    if ($post_id && $post_type) {
       $date = current_time('Y-m-d');
       $last_ip = $_SERVER['REMOTE_ADDR'];
 
-      $record = get_accesse_record_from($id, $date, $type);
+      $record = get_accesse_record_from($post_id, $date, $post_type);
 
       $posts = array();
 
@@ -192,15 +192,15 @@ function logging_page_access($id = null, $type = 's'){
       if ($record) {
         //アクセスカウントの連続カウント防止
         if (($record->last_ip != $last_ip) || DEBUG_MODE) {
-          $id = $record->id;
+          $post_id = $record->id;
           $posts['last_ip'] = $last_ip;
           $posts['count'] = intval($record->count) + 1;
-          $res = update_accesses_record($id, $posts);
+          $res = update_accesses_record($post_id, $posts);
         }
       } else {
-        $posts['post_id'] = $id;
+        $posts['post_id'] = $post_id;
         $posts['date'] = $date;
-        $posts['page_type'] = $type;
+        $posts['post_type'] = $post_type;
         $posts['last_ip'] = $last_ip;
         $posts['count'] = 1;
         $res = insert_accesses_record($posts);
@@ -215,14 +215,14 @@ endif;
 
 //投稿IDと日付からレコードを取得
 if ( !function_exists( 'get_accesse_record' ) ):
-function get_accesse_record_from($post_id, $date, $page_type = 's'){
+function get_accesse_record_from($post_id, $date, $post_type = 'post'){
   global $wpdb;
   $add_where = '';
   $table_name = ACCESSES_TABLE_NAME;
   $index = INDEX_ACCESSES_PID_PTYPE_DATE;
-  $args = array($post_id, $date, $page_type);
+  $args = array($post_id, $date, $post_type);
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND page_type = '$page_type'", $args);
+  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND post_type = '$post_type'", $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);
@@ -258,9 +258,9 @@ function get_todays_access_count($post_id = null){
       $post_id = $post->ID;
     }
     // $date = current_time('Y-m-d');
-    // $page_type = get_accesses_page_type();
+    // $post_type = get_accesses_post_type();
 
-    // $record = get_accesse_record_from($post_id, $date, $page_type);
+    // $record = get_accesse_record_from($post_id, $date, $post_type);
     // $res = $record->count;
 
     $res = get_several_access_count($post_id, 1);
@@ -285,25 +285,25 @@ function get_several_access_count($post_id = null, $days = 'all'){
     $date = get_current_db_date();
     $date_before = get_current_db_date_before($days);
     $table_name = ACCESSES_TABLE_NAME;
-    $page_type = get_accesses_page_type();
+    $post_type = get_accesses_post_type();
 
     $add_where = '';
     switch ($days) {
       case 'all':
-        $args = array($post_id, $page_type);
+        $args = array($post_id, $post_type);
         break;
       case 1:
         $add_where = " AND date = %s";
-        $args = array($post_id, $page_type, $date);
+        $args = array($post_id, $post_type, $date);
         break;
       default:
         $add_where = " AND date BETWEEN %s AND %s";
-        $args = array($post_id, $page_type, $date_before, $date);
+        $args = array($post_id, $post_type, $date_before, $date);
         break;
     }
     //_v($days);
 
-    $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} WHERE post_id = %d AND page_type = %s".$add_where, $args);
+    $query = $wpdb->prepare("SELECT SUM(count) FROM {$table_name} WHERE post_id = %d AND post_type = %s".$add_where, $args);
 
     $res = $wpdb->get_var( $query );
     //_v($query );
@@ -355,7 +355,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $categories = array()){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array()){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
@@ -364,15 +364,16 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cats = implode(',', $categories);
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&cats='.$cats;
+    $type = get_accesses_post_type();
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
-      // if (DEBUG_MODE) {
-      //   echo('<pre>');
-      //   echo $transient_id;
-      //   echo('</pre>');
-      // }
+      if (DEBUG_MODE) {
+        echo('<pre>');
+        echo $transient_id;
+        echo('</pre>');
+      }
 
       return $cache;
     }
@@ -382,14 +383,14 @@ function get_access_ranking_records($days = 'all', $limit = 5, $categories = arr
 
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
-  $page_type = get_accesses_page_type();
+  $post_type = get_accesses_post_type();
   if (!is_page()) {
-    $page_type = 's';
+    $post_type = 'post';
   }
   $date = get_current_db_date();
 
 
-  $where = " WHERE {$access_table}.page_type = '$page_type'";
+  $where = " WHERE {$access_table}.post_type = '$post_type'";
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
     $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ";

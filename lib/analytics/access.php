@@ -1,8 +1,8 @@
 <?php //アクセスをカウントする
 require_once('../../../../../wp-load.php');
 //_v($_GET);
-$id = !empty($_GET['id']) ? $_GET['id'] : null;
-$type = !empty($_GET['type']) ? $_GET['type'] : null;
-if ($id && $type) {
-  logging_page_access($id, $type);
+$post_id = !empty($_GET['post_id']) ? $_GET['post_id'] : null;
+$post_type = !empty($_GET['post_type']) ? $_GET['post_type'] : null;
+if ($post_id && $post_type) {
+  logging_page_access($post_id, $post_type);
 }
