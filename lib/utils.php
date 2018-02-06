@@ -1199,3 +1199,32 @@ function is_user_agent_live_writer(){
   return false;
 }
 endif;
+
+//タブレットをモバイルとしないモバイル判定関数
+if ( !function_exists( 'is_useragent_robot' ) ):
+//スマホ表示分岐
+function is_useragent_robot(){
+  $useragents = array(
+    'Googlebot', //http://www.google.com/bot.html
+    'YPBot', //http://www.yellowpages.com/about/legal/crawl
+    'Yahoo! Slurp', //http://help.yahoo.com/help/us/ysearch/slurp
+    'bingbot', //http://www.bing.com/bingbot.htm
+    'Yeti', //http://help.naver.com/robots/
+    'Baiduspider', //http://www.baidu.com/search/spider.html
+    'Feedfetcher-Google', //http://www.google.com/feedfetcher.html
+    'livedoor FeedFetcher', //http://reader.livedoor.com/
+    'ia_archiver', //http://www.alexa.com/site/help/webmasters
+    'YandexBot', //http://yandex.com/bots
+    'SISTRIX Crawler', //http://crawler.sistrix.net/
+    'msnbot', //http://search.msn.com/msnbot.htm
+    'zenback bot', //http://www.logly.co.jp/
+    'Y!J-BRI', //http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html
+    'TurnitinBot', //http://www.turnitin.com/robot/crawlerinfo.html
+    'Google Desktop', //http://desktop.google.com/
+    'newzia crawler', //http://www.logly.co.jp/
+    'BaiduMobaider', //http://www.baidu.jp/spider/
+  );
+  $pattern = '/'.implode('|', $useragents).'/i';
+  return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
+endif;

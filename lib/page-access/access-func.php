@@ -171,6 +171,8 @@ function logging_page_access($post_id = null, $post_type = 'post'){
   if (is_access_count_enable()
       //サイト管理者でないとき
       && (!is_user_administrator() || DEBUG_MODE)
+      //ボットでないとき
+      && !is_useragent_robot()
     ) {
     // _v($post_id);
     // _v($post_type);
@@ -373,9 +375,10 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         echo('<pre>');
         echo $transient_id;
         echo('</pre>');
+      } else {
+        return $cache;
       }
 
-      return $cache;
     }
   }
 

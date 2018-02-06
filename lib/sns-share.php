@@ -317,6 +317,7 @@ endif;
 //Pocketストック数の取得
 if ( !function_exists( 'fetch_pocket_count_raw' ) ):
 function fetch_pocket_count_raw($url){
+  $res = 0;
   $url = urlencode($url);
   $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
   //URL（クエリ）先の情報を取得
@@ -324,8 +325,12 @@ function fetch_pocket_count_raw($url){
   $result = wp_remote_get($query, $args);
   //var_dump($result["body"]);
   // 正規表現でカウント数のところだけを抽出
-  preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-  $res = isset($count[1]) ? intval($count[1]) : 0;
+  $body = isset($result["body"]) ? $result["body"] : null;
+  if ($body) {
+    preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
+    $res = isset($count[1]) ? intval($count[1]) : 0;
+  }
+
   return $res;
 }
 endif;
