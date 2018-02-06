@@ -1205,26 +1205,59 @@ if ( !function_exists( 'is_useragent_robot' ) ):
 //スマホ表示分岐
 function is_useragent_robot(){
   $useragents = array(
-    'Googlebot', //http://www.google.com/bot.html
-    'YPBot', //http://www.yellowpages.com/about/legal/crawl
-    'Yahoo! Slurp', //http://help.yahoo.com/help/us/ysearch/slurp
-    'bingbot', //http://www.bing.com/bingbot.htm
-    'Yeti', //http://help.naver.com/robots/
-    'Baiduspider', //http://www.baidu.com/search/spider.html
-    'Feedfetcher-Google', //http://www.google.com/feedfetcher.html
-    'livedoor FeedFetcher', //http://reader.livedoor.com/
-    'ia_archiver', //http://www.alexa.com/site/help/webmasters
-    'YandexBot', //http://yandex.com/bots
-    'SISTRIX Crawler', //http://crawler.sistrix.net/
-    'msnbot', //http://search.msn.com/msnbot.htm
-    'zenback bot', //http://www.logly.co.jp/
-    'Y!J-BRI', //http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html
-    'TurnitinBot', //http://www.turnitin.com/robot/crawlerinfo.html
-    'Google Desktop', //http://desktop.google.com/
-    'newzia crawler', //http://www.logly.co.jp/
-    'BaiduMobaider', //http://www.baidu.jp/spider/
+    // 'Googlebot', //http://www.google.com/bot.html
+    // 'YPBot', //http://www.yellowpages.com/about/legal/crawl
+    // 'Yahoo! Slurp', //http://help.yahoo.com/help/us/ysearch/slurp
+    // 'bingbot', //http://www.bing.com/bingbot.htm
+    // 'Yeti', //http://help.naver.com/robots/
+    // 'Baiduspider', //http://www.baidu.com/search/spider.html
+    // 'Feedfetcher-Google', //http://www.google.com/feedfetcher.html
+    // 'livedoor FeedFetcher', //http://reader.livedoor.com/
+    // 'ia_archiver', //http://www.alexa.com/site/help/webmasters
+    // 'YandexBot', //http://yandex.com/bots
+    // 'SISTRIX Crawler', //http://crawler.sistrix.net/
+    // 'msnbot', //http://search.msn.com/msnbot.htm
+    // 'zenback bot', //http://www.logly.co.jp/
+    // 'Y!J-BRI', //http://help.yahoo.co.jp/help/jp/search/indexing/indexing-15.html
+    // 'TurnitinBot', //http://www.turnitin.com/robot/crawlerinfo.html
+    // 'Google Desktop', //http://desktop.google.com/
+    // 'newzia crawler', //http://www.logly.co.jp/
+    // 'BaiduMobaider', //http://www.baidu.jp/spider/
+    'Y!J-SRD', //検索 日本最大のポータルサイト Yahoo Japan の携帯向け検索ロボット
+    'Y!J-MBS/1.0', //検索 日本最大のポータルサイト Yahoo Japan の携帯向け検索ロボット
+    'Yahoo! Slurp', //検索 日本最大のポータルサイト Yahoo Japan のＰＣ向け検索ロボット
+    'Yahoo! DE Slurp', //検索 日本最大のポータルサイト Yahoo Japan のＰＣ向け検索ロボット
+    'Googlebot-Mobile/', //検索 世界最大の検索サイト Google の携帯向け検索ロボット
+    'Googlebot/', //検索 世界最大の検索サイト Google のＰＣ向け検索ロボット
+    'adsence-Google', //広告 Google社の広告確認用ロボット
+    'msnbot', //検索 マイクロソフト社の検索ロボット
+    'bingbot/', //検索 マイクロソフト系のMSN の検索ロボット
+    'Hatena', //検索 株式会社はてな の検索ロボット
+    'MicroAd/', //広告 MicroAd社の広告確認用ロボット
+    'Baidu', //検索 中国最大の検索サイト 百度(バイドゥー)の検索ロボット
+    'MJ12bo', //検索 majestic12.co.uk という、英国のサイト。集中攻撃を受けた。
+    'Steeler', //検索 東京大学の教育用の検索ロボット。害はない。
+    'YodaoBot', //検索 中国系とされる検索エンジン。集中攻撃を受けた。
+    'OutfoxBot', //検索 正体不明。そうアクセスが多くないので無視。
+    'Pockey', //検索 正体不明。そうアクセスが多くないので無視。
+    'psbot', //検索 http://www.picsearch.com/ のイメージ検索エンジン。
+    'Yeti/', //検索 韓国最大の検索サイト Never の検索ロボット(2007年からか？)
+    'Websi', //検索 正体不明。そうアクセスが多くないので無視。
+    'Wget/', //検索 正体不明。そうアクセスが多くないので無視。
+    'NaverBot', //検索 韓国最大の検索サイト Never の検索ロボット
+    'BecomeBot', //検索 ショッピングリサーチツールのアメリカ Become.comの検索ロボット
+    'heritr', //検索 Web Archive 製のオープンソースのクローラ
+    'DotBot', //検索 アメリカ、シアトルのクローズの検索ロボット？
+    'Twiceler', //検索 http://cuil.com/ の検索ロボット。集中攻撃で悪評、サイトも消去か？
+    'ichiro', //検索 NTTレゾナント株式会社(goo を提供)の検索ロボット
+    'archive.org_bot', //検索 書籍、動画、音楽のライブラリ www.archive.org の検索ロボット
+    'YandexBot/', //検索 ロシアの画像系の検索サイト
+    'ICC-Crawler', //検索 情報通信研究機構による学術研究用の検索ロボット
+    'SiteBot/', //検索 正体不明の検索ロボット。なんだろう？悪さもしない。
+    'TurnitinBot/', //検索 turnitin.comの検索ロボット。悪さもしない。
+    'Purebot/', //検索 puritysearchの検索ロボット。悪さはしないが、ＨＰは偽装だと思う。
   );
-  $pattern = '/'.implode('|', $useragents).'/i';
+  $pattern = '{'.implode('|', $useragents).'}i';
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 }
 endif;
