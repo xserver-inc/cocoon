@@ -293,7 +293,7 @@ endif;
 //投稿・固定ページのメタキーワードの取得
 if ( !function_exists( 'get_the_meta_keywords' ) ):
 function get_the_meta_keywords(){
-  //global $post;
+  global $post;
   //var_dump(get_the_page_meta_keywords());
   $keywords =  get_the_page_meta_keywords();
   if (!$keywords) {
