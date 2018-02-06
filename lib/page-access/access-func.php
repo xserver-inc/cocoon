@@ -338,12 +338,14 @@ function wrap_joined_wp_posts_query($query){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
+  $post_type = is_page() ? 'page' : 'post';
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
     ) AS {$ranks_posts}
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
-    WHERE post_status = 'publish'
+    WHERE post_status = 'publish' AND
+          post_type = '{$post_type}'
   ";
   //_v($query);
   //var_dump($query);
@@ -515,7 +517,7 @@ function get_todays_pv(){
       $res = get_todays_jetpack_access_count();
       break;
     default:
-      $res = get_todays_access_count();
+      $res = intval(get_todays_access_count());
       break;
   }
   return $res;
@@ -531,7 +533,7 @@ function get_last_7days_pv(){
       $res = get_last_7days_jetpack_access_count();
       break;
     default:
-      $res = get_last_7days_access_count();
+      $res = intval(get_last_7days_access_count());
       break;
   }
   return $res;
@@ -547,7 +549,7 @@ function get_last_30days_pv(){
       $res = get_last_30days_jetpack_access_count();
       break;
     default:
-      $res = get_last_30days_access_count();
+      $res = intval(get_last_30days_access_count());
       break;
   }
   return $res;
@@ -563,7 +565,7 @@ function get_all_pv(){
       $res = get_all_jetpack_access_count();
       break;
     default:
-      $res = get_all_access_count();
+      $res = intval(get_all_access_count());
       break;
   }
   return $res;
