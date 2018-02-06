@@ -1,7 +1,7 @@
 <?php //HTML挿入ボタン
 
 // ビジュアルエディタにHTMLを直挿入するためのボタンを追加
-add_filter( 'mce_buttons', 'add_insert_html_button' );
+add_filter( 'mce_buttons_2', 'add_insert_html_button' );
 if ( !function_exists( 'add_insert_html_button' ) ):
 function add_insert_html_button( $buttons ) {
   $buttons[] = 'button_insert_html';
