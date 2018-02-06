@@ -1,7 +1,7 @@
 <?php //アクセス数
 
 //関数テキストテーブルのバージョン
-define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.2');//rand(0, 99)
+define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
 // define('INDEX_ACCESSES_PID', 'index_pid');
@@ -45,12 +45,10 @@ endif;
 //ページタイプの取得
 if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
-  if (is_single()) {
-    $res = 'post'; //single
-  } elseif (is_page()) {
+  if (is_page()) {
     $res = 'page'; //page
   } else {
-    $res = 'none'; //none
+    $res = 'post'; //single
   }
   return $res;
 }
@@ -165,7 +163,7 @@ endif;
 //_v( date('Y-m-d', strtotime(date('Y-m-d').' -99 day')) );
 //_v(date('Y-m-d'));
 
-//DBにアクセスをカウントするし
+//DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
 function logging_page_access($post_id = null, $post_type = 'post'){
   $res = false;
