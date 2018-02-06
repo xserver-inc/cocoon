@@ -164,48 +164,54 @@ update_accesses_table();
 //_v(date('Y-m-d'));
 
 //DBにアクセスをカウントするし
-if ( !function_exists( 'count_this_page_access' ) ):
-function count_this_page_access($post_id = null, $page_type = 's'){
+if ( !function_exists( 'logging_page_access' ) ):
+function logging_page_access($id = null, $type = 's'){
+  $res = false;
   //投稿・固定ページのみでカウントする
-  if (is_singular() && is_access_count_enable()) {
-    global $post;
-    $post_id = $post->ID;
-    $page_type = get_accesses_page_type();
-
-    $date = current_time('Y-m-d');
-    $last_ip = $_SERVER['REMOTE_ADDR'];
-
-    $record = get_accesse_record_from($post_id, $date, $page_type);
-
-    $posts = array();
-
-    $res = false;
-    if ($record) {
-      //アクセスカウントの連続カウント防止
-      if (($record->last_ip != $last_ip) || DEBUG_MODE) {
-        $id = $record->id;
-        $posts['last_ip'] = $last_ip;
-        $posts['count'] = intval($record->count) + 1;
-        $res = update_accesses_record($id, $posts);
-      }
-    } else {
-      $posts['post_id'] = $post_id;
-      $posts['date'] = $date;
-      $posts['page_type'] = $page_type;
-      $posts['last_ip'] = $last_ip;
-      $posts['count'] = 1;
-      $res = insert_accesses_record($posts);
+  if (is_access_count_enable()
+      //サイト管理者でないとき
+      && (!is_user_administrator() || DEBUG_MODE)
+    ) {
+    // _v($id);
+    // _v($type);
+    if (!$id || !$type ) {
+      global $post;
+      $id = $post->ID;
+      $type = get_accesses_page_type();
     }
+    //IDとページタイプが取得できたとき
+    if ($id && $type) {
+      $date = current_time('Y-m-d');
+      $last_ip = $_SERVER['REMOTE_ADDR'];
 
-    return $res;
-    // _v($query);
-    // _v($record);
-  }
+      $record = get_accesse_record_from($id, $date, $type);
 
+      $posts = array();
+
+
+      if ($record) {
+        //アクセスカウントの連続カウント防止
+        if (($record->last_ip != $last_ip) || DEBUG_MODE) {
+          $id = $record->id;
+          $posts['last_ip'] = $last_ip;
+          $posts['count'] = intval($record->count) + 1;
+          $res = update_accesses_record($id, $posts);
+        }
+      } else {
+        $posts['post_id'] = $id;
+        $posts['date'] = $date;
+        $posts['page_type'] = $type;
+        $posts['last_ip'] = $last_ip;
+        $posts['count'] = 1;
+        $res = insert_accesses_record($posts);
+      }
+    }//$id && $type
+  }//is_access_count_enable()
+  return $res;
 }
 endif;
 // _v(is_singular());
-// count_this_page_access();
+// logging_page_access();
 
 //投稿IDと日付からレコードを取得
 if ( !function_exists( 'get_accesse_record' ) ):

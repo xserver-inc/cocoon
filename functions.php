@@ -264,25 +264,25 @@ function verify_google_recaptcha($comment_post_ID)
 // remove_action('do_feed_rss2', 'do_feed_rss2');
 // remove_action('do_feed_atom', 'do_feed_atom');
 
-//wp 関数内でクエリが解析されて投稿が読み込まれ、テンプレートが実行されるまでの間に実行する。
-//出力にテンプレートを必要しないデータにアクセスする場合に活用できる。
-add_action( 'wp','do_access_counting', 1 );
-if ( !function_exists( 'do_access_counting' ) ):
-function do_access_counting() {
-  // global $post;
-  // _v($post);
-  //_v(!is_admin());
-  //_v(is_singular());
-  //アクセス数をカウントする
-  if (!is_admin() && is_singular()) {
-    //アクセス数のカウント
-    if (is_access_count_enable()) {
+// //wp 関数内でクエリが解析されて投稿が読み込まれ、テンプレートが実行されるまでの間に実行する。
+// //出力にテンプレートを必要しないデータにアクセスする場合に活用できる。
+// add_action( 'wp','do_access_counting', 1 );
+// if ( !function_exists( 'do_access_counting' ) ):
+// function do_access_counting() {
+//   // global $post;
+//   // _v($post);
+//   //_v(!is_admin());
+//   //_v(is_singular());
+//   //アクセス数をカウントする
+//   if (!is_admin() && is_singular()) {
+//     //アクセス数のカウント
+//     if (is_access_count_enable()) {
 
-      count_this_page_access();
-    }
-  }
-}
-endif;
+//       logging_page_access();
+//     }
+//   }
+// }
+// endif;
 
 //リダイレクト
 add_action( 'wp','wp_singular_page_redirect', 0 );

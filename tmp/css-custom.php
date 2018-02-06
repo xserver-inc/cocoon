@@ -365,8 +365,8 @@ if ($color = get_notice_area_text_color()): ?>
 }
 <?php endif ?>
 <?php //アクセスカウント取得用スタイル
-if (is_singular()): ?>
+if (!is_admin() && is_singular() && is_access_count_enable()): ?>
 body::after{
-  content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_page_type(); ?>");
+  content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?id=<?php echo get_the_ID(); ?>&type=<?php echo get_accesses_page_type(); ?>");
 }
 <?php endif ?>
