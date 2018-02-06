@@ -282,7 +282,7 @@ endif;
 //Lightboxの読み込み
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
 function wp_enqueue_lightbox(){
-  _v(get_image_zoom_effect());
+  //_v(get_image_zoom_effect());
  if ( ((is_lightbox_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
     //Lightboxスタイルの呼び出し
     wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
