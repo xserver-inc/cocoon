@@ -1230,6 +1230,7 @@ function is_useragent_robot(){
     'Yahoo! DE Slurp', //検索 日本最大のポータルサイト Yahoo Japan のＰＣ向け検索ロボット
     'Googlebot-Mobile/', //検索 世界最大の検索サイト Google の携帯向け検索ロボット
     'Googlebot/', //検索 世界最大の検索サイト Google のＰＣ向け検索ロボット
+    'Google Page Speed Insights', //PageSpeed Insights
     'adsence-Google', //広告 Google社の広告確認用ロボット
     'msnbot', //検索 マイクロソフト社の検索ロボット
     'bingbot/', //検索 マイクロソフト系のMSN の検索ロボット
