@@ -4,15 +4,22 @@
 
 /*入力フォーム共通*/
 $form_padding: 14px;
-input[type='text'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
 textarea,
 select{
   padding: $form_padding;
   border: 2px solid $basic_border_color;
   font-size: $text_size_default;
+  width: 100%;
   //margin: 1em 0;
 
   &:focus{
@@ -20,6 +27,26 @@ select{
     border: 2px solid $select_bgc;
   }
 }
+
+/*特定のエリアのフォーム*/
+// .widget,
+// .comment-respond,
+// .wpcf7-form{
+//   input[type="text"],
+//   input[type="password"],
+//   input[type="date"],
+//   input[type="datetime"],
+//   input[type="email"],
+//   input[type="number"],
+//   input[type="search"],
+//   input[type="tel"],
+//   input[type="time"],
+//   input[type="url"],
+//   textarea,
+//   select{
+//     width: 100%;
+//   }
+// }
 
 textarea{
   min-height: 260px;
@@ -39,20 +66,9 @@ option{
 
 input[type='submit']{
   padding: $form_padding;
+  width: 100%;
 }
 
-/*特定のエリアのフォーム*/
-.widget,
-.comment-respond{
-  input[type='text'],
-  input[type='password'],
-  input[type='search'],
-  input[type='number'],
-  textarea,
-  select{
-    width: 100%;
-  }
-}
 
 /*検索フォーム*/
 .search-box{

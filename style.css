@@ -4067,26 +4067,40 @@ div.fb-like-mobile {
 ** 入力フォーム
 ************************************/
 /*入力フォーム共通*/
-input[type='text'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
 textarea,
 select {
   padding: 14px;
   border: 2px solid #cccfd2;
   font-size: 18px;
+  width: 100%;
 }
-input[type='text']:focus,
-input[type='password']:focus,
-input[type='search']:focus,
-input[type='number']:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
 textarea:focus,
 select:focus {
   background-color: #fafbfc;
   border: 2px solid #d8eaf2;
 }
 
+/*特定のエリアのフォーム*/
 textarea {
   min-height: 260px;
 }
@@ -4103,21 +4117,6 @@ option {
 }
 input[type='submit'] {
   padding: 14px;
-}
-
-/*特定のエリアのフォーム*/
-.widget input[type='text'],
-.widget input[type='password'],
-.widget input[type='search'],
-.widget input[type='number'],
-.widget textarea,
-.widget select,
-.comment-respond input[type='text'],
-.comment-respond input[type='password'],
-.comment-respond input[type='search'],
-.comment-respond input[type='number'],
-.comment-respond textarea,
-.comment-respond select {
   width: 100%;
 }
 
