@@ -1258,6 +1258,9 @@ function is_useragent_robot(){
     'SiteBot/', //検索 正体不明の検索ロボット。なんだろう？悪さもしない。
     'TurnitinBot/', //検索 turnitin.comの検索ロボット。悪さもしない。
     'Purebot/', //検索 puritysearchの検索ロボット。悪さはしないが、ＨＰは偽装だと思う。
+    'GTmetrix', //GTmetrix
+    'seocheki', //SEOチェキ
+    'validator', //各種バリデーター
   );
   $pattern = '{'.implode('|', $useragents).'}i';
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);

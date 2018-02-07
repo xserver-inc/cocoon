@@ -111,7 +111,8 @@ define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
 
 
 //URLの正規表現
-define('URL_REG', '/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/');
+define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
+define('URL_REG', '/'.URL_REG_STR.'/');
 
 //Font AwesomeのCDN
 define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');

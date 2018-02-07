@@ -27,6 +27,11 @@ function replace_anchor_links($the_content) {
         continue;
       }
 
+      //ブログカード用のリンクを除外
+      if (preg_match('{<a[^>]+?href="'.URL_REG_STR.'"[^>]*?>'.URL_REG_STR.'</a>}i', $value)) {
+        continue;
+      }
+
       if ((strpos($value, '//'.get_the_site_domain()) !== false) ) {//内部リンクの場合
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
@@ -165,6 +170,8 @@ function replace_anchor_links($the_content) {
       //変更する場合はrel属性のクリアを行う
       $new_a = preg_replace('/ *rel="[^"]*?"/i', '', $new_a);
       $new_a = str_replace('<a', '<a rel="'.implode(' ', $rels).'"', $new_a);
+      //rel属性が空の場合は削除
+      $new_a = str_replace(' rel=""', '', $new_a);
 
       //何かしらの変更があった場合
       if ($old_a != $new_a) {
