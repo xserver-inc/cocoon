@@ -4117,9 +4117,34 @@ option {
   }
 }
 input[type='submit'],
-#bbp_reply_submit {
+#bbp_reply_submit,
+.bp-login-widget-register-link a {
   padding: 14px;
   width: 100%;
+  margin: 0;
+}
+
+.bp-login-widget-register-link {
+  display: block;
+  margin-top: 10px;
+}
+.bp-login-widget-register-link a {
+  color: #333435;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border: 1px solid #777;
+  padding: 6px;
+  border-radius: 2px;
+}
+.bp-login-widget-register-link a:hover {
+  background-color: #f5f8fa;
+  transition: all 0.5s ease;
+  color: #333435;
+}
+
+.widget.buddypress #bp-login-widget-form input#bp-login-widget-submit {
+  margin: 0;
 }
 
 /*検索フォーム*/

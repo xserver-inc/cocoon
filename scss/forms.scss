@@ -65,9 +65,33 @@ option{
 
 
 input[type='submit'],
-#bbp_reply_submit{
+#bbp_reply_submit,
+.bp-login-widget-register-link a{
   padding: $form_padding;
   width: 100%;
+  margin: 0;
+}
+
+.bp-login-widget-register-link{
+  display: block;
+  margin-top: 10px;
+  a{
+    @include link_cancel;
+
+    display: block;
+    text-align: center;
+    border: 1px solid #777;
+    padding: 6px;
+    border-radius: $badge_border_radius;
+
+    &:hover{
+      @include bgc_hover;
+    }
+  }
+}
+
+.widget.buddypress #bp-login-widget-form input#bp-login-widget-submit{
+  margin: 0;
 }
 
 
