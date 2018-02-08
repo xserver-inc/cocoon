@@ -844,6 +844,19 @@ function is_buddypress_exist(){
 }
 endif;
 
+//buddypressのページかどうか
+if ( !function_exists( 'is_buddypress_page' ) ):
+function is_buddypress_page(){
+  if (is_buddypress_exist()) {
+    //bp-core-template.phpファイルから
+    if (bp_is_my_profile()
+      ) {
+      return true;
+    }
+  }
+}
+endif;
+
 //スクロール追従領域が有効化
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){

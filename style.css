@@ -95,6 +95,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-family: "KaiTi", "Comic Sans MS", "MV Boli", "Lucida Console", "Arial", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-weight: normal;
   font-size: 0.7em;
+  opacity: 0.6;
 }
 
 .entry-card, .related-entry-card {
@@ -4681,6 +4682,11 @@ div#bbpress-forums .bbp-topic-permalink {
 #bbpress-forums .status-closed .bbp-reply-content:before {
   content: " \f046\00A0 Closed";
   font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+#bbp_search_submit {
+  padding: 4px;
+  width: auto;
 }
 
 #buddypress h2 {
