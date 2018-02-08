@@ -4670,42 +4670,42 @@ div#bbpress-forums .bbp-topic-permalink {
   font-size: 16px;
 }
 
-#bbpress-forums #bbp-user-wrapper {
+div#bbpress-forums #bbp-user-wrapper {
   margin-top: 1.6em;
 }
-#bbpress-forums .entry-title {
+div#bbpress-forums .entry-title {
   background-color: transparent;
   color: #333;
   padding-left: 0;
 }
-#bbpress-forums #bbp_topic_submit {
+div#bbpress-forums #bbp_topic_submit {
   padding: 12px 24px;
 }
-#bbpress-forums input[type=text] {
+div#bbpress-forums input[type=text] {
   width: 100%;
 }
-#bbpress-forums div.odd,
-#bbpress-forums ul.odd {
+div#bbpress-forums div.odd,
+div#bbpress-forums ul.odd {
   background-color: #fefefe;
 }
-#bbpress-forums span.bbp-admin-links a,
-#bbpress-forums .status-closed,
-#bbpress-forums .status-closed a {
+div#bbpress-forums span.bbp-admin-links a,
+div#bbpress-forums .status-closed,
+div#bbpress-forums .status-closed a {
   color: #555;
 }
-#bbpress-forums a.bbp-topic-permalink {
+div#bbpress-forums a.bbp-topic-permalink {
   text-decoration: none;
 }
-#bbpress-forums a.bbp-topic-permalink:before {
+div#bbpress-forums a.bbp-topic-permalink:before {
   content: " \f096";
   font-family: FontAwesome;
   margin-right: 3px;
 }
-#bbpress-forums .status-closed a.bbp-topic-permalink:before {
+div#bbpress-forums .status-closed a.bbp-topic-permalink:before {
   content: " \f046";
   font-family: FontAwesome;
 }
-#bbpress-forums .status-closed .bbp-reply-content:before {
+div#bbpress-forums .status-closed .bbp-reply-content:before {
   content: " \f046\00A0 Closed";
   font-family: FontAwesome,"Lucida Grande","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
 }
@@ -4804,6 +4804,14 @@ div#bbpress-forums .bbp-topic-permalink {
 
   .sidebar-scroll {
     position: static;
+  }
+
+  body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
+    background-attachment: scroll;
+  }
+
+  body, .header, .appeal {
+    background-size: cover;
   }
 }
 @media screen and (max-width: 768px) {

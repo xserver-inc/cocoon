@@ -53,3 +53,13 @@ div.sidebar{
 .sidebar-scroll{
   position: static;
 }
+
+
+//ヘッダーなどの背景画像
+body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal{
+  background-attachment: scroll;
+}
+
+body, .header, .appeal{
+  background-size: cover;
+}
