@@ -5,7 +5,7 @@ if ( !function_exists( 'fetch_feedly_count_raw' ) ):
 function fetch_feedly_count_raw($url){
   $url = rawurlencode( $url );
   $res = 0;
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   $subscribers = wp_remote_get( 'http://cloud.feedly.com/v3/feeds/feed%2F'.$url, $args );
   //var_dump($subscribers);
   // _v('http://cloud.feedly.com/v3/feeds/feed%2F'.$url);
@@ -41,7 +41,7 @@ function fetch_feedly_count(){
   $res = fetch_feedly_count_raw($url);
 
   // $res = 0;
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // $subscribers = wp_remote_get( "http://cloud.feedly.com/v3/feeds/feed%2F$feed_url", $args );
   // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
   //   $subscribers = json_decode( $subscribers['body'] );
@@ -81,8 +81,8 @@ endif;
 if ( !function_exists( 'fetch_push7_info_raw' ) ):
 function fetch_push7_info_raw($app_no){
   $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
-  $args = array( 'sslverify' => false );
-  //$args = array('sslverify' => false);
+  $args = array( 'sslverify' => true );
+  //$args = array('sslverify' => true);
   $info = wp_remote_get( $url, $args );
   if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
     $info = json_decode( $info['body'] );
@@ -119,8 +119,8 @@ function fetch_push7_info(){
       set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
     }
     // $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
-    // $args = array( 'sslverify' => false );
-    // //$args = array('sslverify' => false);
+    // $args = array( 'sslverify' => true );
+    // //$args = array('sslverify' => true);
     // $info = wp_remote_get( $url, $args );
     // if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
     //   $info = json_decode( $info['body'] );

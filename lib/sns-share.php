@@ -11,7 +11,7 @@ endif;
 if ( !function_exists( 'fetch_twitter_count_raw' ) ):
 function fetch_twitter_count_raw($url){
   $url = rawurlencode( $url );
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
   $res = '0';
   if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
@@ -48,7 +48,7 @@ function fetch_twitter_count($url = null) {
     set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
   }
   // $url = rawurlencode( $url );
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
   // $res = '0';
   // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
@@ -86,7 +86,7 @@ function fetch_facebook_count_raw($url){
   //URLをURLエンコード
   $encoded_url = rawurlencode( $url );
   //オプションの設定
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   //Facebookにリクエストを送る
   $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
   $res = 0;
@@ -132,7 +132,7 @@ function fetch_facebook_count($url = null) {
   // //URLをURLエンコード
   // $encoded_url = rawurlencode( $url );
   // //オプションの設定
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // //Facebookにリクエストを送る
   // $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
   // $res = 0;
@@ -172,7 +172,7 @@ function fetch_hatebu_count_raw($url){
   //取得するURL(ついでにURLエンコード)
   $encoded_url = rawurlencode($url);
   //オプションの設定
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   //Facebookにリクエストを送る
   $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
   $res = 0;
@@ -211,7 +211,7 @@ function fetch_hatebu_count($url = null) {
   // //取得するURL(ついでにURLエンコード)
   // $encoded_url = rawurlencode($url);
   // //オプションの設定
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // //Facebookにリクエストを送る
   // $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
   // $res = 0;
@@ -250,7 +250,7 @@ if ( !function_exists( 'fetch_google_plus_count_raw' ) ):
 function fetch_google_plus_count_raw($url){
   $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
   //URL（クエリ）先の情報を取得
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   $result = wp_remote_get($query, $args);
   // 正規表現でカウント数のところだけを抽出
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
@@ -284,7 +284,7 @@ function fetch_google_plus_count($url = null) {
 
   // $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
   // //URL（クエリ）先の情報を取得
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // $result = wp_remote_get($query, $args);
   // // 正規表現でカウント数のところだけを抽出
   // preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
@@ -321,7 +321,7 @@ function fetch_pocket_count_raw($url){
   $url = urlencode($url);
   $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
   //URL（クエリ）先の情報を取得
-  $args = array( 'sslverify' => false );
+  $args = array( 'sslverify' => true );
   $result = wp_remote_get($query, $args);
   //var_dump($result["body"]);
   // 正規表現でカウント数のところだけを抽出
@@ -362,7 +362,7 @@ function fetch_pocket_count($url = null) {
   // $url = urlencode($url);
   // $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
   // //URL（クエリ）先の情報を取得
-  // $args = array( 'sslverify' => false );
+  // $args = array( 'sslverify' => true );
   // $result = wp_remote_get($query, $args);
   // //var_dump($result["body"]);
   // // 正規表現でカウント数のところだけを抽出
