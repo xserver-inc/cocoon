@@ -765,7 +765,9 @@ endif;
 
 //プロフィールボックス生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
-function generate_author_box_tag($label){?>
+function generate_author_box_tag($label){
+  $author_id = get_the_author_id();
+  ?>
   <div class="author-box cf">
     <?php //ウィジェット名がある場合
     if ($label): ?>
@@ -774,16 +776,32 @@ function generate_author_box_tag($label){?>
       </div>
     <?php endif ?>
     <figure class="author-thumb">
-      <?php echo get_avatar( get_the_author_id(), 200 ); ?>
+      <?php echo get_avatar( $author_id, 200 ); ?>
     </figure>
     <div class="author-content">
       <div class="author-display-name">
-        <?php the_author_posts_link(); ?>
+        <?php
+        if ($author_id) {
+          the_author_posts_link();
+        } else {
+          echo __( '未登録のユーザーさん', THEME_NAME );
+        }
+         ?>
       </div>
       <div class="author-description">
-        <?php $description = get_the_author_meta( 'description', get_the_author_id() );
+        <?php $description = get_the_author_meta( 'description', $author_id );
         if ($description) {
           echo $description;
+        } elseif (!$author_id) {
+          if (is_buddypress_exist()) {
+            echo __( '未登録のユーザーさんです。', THEME_NAME );
+            echo '<br>';
+            echo __( 'ログイン・登録はこちら→', THEME_NAME );
+            echo '<a href="'.wp_login_url().'">';
+            echo __( 'ログインページ', THEME_NAME );
+            echo '</a>';
+          }
+
         } elseif (is_user_logged_in()) {
           echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_id().'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
         }
@@ -795,9 +813,12 @@ function generate_author_box_tag($label){?>
         <?php endif ?>
 
       </div>
+      <?php if ($author_id): ?>
       <div class="author-follows">
         <?php get_template_part('tmp/sns-follow-buttons'); ?>
       </div>
+      <?php endif ?>
+
     </div>
   </div>
 <?php
