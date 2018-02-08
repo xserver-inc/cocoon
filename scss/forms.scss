@@ -64,7 +64,8 @@ option{
 }
 
 
-input[type='submit']{
+input[type='submit'],
+#bbp_reply_submit{
   padding: $form_padding;
   width: 100%;
 }

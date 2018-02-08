@@ -4116,7 +4116,8 @@ option {
     padding: 0 12px;
   }
 }
-input[type='submit'] {
+input[type='submit'],
+#bbp_reply_submit {
   padding: 14px;
   width: 100%;
 }
