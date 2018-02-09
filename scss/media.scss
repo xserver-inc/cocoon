@@ -62,3 +62,8 @@
 .pixiv-embed iframe{
   max-width: 100%;
 }
+
+//instagram埋め込みスタイルの不具合修正
+.instagram-media {
+  position: static !important;
+}

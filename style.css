@@ -2793,6 +2793,10 @@ label.screen-reader-text {
   max-width: 100%;
 }
 
+.instagram-media {
+  position: static !important;
+}
+
 /************************************
 ** プロフィールボックス
 ************************************/
