@@ -211,7 +211,7 @@ $bgc_hover_anime: all 0.5s ease;
   background-repeat: no-repeat;
 
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: contain;
+  background-size: 100% auto;
 
   &.ba-fixed{
     /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */

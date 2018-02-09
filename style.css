@@ -170,7 +170,7 @@ body, .header, .appeal {
   /* 画像をタイル状に繰り返し表示しない */
   background-repeat: no-repeat;
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: contain;
+  background-size: 100% auto;
 }
 body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
@@ -4810,11 +4810,11 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
     position: static;
   }
 
-  body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
+  .ba-fixed.header, .ba-fixed.appeal {
     background-attachment: scroll;
   }
 
-  body, .header, .appeal {
+  .header, .appeal {
     background-size: cover;
   }
 }

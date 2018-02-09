@@ -56,10 +56,10 @@ div.sidebar{
 
 
 //ヘッダーなどの背景画像
-body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal{
+.ba-fixed.header, .ba-fixed.appeal{
   background-attachment: scroll;
 }
 
-body, .header, .appeal{
+.header, .appeal{
   background-size: cover;
 }
