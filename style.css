@@ -2108,6 +2108,10 @@ label.screen-reader-text {
   color: #f3aca9;
 }
 
+#wpadminbar .alert::before {
+  display: none;
+}
+
 @media screen and (max-width: 440px) {
   .information-box,
   .question-box,
@@ -2418,8 +2422,8 @@ label.screen-reader-text {
   display: none;
 }
 
-.author-guest .feedly-button,
-.author-guest .rss-button {
+.author-guest .feedly-follow-button-sq,
+.author-guest .rss-follow-button-sq {
   display: none;
 }
 

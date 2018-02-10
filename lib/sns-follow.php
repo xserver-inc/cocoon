@@ -182,6 +182,19 @@ function is_author_exits(){
 }
 endif;
 
+//投稿者は管理者かどうか
+if ( !function_exists( 'is_author_administrator' ) ):
+function is_author_administrator(){
+  $author_id = get_the_author_id();
+  if ($author_id) {
+    $author = get_userdata( $author_id );
+    if ($author && in_array( 'administrator', $author->roles )) {
+      return true;
+    }
+  }
+}
+endif;
+
 //投稿者名の取得
 if ( !function_exists( 'get_the_author_display_name' ) ):
 function get_the_author_display_name(){
@@ -303,6 +316,7 @@ function get_the_author_github_url(){
 }
 endif;
 
+//フォローボタンが存在する場合（feedly、RSS以外）
 if ( !function_exists( 'is_author_follow_buttons_exits' ) ):
 function is_author_follow_buttons_exits(){
   return get_the_author_website_url()

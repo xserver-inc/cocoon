@@ -1,6 +1,10 @@
 <?php //SNSページのフォローボタン ?>
 <?php
-if ( is_any_sns_follow_buttons_exist() && is_author_exits() && is_author_follow_buttons_exits() ): //全てのフォローボタンを表示するかどうか?>
+if ( is_any_sns_follow_buttons_exist() &&
+      ( is_author_administrator()
+        || (is_author_exits() && is_author_follow_buttons_exits())
+      )
+    ): //全てのフォローボタンを表示するかどうか?>
 <!-- SNSページ -->
 <div class="sns-follow<?php echo get_additional_sns_follow_button_classes(); ?>">
 
@@ -58,7 +62,7 @@ if ( is_any_sns_follow_buttons_exist() && is_author_exits() && is_author_follow_
   <?php endif; ?>
 
   <?php if ( is_rss_follow_button_visible() )://RSSフォローボタンを表示するか ?>
-    <a href="<?php bloginfo('rss2_url'); ?>" class="follow-button rss-follow-button rss-button" target="_blank" title="<?php _e( 'RSSで更新情報をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rss-logo"></span></a>
+    <a href="<?php bloginfo('rss2_url'); ?>" class="follow-button rss-button rss-follow-button-sq" target="_blank" title="<?php _e( 'RSSで更新情報をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rss-logo"></span></a>
   <?php endif; ?>
 
   </div><!-- /.sns-follow-buttons -->

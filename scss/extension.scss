@@ -172,6 +172,10 @@
   color: #f3aca9;
 }
 
+#wpadminbar .alert::before{
+  display: none;
+}
+
 @media screen and (max-width:440px){
   .information-box,
   .question-box,

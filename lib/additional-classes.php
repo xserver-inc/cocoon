@@ -166,13 +166,10 @@ function body_class_additional($classes) {
   $author_id = get_the_author_id();
   //var_dump($author_id);
   $auther_class = 'author-admin';
-  if ($author_id) {
-    $author = get_userdata( $author_id );
-    //_v($author);
-    if ($author && !in_array( 'administrator', $author->roles )) {
-      $auther_class = 'author-guest';
-    }
+  if (!is_author_administrator()) {
+    $auther_class = 'author-guest';
   }
+
   // elseif ($author_id == 0) {
   //   $auther_class = 'author-guest';
   // }
