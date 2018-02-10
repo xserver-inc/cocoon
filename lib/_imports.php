@@ -79,12 +79,12 @@ require_once 'widget.php'; //ウィジェット操作関数
 require_once 'original-menu.php'; //オリジナルメニューによる設定項目
 require_once 'additional-classes.php'; //スタイリング用の追加クラス関数
 require_once 'auto-post-thumbnail.php'; //アイキャッチ自動追加関数
-require_once 'update.php'; //アップデート関係の処理
 require_once 'ssl.php'; //SSL関係の処理
 require_once 'shortcodes.php'; //ショートコード関係の処理
 //フルパスを指定しないとうまくいかないファイル
 require_once get_template_directory().'/lib/profile.php'; //プロフィール関係の処理
 require_once get_template_directory().'/lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
+
 //TinyMCE
 if (is_admin()) {;
   require_once get_template_directory().'/lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能
@@ -94,6 +94,10 @@ if (is_admin()) {;
   require_once 'tinymce/affiliate-tags.php'; //アフィリエイトタグ追加
   require_once 'tinymce/item-rankings.php'; //ランキングタグ追加
   require_once 'tinymce/html-tags.php'; //拡張タグ追加
+  // if (!is_bbpress_page()) {
+  //   require_once 'update.php'; //アップデート関係の処理
+  // }
+
 }
 
 
