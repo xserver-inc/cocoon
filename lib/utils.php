@@ -850,6 +850,15 @@ function is_buddypress_page(){
   if (is_buddypress_exist()) {
     //bp-core-template.phpファイルから
     if (bp_is_my_profile()
+        //|| bp_is_user_profile()
+        // || bp_is_forums_component()
+        // || bp_is_user_forums_started()
+        // || bp_is_user_forums_replied_to()
+        // || bp_is_group_forum()
+        // || bp_is_group_forum_topic()
+        // || bp_is_group_forum_topic_edit()
+        // || bp_is_user_forums()
+        || (is_buddypress_exist() && is_bbpress_page())
       ) {
       return true;
     }

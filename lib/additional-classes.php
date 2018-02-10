@@ -162,6 +162,22 @@ function body_class_additional($classes) {
   //モバイルボタンタイプ
   $classes[] = 'mblt-'.str_replace('_', '-', get_mobile_button_layout_type());
 
+  //管理者クラス
+  $author_id = get_the_author_id();
+  //var_dump($author_id);
+  $auther_class = 'author-admin';
+  if ($author_id) {
+    $author = get_userdata( $author_id );
+    //_v($author);
+    if ($author && !in_array( 'administrator', $author->roles )) {
+      $auther_class = 'author-guest';
+    }
+  }
+  // elseif ($author_id == 0) {
+  //   $auther_class = 'author-guest';
+  // }
+  $classes[] = $auther_class;
+
   //カルーセル表示のフラグが立っている場合はクラスを追加
   if ($add_no_carousel) {
     $classes[] = 'no-carousel';

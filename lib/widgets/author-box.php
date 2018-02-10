@@ -24,8 +24,8 @@ class AuthorBoxWidgetItem extends WP_Widget {
     //set_query_var('_WIDGET_NAME', $label);
     //get_template_part('tmp/author-box');
     if (!is_bbpress_page()) {
-      generate_author_box_tag($label);
     }
+      generate_author_box_tag($label);
     echo $args['after_widget'];
   }
   function update($new_instance, $old_instance) {

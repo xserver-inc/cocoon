@@ -175,6 +175,28 @@ function get_the_posts_author_id(){
 }
 endif;
 
+//投稿者情報がある場合
+if ( !function_exists( 'is_author_exits' ) ):
+function is_author_exits(){
+  return get_the_author_id();
+}
+endif;
+
+//投稿者名の取得
+if ( !function_exists( 'get_the_author_display_name' ) ):
+function get_the_author_display_name(){
+  return esc_html(get_the_author_meta('display_name', get_the_posts_author_id()));
+}
+endif;
+
+//投稿者情報の取得
+if ( !function_exists( 'get_the_author_description' ) ):
+function get_the_author_description(){
+  return esc_html(get_the_author_meta('description', get_the_posts_author_id()));
+}
+endif;
+
+
 //プロフィール画面で設定したウェブサイトURLの取得
 if ( !function_exists( 'get_the_author_website_url' ) ):
 function get_the_author_website_url(){
@@ -278,6 +300,22 @@ endif;
 if ( !function_exists( 'get_the_author_github_url' ) ):
 function get_the_author_github_url(){
   return esc_html(get_the_author_meta('github_url', get_the_posts_author_id()));
+}
+endif;
+
+if ( !function_exists( 'is_author_follow_buttons_exits' ) ):
+function is_author_follow_buttons_exits(){
+  return get_the_author_website_url()
+         || get_the_author_twitter_url()
+         || get_the_author_facebook_url()
+         || get_the_author_google_plus_url()
+         || get_the_author_hatebu_url()
+         || get_the_author_instagram_url()
+         || get_the_author_pinterest_url()
+         || get_the_author_youtube_url()
+         || get_the_author_flickr_url()
+         || get_the_author_line_at_url()
+         || get_the_author_github_url();
 }
 endif;
 

@@ -767,6 +767,13 @@ endif;
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($label){
   $author_id = get_the_author_id();
+  // $auther_class = ' author-admin';
+  // if ($author_id) {
+  //   $author = new WP_User( get_the_author_meta( $author_id ) );
+  //   if ($author && !in_array( 'administrator', $author->roles )) {
+  //     $auther_class = ' author-guest';
+  //   }
+  // }
   ?>
   <div class="author-box cf">
     <?php //ウィジェット名がある場合
@@ -782,14 +789,29 @@ function generate_author_box_tag($label){
       <div class="author-display-name">
         <?php
         if ($author_id) {
-          the_author_posts_link();
+          $description = get_the_author_description();
+
+          if (!is_buddypress_page()) {
+            the_author_posts_link();
+          } else {
+            $author_display_name = strip_tags(get_the_author_display_name());
+            $author_website_url = strip_tags(get_the_author_website_url());
+            $description = strip_tags($description);
+            $name = $author_display_name;
+            if ($author_website_url) {
+              $name = '<a href="'.$author_website_url.'" target="_blank" rel="nofollow">'.$author_display_name.'</a>';
+            }
+            echo $name;
+          }
+
+
         } else {
           echo __( '未登録のユーザーさん', THEME_NAME );
         }
          ?>
       </div>
       <div class="author-description">
-        <?php $description = get_the_author_meta( 'description', $author_id );
+        <?php
         if ($description) {
           echo $description;
         } elseif (!$author_id) {

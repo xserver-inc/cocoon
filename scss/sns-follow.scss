@@ -48,3 +48,16 @@
 .fbc-hide .follow-count{
   display: none;
 }
+
+.author-guest{
+  .feedly-button,
+  .rss-button{
+    display: none;
+  }
+}
+
+// .bbpress.author-admin{
+//   .sns-follow{
+//     display: none;
+//   }
+// }
