@@ -105,7 +105,7 @@ function get_affiliate_tag( $id ) {
     $record->title = esc_attr(stripslashes_deep($record->title));
 
   if (!empty($record->text))
-    $record->text = wpautop(stripslashes_deep($record->text));
+    $record->text = stripslashes_deep($record->text);
 
   return $record;
 }

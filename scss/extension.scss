@@ -1,5 +1,8 @@
 /*拡張クラスを追加するスタイルシート*/
-.badge{
+.badge,
+.ref,
+.reffer,
+.sankou{
   color: #fff;
   background-color: #fc7a22;
   padding: 1px 5px 0;
@@ -65,7 +68,8 @@
 }
 
 /*ブートストラップのインフォメーションライクな囲みが表示される*/
-.primary-box {
+.primary-box,
+.primary {
   background-color: #428BCA;
   color: #FFFFFF;
   padding:15px;
@@ -74,7 +78,8 @@
 }
 
 /*サクセスメッセージ*/
-.success-box {
+.success-box,
+.success {
   background-color: #DFF0D8;
   border-color: #D6E9C6;
   padding:15px;
@@ -83,7 +88,8 @@
 }
 
 /*インフォメッセージ*/
-.info-box {
+.info-box,
+.info {
   background-color: #D9EDF7;
   border-color: #BCE8F1;
   padding:15px;
@@ -92,7 +98,8 @@
 }
 
 /*注意メッセージ*/
-.warning-box {
+.warning-box,
+.warning {
   background-color: #FCF8E3;
   padding:15px;
   border-radius:4px;
@@ -101,7 +108,8 @@
 }
 
 /*警告メッセージ*/
-.danger-box {
+.danger-box,
+.danger {
   background-color: #F2DEDE;
   border-color: #EBCCD1;
   padding:15px;
@@ -114,7 +122,10 @@
 ********************************/
 .information-box,
 .question-box,
-.alert-box{
+.alert-box,
+.information,
+.question,
+.alert{
   background-color: #F4F3EB;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
@@ -125,13 +136,17 @@
   //overflow: hidden;
 }
 
-.alert-box{
+.alert-box,
+.alert{
   background-color: #fdeff2;
 }
 
 .information-box::before,
 .question-box::before,
-.alert-box::before{
+.alert-box::before,
+.information::before,
+.question::before,
+.alert::before{
   font-family: "FontAwesome";
   font-size: 50px;
   position: absolute;
@@ -141,15 +156,18 @@
   color: #EAE3B4;
 }
 
-.information-box::before{
+.information-box::before,
+.information::before{
   content: '\f05a';
 }
 
-.question-box::before{
+.question-box::before,
+.question::before{
   content: '\f059';
 }
 
-.alert-box::before{
+.alert-box::before,
+.alert::before{
   content: '\f06a';
   color: #f3aca9;
 }
@@ -157,20 +175,28 @@
 @media screen and (max-width:440px){
   .information-box,
   .question-box,
-  .alert-box{
+  .alert-box,
+  .information,
+  .question,
+  .alert{
     padding: 6px 6px 6px 24px;
   }
 
   .information-box::before,
   .question-box::before,
-  .alert-box::before{
+  .alert-box::before,
+  .information::before,
+  .question::before,
+  .alert::before{
     top: 6px;
     left: 6px;
     font-size: 1em;
   }
 
   .information-box::before,
-  .question-box::before{
+  .question-box::before,
+  .information::before,
+  .question::before{
     color: #d3c463;
   }
 }
