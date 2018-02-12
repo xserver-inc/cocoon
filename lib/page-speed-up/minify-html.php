@@ -49,6 +49,10 @@ function code_minify_call_back($buffer) {
   ///////////////////////////////////////
   //Alt属性がないIMGタグにalt=""を追加する
   $buffer = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $buffer);
+  //wpForoのHTML5エラー
+  if (is_wpforo_exist()) {
+    $buffer = str_replace(' id="wpf-widget-recent-replies"', '', $buffer);
+  }
   //BuddyPressのHTML5エラー
   if (is_buddypress_exist()) {
     //$buffer = str_replace('<input name="rememberme" type="checkbox" value="forever" />', '<input id="bp-login-widget-rememberme" name="rememberme" type="checkbox" value="forever" />', $buffer);

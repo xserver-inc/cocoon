@@ -866,6 +866,13 @@ function is_buddypress_page(){
 }
 endif;
 
+//wpForoが存在するか
+if ( !function_exists( 'is_wpforo_exist' ) ):
+function is_wpforo_exist(){
+  return class_exists('wpForo');
+}
+endif;
+
 //スクロール追従領域が有効化
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){

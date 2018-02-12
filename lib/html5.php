@@ -14,7 +14,7 @@ function theme_html5_fix($the_content){
   //http://tenman.info/labo/snip/archives/5197
   $the_content = str_replace( '</p></div>','</div>', $the_content );
   //Alt属性がないIMGタグにalt=""を追加する
-  $the_content = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $the_content);
+  //$the_content = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $the_content);
   return $the_content;
 }
 endif;
