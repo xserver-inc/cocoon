@@ -168,7 +168,9 @@ function get_the_posts_author_id(){
     $post = get_post($post_id);
     if ($post){
       $author = get_userdata($post->post_author);
-      $author_id =$author->ID;
+      if ($author) {
+        $author_id = $author->ID;
+      }
     }
   }
   return $author_id;
