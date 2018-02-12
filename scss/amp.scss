@@ -29,6 +29,10 @@ amp-img {
   display: inline-block;
 }
 
+.logo-image amp-img{
+  margin: auto;
+}
+
 amp-img[width|="0"],
 amp-img[height|="0"],
 amp-img[width|="1"],
