@@ -873,6 +873,22 @@ function is_wpforo_exist(){
 }
 endif;
 
+//buddypressのページかどうか
+if ( !function_exists( 'is_wpforo_page' ) ):
+function is_wpforo_page(){
+  if (is_wpforo_exist()) {
+    //functions-template.phpファイルから
+    if (
+         wpforo_topic()
+      || wpforo_forum()
+      || wpforo_post()
+      ) {
+      return true;
+    }
+  }
+}
+endif;
+
 //スクロール追従領域が有効化
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){
