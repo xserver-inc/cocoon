@@ -47,6 +47,8 @@ function code_minify_call_back($buffer) {
   ///////////////////////////////////////
   // HTML5エラー除外
   ///////////////////////////////////////
+  //Alt属性がないIMGタグにalt=""を追加する
+  $buffer = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $buffer);
   //BuddyPressのHTML5エラー
   if (is_buddypress_exist()) {
     //$buffer = str_replace('<input name="rememberme" type="checkbox" value="forever" />', '<input id="bp-login-widget-rememberme" name="rememberme" type="checkbox" value="forever" />', $buffer);
