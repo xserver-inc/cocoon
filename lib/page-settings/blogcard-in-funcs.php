@@ -21,6 +21,6 @@ endif;
 define('OP_INTERNAL_BLOGCARD_TARGET_BLANK', 'internal_blogcard_target_blank');
 if ( !function_exists( 'is_internal_blogcard_target_blank' ) ):
 function is_internal_blogcard_target_blank(){
-  return get_theme_option(OP_INTERNAL_BLOGCARD_TARGET_BLANK, 1);
+  return get_theme_option(OP_INTERNAL_BLOGCARD_TARGET_BLANK);
 }
 endif;
