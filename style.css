@@ -5115,8 +5115,7 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
   }
 
   .entry-card-snippet,
-  .related-entry-card-snippet,
-  .blogcard-snipet {
+  .related-entry-card-snippet {
     display: none;
   }
 
