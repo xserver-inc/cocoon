@@ -879,9 +879,12 @@ function is_wpforo_page(){
   if (is_wpforo_exist()) {
     //functions-template.phpファイルから
     if (
-         wpforo_topic()
+         is_wpforo_page()
+      || wpforo_topic()
       || wpforo_forum()
       || wpforo_post()
+      || is_wpforo_shortcode_page()
+      || is_wpforo_url()
       ) {
       return true;
     }
@@ -893,6 +896,19 @@ endif;
 if ( !function_exists( 'is_scrollable_sidebar_enable' ) ):
 function is_scrollable_sidebar_enable(){
   return is_active_sidebar('sidebar-scroll');
+}
+endif;
+
+//bbPress、BuddyPress、wpForoフォーラムページかどうか
+if ( !function_exists( 'is_plugin_fourm_page' ) ):
+function is_plugin_fourm_page(){
+  if (
+       is_bbpress_page()
+    || is_buddypress_page()
+    || is_wpforo_page()
+  ) {
+    return true;
+  }
 }
 endif;
 

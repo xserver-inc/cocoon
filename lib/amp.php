@@ -4,7 +4,7 @@
 if ( !function_exists( 'is_amp' ) ):
 function is_amp(){
   //bbPressがインストールされていて、トピックの時は除外
-  if (is_bbpress_page() || is_buddypress_page() || is_wpforo_page()) {
+  if (is_plugin_fourm_page()) {
     return false;
   }
 
@@ -36,7 +36,8 @@ function has_amp_page(){
     is_amp_enable() &&
     is_the_page_amp_enable() &&
     !in_category( $category_ids ) && //除外カテゴリではAMPページを生成しない
-    (!function_exists('is_bbpress') || !is_bbpress());
+    //プラグインが生成するフォーラムページでない場合
+    !is_plugin_fourm_page();
 }
 endif;
 
