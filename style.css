@@ -1565,6 +1565,21 @@ span.internal-icon {
   font-size: 0.9em;
 }
 
+.sidebar .blogcard-wrap,
+.footer .blogcard-wrap {
+  width: 100%;
+}
+.sidebar .blogcard-thumbnail,
+.footer .blogcard-thumbnail {
+  width: 34%;
+}
+.sidebar .blogcard-content,
+.footer .blogcard-content {
+  margin-left: 35%;
+  max-height: 110px;
+  font-size: 0.9em;
+}
+
 /************************************
 ** ウィジェット
 ************************************/
@@ -4928,12 +4943,11 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
   }
 
   .blogcard-thumbnail {
-    width: 23%;
+    width: 34%;
   }
 
   .blogcard-content {
-    width: 76%;
-    margin-left: 24%;
+    margin-left: 35%;
     max-height: 110px;
     font-size: 0.9em;
   }

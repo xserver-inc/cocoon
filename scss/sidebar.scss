@@ -82,3 +82,11 @@
 .footer .ranking-item-description p{
   font-size: 0.9em;
 }
+
+///////////////////////////////////////
+// ブログカード
+///////////////////////////////////////
+.sidebar,
+.footer{
+  @include blog_card_768;
+}

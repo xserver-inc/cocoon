@@ -16,6 +16,11 @@ function code_minify_call_back($buffer) {
   //   return $buffer;
   // }
 
+  //何故かa開始タグがpタグでラップされるのを修正
+  $buffer = preg_replace('{<p>(<a[^>]+?>)</p>}i', "$1", $buffer);
+  //何故かa終了タグがpタグでラップされるのを修正
+  $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
+
   //_v('$buffer');
   //HTMLの縮小化
   if (is_html_minify_enable()) {

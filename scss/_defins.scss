@@ -305,7 +305,7 @@ $bgc_hover_anime: all 0.5s ease;
 }
 
 ///////////////////////////////////////
-// Comment
+// シェア数
 ///////////////////////////////////////
 @mixin service_count {
   font-family: Arial, sans-serif;
@@ -316,9 +316,32 @@ $bgc_hover_anime: all 0.5s ease;
   line-height: 1;
 }
 
+///////////////////////////////////////
+// 投稿カテゴリ
+///////////////////////////////////////
 %entry_category{
   padding: 2px;
   //margin-right: 8px;
   display: inline;
   font-size: 0.7em;
+}
+
+///////////////////////////////////////
+// ブログカード（狭い）
+///////////////////////////////////////
+@mixin blog_card_768{
+  .blogcard-wrap{
+    width: 100%;
+  }
+
+  .blogcard-thumbnail{
+    width: 34%;
+  }
+
+  .blogcard-content{
+    //width: 69%;
+    margin-left: 35%;
+    max-height: 110px;
+    font-size: 0.9em;
+  }
 }

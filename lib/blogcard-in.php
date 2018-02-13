@@ -29,6 +29,7 @@ function url_to_internal_blogcard_tag($url){
   if (!$snipet) {
     $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
   }
+  $snipet = preg_replace('/\n/', '', $snipet);
 
   //ブログカードのサムネイルを右側に
   $additional_class = get_additional_internal_blogcard_classes();
@@ -72,7 +73,11 @@ function url_to_internal_blogcard_tag($url){
       '</div>'.
     '</div>'.
   '</a>';
-  //var_dump($tag);
+  //$tag = minify_html($tag);
+  //_v($tag);
+  // echo('<pre>');
+  // var_dump($tag);
+  // echo('</pre>');
 
   return $tag;
 }
@@ -82,7 +87,23 @@ endif;
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
   //1行にURLのみが期待されている行（URL）を全て$mに取得
-  $res = preg_match_all('/^(<p>)?(<br ? \/?>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<br ? \/?>)?(<\/p>)?/im', $the_content,$m);
+  /*
+  $internal_url_reg = 'https?://'.preg_quote(get_the_site_domain()).'/[\-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+';
+  $res = preg_match_all('{^'.$internal_url_reg.'|<a href="'.$internal_url_reg.'">'.$internal_url_reg.'</a>}im', $the_content, $m);
+  _v($the_content);
+  _v($m[0]);
+  */
+
+  /*
+  $res = preg_match_all('{^(<p>)?(<a[^>]+?href="'.$internal_url_reg.'"[^>]*?>)?'.$internal_url_reg.'(</a>)?(</p>)?$}im', $the_content,$m);
+  {^(<p>)?(<a[^>]+?href="https?://cocoon\.dev/[\-_.!~*'()a-zA-Z0-9;/?:\@&=+\$,%#]+[^>]+?>)?https?://cocoon\.dev/[\-_.!~*'()a-zA-Z0-9;/?:\@&=+\$,%#]+(</a>)?(</p>)?$}im
+  //_v('{^(<p>)?(<a[^>]+?href="'.$internal_url_reg.'"[^>]+?>)?'.$internal_url_reg.'(</a>)?(</p>)?$}im');
+  */
+  /*
+  $res = preg_match_all('/^(<p>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
+
+  */
+  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
   foreach ($m[0] as $match) {
 
     //マッチしたpタグが適正でないときはブログカード化しない
@@ -97,7 +118,12 @@ function url_to_internal_blogcard($the_content) {
     if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
 
     //本文中のURLをブログカードタグで置換
-    $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+    // $count = 1;
+    // _v($match);
+    // _v($tag);
+    // $the_content = str_replace($match, $tag , $the_content, $count);
+    // wp_reset_postdata();
+    $the_content = preg_replace('{^'.preg_quote($match).'}im', $tag , $the_content, 1);
     wp_reset_postdata();
 
   }
