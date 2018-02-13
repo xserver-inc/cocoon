@@ -4786,6 +4786,23 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
   min-width: 210px;
 }
 
+div#wpforo-wrap .wpfl-1 .wpforo-forum-description,
+div#wpforo-wrap .wpfl-1 .wpforo-last-post-title,
+div#wpforo-wrap .wpforo-post-head {
+  font-size: 16px;
+}
+div#wpforo-wrap .wpfl-1 .head-title,
+div#wpforo-wrap .wpforo-topic-title a {
+  font-size: 20px;
+}
+div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content {
+  font-size: 18px;
+}
+div#wpforo-wrap .wpfl-1 .wpforo-post,
+div#wpforo-wrap #wpforo-stat-body {
+  background-color: #fcfcfc;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
