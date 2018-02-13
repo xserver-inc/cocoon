@@ -4,10 +4,8 @@
 if ( !function_exists( 'is_amp' ) ):
 function is_amp(){
   //bbPressがインストールされていて、トピックの時は除外
-  if (is_bbpress_exist()) {
-    if (bbp_is_topic()) {
-      return false;
-    }
+  if (is_bbpress_page() || is_buddypress_page() || is_wpforo_page()) {
+    return false;
   }
 
   //AMPチェック
