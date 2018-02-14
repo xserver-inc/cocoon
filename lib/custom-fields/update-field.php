@@ -6,9 +6,9 @@
 add_action( 'admin_menu', 'add_update_custom_box' );
 if( !function_exists( 'add_update_custom_box' ) ):
 function add_update_custom_box() {
-  add_meta_box( 'singular_update_settings', __( '更新方法', THEME_NAME ), 'update_custom_box_view', 'post', 'side', 'default' );
-  add_meta_box( 'singular_update_settings', __( '更新方法', THEME_NAME ), 'update_custom_box_view', 'page', 'side', 'default' );
-  add_meta_box( 'singular_update_settings', __( '更新方法', THEME_NAME ), 'update_custom_box_view', 'topic', 'side', 'default' );
+  add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'post', 'side', 'default' );
+  add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'page', 'side', 'default' );
+  add_meta_box( 'singular_update_settings', __( '更新日の変更', THEME_NAME ), 'update_custom_box_view', 'topic', 'side', 'default' );
 }
 endif;
 

@@ -3,7 +3,7 @@
 //アップデートチェックの初期化
 require 'theme-update-checker.php'; //ライブラリのパス
 $example_update_checker = new ThemeUpdateChecker(
-  strtolower(THEME_NAME.'-master'), //テーマフォルダ名
+  strtolower(THEME_PARENT_DIR), //テーマフォルダ名
   'https://wp-cocoon.com/wp-content/themes/cocoon-master/update-info.json' //JSONファイルのURL
 );
 

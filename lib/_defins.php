@@ -6,6 +6,10 @@ define('THEME_NAME', 'cocoon');
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //テーマ名（大文字）
 define('THEME_NAME_UPPER', strtoupper(THEME_NAME));
+//親テーマフォルダ
+define('THEME_PARENT_DIR', THEME_NAME.'-master');
+//子テーマフォルダ
+define('THEME_CHILD_DIR', THEME_NAME.'-child');
 
 //開発関係の場合デバッグ値を有効にする
 define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.dev' ? 1 : 0);
