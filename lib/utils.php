@@ -880,11 +880,11 @@ function is_wpforo_page(){
     //functions-template.phpファイルから
     if (
          is_wpforo_page()
-      || wpforo_topic()
-      || wpforo_forum()
-      || wpforo_post()
-      || is_wpforo_shortcode_page()
-      || is_wpforo_url()
+      // || wpforo_topic()
+      // || wpforo_forum()
+      // || wpforo_post()
+      // || is_wpforo_shortcode_page()
+      // || is_wpforo_url()
       ) {
       return true;
     }

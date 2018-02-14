@@ -4795,12 +4795,18 @@ div#wpforo-wrap .wpfl-1 .head-title,
 div#wpforo-wrap .wpforo-topic-title a {
   font-size: 20px;
 }
-div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content {
+div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content,
+div#wpforo-wrap .wpforo-recent-wrap .wpforo-recent-content td.wpf-spost-title .wpf-spost-title-link,
+div#wpforo-wrap .wpf-htr td {
   font-size: 18px;
 }
 div#wpforo-wrap .wpfl-1 .wpforo-post,
 div#wpforo-wrap #wpforo-stat-body {
   background-color: #fcfcfc;
+}
+
+.wpforo-list-item p {
+  margin: 0;
 }
 
 .live-writer .main {

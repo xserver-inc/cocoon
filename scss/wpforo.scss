@@ -10,7 +10,9 @@ div#wpforo-wrap{
     font-size: 20px;
   }
 
-  .wpforo-post .wpf-right .wpforo-post-content{
+  .wpforo-post .wpf-right .wpforo-post-content,
+  .wpforo-recent-wrap .wpforo-recent-content td.wpf-spost-title .wpf-spost-title-link,
+  .wpf-htr td{
     font-size: 18px;
   }
 
@@ -18,4 +20,8 @@ div#wpforo-wrap{
   #wpforo-stat-body{
     background-color: #fcfcfc;
   }
+}
+
+.wpforo-list-item p {
+  margin: 0;
 }
