@@ -23,7 +23,8 @@ if (is_user_administrator()) {
       $text = $wp_filesystem->get_contents($uploadfile);
       //var_dump($text);
       global $wpdb;
-      $option_name = 'theme_mods_'.THEME_NAME;
+      //$option_name = 'theme_mods_'.THEME_NAME;
+      $option_name = get_theme_mods_option_name();
       $wpdb->update(
         $wpdb->options,
         array(

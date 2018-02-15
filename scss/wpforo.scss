@@ -20,8 +20,17 @@ div#wpforo-wrap{
   #wpforo-stat-body{
     background-color: #fcfcfc;
   }
+
+  //ソースコード
+  pre,
+  .wpforo-post .wpf-right code {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    font-size: 17px;
+  }
 }
 
 .wpforo-list-item p {
   margin: 0;
 }
+
