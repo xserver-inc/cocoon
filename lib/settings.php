@@ -100,6 +100,7 @@ add_filter('widget_pc_ad_text', 'do_shortcode');
 add_filter('widget_pc_double_ad1_text', 'do_shortcode');
 add_filter('widget_pc_double_ad2_text', 'do_shortcode');
 //ランキングアイテム内でショートコード利用する
+add_filter('ranking_item_name', 'do_shortcode');
 add_filter('ranking_item_image_tag', 'do_shortcode');
 add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
