@@ -26,8 +26,13 @@ function admin_print_styles_custom() {
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
   wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
-  //投稿時に記事公開確認ダイアログ処理
-  wp_enqueue_confirmation_before_publish();
+
+  //投稿ページの場合
+  if (is_admin_post_page()) {
+    //投稿時に記事公開確認ダイアログ処理
+    wp_enqueue_confirmation_before_publish();
+  }
+
 
   if (is_admin_php_page()/* || is_widgets_php_page()*/) {
     //タブの読み込み

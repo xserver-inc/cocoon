@@ -759,6 +759,29 @@ function is_admin_php_page(){
 }
 endif;
 
+//投稿新規作成ページ
+if ( !function_exists( 'is_admin_post_new_php_page' ) ):
+function is_admin_post_new_php_page(){
+  global $pagenow;
+  return $pagenow == 'post-new.php';
+}
+endif;
+
+//投稿ページ
+if ( !function_exists( 'is_admin_post_php_page' ) ):
+function is_admin_post_php_page(){
+  global $pagenow;
+  return $pagenow == 'post.php';
+}
+endif;
+
+//投稿・新規作成ページかどうか
+if ( !function_exists( 'is_admin_post_page' ) ):
+function is_admin_post_page(){
+  return is_admin_post_new_php_page() || is_admin_post_php_page();
+}
+endif;
+
 //ウィジェットページか
 if ( !function_exists( 'is_widgets_php_page' ) ):
 function is_widgets_php_page(){
