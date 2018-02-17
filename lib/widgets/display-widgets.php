@@ -213,12 +213,14 @@ function widget_custom_script() {
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-  function get_target_id(ui, selector) {
-    return "#"+$(ui.item.context).find(selector)[0].id;
+  function get_target_id(widgetContext, selector) {
+    //console.log(ui);
+    return "#"+$(widgetContext).find(selector)[0].id;
   }
 
 
   function set_click_events(ui) {
+    //console.log(ui);
     //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
     var btn_id = get_target_id(ui, ".toggle-link");
     $(document).on("click", btn_id, function(){
@@ -289,14 +291,28 @@ jQuery(document).ready(function($){
     });
 
   }
+
+  $('.widget-top').on('click', function(){
+    //console.log('click');
+    var widgetContext = $(this).context.parentNode;
+    //console.log(widgetContext);
+    set_click_events(widgetContext);
+      // var id = $(this).parent.attr("id");
+      // alert(id);
+  });
+
   // 1. when dropped in
   $('div.widgets-sortables').bind('sortstop',function(event,ui){
     //console.log('just dropped in');
-    set_click_events(ui);
+    //console.log(ui);
+    //console.log(ui.item.context);
+    var widgetContext = ui.item.context;
+    set_click_events(widgetContext);
   });
   // 2. do some stuff on load
   //console.log('onLoad');
-    //set_click_events(ui);
+  //console.log($);
+  //set_click_events(ui);
   // 3. on action
   $(document).delegate('.our_widget_class', 'change', function(ev) {
     // you have to find the parent widget here,
