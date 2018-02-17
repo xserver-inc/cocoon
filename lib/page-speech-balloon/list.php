@@ -36,19 +36,22 @@ generate_sort_options_tag($keyword, $order_by);
   <h2 class="hndle"><?php _e( '吹き出し一覧', THEME_NAME ) ?></h2>
   <div class="inside">
 
-<table class="sb-list" style="width: 100%;">
+<!-- <table class="sb-list" style="width: 100%;"> -->
   <?php foreach ($records as $record):
   //var_dump($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
   $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>
-  <tr style="margin-bottom: 20px">
-    <td>
+  <div class="balloon-box">
+    <div class="balloon-top">
       <?php if ($record->title): ?>
-      <div>
-        <a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a>
-      </div>
+      <div><a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a></div>
       <?php endif ?>
+      <?php if ($record->credit): ?>
+      <div><?php echo $record->credit; ?></div>
+      <?php endif ?>
+    </div>
+    <div class="balloon-content">
       <div class="demo">
       <?php //吹き出しの表示
       generate_speech_balloon_tag(
@@ -56,30 +59,26 @@ generate_sort_options_tag($keyword, $order_by);
         SB_SAMPLE_TEXTS[rand(0, 11)]
       ); ?>
       </div>
-      <?php if (0): ?>
-      <div class="shortcode"><?php _e( 'ショートコード：', THEME_NAME ) ?><br><input type="text" name="" value='[speech name="<?php echo esc_html($record->name); ?>" icon="<?php echo esc_html($record->icon); ?>" style="<?php echo esc_html($record->style); ?>" pos="<?php echo esc_html($record->position); ?>" is="<?php echo esc_html($record->iconstyle); ?>"]VOICE[/speech]' style="width: 100%;"></div>
-      <div class="htmlcode">
-        <?php _e( 'HTMLコード：', THEME_NAME ) ?><br>
-        <textarea style="width: 100%;"><?php
-            generate_speech_balloon_tag(
-              $record,
-              'VOICE'
-            );
-        ?></textarea>
+      <div class="balloon-option">
+        <div><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></div>
+        <div><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></div>
+        <?php if (!$record->visible): ?>
+          <div>[<?php _e( '非表示', THEME_NAME ) ?>]</div>
+        <?php endif ?>
       </div>
-      <?php endif ?>
+    </div>
+  </div>
+<!--   <tr style="margin-bottom: 20px">
+    <td>
+
 
     </td>
     <td class="list-option" style="width: 50px;">
-      <p><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></p>
-      <p><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></p>
-      <?php if (!$record->visible): ?>
-        <p>[<?php _e( '非表示', THEME_NAME ) ?>]</p>
-      <?php endif ?>
+
     </td>
-  </tr>
+  </tr> -->
   <?php endforeach ?>
-</table>
+<!-- </table> -->
 
   </div>
 </div>

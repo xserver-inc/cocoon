@@ -62,9 +62,11 @@ function insert_speech_balloon_record($posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
+    'credit' => $posts['credit'],
     'visible' => !empty($posts['visible']) ? 1 : 0,
   );
   $format = array(
+    '%s',
     '%s',
     '%s',
     '%s',
@@ -114,6 +116,7 @@ endif;
 //初期データの入力
 if ( !function_exists( 'add_default_speech_balloon_records' ) ):
 function add_default_speech_balloon_records(){
+  define('IRASUTOYA_CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank">いらすとや</a>');
   $posts = array();
   $posts['title'] = __( '[SAMPLE 01] 男性（左）', THEME_NAME );
   $posts['name']  = __( '太郎', THEME_NAME );
@@ -121,6 +124,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -130,6 +134,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -139,6 +144,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -148,6 +154,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -157,6 +164,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -166,6 +174,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -175,6 +184,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -184,6 +194,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -193,6 +204,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -202,6 +214,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -211,6 +224,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -220,6 +234,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -229,6 +244,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
+  $posts['credit'] = IRASUTOYA_CREDIT;
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 }
@@ -253,6 +269,7 @@ function create_speech_balloons_table() {
     style varchar(20) DEFAULT '".SBS_STANDARD."' NOT NULL,
     position varchar(20) DEFAULT '".SBP_LEFT."' NOT NULL,
     iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."' NOT NULL,
+    credit varchar(256),
     visible bit(1) DEFAULT 1 NOT NULL,
     PRIMARY KEY (id)
   )";
@@ -332,6 +349,7 @@ function get_speech_balloon( $id ) {
   $record->style = !empty($record->style) ? $record->style : SBS_FLAT;
   $record->position = !empty($record->position) ? $record->position : SBP_LEFT;
   $record->iconstyle = !empty($record->iconstyle) ? $record->iconstyle : SBIS_CIRCLE_BORDER;
+  $record->credit = !empty($record->credit) ? $record->credit : null;
   $record->visible = !empty($record->visible) ? 1 : 0;
 
   return $record;

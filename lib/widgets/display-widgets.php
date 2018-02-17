@@ -213,6 +213,12 @@ function widget_custom_script() {
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
+  function loadScript(url) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+  };
+
   function get_target_id(widgetContext, selector) {
     //console.log(ui);
     return "#"+$(widgetContext).find(selector)[0].id;
@@ -308,6 +314,8 @@ jQuery(document).ready(function($){
     //console.log(ui.item.context);
     var widgetContext = ui.item.context;
     set_click_events(widgetContext);
+    // loadScript('http://cocoon.dev/wp-includes/js/thickbox/thickbox.js');
+    // loadScript('http://cocoon.dev/wp-admin/js/media-upload.min.js');
   });
   // 2. do some stuff on load
   //console.log('onLoad');

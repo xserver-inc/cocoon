@@ -494,21 +494,21 @@ select option.fa{
   max-width: 1200px;
 }
 
-.sb-list{
-  .demo{
-    background-color: #fff;
-    resize: none;
-    border-style: none;
-    padding-bottom: 0;
-  }
+// .sb-list{
+//   .demo{
+//     background-color: #fff;
+//     resize: none;
+//     border-style: none;
+//     padding-bottom: 0;
+//   }
 
-  .demo .speech-wrap{
-    margin: 0;
-  }
-  .htmlcode{
-    margin-bottom: 20px;
-  }
-}
+//   .demo .speech-wrap{
+//     margin: 0;
+//   }
+//   .htmlcode{
+//     margin-bottom: 20px;
+//   }
+// }
 
 .indent{
   padding-left: 40px;
@@ -524,17 +524,17 @@ select option.fa{
 }
 
 
-table.sb-list{
-  border-collapse: collapse;
-  td{
-    padding: 12px 0;
-    border-bottom: 1px solid #ccc;
-  }
-  td:first-child{
-    border-top: 1px solid #ccc;
-  }
+// table.sb-list{
+//   border-collapse: collapse;
+//   td{
+//     padding: 12px 0;
+//     border-bottom: 1px solid #ccc;
+//   }
+//   td:first-child{
+//     border-top: 1px solid #ccc;
+//   }
 
-}
+// }//
 .list-option{
   width: 50px;
   text-align: center;
@@ -697,3 +697,60 @@ table.sb-list{
 .speech-balloon p{
   font-size: 16px;
 }
+
+
+///////////////////////////////////////
+// 吹き出し管理画面
+///////////////////////////////////////
+.balloon-box{
+  margin: 10px 0;
+  padding: 12px;
+  border-top: 1px solid #ccc;
+  &:first-child{
+    border-top: 0px solid transparent;
+  }
+}
+.balloon-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.balloon-content{
+  display: flex;
+  >div{
+    width: 100%;
+  }
+  .balloon-option{
+    width: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
+    //height: 200px;
+    >div{
+      padding: 5px 0;
+    }
+  }
+
+  .demo{
+    background-color: #fff;
+    resize: none;
+    border-style: none;
+    padding-bottom: 0;
+  }
+
+  .demo .speech-wrap{
+    margin: 0;
+  }
+  // .htmlcode{
+  //   margin-bottom: 20px;
+  // }
+}
+
+.baloon-credit{
+  text-align: right;
+  padding: 3px;
+}
+
