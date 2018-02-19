@@ -34,6 +34,8 @@ http://sorgalla.com/lity/
 Masonry  
 http://masonry.desandro.com/
 
-CC0イラスト
-http://gahag.net/000150-animal-cute/
-
+アイコン素材
+----------
+当テーマの「吹き出し」機能にデフォルトで用意されているアイコン素材は[いらすとや](http://www.irasutoya.com/)さんのものを利用させていただいています。
+いらすとやさんの素材については、CDN配信という条件の下、利用料をお支払いし使用させていただいています。Cocoonテーマ（子テーマ）以外での利用はできませんのでご了承ください。
+また、デモ素材を利用する上でも、[いらすとや利用規約](http://www.irasutoya.com/p/terms.html)に準ずる形でご利用ください。 
