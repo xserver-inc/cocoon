@@ -10,10 +10,6 @@ define('SB_NEW_URL',    add_query_arg(array('action' => 'new',   'id' => false))
 
 //デフォルトの名前
 define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
-//デフォルトアイコン
-define('SB_DEFAULT_MAN_ICON', get_template_directory_uri().'/images/man.png');
-
-define('SB_DEFAULT_WOMAN_ICON', get_template_directory_uri().'/images/woman.png');
 
 //スタイル
 define('SBS_STANDARD', 'stn');
@@ -30,6 +26,14 @@ define('SBIS_SQUARE_NONE', 'sn');
 define('SBIS_SQUARE_BORDER', 'sb');
 define('SBIS_CIRCLE_NONE', 'cn');
 define('SBIS_CIRCLE_BORDER', 'cb');
+
+//いらすとやさん関係
+define('IRASUTOYA_CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank">いらすとや</a>');
+define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
+//デフォルトアイコン
+define('SB_DEFAULT_ICON', get_template_directory_uri().'/images/anony.png');
+define('SB_DEFAULT_MAN_ICON', IMAGE_CDN_DIR_URL.'//man.png');
+define('SB_DEFAULT_WOMAN_ICON', IMAGE_CDN_DIR_URL.'//woman.png');
 
 
 //吹き出しテーブルのバージョン取得
@@ -116,10 +120,10 @@ endif;
 //初期データの入力
 if ( !function_exists( 'add_default_speech_balloon_records' ) ):
 function add_default_speech_balloon_records(){
-  define('IRASUTOYA_CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank">いらすとや</a>');
+
   $posts = array();
   $posts['title'] = __( '[SAMPLE 01] 男性（左）', THEME_NAME );
-  $posts['name']  = __( '太郎', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
   $posts['icon']  = SB_DEFAULT_MAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
@@ -129,7 +133,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 02] 女性（右）', THEME_NAME );
-  $posts['name']  = __( '花子', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
   $posts['icon']  = SB_DEFAULT_WOMAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
@@ -139,8 +143,8 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 03] 少年（左）', THEME_NAME );
-  $posts['name']  = __( 'たけし', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/boy.png';
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/boy.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -149,8 +153,8 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 04] 少女（右）', THEME_NAME );
-  $posts['name']  = __( 'えり', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/girl.png';
+  $posts['name']  = __( 'form.php', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/girl.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -159,8 +163,8 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 05] おじさん（左）', THEME_NAME );
-  $posts['name']  = __( '一郎', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/ojisan.png';
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/ojisan.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -169,8 +173,8 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 06] おばさん（左）', THEME_NAME );
-  $posts['name']  = __( 'よし江', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/obasan.png';
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/obasan.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -178,9 +182,9 @@ function add_default_speech_balloon_records(){
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 07] 男性医師（左）', THEME_NAME );
-  $posts['name']  = __( '主治医', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/doctor-man.png';
+  $posts['title'] = __( '[SAMPLE 07] ビジネスマン（左）', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/b-man.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
@@ -188,9 +192,9 @@ function add_default_speech_balloon_records(){
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 08] 女性医師（右）', THEME_NAME );
-  $posts['name']  = __( '主治医', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/doctor-woman.png';
+  $posts['title'] = __( '[SAMPLE 08] ビジネスウーマン（右）', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/b-woman.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
@@ -199,8 +203,8 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 09] どや顔男性（左）', THEME_NAME );
-  $posts['name']  = __( 'どや男', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/doya.png';
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/doya.png';
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -210,7 +214,7 @@ function add_default_speech_balloon_records(){
 
   $posts['title'] = __( '[SAMPLE 10] 熊（左）', THEME_NAME );
   $posts['name']  = __( 'くま', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/bear.png';
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/bear.png';
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -220,7 +224,7 @@ function add_default_speech_balloon_records(){
 
   $posts['title'] = __( '[SAMPLE 11] 猫（右）', THEME_NAME );
   $posts['name']  = __( 'ねこ', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/cat.png';
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/cat.png';
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -230,7 +234,7 @@ function add_default_speech_balloon_records(){
 
   $posts['title'] = __( '[SAMPLE 12] 犬（左）', THEME_NAME );
   $posts['name']  = __( 'いぬ', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/dog.png';
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/dog.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -240,7 +244,7 @@ function add_default_speech_balloon_records(){
 
   $posts['title'] = __( '[SAMPLE 13] ウサギ（右）', THEME_NAME );
   $posts['name']  = __( 'うさぎ', THEME_NAME );
-  $posts['icon']  = get_template_directory_uri().'/images/rabbit.png';
+  $posts['icon']  = IMAGE_CDN_DIR_URL.'/rabbit.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
@@ -264,8 +268,8 @@ function create_speech_balloons_table() {
     date datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     modified datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
     title varchar(126),
-    name varchar(36) DEFAULT '".SB_DEFAULT_NAME."' NOT NULL,
-    icon varchar(256) DEFAULT '".SB_DEFAULT_MAN_ICON."' NOT NULL,
+    name varchar(36) DEFAULT NULL,
+    icon varchar(256) DEFAULT '".SB_DEFAULT_ICON."' NOT NULL,
     style varchar(20) DEFAULT '".SBS_STANDARD."' NOT NULL,
     position varchar(20) DEFAULT '".SBP_LEFT."' NOT NULL,
     iconstyle varchar(20) DEFAULT '".SBIS_CIRCLE_BORDER."' NOT NULL,
@@ -378,7 +382,10 @@ function generate_speech_balloon_tag($record, $voice){?>
 <div class="speech-wrap sb-id-<?php echo esc_html($record->id); ?> sbs-<?php echo esc_html($record->style); ?> sbp-<?php echo esc_html($record->position); ?> sbis-<?php echo esc_html($record->iconstyle); ?> cf">
   <div class="speech-person">
     <figure class="speech-icon"><img src="<?php echo esc_html($record->icon); ?>" alt="<?php echo esc_html($record->name); ?>" class="speech-icon-image"></figure>
-    <div class="speech-name"><?php echo esc_html($record->name); ?></div>
+    <?php if ($record->name): ?>
+      <div class="speech-name"><?php echo esc_html($record->name); ?></div>
+    <?php endif ?>
+
   </div>
   <div class="speech-balloon"><p><?php echo esc_html($voice); ?></p></div>
 </div>

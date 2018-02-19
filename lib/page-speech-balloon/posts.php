@@ -1,5 +1,5 @@
 <?php //内容の保存
-if (!empty($_POST['name']) &&
+if (//!empty($_POST['name']) &&
     !empty($_POST['icon']) &&
     !empty($_POST['action'])) {
   if ($_POST['action'] == 'new') {
@@ -28,9 +28,9 @@ if (!empty($_POST['name']) &&
   }
 } else {
   $message = '';
-  if (empty($_POST['name'])) {
-    $message .= __( '名前が入力されていません。', THEME_NAME ).'<br>';
-  }
+  // if (empty($_POST['name'])) {
+  //   $message .= __( '名前が入力されていません。', THEME_NAME ).'<br>';
+  // }
   if (empty($_POST['icon'])) {
     $message .= __( 'アイコン画像が入力されていません。', THEME_NAME ).'<br>';
   }
