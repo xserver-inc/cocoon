@@ -153,7 +153,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 04] 少女（右）', THEME_NAME );
-  $posts['name']  = __( 'form.php', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
   $posts['icon']  = IMAGE_CDN_DIR_URL.'/girl.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
@@ -390,5 +390,19 @@ function generate_speech_balloon_tag($record, $voice){?>
   <div class="speech-balloon"><p><?php echo esc_html($voice); ?></p></div>
 </div>
 <?php
+}
+endif;
+
+if ( !function_exists( 'is_icon_irasutoya' ) ):
+function is_icon_irasutoya($record){
+  if (isset($record->icon) && isset($record->credit)) {
+    if ($record->credit == IRASUTOYA_CREDIT) {
+      if (strpos($record->icon, IMAGE_CDN_DIR_URL) !== false) {
+        return true;
+      }
+    }
+
+  }
+
 }
 endif;

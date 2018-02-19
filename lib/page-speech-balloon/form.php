@@ -52,7 +52,7 @@
         <td>
           <?php
           generate_textbox_tag('name', $name,  __('推奨：6文字以下',THEME_NAME ));
-          generate_tips_tag(__( 'アイコン下に表示される名前を入力してください。', THEME_NAME ));
+          generate_tips_tag(__( 'アイコン下に表示される名前を入力してください。※未入力でも可', THEME_NAME ));
           ?>
         </td>
       </tr>

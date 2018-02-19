@@ -47,7 +47,7 @@ generate_sort_options_tag($keyword, $order_by);
       <?php if ($record->title): ?>
       <div><a href="<?php echo $edit_url; ?>"><?php echo $record->title; ?></a></div>
       <?php endif ?>
-      <?php if ($record->credit): ?>
+      <?php if (is_icon_irasutoya($record)): ?>
       <div><?php echo $record->credit; ?></div>
       <?php endif ?>
     </div>
