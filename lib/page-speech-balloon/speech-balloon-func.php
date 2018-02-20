@@ -1,7 +1,7 @@
 <?php //吹き出し関係の関数
 
 //関数テキストテーブルのバージョン
-define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0');
+define('SPEECH_BALLOONS_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.0');
 define('SPEECH_BALLOONS_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_speech_balloons');
 
 //関数テキスト移動用URL
@@ -66,7 +66,7 @@ function insert_speech_balloon_record($posts){
     'style' => $posts['style'],
     'position' => $posts['position'],
     'iconstyle' => $posts['iconstyle'],
-    'credit' => $posts['credit'],
+    'credit' => !empty($posts['credit']) ? $posts['credit'] : null,
     'visible' => !empty($posts['visible']) ? 1 : 0,
   );
   $format = array(
@@ -162,7 +162,7 @@ function add_default_speech_balloon_records(){
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 05] おじさん（左）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 05] 悩むおじさん（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
   $posts['icon']  = IMAGE_CDN_DIR_URL.'/ojisan.png';
   $posts['style'] = SBS_FLAT;
@@ -172,7 +172,7 @@ function add_default_speech_balloon_records(){
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 06] おばさん（左）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 06] 悩むおばさん（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
   $posts['icon']  = IMAGE_CDN_DIR_URL.'/obasan.png';
   $posts['style'] = SBS_FLAT;
@@ -348,7 +348,7 @@ function get_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
   $record->title = !empty($record->title) ? $record->title : '';
-  $record->name = !empty($record->name) ? $record->name : SB_DEFAULT_NAME;
+  $record->name = !empty($record->name) ? $record->name : null;
   $record->icon = !empty($record->icon) ? $record->icon : SB_DEFAULT_MAN_ICON;
   $record->style = !empty($record->style) ? $record->style : SBS_FLAT;
   $record->position = !empty($record->position) ? $record->position : SBP_LEFT;
