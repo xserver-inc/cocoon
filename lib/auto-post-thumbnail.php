@@ -113,7 +113,7 @@ if ( is_auto_post_thumbnail_enable() ) {
   add_action('new_to_publish', 'auto_post_thumbnail_image');
   add_action('pending_to_publish', 'auto_post_thumbnail_image');
   add_action('future_to_publish', 'auto_post_thumbnail_image');
-  add_action('xmlrpc_publish_post', 'auto_post_thumbnail_image');
+  //add_action('xmlrpc_publish_post', 'auto_post_thumbnail_image');
   //add_action('publish_post', 'auto_post_thumbnail_image');
 }
 if ( !function_exists( 'auto_post_thumbnail_image' ) ):

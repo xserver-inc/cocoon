@@ -60,7 +60,6 @@
 
       <div class="entry-content cf<?php echo get_additional_entry_content_classes(); ?>" itemprop="mainEntityOfPage">
       <?php //記事本文の表示
-        //echo get_the_content();
         the_content(); ?>
       </div>
 
