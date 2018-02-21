@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  <?php
+  <?php;
   if ( have_posts() ) {
     while ( have_posts() ) {
       the_post();?>
@@ -60,6 +60,7 @@
 
       <div class="entry-content cf<?php echo get_additional_entry_content_classes(); ?>" itemprop="mainEntityOfPage">
       <?php //記事本文の表示
+        //echo get_the_content();
         the_content(); ?>
       </div>
 
