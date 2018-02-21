@@ -1580,12 +1580,14 @@ a.blogcard-wrap {
 .sidebar .blogcard-content,
 .footer .blogcard-content {
   margin-left: 32%;
+  margin-right: 0;
   max-height: 110px;
   font-size: 0.9em;
 }
 .sidebar .ib-right .blogcard-content,
 .footer .ib-right .blogcard-content {
   margin-right: 32%;
+  margin-left: 0;
 }
 
 /************************************
@@ -4985,12 +4987,14 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
 
   .blogcard-content {
     margin-left: 32%;
+    margin-right: 0;
     max-height: 110px;
     font-size: 0.9em;
   }
 
   .ib-right .blogcard-content {
     margin-right: 32%;
+    margin-left: 0;
   }
 
   .sns-follow-buttons {

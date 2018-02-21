@@ -341,12 +341,14 @@ $bgc_hover_anime: all 0.5s ease;
   .blogcard-content{
     //width: 69%;
     margin-left: 32%;
+    margin-right: 0;
     max-height: 110px;
     font-size: 0.9em;
   }
   .ib-right{
     .blogcard-content{
       margin-right: 32%;
+      margin-left: 0;
     }
   }
 }
