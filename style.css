@@ -1575,18 +1575,18 @@ a.blogcard-wrap {
 }
 .sidebar .blogcard-thumbnail,
 .footer .blogcard-thumbnail {
-  width: 30%;
+  width: 34%;
 }
 .sidebar .blogcard-content,
 .footer .blogcard-content {
-  margin-left: 32%;
+  margin-left: 36%;
   margin-right: 0;
   max-height: 110px;
   font-size: 0.9em;
 }
 .sidebar .ib-right .blogcard-content,
 .footer .ib-right .blogcard-content {
-  margin-right: 32%;
+  margin-right: 36%;
   margin-left: 0;
 }
 
@@ -4982,18 +4982,18 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
   }
 
   .blogcard-thumbnail {
-    width: 30%;
+    width: 34%;
   }
 
   .blogcard-content {
-    margin-left: 32%;
+    margin-left: 36%;
     margin-right: 0;
     max-height: 110px;
     font-size: 0.9em;
   }
 
   .ib-right .blogcard-content {
-    margin-right: 32%;
+    margin-right: 36%;
     margin-left: 0;
   }
 
