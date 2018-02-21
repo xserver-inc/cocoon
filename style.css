@@ -473,7 +473,7 @@ img {
 .navi-in > ul li:hover > ul {
   display: block;
 }
-.navi-in > ul > .menu-item-has-description a > .caption-wrap {
+.navi-in > ul .menu-item-has-description > a > .caption-wrap {
   line-height: 21.4285714286px;
   display: flex;
   flex-wrap: wrap;
@@ -482,10 +482,10 @@ img {
   align-content: center;
   height: 60px;
 }
-.navi-in > ul > .menu-item-has-description a > .caption-wrap div {
+.navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
   width: 100%;
 }
-.navi-in > ul > .menu-item-has-description .item-description {
+.navi-in > ul .menu-item-has-description .item-description {
   font-size: 0.8em;
 }
 .navi-in > ul > .menu-item-has-children {

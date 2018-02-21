@@ -60,11 +60,11 @@ $icon_height: 16px;
 
 
 
-    >.menu-item-has-description{
+    .menu-item-has-description{
       >a{
       }
 
-      a>.caption-wrap{
+      >a>.caption-wrap{
         line-height: $menu_height / 2.8;
         display: flex;
         flex-wrap: wrap;
@@ -73,7 +73,7 @@ $icon_height: 16px;
         align-content: center;
         height: $menu_height;
 
-        div{
+        >div{
           width: 100%;
         }
 
