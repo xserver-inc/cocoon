@@ -7,6 +7,7 @@ if ($cat_id && get_category_meta($cat_id)): ?>
     <header class="article-header category-header">
       <figure class="eye-catch">
         <img src="<?php echo $eye_catch; ?>" alt="<?php echo get_category_title($cat_id); ?>">
+        <?php echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>'; //カテゴリラベル ?>
       </figure>
     </header>
   <?php endif ?>

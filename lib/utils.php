@@ -60,8 +60,7 @@ function get_the_nolink_category(){
   //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
-    $style = null;//get_category_label_style_attr($category->cat_ID);
-    return '<span class="cat-label cat-label-'.$category->cat_ID.'"'.$style.'>'.$category->cat_name.'</span>';
+    return '<span class="cat-label cat-label-'.$category->cat_ID.'">'.$category->cat_name.'</span>';
   }
 }
 endif;
