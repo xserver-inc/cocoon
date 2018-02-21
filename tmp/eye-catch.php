@@ -4,8 +4,6 @@ $display_none = has_post_thumbnail() ? null : ' display-none'; ?>
 <figure class="eye-catch<?php echo $display_none; ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
   <?php
   if (has_post_thumbnail()) {
-    //アイキャッチの表示
-    the_post_thumbnail();
     // アイキャッチ画像のIDを取得
     $thumbnail_id = get_post_thumbnail_id();
     // mediumサイズの画像内容を取得（引数にmediumをセット）
@@ -13,6 +11,13 @@ $display_none = has_post_thumbnail() ? null : ' display-none'; ?>
     $url = $eye_img[0];
     $width = $eye_img[1];
     $height = $eye_img[2];
+    //アイキャッチの表示
+    if ($width && $height) {
+      the_post_thumbnail(array($width, $height));
+    } else {
+      the_post_thumbnail();
+    }
+
   } else {
     $url = get_ogp_home_image_url();
     $size = get_image_width_and_height($url);
