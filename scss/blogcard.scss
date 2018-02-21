@@ -1,6 +1,6 @@
 //ブログカードスタイル
 
-.blogcard-wrap{
+a.blogcard-wrap{
   margin: 24px auto;
   padding: 0;
   width: 90%;
@@ -18,6 +18,10 @@
 .blogcard-thumbnail{
   float: left;
   margin-top: $emtry_card_thumb_margin_top;
+  width: 160px;
+  img{
+    width: 100%;
+  }
 }
 
 .blogcard-content{

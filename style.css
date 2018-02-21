@@ -1345,7 +1345,7 @@ span.internal-icon {
     display: block;
   }
 }
-.blogcard-wrap {
+a.blogcard-wrap {
   margin: 24px auto;
   padding: 0;
   width: 90%;
@@ -1362,6 +1362,10 @@ span.internal-icon {
 .blogcard-thumbnail {
   float: left;
   margin-top: 3px;
+  width: 160px;
+}
+.blogcard-thumbnail img {
+  width: 100%;
 }
 
 .blogcard-content {
@@ -1571,13 +1575,17 @@ span.internal-icon {
 }
 .sidebar .blogcard-thumbnail,
 .footer .blogcard-thumbnail {
-  width: 34%;
+  width: 30%;
 }
 .sidebar .blogcard-content,
 .footer .blogcard-content {
-  margin-left: 35%;
+  margin-left: 32%;
   max-height: 110px;
   font-size: 0.9em;
+}
+.sidebar .ib-right .blogcard-content,
+.footer .ib-right .blogcard-content {
+  margin-right: 32%;
 }
 
 /************************************
@@ -4972,13 +4980,17 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
   }
 
   .blogcard-thumbnail {
-    width: 34%;
+    width: 30%;
   }
 
   .blogcard-content {
-    margin-left: 35%;
+    margin-left: 32%;
     max-height: 110px;
     font-size: 0.9em;
+  }
+
+  .ib-right .blogcard-content {
+    margin-right: 32%;
   }
 
   .sns-follow-buttons {
