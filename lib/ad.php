@@ -14,8 +14,14 @@ function is_ads_visible(){
     is_page( $post_ids ) ||   //個別ページの除外
     //カテゴリの除外
     (is_single() && in_category( $category_ids ) ) ||//投稿ページの除外
-    is_category( $category_ids ) //アーカイブページの除外
+    in_category( $category_ids ) //アーカイブページの除外
   );
+
+  // var_dump($is_exclude_ids);
+  // var_dump(is_single( $post_ids ));
+  // var_dump(is_page( $post_ids ));
+  // var_dump((is_single() && in_category( $category_ids ) ));
+  // var_dump(in_category( $category_ids ));
 
   return is_all_ads_visible() &&
     !$is_exclude_ids && //除外ページでない場合広告を表示
@@ -243,10 +249,10 @@ function is_index_middle_widget_visible($count){
   if (
       //3個目の表示のときのみ
       ($count == 3) &&
-      //トップページリストのみ
-      is_home() &&
-      //ページネーションの最終ページでないとき
-      !is_pagination_last_page() &&
+      // //トップページリストのみ
+      // is_home() &&
+      // //ページネーションの最終ページでないとき
+      // !is_pagination_last_page() &&
       //1ページに表示する最大投稿数が6以上の時
       is_posts_per_page_6_and_over() &&
       //エントリーカードタイプの一覧のとき
@@ -269,8 +275,8 @@ function is_index_middle_ad_visible($count){
       // ($count == 3) &&
       // //トップページリストのみ
       // is_home() &&
-      // //ページネーションの最終ページでないとき
-      // !is_pagination_last_page() &&
+      //ページネーションの最終ページでないとき
+      !is_pagination_last_page() &&
       // //1ページに表示する最大投稿数が6以上の時
       // is_posts_per_page_6_and_over() &&
       // //エントリーカードタイプの一覧のとき
