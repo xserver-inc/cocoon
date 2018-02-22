@@ -431,12 +431,22 @@ select option.fa{
   }
 }
 
+.display-widgets-area{
+  input[type='text']{
+    width: 100%;
+  }
+}
+
 .page-display-check-list,
 .author-check-list,
 .display-widgets-area,
 .post-check-list,
 .fixed-page-check-list{
   display: none;
+}
+
+.fixed-page-tab{
+  display: none !important;
 }
 
 .display-widgets-toggle{

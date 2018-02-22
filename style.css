@@ -1353,7 +1353,7 @@ a.blogcard-wrap {
 }
 
 .blogcard {
-  padding: 1.3% 1.8% 1.6%;
+  padding: 1.4% 2% 1.8%;
   border: 1px solid #cccfd2;
   border-radius: 4px;
   line-height: 1.3;
@@ -2866,7 +2866,7 @@ label.screen-reader-text {
   margin: 1em 0;
   line-height: 1.4;
   position: relative;
-  padding: 1.3% 1.8% 1.6%;
+  padding: 1.4% 2% 1.8%;
 }
 .author-box p {
   margin-top: 0.3em;

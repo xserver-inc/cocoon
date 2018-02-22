@@ -242,7 +242,7 @@ if ( !function_exists( 'is_index_middle_ad_visible' ) ):
 function is_index_middle_ad_visible($count){
   if (
       //広告表示設定が有効な時
-      is_ad_pos_index_top_visible() &&
+      is_ad_pos_index_middle_visible() &&
       //3個目の表示のときのみ
       ($count == 3) &&
       //トップページリストのみ
