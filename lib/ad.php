@@ -237,12 +237,10 @@ function get_all_post_count_in_publish(){
 }
 endif;
 
-//広告をトップページのリスト表示中間に掲載するか
-if ( !function_exists( 'is_index_middle_ad_visible' ) ):
-function is_index_middle_ad_visible($count){
+//ウィジェットをトップページのリスト表示中間に掲載するか
+if ( !function_exists( 'is_index_middle_widget_visible' ) ):
+function is_index_middle_widget_visible($count){
   if (
-      //広告表示設定が有効な時
-      is_ad_pos_index_middle_visible() &&
       //3個目の表示のときのみ
       ($count == 3) &&
       //トップページリストのみ
@@ -255,6 +253,31 @@ function is_index_middle_ad_visible($count){
       is_entry_card_type_entry_card() &&
       //&&//公開記事が6以上の時
       (get_all_post_count_in_publish() >= 6)
+  ) {
+    return true;
+  }
+}
+endif;
+
+//広告をトップページのリスト表示中間に掲載するか
+if ( !function_exists( 'is_index_middle_ad_visible' ) ):
+function is_index_middle_ad_visible($count){
+  if (
+      //広告表示設定が有効な時
+      is_ad_pos_index_middle_visible() &&
+      // //3個目の表示のときのみ
+      // ($count == 3) &&
+      // //トップページリストのみ
+      // is_home() &&
+      // //ページネーションの最終ページでないとき
+      // !is_pagination_last_page() &&
+      // //1ページに表示する最大投稿数が6以上の時
+      // is_posts_per_page_6_and_over() &&
+      // //エントリーカードタイプの一覧のとき
+      // is_entry_card_type_entry_card() &&
+      // //&&//公開記事が6以上の時
+      // (get_all_post_count_in_publish() >= 6)
+      is_index_middle_widget_visible($count)
   ) {
     return true;
   }

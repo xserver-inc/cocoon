@@ -51,7 +51,7 @@ if (have_posts()) : // WordPress ループ
     ////////////////////////////
     //インデックスリストミドルウィジェット
     ////////////////////////////
-    if ( is_active_sidebar( 'index-middle' ) && is_index_middle_ad_visible($count) ){
+    if ( is_active_sidebar( 'index-middle' ) && is_index_middle_widget_visible($count) ){
       dynamic_sidebar( 'index-middle' );
     };
 
