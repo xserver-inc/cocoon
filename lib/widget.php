@@ -39,5 +39,20 @@ function wp_tag_cloud_custom( $output ) {
 }
 endif;
 
+if ( !function_exists( 'is_first_char_exclamation' ) ):
+function is_first_char_exclamation($title){
+  if (strpos($title, '!') === 0) {
+    return true;
+  }
+}
+endif;
+
+if ( !function_exists( 'is_widget_title_visible' ) ):
+function is_widget_title_visible($title){
+  if ($title && !is_first_char_exclamation($title)) {
+    return true;
+  }
+}
+endif;
 
 
