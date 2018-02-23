@@ -1,8 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  <?php;
+  <?php
   if ( have_posts() ) {
     while ( have_posts() ) {
-      the_post();?>
+      the_post(); ?>
 
       <?php //タイトル上の広告表示
       if (is_ad_pos_above_title_visible() && is_all_adsenses_visible()){
@@ -148,5 +148,5 @@
 
     <?php
     } // end while
-  } //have_posts end if?>
+  } //have_posts end if ?>
 </article>
