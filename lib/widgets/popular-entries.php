@@ -16,7 +16,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     //ウィジェットモード（全ての人気記事を表示するか、カテゴリ別に表示するか）
     $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
-    $title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'] );
+    $title = empty($instance['title']) ? '' : $instance['title'];
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //表示タイプ
@@ -67,17 +68,20 @@ class PopularEntryWidgetItem extends WP_Widget {
                //「表示モード」が「カテゴリ別人気記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
-      echo $args['before_title'];
-      if ($title) {
-        echo $title;//タイトルが設定されている場合は使用する
-      } else {
-        if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-          _e( '人気記事', THEME_NAME );
+      if ($title !== null) {
+        echo $args['before_title'];
+        if ($title) {
+          echo $title;//タイトルが設定されている場合は使用する
         } else {
-          _e( 'カテゴリー別人気記事', THEME_NAME );
+          if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
+            _e( '人気記事', THEME_NAME );
+          } else {
+            _e( 'カテゴリー別人気記事', THEME_NAME );
+          }
         }
+        echo $args['after_title'];
       }
-      echo $args['after_title'];
+
 
       //get_template_part('tmp/popular-entries');
       generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids);

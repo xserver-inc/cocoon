@@ -15,6 +15,7 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = apply_filters( 'widget_title_facebook_page_like', $instance['title_facebook_page_like'] );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $text = apply_filters( 'widget_text_facebook_page_like', $instance['text_facebook_page_like'] );
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
 

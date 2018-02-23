@@ -16,6 +16,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
 
     //タイトル名を取得
     $title = apply_filters( 'widget_recent_comment_title', empty($instance['title']) ? __( '最近のコメント', THEME_NAME ) : $instance['title'] );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //コメント表示数
     $count = apply_filters( 'widget_recent_comment_count', empty($instance['count']) ? 5 : absint( $instance['count'] ) );
     //コメント文字数
@@ -27,13 +28,16 @@ class RecentCommentsWidgetItem extends WP_Widget {
       <?php //classにwidgetと一意となるクラス名を追加する ?>
       <?php echo $args['before_widget']; ?>
         <?php
-        echo $args['before_title'];
-        if ($title) {
-          echo $title;//タイトルが設定されている場合は使用する
-        } else {
-          echo __( '最近のコメント', THEME_NAME );
+        if ($title !== null) {
+          echo $args['before_title'];
+          if ($title) {
+            echo $title;//タイトルが設定されている場合は使用する
+          } else {
+            echo __( '最近のコメント', THEME_NAME );
+          }
+          echo $args['after_title'];
         }
-        echo $args['after_title'];
+
         ?>
           <?php
           $comments_args = array(

@@ -15,6 +15,7 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = !empty($instance['title']) ? $instance['title'] : '';
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $message = !empty( $instance['message'] ) ? $instance['message'] : __( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME );
     $sub_message = !empty( $instance['sub_message'] ) ? $instance['sub_message'] : __( '最新情報をお届けします。', THEME_NAME );
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();

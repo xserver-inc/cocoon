@@ -55,4 +55,16 @@ function is_widget_title_visible($title){
 }
 endif;
 
-
+//ウィジェットのタイトルを隠せるように
+add_filter('widget_title', 'widget_title_hidable');
+if ( !function_exists( 'widget_title_hidable' ) ):
+function widget_title_hidable($title){
+  // _v($title);
+  // _v(strpos($title, '!') === 0);
+  //ウィジェットタイトルの最初の一文字が！のとき
+  if (strpos($title, '!') === 0) {
+    return null;
+  }
+  return $title;
+}
+endif;

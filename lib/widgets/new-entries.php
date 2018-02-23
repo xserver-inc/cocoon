@@ -17,6 +17,7 @@ class NewEntryWidgetItem extends WP_Widget {
     $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
     $title_new = apply_filters( 'widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
+    $title_new = apply_filters( 'widget_title', $title_new, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //$is_top_visible = apply_filters( 'widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
@@ -52,18 +53,21 @@ class NewEntryWidgetItem extends WP_Widget {
                //「表示モード」が「カテゴリ別新着記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
-      echo $args['before_title'];
-      if ($title_new) {
-        echo $title_new;//タイトルが設定されている場合は使用する
-      } else {
-        if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-          _e( '新着記事', THEME_NAME );
+      if ($title_new !== null) {
+        echo $args['before_title'];
+        if ($title_new) {
+          echo $title_new;//タイトルが設定されている場合は使用する
         } else {
-          _e( 'カテゴリー別新着記事', THEME_NAME );
+          if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
+            _e( '新着記事', THEME_NAME );
+          } else {
+            _e( 'カテゴリー別新着記事', THEME_NAME );
+          }
+          //echo '新着記事';
         }
-        //echo '新着記事';
+        echo $args['after_title'];
       }
-      echo $args['after_title'];
+
 
       //get_template_part('tmp/new-entries');
 

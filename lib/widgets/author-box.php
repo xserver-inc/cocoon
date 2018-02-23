@@ -15,6 +15,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = isset($instance['title']) ? $instance['title'] : '';
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $label = isset( $instance['label'] ) ? $instance['label'] : '';
 
     echo $args['before_widget'];

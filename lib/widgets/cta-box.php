@@ -15,6 +15,7 @@ class CTABoxWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = !empty($instance['title']) ? $instance['title'] : '';
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $heading = !empty($instance['heading']) ? $instance['heading'] : '';
     $layout = !empty( $instance['layout'] ) ? $instance['layout'] : '';
     $image_url = !empty($instance['image_url']) ? $instance['image_url'] : '';

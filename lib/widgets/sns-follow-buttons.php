@@ -14,14 +14,18 @@ class SocialFollowWidgetItem extends WP_Widget {
   function widget($args, $instance) {
     extract( $args );
     $title_popular = apply_filters( 'widget_title_social_follow', $instance['title_social_follow'] );
+    $title_popular = apply_filters( 'widget_title', $title_popular, $instance, $this->id_base );
     echo $args['before_widget'];
-    echo $args['before_title'];
-    if ($title_popular) {
-      echo $title_popular;
-    } else {
-      echo __( 'SNSフォローボタン', THEME_NAME );
+    if ($title_popular !== null) {
+      echo $args['before_title'];
+      if ($title_popular) {
+        echo $title_popular;
+      } else {
+        echo __( 'SNSフォローボタン', THEME_NAME );
+      }
+      echo $args['after_title'];
     }
-    echo $args['after_title'];
+
     get_template_part('tmp/sns-follow-buttons'); //SNSフォローボタン
     echo $args['after_widget']; ?>
   <?php
