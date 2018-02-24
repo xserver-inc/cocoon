@@ -1938,6 +1938,10 @@ label.screen-reader-text {
   display: none;
 }
 
+.widget h2 {
+  font-size: 20px;
+}
+
 /*拡張クラスを追加するスタイルシート*/
 .badge,
 .ref,
