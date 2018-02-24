@@ -54,7 +54,7 @@ function generate_html_tags_is($value){
 
   <?php //3カラムレイアウト
   $before = '<div class="column-3"><div class="column-left"><p>';
-  $after = '</p></div><div class="column-center"><p>'.$right_msg.'</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
+  $after = '</p></div><div class="column-center"><p>'.$center_msg.'</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[1] = new Array();
   htmlTags[1].title  = '<?php echo __( '3カラム', THEME_NAME ); ?>';
