@@ -342,7 +342,8 @@ form.admin-settings{
     padding: 8px;
     position: absolute;
     bottom: 1em;
-    left: -15px;
+    left: -200px;
+    z-index: 9999;
 
     img{
       width: 100%;
@@ -352,7 +353,7 @@ form.admin-settings{
 
   .tip-content:after, .tip-content:before {
     top: 100%;
-    left: 20px;
+    left: 205px;
     border: solid transparent;
     content: " ";
     height: 0;
