@@ -65,7 +65,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_GO_TO_TOP_BACKGROUND_COLOR, __('ボタン色', THEME_NAME) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php

@@ -19,7 +19,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_SITE_KEY_COLOR, __('キーカラー', THEME_NAME) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php
@@ -112,7 +112,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_SITE_BACKGROUND_COLOR, __('サイト背景色', THEME_NAME) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php
@@ -153,7 +153,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_SITE_LINK_COLOR, __('サイトリンク色', THEME_NAME) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php

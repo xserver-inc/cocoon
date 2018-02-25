@@ -101,7 +101,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR, __( 'ヘッダー全体色', THEME_NAME ) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
 
@@ -120,7 +120,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag('', __( 'ヘッダー色（ロゴ部）', THEME_NAME ) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php

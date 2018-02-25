@@ -3,7 +3,7 @@
         <tr>
           <th scope="row">
             <?php generate_label_tag('', __( 'グローバルナビメニュー色', THEME_NAME ) ); ?>
-            <?php generate_select_colortooltip_tag(); ?>
+            <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php
