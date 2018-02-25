@@ -12,7 +12,7 @@ endif;
 define('OP_ALL_ADSENSES_VISIBLE', 'all_adsenses_visible');
 if ( !function_exists( 'is_all_adsenses_visible' ) ):
 function is_all_adsenses_visible(){
-  return get_theme_option(OP_ALL_ADSENSES_VISIBLE, 1) && is_all_ads_visible();
+  return get_theme_option(OP_ALL_ADSENSES_VISIBLE, 1);
 }
 endif;
 

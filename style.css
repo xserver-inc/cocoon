@@ -118,6 +118,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin: 0;
   line-height: 1.2;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .entry-card-snippet, .related-entry-card-snippet {
@@ -1156,6 +1157,7 @@ table td {
 .article h5,
 .article h6 {
   line-height: 1.25;
+  font-weight: bold;
 }
 .article h3,
 .article h4,

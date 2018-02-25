@@ -16,8 +16,10 @@
           </th>
           <td>
             <div class="demo toc" style="height: 300px;overflow: auto;">
-              <?php query_posts('posts_per_page=1&orderby=rand'); ?>
-              <?php get_template_part('tmp/content') ?>
+              <article class="article">
+                <?php query_posts('posts_per_page=1&orderby=rand'); ?>
+                <?php get_template_part('tmp/content') ?>
+              </article>
             </div>
             <?php generate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>
           </td>
