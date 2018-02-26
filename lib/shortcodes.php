@@ -153,7 +153,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
   ), $atts ) );
   if (is_user_logged_in()) {
-    return $content;
+    return do_shortcode($content);
   } else {
     return '<div class="login-user-only">'.$msg.'</div>';
   }
