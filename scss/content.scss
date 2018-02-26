@@ -252,3 +252,14 @@ span.internal-icon{
   margin-left: 3px;
   font-size: 0.8em;
 }
+
+///////////////////////////////////////
+// ログインして意外ユーザーに表示するメッセージ
+///////////////////////////////////////
+.login-user-only{
+  text-align: center;
+  padding: 2em;
+  background-color: $xxx_thin;
+  border: 1px solid $basic_border_color;
+  margin: 1em 0;
+}

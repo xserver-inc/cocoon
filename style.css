@@ -1267,6 +1267,14 @@ span.internal-icon {
   font-size: 0.8em;
 }
 
+.login-user-only {
+  text-align: center;
+  padding: 2em;
+  background-color: #fafbfc;
+  border: 1px solid #cccfd2;
+  margin: 1em 0;
+}
+
 /************************************
 ** 広告
 ************************************/

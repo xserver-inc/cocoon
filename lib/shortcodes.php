@@ -144,3 +144,19 @@ function get_item_ranking_shortcode($id) {
   return "[".RANKING_SHORTCODE." id={$id}]";
 }
 endif;
+
+//ログインユーザーのみに表示するコンテンツ
+add_shortcode('login_user_only', 'login_user_only_shortcode');
+if ( !function_exists( 'login_user_only_shortcode' ) ):
+function login_user_only_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+      'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
+  ), $atts ) );
+  if (is_user_logged_in()) {
+    return $content;
+  } else {
+    return '<div class="login-user-only">'.$msg.'</div>';
+  }
+}
+endif;
+
