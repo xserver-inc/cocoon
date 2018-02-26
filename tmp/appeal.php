@@ -13,7 +13,7 @@ if (is_appeal_area_visible() && !is_amp()): ?>
       <?php //メッセージが存在するか
       if (get_appeal_area_message()): ?>
       <div class="appeal-message">
-        <?php echo get_appeal_area_message(); ?>
+        <?php echo wpautop(get_appeal_area_message()); ?>
       </div>
       <?php endif ?>
       <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>
