@@ -21,7 +21,7 @@ function add_html_tags_to_mce_external_plugins( $plugin_array ){
 }
 endif;
 
-//吹き出しドロップダウンをTinyMCEに登録
+//ドロップダウンをTinyMCEに登録
 if ( !function_exists( 'register_html_tags' ) ):
 function register_html_tags( $buttons ){
   array_push( $buttons, 'separator', 'html_tags' );
@@ -29,7 +29,7 @@ function register_html_tags( $buttons ){
 }
 endif;
 
-//吹き出しの値渡し用のJavaScriptを生成
+//値渡し用のJavaScriptを生成
 if ( !function_exists( 'generate_html_tags_is' ) ):
 function generate_html_tags_is($value){
   echo '<script type="text/javascript">

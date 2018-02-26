@@ -96,6 +96,7 @@ if (is_admin()) {;
   require_once 'tinymce/affiliate-tags.php'; //アフィリエイトタグ追加
   require_once 'tinymce/item-rankings.php'; //ランキングタグ追加
   require_once 'tinymce/html-tags.php'; //拡張タグ追加
+  require_once 'tinymce/shortcodes.php'; //ショートコード追加
   // if (!is_bbpress_page()) {
   //   require_once 'update.php'; //アップデート関係の処理
   // }
