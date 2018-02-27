@@ -37,6 +37,14 @@ function get_appeal_area_image_url(){
 }
 endif;
 
+//アピールエリア背景色
+define('OP_APPEAL_AREA_BACKGROUND_COLOR', 'appeal_area_background_color');
+if ( !function_exists( 'get_appeal_area_background_color' ) ):
+function get_appeal_area_background_color(){
+  return get_theme_option(OP_APPEAL_AREA_BACKGROUND_COLOR);
+}
+endif;
+
 //アピールエリア背景を固定にするか
 define('OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED', 'appeal_area_background_attachment_fixed');
 if ( !function_exists( 'is_appeal_area_background_attachment_fixed' ) ):

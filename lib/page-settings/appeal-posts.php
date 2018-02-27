@@ -9,6 +9,9 @@ update_theme_option(OP_APPEAL_AREA_HEIGHT);
 //アピールエリア画像
 update_theme_option(OP_APPEAL_AREA_IMAGE_URL);
 
+//アピールエリア背景色
+update_theme_option(OP_APPEAL_AREA_BACKGROUND_COLOR);
+
 //アピールエリア背景を固定にするか
 update_theme_option(OP_APPEAL_AREA_BACKGROUND_ATTACHMENT_FIXED);
 

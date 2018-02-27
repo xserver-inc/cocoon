@@ -66,6 +66,19 @@
           </td>
         </tr>
 
+        <!-- 背景色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_APPEAL_AREA_BACKGROUND_COLOR, __('エリア背景色', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_APPEAL_AREA_BACKGROUND_COLOR,  get_appeal_area_background_color(), '背景色');
+            generate_tips_tag(__( 'アピールエリアの背景色を設定してください。背景画像を設定すると隠れるエリアとなります。ただ、画像読み込み中に表示される部分でもあります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- タイトル -->
         <tr>
           <th scope="row">
