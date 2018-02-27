@@ -78,7 +78,7 @@ function affiliate_tag_shortcode($atts) {
       //無限ループ要素の除去
       // $shortcode = get_affiliate_tag_shortcode($id);
       // $atag = str_replace($shortcode, '', $atag);
-      $atag = preg_replace('{\['.AFFI_SHORTCODE.'[^\]]*?id='.$id.'[^\]]*?\]}i', '', $atag);
+      $atag = preg_replace('{\['.AFFI_SHORTCODE.'[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $atag);
 
       $post_id = null;
       if (isset($post->ID)) {
@@ -112,7 +112,7 @@ function function_text_shortcode($atts) {
     if ($recode = get_function_text($id)) {
       //無限ループ要素の除去
       //$shortcode = get_function_text_shortcode($id);
-      $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id='.$id.'[^\]]*?\]}i', '', $recode->text);
+      $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $recode->text);
 
       return do_shortcode($template);
     }
