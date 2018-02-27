@@ -26,6 +26,8 @@ function new_entries_shortcode($atts) {
   $categories = array();
   if ($cats) {
     $categories = explode(',', $cats);
+  } else {
+    $categories = array();
   }
   ob_start();
   generate_new_entries_tag($count, $type, $categories);
@@ -49,6 +51,8 @@ function popular_entries_shortcode($atts) {
   $categories = array();
   if ($cats) {
     $categories = explode(',', $cats);
+  } else {
+    $categories = array();
   }
   ob_start();
   generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
@@ -78,7 +82,7 @@ function affiliate_tag_shortcode($atts) {
       }
       //計測用の属性付与
       $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" '.$post_id, $atag);
-      return $atag;
+      return do_shortcode($atag);
     }
   }
 
@@ -104,7 +108,7 @@ function function_text_shortcode($atts) {
       // //無限ループ回避
       // if ($recode->id == $id) return;
 
-      return $recode->text;
+      return do_shortcode($recode->text);
     }
   }
 
