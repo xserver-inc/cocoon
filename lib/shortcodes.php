@@ -20,14 +20,13 @@ if ( !function_exists( 'new_entries_shortcode' ) ):
 function new_entries_shortcode($atts) {
   extract(shortcode_atts(array(
     'count' => 5,
-    'cats' => array(),
+    'cats' => 'all',
     'type' => 'default',
   ), $atts));
   $categories = array();
-  if ($cats) {
+  //var_dump($cats);
+  if ($cats && $cats != 'all') {
     $categories = explode(',', $cats);
-  } else {
-    $categories = array();
   }
   ob_start();
   generate_new_entries_tag($count, $type, $categories);
@@ -46,13 +45,11 @@ function popular_entries_shortcode($atts) {
     'type' => 'default',
     'rank' => 0,
     'pv' => 0,
-    'cats' => array(),
+    'cats' => 'all',
   ), $atts));
   $categories = array();
-  if ($cats) {
+  if ($cats && $cats != 'all') {
     $categories = explode(',', $cats);
-  } else {
-    $categories = array();
   }
   ob_start();
   generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
