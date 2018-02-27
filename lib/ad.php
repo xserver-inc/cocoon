@@ -208,7 +208,7 @@ function add_ads_before_1st_h2($the_content) {
       }
 
 
-      $the_content = preg_replace(H2_REG, $ad_template.$h2result, $the_content, $limit);
+      $the_content = preg_replace(H2_REG, $ad_template.PHP_EOL.PHP_EOL.$h2result, $the_content, $limit);
     }
   }
   return $the_content;

@@ -145,7 +145,7 @@ function add_toc_before_1st_h2($the_content){
 
   }
   $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
-  $the_content = preg_replace(H2_REG, $html.$h2result, $the_content, 1);
+  $the_content = preg_replace(H2_REG, $html.PHP_EOL.PHP_EOL.$h2result, $the_content, 1);
   //var_dump($the_content);
   return $the_content;
 }
