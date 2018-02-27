@@ -3028,6 +3028,7 @@ label.screen-reader-text {
 .speech-icon img {
   border-radius: 50%;
   border: 2px solid #cccfd2;
+  width: 100%;
 }
 
 .speech-name {
