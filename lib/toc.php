@@ -5,9 +5,9 @@
 if (is_toc_visible()) {
   //優先順位の設定
   if (is_toc_before_ads()) {
-    $priority = 9;
+    $priority = BEFORE_1ST_H2_PRIORITY_HIGH;
   } else {
-    $priority = 10;
+    $priority = BEFORE_1ST_H2_PRIORITY_STANDARD;
   }
   add_filter('the_content', 'add_toc_before_1st_h2', $priority);
 }

@@ -112,6 +112,10 @@ define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
 //人気記事ウィジェットのプレフィックス
 define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
 
+//最初のH2見出し用の優先度
+define('BEFORE_1ST_H2_PRIORITY_STANDARD', 10000);
+define('BEFORE_1ST_H2_PRIORITY_HIGH', 9999);
+
 
 
 //URLの正規表現
