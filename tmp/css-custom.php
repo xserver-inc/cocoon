@@ -370,3 +370,9 @@ body::after{
   content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>");
 }
 <?php endif ?>
+<?php //アピールエリア背景色
+if ($color = get_appeal_area_background_color()): ?>
+.appeal{
+  background-color: <?php echo $color; ?>;
+}
+<?php endif ?>
