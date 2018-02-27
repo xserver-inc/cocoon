@@ -35,11 +35,10 @@ function generate_shortcodes_is($value){
   echo '<script type="text/javascript">
   var shortcodesTitle = "'.__( 'ショートコード', THEME_NAME ).'";
   var shortcodes = new Array();';
+
   $msg = __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME );
   $content = __( 'ログインユーザーに表示するコンテンツを入力してください。', THEME_NAME );
-   ?>;
-
-  <?php //ログインユーザーのみショートコード
+  //ログインユーザーのみショートコード
   $before = '[login_user_only msg="'.$msg.'"]';
   $after = '[/login_user_only]';
    ?>
@@ -49,8 +48,38 @@ function generate_shortcodes_is($value){
   shortcodes[0].before = '<?php echo $before; ?>';
   shortcodes[0].after = '<?php echo $after; ?>';
 
-  <?php
+  <?php //新着記事一覧のショートコード
+  $before = '[new_list count=5 cats= type=default]';
+  $after = '';
+   ?>
+  shortcodes[1] = new Array();
+  shortcodes[1].title  = '<?php echo __( '新着記事一覧', THEME_NAME ); ?>';
+  shortcodes[1].tag = '<?php echo $before.$after; ?>';
+  shortcodes[1].before = '<?php echo $before; ?>';
+  shortcodes[1].after = '<?php echo $after; ?>';
 
+  <?php //人気記事一覧のショートコード
+  $before = '[popular_list days=all rank=0 pv=0 count=5 cats= type=default]';
+  $after = '';
+   ?>
+  shortcodes[2] = new Array();
+  shortcodes[2].title  = '<?php echo __( '人気記事一覧', THEME_NAME ); ?>';
+  shortcodes[2].tag = '<?php echo $before.$after; ?>';
+  shortcodes[2].before = '<?php echo $before; ?>';
+  shortcodes[2].after = '<?php echo $after; ?>';
+
+  <?php //プロフィールボックスのショートコード
+  $msg = __( 'この記事を書いた人', THEME_NAME );
+  $before = '[author_box label=';
+  $after = ']';
+   ?>
+  shortcodes[3] = new Array();
+  shortcodes[3].title  = '<?php echo __( 'プロフィールボックス', THEME_NAME ); ?>';
+  shortcodes[3].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[3].before = '<?php echo $before; ?>';
+  shortcodes[3].after = '<?php echo $after; ?>';
+
+  <?php
   echo '</script>';
 }
 endif;
