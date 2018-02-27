@@ -71,17 +71,22 @@ function affiliate_tag_shortcode($atts) {
   ), $atts));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
-      // //無限ループ回避
-      // if ($recode->id == $id) return;
 
       global $post;
       $atag = $recode->text;
+
+      //無限ループ要素の除去
+      // $shortcode = get_affiliate_tag_shortcode($id);
+      // $atag = str_replace($shortcode, '', $atag);
+      $atag = preg_replace('{\['.AFFI_SHORTCODE.'[^\]]*?id='.$id.'[^\]]*?\]}i', '', $atag);
+
       $post_id = null;
       if (isset($post->ID)) {
         $post_id = 'data-post-id="'.$post->ID.'" ';
       }
       //計測用の属性付与
       $atag = str_replace('<a ', '<a data-atag-id="'.$id.'" '.$post_id, $atag);
+
       return do_shortcode($atag);
     }
   }
@@ -105,13 +110,13 @@ function function_text_shortcode($atts) {
   ), $atts));
   if ($id) {
     if ($recode = get_function_text($id)) {
-      // //無限ループ回避
-      // if ($recode->id == $id) return;
+      //無限ループ要素の除去
+      //$shortcode = get_function_text_shortcode($id);
+      $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id='.$id.'[^\]]*?\]}i', '', $recode->text);
 
-      return do_shortcode($recode->text);
+      return do_shortcode($template);
     }
   }
-
 }
 endif;
 
