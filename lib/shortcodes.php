@@ -161,7 +161,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
   if (is_user_logged_in()) {
     return do_shortcode($content);
   } else {
-    return '<div class="login-user-only">'.$msg.'</div>';
+    return '<div class="login-user-only">'.htmlspecialchars_decode($msg).'</div>';
   }
 }
 endif;

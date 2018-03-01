@@ -1197,6 +1197,9 @@ table td {
 .article h6 {
   border-bottom: 1px solid #cccdce;
 }
+.article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
+  margin-top: 0;
+}
 
 /************************************
 ** 引用（blockquote）

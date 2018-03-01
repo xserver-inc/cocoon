@@ -43,7 +43,7 @@ function generate_html_tags_is($value){
    ?>;
 
   <?php //２カラムレイアウト
-  $before = '<div class="column-2"><div class="column-left"><p>';
+  $before = '<div class="column-wrap column-2"><div class="column-left"><p>';
   $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[0] = new Array();
@@ -53,7 +53,7 @@ function generate_html_tags_is($value){
   htmlTags[0].after = '<?php echo $after; ?>';
 
   <?php //3カラムレイアウト
-  $before = '<div class="column-3"><div class="column-left"><p>';
+  $before = '<div class="column-wrap column-3"><div class="column-left"><p>';
   $after = '</p></div><div class="column-center"><p>'.$center_msg.'</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[1] = new Array();

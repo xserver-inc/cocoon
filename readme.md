@@ -4,7 +4,7 @@ Cocoon
 Cocoonは、モバイル・高速化・SEO最適化済みのWordpressテーマです。
 
 Cocoonテーマの詳細は以下のURLを参照してください。  
-https://wp-Cocoon.com/
+https://wp-cocoon.com/
 
 テーマファイルカスタマイズ
 --------------------------
