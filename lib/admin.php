@@ -236,6 +236,55 @@ function customize_admin_bar_menu($wp_admin_bar){
       'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
       'href'   => site_url('/wp-admin/admin.php?page=theme-settings') // ページURL
     ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-speech-balloon', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( '吹き出し', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=speech-balloon') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-func-text', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'テンプレート', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-func-text') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-affiliate-tag', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'アフィリエイトタグ', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-affiliate-tag') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-ranking', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'ランキング作成', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-ranking') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-access', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'アクセス集計', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-access') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-speed-up', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( '高速化', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-speed-up') // ページURL
+    ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-backup', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'バックアップ', THEME_NAME ), // ラベル
+      'href'   => site_url('/wp-admin/admin.php?page=theme-backup') // ページURL
+    ));
   }
 }
 endif;
