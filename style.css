@@ -2423,13 +2423,11 @@ label.screen-reader-text {
   content: "\f152";
 }
 
-.column-2,
-.column-3 {
+.column-wrap {
   display: flex;
   position: relative;
 }
-.column-2 > div,
-.column-3 > div {
+.column-wrap > div {
   width: 100%;
   padding: 1em 1.2%;
 }
@@ -5132,8 +5130,7 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
     margin-left: auto;
   }
 
-  .column-2,
-  .column-3 {
+  .column-wrap {
     flex-direction: column;
   }
 
