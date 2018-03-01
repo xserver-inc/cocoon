@@ -115,6 +115,14 @@ function generate_tips_tag($caption){?>
 }
 endif;
 
+//解説ページへのリンク取得
+if ( !function_exists( 'get_help_page_tag' ) ):
+function get_help_page_tag($url){
+  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.__( '解説ページ', THEME_NAME ).'</a>';
+  return $tag;
+}
+endif;
+
 
 //通知メッセージのの生成
 if ( !function_exists( 'generate_notice_message_tag' ) ):

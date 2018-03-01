@@ -47,7 +47,7 @@
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
-            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
             ?>
           </td>
         </tr>
@@ -107,7 +107,7 @@
           <td>
             <?php
             generate_textbox_tag(OP_PTENGINE_TRACKING_ID, get_ptengine_tracking_id(), __( 'PtengineのトラッキングIDのみ入力', THEME_NAME ));
-            generate_tips_tag(__( 'PtengineのトラッキングIDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'PtengineのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/ptengine/'));
             ?>
           </td>
         </tr>
