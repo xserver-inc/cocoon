@@ -26,7 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
 // 入力フォーム
 ///////////////////////////////////////
 ?>
-<div class="wrap">
+<div class="wrap admin-settings">
 <h1><?php _e( '吹き出し', THEME_NAME ) ?></h1>
     <!-- 使いまわしテキスト（関数テキスト） -->
     <div class="speech-balloon metabox-holder">

@@ -113,7 +113,7 @@ endif;
 // 入力フォーム
 ///////////////////////////////////////
 ?>
-<div class="wrap">
+<div class="wrap admin-settings">
 <h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
 <?php //var_dump($_POST) ?>
 <form name="form1" method="post" action="" class="admin-settings">

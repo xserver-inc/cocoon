@@ -29,7 +29,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 // 入力フォーム
 ///////////////////////////////////////
 ?>
-<div class="wrap">
+<div class="wrap admin-settings">
   <h1><?php _e( 'サイト高速化', THEME_NAME ) ?></h1>
   <form name="form1" method="post" action="" class="admin-settings">
     <p><?php _e( 'サイト表示スピードの高速化設定を行います。', THEME_NAME ) ?></p>

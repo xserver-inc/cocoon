@@ -30,7 +30,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 // 入力フォーム
 ///////////////////////////////////////
 ?>
-<div class="wrap">
+<div class="wrap admin-settings">
 <h1><?php _e( 'バックアップ', THEME_NAME ) ?></h1><br>
   <!-- バックアップ -->
   <div class="backup metabox-holder">

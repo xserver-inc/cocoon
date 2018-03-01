@@ -29,7 +29,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 // 入力フォーム
 ///////////////////////////////////////
 ?>
-<div class="wrap">
+<div class="wrap admin-settings">
   <h1><?php _e( 'アクセス集計', THEME_NAME ) ?></h1>
   <form name="form1" method="post" action="" class="admin-settings">
     <p><?php _e( 'テーマ内で独自にアクセス集計を行います。集計結果は、人気ウィジェットなどで使用されます。', THEME_NAME ) ?></p>
