@@ -5,7 +5,8 @@
   <h2 class="hndle"><?php _e( 'アクセス集計', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'テーマ独自のアクセス集計機能の設定です。。', THEME_NAME ) ?></p>
+    <p><?php _e( 'テーマ独自のアクセス集計機能の設定です。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/access-aggregate/'); ?></p>
 
     <table class="form-table">
       <tbody>

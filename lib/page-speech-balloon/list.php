@@ -27,9 +27,11 @@ generate_sort_options_tag($keyword, $order_by);
 ?>
 <!-- メッセージ -->
 <?php if ($records): ?>
-  <p class="op-message"><?php _e( '設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタンから追加できます。', THEME_NAME ) ?></p>
+  <p><?php _e( '設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタンから追加できます。', THEME_NAME );
+  echo get_help_page_tag('https://wp-cocoon.com/how-to-use-speech-balloon/'); ?></p>
 <?php else: ?>
-  <p class="op-message"><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME ) ?></p>
+  <p><?php _e( '「吹き出し」を作成するには「新規作成」リンクをクリックしてください。', THEME_NAME );
+  echo get_help_page_tag('https://wp-cocoon.com/how-to-use-speech-balloon/'); ?></p>
 <?php endif ?>
 
 <div id="sb-list" class="postbox" style="max-width: 980px; margin-top: 20px;">

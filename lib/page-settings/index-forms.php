@@ -35,7 +35,7 @@
               'vertical_card_3' => __( '縦型カード3列（推奨表示数：3, 6, 9, 12, ...）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_ENTRY_CARD_TYPE, $options, get_entry_card_type());
-            generate_tips_tag(__( '一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページに表示する最大投稿数」から変更してください。', THEME_NAME ));
+            generate_tips_tag(__( '一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページに表示する最大投稿数」から変更してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/index-entry-card-type/'));
             ?>
           </td>
         </tr>

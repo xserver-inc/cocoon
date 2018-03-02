@@ -3,7 +3,7 @@
   <h2 class="hndle"><?php _e( '広告設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。', THEME_NAME ) ?></p>
+    <p><?php _e( '広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。', THEME_NAME ); ?></p>
 
     <table class="form-table">
       <tbody>
@@ -45,7 +45,9 @@
   <h2 class="hndle"><?php _e( 'アドセンス設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっています。', THEME_NAME ) ?></p>
+    <p><?php _e( 'アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっています。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/how-to-set-adsense/'); ?></p>
+     ?></p>
 
     <table class="form-table">
       <tbody>

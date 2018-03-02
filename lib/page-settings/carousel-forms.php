@@ -5,7 +5,8 @@
   <h2 class="hndle"><?php _e( 'カルーセル設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'ヘッダー下でカルーセル表示させたい投稿の設定を行います。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ヘッダー下でカルーセル表示させたい投稿の設定を行います。', THEME_NAME );
+             echo get_help_page_tag('https://wp-cocoon.com/carousel-setting/') ?></p>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo carousel-area-demo" style="">
       <?php get_template_part('tmp/carousel'); ?>

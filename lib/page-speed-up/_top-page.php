@@ -32,7 +32,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <div class="wrap admin-settings">
   <h1><?php _e( 'サイト高速化', THEME_NAME ) ?></h1>
   <form name="form1" method="post" action="" class="admin-settings">
-    <p><?php _e( 'サイト表示スピードの高速化設定を行います。', THEME_NAME ) ?></p>
+    <p><?php _e( 'サイト表示スピードの高速化設定を行います。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/site-speed-up/'); ?></p>
 
     <!-- サイト高速化 -->
     <div class="backup metabox-holder">

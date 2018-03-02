@@ -3,7 +3,8 @@
   <h2 class="hndle"><?php _e( 'AMP設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'AMP（Accelerated Mobile Pages）に関する設定です。投稿ページをモバイル上で高速表示させるための仕組みです。', THEME_NAME ) ?></p>
+    <p><?php _e( 'AMP（Accelerated Mobile Pages）に関する設定です。投稿ページをモバイル上で高速表示させるための仕組みです。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/amp/'); ?></p>
 
     <table class="form-table">
       <tbody>

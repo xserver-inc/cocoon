@@ -18,7 +18,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_EASY_SSL_ENABLE , is_easy_ssl_enable(), __( '内部URLをSSL対応（簡易版）', THEME_NAME ));
-            generate_tips_tag(__( 'サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではありません）。', THEME_NAME ));
+            generate_tips_tag(__( 'サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではありません）。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/easy-ssl/'));
             ?>
           </td>
         </tr>

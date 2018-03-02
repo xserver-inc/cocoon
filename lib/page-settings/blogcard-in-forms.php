@@ -5,7 +5,8 @@
   <h2 class="hndle"><?php _e( '内部ブログカード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'URLやURLリンクをブログカード形式で表示するための設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'URLやURLリンクをブログカード形式で表示するための設定です。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/how-to-use-internal-blogcard/'); ?></p>
 
     <table class="form-table">
       <tbody>

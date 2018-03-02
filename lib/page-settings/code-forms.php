@@ -5,7 +5,8 @@
   <h2 class="hndle"><?php _e( 'ソースコード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'ソースコードのハイライト表示の設定です。ハイライト表示には、<a href="https://highlightjs.org/" target="_blank">highlight.js</a>を利用しています。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ソースコードのハイライト表示の設定です。ハイライト表示には、<a href="https://highlightjs.org/" target="_blank">highlight.js</a>を利用しています。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/highlight-js/'); ?></p>
 
     <table class="form-table">
       <tbody>
