@@ -227,10 +227,11 @@ jQuery(document).ready(function($){
 
   function set_click_events(ui) {
     //console.log(ui);
+    $(ui).addClass('toggle-event-on');
     //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
     var btn_id = get_target_id(ui, ".toggle-link");
     $(document).on("click", btn_id, function(){
-        $(this).next(".toggle-content").toggle();
+      $(this).next(".toggle-content").toggle();
     });
 
 
@@ -303,6 +304,21 @@ jQuery(document).ready(function($){
     var widgetContext = $(this).context.parentNode;
     //console.log(widgetContext);
     set_click_events(widgetContext);
+      // var id = $(this).parent.attr("id");
+      // alert(id);
+  });
+
+  $('.display-widgets-toggle').on('click', function(){
+    //console.log('display-widgets-toggle click');
+    var widgetContext = $(this).context.parentNode;
+    widgetContext = $(widgetContext).context.parentNode;
+    widgetContext = $(widgetContext).context.parentNode;
+    widgetContext = $(widgetContext).context.parentNode;
+    //console.log(widgetContext);
+    if (!$(widgetContext).hasClass('toggle-event-on')) {
+      set_click_events(widgetContext);
+    }
+
       // var id = $(this).parent.attr("id");
       // alert(id);
   });
