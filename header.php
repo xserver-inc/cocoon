@@ -22,7 +22,7 @@ if (!is_user_administrator() && get_google_tag_manager_tracking_id()): ?>
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','<?php echo get_google_tag_manager_tracking_id(); ?>2');</script>
+})(window,document,'script','dataLayer','<?php echo get_google_tag_manager_tracking_id(); ?>');</script>
 <!-- End Google Tag Manager -->
 <?php endif //Google Tag Manager終了 ?>
 
