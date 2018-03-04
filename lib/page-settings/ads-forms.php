@@ -200,7 +200,7 @@
             //詳細設定
             generate_main_column_ad_detail_setting_forms(OP_AD_SHORTCODE_FORMAT, get_ad_shortcode_format(), OP_AD_SHORTCODE_LABEL_VISIBLE, is_ad_shortcode_label_visible());
 
-            generate_tips_tag(__( '本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示します。', THEME_NAME ));
+            generate_tips_tag(__( '本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/ad-shortcode/'));
             ?>
             <p class="alert"><?php _e( '設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに動作確認をしてください。', THEME_NAME ) ?></p>
           </td>
