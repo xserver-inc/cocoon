@@ -362,6 +362,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   // if (!is_singular()) {
   //   return null;
   // }
+  //var_dump($categories);
 
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {

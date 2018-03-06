@@ -33,6 +33,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     if ($widget_mode == 'category') {
       $cat_ids = get_category_ids();//カテゴリ配列の取得
     }
+    //var_dump($cat_ids);
     // //表示数をグローバル変数に格納
     // //ウィジェットモード
     // global $_WIDGET_MODE;
