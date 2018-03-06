@@ -40,11 +40,32 @@ function get_adsense_display_method(){
 }
 endif;
 
+//アドセンス表示方式は「自動広告のみ」か
+if ( !function_exists( 'is_adsense_display_method_by_auto' ) ):
+function is_adsense_display_method_by_auto(){
+  return get_adsense_display_method() == 'by_auto';
+}
+endif;
+
+//アドセンス表示方式は「自動とマニュアルの併用」か
+if ( !function_exists( 'is_adsense_display_method_by_auto_and_myself' ) ):
+function is_adsense_display_method_by_auto_and_myself(){
+  return get_adsense_display_method() == 'by_auto_and_myself';
+}
+endif;
+
+//アドセンス表示方式は「マニュアルのみ」か
+if ( !function_exists( 'is_adsense_display_method_by_myself' ) ):
+function is_adsense_display_method_by_myself(){
+  return get_adsense_display_method() == 'by_myself';
+}
+endif;
+
 //自動AdSenseコードを有効にする
 //define('OP_AUTO_ADSENSE_ENABLE', 'auto_adsense_enable');
 if ( !function_exists( 'is_auto_adsense_enable' ) ):
 function is_auto_adsense_enable(){
-  return get_adsense_display_method() == 'by_auto';
+  return is_adsense_display_method_by_auto() || is_adsense_display_method_by_auto_and_myself();
   // return get_theme_option(OP_AUTO_ADSENSE_ENABLE);
 }
 endif;

@@ -86,11 +86,12 @@
           <td>
             <?php
             $options = array(
-              'by_auto' => __( 'アドセンス自動広告', THEME_NAME ),
-              'by_myself' => __( '自分で広告位置を設定', THEME_NAME ),
+              'by_auto' => __( 'アドセンス自動広告のみ利用', THEME_NAME ),
+              'by_auto_and_myself' => __( '自動広告とマニュアル広告を併用', THEME_NAME ),
+              'by_myself' => __( 'マニュアル広告設定（自前で位置を設定）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
-            generate_tips_tag(__( '「アドセンス自動広告」にした場合は、完全にAdSenseに広告表示を任せる形になります。自動広告が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。「自分で広告位置を設定」にした場合は、自前で広告位置を設定する必要があります。', THEME_NAME ));
+            generate_tips_tag(__( '「アドセンス自動広告のみ」にした場合は、完全にAdSenseに広告表示を任せる形になります。自動広告が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
             ?>
             <?php
             // generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
@@ -101,7 +102,7 @@
 
         <?php
           $auto_adsense_style = null;
-          if (is_auto_adsense_enable()) {
+          if (is_adsense_display_method_by_auto()) {
             $auto_adsense_style = ' style="opacity: 0.4;pointer-events: none;cursor: not-allowed;"';
           }
          ?>
