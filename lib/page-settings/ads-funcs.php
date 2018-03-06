@@ -46,6 +46,11 @@ function is_adsense_display_method_by_auto(){
   return get_adsense_display_method() == 'by_auto';
 }
 endif;
+if ( !function_exists( 'is_auto_adsens_only_enable' ) ):
+function is_auto_adsens_only_enable(){
+  return is_adsense_display_method_by_auto();
+}
+endif;
 
 //アドセンス表示方式は「自動とマニュアルの併用」か
 if ( !function_exists( 'is_adsense_display_method_by_auto_and_myself' ) ):
