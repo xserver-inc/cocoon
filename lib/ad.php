@@ -24,6 +24,7 @@ function is_ads_visible(){
   // var_dump(in_category( $category_ids ));
 
   return is_all_ads_visible() &&
+    get_ad_code() && //広告コードが挿入されている
     !$is_exclude_ids && //除外ページでない場合広告を表示
     is_the_page_ads_visible() && //ページで除外していない場合
     !is_attachment() && //添付ページではない場合

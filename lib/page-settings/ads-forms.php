@@ -52,8 +52,8 @@
     <table class="form-table">
       <tbody>
 
-      <!-- アドセンス広告表示 -->
-      <tr>
+        <!-- アドセンス広告表示 -->
+        <tr>
           <th scope="row">
             <?php generate_label_tag(OP_ALL_ADSENSES_VISIBLE, __( 'アドセンス広告の表示', THEME_NAME )); ?>
           </th>
@@ -74,6 +74,19 @@
             <?php
             generate_textarea_tag(OP_AD_CODE, get_ad_code(), __( 'アドセンスのレスポンシブコードを入力してください', THEME_NAME )) ;
             generate_tips_tag(__( 'アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォールにより、保存時に403エラーが出る場合はscriptタグを取り除いて入力してみてください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 自動AdSense -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AUTO_ADSENSE_ENABLE, __( '自動アドセンス', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'AdSenseの自動広告機能を利用して広告を表示します。この機能を有効にすると「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります', THEME_NAME ));
             ?>
           </td>
         </tr>

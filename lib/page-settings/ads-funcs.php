@@ -32,6 +32,14 @@ function get_ad_label(){
 }
 endif;
 
+//自動AdSenseコードを有効にする
+define('OP_AUTO_ADSENSE_ENABLE', 'auto_adsense_enable');
+if ( !function_exists( 'is_auto_adsense_enable' ) ):
+function is_auto_adsense_enable(){
+  return get_theme_option(OP_AUTO_ADSENSE_ENABLE);
+}
+endif;
+
 //インデックストップの広告表示
 define('OP_AD_POS_INDEX_TOP_VISIBLE', 'ad_pos_index_top_visible');
 if ( !function_exists( 'is_ad_pos_index_top_visible' ) ):

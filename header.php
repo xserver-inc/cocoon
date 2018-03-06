@@ -34,6 +34,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+<?php //自動アドセンス
+get_template_part('tmp/ad-auto-adsense'); ?>
+
+
 <?php wp_head(); ?>
 
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
