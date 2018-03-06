@@ -32,11 +32,20 @@ function get_ad_label(){
 }
 endif;
 
+//アドセンス表示方式
+define('OP_ADSENSE_DISPLAY_METHOD', 'adsense_display_method');
+if ( !function_exists( 'get_adsense_display_method' ) ):
+function get_adsense_display_method(){
+  return get_theme_option(OP_ADSENSE_DISPLAY_METHOD, 'by_myself');
+}
+endif;
+
 //自動AdSenseコードを有効にする
-define('OP_AUTO_ADSENSE_ENABLE', 'auto_adsense_enable');
+//define('OP_AUTO_ADSENSE_ENABLE', 'auto_adsense_enable');
 if ( !function_exists( 'is_auto_adsense_enable' ) ):
 function is_auto_adsense_enable(){
-  return get_theme_option(OP_AUTO_ADSENSE_ENABLE);
+  return get_adsense_display_method() == 'by_auto';
+  // return get_theme_option(OP_AUTO_ADSENSE_ENABLE);
 }
 endif;
 

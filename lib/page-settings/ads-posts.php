@@ -9,8 +9,11 @@ update_theme_option(OP_AD_CODE);
 //広告ラベル
 update_theme_option(OP_AD_LABEL);
 
-//自動AdSense有効
-update_theme_option(OP_AUTO_ADSENSE_ENABLE);
+
+//アドセンス表示方式
+update_theme_option(OP_ADSENSE_DISPLAY_METHOD);
+// //自動AdSense有効
+// update_theme_option(OP_AUTO_ADSENSE_ENABLE);
 
 //インデックストップの広告表示
 update_theme_option(OP_AD_POS_INDEX_TOP_VISIBLE);

@@ -81,18 +81,33 @@
         <!-- 自動AdSense -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_AUTO_ADSENSE_ENABLE, __( '自動アドセンス', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_ADSENSE_DISPLAY_METHOD, __( 'アドセンス表示方式', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
-            generate_tips_tag(__( 'AdSenseの自動広告機能を利用して広告を表示します。この機能を有効にすると「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります', THEME_NAME ));
+            $options = array(
+              'by_auto' => __( 'アドセンス自動広告', THEME_NAME ),
+              'by_myself' => __( '自分で広告位置を設定', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
+            generate_tips_tag(__( '「アドセンス自動広告」にした場合は、完全にAdSenseに広告表示を任せる形になります。自動広告が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。「自分で広告位置を設定」にした場合は、自前で広告位置を設定する必要があります。', THEME_NAME ));
+            ?>
+            <?php
+            // generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
+            // generate_tips_tag(__( 'AdSenseの自動広告機能を利用して広告を表示します。この機能を有効にすると「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります', THEME_NAME ));
             ?>
           </td>
         </tr>
 
+        <?php
+          $auto_adsense_style = null;
+          if (is_auto_adsense_enable()) {
+            $auto_adsense_style = ' style="opacity: 0.4;pointer-events: none;cursor: not-allowed;"';
+          }
+         ?>
+
         <!-- 広告の表示位置 -->
-        <tr>
+        <tr<?php echo $auto_adsense_style; ?>>
           <th scope="row">
             <?php generate_label_tag(OP_AD_POS_INDEX_TOP_VISIBLE, __( '広告の表示位置', THEME_NAME )); ?>
           </th>
@@ -203,7 +218,7 @@
         </tr>
 
         <!-- [ad]ショートコードの利用 -->
-        <tr>
+        <tr<?php echo $auto_adsense_style; ?>>
           <th scope="row">
             <?php generate_label_tag(OP_AD_SHORTCODE_ENABLE, __('[ad]ショートコード', THEME_NAME) ); ?>
           </th>
