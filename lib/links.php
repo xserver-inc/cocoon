@@ -27,6 +27,11 @@ function replace_anchor_links($the_content) {
         continue;
       }
 
+      //ボタンを除外
+      if ((strpos($value, 'class="btn ') > 0)) {
+        continue;
+      }
+
       //ブログカード用のリンクを除外
       if (preg_match('{<a[^>]+?href="'.URL_REG_STR.'"[^>]*?>'.URL_REG_STR.'</a>}i', $value)) {
         continue;
