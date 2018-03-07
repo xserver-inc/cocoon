@@ -782,3 +782,9 @@ select option.fa{
   background-color: #fff9d8;
   line-height: 1.6;
 }
+
+.widget-content{
+  input[type=text]{
+    width: 100%;
+  }
+}
