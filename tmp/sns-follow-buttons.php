@@ -15,7 +15,7 @@ if ( is_any_sns_follow_buttons_exist() &&
   <div class="sns-follow-buttons">
 
   <?php if ( get_the_author_website_url() )://ウェブサイトフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home"></span></a>
+    <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_twitter_url() )://Twitterフォローボタンを表示するか ?>
@@ -52,6 +52,10 @@ if ( is_any_sns_follow_buttons_exist() &&
 
   <?php if ( get_the_author_line_at_url() )://LINE@フォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_line_at_url(); //LINE@フォローURLの取得 ?>" class="follow-button line-button line-follow-button-sq" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a>
+  <?php endif; ?>
+
+  <?php if ( get_the_author_amazon_url() )://Amazon欲しい物リストボタンを表示するか ?>
+    <a href="<?php echo get_the_author_amazon_url(); //Amazon欲しい物リストURLの取得 ?>" class="follow-button amazon-button amazon-follow-button-sq" target="_blank" title="<?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-amazon-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_github_url() )://GitHubフォローボタンを表示するか ?>

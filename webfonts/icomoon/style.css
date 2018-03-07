@@ -1,13 +1,10 @@
-/************************************
-** IcoMoon
-************************************/
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?hd9e6o');
-  src:  url('fonts/icomoon.eot?hd9e6o#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?hd9e6o') format('truetype'),
-    url('fonts/icomoon.woff?hd9e6o') format('woff'),
-    url('fonts/icomoon.svg?hd9e6o#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?jtjcvl');
+  src:  url('fonts/icomoon.eot?jtjcvl#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jtjcvl') format('truetype'),
+    url('fonts/icomoon.woff?jtjcvl') format('woff'),
+    url('fonts/icomoon.svg?jtjcvl#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,10 +36,10 @@
 
 .icon-amp-logo2:before {
   content: "\e93c";
-}/*
+}
 .icon-amp-logo:before {
   content: "\e93b";
-}*/
+}
 .icon-facebook-logo:before {
   content: "\e92d";
 }
@@ -58,14 +55,23 @@
 .icon-hatebu-logo:before {
   content: "\e931";
 }
+.icon-instagram-logo:before {
+  content: "\e932";
+}
 .icon-instagram-logo-new:before {
   content: "\e933";
+}
+.icon-instagram-logo-new-sq:before {
+  content: "\e934";
 }
 .icon-line-logo:before {
   content: "\e935";
 }
 .icon-pinterest-logo:before {
   content: "\e936";
+}
+.icon-push7-logo:before {
+  content: "\e937";
 }
 .icon-rss-logo:before {
   content: "\e938";
@@ -75,6 +81,15 @@
 }
 .icon-youtube-logo:before {
   content: "\e93a";
+}
+.icon-push7:before {
+  content: "\e90e";
+}
+.icon-evernote:before {
+  content: "\e912";
+}
+.icon-feedly:before {
+  content: "\e913";
 }
 .icon-pocket:before {
   content: "\e914";
@@ -91,11 +106,17 @@
 .icon-twitter:before {
   content: "\e91c";
 }
+.icon-youtube:before {
+  content: "\e91f";
+}
+.icon-flickr2:before {
+  content: "\e920";
+}
+.icon-delicious:before {
+  content: "\e92b";
+}
 .icon-pinterest:before {
   content: "\e92c";
-}
-.icon-home:before {
-  content: "\e900";
 }
 .icon-googleplus:before {
   content: "\ea8b";
@@ -106,6 +127,9 @@
 .icon-github-logo:before {
   content: "\eab0";
 }
-.icon-amazon:before {
+.icon-home-logo:before {
+  content: "\e902";
+}
+.icon-amazon-logo:before {
   content: "\ea87";
 }
