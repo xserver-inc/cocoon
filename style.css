@@ -802,6 +802,9 @@ img {
 .bc-brand-color.sns-share.ss-top .flickr-button, .bc-brand-color.sns-share.ss-bottom .flickr-button, .bc-brand-color.sns-follow .flickr-button {
   background-color: #111;
 }
+.bc-brand-color.sns-share.ss-top .amazon-button, .bc-brand-color.sns-share.ss-bottom .amazon-button, .bc-brand-color.sns-follow .amazon-button {
+  background-color: #ff9900;
+}
 .bc-brand-color.sns-share.ss-top .github-button, .bc-brand-color.sns-share.ss-bottom .github-button, .bc-brand-color.sns-follow .github-button {
   background-color: #4078c0;
 }
@@ -863,6 +866,10 @@ img {
 .bc-brand-color-white.sns-share.ss-top .flickr-button, .bc-brand-color-white.sns-share.ss-bottom .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
   color: #111;
   border: 1px solid #111;
+}
+.bc-brand-color-white.sns-share.ss-top .amazon-button, .bc-brand-color-white.sns-share.ss-bottom .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
+  color: #ff9900;
+  border: 1px solid #ff9900;
 }
 .bc-brand-color-white.sns-share.ss-top .github-button, .bc-brand-color-white.sns-share.ss-bottom .github-button, .bc-brand-color-white.sns-follow .github-button {
   color: #4078c0;

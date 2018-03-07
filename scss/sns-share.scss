@@ -48,6 +48,10 @@
       background-color: $flickr_color;
     }
 
+    .amazon-button{
+      background-color: $amazon_color;
+    }
+
     .github-button{
       background-color: $github_color;
     }
@@ -123,6 +127,11 @@
     .flickr-button{
       color: $flickr_color;
       border: 1px solid $flickr_color;
+    }
+
+    .amazon-button{
+      color: $amazon_color;
+      border: 1px solid $amazon_color;
     }
 
     .github-button{
