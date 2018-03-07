@@ -36,7 +36,7 @@ endif;
 define('OP_OTHER_ANALYTICS_HEADER_TAGS', 'other_analytics_header_tags');
 if ( !function_exists( 'get_other_analytics_header_tags' ) ):
 function get_other_analytics_header_tags(){
-  return stripslashes_deep(get_option(OP_OTHER_ANALYTICS_HEADER_TAGS));
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEADER_TAGS));
 }
 endif;
 
@@ -44,6 +44,6 @@ endif;
 define('OP_OTHER_ANALYTICS_FOOTER_TAGS', 'other_analytics_footer_tags');
 if ( !function_exists( 'get_other_analytics_footer_tags' ) ):
 function get_other_analytics_footer_tags(){
-  return stripslashes_deep(get_option(OP_OTHER_ANALYTICS_FOOTER_TAGS));
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_FOOTER_TAGS));
 }
 endif;
