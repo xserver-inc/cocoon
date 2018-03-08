@@ -88,7 +88,7 @@
   </div>
 </div>
 
-
+<?php if (0): ?>
 <!-- Ptengine設定 -->
 <div id="ptengine" class="postbox">
   <h2 class="hndle"><?php _e( 'Ptengine設定', THEME_NAME ) ?></h2>
@@ -117,6 +117,8 @@
 
   </div>
 </div>
+<?php endif ?>
+
 
 
 <!-- その他のアクセス解析設定 -->
