@@ -98,13 +98,13 @@ if (is_admin()) {;
   require_once 'tinymce/html-tags.php'; //拡張タグ追加
   require_once 'tinymce/shortcodes.php'; //ショートコード追加
 
-  require_once 'update.php'; //アップデート関係の処理
   // if (!is_bbpress_page()) {
   //
   // }
 
 }
 
+require_once 'update.php'; //アップデート関係の処理
 
 
 //新着記事ウィジェット
