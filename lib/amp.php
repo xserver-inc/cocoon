@@ -33,6 +33,7 @@ function has_amp_page(){
   $category_ids = get_amp_exclude_category_ids();
 
   return is_singular() &&
+    !is_front_page() &&
     is_amp_enable() &&
     is_the_page_amp_enable() &&
     !in_category( $category_ids ) && //除外カテゴリではAMPページを生成しない
