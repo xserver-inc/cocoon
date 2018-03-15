@@ -1390,7 +1390,8 @@ a.blogcard-wrap {
 
 .blogcard-content {
   margin-left: 170px;
-  max-height: 120px;
+  max-height: 140px;
+  min-height: 100px;
   overflow: hidden;
 }
 
@@ -1597,11 +1598,16 @@ a.blogcard-wrap {
 .footer .blogcard-thumbnail {
   width: 34%;
 }
+.sidebar .blogcard-snipet,
+.footer .blogcard-snipet {
+  font-size: 12px;
+}
 .sidebar .blogcard-content,
 .footer .blogcard-content {
   margin-left: 36%;
   margin-right: 0;
-  max-height: 110px;
+  max-height: 120px;
+  min-height: 80px;
   font-size: 0.9em;
 }
 .sidebar .ib-right .blogcard-content,
@@ -5008,10 +5014,15 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
     width: 34%;
   }
 
+  .blogcard-snipet {
+    font-size: 12px;
+  }
+
   .blogcard-content {
     margin-left: 36%;
     margin-right: 0;
-    max-height: 110px;
+    max-height: 120px;
+    min-height: 80px;
     font-size: 0.9em;
   }
 
