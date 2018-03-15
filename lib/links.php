@@ -2,6 +2,7 @@
 
 //本文の外部リンクの置換
 add_filter('the_content', 'replace_anchor_links');
+add_filter('get_the_author_description', 'replace_anchor_links');
 if ( !function_exists( 'replace_anchor_links' ) ):
 function replace_anchor_links($the_content) {
   $res = preg_match_all('{<a[^>]+?>[^<]+?</a>}i', $the_content, $m);
