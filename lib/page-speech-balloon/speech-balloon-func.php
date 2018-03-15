@@ -32,8 +32,8 @@ define('IRASUTOYA_CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_
 define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
 //デフォルトアイコン
 define('SB_DEFAULT_ICON', get_template_directory_uri().'/images/anony.png');
-define('SB_DEFAULT_MAN_ICON', IMAGE_CDN_DIR_URL.'//man.png');
-define('SB_DEFAULT_WOMAN_ICON', IMAGE_CDN_DIR_URL.'//woman.png');
+define('SB_DEFAULT_MAN_ICON', IMAGE_CDN_DIR_URL.'/man.png');
+define('SB_DEFAULT_WOMAN_ICON', IMAGE_CDN_DIR_URL.'/woman.png');
 
 
 //吹き出しテーブルのバージョン取得
