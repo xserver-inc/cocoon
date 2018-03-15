@@ -97,8 +97,8 @@ function admin_print_styles_custom() {
 endif;
 
 //メディアを挿入の初期表示を「この投稿へのアップロード」にする
-add_action( 'admin_footer-post-new.php', 'customize_initial_view_of_media_uploader' );
-add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' );
+// add_action( 'admin_footer-post-new.php', 'customize_initial_view_of_media_uploader' );
+// add_action( 'admin_footer-post.php', 'customize_initial_view_of_media_uploader' );
 if ( !function_exists( 'customize_initial_view_of_media_uploader' ) ):
 function customize_initial_view_of_media_uploader() {
 echo "<script type='text/javascript'>
