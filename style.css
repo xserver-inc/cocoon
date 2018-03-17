@@ -4075,6 +4075,7 @@ div.fb-like-mobile {
 }
 .footer-bottom-logo .logo-image {
   padding: 0;
+  max-width: 120px;
 }
 .footer-bottom-logo img {
   height: 50px;
