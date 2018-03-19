@@ -53,6 +53,7 @@ define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
 define('DATA_AD_FORMAT_AUTORELAXED', 'autorelaxed'); //関連記事
 
 //メインカラム用の広告フォーマット集
+global $_MAIN_DATA_AD_FORMATS;
 $_MAIN_DATA_AD_FORMATS = array(
   DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
   DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
@@ -64,6 +65,7 @@ $_MAIN_DATA_AD_FORMATS = array(
 // define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
 
 //サイドバー用の広告フォーマット集
+global $_SIDEBAR_DATA_AD_FORMATS;
 $_SIDEBAR_DATA_AD_FORMATS = array(
   DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
   DATA_AD_FORMAT_HORIZONTAL => __( 'バナー', THEME_NAME ),
@@ -73,6 +75,7 @@ $_SIDEBAR_DATA_AD_FORMATS = array(
 // define('SIDEBAR_DATA_AD_FORMATS', $_SIDEBAR_DATA_AD_FORMATS);
 
 //PCウィジェット用の広告フォーマット集
+global $_PC_WIDGET_DATA_AD_FORMATS;
 $_PC_WIDGET_DATA_AD_FORMATS = array(
   'none' => __( '広告コードをそのまま表示', THEME_NAME ),
   DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),
@@ -86,6 +89,7 @@ $_PC_WIDGET_DATA_AD_FORMATS = array(
 // define('PC_WIDGET_DATA_AD_FORMATS', $_PC_WIDGET_DATA_AD_FORMATS);
 
 //モバイル用の広告フォーマット集
+global $_MOBILE_WIDGET_DATA_AD_FORMATS;
 $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
   'none' => __( '広告コードをそのまま表示', THEME_NAME ),
   DATA_AD_FORMAT_AUTO => __( 'オート（AdSenseにおまかせ）', THEME_NAME ),

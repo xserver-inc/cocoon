@@ -293,6 +293,7 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
     <div class="detail-area">
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
+    global $_MAIN_DATA_AD_FORMATS;
     $options = $_MAIN_DATA_AD_FORMATS;
     generate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
@@ -325,6 +326,7 @@ function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
     <div class="detail-area">
     <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
+    global $_SIDEBAR_DATA_AD_FORMATS;
     $options = $_SIDEBAR_DATA_AD_FORMATS;
     generate_selectbox_tag($name, $options, $value);
     //ラベル表示の設定
