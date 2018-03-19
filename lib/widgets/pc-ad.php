@@ -74,7 +74,7 @@ class PcAdWidgetItem extends WP_Widget {
   <?php
     //_V($format);
     generate_label_tag($this->get_field_id('ad_format'), __('広告フォーマット（AdSenseコード入力時のみ有効）', THEME_NAME) );
-    $options = PC_WIDGET_DATA_AD_FORMATS;
+    $options = $_PC_WIDGET_DATA_AD_FORMATS;
     generate_selectbox_tag($this->get_field_name('ad_format'), $options, $format);
    ?>
 </p>
