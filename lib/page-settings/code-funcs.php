@@ -24,8 +24,7 @@ function get_code_highlight_css_selector(){
 }
 endif;
 
-define('HIGHLIGHT_STYLES',
-  array(
+const HIGHLIGHT_STYLES = array(
     'agate' => 'agate',
     'androidstudio' => 'androidstudio',
     'arduino-light' => 'arduino-light',
@@ -172,5 +171,5 @@ define('HIGHLIGHT_STYLES',
     'xcode' => 'xcode',
     'zenburn' => 'zenburn',
     'xt256' => 'xt256',
-  )
-);
+  );
+// define('HIGHLIGHT_STYLES', HIGHLIGHT_STYLES);
