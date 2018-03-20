@@ -367,7 +367,7 @@ img {
   color: #333435;
   text-decoration: none;
   color: unset;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: normal;
 }
 .site-name-text-link:hover {
@@ -4102,7 +4102,7 @@ div.fb-like-mobile {
   padding: 0;
 }
 .footer-bottom-logo .site-name-text-link {
-  font-size: 26px;
+  font-size: 24px;
 }
 .footer-bottom-logo .logo-image {
   padding: 0;
