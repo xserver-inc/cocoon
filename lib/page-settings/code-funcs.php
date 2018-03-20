@@ -24,7 +24,8 @@ function get_code_highlight_css_selector(){
 }
 endif;
 
-const HIGHLIGHT_STYLES = array(
+global $_HIGHLIGHT_STYLES;
+$_HIGHLIGHT_STYLES = array(
     'agate' => 'agate',
     'androidstudio' => 'androidstudio',
     'arduino-light' => 'arduino-light',

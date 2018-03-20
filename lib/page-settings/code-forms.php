@@ -52,7 +52,8 @@
           </th>
           <td>
             <?php
-            generate_selectbox_tag(OP_CODE_HIGHLIGHT_STYLE, HIGHLIGHT_STYLES, get_code_highlight_style());
+            global $_HIGHLIGHT_STYLES;
+            generate_selectbox_tag(OP_CODE_HIGHLIGHT_STYLE, $_HIGHLIGHT_STYLES, get_code_highlight_style());
             generate_tips_tag(__( 'ソースコードのハイライトテーマです。スタイルについては、<a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo</a>を参照してください。', THEME_NAME ));
             ?>
           </td>
