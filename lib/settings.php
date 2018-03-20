@@ -1,5 +1,8 @@
 <?php //Wordpressのセッティング
 
+//ERR_BLOCKED_BY_XSS_AUDITOR エラー対策
+header('X-XSS-Protection: 0');
+
 // アイキャッチ画像を有効化
 add_theme_support('post-thumbnails');
 
