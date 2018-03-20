@@ -181,14 +181,14 @@ endif;
 //投稿者情報がある場合
 if ( !function_exists( 'is_author_exits' ) ):
 function is_author_exits(){
-  return get_the_author_id();
+  return get_the_author_meta( 'ID' );
 }
 endif;
 
 //投稿者は管理者かどうか
 if ( !function_exists( 'is_author_administrator' ) ):
 function is_author_administrator(){
-  $author_id = get_the_author_id();
+  $author_id = get_the_author_meta( 'ID' );
   if ($author_id) {
     $author = get_userdata( $author_id );
     if ($author && in_array( 'administrator', $author->roles )) {

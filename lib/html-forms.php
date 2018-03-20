@@ -777,7 +777,7 @@ endif;
 //プロフィールボックス生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($label){
-  $author_id = get_the_author_id();
+  $author_id = get_the_author_meta( 'ID' );
   // $auther_class = ' author-admin';
   // if ($author_id) {
   //   $author = new WP_User( get_the_author_meta( $author_id ) );
@@ -836,7 +836,7 @@ function generate_author_box_tag($label){
           }
 
         } elseif (is_user_logged_in()) {
-          echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_id().'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
+          echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
         }
         ?>
         <?php if (0&&get_the_author_website_url()): ?>

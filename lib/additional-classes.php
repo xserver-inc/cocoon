@@ -163,7 +163,7 @@ function body_class_additional($classes) {
   $classes[] = 'mblt-'.str_replace('_', '-', get_mobile_button_layout_type());
 
   //管理者クラス
-  $author_id = get_the_author_id();
+  $author_id = get_the_author_meta( 'ID' );
   //var_dump($author_id);
   $auther_class = 'author-admin';
   if (!is_author_administrator()) {
