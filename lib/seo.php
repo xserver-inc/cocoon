@@ -407,12 +407,20 @@ endif;
 if ( !function_exists( 'get_the_snipet' ) ):
 function get_the_snipet($content, $length = 70) {
   global $post;
+
   //SEO設定のディスクリプション取得
   $description = get_the_page_meta_description($post->ID);
+
+  //抜粋（投稿編集画面）の取得
+  if (!$description) {
+    $description = $post->post_excerpt;
+  }
+
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
   if (!$description) {
     $description = get_the_all_in_one_seo_pack_meta_description();
   }
+
   //SEO設定のディスクリプションがない場合は「抜粋」を取得
   if (!$description) {
     $description = htmlspecialchars(get_content_excerpt($content, $length));
