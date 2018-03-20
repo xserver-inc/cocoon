@@ -132,3 +132,23 @@ function get_internal_link_icon(){
   return get_theme_option(OP_INTERNAL_LINK_ICON, 'fa-share-square-o');
 }
 endif;
+
+//レスポンシブテーブル
+define('OP_RESPONSIVE_TABLE_ENABLE', 'responsive_table_enable');
+if ( !function_exists( 'is_responsive_table_enable' ) ):
+function is_responsive_table_enable(){
+  return get_theme_option(OP_RESPONSIVE_TABLE_ENABLE);
+}
+endif;
+
+//横スクロールレスポンシブテーブル用の要素の追加
+if (is_responsive_table_enable()) {
+  add_filter('the_content', 'add_responsive_table_tag');
+}
+if ( !function_exists( 'add_responsive_table_tag' ) ):
+function add_responsive_table_tag($the_content) {
+  $the_content = preg_replace('/<table/i', '<div class="scrollable-table"><table', $the_content);
+  $the_content = preg_replace('/<\/table>/i', '</table></div>', $the_content);
+  return $the_content;
+}
+endif;

@@ -45,3 +45,7 @@ update_theme_option(OP_INTERNAL_LINK_ICON_VISIBLE);
 
 //内部リンクアイコン
 update_theme_option(OP_INTERNAL_LINK_ICON);
+
+
+//レスポンシブテーブル
+update_theme_option(OP_RESPONSIVE_TABLE_ENABLE);

@@ -172,6 +172,31 @@ table {
   }
 }
 
+///////////////////////////////////////
+// レスポンシブテーブル
+///////////////////////////////////////
+.scrollable-table table{
+  border-collapse: collapse;
+  margin: 1em 0;
+  max-width: 100%;
+}
+
+.scrollable-table th{
+  background-color: #eee;
+}
+
+.scrollable-table th,
+.scrollable-table td{
+  border: solid 1px #ccc;
+  padding: 3px 5px;
+  white-space: nowrap;
+}
+
+.scrollable-table {
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
 
 .article{
   @import "article";

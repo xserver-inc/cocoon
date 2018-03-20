@@ -214,4 +214,34 @@
 
 
 
+<!-- テーブル -->
+<div id="table" class="postbox">
+  <h2 class="hndle"><?php _e( 'テーブル設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'テーブル動作の設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- レスポンシブテーブル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RESPONSIVE_TABLE_ENABLE, __('レスポンシブテーブル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_RESPONSIVE_TABLE_ENABLE , is_responsive_table_enable(), __( '横幅の広いテーブルは横スクロール', THEME_NAME ));
+            generate_tips_tag(__( '端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないようにします。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 </div><!-- /.metabox-holder -->
