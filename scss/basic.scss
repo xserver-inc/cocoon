@@ -100,6 +100,12 @@ a{
   margin-top: 2em;
 }
 
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 //IE10以降のプラウザハック
 @media all and (-ms-high-contrast:none){
   .main-scroll{

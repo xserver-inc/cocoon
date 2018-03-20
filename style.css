@@ -287,6 +287,12 @@ a:hover {
   margin-top: 2em;
 }
 
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media all and (-ms-high-contrast: none) {
   .main-scroll {
     position: static;
