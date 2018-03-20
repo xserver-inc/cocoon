@@ -82,7 +82,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           <li id="cat-<?php echo $widget_id; ?>" class="cat-tab"><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
           <li id="page-<?php echo $widget_id; ?>" class="page-tab"><?php _e( 'ページ', THEME_NAME ) ?></li>
           <li id="author-<?php echo $widget_id; ?>" class="author-tab"><?php _e( '著者', THEME_NAME ) ?></li>
-          <li id="post-<?php echo $widget_id; ?>" class="post-tab"><?php _e( '投稿・固定ページ', THEME_NAME ) ?></li>
+          <li id="post-<?php echo $widget_id; ?>" class="post-tab"><?php _e( '投稿', THEME_NAME ) ?></li>
           <li id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab"><?php _e( '固定ページ', THEME_NAME ) ?></li>
         </ul>
         <?php
