@@ -412,6 +412,9 @@ img {
   margin: 0 16px;
   display: block;
 }
+.header-container-in.hlt-top-menu .site-name-text {
+  white-space: nowrap;
+}
 .header-container-in.hlt-top-menu .tagline {
   display: none;
 }

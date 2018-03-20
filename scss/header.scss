@@ -22,6 +22,7 @@
   //min-height: 100px;
 }
 
+
 .site-name-text-link{
   @include link_cancel;
   color: unset;
@@ -75,6 +76,10 @@
     font-size: 32px;
     margin: 0 16px;
     display: block;
+  }
+
+  .site-name-text{
+    white-space: nowrap;
   }
 
   .tagline{
