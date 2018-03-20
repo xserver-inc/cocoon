@@ -191,7 +191,7 @@ if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) 
           generate_label_tag('', __('ページURL', THEME_NAME) );
           echo '<br>';
           generate_textbox_tag('item_ranking['.$i.'][link_url]', $link_url,  __('http://',THEME_NAME ));
-          generate_tips_tag(__( '公式ページ等へ行くするためのURLを入力してください。「リンクタグ」と双方入力されている場合は樹脂こちらが優先されます。', THEME_NAME ));
+          generate_tips_tag(__( '公式ページ等のURLを入力してください。「リンクタグ」と双方入力されている場合はこちらが優先されます。', THEME_NAME ));
 
           $style = $link_tag ? ' style="display: block;"' : '';
           echo '<span class="toggle"><span class="toggle-link">'.__( 'タグで入力', THEME_NAME ).'</span><div class="toggle-content"'.$style.'>';
