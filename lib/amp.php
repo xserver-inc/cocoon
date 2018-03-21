@@ -478,6 +478,7 @@ function get_the_singular_content(){
       get_template_part('tmp/page-contents');
     }
     $body_content = ob_get_clean();
+    //_v($body_content);
 
     ob_start();//バッファリング
     dynamic_sidebar( 'sidebar' );
@@ -495,6 +496,7 @@ function get_the_singular_content(){
 
     $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content;
   //endwhile;
+  $all_content = convert_content_for_amp($all_content);
   return $all_content;
 }
 endif;
