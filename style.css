@@ -367,11 +367,14 @@ img {
   color: #333435;
   text-decoration: none;
   color: unset;
-  font-size: 30px;
   font-weight: normal;
 }
 .site-name-text-link:hover {
   color: unset;
+}
+
+.site-name-text {
+  font-size: 28px;
 }
 
 .logo-text {
@@ -408,11 +411,11 @@ img {
   margin: 0;
 }
 .header-container-in.hlt-top-menu .site-name-text-link {
-  font-size: 24px;
   margin: 0 16px;
   display: block;
 }
 .header-container-in.hlt-top-menu .site-name-text {
+  font-size: 22px;
   white-space: nowrap;
 }
 .header-container-in.hlt-top-menu .tagline {
@@ -430,8 +433,10 @@ img {
 }
 
 .header-container-in.hlt-top-menu.hlt-tm-small .site-name-text-link {
-  font-size: 22px;
   margin: 0 16px;
+}
+.header-container-in.hlt-top-menu.hlt-tm-small .site-name-text {
+  font-size: 20px;
 }
 .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
   height: 40px;
@@ -4099,8 +4104,8 @@ div.fb-like-mobile {
 .footer-bottom-logo .logo-text {
   padding: 0;
 }
-.footer-bottom-logo .site-name-text-link {
-  font-size: 22px;
+.footer-bottom-logo .site-name-text {
+  font-size: 18px;
 }
 .footer-bottom-logo .logo-image {
   padding: 0;
@@ -5216,7 +5221,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     max-width: 30%;
   }
 
-  .site-name-text-link {
+  #header .site-name-text {
     font-size: 22px;
   }
 }
@@ -5397,7 +5402,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     top: 3px;
   }
 
-  .site-name-text-link {
+  #header .site-name-text {
     font-size: 18px;
   }
 

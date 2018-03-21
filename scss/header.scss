@@ -26,12 +26,15 @@
 .site-name-text-link{
   @include link_cancel;
   color: unset;
-  font-size: 30px;
   font-weight: normal;
 
   &:hover{
     color: unset;
   }
+}
+
+.site-name-text{
+  font-size: 28px;
 }
 
 .logo-text{
@@ -73,12 +76,12 @@
   }
 
   .site-name-text-link{
-    font-size: 24px;
     margin: 0 16px;
     display: block;
   }
 
   .site-name-text{
+    font-size: 22px;
     white-space: nowrap;
   }
 
@@ -103,8 +106,11 @@
 //トップメニュー（小）
 .header-container-in.hlt-top-menu.hlt-tm-small{
   .site-name-text-link{
-    font-size: 22px;
     margin: 0 16px;
+  }
+
+  .site-name-text{
+    font-size: 20px;
   }
 
   .logo-header{

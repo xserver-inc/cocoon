@@ -85,7 +85,7 @@ table tr:nth-of-type(2n+1),
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
 }
 .header,
-.header .site-name-text-link,
+.header .site-name-text,
 .navi .navi-in a,
 .navi .navi-in a:hover,
 .article h2,
@@ -96,7 +96,7 @@ table tr:nth-of-type(2n+1),
 <?php //サイトキー文字色
 if (get_site_key_text_color()): ?>
 .header,
-.header .site-name-text-link,
+.header .site-name-text,
 .navi .navi-in a,
 .navi .navi-in a:hover,
 .appeal-content .appeal-button,
@@ -144,7 +144,7 @@ if (get_header_container_background_color()): ?>
   background-color: <?php echo get_header_container_background_color(); ?>;
 }
 .header,
-.header .site-name-text-link,
+.header .site-name-text,
 .navi .navi-in a,
 .navi .navi-in a:hover{
   color: #fff;
@@ -153,7 +153,7 @@ if (get_header_container_background_color()): ?>
 <?php //ヘッダー全体文字色
 if (get_header_container_text_color()): ?>
 .header,
-.header .site-name-text-link,
+.header .site-name-text,
 .navi .navi-in a,
 .navi .navi-in a:hover{
   color: <?php echo get_header_container_text_color(); ?>;
@@ -168,7 +168,7 @@ if (get_header_background_color()): ?>
 <?php //ヘッダー文字色
 if (get_header_text_color()): ?>
 .header,
-.header .site-name-text-link{
+.header .site-name-text{
   color: <?php echo get_header_text_color(); ?>;
 }
 <?php endif ?>
