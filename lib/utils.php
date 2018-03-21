@@ -955,7 +955,7 @@ function get_browser_info(){
 
     $browser_name = 'Edge';
 
-    if(preg_match('/Edge\/([0-9\.]*/', $ua, $match)){
+    if(preg_match('/Edge\/([0-9.]*)/', $ua, $match)){
 
       $browser_version = $match[1];
     }
@@ -964,7 +964,7 @@ function get_browser_info(){
 
     $browser_name = 'IE';
 
-    if(preg_match('/MSIE\s([0-9\.]*)/', $ua, $match)){
+    if(preg_match('/MSIE\s([0-9.]*)/', $ua, $match)){
 
       $browser_version = $match[1];
 
@@ -977,25 +977,25 @@ function get_browser_info(){
 
     $browser_name = 'Opera';
 
-    if(preg_match('/(Opera|OPR|OPiOS)\/([0-9\.]*)/', $ua, $match)) $browser_version = $match[2];
+    if(preg_match('/(Opera|OPR|OPiOS)\/([0-9.]*)/', $ua, $match)) $browser_version = $match[2];
 
   }elseif(preg_match('/Firefox/i', $ua)){
 
     $browser_name = 'Firefox';
 
-    if(preg_match('/Firefox\/([0-9\.]*)/', $ua, $match)) $browser_version = $match[1];
+    if(preg_match('/Firefox\/([0-9.]*)/', $ua, $match)) $browser_version = $match[1];
 
   }elseif(preg_match('/Chrome|CriOS/i', $ua)){
 
     $browser_name = 'Chrome';
 
-    if(preg_match('/(Chrome|CriOS)\/([0-9\.]*)/', $ua, $match)) $browser_version = $match[2];
+    if(preg_match('/(Chrome|CriOS)\/([0-9.]*)/', $ua, $match)) $browser_version = $match[2];
 
   }elseif(preg_match('/Safari/i', $ua)){
 
     $browser_name = 'Safari';
 
-    if(preg_match('/Version\/([0-9\.]*)/', $ua, $match)) $browser_version = $match[1];
+    if(preg_match('/Version\/([0-9.]*)/', $ua, $match)) $browser_version = $match[1];
   }
 
   //Webkit
@@ -1003,7 +1003,7 @@ function get_browser_info(){
 
     $is_webkit = true;
 
-    if(preg_match('/AppleWebKit\/([0-9\.]*)/', $ua, $match)) $webkit_version = $match[1];
+    if(preg_match('/AppleWebKit\/([0-9.]*)/', $ua, $match)) $webkit_version = $match[1];
   }
 
   //Platform
