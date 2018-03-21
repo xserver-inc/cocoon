@@ -8,7 +8,7 @@ require_once 'lib/_defins.php'; //定数を定義
 require 'lib/theme-update-checker.php'; //ライブラリのパス
 $example_update_checker = new ThemeUpdateChecker(
   strtolower(THEME_PARENT_DIR), //テーマフォルダ名
-  'https://wp-cocoon.com/wp-content/themes/cocoon-master/update-info.json' //JSONファイルのURL
+  'https://raw.githubusercontent.com/yhira/cocoon/master/update-info.json' //JSONファイルのURL
 );
 
 //本文部分の冒頭を綺麗に抜粋する
