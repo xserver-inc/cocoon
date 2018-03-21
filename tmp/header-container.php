@@ -1,5 +1,5 @@
 <?php //ヘッダーエリア ?>
-<div class="header-container">
+<div id="header-container" class="header-container">
   <div class="header-container-in<?php echo get_additional_header_container_classes(); ?>">
     <header id="header" class="header<?php echo get_additional_header_classes(); ?> cf" itemscope itemtype="http://schema.org/WPHeader">
 
