@@ -27,10 +27,8 @@
           <?php dynamic_sidebar( 'below-single-content-title' ); ?>
         <?php endif; ?>
 
-        <?php
-        if (is_eyecatch_visible()) {
-          get_template_part('tmp/eye-catch');//アイキャッチ挿入
-        } ?>
+        <?php //アイキャッチ挿入
+        get_template_part('tmp/eye-catch'); ?>
 
         <?php //SNSシェアボタン
         if (is_sns_top_share_buttons_visible())
