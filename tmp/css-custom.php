@@ -365,6 +365,7 @@ if ($color = get_notice_area_text_color()): ?>
 if (!is_admin() && is_singular() && is_access_count_enable()): ?>
 body::after{
   content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>");
+  display: none;
 }
 <?php endif ?>
 <?php //アピールエリア背景色
