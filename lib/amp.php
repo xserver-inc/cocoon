@@ -463,7 +463,7 @@ function remove_crayon_syntax_highlighter() {
 }
 endif;
 
-if ( !function_exists( 'get_the_page_content' ) ):
+if ( !function_exists( 'get_the_singular_content' ) ):
 function get_the_singular_content(){
   $all_content = null;
   //while(have_posts()): the_post();
@@ -496,7 +496,7 @@ function get_the_singular_content(){
 
     $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content;
   //endwhile;
-  $all_content = convert_content_for_amp($all_content);
+  //$all_content = convert_content_for_amp($all_content);
   return $all_content;
 }
 endif;

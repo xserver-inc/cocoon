@@ -18,6 +18,7 @@ get_template_part('tmp/header-twitter-card');//Twitterカード用のタグテ�
 <?php
 //投稿・固定ページのページ内容全てを取得する
 $all_content = get_the_singular_content();
+$all_content = convert_content_for_amp($all_content);
 $elements = array(
   //'amp-analytics' => 'amp-analytics-0.1.js',
   'amp-facebook' => 'amp-facebook-0.1.js',
