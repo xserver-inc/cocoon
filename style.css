@@ -4982,22 +4982,22 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     display: none;
   }
 
-  .navi-in > .menu-mobile {
+  #navi .navi-in > .menu-mobile {
     display: flex;
   }
-  .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
+  #navi .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap {
     height: 40px;
     line-height: 16px;
   }
-  .navi-in > .menu-mobile li {
+  #navi .navi-in > .menu-mobile li {
     width: 50%;
     height: 40px;
     line-height: 40px;
   }
-  .navi-in > .menu-mobile li a {
+  #navi .navi-in > .menu-mobile li a {
     font-size: 14px;
   }
-  .navi-in > .menu-mobile li a:after {
+  #navi .navi-in > .menu-mobile li a:after {
     display: none;
   }
 
