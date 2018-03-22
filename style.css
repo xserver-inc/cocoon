@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 0.2.6
+Version: 0.2.7
 Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -5229,6 +5229,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .eye-catch .cat-label {
     font-size: 10px;
     padding: 2px 4px;
+  }
+
+  textarea {
+    min-height: 160px;
   }
 }
 @media screen and (max-width: 480px) {
