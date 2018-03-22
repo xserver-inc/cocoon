@@ -13,7 +13,7 @@
 
     //サイト情報
     $all .= __( 'サイト名：', THEME_NAME ).get_bloginfo('name').PHP_EOL;
-    $all .= __( 'サイトURL：', THEME_NAME ).site_url().PHP_EOL;
+    $all .= __( 'サイトURL：', THEME_NAME ).home_url().PHP_EOL;
     $all .= __( 'Wordpressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
     if (isset($_SERVER['HTTP_USER_AGENT']))

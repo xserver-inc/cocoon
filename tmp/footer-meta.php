@@ -3,7 +3,7 @@ if (get_the_author()) {
   $url = get_author_posts_url( get_the_author_meta( 'ID' ) );
   $name = get_the_author();
 } else {
-  $url = site_url();
+  $url = home_url();
   $name = get_bloginfo('name');
 }
  ?>

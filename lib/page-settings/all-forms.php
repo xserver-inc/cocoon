@@ -9,7 +9,7 @@
 
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo iframe-standard-demo all-demo">
-      <iframe id="all-demo" class="iframe-demo" src="<?php echo site_url(); ?>" width="1000" height="400"></iframe>
+      <iframe id="all-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
     </div>
 
     <table class="form-table">
