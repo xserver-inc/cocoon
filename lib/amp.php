@@ -340,9 +340,12 @@ function convert_content_for_amp($the_content){
   $pattern = '/<p><script.+?<\/script><\/p>/i';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
-  $pattern = '/<script.+?<\/script>/is';
+  $pattern = '/<script(?!.*type="application\/json").+?<\/script>/is';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
+  // $pattern = '/<script.+?<\/script>/is';
+  // $append = '';
+  // $the_content = preg_replace($pattern, $append, $the_content);
 
   //空のamp-imgタグは削除
   $pattern = '{<amp-img></amp-img>}i';
