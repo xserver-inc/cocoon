@@ -55,7 +55,7 @@ function tag_code_to_minify_js($buffer) {
               // || (strpos($url, '/plugins/image-upload-for-bbpress/') !== false)
               || is_buddypress_page()
               || is_bbpress_page()
-              || is_wpforo_page()
+              || is_wpforo_plugin_page()
 
               //jQueryマイグレートは除外
               //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)

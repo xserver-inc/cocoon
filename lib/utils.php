@@ -895,9 +895,9 @@ function is_wpforo_exist(){
 }
 endif;
 
-//buddypressのページかどうか
-if ( !function_exists( 'is_wpforo_page' ) ):
-function is_wpforo_page(){
+//wpforoのページかどうか
+if ( !function_exists( 'is_wpforo_plugin_page' ) ):
+function is_wpforo_plugin_page(){
   if (is_wpforo_exist()) {
     //functions-template.phpファイルから
     if (
@@ -927,7 +927,7 @@ function is_plugin_fourm_page(){
   if (
        is_bbpress_page()
     || is_buddypress_page()
-    || is_wpforo_page()
+    || is_wpforo_plugin_page()
   ) {
     return true;
   }
