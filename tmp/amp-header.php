@@ -29,6 +29,7 @@ $elements = array(
   'amp-social-share' => 'amp-social-share-0.1.js',
   'amp-ad' => 'amp-ad-0.1.js',
   'amp-iframe' => 'amp-iframe-0.1.js',
+  'amp-audio' => 'amp-audio-0.1.js',
 );
 
 //var_dump($the_content);

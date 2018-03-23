@@ -298,6 +298,11 @@ function convert_content_for_amp($the_content){
   $append = '<p><amp-instagram layout="responsive" data-shortcode="$1" width="592" height="592" ></amp-instagram></p>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
+  // audioをamp-amp-audioに置換する
+  $pattern = '/<audio .+?src="([^"]+?)".+?<\/audio>/is';
+  $append = '<p><amp-audio src="$1"></amp-audio></p>';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   // //YouTubeのURL埋め込み時にiframeのsrc属性のURLに余計なクエリが入るのを除去（力技;）
   // $the_content = preg_replace('/\??(((?<!service)version=\d*)|(&|&|&)rel=\d*|(&|&|&)fs=\d*|(&|&|&)autohide=\d*|(&|&|&)showsearch=\d*|(&|&|&)showinfo=\d*|(&|&|&)iv_load_policy=\d*|(&|&|&)wmode=transparent)+/is', '', $the_content);
   // YouTubeを置換する（埋め込みコード）
