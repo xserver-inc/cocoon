@@ -54,6 +54,10 @@ function code_minify_call_back($buffer) {
   ///////////////////////////////////////
   //Alt属性がないIMGタグにalt=""を追加する
   $buffer = preg_replace('/<img((?![^>]*alt=)[^>]*)>/i', '<img alt=""${1}>', $buffer);
+  //画像タグの border="0"を削除する
+  $buffer = str_replace('<img border="0"', '<img', $buffer);
+  $buffer = str_replace(' border="0"/>', '/>', $buffer);
+
   //wpForoのHTML5エラー
   if (is_wpforo_exist()) {
     $buffer = str_replace(' id="wpf-widget-recent-replies"', '', $buffer);
