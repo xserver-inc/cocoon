@@ -14,7 +14,7 @@ function tag_code_to_minify_js($buffer) {
     //JSファイルパターン
     $js_file_pattern = '<script[^>]+?javascript[^>]+?src=[\'"]([^\'"]+?)[\'"][^>]*?></script>';
     //JSインラインパターン
-    $js_inline_pattern = '<script[^>]*?>(.*?)</script>';
+    $js_inline_pattern = '<script([^>]*?)>(.*?)</script>';
     //JS正規表現パターン
     $pattern = '{'.$js_file_pattern.'|'.$js_inline_pattern.'}is';
     $subject = $buffer;
@@ -22,7 +22,8 @@ function tag_code_to_minify_js($buffer) {
     //_v($m);
     $all = 0;  //scriptタグ全体にマッチ
     $flie = 1; //src内のファイルURLにマッチ
-    $code = 2; //scriptタグ内のコードにマッチ
+    $attr = 2; //scriptタグの属性
+    $code = 3; //scriptタグ内のコードにマッチ
     if ($res && isset($m[$all], $m[$flie], $m[$code])) {
       $i = 0;
       foreach ($m[$all] as $match) {
@@ -31,6 +32,8 @@ function tag_code_to_minify_js($buffer) {
         //_v($script_tag);
         //JSファイルURL
         $url = $m[$flie][$i];
+        //インラインscriptタグの属性群
+        $attr_code = $m[$attr][$i];
         //JSコード
         $js_code = $m[$code][$i];
         //_v($script_link_tag);
@@ -93,109 +96,18 @@ function tag_code_to_minify_js($buffer) {
         if ($js_code) {
           //_v($js_code);
           $js = minify_js($js_code);
+          // $attr_tag = null;
+          // if (!empty($attr_code)) {
+          //   $attr_tag = $attr_code;
+          // }
           //インラインタイプのscriptタグを縮小化して置換する
-          $buffer = str_replace($script_tag, '<script type="text/javascript">'.$js.'</script>', $buffer);
+          $buffer = str_replace($script_tag, '<script'.$attr_code.'>'.$js.'</script>', $buffer);
         }
 
       }//foreach
     }//$res && isset($m[1])
   }//is_js_minify_enable()
 
-
-  /*
-  if (is_js_minify_enable()) {
-    //最終出力縮小化JSコード
-    $last_minfified_js = null;
-
-    //JSファイル
-    $pattern = '{<script.+?javascript.+?src=[\'"]([^\'"]+?)[\'"].*?>.*?</script>}i';//[^>]*?
-    $subject = $buffer;
-    $res = preg_match_all($pattern, $subject, $m);
-    //_v($m);
-    if ($res && isset($m[1])) {
-      $i = 0;
-      foreach ($m[1] as $match) {
-        //JSファイルURL
-        $url = $match;
-        //JSファイル読み込みタグ（<script type='text/javascript' src='http://xxx/jquery-migrate.min.js?ver=1.4.1'></script>）
-        $script_link_tag = $m[0][$i];
-        //_v($script_link_tag);
-        ++$i;
-
-        //サイトのURLが含まれているものだけ処理
-        if (strpos($url, site_url()) !== false) {
-          //除外処理
-          if (
-            //jQueryは除外
-            (strpos($url, 'js/jquery/jquery.js') !== false) ||
-            (strpos($url, 'plugins/highlight-js/highlight.min.js') !== false) ||
-            (strpos($url, 'plugins/baguettebox/dist/baguetteBox.min.js') !== false) ||
-            (strpos($url, 'plugins/stickyfill/dist/stickyfill.min.js') !== false) ||
-            (strpos($url, 'plugins/slick/slick.min.js') !== false) ||
-            (strpos($url, 'js/jquery/jquery.js') !== false) ||
-            //アドミンバーのJSは除外
-            (strpos($url, 'js/admin-bar.min.js') !== false) //||
-            //jQueryマイグレートは除外
-            //(strpos($url, 'js/jquery/jquery-migrate.min.js ') !== false)
-          ) {
-            continue;
-          }
-
-          //?var=4.9のようなURLクエリを除去(remove_query_arg( 'ver', $url ))
-          $url = preg_replace('/\?.*$/m', '', $url);
-          //_v($url);//JSコード変換するURL
-
-          //JS URLからJSコードの取得
-          $js = js_url_to_js_minify_code( $url );
-          //縮小化可能ななJSだと時
-          if ($js) {
-            //_v($js);//変換したJSコード
-
-            //JSを縮小化したJSファイルURL linkタグを削除する
-            $buffer = str_replace($script_link_tag, '', $buffer);
-
-
-            $last_minfified_js .= $js;
-          }//$js
-
-        }//strpos($url, site_url()) !== false
-
-      }//foreach
-    }//$res && isset($m[1])
-
-
-    //JSインラインスタイル
-    $pattern = '{<script[^>]*?>(.*?)</script>}is';
-    $subject = $buffer;
-    $res = preg_match_all($pattern, $subject, $m);
-    //_v($m);
-    if ($res && isset($m[1])) {
-      $i = 0;
-      foreach ($m[1] as $match) {
-        //jsコード
-        $js = $match;
-        //_v($js);
-        //JSタグ（<script type="text/javascript"></script>）
-        $script_tag = $m[0][$i];
-        //_v($script_tag);
-        ++$i;
-        //_v($match);
-        if (empty($js)) {
-          continue;
-        }
-
-        //最終出力縮小化JSコードに縮小化したJSコードを加える
-        $last_minfified_js .= minify_css($js);
-        //ヘッダー出力コードからscriptタグを削除
-        $buffer = str_replace($script_tag, '', $buffer);
-      }
-    }
-
-    //縮小化したJavaScriptをデータの最後に付け加える
-    $buffer = $buffer.PHP_EOL.'<script type="text/javascript">'.$last_minfified_js.'</script>';
-  }//is_js_minify_enable()
-  */
-  //_v($buffer);
   return $buffer;
 }
 endif;

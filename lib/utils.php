@@ -455,8 +455,7 @@ function wp_enqueue_slicknav(){
     wp_add_inline_script( 'slicknav-js', $data, 'after' ) ;
 
   }
-  }
-
+}
 endif;
 
 
