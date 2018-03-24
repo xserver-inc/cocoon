@@ -28,3 +28,25 @@ img{
   box-shadow: 5px 5px 15px $x_thin;
 }
 
+///////////////////////////////////////
+// iOS対応
+///////////////////////////////////////
+.entry-card-thumb,
+.author-thumb,
+.blogcard-thumbnail,
+.related-entry-card-thumb,
+.popular-entry-card-thumb,
+.new-entry-card-thumb{
+  margin-right: 1.6%;
+}
+
+.ect-vertical-card .entry-card-thumb,
+.related-vartical-card .related-entry-card-thumb{
+  margin: 0;
+}
+
+.ib-right .blogcard-thumbnail,
+.eb-right .blogcard-thumbnail{
+  margin-right: 0;
+  margin-left: 1.4%;
+}

@@ -114,7 +114,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .entry-card-title, .related-entry-card-title {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
   line-height: 1.2;
   margin-bottom: 5px;
@@ -344,6 +344,26 @@ img {
 /*シャドー*/
 .iwe-shadow p img {
   box-shadow: 5px 5px 15px #dddedf;
+}
+
+.entry-card-thumb,
+.author-thumb,
+.blogcard-thumbnail,
+.related-entry-card-thumb,
+.popular-entry-card-thumb,
+.new-entry-card-thumb {
+  margin-right: 1.6%;
+}
+
+.ect-vertical-card .entry-card-thumb,
+.related-vartical-card .related-entry-card-thumb {
+  margin: 0;
+}
+
+.ib-right .blogcard-thumbnail,
+.eb-right .blogcard-thumbnail {
+  margin-right: 0;
+  margin-left: 1.4%;
 }
 
 /************************************
