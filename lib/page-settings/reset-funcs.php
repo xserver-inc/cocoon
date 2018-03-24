@@ -3,12 +3,9 @@
 define('OP_RESET_ALL_SETTINGS', 'reset_all_settings');
 if ( !function_exists( 'reset_all_settings' ) ):
 function reset_all_settings(){
-  //テーマフォルダ名の取得
-  $dir_name = str_replace(get_theme_root_uri().'/', '', get_stylesheet_directory_uri());
-
   //データベースから削除
   global $wpdb;
-  $wpdb->delete( 'wp_options', array( 'option_name' => 'theme_mods_'.$dir_name  ) );
+  $wpdb->delete( 'wp_options', array( 'option_name' => get_theme_mods_option_name() ) );
 }
 endif;
 

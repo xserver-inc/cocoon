@@ -3,12 +3,9 @@
 //バックアップが保存されているオプションテーブルの項目名を取得する
 if ( !function_exists( 'get_theme_mods_option_name' ) ):
 function get_theme_mods_option_name(){
-  $option_name = 'theme_mods_';
-  if (is_child_theme()) {
-    $option_name .= THEME_CHILD_DIR;
-  } else {
-    $option_name .= THEME_PARENT_DIR;
-  }
+  //テーマフォルダ名の取得
+  $dir_name = str_replace(get_theme_root_uri().'/', '', get_stylesheet_directory_uri());
+  $option_name = 'theme_mods_'.$dir_name;
   return $option_name;
 }
 endif;
