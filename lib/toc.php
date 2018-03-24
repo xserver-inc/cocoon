@@ -124,20 +124,37 @@ function add_toc_before_1st_h2($the_content){
     ///////////////////////////////////////
     // PHPの見出し処理（条件によっては失敗するかも）
     ///////////////////////////////////////
-    $res = preg_match_all('/<('.implode('|', $harray).')[^>]*?>.*?<\/h[2-6]>/i', $the_content, $m);
+    $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/i', $the_content, $m);
     // var_dump($harray);
     // var_dump($res);
-    //var_dump($m);
-    if ($res && $m[0] && $m[1]) {
+    //_v($m);
+    $tag_all_index = 0;
+    $tag_index = 1;
+    $h_index = 2;
+    $h_content_index = 3;
+    $tag_end_index = 4;
+    if ($res && $m[0]) {
       $i = 0;
-      foreach ($m[0] as $value) {
+      foreach ($m[$tag_all_index] as $value) {
         //var_dump($m[0][$i]);
-        $h_tag = $m[1][$i];
-        $new = str_replace('<'.$h_tag, '<'.$h_tag.' id="toc'.strval($i+1).'"', $value);
+        $tag_all = $m[$tag_all_index][$i];
+        $tag = $m[$tag_index][$i];
+        $h_tag = $m[$h_index][$i];
+        $h_content = $m[$h_content_index][$i];
+        $tag_end = $m[$tag_end_index][$i];
+
+        $new = $tag.'<span id="toc'.strval($i+1).'">'.$h_content.'</span>'.$tag_end;
+        //$new = str_replace('<'.$h_tag, '<'.$h_tag.' id="toc'.strval($i+1).'"', $value);
+
         // var_dump($value);
         // var_dump($new);
 
-        $the_content = str_replace($value, $new, $the_content);
+        //_v($value);
+        // _v($new);
+
+        // $count = 1;
+        // $the_content = str_replace($value, $new, $the_content, $count);
+        $the_content = preg_replace('{'.$value.'}', $new, $the_content, 1);
 
         $i++;
       }
