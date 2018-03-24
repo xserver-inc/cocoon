@@ -90,7 +90,7 @@ if ($image_url && file_exists($image_file)) {//ロゴ画像がある場合
 
     }
   },
-  "description": "<?php echo get_the_meta_description(); ?>…"<?php  // 抜粋 ?>
+  "description": "<?php echo get_meta_description_text(); ?>…"<?php  // 抜粋 ?>
 
 }
 </script>

@@ -2,10 +2,11 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="<?php echo get_twitter_card_type();//Twitterのカードタイプを取得 ?>">
 <?php
+$description = get_meta_description_text();
 if (is_singular()){//単一記事ページの場合
-  if(have_posts()): while(have_posts()): the_post();
-    echo '<meta name="twitter:description" content="'.get_the_meta_description().'">';echo "\n";//抜粋を表示
-  endwhile; endif;
+  //if(have_posts()): while(have_posts()): the_post();
+    echo '<meta name="twitter:description" content="'.$description.'">';echo "\n";//抜粋を表示
+  //endwhile; endif;
   $title = get_the_title();
   if ( is_front_page() ) {
     $title = get_bloginfo('name');
@@ -13,7 +14,6 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta name="twitter:title" content="'; echo $title; echo '">';echo "\n";//単一記事タイトルを表示
   echo '<meta name="twitter:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-  $description = get_bloginfo('description');
   $title = get_bloginfo('name');
   $url = home_url();
 

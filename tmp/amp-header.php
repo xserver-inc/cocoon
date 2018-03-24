@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <title><?php echo wp_get_document_title(); ?></title>
 <?php //canonicalタグの出力
-the_canonical_tag() ?>
+generate_canonical_tag() ?>
 <?php //メタディスクリプションタグ
-the_meta_description_tag() ?>
+generate_meta_description_tag() ?>
 <?php //メタキーワードタグ
-the_meta_keywords_tag() ?>
+generate_meta_keywords_tag() ?>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <?php if ( is_facebook_ogp_enable() ) //Facebook OGPタグ挿入がオンのとき
 get_template_part('tmp/header-ogp');//Facebook OGP用のタグテンプレート?>

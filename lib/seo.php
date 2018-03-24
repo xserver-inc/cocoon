@@ -239,10 +239,10 @@ if (is_canonical_tag_enable()) {
   //デフォルトのcanonicalタグ削除
   remove_action('wp_head', 'rel_canonical');
   //分割ページのみnext/prevを表示
-  add_action( 'wp_head', 'the_canonical_tag' );
+  add_action( 'wp_head', 'generate_canonical_tag' );
 }
-if ( !function_exists( 'the_canonical_tag' ) ):
-function the_canonical_tag(){
+if ( !function_exists( 'generate_canonical_tag' ) ):
+function generate_canonical_tag(){
   $canonical_url = generate_canonical_url();
   // var_dump($canonical_url);
   if ( $canonical_url && !is_wpforo_plugin_page() ) {
@@ -308,20 +308,28 @@ function get_the_meta_keywords(){
 }
 endif;
 
-//メタディスクリプションタグを出力する
-add_action( 'wp_head', 'the_meta_description_tag' );
-if ( !function_exists( 'the_meta_description_tag' ) ):
-function the_meta_description_tag() {
+//メタディスクリプション文の取得
+if ( !function_exists( 'get_meta_description_text' ) ):
+function get_meta_description_text(){
   $description = null;
+
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
     $description = get_the_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
-  } else {
-
   }
+  return $description;
+}
+endif;
+
+//メタディスクリプションタグを出力する
+add_action( 'wp_head', 'generate_meta_description_tag' );
+if ( !function_exists( 'generate_meta_description_tag' ) ):
+function generate_meta_description_tag() {
+  $description = get_meta_description_text();
+
   if ($description && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
     //var_dump('<meta name="description" content="'.$description.'">');
@@ -330,11 +338,9 @@ function the_meta_description_tag() {
 }
 endif;
 
-
-//メタキーワードタグを出力する
-add_action( 'wp_head', 'the_meta_keywords_tag' );
-if ( !function_exists( 'the_meta_keywords_tag' ) ):
-function the_meta_keywords_tag() {
+//メタキーワードテキストの取得
+if ( !function_exists( 'get_meta_keywords_text' ) ):
+function get_meta_keywords_text(){
   $keywords = null;
   //var_dump(get_the_meta_keywords());
   if (is_front_page() && get_front_page_meta_keywords()) {
@@ -343,9 +349,18 @@ function the_meta_keywords_tag() {
     $keywords = get_the_meta_keywords();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
-  } else {
-
   }
+  return $keywords;
+}
+endif;
+
+
+//メタキーワードタグを出力する
+add_action( 'wp_head', 'generate_meta_keywords_tag' );
+if ( !function_exists( 'generate_meta_keywords_tag' ) ):
+function generate_meta_keywords_tag() {
+  $keywords = get_meta_keywords_text();
+
   if ($keywords && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta keywords -->'.PHP_EOL;
     //var_dump('<meta name="keywords" content="'.$keywords.'">');
@@ -387,6 +402,7 @@ function get_the_meta_description(){
 
   //抜粋を取得
   $desc = trim(strip_tags( $post->post_excerpt ));
+
   //投稿・固定ページにメタディスクリプションが設定してあれば取得
   if (get_the_page_meta_description()) {
     $desc = get_the_page_meta_description();
