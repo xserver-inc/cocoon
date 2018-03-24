@@ -778,6 +778,10 @@ endif;
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($label){
   $author_id = get_the_author_meta( 'ID' );
+  if (!$author_id) {
+    $author_id = get_sns_default_follow_user();
+  }
+
   // $auther_class = ' author-admin';
   // if ($author_id) {
   //   $author = new WP_User( get_the_author_meta( $author_id ) );
