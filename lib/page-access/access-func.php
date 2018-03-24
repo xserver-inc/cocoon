@@ -340,7 +340,8 @@ function wrap_joined_wp_posts_query($query){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
-  $post_type = is_page() ? 'page' : 'post';
+  //$post_type = is_page() ? 'page' : 'post';
+  $post_type = 'post';
   $query = "
     SELECT ID, sum_count, post_title, post_author, post_date, post_modified, post_status, post_type, comment_count FROM (
       {$query}
@@ -387,10 +388,11 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
 
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
-  $post_type = get_accesses_post_type();
-  if (!is_page()) {
-    $post_type = 'post';
-  }
+  // $post_type = get_accesses_post_type();
+  // if (!is_page()) {
+  //   $post_type = 'post';
+  // }
+  $post_type = 'post';
   $date = get_current_db_date();
 
 
