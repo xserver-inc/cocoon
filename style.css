@@ -4125,9 +4125,6 @@ div.fb-like-mobile {
 .footer-bottom-logo {
   float: left;
 }
-.footer-bottom-logo .logo-text {
-  padding: 0;
-}
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
 }
@@ -5257,6 +5254,17 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   textarea {
     min-height: 160px;
   }
+
+  .navi-footer-in > .menu-footer li {
+    width: 32%;
+    border: 1px solid #dddedf;
+    padding: 3px;
+    margin: 1px;
+  }
+
+  .footer-bottom.fdt-left-and-right .footer-bottom-content {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 480px) {
   h2,
@@ -5441,6 +5449,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .tagline {
     font-size: 12px;
+  }
+
+  .navi-footer-in > .menu-footer li {
+    width: 49%;
   }
 }
 @media print {

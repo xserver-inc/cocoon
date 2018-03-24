@@ -258,3 +258,14 @@ table{
 textarea {
   min-height: 160px;
 }
+
+.navi-footer-in > .menu-footer li{
+  width: 32%;
+  border: 1px solid $x_thin;
+  padding: 3px;
+  margin: 1px;
+}
+
+.footer-bottom.fdt-left-and-right .footer-bottom-content{
+  flex-direction: column;
+}
