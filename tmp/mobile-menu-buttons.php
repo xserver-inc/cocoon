@@ -70,9 +70,11 @@
   }
    ?>
   <!-- トップボタン -->
-  <div class="top-menu-button menu-button go-to-top-common"<?php echo $on; ?>>
-    <div class="top-menu-icon menu-icon"></div>
-    <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
+  <div class="top-menu-button menu-button">
+    <a class="go-to-top-common top-menu-a"<?php echo $on; ?>>
+      <div class="top-menu-icon menu-icon"></div>
+      <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
+    </a>
   </div>
 
   <?php if (is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' )): ?>

@@ -27,7 +27,7 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
     "duration": "300ms",
     "fill": "both",
     "animations": [{
-      "selector": ".go-to-top-common",
+      "selector": ".go-to-top-hide",
       "easing": "cubic-bezier(.4,0,.2,1)",
       "keyframes": [{
         "opacity": "0",
