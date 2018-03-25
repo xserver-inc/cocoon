@@ -4,6 +4,7 @@
 //////////////////////////////////
 if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示するか
   $on = null;
+  //AMP用のイベントを設定
   if (is_amp()) {
     $on = ' on="tap:header.scrollTo(\'duration\'=375, \'easing\'=\'cubic-bezier(.4,0,.2,1)\')"';
   }
@@ -15,10 +16,8 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
     <a class="go-to-top-button go-to-top-button-icon-font"<?php echo $on; ?>><span class="fa <?php echo get_go_to_top_button_icon_font(); //Font Awesomeアイコンフォントの取得 ?>"></span></a>
   <?php endif ?>
 </div>
-<?php if (is_amp()): ?>
-<!--     <div class="page-top-button">
-    <button id="page-top" class="go-to-top-button" on="tap:header.scrollTo('duration'=375, 'easing'='cubic-bezier(.4,0,.2,1)')"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-  </div> -->
+<?php //AMPトップへ戻るボタン用のトリガー
+if (is_amp()): ?>
   <div class="go-to-top-trigger">
     <amp-position-observer on="enter:hide-page-top.start; exit:show-page-top.start" layout="nodisplay"></amp-position-observer>
   </div>
