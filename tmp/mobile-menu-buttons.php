@@ -62,14 +62,18 @@
   <?php endif ?>
 
 
-
-  <?php if (!is_amp()): ?>
+  <?php
+  $on = null;
+  //AMP用のイベントを設定
+  if (is_amp()) {
+    $on = AMP_GO_TO_TOP_ON_CODE;
+  }
+   ?>
   <!-- トップボタン -->
-  <div class="top-menu-button menu-button">
+  <div class="top-menu-button menu-button go-to-top-common"<?php echo $on; ?>>
     <div class="top-menu-icon menu-icon"></div>
     <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
   </div>
-  <?php endif ?>
 
   <?php if (is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' )): ?>
   <!-- サイドバーボタン -->

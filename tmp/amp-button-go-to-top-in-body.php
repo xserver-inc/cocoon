@@ -10,7 +10,7 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
     "duration": "300ms",
     "fill": "both",
     "animations": [{
-      "selector": ".go-to-top-button",
+      "selector": ".go-to-top-common",
       "easing": "cubic-bezier(.4,0,.2,1)",
       "keyframes": [{
         "opacity": "1",
@@ -27,7 +27,7 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
     "duration": "300ms",
     "fill": "both",
     "animations": [{
-      "selector": ".go-to-top-button",
+      "selector": ".go-to-top-common",
       "easing": "cubic-bezier(.4,0,.2,1)",
       "keyframes": [{
         "opacity": "0",
