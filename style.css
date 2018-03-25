@@ -4143,6 +4143,41 @@ div.fb-like-mobile {
   text-align: right;
 }
 
+/************************************
+** トップへ戻るボタン
+************************************/
+.go-to-top {
+  position: fixed;
+  display: none;
+  right: 10px;
+  bottom: 10px;
+}
+
+.go-to-top-button {
+  background-color: #eee;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  border-radius: 5px;
+  font-size: 22px;
+}
+.go-to-top-button:hover {
+  color: #333;
+}
+
+.go-to-top-button-image {
+  background-color: transparent;
+  padding: 0;
+  max-width: 120px;
+}
+
 .notice-area-wrap {
   display: block;
   text-decoration: none;
@@ -4328,41 +4363,6 @@ input[type='submit'],
 
 .comment-respond label {
   display: block;
-}
-
-/************************************
-** トップへ戻るボタン
-************************************/
-.go-to-top {
-  position: fixed;
-  display: none;
-  right: 10px;
-  bottom: 10px;
-}
-
-.go-to-top-button {
-  background-color: #eee;
-  color: #333;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 1;
-  border-radius: 5px;
-  font-size: 22px;
-}
-.go-to-top-button:hover {
-  color: #333;
-}
-
-.go-to-top-button-image {
-  background-color: transparent;
-  padding: 0;
-  max-width: 120px;
 }
 
 /************************************

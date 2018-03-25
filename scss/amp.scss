@@ -123,3 +123,18 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   padding-bottom: 0;
   padding-top: 0;
 }
+
+.go-to-top{
+  display: block;
+}
+
+.go-to-top-button{
+  visibility: hidden;
+}
+
+.go-to-top-trigger {
+  height: 0;
+  position: absolute;
+  top: 500px;
+  width: 0;
+}

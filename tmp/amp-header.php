@@ -58,6 +58,9 @@ get_template_part('tmp/json-ld'); ?>
 <?php //AMP用スタイルの出力
   generate_style_amp_custom_tag(); ?>
 
+<?php //トップに戻るの</head>手前コード
+get_template_part('tmp/amp-button-go-to-top-in-head') ?>
+
 <?php //AdSense AMP自動広告の</head>手前コード
 get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 </head>
@@ -65,6 +68,9 @@ get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
+
+  <?php //トップに戻るの<body>直後コード
+  get_template_part('tmp/amp-button-go-to-top-in-body') ?>
 
   <?php //AMP用のGoogle Tag Managerコード
   get_template_part('tmp/amp-tagmanager') ?>
