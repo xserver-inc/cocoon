@@ -43,7 +43,7 @@ function replace_anchor_links($the_content) {
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
 
         //フォロータイプの設定
-        $rels = get_rel_follow_attr_valus( get_internal_link_follow_type(), $rels );
+        $rels = get_rel_follow_attr_values( get_internal_link_follow_type(), $rels );
 
         //noopenerの追加と削除
         $rels = get_noopener_rels( is_internal_link_noopener_enable(), $rels );
@@ -114,7 +114,7 @@ function replace_anchor_links($the_content) {
         // }//!get_external_link_follow_type_default
 
         //フォロータイプの設定
-        $rels = get_rel_follow_attr_valus( get_external_link_follow_type(), $rels );
+        $rels = get_rel_follow_attr_values( get_external_link_follow_type(), $rels );
 
         // //noopenerの追加と削除
         // if (is_external_link_noopener_enable()) {
@@ -298,8 +298,8 @@ endif;
 
 
 //follow, nofollowのrel属性値取得
-if ( !function_exists( 'get_rel_follow_attr_valus' ) ):
-function get_rel_follow_attr_valus( $follow_type, $rels ) {
+if ( !function_exists( 'get_rel_follow_attr_values' ) ):
+function get_rel_follow_attr_values( $follow_type, $rels ) {
   //フォロータイプの設定
   if ($follow_type != 'default') {
 
