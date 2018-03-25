@@ -106,6 +106,9 @@ function add_toc_before_1st_h2($the_content){
       <div class="toc-title">' . $title . '</div>
       ' . $toc_list .'
     </div>';
+
+    //_v($counter);
+
     ///////////////////////////////////////
     // jQueryの見出し処理（PHPの置換処理と比べてこちらの方が信頼度高い）
     ///////////////////////////////////////
