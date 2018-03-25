@@ -204,6 +204,16 @@
         </tr>
 
         <!-- サイトアイコン -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('ファビコン', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <p><?php _e( 'ファビコン（サイトアイコン）設定は、テーマ管理画面から「外観→カスタマイズ」メニューにある「サイト基本情報」にある「サイトアイコン」設定項目から行ってください。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+
+        <!-- サイトアイコン -->
         <!-- <tr>
           <th scope="row">
             <?php generate_label_tag(OP_SITE_ICON_URL, __('サイトアイコン', THEME_NAME) ); ?>
