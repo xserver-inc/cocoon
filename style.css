@@ -236,10 +236,6 @@ a:hover {
   display: block;
 }
 
-.display-none {
-  display: none;
-}
-
 .header-container,
 .main,
 .sidebar,
@@ -299,14 +295,6 @@ a:hover {
     top: auto;
   }
 }
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
-}
-
 .publisher {
   display: none;
 }
@@ -4938,6 +4926,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 .live-writer .question-box::after,
 .live-writer .alert-box::before,
 .live-writer .alert-box::after {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
   display: none;
 }
 
