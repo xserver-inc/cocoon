@@ -122,8 +122,12 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ *?marginwidth=[\'][^\']*?[\']/i', '', $the_content);
 
   //marginheight属性を取り除く
-  $the_content = preg_replace('/ *? marginheight=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *? marginheight=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ *?marginheight=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ *?marginheight=[\'][^\']*?[\']/i', '', $the_content);
+
+  //contenteditable属性を取り除く
+  $the_content = preg_replace('/ *?contenteditable=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ *?contenteditable=[\'][^\']*?[\']/i', '', $the_content);
 
   //YouTubeプレイヤーのtype属性を取り除く
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
