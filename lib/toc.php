@@ -170,7 +170,7 @@ function add_toc_before_1st_h2($the_content){
 
         // $count = 1;
         // $the_content = str_replace($value, $new, $the_content, $count);
-        $the_content = preg_replace('{'.$value.'}', $new, $the_content, 1);
+        $the_content = preg_replace('/'.preg_quote($value, '/').'/', $new, $the_content, 1);
 
         $i++;
         $count++;
