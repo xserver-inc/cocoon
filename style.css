@@ -4167,6 +4167,14 @@ div.fb-like-mobile {
   max-width: 120px;
 }
 
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
 .notice-area-wrap {
   display: block;
   text-decoration: none;
@@ -4926,14 +4934,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 .live-writer .question-box::after,
 .live-writer .alert-box::before,
 .live-writer .alert-box::after {
-  display: none;
-}
-
-.display-block {
-  display: block;
-}
-
-.display-none {
   display: none;
 }
 
