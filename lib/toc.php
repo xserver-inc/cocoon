@@ -30,6 +30,8 @@ function add_toc_before_1st_h2($the_content){
   $depth       = intval(get_toc_depth()); //2-6 0で全て
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
+
+  $set_depth = $depth;
   $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
   if ($number_visible) {
     $list_tag = 'ol';
@@ -135,16 +137,27 @@ function add_toc_before_1st_h2($the_content){
     $tag_end_index = 4;
     if ($res && $m[0]) {
       $i = 0;
+      $count = 1;
       foreach ($m[$tag_all_index] as $value) {
         //var_dump($m[0][$i]);
         $tag_all = $m[$tag_all_index][$i];
         $tag = $m[$tag_index][$i];
-        $h_tag = $m[$h_index][$i];
+        $h = $m[$h_index][$i];
         $h_content = $m[$h_content_index][$i];
         $tag_end = $m[$tag_end_index][$i];
 
-        $new = $tag.'<span id="toc'.strval($i+1).'">'.$h_content.'</span>'.$tag_end;
-        //$new = str_replace('<'.$h_tag, '<'.$h_tag.' id="toc'.strval($i+1).'"', $value);
+        $now_depth = intval(str_replace('h', '', $h));
+        //_v('$set_depth='.$set_depth.', '.'$now_depth='.$now_depth);
+        //_v($tag_all);
+
+        //設定より見出しが深い場合はスキップ
+        if ($set_depth < $now_depth) {
+          $i++;
+          continue;
+        }
+
+        $new = $tag.'<span id="toc'.strval($count).'">'.$h_content.'</span>'.$tag_end;
+        //$new = str_replace('<'.$h, '<'.$h.' id="toc'.strval($i+1).'"', $value);
 
         // var_dump($value);
         // var_dump($new);
@@ -157,6 +170,7 @@ function add_toc_before_1st_h2($the_content){
         $the_content = preg_replace('{'.$value.'}', $new, $the_content, 1);
 
         $i++;
+        $count++;
       }
     }
 
