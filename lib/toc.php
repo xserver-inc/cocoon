@@ -32,6 +32,9 @@ function add_toc_before_1st_h2($the_content){
   $targetclass = 'entry-content'; //目次対象となるHTML要素
 
   $set_depth = $depth;
+  if (intval($set_depth) == 0) {
+    $set_depth = 6;
+  }
   $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
   if ($number_visible) {
     $list_tag = 'ol';
