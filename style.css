@@ -5003,6 +5003,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .header, .appeal {
     background-size: cover;
   }
+
+  .logo-footer {
+    margin: 8px auto;
+  }
 }
 @media screen and (max-width: 768px) {
   .navi-in > .menu-header {
