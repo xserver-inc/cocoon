@@ -1475,11 +1475,12 @@ a.blogcard-wrap {
 }
 
 /************************************
-** 内部ブログカードのサムネイルスタイル
+** ブログカードのサムネイルスタイル
 ************************************/
 .ib-right .blogcard-thumbnail,
 .eb-right .blogcard-thumbnail {
   float: right;
+  margin-left: 1.6%;
 }
 .ib-right .blogcard-content,
 .eb-right .blogcard-content {
@@ -1644,7 +1645,7 @@ a.blogcard-wrap {
 }
 .sidebar .blogcard-thumbnail,
 .footer .blogcard-thumbnail {
-  width: 34%;
+  width: 30%;
 }
 .sidebar .blogcard-snipet,
 .footer .blogcard-snipet {
@@ -1652,15 +1653,18 @@ a.blogcard-wrap {
 }
 .sidebar .blogcard-content,
 .footer .blogcard-content {
-  margin-left: 36%;
+  margin-left: 31.6%;
   margin-right: 0;
   max-height: 120px;
   min-height: 80px;
   font-size: 0.9em;
+  line-height: 1.2;
 }
 .sidebar .ib-right .blogcard-content,
-.footer .ib-right .blogcard-content {
-  margin-right: 36%;
+.sidebar .eb-right .blogcard-content,
+.footer .ib-right .blogcard-content,
+.footer .eb-right .blogcard-content {
+  margin-right: 31.6%;
   margin-left: 0;
 }
 
@@ -3688,6 +3692,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 .mobile-menu-buttons .menu-button > a {
   color: #333435;
@@ -5070,7 +5075,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .blogcard-thumbnail {
-    width: 34%;
+    width: 30%;
   }
 
   .blogcard-snipet {
@@ -5078,15 +5083,17 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .blogcard-content {
-    margin-left: 36%;
+    margin-left: 31.6%;
     margin-right: 0;
     max-height: 120px;
     min-height: 80px;
     font-size: 0.9em;
+    line-height: 1.2;
   }
 
-  .ib-right .blogcard-content {
-    margin-right: 36%;
+  .ib-right .blogcard-content,
+  .eb-right .blogcard-content {
+    margin-right: 31.6%;
     margin-left: 0;
   }
 
@@ -5451,6 +5458,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .navi-footer-in > .menu-footer li {
     width: 49%;
+  }
+
+  .blogcard-content {
+    font-size: 0.8em;
+  }
+
+  .blogcard-snipet {
+    font-size: 0.7em;
   }
 }
 @media print {

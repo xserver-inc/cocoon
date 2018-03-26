@@ -335,7 +335,7 @@ $bgc_hover_anime: all 0.5s ease;
   }
 
   .blogcard-thumbnail{
-    width: 34%;
+    width: 30%;
   }
 
   .blogcard-snipet{
@@ -344,15 +344,17 @@ $bgc_hover_anime: all 0.5s ease;
 
   .blogcard-content{
     //width: 69%;
-    margin-left: 36%;
+    margin-left: 31.6%;
     margin-right: 0;
     max-height: 120px;
     min-height: 80px;
     font-size: 0.9em;
+    line-height: 1.2;
   }
-  .ib-right{
+  .ib-right,
+  .eb-right{
     .blogcard-content{
-      margin-right: 36%;
+      margin-right: 31.6%;
       margin-left: 0;
     }
   }

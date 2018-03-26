@@ -74,13 +74,14 @@ a.blogcard-wrap{
 }
 
 /************************************
-** 内部ブログカードのサムネイルスタイル
+** ブログカードのサムネイルスタイル
 ************************************/
 .ib-right,
 .eb-right{
 
   .blogcard-thumbnail{
     float: right;
+    margin-left: 1.6%;
   }
 
   .blogcard-content{

@@ -31,6 +31,8 @@
   .menu-button {
     position: relative;
     width: 100%;
+    cursor: pointer;
+
     >a{
       @include link_cancel;
     }
