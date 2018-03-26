@@ -5415,9 +5415,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     left: auto;
   }
 
-  .admin-panel {
-    display: block;
-  }
   .admin-panel > div {
     margin-bottom: 0.6em;
     padding: 2px;
