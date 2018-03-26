@@ -778,7 +778,7 @@ endif;
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($label){
   $author_id = get_the_author_meta( 'ID' );
-  if (!$author_id) {
+  if (!$author_id || is_404()) {
     $author_id = get_sns_default_follow_user();
   }
 
