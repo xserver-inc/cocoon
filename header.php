@@ -53,5 +53,8 @@ get_template_part('tmp-user/head-insert'); ?>
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
 get_template_part('tmp/body-top-analytics'); ?>
 
+<?php //ユーザーカスタマイズ用
+get_template_part('tmp-user/body-top-insert'); ?>
+
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
 get_template_part('tmp/body-top'); ?>

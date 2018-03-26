@@ -58,11 +58,14 @@ get_template_part('tmp/json-ld'); ?>
 <?php //AMP用スタイルの出力
   generate_style_amp_custom_tag(); ?>
 
+<?php //AdSense AMP自動広告の</head>手前コード
+get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
+
 <?php //トップに戻るの</head>手前コード
 get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 
-<?php //AdSense AMP自動広告の</head>手前コード
-get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
+<?php //ユーザーカスタマイズ用
+get_template_part('tmp-user/amp-head-insert'); ?>
 </head>
 <body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
 
@@ -77,6 +80,9 @@ get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 
   <?php //AMP用のAnalyticsコード
   get_template_part('tmp/amp-analytics') ?>
+
+  <?php //ユーザーカスタマイズ用
+  get_template_part('tmp-user/amp-body-top-insert'); ?>
 
   <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
   get_template_part('tmp/body-top'); ?>

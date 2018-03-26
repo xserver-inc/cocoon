@@ -80,7 +80,12 @@
   get_template_part('tmp/footer-analytics'); ?>
 
   <?php //フッター挿入用のユーザー用テンプレート
-  get_template_part('tmp-user/footer-insert'); ?>
+  if (is_amp()) {
+    get_template_part('tmp-user/amp-footer-insert');
+  } else {
+    get_template_part('tmp-user/footer-insert');
+  }
+  ?>
 
 </body>
 
