@@ -67,3 +67,8 @@
 .instagram-media {
   position: static !important;
 }
+
+//Googleマップ対応
+iframe[src*="https://www.google.com/maps/embed"]{
+  max-width: 100%;
+}

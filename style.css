@@ -2937,6 +2937,10 @@ label.screen-reader-text {
   position: static !important;
 }
 
+iframe[src*="https://www.google.com/maps/embed"] {
+  max-width: 100%;
+}
+
 /************************************
 ** プロフィールボックス
 ************************************/
