@@ -72,7 +72,12 @@ function get_feedly_count(){
   if (is_scc_feedly_exists()) {
     return scc_get_follow_feedly();
   } else {
-    return fetch_feedly_count();
+    $count = fetch_feedly_count();
+    //feedly購読者数がネットで取得できなかった場合にはユーザー設定数を表示
+    if (!$count) {
+      $count = get_sns_feedly_follow_count();
+    }
+    return $count;
   }
 }
 endif;

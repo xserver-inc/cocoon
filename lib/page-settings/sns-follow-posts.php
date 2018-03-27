@@ -14,6 +14,8 @@ update_theme_option(OP_SNS_FOLLOW_BUTTON_COLOR);
 update_theme_option(OP_SNS_DEFAULT_FOLLOW_USER);
 //本文下のフォローボタンシェア数の表示
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_COUNT_VISIBLE);
+//feedlyの購読者数入力
+update_theme_option(OP_SNS_FEEDLY_FOLLOW_COUNT);
 
 //SNSフォロー数キャッシュ有効
 update_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE);

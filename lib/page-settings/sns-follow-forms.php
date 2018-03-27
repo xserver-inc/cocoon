@@ -145,6 +145,19 @@
           </td>
         </tr>
 
+        <!-- feedly購読者数 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SNS_FEEDLY_FOLLOW_COUNT, __('feedly購読者数', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_number_tag(OP_SNS_FEEDLY_FOLLOW_COUNT,  get_sns_feedly_follow_count(), '購読者数入力', 0, 9999999999);
+            generate_tips_tag(__( 'feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで設定された購読者数が表示されます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

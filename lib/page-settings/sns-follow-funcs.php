@@ -67,6 +67,15 @@ function is_sns_follow_buttons_count_visible(){
 }
 endif;
 
+//feedlyの購読者数入力
+define('OP_SNS_FEEDLY_FOLLOW_COUNT, ', 'sns_feedly_follow_count');
+if ( !function_exists( 'get_sns_feedly_follow_count' ) ):
+function get_sns_feedly_follow_count(){
+  return get_theme_option(OP_SNS_FEEDLY_FOLLOW_COUNT, 0);
+}
+endif;
+
+
 //SNSフォロー数キャッシュ有効
 define('OP_SNS_FOLLOW_COUNT_CACHE_ENABLE', 'sns_follow_count_cache_enable');
 if ( !function_exists( 'is_sns_follow_count_cache_enable' ) ):
