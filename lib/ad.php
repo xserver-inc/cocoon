@@ -17,12 +17,6 @@ function is_ads_visible(){
     in_category( $category_ids ) //アーカイブページの除外
   );
 
-  // var_dump($is_exclude_ids);
-  // var_dump(is_single( $post_ids ));
-  // var_dump(is_page( $post_ids ));
-  // var_dump((is_single() && in_category( $category_ids ) ));
-  // var_dump(in_category( $category_ids ));
-
   return is_all_ads_visible() &&
     get_ad_code() && //広告コードが挿入されている
     !$is_exclude_ids && //除外ページでない場合広告を表示
