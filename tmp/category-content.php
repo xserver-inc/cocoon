@@ -2,7 +2,7 @@
 //カテゴリIDの取得
 $cat_id = get_query_var('cat');
 if ($cat_id && get_category_meta($cat_id)): ?>
-<div class="category-content">
+<div class="category-content article">
   <?php if ($eye_catch = get_category_eye_catch($cat_id)): ?>
     <header class="article-header category-header">
       <figure class="eye-catch">
