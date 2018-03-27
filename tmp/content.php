@@ -76,14 +76,14 @@
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
 
+        <?php //カテゴリー・タグ
+        get_template_part('tmp/categories-tags'); ?>
+
         <?php //本文下の広告表示
         if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
           //レスポンシブ広告のフォーマットにrectangleを指定する
           get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom', is_ad_pos_content_bottom_label_visible());
         }; ?>
-
-        <?php //カテゴリー・タグ
-        get_template_part('tmp/categories-tags'); ?>
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_above_sns_buttons_visible() && is_all_adsenses_visible()){
