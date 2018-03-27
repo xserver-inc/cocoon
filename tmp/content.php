@@ -66,12 +66,6 @@
 
       <footer class="article-footer entry-footer">
 
-        <?php //本文下の広告表示
-        if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
-          //レスポンシブ広告のフォーマットにrectangleを指定する
-          get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom', is_ad_pos_content_bottom_label_visible());
-        }; ?>
-
         <?php //投稿本文下ウイジェット
         if ( is_single() && is_active_sidebar( 'single-content-bottom' ) ): ?>
           <?php dynamic_sidebar( 'single-content-bottom' ); ?>
@@ -81,6 +75,12 @@
         if ( is_page() && is_active_sidebar( 'page-content-bottom' ) ): ?>
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
+
+        <?php //本文下の広告表示
+        if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
+          //レスポンシブ広告のフォーマットにrectangleを指定する
+          get_template_part_with_ad_format(get_ad_pos_content_bottom_format(), 'ad-content-bottom', is_ad_pos_content_bottom_label_visible());
+        }; ?>
 
         <?php //カテゴリー・タグ
         get_template_part('tmp/categories-tags'); ?>
