@@ -374,3 +374,9 @@ if ($color = get_appeal_area_background_color()): ?>
   background-color: <?php echo $color; ?>;
 }
 <?php endif ?>
+<?php //フッターメニュー幅
+if ($width = get_footer_navi_menu_width()): ?>
+.navi-footer-in > .menu-footer li{
+  width: <?php echo $width; ?>px;
+}
+<?php endif ?>

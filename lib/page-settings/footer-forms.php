@@ -61,6 +61,22 @@
             ?>
           </td>
         </tr>
+
+
+        <!-- メニュー幅 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FOOTER_NAVI_MENU_WIDTH, __( 'フッターメニュー幅', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_number_tag(OP_FOOTER_NAVI_MENU_WIDTH,  get_footer_navi_menu_width(), 120, 70, 300);
+            generate_tips_tag(__( 'フッターのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
+
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

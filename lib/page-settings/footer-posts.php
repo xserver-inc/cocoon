@@ -11,3 +11,6 @@ update_theme_option(OP_CREDIT_NOTATION);
 
 //ユーザークレジット表記
 update_theme_option(OP_USER_CREDIT_NOTATION);
+
+//フッターメニュー幅
+update_theme_option(OP_FOOTER_NAVI_MENU_WIDTH);

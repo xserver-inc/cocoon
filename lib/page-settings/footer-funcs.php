@@ -32,7 +32,7 @@ function get_user_credit_notation(){
 }
 endif;
 
-
+//サイトクレジット表記取得関数
 if ( !function_exists( 'get_the_site_credit' ) ):
 function get_the_site_credit(){
   $credit = null;
@@ -57,5 +57,14 @@ function get_the_site_credit(){
       break;
   }
   return $credit;
+}
+endif;
+
+
+//フッターメニュー幅
+define('OP_FOOTER_NAVI_MENU_WIDTH', 'footer_navi_menu_width');
+if ( !function_exists( 'get_footer_navi_menu_width' ) ):
+function get_footer_navi_menu_width(){
+  return get_theme_option(OP_FOOTER_NAVI_MENU_WIDTH);
 }
 endif;
