@@ -261,11 +261,20 @@ function get_category_meta_description($category = null){
   if ( $cat_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($cat_desc);
   }
+
   //カテゴリ説明文を取得
   $cat_desc = trim( strip_tags( category_description() ) );
   if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
+
+  //カテゴリ本文から抜粋文を作成
+  $cat_desc = trim( strip_tags( get_content_excerpt(get_category_content(), 160) ) );
+  if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
+    return htmlspecialchars($cat_desc);
+  }
+
+  //カテゴリ名から作成
   if ($category) {
     $cat_name = $category->name;
   } else {

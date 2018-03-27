@@ -55,6 +55,9 @@ endif;
 //カテゴリ本文の取得
 if ( !function_exists( 'get_category_content' ) ):
 function get_category_content($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   $meta = get_category_meta($cat_id);
   if (!empty($meta['content']))
     $content = $meta['content'];
