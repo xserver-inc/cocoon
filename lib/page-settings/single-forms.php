@@ -84,6 +84,23 @@
           </td>
         </tr>
 
+        <!-- 関連性 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RELATED_ASSOCIATION_TYPE, __('関連性', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'category' => __( 'カテゴリー', THEME_NAME ),
+              'tag' => __( 'タグ', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_RELATED_ASSOCIATION_TYPE, $options, get_related_association_type());
+            generate_tips_tag(__( '関連記事にカテゴリーを関連づけるかタグを関連づけるか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 関連記事見出し -->
         <tr>
           <th scope="row">

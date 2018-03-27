@@ -9,6 +9,9 @@ update_theme_option(OP_CATEGORY_TAG_DISPLAY_TYPE);
 //関連記事の表示
 update_theme_option(OP_RELATED_ENTRIES_VISIBLE);
 
+//関連記事の関連性
+update_theme_option(OP_RELATED_ASSOCIATION_TYPE);
+
 //関連記事のタイトル
 update_theme_option(OP_RELATED_ENTRY_HEADING);
 

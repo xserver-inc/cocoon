@@ -19,6 +19,26 @@ function is_related_entries_visible(){
 }
 endif;
 
+//関連記事の関連性
+define('OP_RELATED_ASSOCIATION_TYPE', 'related_association_type');
+if ( !function_exists( 'get_related_association_type' ) ):
+function get_related_association_type(){
+  return get_theme_option(OP_RELATED_ASSOCIATION_TYPE, 'category');
+}
+endif;
+//関連記事がカテゴリーに関連付けられているか
+if ( !function_exists( 'get_related_association_type_category' ) ):
+function get_related_association_type_category(){
+  get_related_association_type() == 'category';
+}
+endif;
+//関連記事がタグに関連付けられているか
+if ( !function_exists( 'get_related_association_type_tag' ) ):
+function get_related_association_type_tag(){
+  get_related_association_type() == 'tag';
+}
+endif;
+
 //関連記事の見出し
 define('OP_RELATED_ENTRY_HEADING', 'related_entry_heading');
 if ( !function_exists( 'get_related_entry_heading' ) ):
