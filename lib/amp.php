@@ -137,9 +137,9 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ *?security=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ *?security=[\'][^\']*?[\']/i', '', $the_content);
 
-  //type属性を取り除く
-  $the_content = preg_replace('/ *?type=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?type=[\'][^\']*?[\']/i', '', $the_content);
+  // //type属性を取り除く
+  // $the_content = preg_replace('/ *?type=["][^"]*?["]/i', '', $the_content);
+  // $the_content = preg_replace('/ *?type=[\'][^\']*?[\']/i', '', $the_content);
 
   //YouTubeプレイヤーのtype属性を取り除く
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
