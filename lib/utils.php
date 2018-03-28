@@ -1244,7 +1244,9 @@ endif;
 //現在表示しているページのURL
 if ( !function_exists( 'get_requested_url' ) ):
 function get_requested_url(){
-  return (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  // _v($_SERVER['HTTPS']);
+  // _v((empty($_SERVER['HTTPS']) ? 'http://' : 'https://'));
+  return (!is_ssl() ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
 endif;
 
