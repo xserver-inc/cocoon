@@ -47,7 +47,6 @@
 
     <p><?php _e( 'アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっています。', THEME_NAME );
     echo get_help_page_tag('https://wp-cocoon.com/how-to-set-adsense/'); ?></p>
-     ?></p>
 
     <table class="form-table">
       <tbody>
