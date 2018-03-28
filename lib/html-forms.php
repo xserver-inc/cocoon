@@ -556,6 +556,10 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
 
   echo '<div class="page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" ';
+  checked(in_array('is_front_page', $checks));
+  echo '>' . __( 'トップページのみ', THEME_NAME ) . '</li>';
+
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_single" ';
   checked(in_array('is_single', $checks));
   echo '>' . __( '投稿', THEME_NAME ) . '</li>';
@@ -587,6 +591,10 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_404" ';
   checked(in_array('is_404', $checks));
   echo '>' . __( '404ページ一覧', THEME_NAME ) . '</li>';
+
+  echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" ';
+  checked(in_array('is_amp', $checks));
+  echo '>' . __( 'AMPページ', THEME_NAME ) . '</li>';
 
   echo '</ul></div>';
 }

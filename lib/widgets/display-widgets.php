@@ -446,6 +446,9 @@ function is_display_widgets_widget_visible( $info ){
   if (!empty($widget_pages)) {
     foreach ($widget_pages as $value) {
       switch ($value) {
+        case 'is_front_page':
+          $display = $display || (is_front_page() && !is_paged());
+          break;//break;は必要
         case 'is_single':
           $display = $display || is_single();
           break;
@@ -469,6 +472,9 @@ function is_display_widgets_widget_visible( $info ){
           break;
         case 'is_404':
           $display = $display || is_404();
+          break;
+        case 'is_amp':
+          $display = $display || is_amp();
           break;
       }
     }
@@ -576,57 +582,7 @@ function display_widgets_info_by_id( $widget_id ){
     $info = (array)get_option( 'widget_'.$widget_id, array() );
   }
 
-  // //var_dump($info);
-  // if ( isset( $info['widget_logic'] ) ){
-  //   $logic = $info['widget_logic'];
-  // }
-  // elseif ( isset( $wl_options[ $widget_id ] ) )  {
-  //   $logic = stripslashes( $wl_options[ $widget_id ] );
-  //   widget_logic_save( $widget_id, $logic );
-
-  //   unset( $wl_options[ $widget_id ] );
-  //   update_option( 'widget_logic', $wl_options );
-  // }
-  // else {
-  //   $logic = '';
-  // }
-
   return $info;
 }
 endif;
 
-
-// if ( !function_exists( 'display_widgets_info_by_id' ) ):
-// function display_widgets_info_by_id( $widget_id ){
-//   global $wl_options;
-
-//   if ( preg_match( '/^(.+)-(\d+)$/', $widget_id, $m ) )  {
-//     $widget_class = $m[1];
-//     $widget_i = $m[2];
-
-//     $info = get_option( 'widget_'.$widget_class );
-//     if ( empty( $info[ $widget_i ] ) )
-//       return '';
-
-//     $info = $info[ $widget_i ];
-//   }
-//   else {
-//     $info = (array)get_option( 'widget_'.$widget_id, array() );
-//   }
-
-//   // //var_dump($info);
-//   // if ( isset( $info['widget_logic'] ) ){
-//   //   $logic = $info['widget_logic'];
-//   // }  elseif ( isset( $wl_options[ $widget_id ] ) )  {
-//   //   // $logic = stripslashes( $wl_options[ $widget_id ] );
-//   //   // widget_logic_save( $widget_id, $logic );
-
-//   //   // unset( $wl_options[ $widget_id ] );
-//   //   // update_option( 'widget_logic', $wl_options );
-//   // } else {
-//   //   $logic = '';
-//   // }
-
-//   return $info;
-// }
-// endif;
