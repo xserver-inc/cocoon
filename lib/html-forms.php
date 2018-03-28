@@ -695,7 +695,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
 
   //var_dump($records);
-  $thumb_size = ET_DEFAULT ? array(120, 67) : array(320, 180);
+  $entry_type = ET_DEFAULT ? 'thumb120' : 'thumb320';
   ?>
   <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
