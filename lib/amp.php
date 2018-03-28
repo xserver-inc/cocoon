@@ -98,48 +98,49 @@ function convert_content_for_amp($the_content){
   $the_content = str_replace('\xc2\xa0', ' ', $the_content);
 
   //style属性を取り除く
-  $the_content = preg_replace('/ *?style=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?style=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?style=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?style=[\'][^\']*?[\']/i', '', $the_content);
 
   //target属性を取り除く
-  $the_content = preg_replace('/ *?target=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?target=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?target=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?target=[\'][^\']*?[\']/i', '', $the_content);
 
   //rel属性を取り除く
-  $the_content = preg_replace('/ *?rel=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?rel=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?rel=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?rel=[\'][^\']*?[\']/i', '', $the_content);
 
   //onclick属性を取り除く
-  $the_content = preg_replace('/ *?onclick=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?onclick=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?onclick=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?onclick=[\'][^\']*?[\']/i', '', $the_content);
 
   //onload属性を取り除く
-  $the_content = preg_replace('/ *?onload=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?onload=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?onload=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?onload=[\'][^\']*?[\']/i', '', $the_content);
 
   //marginwidth属性を取り除く
-  $the_content = preg_replace('/ *?marginwidth=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?marginwidth=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?marginwidth=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?marginwidth=[\'][^\']*?[\']/i', '', $the_content);
 
   //marginheight属性を取り除く
-  $the_content = preg_replace('/ *?marginheight=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?marginheight=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?marginheight=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?marginheight=[\'][^\']*?[\']/i', '', $the_content);
 
   //contenteditable属性を取り除く
-  $the_content = preg_replace('/ *?contenteditable=["][^"]*?["]/i', '', $the_content);
-  $the_content = preg_replace('/ *?contenteditable=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = preg_replace('/ +?contenteditable=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?contenteditable=[\'][^\']*?[\']/i', '', $the_content);
 
-  // //sandbox属性を取り除く
-  // $the_content = preg_replace('/ *?sandbox=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ *?sandbox=[\'][^\']*?[\']/i', '', $the_content);
+  //sandbox属性を取り除く
+  $the_content = preg_replace('/ +?sandbox=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?sandbox=[\'][^\']*?[\']/i', '', $the_content);
 
-  // //security属性を取り除く
-  // $the_content = preg_replace('/ *?security=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ *?security=[\'][^\']*?[\']/i', '', $the_content);
+  //security属性を取り除く
+  $the_content = preg_replace('/ +?security=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?security=[\'][^\']*?[\']/i', '', $the_content);
 
   // //type属性を取り除く
-  // $the_content = preg_replace('/ *?type=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ *?type=[\'][^\']*?[\']/i', '', $the_content);
+  // $the_content = preg_replace('/ +?type=["][^"]*?["]/i', '', $the_content);
+  // $the_content = preg_replace('/ +?type=[\'][^\']*?[\']/i', '', $the_content);
+  $the_content = str_replace(' type="text/html"', '', $the_content);
 
   //YouTubeプレイヤーのtype属性を取り除く
   $the_content = str_replace(" class='youtube-player' type='text/html'", " class='youtube-player'", $the_content);
