@@ -695,7 +695,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
 
   //var_dump($records);
-  $entry_type = ET_DEFAULT ? 'thumb120' : 'thumb320';
+  $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   ?>
   <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
@@ -753,7 +753,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
   if ( $categories ) {
     $args += array('category__in' => $categories);
   }
-  $thumb_size = ET_DEFAULT ? array(120, 67) : array(320, 180);
+  $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   query_posts( $args ); //クエリの作成?>
   <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
