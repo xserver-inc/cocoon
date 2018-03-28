@@ -21,7 +21,13 @@ function get_content_excerpt($content, $length = 70){
   $content =  preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content =  preg_replace(URL_REG, '', $content); //URLを取り除く
   // $content =  preg_replace('/\s/iu',"",$content); //余分な空白を削除
-  $over    =  intval(mb_strlen($content)) > intval($length);
+  //$lengthが整数じゃなかった場合の処理
+  if (is_int(intval($length))) {
+    $length = intval($length);
+  } else {
+    $length = 70;
+  }
+  //$over    =  intval(mb_strlen($content)) > $length;
   $content =  mb_substr($content, 0, $length);//文字列を指定した長さで切り取る
 
   return $content;
