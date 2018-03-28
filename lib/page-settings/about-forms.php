@@ -59,19 +59,17 @@
       }
     }
 
-    //plugin.phpを読み込む
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-    $plugins = get_plugins();
-    if (!empty($plugins)) {
-      $all .= '利用中のプラグイン：'.PHP_EOL;
-      //var_dump($plugins);
-      foreach ($plugins as $plugin) {
-        $domain = $plugin['TextDomain'];
-        if (is_plugin_active( $domain.'/'.$domain.'.php' )) {
-          $all .= $plugin['Name'];
-          $all .= ' '.$plugin['Version'].PHP_EOL;
+      //plugin.phpを読み込む
+      include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+      $plugins = get_plugins();
+      if (!empty($plugins)) {
+        $all .= __('利用中のプラグイン：').PHP_EOL;
+        foreach ($plugins as $path => $plugin) {
+          if (is_plugin_active( $path )) {
+            $all .= $plugin['Name'];
+            $all .= ' '.$plugin['Version'].PHP_EOL;
+          }
         }
-      }
       $all .= $sep;
     }
 
