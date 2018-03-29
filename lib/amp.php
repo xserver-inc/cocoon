@@ -481,6 +481,7 @@ endif;
 add_action( 'wp_loaded','remove_crayon_syntax_highlighter' );
 if ( !function_exists( 'remove_crayon_syntax_highlighter' ) ):
 function remove_crayon_syntax_highlighter() {
+  //is_ampではダメ
   if (isset($_GET['amp']) && $_GET['amp'] === '1') {
     //Crayon Syntax HighlighterはAMPページで適用しない
     remove_filter('the_posts', 'CrayonWP::the_posts', 100);
