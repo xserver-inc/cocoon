@@ -3768,6 +3768,7 @@ div.fb-like-mobile {
 }
 .menu-content .sidebar {
   width: 100%;
+  display: block;
 }
 
 .navi-menu-content {
