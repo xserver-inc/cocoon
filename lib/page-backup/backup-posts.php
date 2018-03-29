@@ -24,7 +24,7 @@ if (is_user_administrator()) {
           '%s',
         )
       );
-      delete_wp_filesystem_file($uploadfile);
+      wp_filesystem_delete($uploadfile);
     }
   }
 

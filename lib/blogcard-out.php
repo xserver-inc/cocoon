@@ -61,26 +61,29 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):
 function fetch_card_image($image){
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    //URLの？以降のクエリを削除
-    $image = preg_replace('/\?.*$/i', '', $image);
-    $filename = substr($image, (strrpos($image, '/'))+1);
-    $allow_exts = array('png', 'jpg', 'jpeg', 'gif' );
+  //URLの？以降のクエリを削除
+  $image = preg_replace('/\?.*$/i', '', $image);
+  $filename = substr($image, (strrpos($image, '/'))+1);
+  $allow_exts = array('png', 'jpg', 'jpeg', 'gif' );
 
-    //拡張子取得
-    $ext = 'png';
-    $temp_ext = get_extention($filename);
-    if ( !in_array($temp_ext, $allow_exts) ) {
-      return ;
-    }
+  //拡張子取得
+  $ext = 'png';
+  $temp_ext = get_extention($filename);
+  if ( !in_array($temp_ext, $allow_exts) ) {
+    return ;
+  }
 
-    if ( $temp_ext ) {
-      $ext = $temp_ext;
-    }
+  if ( $temp_ext ) {
+    $ext = $temp_ext;
+  }
 
-    //キャッシュディレクトリ
-    $dir = get_theme_blog_card_cache_dir();
+  //キャッシュディレクトリ
+  $dir = get_theme_blog_card_cache_dir();
+
+  //画像の読み込み
+  if ( $file_data = @get_file_contents($image) ) {
+  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
     //ディレクトリがないときには作成する
     if ( !file_exists($dir) ) {
@@ -89,11 +92,11 @@ function fetch_card_image($image){
     //ローカル画像ファイルパス
     $new_file = $dir.'/'.md5($image).'.'.$ext;
 
-    //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
-    $file_data = @$wp_filesystem->get_contents($image);
+    // $file_data = @$wp_filesystem->get_contents($image);
 
     if ( $file_data ) {
-      $wp_filesystem->put_contents($new_file, $file_data);
+      //$wp_filesystem->put_contents($new_file, $file_data);
+      put_file_contents($new_file, $file_data);
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
       if ( !is_wp_error($image_editor) ) {
@@ -101,7 +104,8 @@ function fetch_card_image($image){
         $image_editor->save( $new_file );
         return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
       }
-      $wp_filesystem->delete($new_file);
+      //$wp_filesystem->delete($new_file);
+      wp_filesystem_delete($new_file);
     }
   }
 }

@@ -1232,8 +1232,8 @@ function put_file_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
 endif;
 
 //ファイルの削除
-if ( !function_exists( 'delete_wp_filesystem_file' ) ):
-function delete_wp_filesystem_file($file){
+if ( !function_exists( 'wp_filesystem_delete' ) ):
+function wp_filesystem_delete($file){
   if ( WP_Filesystem() ) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $wp_filesystem->delete($file);
