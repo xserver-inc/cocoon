@@ -72,29 +72,30 @@ define('THEME_HTACCESS_REG', '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'
 //ブラウザキャッシュを.htaccessに追加する
 if ( !function_exists( 'add_browser_cache_to_htaccess' ) ):
 function add_browser_cache_to_htaccess(){
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
-    $resoce_file = 'browser-cache.conf';
-    // //リソースファイルがない場合はfalseを返す
-    // if (!file_exists($resoce_file)) {
-    //   return false;
-    // }
-    // _v('r');
-    ob_start();
-    require_once($resoce_file);
-    $browser_cache = ob_get_clean();
-    $new_browser_cache = THEME_HTACCESS_BEGIN.PHP_EOL.
-                         $browser_cache.PHP_EOL.
-                         THEME_HTACCESS_END;
+  $resoce_file = 'browser-cache.conf';
+  // //リソースファイルがない場合はfalseを返す
+  // if (!file_exists($resoce_file)) {
+  //   return false;
+  // }
+  // _v('r');
+  ob_start();
+  require_once($resoce_file);
+  $browser_cache = ob_get_clean();
+  $new_browser_cache = THEME_HTACCESS_BEGIN.PHP_EOL.
+                       $browser_cache.PHP_EOL.
+                       THEME_HTACCESS_END;
 
-    //.htaccessファイルが存在する場合
-    if (file_exists(HTACCESS_FILE)) {
-      //書き込む前にバックアップファイルを用意する
-      $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
-      if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
+  //.htaccessファイルが存在する場合
+  if (file_exists(HTACCESS_FILE)) {
+    //書き込む前にバックアップファイルを用意する
+    $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
+    if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
+      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
         //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
-        $current_htaccess = @$wp_filesystem->get_contents(HTACCESS_FILE);
+        //$current_htaccess = @$wp_filesystem->get_contents(HTACCESS_FILE);
 
         //$pattern = '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s';
         $res = preg_match(THEME_HTACCESS_REG, $current_htaccess, $m);
@@ -109,7 +110,7 @@ function add_browser_cache_to_htaccess(){
           //   //新しいブラウザキャッシュで古いブラウザキャッシュを置換する
           //   $last_htaccess = str_replace($current_browser_cache, $new_browser_cache, $current_htaccess);
           //   //ブラウザキャッシュを.htaccessファイルに書き込む
-          //   $wp_filesystem->put_contents(
+          //   wp_filesystem_put_contents(
           //     HTACCESS_FILE,
           //      $last_htaccess,
           //     0644
@@ -124,37 +125,39 @@ function add_browser_cache_to_htaccess(){
           $last_htaccess = $current_htaccess.PHP_EOL.
                                 $new_browser_cache;
           //ブラウザキャッシュを.htaccessファイルに書き込む
-          $wp_filesystem->put_contents(
+          wp_filesystem_put_contents(
             HTACCESS_FILE,
             $last_htaccess,
             0644
           );
         }
-      }
+      }//wp_filesystem_get_contents
+    }//copy
+  } else {//.htaccessが存在しない場合
+    //.htaccessファイルがない場合は、新しく生成したブラウザキャッシュが最終.htaccess書き込みファイルになる
+    $last_htaccess = $new_browser_cache;
+    //ブラウザキャッシュを.htaccessファイルに書き込む
+    wp_filesystem_put_contents(
+      HTACCESS_FILE,
+      $last_htaccess,
+      0644
+    );
+  }//file_exists(HTACCESS_FILE)
+  //_v($last_htaccess);;
 
-    } else {//.htaccessが存在しない場合
-      //.htaccessファイルがない場合は、新しく生成したブラウザキャッシュが最終.htaccess書き込みファイルになる
-      $last_htaccess = $new_browser_cache;
-      //ブラウザキャッシュを.htaccessファイルに書き込む
-      $wp_filesystem->put_contents(
-        HTACCESS_FILE,
-        $last_htaccess,
-        0644
-      );
-    }//file_exists(HTACCESS_FILE)
-    //_v($last_htaccess);;
-  }
+  // }
 }
 endif;
 
 //.htaccessからブラウザキャッシュコードを削除する
 if ( !function_exists( 'remove_browser_cache_from_htacccess' ) ):
 function remove_browser_cache_from_htacccess(){
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    //.htaccessファイルが存在しているとき
-    if (file_exists(HTACCESS_FILE)) {
-      $current_htaccess = @$wp_filesystem->get_contents(HTACCESS_FILE);
+  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+
+  //.htaccessファイルが存在しているとき
+  if (file_exists(HTACCESS_FILE)) {
+    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
       $res = preg_match(THEME_HTACCESS_REG, $current_htaccess, $m);
       //書き込まれたブラウザキャッシュが見つかった場合
       if ($res && $m[0]) {
@@ -164,14 +167,17 @@ function remove_browser_cache_from_htacccess(){
         $last_htaccess = str_replace($current_browser_cache, '', $current_htaccess);
         //_v($last_htaccess);
         //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
-        $wp_filesystem->put_contents(
+        wp_filesystem_put_contents(
           HTACCESS_FILE,
           $last_htaccess,
           0644
         );
       }//$res && $[0]
-    }//file_exists(HTACCESS_FILE)
-  }//WP_Filesystem
+    }
+
+  }//file_exists(HTACCESS_FILE)
+
+  //}//WP_Filesystem
 }
 endif;
 
