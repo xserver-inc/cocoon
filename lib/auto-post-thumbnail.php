@@ -56,7 +56,7 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
       return null;
     }
 
-    put_file_contents($new_file, $file_data);
+    wp_filesystem_put_contents($new_file, $file_data);
     // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
     //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む

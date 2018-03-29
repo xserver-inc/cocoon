@@ -87,7 +87,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
     $custum_css_file = get_theme_css_cache_file();
     //_v($custum_css_file);
     //ビジュアルエディター用CSSファイルの書き出し
-    put_file_contents($custum_css_file, $custum_css);
+    wp_filesystem_put_contents($custum_css_file, $custum_css);
   }
   // if ($custum_css && WP_Filesystem()) {
   //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し

@@ -96,7 +96,7 @@ function fetch_card_image($image){
 
     if ( $file_data ) {
       //$wp_filesystem->put_contents($new_file, $file_data);
-      put_file_contents($new_file, $file_data);
+      wp_filesystem_put_contents($new_file, $file_data);
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
       if ( !is_wp_error($image_editor) ) {

@@ -1226,8 +1226,8 @@ endif;
 // include_once(ABSPATH.'wp-admin/includes/file.php');
 define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
 //ファイル内容の出力
-if ( !function_exists( 'put_file_contents' ) ):
-function put_file_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
+if ( !function_exists( 'wp_filesystem_put_contents' ) ):
+function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
   if ( WP_Filesystem() ) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
