@@ -158,9 +158,9 @@ function css_url_to_css_minify_code( $url ) {
   $local_file = url_to_local($url);
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
-  if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    $css = $wp_filesystem->get_contents($local_file);
+  if ( file_exists($local_file) && $css = get_file_contents($local_file) ) {//WP_Filesystemの初期化
+    // global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    // $css = $wp_filesystem->get_contents($local_file);
 
     //文字セットの除去
     $css = preg_replace('{@charset[^;]+?;}i', '', $css);
