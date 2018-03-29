@@ -1217,6 +1217,9 @@ function get_file_contents($file){
 }
 endif;
 
+// _v(ABSPATH);
+// include_once(ABSPATH.'wp-admin/includes/file.php');
+define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
 //ファイル内容の出力
 if ( !function_exists( 'put_file_contents' ) ):
 function put_file_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
