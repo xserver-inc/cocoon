@@ -118,9 +118,6 @@ function get_skin_infos(){
 
     //スキンフォルダ内にstyle.cssがある場合
     if (file_exists($style_css_file)){
-      // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-      //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-      //   $css = $wp_filesystem->get_contents($style_css_file);
 
       //CSS内容の取得
       $css = get_file_contents($style_css_file);
@@ -188,10 +185,3 @@ function get_skin_infos(){
   return $results;
 }
 endif;
-
-// if ( !function_exists( 'get_skin_options' ) ):
-// function get_skin_options($value){
-
-// }
-// endif;
-//var_dump(get_skin_infos());
