@@ -156,11 +156,8 @@ function css_url_to_css_minify_code( $url ) {
   $css = false;
   //URLファイルをローカルファイルパスに変更
   $local_file = url_to_local($url);
-  // $local_file = str_replace(site_url(), ABSPATH, $url);
-  // $local_file = str_replace('//', '/', $local_file);
-  // $local_file = str_replace('\\', '/', $local_file);
-  //_v($local_file);
 
+  //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
   if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $css = $wp_filesystem->get_contents($local_file);
@@ -210,54 +207,3 @@ function css_url_to_css_minify_code( $url ) {
   return $css;
 }
 endif;
-
-// //ログインユーザー以外には管理用CSSを表示しない
-// if (!is_user_logged_in()) {
-//   add_filter( 'style_loader_tag', 'remove_admin_link_tag' );
-// }
-// if ( !function_exists( 'remove_admin_link_tag' ) ):
-// function remove_admin_link_tag( $tag ) {
-//   if (strpos($tag, 'admin-bar.min.css') !== false) {
-//     $tag = null;
-//   }
-//   if (strpos($tag, 'dashicons.min.css') !== false) {
-//     $tag = null;
-//   }
-//   return $tag;
-// }
-// endif;
-
-// //type='text/css'属性を取り除く
-// add_filter( 'style_loader_tag', 'remove_type_text_css', 9999 );
-// if ( !function_exists( 'remove_type_text_css' ) ):
-// function remove_type_text_css( $tag ) {
-//   $tag = str_replace(" type='text/css'", '', $tag);
-//   $tag = str_replace(' type="text/css"', '', $tag);
-
-//   return $tag;
-// }
-// endif;
-
-// /*async defer*/
-// add_filter( 'script_loader_tag', 'defer_async_scripts', 10, 3 );
-// function defer_async_scripts( $tag, $handle, $src ) {
-
-//         return '<script type="text/javascript" src="' . $src . '" async defer></script>' . "\n";
-
-// }
-
-// //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
-// if(!is_admin()){
-//   add_action( 'wp_enqueue_scripts', 'queue_cdn_jquery' );
-//   function queue_cdn_jquery() {
-//     wp_deregister_script('jquery');
-//     wp_deregister_script('jquery-core');
-//     wp_deregister_script('jquery-migrate');
-
-//     wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
-//     wp_enqueue_script('jquery');
-
-//     wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
-//     wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
-//   }
-// }
