@@ -7,13 +7,13 @@
     //適切なサムネイルサイズの選択
     switch (get_related_entry_type()) {
       case 'vartical_card_3':
-        $thumb_size = array(320, 180);
+        $thumb_size = 'thumb320';
         break;
       case 'mini_card':
-        $thumb_size = array(120, 67);
+        $thumb_size = 'thumb120';
         break;
       default:
-        $thumb_size = array(160, 90);
+        $thumb_size = 'thumb160';
         break;
     }
     echo get_the_post_thumbnail($post->ID, $thumb_size, array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
