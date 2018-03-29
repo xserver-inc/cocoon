@@ -1,8 +1,5 @@
 <?php
 require_once 'lib/_defins.php'; //定数を定義
-//require_once 'lib/admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
-//require_once 'lib/admin-tinymce-qtag.php'; //管理者用編集ボタン機能
-
 
 //アップデートチェックの初期化
 require 'lib/theme-update-checker.php'; //ライブラリのパス
@@ -89,7 +86,7 @@ endif;
 //投稿ナビのサムネイルタグを取得する
 if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id, $width = 120, $height = 67){
-  $thumb = get_the_post_thumbnail( $id, array($width, $height), array('alt' => '') );
+  $thumb = get_the_post_thumbnail( $id, 'thumb'.strval($width), array('alt' => '') );
   if ( !$thumb ) {
     $image = get_template_directory_uri().'/images/no-image-%s.png';
     //表示タイプ＝デフォルト
@@ -309,21 +306,3 @@ function wp_singular_page_redirect() {
   }
 }
 endif;
-
-// add_filter( 'widget_archives_args', 'hook_widget_archives_args' );
-// //add_filter( 'widget_archives_dropdown_args', 'hook_widget_archives_args' );
-// function hook_widget_archives_args( $args ) {
-//     _v($args);
-//     // デフォルトの月別(type=monthly)から年別のアーカイブに変更
-//     $args['type'] = 'yearly';
-
-//     $args['format'] = 'html';
-//     // 最大出力件数を5件までに制限
-//     $args['limit'] = 5;
-//     return $args;
-// }
-
-// add_action( 'litespeed_init','litespeed_before_init_custom', 1 );
-// function litespeed_before_init_custom(){
-//   var_dump('litespeed_before_init');
-// }
