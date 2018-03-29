@@ -83,12 +83,19 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   ob_start();
   get_template_part('tmp/css-custom');
   $custum_css = ob_get_clean();
-  if ($custum_css && WP_Filesystem()) {
-    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+  if ($custum_css) {
     $custum_css_file = get_theme_css_cache_file();
-    //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
-    $wp_filesystem->put_contents($custum_css_file, $custum_css);
+    //_v($custum_css_file);
+    //ビジュアルエディター用CSSファイルの書き出し
+    put_file_contents($custum_css_file, $custum_css);
   }
+  // if ($custum_css && WP_Filesystem()) {
+  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+  //   $custum_css_file = get_theme_css_cache_file();
+  //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
+  //   $wp_filesystem->put_contents($custum_css_file, $custum_css);
+  // }
+
 
   //_v($custum_css);
 
