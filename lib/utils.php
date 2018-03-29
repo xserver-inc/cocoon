@@ -1228,6 +1228,16 @@ function put_file_contents($new_file, $file_data){
 }
 endif;
 
+//ファイルの削除
+if ( !function_exists( 'delete_wp_filesystem_file' ) ):
+function delete_wp_filesystem_file($file){
+  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $wp_filesystem->delete($file);
+  }
+}
+endif;
+
 //最初の投稿の年を取得
 if ( !function_exists( 'get_first_post_year' ) ):
 function get_first_post_year(){
