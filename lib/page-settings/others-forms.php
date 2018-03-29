@@ -23,6 +23,19 @@
           </td>
         </tr>
 
+        <!-- ファイルシステム認証 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE, __('ファイルシステム認証', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE , is_request_filesystem_credentials_enable(), __( '認証を有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'KUSANAGI等のファイルシステム認証が必要なサーバの場合に有効にしてください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

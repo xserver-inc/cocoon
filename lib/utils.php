@@ -1203,7 +1203,11 @@ endif;
 //ファイル内容の取得
 if ( !function_exists( 'wp_filesystem_get_contents' ) ):
 function wp_filesystem_get_contents($file){
-  if (WP_Filesystem()) {
+  $creds = false;
+  if (is_request_filesystem_credentials_enable())
+    $creds = request_filesystem_credentials('', '', false, false, null);
+
+  if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $contents = $wp_filesystem->get_contents($file);
     return $contents;
@@ -1228,7 +1232,11 @@ define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
 //ファイル内容の出力
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):
 function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  $creds = false;
+  if (is_request_filesystem_credentials_enable())
+    $creds = request_filesystem_credentials('', '', false, false, null);
+
+  if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
     $wp_filesystem->put_contents($new_file, $file_data, $chmod);
@@ -1239,7 +1247,11 @@ endif;
 //ファイルの削除
 if ( !function_exists( 'wp_filesystem_delete' ) ):
 function wp_filesystem_delete($file){
-  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+  $creds = false;
+  if (is_request_filesystem_credentials_enable())
+    $creds = request_filesystem_credentials('', '', false, false, null);
+
+  if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $wp_filesystem->delete($file);
   }
