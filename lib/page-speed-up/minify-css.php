@@ -79,7 +79,7 @@ function tag_code_to_minify_css($buffer) {
             //外部ファイル名の場合
             //_v($url);
             if (!is_amp() && strpos($url, FONT_AWESOME_CDN_URL) !== false) {
-              $css = get_file_contents(get_template_directory().'/css/fontawesome.min.css');
+              $css = wp_filesystem_get_contents(get_template_directory().'/css/fontawesome.min.css');
               if ($css !== false) {
                 //ヘッダー出力コードからstyleタグを削除
                 $buffer = str_replace($tag, '', $buffer);
@@ -158,7 +158,7 @@ function css_url_to_css_minify_code( $url ) {
   $local_file = url_to_local($url);
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
-  if ( file_exists($local_file) && $css = get_file_contents($local_file) ) {//WP_Filesystemの初期化
+  if ( file_exists($local_file) && $css = wp_filesystem_get_contents($local_file) ) {//WP_Filesystemの初期化
     // global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     // $css = $wp_filesystem->get_contents($local_file);
 

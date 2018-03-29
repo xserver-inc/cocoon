@@ -120,7 +120,7 @@ function get_skin_infos(){
     if (file_exists($style_css_file)){
 
       //CSS内容の取得
-      $css = get_file_contents($style_css_file);
+      $css = wp_filesystem_get_contents($style_css_file);
 
       if ( $css ) {
         //Skin Name:の記述があるとき

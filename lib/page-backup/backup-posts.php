@@ -10,7 +10,7 @@ if (is_user_administrator()) {
 
   if (move_uploaded_file($_FILES['settings']['tmp_name'], $uploadfile)) {
 
-    $text = get_file_contents($uploadfile);
+    $text = wp_filesystem_get_contents($uploadfile);
     if ( $text ) {
       global $wpdb;
       $option_name = get_theme_mods_option_name();

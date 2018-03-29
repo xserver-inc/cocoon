@@ -122,7 +122,7 @@ function js_url_to_js_minify_code( $url ) {
   //_v($local_file);
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
-  if ( file_exists($local_file) && $js = get_file_contents($local_file) ) {//WP_Filesystemの初期化
+  if ( file_exists($local_file) && $js = wp_filesystem_get_contents($local_file) ) {//WP_Filesystemの初期化
     // global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     // $js = $wp_filesystem->get_contents($local_file);
 

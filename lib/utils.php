@@ -1201,8 +1201,8 @@ function is_user_administrator(){
 endif;
 
 //ファイル内容の取得
-if ( !function_exists( 'get_file_contents' ) ):
-function get_file_contents($file){
+if ( !function_exists( 'wp_filesystem_get_contents' ) ):
+function wp_filesystem_get_contents($file){
   if (WP_Filesystem()) {
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     $contents = $wp_filesystem->get_contents($file);
@@ -1214,6 +1214,11 @@ function get_file_contents($file){
   //   $contents = ob_get_clean();
   //   return $contents;
   // }
+}
+endif;
+if ( !function_exists( 'get_file_contents' ) ):
+function get_file_contents($file){
+  return wp_filesystem_get_contents($file);
 }
 endif;
 

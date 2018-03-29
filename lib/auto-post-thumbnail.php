@@ -43,9 +43,8 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
 
     if (!ini_get('allow_url_fopen')) {
       return null;
-      //$file_data = curl_get_file_contents($imageUrl);
     } else {
-      $file_data = @get_file_contents($imageUrl);
+      $file_data = @wp_filesystem_get_contents($imageUrl);
       // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
       //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
       //   //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
