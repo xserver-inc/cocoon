@@ -1200,7 +1200,7 @@ function is_user_administrator(){
 }
 endif;
 
-//ソースコードの取得
+//ファイル内容の取得
 if ( !function_exists( 'get_file_contents' ) ):
 function get_file_contents($file){
   if (WP_Filesystem()) {
@@ -1214,7 +1214,17 @@ function get_file_contents($file){
   //   $contents = ob_get_clean();
   //   return $contents;
   // }
+}
+endif;
 
+//ファイル内容の出力
+if ( !function_exists( 'put_file_contents' ) ):
+function put_file_contents($new_file, $file_data){
+  if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
+    $wp_filesystem->put_contents($new_file, $file_data);
+  }
 }
 endif;
 

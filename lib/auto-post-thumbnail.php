@@ -26,6 +26,8 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
   //処理のためのURL取得
   $imageUrl = $matches[1][$key];
 
+  //_v($imageUrl);
+
   //ファイル名の取得
   $filename = substr($imageUrl, (strrpos($imageUrl, '/'))+1);
 
@@ -43,22 +45,24 @@ function fetch_thumbnail_image($matches, $key, $post_content, $post_id){
       return null;
       //$file_data = curl_get_file_contents($imageUrl);
     } else {
-      if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-        global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-        //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
-        $file_data = @$wp_filesystem->get_contents($imageUrl);
-      }
+      $file_data = @get_file_contents($imageUrl);
+      // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+      //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+      //   //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
+      //   $file_data = @$wp_filesystem->get_contents($imageUrl);
+      // }
     }
 
     if (!$file_data) {
       return null;
     }
 
-    if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-      global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-      //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
-      $wp_filesystem->put_contents($new_file, $file_data);
-    }
+    put_file_contents($new_file, $file_data);
+    // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
+    //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
+    //   $wp_filesystem->put_contents($new_file, $file_data);
+    // }
   //}
 
   //ファイルのパーミッションを正しく設定
@@ -114,7 +118,7 @@ if ( is_auto_post_thumbnail_enable() ) {
   add_action('pending_to_publish', 'auto_post_thumbnail_image');
   add_action('future_to_publish', 'auto_post_thumbnail_image');
   //add_action('xmlrpc_publish_post', 'auto_post_thumbnail_image');
-  //add_action('publish_post', 'auto_post_thumbnail_image');
+  add_action('publish_post', 'auto_post_thumbnail_image');
 }
 if ( !function_exists( 'auto_post_thumbnail_image' ) ):
 function auto_post_thumbnail_image($post_id) {

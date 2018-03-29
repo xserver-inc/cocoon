@@ -530,8 +530,6 @@ endif;
 if ( !function_exists( 'generate_style_amp_custom_tag' ) ):
 function generate_style_amp_custom_tag(){?>
 <style amp-custom><?php
-  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
   $css_all = '';
   //AMPスタイルの取得
@@ -540,11 +538,6 @@ function generate_style_amp_custom_tag(){?>
   if ($css !== false) {
     $css_all .= $css;
   }
-  // $css_file = get_template_directory().'/amp.css';
-  // if ( file_exists($css_file) ) {
-  //   $css = $wp_filesystem->get_contents($css_file);//ファイルの読み込み
-  //   $css_all .= $css;
-  // }
 
   ///////////////////////////////////////////
   //IcoMoonのスタイル
