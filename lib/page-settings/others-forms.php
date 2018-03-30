@@ -30,7 +30,7 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE , is_request_filesystem_credentials_enable(), __( '認証を有効にする', THEME_NAME ));
+            generate_checkbox_tag(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE , is_request_filesystem_credentials_enable(), __( '認証を有効にする', THEME_NAME ).'(Beta)');
             generate_tips_tag(__( 'KUSANAGI等のファイルシステム認証が必要なサーバの場合に有効にしてください。', THEME_NAME ));
             ?>
           </td>
