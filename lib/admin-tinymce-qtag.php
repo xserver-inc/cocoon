@@ -520,3 +520,18 @@ function add_styles_to_tinymce_buttons($buttons) {
   return $buttons;
 }
 endif;
+
+//TinyMCEに次ページボタン追加
+add_filter( 'mce_buttons', 'my_add_next_page_button', 1, 2 );
+if ( !function_exists( 'my_add_next_page_button' ) ):
+function my_add_next_page_button( $buttons, $id ){
+  //コンテントエディターのみに挿入
+  if ( 'content' != $id )
+      return $buttons;
+
+  //moreタグボタンの後に挿入
+  array_splice( $buttons, 13, 0, 'wp_page' );
+
+  return $buttons;
+}
+endif;

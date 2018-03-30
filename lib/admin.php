@@ -368,25 +368,6 @@ function custmuize_load_edit_php(){
 }
 endif;
 
-// // ビジュアルエディタにHTMLを直挿入するためのボタンを追加
-// add_filter( 'mce_buttons', 'add_insert_html_button' );
-// if ( !function_exists( 'add_insert_html_button' ) ):
-// function add_insert_html_button( $buttons ) {
-//   $buttons[] = 'button_insert_html';
-//   return $buttons;
-// }
-// endif;
-
-// //ビジュアルエディターにHTML挿入ボタン動作を行うJavaScriptを追加する
-// add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
-// if ( !function_exists( 'add_insert_html_button_plugin' ) ):
-// function add_insert_html_button_plugin( $plugin_array ) {
-//   $plugin_array['custom_button_script'] =  get_template_directory_uri() . "/js/button-insert-html.js";
-//   return $plugin_array;
-// }
-// endif;
-
-
 //投稿管理画面のカテゴリー選択にフィルタリング機能を付ける
 add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
 add_action( 'admin_head-post.php', 'add_category_filter_form' );
