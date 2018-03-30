@@ -78,9 +78,9 @@ function convert_content_for_amp($the_content){
   $pattern = '/<iframe([^>]+?)(src="https:\/\/rcm-fe.amazon-adsystem.com\/[^"]+?").*?><\/iframe>/is';
   $append = '<amp-iframe$1$2 width="120" height="240"frameborder="0">'.$amp_placeholder.'</amp-iframe>';
   */
-  $pattern = '/<iframe([^>]+?)(src="https?:\/\/rcm-fe.amazon-adsystem.com\/[^"]+?t=([^&"]+)[^"]+?asins=([^&"]+)[^"]*?").*?><\/iframe>/is';
-  $amazon_url = 'https://www.amazon.co.jp/exec/obidos/ASIN/$4/$3/ref=nosim/';
-  $append = PHP_EOL.'<amp-iframe$1$2 width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe><br><a href="'.$amazon_url.'" class="aa-link"></a>'.PHP_EOL;
+  $pattern = '/<iframe([^>]+?)(src="(https?:)?\/\/rcm-fe.amazon-adsystem.com\/[^"]+?t=([^&"]+)[^"]+?asins=([^&"]+)[^"]*?").*?><\/iframe>/is';
+  $amazon_url = 'https://www.amazon.co.jp/exec/obidos/ASIN/$5/$4/ref=nosim/';
+  $append = PHP_EOL.'<p class="amazon-parts"><amp-iframe$1$2 width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe><br><a href="'.$amazon_url.'" class="amazon-btn aa-link">'.__( 'Amazonで購入', THEME_NAME ).'</a></p>'.PHP_EOL;
 
   //YouTube iframeのsrc属性のhttp URLをhttpsへ
   $the_content = str_replace('http://www.youtube.com/', 'https://www.youtube.com/', $the_content);
@@ -665,7 +665,7 @@ function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $
     //$selector = get_cleaned_css_selector($selector);
 
     //調べるまでもなく最初から存在するとわかっているセレクターは次に飛ばす（多少なりとも処理時間の短縮）
-    $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3');
+    $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3', 'amazon-btn', 'amazon-parts', 'amp-iframe');
     if (in_array($selector, $elements)) {
       continue;
     }
