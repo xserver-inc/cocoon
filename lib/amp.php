@@ -80,7 +80,7 @@ function convert_content_for_amp($the_content){
   */
   $pattern = '/<iframe([^>]+?)(src="(https?:)?\/\/rcm-fe.amazon-adsystem.com\/[^"]+?t=([^&"]+)[^"]+?asins=([^&"]+)[^"]*?").*?><\/iframe>/is';
   $amazon_url = 'https://www.amazon.co.jp/exec/obidos/ASIN/$5/$4/ref=nosim/';
-  $append = PHP_EOL.'<p class="amazon-parts"><amp-iframe$1$2 width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe><br><a href="'.$amazon_url.'" class="amazon-btn aa-link">'.__( 'Amazonで購入', THEME_NAME ).'</a></p>'.PHP_EOL;
+  $append = PHP_EOL.'<p class="amazon-parts"><amp-iframe$1$2 width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe><br><a href="'.$amazon_url.'" class="amazon-btn aa-link">'.__( 'Amazonで見る', THEME_NAME ).'</a></p>'.PHP_EOL;
 
   //YouTube iframeのsrc属性のhttp URLをhttpsへ
   $the_content = str_replace('http://www.youtube.com/', 'https://www.youtube.com/', $the_content);
