@@ -256,6 +256,7 @@ label.screen-reader-text{
     background-color: $transpalent_black_bgc;
     color: $white_text_color;
     max-height: 30%;
+    overflow: hidden;
   }
 }
 
