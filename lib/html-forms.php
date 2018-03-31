@@ -608,6 +608,12 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
     echo '>' . __( 'bbPressページ', THEME_NAME ) . '</li>';
   }
 
+  if (is_buddypress_exist()) {
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_buddypress_page" ';
+    checked(in_array('is_buddypress_page', $checks));
+    echo '>' . __( 'BuddyPressページ', THEME_NAME ) . '</li>';
+  }
+
   echo '</ul></div>';
 }
 endif;

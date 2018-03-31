@@ -482,6 +482,9 @@ function is_display_widgets_widget_visible( $info ){
         case 'is_bbpress_page':
           $display = $display || is_bbpress_page();
           break;
+        case 'is_buddypress_page':
+          $display = $display || is_buddypress_page();
+          break;
       }
     }
   }
