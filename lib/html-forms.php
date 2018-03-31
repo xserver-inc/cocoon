@@ -602,6 +602,12 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
     echo '>' . __( 'wpForoページ', THEME_NAME ) . '</li>';
   }
 
+  if (is_bbpress_exist()) {
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_bbpress_page" ';
+    checked(in_array('is_bbpress_page', $checks));
+    echo '>' . __( 'bbPressページ', THEME_NAME ) . '</li>';
+  }
+
   echo '</ul></div>';
 }
 endif;
