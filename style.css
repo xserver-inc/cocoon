@@ -2527,11 +2527,6 @@ label.screen-reader-text {
   display: none;
 }
 
-.author-guest .feedly-follow-button-sq,
-.author-guest .rss-follow-button-sq {
-  display: none;
-}
-
 /************************************
 ** 関連記事
 ************************************/
