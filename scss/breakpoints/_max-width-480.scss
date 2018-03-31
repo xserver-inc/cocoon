@@ -85,8 +85,22 @@ body{
 // ページ送りナビ
 ///////////////////////////////////////
 .pager-post-navi a figure{
-  width: 20%;
+  min-width: 30%;
+  max-width: 30%;
 }
+
+.pager-post-navi a.prev-post .prev-post-title{
+  margin-left: $thumb_content_margin;
+}
+
+.pager-post-navi a.next-post .next-post-title{
+  margin-right: $thumb_content_margin;
+}
+
+.pager-post-navi a::before{
+  font-size: 16px;
+}
+
 
 ///////////////////////////////////////
 // 関連記事ミニカード
