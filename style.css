@@ -5245,6 +5245,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     display: flex;
   }
 
+  .mobile-button-slide-in .go-to-top-button {
+    display: none;
+  }
+
   .mblt-slide-in {
     margin-bottom: 50px;
   }

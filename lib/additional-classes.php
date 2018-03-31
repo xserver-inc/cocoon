@@ -179,8 +179,13 @@ function body_class_additional($classes) {
   if ($add_no_carousel) {
     $classes[] = 'no-carousel';
   }
+
+  if (is_mobile_button_layout_type_slide_in()) {
+    $classes[] = 'mobile-button-slide-in';
+  }
+
   return $classes;
-}
+}//body_class_additional
 endif;
 
 
