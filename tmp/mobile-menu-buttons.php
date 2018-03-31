@@ -1,3 +1,6 @@
+<?php //モバイル用のスライドインボタンメニューの表示
+if (is_mobile_button_layout_type_slide_in()): ?>
+
 <div class="mobile-menu-buttons">
   <?php if (has_nav_menu( 'navi-header' )): ?>
     <!-- メニューボタン -->
@@ -100,6 +103,7 @@
       </div>
     </div>
   <?php endif ?>
-
-
 </div>
+
+<?php endif ?>
+
