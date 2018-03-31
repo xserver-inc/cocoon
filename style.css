@@ -3601,10 +3601,6 @@ div.fb-like-mobile {
   height: 70px;
 }
 
-.sidebar .fb-like-balloon-arrow-box {
-  height: 100px;
-}
-
 .sidebar .fb-like-balloon-button {
   float: none;
   width: 100%;
@@ -3643,10 +3639,6 @@ div.fb-like-mobile {
     line-height: 1.1em;
     margin-right: 0;
     height: 70px;
-  }
-
-  .fb-like-balloon-arrow-box {
-    height: 100px;
   }
 
   .fb-like-balloon-button {
