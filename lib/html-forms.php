@@ -596,6 +596,12 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
   checked(in_array('is_amp', $checks));
   echo '>' . __( 'AMPページ', THEME_NAME ) . '</li>';
 
+  if (is_wpforo_exist()) {
+    echo '<li><input type="checkbox" name="'.$name.'[]" value="is_amp" ';
+    checked(in_array('is_wpforo_plugin_page', $checks));
+    echo '>' . __( 'wpForoページ', THEME_NAME ) . '</li>';
+  }
+
   echo '</ul></div>';
 }
 endif;

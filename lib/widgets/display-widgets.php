@@ -476,6 +476,9 @@ function is_display_widgets_widget_visible( $info ){
         case 'is_amp':
           $display = $display || is_amp();
           break;
+        case 'is_wpforo_plugin_page':
+          $display = $display || is_wpforo_plugin_page();
+          break;
       }
     }
   }
