@@ -485,6 +485,9 @@ function is_display_widgets_widget_visible( $info ){
         case 'is_buddypress_page':
           $display = $display || is_buddypress_page();
           break;
+        case 'is_plugin_fourm_page':
+          $display = $display || is_plugin_fourm_page();
+          break;
       }
     }
   }

@@ -920,6 +920,19 @@ function is_scrollable_sidebar_enable(){
 }
 endif;
 
+//bbPress、BuddyPress、wpForo大インストールされているか
+if ( !function_exists( 'is_plugin_fourm_exist' ) ):
+function is_plugin_fourm_exist(){
+  if (
+       is_bbpress_exist()
+    || is_buddypress_exist()
+    || is_wpforo_exist()
+  ) {
+    return true;
+  }
+}
+endif;
+
 //bbPress、BuddyPress、wpForoフォーラムページかどうか
 if ( !function_exists( 'is_plugin_fourm_page' ) ):
 function is_plugin_fourm_page(){
