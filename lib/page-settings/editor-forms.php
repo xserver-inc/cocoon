@@ -5,7 +5,7 @@
   <h2 class="hndle"><?php _e( 'エディター設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '投稿・固定ページ管理画面の生きた設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '投稿・固定ページ管理画面の設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -19,6 +19,19 @@
             <?php
             generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE , is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
             generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- エディタースタイル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_VISUAL_EDITOR_STYLE_ENABLE, __('エディタースタイル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_VISUAL_EDITOR_STYLE_ENABLE , is_visual_editor_style_enable(), __( 'ビジュアルエディターにテーマスタイルを反映させる', THEME_NAME ));
+            generate_tips_tag(__( '無効にするとWordPressデフォルトのビジュアルエディターになります。', THEME_NAME ));
             ?>
           </td>
         </tr>

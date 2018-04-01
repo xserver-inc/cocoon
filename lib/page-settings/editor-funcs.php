@@ -9,6 +9,14 @@ function is_admin_editor_counter_visible(){
 }
 endif;
 
+//ビジュアルエディタースタイル
+define('OP_VISUAL_EDITOR_STYLE_ENABLE', 'visual_editor_style_enable');
+if ( !function_exists( 'is_visual_editor_style_enable' ) ):
+function is_visual_editor_style_enable(){
+  return get_theme_option(OP_VISUAL_EDITOR_STYLE_ENABLE, 1);
+}
+endif;
+
 //ページ公開前に確認アラートを出す
 define('OP_CONFIRMATION_BEFORE_PUBLISH', 'confirmation_before_publish');
 if ( !function_exists( 'is_confirmation_before_publish' ) ):
