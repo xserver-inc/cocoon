@@ -5,6 +5,9 @@ update_theme_option(OP_TOC_VISIBLE);
 //目次タイトル
 update_theme_option(OP_TOC_TITLE);
 
+//目次表示条件（数）
+update_theme_option(OP_TOC_DISPLAY_COUNT);
+
 //目次を表示する深さ
 update_theme_option(OP_TOC_DEPTH);
 

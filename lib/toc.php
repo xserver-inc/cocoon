@@ -108,6 +108,10 @@ function add_toc_before_1st_h2($the_content){
     </div>';
 
     //_v($counter);
+    $display_count = intval(get_toc_display_count());
+    if (is_int($display_count) && ($counter < $display_count)) {
+      return $the_content;
+    }
 
     ///////////////////////////////////////
     // jQueryの見出し処理（PHPの置換処理と比べてこちらの方が信頼度高い）

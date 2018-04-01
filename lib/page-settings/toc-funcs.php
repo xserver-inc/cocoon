@@ -16,6 +16,14 @@ function get_toc_title(){
 }
 endif;
 
+//目次表示条件（数）
+define('OP_TOC_DISPLAY_COUNT', 'toc_display_count');
+if ( !function_exists( 'get_toc_display_count' ) ):
+function get_toc_display_count(){
+  return get_theme_option(OP_TOC_DISPLAY_COUNT, 2);
+}
+endif;
+
 //目次を表示する深さ
 define('OP_TOC_DEPTH', 'toc_depth');
 if ( !function_exists( 'get_toc_depth' ) ):
