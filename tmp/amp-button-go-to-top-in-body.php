@@ -2,7 +2,7 @@
 //////////////////////////////////
 // トップへ戻るボタンのAMP用script呼び出し
 //////////////////////////////////
-if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示するか?>
+if ( is_go_to_top_button_visible() || is_mobile_button_layout_type_slide_in() ): //トップへ戻るボタンを表示するか?>
   <amp-animation id="show-page-top" layout="nodisplay">
   <script type="application/json">
   {
