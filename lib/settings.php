@@ -14,16 +14,16 @@ add_image_size('thumb160', 160,  90, true);//関連記事デフォルト・関�
 add_image_size('thumb320', 320, 180, true);//関連記事3列
 //本文レスポンシブ表示用
 add_image_size('thumb320_raw', 320, 0, false);
-add_image_size('thumb360_raw', 360, 0, false);
-add_image_size('thumb375_raw', 375, 0, false);
+// add_image_size('thumb360_raw', 360, 0, false);
+// add_image_size('thumb375_raw', 375, 0, false);
 add_image_size('thumb414_raw', 414, 0, false);
 add_image_size('thumb600_raw', 600, 0, false);
-add_image_size('thumb768_raw', 768, 0, false);
+// add_image_size('thumb768_raw', 768, 0, false);
 //Retinaディスプレイ用
 //add_image_size('thumb640', 640, 360, true);
 
 //コンテンツの幅の指定
-if ( ! isset( $content_width ) ) $content_width = get_site_wrap_width();
+if ( ! isset( $content_width ) ) $content_width = 800;
 
 //カテゴリー説明文でHTMLタグを使う
 remove_filter( 'pre_term_description', 'wp_filter_kses' );

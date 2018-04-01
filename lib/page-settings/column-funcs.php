@@ -140,3 +140,5 @@ function get_site_wrap_width(){
          intval($main_sidebar_margin) + 2;
 }
 endif;
+
+$content_width = get_site_wrap_width();
