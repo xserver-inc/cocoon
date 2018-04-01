@@ -72,6 +72,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once 'amp-posts.php';
   //管理画面
   require_once 'admin-posts.php';
+  //エディター
+  require_once 'editor-posts.php';
   //その他
   require_once 'others-posts.php';
   //リセット
@@ -157,6 +159,7 @@ endif;
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
+    <li class="editor"><?php _e( 'エディター', THEME_NAME ) ?></li>
     <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="about"><?php _e( 'テーマ情報', THEME_NAME ) ?></li>
@@ -308,6 +311,11 @@ endif;
   <!-- 管理画面 -->
   <div class="admin metabox-holder">
     <?php require_once 'admin-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- エディター -->
+  <div class="editor metabox-holder">
+    <?php require_once 'editor-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- その他 -->

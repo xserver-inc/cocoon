@@ -48,6 +48,7 @@ require_once 'page-settings/404-funcs.php';        //404ページ設定関数
 require_once 'page-settings/skin-funcs.php';       //スキン設定関数
 require_once 'page-settings/amp-funcs.php';        //AMP設定関数
 require_once 'page-settings/admin-funcs.php';      //管理画面設定関数
+require_once 'page-settings/editor-funcs.php';     //エディター設定関数
 require_once 'page-settings/others-funcs.php';     //その他設定関数
 require_once 'page-settings/reset-funcs.php';      //リセット設定関数
 require_once 'page-settings/about-funcs.php';      //テーマ情報設定関数
