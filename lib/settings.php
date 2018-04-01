@@ -172,8 +172,8 @@ function customize_register_custom( $wp_customize ) {
   //$wp_customize->remove_section('title_tagline');
   //色
   $wp_customize->remove_section('colors');
-  //背景画像がある場合
-  $wp_customize->remove_section('background_image');
+  // //背景画像がある場合
+  // $wp_customize->remove_section('background_image');
   //ヘッダーメディア
   $wp_customize->remove_section('header_image');
   //メニュー
