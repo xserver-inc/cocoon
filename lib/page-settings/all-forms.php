@@ -130,7 +130,7 @@
           <td>
             <?php
             generate_upload_image_tag(OP_SITE_BACKGROUND_IMAGE_URL, get_site_background_image_url());
-            generate_tips_tag(__( 'サイト全体の背景画像を選択します。', THEME_NAME ));
+            generate_tips_tag(__( 'サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を無効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。', THEME_NAME ));
             ?>
           </td>
         </tr>
