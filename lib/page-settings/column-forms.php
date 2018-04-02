@@ -27,8 +27,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 600, 1000, 1);
-            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：600px、最大：1000px）', THEME_NAME ));
+            generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 600, 1600, 1);
+            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：600px、最大：1600px）', THEME_NAME ));
             ?>
           </td>
         </tr>
