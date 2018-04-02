@@ -436,6 +436,7 @@ function delete_ranking_item($id, $del_no){
       $posts = object_to_array($record);
       //アイテムランキングの更新
       $posts['item_ranking'] = $new_items;
+      $posts['count'] = count($new_items);
       $res = update_item_ranking_record($id, $posts);
 
       if ($res) {

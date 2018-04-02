@@ -212,7 +212,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
                 'conf_no' => $i,
               )
             ); ?>
-            <a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
+            <a href="<?php echo $delete_url; ?>" onclick="if(!confirm('本当に削除してもいいですか？'))return false"><?php _e( '削除', THEME_NAME ) ?></a>
           <?php endif ?>
         </div>
 
