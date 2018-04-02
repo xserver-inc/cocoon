@@ -14,7 +14,7 @@ require_once 'punycode.php';   //ピュニコードライブラリ
 require_once 'medias.php';     //メディアライブラリ
 require_once 'links.php';      //本文リンクライブラリ
 require_once 'category.php';   //カテゴリー関係の関数
-require_once 'entry_card.php'; //エントリーカード関数
+require_once 'entry-card.php'; //エントリーカード関数
 require_once 'amp.php';        //AMP関係の関数
 require_once 'php-html-css-js-minifier.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once 'page-settings/all-funcs.php';        //全体設定関数

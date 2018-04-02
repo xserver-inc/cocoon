@@ -7,8 +7,8 @@ header('X-XSS-Protection: 0');
 add_theme_support('post-thumbnails');
 
 //サムネイルサイズ
-add_image_size('thumb100', 100, 100, true);
-add_image_size('thumb150', 150, 150, true);
+add_image_size('thumb100', 100, 100, true);//Facebookバルーン
+add_image_size('thumb150', 150, 150, true);//ページ送りナビ
 add_image_size('thumb120', 120,  67, true);//新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
 add_image_size('thumb160', 160,  90, true);//関連記事デフォルト・関連記事4列
 add_image_size('thumb320', 320, 180, true);//関連記事3列
@@ -21,10 +21,11 @@ add_image_size('thumb600_raw', 600, 0, false);
 // add_image_size('thumb768_raw', 768, 0, false);
 //Retinaディスプレイ用
 //add_image_size('thumb640', 640, 360, true);
+
 //縦型カード2列用の可変サムネイル
-add_image_size(get_vartical_card_2_thumb_name(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
+add_image_size(get_vartical_card_2_thumbnail_size(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
 //縦型カード3列用の可変サムネイル
-add_image_size(get_vartical_card_3_thumb_name(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
+add_image_size(get_vartical_card_3_thumbnail_size(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
 
 //コンテンツの幅の指定
 if ( ! isset( $content_width ) ) $content_width = get_site_wrap_width();

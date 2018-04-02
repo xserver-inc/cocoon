@@ -139,11 +139,12 @@ function get_vartical_card_2_height(){
   return $vch;
 }
 endif;
-if ( !function_exists( 'get_vartical_card_2_thumb_name' ) ):
-function get_vartical_card_2_thumb_name(){
+if ( !function_exists( 'get_vartical_card_2_thumbnail_size' ) ):
+function get_vartical_card_2_thumbnail_size(){
   return 'thumb'.get_vartical_card_2_width().'x'.get_vartical_card_2_height();
 }
 endif;
+//_v(get_vartical_card_2_thumbnail_size());
 ///////////////////////////////////////
 // 縦型カード3列用の可変サムネイル用の関数
 ///////////////////////////////////////
@@ -165,8 +166,8 @@ function get_vartical_card_3_height(){
   return $vch;
 }
 endif;
-if ( !function_exists( 'get_vartical_card_3_thumb_name' ) ):
-function get_vartical_card_3_thumb_name(){
+if ( !function_exists( 'get_vartical_card_3_thumbnail_size' ) ):
+function get_vartical_card_3_thumbnail_size(){
   return 'thumb'.get_vartical_card_3_width().'x'.get_vartical_card_3_height();
 }
 endif;

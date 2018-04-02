@@ -2,7 +2,7 @@
   <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card cf">
     <figure class="entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき?>
-        <?php the_post_thumbnail('thumb320' , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>
+        <?php the_post_thumbnail(get_entry_card_thumbnail_size() , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>
       <?php else: // サムネイルを持っていないとき ?>
         <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="entry-card-thumb-image no-image list-no-image" />
       <?php endif; ?>
