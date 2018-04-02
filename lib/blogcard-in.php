@@ -103,7 +103,7 @@ function url_to_internal_blogcard($the_content) {
   $res = preg_match_all('/^(<p>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
 
   */
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?$/im', $the_content,$m);
+  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
   foreach ($m[0] as $match) {
 
     //マッチしたpタグが適正でないときはブログカード化しない
@@ -123,7 +123,7 @@ function url_to_internal_blogcard($the_content) {
     // _v($tag);
     // $the_content = str_replace($match, $tag , $the_content, $count);
     // wp_reset_postdata();
-    $the_content = preg_replace('{^'.preg_quote($match).'}im', $tag , $the_content, 1);
+    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
     wp_reset_postdata();
 
   }

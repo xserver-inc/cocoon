@@ -24,10 +24,11 @@ endif;
 if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
   //1行にURLのみが期待されている行（URL）を全て$mに取得
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?$/im', $the_content,$m);
+  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(?!.*<br *\/?>).*?(<\/p>)?/im', $the_content,$m);
   /*
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
   */
+  //_v($the_content);
 
   //マッチしたURL一つ一つをループしてカードを作成
   foreach ($m[0] as $match) {
@@ -42,11 +43,13 @@ function url_to_external_blog_card($the_content) {
 
     $tag = url_to_external_blog_card_tag($url);
     //$tag = $tag.htmlspecialchars($tag);
+    //_v($tag);
 
     if ( !$tag ) continue;
 
     //本文中のURLをブログカードタグで置換
-    $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+    $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
+    //_v($the_content);
   }
 
   return $the_content;//置換後のコンテンツを返す
