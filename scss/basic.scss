@@ -96,12 +96,6 @@ a{
   margin-top: 2em;
 }
 
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 //IE10以降のプラウザハック
 @media all and (-ms-high-contrast:none){
   .main-scroll{
@@ -117,4 +111,64 @@ a{
 
 #wpadminbar{
   font-size: 13px;
+}
+
+
+/************************************
+** WordPress Misc
+************************************/
+img.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+img.alignright,
+.wp-caption.alignright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+.wp-caption {
+  padding-top: 4px;
+  border: 1px solid $x_thin;
+  border-radius: 3px;
+  background-color: $xx_thin;
+  text-align: center;
+}
+
+.wp-caption-text,
+.gallery-caption{
+  font-size: 80%;
+}
+
+.wp-caption img {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
+.wp-caption-dd {
+  margin: 0;
+  padding: 0 4px 5px;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+img.alignright {
+  display: inline-block;
+  margin: 0 0 1em 1.5em;
+}
+
+img.alignleft {
+  display: inline-block;
+  margin: 0 1.5em 1em 0;
 }

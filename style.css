@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 0.4.0
+Version: 0.4.1
 Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -283,12 +283,6 @@ a:hover {
   margin-top: 2em;
 }
 
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media all and (-ms-high-contrast: none) {
   .main-scroll {
     position: static;
@@ -301,6 +295,65 @@ a:hover {
 
 #wpadminbar {
   font-size: 13px;
+}
+
+/************************************
+** WordPress Misc
+************************************/
+img.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+img.alignright,
+.wp-caption.alignright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.wp-caption {
+  padding-top: 4px;
+  border: 1px solid #dddedf;
+  border-radius: 3px;
+  background-color: #f3f4f5;
+  text-align: center;
+}
+
+.wp-caption-text,
+.gallery-caption {
+  font-size: 80%;
+}
+
+.wp-caption img {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+
+.wp-caption-dd {
+  margin: 0;
+  padding: 0 4px 5px;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+img.alignright {
+  display: inline-block;
+  margin: 0 0 1em 1.5em;
+}
+
+img.alignleft {
+  display: inline-block;
+  margin: 0 1.5em 1em 0;
 }
 
 /************************************
