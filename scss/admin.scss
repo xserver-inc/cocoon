@@ -701,6 +701,10 @@ select option.fa{
   .opration-menu-links{
     width: 100%;
     text-align: right;
+
+    a{
+      margin-left: 10px;
+    }
   }
  }
 }

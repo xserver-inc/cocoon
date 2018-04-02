@@ -6,36 +6,12 @@ $action = isset($_GET['action']) ? intval($_GET['action']) : null;
 if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) {
   $from = $_GET['from'];
   $to = $_GET['to'];
-  move_item_ranking($id, $from, $to);
-  // $record = get_item_ranking($id);
-  // if ($record) {
-  //   $items = isset($record->item_ranking) ? $record->item_ranking : array();
-  //   if (!empty($items)) {
-  //     //相手の入れ替え
-  //     $tmp_item = $items[$to];
-  //     $items[$to] = $items[$from];
-  //     $items[$from] = $tmp_item;
-  //     //オブジェクトを開いても配列に変換
-  //     $posts = object_to_array($record);
-  //     //アイテムランキングの更新
-  //     $posts['item_ranking'] = $items;
-  //     $res = update_item_ranking_record($id, $posts);
-
-  //     if ($res) {
-  //       $url = add_query_arg(
-  //         array(
-  //           'action' => 'edit',
-  //           'id' => $id,
-  //           'from' => null,
-  //           'to' => null
-  //         )
-  //       );
-  //       redirect_to_url($url);
-  //       exit;
-  //     }
-
-  //   }
-  // }
+  move_ranking_item($id, $from, $to);
+}
+//アイテムの削除
+if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET['conf_no']) && ($_GET['del_no'] == $_GET['conf_no']) ) {
+  $del_no = $_GET['del_no'];
+  delete_ranking_item($id, $del_no);
 }
  ?>
 <?php if ($id): ?>
@@ -107,8 +83,6 @@ if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) 
   // var_dump('$id:'.$id);
   for ($i = 1; $i <= $count; $i++):
 
-    //先頭と最後にはアイテム移動リンクを表示しないための判別
-    $is_move_link_visible = ($i != 1) && ($i != $count);
     //var_dump($i);
     //$index = $i - 1;
     $name = isset($items[$i]['name']) ? esc_attr($items[$i]['name']) : '';
@@ -210,21 +184,37 @@ if ( $id && ($action == 'move') && isset($_GET['from']) && isset($_GET['to']) ) 
           <?php submit_button($submit_text); ?>
         </div>
 
-        <?php //アイテム移動リンクなど
-        if ($is_move_link_visible):
-          $move_url = add_query_arg(
-            array(
-              'action' => 'move',
-              'id' => $id,
-              'from' => $i,
-              'to' => $i - 1,
-            )
-          );
-         ?>
         <div class="opration-menu-links">
-          <a href="<?php echo $move_url; ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+          <?php //アイテム移動リンクなど
+          //先頭と最後にはアイテム移動リンクを表示しないための判別
+          $is_move_link_visible = ($i != 1) && ($i != $count);
+          if ($is_move_link_visible):
+            $move_url = add_query_arg(
+              array(
+                'action' => 'move',
+                'id' => $id,
+                'from' => $i,
+                'to' => $i - 1,
+              )
+            );
+           ?>
+            <a href="<?php echo $move_url; ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+          <?php endif ?>
+          <?php //削除リンク
+          //最後は削除しないための判別
+          $is_delete_link_visible = ($i != $count);
+          if ($is_delete_link_visible):
+            $delete_url = add_query_arg(
+              array(
+                'action' => 'item_delete',
+                'id' => $id,
+                'del_no' => $i,
+                'conf_no' => $i,
+              )
+            ); ?>
+            <a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a>
+          <?php endif ?>
         </div>
-        <?php endif ?>
 
       </div>
 

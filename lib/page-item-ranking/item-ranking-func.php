@@ -360,9 +360,26 @@ function generate_ranking_crown_tag($ranking_number){
 }
 endif;
 
+if ( !function_exists( 'redirect_to_ranking_edit_page' ) ):
+function redirect_to_ranking_edit_page($id){
+  $url = add_query_arg(
+    array(
+      'action' => 'edit',
+      'id' => $id,
+      'from' => null,
+      'to' => null,
+      'del_no' => null,
+      'conf_no' => null,
+    )
+  );
+  redirect_to_url($url);
+        exit;
+}
+endif;
+
 //ランキングアイテムの移動
-if ( !function_exists( 'move_item_ranking' ) ):
-function move_item_ranking($id, $from, $to){
+if ( !function_exists( 'move_ranking_item' ) ):
+function move_ranking_item($id, $from, $to){
   //管理者以外が操作しようとした場合は何もしない
   if (!is_user_administrator()) {
     return;
@@ -382,16 +399,47 @@ function move_item_ranking($id, $from, $to){
       $res = update_item_ranking_record($id, $posts);
 
       if ($res) {
-        $url = add_query_arg(
-          array(
-            'action' => 'edit',
-            'id' => $id,
-            'from' => null,
-            'to' => null
-          )
-        );
-        redirect_to_url($url);
-        exit;
+         redirect_to_ranking_edit_page($id);
+      }
+
+    }
+  }
+}
+endif;
+
+//ランキングアイテムの削除
+if ( !function_exists( 'delete_ranking_item' ) ):
+function delete_ranking_item($id, $del_no){
+  //管理者以外が操作しようとした場合は何もしない
+  if (!is_user_administrator()) {
+    return;
+  }
+  $record = get_item_ranking($id);
+  if ($record) {
+    $items = isset($record->item_ranking) ? $record->item_ranking : array();
+    if (!empty($items)) {
+      //配列アイテムの削除
+      unset($items[$del_no]);
+      //_v($items);
+      //順番を入れ替えた新しい連想配列を作り直す
+      $i = 1;
+      $new_items = array();
+      foreach ($items as $key => $value) {
+        $new_items[$i] = $value;
+        $i++;
+      }
+      //_v($new_items);
+
+      //削除配列をデータベースに登録
+
+      //オブジェクトを開いても配列に変換
+      $posts = object_to_array($record);
+      //アイテムランキングの更新
+      $posts['item_ranking'] = $new_items;
+      $res = update_item_ranking_record($id, $posts);
+
+      if ($res) {
+        redirect_to_ranking_edit_page($id);
       }
 
     }
