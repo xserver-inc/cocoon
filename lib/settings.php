@@ -21,9 +21,13 @@ add_image_size('thumb600_raw', 600, 0, false);
 // add_image_size('thumb768_raw', 768, 0, false);
 //Retinaディスプレイ用
 //add_image_size('thumb640', 640, 360, true);
+//縦型カード2列用の可変サムネイル
+add_image_size(get_vartical_card_2_thumb_name(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
+//縦型カード3列用の可変サムネイル
+add_image_size(get_vartical_card_3_thumb_name(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
 
 //コンテンツの幅の指定
-if ( ! isset( $content_width ) ) $content_width = 800;
+if ( ! isset( $content_width ) ) $content_width = get_site_wrap_width();
 
 //カテゴリー説明文でHTMLタグを使う
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
