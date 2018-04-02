@@ -17,3 +17,8 @@
 @media screen and (max-width: 480px){
   @import "max-width-480";
 }
+
+//375px以下
+@media screen and (max-width: 375px){
+  @import "max-width-375";
+}

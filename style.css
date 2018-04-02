@@ -5538,6 +5538,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 0.74em;
   }
 }
+@media screen and (max-width: 375px) {
+  .ect-vertical-card .entry-card-wrap {
+    width: 100%;
+  }
+}
 @media print {
   /************************************
   ** 印刷用スタイル
