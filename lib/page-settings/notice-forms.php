@@ -5,7 +5,11 @@
   <h2 class="hndle"><?php _e( '通知設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'サイト上部ベルト状に表示される通知メッセージの設定です。', THEME_NAME ) ?></p>
+    <p>
+      <?php _e( 'サイト上部ベルト状に表示される通知メッセージの設定です。', THEME_NAME );
+      echo get_help_page_tag('https://wp-cocoon.com/notice-area/');
+     ?>
+    </p>
 
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo notice-area-demo">
