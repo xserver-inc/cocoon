@@ -38,6 +38,7 @@
   @extend %card_thumb;
   float: none;
   overflow: hidden;
+  display: inline-block;
 }
 
 .carousel-entry-card-title{
