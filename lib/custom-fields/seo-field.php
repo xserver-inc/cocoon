@@ -62,14 +62,11 @@ endif;
 
 if ( !function_exists( 'seo_custom_box_view' ) ):
 function seo_custom_box_view(){
-  $the_page_seo_title = get_post_meta(get_the_ID(),'the_page_seo_title', true);
-  $the_page_seo_title = htmlspecialchars($the_page_seo_title);
-  $the_page_meta_description = get_post_meta(get_the_ID(),'the_page_meta_description', true);
-  $the_page_meta_description = htmlspecialchars($the_page_meta_description);
-  $the_page_meta_keywords = get_post_meta(get_the_ID(),'the_page_meta_keywords', true);
-  $the_page_meta_keywords = htmlspecialchars($the_page_meta_keywords);
-  $the_page_noindex = get_post_meta(get_the_ID(), 'the_page_noindex', true);
-  $the_page_nofollow = get_post_meta(get_the_ID(), 'the_page_nofollow', true);
+  $the_page_seo_title = get_the_page_seo_title();
+  $the_page_meta_description = get_the_page_meta_description();
+  $the_page_meta_keywords = get_the_page_meta_keywords();
+  $the_page_noindex = is_the_page_noindex();
+  $the_page_nofollow = is_the_page_nofollow();
 
   //タイトル
   echo '<label class="box-label">'.__( 'SEOタイトル', THEME_NAME );
@@ -158,8 +155,11 @@ endif;
 
 //SEO向けのタイトルを取得
 if ( !function_exists( 'get_the_page_seo_title' ) ):
-function get_the_page_seo_title(){
-  return trim(get_post_meta(get_the_ID(), 'the_page_seo_title', true));
+function get_the_page_seo_title($id = null){
+  $the_id = $id ? $id : get_the_ID();
+  $value = trim(get_post_meta($the_id, 'the_page_seo_title', true));
+  //$value = $value !== '' ? $value : trim(get_post_meta($the_id,'seo_title', true));
+  return htmlspecialchars($value);
 }
 endif;
 
@@ -168,30 +168,43 @@ endif;
 if ( !function_exists( 'get_the_page_meta_description' ) ):
 function get_the_page_meta_description($id = null){
   $the_id = $id ? $id : get_the_ID();
-  return trim(get_post_meta($the_id, 'the_page_meta_description', true));
+  $value = trim(get_post_meta($the_id, 'the_page_meta_description', true));
+  // $value = $value ? $value : trim(get_post_meta($the_id,'meta_description', true));
+  return htmlspecialchars($value);
 }
 endif;
 
 //メタキーワードを取得
 if ( !function_exists( 'get_the_page_meta_keywords' ) ):
-function get_the_page_meta_keywords(){
-  return trim(strip_tags(get_post_meta(get_the_ID(), 'the_page_meta_keywords', true)));
+function get_the_page_meta_keywords($id = null){
+  $the_id = $id ? $id : get_the_ID();
+  $value = trim(get_post_meta($the_id, 'the_page_meta_keywords', true));
+  //$value = $value ? $value : trim(get_post_meta($the_id,'meta_keywords', true));
+  return htmlspecialchars($value);
 }
 endif;
 
 
 //noindexか
 if ( !function_exists( 'is_the_page_noindex' ) ):
-function is_the_page_noindex(){
-  return get_post_meta(get_the_ID(), 'the_page_noindex', true);
+function is_the_page_noindex($id = null){
+  $the_id = $id ? $id : get_the_ID();
+  $value = get_post_meta($the_id, 'the_page_noindex', true);
+  // $value = $value ? $value : get_post_meta($the_id,'is_noindex', true);
+  return $value;
 }
 endif;
 
 
 //nofollowか
 if ( !function_exists( 'is_the_page_nofollow' ) ):
-function is_the_page_nofollow(){
-  return get_post_meta(get_the_ID(), 'the_page_nofollow', true);
+function is_the_page_nofollow($id = null){
+  $the_id = $id ? $id : get_the_ID();
+  $value = get_post_meta($the_id, 'the_page_noindex', true);
+  //_v($value);
+  // $value = $value !== '' ? $value : get_post_meta($the_id,'is_nofollow', true);
+  //_v($value);
+  return $value;
 }
 endif;
 
