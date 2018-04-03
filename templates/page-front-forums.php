@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Template Name: bbPress - Forums (Index)
+ *
+ * @package bbPress
+ * @subpackage Theme
+ */
+
+get_header(); ?>
+
+	<?php do_action( 'bbp_before_main_content' ); ?>
+
+	<?php do_action( 'bbp_template_notices' ); ?>
+
+	<?php while ( have_posts() ) : the_post(); ?>
+
+		<div id="forum-front" class="bbp-forum-front">
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="entry-content">
+
+				<?php the_content(); ?>
+
+				<?php bbp_get_template_part( 'content', 'archive-forum' ); ?>
+
+			</div>
+		</div><!-- #forum-front -->
+
+	<?php endwhile; ?>
+
+	<?php do_action( 'bbp_after_main_content' ); ?>
+
+
+  <?php get_template_part('ad-article-footer');//本文下広告?>
+
+  <div id="sns-group">
+  <?php if (is_mobile()) {//モバイルの時は単なるアイコン
+    get_template_part('sns-buttons-icon');
+  } else {//PCの時はバルーン付きボタン
+    get_template_part('sns-buttons');
+  } ?>
+
+  <?php get_template_part('sns-pages');?>
+  </div>
+
+
+</div><div>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
