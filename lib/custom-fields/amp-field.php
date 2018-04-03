@@ -19,7 +19,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'view_amp_custom_box' ) ):
 function view_amp_custom_box(){
-  $the_page_no_amp = get_post_meta(get_the_ID(), 'the_page_no_amp', true);
+  $the_page_no_amp = is_the_page_no_amp();
 
   echo '<label><input type="checkbox" name="the_page_no_amp"';
   if( $the_page_no_amp ){echo " checked";}
@@ -38,6 +38,10 @@ function amp_custom_box_save_data(){
   $the_page_no_amp_key = 'the_page_no_amp';
   add_post_meta($id, $the_page_no_amp_key, $the_page_no_amp, true);
   update_post_meta($id, $the_page_no_amp_key, $the_page_no_amp);
+  if (is_the_page_no_amp()) {
+    add_post_meta($id, 'is_noamp', $the_page_no_amp, true);
+    update_post_meta($id, 'is_noamp', $the_page_no_amp);
+  }
 }
 endif;
 
@@ -45,7 +49,12 @@ endif;
 //AMPを除外しているか
 if ( !function_exists( 'is_the_page_no_amp' ) ):
 function is_the_page_no_amp(){
-  return get_post_meta(get_the_ID(), 'the_page_no_amp', true);
+  $value = get_post_meta(get_the_ID(), 'the_page_no_amp', true);
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : get_post_meta(get_the_ID(), 'is_noamp', true);
+
+  return $value;
 }
 endif;
 
