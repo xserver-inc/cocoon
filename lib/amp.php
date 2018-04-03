@@ -87,13 +87,6 @@ function convert_content_for_amp($the_content){
   //JetpackがYouTubeのURLに余計なクエリを付け加えるのを取り除く
   //$the_content = preg_replace('{(https://www.youtube.com/embed/[^?"\']+)[^"\']*}i', '$1', $the_content);
 
-  //$append = url_to_external_ogp_blog_card_tag($amazon_url);
-  //$the_content = preg_replace($pattern, htmlspecialchars($append), $the_content);
-  $the_content = preg_replace($pattern, $append, $the_content);
-  //Amazon画像をブログカード化
-  //$the_content = url_to_external_blog_card($the_content);
-
-
   //C2A0文字コード（UTF-8の半角スペース）を通常の半角スペースに置換
   $the_content = str_replace('\xc2\xa0', ' ', $the_content);
 
@@ -386,7 +379,7 @@ function convert_content_for_amp($the_content){
   // echo('</pre>');
 
   return $the_content;
-}
+}//convert_content_for_amp
 endif;
 
 //テンプレートの中身をAMP化する
