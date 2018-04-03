@@ -274,3 +274,7 @@ textarea {
 .footer-bottom.fdt-left-and-right .footer-bottom-content{
   flex-direction: column;
 }
+
+#wpf-form-wrapper .mce-edit-area iframe{
+  min-height: 200px;
+}

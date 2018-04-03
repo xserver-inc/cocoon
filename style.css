@@ -4972,6 +4972,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   font-weight: bold;
 }
 
+#wpf-form-wrapper .mce-edit-area iframe {
+  min-height: 400px;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
@@ -5331,6 +5335,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .footer-bottom.fdt-left-and-right .footer-bottom-content {
     flex-direction: column;
+  }
+
+  #wpf-form-wrapper .mce-edit-area iframe {
+    min-height: 200px;
   }
 }
 @media screen and (max-width: 480px) {

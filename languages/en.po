@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-01-25 09:10+0900\n"
-"PO-Revision-Date: 2018-01-25 09:12+0900\n"
+"PO-Revision-Date: 2018-04-03 21:58+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -6619,7 +6619,7 @@ msgstr "3 columns"
 #: lib/tinymce/html-tags.php:67 tmp/mobile-menu-buttons.php:42
 #: tmp/mobile-menu-buttons.php:52
 msgid "検索"
-msgstr "[けんさく] /retrieval/search/retrieve (vs)/"
+msgstr "Search"
 
 #: lib/tinymce/html-tags.php:70
 msgid "検索フォーム風"
