@@ -36,6 +36,19 @@
           </td>
         </tr>
 
+        <!-- Simplicity設定の移行 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_MIGRATE_FROM_SIMPLICITY, __('Simplicity設定の移行', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_MIGRATE_FROM_SIMPLICITY , is_migrate_from_simplicity(), __( 'SimplicityからPost meta情報の移行', THEME_NAME ).'(Beta)');
+            generate_tips_tag(__( 'Simplicityから移行可能なPost meta情報を利用します。例えば「SEO設定」項目とか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

@@ -15,3 +15,11 @@ function is_request_filesystem_credentials_enable(){
   return get_theme_option(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE);
 }
 endif;
+
+//Simplicityから設定情報の移行
+define('OP_MIGRATE_FROM_SIMPLICITY', 'migrate_from_simplicity');
+if ( !function_exists( 'is_migrate_from_simplicity' ) ):
+function is_migrate_from_simplicity(){
+  return get_theme_option(OP_MIGRATE_FROM_SIMPLICITY);
+}
+endif;
