@@ -28,7 +28,7 @@
           <td>
             <?php
             generate_number_tag(OP_MAIN_COLUMN_CONTENTS_WIDTH,  get_main_column_contents_width(), 800, 600, 1600, 1);
-            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：600px、最大：1600px）', THEME_NAME ).'<br>'.__( '※カラム幅を変更した場合はサムネイルを再生成することで最適化されます。', THEME_NAME ));
+            generate_tips_tag(__( 'メインカラムのコンテンツ部分の幅を設定します。（最小：600px、最大：1600px）', THEME_NAME ).'<br>'.__( '※カラム幅を変更した場合はサムネイルを再生成することで最適化されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/regenerate-thumbnails/'));
             ?>
           </td>
         </tr>
