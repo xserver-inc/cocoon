@@ -19,7 +19,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'view_ad_custom_box' ) ):
 function view_ad_custom_box(){
-  $the_page_ads_novisible = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
+  $the_page_ads_novisible = is_the_page_ads_novisible();
 
   //var_dump($the_page_ads_novisible);
 
@@ -27,13 +27,6 @@ function view_ad_custom_box(){
   if( $the_page_ads_novisible ){echo " checked";}
   echo '>'.__( '広告の除外', THEME_NAME ).'</label>';
   echo '<p class="howto">'.__( 'ページ上の広告（AdSenseなど）をページ上から取り除きます。テーマカスタマイザーの「広告」項目からカテゴリごとの設定も行えます。', THEME_NAME ).'</p>';
-
-  // $options = array(
-  //   'display' => '表示する',
-  //   'nondisplay' => '表示しない',
-  // );
-  // generate_radiobox_tag('the_page_ads_novisible', $options, $the_page_ads_novisible);
-  // generate_tips_tag(__( 'ページ上の広告（AdSenseなど）をページ上から取り除きます。テーマカスタマイザーの「広告」項目からカテゴリごとの設定も行えます。', THEME_NAME ));
 }
 endif;
 
@@ -47,6 +40,10 @@ function ad_custom_box_save_data(){
   $the_page_ads_novisible_key = 'the_page_ads_novisible';
   add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
   update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
+  if (is_migrate_from_simplicity()) {
+    add_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible, true);
+    update_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible);
+  }
 }
 endif;
 
@@ -54,7 +51,12 @@ endif;
 //広告を除外しているか
 if ( !function_exists( 'is_the_page_ads_novisible' ) ):
 function is_the_page_ads_novisible(){
-  return get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
+  $value = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true);
+
+  return $value;
 }
 endif;
 
