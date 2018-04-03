@@ -329,7 +329,7 @@ function get_meta_description_text(){
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
   }
-  return $description;
+  return apply_filters('meta_description_text', $description);
 }
 endif;
 
@@ -359,7 +359,7 @@ function get_meta_keywords_text(){
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
   }
-  return $keywords;
+  return apply_filters('meta_keywords_text', $keywords);
 }
 endif;
 
