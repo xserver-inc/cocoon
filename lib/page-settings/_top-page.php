@@ -147,7 +147,7 @@ endif;
     <li class="sns-follow"><?php _e( 'SNSフォロー', THEME_NAME ) ?></li>
     <li class="image"><?php _e( '画像', THEME_NAME ) ?></li>
     <li class="blog-card-in"><?php _e( 'ブログカード', THEME_NAME ) ?></li>
-    <li class="code"><?php _e( 'コード', THEME_NAME ) ?></li>
+    <li class="code-highlight"><?php _e( 'コード', THEME_NAME ) ?></li>
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
     <li class="notice-area"><?php _e( '通知', THEME_NAME ) ?></li>
     <li class="appeal-area"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
@@ -254,7 +254,7 @@ endif;
   </div><!-- /.metabox-holder -->
 
   <!-- コードタブ -->
-  <div class="code metabox-holder">
+  <div class="code-highlight metabox-holder">
     <?php require_once 'code-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 

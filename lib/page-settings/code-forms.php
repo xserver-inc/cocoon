@@ -1,7 +1,7 @@
 <div class="metabox-holder">
 
 <!-- ソースコード設定 -->
-<div id="code" class="postbox">
+<div id="code-highlight" class="postbox">
   <h2 class="hndle"><?php _e( 'ソースコード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
