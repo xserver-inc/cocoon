@@ -121,6 +121,10 @@ function seo_custom_box_save_data(){
     $the_page_seo_title_key = 'the_page_seo_title';
     add_post_meta($id, $the_page_seo_title_key, $the_page_seo_title, true);
     update_post_meta($id, $the_page_seo_title_key, $the_page_seo_title);
+    if (is_migrate_from_simplicity()) {
+      add_post_meta($id, 'seo_title', $the_page_seo_title, true);
+      update_post_meta($id, 'seo_title', $the_page_seo_title);
+    }
   }
   //メタディスクリプション
   $the_page_meta_description = null;
@@ -129,6 +133,10 @@ function seo_custom_box_save_data(){
     $the_page_meta_description_key = 'the_page_meta_description';
     add_post_meta($id, $the_page_meta_description_key, $the_page_meta_description, true);
     update_post_meta($id, $the_page_meta_description_key, $the_page_meta_description);
+    if (is_migrate_from_simplicity()) {
+      add_post_meta($id, 'meta_description', $the_page_meta_description, true);
+      update_post_meta($id, 'meta_description', $the_page_meta_description);
+    }
   }
   //メタキーワード
   $the_page_meta_keywords = null;
@@ -137,18 +145,30 @@ function seo_custom_box_save_data(){
     $the_page_meta_keywords_key = 'the_page_meta_keywords';
     add_post_meta($id, $the_page_meta_keywords_key, $the_page_meta_keywords, true);
     update_post_meta($id, $the_page_meta_keywords_key, $the_page_meta_keywords);
+    if (is_migrate_from_simplicity()) {
+      add_post_meta($id, 'meta_keywords', $the_page_meta_keywords, true);
+      update_post_meta($id, 'meta_keywords', $the_page_meta_keywords);
+    }
   }
   //noindex
   $the_page_noindex = !empty($_POST['the_page_noindex']) ? 1 : 0;
   $the_page_noindex_key = 'the_page_noindex';
   add_post_meta($id, $the_page_noindex_key, $the_page_noindex, true);
   update_post_meta($id, $the_page_noindex_key, $the_page_noindex);
+  if (is_migrate_from_simplicity()) {
+    add_post_meta($id, 'is_noindex', $the_page_noindex, true);
+    update_post_meta($id, 'is_noindex', $the_page_noindex);
+  }
 
   //nofollow
   $the_page_nofollow = !empty($_POST['the_page_nofollow']) ? 1 : 0;
   $the_page_nofollow_key = 'the_page_nofollow';
   add_post_meta($id, $the_page_nofollow_key, $the_page_nofollow, true);
   update_post_meta($id, $the_page_nofollow_key, $the_page_nofollow);
+  if (is_migrate_from_simplicity()) {
+    add_post_meta($id, 'is_nofollow', $the_page_nofollow, true);
+    update_post_meta($id, 'is_nofollow', $the_page_nofollow);
+  }
 }
 endif;
 
@@ -158,7 +178,10 @@ if ( !function_exists( 'get_the_page_seo_title' ) ):
 function get_the_page_seo_title($id = null){
   $the_id = $id ? $id : get_the_ID();
   $value = trim(get_post_meta($the_id, 'the_page_seo_title', true));
-  //$value = $value !== '' ? $value : trim(get_post_meta($the_id,'seo_title', true));
+
+  if (is_migrate_from_simplicity())
+    $value = $value !== '' ? $value : trim(get_post_meta($the_id,'seo_title', true));
+
   return htmlspecialchars($value);
 }
 endif;
@@ -169,7 +192,10 @@ if ( !function_exists( 'get_the_page_meta_description' ) ):
 function get_the_page_meta_description($id = null){
   $the_id = $id ? $id : get_the_ID();
   $value = trim(get_post_meta($the_id, 'the_page_meta_description', true));
-  // $value = $value ? $value : trim(get_post_meta($the_id,'meta_description', true));
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : trim(get_post_meta($the_id,'meta_description', true));
+
   return htmlspecialchars($value);
 }
 endif;
@@ -179,7 +205,10 @@ if ( !function_exists( 'get_the_page_meta_keywords' ) ):
 function get_the_page_meta_keywords($id = null){
   $the_id = $id ? $id : get_the_ID();
   $value = trim(get_post_meta($the_id, 'the_page_meta_keywords', true));
-  //$value = $value ? $value : trim(get_post_meta($the_id,'meta_keywords', true));
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : trim(get_post_meta($the_id,'meta_keywords', true));
+
   return htmlspecialchars($value);
 }
 endif;
@@ -190,7 +219,10 @@ if ( !function_exists( 'is_the_page_noindex' ) ):
 function is_the_page_noindex($id = null){
   $the_id = $id ? $id : get_the_ID();
   $value = get_post_meta($the_id, 'the_page_noindex', true);
-  // $value = $value ? $value : get_post_meta($the_id,'is_noindex', true);
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : get_post_meta($the_id,'is_noindex', true);
+
   return $value;
 }
 endif;
@@ -201,9 +233,10 @@ if ( !function_exists( 'is_the_page_nofollow' ) ):
 function is_the_page_nofollow($id = null){
   $the_id = $id ? $id : get_the_ID();
   $value = get_post_meta($the_id, 'the_page_noindex', true);
-  //_v($value);
-  // $value = $value !== '' ? $value : get_post_meta($the_id,'is_nofollow', true);
-  //_v($value);
+
+  if (is_migrate_from_simplicity())
+    $value = $value ? $value : get_post_meta($the_id,'is_nofollow', true);
+
   return $value;
 }
 endif;
