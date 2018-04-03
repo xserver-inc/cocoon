@@ -1403,3 +1403,14 @@ function is_useragent_robot(){
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 }
 endif;
+
+//カスタムフィールドのショートコードをロケーションURIに置換
+if ( !function_exists( 'replace_directory_uri' ) ):
+function replace_directory_uri($code){
+  $code = str_replace('[template_directory_uri]', get_template_directory_uri(), $code);
+  $code = str_replace('[stylesheet_directory_uri]', get_stylesheet_directory_uri(), $code);
+  $code = str_replace('<?php echo template_directory_uri(); ?>', get_template_directory_uri(), $code);
+  $code = str_replace('<?php echo get_stylesheet_directory_uri(); ?>', get_stylesheet_directory_uri(), $code);
+  return $code;
+}
+endif;
