@@ -37,6 +37,7 @@
 .carousel-entry-card-thumb{
   @extend %card_thumb;
   float: none;
+  overflow: hidden;
 }
 
 .carousel-entry-card-title{

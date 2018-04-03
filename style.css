@@ -4447,6 +4447,7 @@ input[type='submit'],
 
 .carousel-entry-card-thumb {
   float: none;
+  overflow: hidden;
 }
 
 .carousel-entry-card-title {
