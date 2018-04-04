@@ -1,11 +1,22 @@
 <?php //本文のリンク設定
 
+//アンカーリンクはブログカードか
+if ( !function_exists( 'is_anchor_link_tag_blogcard' ) ):
+function is_anchor_link_tag_blogcard($anchor_link_tag){
+  //_v($anchor_link_tag);
+  if (strpos($anchor_link_tag, ' class="blogcard-wrap') !== false) {
+    return true;
+  }
+}
+endif;
+
 //本文の外部リンクの置換
-add_filter('the_content', 'replace_anchor_links');
-add_filter('get_the_author_description', 'replace_anchor_links');
+add_filter('the_content', 'replace_anchor_links', 12);
+add_filter('get_the_author_description', 'replace_anchor_links', 12);
 if ( !function_exists( 'replace_anchor_links' ) ):
 function replace_anchor_links($the_content) {
-  $res = preg_match_all('{<a[^>]+?>[^<]+?</a>}i', $the_content, $m);
+  $res = preg_match_all('{<a[^>]+?>.+?</a>}is', $the_content, $m);
+  //_v($m);
   //Aリンクがある場合
   if ($res && $m[0]) {
 
@@ -32,13 +43,14 @@ function replace_anchor_links($the_content) {
       if ((strpos($value, 'class="btn ') > 0)) {
         continue;
       }
-
+/*
       //ブログカード用のリンクを除外
       if (preg_match('{<a[^>]+?href="'.URL_REG_STR.'"[^>]*?>'.URL_REG_STR.'</a>}i', $value)) {
         continue;
       }
-
-      if ((strpos($value, '//'.get_the_site_domain()) !== false) ) {//内部リンクの場合
+*/
+      if ( (strpos($value, 'href="'.home_url()) !== false) ) {//内部リンクの場合
+      //if ( preg_match('{href="https?://'.get_the_site_domain().'}i') ) {//内部リンクの場合
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
 
@@ -51,126 +63,31 @@ function replace_anchor_links($the_content) {
         //noreferrerの追加と削除
         $rels = get_noreferrer_rels( is_internal_link_noreferrer_enable(), $rels );
 
-        //アイコフォントの表示
-        $new_a = replace_link_icon_font_tag( is_internal_link_icon_visible(), get_internal_link_icon(), 'internal-icon', $new_a );
+        if (!is_anchor_link_tag_blogcard($value)) {
+          //アイコフォントの表示
+          $new_a = replace_link_icon_font_tag( is_internal_link_icon_visible(), get_internal_link_icon(), 'internal-icon', $new_a );
+        }
 
       } else { //外部リンクの場合
-
-        // //リンクの開き方を変更する場合
-        // if (!get_external_link_open_type_default()) {
-        //   //外部リンクの開き方を変更する場合はtarget属性のクリアを行う
-        //   $new_a = preg_replace('/ *target="[^"]*?"/i', '', $new_a);
-        //   switch (get_external_link_open_type()) {
-        //     case 'blank':
-        //       $new_a = str_replace('<a', '<a target="_blank"', $new_a);
-        //       break;
-        //     case 'self':
-        //       $new_a = str_replace('<a', '<a target="_self"', $new_a);
-        //       break;
-        //   }
-        // }
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_external_link_open_type(), $new_a );
-
-        // //rel属性値の取得
-        // $rels = array();
-        // $res = preg_match('/ *rel="([^"]*?)"/i', $new_a, $m);
-        // //rel属性があれば値を取得する
-        // if ($res && $m[1]) {
-        //   $rels = explode(' ', $m[1]);
-        // }
-
-        // //フォロータイプの設定
-        // if (!get_external_link_follow_type_default()) {
-
-        //   //var_dump($rels);
-        //   switch (get_external_link_follow_type()) {
-        //     case 'nofollow':
-        //       //nofollowの追加
-        //       $rels = add_string_to_array( 'nofollow', $rels );
-        //       // if (!in_array('nofollow', $rels)) {
-        //       //   $rels[] = 'nofollow';
-        //       // }
-        //       //followがある場合は削除
-        //       $rels = delete_string_from_array( 'follow', $rels );
-        //       // if(($key = array_search('follow', $rels)) !== false) {
-        //       //   unset($rels[$key]);
-        //       // }
-        //       break;
-        //     case 'follow':
-        //       //followの追加
-        //       $rels = add_string_to_array( 'follow', $rels );
-        //       // if (!in_array('follow', $rels)) {
-        //       //   $rels[] = 'follow';
-        //       // }
-        //       //nofollowがある場合は削除
-        //       $rels = delete_string_from_array( 'nofollow', $rels );
-        //       // if(($key = array_search('nofollow', $rels)) !== false) {
-        //       //   unset($rels[$key]);
-        //       // }
-        //       break;
-        //   }
-
-        // }//!get_external_link_follow_type_default
 
         //フォロータイプの設定
         $rels = get_rel_follow_attr_values( get_external_link_follow_type(), $rels );
 
-        // //noopenerの追加と削除
-        // if (is_external_link_noopener_enable()) {
-        //   //noopenerの追加
-        //   $rels = add_string_to_array( 'noopener', $rels );
-        //   // if (!in_array('noopener', $rels)) {
-        //   //   $rels[] = 'noopener';
-        //   // }
-        // } else {
-        //   //noopenerの削除
-        //   $rels = delete_string_from_array( 'noopener', $rels );
-        //   // if(($key = array_search('noopener', $rels)) !== false) {
-        //   //   unset($rels[$key]);
-        //   // }
-        // }
         //noopenerの追加と削除
         $rels = get_noopener_rels( is_external_link_noopener_enable(), $rels );
 
-        // //noreferrerの追加と削除
-        // if (is_external_link_noreferrer_enable()) {
-        //   //noreferrerの追加
-        //   $rels = add_string_to_array( 'noreferrer', $rels );
-        //   // if (!in_array('noreferrer', $rels)) {
-        //   //   $rels[] = 'noreferrer';
-        //   // }
-        // } else {
-        //   //noreferrerの削除
-        //   $rels = delete_string_from_array( 'noreferrer', $rels );
-        //   // if(($key = array_search('noreferrer', $rels)) !== false) {
-        //   //   unset($rels[$key]);
-        //   // }
-        // }
         //noreferrerの追加と削除
         $rels = get_noreferrer_rels( is_external_link_noreferrer_enable(), $rels );
 
-        // //externalの追加と削除
-        // if (is_external_link_external_enable()) {
-        //   //externalの追加
-        //   if (!in_array('external', $rels)) {
-        //     $rels[] = 'external';
-        //   }
-        // } else {
-        //   //externalの削除
-        //   if(($key = array_search('external', $rels)) !== false) {
-        //     unset($rels[$key]);
-        //   }
-        // }
         //externalの追加と削除
         $rels = get_external_rels( is_external_link_external_enable(), $rels );
 
-        // //アイコフォントの表示
-        // if (is_external_link_icon_visible()) {
-        //   $new_a = str_replace('</a>', '<span class="fa '.get_external_link_icon().' external-icon"></span></a>', $new_a);
-        // }
-        //アイコフォントの表示
-        $new_a = replace_link_icon_font_tag( is_external_link_icon_visible(), get_external_link_icon(), 'external-icon', $new_a );
+        if (!is_anchor_link_tag_blogcard($value)) {
+          //アイコフォントの表示
+          $new_a = replace_link_icon_font_tag( is_external_link_icon_visible(), get_external_link_icon(), 'external-icon', $new_a );
+        }
       }//内部リンクか外部リンクか条件分岐の終わり
 
       //変更する場合はrel属性のクリアを行う
