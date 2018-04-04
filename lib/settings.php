@@ -22,6 +22,11 @@ add_image_size('thumb600_raw', 600, 0, false);
 //Retinaディスプレイ用
 //add_image_size('thumb640', 640, 360, true);
 
+// remove_filter( 'the_content', 'wpautop' );
+// remove_filter( 'the_content', 'wptexturize' );
+// add_filter( 'the_content', 'wpautop' , 7);
+// add_filter( 'the_content', 'wptexturize' , 7);
+
 //縦型カード2列用の可変サムネイル
 add_image_size(get_vartical_card_2_thumbnail_size(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
 //縦型カード3列用の可変サムネイル

@@ -3899,6 +3899,10 @@ div.fb-like-mobile {
   font-size: 18px;
   margin-top: 0;
 }
+.ranking-items .internal-icon,
+.ranking-items .external-icon {
+  display: none;
+}
 
 .ranking-item {
   padding: 3%;

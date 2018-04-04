@@ -10,9 +10,14 @@ function is_anchor_link_tag_blogcard($anchor_link_tag){
 }
 endif;
 
-//本文の外部リンクの置換
+//本文の内部・外部リンクの置換
 add_filter('the_content', 'replace_anchor_links', 12);
 add_filter('get_the_author_description', 'replace_anchor_links', 12);
+add_filter('widget_text', 'replace_anchor_links', 12);//テキストウィジェットをフック
+add_filter('widget_text_pc_text', 'replace_anchor_links', 12);
+add_filter('widget_classic_text', 'replace_anchor_links', 12);
+add_filter('widget_text_mobile_text', 'replace_anchor_links', 12);
+add_filter('the_category_content', 'replace_anchor_links', 12);
 if ( !function_exists( 'replace_anchor_links' ) ):
 function replace_anchor_links($the_content) {
   $res = preg_match_all('{<a[^>]+?>.+?</a>}is', $the_content, $m);
@@ -41,6 +46,11 @@ function replace_anchor_links($the_content) {
 
       //ボタンを除外
       if ((strpos($value, 'class="btn ') > 0)) {
+        continue;
+      }
+
+      //イメージリンクを除外
+      if (preg_match('{<a[^>]+?href="[^"]+?"[^>]*?>\s*?<img .+?>\s*?</a>}is', $value)) {
         continue;
       }
 /*
