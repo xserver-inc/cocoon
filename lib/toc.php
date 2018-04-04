@@ -1,15 +1,21 @@
 <?php //目次関数
 
+if ( !function_exists( 'get_toc_filter_priority' ) ):
+function get_toc_filter_priority(){
+  //優先順位の設定
+  if (is_toc_before_ads()) {
+    $priority = BEFORE_1ST_H2_TOC_PRIORITY_HIGH;
+  } else {
+    $priority = BEFORE_1ST_H2_TOC_PRIORITY_STANDARD;
+  }
+  return $priority;
+}
+endif;
+
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 if (is_toc_visible()) {
-  //優先順位の設定
-  if (is_toc_before_ads()) {
-    $priority = BEFORE_1ST_H2_PRIORITY_HIGH;
-  } else {
-    $priority = BEFORE_1ST_H2_PRIORITY_STANDARD;
-  }
-  add_filter('the_content', 'add_toc_before_1st_h2', $priority);
+  add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 }
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){

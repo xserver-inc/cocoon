@@ -411,7 +411,7 @@ register_404_page_widget_area();
 /////////////////////////////////////
 // 投稿本文中にウィジェットを表示する
 /////////////////////////////////////
-add_filter('the_content','add_widget_area_before_1st_h2_in_single');
+add_filter('the_content','add_widget_area_before_1st_h2_in_single', BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD);
 if ( !function_exists( 'add_widget_area_before_1st_h2_in_single' ) ):
 function add_widget_area_before_1st_h2_in_single($the_content) {
   // if ( is_amp() ) {
