@@ -17,11 +17,12 @@ function get_external_blogcard_thumbnail_style(){
 }
 endif;
 
-//外部ブログカードを新しいタブで開くか
+//外部ブログカードを新しいタブで開くか（※廃止予定機能）
 define('OP_EXTERNAL_BLOGCARD_TARGET_BLANK', 'external_blogcard_target_blank');
 if ( !function_exists( 'is_external_blogcard_target_blank' ) ):
 function is_external_blogcard_target_blank(){
-  return get_theme_option(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, 1);
+  return false;
+  //return get_theme_option(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, 1);
 }
 endif;
 

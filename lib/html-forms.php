@@ -115,6 +115,15 @@ function generate_tips_tag($caption){?>
 }
 endif;
 
+
+//アラート文の生成
+if ( !function_exists( 'generate_alert_tag' ) ):
+function generate_alert_tag($caption){?>
+  <p class="alert"><?php echo $caption; ?></p>
+  <?php
+}
+endif;
+
 //解説ページへのリンク取得
 if ( !function_exists( 'get_help_page_tag' ) ):
 function get_help_page_tag($url){

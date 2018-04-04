@@ -4,7 +4,7 @@
 if ( !function_exists( 'is_anchor_link_tag_blogcard' ) ):
 function is_anchor_link_tag_blogcard($anchor_link_tag){
   //_v($anchor_link_tag);
-  if (strpos($anchor_link_tag, ' class="blogcard-wrap') !== false) {
+  if (strpos($anchor_link_tag, ' class="blogcard-wrap ') !== false) {
     return true;
   }
 }

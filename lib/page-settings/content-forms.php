@@ -5,7 +5,7 @@
   <h2 class="hndle"><?php _e( '外部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '外部リンク動作の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '外部リンク動作の設定です。外部ブログカードにも適用されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -113,7 +113,7 @@
   <h2 class="hndle"><?php _e( '内部リンク設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '内部リンク動作の設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( '内部リンク動作の設定です。外部ブログカードにも適用されます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

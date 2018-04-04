@@ -73,8 +73,9 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_INTERNAL_BLOGCARD_TARGET_BLANK, is_internal_blogcard_target_blank(), __( '新しいタブで開く', THEME_NAME ));
-            generate_tips_tag(__( 'ブログカードクリック時に新規タブを開きます。', THEME_NAME ));
+            generate_alert_tag('この機能は「内部リンク設定」機能に統合されました。この項目は、数バージョン表示の後削除されます。');
+            // generate_checkbox_tag(OP_INTERNAL_BLOGCARD_TARGET_BLANK, is_internal_blogcard_target_blank(), __( '新しいタブで開く', THEME_NAME ));
+            // generate_tips_tag(__( 'ブログカードクリック時に新規タブを開きます。', THEME_NAME ));
             ?>
           </td>
         </tr>
