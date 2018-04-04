@@ -4963,6 +4963,10 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
   border: medium none;
   font-size: 17px;
 }
+div#wpforo-wrap .internal-icon,
+div#wpforo-wrap .external-icon {
+  display: none;
+}
 
 .wpforo-list-item p {
   margin: 0;

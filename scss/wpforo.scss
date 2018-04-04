@@ -28,6 +28,11 @@ div#wpforo-wrap{
     border: medium none;
     font-size: 17px;
   }
+
+  .internal-icon,
+  .external-icon{
+    display: none;
+  }
 }
 
 .wpforo-list-item p {
