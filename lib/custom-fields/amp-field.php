@@ -7,9 +7,9 @@ add_action('admin_menu', 'add_amp_custom_box');
 if ( !function_exists( 'add_amp_custom_box' ) ):
 function add_amp_custom_box(){
   //AMPボックス
-  add_meta_box( 'singular_amp_settings',__( 'AMPの設定', THEME_NAME ), 'view_amp_custom_box', 'post', 'side' );
-  add_meta_box( 'singular_amp_settings',__( 'AMPの設定', THEME_NAME ), 'view_amp_custom_box', 'page', 'side' );
-  add_meta_box( 'singular_amp_settings',__( 'AMPの設定', THEME_NAME ), 'view_amp_custom_box', 'topic', 'side' );
+  add_meta_box( 'singular_amp_settings',__( 'AMP設定', THEME_NAME ), 'view_amp_custom_box', 'post', 'side' );
+  add_meta_box( 'singular_amp_settings',__( 'AMP設定', THEME_NAME ), 'view_amp_custom_box', 'page', 'side' );
+  add_meta_box( 'singular_amp_settings',__( 'AMP設定', THEME_NAME ), 'view_amp_custom_box', 'topic', 'side' );
 }
 endif;
 
