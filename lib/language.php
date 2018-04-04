@@ -7,21 +7,24 @@ if (strpos($locale,'en') !== false) {
 
 //親テーマの翻訳ディレクトリ
 $language_dir = get_template_directory() . '/languages';
-//子テーマの翻訳ディレクトリ
-$child_language_dir = get_stylesheet_directory() . '/languages';
-//子テーマの翻訳ファイル
-$child_language_file = $child_language_dir.'/en.mo';
+load_theme_textdomain( THEME_NAME, $language_dir );
 
-//Simplicityの多言語化
-if (is_child_theme()) {
-  //子テーマでは子テーマ内の翻訳ファイルを使用
-  if (file_exists($child_language_file)) {
-    load_theme_textdomain( THEME_NAME, $child_language_dir );
-  } else {
-    load_theme_textdomain( THEME_NAME, $language_dir );
-  }
-} else {
-  //親テーマの翻訳ファイル
-  load_theme_textdomain( THEME_NAME, $language_dir );
-}
+//以降は正式版公開後に
+// //子テーマの翻訳ディレクトリ
+// $child_language_dir = get_stylesheet_directory() . '/languages';
+// //子テーマの翻訳ファイル
+// $child_language_file = $child_language_dir.'/en.mo';
+
+// //Simplicityの多言語化
+// if (is_child_theme()) {
+//   //子テーマでは子テーマ内の翻訳ファイルを使用
+//   if (file_exists($child_language_file)) {
+//     load_theme_textdomain( THEME_NAME, $child_language_dir );
+//   } else {
+//     load_theme_textdomain( THEME_NAME, $language_dir );
+//   }
+// } else {
+//   //親テーマの翻訳ファイル
+//   load_theme_textdomain( THEME_NAME, $language_dir );
+// }
 
