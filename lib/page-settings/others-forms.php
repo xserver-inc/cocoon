@@ -39,12 +39,12 @@
         <!-- Simplicity設定の移行 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_MIGRATE_FROM_SIMPLICITY, __('Simplicity設定の移行', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_MIGRATE_FROM_SIMPLICITY, __('Simplicity設定', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_MIGRATE_FROM_SIMPLICITY , is_migrate_from_simplicity(), __( 'SimplicityからPost meta情報の移行', THEME_NAME ).'(Beta)');
-            generate_tips_tag(__( 'Simplicityから移行可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」「AMP除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。', THEME_NAME ));
+            generate_checkbox_tag(OP_MIGRATE_FROM_SIMPLICITY , is_migrate_from_simplicity(), __( 'Simplicityから投稿設定を引き継ぐ', THEME_NAME ).'(Beta)');
+            generate_tips_tag(__( 'Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」「AMP除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。', THEME_NAME ));
             ?>
           </td>
         </tr>
