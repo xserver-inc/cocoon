@@ -30,18 +30,6 @@ get_header(); ?>
 
 	<?php do_action( 'bbp_after_main_content' ); ?>
 
-  <?php get_template_part('ad-article-footer');//本文下広告?>
-
-  <div id="sns-group">
-  <?php if (is_mobile()) {//モバイルの時は単なるアイコン
-    get_template_part('sns-buttons-icon');
-  } else {//PCの時はバルーン付きボタン
-    get_template_part('sns-buttons');
-  } ?>
-
-  <?php get_template_part('sns-pages');?>
-  </div>
-
 </div><div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
