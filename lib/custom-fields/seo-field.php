@@ -182,7 +182,9 @@ function get_the_page_seo_title($id = null){
   if (is_migrate_from_simplicity())
     $value = $value !== '' ? $value : trim(get_post_meta($the_id,'seo_title', true));
 
-  return htmlspecialchars($value);
+  $value = htmlspecialchars($value);
+
+  return apply_filters('the_page_seo_title', $value);
 }
 endif;
 
