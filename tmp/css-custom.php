@@ -380,3 +380,16 @@ if ($width = get_footer_navi_menu_width()): ?>
   width: <?php echo $width; ?>px;
 }
 <?php endif ?>
+<?php //ページ設定で1カラムかつ狭い場合
+if (is_singular_page_type_narrow()):
+$main_column_width = get_main_column_width();
+ ?>
+.column-narrow .content-in{
+  width: <?php echo $main_column_width; ?>px;
+}
+@media screen and (max-width: <?php echo $main_column_width; ?>px){
+  .column-narrow .content-in{
+    width: auto;
+  }
+}
+<?php endif ?>
