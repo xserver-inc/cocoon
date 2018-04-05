@@ -3,7 +3,7 @@
 //フォントファミリークラスの取得
 if ( !function_exists( 'get_site_font_family_class' ) ):
 function get_site_font_family_class(){
-  return 'ff-'.str_replace('_', '-', get_site_font_family());
+  return 'ff-'.replace_value_to_class(get_site_font_family());
 }
 endif;
 
@@ -11,6 +11,12 @@ endif;
 if ( !function_exists( 'get_site_font_size_class' ) ):
 function get_site_font_size_class(){
   return 'fz-'.get_site_font_size();
+}
+endif;
+
+if ( !function_exists( 'replace_value_to_class' ) ):
+function replace_value_to_class($value){
+  return str_replace('_', '-', $value);;
 }
 endif;
 
@@ -73,12 +79,15 @@ function body_class_additional($classes) {
   //投稿管理画面で「1カラム」が選択されている場合
   if (is_singular() && is_singular_page_type_column1()) {
     $add_no_sidebar = true;
+    $classes[] = 'column1';
+    $classes[] = replace_value_to_class(get_singular_page_type());
   }
 
   //投稿管理画面で「本文のみ」が選択されている場合
   if (is_singular() && is_singular_page_type_content_only()) {
     $add_no_sidebar = true;
     $classes[] = 'content-only';
+    $classes[] = replace_value_to_class(get_singular_page_type());
   }
   //サイドバーにウィジェットが入っていない場合
   if (!is_active_sidebar( 'sidebar' )) {
@@ -160,7 +169,7 @@ function body_class_additional($classes) {
   }
 
   //モバイルボタンタイプ
-  $classes[] = 'mblt-'.str_replace('_', '-', get_mobile_button_layout_type());
+  $classes[] = 'mblt-'.replace_value_to_class(get_mobile_button_layout_type());
 
   //管理者クラス
   $author_id = get_the_author_meta( 'ID' );
@@ -548,7 +557,7 @@ function get_additional_related_entries_classes($option = null){
       $classes .= ' related-vartical-card';
       break;
   }
-  $classes .= ' related-'.str_replace('_', '-', get_related_entry_type());
+  $classes .= ' related-'.replace_value_to_class(get_related_entry_type());
   if (is_related_entry_border_visible()) {
     $classes .= ' related-entry-border';
   }
@@ -571,7 +580,7 @@ function get_additional_post_navi_classes($option = null){
   //     $classes .= ' related-vartical-card';
   //     break;
   // }
-  $classes .= ' post-navi-'.str_replace('_', '-', get_post_navi_type());
+  $classes .= ' post-navi-'.replace_value_to_class(get_post_navi_type());
   if (is_post_navi_border_visible()) {
     $classes .= ' post-navi-border';
   }
@@ -606,7 +615,7 @@ if ( !function_exists( 'get_additional_single_breadcrumbs_classes' ) ):
 function get_additional_single_breadcrumbs_classes($option = null){
   $classes = null;
 
-  $classes .= ' sbp-'.str_replace('_', '-', get_single_breadcrumbs_position());
+  $classes .= ' sbp-'.replace_value_to_class(get_single_breadcrumbs_position());
 
   switch (get_single_breadcrumbs_position()) {
     case 'main_before':
@@ -628,7 +637,7 @@ if ( !function_exists( 'get_additional_page_breadcrumbs_classes' ) ):
 function get_additional_page_breadcrumbs_classes($option = null){
   $classes = null;
 
-  $classes .= ' pbp-'.str_replace('_', '-', get_page_breadcrumbs_position());
+  $classes .= ' pbp-'.replace_value_to_class(get_page_breadcrumbs_position());
 
   switch (get_page_breadcrumbs_position()) {
     case 'main_before':
@@ -650,7 +659,7 @@ if ( !function_exists( 'get_additional_entry_card_classes' ) ):
 function get_additional_entry_card_classes($option = null){
   $classes = null;
 
-  $classes .= ' ect-'.str_replace('_', '-', get_entry_card_type());
+  $classes .= ' ect-'.replace_value_to_class(get_entry_card_type());
   switch (get_entry_card_type()) {
     case 'vertical_card_2':
     case 'vertical_card_3':
@@ -674,7 +683,7 @@ if ( !function_exists( 'get_additional_toc_classes' ) ):
 function get_additional_toc_classes($option = null){
   $classes = null;
 
-  $classes .= ' tnt-'.str_replace('_', '-', get_toc_number_type());
+  $classes .= ' tnt-'.replace_value_to_class(get_toc_number_type());
   if ($option) {
     $classes .= ' '.trim($option);
   }
@@ -688,7 +697,7 @@ if ( !function_exists( 'get_additional_appeal_area_classes' ) ):
 function get_additional_appeal_area_classes($option = null){
   $classes = null;
 
-  $classes .= ' adt-'.str_replace('_', '-', get_appeal_area_display_type());
+  $classes .= ' adt-'.replace_value_to_class(get_appeal_area_display_type());
 
 
   //背景画像の固定
@@ -709,7 +718,7 @@ if ( !function_exists( 'get_additional_categories_tags_area_classes' ) ):
 function get_additional_categories_tags_area_classes($option = null){
   $classes = null;
 
-  $classes .= ' ctdt-'.str_replace('_', '-', get_category_tag_display_type());
+  $classes .= ' ctdt-'.replace_value_to_class(get_category_tag_display_type());
 
   if ($option) {
     $classes .= ' '.trim($option);
@@ -724,7 +733,7 @@ if ( !function_exists( 'get_additional_admin_panel_area_classes' ) ):
 function get_additional_admin_panel_area_classes($option = null){
   $classes = null;
 
-  $classes .= ' apdt-'.str_replace('_', '-', get_admin_panel_display_type());
+  $classes .= ' apdt-'.replace_value_to_class(get_admin_panel_display_type());
 
   if ($option) {
     $classes .= ' '.trim($option);
