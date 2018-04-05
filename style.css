@@ -2625,9 +2625,6 @@ label.screen-reader-text {
 .related-mini-card .related-entry-card-title {
   font-size: 16px;
 }
-.related-mini-card .related-entry-card-snippet {
-  display: none;
-}
 
 /************************************
 ** 縦型カード
@@ -2653,9 +2650,6 @@ label.screen-reader-text {
 }
 .related-vartical-card .related-entry-card-title {
   font-size: 16px;
-}
-.related-vartical-card .related-entry-card-snippet {
-  display: none;
 }
 .related-vartical-card .related-entry-card-meta {
   display: none;
@@ -5135,7 +5129,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .entry-card-snippet,
   .related-entry-card-snippet {
     font-size: 14px;
-    line-height: 1.3;
   }
 
   table th,
@@ -5378,7 +5371,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .entry-card-snippet,
   .related-entry-card-snippet {
-    font-size: 0.8em;
+    font-size: 13px;
   }
 
   .cat-label {
