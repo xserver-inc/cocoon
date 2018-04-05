@@ -124,6 +124,15 @@ function generate_alert_tag($caption){?>
 }
 endif;
 
+
+//ハウツー説明文の生成
+if ( !function_exists( 'generate_howro_tag' ) ):
+function generate_howro_tag($caption){?>
+  <p class="howto"><?php echo $caption; ?></p>
+  <?php
+}
+endif;
+
 //解説ページへのリンク取得
 if ( !function_exists( 'get_help_page_tag' ) ):
 function get_help_page_tag($url){

@@ -19,33 +19,46 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'page_custom_box_view' ) ):
 function page_custom_box_view(){
-  $page_type = get_post_meta(get_the_ID(),'page_type', true);
+  $page_type = get_singular_page_type();
 
   //ページタイプ
   echo '<label>'.__( 'ページタイプ', THEME_NAME ).'</label><br>';
-  echo '<select name="page_type">';
-  //デフォルト
-  echo '<option value="default"';
-  if( $page_type == 'default' ){echo ' selected';}
-  echo '>'.__( 'デフォルト', THEME_NAME ).'</option>';
-  // //1カラム（狭い）
-  // echo '<option value="column1_narrow"';
-  // if( $page_type == 'column1_narrow' ){echo ' selected';}
-  // echo '>'.__( '1カラム（狭い）', THEME_NAME ).'</option>';
-  //1カラム（広い）
-  echo '<option value="column1_wide"';
-  if( $page_type == 'column1_wide' ){echo ' selected';}
-  echo '>'.__( '1カラム', THEME_NAME ).'</option>';
-  // //本文のみ（狭い）
-  // echo '<option value="content_only_narrow"';
-  // if( $page_type == 'content_only_narrow' ){echo ' selected';}
-  // echo '>'.__( '本文のみ（狭い）', THEME_NAME ).'</option>';
-  //本文のみ（広い）
-  echo '<option value="content_only_wide"';
-  if( $page_type == 'content_only_wide' ){echo ' selected';}
-  echo '>'.__( '本文のみ', THEME_NAME ).'</option>';
-  echo '</select>';
-  echo '<p class="howto">'.__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ).'</p>';
+  $options = array(
+    'default' => __( 'デフォルト', THEME_NAME ),
+    'column1_wide' => __( '1カラム（広い）', THEME_NAME ),
+    'column1_narrow' => __( '1カラム（狭い）', THEME_NAME ),
+    'content_only_wide' => __( '本文のみ（広い）', THEME_NAME ),
+    'content_only_narrow' => __( '本文のみ（狭い）', THEME_NAME ),
+  );
+  generate_selectbox_tag('page_type', $options, $page_type);
+  generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
+
+
+  // //ページタイプ
+  // echo '<label>'.__( 'ページタイプ', THEME_NAME ).'</label><br>';
+  // echo '<select name="page_type">';
+  // //デフォルト
+  // echo '<option value="default"';
+  // if( $page_type == 'default' ){echo ' selected';}
+  // echo '>'.__( 'デフォルト', THEME_NAME ).'</option>';
+  // // //1カラム（狭い）
+  // // echo '<option value="column1_narrow"';
+  // // if( $page_type == 'column1_narrow' ){echo ' selected';}
+  // // echo '>'.__( '1カラム（狭い）', THEME_NAME ).'</option>';
+  // //1カラム（広い）
+  // echo '<option value="column1_wide"';
+  // if( $page_type == 'column1_wide' ){echo ' selected';}
+  // echo '>'.__( '1カラム', THEME_NAME ).'</option>';
+  // // //本文のみ（狭い）
+  // // echo '<option value="content_only_narrow"';
+  // // if( $page_type == 'content_only_narrow' ){echo ' selected';}
+  // // echo '>'.__( '本文のみ（狭い）', THEME_NAME ).'</option>';
+  // //本文のみ（広い）
+  // echo '<option value="content_only_wide"';
+  // if( $page_type == 'content_only_wide' ){echo ' selected';}
+  // echo '>'.__( '本文のみ', THEME_NAME ).'</option>';
+  // echo '</select>';
+  // echo '<p class="howto">'.__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ).'</p>';
 
 }
 endif;
