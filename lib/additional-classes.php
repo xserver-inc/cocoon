@@ -80,15 +80,31 @@ function body_class_additional($classes) {
   if (is_singular() && is_singular_page_type_column1()) {
     $add_no_sidebar = true;
     $classes[] = 'column1';
-    $classes[] = replace_value_to_class(get_singular_page_type());
   }
 
   //投稿管理画面で「本文のみ」が選択されている場合
   if (is_singular() && is_singular_page_type_content_only()) {
     $add_no_sidebar = true;
     $classes[] = 'content-only';
+  }
+
+  //投稿管理画面で「狭い」が選択されている場合
+  if (is_singular() && is_singular_page_type_narrow()) {
+    $add_no_sidebar = true;
+    $classes[] = 'column-narrow';
+  }
+
+  //投稿管理画面で「広い」が選択されている場合
+  if (is_singular() && is_singular_page_type_wide()) {
+    $add_no_sidebar = true;
+    $classes[] = 'column-wide';
+  }
+
+  //投稿管理画面で「デフォルト」以外が選択されている場合
+  if (!is_singular_page_type_default()) {
     $classes[] = replace_value_to_class(get_singular_page_type());
   }
+
   //サイドバーにウィジェットが入っていない場合
   if (!is_active_sidebar( 'sidebar' )) {
     $add_no_sidebar = true;
