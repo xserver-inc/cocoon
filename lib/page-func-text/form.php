@@ -32,7 +32,7 @@
 
   //TinyMCE表示
   generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
-  generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストにに表示しなくて良い場合は、無効にしてください。', THEME_NAME )); ?>
+  generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME )); ?>
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y"><br>
