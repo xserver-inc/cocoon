@@ -37,6 +37,8 @@
 .related-entry-card-meta {
   @extend %card_meta;
 }
+
+
 // .related-entry-card-thumb{
 //   float: left;
 //   margin-top: $emtry_card_thumb_margin_top;
@@ -83,9 +85,9 @@
     font-size: 16px;
   }
 
-  // .related-entry-card-snippet{
-  //   display: none;
-  // }
+  .related-entry-card-snippet{
+    display: none;
+  }
 }
 
 /************************************

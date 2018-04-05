@@ -2628,6 +2628,9 @@ label.screen-reader-text {
 .related-mini-card .related-entry-card-title {
   font-size: 16px;
 }
+.related-mini-card .related-entry-card-snippet {
+  display: none;
+}
 
 /************************************
 ** 縦型カード
@@ -5573,7 +5576,8 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 }
 @media screen and (max-width: 356px) {
-  .ect-vertical-card .entry-card-wrap {
+  .ect-vertical-card .entry-card-wrap,
+  .related-vartical-card .related-entry-card-wrap {
     width: 100%;
   }
 }
