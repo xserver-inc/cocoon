@@ -131,6 +131,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   right: 0;
   text-align: right;
   line-height: 1;
+  background-color: #fff;
+  padding-left: 8px;
 }
 
 .entry-categories-tags {
@@ -5360,9 +5362,21 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin: 6px 0 12px;
   }
 
+  .entry-card,
+  .related-entry-card,
+  .entry-card-title,
+  .related-entry-card-title {
+    line-height: 1.1;
+  }
+
+  .entry-card-title,
+  .related-entry-card-title {
+    font-size: 16px;
+  }
+
   .entry-card-snippet,
   .related-entry-card-snippet {
-    display: none;
+    font-size: 0.8em;
   }
 
   .cat-label {
@@ -5556,7 +5570,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 0.74em;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap {
     width: 100%;
   }

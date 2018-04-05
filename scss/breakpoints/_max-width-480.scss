@@ -8,9 +8,22 @@ h3{
   margin: 6px 0 12px;
 }
 
+.entry-card,
+.related-entry-card,
+.entry-card-title,
+.related-entry-card-title{
+  line-height: 1.1;
+}
+
+
+.entry-card-title,
+.related-entry-card-title{
+  font-size: 16px;
+}
+
 .entry-card-snippet,
 .related-entry-card-snippet{
-	display: none;
+	font-size: 0.8em;
 }
 
 .cat-label{

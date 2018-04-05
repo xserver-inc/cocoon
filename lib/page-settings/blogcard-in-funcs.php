@@ -21,7 +21,7 @@ endif;
 define('OP_INTERNAL_BLOGCARD_TARGET_BLANK', 'internal_blogcard_target_blank');
 if ( !function_exists( 'is_internal_blogcard_target_blank' ) ):
 function is_internal_blogcard_target_blank(){
-  return false;
-  //return get_theme_option(OP_INTERNAL_BLOGCARD_TARGET_BLANK);
+  //return false;
+  return get_theme_option(OP_INTERNAL_BLOGCARD_TARGET_BLANK);
 }
 endif;
