@@ -302,7 +302,8 @@ a:hover {
 /************************************
 ** WordPress Misc
 ************************************/
-img.aligncenter {
+img.aligncenter,
+.wp-caption.aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -328,6 +329,7 @@ img.alignright,
   border-radius: 3px;
   background-color: #f3f4f5;
   text-align: center;
+  max-width: 100%;
 }
 
 .wp-caption-text,
