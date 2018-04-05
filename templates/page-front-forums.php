@@ -30,6 +30,4 @@ get_header(); ?>
 
 	<?php do_action( 'bbp_after_main_content' ); ?>
 
-</div><div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
