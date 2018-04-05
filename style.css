@@ -5569,6 +5569,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .blogcard-snipet {
     font-size: 0.74em;
   }
+
+  .ect-vertical-card .entry-card-wrap {
+    margin-bottom: 8px;
+  }
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap {
