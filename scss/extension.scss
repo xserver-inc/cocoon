@@ -126,7 +126,7 @@
 .information,
 .question,
 .alert{
-  background-color: #F4F3EB;
+  //background-color: #F4F3EB;
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -136,9 +136,23 @@
   //overflow: hidden;
 }
 
+.information-box,
+.information{
+  background: rgba(135,206,250,.1);
+  border: 1px solid rgba(135,206,250,.5);
+}
+
+.question-box,
+.question{
+  background: rgba(255,215,0,.2);
+  border: 1px solid rgba(255,215,0,.5);;
+}
+
 .alert-box,
 .alert{
-  background-color: #fdeff2;
+  //background-color: #fdeff2;
+  background: rgba(240,128,128,.1);
+  border: 1px solid rgba(240,128,128,.5);
 }
 
 .information-box::before,
@@ -153,23 +167,32 @@
   //top: 20px;
   top: -13px;
   left: 13px;
-  color: #EAE3B4;
+  //color: #EAE3B4;
+  padding-right: .15em;
+  line-height: 1em;
+  top: 50%;
+  margin-top: -.5em;
 }
 
 .information-box::before,
 .information::before{
   content: '\f05a';
+  color:#87cefa;
+  border-right: 1px solid rgba(135,206,250,.5);
 }
 
 .question-box::before,
 .question::before{
   content: '\f059';
+  color: gold;
+  border-right: 1px solid rgba(255,215,0,.5);
 }
 
 .alert-box::before,
 .alert::before{
   content: '\f06a';
   color: #f3aca9;
+  border-right: 1px solid rgba(240,128,128,.5);
 }
 
 #wpadminbar .alert::before{
