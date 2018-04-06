@@ -206,7 +206,7 @@
   .information,
   .question,
   .alert{
-    padding: 6px 6px 6px 24px;
+    padding: 6px 6px 6px 26px;
   }
 
   .information-box::before,
@@ -215,17 +215,18 @@
   .information::before,
   .question::before,
   .alert::before{
-    top: 6px;
+    top: 1em;
     left: 6px;
     font-size: 18px;
+    border: none;
   }
 
-  .information-box::before,
-  .question-box::before,
-  .information::before,
-  .question::before{
-    color: #d3c463;
-  }
+  // .information-box::before,
+  // .question-box::before,
+  // .information::before,
+  // .question::before{
+  //   color: #d3c463;
+  // }
 }
 
 /*******************************
