@@ -44,10 +44,10 @@ function replace_anchor_links($the_content) {
         continue;
       }
 
-      //ボタンを除外
-      if ((strpos($value, 'class="btn ') > 0)) {
-        continue;
-      }
+      // //ボタンを除外
+      // if ((strpos($value, 'class="btn ') > 0)) {
+      //   continue;
+      // }
 
       //イメージリンクを除外
       if (preg_match('{<a[^>]+?href="[^"]+?"[^>]*?>\s*?<img .+?>\s*?</a>}is', $value)) {
@@ -75,7 +75,7 @@ function replace_anchor_links($the_content) {
 
         if (!is_anchor_link_tag_blogcard($value)) {
           //アイコフォントの表示
-          $new_a = replace_link_icon_font_tag( is_internal_link_icon_visible(), get_internal_link_icon(), 'internal-icon', $new_a );
+          $new_a = replace_link_icon_font_tag( is_internal_link_icon_visible(), get_internal_link_icon(), 'internal-icon anchor-icon', $new_a );
         }
 
       } else { //外部リンクの場合
@@ -96,7 +96,7 @@ function replace_anchor_links($the_content) {
 
         if (!is_anchor_link_tag_blogcard($value)) {
           //アイコフォントの表示
-          $new_a = replace_link_icon_font_tag( is_external_link_icon_visible(), get_external_link_icon(), 'external-icon', $new_a );
+          $new_a = replace_link_icon_font_tag( is_external_link_icon_visible(), get_external_link_icon(), 'external-icon anchor-icon', $new_a );
         }
       }//内部リンクか外部リンクか条件分岐の終わり
 

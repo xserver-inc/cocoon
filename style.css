@@ -3917,10 +3917,6 @@ div.fb-like-mobile {
   font-size: 18px;
   margin-top: 0;
 }
-.ranking-items .internal-icon,
-.ranking-items .external-icon {
-  display: none;
-}
 
 .ranking-item {
   padding: 3%;
@@ -4240,6 +4236,16 @@ div.fb-like-mobile {
   background-color: transparent;
   padding: 0;
   max-width: 120px;
+}
+
+.ranking-items .anchor-icon,
+#wpforo-wrap .anchor-icon,
+.gallery .anchor-icon,
+.amazonjs_item
+.btn .anchor-icon,
+.amazonjs_item .ranking-item-link-buttons a .anchor-icon,
+.ranking-item-link-buttons .amazonjs_item a .anchor-icon {
+  display: none;
 }
 
 .display-block {
@@ -4980,10 +4986,6 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
   font-size: 17px;
-}
-div#wpforo-wrap .internal-icon,
-div#wpforo-wrap .external-icon {
-  display: none;
 }
 
 .wpforo-list-item p {
