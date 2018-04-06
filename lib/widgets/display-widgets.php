@@ -299,14 +299,14 @@ jQuery(document).ready(function($){
 
   }
 
-  $('.widget-top').on('click', function(){
-    //console.log('click');
-    var widgetContext = $(this).context.parentNode;
-    //console.log(widgetContext);
-    set_click_events(widgetContext);
-      // var id = $(this).parent.attr("id");
-      // alert(id);
-  });
+  // $('.widget-top').on('click', function(){
+  //   //console.log('click');
+  //   var widgetContext = $(this).context.parentNode;
+  //   //console.log(widgetContext);
+  //   set_click_events(widgetContext);
+  //     // var id = $(this).parent.attr("id");
+  //     // alert(id);
+  // });
 
   $('.display-widgets-toggle').on('click', function(){
     //console.log('display-widgets-toggle click');
@@ -318,9 +318,6 @@ jQuery(document).ready(function($){
     if (!$(widgetContext).hasClass('toggle-event-on')) {
       set_click_events(widgetContext);
     }
-
-      // var id = $(this).parent.attr("id");
-      // alert(id);
   });
 
   // 1. when dropped in
@@ -333,24 +330,26 @@ jQuery(document).ready(function($){
     // loadScript('http://cocoon.dev/wp-includes/js/thickbox/thickbox.js');
     // loadScript('http://cocoon.dev/wp-admin/js/media-upload.min.js');
   });
+
   // 2. do some stuff on load
   //console.log('onLoad');
   //console.log($);
   //set_click_events(ui);
-  // 3. on action
-  $(document).delegate('.our_widget_class', 'change', function(ev) {
-    // you have to find the parent widget here,
-    // and do something for it. And this is not easy
-    // because the widget shouldn't have it's ID yet, but still possible.
-    // This is actually the safest part of the whole process (maybe just for me)
-    //console.log('the element changed');
-  });
-  // 4. on save
-  $('body').ajaxSuccess(function(evt, request, settings) {
-    //console.log('saved');
-    //set_click_events(ui);
-    //load_scripts();
-  });
+
+  // // 3. on action
+  // $(document).delegate('.our_widget_class', 'change', function(ev) {
+  //   // you have to find the parent widget here,
+  //   // and do something for it. And this is not easy
+  //   // because the widget shouldn't have it's ID yet, but still possible.
+  //   // This is actually the safest part of the whole process (maybe just for me)
+  //   //console.log('the element changed');
+  // });
+
+  // // 4. on save
+  // $('body').ajaxSuccess(function(evt, request, settings) {
+  //   //console.log('saved');
+  // });
+
 });
 </script>
 <?php
