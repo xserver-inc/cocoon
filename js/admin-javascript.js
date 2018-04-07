@@ -12,9 +12,9 @@
   /////////////////////////////////
   //トグルスイッチ
   /////////////////////////////////
-  $('.toggle-link').click(function(){
-    $(this).next('.toggle-content').toggle();
-  });
+  // $('.toggle-link').click(function(){
+  //   $(this).next('.toggle-content').toggle();
+  // });
 
   //$(".display-widgets-toggle").insertBefore(".widget-control-save");
 
