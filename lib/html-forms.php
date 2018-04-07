@@ -524,7 +524,7 @@ function generate_hierarchical_category_check_list( $cat, $name, $checks, $width
   } else {
     $width = $width.'px';
   }
-  echo '<div class="category-check-list '.$name.'-list" style="width: '.$width.';">';
+  echo '<div class="tab-content category-check-list '.$name.'-list" style="width: '.$width.';">';
   hierarchical_category_check_list( $cat, $name, $checks );
   echo '</div>';
 }
@@ -572,7 +572,7 @@ function generate_page_display_check_list( $name, $checks, $width = 0 ) {
     $checks = array();
   }
 
-  echo '<div class="page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
+  echo '<div class="tab-content page-display-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
   echo '<li><input type="checkbox" name="'.$name.'[]" value="is_front_page" ';
   checked(in_array('is_front_page', $checks));
@@ -655,7 +655,7 @@ function generate_author_check_list( $name, $checks, $width = 0 ) {
     $checks = array();
   }
 
-  echo '<div class="author-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
+  echo '<div class="tab-content author-check-list '.$name.'-list" style="width: '.$width.';"><ul>';
 
   $users = get_users( array('orderby'=>'ID','order'=>'ASC') );
   foreach($users as $user) {
@@ -678,7 +678,7 @@ function generate_post_check_list( $name, $value, $width = 0 ) {
     $width = $width.'px';
   }
 
-  echo '<div class="post-check-list '.$name.'-list" style="width: '.$width.';">';
+  echo '<div class="tab-content post-check-list '.$name.'-list" style="width: '.$width.';">';
 
   echo '<p>'.__( '投稿ID入力', THEME_NAME ).'</p>';
   generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
@@ -698,7 +698,7 @@ function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
     $width = $width.'px';
   }
 
-  echo '<div class="fixed-page-check-list '.$name.'-list" style="width: '.$width.';">';
+  echo '<div class="tab-content fixed-page-check-list '.$name.'-list" style="width: '.$width.';">';
 
   echo '<p>'.__( '固定ページID入力', THEME_NAME ).'</p>';
   generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));

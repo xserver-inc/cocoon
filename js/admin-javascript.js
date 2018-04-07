@@ -7,8 +7,6 @@
     $('#select_index').val(index);
   });
 
-
-
   /////////////////////////////////
   //トグルスイッチ
   /////////////////////////////////
@@ -37,29 +35,5 @@
     });
   }
   delete_wp_adminbar('.iframe-demo');
-  // delete_wp_adminbar('#all-demo');
-  // delete_wp_adminbar('#mobile-demo');
-  // delete_wp_adminbar('#page-404-demo');
-
-// $('#all-demo').on('load', function(){
-//   $('#all-demo').contents().find('#wpadminbar').hide();
-//   $('#all-demo').contents().find('html').css({'cssText': 'margin-top: 0px !important;'});
-// });
-
-
-// $(function(){
-//     setInterval(function(){
-//         $('.slick-arrow').click();
-//     },1000);
-// });
-// $(function(){
-
-//       if (timer !== false) {
-//         clearTimeout(timer);
-//       }
-//       timer = setTimeout(function(){
-//       $('.slick-arrow').click();
-//     },1000);
-//   });
 
 })(jQuery);
