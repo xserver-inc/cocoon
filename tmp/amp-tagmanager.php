@@ -6,7 +6,7 @@ if ( !is_user_admin() ) {
   if ( $tracking_id ) { ?>
 
   <!-- AMP Google Tag Manager -->
-  <amp-analytics config="https://www.googletagmanager.com/amp.json?id=<?php echo $tracking_id; ?>" data-credentials="include"></amp-analytics>
+  <amp-analytics config="https://www.googletagmanager.com/amp.json?id=<?php echo $tracking_id; ?>&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
   <!-- /AMP Google Tag Manager -->
   <?php
   } //$tracking_id
