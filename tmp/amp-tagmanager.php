@@ -4,7 +4,10 @@ if ( !is_user_admin() ) {
   $tracking_id = get_google_tag_manager_tracking_id();
 
   if ( $tracking_id ) { ?>
+
+  <!-- AMP Google Tag Manager -->
   <amp-analytics config="https://www.googletagmanager.com/amp.json?id=<?php echo $tracking_id; ?>" data-credentials="include"></amp-analytics>
+  <!-- /AMP Google Tag Manager -->
   <?php
   } //$tracking_id
 }//AMP Google Tag Mana終了 ?>

@@ -6,6 +6,8 @@ if ( !is_user_admin() ) {
   $after_title = '[AMP]';
 
   if ( $tracking_id ) { ?>
+
+  <!-- AMP Google Analytics -->
   <amp-analytics type="googleanalytics" id="analytics-amp">
   <script type="application/json">
   {
@@ -25,6 +27,7 @@ if ( !is_user_admin() ) {
   }
   </script>
   </amp-analytics>
+  <!-- /AMP Google Analytics -->
   <?php //AMP用Analyticsトラッキングコードを設定しておらず通常ステージ用の場合
   }
 }//AMP Analytics終了 ?>
