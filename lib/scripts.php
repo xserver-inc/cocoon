@@ -11,11 +11,6 @@ function wp_enqueue_scripts_custom() {
 
 
   ///////////////////////////////////////////
-  //呼び出し中のベースとなるCSS
-  ///////////////////////////////////////////
-  //wp_enqueue_style( 'base-style', get_template_directory_uri() . '/css/base-style.css' );
-
-  ///////////////////////////////////////////
   //テーマスタイルの呼び出し
   ///////////////////////////////////////////
   wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );

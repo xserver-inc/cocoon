@@ -341,6 +341,25 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ +webkitAllowFullScreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
   $the_content = preg_replace('/ +mozallowfullscreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
 
+
+  //Amazon商品紹介iframeのAMP化
+  $pattern = '{<iframe.+? src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?</iframe>}is';
+  if (preg_match_all($pattern, $the_content, $m)) {
+    $all_idx = 0;
+    $url_idx = 1;
+    //_v($m);
+    if ($m[0]) {
+      $i = 0;
+      foreach ($m[$all_idx] as $key => $iframe_raw) {
+        $iframe_new = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="'.$m[$url_idx][$i].'" width="120" height="240">'.$amp_placeholder.'</amp-iframe>';
+        //_v($iframe_new);
+        $the_content = str_replace($iframe_raw, $iframe_new, $the_content);
+        $i++;
+      }
+    }
+    //_v($m);
+  }
+
   //タイトルつきiframeでhttpを呼び出している場合は通常リンクに修正
   $pattern = '/<iframe[^>]+?src="(http:\/\/[^"]+?)"[^>]+?title="([^"]+?)"[^>]+?><\/iframe>/is';
   $append = '<a href="$1">$2</a>';
@@ -361,6 +380,7 @@ function convert_content_for_amp($the_content){
   $append = $amp_placeholder.'</amp-iframe>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
+//_v($the_content);
   //Amazon商品紹介iframeパーツのAMP化
   $pattern = '/<amp-iframe layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d+" height="\d+")?/i';
   $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
