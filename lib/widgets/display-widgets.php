@@ -65,8 +65,11 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   }
   //var_dump($widget_id);
   $toggle_name = 'tlink-'.$widget_id;
+  $checkbox_id = 'toggle-checkbox-'.$widget_id;
    ?>
-    <div class="display-widgets-toggle toggle-link" id="<?php echo $toggle_name; ?>"><?php _e( '表示設定', THEME_NAME ) ?></div>
+  <div class="toggle-wrap">
+    <input type="checkbox" id="<?php echo $checkbox_id; ?>">
+    <label class="toggle-button display-widgets-toggle toggle-link" id="<?php echo $toggle_name; ?>" for="<?php echo $checkbox_id; ?>"><?php _e( '表示設定', THEME_NAME ) ?></label>
     <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
@@ -98,18 +101,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
        ?>
       </div>
     </div>
-
-  <script type="text/javascript">
-    // $(document).on("click", "#<?php echo $toggle_name; ?>", function(){
-    //     $(this).next(".toggle-content").toggle();
-    // });
-    $(document).ready(function(){
-      $("#<?php echo $toggle_name; ?>").click(function(){
-        //console.log('a');
-        $(this).next(".toggle-content").toggle();
-      });
-    });
-  </script>
+  </div>
   <?php
   $parent = '#tabs-'.$widget_id;
    ?>
@@ -166,40 +158,6 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     });
   </script>
 
-
-<!--
-  <script type="text/javascript">
-    $('.tabs-widget li').on('click', function(e) {
-      var index = $('.tabs-widget').index(this);
-      console.log(index)
-      //console.log(e.target);
-      //_v($this);
-    });
-  </script> -->
-<?php if ($widget->updated): ?>
-<!--   <script type='text/javascript' src='//code.jquery.com/jquery.min.js'></script>
-  <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/jquery.tabs.js'></script>
-  <script type='text/javascript'>
-    tabify("#tabs-<?php echo $widget_id; ?>");
-  </script>
-  <script type="text/javascript">
-    $(".toggle-link").click(function(){
-      $(this).next(".toggle-content").toggle();
-    });
-  </script> -->
-<?php else:
-  // //タブの読み込み
-  // wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );
-  // wp_enqueue_script( 'tab-js', get_template_directory_uri() . '/js/jquery.tabs.js', array( 'tab-js-jquery' ), false, true );
-  // $data = '$(document).ready( function() {
-  //            tabify("#tabs-'.$widget_id.'");
-  //          });';
-  // wp_add_inline_script( 'tab-js', $data, 'after' ) ;
-
-  //   //管理画面用のJavaScriptの読み込み
-  //   wp_enqueue_script( 'admin-javascript', get_template_directory_uri() . '/js/admin-javascript.js', array( ), false, true );
-endif ?>
-
   <?php
 
   return;
@@ -227,12 +185,12 @@ jQuery(document).ready(function($){
 
   function set_click_events(ui) {
     //console.log(ui);
-    $(ui).addClass('toggle-event-on');
-    //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
-    var btn_id = get_target_id(ui, ".toggle-link");
-    $(document).on("click", btn_id, function(){
-      $(this).next(".toggle-content").toggle();
-    });
+    //#13#10$(ui).addClass('toggle-event-on');
+    // //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
+    // var btn_id = get_target_id(ui, ".toggle-link");
+    // $(document).on("click", btn_id, function(){
+    //   $(this).next(".toggle-content").toggle();
+    // });
 
 
     var parent_id = get_target_id(ui, ".tabs-widget");
@@ -308,17 +266,17 @@ jQuery(document).ready(function($){
   //     // alert(id);
   // });
 
-  $('.display-widgets-toggle').on('click', function(){
-    //console.log('display-widgets-toggle click');
-    var widgetContext = $(this).context.parentNode;
-    widgetContext = $(widgetContext).context.parentNode;
-    widgetContext = $(widgetContext).context.parentNode;
-    widgetContext = $(widgetContext).context.parentNode;
-    //console.log(widgetContext);
-    if (!$(widgetContext).hasClass('toggle-event-on')) {
-      set_click_events(widgetContext);
-    }
-  });
+  // $('.display-widgets-toggle').on('click', function(){
+  //   //console.log('display-widgets-toggle click');
+  //   var widgetContext = $(this).context.parentNode;
+  //   widgetContext = $(widgetContext).context.parentNode;
+  //   widgetContext = $(widgetContext).context.parentNode;
+  //   widgetContext = $(widgetContext).context.parentNode;
+  //   //console.log(widgetContext);
+  //   if (!$(widgetContext).hasClass('toggle-event-on')) {
+  //     set_click_events(widgetContext);
+  //   }
+  // });
 
   // 1. when dropped in
   $('div.widgets-sortables').bind('sortstop',function(event,ui){
