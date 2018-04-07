@@ -154,7 +154,7 @@ $bgc_hover_anime: all 0.5s ease;
 
 %card_snippet{
   font-size: $text_size_s;
-  max-height: 6em;
+  max-height: #{6 * 1.3}em;
   line-height: 1.3;
   overflow: hidden;
 }
