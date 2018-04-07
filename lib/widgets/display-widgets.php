@@ -79,15 +79,44 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           'hide' => __( 'チェック・入力したページで非表示', THEME_NAME ),
           'show' => __( 'チェック・入力したページで表示', THEME_NAME ),
         );
-        generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);?>
-        <div id="tabs-<?php echo $widget_id; ?>" class="tabs-widget">
-        <ul>
-          <li id="cat-<?php echo $widget_id; ?>" class="cat-tab"><?php _e( 'カテゴリー', THEME_NAME ) ?></li>
-          <li id="page-<?php echo $widget_id; ?>" class="page-tab"><?php _e( 'ページ', THEME_NAME ) ?></li>
-          <li id="author-<?php echo $widget_id; ?>" class="author-tab"><?php _e( '著者', THEME_NAME ) ?></li>
-          <li id="post-<?php echo $widget_id; ?>" class="post-tab"><?php _e( '投稿', THEME_NAME ) ?></li>
-          <li id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab"><?php _e( '固定ページ', THEME_NAME ) ?></li>
-        </ul>
+        generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        $cat_tab_id = 'cat-tab-'.$widget_id;
+        $page_tab_id = 'page-tab-'.$widget_id;
+        $author_tab_id = 'author-tab-'.$widget_id;
+        $post_tab_id = 'post-tab-'.$widget_id;
+        $fixed_page_tab_id = 'fixed-page-tab-'.$widget_id;
+      ?>
+      <style type="text/css">
+        /*選択されているタブのコンテンツのみを表示*/
+        #<?php echo $cat_tab_id; ?>:checked ~ .category-check-list,
+        #<?php echo $page_tab_id; ?>:checked ~ .page-display-check-list,
+        #<?php echo $author_tab_id; ?>:checked ~ .author-check-list,
+        #<?php echo $post_tab_id; ?>:checked ~ .post-check-list,
+        #<?php echo $fixed_page_tab_id; ?>:checked ~ .fixed-page-check-list {
+          display: block;
+        }
+
+        /*選択されているタブのスタイルを変える*/
+        .tabs input:checked + .tab-item {
+          background-color: #fff;
+        }
+      </style>
+      <div id="tabs-<?php echo $widget_id; ?>" class="tabs">
+        <input id="<?php echo $cat_tab_id; ?>" type="radio" name="tab_item" checked>
+        <label id="cat-<?php echo $widget_id; ?>" class="cat-tab tab-item" for="<?php echo $cat_tab_id; ?>"><?php _e( 'カテゴリー', THEME_NAME ) ?></label>
+
+        <input id="<?php echo $page_tab_id; ?>" type="radio" name="tab_item">
+        <label id="page-<?php echo $widget_id; ?>" class="page-tab tab-item" for="<?php echo $page_tab_id; ?>"><?php _e( 'ページ', THEME_NAME ) ?></label>
+
+        <input id="<?php echo $author_tab_id; ?>" type="radio" name="tab_item">
+        <label id="author-<?php echo $widget_id; ?>" class="author-tab tab-item" for="<?php echo $author_tab_id; ?>"><?php _e( '著者', THEME_NAME ) ?></label>
+
+        <input id="<?php echo $post_tab_id; ?>" type="radio" name="tab_item">
+        <label id="post-<?php echo $widget_id; ?>" class="post-tab tab-item" for="<?php echo $post_tab_id; ?>"><?php _e( '投稿', THEME_NAME ) ?></label>
+
+        <input id="<?php echo $fixed_page_tab_id; ?>" type="radio" name="tab_item">
+        <label id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab tab-item" for="<?php echo $fixed_page_tab_id; ?>"><?php _e( '固定ページ', THEME_NAME ) ?></label>
+
         <?php
         //echo get_hierarchical_category_check_list_box(0, $widget->get_field_name('widget_categories'), $widget_categories);
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
@@ -101,61 +130,61 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
        ?>
       </div>
     </div>
-  </div>
+  </div><!-- .toggle-wrap -->
   <?php
   $parent = '#tabs-'.$widget_id;
    ?>
   <script type='text/javascript'>
-    $(document).ready(function(){
-      function set_tab_css(ele) {
-        $('<?php echo $parent; ?> > ul > li').css('border-color', '#333');
-        $(ele).css('border-color', '#aaa');
-        $('<?php echo $parent; ?> > ul > li').css('background-color', '#f1f1f1');
-        $(ele).css('background-color', '#fff');
-      }
-      //タブ制御
-      $("#cat-<?php echo $widget_id; ?>").click(function(){
-        set_tab_css(this);
-        $('<?php echo $parent; ?> .category-check-list').show();
-        $('<?php echo $parent; ?> .page-display-check-list').hide();
-        $('<?php echo $parent; ?> .author-check-list').hide();
-        $('<?php echo $parent; ?> .post-check-list').hide();
-        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
-      });
-      $("#page-<?php echo $widget_id; ?>").click(function(){
-        set_tab_css(this);
-        $('<?php echo $parent; ?> .category-check-list').hide();
-        $('<?php echo $parent; ?> .page-display-check-list').show();
-        $('<?php echo $parent; ?> .author-check-list').hide();
-        $('<?php echo $parent; ?> .post-check-list').hide();
-        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
-      });
-      $("#author-<?php echo $widget_id; ?>").click(function(){
-        set_tab_css(this);
-        $('<?php echo $parent; ?> .category-check-list').hide();
-        $('<?php echo $parent; ?> .page-display-check-list').hide();
-        $('<?php echo $parent; ?> .author-check-list').show();
-        $('<?php echo $parent; ?> .post-check-list').hide();
-        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
-      });
-      $("#post-<?php echo $widget_id; ?>").click(function(){
-        set_tab_css(this);
-        $('<?php echo $parent; ?> .category-check-list').hide();
-        $('<?php echo $parent; ?> .page-display-check-list').hide();
-        $('<?php echo $parent; ?> .author-check-list').hide();
-        $('<?php echo $parent; ?> .post-check-list').show();
-        $('<?php echo $parent; ?> .fixed-page-check-list').hide();
-      });
-      $("#fixed-page-<?php echo $widget_id; ?>").click(function(){
-        set_tab_css(this);
-        $('<?php echo $parent; ?> .category-check-list').hide();
-        $('<?php echo $parent; ?> .page-display-check-list').hide();
-        $('<?php echo $parent; ?> .author-check-list').hide();
-        $('<?php echo $parent; ?> .post-check-list').hide();
-        $('<?php echo $parent; ?> .fixed-page-check-list').show();
-      });
+    // $(document).ready(function(){
+    //   function set_tab_css(ele) {
+    //     $('<?php echo $parent; ?> > ul > li').css('border-color', '#333');
+    //     $(ele).css('border-color', '#aaa');
+    //     $('<?php echo $parent; ?> > ul > li').css('background-color', '#f1f1f1');
+    //     $(ele).css('background-color', '#fff');
+    //   }
+    //   //タブ制御
+    //   $("#cat-<?php echo $widget_id; ?>").click(function(){
+    //     set_tab_css(this);
+    //     $('<?php echo $parent; ?> .category-check-list').show();
+    //     $('<?php echo $parent; ?> .page-display-check-list').hide();
+    //     $('<?php echo $parent; ?> .author-check-list').hide();
+    //     $('<?php echo $parent; ?> .post-check-list').hide();
+    //     $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+    //   });
+    //   $("#page-<?php echo $widget_id; ?>").click(function(){
+    //     set_tab_css(this);
+    //     $('<?php echo $parent; ?> .category-check-list').hide();
+    //     $('<?php echo $parent; ?> .page-display-check-list').show();
+    //     $('<?php echo $parent; ?> .author-check-list').hide();
+    //     $('<?php echo $parent; ?> .post-check-list').hide();
+    //     $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+    //   });
+    //   $("#author-<?php echo $widget_id; ?>").click(function(){
+    //     set_tab_css(this);
+    //     $('<?php echo $parent; ?> .category-check-list').hide();
+    //     $('<?php echo $parent; ?> .page-display-check-list').hide();
+    //     $('<?php echo $parent; ?> .author-check-list').show();
+    //     $('<?php echo $parent; ?> .post-check-list').hide();
+    //     $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+    //   });
+    //   $("#post-<?php echo $widget_id; ?>").click(function(){
+    //     set_tab_css(this);
+    //     $('<?php echo $parent; ?> .category-check-list').hide();
+    //     $('<?php echo $parent; ?> .page-display-check-list').hide();
+    //     $('<?php echo $parent; ?> .author-check-list').hide();
+    //     $('<?php echo $parent; ?> .post-check-list').show();
+    //     $('<?php echo $parent; ?> .fixed-page-check-list').hide();
+    //   });
+    //   $("#fixed-page-<?php echo $widget_id; ?>").click(function(){
+    //     set_tab_css(this);
+    //     $('<?php echo $parent; ?> .category-check-list').hide();
+    //     $('<?php echo $parent; ?> .page-display-check-list').hide();
+    //     $('<?php echo $parent; ?> .author-check-list').hide();
+    //     $('<?php echo $parent; ?> .post-check-list').hide();
+    //     $('<?php echo $parent; ?> .fixed-page-check-list').show();
+    //   });
 
-    });
+    // });
   </script>
 
   <?php
@@ -171,142 +200,142 @@ function widget_custom_script() {
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-  function loadScript(url) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-  };
+  // function loadScript(url) {
+  //   var script = document.createElement('script');
+  //   script.type = 'text/javascript';
+  //   script.src = url;
+  // };
 
-  function get_target_id(widgetContext, selector) {
-    //console.log(ui);
-    return "#"+$(widgetContext).find(selector)[0].id;
-  }
-
-
-  function set_click_events(ui) {
-    //console.log(ui);
-    //#13#10$(ui).addClass('toggle-event-on');
-    // //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
-    // var btn_id = get_target_id(ui, ".toggle-link");
-    // $(document).on("click", btn_id, function(){
-    //   $(this).next(".toggle-content").toggle();
-    // });
+  // function get_target_id(widgetContext, selector) {
+  //   //console.log(ui);
+  //   return "#"+$(widgetContext).find(selector)[0].id;
+  // }
 
 
-    var parent_id = get_target_id(ui, ".tabs-widget");
-    var cat_tab_id = get_target_id(ui, ".cat-tab");
-    var page_tab_id = get_target_id(ui, ".page-tab");
-    var author_tab_id = get_target_id(ui, ".author-tab");
-    var post_tab_id = get_target_id(ui, ".post-tab");
-    var fixed_page_tab_id = get_target_id(ui, ".fixed-page-tab");
+  // function set_click_events(ui) {
+  //   //console.log(ui);
+  //   //#13#10$(ui).addClass('toggle-event-on');
+  //   // //var btn_id = "#"+$(ui.item.context).find(".toggle-link")[0].id;
+  //   // var btn_id = get_target_id(ui, ".toggle-link");
+  //   // $(document).on("click", btn_id, function(){
+  //   //   $(this).next(".toggle-content").toggle();
+  //   // });
 
 
-    function set_tab_css(ele) {
-      $(parent_id+' > ul > li').css('border-color', '#333');
-      $(ele).css('border-color', '#aaa');
-      $(parent_id+' > ul > li').css('background-color', '#f1f1f1');
-      $(ele).css('background-color', '#fff');
-    }
+  //   var parent_id = get_target_id(ui, ".tabs-widget");
+  //   var cat_tab_id = get_target_id(ui, ".cat-tab");
+  //   var page_tab_id = get_target_id(ui, ".page-tab");
+  //   var author_tab_id = get_target_id(ui, ".author-tab");
+  //   var post_tab_id = get_target_id(ui, ".post-tab");
+  //   var fixed_page_tab_id = get_target_id(ui, ".fixed-page-tab");
 
-    // var parent_id = "#"+$(ui.item.context).find(".tabs-widget")[0].id;
-    // var cat_tab_id = "#"+$(ui.item.context).find(".cat-tab")[0].id;
-    // var page_tab_id = "#"+$(ui.item.context).find(".page-tab")[0].id;
-    // var author_tab_id = "#"+$(ui.item.context).find(".author-tab")[0].id;
-    // console.log(cat_tab);
-    // console.log(tabs_widget_id);
-    $(document).on("click", cat_tab_id, function(){
-      set_tab_css(this);
-      $(parent_id+' .category-check-list').show();
-      $(parent_id+' .page-display-check-list').hide();
-      $(parent_id+' .author-check-list').hide();
-      $(parent_id+' .post-check-list').hide();
-      $(parent_id+' .fixed-page-check-list').hide();
-    });
-    $(document).on("click", page_tab_id, function(){
-      set_tab_css(this);
-      $(parent_id+' .category-check-list').hide();
-      $(parent_id+' .page-display-check-list').show();
-      $(parent_id+' .author-check-list').hide();
-      $(parent_id+' .post-check-list').hide();
-      $(parent_id+' .fixed-page-check-list').hide();
-    });
-    $(document).on("click", author_tab_id, function(){
-      set_tab_css(this);
-      $(parent_id+' .category-check-list').hide();
-      $(parent_id+' .page-display-check-list').hide();
-      $(parent_id+' .author-check-list').show();
-      $(parent_id+' .post-check-list').hide();
-      $(parent_id+' .fixed-page-check-list').hide();
-    });
-    $(document).on("click", post_tab_id, function(){
-      set_tab_css(this);
-      $(parent_id+' .category-check-list').hide();
-      $(parent_id+' .page-display-check-list').hide();
-      $(parent_id+' .author-check-list').hide();
-      $(parent_id+' .post-check-list').show();
-      $(parent_id+' .fixed-page-check-list').hide();
-    });
-    $(document).on("click", fixed_page_tab_id, function(){
-      set_tab_css(this);
-      $(parent_id+' .category-check-list').hide();
-      $(parent_id+' .page-display-check-list').hide();
-      $(parent_id+' .author-check-list').hide();
-      $(parent_id+' .post-check-list').hide();
-      $(parent_id+' .fixed-page-check-list').show();
-    });
 
-  }
-
-  // $('.widget-top').on('click', function(){
-  //   //console.log('click');
-  //   var widgetContext = $(this).context.parentNode;
-  //   //console.log(widgetContext);
-  //   set_click_events(widgetContext);
-  //     // var id = $(this).parent.attr("id");
-  //     // alert(id);
-  // });
-
-  // $('.display-widgets-toggle').on('click', function(){
-  //   //console.log('display-widgets-toggle click');
-  //   var widgetContext = $(this).context.parentNode;
-  //   widgetContext = $(widgetContext).context.parentNode;
-  //   widgetContext = $(widgetContext).context.parentNode;
-  //   widgetContext = $(widgetContext).context.parentNode;
-  //   //console.log(widgetContext);
-  //   if (!$(widgetContext).hasClass('toggle-event-on')) {
-  //     set_click_events(widgetContext);
+  //   function set_tab_css(ele) {
+  //     $(parent_id+' > ul > li').css('border-color', '#333');
+  //     $(ele).css('border-color', '#aaa');
+  //     $(parent_id+' > ul > li').css('background-color', '#f1f1f1');
+  //     $(ele).css('background-color', '#fff');
   //   }
+
+  //   // var parent_id = "#"+$(ui.item.context).find(".tabs-widget")[0].id;
+  //   // var cat_tab_id = "#"+$(ui.item.context).find(".cat-tab")[0].id;
+  //   // var page_tab_id = "#"+$(ui.item.context).find(".page-tab")[0].id;
+  //   // var author_tab_id = "#"+$(ui.item.context).find(".author-tab")[0].id;
+  //   // console.log(cat_tab);
+  //   // console.log(tabs_widget_id);
+  //   $(document).on("click", cat_tab_id, function(){
+  //     set_tab_css(this);
+  //     $(parent_id+' .category-check-list').show();
+  //     $(parent_id+' .page-display-check-list').hide();
+  //     $(parent_id+' .author-check-list').hide();
+  //     $(parent_id+' .post-check-list').hide();
+  //     $(parent_id+' .fixed-page-check-list').hide();
+  //   });
+  //   $(document).on("click", page_tab_id, function(){
+  //     set_tab_css(this);
+  //     $(parent_id+' .category-check-list').hide();
+  //     $(parent_id+' .page-display-check-list').show();
+  //     $(parent_id+' .author-check-list').hide();
+  //     $(parent_id+' .post-check-list').hide();
+  //     $(parent_id+' .fixed-page-check-list').hide();
+  //   });
+  //   $(document).on("click", author_tab_id, function(){
+  //     set_tab_css(this);
+  //     $(parent_id+' .category-check-list').hide();
+  //     $(parent_id+' .page-display-check-list').hide();
+  //     $(parent_id+' .author-check-list').show();
+  //     $(parent_id+' .post-check-list').hide();
+  //     $(parent_id+' .fixed-page-check-list').hide();
+  //   });
+  //   $(document).on("click", post_tab_id, function(){
+  //     set_tab_css(this);
+  //     $(parent_id+' .category-check-list').hide();
+  //     $(parent_id+' .page-display-check-list').hide();
+  //     $(parent_id+' .author-check-list').hide();
+  //     $(parent_id+' .post-check-list').show();
+  //     $(parent_id+' .fixed-page-check-list').hide();
+  //   });
+  //   $(document).on("click", fixed_page_tab_id, function(){
+  //     set_tab_css(this);
+  //     $(parent_id+' .category-check-list').hide();
+  //     $(parent_id+' .page-display-check-list').hide();
+  //     $(parent_id+' .author-check-list').hide();
+  //     $(parent_id+' .post-check-list').hide();
+  //     $(parent_id+' .fixed-page-check-list').show();
+  //   });
+
+  // }
+
+  // // $('.widget-top').on('click', function(){
+  // //   //console.log('click');
+  // //   var widgetContext = $(this).context.parentNode;
+  // //   //console.log(widgetContext);
+  // //   set_click_events(widgetContext);
+  // //     // var id = $(this).parent.attr("id");
+  // //     // alert(id);
+  // // });
+
+  // // $('.display-widgets-toggle').on('click', function(){
+  // //   //console.log('display-widgets-toggle click');
+  // //   var widgetContext = $(this).context.parentNode;
+  // //   widgetContext = $(widgetContext).context.parentNode;
+  // //   widgetContext = $(widgetContext).context.parentNode;
+  // //   widgetContext = $(widgetContext).context.parentNode;
+  // //   //console.log(widgetContext);
+  // //   if (!$(widgetContext).hasClass('toggle-event-on')) {
+  // //     set_click_events(widgetContext);
+  // //   }
+  // // });
+
+  // // 1. when dropped in
+  // $('div.widgets-sortables').bind('sortstop',function(event,ui){
+  //   //console.log('just dropped in');
+  //   //console.log(ui);
+  //   //console.log(ui.item.context);
+  //   var widgetContext = ui.item.context;
+  //   set_click_events(widgetContext);
+  //   // loadScript('http://cocoon.dev/wp-includes/js/thickbox/thickbox.js');
+  //   // loadScript('http://cocoon.dev/wp-admin/js/media-upload.min.js');
   // });
 
-  // 1. when dropped in
-  $('div.widgets-sortables').bind('sortstop',function(event,ui){
-    //console.log('just dropped in');
-    //console.log(ui);
-    //console.log(ui.item.context);
-    var widgetContext = ui.item.context;
-    set_click_events(widgetContext);
-    // loadScript('http://cocoon.dev/wp-includes/js/thickbox/thickbox.js');
-    // loadScript('http://cocoon.dev/wp-admin/js/media-upload.min.js');
-  });
+  // // 2. do some stuff on load
+  // //console.log('onLoad');
+  // //console.log($);
+  // //set_click_events(ui);
 
-  // 2. do some stuff on load
-  //console.log('onLoad');
-  //console.log($);
-  //set_click_events(ui);
+  // // // 3. on action
+  // // $(document).delegate('.our_widget_class', 'change', function(ev) {
+  // //   // you have to find the parent widget here,
+  // //   // and do something for it. And this is not easy
+  // //   // because the widget shouldn't have it's ID yet, but still possible.
+  // //   // This is actually the safest part of the whole process (maybe just for me)
+  // //   //console.log('the element changed');
+  // // });
 
-  // // 3. on action
-  // $(document).delegate('.our_widget_class', 'change', function(ev) {
-  //   // you have to find the parent widget here,
-  //   // and do something for it. And this is not easy
-  //   // because the widget shouldn't have it's ID yet, but still possible.
-  //   // This is actually the safest part of the whole process (maybe just for me)
-  //   //console.log('the element changed');
-  // });
-
-  // // 4. on save
-  // $('body').ajaxSuccess(function(evt, request, settings) {
-  //   //console.log('saved');
-  // });
+  // // // 4. on save
+  // // $('body').ajaxSuccess(function(evt, request, settings) {
+  // //   //console.log('saved');
+  // // });
 
 });
 </script>
