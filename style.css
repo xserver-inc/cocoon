@@ -690,6 +690,10 @@ img {
   transition: all 0.5s ease;
   color: #333435;
 }
+.a-wrap:hover .card-meta {
+  background-color: #f5f8fa;
+  transition: all 0.5s ease;
+}
 
 .card-thumb img {
   width: 100%;

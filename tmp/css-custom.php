@@ -68,6 +68,7 @@ input[type="text"], input[type="password"], input[type="search"], input[type="nu
 table tr:nth-of-type(2n+1),
 .page-numbers.dots,
 .a-wrap:hover,
+.a-wrap:hover .card-meta,
 .pagination a:hover,
 .pagination-next-link:hover,
 .widget_recent_entries ul li a:hover,
