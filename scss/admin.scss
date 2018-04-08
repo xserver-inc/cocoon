@@ -432,6 +432,25 @@ select option.fa{
 //   display: none !important;
 // }
 
+.tab-content{
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 0 0 5px;
+  background-color: #fff;
+
+  ul{
+    margin: 0;
+    padding-left: 20px;
+    li{
+      margin-bottom: 3px;
+    }
+  }
+  >ul{
+    padding-left: 0;
+  }
+}
 
 
 // .tabs-widget{
@@ -822,26 +841,6 @@ select option.fa{
     input[name="tab_item"],
     .tab-content {
       display: none;
-    }
-
-    .tab-content{
-      height: 200px;
-      overflow: auto;
-      border: 1px solid #ccc;
-      padding: 5px;
-      margin: 0 0 5px;
-      background-color: #fff;
-
-      ul{
-        margin: 0;
-        padding-left: 20px;
-        li{
-          margin-bottom: 3px;
-        }
-      }
-      >ul{
-        padding-left: 0;
-      }
     }
 
 
