@@ -1,5 +1,5 @@
 <?php //
-define('SB_SAMPLE_TEXTS',
+$_SB_SAMPLE_TEXTS =
   array(
     __( '吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。', THEME_NAME ),
     __( '雨ニモマケズ 風ニモマケズ 雪ニモ夏ノ暑サニモマケヌ 丈夫ナカラダヲモチ 慾ハナク 決シテ瞋ラズ ツモシヅカニワラッテヰル', THEME_NAME ),
@@ -14,8 +14,8 @@ define('SB_SAMPLE_TEXTS',
     __( 'うとうととして目がさめると女はいつのまにか、隣のじいさんと話を始めている。このじいさんはたしかに前の前の駅から乗ったいなか者である。', THEME_NAME ),
     __( 'ゴーシュは町の活動写真館でセロを弾く係りでした。けれどもあんまり上手でないという評判でした。', THEME_NAME ),
     __( 'これは、私わたしが小さいときに、村の茂平というおじいさんからきいたお話です。', THEME_NAME ),
-  )
-);
+  );
+
 //var_dump($_POST);
 $keyword = !empty($_POST['s']) ? $_POST['s'] : null;
 $order_by = isset($_POST['order']) ? $_POST['order'] : 'date DESC, id DESC';
@@ -58,7 +58,7 @@ generate_sort_options_tag($keyword, $order_by);
       <?php //吹き出しの表示
       generate_speech_balloon_tag(
         $record,
-        SB_SAMPLE_TEXTS[rand(0, 11)]
+        $_SB_SAMPLE_TEXTS[rand(0, 11)]
       ); ?>
       </div>
       <div class="balloon-option">
