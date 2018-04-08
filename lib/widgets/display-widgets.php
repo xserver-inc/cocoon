@@ -95,11 +95,6 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         #<?php echo $fixed_page_tab_id; ?>:checked ~ .fixed-page-check-list {
           display: block;
         }
-
-        /*選択されているタブのスタイルを変える*/
-        .tabs input:checked + .tab-item {
-          background-color: #fff;
-        }
       </style>
       <div id="tabs-<?php echo $widget_id; ?>" class="tabs">
         <input id="<?php echo $cat_tab_id; ?>" type="radio" name="tab_item" checked>

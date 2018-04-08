@@ -843,7 +843,21 @@ select option.fa{
       display: none;
     }
 
+    //選択されているタブのコンテンツのみを表示
+    // input[name="tab_item"]:checked ~ .category-check-list,
+    // input[name="tab_item"]:checked ~ .page-display-check-list,
+    // input[name="tab_item"]:checked ~ .author-check-list,
+    // input[name="tab_item"]:checked ~ .post-check-list,
+    // input[name="tab_item"]:checked ~ .fixed-page-check-list {
+    //   display: block;
+    // }
+
+    //選択されているタブのスタイルを変える
+    input[name="tab_item"]:checked + .tab-item {
+      background-color: #fff;
+    }
 
   }
 
 }
+
