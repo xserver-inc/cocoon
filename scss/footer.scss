@@ -39,12 +39,12 @@
 ** フッターボトム
 ************************************/
 .footer-bottom{
-  margin-top: 24px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 24px 10px 16px;
   //vertical-align: bottom;
-  //position: relative;
+  position: relative;
   font-size: 14px;
+  //display: flex;
+  //align-items: baseline;
   // padding-bottom: 8px;
   // display: flex;
   // justify-content: space-between;
@@ -57,6 +57,7 @@
       float: none;
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
     }
   }
 
@@ -81,6 +82,8 @@
 
 .footer-bottom-logo{
   float: left;
+  bottom: 0;
+  position: absolute;
   // .logo-text{
   //   padding: 0;
   //   ;

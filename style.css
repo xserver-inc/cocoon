@@ -4162,9 +4162,8 @@ div.fb-like-mobile {
 ** フッターボトム
 ************************************/
 .footer-bottom {
-  margin-top: 24px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 24px 10px 16px;
+  position: relative;
   font-size: 14px;
 }
 .footer-bottom.fdt-left-and-right .footer-bottom-logo {
@@ -4174,6 +4173,7 @@ div.fb-like-mobile {
   float: none;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 .footer-bottom.fdt-up-and-down .footer-bottom-logo {
   display: none;
@@ -4189,6 +4189,8 @@ div.fb-like-mobile {
 
 .footer-bottom-logo {
   float: left;
+  bottom: 0;
+  position: absolute;
 }
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
