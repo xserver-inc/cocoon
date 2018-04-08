@@ -5155,6 +5155,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     background-size: cover;
   }
 
+  .footer-bottom-logo {
+    position: relative;
+    bottom: auto;
+  }
+
   .logo-footer {
     margin: 8px auto;
   }
