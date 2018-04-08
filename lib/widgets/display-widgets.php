@@ -69,7 +69,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
    ?>
   <div class="toggle-wrap">
     <input type="checkbox" id="<?php echo $checkbox_id; ?>">
-    <label class="toggle-button display-widgets-toggle toggle-link" id="<?php echo $toggle_name; ?>" for="<?php echo $checkbox_id; ?>"><?php _e( '表示設定', THEME_NAME ) ?></label>
+    <label class="toggle-button display-widgets-toggle" id="<?php echo $toggle_name; ?>" for="<?php echo $checkbox_id; ?>"><?php _e( '表示設定', THEME_NAME ) ?></label>
     <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
