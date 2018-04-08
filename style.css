@@ -4715,6 +4715,10 @@ input[type='submit'],
   display: none;
 }
 
+.carousel .slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
 /*
     Mobile Menu Core Style
 */
