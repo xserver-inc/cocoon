@@ -333,8 +333,9 @@ form.admin-settings{
 .tooltip{
   position: relative;
   color: orange;
-  top: 3px;
-  margin-left: 3px;
+  font-size: 0.9em !important;
+  //top: 3px;
+  //margin-left: 3px;
 
   &:hover .tip-content{
     display: block;
