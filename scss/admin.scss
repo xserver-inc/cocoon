@@ -419,33 +419,6 @@ select option.fa{
   }
 }
 
-.category-check-list,
-.page-display-check-list,
-.author-check-list{
-  height: 200px;
-  overflow: auto;
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 5px 0;
-  background-color: #fff;
-
-  ul{
-    margin: 0;
-    padding-left: 20px;
-    li{
-      margin-bottom: 3px;
-    }
-  }
-  >ul{
-    padding-left: 0;
-  }
-}
-
-.display-widgets-area{
-  input[type='text']{
-    width: 100%;
-  }
-}
 
 // .page-display-check-list,
 // .author-check-list,
@@ -808,6 +781,10 @@ select option.fa{
     select{
       width: 100%;
     }
+
+    input[type='text']{
+      width: 100%;
+    }
   }
 
   > input[type="checkbox"] {
@@ -830,9 +807,11 @@ select option.fa{
       border-top-right-radius: 3px;
       border: 1px solid #000;
       background-color: #f3f3f3;
-      margin-right: 3px;
-      padding: 4px 8px;
+      margin-left: 1px;
+      margin-right: 1px;
+      padding: 3px 6px;
       border-bottom: none;
+      font-size: 0.85em;
       &:hover{
         opacity: 0.7;
       }
@@ -843,6 +822,28 @@ select option.fa{
     .tab-content {
       display: none;
     }
+
+    .tab-content{
+      height: 200px;
+      overflow: auto;
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin: 0 0 5px;
+      background-color: #fff;
+
+      ul{
+        margin: 0;
+        padding-left: 20px;
+        li{
+          margin-bottom: 3px;
+        }
+      }
+      >ul{
+        padding-left: 0;
+      }
+    }
+
+
   }
 
 }
