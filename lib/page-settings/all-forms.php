@@ -227,6 +227,20 @@
           </td>
         </tr> -->
 
+        <!-- サムネイル表示  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ALL_THUMBNAIL_VISIBLE, __('サムネイル表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ALL_THUMBNAIL_VISIBLE, is_all_thumbnail_visible(), __( 'サイト全体のサムネイルを表示する', THEME_NAME ));
+            generate_tips_tag(__('サイト内のサムネイル画像の表示を切り替えます。', THEME_NAME));
+            ?>
+
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

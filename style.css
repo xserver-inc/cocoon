@@ -415,6 +415,13 @@ img {
   margin-left: 1.4%;
 }
 
+.no-thumbnail .card-thumb {
+  display: none;
+}
+.no-thumbnail .entry-card-content {
+  margin: 0;
+}
+
 /************************************
 ** ヘッダー
 ************************************/

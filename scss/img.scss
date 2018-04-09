@@ -51,3 +51,16 @@ img{
   margin-right: 0;
   margin-left: 1.4%;
 }
+
+///////////////////////////////////////
+// サムネイル非表示
+///////////////////////////////////////
+.no-thumbnail{
+  .card-thumb{
+    display: none;
+  }
+
+  .entry-card-content{
+    margin: 0;
+  }
+}

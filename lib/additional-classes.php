@@ -209,6 +209,10 @@ function body_class_additional($classes) {
     $classes[] = 'mobile-button-slide-in';
   }
 
+  if (!is_all_thumbnail_visible()) {
+    $classes[] = 'no-thumbnail';
+  }
+
   return $classes;
 }//body_class_additional
 endif;

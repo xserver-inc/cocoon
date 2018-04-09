@@ -35,3 +35,6 @@ update_theme_option(OP_SIDEBAR_DISPLAY_TYPE);
 
 // //サイトアイコン
 // update_theme_option(OP_SITE_ICON_URL);
+
+//全てのサムネイル表示
+update_theme_option(OP_ALL_THUMBNAIL_VISIBLE);

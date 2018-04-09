@@ -166,3 +166,12 @@ endif;
 //   }
 //   return $meta_tags;
 // }
+
+
+//全てのサムネイル表示の設定
+define('OP_ALL_THUMBNAIL_VISIBLE', 'all_thumbnail_visible');
+if ( !function_exists( 'is_all_thumbnail_visible' ) ):
+function is_all_thumbnail_visible(){
+  return get_theme_option(OP_ALL_THUMBNAIL_VISIBLE, 1);
+}
+endif;
