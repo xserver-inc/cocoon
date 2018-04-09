@@ -415,11 +415,40 @@ img {
   margin-left: 1.4%;
 }
 
-.no-thumbnail .card-thumb {
+.no-thumbnail .card-thumb,
+.no-thumbnail .widget-entry-card-pv {
   display: none;
 }
-.no-thumbnail .entry-card-content {
+.no-thumbnail .entry-card-content,
+.no-thumbnail .blogcard-wrap .blogcard .blogcard-content,
+.no-thumbnail .widget-entry-cards .widget-entry-card-content {
   margin: 0;
+}
+.no-thumbnail .widget-entry-cards div.widget-entry-card-content {
+  font-size: 18px;
+  margin-bottom: 0.6em;
+}
+.no-thumbnail .widget-entry-cards.large-thumb-on .card-title {
+  max-height: none;
+  position: static;
+}
+.no-thumbnail .entry-card-meta {
+  position: static;
+  background-color: transparent;
+  margin-top: 0.4em;
+}
+.no-thumbnail .entry-card-snippet,
+.no-thumbnail .related-entry-card-snippet {
+  max-height: 10.4em;
+}
+.no-thumbnail .entry-card-day {
+  display: inline;
+}
+.no-thumbnail .entry-card-meta .entry-card-categorys {
+  display: inline;
+}
+.no-thumbnail .entry-card-meta .entry-card-categorys > span {
+  margin-left: 0.6em;
 }
 
 /************************************
@@ -5223,10 +5252,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .entry-card-content,
   .related-entry-card-content {
     overflow: hidden;
-  }
-
-  .entry-card-content {
-    max-height: 120px;
   }
 
   .related-entry-card-content {

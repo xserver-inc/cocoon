@@ -235,7 +235,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_ALL_THUMBNAIL_VISIBLE, is_all_thumbnail_visible(), __( 'サイト全体のサムネイルを表示する', THEME_NAME ));
-            generate_tips_tag(__('サイト内のサムネイル画像の表示を切り替えます。', THEME_NAME));
+            generate_tips_tag(__('サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※ブログカードは何かしら画像が取得できるので表示します。', THEME_NAME));
             ?>
 
           </td>
