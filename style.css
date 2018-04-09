@@ -4133,7 +4133,7 @@ div.fb-like-mobile {
 }
 
 .copyright {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .footer-widgets,
@@ -4191,6 +4191,11 @@ div.fb-like-mobile {
   float: left;
   bottom: 0;
   position: absolute;
+}
+.footer-bottom-logo .site-name-text-link,
+.footer-bottom-logo .site-name-text,
+.footer-bottom-logo img {
+  display: block;
 }
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
