@@ -38,9 +38,8 @@ function replace_anchor_links($the_content) {
         $rels = explode(' ', $m[1]);
       }
 
-      //目次リンクの場合
-      //var_dump(strpos($value, '#'));
-      if ((strpos($value, 'href="#toc') > 0)) {
+      //目次リンク（#リンク）の場合
+      if ((strpos($value, 'href="#') > 0)) {
         continue;
       }
 
