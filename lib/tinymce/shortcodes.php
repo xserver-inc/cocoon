@@ -36,48 +36,60 @@ function generate_shortcodes_is($value){
   var shortcodesTitle = "'.__( 'ショートコード', THEME_NAME ).'";
   var shortcodes = new Array();';
 
+  //広告ショートコード
+  $before = '[ad]';
+  $after = '';
+  ?>
+
+  shortcodes[0] = new Array();
+  shortcodes[0].title  = '<?php echo __( '広告 [ad]', THEME_NAME ); ?>';
+  shortcodes[0].tag = '<?php echo $before; ?>';
+  shortcodes[0].before = '<?php echo $before; ?>';
+  shortcodes[0].after = '<?php echo $after; ?>';
+
+  <?php
   $msg = __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME );
   $content = __( 'ログインユーザーに表示するコンテンツを入力してください。', THEME_NAME );
   //ログインユーザーのみショートコード
   $before = '[login_user_only msg="'.$msg.'"]';
   $after = '[/login_user_only]';
    ?>
-  shortcodes[0] = new Array();
-  shortcodes[0].title  = '<?php echo __( 'ログインユーザーのみ表示', THEME_NAME ); ?>';
-  shortcodes[0].tag = '<?php echo $before.$content.$after; ?>';
-  shortcodes[0].before = '<?php echo $before; ?>';
-  shortcodes[0].after = '<?php echo $after; ?>';
+  shortcodes[1] = new Array();
+  shortcodes[1].title  = '<?php echo __( 'ログインユーザーのみ表示', THEME_NAME ); ?>';
+  shortcodes[1].tag = '<?php echo $before.$content.$after; ?>';
+  shortcodes[1].before = '<?php echo $before; ?>';
+  shortcodes[1].after = '<?php echo $after; ?>';
 
   <?php //新着記事一覧のショートコード
   $before = '[new_list count=5 type=default cats=all]';
   $after = '';
    ?>
-  shortcodes[1] = new Array();
-  shortcodes[1].title  = '<?php echo __( '新着記事一覧', THEME_NAME ); ?>';
-  shortcodes[1].tag = '<?php echo $before.$after; ?>';
-  shortcodes[1].before = '<?php echo $before; ?>';
-  shortcodes[1].after = '<?php echo $after; ?>';
+  shortcodes[2] = new Array();
+  shortcodes[2].title  = '<?php echo __( '新着記事一覧', THEME_NAME ); ?>';
+  shortcodes[2].tag = '<?php echo $before.$after; ?>';
+  shortcodes[2].before = '<?php echo $before; ?>';
+  shortcodes[2].after = '<?php echo $after; ?>';
 
   <?php //人気記事一覧のショートコード
   $before = '[popular_list days=all rank=0 pv=0 count=5 type=default cats=all]';
   $after = '';
    ?>
-  shortcodes[2] = new Array();
-  shortcodes[2].title  = '<?php echo __( '人気記事一覧', THEME_NAME ); ?>';
-  shortcodes[2].tag = '<?php echo $before.$after; ?>';
-  shortcodes[2].before = '<?php echo $before; ?>';
-  shortcodes[2].after = '<?php echo $after; ?>';
+  shortcodes[3] = new Array();
+  shortcodes[3].title  = '<?php echo __( '人気記事一覧', THEME_NAME ); ?>';
+  shortcodes[3].tag = '<?php echo $before.$after; ?>';
+  shortcodes[3].before = '<?php echo $before; ?>';
+  shortcodes[3].after = '<?php echo $after; ?>';
 
   <?php //プロフィールボックスのショートコード
   $msg = __( 'この記事を書いた人', THEME_NAME );
   $before = '[author_box label=';
   $after = ']';
    ?>
-  shortcodes[3] = new Array();
-  shortcodes[3].title  = '<?php echo __( 'プロフィールボックス', THEME_NAME ); ?>';
-  shortcodes[3].tag = '<?php echo $before.$msg.$after; ?>';
-  shortcodes[3].before = '<?php echo $before; ?>';
-  shortcodes[3].after = '<?php echo $after; ?>';
+  shortcodes[4] = new Array();
+  shortcodes[4].title  = '<?php echo __( 'プロフィールボックス', THEME_NAME ); ?>';
+  shortcodes[4].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[4].before = '<?php echo $before; ?>';
+  shortcodes[4].after = '<?php echo $after; ?>';
 
   <?php
   echo '</script>';

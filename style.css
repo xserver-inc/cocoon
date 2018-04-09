@@ -4255,7 +4255,11 @@ div.fb-like-mobile {
 .amazonjs_item
 .btn .anchor-icon,
 .amazonjs_item .ranking-item-link-buttons a .anchor-icon,
-.ranking-item-link-buttons .amazonjs_item a .anchor-icon {
+.ranking-item-link-buttons .amazonjs_item a .anchor-icon,
+.ad-area .anchor-icon,
+.author-box .anchor-icon,
+.new-entry-cards .anchor-icon,
+.popular-entry-cards .anchor-icon {
   display: none;
 }
 
