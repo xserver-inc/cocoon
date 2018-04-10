@@ -30,6 +30,9 @@
             generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
             generate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
 
+            //タグページをnoindexとする
+            generate_checkbox_tag(OP_TAG_PAGE_NOINDEX, is_tag_page_noindex(), __( 'タグページをnoindexとする', THEME_NAME ));
+            generate_tips_tag(__( 'タグのインデックスページをnoindex設定にします。', THEME_NAME ));
             ?>
           </td>
         </tr>

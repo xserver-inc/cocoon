@@ -24,6 +24,14 @@ function is_paged_category_page_noindex(){
 }
 endif;
 
+//タグページをnoindexとする
+define('OP_TAG_PAGE_NOINDEX', 'tag_page_noindex');
+if ( !function_exists( 'is_tag_page_noindex' ) ):
+function is_tag_page_noindex(){
+  return get_theme_option(OP_TAG_PAGE_NOINDEX, 1);
+}
+endif;
+
 //検索エンジンに知らせる日付
 define('OP_SEO_DATE_TYPE', 'seo_date_type');
 if ( !function_exists( 'get_seo_date_type' ) ):

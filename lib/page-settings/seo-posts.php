@@ -8,3 +8,6 @@ update_theme_option(OP_PREV_NEXT_ENABLE);
 
 //カテゴリページの2ページ目以降をnoindexとする
 update_theme_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
+
+//タグページをnoindexとする
+update_theme_option(OP_TAG_PAGE_NOINDEX);
