@@ -19,7 +19,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <div class="updated">
   <p>
     <strong>
-      <?php _e('設定をレストアしました。', THEME_NAME ); ?>
+      <?php _e('設定をリストアしました。', THEME_NAME ); ?>
     </strong>
   </p>
 </div>

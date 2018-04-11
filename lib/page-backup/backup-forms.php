@@ -1,11 +1,11 @@
 <div class="metabox-holder">
 
-<!-- バックアップ・レストア -->
+<!-- バックアップ・リストア -->
 <div id="backup" class="postbox">
-  <h2 class="hndle"><?php _e( 'バックアップ・レストア', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'バックアップ・リストア', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '設定情報のバックアップやレストアを行います。', THEME_NAME ) ?></p>
+    <p><?php _e( '設定情報のバックアップやリストアを行います。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -23,10 +23,10 @@
           </td>
         </tr>
 
-        <!-- レストア  -->
+        <!-- リストア  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'レストア', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'リストア', THEME_NAME ) ); ?>
           </th>
           <td>
             <form enctype="multipart/form-data" action="" method="POST">
