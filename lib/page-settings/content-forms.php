@@ -244,4 +244,40 @@
 </div>
 
 
+
+<!-- 投稿情報表示 -->
+<div id="table" class="postbox">
+  <h2 class="hndle"><?php _e( '投稿情報表示設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '投稿・固定ページの関連情報の表示に関する設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 投稿関連情報の表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('投稿関連情報の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_POST_DATE_VISIBLE , is_post_date_visible(), __( '投稿日の表示', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_POST_UPDATE_VISIBLE , is_post_update_visible(), __( '更新日の表示', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_POST_AUTHOR_VISIBLE , is_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの関連情報を表示するかどうか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
 </div><!-- /.metabox-holder -->

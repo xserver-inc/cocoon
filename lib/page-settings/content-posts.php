@@ -46,6 +46,22 @@ update_theme_option(OP_INTERNAL_LINK_ICON_VISIBLE);
 //内部リンクアイコン
 update_theme_option(OP_INTERNAL_LINK_ICON);
 
+///////////////////////////////////////
+// テーブル
+///////////////////////////////////////
 
 //レスポンシブテーブル
 update_theme_option(OP_RESPONSIVE_TABLE_ENABLE);
+
+///////////////////////////////////////
+// 投稿情報の表示
+///////////////////////////////////////
+
+//投稿日を表示
+update_theme_option(OP_POST_DATE_VISIBLE);
+
+//更新日を表示
+update_theme_option(OP_POST_UPDATE_VISIBLE);
+
+//投稿者を表示
+update_theme_option(OP_POST_AUTHOR_VISIBLE);

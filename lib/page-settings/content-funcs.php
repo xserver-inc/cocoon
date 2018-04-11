@@ -152,3 +152,27 @@ function add_responsive_table_tag($the_content) {
   return $the_content;
 }
 endif;
+
+//投稿日を表示
+define('OP_POST_DATE_VISIBLE', 'post_date_visible');
+if ( !function_exists( 'is_post_date_visible' ) ):
+function is_post_date_visible(){
+  return get_theme_option(OP_POST_DATE_VISIBLE, 1);
+}
+endif;
+
+//更新日を表示
+define('OP_POST_UPDATE_VISIBLE', 'post_update_visible');
+if ( !function_exists( 'is_post_update_visible' ) ):
+function is_post_update_visible(){
+  return get_theme_option(OP_POST_UPDATE_VISIBLE, 1);
+}
+endif;
+
+//投稿者を表示
+define('OP_POST_AUTHOR_VISIBLE', 'post_author_visible');
+if ( !function_exists( 'is_post_author_visible' ) ):
+function is_post_author_visible(){
+  return get_theme_option(OP_POST_AUTHOR_VISIBLE, 1);
+}
+endif;
