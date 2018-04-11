@@ -1434,6 +1434,12 @@ span.internal-icon {
   margin: 1em 0;
 }
 
+.no-post-date .post-date,
+.no-post-update .post-update,
+.no-post-author .author-info {
+  display: none;
+}
+
 /************************************
 ** 広告
 ************************************/

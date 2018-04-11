@@ -267,7 +267,7 @@
             generate_checkbox_tag(OP_POST_UPDATE_VISIBLE , is_post_update_visible(), __( '更新日の表示', THEME_NAME ));
             echo '<br>';
             generate_checkbox_tag(OP_POST_AUTHOR_VISIBLE , is_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページの関連情報を表示するかどうか。', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防ぐためCSSで非表示化されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

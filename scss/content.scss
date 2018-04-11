@@ -289,3 +289,12 @@ span.internal-icon{
   border: 1px solid $basic_border_color;
   margin: 1em 0;
 }
+
+///////////////////////////////////////
+// 投稿関連情報を表示
+///////////////////////////////////////
+.no-post-date .post-date,
+.no-post-update .post-update,
+.no-post-author .author-info {
+  display: none;
+}

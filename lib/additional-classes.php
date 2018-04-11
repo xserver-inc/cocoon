@@ -205,12 +205,29 @@ function body_class_additional($classes) {
     $classes[] = 'no-carousel';
   }
 
+  //モバイルボタンはスライドインタイプか
   if (is_mobile_button_layout_type_slide_in()) {
     $classes[] = 'mobile-button-slide-in';
   }
 
+  //サイトのサムネイルを表示するか
   if (!is_all_thumbnail_visible()) {
     $classes[] = 'no-thumbnail';
+  }
+
+  //投稿・固定ページの投稿日を表示するか
+  if (is_singular() && !is_post_date_visible()) {
+    $classes[] = 'no-post-date';
+  }
+
+  //投稿・固定ページの更新日を表示するか
+  if (is_singular() && !is_post_update_visible()) {
+    $classes[] = 'no-post-update';
+  }
+
+  //投稿・固定ページの投稿者を表示するか
+  if (is_singular() && !is_post_author_visible()) {
+    $classes[] = 'no-post-author';
   }
 
   return $classes;
