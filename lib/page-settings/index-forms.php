@@ -16,8 +16,10 @@
           </th>
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
+              <div <?php body_class(); ?>>
               <?php query_posts(''); ?>
               <?php get_template_part('tmp/list') ?>
+              </div>
             </div>
           </td>
         </tr>
