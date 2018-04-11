@@ -48,7 +48,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
   </div>
 
   <!-- 検索ボタン -->
-  <?php if (!is_amp()): ?>
+  <?php if (!is_amp() || (is_amp() && is_ssl())): ?>
     <!-- 検索ボタン -->
     <div class="search-menu-button menu-button">
       <input id="search-menu-input" type="checkbox" class="display-none">

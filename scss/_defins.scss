@@ -368,3 +368,20 @@ $bgc_hover_anime: all 0.5s ease;
     }
   }
 }
+
+///////////////////////////////////////
+// フォーム共通
+///////////////////////////////////////
+$form_padding: 14px;
+%form_common {
+  padding: $form_padding;
+  border: 2px solid $basic_border_color;
+  font-size: $text_size_default;
+  width: 100%;
+  //margin: 1em 0;
+
+  &:focus{
+    background-color: $xxx_thin;
+    border: 2px solid $select_bgc;
+  }
+}

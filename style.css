@@ -191,6 +191,39 @@ body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
   font-size: 0.7em;
 }
 
+.search-edit, input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  padding: 14px;
+  border: 2px solid #cccfd2;
+  font-size: 18px;
+  width: 100%;
+}
+.search-edit:focus, input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  background-color: #fafbfc;
+  border: 2px solid #d8eaf2;
+}
+
 /************************************
 ** 基本表示
 ************************************/
@@ -4364,6 +4397,34 @@ div.fb-like-mobile {
   margin: 0;
 }
 
+/*検索フォーム*/
+.search-box {
+  margin: 1em 0 2em;
+  position: relative;
+}
+
+.search-edit {
+  font-family: "Meiryo", sans-serif;
+}
+
+.search-submit {
+  position: absolute;
+  right: 1px;
+  top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 49px;
+  border: none;
+  color: #cccdce;
+  padding: 0 8px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.search-submit::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
 .display-block {
   display: block;
 }
@@ -4446,41 +4507,6 @@ div.fb-like-mobile {
 /************************************
 ** 入力フォーム
 ************************************/
-/*入力フォーム共通*/
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
-  padding: 14px;
-  border: 2px solid #cccfd2;
-  font-size: 18px;
-  width: 100%;
-}
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-textarea:focus,
-select:focus {
-  background-color: #fafbfc;
-  border: 2px solid #d8eaf2;
-}
-
-/*特定のエリアのフォーム*/
 textarea {
   min-height: 260px;
 }
@@ -4525,34 +4551,6 @@ input[type='submit'],
 
 .widget.buddypress #bp-login-widget-form input#bp-login-widget-submit {
   margin: 0;
-}
-
-/*検索フォーム*/
-.search-box {
-  margin: 1em 0 2em;
-  position: relative;
-}
-
-.search-edit {
-  font-family: "Meiryo", sans-serif;
-}
-
-.search-submit {
-  position: absolute;
-  right: 1px;
-  top: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 49px;
-  border: none;
-  color: #cccdce;
-  padding: 0 8px;
-  background-color: rgba(255, 255, 255, 0);
-}
-.search-submit::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
 }
 
 .comment-respond label {
