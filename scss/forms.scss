@@ -2,8 +2,6 @@
 ** 入力フォーム
 ************************************/
 
-/*入力フォーム共通*/
-$form_padding: 14px;
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -16,37 +14,18 @@ input[type="time"],
 input[type="url"],
 textarea,
 select{
-  padding: $form_padding;
-  border: 2px solid $basic_border_color;
-  font-size: $text_size_default;
-  width: 100%;
-  //margin: 1em 0;
+  @extend %form_common;
+  // padding: $form_padding;
+  // border: 2px solid $basic_border_color;
+  // font-size: $text_size_default;
+  // width: 100%;
+  // //margin: 1em 0;
 
-  &:focus{
-    background-color: $xxx_thin;
-    border: 2px solid $select_bgc;
-  }
+  // &:focus{
+  //   background-color: $xxx_thin;
+  //   border: 2px solid $select_bgc;
+  // }
 }
-
-/*特定のエリアのフォーム*/
-// .widget,
-// .comment-respond,
-// .wpcf7-form{
-//   input[type="text"],
-//   input[type="password"],
-//   input[type="date"],
-//   input[type="datetime"],
-//   input[type="email"],
-//   input[type="number"],
-//   input[type="search"],
-//   input[type="tel"],
-//   input[type="time"],
-//   input[type="url"],
-//   textarea,
-//   select{
-//     width: 100%;
-//   }
-// }
 
 textarea{
   min-height: 260px;
@@ -93,35 +72,6 @@ input[type='submit'],
 
 .widget.buddypress #bp-login-widget-form input#bp-login-widget-submit{
   margin: 0;
-}
-
-
-/*検索フォーム*/
-.search-box{
-  margin: 1em 0 2em;
-  position: relative;
-}
-
-.search-edit{
-  font-family: $meiryo_font;
-  //border-radius: $basic_border_radius;
-}
-
-.search-submit{
-  position: absolute;
-  right: 1px;
-  top: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 49px;
-  border: none;
-  color: $thin;
-  padding: 0 8px;
-  background-color: rgba(255, 255, 255, 0);
-
-  &::before{
-    @include fontawesome('\f002');
-  }
 }
 
 .comment-respond label{

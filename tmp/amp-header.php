@@ -30,6 +30,7 @@ $elements = array(
   'amp-ad' => 'amp-ad-0.1.js',
   'amp-iframe' => 'amp-iframe-0.1.js',
   'amp-audio' => 'amp-audio-0.1.js',
+  //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 
 //var_dump($the_content);
@@ -38,6 +39,12 @@ foreach( $elements as $key => $val ) {
     echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
 
   }
+}
+
+//AMP用の検索フォームが存在するか
+if( strpos($all_content, 'class="amp-form') !== false ) {
+  echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>'.PHP_EOL;
+
 }
 
 //AMP Analytics・Google Tag Manager用のライブラリ

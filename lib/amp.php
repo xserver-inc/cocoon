@@ -170,7 +170,10 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   //formタグを取り除く
-  $the_content = preg_replace('{<form.+?</form>}is', '', $the_content);
+  $the_content = preg_replace('{<form(?!.*class="amp-form).+?</form>}is', '', $the_content);
+
+  //AMPフォームの場合はtarget="_top"を加える
+  $the_content = str_replace('<form class="amp-form search-box"', '<form class="amp-form search-box" target="_top"', $the_content);
 
   //selectタグを取り除く
   $the_content = preg_replace('{<select.+?</select>}is', '', $the_content);
@@ -543,6 +546,7 @@ function get_the_singular_content(){
     ob_start();//バッファリング
     dynamic_sidebar( 'sidebar' );
     $sidebar_content = ob_get_clean();
+    //_v($sidebar_content);
 
     ob_start();//バッファリング
     dynamic_sidebar( 'sidebar-scroll' );
@@ -552,9 +556,9 @@ function get_the_singular_content(){
     dynamic_sidebar('footer-left');
     dynamic_sidebar('footer-center');
     dynamic_sidebar('footer-right');
-    $sidebar_scroll_content = ob_get_clean();
+    $footer_content = ob_get_clean();
 
-    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content;
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content;
   //endwhile;
   //$all_content = convert_content_for_amp($all_content);
   return $all_content;
