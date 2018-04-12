@@ -100,7 +100,7 @@ if (is_admin()) {;
   require_once 'tinymce/shortcodes.php'; //ショートコード追加
 
 }
-require_once 'settings.php';   //Wordpressの設定
+require_once get_template_directory().'/lib/settings.php';   //Wordpressの設定
 
 
 //新着記事ウィジェット
