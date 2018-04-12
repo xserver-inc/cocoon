@@ -30,7 +30,7 @@
           <td>
             <?php
             generate_upload_image_tag(OP_AMP_LOGO_IMAGE_URL, get_amp_logo_image_url());
-            generate_tips_tag(__( 'Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、高さ60px以下にしてください。', THEME_NAME ));
+            generate_tips_tag(__( 'Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、高さ60px以下にしてください。構造化データのArticle > publisher > logoでも利用されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
