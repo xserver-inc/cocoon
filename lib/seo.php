@@ -433,12 +433,12 @@ if ( !function_exists( 'get_the_snipet' ) ):
 function get_the_snipet($content, $length = 70) {
   global $post;
 
-  //SEO設定のディスクリプション取得
-  $description = get_the_page_meta_description($post->ID);
-
   //抜粋（投稿編集画面）の取得
+  $description = $post->post_excerpt;
+
+  //SEO設定のディスクリプション取得
   if (!$description) {
-    $description = $post->post_excerpt;
+    $description = get_the_page_meta_description($post->ID);
   }
 
   //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
