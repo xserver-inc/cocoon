@@ -5711,7 +5711,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   #bbpress-forums .form-allowed-tags code {
-    width: 100%;
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 356px) {

@@ -60,7 +60,7 @@ if ($image && file_exists($image_file)) {
     "name": "<?php bloginfo('name'); ?>",<?php // サイト名 ?>
 
 <?php //後で修正
-$image_url = null;//get_amp_logo_url();
+$image_url = get_amp_logo_image_url();
 $image_file = url_to_local($image_url);
 if ($image_url && file_exists($image_file)) {//ロゴ画像がある場合
   $size = get_image_width_and_height($image_url);
