@@ -860,4 +860,10 @@ select option.fa{
   }
 
 }
+.metaslider-ui .metaslider-slides-container .slide{
+  display: flex;
+}
 
+.metaslider-ui .col-2 > div {
+  width: 100%;
+}
