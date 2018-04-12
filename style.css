@@ -3836,11 +3836,11 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 100%;
-  cursor: pointer;
 }
 .mobile-menu-buttons .menu-button > a {
   color: #333435;
   text-decoration: none;
+  cursor: default;
 }
 .mobile-menu-buttons .menu-button:hover {
   background-color: #f5f8fa;
@@ -5712,6 +5712,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   #bbpress-forums .form-allowed-tags code {
     width: 100% !important;
+  }
+
+  #wpforo-wrap {
+    padding: 0;
   }
 }
 @media screen and (max-width: 356px) {
