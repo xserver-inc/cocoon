@@ -57,7 +57,7 @@
           <td>
             <?php
             generate_upload_image_tag(OP_THE_SITE_LOGO_URL, get_the_site_logo_url());
-            generate_tips_tag(__( 'ヘッダー部分に表示する画像を設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。', THEME_NAME ));
             ?>
           </td>
         </tr>
