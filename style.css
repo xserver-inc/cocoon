@@ -234,14 +234,6 @@ select:focus {
   box-sizing: border-box;
   word-wrap: break-word;
 }
-*::selection {
-  background: #d8eaf2;
-  color: #333435;
-}
-*::-moz-selection {
-  background: #d8eaf2;
-  color: #333435;
-}
 
 body {
   /* フォントの種類 */

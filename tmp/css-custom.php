@@ -394,3 +394,21 @@ $main_column_width = get_main_column_width();
   }
 }
 <?php endif ?>
+<?php //選択文字色
+if ($selection_color = get_site_selection_color()): ?>
+*::selection {
+  color: <?php echo $selection_color; ?>;
+}
+*::-moz-selection {
+  color: <?php echo $selection_color; ?>;
+}
+<?php endif ?>
+<?php //選択背景色
+if ($selection_background_color = get_site_selection_background_color()): ?>
+*::selection {
+  background: <?php echo $selection_background_color; ?>;
+}
+*::-moz-selection {
+  background: <?php echo $selection_background_color; ?>;
+}
+<?php endif ?>
