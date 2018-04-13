@@ -553,12 +553,16 @@ function get_the_singular_content(){
     $sidebar_scroll_content = ob_get_clean();
 
     ob_start();//バッファリング
+    get_template_part('tmp/mobile-menu-buttons');
+    $mobile_menu_buttons = ob_get_clean();
+
+    ob_start();//バッファリング
     dynamic_sidebar('footer-left');
     dynamic_sidebar('footer-center');
     dynamic_sidebar('footer-right');
     $footer_content = ob_get_clean();
 
-    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content;
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$mobile_menu_buttons.$footer_content;
   //endwhile;
   //$all_content = convert_content_for_amp($all_content);
   return $all_content;
