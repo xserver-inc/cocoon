@@ -163,6 +163,34 @@
           </td>
         </tr>
 
+        <!-- サイト選択文字色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SITE_SELECTION_COLOR, __('サイト選択文字色', THEME_NAME) ); ?>
+            <?php generate_select_color_tip_tag(); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_SITE_SELECTION_COLOR,  get_site_selection_color(), '選択文字色');
+            generate_tips_tag(__( 'サイト内のテキストを選択した際の文字色です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- サイト選択背景色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SITE_SELECTION_BACKGROUND_COLOR, __('サイト選択背景色', THEME_NAME) ); ?>
+            <?php generate_select_color_tip_tag(); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_SITE_SELECTION_BACKGROUND_COLOR,  get_site_selection_background_color(), '選択文字背景色');
+            generate_tips_tag(__( 'サイト内のテキストを選択した際の背景色です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- サイドバーの位置  -->
         <tr>
           <th scope="row">

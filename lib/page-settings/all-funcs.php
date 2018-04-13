@@ -75,6 +75,22 @@ function get_site_link_color(){
 }
 endif;
 
+//サイト選択文字色
+define('OP_SITE_SELECTION_COLOR', 'site_selection_color');
+if ( !function_exists( 'get_site_selection_color' ) ):
+function get_site_selection_color(){
+  return get_theme_option(OP_SITE_SELECTION_COLOR);
+}
+endif;
+
+//サイト選択文字背景色
+define('OP_SITE_SELECTION_BACKGROUND_COLOR', 'site_selection_background_color');
+if ( !function_exists( 'get_site_selection_background_color' ) ):
+function get_site_selection_background_color(){
+  return get_theme_option(OP_SITE_SELECTION_BACKGROUND_COLOR);
+}
+endif;
+
 //サイト幅を揃える
 define('OP_ALIGN_SITE_WIDTH', 'align_site_width');
 if ( !function_exists( 'is_align_site_width' ) ):

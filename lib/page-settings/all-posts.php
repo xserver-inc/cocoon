@@ -21,6 +21,12 @@ update_theme_option(OP_SITE_BACKGROUND_COLOR);
 //サイトリンク色
 update_theme_option(OP_SITE_LINK_COLOR);
 
+//サイト選択文字色
+update_theme_option(OP_SITE_SELECTION_COLOR);
+
+//サイト選択文字背景色
+update_theme_option(OP_SITE_SELECTION_BACKGROUND_COLOR);
+
 //サイト背景画像
 update_theme_option(OP_SITE_BACKGROUND_IMAGE_URL);
 
