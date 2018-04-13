@@ -70,7 +70,9 @@
       background-color: $bg_white;
       font-weight: 500;
       &:hover{
-        @include bgc_hover;
+        //background-color: $bgc_hover_color;
+        //transition: $bgc_hover_anime;
+        opacity: 0.5;
       }
     }
 
