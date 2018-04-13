@@ -224,6 +224,20 @@ function convert_content_for_amp($the_content){
         $height_value = $heights[1];//heightの値（高さ）を取得する
       }
 
+      //class属性の取得
+      $class_value = null;
+      $class_attr = null;
+      // $class_res = preg_match('/class=["\']([^"\']*?)["\']/is', $match, $classes);
+      // if ($class_res) {
+      //   $class_attr = ' '.$classes[0];//class属性を作成
+      //   $class_value = $classes[1];//classの値を取得する
+      //   // _v($class_attr);
+      //   // _v($class_value);
+      //   if ($class_value) {
+      //     $class_value = ' '.$class_value;
+      //   }
+      // }
+
       //alt属性の取得
       $alt_res = preg_match('/alt=["]([^"]*?)["]/is', $match, $alts);
       if (!$alt_res)
@@ -242,19 +256,25 @@ function convert_content_for_amp($the_content){
         $title_value = $titles[1];//titleの値を取得する
       }
 
-      $class_attr = null;
+      // if (condition) {
+      //   # code...
+      // } else {
+      //   # code...
+      // }
+
       //widthとheight属性のないものは画像から情報取得
       if ($url && (empty($width_value) || empty($height_value))) {
         $size = get_image_width_and_height($url);
+        //_v($class_value);
         if ($size) {
-          $class_attr = ' class="internal-content-img"';
+          //$class_attr = ' class="internal-content-img'.$class_value.'"';
           $width_value = $size['width'];
           $width_attr = ' width="'.$width_value.'"';//width属性を作成
           $height_value = $size['height'];
           $height_attr = ' height="'.$height_value.'"';//height属性を作成
         } else {
           //外部サイトにある画像の場合
-          $class_attr = ' class="external-content-img"';
+          //$class_attr = ' class="external-content-img'.$class_value.'"';
           //var_dump($url);
           if (
             strpos($url,'//images-fe.ssl-images-amazon.com') !== false ||
@@ -283,6 +303,7 @@ function convert_content_for_amp($the_content){
 
       //amp-imgタグの作成
       $tag = '<amp-img'.$src_attr.$width_attr.$height_attr.$alt_attr.$title_attr.$sizes_attr.$class_attr.'></amp-img>';
+      //_v($tag);
       // echo('<pre>');
       // var_dump($srcs);
       // var_dump(htmlspecialchars($tag));
