@@ -5081,6 +5081,9 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
   min-width: 210px;
 }
 
+div#wpforo-wrap {
+  padding: 0;
+}
 div#wpforo-wrap .wpfl-1 .wpforo-forum-description,
 div#wpforo-wrap .wpfl-1 .wpforo-last-post-title,
 div#wpforo-wrap .wpforo-post-head {
@@ -5712,10 +5715,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   #bbpress-forums .form-allowed-tags code {
     width: 100% !important;
-  }
-
-  #wpforo-wrap {
-    padding: 0;
   }
 }
 @media screen and (max-width: 356px) {
