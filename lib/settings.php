@@ -50,21 +50,21 @@ function visual_editor_stylesheets_custom($stylesheets) {
   if (is_visual_editor_style_enable()) {
     array_push($stylesheets,
       FONT_AWESOME_CDN_URL,
-      get_template_directory_uri().'/style.css',
-      get_theme_css_cache_file_url(), //テーマ設定で変更したスタイル
-      get_template_directory_uri().'/editor-style.css'
+      add_file_ver_to_css_js(get_template_directory_uri().'/style.css'),
+      add_file_ver_to_css_js(get_theme_css_cache_file_url()), //テーマ設定で変更したスタイル
+      add_file_ver_to_css_js(get_template_directory_uri().'/editor-style.css')
     );
     //スキンが設定されている場合
     if (get_skin_url()) {
       array_push($stylesheets,
-        get_skin_url()
+        add_file_ver_to_css_js(get_skin_url())
       );
     }
     //子テーマがある場合、子テーマ内のスタイルも読み込む
     if (is_child_theme()) {
       array_push($stylesheets,
-        get_stylesheet_directory_uri().'/style.css',
-        get_stylesheet_directory_uri().'/editor-style.css'
+        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/style.css'),
+        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }
   }
