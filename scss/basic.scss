@@ -117,24 +117,23 @@ a{
 /************************************
 ** WordPress Misc
 ************************************/
-img.aligncenter,
-.wp-caption.aligncenter {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
+.article{
+  .aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-img.alignleft,
-.wp-caption.alignleft {
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-img.alignright,
-.wp-caption.alignright {
-  float: right;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  .alignleft {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .alignright {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 

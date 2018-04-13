@@ -330,22 +330,17 @@ a:hover {
 /************************************
 ** WordPress Misc
 ************************************/
-img.aligncenter,
-.wp-caption.aligncenter {
+.article .aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-
-img.alignleft,
-.wp-caption.alignleft {
+.article .alignleft {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-
-img.alignright,
-.wp-caption.alignright {
+.article .alignright {
   float: right;
   margin-left: 10px;
   margin-bottom: 10px;

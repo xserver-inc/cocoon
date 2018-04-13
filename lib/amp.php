@@ -227,16 +227,16 @@ function convert_content_for_amp($the_content){
       //class属性の取得
       $class_value = null;
       $class_attr = null;
-      // $class_res = preg_match('/class=["\']([^"\']*?)["\']/is', $match, $classes);
-      // if ($class_res) {
-      //   $class_attr = ' '.$classes[0];//class属性を作成
-      //   $class_value = $classes[1];//classの値を取得する
-      //   // _v($class_attr);
-      //   // _v($class_value);
-      //   if ($class_value) {
-      //     $class_value = ' '.$class_value;
-      //   }
-      // }
+      $class_res = preg_match('/class=["\']([^"\']*?)["\']/is', $match, $classes);
+      if ($class_res) {
+        $class_attr = ' '.$classes[0];//class属性を作成
+        $class_value = $classes[1];//classの値を取得する
+        // _v($class_attr);
+        // _v($class_value);
+        if ($class_value) {
+          $class_value = ' '.$class_value;
+        }
+      }
 
       //alt属性の取得
       $alt_res = preg_match('/alt=["]([^"]*?)["]/is', $match, $alts);
