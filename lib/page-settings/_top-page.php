@@ -156,7 +156,7 @@ endif;
     <li class="carousel-area"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
-    <li class="mobile-buttons"><?php _e( 'モバイルボタン', THEME_NAME ) ?></li>
+    <li class="mobile-buttons"><?php _e( 'モバイル', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>

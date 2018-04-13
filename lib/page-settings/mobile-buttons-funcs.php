@@ -24,3 +24,11 @@ function is_slicknav_visible(){
   return false;
 }
 endif;
+
+//エントリーカードスニペット表示
+define('OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE', 'smartphone_entry_card_snippet_visible');
+if ( !function_exists( 'is_smartphone_entry_card_snippet_visible' ) ):
+function is_smartphone_entry_card_snippet_visible(){
+  return get_theme_option(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE, 1);
+}
+endif;

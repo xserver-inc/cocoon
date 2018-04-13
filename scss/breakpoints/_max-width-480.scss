@@ -293,3 +293,9 @@ a.facebook-follow-button{
 #bbpress-forums .form-allowed-tags code{
   width: 100% !important;
 }
+
+.no-smartphone-snippet{
+  .card-snippet{
+    display: none;
+  }
+}

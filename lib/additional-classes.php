@@ -230,6 +230,11 @@ function body_class_additional($classes) {
     $classes[] = 'no-post-author';
   }
 
+  //スマホ環境でスニペットを表示するか
+  if (!is_smartphone_entry_card_snippet_visible()) {
+    $classes[] = 'no-smartphone-snippet';
+  }
+
   return $classes;
 }//body_class_additional
 endif;
