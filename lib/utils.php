@@ -673,7 +673,7 @@ endif;
 if ( !function_exists( 'get_theme_resources_dir' ) ):
 function get_theme_resources_dir(){
   $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
@@ -682,7 +682,7 @@ endif;
 if ( !function_exists( 'get_theme_cache_dir' ) ):
 function get_theme_cache_dir(){
   $dir = get_theme_resources_dir().'cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
@@ -691,7 +691,7 @@ endif;
 if ( !function_exists( 'get_theme_blog_card_cache_dir' ) ):
 function get_theme_blog_card_cache_dir(){
   $dir = get_theme_resources_dir().'blog-card-cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
@@ -700,7 +700,7 @@ endif;
 if ( !function_exists( 'get_theme_css_cache_dir' ) ):
 function get_theme_css_cache_dir(){
   $dir = get_theme_resources_dir().'css-cache/';
-  if (!file_exists($dir)) mkdir($dir, 0777);
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
