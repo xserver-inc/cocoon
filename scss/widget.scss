@@ -18,6 +18,8 @@ label.screen-reader-text{
 
 /*タグクラウド*/
 .tagcloud {
+  display: flex;
+  flex-wrap: wrap;
   a {
     background-color: $bg_white;
     border: 1px solid $x_thin;
@@ -29,18 +31,24 @@ label.screen-reader-text{
     text-decoration: none;
     font-size: 12px;
     margin-right: 3px;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
 
-    &::before{
-      @include fontawesome('\f02b');
-    }
+
 
     &:hover {
       @include bgc_hover;
     }
 
-    .tag-link-count{
-      margin-left: 10px;
+    .tag-caption{
+      &::before{
+        @include fontawesome('\f02b');
+      }
+    }
 
+    .tag-link-count{
+      margin-left: 8px;
     }
   }
 }

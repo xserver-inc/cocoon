@@ -1810,6 +1810,10 @@ label.screen-reader-text {
 }
 
 /*タグクラウド*/
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+}
 .tagcloud a {
   background-color: #fff;
   border: 1px solid #dddedf;
@@ -1821,19 +1825,22 @@ label.screen-reader-text {
   text-decoration: none;
   font-size: 12px;
   margin-right: 3px;
-}
-.tagcloud a::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 3px;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 .tagcloud a:hover {
   background-color: #f5f8fa;
   transition: all 0.5s ease;
   color: #333435;
 }
+.tagcloud a .tag-caption::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
 .tagcloud a .tag-link-count {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 /*ウィジェット（カテゴリー・アーカイブなど）*/
