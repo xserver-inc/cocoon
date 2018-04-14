@@ -90,7 +90,6 @@
   width: 100%;
   height: 100%;
   background: black;
-  opacity: 0;
   transition: .3s ease-in-out;
 }
 
@@ -105,6 +104,7 @@
   height: 100%;
   background: #fff;/*背景色*/
   transition: .3s ease-in-out;/*滑らかに表示*/
+  opacity: 1;
 
   .sidebar{
     width: 100%;
@@ -150,7 +150,7 @@
 #search-menu-input:checked ~ #search-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  //box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
 //メニュースタイル

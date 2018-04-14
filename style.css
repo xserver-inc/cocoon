@@ -330,17 +330,17 @@ a:hover {
 /************************************
 ** WordPress Misc
 ************************************/
-.article .aligncenter {
+html body .aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-.article .alignleft {
+html body .alignleft {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.article .alignright {
+html body .alignright {
   float: right;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -3870,7 +3870,6 @@ div.fb-like-mobile {
   width: 100%;
   height: 100%;
   background: black;
-  opacity: 0;
   transition: .3s ease-in-out;
 }
 
@@ -3890,6 +3889,7 @@ div.fb-like-mobile {
   /*背景色*/
   transition: .3s ease-in-out;
   /*滑らかに表示*/
+  opacity: 1;
 }
 .menu-content .sidebar {
   width: 100%;
@@ -3937,7 +3937,6 @@ div.fb-like-mobile {
 #search-menu-input:checked ~ #search-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .menu-drawer ul {
