@@ -3360,6 +3360,10 @@ iframe[src*="https://www.google.com/maps/embed"] {
   text-align: center;
 }
 
+.booklink-box div, .kaerebalink-box div {
+  display: block !important;
+}
+
 .booklink-image, .kaerebalink-image {
   width: 100%;
   margin: 0 0 5px 0;
@@ -3417,10 +3421,6 @@ iframe[src*="https://www.google.com/maps/embed"] {
   .booklink-box, .kaerebalink-box {
     text-align: left;
     display: flex;
-  }
-
-  .kaerebalink-link1 div {
-    display: block !important;
   }
 
   .booklink-image, .kaerebalink-image {

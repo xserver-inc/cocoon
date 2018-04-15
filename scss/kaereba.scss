@@ -10,6 +10,11 @@
   box-sizing: border-box;
   text-align: center;
 }
+.booklink-box, .kaerebalink-box{
+  div{
+    display: block !important;
+  }
+}
 .booklink-image, .kaerebalink-image {
   width: 100%;
   margin: 0 0 5px 0;
@@ -65,9 +70,6 @@
     display: flex;
   }
 
-  .kaerebalink-link1 div{
-    display: block !important;
-  }
   .booklink-image, .kaerebalink-image {
     vertical-align: top;
     box-sizing: border-box;
