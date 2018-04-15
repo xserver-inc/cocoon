@@ -3413,17 +3413,20 @@ iframe[src*="https://www.google.com/maps/embed"] {
   opacity: 0.6;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .booklink-box, .kaerebalink-box {
     text-align: left;
-    display: table;
+    display: flex;
+  }
+
+  .kaerebalink-link1 div {
+    display: block !important;
   }
 
   .booklink-image, .kaerebalink-image {
     vertical-align: top;
     box-sizing: border-box;
-    display: table-cell;
-    width: 111px;
+    width: 160px;
     text-align: center;
     margin: 0;
   }
@@ -3436,9 +3439,8 @@ iframe[src*="https://www.google.com/maps/embed"] {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
-    display: table-cell;
     padding-left: 25px;
-    width: auto;
+    width: 100%;
   }
 
   .booklink-name, .kaerebalink-name {
@@ -4329,7 +4331,9 @@ div.fb-like-mobile {
 .ad-area .anchor-icon,
 .author-box .anchor-icon,
 .new-entry-cards .anchor-icon,
-.popular-entry-cards .anchor-icon {
+.popular-entry-cards .anchor-icon,
+.kaerebalink-box .anchor-icon,
+.booklink-box .anchor-icon {
   display: none;
 }
 

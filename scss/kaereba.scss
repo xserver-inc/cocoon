@@ -58,66 +58,71 @@
   opacity: 0.6;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
 
-.booklink-box, .kaerebalink-box {
-  text-align: left;
-  display: table;
-}
-.booklink-image, .kaerebalink-image {
-  vertical-align: top;
-  box-sizing: border-box;
-  display: table-cell;
-  width: 111px;
-  text-align: center;
-  margin: 0;
-}
+  .booklink-box, .kaerebalink-box {
+    text-align: left;
+    display: flex;
+  }
 
-.booklink-image img, .kaerebalink-image img {
-  max-width: 100%
-}
+  .kaerebalink-link1 div{
+    display: block !important;
+  }
+  .booklink-image, .kaerebalink-image {
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 160px;
+    text-align: center;
+    margin: 0;
+  }
 
-.booklink-info, .kaerebalink-info {
-  line-height: 125%;
-  vertical-align: top;
-  box-sizing: border-box;
-  display: table-cell;
-  padding-left: 25px;
-  width: auto;
-}
+  .booklink-image img, .kaerebalink-image img {
+    max-width: 100%
+  }
 
-.booklink-name, .kaerebalink-name {
-  margin: 0 0 24px 0;
-}
+  .booklink-info, .kaerebalink-info {
+    line-height: 125%;
+    vertical-align: top;
+    box-sizing: border-box;
+    //display: table-cell;
+    padding-left: 25px;
+    width: 100%;
+  }
 
-.booklink-name > a, .kaerebalink-name > a {
-  font-size: 16px;
-}
+  .booklink-name, .kaerebalink-name {
+    margin: 0 0 24px 0;
+  }
 
-.booklink-powered-date, .kaerebalink-powered-date {
-  margin: 6px 0 0 0;
-}
+  .booklink-name > a, .kaerebalink-name > a {
+    font-size: 16px;
+  }
 
-.booklink-detail, .kaerebalink-detail {
-  margin: 0 0 14px 0;
-}
+  .booklink-powered-date, .kaerebalink-powered-date {
+    margin: 6px 0 0 0;
+  }
 
-.booklink-link2 a, .kaerebalink-link1 a {
-  width: auto;
-  text-align: center;
-  margin: 0;
-}
+  .booklink-detail, .kaerebalink-detail {
+    margin: 0 0 14px 0;
+  }
 
-.booklink-link2 > div, .kaerebalink-link1 > div {
-  width: 32%;
-  padding: 0 5px 5px 0;
-  box-sizing: border-box;
-  float: left;
-  // a{
-  //   text-align: center;
-  // }
 
-}
+  .booklink-link2 a, .kaerebalink-link1 a {
+    width: auto;
+    text-align: center;
+    margin: 0;
+  }
+
+  .booklink-link2 > div, .kaerebalink-link1 > div {
+    width: 32%;
+    padding: 0 5px 5px 0;
+    box-sizing: border-box;
+    float: left;
+    //display: block !important;
+    // a{
+    //   text-align: center;
+    // }
+
+  }
 
 }
 
