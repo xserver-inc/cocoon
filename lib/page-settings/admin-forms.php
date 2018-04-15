@@ -212,13 +212,13 @@
             <div class="indent">
               <?php
               generate_checkbox_tag(OP_ADMIN_RESPONSINATOR_VISIBLE, is_admin_responsinator_visible(), __( 'Responsinatorチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="http://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_SIZZY_VISIBLE, is_admin_sizzy_visible(), __( 'Sizyチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="http://sizzy.co/" target="_blank">Sizzy</a>チェック用リンクの表示。', THEME_NAME ));
+              generate_tips_tag(__( '<a href="https://sizzy.co/" target="_blank">Sizzy</a>チェック用リンクの表示。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, is_admin_multi_screen_resolution_test_visible(), __( 'Sizyチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="http://www.responsinator.com/" target="_blank">Responsinator</a>チェック用リンクの表示。', THEME_NAME ));
+              generate_tips_tag(__( '<a href="http://whatismyscreenresolution.net/multi-screen-test" target="_blank">WhatIsMyScreenResolution</a>チェック用リンクの表示。', THEME_NAME ));
               ?>
 
             </div>
