@@ -3913,6 +3913,7 @@ div.fb-like-mobile {
   /*滑らかに表示*/
   opacity: 1;
   -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 .menu-content .sidebar {
   width: 100%;

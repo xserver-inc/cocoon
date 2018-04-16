@@ -106,6 +106,7 @@
   transition: .3s ease-in-out;/*滑らかに表示*/
   opacity: 1;
   -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 
   .sidebar{
     width: 100%;
