@@ -236,14 +236,14 @@ function add_file_ver_to_css_js( $src ) {
   // _v(site_url());
   // _v(strpos( $src, site_url() ));
   //サーバー内のファイルの場合
-  if (strpos( $src, site_url() ) !== false) {
+  if (strpos( $src, home_url() ) !== false) {
     //Wordpressのバージョンを除去する場合
     // if ( strpos( $src, 'ver=' ) )
     //   $src = remove_query_arg( 'ver', $src );
     //クエリーを削除したファイルURLを取得
-    $removed_src = preg_replace('{\?.+$}i', '', $src);
+    $removed_src = preg_replace('{\?.*}i', '', $src);
     //URLをパスに変換
-    $stylesheet_file = str_replace(site_url('/'), ABSPATH, $removed_src );
+    $stylesheet_file = url_to_local( $removed_src );
     //ファイルの編集時間バージョンを追加
     $src = add_query_arg( 'fver', date('Ymdhis', filemtime($stylesheet_file)), $src );
   }
