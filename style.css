@@ -1418,6 +1418,10 @@ blockquote::after {
 }
 
 /*投稿者*/
+.author-info .post-author {
+  font-size: 14px;
+}
+
 .author-info::before {
   font-family: FontAwesome;
   content: "";
