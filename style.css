@@ -3912,6 +3912,7 @@ div.fb-like-mobile {
   transition: .3s ease-in-out;
   /*滑らかに表示*/
   opacity: 1;
+  -webkit-overflow-scrolling: touch;
 }
 .menu-content .sidebar {
   width: 100%;
