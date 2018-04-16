@@ -112,6 +112,18 @@
   display: none;
 }
 
+.post-author-image{
+  img{
+    border-radius: 50%;
+  }
+}
+
+.entry-card-info{
+  >span {
+    margin-right: 2px;
+  }
+}
+
 
 /************************************
 ** エントリーカードタイプ

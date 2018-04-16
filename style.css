@@ -185,6 +185,7 @@ body.ba-fixed, .ba-fixed.header, .ba-fixed.appeal {
 
 .entry-category, .post-date,
 .post-update,
+.post-author,
 .amp-back {
   padding: 2px;
   display: inline;
@@ -792,6 +793,14 @@ img {
   display: none;
 }
 
+.post-author-image img {
+  border-radius: 50%;
+}
+
+.entry-card-info > span {
+  margin-right: 2px;
+}
+
 /************************************
 ** エントリーカードタイプ
 ************************************/
@@ -852,6 +861,7 @@ img {
 
 .post-date,
 .post-update,
+.post-author,
 .amp-back {
   margin-right: 8px;
 }
@@ -1418,6 +1428,7 @@ blockquote::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
+  padding-right: 0;
 }
 
 /************************************

@@ -245,7 +245,7 @@ blockquote {
 /*投稿者*/
 .author-info::before{
   @include fontawesome('\f040');
-  //padding-right: 3px;
+  padding-right: 0;
 }
 
 /************************************

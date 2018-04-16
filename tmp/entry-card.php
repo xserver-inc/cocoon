@@ -15,7 +15,24 @@
         <?php echo get_the_snipet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <div class="entry-card-meta card-meta">
-        <div class="entry-card-day"><span class="post-date"><?php the_time('Y.m.d'); ?></span></div>
+        <div class="entry-card-info">
+          <?php //投稿日の表示
+          if (is_entry_card_post_date_visible()): ?>
+            <span class="post-date"><?php the_time('Y.m.d'); ?></span>
+          <?php endif ?>
+          <?php //更新時の表示
+          $update_time = get_update_time('Y.m.d');
+          if (is_entry_card_post_update_visible() && $update_time): ?>
+            <span class="post-update"><?php echo $update_time; ?></span>
+          <?php endif ?>
+          <?php //投稿者の表示
+          if (is_entry_card_post_author_visible()): ?>
+            <span class="post-author">
+              <span class="post-author-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), '12', null ); ?></span>
+              <span class="post-author-name"><?php echo get_the_author(); ?></span>
+            </span>
+          <?php endif ?>
+        </div>
         <div class="entry-card-categorys"><?php the_nolink_categories() ?></div>
       </div>
     </div><!-- /.entry-card-content -->
