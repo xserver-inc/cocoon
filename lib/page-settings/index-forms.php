@@ -70,6 +70,23 @@
         </tr>
 
 
+        <!-- 投稿関連情報の表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('投稿関連情報の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ENTRY_CARD_POST_DATE_VISIBLE , is_entry_card_post_date_visible(), __( '投稿日の表示', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_ENTRY_CARD_POST_UPDATE_VISIBLE , is_entry_card_post_update_visible(), __( '更新日の表示', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE , is_entry_card_post_author_visible(), __( '投稿者名の表示', THEME_NAME ));
+            generate_tips_tag(__( 'エントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
