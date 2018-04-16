@@ -4234,7 +4234,8 @@ div.fb-like-mobile {
 ** フッターボトム
 ************************************/
 .footer-bottom {
-  margin: 24px 10px 16px;
+  margin-top: 24px;
+  padding-bottom: 8px;
   position: relative;
   font-size: 14px;
 }
