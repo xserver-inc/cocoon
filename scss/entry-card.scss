@@ -10,11 +10,10 @@
 
   &:hover {
     @include bgc_hover;
-    .card-meta{
-      background-color: $bgc_hover_color;
-      transition: $bgc_hover_anime;
-    }
-
+    // .card-meta{
+    //   background-color: $bgc_hover_color;
+    //   transition: $bgc_hover_anime;
+    // }
   }
 }
 

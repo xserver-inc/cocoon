@@ -134,8 +134,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   right: 0;
   text-align: right;
   line-height: 1;
-  background-color: #fff;
-  padding-left: 8px;
 }
 
 .entry-categories-tags {
@@ -746,10 +744,6 @@ img {
   background-color: #f5f8fa;
   transition: all 0.5s ease;
   color: #333435;
-}
-.a-wrap:hover .card-meta {
-  background-color: #f5f8fa;
-  transition: all 0.5s ease;
 }
 
 .card-thumb img {
@@ -5730,6 +5724,12 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .no-smartphone-snippet .card-snippet {
     display: none;
+  }
+
+  .entry-card-meta,
+  .related-entry-card-meta {
+    margin-top: 2px;
+    position: static;
   }
 }
 @media screen and (max-width: 356px) {
