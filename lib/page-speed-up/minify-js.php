@@ -6,6 +6,9 @@
 if ( !function_exists( 'tag_code_to_minify_js' ) ):
 function tag_code_to_minify_js($buffer) {
 
+  if (is_admin()) {
+    return $buffer;
+  }
 
   if (is_js_minify_enable()) {
     //最終出力縮小化JSコード
