@@ -5112,7 +5112,7 @@ div#wpforo-wrap .wpf-htr td {
 }
 div#wpforo-wrap .wpfl-1 .wpforo-post,
 div#wpforo-wrap #wpforo-stat-body {
-  background-color: #fcfcfc;
+  background-color: transparent;
 }
 div#wpforo-wrap pre,
 div#wpforo-wrap .wpforo-post .wpf-right code {
