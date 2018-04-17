@@ -58,9 +58,13 @@
     left: auto;
     right: -25px; }
   .slick-prev:before {
-    content: "←"; }
+    font-family: FontAwesome;
+    content: "\f053";
+    /*content: "←";*/ }
     [dir="rtl"] .slick-prev:before {
-      content: "→"; }
+      font-family: FontAwesome;
+      content: "\f054";
+      /*content: "→";*/ }
 
 .slick-next {
   right: -25px; }
@@ -68,9 +72,13 @@
     left: -25px;
     right: auto; }
   .slick-next:before {
-    content: "→"; }
+    font-family: FontAwesome;
+    content: "\f054";
+    /*content: "→";*/ }
     [dir="rtl"] .slick-next:before {
-      content: "←"; }
+      font-family: FontAwesome;
+      content: "\f053";
+      /*content: "←";*/}
 
 /* Dots */
 .slick-dotted.slick-slider {
