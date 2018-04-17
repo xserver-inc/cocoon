@@ -244,8 +244,11 @@ function add_file_ver_to_css_js( $src ) {
     $removed_src = preg_replace('{\?.*}i', '', $src);
     //URLをパスに変換
     $stylesheet_file = url_to_local( $removed_src );
-    //ファイルの編集時間バージョンを追加
-    $src = add_query_arg( 'fver', date('Ymdhis', filemtime($stylesheet_file)), $src );
+    if (file_exists($stylesheet_file)) {
+      //ファイルの編集時間バージョンを追加
+      $src = add_query_arg( 'fver', date('Ymdhis', filemtime($stylesheet_file)), $src );
+    }
+
   }
   return $src;
 }
