@@ -867,3 +867,9 @@ select option.fa{
 .metaslider-ui .col-2 > div {
   width: 100%;
 }
+
+.widget.open{
+  //width: 400px;
+  margin-left: -116px;
+  z-index: 100;
+}

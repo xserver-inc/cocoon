@@ -1,12 +1,51 @@
 <?php //ウィジェットの表示制御
 
+//ウィジェットはD&Dされたものか
+if ( !function_exists( 'is_widget_dropped' ) ):
+function is_widget_dropped($widget){
+  return $widget->number == '__i__';
+}
+endif;
+
+if ( !function_exists( 'get_dropped_widget_id' ) ):
+function get_dropped_widget_id($widget){
+  $widget_id = $widget->id;
+  $widget_number = 0;
+  //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
+  if (is_widget_dropped($widget)) {
+    foreach( $widget->get_settings() as $index => $settings ) {
+      $widget_number = $index + 1;
+    }
+    $widget_id = str_replace('__i__', $widget_number, $widget_id);
+    $widget_id = intval($widget_id);
+  }
+  return $widget_id;
+}
+endif;
+
+if ( !function_exists( 'get_dropped_widget' ) ):
+function get_dropped_widget($widget){
+  //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
+  if (is_widget_dropped($widget)) {
+    $widget_number = 0;
+    foreach( $widget->get_settings() as $index => $settings ) {
+      $widget_number = intval($index) + 1;
+    }
+    $widget->number = intval($widget_number);
+    $widget->id = str_replace('__i__', $widget_number, $widget->id);
+  }
+  return $widget;
+}
+endif;
+
 ///////////////////////////////////////
 // ウィジェットフォーム
 ///////////////////////////////////////
 add_filter( 'in_widget_form', 'display_widgets_in_widget_form', 10, 3 );
 if ( !function_exists( 'display_widgets_in_widget_form' ) ):
 function display_widgets_in_widget_form( $widget, $return, $instance ){
-  //var_dump($widget);
+  // $widget = get_dropped_widget($widget);
+  // var_dump($widget);
   // var_dump($widget->get_settings());
   // var_dump($return);
   // var_dump($instance);
@@ -50,26 +89,33 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   ?>
   <?php
   //ウィジェットIDを取得
+  //$widget_id = get_dropped_widget_id($widget);
   $widget_id = $widget->id;
   //フィールドID
   $field_id = $widget->get_field_id('toggle-link');
   //var_dump($field_id);
   //ウィジェットナンバーを取得
   $widget_number = $widget->number;
-  //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
-  if (preg_match('/__i__/', $widget_id)) {
-    foreach( $widget->get_settings() as $index => $settings ) {
-      $widget_number = $index + 1;
-    }
-    $widget_id = str_replace('__i__', $widget_number, $widget_id);
-  }
+  // //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
+  // if (preg_match('/__i__/', $widget_id)) {
+  //   foreach( $widget->get_settings() as $index => $settings ) {
+  //     $widget_number = $index + 1;
+  //   }
+  //   $widget_id = str_replace('__i__', $widget_number, $widget_id);
+  // }
   //var_dump($widget_id);
   $toggle_name = 'tlink-'.$widget_id;
   $checkbox_id = 'toggle-checkbox-'.$widget_id;
+  // if (is_widget_dropped($widget)) {
+  //   $toggle_caption = __( '表示設定', THEME_NAME );
+  // } else {
+  //   $toggle_caption = __( '表示設定の前に設定を保存してください', THEME_NAME );
+  // }
+
    ?>
   <div class="toggle-wrap">
+    <label class="toggle-button display-widgets-toggle" id="<?php echo $toggle_name; ?>" for="<?php echo $checkbox_id; ?>"><?php _e( '表示設定', THEME_NAME ); ?></label>
     <input type="checkbox" id="<?php echo $checkbox_id; ?>">
-    <label class="toggle-button display-widgets-toggle" id="<?php echo $toggle_name; ?>" for="<?php echo $checkbox_id; ?>"><?php _e( '表示設定', THEME_NAME ) ?></label>
     <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
         <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
@@ -80,6 +126,9 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
           'show' => __( 'チェック・入力したページで表示', THEME_NAME ),
         );
         generate_selectbox_tag($widget->get_field_name('widget_action'), $options, $widget_action);
+        $dw =get_dropped_widget($widget);
+        //var_dump($dw);
+        //$widget_style_id = get_dropped_widget_id($widget);
         $cat_tab_id = 'cat-tab-'.$widget_id;
         $page_tab_id = 'page-tab-'.$widget_id;
         $author_tab_id = 'author-tab-'.$widget_id;
@@ -88,11 +137,11 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
       ?>
       <style type="text/css">
         /*選択されているタブのコンテンツのみを表示*/
-        #<?php echo $cat_tab_id; ?>:checked ~ .category-check-list,
-        #<?php echo $page_tab_id; ?>:checked ~ .page-display-check-list,
-        #<?php echo $author_tab_id; ?>:checked ~ .author-check-list,
-        #<?php echo $post_tab_id; ?>:checked ~ .post-check-list,
-        #<?php echo $fixed_page_tab_id; ?>:checked ~ .fixed-page-check-list {
+        #cat-tab-<?php echo $dw->id; ?>:checked ~ .category-check-list,
+        #page-tab-<?php echo $dw->id; ?>:checked ~ .page-display-check-list,
+        #author-tab-<?php echo $dw->id; ?>:checked ~ .author-check-list,
+        #post-tab-<?php echo $dw->id; ?>:checked ~ .post-check-list,
+        #fixed-page-tab-<?php echo $dw->id; ?>:checked ~ .fixed-page-check-list {
           display: block;
         }
       </style>
