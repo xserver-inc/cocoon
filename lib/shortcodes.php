@@ -22,14 +22,16 @@ function new_entries_shortcode($atts) {
     'count' => 5,
     'cats' => 'all',
     'type' => 'default',
+    'children' => 0,
   ), $atts));
   $categories = array();
   //var_dump($cats);
   if ($cats && $cats != 'all') {
     $categories = explode(',', $cats);
   }
+  _v($cats);
   ob_start();
-  generate_new_entries_tag($count, $type, $categories);
+  generate_new_entries_tag($count, $type, $categories, $children);
   $res = ob_get_clean();
   return $res;
 }

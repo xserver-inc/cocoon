@@ -787,13 +787,25 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 endif;
 
 if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array()){
+function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array(), $include_children = 0){
 
   $args = array(
     'posts_per_page' => $entry_count,
   );
   if ( $categories ) {
-    $args += array('category__in' => $categories);
+    //_v($categories);
+    $args += array(
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'category',
+          'terms' => $categories,
+          'include_children' => $include_children,
+          'field' => 'term_id',
+          'operator' => 'IN'
+          ),
+        'relation' => 'AND'
+      )
+    );
   }
   $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   query_posts( $args ); //クエリの作成?>

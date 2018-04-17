@@ -61,7 +61,7 @@ function generate_shortcodes_is($value){
   shortcodes[1].after = '<?php echo $after; ?>';
 
   <?php //新着記事一覧のショートコード
-  $before = '[new_list count=5 type=default cats=all]';
+  $before = '[new_list count=5 type=default cats=all children=0]';
   $after = '';
    ?>
   shortcodes[2] = new Array();
