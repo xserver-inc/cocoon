@@ -606,6 +606,16 @@ function get_update_time($format = 'Y.m.d') {
 endif;
 
 
+//ターゲットに文字列が含まれているか
+if ( !function_exists( 'includes_string' ) ):
+function includes_string($target, $searchstr){
+  if (strpos($target, $searchstr) === false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+endif;
 
 //サイトアドレスが含まれているか
 if ( !function_exists( 'includes_site_url' ) ):

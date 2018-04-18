@@ -784,8 +784,24 @@ function get_additional_admin_panel_area_classes($option = null){
 }
 endif;
 
+//ポストクラスのフィルタ
+add_filter( 'post_class', 'filter_post_class', 10, 3 );
+if ( !function_exists( 'filter_post_class' ) ):
+function filter_post_class( $classes, $class, $post_id ) {
+  $i = 1;
+  foreach ($classes as $value) {
+    if(preg_match('/^tag-/', $value)){
 
-
-
-
+        //削除実行
+        unset($classes[$i]);
+    }
+    $i++;
+  }
+  // //削除実行
+  // $classes = array_diff($classes, array('tag-link'));
+  // //indexを詰める
+  // $classes = array_values($classes);
+  return $classes;
+};
+endif;
 
