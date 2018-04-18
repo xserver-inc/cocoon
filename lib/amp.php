@@ -178,8 +178,6 @@ function convert_content_for_amp($the_content){
   //selectタグを取り除く
   $the_content = preg_replace('{<select.+?</select>}is', '', $the_content);
 
-  //アプリーチの画像対応
-  $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?nabettu\.github\.io[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="120" height="36" sizes="(max-width: 120px) 100vw, 120px"></amp-img>', $the_content);
 
   //imgタグをamp-imgタグに変更する
@@ -187,7 +185,7 @@ function convert_content_for_amp($the_content){
   //var_dump($res);
   //var_dump($m);
   if ($res) {//画像タグがある場合
-
+    //_v($m);
     foreach ($m[0] as $match) {
       //変数の初期化
       $src_attr = null;
@@ -318,6 +316,8 @@ function convert_content_for_amp($the_content){
     }
   }
 
+  //アプリーチの画像対応
+  $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
 
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
