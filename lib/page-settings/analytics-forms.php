@@ -23,6 +23,19 @@
           </td>
         </tr>
 
+        <!-- AMP用Google Tag ManagerトラッキングID -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, __( 'AMP用 Google Tag Manager ID', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_textbox_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, get_google_tag_manager_amp_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
+            generate_tips_tag(__( 'AMP用のGoogle Tag ManagerのトラッキングIDを入力してください。新たにAMP用のコンテナを作成しIDを設定してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

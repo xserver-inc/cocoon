@@ -8,6 +8,14 @@ function get_google_tag_manager_tracking_id(){
 }
 endif;
 
+//Google Tag ManagerのAMPトラッキングID
+define('OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID', 'google_tag_manager_amp_tracking_id');
+if ( !function_exists( 'get_google_tag_manager_amp_tracking_id' ) ):
+function get_google_tag_manager_amp_tracking_id(){
+  return get_theme_option(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID);
+}
+endif;
+
 //Google AnalyticsのトラッキングID
 define('OP_GOOGLE_ANALYTICS_TRACKING_ID', 'google_analytics_tracking_id');
 if ( !function_exists( 'get_google_analytics_tracking_id' ) ):
