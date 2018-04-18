@@ -790,11 +790,12 @@ if ( !function_exists( 'filter_post_class' ) ):
 function filter_post_class( $classes, $class, $post_id ) {
   $i = 1;
   foreach ($classes as $value) {
-    if(preg_match('/^tag-/', $value)){
+    $classes[$i] = preg_replace('/^(category|tag)-.+/', '$0-post', $value);
+    // if(preg_match('/^tag-/', $value)){
 
-        //削除実行
-        unset($classes[$i]);
-    }
+    //     //削除実行
+    //     unset($classes[$i]);
+    // }
     $i++;
   }
   // //削除実行
