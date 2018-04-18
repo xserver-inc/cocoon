@@ -253,3 +253,16 @@ function add_file_ver_to_css_js( $src ) {
   return $src;
 }
 endif;
+
+//gistのembed対応
+wp_embed_register_handler( 'gist', '/https?:\/\/gist\.github\.com\/([a-z0-9]+)\/([a-z0-9]+)(#file=.*)?/i', 'wp_embed_register_handler_for_gist' );
+if ( !function_exists( 'wp_embed_register_handler_for_gist' ) ):
+function wp_embed_register_handler_for_gist( $matches, $attr, $url, $rawattr ) {
+  $embed = sprintf(
+    '<script src="https://gist.github.com/%1$s/%2$s.js"></script>',
+    esc_attr( $matches[1] ),
+    esc_attr( $matches[2] )
+    );
+  return apply_filters( 'embed_gist', $embed, $matches, $attr, $url, $rawattr );
+}
+endif;
