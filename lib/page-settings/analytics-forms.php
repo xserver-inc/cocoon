@@ -2,7 +2,7 @@
 
 <!-- Google Tag Manager設定 -->
 <div id="gtm" class="postbox">
-  <h2 class="hndle"><?php _e( 'Google Tag Manager設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'Googleタグマネージャ設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( 'Google Tag Managerの解析タグの設定です。', THEME_NAME ) ?></p>
@@ -10,28 +10,28 @@
     <table class="form-table">
       <tbody>
 
-        <!-- Google Tag ManagerトラッキングID -->
+        <!-- タグマネージャID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, __( 'Google Tag Manager ID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, __( 'タグマネージャID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_TAG_MANAGER_TRACKING_ID, get_google_tag_manager_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
-            generate_tips_tag(__( 'Google Tag ManagerのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-tag-manager-id/'));
+            generate_tips_tag(__( 'GoogleタグマネージャのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-tag-manager-id/'));
             ?>
           </td>
         </tr>
 
-        <!-- AMP用Google Tag ManagerトラッキングID -->
+        <!-- AMP用タグマネージャID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, __( 'AMP用 Google Tag Manager ID', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, __( 'AMP用 タグマネージャID', THEME_NAME )); ?>
           </th>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, get_google_tag_manager_amp_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
-            generate_tips_tag(__( 'AMP用のGoogle Tag ManagerのトラッキングIDを入力してください。新たにAMP用のコンテナを作成しIDを設定してください。', THEME_NAME ));
+            generate_tips_tag(__( 'AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用のコンテナを作成しIDを設定してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
