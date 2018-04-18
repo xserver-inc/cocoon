@@ -82,7 +82,7 @@ function get_the_tag_links(){
   $posttags = get_the_tags();
   if ( $posttags ) {
     foreach(get_the_tags() as $tag){
-      $tags .= '<a class="tag-link tag-link-'.$tag->term_id.'" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
+      $tags .= '<a class="c-tag-link c-tag-link-'.$tag->term_id.'" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
     }
   }
   return $tags;

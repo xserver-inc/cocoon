@@ -28,7 +28,7 @@ if (get_site_key_color()): ?>
 .article h5,
 .article h6,
 .cat-link,
-.tag-link{
+.c-tag-link{
   border-color: <?php echo get_site_key_color(); ?>;
 }
 blockquote::before, blockquote::after,
@@ -80,7 +80,7 @@ table tr:nth-of-type(2n+1),
 .widget_nav_menu ul li a:hover,
 .pager-links a:hover span,
 /*.cat-link:hover,*/
-.tag-link:hover,
+.c-tag-link:hover,
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
 }

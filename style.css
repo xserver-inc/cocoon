@@ -1243,7 +1243,7 @@ img {
 }
 
 /*本文下タグ*/
-.tag-link, .comment-reply-link {
+.c-tag-link, .comment-reply-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -1253,12 +1253,12 @@ img {
   border: 1px solid #999a9b;
   border-radius: 2px;
 }
-.tag-link::before, .comment-reply-link::before {
+.c-tag-link::before, .comment-reply-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.tag-link:hover, .comment-reply-link:hover {
+.c-tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
   transition: all 0.5s ease;
   color: #333435;
@@ -1852,7 +1852,7 @@ label.screen-reader-text {
   content: "";
   padding-right: 3px;
 }
-.tagcloud a .tag-link-count {
+.tagcloud a .c-tag-link-count {
   margin-left: 8px;
 }
 
