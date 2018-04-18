@@ -1221,7 +1221,7 @@ img {
 }
 
 /*本文下カテゴリ*/
-.c-cat-link {
+.cat-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -1232,18 +1232,18 @@ img {
   color: #fff;
   border-radius: 2px;
 }
-.c-cat-link::before {
+.cat-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.c-cat-link:hover {
+.cat-link:hover {
   opacity: 0.5;
   color: #fff;
 }
 
 /*本文下タグ*/
-.c-tag-link, .comment-reply-link {
+.tag-link, .comment-reply-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -1253,12 +1253,12 @@ img {
   border: 1px solid #999a9b;
   border-radius: 2px;
 }
-.c-tag-link::before, .comment-reply-link::before {
+.tag-link::before, .comment-reply-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.c-tag-link:hover, .comment-reply-link:hover {
+.tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
   transition: all 0.5s ease;
   color: #333435;
@@ -1852,7 +1852,7 @@ label.screen-reader-text {
   content: "";
   padding-right: 3px;
 }
-.tagcloud a .c-tag-link-count {
+.tagcloud a .tag-link-count {
   margin-left: 8px;
 }
 

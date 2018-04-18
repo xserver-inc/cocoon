@@ -95,7 +95,7 @@
 }
 
 /*本文下カテゴリ*/
-.c-cat-link{
+.cat-link{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;
@@ -119,7 +119,7 @@
 }
 
 /*本文下タグ*/
-.c-tag-link{
+.tag-link{
   @include link_cancel;
   display: inline-block;
   margin-right: 5px;

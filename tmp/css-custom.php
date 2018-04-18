@@ -14,7 +14,7 @@ if (get_site_key_color()): ?>
 #navi .navi-in > .menu-header .sub-menu,
 .article h2,
 .sidebar h3,
-.c-cat-link,
+.cat-link,
 .cat-label,
 .appeal-content .appeal-button,
 .demo .cat-label{
@@ -27,8 +27,8 @@ if (get_site_key_color()): ?>
 .article h4,
 .article h5,
 .article h6,
-.c-cat-link,
-.c-tag-link{
+.cat-link,
+.tag-link{
   border-color: <?php echo get_site_key_color(); ?>;
 }
 blockquote::before, blockquote::after,
@@ -79,8 +79,8 @@ table tr:nth-of-type(2n+1),
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover,
 .pager-links a:hover span,
-/*.c-cat-link:hover,*/
-.c-tag-link:hover,
+/*.cat-link:hover,*/
+.tag-link:hover,
 .tagcloud a:hover{
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
 }
@@ -250,7 +250,7 @@ $colors = array();
 foreach ($cats as $cat) {
   $color = get_category_color($cat->cat_ID);
   $cat_label_pre = '.cat-label.cat-label-';
-  $cat_link_pre = '.c-cat-link.c-cat-link-';
+  $cat_link_pre = '.cat-link.cat-link-';
   if ($color) {
     $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
     if (isset($colors[$color])) {

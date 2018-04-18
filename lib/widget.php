@@ -34,7 +34,7 @@ function wp_tag_cloud_custom( $output ) {
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //タグテキストにspanタグの取り付け
   $output = preg_replace( '/ aria-label="([^"]+?)">/i', ' aria-label="$1"><span class="tag-caption">',  $output);
-  $output = str_replace( '<span class="c-tag-link-count">', '</span><span class="c-tag-link-count">',  $output);
+  $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
   //カッコを取り除く
   $output = str_replace( ' (', '',  $output);
   $output = str_replace( ')', '',  $output);

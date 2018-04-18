@@ -46,7 +46,7 @@
 
 //返信ボタン
 .comment-reply-link{
-  @extend .c-tag-link;
+  @extend .tag-link;
   font-size: 14px;
   &:before{
     content: '\f0e5';
