@@ -5160,11 +5160,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: none;
 }
 
-.gsc-control-cse table {
+.gsc-search-box table {
   margin-bottom: 0;
 }
-.gsc-control-cse table th,
-.gsc-control-cse table td {
+.gsc-search-box table th,
+.gsc-search-box table td {
   border: 0;
 }
 
