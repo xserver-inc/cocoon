@@ -1221,7 +1221,7 @@ img {
 }
 
 /*本文下カテゴリ*/
-.cat-link {
+.c-cat-link {
   color: #333435;
   text-decoration: none;
   display: inline-block;
@@ -1232,12 +1232,12 @@ img {
   color: #fff;
   border-radius: 2px;
 }
-.cat-link::before {
+.c-cat-link::before {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
 }
-.cat-link:hover {
+.c-cat-link:hover {
   opacity: 0.5;
   color: #fff;
 }

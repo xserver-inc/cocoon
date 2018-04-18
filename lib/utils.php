@@ -39,7 +39,7 @@ function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
     $style = null;//get_category_label_style_attr($category->cat_ID);
-    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
+    $categories .= '<a class="c-cat-link c-cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
   }
   return $categories;
 }
