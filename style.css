@@ -1847,6 +1847,9 @@ label.screen-reader-text {
   transition: all 0.5s ease;
   color: #333435;
 }
+.tagcloud a .tag-caption {
+  word-break: break-all;
+}
 .tagcloud a .tag-caption::before {
   font-family: FontAwesome;
   content: "";

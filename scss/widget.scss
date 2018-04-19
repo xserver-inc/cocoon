@@ -42,6 +42,7 @@ label.screen-reader-text{
     }
 
     .tag-caption{
+      word-break: break-all;
       &::before{
         @include fontawesome('\f02b');
       }
