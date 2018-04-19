@@ -31,7 +31,7 @@
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID, get_google_tag_manager_amp_tracking_id(), __( 'GTM-XXXXXXX', THEME_NAME ));
-            generate_tips_tag(__( 'AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用のコンテナを作成しIDを設定してください。', THEME_NAME ));
+            generate_tips_tag(__( 'AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用のコンテナを作成しIDを設定してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-tag-manager-amp-id/'));
             ?>
           </td>
         </tr>
