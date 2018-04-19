@@ -5075,6 +5075,25 @@ div#bbpress-forums .status-closed .bbp-reply-content:before {
   width: auto;
 }
 
+@media screen and (max-width: 480px) {
+  div#bbpress-forums div.bbp-reply-author img.avatar {
+    position: static;
+  }
+
+  div#bbpress-forums .bbp-body div.bbp-reply-author {
+    padding-left: 0;
+    width: 80px;
+    text-align: center;
+  }
+
+  div#bbpress-forums .bbp-body div.bbp-reply-content {
+    clear: none;
+    margin: 0;
+  }
+  div#bbpress-forums .bbp-body div.bbp-reply-content p {
+    margin-top: 0;
+  }
+}
 #buddypress h2 {
   background-color: transparent;
   color: #333435;
