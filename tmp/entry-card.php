@@ -11,9 +11,12 @@
 
     <div class="entry-card-content card-content">
       <h2 class="entry-card-title card-title" itemprop="headline"><?php the_title() ?></h2>
+      <?php //スニペットの表示
+      if (is_entry_card_snippet_visible()): ?>
       <div class="entry-card-snippet card-snippet">
         <?php echo get_the_snipet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
+      <?php endif ?>
       <div class="entry-card-meta card-meta">
         <div class="entry-card-info">
           <?php //投稿日の表示

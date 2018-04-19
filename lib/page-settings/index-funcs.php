@@ -32,6 +32,13 @@ function get_entry_card_excerpt_max_length(){
 endif;
 
 
+//スニペットを表示
+define('OP_ENTRY_CARD_SNIPPET_VISIBLE', 'entry_card_snippet_visible');
+if ( !function_exists( 'is_entry_card_snippet_visible' ) ):
+function is_entry_card_snippet_visible(){
+  return get_theme_option(OP_ENTRY_CARD_SNIPPET_VISIBLE, 1);
+}
+endif;
 
 //投稿日を表示
 define('OP_ENTRY_CARD_POST_DATE_VISIBLE', 'entry_card_post_date_visible');
