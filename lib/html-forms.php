@@ -241,11 +241,24 @@ function generate_the_site_logo_tag($is_header = true){
   } else {
     $class .= ' logo-text';
   }
+  //ロゴの幅設定
+  $site_logo_width = get_the_site_logo_width();
+  $width_attr = null;
+  if ($site_logo_width) {
+    $width_attr = ' width="'.$site_logo_width.'"';
+  }
+  //ロゴの高さ設定
+  $site_logo_height = get_the_site_logo_height();
+  $height_attr = null;
+  if ($site_logo_height) {
+    $height_attr = ' height="'.$site_logo_height.'"';
+  }
+
 
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.get_home_url().'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if (get_the_site_logo_url()) {
-    $site_logo_tag = '<img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'">';
+    $site_logo_tag = '<img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"'.$width_attr.$height_attr.'>';
   } else {
     $site_logo_tag = get_bloginfo('name');
   }

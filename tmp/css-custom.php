@@ -412,3 +412,17 @@ if ($selection_background_color = get_site_selection_background_color()): ?>
   background: <?php echo $selection_background_color; ?>;
 }
 <?php endif ?>
+<?php //ヘッダーロゴ高さ
+if ($site_logo_height = get_the_site_logo_height()): ?>
+.logo-header img{
+  height: <?php echo $site_logo_height; ?>px;
+  width: auto;
+}
+<?php endif ?>
+<?php //ヘッダーロゴ幅
+if ($site_logo_width = get_the_site_logo_width()): ?>
+.logo-header img{
+  width: <?php echo $site_logo_width; ?>px;
+  height: auto;
+}
+<?php endif ?>
