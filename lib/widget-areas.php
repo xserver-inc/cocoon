@@ -74,9 +74,9 @@ function register_above_single_content_title_widget_area(){
     'name' => __( '投稿タイトル上', THEME_NAME ),
     'id' => 'above-single-content-title',
     'description' => __( '投稿タイトル上に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
-    'before_widget' => '<div id="%1$s" class="widget widget-above-single-content %2$s">',
+    'before_widget' => '<div id="%1$s" class="widget widget-above-single-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-above-single-content-title main-widget-label">',
+    'before_title' => '<div class="widget-above-single-content-title-title main-widget-label">',
     'after_title' => '</div>',
   ));
 }
@@ -90,9 +90,9 @@ function register_below_single_content_title_widget_area(){
     'name' => __( '投稿タイトル下', THEME_NAME ),
     'id' => 'below-single-content-title',
     'description' => __( '投稿タイトル下に表示されるウイジェット。設定しないと表示されません。', THEME_NAME ),
-    'before_widget' => '<div id="%1$s" class="widget widget-below-single-content %2$s">',
+    'before_widget' => '<div id="%1$s" class="widget widget-below-single-content-title %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="widget-below-single-content-title main-widget-label">',
+    'before_title' => '<div class="widget-below-single-content-title-title main-widget-label">',
     'after_title' => '</div>',
   ));
 }
