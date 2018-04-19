@@ -9,6 +9,12 @@ update_theme_option(OP_HEADER_AREA_HEIGHT);
 //サイトロゴ
 update_theme_option(OP_THE_SITE_LOGO_URL);
 
+//サイトロゴ幅
+update_theme_option(OP_THE_SITE_LOGO_WIDTH);
+
+//サイトロゴ高さ
+update_theme_option(OP_THE_SITE_LOGO_HEIGHT);
+
 //キャッチフレーズ位置
 update_theme_option(OP_TAGLINE_POSITION);
 
