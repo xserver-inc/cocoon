@@ -105,6 +105,7 @@
   //border: 1px solid $text_color;
   color: $bg_white;
   border-radius: $badge_border_radius;
+  word-break: break-all;
 
   &::before{
     @include fontawesome('\f07b');
@@ -127,6 +128,7 @@
   font-size: 12px;
   border: 1px solid $x_pallid_text_color;
   border-radius: $badge_border_radius;
+  word-break: break-all;
 
   &::before{
     @include fontawesome('\f02b');

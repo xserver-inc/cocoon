@@ -1231,6 +1231,7 @@ img {
   background-color: #333435;
   color: #fff;
   border-radius: 2px;
+  word-break: break-all;
 }
 .cat-link::before {
   font-family: FontAwesome;
@@ -1252,6 +1253,7 @@ img {
   font-size: 12px;
   border: 1px solid #999a9b;
   border-radius: 2px;
+  word-break: break-all;
 }
 .tag-link::before, .comment-reply-link::before {
   font-family: FontAwesome;
@@ -3917,6 +3919,9 @@ div.fb-like-mobile {
   opacity: 1;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+.menu-content .menu-drawer {
+  padding: 0 0 20px;
 }
 .menu-content .sidebar {
   width: 100%;
