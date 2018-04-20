@@ -873,3 +873,9 @@ select option.fa{
   margin-left: -116px;
   z-index: 100;
 }
+
+.not-allowed-form{
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}

@@ -100,14 +100,14 @@
         </tr>
 
         <?php
-          $auto_adsense_style = null;
-          if (is_auto_adsens_only_enable()) {
-            $auto_adsense_style = ' style="opacity: 0.4;pointer-events: none;cursor: not-allowed;"';
-          }
+          // $auto_adsense_style = null;
+          // if (is_auto_adsens_only_enable()) {
+          //   $auto_adsense_style = ' style="opacity: 0.4;pointer-events: none;cursor: not-allowed;"';
+          // }
          ?>
 
         <!-- 広告の表示位置 -->
-        <tr<?php echo $auto_adsense_style; ?>>
+        <tr<?php generate_not_allowed_form_class(is_auto_adsens_only_enable()); ?>>
           <th scope="row">
             <?php generate_label_tag(OP_AD_POS_INDEX_TOP_VISIBLE, __( '広告の表示位置', THEME_NAME )); ?>
           </th>

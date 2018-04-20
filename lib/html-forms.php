@@ -107,6 +107,16 @@ function generate_label_tag($name, $caption){?>
 endif;
 
 
+//入力できないフォームクラスコードの生成
+if ( !function_exists( 'generate_not_allowed_form_class' ) ):
+function generate_not_allowed_form_class($is_enable){
+  if (!$is_enable) {
+    echo ' class="not-allowed-form"';
+  }
+}
+endif;
+
+
 //説明文の生成
 if ( !function_exists( 'generate_tips_tag' ) ):
 function generate_tips_tag($caption){?>
