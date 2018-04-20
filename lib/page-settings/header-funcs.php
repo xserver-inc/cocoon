@@ -16,6 +16,14 @@ function get_header_area_height(){
 }
 endif;
 
+//モバイルヘッダーの高さ
+define('OP_MOBILE_HEADER_AREA_HEIGHT', 'mobile_header_area_height');
+if ( !function_exists( 'get_mobile_header_area_height' ) ):
+function get_mobile_header_area_height(){
+  return get_theme_option(OP_MOBILE_HEADER_AREA_HEIGHT);
+}
+endif;
+
 //サイトロゴ
 define('OP_THE_SITE_LOGO_URL', 'the_site_logo_url');
 if ( !function_exists( 'get_the_site_logo_url' ) ):
