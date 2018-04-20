@@ -40,6 +40,14 @@ function is_entry_card_snippet_visible(){
 }
 endif;
 
+//スマートフォンスニペット表示
+define('OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE', 'smartphone_entry_card_snippet_visible');
+if ( !function_exists( 'is_smartphone_entry_card_snippet_visible' ) ):
+function is_smartphone_entry_card_snippet_visible(){
+  return get_theme_option(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE, 1);
+}
+endif;
+
 //投稿日を表示
 define('OP_ENTRY_CARD_POST_DATE_VISIBLE', 'entry_card_post_date_visible');
 if ( !function_exists( 'is_entry_card_post_date_visible' ) ):

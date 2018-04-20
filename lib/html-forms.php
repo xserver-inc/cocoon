@@ -107,12 +107,28 @@ function generate_label_tag($name, $caption){?>
 endif;
 
 
+
+//入力できないフォームクラスコードの生成
+if ( !function_exists( 'get_not_allowed_form_class' ) ):
+function get_not_allowed_form_class($is_enable, $in = false){
+  if (!$is_enable) {
+    if ($in) {
+      return ' not-allowed-form';
+    } else {
+      return ' class="not-allowed-form"';
+    }
+
+  }
+}
+endif;
+
 //入力できないフォームクラスコードの生成
 if ( !function_exists( 'generate_not_allowed_form_class' ) ):
-function generate_not_allowed_form_class($is_enable){
-  if (!$is_enable) {
-    echo ' class="not-allowed-form"';
-  }
+function generate_not_allowed_form_class($is_enable, $in = false){
+  echo get_not_allowed_form_class($is_enable);
+  // if (!$is_enable || empty($is_enable)) {
+  //   echo ' class="not-allowed-form"';
+  // }
 }
 endif;
 

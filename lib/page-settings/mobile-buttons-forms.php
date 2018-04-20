@@ -35,17 +35,17 @@
             </tr>
 
             <!-- エントリーカードスニペット -->
-            <tr>
+<!--             <tr>
               <th scope="row">
-                <?php generate_label_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE, __('エントリーカードスニペット', THEME_NAME) ); ?>
+                <?php //generate_label_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE, __('エントリーカードスニペット', THEME_NAME) ); ?>
               </th>
               <td>
                 <?php
-                generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_entry_card_snippet_visible(), __( 'スマホ端末でスニペットを表示', THEME_NAME ));
-                generate_tips_tag(__( 'スマホ環境でスニペット（抜粋）を表示するかどうか。スマホ向けの480px以下で適用されます。', THEME_NAME ));
+                // generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_entry_card_snippet_visible(), __( 'スマホ端末でスニペットを表示', THEME_NAME ));
+                // generate_tips_tag(__( 'スマホ環境でスニペット（抜粋）を表示するかどうか。スマホ向けの480px以下で適用されます。', THEME_NAME ));
                 ?>
               </td>
-            </tr>
+            </tr> -->
 
 
           </tbody>
