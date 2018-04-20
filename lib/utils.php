@@ -814,10 +814,12 @@ endif;
 //サイトのドメインを取得
 if ( !function_exists( 'get_the_site_domain' ) ):
 function get_the_site_domain(){
-  // // //ドメイン情報を$results[1]に取得する
-  // preg_match( '/https?:\/\/(.+?)\//i', admin_url(), $results );
-  // return $results[1];
-  return get_domain_name(home_url());
+  //ドメイン情報を$results[1]に取得する
+  if (preg_match( '/https?:\/\/(.+?)\//i', admin_url(), $results )) {
+    return $results[1];
+  } else {
+    return get_domain_name(home_url());
+  }
 }
 endif;
 
