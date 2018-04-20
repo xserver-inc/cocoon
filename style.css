@@ -2962,7 +2962,7 @@ label.screen-reader-text {
   color: #cccdce;
 }
 .pager-post-navi a figure {
-  width: 120px;
+  min-width: 120px;
 }
 .pager-post-navi a.prev-post {
   flex-direction: row;
