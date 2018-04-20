@@ -1838,7 +1838,7 @@ label.screen-reader-text {
   text-decoration: none;
   font-size: 12px;
   margin-right: 3px;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
 }
