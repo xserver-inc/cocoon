@@ -44,7 +44,7 @@
           <td>
             <?php
             generate_number_tag(OP_HEADER_AREA_HEIGHT,  get_header_area_height(), '', 0, 800);
-            generate_tips_tag(__( 'ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用されます。。（最小：0px、最大：800px）', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用されます。未入力でデフォルトになります。（最小：0px、最大：800px）', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -56,8 +56,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_MOBILE_HEADER_AREA_HEIGHT,  get_mobile_header_area_height(), '', 0, 800);
-            generate_tips_tag(__( 'モバイルでのヘッダーの高さをpx数で指定します。768px以下のタブレット以下の幅の狭い端末用です。（最小：0px、最大：800px）', THEME_NAME ));
+            generate_number_tag(OP_MOBILE_HEADER_AREA_HEIGHT,  get_mobile_header_area_height(), '', 0, 600);
+            generate_tips_tag(__( 'モバイルでのヘッダーの高さをpx数で指定します。768px以下のタブレット以下の幅の狭い端末用です。未入力でデフォルトになります。（最小：0px、最大：600px）', THEME_NAME ));
             ?>
           </td>
         </tr>

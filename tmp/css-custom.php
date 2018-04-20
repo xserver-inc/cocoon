@@ -426,3 +426,11 @@ if ($site_logo_width = get_the_site_logo_width()): ?>
   height: auto;
 }
 <?php endif ?>
+<?php //モバイルのヘッダーの高さ
+if ($mhah = get_mobile_header_area_height()): ?>
+@media screen and (max-width: 768px){
+  .header div.header-in{
+    min-height: <?php echo $mhah; ?>px;
+  }
+}
+<?php endif ?>
