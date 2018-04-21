@@ -2965,6 +2965,7 @@ label.screen-reader-text {
 }
 .pager-post-navi a figure {
   min-width: 120px;
+  max-width: 120px;
 }
 .pager-post-navi a.prev-post {
   flex-direction: row;
@@ -3921,7 +3922,7 @@ div.fb-like-mobile {
   -webkit-overflow-scrolling: touch;
 }
 .menu-content .menu-drawer {
-  padding: 0 0 20px;
+  padding: 0 0 30px;
 }
 .menu-content .sidebar {
   width: 100%;
