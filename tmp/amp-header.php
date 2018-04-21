@@ -30,6 +30,7 @@ $elements = array(
   'amp-ad' => 'amp-ad-0.1.js',
   'amp-iframe' => 'amp-iframe-0.1.js',
   'amp-audio' => 'amp-audio-0.1.js',
+  'amp-video' => 'amp-video-0.1.js',
   //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 

@@ -346,9 +346,17 @@ function convert_content_for_amp($the_content){
   $append = '<p><amp-instagram layout="responsive" data-shortcode="$1" width="592" height="592" ></amp-instagram></p>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  // audioをamp-amp-audioに置換する
+  // audioをamp-audioに置換する
   $pattern = '/<audio .+?src="([^"]+?)".+?<\/audio>/is';
   $append = '<p><amp-audio src="$1"></amp-audio></p>';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
+  // videoをamp-videoに置換する
+  $pattern = '/<video/i';
+  $append = '<amp-video controls layout="responsive" width="640" height="360"';
+  $the_content = preg_replace($pattern, $append, $the_content);
+  $pattern = '/<\/video>/i';
+  $append = '</amp-video>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // //YouTubeのURL埋め込み時にiframeのsrc属性のURLに余計なクエリが入るのを除去（力技;）
