@@ -97,6 +97,10 @@ function convert_content_for_amp($the_content){
   //JetpackがYouTubeのURLに余計なクエリを付け加えるのを取り除く
   //$the_content = preg_replace('{(https://www.youtube.com/embed/[^?"\']+)[^"\']*}i', '$1', $the_content);
 
+  //Googleカスタム検索ボックス
+  $the_content = preg_replace('{</?gcse:searchbox-only>}', '', $the_content);
+  $the_content = preg_replace('{</?gcse:search>}', '', $the_content);
+
   //C2A0文字コード（UTF-8の半角スペース）を通常の半角スペースに置換
   $the_content = str_replace('\xc2\xa0', ' ', $the_content);
 
@@ -365,6 +369,19 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ +webkitAllowFullScreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
   $the_content = preg_replace('/ +mozallowfullscreen(=["\'][^"\']*?["\'])?/i', '', $the_content);
 
+
+  //はてなブログカードiframe用の処理追加
+  $pattern = '{<iframe.+?src="(https?://hatenablog-parts\.com/embed.+?)".+?></iframe>}is';
+  $append = '<amp-iframe src="$1" width="500" height="190"></amp-iframe>';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
+
+  //Amazon商品紹介iframeのAMP化
+  /*
+  $pattern = '{<iframe.+?src="(https?://hatenablog-parts\.com/embed.+?)".+?></iframe>}is';
+  if (preg_match_all($pattern, $the_content, $m)) {
+    _v($m);
+  }*/
 
   //Amazon商品紹介iframeのAMP化
   $pattern = '{<iframe.+?src="(.+?rcm-fe\.amazon-adsystem\.com.+?)".+?</iframe>}is';
