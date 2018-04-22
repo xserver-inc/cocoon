@@ -50,18 +50,12 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( '太字', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'bold',
-          'styles' => array(
-            'fontWeight' => 'bold',
-          ),
+          'classes' => 'bold'
         ),
         array(
           'title' => __( '赤字', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'red',
-          'styles' => array(
-            'color' => 'red',
-          ),
+          'classes' => 'red'
         ),
         array(
           'title' => __( '太い赤字', THEME_NAME ),
