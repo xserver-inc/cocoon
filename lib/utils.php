@@ -919,11 +919,11 @@ endif;
 
 //wpforoのページかどうか
 if ( !function_exists( 'is_wpforo_plugin_page' ) ):
-function is_wpforo_plugin_page(){
+function is_wpforo_plugin_page($url = ''){
   if (is_wpforo_exist()) {
     //functions-template.phpファイルから
     if (
-         is_wpforo_page()
+         is_wpforo_page($url)
       // || wpforo_topic()
       // || wpforo_forum()
       // || wpforo_post()

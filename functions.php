@@ -203,6 +203,17 @@ function get_archive_chapter_text(){
 }
 endif;
 
+// //wpForoがインストールされているときのH1見出し
+// add_action('the_title', 'get_wpforo_installed_h1');
+// if ( !function_exists( 'get_wpforo_installed_h1' ) ):
+// function get_wpforo_installed_h1($title){
+//   if (is_wpforo_plugin_page()) {
+//     $title = wp_get_document_title();
+//   }
+//   return $title;
+// }
+// endif;
+
 //'wp-color-picker'の呼び出し順操作（最初の方に読み込む）
 add_action('admin_enqueue_scripts', 'admin_enqueue_scripts_custom');
 if ( !function_exists( 'admin_enqueue_scripts_custom' ) ):

@@ -15,6 +15,9 @@ function url_to_internal_blogcard_tag($url){
   $no_image = get_site_screenshot_url($url);
 
   $title = $post_data->post_title;//タイトルの取得
+  // if (is_wpforo_plugin_page($url)) {
+  //   $title = wp_get_document_title();
+  // }
 
   //メタディスクリプションの取得
   $snipet = get_the_page_meta_description($id);

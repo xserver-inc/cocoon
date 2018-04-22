@@ -15,7 +15,15 @@
       <?php endif; ?>
 
       <header class="article-header entry-header">
-        <h1 class="entry-title" itemprop="headline"><?php the_title() ?></h1>
+        <h1 class="entry-title" itemprop="headline">
+          <?php
+          if (is_wpforo_plugin_page()) {
+            echo wp_get_document_title();
+          } else {
+            the_title();
+          }
+           ?>
+        </h1>
 
         <?php //タイトル下の広告表示
         if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
