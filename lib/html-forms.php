@@ -110,8 +110,8 @@ endif;
 
 //入力できないフォームクラスコードの生成
 if ( !function_exists( 'get_not_allowed_form_class' ) ):
-function get_not_allowed_form_class($is_enable, $in = false){
-  if (!$is_enable) {
+function get_not_allowed_form_class($is_not_allowed, $in = false){
+  if (!$is_not_allowed) {
     if ($in) {
       return ' not-allowed-form';
     } else {
@@ -124,8 +124,8 @@ endif;
 
 //入力できないフォームクラスコードの生成
 if ( !function_exists( 'generate_not_allowed_form_class' ) ):
-function generate_not_allowed_form_class($is_enable, $in = false){
-  echo get_not_allowed_form_class($is_enable);
+function generate_not_allowed_form_class($is_not_allowed, $in = false){
+  echo get_not_allowed_form_class($is_not_allowed);
   // if (!$is_enable || empty($is_enable)) {
   //   echo ' class="not-allowed-form"';
   // }

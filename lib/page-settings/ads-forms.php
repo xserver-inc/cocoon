@@ -100,7 +100,7 @@
         </tr>
 
         <!-- 広告の表示位置 -->
-        <tr<?php generate_not_allowed_form_class(is_auto_adsens_only_enable()); ?>>
+        <tr<?php generate_not_allowed_form_class(!is_auto_adsens_only_enable()); ?>>
           <th scope="row">
             <?php generate_label_tag(OP_AD_POS_INDEX_TOP_VISIBLE, __( '広告の表示位置', THEME_NAME )); ?>
           </th>
@@ -218,7 +218,7 @@
         </tr>
 
         <!-- [ad]ショートコードの利用 -->
-        <tr<?php generate_not_allowed_form_class(is_auto_adsens_only_enable()); ?>>
+        <tr<?php generate_not_allowed_form_class(!is_auto_adsens_only_enable()); ?>>
           <th scope="row">
             <?php generate_label_tag(OP_AD_SHORTCODE_ENABLE, __('[ad]ショートコード', THEME_NAME) ); ?>
           </th>
