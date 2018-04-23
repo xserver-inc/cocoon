@@ -28,3 +28,11 @@ function is_carousel_autoplay_enable(){
   return get_theme_option(OP_CAROUSEL_AUTOPLAY_ENABLE);
 }
 endif;
+
+//カルーセルオートプレイインターバル
+define('OP_CAROUSEL_AUTOPLAY_INTERVAL', 'carousel_autoplay_interval');
+if ( !function_exists( 'get_carousel_autoplay_interval' ) ):
+function get_carousel_autoplay_interval(){
+  return get_theme_option(OP_CAROUSEL_AUTOPLAY_INTERVAL, 5);
+}
+endif;

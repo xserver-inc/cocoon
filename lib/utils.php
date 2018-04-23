@@ -398,7 +398,7 @@ function wp_enqueue_slick(){
               $(".carousel-content").slick({
                 dots: true,'.
                 $autoplay.
-                'autoplaySpeed: 5000,
+                'autoplaySpeed: '.strval(intval(get_carousel_autoplay_interval())*1000).',
                 infinite: true,
                 slidesToShow: 6,
                 slidesToScroll: 6,

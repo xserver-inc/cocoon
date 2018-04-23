@@ -8,3 +8,6 @@ update_theme_option(OP_CAROUSEL_CATEGORY_IDS);
 
 //カルーセルオートプレイ
 update_theme_option(OP_CAROUSEL_AUTOPLAY_ENABLE);
+
+//カルーセルオートプレイインターバル
+update_theme_option(OP_CAROUSEL_AUTOPLAY_INTERVAL);

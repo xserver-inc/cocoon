@@ -61,6 +61,23 @@
           </td>
         </tr>
 
+        <!-- オートプレイインターバル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CAROUSEL_AUTOPLAY_INTERVAL, __('オートプレイインターバル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array();
+            for ($i=3; $i <= 30; $i++) {
+              $options[$i] = $i.__( '秒', THEME_NAME );
+            }
+            generate_selectbox_tag(OP_CAROUSEL_AUTOPLAY_INTERVAL, $options, get_carousel_autoplay_interval());
+            generate_tips_tag(__( 'カルーセルの自動送り間隔です。オートプレイが有効な時のみ設定した秒数ごとに入れ替わります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
