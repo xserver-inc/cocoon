@@ -62,6 +62,40 @@ require_once 'sns-share-forms-bottom.php';
 </div>
 
 
+
+
+
+<!-- Pinterest設定 -->
+<div id="sns-share-pinterest" class="postbox">
+  <h2 class="hndle"><?php _e( 'Pinterest設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+    <p><?php _e( 'Twitter上でのツイート動作の設定です。', THEME_NAME ) ?></p>
+    <table class="form-table">
+      <tbody>
+
+        <!-- メンション -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PINTEREST_SHARE_BUTTON_VISIBLE, __( 'Pinterest共有', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_PINTEREST_SHARE_BUTTON_VISIBLE, is_pinterest_share_button_visible(), __( 'Pinterestで画像シェアする', THEME_NAME ));
+            generate_tips_tag(__( 'この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーするとピン」ボタンが表示されます。。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
 <!-- キャッシュ設定 -->
 <div id="sns-share-cache" class="postbox">
   <h2 class="hndle"><?php _e( 'キャッシュ設定', THEME_NAME ) ?></h2>

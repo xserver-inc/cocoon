@@ -32,6 +32,14 @@ function get_twitter_hash_tag(){
 }
 endif;
 
+//写真をPinterestで共有する
+define('OP_PINTEREST_SHARE_BUTTON_VISIBLE', 'pinterest_share_button_visible');
+if ( !function_exists( 'is_pinterest_share_button_visible' ) ):
+function is_pinterest_share_button_visible(){
+  return get_theme_option(OP_PINTEREST_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
 //SNSシェア数キャッシュ有効
 define('OP_SNS_SHARE_COUNT_CACHE_ENABLE', 'sns_share_count_cache_enable');
 if ( !function_exists( 'is_sns_share_count_cache_enable' ) ):

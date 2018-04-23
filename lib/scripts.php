@@ -145,6 +145,11 @@ function wp_enqueue_scripts_custom() {
     wp_enqueue_script( 'st-hatena-js', '//b.st-hatena.com/js/bookmark_button.js', array(), false, true );
   }
 
+  ///////////////////////////////////
+  //Pinterest用のスクリプト呼び出し
+  ///////////////////////////////////
+  //wp_enqueue_script( 'pinterest-js', '//assets.pinterest.com/js/pinit.js', array(), false, true );
+
 ////////////////////////////////////////////////////////////////
 //
 //スキンscriptの呼び出し
