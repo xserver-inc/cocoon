@@ -144,6 +144,19 @@
     <table class="form-table">
       <tbody>
 
+        <!-- アクセス解析headタグ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, __( 'アクセス解析タグ（ヘッド用）', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_textarea_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, get_other_analytics_head_tags(), __( 'head用のアクセス解析タグの入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- アクセス解析ヘッダータグ -->
         <tr>
           <th scope="row">
@@ -152,7 +165,7 @@
           <td>
             <?php
             generate_textarea_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, get_other_analytics_header_tags(), __( 'ヘッダー用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ヘッダーに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -165,7 +178,7 @@
           <td>
             <?php
             generate_textarea_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, get_other_analytics_footer_tags(), __( 'フッター用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'フッターに挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

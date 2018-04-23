@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-<?php //body最初に挿入するアクセス解析ヘッダータグの取得
+<?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
 get_template_part('tmp/head-analytics'); ?>
 <meta charset="utf-8">
 <?php //AMPの案内タグを出力
@@ -45,7 +45,6 @@ get_template_part('tmp/head-custom-field'); ?>
 
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
 get_template_part('tmp-user/head-insert'); ?>
-
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

@@ -40,7 +40,15 @@ function get_ptengine_tracking_id(){
 }
 endif;
 
-//その他のアクセス解析ヘッダータグ
+//その他のアクセス解析<head></head>内タグ
+define('OP_OTHER_ANALYTICS_HEAD_TAGS', 'other_analytics_head_tags');
+if ( !function_exists( 'get_other_analytics_head_tags' ) ):
+function get_other_analytics_head_tags(){
+  return stripslashes_deep(get_theme_option(OP_OTHER_ANALYTICS_HEAD_TAGS));
+}
+endif;
+
+//その他のアクセス解析ヘッダー（body直後）タグ
 define('OP_OTHER_ANALYTICS_HEADER_TAGS', 'other_analytics_header_tags');
 if ( !function_exists( 'get_other_analytics_header_tags' ) ):
 function get_other_analytics_header_tags(){
@@ -48,7 +56,7 @@ function get_other_analytics_header_tags(){
 }
 endif;
 
-//その他のアクセス解析フッタータグ
+//その他のアクセス解析フッター（/body直前）タグ
 define('OP_OTHER_ANALYTICS_FOOTER_TAGS', 'other_analytics_footer_tags');
 if ( !function_exists( 'get_other_analytics_footer_tags' ) ):
 function get_other_analytics_footer_tags(){
