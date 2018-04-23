@@ -19,12 +19,15 @@
       <?php endif ?>
       <div class="entry-card-meta card-meta">
         <div class="entry-card-info">
-          <?php //投稿日の表示
-          if (is_entry_card_post_date_visible()): ?>
+          <?php
+          //更新日の取得
+          $update_time = get_update_time('Y.m.d');
+          //投稿日の表示
+          if (is_entry_card_post_date_visible() || (is_entry_card_post_date_or_update_visible() && !$update_time && is_entry_card_post_update_visible())): ?>
             <span class="post-date"><?php the_time('Y.m.d'); ?></span>
           <?php endif ?>
           <?php //更新時の表示
-          $update_time = get_update_time('Y.m.d');
+
           if (is_entry_card_post_update_visible() && $update_time): ?>
             <span class="post-update"><?php echo $update_time; ?></span>
           <?php endif ?>
