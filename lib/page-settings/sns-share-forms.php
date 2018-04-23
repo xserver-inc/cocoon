@@ -81,7 +81,7 @@ require_once 'sns-share-forms-bottom.php';
           <td>
             <?php
             generate_checkbox_tag( OP_PINTEREST_SHARE_BUTTON_VISIBLE, is_pinterest_share_button_visible(), __( 'Pinterestで画像シェアする', THEME_NAME ));
-            generate_tips_tag(__( 'この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーするとピン」ボタンが表示されます。。', THEME_NAME ));
+            generate_tips_tag(__( 'この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーすると「ピン」ボタンが表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
