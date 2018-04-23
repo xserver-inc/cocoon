@@ -4280,6 +4280,12 @@ div.fb-like-mobile {
 .footer-bottom.fdt-up-and-down .footer-bottom-content .navi-footer-in > ul {
   justify-content: center;
 }
+.footer-bottom.fnm-text-width .menu-footer li {
+  width: auto;
+}
+.footer-bottom.fnm-text-width .menu-footer li a {
+  padding: 0 10px;
+}
 
 .footer-bottom-logo {
   float: left;
@@ -5526,8 +5532,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .navi-footer-in > .menu-footer li.menu-item {
     width: 32%;
     border: 1px solid #dddedf;
-    padding: 3px;
-    margin: 1px;
+    margin: 2px;
+    display: flex;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .navi-footer-in > .menu-footer li.menu-item a {
+    padding: 0;
+    width: 100%;
   }
 
   .footer-bottom.fdt-left-and-right .footer-bottom-content {

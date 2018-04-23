@@ -79,6 +79,14 @@
       }
     }
   }
+
+  &.fnm-text-width .menu-footer li{
+    width: auto;
+
+    a{
+      padding: 0 10px;
+    }
+  }
 }
 
 .footer-bottom-logo{

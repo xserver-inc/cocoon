@@ -581,6 +581,11 @@ function get_additional_footer_bottom_classes($option = null){
       break;
   }
 
+  //フッターナビメニューをテキスト幅に
+  if (is_footer_navi_menu_text_width_enable()) {
+    $classes .= ' fnm-text-width';
+  }
+
   if ($option) {
     $classes .= ' '.trim($option);
   }
