@@ -73,6 +73,9 @@
             generate_number_tag(OP_FOOTER_NAVI_MENU_WIDTH,  get_footer_navi_menu_width(), 120, 70, 300);
             generate_tips_tag(__( 'フッターのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
+            generate_checkbox_tag(OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE , is_footer_navi_menu_text_width_enable(), __( 'メニュー幅をテキストに合わせる', THEME_NAME ));
+            generate_tips_tag(__( 'メニュー幅を均一にせずにテキスト幅で設定します。', THEME_NAME ));
+
             ?>
           </td>
         </tr>

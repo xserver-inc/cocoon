@@ -60,11 +60,18 @@ function get_the_site_credit(){
 }
 endif;
 
-
 //フッターメニュー幅
 define('OP_FOOTER_NAVI_MENU_WIDTH', 'footer_navi_menu_width');
 if ( !function_exists( 'get_footer_navi_menu_width' ) ):
 function get_footer_navi_menu_width(){
   return get_theme_option(OP_FOOTER_NAVI_MENU_WIDTH);
+}
+endif;
+
+//フッターメニュー幅をテキストの幅にする
+define('OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE', 'footer_navi_menu_text_width_enable');
+if ( !function_exists( 'is_footer_navi_menu_text_width_enable' ) ):
+function is_footer_navi_menu_text_width_enable(){
+  return get_theme_option(OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE);
 }
 endif;
