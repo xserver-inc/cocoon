@@ -21,6 +21,9 @@ update_theme_option(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE);
 //投稿日を表示
 update_theme_option(OP_ENTRY_CARD_POST_DATE_VISIBLE);
 
+//投稿日を表示しない場合、更新日がなければ投稿日を表示
+update_theme_option(OP_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE);
+
 //更新日を表示
 update_theme_option(OP_ENTRY_CARD_POST_UPDATE_VISIBLE);
 

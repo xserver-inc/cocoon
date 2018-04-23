@@ -56,6 +56,14 @@ function is_entry_card_post_date_visible(){
 }
 endif;
 
+//投稿日を表示しない場合、更新日がなければ投稿日を表示
+define('OP_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE', 'entry_card_post_date_or_update_visible');
+if ( !function_exists( 'is_entry_card_post_date_or_update_visible' ) ):
+function is_entry_card_post_date_or_update_visible(){
+  return get_theme_option(OP_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE, 1);
+}
+endif;
+
 //更新日を表示
 define('OP_ENTRY_CARD_POST_UPDATE_VISIBLE', 'entry_card_post_update_visible');
 if ( !function_exists( 'is_entry_card_post_update_visible' ) ):
