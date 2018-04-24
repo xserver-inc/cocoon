@@ -163,70 +163,70 @@ function customize_admin_bar_menu($wp_admin_bar){
     'id'   => 'dashboard_menu-dashboard', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'ダッシュボード', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/') // ページURL
+    'href'   => admin_url() // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-singles', // 子メニューID
     'meta'   => array(),
     'title'  => __( '投稿一覧', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/edit.php') // ページURL
+    'href'   => admin_url('edit.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-pages', // 子メニューID
     'meta'   => array(),
     'title'  => __( '固定ページ一覧', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/edit.php?post_type=page') // ページURL
+    'href'   => admin_url('edit.php?post_type=page') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-medias', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'メディア一覧', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/upload.php') // ページURL
+    'href'   => admin_url('upload.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-themes', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'テーマ', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/themes.php') // ページURL
+    'href'   => admin_url('themes.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-customize', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'カスタマイズ', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/customize.php?return=' . esc_url(home_url('/wp-admin/themes.php'))) // ページURL
+    'href'   => admin_url('customize.php?return=' . esc_url(admin_url('themes.php'))) // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-widget', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'ウィジェット', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/widgets.php') // ページURL
+    'href'   => admin_url('widgets.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-nav-menus', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'メニュー', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/nav-menus.php') // ページURL
+    'href'   => admin_url('nav-menus.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-theme-editor', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'テーマの編集', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/theme-editor.php') // ページURL
+    'href'   => admin_url('theme-editor.php') // ページURL
   ));
   $wp_admin_bar->add_menu(array(
     'parent' => 'dashboard_menu', // 親メニューID
     'id'   => 'dashboard_menu-plugins', // 子メニューID
     'meta'   => array(),
     'title'  => __( 'プラグイン一覧', THEME_NAME ), // ラベル
-    'href'   => home_url('/wp-admin/plugins.php') // ページURL
+    'href'   => admin_url('plugins.php') // ページURL
   ));
   if (current_user_can('manage_options')) {//管理者権限がある場合
     $wp_admin_bar->add_menu(array(
@@ -234,56 +234,56 @@ function customize_admin_bar_menu($wp_admin_bar){
       'id'   => 'dashboard_menu-theme-settings', // 子メニューID
       'meta'   => array(),
       'title'  => __( SETTING_NAME_TOP, THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-settings') // ページURL
+      'href'   => admin_url('admin.php?page=theme-settings') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-speech-balloon', // 子メニューID
       'meta'   => array(),
       'title'  => __( '吹き出し', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=speech-balloon') // ページURL
+      'href'   => admin_url('admin.php?page=speech-balloon') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-func-text', // 子メニューID
       'meta'   => array(),
       'title'  => __( 'テンプレート', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-func-text') // ページURL
+      'href'   => admin_url('admin.php?page=theme-func-text') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-affiliate-tag', // 子メニューID
       'meta'   => array(),
       'title'  => __( 'アフィリエイトタグ', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-affiliate-tag') // ページURL
+      'href'   => admin_url('admin.php?page=theme-affiliate-tag') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-ranking', // 子メニューID
       'meta'   => array(),
       'title'  => __( 'ランキング作成', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-ranking') // ページURL
+      'href'   => admin_url('admin.php?page=theme-ranking') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-access', // 子メニューID
       'meta'   => array(),
       'title'  => __( 'アクセス集計', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-access') // ページURL
+      'href'   => admin_url('admin.php?page=theme-access') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-speed-up', // 子メニューID
       'meta'   => array(),
       'title'  => __( '高速化', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-speed-up') // ページURL
+      'href'   => admin_url('admin.php?page=theme-speed-up') // ページURL
     ));
     $wp_admin_bar->add_menu(array(
       'parent' => 'dashboard_menu', // 親メニューID
       'id'   => 'dashboard_menu-theme-backup', // 子メニューID
       'meta'   => array(),
       'title'  => __( 'バックアップ', THEME_NAME ), // ラベル
-      'href'   => home_url('/wp-admin/admin.php?page=theme-backup') // ページURL
+      'href'   => admin_url('admin.php?page=theme-backup') // ページURL
     ));
   }
 }

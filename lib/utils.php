@@ -632,7 +632,7 @@ endif;
 //ホームアドレスが含まれているか
 if ( !function_exists( 'includes_home_url' ) ):
 function includes_home_url($url){
-  //URLにサイトアドレスが含まれていない場合
+  //URLにホームアドレスが含まれていない場合
   if (strpos($url, home_url()) === false) {
     return false;
   } else {
@@ -656,11 +656,11 @@ endif;
 if ( !function_exists( 'url_to_local' ) ):
 function url_to_local($url){
   //URLにサイトアドレスが含まれていない場合
-  if (!includes_home_url($url)) {
+  if (!includes_site_url($url)) {
     return false;
   }
 
-  $path = str_replace(home_url(), ABSPATH, $url);
+  $path = str_replace(site_url(), ABSPATH, $url);
   $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
 
@@ -677,7 +677,7 @@ function local_to_url($local){
   if (!includes_abspath($local)) {
     return false;
   }
-  $url = str_replace(ABSPATH, home_url().'/', $local);
+  $url = str_replace(ABSPATH, site_url().'/', $local);
   //$url = str_replace('//', '/', $url);
   $url = str_replace('\\', '/', $url);
   // _v($local);

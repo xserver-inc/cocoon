@@ -48,8 +48,8 @@ function tag_code_to_minify_css($buffer) {
         //ファイルタイプのCSSのとき
         ////////////////////////////////
         if ($url) {
-          //ホームURLが含まれているものだけ処理
-          if (strpos($url, home_url()) !== false) {
+          //サイトURLが含まれているものだけ処理
+          if (includes_site_url($url)) {
             if (
               //アドミンバースタイルは除外
               (strpos($url, 'admin-bar.min.css') !== false)

@@ -233,7 +233,7 @@ add_filter( 'script_loader_src', 'add_file_ver_to_css_js', 9999 );
 if ( !function_exists( 'add_file_ver_to_css_js' ) ):
 function add_file_ver_to_css_js( $src ) {
   //サーバー内のファイルの場合
-  if (strpos( $src, home_url() ) !== false) {
+  if (includes_site_url($src)) {
     //Wordpressのバージョンを除去する場合
     // if ( strpos( $src, 'ver=' ) )
     //   $src = remove_query_arg( 'ver', $src );
