@@ -6,7 +6,7 @@ class MobileTextWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
       'mobile_text',
-      WIDGET_NAME_PREFIX.__( 'モバイル用テキスト', THEME_NAME ),
+      WIDGET_NAME_PREFIX.__( 'テキスト（モバイル用）', THEME_NAME ),
       array('description' => __( 'モバイルのみで表示されるテキストウィジェットです。768px以下で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );//ウイジェット名
