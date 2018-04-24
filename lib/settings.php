@@ -232,9 +232,6 @@ add_filter( 'style_loader_src', 'add_file_ver_to_css_js', 9999 );
 add_filter( 'script_loader_src', 'add_file_ver_to_css_js', 9999 );
 if ( !function_exists( 'add_file_ver_to_css_js' ) ):
 function add_file_ver_to_css_js( $src ) {
-  // _v($src);
-  // _v(site_url());
-  // _v(strpos( $src, site_url() ));
   //サーバー内のファイルの場合
   if (strpos( $src, home_url() ) !== false) {
     //Wordpressのバージョンを除去する場合

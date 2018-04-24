@@ -48,8 +48,8 @@ function tag_code_to_minify_css($buffer) {
         //ファイルタイプのCSSのとき
         ////////////////////////////////
         if ($url) {
-          //サイトのURLが含まれているものだけ処理
-          if (strpos($url, site_url()) !== false) {
+          //ホームURLが含まれているものだけ処理
+          if (strpos($url, home_url()) !== false) {
             if (
               //アドミンバースタイルは除外
               (strpos($url, 'admin-bar.min.css') !== false)
@@ -79,7 +79,7 @@ function tag_code_to_minify_css($buffer) {
               $last_minfified_css .= $css;
             }
 
-          } else {//strpos($url, site_url()) !== false
+          } else {
             //外部ファイル名の場合
             //_v($url);
             if (!is_amp() && strpos($url, FONT_AWESOME_CDN_URL) !== false) {

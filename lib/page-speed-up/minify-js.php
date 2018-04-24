@@ -45,8 +45,8 @@ function tag_code_to_minify_js($buffer) {
 
         //ファイルタイプのscriptタグだった場合
         if ($url) {
-          //サイトのURLが含まれているものだけ処理
-          if (strpos($url, site_url()) !== false) {
+          //ホームURLが含まれているものだけ処理
+          if (strpos($url, home_url()) !== false) {
             //_v($url);
             //除外処理
             if (
@@ -91,7 +91,7 @@ function tag_code_to_minify_js($buffer) {
               //$last_minfified_js .= $js;
             }//$js
 
-          }//strpos($url, site_url()) !== false
+          }//strpos($url, home_url()) !== false
         }//url
 
 

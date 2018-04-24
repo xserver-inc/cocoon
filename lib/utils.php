@@ -677,7 +677,7 @@ function local_to_url($local){
   if (!includes_abspath($local)) {
     return false;
   }
-  $url = str_replace(ABSPATH, site_url().'/', $local);
+  $url = str_replace(ABSPATH, home_url().'/', $local);
   //$url = str_replace('//', '/', $url);
   $url = str_replace('\\', '/', $url);
   // _v($local);

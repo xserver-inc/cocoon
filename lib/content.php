@@ -7,7 +7,7 @@ add_filter('the_content', 'get_the_content_all_scripts', 9999);
 if ( !function_exists( 'get_the_content_all_scripts' ) ):
 function get_the_content_all_scripts($the_content) {
   global $_THE_CONTENT_SCRIPTS;
-  if (preg_match_all('{<script(?!.*src=").*?>(.+?)</script>}is', $the_content, $m)) {
+  if (preg_match_all('{<script(?!.*src=).*?>(.+?)</script>}is', $the_content, $m)) {
     $all_index = 0;
     $js_index = 1;
     $i = 0;

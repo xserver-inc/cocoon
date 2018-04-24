@@ -170,8 +170,8 @@ function auto_post_thumbnail_image($post_id) {
 
       //サムネイルが見つからなかったら、データベースから探す
       if (!$thumb_id &&
-         //画像のパスにサイト名が含まれているとき
-         ( strpos($image, site_url()) !== false ) ) {
+         //画像のパスにホームアドレスが含まれているとき
+         ( strpos($image, home_url()) !== false ) ) {
         //$image = substr($image, strpos($image, '"')+1);
         preg_match('/src *= *"([^"]+)/i', $image, $m);
         $image = $m[1];
