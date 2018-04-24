@@ -2,31 +2,31 @@
 ///////////////////////////////////////////////////
 //モバイル用広告ウイジェットの追加
 ///////////////////////////////////////////////////
-class MobileAdWidgetItem extends WP_Widget {
+class AdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
-      'mobile_ad',
-      WIDGET_NAME_PREFIX.__( '広告（モバイル用）', THEME_NAME ), //ウイジェット名
-      array('description' => __( 'モバイルのみで表示される広告ウィジェットです。768px以下で表示されます。', THEME_NAME )),
+      'common_ad',
+      WIDGET_NAME_PREFIX.__( '広告（PC・モバイル兼用）', THEME_NAME ), //ウイジェット名
+      array('description' => __( 'パソコンとモバイル端末両方に表示される広告ウィジェットです。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }
   function widget($args, $instance) {
     extract( $args );
-    $ad = apply_filters( 'widget_mobile_ad_text', isset($instance['ad_text']) ? $instance['ad_text'] : '' );
-    $format = apply_filters( 'widget_mobile_ad_format', isset($instance['ad_format']) ? $instance['ad_format'] : 'none' );
+    $ad = apply_filters( 'widget_ad_text', isset($instance['ad_text']) ? $instance['ad_text'] : '' );
+    $format = apply_filters( 'widget_ad_format', isset($instance['ad_format']) ? $instance['ad_format'] : 'none' );
 
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() //広告表示がオンのとき
        ):
        echo $args['before_widget'];
-       get_template_part_with_ad_format($format, 'mobile-ad-widget', 1/*ラベルの表示*/, $ad);
+       get_template_part_with_ad_format($format, 'common-ad-widget', 1/*ラベルの表示*/, $ad);
        ?>
        <?php //以前のHTMLタグは使用しない
        if (0): ?>
         <div class="ad-area ad-widget">
           <div class="ad-label"><?php echo get_ad_label() ?></div>
-          <div class="ad-responsive ad-mobile"><?php echo $ad; ?></div>
+          <div class="ad-responsive ad-common"><?php echo $ad; ?></div>
         </div>
        <?php endif ?>
 
@@ -70,5 +70,4 @@ class MobileAdWidgetItem extends WP_Widget {
 <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("MobileAdWidgetItem");'));
-add_action('widgets_init', function(){register_widget('MobileAdWidgetItem');});
+add_action('widgets_init', function(){register_widget('AdWidgetItem');});

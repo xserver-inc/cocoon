@@ -132,5 +132,7 @@ require_once 'widgets/fb-like-balloon.php';
 require_once 'widgets/cta-box.php';
 //ランキング
 require_once 'widgets/item-ranking.php';
+//広告ウィジェット
+require_once 'widgets/ad.php';
 //ウィジェットの表示制御
 require_once 'widgets/display-widgets.php';
