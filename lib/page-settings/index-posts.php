@@ -2,6 +2,9 @@
 //エントリーカードタイプ
 update_theme_option(OP_ENTRY_CARD_TYPE);
 
+//スマートフォンのエントリーカードを1カラムに
+update_theme_option(OP_SMARTPHONE_ENTRY_CARD_1_COLUMN);
+
 //エントリーカード枠線の表示
 update_theme_option(OP_ENTRY_CARD_BORDER_VISIBLE);
 

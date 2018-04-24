@@ -15,6 +15,14 @@ function is_entry_card_type_entry_card(){
 }
 endif;
 
+//スマートフォンのエントリーカードを1カラムに
+define('OP_SMARTPHONE_ENTRY_CARD_1_COLUMN', 'smartphone_entry_card_1_column');
+if ( !function_exists( 'is_smartphone_entry_card_1_column' ) ):
+function is_smartphone_entry_card_1_column(){
+  return get_theme_option(OP_SMARTPHONE_ENTRY_CARD_1_COLUMN);
+}
+endif;
+
 //エントリーカード枠線の表示
 define('OP_ENTRY_CARD_BORDER_VISIBLE', 'entry_card_border_visible');
 if ( !function_exists( 'is_entry_card_border_visible' ) ):
