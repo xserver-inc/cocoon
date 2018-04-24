@@ -90,7 +90,7 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
-      'title' => __( 'ボックス', THEME_NAME ),
+      'title' => __( 'ボックス（アイコン）', THEME_NAME ),
       'items' => array(
         array(
           'title' => __( '補足情報(i)', THEME_NAME ),
@@ -117,28 +117,33 @@ function initialize_tinymce_styles($init_array) {
           'block' => 'div',
           'classes' => 'comment-box'
         ),
+      ),
+    ),
+    array(
+      'title' => __( 'ボックス（Bootstrap）', THEME_NAME ),
+      'items' => array(
         array(
-          'title' => __( 'プライマリーボックス', THEME_NAME ),
+          'title' => __( 'プライマリー', THEME_NAME ),
           'block' => 'div',
           'classes' => 'primary-box'
         ),
         array(
-          'title' => __( 'サクセスボックス', THEME_NAME ),
+          'title' => __( 'サクセス', THEME_NAME ),
           'block' => 'div',
           'classes' => 'success-box'
         ),
         array(
-          'title' => __( 'インフォボックス', THEME_NAME ),
+          'title' => __( 'インフォ', THEME_NAME ),
           'block' => 'div',
           'classes' => 'info-box'
         ),
         array(
-          'title' => __( 'ワーニングボックス', THEME_NAME ),
+          'title' => __( 'ワーニング', THEME_NAME ),
           'block' => 'div',
           'classes' => 'warning-box'
         ),
         array(
-          'title' => __( 'デンジャーボックス', THEME_NAME ),
+          'title' => __( 'デンジャー', THEME_NAME ),
           'block' => 'div',
           'classes' => 'danger-box',
         ),

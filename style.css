@@ -2358,7 +2358,7 @@ label.screen-reader-text {
 
 .comment-box {
   background: #fefefe;
-  border: 1px solid #ccc;
+  border: 1px solid #ccd;
 }
 
 .information-box::before,
@@ -2406,7 +2406,7 @@ label.screen-reader-text {
 .comment-box::before {
   content: '\f0e5';
   color: #999;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ccd;
   font-size: 36px;
 }
 
