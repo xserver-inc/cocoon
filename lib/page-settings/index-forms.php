@@ -17,7 +17,7 @@
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
               <div <?php body_class(); ?>>
-              <?php query_posts(''); ?>
+              <?php query_posts('no_found_rows=1'); ?>
               <?php get_template_part('tmp/list') ?>
               </div>
             </div>

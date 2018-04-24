@@ -17,7 +17,7 @@
           <td>
             <div class="demo toc" style="height: 300px;overflow: auto;">
               <article class="article">
-                <?php query_posts('posts_per_page=1&orderby=rand'); ?>
+                <?php query_posts('posts_per_page=1&orderby=rand&no_found_rows=1'); ?>
                 <?php get_template_part('tmp/content') ?>
               </article>
             </div>

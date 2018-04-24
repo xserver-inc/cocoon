@@ -830,6 +830,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
 
   $args = array(
     'posts_per_page' => $entry_count,
+    'no_found_rows' => true,
   );
   if ( $categories ) {
     //_v($categories);

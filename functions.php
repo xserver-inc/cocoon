@@ -53,6 +53,7 @@ function get_related_wp_query_args(){
       'posts_per_page'=> intval(get_related_entry_count()),
       'category__in' => $category_IDs,
       'orderby' => 'rand',
+      'no_found_rows' => true,
     );
   } else {
     //タグ情報から関連記事をランダムに呼び出す
@@ -67,6 +68,7 @@ function get_related_wp_query_args(){
       'posts_per_page'=> intval(get_related_entry_count()),
       'tag__in' => $tag_IDs,
       'orderby' => 'rand',
+      'no_found_rows' => true,
     );
   }
 }

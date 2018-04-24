@@ -1300,8 +1300,14 @@ endif;
 if ( !function_exists( 'get_first_post_year' ) ):
 function get_first_post_year(){
   $year = null;
+  $args = array(
+    'posts_per_page' => 1,
+    'order' => 'ASC',
+    'no_found_rows' => true,
+  );
   //記事を古い順に1件だけ取得
-  query_posts('posts_per_page=1&order=ASC');
+  query_posts($args);
+  //query_posts('posts_per_page=1&order=ASC');
   if ( have_posts() ) : while ( have_posts() ) : the_post();
     $year = intval(get_the_time('Y'));//最初の投稿の年を取得
   endwhile; endif;
