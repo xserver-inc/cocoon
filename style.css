@@ -2322,7 +2322,8 @@ label.screen-reader-text {
 .alert-box,
 .information,
 .question,
-.alert {
+.alert,
+.memo-box {
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -2349,12 +2350,18 @@ label.screen-reader-text {
   border: 1px solid rgba(240, 128, 128, 0.5);
 }
 
+.memo-box {
+  background: #ebf8f4;
+  border: 1px solid #8dd7c1;
+}
+
 .information-box::before,
 .question-box::before,
 .alert-box::before,
 .information::before,
 .question::before,
-.alert::before {
+.alert::before,
+.memo-box::before {
   font-family: "FontAwesome";
   font-size: 50px;
   position: absolute;
@@ -2364,6 +2371,8 @@ label.screen-reader-text {
   line-height: 1em;
   top: 50%;
   margin-top: -.5em;
+  width: 44px;
+  text-align: center;
 }
 
 .information-box::before,
@@ -2378,6 +2387,13 @@ label.screen-reader-text {
   content: '\f059';
   color: gold;
   border-right: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+.memo-box::before {
+  content: '\f040';
+  color: #7ad0b6;
+  border-right: 1px solid #8dd7c1;
+  font-size: 36px;
 }
 
 .alert-box::before,
@@ -2397,7 +2413,8 @@ label.screen-reader-text {
   .alert-box,
   .information,
   .question,
-  .alert {
+  .alert,
+  .memo-box {
     padding: 6px 6px 6px 26px;
   }
 
@@ -2406,11 +2423,13 @@ label.screen-reader-text {
   .alert-box::before,
   .information::before,
   .question::before,
-  .alert::before {
+  .alert::before,
+  .memo-box::before {
     top: 1em;
     left: 6px;
     font-size: 18px;
     border: none;
+    width: auto;
   }
 }
 /*******************************
