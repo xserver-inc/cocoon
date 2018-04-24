@@ -848,9 +848,12 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
     );
   }
   $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
-  query_posts( $args ); //クエリの作成?>
+  //query_posts( $args ); //クエリの作成
+  $query = new WP_Query( $args );
+  ?>
   <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
   <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
     <div class="new-entry-card widget-entry-card e-card cf">
       <figure class="new-entry-card-thumb widget-entry-card-thumb card-thumb">
@@ -870,7 +873,8 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
   else :
     echo '<p>'.__( '新着記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>
-  <?php wp_reset_query(); ?>
+  <?php wp_reset_postdata(); ?>
+  <?php //wp_reset_query(); ?>
   </div>
 <?php
 }

@@ -19,6 +19,7 @@
               <article class="article">
                 <?php query_posts('posts_per_page=1&orderby=rand&no_found_rows=1'); ?>
                 <?php get_template_part('tmp/content') ?>
+                <?php wp_reset_query(); ?>
               </article>
             </div>
             <?php generate_tips_tag(__( 'デモの記事はランダムです。H2見出しがない本文には目次は表示されません。', THEME_NAME )); ?>

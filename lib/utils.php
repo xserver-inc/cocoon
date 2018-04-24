@@ -1305,14 +1305,23 @@ function get_first_post_year(){
     'order' => 'ASC',
     'no_found_rows' => true,
   );
+
   //記事を古い順に1件だけ取得
-  query_posts($args);
-  //query_posts('posts_per_page=1&order=ASC');
-  if ( have_posts() ) : while ( have_posts() ) : the_post();
+  $query = new WP_Query( $args );
+  if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post();
     $year = intval(get_the_time('Y'));//最初の投稿の年を取得
   endwhile; endif;
-  wp_reset_query();
+  wp_reset_postdata();
   return $year;
+
+  // //記事を古い順に1件だけ取得
+  // query_posts($args);
+  // //query_posts('posts_per_page=1&order=ASC');
+  // if ( have_posts() ) : while ( have_posts() ) : the_post();
+  //   $year = intval(get_the_time('Y'));//最初の投稿の年を取得
+  // endwhile; endif;
+  // wp_reset_query();
+  // return $year;
 }
 endif;
 
