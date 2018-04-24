@@ -2323,7 +2323,8 @@ label.screen-reader-text {
 .information,
 .question,
 .alert,
-.memo-box {
+.memo-box,
+.comment-box {
   padding: 20px 20px 20px 72px;
   border-radius: 4px;
   position: relative;
@@ -2355,13 +2356,19 @@ label.screen-reader-text {
   border: 1px solid #8dd7c1;
 }
 
+.comment-box {
+  background: #fefefe;
+  border: 1px solid #ccc;
+}
+
 .information-box::before,
 .question-box::before,
 .alert-box::before,
 .information::before,
 .question::before,
 .alert::before,
-.memo-box::before {
+.memo-box::before,
+.comment-box::before {
   font-family: "FontAwesome";
   font-size: 50px;
   position: absolute;
@@ -2396,6 +2403,13 @@ label.screen-reader-text {
   font-size: 36px;
 }
 
+.comment-box::before {
+  content: '\f0e5';
+  color: #999;
+  border-right: 1px solid #ccc;
+  font-size: 36px;
+}
+
 .alert-box::before,
 .alert::before {
   content: '\f06a';
@@ -2414,7 +2428,8 @@ label.screen-reader-text {
   .information,
   .question,
   .alert,
-  .memo-box {
+  .memo-box,
+  .comment-box {
     padding: 6px 6px 6px 26px;
   }
 
@@ -2424,7 +2439,8 @@ label.screen-reader-text {
   .information::before,
   .question::before,
   .alert::before,
-  .memo-box::before {
+  .memo-box::before,
+  .comment-box::before {
     top: 1em;
     left: 6px;
     font-size: 18px;
