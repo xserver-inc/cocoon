@@ -39,7 +39,7 @@ if ( !function_exists( 'register_main_scroll_widget_area' ) ):
 function register_main_scroll_widget_area(){
   register_sidebars(1,
     array(
-    'name' => __( 'メンインカラムスクロール追従', THEME_NAME ),
+    'name' => __( 'メインカラムスクロール追従', THEME_NAME ),
     'id' => 'main-scroll',
     'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。※モバイルでは表示されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-main-scroll %2$s">',
