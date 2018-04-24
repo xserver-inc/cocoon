@@ -713,8 +713,16 @@ function get_additional_entry_card_classes($option = null){
       $classes .= ' ect-vertical-card';
       break;
   }
+
+  //エントリーカードに枠線を付ける
   if (is_entry_card_border_visible()) {
     $classes .= ' entry-card-border';
+  }
+
+
+  //スマートフォンでエントリーカードを1カラムに
+  if (!is_entry_card_type_entry_card() && is_smartphone_entry_card_1_column()) {
+    $classes .= ' sp-entry-card-1-column';
   }
 
   if ($option) {
