@@ -106,7 +106,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
         <?php
         //generate_label_tag('', __('名前：', THEME_NAME) );
         generate_textbox_tag('item_ranking['.$i.'][name]', $name,  __('商品名等、見出しとなる名前を入力してください（※必須）',THEME_NAME ));
-        generate_tips_tag(__( '項目の名前です。タグ入力も可能です。', THEME_NAME ));
+        generate_tips_tag(__( '項目の名前です。タグ・ショートコード入力も可能です。', THEME_NAME ));
          ?>
         </div>
 
@@ -138,7 +138,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
           <?php
           generate_label_tag('', __('画像・バナータグ', THEME_NAME) );
           echo '<br>';
-          generate_textarea_tag('item_ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグ等を入力してください。', THEME_NAME ), 5) ;
+          generate_textarea_tag('item_ranking['.$i.'][image_tag]', $image_tag, __( '商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能です。', THEME_NAME ), 5) ;
           generate_tips_tag(__( 'イメージ画像のタグを入力してください。※入力していない場合は表示されません。', THEME_NAME ));
           ?>
         </div>
@@ -147,7 +147,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
           generate_label_tag('', __('説明文（※必須）', THEME_NAME) );
           echo '<br>';
           generate_textarea_tag('item_ranking['.$i.'][description]', $description,  '商品等の説明文を入力してください。', 5);
-          generate_tips_tag(__( '紹介文を入力してください。タグ入力も可能です。', THEME_NAME ));
+          generate_tips_tag(__( '紹介文を入力してください。タグ・ショートコード入力も可能です。', THEME_NAME ));
            ?>
         </div>
       </div>
@@ -173,7 +173,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
           generate_label_tag('', __('リンクタグ', THEME_NAME) );
           echo '<br>';
           generate_textarea_tag('item_ranking['.$i.'][link_tag]', $link_tag, __( '公式ページ等のリンク（アフィリエイト）タグを入力してください。', THEME_NAME ), 3) ;
-          generate_tips_tag(__( 'アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。', THEME_NAME ));
+          generate_tips_tag(__( 'アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショートコードも入力できます。', THEME_NAME ));
 
           echo '</div></span>'
           ?>
