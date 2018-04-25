@@ -235,6 +235,11 @@ function body_class_additional($classes) {
     $classes[] = 'no-smartphone-snippet';
   }
 
+  //Pinterestボタンを表示するか
+  if (is_pinterest_share_button_visible() && is_singular()) {
+    $classes[] = 'show-pinterest-button';
+  }
+
   return $classes;
 }//body_class_additional
 endif;
