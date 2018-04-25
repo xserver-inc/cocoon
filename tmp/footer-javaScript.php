@@ -1,4 +1,4 @@
-<?php //AMPページでは呼び出さない
+<?php //AMPページでは呼び出さない（通常ページのみで呼び出す）
 if (!is_amp()): ?>
   <?php //Pinterestシェア用のスクリプト
   if (is_pinterest_share_button_visible() && is_singular()): ?>
