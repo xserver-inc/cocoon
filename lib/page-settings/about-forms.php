@@ -15,6 +15,10 @@
     $all .= __( 'サイト名：', THEME_NAME ).get_bloginfo('name').PHP_EOL;
     $all .= __( 'サイトURL：', THEME_NAME ).site_url().PHP_EOL;
     $all .= __( 'ホームURL：', THEME_NAME ).home_url().PHP_EOL;
+    $all .= __( 'コンテンツURL：', THEME_NAME ).content_url().PHP_EOL;
+    $all .= __( 'インクルードURL：', THEME_NAME ).includes_url().PHP_EOL;
+    $all .= __( 'テンプレートURL：', THEME_NAME ).get_template_directory_uri().PHP_EOL;
+    $all .= __( 'スタイルシートURL：', THEME_NAME ).get_stylesheet_directory_uri().PHP_EOL;
     $all .= __( 'Wordpressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
     if (isset($_SERVER['HTTP_USER_AGENT']))

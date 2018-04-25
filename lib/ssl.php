@@ -4,12 +4,12 @@
 if ( !function_exists( 'chagne_http_to_https' ) ):
 function chagne_site_url_html_to_https($the_content){
   //httpとhttpsURLの取得
-  if (strpos(home_url(), 'https://') !== false) {
-    $http_url = str_replace('https://', 'http://', home_url());
-    $https_url = home_url();
+  if (strpos(site_url(), 'https://') !== false) {
+    $http_url = str_replace('https://', 'http://', site_url());
+    $https_url = site_url();
   } else {
-    $http_url = home_url();
-    $https_url = str_replace('http://', 'https://', home_url());
+    $http_url = site_url();
+    $https_url = str_replace('http://', 'https://', site_url());
   }
   //投稿本文の内部リンクを置換
   $the_content = str_replace($http_url, $https_url, $the_content);
