@@ -847,7 +847,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       )
     );
   }
-  $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
+  $thumb_size = get_new_entries_thumbnail_size();
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>
