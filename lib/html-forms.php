@@ -776,7 +776,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
 
   //var_dump($records);
-  $thumb_size = get_popular_entries_thumbnail_size();
+  $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   ?>
   <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
@@ -847,7 +847,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       )
     );
   }
-  $thumb_size = get_new_entries_thumbnail_size();
+  $thumb_size = get_new_entries_thumbnail_size($entry_type);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>

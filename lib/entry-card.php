@@ -21,7 +21,7 @@ endif;
 
 //新着記事のサムネイルサイズ
 if ( !function_exists( 'get_new_entries_thumbnail_size' ) ):
-function get_new_entries_thumbnail_size(){
+function get_new_entries_thumbnail_size($entry_type = ET_DEFAULT){
   $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   return $thumb_size;
 }
@@ -29,7 +29,7 @@ endif;
 
 //人気記事のサムネイルサイズ
 if ( !function_exists( 'get_popular_entries_thumbnail_size' ) ):
-function get_popular_entries_thumbnail_size(){
+function get_popular_entries_thumbnail_size($entry_type = ET_DEFAULT){
   $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   return $thumb_size;
 }
