@@ -120,30 +120,30 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
-      'title' => __( 'ボックス（Bootstrap）', THEME_NAME ),
+      'title' => __( 'ボックス（案内）', THEME_NAME ),
       'items' => array(
         array(
-          'title' => __( 'プライマリー', THEME_NAME ),
+          'title' => __( 'プライマリー（濃い水色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'primary-box'
         ),
         array(
-          'title' => __( 'サクセス', THEME_NAME ),
+          'title' => __( 'サクセス（薄い緑）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'success-box'
         ),
         array(
-          'title' => __( 'インフォ', THEME_NAME ),
+          'title' => __( 'インフォ（薄い青）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'info-box'
         ),
         array(
-          'title' => __( 'ワーニング', THEME_NAME ),
+          'title' => __( 'ワーニング（薄い黄色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'warning-box'
         ),
         array(
-          'title' => __( 'デンジャー', THEME_NAME ),
+          'title' => __( 'デンジャー（薄い赤色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'danger-box',
         ),

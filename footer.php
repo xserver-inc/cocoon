@@ -70,7 +70,6 @@
 
   <?php if (!is_amp()) wp_footer(); ?>
 
-
   <?php //フッターで読み込むJavaScript用テンプレート
   get_template_part('tmp/footer-javascript');?>
 
