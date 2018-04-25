@@ -9,10 +9,10 @@ if (!is_item_rankings_record_empty()) {
 
 if ( !function_exists( 'add_item_rankings_dropdown' ) ):
 function add_item_rankings_dropdown(){
-  if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
+  //if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
     add_filter( 'mce_external_plugins',  'add_item_rankings_to_mce_external_plugins' );
     add_filter( 'mce_buttons_3',  'register_item_rankings' );
-  }
+  //}
 }
 endif;
 

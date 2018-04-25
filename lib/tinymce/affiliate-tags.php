@@ -8,10 +8,10 @@ if (!is_affiliate_tags_record_empty()) {
 
 if ( !function_exists( 'add_affiliate_tags_dropdown' ) ):
 function add_affiliate_tags_dropdown(){
-  if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
+  //if( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  {
     add_filter( 'mce_external_plugins',  'add_affiliate_tags_to_mce_external_plugins' );
     add_filter( 'mce_buttons_3',  'register_affiliate_tags' );
-  }
+  //}
 }
 endif;
 
