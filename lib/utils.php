@@ -729,8 +729,11 @@ endif;
 //テーマのカスタムCSSファイル
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){
-  $dir = get_theme_css_cache_dir().'css-custom.css';
-  return $dir;
+  $file = get_theme_css_cache_dir().'css-custom.css';
+  if (!file_exists($file)) {
+    wp_filesystem_put_contents($file,  '');
+  }
+  return $file;
 }
 endif;
 
