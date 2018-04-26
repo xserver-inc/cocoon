@@ -730,6 +730,7 @@ endif;
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){
   $file = get_theme_css_cache_dir().'css-custom.css';
+  //キャッシュファイルが存在しない場合はからのファイルを生成
   if (!file_exists($file)) {
     wp_filesystem_put_contents($file,  '');
   }
