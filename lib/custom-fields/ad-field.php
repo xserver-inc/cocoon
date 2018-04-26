@@ -40,14 +40,24 @@ add_action('save_post', 'ad_custom_box_save_data');
 if ( !function_exists( 'ad_custom_box_save_data' ) ):
 function ad_custom_box_save_data(){
   $id = get_the_ID();
+  // //広告の除外
+  // $the_page_ads_novisible = !empty($_POST['the_page_ads_novisible']) ? 1 : 0;
+  // $the_page_ads_novisible_key = 'the_page_ads_novisible';
+  // add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
+  // update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
+  // if (is_migrate_from_simplicity()) {
+  //   add_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible, true);
+  //   update_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible);
+  // }
+
   //広告の除外
-  $the_page_ads_novisible = !empty($_POST['the_page_ads_novisible']) ? 1 : 0;
-  $the_page_ads_novisible_key = 'the_page_ads_novisible';
-  add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
-  update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
+  $the_page_ads_visible = !empty($_POST['the_page_ads_visible']) ? 1 : 0;
+  $the_page_ads_visible_key = 'the_page_ads_visible';
+  add_post_meta($id, $the_page_ads_visible_key, $the_page_ads_visible, true);
+  update_post_meta($id, $the_page_ads_visible_key, $the_page_ads_visible);
   if (is_migrate_from_simplicity()) {
-    add_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible, true);
-    update_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible);
+    add_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible, true);
+    update_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible);
   }
 
 }
