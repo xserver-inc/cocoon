@@ -213,20 +213,33 @@ function generate_canonical_url(){
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
   $canonical_url = null;
   if (is_home()) {
-    $canonical_url = home_url();
+    $canonical_url = home_url('/');
   } elseif (is_category()) {
-    $canonical_url = get_category_link(get_query_var('cat'));
+    //$canonical_url = get_category_link(get_query_var('cat'));
+    $canonical_url = get_query_removed_requested_url();
   } elseif (is_tag()) {
-    $postTag = get_the_tags();
-    $canonical_url = get_tag_link( $postTag[0]->term_id );
-  } elseif (is_page() || is_single()) {
+    // $postTag = get_the_tags();
+    // $canonical_url = get_tag_link( $postTag[0]->term_id );
+    $canonical_url = get_query_removed_requested_url();
+  } elseif (is_singular()) {
     $canonical_url = get_permalink();
-  } elseif(is_404()) {
-    $canonical_url =  home_url()."/404";
+  // } elseif(is_404()) {
+  //   $canonical_url =  home_url().'/404/';
   }
 
   if ($canonical_url && ( $paged >= 2 || $page >= 2)) {
-    $canonical_url = home_url().'/page/'.max( $paged, $page ).'';
+    $canonical_url = get_query_removed_requested_url();
+    // if (is_singular()) {
+    //   $url = get_permalink();
+    //   //最後が/でない場合
+    //   $url = trailingslashit($url);
+    //   $canonical_url = $url.max( $paged, $page ).'/';
+    // } else {
+    //   $url = $canonical_url;
+    //   //最後が/でない場合
+    //   $url = trailingslashit($url);
+    //   $canonical_url = $url.'page/'.max( $paged, $page ).'/';
+    // }
   }
 
   return $canonical_url;

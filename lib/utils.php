@@ -1347,6 +1347,16 @@ function get_requested_url(){
 }
 endif;
 
+//現在表示しているページのURL（クエリを取り除く）
+if ( !function_exists( 'get_query_removed_requested_url' ) ):
+function get_query_removed_requested_url(){
+  $url = get_requested_url();
+  $url = preg_replace('{\?.+$}', '', $url);
+  $url = trailingslashit($url);
+  return $url;
+}
+endif;
+
 if ( !function_exists( 'object_to_array' ) ):
 function object_to_array($object){
   return json_decode(json_encode($object), true);
@@ -1466,5 +1476,15 @@ function is_field_checkbox_value_default($value){
   } else {
     return false;
   }
+}
+endif;
+
+//URL最後が/でない場合スラッシュをつける
+if ( !function_exists( 'add_delimiter_to_url_if_last_nothing' ) ):
+function add_delimiter_to_url_if_last_nothing($url){
+  if (!preg_match('{^.+/$}', $url)) {
+    $url = $url.'/';
+  }
+  return $url;
 }
 endif;
