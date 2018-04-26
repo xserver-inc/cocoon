@@ -36,7 +36,7 @@ function page_custom_box_view(){
 
   //目次表示
   generate_checkbox_tag('the_page_toc_visible' , is_the_page_toc_visible(), __( '目次（TOC）を表示する', THEME_NAME ));
-  generate_howro_tag(__( 'このページに目次を表示するか設定します。※「TOC」設定ページで目次自体を表示していないと表示されません。', THEME_NAME ));
+  generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
 
 
   // //ページタイプ
