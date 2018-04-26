@@ -34,7 +34,7 @@ function page_custom_box_view(){
   generate_selectbox_tag('page_type', $options, get_singular_page_type());
   generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
 
-  //ページタイプ
+  //目次表示
   generate_checkbox_tag('the_page_toc_visible' , is_the_page_toc_visible(), __( '目次（TOC）を表示する', THEME_NAME ));
   generate_howro_tag(__( 'このページに目次を表示するか設定します。※「TOC」設定ページで目次自体を表示していないと表示されません。', THEME_NAME ));
 
