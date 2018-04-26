@@ -1454,3 +1454,13 @@ function replace_directory_uri($code){
   return $code;
 }
 endif;
+
+if ( !function_exists( 'is_field_checkbox_value_default' ) ):
+function is_field_checkbox_value_default($value){
+  if ($value === '' || $value === null) {
+    return true;
+  } else {
+    return false;
+  }
+}
+endif;

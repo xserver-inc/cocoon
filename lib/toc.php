@@ -29,6 +29,11 @@ function add_toc_before_1st_h2($the_content){
     return $the_content;
   }
 
+  //投稿ページで非表示になっていると表示しない
+  if (!is_the_page_toc_visible()) {
+    return $the_content;
+  }
+
   $content     = $the_content;
   $headers     = array();
   $html        = '';
