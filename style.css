@@ -488,6 +488,10 @@ img {
   text-align: center;
 }
 
+.logo-image * {
+  display: inline-block;
+}
+
 .site-name-text-link {
   color: #333435;
   text-decoration: none;

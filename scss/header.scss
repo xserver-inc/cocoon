@@ -22,6 +22,10 @@
   //min-height: 100px;
 }
 
+.logo-image *{
+  display: inline-block;
+}
+
 
 .site-name-text-link{
   @include link_cancel;
