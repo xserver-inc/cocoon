@@ -32,6 +32,14 @@ function is_tag_page_noindex(){
 }
 endif;
 
+//添付ファイルページをnoindexとする
+define('OP_ATTACHMENT_PAGE_NOINDEX', 'attachment_page_noindex');
+if ( !function_exists( 'is_attachment_page_noindex' ) ):
+function is_attachment_page_noindex(){
+  return get_theme_option(OP_ATTACHMENT_PAGE_NOINDEX, 1);
+}
+endif;
+
 //検索エンジンに知らせる日付
 define('OP_SEO_DATE_TYPE', 'seo_date_type');
 if ( !function_exists( 'get_seo_date_type' ) ):

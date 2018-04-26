@@ -84,9 +84,9 @@ function is_noindex_page(){
   return (is_archive() && !is_tag() && !is_category() && !is_tax()) || //アーカイブページはインデックスに含めない
   ( is_tag() && is_tag_page_noindex() ) || //タグページをインデックスしたい場合はこの行を削除
   ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //ページの2ページ目以降はインデックスに含めない（似たような内容の薄いコンテンツの除外）
+  (is_attachment() && is_attachment_page_noindex()) || //添付ファイルページも含めない
   is_search() || //検索結果ページはインデックスに含めない
-  is_404() || //404ページはインデックスに含めない
-  is_attachment(); //添付ファイルページも含めない
+  is_404(); //404ページはインデックスに含めない
 }
 endif;
 
