@@ -2,87 +2,94 @@
 // カエレバ・ヨメレバ
 ///////////////////////////////////////
 
-.booklink-box, .kaerebalink-box {
+.booklink-box, .kaerebalink-box, .tomarebalink-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
   margin: 0 auto 15px;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   text-align: center;
+  // div{
+  //   display: block;
+  // }
 }
-.booklink-box, .kaerebalink-box{
-  div{
-    display: block !important;
+
+.booklink-image, .kaerebalink-image, .tomarebalink-image {
+  width: 160px;
+  min-width: 160px;
+  margin: 0 auto 5px;
+  //text-align: center;
+  img{
+    width: 100%;
   }
 }
-.booklink-image, .kaerebalink-image {
-  width: 100%;
-  margin: 0 0 5px 0;
-  text-align: center;
-}
-.booklink-image img, .kaerebalink-image img {}
-.booklink-info, .kaerebalink-info {
+//.booklink-image img, .kaerebalink-image img {}
+.booklink-info, .kaerebalink-info, .tomarebalink-info {
   line-height: 125%;
   width: 100%;
 }
-.booklink-name, .kaerebalink-name {
+.booklink-name, .kaerebalink-name, .tomarebalink-name {
   margin: 0 0 4px 0;
+  a{
+    color: #0066cc;
+    text-decoration: underline;
+  }
+  >a{
+    font-size: 16px;
+    &:hover{
+      color: #FF9900;
+    }
+  }
 }
-.booklink-name a, .kaerebalink-name a {
-  color: #0066cc;
-  text-decoration: underline;
+
+.booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
+   font-size: 12px;
 }
-.booklink-name > a, .kaerebalink-name > a {
-  font-size: 16px;
-}
-.booklink-name a:hover, .kaerebalink-name a:hover {
-  color: #FF9900;
-}
-.booklink-powered-date, .kaerebalink-powered-date {
-   font-size: 8px;
-}
-.booklink-detail, .kaerebalink-detail {
+.booklink-detail, .kaerebalink-detail, .tomarebalink-address {
   color: #333333;
   font-size: 12px;
   margin: 0 0 10px 0;
 }
 
-.booklink-link2 a, .kaerebalink-link1 a {
-  width: 90%;
-  display: block;
-  margin: 0px auto 8px;
-  padding: 10px 1px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
+.booklink-link2, .kaerebalink-link1, .tomarebalink-link1 {
+  a{
+    width: 90%;
+    display: block;
+    margin: 0px auto 8px;
+    padding: 10px 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+
+  >div>a{
+    background: #fff;
+  }
+
 
 
 }
-.booklink-link2 a:hover, .kaerebalink-link1 a:hover {
-  opacity: 0.6;
-}
+
 
 @media screen and (min-width: 768px) {
 
-  .booklink-box, .kaerebalink-box {
+  .booklink-box, .kaerebalink-box, .tomarebalink-box {
     text-align: left;
     display: flex;
   }
 
-  .booklink-image, .kaerebalink-image {
+  .booklink-image, .kaerebalink-image, .tomarebalink-image {
     vertical-align: top;
     box-sizing: border-box;
-    width: 160px;
-    text-align: center;
-    margin: 0;
+    min-width: auto !important;
   }
 
-  .booklink-image img, .kaerebalink-image img {
-    max-width: 100%
-  }
 
-  .booklink-info, .kaerebalink-info {
+  .booklink-info, .kaerebalink-info, .tomarebalink-info {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
@@ -91,15 +98,14 @@
     width: 100%;
   }
 
-  .booklink-name, .kaerebalink-name {
+  .booklink-name, .kaerebalink-name, .tomarebalink-name {
     margin: 0 0 24px 0;
+    >a{
+      font-size: 16px;
+    }
   }
 
-  .booklink-name > a, .kaerebalink-name > a {
-    font-size: 16px;
-  }
-
-  .booklink-powered-date, .kaerebalink-powered-date {
+  .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
     margin: 6px 0 0 0;
   }
 
@@ -108,94 +114,95 @@
   }
 
 
-  .booklink-link2 a, .kaerebalink-link1 a {
-    width: auto;
-    text-align: center;
-    margin: 0;
-  }
-
-  .booklink-link2 > div, .kaerebalink-link1 > div {
-    width: 32%;
-    padding: 0 5px 5px 0;
-    box-sizing: border-box;
-    float: left;
-    //display: block !important;
-    // a{
-    //   text-align: center;
-    // }
-
+  .booklink-link2, .kaerebalink-link1, .tomarebalink-link1 {
+    display: flex;
+    flex-wrap: wrap;
+    a{
+      width: auto;
+      text-align: center;
+      margin: 0;
+      img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    >div{
+      width: 32%;
+      margin: 2px;
+      box-sizing: border-box;
+      //float: left;
+    }
   }
 
 }
 
 .shoplinkamazon a {
   color: #ff9901;
-  background: #ffffff;
   border: 2px solid #ff9901;
 }
 .shoplinkrakuten a {
   color: #bf0000;
-  background: #ffffff;
   border: 2px solid #bf0000;
 }
 .shoplinkyahoo a {
   color: #ff0033;
-  background: #ffffff;
   border: 2px solid #ff0033;
   position: relative;
-  img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
 }
 .shoplinkseven a {
   color: #008837;
-  background: #ffffff;
   border: 2px solid #008837;
 }
 .shoplinkbellemaison a {
   color: #80bd22;
-  background: #ffffff;
   border: 2px solid #80bd22;
 }
 .shoplinkcecile a {
   color: #8d124b;
-  background: #ffffff;
   border: 2px solid #8d124b;
 }
 .shoplinkkakakucom a {
   color: #051d93;
-  background: #ffffff;
   border: 2px solid #051d93;
 }
 .shoplinkkindle a {
   color: #0074c1;
-  background: #ffffff;
   border: 2px solid #0074c1;
 }
 .shoplinkrakukobo a {
   color: #bf0000;
-  background: #ffffff;
   border: 2px solid #bf0000;
 }
 .shoplinkbk1 a {
   color: #0085cd;
-  background: #ffffff;
   border: 2px solid #0085cd;
 }
 .shoplinkehon a {
   color: #000066;
-  background: #ffffff;
   border: 2px solid #000066;
 }
 .shoplinkkino a {
   color: #004097;
-  background: #ffffff;
   border: 2px solid #004097;
 }
 .shoplinktoshokan a {
   color: #15b0e7;
-  background: #ffffff;
   border: 2px solid #15b0e7;
+}
+.shoplinkjalan a{
+  color: #FF5800;
+  border: 2px solid #FF5800;
+}
+.shoplinkjtb a{
+  color: #C71628;
+  border: 2px solid #C71628;
+}
+.shoplinkikyu a{
+  color: #1C4678;
+  border: 2px solid #1C4678;
+}
+.shoplinkrurubu a{
+  color: #000066;
+  border: 2px solid #000066;
 }

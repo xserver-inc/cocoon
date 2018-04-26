@@ -3410,7 +3410,7 @@ iframe[src*="https://www.google.com/maps/embed"] {
   border-left-color: #85e249;
 }
 
-.booklink-box, .kaerebalink-box {
+.booklink-box, .kaerebalink-box, .tomarebalink-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
   margin: 0 auto 15px;
@@ -3419,49 +3419,45 @@ iframe[src*="https://www.google.com/maps/embed"] {
   text-align: center;
 }
 
-.booklink-box div, .kaerebalink-box div {
-  display: block !important;
+.booklink-image, .kaerebalink-image, .tomarebalink-image {
+  width: 160px;
+  min-width: 160px;
+  margin: 0 auto 5px;
 }
-
-.booklink-image, .kaerebalink-image {
+.booklink-image img, .kaerebalink-image img, .tomarebalink-image img {
   width: 100%;
-  margin: 0 0 5px 0;
-  text-align: center;
 }
 
-.booklink-info, .kaerebalink-info {
+.booklink-info, .kaerebalink-info, .tomarebalink-info {
   line-height: 125%;
   width: 100%;
 }
 
-.booklink-name, .kaerebalink-name {
+.booklink-name, .kaerebalink-name, .tomarebalink-name {
   margin: 0 0 4px 0;
 }
-
-.booklink-name a, .kaerebalink-name a {
+.booklink-name a, .kaerebalink-name a, .tomarebalink-name a {
   color: #0066cc;
   text-decoration: underline;
 }
-
-.booklink-name > a, .kaerebalink-name > a {
+.booklink-name > a, .kaerebalink-name > a, .tomarebalink-name > a {
   font-size: 16px;
 }
-
-.booklink-name a:hover, .kaerebalink-name a:hover {
+.booklink-name > a:hover, .kaerebalink-name > a:hover, .tomarebalink-name > a:hover {
   color: #FF9900;
 }
 
-.booklink-powered-date, .kaerebalink-powered-date {
-  font-size: 8px;
+.booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
+  font-size: 12px;
 }
 
-.booklink-detail, .kaerebalink-detail {
+.booklink-detail, .kaerebalink-detail, .tomarebalink-address {
   color: #333333;
   font-size: 12px;
   margin: 0 0 10px 0;
 }
 
-.booklink-link2 a, .kaerebalink-link1 a {
+.booklink-link2 a, .kaerebalink-link1 a, .tomarebalink-link1 a {
   width: 90%;
   display: block;
   margin: 0px auto 8px;
@@ -3471,30 +3467,26 @@ iframe[src*="https://www.google.com/maps/embed"] {
   font-weight: bold;
   text-align: center;
 }
-
-.booklink-link2 a:hover, .kaerebalink-link1 a:hover {
+.booklink-link2 a:hover, .kaerebalink-link1 a:hover, .tomarebalink-link1 a:hover {
   opacity: 0.6;
+}
+.booklink-link2 > div > a, .kaerebalink-link1 > div > a, .tomarebalink-link1 > div > a {
+  background: #fff;
 }
 
 @media screen and (min-width: 768px) {
-  .booklink-box, .kaerebalink-box {
+  .booklink-box, .kaerebalink-box, .tomarebalink-box {
     text-align: left;
     display: flex;
   }
 
-  .booklink-image, .kaerebalink-image {
+  .booklink-image, .kaerebalink-image, .tomarebalink-image {
     vertical-align: top;
     box-sizing: border-box;
-    width: 160px;
-    text-align: center;
-    margin: 0;
+    min-width: auto !important;
   }
 
-  .booklink-image img, .kaerebalink-image img {
-    max-width: 100%;
-  }
-
-  .booklink-info, .kaerebalink-info {
+  .booklink-info, .kaerebalink-info, .tomarebalink-info {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
@@ -3502,15 +3494,14 @@ iframe[src*="https://www.google.com/maps/embed"] {
     width: 100%;
   }
 
-  .booklink-name, .kaerebalink-name {
+  .booklink-name, .kaerebalink-name, .tomarebalink-name {
     margin: 0 0 24px 0;
   }
-
-  .booklink-name > a, .kaerebalink-name > a {
+  .booklink-name > a, .kaerebalink-name > a, .tomarebalink-name > a {
     font-size: 16px;
   }
 
-  .booklink-powered-date, .kaerebalink-powered-date {
+  .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
     margin: 6px 0 0 0;
   }
 
@@ -3518,101 +3509,110 @@ iframe[src*="https://www.google.com/maps/embed"] {
     margin: 0 0 14px 0;
   }
 
-  .booklink-link2 a, .kaerebalink-link1 a {
+  .booklink-link2, .kaerebalink-link1, .tomarebalink-link1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .booklink-link2 a, .kaerebalink-link1 a, .tomarebalink-link1 a {
     width: auto;
     text-align: center;
     margin: 0;
   }
-
-  .booklink-link2 > div, .kaerebalink-link1 > div {
+  .booklink-link2 a img, .kaerebalink-link1 a img, .tomarebalink-link1 a img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .booklink-link2 > div, .kaerebalink-link1 > div, .tomarebalink-link1 > div {
     width: 32%;
-    padding: 0 5px 5px 0;
+    margin: 2px;
     box-sizing: border-box;
-    float: left;
   }
 }
 .shoplinkamazon a {
   color: #ff9901;
-  background: #ffffff;
   border: 2px solid #ff9901;
 }
 
 .shoplinkrakuten a {
   color: #bf0000;
-  background: #ffffff;
   border: 2px solid #bf0000;
 }
 
 .shoplinkyahoo a {
   color: #ff0033;
-  background: #ffffff;
   border: 2px solid #ff0033;
   position: relative;
-}
-.shoplinkyahoo a img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 .shoplinkseven a {
   color: #008837;
-  background: #ffffff;
   border: 2px solid #008837;
 }
 
 .shoplinkbellemaison a {
   color: #80bd22;
-  background: #ffffff;
   border: 2px solid #80bd22;
 }
 
 .shoplinkcecile a {
   color: #8d124b;
-  background: #ffffff;
   border: 2px solid #8d124b;
 }
 
 .shoplinkkakakucom a {
   color: #051d93;
-  background: #ffffff;
   border: 2px solid #051d93;
 }
 
 .shoplinkkindle a {
   color: #0074c1;
-  background: #ffffff;
   border: 2px solid #0074c1;
 }
 
 .shoplinkrakukobo a {
   color: #bf0000;
-  background: #ffffff;
   border: 2px solid #bf0000;
 }
 
 .shoplinkbk1 a {
   color: #0085cd;
-  background: #ffffff;
   border: 2px solid #0085cd;
 }
 
 .shoplinkehon a {
   color: #000066;
-  background: #ffffff;
   border: 2px solid #000066;
 }
 
 .shoplinkkino a {
   color: #004097;
-  background: #ffffff;
   border: 2px solid #004097;
 }
 
 .shoplinktoshokan a {
   color: #15b0e7;
-  background: #ffffff;
   border: 2px solid #15b0e7;
+}
+
+.shoplinkjalan a {
+  color: #FF5800;
+  border: 2px solid #FF5800;
+}
+
+.shoplinkjtb a {
+  color: #C71628;
+  border: 2px solid #C71628;
+}
+
+.shoplinkikyu a {
+  color: #1C4678;
+  border: 2px solid #1C4678;
+}
+
+.shoplinkrurubu a {
+  color: #000066;
+  border: 2px solid #000066;
 }
 
 .fb-like-box {
@@ -4406,7 +4406,8 @@ div.fb-like-mobile {
 .new-entry-cards .anchor-icon,
 .popular-entry-cards .anchor-icon,
 .kaerebalink-box .anchor-icon,
-.booklink-box .anchor-icon {
+.booklink-box .anchor-icon,
+.tomarebalink-box .anchor-icon {
   display: none;
 }
 
