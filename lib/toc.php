@@ -20,6 +20,15 @@ if (is_toc_visible()) {
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
 
+  //投稿ページだと表示しない
+  if (!is_single_toc_visible() && is_single()) {
+    return $the_content;
+  }
+  //固定ページだと表示しない
+  if (!is_page_toc_visible() && is_page()) {
+    return $the_content;
+  }
+
   $content     = $the_content;
   $headers     = array();
   $html        = '';
