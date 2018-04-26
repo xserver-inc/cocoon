@@ -5,6 +5,10 @@ add_action('admin_print_styles', 'admin_print_styles_custom');
 if ( !function_exists( 'admin_print_styles_custom' ) ):
 function admin_print_styles_custom() {
   wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
+  //管理者以外にJetpackメニューを表示しない
+  if (!is_user_administrator()) {
+    echo '<style>#toplevel_page_jetpack{display:none;}</style>';
+  }
   wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
 
   //カラーピッカー
