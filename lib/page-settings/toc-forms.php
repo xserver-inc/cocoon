@@ -39,6 +39,21 @@
           </td>
         </tr>
 
+        <!-- 表示ページ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('表示ページ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_SINGLE_TOC_VISIBLE , is_single_toc_visible(), __( '投稿ページ', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_PAGE_TOC_VISIBLE , is_page_toc_visible(), __( '固定ページ', THEME_NAME ));
+            generate_tips_tag(__( '上記のページの目次表示を切り替えることができます。※それ以外のページでは表示されません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 目次タイトル -->
         <tr>
           <th scope="row">

@@ -2,6 +2,12 @@
 //目次の表示
 update_theme_option(OP_TOC_VISIBLE);
 
+//投稿ページで目次の表示
+update_theme_option(OP_SINGLE_TOC_VISIBLE);
+
+//固定ページで目次の表示
+update_theme_option(OP_PAGE_TOC_VISIBLE);
+
 //目次タイトル
 update_theme_option(OP_TOC_TITLE);
 

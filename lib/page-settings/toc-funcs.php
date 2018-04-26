@@ -8,6 +8,22 @@ function is_toc_visible(){
 }
 endif;
 
+//投稿ページで目次の表示
+define('OP_SINGLE_TOC_VISIBLE', 'single_toc_visible');
+if ( !function_exists( 'is_single_toc_visible' ) ):
+function is_single_toc_visible(){
+  return get_theme_option(OP_SINGLE_TOC_VISIBLE, 1);
+}
+endif;
+
+//固定ページで目次の表示
+define('OP_PAGE_TOC_VISIBLE', 'page_toc_visible');
+if ( !function_exists( 'is_page_toc_visible' ) ):
+function is_page_toc_visible(){
+  return get_theme_option(OP_PAGE_TOC_VISIBLE, 1);
+}
+endif;
+
 //目次タイトル
 define('OP_TOC_TITLE', 'toc_title');
 if ( !function_exists( 'get_toc_title' ) ):
