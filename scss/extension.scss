@@ -42,12 +42,24 @@
 
 /*マーカーの黄色のような色*/
 .marker{
-  background-color:#FF9;
+  background-color: #ff9;
+}
+.marker-red{
+  background-color: #ffd0d1;
+}
+.marker-blue{
+  background-color: #a5d7f9;
 }
 
 /*下半分のマーカー色（km）*/
 .marker-under{
-  background: linear-gradient(transparent 60%, #ffff66 60%);
+  background: linear-gradient(transparent 60%, #ff6 60%);
+}
+.marker-under-red{
+  background: linear-gradient(transparent 60%, #ffb6b9 60%);
+}
+.marker-under-blue{
+  background: linear-gradient(transparent 60%, #75c2f6 60%);
 }
 
 /*打ち消し線*/

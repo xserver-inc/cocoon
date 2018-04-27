@@ -73,9 +73,29 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'marker'
         ),
         array(
+          'title' => __( '赤色マーカー', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'marker-red'
+        ),
+        array(
+          'title' => __( '青色マーカー', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'marker-blue'
+        ),
+        array(
           'title' => __( '黄色アンダーラインマーカー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'marker-under'
+        ),
+        array(
+          'title' => __( '赤色アンダーラインマーカー', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'marker-under-red'
+        ),
+        array(
+          'title' => __( '青色アンダーラインマーカー', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'marker-under-blue'
         ),
         array(
           'title' => __( '打ち消し線', THEME_NAME ),
