@@ -142,28 +142,39 @@ endif;
 if ( !function_exists( 'to_adsense_format' ) ):
 function to_adsense_format($format){
   switch ($format) {
-    case DATA_AD_FORMAT_AUTO:
-      $format = DATA_AD_FORMAT_AUTO;
-      break;
-    case DATA_AD_FORMAT_RECTANGLE:
+    case AD_FORMAT_SINGLE_RECTANGLE:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
-    case DATA_AD_FORMAT_HORIZONTAL:
-      $format = DATA_AD_FORMAT_HORIZONTAL;
-      break;
-    case DATA_AD_FORMAT_VERTICAL:
-      $format = DATA_AD_FORMAT_VERTICAL;
-      break;
-    case DATA_AD_FORMAT_AUTORELAXED:
-      $format = DATA_AD_FORMAT_AUTORELAXED;
-      break;
-    case DATA_AD_FORMAT_FLUID:
-      $format = DATA_AD_FORMAT_FLUID;
-      break;
-    default:
+    case AD_FORMAT_DABBLE_RECTANGLE:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
   }
+  // switch ($format) {
+  //   case DATA_AD_FORMAT_AUTO:
+  //     $format = DATA_AD_FORMAT_AUTO;
+  //     break;
+  //   case DATA_AD_FORMAT_RECTANGLE:
+  //     $format = DATA_AD_FORMAT_RECTANGLE;
+  //     break;
+  //   case DATA_AD_FORMAT_HORIZONTAL:
+  //     $format = DATA_AD_FORMAT_HORIZONTAL;
+  //     break;
+  //   case DATA_AD_FORMAT_VERTICAL:
+  //     $format = DATA_AD_FORMAT_VERTICAL;
+  //     break;
+  //   case DATA_AD_FORMAT_AUTORELAXED:
+  //     $format = DATA_AD_FORMAT_AUTORELAXED;
+  //     break;
+  //   case DATA_AD_FORMAT_FLUID:
+  //     $format = DATA_AD_FORMAT_FLUID;
+  //     break;
+  //   case DATA_AD_FORMAT_LINK:
+  //     $format = DATA_AD_FORMAT_LINK;
+  //     break;
+  //   default:
+  //     $format = DATA_AD_FORMAT_RECTANGLE;
+  //     break;
+  // }
   return $format;
 }
 endif;

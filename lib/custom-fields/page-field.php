@@ -35,8 +35,12 @@ function page_custom_box_view(){
   generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
 
   //目次表示
-  generate_checkbox_tag('the_page_toc_visible' , is_the_page_toc_visible(), __( '目次（TOC）を表示する', THEME_NAME ));
+  generate_checkbox_tag('the_page_toc_novisible' , is_the_page_toc_novisible(), __( '目次を表示しない', THEME_NAME ));
   generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
+
+  // //目次表示
+  // generate_checkbox_tag('the_page_toc_visible' , is_the_page_toc_visible(), __( '目次を表示しない', THEME_NAME ));
+  // generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
 
 
   // //ページタイプ
@@ -81,10 +85,16 @@ function page_custom_box_save_data(){
   }
 
   //目次表示
-  $the_page_toc_visible = !empty($_POST['the_page_toc_visible']) ? 1 : 0;
-  $the_page_toc_visible_key = 'the_page_toc_visible';
-  add_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible, true);
-  update_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible);
+  $the_page_toc_novisible = !empty($_POST['the_page_toc_novisible']) ? 1 : 0;
+  $the_page_toc_novisible_key = 'the_page_toc_novisible';
+  add_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible, true);
+  update_post_meta($id, $the_page_toc_novisible_key, $the_page_toc_novisible);
+
+  // //目次表示
+  // $the_page_toc_visible = !empty($_POST['the_page_toc_visible']) ? 1 : 0;
+  // $the_page_toc_visible_key = 'the_page_toc_visible';
+  // add_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible, true);
+  // update_post_meta($id, $the_page_toc_visible_key, $the_page_toc_visible);
 }
 endif;
 
@@ -159,15 +169,29 @@ function is_singular_page_type_content_only(){
 endif;
 
 //このページで目次を表示するか
-if ( !function_exists( 'is_the_page_toc_visible' ) ):
-function is_the_page_toc_visible(){
-  $value = get_post_meta(get_the_ID(), 'the_page_toc_visible', true);
-  //初回利用時は1を返す
-  if (is_field_checkbox_value_default($value)) {
-    $value = 1;
-  }
-  return $value;
+if ( !function_exists( 'is_the_page_toc_novisible' ) ):
+function is_the_page_toc_novisible(){
+  return get_post_meta(get_the_ID(), 'the_page_toc_novisible', true);
 }
 endif;
+
+//このページで目次を表示するか
+if ( !function_exists( 'is_the_page_toc_visible' ) ):
+function is_the_page_toc_visible(){
+  return !is_the_page_toc_novisible();
+}
+endif;
+
+// //このページで目次を表示するか
+// if ( !function_exists( 'is_the_page_toc_visible' ) ):
+// function is_the_page_toc_visible(){
+//   $value = get_post_meta(get_the_ID(), 'the_page_toc_visible', true);
+//   //初回利用時は1を返す
+//   if (is_field_checkbox_value_default($value)) {
+//     $value = 1;
+//   }
+//   return $value;
+// }
+// endif;
 
 

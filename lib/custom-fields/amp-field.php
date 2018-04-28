@@ -27,7 +27,7 @@ function view_amp_custom_box(){
   // echo '<p class="howto">'.__( 'チェックを付けたページのAMPを無効にします。。', THEME_NAME ).'</p>';
 
   //AMPページを生成する
-  generate_checkbox_tag('the_page_amp_enable' , is_the_page_amp_enable(), __( 'AMPページを生成する', THEME_NAME ));
+  generate_checkbox_tag('the_page_no_amp' , is_the_page_no_amp(), __( 'AMPページを生成しない', THEME_NAME ));
   generate_howro_tag(__( 'AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切り替えます。', THEME_NAME ));
 }
 endif;
@@ -38,25 +38,25 @@ if ( !function_exists( 'amp_custom_box_save_data' ) ):
 function amp_custom_box_save_data(){
   $id = get_the_ID();
 
-  // //AMPの除外
-  // $the_page_no_amp = !empty($_POST['the_page_no_amp']) ? 1 : 0;
-  // $the_page_no_amp_key = 'the_page_no_amp';
-  // add_post_meta($id, $the_page_no_amp_key, $the_page_no_amp, true);
-  // update_post_meta($id, $the_page_no_amp_key, $the_page_no_amp);
-  // if (is_the_page_no_amp()) {
-  //   add_post_meta($id, 'is_noamp', $the_page_no_amp, true);
-  //   update_post_meta($id, 'is_noamp', $the_page_no_amp);
-  // }
-
   //AMPの除外
-  $the_page_amp_enable = !empty($_POST['the_page_amp_enable']) ? 1 : 0;
-  $the_page_amp_enable_key = 'the_page_amp_enable';
-  add_post_meta($id, $the_page_amp_enable_key, $the_page_amp_enable, true);
-  update_post_meta($id, $the_page_amp_enable_key, $the_page_amp_enable);
+  $the_page_no_amp = !empty($_POST['the_page_no_amp']) ? 1 : 0;
+  $the_page_no_amp_key = 'the_page_no_amp';
+  add_post_meta($id, $the_page_no_amp_key, $the_page_no_amp, true);
+  update_post_meta($id, $the_page_no_amp_key, $the_page_no_amp);
   if (is_migrate_from_simplicity()) {
-    add_post_meta($id, 'is_noamp', !$the_page_amp_enable, true);
-    update_post_meta($id, 'is_noamp', !$the_page_amp_enable);
+    add_post_meta($id, 'is_noamp', $the_page_no_amp, true);
+    update_post_meta($id, 'is_noamp', $the_page_no_amp);
   }
+
+  // //AMPの除外
+  // $the_page_amp_enable = !empty($_POST['the_page_amp_enable']) ? 1 : 0;
+  // $the_page_amp_enable_key = 'the_page_amp_enable';
+  // add_post_meta($id, $the_page_amp_enable_key, $the_page_amp_enable, true);
+  // update_post_meta($id, $the_page_amp_enable_key, $the_page_amp_enable);
+  // if (is_migrate_from_simplicity()) {
+  //   add_post_meta($id, 'is_noamp', !$the_page_amp_enable, true);
+  //   update_post_meta($id, 'is_noamp', !$the_page_amp_enable);
+  // }
 }
 endif;
 
@@ -74,26 +74,26 @@ function is_the_page_no_amp(){
 endif;
 
 
-// //AMPを表示するか
-// if ( !function_exists( 'is_the_page_amp_enable' ) ):
-// function is_the_page_amp_enable(){
-//   return !is_the_page_no_amp();
-// }
-// endif;
-
-//広告を表示するか
+//AMPを表示するか
 if ( !function_exists( 'is_the_page_amp_enable' ) ):
 function is_the_page_amp_enable(){
-  $value = get_post_meta(get_the_ID(), 'the_page_amp_enable', true);
-  //初回利用時は1を返す
-  if (is_field_checkbox_value_default($value)) {
-    $old_value = is_the_page_no_amp();
-    if (is_field_checkbox_value_default($old_value)) {
-      $value = 1;
-    } else {
-      $value = !$old_value;
-    }
-  }
-  return $value;
+  return !is_the_page_no_amp();
 }
 endif;
+
+// //広告を表示するか
+// if ( !function_exists( 'is_the_page_amp_enable' ) ):
+// function is_the_page_amp_enable(){
+//   $value = get_post_meta(get_the_ID(), 'the_page_amp_enable', true);
+//   //初回利用時は1を返す
+//   if (is_field_checkbox_value_default($value)) {
+//     $old_value = is_the_page_no_amp();
+//     if (is_field_checkbox_value_default($old_value)) {
+//       $value = 1;
+//     } else {
+//       $value = !$old_value;
+//     }
+//   }
+//   return $value;
+// }
+// endif;

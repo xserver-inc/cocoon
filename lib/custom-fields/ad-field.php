@@ -30,7 +30,7 @@ function view_ad_custom_box(){
 
 
   //広告を表示する
-  generate_checkbox_tag('the_page_ads_visible' , is_the_page_ads_visible(), __( '広告を表示する', THEME_NAME ));
+  generate_checkbox_tag('the_page_ads_novisible' , is_the_page_ads_novisible(), __( '広告を除外する', THEME_NAME ));
   generate_howro_tag(__( 'ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごとの設定も行えます。', THEME_NAME ));
 }
 endif;
@@ -51,14 +51,14 @@ function ad_custom_box_save_data(){
   // }
 
   //広告の除外
-  $the_page_ads_visible = !empty($_POST['the_page_ads_visible']) ? 1 : 0;
-  $the_page_ads_visible_key = 'the_page_ads_visible';
-  add_post_meta($id, $the_page_ads_visible_key, $the_page_ads_visible, true);
-  update_post_meta($id, $the_page_ads_visible_key, $the_page_ads_visible);
-  if (is_migrate_from_simplicity()) {
-    add_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible, true);
-    update_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible);
-  }
+  $the_page_ads_novisible = !empty($_POST['the_page_ads_novisible']) ? 1 : 0;
+  $the_page_ads_novisible_key = 'the_page_ads_novisible';
+  add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
+  update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
+  // if (is_migrate_from_simplicity()) {
+  //   add_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible, true);
+  //   update_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible);
+  // }
 
 }
 endif;
@@ -77,28 +77,28 @@ function is_the_page_ads_novisible(){
 endif;
 
 
-// //広告を表示するか
-// if ( !function_exists( 'is_the_page_ads_visible' ) ):
-// function is_the_page_ads_visible(){
-//   return !is_the_page_ads_novisible();
-// }
-// endif;
-
-
-
 //広告を表示するか
 if ( !function_exists( 'is_the_page_ads_visible' ) ):
 function is_the_page_ads_visible(){
-  $value = get_post_meta(get_the_ID(), 'the_page_ads_visible', true);
-  //初回利用時は1を返す
-  if (is_field_checkbox_value_default($value)) {
-    $old_value = is_the_page_ads_novisible();
-    if (is_field_checkbox_value_default($old_value)) {
-      $value = 1;
-    } else {
-      $value = !$old_value;
-    }
-  }
-  return $value;
+  return !is_the_page_ads_novisible();
 }
 endif;
+
+
+
+// //広告を表示するか
+// if ( !function_exists( 'is_the_page_ads_visible' ) ):
+// function is_the_page_ads_visible(){
+//   $value = get_post_meta(get_the_ID(), 'the_page_ads_visible', true);
+//   //初回利用時は1を返す
+//   if (is_field_checkbox_value_default($value)) {
+//     $old_value = is_the_page_ads_novisible();
+//     if (is_field_checkbox_value_default($old_value)) {
+//       $value = 1;
+//     } else {
+//       $value = !$old_value;
+//     }
+//   }
+//   return $value;
+// }
+// endif;
