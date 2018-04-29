@@ -3438,7 +3438,11 @@ iframe[src*="https://www.google.com/maps/embed"] {
 .booklink-image, .kaerebalink-image, .tomarebalink-image {
   width: 160px;
   min-width: 160px;
-  margin: 0 auto 5px;
+  margin: 0 auto 5px !important;
+  float: none !important;
+}
+.booklink-image *, .kaerebalink-image *, .tomarebalink-image * {
+  display: block;
 }
 .booklink-image img, .kaerebalink-image img, .tomarebalink-image img {
   width: 100%;
@@ -3540,7 +3544,7 @@ iframe[src*="https://www.google.com/maps/embed"] {
     right: 0;
   }
   .booklink-link2 > div, .kaerebalink-link1 > div, .tomarebalink-link1 > div {
-    width: 32%;
+    width: 31.5%;
     margin: 2px;
     box-sizing: border-box;
   }

@@ -17,8 +17,12 @@
 .booklink-image, .kaerebalink-image, .tomarebalink-image {
   width: 160px;
   min-width: 160px;
-  margin: 0 auto 5px;
+  margin: 0 auto 5px !important;
+  float: none !important;
   //text-align: center;
+  *{
+    display: block;
+  }
   img{
     width: 100%;
   }
@@ -128,7 +132,7 @@
       }
     }
     >div{
-      width: 32%;
+      width: 31.5%;
       margin: 2px;
       box-sizing: border-box;
       //float: left;
