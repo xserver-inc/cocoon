@@ -810,7 +810,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       <div class="popular-entry-card-content widget-entry-card-content card-content">
         <span class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></span>
         <?php if ($pv_visible): ?>
-          <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.'view' : $pv.'views';?></span>
+          <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.' view' : $pv.' views';?></span>
         <?php endif ?>
       </div><!-- /.popular-entry-content -->
     </div><!-- /.popular-entry-card -->
