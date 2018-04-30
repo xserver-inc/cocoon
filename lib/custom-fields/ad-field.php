@@ -81,7 +81,7 @@ endif;
 //広告を表示するか
 if ( !function_exists( 'is_the_page_ads_visible' ) ):
 function is_the_page_ads_visible(){
-  return !is_the_page_ads_novisible();
+  return !is_the_page_ads_novisible() || !is_singular();
 }
 endif;
 

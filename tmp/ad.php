@@ -1,4 +1,5 @@
-<?php if (is_ads_visible() && !is_auto_adsens_only_enable()):
+<?php //広告を表示するか
+if (is_ads_visible() && !is_auto_adsens_only_enable()):
 //レスポンシブAdSenseコードを取得
 //var_dump(to_adsense_format($format));
 $ad_code = get_adsense_responsive_code(to_adsense_format($format), $ad_code);
