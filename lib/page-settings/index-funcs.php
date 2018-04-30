@@ -39,6 +39,14 @@ function get_entry_card_excerpt_max_length(){
 }
 endif;
 
+//エントリーカード抜粋文の最大文字数を超えたときの文字列
+define('OP_ENTRY_CARD_EXCERPT_MORE', 'entry_card_excerpt_more');
+if ( !function_exists( 'get_entry_card_excerpt_more' ) ):
+function get_entry_card_excerpt_more(){
+  return get_theme_option(OP_ENTRY_CARD_EXCERPT_MORE, __( '...', THEME_NAME ));
+}
+endif;
+
 
 //スニペットを表示
 define('OP_ENTRY_CARD_SNIPPET_VISIBLE', 'entry_card_snippet_visible');

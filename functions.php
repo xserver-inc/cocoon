@@ -24,8 +24,11 @@ function get_content_excerpt($content, $length = 70){
   } else {
     $length = 70;
   }
-  //$over    =  intval(mb_strlen($content)) > $length;
+  $over    =  intval(mb_strlen($content)) > $length;
   $content =  mb_substr($content, 0, $length);//文字列を指定した長さで切り取る
+  if ( $over && $more = get_entry_card_excerpt_more() ) {
+    $content = $content.$more;
+  }
 
   return $content;
 }

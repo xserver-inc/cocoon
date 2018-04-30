@@ -11,6 +11,9 @@ update_theme_option(OP_ENTRY_CARD_BORDER_VISIBLE);
 //エントリーカード抜粋文の最大文字数
 update_theme_option(OP_ENTRY_CARD_EXCERPT_MAX_LENGTH);
 
+//エントリーカード抜粋文の最大文字数を超えたときの文字列
+update_theme_option(OP_ENTRY_CARD_EXCERPT_MORE);
+
 ///////////////////////////////////////
 // 投稿情報の表示
 ///////////////////////////////////////
