@@ -49,10 +49,15 @@
           </th>
           <td>
             <?php
-
             generate_checkbox_tag(OP_EYECATCH_VISIBLE, is_eyecatch_visible(), __( '本文上にアイキャッチを表示する', THEME_NAME ));
             generate_tips_tag(__( '投稿・固定ページトップにアイキャッチを表示します。', THEME_NAME ));
             ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_EYECATCH_LABEL_VISIBLE, is_eyecatch_label_visible(), __( 'アイキャッチラベルを表示する', THEME_NAME ));
+              generate_tips_tag(__( '投稿のアイキャッチに表示されるカテゴリラベルの表示切り替えです。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 

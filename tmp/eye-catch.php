@@ -29,5 +29,8 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   <meta itemprop="url" content="<?php echo $url; ?>">
   <meta itemprop="width" content="<?php echo $width; ?>">
   <meta itemprop="height" content="<?php echo $height; ?>">
-  <?php the_nolink_category(); //カテゴリラベルの取得 ?>
+  <?php //アイキャッチラベルの表示
+  if (is_eyecatch_label_visible()) {
+    the_nolink_category(); //カテゴリラベルの取得
+  } ?>
 </figure>

@@ -8,6 +8,14 @@ function is_eyecatch_visible(){
 }
 endif;
 
+//アイキャッチラベルの表示
+define('OP_EYECATCH_LABEL_VISIBLE', 'eyecatch_label_visible');
+if ( !function_exists( 'is_eyecatch_label_visible' ) ):
+function is_eyecatch_label_visible(){
+  return get_theme_option(OP_EYECATCH_LABEL_VISIBLE, 1);
+}
+endif;
+
 //Auto Post Thumbnail
 define('OP_AUTO_POST_THUMBNAIL_ENABLE', 'auto_post_thumbnail_enable');
 if ( !function_exists( 'is_auto_post_thumbnail_enable' ) ):

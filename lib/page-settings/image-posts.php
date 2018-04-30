@@ -3,6 +3,9 @@
 //アイキャッチの表示
 update_theme_option(OP_EYECATCH_VISIBLE);
 
+//アイキャッチラベルの表示
+update_theme_option(OP_EYECATCH_LABEL_VISIBLE);
+
 //Auto Post Thumbnail
 update_theme_option(OP_AUTO_POST_THUMBNAIL_ENABLE);
 
