@@ -131,7 +131,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  .entry-card-wrap{
+  >*{
     width: 49.5%;
     display: inline-block;
     .entry-card-thumb{
@@ -154,7 +154,7 @@
 
 .ect-vertical-card-3{
   justify-content: space-around;
-  .entry-card-wrap{
+  >*{
     width: 33%;
     padding: 7px;
   }

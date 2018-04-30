@@ -251,7 +251,7 @@ function is_index_middle_widget_visible($count){
       //1ページに表示する最大投稿数が6以上の時
       is_posts_per_page_6_and_over() &&
       //エントリーカードタイプの一覧のとき
-      is_entry_card_type_entry_card() &&
+      //is_entry_card_type_entry_card() &&
       //&&//公開記事が6以上の時
       (get_all_post_count_in_publish() >= 6)
   ) {
