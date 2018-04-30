@@ -55,10 +55,11 @@ function ad_custom_box_save_data(){
   $the_page_ads_novisible_key = 'the_page_ads_novisible';
   add_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible, true);
   update_post_meta($id, $the_page_ads_novisible_key, $the_page_ads_novisible);
-  // if (is_migrate_from_simplicity()) {
-  //   add_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible, true);
-  //   update_post_meta($id, 'is_ads_removed_in_page', !$the_page_ads_visible);
-  // }
+
+  if (is_migrate_from_simplicity()) {
+    add_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible, true);
+    update_post_meta($id, 'is_ads_removed_in_page', $the_page_ads_novisible);
+  }
 
 }
 endif;

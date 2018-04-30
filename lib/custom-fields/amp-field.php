@@ -43,6 +43,7 @@ function amp_custom_box_save_data(){
   $the_page_no_amp_key = 'the_page_no_amp';
   add_post_meta($id, $the_page_no_amp_key, $the_page_no_amp, true);
   update_post_meta($id, $the_page_no_amp_key, $the_page_no_amp);
+
   if (is_migrate_from_simplicity()) {
     add_post_meta($id, 'is_noamp', $the_page_no_amp, true);
     update_post_meta($id, 'is_noamp', $the_page_no_amp);
