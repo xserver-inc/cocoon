@@ -3444,9 +3444,6 @@ iframe[src*="https://www.google.com/maps/embed"] {
 .booklink-image *, .kaerebalink-image *, .tomarebalink-image * {
   display: block;
 }
-.booklink-image img, .kaerebalink-image img, .tomarebalink-image img {
-  width: 100%;
-}
 
 .booklink-info, .kaerebalink-info, .tomarebalink-info {
   line-height: 125%;
