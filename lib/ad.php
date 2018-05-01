@@ -73,6 +73,17 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
   //$codeに広告コードが入っている場合はそこから取得する（無い場合はテーマ設定のAdSenseコードを利用）
   if (get_adsense_ids($code)) {
     $data_ad_layout = null;
+
+    //フォーマットが設定されていない場合はフォーマットをコード内から取得
+    if ($format == 'none') {
+      if (preg_match('{data-ad-format="([^"]+?)"}i', $code, $m)) {
+        if (isset($m[1])) {
+          $format = $m[1];
+        }
+      }
+    }
+
+    //記事内広告の場合は付け加える
     if ($format == DATA_AD_FORMAT_FLUID) {
       $data_ad_layout = '     data-ad-layout="in-article"';
     }
@@ -89,7 +100,7 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
   }
-  //AdSense広告でない場合はそのままコードを出力する
+  //コードが設定されていない場合はそのままコードを出力する
   return $code;
 }
 endif;

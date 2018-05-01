@@ -149,6 +149,7 @@ function to_adsense_format($format){
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
   }
+
   // switch ($format) {
   //   case DATA_AD_FORMAT_AUTO:
   //     $format = DATA_AD_FORMAT_AUTO;
