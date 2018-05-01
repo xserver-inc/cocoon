@@ -15,20 +15,14 @@ class MobileAdWidgetItem extends WP_Widget {
     extract( $args );
     $ad = apply_filters( 'widget_mobile_ad_text', isset($instance['ad_text']) ? $instance['ad_text'] : '' );
     $format = apply_filters( 'widget_mobile_ad_format', isset($instance['ad_format']) ? $instance['ad_format'] : 'none' );
+    $is_label_visible = apply_filters( 'widget_is_label_visible', !empty($instance['is_label_visible']) ? $instance['is_label_visible'] : 0 );
 
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() //広告表示がオンのとき
        ):
        echo $args['before_widget'];
-       get_template_part_with_ad_format($format, 'mobile-ad-widget', 1/*ラベルの表示*/, $ad);
+       get_template_part_with_ad_format($format, 'mobile-ad-widget', $is_label_visible, $ad);
        ?>
-       <?php //以前のHTMLタグは使用しない
-       if (0): ?>
-        <div class="ad-area ad-widget">
-          <div class="ad-label"><?php echo get_ad_label() ?></div>
-          <div class="ad-responsive ad-mobile"><?php echo $ad; ?></div>
-        </div>
-       <?php endif ?>
 
       <?php echo $args['after_widget'];
     endif //!is_404 ?>
@@ -38,6 +32,7 @@ class MobileAdWidgetItem extends WP_Widget {
     $instance = $old_instance;
     $instance['ad_text'] = $new_instance['ad_text'];
     $instance['ad_format'] = $new_instance['ad_format'];
+    $instance['is_label_visible'] = !empty($new_instance['is_label_visible']) ? 1 : 0;
     return $instance;
   }
   function form($instance) {
@@ -45,10 +40,12 @@ class MobileAdWidgetItem extends WP_Widget {
       $instance = array(
         'ad_text' => null,
         'ad_format' => 'none',
+        'is_label_visible' => 1,
       );
     }
     $ad = esc_attr(!empty($instance['ad_text']) ? $instance['ad_text'] : '');
     $format = esc_attr(!empty($instance['ad_format']) ? $instance['ad_format'] : 'none');
+    $is_label_visible = esc_attr(!empty($instance['is_label_visible']) ? 1 : 0);
 ?>
 <?php //広告入力フォーム ?>
 <p>
@@ -65,6 +62,14 @@ class MobileAdWidgetItem extends WP_Widget {
     global $_MOBILE_WIDGET_DATA_AD_FORMATS;
     $options = $_MOBILE_WIDGET_DATA_AD_FORMATS;
     generate_selectbox_tag($this->get_field_name('ad_format'), $options, $format);
+   ?>
+</p>
+<?php //ラベルの表示 ?>
+<p>
+  <?php
+    generate_label_tag($this->get_field_id('is_label_visible'), __('広告ラベル', THEME_NAME) );
+    echo '<br>';
+    generate_checkbox_tag($this->get_field_name('is_label_visible') , $is_label_visible, __( '広告ラベルを表示する', THEME_NAME ));
    ?>
 </p>
 <?php
