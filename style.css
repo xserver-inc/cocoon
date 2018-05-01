@@ -807,35 +807,44 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.ect-vertical-card > * {
+.ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
 }
-.ect-vertical-card > * .entry-card-thumb {
+.ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
   float: none;
 }
-.ect-vertical-card > * .entry-card-thumb img {
+.ect-vertical-card .entry-card-wrap .entry-card-thumb img {
   width: 100%;
 }
-.ect-vertical-card > * .entry-card-content {
+.ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
   padding-bottom: 1em;
 }
-.ect-vertical-card > * .post-date, .ect-vertical-card > * .post-update {
+.ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
+}
+
+.ect-vertical-card .ad-area {
+  width: 49.5%;
+  display: inline-block;
 }
 
 .ect-vertical-card-3 {
   justify-content: space-around;
 }
-.ect-vertical-card-3 > * {
+.ect-vertical-card-3 .entry-card-wrap {
   width: 33%;
   padding: 7px;
 }
 .ect-vertical-card-3 .entry-card-snippet {
   max-height: 4em;
   overflow: hidden;
+}
+
+.ect-vertical-card-3 .ad-area {
+  width: 33%;
 }
 
 .entry-card-border .entry-card-wrap {

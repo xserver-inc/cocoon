@@ -148,6 +148,9 @@ function to_adsense_format($format){
     case AD_FORMAT_DABBLE_RECTANGLE:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
+    // case 'none':
+    //   $format = DATA_AD_FORMAT_RECTANGLE;
+    //   break;
   }
 
   // switch ($format) {
