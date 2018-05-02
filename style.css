@@ -4438,7 +4438,7 @@ div.fb-like-mobile {
 .booklink-box .anchor-icon,
 .tomarebalink-box .anchor-icon,
 .wpf-sbtn-wrap .anchor-icon {
-  display: none;
+  display: none !important;
 }
 
 .gallery {
