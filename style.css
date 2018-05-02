@@ -4436,7 +4436,8 @@ div.fb-like-mobile {
 .popular-entry-cards .anchor-icon,
 .kaerebalink-box .anchor-icon,
 .booklink-box .anchor-icon,
-.tomarebalink-box .anchor-icon {
+.tomarebalink-box .anchor-icon,
+.wpf-sbtn-wrap .anchor-icon {
   display: none;
 }
 
