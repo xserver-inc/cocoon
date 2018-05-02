@@ -48,18 +48,18 @@ class PopularEntryWidgetItem extends WP_Widget {
     // if ( !$entry_count ) $entry_count = EC_DEFAULT;
     // $_ENTRY_COUNT = $entry_count;
     //表示タイプをグローバル変数に格納
-    global $_ENTRY_TYPE;
-    //表示タイプのデフォルト設定
-    if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    $_ENTRY_TYPE = $entry_type;
+    // global $_ENTRY_TYPE;
     // //表示タイプのデフォルト設定
-    // if ( !$count_days ) $count_days = PCD_DEFAULT;
-    // $_COUNT_DAYS = $count_days;
-    //表示タイプをグローバル変数に格納
-    global $_RANKING_VISIBLE;
-    //表示タイプのデフォルト設定
-    if ( !$ranking_visible ) $ranking_visible = 0;
-    $_RANKING_VISIBLE = $ranking_visible;
+    // if ( !$entry_type ) $entry_type = ET_DEFAULT;
+    // $_ENTRY_TYPE = $entry_type;
+    // // //表示タイプのデフォルト設定
+    // // if ( !$count_days ) $count_days = PCD_DEFAULT;
+    // // $_COUNT_DAYS = $count_days;
+    // //表示タイプをグローバル変数に格納
+    // global $_RANKING_VISIBLE;
+    // //表示タイプのデフォルト設定
+    // if ( !$ranking_visible ) $ranking_visible = 0;
+    // $_RANKING_VISIBLE = $ranking_visible;
 
     //_v($count_days);
 
@@ -103,10 +103,9 @@ class PopularEntryWidgetItem extends WP_Widget {
       $instance['entry_type'] = strip_tags($new_instance['entry_type']);
     if (isset($new_instance['count_days']))
       $instance['count_days'] = strip_tags($new_instance['count_days']);
-    if (isset($new_instance['ranking_visible']))
-      $instance['ranking_visible'] = strip_tags($new_instance['ranking_visible']);
-    if (isset($new_instance['pv_visible']))
-      $instance['pv_visible'] = strip_tags($new_instance['pv_visible']);
+
+    $instance['ranking_visible'] = !empty($new_instance['ranking_visible']) ? 1 : 0;
+    $instance['pv_visible'] = !empty($new_instance['pv_visible']) ? 1 : 0;
 
     return $instance;
   }
@@ -127,8 +126,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     $entry_count = isset($instance['entry_count']) ? esc_attr($instance['entry_count']) : EC_DEFAULT;
     $entry_type = isset($instance['entry_type']) ? esc_attr($instance['entry_type']) : ET_DEFAULT;
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
-    $ranking_visible = isset($instance['ranking_visible']) ? esc_attr($instance['ranking_visible']) : 0;
-    $pv_visible = isset($instance['pv_visible']) ? esc_attr($instance['pv_visible']) : 0;
+    $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
+    $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
