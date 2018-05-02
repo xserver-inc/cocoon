@@ -438,8 +438,7 @@ img {
 .no-thumbnail .widget-entry-card-pv {
   display: none;
 }
-.no-thumbnail .entry-card-content,
-.no-thumbnail .blogcard-wrap .blogcard .blogcard-content,
+.no-thumbnail .card-content,
 .no-thumbnail .widget-entry-cards .widget-entry-card-content {
   margin: 0;
 }
