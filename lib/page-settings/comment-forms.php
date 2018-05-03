@@ -75,7 +75,7 @@
           <td>
             <?php
             generate_textbox_tag(OP_COMMENT_SUBMIT_LABEL, get_comment_submit_label(), __( 'コメントを送信', THEME_NAME ));
-            generate_tips_tag(__( 'コメントの送信ボタンのラベルテキストを入力しているなさい。', THEME_NAME ));
+            generate_tips_tag(__( 'コメントの送信ボタンのラベルテキストを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
