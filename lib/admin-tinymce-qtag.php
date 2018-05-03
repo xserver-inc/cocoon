@@ -42,12 +42,22 @@ add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
   $font_sizes = array();
-  for ($i=12; $i <= 36 ; $i++) {
+  for ($i=12; $i <= 22 ; $i++) {
     $font_sizes[] = array(
           'title' => $i.'px',
           'inline' => 'span',
           'classes' => 'fz-'.$i.'px'
         );
+    $i++;
+  }
+  for ($i=24; $i <= 48 ; $i++) {
+    $font_sizes[] = array(
+          'title' => $i.'px',
+          'inline' => 'span',
+          'classes' => 'fz-'.$i.'px'
+        );
+    $i++;
+    $i++;
     $i++;
   }
   //_v($font_sizes);

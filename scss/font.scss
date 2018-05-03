@@ -11,9 +11,19 @@ $meiryo_font: "Meiryo", sans-serif;
 $navi_font: FontAwesome, $default_font;
 
 //フォントサイズ
-@for $i from 12 through 36 {
+@for $i from 12 through 22 {
   .fz-#{$i}px { font-size: #{$i}px; }
 }
+
+$i: 24;
+@while $i <= 48 {
+  .fz-#{$i}px { font-size: #{$i}px; }
+  $i: $i + 4;
+}
+// @for $i from 24 through 36 {
+//   .fz-#{$i}px { font-size: #{$i}px; }
+//   $i: $i + 1;
+// }
 
 //フォントファミリー
 .ff-meiryo{
