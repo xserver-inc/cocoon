@@ -1,0 +1,218 @@
+/*
+  Skin Name: いつもの深海
+  Description: 毎日使っても飽きないデザインを目指しました。スキンカラーや背景画像を変えることでレイアウトは同じでも部屋のカーテンを変えるように雰囲気をチェンジできます。
+  背景画像ソースURL http://www.colourlovers.com/pattern/1301223/One_fish_two_fish
+  Skin URI: https://ganchan.info/cocoon01/
+  Author: がんちゃん
+  Author URI: https://ganchan.info/
+  Version: 0.0.1
+  Priority: 10010
+*/
+/*以下にスタイルシートを記入してください*/
+
+
+.tagline {
+    border-top: solid 6px #234777;
+    padding-top: 4px;
+}
+
+.navi {
+    background-color: #333;
+}
+
+.navi-in a {
+    color: #ffffff;
+    font-weight: bold;
+}
+ 
+.content {
+    margin-top: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 180px;    
+}
+
+.eye-catch img {
+    margin: 0 auto;
+}
+
+main.main {
+    padding: 0px 29px;
+}
+
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+    font-weight: 500;
+}
+
+.entry-title, .archive-title {
+    padding: 20px;
+    margin:38px 0;
+    background-color: #234777;
+    color: #fff;
+    font-size: 24px;
+    border-left: solid 4px #FEBF00;    
+}
+
+
+@media screen and (max-width: 768px){
+
+main.main, div.sidebar {
+    padding: 10px;
+    margin: 50px 0 10px 0;
+}
+
+.entry-title, .archive-title {
+    margin:0;
+    margin-bottom:4px;
+}
+
+}
+
+ .article h2 {
+    font-size: 22px;
+    text-align:center;
+    margin: 0;
+    background-color: #fafbff;
+    padding: 20px 0px;
+    border-top: 2px solid #234777;
+    border-bottom: 2px solid #234777;
+}
+
+
+.article h3 {
+    font-size: 20px;
+    padding:  10px 16px;
+	 margin:10px 16px;
+    border: solid 3px #FEBF00;
+    background: #fffdf6;
+   	 border-radius:4px;
+}
+
+.article h4 {
+    font-size: 18px;
+    color: #242735;
+    border:none;
+    border-left: 6px solid #234777;
+}
+.article h5 {
+    font-size: 16px;
+    font-weight:bold;
+    border: none;
+    border-bottom: solid 2px #FEBF00;
+}
+.article h6 {
+    font-size: 16px;
+    font-weight:bold;
+    border: none;
+    border-bottom: dotted 2px #FEBF00;
+}
+
+
+
+@media screen and (max-width: 480px){
+.archive-title,.entry-title {
+    font-size: 18px;
+}
+    
+.article h2 {
+    padding: 14px 0px;
+    font-size: 16px;
+}
+    
+.article h3, .article h4, .article h5, .article h6 {
+    font-size: 16px;
+}
+}
+
+.navi-in>ul li {
+    background-color: #333;
+}
+
+
+.comment-title {
+    font-size: 18px;
+    text-align: center;
+    background-color: #234777;
+    color: #fff;
+    padding: 18px;
+}
+
+
+.sidebar h3 {
+    background-color: #234777;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.widget-sidebar h3 {
+    margin:0px;
+}
+.widget_item_ranking h3 {
+    margin: 16px 0;
+}
+
+
+
+.widget-sidebar a {
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {
+    padding-left: 20px;
+}
+
+.widget-entry-cards .a-wrap {
+    margin-bottom: 0px;
+}
+
+
+.footer {
+    background-color: #333;
+    border-bottom: solid 6px #234777;
+}
+
+.footer.logo-text {
+    color:#fff;
+}
+
+.footer-bottom-logo .site-name-text {
+    font-size: 18px;
+    color: #fff;
+    padding-left: 18px;
+}
+
+.copyright {
+    margin-right: 18px;
+    color: #fff;
+}
+
+.navi-footer-in a {
+    color: #ffffff;
+}
+
+.footer-bottom-logo img {
+    margin-bottom: 20px;
+}
+
+.navi-menu-content.menu-content {
+    background-color:#333;
+}
+
+.navi-menu-content.menu-content a {
+    color:#fff;
+}
+.menu-close-button::before {
+    color: #fff;
+}
+
+.widget_author_box.author-thumb img {
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+.author-display-name{
+    display:none;
+}
