@@ -68,6 +68,21 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'red-under'
         ),
         array(
+          'title' => __( '打ち消し線', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'strike'
+        ),
+        array(
+          'title' => __( 'キーボードキー', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'keyboard-key'
+        ),
+      ),
+    ),
+    array(
+      'title' => __( 'マーカー', THEME_NAME ),
+      'items' => array(
+        array(
           'title' => __( '黄色マーカー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'marker'
@@ -96,16 +111,6 @@ function initialize_tinymce_styles($init_array) {
           'title' => __( '青色アンダーラインマーカー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'marker-under-blue'
-        ),
-        array(
-          'title' => __( '打ち消し線', THEME_NAME ),
-          'inline' => 'span',
-          'classes' => 'strike'
-        ),
-        array(
-          'title' => __( 'キーボードキー', THEME_NAME ),
-          'inline' => 'span',
-          'classes' => 'keyboard-key'
         ),
       ),
     ),
