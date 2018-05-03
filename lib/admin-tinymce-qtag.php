@@ -41,6 +41,16 @@ endif;
 add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
+  $font_sizes = array();
+  for ($i=12; $i <= 36 ; $i++) {
+    $font_sizes[] = array(
+          'title' => $i.'px',
+          'inline' => 'span',
+          'classes' => 'fz-'.$i.'px'
+        );
+    $i++;
+  }
+  //_v($font_sizes);
   //_v($init_array);
   //追加するスタイルの配列を作成
   $style_formats = array(
@@ -113,6 +123,10 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'marker-under-blue'
         ),
       ),
+    ),
+    array(
+      'title' => __( 'フォントサイズ', THEME_NAME ),
+      'items' => $font_sizes,
     ),
     array(
       'title' => __( 'ボックス（アイコン）', THEME_NAME ),
