@@ -383,14 +383,6 @@ function convert_content_for_amp($the_content){
   $append = '<amp-iframe src="$1" width="500" height="190"></amp-iframe>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-
-  //Amazon商品紹介iframeのAMP化
-  /*
-  $pattern = '{<iframe.+?src="(https?://hatenablog-parts\.com/embed.+?)".+?></iframe>}is';
-  if (preg_match_all($pattern, $the_content, $m)) {
-    _v($m);
-  }*/
-
   //Amazon商品紹介iframeのAMP化
   $pattern = '{<iframe.+?src="(.+?rcm-fe\.amazon-adsystem\.com.+?)".+?</iframe>}is';
   if (preg_match_all($pattern, $the_content, $m)) {

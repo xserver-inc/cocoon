@@ -1,15 +1,12 @@
-<?php //広告を表示するか
-if (is_ads_visible() && !is_auto_adsens_only_enable()):
-//レスポンシブAdSenseコードを取得
-  // _v($format);
-  // _v($ad_code);
-//var_dump(to_adsense_format($format));
+<?php //レスポンシブAdSenseコードを取得
 $ad_code = get_adsense_responsive_code(to_adsense_format($format), $ad_code);
-//AdSenseコード時なかった場合は設定コードをそのまま取得
-//var_dump(htmlspecialchars($ad_code));
 if (!$ad_code) {
   $ad_code = get_ad_code();
 }
+//広告を表示するか
+if (is_ads_visible() && !is_auto_adsens_only_enable() && $ad_code):
+//AdSenseコード時なかった場合は設定コードをそのまま取得
+//var_dump(htmlspecialchars($ad_code));
  ?>
 <div class="ad-area<?php echo $wrap_class ?> cf" itemscope itemtype="https://schema.org/WPAdBlock">
   <div class="ad-label" itemprop="name"><?php echo get_ad_label();//広告ラベルの取得 ?></div>

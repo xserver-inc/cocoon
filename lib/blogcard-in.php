@@ -89,23 +89,6 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  //1行にURLのみが期待されている行（URL）を全て$mに取得
-  /*
-  $internal_url_reg = 'https?://'.preg_quote(get_the_site_domain()).'/[\-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+';
-  $res = preg_match_all('{^'.$internal_url_reg.'|<a href="'.$internal_url_reg.'">'.$internal_url_reg.'</a>}im', $the_content, $m);
-  _v($the_content);
-  _v($m[0]);
-  */
-
-  /*
-  $res = preg_match_all('{^(<p>)?(<a[^>]+?href="'.$internal_url_reg.'"[^>]*?>)?'.$internal_url_reg.'(</a>)?(</p>)?$}im', $the_content,$m);
-  {^(<p>)?(<a[^>]+?href="https?://cocoon\.dev/[\-_.!~*'()a-zA-Z0-9;/?:\@&=+\$,%#]+[^>]+?>)?https?://cocoon\.dev/[\-_.!~*'()a-zA-Z0-9;/?:\@&=+\$,%#]+(</a>)?(</p>)?$}im
-  //_v('{^(<p>)?(<a[^>]+?href="'.$internal_url_reg.'"[^>]+?>)?'.$internal_url_reg.'(</a>)?(</p>)?$}im');
-  */
-  /*
-  $res = preg_match_all('/^(<p>)?(<a.+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
-
-  */
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
   foreach ($m[0] as $match) {
 
