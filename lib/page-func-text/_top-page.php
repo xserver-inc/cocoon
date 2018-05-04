@@ -1,5 +1,6 @@
 
 <?php //オリジナル設定ページ
+
 if (isset($_POST['action']) && $_POST['action'] == 'delete') {
   if( isset($_POST[HIDDEN_DELETE_FIELD_NAME]) &&
     $_POST[HIDDEN_DELETE_FIELD_NAME] == 'Y' ){
@@ -7,7 +8,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
     ///////////////////////////////////////
     // 内容の削除
     ///////////////////////////////////////
-    require_once 'posts-delete.php';
+    require_once abspath(__FILE__).'posts-delete.php';
   }
 } else {
   if( isset($_POST[HIDDEN_FIELD_NAME]) &&
@@ -16,7 +17,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
     ///////////////////////////////////////
     // 内容の保存
     ///////////////////////////////////////
-    require_once 'posts.php';
+    require_once abspath(__FILE__).'posts.php';
   }
 }
 
@@ -40,12 +41,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
       <?php //一覧リストの表示
       $action = isset($_GET['action']) ? $_GET['action'] : null;
       if ($action == 'delete') {
-        require_once 'form-delete.php';
+        require_once abspath(__FILE__).'form-delete.php';
       } else {
         if (!isset($action)) {
-          require_once 'list.php';
+          require_once abspath(__FILE__).'list.php';
         } else {//入力フォームの表示
-          require_once 'form.php';
+          require_once abspath(__FILE__).'form.php';
         }
       }
 

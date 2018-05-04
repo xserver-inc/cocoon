@@ -1,10 +1,11 @@
 <div class="metabox-holder">
 
 <?php
+
 //本文上ボタン用フォーム
-require_once 'sns-share-forms-top.php';
+require_once abspath(__FILE__).'sns-share-forms-top.php';
 //本文下ボタン用フォーム
-require_once 'sns-share-forms-bottom.php';
+require_once abspath(__FILE__).'sns-share-forms-bottom.php';
 ?>
 
 <!-- ツイート設定 -->

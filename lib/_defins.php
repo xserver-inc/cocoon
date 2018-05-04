@@ -149,4 +149,5 @@ define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375, \'ea
 
 
 //インポートファイルの読み込み
-require_once '_imports.php';
+
+require_once abspath(__FILE__).'_imports.php';

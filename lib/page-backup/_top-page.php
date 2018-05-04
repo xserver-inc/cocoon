@@ -1,6 +1,7 @@
 
 <?php //オリジナル設定ページ
 
+
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
@@ -12,7 +13,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   // 設定の保存
   ///////////////////////////////////////
   //バックアップ
-  require_once 'backup-posts.php';
+  require_once abspath(__FILE__).'backup-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -34,6 +35,6 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 <h1><?php _e( 'バックアップ', THEME_NAME ) ?></h1><br>
   <!-- バックアップ -->
   <div class="backup metabox-holder">
-    <?php require_once 'backup-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'backup-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 </div>

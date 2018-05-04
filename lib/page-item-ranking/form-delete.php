@@ -20,8 +20,6 @@ $list_url = IR_LIST_URL;
   <div id="sb-list" class="postbox" style="max-width: 800px; padding: 20px;">
     <a href="<?php echo $edit_url; ?>" class="ir-list-title"><?php echo $record->title; ?></a>
   </div>
-  <?php //デモの表示
-  //require_once 'demo.php'; ?>
 
   <div class="yes-back">
     <?php submit_button(__( '削除する', THEME_NAME )); ?>

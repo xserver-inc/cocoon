@@ -3,10 +3,11 @@
 // SNSシェアボタンの設定
 ///////////////////////////////////////
 
+
 //トップシェアボタン関数
-require_once 'sns-share-funcs-top.php';
+require_once abspath(__FILE__).'sns-share-funcs-top.php';
 //ボトムシェアボタン関数
-require_once 'sns-share-funcs-bottom.php';
+require_once abspath(__FILE__).'sns-share-funcs-bottom.php';
 
 //ツイートにメンションを含める
 define('OP_TWITTER_ID_INCLUDE', 'twitter_id_include');

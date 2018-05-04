@@ -48,7 +48,8 @@ function add_theme_settings_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-settings/_top-page.php';
+
+  require_once abspath(__FILE__).'page-settings/_top-page.php';
 }
 endif;
 
@@ -60,7 +61,8 @@ function add_theme_backup_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-backup/_top-page.php';
+
+  require_once abspath(__FILE__).'page-backup/_top-page.php';
 }
 endif;
 
@@ -72,7 +74,8 @@ function add_theme_speech_balloon_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-speech-balloon/_top-page.php';
+
+  require_once abspath(__FILE__).'page-speech-balloon/_top-page.php';
 }
 endif;
 
@@ -84,7 +87,8 @@ function add_theme_func_text_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-func-text/_top-page.php';
+
+  require_once abspath(__FILE__).'page-func-text/_top-page.php';
 }
 endif;
 
@@ -96,7 +100,8 @@ function add_theme_affiliate_tag_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-affiliate-tag/_top-page.php';
+
+  require_once abspath(__FILE__).'page-affiliate-tag/_top-page.php';
 }
 endif;
 
@@ -108,7 +113,8 @@ function add_theme_item_ranking_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-item-ranking/_top-page.php';
+
+  require_once abspath(__FILE__).'page-item-ranking/_top-page.php';
 }
 endif;
 
@@ -120,7 +126,8 @@ function add_theme_access_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-access/_top-page.php';
+
+  require_once abspath(__FILE__).'page-access/_top-page.php';
 }
 endif;
 
@@ -132,6 +139,7 @@ function add_theme_speed_up_page() {
     wp_die( __('このページにアクセスする管理者権限がありません。') );
   }
   //以下のテンプレートファイルで設定ページを作成する
-  require_once 'page-speed-up/_top-page.php';
+
+  require_once abspath(__FILE__).'page-speed-up/_top-page.php';
 }
 endif;

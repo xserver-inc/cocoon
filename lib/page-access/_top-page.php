@@ -1,6 +1,7 @@
 
 <?php //オリジナル設定ページ
 
+
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
@@ -11,7 +12,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   // 設定の保存
   ///////////////////////////////////////
   //バックアップ
-  require_once 'access-posts.php';
+  require_once abspath(__FILE__).'access-posts.php';
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
@@ -36,7 +37,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
     <!-- サイト高速化 -->
     <div class="access metabox-holder">
-      <?php require_once 'access-forms.php'; ?>
+      <?php require_once abspath(__FILE__).'access-forms.php'; ?>
     </div><!-- /.metabox-holder -->
 
     <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">

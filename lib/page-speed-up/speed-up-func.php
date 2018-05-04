@@ -1,8 +1,8 @@
 <?php //高速化設定関数
 
-require_once 'minify-css.php';
-require_once 'minify-js.php';
-require_once 'minify-html.php';
+require_once abspath(__FILE__).'minify-css.php';
+require_once abspath(__FILE__).'minify-js.php';
+require_once abspath(__FILE__).'minify-html.php';
 
 //ブラウザキャッシュを有効にするか
 define('OP_BROWSER_CACHE_ENABLE', 'browser_cache_enable');

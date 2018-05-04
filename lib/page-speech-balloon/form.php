@@ -15,7 +15,8 @@
     $visible = $record->visible;
 
     //吹き出しデモの表示
-    require_once 'demo.php';
+
+    require_once abspath(__FILE__).'demo.php';
 
   } else {
     $action = 'new';

@@ -1,8 +1,15 @@
 <?php
-require_once 'lib/_defins.php'; //定数を定義
+
+if ( !function_exists( 'abspath' ) ):
+function abspath($file){
+  return dirname($file).'/';
+}
+endif;
+
+require_once abspath(__FILE__).'lib/_defins.php'; //定数を定義
 
 //アップデートチェックの初期化
-require 'lib/theme-update-checker.php'; //ライブラリのパス
+require abspath(__FILE__).'lib/theme-update-checker.php'; //ライブラリのパス
 $example_update_checker = new ThemeUpdateChecker(
   strtolower(THEME_PARENT_DIR), //テーマフォルダ名
   'https://raw.githubusercontent.com/yhira/cocoon/master/update-info.json' //JSONファイルのURL

@@ -1,9 +1,10 @@
 <?php //SNSシェア設定をデータベースに保存
 
+
 //トップシェアボタンの設定保存
-require_once 'sns-share-posts-top.php';
+require_once abspath(__FILE__).'sns-share-posts-top.php';
 //ボトムシェアボタンの設定保存
-require_once 'sns-share-posts-bottom.php';
+require_once abspath(__FILE__).'sns-share-posts-bottom.php';
 
 //ツイートにメンションを含める
 update_theme_option(OP_TWITTER_ID_INCLUDE);
