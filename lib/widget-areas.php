@@ -418,7 +418,8 @@ function add_widget_area_before_1st_h2_in_single($the_content) {
   //   return $the_content;
   // }
   if ( is_single() && //投稿ページのとき
-       is_active_sidebar( 'single-content-middle' ) //ウィジェットが設定されているとき
+       is_active_sidebar( 'single-content-middle' ) && //ウィジェットが設定されているとき
+       !is_multi_paged() //マルチページの2ページ目以降でない場合
   ) {
     //広告（AdSense）タグを記入
     ob_start();//バッファリング
@@ -448,7 +449,8 @@ function add_widget_area_before_1st_h2_in_page($the_content) {
   // }
 
   if ( is_page() && //固定ページのとき
-       is_active_sidebar( 'page-content-middle' ) //ウィジェットが設定されているとき
+       is_active_sidebar( 'page-content-middle' ) && //ウィジェットが設定されているとき
+       !is_multi_paged() //マルチページの2ページ目以降でない場合
   ) {
     //広告（AdSense）タグを記入
     ob_start();//バッファリング

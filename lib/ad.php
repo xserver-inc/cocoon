@@ -195,9 +195,16 @@ function add_ads_before_1st_h2($the_content) {
   // if ( is_amp() ) {
   //   return $the_content;
   // }
+
+  // //マルチページの2ページ目以降は広告を表示しない
+  // if (is_singular() && is_multi_paged()) {
+  //   return $the_content;
+  // }
+
   if ( is_singular() && //投稿日・固定ページのとき
        is_ad_pos_content_middle_visible() &&//設定で表示が許可されているとき
-       is_all_adsenses_visible() //AdSense設定項目で表示が許可されているか
+       is_all_adsenses_visible() && //AdSense設定項目で表示が許可されているか
+       !is_multi_paged() //マルチページの2ページ目以降でない場合
   ){
     //広告（AdSense）タグを記入
     ob_start();//バッファリング
