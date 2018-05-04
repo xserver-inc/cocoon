@@ -24,12 +24,12 @@
     color: #ffffff;
     font-weight: bold;
 }
- 
+
 .content {
     margin-top: 6px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 180px;    
+    margin-bottom: 180px;
 }
 
 .eye-catch img {
@@ -50,7 +50,7 @@ main.main {
     background-color: #234777;
     color: #fff;
     font-size: 24px;
-    border-left: solid 4px #FEBF00;    
+    border-left: solid 4px #FEBF00;
 }
 
 
@@ -71,7 +71,6 @@ main.main, div.sidebar {
  .article h2 {
     font-size: 22px;
     text-align:center;
-    margin: 0;
     background-color: #fafbff;
     padding: 20px 0px;
     border-top: 2px solid #234777;
@@ -113,12 +112,12 @@ main.main, div.sidebar {
 .archive-title,.entry-title {
     font-size: 18px;
 }
-    
+
 .article h2 {
     padding: 14px 0px;
     font-size: 16px;
 }
-    
+
 .article h3, .article h4, .article h5, .article h6 {
     font-size: 16px;
 }
