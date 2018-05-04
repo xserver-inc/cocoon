@@ -34,7 +34,7 @@
           <?php //投稿者の表示
           if (is_entry_card_post_author_visible()): ?>
             <span class="post-author">
-              <span class="post-author-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), '12', null ); ?></span>
+              <span class="post-author-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), '16', null ); ?></span>
               <span class="post-author-name"><?php echo get_the_author(); ?></span>
             </span>
           <?php endif ?>

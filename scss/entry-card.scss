@@ -111,15 +111,28 @@
   display: none;
 }
 
+.post-author{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .post-author-image{
+  margin-right: 3px;
   img{
     border-radius: 50%;
   }
 }
 
 .entry-card-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   >span {
-    margin-right: 2px;
+    margin-right: 4px;
+    //display: block;
   }
 }
 
