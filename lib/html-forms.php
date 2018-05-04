@@ -888,13 +888,6 @@ function generate_author_box_tag($label){
     $author_id = get_sns_default_follow_user();
   }
 
-  // $auther_class = ' author-admin';
-  // if ($author_id) {
-  //   $author = new WP_User( get_the_author_meta( $author_id ) );
-  //   if ($author && !in_array( 'administrator', $author->roles )) {
-  //     $auther_class = ' author-guest';
-  //   }
-  // }
   ?>
   <div class="author-box cf">
     <?php //ウィジェット名がある場合
@@ -907,13 +900,22 @@ function generate_author_box_tag($label){
       <?php echo get_avatar( $author_id, 200 ); ?>
     </figure>
     <div class="author-content">
-      <div class="author-display-name">
+      <div class="author-name">
         <?php
         if ($author_id) {
           $description = get_the_author_description();
 
           if (!is_buddypress_page()) {
-            the_author_posts_link();
+            //プロフィールページURLの取得
+            $profile_page_url = get_the_author_profile_page_url($author_id);
+
+            if ($profile_page_url) {
+              $author_display_name = strip_tags(get_the_author_display_name());
+              $name = '<a href="'.$profile_page_url.'" target="_blank" rel="nofollow">'.$author_display_name.'</a>';
+              echo $name;
+            } else {
+              the_author_posts_link();
+            }
           } else {
             $author_display_name = strip_tags(get_the_author_display_name());
             $author_website_url = strip_tags(get_the_author_website_url());
