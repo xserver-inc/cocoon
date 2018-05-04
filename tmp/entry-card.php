@@ -2,7 +2,15 @@
   <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card cf">
     <figure class="entry-card-thumb card-thumb">
       <?php //サムネイルタグを取得
-      $thumbnail_tag = get_the_post_thumbnail(get_the_ID(), get_entry_card_thumbnail_size() , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => ''));
+      $thumbnail_tag =
+        get_the_post_thumbnail(
+          get_the_ID(),
+          get_entry_card_thumbnail_size(),
+          array(
+            'class' => 'entry-card-thumb-image card-thumb-image',
+            'alt' => ''
+          )
+        );
       if ( has_post_thumbnail() && $thumbnail_tag ): // サムネイルを持っているとき?>
         <?php echo $thumbnail_tag;
         //the_post_thumbnail(get_entry_card_thumbnail_size() , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>
