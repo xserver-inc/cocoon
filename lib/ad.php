@@ -115,6 +115,8 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
       $layout = ' layout="fixed-height" height="600" ';
     } else {
       $layout = ' width="300" height="250" ';
+      //AMP広告をレスポンシブにすると画面が操作できなくなる不具合発生
+      //$layout = ' layout="responsive" ';
       //$layout = ' layout="responsive" width="300" height="250" ';
       //$layout = ' layout="fixed-height" height="280" ';
     }
