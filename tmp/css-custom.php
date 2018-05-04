@@ -347,7 +347,8 @@ if ($responsive_width <= 1030) {
 } ?>
 <?php if (!is_admin()): ?>
 @media screen and (max-width: <?php echo $responsive_width; ?>px){
-  <?php echo wp_filesystem_get_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+  <?php //echo wp_filesystem_get_contents(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
+  <?php require_once(get_template_directory().'/scss/breakpoints/_max-width-1240.scss'); ?>
 }
 <?php endif ?>
 <?php //通知エリア背景色
