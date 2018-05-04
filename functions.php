@@ -323,7 +323,7 @@ add_filter('wp_link_pages_link', 'wp_link_pages_link_custom');
 if ( !function_exists( 'wp_link_pages_link_custom' ) ):
 function wp_link_pages_link_custom($link){
   //リンク内にAタグが含まれていない場合は現在のページ
-  if (!includes_string('</a>', $link)) {
+  if (!includes_string($link, '</a>')) {
     $link = str_replace('class="page-numbers"', 'class="page-numbers current"', $link);
   }
   return $link;
