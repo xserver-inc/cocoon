@@ -1503,3 +1503,12 @@ function add_delimiter_to_url_if_last_nothing($url){
   return $url;
 }
 endif;
+
+//マルチページの2ページ目以降か
+if ( !function_exists( 'is_multi_paged' ) ):
+function is_multi_paged(){
+  global $page;
+  //2ページ目以降の場合
+  return $page != 1;
+}
+endif;
