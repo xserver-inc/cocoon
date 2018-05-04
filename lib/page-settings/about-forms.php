@@ -19,6 +19,14 @@
     $all .= __( 'インクルードURL：', THEME_NAME ).includes_url().PHP_EOL;
     $all .= __( 'テンプレートURL：', THEME_NAME ).get_template_directory_uri().PHP_EOL;
     $all .= __( 'スタイルシートURL：', THEME_NAME ).get_stylesheet_directory_uri().PHP_EOL;
+    $ip = @$_SERVER['REMOTE_ADDR'];
+    if ($ip) {
+      //IP形式の場合は表示しない
+      if (!preg_match('{^[0-9\.]+$}i', $ip)) {
+        $host = gethostbyaddr($ip);
+        $all .= __( 'サーバー：', THEME_NAME ).$host.PHP_EOL;
+      }
+    }
     $all .= __( 'Wordpressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
     if (isset($_SERVER['HTTP_USER_AGENT']))

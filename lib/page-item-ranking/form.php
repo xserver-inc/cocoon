@@ -40,8 +40,6 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
   // _v($count);
     //var_dump($record);
 
-    //吹き出しデモの表示
-    //require_once 'demo.php';
 
   } else {
     $action = 'new';

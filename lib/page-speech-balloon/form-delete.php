@@ -18,7 +18,8 @@ $list_url = SB_LIST_URL;
   <p><?php _e( '以下の内容を削除しますか？', THEME_NAME ) ?></p>
 
   <?php //吹き出しデモの表示
-  require_once 'demo.php'; ?>
+
+  require_once abspath(__FILE__).'demo.php'; ?>
 
   <div class="yes-back">
     <?php submit_button(__( '削除する', THEME_NAME )); ?>

@@ -1,5 +1,5 @@
-
 <?php //オリジナル設定ページ
+
 
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
@@ -11,73 +11,73 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   // 設定の保存
   ///////////////////////////////////////
   //全体
-  require_once 'all-posts.php';
+  require_once abspath(__FILE__).'all-posts.php';
   //ヘッダー
-  require_once 'header-posts.php';
+  require_once abspath(__FILE__).'header-posts.php';
   //グローバルナビ
-  require_once 'navi-posts.php';
+  require_once abspath(__FILE__).'navi-posts.php';
   //広告
-  require_once 'ads-posts.php';
+  require_once abspath(__FILE__).'ads-posts.php';
   //タイトル
-  require_once 'title-posts.php';
+  require_once abspath(__FILE__).'title-posts.php';
   //SEO
-  require_once 'seo-posts.php';
+  require_once abspath(__FILE__).'seo-posts.php';
   //OGP
-  require_once 'ogp-posts.php';
+  require_once abspath(__FILE__).'ogp-posts.php';
   //アクセス解析
-  require_once 'analytics-posts.php';
+  require_once abspath(__FILE__).'analytics-posts.php';
   //カラム
-  require_once 'column-posts.php';
+  require_once abspath(__FILE__).'column-posts.php';
   //インデックス
-  require_once 'index-posts.php';
+  require_once abspath(__FILE__).'index-posts.php';
   //投稿
-  require_once 'single-posts.php';
+  require_once abspath(__FILE__).'single-posts.php';
   //固定ページ
-  require_once 'page-posts.php';
+  require_once abspath(__FILE__).'page-posts.php';
   //本文
-  require_once 'content-posts.php';
+  require_once abspath(__FILE__).'content-posts.php';
   //目次
-  require_once 'toc-posts.php';
+  require_once abspath(__FILE__).'toc-posts.php';
   //SNSシェア
-  require_once 'sns-share-posts.php';
+  require_once abspath(__FILE__).'sns-share-posts.php';
   //SNSフォロー
-  require_once 'sns-follow-posts.php';
+  require_once abspath(__FILE__).'sns-follow-posts.php';
   //画像
-  require_once 'image-posts.php';
+  require_once abspath(__FILE__).'image-posts.php';
   //内部ブログカード
-  require_once 'blogcard-in-posts.php';
+  require_once abspath(__FILE__).'blogcard-in-posts.php';
   //外部ブログカード
-  require_once 'blogcard-out-posts.php';
+  require_once abspath(__FILE__).'blogcard-out-posts.php';
   //ソースコード
-  require_once 'code-posts.php';
+  require_once abspath(__FILE__).'code-posts.php';
   //コメント
-  require_once 'comment-posts.php';
+  require_once abspath(__FILE__).'comment-posts.php';
   //通知
-  require_once 'notice-posts.php';
+  require_once abspath(__FILE__).'notice-posts.php';
   //アピールエリア
-  require_once 'appeal-posts.php';
+  require_once abspath(__FILE__).'appeal-posts.php';
   //カルーセル
-  require_once 'carousel-posts.php';
+  require_once abspath(__FILE__).'carousel-posts.php';
   //フッター
-  require_once 'footer-posts.php';
+  require_once abspath(__FILE__).'footer-posts.php';
   //ボタン
-  require_once 'buttons-posts.php';
+  require_once abspath(__FILE__).'buttons-posts.php';
   //モバイルボタン
-  require_once 'mobile-buttons-posts.php';
+  require_once abspath(__FILE__).'mobile-buttons-posts.php';
   //404ページ
-  require_once '404-posts.php';
+  require_once abspath(__FILE__).'404-posts.php';
   //スキン
-  require_once 'skin-posts.php';
+  require_once abspath(__FILE__).'skin-posts.php';
   //AMP
-  require_once 'amp-posts.php';
+  require_once abspath(__FILE__).'amp-posts.php';
   //管理画面
-  require_once 'admin-posts.php';
+  require_once abspath(__FILE__).'admin-posts.php';
   //エディター
-  require_once 'editor-posts.php';
+  require_once abspath(__FILE__).'editor-posts.php';
   //その他
-  require_once 'others-posts.php';
+  require_once abspath(__FILE__).'others-posts.php';
   //リセット
-  require_once 'reset-posts.php';
+  require_once abspath(__FILE__).'reset-posts.php';
 
   ///////////////////////////////////////
   // ビジュアルエディター用のカスタマイズCSS出力
@@ -171,168 +171,168 @@ endif;
 
   <!-- 全体タブ -->
   <div class="all metabox-holder">
-    <?php require_once 'all-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'all-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
-    <?php require_once 'header-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'header-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->
   <div class="ads metabox-holder">
-    <?php require_once 'ads-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'ads-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- タイトルタブ -->
   <div class="title metabox-holder">
-    <?php require_once 'title-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'title-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SEOタブ -->
   <div class="seo metabox-holder">
-    <?php require_once 'seo-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'seo-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- OGP -->
   <div class="ogp metabox-holder">
-    <?php require_once 'ogp-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'ogp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- アクセス解析 -->
   <div class="analytics metabox-holder">
-    <?php require_once 'analytics-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'analytics-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- カラム -->
   <div class="column metabox-holder">
-    <?php require_once 'column-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'column-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- インデックス -->
   <div class="index-page metabox-holder">
-    <?php require_once 'index-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'index-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 投稿 -->
   <div class="single-page metabox-holder">
-    <?php require_once 'single-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'single-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 固定ページ -->
   <div class="page-page metabox-holder">
-    <?php require_once 'page-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'page-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 本文 -->
   <div class="content-page metabox-holder">
-    <?php require_once 'content-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'content-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 目次 -->
   <div class="toc-page metabox-holder">
-    <?php require_once 'toc-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'toc-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSシェアタブ -->
   <div class="sns-share metabox-holder">
-    <?php require_once 'sns-share-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'sns-share-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- SNSフォロータブ -->
   <div class="sns-follow metabox-holder">
-    <?php require_once 'sns-follow-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'sns-follow-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 画像タブ -->
   <div class="image metabox-holder">
-    <?php require_once 'image-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'image-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 内部・外部ブログカード -->
   <div class="blog-card-in metabox-holder">
-    <?php require_once 'blogcard-in-forms.php'; ?>
-    <?php require_once 'blogcard-out-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'blogcard-in-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'blogcard-out-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コードタブ -->
   <div class="code-highlight metabox-holder">
-    <?php require_once 'code-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'code-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- コメントタブ -->
   <div class="comment metabox-holder">
-    <?php require_once 'comment-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'comment-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 通知エリア -->
   <div class="notice-area metabox-holder">
-    <?php require_once 'notice-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'notice-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- アピールエリア -->
   <div class="appeal-area metabox-holder">
-    <?php require_once 'appeal-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'appeal-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- カルーセル -->
   <div class="carousel-area metabox-holder">
-    <?php require_once 'carousel-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'carousel-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- フッター -->
   <div class="footer metabox-holder">
-    <?php require_once 'footer-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'footer-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- ボタン -->
   <div class="buttons metabox-holder">
-    <?php require_once 'buttons-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'buttons-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- モバイルボタン -->
   <div class="mobile-buttons metabox-holder">
-    <?php require_once 'mobile-buttons-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'mobile-buttons-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 404ページ -->
   <div class="page-404 metabox-holder">
-    <?php require_once '404-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'404-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- スキン -->
   <div class="skin metabox-holder">
-    <?php require_once 'skin-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'skin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- AMP -->
   <div class="amp metabox-holder">
-    <?php require_once 'amp-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'amp-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->
   <div class="admin metabox-holder">
-    <?php require_once 'admin-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'admin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- エディター -->
   <div class="editor metabox-holder">
-    <?php require_once 'editor-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'editor-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- その他 -->
   <div class="others metabox-holder">
-    <?php require_once 'others-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'others-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- リセット -->
   <div class="reset metabox-holder">
-    <?php require_once 'reset-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'reset-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- テーマ情報 -->
   <div class="theme-about metabox-holder">
-    <?php require_once 'about-forms.php'; ?>
+    <?php require_once abspath(__FILE__).'about-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->

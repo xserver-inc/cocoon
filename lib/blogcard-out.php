@@ -135,7 +135,9 @@ function url_to_external_ogp_blogcard_tag($url){
   $snipet = '';
   $error_rel_nofollow = ' rel="nofollow"';
 
-  require_once('open-graph.php');
+
+
+  require_once abspath(__FILE__).'open-graph.php';
   //ブログカードキャッシュ更新モード、もしくはログインユーザー以外のときはキャッシュの取得
   if ( !(is_external_blogcard_refresh_mode() && is_user_administrator()) ) {
     //保存したキャッシュを取得

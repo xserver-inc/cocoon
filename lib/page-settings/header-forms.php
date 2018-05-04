@@ -163,7 +163,8 @@
           </td>
         </tr>
 
-        <?php require_once 'navi-forms.php'; ?>
+        <?php
+        require_once abspath(__FILE__).'navi-forms.php'; ?>
 
       </tbody>
     </table>
