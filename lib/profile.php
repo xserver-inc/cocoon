@@ -18,7 +18,7 @@ function get_the_author_profile_page_url($user_id){
   if (!$user_id) {
     $user_id = get_the_posts_author_id();
   }
-  return esc_html(get_the_author_meta('profile_page_url', $user_id));
+  return trim(esc_html(get_the_author_meta('profile_page_url', $user_id)));
 }
 endif;
 
