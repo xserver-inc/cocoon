@@ -202,7 +202,7 @@ function initialize_tinymce_styles($init_array) {
       'title' => __( 'ボックス（白抜き）', THEME_NAME ),
       'items' => array(
         array(
-          'title' => __( '通常', THEME_NAME ),
+          'title' => __( '灰色', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box'
         ),
@@ -212,12 +212,12 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'blank-box bb-yellow'
         ),
         array(
-          'title' => __( '赤色', THEME_NAME ),
+          'title' => __( '薄い赤', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box bb-red'
         ),
         array(
-          'title' => __( '青色', THEME_NAME ),
+          'title' => __( '薄い青', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box bb-blue'
         ),
