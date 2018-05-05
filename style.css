@@ -2525,6 +2525,22 @@ label.screen-reader-text {
     width: auto;
   }
 }
+.blank-box {
+  width: 94%;
+  border: 2px solid #cccfd2;
+  padding: 8px;
+  margin: 1em auto;
+}
+.blank-box.bb-yellow {
+  border-color: #f4c46b;
+}
+.blank-box.bb-red {
+  border-color: #ffb6b9;
+}
+.blank-box.bb-blue {
+  border-color: #75c2f6;
+}
+
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/

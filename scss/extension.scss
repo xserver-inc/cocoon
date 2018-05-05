@@ -40,26 +40,34 @@
   border-bottom: 2px solid red;
 }
 
+$marker_yellow: #ff9;
+$marker_red: #ffd0d1;
+$marker_blue: #a5d7f9;
+
 /*マーカーの黄色のような色*/
 .marker{
-  background-color: #ff9;
+  background-color: $marker_yellow;
 }
 .marker-red{
-  background-color: #ffd0d1;
+  background-color: $marker_red;
 }
 .marker-blue{
-  background-color: #a5d7f9;
+  background-color: $marker_blue;
 }
+
+$marker_u_yellow: #ff6;
+$marker_u_red: #ffb6b9;
+$marker_u_blue: #75c2f6;
 
 /*下半分のマーカー色（km）*/
 .marker-under{
-  background: linear-gradient(transparent 60%, #ff6 60%);
+  background: linear-gradient(transparent 60%, $marker_u_yellow 60%);
 }
 .marker-under-red{
-  background: linear-gradient(transparent 60%, #ffb6b9 60%);
+  background: linear-gradient(transparent 60%, $marker_u_red 60%);
 }
 .marker-under-blue{
-  background: linear-gradient(transparent 60%, #75c2f6 60%);
+  background: linear-gradient(transparent 60%, $marker_u_blue 60%);
 }
 
 /*打ち消し線*/
@@ -275,6 +283,20 @@
   //   color: #d3c463;
   // }
 }
+
+///////////////////////////////////////
+// 白抜きボックス
+///////////////////////////////////////
+.blank-box{
+  width: 94%;
+  border: 2px solid $basic_border_color;
+  padding: 8px;
+  margin: 1em auto;
+  &.bb-yellow{border-color: #f4c46b;}
+  &.bb-red{border-color: $marker_u_red;}
+  &.bb-blue{border-color: $marker_u_blue;}
+}
+
 
 /*******************************
 * 続きはWEBで的な検索ボックス

@@ -199,6 +199,31 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
+      'title' => __( 'ボックス（白抜き）', THEME_NAME ),
+      'items' => array(
+        array(
+          'title' => __( '通常', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box'
+        ),
+        array(
+          'title' => __( '黄色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-yellow'
+        ),
+        array(
+          'title' => __( '赤色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-red'
+        ),
+        array(
+          'title' => __( '青色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-blue'
+        ),
+      ),
+    ),
+    array(
       'title' => __( 'バッジ', THEME_NAME ),
       'items' => array(
         array(
