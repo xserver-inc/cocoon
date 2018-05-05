@@ -18,7 +18,11 @@
       </div>
     <?php endif ?>
   </div>
-  <div class="cta-button">
-    <a href="<?php echo $_BUTTON_URL; ?>" class="btn <?php echo $_BUTTON_COLOR_CLASS; ?> btn-l"><?php echo $_BUTTON_TEXT; ?></a>
-  </div>
+  <?php //URLが入力されているとき
+  if ($_BUTTON_URL): ?>
+    <div class="cta-button">
+      <a href="<?php echo $_BUTTON_URL; ?>" class="btn <?php echo $_BUTTON_COLOR_CLASS; ?> btn-l"><?php echo $_BUTTON_TEXT; ?></a>
+    </div>
+  <?php endif ?>
+
 </div>
