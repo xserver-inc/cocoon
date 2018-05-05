@@ -911,10 +911,10 @@ function generate_author_box_tag($label){
 
             if ($profile_page_url) {
               $author_display_name = strip_tags(get_the_author_display_name());
-              $name = '<a href="'.$profile_page_url.'" target="_blank" rel="nofollow">'.$author_display_name.'</a>';
-              echo $name;
+              $name = '<a href="'.$profile_page_url.'" rel="nofollow">'.$author_display_name.'</a>';
+              //echo $name;
             } else {
-              the_author_posts_link();
+              $name = get_the_author_posts_link($author_id);
             }
           } else {
             $author_display_name = strip_tags(get_the_author_display_name());
@@ -924,8 +924,9 @@ function generate_author_box_tag($label){
             if ($author_website_url) {
               $name = '<a href="'.$author_website_url.'" target="_blank" rel="nofollow">'.$author_display_name.'</a>';
             }
-            echo $name;
+            //echo $name;
           }
+          echo apply_filters( 'get_the_author_name', $name );
 
 
         } else {
