@@ -818,7 +818,7 @@ img {
   display: none;
 }
 
-.post-author {
+.entry-card .post-author {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -3254,6 +3254,10 @@ iframe[src*="https://www.google.com/maps/embed"] {
 .author-box .sns-follow-buttons a.follow-button .follow-count {
   display: none;
 }
+.author-box .author-name {
+  font-size: 1.1em;
+  font-weight: bold;
+}
 
 .author-thumb {
   float: left;
@@ -3263,11 +3267,6 @@ iframe[src*="https://www.google.com/maps/embed"] {
 
 .author-content {
   margin-left: 130px;
-}
-
-.author-name {
-  font-size: 1.1em;
-  font-weight: bold;
 }
 
 .author-description {

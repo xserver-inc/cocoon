@@ -926,7 +926,7 @@ function generate_author_box_tag($label){
             }
             //echo $name;
           }
-          echo apply_filters( 'get_the_author_name', $name );
+          echo apply_filters( 'the_author_box_name', $name );
 
 
         } else {

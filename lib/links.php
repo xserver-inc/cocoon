@@ -12,7 +12,7 @@ endif;
 
 //本文の内部・外部リンクの置換
 add_filter('the_content', 'replace_anchor_links', 12);
-add_filter('get_the_author_name', 'replace_anchor_links', 12);
+add_filter('the_author_box_name', 'replace_anchor_links', 12);
 add_filter('get_the_author_description', 'replace_anchor_links', 12);
 add_filter('widget_text', 'replace_anchor_links', 12);//テキストウィジェットをフック
 add_filter('widget_text_pc_text', 'replace_anchor_links', 12);
