@@ -144,6 +144,10 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ +?security=["][^"]*?["]/i', '', $the_content);
   $the_content = preg_replace('/ +?security=[\'][^\']*?[\']/i', '', $the_content);
 
+  //xml:lang属性を取り除く
+  $the_content = preg_replace('/ +?xml:lang=["][^"]*?["]/i', '', $the_content);
+  $the_content = preg_replace('/ +?xml:lang=[\'][^\']*?[\']/i', '', $the_content);
+
   // //type属性を取り除く
   // $the_content = preg_replace('/ +?type=["][^"]*?["]/i', '', $the_content);
   // $the_content = preg_replace('/ +?type=[\'][^\']*?[\']/i', '', $the_content);
