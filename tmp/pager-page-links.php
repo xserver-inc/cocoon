@@ -7,6 +7,7 @@ $args = array(
   'next_or_number' => 'next',
   'previouspagelink' => __( '前へ', THEME_NAME ),
   'nextpagelink' => __( '次へ', THEME_NAME ),
+  'separator' => '',
 );
 wp_link_pages($args);
 
@@ -16,5 +17,6 @@ $args = array(
   'link_before' => '<span class="page-numbers">',
   'link_after' => '</span>',
   'next_or_number' => 'number',
+  'separator' => '',
 );
 wp_link_pages($args); ?>

@@ -12,7 +12,7 @@ $pagination_wh: 50px;
   height: $pagination_wh;
   width: $pagination_wh;
   border: 1px solid $thin;
-  margin-left: 3px;
+  margin: 0 4px;
   line-height: $pagination_wh;
   text-align: center;
 }
@@ -22,6 +22,9 @@ $pagination_wh: 50px;
 ************************************/
 .pagination{
   @include pagination_wrap;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
 
   .current{
     background-color: $current_bgc;
@@ -47,6 +50,8 @@ $pagination_wh: 50px;
 
 .page-numbers{
   @include pagination_button;
+  display: inline-flex;
+  justify-content: center;
 }
 
 .page-numbers.dots {

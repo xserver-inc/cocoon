@@ -2970,6 +2970,9 @@ label.screen-reader-text {
   margin: 24px 0;
   clear: both;
   text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
 }
 .pagination .current {
   background-color: #eeeff0;
@@ -2999,9 +3002,11 @@ label.screen-reader-text {
   height: 50px;
   width: 50px;
   border: 1px solid #cccdce;
-  margin-left: 3px;
+  margin: 0 4px;
   line-height: 50px;
   text-align: center;
+  display: inline-flex;
+  justify-content: center;
 }
 
 .page-numbers.dots {
