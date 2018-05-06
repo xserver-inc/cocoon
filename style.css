@@ -578,10 +578,13 @@ img {
 .header-container-in.hlt-top-menu .tagline {
   display: none;
 }
-.header-container-in.hlt-top-menu .logo-header {
+.header-container-in.hlt-top-menu .logo-header,
+.header-container-in.hlt-top-menu .logo-header * {
   height: 60px;
+  max-width: 240px;
 }
-.header-container-in.hlt-top-menu .logo-header img {
+.header-container-in.hlt-top-menu .logo-header img,
+.header-container-in.hlt-top-menu .logo-header * img {
   height: 100%;
   width: auto;
 }

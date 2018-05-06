@@ -94,12 +94,17 @@
     display: none;
   }
 
-  .logo-header{
+  .logo-header,
+  .logo-header *{
     height: 60px;
+    max-width: 240px;
     img{
       //margin: 10px;
       height: 100%;
       width: auto;
+      // //height: auto;
+      // width: 100%;
+      // height: auto;
     }
   }
 
