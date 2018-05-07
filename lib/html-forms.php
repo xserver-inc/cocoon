@@ -374,6 +374,19 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
 }
 endif;
 
+//トグルフォーム
+if ( !function_exists( 'generate_toggle_area' ) ):
+function generate_toggle_area($caption, $content){ ?>
+ <span class="toggle">
+  <span class="toggle-link"><?php echo $caption; ?></span>
+  <div class="toggle-content">
+    <?php echo $content; ?>
+  </div>
+</span>
+<?php
+}
+endif;
+
 //サイドバー広告の詳細設定フォーム
 if ( !function_exists( 'generate_sidebar_ad_detail_setting_forms' ) ):
 function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $label_value){ ?>

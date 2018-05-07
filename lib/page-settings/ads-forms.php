@@ -71,8 +71,16 @@
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_AD_CODE, get_ad_code(), __( 'アドセンスのレスポンシブコードを入力してください', THEME_NAME )) ;
+            //標準広告
+            generate_textarea_tag(OP_AD_CODE, get_ad_code(), __( 'アドセンスのレスポンシブコードを入力', THEME_NAME )) ;
             generate_tips_tag(__( 'アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォールにより、保存時に403エラーが出る場合はscriptタグを取り除いて入力してみてください。', THEME_NAME ));
+
+            //リンクユニット
+            ob_start();
+            generate_textarea_tag(OP_AD_LINK_UNIT_CODE, get_ad_link_unit_code(), __( 'アドセンスリンクユニットのレスポンシブコードを入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'リンクユニットのレスポンシブ広告コードを入力してください。ここに広告コードを入力することでAMPページでもリンクユニットが表示されます。入力しない場合はAMPページで「レクタングル（中）」サイズの広告が表示されます。', THEME_NAME ));
+            $form = ob_get_clean();
+            generate_toggle_area(__( 'リンクユニット用コード入力', THEME_NAME ), $form);
             ?>
           </td>
         </tr>
