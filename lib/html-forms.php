@@ -387,6 +387,20 @@ function generate_toggle_area($caption, $content){ ?>
 }
 endif;
 
+//トグルが入力されているか
+if ( !function_exists( 'generate_toggle_entered' ) ):
+function generate_toggle_entered($is_entered){ ?>
+  <span class="toggle-entered">[<?php
+    if ($is_entered) {
+      _e( '入力済', THEME_NAME );
+    } else {
+      _e( '未入力', THEME_NAME );
+    }
+   ?>]</span>
+<?php
+}
+endif;
+
 //サイドバー広告の詳細設定フォーム
 if ( !function_exists( 'generate_sidebar_ad_detail_setting_forms' ) ):
 function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $label_value){ ?>
