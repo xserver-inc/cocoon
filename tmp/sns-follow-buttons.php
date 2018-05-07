@@ -1,10 +1,10 @@
 <?php //SNSページのフォローボタン ?>
 <?php
-if ( is_any_sns_follow_buttons_exist() &&
-      (
-        is_author_administrator()
-        || (is_author_exits() && is_author_follow_buttons_exits())
-      )
+if ( is_any_sns_follow_buttons_exist()
+      //  && (
+      //   is_author_administrator()
+      //   || (is_author_exits() && is_author_follow_buttons_exits())
+      // )
     ): //全てのフォローボタンを表示するかどうか?>
 <!-- SNSページ -->
 <div class="sns-follow<?php echo get_additional_sns_follow_button_classes(); ?>">
