@@ -31,6 +31,11 @@ get_template_part('tmp/content') ?>
     comments_template(); //コメントテンプレート
   } ?>
 
+  <?php //コメントフォーム下ウイジェット
+  if ( is_active_sidebar( 'below-single-comment-form' ) ): ?>
+    <?php dynamic_sidebar( 'below-single-comment-form' ); ?>
+  <?php endif; ?>
+
 </div>
 
 <?php //パンくずリストがメインボトムの場合
