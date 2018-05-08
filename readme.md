@@ -65,6 +65,12 @@ http://kenwheeler.github.io/slick/
 stickyfill  
 https://github.com/wilddeer/stickyfill
 
+Font Awesome 4  
+https://fontawesome.com/v4.7.0/
+
+IcoMoon  
+https://icomoon.io/app/
+
 コードを参考にしたプラグイン
 ------
 Auto Post Thumbnail  
