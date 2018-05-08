@@ -18,6 +18,7 @@ require_once abspath(__FILE__).'category.php';   //カテゴリー関係の関�
 require_once abspath(__FILE__).'entry-card.php'; //エントリーカード関数
 require_once abspath(__FILE__).'amp.php';        //AMP関係の関数
 require_once abspath(__FILE__).'content.php';    //本文関係の関数
+require_once abspath(__FILE__).'comments.php';   //コメント関係の関数
 require_once abspath(__FILE__).'php-html-css-js-minifier.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once abspath(__FILE__).'page-settings/all-funcs.php';        //全体設定関数
 require_once abspath(__FILE__).'page-settings/header-funcs.php';     //ヘッダー設定関数

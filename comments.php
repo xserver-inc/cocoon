@@ -13,7 +13,13 @@
     if(have_comments()): // コメントがあったら
     ?>
         <ol class="commets-list">
-        <?php wp_list_comments('avatar_size=55'); //コメント一覧を表示 ?>
+        <?php
+        $args = array(
+          'avatar_size' => 55,
+          'type' => 'comment',
+          'callback' => 'comment_custom_callback',
+        );
+        wp_list_comments($args); //コメント一覧を表示 ?>
         </ol>
 
         <div class="comment-page-link">
