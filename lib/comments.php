@@ -30,6 +30,7 @@ function comment_custom_callback($comment, $args, $depth) {
       printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  ', '' );
       ?>
   </div>
+
   <div class="comment-content">
     <?php comment_text(); ?>
   </div>
