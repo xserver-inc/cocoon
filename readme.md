@@ -3,7 +3,7 @@ Cocoon
 
 Cocoonは、モバイル・高速化・SEO最適化済みのWordpressテーマです。
 
-Cocoonテーマの詳細は以下のURLを参照してください。
+Cocoonテーマの詳細は以下のURLを参照してください。  
 https://wp-cocoon.com/
 
 テーマファイルカスタマイズ
@@ -13,7 +13,7 @@ https://wp-cocoon.com/
 
 テーマライセンス
 ----------
-GNU General Public License
+GNU General Public License  
 http://www.gnu.org/licenses/gpl-2.0.html
 
 開発者
@@ -31,8 +31,7 @@ http://www.gnu.org/licenses/gpl-2.0.html
 使用ライブラリ
 ------
 php-html-css-js-minifier.php（CSS、JavaScript、HTMLの縮小化）  
-https://gist.github.com/tovic/
-d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php
+https://gist.github.com/tovic/d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php
 
 Punycode（ピュニコード変換）  
 https://github.com/true/php-punycode
