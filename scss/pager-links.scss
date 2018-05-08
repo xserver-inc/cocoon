@@ -3,6 +3,9 @@
 ************************************/
 .pager-links{
   @include pagination_wrap;
+  // display: inline-flex;
+  // justify-content: center;
+  // width: 100%;
 
   span{
     background-color: $current_bgc;
@@ -29,8 +32,10 @@
 .pager-prev-next{
   a{
     width: 30%;
+    margin: 0 4px;
   }
   span{
     width: 100%;
+    margin: 0;
   }
 }

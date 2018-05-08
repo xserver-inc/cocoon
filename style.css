@@ -3083,9 +3083,11 @@ label.screen-reader-text {
 
 .pager-prev-next a {
   width: 30%;
+  margin: 0 4px;
 }
 .pager-prev-next span {
   width: 100%;
+  margin: 0;
 }
 
 /************************************
