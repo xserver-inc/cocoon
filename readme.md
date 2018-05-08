@@ -30,48 +30,48 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 使用ライブラリ
 ------
-php-html-css-js-minifier.php（CSS、JavaScript、HTMLの縮小化）
+php-html-css-js-minifier.php（CSS、JavaScript、HTMLの縮小化）  
 https://gist.github.com/tovic/
 d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php
 
-Punycode（ピュニコード変換）
+Punycode（ピュニコード変換）  
 https://github.com/true/php-punycode
 
-Theme Update Checker Library（テーマ自動アップデート）
+Theme Update Checker Library（テーマ自動アップデート）  
 https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/
 
 使用リソース
 ------
-highlight.js
+highlight.js  
 https://highlightjs.org/
 
-Lightbox
+Lightbox  
 http://lokeshdhakar.com/projects/lightbox2/
 
-Lity
+Lity  
 http://sorgalla.com/lity/
 
-baguetteBox
+baguetteBox  
 http://feimosi.github.io/baguetteBox.js/
 
-Masonry
+Masonry  
 http://masonry.desandro.com/
 
-slicknav
+slicknav  
 http://slicknav.com/
 
-slick
+slick  
 http://kenwheeler.github.io/slick/
 
-stickyfill
+stickyfill  
 https://github.com/wilddeer/stickyfill
 
 コードを参考にしたプラグイン
 ------
-Auto Post Thumbnail
+Auto Post Thumbnail  
 https://ja.wordpress.org/plugins/auto-post-thumbnail/
 
 同梱スキン
 ------
-いつものシリーズ
+いつものシリーズ  
 https://ganchan.info/cocoon01/
