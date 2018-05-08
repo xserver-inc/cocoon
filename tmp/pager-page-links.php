@@ -2,7 +2,7 @@
 $args = array(
   'before' => '<div class="pager-links pager-prev-next">',
   'after' => '</div>',
-  'link_before' => '<span class="page-numbers">',
+  'link_before' => '<span class="page-numbers page-prev-next">',
   'link_after' => '</span>',
   'next_or_number' => 'next',
   'previouspagelink' => __( '前へ', THEME_NAME ),
@@ -12,7 +12,7 @@ $args = array(
 wp_link_pages($args);
 
 $args = array(
-  'before' => '<div class="pager-links">',
+  'before' => '<div class="pager-links pager-numbers">',
   'after' => '</div>',
   'link_before' => '<span class="page-numbers">',
   'link_after' => '</span>',
