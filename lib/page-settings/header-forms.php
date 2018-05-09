@@ -121,7 +121,7 @@
 
             //ヘッダー背景画像の固定
             generate_checkbox_tag(OP_HEADER_BACKGROUND_ATTACHMENT_FIXED, is_header_background_attachment_fixed(), __( 'ヘッダー背景画像の固定', THEME_NAME ));
-            generate_tips_tag(__( 'ヘッダーに設定した背景画像を固定します。上下にスクロールしたときに背景画像が移動しなくなります。', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッダーに設定した背景画像を背景に固定します。上下にスクロールしたときに背景画像が背景に対して移動しなくなります。', THEME_NAME ));
             ?>
           </td>
         </tr>

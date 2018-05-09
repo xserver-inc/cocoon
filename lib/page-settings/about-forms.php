@@ -65,7 +65,7 @@
       $tags = get_tags( $args );
       $all .= __( 'タグ数：', THEME_NAME ).count($tags).PHP_EOL;
 
-      $all .= __( '著者数：', THEME_NAME ).count(get_users()).PHP_EOL;
+      $all .= __( 'ユーザー数：', THEME_NAME ).count(get_users()).PHP_EOL;
 
       $all .= $sep;
     }
