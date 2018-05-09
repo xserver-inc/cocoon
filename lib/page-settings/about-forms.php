@@ -54,6 +54,19 @@
       if (isset($info['version'])) {
         $all .= __( 'バージョン：', THEME_NAME ).$info['version'].PHP_EOL;
       }
+      //カテゴリ数
+      $args = array(
+        'get' => 'all',
+        'hide_empty' => 0
+      );
+      $categories = get_categories( $args );
+      $all .= __( 'カテゴリ数：', THEME_NAME ).count($categories).PHP_EOL;
+
+      $tags = get_tags( $args );
+      $all .= __( 'タグ数：', THEME_NAME ).count($tags).PHP_EOL;
+
+      $all .= __( '著者数：', THEME_NAME ).count(get_users()).PHP_EOL;
+
       $all .= $sep;
     }
 
@@ -90,7 +103,7 @@
      ?>
     <pre><?php echo $all; ?></pre>
     <p><?php _e( '不具合報告の際には以下の情報を添えてもらうと助かります。', THEME_NAME ) ?></p>
-    <textarea style="width: 100%;height: 400px"><?php echo $all; ?></textarea>
+    <textarea style="width: 100%;height: 400px">&lt;pre&gt;<?php echo $all; ?>&lt;/pre&gt;</textarea>
 
 
   </div>
