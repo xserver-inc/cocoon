@@ -1293,14 +1293,13 @@ img {
 
 /*本文下カテゴリ*/
 .cat-link {
-  color: #333435;
+  color: #fff;
   text-decoration: none;
   display: inline-block;
   margin-right: 5px;
   padding: 2px 6px;
   font-size: 12px;
   background-color: #333435;
-  color: #fff;
   border-radius: 2px;
   word-break: break-all;
 }
