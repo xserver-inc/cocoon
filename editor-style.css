@@ -1,8 +1,10 @@
 @charset "UTF-8";
 /*ビジュアルエディターのスタイルを書く*/
-body#tinymce.wp-autoresize {
-    padding: 0 20px !important;
-    margin-top: 0 !important;
+body#tinymce {
+  padding: 0 20px !important;
+  margin-top: 0 !important;
+  background-image: none;
+  background-color: #fff;
 }
 
 .column-2,
