@@ -507,6 +507,12 @@ if ( !function_exists( 'tiny_mce_before_init_custom' ) ):
 function tiny_mce_before_init_custom( $mceInit ) {
   //var_dump($mceInit );
   $mceInit['body_class'] .= ' main article';
+  if (get_site_font_family_class()) {
+    $mceInit['body_class'] .= ' '.get_site_font_family_class();
+  }
+  if (get_site_font_size_class()) {
+    $mceInit['body_class'] .= ' '.get_site_font_size_class();
+  }
   return $mceInit;
 }
 endif;
