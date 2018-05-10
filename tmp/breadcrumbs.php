@@ -27,7 +27,7 @@ if($cat && !is_wp_error($cat)){
   //ページタイトルを含める場合
   if (is_single_breadcrumbs_include_post()) {
     ++$count;
-    echo '<div class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><span itemprop="name">'.get_the_title().'</span><meta itemprop="position" content="'.$count.'" /></div>';
+    echo '<div class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><span itemprop="item"><span itemprop="name">'.get_the_title().'</span></span><meta itemprop="position" content="'.$count.'" /></div>';
   }
 
   echo '</div><!-- /#breadcrumb -->';

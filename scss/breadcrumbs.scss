@@ -26,10 +26,11 @@
 .breadcrumb.pbp-main-before,
 .breadcrumb.pbp-footer-before{
   background-color: $bg_white;
-  margin: auto;
+  margin: 12px auto 0;
   padding: 5px;
 }
 
-.breadcrumb.sbp-main-before{
+.breadcrumb.sbp-main-before + .content,
+.breadcrumb.pbp-main-before + .content{
   margin-top: 12px;
 }

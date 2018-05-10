@@ -5,11 +5,16 @@ if (is_page_breadcrumbs_visible()): ?>
 <div id="breadcrumb" class="breadcrumb breadcrumb-page<?php echo get_additional_page_breadcrumbs_classes(); ?>" itemscope itemtype="http://schema.org/BreadcrumbList">
   <?php $count = 0;
   $per_ids = array_reverse(get_post_ancestors($post->ID)); ?>
-  <div class="breadcrumb-home" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a href="<?php echo home_url(); ?>" itemprop="item"><span itemprop="name"><?php _e( 'ホーム', THEME_NAME ) ?></span></a><meta itemprop="position" content="1" /><?php echo (count($per_ids) == 0) ? '' : '<span class="sp"><span class="fa fa-angle-right"></span></span>' ?></div>
+  <div class="breadcrumb-home" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a href="<?php echo home_url(); ?>" itemprop="item"><span itemprop="name"><?php _e( 'ホーム', THEME_NAME ) ?></span></a><meta itemprop="position" content="1" /><?php echo (count($per_ids) == 0 && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right"></span></span>' ?></div>
   <?php foreach ( $per_ids as $par_id ){
     $count += 1;?>
-    <div class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><a href="<?php echo get_page_link( $par_id );?>" itemprop="item"><span itemprop="name"><?php echo get_page($par_id)->post_title; ?></span></a><meta itemprop="position" content="<?php echo $count + 1; ?>" /><?php echo (count($per_ids) == $count) ? '' : '<span class="sp"><span class="fa fa-angle-right"></span></span>' ?></div>
+    <div class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><a href="<?php echo get_page_link( $par_id );?>" itemprop="item"><span itemprop="name"><?php echo get_page($par_id)->post_title; ?></span></a><meta itemprop="position" content="<?php echo $count + 1; ?>" /><?php echo (count($per_ids) == $count && !is_page_breadcrumbs_include_post()) ? '' : '<span class="sp"><span class="fa fa-angle-right"></span></span>' ?></div>
   <?php } ?>
+  <?php //ページタイトルを含める場合
+  if (is_page_breadcrumbs_include_post()):
+    $count += 1; ?>
+    <div class="breadcrumb-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><span itemprop="item"><span itemprop="name"><?php the_title(); ?></span></span><meta itemprop="position" content="<?php echo $count + 1; ?>" /></div>
+  <?php endif ?>
 </div><!-- /#breadcrumb -->
 <?php endif; ?>
 <?php endif //is_page_breadcrumbs_visible ?>
