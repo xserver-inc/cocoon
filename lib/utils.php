@@ -1512,3 +1512,23 @@ function is_multi_paged(){
   return $page != 1;
 }
 endif;
+
+//投稿日の取得
+if ( !function_exists( 'get_the_postdate_time' ) ):
+function get_the_postdate_time(){
+  return the_time('Y.m.d');
+}
+endif;
+
+//更新日の取得（更新日がないときは投稿日）
+if ( !function_exists( 'get_the_update_time' ) ):
+function get_the_update_time(){
+  $update_time = get_update_time('Y.m.d');
+  if ($update_time) {
+    return $update_time;
+  } else {
+    return get_the_postdate_time();
+  }
+
+}
+endif;

@@ -78,7 +78,7 @@
               'up_date' => __( '更新日', THEME_NAME ),
             );
             generate_radiobox_tag(OP_INTERNAL_BLOGCARD_DATE_TYPE, $options, get_internal_blogcard_date_type());
-            generate_tips_tag(__( 'ブログカードに表示する日付を設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'ブログカードに表示する日付を設定します。更新日設定時、更新日がない場合は投稿日が表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -50,9 +50,26 @@ function url_to_internal_blogcard_tag($url){
   $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.get_the_site_domain().'</div>';
   $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
+  //日付表示
+  $date = null;
+  $date_tag = null;
+  $post_date = mysql2date('Y.m.d', $post_data->post_date);
+  switch (get_internal_blogcard_date_type()) {
+    case 'post_date':
+      $date = $post_date;
+      break;
+    case 'up_date':
+      $date = mysql2date('Y.m.d', $post_data->post_modified);
+      if (!$date) {
+        $date = $post_date;
+      }
+      break;
+  }
+  if (is_internal_blogcard_date_visible()) {
+    $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.$date.'</div>';//日付の取得
+    $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
+  }
 
-  $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.mysql2date('Y.m.d', $post_data->post_date).'</div>';//投稿日の取得
-  $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
 
   //サムネイルの取得（要160×90のサムネイル設定）
   $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
