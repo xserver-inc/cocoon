@@ -162,3 +162,23 @@
   display: flex;
   flex-direction: column-reverse;
 }
+
+//スリムサイズのグローバルナビ
+$slim_height: 40px;
+.cl-slim #navi-in > ul li{
+  height: $slim_height;
+  line-height: $slim_height;
+
+  .sub-menu ul{
+    top: -$slim_height;
+  }
+
+  &.menu-item-has-description > a > .caption-wrap{
+    height: $slim_height;
+    line-height: 16px;
+    font-size: 14px;
+    padding-top: 6px;
+  }
+}
+//#navi .navi-in > .menu-mobile > .menu-item-has-description > a > .caption-wrap
+//.navi-in > ul .menu-item-has-description > a > .caption-wrap

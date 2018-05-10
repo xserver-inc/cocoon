@@ -544,6 +544,12 @@ function get_additional_header_container_classes($option = null){
     case 'center_logo_top_menu':
       $classes .= ' hlt-center-logo-top-menu';
       break;
+    case 'center_logo_slim':
+      $classes .= ' hlt-center-logo cl-slim';
+      break;
+    case 'center_logo_slim_top_menu':
+      $classes .= ' hlt-center-logo-top-menu cl-slim';
+      break;
     case 'top_menu':
       $classes .= ' hlt-top-menu wrap';
       break;
