@@ -17,6 +17,29 @@ function get_internal_blogcard_thumbnail_style(){
 }
 endif;
 
+//内部ブログカードの月表示
+define('OP_INTERNAL_BLOGCARD_DATE_TYPE', 'internal_blogcard_date_type');
+if ( !function_exists( 'get_internal_blogcard_date_type' ) ):
+function get_internal_blogcard_date_type(){
+  return get_theme_option(OP_INTERNAL_BLOGCARD_DATE_TYPE, 'post_date');
+}
+endif;
+if ( !function_exists( 'is_internal_blogcard_date_visible' ) ):
+function is_internal_blogcard_date_visible(){
+  return get_internal_blogcard_date_type() != 'none';
+}
+endif;
+if ( !function_exists( 'is_internal_blogcard_date_type_post_date' ) ):
+function is_internal_blogcard_date_type_post_date(){
+  return get_internal_blogcard_date_type() == 'post_date';
+}
+endif;
+if ( !function_exists( 'is_internal_blogcard_date_type_up_date' ) ):
+function is_internal_blogcard_date_type_up_date(){
+  return get_internal_blogcard_date_type() == 'up_date';
+}
+endif;
+
 //内部ブログカードを新しいタブで開くか（※廃止予定機能）
 define('OP_INTERNAL_BLOGCARD_TARGET_BLANK', 'internal_blogcard_target_blank');
 if ( !function_exists( 'is_internal_blogcard_target_blank' ) ):

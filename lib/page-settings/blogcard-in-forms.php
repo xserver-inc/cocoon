@@ -65,6 +65,24 @@
           </td>
         </tr>
 
+        <!-- 日付表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_INTERNAL_BLOGCARD_DATE_TYPE, __('日付表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'none' => __( 'なし', THEME_NAME ),
+              'post_date' => __( '投稿日', THEME_NAME ),
+              'up_date' => __( '更新日', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_INTERNAL_BLOGCARD_DATE_TYPE, $options, get_internal_blogcard_date_type());
+            generate_tips_tag(__( 'ブログカードに表示する日付を設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
         <!--  リンクの開き方 -->
         <tr>
