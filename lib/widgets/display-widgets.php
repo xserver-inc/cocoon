@@ -152,8 +152,10 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         <input id="<?php echo $page_tab_id; ?>" type="radio" name="tab_item">
         <label id="page-<?php echo $widget_id; ?>" class="page-tab tab-item" for="<?php echo $page_tab_id; ?>"><?php _e( 'ページ', THEME_NAME ) ?></label>
 
+        <?php if (is_widget_authors_tab_visible()): ?>
         <input id="<?php echo $author_tab_id; ?>" type="radio" name="tab_item">
         <label id="author-<?php echo $widget_id; ?>" class="author-tab tab-item" for="<?php echo $author_tab_id; ?>"><?php _e( '著者', THEME_NAME ) ?></label>
+        <?php endif ?>
 
         <input id="<?php echo $post_tab_id; ?>" type="radio" name="tab_item">
         <label id="post-<?php echo $widget_id; ?>" class="post-tab tab-item" for="<?php echo $post_tab_id; ?>"><?php _e( '投稿', THEME_NAME ) ?></label>
@@ -165,7 +167,12 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
         //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
-        generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
+
+        //著者タブ
+        if (is_widget_authors_tab_visible()) {
+          generate_author_check_list($widget->get_field_name('widget_authors'), $widget_authors);
+        }
+
         generate_post_check_list($widget->get_field_name('widget_posts'), $widget_posts);
         generate_fixed_page_check_list($widget->get_field_name('widget_fixed_pages'), $widget_fixed_pages);
 
@@ -404,3 +411,9 @@ function display_widgets_info_by_id( $widget_id ){
 }
 endif;
 
+//ウィジェットの著者タブ表示制御関数
+if ( !function_exists( 'is_widget_authors_tab_visible' ) ):
+function is_widget_authors_tab_visible(){
+  return true;
+}
+endif;
