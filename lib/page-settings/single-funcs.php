@@ -168,3 +168,11 @@ function is_single_breadcrumbs_position_footer_before(){
   return get_single_breadcrumbs_position() == 'footer_before';
 }
 endif;
+
+//パンくずリストに当該記事を含めるか
+define('OP_SINGLE_BREADCRUMBS_INCLUDE_POST', 'single_breadcrumbs_include_post');
+if ( !function_exists( 'is_single_breadcrumbs_include_post' ) ):
+function is_single_breadcrumbs_include_post(){
+  return get_theme_option(OP_SINGLE_BREADCRUMBS_INCLUDE_POST);
+}
+endif;

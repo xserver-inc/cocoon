@@ -57,3 +57,6 @@ update_theme_option(OP_SINGLE_COMMENT_VISIBLE);
 
 //パンくずリストの位置
 update_theme_option(OP_SINGLE_BREADCRUMBS_POSITION);
+
+//パンくずリストに当該記事を含めるか
+update_theme_option(OP_SINGLE_BREADCRUMBS_INCLUDE_POST);
