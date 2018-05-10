@@ -322,7 +322,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_SINGLE_BREADCRUMBS_INCLUDE_POST , is_single_breadcrumbs_include_post(), __( 'パンくずリストに記事タイトルを含める', THEME_NAME ));
-            generate_tips_tag(__( 'パンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。', THEME_NAME ));
+            generate_tips_tag(__( '投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>

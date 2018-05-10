@@ -47,3 +47,11 @@ function is_page_breadcrumbs_position_footer_before(){
   return get_page_breadcrumbs_position() == 'footer_before';
 }
 endif;
+
+//パンくずリストに当該記事を含めるか
+define('OP_PAGE_BREADCRUMBS_INCLUDE_POST', 'page_breadcrumbs_include_post');
+if ( !function_exists( 'is_page_breadcrumbs_include_post' ) ):
+function is_page_breadcrumbs_include_post(){
+  return get_theme_option(OP_PAGE_BREADCRUMBS_INCLUDE_POST);
+}
+endif;

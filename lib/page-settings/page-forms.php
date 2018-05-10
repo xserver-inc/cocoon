@@ -57,6 +57,19 @@
           </td>
         </tr>
 
+        <!-- 記事タイトル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PAGE_BREADCRUMBS_INCLUDE_POST, __('記事タイトル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_PAGE_BREADCRUMBS_INCLUDE_POST , is_page_breadcrumbs_include_post(), __( 'パンくずリストに記事タイトルを含める', THEME_NAME ));
+            generate_tips_tag(__( '固定ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り替えます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 
