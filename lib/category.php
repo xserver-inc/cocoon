@@ -105,7 +105,7 @@ function extra_category_fields( $tag ) {
     $cat_meta = get_category_meta($cat_id);
     //_v($cat_meta);
 ?>
-<tr class="form-field">
+<tr class="form-field term-color-wrap">
   <th><label for="color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
   <td><?php
     $color = !empty($cat_meta['color']) ? $cat_meta['color'] : '';
@@ -114,14 +114,14 @@ function extra_category_fields( $tag ) {
     <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
   </td>
 </tr>
-<tr class="form-field">
+<tr class="form-field term-title-wrap">
   <th><label for="title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
   <td>
     <input type="text" name="cat_meta[title]" id="title" size="25" value="<?php if(isset ( $cat_meta['title'])) echo esc_html($cat_meta['title']) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
-<tr class="form-field">
+<tr class="form-field term-content-wrap">
   <th><label for="content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
   <td><?php
     $content = isset($cat_meta['content']) ? $cat_meta['content'] : '';
@@ -130,7 +130,7 @@ function extra_category_fields( $tag ) {
     <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
    </td>
 </tr>
-<tr class="form-field">
+<tr class="form-field term-eye-catch-wrap">
   <th><label for="eye_catch"><?php _e( 'アイキャッチ', THEME_NAME ) ?></label></th>
   <td><?php
     $eye_catch = isset($cat_meta['eye_catch']) ? $cat_meta['eye_catch'] : '';
@@ -139,7 +139,7 @@ function extra_category_fields( $tag ) {
     <p class="description"><?php _e( 'タイトル下に表示されるアイキャッチ画像を選択してください。', THEME_NAME ) ?></p>
    </td>
 </tr>
-<tr class="form-field">
+<tr class="form-field term-meta-description-wrap">
   <th><label for="description"><?php _e( 'メタディスクリプション', THEME_NAME ) ?></label></th>
   <td>
     <?php
@@ -149,7 +149,7 @@ function extra_category_fields( $tag ) {
     <p class="description"><?php _e( 'カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
-<tr class="form-field">
+<tr class="form-field term-meta-keywords-wrap">
   <th><label for="keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
   <td>
     <input type="text" name="cat_meta[keywords]" id="keywords" size="25" value="<?php if(isset ( $cat_meta['keywords'])) echo esc_html($cat_meta['keywords']) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
@@ -212,7 +212,7 @@ endif;
 
 
 */
-
+/*
 //デフォルトのカテゴリ説明文を削除
 //add_action('admin_head', 'remove_default_category_description');
 if ( !function_exists( 'remove_default_category_description' ) ):
@@ -224,6 +224,25 @@ function remove_default_category_description(){
     <script type="text/javascript">
     jQuery(function($) {
         $('textarea#description').closest('tr.form-field').remove();
+    });
+    </script>
+  <?php
+  }
+}
+endif;
+*/
+//デフォルトのカテゴリ説明文の位置の移動
+add_action('admin_head', 'move_default_category_description');
+if ( !function_exists( 'move_default_category_description' ) ):
+function move_default_category_description(){
+  global $current_screen;
+  if ( $current_screen->id == 'edit-category' )
+  {
+  ?>
+    <script type="text/javascript">
+    jQuery(function($) {
+      $('.term-description-wrap').insertAfter('.term-meta-keywords-wrap');
+      $('p.description').text('<?php _e( 'カテゴリ一覧ページに説明文を表示するための入力です。', THEME_NAME ) ?>');
     });
     </script>
   <?php
