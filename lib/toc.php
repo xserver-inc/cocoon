@@ -21,22 +21,21 @@ if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
 
   //投稿ページだと表示しない
-  if (!is_single_toc_visible() && is_single() && $is_paged) {
+  if (!is_single_toc_visible() && is_single()) {
     return $the_content;
   }
   //固定ページだと表示しない
-  if (!is_page_toc_visible() && is_page() && $is_paged) {
+  if (!is_page_toc_visible() && is_page()) {
+    return $the_content;
+  }
+
+  //投稿ページで非表示になっていると表示しない
+  if (!is_the_page_toc_visible()) {
     return $the_content;
   }
 
   //マルチページの2ページ目以降は目次を表示しない
   if (is_singular() && is_multi_paged()) {
-    return $the_content;
-  }
-
-
-  //投稿ページで非表示になっていると表示しない
-  if (!is_the_page_toc_visible()) {
     return $the_content;
   }
 
