@@ -1,5 +1,8 @@
 <?php //ウィジェットの表示制御
 
+global $_ALL_USER_COUNT;
+$_ALL_USER_COUNT = intval($wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users"));
+
 //ウィジェットはD&Dされたものか
 if ( !function_exists( 'is_widget_dropped' ) ):
 function is_widget_dropped($widget){
@@ -414,6 +417,7 @@ endif;
 //ウィジェットの著者タブ表示制御関数
 if ( !function_exists( 'is_widget_authors_tab_visible' ) ):
 function is_widget_authors_tab_visible(){
-  return true;
+  global $_ALL_USER_COUNT;
+  return $_ALL_USER_COUNT < 100;
 }
 endif;
