@@ -888,3 +888,11 @@ select option.fa{
 .toggle-entered {
   font-size: 0.8em;
 }
+
+.range-wrap{
+  display: table;
+  output{
+    display: block;
+    text-align: center;
+  }
+}

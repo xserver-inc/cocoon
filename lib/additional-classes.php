@@ -14,6 +14,13 @@ function get_site_font_size_class(){
 }
 endif;
 
+//フォントウエイトクラスの取得
+if ( !function_exists( 'get_site_font_weight_class' ) ):
+function get_site_font_weight_class(){
+  return 'fw-'.get_site_font_weight();
+}
+endif;
+
 if ( !function_exists( 'replace_value_to_class' ) ):
 function replace_value_to_class($value){
   return str_replace('_', '-', $value);;
@@ -43,6 +50,9 @@ function body_class_additional($classes) {
 
   //フォントサイズ
   $classes[] = get_site_font_size_class();
+
+  //フォントウエイト
+  $classes[] = get_site_font_weight_class();
 
   //サイドバー表示設定
   $add_no_sidebar = false;

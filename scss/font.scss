@@ -25,6 +25,11 @@ $i: 24;
 //   $i: $i + 1;
 // }
 
+//フォントウエイト
+@for $i from 1 through 9 {
+  .fw-#{$i*100} { font-weight: #{$i*100}; }
+}
+
 //フォントファミリー
 .ff-meiryo{
   font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;

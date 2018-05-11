@@ -82,7 +82,7 @@
                 <?php endif ?>
                 <p class="preview-label"><?php _e( 'フォントプレビュー', THEME_NAME ) ?></p>
                 <div class="demo" style="width: 100%">
-                  <div class="<?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?>">
+                  <div class="<?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?> <?php echo get_site_font_weight_class(); ?>">
                   <p>1234567890</p>
                   <p>abcdefghijklmnopqrstuvwxyz</p>
                   <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
@@ -101,8 +101,21 @@
           </th>
           <td>
             <?php
-                generate_selectbox_tag(OP_MOBILE_SITE_FONT_SIZE, $font_options, get_mobile_site_font_size());
+              generate_selectbox_tag(OP_MOBILE_SITE_FONT_SIZE, $font_options, get_mobile_site_font_size());
               generate_tips_tag(__( 'モバイル端末でのフォントサイズを変更します（横幅が480px以下の端末）。', THEME_NAME ));
+             ?>
+          </td>
+        </tr>
+
+        <!-- 文字の太さ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SITE_FONT_WEIGHT, __('文字の太さ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+              generate_range_tag(OP_SITE_FONT_WEIGHT, get_site_font_weight(), 100, 900, 100);
+              generate_tips_tag(__( 'font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください', THEME_NAME ));
              ?>
           </td>
         </tr>

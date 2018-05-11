@@ -15,6 +15,9 @@ update_theme_option(OP_SITE_FONT_SIZE);
 //モバイルフォントサイズ
 update_theme_option(OP_MOBILE_SITE_FONT_SIZE);
 
+//フォントウエイト
+update_theme_option(OP_SITE_FONT_WEIGHT);
+
 //サイト背景色
 update_theme_option(OP_SITE_BACKGROUND_COLOR);
 

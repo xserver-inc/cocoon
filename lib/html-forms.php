@@ -73,6 +73,19 @@ if ($icon_font_visible) {
 endif;
 
 
+//レンジボックスの生成
+if ( !function_exists( 'generate_range_tag' ) ):
+function generate_range_tag($name, $value, $min, $max, $step){?>
+  <div class="range-wrap">
+    <output id="<?php echo $name; ?>"><?php echo $value; ?></output>
+    <span class="range-min"><?php echo $min; ?></span><input type="range" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>"
+    oninput="document.getElementById('<?php echo $name; ?>').value=this.value"><span class="range-min"><?php echo $max; ?></span>
+  </div>
+  <?php
+}
+endif;
+
+
 //チェックボックスの生成
 if ( !function_exists( 'generate_checkbox_tag' ) ):
 function generate_checkbox_tag($name, $now_value, $label){?>
