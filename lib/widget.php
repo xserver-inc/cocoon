@@ -30,14 +30,14 @@ add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom');
 if ( !function_exists( 'wp_tag_cloud_custom' ) ):
 function wp_tag_cloud_custom( $output ) {
   //style属性を取り除く
-  //_v($output);
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //タグテキストにspanタグの取り付け
   $output = preg_replace( '/ aria-label="([^"]+?)">/i', ' aria-label="$1"><span class="tag-caption">',  $output);
   $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
+  //_v($output);
   //カッコを取り除く
-  $output = str_replace( ' (', '',  $output);
-  $output = str_replace( ')', '',  $output);
+  $output = str_replace( '<span class="tag-link-count"> (', '<span class="tag-link-count">',  $output);
+  $output = str_replace( ')</span>', '</span>',  $output);
   return $output;
 }
 endif;
