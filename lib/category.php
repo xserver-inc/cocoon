@@ -238,11 +238,13 @@ function move_default_category_description(){
   global $current_screen;
   if ( $current_screen->id == 'edit-category' )
   {
+    $description = __( '基本的に、カテゴリ一覧ページに説明文を表示するための入力です。本文が入力されていない場合は本文代わりに、メタディスクリプションが入力されてない場合はメタディスクリプション代わりに利用されることもあります。', THEME_NAME );
   ?>
     <script type="text/javascript">
     jQuery(function($) {
       $('.term-description-wrap').insertAfter('.term-meta-keywords-wrap');
-      $('p.description').text('<?php _e( 'カテゴリ一覧ページに説明文を表示するための入力です。', THEME_NAME ) ?>');
+      $('textarea#description + .description').text('<?php echo $description; ?>');
+      $('textarea#tag-description + p').text('<?php echo $description; ?>');
     });
     </script>
   <?php
