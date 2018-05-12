@@ -15,7 +15,7 @@ if (!empty($title) &&
     $result = null;
     //_v('new');
     //var_dump($last_item);
-    var_dump(is_ranking_item_available($last_item));
+    //var_dump(is_ranking_item_available($last_item));
     if (is_ranking_item_available($last_item)) {
       $result = insert_item_ranking_record($_POST);
     }
