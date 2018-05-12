@@ -21,7 +21,7 @@ add_filter('widget_text_mobile_text', 'replace_anchor_links', 12);
 add_filter('the_category_content', 'replace_anchor_links', 12);
 if ( !function_exists( 'replace_anchor_links' ) ):
 function replace_anchor_links($the_content) {
-  $res = preg_match_all('{<a[^>]+?>.+?</a>}is', $the_content, $m);
+  $res = preg_match_all('{<a [^>]+?>.+?</a>}is', $the_content, $m);
   //_v($m);
   //Aリンクがある場合
   if ($res && $m[0]) {
