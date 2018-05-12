@@ -238,7 +238,7 @@ function move_default_category_description(){
   global $current_screen;
   if ( $current_screen->id == 'edit-category' )
   {
-    $description = __( '基本的に、カテゴリ一覧ページに説明文を表示するための入力です。本文が入力されていない場合は本文代わりに、メタディスクリプションが入力されてない場合はメタディスクリプション代わりに利用されることもあります。', THEME_NAME );
+    $description = __( '基本的に、カテゴリ設定一覧ページに説明文を表示するための入力です。本文が入力されていない場合は本文代わりに、メタディスクリプションが入力されてない場合はメタディスクリプション代わりに利用されることもあります。', THEME_NAME );
   ?>
     <script type="text/javascript">
     jQuery(function($) {
