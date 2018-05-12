@@ -2601,6 +2601,23 @@ label.screen-reader-text {
 .blank-box.bb-blue {
   border-color: #75c2f6;
 }
+.blank-box.sticky {
+  border-width: 0 0 0 6px;
+  border-color: #777879;
+  background-color: #f3f4f5;
+}
+.blank-box.sticky.st-yellow {
+  border-color: #FFA103;
+  background-color: #ffeac7;
+}
+.blank-box.sticky.st-red {
+  border-color: #CD3740;
+  background-color: #F5DADC;
+}
+.blank-box.sticky.st-blue {
+  border-color: #0066cc;
+  background-color: #E5F2FF;
+}
 
 /*******************************
 * 続きはWEBで的な検索ボックス

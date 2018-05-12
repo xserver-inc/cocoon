@@ -224,6 +224,31 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
+      'title' => __( 'ボックス（付箋風）', THEME_NAME ),
+      'items' => array(
+        array(
+          'title' => __( '灰色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box sticky'
+        ),
+        array(
+          'title' => __( '黄色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box sticky st-yellow'
+        ),
+        array(
+          'title' => __( '赤色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box sticky st-red'
+        ),
+        array(
+          'title' => __( '青色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box sticky st-blue'
+        ),
+      ),
+    ),
+    array(
       'title' => __( 'バッジ', THEME_NAME ),
       'items' => array(
         array(

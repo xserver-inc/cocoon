@@ -295,6 +295,27 @@ $marker_u_blue: #75c2f6;
   &.bb-yellow{border-color: #f4c46b;}
   &.bb-red{border-color: $marker_u_red;}
   &.bb-blue{border-color: $marker_u_blue;}
+
+  &.sticky{
+    border-width: 0 0 0 6px;
+    border-color: $pallid_text_color;
+    background-color: $xx_thin;
+
+    &.st-yellow{
+      border-color: #FFA103;
+      background-color: #ffeac7;
+    }
+    &.st-red{
+      border-color: #CD3740;
+      background-color: #F5DADC;
+    }
+    &.st-blue{
+      border-color: #0066cc;
+      background-color: #E5F2FF;
+    }
+
+
+  }
 }
 
 
