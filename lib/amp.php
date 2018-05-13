@@ -73,6 +73,14 @@ function convert_content_for_amp($the_content){
   //楽天商品画像のURLをhttpsへ
   $the_content = str_replace('http://thumbnail.image.rakuten.co.jp', 'https://thumbnail.image.rakuten.co.jp', $the_content);
 
+  //レントラックス
+  $the_content = str_replace(
+    'http://www.rentracks.jp/adx/p.gifx',
+    'https://www.rentracks.jp/adx/p.gifx', $the_content);
+  $the_content = str_replace(
+    'http://www.image-rentracks.com/',
+    'https://www.image-rentracks.com/', $the_content);
+
   //Amazonデフォルトの埋め込みタグを置換する
   /*
   $pattern = '/<iframe([^>]+?)(src="https:\/\/rcm-fe.amazon-adsystem.com\/[^"]+?").*?><\/iframe>/is';
