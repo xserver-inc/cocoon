@@ -65,13 +65,23 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
   //Amazon商品リンクのhttp URLをhttpsへ
-  $the_content = str_replace('http://rcm-jp.amazon.co.jp/', 'https://rcm-fe.amazon-adsystem.com/', $the_content);
-  $the_content = str_replace('"//rcm-fe.amazon-adsystem.com/', '"https://rcm-fe.amazon-adsystem.com/', $the_content);
-  $the_content = str_replace("'//rcm-fe.amazon-adsystem.com/", "'https://rcm-fe.amazon-adsystem.com/", $the_content);
+  $the_content = str_replace(
+    'http://rcm-jp.amazon.co.jp/',
+    'https://rcm-fe.amazon-adsystem.com/', $the_content);
+  $the_content = str_replace(
+    '"//rcm-fe.amazon-adsystem.com/',
+    '"https://rcm-fe.amazon-adsystem.com/', $the_content);
+  $the_content = str_replace(
+    "'//rcm-fe.amazon-adsystem.com/",
+    "'https://rcm-fe.amazon-adsystem.com/", $the_content);
   //Amazon商品画像のURLをhttpsへ
-  $the_content = str_replace('http://ecx.images-amazon.com', 'https://images-fe.ssl-images-amazon.com', $the_content);
+  $the_content = str_replace(
+    'http://ecx.images-amazon.com',
+    'https://images-fe.ssl-images-amazon.com', $the_content);
   //楽天商品画像のURLをhttpsへ
-  $the_content = str_replace('http://thumbnail.image.rakuten.co.jp', 'https://thumbnail.image.rakuten.co.jp', $the_content);
+  $the_content = str_replace(
+    'http://thumbnail.image.rakuten.co.jp',
+    'https://thumbnail.image.rakuten.co.jp', $the_content);
 
   //レントラックス
   $the_content = str_replace(
