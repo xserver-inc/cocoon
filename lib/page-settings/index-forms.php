@@ -84,7 +84,7 @@
           <td>
             <?php
             generate_textbox_tag(OP_ENTRY_CARD_EXCERPT_MORE, get_entry_card_excerpt_more(), __( __( '...', THEME_NAME ), THEME_NAME ));
-            generate_tips_tag(__( '「自動生成抜粋文字数」を自動ば水分が超えたときに表示する省略を表す文字を入力してください。', THEME_NAME ));
+            generate_tips_tag(__( '「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
