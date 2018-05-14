@@ -17,7 +17,9 @@ function comment_custom_callback($comment, $args, $depth) {
   <?php endif; ?>
   <div class="comment-author vcard">
     <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+    <?php printf( __( '%s <span class="says">says:</span>' ),
+                    sprintf( '<cite class="fn">%s</cite>', get_comment_author_link( $comment ) )
+                ); ?>
   </div>
   <?php if ( $comment->comment_approved == '0' ) : ?>
      <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
@@ -32,7 +34,7 @@ function comment_custom_callback($comment, $args, $depth) {
   </div>
 
   <div class="comment-content">
-    <?php comment_text(); ?>
+    <?php comment_text($comment, array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) )); ?>
   </div>
 
   <div class="reply">
