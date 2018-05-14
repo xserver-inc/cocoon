@@ -3561,20 +3561,22 @@ iframe[src*="https://www.google.com/maps/embed"] {
 
 .sbs-line .speech-balloon {
   border-width: 1px;
-  background-color: #85e249;
-  border-color: #85e249;
 }
 .sbs-line .speech-balloon::after {
   left: -10px;
 }
-.sbs-line .speech-balloon::before, .sbs-line .speech-balloon::after {
-  border-right-color: #85e249;
-  border-left-color: #85e249;
-}
 
+.sbs-line.sbp-r .speech-balloon {
+  background-color: #85e249;
+  border-color: #85e249;
+}
 .sbs-line.sbp-r .speech-balloon::after {
   left: auto;
   right: -10px;
+}
+.sbs-line.sbp-r .speech-balloon::before, .sbs-line.sbp-r .speech-balloon::after {
+  border-right-color: #85e249;
+  border-left-color: #85e249;
 }
 
 .booklink-box, .kaerebalink-box, .tomarebalink-box {

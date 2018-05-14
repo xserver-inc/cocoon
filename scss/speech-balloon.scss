@@ -129,33 +129,33 @@
 .sbs-line{
   .speech-balloon{
     border-width: 1px;
-    background-color: #85e249;
-    border-color: #85e249;
-
-    &::after{
-      left: -10px;
-    }
-    &::before,
-    &::after{
-      border-right-color: #85e249;
-      border-left-color: #85e249;
-    }
-  }
-}
-
-.sbs-line.sbp-r{
-  .speech-balloon{
     // background-color: #85e249;
     // border-color: #85e249;
 
     &::after{
-      left: auto;
-      right: -10px;
+      left: -10px;
     }
     // &::before,
     // &::after{
     //   border-right-color: #85e249;
     //   border-left-color: #85e249;
     // }
+  }
+}
+
+.sbs-line.sbp-r{
+  .speech-balloon{
+    background-color: #85e249;
+    border-color: #85e249;
+
+    &::after{
+      left: auto;
+      right: -10px;
+    }
+    &::before,
+    &::after{
+      border-right-color: #85e249;
+      border-left-color: #85e249;
+    }
   }
 }
