@@ -18,8 +18,8 @@ add_image_size('thumb320', 320, 180, true);//関連記事3列
 add_image_size('thumb320_raw', 320, 0, false);
 // add_image_size('thumb360_raw', 360, 0, false);
 // add_image_size('thumb375_raw', 375, 0, false);
-add_image_size('thumb414_raw', 414, 0, false);
-add_image_size('thumb600_raw', 600, 0, false);
+// add_image_size('thumb414_raw', 414, 0, false);
+// add_image_size('thumb600_raw', 600, 0, false);
 // add_image_size('thumb768_raw', 768, 0, false);
 //Retinaディスプレイ用
 //add_image_size('thumb640', 640, 360, true);
