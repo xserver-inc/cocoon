@@ -3935,6 +3935,7 @@ div.fb-like-mobile {
   margin-left: 12px;
   width: calc(100% - 114px);
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .fb-like-balloon-arrow-box-in {

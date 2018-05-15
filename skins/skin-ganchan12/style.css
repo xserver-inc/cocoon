@@ -182,16 +182,16 @@ body.public-page,.content .cf .main, .navi {
 	margin:17px 0 0px;
 }
 
-.widget-sidebar h3 {
+.sidebar .widget h3 {
     margin: 0 30px;
 }
 
-.widget-sidebar li a {
+.sidebar .widget li a {
     border-bottom: 1px solid #ddd;
     font-size: 14px;
 }
 
-.widget-sidebar{
+.sidebar .widget{
   margin: 0 20px;
 }
 
