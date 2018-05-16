@@ -33,23 +33,26 @@ body.public-page,.content .cf .main, .navi {
     background-color: #fff;
 }
 
+.entry-card-wrap:hover {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+	background-color:#fff;
+}
 
 
 /*ナビ*/
 
-.navi-in>ul>li {
+.navi-in>ul li {
    background-color: #fff;
    margin: 15px 8px;
-  border-radius:4px;
-  width:160px;
+	border-radius:4px;
+	width:160px;
 }
-
 .navi-in > ul > .menu-item-has-children > a::after {
-    display: none;
     right: 4px;
     top: 20px;
 }
-
 
 .navi-in>ul li.current_page_item, .navi-in>ul li.current-menu-item {
    background-color: #FF847C;
@@ -60,6 +63,9 @@ body.public-page,.content .cf .main, .navi {
    background-color: #FFEEED;
    text-decoration: none;
 	color:#999;
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .navi-in>ul li.current_page_item a:hover,.navi-in>ul li.current-menu-item a:hover {
@@ -124,12 +130,19 @@ body.public-page,.content .cf .main, .navi {
     color: #fff;
 }
 
-#footer a {
-  color:#fff;
+.footer-widgets h3 {
+	font-size: 16px;
+   letter-spacing: 0.2em;
 }
-#footer a:hover {
-  background-color: transparent;
-  opacity: 0.5;
+
+
+.footer-widgets .widget_recent_entries ul li a, .footer-widgets .widget_categories ul li a, .footer-widgets .widget_archive ul li a, .footer-widgets .widget_pages ul li a, .footer-widgets .widget_meta ul li a, .footer-widgets .widget_rss ul li a, .footer-widgets .widget_nav_menu ul li a {
+	color:#fff;
+	font-size: 14px;
+}
+
+.footer-widgets .widget_recent_entries ul li a:hover, .footer-widgets .widget_categories ul li a:hover, .footer-widgets .widget_archive ul li a:hover, .footer-widgets .widget_pages ul li a:hover, .footer-widgets .widget_meta ul li a:hover, .footer-widgets .widget_rss ul li a:hover, .footer-widgets .widget_nav_menu ul li a:hover {
+	color:#3B382D;
 }
 
 /*パンくず*/
@@ -178,17 +191,18 @@ body.public-page,.content .cf .main, .navi {
 	margin:17px 0 0px;
 }
 
-.sidebar .widget h3 {
+.widget-sidebar h3 {
     margin: 0 30px;
 }
 
-.sidebar .widget li a {
+.widget-sidebar a {
     border-bottom: 1px solid #ddd;
     font-size: 14px;
+    margin: 0 20px;
 }
 
-.sidebar .widget{
-  margin: 0 20px;
+.tagcloud a{
+  margin: 2px;
 }
 
 .sidebar h3 {
@@ -472,7 +486,7 @@ div.list {
     border-radius: 4px;
 }
 
-.comment-list .comment-content {
+.commets-list .comment-content {
 	margin-top:17px;
 	padding:10px 15px;
 	border:2px solid #999;
