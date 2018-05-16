@@ -103,7 +103,7 @@
      ?>
     <pre><?php echo $all; ?></pre>
     <p><?php _e( '不具合報告の際には以下の情報を添えてもらうと助かります。', THEME_NAME ) ?></p>
-    <textarea style="width: 100%;height: 400px">&lt;pre&gt;<?php echo $all; ?>&lt;/pre&gt;</textarea>
+    <textarea style="width: 100%;height: 400px"><?php echo $all; ?></textarea>
 
 
   </div>
