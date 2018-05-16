@@ -32,22 +32,18 @@ body.public-page,.content .cf .main, .navi {
     border-radius: 8px;
     background-color: #fff;
 }
-.entry-card-wrap:hover {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1.02);
-  transform: scale(1.02);
-	background-color:#fff;
-}
+
 
 
 /*ナビ*/
 
-.navi-in>ul li {
+.navi-in>ul>li {
    background-color: #fff;
    margin: 15px 8px;
 	border-radius:4px;
 	width:160px;
 }
+
 .navi-in > ul > .menu-item-has-children > a::after {
     right: 4px;
     top: 20px;
@@ -59,12 +55,9 @@ body.public-page,.content .cf .main, .navi {
 }
 
 .navi-in>ul li a:hover{
-   background-color: #FEF05C;
+   background-color: #FFF78E;
    text-decoration: none;
-	color:#666;
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
+	color:#999;
 }
 
 .navi-in>ul li.current_page_item a:hover,.navi-in>ul li.current-menu-item a:hover {
@@ -80,6 +73,7 @@ body.public-page,.content .cf .main, .navi {
     color: #333;
     font-weight: bold;
 }
+
 
 .tagline {
     border-top: solid 6px #FEF05C;
@@ -133,21 +127,13 @@ body.public-page,.content .cf .main, .navi {
     color: #fff;
 }
 
-.footer-widgets h3 {
-	font-size: 16px;
-   letter-spacing: 0.2em;
-}
-
-
 #footer a {
 	color:#fff;
-	font-size: 14px;
 }
-
 #footer a:hover {
-	color:#3B382D;
+  background-color: transparent;
+  opacity: 0.5;
 }
-
 
 /*パンくず*/
 .breadcrumb {
@@ -195,18 +181,16 @@ body.public-page,.content .cf .main, .navi {
 	margin:17px 0 0px;
 }
 
-.widget-sidebar h3 {
+.sidebar .widget h3 {
     margin: 0 30px;
 }
-
-.widget-sidebar a {
+.sidebar .widget li a {
     border-bottom: 1px solid #ddd;
     font-size: 14px;
-    margin: 0 20px;
 }
 
-.tagcloud a{
-  margin: 2px;
+.sidebar .widget{
+  margin: 0 20px;
 }
 
 .sidebar h3 {
@@ -441,6 +425,7 @@ div.list {
     border-bottom: 15px solid transparent;
     content: " ";
 }
+
 @media screen and (max-width: 480px){
 .author-content{
 	padding:10px;
@@ -488,7 +473,6 @@ div.list {
     background-color: #fff;
     border-radius: 4px;
 }
-
 
 .comment-list .comment-content {
   margin-top:17px;
