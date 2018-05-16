@@ -396,7 +396,7 @@ div.list {
 .author-box {
 	border:none;
 }
-.author-name a {
+.author-content a {
 	color:#fff;
 }
 .author-widget-name {
@@ -425,9 +425,6 @@ div.list {
     border-right: 15px solid #666;
     border-bottom: 15px solid transparent;
     content: " ";
-}
-.author-content a{
-  color: #B9D8E8;
 }
 
 @media screen and (max-width: 480px){
