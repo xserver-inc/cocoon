@@ -167,10 +167,8 @@ add_filter('user_contactmethods', 'user_contactmethods_custom');
 
 //ユーザーIDの取得
 if ( !function_exists( 'get_the_posts_author_id' ) ):
-function get_the_posts_author_id($author_id = null){
-  if (!$author_id) {
-    $author_id = get_sns_default_follow_user();
-  }
+function get_the_posts_author_id(){
+  $author_id = get_the_author_meta( 'ID' );
   if (is_singular()) {
     global $post_id;
     $post = get_post($post_id);
@@ -180,6 +178,9 @@ function get_the_posts_author_id($author_id = null){
         $author_id = $author->ID;
       }
     }
+  }
+  if (!$author_id) {
+    $author_id = get_sns_default_follow_user();
   }
   return $author_id;
 }
