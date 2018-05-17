@@ -1259,8 +1259,15 @@ endif;
 if ( !function_exists( 'wp_filesystem_get_contents' ) ):
 function wp_filesystem_get_contents($file){
   $creds = false;
-  if (is_request_filesystem_credentials_enable())
+
+  //ファイルが存在しないときはfalseを返す
+  if (!file_exists($file)) {
+    return false;
+  }
+
+  if (is_request_filesystem_credentials_enable()){
     $creds = request_filesystem_credentials('', '', false, false, null);
+  }
 
   if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
