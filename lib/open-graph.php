@@ -55,7 +55,7 @@ class OpenGraphGetter implements Iterator
         $args = array(
           'sslverify' => false,
           //'redirection' => 10,
-          'simplicity' => true,
+          'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
         );
         $res = wp_remote_get( $URI, $args );
@@ -238,7 +238,7 @@ endif;
 //https://github.com/hirak/prestissimo/pull/69/files
 if ( !function_exists( 'set_ecc_cipher_suites' ) ):
 function set_ecc_cipher_suites($handle, $r) {
-  if (isset($r['simplicity'])) {
+  if (isset($r['cocoon'])) {
     $cipher_list = array(
       "rsa_3des_sha",
       "rsa_des_sha",

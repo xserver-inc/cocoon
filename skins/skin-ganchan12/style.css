@@ -191,7 +191,7 @@ body.public-page,.content .cf .main, .navi {
 }
 
 .sidebar .widget{
-  margin: 0 20px;
+  margin: 0 18px;
 }
 
 .sidebar h3 {
@@ -725,6 +725,24 @@ article.article {
 }
 
 
+
+.entry-card-wrap:hover {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  background-color:#fff;
+}
+
+.navi-in>ul li a:hover{
+  background-color: #ADD8E6;
+  color: #666;
+  border-radius:4px;
+  text-decoration: none;
+  -webkit-transform: scale(1.05);
+
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
 
 
 
