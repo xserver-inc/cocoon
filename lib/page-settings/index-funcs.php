@@ -2,6 +2,20 @@
 ///////////////////////////////////////
 // リスト表示
 ///////////////////////////////////////
+//インデックスの並び順
+define('OP_INDEX_SORT_ORDERBY', 'index_sort_orderby');
+if ( !function_exists( '' ) ):
+function get_index_sort_orderby(){
+  return get_theme_option(OP_INDEX_SORT_ORDERBY);
+}
+endif;
+//インデックスの並び順は更新日順か
+if ( !function_exists( 'is_get_index_sort_orderby_modified' ) ):
+function is_get_index_sort_orderby_modified(){
+  return get_index_sort_orderby() == 'modified';
+}
+endif;
+
 //エントリーカードタイプ
 define('OP_ENTRY_CARD_TYPE', 'entry_card_type');
 if ( !function_exists( 'get_entry_card_type' ) ):

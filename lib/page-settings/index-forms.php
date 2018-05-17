@@ -25,6 +25,23 @@
           </td>
         </tr>
 
+        <!-- 並び順 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_INDEX_SORT_ORDERBY, __('並び順', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              '' => __( '投稿日（降順）', THEME_NAME ),
+              'modified' => __( '更新日（降順）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_INDEX_SORT_ORDERBY, $options, get_index_sort_orderby());
+            generate_tips_tag(__( '一覧リストを表示する順番を設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- カードタイプ -->
         <tr>
           <th scope="row">

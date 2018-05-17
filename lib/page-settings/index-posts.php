@@ -1,4 +1,7 @@
 <?php //インデックス設定をデータベースに保存
+//インデックスの並び順
+update_theme_option(OP_INDEX_SORT_ORDERBY);
+
 //エントリーカードタイプ
 update_theme_option(OP_ENTRY_CARD_TYPE);
 

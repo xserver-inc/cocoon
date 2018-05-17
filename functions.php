@@ -316,3 +316,15 @@ function wp_link_pages_link_custom($link){
   return $link;
 }
 endif;
+
+//メインクエリの出力順変更
+add_action( 'pre_get_posts', 'change_main_loop_sort_order' );
+if ( !function_exists( 'change_main_loop_sort_order' ) ):
+function change_main_loop_sort_order( $query ) {
+  if (is_get_index_sort_orderby_modified()) {
+    if ($query->is_main_query()) {
+      $query->set( 'orderby', 'modified' );
+    }
+  }
+}
+endif;
