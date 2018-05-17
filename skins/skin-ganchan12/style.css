@@ -69,6 +69,11 @@ body.public-page,.content .cf .main, .navi {
 	color:#fff;
 }
 
+.navi-in>ul li.current_page_item .sub-menu a,
+.navi-in>ul li.current-menu-item .sub-menu a {
+  color:#333;
+}
+
 .navi-in a {
     color: #333;
     font-weight: bold;
