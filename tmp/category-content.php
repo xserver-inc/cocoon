@@ -2,7 +2,9 @@
 //カテゴリIDの取得
 $cat_id = get_query_var('cat');
 if ($cat_id && get_category_meta($cat_id)): ?>
-<div class="category-content article">
+<article class="category-content article">
+  <?php //カテゴリタイトル
+  get_template_part('tmp/list-title'); ?>
   <?php if ($eye_catch = get_category_eye_catch($cat_id)): ?>
     <header class="article-header category-header">
       <figure class="eye-catch">
@@ -16,5 +18,5 @@ if ($cat_id && get_category_meta($cat_id)): ?>
       <?php echo $content; ?>
     </div>
   <?php endif ?>
-</div>
+</article>
 <?php endif ?>

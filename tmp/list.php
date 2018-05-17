@@ -3,20 +3,18 @@
 ////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
-if (!is_home() && !is_search()) { ?>
-  <h1 id="archive-title" class="archive-title"><?php echo get_archive_chapter_text(); ?></h1>
-<?php } ?>
+if (!is_home() && !is_search() && !is_category()) {
+  get_template_part('tmp/list-title');
+}
 
-<?php
 ////////////////////////////
 //インデクストップ広告
 ////////////////////////////
 if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告
   get_template_part_with_ad_format(get_ad_pos_index_top_format(), 'ad-index-top', is_ad_pos_index_top_label_visible());
-}; ?>
+};
 
-<?php
 ////////////////////////////
 //インデックスリストトップウィジェット
 ////////////////////////////
