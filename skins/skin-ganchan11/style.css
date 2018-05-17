@@ -752,6 +752,10 @@ article.article {
     width: 46%;
     margin: 1% 2%;
   }
+
+  .sidebar .widget{
+    margin: 0;
+  }
 }
 
 
