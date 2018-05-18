@@ -105,16 +105,31 @@ function add_toc_before_1st_h2($the_content){
         $toc_list .= '</li>';
       }
       while($current_depth > $depth){
+        //_v($current_depth);
+        //_v($depth);
         $toc_list .= '</li></'.$list_tag.'>';
+
         $current_depth--;
+
         $counters[$current_depth] = 0;
+        $counters[$current_depth - 1] ++;
       }
-      if($current_depth != $prev_depth){$toc_list .= '</li>';}
-      if($current_depth < $depth){
+      if($current_depth != $prev_depth){
+        $toc_list .= '</li>';
+        //$counters[$current_depth - 1] ++;
+      }
+      while($current_depth < $depth){
         $toc_list .= '<'.$list_tag.'>';
+        //$diff = $depth - $current_depth;
+        // //見出しに不具合がある場合は出力しない
+        // if ($diff >= 2) {
+        //   return $the_content;
+        // }
+
         $current_depth++;
+        $counters[$current_depth - 1] ++;
       }
-      $counters[$current_depth - 1] ++;
+
       $counter++;
       $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
       $prev_depth = $depth;
