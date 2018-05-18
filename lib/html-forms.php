@@ -944,6 +944,9 @@ function generate_author_box_tag($label){
         <?php
         if ($author_id) {
           $description = get_the_author_description();
+          if (empty(trim($description))) {
+            $description = get_the_author_meta('description', $author_id);
+          }
 
           if (!is_buddypress_page()) {
             //プロフィールページURLの取得
