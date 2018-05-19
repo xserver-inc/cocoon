@@ -47,3 +47,6 @@ update_theme_option(OP_SIDEBAR_DISPLAY_TYPE);
 
 //全てのサムネイル表示
 update_theme_option(OP_ALL_THUMBNAIL_VISIBLE);
+
+//日付フォーマット
+update_theme_option(OP_SITE_DATE_FORMAT);

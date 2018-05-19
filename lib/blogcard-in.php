@@ -53,13 +53,13 @@ function url_to_internal_blogcard_tag($url){
   //日付表示
   $date = null;
   $date_tag = null;
-  $post_date = mysql2date('Y.m.d', $post_data->post_date);
+  $post_date = mysql2date(get_site_date_format(), $post_data->post_date);
   switch (get_internal_blogcard_date_type()) {
     case 'post_date':
       $date = $post_date;
       break;
     case 'up_date':
-      $date = mysql2date('Y.m.d', $post_data->post_modified);
+      $date = mysql2date(get_site_date_format(), $post_data->post_modified);
       if (!$date) {
         $date = $post_date;
       }

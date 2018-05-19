@@ -34,10 +34,10 @@
         <div class="entry-card-info">
           <?php
           //更新日の取得
-          $update_time = get_update_time('Y.m.d');
+          $update_time = get_update_time(get_site_date_format());
           //投稿日の表示
           if (is_entry_card_post_date_visible() || (is_entry_card_post_date_or_update_visible() && !$update_time && is_entry_card_post_update_visible())): ?>
-            <span class="post-date"><?php the_time('Y.m.d'); ?></span>
+            <span class="post-date"><?php the_time(get_site_date_format()); ?></span>
           <?php endif ?>
           <?php //更新時の表示
 

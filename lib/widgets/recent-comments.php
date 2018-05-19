@@ -57,7 +57,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
               $title = $comment->post_title;
               $avatar = get_avatar( $comment, '42', null );
               $author = get_comment_author($comment->comment_ID);
-              $date = get_comment_date( 'Y.m.d', $comment->comment_ID);
+              $date = get_comment_date( get_site_date_format(), $comment->comment_ID);
               $comment_content = strip_tags($comment->comment_content);
               if(mb_strlen($comment_content,"UTF-8") > $str_count) {
                 $comment_content = mb_substr($comment_content, 0, $str_count).'...';

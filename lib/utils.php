@@ -607,7 +607,10 @@ endif;
 
 //更新日の取得（更新日がない場合はnullを返す）
 if ( !function_exists( 'get_update_time' ) ):
-function get_update_time($format = 'Y.m.d') {
+function get_update_time($format = null) {
+  if (empty($format)) {
+    $format = get_site_date_format();
+  }
   $mtime = get_the_modified_time('Ymd');
   $ptime = get_the_time('Ymd');
   if ($ptime > $mtime) {
@@ -1523,14 +1526,14 @@ endif;
 //投稿日の取得
 if ( !function_exists( 'get_the_postdate_time' ) ):
 function get_the_postdate_time(){
-  return the_time('Y.m.d');
+  return the_time(get_site_date_format());
 }
 endif;
 
 //更新日の取得（更新日がないときは投稿日）
 if ( !function_exists( 'get_the_update_time' ) ):
 function get_the_update_time(){
-  $update_time = get_update_time('Y.m.d');
+  $update_time = get_update_time(get_site_date_format());
   if ($update_time) {
     return $update_time;
   } else {
