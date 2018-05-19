@@ -2403,6 +2403,7 @@ label.screen-reader-text {
 
 /*ブートストラップのインフォメーションライクな囲みが表示される*/
 .primary-box,
+.sp-primary,
 .primary {
   background-color: #428BCA;
   color: #FFFFFF;
@@ -2413,6 +2414,7 @@ label.screen-reader-text {
 
 /*サクセスメッセージ*/
 .success-box,
+.sp-success,
 .success {
   background-color: #DFF0D8;
   border-color: #D6E9C6;
@@ -2423,6 +2425,7 @@ label.screen-reader-text {
 
 /*インフォメッセージ*/
 .info-box,
+.sp-info,
 .info {
   background-color: #D9EDF7;
   border-color: #BCE8F1;
@@ -2433,6 +2436,7 @@ label.screen-reader-text {
 
 /*注意メッセージ*/
 .warning-box,
+.sp-warning,
 .warning {
   background-color: #FCF8E3;
   padding: 15px;
@@ -2443,6 +2447,7 @@ label.screen-reader-text {
 
 /*警告メッセージ*/
 .danger-box,
+.sp-danger,
 .danger {
   background-color: #F2DEDE;
   border-color: #EBCCD1;

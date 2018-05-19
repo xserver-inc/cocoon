@@ -89,6 +89,7 @@ $marker_u_blue: #75c2f6;
 
 /*ブートストラップのインフォメーションライクな囲みが表示される*/
 .primary-box,
+.sp-primary,
 .primary {
   background-color: #428BCA;
   color: #FFFFFF;
@@ -99,6 +100,7 @@ $marker_u_blue: #75c2f6;
 
 /*サクセスメッセージ*/
 .success-box,
+.sp-success,
 .success {
   background-color: #DFF0D8;
   border-color: #D6E9C6;
@@ -109,6 +111,7 @@ $marker_u_blue: #75c2f6;
 
 /*インフォメッセージ*/
 .info-box,
+.sp-info,
 .info {
   background-color: #D9EDF7;
   border-color: #BCE8F1;
@@ -119,6 +122,7 @@ $marker_u_blue: #75c2f6;
 
 /*注意メッセージ*/
 .warning-box,
+.sp-warning,
 .warning {
   background-color: #FCF8E3;
   padding:15px;
@@ -129,6 +133,7 @@ $marker_u_blue: #75c2f6;
 
 /*警告メッセージ*/
 .danger-box,
+.sp-danger,
 .danger {
   background-color: #F2DEDE;
   border-color: #EBCCD1;
