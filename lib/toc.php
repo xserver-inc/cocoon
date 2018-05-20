@@ -141,10 +141,21 @@ function add_toc_before_1st_h2($the_content){
   }
   if($counter >= $showcount){
     if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
+    if (is_toc_toggle_switch_enable()) {
+      $title_elm = 'label';
+      $toc_check = '<input type="checkbox" id="toc-checkbox">';
+      $label_for = ' for="toc-checkbox"';
+    } else {
+      $title_elm = 'div';
+      $toc_check = null;
+      $label_for = null;
+    }
     $html .= '
-    <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">
-      <div class="toc-title">' . $title . '</div>
+    <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">'.$toc_check.
+      '<'.$title_elm.' class="toc-title"'.$label_for.'>' . $title . '</'.$title_elm.'>
+      <div class="toc-content">
       ' . $toc_list .'
+      </div>
     </div>';
 
     //_v($counter);

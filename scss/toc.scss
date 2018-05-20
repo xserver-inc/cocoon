@@ -94,3 +94,20 @@
     }
   }
 }
+
+/************************************
+** トグル表示ボタン
+************************************/
+.toc-content,
+#toc-checkbox {
+  display: none;
+}
+// .toc-content{
+//   max-height: 0;
+//   overflow-y: hidden;
+//   transition: all 1.2s ease;
+// }
+
+#toc-checkbox:checked ~ .toc-content {
+  display: block;
+}

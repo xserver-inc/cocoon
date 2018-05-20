@@ -435,3 +435,16 @@ if ($mhah = get_mobile_header_area_height()): ?>
   }
 }
 <?php endif ?>
+<?php //目次切り換えが有効な時
+if (is_toc_toggle_switch_enable()): ?>
+.toc-title::after{
+  content: '[<?php _e( '開く', THEME_NAME ) ?>]';
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+.toc-title:hover::after{
+  text-decoration: underline;
+}
+#toc-checkbox:checked + .toc-title::after{
+  content: '[<?php _e( '閉じる', THEME_NAME ) ?>]';
+}<?php endif ?>
