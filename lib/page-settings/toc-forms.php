@@ -67,6 +67,19 @@
           </td>
         </tr>
 
+        <!-- 生地の表示切り替え -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_TOC_TOGGLE_SWITCH_ENABLE, __('目次表示切り替え', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_TOC_TOGGLE_SWITCH_ENABLE , is_toc_toggle_switch_enable(), __( '目次の表示切替機能を有効にする', THEME_NAME ));
+            generate_tips_tag(__( '目次内容の表示を切り替えるスイッチング機能を有効にするか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 表示条件（数） -->
         <tr>
           <th scope="row">

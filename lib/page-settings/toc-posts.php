@@ -11,6 +11,12 @@ update_theme_option(OP_PAGE_TOC_VISIBLE);
 //目次タイトル
 update_theme_option(OP_TOC_TITLE);
 
+//目次の表示切替
+update_theme_option(OP_TOC_TOGGLE_SWITCH_ENABLE);
+
+//目次内容の表示
+update_theme_option(OP_TOC_CONTENT_VISIBLE);
+
 //目次表示条件（数）
 update_theme_option(OP_TOC_DISPLAY_COUNT);
 

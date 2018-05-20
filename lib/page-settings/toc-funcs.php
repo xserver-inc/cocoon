@@ -32,6 +32,22 @@ function get_toc_title(){
 }
 endif;
 
+//目次の表示切替
+define('OP_TOC_TOGGLE_SWITCH_ENABLE', 'toc_toggle_switch_enable');
+if ( !function_exists( 'is_toc_toggle_switch_enable' ) ):
+function is_toc_toggle_switch_enable(){
+  return get_theme_option(OP_TOC_TOGGLE_SWITCH_ENABLE, 1);
+}
+endif;
+
+//目次内容の表示
+define('OP_TOC_CONTENT_VISIBLE', 'toc_content_visible');
+if ( !function_exists( 'is_toc_content_visible' ) ):
+function is_toc_content_visible(){
+  return get_theme_option(OP_TOC_CONTENT_VISIBLE, 1);
+}
+endif;
+
 //目次表示条件（数）
 define('OP_TOC_DISPLAY_COUNT', 'toc_display_count');
 if ( !function_exists( 'get_toc_display_count' ) ):
