@@ -67,16 +67,22 @@
           </td>
         </tr>
 
-        <!-- 生地の表示切り替え -->
+        <!-- 生地の切り替え -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_TOC_TOGGLE_SWITCH_ENABLE, __('目次表示切り替え', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_TOC_TOGGLE_SWITCH_ENABLE, __('目次切り替え', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             generate_checkbox_tag(OP_TOC_TOGGLE_SWITCH_ENABLE , is_toc_toggle_switch_enable(), __( '目次の表示切替機能を有効にする', THEME_NAME ));
             generate_tips_tag(__( '目次内容の表示を切り替えるスイッチング機能を有効にするか。', THEME_NAME ));
             ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag(OP_TOC_CONTENT_VISIBLE , is_toc_content_visible(), __( '目次内容の表示', THEME_NAME ));
+              generate_tips_tag(__( 'ページ読み込み時に内容を表示した状態にするか。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 
