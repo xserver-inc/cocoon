@@ -4514,6 +4514,9 @@ div.fb-like-mobile {
   bottom: 0;
   position: absolute;
 }
+.footer-bottom-logo .logo-text {
+  padding: 0;
+}
 .footer-bottom-logo .site-name-text-link,
 .footer-bottom-logo .site-name-text,
 .footer-bottom-logo img {
