@@ -51,47 +51,47 @@
 
   ol{
     >li{
-      counter-increment: counter-h2;
-      counter-reset: counter-h3;
+      counter-increment: c-h2;
+      counter-reset: c-h3;
     }
 
     >li:before{
-      content: counter(counter-h2);
+      content: counter(c-h2);
     }
 
     >li > ol > li{
-      counter-increment: counter-h3;
-      counter-reset: counter-h4;
+      counter-increment: c-h3;
+      counter-reset: c-h4;
     }
 
     >li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)".";
+      content: counter(c-h2)"."counter(c-h3)".";
     }
 
     >li > ol > li > ol > li{
-      counter-increment: counter-h4;
-      counter-reset: counter-h5;
+      counter-increment: c-h4;
+      counter-reset: c-h5;
     }
 
     >li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)".";
+      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)".";
     }
 
     >li > ol > li > ol > li > ol > li{
-      counter-increment: counter-h5;
-      counter-reset: counter-h6;
+      counter-increment: c-h5;
+      counter-reset: c-h6;
     }
 
     >li > ol > li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)".";
+      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)".";
     }
 
     >li > ol > li > ol > li > ol > li > ol > li{
-      counter-increment: counter-h6;
+      counter-increment: c-h6;
     }
 
     >li > ol > li > ol > li > ol > li > ol > li:before{
-      content: counter(counter-h2)"."counter(counter-h3)"."counter(counter-h4)"."counter(counter-h5)"."counter(counter-h6)".";
+      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)"."counter(c-h6)".";
     }
   }
 }

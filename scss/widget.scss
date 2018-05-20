@@ -272,12 +272,12 @@ label.screen-reader-text{
 ** 人気記事ウィジェットランキング表示
 ************************************/
 .widget-entry-cards.ranking-visible{
-  counter-reset: popular-rank;
+  counter-reset: p-rank;
   .widget-entry-card-thumb{
-    counter-increment: popular-rank;
+    counter-increment: p-rank;
 
     &::before{
-      content: counter(popular-rank);
+      content: counter(p-rank);
       position: absolute;
       top: 0;
       left: 0;
