@@ -1779,6 +1779,7 @@ span.internal-icon {
 .toc-title {
   font-size: 1.1em;
   text-align: center;
+  display: block;
 }
 
 /************************************
