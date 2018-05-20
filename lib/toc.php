@@ -103,6 +103,7 @@ function add_toc_before_1st_h2($the_content){
     if($depth >= 1 && $depth <= $max_depth){
       if($current_depth == $depth && $i != 0){
         $toc_list .= '</li>';
+        $counters[$current_depth - 1] ++;
       }
       while($current_depth > $depth){
         //_v($current_depth);
@@ -116,7 +117,7 @@ function add_toc_before_1st_h2($the_content){
       }
       if($current_depth != $prev_depth){
         $toc_list .= '</li>';
-        //$counters[$current_depth - 1] ++;
+        $counters[$current_depth - 1] ++;
       }
       while($current_depth < $depth){
         $toc_list .= '<'.$list_tag.'>';
@@ -129,7 +130,7 @@ function add_toc_before_1st_h2($the_content){
         $current_depth++;
         $counters[$current_depth - 1] ++;
       }
-
+      //$counters[$current_depth - 1] ++;
       $counter++;
       $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
       $prev_depth = $depth;

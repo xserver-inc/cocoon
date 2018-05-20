@@ -271,21 +271,6 @@ select {
   font-size: 18px;
   width: 100%;
 }
-.search-edit:focus, input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-textarea:focus,
-select:focus {
-  background-color: #fafbfc;
-  border: 2px solid #d8eaf2;
-}
 
 /************************************
 ** 基本表示
