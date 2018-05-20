@@ -142,8 +142,12 @@ function add_toc_before_1st_h2($the_content){
   if($counter >= $showcount){
     if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
     if (is_toc_toggle_switch_enable()) {
+      $checked = null;
+      if (is_toc_content_visible()) {
+        $checked = ' checked';
+      }
       $title_elm = 'label';
-      $toc_check = '<input type="checkbox" id="toc-checkbox">';
+      $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
       $label_for = ' for="toc-checkbox"';
     } else {
       $title_elm = 'div';

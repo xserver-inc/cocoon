@@ -437,6 +437,13 @@ if ($mhah = get_mobile_header_area_height()): ?>
 <?php endif ?>
 <?php //目次切り換えが有効な時
 if (is_toc_toggle_switch_enable()): ?>
+.toc-content,
+#toc-checkbox {
+  display: none;
+}
+#toc-checkbox:checked ~ .toc-content {
+  display: block;
+}
 .toc-title::after{
   content: '[<?php _e( '開く', THEME_NAME ) ?>]';
   margin-left: 0.5em;

@@ -79,7 +79,7 @@
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag(OP_TOC_CONTENT_VISIBLE , is_toc_content_visible(), __( '目次内容の表示', THEME_NAME ));
+              generate_checkbox_tag(OP_TOC_CONTENT_VISIBLE , is_toc_content_visible(), __( '最初から目次内容を表示する', THEME_NAME ));
               generate_tips_tag(__( 'ページ読み込み時に内容を表示した状態にするか。', THEME_NAME ));
               ?>
             </div>
