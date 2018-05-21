@@ -448,6 +448,7 @@ if (is_toc_toggle_switch_enable()): ?>
   content: '[<?php _e( '開く', THEME_NAME ) ?>]';
   margin-left: 0.5em;
   cursor: pointer;
+  font-size: 0.8em;
 }
 .toc-title:hover::after{
   text-decoration: underline;
