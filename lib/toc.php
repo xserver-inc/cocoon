@@ -209,7 +209,7 @@ function add_toc_before_1st_h2($the_content){
         $tag_all = $m[$tag_all_index][$i];
         $tag = $m[$tag_index][$i];
         $h = $m[$h_index][$i];
-        $h_content = $m[$h_content_index][$i];
+        $h_content = strip_tags($m[$h_content_index][$i]);
         $tag_end = $m[$tag_end_index][$i];
 
         $now_depth = intval(str_replace('h', '', $h));
