@@ -80,6 +80,9 @@ p.wp-caption-text {
   display: flex;
   align-items: center;
 }
+.author-box .author-follows .sns-follow-message{
+  display: none;
+}
 .article-footer .sns-share-message:before, .article-footer .sns-follow-message:before, .entry-footer .sns-share-message:before, .entry-footer .sns-follow-message:before {
   margin-right: 10px;
   border-top: 1px solid #202020;
