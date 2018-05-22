@@ -865,6 +865,13 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 }
 endif;
 
+//nofollowリンクの作成
+if ( !function_exists( 'get_nofollow_link' ) ):
+function get_nofollow_link($url, $text){
+  return '<a href="'.$url.'" rel="nofollow">'.$text.'</a>';
+}
+endif;
+
 if ( !function_exists( 'generate_new_entries_tag' ) ):
 function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array(), $include_children = 0){
 
@@ -954,7 +961,8 @@ function generate_author_box_tag($label){
 
             if ($profile_page_url) {
               $author_display_name = strip_tags(get_the_author_display_name());
-              $name = '<a href="'.$profile_page_url.'" rel="nofollow">'.$author_display_name.'</a>';
+              //$name = '<a href="'.$profile_page_url.'" rel="nofollow">'.$author_display_name.'</a>';
+              $name = get_nofollow_link($profile_page_url, $author_display_name);
               //echo $name;
             } else {
               $name = get_the_author_posts_link($author_id);

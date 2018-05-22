@@ -1,6 +1,12 @@
 <?php //本文下部分、投稿者など
 if (get_the_author()) {
-  $url = get_author_posts_url( get_the_author_meta( 'ID' ) );
+  $author_id = get_the_author_meta( 'ID' );
+  $profile_page_url = get_the_author_profile_page_url($author_id);
+  if ($profile_page_url) {
+    $url = $profile_page_url;
+  } else {
+    $url = get_author_posts_url( $author_id );
+  }
   $name = get_the_author();
 } else {
   $url = home_url();
