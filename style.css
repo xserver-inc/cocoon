@@ -5734,6 +5734,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 22px;
   }
 
+  .header-container-in.hlt-top-menu .logo-header {
+    max-height: none;
+  }
+
   .eye-catch .cat-label {
     font-size: 10px;
     padding: 2px 4px;
