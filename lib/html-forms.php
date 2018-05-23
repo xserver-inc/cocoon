@@ -961,8 +961,8 @@ function generate_author_box_tag($label){
 
             if ($profile_page_url) {
               $author_display_name = strip_tags(get_the_author_display_name());
-              //$name = '<a href="'.$profile_page_url.'" rel="nofollow">'.$author_display_name.'</a>';
-              $name = get_nofollow_link($profile_page_url, $author_display_name);
+              $name = '<a href="'.$profile_page_url.'">'.$author_display_name.'</a>';
+              //$name = get_nofollow_link($profile_page_url, $author_display_name);
               //echo $name;
             } else {
               $name = get_the_author_posts_link($author_id);
