@@ -3317,6 +3317,7 @@ iframe[src*="https://www.google.com/maps/embed"] {
 }
 .author-box p {
   margin-top: 0.3em;
+  line-height: 1.3;
 }
 .author-box .sns-follow {
   margin: 0;
@@ -3358,10 +3359,6 @@ iframe[src*="https://www.google.com/maps/embed"] {
 
 .author-content {
   margin-left: 130px;
-}
-
-.author-description {
-  margin-bottom: 0.6em;
 }
 
 .sidebar .author-box {
