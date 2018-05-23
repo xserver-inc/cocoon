@@ -1377,7 +1377,7 @@ if ( !function_exists( 'get_query_removed_requested_url' ) ):
 function get_query_removed_requested_url(){
   $url = get_requested_url();
   $url = preg_replace('{\?.+$}', '', $url);
-  $url = trailingslashit($url);
+  $url = user_trailingslashit($url);
   return $url;
 }
 endif;

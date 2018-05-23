@@ -125,13 +125,13 @@ if ( is_prev_next_enable() ) {
 if ( !function_exists( 'the_prev_next_link_tag' ) ):
 function the_prev_next_link_tag() {
   //1ページを複数に分けた分割ページ
-  if(is_single() || is_page()) {
+  if(is_singular()) {
     global $wp_query;
     global $multipage;
     //$multipage = check_multi_page();
     if($multipage) {
-      $prev = generate_multipage_url('prev');
-      $next = generate_multipage_url('next');
+      $prev = user_trailingslashit(generate_multipage_url('prev'));
+      $next = user_trailingslashit(generate_multipage_url('next'));
       if($prev) {
         echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
         echo '<link rel="prev" href="'.$prev.'" />'.PHP_EOL;
@@ -145,12 +145,14 @@ function the_prev_next_link_tag() {
     //トップページやカテゴリページなどの分割ページの設定
     global $paged;
     if ( get_previous_posts_link() ){
+      $url = user_trailingslashit(get_pagenum_link( $paged - 1 ));
       echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
-      echo '<link rel="prev" href="'.get_pagenum_link( $paged - 1 ).'" />'.PHP_EOL;
+      echo '<link rel="prev" href="'.$url.'" />'.PHP_EOL;
     }
     if ( get_next_posts_link() ){
+      $url = user_trailingslashit(get_pagenum_link( $paged + 1 ));
       echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
-      echo '<link rel="next" href="'.get_pagenum_link( $paged + 1 ).'" />'.PHP_EOL;
+      echo '<link rel="next" href="'.$url.'" />'.PHP_EOL;
     }
   }
 }
@@ -213,7 +215,7 @@ function generate_canonical_url(){
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
   $canonical_url = null;
   if (is_home()) {
-    $canonical_url = home_url('/');
+    $canonical_url = home_url();
   } elseif (is_category()) {
     //$canonical_url = get_category_link(get_query_var('cat'));
     $canonical_url = get_query_removed_requested_url();
