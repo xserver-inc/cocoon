@@ -94,7 +94,9 @@ endif;
 if ( !function_exists( 'is_internal_blogcard_url' ) ):
 function is_internal_blogcard_url($url){
   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
-  $cat = get_category_by_path($url);
+  $cat = get_category_by_path($url, false);
+  //_v($cat);
+  //_v($url);
   if ($id || is_home_url($url) || $cat) {
     return true;
   }
@@ -109,8 +111,9 @@ function url_to_internal_blogcard_tag($url){
   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
   //内部ブログカード作成可能なURLかどうか
   if ( !is_internal_blogcard_url($url) ) return;
+  //_v($url);
 
-  $image = get_site_screenshot_url($url);
+  $no_image = get_site_screenshot_url($url);
   $thumbnail = null;
   $date_tag = null;
   //投稿・固定ページの場合
@@ -171,15 +174,28 @@ function url_to_internal_blogcard_tag($url){
     if (!empty($image)) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
     }
-  } elseif ($cat = get_category_by_path($url)){
+  } elseif ($cat = get_category_by_path($url, false)){
     //カテゴリページの場合
-   //_v($cat);
+    $cat_id = $cat->cat_ID;
+    //_v(get_category_meta($cat_id));
+    $title = get_category_title($cat_id);
+    $snipet = get_category_snipet($cat_id);
+    $image = get_category_eye_catch($cat_id);
+    //_v($image);
+    if ($image) {
+      $thumbnail = get_blogcard_thumbnail_image_tag($image);
+    }
+    // _v($cat);
+    // $title = get_front_page_title_caption();
+    // $snipet = get_front_page_meta_description();
+    // $image = get_ogp_home_image_url();
 
   }
+  //_v(get_category_by_path($url));
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
-    $thumbnail = get_blogcard_thumbnail_image_tag($image);
+    $thumbnail = get_blogcard_thumbnail_image_tag($no_image);
   }
 
   //ブログカードのサムネイルを右側に
