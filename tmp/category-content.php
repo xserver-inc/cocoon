@@ -19,4 +19,7 @@ if ($cat_id && get_category_meta($cat_id)): ?>
     </div>
   <?php endif ?>
 </article>
+<?php else: ?>
+  <?php //カテゴリタイトル
+  get_template_part('tmp/list-title'); ?>
 <?php endif ?>

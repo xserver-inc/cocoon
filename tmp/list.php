@@ -3,13 +3,14 @@
 ////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
-if (!is_home() && !is_search()) {
-  get_template_part('tmp/list-title');
-} elseif ( is_category() && !is_paged() ){
+if ( is_category() && !is_paged() ){
   ////////////////////////////
   //カテゴリページのコンテンツ
   ////////////////////////////
   get_template_part('tmp/category-content');
+} elseif (!is_home() && !is_search()) {
+  //それ以外
+  get_template_part('tmp/list-title');
 }
 
 ////////////////////////////
