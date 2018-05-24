@@ -78,18 +78,24 @@
 // }
 // endif;
 
-// if ( !function_exists( 'get_blogcard_thumbnail_image_tag' ) ):
-// function get_blogcard_thumbnail_image_tag($url){
-//   return '<img src="'.$url.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
-// }
-// endif;
+//
+if ( !function_exists( 'get_blogcard_thumbnail_image_tag' ) ):
+function get_blogcard_thumbnail_image_tag($url, $in = true){
+  if ($in) {
+    $class = ' internal-blogcard-thumb-image';
+  } else {
+    $class = ' external-blogcard-thumb-image';
+  }
+  return '<img src="'.$url.'" alt="" class="blogcard-thumb-image'.$class.'" width="160" height="90" />';
+}
+endif;
 
 //内部ブログカードを作成できるURLかどうか
 if ( !function_exists( 'is_internal_blogcard_url' ) ):
 function is_internal_blogcard_url($url){
   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
-  $cat = $cat = get_category_by_path($url);
-  if ($id || is_home_url($url)) {
+  $cat = get_category_by_path($url);
+  if ($id || is_home_url($url) || $cat) {
     return true;
   }
 }
@@ -106,6 +112,7 @@ function url_to_internal_blogcard_tag($url){
 
   $image = get_site_screenshot_url($url);
   $thumbnail = null;
+  $date_tag = null;
   //投稿・固定ページの場合
   if ($id) {
     //global $post;
@@ -161,11 +168,18 @@ function url_to_internal_blogcard_tag($url){
     $title = get_front_page_title_caption();
     $snipet = get_front_page_meta_description();
     $image = get_ogp_home_image_url();
+    if (!empty($image)) {
+      $thumbnail = get_blogcard_thumbnail_image_tag($image);
+    }
+  } elseif ($cat = get_category_by_path($url)){
+    //カテゴリページの場合
+   //_v($cat);
+
   }
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
-    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
+    $thumbnail = get_blogcard_thumbnail_image_tag($image);
   }
 
   //ブログカードのサムネイルを右側に
@@ -209,7 +223,7 @@ endif;
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content,$m);
-
+  //_v($m);
   foreach ($m[0] as $match) {
 
     //マッチしたpタグが適正でないときはブログカード化しない

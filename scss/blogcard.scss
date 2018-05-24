@@ -23,14 +23,14 @@
   overflow: hidden;
   position: relative;
   img{
-  position: absolute;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
     //width: 100%;
   }
 }
