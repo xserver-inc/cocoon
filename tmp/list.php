@@ -3,8 +3,13 @@
 ////////////////////////////
 //アーカイブのタイトル
 ////////////////////////////
-if (!is_home() && !is_search() && !is_category()) {
+if (!is_home() && !is_search()) {
   get_template_part('tmp/list-title');
+} elseif ( is_category() && !is_paged() ){
+  ////////////////////////////
+  //カテゴリページのコンテンツ
+  ////////////////////////////
+  get_template_part('tmp/category-content');
 }
 
 ////////////////////////////
@@ -20,14 +25,6 @@ if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
 ////////////////////////////
 if ( is_active_sidebar( 'index-top' ) ){
   dynamic_sidebar( 'index-top' );
-}; ?>
-
-<?php
-////////////////////////////
-//カテゴリページのコンテンツ
-////////////////////////////
-if ( is_category() && !is_paged() ){
-  get_template_part('tmp/category-content');
 }; ?>
 
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
