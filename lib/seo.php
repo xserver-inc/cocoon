@@ -214,7 +214,9 @@ function generate_canonical_url(){
   //タグページはnoindexにしているけどcanonicalタグは必要か？
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
   $canonical_url = null;
-  if (is_home()) {
+  if (is_home() && is_paged()) {
+    $canonical_url = get_query_removed_requested_url();
+  } elseif (is_home()) {
     $canonical_url = home_url();
   } elseif (is_category()) {
     //$canonical_url = get_category_link(get_query_var('cat'));
@@ -223,15 +225,17 @@ function generate_canonical_url(){
     // $postTag = get_the_tags();
     // $canonical_url = get_tag_link( $postTag[0]->term_id );
     $canonical_url = get_query_removed_requested_url();
+  } elseif (is_singular() && ( $paged >= 2 || $page >= 2)) {
+    $canonical_url = get_query_removed_requested_url();
   } elseif (is_singular()) {
     $canonical_url = get_permalink();
-  // } elseif(is_404()) {
-  //   $canonical_url =  home_url().'/404/';
+  } elseif(is_404()) {
+    $canonical_url =  home_url().'/404/';
   } else {
     $canonical_url = get_query_removed_requested_url();
   }
 
-  // if ($canonical_url && ( $paged >= 2 || $page >= 2) && is_paged()) {
+  // if ($canonical_url && ( $paged >= 2 || $page >= 2)) {
   //   $canonical_url = get_query_removed_requested_url();
   // }
 
