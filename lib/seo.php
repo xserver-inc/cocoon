@@ -227,22 +227,13 @@ function generate_canonical_url(){
     $canonical_url = get_permalink();
   // } elseif(is_404()) {
   //   $canonical_url =  home_url().'/404/';
+  } else {
+    $canonical_url = get_query_removed_requested_url();
   }
 
-  if ($canonical_url && ( $paged >= 2 || $page >= 2)) {
-    $canonical_url = get_query_removed_requested_url();
-    // if (is_singular()) {
-    //   $url = get_permalink();
-    //   //最後が/でない場合
-    //   $url = trailingslashit($url);
-    //   $canonical_url = $url.max( $paged, $page ).'/';
-    // } else {
-    //   $url = $canonical_url;
-    //   //最後が/でない場合
-    //   $url = trailingslashit($url);
-    //   $canonical_url = $url.'page/'.max( $paged, $page ).'/';
-    // }
-  }
+  // if ($canonical_url && ( $paged >= 2 || $page >= 2) && is_paged()) {
+  //   $canonical_url = get_query_removed_requested_url();
+  // }
 
   return $canonical_url;
 }
