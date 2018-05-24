@@ -51,7 +51,9 @@ if (is_singular()){//単一記事ページの場合
     echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-  if ( get_ogp_home_image_url() ) {
+  if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch(get_query_var('cat'))) {
+    $ogp_image = $eye_catch;
+  } elseif ( get_ogp_home_image_url() ) {
     $ogp_image = get_ogp_home_image_url();
   } else {
     if ( get_the_site_logo_url() ){//ヘッダーロゴがある場合はロゴを使用
