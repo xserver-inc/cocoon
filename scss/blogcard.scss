@@ -19,8 +19,19 @@
   float: left;
   margin-top: $emtry_card_thumb_margin_top;
   width: 160px;
+  height: 90px;
+  overflow: hidden;
+  position: relative;
   img{
-    width: 100%;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    //width: 100%;
   }
 }
 

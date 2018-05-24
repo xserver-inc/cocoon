@@ -1542,3 +1542,11 @@ function get_the_update_time(){
 
 }
 endif;
+
+//指定されたURLはWordpressホームURLかどうか
+if ( !function_exists( 'is_home_url' ) ):
+function is_home_url($url){
+  //_v(home_url());
+  return $url == home_url() || $url == home_url('/');
+}
+endif;

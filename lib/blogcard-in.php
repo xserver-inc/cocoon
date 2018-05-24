@@ -1,38 +1,202 @@
 <?php //内部ブログカード関数
 
+// if ( !function_exists( 'get_internal_blogcard_tag' ) ):
+// function get_internal_blogcard_tag($url, $title, $snipet){
+
+//   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
+//   $post_data = get_post($id);
+//   setup_postdata($post_data);
+
+//   $date_tag = null;
+//   $thumbnail = null;
+//   //投稿・固定ページIDがある場合
+//   if ($id) {
+//     //日付表示
+//     $date = null;
+//     $post_date = mysql2date(get_site_date_format(), $post_data->post_date);
+//     switch (get_internal_blogcard_date_type()) {
+//       case 'post_date':
+//         $date = $post_date;
+//         break;
+//       case 'up_date':
+//         $date = mysql2date(get_site_date_format(), $post_data->post_modified);
+//         if (!$date) {
+//           $date = $post_date;
+//         }
+//         break;
+//     }
+//     if (is_internal_blogcard_date_visible()) {
+//       $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.$date.'</div>';//日付の取得
+//       $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
+//     }
+
+
+//     //サムネイルの取得（要160×90のサムネイル設定）
+//     $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
+//   }
+
+//   //サムネイルが存在しない場合
+//   if ( !$thumbnail ) {
+//     $no_image = get_site_screenshot_url($url);
+//     $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
+//   }
+
+//   //ブログカードのサムネイルを右側に
+//   $additional_class = get_additional_internal_blogcard_classes();
+
+//   //新しいタブで開く場合
+//   $target = is_internal_blogcard_target_blank() ? ' target="_blank"' : '';
+
+//   //ファビコン
+//   $favicon_tag =
+//   '<div class="blogcard-favicon internal-blogcard-favicon">'.
+//     '<img src="//www.google.com/s2/favicons?domain='.get_the_site_domain().'" class="blogcard-favicon-image internal-blogcard-favicon-image" alt="" width="16" height="16" />'.
+//   '</div>';
+
+//   //サイトロゴ
+//   $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.get_the_site_domain().'</div>';
+//   $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
+
+//   //取得した情報からブログカードのHTMLタグを作成
+//   //_v($url);
+//   $tag =
+//   '<a href="'.$url.'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
+//     '<div class="blogcard internal-blogcard'.$additional_class.' cf">'.
+//       '<figure class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</figure>'.
+//       '<div class="blogcard-content internal-blogcard-content">'.
+//         '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.
+//         '<div class="blogcard-snipet internal-blogcard-snipet">'.$snipet.'</div>'.
+
+//       '</div>'.
+//       '<div class="blogcard-footer internal-blogcard-footer cf">'.
+//         $site_logo_tag.$date_tag.
+//       '</div>'.
+//     '</div>'.
+//   '</a>';
+
+//   return $tag;
+// }
+// endif;
+
+//
+if ( !function_exists( 'get_blogcard_thumbnail_image_tag' ) ):
+function get_blogcard_thumbnail_image_tag($url, $in = true){
+  if ($in) {
+    $class = ' internal-blogcard-thumb-image';
+  } else {
+    $class = ' external-blogcard-thumb-image';
+  }
+  return '<img src="'.$url.'" alt="" class="blogcard-thumb-image'.$class.'" width="160" height="90" />';
+}
+endif;
+
+//内部ブログカードを作成できるURLかどうか
+if ( !function_exists( 'is_internal_blogcard_url' ) ):
+function is_internal_blogcard_url($url){
+  $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
+  $cat = get_category_by_path($url, false);
+  //_v($cat);
+  //_v($url);
+  if ($id || is_home_url($url) || $cat) {
+    return true;
+  }
+}
+endif;
+
 //内部URLからブログをカードタグの取得
 if ( !function_exists( 'url_to_internal_blogcard_tag' ) ):
 function url_to_internal_blogcard_tag($url){
   if ( !$url ) return;
   $url = strip_tags($url);//URL
   $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換）
-  if ( !$id ) return;//IDを取得できない場合はループを飛ばす
+  //内部ブログカード作成可能なURLかどうか
+  if ( !is_internal_blogcard_url($url) ) return;
+  //_v($url);
 
-  //global $post;
-  $post_data = get_post($id);
-  setup_postdata($post_data);
-  $exce = $post_data->post_excerpt;
   $no_image = get_site_screenshot_url($url);
+  $thumbnail = null;
+  $date_tag = null;
+  //投稿・固定ページの場合
+  if ($id) {
+    //global $post;
+    $post_data = get_post($id);
+    setup_postdata($post_data);
+    $exce = $post_data->post_excerpt;
 
-  $title = $post_data->post_title;//タイトルの取得
-  // if (is_wpforo_plugin_page($url)) {
-  //   $title = wp_get_document_title();
-  // }
+    $title = $post_data->post_title;//タイトルの取得
+    // if (is_wpforo_plugin_page($url)) {
+    //   $title = wp_get_document_title();
+    // }
 
-  //メタディスクリプションの取得
-  $snipet = get_the_page_meta_description($id);
-  // _v($id);
-  // _v($snipet);
-  //$snipet = get_the_snipet( get_the_content(), get_entry_card_excerpt_max_length() );
-  //投稿管理画面の抜粋を取得
-  if (!$snipet) {
-    $snipet = $post_data->post_excerpt;
+    //メタディスクリプションの取得
+    $snipet = get_the_page_meta_description($id);
+    // _v($id);
+    // _v($snipet);
+    //$snipet = get_the_snipet( get_the_content(), get_entry_card_excerpt_max_length() );
+    //投稿管理画面の抜粋を取得
+    if (!$snipet) {
+      $snipet = $post_data->post_excerpt;
+    }
+    //記事本文の抜粋文を取得
+    if (!$snipet) {
+      $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
+    }
+    $snipet = preg_replace('/\n/', '', $snipet);
+
+    //日付表示
+    $date = null;
+    $post_date = mysql2date(get_site_date_format(), $post_data->post_date);
+    switch (get_internal_blogcard_date_type()) {
+      case 'post_date':
+        $date = $post_date;
+        break;
+      case 'up_date':
+        $date = mysql2date(get_site_date_format(), $post_data->post_modified);
+        if (!$date) {
+          $date = $post_date;
+        }
+        break;
+    }
+    if (is_internal_blogcard_date_visible()) {
+      $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.$date.'</div>';//日付の取得
+      $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
+    }
+
+
+    //サムネイルの取得（要160×90のサムネイル設定）
+    $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
+
+  } elseif (is_home_url($url)){
+    //トップページの場合
+    $title = get_front_page_title_caption();
+    $snipet = get_front_page_meta_description();
+    $image = get_ogp_home_image_url();
+    if (!empty($image)) {
+      $thumbnail = get_blogcard_thumbnail_image_tag($image);
+    }
+  } elseif ($cat = get_category_by_path($url, false)){
+    //カテゴリページの場合
+    $cat_id = $cat->cat_ID;
+    //_v(get_category_meta($cat_id));
+    $title = get_category_title($cat_id);
+    $snipet = get_category_snipet($cat_id);
+    $image = get_category_eye_catch($cat_id);
+    //_v($image);
+    if ($image) {
+      $thumbnail = get_blogcard_thumbnail_image_tag($image);
+    }
+    // _v($cat);
+    // $title = get_front_page_title_caption();
+    // $snipet = get_front_page_meta_description();
+    // $image = get_ogp_home_image_url();
+
   }
-  //記事本文の抜粋文を取得
-  if (!$snipet) {
-    $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
+  //_v(get_category_by_path($url));
+
+  //サムネイルが存在しない場合
+  if ( !$thumbnail ) {
+    $thumbnail = get_blogcard_thumbnail_image_tag($no_image);
   }
-  $snipet = preg_replace('/\n/', '', $snipet);
 
   //ブログカードのサムネイルを右側に
   $additional_class = get_additional_internal_blogcard_classes();
@@ -50,33 +214,6 @@ function url_to_internal_blogcard_tag($url){
   $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.get_the_site_domain().'</div>';
   $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
-  //日付表示
-  $date = null;
-  $date_tag = null;
-  $post_date = mysql2date(get_site_date_format(), $post_data->post_date);
-  switch (get_internal_blogcard_date_type()) {
-    case 'post_date':
-      $date = $post_date;
-      break;
-    case 'up_date':
-      $date = mysql2date(get_site_date_format(), $post_data->post_modified);
-      if (!$date) {
-        $date = $post_date;
-      }
-      break;
-  }
-  if (is_internal_blogcard_date_visible()) {
-    $date = '<div class="blogcard-post-date internal-blogcard-post-date">'.$date.'</div>';//日付の取得
-    $date_tag = '<div class="blogcard-date internal-blogcard-date">'.$date.'</div>';
-  }
-
-
-  //サムネイルの取得（要160×90のサムネイル設定）
-  $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
-  if ( !$thumbnail ) {//サムネイルが存在しない場合
-    $thumbnail = '<img src="'.$no_image.'" alt="" class="blogcard-thumb-image internal-blogcard-thumb-image" width="160" height="90" />';
-  }
-
   //取得した情報からブログカードのHTMLタグを作成
   //_v($url);
   $tag =
@@ -93,11 +230,6 @@ function url_to_internal_blogcard_tag($url){
       '</div>'.
     '</div>'.
   '</a>';
-  //$tag = minify_html($tag);
-  //_v($tag);
-  // echo('<pre>');
-  // var_dump($tag);
-  // echo('</pre>');
 
   return $tag;
 }
@@ -106,7 +238,8 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
+  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content,$m);
+  //_v($m);
   foreach ($m[0] as $match) {
 
     //マッチしたpタグが適正でないときはブログカード化しない
@@ -147,7 +280,7 @@ if ( is_internal_blogcard_enable() ) {
 if ( !function_exists( 'url_shortcode_to_internal_blogcard' ) ):
 function url_shortcode_to_internal_blogcard($the_content) {
   //1行にURLのみが期待されている行（URL）を全て$mに取得
-  $res = preg_match_all('/(<p>)?(<br ? \/?>)?\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\](<br ? \/?>)?(<\/p>)?/im', $the_content, $m);
+  $res = preg_match_all('/(<p>)?(<br ? \/?>)?\[https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?\](<br ? \/?>)?(<\/p>)?/im', $the_content, $m);
   foreach ($m[0] as $match) {
   //マッチしたURL一つ一つをループしてカードを作成
     $url = strip_tags($match);//URL

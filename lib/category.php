@@ -49,6 +49,8 @@ function get_category_title($cat_id = null){
   $meta = get_category_meta($cat_id);
   if (!empty($meta['title']))
     return $meta['title'];
+  else
+    return get_category($cat_id)->name;
 }
 endif;
 
@@ -85,6 +87,30 @@ function get_category_description($cat_id = null){
   $meta = get_category_meta($cat_id);
   if (!empty($meta['description']))
     return $meta['description'];
+}
+endif;
+
+//カテゴリのスニペット文を取得
+if ( !function_exists( 'get_category_snipet' ) ):
+function get_category_snipet($cat_id){
+  $snipet = get_category_description($cat_id);
+  if (!$snipet) {
+    //カテゴリ説明を取得
+    $snipet = category_description();
+  }
+  if (!$snipet) {
+    //カテゴリ内容の抜粋
+    $snipet = get_content_excerpt(get_category_content($cat_id), get_entry_card_excerpt_max_length());
+  }
+  if (!$snipet) {
+    //カテゴリ説明を取得
+    $cat = get_category($cat_id);
+    if ($cat) {
+      $snipet = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat->name );
+    }
+
+  }
+  return $snipet;
 }
 endif;
 
