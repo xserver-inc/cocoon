@@ -208,12 +208,18 @@ if ( !function_exists( 'generate_canonical_url' ) ):
 function generate_canonical_url(){
   global $paged;
   global $page;
+  global $multipage;
+
+  //_v($multipage);
 
   //canonicalの疑問点
   //アーカイブはnoindexにしているけどcanonicalタグは必要か？
   //タグページはnoindexにしているけどcanonicalタグは必要か？
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
   $canonical_url = null;
+    // _v($page);
+    // _v($paged);
+    // _v(get_the_post_has_multi_page());
   if (is_home() && is_paged()) {
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_home()) {
@@ -225,7 +231,9 @@ function generate_canonical_url(){
     // $postTag = get_the_tags();
     // $canonical_url = get_tag_link( $postTag[0]->term_id );
     $canonical_url = get_query_removed_requested_url();
-  } elseif (is_singular() && ( $paged >= 2 || $page >= 2)) {
+  } elseif (is_singular() && !$multipage) {
+    $canonical_url = get_permalink();
+  } elseif (is_singular() && ($paged >= 2 || $page >= 2)) {
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_singular()) {
     $canonical_url = get_permalink();
