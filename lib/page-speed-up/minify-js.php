@@ -53,8 +53,11 @@ function tag_code_to_minify_js($buffer) {
               //jQueryは除外
               //(strpos($url, 'js/jquery/jquery.js') !== false) ||
               //アドミンバーのJSは除外
-              (strpos($url, 'js/admin-bar.min.js') !== false)
-              || (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+              //(strpos($url, 'js/admin-bar.min.js') !== false)
+              includes_string($url, 'js/admin-bar.min.js')
+              //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
+              || includes_string($url, '/plugins/highlight-js/highlight.min.js')
+              || includes_string($url, '/plugins/ip-geo-block/')
               //|| (strpos($url, '/plugins/wpforo/') !== false)
               //|| (strpos($url, '/buddypress/bp-core/js/') !== false)
               // || (strpos($url, '/plugins/bbpress/templates/default/js/editor.js') !== false)
