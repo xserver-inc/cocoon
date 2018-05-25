@@ -213,11 +213,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin-bottom: 3px;
 }
 
-.sns-share-buttons, .sns-follow-buttons {
+.sns-buttons {
   display: flex;
   align-items: center;
 }
-.sns-share-buttons a, .sns-follow-buttons a {
+.sns-buttons a {
   display: block;
   background-color: #777879;
   text-align: center;
@@ -226,7 +226,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   border-radius: 4px;
   height: 45px;
 }
-.sns-share-buttons a:hover, .sns-follow-buttons a:hover {
+.sns-buttons a:hover {
   opacity: 0.7;
   color: #fff;
   transition: all 0.5s ease;

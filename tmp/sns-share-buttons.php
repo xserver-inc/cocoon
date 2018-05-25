@@ -18,7 +18,7 @@
     <div class="sns-share-message"><?php echo get_sns_bottom_share_message(); ?></div>
   <?php endif; ?>
 
-  <div class="sns-share-buttons">
+  <div class="sns-share-buttons sns-buttons">
     <?php if ( is_twitter_share_button_visible($option) )://Twitterボタンを表示するか ?>
       <a href="<?php echo get_twitter_share_url(); ?>" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow"><span class="social-icon icon-twitter"></span><span class="button-caption"><?php _e( 'Twitter', THEME_NAME ) ?></span><span class="share-count twitter-share-count"><?php echo get_twitter_count(); ?></span></a>
     <?php endif; ?>

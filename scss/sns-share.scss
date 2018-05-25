@@ -257,7 +257,6 @@
 $sns_button_margin_bottom: 8px;
 
 .sns-share-buttons{
-  @extend %sns_buttons;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;

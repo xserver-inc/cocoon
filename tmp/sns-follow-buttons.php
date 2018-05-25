@@ -12,7 +12,7 @@ if ( is_any_sns_follow_buttons_exist()
   <?php if ( get_sns_follow_message() ): //フォローメッセージがあるか?>
   <div class="sns-follow-message"><?php echo get_sns_follow_display_message(); //フォローメッセージの取得?></div>
   <?php endif; ?>
-  <div class="sns-follow-buttons">
+  <div class="sns-follow-buttons sns-buttons">
 
   <?php if ( get_the_author_website_url() )://ウェブサイトフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home-logo"></span></a>
