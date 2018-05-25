@@ -1,22 +1,22 @@
-﻿/*
-  Skin Name: m-sora
-  Description: marineがお届けするテーマ「sora」
-  Skin URI: https://web.no-koto.net
+/*
+  Skin Name: m-tomato
+	Description: marine がお届けする Cocoon のスキン m-tomato です。
+  Skin URI: https://web.no-koto.net/
   Author: marine
-  Author URI: https://web.no-koto.net
-  Version: 0.1.1
-  Priority: 200300
+  Author URI: https://web.no-koto.net/
+  Version: 0.1.0
+  Priority: 200301
 */
 
+/* Cocoon skin m-tomato */
 body {
-	background:#fff url("https://im-cocoon.net/wp-content/uploads/bg.jpg") no-repeat;
+	background:#fff url("https://im-cocoon.net/wp-content/uploads/bg-m-tomato.jpg") no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 #header,#header-container , #header-in,.hlt-center-logo, .header-container-in,
 .container, .cf ,.header-container {
     background:transparent;
-}
 }
 #main {
   border-radius: 15px;
@@ -46,8 +46,6 @@ body {
 	padding:0.4em;
 }
 
-
-
 #footer {
   clear: both;
   background-color: rgba(0, 0, 0, 0.5);
@@ -71,10 +69,9 @@ body {
 .article h2 {
 	position: relative;
 	padding: .5em .75em;
-	/*margin:0 -15px 35px -17px;*/
 	margin-bottom:35px;
-	background-color:#24ade2;
-	border:1px solid #24ade2;
+	background-color:#ff6347;
+	border:1px solid #ff6347;
 	color:#fafafa;
 	font-weight: 700;
 	border-radius: 8px;
@@ -89,39 +86,77 @@ body {
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
-	border-top: 15px solid #24ade2;
+	border-top: 15px solid #ff6347;
 }
 
 .article h2.matome {
+	background-color:#dc143c;
+	border:1px solid #dc143c;
 }
 .article h2.matome::after {
+	border-top: 15px solid #dc143c;
 }
 
-.article h4 {
-	position:relative;
-	padding:0.25em 1.5em;
-	color:#474747;
-	font-weight:lighter;
-border:dashed 2px #fff;
-box-shadow:Opx Opx Opx 4px #dfefff;
-background:-moz-linear-gradient(to right,rgb(194,234,240),#dfefff);
-background:-webkit-linear-gradient(to right,rgb(194,234,240),#dfefff); background:linear-gradient(to right,rgb(194,234,240),#dfefff);
-text-shadow:1px 1px 1px #fff;
-}
-#under-entry-body h2 ,
 .article h3 {
 	position:relative;
-	padding:0.25em 0.25em 0.25em 1em;
-	line-height: 1.4;
+	padding:0.25em 1em;
+	color:#474747;
+	font-weight: 300;
+	border:2px dashed #fff;
+	box-shadow: 0 0 0 4px #ffc994;
+	background:-moz-linear-gradient(to right,rgb(255,185,115),#ffc994);
+	background:-webkit-linear-gradient(to right,rgb(255,185,115),#ffc994);
+	background:linear-gradient(to right,rgb(255,185,115),#ffc994);
+	text-shadow: 1px 1px 1px #fff;
+}
+.article h3::after {
+	position:absolute;
+	content:"";
+	left:-7px;
+	top:-7px;
+	border-width: 0 0 16px 16px;
+	border-style: solid;
+	border-color: #fff #fff #fff4ea;
+	border-shadow:1px 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 1px 2px 0 rgba(0,0,0,0.29);
+}
+#under-entry-body h2 ,
+.article h4 {
+	position:relative;
+	padding:2px 5px 2px 25px;
+	margin-left:1em;
+	line-height: 1,4;
 	border: 1px solid #ffd98a;
-	color:#6cb4e4;
-border:none;
-border-top:solid 2px #6cb4e4;
-border-bottom:solid 2px #6cb4e4;
-background:-webkit-repeating-linear-gradient(-45deg,#f0f8ff,#f0f8ff 3px,#
-e9f4ff 3px,#e9f4ff 7px);
-background:repeating-linear-gradient(-45deg,#f0f8ff,#f0f8ff 3px,#e9f4ff 3px,#e9f4ff 7px);
-text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+	color: #474747;
+	font-size:20px;
+	background:#ffd98a;
+	border-radius: 0 10px 10px 0;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.29);
+}
+#under-entry-body h2:before,
+.article h4:before {
+	position:absolute;
+	font-family: FontAwesome;
+	content:"\f040";
+	display: inline-block;
+	line-height: 40px;
+	padding: 0;
+	color:#fff;
+	font-size: 1.2em;
+	text-align: center;
+	height:40px;
+	width:40px;
+	line-height: 40px;
+	font-weight: normal;
+	left:-1em;
+	top:50%;
+	transform:translateY(-50%);
+	border:solid 3px #fff;
+	border-radius:50%;
+	background: #ffa337;
+	box-shadow:1px 1px 2px rgba(0.0.0.0.29);
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.1);
+
 }
 #under-entry-body h2#reply-title:before {
 	content:"\f004";  /* ハート */
@@ -130,96 +165,84 @@ text-shadow:1px 1px 1px rgba(0,0,0,0.15);
 .article h5 {
 	position:relative;
 	padding:0.25em 0 0.25em 2.5em;
-    border:none;
+	border:none;
 }
 .article h5::after {
 	content:"";
 	display: block;
 	height:4px;
 	margin-left:-2.5em;
-background:-moz-linear-gradient(to right,rgb(160,224,240),#dfefff); background:-webkit-linear-gradient(to right,rgb(160,224,240),#dfefff); background:linear-gradient(to right,rgb(160,224,240),#dfefff);
+	background: -moz-linear-gradient(to right,rgb(255,185,115),#fff4ea);
+	background: -webkit-linear-gradient(to right,rgb(255,185,115),#fff4ea);
+	background: linear-gradient(to right,rgb(255,185,115),#fff4ea);
 }
-h5:before,
 .article h5::before {
 	position: absolute;
 	font-family: FontAwesome;
-content:"\f00c";
-color:#24ade2;
-font-size:1.4em;
-width:35px;
-height:35px;
-top:0;
-left:17px;
+	content:"\f00c";
+	color:#ff6347;
+	font-size: 1.2em;
+	width:35px;
+	height:35px;
+	top:5px;
+	left:17px;
 }
 h3.widget-title ,
 .article h6 {
 	position: relative;
-	/*margin-left: 3em;*/
-  color:#333333;
-  text-shadow:1px 1px 1px #fff;
+	margin-left: 3em;
+	background: transparent;
+	color:#333333;
+	border:none;
+	text-shadow: 1px 1px 1px #dcdcdc;
+	z-index: 0;
 }
 h3.widget-title:before ,
 .article h6:before {
-position:absolute;
-content:"";
-border-radius:50%;
-	top:10px;
+	position: absolute;
+	top:3px;
 	left:-8px;
+	content:"";
+	background: #ffd98a;
 	width:35px;
 	height:35px;
-	background: #24ade2;
--moz-transform:translateY(-50%);
--webkit-transform:translateY(-50%);
--o-transform:translateY(-50%);
--ms-transform:translateY(-50%);
-	transform:translateY(-50%);
-	z-index:-1;
+	border-radius: 50%;
+	z-index: -1;
 }
 h3.widget-title {
-	margin: 0 0 6px 0;
-    background:transparent;
+	margin:0;
 }
 h3.widget-title:before {
-	top:30px;
-	left:-3px;
-	width:40px;
-	height:40px;
+	top:10px;
+	left:0px;
+	width:33px;
+	height:33px;
+	background: #ffb694;
 }
-
-#site-description{	/*** marine add ***/
-	display: none;
-  margin:0;
-	padding:0;
-	margin-left:-9999px;
-}
-.top-title-catchphrase {
-	display: none;
-}
-
 
 .article ul {
 	position: relative;
 	padding: 0.5em 1em 0.5em 2.3em;
-	margin:2em auto;
-	background:#d5ebff;
-	box-shadow: 0 0 0 10px #d5ebff;
-	border: dashed 3px #fff;
-	border-radius: 5px;
-  width: 96%;
+	margin:2em 0;
+	background:#fff4ea;
+	box-shadow: 0 0 0 10px #fff4ea;
+	border: dashed 3px #ffdbb7;
+	border-radius: 3px;
 }
 .article ul li {
-	line-height: 1.5;
+	line-height: 1;
 	padding:0.6em 0.6em 0.6em 15px;
+	color:#454545;
 	list-style-type: none!important;
 	text-shadow: 1px 1px 1px #fff;
 }
 .article ul li:before {
 	position: absolute;
 	font-family: FontAwesome;
-	content:"\f00c";
+	content:"\f046";
 	font-size: 1.5em;
-	font-weight: bold;
-	color:#24ade2;
+	font-weight: 700;
+	color:#ff6347;
 	line-height: 0.8em;
 	left:18px;
 	text-shadow: 1px 1px 1px #fff;
@@ -248,6 +271,62 @@ h3.widget-title:before {
 .article ul.snsb li:before ,
 .article ul.snsp li:before {
 	content:"";
+}
+.article ol {
+	counter-reset: number;
+	list-style: none!important;
+	padding:0.5em 1em;
+	border:solid 2px #ffb107;
+	border-radius: 10px;
+}
+.article ol.toc-list {
+	counter-reset: number;
+	list-style: none!important;
+	padding:0 0.5em;
+	border:none;
+}
+.article ol li {
+	position: relative;
+	border-bottom: dashed 1px #dcdcdc;
+	padding:0.5em 0.5em 0.5em 30px;
+	line-height: 1.5em;
+}
+
+.article ol.toc-list li {
+	position: relative;
+	border-bottom: dashed 1px #dcdcdc;
+	padding:0.2em 0.2em 0em 30px;
+	line-height: 1.5em;
+}
+
+.article ol li ol {
+	border:none;
+	border-radius: 0px;
+	padding:0.1em 0;
+}
+
+.article ol li:last-of-type {
+	border-bottom: none; /* 最後の１行はボーダーを消す */
+}
+.article ol li::before {
+	position:absolute;
+	left:0;
+	top:5px;
+	counter-increment: number;
+	content:counter(number);
+	/* 数字のデザインを変える */
+	display: inline-block;
+	background: #ffb107;
+	color:#fff;
+	font-family: 'Avenir','Arial Black','Arial',sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height:27px;
+	border-radius: 50%;
+	width: 25px;
+	height:25px;
+	text-align: center;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.1);
 }
 
 
@@ -319,20 +398,12 @@ h3.widget-title:before {
   text-indent:90px;
 }
 
-#site-description{	/*** marine add ***/
-	display: none;
-  margin:0;
-	padding:0;
-	margin-left:-9999px;
-}
-
 #footer a{
   color: #fff;
 }
 #footer a:hover{
   color: #333;
 }
-
 
 
 
