@@ -396,9 +396,9 @@ function register_footer_mobile_widget_area(){
     'name' => __( 'フッター（モバイル用）', THEME_NAME ),
     'id' => 'footer-mobile',
     'description' => __( 'モバイルで表示するウィジットエリアです。768px以下で表示されます。', THEME_NAME ),
-    'before_widget' => '<aside id="%1$s" class="widget widget-footer-right %2$s">',
+    'before_widget' => '<aside id="%1$s" class="widget widget-footer-mobile %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-footer-right-title footer-title">',
+    'before_title' => '<h3 class="widget-footer-mobile-title footer-title">',
     'after_title' => '</h3>',
   ));
 
