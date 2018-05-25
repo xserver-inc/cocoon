@@ -177,76 +177,76 @@
 
 .sns-share{
   @extend %margin_top_and_bottom_in_content;
-  &.ss-top{
-    margin-top: 0;
-    margin-bottom: 0;
+}
 
-    .sns-share-message{
-      display: none;
+.ss-top{
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .sns-share-message{
+    display: none;
+  }
+}
+
+.sns-share{
+  //カラム数
+  &.ss-col-1 a{
+    width: 100%;
+  }
+
+  &.ss-col-2 a{
+    width: 49%;
+  }
+
+  &.ss-col-3 a{
+
+  }
+
+  &.ss-col-4 a{
+    width: 24%;
+  }
+
+  &.ss-col-5 a{
+    width: 19%;
+  }
+
+  &.ss-col-6 a{
+    width: 16%;
+  }
+
+  %high_and_low{
+    display: flex;
+    align-content: center;
+
+    line-height: 16px;
+    .social-icon,
+    .button-caption{
+      display: block;
+      font-size: 16px;
+      margin: 0;
+      &.button-caption{
+        font-size: 12px;
+      }
     }
   }
 
-  &.ss-top,
-  &.ss-bottom{
-    //カラム数
-    &.ss-col-1 a{
-      width: 100%;
+  //ロゴ・キャプション配置
+  &.ss-high-and-low-lc a{
+    @extend %high_and_low;
+    flex-direction: column;
+    >span{
+      padding-top: 3px;
     }
+  }
 
-    &.ss-col-2 a{
-      width: 49%;
-    }
+  &.ss-high-and-low-cl a{
+    @extend %high_and_low;
+    flex-direction: column-reverse;
+  }
 
-    &.ss-col-3 a{
-
-    }
-
-    &.ss-col-4 a{
-      width: 24%;
-    }
-
-    &.ss-col-5 a{
-      width: 19%;
-    }
-
-    &.ss-col-6 a{
-      width: 16%;
-    }
-
-    %high_and_low{
-      display: flex;
-      align-content: center;
-
-      line-height: 16px;
-      .social-icon,
-      .button-caption{
-        display: block;
-        font-size: 16px;
-        margin: 0;
-        &.button-caption{
-          font-size: 12px;
-        }
-      }
-    }
-
-    //ロゴ・キャプション配置
-    &.ss-high-and-low-lc a{
-      @extend %high_and_low;
-      flex-direction: column;
-      >span{
-        padding-top: 3px;
-      }
-    }
-
-    &.ss-high-and-low-cl a{
-      @extend %high_and_low;
-      flex-direction: column-reverse;
-    }
-
-    //ボタンカラー
-    &{
-      @extend %sns_button_color;
-    }
+  //ボタンカラー
+  &{
+    @extend %sns_button_color;
   }
 }
 
@@ -255,36 +255,33 @@
 }
 
 $sns_button_margin_bottom: 8px;
-// ↓これ必要か？
-// .ss-top,
-// .ss-bottom{
-  .sns-share-buttons{
-    @extend %sns_buttons;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+.sns-share-buttons{
+  @extend %sns_buttons;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+
+  a{
+    width: 32%;
+    margin-bottom: $sns_button_margin_bottom;
+    font-size: 18px;
+    display: inline-flex;
     align-content: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-    a{
-      width: 32%;
-      margin-bottom: $sns_button_margin_bottom;
-      font-size: 18px;
-      display: inline-flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+    .button-caption{
+      font-size: 16px;
+      margin-left: 10px;
+    }
 
-      .button-caption{
-        font-size: 16px;
-        margin-left: 10px;
-      }
-
-      .share-count{
-        @include service_count;
-      }
+    .share-count{
+      @include service_count;
     }
   }
-// }
+}
 
 //シェア数の非表示
 .sbc-hide .share-count{
