@@ -406,15 +406,26 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
   //Amazon商品紹介iframeのAMP化
-  $pattern = '{<iframe.+?src="(.+?rcm-fe\.amazon-adsystem\.com.+?)".+?</iframe>}is';
+  $pattern = '{<iframe.+?src="(.+?rcm-fe\.amazon-adsystem\.com.+?)".+?(width="(\d+)")?.(height="(\d+)")?.+?</iframe>}is';
   if (preg_match_all($pattern, $the_content, $m)) {
     $all_idx = 0;
     $url_idx = 1;
+    $width_attr_idx = 2;
+    $width_idx = 3;
+    $height_attr_idx = 4;
+    $height_idx = 5;
     //_v($m);
     if ($m[0]) {
       $i = 0;
       foreach ($m[$all_idx] as $key => $iframe_raw) {
-        $iframe_new = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="'.$m[$url_idx][$i].'" width="120" height="240">'.$amp_placeholder.'</amp-iframe>';
+        $url = $m[$url_idx][$i];
+        $width = 120;
+        $height = 240;
+        if (isset($m[$width_idx]) && isset($m[$height_idx])) {
+          $width = $m[$width_idx][$i];
+          $height = $m[$height_idx][$i];
+        }
+        $iframe_new = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="'.$url.'" width="'.$width.'" height="'.$height.'">'.$amp_placeholder.'</amp-iframe>';
         //_v($iframe_new);
         $the_content = str_replace($iframe_raw, $iframe_new, $the_content);
         $i++;
@@ -793,7 +804,7 @@ function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $
     //$selector = get_cleaned_css_selector($selector);
 
     //調べるまでもなく最初から存在するとわかっているセレクターは次に飛ばす（多少なりとも処理時間の短縮）
-    $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3', 'amazon-btn', 'amazon-parts', 'amp-iframe');
+    $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3');
     if (in_array($selector, $elements)) {
       continue;
     }
