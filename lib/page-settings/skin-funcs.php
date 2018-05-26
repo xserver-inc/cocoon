@@ -128,14 +128,14 @@ function get_skin_infos(){
           $skin_name = trim(strip_tags($matches[2]));
           //優先度（順番）が設定されている場合は順番取得
           if (preg_match('/Priority: *(.+)/i', $css, $m)) {
-            $priority = floatval($m[1]);
+            $priority = floatval(trim($m[1]));
           } else {
             $priority = 9999999;
           }
           //説明文が設定されている場合
           $description = null;
           if (preg_match('/Description: *(.+)/i', $css, $m)) {
-            $description = $m[1];
+            $description = trim($m[1]);
           }
           //スキンURLが設定されている場合
           $skin_page_uri = null;
@@ -145,22 +145,22 @@ function get_skin_infos(){
           //作者が設定されている場合
           $author = null;
           if (preg_match('/Author: *(.+)/i', $css, $m)) {
-            $author = $m[1];
+            $author = trim($m[1]);
           }
           //作者サイトが設定されている場合
           $author_uri = null;
           if (preg_match('/Author URI: *(.+)/i', $css, $m)) {
-            $author_uri = $m[1];
+            $author_uri = trim($m[1]);
           }
           //スキンスクリーンショットが設定されている場合
           $screenshot_uri = null;
           if (preg_match('/Screenshot URI: *(.+)/i', $css, $m)) {
-            $screenshot_uri = $m[1];
+            $screenshot_uri = trim($m[1]);
           }
           //バージョンが設定されている場合
           $version = null;
           if (preg_match('/Version: *(.+)/i', $css, $m)) {
-            $version = $m[1];
+            $version = trim($m[1]);
           }
 
 

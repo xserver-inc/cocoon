@@ -33,6 +33,7 @@
               $description = $info['description'];
               $author = $info['author'];
               $author_uri = $info['author_uri'];
+              $screenshot_uri = $info['screenshot_uri'];
               $version = $info['version'];
 
               $skin_text = $skin_name.' ';
@@ -45,6 +46,11 @@
                 $author_text = '&nbsp;&nbsp;<span style="font-style: italic;font-size: 0.9em;">['.__( '作者', THEME_NAME ).': <a href="'.$author_uri.'" target="_blank">'.$author.'</a>]</span>';
               }
 
+              $screenshot_text = null;
+              if ($screenshot_uri) {
+                $screenshot_text = get_skin_preview_tag($screenshot_uri);
+              }
+
               if ($version) {
                 $version = 'v.'.strip_tags($version).' ';
               }
@@ -53,7 +59,7 @@
                 $description = '<br><span class="indent">'.strip_tags($description).'</span>';
               }
 
-              $caption = $skin_text.$author_text;//.$description;
+              $caption = $skin_text.$author_text.$screenshot_text;//.$description;
               //var_dump($caption);
               $options += array($file_url => $caption);
             }

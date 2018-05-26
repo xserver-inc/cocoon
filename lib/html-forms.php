@@ -306,8 +306,6 @@ function generate_the_site_logo_tag($is_header = true){
 endif;
 
 
-
-
 //ツールチップの生成
 if ( !function_exists( 'generate_tooltip_tag' ) ):
 function generate_tooltip_tag($content){?>
@@ -319,6 +317,28 @@ function generate_tooltip_tag($content){?>
   <?php
 }
 endif;
+
+
+//ツールチップの生成
+if ( !function_exists( 'generate_skin_preview_tag' ) ):
+function generate_skin_preview_tag($url){?>
+  <span class="tooltip fa fa-picture-o">
+    <span class="tip-content">
+      <img src="<?php echo $url; ?>" alt="">
+
+    </span>
+  </span>
+  <?php
+}
+endif;
+if ( !function_exists( 'get_skin_preview_tag' ) ):
+function get_skin_preview_tag($url){
+  ob_start();
+  generate_skin_preview_tag($url);
+  return ob_get_clean();
+}
+endif;
+
 
 
 //カラーピッカーの生成
