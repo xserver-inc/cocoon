@@ -152,6 +152,11 @@ function get_skin_infos(){
           if (preg_match('/Author URI: *(.+)/i', $css, $m)) {
             $author_uri = $m[1];
           }
+          //スキンスクリーンショットが設定されている場合
+          $screenshot_uri = null;
+          if (preg_match('/Screenshot URI: *(.+)/i', $css, $m)) {
+            $screenshot_uri = $m[1];
+          }
           //バージョンが設定されている場合
           $version = null;
           if (preg_match('/Version: *(.+)/i', $css, $m)) {
@@ -174,6 +179,7 @@ function get_skin_infos(){
             'skin_page_uri' => $skin_page_uri,
             'author' => $author,
             'author_uri' => $author_uri,
+            'screenshot_uri' => $screenshot_uri,
             'version' => $version,
           );
         }
