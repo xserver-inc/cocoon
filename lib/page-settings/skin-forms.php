@@ -59,7 +59,7 @@
                 $description = '<br><span class="indent">'.strip_tags($description).'</span>';
               }
 
-              $caption = $skin_text.$author_text.$screenshot_text;//.$description;
+              $caption = $screenshot_text.$skin_text.$author_text;//.$description;
               //var_dump($caption);
               $options += array($file_url => $caption);
             }
