@@ -212,10 +212,10 @@ blockquote::after {
   color: #fff;
 }
 
-.footer a {
+#footer a {
   color:#fff;
 }
-.footer a:hover {
+#footer a:hover {
   background-color: transparent;
   color:#522b3d;
 }
