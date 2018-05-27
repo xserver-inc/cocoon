@@ -170,26 +170,6 @@ function add_toc_before_1st_h2($the_content){
     }
 
     ///////////////////////////////////////
-    // jQueryの見出し処理（PHPの置換処理と比べてこちらの方が信頼度高い）
-    ///////////////////////////////////////
-    // $script = '
-    // (function($){
-    //   $(document).ready(function(){
-    //     var hxs = $(".'.$targetclass.'").find("' . implode(',', $harray) . '");
-    //     //console.log(hxs);
-    //     hxs.each(function(i, e) {
-    //       //console.log(e);
-    //       //console.log(i+1);
-    //       $(e).attr("id", "toc"+(i+1));
-    //     });
-    //   });
-    // })(jQuery);';
-    // //JavaScriptの縮小化
-    // $script_min = minify_js($script);
-    // //javascript.jsの後に読み込む
-    // wp_add_inline_script( THEME_JS, $script_min, 'after' ) ;
-
-    ///////////////////////////////////////
     // PHPの見出し処理（条件によっては失敗するかも）
     ///////////////////////////////////////
     $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/i', $the_content, $m);
@@ -213,8 +193,6 @@ function add_toc_before_1st_h2($the_content){
         $tag_end = $m[$tag_end_index][$i];
 
         $now_depth = intval(str_replace('h', '', $h));
-        //_v('$set_depth='.$set_depth.', '.'$now_depth='.$now_depth);
-        //_v($tag_all);
 
         //設定より見出しが深い場合はスキップ
         if ($set_depth < $now_depth) {
@@ -223,16 +201,7 @@ function add_toc_before_1st_h2($the_content){
         }
 
         $new = $tag.'<span id="toc'.strval($count).'">'.$h_content.'</span>'.$tag_end;
-        //$new = str_replace('<'.$h, '<'.$h.' id="toc'.strval($i+1).'"', $value);
 
-        // var_dump($value);
-        // var_dump($new);
-
-        //_v($value);
-        // _v($new);
-
-        // $count = 1;
-        // $the_content = str_replace($value, $new, $the_content, $count);
         $the_content = preg_replace('/'.preg_quote($value, '/').'/', $new, $the_content, 1);
 
         $i++;
