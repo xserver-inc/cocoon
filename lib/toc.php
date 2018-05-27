@@ -19,6 +19,10 @@ if (is_toc_visible()) {
 }
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
+  //フォーラムページだと表示しない
+  if (is_plugin_fourm_page()) {
+    return $the_content;
+  }
 
   //投稿ページだと表示しない
   if (!is_single_toc_visible() && is_single()) {
