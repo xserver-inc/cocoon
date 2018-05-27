@@ -1,0 +1,221 @@
+/*
+  Skin Name: ドット・レイニーブルー
+  Description: 暗めの青をベースにドット柄を背景にしたスキン
+  Skin URI: https://woma2.com/design/cocoon/skin01/
+  Author: をまつ
+  Author URI: https://woma2.com/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-dot-rainyblue.jpg
+  Version: 0.0.2
+  Priority: 10010
+*/
+/*以下にスタイルシートを記入してください*/
+
+body.public-page {
+  background: url("./images/blue-dot.jpg");
+  background-repeat: repeat;
+}
+/*見出し*/
+h1.entry-title {
+  padding: 1em 0;
+}
+.article h2 {
+  border: 0;
+  padding: 0.7em;
+  background: transparent;
+  border-left: solid 5px #395370;
+  border-bottom: solid 2px #395370;
+}
+.article h3 {
+  border: 0;
+  position: relative;
+  padding-left: 1.4em;
+  border-bottom: solid 2px #395370;
+}
+.article h3:before {
+  font-family: "FontAwesome";
+  position: absolute;
+  color: #395370;
+  content: "\f058";
+  font-size: 1.2em;
+  left: 0;
+  top: 0;
+}
+@media screen and (max-width: 440px) {
+.article h3:before {
+  font-family: "FontAwesome";
+  position: absolute;
+  color: #395370;
+  content: "\f058";
+  font-size: 1.3em;
+  left: 0;
+  top: 10%;
+}
+}
+.article h4 {
+  border: 0;
+  background-color: #c4b682;
+}
+.article h5 {
+  border: 0;
+  border-bottom: dashed 1px #395370;
+}
+
+/*目次*/
+.toc {
+  border: 1px solid #395370;
+}
+/*引用文*/
+blockquote {
+  border: 0;
+  background-color: #d8c7d2;
+}
+blockquote::before,
+blockquote::after {
+  color: #395370;
+  content: '”';
+}
+/*サイドバーウィジェット*/
+.sidebar h3 {
+  border: 0;
+  position: relative;
+  padding-left: 0.6em;
+  padding-bottom: 0.2em;
+  background: transparent;
+  border-bottom: solid 2px #395370;
+}
+.sidebar h3:before{
+  font-family: "FontAwesome";
+  content: "\f105";
+  position: absolute;
+  color: #395370;
+  font-size: 1em;
+  left: 0;
+  top: 0.8em;
+
+}
+/*関連記事見出し*/
+.related-entry-heading {
+  padding: 0.1em 0;
+  background: transparent;
+  border-bottom: solid 2px #395370;
+}
+.related-entry-heading::before {
+  font-family: "FontAwesome";
+  content: "\f15c";
+  color: #395370;
+}
+/*コメント見出し*/
+.comment-title {
+  padding: 0.1em 0;
+  background: transparent;
+  border-bottom: solid 2px #395370;
+}
+.comment-title::before {
+  font-family: "FontAwesome";
+  content: "\f086";
+  color: #395370;
+}
+/*ページネーション*/
+.pagination {
+  border: 0;
+  margin: 14px 0;
+  clear: both;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 9px;
+}
+.pagination .current {
+  background-color: #395370;
+  border-radius: 9px;
+  color: #fff;
+}
+.pagination .prev::before {
+  font-family: FontAwesome;
+  content: "\f0d9";
+  padding-right: 3px;
+  padding-right: 3px;
+}
+.pagination .next::before {
+  font-family: FontAwesome;
+  content: "\f0da";
+  padding-right: 3px;
+  padding-left: 3px;
+}
+.pagination a:hover {
+  color: #522b3d;
+  background-color: #c4b682;
+  transition: all 0.5s ease;
+}
+.page-numbers {
+  color: #395370;
+  text-decoration: none;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  margin: 0 4px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 9px;
+}
+.page-numbers.dots {
+  opacity: 0.6;
+  background-color: #c4b682;
+  border-radius: 6px;
+}
+/* 人気記事ウィジェットランキング表示 */
+.widget-entry-cards.ranking-visible .widget-entry-card-thumb::before {
+  background-color: #395370;
+}
+/*「次のページ」ページネーション*/
+.pagination-next-link {
+  background-color: #fff;
+  border: 1px solid #395370;
+  color: #395370;
+  font-size: 1em;
+  padding: 9px 0;
+}
+.pagination-next-link:hover {
+  background-color: #395370;
+  color: #fff;
+}
+/* マルチページのページャーリンク*/
+.pager-links span {
+  background-color: #c4b682;
+}
+.pager-links a:hover span {
+  background-color: #395370;
+  color: #fff;
+}
+/*フッター*/
+.footer {
+  background-color: #395370;
+}
+.footer.logo-text, .copyright {
+  color:#fff;
+}
+
+.footer-bottom-logo .site-name-text {
+  color: #fff;
+}
+
+.copyright, .navi-footer-in a {
+  color: #fff;
+}
+
+.footer-left, .footer-center, .footer-right {
+  width: 33.33%;
+  color: #fff;
+}
+
+.footer a {
+  color:#fff;
+}
+.footer a:hover {
+  background-color: transparent;
+  color:#522b3d;
+}
