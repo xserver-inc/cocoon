@@ -647,12 +647,15 @@ select option.fa{
   }
 
   textarea{
-    min-height: 60px;
-    max-height: 120px
+    resize: both;
+    min-height: 0px;
+    height: 120px;
+    max-height: 600px;
   }
 
   .ranking-item-link-tag textarea{
-    max-height: 80px
+    height: 80px;
+
   }
 
   .ranking-item-img-desc > div,
@@ -898,3 +901,7 @@ select option.fa{
 .tooltip.fa-picture-o{
   color: #285294;
 }
+
+// #ranking-items textarea {
+//   resize: both !important;
+// }
