@@ -58,6 +58,7 @@
             );
             generate_radiobox_tag(OP_ENTRY_CARD_TYPE, $options, get_entry_card_type());
             generate_tips_tag(__( '一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページに表示する最大投稿数」から変更してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/index-entry-card-type/'));
+            generate_tips_tag(__( '縦型カードに設定した場合はサムネイルの再生成を行ってください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/regenerate-thumbnails/'));
 
             echo '<div'.get_not_allowed_form_class(!is_entry_card_type_entry_card()).'>';
             generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_1_COLUMN , is_smartphone_entry_card_1_column(), __( 'スマホ端末で縦型のエントリーカードを1カラムにする', THEME_NAME ));
