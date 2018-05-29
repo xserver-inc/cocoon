@@ -14,8 +14,8 @@ add_image_size('thumb150', 150, 150, true);//ページ送りナビ
 add_image_size('thumb120', 120,  67, true);//新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
 add_image_size('thumb160', 160,  90, true);//関連記事デフォルト・関連記事4列
 add_image_size('thumb320', 320, 180, true);//関連記事3列
-//本文レスポンシブ表示用
-add_image_size('thumb320_raw', 320, 0, false);
+// //本文レスポンシブ表示用
+// add_image_size('thumb320_raw', 320, 0, false);
 // add_image_size('thumb360_raw', 360, 0, false);
 // add_image_size('thumb375_raw', 375, 0, false);
 // add_image_size('thumb414_raw', 414, 0, false);
@@ -30,9 +30,23 @@ add_image_size('thumb320_raw', 320, 0, false);
 // add_filter( 'the_content', 'wptexturize' , 7);
 
 //縦型カード2列用の可変サムネイル
-add_image_size(get_vartical_card_2_thumbnail_size(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
+if (is_entry_card_type_vertical_card_2()) {
+  add_image_size(get_vartical_card_2_thumbnail_size(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
+}
 //縦型カード3列用の可変サムネイル
-add_image_size(get_vartical_card_3_thumbnail_size(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
+if (is_entry_card_type_vertical_card_3()) {
+  add_image_size(get_vartical_card_3_thumbnail_size(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
+}
+
+
+//タイルカード2列用の可変サムネイル
+if (is_entry_card_type_tile_card_2()) {
+  add_image_size(get_tile_card_2_thumbnail_size(), get_tile_card_2_width(), get_tile_card_2_height(), false);
+}
+//タイルカード3列用の可変サムネイル
+if (is_entry_card_type_tile_card_3()) {
+  add_image_size(get_tile_card_3_thumbnail_size(), get_tile_card_3_width(), get_tile_card_3_height(), false);
+}
 
 //コンテンツの幅の指定
 if ( ! isset( $content_width ) ) $content_width = get_site_wrap_width();

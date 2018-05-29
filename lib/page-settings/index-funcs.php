@@ -28,6 +28,26 @@ function is_entry_card_type_entry_card(){
   return get_entry_card_type() == 'entry_card';
 }
 endif;
+if ( !function_exists( 'is_entry_card_type_vertical_card_2' ) ):
+function is_entry_card_type_vertical_card_2(){
+  return get_entry_card_type() == 'vertical_card_2';
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_vertical_card_3' ) ):
+function is_entry_card_type_vertical_card_3(){
+  return get_entry_card_type() == 'vertical_card_3';
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_tile_card_2' ) ):
+function is_entry_card_type_tile_card_2(){
+  return get_entry_card_type() == 'tile_card_2';
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_tile_card_3' ) ):
+function is_entry_card_type_tile_card_3(){
+  return get_entry_card_type() == 'tile_card_3';
+}
+endif;
 
 //スマートフォンのエントリーカードを1カラムに
 define('OP_SMARTPHONE_ENTRY_CARD_1_COLUMN', 'smartphone_entry_card_1_column');

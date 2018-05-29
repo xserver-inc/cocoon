@@ -188,7 +188,7 @@ function get_tile_card_2_width(){
 endif;
 if ( !function_exists( 'get_tile_card_2_height' ) ):
 function get_tile_card_2_height(){
-  return 'AUTO';
+  return 0;
 }
 endif;
 if ( !function_exists( 'get_tile_card_2_thumbnail_size' ) ):
@@ -213,7 +213,7 @@ function get_tile_card_3_width(){
 endif;
 if ( !function_exists( 'get_tile_card_3_height' ) ):
 function get_tile_card_3_height(){
-  return 'AUTO';
+  return 0;
 }
 endif;
 if ( !function_exists( 'get_tile_card_3_thumbnail_size' ) ):
