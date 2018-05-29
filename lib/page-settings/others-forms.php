@@ -49,6 +49,19 @@
           </td>
         </tr>
 
+        <!-- 日本語スラッグ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AUTO_POST_SLUG_ENABLE, __('日本語スラッグ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_AUTO_POST_SLUG_ENABLE , is_auto_post_slug_enable(), __( '日本語スラッグの時はpost-XXXXのような連番形式にする', THEME_NAME ));
+            generate_tips_tag(__( 'スラッグが日本語の場合は、無理やり半角英数字と投稿IDで短めのURLに変換します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

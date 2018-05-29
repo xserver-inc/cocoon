@@ -8,3 +8,6 @@ update_theme_option(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE);
 
 //Simplicityから設定情報の移行
 update_theme_option(OP_MIGRATE_FROM_SIMPLICITY);
+
+//スラッグが日本語の時はpost-XXXXのような連番形式にする
+update_theme_option(OP_AUTO_POST_SLUG_ENABLE);

@@ -23,3 +23,25 @@ function is_migrate_from_simplicity(){
   return get_theme_option(OP_MIGRATE_FROM_SIMPLICITY);
 }
 endif;
+
+//スラッグが日本語の時はpost-XXXXのような連番形式にする
+define('OP_AUTO_POST_SLUG_ENABLE', 'auto_post_slug_enable');
+if ( !function_exists( 'is_auto_post_slug_enable' ) ):
+function is_auto_post_slug_enable(){
+  return get_theme_option(OP_AUTO_POST_SLUG_ENABLE);
+}
+endif;
+
+if (is_auto_post_slug_enable()) {
+  add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
+}
+if ( !function_exists( 'auto_post_slug' ) ):
+function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
+  $type = utf8_uri_encode( $post_type );
+  if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) &&
+     ( $post_type == 'post' || $post_type == 'page') ) {//投稿もしくは固定ページのときのみ実行する
+    $slug = $type . '-' . $post_ID;
+  }
+  return $slug;
+}
+endif;
