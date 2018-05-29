@@ -12,5 +12,8 @@ update_theme_option(OP_PAGED_CATEGORY_PAGE_NOINDEX);
 //タグページをnoindexとする
 update_theme_option(OP_TAG_PAGE_NOINDEX);
 
+//その他のアーカイブページをnoindexとする
+update_theme_option(OP_OTHER_ARCHIVE_PAGE_NOINDEX);
+
 //添付ファイルページをnoindexとする
 update_theme_option(OP_ATTACHMENT_PAGE_NOINDEX);

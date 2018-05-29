@@ -32,6 +32,14 @@ function is_tag_page_noindex(){
 }
 endif;
 
+//その他のアーカイブページをnoindexとする
+define('OP_OTHER_ARCHIVE_PAGE_NOINDEX', 'other_archive_page_noindex');
+if ( !function_exists( 'is_other_archive_page_noindex' ) ):
+function is_other_archive_page_noindex(){
+  return get_theme_option(OP_OTHER_ARCHIVE_PAGE_NOINDEX, 1);
+}
+endif;
+
 //添付ファイルページをnoindexとする
 define('OP_ATTACHMENT_PAGE_NOINDEX', 'attachment_page_noindex');
 if ( !function_exists( 'is_attachment_page_noindex' ) ):

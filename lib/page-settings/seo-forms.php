@@ -34,6 +34,10 @@
             generate_checkbox_tag(OP_TAG_PAGE_NOINDEX, is_tag_page_noindex(), __( 'タグページをnoindexとする', THEME_NAME ));
             generate_tips_tag(__( 'タグのインデックスページをnoindex設定にします。', THEME_NAME ));
 
+            //その他のアーカイブページをnoindexとする
+            generate_checkbox_tag(OP_OTHER_ARCHIVE_PAGE_NOINDEX, is_other_archive_page_noindex(), __( 'その他のアーカイブページをnoindexとする', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリ・タグ以外のアーカイブページをnoindex設定にします。', THEME_NAME ));
+
             //添付ファイルページをnoindexとする
             generate_checkbox_tag(OP_ATTACHMENT_PAGE_NOINDEX, is_attachment_page_noindex(), __( '添付ファイルページをnoindexとする', THEME_NAME ));
             generate_tips_tag(__( '画像や動画、ファイルなどの添付ページをnoindex設定にします。', THEME_NAME ));
