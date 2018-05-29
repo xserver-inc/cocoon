@@ -1550,3 +1550,36 @@ function is_home_url($url){
   return $url == home_url() || $url == home_url('/');
 }
 endif;
+
+//POSTリクエストか
+if ( !function_exists( 'is_server_request_post' ) ):
+function is_server_request_post(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_METHOD'])) {
+    $res = $_SERVER['REQUEST_METHOD'] == 'POST';
+  }
+  return $res;
+}
+endif;
+
+//GETリクエストか
+if ( !function_exists( 'is_server_request_get' ) ):
+function is_server_request_get(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_METHOD'])) {
+    $res = $_SERVER['REQUEST_METHOD'] == 'GET';
+  }
+  return $res;
+}
+endif;
+
+//リクエストURIがダウンロードボタンか
+if ( !function_exists( 'is_server_request_uri_backup_download_php' ) ):
+function is_server_request_uri_backup_download_php(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_URI'])) {
+    $res = $_SERVER['REQUEST_URI'] == '/wp-content/themes/cocoon-master/lib/page-backup/backup-download.php';
+  }
+  return $res;
+}
+endif;

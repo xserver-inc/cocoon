@@ -4,6 +4,7 @@
 //HTMLソースコードの縮小化
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($buffer) {
+  //_v($buffer);
   // _edump(
   //   array('value' => 'code_minify_call_back', 'file' => __FILE__, 'line' => __LINE__),
   //   'label', 'tag', 'ade5ac'
@@ -148,6 +149,15 @@ endif;
 add_action('after_setup_theme', 'code_minify_buffer_start', 99999999);
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
+  if (is_admin()) return;
+  if (is_server_request_post()) return;
+  if (is_server_request_uri_backup_download_php()) return;
+
+  //global $wpdb;
+  //_v($_SERVER);
+  // global $_MINIFY_ENABLE;
+  // _v($_MINIFY_ENABLE);
+  // if (!$_MINIFY_ENABLE) return;
   // _edump(
   //   array('value' => 1, 'file' => __FILE__, 'line' => __LINE__),
   //   'label', 'tag', 'ade5ac'
@@ -159,6 +169,12 @@ endif;
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
+  if (is_admin()) return;
+  if (is_server_request_post()) return;
+  if (is_server_request_uri_backup_download_php()) return;
+
+  // global $_MINIFY_ENABLE;
+  // if (!$_MINIFY_ENABLE) return;
   if (ob_get_length()){
     ob_end_flush();
   }
