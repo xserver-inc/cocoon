@@ -181,7 +181,7 @@ function get_tile_card_2_width(){
   if (empty($mw)) {
     $mw = 800;
   }
-  $padding = 0;
+  $padding = 10;
   $vcw = round($mw * 0.495) - ($padding * 2);
   return $vcw;
 }
@@ -206,7 +206,7 @@ function get_tile_card_3_width(){
   if (empty($mw)) {
     $mw = 800;
   }
-  $padding = 0;
+  $padding = 7;
   $vcw = round($mw * 0.33) - ($padding * 2);
   return $vcw;
 }
