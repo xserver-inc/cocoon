@@ -132,21 +132,15 @@ function wp_enqueue_scripts_custom() {
       wp_register_script('jquery-masonry', false, array('jquery'), false, true);
       wp_enqueue_script('jquery-masonry');
       //実行コードの記入
-      $data = "
-        (function($){
-          $('#list').masonry({ //#listは記事一覧を囲んでる部分
-            itemSelector: '.entry-card-wrap', //.entry-card-wrapは各記事を囲んでる部分
-            isAnimated: true //アニメーションON
-          });
-        })(jQuery);
-        // jQuery(function(){
-        //   jQuery('#list').masonry({ //#listは記事一覧を囲んでる部分
-        //     itemSelector: '.entry-card-wrap', //.entry-card-wrapは各記事を囲んでる部分
-        //     isAnimated: true //アニメーションON
-        //   });
-        // });
-      ";
-      wp_add_inline_script( 'jquery-masonry', $data, 'after' );
+      $data = minify_js('
+              (function($){
+                $("#list").masonry({
+                  itemSelector: ".entry-card-wrap",
+                  isAnimated: true
+                });
+              })(jQuery);
+            ');
+        wp_add_inline_script( 'jquery-masonry', $data, 'after' );
       }
 
   }

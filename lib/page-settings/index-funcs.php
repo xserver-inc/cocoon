@@ -53,6 +53,16 @@ function is_entry_card_type_tile_card(){
   return (get_entry_card_type() == 'tile_card_2') || (get_entry_card_type() == 'tile_card_3');
 }
 endif;
+if ( !function_exists( 'is_entry_card_type_2_columns' ) ):
+function is_entry_card_type_2_columns(){
+  return (get_entry_card_type() == 'vertical_card_2') || (get_entry_card_type() == 'tile_card_2');
+}
+endif;
+if ( !function_exists( 'is_entry_card_type_3_columns' ) ):
+function is_entry_card_type_3_columns(){
+  return (get_entry_card_type() == 'vertical_card_3') || (get_entry_card_type() == 'tile_card_3');
+}
+endif;
 
 //スマートフォンのエントリーカードを1カラムに
 define('OP_SMARTPHONE_ENTRY_CARD_1_COLUMN', 'smartphone_entry_card_1_column');

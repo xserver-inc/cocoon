@@ -731,8 +731,22 @@ function get_additional_entry_card_classes($option = null){
   switch (get_entry_card_type()) {
     case 'vertical_card_2':
     case 'vertical_card_3':
+    case 'tile_card_2':
+    case 'tile_card_3':
       $classes .= ' ect-vertical-card';
       break;
+  }
+  switch (get_entry_card_type()) {
+    case 'tile_card_2':
+    case 'tile_card_3':
+      $classes .= ' ect-tile-card';
+      break;
+  }
+  if (is_entry_card_type_2_columns()) {
+    $classes .= ' ect-2-columns';
+  }
+  if (is_entry_card_type_3_columns()) {
+    $classes .= ' ect-3-columns';
   }
 
   //エントリーカードに枠線を付ける

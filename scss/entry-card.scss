@@ -163,13 +163,26 @@
       margin-right: 0;
     }
   }
+
+  &.ect-tile-card{
+    // .a-wrap{
+    //   padding: 0;
+    //   margin: 10px;
+    // }
+    // .card-content{
+    //   padding: 0 7px;
+    // }
+    .card-meta{
+      position: relative;
+    }
+  }
 }
-.ect-vertical-card .ad-area{
+.ect-2-columns .ad-area{
   width: 49.5%;
   display: inline-block;
 }
 
-.ect-vertical-card-3{
+.ect-3-columns{
   justify-content: space-around;
   .entry-card-wrap{
     width: 33%;
@@ -179,8 +192,14 @@
     max-height: 4em;
     overflow: hidden;
   }
+  // &.ect-tile-card{
+  //   .a-wrap{
+  //     padding: 0;
+  //     margin: 7px;
+  //   }
+  // }
 }
-.ect-vertical-card-3 .ad-area{
+.ect-3-columns .ad-area{
   width: 33%;
 }
 

@@ -913,25 +913,28 @@ img {
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
 }
+.ect-vertical-card.ect-tile-card .card-meta {
+  position: relative;
+}
 
-.ect-vertical-card .ad-area {
+.ect-2-columns .ad-area {
   width: 49.5%;
   display: inline-block;
 }
 
-.ect-vertical-card-3 {
+.ect-3-columns {
   justify-content: space-around;
 }
-.ect-vertical-card-3 .entry-card-wrap {
+.ect-3-columns .entry-card-wrap {
   width: 33%;
   padding: 7px;
 }
-.ect-vertical-card-3 .entry-card-snippet {
+.ect-3-columns .entry-card-snippet {
   max-height: 4em;
   overflow: hidden;
 }
 
-.ect-vertical-card-3 .ad-area {
+.ect-3-columns .ad-area {
   width: 33%;
 }
 

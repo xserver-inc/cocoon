@@ -31,11 +31,11 @@ add_image_size('thumb320', 320, 180, true);//関連記事3列
 
 //縦型カード2列用の可変サムネイル
 if (is_entry_card_type_vertical_card_2()) {
-  add_image_size(get_vartical_card_2_thumbnail_size(), get_vartical_card_2_width(), get_vartical_card_2_height(), true);
+  add_image_size(get_vertical_card_2_thumbnail_size(), get_vertical_card_2_width(), get_vertical_card_2_height(), true);
 }
 //縦型カード3列用の可変サムネイル
 if (is_entry_card_type_vertical_card_3()) {
-  add_image_size(get_vartical_card_3_thumbnail_size(), get_vartical_card_3_width(), get_vartical_card_3_height(), true);
+  add_image_size(get_vertical_card_3_thumbnail_size(), get_vertical_card_3_width(), get_vertical_card_3_height(), true);
 }
 
 
