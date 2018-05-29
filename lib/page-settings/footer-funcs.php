@@ -72,6 +72,6 @@ endif;
 define('OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE', 'footer_navi_menu_text_width_enable');
 if ( !function_exists( 'is_footer_navi_menu_text_width_enable' ) ):
 function is_footer_navi_menu_text_width_enable(){
-  return get_theme_option(OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE);
+  return get_theme_option(OP_FOOTER_NAVI_MENU_TEXT_WIDTH_ENABLE, 1);
 }
 endif;
