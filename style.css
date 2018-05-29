@@ -328,34 +328,6 @@ a:hover {
 }
 
 /************************************
-** とりあえず何でもレスポンシブ化するスタイル
-************************************/
-canvas, iframe, video, svg {
-  max-width: 100%;
-}
-
-.overflow-container {
-  overflow-y: scroll;
-}
-
-.aspect-ratio {
-  height: 0;
-  padding-top: 56.25%;
-  position: relative;
-}
-
-.aspect-ratio--object {
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-/************************************
 ** 本文部分
 ************************************/
 .content-in {
@@ -3243,6 +3215,34 @@ label.screen-reader-text {
   border-left-width: 0px;
 }
 
+/************************************
+** とりあえず何でもレスポンシブ化するスタイル
+************************************/
+canvas, iframe, video, svg {
+  max-width: 100%;
+}
+
+.overflow-container {
+  overflow-y: scroll;
+}
+
+.aspect-ratio {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.aspect-ratio--object {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
 ************************************/
@@ -3313,6 +3313,13 @@ label.screen-reader-text {
 }
 
 iframe[src*="https://www.google.com/maps/embed"] {
+  max-width: 100%;
+}
+
+.fb_iframe_widget {
+  max-width: 100%;
+}
+.fb_iframe_widget span {
   max-width: 100%;
 }
 
@@ -5420,13 +5427,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 .gsc-search-box table th,
 .gsc-search-box table td {
   border: 0;
-}
-
-.fb_iframe_widget {
-  max-width: 100%;
-}
-.fb_iframe_widget span {
-  max-width: 100%;
 }
 
 @media screen and (max-width: 1030px) {
