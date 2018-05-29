@@ -144,7 +144,7 @@ function get_vartical_card_2_thumbnail_size(){
   return 'thumb'.get_vartical_card_2_width().'x'.get_vartical_card_2_height();
 }
 endif;
-//_v(get_vartical_card_2_thumbnail_size());
+
 ///////////////////////////////////////
 // 縦型カード3列用の可変サムネイル用の関数
 ///////////////////////////////////////
@@ -172,7 +172,55 @@ function get_vartical_card_3_thumbnail_size(){
 }
 endif;
 
+///////////////////////////////////////
+// タイルカード2列用の可変サムネイル用の関数
+///////////////////////////////////////
+if ( !function_exists( 'get_tile_card_2_width' ) ):
+function get_tile_card_2_width(){
+  $mw = get_main_column_contents_width();
+  if (empty($mw)) {
+    $mw = 800;
+  }
+  $padding = 0;
+  $vcw = round($mw * 0.495) - ($padding * 2);
+  return $vcw;
+}
+endif;
+if ( !function_exists( 'get_tile_card_2_height' ) ):
+function get_tile_card_2_height(){
+  return 'AUTO';
+}
+endif;
+if ( !function_exists( 'get_tile_card_2_thumbnail_size' ) ):
+function get_tile_card_2_thumbnail_size(){
+  return 'thumb'.get_tile_card_2_width().'x'.get_tile_card_2_height();
+}
+endif;
 
+///////////////////////////////////////
+// タイルカード3列用の可変サムネイル用の関数
+///////////////////////////////////////
+if ( !function_exists( 'get_tile_card_3_width' ) ):
+function get_tile_card_3_width(){
+  $mw = get_main_column_contents_width();
+  if (empty($mw)) {
+    $mw = 800;
+  }
+  $padding = 0;
+  $vcw = round($mw * 0.33) - ($padding * 2);
+  return $vcw;
+}
+endif;
+if ( !function_exists( 'get_tile_card_3_height' ) ):
+function get_tile_card_3_height(){
+  return 'AUTO';
+}
+endif;
+if ( !function_exists( 'get_tile_card_3_thumbnail_size' ) ):
+function get_tile_card_3_thumbnail_size(){
+  return 'thumb'.get_tile_card_3_width().'x'.get_tile_card_3_height();
+}
+endif;
 
 if ( !function_exists( 'get_sidebar_width' ) ):
 function get_sidebar_width(){
