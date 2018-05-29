@@ -127,22 +127,7 @@ function wp_enqueue_scripts_custom() {
     wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
 
     //タイルカード
-    if (is_entry_card_type_tile_card() && !is_singular()) {
-      //wp_deregister_script('jquery-masonry');
-      wp_register_script('jquery-masonry', false, array('jquery'), false, true);
-      wp_enqueue_script('jquery-masonry');
-      //実行コードの記入
-      $data = minify_js('
-              (function($){
-                $("#list").masonry({
-                  itemSelector: ".entry-card-wrap",
-                  isAnimated: true
-                });
-              })(jQuery);
-            ');
-        wp_add_inline_script( 'jquery-masonry', $data, 'after' );
-      }
-
+    wp_enqueue_jquery_masonry();
   }
 
 

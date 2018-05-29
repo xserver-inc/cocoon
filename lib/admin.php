@@ -69,7 +69,8 @@ function admin_print_styles_custom() {
     wp_enqueue_slick();
     //ツリー型モバイルボタン（iframeで読み込むので不要）
     //wp_enqueue_slicknav();
-
+    //タイルカード
+    wp_enqueue_jquery_masonry();
 
     //Google Fonts
     wp_enqueue_google_fonts();
