@@ -12,6 +12,13 @@ function get_toc_filter_priority(){
 }
 endif;
 
+//見出し内容取得関数
+if ( !function_exists( 'get_h_inner_content' ) ):
+function get_h_inner_content($h_content){
+  return strip_tags($h_content);
+}
+endif;
+
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 if (is_toc_visible()) {
@@ -193,7 +200,7 @@ function add_toc_before_1st_h2($the_content){
         $tag_all = $m[$tag_all_index][$i];
         $tag = $m[$tag_index][$i];
         $h = $m[$h_index][$i];
-        $h_content = strip_tags($m[$h_content_index][$i]);
+        $h_content = get_h_inner_content($m[$h_content_index][$i]);
         $tag_end = $m[$tag_end_index][$i];
 
         $now_depth = intval(str_replace('h', '', $h));
