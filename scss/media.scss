@@ -1,7 +1,16 @@
 /************************************
 ** とりあえず何でもレスポンシブ化するスタイル
 ************************************/
-canvas,iframe,video,svg{max-width:100%}.overflow-container{overflow-y:scroll}.aspect-ratio{height:0;padding-top:56.25%;position:relative}.aspect-ratio--object{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%;z-index:100}
+canvas,iframe,video,svg,
+// //pixiv
+// .pixiv-embed iframe,
+// //Googleマップ対応
+// iframe[src*="https://www.google.com/maps/embed"],
+.fb_iframe_widget,
+.fb_iframe_widget span
+{max-width:100%}
+
+.overflow-container{overflow-y:scroll}.aspect-ratio{height:0;padding-top:56.25%;position:relative}.aspect-ratio--object{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%;z-index:100}
 
 /************************************!
 ** YouTubeビデオなどのiframeをレスポンシブにするスタイル
@@ -25,14 +34,7 @@ canvas,iframe,video,svg{max-width:100%}.overflow-container{overflow-y:scroll}.as
 }
 
 /*!Instagramの大きさを調整*/
-.instagram-container .instagram {
-  position: relative;
-  padding-bottom: 120%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
+.instagram-container .instagram,
 /*!Facebookの大きさを調整*/
 .facebook-container .facebook {
   position: relative;
@@ -64,24 +66,17 @@ canvas,iframe,video,svg{max-width:100%}.overflow-container{overflow-y:scroll}.as
   min-width: 200px !important;
 }
 
-.pixiv-embed iframe{
-  max-width: 100%;
-}
-
 //instagram埋め込みスタイルの不具合修正
 .instagram-media {
   position: static !important;
 }
 
-//Googleマップ対応
-iframe[src*="https://www.google.com/maps/embed"]{
-  max-width: 100%;
-}
-
+// //pixiv
+// .pixiv-embed iframe,
+// //Googleマップ対応
+// iframe[src*="https://www.google.com/maps/embed"],
 //Facebook埋め込み
-.fb_iframe_widget{
-  max-width: 100%;
-  span{
-    max-width: 100%;
-  }
-}
+// .fb_iframe_widget,
+// .fb_iframe_widget span{
+//   max-width: 100%;
+// }
