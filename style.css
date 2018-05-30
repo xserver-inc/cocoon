@@ -784,6 +784,7 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   text-align: center;
   margin: 0;
 }
