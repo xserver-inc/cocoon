@@ -56,8 +56,8 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_AUTO_POST_SLUG_ENABLE , is_auto_post_slug_enable(), __( '日本語スラッグの時はpost-XXXXのような連番形式にする', THEME_NAME ));
-            generate_tips_tag(__( 'スラッグが日本語の場合は、無理やり半角英数字と投稿IDで短めのURLに変換します。', THEME_NAME ));
+            generate_checkbox_tag(OP_AUTO_POST_SLUG_ENABLE , is_auto_post_slug_enable(), __( '日本語スラッグを半角英数字にする', THEME_NAME ));
+            generate_tips_tag(__( '日本語スラッグを投稿の場合は「post-XXXX」、固定提示の場合は「page-XXXX」のような短縮文字列に変更します。', THEME_NAME ));
             ?>
           </td>
         </tr>
