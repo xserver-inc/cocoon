@@ -57,7 +57,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_AUTO_POST_SLUG_ENABLE , is_auto_post_slug_enable(), __( '日本語スラッグを半角英数字にする', THEME_NAME ));
-            generate_tips_tag(__( '日本語スラッグを投稿の場合は「post-XXXX」、固定提示の場合は「page-XXXX」のような短縮文字列に変更します。', THEME_NAME ));
+            generate_tips_tag(__( '日本語スラッグを投稿の場合は「post-XXXX」、固定ページの場合は「page-XXXX」のような短縮文字列に変更します。', THEME_NAME ));
             ?>
           </td>
         </tr>
