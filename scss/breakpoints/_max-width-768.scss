@@ -254,6 +254,22 @@ table{
   font-size: 22px;
 }
 
+.header-container-in.hlt-top-menu {
+  display: block;
+  #header{
+    .header-in,
+    .logo-text{
+      display: block;
+      height: 100%;
+    }
+  }
+
+  .site-name-text{
+    white-space: normal;
+  }
+}
+
+
 .header-container-in.hlt-top-menu .logo-header {
   max-height: none;
 }

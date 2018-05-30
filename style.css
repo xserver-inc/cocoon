@@ -594,6 +594,7 @@ img {
 }
 .header-container-in.hlt-top-menu .site-name-text {
   font-size: 22px;
+  white-space: nowrap;
 }
 .header-container-in.hlt-top-menu .tagline {
   display: none;
@@ -5724,6 +5725,18 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   #header .site-name-text {
     font-size: 22px;
+  }
+
+  .header-container-in.hlt-top-menu {
+    display: block;
+  }
+  .header-container-in.hlt-top-menu #header .header-in,
+  .header-container-in.hlt-top-menu #header .logo-text {
+    display: block;
+    height: 100%;
+  }
+  .header-container-in.hlt-top-menu .site-name-text {
+    white-space: normal;
   }
 
   .header-container-in.hlt-top-menu .logo-header {
