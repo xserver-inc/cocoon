@@ -4,17 +4,21 @@
 if ( !function_exists( 'is_ads_visible' ) ):
 function is_ads_visible(){
   //$ads_visible = is_all_ads_visible();
-  $post_ids = explode(',', get_ad_exclude_post_ids());
+  $tmp_post_ids = get_ad_exclude_post_ids();
+  $post_ids = explode(',', $tmp_post_ids);
+  $post_ids_empty = empty($tmp_post_ids);
+
   $category_ids = get_ad_exclude_category_ids();
+  $category_ids_empty = empty($category_ids);
 
   //広告の除外（いずれかがあてはまれば表示しない）
   $is_exclude_ids = (
     //記事の除外
-    is_single( $post_ids ) || //投稿ページの除外
-    is_page( $post_ids ) ||   //個別ページの除外
+    (!$post_ids_empty && is_single( $post_ids )) || //投稿ページの除外
+    (!$post_ids_empty && is_page( $post_ids )) ||   //個別ページの除外
     //カテゴリの除外
-    (is_single() && in_category( $category_ids ) ) ||//投稿ページの除外
-    in_category( $category_ids ) //アーカイブページの除外
+    (!$category_ids_empty && is_single() && in_category( $category_ids )) ||//投稿ページの除外
+    (!$category_ids_empty && in_category( $category_ids )) //アーカイブページの除外
   );
 
   return is_all_ads_visible() &&
