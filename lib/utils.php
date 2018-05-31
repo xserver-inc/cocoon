@@ -521,7 +521,7 @@ function wp_enqueue_jquery_masonry(){
       $admin_code = null;
       if (is_admin()) {
         $common_code = '
-                    $("#list").masonry({
+                    $("#list.ect-tile-card").masonry({
                       itemSelector: ".entry-card-wrap",
                       isAnimated: true
                     });
