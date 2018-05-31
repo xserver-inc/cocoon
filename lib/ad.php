@@ -276,6 +276,8 @@ function is_index_middle_widget_visible($count){
       is_posts_per_page_6_and_over() &&
       //エントリーカードタイプの一覧のとき
       //is_entry_card_type_entry_card() &&
+      //タイル表示じゃないとき
+      !is_entry_card_type_tile_card() &&
       //&&//公開記事が6以上の時
       (get_all_post_count_in_publish() >= 6)
   ) {
