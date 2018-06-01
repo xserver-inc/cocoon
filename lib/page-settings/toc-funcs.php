@@ -40,6 +40,22 @@ function is_toc_toggle_switch_enable(){
 }
 endif;
 
+//目次を開くキャプション
+define('OP_TOC_OPEN_CAPTION', 'toc_open_caption');
+if ( !function_exists( 'get_toc_open_caption' ) ):
+function get_toc_open_caption(){
+  return get_theme_option(OP_TOC_OPEN_CAPTION, __( '開く', THEME_NAME ));
+}
+endif;
+
+//目次を閉じるキャプション
+define('OP_TOC_CLOSE_CAPTION', 'toc_close_caption');
+if ( !function_exists( 'get_toc_close_caption' ) ):
+function get_toc_close_caption(){
+  return get_theme_option(OP_TOC_CLOSE_CAPTION, __( '閉じる', THEME_NAME ));
+}
+endif;
+
 //目次内容の表示
 define('OP_TOC_CONTENT_VISIBLE', 'toc_content_visible');
 if ( !function_exists( 'is_toc_content_visible' ) ):

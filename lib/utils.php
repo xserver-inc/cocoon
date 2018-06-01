@@ -518,28 +518,28 @@ function wp_enqueue_jquery_masonry(){
       wp_register_script('jquery-masonry', false, array('jquery'), false, true);
       wp_enqueue_script('jquery-masonry');
 
+      $common_code = '
+        $("#list.ect-tile-card").masonry({
+          itemSelector: ".entry-card-wrap",
+          isAnimated: true
+        });
+      ';
       $admin_code = null;
       if (is_admin()) {
-        $common_code = '
-                    $("#list.ect-tile-card").masonry({
-                      itemSelector: ".entry-card-wrap",
-                      isAnimated: true
-                    });
-        ';
         $admin_code = '
-                $(function(){
-                  setInterval(function(){'.
-                    $common_code
-                  .'},1000);
-                });
+          $(function(){
+            setInterval(function(){'.
+              $common_code
+            .'},1000);
+          });
         ';
       }
       //実行コードの記入
       $code = minify_js('
-              (function($){'.
-                $common_code.
-                $admin_code
-              .'})(jQuery);
+        (function($){'.
+          $common_code.
+          $admin_code
+        .'})(jQuery);
             ');
         wp_add_inline_script( 'jquery-masonry', $code, 'after' );
       }

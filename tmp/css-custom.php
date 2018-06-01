@@ -445,7 +445,7 @@ if (is_toc_toggle_switch_enable()): ?>
   display: block;
 }
 .toc-title::after{
-  content: '[<?php _e( '開く', THEME_NAME ) ?>]';
+  content: '[<?php echo get_toc_open_caption(); ?>]';
   margin-left: 0.5em;
   cursor: pointer;
   font-size: 0.8em;
@@ -454,5 +454,5 @@ if (is_toc_toggle_switch_enable()): ?>
   text-decoration: underline;
 }
 #toc-checkbox:checked + .toc-title::after{
-  content: '[<?php _e( '閉じる', THEME_NAME ) ?>]';
+  content: '[<?php echo get_toc_close_caption(); ?>]';
 }<?php endif ?>

@@ -14,6 +14,12 @@ update_theme_option(OP_TOC_TITLE);
 //目次の表示切替
 update_theme_option(OP_TOC_TOGGLE_SWITCH_ENABLE);
 
+//目次を開くキャプション
+update_theme_option(OP_TOC_OPEN_CAPTION);
+
+//目次を閉じるキャプション
+update_theme_option(OP_TOC_CLOSE_CAPTION);
+
 //目次内容の表示
 update_theme_option(OP_TOC_CONTENT_VISIBLE);
 

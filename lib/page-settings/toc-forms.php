@@ -79,6 +79,15 @@
             ?>
             <div class="indent">
               <?php
+              _e( '開：', THEME_NAME );
+              generate_textbox_tag(OP_TOC_OPEN_CAPTION, get_toc_open_caption(), __( '開く', THEME_NAME ), 10);
+              echo '<br>';
+
+              _e( '閉：', THEME_NAME );
+              generate_textbox_tag(OP_TOC_CLOSE_CAPTION, get_toc_close_caption(), __( '閉じる', THEME_NAME ), 10);
+              generate_tips_tag(__( '目次を「開く」「閉じる」のキャプションを変更します。', THEME_NAME ));
+
+
               generate_checkbox_tag(OP_TOC_CONTENT_VISIBLE , is_toc_content_visible(), __( '最初から目次内容を表示する', THEME_NAME ));
               generate_tips_tag(__( 'ページ読み込み時に内容を表示した状態にするか。', THEME_NAME ));
               ?>
