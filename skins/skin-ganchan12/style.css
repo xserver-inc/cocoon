@@ -431,14 +431,19 @@ div.list {
     content: " ";
 }
 
+.sidebar .author-content:before{
+  top: 26px;
+  left: 72px;
+}
+
 @media screen and (max-width: 480px){
-.author-content{
-	padding:10px;
-}
-.author-content:before{
-	top: 80px;
-    left: 25%;
-}
+  .author-content{
+  	padding:10px;
+  }
+  .author-content:before{
+  	top: 80px;
+      left: 25%;
+  }
 }
 
 

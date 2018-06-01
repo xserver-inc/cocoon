@@ -433,13 +433,13 @@ div.list {
 }
 
 @media screen and (max-width: 480px){
-.author-content{
-	padding:10px;
-}
-.author-content:before{
-	top: 80px;
-    left: 25%;
-}
+  .author-content{
+  	padding:10px;
+  }
+  .author-content:before{
+  	top: 80px;
+      left: 25%;
+  }
 }
 
 
