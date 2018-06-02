@@ -24,6 +24,7 @@
 }
 
 .speech-balloon{
+  display: table;
   // margin-left: 100px;
   // margin-right: 100px;
   position: relative;
@@ -78,6 +79,7 @@
 
   .speech-balloon{
     margin-right: 100px;
+    margin-left: auto;
   }
 
   /* アイコンを右に表示 */
@@ -281,4 +283,11 @@ div.sbs-think{
 // }
 // #main .sbp-r .speech-balloon{
 //   margin-left: auto;
+// }
+
+// .speech-balloon{
+//   display: block;
+// }
+// .sbp-r .speech-balloon{
+//   margin-left: 0;
 // }
