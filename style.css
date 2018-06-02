@@ -3615,46 +3615,6 @@ div.sbs-think .speech-balloon::after {
   right: -44px;
 }
 
-@media screen and (max-width: 768px) {
-  .speech-wrap.sbs-think.sbp-l {
-    margin-right: 0;
-  }
-
-  .speech-wrap.sbs-think.sbp-r {
-    margin-left: 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  .speech-wrap.sbs-think.sbp-l .speech-balloon {
-    margin-left: 68px;
-  }
-  .speech-wrap.sbs-think .speech-balloon::before {
-    top: 4px;
-    left: -20px;
-    width: 12px;
-    height: 12px;
-  }
-  .speech-wrap.sbs-think .speech-balloon::after {
-    top: 16px;
-    width: 6px;
-    height: 6px;
-    left: -28px;
-  }
-
-  div.speech-wrap.sbs-think.sbp-r .speech-balloon {
-    margin-right: 68px;
-  }
-  div.speech-wrap.sbs-think.sbp-r .speech-balloon::before {
-    border: 2px solid #cccfd2;
-    left: auto;
-    right: -20px;
-  }
-  div.speech-wrap.sbs-think.sbp-r .speech-balloon::after {
-    border: 2px solid #cccfd2;
-    left: auto;
-    right: -28px;
-  }
-}
 .booklink-box, .kaerebalink-box, .tomarebalink-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
@@ -5776,6 +5736,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-left: auto;
   }
 
+  .speech-wrap.sbs-think.sbp-l {
+    margin-right: 0;
+  }
+
+  .speech-wrap.sbs-think.sbp-r {
+    margin-left: 0;
+  }
+
   .column-wrap {
     flex-direction: column;
   }
@@ -6038,6 +6006,36 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     border-left-width: 7px;
     right: -5px;
     left: auto;
+  }
+
+  .speech-wrap.sbs-think.sbp-l .speech-balloon {
+    margin-left: 68px;
+  }
+  .speech-wrap.sbs-think .speech-balloon::before {
+    top: 4px;
+    left: -19px;
+    width: 12px;
+    height: 12px;
+  }
+  .speech-wrap.sbs-think .speech-balloon::after {
+    top: 16px;
+    width: 6px;
+    height: 6px;
+    left: -27px;
+  }
+
+  .speech-wrap.sbs-think.sbp-r .speech-balloon {
+    margin-right: 68px;
+  }
+  .speech-wrap.sbs-think.sbp-r .speech-balloon::before {
+    border: 2px solid #cccfd2;
+    left: auto;
+    right: -19px;
+  }
+  .speech-wrap.sbs-think.sbp-r .speech-balloon::after {
+    border: 2px solid #cccfd2;
+    left: auto;
+    right: -27px;
   }
 
   .admin-panel > div {
