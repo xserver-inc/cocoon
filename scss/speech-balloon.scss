@@ -158,4 +158,107 @@
       border-left-color: #85e249;
     }
   }
+
+}
+
+///////////////////////////////////////
+// 考える吹き出し
+///////////////////////////////////////
+.speech-wrap.sbs-think{
+  .speech-balloon{
+    margin-left: 126px;
+    margin-right: 126px;
+
+    &::before {
+      border: 2px solid $basic_border_color;
+      border-radius: 50%;
+      left: -30px;
+      top: 11px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &::after {
+      border: 2px solid $basic_border_color;
+      border-radius: 50%;
+      left: -45px;
+      top: 25px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+.sbs-think.sbp-r{
+  .speech-balloon{
+
+    &::before {
+      left: auto;
+      right: -30px;
+    }
+
+    &::after {
+      left: auto;
+      right: -45px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .speech-wrap.sbs-think.sbp-l{
+    .speech-balloon{
+      //margin-left: 68px;
+      margin-right: 0;
+    }
+  }
+  .speech-wrap.sbs-think.sbp-r{
+    .speech-balloon{
+      margin-left: 0;
+      //margin-right: 68px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  div.speech-wrap.sbs-think{
+    .speech-balloon{
+      margin-left: 68px;
+      //margin-right: 0;
+
+      &::before {
+        //border: 1px;
+        //border: 1px solid $basic_border_color;
+        top: 4px;
+        left: -20px;
+        width: 12px;
+        height: 12px;
+      }
+
+      &::after {
+        //border: 1px;
+        //border: 1px solid $basic_border_color;
+        top: 16px;
+        width: 6px;
+        height: 6px;
+        left: -28px;
+      }
+    }
+  }
+
+  div.speech-wrap.sbs-think.sbp-r{
+    .speech-balloon{
+      //margin-left: 0;
+      margin-right: 68px;
+
+      &::before {
+        border: 2px solid $basic_border_color;
+        left: auto;
+        right: -20px;
+      }
+
+      &::after {
+        border: 2px solid $basic_border_color;
+        left: auto;
+        right: -28px;
+      }
+    }
+  }
 }
