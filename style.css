@@ -3566,6 +3566,29 @@ canvas, iframe, video, svg,
   border-left-color: #85e249;
 }
 
+.speech-wrap .speech-balloon {
+  margin-left: 126px;
+  margin-right: 126px;
+}
+
+.speech-wrap .speech-balloon::before {
+  border: 2px solid #cccfd2;
+  border-radius: 50%;
+  left: -30px;
+  top: 11px;
+  width: 20px;
+  height: 20px;
+}
+
+.speech-wrap .speech-balloon::after {
+  border: 2px solid #cccfd2;
+  border-radius: 50%;
+  left: -45px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+}
+
 .booklink-box, .kaerebalink-box, .tomarebalink-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
