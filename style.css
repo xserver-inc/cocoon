@@ -3466,8 +3466,6 @@ canvas, iframe, video, svg,
 }
 
 .speech-balloon {
-  margin-left: 100px;
-  margin-right: 100px;
   position: relative;
   padding: 10px;
   background-color: #fff;
@@ -3505,11 +3503,22 @@ canvas, iframe, video, svg,
   border-bottom: 12px solid transparent;
 }
 
+.sbp-l {
+  margin-right: 100px;
+}
+.sbp-l .speech-balloon {
+  margin-left: 100px;
+}
+
 .sbp-r {
+  margin-left: 100px;
   /* アイコンを右に表示 */
 }
 .sbp-r .speech-person {
   float: right;
+}
+.sbp-r .speech-balloon {
+  margin-right: 100px;
 }
 .sbp-r .speech-balloon::before {
   right: -12px;
@@ -3566,60 +3575,68 @@ canvas, iframe, video, svg,
   border-left-color: #85e249;
 }
 
-.speech-wrap.sbs-think .speech-balloon {
-  margin-left: 126px;
+div.sbs-think.sbp-l {
   margin-right: 126px;
 }
-.speech-wrap.sbs-think .speech-balloon::before {
+div.sbs-think.sbp-l .speech-balloon {
+  margin-left: 126px;
+}
+div.sbs-think .speech-balloon::before {
   border: 2px solid #cccfd2;
   border-radius: 50%;
-  left: -28px;
+  left: -29px;
   top: 11px;
   width: 20px;
   height: 20px;
 }
-.speech-wrap.sbs-think .speech-balloon::after {
+div.sbs-think .speech-balloon::after {
   border: 2px solid #cccfd2;
   border-radius: 50%;
-  left: -43px;
+  left: -44px;
   top: 25px;
   width: 10px;
   height: 10px;
 }
 
+.sbs-think.sbp-r {
+  margin-left: 126px;
+}
+.sbs-think.sbp-r .speech-balloon {
+  margin-right: 126px;
+}
 .sbs-think.sbp-r .speech-balloon::before {
   left: auto;
-  right: -28px;
+  right: -29px;
 }
 .sbs-think.sbp-r .speech-balloon::after {
   left: auto;
-  right: -43px;
+  right: -44px;
 }
 
 @media screen and (max-width: 768px) {
-  .speech-wrap.sbs-think.sbp-l .speech-balloon {
+  .speech-wrap.sbs-think.sbp-l {
     margin-right: 0;
   }
 
-  .speech-wrap.sbs-think.sbp-r .speech-balloon {
+  .speech-wrap.sbs-think.sbp-r {
     margin-left: 0;
   }
 }
 @media screen and (max-width: 480px) {
-  div.speech-wrap.sbs-think .speech-balloon {
+  .speech-wrap.sbs-think.sbp-l .speech-balloon {
     margin-left: 68px;
   }
-  div.speech-wrap.sbs-think .speech-balloon::before {
+  .speech-wrap.sbs-think .speech-balloon::before {
     top: 4px;
-    left: -18px;
+    left: -20px;
     width: 12px;
     height: 12px;
   }
-  div.speech-wrap.sbs-think .speech-balloon::after {
+  .speech-wrap.sbs-think .speech-balloon::after {
     top: 16px;
     width: 6px;
     height: 6px;
-    left: -26px;
+    left: -28px;
   }
 
   div.speech-wrap.sbs-think.sbp-r .speech-balloon {
@@ -3628,12 +3645,12 @@ canvas, iframe, video, svg,
   div.speech-wrap.sbs-think.sbp-r .speech-balloon::before {
     border: 2px solid #cccfd2;
     left: auto;
-    right: -18px;
+    right: -20px;
   }
   div.speech-wrap.sbs-think.sbp-r .speech-balloon::after {
     border: 2px solid #cccfd2;
     left: auto;
-    right: -26px;
+    right: -28px;
   }
 }
 .booklink-box, .kaerebalink-box, .tomarebalink-box {
@@ -5749,11 +5766,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 16px;
   }
 
-  .sbp-l .speech-balloon {
+  .sbp-l {
     margin-right: auto;
   }
 
-  .sbp-r .speech-balloon {
+  .sbp-r {
     margin-left: auto;
   }
 
@@ -5983,6 +6000,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .speech-person {
     width: 40px;
+  }
+
+  .speech-name {
+    font-size: 10px;
   }
 
   .speech-wrap .speech-balloon {
