@@ -900,6 +900,7 @@ img {
 .ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
+  margin: 0;
 }
 .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
@@ -910,7 +911,7 @@ img {
 }
 .ect-vertical-card .entry-card-wrap .entry-card-content {
   margin: 0;
-  padding-bottom: 1em;
+  padding: 0;
 }
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;

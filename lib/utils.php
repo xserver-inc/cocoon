@@ -525,7 +525,7 @@ function wp_enqueue_jquery_masonry(){
         });
       ';
       $admin_code = null;
-      if (is_admin()) {
+      if (1 || is_admin()) {
         $admin_code = '
           $(function(){
             setInterval(function(){'.
