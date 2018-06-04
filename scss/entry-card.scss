@@ -158,7 +158,6 @@
     }
     .entry-card-content{
       margin: 0;
-      padding: 0;
     }
     .post-date, .post-update{
       margin-right: 0;
@@ -173,6 +172,9 @@
     // .card-content{
     //   padding: 0 7px;
     // }
+    .entry-card-content{
+      padding: 0;
+    }
     .card-meta{
       position: relative;
     }
