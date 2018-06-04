@@ -133,4 +133,9 @@ function update_custom_box_save_data( $data, $postarr ){
 endif;
 
 
+// add_action( 'wp' , 'update_custom_box_save_data_custom' );
+// function update_custom_box_save_data_custom() {
+//   remove_filter( 'wp_insert_post_data', 'update_custom_box_save_data', 10 );
+//   add_action( 'save_post', 'update_custom_box_save_data', 10);
+// }
 
