@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //パソコン用広告ウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('PcAdWidgetItem');});
+if ( !class_exists( 'PcAdWidgetItem' ) ):
 class PcAdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -82,5 +84,4 @@ class PcAdWidgetItem extends WP_Widget {
 <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("PcAdWidgetItem");'));
-add_action('widgets_init', function(){register_widget('PcAdWidgetItem');});
+endif;

@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //パソコン用ダブルレクタングル広告ウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('PcDoubleAdsWidgetItem');});
+if ( !class_exists( 'PcDoubleAdsWidgetItem' ) ):
 class PcDoubleAdsWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -64,5 +66,4 @@ class PcDoubleAdsWidgetItem extends WP_Widget {
 <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("PcDoubleAdsWidgetItem");'));
-add_action('widgets_init', function(){register_widget('PcDoubleAdsWidgetItem');});
+endif;

@@ -2,6 +2,12 @@
 ///////////////////////////////////////////////////
 //Facebookページ「いいね！」ウイジェットの追加
 ///////////////////////////////////////////////////
+
+//Facebookページ言われるか設定されている時
+if ( get_the_author_facebook_url() && !is_amp() ) {
+  add_action('widgets_init', function(){register_widget('FBLikeBallooneWidgetItem');});
+}
+if ( !class_exists( 'FBLikeBallooneWidgetItem' ) ):
 class FBLikeBallooneWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -80,7 +86,4 @@ class FBLikeBallooneWidgetItem extends WP_Widget {
     <?php
   }
 }
-if ( get_the_author_facebook_url() && !is_amp() ) {//Facebookページ言われるか設定されている時
-  //add_action('widgets_init', create_function('', 'return register_widget("FBLikeBallooneWidgetItem");'));
-  add_action('widgets_init', function(){register_widget('FBLikeBallooneWidgetItem');});
-}
+endif;

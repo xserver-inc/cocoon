@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //プロフィールウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('AuthorBoxWidgetItem');});
+if ( !class_exists( 'AuthorBoxWidgetItem' ) ):
 class AuthorBoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
@@ -71,5 +73,4 @@ class AuthorBoxWidgetItem extends WP_Widget {
     <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("AuthorBoxWidgetItem");'));
-add_action('widgets_init', function(){register_widget('AuthorBoxWidgetItem');});
+endif;

@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //CTAウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('CTABoxWidgetItem');});
+if ( !class_exists( 'CTABoxWidgetItem' ) ):
 class CTABoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
@@ -178,5 +180,4 @@ class CTABoxWidgetItem extends WP_Widget {
     <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("CTABoxWidgetItem");'));
-add_action('widgets_init', function(){register_widget('CTABoxWidgetItem');});
+endif;

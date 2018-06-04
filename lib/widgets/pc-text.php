@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //パソコン用テキストウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('PcTextWidgetItem');});
+if ( !class_exists( 'PcTextWidgetItem' ) ):
 class PcTextWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
@@ -75,5 +77,4 @@ class PcTextWidgetItem extends WP_Widget {
     <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("PcTextWidgetItem");'));
-add_action('widgets_init', function(){register_widget('PcTextWidgetItem');});
+endif;

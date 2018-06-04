@@ -2,8 +2,9 @@
 ///////////////////////////////////////////////////
 //クラシックテキストウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('ClassicTextWidget');});
+if ( !class_exists( 'ClassicTextWidget' ) ):
 class ClassicTextWidget extends WP_Widget {
-
     public function __construct() {
         $widget_ops = array( 'classname' => 'classic-textwidget', 'description' => __( 'テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビジュアルエディターのないテキストウィジェット）。', 'simplicity2' ) );
         $control_ops = array( 'width' => 400, 'height' => 350 );
@@ -58,6 +59,5 @@ class ClassicTextWidget extends WP_Widget {
 
     }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("ClassicTextWidget");'));
-add_action('widgets_init', function(){register_widget('ClassicTextWidget');});
+endif;
 

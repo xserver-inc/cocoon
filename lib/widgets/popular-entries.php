@@ -2,6 +2,10 @@
 ///////////////////////////////////////////////////
 //人気エントリーウイジェットの追加
 ///////////////////////////////////////////////////
+if (is_access_count_enable()) {
+  add_action('widgets_init', function(){register_widget('PopularEntryWidgetItem');});
+}
+if ( !class_exists( 'PopularEntryWidgetItem' ) ):
 class PopularEntryWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -190,6 +194,4 @@ class PopularEntryWidgetItem extends WP_Widget {
     <?php
   }
 }
-if (is_access_count_enable()) {
-  add_action('widgets_init', function(){register_widget('PopularEntryWidgetItem');});
-}
+endif;

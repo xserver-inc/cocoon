@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //モバイル用広告ウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('MobileAdWidgetItem');});
+if ( !class_exists( 'MobileAdWidgetItem' ) ):
 class MobileAdWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -75,5 +77,4 @@ class MobileAdWidgetItem extends WP_Widget {
 <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("MobileAdWidgetItem");'));
-add_action('widgets_init', function(){register_widget('MobileAdWidgetItem');});
+endif;

@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //モバイル用テキストウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('MobileTextWidgetItem');});
+if ( !class_exists( 'MobileTextWidgetItem' ) ):
 class MobileTextWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -75,5 +77,4 @@ class MobileTextWidgetItem extends WP_Widget {
     <?php
   }
 }
-//add_action('widgets_init', create_function('', 'return register_widget("MobileTextWidgetItem");'));
-add_action('widgets_init', function(){register_widget('MobileTextWidgetItem');});
+endif;

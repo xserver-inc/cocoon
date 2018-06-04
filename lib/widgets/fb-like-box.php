@@ -2,6 +2,10 @@
 ///////////////////////////////////////////////////
 //プロフィールウイジェットの追加
 ///////////////////////////////////////////////////
+if ( !is_amp()) {
+  add_action('widgets_init', function(){register_widget('FBLikeBoxWidgetItem');});
+}
+if ( !class_exists( 'FBLikeBoxWidgetItem' ) ):
 class FBLikeBoxWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
@@ -120,7 +124,4 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     <?php
   }
 }
-if ( !is_amp()) {
-  add_action('widgets_init', function(){register_widget('FBLikeBoxWidgetItem');});
-}
-
+endif;

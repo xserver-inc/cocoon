@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //新着エントリーウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('NewEntryWidgetItem');});
+if ( !class_exists( 'NewEntryWidgetItem' ) ):
 class NewEntryWidgetItem extends WP_Widget {
   function __construct() {
     parent::__construct(
@@ -142,4 +144,4 @@ class NewEntryWidgetItem extends WP_Widget {
     <?php
   }
 }
-add_action('widgets_init', function(){register_widget('NewEntryWidgetItem');});
+endif;

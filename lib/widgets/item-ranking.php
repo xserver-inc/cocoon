@@ -2,6 +2,8 @@
 ///////////////////////////////////////////////////
 //アイテムランキングウイジェットの追加
 ///////////////////////////////////////////////////
+add_action('widgets_init', function(){register_widget('ItemRankingWidgetItem');});
+if ( !class_exists( 'ItemRankingWidgetItem' ) ):
 class ItemRankingWidgetItem extends WP_Widget {
   function __construct() {
      parent::__construct(
@@ -82,4 +84,4 @@ class ItemRankingWidgetItem extends WP_Widget {
     <?php
   }
 }
-add_action('widgets_init', function(){register_widget('ItemRankingWidgetItem');});
+endif;
