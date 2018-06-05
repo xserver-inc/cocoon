@@ -1,15 +1,15 @@
-<?php //ログインユーザー以外
-if (!is_user_administrator() && !is_amp()): ?>
+<?php //AMPページでは使用しない
+if (!is_amp()): ?>
   <?php //Google Analytics(gtag.js)
-  if ( get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
+  if ( $ga_tracking_id = get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo get_google_analytics_tracking_id(); ?>"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_tracking_id; ?>"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '<?php echo get_google_analytics_tracking_id(); ?>');
+    gtag('config', '<?php echo $ga_tracking_id; ?>');
   </script>
   <!-- /Global site tag (gtag.js) - Google Analytics -->
   <?php endif; ?>
