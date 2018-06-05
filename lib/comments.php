@@ -1,5 +1,17 @@
 <?php //コメント関連
 
+//コメントリスト引数の取得
+if ( !function_exists( 'get_wp_list_comments_args' ) ):
+function get_wp_list_comments_args(){
+  $args = array(
+          'avatar_size' => 55,
+          'type' => 'comment',
+          'callback' => 'comment_custom_callback',
+        );
+  return $args;
+}
+endif;
+
 //コメント出力に関するコールバック
 if ( !function_exists( 'comment_custom_callback' ) ):
 function comment_custom_callback($comment, $args, $depth) {

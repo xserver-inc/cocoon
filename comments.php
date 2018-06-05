@@ -14,16 +14,12 @@
     ?>
         <ol class="commets-list">
         <?php
-        $args = array(
-          'avatar_size' => 55,
-          'type' => 'comment',
-          'callback' => 'comment_custom_callback',
-        );
+        $args = get_wp_list_comments_args();
         wp_list_comments($args); //コメント一覧を表示 ?>
         </ol>
 
         <div class="comment-page-link">
-            <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
+          <?php paginate_comments_links(); //コメントが多い場合、ページャーを表示 ?>
         </div>
     <?php
     endif; ?>
