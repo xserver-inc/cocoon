@@ -19,7 +19,11 @@ if (is_singular()){//単一記事ページの場合
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();
-    $title = wp_title(null, false).' | '.get_bloginfo('name');
+    if ($category_title =  get_category_title(get_query_var('cat'))) {
+      $title = $category_title;
+    } else {
+      $title = wp_title(null, false).' | '.get_bloginfo('name');
+    }
     $url = generate_canonical_url();
   }
 
