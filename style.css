@@ -900,7 +900,7 @@ img {
 .ect-vertical-card .entry-card-wrap {
   width: 49.5%;
   display: inline-block;
-  margin: 0;
+  margin-bottom: 12px;
 }
 .ect-vertical-card .entry-card-wrap .entry-card-thumb {
   width: 100%;
@@ -915,11 +915,17 @@ img {
 .ect-vertical-card .entry-card-wrap .post-date, .ect-vertical-card .entry-card-wrap .post-update {
   margin-right: 0;
 }
+.ect-vertical-card.ect-tile-card .a-wrap {
+  margin: 0 0.25% 12px;
+}
 .ect-vertical-card.ect-tile-card .entry-card-content {
   padding: 0;
 }
 .ect-vertical-card.ect-tile-card .card-meta {
   position: relative;
+}
+.ect-vertical-card.ect-tile-card .a-wrap {
+  margin: 0 0.16666% 12px;
 }
 
 .ect-2-columns .ad-area {

@@ -148,7 +148,7 @@
   .entry-card-wrap{
     width: 49.5%;
     display: inline-block;
-    margin: 0;
+    margin-bottom: 12px;
     .entry-card-thumb{
       width: 100%;
       float: none;
@@ -165,10 +165,9 @@
   }
 
   &.ect-tile-card{
-    // .a-wrap{
-    //   padding: 0;
-    //   margin: 10px;
-    // }
+    .a-wrap{
+      margin: 0 0.25% 12px;
+    }
     // .card-content{
     //   padding: 0 7px;
     // }
@@ -177,6 +176,11 @@
     }
     .card-meta{
       position: relative;
+    }
+  }
+  &.ect-tile-card{
+    .a-wrap{
+      margin: 0 0.16666% 12px;
     }
   }
 }
