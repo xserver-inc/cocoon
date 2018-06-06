@@ -65,10 +65,10 @@ class ItemRankingWidgetItem extends WP_Widget {
       if ($records) {
         $options = array();
         foreach($records as $record){
-          //非表示の場合は跳ばす
-          if (!$record->visible) {
-            continue;
-          }
+          // //非表示の場合は跳ばす
+          // if (!$record->visible) {
+          //   continue;
+          // }
           $options[$record->id] = $record->title;
         }
         generate_selectbox_tag($this->get_field_name('ranking_id'), $options, $ranking_id);
