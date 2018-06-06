@@ -1619,3 +1619,65 @@ function is_server_request_uri_backup_download_php(){
   return $res;
 }
 endif;
+
+if ( !function_exists( 'is_the_page_sidebar_visible' ) ):
+function is_the_page_sidebar_visible(){
+  //サイドバー表示設定
+  $sidebar_visible = true;
+  //var_dump(get_sidebar_display_type());
+  switch (get_sidebar_display_type()) {
+    case 'no_display_all':
+      $sidebar_visible = false;
+      break;
+    case 'no_display_front_page':
+      if (is_front_page() && !is_home()) {
+        $sidebar_visible = false;
+      }
+      break;
+    case 'no_display_index_pages':
+      if (!is_singular()) {
+        $sidebar_visible = false;
+      }
+      break;
+    case 'no_display_pages':
+      if (is_page()) {
+        $sidebar_visible = false;
+      }
+      break;
+    case 'no_display_singles':
+      if (is_single()) {
+        $sidebar_visible = false;
+      }
+      break;
+    default:
+
+      break;
+  }
+
+  //投稿管理画面で「1カラム」が選択されている場合
+  if (is_singular() && is_singular_page_type_column1()) {
+    $sidebar_visible = false;
+  }
+
+  //投稿管理画面で「本文のみ」が選択されている場合
+  if (is_singular() && is_singular_page_type_content_only()) {
+    $sidebar_visible = false;
+  }
+
+  //投稿管理画面で「狭い」が選択されている場合
+  if (is_singular() && is_singular_page_type_narrow()) {
+    $sidebar_visible = false;
+  }
+
+  //投稿管理画面で「広い」が選択されている場合
+  if (is_singular() && is_singular_page_type_wide()) {
+    $sidebar_visible = false;
+  }
+
+  //サイドバーにウィジェットが入っていない場合
+  if (!is_active_sidebar( 'sidebar' )) {
+    $sidebar_visible = false;
+  }
+  return $sidebar_visible;
+}
+endif;
