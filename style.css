@@ -3476,7 +3476,7 @@ canvas, iframe, video, svg,
 }
 
 .speech-balloon {
-  display: table;
+  height: 100%;
   position: relative;
   padding: 10px;
   background-color: #fff;

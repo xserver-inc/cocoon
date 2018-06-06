@@ -26,7 +26,9 @@
 }
 
 .speech-balloon{
-  display: table;
+  //display: block;
+  height: 100%;
+  //display: table;
   // margin-left: 100px;
   // margin-right: 100px;
   position: relative;
@@ -289,8 +291,5 @@ div.sbs-think{
 // }
 
 // .speech-balloon{
-//   display: block;
-// }
-// .sbp-r .speech-balloon{
-//   margin-left: 0;
+//   width: 100%;
 // }
