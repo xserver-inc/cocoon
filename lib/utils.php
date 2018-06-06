@@ -1620,6 +1620,7 @@ function is_server_request_uri_backup_download_php(){
 }
 endif;
 
+//現在のページでサイドバーが表示されるか
 if ( !function_exists( 'is_the_page_sidebar_visible' ) ):
 function is_the_page_sidebar_visible(){
   //サイドバー表示設定
@@ -1672,6 +1673,30 @@ function is_the_page_sidebar_visible(){
   //投稿管理画面で「広い」が選択されている場合
   if (is_singular() && is_singular_page_type_wide()) {
     $sidebar_visible = false;
+  }
+
+  //サイドバーにウィジェットが入っていない場合
+  if (!is_active_sidebar( 'sidebar' )) {
+    $sidebar_visible = false;
+  }
+  return $sidebar_visible;
+}
+endif;
+
+//インデックスページでサイドバーが表示されるか
+if ( !function_exists( 'is_index_page_sidebar_visible' ) ):
+function is_index_page_sidebar_visible(){
+  $sidebar_visible = true;
+
+  switch (get_sidebar_display_type()) {
+    case 'no_display_all':
+      $sidebar_visible = false;
+      break;
+    case 'no_display_index_pages':
+      if (!is_singular()) {
+        $sidebar_visible = false;
+      }
+      break;
   }
 
   //サイドバーにウィジェットが入っていない場合
