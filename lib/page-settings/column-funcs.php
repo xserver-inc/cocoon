@@ -118,12 +118,27 @@ function get_main_column_width(){
          (intval($main_column_border_width) * 2);
 }
 endif;
+
+//インデックスページのメインカラムコンテンツ幅
+if ( !function_exists( 'get_index_main_column_contents_width' ) ):
+function get_index_main_column_contents_width(){
+  $mw = intval(get_main_column_contents_width());
+  if (empty($mw)) {
+    $mw = 800;
+  }
+  if (!is_index_page_sidebar_visible()) {
+    $mw = intval($mw) + intval(get_sidebar_width());
+  }
+  //_v(get_sidebar_width());
+  return $mw;
+}
+endif;
 ///////////////////////////////////////
 // 縦型カード2列用の可変サムネイル用の関数
 ///////////////////////////////////////
 if ( !function_exists( 'get_vertical_card_2_width' ) ):
 function get_vertical_card_2_width(){
-  $mw = get_main_column_contents_width();
+  $mw = get_index_main_column_contents_width();
   if (empty($mw)) {
     $mw = 800;
   }
@@ -150,7 +165,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'get_vertical_card_3_width' ) ):
 function get_vertical_card_3_width(){
-  $mw = get_main_column_contents_width();
+  $mw = get_index_main_column_contents_width();
   if (empty($mw)) {
     $mw = 800;
   }
@@ -177,7 +192,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'get_tile_card_2_width' ) ):
 function get_tile_card_2_width(){
-  $mw = get_main_column_contents_width();
+  $mw = get_index_main_column_contents_width();
   if (empty($mw)) {
     $mw = 800;
   }
@@ -202,7 +217,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'get_tile_card_3_width' ) ):
 function get_tile_card_3_width(){
-  $mw = get_main_column_contents_width();
+  $mw = get_index_main_column_contents_width();
   if (empty($mw)) {
     $mw = 800;
   }
