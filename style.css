@@ -3456,11 +3456,12 @@ canvas, iframe, video, svg,
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 16px;
+  display: flex;
 }
 
 .speech-person {
-  float: left;
   width: 80px;
+  min-width: 80px;
 }
 
 .speech-icon img {
@@ -3475,7 +3476,7 @@ canvas, iframe, video, svg,
 }
 
 .speech-balloon {
-  display: table;
+  height: 100%;
   position: relative;
   padding: 10px;
   background-color: #fff;
@@ -3517,19 +3518,16 @@ canvas, iframe, video, svg,
   margin-right: 100px;
 }
 .sbp-l .speech-balloon {
-  margin-left: 100px;
+  margin-left: 20px;
 }
 
 .sbp-r {
+  flex-direction: row-reverse;
   margin-left: 100px;
   /* アイコンを右に表示 */
 }
-.sbp-r .speech-person {
-  float: right;
-}
 .sbp-r .speech-balloon {
-  margin-right: 100px;
-  margin-left: auto;
+  margin-right: 20px;
 }
 .sbp-r .speech-balloon::before {
   right: -12px;
@@ -3590,7 +3588,7 @@ div.sbs-think.sbp-l {
   margin-right: 126px;
 }
 div.sbs-think.sbp-l .speech-balloon {
-  margin-left: 126px;
+  margin-left: 46px;
 }
 div.sbs-think .speech-balloon::before {
   border: 2px solid #cccfd2;
@@ -3613,7 +3611,7 @@ div.sbs-think .speech-balloon::after {
   margin-left: 126px;
 }
 .sbs-think.sbp-r .speech-balloon {
-  margin-right: 126px;
+  margin-right: 46px;
 }
 .sbs-think.sbp-r .speech-balloon::before {
   left: auto;
@@ -5979,6 +5977,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .speech-person {
     width: 40px;
+    min-width: 40px;
   }
 
   .speech-name {
@@ -6001,10 +6000,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     left: -5px;
   }
   .speech-wrap.sbp-l .speech-balloon {
-    margin-left: 50px;
+    margin-left: 10px;
   }
   .speech-wrap.sbp-r .speech-balloon {
-    margin-right: 50px;
+    margin-right: 10px;
   }
   .speech-wrap.sbp-r .speech-balloon::before {
     right: -7px;
@@ -6018,7 +6017,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .speech-wrap.sbs-think.sbp-l .speech-balloon {
-    margin-left: 68px;
+    margin-left: 28px;
   }
   .speech-wrap.sbs-think .speech-balloon::before {
     top: 4px;
@@ -6034,7 +6033,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .speech-wrap.sbs-think.sbp-r .speech-balloon {
-    margin-right: 68px;
+    margin-right: 28px;
   }
   .speech-wrap.sbs-think.sbp-r .speech-balloon::before {
     border: 2px solid #cccfd2;

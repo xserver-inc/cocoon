@@ -5,11 +5,13 @@
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 16px;
+  display: flex;
 }
 
 .speech-person{
-  float: left;
+  //float: left;
   width: 80px;
+  min-width: 80px;
 }
 
 .speech-icon img{
@@ -24,7 +26,9 @@
 }
 
 .speech-balloon{
-  display: table;
+  //display: block;
+  height: 100%;
+  //display: table;
   // margin-left: 100px;
   // margin-right: 100px;
   position: relative;
@@ -66,20 +70,21 @@
 .sbp-l{
   margin-right: 100px;
   .speech-balloon{
-    margin-left: 100px;
+    margin-left: 20px;
   }
 }
 
 //画像位置
 .sbp-r{
+  flex-direction: row-reverse;
   margin-left: 100px;
-  .speech-person{
-    float: right;
-  }
+  // .speech-person{
+  //   float: right;
+  // }
 
   .speech-balloon{
-    margin-right: 100px;
-    margin-left: auto;
+    margin-right: 20px;
+    //margin-left: auto;
   }
 
   /* アイコンを右に表示 */
@@ -178,7 +183,7 @@ div.sbs-think{
   &.sbp-l{
     margin-right: 126px;
     .speech-balloon{
-      margin-left: 126px;
+      margin-left: 46px;
     }
   }
   .speech-balloon{
@@ -205,7 +210,7 @@ div.sbs-think{
 .sbs-think.sbp-r{
   margin-left: 126px;
   .speech-balloon{
-    margin-right: 126px;
+    margin-right: 46px;
 
     &::before {
       left: auto;
@@ -286,8 +291,5 @@ div.sbs-think{
 // }
 
 // .speech-balloon{
-//   display: block;
-// }
-// .sbp-r .speech-balloon{
-//   margin-left: 0;
+//   width: 100%;
 // }
