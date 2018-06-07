@@ -328,11 +328,6 @@ function convert_content_for_amp($the_content){
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
 
-
-// <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
-// <p dir="ltr" lang="ja">こんにちは。<br>ナイスなカスタマイズ方法ありがとうございます。<br>というか、こっちの方デザインの方がユーザーさんに喜ばれると思うので、もしよろしければ、Cocoon親テーマの方でもCSSを使わせてもらってよろしいでしょうか？</p>
-// <p>— わいひら@寝ログ (@MrYhira) <a rel="nofollow noopener noreferrer external" target="_blank" href="https://twitter.com/MrYhira/status/982095264684040192?ref_src=twsrc%5Etfw">April 6, 2018<span class="fa fa-rocket external-icon anchor-icon"></span></a></p></blockquote>
-
   // Twitterをamp-twitterに置換する（埋め込みコード）
   $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
   $append = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
