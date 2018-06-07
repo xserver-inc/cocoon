@@ -5,9 +5,12 @@
 @import 'font';
 
 //テキスト色
-$text_color: #333435;
-$pallid_text_color: #777879;
-$x_pallid_text_color: #999a9b;
+// $text_color: #333435;
+// $pallid_text_color: #777879;
+// $x_pallid_text_color: #999a9b;
+$text_color: #333;
+$pallid_text_color: #777;
+$x_pallid_text_color: #999;
 $white_text_color: #fff;
 
 //テキストサイズ
@@ -16,17 +19,23 @@ $text_size_s: 0.8em;
 $text_size_xs: 0.6em;
 
 //ボーダー色
-$basic_border_color: #cccfd2;
+//$basic_border_color: #cccfd2;
+$basic_border_color: #ccc;
 $transparent_border_color: transparent;
 
 //色
-$middle_thickness: #777879;
-$thin: #cccdce;
-$x_thin: #dddedf;
+// $middle_thickness: #777879;
+// $thin: #cccdce;
+// $x_thin: #dddedf;
+$middle_thickness: #777;
+$thin: #ccc;
+$x_thin: #ddd;
 $xx_thin: #f3f4f5;
 $xxx_thin: #fafbfc;
 $bg_white: #fff;
-$current_bgc: #eeeff0;
+//$current_bgc: #eeeff0;
+$current_bgc: #eee;
+
 $select_bgc: #d8eaf2;
 $transpalent_black_bgc: rgba(51,51,51,0.7);
 
