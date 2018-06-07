@@ -450,7 +450,7 @@ img {
 ************************************/
 /*ボーダー*/
 .iwe-border p img {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid #ccc;
 }
 
 /*ボーダー（太線）*/
@@ -1854,47 +1854,37 @@ span.internal-icon {
   margin-left: 20px;
 }
 
-.sidebar .ranking-item-img-desc,
-.sidebar .ranking-item-link-buttons,
-.footer .ranking-item-img-desc,
-.footer .ranking-item-link-buttons {
+.nwa .ranking-item-img-desc,
+.nwa .ranking-item-link-buttons {
   display: block;
 }
 
-.sidebar .ranking-item-image-tag,
-.footer .ranking-item-image-tag {
+.nwa .ranking-item-image-tag {
   max-width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
-.sidebar .ranking-item-name-text,
-.sidebar .widget_item_ranking .main-widget-label,
-.footer .ranking-item-name-text,
-.footer .widget_item_ranking .main-widget-label {
+.nwa .ranking-item-name-text,
+.nwa .widget_item_ranking .main-widget-label {
   font-size: 20px;
 }
 
-.sidebar .ranking-item-description p,
-.footer .ranking-item-description p {
+.nwa .ranking-item-description p {
   font-size: 0.9em;
 }
 
-.sidebar .blogcard-wrap,
-.footer .blogcard-wrap {
+.nwa .blogcard-wrap {
   width: 100%;
 }
-.sidebar .blogcard-thumbnail,
-.footer .blogcard-thumbnail {
+.nwa .blogcard-thumbnail {
   width: 30%;
 }
-.sidebar .blogcard-snipet,
-.footer .blogcard-snipet {
+.nwa .blogcard-snipet {
   font-size: 12px;
 }
-.sidebar .blogcard-content,
-.footer .blogcard-content {
+.nwa .blogcard-content {
   margin-left: 31.6%;
   margin-right: 0;
   max-height: 120px;
@@ -1902,10 +1892,8 @@ span.internal-icon {
   font-size: 0.9em;
   line-height: 1.2;
 }
-.sidebar .ib-right .blogcard-content,
-.sidebar .eb-right .blogcard-content,
-.footer .ib-right .blogcard-content,
-.footer .eb-right .blogcard-content {
+.nwa .ib-right .blogcard-content,
+.nwa .eb-right .blogcard-content {
   margin-right: 31.6%;
   margin-left: 0;
 }

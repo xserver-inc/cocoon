@@ -17,7 +17,7 @@
       get_template_part('tmp/breadcrumbs-page');
     } ?>
 
-    <footer id="footer" class="footer footer-container" itemscope itemtype="http://schema.org/WPFooter">
+    <footer id="footer" class="footer footer-container nwa" itemscope itemtype="http://schema.org/WPFooter">
 
       <div id="footer-in" class="footer-in wrap cf">
 

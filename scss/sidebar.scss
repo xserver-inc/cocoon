@@ -56,37 +56,30 @@
 }
 
 
-.sidebar .ranking-item-img-desc,
-.sidebar .ranking-item-link-buttons,
-.footer .ranking-item-img-desc,
-.footer .ranking-item-link-buttons{
+.nwa .ranking-item-img-desc,
+.nwa .ranking-item-link-buttons{
   display: block;
 }
 
-.sidebar .ranking-item-image-tag,
-.footer .ranking-item-image-tag{
+.nwa .ranking-item-image-tag{
   max-width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
-.sidebar .ranking-item-name-text,
-.sidebar .widget_item_ranking .main-widget-label,
-.footer .ranking-item-name-text,
-.footer .widget_item_ranking .main-widget-label{
+.nwa .ranking-item-name-text,
+.nwa .widget_item_ranking .main-widget-label{
   font-size: 20px;
 }
 
-.sidebar .ranking-item-description p,
-.footer .ranking-item-description p{
+.nwa .ranking-item-description p{
   font-size: 0.9em;
 }
 
 ///////////////////////////////////////
 // ブログカード
 ///////////////////////////////////////
-.sidebar,
-.footer{
+.nwa{
   @include blog_card_768;
 }
