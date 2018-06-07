@@ -450,7 +450,7 @@ img {
 ************************************/
 /*ボーダー*/
 .iwe-border p img {
-  border: 1px solid #cccfd2;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
 }
 
 /*ボーダー（太線）*/
