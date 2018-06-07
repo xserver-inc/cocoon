@@ -1,10 +1,20 @@
 <?php //コメント設定に必要な定数や関数
 
 //コメント表示形式
-define('OP_COMMENT_TYPE', 'comment_type');
-if ( !function_exists( 'get_comment_type' ) ):
-function get_comment_type(){
-  return get_theme_option(OP_COMMENT_TYPE, 'default');
+define('OP_COMMENT_DISPLAY_TYPE', 'comment_display_type');
+if ( !function_exists( 'get_comment_display_type' ) ):
+function get_comment_display_type(){
+  return get_theme_option(OP_COMMENT_DISPLAY_TYPE, 'default');
+}
+endif;
+if ( !function_exists( 'is_comment_display_type_default' ) ):
+function is_comment_display_type_default(){
+  return get_comment_display_type() == 'default';
+}
+endif;
+if ( !function_exists( 'is_comment_display_type_simple_thread' ) ):
+function is_comment_display_type_simple_thread(){
+  return get_comment_display_type() == 'simple_thread';
 }
 endif;
 

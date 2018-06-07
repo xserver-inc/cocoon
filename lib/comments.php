@@ -3,11 +3,19 @@
 //コメントリスト引数の取得
 if ( !function_exists( 'get_wp_list_comments_args' ) ):
 function get_wp_list_comments_args(){
-  $args = array(
-          'avatar_size' => 55,
-          'type' => 'comment',
-          'callback' => 'comment_custom_callback',
-        );
+  if (is_comment_display_type_default()) {
+    $args = array(
+      'avatar_size' => 55,
+      'type' => 'comment',
+      'callback' => 'comment_custom_callback',
+    );
+  } else {
+    $args = array(
+      'type' => 'comment',
+      'callback' => 'simple_thread_comment_custom_callback',
+    );
+  }
+
   return $args;
 }
 endif;

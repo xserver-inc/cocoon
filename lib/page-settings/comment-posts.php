@@ -1,7 +1,7 @@
 <?php //コメント設定をデータベースに保存
 
 //コメント表示形式
-update_theme_option(OP_COMMENT_TYPE);
+update_theme_option(OP_COMMENT_DISPLAY_TYPE);
 
 //コメントの見出し
 update_theme_option(OP_COMMENT_HEADING);

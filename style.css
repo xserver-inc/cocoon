@@ -2988,12 +2988,21 @@ label.screen-reader-text {
 .commets-list .comment-meta {
   font-size: 0.8em;
 }
-.commets-list .comment-body {
+.commets-list .comment-body,
+.commets-list .st-comment-body {
   margin-bottom: 1em;
 }
 .commets-list .children {
   list-style: none;
   padding-left: 20px;
+}
+
+.st-comment-id {
+  display: none;
+}
+
+.st-comment-author .fn {
+  font-weight: bold;
 }
 
 .comment-form .required {

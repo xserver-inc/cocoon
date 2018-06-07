@@ -25,6 +25,23 @@
         </tr>
         <?php endif ?>
 
+        <!-- コメントタイプ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_COMMENT_DISPLAY_TYPE, __('コメントタイプ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'default' => __( 'デフォルト', THEME_NAME ),
+              'simple_thread' => __( 'シンプルスレッド', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_COMMENT_DISPLAY_TYPE, $options, get_comment_display_type());
+            generate_tips_tag(__( 'コメントの表示形式を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
         <!-- コメント一覧見出し -->
         <tr>
