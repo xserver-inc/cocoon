@@ -58,3 +58,54 @@ function comment_custom_callback($comment, $args, $depth) {
   <?php
 }
 endif;
+
+//コメント用の日付フォーマット
+if ( !function_exists( ' simple_thread_comment_date_format' ) ):
+function simple_thread_comment_date_format(){
+  return __( 'Y/m/d(D)', THEME_NAME );
+}
+endif;
+
+//コメント用の時間フォーマット
+if ( !function_exists( ' simple_thread_comment_time_format' ) ):
+function simple_thread_comment_time_format(){
+  return __( 'H:i:s', THEME_NAME );
+}
+endif;
+
+//シンプルスレッド用カスタマイズコード
+if ( !function_exists( 'simple_thread_comment_custom_callback' ) ):
+function simple_thread_comment_custom_callback($comment, $args, $depth) {
+  $GLOBALS['comment'] = $comment; ?>
+  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+  <div id="sh-comment-<?php comment_ID(); ?>">
+
+  <div class="sh-comment-list">
+    <div class="sh-comment-info">
+      <?php echo get_avatar( $comment, 48 );//アバター画像 ?>
+      <?php printf(__('名前:<cite class="fn comment-author">%s<span class="admin"></span></a></cite> :'), get_comment_author_link()); //投稿者の設定 ?>
+      <span class="sh-comment-datetime"><?php _e( '投稿日：', THEME_NAME ) ?><?php printf(__('%1$s at %2$s'), get_comment_date(simple_thread_comment_date_format()),  get_comment_time(simple_thread_comment_time_format())); //投稿日の設定 ?></span>
+      <span class="sh-comment-id">
+      ID：<?php //IDっぽい文字列の表示（あくまでIDっぽいものです。）
+        $ip01 = get_comment_author_IP(); //書き込んだユーザーのIPアドレスを取得
+        $ip02 = get_comment_date(jn); //今日の日付
+        $ip03 = ip2long($ip01); //IPアドレスの数値化
+        $ip04 = ($ip02) * ($ip03); //ip02とip03を掛け合わせる
+        echo mb_substr(base64_encode($ip04), 2, 9); //base64でエンコード、頭から9文字まで出力
+      ?>
+      </span>
+      <span class="sh-comment-edit"><?php edit_comment_link(__('Edit'),'  ',''); //編集リンク ?></span>
+    </div>
+    <?php if ($comment->comment_approved == '0') : ?>
+        <em><?php _e('Your comment is awaiting moderation.') ?></em>
+    <?php endif; ?>
+    <div class="sh-comment-content">
+      <?php comment_text(); //コメント本文 ?>
+    </div>
+    <?php //返信機能は不要なので削除 ?>
+
+  </div>
+</div>
+<?php
+}
+endif;
