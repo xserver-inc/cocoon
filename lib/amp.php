@@ -49,9 +49,6 @@ function convert_content_for_amp($the_content){
     return $the_content;
   }
 
-
-
-
   //iframe用のplaceholderタグ（amp-iframeの呼び出し位置エラー対策）
   $amp_placeholder = '<amp-img layout="fill" src="'.get_template_directory_uri().'/images/transparence.png'.'" placeholder>';
 
@@ -90,25 +87,6 @@ function convert_content_for_amp($the_content){
   $the_content = str_replace(
     'http://www.image-rentracks.com/',
     'https://www.image-rentracks.com/', $the_content);
-
-  //Amazonデフォルトの埋め込みタグを置換する
-  /*
-  $pattern = '/<iframe([^>]+?)(src="https:\/\/rcm-fe.amazon-adsystem.com\/[^"]+?").*?><\/iframe>/is';
-  $append = '<amp-iframe$1$2 width="120" height="240"frameborder="0">'.$amp_placeholder.'</amp-iframe>';
-  */
-
-/*
-  $pattern = '/<iframe([^>]+?)(src="(https?:)?\/\/rcm-fe.amazon-adsystem.com\/[^"]+?t=([^&"]+)[^"]+?asins=([^&"]+)[^"]*?").*?><\/iframe>/is';
-  $amazon_url = 'https://www.amazon.co.jp/exec/obidos/ASIN/$5/$4/ref=nosim/';
-  $append = PHP_EOL.'<p class="amazon-parts"><amp-iframe$1$2 width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe><br><a href="'.$amazon_url.'" class="amazon-btn aa-link">'.__( 'Amazonで見る', THEME_NAME ).'</a></p>'.PHP_EOL;
-  $the_content = preg_replace($pattern, $append, $the_content);
-*/
-/*
-  $pattern = '/<iframe([^>]+?)(src="(https?:)?\/\/rcm-fe.amazon-adsystem.com\/[^"]+?t=([^&"]+)[^"]+?asins=([^&"]+)[^"]*?").*?><\/iframe>/is';
-  $amazon_url = 'https://www.amazon.co.jp/exec/obidos/ASIN/$5/$4/ref=nosim/';
-  $append = PHP_EOL.'<amp-iframe$1$2 layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" width="120" height="240" frameborder="0">'.$amp_placeholder.'</amp-iframe>'.PHP_EOL;
-  $the_content = preg_replace($pattern, $append, $the_content);
-*/
 
   //YouTube iframeのsrc属性のhttp URLをhttpsへ
   $the_content = str_replace('http://www.youtube.com/', 'https://www.youtube.com/', $the_content);
@@ -350,13 +328,18 @@ function convert_content_for_amp($the_content){
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
 
+
+// <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+// <p dir="ltr" lang="ja">こんにちは。<br>ナイスなカスタマイズ方法ありがとうございます。<br>というか、こっちの方デザインの方がユーザーさんに喜ばれると思うので、もしよろしければ、Cocoon親テーマの方でもCSSを使わせてもらってよろしいでしょうか？</p>
+// <p>— わいひら@寝ログ (@MrYhira) <a rel="nofollow noopener noreferrer external" target="_blank" href="https://twitter.com/MrYhira/status/982095264684040192?ref_src=twsrc%5Etfw">April 6, 2018<span class="fa fa-rocket external-icon anchor-icon"></span></a></p></blockquote>
+
   // Twitterをamp-twitterに置換する（埋め込みコード）
-  $pattern = '/<blockquote class="twitter-tweet".*?>.+?<a href="https:\/\/twitter.com\/.*?\/status\/([^\?"]+).*?">.+?<\/blockquote>/is';
+  $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
   $append = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
   // JetpackによるFacebook埋め込みをamp-facebookに置換する（埋め込みコード）
-  $pattern = '/<fb:post href="([^"]+?)"><\/fb:post>/is';
+  $pattern = '{<fb:post href="([^"]+?)"></fb:post>}is';
   $append = '<amp-facebook width=324 height=438 layout="responsive" data-href="$1"></amp-facebook>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
@@ -383,8 +366,7 @@ function convert_content_for_amp($the_content){
   $append = '</amp-video>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  // //YouTubeのURL埋め込み時にiframeのsrc属性のURLに余計なクエリが入るのを除去（力技;）
-  // $the_content = preg_replace('/\??(((?<!service)version=\d*)|(&|&|&)rel=\d*|(&|&|&)fs=\d*|(&|&|&)autohide=\d*|(&|&|&)showsearch=\d*|(&|&|&)showinfo=\d*|(&|&|&)iv_load_policy=\d*|(&|&|&)wmode=transparent)+/is', '', $the_content);
+
   // YouTubeを置換する（埋め込みコード）
   $pattern = '/<iframe[^>]+?src="https?:\/\/www.youtube.com\/embed\/([^\?"]+).*?".*?><\/iframe>/is';
   $append = '<amp-youtube layout="responsive" data-videoid="$1" width="800" height="450"></amp-youtube>';
