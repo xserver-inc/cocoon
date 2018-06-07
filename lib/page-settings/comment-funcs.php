@@ -1,5 +1,13 @@
 <?php //コメント設定に必要な定数や関数
 
+//コメント表示形式
+define('OP_COMMENT_TYPE', 'comment_type');
+if ( !function_exists( 'get_comment_type' ) ):
+function get_comment_type(){
+  return get_theme_option(OP_COMMENT_TYPE, 'default');
+}
+endif;
+
 //コメントの見出し
 define('OP_COMMENT_HEADING', 'comment_heading');
 if ( !function_exists( 'get_comment_heading' ) ):
