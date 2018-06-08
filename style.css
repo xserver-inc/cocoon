@@ -2989,6 +2989,11 @@ label.screen-reader-text {
   display: none;
 }
 
+.st-comment-edit {
+  font-size: 0.8em;
+  margin-left: 6px;
+}
+
 .st-comment-author .fn {
   font-weight: bold;
 }
