@@ -57,7 +57,7 @@ Masonry
 http://masonry.desandro.com/
 
 slicknav  
-http://slicknav.com/
+http://slicknav.io/
 
 slick  
 http://kenwheeler.github.io/slick/
