@@ -72,6 +72,7 @@ include 'punycode-obj.php';
 //Punycode変換関数
 ///////////////////////////////////////
 function convert_punycode($url, $is_encode = true){
+  if (empty($url)) return;
   $url_parts = parse_url($url);
   $Punycode = new Punycode();
   if ( $is_encode ) {
