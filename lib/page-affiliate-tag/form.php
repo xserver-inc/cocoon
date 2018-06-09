@@ -24,7 +24,7 @@
 
   echo '<h2>'.__( '内容', THEME_NAME ).'</h2>';
   //_v($_POST);
-  generate_textarea_tag('text', $text,  __( 'アフィリエイトタグを入力してください', THEME_NAME ));
+  generate_textarea_tag('text', $text,  __( 'アフィリエイトタグを入力', THEME_NAME ));
 
   generate_tips_tag(__( 'アフィリエイトタグを入力してください。', THEME_NAME ));
 

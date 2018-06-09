@@ -46,7 +46,7 @@
             $options = array(
               AVT_AMP_TEST => __( 'Google AMPテスト', THEME_NAME ),
               AVT_THE_AMP_VALIDATOR => __( 'The AMP Validator', THEME_NAME ),
-              AVT_THE_AMP_BENCH => __( '  AMPBench', THEME_NAME ),
+              AVT_THE_AMP_BENCH => __( 'AMPBench', THEME_NAME ),
             );
             generate_radiobox_tag(OP_AMP_VALIDATOR, $options, get_amp_validator());
             generate_tips_tag(__( '「AMPテスト」を行うテストツール（バリデーター）を選択します。', THEME_NAME ));
