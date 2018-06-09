@@ -287,7 +287,7 @@ endif;
 add_action( 'wp','header_last_modified_and_etag', 0 );
 if ( !function_exists( 'header_last_modified_and_etag' ) ):
 function header_last_modified_and_etag() {
-  if (is_singular()) {
+  if (is_singular() && !is_plugin_fourm_page()) {
     $modified_time = get_the_modified_time( 'U' );
 
     // Last-modified と ETag 生成
