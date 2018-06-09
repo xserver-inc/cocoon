@@ -143,7 +143,11 @@ function get_vertical_card_2_width(){
     $mw = 800;
   }
   $padding = 10;
-  $vcw = round($mw * 0.495) - ($padding * 2);
+  $border = 0;
+  if (is_entry_card_border_visible()) {
+    $border = 1;
+  }
+  $vcw = round($mw * 0.495) - ($padding * 2) - ($border * 2);
   return $vcw;
 }
 endif;
@@ -170,7 +174,11 @@ function get_vertical_card_3_width(){
     $mw = 800;
   }
   $padding = 7;
-  $vcw = round($mw * 0.33) - ($padding * 2);
+  $border = 0;
+  if (is_entry_card_border_visible()) {
+    $border = 1;
+  }
+  $vcw = round($mw * 0.33) - ($padding * 2) - ($border * 2);
   return $vcw;
 }
 endif;
@@ -197,7 +205,11 @@ function get_tile_card_2_width(){
     $mw = 800;
   }
   $padding = 10;
-  $vcw = round($mw * 0.495) - ($padding * 2);
+  $border = 0;
+  if (is_entry_card_border_visible()) {
+    $border = 1;
+  }
+  $vcw = round($mw * 0.495) - ($padding * 2) - ($border * 2);
   return $vcw;
 }
 endif;
@@ -222,7 +234,11 @@ function get_tile_card_3_width(){
     $mw = 800;
   }
   $padding = 7;
-  $vcw = round($mw * 0.33) - ($padding * 2);
+  $border = 0;
+  if (is_entry_card_border_visible()) {
+    $border = 1;
+  }
+  $vcw = round($mw * 0.33) - ($padding * 2) - ($border * 2);
   return $vcw;
 }
 endif;
