@@ -39,6 +39,9 @@ https://github.com/true/php-punycode
 Theme Update Checker Library（テーマ自動アップデート）  
 https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/
 
+Open Graph Protocol helper for PHP  
+https://github.com/scottmac/opengraph
+
 使用リソース
 ------
 highlight.js  

@@ -94,10 +94,18 @@ class OpenGraphGetter implements Iterator
     //タイトルタグからタイトル情報を取得
     preg_match( "/<title>(.*?)<\/title>/i", $HTML, $matches);
     $title = $matches ? $matches[1] : null;
+    //メタディスクリプションタグからタイトル情報を取得
+    preg_match( '{<meta name="description" content="(.*?)".*?>}i', $HTML, $matches);
+    $description = $matches ? $matches[1] : null;
+    if (!$description) {
+      preg_match( "{<meta name='description' content='(.*?)'.*?>}i", $HTML, $matches);
+      $description = $matches ? $matches[1] : null;
+    }
 
 		libxml_use_internal_errors($old_libxml_error);
 
 		$tags = $doc->getElementsByTagName('meta');
+
 		if ((!$tags || $tags->length === 0) && !$title) {
 			return false;
 		}
@@ -126,6 +134,7 @@ class OpenGraphGetter implements Iterator
             }
 
 		}
+
 		//Based on modifications at https://github.com/bashofmann/opengraph/blob/master/src/OpenGraph/OpenGraph.php
 		if (!isset($page->_values['title'])) {
             $titles = $doc->getElementsByTagName('title');
@@ -153,6 +162,15 @@ class OpenGraphGetter implements Iterator
         }
 
 		if (empty($page->_values)) { return false; }
+
+    //og:titleが空文字だったとき
+    if (empty(trim($page->_values['title']))) {
+      $page->_values['title'] = $title;
+    }
+    //og:descriptionが空文字だったとき
+    if (empty(trim($page->_values['description']))) {
+      $page->_values['description'] = $description;
+    }
 
 		return $page;
 	}
