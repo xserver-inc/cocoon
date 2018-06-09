@@ -52,6 +52,8 @@
             <?php
             $options = array(
               'entry_card' => __( 'エントリーカード（デフォルト）', THEME_NAME ),
+              'big_card_first' => __( '大きなカード（先頭のみ）', THEME_NAME ),
+              'big_card' => __( '大きなカード', THEME_NAME ),
               'vertical_card_2' => __( '縦型カード2列', THEME_NAME ),
               'vertical_card_3' => __( '縦型カード3列', THEME_NAME ),
               'tile_card_2' => __( 'タイルカード2列', THEME_NAME ),

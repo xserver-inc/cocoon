@@ -957,6 +957,12 @@ img {
   margin-right: 0;
 }
 
+.ect-big-card-first .a-wrap:first-of-type .entry-card-thumb,
+.ect-big-card .entry-card-thumb {
+  float: none;
+  width: 100%;
+}
+
 /************************************
 ** 日付関係のスタイル
 ************************************/

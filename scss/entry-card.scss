@@ -230,3 +230,9 @@
 //     animation: 1s ease 0s normal none 1 running flash;
 //   }
 // }
+
+.ect-big-card-first .a-wrap:first-of-type .entry-card-thumb,
+.ect-big-card .entry-card-thumb{
+  float: none;
+  width: 100%;
+}

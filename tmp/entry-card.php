@@ -6,7 +6,7 @@
       $thumbnail_tag =
         get_the_post_thumbnail(
           get_the_ID(),
-          get_entry_card_thumbnail_size(),
+          get_entry_card_thumbnail_size($count),
           array(
             'class' => 'entry-card-thumb-image card-thumb-image',
             'alt' => ''

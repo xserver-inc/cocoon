@@ -2,9 +2,19 @@
 
 //エントリーカードのサムネイルサイズ
 if ( !function_exists( 'get_entry_card_thumbnail_size' ) ):
-function get_entry_card_thumbnail_size(){
+function get_entry_card_thumbnail_size($count){
   $thumbnail_size = null;
   switch (get_entry_card_type()) {
+    case 'big_card_first':
+      if ($count == 1) {
+        $thumbnail_size = 'large';
+      } else {
+        $thumbnail_size = 'thumb320';
+      }
+      break;
+    case 'big_card':
+      $thumbnail_size = 'large';
+      break;
     case 'vertical_card_2':
       $thumbnail_size = get_vertical_card_2_thumbnail_size();
       break;

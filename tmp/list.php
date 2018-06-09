@@ -37,6 +37,7 @@ $count = 0;
 if (have_posts()) : // WordPress ループ
   while (have_posts()) : the_post(); // 繰り返し処理開始
     $count++;
+    set_query_var( 'count', $count );
     get_template_part('tmp/entry-card');
 
     //インデックスミドルに広告を表示してよいかの判別
