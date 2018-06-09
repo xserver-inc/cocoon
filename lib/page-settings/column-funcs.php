@@ -122,11 +122,13 @@ endif;
 //インデックスページのメインカラムコンテンツ幅
 if ( !function_exists( 'get_index_main_column_contents_width' ) ):
 function get_index_main_column_contents_width(){
+  //サイドバーも表示されているとき
   $mw = intval(get_main_column_contents_width());
   if (empty($mw)) {
     $mw = 800;
   }
 
+  //サイドバーが表示されていないとき
   if (!is_index_page_sidebar_visible()) {
     $sw = get_site_wrap_width();
     $main_column_padding = get_main_column_padding() ? get_main_column_padding() : 29;
