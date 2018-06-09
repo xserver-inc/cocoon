@@ -280,3 +280,34 @@ function wp_embed_register_handler_for_gist( $matches, $attr, $url, $rawattr ) {
   return apply_filters( 'embed_gist', $embed, $matches, $attr, $url, $rawattr );
 }
 endif;
+
+///////////////////////////////////////
+// Etag と Last-modified ヘッダを使って動的コンテンツでもブラウザキャッシュさせる
+///////////////////////////////////////
+add_action( 'wp','header_last_modified_and_etag', 0 );
+if ( !function_exists( 'header_last_modified_and_etag' ) ):
+function header_last_modified_and_etag() {
+  if (is_singular()) {
+    $modified_time = get_the_modified_time( 'U' );
+
+    // Last-modified と ETag 生成
+    $last_modified = gmdate( "D, d M Y H:i:s T", $modified_time );
+    $etag = md5( $last_modified . get_permalink() );
+
+    // ヘッダ送信
+    header( "Last-Modified: {$last_modified}" );
+    header( "Etag: {$etag}" );
+
+    // リクエストヘッダの If-Modified-Since と If-None-Match を取得
+    $if_modified_since = filter_input( INPUT_SERVER, 'HTTP_IF_MODIFIED_SINCE' );
+    $if_none_match = filter_input( INPUT_SERVER, 'HTTP_IF_NONE_MATCH' );
+
+    // Last-modified または Etag と一致していたら 304 Not Modified ヘッダを返して終了
+    if ( $if_modified_since === $last_modified || $if_none_match === $etag ) {
+      header( 'HTTP', true, 304 );
+      exit;
+    }
+  }
+
+}
+endif;

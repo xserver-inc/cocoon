@@ -84,7 +84,12 @@ endif;
 //シンプルスレッド用カスタマイズコード
 if ( !function_exists( 'simple_thread_comment_custom_callback' ) ):
 function simple_thread_comment_custom_callback($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment; ?>
+  $GLOBALS['comment'] = $comment;
+  if ( 'div' === $args['style'] ) {
+    $add_below = 'comment';
+  } else {
+    $add_below = 'div-comment';
+  } ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
     <div id="st-comment-<?php comment_ID(); ?>" class="st-comment-body">
 
@@ -97,7 +102,7 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
         <span class="st-comment-id">
         ID：<?php //IDっぽい文字列の表示（あくまでIDっぽいものです。）
           $ip01 = get_comment_author_IP(); //書き込んだユーザーのIPアドレスを取得
-          $ip02 = get_comment_date(jn); //今日の日付
+          $ip02 = get_comment_date('jn'); //今日の日付
           $ip03 = ip2long($ip01); //IPアドレスの数値化
           $ip04 = ($ip02) * ($ip03); //ip02とip03を掛け合わせる
           echo mb_substr(base64_encode($ip04), 2, 9); //base64でエンコード、頭から9文字まで出力
