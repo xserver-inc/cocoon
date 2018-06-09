@@ -126,19 +126,21 @@ function get_index_main_column_contents_width(){
   if (empty($mw)) {
     $mw = 800;
   }
-  //_v($mw);
 
-  // if (is_index_page_sidebar_visible()) {
-  //   $mw = get_main_column_width();
-  //   $main_column_padding = get_main_column_padding() ? get_main_column_padding() : 29;
-  //   $mw = intval($mw) + intval(get_sidebar_width()) + $main_column_padding;
-  // }
   if (!is_index_page_sidebar_visible()) {
-    $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
+    $sw = get_site_wrap_width();
+    $main_column_padding = get_main_column_padding() ? get_main_column_padding() : 29;
     $main_column_border_width = get_main_column_border_width() ? get_main_column_border_width() : 1;
-    $mw = intval($mw) + intval(get_sidebar_width()) + $main_sidebar_margin + ($main_column_border_width*2);
+    $mw = $sw - ($main_column_padding*2) - ($main_column_border_width*2);
     //var_dump($mw);
   }
+
+  // if (!is_index_page_sidebar_visible()) {
+  //   $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
+  //   $main_column_border_width = get_main_column_border_width() ? get_main_column_border_width() : 1;
+  //   $mw = intval($mw) + intval(get_sidebar_width()) + $main_sidebar_margin + ($main_column_border_width*2);
+  //   //var_dump($mw);
+  // }
   //_v(get_sidebar_width());
   //_v($mw);
   //_v(get_sidebar_width());
