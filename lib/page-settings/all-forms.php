@@ -289,10 +289,10 @@
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_SITE_DATE_FORMAT, get_site_date_format(), __( 'Y.m.d', THEME_NAME ));
-            generate_tips_tag(__( 'テーマ全体に使われている日付のフォーマット形式を入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_SITE_DATE_FORMAT, get_site_date_format(), __( '', THEME_NAME ));
+            generate_tips_tag(__( 'テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y.m.d）。', THEME_NAME ));
             ?>
-            <p><a href="https://wpdocs.osdn.jp/Formatting_Date_and_Time">日付と時刻の書式の解説</a></p>
+            <p><?php _e( '<a href="https://wpdocs.osdn.jp/Formatting_Date_and_Time">日付と時刻の書式の解説</a>', THEME_NAME ) ?></p>
           </td>
         </tr>
 

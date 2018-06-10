@@ -289,10 +289,11 @@ if ( !function_exists( 'header_last_modified_and_etag' ) ):
 function header_last_modified_and_etag() {
   if (is_singular() && !is_plugin_fourm_page()) {
     $modified_time = get_the_modified_time( 'U' );
+    $amp = is_amp() ? '1' : '0';
 
     // Last-modified と ETag 生成
     $last_modified = gmdate( "D, d M Y H:i:s T", $modified_time );
-    $etag = md5( $last_modified . get_permalink() );
+    $etag = md5( $last_modified . get_permalink() . $amp );
 
     // ヘッダ送信
     header( "Last-Modified: {$last_modified}" );
