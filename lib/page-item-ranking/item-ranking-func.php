@@ -227,7 +227,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
     $link_tag  = preg_replace('/\n/', '', $link_tag);
     //ショートコード実行用フィルター
     $name        = apply_filters( 'ranking_item_name',        $name                 );
-    $image_tag   = apply_filters( 'ranking_item_image_tag',   $image_tag            );
+    $image_tag   = apply_filters( 'ranking_item_image_tag',   wpautop($image_tag)            );
     $description = apply_filters( 'ranking_item_description', wpautop($description) );
     $link_tag    = apply_filters( 'ranking_item_link_tag',    $link_tag             );
 
