@@ -1,5 +1,5 @@
 <?php //Google Tag Managerコード（管理者はカウントしない）
-if ( !is_user_admin() ) {
+if ( is_analytics() ) {
   //AMP用Google Tag Managerトラッキングコードを設定している場合
   $tracking_id = get_google_tag_manager_amp_tracking_id();
 

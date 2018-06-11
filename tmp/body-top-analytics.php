@@ -1,7 +1,7 @@
 <?php //ヘッダーのアクセス解析
 
 //Google Tag Manager (noscript)
-if ( $gtm_tracking_id = get_google_tag_manager_tracking_id() )://トラッキングIDが設定されているとき ?>
+if ( is_analytics() && $gtm_tracking_id = get_google_tag_manager_tracking_id() )://トラッキングIDが設定されているとき ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_tracking_id; ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -9,7 +9,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 <?php
 //Ptengine
-if ( $pte_tracking_id = get_ptengine_tracking_id() ): ?>
+if ( is_analytics() && $pte_tracking_id = get_ptengine_tracking_id() ): ?>
 <!-- Ptengine -->
 <script type="text/javascript">
   window._pt_sp_2 = [];
@@ -28,7 +28,7 @@ if ( $pte_tracking_id = get_ptengine_tracking_id() ): ?>
 <?php endif ?>
 <?php
 //以下その他の解析コードなど
-if ($header_tags = get_other_analytics_header_tags()) {
+if (is_analytics() && $header_tags = get_other_analytics_header_tags()) {
   echo '<!-- Other Analytics -->'.PHP_EOL;
   echo $header_tags.PHP_EOL;
   echo '<!-- /Other Analytics -->'.PHP_EOL;

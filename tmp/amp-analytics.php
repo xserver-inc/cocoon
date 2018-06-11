@@ -1,6 +1,6 @@
 <?php //Google Analyticsコード（ログインユーザーはカウントしない）
 //var_dump(get_amp_tracking_id());
-if ( !is_user_admin() ) {
+if ( is_analytics() ) {
   //AMP用Analyticsトラッキングコードを設定している場合
   $tracking_id = get_google_analytics_tracking_id();
   $after_title = '[AMP]';

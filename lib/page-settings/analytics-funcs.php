@@ -1,5 +1,13 @@
 <?php //アクセス解析設定に必要な定数や関数
 
+//サイト管理者を解析するか
+define('OP_ANALYTICS_ADMIN_INCLUDE', 'analytics_admin_include');
+if ( !function_exists( 'is_analytics_admin_include' ) ):
+function is_analytics_admin_include(){
+  return get_theme_option(OP_ANALYTICS_ADMIN_INCLUDE, 1);
+}
+endif;
+
 //Google Tag ManagerのトラッキングID
 define('OP_GOOGLE_TAG_MANAGER_TRACKING_ID', 'google_tag_manager_tracking_id');
 if ( !function_exists( 'get_google_tag_manager_tracking_id' ) ):

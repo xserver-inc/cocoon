@@ -1,5 +1,35 @@
 <div class="metabox-holder">
 
+<!-- アクセス解析設定 -->
+<div id="analytics-all" class="postbox">
+  <h2 class="hndle"><?php _e( 'アクセス解析設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'アクセス解析全般に適用される設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 解析全般 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ANALYTICS_ADMIN_INCLUDE, __('解析全般', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ANALYTICS_ADMIN_INCLUDE , is_analytics_admin_include(), __( 'サイト管理者も含めてアクセス解析する', THEME_NAME ));
+            generate_tips_tag(__( 'サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 <!-- Google Tag Manager設定 -->
 <div id="gtm" class="postbox">
   <h2 class="hndle"><?php _e( 'Googleタグマネージャ設定', THEME_NAME ) ?></h2>

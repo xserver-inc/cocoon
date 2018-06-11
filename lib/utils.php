@@ -1713,3 +1713,11 @@ function is_front_top_page(){
   return is_front_page() && !is_paged();
 }
 endif;
+
+//アクセス解析を行うか
+if ( !function_exists( 'is_analytics' ) ):
+function is_analytics(){
+  //var_dump(!is_user_administrator() || is_analytics_admin_include());
+  return !is_user_administrator() || is_analytics_admin_include();
+}
+endif;

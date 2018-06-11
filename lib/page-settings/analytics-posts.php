@@ -1,5 +1,8 @@
 <?php //アクセス解析設定をデータベースに保存
 
+//サイト管理者を解析するか
+update_theme_option(OP_ANALYTICS_ADMIN_INCLUDE);
+
 //Google Tag ManagerのトラッキングID
 update_theme_option(OP_GOOGLE_TAG_MANAGER_TRACKING_ID);
 
