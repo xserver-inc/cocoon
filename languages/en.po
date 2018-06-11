@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-06-09 21:45+0900\n"
-"PO-Revision-Date: 2018-06-09 21:58+0900\n"
+"POT-Creation-Date: 2018-06-11 00:19+0900\n"
+"PO-Revision-Date: 2018-06-11 00:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -594,9 +594,8 @@ msgid "カテゴリ色"
 msgstr "Category color"
 
 #: lib/category.php:140
-#, fuzzy
 msgid "カテゴリの色を指定します。"
-msgstr "Specify the color of the category."
+msgstr "Select category key color."
 
 #: lib/category.php:144
 msgid "カテゴリタイトル"
@@ -682,11 +681,11 @@ msgstr ""
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">says:</span>"
 
-#: lib/comments.php:45 lib/comments.php:109
+#: lib/comments.php:45 lib/comments.php:114
 msgid "Your comment is awaiting moderation."
 msgstr "Your comment is awaiting moderation."
 
-#: lib/comments.php:52 lib/comments.php:96
+#: lib/comments.php:52 lib/comments.php:101
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
@@ -703,7 +702,7 @@ msgstr "F j, Y (D)"
 msgid "H:i:s"
 msgstr "g:i a"
 
-#: lib/comments.php:94
+#: lib/comments.php:99
 #, php-format
 msgid ""
 "名前:<cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></"
@@ -712,11 +711,11 @@ msgstr ""
 "Name:<cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></"
 "cite> :"
 
-#: lib/comments.php:96
+#: lib/comments.php:101
 msgid "投稿日："
 msgstr "Post:"
 
-#: lib/comments.php:106
+#: lib/comments.php:111
 msgid "Edit"
 msgstr "Edit"
 
@@ -1521,8 +1520,6 @@ msgid "設定をリストアしました。"
 msgstr "Settings were restored."
 
 #: lib/page-backup/backup-forms.php:5
-#, fuzzy
-#| msgid "バックアップ・レストア"
 msgid "バックアップ・リストア"
 msgstr "Backup / Restore"
 
@@ -1563,7 +1560,6 @@ msgstr ""
 "button."
 
 #: lib/page-func-text/_top-page.php:31
-#, fuzzy
 msgid "テキストテンプレート"
 msgstr "Text templates"
 
@@ -1651,10 +1647,8 @@ msgid "プレビュー"
 msgstr "Preview"
 
 #: lib/page-item-ranking/form.php:62
-#, fuzzy
-#| msgid "タイトル："
 msgid "タイトル（※必須）"
-msgstr "Event Title (required)"
+msgstr "Title (*required)"
 
 #: lib/page-item-ranking/form.php:64
 msgid "タイトルを入力"
@@ -1761,9 +1755,8 @@ msgstr ""
 "not entered."
 
 #: lib/page-item-ranking/form.php:145
-#, fuzzy
 msgid "説明文（※必須）"
-msgstr "Description (* required)"
+msgstr "Description (*required)"
 
 #: lib/page-item-ranking/form.php:148
 #, fuzzy
@@ -1802,9 +1795,8 @@ msgstr ""
 "precedence if you have entered."
 
 #: lib/page-item-ranking/form.php:169
-#, fuzzy
 msgid "タグで入力"
-msgstr "Type in the tags"
+msgstr "Type in a tags"
 
 #: lib/page-item-ranking/form.php:171
 msgid "リンクタグ"
@@ -1827,7 +1819,6 @@ msgstr ""
 "setting. You can also enter a short code."
 
 #: lib/page-item-ranking/form.php:199
-#, fuzzy
 msgid "アイテムを上に移動"
 msgstr "Move Item Up"
 
@@ -1836,9 +1827,8 @@ msgid "詳細ページ"
 msgstr "Details page URL"
 
 #: lib/page-item-ranking/item-ranking-func.php:309
-#, fuzzy
 msgid "公式ページ"
-msgstr "Official page"
+msgstr "Official Page"
 
 #: lib/page-item-ranking/list.php:13 lib/page-speech-balloon/list.php:30
 #, fuzzy
@@ -1901,10 +1891,8 @@ msgid "アイテムカウントが設定されていません。"
 msgstr "Item count has not been set."
 
 #: lib/page-settings/404-forms.php:5
-#, fuzzy
-#| msgid "404ページ"
 msgid "404ページ設定"
-msgstr "Set the 404 page"
+msgstr "404 page settings"
 
 #: lib/page-settings/404-forms.php:8
 #, fuzzy
@@ -1912,10 +1900,8 @@ msgid "ページが見つからなかった場合の404ページの表示設定�
 msgstr "404 page not found page is displayed."
 
 #: lib/page-settings/404-forms.php:26
-#, fuzzy
-#| msgid "404ページ"
 msgid "404ページ画像"
-msgstr "404 page images"
+msgstr "404 page image"
 
 #: lib/page-settings/404-forms.php:31
 #, fuzzy
@@ -1924,8 +1910,6 @@ msgid "404ページで表示する画像を選択してください。"
 msgstr "Please select the image to display on the 404 page."
 
 #: lib/page-settings/404-forms.php:39
-#, fuzzy
-#| msgid "タイトル"
 msgid "404ページタイトル"
 msgstr "404 page title"
 
@@ -1940,8 +1924,6 @@ msgid "404ページに表示するタイトルを入力します。"
 msgstr "Type a title to appear in the 404 page."
 
 #: lib/page-settings/404-forms.php:52
-#, fuzzy
-#| msgid "シェアメッセージ"
 msgid "404ページメッセージ"
 msgstr "404 page messages"
 
@@ -1975,9 +1957,8 @@ msgid "Cocoonの設定全般についてはマニュアルを参照してくだ�
 msgstr "See the documentation of the cocoon settings for General."
 
 #: lib/page-settings/_top-page.php:128
-#, fuzzy
 msgid "テーマ利用マニュアル"
-msgstr "Theme usage manual"
+msgstr "Theme manual"
 
 #: lib/page-settings/_top-page.php:135 tmp/admin-panel.php:44
 msgid "全体"
@@ -2065,10 +2046,8 @@ msgid "ボタン"
 msgstr "Button"
 
 #: lib/page-settings/_top-page.php:159
-#, fuzzy
-#| msgid "モバイルボタン"
 msgid "モバイル"
-msgstr "Footer (for mobile)"
+msgstr "Mobile"
 
 #: lib/page-settings/_top-page.php:160 lib/widget-areas.php:413
 msgid "404ページ"
@@ -2111,9 +2090,8 @@ msgid "環境情報"
 msgstr "Environment Information"
 
 #: lib/page-settings/about-forms.php:8
-#, fuzzy
 msgid "環境に関する情報です。"
-msgstr "This is the information about the environment."
+msgstr "Theme environment information."
 
 #: lib/page-settings/about-forms.php:15
 msgid "サイト名："
@@ -2128,8 +2106,6 @@ msgid "ホームURL："
 msgstr "Home URL:"
 
 #: lib/page-settings/about-forms.php:18
-#, fuzzy
-#| msgid "コンテンツ"
 msgid "コンテンツURL："
 msgstr "Content URL:"
 
@@ -3246,15 +3222,23 @@ msgstr ""
 msgid "日付フォーマット"
 msgstr "Date format"
 
-#: lib/page-settings/all-forms.php:292 lib/page-settings/all-funcs.php:207
+#: lib/page-settings/all-forms.php:293
+#, fuzzy
+msgid ""
+"テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y."
+"m.d）。"
+msgstr "Please enter a date is used throughout the theme format."
+
+#: lib/page-settings/all-forms.php:295
+msgid ""
+"<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書式"
+"の解説</a>"
+msgstr ""
+
+#: lib/page-settings/all-funcs.php:207
 #, fuzzy
 msgid "Y.m.d"
 msgstr "Ymd"
-
-#: lib/page-settings/all-forms.php:293
-#, fuzzy
-msgid "テーマ全体に使われている日付のフォーマット形式を入力してください。"
-msgstr "Please enter a date is used throughout the theme format."
 
 #: lib/page-settings/amp-forms.php:6
 #, fuzzy
@@ -3748,9 +3732,8 @@ msgid "日付表示"
 msgstr "Date display"
 
 #: lib/page-settings/blogcard-in-forms.php:77
-#, fuzzy
 msgid "投稿日"
-msgstr "Post:"
+msgstr "Posted"
 
 #: lib/page-settings/blogcard-in-forms.php:78
 msgid "更新日"
@@ -4446,9 +4429,8 @@ msgstr "Add to noopener"
 
 #: lib/page-settings/content-forms.php:57
 #: lib/page-settings/content-forms.php:165
-#, fuzzy
 msgid "rel属性にnoopenerを追加します。"
-msgstr "Add a noopener to the rel attribute."
+msgstr "Add noopener to rel attributes."
 
 #: lib/page-settings/content-forms.php:58
 #: lib/page-settings/content-forms.php:166
@@ -4457,14 +4439,12 @@ msgstr "Add to noopener"
 
 #: lib/page-settings/content-forms.php:59
 #: lib/page-settings/content-forms.php:167
-#, fuzzy
 msgid "rel属性にnoreferrerを追加します。"
-msgstr "Add noreferrer to the rel attribute."
+msgstr "Add noreferrer to rel attributes."
 
 #: lib/page-settings/content-forms.php:60
-#, fuzzy
 msgid "externalを追加"
-msgstr "Add the external"
+msgstr "Add to external"
 
 #: lib/page-settings/content-forms.php:61
 #, fuzzy
@@ -4739,7 +4719,6 @@ msgid "クレジット表記"
 msgstr "Credits"
 
 #: lib/page-settings/footer-forms.php:44
-#, fuzzy
 msgid "サイト開設年："
 msgstr "Site opening year:"
 
@@ -4839,10 +4818,8 @@ msgid "ヘッダーロゴサイズ"
 msgstr "Header logo size"
 
 #: lib/page-settings/header-forms.php:87
-#, fuzzy
-#| msgid "内容："
 msgid "幅："
-msgstr "A card width is 500px by default, but widen the width further."
+msgstr "Width:"
 
 #: lib/page-settings/header-forms.php:89
 msgid " × "
@@ -5866,8 +5843,6 @@ msgid "投稿本文下のカテゴリとタグの表示を設定します。"
 msgstr "Sets the text under the post categories and tags."
 
 #: lib/page-settings/single-forms.php:21
-#, fuzzy
-#| msgid "デモはランダム表示です。"
 msgid "デモはランダムです。"
 msgstr "Demo is random."
 
@@ -5936,7 +5911,7 @@ msgstr "How to show related posts on post pages."
 
 #: lib/page-settings/single-forms.php:92
 msgid "関連性"
-msgstr "[かんれんせい] /relevance/relevant/relatedness/relationship/relative/"
+msgstr "Relationship"
 
 #: lib/page-settings/single-forms.php:97 lib/widgets/display-widgets.php:153
 msgid "カテゴリー"
@@ -6056,7 +6031,6 @@ msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr "[Previous page] To view next page navigation?"
 
 #: lib/page-settings/single-forms.php:233
-#, fuzzy
 msgid "サムネイル正方形"
 msgstr "Thumbnail square"
 
@@ -6125,12 +6099,10 @@ msgid "スキンを変更することで、サイトのデザインを手軽に�
 msgstr "Site design can be changed easily by changing the skin."
 
 #: lib/page-settings/skin-forms.php:21
-#, fuzzy
 msgid "スキン一覧"
 msgstr "Skins list"
 
 #: lib/page-settings/skin-forms.php:46
-#, fuzzy
 msgid "作者"
 msgstr "Author"
 
@@ -6141,9 +6113,8 @@ msgid "スキンを選択してください。"
 msgstr "Please select a skin."
 
 #: lib/page-settings/skin-forms.php:77
-#, fuzzy
 msgid "表示スキン"
-msgstr "Display Skin"
+msgstr "Skins"
 
 #: lib/page-settings/skin-forms.php:82
 #, fuzzy
@@ -6670,10 +6641,8 @@ msgstr ""
 "characters, including the URL and title."
 
 #: lib/page-settings/sns-share-forms.php:71
-#, fuzzy
-#| msgid "Pinterest"
 msgid "Pinterest設定"
-msgstr "Pinterest setting"
+msgstr "Pinterest settings"
 
 #: lib/page-settings/sns-share-forms.php:73
 #, fuzzy
@@ -6681,13 +6650,10 @@ msgid "Pinterestの「保存」ボタンに関する設定です。"
 msgstr "It is set on the \"Save\" button on Pinterest."
 
 #: lib/page-settings/sns-share-forms.php:80
-#, fuzzy
-#| msgid "Pinterest"
 msgid "Pinterest共有"
 msgstr "Pinterest share"
 
 #: lib/page-settings/sns-share-forms.php:84
-#, fuzzy
 msgid "Pinterestで画像をシェアする"
 msgstr "To share a picture with Pinterest"
 
@@ -6711,28 +6677,27 @@ msgstr ""
 
 #: lib/page-settings/sns-share-forms.php:132
 msgid "4時間"
-msgstr "4 hours"
+msgstr "4h"
 
 #: lib/page-settings/sns-share-forms.php:133
 msgid "5時間"
-msgstr "5 hours"
+msgstr "5h"
 
 #: lib/page-settings/sns-share-forms.php:135
-#, fuzzy
 msgid "8時間"
-msgstr "Eight hours"
+msgstr "8h"
 
 #: lib/page-settings/sns-share-forms.php:136
 msgid "10時間"
-msgstr "10 hours"
+msgstr "10h"
 
 #: lib/page-settings/sns-share-forms.php:138
 msgid "16時間"
-msgstr "16 hours"
+msgstr "16h"
 
 #: lib/page-settings/sns-share-forms.php:139
 msgid "20時間"
-msgstr "20 hours"
+msgstr "20h"
 
 #: lib/page-settings/title-forms.php:5
 msgid "フロントページ設定"
@@ -6828,10 +6793,8 @@ msgstr "It will be a title like \"Page Title | Site Name\"."
 #: lib/page-settings/title-forms.php:130 lib/page-settings/title-forms.php:131
 #: lib/page-settings/title-forms.php:132 lib/page-settings/title-forms.php:228
 #: lib/page-settings/title-forms.php:229 lib/page-settings/title-forms.php:230
-#, fuzzy
-#| msgid "タイトル"
 msgid "ページタイトル"
-msgstr "Front Page Title"
+msgstr "Page Title"
 
 #: lib/page-settings/title-forms.php:135
 #, fuzzy
