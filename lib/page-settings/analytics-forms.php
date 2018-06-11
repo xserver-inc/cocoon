@@ -18,7 +18,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_ANALYTICS_ADMIN_INCLUDE , is_analytics_admin_include(), __( 'サイト管理者も含めてアクセス解析する', THEME_NAME ));
-            generate_tips_tag(__( 'サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。', THEME_NAME ));
+            generate_tips_tag(__( 'サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。サイト管理者を解析したくない場合は無効にしてください。', THEME_NAME ));
             ?>
           </td>
         </tr>
