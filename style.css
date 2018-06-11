@@ -957,10 +957,14 @@ img {
   margin-right: 0;
 }
 
-.ect-big-card-first .a-wrap:first-of-type .entry-card-thumb,
-.ect-big-card .entry-card-thumb {
+.ect-big-card-first .a-wrap:first-of-type .card-thumb,
+.ect-big-card .card-thumb {
   float: none;
   width: 100%;
+}
+.ect-big-card-first .a-wrap:first-of-type .card-content,
+.ect-big-card .card-content {
+  margin: 0;
 }
 
 /************************************

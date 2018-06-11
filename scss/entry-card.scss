@@ -231,8 +231,14 @@
 //   }
 // }
 
-.ect-big-card-first .a-wrap:first-of-type .entry-card-thumb,
-.ect-big-card .entry-card-thumb{
-  float: none;
-  width: 100%;
+.ect-big-card-first .a-wrap:first-of-type,
+.ect-big-card{
+  .card-thumb{
+    float: none;
+    width: 100%;
+  }
+  .card-content{
+    margin:0
+  }
+
 }
