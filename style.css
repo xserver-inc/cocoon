@@ -1045,9 +1045,6 @@ img {
   transition: all 0.5s ease;
 }
 
-/************************************
-** SNSシェアボタン
-************************************/
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
   background-color: #1da1f2;
 }
