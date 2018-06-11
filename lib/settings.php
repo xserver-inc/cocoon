@@ -284,7 +284,7 @@ endif;
 ///////////////////////////////////////
 // Etag と Last-modified ヘッダを使って動的コンテンツでもブラウザキャッシュさせる
 ///////////////////////////////////////
-add_action( 'wp','header_last_modified_and_etag', 0 );
+//add_action( 'wp','header_last_modified_and_etag', 0 );
 if ( !function_exists( 'header_last_modified_and_etag' ) ):
 function header_last_modified_and_etag() {
   if (is_singular() && !is_plugin_fourm_page()) {
