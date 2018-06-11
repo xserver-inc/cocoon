@@ -33,7 +33,7 @@ function comment_custom_callback($comment, $args, $depth) {
   ?>
   <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
   <?php if ( 'div' != $args['style'] ) : ?>
-      <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+      <div id="div-comment-<?php comment_ID() ?>" class="comment-body article">
   <?php endif; ?>
   <div class="comment-author vcard">
     <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
@@ -91,7 +91,7 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
     $add_below = 'div-comment';
   } ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-    <div id="st-comment-<?php comment_ID(); ?>" class="st-comment-body">
+    <div id="st-comment-<?php comment_ID(); ?>" class="st-comment-body article">
 
       <div class="st-comment-meta st-commentmetadata">
         <span class="st-comment-author vcard">
