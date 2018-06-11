@@ -25,6 +25,13 @@ function is_internal_blogcard_url($url){
 }
 endif;
 
+//内部ブログカードのサムネイルサイズ
+if ( !function_exists( 'get_internal_blogcard_thumbnail_size' ) ):
+function get_internal_blogcard_thumbnail_size(){
+  return 'thumb160';
+}
+endif;
+
 //内部URLからブログをカードタグの取得
 if ( !function_exists( 'url_to_internal_blogcard_tag' ) ):
 function url_to_internal_blogcard_tag($url){
@@ -86,7 +93,7 @@ function url_to_internal_blogcard_tag($url){
 
 
     //サムネイルの取得（要160×90のサムネイル設定）
-    $thumbnail = get_the_post_thumbnail($id, 'thumb160', array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
+    $thumbnail = get_the_post_thumbnail($id, get_internal_blogcard_thumbnail_size(), array('class' => 'blogcard-thumb-image internal-blogcard-thumb-image', 'alt' => ''));
 
   } elseif (is_home_url($url)){
     //トップページの場合
