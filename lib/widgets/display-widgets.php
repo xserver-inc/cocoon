@@ -263,7 +263,7 @@ function is_display_widgets_widget_visible( $info ){
     foreach ($widget_pages as $value) {
       switch ($value) {
         case 'is_front_page':
-          $display = $display || (is_front_page() && !is_paged());
+          $display = $display || (is_front_top_page());
           break;//break;は必要
         case 'is_single':
           $display = $display || is_single();

@@ -1706,3 +1706,10 @@ function is_index_page_sidebar_visible(){
   return $sidebar_visible;
 }
 endif;
+
+//フロントトップページかどうか
+if ( !function_exists( 'is_front_top_page' ) ):
+function is_front_top_page(){
+  return is_front_page() && !is_paged();
+}
+endif;

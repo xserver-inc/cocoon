@@ -34,10 +34,16 @@ if ( !function_exists( 'body_class_additional' ) ):
 function body_class_additional($classes) {
   global $post;
 
+  //フロントページかどうか
+  if (is_front_top_page()) {
+    $classes[] .= 'front-top-page';
+  }
+
   //管理画面との差別用
   $classes[] = 'public-page';
   //body
   $classes[] .= 'page-body';
+
 
   //カテゴリ入りクラスの追加
   if ( is_single() ) {
@@ -154,7 +160,7 @@ function body_class_additional($classes) {
   switch (get_appeal_area_display_type()) {
     //フロントページ以外では表示しない
     case 'front_page_only':
-      if (!(is_front_page() && !is_paged())) {
+      if (!(is_front_top_page())) {
         $add_no_appeal_area = true;
       }
       break;
@@ -177,7 +183,7 @@ function body_class_additional($classes) {
   switch (get_carousel_display_type()) {
     //フロントページ以外では表示しない
     case 'front_page_only':
-      if (!(is_front_page() && !is_paged())) {
+      if (!(is_front_top_page())) {
         $add_no_carousel = true;
       }
       break;
