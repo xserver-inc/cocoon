@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-11 00:19+0900\n"
-"PO-Revision-Date: 2018-06-11 00:29+0900\n"
+"PO-Revision-Date: 2018-06-11 23:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -5862,13 +5862,10 @@ msgid "カテゴリ・タグ1列"
 msgstr "Categories tagged 1 column"
 
 #: lib/page-settings/single-forms.php:35
-#, fuzzy
-#| msgid "カテゴリー検索"
 msgid "カテゴリのみ"
-msgstr "Category only"
+msgstr "Categoies only"
 
 #: lib/page-settings/single-forms.php:36
-#, fuzzy
 msgid "タグのみ"
 msgstr "Tags only"
 
@@ -5927,8 +5924,6 @@ msgid "関連記事にカテゴリーを関連づけるかタグを関連づけ�
 msgstr "Articles associated with the category, link tags."
 
 #: lib/page-settings/single-forms.php:109
-#, fuzzy
-#| msgid "関連記事"
 msgid "関連記事見出し"
 msgstr "Related headlines"
 
@@ -5951,24 +5946,20 @@ msgid "表示タイプ"
 msgstr "Display type:"
 
 #: lib/page-settings/single-forms.php:130
-#, fuzzy
 msgid "ミニカード（推奨表示数：偶数）"
-msgstr "Mini Card (recommended viewing: even-numbered)"
+msgstr "Mini Card"
 
 #: lib/page-settings/single-forms.php:131
-#, fuzzy
 msgid "縦型カード3列（推奨表示数：6, 12, 18...）"
-msgstr "Vertical card 3-column (number of recommendations: 6, 12, 18...)"
+msgstr "Vertical card 3-column"
 
 #: lib/page-settings/single-forms.php:132
-#, fuzzy
 msgid "縦型カード4列（推奨表示数：4, 8, 12...）"
-msgstr "Vertical card 4 column (number of recommended: 4, 8, 12...)"
+msgstr "Vertical card 4 column"
 
 #: lib/page-settings/single-forms.php:133
-#, fuzzy
 msgid "AdSense関連コンテンツユニット"
-msgstr "AdSense-related content units"
+msgstr "AdSense-related content unit"
 
 #: lib/page-settings/single-forms.php:136
 #, fuzzy
@@ -5980,8 +5971,6 @@ msgstr ""
 "related content unit by advertising AdSense code is set"
 
 #: lib/page-settings/single-forms.php:144
-#, fuzzy
-#| msgid "表示切替"
 msgid "表示数"
 msgstr "Views"
 
@@ -5993,7 +5982,6 @@ msgstr ""
 "maximum: 30)"
 
 #: lib/page-settings/single-forms.php:170
-#, fuzzy
 msgid "最大自動生成抜粋文字数"
 msgstr "Maximum auto generated excerpt characters"
 
@@ -6010,7 +5998,6 @@ msgstr ""
 "edit screen. (Min: 0, Max: 500)"
 
 #: lib/page-settings/single-forms.php:189
-#, fuzzy
 msgid "ページ送りナビ設定"
 msgstr "Page navigation settings"
 
@@ -6020,10 +6007,8 @@ msgid "[前ページ][次ページ]へと送るナビゲーションの設定で
 msgstr "[Previous page] Is sent to the [next page] navigation settings."
 
 #: lib/page-settings/single-forms.php:218
-#, fuzzy
-#| msgid "feedlyフォローボタンを表示する"
 msgid "ページ送りナビを表示する"
-msgstr "To display the navigation page feed"
+msgstr "Page Navigation Display"
 
 #: lib/page-settings/single-forms.php:219
 #, fuzzy
@@ -6040,14 +6025,12 @@ msgid "ページ送りナビの見た目を変更します。"
 msgstr "Change the look of page feed."
 
 #: lib/page-settings/single-forms.php:244
-#, fuzzy
 msgid "枠線表示"
-msgstr "Frame lines visible"
+msgstr "Border lines visible"
 
 #: lib/page-settings/single-forms.php:248
-#, fuzzy
 msgid "ページ送りナビの枠線を表示する"
-msgstr "To view the page feed highlight border"
+msgstr "Page Navigation Border Display"
 
 #: lib/page-settings/single-forms.php:249
 #, fuzzy
@@ -6089,9 +6072,8 @@ msgid "関連記事"
 msgstr "Related Posts"
 
 #: lib/page-settings/skin-forms.php:5
-#, fuzzy
 msgid "スキン設定"
-msgstr "Skin Configuration"
+msgstr "Skin Settings"
 
 #: lib/page-settings/skin-forms.php:8
 #, fuzzy
@@ -6117,19 +6099,16 @@ msgid "表示スキン"
 msgstr "Skins"
 
 #: lib/page-settings/skin-forms.php:82
-#, fuzzy
 msgid "全てのスキンを表示"
 msgstr "View all skins"
 
 #: lib/page-settings/skin-forms.php:83
-#, fuzzy
 msgid "親テーマのスキンのみ表示"
 msgstr "Display only the parent theme skins"
 
 #: lib/page-settings/skin-forms.php:84
-#, fuzzy
 msgid "子テーマのスキンのみ表示"
-msgstr "Show only child theme skins"
+msgstr "Display only child theme skins"
 
 #: lib/page-settings/skin-forms.php:87
 #, fuzzy
@@ -6137,7 +6116,6 @@ msgid "スキン一覧に含めて表示するスキンを選択してくださ�
 msgstr "Please select the skin to be included in the skin list and display it."
 
 #: lib/page-settings/skin-forms.php:95
-#, fuzzy
 msgid "同梱スキン募集中"
 msgstr "Bundled skins are recruiting"
 
@@ -6151,14 +6129,12 @@ msgstr ""
 "with.\"."
 
 #: lib/page-settings/skin-forms.php:99
-#, fuzzy
 msgid "詳しくはこちら"
 msgstr "More information"
 
 #: lib/page-settings/skin-forms.php:99
-#, fuzzy
 msgid "スキンの同梱配布について"
-msgstr "About the skins came shipping"
+msgstr "About a skins Bundle"
 
 #: lib/page-settings/sns-follow-forms.php:5
 msgid "フォローボタン"
@@ -6339,9 +6315,8 @@ msgid "本文下やウィジェットなどのフォロー数表示を切り替�
 msgstr "Toggles the follow number, such as under the full text or widget."
 
 #: lib/page-settings/sns-follow-forms.php:151
-#, fuzzy
 msgid "feedly購読者数"
-msgstr "feedly Number of subscribers"
+msgstr "feedly subscribers"
 
 #: lib/page-settings/sns-follow-forms.php:156
 #, fuzzy
@@ -6411,7 +6386,6 @@ msgstr ""
 "update interval narrower (primary servers)."
 
 #: lib/page-settings/sns-follow-funcs.php:21
-#, fuzzy
 msgid "をフォローする"
 msgstr "Follow"
 
@@ -6527,15 +6501,12 @@ msgstr "Share count display"
 
 #: lib/page-settings/sns-share-forms-bottom.php:145
 #: lib/page-settings/sns-share-forms-top.php:135
-#, fuzzy
-#| msgid "シェア数の表示"
 msgid "シェア数を表示"
-msgstr "Shows the number of shares"
+msgstr "Share count display"
 
 #: lib/page-settings/sns-share-forms-top.php:3
-#, fuzzy
 msgid "本文上シェアボタン"
-msgstr "Display of main column content top share buttons"
+msgstr "Display of content top share buttons"
 
 #: lib/page-settings/sns-share-forms-top.php:5
 #, fuzzy
@@ -6947,15 +6918,12 @@ msgstr ""
 "pages."
 
 #: lib/page-settings/toc-forms.php:45
-#, fuzzy
 msgid "表示ページ"
 msgstr "View page"
 
 #: lib/page-settings/toc-forms.php:49
-#, fuzzy
-#| msgid "投稿ページで非表示"
 msgid "投稿ページ"
-msgstr "Below Related Posts (post page only)"
+msgstr "Single"
 
 #: lib/page-settings/toc-forms.php:52
 #, fuzzy
@@ -6977,14 +6945,12 @@ msgid "目次の上にラベル表示されるタイトルを入力してくだ�
 msgstr "Please enter the title labeled above the table of contents."
 
 #: lib/page-settings/toc-forms.php:73
-#, fuzzy
 msgid "目次切り替え"
 msgstr "Table of contents switch"
 
 #: lib/page-settings/toc-forms.php:77
-#, fuzzy
 msgid "目次の表示切替機能を有効にする"
-msgstr "To enable table of contents display change function"
+msgstr "To enable table of contents display change"
 
 #: lib/page-settings/toc-forms.php:78
 #, fuzzy
@@ -7017,8 +6983,6 @@ msgid "目次を「開く」「閉じる」のキャプションを変更しま�
 msgstr "Table of contents, and change the caption \"open\" \"close\" for."
 
 #: lib/page-settings/toc-forms.php:91
-#, fuzzy
-#| msgid "目次を表示する"
 msgid "最初から目次内容を表示する"
 msgstr "Display table of contents from the beginning"
 
@@ -7028,14 +6992,12 @@ msgid "ページ読み込み時に内容を表示した状態にするか。"
 msgstr "Whether the content displayed upon page loading."
 
 #: lib/page-settings/toc-forms.php:101
-#, fuzzy
 msgid "表示条件"
-msgstr "Visibility"
+msgstr "Display condition"
 
 #: lib/page-settings/toc-forms.php:110
-#, fuzzy
 msgid "つ以上見出しがあるとき"
-msgstr "One or more may have a heading when"
+msgstr "and above heading when"
 
 #: lib/page-settings/toc-forms.php:111
 #, fuzzy
@@ -7073,8 +7035,6 @@ msgid "どの見出しの深さまで表示するかを設定します。"
 msgstr "Want to show up to a depth of headlines."
 
 #: lib/page-settings/toc-forms.php:139
-#, fuzzy
-#| msgid "サイドバーの表示位置"
 msgid "目次ナンバーの表示"
 msgstr "Display of table of contents number"
 
@@ -7083,9 +7043,8 @@ msgid "数字（デフォルト）"
 msgstr "Number (default)"
 
 #: lib/page-settings/toc-forms.php:146
-#, fuzzy
 msgid "数字詳細（ex: 1.2.3）"
-msgstr "For more information number (ex: version 1.2.3)"
+msgstr "Number (ex: 1.1.1)"
 
 #: lib/page-settings/toc-forms.php:149
 #, fuzzy
@@ -7097,12 +7056,10 @@ msgid "目次の表示順"
 msgstr "Order of the table of contents"
 
 #: lib/page-settings/toc-forms.php:161
-#, fuzzy
 msgid "広告の手前に目次を表示する"
-msgstr "To view the table of contents in front of the ad"
+msgstr "To view the table of contents in front of the ads"
 
 #: lib/page-settings/toc-forms.php:162
-#, fuzzy
 msgid ""
 "広告やウィジェットの手前に目次を表示します。※最初のH2見出し手前に表示されてい"
 "るとき"
@@ -7134,19 +7091,14 @@ msgid "吹き出し用の設定です。"
 msgstr "Are the settings for callouts."
 
 #: lib/page-speech-balloon/form.php:43
-#, fuzzy
-#| msgid "タイトルを入力"
 msgid "タイトル入力"
 msgstr "Enter Title"
 
 #: lib/page-speech-balloon/form.php:44
-#, fuzzy
 msgid ""
 "吹き出しのタイトルを入力してください。タイトルは管理画面（検索など）で利用さ"
 "れます"
-msgstr ""
-"Please enter the title of the balloon. The title is used in the management "
-"screen (e.g. search)"
+msgstr "Enter the title of the balloon. The title is used in the admin page."
 
 #: lib/page-speech-balloon/form.php:51
 #, fuzzy
@@ -7158,10 +7110,8 @@ msgid "推奨：6文字以下"
 msgstr "Recommended: 8 characters"
 
 #: lib/page-speech-balloon/form.php:56
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "アイコン下に表示される名前を入力してください。※未入力でも可"
-msgstr "Please enter a name that appears below the icon. * In also available"
+msgstr "Enter the name that appears below the icon."
 
 #: lib/page-speech-balloon/form.php:63
 msgid "アイコン画像"
@@ -7415,26 +7365,18 @@ msgid "[SAMPLE 04] 少女（右）"
 msgstr "[SAMPLE 04] girl (right)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:165
-#, fuzzy
-#| msgid "[SAMPLE 05] おじさん（左）"
 msgid "[SAMPLE 05] 悩むおじさん（左）"
-msgstr "[SAMPLE 05] An old man (left)"
+msgstr "[SAMPLE 05] annoying old man (left)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:175
-#, fuzzy
-#| msgid "[SAMPLE 06] おばさん（左）"
 msgid "[SAMPLE 06] 悩むおばさん（左）"
-msgstr "[SAMPLE 06] annoying aunt (left)"
+msgstr "[SAMPLE 06] annoying old woman (left)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:185
-#, fuzzy
-#| msgid "[SAMPLE 05] おじさん（左）"
 msgid "[SAMPLE 07] ビジネスマン（左）"
 msgstr "[SAMPLE 07] businessman (left)"
 
 #: lib/page-speech-balloon/speech-balloon-func.php:195
-#, fuzzy
-#| msgid "[SAMPLE 13] ウサギ（右）"
 msgid "[SAMPLE 08] ビジネスウーマン（右）"
 msgstr "[SAMPLE 08] business woman (right)"
 
@@ -7614,7 +7556,6 @@ msgid "プロフィール画像"
 msgstr "Profile Picture"
 
 #: lib/profile.php:35
-#, fuzzy
 msgid "プロフィール画像のアップロード"
 msgstr "Upload profile picture"
 
@@ -7639,8 +7580,6 @@ msgstr ""
 "target=\"_blank\">TinyPNG</a> to reduce the size of the compression."
 
 #: lib/profile.php:47
-#, fuzzy
-#| msgid "プロフィール"
 msgid "プロフィールページURL"
 msgstr "Profile Page URL"
 
@@ -7656,19 +7595,16 @@ msgstr ""
 "to the archive page for the author."
 
 #: lib/settings.php:106
-#, fuzzy
 msgid "ヘッダーナビ"
-msgstr "Header Nabi"
+msgstr "Header Navigation"
 
 #: lib/settings.php:107
-#, fuzzy
 msgid "モバイルヘッダーナビ（サブ不可）"
-msgstr "Mobile header Nabi (non-sub)"
+msgstr "Mobile header Navigation (no sub menu)"
 
 #: lib/settings.php:108
-#, fuzzy
 msgid "フッターナビ（サブ不可）"
-msgstr "Footer navigation (no sub)"
+msgstr "Footer Navigation (no sub menu)"
 
 #: lib/shortcodes.php:160 lib/tinymce/shortcodes.php:51
 #, fuzzy
@@ -7715,7 +7651,6 @@ msgid "LINE@ URL"
 msgstr "LINE@ URL"
 
 #: lib/sns-follow.php:160
-#, fuzzy
 msgid "Amazon URL"
 msgstr "Amazon URL"
 
@@ -7734,19 +7669,16 @@ msgid "内容を入力してください。"
 msgstr "Please enter Content"
 
 #: lib/tinymce/html-tags.php:39
-#, fuzzy
 msgid "左側に入力する内容"
-msgstr "What to enter on the left side"
+msgstr "Enter on the left side"
 
 #: lib/tinymce/html-tags.php:40
-#, fuzzy
 msgid "中央に入力する内容"
-msgstr "What to enter in the Middle"
+msgstr "Enter on the Center"
 
 #: lib/tinymce/html-tags.php:41
-#, fuzzy
 msgid "右側に入力する内容"
-msgstr "Content to be entered on the right side"
+msgstr "Enter on the right side"
 
 #: lib/tinymce/html-tags.php:42
 msgid "キーワード"
@@ -7783,7 +7715,6 @@ msgid "ショートコード"
 msgstr "Shortcode:"
 
 #: lib/tinymce/shortcodes.php:45
-#, fuzzy
 msgid "広告 [ad]"
 msgstr "Ads [ad]"
 
@@ -7793,34 +7724,24 @@ msgid "ログインユーザーに表示するコンテンツを入力してく�
 msgstr "Enter the content to display to logged-in users."
 
 #: lib/tinymce/shortcodes.php:58
-#, fuzzy
-#| msgid "[S] モバイル用テキスト"
 msgid "ログインユーザーのみ表示"
 msgstr "Only logged-in users"
 
 #: lib/tinymce/shortcodes.php:68
-#, fuzzy
-#| msgid "新着記事"
 msgid "新着記事一覧"
 msgstr "List of new articles"
 
 #: lib/tinymce/shortcodes.php:78
-#, fuzzy
-#| msgid "人気記事"
 msgid "人気記事一覧"
 msgstr "List of popular articles"
 
 #: lib/tinymce/shortcodes.php:84
-#, fuzzy
-#| msgid "例：この記事を書いた人"
 msgid "この記事を書いた人"
-msgstr "Example: the person who wrote this article"
+msgstr "The person who wrote this article"
 
 #: lib/tinymce/shortcodes.php:89
-#, fuzzy
-#| msgid "プロフィール"
 msgid "プロフィールボックス"
-msgstr "The profile box"
+msgstr "Profile Box"
 
 #: lib/utils.php:554
 msgid "公開"
@@ -7860,10 +7781,8 @@ msgstr ""
 "here is a violation of policy."
 
 #: lib/widget-areas.php:42
-#, fuzzy
-#| msgid "メンインカラムスクロール追従"
 msgid "メインカラムスクロール追従"
-msgstr "Men Column Scroll Tracking"
+msgstr "Men Column Scroll Following"
 
 #: lib/widget-areas.php:44
 #, fuzzy
@@ -7972,7 +7891,6 @@ msgid ""
 msgstr "Widget area displayed below a related posts."
 
 #: lib/widget-areas.php:202
-#, fuzzy
 msgid "投稿コメントフォーム下"
 msgstr "Post comment form below"
 
@@ -8155,8 +8073,6 @@ msgid "広告フォーマット（AdSenseコード入力時のみ有効）"
 msgstr "Ad format (valid only when the AdSense code input)"
 
 #: lib/widgets/ad.php:74 lib/widgets/mobile-ad.php:74 lib/widgets/pc-ad.php:81
-#, fuzzy
-#| msgid "広告ラベルを表示"
 msgid "広告ラベルを表示する"
 msgstr "Display ad label"
 
@@ -8172,7 +8088,6 @@ msgstr ""
 "This is a widget to display the profile of the author wrote the article."
 
 #: lib/widgets/author-box.php:64
-#, fuzzy
 msgid "肩書きラベル"
 msgstr "Title label"
 
@@ -8223,7 +8138,6 @@ msgid ""
 msgstr "Call to action by visitors is a call to action for hope widget."
 
 #: lib/widgets/cta-box.php:26
-#, fuzzy
 msgid "詳細はこちら"
 msgstr "More"
 
@@ -8456,20 +8370,14 @@ msgid "ランキングが設定されていません。"
 msgstr "Ranking has not been set."
 
 #: lib/widgets/item-ranking.php:78
-#, fuzzy
-#| msgid "PtengineのトラッキングIDを入力してください。"
 msgid "設定画面からランキングを設定してください→"
-msgstr "Please set ranking from setting screen →"
+msgstr "Please set ranking →"
 
 #: lib/widgets/item-ranking.php:78
-#, fuzzy
-#| msgid "ランキング"
 msgid "ランキング設定"
 msgstr "Ranking setting"
 
 #: lib/widgets/mobile-ad.php:11
-#, fuzzy
-#| msgid "フッター（モバイル用）"
 msgid "広告（モバイル用）"
 msgstr "Advertising (for mobile)"
 
@@ -8480,8 +8388,6 @@ msgid "モバイルのみで表示される広告ウィジェットです。768p
 msgstr "Is mobile only in the ad widget. displayed in 768 px below."
 
 #: lib/widgets/mobile-text.php:11
-#, fuzzy
-#| msgid "フッター（モバイル用）"
 msgid "テキスト（モバイル用）"
 msgstr "Text (for mobile)"
 
@@ -8538,9 +8444,8 @@ msgid "タイトルを重ねた大きなサムネイル"
 msgstr "Large thumbnails with overlapping title"
 
 #: lib/widgets/pc-ad.php:11
-#, fuzzy
 msgid "広告（PC用）"
-msgstr "Advertisement (for PC)"
+msgstr "Ad (for PC)"
 
 #: lib/widgets/pc-ad.php:12
 #, fuzzy
@@ -8577,8 +8482,6 @@ msgid "広告タグ（右）"
 msgstr "Ad tag (right)"
 
 #: lib/widgets/pc-text.php:11
-#, fuzzy
-#| msgid "テキスト"
 msgid "テキスト（PC用）"
 msgstr "Text (for PC)"
 
@@ -8624,7 +8527,7 @@ msgstr "Total"
 
 #: lib/widgets/popular-entries.php:174 tmp/admin-panel.php:32
 msgid "本日"
-msgstr "12-hour clock"
+msgstr "Today"
 
 #: lib/widgets/popular-entries.php:175
 msgid "7日間"
@@ -8691,23 +8594,18 @@ msgid "SNSフォローボタンのタイトル"
 msgstr "SNS follow button title"
 
 #: plugins/lightbox2/dist/js/lightbox-plus-jquery.min.js:14
-#, fuzzy
 msgid "<iframe frameborder='0' width='0' height='0'/>"
-msgstr "<iframe frameborder='0' width='0' height='0'></iframe>"
+msgstr "<iframe frameborder='0' width='0' height='0'>"
 
 #: plugins/lightbox2/dist/js/lightbox-plus-jquery.min.js:26
-#, fuzzy
 msgid "<script>"
 msgstr "<script>"
 
 #: plugins/lightbox2/dist/js/lightbox-plus-jquery.min.js:26
-#, fuzzy
 msgid "<div>"
-msgstr "<div></div>"
+msgstr "<div>"
 
 #: searchform.php:6
-#, fuzzy
-#| msgid "ブログ内を検索"
 msgid "サイト内を検索"
 msgstr "Search inside the site"
 
@@ -8732,7 +8630,6 @@ msgid "ページスピード"
 msgstr "Page Speed"
 
 #: tmp/admin-panel.php:101
-#, fuzzy
 msgid "GTmetrix"
 msgstr "GTmetrix"
 
@@ -8741,8 +8638,6 @@ msgid "モバイルフレンドリー"
 msgstr "Mobile Friendly"
 
 #: tmp/admin-panel.php:107
-#, fuzzy
-#| msgid "feedlyフォローボタンを表示する"
 msgid "構造化データー"
 msgstr "Structured data"
 
@@ -8755,7 +8650,6 @@ msgid "アウトライン"
 msgstr "Outline"
 
 #: tmp/admin-panel.php:116
-#, fuzzy
 msgid "SEOチェキ"
 msgstr "SEO cheki"
 
@@ -8862,7 +8756,6 @@ msgid "LINE@をフォロー"
 msgstr "Follow LINE@"
 
 #: tmp/sns-follow-buttons.php:58
-#, fuzzy
 msgid "Amazon欲しい物リスト"
 msgstr "Amazon wish list"
 
