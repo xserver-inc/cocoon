@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-11 00:19+0900\n"
-"PO-Revision-Date: 2018-06-11 23:20+0900\n"
+"PO-Revision-Date: 2018-06-11 23:27+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -5479,7 +5479,6 @@ msgid "Twitterカードの表示形式の設定です。"
 msgstr "This is the Twitter card format."
 
 #: lib/page-settings/ogp-forms.php:105
-#, fuzzy
 msgid "ホームイメージ"
 msgstr "Home image"
 
@@ -5491,14 +5490,12 @@ msgstr ""
 "Twitter Cards."
 
 #: lib/page-settings/ogp-forms.php:116
-#, fuzzy
 msgid "画像のアップロード"
 msgstr "Upload Image"
 
 #: lib/page-settings/others-forms.php:5
-#, fuzzy
 msgid "その他設定"
-msgstr "And other settings"
+msgstr "Other settings"
 
 #: lib/page-settings/others-forms.php:8
 #, fuzzy
@@ -5509,7 +5506,6 @@ msgstr ""
 "unsure."
 
 #: lib/page-settings/others-forms.php:16
-#, fuzzy
 msgid "簡単SSL対応"
 msgstr "Easy SSL support"
 
@@ -5527,12 +5523,10 @@ msgstr ""
 "internal links, display (* supports all URL does not)."
 
 #: lib/page-settings/others-forms.php:29
-#, fuzzy
 msgid "ファイルシステム認証"
 msgstr "File system authentication"
 
 #: lib/page-settings/others-forms.php:33
-#, fuzzy
 msgid "認証を有効にする"
 msgstr "To enable authentication"
 
@@ -5544,12 +5538,10 @@ msgstr ""
 "If the server file system authentication, the KUSANAGI is required to enable."
 
 #: lib/page-settings/others-forms.php:42
-#, fuzzy
 msgid "Simplicity設定"
 msgstr "Simplicity settings"
 
 #: lib/page-settings/others-forms.php:46
-#, fuzzy
 msgid "Simplicityから投稿設定を引き継ぐ"
 msgstr "Take over post settings from Simplicity"
 
@@ -5565,12 +5557,10 @@ msgstr ""
 "\"item. ※ The setting of theme customizer etc can not be transferred."
 
 #: lib/page-settings/others-forms.php:55
-#, fuzzy
 msgid "日本語スラッグ"
 msgstr "Japanese slag"
 
 #: lib/page-settings/others-forms.php:59
-#, fuzzy
 msgid "日本語スラッグを半角英数字にする"
 msgstr "Make Japanese slang alphanumeric"
 
@@ -5591,10 +5581,8 @@ msgstr "This is the comment display settings for static pages."
 #: lib/page-settings/page-forms.php:15 lib/page-settings/single-forms.php:79
 #: lib/page-settings/single-forms.php:214
 #: lib/page-settings/single-forms.php:272
-#, fuzzy
-#| msgid "RSSの表示"
 msgid "表示"
-msgstr "Hidden"
+msgstr "Display"
 
 #: lib/page-settings/page-forms.php:19 lib/page-settings/single-forms.php:276
 #, fuzzy
@@ -5617,31 +5605,24 @@ msgid "固定ページのパンくずリスト設定です。"
 msgstr "Is a bread crumb list settings for static pages."
 
 #: lib/page-settings/page-forms.php:43 lib/page-settings/single-forms.php:300
-#, fuzzy
-#| msgid "投稿パンくずリスト上"
 msgid "パンくずリストの配置"
 msgstr "Placing breadcrumbs"
 
 #: lib/page-settings/page-forms.php:49 lib/page-settings/single-forms.php:306
-#, fuzzy
 msgid "メインカラム手前"
 msgstr "Front of the main column"
 
 #: lib/page-settings/page-forms.php:50 lib/page-settings/single-forms.php:307
-#, fuzzy
 msgid "メインカラムトップ"
 msgstr "Main column top"
 
 #: lib/page-settings/page-forms.php:51 lib/page-settings/single-forms.php:308
-#, fuzzy
 msgid "メインカラムボトム（デフォルト）"
-msgstr "Main Colombo time (default)"
+msgstr "Main Colombo bottom (default)"
 
 #: lib/page-settings/page-forms.php:52 lib/page-settings/single-forms.php:309
-#, fuzzy
-#| msgid "フッター左"
 msgid "フッター手前"
-msgstr "Footer top"
+msgstr "Before Footer"
 
 #: lib/page-settings/page-forms.php:55
 #, fuzzy
@@ -5649,14 +5630,10 @@ msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr "Set the bread crumbs list position of the fixed page."
 
 #: lib/page-settings/page-forms.php:63 lib/page-settings/single-forms.php:320
-#, fuzzy
-#| msgid "タイトル"
 msgid "記事タイトル"
 msgstr "Post Title"
 
 #: lib/page-settings/page-forms.php:67 lib/page-settings/single-forms.php:324
-#, fuzzy
-#| msgid "ツイートにメンションを含める"
 msgid "パンくずリストに記事タイトルを含める"
 msgstr "Include the article title in breadcrumbs"
 
@@ -5670,9 +5647,8 @@ msgstr ""
 "breadcrumbs, or switch."
 
 #: lib/page-settings/reset-forms.php:5
-#, fuzzy
 msgid "テーマ設定のリセット"
-msgstr "Reset theme setting"
+msgstr "Reset theme settings"
 
 #: lib/page-settings/reset-forms.php:8
 #, fuzzy
@@ -5685,7 +5661,6 @@ msgstr ""
 "restore it."
 
 #: lib/page-settings/reset-forms.php:22
-#, fuzzy
 msgid "全ての設定をリセットする"
 msgstr "Reset all settings"
 
@@ -5698,7 +5673,6 @@ msgstr ""
 "Reset theme setting to default state. Please check it and save the setting."
 
 #: lib/page-settings/reset-forms.php:24
-#, fuzzy
 msgid "リセット動作の確認"
 msgstr "Confirm the reset action"
 
@@ -5711,9 +5685,8 @@ msgstr ""
 "setting."
 
 #: lib/page-settings/seo-forms.php:5
-#, fuzzy
 msgid "headタグ設定"
-msgstr "head tags settings"
+msgstr "Head tag settings"
 
 #: lib/page-settings/seo-forms.php:8
 #, fuzzy
@@ -5765,10 +5738,8 @@ msgid "カテゴリページのトップページ以外はnoindex設定にしま
 msgstr "Set the noindex setting except for the top page of the category page."
 
 #: lib/page-settings/seo-forms.php:34
-#, fuzzy
-#| msgid "カテゴリページの2ページ目以降をnoindexとする"
 msgid "タグページをnoindexとする"
-msgstr "The noindex tag pages"
+msgstr "Noindex tag pages"
 
 #: lib/page-settings/seo-forms.php:35
 #, fuzzy
@@ -5776,8 +5747,6 @@ msgid "タグのインデックスページをnoindex設定にします。"
 msgstr "Index page tags noindex settings."
 
 #: lib/page-settings/seo-forms.php:38
-#, fuzzy
-#| msgid "カテゴリページの2ページ目以降をnoindexとする"
 msgid "その他のアーカイブページをnoindexとする"
 msgstr "Other archive pages to noindex"
 
@@ -5787,8 +5756,6 @@ msgid "カテゴリ・タグ以外のアーカイブページをnoindex設定に
 msgstr "Noindex settings other than the category tag archive page."
 
 #: lib/page-settings/seo-forms.php:42
-#, fuzzy
-#| msgid "カテゴリページの2ページ目以降をnoindexとする"
 msgid "添付ファイルページをnoindexとする"
 msgstr "Attachment page to noindex"
 
@@ -5799,12 +5766,10 @@ msgstr ""
 "The noindex settings page, such as images and videos, file attachments."
 
 #: lib/page-settings/seo-forms.php:57
-#, fuzzy
 msgid "日付の設定"
-msgstr "Set Date"
+msgstr "Date settings"
 
 #: lib/page-settings/seo-forms.php:66
-#, fuzzy
 msgid "表示する日付"
 msgstr "Date to display"
 
