@@ -45,10 +45,10 @@ function add_toc_before_1st_h2($the_content){
     return $the_content;
   }
 
-  //マルチページの2ページ目以降は目次を表示しない
-  if (is_singular() && is_multi_paged()) {
-    return $the_content;
-  }
+  // //マルチページの2ページ目以降は目次を表示しない
+  // if (is_singular() && is_multi_paged()) {
+  //   return $the_content;
+  // }
 
   $content     = $the_content;
   $headers     = array();
