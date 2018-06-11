@@ -213,25 +213,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin-bottom: 3px;
 }
 
-.sns-buttons {
-  display: flex;
-  align-items: center;
-}
-.sns-buttons a {
-  display: block;
-  background-color: #777;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  height: 45px;
-}
-.sns-buttons a:hover {
-  opacity: 0.7;
-  color: #fff;
-  transition: all 0.5s ease;
-}
-
 body, .header, .appeal {
   /* 画像を常に左右の中央に配置 */
   background-position: top center;
@@ -1043,6 +1024,25 @@ img {
 .breadcrumb.sbp-main-before + .content,
 .breadcrumb.pbp-main-before + .content {
   margin-top: 12px;
+}
+
+.sns-buttons {
+  display: flex;
+  align-items: center;
+}
+.sns-buttons a {
+  display: block;
+  background-color: #777;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  height: 45px;
+}
+.sns-buttons a:hover {
+  opacity: 0.7;
+  color: #fff;
+  transition: all 0.5s ease;
 }
 
 /************************************

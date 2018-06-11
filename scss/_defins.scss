@@ -199,26 +199,26 @@ $bgc_hover_anime: all 0.5s ease;
   margin-bottom: 3px;
 }
 
-.sns-buttons{
-  display: flex;
-  align-items: center;
+// .sns-buttons{
+//   display: flex;
+//   align-items: center;
 
-  a{
-    display: block;
-    background-color: $middle_thickness;
-    text-align: center;
-    @include link_cancel($white_text_color);
-    border-radius: $basic_border_radius;
-    height: 45px;
-    //line-height: 45px;
+//   a{
+//     display: block;
+//     background-color: $middle_thickness;
+//     text-align: center;
+//     @include link_cancel($white_text_color);
+//     border-radius: $basic_border_radius;
+//     height: 45px;
+//     //line-height: 45px;
 
-    &:hover{
-      opacity: 0.7;
-      color: $white_text_color;
-      transition: $bgc_hover_anime;
-    }
-  }
-}
+//     &:hover{
+//       opacity: 0.7;
+//       color: $white_text_color;
+//       transition: $bgc_hover_anime;
+//     }
+//   }
+// }
 
 %background_image{
   /* 画像を常に左右の中央に配置 */

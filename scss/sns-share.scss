@@ -1,3 +1,23 @@
+.sns-buttons{
+  display: flex;
+  align-items: center;
+
+  a{
+    display: block;
+    background-color: $middle_thickness;
+    text-align: center;
+    @include link_cancel($white_text_color);
+    border-radius: $basic_border_radius;
+    height: 45px;
+    //line-height: 45px;
+
+    &:hover{
+      opacity: 0.7;
+      color: $white_text_color;
+      transition: $bgc_hover_anime;
+    }
+  }
+}
 /************************************
 ** SNSシェアボタン
 ************************************/
