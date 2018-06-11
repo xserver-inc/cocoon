@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-06-11 00:19+0900\n"
-"PO-Revision-Date: 2018-06-11 23:27+0900\n"
+"POT-Creation-Date: 2018-06-11 23:28+0900\n"
+"PO-Revision-Date: 2018-06-12 07:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -60,9 +60,8 @@ msgid "ラージスカイスクレイパー"
 msgstr "Large skraper"
 
 #: lib/_defins.php:84 lib/_defins.php:99
-#, fuzzy
 msgid "広告コードをそのまま表示"
-msgstr "The code will appear as"
+msgstr "The ad code will appear as"
 
 #: lib/admin-tinymce-qtag.php:16
 msgid "ふりがな"
@@ -214,7 +213,7 @@ msgstr "Box (white)"
 
 #: lib/admin-tinymce-qtag.php:206 lib/admin-tinymce-qtag.php:231
 msgid "灰色"
-msgstr "[はいいろ] /gray/grey/"
+msgstr "Gray"
 
 #: lib/admin-tinymce-qtag.php:211 lib/admin-tinymce-qtag.php:236
 #: lib/widgets/cta-box.php:170
@@ -606,45 +605,37 @@ msgid "カテゴリページのタイトル"
 msgstr "The title of the category page"
 
 #: lib/category.php:147
-#, fuzzy
 msgid ""
 "カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入"
 "力したテキストが適用されます。"
-msgstr ""
-"Specifies the title of the category page. Text on the category page title "
-"you enter here will be applied."
+msgstr "Enter the title of the category page."
 
 #: lib/category.php:151
 msgid "カテゴリ本文"
 msgstr "Category Content"
 
 #: lib/category.php:156
-#, fuzzy
 msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
-msgstr "Please enter the main content will appear on the category page."
+msgstr "Enter the main content will appear on the category page."
 
 #: lib/category.php:165
-#, fuzzy
 msgid "タイトル下に表示されるアイキャッチ画像を選択してください。"
-msgstr "Please select the eye-catching image that appears beneath the title."
+msgstr "Select the eye-catching image that appears under the title."
 
 #: lib/category.php:169 lib/custom-fields/seo-field.php:82
 msgid "メタディスクリプション"
 msgstr "Meta Description"
 
 #: lib/category.php:173
-#, fuzzy
-#| msgid "記事の説明文を入力してください。"
 msgid "カテゴリページの説明文を入力してください"
-msgstr "Please enter the description text for the category page."
+msgstr "Enter the description text for the category page."
 
 #: lib/category.php:175
-#, fuzzy
 msgid ""
 "カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプ"
 "ションタグとして利用されます。"
 msgstr ""
-"Enter a description for the category page. The text entered here will be "
+"Enter the description for the category page. The text entered here will be "
 "used as a meta description tag."
 
 #: lib/category.php:179 lib/custom-fields/seo-field.php:91
@@ -657,24 +648,19 @@ msgid "キーワード1,キーワード2,キーワード3"
 msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 
 #: lib/category.php:182
-#, fuzzy
 msgid ""
 "カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり"
 "意味のない設定となっています。"
-msgstr ""
-"Please enter category page meta keywords separated by commas. * Currently "
-"not much meaningful configuration;"
+msgstr "Enter category page meta keywords separated by commas."
 
 #: lib/category.php:267
-#, fuzzy
 msgid ""
 "基本的に、カテゴリ設定一覧ページに説明文を表示するための入力です。本文が入力"
 "されていない場合は本文代わりに、メタディスクリプションが入力されてない場合は"
 "メタディスクリプション代わりに利用されることもあります。"
 msgstr ""
 "It is basically the category settings list page display the description "
-"input. If you haven't entered the meta instead of text, if text is not "
-"entered is used instead of meta."
+"input."
 
 #: lib/comments.php:40
 #, php-format
@@ -729,16 +715,12 @@ msgid "広告を除外する"
 msgstr "To exclude ads"
 
 #: lib/custom-fields/ad-field.php:34
-#, fuzzy
-#| msgid ""
-#| "ページ上の広告（AdSenseなど）をページ上から取り除きます。テーマカスタマイ"
-#| "ザーの「広告」項目からカテゴリごとの設定も行えます。"
 msgid ""
 "ページ上の広告（AdSenseなど）表示を切り替えます。「広告」設定からカテゴリごと"
 "の設定も行えます。"
 msgstr ""
-"Toggle ads on the page (such as AdSense). You can also make settings for "
-"each category from \"Ads\" setting."
+"Toggle ads on this page (such as AdSense). You can also make settings for "
+"each category from \"Ads\" settings."
 
 #: lib/custom-fields/amp-field.php:10 lib/custom-fields/amp-field.php:11
 #: lib/custom-fields/amp-field.php:12 lib/page-settings/amp-forms.php:3
@@ -750,12 +732,10 @@ msgid "AMPページを生成しない"
 msgstr "Do not generate AMP page"
 
 #: lib/custom-fields/amp-field.php:31
-#, fuzzy
 msgid ""
 "AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切"
 "り替えます。"
-msgstr ""
-"AMP (Accelerated Mobile Pages) page to generate and optimize mobile switch."
+msgstr "AMP (Accelerated Mobile Pages) page to generate and optimize mobile."
 
 #: lib/custom-fields/custom-css-field.php:5
 #: lib/custom-fields/custom-css-field.php:6
@@ -763,10 +743,9 @@ msgid "カスタムCSS"
 msgstr "Custom CSS"
 
 #: lib/custom-fields/custom-css-field.php:14
-#, fuzzy
 msgid "当ページ変更用のCSSコードのみを入力してください。styleタグは不要です。"
 msgstr ""
-"Please enter only the CSS code changes for this page. the style tag is not "
+"Enter only the CSS codes changes for this page. the style tag is not "
 "required."
 
 #: lib/custom-fields/custom-js-field.php:6
@@ -775,13 +754,12 @@ msgid "カスタムJavaScript"
 msgstr "Custom JavaScript Code"
 
 #: lib/custom-fields/custom-js-field.php:15
-#, fuzzy
 msgid ""
 "当ページ変更用のJavaScriptコードのみを入力してください。scriptタグは不要で"
 "す。"
 msgstr ""
-"Please enter only the JavaScript code in this page for changes. script tag "
-"is not required."
+"Enter only the JavaScript codes in this page for changes. script tag is not "
+"required."
 
 #: lib/custom-fields/page-field.php:11 lib/custom-fields/page-field.php:12
 #: lib/custom-fields/page-field.php:13
@@ -825,8 +803,6 @@ msgid "目次を表示しない"
 msgstr "Hide table of contents"
 
 #: lib/custom-fields/page-field.php:39
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "このページに目次を表示するかを切り替えます。"
 msgstr "Toggle whether to display the table of contents on this page."
 
@@ -845,7 +821,6 @@ msgid "https://"
 msgstr "https://"
 
 #: lib/custom-fields/redirect-field.php:26
-#, fuzzy
 msgid "このページに訪れるユーザーを設定したURLに301リダイレクトします。"
 msgstr "301 redirects URLs users visit this page."
 
@@ -1138,9 +1113,8 @@ msgid "未登録のユーザーさん"
 msgstr "For unregistered users, I"
 
 #: lib/html-forms.php:1015
-#, fuzzy
 msgid "未登録のユーザーさんです。"
-msgstr "It is an unregistered user."
+msgstr "An unregistered user."
 
 #: lib/html-forms.php:1017
 #, fuzzy
@@ -1403,9 +1377,8 @@ msgid "タイトルの入力（126文字まで）"
 msgstr "Enter a title (up to 126)"
 
 #: lib/page-affiliate-tag/form.php:23 lib/page-func-text/form.php:23
-#, fuzzy
 msgid "表示ラベルとなるタイトルを入力してください。タイトルは一覧表示用です。"
-msgstr "Please enter a title and labels. The title is list for display."
+msgstr "Enter a title as label. The title is list for display."
 
 #: lib/page-affiliate-tag/form.php:25 lib/page-func-text/form.php:25
 msgid "内容"
@@ -1493,10 +1466,8 @@ msgid "入力内容が不正です。"
 msgstr "The input content is invalid."
 
 #: lib/page-affiliate-tag/posts.php:11 lib/page-func-text/posts.php:31
-#, fuzzy
-#| msgid "設定をレストアしました。"
 msgid "テキストを新規作成しました。"
-msgstr "Text create new."
+msgstr "The texit is created."
 
 #: lib/page-affiliate-tag/posts.php:19
 msgid "アフィリエイトタグを更新しました。"
@@ -1579,7 +1550,6 @@ msgid "関数化するテキストを入力してください。"
 msgstr "Please enter the text to function."
 
 #: lib/page-func-text/func-text-func.php:32
-#, fuzzy
 msgid "Wordpressカスタマイズ注意文サンプル"
 msgstr "WordPress customization notes statement sample"
 
@@ -1663,10 +1633,8 @@ msgid "追加"
 msgstr "Add"
 
 #: lib/page-item-ranking/form.php:106
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "商品名等、見出しとなる名前を入力してください（※必須）"
-msgstr "Enter the product name, document name (* required)"
+msgstr "Enter a product name (* required)"
 
 #: lib/page-item-ranking/form.php:107
 #, fuzzy
@@ -1780,10 +1748,8 @@ msgid "詳細ページへリンクするためのURLを入力してください�
 msgstr "Please enter a URL for the link to the details page."
 
 #: lib/page-item-ranking/form.php:163
-#, fuzzy
-#| msgid "詳細ページURL"
 msgid "ページURL"
-msgstr "Details page URL"
+msgstr "Page URL"
 
 #: lib/page-item-ranking/form.php:166
 #, fuzzy
@@ -1857,10 +1823,8 @@ msgid "ランキングへの削除に失敗しました。"
 msgstr "Failed to delete to the rankings."
 
 #: lib/page-item-ranking/posts.php:30
-#, fuzzy
-#| msgid "設定をレストアしました。"
 msgid "ランキングを新規作成しました。"
-msgstr "Rankings create new."
+msgstr "The ranking is created."
 
 #: lib/page-item-ranking/posts.php:32
 msgid "「名前」と「説明文」は必須入力項目です。"
@@ -1879,16 +1843,12 @@ msgid "ランキングを更新できませんでした。"
 msgstr "Failed to update new rankings."
 
 #: lib/page-item-ranking/posts.php:75
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "ランキングアイテムが作成されていません。"
 msgstr "Ranking items are not created."
 
 #: lib/page-item-ranking/posts.php:78
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "アイテムカウントが設定されていません。"
-msgstr "Item count has not been set."
+msgstr "Item count is not set."
 
 #: lib/page-settings/404-forms.php:5
 msgid "404ページ設定"
@@ -2192,7 +2152,6 @@ msgstr ""
 "Problem I would have with the following information during the reporting."
 
 #: lib/page-settings/admin-forms.php:5
-#, fuzzy
 msgid "管理画面設定"
 msgstr "Control display settings"
 
@@ -2202,7 +2161,6 @@ msgid "管理画面の機能設定です。"
 msgstr "It is a function setting of the management screen."
 
 #: lib/page-settings/admin-forms.php:16
-#, fuzzy
 msgid "管理者向け設定"
 msgstr "Administrator settings"
 
@@ -2226,23 +2184,18 @@ msgid "管理者向けのPV表示や編集リンクの表示です。"
 msgstr "Is the PV and displays the Edit link for administrators."
 
 #: lib/page-settings/admin-forms.php:61
-#, fuzzy
 msgid "管理者パネルの表示"
 msgstr "Display of the Admin Panel"
 
 #: lib/page-settings/admin-forms.php:65
-#, fuzzy
 msgid "全て表示"
 msgstr "Show all"
 
 #: lib/page-settings/admin-forms.php:66
-#, fuzzy
 msgid "PCのみ表示"
-msgstr "Large Devices Only"
+msgstr "Show Large Devices Only"
 
 #: lib/page-settings/admin-forms.php:67
-#, fuzzy
-#| msgid "[S] モバイル用テキスト"
 msgid "モバイルのみ表示"
 msgstr "Show only mobile"
 
@@ -2264,8 +2217,6 @@ msgid "PVの表示"
 msgstr "PV display"
 
 #: lib/page-settings/admin-forms.php:86
-#, fuzzy
-#| msgid "コメントをどうぞ"
 msgid "PVエリアを表示する"
 msgstr "To view the PV area"
 
@@ -2274,8 +2225,6 @@ msgid "管理者パネル内のPVエリアを表示します。"
 msgstr "View PV area in the Admin Panel."
 
 #: lib/page-settings/admin-forms.php:90
-#, fuzzy
-#| msgid "アクセス分析"
 msgid "アクセス集計方法"
 msgstr "Access aggregation method"
 
@@ -2288,29 +2237,24 @@ msgid "※Jetpackの統計機能が有効になっていません。"
 msgstr "* Statistics feature of Jetpack is not enabled."
 
 #: lib/page-settings/admin-forms.php:103
-#, fuzzy
 msgid "テーマ独自"
-msgstr "Custom theme"
+msgstr "Theme original"
 
 #: lib/page-settings/admin-forms.php:104
-#, fuzzy
 msgid "Jetpack"
-msgstr "Jetpack statistics"
+msgstr "Jetpack"
 
 #: lib/page-settings/admin-forms.php:107
 msgid "管理者パネルで表示するPVの取得方法を選択します。"
 msgstr "Choose how to get PV display in the Admin Panel."
 
 #: lib/page-settings/admin-forms.php:118
-#, fuzzy
 msgid "編集エリアの表示"
-msgstr "Display/edit area"
+msgstr "Edit area display"
 
 #: lib/page-settings/admin-forms.php:122
-#, fuzzy
-#| msgid "コメントをどうぞ"
 msgid "編集エリアを表示する"
-msgstr "To display the edit area"
+msgstr "Display edit area"
 
 #: lib/page-settings/admin-forms.php:123
 #, fuzzy
@@ -2319,7 +2263,6 @@ msgid "管理者パネル内の編集エリアを表示します。"
 msgstr "Displays the edit area in the Admin Panel."
 
 #: lib/page-settings/admin-forms.php:127
-#, fuzzy
 msgid "投稿編集リンクの表示"
 msgstr "Display edit link"
 
@@ -2331,9 +2274,8 @@ msgstr ""
 "screen."
 
 #: lib/page-settings/admin-forms.php:130
-#, fuzzy
 msgid "WLW編集リンクの表示"
-msgstr "WLW editing link"
+msgstr "Display WLW editing link"
 
 #: lib/page-settings/admin-forms.php:131
 #, fuzzy
@@ -2341,15 +2283,12 @@ msgid "Windows Live Writerで投稿内容を編集するためのリンクです
 msgstr "This is the link for editing a post in Windows Live Writer."
 
 #: lib/page-settings/admin-forms.php:140
-#, fuzzy
 msgid "AMPエリアの表示"
-msgstr "AMP areas"
+msgstr "AMP area display"
 
 #: lib/page-settings/admin-forms.php:144
-#, fuzzy
-#| msgid "コメントをどうぞ"
 msgid "AMPエリア表示する"
-msgstr "AMP area view"
+msgstr "Display AMP area view"
 
 #: lib/page-settings/admin-forms.php:145
 #, fuzzy
@@ -3035,9 +2974,8 @@ msgstr ""
 "mobile device."
 
 #: lib/page-settings/all-forms.php:113
-#, fuzzy
 msgid "文字の太さ"
-msgstr "Font width:"
+msgstr "Font weight:"
 
 #: lib/page-settings/all-forms.php:118
 #, fuzzy
@@ -3318,36 +3256,61 @@ msgstr "Please select a category does not generate an AMP page."
 
 #: lib/page-settings/analytics-forms.php:5
 #, fuzzy
+#| msgid "アクセス解析"
+msgid "アクセス解析設定"
+msgstr "Analysis"
+
+#: lib/page-settings/analytics-forms.php:8
+#, fuzzy
+msgid "アクセス解析全般に適用される設定です。"
+msgstr "Is the setting for the separator character that is used in the title."
+
+#: lib/page-settings/analytics-forms.php:16
+msgid "解析全般"
+msgstr ""
+
+#: lib/page-settings/analytics-forms.php:20
+msgid "サイト管理者も含めてアクセス解析する"
+msgstr ""
+
+#: lib/page-settings/analytics-forms.php:21
+msgid ""
+"サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。サイト管理"
+"者を解析したくない場合は無効にしてください。"
+msgstr ""
+
+#: lib/page-settings/analytics-forms.php:35
+#, fuzzy
 msgid "Googleタグマネージャ設定"
 msgstr "Google tag Manager settings"
 
-#: lib/page-settings/analytics-forms.php:8
+#: lib/page-settings/analytics-forms.php:38
 #, fuzzy
 msgid "Google Tag Managerの解析タグの設定です。"
 msgstr "Is the Google Tag Manager analysis tag."
 
-#: lib/page-settings/analytics-forms.php:16
+#: lib/page-settings/analytics-forms.php:46
 #, fuzzy
 msgid "タグマネージャID"
 msgstr "Tag Manager ID"
 
-#: lib/page-settings/analytics-forms.php:20
-#: lib/page-settings/analytics-forms.php:33
+#: lib/page-settings/analytics-forms.php:50
+#: lib/page-settings/analytics-forms.php:63
 msgid "GTM-XXXXXXX"
 msgstr "GTM-XXXXXXX"
 
-#: lib/page-settings/analytics-forms.php:21
+#: lib/page-settings/analytics-forms.php:51
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "GoogleタグマネージャのトラッキングIDを入力してください。"
 msgstr "Please enter the tracking ID of the Google tag Manager."
 
-#: lib/page-settings/analytics-forms.php:29
+#: lib/page-settings/analytics-forms.php:59
 #, fuzzy
 msgid "AMP用 タグマネージャID"
 msgstr "AMP ID tag Manager"
 
-#: lib/page-settings/analytics-forms.php:34
+#: lib/page-settings/analytics-forms.php:64
 #, fuzzy
 msgid ""
 "AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用の"
@@ -3356,99 +3319,99 @@ msgstr ""
 "Please enter the tracking ID of Google Tag Manager for AMP. Please create a "
 "new AMP container and set the ID."
 
-#: lib/page-settings/analytics-forms.php:47
+#: lib/page-settings/analytics-forms.php:77
 msgid "Google Analytics設定"
 msgstr "Google Analytics Settings"
 
-#: lib/page-settings/analytics-forms.php:50
+#: lib/page-settings/analytics-forms.php:80
 #, fuzzy
 #| msgid "Google Analytics設定"
 msgid "Google Analyticsの解析タグの設定です。"
 msgstr "Is Google Analytics analysis tag."
 
-#: lib/page-settings/analytics-forms.php:58
+#: lib/page-settings/analytics-forms.php:88
 msgid "Google AnalyticsトラッキングID"
 msgstr "Google Analytics Tracking ID"
 
-#: lib/page-settings/analytics-forms.php:62
+#: lib/page-settings/analytics-forms.php:92
 msgid "UA-00000000-0"
 msgstr "UA-00000000-0"
 
-#: lib/page-settings/analytics-forms.php:63
+#: lib/page-settings/analytics-forms.php:93
 #, fuzzy
 #| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "Google AnalyticsのトラッキングIDを入力してください。"
 msgstr "Please enter your Google Analytics tracking ID."
 
-#: lib/page-settings/analytics-forms.php:77
+#: lib/page-settings/analytics-forms.php:107
 msgid "Google Search Console設定"
 msgstr "Google Search Console settings"
 
-#: lib/page-settings/analytics-forms.php:80
+#: lib/page-settings/analytics-forms.php:110
 #, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "Google Search Consoleのサイト認証タグの設定です。"
 msgstr "Google Search Console site authentication tag is."
 
-#: lib/page-settings/analytics-forms.php:88
+#: lib/page-settings/analytics-forms.php:118
 msgid "Google Search Console ID"
 msgstr "Google Search Console ID"
 
-#: lib/page-settings/analytics-forms.php:92
+#: lib/page-settings/analytics-forms.php:122
 msgid "サイト認証IDのみ入力"
 msgstr "Enter only site authentication ID"
 
-#: lib/page-settings/analytics-forms.php:93
+#: lib/page-settings/analytics-forms.php:123
 #, fuzzy
 #| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "Google Search Consoleのサイト認証IDを入力してください。"
 msgstr "Please enter a site ID of Google Search Console."
 
-#: lib/page-settings/analytics-forms.php:107
+#: lib/page-settings/analytics-forms.php:137
 msgid "Ptengine設定"
 msgstr "Ptengine settings"
 
-#: lib/page-settings/analytics-forms.php:110
+#: lib/page-settings/analytics-forms.php:140
 #, fuzzy
 msgid "Ptengineの解析タグの設定です。"
 msgstr "It is setting of analysis tag of Ptengine."
 
-#: lib/page-settings/analytics-forms.php:118
+#: lib/page-settings/analytics-forms.php:148
 msgid "PtengineのトラッキングID"
 msgstr "Ptengine tracking ID"
 
-#: lib/page-settings/analytics-forms.php:122
+#: lib/page-settings/analytics-forms.php:152
 msgid "PtengineのトラッキングIDのみ入力"
 msgstr "Enter only tracking ID of Ptengine"
 
-#: lib/page-settings/analytics-forms.php:123
+#: lib/page-settings/analytics-forms.php:153
 msgid "PtengineのトラッキングIDを入力してください。"
 msgstr "Please enter Ptengine's tracking ID."
 
-#: lib/page-settings/analytics-forms.php:139
+#: lib/page-settings/analytics-forms.php:169
 msgid "その他のアクセス解析設定"
 msgstr "Other analysis settings"
 
-#: lib/page-settings/analytics-forms.php:142
+#: lib/page-settings/analytics-forms.php:172
 #, fuzzy
 msgid ""
 "ヘッダーやフッターに、その他サービスのアクセス解析タグをそのまま貼り付けま"
 "す。"
 msgstr "In the header or footer and other service access analysis as tag."
 
-#: lib/page-settings/analytics-forms.php:150
+#: lib/page-settings/analytics-forms.php:180
 #, fuzzy
 #| msgid "アクセス解析タグ（ヘッダー用）"
 msgid "アクセス解析タグ（ヘッド用）"
 msgstr "Access analysis tag (for head)"
 
-#: lib/page-settings/analytics-forms.php:154
+#: lib/page-settings/analytics-forms.php:184
 #, fuzzy
 #| msgid "ヘッダー用のアクセス解析タグの入力"
 msgid "head用のアクセス解析タグの入力"
 msgstr "Enter access analysis tag for head"
 
-#: lib/page-settings/analytics-forms.php:155
+#: lib/page-settings/analytics-forms.php:185
 #, fuzzy
 msgid ""
 "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス"
@@ -3457,15 +3420,15 @@ msgstr ""
 "Other that must be inserted in the head tag (< head >< /head >), enter your "
 "access analysis tag."
 
-#: lib/page-settings/analytics-forms.php:163
+#: lib/page-settings/analytics-forms.php:193
 msgid "アクセス解析タグ（ヘッダー用）"
 msgstr "Access analysis tag (for headers)"
 
-#: lib/page-settings/analytics-forms.php:167
+#: lib/page-settings/analytics-forms.php:197
 msgid "ヘッダー用のアクセス解析タグの入力"
 msgstr "Enter header codes for access analysis"
 
-#: lib/page-settings/analytics-forms.php:168
+#: lib/page-settings/analytics-forms.php:198
 #, fuzzy
 msgid ""
 "ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析タグを入"
@@ -3474,15 +3437,15 @@ msgstr ""
 "Need to insert in the header (immediately after the < body >), any other "
 "enter your access analysis tag."
 
-#: lib/page-settings/analytics-forms.php:176
+#: lib/page-settings/analytics-forms.php:206
 msgid "アクセス解析タグ（フッター用）"
 msgstr "Access analysis tag (for the footer)"
 
-#: lib/page-settings/analytics-forms.php:180
+#: lib/page-settings/analytics-forms.php:210
 msgid "フッター用のアクセス解析タグの入力"
 msgstr "Enter footer codes for access analysis tag"
 
-#: lib/page-settings/analytics-forms.php:181
+#: lib/page-settings/analytics-forms.php:211
 #, fuzzy
 msgid ""
 "フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析タグを入"
@@ -3710,9 +3673,8 @@ msgstr "Thumbnails Style"
 
 #: lib/page-settings/blogcard-in-forms.php:59
 #: lib/page-settings/blogcard-out-forms.php:56
-#, fuzzy
 msgid "左側"
-msgstr "Widget area displayed at the left of this site footer."
+msgstr "Left side"
 
 #: lib/page-settings/blogcard-in-forms.php:60
 #: lib/page-settings/blogcard-out-forms.php:57
@@ -3843,7 +3805,6 @@ msgid "ページトップにスクロール移動するかボタンの設定で�
 msgstr "Or to scroll to the top of the page is a button."
 
 #: lib/page-settings/buttons-forms.php:21
-#, fuzzy
 msgid "デモは動作しません。"
 msgstr "The demo does not work."
 
@@ -3852,8 +3813,6 @@ msgid "トップへ戻るボタンの表示"
 msgstr "\"Back to top\" button display"
 
 #: lib/page-settings/buttons-forms.php:32
-#, fuzzy
-#| msgid "feedlyフォローボタンを表示する"
 msgid "トップへ戻るボタンを表示する"
 msgstr "Display \"back to top\" button."
 
@@ -4447,9 +4406,8 @@ msgid "externalを追加"
 msgstr "Add to external"
 
 #: lib/page-settings/content-forms.php:61
-#, fuzzy
 msgid "rel属性にexternalを追加します。"
-msgstr "Add a external to the rel attribute."
+msgstr "Add a external to rel attributes."
 
 #: lib/page-settings/content-forms.php:69
 #: lib/page-settings/content-forms.php:175
@@ -4549,9 +4507,8 @@ msgid "内部リンクの開き方"
 msgstr "How to open the internal link"
 
 #: lib/page-settings/content-forms.php:134
-#, fuzzy
 msgid "本文内の内部リンクをどのように開くか。"
-msgstr "How open text in internal links?"
+msgstr "How open text in internal links."
 
 #: lib/page-settings/content-forms.php:152
 #, fuzzy
@@ -5585,8 +5542,6 @@ msgid "表示"
 msgstr "Display"
 
 #: lib/page-settings/page-forms.php:19 lib/page-settings/single-forms.php:276
-#, fuzzy
-#| msgid "コメントをどうぞ"
 msgid "コメントを表示する"
 msgstr "Display comment area."
 
@@ -5689,17 +5644,14 @@ msgid "headタグ設定"
 msgstr "Head tag settings"
 
 #: lib/page-settings/seo-forms.php:8
-#, fuzzy
 msgid "headタグ内に追加するlinkタグの設定です。"
-msgstr "is a link tag within the head tags."
+msgstr "is a link tags in the site head tag."
 
 #: lib/page-settings/seo-forms.php:16
-#, fuzzy
 msgid "headタグに挿入"
 msgstr "Insert in head tag"
 
 #: lib/page-settings/seo-forms.php:22
-#, fuzzy
 msgid "canonicalタグの追加"
 msgstr "Add a canonical tag"
 
@@ -6054,8 +6006,6 @@ msgid "作者"
 msgstr "Author"
 
 #: lib/page-settings/skin-forms.php:68
-#, fuzzy
-#| msgid "画像を選択してください"
 msgid "スキンを選択してください。"
 msgstr "Please select a skin."
 
@@ -6313,9 +6263,8 @@ msgstr "Cache enable"
 
 #: lib/page-settings/sns-follow-forms.php:183
 #: lib/page-settings/sns-share-forms.php:115
-#, fuzzy
 msgid "キャッシュを有効にする"
-msgstr "Enable cache?"
+msgstr "Cache enable"
 
 #: lib/page-settings/sns-follow-forms.php:184
 #: lib/page-settings/sns-share-forms.php:116
@@ -6663,14 +6612,12 @@ msgstr "Front Page Title"
 #: lib/page-settings/title-forms.php:37 lib/page-settings/title-forms.php:38
 #: lib/page-settings/title-forms.php:131 lib/page-settings/title-forms.php:132
 #: lib/page-settings/title-forms.php:229 lib/page-settings/title-forms.php:230
-#, fuzzy
 msgid "サイト名"
 msgstr "Site Name:"
 
 #: lib/page-settings/title-forms.php:38
-#, fuzzy
 msgid "キャッチフレーズ"
-msgstr "It will be a title like \"Site name | Tagline\"."
+msgstr "TagLine"
 
 #: lib/page-settings/title-forms.php:41
 #, fuzzy
@@ -6829,9 +6776,8 @@ msgid "セパレーター"
 msgstr "Seperator"
 
 #: lib/page-settings/title-forms.php:288
-#, fuzzy
 msgid " | （パイプ）"
-msgstr "Pipe"
+msgstr "| Pipe"
 
 #: lib/page-settings/title-forms.php:289
 #, fuzzy
@@ -7008,7 +6954,7 @@ msgid "数字（デフォルト）"
 msgstr "Number (default)"
 
 #: lib/page-settings/toc-forms.php:146
-msgid "数字詳細（ex: 1.2.3）"
+msgid "数字詳細（ex: 1.1.1）"
 msgstr "Number (ex: 1.1.1)"
 
 #: lib/page-settings/toc-forms.php:149
@@ -8211,16 +8157,12 @@ msgid "表示設定"
 msgstr "Display"
 
 #: lib/widgets/display-widgets.php:128
-#, fuzzy
-#| msgid "インデックスページで非表示"
 msgid "チェック・入力したページで非表示"
-msgstr "Click here check and input hidden"
+msgstr "checks and inputs hidden"
 
 #: lib/widgets/display-widgets.php:129
-#, fuzzy
-#| msgid "インデックスページで非表示"
 msgid "チェック・入力したページで表示"
-msgstr "View the check-enter here"
+msgstr "checks and inputs view"
 
 #: lib/widgets/display-widgets.php:156
 msgid "ページ"
