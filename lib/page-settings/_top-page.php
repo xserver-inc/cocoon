@@ -16,6 +16,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once abspath(__FILE__).'header-posts.php';
   //グローバルナビ
   require_once abspath(__FILE__).'navi-posts.php';
+  //スキン
+  require_once abspath(__FILE__).'skin-posts.php';
   //広告
   require_once abspath(__FILE__).'ads-posts.php';
   //タイトル
@@ -66,8 +68,6 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once abspath(__FILE__).'mobile-buttons-posts.php';
   //404ページ
   require_once abspath(__FILE__).'404-posts.php';
-  //スキン
-  require_once abspath(__FILE__).'skin-posts.php';
   //AMP
   require_once abspath(__FILE__).'amp-posts.php';
   //管理画面
@@ -134,6 +134,7 @@ endif;
   <ul>
     <li class="all"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
+    <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
@@ -158,7 +159,6 @@ endif;
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="mobile-buttons"><?php _e( 'モバイル', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
-    <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="editor"><?php _e( 'エディター', THEME_NAME ) ?></li>
@@ -177,6 +177,11 @@ endif;
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
     <?php require_once abspath(__FILE__).'header-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- スキン -->
+  <div class="skin metabox-holder">
+    <?php require_once abspath(__FILE__).'skin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->
@@ -298,11 +303,6 @@ endif;
   <!-- 404ページ -->
   <div class="page-404 metabox-holder">
     <?php require_once abspath(__FILE__).'404-forms.php'; ?>
-  </div><!-- /.metabox-holder -->
-
-  <!-- スキン -->
-  <div class="skin metabox-holder">
-    <?php require_once abspath(__FILE__).'skin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- AMP -->
