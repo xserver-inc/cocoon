@@ -48,7 +48,7 @@
 
               $screenshot_text = null;
               if ($screenshot_uri) {
-                $screenshot_text = get_skin_preview_tag($screenshot_uri);
+                $screenshot_text = get_skin_preview_tag($screenshot_uri, $description);
               }
 
               if ($version) {

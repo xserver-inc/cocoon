@@ -321,20 +321,22 @@ endif;
 
 //ツールチップの生成
 if ( !function_exists( 'generate_skin_preview_tag' ) ):
-function generate_skin_preview_tag($url){?>
+function generate_skin_preview_tag($url, $description = null){?>
   <span class="tooltip fa fa-picture-o">
     <span class="tip-content">
       <img src="<?php echo $url; ?>" alt="">
-
+      <?php if (!empty($description)): ?>
+        <p><?php echo $description; ?></p>
+      <?php endif ?>
     </span>
   </span>
   <?php
 }
 endif;
 if ( !function_exists( 'get_skin_preview_tag' ) ):
-function get_skin_preview_tag($url){
+function get_skin_preview_tag($url, $description = null){
   ob_start();
-  generate_skin_preview_tag($url);
+  generate_skin_preview_tag($url, $description);
   return ob_get_clean();
 }
 endif;
