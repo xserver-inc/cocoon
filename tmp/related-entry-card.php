@@ -28,7 +28,7 @@
       <?php the_title(); //記事のタイトル?>
     </h3>
     <div class="related-entry-card-snippet card-snippet">
-      <?php echo get_the_snipet( get_the_content(), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+      <?php echo get_the_snipet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
 
     <div class="related-entry-card-meta card-meta">
