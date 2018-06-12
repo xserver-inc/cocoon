@@ -5993,8 +5993,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 10px;
   }
 
-  .speech-wrap .speech-balloon {
+  .speech-wrap {
     font-size: 0.8em;
+  }
+  .speech-wrap .speech-balloon {
     padding: 7px;
   }
   .speech-wrap .speech-balloon::before, .speech-wrap .speech-balloon::after {
