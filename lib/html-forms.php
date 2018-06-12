@@ -970,7 +970,7 @@ function generate_author_box_tag($label){
       <div class="author-name">
         <?php
         if ($author_id) {
-          $description = get_the_author_description();
+          $description = get_the_author_description_text();
           if (empty(trim($description))) {
             $description = get_the_author_meta('description', $author_id);
           }

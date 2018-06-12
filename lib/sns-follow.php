@@ -214,8 +214,8 @@ function get_the_author_display_name(){
 endif;
 
 //投稿者情報の取得
-if ( !function_exists( 'get_the_author_description' ) ):
-function get_the_author_description(){
+if ( !function_exists( 'get_the_author_description_text' ) ):
+function get_the_author_description_text(){
   return get_the_author_meta('description', get_the_posts_author_id());
 }
 endif;
