@@ -3235,9 +3235,6 @@ label.screen-reader-text {
   border-left-width: 0px;
 }
 
-/************************************
-** とりあえず何でもレスポンシブ化するスタイル
-************************************/
 canvas, iframe, video,
 .fb_iframe_widget,
 .fb_iframe_widget span {
@@ -3265,9 +3262,6 @@ canvas, iframe, video,
   z-index: 100;
 }
 
-/************************************!
-** YouTubeビデオなどのiframeをレスポンシブにするスタイル
-************************************/
 /*!動画の最大幅を指定する*/
 .video-container,
 .instagram-container,

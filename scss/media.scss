@@ -1,6 +1,6 @@
-/************************************
-** とりあえず何でもレスポンシブ化するスタイル
-************************************/
+///////////////////////////////////////
+// とりあえず何でもレスポンシブ化するスタイル
+///////////////////////////////////////
 canvas,iframe,video,
 // //pixiv
 // .pixiv-embed iframe,
@@ -12,9 +12,9 @@ canvas,iframe,video,
 
 .overflow-container{overflow-y:scroll}.aspect-ratio{height:0;padding-top:56.25%;position:relative}.aspect-ratio--object{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%;z-index:100}
 
-/************************************!
-** YouTubeビデオなどのiframeをレスポンシブにするスタイル
-************************************/
+///////////////////////////////////////
+// YouTubeビデオなどのiframeをレスポンシブにするスタイル
+///////////////////////////////////////
 /*!動画の最大幅を指定する*/
 .video-container,
 .instagram-container,
