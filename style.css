@@ -5494,6 +5494,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   main.main,
   div.sidebar {
+    display: block;
     margin: 10px;
     width: auto;
   }
