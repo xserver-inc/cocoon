@@ -3238,7 +3238,7 @@ label.screen-reader-text {
 /************************************
 ** とりあえず何でもレスポンシブ化するスタイル
 ************************************/
-canvas, iframe, video, svg,
+canvas, iframe, video,
 .fb_iframe_widget,
 .fb_iframe_widget span {
   max-width: 100%;
