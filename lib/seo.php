@@ -466,7 +466,9 @@ function get_the_snipet($content, $length = 70) {
 
   //SEO設定のディスクリプションがない場合は「抜粋」を取得
   if (!$description) {
-    $description = htmlspecialchars(get_content_excerpt($content, $length));
+    $description = get_content_excerpt($content, $length);
+    $description = str_replace('<', '&lt;', $description);
+    $description = str_replace('>', '&gt;', $description);
   }
   return $description;
 }
