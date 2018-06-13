@@ -195,8 +195,11 @@ function url_to_external_ogp_blogcard_tag($url){
     //相対パスの時はエラー用の画像を表示
     $image = $error_image;
   }
+  $title = strip_tags($title);
+  $image = strip_tags($image);
 
   $snipet = get_content_excerpt( $snipet, 160 );
+  $snipet = strip_tags($snipet);
 
   // //ブログカードのサムネイルを右側に
   // $thumbnail_class = ' blogcard-thumbnail-left';

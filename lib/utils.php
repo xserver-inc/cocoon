@@ -1721,3 +1721,10 @@ function is_analytics(){
   return !is_user_administrator() || is_analytics_admin_include();
 }
 endif;
+
+// htmlspecialcharsを簡略化して関数化する
+if ( !function_exists( 'h' ) ):
+function h($s) {
+  return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+endif;
