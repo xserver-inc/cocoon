@@ -18,7 +18,7 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////////////
   //Font Awesome
   ///////////////////////////////////////////
-  wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+  wp_enqueue_style_font_awesome();
 
   ///////////////////////////////////////////
   //設定変更に必要なCSS

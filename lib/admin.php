@@ -9,7 +9,9 @@ function admin_print_styles_custom() {
   if (!is_user_administrator()) {
     echo '<style>#toplevel_page_jetpack{display:none;}</style>';
   }
-  wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
+
+  //Font Awesome
+  wp_enqueue_style_font_awesome();
 
   //カラーピッカー
   wp_enqueue_style( 'wp-color-picker' );
