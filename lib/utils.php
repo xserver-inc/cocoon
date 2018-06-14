@@ -253,7 +253,16 @@ function wp_enqueue_style_theme_style(){
 }
 endif;
 
-//スキンstyleの読み込み
+//子テーマstyle.cssの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_child_style' ) ):
+function wp_enqueue_style_theme_child_style(){
+  if (is_child_theme()) {
+    wp_enqueue_style( THEME_NAME.'-child-style', get_stylesheet_directory_uri() . '/style.css' );
+  }
+}
+endif;
+
+//スキンスタイルの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_skin_style' ) ):
 function wp_enqueue_style_theme_skin_style(){
   if ($skin_url = get_skin_url()) {
