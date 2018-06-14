@@ -50,7 +50,8 @@ function admin_print_styles_custom() {
     //設定変更CSSの読み込み
     //wp_add_css_custome_to_inline_style();
     //IcoMoonの呼び出し
-    wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+    wp_enqueue_style_icomoon();
+
     $select_index = 0;
     if (isset($_POST['select_index'])) {
     $select_index = intval($_POST[SELECT_INDEX_NAME]);

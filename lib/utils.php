@@ -253,6 +253,13 @@ function wp_enqueue_style_font_awesome(){
 }
 endif;
 
+//IcoMoonの読み込み
+if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
+function wp_enqueue_style_icomoon(){
+  wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+}
+endif;
+
 //jQueryファイルの読み込み
 if ( !function_exists( 'wp_enqueue_script_jquery_js' ) ):
 function wp_enqueue_script_jquery_js(){

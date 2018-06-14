@@ -25,11 +25,10 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////////////
   wp_add_css_custome_to_inline_style();
 
-
   ///////////////////////////////////////////
   //IcoMoon
   ///////////////////////////////////////////
-  wp_enqueue_style( 'icomoon-style', get_template_directory_uri() . '/webfonts/icomoon/style.css' );
+  wp_enqueue_style_icomoon();
 
   ///////////////////////////////////////////
   //ソースコードのハイライト表示
