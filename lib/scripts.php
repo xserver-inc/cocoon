@@ -13,7 +13,7 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////////////
   //テーマスタイルの呼び出し
   ///////////////////////////////////////////
-  wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );
+  wp_enqueue_style_theme_style_css();
 
   ///////////////////////////////////////////
   //Font Awesome

@@ -246,6 +246,13 @@ function get_highlight_js_css_url(){
 }
 endif;
 
+//親テーマstyle.cssの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_style_css' ) ):
+function wp_enqueue_style_theme_style_css(){
+  wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );
+}
+endif;
+
 //Font Awesomeの読み込み
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
