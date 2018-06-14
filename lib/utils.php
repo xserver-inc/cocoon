@@ -307,6 +307,15 @@ function wp_enqueue_script_theme_js(){
 }
 endif;
 
+//はてなシェアボタンスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_hatebu_share_button_js' ) ):
+function wp_enqueue_script_hatebu_share_button_js(){
+  if ( is_bottom_hatebu_share_button_visible() && is_singular() ){
+    wp_enqueue_script( 'st-hatena-js', '//b.st-hatena.com/js/bookmark_button.js', array(), false, true );
+  }
+}
+endif;
+
 //ソースコードのハイライト表示に必要なリソースの読み込み
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
