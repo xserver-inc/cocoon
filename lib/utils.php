@@ -247,9 +247,18 @@ function get_highlight_js_css_url(){
 endif;
 
 //親テーマstyle.cssの読み込み
-if ( !function_exists( 'wp_enqueue_style_theme_style_css' ) ):
-function wp_enqueue_style_theme_style_css(){
+if ( !function_exists( 'wp_enqueue_style_theme_style' ) ):
+function wp_enqueue_style_theme_style(){
   wp_enqueue_style( THEME_NAME.'-style', get_template_directory_uri() . '/style.css' );
+}
+endif;
+
+//スキンstyleの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_skin_style' ) ):
+function wp_enqueue_style_theme_skin_style(){
+  if ($skin_url = get_skin_url()) {
+    wp_enqueue_style( THEME_NAME.'-skin-style', $skin_url );
+  }
 }
 endif;
 
