@@ -136,7 +136,7 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////////////
   //テーマ内で使用するJavaScript関数をまとめて定義する外部ファイルを呼び出す（javascript.js）
   ///////////////////////////////////////////
-  wp_enqueue_script( THEME_JS, get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
+  wp_enqueue_script_theme_js();
 
   ///////////////////////////////////
   //はてブシェアボタン用のスクリプト呼び出し

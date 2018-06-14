@@ -300,6 +300,13 @@ function wp_enqueue_script_jquery_js(){
 }
 endif;
 
+//親テーマのjavascript.jsの読み込み
+if ( !function_exists( 'wp_enqueue_script_theme_js' ) ):
+function wp_enqueue_script_theme_js(){
+  wp_enqueue_script( THEME_JS, get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
+}
+endif;
+
 //ソースコードのハイライト表示に必要なリソースの読み込み
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
