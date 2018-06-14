@@ -307,6 +307,18 @@ function wp_enqueue_script_theme_js(){
 }
 endif;
 
+//スキンのjavascript.jsの読み込み
+if ( !function_exists( 'wp_enqueue_script_theme_skin_js' ) ):
+function wp_enqueue_script_theme_skin_js(){
+  $js_url = get_skin_js_url();
+  $js_path = url_to_local($js_url);
+  //javascript.jsファイルがスキンフォルダに存在する場合
+  if ($js_url && file_exists($js_path)) {
+    wp_enqueue_script( THEME_SKIN_JS, $js_url, array( 'jquery', THEME_JS ), false, true );
+  }
+}
+endif;
+
 //はてなシェアボタンスクリプトの読み込み
 if ( !function_exists( 'wp_enqueue_script_hatebu_share_button_js' ) ):
 function wp_enqueue_script_hatebu_share_button_js(){

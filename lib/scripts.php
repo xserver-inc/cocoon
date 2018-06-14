@@ -153,20 +153,8 @@ function wp_enqueue_scripts_custom() {
 //スキンscriptの呼び出し
 //
 ////////////////////////////////////////////////////////////////
-  if (is_child_theme()) {
-    ///////////////////////////////////////////
-    //子テーマのjavascript.js
-    ///////////////////////////////////////////
-    $js_url = get_skin_js_url();
-    $js_path = url_to_local($js_url);
-    //javascript.jsファイルがスキンフォルダに存在する場合
-    if ($js_url && file_exists($js_path)) {
-      //var_dump($js_path);
-      wp_enqueue_script( THEME_SKIN_JS, $js_url, array( 'jquery', THEME_JS ), false, true );
-    }
 
-
-  }
+  wp_enqueue_script_theme_skin_js();
 
 ////////////////////////////////////////////////////////////////
 //
