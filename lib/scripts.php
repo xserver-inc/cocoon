@@ -116,15 +116,18 @@ function wp_enqueue_scripts_custom() {
 
   //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
   if (!is_admin()) {
-    wp_deregister_script('jquery');
-    //wp_deregister_script('jquery-core');
-    wp_deregister_script('jquery-migrate');
+    //jQueryライブラリの読み込み
+    wp_enqueue_script_jquery_js();
 
-    wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
-    wp_enqueue_script('jquery');
+    // wp_deregister_script('jquery');
+    // //wp_deregister_script('jquery-core');
+    // wp_deregister_script('jquery-migrate');
 
-    wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
-    wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
+    // wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
+    // wp_enqueue_script('jquery');
+
+    // wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
+    // wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
 
     //タイルカード
     wp_enqueue_jquery_masonry();
