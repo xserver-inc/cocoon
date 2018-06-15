@@ -10,6 +10,8 @@ define('THEME_NAME_UPPER', strtoupper(THEME_NAME));
 define('THEME_PARENT_DIR', THEME_NAME.'-master');
 //子テーマフォルダ
 define('THEME_CHILD_DIR', THEME_NAME.'-child');
+//テーマ設定ページ用のURLクエリ
+define('THEME_SETTINGS_PAFE', 'theme-settings');
 
 //開発関係の場合デバッグ値を有効にする
 define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.dev' ? 1 : 0);

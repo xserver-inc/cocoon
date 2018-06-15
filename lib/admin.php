@@ -4,11 +4,13 @@
 add_action('admin_print_styles', 'admin_print_styles_custom');
 if ( !function_exists( 'admin_print_styles_custom' ) ):
 function admin_print_styles_custom() {
-  wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
   //管理者以外にJetpackメニューを表示しない
   if (!is_user_administrator()) {
     echo '<style>#toplevel_page_jetpack{display:none;}</style>';
   }
+
+  //管理用スタイル
+  wp_enqueue_style( 'admin-style', get_template_directory_uri().'/css/admin.css' );
 
   //Font Awesome
   wp_enqueue_style_font_awesome();
@@ -39,7 +41,7 @@ function admin_print_styles_custom() {
     wp_enqueue_confirmation_before_publish();
   }
 
-
+  //_v(is_admin_php_page());
   if (is_admin_php_page()/* || is_widgets_php_page()*/) {
     //タブの読み込み
     wp_enqueue_script( 'tab-js-jquery', '//code.jquery.com/jquery.min.js', array( 'jquery' ), false, true );

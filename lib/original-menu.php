@@ -9,32 +9,32 @@ function add_original_menu_in_admin_page() {
     //セパレーターの挿入
     add_admin_menu_separator(28);
     //トップレベルメニューを追加する
-    add_menu_page(SETTING_NAME_TOP, SETTING_NAME_TOP, 'manage_options', 'theme-settings', 'add_theme_settings_page', get_template_directory_uri().'/images/admin-menu-logo.png', 29 );
+    add_menu_page(SETTING_NAME_TOP, SETTING_NAME_TOP, 'manage_options', THEME_SETTINGS_PAFE, 'add_theme_settings_page', get_template_directory_uri().'/images/admin-menu-logo.png', 29 );
 
 
     //add_menu_page();
     //var_dump('aaaaaaaa');
 
     //吹き出しサブメニューを追加
-    add_submenu_page('theme-settings', __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'speech-balloon', 'add_theme_speech_balloon_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('吹き出し', THEME_NAME), __('吹き出し', THEME_NAME), 'manage_options', 'speech-balloon', 'add_theme_speech_balloon_page');
 
     //テンプレートサブメニューを追加
-    add_submenu_page('theme-settings', __('テンプレート', THEME_NAME), __('テンプレート', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('テンプレート', THEME_NAME), __('テンプレート', THEME_NAME), 'manage_options', 'theme-func-text', 'add_theme_func_text_page');
 
     //アフィリエイトタグサブメニューを追加
-    add_submenu_page('theme-settings', __('アフィリエイトタグ', THEME_NAME), __('アフィリエイトタグ', THEME_NAME), 'manage_options', 'theme-affiliate-tag', 'add_theme_affiliate_tag_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('アフィリエイトタグ', THEME_NAME), __('アフィリエイトタグ', THEME_NAME), 'manage_options', 'theme-affiliate-tag', 'add_theme_affiliate_tag_page');
 
     //ランキング作成サブメニューを追加
-    add_submenu_page('theme-settings', __('ランキング作成', THEME_NAME), __('ランキング作成', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_item_ranking_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('ランキング作成', THEME_NAME), __('ランキング作成', THEME_NAME), 'manage_options', 'theme-ranking', 'add_theme_item_ranking_page');
 
     //アクセス集計サブメニューを追加
-    add_submenu_page('theme-settings', __('アクセス集計', THEME_NAME), __('アクセス集計', THEME_NAME), 'manage_options', 'theme-access', 'add_theme_access_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('アクセス集計', THEME_NAME), __('アクセス集計', THEME_NAME), 'manage_options', 'theme-access', 'add_theme_access_page');
 
     //高速化サブメニューを追加
-    add_submenu_page('theme-settings', __('高速化', THEME_NAME), __('高速化', THEME_NAME), 'manage_options', 'theme-speed-up', 'add_theme_speed_up_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('高速化', THEME_NAME), __('高速化', THEME_NAME), 'manage_options', 'theme-speed-up', 'add_theme_speed_up_page');
 
     //バックアップサブメニューを追加
-    add_submenu_page('theme-settings', __('バックアップ', THEME_NAME), __('バックアップ', THEME_NAME), 'manage_options', 'theme-backup', 'add_theme_backup_page');
+    add_submenu_page(THEME_SETTINGS_PAFE, __('バックアップ', THEME_NAME), __('バックアップ', THEME_NAME), 'manage_options', 'theme-backup', 'add_theme_backup_page');
 
 }
 endif;
