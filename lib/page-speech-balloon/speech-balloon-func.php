@@ -28,12 +28,15 @@ define('SBIS_CIRCLE_NONE', 'cn');
 define('SBIS_CIRCLE_BORDER', 'cb');
 
 //いらすとやさん関係
-define('IRASUTOYA_CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank">いらすとや</a>');
+define('IRASUTOYA_ CREDIT', '&copy; <a href="http://www.irasutoya.com/" target="_blank">いらすとや</a>');
 define('IMAGE_CDN_DIR_URL', 'https://im-cocoon.net/wp-content/uploads');
+
+
+define('SB_IMAGE_DIR_URL', get_template_directory_uri().'/images');
 //デフォルトアイコン
 define('SB_DEFAULT_ICON', get_template_directory_uri().'/images/anony.png');
-define('SB_DEFAULT_MAN_ICON', IMAGE_CDN_DIR_URL.'/man.png');
-define('SB_DEFAULT_WOMAN_ICON', IMAGE_CDN_DIR_URL.'/woman.png');
+define('SB_DEFAULT_MAN_ICON', SB_IMAGE_DIR_URL.'/man.png');
+define('SB_DEFAULT_WOMAN_ICON', SB_IMAGE_DIR_URL.'/woman.png');
 
 
 //吹き出しテーブルのバージョン取得
@@ -128,7 +131,7 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
@@ -138,119 +141,91 @@ function add_default_speech_balloon_records(){
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 03] 少年（左）', THEME_NAME );
+
+  $posts['title'] = __( '[SAMPLE 03] ビジネスマン（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/boy.png';
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/b-man.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 04] 少女（右）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 04] ビジネスウーマン（右）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/girl.png';
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/b-woman.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 05] 悩むおじさん（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/ojisan.png';
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/ojisan.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 06] 悩むおばさん（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/obasan.png';
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/obasan.png';
   $posts['style'] = SBS_FLAT;
-  $posts['position'] = SBP_LEFT;
+  $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 07] ビジネスマン（左）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 07] 男性医師（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/b-man.png';
-  $posts['style'] = SBS_LINE;
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/doctor.png';
+  $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 08] ビジネスウーマン（右）', THEME_NAME );
+  $posts['title'] = __( '[SAMPLE 08] 女性医師（右）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/b-woman.png';
-  $posts['style'] = SBS_LINE;
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/doctress.png';
+  $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_SQUARE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 09] どや顔男性（左）', THEME_NAME );
   $posts['name']  = __( '', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/doya.png';
-  $posts['style'] = SBS_STANDARD;
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/doya-man.png';
+  $posts['style'] = SBS_THINK;
   $posts['position'] = SBP_LEFT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 10] 熊（左）', THEME_NAME );
-  $posts['name']  = __( 'くま', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/bear.png';
-  $posts['style'] = SBS_STANDARD;
-  $posts['position'] = SBP_LEFT;
-  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
-  $posts['visible'] = 1;
-  insert_speech_balloon_record($posts);
-
-  $posts['title'] = __( '[SAMPLE 11] 猫（右）', THEME_NAME );
-  $posts['name']  = __( 'ねこ', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/cat.png';
-  $posts['style'] = SBS_STANDARD;
+  $posts['title'] = __( '[SAMPLE 09] どや顔女性（右）', THEME_NAME );
+  $posts['name']  = __( '', THEME_NAME );
+  $posts['icon']  = SB_IMAGE_DIR_URL.'/doya-woman.png';
+  $posts['style'] = SBS_THINK;
   $posts['position'] = SBP_RIGHT;
   $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
+  $posts['credit'] = '';
   $posts['visible'] = 1;
   insert_speech_balloon_record($posts);
 
-  $posts['title'] = __( '[SAMPLE 12] 犬（左）', THEME_NAME );
-  $posts['name']  = __( 'いぬ', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/dog.png';
-  $posts['style'] = SBS_FLAT;
-  $posts['position'] = SBP_LEFT;
-  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
-  $posts['visible'] = 1;
-  insert_speech_balloon_record($posts);
-
-  $posts['title'] = __( '[SAMPLE 13] ウサギ（右）', THEME_NAME );
-  $posts['name']  = __( 'うさぎ', THEME_NAME );
-  $posts['icon']  = IMAGE_CDN_DIR_URL.'/rabbit.png';
-  $posts['style'] = SBS_FLAT;
-  $posts['position'] = SBP_RIGHT;
-  $posts['iconstyle'] = SBIS_CIRCLE_BORDER;
-  $posts['credit'] = IRASUTOYA_CREDIT;
-  $posts['visible'] = 1;
-  insert_speech_balloon_record($posts);
 }
 endif;
 
@@ -396,8 +371,8 @@ endif;
 if ( !function_exists( 'is_icon_irasutoya' ) ):
 function is_icon_irasutoya($record){
   if (isset($record->icon) && isset($record->credit)) {
-    if ($record->credit == IRASUTOYA_CREDIT) {
-      if (strpos($record->icon, IMAGE_CDN_DIR_URL) !== false) {
+    if ($record->credit == '') {
+      if (strpos($record->icon, SB_IMAGE_DIR_URL) !== false) {
         return true;
       }
     }
