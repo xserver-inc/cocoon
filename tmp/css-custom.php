@@ -459,8 +459,16 @@ if (is_toc_toggle_switch_enable()): ?>
 <?php //アイキャッチを中央表示
 if (is_eyecatch_center_enable()): ?>
 .eye-catch {
-  display: table;
   margin-left: auto;
   margin-right: auto;
+}
+<?php endif ?>
+<?php //アイキャッチをカラム幅にする
+if (is_eyecatch_width_100_percent_enable()): ?>
+.eye-catch {
+  width: 100%;
+}
+.eye-catch img{
+  width: 100%;
 }
 <?php endif ?>

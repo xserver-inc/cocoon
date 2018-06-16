@@ -1266,7 +1266,7 @@ img {
 .eye-catch {
   position: relative;
   margin-bottom: 1em;
-  display: block;
+  display: table;
 }
 .eye-catch .cat-label {
   position: absolute;
