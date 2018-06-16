@@ -885,9 +885,9 @@ select option.fa{
 }
 
 .not-allowed-form{
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: not-allowed;
+  opacity: 0.5;
+  //pointer-events: none;
+  //cursor: not-allowed;
 }
 
 .toggle-entered {
