@@ -1,6 +1,6 @@
 <a href="<?php the_permalink(); ?>" class="entry-card-wrap a-wrap cf" title="<?php the_title() ?>">
   <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card cf">
-    <figure class="entry-card-thumb card-thumb">
+    <figure class="entry-card-thumb card-thumb e-card-thumb">
       <?php
       //サムネイルタグを取得
       $thumbnail_tag =
@@ -22,15 +22,15 @@
       <?php the_nolink_category(); //カテゴリラベルの取得 ?>
     </figure><!-- /.entry-card-thumb -->
 
-    <div class="entry-card-content card-content">
-      <h2 class="entry-card-title card-title" itemprop="headline"><?php the_title() ?></h2>
+    <div class="entry-card-content card-content e-card-content">
+      <h2 class="entry-card-title card-title e-card-title" itemprop="headline"><?php the_title() ?></h2>
       <?php //スニペットの表示
       if (is_entry_card_snippet_visible()): ?>
-      <div class="entry-card-snippet card-snippet">
+      <div class="entry-card-snippet card-snippet e-card-snippet">
         <?php echo get_the_snipet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
-      <div class="entry-card-meta card-meta">
+      <div class="entry-card-meta card-meta e-card-meta">
         <div class="entry-card-info">
           <?php
           //更新日の取得
