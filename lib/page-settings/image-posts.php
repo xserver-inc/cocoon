@@ -6,6 +6,12 @@ update_theme_option(OP_EYECATCH_VISIBLE);
 //アイキャッチラベルの表示
 update_theme_option(OP_EYECATCH_LABEL_VISIBLE);
 
+//アイキャッチの中央寄せ
+update_theme_option(OP_EYECATCH_CENTER_ENABLE);
+
+//アイキャッチをカラム幅に引き伸ばす
+update_theme_option(OP_EYECATCH_WIDTH_100_PERCENT_ENABLE);
+
 //Auto Post Thumbnail
 update_theme_option(OP_AUTO_POST_THUMBNAIL_ENABLE);
 

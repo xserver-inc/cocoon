@@ -52,10 +52,16 @@
             generate_checkbox_tag(OP_EYECATCH_VISIBLE, is_eyecatch_visible(), __( '本文上にアイキャッチを表示する', THEME_NAME ));
             generate_tips_tag(__( '投稿・固定ページトップにアイキャッチを表示します。', THEME_NAME ));
             ?>
-            <div class="indent">
+            <div class="indent<?php echo get_not_allowed_form_class(is_eyecatch_visible(), true); ?>">
               <?php
               generate_checkbox_tag(OP_EYECATCH_LABEL_VISIBLE, is_eyecatch_label_visible(), __( 'アイキャッチラベルを表示する', THEME_NAME ));
-              generate_tips_tag(__( '投稿のアイキャッチに表示されるカテゴリラベルの表示切り替えです。', THEME_NAME ));
+              generate_tips_tag(__( '投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_EYECATCH_CENTER_ENABLE , is_eyecatch_center_enable(), __( 'アイキャッチの中央寄せ', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページに表示されるアイキャッチをカラムの中央に表示します。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_EYECATCH_WIDTH_100_PERCENT_ENABLE , is_eyecatch_width_100_percent_enable(), __( 'アイキャッチをカラム幅に引き伸ばす', THEME_NAME ));
+            generate_tips_tag(__( 'アイキャッチ画像に小さな画像を使っていても、強制的にカラム幅に拡大して表示します。', THEME_NAME ));
               ?>
             </div>
           </td>

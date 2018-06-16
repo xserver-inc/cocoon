@@ -16,6 +16,22 @@ function is_eyecatch_label_visible(){
 }
 endif;
 
+//アイキャッチの中央寄せ
+define('OP_EYECATCH_CENTER_ENABLE', 'eyecatch_center_enable');
+if ( !function_exists( 'is_eyecatch_center_enable' ) ):
+function is_eyecatch_center_enable(){
+  return get_theme_option(OP_EYECATCH_CENTER_ENABLE);
+}
+endif;
+
+//アイキャッチをカラム幅に引き伸ばす
+define('OP_EYECATCH_WIDTH_100_PERCENT_ENABLE', 'eyecatch_width_100_percent_enable');
+if ( !function_exists( 'is_eyecatch_width_100_percent_enable' ) ):
+function is_eyecatch_width_100_percent_enable(){
+  return get_theme_option(OP_EYECATCH_WIDTH_100_PERCENT_ENABLE);
+}
+endif;
+
 //Auto Post Thumbnail
 define('OP_AUTO_POST_THUMBNAIL_ENABLE', 'auto_post_thumbnail_enable');
 if ( !function_exists( 'is_auto_post_thumbnail_enable' ) ):
