@@ -456,3 +456,11 @@ if (is_toc_toggle_switch_enable()): ?>
 #toc-checkbox:checked + .toc-title::after{
   content: '[<?php echo get_toc_close_caption(); ?>]';
 }<?php endif ?>
+<?php //アイキャッチを中央表示
+if (is_eyecatch_center_enable()): ?>
+.eye-catch {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+<?php endif ?>
