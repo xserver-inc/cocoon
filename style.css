@@ -6124,6 +6124,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-top: 2px;
     position: static;
   }
+
+  .entry-card-content,
+  .related-entry-card-content {
+    padding-bottom: 0;
+  }
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,
