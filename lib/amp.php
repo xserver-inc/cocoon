@@ -61,8 +61,9 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<font[^>]*?>/i', '', $the_content);
   $the_content = preg_replace('/<\/font>/i', '', $the_content);
 
-  //colタグの削除
-  $the_content = preg_replace('/<col[^>]*?>/i', '', $the_content);
+  //colタグのwidth属性削除
+  $the_content = preg_replace('/<col(.*?) width="[^"]*?"(.*?)>/i', '<col$1$2>', $the_content);
+  $the_content = preg_replace("/<col(.*?) width='[^']*?'(.*?)>/i", '<col$1$2>', $the_content);
 
   //Amazon商品リンクのhttp URLをhttpsへ
   $the_content = str_replace(
