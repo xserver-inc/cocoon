@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-11 23:28+0900\n"
-"PO-Revision-Date: 2018-06-12 07:52+0900\n"
+"PO-Revision-Date: 2018-06-17 23:59+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -2731,14 +2731,12 @@ msgid "本文下"
 msgstr "Content Bottom"
 
 #: lib/page-settings/ads-forms.php:207
-#, fuzzy
 msgid "SNSボタン上（本文下部分）"
-msgstr "SNS button on (bottom part of the text)"
+msgstr "SNS Button Above"
 
 #: lib/page-settings/ads-forms.php:212
-#, fuzzy
 msgid "SNSボタン下（本文下部分）"
-msgstr "SNS button below (full text at the bottom:)"
+msgstr "SNS Button Below"
 
 #: lib/page-settings/ads-forms.php:217
 msgid "関連記事下（投稿ページのみ）"
@@ -2759,13 +2757,10 @@ msgstr ""
 "up please work carefully."
 
 #: lib/page-settings/ads-forms.php:237
-#, fuzzy
-#| msgid "ショートコード："
 msgid "[ad]ショートコード"
 msgstr "Use [ad] shortcode"
 
 #: lib/page-settings/ads-forms.php:241
-#, fuzzy
 msgid "[ad]ショートコードを有効にする"
 msgstr "[ad] Enable short code"
 
@@ -2802,8 +2797,6 @@ msgstr ""
 "Hide ads Please specify the ID of posts / fixed pages with (comma) delimiter."
 
 #: lib/page-settings/ads-forms.php:283
-#, fuzzy
-#| msgid "広告除外カテゴリーID"
 msgid "広告除外カテゴリー"
 msgstr "Ad exclusion category IDs"
 
@@ -2817,7 +2810,6 @@ msgid "スポンサーリンク"
 msgstr "Sponsored Links"
 
 #: lib/page-settings/all-forms.php:5
-#, fuzzy
 msgid "全体設定"
 msgstr "Global settings"
 
@@ -2846,52 +2838,44 @@ msgid "サイトフォント"
 msgstr "Site font"
 
 #: lib/page-settings/all-forms.php:46
-#, fuzzy
 msgid "游ゴシック体, ヒラギノ角ゴ"
-msgstr "«Gothic, hiragino corner golf course"
+msgstr "YuGothic, Hiragino Kaku Gothic Pro"
 
 #: lib/page-settings/all-forms.php:47
 msgid "メイリオ, ヒラギノ角ゴ"
-msgstr "Meiryo, Hiragino Sharpo"
+msgstr "Meiryo, Hiragino Kaku Gothic Pro"
 
 #: lib/page-settings/all-forms.php:48
-#, fuzzy
 msgid "ＭＳ Ｐゴシック, ヒラギノ角ゴ"
-msgstr "MS P Gothic, hiragino corner golf course"
+msgstr "MS P Gothic, Hiragino Kaku Gothic Pro"
 
 #: lib/page-settings/all-forms.php:49
-#, fuzzy
 msgid "源ノ角ゴシック（WEBフォント）"
-msgstr "Source no gothic (WEB font)"
+msgstr "Source Han Sans (WEB font)"
 
 #: lib/page-settings/all-forms.php:50
 msgid "Mplus 1p（WEBフォント）"
 msgstr "Mplus 1p (WEB font)"
 
 #: lib/page-settings/all-forms.php:51
-#, fuzzy
 msgid "Rounded Mplus 1c（WEBフォント）"
-msgstr "Rounded Mplus 1 c (WEB fonts)"
+msgstr "Rounded Mplus 1 c (WEB font)"
 
 #: lib/page-settings/all-forms.php:52
-#, fuzzy
 msgid "はんなり明朝（WEBフォント）"
-msgstr "Hanpei Mincho (WEB font)"
+msgstr "Hannari Mincho (WEB font)"
 
 #: lib/page-settings/all-forms.php:53
-#, fuzzy
 msgid "こころ明朝（WEBフォント）"
 msgstr "Kokoro Mincho (WEB font)"
 
 #: lib/page-settings/all-forms.php:54
-#, fuzzy
 msgid "さわらびゴシック（WEBフォント）"
-msgstr "Sawari Gothic (WEB font)"
+msgstr "Sawarabi Gothic (WEB font)"
 
 #: lib/page-settings/all-forms.php:55
-#, fuzzy
 msgid "さわらび明朝（WEBフォント）"
-msgstr "Sawarabi-Mincho (WEB fonts)"
+msgstr "Sawarabi Mincho (WEB fonts)"
 
 #: lib/page-settings/all-forms.php:58
 msgid "サイト全体適用されるフォントを選択します。"
