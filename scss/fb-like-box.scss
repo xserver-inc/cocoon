@@ -92,4 +92,7 @@
 ///////////////////////////////////////
 .sidebar{
   @include fb_like_box;
+  .fb-like-thumb{
+    max-width: none;
+  }
 }

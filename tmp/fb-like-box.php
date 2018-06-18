@@ -1,5 +1,5 @@
 <?php //Facebookボックス ?>
-<?php if (is_singular() && ($_FACEBOOK_URL || $_TWITTER_ID || $_TWITTER_ID)): ?>
+<?php if (is_singular() && ($_FACEBOOK_URL || $_TWITTER_ID || $_LINE_ID)): ?>
   <?php $thumb = get_the_post_thumbnail(get_the_ID(), 'thumb320', array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '') ) ?>
   <div class="fb-like-box cf">
     <?php //アイキャッチがある場合
@@ -22,7 +22,8 @@
             <?php endif ?>
           </div>
         <?php endif ?>
-        <?php if ($_TWITTER_ID): ?>
+        <?php //_v($_TWITTER_ID);
+        if ($_TWITTER_ID): ?>
           <div class="fb-like-twitter">
             <a href="https://twitter.com/<?php echo $_TWITTER_ID; ?>?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"><?php echo sprintf(__( '@%sさんをフォロー', THEME_NAME ), $_TWITTER_ID); ?></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>

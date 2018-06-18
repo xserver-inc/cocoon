@@ -3906,6 +3906,9 @@ div.sbs-think .speech-balloon::after {
 .sidebar .fb-like-box > figure {
   width: 100%;
 }
+.sidebar .fb-like-thumb {
+  max-width: none;
+}
 
 /************************************
 ** Facebookページを「いいね！」するエリアのスタイル

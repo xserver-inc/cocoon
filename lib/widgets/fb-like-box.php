@@ -22,13 +22,16 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $message = !empty( $instance['message'] ) ? $instance['message'] : __( 'この記事が気に入ったら<br>いいね！しよう', THEME_NAME );
     $sub_message = !empty( $instance['sub_message'] ) ? $instance['sub_message'] : __( '最新情報をお届けします。', THEME_NAME );
+
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
+
     $twitter_id = !empty( $instance['twitter_id'] ) ? $instance['twitter_id'] : get_the_author_twitter_id();
-    if (isset($instance['twitter_id']) && $instance['twitter_id'] == 0) {
+    if ($twitter_id == '0') {
       $twitter_id = null;
     }
+
     $line_id = !empty( $instance['line_id'] ) ? $instance['line_id'] : get_the_author_line_id();
-    if (isset($instance['line_id']) && $instance['line_id'] == 0) {
+    if ($line_id == '0') {
       $line_id = null;
     }
 

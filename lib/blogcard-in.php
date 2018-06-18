@@ -53,6 +53,7 @@ function url_to_internal_blogcard_tag($url){
     $exce = $post_data->post_excerpt;
 
     $title = $post_data->post_title;//タイトルの取得
+
     // if (is_wpforo_plugin_page($url)) {
     //   $title = wp_get_document_title();
     // }
