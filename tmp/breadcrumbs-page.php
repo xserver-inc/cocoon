@@ -1,5 +1,5 @@
 <?php //固定ページ用のパンくずリスト ?>
-<?php //パンくずリストを表示しするとき
+<?php //パンくずリストを表示するとき
 if (is_page_breadcrumbs_visible()): ?>
 <?php if ( !is_front_page() ): //個別ページでパンくずリストを表示する場合?>
 <div id="breadcrumb" class="breadcrumb breadcrumb-page<?php echo get_additional_page_breadcrumbs_classes(); ?>" itemscope itemtype="http://schema.org/BreadcrumbList">
