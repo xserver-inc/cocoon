@@ -1865,6 +1865,10 @@ span.internal-icon {
 .nwa .ranking-item-link-buttons {
   display: block;
 }
+.nwa .ranking-item-img-desc a,
+.nwa .ranking-item-link-buttons a {
+  padding: 6px 0;
+}
 
 .nwa .ranking-item-image-tag {
   max-width: 100%;
