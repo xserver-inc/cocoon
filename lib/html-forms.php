@@ -895,12 +895,17 @@ function get_nofollow_link($url, $text){
 endif;
 
 if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array(), $include_children = 0){
+function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array(), $include_children = 0, $post_type = null){
 
   $args = array(
     'posts_per_page' => $entry_count,
     'no_found_rows' => true,
   );
+  if ($post_type) {
+    $args += array(
+      'post_type' => explode(',', $post_type)
+    );
+  }
   if ( $categories ) {
     //_v($categories);
     $args += array(
@@ -916,6 +921,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       )
     );
   }
+  //_v($args);
   $thumb_size = get_new_entries_thumbnail_size($entry_type);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );

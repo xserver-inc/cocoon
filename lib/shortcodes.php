@@ -23,6 +23,7 @@ function new_entries_shortcode($atts) {
     'cats' => 'all',
     'type' => 'default',
     'children' => 0,
+    'post_type' => 'post',
   ), $atts));
   $categories = array();
   //var_dump($cats);
@@ -30,7 +31,7 @@ function new_entries_shortcode($atts) {
     $categories = explode(',', $cats);
   }
   ob_start();
-  generate_new_entries_tag($count, $type, $categories, $children);
+  generate_new_entries_tag($count, $type, $categories, $children, $post_type);
   $res = ob_get_clean();
   return $res;
 }

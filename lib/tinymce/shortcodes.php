@@ -61,7 +61,7 @@ function generate_shortcodes_is($value){
   shortcodes[1].after = '<?php echo $after; ?>';
 
   <?php //新着記事一覧のショートコード
-  $before = '[new_list count=5 type=default cats=all children=0]';
+  $before = '[new_list count="5" type="default" cats="all" children="0" post_type="post"]';
   $after = '';
    ?>
   shortcodes[2] = new Array();
@@ -71,7 +71,7 @@ function generate_shortcodes_is($value){
   shortcodes[2].after = '<?php echo $after; ?>';
 
   <?php //人気記事一覧のショートコード
-  $before = '[popular_list days=all rank=0 pv=0 count=5 type=default cats=all]';
+  $before = '[popular_list days="all" rank="0" pv="0" count="5" type="default" cats="all"]';
   $after = '';
    ?>
   shortcodes[3] = new Array();
