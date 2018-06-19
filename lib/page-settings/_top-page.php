@@ -130,7 +130,7 @@ endif;
 <form name="form1" method="post" action="" class="admin-settings">
 
 <!-- タブ機能の実装 -->
-<div id="tabs">
+<div id="tabs" class="tabs">
   <ul>
     <li class="all"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
