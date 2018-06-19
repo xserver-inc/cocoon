@@ -24,3 +24,11 @@ function is_slicknav_visible(){
   return false;
 }
 endif;
+
+//スライドインメニュー表示の際にメインコンテンツ下にサイドバーを表示するか
+define('OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE', 'slide_in_content_bottom_sidebar_visible');
+if ( !function_exists( 'is_slide_in_content_bottom_sidebar_visible' ) ):
+function is_slide_in_content_bottom_sidebar_visible(){
+  return get_theme_option(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE);
+}
+endif;

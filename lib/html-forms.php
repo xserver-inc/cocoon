@@ -123,8 +123,8 @@ endif;
 
 //入力できないフォームクラスコードの生成
 if ( !function_exists( 'get_not_allowed_form_class' ) ):
-function get_not_allowed_form_class($is_not_allowed, $in = false){
-  if (!$is_not_allowed) {
+function get_not_allowed_form_class($is_allowed, $in = false){
+  if (!$is_allowed) {
     if ($in) {
       return ' not-allowed-form';
     } else {

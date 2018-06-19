@@ -5850,6 +5850,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .content {
     margin-top: 10px;
   }
+
+  .no-mobile-sidebar #sidebar {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   h2,

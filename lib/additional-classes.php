@@ -226,6 +226,11 @@ function body_class_additional($classes) {
     $classes[] = 'mobile-button-slide-in';
   }
 
+  //スライドインボタン表示時にサイドバーを表示するか
+  if (is_mobile_button_layout_type_slide_in() && !is_slide_in_content_bottom_sidebar_visible()) {
+    $classes[] = 'no-mobile-sidebar';
+  }
+
   //サイトのサムネイルを表示するか
   if (!is_all_thumbnail_visible()) {
     $classes[] = 'no-thumbnail';
