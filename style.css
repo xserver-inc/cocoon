@@ -3912,8 +3912,6 @@ div.sbs-think .speech-balloon::after {
 .sidebar .fb-like-box > div,
 .sidebar .fb-like-box > figure {
   width: 100%;
-}
-.sidebar .fb-like-thumb {
   max-width: none;
 }
 
@@ -5712,6 +5710,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .fb-like-box > div,
   .fb-like-box > figure {
     width: 100%;
+    max-width: none;
   }
 
   .fb-like-box {
