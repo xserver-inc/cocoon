@@ -6,6 +6,9 @@
   .fb-like-thumb,
   .fb-like-content{
     width: 100%;
+    >*{
+      min-width: 100%;
+    }
   }
 
   img{
