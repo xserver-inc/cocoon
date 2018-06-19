@@ -1,4 +1,10 @@
 <?php //グローバルナビ設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //グローバルナビ背景色
 define('OP_GLOBAL_NAVI_BACKGROUND_COLOR', 'global_navi_background_color');

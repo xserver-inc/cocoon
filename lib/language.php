@@ -1,4 +1,11 @@
 <?php //Wordpressマルチ言語化の設定
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 global $locale;
 //言語の最初の文字がenだったら全てen.moを呼び出す
 if (strpos($locale,'en') !== false) {

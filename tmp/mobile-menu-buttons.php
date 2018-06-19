@@ -1,4 +1,11 @@
 <?php //モバイル用のスライドインボタンメニューの表示
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (is_mobile_button_layout_type_slide_in()): ?>
 
 <div class="mobile-menu-buttons">

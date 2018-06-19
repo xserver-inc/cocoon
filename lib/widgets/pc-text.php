@@ -2,6 +2,13 @@
 ///////////////////////////////////////////////////
 //パソコン用テキストウイジェットの追加
 ///////////////////////////////////////////////////
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 add_action('widgets_init', function(){register_widget('PcTextWidgetItem');});
 if ( !class_exists( 'PcTextWidgetItem' ) ):
 class PcTextWidgetItem extends WP_Widget {

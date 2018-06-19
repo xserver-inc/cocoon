@@ -2,6 +2,13 @@
 ///////////////////////////////////////////////////
 //モバイル用広告ウイジェットの追加
 ///////////////////////////////////////////////////
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 add_action('widgets_init', function(){register_widget('AdWidgetItem');});
 if ( !class_exists( 'AdWidgetItem' ) ):
 class AdWidgetItem extends WP_Widget {

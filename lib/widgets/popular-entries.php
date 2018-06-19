@@ -2,6 +2,13 @@
 ///////////////////////////////////////////////////
 //人気エントリーウイジェットの追加
 ///////////////////////////////////////////////////
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (is_access_count_enable()) {
   add_action('widgets_init', function(){register_widget('PopularEntryWidgetItem');});
 }

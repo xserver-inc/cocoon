@@ -1,4 +1,10 @@
-<?php //SNSページのフォローボタン ?>
+<?php //SNSページのフォローボタン
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php
 if ( is_any_sns_follow_buttons_exist()
       //  && (

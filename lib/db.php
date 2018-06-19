@@ -1,4 +1,10 @@
 <?php //データベース共通関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 // wp-admin以下の全てのページが表示されたらDBのアップデートチェックをする
 add_action('admin_head', 'update_db_tables');

@@ -1,4 +1,12 @@
-<?php if (is_post_navi_visible()): ?>
+<?php
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if (is_post_navi_visible()): ?>
 <div id="pager-post-navi" class="pager-post-navi<?php echo get_additional_post_navi_classes(); ?> cf">
 <?php
 $prevpost = get_adjacent_post(false, '', true); //前の記事

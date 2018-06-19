@@ -1,3 +1,10 @@
+<?php //ランキングフォーム
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <p><?php _e( 'ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。', THEME_NAME ) ?></p>
 <?php //IDがある場合はIDの取得（編集モードの場合）
 $id = isset($_GET['id']) ? intval($_GET['id']) : null;

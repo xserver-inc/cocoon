@@ -1,4 +1,10 @@
 <?php //ヘッダー設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //ヘッダーの種類
 define('OP_HEADER_LAYOUT_TYPE', 'header_layout_type');

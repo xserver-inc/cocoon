@@ -1,4 +1,10 @@
-
+<?php //Facebook OGPタグ
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <!-- OGP -->
 <meta property="og:type" content="<?php echo (is_singular() ? 'article' : 'website'); ?>">
 <?php

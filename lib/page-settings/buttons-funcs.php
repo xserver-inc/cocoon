@@ -1,4 +1,10 @@
 <?php //ボタン設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //トップへ戻るボタンの表示
 define('OP_GO_TO_TOP_BUTTON_VISIBLE', 'go_to_top_button_visible');

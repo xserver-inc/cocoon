@@ -1,4 +1,10 @@
 <?php //コード設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //ソースコードをハイライト表示するか
 define('OP_CODE_HIGHLIGHT_ENABLE', 'code_highlight_enable');

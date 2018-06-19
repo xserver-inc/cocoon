@@ -1,4 +1,10 @@
 <?php //目次設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //目次の表示
 define('OP_TOC_VISIBLE', 'toc_visible');

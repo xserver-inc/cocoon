@@ -1,5 +1,10 @@
-
 <?php //オリジナル設定ページ
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete') {
   if( isset($_POST[HIDDEN_DELETE_FIELD_NAME]) &&

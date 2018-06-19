@@ -1,4 +1,11 @@
-<?php
+<?php //吹き出し削除フォーム
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 //一覧ページへのURL
 $list_url = SB_LIST_URL;
  ?>

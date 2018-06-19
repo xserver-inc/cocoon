@@ -1,5 +1,10 @@
 <?php //キャッシュ系の処理
-
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //テーマを変更時にテーマのリソースキャッシュを削除
 add_action('switch_theme', 'delete_theme_resource_caches');

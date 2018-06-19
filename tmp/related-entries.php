@@ -1,4 +1,12 @@
-<?php if (is_related_entries_visible()): ?>
+<?php
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if (is_related_entries_visible()): ?>
 <aside id="related-entries" class="related-entries<?php echo get_additional_related_entries_classes(); ?>">
   <h2 class="related-entry-heading">
     <span class="related-entry-main-heading main-caption">

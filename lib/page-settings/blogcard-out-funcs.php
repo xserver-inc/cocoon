@@ -1,5 +1,10 @@
 <?php //外部ブログカード設定に必要な定数や関数
-
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //外部ブログカードが有効
 define('OP_EXTERNAL_BLOGCARD_ENABLE', 'external_blogcard_enable');

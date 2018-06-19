@@ -1,4 +1,11 @@
 <?php //内容の保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 $title = !empty($_POST['title']) ? $_POST['title'] : null;
 $items = !empty($_POST['item_ranking']) ? $_POST['item_ranking'] : null;
 $count = !empty($_POST['count']) ? $_POST['count'] : null;

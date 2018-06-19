@@ -1,4 +1,11 @@
 <?php //Custom CSS
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 add_action( 'admin_menu', 'add_custom_css_custom_box' );
 if ( !function_exists( 'add_custom_css_custom_box' ) ):
 function add_custom_css_custom_box() {

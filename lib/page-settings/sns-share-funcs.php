@@ -1,8 +1,13 @@
 <?php //SNS設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 ///////////////////////////////////////
 // SNSシェアボタンの設定
 ///////////////////////////////////////
-
 
 //トップシェアボタン関数
 require_once abspath(__FILE__).'sns-share-funcs-top.php';

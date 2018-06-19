@@ -1,4 +1,11 @@
 <?php //投稿・固定ページでのみ管理者パネルを表示する
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (is_user_administrator()
   && is_admin_panel_visible()
   && !is_amp()

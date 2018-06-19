@@ -1,7 +1,11 @@
-<?php
-//////////////////////////////////
-// トップへ戻るボタンのAMP用script呼び出し
-//////////////////////////////////
+<?php //トップへ戻るボタンのAMP用script呼び出し
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if ( is_go_to_top_button_visible() || is_mobile_button_layout_type_slide_in() ): //トップへ戻るボタンを表示するか?>
   <amp-animation id="show-page-top" layout="nodisplay">
   <script type="application/json">

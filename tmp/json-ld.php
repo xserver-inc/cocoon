@@ -2,6 +2,13 @@
 //JSON-LDに関する記述
 //https://developers.google.com/search/docs/data-types/articles
 //http://schema.org/NewsArticle
+
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
  ?>
 <script type="application/ld+json">
 {

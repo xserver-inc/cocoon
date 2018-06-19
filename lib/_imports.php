@@ -1,4 +1,10 @@
 <?php //ファイル読み込み用
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 //abspath(__FILE__)

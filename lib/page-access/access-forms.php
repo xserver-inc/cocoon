@@ -1,3 +1,10 @@
+<?php //アクセス集計フォーム
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <div class="metabox-holder">
 
 <!-- アクセス集計 -->

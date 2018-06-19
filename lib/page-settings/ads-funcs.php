@@ -1,4 +1,10 @@
 <?php //広告設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //広告を全て表示するか
 define('OP_ALL_ADS_VISIBLE', 'all_ads_visible');

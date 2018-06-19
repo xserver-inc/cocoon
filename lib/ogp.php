@@ -1,4 +1,10 @@
 <?php //OGP関係の関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //Facebook OGPタグを出力
 if ( is_facebook_ogp_enable() && !is_wpforo_plugin_page() ) {

@@ -1,4 +1,11 @@
 <?php //AMPページでは呼び出さない（通常ページのみで呼び出す）
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (!is_amp()): ?>
   <?php //Pinterestシェア用のスクリプト
   if (is_pinterest_share_button_visible() && is_singular()): ?>

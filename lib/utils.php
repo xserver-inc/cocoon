@@ -1,4 +1,10 @@
-<?php
+<?php //汎用関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //カテゴリーラベルのスタイルタグ属性を取得
 if ( !function_exists( 'get_category_label_style_attr' ) ):

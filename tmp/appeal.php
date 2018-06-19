@@ -1,4 +1,10 @@
-<?php //アピールエリアテンプレート ?>
+<?php //アピールエリア
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php //アピールエリアを表示するか
 if (is_appeal_area_visible() && !is_amp()): ?>
 <div id="appeal" class="appeal<?php echo get_additional_appeal_area_classes(); ?>">

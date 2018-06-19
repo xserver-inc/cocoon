@@ -1,4 +1,10 @@
 <?php //エントリーカード関係関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //エントリーカードのサムネイルサイズ
 if ( !function_exists( 'get_entry_card_thumbnail_size' ) ):

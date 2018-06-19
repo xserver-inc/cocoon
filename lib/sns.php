@@ -1,4 +1,10 @@
 <?php //SNS関係の関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 if ( !function_exists( 'generate_facebook_sdk_code' ) ):
 function generate_facebook_sdk_code(){?>

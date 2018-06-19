@@ -1,4 +1,10 @@
 <?php //SNSフォロー設定をデータベースに保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //本文下フォローボタンの表示
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE);

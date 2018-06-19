@@ -1,4 +1,12 @@
-<?php if ( is_comment_allow() || have_comments() ): ?>
+<?php //コメントエリア
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if ( is_comment_allow() || have_comments() ): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area<?php echo get_additional_comment_area_classes(); ?>">
   <section class="comment-list">

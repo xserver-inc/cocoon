@@ -1,4 +1,10 @@
 <?php //フッター設定をデータベースに保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //フッターの表示タイプ
 update_theme_option(OP_FOOTER_DISPLAY_TYPE);

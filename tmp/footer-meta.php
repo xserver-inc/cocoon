@@ -1,4 +1,11 @@
 <?php //本文下部分、投稿者など
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (get_the_author()) {
   $author_id = get_the_author_meta( 'ID' );
   $profile_page_url = get_the_author_profile_page_url($author_id);

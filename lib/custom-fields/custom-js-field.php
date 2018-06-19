@@ -1,4 +1,10 @@
 <?php //Custom JS Widget
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 add_action( 'admin_menu', 'add_custom_js_custom_box' );
 if ( !function_exists( 'add_custom_js_custom_box' ) ):

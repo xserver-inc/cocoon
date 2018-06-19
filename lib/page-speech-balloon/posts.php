@@ -1,4 +1,11 @@
 <?php //内容の保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (//!empty($_POST['name']) &&
     !empty($_POST['icon']) &&
     !empty($_POST['action'])) {

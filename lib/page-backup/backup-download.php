@@ -1,4 +1,11 @@
-<?php
+<?php //バックアップのダウンロード
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 //外部のphpからWordpress のAPIを扱う
 require_once('../../../../../wp-load.php');
 require_once('../_defins.php');

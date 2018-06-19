@@ -1,4 +1,12 @@
-<?php if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
+<?php //カルーセル
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
   'cat' => get_carousel_category_ids(),

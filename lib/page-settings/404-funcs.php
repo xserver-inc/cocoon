@@ -1,4 +1,10 @@
 <?php //404ページ設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //404ページ画像
 define('OP_404_IMAGE_URL', '404_image_url');

@@ -2,6 +2,12 @@
 ///////////////////////////////////////////////////
 //Facebookページ「いいね！」ウイジェットの追加
 ///////////////////////////////////////////////////
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //Facebookページ言われるか設定されている時
 if ( get_the_author_facebook_url() && !is_amp() ) {

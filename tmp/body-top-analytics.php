@@ -1,4 +1,10 @@
 <?php //ヘッダーのアクセス解析
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //Google Tag Manager (noscript)
 if ( is_analytics() && $gtm_tracking_id = get_google_tag_manager_tracking_id() )://トラッキングIDが設定されているとき ?>

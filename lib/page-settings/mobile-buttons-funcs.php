@@ -1,4 +1,10 @@
 <?php //モバイルボタン設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //モバイルボタンレイアウト
 define('OP_MOBILE_BUTTON_LAYOUT_TYPE', 'mobile_button_layout_type');

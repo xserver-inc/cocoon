@@ -1,4 +1,10 @@
 <?php //投稿・固定ページのアイキャッチ
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 //アイキャッチがない場合は非表示クラスを追加
 $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' display-none'; ?>
 <figure class="eye-catch<?php echo $display_none; ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">

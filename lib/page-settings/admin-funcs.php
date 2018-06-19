@@ -1,4 +1,10 @@
 <?php //管理画面設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //アドミンバーに独自管理メニューを表示
 define('OP_ADMIN_TOOL_MENU_VISIBLE', 'admin_tool_menu_visible');

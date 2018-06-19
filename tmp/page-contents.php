@@ -1,7 +1,10 @@
-<?php
-///////////////////////////////////////
-// 固定ページのコンテンツ
-///////////////////////////////////////?>
+<?php //固定ページのコンテンツ
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php //パンくずリストがメイントップの場合
 if (is_page_breadcrumbs_position_main_top()){
   get_template_part('tmp/breadcrumbs-page');

@@ -1,3 +1,10 @@
+<?php //吹き出し入力フォーム
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <p><?php _e( '吹き出し用の設定です。', THEME_NAME ) ?></p>
 <form name="form1" method="post" action="">
   <?php

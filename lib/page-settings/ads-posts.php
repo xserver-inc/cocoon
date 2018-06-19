@@ -1,4 +1,10 @@
 <?php //広告設定をデータベースに保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //広告表示設定
 update_theme_option(OP_ALL_ADS_VISIBLE);

@@ -1,4 +1,11 @@
 <?php //目次設定をデータベースに保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 //目次の表示
 update_theme_option(OP_TOC_VISIBLE);
 

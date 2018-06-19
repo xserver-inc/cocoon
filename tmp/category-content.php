@@ -1,4 +1,10 @@
 <?php //カテゴリー用の内容
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 //カテゴリIDの取得
 $cat_id = get_query_var('cat');
 if ($cat_id && get_category_meta($cat_id)): ?>

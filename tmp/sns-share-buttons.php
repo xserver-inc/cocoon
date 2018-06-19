@@ -1,16 +1,10 @@
 <?php //シェアボタン
-// function is_ssb_top(){
-//   global $option;
-//   return $option == SS_TOP;
-// }
-
-// function is_ssb_bottom(){
-//   global $option;
-//   return $option == SS_BOTTOM;
-// }
-// var_dump((is_sns_top_share_buttons_visible() && $option == SS_TOP));
-// var_dump((is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM));
-?>
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php if ( is_sns_share_buttons_visible($option) ):
 //var_dump($option) ?>
 <div class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">

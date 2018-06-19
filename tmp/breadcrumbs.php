@@ -1,4 +1,11 @@
 <?php //カテゴリ用のパンくずリスト
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (is_single_breadcrumbs_visible() && is_single()):
 $cat = get_the_category();
 if($cat && !is_wp_error($cat)){

@@ -1,4 +1,12 @@
-<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+<?php
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if ( is_active_sidebar( 'sidebar' ) ) : ?>
 <div id="sidebar" class="sidebar nwa cf" role="complementary">
 
   <?php //サイドバー上の広告表示

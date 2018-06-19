@@ -1,4 +1,10 @@
 <?php //プロフィールプロフィールに関連する関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 ///////////////////////////////////////
 // 自前でプロフィール画像のアップロード

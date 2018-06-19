@@ -1,4 +1,10 @@
 <?php //フッター設定に必要な定数や関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //フッターの表示タイプ
 define('OP_FOOTER_DISPLAY_TYPE', 'footer_display_type');

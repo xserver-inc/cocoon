@@ -1,4 +1,10 @@
 <?php //アクセス解析設定をデータベースに保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //サイト管理者を解析するか
 update_theme_option(OP_ANALYTICS_ADMIN_INCLUDE);

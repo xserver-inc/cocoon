@@ -1,3 +1,10 @@
+<?php //エントリーカード
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <a href="<?php the_permalink(); ?>" class="entry-card-wrap a-wrap cf" title="<?php the_title() ?>">
   <article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> entry-card e-card cf">
     <figure class="entry-card-thumb card-thumb e-card-thumb">

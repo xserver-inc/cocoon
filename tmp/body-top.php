@@ -1,3 +1,10 @@
+<?php //ボディータグ上部
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <div id="container" class="container<?php echo get_additional_container_classes(); ?> cf">
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>

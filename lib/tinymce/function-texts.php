@@ -1,4 +1,10 @@
 <?php //ビジュアルエディターのテンプレート挿入ドロップダウン
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //テーブル内にレコードが存在するとき
 if (!is_function_texts_record_empty()) {

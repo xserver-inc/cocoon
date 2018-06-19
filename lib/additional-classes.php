@@ -1,4 +1,10 @@
 <?php //スタイリング用の追加クラス関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //フォントファミリークラスの取得
 if ( !function_exists( 'get_site_font_family_class' ) ):

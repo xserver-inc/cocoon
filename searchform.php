@@ -1,4 +1,12 @@
-<?php if (!is_amp() || !is_ssl()): ?>
+<?php //検索フォーム
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if (!is_amp() || !is_ssl()): ?>
 <form class="search-box" method="get" action="<?php echo home_url('/'); ?>">
 <?php else: ?>
 <form class="amp-form search-box" method="get" action="<?php echo home_url('/'); ?>" target="_top">

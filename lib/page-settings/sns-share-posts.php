@@ -1,5 +1,10 @@
 <?php //SNSシェア設定をデータベースに保存
-
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //トップシェアボタンの設定保存
 require_once abspath(__FILE__).'sns-share-posts-top.php';

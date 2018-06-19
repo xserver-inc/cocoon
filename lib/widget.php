@@ -1,4 +1,10 @@
 <?php //ウィジェット操作関連の関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //タグクラウドのカスタマイズ
 add_filter( 'widget_tag_cloud_args', 'widget_tag_cloud_args_custom' );

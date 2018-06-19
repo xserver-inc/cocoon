@@ -1,4 +1,10 @@
 <?php //ウィジェットの表示制御
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 global $_ALL_USER_COUNT;
 $_ALL_USER_COUNT = intval($wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->users"));

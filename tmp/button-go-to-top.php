@@ -1,7 +1,11 @@
-<?php
-//////////////////////////////////
-// トップへ戻るボタンのテンプレート
-//////////////////////////////////
+<?php //トップへ戻るボタン
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示するか
   $on = null;
   //AMP用のイベントを設定

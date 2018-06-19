@@ -1,3 +1,10 @@
+<?php //グローバルナビ
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <!-- Navigation -->
 <nav id="navi" class="navi cf" itemscope itemtype="http://schema.org/SiteNavigationElement">
   <div id="navi-in" class="navi-in wrap cf">

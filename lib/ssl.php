@@ -1,4 +1,10 @@
 <?php //SSL関係の処理
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //投稿内容をSSL対応する
 if ( !function_exists( 'chagne_http_to_https' ) ):

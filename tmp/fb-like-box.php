@@ -1,4 +1,10 @@
-<?php //Facebookボックス ?>
+<?php //Facebookボックス
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php if (is_singular() && ($_FACEBOOK_URL || $_TWITTER_ID || $_LINE_ID)): ?>
   <?php $thumb = get_the_post_thumbnail(get_the_ID(), 'thumb320', array('class' => 'fb-like-thumb-image card-thumb-image', 'alt' => '') ) ?>
   <div class="fb-like-box cf">

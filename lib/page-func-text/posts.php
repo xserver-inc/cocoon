@@ -1,4 +1,11 @@
 <?php //内容の保存
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 //_v(isset($_POST['title'], $_POST['text'], $_POST['action']));
 if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action'])) {
   global $wpdb;

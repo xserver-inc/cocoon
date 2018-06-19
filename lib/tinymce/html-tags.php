@@ -1,4 +1,10 @@
 <?php //よく利用するHTML（レイアウトなど）
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 add_action('admin_init', 'add_html_tags_dropdown');
 add_action('admin_head', 'generate_html_tags_is');

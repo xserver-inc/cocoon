@@ -1,4 +1,10 @@
-<?php //固定ページ用のパンくずリスト ?>
+<?php //固定ページ用のパンくずリスト
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <?php //パンくずリストを表示するとき
 if (is_page_breadcrumbs_visible()): ?>
 <?php if ( !is_front_page() ): //個別ページでパンくずリストを表示する場合?>

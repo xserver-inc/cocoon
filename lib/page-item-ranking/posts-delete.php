@@ -1,4 +1,11 @@
 <?php //内容の削除
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 if (!empty($_POST['id']) && !empty($_POST['action'])) {
   $result = null;
   $id = isset($_POST['id']) ? intval($_POST['id']) : '';

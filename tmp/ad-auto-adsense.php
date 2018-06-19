@@ -1,4 +1,12 @@
-<?php if (is_ads_visible() && is_auto_adsense_enable()): ?>
+<?php //オートアドセンス用のコード
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
+if (is_ads_visible() && is_auto_adsense_enable()): ?>
 <!-- Google Auto AdSense -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>

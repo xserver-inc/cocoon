@@ -1,4 +1,10 @@
 <?php //内部ブログカード関数
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //ブログカードのサムネイルタグの取得
 if ( !function_exists( 'get_blogcard_thumbnail_image_tag' ) ):

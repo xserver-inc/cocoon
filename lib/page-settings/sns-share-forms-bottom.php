@@ -1,3 +1,9 @@
+<?php /**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */ ?>
 <!-- 本文下シェアボタン -->
 <div id="sns-share-bottom" class="postbox">
   <h2 class="hndle"><?php _e( '本文下シェアボタン', THEME_NAME ) ?></h2>

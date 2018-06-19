@@ -1,5 +1,10 @@
 <?php //HTML縮小化用
-
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
 
 //HTMLソースコードの縮小化
 if ( !function_exists( 'code_minify_call_back' ) ):
