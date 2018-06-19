@@ -54,8 +54,8 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     $instance['message'] = !empty( $new_instance['message'] ) ? $new_instance['message'] : '';
     $instance['sub_message'] = !empty( $new_instance['sub_message'] ) ? $new_instance['sub_message'] : '';
     $instance['facebook_url'] = strip_tags(!empty($new_instance['facebook_url']) ? $new_instance['facebook_url'] : '');
-    $instance['twitter_id'] = strip_tags(!empty($new_instance['twitter_id']) ? $new_instance['twitter_id'] : 0);
-    $instance['line_id'] = strip_tags(!empty($new_instance['line_id']) ? $new_instance['line_id'] : 0);
+    $instance['twitter_id'] = strip_tags(($new_instance['twitter_id'] != '0') ? $new_instance['twitter_id'] : 0);
+    $instance['line_id'] = strip_tags(($new_instance['line_id'] != '0') ? $new_instance['line_id'] : 0);
       return $instance;
   }
   function form($instance) {
@@ -65,16 +65,17 @@ class FBLikeBoxWidgetItem extends WP_Widget {
         'message' => null,
         'sub_message' => null,
         'facebook_url' => null,
-        'twitter_id' => 0,
-        'line_id' => 0,
+        'twitter_id' => null,
+        'line_id' => null,
       );
     }
+
     $title = esc_attr(!empty($instance['title']) ? $instance['title'] : null);
     $message = esc_attr(!empty($instance['message']) ? $instance['message'] : null);
     $sub_message = esc_attr(!empty($instance['sub_message']) ? $instance['sub_message'] : null);
     $facebook_url = esc_attr(!empty($instance['facebook_url']) ? $instance['facebook_url'] : null);
-    $twitter_id = esc_attr(!empty($instance['twitter_id']) ? $instance['twitter_id'] : 0);
-    $line_id = esc_attr(!empty($instance['line_id']) ? $instance['line_id'] : 0);
+    $twitter_id = esc_attr(($instance['twitter_id'] != '0') ? $instance['twitter_id'] : 0);
+    $line_id = esc_attr(($instance['line_id'] != '0') ? $instance['line_id'] : 0);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
