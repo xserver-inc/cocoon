@@ -107,12 +107,14 @@
 //768px以下
 @media screen and (max-width: 768px){
   .sidebar{
-    .ad-usual{
-      display: none;
-    }
+    .ad-vertical{
+      .ad-usual{
+        display: none;
+      }
 
-    .ad-additional-vertical{
-      display: block;
+      .ad-additional-vertical{
+        display: block;
+      }
     }
   }
 }

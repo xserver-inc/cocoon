@@ -1652,10 +1652,10 @@ span.internal-icon {
 }
 
 @media screen and (max-width: 768px) {
-  .sidebar .ad-usual {
+  .sidebar .ad-vertical .ad-usual {
     display: none;
   }
-  .sidebar .ad-additional-vertical {
+  .sidebar .ad-vertical .ad-additional-vertical {
     display: block;
   }
 }
