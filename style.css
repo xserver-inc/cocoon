@@ -4640,7 +4640,9 @@ div.fb-like-mobile {
 .kaerebalink-box .anchor-icon,
 .booklink-box .anchor-icon,
 .tomarebalink-box .anchor-icon,
-.wpf-sbtn-wrap .anchor-icon {
+.wpf-sbtn-wrap .anchor-icon,
+.btn .anchor-icon,
+.ranking-item-link-buttons a .anchor-icon {
   display: none !important;
 }
 
