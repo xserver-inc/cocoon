@@ -2,7 +2,7 @@
 /**
  * Cocoon WordPress Theme
  * @author: yhira
- * @link https://wp-cocoon.com/
+ * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('article') ?> itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">

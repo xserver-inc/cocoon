@@ -2,7 +2,7 @@
 /**
  * Cocoon WordPress Theme
  * @author: yhira
- * @link https://wp-cocoon.com/
+ * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */ ?>
 <div id="sb-list" class="postbox" style="max-width: 800px; margin-top: 20px;">
