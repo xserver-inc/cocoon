@@ -42,3 +42,8 @@ html[lang="en"] .column-3::before{
 .column-right{
   background-color: #ffecd3;
 }
+
+/*ビジュアルエディターにinstagramの引用符が表示される対応*/
+.instagram-media {
+  position: relative !important;
+}
