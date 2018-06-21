@@ -449,6 +449,10 @@ function convert_content_for_amp($the_content){
   $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
   $the_content = preg_replace($pattern, $append, $the_content);
 
+  $pattern = '/<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d*" height="\d*")?/i';
+  $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   //スクリプトを除去する
   $pattern = '/<p><script.+?<\/script><\/p>/i';
   $append = '';
