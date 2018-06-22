@@ -19,7 +19,8 @@
         <!-- 管理者向け設定  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( '管理者向け設定', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( '管理者メニュー', THEME_NAME ) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-menu.png', __( '管理画面に素早く移動するためのメニューリンクです。', THEME_NAME )); ?>
           </th>
           <td>
             <?php
@@ -110,7 +111,8 @@
         <!-- 管理者パネルの表示  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, __( '管理者パネルの表示', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_ADMIN_PANEL_DISPLAY_TYPE, __( '管理者パネルの表示', THEME_NAME ) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/admin-panel.png', __( '管理者用のPV表示エリア、各種チェックツール表示用のパネルです。', THEME_NAME )); ?>
           </th>
           <td>
             <?php            $options = array(
