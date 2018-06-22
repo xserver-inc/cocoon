@@ -909,3 +909,11 @@ select option.fa{
 // #ranking-items textarea {
 //   resize: both !important;
 // }
+
+.post-type-post{
+  .postbox {
+    textarea{
+      width: 100%;
+    }
+  }
+}
