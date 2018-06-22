@@ -910,10 +910,7 @@ select option.fa{
 //   resize: both !important;
 // }
 
-.post-type-post{
-  .postbox {
-    textarea{
-      width: 100%;
-    }
-  }
+
+textarea[name="the_page_memo"]{
+  width: 100%;
 }
