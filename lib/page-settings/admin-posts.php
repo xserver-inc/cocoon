@@ -9,6 +9,13 @@
 //アドミンバーに独自管理メニューを表示
 update_theme_option(OP_ADMIN_TOOL_MENU_VISIBLE);
 
+
+//投稿一覧にアイキャッチを表示する
+update_theme_option(OP_ADMIN_LIST_EYECATCH_VISIBLE);
+
+//投稿一覧にメモを表示する
+update_theme_option(OP_ADMIN_LIST_MEMO_VISIBLE);
+
 ///////////////////////////////////////
 // 管理者パネル
 ///////////////////////////////////////

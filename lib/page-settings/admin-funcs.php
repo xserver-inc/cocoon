@@ -14,6 +14,22 @@ function is_admin_tool_menu_visible(){
 }
 endif;
 
+//投稿一覧にアイキャッチを表示する
+define('OP_ADMIN_LIST_EYECATCH_VISIBLE', 'admin_list_eyecatch_visible');
+if ( !function_exists( 'is_admin_list_eyecatch_visible' ) ):
+function is_admin_list_eyecatch_visible(){
+  return get_theme_option(OP_ADMIN_LIST_EYECATCH_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧にメモを表示する
+define('OP_ADMIN_LIST_MEMO_VISIBLE', 'admin_list_memo_visible');
+if ( !function_exists( 'is_admin_list_memo_visible' ) ):
+function is_admin_list_memo_visible(){
+  return get_theme_option(OP_ADMIN_LIST_MEMO_VISIBLE);
+}
+endif;
+
 
 ///////////////////////////////////////
 // 管理者パネル
