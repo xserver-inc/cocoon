@@ -32,18 +32,24 @@ function remove_post_count_parentheses( $output ) {
 endif;
 
 //タグクラウドの出力変更
-add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom');
+add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom', 10, 2);
 if ( !function_exists( 'wp_tag_cloud_custom' ) ):
-function wp_tag_cloud_custom( $output ) {
+function wp_tag_cloud_custom( $output, $args ) {
   //style属性を取り除く
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //タグテキストにspanタグの取り付け
   $output = preg_replace( '/ aria-label="([^"]+?)">/i', ' aria-label="$1"><span class="tag-caption">',  $output);
-  $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
-  //_v($output);
-  //カッコを取り除く
-  $output = str_replace( '<span class="tag-link-count"> (', '<span class="tag-link-count">',  $output);
-  $output = str_replace( ')</span>', '</span>',  $output);
+  //数字を表示しているとき
+  if (isset($args['show_count']) && $args['show_count']) {
+    $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);
+    //_v($output);
+    //カッコを取り除く
+    $output = str_replace( '<span class="tag-link-count"> (', '<span class="tag-link-count">',  $output);
+    $output = str_replace( ')</span>', '</span>',  $output);
+  } else {//数字を表示しないとき
+    $output = str_replace( '</a>', '</span></a>', $output);
+  }
+
   return $output;
 }
 endif;
