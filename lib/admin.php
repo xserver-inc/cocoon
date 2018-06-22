@@ -135,7 +135,16 @@ endif;
 add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
-  $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
+  //アイキャッチ表示
+  if (is_admin_list_eyecatch_visible()) {
+    $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
+  }
+
+  //メモ表示
+  if (is_admin_list_memo_visible()) {
+    $columns['memo'] = __( 'メモ', THEME_NAME, THEME_NAME );
+  }
+
   return $columns;
 }
 endif;
@@ -145,12 +154,18 @@ endif;
 add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
-  if ( 'thumbnail' == $column_name) {
+  //アイキャッチ表示
+  if ( 'thumbnail' == $column_name ) {
     //テーマで設定されているサムネイルを利用する場合
     $thum = get_the_post_thumbnail($post_id, 'thumb100', array( 'style'=>'width:75px;height:auto;' ));
-    //Wordpressで設定されているサムネイル（小）を利用する場合
-    //$thum = get_the_post_thumbnail($post_id, 'small', array( 'style'=>'width:75px;height:auto;' ));
   }
+
+  //メモ表示
+  if ( 'memo' == $column_name ) {
+    //テーマで設定されているサムネイルを利用する場合
+    $thum = htmlspecialchars(get_the_page_memo($post_id));
+  }
+
   if ( isset($thum) && $thum ) {
     echo $thum;
   }

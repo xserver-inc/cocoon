@@ -45,8 +45,11 @@ endif;
 
 //広告を除外しているか
 if ( !function_exists( 'get_the_page_memo' ) ):
-function get_the_page_memo(){
-  $value = get_post_meta(get_the_ID(), 'the_page_memo', true);
+function get_the_page_memo($post_id = null){
+  if (!$post_id) {
+    $post_id = get_the_ID();
+  }
+  $value = get_post_meta($post_id, 'the_page_memo', true);
   return $value;
 }
 endif;

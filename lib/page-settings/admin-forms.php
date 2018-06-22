@@ -56,7 +56,7 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチサムネイルを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチを表示する', THEME_NAME ));
             generate_tips_tag(__( '投稿一覧テーブルにアイキャッチ画像を表示します。', THEME_NAME ));
 
             generate_checkbox_tag(OP_ADMIN_LIST_MEMO_VISIBLE , is_admin_list_memo_visible(), __( 'メモの内容を表示する', THEME_NAME ));
