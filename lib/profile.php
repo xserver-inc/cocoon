@@ -54,7 +54,7 @@ function add_avatar_to_user_profile($user) {
       </th>
       <td>
       <?php
-        generate_textbox_tag('profile_page_url', get_the_author_profile_page_url($user->ID), __( '', THEME_NAME ));
+        generate_textbox_tag('profile_page_url', get_the_author_profile_page_url($user->ID), 'https://');
        ?>
        <p class="description"><?php _e( 'プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。', THEME_NAME ) ?></p>
       </td>

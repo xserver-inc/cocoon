@@ -26,7 +26,7 @@ endif;
 if ( !function_exists( 'view_memo_custom_box' ) ):
 function view_memo_custom_box(){
   //メモ記入欄
-  generate_textarea_tag('the_page_memo', get_the_page_memo(), __( '', THEME_NAME )) ;
+  generate_textarea_tag('the_page_memo', get_the_page_memo(), '') ;
   generate_howro_tag(__( 'この投稿に記録しておきたいメモがある場合は気にしてください。。', THEME_NAME ));
 }
 endif;

@@ -132,7 +132,7 @@ function add_default_speech_balloon_records(){
 
   $posts = array();
   $posts['title'] = __( '[SAMPLE 001] 男性（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_DEFAULT_MAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
@@ -142,7 +142,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 002] 女性（右）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_DEFAULT_WOMAN_ICON;
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
@@ -153,7 +153,7 @@ function add_default_speech_balloon_records(){
 
 
   $posts['title'] = __( '[SAMPLE 003] ビジネスマン（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/b-man.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_LEFT;
@@ -163,7 +163,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 004] ビジネスウーマン（右）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/b-woman.png';
   $posts['style'] = SBS_LINE;
   $posts['position'] = SBP_RIGHT;
@@ -173,7 +173,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 005] 悩むおじさん（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/ojisan.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_LEFT;
@@ -183,7 +183,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 006] 悩むおばさん（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/obasan.png';
   $posts['style'] = SBS_FLAT;
   $posts['position'] = SBP_RIGHT;
@@ -193,7 +193,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 007] 男性医師（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/doctor.png';
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_LEFT;
@@ -203,7 +203,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 008] 女性医師（右）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/doctress.png';
   $posts['style'] = SBS_STANDARD;
   $posts['position'] = SBP_RIGHT;
@@ -213,7 +213,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 009] どや顔男性（左）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/doya-man.png';
   $posts['style'] = SBS_THINK;
   $posts['position'] = SBP_LEFT;
@@ -223,7 +223,7 @@ function add_default_speech_balloon_records(){
   insert_speech_balloon_record($posts);
 
   $posts['title'] = __( '[SAMPLE 010] どや顔女性（右）', THEME_NAME );
-  $posts['name']  = __( '', THEME_NAME );
+  $posts['name']  = '';
   $posts['icon']  = SB_IMAGE_DIR_URL.'/doya-woman.png';
   $posts['style'] = SBS_THINK;
   $posts['position'] = SBP_RIGHT;
