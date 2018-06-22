@@ -52,7 +52,10 @@
         <!-- カラム表示  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'カラム表示', THEME_NAME ) ); ?>
+            <?php
+            generate_label_tag('', __( 'カラム表示', THEME_NAME ) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/columns-display.png', __( '投稿・固定ページ記事一覧テーブルのカラム操作。', THEME_NAME ));
+             ?>
           </th>
           <td>
             <?php
