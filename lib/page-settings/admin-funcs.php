@@ -14,6 +14,46 @@ function is_admin_tool_menu_visible(){
 }
 endif;
 
+//投稿一覧に作成者を表示する
+define('OP_ADMIN_LIST_AUTHOR_VISIBLE', 'admin_list_author_visible');
+if ( !function_exists( 'is_admin_list_author_visible' ) ):
+function is_admin_list_author_visible(){
+  return get_theme_option(OP_ADMIN_LIST_AUTHOR_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧にカテゴリーを表示する
+define('OP_ADMIN_LIST_CATEGORIES_VISIBLE', 'admin_list_categories_visible');
+if ( !function_exists( 'is_admin_list_categories_visible' ) ):
+function is_admin_list_categories_visible(){
+  return get_theme_option(OP_ADMIN_LIST_CATEGORIES_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧にタグを表示する
+define('OP_ADMIN_LIST_TAGS_VISIBLE', 'admin_list_tags_visible');
+if ( !function_exists( 'is_admin_list_tags_visible' ) ):
+function is_admin_list_tags_visible(){
+  return get_theme_option(OP_ADMIN_LIST_TAGS_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧にコメントを表示する
+define('OP_ADMIN_LIST_COMMENTS_VISIBLE', 'admin_list_comments_visible');
+if ( !function_exists( 'is_admin_list_comments_visible' ) ):
+function is_admin_list_comments_visible(){
+  return get_theme_option(OP_ADMIN_LIST_COMMENTS_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧に日付を表示する
+define('OP_ADMIN_LIST_DATE_VISIBLE', 'admin_list_date_visible');
+if ( !function_exists( 'is_admin_list_date_visible' ) ):
+function is_admin_list_date_visible(){
+  return get_theme_option(OP_ADMIN_LIST_DATE_VISIBLE, 1);
+}
+endif;
+
 //投稿一覧にアイキャッチを表示する
 define('OP_ADMIN_LIST_EYECATCH_VISIBLE', 'admin_list_eyecatch_visible');
 if ( !function_exists( 'is_admin_list_eyecatch_visible' ) ):

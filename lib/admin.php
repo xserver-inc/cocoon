@@ -135,6 +135,31 @@ endif;
 add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
+  //作成者表示
+  if (!is_admin_list_author_visible()) {
+    unset($columns['author']);
+  }
+
+  //カテゴリー表示
+  if (!is_admin_list_categories_visible()) {
+    unset($columns['categories']);
+  }
+
+  //タグ表示
+  if (!is_admin_list_tags_visible()) {
+    unset($columns['tags']);
+  }
+
+  //コメント表示
+  if (!is_admin_list_comments_visible()) {
+    unset($columns['comments']);
+  }
+
+  //日付表示
+  if (!is_admin_list_date_visible()) {
+    unset($columns['date']);
+  }
+
   //アイキャッチ表示
   if (is_admin_list_eyecatch_visible()) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
@@ -144,6 +169,8 @@ function customize_admin_manage_posts_columns($columns) {
   if (is_admin_list_memo_visible()) {
     $columns['memo'] = __( 'メモ', THEME_NAME, THEME_NAME );
   }
+
+  //unset($columns['comments']);
 
   return $columns;
 }

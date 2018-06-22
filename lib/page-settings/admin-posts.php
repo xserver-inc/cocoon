@@ -9,6 +9,23 @@
 //アドミンバーに独自管理メニューを表示
 update_theme_option(OP_ADMIN_TOOL_MENU_VISIBLE);
 
+///////////////////////////////////////
+// 投稿リスト
+///////////////////////////////////////
+//投稿一覧に作成者を表示する
+update_theme_option(OP_ADMIN_LIST_AUTHOR_VISIBLE);
+
+//投稿一覧にカテゴリーを表示する
+update_theme_option(OP_ADMIN_LIST_CATEGORIES_VISIBLE);
+
+//投稿一覧にタグを表示する
+update_theme_option(OP_ADMIN_LIST_TAGS_VISIBLE);
+
+//投稿一覧にコメントを表示する
+update_theme_option(OP_ADMIN_LIST_COMMENTS_VISIBLE);
+
+//投稿一覧に日付を表示する
+update_theme_option(OP_ADMIN_LIST_DATE_VISIBLE);
 
 //投稿一覧にアイキャッチを表示する
 update_theme_option(OP_ADMIN_LIST_EYECATCH_VISIBLE);

@@ -56,11 +56,28 @@
           </th>
           <td>
             <?php
+
+            generate_checkbox_tag(OP_ADMIN_LIST_AUTHOR_VISIBLE , is_admin_list_author_visible(), __( '作成者を表示する', THEME_NAME ));
+            echo '<br>';
+
+            generate_checkbox_tag(OP_ADMIN_LIST_CATEGORIES_VISIBLE , is_admin_list_categories_visible(), __( 'カテゴリーを表示する', THEME_NAME ));
+            echo '<br>';
+
+            generate_checkbox_tag(OP_ADMIN_LIST_TAGS_VISIBLE , is_admin_list_tags_visible(), __( 'タグを表示する', THEME_NAME ));
+            echo '<br>';
+
+            generate_checkbox_tag(OP_ADMIN_LIST_COMMENTS_VISIBLE , is_admin_list_comments_visible(), __( 'コメントを表示する', THEME_NAME
+            ));
+            echo '<br>';
+
+            generate_checkbox_tag(OP_ADMIN_LIST_DATE_VISIBLE , is_admin_list_date_visible(), __( '日付を表示する', THEME_NAME ));
+            echo '<br>';
+
             generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチを表示する', THEME_NAME ));
-            generate_tips_tag(__( '投稿一覧テーブルにアイキャッチ画像を表示します。', THEME_NAME ));
+            echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_MEMO_VISIBLE , is_admin_list_memo_visible(), __( 'メモの内容を表示する', THEME_NAME ));
-            generate_tips_tag(__( '投稿一覧テーブルに投稿欄に書き込んだメモを表示します。', THEME_NAME ));
+            generate_tips_tag(__( '投稿一覧テーブルのカラム表示を切り替えます。', THEME_NAME ));
 
             ?>
           </td>
