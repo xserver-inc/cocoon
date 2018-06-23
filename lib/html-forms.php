@@ -273,7 +273,7 @@ endif;
 if ( !function_exists( 'generate_the_site_logo_tag' ) ):
 function generate_the_site_logo_tag($is_header = true){
   $tag = 'div';
-  if (!is_singular() && $is_header) {
+  if (!is_singular()&& !is_archive() && $is_header) {
     $tag = 'h1';
   }
   if ($is_header) {
