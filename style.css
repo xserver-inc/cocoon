@@ -3376,14 +3376,14 @@ canvas, iframe, video,
   margin-left: 130px;
 }
 
-.sidebar .author-box {
+.nwa .author-box {
   font-size: 0.74em;
   line-height: 1.3;
 }
-.sidebar .author-box .author-thumb {
+.nwa .author-box .author-thumb {
   width: 24%;
 }
-.sidebar .author-box .author-content {
+.nwa .author-box .author-content {
   margin-left: 26%;
 }
 
