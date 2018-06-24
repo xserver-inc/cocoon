@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-23 00:45+0900\n"
-"PO-Revision-Date: 2018-06-23 01:22+0900\n"
+"PO-Revision-Date: 2018-06-24 00:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -1572,10 +1572,8 @@ msgstr ""
 "backup file."
 
 #: lib/page-func-text/posts-delete.php:17
-#, fuzzy
-#| msgid "設定はリセットされました。"
 msgid "テキストが削除されました。"
-msgstr "Le texte a bien été supprimé"
+msgstr "Text has been removed."
 
 #: lib/page-func-text/posts.php:59
 msgid "テキストを更新しました。"
