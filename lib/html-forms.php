@@ -831,7 +831,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
       //var_dump($permalink);
       ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo $title; ?>">
+  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php echo $post_thumbnail_img; ?>

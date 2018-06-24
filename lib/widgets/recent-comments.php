@@ -72,7 +72,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
                 $comment_content = mb_substr($comment_content, 0, $str_count).'...';
               }?>
                 <div class="recent-comments cf">
-                  <a class="recent-comment-link a-wrap cf" href="<?php echo $url; ?>" title="<?php echo $title; ?>">
+                  <a class="recent-comment-link a-wrap cf" href="<?php echo $url; ?>" title="<?php echo esc_attr($title); ?>">
                     <div class="recent-comment cf">
                       <div class="recent-comment-info cf">
                         <figure class="recent-comment-avatar">

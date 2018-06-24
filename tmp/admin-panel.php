@@ -55,7 +55,7 @@ if (is_user_administrator()
       if ((get_admin_panel_pv_type() == 'jetpack') &&
           //Jetpackが有効の場合
           is_jetpack_stats_module_active()) {
-        echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', 'simplicity2' ).'" target="_blank"><span class="fa fa-line-chart"></span></a></span>';
+        echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', THEME_NAME ).'" target="_blank"><span class="fa fa-line-chart"></span></a></span>';
       } ?>
     </div>
   <?php endif ?>
