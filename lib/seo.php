@@ -33,12 +33,18 @@ function title_parts_custom( $title ){
   $title['tagline'] = '';
 
   if(is_front_page()){ //フロントページ
-    $title['title'] = $site_name;
-    $title['site'] = '';
+    //自由形式タイトルの場合
+    if (is_free_front_page_title()) {
+      $title['title'] = esc_html( get_free_front_page_title() );
+    } else {//自由形式でないとき
+      $title['title'] = $site_name;
+      $title['site'] = '';
 
-    if ( is_tagline_to_front_page_title() )://キャッチフレーズを追加する場合
-      $title['tagline'] = trim( get_bloginfo('description') );
-    endif;
+      if ( is_tagline_to_front_page_title() )://キャッチフレーズを追加する場合
+        $title['tagline'] = trim( get_bloginfo('description') );
+      endif;
+    }
+
   } elseif (is_singular()) { //投稿・固定ページ
     $title['title'] = trim( get_the_title() );
     //SEO向けのタイトルが設定されているとき

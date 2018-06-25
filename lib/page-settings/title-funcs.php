@@ -28,13 +28,22 @@ function get_title_separator_caption(){
 }
 endif;
 
-//フロントページのタイトル
+//フロントページのタイトルタイプ
 define('OP_FRONT_PAGE_TITLE_FORMAT', 'front_page_title_format');
 if ( !function_exists( 'get_front_page_title_format' ) ):
 function get_front_page_title_format(){
   return get_theme_option(OP_FRONT_PAGE_TITLE_FORMAT, 'sitename_tagline');
 }
 endif;
+
+//自由形式のフロントページのイトル
+define('OP_FREE_FRONT_PAGE_TITLE', 'free_front_page_title');
+if ( !function_exists( 'get_free_front_page_title' ) ):
+function get_free_front_page_title(){
+  return get_theme_option(OP_FREE_FRONT_PAGE_TITLE, trim( get_bloginfo('name') ));
+}
+endif;
+
 //フロントページタイトルのキャプションを取得する
 if ( !function_exists( 'get_front_page_title_caption' ) ):
 function get_front_page_title_caption(){
@@ -53,6 +62,12 @@ endif;
 if ( !function_exists( 'is_tagline_to_front_page_title' ) ):
 function is_tagline_to_front_page_title(){
   return get_front_page_title_format() == 'sitename_tagline';
+}
+endif;
+//自由形式タイトル場合
+if ( !function_exists( 'is_free_front_page_title' ) ):
+function is_free_front_page_title(){
+  return get_front_page_title_format() == 'free';
 }
 endif;
 

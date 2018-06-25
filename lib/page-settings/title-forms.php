@@ -42,9 +42,13 @@
             $options = array(
               'sitename' => __( 'サイト名', THEME_NAME ),
               'sitename_tagline' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'キャッチフレーズ', THEME_NAME ),
+              'free' => __( '自由形式', THEME_NAME ),
             );
             generate_radiobox_tag(OP_FRONT_PAGE_TITLE_FORMAT, $options, get_front_page_title_format());
-            generate_tips_tag(__( 'フロントページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+            _e( '自由形式タイトル', THEME_NAME );
+            echo '<br>';
+            generate_textbox_tag(OP_FREE_FRONT_PAGE_TITLE, get_free_front_page_title(), __( '自由形式のタイトルを入力してください', THEME_NAME ));
+            generate_tips_tag(__( 'フロントページで出力するタイトルタグのフォーマットを選択してください。自由に設定する場合は「自由形式タイトル」ボックスに入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
