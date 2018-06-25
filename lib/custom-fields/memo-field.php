@@ -37,8 +37,10 @@ endif;
 add_action('save_post', 'memo_custom_box_save_data');
 if ( !function_exists( 'memo_custom_box_save_data' ) ):
 function memo_custom_box_save_data($post_id){
-  $the_page_memo = $_POST['the_page_memo'];
-  update_post_meta( $post_id, 'the_page_memo', $the_page_memo );
+  if (isset($_POST['the_page_memo'])) {
+    $the_page_memo = $_POST['the_page_memo'];
+    update_post_meta( $post_id, 'the_page_memo', $the_page_memo );
+  }
 }
 endif;
 
