@@ -51,6 +51,9 @@ function get_front_page_title_caption(){
     case 'sitename_tagline':
       $title = get_bloginfo('name').get_title_separator_caption().get_bloginfo('description');
       break;
+    case 'free':
+      $title = esc_html( get_free_front_page_title() );
+      break;
     default:
       $title = get_bloginfo('name');
       break;
