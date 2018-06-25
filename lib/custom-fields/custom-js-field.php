@@ -33,7 +33,7 @@ function custom_js_custom_box_save_data($post_id) {
 }
 endif;
 
-add_action( 'wp_head','insert_custom_js' );
+add_action( 'wp_footer','insert_custom_js', 9999 );
 if ( !function_exists( 'insert_custom_js' ) ):
 function insert_custom_js() {
   if ( is_page() || is_single() ) {
