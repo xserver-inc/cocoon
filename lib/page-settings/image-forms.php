@@ -150,7 +150,7 @@
           <td>
             <?php
             generate_upload_image_tag(OP_NO_IMAGE_URL, get_no_image_url());
-            generate_tips_tag(__( 'アイキャッチが存在しない方法などのサムネイルに利用される画像ファイルを指定してください。', THEME_NAME ));
+            generate_tips_tag(__( 'アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイルを指定してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
