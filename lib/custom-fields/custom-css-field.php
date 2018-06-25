@@ -37,7 +37,7 @@ endif;
 add_action( 'wp_head','insert_custom_css' );
 if ( !function_exists( 'insert_custom_css' ) ):
 function insert_custom_css() {
-  if ( is_page() || is_single() ) {
+  if ( is_singular() ) {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
       $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);
       if ($custom_css) {
