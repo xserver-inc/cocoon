@@ -127,6 +127,12 @@ define('DEFAULT_INPUT_ROWS', 10);
 define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
 
+//NO IMAGE画像URL
+define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');
+define('NO_IMAGE_160', get_template_directory_uri().'/images/no-image-160.png');
+define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
+define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
+
 ///////////////////////////////////////
 // キャッシュ
 ///////////////////////////////////////

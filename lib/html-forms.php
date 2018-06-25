@@ -813,7 +813,8 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
-      $no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
+      //$no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
+      $no_thumbnail_url = get_no_image_320x180_url();
       $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
       $pv = $post->sum_count;
 
@@ -903,7 +904,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
         <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
       <?php else: // サムネイルを持っていないときの処理 ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
+        <img src="<?php echo get_no_image_320x180_url(); ?>" alt="NO IMAGE" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
       <?php endif; ?>
       </figure><!-- /.new-entry-card-thumb -->
 

@@ -44,7 +44,8 @@ if ($image && file_exists($image_file)) {
     $width = 696;
   }
 } else {
-  $image_url = get_template_directory_uri().'/images/no-image-large.png';
+  //$image_url = get_template_directory_uri().'/images/no-image-large.png';
+  $image_url = NO_IMAGE_LARGE;
   $width = 800;
   $height = 451;
 } ?>

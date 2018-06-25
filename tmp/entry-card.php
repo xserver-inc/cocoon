@@ -24,7 +24,7 @@
         <?php echo $thumbnail_tag;
         //the_post_thumbnail(get_entry_card_thumbnail_size() , array('class' => 'entry-card-thumb-image card-thumb-image', 'alt' => '') ); ?>
       <?php else: // サムネイルを持っていないとき ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="entry-card-thumb-image no-image list-no-image" />
+        <?php echo get_entry_card_no_image_tag($count); ?>
       <?php endif; ?>
       <?php the_nolink_category(); //カテゴリラベルの取得 ?>
     </figure><!-- /.entry-card-thumb -->

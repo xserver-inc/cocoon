@@ -57,7 +57,12 @@ if (is_singular()){//単一記事ページの場合
   } else if ( get_ogp_home_image_url() ){//ホームイメージが設定されている場合
     echo '<meta property="og:image" content="'.get_ogp_home_image_url().'">';echo "\n";
   } else {//投稿にサムネイルも画像も無い場合の処理
-    $ogp_image = get_template_directory_uri().'/images/no-image-320.png';
+    //$ogp_image = get_template_directory_uri().'/images/no-image-320.png';
+    if ($no_image_url = get_no_image_url()) {
+      $ogp_image = $no_image_url;
+    } else {
+      $ogp_image = NO_IMAGE_LARGE;
+    }
     echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）

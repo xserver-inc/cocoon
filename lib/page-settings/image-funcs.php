@@ -101,7 +101,12 @@ function get_no_image_sized_url($url, $w, $h){
 endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
-  return get_no_image_sized_url(get_no_image_url(), 320, 180);
+  if ($no_image_url = get_no_image_url()) {
+    $res = get_no_image_sized_url(get_no_image_url(), 320, 180);
+  } else {
+    $res = NO_IMAGE_320;
+  }
+  return $res;
 }
 endif;
 if ( !function_exists( 'get_no_image_320x180_file' ) ):
@@ -111,7 +116,12 @@ function get_no_image_320x180_file(){
 endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
 function get_no_image_160x90_url(){
-  return get_no_image_sized_url(get_no_image_url(), 160, 90);
+  if ($no_image_url = get_no_image_url()) {
+    $res = get_no_image_sized_url(get_no_image_url(), 160, 90);
+  } else {
+    $res = NO_IMAGE_160;
+  }
+  return $res;
 }
 endif;
 if ( !function_exists( 'get_no_image_160x90_file' ) ):
@@ -121,11 +131,26 @@ function get_no_image_160x90_file(){
 endif;
 if ( !function_exists( 'get_no_image_150x150_url' ) ):
 function get_no_image_150x150_url(){
-  return get_no_image_sized_url(get_no_image_url(), 150, 150);
+  if ($no_image_url = get_no_image_url()) {
+    $res = get_no_image_sized_url(get_no_image_url(), 150, 150);
+  } else {
+    $res = NO_IMAGE_150;
+  }
+  return $res;
 }
 endif;
 if ( !function_exists( 'get_no_image_150x150_file' ) ):
 function get_no_image_150x150_file(){
   return url_to_local(get_no_image_150x150_url());
+}
+endif;
+if ( !function_exists( 'get_no_image_large_url' ) ):
+function get_no_image_large_url(){
+  if (($no_image_url = get_no_image_url()) && file_exists(get_no_image_file())) {
+    $res = $no_image_url ;
+  } else {
+    $res = NO_IMAGE_LARGE;
+  }
+  return $res;
 }
 endif;

@@ -12,7 +12,7 @@
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
     <?php echo get_the_post_thumbnail($post->ID, 'thumb320', array('class' => 'carousel-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
-    <img src="<?php echo get_template_directory_uri(); ?>/images/no-image-320.png" alt="NO IMAGE" class="no-image carousel-entry-card-no-image" width="320" height="160" />
+    <img src="<?php echo get_no_image_320x180_url(); ?>" alt="NO IMAGE" class="no-image carousel-entry-card-no-image" width="320" height="160" />
     <?php endif; ?>
     <?php the_nolink_category(); //カテゴリラベルの取得 ?>
   </figure><!-- /.carousel-entry-thumb -->
