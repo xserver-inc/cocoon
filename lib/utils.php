@@ -1393,11 +1393,11 @@ endif;
 
 //ファイル内容の取得
 if ( !function_exists( 'wp_filesystem_get_contents' ) ):
-function wp_filesystem_get_contents($file){
+function wp_filesystem_get_contents($file, $is_exfile = false){
   $creds = false;
 
   //ファイルが存在しないときはfalseを返す
-  if (!file_exists($file)) {
+  if (!file_exists($file) && !$is_exfile) {
     return false;
   }
 

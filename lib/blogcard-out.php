@@ -92,9 +92,8 @@ function fetch_card_image($image){
 
   //キャッシュディレクトリ
   $dir = get_theme_blog_card_cache_dir();
-
   //画像の読み込み
-  if ( $file_data = @wp_filesystem_get_contents($image) ) {
+  if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
   // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
   //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
