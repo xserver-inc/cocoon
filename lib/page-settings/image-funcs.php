@@ -79,3 +79,53 @@ function is_baguettebox_effect_enable(){
   return get_image_zoom_effect() == 'baguettebox';
 }
 endif;
+
+//NO IMAGE画像
+define('OP_NO_IMAGE_URL', 'no_image_url');
+if ( !function_exists( 'get_no_image_url' ) ):
+function get_no_image_url(){
+  return get_theme_option(OP_NO_IMAGE_URL);
+}
+endif;
+if ( !function_exists( 'get_no_image_file' ) ):
+function get_no_image_file(){
+  return url_to_local(get_no_image_url());
+}
+endif;
+if ( !function_exists( 'get_no_image_sized_url' ) ):
+function get_no_image_sized_url($url, $w, $h){
+  $ext = get_extention($url);
+  $sized_url = str_replace('.'.$ext, '-'.$w.'x'.$h.'.'.$ext, $url);
+  return $sized_url;
+}
+endif;
+if ( !function_exists( 'get_no_image_320x180_url' ) ):
+function get_no_image_320x180_url(){
+  return get_no_image_sized_url(get_no_image_url(), 320, 180);
+}
+endif;
+if ( !function_exists( 'get_no_image_320x180_file' ) ):
+function get_no_image_320x180_file(){
+  return url_to_local(get_no_image_320x180_url());
+}
+endif;
+if ( !function_exists( 'get_no_image_160x90_url' ) ):
+function get_no_image_160x90_url(){
+  return get_no_image_sized_url(get_no_image_url(), 160, 90);
+}
+endif;
+if ( !function_exists( 'get_no_image_160x90_file' ) ):
+function get_no_image_160x90_file(){
+  return url_to_local(get_no_image_160x90_url());
+}
+endif;
+if ( !function_exists( 'get_no_image_150x150_url' ) ):
+function get_no_image_150x150_url(){
+  return get_no_image_sized_url(get_no_image_url(), 150, 150);
+}
+endif;
+if ( !function_exists( 'get_no_image_150x150_file' ) ):
+function get_no_image_150x150_file(){
+  return url_to_local(get_no_image_150x150_url());
+}
+endif;

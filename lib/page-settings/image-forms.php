@@ -132,4 +132,36 @@
 </div>
 
 
+<!-- NO IMAGE -->
+<div id="no-image-page" class="postbox">
+  <h2 class="hndle"><?php _e( 'NO IMAGE設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'アイキャッチの存在しない投稿のサムネイル画像設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- NO IMAGE画像 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_NO_IMAGE_URL, __('NO IMAGE画像', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_upload_image_tag(OP_NO_IMAGE_URL, get_no_image_url());
+            generate_tips_tag(__( 'アイキャッチが存在しない方法などのサムネイルに利用される画像ファイルを指定してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
 </div><!-- /.metabox-holder -->
