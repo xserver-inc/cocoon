@@ -220,7 +220,7 @@
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE, is_admin_panel_check_tools_area_visible(), __( 'チェックツールエリア表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_PANEL_CHECK_TOOLS_AREA_VISIBLE, is_admin_panel_check_tools_area_visible(), __( 'チェックツールエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( 'ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反応など。', THEME_NAME ));
             ?>
             <div class="indent">
