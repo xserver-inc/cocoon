@@ -34,13 +34,15 @@ a{
   // &:visited{
   //   color: blue;
   // }
+  figure{
+    transition: 1s;
+  }
 
   &:hover{
     color: #e53900;
-    img{
-      transition-duration: .5s;
-      -webkit-filter: saturate(1.1) contrast(1.3);
-      filter: saturate(1.1) contrast(1.3);
+    //Lo-Fi風のフィルタリング
+    figure{
+      filter: saturate(1.1) contrast(1.5);
     }
   }
 }
