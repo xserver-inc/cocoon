@@ -167,7 +167,7 @@ function customize_admin_manage_posts_columns($columns) {
 
   //メモ表示
   if (is_admin_list_memo_visible()) {
-    $columns['memo'] = __( 'メモ', THEME_NAME, THEME_NAME );
+    $columns['memo'] = __( 'メモ', THEME_NAME );
   }
 
   //unset($columns['comments']);
