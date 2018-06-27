@@ -35,13 +35,14 @@ a{
   //   color: blue;
   // }
   figure{
-    transition: 1s;
+    transition: .7s;
   }
 
   &:hover{
     color: #e53900;
     //Lo-Fi風のフィルタリング
     figure{
+      //-webkit-filter: saturate(1.1) contrast(1.5);
       filter: saturate(1.1) contrast(1.5);
     }
   }
