@@ -130,6 +130,8 @@ function body_class_additional($classes) {
   //エントリーカードタイプ
   $classes[] = 'ect-'.replace_value_to_class(get_entry_card_type()).'-wrap';
 
+  $classes[] = 'rect-'.replace_value_to_class(get_related_entry_type()).'-wrap';
+
   //投稿管理画面で「デフォルト」以外が選択されている場合
   if (!is_singular_page_type_default()) {
     $classes[] = replace_value_to_class(get_singular_page_type());
