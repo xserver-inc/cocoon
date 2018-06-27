@@ -165,21 +165,20 @@ $marker_u_blue: #75c2f6;
 
 .information-box,
 .information{
-  background: rgba(135,206,250,.1);
-  border: 1px solid rgba(135,206,250,.5);
+  background: #f3fafe;
+  border: 1px solid #bde4fc;
 }
 
 .question-box,
 .question{
-  background: rgba(255,215,0,.2);
-  border: 1px solid rgba(255,215,0,.5);;
+  background: #fff7cc;
+  border: 1px solid #ffe766;;
 }
 
 .alert-box,
 .alert{
-  //background-color: #fdeff2;
-  background: rgba(240,128,128,.1);
-  border: 1px solid rgba(240,128,128,.5);
+  background: #fdf2f2;
+  border: 1px solid #f6b9b9;
 }
 
 .memo-box{
@@ -219,14 +218,14 @@ $marker_u_blue: #75c2f6;
 .information::before{
   content: '\f05a';
   color:#87cefa;
-  border-right: 1px solid rgba(135,206,250,.5);
+  border-right: 1px solid #bde4fc;
 }
 
 .question-box::before,
 .question::before{
   content: '\f059';
   color: gold;
-  border-right: 1px solid rgba(255,215,0,.5);
+  border-right: 1px solid #ffe766;
 }
 
 .memo-box::before{
@@ -247,7 +246,7 @@ $marker_u_blue: #75c2f6;
 .alert::before{
   content: '\f06a';
   color: #f3aca9;
-  border-right: 1px solid rgba(240,128,128,.5);
+  border-right: 1px solid #f6b9b9;
 }
 
 #wpadminbar .alert::before{
@@ -294,7 +293,7 @@ $marker_u_blue: #75c2f6;
 ///////////////////////////////////////
 .blank-box{
   border: 2px solid $basic_border_color;
-  padding: 1em;
+  padding: 1.2em 1em;
   margin: 1em auto;
   &.bb-yellow{border-color: #f4c46b;}
   &.bb-red{border-color: $marker_u_red;}

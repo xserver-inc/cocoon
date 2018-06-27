@@ -2456,20 +2456,20 @@ label.screen-reader-text {
 
 .information-box,
 .information {
-  background: rgba(135, 206, 250, 0.1);
-  border: 1px solid rgba(135, 206, 250, 0.5);
+  background: #f3fafe;
+  border: 1px solid #bde4fc;
 }
 
 .question-box,
 .question {
-  background: rgba(255, 215, 0, 0.2);
-  border: 1px solid rgba(255, 215, 0, 0.5);
+  background: #fff7cc;
+  border: 1px solid #ffe766;
 }
 
 .alert-box,
 .alert {
-  background: rgba(240, 128, 128, 0.1);
-  border: 1px solid rgba(240, 128, 128, 0.5);
+  background: #fdf2f2;
+  border: 1px solid #f6b9b9;
 }
 
 .memo-box {
@@ -2507,14 +2507,14 @@ label.screen-reader-text {
 .information::before {
   content: '\f05a';
   color: #87cefa;
-  border-right: 1px solid rgba(135, 206, 250, 0.5);
+  border-right: 1px solid #bde4fc;
 }
 
 .question-box::before,
 .question::before {
   content: '\f059';
   color: gold;
-  border-right: 1px solid rgba(255, 215, 0, 0.5);
+  border-right: 1px solid #ffe766;
 }
 
 .memo-box::before {
@@ -2535,7 +2535,7 @@ label.screen-reader-text {
 .alert::before {
   content: '\f06a';
   color: #f3aca9;
-  border-right: 1px solid rgba(240, 128, 128, 0.5);
+  border-right: 1px solid #f6b9b9;
 }
 
 #wpadminbar .alert::before {
@@ -2571,7 +2571,7 @@ label.screen-reader-text {
 }
 .blank-box {
   border: 2px solid #ccc;
-  padding: 1em;
+  padding: 1.2em 1em;
   margin: 1em auto;
 }
 .blank-box.bb-yellow {
