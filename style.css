@@ -2570,9 +2570,8 @@ label.screen-reader-text {
   }
 }
 .blank-box {
-  width: 94%;
   border: 2px solid #ccc;
-  padding: 8px;
+  padding: 1em;
   margin: 1em auto;
 }
 .blank-box.bb-yellow {
