@@ -23,13 +23,14 @@ $example_update_checker = new ThemeUpdateChecker(
 //本文部分の冒頭を綺麗に抜粋する
 if ( !function_exists( 'get_content_excerpt' ) ):
 function get_content_excerpt($content, $length = 70){
-  $content =  preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
-  $content =  strip_shortcodes($content);//ショートコード削除
-  $content =  strip_tags($content);//タグの除去
-  $content =  str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
-  $content =  preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
-  $content =  preg_replace(URL_REG, '', $content); //URLを取り除く
-  // $content =  preg_replace('/\s/iu',"",$content); //余分な空白を削除
+  //$content = do_shortcode($content);
+  $content = preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
+  $content = strip_shortcodes($content);//ショートコード削除
+  $content = strip_tags($content);//タグの除去
+  $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
+  $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
+  $content = preg_replace(URL_REG, '', $content); //URLを取り除く
+  // $content = preg_replace('/\s/iu',"",$content); //余分な空白を削除
   //$lengthが整数じゃなかった場合の処理
   if (is_int(intval($length))) {
     $length = intval($length);
@@ -41,6 +42,7 @@ function get_content_excerpt($content, $length = 70){
   if ( $over && $more = get_entry_card_excerpt_more() ) {
     $content = $content.$more;
   }
+  $content =  esc_html($content);
 
   return $content;
 }
