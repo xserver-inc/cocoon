@@ -2945,13 +2945,9 @@ label.screen-reader-text {
 }
 .rect-vartical-card .related-entry-card-content {
   margin: 0;
-  padding: 0;
 }
 .rect-vartical-card .related-entry-card-title {
   font-size: 16px;
-}
-.rect-vartical-card .related-entry-card-meta {
-  display: none;
 }
 
 .rect-vartical-card-3 .related-entry-card-wrap {
@@ -5588,15 +5584,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     padding: 7px;
   }
 
-  .entry-card-content,
-  .related-entry-card-content {
-    overflow: hidden;
-  }
-
-  .related-entry-card-content {
-    max-height: 80px;
-  }
-
   .entry-card-title,
   .related-entry-card-title {
     font-size: 17px;
@@ -5906,7 +5893,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .related-entry-card-content {
     margin-left: 40%;
-    max-height: 100px;
     font-size: 0.9em;
   }
 

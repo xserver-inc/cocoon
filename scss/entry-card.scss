@@ -57,11 +57,6 @@
   text-overflow: ellipsis;
 }
 
-// .entry-card-content,
-// .related-entry-card-content{
-
-// }
-
 .entry-card-content{
   @extend %card_content;
   margin-left: 330px;

@@ -39,19 +39,6 @@ div.sidebar{
   padding: 7px;
 }
 
-.entry-card-content,
-.related-entry-card-content{
-  overflow: hidden;
-}
-
-// .entry-card-content{
-//   max-height: 120px;
-// }
-
-.related-entry-card-content{
-  max-height: 80px;
-}
-
 .entry-card-title,
 .related-entry-card-title{
   font-size: 17px;
@@ -62,10 +49,10 @@ div.sidebar{
   font-size: 14px;
 }
 
-.entry-card-meta,
-.related-entry-card-meta{
-  //position: relative;
-}
+// .entry-card-meta,
+// .related-entry-card-meta{
+//   //position: relative;
+// }
 
 table{
   th,
