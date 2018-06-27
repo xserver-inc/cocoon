@@ -93,6 +93,53 @@ function get_related_excerpt_max_length(){
 }
 endif;
 
+//スニペットを表示
+define('OP_RELATED_ENTRY_CARD_SNIPPET_VISIBLE', 'related_entry_card_snippet_visible');
+if ( !function_exists( 'is_related_entry_card_snippet_visible' ) ):
+function is_related_entry_card_snippet_visible(){
+  return get_theme_option(OP_RELATED_ENTRY_CARD_SNIPPET_VISIBLE, 1);
+}
+endif;
+
+//スマートフォンスニペット表示
+define('OP_SMARTPHONE_RELATED_ENTRY_CARD_SNIPPET_VISIBLE', 'smartphone_related_entry_card_snippet_visible');
+if ( !function_exists( 'is_smartphone_related_entry_card_snippet_visible' ) ):
+function is_smartphone_related_entry_card_snippet_visible(){
+  return get_theme_option(OP_SMARTPHONE_RELATED_ENTRY_CARD_SNIPPET_VISIBLE, 1);
+}
+endif;
+
+//投稿日を表示
+define('OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE', 'related_entry_card_post_date_visible');
+if ( !function_exists( 'is_related_entry_card_post_date_visible' ) ):
+function is_related_entry_card_post_date_visible(){
+  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE, 1);
+}
+endif;
+
+//投稿日を表示しない場合、更新日がなければ投稿日を表示
+define('OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE', 'related_entry_card_post_date_or_update_visible');
+if ( !function_exists( 'is_related_entry_card_post_date_or_update_visible' ) ):
+function is_related_entry_card_post_date_or_update_visible(){
+  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE, 1);
+}
+endif;
+
+//更新日を表示
+define('OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE', 'related_entry_card_post_update_visible');
+if ( !function_exists( 'is_related_entry_card_post_update_visible' ) ):
+function is_related_entry_card_post_update_visible(){
+  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE);
+}
+endif;
+
+//投稿者を表示
+define('OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE', 'related_entry_card_post_author_visible');
+if ( !function_exists( 'is_related_entry_card_post_author_visible' ) ):
+function is_related_entry_card_post_author_visible(){
+  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE);
+}
+endif;
 ///////////////////////////////////////
 // ページ送りナビ
 ///////////////////////////////////////

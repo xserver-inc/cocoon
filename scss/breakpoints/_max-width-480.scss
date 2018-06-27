@@ -354,8 +354,14 @@ a.facebook-follow-button{
   width: 100% !important;
 }
 
-.no-smartphone-snippet{
-  .card-snippet{
+.no-sp-snippet{
+  .entry-card-snippet{
+    display: none;
+  }
+}
+
+.no-sp-snippet-related{
+  .related-entry-card-snippet{
     display: none;
   }
 }

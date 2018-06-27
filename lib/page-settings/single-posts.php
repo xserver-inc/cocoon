@@ -36,6 +36,23 @@ update_theme_option(OP_RELATED_ENTRY_BORDER_VISIBLE);
 //関連記事抜粋文の最大文字数
 update_theme_option(OP_RELATED_EXCERPT_MAX_LENGTH);
 
+//スニペットを表示
+update_theme_option(OP_RELATED_ENTRY_CARD_SNIPPET_VISIBLE);
+
+//スマートフォンスニペット表示
+update_theme_option(OP_SMARTPHONE_RELATED_ENTRY_CARD_SNIPPET_VISIBLE);
+
+//投稿日を表示
+update_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE);
+
+//投稿日を表示しない場合、更新日がなければ投稿日を表示
+update_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_OR_UPDATE_VISIBLE);
+
+//更新日を表示
+update_theme_option(OP_RELATED_ENTRY_CARD_POST_UPDATE_VISIBLE);
+
+//投稿者を表示
+update_theme_option(OP_RELATED_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 ///////////////////////////////////////
 // ページ送りナビ
 ///////////////////////////////////////
