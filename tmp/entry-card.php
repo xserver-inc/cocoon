@@ -38,7 +38,7 @@
       </div>
       <?php endif ?>
       <div class="entry-card-meta card-meta e-card-meta">
-        <div class="entry-card-info">
+        <div class="entry-card-info e-card-info">
           <?php
           //更新日の取得
           $update_time = get_update_time(get_site_date_format());

@@ -34,12 +34,35 @@
     <h3 class="related-entry-card-title card-title e-card-title">
       <?php the_title(); //記事のタイトル?>
     </h3>
+    <?php //スニペットの表示
+    if (is_related_entry_card_snippet_visible()): ?>
     <div class="related-entry-card-snippet card-snippet e-card-snippet">
       <?php echo get_the_snipet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
-
+    <?php endif ?>
     <div class="related-entry-card-meta card-meta e-card-meta">
-      <div class="related-entry-card-day"><span class="related-entry-post-date post-date"><?php the_time(get_site_date_format()); ?></span></div>
+      <div class="related-entry-card-info e-card-info">
+        <?php
+        //更新日の取得
+        $update_time = get_update_time(get_site_date_format());
+        //echo $update_time;
+        //投稿日の表示
+        if (is_related_entry_card_post_date_visible() || (is_related_entry_card_post_date_or_update_visible() && !$update_time && is_related_entry_card_post_update_visible())): ?>
+          <span class="post-date"><?php the_time(get_site_date_format()); ?></span>
+        <?php endif ?>
+        <?php //更新時の表示
+        //_v(is_related_entry_card_post_update_visible());
+        if (is_related_entry_card_post_update_visible() && $update_time): ?>
+          <span class="post-update"><?php echo $update_time; ?></span>
+        <?php endif ?>
+        <?php //投稿者の表示
+        if (is_related_entry_card_post_author_visible()): ?>
+          <span class="post-author">
+            <span class="post-author-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), '16', null ); ?></span>
+            <span class="post-author-name"><?php echo get_the_author(); ?></span>
+          </span>
+        <?php endif ?>
+      </div>
     </div>
 
   </div><!-- /.related-entry-card-content -->

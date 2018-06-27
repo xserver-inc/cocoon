@@ -846,7 +846,7 @@ img {
   display: none;
 }
 
-.entry-card .post-author {
+.e-card-info .post-author {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -860,13 +860,13 @@ img {
   border-radius: 50%;
 }
 
-.entry-card-info {
+.e-card-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
 }
-.entry-card-info > span {
+.e-card-info > span {
   margin-right: 4px;
 }
 
@@ -6112,7 +6112,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     width: 100% !important;
   }
 
-  .no-smartphone-snippet .card-snippet {
+  .no-sp-snippet .entry-card-snippet {
+    display: none;
+  }
+
+  .no-sp-snippet-related .related-entry-card-snippet {
     display: none;
   }
 

@@ -264,7 +264,12 @@ function body_class_additional($classes) {
 
   //スマホ環境でスニペットを表示するか
   if (!is_smartphone_entry_card_snippet_visible()) {
-    $classes[] = 'no-smartphone-snippet';
+    $classes[] = 'no-sp-snippet';
+  }
+
+  //スマホ環境でスニペットを表示するか
+  if (!is_smartphone_related_entry_card_snippet_visible()) {
+    $classes[] = 'no-sp-snippet-related';
   }
 
   //Pinterestボタンを表示するか
