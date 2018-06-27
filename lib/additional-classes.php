@@ -127,6 +127,9 @@ function body_class_additional($classes) {
   //   $add_no_sidebar = true;
   // }
 
+  //エントリーカードタイプ
+  $classes[] = 'ect-'.replace_value_to_class(get_entry_card_type()).'-wrap';
+
   //投稿管理画面で「デフォルト」以外が選択されている場合
   if (!is_singular_page_type_default()) {
     $classes[] = replace_value_to_class(get_singular_page_type());
