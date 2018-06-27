@@ -108,12 +108,12 @@ function get_post_navi_thumbnail_tag($id, $width = 120, $height = 67){
     $image = get_template_directory_uri().'/images/no-image-%s.png';
     //表示タイプ＝デフォルト
     if ($width == 120) {
-      $w = '160';
+      //$w = '160';
       //$image = sprintf($image, $w);
       $image = get_no_image_160x90_url();
       $wh_attr = ' srcset="'.$image.' 120w" width="120" height="67" sizes="(max-width: 120px) 120vw, 67px"';
     } else {//表示タイプ＝スクエア
-      $w = '150';
+      //$w = '150';
       //$image = sprintf($image, $w);
       $image = get_no_image_150x150_url();
       $wh_attr = ' srcset="'.$image.' 120w" width="120" height="120" sizes="(max-width: 120px) 120vw, 120px"';
@@ -139,7 +139,6 @@ class menu_description_walker extends Walker_Nav_Menu {
     if ($item->description) {
       $classes[] = 'menu-item-has-description';
     }
-    //var_dump($classes);
 
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
     $class_names = ' class="'. esc_attr( $class_names ) . '"';
@@ -153,10 +152,6 @@ class menu_description_walker extends Walker_Nav_Menu {
     $prepend = '<div class="item-label">';
     $append = '</div>';
     $description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_attr( $item->description ).'</div>' : '';
-
-    // if($depth != 0) {
-    //   $description = $append = $prepend = "";
-    // }
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
@@ -213,12 +208,10 @@ endif;
 if ( !function_exists( 'get_archive_chapter_text' ) ):
 function get_archive_chapter_text(){
   $chapter_text = null;
-  //アーカイブタイトル前
-  //$chapter_text .= '<span class="archive-title-pb">'.__( '"', THEME_NAME ).'</span><span class="archive-title-text">';
+
   //アーカイブタイトルの取得
   $chapter_text .= get_archive_chapter_title();
-  //アーカイブタイトル後
-  //$chapter_text .= '</span><span class="archive-title-pa">'.__( '"', THEME_NAME );//.'</span><span class="archive-title-list-text">'.get_theme_text_list().'</span>';
+
   //返り値として返す
   return $chapter_text;
 }
