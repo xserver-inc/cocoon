@@ -293,9 +293,8 @@ $marker_u_blue: #75c2f6;
 // 白抜きボックス
 ///////////////////////////////////////
 .blank-box{
-  width: 94%;
   border: 2px solid $basic_border_color;
-  padding: 8px;
+  padding: 1em;
   margin: 1em auto;
   &.bb-yellow{border-color: #f4c46b;}
   &.bb-red{border-color: $marker_u_red;}
