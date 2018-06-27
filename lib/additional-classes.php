@@ -636,7 +636,6 @@ function get_additional_footer_bottom_classes($option = null){
 }
 endif;
 
-
 //フッターボトムのclass追加関数
 if ( !function_exists( 'get_additional_related_entries_classes' ) ):
 function get_additional_related_entries_classes($option = null){
@@ -644,12 +643,12 @@ function get_additional_related_entries_classes($option = null){
   switch (get_related_entry_type()) {
     case 'vartical_card_3':
     case 'vartical_card_4':
-      $classes .= ' related-vartical-card';
+      $classes .= ' rect-vartical-card';
       break;
   }
-  $classes .= ' related-'.replace_value_to_class(get_related_entry_type());
+  $classes .= ' rect-'.replace_value_to_class(get_related_entry_type());
   if (is_related_entry_border_visible()) {
-    $classes .= ' related-entry-border';
+    $classes .= ' recb-entry-border';
   }
 
   if ($option) {
@@ -773,7 +772,7 @@ function get_additional_entry_card_classes($option = null){
 
   //エントリーカードに枠線を付ける
   if (is_entry_card_border_visible()) {
-    $classes .= ' entry-card-border';
+    $classes .= ' ecb-entry-border';
   }
 
 
