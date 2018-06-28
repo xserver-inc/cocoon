@@ -291,13 +291,40 @@ $marker_u_blue: #75c2f6;
 ///////////////////////////////////////
 // 白抜きボックス
 ///////////////////////////////////////
+$bb_gray: #999;
+$bb_yellow: #fc9f4d;
+$bb_red: #d05a6e;
+$bb_blue: #2ea9df;
 .blank-box{
-  border: 2px solid $basic_border_color;
+  border: 2px solid $bb_gray;
   padding: 1.2em 1em;
   margin: 1em auto;
-  &.bb-yellow{border-color: #f4c46b;}
-  &.bb-red{border-color: $marker_u_red;}
-  &.bb-blue{border-color: $marker_u_blue;}
+  &.bb-yellow{border-color: $bb_yellow;}
+  &.bb-red{border-color: $bb_red;}
+  &.bb-blue{border-color: $bb_blue;}
+
+  &.bb-tab{
+    position: relative;
+    margin-top: 2em;
+    &::before{
+      background-color: $bb_gray;
+      font-family: FontAwesome, Aharoni, sans-serif;
+      position: absolute;
+      font-size: .8em;
+      top: -1.8em;
+      left: -2px;
+      padding: 0 1em 0 .8em;
+      color: #fff;
+      border-radius: 6px 6px 0 0;
+    }
+    &.bb-yellow::before{background-color: $bb_yellow;}
+    &.bb-red::before{background-color: $bb_red;}
+    &.bb-blue::before{background-color: $bb_blue;}
+  }
+
+  &.bb-check::before{
+    content: "\f00c  CHECK";
+  }
 
   &.sticky{
     border-width: 0 0 0 6px;
@@ -316,8 +343,6 @@ $marker_u_blue: #75c2f6;
       border-color: #0066cc;
       background-color: #E5F2FF;
     }
-
-
   }
 }
 

@@ -2570,18 +2570,45 @@ label.screen-reader-text {
   }
 }
 .blank-box {
-  border: 2px solid #ccc;
+  border: 2px solid #999;
   padding: 1.2em 1em;
   margin: 1em auto;
 }
 .blank-box.bb-yellow {
-  border-color: #f4c46b;
+  border-color: #fc9f4d;
 }
 .blank-box.bb-red {
-  border-color: #ffb6b9;
+  border-color: #d05a6e;
 }
 .blank-box.bb-blue {
-  border-color: #75c2f6;
+  border-color: #2ea9df;
+}
+.blank-box.bb-tab {
+  position: relative;
+  margin-top: 2em;
+}
+.blank-box.bb-tab::before {
+  background-color: #999;
+  font-family: FontAwesome, Aharoni, sans-serif;
+  position: absolute;
+  font-size: .8em;
+  top: -1.8em;
+  left: -2px;
+  padding: 0 1em 0 .8em;
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+.blank-box.bb-tab.bb-yellow::before {
+  background-color: #fc9f4d;
+}
+.blank-box.bb-tab.bb-red::before {
+  background-color: #d05a6e;
+}
+.blank-box.bb-tab.bb-blue::before {
+  background-color: #2ea9df;
+}
+.blank-box.bb-check::before {
+  content: "\f00c  CHECK";
 }
 .blank-box.sticky {
   border-width: 0 0 0 6px;
