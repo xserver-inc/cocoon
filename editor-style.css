@@ -47,3 +47,8 @@ html[lang="en"] .column-3::before{
 .instagram-media {
   position: relative !important;
 }
+
+/*.mce-menu .mce-menu-item-normal.mce-active, .mce-menu .mce-menu-item-preview.mce-active, .mce-menu .mce-menu-item.mce-selected, .mce-menu .mce-menu-item:focus, .mce-menu .mce-menu-item:hover{
+  background: #fff !important;
+  border: 0 !important;
+}*/
