@@ -914,3 +914,14 @@ select option.fa{
 textarea[name="the_page_memo"]{
   width: 100%;
 }
+
+.mce-active{
+  background: #fff !important;
+  border: 0 !important;
+  &:hover{
+    background-color: #0073aa !important;
+    span{
+      color: #fff !important;
+    }
+  }
+}
