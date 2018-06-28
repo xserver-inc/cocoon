@@ -231,27 +231,52 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
-      'title' => __( 'ボックス（チェック）', THEME_NAME ),
+      'title' => __( 'ボックス（白抜き チェック）', THEME_NAME ),
       'items' => array(
         array(
           'title' => __( '灰色', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'blank-box bb-check'
+          'classes' => 'blank-box bb-tab bb-check'
         ),
         array(
           'title' => __( '黄色', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'blank-box bb-check bb-yellow'
+          'classes' => 'blank-box bb-tab bb-check bb-yellow'
         ),
         array(
           'title' => __( '赤', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'blank-box bb-check bb-red'
+          'classes' => 'blank-box bb-tab bb-check bb-red'
         ),
         array(
           'title' => __( '青', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'blank-box bb-check bb-blue'
+          'classes' => 'blank-box bb-tab bb-check bb-blue'
+        ),
+      ),
+    ),
+    array(
+      'title' => __( 'ボックス（白抜き コメント）', THEME_NAME ),
+      'items' => array(
+        array(
+          'title' => __( '灰色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-tab bb-comment'
+        ),
+        array(
+          'title' => __( '黄色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-tab bb-comment bb-yellow'
+        ),
+        array(
+          'title' => __( '赤', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-tab bb-comment bb-red'
+        ),
+        array(
+          'title' => __( '青', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-tab bb-comment bb-blue'
         ),
       ),
     ),

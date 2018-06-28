@@ -2607,9 +2607,6 @@ label.screen-reader-text {
 .blank-box.bb-tab.bb-blue::before {
   background-color: #2ea9df;
 }
-.blank-box.bb-check::before {
-  content: "\f00c  CHECK";
-}
 .blank-box.sticky {
   border-width: 0 0 0 6px;
   border-color: #777;
@@ -2626,6 +2623,14 @@ label.screen-reader-text {
 .blank-box.sticky.st-blue {
   border-color: #0066cc;
   background-color: #E5F2FF;
+}
+
+.bb-check::before {
+  content: "\f00c  CHECK";
+}
+
+.bb-comment::before {
+  content: "\f075  COMMENT";
 }
 
 /*******************************
