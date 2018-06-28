@@ -72,7 +72,7 @@ endif;
 define('OP_EXTERNAL_LINK_ICON', 'external_link_icon');
 if ( !function_exists( 'get_external_link_icon' ) ):
 function get_external_link_icon(){
-  return get_theme_option(OP_EXTERNAL_LINK_ICON, 'fa-share-square-o');
+  return get_theme_option(OP_EXTERNAL_LINK_ICON, 'fa-external-link');
 }
 endif;
 
@@ -135,7 +135,7 @@ endif;
 define('OP_INTERNAL_LINK_ICON', 'internal_link_icon');
 if ( !function_exists( 'get_internal_link_icon' ) ):
 function get_internal_link_icon(){
-  return get_theme_option(OP_INTERNAL_LINK_ICON, 'fa-share-square-o');
+  return get_theme_option(OP_INTERNAL_LINK_ICON, 'fa-external-link');
 }
 endif;
 

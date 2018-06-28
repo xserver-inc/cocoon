@@ -90,6 +90,7 @@
           <td>
             <?php
             $options = array(
+              'fa-external-link' => __( '&#xf08e', THEME_NAME ),
               'fa-link' => __( '&#xf0c1', THEME_NAME ),
               'fa-level-up' => __( '&#xf148', THEME_NAME ),
               'fa-share' => __( '&#xf064', THEME_NAME ),
@@ -196,12 +197,14 @@
           <td>
             <?php
             $options = array(
+              'fa-external-link' => __( '&#xf08e', THEME_NAME ),
               'fa-link' => __( '&#xf0c1', THEME_NAME ),
               'fa-level-up' => __( '&#xf148', THEME_NAME ),
               'fa-share' => __( '&#xf064', THEME_NAME ),
               'fa-share-square-o' => __( '&#xf045', THEME_NAME ),
               'fa-share-square' => __( '&#xf14d', THEME_NAME ),
               'fa-sign-out' => __( '&#xf08b', THEME_NAME ),
+              'fa-sign-in' => __( '&#xf090', THEME_NAME ),
               'fa-plane' => __( '&#xf072', THEME_NAME ),
               'fa-rocket' => __( '&#xf135', THEME_NAME ),
             );
