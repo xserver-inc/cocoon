@@ -219,64 +219,295 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'blank-box bb-yellow'
         ),
         array(
-          'title' => __( '赤', THEME_NAME ),
+          'title' => __( '赤色', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box bb-red'
         ),
         array(
-          'title' => __( '青', THEME_NAME ),
+          'title' => __( '青色', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box bb-blue'
         ),
       ),
     ),
+
     array(
-      'title' => __( 'ボックス（白抜き チェック）', THEME_NAME ),
+      'title' => __( 'ボックス（タブ）', THEME_NAME ),
       'items' => array(
-        array(
-          'title' => __( '灰色', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-check'
-        ),
-        array(
-          'title' => __( '黄色', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-check bb-yellow'
-        ),
-        array(
-          'title' => __( '赤', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-check bb-red'
-        ),
-        array(
-          'title' => __( '青', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-check bb-blue'
+      array(
+        'title' => __( 'ボックス（チェック）', THEME_NAME ),
+        'items' => array(
+          array(
+            'title' => __( '灰色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-check'
+          ),
+          array(
+            'title' => __( '黄色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-check bb-yellow'
+          ),
+          array(
+            'title' => __( '赤色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-check bb-red'
+          ),
+          array(
+            'title' => __( '青色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-check bb-blue'
+          ),
         ),
       ),
-    ),
-    array(
-      'title' => __( 'ボックス（白抜き コメント）', THEME_NAME ),
-      'items' => array(
+      array(
+        'title' => __( 'ボックス（コメント）', THEME_NAME ),
+        'items' => array(
+          array(
+            'title' => __( '灰色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-comment'
+          ),
+          array(
+            'title' => __( '黄色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-comment bb-yellow'
+          ),
+          array(
+            'title' => __( '赤色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-comment bb-red'
+          ),
+          array(
+            'title' => __( '青色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-comment bb-blue'
+          ),
+        ),
+      ),
         array(
-          'title' => __( '灰色', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-comment'
+          'title' => __( 'ボックス（ポイント）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-point'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-point bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-point bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-point bb-blue'
+            ),
+          ),
         ),
         array(
-          'title' => __( '黄色', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-comment bb-yellow'
+          'title' => __( 'ボックス（ティップス）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-tips'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-tips bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-tips bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-tips bb-blue'
+            ),
+          ),
         ),
         array(
-          'title' => __( '赤', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-comment bb-red'
+          'title' => __( 'ボックス（ヒント）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-hint'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-hint bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-hint bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-hint bb-blue'
+            ),
+          ),
         ),
         array(
-          'title' => __( '青', THEME_NAME ),
-          'block' => 'div',
-          'classes' => 'blank-box bb-tab bb-comment bb-blue'
+          'title' => __( 'ボックス（ピックアップ）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-pickup'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-pickup bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-pickup bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-pickup bb-blue'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ボックス（ブックマーク）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bookmark'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bookmark bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bookmark bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bookmark bb-blue'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ボックス（メモ）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-memo'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-memo bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-memo bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-memo bb-blue'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ボックス（ダウンロード）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-download'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-download bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-download bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-download bb-blue'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ボックス（ブレイク）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-break'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-break bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-break bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-break bb-blue'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ボックス（Amazon）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-amazon'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-amazon bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-amazon bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-amazon bb-blue'
+            ),
+          ),
         ),
       ),
     ),

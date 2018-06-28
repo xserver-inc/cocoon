@@ -2646,7 +2646,7 @@ label.screen-reader-text {
 }
 
 .bb-pickup::before {
-  content: "\f005  PICKUP!";
+  content: "\f005  PICKUP";
 }
 
 .bb-bookmark::before {
@@ -2654,7 +2654,19 @@ label.screen-reader-text {
 }
 
 .bb-memo::before {
-  content: "\f249  MEMO";
+  content: "\f040  MEMO";
+}
+
+.bb-download::before {
+  content: "\f019  DOWNLOAD";
+}
+
+.bb-break::before {
+  content: "\f0f4  BREAK";
+}
+
+.bb-amazon::before {
+  content: "\f270  AMAZON";
 }
 
 /*******************************
