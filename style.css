@@ -2633,6 +2633,30 @@ label.screen-reader-text {
   content: "\f075  COMMENT";
 }
 
+.bb-point::before {
+  content: "\f0eb  POINT";
+}
+
+.bb-tips::before {
+  content: "\f19d  TIPS";
+}
+
+.bb-hint::before {
+  content: "\f0f3  HINT";
+}
+
+.bb-pickup::before {
+  content: "\f005  PICKUP!";
+}
+
+.bb-bookmark::before {
+  content: "\f02e  BOOKMARK";
+}
+
+.bb-memo::before {
+  content: "\f249  MEMO";
+}
+
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/
