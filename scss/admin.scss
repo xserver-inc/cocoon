@@ -915,9 +915,16 @@ textarea[name="the_page_memo"]{
   width: 100%;
 }
 
-.mce-active{
+// .mce-text{
+//   color: #333 !important;
+
+// }
+.mce-menu-item{
   background: #fff !important;
   border: 0 !important;
+  span{
+    color: #333 !important;
+  }
   &:hover{
     background-color: #0073aa !important;
     span{
