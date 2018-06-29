@@ -843,6 +843,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
         <?php if ($pv_visible): ?>
           <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.' view' : $pv.' views';?></span>
         <?php endif ?>
+        <div class="popular-entry-card-post-date display-none"><?php echo get_the_date( get_site_date_format(), $post->ID ); ?></div>
       </div><!-- /.popular-entry-content -->
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
@@ -910,6 +911,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
 
       <div class="new-entry-card-content widget-entry-card-content card-content">
         <div class="new-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
+        <div class="new-entry-card-post-date display-none"><?php the_time(get_site_date_format()); ?></div>
       </div><!-- /.new-entry-content -->
     </div><!-- /.new-entry-card -->
   </a><!-- /.new-entry-card-link -->
