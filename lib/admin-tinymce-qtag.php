@@ -230,7 +230,7 @@ function initialize_tinymce_styles($init_array) {
         ),
       ),
     ),
-
+/*
     array(
       'title' => __( 'ボックス（タブ）', THEME_NAME ),
       'items' => array(
@@ -511,6 +511,7 @@ function initialize_tinymce_styles($init_array) {
         ),
       ),
     ),
+*/
     array(
       'title' => __( 'ボックス（付箋風）', THEME_NAME ),
       'items' => array(
