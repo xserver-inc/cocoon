@@ -23,10 +23,11 @@ $example_update_checker = new ThemeUpdateChecker(
 //本文部分の冒頭を綺麗に抜粋する
 if ( !function_exists( 'get_content_excerpt' ) ):
 function get_content_excerpt($content, $length = 70){
-  //$content = do_shortcode($content);
+  $content = apply_filters( 'content_excerpt_before', $content);
+
   $content = preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
-  $content = strip_shortcodes($content);//ショートコード削除
   $content = strip_tags($content);//タグの除去
+  $content = strip_shortcodes($content);//ショートコード削除
   $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
   $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
@@ -37,12 +38,14 @@ function get_content_excerpt($content, $length = 70){
   } else {
     $length = 70;
   }
-  $over    =  intval(mb_strlen($content)) > $length;
-  $content =  mb_substr($content, 0, $length);//文字列を指定した長さで切り取る
+  $over    = intval(mb_strlen($content)) > $length;
+  $content = mb_substr($content, 0, $length);//文字列を指定した長さで切り取る
   if ( $over && $more = get_entry_card_excerpt_more() ) {
     $content = $content.$more;
   }
-  $content =  esc_html($content);
+  $content = esc_html($content);
+
+  $content = apply_filters( 'content_excerpt_after', $content);
 
   return $content;
 }
