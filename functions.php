@@ -226,7 +226,7 @@ endif;
 add_action('admin_enqueue_scripts', 'admin_enqueue_scripts_custom');
 if ( !function_exists( 'admin_enqueue_scripts_custom' ) ):
 function admin_enqueue_scripts_custom($hook) {
-    wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
+  wp_enqueue_script('colorpicker-script', get_template_directory_uri() . '/js/color-picker.js', array( 'wp-color-picker' ), false, true);
 }
 endif;
 
