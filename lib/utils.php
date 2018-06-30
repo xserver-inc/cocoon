@@ -699,7 +699,15 @@ function wp_add_css_custome_to_inline_style(){
   //CSSの縮小化
   $css_custom = minify_css($css_custom);
   //HTMLにインラインでスタイルを書く
-  wp_add_inline_style( THEME_NAME.'-style', $css_custom );
+  if (get_skin_url()) {
+    //スキンがある場合
+    wp_add_inline_style( THEME_NAME.'-skin-style', $css_custom );
+  } else {
+    //スキンを使用しない場合
+    wp_add_inline_style( THEME_NAME.'-style', $css_custom );
+  }
+
+
 }
 endif;
 
