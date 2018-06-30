@@ -173,22 +173,22 @@ body{
   background-image: repeating-linear-gradient(
     45deg,
 
-	#19295a 0%,
-	#19295a 7%,
-	#fbfcfe 7%,
-	#fbfcfe 8%,
-	#19295a 8%,
-	#19295a 9%,
-	#d3d6db 9%,
+  #19295a 0%,
+  #19295a 7%,
+  #fbfcfe 7%,
+  #fbfcfe 8%,
+  #19295a 8%,
+  #19295a 9%,
+  #d3d6db 9%,
 
-	#d3d6db 91%,
-	#19295a 91%,
-	#19295a 92%,
+  #d3d6db 91%,
+  #19295a 91%,
+  #19295a 92%,
     #fbfcfe 92%,
     #fbfcfe 93%,
     #19295a 93%,
     #19295a
-	);
+  );
 }
 
 /* ---------------------------------------------------------
@@ -557,6 +557,14 @@ input[type='submit'] {
     font-size: 19px;
     background: #FFF;
     font-weight: bold;
+}
+
+.boxwt-red ul,
+.boxwt-green ul,
+.boxwt-blue ul,
+.boxwt-brown ul,
+.boxwt-purple ul {
+    margin: 1.5em 0 1em 0;
 }
 
 .boxwt-red ul li,
