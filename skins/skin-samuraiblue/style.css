@@ -500,6 +500,7 @@ input[type='submit'] {
 --------------------------------------------------------- */
 #container .sns-buttons a{
   background-color: #19295a;
+  color: #fff;
 }/*
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
 
