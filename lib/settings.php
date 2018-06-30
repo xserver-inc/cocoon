@@ -138,6 +138,7 @@ add_filter('widget_text_pc_text', 'do_shortcode');
 add_filter('widget_text_mobile_text', 'do_shortcode');
 add_filter('widget_mobile_ad_text', 'do_shortcode');
 add_filter('widget_classic_text', 'do_shortcode');
+add_filter('widget_ad_text', 'do_shortcode');
 add_filter('widget_pc_ad_text', 'do_shortcode');
 add_filter('widget_pc_double_ad1_text', 'do_shortcode');
 add_filter('widget_pc_double_ad2_text', 'do_shortcode');

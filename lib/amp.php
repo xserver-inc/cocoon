@@ -676,7 +676,7 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////
   // 本文中に挿入されたスタイル（ギャラリーなど）
   ///////////////////////////////////////
-  $content = do_shortcode(get_the_content());
+  //$content = do_shortcode(get_the_content());
   //_v($content);
   $pattern = '{<style[^>]*?>(.+?)</style>}is';
   if (preg_match_all($pattern, $content, $m)) {
