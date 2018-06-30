@@ -27,13 +27,13 @@
 }
 
 
-a.site-name-text-link{
+.site-name-text-link{
   @include link_cancel;
   font-weight: normal;
 
-  // &:hover{
-  //   color: unset;
-  // }
+  &:hover{
+    color: inherit;
+  }
 }
 
 .site-name-text{
