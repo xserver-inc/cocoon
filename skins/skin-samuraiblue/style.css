@@ -1,0 +1,671 @@
+/*
+  Skin Name: サムライブルー（勝色）
+  Description: サムライブルー（勝色モデル）を基調としたスキン
+  Skin URI: https://zvalinf.info/archives/170
+  Author: y.hiroaki
+  Author URI: https://zvalinf.info
+  Screenshot URI:
+  Version: 0.0.1
+  Priority: 200503
+*/
+
+/* ---------------------------------------------------------
+/ 『グローバルメニュー』
+/
+/   ・背景色（グラデーション）
+/   ・文字の色＋マウスオーバーでの文字、背景の色
+--------------------------------------------------------- */
+#header-container .navi {
+  background: linear-gradient(
+    #282d48 0%,
+    #3f4a8c 100%
+  );
+  border-top:2px solid #ea3535;
+  border-bottom:2px solid #ea3535;
+}
+
+#navi .navi-in>.menu-header .sub-menu {
+  background: linear-gradient(
+    #282d48 0%,
+    #3f4a8c 100%
+  );
+}
+#navi .navi-in a{
+  color: #fbfcfe;
+  transition: background-color 0.7s;
+}
+
+#navi .navi-in a:hover {
+  color: black;
+  background-color:rgba(206, 208, 214, 0.7);
+}
+
+.header{
+  background-image: url("images/samuraiblue_header.jpg");
+  color: #fff;
+}
+
+.site-name-text-link,
+.site-name-text-link:hover{
+  color: #fff;
+}
+
+body{
+  background: url("images/samuraiblue_background.jpg") repeat;
+}
+
+/* ---------------------------------------------------------
+/ 『エントリーカード』
+/
+/   ・背景色＋borderカラー＋マウスオーバーでふわっと浮かせる
+--------------------------------------------------------- */
+/* ----- 背景色 ----- */
+.a-wrap {
+  /*background-color: #fcfcfc;*/
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  border-radius: 4px;
+}
+
+/* ----- border ----- */
+.a-wrap .blogcard {
+  border-color: #7086aa;
+}
+
+/* ----- ふわっと浮かせる ----- */
+.a-wrap:hover {
+  background-color: #dee5f3;
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+  /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+}
+
+.ecb-entry-border .entry-card-wrap,
+.recb-entry-border .related-entry-card-wrap,
+.tagcloud a,
+.author-box,
+.comment-reply-link,
+.ranking-item{
+  border-color: #7086aa;
+}
+
+/* ---------------------------------------------------------
+/ 『目次』
+/
+/   ・中央揃え＋border
+--------------------------------------------------------- */
+/* ----- borderカラー ----- */
+.article .toc{
+  margin: 15px auto;
+  border:none;
+}
+
+/* ----- 目次タイトル行 ----- */
+.toc-title {
+  padding: .1em 3em;
+  border-top:1px solid #d3d6db;
+  border-bottom:1px solid #d3d6db;
+  border-radius: 4px;
+  font-size: 130%;
+  background-image: linear-gradient(
+    45deg,
+    #19295a 0%,
+    #19295a 15%,
+    #d3d6db 15%,
+    #d3d6db 70%,
+    transparent 0
+  ),
+    linear-gradient(
+    -45deg,
+    #19295a 0%,
+    #19295a 15%,
+    #d3d6db 15%,
+    #d3d6db 70%,
+    transparent 0
+  );
+}
+
+/* ----- 目次 ----- */
+.toc-content{
+  margin:2px 0px;
+  padding: .2em 1em;
+  border:1px solid #d3d6db;
+  border-radius: 4px;
+  background-image: linear-gradient(45deg, #d3d6db 5%, transparent 0),
+                    linear-gradient(-45deg, #d3d6db 5%, transparent 0);
+}
+
+/* ---------------------------------------------------------
+/ 『見出し（h2）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.article h2 {
+  padding: .6em 1em;
+  background-color:#19295a;
+  border-right: 10px solid #d3d6db;
+  border-left: 30px double #d3d6db;
+  border-radius: 7px;
+  color: #f5f3f3;
+  position: relative;
+}
+
+.article h2:after {
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  content: '';
+  height: 100%;
+  border-left: 10px solid #fbfcfe;
+}
+
+/* ---------------------------------------------------------
+/ 『見出し（h3）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.article h3 {
+  padding: .4em 3em;
+  border:1px solid #d3d6db;
+  border-radius: 4px;
+  background-image: repeating-linear-gradient(
+    45deg,
+
+	#19295a 0%,
+	#19295a 7%,
+	#fbfcfe 7%,
+	#fbfcfe 8%,
+	#19295a 8%,
+	#19295a 9%,
+	#d3d6db 9%,
+
+	#d3d6db 91%,
+	#19295a 91%,
+	#19295a 92%,
+    #fbfcfe 92%,
+    #fbfcfe 93%,
+    #19295a 93%,
+    #19295a
+	);
+}
+
+/* ---------------------------------------------------------
+/ 『見出し（h4）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.article h4 {
+  position: relative;
+  padding: 0 0 2px 32px;
+  border:none;
+  border-bottom: 2px solid #19295a;
+}
+
+/* ----- ワンポイント ----- */
+.article h4:before, .article h4:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #19295a;
+  margin: auto;
+}
+
+.article h4:before {
+  top: -20px;
+  left: 0px;
+}
+
+.article h4:after {
+  top: -8px;
+  left: 6px;
+}
+
+/* ---------------------------------------------------------
+/ 『見出し（h5）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.article h5 {
+  border-top: none;
+  border-bottom: solid 2px #d3d6db;
+  position: relative;
+}
+
+/* ----- 2色目のborder ----- */
+.article h5:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 2px #19295a;
+  bottom: -3px;
+  left: -3px;
+  width: 15%;
+}
+
+/* ---------------------------------------------------------
+/ 『見出し（h6）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.article h6 {
+  position: relative;
+  padding: 0 0 2px 32px;
+  border-bottom: 1px solid #19295a;
+}
+
+/* ----- ワンポイント ----- */
+.article h6:after {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  z-index: 2;
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: #19295a;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------
+/ 『サイドバーの見出し（h3）』
+/
+/   ・サムライブルー
+--------------------------------------------------------- */
+.sidebar h3 {
+  color: #282d48;
+  background:none;
+  position: relative;
+  padding: 10px 0 2px 28px;
+  border-bottom: 6px double #282d48;
+}
+.sidebar h3:before, .sidebar h3:after {
+  content: "";
+  position: absolute;
+  margin: auto;
+}
+.sidebar h3:before {
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 14px;
+  background: #282d48;
+  transform: rotate(50deg);
+}
+.sidebar h3:after {
+  width: 8px;
+  height: 8px;
+  top: 18px;
+  left: 6px;
+  background: #19295a;
+  transform: rotate(20deg);
+}
+
+/* ---------------------------------------------------------
+/ 『入力ボックス』
+/
+/   ・テキストボックスなどを角丸
+/   ・submitボタン（送信ボタン）を角丸＋グラデーション
+--------------------------------------------------------- */
+/* ----- 角丸 ----- */
+.search-edit,
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea, select {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+/* ----- submitボタン（送信ボタン）を角丸＋グラデーション ----- */
+input[type='submit'] {
+  background: linear-gradient(#19295a 0% , #3f4a8c  100%);
+  color: #fff;
+  font-size: 22px;
+  border:none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+/* ---------------------------------------------------------
+/ 『次の記事と前の記事の隙間』
+/
+/   ・エントリカードを浮かせるので、次の記事と前の記事の間に隙間をつくる
+--------------------------------------------------------- */
+.pager-post-navi a.prev-post {
+  margin-bottom: 8px;
+}
+
+/* ---------------------------------------------------------
+/ 『ページネーション』
+/
+/   ・ページ番号のborder（丸）
+/   ・マウスオーバー時のボール衝突アニメーション
+--------------------------------------------------------- */
+/* ----- ボール衝突アニメーション定義 ----- */
+@-webkit-keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 110%;
+    height: 375px;
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 110%;
+    height: 375px;
+  }
+}
+@-webkit-keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 110%;
+    height: 375px;
+  }
+}
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 110%;
+    height: 375px;
+  }
+}
+
+/* ----- 「次のページ」リンク ----- */
+.pagination-next-link {
+  color: #fbfcfe;
+  background-color: #19295a;
+  border-top: 1px solid #d3d6db;
+  border-right: 8px solid #d3d6db;
+  border-bottom: 1px solid #d3d6db;
+  border-left: 8px solid #d3d6db;
+  border-radius: 7px;
+}
+
+/* ----- ボール衝突アニメーション ----- */
+.pagination-next a{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.pagination-next a:before, .pagination-next a:after {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #d3d6db;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+}
+.pagination-next a:before {
+  left: -20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.pagination-next a:after {
+  right: -20px;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+.pagination-next a:hover {
+  position: relative;
+  background-color: #19295a;
+  z-index:100;
+  color: #19295a;
+}
+.pagination-next a:hover:before {
+  -webkit-animation: criss-cross-left 0.8s both;
+          animation: criss-cross-left 0.8s both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.pagination-next a:hover:after {
+  -webkit-animation: criss-cross-right 0.8s both;
+          animation: criss-cross-right 0.8s both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+/* ----- ページ番号 ----- */
+.page-numbers {
+  background-color: #d3d6db;
+  border-radius: 50%;
+  border: 2px solid #19295a;
+}
+
+/* ----- カレントページの文字拡大、背景色変更 ----- */
+.pagination .current{
+  color: #fbfcfe;
+  background-color: #19295a;
+  font-size: 160%;
+  border: 2px solid #d3d6db;
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------------
+/ 『SNSボタン』
+/
+/   ・全てサムライブルーに
+--------------------------------------------------------- */
+.bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .hatebu-button, .bc-brand-color.sns-follow .hatebu-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .google-plus-button, .bc-brand-color.sns-follow .google-plus-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .pocket-button, .bc-brand-color.sns-follow .pocket-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button {
+    background-color: #19295a;
+}
+
+.bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button {
+    background-color: #19295a;
+}
+
+/* ---------------------------------------------------------
+/ 『タイトル付きリストボックス』
+--------------------------------------------------------- */
+.boxwt-red,
+.boxwt-green,
+.boxwt-blue,
+.boxwt-brown,
+.boxwt-purple {
+    position: relative;
+    margin: 2em 0;
+    border-radius: 8px;
+}
+
+.boxwt-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    font-weight: bold;
+}
+
+.boxwt-red ul li,
+.boxwt-green ul li,
+.boxwt-blue ul li,
+.boxwt-brown ul li,
+.boxwt-purple ul li {
+  line-height: 1.2;
+  padding: 0.5em;
+  list-style-type: none!important;
+}
+
+.boxwt-red ul li:before,
+.boxwt-green ul li:before,
+.boxwt-blue ul li:before,
+.boxwt-brown ul li:before,
+.boxwt-purple ul li:before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  position: absolute;
+  left : 1em;
+}
+
+.boxwt-red p,
+.boxwt-green p,
+.boxwt-blue p,
+.boxwt-brown p,
+.boxwt-purple p {
+    margin: 1em;
+}
+
+/* ----- 赤 ----- */
+.boxwt-red {
+  border: solid 3px #BF1E56;
+}
+
+.boxwt-red .boxwt-title {
+  color: #BF1E56;
+}
+
+.boxwt-red ul li:before {
+  color: #BF1E56;
+}
+
+
+/* ----- 緑 ----- */
+.boxwt-green {
+  border: solid 3px #009C7F;
+}
+
+.boxwt-green .boxwt-title {
+  color: #009C7F;
+}
+
+.boxwt-green ul li:before {
+  color: #009C7F;
+}
+
+
+/* ----- 青 ----- */
+.boxwt-blue {
+  border: solid 3px #2962AD;
+}
+
+.boxwt-blue .boxwt-title {
+  color: #2962AD;
+}
+
+.boxwt-blue ul li:before {
+  color: #2962AD;
+}
+
+
+/* ----- 茶 ----- */
+.boxwt-brown {
+  border: solid 3px #D6431B;
+}
+
+.boxwt-brown .boxwt-title {
+  color: #D6431B;
+}
+
+.boxwt-brown ul li:before {
+  color: #D6431B;
+}
+
+
+/* ----- 紫 ----- */
+.boxwt-purple {
+  border: solid 3px #9A2475;
+}
+
+.boxwt-purple .boxwt-title {
+  color: #9A2475;
+}
+
+.boxwt-purple ul li:before {
+  color: #9A2475;
+}
+
+/* ---------------------------------------------------------
+/ 『テーブル』
+--------------------------------------------------------- */
+table th, .scrollable-table th {
+  color:#f5f3f3;
+  background: linear-gradient(#282d48 0% , #4d5aa2 100%);
+}
+
+/* ----- ゼブラ（奇数行） ----- */
+table tr:nth-of-type(2n) {
+  background-color:#d3d6db;
+}
+/* ----- ゼブラ（偶数行） ----- */
+table tr:nth-of-type(2n+1) {
+  background-color:#fbfcfe;
+}
