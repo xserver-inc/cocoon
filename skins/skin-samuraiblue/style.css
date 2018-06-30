@@ -498,8 +498,11 @@ input[type='submit'] {
 /
 /   ・全てサムライブルーに
 --------------------------------------------------------- */
+#container .sns-buttons a{
+  background-color: #19295a;
+}/*
 .bc-brand-color.sns-share .twitter-button, .bc-brand-color.sns-follow .twitter-button {
-    background-color: #19295a;
+
 }
 
 .bc-brand-color.sns-share .facebook-button, .bc-brand-color.sns-follow .facebook-button {
@@ -528,7 +531,7 @@ input[type='submit'] {
 
 .bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button {
     background-color: #19295a;
-}
+}*/
 
 /* ---------------------------------------------------------
 / 『タイトル付きリストボックス』
