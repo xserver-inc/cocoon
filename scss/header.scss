@@ -27,14 +27,13 @@
 }
 
 
-.site-name-text-link{
+a.site-name-text-link{
   @include link_cancel;
-  color: unset;
   font-weight: normal;
 
-  &:hover{
-    color: unset;
-  }
+  // &:hover{
+  //   color: unset;
+  // }
 }
 
 .site-name-text{

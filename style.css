@@ -521,14 +521,10 @@ img {
   display: inline-block;
 }
 
-.site-name-text-link {
+a.site-name-text-link {
   color: #333;
   text-decoration: none;
-  color: unset;
   font-weight: normal;
-}
-.site-name-text-link:hover {
-  color: unset;
 }
 
 .site-name-text {
