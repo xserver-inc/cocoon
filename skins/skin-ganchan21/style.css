@@ -111,11 +111,11 @@ strong {
 	background-color:#fff;
 }
 
-.entry-card img, .related-entry-card img {
+.entry-card figure img, .related-entry-card figure img {
 	box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
 }
 
-.entry-card-wrap img:hover, .related-entry-card-wrap img:hover {
+.entry-card-wrap figure img:hover, .related-entry-card-wrap figure img:hover {
 	box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
 	transition: opacity 0.5s, transform 0.5s;
 	-webkit-transform: scale(1.02);
