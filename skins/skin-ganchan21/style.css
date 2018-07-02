@@ -51,6 +51,10 @@ strong {
 	background-color: transparent;
 }
 
+.hlt-center-logo-wrap .header-container {
+  position: static;
+}
+
 .navi-in>ul li {
 	width:120px;
 }
