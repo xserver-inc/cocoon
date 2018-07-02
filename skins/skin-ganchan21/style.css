@@ -143,6 +143,11 @@ strong {
     margin: 0 auto;
 }
 
+.ect-entry-card .entry-card-title,
+.rect-entry-card .related-entry-card-title{
+  margin-top: 0;
+}
+
 /*
 背景色を入れると上部余白が無くなってしまうため
 padding: 20px 29px;としようと思ったけど
