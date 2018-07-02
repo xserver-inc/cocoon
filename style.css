@@ -155,8 +155,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 
-.sub-caption {
-  font-family: KaiTi, SimHei, Kokila, Tunga, Helvetica, Monaco, "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+div.sub-caption {
+  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", Gisha, "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-weight: 400;
   font-size: 0.7em;
   opacity: 0.4;
@@ -682,9 +682,6 @@ img {
 }
 .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
   width: 100%;
-}
-.navi-in > ul .menu-item-has-description .item-description {
-  font-size: 0.8em;
 }
 .navi-in > ul > .menu-item-has-children {
   position: relative;
