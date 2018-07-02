@@ -156,9 +156,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 div.sub-caption {
-  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", Gisha, "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
   font-weight: 400;
-  font-size: 0.7em;
+  font-size: 0.75em;
   opacity: 0.4;
 }
 
