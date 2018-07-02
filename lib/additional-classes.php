@@ -127,6 +127,19 @@ function body_class_additional($classes) {
   //   $add_no_sidebar = true;
   // }
 
+  //ヘッダーが「センターロゴ」か「トップメニュー」か
+  switch (get_header_layout_type()) {
+    case 'top_menu':
+    case 'top_menu_right':
+    case 'top_menu_small':
+    case 'top_menu_small_right':
+      $classes[] = 'hlt-top-menu-wrap';
+      break;
+    default:
+      $classes[] = 'hlt-center-logo-wrap';
+      break;
+  }
+
   //エントリーカードタイプ
   $classes[] = 'ect-'.replace_value_to_class(get_entry_card_type()).'-wrap';
 
