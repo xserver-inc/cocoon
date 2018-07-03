@@ -464,7 +464,7 @@ height:1px;
 .wp-caption {
 	padding:4px;
    background-color: #fff;
-	text-align:left;
+	text-align: center;
 		box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
 }
 .wp-caption img {
@@ -476,6 +476,7 @@ height:1px;
 	padding-left:27px;
 	 color:#333;
     margin-top: 0px;
+  text-align: left;
 
 }
 .wp-caption-text:before {
