@@ -144,7 +144,8 @@ strong {
 }
 
 .ect-entry-card .entry-card-title,
-.rect-entry-card .related-entry-card-title{
+.rect-entry-card .related-entry-card-title,
+.rect-mini-card .related-entry-card-title{
   margin-top: 0;
 }
 
