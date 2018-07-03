@@ -102,7 +102,7 @@ function fetch_card_image($image){
       mkdir($dir, 0777);
     }
     //ローカル画像ファイルパス
-    $new_file = $dir.'/'.md5($image).'.'.$ext;
+    $new_file = $dir.md5($image).'.'.$ext;
 
     // $file_data = @$wp_filesystem->get_contents($image);
 
