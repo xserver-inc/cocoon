@@ -20,17 +20,16 @@ body{
 --------------------------------------------------------- */
 
 
-#navi .navi-in>.menu-header .sub-menu {
+.navi .navi-in>.menu-header .sub-menu {
   background-color: #2b2c48;
 }
-#navi .navi-in a{
+
+.navi .navi-in a{
   color: #fbfcfe;
-  transition: background-color 0.7s;
 }
 
-#navi .navi-in a:hover {
-  color: black;
-  background-color:rgba(206, 208, 214, 0.7);
+.navi .navi-in a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .header-container{
