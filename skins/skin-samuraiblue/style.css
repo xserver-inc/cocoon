@@ -326,8 +326,6 @@ input[type="time"],
 input[type="url"],
 textarea, select {
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
 }
 
 /* ----- submitボタン（送信ボタン）を角丸＋グラデーション ----- */
@@ -337,8 +335,6 @@ input[type='submit'] {
   font-size: 22px;
   border:none;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
 }
 /* ---------------------------------------------------------
 / 『次の記事と前の記事の隙間』
@@ -483,6 +479,10 @@ input[type='submit'] {
   background-color: #d3d6db;
   border-radius: 50%;
   border: 2px solid #19295a;
+}
+
+.page-prev-next{
+  border-radius: 5px;
 }
 
 /* ----- カレントページの文字拡大、背景色変更 ----- */
