@@ -475,3 +475,9 @@ if (is_eyecatch_width_100_percent_enable()): ?>
   width: 100%;
 }
 <?php endif ?>
+<?php //コメント入力欄を表示ボタンで切り替えるとき
+if (is_comment_form_display_type_toggle_button()): ?>
+#respond {
+  display: none;
+}
+<?php endif ?>

@@ -49,12 +49,12 @@ function get_comment_form_display_type(){
 endif;
 if ( !function_exists( 'is_comment_form_display_type_always' ) ):
 function is_comment_form_display_type_always(){
-  get_comment_form_display_type() == 'always';
+  return get_comment_form_display_type() == 'always';
 }
 endif;
 if ( !function_exists( 'is_comment_form_display_type_toggle_button' ) ):
 function is_comment_form_display_type_toggle_button(){
-  get_comment_form_display_type() == 'toggle_button';
+  return get_comment_form_display_type() == 'toggle_button';
 }
 endif;
 

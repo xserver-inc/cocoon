@@ -41,7 +41,7 @@ if ( is_comment_allow() || have_comments() ): ?>
   );
   echo '<aside class="comment-form">';
   if (!is_amp()) {
-    if (0) {?>
+    if (is_comment_form_display_type_toggle_button()) {?>
       <button id="comment-reply-btn" class="comment-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
     <?php }
     //通常ページ
