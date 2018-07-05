@@ -59,4 +59,9 @@
     }
     startPos = currentPos;
   });
+
+  //コメントボタンがクリックされたとき
+  $('#comment-reply-btn').click(function() {
+    $('#respond').slideToggle();
+  })
 })(jQuery);

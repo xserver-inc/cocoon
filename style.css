@@ -3140,7 +3140,7 @@ label.screen-reader-text {
 /************************************
 ** 「次のページ」ページネーション
 ************************************/
-.pagination-next-link {
+.pagination-next-link, .comment-btn {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   color: #333;
@@ -3152,7 +3152,7 @@ label.screen-reader-text {
   padding: 12px 0;
   display: block;
 }
-.pagination-next-link:hover {
+.pagination-next-link:hover, .comment-btn:hover {
   background-color: #f5f8fa;
   transition: all 0.5s ease;
   color: #333;
@@ -4924,6 +4924,11 @@ input[type='submit'],
   margin-right: 5px;
 }
 
+.comment-btn {
+  margin: 24px 0;
+  cursor: pointer;
+}
+
 /************************************
 ** カルーセル
 ************************************/
@@ -5950,7 +5955,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     line-height: 34px;
   }
 
-  .pagination-next-link {
+  .pagination-next-link, .comment-btn {
     font-size: 1em;
   }
 

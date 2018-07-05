@@ -41,12 +41,15 @@ if ( is_comment_allow() || have_comments() ): ?>
   );
   echo '<aside class="comment-form">';
   if (!is_amp()) {
+    if (0) {?>
+      <button id="comment-reply-btn" class="comment-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
+    <?php }
     //通常ページ
     comment_form($args);
   } else {
     //AMPページ?>
     <h3 id="reply-title" class="comment-reply-title"><?php echo get_comment_form_heading(); ?></h3>
-    <a class="amp-comment-btn" href="<?php echo get_permalink().'#respond'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
+    <a class="comment-btn" href="<?php echo get_permalink().'#respond'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
     <?php
   }
 

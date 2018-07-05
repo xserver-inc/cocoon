@@ -80,3 +80,18 @@ input[type='submit'],
 // .comment-respond label{
 //   display: block;
 // }
+
+
+.comment-btn{
+  @extend .pagination-next-link;
+  margin: 24px 0;
+  cursor: pointer;
+  // padding: 14px;
+  // color: #333;
+  // text-decoration: none;
+  // border: 2px solid #ddd;
+  // background-color: #eaeaea;
+  // display: block;
+  // text-align: center;
+  // cursor: pointer;
+}
