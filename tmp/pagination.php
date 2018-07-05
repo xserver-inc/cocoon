@@ -29,7 +29,7 @@ if($pages != 1) {
 
   //現在のページ番号が全ページ数よりも少ないときは「次のページ」タグを出力
   if ( $paged < $pages ) {
-    echo '<div class="pagination-next"><a href="'.get_pagenum_link($next_page_num).'" class="pagination-next-link">'.__( '次のページ', THEME_NAME ).'</a></div>';
+    echo '<div class="pagination-next"><a href="'.get_pagenum_link($next_page_num).'" class="pagination-next-link key-btn">'.__( '次のページ', THEME_NAME ).'</a></div>';
   }
 
 }

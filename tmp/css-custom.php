@@ -42,7 +42,7 @@ blockquote::before, blockquote::after,
   color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
 }
 blockquote,
-.pagination-next-link {
+.key-btn {
   background-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.05); ?>;
   border-color: <?php echo colorcode_to_rgb_css_code(get_site_key_color(), 0.5); ?>;
 }
