@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-06-26 22:46+0900\n"
-"PO-Revision-Date: 2018-06-26 23:23+0900\n"
+"POT-Creation-Date: 2018-07-06 00:09+0900\n"
+"PO-Revision-Date: 2018-07-06 00:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: comments.php:49
+#: comments.php:45 comments.php:52
 msgid "コメントを書き込む"
 msgstr "To write a comment"
 
@@ -96,7 +96,7 @@ msgstr "Yellow underline marker"
 msgid "打ち消し線"
 msgstr "STRIKE"
 
-#: lib/admin-tinymce-qtag.php:30 lib/admin-tinymce-qtag.php:259
+#: lib/admin-tinymce-qtag.php:30 lib/admin-tinymce-qtag.php:539
 msgid "バッジ"
 msgstr "Badge"
 
@@ -190,312 +190,375 @@ msgstr "Box (Guide)"
 
 #: lib/admin-tinymce-qtag.php:182
 msgid "プライマリー（濃い水色）"
-msgstr "Primary (dark blue)"
+msgstr "Primary (Dark blue)"
 
 #: lib/admin-tinymce-qtag.php:187
 msgid "サクセス（薄い緑）"
-msgstr "Success (pale green)"
+msgstr "Success (Pale green)"
 
 #: lib/admin-tinymce-qtag.php:192
 msgid "インフォ（薄い青）"
-msgstr "Info (light blue)"
+msgstr "Info (Light blue)"
 
 #: lib/admin-tinymce-qtag.php:197
 msgid "ワーニング（薄い黄色）"
-msgstr "Warning (yellow)"
+msgstr "Warning (Yellow)"
 
 #: lib/admin-tinymce-qtag.php:202
 msgid "デンジャー（薄い赤色）"
-msgstr "Danger (light red)"
+msgstr "Danger (Light red)"
 
 #: lib/admin-tinymce-qtag.php:209
 msgid "ボックス（白抜き）"
-msgstr "Box (white)"
+msgstr "Box (Blank)"
 
-#: lib/admin-tinymce-qtag.php:212 lib/admin-tinymce-qtag.php:237
+#: lib/admin-tinymce-qtag.php:212 lib/admin-tinymce-qtag.php:240
+#: lib/admin-tinymce-qtag.php:265 lib/admin-tinymce-qtag.php:290
+#: lib/admin-tinymce-qtag.php:315 lib/admin-tinymce-qtag.php:340
+#: lib/admin-tinymce-qtag.php:365 lib/admin-tinymce-qtag.php:390
+#: lib/admin-tinymce-qtag.php:415 lib/admin-tinymce-qtag.php:440
+#: lib/admin-tinymce-qtag.php:465 lib/admin-tinymce-qtag.php:490
+#: lib/admin-tinymce-qtag.php:517
 msgid "灰色"
 msgstr "Gray"
 
-#: lib/admin-tinymce-qtag.php:217 lib/admin-tinymce-qtag.php:242
-#: lib/widgets/cta-box.php:177
+#: lib/admin-tinymce-qtag.php:217 lib/admin-tinymce-qtag.php:245
+#: lib/admin-tinymce-qtag.php:270 lib/admin-tinymce-qtag.php:295
+#: lib/admin-tinymce-qtag.php:320 lib/admin-tinymce-qtag.php:345
+#: lib/admin-tinymce-qtag.php:370 lib/admin-tinymce-qtag.php:395
+#: lib/admin-tinymce-qtag.php:420 lib/admin-tinymce-qtag.php:445
+#: lib/admin-tinymce-qtag.php:470 lib/admin-tinymce-qtag.php:495
+#: lib/admin-tinymce-qtag.php:522 lib/widgets/cta-box.php:177
 msgid "黄色"
 msgstr "Yellow"
 
-#: lib/admin-tinymce-qtag.php:222
-msgid "薄い赤"
-msgstr "Light red"
-
-#: lib/admin-tinymce-qtag.php:227
-msgid "薄い青"
-msgstr "Light Blue"
-
-#: lib/admin-tinymce-qtag.php:234
-msgid "ボックス（付箋風）"
-msgstr "Box (sticky)"
-
-#: lib/admin-tinymce-qtag.php:247 lib/widgets/cta-box.php:165
+#: lib/admin-tinymce-qtag.php:222 lib/admin-tinymce-qtag.php:250
+#: lib/admin-tinymce-qtag.php:275 lib/admin-tinymce-qtag.php:300
+#: lib/admin-tinymce-qtag.php:325 lib/admin-tinymce-qtag.php:350
+#: lib/admin-tinymce-qtag.php:375 lib/admin-tinymce-qtag.php:400
+#: lib/admin-tinymce-qtag.php:425 lib/admin-tinymce-qtag.php:450
+#: lib/admin-tinymce-qtag.php:475 lib/admin-tinymce-qtag.php:500
+#: lib/admin-tinymce-qtag.php:527 lib/widgets/cta-box.php:165
 msgid "赤色"
 msgstr "Red"
 
-#: lib/admin-tinymce-qtag.php:252 lib/widgets/cta-box.php:170
+#: lib/admin-tinymce-qtag.php:227 lib/admin-tinymce-qtag.php:255
+#: lib/admin-tinymce-qtag.php:280 lib/admin-tinymce-qtag.php:305
+#: lib/admin-tinymce-qtag.php:330 lib/admin-tinymce-qtag.php:355
+#: lib/admin-tinymce-qtag.php:380 lib/admin-tinymce-qtag.php:405
+#: lib/admin-tinymce-qtag.php:430 lib/admin-tinymce-qtag.php:455
+#: lib/admin-tinymce-qtag.php:480 lib/admin-tinymce-qtag.php:505
+#: lib/admin-tinymce-qtag.php:532 lib/widgets/cta-box.php:170
 msgid "青色"
 msgstr "Blue"
 
+#: lib/admin-tinymce-qtag.php:234
+msgid "ボックス（タブ）"
+msgstr "Box (Tab)"
+
+#: lib/admin-tinymce-qtag.php:237
+msgid "ボックス（チェック）"
+msgstr "Box (Check)"
+
 #: lib/admin-tinymce-qtag.php:262
+msgid "ボックス（コメント）"
+msgstr "Box (Comment)"
+
+#: lib/admin-tinymce-qtag.php:287
+msgid "ボックス（ポイント）"
+msgstr "Box (Point)"
+
+#: lib/admin-tinymce-qtag.php:312
+msgid "ボックス（ティップス）"
+msgstr "Box (Tips)"
+
+#: lib/admin-tinymce-qtag.php:337
+msgid "ボックス（ヒント）"
+msgstr "Box (Hint)"
+
+#: lib/admin-tinymce-qtag.php:362
+msgid "ボックス（ピックアップ）"
+msgstr "Box (Pickup)"
+
+#: lib/admin-tinymce-qtag.php:387
+msgid "ボックス（ブックマーク）"
+msgstr "Box (Bookmark)"
+
+#: lib/admin-tinymce-qtag.php:412
+msgid "ボックス（メモ）"
+msgstr "Box (Memo)"
+
+#: lib/admin-tinymce-qtag.php:437
+msgid "ボックス（ダウンロード）"
+msgstr "Box (Download)"
+
+#: lib/admin-tinymce-qtag.php:462
+msgid "ボックス（ブレイク）"
+msgstr "Box (Break)"
+
+#: lib/admin-tinymce-qtag.php:487
+msgid "ボックス（Amazon）"
+msgstr "Box (Amazon)"
+
+#: lib/admin-tinymce-qtag.php:514
+msgid "ボックス（付箋風）"
+msgstr "Box (Sticky)"
+
+#: lib/admin-tinymce-qtag.php:542
 msgid "バッジ（オレンジ）"
-msgstr "Badge (orange)"
+msgstr "Badge (Orange)"
 
-#: lib/admin-tinymce-qtag.php:267
+#: lib/admin-tinymce-qtag.php:547
 msgid "バッジ（レッド）"
-msgstr "Badge (red)"
+msgstr "Badge (Red)"
 
-#: lib/admin-tinymce-qtag.php:272
+#: lib/admin-tinymce-qtag.php:552
 msgid "バッジ（ピンク）"
 msgstr "Badge (Pink)"
 
-#: lib/admin-tinymce-qtag.php:277
+#: lib/admin-tinymce-qtag.php:557
 msgid "バッジ（パープル）"
-msgstr "Badge (purple)"
+msgstr "Badge (Purple)"
 
-#: lib/admin-tinymce-qtag.php:282
+#: lib/admin-tinymce-qtag.php:562
 msgid "バッジ（ブルー）"
-msgstr "Badge (blue)"
+msgstr "Badge (Blue)"
 
-#: lib/admin-tinymce-qtag.php:287
+#: lib/admin-tinymce-qtag.php:567
 msgid "バッジ（グリーン）"
-msgstr "Badge (green)"
+msgstr "Badge (Green)"
 
-#: lib/admin-tinymce-qtag.php:292
+#: lib/admin-tinymce-qtag.php:572
 msgid "バッジ（イエロー）"
-msgstr "Badge (yellow)"
+msgstr "Badge (Yellow)"
 
-#: lib/admin-tinymce-qtag.php:297
+#: lib/admin-tinymce-qtag.php:577
 msgid "バッジ（ブラウン）"
 msgstr "Badge (Brown)"
 
-#: lib/admin-tinymce-qtag.php:302
+#: lib/admin-tinymce-qtag.php:582
 msgid "バッジ（グレー）"
-msgstr "Badge (gray)"
+msgstr "Badge (Gray)"
 
-#: lib/admin-tinymce-qtag.php:309
+#: lib/admin-tinymce-qtag.php:589
 msgid "ボタン（β機能）"
-msgstr "Button (beta feature)"
+msgstr "Button"
 
-#: lib/admin-tinymce-qtag.php:313
+#: lib/admin-tinymce-qtag.php:593
 msgid "レッド（小）"
-msgstr "Red (small)"
+msgstr "Red (Small)"
 
-#: lib/admin-tinymce-qtag.php:318
+#: lib/admin-tinymce-qtag.php:598
 msgid "レッド（中）"
-msgstr "Red (medium)"
+msgstr "Red (Medium)"
 
-#: lib/admin-tinymce-qtag.php:323
+#: lib/admin-tinymce-qtag.php:603
 msgid "レッド（大）"
-msgstr "Red (large)"
+msgstr "Red (Large)"
 
-#: lib/admin-tinymce-qtag.php:329
+#: lib/admin-tinymce-qtag.php:609
 msgid "ピンク（小）"
-msgstr "Pink (small)"
+msgstr "Pink (Small)"
 
-#: lib/admin-tinymce-qtag.php:334
+#: lib/admin-tinymce-qtag.php:614
 msgid "ピンク（中）"
-msgstr "Pink (medium)"
+msgstr "Pink (Medium)"
 
-#: lib/admin-tinymce-qtag.php:339
+#: lib/admin-tinymce-qtag.php:619
 msgid "ピンク（大）"
-msgstr "Pink (large)"
+msgstr "Pink (Large)"
 
-#: lib/admin-tinymce-qtag.php:345
+#: lib/admin-tinymce-qtag.php:625
 msgid "パープル（小）"
-msgstr "Purple (small)"
+msgstr "Purple (Small)"
 
-#: lib/admin-tinymce-qtag.php:350
+#: lib/admin-tinymce-qtag.php:630
 msgid "パープル（中）"
-msgstr "Purple (medium)"
+msgstr "Purple (Medium)"
 
-#: lib/admin-tinymce-qtag.php:355
+#: lib/admin-tinymce-qtag.php:635
 msgid "パープル（大）"
-msgstr "Purple (large)"
+msgstr "Purple (Large)"
 
-#: lib/admin-tinymce-qtag.php:361
+#: lib/admin-tinymce-qtag.php:641
 msgid "ディープパープル（小）"
-msgstr "Deep Purple (small)"
+msgstr "Deep Purple (Small)"
 
-#: lib/admin-tinymce-qtag.php:366
+#: lib/admin-tinymce-qtag.php:646
 msgid "ディープパープル（中）"
-msgstr "Deep Purple (medium)"
+msgstr "Deep Purple (Medium)"
 
-#: lib/admin-tinymce-qtag.php:371
+#: lib/admin-tinymce-qtag.php:651
 msgid "ディープパープル（大）"
-msgstr "Deep Purple (large)"
+msgstr "Deep Purple (Large)"
 
-#: lib/admin-tinymce-qtag.php:377
+#: lib/admin-tinymce-qtag.php:657
 msgid "インディゴ[紺色]（小）"
-msgstr "Indigo [Navy Blue] (small)"
+msgstr "Indigo [Navy Blue] (Small)"
 
-#: lib/admin-tinymce-qtag.php:382
+#: lib/admin-tinymce-qtag.php:662
 msgid "インディゴ[紺色]（中）"
-msgstr "Indigo [Navy Blue] (medium)"
+msgstr "Indigo [Navy Blue] (Medium)"
 
-#: lib/admin-tinymce-qtag.php:387
+#: lib/admin-tinymce-qtag.php:667
 msgid "インディゴ[紺色]（大）"
-msgstr "Indigo [Navy Blue] (large)"
+msgstr "Indigo [Navy Blue] (Large)"
 
-#: lib/admin-tinymce-qtag.php:393
+#: lib/admin-tinymce-qtag.php:673
 msgid "ブルー（小）"
-msgstr "Blue (small)"
+msgstr "Blue (Small)"
 
-#: lib/admin-tinymce-qtag.php:398
+#: lib/admin-tinymce-qtag.php:678
 msgid "ブルー（中）"
-msgstr "Blue (medium)"
+msgstr "Blue (Medium)"
 
-#: lib/admin-tinymce-qtag.php:403
+#: lib/admin-tinymce-qtag.php:683
 msgid "ブルー（大）"
-msgstr "Blue (large)"
+msgstr "Blue (Large)"
 
-#: lib/admin-tinymce-qtag.php:409
+#: lib/admin-tinymce-qtag.php:689
 msgid "ライトブルー（小）"
-msgstr "Light blue (small)"
+msgstr "Light blue (Small)"
 
-#: lib/admin-tinymce-qtag.php:414
+#: lib/admin-tinymce-qtag.php:694
 msgid "ライトブルー（中）"
-msgstr "Light blue (medium)"
+msgstr "Light blue (Medium)"
 
-#: lib/admin-tinymce-qtag.php:419
+#: lib/admin-tinymce-qtag.php:699
 msgid "ライトブルー（大）"
-msgstr "Light blue (large)"
+msgstr "Light blue (Large)"
 
-#: lib/admin-tinymce-qtag.php:425
+#: lib/admin-tinymce-qtag.php:705
 msgid "シアン（小）"
-msgstr "Cyan (small)"
+msgstr "Cyan (Small)"
 
-#: lib/admin-tinymce-qtag.php:430
+#: lib/admin-tinymce-qtag.php:710
 msgid "シアン（中）"
-msgstr "Cyan (medium)"
+msgstr "Cyan (Medium)"
 
-#: lib/admin-tinymce-qtag.php:435
+#: lib/admin-tinymce-qtag.php:715
 msgid "シアン（大）"
-msgstr "Cyan (large)"
+msgstr "Cyan (Large)"
 
-#: lib/admin-tinymce-qtag.php:441
+#: lib/admin-tinymce-qtag.php:721
 msgid "ティール[緑色がかった青]（小）"
-msgstr "Teal and green-tinged blue (small)"
+msgstr "Teal and green-tinged blue (Small)"
 
-#: lib/admin-tinymce-qtag.php:446
+#: lib/admin-tinymce-qtag.php:726
 msgid "ティール[緑色がかった青]（中）"
-msgstr "Teal and green-tinged blue (medium)"
+msgstr "Teal and green-tinged blue (Medium)"
 
-#: lib/admin-tinymce-qtag.php:451
+#: lib/admin-tinymce-qtag.php:731
 msgid "ティール[緑色がかった青]（大）"
-msgstr "Teal and green-tinged blue (large)"
+msgstr "Teal and green-tinged blue (Large)"
 
-#: lib/admin-tinymce-qtag.php:457
+#: lib/admin-tinymce-qtag.php:737
 msgid "グリーン（小）"
-msgstr "Green (small)"
+msgstr "Green (Small)"
 
-#: lib/admin-tinymce-qtag.php:462
+#: lib/admin-tinymce-qtag.php:742
 msgid "グリーン（中）"
-msgstr "Green (medium)"
+msgstr "Green (Medium)"
 
-#: lib/admin-tinymce-qtag.php:467
+#: lib/admin-tinymce-qtag.php:747
 msgid "グリーン（大）"
-msgstr "Green (large)"
+msgstr "Green (Large)"
 
-#: lib/admin-tinymce-qtag.php:473
+#: lib/admin-tinymce-qtag.php:753
 msgid "ライトグリーン（小）"
-msgstr "Light green (small)"
+msgstr "Light green (Small)"
 
-#: lib/admin-tinymce-qtag.php:478
+#: lib/admin-tinymce-qtag.php:758
 msgid "ライトグリーン（中）"
-msgstr "Light green (medium)"
+msgstr "Light green (Medium)"
 
-#: lib/admin-tinymce-qtag.php:483
+#: lib/admin-tinymce-qtag.php:763
 msgid "ライトグリーン（大）"
-msgstr "Light green (large)"
+msgstr "Light green (Large)"
 
-#: lib/admin-tinymce-qtag.php:489
+#: lib/admin-tinymce-qtag.php:769
 msgid "ライム（小）"
-msgstr "Lime (small)"
+msgstr "Lime (Small)"
 
-#: lib/admin-tinymce-qtag.php:494
+#: lib/admin-tinymce-qtag.php:774
 msgid "ライム（中）"
-msgstr "Lime (medium)"
+msgstr "Lime (Medium)"
 
-#: lib/admin-tinymce-qtag.php:499
+#: lib/admin-tinymce-qtag.php:779
 msgid "ライム（大）"
-msgstr "Lime (large)"
+msgstr "Lime (Large)"
 
-#: lib/admin-tinymce-qtag.php:505
+#: lib/admin-tinymce-qtag.php:785
 msgid "イエロー（小）"
-msgstr "Yellow (small)"
+msgstr "Yellow (Small)"
 
-#: lib/admin-tinymce-qtag.php:510
+#: lib/admin-tinymce-qtag.php:790
 msgid "イエロー（中）"
-msgstr "Yellow (medium)"
+msgstr "Yellow (Medium)"
 
-#: lib/admin-tinymce-qtag.php:515
+#: lib/admin-tinymce-qtag.php:795
 msgid "イエロー（大）"
-msgstr "Yellow (large)"
+msgstr "Yellow (Large)"
 
-#: lib/admin-tinymce-qtag.php:521
+#: lib/admin-tinymce-qtag.php:801
 msgid "アンバー[琥珀色]（小）"
-msgstr "Amber (small)"
+msgstr "Amber (Small)"
 
-#: lib/admin-tinymce-qtag.php:526
+#: lib/admin-tinymce-qtag.php:806
 msgid "アンバー[琥珀色]（中）"
-msgstr "Amber (medium)"
+msgstr "Amber (Medium)"
 
-#: lib/admin-tinymce-qtag.php:531
+#: lib/admin-tinymce-qtag.php:811
 msgid "アンバー[琥珀色]（大）"
-msgstr "Amber (large)"
+msgstr "Amber (Large)"
 
-#: lib/admin-tinymce-qtag.php:537
+#: lib/admin-tinymce-qtag.php:817
 msgid "オレンジ（小）"
-msgstr "Orange (small)"
+msgstr "Orange (Small)"
 
-#: lib/admin-tinymce-qtag.php:542
+#: lib/admin-tinymce-qtag.php:822
 msgid "オレンジ（中）"
-msgstr "Orange (medium)"
+msgstr "Orange (Medium)"
 
-#: lib/admin-tinymce-qtag.php:547
+#: lib/admin-tinymce-qtag.php:827
 msgid "オレンジ（大）"
 msgstr "Orange (Large)"
 
-#: lib/admin-tinymce-qtag.php:553
+#: lib/admin-tinymce-qtag.php:833
 msgid "ディープオレンジ（小）"
-msgstr "Deep orange (small)"
+msgstr "Deep orange (Small)"
 
-#: lib/admin-tinymce-qtag.php:558
+#: lib/admin-tinymce-qtag.php:838
 msgid "ディープオレンジ（中）"
-msgstr "Deep orange (medium)"
+msgstr "Deep orange (Medium)"
 
-#: lib/admin-tinymce-qtag.php:563
+#: lib/admin-tinymce-qtag.php:843
 msgid "ディープオレンジ（大）"
-msgstr "Deep orange (large)"
+msgstr "Deep orange (Large)"
 
-#: lib/admin-tinymce-qtag.php:569
+#: lib/admin-tinymce-qtag.php:849
 msgid "ブラウン（小）"
-msgstr "Brown (small)"
+msgstr "Brown (Small)"
 
-#: lib/admin-tinymce-qtag.php:574
+#: lib/admin-tinymce-qtag.php:854
 msgid "ブラウン（中）"
-msgstr "Brown (medium)"
+msgstr "Brown (Medium)"
 
-#: lib/admin-tinymce-qtag.php:579
+#: lib/admin-tinymce-qtag.php:859
 msgid "ブラウン（大）"
-msgstr "Brown (large)"
+msgstr "Brown (Large)"
 
-#: lib/admin-tinymce-qtag.php:585
+#: lib/admin-tinymce-qtag.php:865
 msgid "グレー（小）"
-msgstr "Gray (small)"
+msgstr "Gray (Small)"
 
-#: lib/admin-tinymce-qtag.php:590
+#: lib/admin-tinymce-qtag.php:870
 msgid "グレー（中）"
-msgstr "Gray (medium)"
+msgstr "Gray (Medium)"
 
-#: lib/admin-tinymce-qtag.php:595
+#: lib/admin-tinymce-qtag.php:875
 msgid "グレー（大）"
-msgstr "Gray (large)"
+msgstr "Gray (Large)"
 
 #: lib/admin.php:165 lib/category.php:166
 msgid "アイキャッチ"
@@ -768,8 +831,6 @@ msgstr ""
 "required."
 
 #: lib/custom-fields/memo-field.php:30
-#, fuzzy
-#| msgid "この投稿に記録しておきたいメモがある場合は気にしてください。。"
 msgid "この投稿に記録しておきたいメモがある場合は記入してください。"
 msgstr "If you want to record to post this note to mind."
 
@@ -783,7 +844,7 @@ msgid "ページタイプ"
 msgstr "Page Type"
 
 #: lib/custom-fields/page-field.php:34 lib/page-settings/comment-forms.php:41
-#: lib/page-settings/single-forms.php:238 lib/page-speech-balloon/form.php:87
+#: lib/page-settings/single-forms.php:270 lib/page-speech-balloon/form.php:87
 #: lib/widgets/new-entries.php:147 lib/widgets/popular-entries.php:171
 msgid "デフォルト"
 msgstr "Default"
@@ -1111,44 +1172,43 @@ msgstr "Fixed page IDs"
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Enter Post ID in the comma-separated values."
 
-#: lib/html-forms.php:852
+#: lib/html-forms.php:853
 msgid "人気記事は見つかりませんでした。"
 msgstr "popular articles were not found."
 
-#: lib/html-forms.php:918
+#: lib/html-forms.php:920
 msgid "新着記事は見つかりませんでした。"
 msgstr "New arrivals were not found."
 
-#: lib/html-forms.php:982
+#: lib/html-forms.php:984
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:992
+#: lib/html-forms.php:994
 msgid "未登録のユーザーさんです。"
 msgstr "An unregistered user."
 
-#: lib/html-forms.php:994
+#: lib/html-forms.php:996
 msgid "ログイン・登録はこちら→"
 msgstr "Login & registration click here"
 
-#: lib/html-forms.php:996
+#: lib/html-forms.php:998
 msgid "ログインページ"
 msgstr "Login Page"
 
-#: lib/html-forms.php:1001
+#: lib/html-forms.php:1003
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed hear →"
 
-#: lib/html-forms.php:1001
+#: lib/html-forms.php:1003
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1001
+#: lib/html-forms.php:1003
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "* This message is displayed to logged in users only."
 
 #: lib/html-tooltips.php:65
-#, fuzzy
 msgid ""
 "良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好"
 "みの色を見つけ出し、カラーコードをカラーピッカーにコピペすると設定できます。"
@@ -1157,12 +1217,10 @@ msgstr ""
 "choice from the site and to copy and paste the color in the color picker."
 
 #: lib/html-tooltips.php:87 lib/html-tooltips.php:101
-#, fuzzy
 msgid "広告にグローバルナビメニューが覆いかぶさっていませんか？"
-msgstr "Is the advertisement covering the global navigation menu?"
+msgstr "Is your ads covering the global navigation menu?"
 
 #: lib/html-tooltips.php:88 lib/html-tooltips.php:102
-#, fuzzy
 msgid "広告設定の前にAdSenseポリシーをご確認ください。"
 msgstr "Please check your AdSense policy before setting up ads."
 
@@ -1186,12 +1244,11 @@ msgid "設定を変更しました。"
 msgstr "Changed the settings."
 
 #: lib/page-access/_top-page.php:41
-#, fuzzy
 msgid ""
 "テーマ内で独自にアクセス集計を行います。集計結果は、人気ウィジェットなどで使"
 "用されます。"
 msgstr ""
-"Themes in your own access aggregation. Summary results will be used in such "
+"Theme in your own access aggregation. Summary results will be used in such "
 "popular widget."
 
 #: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:100
@@ -1200,24 +1257,21 @@ msgid "変更を保存"
 msgstr "Save Changes"
 
 #: lib/page-access/access-forms.php:15
-#, fuzzy
 msgid "テーマ独自のアクセス集計機能の設定です。"
-msgstr "Is the theme of your own access aggregate functions setting."
+msgstr "Theme of your own access aggregate functions settings."
 
 #: lib/page-access/access-forms.php:28
 msgid "アクセス集計の有効化"
 msgstr "Access summary enable"
 
 #: lib/page-access/access-forms.php:29
-#, fuzzy
 msgid ""
 "有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的"
 "なWordpress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
 "バーから負荷が高いといわれたら無効にしてください。"
 msgstr ""
 "\"Popular posts\" Widget, are now available in enable. Please disable high "
-"load from the rental server that implements a simple Wordpress Popular Posts "
-"plugin so to say."
+"load from the rental server."
 
 #: lib/page-access/access-forms.php:37
 msgid "キャッシュ"
@@ -1228,7 +1282,6 @@ msgid "アクセスキャッシュの有効化"
 msgstr "Access cache enable"
 
 #: lib/page-access/access-forms.php:42
-#, fuzzy
 msgid ""
 "アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利"
 "用をおすすめします。"
@@ -1335,7 +1388,6 @@ msgid "新規追加"
 msgstr "Add New"
 
 #: lib/page-affiliate-tag/_top-page.php:44
-#, fuzzy
 msgid ""
 "アフィリエイトタグの一括管理を行います。ショートコードで何度でも使い回すこと"
 "ができます。"
@@ -1606,7 +1658,7 @@ msgstr ""
 #: lib/page-settings/image-forms.php:21 lib/page-settings/index-forms.php:21
 #: lib/page-settings/mobile-buttons-forms.php:67
 #: lib/page-settings/notice-forms.php:20 lib/page-settings/single-forms.php:21
-#: lib/page-settings/single-forms.php:70 lib/page-settings/single-forms.php:205
+#: lib/page-settings/single-forms.php:70 lib/page-settings/single-forms.php:237
 #: lib/page-settings/skin-forms.php:16
 #: lib/page-settings/sns-follow-forms.php:20
 #: lib/page-settings/sns-share-forms-bottom.php:18
@@ -2208,7 +2260,7 @@ msgid "タグを表示する"
 msgstr "Display Tags"
 
 #: lib/page-settings/admin-forms.php:73 lib/page-settings/page-forms.php:25
-#: lib/page-settings/single-forms.php:282
+#: lib/page-settings/single-forms.php:314
 msgid "コメントを表示する"
 msgstr "Display comment"
 
@@ -2263,7 +2315,7 @@ msgstr "Show only mobile"
 #: lib/page-settings/admin-forms.php:122 lib/page-settings/appeal-forms.php:34
 #: lib/page-settings/carousel-forms.php:33
 #: lib/page-settings/header-forms.php:110 lib/page-settings/page-forms.php:54
-#: lib/page-settings/seo-forms.php:83 lib/page-settings/single-forms.php:311
+#: lib/page-settings/seo-forms.php:83 lib/page-settings/single-forms.php:343
 #: lib/page-settings/toc-forms.php:150
 msgid "表示しない"
 msgstr "Nondisplay"
@@ -2401,7 +2453,7 @@ msgstr "Display Tools area"
 
 #: lib/page-settings/admin-forms.php:223
 #, fuzzy
-msgid "チェックツールエリア表示する"
+msgid "チェックツールエリアを表示する"
 msgstr "Check the Tools area to view"
 
 #: lib/page-settings/admin-forms.php:224
@@ -2988,10 +3040,15 @@ msgid "文字の太さ"
 msgstr "Font weight:"
 
 #: lib/page-settings/all-forms.php:124
+#, fuzzy
+#| msgid ""
+#| "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
+#| "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもあ"
+#| "りますので実際の太さを確認しながら設定してください"
 msgid ""
 "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
 "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありま"
-"すので実際の太さを確認しながら設定してください"
+"すので実際の太さを確認しながら設定してください。"
 msgstr ""
 "font-weight specifies the font weight. Font weight ' 100 (thin)-900 (thick) "
 "\", can be specified. However, since there are no font thickness over while "
@@ -4151,7 +4208,7 @@ msgstr ""
 "60 px)"
 
 #: lib/page-settings/comment-forms.php:11 lib/page-settings/page-forms.php:11
-#: lib/page-settings/single-forms.php:268
+#: lib/page-settings/single-forms.php:300
 #, fuzzy
 #| msgid "コメント"
 msgid "コメント設定"
@@ -4163,7 +4220,7 @@ msgid "コメント一覧や入力欄のみタグに関する設定です。"
 msgstr "Comments list and input field is set on the tag."
 
 #: lib/page-settings/comment-forms.php:28
-#: lib/page-settings/single-forms.php:213
+#: lib/page-settings/single-forms.php:245
 msgid "デモはランダム表示です。"
 msgstr "Demo is a random display."
 
@@ -4190,7 +4247,7 @@ msgid "コメント一覧見出し"
 msgstr "Comment heading"
 
 #: lib/page-settings/comment-forms.php:58
-#: lib/page-settings/comment-forms.php:73
+#: lib/page-settings/comment-forms.php:90
 #: lib/page-settings/single-forms.php:119
 msgid "見出し"
 msgstr "Headline"
@@ -4216,49 +4273,70 @@ msgstr "Please enter a heading will assist in the comments list."
 #: lib/page-settings/comment-forms.php:69
 #, fuzzy
 #| msgid "コメントなし"
-msgid "コメント入力欄見出し"
+msgid "コメント入力欄表示"
 msgstr "Comments enter column headings"
 
 #: lib/page-settings/comment-forms.php:74
+msgid "常に表示"
+msgstr ""
+
+#: lib/page-settings/comment-forms.php:75
+#, fuzzy
+#| msgid "全ての広告の表示を切り替えます。"
+msgid "ボタンで表示切り替え"
+msgstr "Switch display of individual share button."
+
+#: lib/page-settings/comment-forms.php:78
+#, fuzzy
+msgid "コメント入力欄の表示状態を設定します。"
+msgstr "Change the format of the comment."
+
+#: lib/page-settings/comment-forms.php:86
+#, fuzzy
+#| msgid "コメントなし"
+msgid "コメント入力欄見出し"
+msgstr "Comments enter column headings"
+
+#: lib/page-settings/comment-forms.php:91
 #, fuzzy
 #| msgid "タイトルを入力してください。"
 msgid "コメント入力欄の見出しを入力してください。"
 msgstr "Please enter the heading of the comment input field."
 
-#: lib/page-settings/comment-forms.php:82
+#: lib/page-settings/comment-forms.php:99
 #, fuzzy
 #| msgid "ウェブサイト"
 msgid "ウェブサイトの表示"
 msgstr "View website"
 
-#: lib/page-settings/comment-forms.php:86
+#: lib/page-settings/comment-forms.php:103
 #, fuzzy
 #| msgid "feedlyフォローボタンを表示する"
 msgid "ウェブサイト入力ボックスを表示する"
 msgstr "Display web site input box"
 
-#: lib/page-settings/comment-forms.php:87
+#: lib/page-settings/comment-forms.php:104
 #, fuzzy
 msgid "ウェブサイト入力欄を表示するか。"
 msgstr "Do you want to display website entry fields?"
 
-#: lib/page-settings/comment-forms.php:95
+#: lib/page-settings/comment-forms.php:112
 #, fuzzy
 msgid "送信ボタンラベル"
 msgstr "Submit button label"
 
-#: lib/page-settings/comment-forms.php:99
-#: lib/page-settings/comment-funcs.php:63
+#: lib/page-settings/comment-forms.php:116
+#: lib/page-settings/comment-funcs.php:81
 msgid "コメントを送信"
 msgstr "Post Comment"
 
-#: lib/page-settings/comment-forms.php:100
+#: lib/page-settings/comment-forms.php:117
 #, fuzzy
 #| msgid "アドセンスのレスポンシブ広告コードを入力してください。"
 msgid "コメントの送信ボタンのラベルテキストを入力してください。"
 msgstr "Please enter the label text of the submit comment button."
 
-#: lib/page-settings/comment-funcs.php:47
+#: lib/page-settings/comment-funcs.php:65
 msgid "コメントをどうぞ"
 msgstr "Leave a Reply"
 
@@ -4281,20 +4359,20 @@ msgstr "How to open external link"
 
 #: lib/page-settings/content-forms.php:27
 #: lib/page-settings/content-forms.php:45
-#: lib/page-settings/content-forms.php:135
-#: lib/page-settings/content-forms.php:153
+#: lib/page-settings/content-forms.php:136
+#: lib/page-settings/content-forms.php:154
 msgid "変更しない"
 msgstr "Do Not Change"
 
 #: lib/page-settings/content-forms.php:28
-#: lib/page-settings/content-forms.php:136
+#: lib/page-settings/content-forms.php:137
 #, fuzzy
 #| msgid "新しいタブで開く"
 msgid "新しいタブで開く（_blank）"
 msgstr "Open in new tab (_blank)"
 
 #: lib/page-settings/content-forms.php:29
-#: lib/page-settings/content-forms.php:137
+#: lib/page-settings/content-forms.php:138
 #, fuzzy
 #| msgid "新しいタブで開く"
 msgid "同じタブで開く（_self）"
@@ -4306,21 +4384,21 @@ msgid "本文内の外部リンクをどのように開くか。"
 msgstr "How to open external links in the body?"
 
 #: lib/page-settings/content-forms.php:40
-#: lib/page-settings/content-forms.php:148
+#: lib/page-settings/content-forms.php:149
 #, fuzzy
 #| msgid "フォローボタン"
 msgid "フォロータイプ"
 msgstr "Follow type"
 
 #: lib/page-settings/content-forms.php:46
-#: lib/page-settings/content-forms.php:154
+#: lib/page-settings/content-forms.php:155
 #, fuzzy
 #| msgid "リンクをフォローしない（nofollow）"
 msgid "フォローしない（nofollow）"
 msgstr "Nofollow"
 
 #: lib/page-settings/content-forms.php:47
-#: lib/page-settings/content-forms.php:155
+#: lib/page-settings/content-forms.php:156
 #, fuzzy
 msgid "フォローする（follow）"
 msgstr "To follow (follow)"
@@ -4331,28 +4409,28 @@ msgid "本文内の外部リンクのフォロー状態を設定します。"
 msgstr "Sets the follow state of the external link in the text."
 
 #: lib/page-settings/content-forms.php:58
-#: lib/page-settings/content-forms.php:166
+#: lib/page-settings/content-forms.php:167
 #, fuzzy
 msgid "追加rel属性"
 msgstr "Additional rel attribute"
 
 #: lib/page-settings/content-forms.php:62
-#: lib/page-settings/content-forms.php:170
+#: lib/page-settings/content-forms.php:171
 msgid "noopenerを追加"
 msgstr "Add to noopener"
 
 #: lib/page-settings/content-forms.php:63
-#: lib/page-settings/content-forms.php:171
+#: lib/page-settings/content-forms.php:172
 msgid "rel属性にnoopenerを追加します。"
 msgstr "Add noopener to rel attributes."
 
 #: lib/page-settings/content-forms.php:64
-#: lib/page-settings/content-forms.php:172
+#: lib/page-settings/content-forms.php:173
 msgid "noreferrerを追加"
 msgstr "Add to noopener"
 
 #: lib/page-settings/content-forms.php:65
-#: lib/page-settings/content-forms.php:173
+#: lib/page-settings/content-forms.php:174
 msgid "rel属性にnoreferrerを追加します。"
 msgstr "Add noreferrer to rel attributes."
 
@@ -4365,14 +4443,14 @@ msgid "rel属性にexternalを追加します。"
 msgstr "Add a external to rel attributes."
 
 #: lib/page-settings/content-forms.php:75
-#: lib/page-settings/content-forms.php:181
+#: lib/page-settings/content-forms.php:182
 #, fuzzy
 #| msgid "サイトアイコン"
 msgid "アイコン表示"
 msgstr "Display Icon"
 
 #: lib/page-settings/content-forms.php:79
-#: lib/page-settings/content-forms.php:185
+#: lib/page-settings/content-forms.php:186
 #, fuzzy
 #| msgid "フォローボタンの表示"
 msgid "アイコンの表示"
@@ -4386,124 +4464,136 @@ msgstr ""
 "external link?"
 
 #: lib/page-settings/content-forms.php:88
-#: lib/page-settings/content-forms.php:194
+#: lib/page-settings/content-forms.php:195
 #, fuzzy
 #| msgid "サイトアイコン"
 msgid "アイコン"
 msgstr "Box (icon)"
 
 #: lib/page-settings/content-forms.php:93
-#: lib/page-settings/content-forms.php:199
+#: lib/page-settings/content-forms.php:200
+#, fuzzy
+msgid "&#xf08e"
+msgstr "& #xf08b"
+
+#: lib/page-settings/content-forms.php:94
+#: lib/page-settings/content-forms.php:201
 #, fuzzy
 msgid "&#xf0c1"
 msgstr "A"
 
-#: lib/page-settings/content-forms.php:94
-#: lib/page-settings/content-forms.php:200
+#: lib/page-settings/content-forms.php:95
+#: lib/page-settings/content-forms.php:202
 #, fuzzy
 msgid "&#xf148"
 msgstr "& #xf148"
 
-#: lib/page-settings/content-forms.php:95
-#: lib/page-settings/content-forms.php:201
+#: lib/page-settings/content-forms.php:96
+#: lib/page-settings/content-forms.php:203
 #, fuzzy
 msgid "&#xf064"
 msgstr ""
 
-#: lib/page-settings/content-forms.php:96
-#: lib/page-settings/content-forms.php:202
+#: lib/page-settings/content-forms.php:97
+#: lib/page-settings/content-forms.php:204
 #, fuzzy
 msgid "&#xf045"
 msgstr ""
 
-#: lib/page-settings/content-forms.php:97
-#: lib/page-settings/content-forms.php:203
+#: lib/page-settings/content-forms.php:98
+#: lib/page-settings/content-forms.php:205
 #, fuzzy
 msgid "&#xf14d"
 msgstr "& #xf14d"
 
-#: lib/page-settings/content-forms.php:98
-#: lib/page-settings/content-forms.php:204
+#: lib/page-settings/content-forms.php:99
+#: lib/page-settings/content-forms.php:206
 #, fuzzy
 msgid "&#xf08b"
 msgstr "& #xf08b"
 
-#: lib/page-settings/content-forms.php:99
-#: lib/page-settings/content-forms.php:205
+#: lib/page-settings/content-forms.php:100
+#: lib/page-settings/content-forms.php:208
 #, fuzzy
 msgid "&#xf072"
 msgstr ""
 
-#: lib/page-settings/content-forms.php:100
-#: lib/page-settings/content-forms.php:206
+#: lib/page-settings/content-forms.php:101
+#: lib/page-settings/content-forms.php:209
 #, fuzzy
 msgid "&#xf135"
 msgstr "& #xf135"
 
-#: lib/page-settings/content-forms.php:104
+#: lib/page-settings/content-forms.php:105
 #, fuzzy
 msgid "外部リンクの右部に表示するFont Awesomeアイコンを設定します。"
 msgstr ""
 "Set the Font Awesome icon to display in the right part of the external link."
 
-#: lib/page-settings/content-forms.php:119
+#: lib/page-settings/content-forms.php:120
 #, fuzzy
 msgid "内部リンク設定"
 msgstr "Internal linking"
 
-#: lib/page-settings/content-forms.php:122
+#: lib/page-settings/content-forms.php:123
 #, fuzzy
 msgid "内部リンク動作の設定です。内部ブログカードにも適用されます。"
 msgstr ""
 "This is the setting of internal link operation. It also applies to internal "
 "blog cards."
 
-#: lib/page-settings/content-forms.php:130
+#: lib/page-settings/content-forms.php:131
 #, fuzzy
 msgid "内部リンクの開き方"
 msgstr "How to open the internal link"
 
-#: lib/page-settings/content-forms.php:140
+#: lib/page-settings/content-forms.php:141
 msgid "本文内の内部リンクをどのように開くか。"
 msgstr "How open text in internal links."
 
-#: lib/page-settings/content-forms.php:158
+#: lib/page-settings/content-forms.php:159
 #, fuzzy
 msgid "本文内の内部リンクのフォロー状態を設定します。"
 msgstr "Sets the text in internal links follow State."
 
-#: lib/page-settings/content-forms.php:186
+#: lib/page-settings/content-forms.php:187
 #, fuzzy
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"
 msgstr "View the Awesome Font icon at the right of the internal links?"
 
-#: lib/page-settings/content-forms.php:210
+#: lib/page-settings/content-forms.php:207
+#, fuzzy
+#| msgid "&#xf0aa"
+msgid "&#xf090"
+msgstr "&#xf0aa"
+
+#: lib/page-settings/content-forms.php:213
 #, fuzzy
 msgid "内部リンクの右部に表示するFont Awesomeアイコンを設定します。"
 msgstr "Sets the Font Awesome icons at the right of the internal links."
 
-#: lib/page-settings/content-forms.php:225
+#: lib/page-settings/content-forms.php:228
 #, fuzzy
 msgid "テーブル設定"
 msgstr "Select Option"
 
-#: lib/page-settings/content-forms.php:228
+#: lib/page-settings/content-forms.php:231
 #, fuzzy
 msgid "テーブル動作の設定です。"
 msgstr "Is a set of tables."
 
-#: lib/page-settings/content-forms.php:236
+#: lib/page-settings/content-forms.php:239
 #, fuzzy
 #| msgid "レスポンシブテスト"
 msgid "レスポンシブテーブル"
 msgstr "Responsive table"
 
-#: lib/page-settings/content-forms.php:240
+#: lib/page-settings/content-forms.php:243
 #, fuzzy
 msgid "横幅の広いテーブルは横スクロール"
 msgstr "Horizontal table wide side scroll"
 
-#: lib/page-settings/content-forms.php:241
+#: lib/page-settings/content-forms.php:244
 #, fuzzy
 msgid ""
 "端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れない"
@@ -4512,42 +4602,42 @@ msgstr ""
 "When a table wider than the terminal width is displayed, scroll horizontally "
 "so that it does not collapse."
 
-#: lib/page-settings/content-forms.php:256
+#: lib/page-settings/content-forms.php:259
 #, fuzzy
 #| msgid "表示設定"
 msgid "投稿情報表示設定"
 msgstr "Post information display settings"
 
-#: lib/page-settings/content-forms.php:259
+#: lib/page-settings/content-forms.php:262
 #, fuzzy
 msgid "投稿・固定ページの関連情報の表示に関する設定です。"
 msgstr ""
 "Settings related to posting related information on posts / fixed pages."
 
-#: lib/page-settings/content-forms.php:267
-#: lib/page-settings/index-forms.php:126
+#: lib/page-settings/content-forms.php:270
+#: lib/page-settings/index-forms.php:126 lib/page-settings/single-forms.php:191
 #, fuzzy
 #| msgid "投稿関連記事下"
 msgid "投稿関連情報の表示"
 msgstr "Show posts related information"
 
-#: lib/page-settings/content-forms.php:271
-#: lib/page-settings/index-forms.php:137
+#: lib/page-settings/content-forms.php:274
+#: lib/page-settings/index-forms.php:137 lib/page-settings/single-forms.php:202
 msgid "投稿日の表示"
 msgstr "Post date display"
 
-#: lib/page-settings/content-forms.php:273
-#: lib/page-settings/index-forms.php:145
+#: lib/page-settings/content-forms.php:276
+#: lib/page-settings/index-forms.php:145 lib/page-settings/single-forms.php:210
 msgid "更新日の表示"
 msgstr "Update date"
 
-#: lib/page-settings/content-forms.php:275
-#: lib/page-settings/index-forms.php:148
+#: lib/page-settings/content-forms.php:278
+#: lib/page-settings/index-forms.php:148 lib/page-settings/single-forms.php:213
 #, fuzzy
 msgid "投稿者名の表示"
 msgstr "View by name"
 
-#: lib/page-settings/content-forms.php:276
+#: lib/page-settings/content-forms.php:279
 #, fuzzy
 msgid ""
 "投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防"
@@ -5131,22 +5221,22 @@ msgstr ""
 "Please enter the characters that represents the default view automatically "
 "generated excerpts from character number exceeded automatic excerpt."
 
-#: lib/page-settings/index-forms.php:130
+#: lib/page-settings/index-forms.php:130 lib/page-settings/single-forms.php:195
 #, fuzzy
 msgid "スニペット（抜粋）の表示"
 msgstr "Show example (excerpt)"
 
-#: lib/page-settings/index-forms.php:134
+#: lib/page-settings/index-forms.php:134 lib/page-settings/single-forms.php:199
 #, fuzzy
 msgid "スマホ端末でスニペットを表示（480px以下）"
 msgstr "Show snippets on Smartphone devices (480px or less)"
 
-#: lib/page-settings/index-forms.php:142
+#: lib/page-settings/index-forms.php:142 lib/page-settings/single-forms.php:207
 #, fuzzy
 msgid "更新日が存在しない場合は投稿日を表示"
 msgstr "Show posted when updated does not exist"
 
-#: lib/page-settings/index-forms.php:149
+#: lib/page-settings/index-forms.php:149 lib/page-settings/single-forms.php:214
 #, fuzzy
 msgid "エントリーカードに投稿関連情報を表示するかどうか。"
 msgstr "Whether or not to display post related information on the entry card."
@@ -5556,8 +5646,8 @@ msgid "固定ページのコメント表示設定です。"
 msgstr "This is the comment display settings for static pages."
 
 #: lib/page-settings/page-forms.php:21 lib/page-settings/single-forms.php:85
-#: lib/page-settings/single-forms.php:220
-#: lib/page-settings/single-forms.php:278
+#: lib/page-settings/single-forms.php:252
+#: lib/page-settings/single-forms.php:310
 msgid "表示"
 msgstr "Display"
 
@@ -5566,7 +5656,7 @@ msgstr "Display"
 msgid "固定ページページにコメントを表示するか。"
 msgstr "Do you want to display comments on the fixed page page?"
 
-#: lib/page-settings/page-forms.php:39 lib/page-settings/single-forms.php:296
+#: lib/page-settings/page-forms.php:39 lib/page-settings/single-forms.php:328
 msgid "パンくずリスト設定"
 msgstr "Breadcrumb settings"
 
@@ -5575,23 +5665,23 @@ msgstr "Breadcrumb settings"
 msgid "固定ページのパンくずリスト設定です。"
 msgstr "It is the breadcrumbs setting of the fixed page."
 
-#: lib/page-settings/page-forms.php:49 lib/page-settings/single-forms.php:306
+#: lib/page-settings/page-forms.php:49 lib/page-settings/single-forms.php:338
 msgid "パンくずリストの配置"
 msgstr "Placing breadcrumbs"
 
-#: lib/page-settings/page-forms.php:55 lib/page-settings/single-forms.php:312
+#: lib/page-settings/page-forms.php:55 lib/page-settings/single-forms.php:344
 msgid "メインカラム手前"
 msgstr "Front of the main column"
 
-#: lib/page-settings/page-forms.php:56 lib/page-settings/single-forms.php:313
+#: lib/page-settings/page-forms.php:56 lib/page-settings/single-forms.php:345
 msgid "メインカラムトップ"
 msgstr "Main column top"
 
-#: lib/page-settings/page-forms.php:57 lib/page-settings/single-forms.php:314
+#: lib/page-settings/page-forms.php:57 lib/page-settings/single-forms.php:346
 msgid "メインカラムボトム（デフォルト）"
 msgstr "Main Colombo bottom (default)"
 
-#: lib/page-settings/page-forms.php:58 lib/page-settings/single-forms.php:315
+#: lib/page-settings/page-forms.php:58 lib/page-settings/single-forms.php:347
 msgid "フッター手前"
 msgstr "Before Footer"
 
@@ -5600,11 +5690,11 @@ msgstr "Before Footer"
 msgid "固定ページのパンくずリスト表示位置を設定します。"
 msgstr "Sets the breadcrumb display position of the fixed page."
 
-#: lib/page-settings/page-forms.php:69 lib/page-settings/single-forms.php:326
+#: lib/page-settings/page-forms.php:69 lib/page-settings/single-forms.php:358
 msgid "記事タイトル"
 msgstr "Post Title"
 
-#: lib/page-settings/page-forms.php:73 lib/page-settings/single-forms.php:330
+#: lib/page-settings/page-forms.php:73 lib/page-settings/single-forms.php:362
 msgid "パンくずリストに記事タイトルを含める"
 msgstr "Include the article title in breadcrumbs"
 
@@ -5873,7 +5963,7 @@ msgid "関連記事の補助となる見出しを入力してください。"
 msgstr "Please enter a heading would be related to accessibility."
 
 #: lib/page-settings/single-forms.php:130
-#: lib/page-settings/single-forms.php:233 lib/widgets/new-entries.php:145
+#: lib/page-settings/single-forms.php:265 lib/widgets/new-entries.php:145
 #: lib/widgets/popular-entries.php:169
 msgid "表示タイプ"
 msgstr "Display type:"
@@ -5930,68 +6020,68 @@ msgstr ""
 "from the text excerpt\" related post entry card. * Not a excerpt of the post "
 "edit screen. (Min: 0, Max: 500)"
 
-#: lib/page-settings/single-forms.php:195
+#: lib/page-settings/single-forms.php:227
 msgid "ページ送りナビ設定"
 msgstr "Page navigation settings"
 
-#: lib/page-settings/single-forms.php:198
+#: lib/page-settings/single-forms.php:230
 #, fuzzy
 msgid "[前ページ][次ページ]へと送るナビゲーションの設定です。"
 msgstr "[Previous page] Is sent to the [next page] navigation settings."
 
-#: lib/page-settings/single-forms.php:224
+#: lib/page-settings/single-forms.php:256
 msgid "ページ送りナビを表示する"
 msgstr "Page Navigation Display"
 
-#: lib/page-settings/single-forms.php:225
+#: lib/page-settings/single-forms.php:257
 #, fuzzy
 msgid "[前ページ][次ページ]ナビを表示するか。"
 msgstr "[Previous page] To view next page navigation?"
 
-#: lib/page-settings/single-forms.php:239
+#: lib/page-settings/single-forms.php:271
 msgid "サムネイル正方形"
 msgstr "Thumbnail square"
 
-#: lib/page-settings/single-forms.php:242
+#: lib/page-settings/single-forms.php:274
 #, fuzzy
 msgid "ページ送りナビの見た目を変更します。"
 msgstr "Change the look of page feed."
 
-#: lib/page-settings/single-forms.php:250
+#: lib/page-settings/single-forms.php:282
 msgid "枠線表示"
 msgstr "Border lines visible"
 
-#: lib/page-settings/single-forms.php:254
+#: lib/page-settings/single-forms.php:286
 msgid "ページ送りナビの枠線を表示する"
 msgstr "Page Navigation Border Display"
 
-#: lib/page-settings/single-forms.php:255
+#: lib/page-settings/single-forms.php:287
 #, fuzzy
 msgid "ページ送りナビを囲む枠線を表示するか。"
 msgstr "Whether to display a border around the page feed information."
 
-#: lib/page-settings/single-forms.php:271
+#: lib/page-settings/single-forms.php:303
 #, fuzzy
 msgid "投稿のコメント表示設定です。"
 msgstr "This is a post comment display settings."
 
-#: lib/page-settings/single-forms.php:283
+#: lib/page-settings/single-forms.php:315
 #, fuzzy
 msgid "投稿ページにコメントを表示するか。"
 msgstr "To view the comments on the post page?"
 
-#: lib/page-settings/single-forms.php:299
+#: lib/page-settings/single-forms.php:331
 #, fuzzy
 #| msgid "投稿パンくずリスト上"
 msgid "投稿のパンくずリスト設定です。"
 msgstr "By bread crumbs list setting is."
 
-#: lib/page-settings/single-forms.php:318
+#: lib/page-settings/single-forms.php:350
 #, fuzzy
 msgid "投稿のパンくずリスト表示位置を設定します。"
 msgstr "Set the bread crumbs list position of the post."
 
-#: lib/page-settings/single-forms.php:331
+#: lib/page-settings/single-forms.php:363
 #, fuzzy
 msgid ""
 "投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか"
@@ -8689,6 +8779,12 @@ msgstr "Hatena"
 #: tmp/sns-share-buttons.php:37
 msgid "LINE"
 msgstr "LINE"
+
+#~ msgid "薄い赤"
+#~ msgstr "Light red"
+
+#~ msgid "薄い青"
+#~ msgstr "Light Blue"
 
 #~ msgid "同梱スキン募集中"
 #~ msgstr "Bundled skins are recruiting"
