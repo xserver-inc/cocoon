@@ -15,6 +15,9 @@ update_theme_option(OP_COMMENT_HEADING);
 //コメントのサブ見出し
 update_theme_option(OP_COMMENT_SUB_HEADING);
 
+//コメント入力欄の表示タイプ
+update_theme_option(OP_COMMENT_FORM_DISPLAY_TYPE);
+
 //コメント入力欄の見出し
 update_theme_option(OP_COMMENT_FORM_HEADING);
 

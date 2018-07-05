@@ -40,6 +40,24 @@ function get_comment_sub_heading(){
 }
 endif;
 
+//コメント入力欄の表示タイプ
+define('OP_COMMENT_FORM_DISPLAY_TYPE', 'comment_form_display_type');
+if ( !function_exists( 'get_comment_form_display_type' ) ):
+function get_comment_form_display_type(){
+  return get_theme_option(OP_COMMENT_FORM_DISPLAY_TYPE, 'always');
+}
+endif;
+if ( !function_exists( 'is_comment_form_display_type_always' ) ):
+function is_comment_form_display_type_always(){
+  get_comment_form_display_type() == 'always';
+}
+endif;
+if ( !function_exists( 'is_comment_form_display_type_toggle_button' ) ):
+function is_comment_form_display_type_toggle_button(){
+  get_comment_form_display_type() == 'toggle_button';
+}
+endif;
+
 //コメント入力欄の見出し
 define('OP_COMMENT_FORM_HEADING', 'comment_form_heading');
 if ( !function_exists( 'get_comment_form_heading' ) ):
