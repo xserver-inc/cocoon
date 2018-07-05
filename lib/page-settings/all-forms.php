@@ -121,7 +121,7 @@
           <td>
             <?php
               generate_range_tag(OP_SITE_FONT_WEIGHT, get_site_font_weight(), 100, 900, 100);
-              generate_tips_tag(__( 'font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください', THEME_NAME ));
+              generate_tips_tag(__( 'font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください。', THEME_NAME ));
              ?>
           </td>
         </tr>
