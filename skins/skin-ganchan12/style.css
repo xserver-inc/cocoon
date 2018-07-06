@@ -148,14 +148,14 @@ body.public-page,.content .cf .main, .navi {
 
 
 /*ページネーション*/
-.pagination-next-link {
+.key-btn {
 	border:0;
 	border-radius:4px;
 	background-color: #5385C2;
 	color:#fff;
 }
 
-.pagination-next-link:hover {
+.key-btn:hover {
 	background-color: #ADD8E6;
 	color:#999;
 }
