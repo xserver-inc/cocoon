@@ -700,3 +700,18 @@ table tr:nth-of-type(2n) {
 table tr:nth-of-type(2n+1) {
   background-color:#fbfcfe;
 }
+
+
+/* ---------------------------------------------------------
+/ レスポンシブ
+--------------------------------------------------------- */
+
+/*480px以下*/
+@media screen and (max-width: 480px){
+  .article h2{
+    padding: .6em 0.2em;
+  }
+  .article h3{
+    padding: .4em 1em;
+  }
+}
