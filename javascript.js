@@ -64,4 +64,10 @@
   $('#comment-reply-btn').click(function() {
     $('#respond').slideToggle();
   })
+
+  //返信ボタンがクリックされたとき
+  $('.comment-reply-link').click(function() {
+    $('#comment-reply-btn').slideUp();
+    $('#respond').slideDown();
+  })
 })(jQuery);
