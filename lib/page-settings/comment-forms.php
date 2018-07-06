@@ -66,7 +66,10 @@
         <!-- コメント入力欄表示 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_COMMENT_FORM_DISPLAY_TYPE, __('コメント入力欄表示', THEME_NAME) ); ?>
+            <?php
+            generate_label_tag(OP_COMMENT_FORM_DISPLAY_TYPE, __('コメント入力欄表示', THEME_NAME) );
+            generate_preview_tooltip_tag('https://im-cocoon.net/wp-content/uploads/comment-toggle.gif', __( 'ボタン切り換え動作。', THEME_NAME ), 400);
+             ?>
           </th>
           <td>
             <?php

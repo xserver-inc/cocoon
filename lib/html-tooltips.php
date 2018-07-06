@@ -21,9 +21,14 @@ endif;
 
 //プレビューツールチップの生成
 if ( !function_exists( 'generate_preview_tooltip_tag' ) ):
-function generate_preview_tooltip_tag($url, $description = null){?>
+function generate_preview_tooltip_tag($url, $description = null, $width = null){
+  $style = null;
+  if ($width) {
+    $style = ' style="width: '.$width.'px;"';
+  }
+  ?>
   <span class="tooltip fa fa-exclamation-triangle">
-    <span class="tip-content">
+    <span class="tip-content"<?php echo $style; ?>>
       <img src="<?php echo $url; ?>" alt="">
       <?php if (!empty($description)): ?>
         <p><?php echo $description; ?></p>
