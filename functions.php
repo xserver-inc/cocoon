@@ -338,13 +338,13 @@ function change_main_loop_sort_order( $query ) {
 }
 endif;
 
-//レスポンシブ画像の存在確認
-add_filter('wp_calculate_image_srcset_meta', 'wp_calculate_image_srcset_meta_check', 10, 4);
-if ( !function_exists( 'wp_calculate_image_srcset_meta_check' ) ):
-function wp_calculate_image_srcset_meta_check($image_meta, $size_array, $image_src, $attachment_id){
-  $src = url_to_local($image_src);
-  if (file_exists($src)) {
-    return $image_meta;
-  }
-}
-endif;
+// //レスポンシブ画像の存在確認
+// add_filter('wp_calculate_image_srcset_meta', 'wp_calculate_image_srcset_meta_check', 10, 4);
+// if ( !function_exists( 'wp_calculate_image_srcset_meta_check' ) ):
+// function wp_calculate_image_srcset_meta_check($image_meta, $size_array, $image_src, $attachment_id){
+//   $src = url_to_local($image_src);
+//   if (file_exists($src)) {
+//     return $image_meta;
+//   }
+// }
+// endif;
