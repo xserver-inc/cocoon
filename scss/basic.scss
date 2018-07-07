@@ -181,3 +181,10 @@ img.alignleft {
   display: inline-block;
   margin: 0 1.5em 1em 0;
 }
+
+
+.comment-btn{
+  @extend .pagination-next-link;
+  margin: 24px 0;
+  cursor: pointer;
+}

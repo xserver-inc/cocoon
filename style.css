@@ -412,6 +412,11 @@ img.alignleft {
   margin: 0 1.5em 1em 0;
 }
 
+.comment-btn {
+  margin: 24px 0;
+  cursor: pointer;
+}
+
 /************************************
 ** 画像関係のスタイル
 ************************************/
@@ -4923,11 +4928,6 @@ input[type='submit'],
 
 #wp-comment-cookies-consent {
   margin-right: 5px;
-}
-
-.comment-btn {
-  margin: 24px 0;
-  cursor: pointer;
 }
 
 /************************************
