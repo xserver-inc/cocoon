@@ -18,6 +18,9 @@ update_theme_option(OP_GLOBAL_NAVI_TEXT_COLOR);
 //グローバルナビメニュー幅
 update_theme_option(OP_GLOBAL_NAVI_MENU_WIDTH);
 
+//グローバルメニュー幅をテキストの幅にする
+update_theme_option(OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE);
+
 //グローバルナビサブメニュー幅
 update_theme_option(OP_GLOBAL_NAVI_SUB_MENU_WIDTH);
 

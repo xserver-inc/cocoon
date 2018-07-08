@@ -38,6 +38,11 @@
             generate_number_tag(OP_GLOBAL_NAVI_MENU_WIDTH,  get_global_navi_menu_width(), 176, 100, 300);
             generate_tips_tag(__( 'グローバルナビのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
+            generate_checkbox_tag(OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE , is_global_navi_menu_text_width_enable(), __( 'メニュー幅をテキストに合わせる', THEME_NAME ));
+            generate_tips_tag(__( 'メニュー幅を均一にせずにテキスト幅で設定します。', THEME_NAME ));
+
+            echo '<br>';
+
             generate_label_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH, __( 'サブメニュー幅', THEME_NAME ) );
             echo '<br>';
             generate_number_tag(OP_GLOBAL_NAVI_SUB_MENU_WIDTH,  get_global_navi_sub_menu_width(), 240, 100, 500);

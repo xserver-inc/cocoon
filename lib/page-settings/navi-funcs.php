@@ -30,6 +30,14 @@ function get_global_navi_menu_width(){
 }
 endif;
 
+//グローバルメニュー幅をテキストの幅にする
+define('OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE', 'global_navi_menu_text_width_enable');
+if ( !function_exists( 'is_global_navi_menu_text_width_enable' ) ):
+function is_global_navi_menu_text_width_enable(){
+  return get_theme_option(OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE);
+}
+endif;
+
 //グローバルナビサブメニュー幅
 define('OP_GLOBAL_NAVI_SUB_MENU_WIDTH', 'global_navi_sub_menu_width');
 if ( !function_exists( 'get_global_navi_sub_menu_width' ) ):
