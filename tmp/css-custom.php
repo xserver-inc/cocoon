@@ -481,3 +481,12 @@ if (is_comment_form_display_type_toggle_button()): ?>
   display: none;
 }
 <?php endif ?>
+<?php //グローバルメニュー幅をテキストの幅にする
+if (is_global_navi_menu_text_width_enable()): ?>
+.navi-in > ul > li{
+  width: auto;
+}
+.navi-in > ul > li > a{
+  padding: 0 1.4em;
+}
+<?php endif ?>
