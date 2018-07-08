@@ -61,12 +61,8 @@
   });
 
   //コメントボタンがクリックされたとき
-  $('#comment-reply-btn').click(function() {
-    $('#respond').slideToggle();
-  })
-
-  //返信ボタンがクリックされたとき
-  $('.comment-reply-link').click(function() {
+  $('#comment-reply-btn, .comment-reply-link').click(function() {
+    //$('#respond').slideToggle();
     $('#comment-reply-btn').slideUp();
     $('#respond').slideDown();
   })
