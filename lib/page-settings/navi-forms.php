@@ -39,7 +39,8 @@
             generate_tips_tag(__( 'グローバルナビのメニュー幅をpx数で指定します。未記入でデフォルト幅になります。', THEME_NAME ));
 
             generate_checkbox_tag(OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE , is_global_navi_menu_text_width_enable(), __( 'メニュー幅をテキストに合わせる', THEME_NAME ));
-            generate_tips_tag(__( 'メニュー幅を均一にせずにテキスト幅で設定します。', THEME_NAME ));
+            generate_tips_tag(__( 'メニュー幅を均一にせずにテキスト幅で設定します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/text-width-global-nav-items/'));
+
 
             echo '<br>';
 

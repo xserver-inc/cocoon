@@ -185,6 +185,11 @@ function get_help_page_tag($url){
   return $tag;
 }
 endif;
+if ( !function_exists( 'generate_help_page_tag' ) ):
+function generate_help_page_tag($url){
+  echo get_help_page_tag($url);
+}
+endif;
 
 
 //通知メッセージのの生成

@@ -45,7 +45,10 @@
   <h2 class="hndle"><?php _e( '投稿一覧設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '管理画面の投稿一覧ページの設定です。', THEME_NAME ) ?></p>
+    <p><?php
+      _e( '管理画面の投稿一覧ページの設定です。', THEME_NAME );
+      generate_help_page_tag('https://wp-cocoon.com/post-columns-switch/');
+     ?></p>
 
     <table class="form-table">
       <tbody>
