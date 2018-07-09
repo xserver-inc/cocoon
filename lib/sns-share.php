@@ -79,7 +79,7 @@ function get_twitter_count($url = null) {
     return null;
 
   if (is_scc_twitter_exists()) {
-    return scc_get_share_gplus();
+    return scc_get_share_twitter();
   } else {
     return null;
   }
