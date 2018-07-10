@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-07-06 00:09+0900\n"
-"PO-Revision-Date: 2018-07-06 00:29+0900\n"
+"PO-Revision-Date: 2018-07-10 20:23+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -1457,13 +1457,12 @@ msgstr "Includes Visual Editor dropdown list"
 
 #: lib/page-affiliate-tag/form.php:40 lib/page-func-text/form.php:42
 #: lib/page-item-ranking/form.php:77 lib/page-speech-balloon/form.php:139
-#, fuzzy
 msgid ""
 "ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合"
 "は、無効にしてください。"
 msgstr ""
-"Good not to appear in the drop-down list in the Visual Editor (TinyMCE) try "
-"to disable."
+"Not to appear in the drop-down list in the Visual Editor (TinyMCE) try to "
+"disable."
 
 #: lib/page-affiliate-tag/form.php:44 lib/page-func-text/form.php:46
 #: lib/page-speech-balloon/form.php:149
@@ -1471,16 +1470,14 @@ msgid "保存"
 msgstr "Save"
 
 #: lib/page-affiliate-tag/list.php:20 lib/page-func-text/list.php:20
-#, fuzzy
 msgid "ショートコードをコピーして本文の表示したい部分に貼り付けてください。"
-msgstr "You want to display text the short code to copy, paste."
+msgstr "To display contents the short code to copy, paste."
 
 #: lib/page-affiliate-tag/list.php:23 lib/page-func-text/list.php:23
-#, fuzzy
 msgid ""
 "「使いまわしテキスト」を作成するには「新規作成」リンクをクリックしてくださ"
 "い。"
-msgstr "By clicking the \"new\" link to create a text data."
+msgstr "By clicking the \"new\" link to create a Template."
 
 #: lib/page-affiliate-tag/list.php:38 lib/page-func-text/list.php:38
 #: lib/page-item-ranking/list.php:46
@@ -1576,39 +1573,34 @@ msgid "設定の復元"
 msgstr "Restore"
 
 #: lib/page-backup/backup-forms.php:46
-#, fuzzy
 msgid ""
 "参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してくださ"
 "い。"
 msgstr ""
-"Theme configuration file browse button and then press \"restore settings\" "
-"button."
+"Select a teheme settings file with the \"Browse\" button and then press "
+"\"Restore\" button."
 
 #: lib/page-func-text/_top-page.php:36
 msgid "テキストテンプレート"
 msgstr "Text templates"
 
 #: lib/page-func-text/_top-page.php:44
-#, fuzzy
 msgid ""
 "頻繁に利用する文章のテンプレートを登録する機能です。ショートコードで何度でも"
 "使い回すことができます。"
 msgstr ""
-"Is the ability to create templates of frequently used sentences. Too many "
-"times in the short code you can consistently reuses."
+"To create templates of frequently used sentences. Too many times in the "
+"short code you can consistently reuses."
 
 #: lib/page-func-text/form.php:38
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "関数化するテキストを入力してください。"
-msgstr "Please enter the text to function."
+msgstr "Enter the text to be the template."
 
 #: lib/page-func-text/func-text-func.php:38
 msgid "Wordpressカスタマイズ注意文サンプル"
 msgstr "WordPress customization notes statement sample"
 
 #: lib/page-func-text/func-text-func.php:39
-#, fuzzy
 msgid ""
 "Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
 "してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元"
