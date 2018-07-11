@@ -932,3 +932,14 @@ textarea[name="the_page_memo"]{
     }
   }
 }
+
+.wp-button{
+  line-height: normal !important;
+  span{
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top;
+    margin-right: 6px;
+    line-height: normal;
+  }
+}
