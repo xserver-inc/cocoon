@@ -570,4 +570,3 @@ function tiny_mce_before_init_custom( $mceInit ) {
   return $mceInit;
 }
 endif;
-

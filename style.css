@@ -3278,6 +3278,10 @@ label.screen-reader-text {
   color: #777;
 }
 
+.post-navi-square a {
+  height: auto;
+}
+
 .post-navi-default.post-navi-border a {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
