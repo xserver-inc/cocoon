@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-07-06 00:09+0900\n"
-"PO-Revision-Date: 2018-07-11 19:41+0900\n"
+"PO-Revision-Date: 2018-07-12 21:02+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.0.9\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -1669,7 +1669,7 @@ msgstr "Enter Title"
 
 #: lib/page-item-ranking/form.php:72
 msgid "ランキングを識別するためのタイトルを入力してください。"
-msgstr "Enter the title that identifies the ranking."
+msgstr "Enter a title that identifies the ranking."
 
 #: lib/page-item-ranking/form.php:100
 msgid "追加"
@@ -1738,41 +1738,31 @@ msgid "5"
 msgstr "5"
 
 #: lib/page-item-ranking/form.php:138
-#, fuzzy
 msgid "商品等を星の数で評価します。「なし」を選択した場合は表示されません。"
-msgstr ""
-"Goods valuation by the number of stars. If you select \"none\" is displayed."
+msgstr "Goods valuation by the number of stars."
 
 #: lib/page-item-ranking/form.php:144
 msgid "画像・バナータグ"
 msgstr "Images and Bana tag"
 
 #: lib/page-item-ranking/form.php:146
-#, fuzzy
-#| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid ""
 "商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能で"
 "す。"
-msgstr ""
-"Enter the tag product images or banners. It is possible to enter short code."
+msgstr "Enter a tag product images or banners. Short code is also valid."
 
 #: lib/page-item-ranking/form.php:147
-#, fuzzy
 msgid ""
 "イメージ画像のタグを入力してください。※入力していない場合は表示されません。"
-msgstr ""
-"Please enter the tag of the image image. * It will not be displayed if it is "
-"not entered."
+msgstr "Enter a tag of the image image."
 
 #: lib/page-item-ranking/form.php:152
 msgid "説明文（※必須）"
 msgstr "Description (*required)"
 
 #: lib/page-item-ranking/form.php:155
-#, fuzzy
 msgid "紹介文を入力してください。タグ・ショートコード入力も可能です。"
-msgstr ""
-"Please enter a description. It is possible to input tags and shortcodes."
+msgstr "Enter a product description. Short code is also valid."
 
 #: lib/page-item-ranking/form.php:162
 msgid "詳細ページURL"
@@ -1784,23 +1774,20 @@ msgid "http://"
 msgstr "http://"
 
 #: lib/page-item-ranking/form.php:165
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "詳細ページへリンクするためのURLを入力してください。"
-msgstr "Please enter a URL for the link to the details page."
+msgstr "Enter a URL for the link to the details page."
 
 #: lib/page-item-ranking/form.php:170
 msgid "ページURL"
 msgstr "Page URL"
 
 #: lib/page-item-ranking/form.php:173
-#, fuzzy
 msgid ""
 "公式ページ等のURLを入力してください。「リンクタグ」と双方入力されている場合は"
 "こちらが優先されます。"
 msgstr ""
-"Please enter the URL of official page etc. If \"Link Tag\" and both are "
-"entered, this will take precedence."
+"Enter the URL of official page etc. If \"Link Tag\" and both are entered, "
+"this will take precedence."
 
 #: lib/page-item-ranking/form.php:176
 msgid "タグで入力"
@@ -1811,20 +1798,16 @@ msgid "リンクタグ"
 msgstr "Link tag"
 
 #: lib/page-item-ranking/form.php:180
-#, fuzzy
-#| msgid "AdSenseのレスポンシブ広告コードを入力してください。"
 msgid "公式ページ等のリンク（アフィリエイト）タグを入力してください。"
-msgstr "Please enter the official page links (affiliate) tags."
+msgstr "Enter the official page links (affiliate) tags."
 
 #: lib/page-item-ranking/form.php:181
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid ""
 "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショート"
 "コードも入力できます。"
 msgstr ""
 "When entering an affiliate tag directly. Tag change is invalid for ASP "
-"setting. You can also enter a short code."
+"setting. Short code is also valid."
 
 #: lib/page-item-ranking/form.php:206
 msgid "アイテムを上に移動"
@@ -1839,7 +1822,6 @@ msgid "公式ページ"
 msgstr "Official Page"
 
 #: lib/page-item-ranking/list.php:20 lib/page-speech-balloon/list.php:37
-#, fuzzy
 msgid ""
 "設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」"
 "ボタンから追加できます。"
@@ -1848,7 +1830,6 @@ msgstr ""
 "from the \"Create New\" button."
 
 #: lib/page-item-ranking/list.php:23
-#, fuzzy
 msgid "「ランキング」を作成するには「新規作成」リンクをクリックしてください。"
 msgstr "To create \"ranking\", click the \"Create New\" link."
 
