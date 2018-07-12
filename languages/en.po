@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-07-06 00:09+0900\n"
-"PO-Revision-Date: 2018-07-12 21:02+0900\n"
+"PO-Revision-Date: 2018-07-12 21:08+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -1878,19 +1878,16 @@ msgid "404ページ設定"
 msgstr "404 page settings"
 
 #: lib/page-settings/404-forms.php:14
-#, fuzzy
 msgid "ページが見つからなかった場合の404ページの表示設定です。"
-msgstr "404 page not found page is displayed."
+msgstr "Display settings of 404 pages."
 
 #: lib/page-settings/404-forms.php:32
 msgid "404ページ画像"
 msgstr "404 page image"
 
 #: lib/page-settings/404-forms.php:37
-#, fuzzy
-#| msgid "AdSenseのレスポンシブコードを入力してください"
 msgid "404ページで表示する画像を選択してください。"
-msgstr "Please select the image to display on the 404 page."
+msgstr "Select a image to display on 404 pages."
 
 #: lib/page-settings/404-forms.php:45
 msgid "404ページタイトル"
@@ -1901,29 +1898,24 @@ msgid "404 NOT FOUND"
 msgstr "404 NOT FOUND"
 
 #: lib/page-settings/404-forms.php:50
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "404ページに表示するタイトルを入力します。"
-msgstr "Type a title to appear in the 404 page."
+msgstr "Type a title to appear in 404 pages."
 
 #: lib/page-settings/404-forms.php:58
 msgid "404ページメッセージ"
 msgstr "404 page messages"
 
 #: lib/page-settings/404-forms.php:62 lib/page-settings/404-funcs.php:34
-#, fuzzy
-#| msgid "投稿が見つかりませんでした。"
 msgid "お探しのページは見つかりませんでした。"
-msgstr "Page not found"
+msgstr "The page you were looking for could not be found."
 
 #: lib/page-settings/404-forms.php:63
-#, fuzzy
 msgid ""
 "404ページに表示するメッセージを入力します。タグ入力可能です。入力されたテキス"
 "トには自動的に段落が付加されます。"
 msgstr ""
-"Enter a message to display to the 404 page. Tags are entered. Automatically "
-"be added a paragraph in the text that you enter."
+"Enter a message to display to 404 pages. Tags can be entered. Automatically "
+"be added paragraphs in the text that you enter."
 
 #: lib/page-settings/_top-page.php:116
 msgid "設定はリセットされました。"
