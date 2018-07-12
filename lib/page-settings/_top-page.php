@@ -79,9 +79,9 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once abspath(__FILE__).'admin-posts.php';
   //エディター
   require_once abspath(__FILE__).'editor-posts.php';
-  //その他
-  require_once abspath(__FILE__).'others-posts.php';
   //API
+  require_once abspath(__FILE__).'apis-posts.php';
+  //その他
   require_once abspath(__FILE__).'others-posts.php';
   //リセット
   require_once abspath(__FILE__).'reset-posts.php';
