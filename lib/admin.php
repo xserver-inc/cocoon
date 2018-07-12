@@ -571,8 +571,8 @@ function tiny_mce_before_init_custom( $mceInit ) {
 }
 endif;
 
-add_action( 'admin_footer-post-new.php', 'add_create_product_tag_button' );
-add_action( 'admin_footer-post.php', 'add_create_product_tag_button' );
+// add_action( 'admin_footer-post-new.php', 'add_create_product_tag_button' );
+// add_action( 'admin_footer-post.php', 'add_create_product_tag_button' );
 if ( !function_exists( 'add_create_product_tag_button' ) ):
 function add_create_product_tag_button() {
 ?>
