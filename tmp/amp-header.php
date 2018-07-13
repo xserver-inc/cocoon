@@ -81,7 +81,7 @@ get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 <?php //ユーザーカスタマイズ用
 get_template_part('tmp-user/amp-head-insert'); ?>
 </head>
-<body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('amp'); ?> itemscope itemtype="https://schema.org/WebPage">
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>

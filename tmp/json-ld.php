@@ -1,7 +1,7 @@
 <?php
 //JSON-LDに関する記述
 //https://developers.google.com/search/docs/data-types/articles
-//http://schema.org/NewsArticle
+//https://schema.org/NewsArticle
 
 /**
  * Cocoon WordPress Theme
@@ -12,7 +12,7 @@
  ?>
 <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage":{
     "@type":"WebPage",

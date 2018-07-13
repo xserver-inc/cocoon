@@ -54,7 +54,7 @@ get_template_part('tmp/head-custom-field'); ?>
 get_template_part('tmp-user/head-insert'); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
 get_template_part('tmp/body-top-analytics'); ?>

@@ -7,9 +7,9 @@
  */ ?>
 <div id="header-container" class="header-container">
   <div class="header-container-in<?php echo get_additional_header_container_classes(); ?>">
-    <header id="header" class="header<?php echo get_additional_header_classes(); ?> cf" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header<?php echo get_additional_header_classes(); ?> cf" itemscope itemtype="https://schema.org/WPHeader">
 
-      <div id="header-in" class="header-in wrap cf" itemscope itemtype="http://schema.org/WebSite">
+      <div id="header-in" class="header-in wrap cf" itemscope itemtype="https://schema.org/WebSite">
 
         <?php //キャッチフレーズがヘッダー上部のとき
         if (is_tagline_position_header_top()) {
