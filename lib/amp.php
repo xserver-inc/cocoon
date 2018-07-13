@@ -722,6 +722,13 @@ function generate_style_amp_custom_tag(){?>
     // }
   }
 
+  ///////////////////////////////////////////
+  //カスタムCSS
+  ///////////////////////////////////////////
+  if ($custom_css = get_custom_css_code()) {
+    $css_all .= $custom_css;
+  }
+
   //!importantの除去
   $css_all = preg_replace('/!important/i', '', $css_all);
 
