@@ -34,18 +34,35 @@ function custom_css_custom_box_save_data($post_id) {
 }
 endif;
 
-add_action( 'wp_head','insert_custom_css' );
-if ( !function_exists( 'insert_custom_css' ) ):
-function insert_custom_css() {
+if ( !function_exists( 'get_custom_css_code' ) ):
+function get_custom_css_code(){
   if ( is_singular() ) {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
       $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);
-      if ($custom_css) {
-        echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
-        echo '<style>' . $custom_css . '</style>'.PHP_EOL;
-      }
     endwhile; endif;
     rewind_posts();
+    return $custom_css;
   }
+}
+endif;
+
+add_action( 'wp_head','insert_custom_css' );
+if ( !function_exists( 'insert_custom_css' ) ):
+function insert_custom_css() {
+  $custom_css = get_custom_css_code();
+  if ($custom_css) {
+    echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
+    echo '<style>' . $custom_css . '</style>'.PHP_EOL;
+  }
+  // if ( is_singular() ) {
+  //   if ( have_posts() ) : while ( have_posts() ) : the_post();
+  //     $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);
+  //     if ($custom_css) {
+  //       echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
+  //       echo '<style>' . $custom_css . '</style>'.PHP_EOL;
+  //     }
+  //   endwhile; endif;
+  //   rewind_posts();
+  // }
 }
 endif;
