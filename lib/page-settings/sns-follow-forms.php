@@ -101,7 +101,7 @@
           <td>
             <?php
             generate_checkbox_tag( OP_RSS_FOLLOW_BUTTON_VISIBLE, is_rss_follow_button_visible(), __( 'RSS購読ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'RSS購読料のボタンを表示します。', THEME_NAME ));
+            generate_tips_tag(__( 'RSS購読用のボタンを表示します。', THEME_NAME ));
             ?>
           </td>
         </tr>
