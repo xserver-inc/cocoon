@@ -39,40 +39,20 @@ class PopularEntryWidgetItem extends WP_Widget {
     $ranking_visible = apply_filters( 'widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
     //PV表示
     $pv_visible = apply_filters( 'widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
+    //除外投稿IDを取得
+    $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
+    $exclude_post_ids = apply_filters( 'widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
 
     $cat_ids = array();
     if ($widget_mode == 'category') {
       $cat_ids = get_category_ids();//カテゴリ配列の取得
     }
-    //var_dump($cat_ids);
-    // //表示数をグローバル変数に格納
-    // //ウィジェットモード
-    // global $_WIDGET_MODE;
-    // //後で使用するテンプレートファイルへの受け渡し
-    // global $_ENTRY_COUNT;
-    // //集計期間をグローバル変数に格納
-    // global $_COUNT_DAYS;
-    // //ウィジェットモードが設定されてない場合はall（全て表示）にする
-    // if ( !$widget_mode ) $widget_mode = WM_DEFAULT;
-    // $_WIDGET_MODE = $widget_mode;
-    // //表示数が設定されていない時は5にする
-    // if ( !$entry_count ) $entry_count = EC_DEFAULT;
-    // $_ENTRY_COUNT = $entry_count;
-    //表示タイプをグローバル変数に格納
-    // global $_ENTRY_TYPE;
-    // //表示タイプのデフォルト設定
-    // if ( !$entry_type ) $entry_type = ET_DEFAULT;
-    // $_ENTRY_TYPE = $entry_type;
-    // // //表示タイプのデフォルト設定
-    // // if ( !$count_days ) $count_days = PCD_DEFAULT;
-    // // $_COUNT_DAYS = $count_days;
-    // //表示タイプをグローバル変数に格納
-    // global $_RANKING_VISIBLE;
-    // //表示タイプのデフォルト設定
-    // if ( !$ranking_visible ) $ranking_visible = 0;
-    // $_RANKING_VISIBLE = $ranking_visible;
-
-    //_v($count_days);
+    $exclude_post_ids = str_replace(' ', '', $exclude_post_ids);
+    if (empty($exclude_post_ids)) {
+      $exclude_post_ids = array();
+    } else {
+      $exclude_post_ids = explode(',', $exclude_post_ids);
+    }
 
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての人気記事」のとき
@@ -96,7 +76,7 @@ class PopularEntryWidgetItem extends WP_Widget {
 
 
       //get_template_part('tmp/popular-entries');
-      generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids);
+      generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>
@@ -118,6 +98,9 @@ class PopularEntryWidgetItem extends WP_Widget {
     $instance['ranking_visible'] = !empty($new_instance['ranking_visible']) ? 1 : 0;
     $instance['pv_visible'] = !empty($new_instance['pv_visible']) ? 1 : 0;
 
+    if (isset($new_instance['exclude_post_ids']))
+      $instance['exclude_post_ids'] = strip_tags($new_instance['exclude_post_ids']);
+
     return $instance;
   }
   function form($instance) {
@@ -130,6 +113,7 @@ class PopularEntryWidgetItem extends WP_Widget {
         'count_days' => PCD_DEFAULT,
         'ranking_visible' => 0,
         'pv_visible' => 0,
+        'exclude_post_ids' => array(),
       );
     }
     $widget_mode = isset($instance['widget_mode']) ? esc_attr($instance['widget_mode']) : WM_DEFAULT;
@@ -139,6 +123,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
     $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
+    $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : null;
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -197,6 +182,13 @@ class PopularEntryWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV表示', THEME_NAME ));
        ?>
+    </p>
+    <?php //除外投稿ID ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('exclude_post_ids'); ?>">
+        <?php _e( '除外投稿ID（カンマ区切りでIDを入力してください）', THEME_NAME ) ?>
+      </label>
+      <input class="widefat" id="<?php echo $this->get_field_id('exclude_post_ids'); ?>" name="<?php echo $this->get_field_name('exclude_post_ids'); ?>" type="text" value="<?php echo $exclude_post_ids; ?>" />
     </p>
     <?php
   }

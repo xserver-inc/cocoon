@@ -364,7 +364,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array()){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array(), $exclude_post_ids = array()){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
@@ -374,8 +374,9 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cats = implode(',', $categories);
+    $expids = implode(',', $exclude_post_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats;
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&expids='.$expids;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
@@ -410,6 +411,10 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   if ($days == 1) {
     $where .= " AND {$access_table}.date = '$date' ";
   }
+  if (!empty($exclude_post_ids)) {
+    $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ";
+  }
+  //3180, 3234
   if (!is_numeric($limit)) {
     $limit = 5;
   }

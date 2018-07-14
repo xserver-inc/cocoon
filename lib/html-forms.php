@@ -794,13 +794,13 @@ endif;
 
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
-function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $categories = array()){
+function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $categories = array(), $exclude_post_ids = array()){
   // if (DEBUG_MODE) {
   //   $time_start = microtime(true);
   // }
   //var_dump($categories);
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $categories);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $categories, $exclude_post_ids);
 
   // if (DEBUG_MODE) {
   //   $time = microtime(true) - $time_start;
