@@ -794,13 +794,13 @@ endif;
 
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
-function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $categories = array(), $exclude_post_ids = array()){
+function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
   // if (DEBUG_MODE) {
   //   $time_start = microtime(true);
   // }
-  //var_dump($categories);
+  //var_dump($cat_ids);
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $categories, $exclude_post_ids);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
   // if (DEBUG_MODE) {
   //   $time = microtime(true) - $time_start;
@@ -870,7 +870,7 @@ function get_nofollow_link($url, $text){
 endif;
 
 if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $categories = array(), $include_children = 0, $post_type = null){
+function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null){
 
   $args = array(
     'posts_per_page' => $entry_count,
@@ -881,13 +881,13 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       'post_type' => explode(',', $post_type)
     );
   }
-  if ( $categories ) {
-    //_v($categories);
+  if ( $cat_ids ) {
+    //_v($cat_ids);
     $args += array(
       'tax_query' => array(
         array(
           'taxonomy' => 'category',
-          'terms' => $categories,
+          'terms' => $cat_ids,
           'include_children' => $include_children,
           'field' => 'term_id',
           'operator' => 'IN'

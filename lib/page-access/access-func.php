@@ -364,25 +364,25 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array(), $exclude_post_ids = array(), $exclude_categories = array()){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
   // }
-  //var_dump($categories);
+  //var_dump($cat_ids);
 
 
 
-  //$exclude_categories = array(62);
+  //$exclude_cat_ids = array(62);
 
 
 
 
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
-    $cats = implode(',', $categories);
+    $cats = implode(',', $cat_ids);
     $expids = implode(',', $exclude_post_ids);
-    $excats = implode(',', $exclude_categories);
+    $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
     $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&expids='.$expids.'&excats='.$excats;
     //_v($transient_id);
@@ -429,18 +429,18 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     $limit = 5;
   }
   //カテゴリを指定する場合
-  if (is_ids_exist($categories) || is_ids_exist($exclude_categories)) {
+  if (is_ids_exist($cat_ids) || is_ids_exist($exclude_cat_ids)) {
     global $post;
     $term_table = $wpdb->term_relationships;
     $joined_table = 'terms_accesses';
     //カテゴリー指定
-    if (is_ids_exist($categories)) {
-      $cat_ids = implode(',', $categories);
+    if (is_ids_exist($cat_ids)) {
+      $cat_ids = implode(',', $cat_ids);
       $where .= " AND {$term_table}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
     }
     //除外カテゴリー指定
-    if (is_ids_exist($exclude_categories)) {
-      $ex_cat_ids = implode(',', $exclude_categories);
+    if (is_ids_exist($exclude_cat_ids)) {
+      $ex_cat_ids = implode(',', $exclude_cat_ids);
       $where .= " AND {$term_table}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
     // //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する

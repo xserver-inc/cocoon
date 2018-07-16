@@ -41,8 +41,10 @@ class PopularEntryWidgetItem extends WP_Widget {
     $pv_visible = apply_filters( 'widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
     //除外投稿IDを取得
     $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
-    //var_dump($exclude_post_ids);
     $exclude_post_ids = apply_filters( 'widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
+    //除外カテゴリーIDを取得
+    $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? '' : $instance['exclude_cat_ids'];
+    $exclude_cat_ids = apply_filters( 'widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
     $cat_ids = array();
     if ($widget_mode == 'category') {
@@ -54,6 +56,13 @@ class PopularEntryWidgetItem extends WP_Widget {
     } else {
       $exclude_post_ids = explode(',', $exclude_post_ids);
     }
+    $exclude_cat_ids = str_replace(' ', '', $exclude_cat_ids);
+    if (empty($exclude_cat_ids)) {
+      $exclude_cat_ids = array();
+    } else {
+      $exclude_cat_ids = explode(',', $exclude_cat_ids);
+    }
+
 
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての人気記事」のとき
@@ -77,7 +86,7 @@ class PopularEntryWidgetItem extends WP_Widget {
 
 
       //get_template_part('tmp/popular-entries');
-      generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids);
+      generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>
@@ -101,6 +110,8 @@ class PopularEntryWidgetItem extends WP_Widget {
 
     if (isset($new_instance['exclude_post_ids']))
       $instance['exclude_post_ids'] = strip_tags($new_instance['exclude_post_ids']);
+    if (isset($new_instance['exclude_cat_ids']))
+      $instance['exclude_cat_ids'] = strip_tags($new_instance['exclude_cat_ids']);
 
     return $instance;
   }
@@ -115,6 +126,7 @@ class PopularEntryWidgetItem extends WP_Widget {
         'ranking_visible' => 0,
         'pv_visible' => 0,
         'exclude_post_ids' => '',
+        'exclude_cat_ids' => '',
       );
     }
     $widget_mode = isset($instance['widget_mode']) ? esc_attr($instance['widget_mode']) : WM_DEFAULT;
@@ -125,6 +137,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
     $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
+    $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? esc_attr($instance['exclude_cat_ids']) : '';
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -190,6 +203,13 @@ class PopularEntryWidgetItem extends WP_Widget {
         <?php _e( '除外投稿ID（カンマ区切りでIDを入力してください）', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('exclude_post_ids'); ?>" name="<?php echo $this->get_field_name('exclude_post_ids'); ?>" type="text" value="<?php echo $exclude_post_ids; ?>" />
+    </p>
+    <?php //除外カテゴリーID ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('exclude_cat_ids'); ?>">
+        <?php _e( '除外カテゴリーID（カンマ区切りでIDを入力してください）', THEME_NAME ) ?>
+      </label>
+      <input class="widefat" id="<?php echo $this->get_field_id('exclude_cat_ids'); ?>" name="<?php echo $this->get_field_name('exclude_cat_ids'); ?>" type="text" value="<?php echo $exclude_cat_ids; ?>" />
     </p>
     <?php
   }
