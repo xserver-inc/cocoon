@@ -371,12 +371,20 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   // }
   //var_dump($categories);
 
+
+
+  //$exclude_categories = array(62);
+
+
+
+
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cats = implode(',', $categories);
     $expids = implode(',', $exclude_post_ids);
+    $excats = implode(',', $exclude_categories);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&expids='.$expids;
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&expids='.$expids.'&excats='.$excats;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
@@ -403,31 +411,37 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   $date = get_current_db_date();
 
 
-  $where = " WHERE {$access_table}.post_type = '$post_type'";
+  $where = " WHERE {$access_table}.post_type = '$post_type' ".PHP_EOL;
   if ($days != 'all') {
     $date_before = get_current_db_date_before($days);
-    $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ";
+    $where .= " AND {$access_table}.date BETWEEN '$date_before' AND '$date' ".PHP_EOL;
   }
   if ($days == 1) {
-    $where .= " AND {$access_table}.date = '$date' ";
+    $where .= " AND {$access_table}.date = '$date' ".PHP_EOL;
   }
   //_v($exclude_post_ids);
   // _v($exclude_post_ids[0]);
-  if (!empty($exclude_post_ids) && isset($exclude_post_ids[0]) && is_numeric($exclude_post_ids[0])) {
-    $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ";
+  if (is_ids_exist($exclude_post_ids)) {
+    $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ".PHP_EOL;
   }
   //3180, 3234
   if (!is_numeric($limit)) {
     $limit = 5;
   }
   //カテゴリを指定する場合
-  if (!empty($categories)) {
+  if (is_ids_exist($categories) || is_ids_exist($exclude_categories)) {
     global $post;
     $term_table = $wpdb->term_relationships;
     $joined_table = 'terms_accesses';
-    $cat_ids = implode(',', $categories);
-    if (!empty($categories)) {
-      $where .= " AND {$term_table}.term_taxonomy_id IN ({$cat_ids}) ";
+    //カテゴリー指定
+    if (is_ids_exist($categories)) {
+      $cat_ids = implode(',', $categories);
+      $where .= " AND {$term_table}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
+    }
+    //除外カテゴリー指定
+    if (is_ids_exist($exclude_categories)) {
+      $ex_cat_ids = implode(',', $exclude_categories);
+      $where .= " AND {$term_table}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
     // //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
     // $where = str_replace('WHERE', 'AND', $where);
@@ -436,7 +450,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         FROM (
 
           #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
-          SELECT {$access_table}.post_id, {$access_table}.count /* *でもいいけど */ FROM {$term_table}
+          SELECT * /* {$access_table}.post_id, {$access_table}.countでもいいけど */ FROM {$term_table}
             INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
             $where #WHERE句
             GROUP BY {$access_table}.id

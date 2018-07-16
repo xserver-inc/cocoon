@@ -1833,3 +1833,10 @@ function h($s) {
   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 endif;
+
+//IDに配列が適切か
+if ( !function_exists( 'is_ids_exist' ) ):
+function is_ids_exist($array){
+  return !empty($array) && isset($array[0]) && is_numeric($array[0]);
+}
+endif;
