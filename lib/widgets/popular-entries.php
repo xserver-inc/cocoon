@@ -41,6 +41,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $pv_visible = apply_filters( 'widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
     //除外投稿IDを取得
     $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
+    //var_dump($exclude_post_ids);
     $exclude_post_ids = apply_filters( 'widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
 
     $cat_ids = array();
@@ -113,7 +114,7 @@ class PopularEntryWidgetItem extends WP_Widget {
         'count_days' => PCD_DEFAULT,
         'ranking_visible' => 0,
         'pv_visible' => 0,
-        'exclude_post_ids' => array(),
+        'exclude_post_ids' => '',
       );
     }
     $widget_mode = isset($instance['widget_mode']) ? esc_attr($instance['widget_mode']) : WM_DEFAULT;
@@ -123,7 +124,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
     $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
-    $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : null;
+    $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>

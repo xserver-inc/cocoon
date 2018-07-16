@@ -364,7 +364,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array(), $exclude_post_ids = array()){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $categories = array(), $exclude_post_ids = array(), $exclude_categories = array()){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
@@ -411,7 +411,9 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   if ($days == 1) {
     $where .= " AND {$access_table}.date = '$date' ";
   }
-  if (!empty($exclude_post_ids)) {
+  //_v($exclude_post_ids);
+  // _v($exclude_post_ids[0]);
+  if (!empty($exclude_post_ids) && isset($exclude_post_ids[0]) && is_numeric($exclude_post_ids[0])) {
     $where .= " AND {$access_table}.post_id NOT IN(".implode(',', $exclude_post_ids).") ";
   }
   //3180, 3234
@@ -424,8 +426,11 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     $term_table = $wpdb->term_relationships;
     $joined_table = 'terms_accesses';
     $cat_ids = implode(',', $categories);
-    //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
-    $where = str_replace('WHERE', 'AND', $where);
+    if (!empty($categories)) {
+      $where .= " AND {$term_table}.term_taxonomy_id IN ({$cat_ids}) ";
+    }
+    // //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
+    // $where = str_replace('WHERE', 'AND', $where);
     $query = "
       SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count
         FROM (
@@ -433,7 +438,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
           #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
           SELECT {$access_table}.post_id, {$access_table}.count /* *でもいいけど */ FROM {$term_table}
             INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
-            WHERE {$term_table}.term_taxonomy_id IN ({$cat_ids})
             $where #WHERE句
             GROUP BY {$access_table}.id
 
