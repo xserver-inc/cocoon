@@ -219,10 +219,10 @@ function generate_amazon_product_link($atts){
   $asin = 'B0186FESEE';
 
   //アソシエートURLの作成
-  $base_url = 'https://www.amazon.co.jp/exec/obidos/ASIN';
+  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
   $associate_url = $base_url.'/'.$asin.'/';
   if (!empty($associate_tracking_id)) {
-    $associate_url .= $associate_url.$associate_tracking_id.'/';
+    $associate_url .= $associate_tracking_id.'/';
   }
   $associate_url = esc_url($associate_url);
 
@@ -231,8 +231,8 @@ function generate_amazon_product_link($atts){
   $tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
 
 
-  //APIエンドポイントURL
-  $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
+  // //APIエンドポイントURL
+  // $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
 
   // パラメータ
   $params = array(
@@ -253,9 +253,9 @@ function generate_amazon_product_link($atts){
 
 
   // エンドポイントを指定します。
-  $endpoint = "webservices.amazon.co.jp";
+  $endpoint = __( 'webservices.amazon.co.jp', THEME_NAME );
 
-  $uri = "/onca/xml";
+  $uri = '/onca/xml';
 
   $pairs = array();
 
@@ -306,7 +306,7 @@ function generate_amazon_product_link($atts){
     $xml = simplexml_load_string($res);
 
     //var_dump($xml);
-    //var_dump($xml->Error);
+    var_dump($xml->Error);
     if (!isset($xml->Error)) {
       $item = $xml->Items->Item;
       //var_dump($item);
