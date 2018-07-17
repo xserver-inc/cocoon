@@ -207,17 +207,22 @@ function generate_amazon_product_link($atts){
     'kw ' => null,
   ), $atts ) );
 
-  //ASIN
-  $asin = 'B013PUTPHK';
-  $error_message = __( 'アイテムを取得できませんでした。少し時間おいてもう一度読み込んでみてください。', THEME_NAME );
-  $tag = '<p class="amazon-item-error">'.$error_message.'</p>';
-
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
   //シークレットキー
   $secret_access_key = trim(get_amazon_api_secret_key());
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+
+  //ASIN
+  $asin = 'B013PUTPHK';
+  $asin = 'B0186FESEE';
+  $url_base = 'https://www.amazon.co.jp/exec/obidos/ASIN/';
+  $associate_url = esc_url($url_base.$asin.'/'.$associate_tracking_id.'/');
+  $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME );
+  $error_link = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
+  $tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
+
 
   //APIエンドポイントURL
   $endpoint = 'http://ecs.amazonaws.jp/onca/xml';
@@ -239,36 +244,65 @@ function generate_amazon_product_link($atts){
   //パラメータと値のペアをバイト順？で並べかえ。
   ksort($params);
 
-  //RFC 3986?でURLエンコード
-  $string_request = str_replace(
-      array('+', '%7E'),
-      array('%20', '~'),
-      http_build_query($params)
-  );
 
-  //URL分解
-  $parse_url = parse_url($endpoint);
+  // エンドポイントを指定します。
+  $endpoint = "webservices.amazon.co.jp";
 
-  //署名対象のリクエスト文字列を作成。
-  $string_signature = "GET\n{$parse_url["host"]}\n{$parse_url["path"]}\n$string_request";
+  $uri = "/onca/xml";
 
-  //RFC2104準拠のHMAC-SHA256ハッシュ化しbase64エンコード（これがsignatureとなる）
-  $signature = base64_encode(hash_hmac('sha256', $string_signature, $secret_access_key,true));
+  $pairs = array();
 
-  //URL組み立て
-  $url = $endpoint . '?' . $string_request . '&Signature=' . $signature;
+  // パラメータを key=value の形式に編集します。
+  // 同時にURLエンコードを行います。
+  foreach ($params as $key => $value) {
+      array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+  }
 
-  $res = get_http_content($url);
+  // パラメータを&で連結します。
+  $canonical_query_string = join("&", $pairs);
+
+  // 署名に必要な文字列を先頭に追加します。
+  $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
+
+  // RFC2104準拠のHMAC-SHA256ハッシュアルゴリズムの計算を行います。
+  // これがSignatureの値になります。
+  $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_access_key, true));
+
+  // Siginatureの値のURLエンコードを行い、リクエストの最後に追加します。
+  $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
+
+  $res = get_http_content($request_url);
+
+  // //RFC 3986?でURLエンコード
+  // $string_request = str_replace(
+  //     array('+', '%7E'),
+  //     array('%20', '~'),
+  //     http_build_query($params)
+  // );
+
+  // //URL分解
+  // $parse_url = parse_url($endpoint);
+
+  // //署名対象のリクエスト文字列を作成。
+  // $string_signature = "GET\n{$parse_url["host"]}\n{$parse_url["path"]}\n$string_request";
+
+  // //RFC2104準拠のHMAC-SHA256ハッシュ化しbase64エンコード（これがsignatureとなる）
+  // $signature = base64_encode(hash_hmac('sha256', $string_signature, $secret_access_key,true));
+
+  // //URL組み立て
+  // $url = $endpoint . '?' . $string_request . '&Signature=' . $signature;
+
+  // $res = get_http_content($url);
   //_v($res);
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
 
-    //_v($xml);
-    //_v($xml->Error);
+    //var_dump($xml);
+    var_dump($xml->Error);
     if (!isset($xml->Error)) {
       $item = $xml->Items->Item;
-      // var_dump($item);
+      //var_dump($item);
       // _v($item);
       $ASIN = esc_html($item->ASIN);
       $DetailPageURL = esc_url($item->DetailPageURL);
@@ -294,37 +328,31 @@ function generate_amazon_product_link($atts){
       $ListPrice = $item->ListPrice;
       $FormattedPrice = esc_html($item->FormattedPrice);
 
-      $url = esc_url(
-        'https://www.amazon.co.jp/exec/obidos/ASIN/'.$ASIN.'/'.$associate_tracking_id.'/'
-      );
-      //http://www.amazon.co.jp/exec/obidos/ASIN/B015G701MS/nelog1-22/
-      //https://www.amazon.co.jp/exec/obidos/ASIN/B015G701MS/nelog1-22/
+      $associate_url = esc_url($url_base.$ASIN.'/'.$associate_tracking_id.'/');
+
       //_v($item);
       $tag =
         '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
-          '<div class="amazon-item">'.
-            '<figure class="amazon-item-thumb">'.
-              '<a href="'.$url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
-                '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+          '<figure class="amazon-item-thumb">'.
+            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
+              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+            '</a>'.
+          '</figure>'.
+          '<div class="amazon-item-content">'.
+            '<div class="amazon-item-title">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
+                 $TitleHtml.
               '</a>'.
-            '</figure>'.
-            '<div class="amazon-item-content">'.
-              '<div class="amazon-item-title">'.
-                '<a href="'.$url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
-                   $TitleHtml.
-                '</a>'.
+            '</div>'.
+            '<div class="amazon-item-snippet">'.
+              '<div class="amazon-item-publisher">'.
+                $Publisher.
               '</div>'.
-              '<div class="amazon-item-snippet">'.
-                '<div class="amazon-item-publisher">'.
-                  $Publisher.
-                '</div>'.
-                '<div class="amazon-item-buttons">'.
-                '</div>'.
+              '<div class="amazon-item-buttons">'.
               '</div>'.
             '</div>'.
           '</div>'.
         '</div>';
-      //$tag = "画像URL：".$item->LargeImage->URL."\n";
     }
   }
   return $tag;

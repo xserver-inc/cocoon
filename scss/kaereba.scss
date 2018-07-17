@@ -2,7 +2,10 @@
 // カエレバ・ヨメレバ
 ///////////////////////////////////////
 
-.booklink-box, .kaerebalink-box, .tomarebalink-box {
+.booklink-box,
+.kaerebalink-box,
+.tomarebalink-box,
+.amazon-item-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
   margin: 0 auto 15px;
@@ -14,7 +17,10 @@
   // }
 }
 
-.booklink-image, .kaerebalink-image, .tomarebalink-image {
+.booklink-image,
+.kaerebalink-image,
+.tomarebalink-image,
+.amazon-item-thumb {
   width: 160px;
   min-width: 160px;
   margin: 0 auto 5px !important;
@@ -29,22 +35,32 @@
 }
 
 //.booklink-image img, .kaerebalink-image img {}
-.booklink-info, .kaerebalink-info, .tomarebalink-info {
+.booklink-info,
+.kaerebalink-info,
+.tomarebalink-info,
+.amazon-item-content {
   line-height: 125%;
   width: 100%;
 }
-.booklink-name, .kaerebalink-name, .tomarebalink-name {
+.booklink-name,
+.kaerebalink-name,
+.tomarebalink-name,
+.amazon-item-title {
   margin: 0 0 4px 0;
   a{
     color: #0066cc;
     text-decoration: underline;
-  }
-  >a{
-    font-size: 16px;
     &:hover{
       color: #FF9900;
     }
   }
+  // >a{
+  //   font-size: 16px;
+  // }
+}
+
+.amazon-item-snippet{
+  font-size: 0.8em;
 }
 
 .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
@@ -82,19 +98,29 @@
 
 @media screen and (min-width: 768px) {
 
-  .booklink-box, .kaerebalink-box, .tomarebalink-box {
+  .booklink-box,
+  .kaerebalink-box,
+  .tomarebalink-box,
+  .amazon-item-box {
     text-align: left;
     display: flex;
+    font-size: inherit !important;
   }
 
-  .booklink-image, .kaerebalink-image, .tomarebalink-image {
+  .booklink-image,
+  .kaerebalink-image,
+  .tomarebalink-image,
+  .amazon-item-thumb {
     vertical-align: top;
     box-sizing: border-box;
     min-width: auto !important;
   }
 
 
-  .booklink-info, .kaerebalink-info, .tomarebalink-info {
+  .booklink-info,
+  .kaerebalink-info,
+  .tomarebalink-info,
+  .amazon-item-content {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
@@ -103,12 +129,15 @@
     width: 100%;
   }
 
-  .booklink-name, .kaerebalink-name, .tomarebalink-name {
-    margin: 0 0 24px 0;
-    >a{
-      font-size: 16px;
-    }
-  }
+  // .booklink-name,
+  // .kaerebalink-name,
+  // .tomarebalink-name,
+  // .amazon-item-title {
+  //   margin: 0 0 24px 0;
+  //   // >a{
+  //   //   font-size: 16px;
+  //   // }
+  // }
 
   .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
     margin: 6px 0 0 0;

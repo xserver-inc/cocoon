@@ -3692,7 +3692,10 @@ div.sbs-think .speech-balloon::after {
   right: -44px;
 }
 
-.booklink-box, .kaerebalink-box, .tomarebalink-box {
+.booklink-box,
+.kaerebalink-box,
+.tomarebalink-box,
+.amazon-item-box {
   padding: 22px 25px 22px 25px;
   width: 94%;
   margin: 0 auto 15px;
@@ -3701,36 +3704,58 @@ div.sbs-think .speech-balloon::after {
   text-align: center;
 }
 
-.booklink-image, .kaerebalink-image, .tomarebalink-image {
+.booklink-image,
+.kaerebalink-image,
+.tomarebalink-image,
+.amazon-item-thumb {
   width: 160px;
   min-width: 160px;
   margin: 0 auto 5px !important;
   float: none !important;
 }
-.booklink-image *, .kaerebalink-image *, .tomarebalink-image * {
+.booklink-image *,
+.kaerebalink-image *,
+.tomarebalink-image *,
+.amazon-item-thumb * {
   display: block;
 }
-.booklink-image > a > img, .kaerebalink-image > a > img, .tomarebalink-image > a > img {
+.booklink-image > a > img,
+.kaerebalink-image > a > img,
+.tomarebalink-image > a > img,
+.amazon-item-thumb > a > img {
   margin: 0 auto;
 }
 
-.booklink-info, .kaerebalink-info, .tomarebalink-info {
+.booklink-info,
+.kaerebalink-info,
+.tomarebalink-info,
+.amazon-item-content {
   line-height: 125%;
   width: 100%;
 }
 
-.booklink-name, .kaerebalink-name, .tomarebalink-name {
+.booklink-name,
+.kaerebalink-name,
+.tomarebalink-name,
+.amazon-item-title {
   margin: 0 0 4px 0;
 }
-.booklink-name a, .kaerebalink-name a, .tomarebalink-name a {
+.booklink-name a,
+.kaerebalink-name a,
+.tomarebalink-name a,
+.amazon-item-title a {
   color: #0066cc;
   text-decoration: underline;
 }
-.booklink-name > a, .kaerebalink-name > a, .tomarebalink-name > a {
-  font-size: 16px;
-}
-.booklink-name > a:hover, .kaerebalink-name > a:hover, .tomarebalink-name > a:hover {
+.booklink-name a:hover,
+.kaerebalink-name a:hover,
+.tomarebalink-name a:hover,
+.amazon-item-title a:hover {
   color: #FF9900;
+}
+
+.amazon-item-snippet {
+  font-size: 0.8em;
 }
 
 .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
@@ -3761,30 +3786,33 @@ div.sbs-think .speech-balloon::after {
 }
 
 @media screen and (min-width: 768px) {
-  .booklink-box, .kaerebalink-box, .tomarebalink-box {
+  .booklink-box,
+  .kaerebalink-box,
+  .tomarebalink-box,
+  .amazon-item-box {
     text-align: left;
     display: flex;
+    font-size: inherit !important;
   }
 
-  .booklink-image, .kaerebalink-image, .tomarebalink-image {
+  .booklink-image,
+  .kaerebalink-image,
+  .tomarebalink-image,
+  .amazon-item-thumb {
     vertical-align: top;
     box-sizing: border-box;
     min-width: auto !important;
   }
 
-  .booklink-info, .kaerebalink-info, .tomarebalink-info {
+  .booklink-info,
+  .kaerebalink-info,
+  .tomarebalink-info,
+  .amazon-item-content {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
     padding-left: 25px;
     width: 100%;
-  }
-
-  .booklink-name, .kaerebalink-name, .tomarebalink-name {
-    margin: 0 0 24px 0;
-  }
-  .booklink-name > a, .kaerebalink-name > a, .tomarebalink-name > a {
-    font-size: 16px;
   }
 
   .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
@@ -4692,7 +4720,7 @@ div.fb-like-mobile {
 
 #wpforo-wrap .anchor-icon,
 .gallery .anchor-icon,
-.amazonjs_item
+.amazonjs_item .anchor-icon,
 .kaerebalink-box .anchor-icon,
 .booklink-box .anchor-icon,
 .tomarebalink-box .anchor-icon,
