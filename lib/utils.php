@@ -1840,3 +1840,14 @@ function is_ids_exist($array){
   return !empty($array) && isset($array[0]) && is_numeric($array[0]);
 }
 endif;
+
+//ファビコンを取得
+if ( !function_exists( 'get_site_favicon_url' ) ):
+function get_site_favicon_url(){
+  $icon = get_site_icon_url();
+  if (!$icon) {
+    $icon = get_template_directory_uri().'/images/site-icon32x32.png';
+  }
+  return $icon;
+}
+endif;

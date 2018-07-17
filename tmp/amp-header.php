@@ -10,6 +10,10 @@
 <head>
 <meta charset="utf-8">
 <title><?php echo wp_get_document_title(); ?></title>
+<?php //サイトアイコンの呼び出し
+if ($icon = get_site_favicon_url()): ?>
+<link rel="shortcut icon" href="<?php echo $icon; ?>" >
+<?php endif ?>
 <?php //canonicalタグの出力
 generate_canonical_tag() ?>
 <?php //メタディスクリプションタグ
@@ -81,7 +85,7 @@ get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 <?php //ユーザーカスタマイズ用
 get_template_part('tmp-user/amp-head-insert'); ?>
 </head>
-<body <?php body_class('amp'); ?> itemscope itemtype="https://schema.org/WebPage">
+<body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
