@@ -210,6 +210,7 @@ function generate_amazon_product_link($atts){
   //ASIN
   $asin = 'B013PUTPHK';
   $error_message = __( 'アイテムを取得できませんでした。少し時間おいてもう一度読み込んでみてください。', THEME_NAME );
+  $tag = '<p class="amazon-item-error">'.$error_message.'</p>';
 
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
@@ -267,21 +268,54 @@ function generate_amazon_product_link($atts){
     //_v($xml->Error);
     if (!isset($xml->Error)) {
       $item = $xml->Items->Item;
-      $ASIN = $item['ASIN'];
-      $DetailPageURL = $item['DetailPageURL'];
+      $ASIN = esc_html($item['ASIN']);
+      $DetailPageURL = esc_url($item['DetailPageURL']);
       $SmallImage = $item['SmallImage'];
       $MediumImage = $item['MediumImage'];
+      $MediumImageUrl = esc_url($MediumImage['URL']);
+      $MediumImageWidth = esc_html($MediumImage['Width']);
+      $MediumImageHeight = esc_html($MediumImage['Height']);
       $LargeImage = $item['LargeImage'];
       $ItemAttributes = $item['ItemAttributes'];
+      $Title = $ItemAttributes['Title'];
+      $TitleAttr = esc_attr($Title);
+      $TitleHtml = esc_html($Title);
+      $ProductGroup = esc_html($ItemAttributes['ProductGroup']);
+      $ProductGroupClass = strtolower($ProductGroup);
+      $Publisher = esc_html($ItemAttributes['Publisher']);
+      $Manufacturer = esc_html($ItemAttributes['Manufacturer']);
+      $Publisher = esc_html($ItemAttributes['Publisher']);
+      $ListPrice = $item['ListPrice'];
+      $FormattedPrice = esc_html($item['FormattedPrice']);
+
+      $url = esc_url(
+        'https://www.amazon.co.jp/exec/obidos/ASIN/'.$ASIN.'/'.$associate_tracking_id.'/'
+      );
+      //http://www.amazon.co.jp/exec/obidos/ASIN/B015G701MS/nelog1-22/
+      //https://www.amazon.co.jp/exec/obidos/ASIN/B015G701MS/nelog1-22/
       //_v($item);
-      $tag = "画像URL：".$item->LargeImage->URL."\n";
-    } else {
-      $tag = $error_message;
+      $tag =
+        '<a href="'.$url.'" class="amazon-item-wrap a-wrap '.$ProductGroupClass.' cf" target="_blank" title="'.$TitleAttr.'">'.
+          '<div class="amazon-item">'.
+            '<figure class="amazon-item-thumb">'.
+              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'">'.
+            '</figure>'.
+            '<div class="amazon-item-content">'.
+              '<div class="amazon-item-title">'.
+                $TitleHtml.
+              '</div>'.
+              '<div class="amazon-item-snippet">'.
+                '<div class="amazon-item-publisher">'.
+                  $Publisher.
+                '</div>'.
+              '</div>'.
+            '</div>'.
+          '</div>'.
+        '</a>';
+      //$tag = "画像URL：".$item->LargeImage->URL."\n";
     }
-  } else {
-    $tag = $error_message;
   }
-  return '<div class="amazon-item">'.$tag.'</div>';
+  return $tag;
 }
 endif;
 
