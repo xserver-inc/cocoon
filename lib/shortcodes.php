@@ -217,15 +217,22 @@ function generate_amazon_product_link($atts){
   //ASIN
   $asin = 'B013PUTPHK';
   $asin = 'B0186FESEE';
+
+  //アソシエートURLの作成
   $url_base = 'https://www.amazon.co.jp/exec/obidos/ASIN/';
-  $associate_url = esc_url($url_base.$asin.'/'.$associate_tracking_id.'/');
+  $associate_url = $url_base.$asin.'/';
+  if (!empty($associate_tracking_id)) {
+    $associate_url .= $associate_url.$associate_tracking_id.'/';
+  }
+  $associate_url = esc_url($associate_url);
+
   $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME );
   $error_link = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
   $tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
 
 
   //APIエンドポイントURL
-  $endpoint = 'http://ecs.amazonaws.jp/onca/xml';
+  $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
 
   // パラメータ
   $params = array(
@@ -328,7 +335,7 @@ function generate_amazon_product_link($atts){
       $ListPrice = $item->ListPrice;
       $FormattedPrice = esc_html($item->FormattedPrice);
 
-      $associate_url = esc_url($url_base.$ASIN.'/'.$associate_tracking_id.'/');
+      //$associate_url = esc_url($url_base.$ASIN.'/'.$associate_tracking_id.'/');
 
       //_v($item);
       $tag =
