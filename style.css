@@ -4706,7 +4706,8 @@ div.fb-like-mobile {
 .tomarebalink-box .anchor-icon,
 .wpf-sbtn-wrap .anchor-icon,
 .btn .anchor-icon,
-.ranking-item-link-buttons a .anchor-icon {
+.ranking-item-link-buttons a .anchor-icon,
+.a-wrap .anchor-icon {
   display: none !important;
 }
 
