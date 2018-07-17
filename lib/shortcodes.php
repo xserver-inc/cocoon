@@ -219,8 +219,8 @@ function generate_amazon_product_link($atts){
   $asin = 'B0186FESEE';
 
   //アソシエートURLの作成
-  $url_base = 'https://www.amazon.co.jp/exec/obidos/ASIN/';
-  $associate_url = $url_base.$asin.'/';
+  $base_url = 'https://www.amazon.co.jp/exec/obidos/ASIN';
+  $associate_url = $base_url.'/'.$asin.'/';
   if (!empty($associate_tracking_id)) {
     $associate_url .= $associate_url.$associate_tracking_id.'/';
   }
@@ -335,7 +335,7 @@ function generate_amazon_product_link($atts){
       $ListPrice = $item->ListPrice;
       $FormattedPrice = esc_html($item->FormattedPrice);
 
-      //$associate_url = esc_url($url_base.$ASIN.'/'.$associate_tracking_id.'/');
+      //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
       //_v($item);
       $tag =
