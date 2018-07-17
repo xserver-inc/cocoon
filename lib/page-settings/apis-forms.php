@@ -61,6 +61,18 @@
           </td>
         </tr>
 
+        <!-- キャッシュの保存期間 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_API_CACHE_RETENTION_PERIOD, __( 'キャッシュの保存期間', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), 30, 1, 365);
+            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
       </tbody>
     </table>
