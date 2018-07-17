@@ -268,25 +268,30 @@ function generate_amazon_product_link($atts){
     //_v($xml->Error);
     if (!isset($xml->Error)) {
       $item = $xml->Items->Item;
-      $ASIN = esc_html($item['ASIN']);
-      $DetailPageURL = esc_url($item['DetailPageURL']);
-      $SmallImage = $item['SmallImage'];
-      $MediumImage = $item['MediumImage'];
-      $MediumImageUrl = esc_url($MediumImage['URL']);
-      $MediumImageWidth = esc_html($MediumImage['Width']);
-      $MediumImageHeight = esc_html($MediumImage['Height']);
-      $LargeImage = $item['LargeImage'];
-      $ItemAttributes = $item['ItemAttributes'];
-      $Title = $ItemAttributes['Title'];
+      // var_dump($item);
+      // _v($item);
+      $ASIN = esc_html($item->ASIN);
+      $DetailPageURL = esc_url($item->DetailPageURL);
+
+      $SmallImage = $item->SmallImage;
+      $MediumImage = $item->MediumImage;
+      $MediumImageUrl = esc_url($MediumImage->URL);
+      $MediumImageWidth = esc_html($MediumImage->Width);
+      $MediumImageHeight = esc_html($MediumImage->Height);
+      $LargeImage = $item->LargeImage;
+
+      $Title = $ItemAttributes->Title;
       $TitleAttr = esc_attr($Title);
       $TitleHtml = esc_html($Title);
-      $ProductGroup = esc_html($ItemAttributes['ProductGroup']);
+
+      $ItemAttributes = $item->ItemAttributes;
+      $ProductGroup = esc_html($ItemAttributes->ProductGroup);
       $ProductGroupClass = strtolower($ProductGroup);
-      $Publisher = esc_html($ItemAttributes['Publisher']);
-      $Manufacturer = esc_html($ItemAttributes['Manufacturer']);
-      $Publisher = esc_html($ItemAttributes['Publisher']);
-      $ListPrice = $item['ListPrice'];
-      $FormattedPrice = esc_html($item['FormattedPrice']);
+      $Publisher = esc_html($ItemAttributes->Publisher);
+      $Manufacturer = esc_html($ItemAttributes->Manufacturer);
+      $Publisher = esc_html($ItemAttributes->Publisher);
+      $ListPrice = $item->ListPrice;
+      $FormattedPrice = esc_html($item->FormattedPrice);
 
       $url = esc_url(
         'https://www.amazon.co.jp/exec/obidos/ASIN/'.$ASIN.'/'.$associate_tracking_id.'/'
