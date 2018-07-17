@@ -174,3 +174,114 @@ function login_user_only_shortcode( $atts, $content = null ) {
 }
 endif;
 
+if ( !function_exists( 'get_http_content' ) ):
+function get_http_content($url){
+  try {
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => true,
+    ]);
+    $body = curl_exec($ch);
+    $errno = curl_errno($ch);
+    $error = curl_error($ch);
+    curl_close($ch);
+    if (CURLE_OK !== $errno) {
+      throw new RuntimeException($error, $errno);
+    }
+    return $body;
+  } catch (Exception $e) {
+    return false;
+    //echo $e->getMessage();
+  }
+}
+endif;
+
+//Amazon商品リンク作成
+add_shortcode('amazon', 'generate_amazon_product_link');
+if ( !function_exists( 'generate_amazon_product_link' ) ):
+function generate_amazon_product_link($atts){
+  extract( shortcode_atts( array(
+    'asin ' => null,
+    //'isbn ' => null,
+    'kw ' => null,
+  ), $atts ) );
+
+  //ASIN
+  $asin = 'B013PUTPHK';
+  $error_message = __( 'アイテムを取得できませんでした。少し時間おいてもう一度読み込んでみてください。', THEME_NAME );
+
+  //アクセスキー
+  $access_key_id = trim(get_amazon_api_access_key_id());
+  //シークレットキー
+  $secret_access_key = trim(get_amazon_api_secret_key());
+  //アソシエイトタグ
+  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+
+  //APIエンドポイントURL
+  $endpoint = 'http://ecs.amazonaws.jp/onca/xml';
+
+  // パラメータ
+  $params = array(
+    //共通↓
+    'Service' => 'AWSECommerceService',
+    'AWSAccessKeyId' => $access_key_id,
+    'AssociateTag' => $associate_tracking_id,
+    //リクエストにより変更↓
+    'Operation' => 'ItemLookup',
+    'ItemId' => $asin,
+    'ResponseGroup' => 'ItemAttributes,Images',
+    //署名用タイムスタンプ
+    'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
+  );
+
+  //パラメータと値のペアをバイト順？で並べかえ。
+  ksort($params);
+
+  //RFC 3986?でURLエンコード
+  $string_request = str_replace(
+      array('+', '%7E'),
+      array('%20', '~'),
+      http_build_query($params)
+  );
+
+  //URL分解
+  $parse_url = parse_url($endpoint);
+
+  //署名対象のリクエスト文字列を作成。
+  $string_signature = "GET\n{$parse_url["host"]}\n{$parse_url["path"]}\n$string_request";
+
+  //RFC2104準拠のHMAC-SHA256ハッシュ化しbase64エンコード（これがsignatureとなる）
+  $signature = base64_encode(hash_hmac('sha256', $string_signature, $secret_access_key,true));
+
+  //URL組み立て
+  $url = $endpoint . '?' . $string_request . '&Signature=' . $signature;
+
+  $res = get_http_content($url);
+  //_v($res);
+  if ($res) {
+    // xml取得
+    $xml = simplexml_load_string($res);
+
+    //_v($xml);
+    //_v($xml->Error);
+    if (!isset($xml->Error)) {
+      $item = $xml->Items->Item;
+      $ASIN = $item['ASIN'];
+      $DetailPageURL = $item['DetailPageURL'];
+      $SmallImage = $item['SmallImage'];
+      $MediumImage = $item['MediumImage'];
+      $LargeImage = $item['LargeImage'];
+      $ItemAttributes = $item['ItemAttributes'];
+      //_v($item);
+      $tag = "画像URL：".$item->LargeImage->URL."\n";
+    } else {
+      $tag = $error_message;
+    }
+  } else {
+    $tag = $error_message;
+  }
+  return '<div class="amazon-item">'.$tag.'</div>';
+}
+endif;
+
