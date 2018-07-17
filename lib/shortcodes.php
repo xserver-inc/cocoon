@@ -280,11 +280,12 @@ function generate_amazon_product_link($atts){
       $MediumImageHeight = esc_html($MediumImage->Height);
       $LargeImage = $item->LargeImage;
 
+      $ItemAttributes = $item->ItemAttributes;
+
       $Title = $ItemAttributes->Title;
       $TitleAttr = esc_attr($Title);
       $TitleHtml = esc_html($Title);
 
-      $ItemAttributes = $item->ItemAttributes;
       $ProductGroup = esc_html($ItemAttributes->ProductGroup);
       $ProductGroupClass = strtolower($ProductGroup);
       $Publisher = esc_html($ItemAttributes->Publisher);
@@ -300,23 +301,29 @@ function generate_amazon_product_link($atts){
       //https://www.amazon.co.jp/exec/obidos/ASIN/B015G701MS/nelog1-22/
       //_v($item);
       $tag =
-        '<a href="'.$url.'" class="amazon-item-wrap a-wrap '.$ProductGroupClass.' cf" target="_blank" title="'.$TitleAttr.'">'.
+        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
           '<div class="amazon-item">'.
             '<figure class="amazon-item-thumb">'.
-              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'">'.
+              '<a href="'.$url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
+                '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+              '</a>'.
             '</figure>'.
             '<div class="amazon-item-content">'.
               '<div class="amazon-item-title">'.
-                $TitleHtml.
+                '<a href="'.$url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
+                   $TitleHtml.
+                '</a>'.
               '</div>'.
               '<div class="amazon-item-snippet">'.
                 '<div class="amazon-item-publisher">'.
                   $Publisher.
                 '</div>'.
+                '<div class="amazon-item-buttons">'.
+                '</div>'.
               '</div>'.
             '</div>'.
           '</div>'.
-        '</a>';
+        '</div>';
       //$tag = "画像URL：".$item->LargeImage->URL."\n";
     }
   }

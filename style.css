@@ -4690,24 +4690,16 @@ div.fb-like-mobile {
   max-width: 120px;
 }
 
-.ranking-items .anchor-icon,
 #wpforo-wrap .anchor-icon,
 .gallery .anchor-icon,
 .amazonjs_item
-.btn .anchor-icon,
-.amazonjs_item .ranking-item-link-buttons a .anchor-icon,
-.ranking-item-link-buttons .amazonjs_item a .anchor-icon,
-.ad-area .anchor-icon,
-.author-box .anchor-icon,
-.new-entry-cards .anchor-icon,
-.popular-entry-cards .anchor-icon,
 .kaerebalink-box .anchor-icon,
 .booklink-box .anchor-icon,
 .tomarebalink-box .anchor-icon,
 .wpf-sbtn-wrap .anchor-icon,
 .btn .anchor-icon,
 .ranking-item-link-buttons a .anchor-icon,
-.a-wrap .anchor-icon {
+.no-icon .anchor-icon {
   display: none !important;
 }
 

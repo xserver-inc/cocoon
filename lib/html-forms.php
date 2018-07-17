@@ -813,7 +813,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   //var_dump($records);
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   ?>
-  <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
+  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
@@ -901,7 +901,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>
-  <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
+  <div class="new-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
   <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
@@ -940,7 +940,7 @@ function generate_author_box_tag($label){
   }
 
   ?>
-  <div class="author-box cf">
+  <div class="author-box no-icon cf">
     <?php //ウィジェット名がある場合
     if ($label): ?>
       <div class="author-widget-name">
