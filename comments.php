@@ -49,7 +49,7 @@ if ( is_comment_allow() || have_comments() ): ?>
   } else {
     //AMPページ?>
     <h3 id="reply-title" class="comment-reply-title"><?php echo get_comment_form_heading(); ?></h3>
-    <a class="comment-btn" href="<?php echo get_permalink().'#respond'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
+    <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
     <?php
   }
 
