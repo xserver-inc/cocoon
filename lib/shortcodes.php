@@ -299,7 +299,7 @@ function generate_amazon_product_link($atts){
     $xml = simplexml_load_string($res);
 
     //var_dump($xml);
-    var_dump($xml->Error);
+    //var_dump($xml->Error);
     if (!isset($xml->Error)) {
       $item = $xml->Items->Item;
       //var_dump($item);
