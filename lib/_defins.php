@@ -142,6 +142,8 @@ define('TRANSIENT_SHARE_PREFIX', THEME_NAME.'_share_count_');
 define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
 //人気記事ウィジェットのプレフィックス
 define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
+//Amazon APIのプレフィックス
+define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
 
 //最初のH2見出し用の優先度
 define('BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD', 10002);

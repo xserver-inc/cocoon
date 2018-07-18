@@ -202,9 +202,9 @@ add_shortcode('amazon', 'generate_amazon_product_link');
 if ( !function_exists( 'generate_amazon_product_link' ) ):
 function generate_amazon_product_link($atts){
   extract( shortcode_atts( array(
-    'asin ' => null,
+    'asin' => null,
     //'isbn ' => null,
-    'kw ' => null,
+    'kw' => null,
   ), $atts ) );
 
   //アクセスキー
@@ -229,7 +229,17 @@ function generate_amazon_product_link($atts){
     return get_message_box_tag($error_message, 'amazon-item-error warning-box');
   }
 
+  //キャッシュの存在
+  $transient_id = TRANSIENT_AMAZON_API_PREFIX.$asin;
+  $tag_cache = get_transient( $transient_id );
+  if ($tag_cache) {
+    //_v($tag_cache);
+    return $tag_cache;
+  }
 
+  ///////////////////////////////////////
+  // アソシエイトAPI設定
+  ///////////////////////////////////////
   //アソシエートURLの作成
   $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
   $associate_url = $base_url.'/'.$asin.'/';
@@ -237,11 +247,6 @@ function generate_amazon_product_link($atts){
     $associate_url .= $associate_tracking_id.'/';
   }
   $associate_url = esc_url($associate_url);
-
-  $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME ).'<br>'.'<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
-  $tag = get_message_box_tag($error_message, 'amazon-item-error warning-box');
-  //$tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
-
 
   // //APIエンドポイントURL
   // $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
@@ -292,89 +297,83 @@ function generate_amazon_product_link($atts){
 
   $res = get_http_content($request_url);
 
-  // //RFC 3986?でURLエンコード
-  // $string_request = str_replace(
-  //     array('+', '%7E'),
-  //     array('%20', '~'),
-  //     http_build_query($params)
-  // );
-
-  // //URL分解
-  // $parse_url = parse_url($endpoint);
-
-  // //署名対象のリクエスト文字列を作成。
-  // $string_signature = "GET\n{$parse_url["host"]}\n{$parse_url["path"]}\n$string_request";
-
-  // //RFC2104準拠のHMAC-SHA256ハッシュ化しbase64エンコード（これがsignatureとなる）
-  // $signature = base64_encode(hash_hmac('sha256', $string_signature, $secret_access_key,true));
-
-  // //URL組み立て
-  // $url = $endpoint . '?' . $string_request . '&Signature=' . $signature;
-
-  // $res = get_http_content($url);
-  //_v($res);
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
+    if (isset($xml->Error)) {
+      $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME ).'<br>'.'<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
+      return get_message_box_tag($error_message, 'amazon-item-error warning-box');
+    }
+    $item = $xml->Items->Item;
 
-    //var_dump($xml);
-    var_dump($xml->Error);
-    if (!isset($xml->Error)) {
-      $item = $xml->Items->Item;
-      //var_dump($item);
-      // _v($item);
-      $ASIN = esc_html($item->ASIN);
-      $DetailPageURL = esc_url($item->DetailPageURL);
+    //var_dump($item);
+    // _v($item);
+    $ASIN = esc_html($item->ASIN);
+    $DetailPageURL = esc_url($item->DetailPageURL);
 
-      $SmallImage = $item->SmallImage;
-      $MediumImage = $item->MediumImage;
-      $MediumImageUrl = esc_url($MediumImage->URL);
-      $MediumImageWidth = esc_html($MediumImage->Width);
-      $MediumImageHeight = esc_html($MediumImage->Height);
-      $LargeImage = $item->LargeImage;
+    $SmallImage = $item->SmallImage;
+    $MediumImage = $item->MediumImage;
+    $MediumImageUrl = esc_url($MediumImage->URL);
+    $MediumImageWidth = esc_html($MediumImage->Width);
+    $MediumImageHeight = esc_html($MediumImage->Height);
+    $LargeImage = $item->LargeImage;
 
-      $ItemAttributes = $item->ItemAttributes;
+    $ItemAttributes = $item->ItemAttributes;
 
-      $Title = $ItemAttributes->Title;
-      $TitleAttr = esc_attr($Title);
-      $TitleHtml = esc_html($Title);
+    $Title = $ItemAttributes->Title;
+    $TitleAttr = esc_attr($Title);
+    $TitleHtml = esc_html($Title);
 
-      $ProductGroup = esc_html($ItemAttributes->ProductGroup);
-      $ProductGroupClass = strtolower($ProductGroup);
-      $Publisher = esc_html($ItemAttributes->Publisher);
-      $Manufacturer = esc_html($ItemAttributes->Manufacturer);
-      $Publisher = esc_html($ItemAttributes->Publisher);
-      $ListPrice = $item->ListPrice;
-      $FormattedPrice = esc_html($item->FormattedPrice);
+    $ProductGroup = esc_html($ItemAttributes->ProductGroup);
+    $ProductGroupClass = strtolower($ProductGroup);
+    $Publisher = esc_html($ItemAttributes->Publisher);
+    $Manufacturer = esc_html($ItemAttributes->Manufacturer);
+    $Binding = esc_html($ItemAttributes->Binding);
+    if ($Publisher) {
+      $maker = $Publisher;
+    } elseif ($Manufacturer) {
+      $maker = $Manufacturer;
+    } else {
+      $maker = $Binding;
+    }
 
-      //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
+    $ListPrice = $item->ListPrice;
+    $FormattedPrice = esc_html($item->FormattedPrice);
 
-      //_v($item);
-      $tag =
-        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
-          '<figure class="amazon-item-thumb">'.
-            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
-              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+    //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
+
+    //_v($item);
+    $tag =
+      '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
+        '<figure class="amazon-item-thumb">'.
+          '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
+            '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+          '</a>'.
+        '</figure>'.
+        '<div class="amazon-item-content">'.
+          '<div class="amazon-item-title">'.
+            '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
+               $TitleHtml.
             '</a>'.
-          '</figure>'.
-          '<div class="amazon-item-content">'.
-            '<div class="amazon-item-title">'.
-              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
-                 $TitleHtml.
-              '</a>'.
+          '</div>'.
+          '<div class="amazon-item-snippet">'.
+            '<div class="amazon-item-maker">'.
+              $maker.
             '</div>'.
-            '<div class="amazon-item-snippet">'.
-              '<div class="amazon-item-publisher">'.
-                $Publisher.
-              '</div>'.
-              '<div class="amazon-item-buttons">'.
-              '</div>'.
+            '<div class="amazon-item-buttons">'.
             '</div>'.
           '</div>'.
-        '</div>';
-    }
+        '</div>'.
+      '</div>';
+    //Amazon APIキャッシュの保存
+    set_transient(
+      $transient_id,
+      $tag,
+      60 * 60 * intval(get_api_cache_retention_period()) );
+
+    return $tag;
   }
-  return $tag;
+
 }
 endif;
 
