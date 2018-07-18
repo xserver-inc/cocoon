@@ -3759,19 +3759,6 @@ div.sbs-think .speech-balloon::after {
 .amazon-item-title {
   margin: 0 0 4px 0;
 }
-.booklink-name a,
-.kaerebalink-name a,
-.tomarebalink-name a,
-.amazon-item-title a {
-  color: #0066cc;
-  text-decoration: underline;
-}
-.booklink-name a:hover,
-.kaerebalink-name a:hover,
-.tomarebalink-name a:hover,
-.amazon-item-title a:hover {
-  color: #FF9900;
-}
 
 .amazon-item-snippet {
   font-size: 0.8em;
