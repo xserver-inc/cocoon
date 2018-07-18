@@ -197,6 +197,13 @@ function get_http_content($url){
 }
 endif;
 
+//Amazon商品紹介リンクの外枠で囲む
+if ( !function_exists( 'wrap_amazon_item_box' ) ):
+function wrap_amazon_item_box($message){
+  return '<div class="amazon-item-box no-icon amazon-item-error cf"><div>'.$message.'</div></div>';
+}
+endif;
+
 //Amazon商品リンク作成
 add_shortcode('amazon', 'generate_amazon_product_link');
 if ( !function_exists( 'generate_amazon_product_link' ) ):
@@ -217,7 +224,7 @@ function generate_amazon_product_link($atts){
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
     $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
-    return get_message_box_tag($error_message, 'amazon-item-error danger-box');
+    return wrap_amazon_item_box($error_message);
   }
 
   // //ASIN
@@ -226,7 +233,7 @@ function generate_amazon_product_link($atts){
   //ASINがない場合
   if (empty($asin)) {
     $error_message = __( 'Amazon商品リンクショートコード内にASINが入力されていません。', THEME_NAME );
-    return get_message_box_tag($error_message, 'amazon-item-error warning-box');
+    return wrap_amazon_item_box($error_message);
   }
 
   //キャッシュの存在
@@ -300,9 +307,17 @@ function generate_amazon_product_link($atts){
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
+    //var_dump($xml->Error);
     if (isset($xml->Error)) {
       $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME ).'<br>'.'<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
-      return get_message_box_tag($error_message, 'amazon-item-error warning-box');
+
+      if (is_user_administrator()) {
+        $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
+        $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
+        $admin_message .= '<span class="red">'.__( '管理者用エラーメッセージはサイト管理者のみに表示されています。不具合が改善されない場合は少し時間おいてリロードしてください。それでも改善されない場合は、以下の不具合フォーラムにエラーメッセージとともにご連絡ください。', THEME_NAME ).'</span><br><a href="" target="_blank">'.__( '不具合報告フォーラム', THEME_NAME ).'</a>';
+        $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'danger-box fz-14px');
+      }
+      return wrap_amazon_item_box($error_message);
     }
     $item = $xml->Items->Item;
 

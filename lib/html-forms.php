@@ -1029,6 +1029,6 @@ endif;
 
 if ( !function_exists( 'get_message_box_tag' ) ):
 function get_message_box_tag($message, $classes){
-  return '<p class="'.$classes.'">'.$message.'</p>';
+  return '<div class="'.$classes.'">'.$message.'</div>';
 }
 endif;
