@@ -17,6 +17,18 @@
   // }
 }
 
+.amazon-item-box{
+  position: relative;
+  &::after{
+    @include fontawesome('\f270');
+    position: absolute;
+    bottom: 0;
+    right: 6px;
+    font-size: 24px;
+    color: $thin;
+  }
+}
+
 .booklink-image,
 .kaerebalink-image,
 .tomarebalink-image,

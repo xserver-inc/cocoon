@@ -3704,6 +3704,20 @@ div.sbs-think .speech-balloon::after {
   text-align: center;
 }
 
+.amazon-item-box {
+  position: relative;
+}
+.amazon-item-box::after {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+  position: absolute;
+  bottom: 0;
+  right: 6px;
+  font-size: 24px;
+  color: #ccc;
+}
+
 .booklink-image,
 .kaerebalink-image,
 .tomarebalink-image,
