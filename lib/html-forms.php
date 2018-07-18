@@ -125,6 +125,13 @@ function generate_label_tag($name, $caption){?>
 }
 endif;
 
+//必須入力項目案内
+if ( !function_exists( 'generate_necessity_input_tag' ) ):
+function generate_necessity_input_tag($message = '*'){?>
+  <span class="necessity-input"><?php echo $message; ?></span>
+<?php
+}
+endif;
 
 
 //入力できないフォームクラスコードの生成

@@ -26,11 +26,13 @@
           <td>
             <?php
             generate_label_tag(OP_AMAZON_API_ACCESS_KEY_ID, __( 'アクセスキーID', THEME_NAME ));
+            generate_necessity_input_tag();
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_API_ACCESS_KEY_ID, get_amazon_api_access_key_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( 'Amazon APIを使用するためのアクセスキーIDを入力してください。', THEME_NAME ));
 
             generate_label_tag(OP_AMAZON_API_SECRET_KEY, __( 'シークレットキー', THEME_NAME ));
+            generate_necessity_input_tag();
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_API_SECRET_KEY, get_amazon_api_secret_key(), __( '', THEME_NAME ));
             generate_tips_tag(__( 'Amazon APIを使用するためのシークレットキーを入力してください。', THEME_NAME ));
