@@ -3753,15 +3753,9 @@ div.sbs-think .speech-balloon::after {
   width: 100%;
 }
 
-.booklink-name,
-.kaerebalink-name,
-.tomarebalink-name,
-.amazon-item-title {
-  margin: 0 0 4px 0;
-}
-
 .amazon-item-snippet {
   font-size: 0.8em;
+  margin-top: 6px;
 }
 
 .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {

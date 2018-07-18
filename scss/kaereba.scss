@@ -59,25 +59,26 @@
   line-height: 125%;
   width: 100%;
 }
-.booklink-name,
-.kaerebalink-name,
-.tomarebalink-name,
-.amazon-item-title {
-  margin: 0 0 4px 0;
-  // a{
-  //   color: #0066cc;
-  //   text-decoration: underline;
-  //   &:hover{
-  //     color: #FF9900;
-  //   }
-  // }
-  // >a{
-  //   font-size: 16px;
-  // }
-}
+// .booklink-name,
+// .kaerebalink-name,
+// .tomarebalink-name,
+// .amazon-item-title {
+//   margin: 0 0 4px 0;
+//   // a{
+//   //   color: #0066cc;
+//   //   text-decoration: underline;
+//   //   &:hover{
+//   //     color: #FF9900;
+//   //   }
+//   // }
+//   // >a{
+//   //   font-size: 16px;
+//   // }
+// }
 
 .amazon-item-snippet{
   font-size: 0.8em;
+  margin-top: 6px;
 }
 
 .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
