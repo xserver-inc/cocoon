@@ -1026,3 +1026,9 @@ function generate_author_box_tag($label){
 <?php
 }
 endif;
+
+if ( !function_exists( 'get_message_box_tag' ) ):
+function get_message_box_tag($message, $classes){
+  return '<p class="'.$classes.'">'.$message.'</p>';
+}
+endif;

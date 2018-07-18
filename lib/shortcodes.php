@@ -214,6 +214,12 @@ function generate_amazon_product_link($atts){
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
 
+  //アクセスキーもしくはシークレットキーがない場合
+  if (empty($access_key_id) || empty($secret_access_key)) {
+    $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
+    return get_message_box_tag($error_message, 'amazon-item-error danger-box');
+  }
+
   //ASIN
   $asin = 'B013PUTPHK';
   $asin = 'B0186FESEE';
@@ -226,9 +232,9 @@ function generate_amazon_product_link($atts){
   }
   $associate_url = esc_url($associate_url);
 
-  $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME );
-  $error_link = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
-  $tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
+  $error_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>'.__( '商品リンクはこちら。', THEME_NAME ).'<br>'.'<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで商品を見る', THEME_NAME ).'</a>';
+  $tag = get_message_box_tag($error_message, 'amazon-item-error warning-box');
+  //$tag = '<p class="amazon-item-error information-box">'.$error_message.'<br>'.$error_link.'</p>';
 
 
   // //APIエンドポイントURL
