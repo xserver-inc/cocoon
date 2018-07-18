@@ -220,9 +220,15 @@ function generate_amazon_product_link($atts){
     return get_message_box_tag($error_message, 'amazon-item-error danger-box');
   }
 
-  //ASIN
-  $asin = 'B013PUTPHK';
-  $asin = 'B0186FESEE';
+  // //ASIN
+  // $asin = 'B013PUTPHK';
+  // $asin = 'B0186FESEE';
+  //ASINがない場合
+  if (empty($asin)) {
+    $error_message = __( 'Amazon商品リンクショートコード内にASINが入力されていません。', THEME_NAME );
+    return get_message_box_tag($error_message, 'amazon-item-error warning-box');
+  }
+
 
   //アソシエートURLの作成
   $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
