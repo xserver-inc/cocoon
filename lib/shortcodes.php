@@ -220,6 +220,8 @@ function generate_amazon_product_link($atts){
   $secret_access_key = trim(get_amazon_api_secret_key());
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  //キャッシュ更新間隔
+  $period = intval(get_api_cache_retention_period());
 
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
@@ -396,11 +398,13 @@ function generate_amazon_product_link($atts){
       $tag = wrap_amazon_item_box($error_message);
     }
 
+    //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+    $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
     //Amazon APIキャッシュの保存
     set_transient(
       $transient_id,
       $tag,
-      60 * 60 * intval(get_api_cache_retention_period()) );
+      $expiration );
 
     return $tag;
   }
