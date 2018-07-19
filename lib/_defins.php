@@ -142,6 +142,8 @@ define('TRANSIENT_SHARE_PREFIX', THEME_NAME.'_share_count_');
 define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
 //人気記事ウィジェットのプレフィックス
 define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
+//ブログカードのプレフィックス
+define('TRANSIENT_BLOGCARD_PREFIX', THEME_NAME.'_bcc_');
 //Amazon APIのプレフィックス
 define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
 

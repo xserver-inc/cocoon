@@ -131,7 +131,7 @@ function url_to_external_ogp_blogcard_tag($url){
   if (preg_match('/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i', $url, $m)) {
     return;
   }
-  $url_hash = 'bcc_'.md5( $url );
+  $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
   $error_title = $url; //エラーの場合はURLを表示
   $title = $error_title;
   $error_image = get_site_screenshot_url($url);

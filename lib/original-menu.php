@@ -42,6 +42,8 @@ function add_original_menu_in_admin_page() {
     //バックアップサブメニューを追加
     add_submenu_page(THEME_SETTINGS_PAFE, __('バックアップ', THEME_NAME), __('バックアップ', THEME_NAME), 'manage_options', 'theme-backup', 'add_theme_backup_page');
 
+    //キャッシュ削除メニューを追加
+    add_submenu_page(THEME_SETTINGS_PAFE, __('キャッシュ削除', THEME_NAME), __('キャッシュ削除', THEME_NAME), 'manage_options', 'theme-cache', 'add_theme_cache_page');
 }
 endif;
 
@@ -147,5 +149,18 @@ function add_theme_speed_up_page() {
   //以下のテンプレートファイルで設定ページを作成する
 
   require_once abspath(__FILE__).'page-speed-up/_top-page.php';
+}
+endif;
+
+//キャッシュ削除設定項目の表示
+if ( !function_exists( 'add_theme_cache_page' ) ):
+function add_theme_cache_page() {
+  // ユーザーが必要な権限を持つか確認する必要がある
+  if (!current_user_can('manage_options'))  {
+    wp_die( __('このページにアクセスする管理者権限がありません。') );
+  }
+  //以下のテンプレートファイルで設定ページを作成する
+
+  require_once abspath(__FILE__).'page-cache/_top-page.php';
 }
 endif;
