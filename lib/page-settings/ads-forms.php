@@ -110,7 +110,7 @@
               'by_myself' => __( 'マニュアル広告設定（自前で位置を設定）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
-            generate_tips_tag(__( '「アドセンス自動広告のみ」にした場合は、完全にAdSenseに広告表示を任せる形になります。自動広告のみが有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
+            generate_tips_tag(__( '「アドセンス自動広告のみ」にした場合は、完全にAdSenseに広告表示を任せる形になり制御はできません。自動広告のみが有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
             ?>
             <?php
             // generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
