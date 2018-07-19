@@ -240,10 +240,16 @@ function generate_amazon_product_link($atts){
 
   //キャッシュの存在
   $transient_id = TRANSIENT_AMAZON_API_PREFIX.$asin;
+  $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
   $tag_cache = get_transient( $transient_id );
   if ($tag_cache) {
     //_v($tag_cache);
     return $tag_cache;
+  } else {
+    $tag_cache = get_transient( $transient_bk_id );
+    if ($tag_cache) {
+      return $tag_cache;
+    }
   }
 
   ///////////////////////////////////////
@@ -401,10 +407,9 @@ function generate_amazon_product_link($atts){
     //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
     $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
     //Amazon APIキャッシュの保存
-    set_transient(
-      $transient_id,
-      $tag,
-      $expiration );
+    set_transient($transient_id, $tag, $expiration);
+    //Amazon APIバックアップキャッシュの保存
+    set_transient($transient_bk_id, $tag, $expiration * 2);
 
     return $tag;
   }

@@ -146,6 +146,8 @@ define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
 define('TRANSIENT_BLOGCARD_PREFIX', THEME_NAME.'_bcc_');
 //Amazon APIのプレフィックス
 define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
+//Amazon APIのバックアッププレフィックス
+define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_api_asin_');
 
 //最初のH2見出し用の優先度
 define('BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD', 10002);
