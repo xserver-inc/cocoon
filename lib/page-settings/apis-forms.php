@@ -57,7 +57,7 @@
             <?php
             generate_label_tag(OP_RAKUTEN_AFFILIATE_ID, __( '楽天アフィリエイトID', THEME_NAME ));
             echo '<br>';
-            generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_amazon_api_access_key_id(), __( '', THEME_NAME ));
+            generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ));
             ?>
           </td>
