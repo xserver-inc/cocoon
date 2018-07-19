@@ -70,8 +70,8 @@
           </th>
           <td>
             <?php
-            generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), 30, 1, 365);
-            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。', THEME_NAME ));
+            generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), '', 14, 365);
+            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。14～365日の間隔を選べます。', THEME_NAME ));
             ?>
           </td>
         </tr>
