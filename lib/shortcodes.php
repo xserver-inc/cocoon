@@ -303,6 +303,7 @@ function generate_amazon_product_link($atts){
   $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 
   $res = get_http_content($request_url);
+  //var_dump($res);
 
   if ($res) {
     // xml取得
@@ -320,67 +321,81 @@ function generate_amazon_product_link($atts){
       }
       return wrap_amazon_item_box($error_message);
     }
-    $item = $xml->Items->Item;
 
-    //var_dump($item);
-    // _v($item);
-    $ASIN = esc_html($item->ASIN);
-    $DetailPageURL = esc_url($item->DetailPageURL);
+    // if (!property_exists($xml->Items, 'Item')) {
+    //   $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
+    //   return wrap_amazon_item_box($error_message);
+    // }
 
-    $SmallImage = $item->SmallImage;
-    $MediumImage = $item->MediumImage;
-    $MediumImageUrl = esc_url($MediumImage->URL);
-    $MediumImageWidth = esc_html($MediumImage->Width);
-    $MediumImageHeight = esc_html($MediumImage->Height);
-    $LargeImage = $item->LargeImage;
+    if (property_exists($xml->Items, 'Item')) {
+      $item = $xml->Items->Item;
 
-    $ItemAttributes = $item->ItemAttributes;
+      //var_dump($xml);
 
-    $Title = $ItemAttributes->Title;
-    $TitleAttr = esc_attr($Title);
-    $TitleHtml = esc_html($Title);
+      //var_dump($xml->Items->Errors);
+      // _v($item);
+      $ASIN = esc_html($item->ASIN);
+      $DetailPageURL = esc_url($item->DetailPageURL);
 
-    $ProductGroup = esc_html($ItemAttributes->ProductGroup);
-    $ProductGroupClass = strtolower($ProductGroup);
-    $Publisher = esc_html($ItemAttributes->Publisher);
-    $Manufacturer = esc_html($ItemAttributes->Manufacturer);
-    $Binding = esc_html($ItemAttributes->Binding);
-    if ($Publisher) {
-      $maker = $Publisher;
-    } elseif ($Manufacturer) {
-      $maker = $Manufacturer;
+      $SmallImage = $item->SmallImage;
+      $MediumImage = $item->MediumImage;
+      $MediumImageUrl = esc_url($MediumImage->URL);
+      $MediumImageWidth = esc_html($MediumImage->Width);
+      $MediumImageHeight = esc_html($MediumImage->Height);
+      $LargeImage = $item->LargeImage;
+
+      $ItemAttributes = $item->ItemAttributes;
+
+      $Title = $ItemAttributes->Title;
+      $TitleAttr = esc_attr($Title);
+      $TitleHtml = esc_html($Title);
+
+      $ProductGroup = esc_html($ItemAttributes->ProductGroup);
+      $ProductGroupClass = strtolower($ProductGroup);
+      $Publisher = esc_html($ItemAttributes->Publisher);
+      $Manufacturer = esc_html($ItemAttributes->Manufacturer);
+      $Binding = esc_html($ItemAttributes->Binding);
+      if ($Publisher) {
+        $maker = $Publisher;
+      } elseif ($Manufacturer) {
+        $maker = $Manufacturer;
+      } else {
+        $maker = $Binding;
+      }
+
+      $ListPrice = $item->ListPrice;
+      $FormattedPrice = esc_html($item->FormattedPrice);
+
+      //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
+
+      //_v($item);
+      $tag =
+        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
+          '<figure class="amazon-item-thumb">'.
+            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
+              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+            '</a>'.
+          '</figure>'.
+          '<div class="amazon-item-content">'.
+            '<div class="amazon-item-title">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
+                 $TitleHtml.
+              '</a>'.
+            '</div>'.
+            '<div class="amazon-item-snippet">'.
+              '<div class="amazon-item-maker">'.
+                $maker.
+              '</div>'.
+              '<div class="amazon-item-buttons">'.
+              '</div>'.
+            '</div>'.
+          '</div>'.
+        '</div>';
     } else {
-      $maker = $Binding;
+      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
+      $tag = wrap_amazon_item_box($error_message);
     }
 
-    $ListPrice = $item->ListPrice;
-    $FormattedPrice = esc_html($item->FormattedPrice);
-
-    //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
-
-    //_v($item);
-    $tag =
-      '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
-        '<figure class="amazon-item-thumb">'.
-          '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
-            '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
-          '</a>'.
-        '</figure>'.
-        '<div class="amazon-item-content">'.
-          '<div class="amazon-item-title">'.
-            '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
-               $TitleHtml.
-            '</a>'.
-          '</div>'.
-          '<div class="amazon-item-snippet">'.
-            '<div class="amazon-item-maker">'.
-              $maker.
-            '</div>'.
-            '<div class="amazon-item-buttons">'.
-            '</div>'.
-          '</div>'.
-        '</div>'.
-      '</div>';
     //Amazon APIキャッシュの保存
     set_transient(
       $transient_id,
