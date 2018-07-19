@@ -90,7 +90,10 @@
   margin: 0 0 10px 0;
 }
 
-.booklink-link2, .kaerebalink-link1, .tomarebalink-link1 {
+.kaerebalink-link1,
+.booklink-link2,
+.tomarebalink-link1,
+.amazon-item-buttons {
   a{
     width: 90%;
     display: block;
@@ -109,9 +112,10 @@
   // >div>a{
   //   background: #fff;
   // }
+}
 
-
-
+.amazon-item-buttons{
+  margin-top: 1em;
 }
 
 

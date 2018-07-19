@@ -204,6 +204,13 @@ function wrap_amazon_item_box($message){
 }
 endif;
 
+// //Amazon商品リンクボタンを表示するか
+// if ( !function_exists( 'is_amazon_box_buttons_visible' ) ):
+// function is_amazon_box_buttons_visible(){
+//   return trim()
+// }
+// endif;
+
 //Amazon商品リンク作成
 add_shortcode('amazon', 'generate_amazon_product_link');
 if ( !function_exists( 'generate_amazon_product_link' ) ):
@@ -220,6 +227,8 @@ function generate_amazon_product_link($atts){
   $secret_access_key = trim(get_amazon_api_secret_key());
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  //楽天アフィリエイトID
+  $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
   //キャッシュ更新間隔
   $period = intval(get_api_cache_retention_period());
 
@@ -240,17 +249,16 @@ function generate_amazon_product_link($atts){
 
   //キャッシュの存在
   $transient_id = TRANSIENT_AMAZON_API_PREFIX.$asin;
-  $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
   $tag_cache = get_transient( $transient_id );
   if ($tag_cache) {
     //_v($tag_cache);
     return $tag_cache;
-  } else {
-    $tag_cache = get_transient( $transient_bk_id );
-    if ($tag_cache) {
-      return $tag_cache;
-    }
   }
+  // $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+  // $tag_cache = get_transient( $transient_bk_id );
+  // if ($tag_cache) {
+  //   return $tag_cache;
+  // }
 
   ///////////////////////////////////////
   // アソシエイトAPI設定
@@ -318,6 +326,12 @@ function generate_amazon_product_link($atts){
     $xml = simplexml_load_string($res);
     //var_dump($xml->Error);
     if (isset($xml->Error)) {
+      //バックアップキャッシュの確認
+      $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+      $tag_cache = get_transient( $transient_bk_id );
+      if ($tag_cache) {
+        return $tag_cache;
+      }
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 
       if (is_user_administrator()) {
@@ -376,6 +390,24 @@ function generate_amazon_product_link($atts){
 
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
+      $buttons_tag = null;
+      if (trim($kw)) {
+        $rakuten_btn_tag = null;
+        if ($rakuten_affiliate_id) {
+          $rakuten_btn_tag =
+            '<div class="shoplinkrakuten">'.
+              '<a href="">'.__( '楽天市場', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+        $buttons_tag =
+          '<div class="amazon-item-buttons">'.
+            '<div class="shoplinkamazon">'.
+              '<a href="">'.__( 'Amazon', THEME_NAME ).'</a>'.
+            '</div>'.
+            $rakuten_btn_tag.
+          '</div>';
+      }
+
       //_v($item);
       $tag =
         '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
@@ -394,8 +426,7 @@ function generate_amazon_product_link($atts){
               '<div class="amazon-item-maker">'.
                 $maker.
               '</div>'.
-              '<div class="amazon-item-buttons">'.
-              '</div>'.
+              $buttons_tag.
             '</div>'.
           '</div>'.
         '</div>';

@@ -3768,7 +3768,10 @@ div.sbs-think .speech-balloon::after {
   margin: 0 0 10px 0;
 }
 
-.booklink-link2 a, .kaerebalink-link1 a, .tomarebalink-link1 a {
+.kaerebalink-link1 a,
+.booklink-link2 a,
+.tomarebalink-link1 a,
+.amazon-item-buttons a {
   width: 90%;
   display: block;
   margin: 0px auto 8px;
@@ -3779,8 +3782,15 @@ div.sbs-think .speech-balloon::after {
   text-align: center;
   color: #fff;
 }
-.booklink-link2 a:hover, .kaerebalink-link1 a:hover, .tomarebalink-link1 a:hover {
+.kaerebalink-link1 a:hover,
+.booklink-link2 a:hover,
+.tomarebalink-link1 a:hover,
+.amazon-item-buttons a:hover {
   opacity: 0.6;
+}
+
+.amazon-item-buttons {
+  margin-top: 1em;
 }
 
 @media screen and (min-width: 768px) {
