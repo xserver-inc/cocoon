@@ -8,31 +8,22 @@
 
 //管理者権限を持っているログインユーザーかどうか
 if (is_user_administrator()) {
-  // 4.1.0より前のPHPでは$FILESの代わりに$HTTP_POST_FILESを使用する必要あり
-
-  //テーマ用のキャッシュディレクトリの取得
-  $uploaddir = get_theme_cache_dir();
-  //キャシュディレクトリのアップロードファイルパス
-  $uploadfile = $uploaddir .'/'. basename($_FILES['settings']['name']);
-
-  if (move_uploaded_file($_FILES['settings']['tmp_name'], $uploadfile)) {
-
-    $text = wp_filesystem_get_contents($uploadfile);
-    if ( $text ) {
-      global $wpdb;
-      $option_name = get_theme_mods_option_name();
-      $wpdb->update(
-        $wpdb->options,
-        array(
-          'option_value' => $text,
-        ),
-        array( 'option_name' => $option_name ),
-        array(
-          '%s',
-        )
-      );
-      wp_filesystem_delete($uploadfile);
-    }
+  $delete_option = isset($_GET['cache']) ? $_GET['cache'] : null;
+  switch ($delete_option) {
+    case 'all_theme_caches':
+      delete_all_theme_caches();
+      break;
+    case 'sns_count_caches':
+      delete_sns_count_caches();
+      break;
+    case 'popular_entries_caches':
+      delete_popular_entries_caches();
+      break;
+    case 'blogcard_caches':
+      delete_blogcard_caches();
+      break;
+    case 'amazon_api_caches':
+      delete_amazon_api_caches();
+      break;
   }
-
 }
