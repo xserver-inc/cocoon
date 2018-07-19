@@ -63,6 +63,29 @@
           </td>
         </tr>
 
+        <!-- Yahoo!ショッピング -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag('', __('Yahoo!ショッピング', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+            <?php
+            generate_label_tag(OP_YAHOO_VALUECOMMERCE_SID, __( 'バリューコマースsid', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_YAHOO_VALUECOMMERCE_SID, get_yahoo_valuecommerce_sid(), __( '', THEME_NAME ));
+            echo '<br>';
+
+            generate_label_tag(OP_YAHOO_VALUECOMMERCE_PID, __( 'バリューコマースpid', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_YAHOO_VALUECOMMERCE_PID, get_yahoo_valuecommerce_pid(), __( '', THEME_NAME ));
+
+            generate_tips_tag(__( 'バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- キャッシュの保存期間 -->
         <tr>
           <th scope="row">

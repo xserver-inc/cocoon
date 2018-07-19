@@ -18,5 +18,11 @@ update_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
 //楽天アフィリエイトID
 update_theme_option(OP_RAKUTEN_AFFILIATE_ID);
 
+//Yahoo!バリューコマースSID
+update_theme_option(OP_YAHOO_VALUECOMMERCE_SID);
+
+//Yahoo!バリューコマースPID
+update_theme_option(OP_YAHOO_VALUECOMMERCE_PID);
+
 //APIキャッシュの保存期間
 update_theme_option(OP_API_CACHE_RETENTION_PERIOD);

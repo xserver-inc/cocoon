@@ -38,6 +38,22 @@ function get_rakuten_affiliate_id(){
 }
 endif;
 
+//Yahoo!バリューコマースSID
+define('OP_YAHOO_VALUECOMMERCE_SID', 'yahoo_valuecommerce_sid');
+if ( !function_exists( 'get_yahoo_valuecommerce_sid' ) ):
+function get_yahoo_valuecommerce_sid(){
+  return get_theme_option(OP_YAHOO_VALUECOMMERCE_SID);
+}
+endif;
+
+//Yahoo!バリューコマースPID
+define('OP_YAHOO_VALUECOMMERCE_PID', 'yahoo_valuecommerce_pid');
+if ( !function_exists( 'get_yahoo_valuecommerce_pid' ) ):
+function get_yahoo_valuecommerce_pid(){
+  return get_theme_option(OP_YAHOO_VALUECOMMERCE_PID);
+}
+endif;
+
 //APIキャッシュの保存期間
 define('OP_API_CACHE_RETENTION_PERIOD', 'api_cache_retention_period');
 if ( !function_exists( 'get_api_cache_retention_period' ) ):
