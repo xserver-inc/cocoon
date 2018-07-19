@@ -7,45 +7,78 @@
  */ ?>
 <div class="metabox-holder">
 
-<!-- バックアップ・リストア -->
-<div id="backup" class="postbox">
-  <h2 class="hndle"><?php _e( 'バックアップ・リストア', THEME_NAME ) ?></h2>
+<!-- キャッシュ削除 -->
+<div id="cache" class="postbox">
+  <h2 class="hndle"><?php _e( 'キャッシュ削除', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '設定情報のバックアップやリストアを行います。', THEME_NAME ) ?></p>
+    <p><?php _e( 'テーマで利用されている各種キャッシュを削除します。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
 
-        <!-- バックアップ  -->
+        <!-- すべて  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'バックアップ', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'すべて', THEME_NAME ) ); ?>
           </th>
           <td>
-            <a href="<?php echo get_template_directory_uri().'/lib/page-backup/backup-download.php'; ?>" class="button"><?php _e( 'バックアップファイルの取得', THEME_NAME ) ?></a>
+            <a href="<?php echo add_query_arg(array('cache' => 'all_theme_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( '全てのキャッシュの削除', THEME_NAME ) ?></a>
             <?php
-              generate_tips_tag(__( 'テーマ設定のバックアップをする際はボタンを押してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/how-to-theme-settings-backup/'));
+              generate_tips_tag(__( 'テーマで利用されているすべてのキャッシュを削除します。', THEME_NAME ));
             ?>
           </td>
         </tr>
 
-        <!-- リストア  -->
+        <!-- SNSキャッシュ  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'リストア', THEME_NAME ) ); ?>
+            <?php generate_label_tag('', __( 'SNSキャッシュ', THEME_NAME ) ); ?>
           </th>
           <td>
-            <form enctype="multipart/form-data" action="" method="POST">
-                <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-                <?php _e( 'このファイルをアップロード: ', THEME_NAME ) ?>
-                <input name="settings" type="file" /><br>
-                <input type="submit" class="button" value="<?php _e( '設定の復元', THEME_NAME ) ?>" />
-                <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
-                <?php
-                generate_tips_tag(__( '参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/how-to-theme-settings-restore/'));
-                 ?>
-            </form>
+            <a href="<?php echo add_query_arg(array('cache' => 'sns_count_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'SNSキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( 'SNSカウントのキャッシュを削除します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 人気記事ウィジェット  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( '人気記事ウィジェット', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <a href="<?php echo add_query_arg(array('cache' => 'popular_entries_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( '人気記事ウィジェットキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( '人気記事ウィジェットのランキング結果キャッシュを削除します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- ブログカード  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'ブログカード', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <a href="<?php echo add_query_arg(array('cache' => 'blogcard_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'ブログカードキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( '外部ブログカードのOGP情報キャッシュを削除します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- Amazon API  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'Amazon API', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <a href="<?php echo add_query_arg(array('cache' => 'amazon_api_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'Amazon APIキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( 'Amazonの商品情報キャッシュを削除します。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 

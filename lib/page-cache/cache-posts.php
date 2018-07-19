@@ -6,6 +6,9 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
+//関数の呼び出し
+require_once abspath(__FILE__).'cache-func.php';
+
 //管理者権限を持っているログインユーザーかどうか
 if (is_user_administrator()) {
   $delete_option = isset($_GET['cache']) ? $_GET['cache'] : null;
