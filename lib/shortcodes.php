@@ -229,6 +229,10 @@ function generate_amazon_product_link($atts){
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
   //楽天アフィリエイトID
   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
+  //Yahoo!バリューコマースSID
+  $sid = trim(get_yahoo_valuecommerce_sid());
+  //Yahoo!バリューコマースPID
+  $pid = trim(get_yahoo_valuecommerce_pid());
   //キャッシュ更新間隔
   $period = intval(get_api_cache_retention_period());
 
@@ -392,6 +396,7 @@ function generate_amazon_product_link($atts){
 
       $buttons_tag = null;
       if (trim($kw)) {
+        //楽天ボタンの取得
         $rakuten_btn_tag = null;
         if ($rakuten_affiliate_id) {
           $rakuten_btn_tag =
@@ -399,12 +404,22 @@ function generate_amazon_product_link($atts){
               '<a href="">'.__( '楽天市場', THEME_NAME ).'</a>'.
             '</div>';
         }
+        //Yahoo!ボタンの取得
+        $yahoo_tag = null;
+        if ($sid && $pid) {
+          $yahoo_tag =
+            '<div class="shoplinkyahoo">'.
+              '<a href="">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+        //ボタンコンテナ
         $buttons_tag =
           '<div class="amazon-item-buttons">'.
             '<div class="shoplinkamazon">'.
               '<a href="">'.__( 'Amazon', THEME_NAME ).'</a>'.
             '</div>'.
             $rakuten_btn_tag.
+            $yahoo_tag.
           '</div>';
       }
 
