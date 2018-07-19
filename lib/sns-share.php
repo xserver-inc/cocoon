@@ -162,7 +162,7 @@ endif;
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
   if (!is_sns_share_buttons_count_visible())
-    return 0;
+    return null;
 
   if (is_scc_facebook_exists()) {
     return scc_get_share_facebook();
