@@ -3696,8 +3696,7 @@ div.sbs-think .speech-balloon::after {
 .kaerebalink-box,
 .tomarebalink-box,
 .amazon-item-box {
-  padding: 22px 25px 22px 25px;
-  width: 94%;
+  padding: 22px 25px;
   margin: 0 auto 15px;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
