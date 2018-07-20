@@ -423,9 +423,10 @@ function generate_amazon_product_link($atts){
         //Yahoo!ボタンの取得
         $yahoo_tag = null;
         if ($sid && $pid && is_yahoo_search_button_visible()) {
+          $yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$kw;
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
-              '<a href="" target="_blank"">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
+              '<a href="'.$yahoo_url.'" target="_blank"">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
             '</div>';
         }
         //ボタンコンテナ
