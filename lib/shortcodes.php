@@ -258,11 +258,11 @@ function generate_amazon_product_link($atts){
     //_v($tag_cache);
     return $tag_cache;
   }
-  // $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
-  // $tag_cache = get_transient( $transient_bk_id );
-  // if ($tag_cache) {
-  //   return $tag_cache;
-  // }
+  $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+  $tag_cache = get_transient( $transient_bk_id );
+  if ($tag_cache) {
+    return $tag_cache;
+  }
 
   ///////////////////////////////////////
   // アソシエイトAPI設定
