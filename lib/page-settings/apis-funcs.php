@@ -58,6 +58,6 @@ endif;
 define('OP_API_CACHE_RETENTION_PERIOD', 'api_cache_retention_period');
 if ( !function_exists( 'get_api_cache_retention_period' ) ):
 function get_api_cache_retention_period(){
-  return get_theme_option(OP_API_CACHE_RETENTION_PERIOD, 180);
+  return get_theme_option(OP_API_CACHE_RETENTION_PERIOD, 60);
 }
 endif;
