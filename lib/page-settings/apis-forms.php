@@ -102,6 +102,10 @@
       </tbody>
     </table>
 
+  <p style="text-align: right;">
+    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement', THEME_NAME ) ?>" target="_blank"><?php _e( 'Amazon.co.jp Product Advertising API ライセンス契約', THEME_NAME ) ?></a><br>
+    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/topic/t32/ref=amb_link_4DzstEfuM3il9tu_VfGMaw_3?pf_rd_p=cbe5b1ea-57a4-41b3-952a-34cb16b7abfb', THEME_NAME ) ?>" target="_blank"><?php _e( 'Product Advertising API (PA-API) の利用ガイドライン', THEME_NAME ) ?></a></p>
+
   </div>
 </div>
 
