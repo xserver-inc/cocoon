@@ -217,9 +217,17 @@ if ( !function_exists( 'generate_amazon_product_link' ) ):
 function generate_amazon_product_link($atts){
   extract( shortcode_atts( array(
     'asin' => null,
+    'id' => null,
     //'isbn ' => null,
     'kw' => null,
   ), $atts ) );
+
+  $asin = trim($asin);
+
+  //ASINが取得できない場合はID
+  if (empty($asin)) {
+    $asin = $id;
+  }
 
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
@@ -235,6 +243,8 @@ function generate_amazon_product_link($atts){
   $pid = trim(get_yahoo_valuecommerce_pid());
   //キャッシュ更新間隔
   $period = intval(get_api_cache_retention_period());
+  //キーワード
+  $kw = trim($kw);
 
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
@@ -259,10 +269,6 @@ function generate_amazon_product_link($atts){
     return $tag_cache;
   }
   $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
-  $tag_cache = get_transient( $transient_bk_id );
-  if ($tag_cache) {
-    return $tag_cache;
-  }
 
   ///////////////////////////////////////
   // アソシエイトAPI設定
@@ -331,7 +337,6 @@ function generate_amazon_product_link($atts){
     //var_dump($xml->Error);
     if (isset($xml->Error)) {
       //バックアップキャッシュの確認
-      $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
       $tag_cache = get_transient( $transient_bk_id );
       if ($tag_cache) {
         return $tag_cache;
@@ -395,13 +400,14 @@ function generate_amazon_product_link($atts){
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
       $buttons_tag = null;
-      if (trim($kw)) {
+      if ($kw) {
         //Amazonボタンの取得
         $amazon_btn_tag = null;
         if (is_amazon_search_button_visible()) {
+          $amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($kw).'&tag='.$associate_tracking_id;
           $amazon_btn_tag =
             '<div class="shoplinkamazon">'.
-              '<a href="">'.__( 'Amazon', THEME_NAME ).'</a>'.
+              '<a href="'.$amazon_url.'" target="_blank">'.__( 'Amazon', THEME_NAME ).'</a>'.
             '</div>';
         }
 
@@ -410,7 +416,7 @@ function generate_amazon_product_link($atts){
         if ($rakuten_affiliate_id && is_rakuten_search_button_visible()) {
           $rakuten_btn_tag =
             '<div class="shoplinkrakuten">'.
-              '<a href="">'.__( '楽天市場', THEME_NAME ).'</a>'.
+              '<a href="" target="_blank"">'.__( '楽天市場', THEME_NAME ).'</a>'.
             '</div>';
         }
         //Yahoo!ボタンの取得
@@ -418,7 +424,7 @@ function generate_amazon_product_link($atts){
         if ($sid && $pid && is_yahoo_search_button_visible()) {
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
-              '<a href="">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
+              '<a href="" target="_blank"">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
             '</div>';
         }
         //ボタンコンテナ
