@@ -41,6 +41,14 @@
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, get_amazon_associate_tracking_id(), __( 'yourid-22', THEME_NAME ));
             generate_tips_tag(__( 'AmazonアソシエイトのトラッキングIDを入力してください。', THEME_NAME ));
+
+
+            echo '<div'.get_not_allowed_form_class(get_amazon_api_access_key_id() && get_amazon_api_secret_key()).'>';
+
+            generate_checkbox_tag(OP_AMAZON_SEARCH_BUTTON_VISIBLE , is_amazon_search_button_visible(), __( 'Amazon検索ボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'Amazonのキーワード検索ボタンを表示するか。', THEME_NAME ));
+
+            echo '<div>';
             ?>
 
           </td>
@@ -59,6 +67,14 @@
             echo '<br>';
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ));
+
+
+            echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
+
+            generate_checkbox_tag(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE , is_rakuten_search_button_visible(), __( '楽天検索ボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( '楽天のキーワード検索ボタンを表示するか。', THEME_NAME ));
+
+            echo '<div>';
             ?>
           </td>
         </tr>
@@ -82,6 +98,14 @@
             generate_textbox_tag(OP_YAHOO_VALUECOMMERCE_PID, get_yahoo_valuecommerce_pid(), __( '', THEME_NAME ));
 
             generate_tips_tag(__( 'バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。', THEME_NAME ));
+
+
+            echo '<div'.get_not_allowed_form_class(get_yahoo_valuecommerce_sid() && get_yahoo_valuecommerce_pid()).'>';
+
+            generate_checkbox_tag(OP_YAHOO_SEARCH_BUTTON_VISIBLE , is_yahoo_search_button_visible(), __( 'Yahoo!検索ボタンを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'Yahoo!のキーワード検索ボタンを表示するか。', THEME_NAME ));
+
+            echo '<div>';
             ?>
           </td>
         </tr>
