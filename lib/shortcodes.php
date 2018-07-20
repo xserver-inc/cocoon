@@ -396,9 +396,18 @@ function generate_amazon_product_link($atts){
 
       $buttons_tag = null;
       if (trim($kw)) {
+        //Amazonボタンの取得
+        $amazon_btn_tag = null;
+        if (is_amazon_search_button_visible()) {
+          $amazon_btn_tag =
+            '<div class="shoplinkamazon">'.
+              '<a href="">'.__( 'Amazon', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+
         //楽天ボタンの取得
         $rakuten_btn_tag = null;
-        if ($rakuten_affiliate_id) {
+        if ($rakuten_affiliate_id && is_rakuten_search_button_visible()) {
           $rakuten_btn_tag =
             '<div class="shoplinkrakuten">'.
               '<a href="">'.__( '楽天市場', THEME_NAME ).'</a>'.
@@ -406,7 +415,7 @@ function generate_amazon_product_link($atts){
         }
         //Yahoo!ボタンの取得
         $yahoo_tag = null;
-        if ($sid && $pid) {
+        if ($sid && $pid && is_yahoo_search_button_visible()) {
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
               '<a href="">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
@@ -415,9 +424,7 @@ function generate_amazon_product_link($atts){
         //ボタンコンテナ
         $buttons_tag =
           '<div class="amazon-item-buttons">'.
-            '<div class="shoplinkamazon">'.
-              '<a href="">'.__( 'Amazon', THEME_NAME ).'</a>'.
-            '</div>'.
+            $amazon_btn_tag.
             $rakuten_btn_tag.
             $yahoo_tag.
           '</div>';
