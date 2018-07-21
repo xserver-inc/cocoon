@@ -391,6 +391,7 @@ function generate_amazon_product_link($atts){
 
       $ProductGroup = esc_html($ItemAttributes->ProductGroup);
       $ProductGroupClass = strtolower($ProductGroup);
+      $ProductGroupClass = str_replace(' ', '-', $ProductGroupClass);
       $Publisher = esc_html($ItemAttributes->Publisher);
       $Manufacturer = esc_html($ItemAttributes->Manufacturer);
       $Binding = esc_html($ItemAttributes->Binding);

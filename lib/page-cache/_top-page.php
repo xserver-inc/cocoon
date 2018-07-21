@@ -25,7 +25,7 @@ if( isset($_GET['cache']) ){
 
   $asin = isset($_GET['asin']) ? trim($_GET['asin']) : null;
   if ($asin) {
-    $asin_before = sprintf(__( 'ASIN：%sの', THEME_NAME ), $asin);
+    $asin_before = sprintf(__( 'ASIN:%sの', THEME_NAME ), $asin);
     $asin_after = __( '該当の商品リンクページをリロードしてご確認ください。', THEME_NAME );
     $message = $asin_before.$message.$asin_after;
   }
