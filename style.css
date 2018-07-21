@@ -3697,6 +3697,7 @@ div.sbs-think .speech-balloon::after {
 .tomarebalink-box,
 .amazon-item-box {
   padding: 22px 25px;
+  width: 94%;
   margin: 0 auto 15px;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
@@ -3764,7 +3765,7 @@ div.sbs-think .speech-balloon::after {
 .booklink-detail, .kaerebalink-detail, .tomarebalink-address {
   color: #333;
   font-size: 12px;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
 }
 
 .kaerebalink-link1 a,
@@ -3823,11 +3824,11 @@ div.sbs-think .speech-balloon::after {
   }
 
   .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
-    margin: 6px 0 0 0;
+    margin: 6px 0 0;
   }
 
   .booklink-detail, .kaerebalink-detail {
-    margin: 0 0 14px 0;
+    margin: 0 0 14px;
   }
 
   .booklink-link2,
@@ -3872,7 +3873,7 @@ div.sbs-think .speech-balloon::after {
 }
 
 .shoplinkyahoo a {
-  background: #ff0033;
+  background: #ff0027;
   position: relative;
 }
 

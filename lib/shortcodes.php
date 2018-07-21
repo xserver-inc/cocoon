@@ -407,7 +407,7 @@ function generate_amazon_product_link($atts){
           $amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($kw).'&tag='.$associate_tracking_id;
           $amazon_btn_tag =
             '<div class="shoplinkamazon">'.
-              '<a href="'.$amazon_url.'" target="_blank">'.__( 'Amazon', THEME_NAME ).'</a>'.
+              '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.__( 'Amazon', THEME_NAME ).'</a>'.
             '</div>';
         }
 
@@ -417,7 +417,7 @@ function generate_amazon_product_link($atts){
           $rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($kw).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
           $rakuten_btn_tag =
             '<div class="shoplinkrakuten">'.
-              '<a href="'.$rakuten_url.'" target="_blank"">'.__( '楽天市場', THEME_NAME ).'</a>'.
+              '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.__( '楽天市場', THEME_NAME ).'</a>'.
             '</div>';
         }
         //Yahoo!ボタンの取得
@@ -426,7 +426,7 @@ function generate_amazon_product_link($atts){
           $yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$kw;
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
-              '<a href="'.$yahoo_url.'" target="_blank"">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
+              '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
             '</div>';
         }
         //ボタンコンテナ
@@ -442,13 +442,13 @@ function generate_amazon_product_link($atts){
       $tag =
         '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
           '<figure class="amazon-item-thumb">'.
-            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'">'.
+            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
             '</a>'.
           '</figure>'.
           '<div class="amazon-item-content">'.
             '<div class="amazon-item-title">'.
-              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                  $TitleHtml.
               '</a>'.
             '</div>'.
