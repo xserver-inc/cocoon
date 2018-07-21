@@ -225,7 +225,7 @@ function generate_amazon_product_link($atts){
     'yahoo' => 1,
   ), $atts ) );
 
-  $asin = trim($asin);
+  $asin = esc_html(trim($asin));
 
   //ASINが取得できない場合はID
   if (empty($asin)) {
@@ -266,10 +266,15 @@ function generate_amazon_product_link($atts){
 
   //キャッシュの存在
   $transient_id = TRANSIENT_AMAZON_API_PREFIX.$asin;
-  $tag_cache = get_transient( $transient_id );
-  if ($tag_cache) {
-    //_v($tag_cache);
-    return $tag_cache;
+  $cache_tag = get_transient( $transient_id );
+  if ($cache_tag) {
+
+    if (is_user_administrator()) {
+      $cache_del_tag = '<div class="asin-cache-del"><a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a></div>';
+      $cache_tag .= $cache_del_tag;
+    }
+    //_v($cache_tag);
+    return $cache_tag;
   }
   $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
 
@@ -340,9 +345,9 @@ function generate_amazon_product_link($atts){
     //var_dump($xml->Error);
     if (isset($xml->Error)) {
       //バックアップキャッシュの確認
-      $tag_cache = get_transient( $transient_bk_id );
-      if ($tag_cache) {
-        return $tag_cache;
+      $cache_tag = get_transient( $transient_bk_id );
+      if ($cache_tag) {
+        return $cache_tag;
       }
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 
@@ -443,7 +448,7 @@ function generate_amazon_product_link($atts){
 
       //_v($item);
       $tag =
-        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' cf">'.
+        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' '.$asin.' cf">'.
           '<figure class="amazon-item-thumb">'.
             '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.

@@ -8,7 +8,7 @@
 .amazon-item-box {
   padding: 22px 25px;
   width: 94%;
-  margin: 0 auto 15px;
+  margin: 0 auto 1.6em;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   text-align: center;
@@ -248,4 +248,14 @@
 }
 .shoplinkrurubu a{
   background: #000066;
+}
+
+.asin-cache-del{
+  text-align: right;
+  margin-top: -2em;
+  margin-bottom: 1.4em;
+  a{
+    font-size: 10px;
+    color: #999;
+  }
 }

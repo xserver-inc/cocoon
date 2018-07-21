@@ -3698,7 +3698,7 @@ div.sbs-think .speech-balloon::after {
 .amazon-item-box {
   padding: 22px 25px;
   width: 94%;
-  margin: 0 auto 15px;
+  margin: 0 auto 1.6em;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   text-align: center;
@@ -3931,6 +3931,16 @@ div.sbs-think .speech-balloon::after {
 
 .shoplinkrurubu a {
   background: #000066;
+}
+
+.asin-cache-del {
+  text-align: right;
+  margin-top: -2em;
+  margin-bottom: 1.4em;
+}
+.asin-cache-del a {
+  font-size: 10px;
+  color: #999;
 }
 
 .fb-like-box {

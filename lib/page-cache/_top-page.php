@@ -15,18 +15,33 @@ if( isset($_GET['cache']) ){
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
-  //キャッシュ削除
-  require_once abspath(__FILE__).'cache-posts.php';
+  // //キャッシュ削除
+  // require_once abspath(__FILE__).'cache-posts.php';
+  //関数の呼び出し
+  require_once abspath(__FILE__).'cache-func.php';
+  $res = delete_theme_storaged_caches();
+
+  $message = __( 'キャッシュを削除しました。', THEME_NAME );
+
+  $asin = isset($_GET['asin']) ? trim($_GET['asin']) : null;
+  if ($asin) {
+    $asin_message = sprintf(__( 'ASIN：%sの', THEME_NAME ), $asin);
+    $message = $asin_message.$message;
+  }
 
 //画面に「設定は保存されました」メッセージを表示
+
 ?>
+<?php if ($res): ?>
 <div class="updated">
   <p>
     <strong>
-      <?php _e('キャッシュを削除しました。', THEME_NAME ); ?>
+      <?php echo $message; ?>
     </strong>
   </p>
 </div>
+<?php endif ?>
+
 <?php
 }
 
