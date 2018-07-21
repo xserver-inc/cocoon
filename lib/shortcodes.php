@@ -220,6 +220,9 @@ function generate_amazon_product_link($atts){
     'id' => null,
     //'isbn ' => null,
     'kw' => null,
+    'amazon' => 1,
+    'rakuten' => 1,
+    'yahoo' => 1,
   ), $atts ) );
 
   $asin = trim($asin);
@@ -403,7 +406,7 @@ function generate_amazon_product_link($atts){
       if ($kw) {
         //Amazonボタンの取得
         $amazon_btn_tag = null;
-        if (is_amazon_search_button_visible()) {
+        if (is_amazon_search_button_visible() && $amazon) {
           $amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($kw).'&tag='.$associate_tracking_id;
           $amazon_btn_tag =
             '<div class="shoplinkamazon">'.
@@ -413,7 +416,7 @@ function generate_amazon_product_link($atts){
 
         //楽天ボタンの取得
         $rakuten_btn_tag = null;
-        if ($rakuten_affiliate_id && is_rakuten_search_button_visible()) {
+        if ($rakuten_affiliate_id && is_rakuten_search_button_visible() && $rakuten) {
           $rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($kw).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
           $rakuten_btn_tag =
             '<div class="shoplinkrakuten">'.
@@ -422,7 +425,7 @@ function generate_amazon_product_link($atts){
         }
         //Yahoo!ボタンの取得
         $yahoo_tag = null;
-        if ($sid && $pid && is_yahoo_search_button_visible()) {
+        if ($sid && $pid && is_yahoo_search_button_visible() && $yahoo) {
           $yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$kw;
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
