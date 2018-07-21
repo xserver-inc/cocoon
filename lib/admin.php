@@ -560,7 +560,7 @@ add_filter( 'tiny_mce_before_init', 'tiny_mce_before_init_custom' );
 if ( !function_exists( 'tiny_mce_before_init_custom' ) ):
 function tiny_mce_before_init_custom( $mceInit ) {
   //var_dump($mceInit );
-  if (! isset($mceInit['body_class'])) {
+  if ( !isset($mceInit['body_class']) ) {
     $mceInit['body_class'] = '';
   }
   $mceInit['body_class'] .= ' main article';
