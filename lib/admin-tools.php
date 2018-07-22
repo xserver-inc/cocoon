@@ -1,7 +1,7 @@
 <?php //外部ツールを利用するもの
 
 //商品リンク追加ボタンの作成
-add_filter( "media_buttons_context", "wp_product_button_context");
+//add_filter( "media_buttons_context", "wp_product_button_context");
 if ( !function_exists( 'wp_product_button_context' ) ):
 function wp_product_button_context ( $context ) {
  $title = __( '商品リンクの追加', THEME_NAME ) ;
@@ -12,7 +12,7 @@ function wp_product_button_context ( $context ) {
 endif;
 
 //商品リンクポップアップウィンドウ内容
-add_action( 'admin_footer',  'wp_product_popup_content' );
+//add_action( 'admin_footer',  'wp_product_popup_content' );
 if ( !function_exists( 'wp_product_popup_content' ) ):
 function wp_product_popup_content() {
 echo <<< EOS
