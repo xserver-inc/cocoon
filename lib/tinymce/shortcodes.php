@@ -97,6 +97,18 @@ function generate_shortcodes_is($value){
   shortcodes[4].before = '<?php echo $before; ?>';
   shortcodes[4].after = '<?php echo $after; ?>';
 
+  <?php //商品追加ショートコード
+  $msg = __( 'ASIN', THEME_NAME );
+  $kw = __( 'キーワード', THEME_NAME );
+  $before = '[amazon asin="';
+  $after = '" kw="'.$kw.'"]';
+   ?>
+  shortcodes[5] = new Array();
+  shortcodes[5].title  = '<?php echo __( 'Amazon商品リンク', THEME_NAME ); ?>';
+  shortcodes[5].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[5].before = '<?php echo $before; ?>';
+  shortcodes[5].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }
