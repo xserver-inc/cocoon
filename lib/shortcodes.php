@@ -245,7 +245,7 @@ function get_amazon_itemlookup_xml($asin){
   //アソシエイトタグ
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
   //キャッシュ更新間隔
-  $period = intval(get_api_cache_retention_period());
+  $days = intval(get_api_cache_retention_period());
 
   //キャッシュの存在
   $transient_id = get_asin_transient_id($asin);
@@ -254,17 +254,6 @@ function get_amazon_itemlookup_xml($asin){
   if ($xml_cache) {
     return $xml_cache;
   }
-
-  // ///////////////////////////////////////
-  // // アソシエイトAPI設定
-  // ///////////////////////////////////////
-  // //アソシエートURLの作成
-  // $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
-  // $associate_url = $base_url.'/'.$asin.'/';
-  // if (!empty($associate_tracking_id)) {
-  //   $associate_url .= $associate_tracking_id.'/';
-  // }
-  // $associate_url = esc_url($associate_url);
 
   //APIエンドポイントURL
   $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
@@ -329,32 +318,13 @@ function get_amazon_itemlookup_xml($asin){
     }
     //_v($res);
     //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-    $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
+    $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
     //Amazon APIキャッシュの保存
     set_transient($transient_id, $res, $expiration);
     //Amazon APIバックアップキャッシュの保存
     set_transient($transient_bk_id, $res, $expiration * 2);
 
     return $res;
-
-    //var_dump($xml);
-    //return $xml;
-
-    // $r = array();
-
-    // if (!property_exists($xml->Error, 'Code')) {
-    //   $r['Error'] = false;
-    // //var_dump($xml->Items);
-    //   if (property_exists($xml->Items, 'Item')) {
-    //     $item = $xml->Items->Item;
-    //   }
-    // } else {
-    //   $r['Error'] = array(
-    //     'Code' => $xml->Error->Code,
-    //     'Message' => $xml->Error->Message,
-    //   );
-    // }
-
   }
   return false;
 }
@@ -394,7 +364,7 @@ function generate_amazon_product_link($atts){
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
   // //キャッシュ更新間隔
-  // $period = intval(get_api_cache_retention_period());
+  // $days = intval(get_api_cache_retention_period());
   //キーワード
   $kw = trim($kw);
 
@@ -556,13 +526,6 @@ function generate_amazon_product_link($atts){
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
       $tag = wrap_amazon_item_box($error_message);
     }
-
-    // //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-    // $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
-    // //Amazon APIキャッシュの保存
-    // set_transient($transient_id, $tag, $expiration);
-    // //Amazon APIバックアップキャッシュの保存
-    // set_transient($transient_bk_id, $tag, $expiration * 2);
 
     return $tag;
   }
