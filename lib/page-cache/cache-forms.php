@@ -75,7 +75,7 @@
             <?php generate_label_tag('', __( 'Amazon API', THEME_NAME ) ); ?>
           </th>
           <td>
-            <a href="<?php echo add_query_arg(array('cache' => 'amazon_api_caches')); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'Amazon APIキャッシュの削除', THEME_NAME ) ?></a>
+            <a href="<?php echo add_query_arg(array('cache' => 'amazon_api_caches', 'asin' => null)); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'Amazon APIキャッシュの削除', THEME_NAME ) ?></a>
             <?php
               generate_tips_tag(__( 'Amazonの商品情報キャッシュを削除します。', THEME_NAME ));
             ?>

@@ -211,6 +211,155 @@ endif;
 // }
 // endif;
 
+//シンプルなアソシエイトURLの作成
+if ( !function_exists( 'get_amazon_associate_url' ) ):
+function get_amazon_associate_url($asin, $associate_tracking_id){
+  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
+  $associate_url = $base_url.'/'.$asin.'/';
+  if (!empty($associate_tracking_id)) {
+    $associate_url .= $associate_tracking_id.'/';
+  }
+  $associate_url = esc_url($associate_url);
+  return $associate_url;
+}
+endif;
+
+if ( !function_exists( 'get_asin_transient_id' ) ):
+function get_asin_transient_id($asin){
+  return TRANSIENT_AMAZON_API_PREFIX.$asin;
+}
+endif;
+
+if ( !function_exists( 'get_asin_transient_bk_id' ) ):
+function get_asin_transient_bk_id($asin){
+  return TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+}
+endif;
+
+if ( !function_exists( 'get_amazon_itemlookup_xml' ) ):
+function get_amazon_itemlookup_xml($asin){
+  //アクセスキー
+  $access_key_id = trim(get_amazon_api_access_key_id());
+  //シークレットキー
+  $secret_access_key = trim(get_amazon_api_secret_key());
+  //アソシエイトタグ
+  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  //キャッシュ更新間隔
+  $period = intval(get_api_cache_retention_period());
+
+  //キャッシュの存在
+  $transient_id = get_asin_transient_id($asin);
+  $transient_bk_id = get_asin_transient_bk_id($asin);
+  $xml_cache = get_transient( $transient_id );
+  if ($xml_cache) {
+    return $xml_cache;
+  }
+
+  // ///////////////////////////////////////
+  // // アソシエイトAPI設定
+  // ///////////////////////////////////////
+  // //アソシエートURLの作成
+  // $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
+  // $associate_url = $base_url.'/'.$asin.'/';
+  // if (!empty($associate_tracking_id)) {
+  //   $associate_url .= $associate_tracking_id.'/';
+  // }
+  // $associate_url = esc_url($associate_url);
+
+  //APIエンドポイントURL
+  $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
+
+  // パラメータ
+  $params = array(
+    //共通↓
+    'Service' => 'AWSECommerceService',
+    'AWSAccessKeyId' => $access_key_id,
+    'AssociateTag' => $associate_tracking_id,
+    //リクエストにより変更↓
+    'Operation' => 'ItemLookup',
+    'ItemId' => $asin,
+    'ResponseGroup' => 'ItemAttributes,Images',
+    //署名用タイムスタンプ
+    'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
+  );
+
+  //パラメータと値のペアをバイト順？で並べかえ。
+  ksort($params);
+
+
+  // エンドポイントを指定します。
+  $endpoint = __( 'webservices.amazon.co.jp', THEME_NAME );
+
+  $uri = '/onca/xml';
+
+  $pairs = array();
+
+  // パラメータを key=value の形式に編集します。
+  // 同時にURLエンコードを行います。
+  foreach ($params as $key => $value) {
+    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+  }
+
+  // パラメータを&で連結します。
+  $canonical_query_string = join("&", $pairs);
+
+  // 署名に必要な文字列を先頭に追加します。
+  $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
+
+  // RFC2104準拠のHMAC-SHA256ハッシュアルゴリズムの計算を行います。
+  // これがSignatureの値になります。
+  $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_access_key, true));
+
+  // Siginatureの値のURLエンコードを行い、リクエストの最後に追加します。
+  $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
+
+  $res = get_http_content($request_url);
+  //var_dump($res);
+
+  if ($res) {
+    //xml取得
+    $xml = simplexml_load_string($res);
+    if (property_exists($xml->Error, 'Code')) {
+      //バックアップキャッシュの確認
+      $xml_cache = get_transient( $transient_bk_id );
+      if ($xml_cache) {
+        return $xml_cache;
+      }
+      return $res;
+    }
+    //_v($res);
+    //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+    $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
+    //Amazon APIキャッシュの保存
+    set_transient($transient_id, $res, $expiration);
+    //Amazon APIバックアップキャッシュの保存
+    set_transient($transient_bk_id, $res, $expiration * 2);
+
+    return $res;
+
+    //var_dump($xml);
+    //return $xml;
+
+    // $r = array();
+
+    // if (!property_exists($xml->Error, 'Code')) {
+    //   $r['Error'] = false;
+    // //var_dump($xml->Items);
+    //   if (property_exists($xml->Items, 'Item')) {
+    //     $item = $xml->Items->Item;
+    //   }
+    // } else {
+    //   $r['Error'] = array(
+    //     'Code' => $xml->Error->Code,
+    //     'Message' => $xml->Error->Message,
+    //   );
+    // }
+
+  }
+  return false;
+}
+endif;
+
 //Amazon商品リンク作成
 add_shortcode('amazon', 'generate_amazon_product_link');
 if ( !function_exists( 'generate_amazon_product_link' ) ):
@@ -244,10 +393,11 @@ function generate_amazon_product_link($atts){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
-  //キャッシュ更新間隔
-  $period = intval(get_api_cache_retention_period());
+  // //キャッシュ更新間隔
+  // $period = intval(get_api_cache_retention_period());
   //キーワード
   $kw = trim($kw);
+
 
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
@@ -255,100 +405,28 @@ function generate_amazon_product_link($atts){
     return wrap_amazon_item_box($error_message);
   }
 
-  // //ASIN
-  // $asin = 'B013PUTPHK';
-  // $asin = 'B0186FESEE';
   //ASINがない場合
   if (empty($asin)) {
     $error_message = __( 'Amazon商品リンクショートコード内にASINが入力されていません。', THEME_NAME );
     return wrap_amazon_item_box($error_message);
   }
 
-  //キャッシュの存在
-  $transient_id = TRANSIENT_AMAZON_API_PREFIX.$asin;
-  $cache_tag = get_transient( $transient_id );
-  if ($cache_tag) {
-
-    if (is_user_administrator()) {
-      $cache_del_tag = '<div class="asin-cache-del"><a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a></div>';
-      $cache_tag .= $cache_del_tag;
-    }
-    //_v($cache_tag);
-    return $cache_tag;
-  }
-  $transient_bk_id = TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
-
-  ///////////////////////////////////////
-  // アソシエイトAPI設定
-  ///////////////////////////////////////
-  //アソシエートURLの作成
-  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
-  $associate_url = $base_url.'/'.$asin.'/';
-  if (!empty($associate_tracking_id)) {
-    $associate_url .= $associate_tracking_id.'/';
-  }
-  $associate_url = esc_url($associate_url);
-
-  // //APIエンドポイントURL
-  // $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
-
-  // パラメータ
-  $params = array(
-    //共通↓
-    'Service' => 'AWSECommerceService',
-    'AWSAccessKeyId' => $access_key_id,
-    'AssociateTag' => $associate_tracking_id,
-    //リクエストにより変更↓
-    'Operation' => 'ItemLookup',
-    'ItemId' => $asin,
-    'ResponseGroup' => 'ItemAttributes,Images',
-    //署名用タイムスタンプ
-    'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
-  );
-
-  //パラメータと値のペアをバイト順？で並べかえ。
-  ksort($params);
+  //アソシエイトurlの取得
+  $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
 
 
-  // エンドポイントを指定します。
-  $endpoint = __( 'webservices.amazon.co.jp', THEME_NAME );
-
-  $uri = '/onca/xml';
-
-  $pairs = array();
-
-  // パラメータを key=value の形式に編集します。
-  // 同時にURLエンコードを行います。
-  foreach ($params as $key => $value) {
-      array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
-  }
-
-  // パラメータを&で連結します。
-  $canonical_query_string = join("&", $pairs);
-
-  // 署名に必要な文字列を先頭に追加します。
-  $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
-
-  // RFC2104準拠のHMAC-SHA256ハッシュアルゴリズムの計算を行います。
-  // これがSignatureの値になります。
-  $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_access_key, true));
-
-  // Siginatureの値のURLエンコードを行い、リクエストの最後に追加します。
-  $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
-
-  $res = get_http_content($request_url);
-  //var_dump($res);
-
+  $res = get_amazon_itemlookup_xml($asin);
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
-    //var_dump($xml->Error);
-    if (isset($xml->Error)) {
-      //バックアップキャッシュの確認
-      $cache_tag = get_transient( $transient_bk_id );
-      if ($cache_tag) {
-        return $cache_tag;
-      }
+    //_v($xml);
+
+    if (property_exists($xml->Error, 'Code')) {
+      // //バックアップキャッシュの確認
+      // $cache_tag = get_transient( get_asin_transient_bk_id($asin) );
+      // if ($cache_tag) {
+      //   return $cache_tag;
+      // }
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 
       if (is_user_administrator()) {
@@ -361,10 +439,12 @@ function generate_amazon_product_link($atts){
       return wrap_amazon_item_box($error_message);
     }
 
-    // if (!property_exists($xml->Items, 'Item')) {
-    //   $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-    //   return wrap_amazon_item_box($error_message);
-    // }
+    //var_dump($item);
+
+    if (!property_exists($xml->Items, 'Item')) {
+      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
+      return wrap_amazon_item_box($error_message);
+    }
 
     if (property_exists($xml->Items, 'Item')) {
       $item = $xml->Items->Item;
@@ -447,6 +527,8 @@ function generate_amazon_product_link($atts){
           '</div>';
       }
 
+      $cache_del_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+
       //_v($item);
       $tag =
         '<div class="amazon-item-box no-icon '.$ProductGroupClass.' '.$asin.' cf">'.
@@ -468,18 +550,19 @@ function generate_amazon_product_link($atts){
               $buttons_tag.
             '</div>'.
           '</div>'.
+          $cache_del_tag.
         '</div>';
     } else {
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
       $tag = wrap_amazon_item_box($error_message);
     }
 
-    //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-    $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
-    //Amazon APIキャッシュの保存
-    set_transient($transient_id, $tag, $expiration);
-    //Amazon APIバックアップキャッシュの保存
-    set_transient($transient_bk_id, $tag, $expiration * 2);
+    // //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+    // $expiration = 60 * 60 * 24 * $period + (rand(0, 60) * 60);
+    // //Amazon APIキャッシュの保存
+    // set_transient($transient_id, $tag, $expiration);
+    // //Amazon APIバックアップキャッシュの保存
+    // set_transient($transient_bk_id, $tag, $expiration * 2);
 
     return $tag;
   }

@@ -12,6 +12,7 @@
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   text-align: center;
+  position: relative;
   // div{
   //   display: block;
   // }
@@ -250,12 +251,11 @@
   background: #000066;
 }
 
-.asin-cache-del{
-  text-align: right;
-  margin-top: -2em;
-  margin-bottom: 1.4em;
-  a{
-    font-size: 10px;
-    color: #999;
-  }
+
+.asin-cache-del-link{
+  font-size: 10px;
+  color: #777;
+  position: absolute;
+  bottom: 3px;
+  left: 6px;
 }

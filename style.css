@@ -3702,6 +3702,7 @@ div.sbs-think .speech-balloon::after {
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
   text-align: center;
+  position: relative;
 }
 
 .amazon-item-box {
@@ -3933,14 +3934,12 @@ div.sbs-think .speech-balloon::after {
   background: #000066;
 }
 
-.asin-cache-del {
-  text-align: right;
-  margin-top: -2em;
-  margin-bottom: 1.4em;
-}
-.asin-cache-del a {
+.asin-cache-del-link {
   font-size: 10px;
-  color: #999;
+  color: #777;
+  position: absolute;
+  bottom: 3px;
+  left: 6px;
 }
 
 .fb-like-box {
