@@ -65,7 +65,13 @@ function replace_anchor_links($the_content) {
         continue;
       }
 */
-      if ( (strpos($value, 'href="'.home_url()) !== false) ) {//内部リンクの場合
+      // _v($value);
+      // _v((includes_string($value, 'href="https://') ||
+      //       includes_string($value, 'href="http://')));
+      if (
+          includes_string($value, 'href="'.home_url()) ||
+        !(includes_string($value, 'href="https://') || includes_string($value, 'href="http://'))
+      ) {//内部リンクの場合
       //if ( preg_match('{href="https?://'.get_the_site_domain().'}i') ) {//内部リンクの場合
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
