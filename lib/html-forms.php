@@ -869,8 +869,15 @@ function get_nofollow_link($url, $text){
 }
 endif;
 
+//新着記事タクソノミの取得
+if ( !function_exists( 'get_new_entries_taxonomy' ) ):
+function get_new_entries_taxonomy(){
+  return 'category';
+}
+endif;
+
 if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null){
+function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category'){
 
   $args = array(
     'posts_per_page' => $entry_count,
@@ -886,7 +893,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
     $args += array(
       'tax_query' => array(
         array(
-          'taxonomy' => 'category',
+          'taxonomy' => $taxonomy,
           'terms' => $cat_ids,
           'include_children' => $include_children,
           'field' => 'term_id',
