@@ -1399,6 +1399,10 @@ table td {
   padding: 6px;
 }
 
+.scrollable-table {
+  -webkit-overflow-scrolling: touch;
+}
+
 .scrollable-table table {
   border-collapse: collapse;
   margin: 1em 0;
