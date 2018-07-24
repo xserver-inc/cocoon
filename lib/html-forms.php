@@ -869,13 +869,7 @@ function get_nofollow_link($url, $text){
 }
 endif;
 
-//新着記事タクソノミの取得
-if ( !function_exists( 'get_new_entries_taxonomy' ) ):
-function get_new_entries_taxonomy(){
-  return 'category';
-}
-endif;
-
+//新着記事ウィジェットのタグ生成
 if ( !function_exists( 'generate_new_entries_tag' ) ):
 function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category'){
 
