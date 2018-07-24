@@ -147,7 +147,8 @@ function url_to_internal_blogcard_tag($url){
   '</div>';
 
   //サイトロゴ
-  $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.punycode_decode(get_the_site_domain()).'</div>';
+  $domain = get_domain_name(punycode_decode($url));
+  $site_logo_tag = '<div class="blogcard-domain internal-blogcard-domain">'.$domain.'</div>';
   $site_logo_tag = '<div class="blogcard-site internal-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
   //取得した情報からブログカードのHTMLタグを作成
