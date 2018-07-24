@@ -284,8 +284,8 @@ border-bottom:4px solid #5572ff;
 
 
 /* HACK: シェアをかっこよく！ */
-.sns-share-message, .sns-share-buttons, .bc-brand-color-white.sns-share.ss-high-and-low-cl a,
- .bc-brand-color.sns-share.ss-high-and-low-cl a {
+.sns-share-message, .sns-share-buttons, .bc-brand-color-white.sns-share .sns-share-buttons a,
+ .bc-brand-color.sns-share .sns-share-buttons a {
   background: #fff5fe;
 }
 .ss-top {
@@ -298,7 +298,7 @@ border-bottom:4px solid #5572ff;
     text-align: center;
     display: block;
 }
-.sns-buttons.ss-high-and-low-cl{
+.sns-buttons .sns-share-buttons{
   text-align: center;
   display: block;
 }
@@ -309,7 +309,10 @@ border-bottom:4px solid #5572ff;
     margin: 10px 0 10px 8px;
 }
 
-.sns-share.ss-high-and-low-cl a {
+.sns-share .sns-share-buttons a {
+/*  display: flex;
+    flex-direction: column;
+    align-content: center;*/
     flex-direction: unset;
     overflow: hidden;
     height: 45px!important;
@@ -321,17 +324,18 @@ border-bottom:4px solid #5572ff;
     background: white;
 }
 
-.sns-share.ss-high-and-low-cl a .social-icon {
+.sns-share .sns-share-buttons a .social-icon {
         background: linear-gradient(150deg, #25125df5 10px, #716dab);
         line-height: 1.1;
         color: white;
         padding: 2px;
         font-size: 18px;
+        display: block;
     }
 
 
-.sns-share.ss-high-and-low-lc a .social-icon.button-caption, .sns-share.ss-high-and-low-cl a .social-icon.button-caption,
-.sns-share.ss-high-and-low-lc a .button-caption.button-caption, .sns-share.ss-high-and-low-cl a .button-caption.button-caption {
+.sns-share .sns-share-buttons a .social-icon.button-caption,
+.sns-share .sns-share-buttons a .button-caption.button-caption {
         display: none;
   }
 .sns-share-buttons a .share-count {
@@ -339,7 +343,7 @@ border-bottom:4px solid #5572ff;
     right: 0px;
     bottom: 0px;
     font-size: 10px;
-    line-height: 20px;
+    line-height: 16px;
     margin: 0px!important;
     position: relative;
     color: #25125df5;
@@ -363,7 +367,7 @@ border-bottom:4px solid #5572ff;
       border-color: transparent;
       background: unset;
   }
-.sns-share.ss-high-and-low-cl a:hover .social-icon{
+.sns-share .sns-share-buttons a:hover .social-icon{
   background: transparent;
   font-size: 35px;
   transition: all 0.5s ease;
@@ -406,37 +410,37 @@ border-bottom:4px solid #5572ff;
   margin: 1px;
 }
 /* HACK: ブランドカラー（白抜き）選択時 */
-.bc-brand-color-white.sns-share.ss-high-and-low-cl a .social-icon{
+.bc-brand-color-white.sns-share .sns-share-buttons a .social-icon{
   background: transparent;
   font-size: 28px;
   color: unset;
 }
-.bc-brand-color-white.sns-share.ss-high-and-low-cl a {
+.bc-brand-color-white.sns-share .sns-share-buttons a {
   border: none;
   /*height: 63px!important;*/
 }
-.bc-brand-color-white.sns-share.ss-high-and-low-cl a:hover .social-icon{
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
   transform: rotate(720deg);
   font-size: 41px;
   transition: transform 0.4s ease;
 }
-.bc-brand-color-white.sns-share.ss-high-and-low-cl a:hover .share-count,
-.bc-brand-color.sns-share.ss-high-and-low-cl a:hover .share-count{
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .share-count,
+.bc-brand-color.sns-share .sns-share-buttons a:hover .share-count{
   display: none;
 }
 .bc-brand-color-white.sns-share a:hover{
   opacity: unset!important;
 }
 /* HACK: ブランドカラー選択時 */
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon{
   background: unset;
   font-size: 28px;
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a {
+.bc-brand-color.sns-share .sns-share-buttons a {
   border: none;
   /*height: 63px!important;*/
 }
-.bc-brand-color-white.sns-share.ss-high-and-low-cl a:hover .social-icon{
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
   transform: rotate(720deg);
   font-size: 41px;
   transition: transform 0.4s ease;
@@ -448,37 +452,37 @@ border-bottom:4px solid #5572ff;
   display: block;
 }
 
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-twitter,
- .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.twitter-share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-twitter,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.twitter-share-count{
   filter: drop-shadow(1px 1px 1px #1aa1f2);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-facebook,
- .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.facebook-share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-facebook,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.facebook-share-count{
   filter: drop-shadow(1px 1px 1px #3b5897);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-hatena,
- .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.hatebu-share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-hatena,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.hatebu-share-count{
   filter: drop-shadow(1px 1px 1px #2e6dbe);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-googleplus,
- .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.googleplus-share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-googleplus,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.googleplus-share-count{
   filter: drop-shadow(1px 1px 1px #de4a39);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-pocket,
- .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.pocket-share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-pocket,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.pocket-share-count{
   filter: drop-shadow(1px 1px 1px #f03f56);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-line{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-line{
   filter: drop-shadow(1px 1px 1px #00c400);
 }
-.bc-brand-color.sns-share.ss-high-and-low-cl a .icon-line::after{
+.bc-brand-color.sns-share .sns-share-buttons a .icon-line::after{
   font-weight: bold;
   font-size: 12px;
   color: #fff;
 }
 
 
-.bc-brand-color.sns-share.ss-high-and-low-cl a .share-count{
+.bc-brand-color.sns-share .sns-share-buttons a .share-count{
   color: #fff;
   font-size: 12px;
   font-weight: bold;
