@@ -267,6 +267,22 @@ border-bottom:4px solid #5572ff;
     font-family: serif;
     color: #9e9e9e;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* HACK: シェアをかっこよく！ */
 .sns-share-message, .sns-share-buttons, .bc-brand-color-white.sns-share.ss-high-and-low-cl a,
  .bc-brand-color.sns-share.ss-high-and-low-cl a {
@@ -323,11 +339,17 @@ border-bottom:4px solid #5572ff;
     right: 0px;
     bottom: 0px;
     font-size: 10px;
-    line-height: 1;
+    line-height: 20px;
     margin: 0px!important;
     position: relative;
     color: #25125df5;
 }
+
+.bc-brand-color .sns-share-buttons a .share-count,
+.bc-brand-color-white .sns-share-buttons a .share-count{
+  line-height: .8;
+}
+
 .sns-share-message, .sns-follow-message {
     text-align: center;
     margin-bottom: 0px;
@@ -376,18 +398,9 @@ border-bottom:4px solid #5572ff;
 .googleplus-share-count::after{
   content: '+1';
 }
-.icon-line::after{
+.line-share-count::after{
   content: 'TL';
-      display: block;
-      position: absolute;
-      font-family: Arial, sans-serif;
-      right: 17px;
-      bottom: 6px;
-      font-size: 10px;
-      line-height: 1;
-      margin: 0px!important;
-      color: #25125df5;
-    }
+}
 .line-share-button-sq::after{
   content: '';
   margin: 1px;
@@ -395,12 +408,12 @@ border-bottom:4px solid #5572ff;
 /* HACK: ブランドカラー（白抜き）選択時 */
 .bc-brand-color-white.sns-share.ss-high-and-low-cl a .social-icon{
   background: transparent;
-  font-size: 32px;
+  font-size: 28px;
   color: unset;
 }
 .bc-brand-color-white.sns-share.ss-high-and-low-cl a {
   border: none;
-  height: 63px!important;
+  /*height: 63px!important;*/
 }
 .bc-brand-color-white.sns-share.ss-high-and-low-cl a:hover .social-icon{
   transform: rotate(720deg);
@@ -417,11 +430,11 @@ border-bottom:4px solid #5572ff;
 /* HACK: ブランドカラー選択時 */
 .bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon{
   background: unset;
-  font-size: 32px;
+  font-size: 28px;
 }
 .bc-brand-color.sns-share.ss-high-and-low-cl a {
   border: none;
-  height: 63px!important
+  /*height: 63px!important;*/
 }
 .bc-brand-color-white.sns-share.ss-high-and-low-cl a:hover .social-icon{
   transform: rotate(720deg);
@@ -431,6 +444,10 @@ border-bottom:4px solid #5572ff;
 .bc-brand-color.sns-share a:hover{
   opacity: unset!important;
 }
+.sns-share.sbc-show .share-count{
+  display: block;
+}
+
 .bc-brand-color.sns-share.ss-high-and-low-cl a .social-icon.icon-twitter,
  .bc-brand-color.sns-share.ss-high-and-low-cl a .share-count.twitter-share-count{
   filter: drop-shadow(1px 1px 1px #1aa1f2);
@@ -466,6 +483,26 @@ border-bottom:4px solid #5572ff;
   font-size: 12px;
   font-weight: bold;
 }
+
+.sns-share.sbc-hide a .social-icon {
+  height: 45px;
+  line-height: 42px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* HACK: フォローボタンをカッコよく！ */
