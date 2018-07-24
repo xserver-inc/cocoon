@@ -1255,9 +1255,10 @@ margin-top: 25px;
 
 
 /* HACK: テーブル */
+/* 親テーマでも採用させていただきました（スクロールテーブルのことを忘れてました；）
 .scrollable-table{
   -webkit-overflow-scrolling: touch;
-}
+}*/
 
 /* HACK: 記事下関連記事をカスタマイズ！ */
 /* HACK: ラベルの位置を調整 */
