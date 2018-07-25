@@ -8,7 +8,7 @@
 
 <!-- API -->
 <div id="apis" class="postbox">
-  <h2 class="hndle"><?php _e( 'API設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'API設定（β機能）', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( '各種APIやアフィリエイトIDの設定です。', THEME_NAME ) ?></p>
