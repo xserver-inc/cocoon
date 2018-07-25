@@ -1561,6 +1561,7 @@ border: none;
 
 /* HACK: ページャー */
 .pagination-next-link {
+    background-color: #716dab;
     background: linear-gradient(150deg, #25125df5 10px, #716dab);
     border: none;
     color: #fff;
@@ -1841,4 +1842,22 @@ color: white!important;
 
 body{
   background-color: #f2f0ff;
+}
+
+/*Internet Explorer対応*/
+@media all and (-ms-high-contrast:none){
+  .author-box .sns-follow-buttons a.follow-button{
+    background-color: #716dab;
+  }
+  .fb-like-box{
+    background-color: #333;
+    display: none;
+  }
+  .fb-like-content{
+    background-color: transparent;
+  }
+  .pager-post-navi{
+    display: none;
+  }
+  /*IEでどうしても表示がおかしくなるものは、IEは切り捨てということで非表示*/
 }
