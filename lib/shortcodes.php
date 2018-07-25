@@ -339,6 +339,7 @@ function generate_amazon_product_link($atts){
     'id' => null,
     //'isbn ' => null,
     'kw' => null,
+    'title' => null,
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
@@ -435,7 +436,12 @@ function generate_amazon_product_link($atts){
 
       $ItemAttributes = $item->ItemAttributes;
 
-      $Title = $ItemAttributes->Title;
+      if ($title) {
+        $Title = $title;
+      } else {
+        $Title = $ItemAttributes->Title;
+      }
+
       $TitleAttr = esc_attr($Title);
       $TitleHtml = esc_html($Title);
 
