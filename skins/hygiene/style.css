@@ -1856,7 +1856,9 @@ body{
   .fb-like-content{
     background-color: transparent;
   }
-  .pager-post-navi{
+  .pager-post-navi,
+  blockquote::before,
+  blockquote::after{
     display: none;
   }
   /*IEでどうしても表示がおかしくなるものは、IEは切り捨てということで非表示*/
