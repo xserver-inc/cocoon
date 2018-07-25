@@ -4,7 +4,7 @@
   Skin URI: https://haiji-blog.com/coccon-skin-hygiene/
   Author: ハイジ
   Author URI: https://haiji-blog.com/
-  Screenshot URI:
+  Screenshot URI:https://im-cocoon.net/wp-content/uploads/hygiene.png
   Version: 0.0.1
   Priority: 200700
 */
@@ -239,9 +239,11 @@ border-bottom:4px solid #5572ff;
     border: none;
     text-align: center;
     width: 70%;
-    color: #7f7f7f;
+    color: transparent;
     background-clip: text;
+    -moz-background-clip: text;
     -webkit-background-clip: text;
+    background-color: transparent;
     border-bottom: 1px solid;
     border-top: 1px solid;
     border-color: #cacaca;
