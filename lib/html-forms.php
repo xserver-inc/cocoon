@@ -187,14 +187,15 @@ endif;
 
 //解説ページへのリンク取得
 if ( !function_exists( 'get_help_page_tag' ) ):
-function get_help_page_tag($url){
-  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.__( '解説ページ', THEME_NAME ).'</a>';
+function get_help_page_tag($url, $text = null){
+  $link_text = $text ? $text : __( '解説ページ', THEME_NAME );
+  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.$link_text.'</a>';
   return $tag;
 }
 endif;
 if ( !function_exists( 'generate_help_page_tag' ) ):
-function generate_help_page_tag($url){
-  echo get_help_page_tag($url);
+function generate_help_page_tag($url, $text = null){
+  echo get_help_page_tag($url, $text);
 }
 endif;
 
