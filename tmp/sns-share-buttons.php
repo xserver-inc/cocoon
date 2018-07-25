@@ -34,7 +34,7 @@
     <?php endif; ?>
 
     <?php if ( is_line_at_share_button_visible($option) )://LINEボタンを表示するか ?>
-      <a href="<?php echo get_line_share_url(); ?>" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span></a>
+      <a href="<?php echo get_line_share_url(); ?>" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span><span class="share-count line-share-count"></span></a>
     <?php endif; ?>
 
   </div><!-- /.sns-share-buttons -->

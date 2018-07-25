@@ -1,0 +1,1837 @@
+/*
+  Skin Name: Hygiene
+  Description:Cocoonらしさを薄めて、所々に青系とピンク系を基調としたグラデーションを取り入れたスキン。
+  Skin URI: https://haiji-blog.com/coccon-skin-hygiene/
+  Author: ハイジ
+  Author URI: https://haiji-blog.com/
+  Screenshot URI:
+  Version: 0.0.1
+  Priority: 200700
+*/
+
+/*以下にスタイルシートを記入してください*/
+
+.a-wrap:hover{
+  transition: 0.5s all ease;
+  filter: sepia(80%);
+  transform: scale(1.03);
+}
+.eye-catch{
+  margin: 0 -10px;
+}
+.logo-header img{
+      filter: drop-shadow(0px 0px 3px #1b3868);
+}
+table tr:nth-of-type(2n+1), .page-numbers.dots, .a-wrap:hover, .a-wrap:hover .card-meta,
+   .widget_recent_entries ul li a:hover,
+   .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover,
+    .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,
+     .tag-link:hover, .tagcloud a:hover {
+    background-color: rgba(103, 134, 9, 0)!important;
+}
+/* HACK: メニュー周り */
+.navi{
+  box-shadow: 0px 5px 10px -4px #c7c0ff;
+  margin-bottom: 15px;
+}
+.navi-in a:hover{
+  background: unset!important;
+border-bottom:4px solid #5572ff;
+}
+.navi-in.active a{
+  background: unset;
+border-bottom:4px solid #5572ff;
+
+}
+.navi-in a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    color: #a4a6b5;
+    font-size: 16px;
+    border-bottom: 4px solid transparent;
+    /* padding-bottom: 5px; */
+    font-weight: bold;
+}
+
+/*見出し*/
+.article h2, .article h3, .article h4, .article h5, .article h6{
+  border-image: linear-gradient(to right, #967cff, #ff58cc) 3%;
+  font-family: serif;
+  padding: 0 .5em .5em 2em;
+  border-width: 0px 0px 3px 3px;
+  font-style: italic;
+  border-bottom: solid 2px;
+  border-image-slice: 1;
+  background: none!important;
+  border-left: 0px;
+  color: #383940;
+}
+.article h2 {
+    position: relative;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+.sidebar h3::before, .article h2::before,
+  .sidebar h3::after, .article h2::after,
+  .related-entry-heading::before,
+  .comment-title::before, .main-widget-label::before,
+  .related-entry-heading::after,
+   .comment-title::after, .main-widget-label::after {
+       position: absolute;
+       content: '';
+       border-radius: 100%;
+       opacity: 0.3;
+    }
+.sidebar h3::before, .article h2::before, .related-entry-heading::before,
+.comment-title::before, .main-widget-label::before{
+       top: .2em;
+       left: .2em;
+       z-index: 2;
+       width: 33px;
+       height: 33px;
+       background: #967cff!important;
+     }
+.related-entry-heading::before,
+.comment-title::before, .main-widget-label::before{
+  background: #8c48839c!important;
+}
+.sidebar h3::after, .article h2::after, .related-entry-heading::after,
+ .comment-title::after, .main-widget-label::after{
+       top: -0.3em;
+       left: .7em;
+       width: 37px;
+       height: 37px;
+       background: #ff58cc;
+       }
+.related-entry-heading::after,
+.comment-title::after, .main-widget-label::after{
+  background: #1840b19c!important;
+}
+.article h3{
+  font-size: 23px;
+  border-left: 0px;
+  padding-left: 0;
+  margin-left: 4%;
+  margin-bottom: 30px;
+}
+.article h4{
+  font-size: 21px;
+  margin-left: 6%;
+  padding-left: 0;
+  color: #656465;
+}
+.article h5{
+  font-size: 19px;
+  margin-left: 8%;
+  padding-left: 0;
+  color: #757575;
+}
+.article h6{
+  font-size: 19px;
+  margin-left: 8%;
+  padding-left: 0;
+  color: #757575;
+  border-bottom: 1px solid;
+}
+.sidebar h3, .related-entry-heading, .comment-title, .main-widget-label{
+  position: relative;
+  font-family: serif;
+  font-style: italic;
+  margin: 5px 0;
+  font-size: 22px;
+  background: none!important;
+  padding-left: 2.1em;
+  padding-bottom: 0px;
+  padding-top: 0;
+}
+.related-entry-heading, .comment-title, .main-widget-label{
+  font-size: 28px;
+  padding-left: 1.6em
+}
+#author_box-3 .main-widget-label::after, #author_box-3 .main-widget-label::before{
+  content: none;
+}
+
+/* HACK: エントリーカードをかっこよく！ */
+.ecb-entry-border .entry-card-wrap{
+  border: none;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-title {
+    font-size: 18px;
+    margin: 15px 10px;
+    line-height: 1.2;
+    margin-bottom: 0px;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-snippet {
+    font-size: 12px;
+    margin: 10px 15px 0 15px;
+    color: #d7d5ef;
+}
+.ect-vertical-card .entry-card-wrap .entry-card-thumb img {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+}
+
+.ect-vertical-card .entry-card-wrap .entry-card {
+    position: relative;
+    background: linear-gradient(225deg, #25125df5 10px, #6f6ab9);
+    color: #fdfdfd;
+}
+
+.ect-vertical-card .entry-card-wrap .entry-card-info {
+    display: block;
+    align-items: center;
+    margin: 10px;
+    font-size: 19px;
+    font-family: serif;
+}
+
+.ect-vertical-card .entry-card-wrap .entry-card-meta {
+    position: relative;
+    right: 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.ect-vertical-card .entry-card-wrap .cat-label {
+  position: relative;
+  left: unset;
+  background-color: transparent!important;
+  margin-bottom: 20px;
+  padding: 2px 15px;
+  margin: 0 auto;
+  display: block;
+  width: 65%;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+}
+.ect-entry-card .ecb-entry-border .cat-label {
+  position: absolute;
+  left: unset;
+  background-color: transparent!important;
+  margin-bottom: 3px;
+  padding: 1px 15px;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  width: fit-content;
+}
+
+.ect-vertical-card.entry-card-snippet {
+  font-size: 12px;
+  margin: 10px 15px 0 15px;
+  color: #d7d5ef
+}
+/* HACK: アイキャッチのラベルをかっこよく！もはや別物 */
+.eye-catch .cat-label {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 12px;
+    margin: 1em auto;
+    margin-bottom: 2em!important;
+    border: none;
+    text-align: center;
+    width: 70%;
+    color: #ffffff00;
+    background-clip: text;
+    -webkit-background-clip: text;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: #cacaca;
+
+}
+.eye-catch .cat-label::before{
+  content: 'category:';
+}
+
+
+/* HACK: エントリーカードのホバーアクション */
+ .ect-vertical-card .entry-card-wrap:hover{
+  background-color: unset;
+  transform: scale(1.06);
+  filter: none;
+}
+
+ .ect-vertical-card .a-wrap:hover .entry-card {
+    background: #897fde;
+    transition: all 0.9s ease;
+}
+.date-tags {
+    font-family: serif;
+    color: #9e9e9e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HACK: シェアをかっこよく！ */
+.sns-share-message, .sns-share-buttons, .bc-brand-color-white.sns-share .sns-share-buttons a,
+ .bc-brand-color.sns-share .sns-share-buttons a {
+  background: #fff5fe;
+}
+.ss-top {
+    margin-top: unset;
+    margin-bottom: unset;
+    text-align: center;
+    position: relative;
+}
+.sns-share-buttons {
+    text-align: center;
+    display: block;
+}
+.sns-buttons .sns-share-buttons{
+  text-align: center;
+  display: block;
+}
+.sns-buttons a {
+    background-color: unset;
+    text-decoration: none;
+    border-radius: unset;
+    margin: 10px 0 10px 8px;
+}
+
+.sns-share .sns-share-buttons a {
+/*  display: flex;
+    flex-direction: column;
+    align-content: center;*/
+    flex-direction: unset;
+    overflow: hidden;
+    height: 45px!important;
+    width: 45px!important;
+    border: 1px solid #25125df5;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+}
+
+.sns-share .sns-share-buttons a .social-icon {
+        background: linear-gradient(150deg, #25125df5 10px, #716dab);
+        line-height: 1.1;
+        color: white;
+        padding: 2px;
+        font-size: 18px;
+        display: block;
+    }
+
+
+.sns-share .sns-share-buttons a .social-icon.button-caption,
+.sns-share .sns-share-buttons a .button-caption.button-caption {
+        display: none;
+  }
+.sns-share-buttons a .share-count {
+    font-family: Arial, sans-serif;
+    right: 0px;
+    bottom: 0px;
+    font-size: 10px;
+    line-height: 16px;
+    margin: 0px!important;
+    position: relative;
+    color: #25125df5;
+}
+
+.bc-brand-color .sns-share-buttons a .share-count,
+.bc-brand-color-white .sns-share-buttons a .share-count{
+  line-height: .8;
+}
+
+.sns-share-message, .sns-follow-message {
+    text-align: center;
+    margin-bottom: 0px;
+    font-family: serif;
+    font-style: italic;
+    font-size: 24px;
+}
+.sns-share-buttons a:hover{
+      transition: all 0.7s ease;
+      opacity: unset;
+      border-color: transparent;
+      background: unset;
+  }
+.sns-share .sns-share-buttons a:hover .social-icon{
+  background: transparent;
+  font-size: 35px;
+  transition: all 0.5s ease;
+}
+.sns-share-buttons a:hover .icon-twitter{
+  color: #8cbdff;
+}
+.sns-share-buttons a:hover .icon-facebook{
+  color: #686af5;
+}
+.sns-share-buttons a:hover .icon-googleplus{
+  color: #ed8678;
+}
+
+.sns-share-buttons a:hover .icon-hatena{
+  color: #98daff;
+
+}
+.sns-share-buttons a:hover .icon-pocket{
+  color: #ef6bdc;
+}
+.sns-share-buttons a:hover .icon-line{
+  color: #46e4b4;
+}
+.sns-share-buttons a:hover .icon-line::after{
+  display: none;
+}
+
+.twitter-share-count::after {
+  content: 'SHARE';
+}
+.googleplus-share-count::after{
+  content: '+1';
+}
+.line-share-count::after{
+  content: 'TL';
+}
+.line-share-button-sq::after{
+  content: '';
+  margin: 1px;
+}
+/* HACK: ブランドカラー（白抜き）選択時 */
+.bc-brand-color-white.sns-share .sns-share-buttons a .social-icon{
+  background: transparent;
+  font-size: 28px;
+  color: unset;
+}
+.bc-brand-color-white.sns-share .sns-share-buttons a {
+  border: none;
+  /*height: 63px!important;*/
+}
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
+  transform: rotate(720deg);
+  font-size: 41px;
+  transition: transform 0.4s ease;
+}
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .share-count,
+.bc-brand-color.sns-share .sns-share-buttons a:hover .share-count{
+  display: none;
+}
+.bc-brand-color-white.sns-share a:hover{
+  opacity: unset!important;
+}
+/* HACK: ブランドカラー選択時 */
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon{
+  background: unset;
+  font-size: 28px;
+}
+.bc-brand-color.sns-share .sns-share-buttons a {
+  border: none;
+  /*height: 63px!important;*/
+}
+.bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
+  transform: rotate(720deg);
+  font-size: 41px;
+  transition: transform 0.4s ease;
+}
+.bc-brand-color.sns-share a:hover{
+  opacity: unset!important;
+}
+.sns-share.sbc-show .share-count{
+  display: block;
+}
+
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-twitter,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.twitter-share-count{
+  filter: drop-shadow(1px 1px 1px #1aa1f2);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-facebook,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.facebook-share-count{
+  filter: drop-shadow(1px 1px 1px #3b5897);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-hatena,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.hatebu-share-count{
+  filter: drop-shadow(1px 1px 1px #2e6dbe);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-googleplus,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.googleplus-share-count{
+  filter: drop-shadow(1px 1px 1px #de4a39);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-pocket,
+ .bc-brand-color.sns-share .sns-share-buttons a .share-count.pocket-share-count{
+  filter: drop-shadow(1px 1px 1px #f03f56);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-line{
+  filter: drop-shadow(1px 1px 1px #00c400);
+}
+.bc-brand-color.sns-share .sns-share-buttons a .icon-line::after{
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+}
+
+
+.bc-brand-color.sns-share .sns-share-buttons a .share-count{
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sns-share.sbc-hide a .social-icon {
+  height: 45px;
+  line-height: 42px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HACK: フォローボタンをカッコよく！ */
+.sidebar .sns-follow-buttons, .footer .sns-follow-buttons{
+  justify-content: center;
+}
+.sns-follow-buttons {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sns-follow {
+  background: linear-gradient(225deg, #f5f2fff5 10px, #dffffe);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.sns-follow.bc-brand-color > .sns-follow-buttons a {
+    width: 51%;
+    height: 1.7em;
+    color: white;
+    -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    border: none;
+    font-size: 27px;
+    filter: none;
+}
+.sns-follow.bc-brand-color > .sns-follow-buttons a .follow-count{
+  right: 2em!important;
+}
+.sidebar .bc-brand-color.sns-follow .sns-follow-buttons a, .footer .sns-follow-buttons a{
+  width: 46%;
+  height: 1.5em;
+}
+.sns-follow.bc-brand-color > .sns-follow-buttons a:hover{
+  opacity: unset;
+  transform: translate(30px,0px);
+}
+/* HACK: ブランドカラー（白抜き）選択時 */
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a {
+  background: unset;
+  width: 9%;
+  font-size: 50px;
+  color: white;
+  height: 38px;
+  border: none;
+  justify-content: center;
+  margin: 15px 20px;
+}
+.bc-brand-color-white.sns-follow .sns-follow-buttons a .follow-count{
+  filter: drop-shadow(1px 1px 1px black);
+}
+.bc-brand-color-white.sns-follow .website-button,
+.author-box .sns-follow-buttons a.follow-button.website-button{
+  filter: drop-shadow(1px 1px 1px #002561);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-home-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-home-logo{
+  color: #002561;
+}
+.bc-brand-color-white.sns-follow .twitter-button,
+.author-box .sns-follow-buttons a.follow-button.twitter-button{
+  filter: drop-shadow(1px 1px 1px #1da1f2)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-twitter-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-twitter-logo{
+  color: #1da1f2;
+}
+.bc-brand-color-white.sns-follow .facebook-button,
+.author-box .sns-follow-buttons a.follow-button.facebook-button {
+  filter: drop-shadow(1px 1px 1px #3b5998)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-facebook-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-facebook-logo{
+  color: #3b5998;
+}
+.bc-brand-color-white.sns-follow .hatebu-button,
+.author-box .sns-follow-buttons a.follow-button.hatebu-button {
+  filter: drop-shadow(1px 1px 1px #2c6ebd)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-hatebu-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-hatebu-logo{
+  color: #2c6ebd;
+}
+.bc-brand-color-white.sns-follow .google-plus-button,
+.author-box .sns-follow-buttons a.follow-button.google-plus-button {
+  filter: drop-shadow(1px 1px 1px #dd4b39)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-google-plus-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-google-plus-logo{
+  color: #dd4b39;
+}
+.bc-brand-color-white.sns-follow .instagram-button,
+.author-box .sns-follow-buttons a.follow-button.instagram-button{
+  filter: drop-shadow(1px 1px 1px #405de6)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-instagram-new,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-instagram-new{
+  color: #405de6;
+}
+.bc-brand-color-white.sns-follow .youtube-button,
+.author-box .sns-follow-buttons a.follow-button.youtube-button{
+  filter: drop-shadow(1px 1px 1px #cd201f)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-youtube-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-youtube-logo{
+  color: #cd201f;
+}
+.bc-brand-color-white.sns-follow .flickr-button,
+.author-box .sns-follow-buttons a.follow-button.flickr-button{
+  filter: drop-shadow(1px 1px 1px #111)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-flickr-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-flickr-logo{
+  color: #111;
+}
+.bc-brand-color-white.sns-follow .pinterest-button,
+.author-box .sns-follow-buttons a.follow-button.pinterest-button{
+  filter: drop-shadow(1px 1px 1px #bd081c)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-pinterest-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-pinterest-logo{
+  color: #bd081c;
+}
+.bc-brand-color-white.sns-follow .line-button,
+.author-box .sns-follow-buttons a.follow-button.line-button{
+  filter: drop-shadow(1px 1px 1px #00c300)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-line-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-line-logo{
+  color: #00c300;
+}
+.bc-brand-color-white.sns-follow .amazon-button,
+.author-box .sns-follow-buttons a.follow-button.amazon-button {
+  filter: drop-shadow(1px 1px 1px #ff9900)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-amazon-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-amazon-logo{
+  color: #ff9900;
+}
+.bc-brand-color-white.sns-follow .github-button,
+.author-box .sns-follow-buttons a.follow-button.github-button{
+  filter: drop-shadow(1px 1px 1px #4078c0)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-github-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-github-logo{
+  color: #4078c0;
+}
+.bc-brand-color-white.sns-follow .feedly-button,
+.author-box .sns-follow-buttons a.follow-button.feedly-button {
+  filter: drop-shadow(1px 1px 1px #2bb24c)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-feedly-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-feedly-logo{
+  color: #2bb24c;
+}
+.bc-brand-color-white.sns-follow .rss-button,
+.author-box .sns-follow-buttons a.follow-button.rss-button {
+  filter: drop-shadow(1px 1px 1px #f26522)
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-rss-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-rss-logo{
+  color: #f26522;
+}
+
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover span{
+  transition: all 0.8s ease;
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover{
+  opacity: 1;
+}
+/* HACK: モノクロ選択時 */
+.sns-follow-buttons a {
+    width: 36%;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 40px;
+    display: flex;
+    height: 1.3em;
+    align-items: center;
+    color: #0c1c50;
+    border: 2px solid;
+    border-color: #0c1c50;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    filter: drop-shadow(1px 1px 1px grey);
+}
+
+/* HACK: サイドバーの　周り */
+.widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a,
+ .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a,
+  .widget_nav_menu ul li a{
+    border-bottom: 1px solid #957aff8c;
+    color: #656565;
+    font-size: 16px;
+    line-height: 2em;
+    padding: 5px 3px;
+  }
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover,
+.widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,
+.pager-links a:hover span {
+  background: unset!important;
+  transform: translateX(5px);
+  border-bottom: 1px solid #bd9af587;
+}
+.widget_recent_entries ul li ul, .widget_categories ul li ul,
+ .widget_archive ul li ul, .widget_pages ul li ul, .widget_meta ul li ul,
+  .widget_rss ul li ul, .widget_nav_menu ul li ul{
+    padding-left: 2em;
+  }
+.tagcloud a:hover {
+    border: 1px solid #dee0ff!important;
+    transform: none;
+    background: white!important;
+}
+.widget_categories ul li a .post-count{
+  background: #ffd0f1!important;
+}
+.widget_recent_entries ul li a .post-count, .widget_categories ul li a .post-count,
+ .widget_archive ul li a .post-count, .widget_pages ul li a .post-count, .widget_meta ul li a .post-count,
+  .widget_rss ul li a .post-count, .widget_nav_menu ul li a .post-count{
+    background: #e0d8ff;
+    width: 30px;
+    height: 21px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 5px;
+    color: white;
+    line-height: 2em;
+    margin-top: 4px;
+}
+.tagcloud a .tag-link-count {
+    color: #7271bb;
+}
+.tagcloud a{
+    background-color: #e1e2ff7a;
+    border-radius: 25px;
+    border-color: transparent!important;
+    color: #555;
+    padding: 3px 8px;
+    font-size: 11px;
+    margin: 3px;
+}
+.tagcloud a .tag-caption::before{
+  content: none;
+}
+.widget_recent_entries ul li a::before, .widget_categories ul li a::before, .widget_archive ul li a::before,
+ .widget_pages ul li a::before, .widget_meta ul li a::before, .widget_rss ul li a::before, .widget_nav_menu ul li a::before{
+   content: '\f138';
+   font-family: 'FontAwesome';
+   color: #e1b6f6;
+   font-size: 18px;
+   margin-right: 0.4em;
+  }
+.widget_recent_entries ul li ul li a::before, .widget_categories ul li ul li a::before, .widget_archive ul li ul li a::before,
+ .widget_pages ul li ul li a::before, .widget_meta ul li ul li a::before, .widget_rss ul li ul li a::before,
+  .widget_nav_menu ul li ul li a::before{
+  content: '\f105';
+  font-family: 'FontAwesome';
+  background: unset;
+color: #403f3f;
+margin-right: 0;
+}
+
+
+/* HACK: 今は　予備　＞　シェアボタン系　に隠してます */
+
+/* HACK: 写真をポラロイド風に */
+.wp-caption-text, .gallery-caption {
+    font-size: 75%;
+    line-height: 1;
+    color: #968f8f;
+    margin-top: 4px;
+    padding: 7px;
+}
+.wp-caption img {
+    margin: 0;
+    padding: 0px;
+    border: 1px solid #ababab;
+}
+.wp-caption {
+    padding-top: 9px;
+    padding-right: 9px;
+    padding-left: 9px;
+    border: 1px solid #a7a7a7;
+    border-radius: 0px;
+    background-color: #ffffff;
+    text-align: center;
+    max-width: 100%;
+    box-shadow: 0 6px 7px -4px #ababab;
+    margin-bottom: 20px;
+}
+/* HACK: 写真に枠線をつける */
+.img-waku{
+  border: 1px solid #dcdcdc;
+}
+
+
+/* HACK: いいね！ボックス *
+.fb-like-box{
+  background: transparent;
+}
+.fb-like-thumb{
+  max-width: 100%;
+  background: #9e1c82;
+}
+.fb-like-box .fb-like-thumb > *{
+  min-width: 100%;
+  height: 240px;
+  opacity: 0.7;
+}
+.fb-like-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    text-align: center;
+    z-index: 999;
+    position: absolute;
+    width: 97%!important;
+    height: 240px;
+}
+@media screen and (max-width: 768px){
+.fb-like-box {
+    display: flex;
+}}*/
+
+/* HACK: いいねボックス */
+.fb-like-box{
+  background: transparent;
+  display: inline-block;
+  height: 350px;
+  width: 100%;
+}
+.fb-like-thumb{
+  max-width: 100%;
+  background: #9e1c82;
+  height: 0;
+}
+.fb-like-box .fb-like-thumb > *{
+  min-width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.fb-like-content::after{
+  content: '';
+  width: 100%;
+  height: 350px;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(to left, #ffa2e4, #759fff);
+  opacity: 0.75;
+}
+.fb-like-content{
+  height: 350px;
+  position: relative;
+  z-index: 2;
+}
+.fb-like-box img{
+  position: relative;
+  z-index: 2;
+}
+.fb-like-buttons{
+  margin: 50px 0;
+}
+.fb-like-message{
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 1px 2px 3px #9c1fb3;
+}
+.fb-like-sub-message{
+  color: #fff;
+  font-size: 0.9em;
+  text-shadow: 0px 0px 7px #423e3e;
+}
+.widget_fb_like_box{
+  margin-left: -10px;
+  margin-right: -10px;
+}
+/*
+.fb-like-box{
+  margin-left: 13%;
+  margin-right: 13%;
+  display: block;
+}
+.fb-like-thumb{
+  max-width: 100%;
+}
+.fb-like-box .fb-like-thumb > *{
+  min-width: 100%;
+  opacity: 0.7;
+}
+.fb-like-thumb, .fb-like-content{
+  background: #e0d8ff
+}
+.fb-like-sub-message{
+  color: #969696;
+  font-size: 0.8em;
+}
+.fb-like-message{
+  color: #ffffff;
+  font-size: 1em
+}*/
+
+
+
+/*スマホの固定フッターメニュー*/
+.mobile-menu-buttons {
+    background:  linear-gradient(to left, rgba(132, 209, 255, 0.85), rgba(255, 160, 252, 0.85))!important;
+    box-shadow: 0px 2px 3px 3px #041329;
+    font-size: 1.2em;
+}
+.mobile-menu-buttons .menu-icon::before {
+    font-size: 1.3em;
+    color: white;
+}
+.mobile-menu-buttons .menu-caption {
+    font-size: 10px;
+    text-align: center;
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin-top: -2px;
+}
+.mobile-menu-buttons .menu-icon {
+    margin-top: 0px;
+}
+.mobile-menu-buttons .menu-button:hover {/*選択したあと色変えるヤ～ツ*/
+  background: #ffffff4d!important;
+  color: #2f3438!important;
+}
+
+/* HACK: キャラクターを大きく */
+.speech-person {
+  min-width: 80px;
+}
+
+/* HACK: 引用をオシャレに！ */
+blockquote {
+    background: #c7eaff12!important;
+    border: 0.5px solid #c7dbff!important;
+    padding: 22px;
+    position: relative;
+    font-size: 90%;
+    border-radius: 3px;
+    margin: 30px 0px;
+}
+blockquote a {
+    text-decoration: none;
+    color: #31b9ff!important;
+    font-size: 83%;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+blockquote a::before{
+  content: '出典：';
+  color: #656565;
+}
+blockquote::before {
+    content: "\f10d";
+    font-family: FontAwesome!important;
+    line-height: 1.1;
+    left: 20px;
+    top: 15px;
+}
+blockquote::after{
+  content: "\f10e";
+  font-family: FontAwesome!important;
+  line-height: 1.1;
+  right: 20px;
+  bottom: 15px;
+}
+blockquote::before, blockquote::after{
+  font-size: 100%;
+  color: #31b9ff!important;
+}
+
+
+/* HACK: この記事を書いた人をカスタマイズ */
+img.avatar.avatar-200.wp-user-avatar{
+      filter: drop-shadow(2px 2px 3px);
+}
+
+#author_box-3 .main-widget-label {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.4em;
+    text-align: center;
+    padding-left: 0;
+}
+.author-widget-name {
+    text-align: center;
+    font-family: serif;
+    margin-top: 7px;
+}
+.author-widget-name::before{
+  content:"\f10d";
+  font-family: FontAwesome!important;
+  font-size: 10px;
+  position: relative;
+  top: -10px
+}
+.author-widget-name::after{
+  content: "\f10e";
+  font-family: FontAwesome!important;
+  font-size: 10px;
+  position: relative;
+  bottom: -5px;
+}
+.author-thumb {
+    float: unset;
+    margin-top: 3px;
+    width: 150px;
+    margin: 0 auto;
+}
+.author-content {
+    margin-left: unset!important;
+}
+.author-box p {
+    font-size: 14px;
+    color: #7d7979;
+}
+.author-box .author-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+.author-name a{
+    text-decoration: none;
+    color: #605f67;
+}
+.author-description {
+    margin: 0 auto;
+    width: 90%;
+}
+.author-box .sns-follow {
+    margin: 0;
+    background: unset;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+.author-box .sns-follow-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+div#author_box-3 {
+    background: #f6f1ff;
+}
+.author-box {
+    border: unset;
+    border-radius: 0px;
+    line-height: 1.4;
+    position: relative;
+    padding: 1.4% 2% 1.8%;
+    background: #f6f1ff;
+    margin: 50px 20px;
+    margin-top: 0px;
+}
+.sidebar .author-box{
+  margin: 50px 0px;
+}
+.author-box .sns-follow-buttons a.follow-button {
+    font-size: 32px!important;
+    width: 37px!important;
+    height: 42px!important;
+    margin-bottom: 0px;
+    margin-right: 2px;
+    margin-left: 2px;
+    background-color: unset!important;
+    color: #fff;
+    border: none;
+    clip-path: unset!important;
+    -webkit-clip-path: unset!important;
+}
+.author-box .sns-follow-buttons a.follow-button:hover{
+  transform: translate(0px,-3px)!important;
+}
+.author-box .sns-follow-buttons a.follow-button:hover span{
+  transition: 0.4s all ease;
+}
+.author-box p a {
+    color: #3cbdff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 480px){
+.author-box .author-content {
+    margin-left: unset;
+}}
+
+/* HACK: 目次をカスタマイズ */
+.toc{
+  width: 100%;
+margin: 0 auto;
+border-color: #b1b1b1!important;
+border-width: 3px;
+margin-bottom: 20px;
+}
+.toc-title{
+border-radius: 30px;
+width: fit-content;
+margin: 39px auto;
+font-size: 25px;
+}
+.toc-title::before{
+  content: '\f0f6';
+  font-family: 'FontAwesome';
+  margin-right: 0.4em;
+}
+.toc ol ol{
+  list-style: none;
+}
+.toc ol li{
+  margin-left: 2em;
+}
+.toc-list>li>a{
+  font-size: 17px;
+  border-bottom: solid;
+display: block;
+width: 100%;
+border-color: transparent;
+transition: 0.5s all ease;
+font-weight: bold;
+}
+.toc-list>li>a:hover{
+  border-color: #bad5ff;
+  text-decoration: none;
+  transform: translateX(5px);
+}
+.toc ol li ol a::before{
+  content: '\f105';
+  font-family: 'FontAwesome';
+}
+.toc ol li ol a{
+  font-size: 16px;
+  transition: 0.5s all ease;
+  display: block;
+  color: #4e4e4e;
+}
+.toc-list>li>ol a:hover{
+  transform: translateX(5px);
+  text-decoration: none;
+}
+
+/* HACK: 広告ラベルを多少オシャレに！ */
+.ad-label {
+  color: #1f2b8a;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+  opacity: 0.6;
+}
+
+/* HACK: ブログカードをオシャレに！ */
+.blogcard {
+	padding: 1rem;
+	color: #666;
+	position: relative;
+	border-color: #a9b6ff !important; /* 枠線の色を変更 */
+  margin: 30px auto;
+  padding-bottom: 8px;
+  border-width: 2px;
+  box-shadow: 0px 0px 6px 1px #dae0ff;
+}
+
+a.blogcard-wrap:hover{
+	background-color: transparent!important;
+	opacity: 0.8;
+}
+
+a.blogcard-wrap:hover img.blogcard-thumb-image{
+	transform: scale(1.1);
+	transition: .3s;
+}
+
+.blogcard-thumbnail {
+	line-height: 0;
+	margin-right: 1rem;
+	overflow: hidden;
+  margin-top: 15px;
+}
+
+.blogcard-title{
+	margin-bottom: .5rem;
+  margin-top: 0.7em;
+}
+
+.blogcard-snipet{
+	font-size: 70%;
+	line-height: 1.7;
+	padding-right: 10%;
+}
+
+@media screen and (max-width: 480px){
+	.blogcard-thumbnail{
+		width: 40%;
+    margin-top: 10px
+	}
+	.blogcard-snipet{
+		display: none;
+	}
+}
+
+.internal-blogcard-footer{
+	display: none; /* 内部ブログカードのアイコンとURLを非表示 */
+}
+
+.blogcard::before{
+	content: '\f02d あわせて読みたい'; /* タイトルの文言 */
+  font-family: 'FontAwesome';
+	position: absolute;
+	top: -1rem;
+	left: auto;
+	font-size: 75%;
+  background: #a9b6ff;
+  padding: .6em 1em;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 8px 8px 0 0;
+}
+
+.internal-blogcard::after{
+	content: '続きを読む \f138'; /* 内部リンク右下枠の文言 */
+  font-family: 'FontAwesome';
+	position: relative;
+	font-size: 85%;
+	background: linear-gradient(203deg, #7144f7f5 15px, #d675ce); /* 内部リンク右下枠の背景色 */
+	padding: .4em 3em;
+	font-weight: bold;
+	color: #fff; /* 内部リンク右下枠の文字色 */
+  -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+text-align: center;
+width: 35%;
+margin: 0 auto;
+margin-top: 25px;
+}
+
+
+/* HACK: テーブル */
+/* 親テーマでも採用させていただきました（スクロールテーブルのことを忘れてました；）
+.scrollable-table{
+  -webkit-overflow-scrolling: touch;
+}*/
+
+/* HACK: 記事下関連記事をカスタマイズ！ */
+/* HACK: ラベルの位置を調整 */
+.related-entry-card .cat-label {
+    font-size: 11px;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    left: unset;
+    text-align: center;
+    top: unset;
+    margin: 0 auto;
+    padding: 3px 15px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: none;
+    text-align: center;
+    width: 100%;
+    color: #ffffff00;
+    background-clip: text;
+    -webkit-background-clip: text;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: #cacaca;
+    font-weight: bold;
+}
+.related-vartical-card .related-entry-card-title {
+    font-size: 15px;
+    font-weight: 100;
+}
+.related-entry-card-snippet.card-snippet {
+    font-size: 0.7em;
+    margin: 10px 5px;
+    color: #8c8c8c;
+}
+.a-wrap:hover{
+  background-color: unset!important;
+  color:unset!important;
+}
+.related-vartical-card .related-entry-card-wrap:hover .card-thumb img{
+  transform: scale(1.07);
+  transition: all 0.5s ease;
+}
+
+/* HACK: コードのカスタマイズ */
+.pre_tag {
+ margin: 1em 0 1.5em;
+}
+.pre_tag > span {
+ display: inline-block;
+ padding: 2px 10px;
+ border-radius: 10px 10px 0 0;
+ color: #fff;
+ font-size: .9em;
+     background: #ff9ae4;
+}
+.pre_tag p {
+ margin: 0;
+}
+/*コード*/
+.entry-content code,
+.entry-content .haiiro {
+ padding: .2em .3em;
+ border-radius: 5px;
+ background: #f3f6fc;
+ font-size: .9em;
+ font-family:sans-serif;
+}
+.entry-content pre {
+  margin: 0 0 1.5em;
+     padding: 1em;
+     border: solid 1px #c6dbff;
+     background: #f1faff;
+     color: #54687c;
+     font-family: sans-serif;
+}
+.entry-content pre code {
+ padding: 0;
+ background: transparent;
+}
+
+
+/* HACK: associate post R2 */
+.wpap-tpl-with-detail .wpap-link a {
+    font-size: 16px!important;
+    padding: 9px!important;
+    border-radius: 2px;
+    box-shadow: 0px 2px 3px 0px #505050;
+    margin-right: 1em!important;
+    transition: 0.5s all ease;
+    width: 26%;
+    margin: 10px;
+}
+.wpap-tpl-with-detail .wpap-link a:hover{
+  transform: translateY(5px);
+  box-shadow: unset;
+}
+.wpap-tpl.wpap-tpl-with-detail{
+  max-width: 100%!important;
+  border-radius: 0px!important;
+    border-width: 0 0 0 10px!important;
+    border-style: solid!important;
+    border-image: linear-gradient(to bottom, #52befff5, #84fdaf) 1 100%!important;
+    background: linear-gradient(to left, #ecffef, #e0efff);
+}
+.wpap-tpl-with-detail .wpap-link{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (max-width: 767px){
+.wpap-tpl-with-detail .wpap-link a{
+  width: 39%!important;
+}}
+
+
+
+    /*wpap 終わり*/
+
+
+/*simpkeGA_ranking*/
+    .sga-ranking-list figure {
+    float: left;
+    width: 100%; /* 画像の横の長さ。自由に変更可 */
+    height: auto; /* 画像の縦の長さ。自由に変更可 */
+    overflow: hidden;
+}
+.sga-ranking-list img{
+  width: 120px;
+  margin-right: 10px;
+}
+.sga-ranking-list {
+    margin: 0.8rem 0;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: left;
+    list-style: none;
+    font-size: 14px;
+}
+.sga-ranking-list::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.sga-ranking-list:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.sga-ranking-list figure a {
+    display: inline;
+}
+.sga-ranking-list a  {
+    overflow: hidden;
+    line-height: 1.2;
+    text-decoration: none;
+    color:#2f2020;
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.sga-haiji {
+  float: left;
+}
+
+/* HACK: simpleGAと新着記事を合わせる */
+.widget-entry-cards .a-wrap:hover, .sga-ranking-list:hover,
+ .related-entry-card-wrap.a-wrap:hover{
+  transform: scale(1.06);
+  transition: all 0.4s ease;
+}
+.sga-ranking-list:hover .sga-ranking-thumb, .widget-entry-cards .a-wrap:hover .widget-entry-card-thumb,
+ .related-entry-card-wrap.a-wrap:hover .related-entry-card-thumb {
+  filter: sepia(50%);
+  transition: all 0.5s ease;
+}
+.widget-entry-cards .widget-entry-card, .sga-ranking-list a{
+  font-size: 16px
+}
+/* HACK: 入力エリア関連 */
+.search-edit, input[type="text"], input[type="password"],
+ input[type="date"], input[type="datetime"], input[type="email"],
+  input[type="number"], input[type="search"], input[type="tel"],
+   input[type="time"], input[type="url"], textarea, select{
+     -webkit-appearance: none;
+         -moz-appearance: none;
+         -ms-appearance: none;
+         -o-appearance: none;
+         appearance: none;
+         border-radius: 0px;
+         border: 1px solid #3f34e082;
+         /* box-shadow: 0 0 4px -2px #adb3ca59; */
+         background: white;
+         /* transform: skewX(-10deg); */
+         font-size: 15px;
+         color: #757575;
+   }
+select:hover{
+  transition: all 0.4s ease;
+  transform: skewX(-10deg);
+  cursor: pointer;
+  background: #ff9de521;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid;
+      border-color: rgb(47, 29, 163);
+      background: rgba(208, 211, 220, 0.43);
+      top: 3px;
+      margin-right: 5px;
+      position: relative;
+      top: 3px;
+      border-radius: 0;
+    }
+
+/* HACK:検索ボタン */
+.search-submit {
+    right: 10px;
+    top: 3.2px;
+    font-size: 25px;
+    line-height: 45px;
+    border: none;
+    color: rgba(80, 71, 255, 0.37);
+    padding: 0 8px;
+    background-color: transparent;
+}
+  /* HACK: 送信ボタンとかをカスタマイズ */
+input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a ,.comment-btn{
+    -webkit-appearance: none;
+    padding: 5px;
+    width: 80%;
+    height: 3em;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background: #8191e0!important;
+    font-size: 19px;
+    color: #ffffff;
+    border-radius: 0px;
+    border: none;
+    -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    margin-bottom: 40px;
+}
+input[type='submit']:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.07);
+}
+textarea#comment{
+  border: 3px double #2264c582;
+  border-radius: 0px;
+  -webkit-appearance: none;
+}
+/* HACK: ランキングをシュッと！！ */
+/*.btn, */.ranking-item-link-buttons a{
+border: none;
+}
+/*.btn, */.ranking-item-detail a{
+  background: linear-gradient(150deg, #2cc74df5 10px, #10ff00);
+  box-shadow: 0 5px 0 #33ad42;
+}
+.ranking-item-link a {
+    background: linear-gradient(150deg, #f55c22f5 10px, #e64597);
+    box-shadow: 0 5px 0 #c32869;
+}
+
+#container .ranking-item-link-buttons a:hover{
+  box-shadow: 0 1px 0 #2f2f2f;
+  opacity: unset;
+  border: unset;
+  color: #ffff;
+  transform: translateY(6px);
+}
+/* HACK: wpulike */
+.entry-content > .wpulike::before{
+  content: 'この記事は参考になりましたか？'
+}
+.entry-content > .wpulike {
+    padding: 10px 0;
+    text-align: center;
+    background: #a6bdff26;
+    border: 3px double #1e146963;
+    /* border-radius: 0px; */
+    margin: 7%!important;
+}
+
+/* HACK: ページャー */
+.pagination-next-link {
+    background: linear-gradient(150deg, #25125df5 10px, #716dab);
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 1.25em;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    -webkit-clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
+    clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
+}
+.pagination-next-link:hover {
+    transition: all 0.5s ease;
+    color: #ccffe8;
+    transform: translateX(10px);
+    opacity: 0.8;
+    /* border: 2px solid; */
+}
+.page-numbers {
+    color: #1e286f!important;
+    text-decoration: none;
+    background: white;
+    /* font-style: italic; */
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #ccc!important;
+    margin: 0 4px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 2px 8px 3px #0c1256;
+}
+.pagination .current {
+    color: white!important;
+    background-color: #1e286f!important;
+    box-shadow: none;
+}
+.page-numbers:hover{
+  box-shadow: unset;
+background: #1e286f!important;
+border: none;
+color: white!important;
+}
+
+
+/* HACK: 前後記事をカスタマイズ */
+.pager-post-navi{
+  margin: 30px -10px;
+  position: relative;
+}
+.prev-post-thumb.card-thumb img, .next-post-thumb.card-thumb img{
+  width: 100%;
+  height: 100px;
+  opacity: 0.4;
+  object-fit: cover;
+}
+.pager-post-navi a.prev-post, .pager-post-navi a.next-post{
+  line-height: 0px;
+  color: white;
+  padding: 0;
+}
+.pager-post-navi a figure{
+  min-width: 100%;
+  max-width: 100%;
+  background: linear-gradient(124deg, #7e90fff5 71px, #ff7cfb);
+}
+.pager-post-navi a.prev-post .prev-post-title, .pager-post-navi a.next-post .next-post-title{
+  position: absolute;
+  margin-left: 10px;
+  line-height: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+.pager-post-navi a.prev-post::before, .pager-post-navi a.next-post::before{
+  content: none;
+}
+.pager-post-navi a.next-post{
+  flex-direction: unset;
+}
+.prev-post-title::before{
+  content: '\f190';
+  font-family: 'FontAwesome'!important;
+  font-size: 25px;
+    bottom: -4px;
+    position: relative;
+    margin: 3px;
+    left: -3px;
+    font-weight: normal;
+}
+.next-post-title::after{
+  content: '\f18e';
+  font-family: 'FontAwesome'!important;
+  font-size: 25px;
+  position: relative;
+  bottom: -4px;
+  margin: 5px;
+  font-weight: normal;
+}
+.pager-post-navi a.prev-post::before{
+  content: '前の記事を読む';
+  top: 1em
+}
+.pager-post-navi a.next-post::before{
+  content: '次の記事を読む';
+  bottom: 1em;
+}
+.pager-post-navi a.prev-post::before, .pager-post-navi a.next-post::before{
+  position: absolute;
+  color: white!important;
+  font-size: 0.8em;
+  margin-left: 1em;
+  z-index: 1;
+}
+.pager-post-navi a.prev-post:hover, .pager-post-navi a.next-post:hover{
+  color: white!important;
+  transform: none;
+}
+
+
+/* HACK: ライクボタン */
+.lb-style-custom .lb-like, .lb-style-custom .lb-dislike{
+  background: unset!important;
+  border: none!important;
+  margin: 10px 15px;
+}
+.lb-like-label, .lb-dislike-label{
+  display: block;
+  color: #5dd885!important;
+}
+.lb-style-custom .likebtn-icon{
+  font-size: 80px!important;
+  margin-bottom: 40px;
+  color: #5ed886!important;
+  filter: drop-shadow(1px 1px 1px white);
+}
+.lb-style-custom .lb-count {
+    display: block!important;
+    font-size: 30px!important;
+    margin-top: 15px;
+    color: #5dd885!important;
+}
+.likebtn_container {
+    border: 1px solid;
+    padding: 10px;
+    border-color: #5ed886;
+}
+.likebtn_container::before{
+  content: 'この記事は役に立ちましたか？';
+  display: block;
+  font-size: 21px;
+  color: #389858;
+  margin-bottom: 25px;
+}
+.lb-style-custom .likebtn-icon:hover{
+  filter: drop-shadow(1px 1px 1px grey);
+  transition: 0.7s all ease;
+}
+
+
+
+/************************************
+** レスポンシブデザイン用のメディアクエリ
+************************************/
+/*1240px以下*/
+@media screen and (max-width: 1240px){
+  /*必要ならばここにコードを書く*/
+
+
+}
+
+/*1030px以下*/
+@media screen and (max-width: 1030px){
+  /*必要ならばここにコードを書く*/
+
+
+}
+
+/*768px以下*/
+@media screen and (max-width: 768px){
+  /*必要ならばここにコードを書く*/
+  /* HACK: モバイルのフッター */
+.mblt-slide-in .footer {
+      background: linear-gradient(150deg, #acdafbab 10px, #ff98d64d);
+  }
+.navi-footer-in > .menu-footer li.menu-item{
+  border: none;
+  margin: 8px;
+  display: inline-block;
+  background: linear-gradient(150deg, #25125df5 10px, #716dab);
+  padding: 7px;
+  -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+}
+.navi-footer-in > .menu-footer li:last-child {
+    border-bottom: none;
+}
+.navi-footer-in > .menu-footer li.menu-item a{
+  color: white;
+}
+.footer-bottom.fdt-left-and-right .footer-bottom-content{
+  display: block;
+}
+
+
+}
+
+/*480px以下*/
+@media screen and (max-width: 480px){
+  /*必要ならばここにコードを書く*/
+.speech-person{
+  min-width: 65px;
+}
+.navi-footer-in > .menu-footer li.menu-item{
+  width: 67%;
+}
+
+
+.author-widget-name {
+  display: block;
+  text-align: center;
+  margin-bottom: 12px;
+  padding: 3px;
+}
+.author-description{
+  width: 100%;
+}
+.author-box .sns-follow-buttons a.follow-button{
+  width: 31px;
+  height: 31px;
+  margin-right: 3px;
+  font-size: 26px;
+}
+.fb-like-box, .fb-like-box .fb-like-thumb > *, .fb-like-content, .fb-like-content::after{
+  height: 250px;
+}
+.fb-like-buttons{
+  margin: 30px 0;
+}
+.fb-like-message{
+  font-size: 0.9em;
+}
+.fb-like-sub-message{
+  font-size: 0.8em;
+}
+.toc{
+  width: 100%;
+}
+.toc ol li{
+  margin-left: 0.5em;
+}
+.toc ol ol{
+  padding-left: 1em;
+}
+
+
+}
+
+/*370px以下*/
+@media screen and (max-width: 370px){
+  /*必要ならばここにコードを書く*/
+
+
+
+
+
+}
+
+/*.cat-label{
+  color: #fff;
+}*/
+
+body{
+  background-color: #f2f0ff;
+}
