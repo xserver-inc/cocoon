@@ -178,6 +178,7 @@ border-bottom:4px solid #5572ff;
 
 .ect-vertical-card .entry-card-wrap .entry-card {
     position: relative;
+    background-color: #6f6ab9;
     background: linear-gradient(225deg, #25125df5 10px, #6f6ab9);
     color: #fdfdfd;
 }
@@ -318,14 +319,16 @@ border-bottom:4px solid #5572ff;
     overflow: hidden;
     height: 45px!important;
     width: 45px!important;
-    border: 1px solid #25125df5;
+    border: 1px solid #25125d;
     position: relative;
     display: inline-block;
     text-decoration: none;
     background: white;
+    color: #333#25125d;
 }
 
 .sns-share .sns-share-buttons a .social-icon {
+        background-color: #25125d;
         background: linear-gradient(150deg, #25125df5 10px, #716dab);
         line-height: 1.1;
         color: white;
@@ -334,6 +337,9 @@ border-bottom:4px solid #5572ff;
         display: block;
     }
 
+.sns-share.bc-brand-color-white .sns-share-buttons a .social-icon {
+        color: inherit;
+    }
 
 .sns-share .sns-share-buttons a .social-icon.button-caption,
 .sns-share .sns-share-buttons a .button-caption.button-caption {
@@ -347,7 +353,7 @@ border-bottom:4px solid #5572ff;
     line-height: 16px;
     margin: 0px!important;
     position: relative;
-    color: #25125df5;
+    color: #25125d;
 }
 
 .bc-brand-color .sns-share-buttons a .share-count,
@@ -520,7 +526,7 @@ border-bottom:4px solid #5572ff;
   justify-content: center;
 }
 .sns-follow {
-  background: linear-gradient(225deg, #f5f2fff5 10px, #dffffe);
+  background: linear-gradient(225deg, #f5f2ff 10px, #dffffe);
     margin-bottom: 30px;
     padding-bottom: 20px;
 }
