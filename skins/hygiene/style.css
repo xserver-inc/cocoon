@@ -1853,8 +1853,9 @@ body{
     background-color: #333;
     display: none;
   }
-  .fb-like-content{
-    background-color: transparent;
+  .fb-like-content,
+  .author-box .sns-follow{
+    background: transparent;
   }
   .pager-post-navi,
   blockquote::before,
