@@ -18,42 +18,40 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     return $cache;
   }
 
-  //_log($cache);
-  // check signage data-youtube
+  // data-youtubeチェック
   if (strpos($cache, 'data-youtube')) {
     preg_match( '/(?<=data-youtube=")(.+?)(?=")/', $cache, $match_cache);
     $MATCH_CACHE = $match_cache[0];
   };
 
-  //* if youtube cache is empty we need create it ( video_id, title, picprefix and etc for schema.org ) for youtube videos and playlists
+  //* YouTubeキャッシュが空のときYouTubeビデオとプレイリストのためにこれらを作成する ( video_id, title, picprefix and etc for schema.org )
   if (empty($MATCH_CACHE)) {
 
-    // ignor not youtube cache. I dont use other services. Sorry
+    // YouTubeキャッシュを無視する
     if (!strpos($cache, 'youtube')) {
       return $cache;
     }
 
-    // check curl exist
+    // curlの存在確認
     if (!function_exists('curl_version')) {
       return $cache;
     }
 
-    // remove old data attr older v0.3
+    // 古いデータの除去
     $cache = preg_replace('/data-picprefix=\\"(.+?)\\"/s', "", $cache);
-    // if playlist get id.
+    // プレイリストIDがある場合
     if( preg_match_all( '/videoseries|list=/i', $cache, $m )){
-      // extract playlist id
+      // プレイリストIDの抽出
       preg_match( '/(?<=list=)(.+?)(?=")/', $cache, $list );
-      //get video_id
+      // ビデオIDの取得
       $json = json_decode(file_get_contents('https://www.youtube.com/oembed?url=http://www.youtube.com/playlist?list='.$list[1]), true);
-      // $video_id extract
+      // ビデオIDの抽出
       preg_match( '/(?<=vi\/)(.+?)(?=\/)/', $json['thumbnail_url'], $video_id );
     } else {
       preg_match( '/(?<=embed\/)(.+?)(?=\?)/', $cache, $video_id );
     }
-    //_log($video_id[0]);
-    // if  video_id still empty may be youtube offline :-)))
 
+    // もしビデオIDないまだ空ならおそらくYouTubeがオフライン
     if (!$video_id[0]) {
       return $cache;
     }
@@ -79,7 +77,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       return $cache;
     }
 
-    // if youtube change json
+    // もしYouTubeがJSONを変更したら
     if (empty($data)) {
       return $cache;
     }
@@ -88,13 +86,11 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     $data = str_replace("\\U",'\\u', $data);
     $json =  json_decode($data,JSON_UNESCAPED_SLASHES);
 
-    //_log($data);
-    //_log($json);
-    // if json not valid
+
+    // ジェイソンが無効な場合
     if (empty($json)) {
       return $cache;
     }
-    //print_r($json);
 
     $youtube_cache  = [];
     $youtube_cache['title'] = htmlentities( $json['title'], ENT_QUOTES, 'UTF-8' );
@@ -109,10 +105,10 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     }
 
     $cachekey   = '_oembed_' . md5( $url . serialize( $attr ) );
-    // update $cache varable
+    // $cache変数のアップデート
     $cache      = str_replace('src', ' data-youtube="'.$youtube_cache.'" src', $cache);
-    //_log($youtube_cache );
-    // save new cache
+
+    // 新しいキャッシュを保存
     update_post_meta( get_the_ID(), $cachekey, $cache );
 
     $MATCH_CACHE = $youtube_cache;
@@ -122,7 +118,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   preg_match( '/(?<=width=")(.+?)(?=")/' , $cache, $video_width  );
 
   $json   = json_decode(base64_decode($MATCH_CACHE), true);
-  //_log($json);
+
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   $youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
 

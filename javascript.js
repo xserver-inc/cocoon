@@ -77,7 +77,6 @@
     for (var i = 0; i < f.length; ++i) {
     f[i].onclick = function () {
       var iframe = this.getAttribute("data-iframe");
-      //var div = document.createElement('div.video');
       this.parentElement.innerHTML = '<div class="video">' + iframe + '</div>';
     }
     }
