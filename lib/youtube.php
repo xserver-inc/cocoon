@@ -100,7 +100,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     $youtube_cache = base64_encode(json_encode($youtube_cache));
 
     //wp core with first parsing inject unknow attr discover. Owerwise md5 is not valid
-    if($attr['discover'] == 1){
+    if(isset($attr['discover']) && $attr['discover'] == 1){
       unset($attr['discover']);
     }
 
