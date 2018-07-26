@@ -10,19 +10,22 @@
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
  */
 
-if (!is_amp()) {
-  add_filter('embed_oembed_html', 'ytsl_oembed_html', 1, 3);
-}
-if ( !function_exists( 'ytsl_oembed_html' ) ):
-function ytsl_oembed_html ($cache, $url, $attr) {
+//YouTube動画表示の高速化
+add_filter('embed_oembed_html', 'youtube_embed_oembed_html', 1, 3);
+if ( !function_exists( 'youtube_embed_oembed_html' ) ):
+function youtube_embed_oembed_html ($cache, $url, $attr) {
+  if (is_amp()) {
+    return $cache;
+  }
+
   //_log($cache);
-  // check signage data-ytsl
-  if (strpos($cache, 'data-ytsl')) {
-    preg_match( '/(?<=data-ytsl=")(.+?)(?=")/', $cache, $match_cache);
+  // check signage data-youtube
+  if (strpos($cache, 'data-youtube')) {
+    preg_match( '/(?<=data-youtube=")(.+?)(?=")/', $cache, $match_cache);
     $MATCH_CACHE = $match_cache[0];
   };
 
-  //* if ytsl cache is empty we need create it ( video_id, title, picprefix and etc for schema.org ) for youtube videos and playlists
+  //* if youtube cache is empty we need create it ( video_id, title, picprefix and etc for schema.org ) for youtube videos and playlists
   if (empty($MATCH_CACHE)) {
 
     // ignor not youtube cache. I dont use other services. Sorry
@@ -93,12 +96,12 @@ function ytsl_oembed_html ($cache, $url, $attr) {
     }
     //print_r($json);
 
-    $ytsl_cache  = [];
-    $ytsl_cache['title'] = htmlentities( $json['title'], ENT_QUOTES, 'UTF-8' );
-    $ytsl_cache['video_id'] = $video_id[0];
+    $youtube_cache  = [];
+    $youtube_cache['title'] = htmlentities( $json['title'], ENT_QUOTES, 'UTF-8' );
+    $youtube_cache['video_id'] = $video_id[0];
 
 
-    $ytsl_cache = base64_encode(json_encode($ytsl_cache));
+    $youtube_cache = base64_encode(json_encode($youtube_cache));
 
     //wp core with first parsing inject unknow attr discover. Owerwise md5 is not valid
     if($attr['discover'] == 1){
@@ -107,12 +110,12 @@ function ytsl_oembed_html ($cache, $url, $attr) {
 
     $cachekey   = '_oembed_' . md5( $url . serialize( $attr ) );
     // update $cache varable
-    $cache      = str_replace('src', ' data-ytsl="'.$ytsl_cache.'" src', $cache);
-    //_log($ytsl_cache );
+    $cache      = str_replace('src', ' data-youtube="'.$youtube_cache.'" src', $cache);
+    //_log($youtube_cache );
     // save new cache
     update_post_meta( get_the_ID(), $cachekey, $cache );
 
-    $MATCH_CACHE = $ytsl_cache;
+    $MATCH_CACHE = $youtube_cache;
   }
 
   preg_match( '/(?<=height=")(.+?)(?=")/', $cache, $video_height );
@@ -120,8 +123,8 @@ function ytsl_oembed_html ($cache, $url, $attr) {
 
   $json   = json_decode(base64_decode($MATCH_CACHE), true);
   //_log($json);
-  $ytsl   = preg_replace("/data-ytsl=\"(.+?)\"/", "", $cache);
-  $ytsl   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $ytsl ));
+  $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
+  $youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
 
   /**
    * title
@@ -141,7 +144,7 @@ function ytsl_oembed_html ($cache, $url, $attr) {
     $wrap_end   = '</div>';
   }
 
-  $html = $wrap_start . "<div class='video-click video' data-iframe='$ytsl' style='$fixed position:relative;background: url($thumb_url) no-repeat scroll center center / cover' ><div class='video-title-grad'><div class='video-title-text'>{$json['title']}</div></div><div class='video-play'></div></div>" . $wrap_end;
+  $html = $wrap_start . "<div class='video-click video' data-iframe='$youtube' style='$fixed position:relative;background: url($thumb_url) no-repeat scroll center center / cover' ><div class='video-title-grad'><div class='video-title-text'>{$json['title']}</div></div><div class='video-play'></div></div>" . $wrap_end;
 
   return $html;
 
