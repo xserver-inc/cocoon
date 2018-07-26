@@ -109,6 +109,26 @@ function generate_shortcodes_is($value){
   shortcodes[5].before = '<?php echo $before; ?>';
   shortcodes[5].after = '<?php echo $after; ?>';
 
+  <?php //商品追加ショートコード
+  $title = __( '新しい商品のタイトル', THEME_NAME );
+  $after = '" kw="'.$kw.'" title="'.$title.'"]';
+   ?>
+  shortcodes[6] = new Array();
+  shortcodes[6].title  = '<?php echo __( 'Amazon商品リンク（商品タイトル変更）', THEME_NAME ); ?>';
+  shortcodes[6].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[6].before = '<?php echo $before; ?>';
+  shortcodes[6].after = '<?php echo $after; ?>';
+
+  <?php //商品追加ショートコード
+  $title = __( '新しい商品のタイトル', THEME_NAME );
+  $after = '" kw="'.$kw.'" amazon=0 rakuten=0 yahoo=0]';
+   ?>
+  shortcodes[7] = new Array();
+  shortcodes[7].title  = '<?php echo __( 'Amazon商品リンク（全ボタン非表示）', THEME_NAME ); ?>';
+  shortcodes[7].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[7].before = '<?php echo $before; ?>';
+  shortcodes[7].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }
