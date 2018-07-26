@@ -447,7 +447,7 @@ function get_additional_sns_share_button_classes($option = null){
       $classes .= ' bc-brand-color-white';
       break;
     default:
-
+      $classes .= ' bc-monochrome';
       break;
   }
 
@@ -485,7 +485,7 @@ function get_additional_sns_follow_button_classes($option = null){
       $classes .= ' bc-brand-color-white';
       break;
     default:
-
+      $classes .= ' bc-monochrome';
       break;
   }
 
