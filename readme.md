@@ -74,3 +74,6 @@ https://icomoon.io/app/
 ------
 Auto Post Thumbnail  
 https://ja.wordpress.org/plugins/auto-post-thumbnail/
+
+Youtube SpeedLoad  
+https://ja.wordpress.org/plugins/youtube-speedload/
