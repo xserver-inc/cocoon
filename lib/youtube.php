@@ -130,17 +130,11 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
   $thumb_url  = "https://i.ytimg.com/vi/{$json['video_id']}/hqdefault.jpg";
 
-  $fixed      = "height:{$video_height[1]}px;width:{$video_width[1]}px;";
-  $wrap_start = null;
-  $wrap_end = null;
+  $wrap_start = '<div class="video-container">';
+  $wrap_end   = '</div>';
 
-  if(true) {
-    $fixed      = '';
-    $wrap_start = '<div class="video-container">';
-    $wrap_end   = '</div>';
-  }
 
-  $html = $wrap_start . "<div class='video-click video' data-iframe='$youtube' style='$fixed position:relative;background: url($thumb_url) no-repeat scroll center center / cover' ><div class='video-title-grad'><div class='video-title-text'>{$json['title']}</div></div><div class='video-play'></div></div>" . $wrap_end;
+  $html = $wrap_start . "<div class='video-click video' data-iframe='$youtube' style='position:relative;background: url($thumb_url) no-repeat scroll center center / cover' ><div class='video-title-grad'><div class='video-title-text'>{$json['title']}</div></div><div class='video-play'></div></div>" . $wrap_end;
 
   return $html;
 
