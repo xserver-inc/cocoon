@@ -26,7 +26,8 @@ canvas,iframe,video,
 .video-container .video {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 30px;
+  //padding-top: 30px;
+  margin-top: 30px;
   height: 0;
   overflow: hidden;
   max-width: 100%;

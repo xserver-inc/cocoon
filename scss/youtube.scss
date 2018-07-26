@@ -1,0 +1,70 @@
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ *
+ * Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
+"Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
+ */
+
+.video-click {
+  cursor: pointer;
+}
+
+.video-click:hover .video-play {
+    background: url("images/youtube-play.png") no-repeat scroll -101px -13px rgba(0, 0, 0, 0);
+}
+
+// .ytsl-wrapper,
+// .ytsl-wrapper .video-click {
+//   position: relative;
+//   padding-bottom: 56.25%;
+//   height: 0;
+
+// }
+
+// .ytsl-wrapper iframe {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+
+// }
+
+.video-play {
+  background: url("images/youtube-play.png") no-repeat scroll 2px -13px rgba(0, 0, 0, 0);
+    height: 62px;
+    left: 50%;
+    margin-left: -45px;
+    margin-top: -33px;
+    position: absolute;
+    top: 50%;
+    width: 100px;
+
+}
+
+.video-title-grad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    // background: -moz-linear-gradient(top, rgba(238, 238, 238, 0.6), transparent);
+    // background: -webkit-linear-gradient(top, rgba(238, 238, 238, 0.6), transparent);
+    // background: linear-gradient(to bottom, rgba(238, 238, 238, 0.6), transparent);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABiCAQAAAA7fHH2AAAAQUlEQVQYV22KQQoAIAzDyv7/Et/oVlGZVCfkkIYamsENXESyi8vc0u/PKZ6o8+7fZ0h8ShRYnD+BFKToRJkHFpkM2hZSxuyWpEYAAAAASUVORK5CYII=");
+    background-position: center top;
+  //height: 98px;
+}
+
+.video-title-text {
+    color: #eeeeee;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-size: 17px;
+    overflow: hidden;
+    padding: 12px 16px 4px;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
