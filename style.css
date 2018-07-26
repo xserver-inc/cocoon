@@ -5608,6 +5608,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   position: absolute;
   top: 50%;
   width: 100px;
+  opacity: 0.8;
 }
 
 .video-title-grad {
