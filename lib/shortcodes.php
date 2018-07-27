@@ -175,3 +175,368 @@ function login_user_only_shortcode( $atts, $content = null ) {
 }
 endif;
 
+if ( !function_exists( 'get_http_content' ) ):
+function get_http_content($url){
+  try {
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => true,
+    ]);
+    $body = curl_exec($ch);
+    $errno = curl_errno($ch);
+    $error = curl_error($ch);
+    curl_close($ch);
+    if (CURLE_OK !== $errno) {
+      throw new RuntimeException($error, $errno);
+    }
+    return $body;
+  } catch (Exception $e) {
+    return false;
+    //echo $e->getMessage();
+  }
+}
+endif;
+
+//Amazon商品紹介リンクの外枠で囲む
+if ( !function_exists( 'wrap_amazon_item_box' ) ):
+function wrap_amazon_item_box($message){
+  return '<div class="amazon-item-box no-icon amazon-item-error cf"><div>'.$message.'</div></div>';
+}
+endif;
+
+// //Amazon商品リンクボタンを表示するか
+// if ( !function_exists( 'is_amazon_box_buttons_visible' ) ):
+// function is_amazon_box_buttons_visible(){
+//   return trim()
+// }
+// endif;
+
+//シンプルなアソシエイトURLの作成
+if ( !function_exists( 'get_amazon_associate_url' ) ):
+function get_amazon_associate_url($asin, $associate_tracking_id){
+  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
+  $associate_url = $base_url.'/'.$asin.'/';
+  if (!empty($associate_tracking_id)) {
+    $associate_url .= $associate_tracking_id.'/';
+  }
+  $associate_url = esc_url($associate_url);
+  return $associate_url;
+}
+endif;
+
+if ( !function_exists( 'get_asin_transient_id' ) ):
+function get_asin_transient_id($asin){
+  return TRANSIENT_AMAZON_API_PREFIX.$asin;
+}
+endif;
+
+if ( !function_exists( 'get_asin_transient_bk_id' ) ):
+function get_asin_transient_bk_id($asin){
+  return TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+}
+endif;
+
+if ( !function_exists( 'get_amazon_itemlookup_xml' ) ):
+function get_amazon_itemlookup_xml($asin){
+  //アクセスキー
+  $access_key_id = trim(get_amazon_api_access_key_id());
+  //シークレットキー
+  $secret_access_key = trim(get_amazon_api_secret_key());
+  //アソシエイトタグ
+  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  //キャッシュ更新間隔
+  $days = intval(get_api_cache_retention_period());
+
+  //キャッシュの存在
+  $transient_id = get_asin_transient_id($asin);
+  $transient_bk_id = get_asin_transient_bk_id($asin);
+  $xml_cache = get_transient( $transient_id );
+  if ($xml_cache) {
+    return $xml_cache;
+  }
+
+  //APIエンドポイントURL
+  $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
+
+  // パラメータ
+  $params = array(
+    //共通↓
+    'Service' => 'AWSECommerceService',
+    'AWSAccessKeyId' => $access_key_id,
+    'AssociateTag' => $associate_tracking_id,
+    //リクエストにより変更↓
+    'Operation' => 'ItemLookup',
+    'ItemId' => $asin,
+    'ResponseGroup' => 'ItemAttributes,Images',
+    //署名用タイムスタンプ
+    'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
+  );
+
+  //パラメータと値のペアをバイト順？で並べかえ。
+  ksort($params);
+
+
+  // エンドポイントを指定します。
+  $endpoint = __( 'webservices.amazon.co.jp', THEME_NAME );
+
+  $uri = '/onca/xml';
+
+  $pairs = array();
+
+  // パラメータを key=value の形式に編集します。
+  // 同時にURLエンコードを行います。
+  foreach ($params as $key => $value) {
+    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+  }
+
+  // パラメータを&で連結します。
+  $canonical_query_string = join("&", $pairs);
+
+  // 署名に必要な文字列を先頭に追加します。
+  $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
+
+  // RFC2104準拠のHMAC-SHA256ハッシュアルゴリズムの計算を行います。
+  // これがSignatureの値になります。
+  $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_access_key, true));
+
+  // Siginatureの値のURLエンコードを行い、リクエストの最後に追加します。
+  $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
+
+  $res = get_http_content($request_url);
+  //var_dump($res);
+
+  if ($res) {
+    //xml取得
+    $xml = simplexml_load_string($res);
+    if (property_exists($xml->Error, 'Code')) {
+      //バックアップキャッシュの確認
+      $xml_cache = get_transient( $transient_bk_id );
+      if ($xml_cache) {
+        return $xml_cache;
+      }
+      return $res;
+    }
+    //_v($res);
+    //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+    $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+    //Amazon APIキャッシュの保存
+    set_transient($transient_id, $res, $expiration);
+    //Amazon APIバックアップキャッシュの保存
+    set_transient($transient_bk_id, $res, $expiration * 2);
+
+    return $res;
+  }
+  return false;
+}
+endif;
+
+//Amazon商品リンク作成
+add_shortcode('amazon', 'generate_amazon_product_link');
+if ( !function_exists( 'generate_amazon_product_link' ) ):
+function generate_amazon_product_link($atts){
+  extract( shortcode_atts( array(
+    'asin' => null,
+    'id' => null,
+    //'isbn ' => null,
+    'kw' => null,
+    'title' => null,
+    'amazon' => 1,
+    'rakuten' => 1,
+    'yahoo' => 1,
+  ), $atts ) );
+
+  $asin = esc_html(trim($asin));
+
+  //ASINが取得できない場合はID
+  if (empty($asin)) {
+    $asin = $id;
+  }
+
+  //アクセスキー
+  $access_key_id = trim(get_amazon_api_access_key_id());
+  //シークレットキー
+  $secret_access_key = trim(get_amazon_api_secret_key());
+  //アソシエイトタグ
+  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
+  //楽天アフィリエイトID
+  $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
+  //Yahoo!バリューコマースSID
+  $sid = trim(get_yahoo_valuecommerce_sid());
+  //Yahoo!バリューコマースPID
+  $pid = trim(get_yahoo_valuecommerce_pid());
+  // //キャッシュ更新間隔
+  // $days = intval(get_api_cache_retention_period());
+  //キーワード
+  $kw = trim($kw);
+
+
+  //アクセスキーもしくはシークレットキーがない場合
+  if (empty($access_key_id) || empty($secret_access_key)) {
+    $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
+    return wrap_amazon_item_box($error_message);
+  }
+
+  //ASINがない場合
+  if (empty($asin)) {
+    $error_message = __( 'Amazon商品リンクショートコード内にASINが入力されていません。', THEME_NAME );
+    return wrap_amazon_item_box($error_message);
+  }
+
+  //アソシエイトurlの取得
+  $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
+
+
+  $res = get_amazon_itemlookup_xml($asin);
+  if ($res) {
+    // xml取得
+    $xml = simplexml_load_string($res);
+    //_v($xml);
+
+    if (property_exists($xml->Error, 'Code')) {
+      // //バックアップキャッシュの確認
+      // $cache_tag = get_transient( get_asin_transient_bk_id($asin) );
+      // if ($cache_tag) {
+      //   return $cache_tag;
+      // }
+      $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
+
+      if (is_user_administrator()) {
+        $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
+        $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
+        $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
+        $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。少し時間おいてリロードしてください。それでも改善されない場合は、以下の不具合フォーラムにエラーメッセージとともにご連絡ください。', THEME_NAME ).'</span><br><a href="" target="_blank">'.__( '不具合報告フォーラム', THEME_NAME ).'</a>';
+        $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
+      }
+      return wrap_amazon_item_box($error_message);
+    }
+
+    //var_dump($item);
+
+    if (!property_exists($xml->Items, 'Item')) {
+      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
+      return wrap_amazon_item_box($error_message);
+    }
+
+    if (property_exists($xml->Items, 'Item')) {
+      $item = $xml->Items->Item;
+
+      //var_dump($xml);
+
+      //var_dump($xml->Items->Errors);
+      // _v($item);
+      $ASIN = esc_html($item->ASIN);
+      $DetailPageURL = esc_url($item->DetailPageURL);
+
+      $SmallImage = $item->SmallImage;
+      $MediumImage = $item->MediumImage;
+      $MediumImageUrl = esc_url($MediumImage->URL);
+      $MediumImageWidth = esc_html($MediumImage->Width);
+      $MediumImageHeight = esc_html($MediumImage->Height);
+      $LargeImage = $item->LargeImage;
+
+      $ItemAttributes = $item->ItemAttributes;
+
+      if ($title) {
+        $Title = $title;
+      } else {
+        $Title = $ItemAttributes->Title;
+      }
+
+      $TitleAttr = esc_attr($Title);
+      $TitleHtml = esc_html($Title);
+
+      $ProductGroup = esc_html($ItemAttributes->ProductGroup);
+      $ProductGroupClass = strtolower($ProductGroup);
+      $ProductGroupClass = str_replace(' ', '-', $ProductGroupClass);
+      $Publisher = esc_html($ItemAttributes->Publisher);
+      $Manufacturer = esc_html($ItemAttributes->Manufacturer);
+      $Binding = esc_html($ItemAttributes->Binding);
+      if ($Publisher) {
+        $maker = $Publisher;
+      } elseif ($Manufacturer) {
+        $maker = $Manufacturer;
+      } else {
+        $maker = $Binding;
+      }
+
+      $ListPrice = $item->ListPrice;
+      $FormattedPrice = esc_html($item->FormattedPrice);
+
+      //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
+
+      $buttons_tag = null;
+      if ($kw) {
+        //Amazonボタンの取得
+        $amazon_btn_tag = null;
+        if (is_amazon_search_button_visible() && $amazon) {
+          $amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($kw).'&tag='.$associate_tracking_id;
+          $amazon_btn_tag =
+            '<div class="shoplinkamazon">'.
+              '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.__( 'Amazon', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+
+        //楽天ボタンの取得
+        $rakuten_btn_tag = null;
+        if ($rakuten_affiliate_id && is_rakuten_search_button_visible() && $rakuten) {
+          $rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($kw).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
+          $rakuten_btn_tag =
+            '<div class="shoplinkrakuten">'.
+              '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.__( '楽天市場', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+        //Yahoo!ボタンの取得
+        $yahoo_tag = null;
+        if ($sid && $pid && is_yahoo_search_button_visible() && $yahoo) {
+          $yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$kw;
+          $yahoo_tag =
+            '<div class="shoplinkyahoo">'.
+              '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.__( 'Yahoo!ショッピング', THEME_NAME ).'</a>'.
+            '</div>';
+        }
+        //ボタンコンテナ
+        $buttons_tag =
+          '<div class="amazon-item-buttons">'.
+            $amazon_btn_tag.
+            $rakuten_btn_tag.
+            $yahoo_tag.
+          '</div>';
+      }
+
+      $cache_del_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+
+      //_v($item);
+      $tag =
+        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' '.$asin.' cf">'.
+          '<figure class="amazon-item-thumb">'.
+            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+            '</a>'.
+          '</figure>'.
+          '<div class="amazon-item-content">'.
+            '<div class="amazon-item-title">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+                 $TitleHtml.
+              '</a>'.
+            '</div>'.
+            '<div class="amazon-item-snippet">'.
+              '<div class="amazon-item-maker">'.
+                $maker.
+              '</div>'.
+              $buttons_tag.
+            '</div>'.
+          '</div>'.
+          $cache_del_tag.
+        '</div>';
+    } else {
+      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
+      $tag = wrap_amazon_item_box($error_message);
+    }
+
+    return $tag;
+  }
+
+}
+endif;
+

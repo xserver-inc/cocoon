@@ -142,6 +142,12 @@ define('TRANSIENT_SHARE_PREFIX', THEME_NAME.'_share_count_');
 define('TRANSIENT_FOLLOW_PREFIX', THEME_NAME.'_follow_count_');
 //人気記事ウィジェットのプレフィックス
 define('TRANSIENT_POPULAR_PREFIX', THEME_NAME.'_popular_entries');
+//ブログカードのプレフィックス
+define('TRANSIENT_BLOGCARD_PREFIX', THEME_NAME.'_bcc_');
+//Amazon APIのプレフィックス
+define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
+//Amazon APIのバックアッププレフィックス
+define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_api_asin_');
 
 //最初のH2見出し用の優先度
 define('BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD', 10002);
@@ -161,6 +167,8 @@ define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-aweso
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375, \'easing\'=\'cubic-bezier(.4,0,.2,1)\')"');
 
+//リンククリック時の削除確認JavaScript
+define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
 
 //インポートファイルの読み込み
 

@@ -67,3 +67,17 @@
     $('#respond').slideDown();
   })
 })(jQuery);
+
+/*
+* Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
+"Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
+*/
+(function(){
+    var f = document.querySelectorAll(".video-click");
+    for (var i = 0; i < f.length; ++i) {
+    f[i].onclick = function () {
+      var iframe = this.getAttribute("data-iframe");
+      this.parentElement.innerHTML = '<div class="video">' + iframe + '</div>';
+    }
+    }
+})();

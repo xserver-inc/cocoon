@@ -206,7 +206,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
   ?>
   <?php //アイテムが存在している場合
   if (!empty($items)): ?>
-  <div class="ranking-items">
+  <div class="ranking-items no-icon">
   <?php
   for ($i = 1; $i <= $count; $i++):
     // if ($i == 2) {

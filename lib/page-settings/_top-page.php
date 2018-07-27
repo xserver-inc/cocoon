@@ -79,6 +79,8 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once abspath(__FILE__).'admin-posts.php';
   //エディター
   require_once abspath(__FILE__).'editor-posts.php';
+  //API
+  require_once abspath(__FILE__).'apis-posts.php';
   //その他
   require_once abspath(__FILE__).'others-posts.php';
   //リセット
@@ -167,7 +169,8 @@ endif;
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="editor"><?php _e( 'エディター', THEME_NAME ) ?></li>
-    <li class="other"><?php _e( 'その他', THEME_NAME ) ?></li>
+    <li class="apis"><?php _e( 'API', THEME_NAME ) ?></li>
+    <li class="others"><?php _e( 'その他', THEME_NAME ) ?></li>
     <li class="reset"><?php _e( 'リセット', THEME_NAME ) ?></li>
     <li class="about"><?php _e( 'テーマ情報', THEME_NAME ) ?></li>
   </ul>
@@ -323,6 +326,11 @@ endif;
   <!-- エディター -->
   <div class="editor metabox-holder">
     <?php require_once abspath(__FILE__).'editor-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- API -->
+  <div class="apis metabox-holder">
+    <?php require_once abspath(__FILE__).'apis-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- その他 -->

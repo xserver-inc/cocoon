@@ -128,6 +128,15 @@ function delete_db_table_record( $table_name, $id ) {
 }
 endif;
 
+//キャッシュレコードの削除
+if ( !function_exists( 'delete_db_cache_records' ) ):
+function delete_db_cache_records( $option_name_part ) {
+  global $wpdb;
+  $query = "DELETE FROM {$wpdb->options} WHERE option_name LIKE '%{$option_name_part}%';";
+  return $wpdb->query($query);
+}
+endif;
+
 //レコードを追加
 if ( !function_exists( 'insert_db_table_record' ) ):
 function insert_db_table_record($table, $data, $format){

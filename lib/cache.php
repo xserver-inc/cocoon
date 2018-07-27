@@ -7,7 +7,7 @@
  */
 
 //テーマを変更時にテーマのリソースキャッシュを削除
-add_action('switch_theme', 'delete_theme_resource_caches');
+//add_action('switch_theme', 'delete_theme_resource_caches');
 if ( !function_exists( 'delete_theme_resource_caches' ) ):
 function delete_theme_resource_caches() {
   //ブログカードキャッシュの削除

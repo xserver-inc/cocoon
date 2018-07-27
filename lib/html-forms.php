@@ -125,6 +125,13 @@ function generate_label_tag($name, $caption){?>
 }
 endif;
 
+//必須入力項目案内
+if ( !function_exists( 'generate_necessity_input_tag' ) ):
+function generate_necessity_input_tag($message = '*'){?>
+  <span class="necessity-input"><?php echo $message; ?></span>
+<?php
+}
+endif;
 
 
 //入力できないフォームクラスコードの生成
@@ -180,14 +187,15 @@ endif;
 
 //解説ページへのリンク取得
 if ( !function_exists( 'get_help_page_tag' ) ):
-function get_help_page_tag($url){
-  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.__( '解説ページ', THEME_NAME ).'</a>';
+function get_help_page_tag($url, $text = null){
+  $link_text = $text ? $text : __( '解説ページ', THEME_NAME );
+  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.$link_text.'</a>';
   return $tag;
 }
 endif;
 if ( !function_exists( 'generate_help_page_tag' ) ):
-function generate_help_page_tag($url){
-  echo get_help_page_tag($url);
+function generate_help_page_tag($url, $text = null){
+  echo get_help_page_tag($url, $text);
 }
 endif;
 
@@ -813,7 +821,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   //var_dump($records);
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   ?>
-  <div class="popular-entry-cards widget-entry-cards cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
+  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
@@ -902,7 +910,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>
-  <div class="new-entry-cards widget-entry-cards cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
+  <div class="new-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
   <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
@@ -941,7 +949,7 @@ function generate_author_box_tag($label){
   }
 
   ?>
-  <div class="author-box cf">
+  <div class="author-box no-icon cf">
     <?php //ウィジェット名がある場合
     if ($label): ?>
       <div class="author-widget-name">
@@ -1025,5 +1033,11 @@ function generate_author_box_tag($label){
     </div>
   </div>
 <?php
+}
+endif;
+
+if ( !function_exists( 'get_message_box_tag' ) ):
+function get_message_box_tag($message, $classes){
+  return '<div class="'.$classes.'">'.$message.'</div>';
 }
 endif;

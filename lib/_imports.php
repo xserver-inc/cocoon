@@ -58,6 +58,7 @@ require_once abspath(__FILE__).'page-settings/skin-funcs.php';       //スキン
 require_once abspath(__FILE__).'page-settings/amp-funcs.php';        //AMP設定関数
 require_once abspath(__FILE__).'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once abspath(__FILE__).'page-settings/editor-funcs.php';     //エディター設定関数
+require_once abspath(__FILE__).'page-settings/apis-funcs.php';       //API設定関数
 require_once abspath(__FILE__).'page-settings/others-funcs.php';     //その他設定関数
 require_once abspath(__FILE__).'page-settings/reset-funcs.php';      //リセット設定関数
 require_once abspath(__FILE__).'page-settings/about-funcs.php';      //テーマ情報設定関数
@@ -96,7 +97,9 @@ require_once abspath(__FILE__).'shortcodes.php'; //ショートコード関係�
 require_once abspath(__FILE__).'html5.php'; //HTML5チェック関係
 //フルパスを指定しないとうまくいかないファイル
 require_once abspath(__FILE__).'profile.php'; //プロフィール関係の処理
+require_once abspath(__FILE__).'youtube.php'; //YouTube関係の処理
 require_once abspath(__FILE__).'admin.php'; //管理者機能（functions.phpで呼ばないと動作しないので）
+
 
 //TinyMCE
 if (is_admin()) {;
@@ -108,8 +111,9 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'tinymce/item-rankings.php'; //ランキングタグ追加
   require_once abspath(__FILE__).'tinymce/html-tags.php'; //拡張タグ追加
   require_once abspath(__FILE__).'tinymce/shortcodes.php'; //ショートコード追加
-
+  require_once abspath(__FILE__).'admin-tools.php'; //外部ツールを利用したもの
 }
+
 require_once abspath(__FILE__).'settings.php';   //Wordpressの設定
 
 
