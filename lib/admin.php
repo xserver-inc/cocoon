@@ -343,6 +343,13 @@ function customize_admin_bar_menu($wp_admin_bar){
       'title'  => __( 'バックアップ', THEME_NAME ), // ラベル
       'href'   => admin_url('admin.php?page=theme-backup') // ページURL
     ));
+    $wp_admin_bar->add_menu(array(
+      'parent' => 'dashboard_menu', // 親メニューID
+      'id'   => 'dashboard_menu-theme-cache', // 子メニューID
+      'meta'   => array(),
+      'title'  => __( 'キャッシュ削除', THEME_NAME ), // ラベル
+      'href'   => admin_url('admin.php?page=theme-cache') // ページURL
+    ));
   }
 }
 endif;
