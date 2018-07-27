@@ -3345,7 +3345,6 @@ canvas, iframe, video,
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  height: auto;
 }
 
 /*!Instagramの大きさを調整*/
