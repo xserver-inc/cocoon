@@ -114,19 +114,10 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     $MATCH_CACHE = $youtube_cache;
   }
 
-  preg_match( '/(?<=height=")(.+?)(?=")/', $cache, $video_height );
-  preg_match( '/(?<=width=")(.+?)(?=")/' , $cache, $video_width  );
-
   $json   = json_decode(base64_decode($MATCH_CACHE), true);
 
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   $youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
-
-  /**
-   * title
-   * video_id
-   * fixed - responsive or not
-   **/
 
   $thumb_url  = "https://i.ytimg.com/vi/{$json['video_id']}/hqdefault.jpg";
 
