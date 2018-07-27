@@ -569,26 +569,4 @@ function tiny_mce_before_init_custom( $mceInit ) {
   }
   return $mceInit;
 }
-<<<<<<< HEAD
 endif;
-=======
-endif;
-
-// add_action( 'admin_footer-post-new.php', 'add_create_product_tag_button' );
-// add_action( 'admin_footer-post.php', 'add_create_product_tag_button' );
-if ( !function_exists( 'add_create_product_tag_button' ) ):
-function add_create_product_tag_button() {
-?>
-<script>
-  (function($) {
-    $('#wp-content-media-buttons').append('<button id="wp-product-tag" class="button wp-button"><span class="dashicons dashicons-cart"></span>'+'<?php _e( '商品リンクを作成', THEME_NAME ) ?>'+'</button>');
-    $(document).on('click', '#wp-product-tag', function(e) {
-      // e.preventDefault();
-      // $('#post-preview').click();
-    });
-  }(jQuery));
-</script>
-<?php
-}
-endif;
->>>>>>> test/youtube_speedup
