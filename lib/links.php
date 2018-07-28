@@ -74,7 +74,7 @@ function replace_anchor_links($the_content) {
           includes_string($value, 'href="'.home_url()) ||
           //http,httpsなしのURLだった場合
           includes_string($value, 'href="'.preg_replace('/https?:/', '', home_url())) ||
-        !includes_string($value, '//')
+        !preg_match('{href="(https?:)?//}', $value)
       ) {//内部リンクの場合
       //if ( preg_match('{href="https?://'.get_the_site_domain().'}i') ) {//内部リンクの場合
         //リンクの開き方を変更する
