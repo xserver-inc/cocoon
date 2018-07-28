@@ -68,9 +68,13 @@ function replace_anchor_links($the_content) {
       // _v($value);
       // _v((includes_string($value, 'href="https://') ||
       //       includes_string($value, 'href="http://')));
+      //var_dump(preg_replace('/https?:/', '', home_url()));
       if (
+          //ホームURLを含んでいるか
           includes_string($value, 'href="'.home_url()) ||
-        !(includes_string($value, 'href="https://') || includes_string($value, 'href="http://'))
+          //http,httpsなしのURLだった場合
+          includes_string($value, 'href="'.preg_replace('/https?:/', '', home_url())) ||
+        !includes_string($value, '//')
       ) {//内部リンクの場合
       //if ( preg_match('{href="https?://'.get_the_site_domain().'}i') ) {//内部リンクの場合
         //リンクの開き方を変更する
