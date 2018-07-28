@@ -10,6 +10,13 @@
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
  */
 
+//Jetpackとの競合対応
+remove_action( 'init', 'wpcom_youtube_embed_crazy_url_init' );
+//remove_filter( 'pre_kses', 'youtube_embed_to_short_code' );
+// add_filter('video_embed_html', function (){
+//   return;
+// });
+//remove_action( 'after_setup_theme', 'jetpack_responsive_videos_init', 99 );
 //YouTube動画表示の高速化
 add_filter('embed_oembed_html', 'youtube_embed_oembed_html', 1, 3);
 if ( !function_exists( 'youtube_embed_oembed_html' ) ):
@@ -18,11 +25,15 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     return $cache;
   }
 
+  preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
+  $cache = $match_cache[0];
+
   // data-youtubeチェック
   if (strpos($cache, 'data-youtube')) {
     preg_match( '/(?<=data-youtube=")(.+?)(?=")/', $cache, $match_cache);
     $MATCH_CACHE = $match_cache[0];
   };
+
 
   //* YouTubeキャッシュが空のときYouTubeビデオとプレイリストのためにこれらを作成する ( video_id, title, picprefix and etc for schema.org )
   if (empty($MATCH_CACHE)) {
@@ -117,10 +128,16 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   $json   = json_decode(base64_decode($MATCH_CACHE), true);
 
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
-  $youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
+  if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
+    $youtube_old_url = $m[1];
+    $youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
+    $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
+  }
+
+  $youtube   = htmlentities($youtube);
+  //$youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
 
   $thumb_url  = "https://i.ytimg.com/vi/{$json['video_id']}/hqdefault.jpg";
-
   $wrap_start = '<div class="video-container">';
   $wrap_end   = '</div>';
 
@@ -131,3 +148,12 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
 };
 endif;
+
+
+// add_action('after_setup_theme', 'remove_filter_video', 9999);
+// function remove_filter_video(){
+//   // remove_filter( 'video_embed_html',   'jetpack_responsive_videos_embed_html' );
+//   // remove_filter( 'embed_oembed_html', 'jetpack_responsive_videos_maybe_wrap_oembed', 10 );
+//   // remove_filter( 'embed_handler_html', 'jetpack_responsive_videos_maybe_wrap_oembed', 10 );
+//   remove_action( 'after_setup_theme', 'jetpack_responsive_videos_init', 99 );
+// }
