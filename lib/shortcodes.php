@@ -247,12 +247,15 @@ function get_amazon_itemlookup_xml($asin){
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
   //キャッシュ更新間隔
   $days = intval(get_api_cache_retention_period());
+  //_v($access_key_id);
 
   //キャッシュの存在
   $transient_id = get_asin_transient_id($asin);
   $transient_bk_id = get_asin_transient_bk_id($asin);
   $xml_cache = get_transient( $transient_id );
+  //_v($xml_cache);
   if ($xml_cache) {
+    //_v($xml_cache);
     return $xml_cache;
   }
 
@@ -306,6 +309,7 @@ function get_amazon_itemlookup_xml($asin){
   $res = get_http_content($request_url);
   //var_dump($res);
 
+  //_v($res);
   if ($res) {
     //xml取得
     $xml = simplexml_load_string($res);
@@ -317,7 +321,6 @@ function get_amazon_itemlookup_xml($asin){
       }
       return $res;
     }
-    //_v($res);
     //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
     $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
     //Amazon APIキャッシュの保存
@@ -394,11 +397,6 @@ function generate_amazon_product_link($atts){
     //_v($xml);
 
     if (property_exists($xml->Error, 'Code')) {
-      // //バックアップキャッシュの確認
-      // $cache_tag = get_transient( get_asin_transient_bk_id($asin) );
-      // if ($cache_tag) {
-      //   return $cache_tag;
-      // }
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 
       if (is_user_administrator()) {
@@ -427,6 +425,9 @@ function generate_amazon_product_link($atts){
       // _v($item);
       $ASIN = esc_html($item->ASIN);
       $DetailPageURL = esc_url($item->DetailPageURL);
+      if ($DetailPageURL) {
+        $associate_url = $DetailPageURL;
+      }
 
       $SmallImage = $item->SmallImage;
       $MediumImage = $item->MediumImage;
