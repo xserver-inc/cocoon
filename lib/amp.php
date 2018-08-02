@@ -893,6 +893,13 @@ function html_ampfy_call_back( $html ) {
   if (!is_amp()) {
     return $html;
   }
+  // global $post;
+  // //キャッシュの存在
+  // $transient_id = TRANSIENT_AMAZON_API_PREFIX.$post->ID;
+  // $html_cache = get_transient( $transient_id );
+  // if ($html_cache) {
+  //   return $html_cache;
+  // }
 
   $head_tag = null;
   $body_tag = null;
@@ -927,7 +934,10 @@ function html_ampfy_call_back( $html ) {
   if ($head_tag && $body_tag) {
     //bodyタグ内をAMP化
     $body_tag = convert_content_for_amp($body_tag);
-    return $head_tag . $body_tag;
+    $html_all = $head_tag . $body_tag;
+    // //AMPキャッシュの保存
+    // set_transient($transient_id, $html_all, 60 * 60 * 24 * 1);
+    return $html_all;
   }
 
   //_v($body);

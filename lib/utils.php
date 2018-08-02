@@ -875,6 +875,14 @@ function get_theme_blog_card_cache_dir(){
 }
 endif;
 
+//AMPキャッシュディレクトリ
+if ( !function_exists( 'get_theme_amp_cache_dir' ) ):
+function get_theme_amp_cache_dir(){
+  $dir = get_theme_resources_dir().'amp-cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+
 //テーマのCSSキャッシュディレクトリ
 if ( !function_exists( 'get_theme_css_cache_dir' ) ):
 function get_theme_css_cache_dir(){
