@@ -54,6 +54,21 @@ html[lang="en"] .column-3::before{
 }
 
 /*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
-.mce-listbox button {
+/*.mce-listbox button {
   max-width: 98px;
+}*/
+
+.edit-post-visual-editor .editor-post-title__block,
+.edit-post-visual-editor .editor-block-list__block{
+  max-width: 800px;
+}
+
+.editor-block-list__layout{
+  padding: 0;
+}
+
+.edit-post-text-editor {
+  padding: 0;
+  margin: 0 auto;
+  width: 800px;
 }
