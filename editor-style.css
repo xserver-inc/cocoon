@@ -47,3 +47,13 @@ html[lang="en"] .column-3::before{
 .instagram-media {
   position: relative !important;
 }
+
+/*Gutenbergの引用スタイルを打ち消す*/
+.wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
+  border: 1px solid #ccc;
+}
+
+/*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
+.mce-listbox button {
+  max-width: 98px;
+}
