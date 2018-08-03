@@ -10,10 +10,10 @@
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
  */
 
-// //Jetpackとの競合対応
-// remove_action( 'init', 'wpcom_youtube_embed_crazy_url_init' );
-// //YouTube動画表示の高速化
-// add_filter('embed_oembed_html', 'youtube_embed_oembed_html', 1, 3);
+//Jetpackとの競合対応
+remove_action( 'init', 'wpcom_youtube_embed_crazy_url_init' );
+//YouTube動画表示の高速化
+add_filter('embed_oembed_html', 'youtube_embed_oembed_html', 1, 3);
 if ( !function_exists( 'youtube_embed_oembed_html' ) ):
 function youtube_embed_oembed_html ($cache, $url, $attr) {
   if (is_amp()) {
