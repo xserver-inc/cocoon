@@ -101,7 +101,7 @@ endif;
 ///////////////////////////////////////
 // GutenbergのCSSの読み込み順を変更する
 ///////////////////////////////////////
-//add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
+add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
 if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
   if (is_visual_editor_style_enable()) {
@@ -118,6 +118,8 @@ function gutenberg_stylesheets_custom() {
       wp_enqueue_style_theme_child_style();
       wp_enqueue_style( THEME_NAME.'-child-editor-style', $editor_style_url );
     }
+
+    wp_enqueue_script( THEME_NAME.'-gutenberg-js', get_template_directory_uri().'/js/gutenberg.js', array( 'jquery' ), false, true );
   }
 }
 endif;
