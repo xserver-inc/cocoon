@@ -505,7 +505,10 @@ function generate_amazon_product_link($atts){
           '</div>';
       }
 
-      $cache_del_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+      $cache_del_tag = null;
+      if (is_user_administrator()) {
+        $cache_del_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+      }
 
       //_v($item);
       $tag =
