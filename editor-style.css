@@ -57,17 +57,18 @@ html[lang="en"] .column-3::before{
 /*.mce-listbox button {
   max-width: 98px;
 }*/
-
-.edit-post-visual-editor .editor-post-title__block,
-.edit-post-visual-editor .editor-block-list__block{
+/* Main column width */
+body.gutenberg-editor-page .editor-post-title__block,
+body.gutenberg-editor-page .editor-default-block-appender,
+body.gutenberg-editor-page .editor-block-list__block {
   max-width: 800px;
 }
 
-.editor-block-list__layout{
+body.gutenberg-editor-page .editor-block-list__layout{
   padding: 0;
 }
 
-.edit-post-text-editor {
+body.gutenberg-editor-page .edit-post-text-editor {
   padding: 0;
   margin: 0 auto;
   width: 800px;
