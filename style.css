@@ -262,6 +262,7 @@ select {
   margin: 0;
   box-sizing: border-box;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 body {
@@ -3561,6 +3562,7 @@ canvas, iframe, video,
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 6px;
+  word-break: break-all;
 }
 .speech-balloon p {
   margin: 0;
