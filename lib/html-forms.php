@@ -232,7 +232,7 @@ endif;
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
 function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
-  <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>">
+  <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr($value); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
 }
 endif;
