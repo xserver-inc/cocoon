@@ -8,13 +8,16 @@
 
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
-if( isset($_POST[HIDDEN_FIELD_NAME]) &&
-    $_POST[HIDDEN_FIELD_NAME] == 'Y' ):
+$is_post_ok = isset($_POST[HIDDEN_FIELD_NAME]) &&
+              $_POST[HIDDEN_FIELD_NAME] == 'Y';
+if( $is_post_ok ):
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
+  //リセット
+  require_once abspath(__FILE__).'reset-posts.php';
   //全体
   require_once abspath(__FILE__).'all-posts.php';
   //ヘッダー
@@ -83,8 +86,6 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
   require_once abspath(__FILE__).'apis-posts.php';
   //その他
   require_once abspath(__FILE__).'others-posts.php';
-  //リセット
-  require_once abspath(__FILE__).'reset-posts.php';
 
   ///////////////////////////////////////
   // ビジュアルエディター用のカスタマイズCSS出力
@@ -108,22 +109,34 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
   //_v($custum_css);
 
+endif;
 //画面に「設定は保存されました」メッセージを表示
+$is_reset_ok = isset($_GET['reset']) && $_GET['reset'];
+if ($is_post_ok || $is_reset_ok):
 ?>
 <div class="updated">
   <p>
     <strong>
       <?php
-      if (isset($_POST[OP_RESET_ALL_SETTINGS]) && isset($_POST[OP_CONFIRM_RESET_ALL_SETTINGS])) {
-         _e('設定はリセットされました。', THEME_NAME );
-       } else {
-         _e('設定は保存されました。', THEME_NAME );
-       } ?>
+      $reset_msg = __( '設定はリセットされました。', THEME_NAME );
+      if ($is_post_ok) {
+        if (isset($_POST[OP_RESET_ALL_SETTINGS]) && isset($_POST[OP_CONFIRM_RESET_ALL_SETTINGS])) {
+           echo $reset_msg;
+         } else {
+           _e('設定は保存されました。', THEME_NAME );
+         }
+       }
+
+       if ($is_reset_ok) {
+         echo $reset_msg;
+       }
+        ?>
     </strong>
   </p>
 </div>
 <?php
 endif;
+
 
 ///////////////////////////////////////
 // 入力フォーム
@@ -134,7 +147,7 @@ endif;
 <p><?php _e( 'Cocoonの設定全般についてはマニュアルを参照してください。', THEME_NAME ) ?><a href="https://wp-cocoon.com/manual/" target="_blank"><span class="fa fa-book"></span>
 <?php _e( 'テーマ利用マニュアル', THEME_NAME ) ?></a></p>
 <?php //var_dump($_POST) ?>
-<form name="form1" method="post" action="" class="admin-settings">
+<form name="form1" method="post" action="<?php echo add_query_arg(array('reset' => null)); ?>" class="admin-settings">
 
 <!-- タブ機能の実装 -->
 <div id="tabs" class="tabs">

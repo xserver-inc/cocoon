@@ -13,6 +13,7 @@ function reset_all_settings(){
   //データベースから削除
   global $wpdb;
   $wpdb->delete( 'wp_options', array( 'option_name' => get_theme_mods_option_name() ) );
+  redirect_to_url(admin_url('admin.php?page=theme-settings&reset=1'));
 }
 endif;
 
