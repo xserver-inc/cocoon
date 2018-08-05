@@ -20,8 +20,8 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     return $cache;
   }
 
-  preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
-  $cache = $match_cache[0];
+  // preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
+  // $cache = $match_cache[0];
 
   // data-youtubeチェック
   if (strpos($cache, 'data-youtube')) {
