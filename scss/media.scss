@@ -70,6 +70,7 @@ canvas,iframe,video,
 //instagram埋め込みスタイルの不具合修正
 .instagram-media {
   position: static !important;
+  min-width: 280px !important;
 }
 
 // //pixiv

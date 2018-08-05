@@ -3392,6 +3392,7 @@ canvas, iframe, video,
 
 .instagram-media {
   position: static !important;
+  min-width: 280px !important;
 }
 
 /************************************
