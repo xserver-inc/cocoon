@@ -23,10 +23,12 @@ if (get_site_key_color()): ?>
 .cat-link,
 .cat-label,
 .appeal-content .appeal-button,
-.demo .cat-label{
+.demo .cat-label,
+#footer{
   background-color: <?php echo get_site_key_color(); ?>;
 }
-#navi .navi-in a:hover{
+#navi .navi-in a:hover,
+#footer a:hover{
   background-color: rgba(255, 255, 255, 0.2);
 }
 .article h3,
@@ -92,7 +94,9 @@ table tr:nth-of-type(2n+1),
 #navi .navi-in a,
 #navi .navi-in a:hover,
 .article h2,
-.sidebar h3{
+.sidebar h3,
+#footer,
+#footer a{
   color: #fff;
 }
 <?php endif ?>
