@@ -179,10 +179,10 @@ if ( !function_exists( 'get_http_content' ) ):
 function get_http_content($url){
   try {
     $ch = curl_init();
-    curl_setopt_array($ch, [
+    curl_setopt_array($ch, array(
       CURLOPT_URL => $url,
       CURLOPT_RETURNTRANSFER => true,
-    ]);
+    ));
     $body = curl_exec($ch);
     $errno = curl_errno($ch);
     $error = curl_error($ch);
