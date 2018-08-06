@@ -19,7 +19,23 @@
 
     <table class="form-table">
       <tbody>
+        <!-- フッター色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FOOTER_BACKGROUND_COLOR, __('フッター色', THEME_NAME) ); ?>
+            <?php generate_select_color_tip_tag(); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_FOOTER_BACKGROUND_COLOR,  get_footer_background_color(), 'フッター背景色');
 
+            generate_tips_tag(__( 'サイト下部（フッター部分）の背景色を指定します。', THEME_NAME ));
+
+            generate_color_picker_tag(OP_FOOTER_TEXT_COLOR,  get_footer_text_color(), 'フッター文字色');
+            generate_tips_tag(__( 'サイト下部（フッター部分）のテキスト色を指定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
         <!-- フッター表示タイプ  -->
         <tr>
           <th scope="row">

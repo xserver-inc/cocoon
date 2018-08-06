@@ -5,7 +5,21 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+//フッターカラー
+define('OP_FOOTER_BACKGROUND_COLOR', 'footer_background_color');
+if ( !function_exists( 'get_footer_background_color' ) ):
+function get_footer_background_color(){
+  return get_theme_option(OP_FOOTER_BACKGROUND_COLOR);
+}
+endif;
 
+//フッターテキストカラー
+define('OP_FOOTER_TEXT_COLOR', 'footer_text_color');
+if ( !function_exists( 'get_footer_text_color' ) ):
+function get_footer_text_color(){
+  return get_theme_option(OP_FOOTER_TEXT_COLOR);
+}
+endif;
 //フッターの表示タイプ
 define('OP_FOOTER_DISPLAY_TYPE', 'footer_display_type');
 if ( !function_exists( 'get_footer_display_type' ) ):
