@@ -964,7 +964,8 @@ function generate_author_box_tag($label){
         <?php
         if ($author_id) {
           $description = get_the_author_description_text();
-          if (empty(trim($description))) {
+          //$description = trim(get_the_author_description_text());
+          if (empty($description)) {
             $description = get_the_author_meta('description', $author_id);
           }
           $description = wpautop($description);
