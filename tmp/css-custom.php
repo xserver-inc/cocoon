@@ -494,3 +494,16 @@ if (is_global_navi_menu_text_width_enable()): ?>
   padding: 0 1.4em;
 }
 <?php endif ?>
+<?php //フッター背景色
+if ($footer_background_color = get_footer_background_color()): ?>
+#footer {
+  background: <?php echo $footer_background_color; ?>;
+}
+<?php endif ?>
+<?php //フッター文字色
+if ($footer_text_color = get_footer_text_color()): ?>
+#footer,
+#footer a {
+  color: <?php echo $footer_text_color; ?>;
+}
+<?php endif ?>

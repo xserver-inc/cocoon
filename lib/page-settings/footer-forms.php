@@ -7,13 +7,13 @@
 <div class="metabox-holder">
 
 <!-- フッター設定 -->
-<div id="footer" class="postbox">
+<div id="footer-area" class="postbox">
   <h2 class="hndle"><?php _e( 'フッター設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( 'フッターやクレジット表示設定です。', THEME_NAME ) ?></p>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-    <div class="demo">
+    <div id="footer" class="demo">
       <?php get_template_part('tmp/footer-bottom'); ?>
     </div>
 
