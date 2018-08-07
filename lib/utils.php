@@ -1867,11 +1867,20 @@ function get_site_favicon_url(){
 }
 endif;
 
+//ブログカード用のURLデコード
+if ( !function_exists( 'ampersand_urldecode' ) ):
+function ampersand_urldecode($url){
+  //$url = urldecode($url);//urlエンコードされている場合に元に戻す（?が&amp;になっている時など）
+  $url = str_replace('&amp;', '&', $url);
+  $url = str_replace('#038;', '&', $url);
+  return $url;
+}
+endif;
+
 //URLパラメーターを取得
 if ( !function_exists( 'get_url_params' ) ):
 function get_url_params($url){
-  $url = urldecode($url);//urlエンコードされている場合に元に戻す（?が&amp;になっている時など）
-  $url = str_replace('#038;', '&', $url);
+  $url = ampersand_urldecode($url);
   $parse_url = parse_url($url);//URLを配列に分解
   if (isset($parse_url['query'])) {
     $query = $parse_url['query'];//URLの中からクエリ部分を取り出す

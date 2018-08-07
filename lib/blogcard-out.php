@@ -131,8 +131,7 @@ function url_to_external_ogp_blogcard_tag($url){
   if (preg_match('/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i', $url, $m)) {
     return;
   }
-  $url = urldecode($url);
-  $url = str_replace('#038;', '&', $url);
+  $url = ampersand_urldecode($url);
   $params = get_url_params($url);
   $user_title = !empty($params['title']) ? $params['title'] : null;
   $user_snipet = !empty($params['snipet']) ? $params['snipet'] : null;
