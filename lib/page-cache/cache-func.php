@@ -73,19 +73,6 @@ function delete_amp_caches(){
 }
 endif;
 
-//AMP個別キャシュの削除
-if ( !function_exists( 'delete_amp_page_cache' ) ):
-function delete_amp_page_cache($id){
-  if (is_user_administrator()) {
-    $transient_file = get_theme_amp_cache_dir().$transient_id;
-    if (file_exists($transient_file)) {
-      return wp_filesystem_delete($transient_file) &&
-             delete_db_cache_records(TRANSIENT_AMP_PREFIX.$id);
-    }
-  }
-}
-endif;
-
 //テーマが保管している全てのキャッシュの保存処理
 if ( !function_exists( 'delete_theme_storaged_caches' ) ):
 function delete_theme_storaged_caches(){
