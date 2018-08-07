@@ -882,6 +882,7 @@ function get_theme_amp_cache_dir(){
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
+endif;
 
 //テーマのCSSキャッシュディレクトリ
 if ( !function_exists( 'get_theme_css_cache_dir' ) ):
@@ -1455,8 +1456,13 @@ function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FIL
   if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
     //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
-    $wp_filesystem->put_contents($new_file, $file_data, $chmod);
+    return $wp_filesystem->put_contents($new_file, $file_data, $chmod);
   }
+}
+endif;
+if ( !function_exists( 'put_file_contents' ) ):
+function put_file_contents($file, $data){
+  return wp_filesystem_put_contents($file, $data);
 }
 endif;
 
