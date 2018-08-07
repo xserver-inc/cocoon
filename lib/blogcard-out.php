@@ -131,6 +131,13 @@ function url_to_external_ogp_blogcard_tag($url){
   if (preg_match('/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i', $url, $m)) {
     return;
   }
+  $url = urldecode($url);
+  $url = str_replace('#038;', '&', $url);
+  $params = get_url_params($url);
+  $user_title = !empty($params['title']) ? $params['title'] : null;
+  $user_snipet = !empty($params['snipet']) ? $params['snipet'] : null;
+  $url = add_query_arg(array('title' => null, 'snipet' => null), $url);
+
   $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
   $error_title = $url; //エラーの場合はURLを表示
   $title = $error_title;
@@ -201,10 +208,18 @@ function url_to_external_ogp_blogcard_tag($url){
     $image = $error_image;
   }
   $title = strip_tags($title);
+  if ($user_title) {
+    $title = $user_title;
+  }
+
+
   $image = strip_tags($image);
 
   $snipet = get_content_excerpt( $snipet, 160 );
   $snipet = strip_tags($snipet);
+  if ($user_snipet) {
+    $snipet = $user_snipet;
+  }
 
   // //ブログカードのサムネイルを右側に
   // $thumbnail_class = ' blogcard-thumbnail-left';

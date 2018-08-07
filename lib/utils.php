@@ -1866,3 +1866,17 @@ function get_site_favicon_url(){
   return $icon;
 }
 endif;
+
+//URLパラメーターを取得
+if ( !function_exists( 'get_url_params' ) ):
+function get_url_params($url){
+  $url = urldecode($url);//urlエンコードされている場合に元に戻す（?が&amp;になっている時など）
+  $url = str_replace('#038;', '&', $url);
+  $parse_url = parse_url($url);//URLを配列に分解
+  if (isset($parse_url['query'])) {
+    $query = $parse_url['query'];//URLの中からクエリ部分を取り出す
+    parse_str($query, $arr);//クエリを配列にする
+    return $arr;
+  }
+}
+endif;
