@@ -1365,6 +1365,7 @@ function remove_all_directory($dir) {
     }
   closedir($handle);
   rmdir($dir);
+  return true;
   }
 }
 endif;
@@ -1475,7 +1476,7 @@ function wp_filesystem_delete($file){
 
   if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
     global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    $wp_filesystem->delete($file);
+    return $wp_filesystem->delete($file);
   }
 }
 endif;

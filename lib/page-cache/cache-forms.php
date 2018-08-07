@@ -69,6 +69,19 @@
           </td>
         </tr>
 
+        <!-- AMP  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'AMP', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <a href="<?php echo add_query_arg(array('cache' => 'amp_caches', 'ampid' => null)); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'AMPキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( 'AMPページの全キャッシュを削除します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- Amazon API  -->
         <tr>
           <th scope="row">
