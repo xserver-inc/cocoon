@@ -62,6 +62,17 @@ function delete_amazon_asin_cache($asin){
 }
 endif;
 
+
+//AMPキャシュの削除
+if ( !function_exists( 'delete_amp_caches' ) ):
+function delete_amp_caches(){
+  if (is_user_administrator()) {
+    return remove_all_directory(get_theme_amp_cache_dir()) &&
+           delete_db_cache_records(TRANSIENT_AMP_PREFIX);
+  }
+}
+endif;
+
 //テーマが保管している全てのキャッシュの保存処理
 if ( !function_exists( 'delete_theme_storaged_caches' ) ):
 function delete_theme_storaged_caches(){
@@ -87,6 +98,13 @@ function delete_theme_storaged_caches(){
       case 'amazon_asin_cache':
         $asin = isset($_GET['asin']) ? $_GET['asin'] : null;
         return delete_amazon_asin_cache($asin);
+        break;
+      case 'amp_caches':
+        return delete_amp_caches();
+        break;
+      case 'amp_page_cache':
+        $ampid = isset($_GET['ampid']) ? $_GET['ampid'] : null;
+        return delete_amp_page_cache($ampid);
         break;
     }
   }

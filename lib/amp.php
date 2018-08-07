@@ -899,6 +899,20 @@ function html_ampfy_call_back( $html ) {
     return $html;
   }
 
+  global $post;
+  //キャッシュの存在
+  $transient_id = TRANSIENT_AMP_PREFIX.$post->ID;
+  $transient_file = get_theme_amp_cache_dir().$transient_id;
+  $file_path_cache = get_transient( $transient_id );
+  if ($file_path_cache) {
+    if (file_exists($transient_file)) {
+      $html_cache = get_file_contents($transient_file);
+      if ($html_cache) {
+        return $html_cache;
+      }
+    }
+  }
+
   $head_tag = null;
   $body_tag = null;
   $style_amp_custom_tag = null;
@@ -932,7 +946,13 @@ function html_ampfy_call_back( $html ) {
   if ($head_tag && $body_tag) {
     //bodyタグ内をAMP化
     $body_tag = convert_content_for_amp($body_tag);
-    return $head_tag . $body_tag;
+    $html_all = $head_tag . $body_tag;
+
+    //AMPキャッシュの保存
+    set_transient($transient_id, $transient_file, 60 * 60 * 24 * 1);
+    put_file_contents($transient_file, $html_all);
+
+    return $html_all;
   }
 
   //_v($body);
