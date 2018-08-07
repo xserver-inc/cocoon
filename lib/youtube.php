@@ -98,7 +98,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       return $cache;
     }
 
-    $youtube_cache  = [];
+    $youtube_cache  = array();
     $youtube_cache['title'] = htmlentities( $json['title'], ENT_QUOTES, 'UTF-8' );
     $youtube_cache['video_id'] = $video_id[0];
 
