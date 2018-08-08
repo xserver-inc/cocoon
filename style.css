@@ -3742,7 +3742,7 @@ div.sbs-think .speech-balloon::after {
 .amazon-item-thumb {
   width: 160px;
   min-width: 160px;
-  margin: 0 auto 5px !important;
+  margin: 0 auto 1em !important;
   float: none !important;
 }
 .booklink-image *,
@@ -3788,7 +3788,7 @@ div.sbs-think .speech-balloon::after {
   width: 90%;
   display: block;
   margin: 0px auto 8px;
-  padding: 10px 1px;
+  padding: 10px 0;
   text-decoration: none;
   font-size: 13px;
   font-weight: bold;
@@ -3952,6 +3952,22 @@ div.sbs-think .speech-balloon::after {
   position: absolute;
   bottom: 3px;
   left: 6px;
+}
+
+.ais-s .amazon-item-thumb {
+  width: 90px;
+  min-width: 90px;
+}
+.ais-s .amazon-item-buttons a {
+  padding: 5px 0;
+}
+
+.ais-l.amazon-item-box {
+  display: block;
+}
+.ais-l .amazon-item-thumb {
+  width: auto;
+  min-width: none;
 }
 
 .fb-like-box {

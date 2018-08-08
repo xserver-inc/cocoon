@@ -353,19 +353,6 @@ function generate_amazon_product_link($atts){
 
   $asin = esc_html(trim($asin));
 
-  //サイズ状態を表すクラス
-  switch ($size) {
-    case 's':
-      $size_class = 'ais-s';
-      break;
-    case 'l':
-      $size_class = 'ais-l';
-      break;
-    default:
-      $size_class = 'ais-m';
-      break;
-  }
-
   //ASINが取得できない場合はID
   if (empty($asin)) {
     $asin = $id;
@@ -445,11 +432,40 @@ function generate_amazon_product_link($atts){
       }
 
       $SmallImage = $item->SmallImage;
+      $SmallImageUrl = esc_url($SmallImage->URL);
+      $SmallImageWidth = esc_html($SmallImage->Width);
+      $SmallImageHeight = esc_html($SmallImage->Height);
       $MediumImage = $item->MediumImage;
       $MediumImageUrl = esc_url($MediumImage->URL);
       $MediumImageWidth = esc_html($MediumImage->Width);
       $MediumImageHeight = esc_html($MediumImage->Height);
       $LargeImage = $item->LargeImage;
+      $LargeImageUrl = esc_url($LargeImage->URL);
+      $LargeImageWidth = esc_html($LargeImage->Width);
+      $LargeImageHeight = esc_html($LargeImage->Height);
+
+      //サイズ売って
+      switch ($size) {
+        case 's':
+          $size_class = 'ais-s';
+          $ImageUrl = $SmallImageUrl;
+          $ImageWidth = $SmallImageWidth;
+          $ImageHeight = $SmallImageHeight;
+          break;
+        case 'l':
+          $size_class = 'ais-l';
+          $ImageUrl = $LargeImageUrl;
+          $ImageWidth = $LargeImageWidth;
+          $ImageHeight = $LargeImageHeight;
+          break;
+        default:
+          $size_class = 'ais-m';
+          $ImageUrl = $MediumImageUrl;
+          $ImageWidth = $MediumImageWidth;
+          $ImageHeight = $MediumImageHeight;
+          break;
+      }
+
 
       $ItemAttributes = $item->ItemAttributes;
 
@@ -535,7 +551,7 @@ function generate_amazon_product_link($atts){
         '<div class="amazon-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
           '<figure class="amazon-item-thumb">'.
             '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
-              '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
+              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image">'.
             '</a>'.
           '</figure>'.
           '<div class="amazon-item-content">'.
