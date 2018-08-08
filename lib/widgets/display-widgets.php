@@ -258,7 +258,10 @@ function is_display_widgets_widget_visible( $info ){
   $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages);
   //カテゴリーリストに何かチェックがついている場合
   if (!empty($widget_categories)) {
-    $display = $display || in_category($widget_categories) || is_category($widget_categories);
+    //_v(in_category($widget_categories));
+    //var_dump($instance);
+    //var_dump($widget_categories);
+    $display = $display || (in_category($widget_categories) && is_singular()) || is_category($widget_categories);
     // if ($widget_action == 'hide') {
     //   $display = $display || is_single();
     // }
