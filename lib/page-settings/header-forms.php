@@ -31,7 +31,7 @@
             $options = array(
               'center_logo' => 'センターロゴ（デフォルト）',
               'center_logo_top_menu' => 'センターロゴ（トップメニュー）',
-              'center_logo_slim' => 'センターロゴ（スリム）',
+              'center_logo_slim' => 'センターロゴ（スリムメニュー）',
               'center_logo_slim_top_menu' => 'センターロゴ（スリムトップメニュー）',
               'top_menu' => 'トップメニュー',
               'top_menu_right' => 'トップメニュー（右寄せ）',
