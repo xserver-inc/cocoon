@@ -344,12 +344,27 @@ function generate_amazon_product_link($atts){
     //'isbn ' => null,
     'kw' => null,
     'title' => null,
+    'desc' => null,
+    'size' => 'm',
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
   ), $atts ) );
 
   $asin = esc_html(trim($asin));
+
+  //サイズ状態を表すクラス
+  switch ($size) {
+    case 's':
+      $size_class = 'ais-s';
+      break;
+    case 'l':
+      $size_class = 'ais-l';
+      break;
+    default:
+      $size_class = 'ais-m';
+      break;
+  }
 
   //ASINが取得できない場合はID
   if (empty($asin)) {
@@ -510,9 +525,14 @@ function generate_amazon_product_link($atts){
         $cache_del_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
       }
 
+      $desc_tag = null;
+      if ($desc) {
+        $desc_tag = '<div class="amazon-item-description">'.esc_html($desc).'</div>';
+      }
+
       //_v($item);
       $tag =
-        '<div class="amazon-item-box no-icon '.$ProductGroupClass.' '.$asin.' cf">'.
+        '<div class="amazon-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
           '<figure class="amazon-item-thumb">'.
             '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$MediumImageUrl.'" alt="'.$TitleAttr.'" width="'.$MediumImageWidth.'" height="'.$MediumImageHeight.'" class="amazon-item-thumb-image">'.
@@ -528,6 +548,7 @@ function generate_amazon_product_link($atts){
               '<div class="amazon-item-maker">'.
                 $maker.
               '</div>'.
+              $desc_tag.
               $buttons_tag.
             '</div>'.
           '</div>'.
