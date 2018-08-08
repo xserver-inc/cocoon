@@ -349,3 +349,4 @@ endif;
 // }
 // endif;
 
+//add_filter('gutenberg_can_edit_post_type', '__return_false');

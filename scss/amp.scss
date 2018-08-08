@@ -18,6 +18,7 @@ amp-img {
   max-height: 100%;
 }
 
+
 .card-thumb amp-img {
   min-width: 100%;
 }
@@ -26,20 +27,29 @@ amp-img {
   height: 100%;
 }
 
-.entry-content amp-img{
+.entry-content amp-img,
+amp-img[width|="0"],
+amp-img[height|="0"],
+amp-img[width|="1"],
+amp-img[height|="1"]{
   display: inline-block;
+}
+
+.amazon-item-box amp-img{
+  display: block;
+  margin: 0 auto;
 }
 
 .logo-image amp-img{
   margin: auto;
 }
 
-amp-img[width|="0"],
-amp-img[height|="0"],
-amp-img[width|="1"],
-amp-img[height|="1"] {
-  display: inline-block;
-}
+// amp-img[width|="0"],
+// amp-img[height|="0"],
+// amp-img[width|="1"],
+// amp-img[height|="1"] {
+//   display: inline-block;
+// }
 
 amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   display: none;
