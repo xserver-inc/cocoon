@@ -3744,6 +3744,7 @@ div.sbs-think .speech-balloon::after {
   min-width: 160px;
   margin: 0 auto 1em !important;
   float: none !important;
+  text-align: center;
 }
 .booklink-image *,
 .kaerebalink-image *,
