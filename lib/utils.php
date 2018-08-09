@@ -570,6 +570,30 @@ function wp_enqueue_slicknav(){
 endif;
 
 
+//ScrollHint
+if ( !function_exists( 'wp_enqueue_scrollhint' ) ):
+function wp_enqueue_scrollhint(){
+  if (is_responsive_table_enable()) {
+    //ScrollHintスタイルの呼び出し
+    wp_enqueue_style( 'scrollhint-style', get_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css' );
+    //ScrollHintスクリプトの呼び出し
+    wp_enqueue_script( 'scrollhint-js', get_template_directory_uri() . '/plugins/scroll-hint-master/js/scroll-hint.min.js', array( 'jquery' ), false, true  );
+    $data = minify_js('
+          (function($){
+            new ScrollHint(".scrollable-table", {
+              suggestiveShadow: true,
+              i18n: {
+                scrollable: "'.__( 'スクロールできます', THEME_NAME ).'"
+              }
+            });
+          })(jQuery);
+        ');
+    wp_add_inline_script( 'scrollhint-js', $data, 'after' ) ;
+
+  }
+}
+endif;
+
 //clingifyの読み込み
 if ( !function_exists( 'wp_enqueue_stickyfill' ) ):
 function wp_enqueue_stickyfill(){

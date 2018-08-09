@@ -70,6 +70,9 @@ https://fontawesome.com/v4.7.0/
 IcoMoon  
 https://icomoon.io/app/
 
+ScrollHint  
+https://appleple.github.io/scroll-hint/
+
 コードを参考にしたプラグイン
 ------
 Auto Post Thumbnail  
