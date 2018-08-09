@@ -444,7 +444,8 @@ function generate_amazon_product_link($atts){
       $LargeImageWidth = esc_html($LargeImage->Width);
       $LargeImageHeight = esc_html($LargeImage->Height);
 
-      //サイズ売って
+      //サイズ設定
+      $size = strtolower($size);
       switch ($size) {
         case 's':
           $size_class = 'ais-s';
