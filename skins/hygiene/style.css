@@ -5,11 +5,11 @@
   Author: ハイジ
   Author URI: https://haiji-blog.com/
   Screenshot URI:https://im-cocoon.net/wp-content/uploads/hygiene.png
-  Version: 0.0.1
+  Version: 1.1.5
   Priority: 200700
 */
 
-/*以下にスタイルシートを記入してください*/
+/*以下にスタイルシートを記入してください1*/
 
 .a-wrap:hover{
   transition: 0.5s all ease;
@@ -19,9 +19,9 @@
 .eye-catch{
   margin: 0 -10px;
 }
-.logo-header img{
+/*.logo-header img{
       filter: drop-shadow(0px 0px 3px #1b3868);
-}
+}*/
 table tr:nth-of-type(2n+1), .page-numbers.dots, .a-wrap:hover, .a-wrap:hover .card-meta,
    .widget_recent_entries ul li a:hover,
    .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover,
@@ -65,7 +65,7 @@ border-bottom:4px solid #5572ff;
   border-image-slice: 1;
   background: none!important;
   border-left: 0px;
-  color: #383940;
+  color: #383940!important;
 }
 .article h2 {
     position: relative;
@@ -144,12 +144,13 @@ border-bottom:4px solid #5572ff;
   padding-left: 2.1em;
   padding-bottom: 0px;
   padding-top: 0;
+  color: #636363!important
 }
 .related-entry-heading, .comment-title, .main-widget-label{
   font-size: 28px;
   padding-left: 1.6em
 }
-#author_box-3 .main-widget-label::after, #author_box-3 .main-widget-label::before{
+.widget_author_box .main-widget-label::after, .widget_author_box .main-widget-label::before{
   content: none;
 }
 
@@ -237,17 +238,16 @@ border-bottom:4px solid #5572ff;
     padding: 4px 12px;
     margin: 1em auto;
     margin-bottom: 2em!important;
-    border: none;
+    border: none!important;
     text-align: center;
     width: 70%;
     background-clip: text;
     -webkit-background-clip: text;
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
-    background-color: transparent;
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    border-color: #cacaca;
+    border-bottom: 1px solid!important;
+    border-top: 1px solid!important;
+    border-color: #cacaca!important;
 }
 .eye-catch .cat-label::before{
   content: 'category:';
@@ -269,16 +269,6 @@ border-bottom:4px solid #5572ff;
     font-family: serif;
     color: #9e9e9e;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -312,19 +302,14 @@ border-bottom:4px solid #5572ff;
 }
 
 .sns-share .sns-share-buttons a {
-/*  display: flex;
-    flex-direction: column;
-    align-content: center;*/
     flex-direction: unset;
     overflow: hidden;
-    height: 45px!important;
+    height: 50px!important;
     width: 45px!important;
     border: 1px solid #25125d;
     position: relative;
     display: inline-block;
     text-decoration: none;
-    background: white;
-    color: #333#25125d;
 }
 
 .sns-share .sns-share-buttons a .social-icon {
@@ -350,7 +335,7 @@ border-bottom:4px solid #5572ff;
     right: 0px;
     bottom: 0px;
     font-size: 10px;
-    line-height: 16px;
+    line-height: 3em;
     margin: 0px!important;
     position: relative;
     color: #25125d;
@@ -412,10 +397,6 @@ border-bottom:4px solid #5572ff;
 .line-share-count::after{
   content: 'TL';
 }
-.line-share-button-sq::after{
-  content: '';
-  margin: 1px;
-}
 /* HACK: ブランドカラー（白抜き）選択時 */
 .bc-brand-color-white.sns-share .sns-share-buttons a .social-icon{
   background: transparent;
@@ -426,14 +407,9 @@ border-bottom:4px solid #5572ff;
   border: none;
   /*height: 63px!important;*/
 }
-.bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
-  transform: rotate(720deg);
-  font-size: 41px;
-  transition: transform 0.4s ease;
-}
 .bc-brand-color-white.sns-share .sns-share-buttons a:hover .share-count,
 .bc-brand-color.sns-share .sns-share-buttons a:hover .share-count{
-  display: none;
+  color: transparent!important;
 }
 .bc-brand-color-white.sns-share a:hover{
   opacity: unset!important;
@@ -448,8 +424,7 @@ border-bottom:4px solid #5572ff;
   /*height: 63px!important;*/
 }
 .bc-brand-color-white.sns-share .sns-share-buttons a:hover .social-icon{
-  transform: rotate(720deg);
-  font-size: 41px;
+  transform: rotate(720deg)scale(1.3);
   transition: transform 0.4s ease;
 }
 .bc-brand-color.sns-share a:hover{
@@ -479,14 +454,11 @@ border-bottom:4px solid #5572ff;
  .bc-brand-color.sns-share .sns-share-buttons a .share-count.pocket-share-count{
   filter: drop-shadow(1px 1px 1px #f03f56);
 }
-.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-line{
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-line,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.line-share-count{
   filter: drop-shadow(1px 1px 1px #00c400);
 }
-.bc-brand-color.sns-share .sns-share-buttons a .icon-line::after{
-  font-weight: bold;
-  font-size: 12px;
-  color: #fff;
-}
+
 
 
 .bc-brand-color.sns-share .sns-share-buttons a .share-count{
@@ -499,22 +471,6 @@ border-bottom:4px solid #5572ff;
   height: 45px;
   line-height: 42px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* HACK: フォローボタンをカッコよく！ */
 .sidebar .sns-follow-buttons, .footer .sns-follow-buttons{
@@ -781,7 +737,6 @@ margin-right: 0;
 }
 
 
-/* HACK: 今は　予備　＞　シェアボタン系　に隠してます */
 
 /* HACK: 写真をポラロイド風に */
 .wp-caption-text, .gallery-caption {
@@ -814,35 +769,6 @@ margin-right: 0;
 }
 
 
-/* HACK: いいね！ボックス *
-.fb-like-box{
-  background: transparent;
-}
-.fb-like-thumb{
-  max-width: 100%;
-  background: #9e1c82;
-}
-.fb-like-box .fb-like-thumb > *{
-  min-width: 100%;
-  height: 240px;
-  opacity: 0.7;
-}
-.fb-like-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: space-around;
-    text-align: center;
-    z-index: 999;
-    position: absolute;
-    width: 97%!important;
-    height: 240px;
-}
-@media screen and (max-width: 768px){
-.fb-like-box {
-    display: flex;
-}}*/
 
 /* HACK: いいねボックス */
 .fb-like-box{
@@ -897,32 +823,6 @@ margin-right: 0;
   margin-left: -10px;
   margin-right: -10px;
 }
-/*
-.fb-like-box{
-  margin-left: 13%;
-  margin-right: 13%;
-  display: block;
-}
-.fb-like-thumb{
-  max-width: 100%;
-}
-.fb-like-box .fb-like-thumb > *{
-  min-width: 100%;
-  opacity: 0.7;
-}
-.fb-like-thumb, .fb-like-content{
-  background: #e0d8ff
-}
-.fb-like-sub-message{
-  color: #969696;
-  font-size: 0.8em;
-}
-.fb-like-message{
-  color: #ffffff;
-  font-size: 1em
-}*/
-
-
 
 /*スマホの固定フッターメニュー*/
 .mobile-menu-buttons {
@@ -972,10 +872,10 @@ blockquote a {
     font-weight: bold;
     letter-spacing: -0.5px;
 }
-blockquote a::before{
+/*blockquote a::before{
   content: '出典：';
   color: #656565;
-}
+}*/
 blockquote::before {
     content: "\f10d";
     font-family: FontAwesome!important;
@@ -1000,13 +900,12 @@ blockquote::before, blockquote::after{
 img.avatar.avatar-200.wp-user-avatar{
       filter: drop-shadow(2px 2px 3px);
 }
-
-#author_box-3 .main-widget-label {
-    font-family: serif;
-    font-style: italic;
-    font-size: 1.4em;
-    text-align: center;
-    padding-left: 0;
+.widget-below-sns-buttons-title.main-widget-label{
+  font-family: serif;
+  font-style: italic;
+  font-size: 1.4em;
+  text-align: center;
+  padding-left: 0;
 }
 .author-widget-name {
     text-align: center;
@@ -1066,18 +965,13 @@ img.avatar.avatar-200.wp-user-avatar{
     display: flex;
     width: 100%;
 }
-div#author_box-3 {
+.widget_author_box {
     background: #f6f1ff;
 }
 .author-box {
     border: unset;
     border-radius: 0px;
-    line-height: 1.4;
-    position: relative;
-    padding: 1.4% 2% 1.8%;
     background: #f6f1ff;
-    margin: 50px 20px;
-    margin-top: 0px;
 }
 .sidebar .author-box{
   margin: 50px 0px;
@@ -1180,7 +1074,7 @@ font-weight: bold;
 	padding: 1rem;
 	color: #666;
 	position: relative;
-	border-color: #a9b6ff !important; /* 枠線の色を変更 */
+	border-color: #a9b6ff !important;
   margin: 30px auto;
   padding-bottom: 8px;
   border-width: 2px;
@@ -1190,6 +1084,7 @@ font-weight: bold;
 a.blogcard-wrap:hover{
 	background-color: transparent!important;
 	opacity: 0.8;
+  filter: unset;
 }
 
 a.blogcard-wrap:hover img.blogcard-thumb-image{
@@ -1226,15 +1121,15 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 }
 
 .internal-blogcard-footer{
-	display: none; /* 内部ブログカードのアイコンとURLを非表示 */
+	display: none;
 }
 
 .blogcard::before{
-	content: '\f02d あわせて読みたい'; /* タイトルの文言 */
+	content: '\f02d あわせて読みたい';
   font-family: 'FontAwesome';
 	position: absolute;
 	top: -1rem;
-	left: auto;
+	left: 1em;
 	font-size: 75%;
   background: #a9b6ff;
   padding: .6em 1em;
@@ -1244,14 +1139,14 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 }
 
 .internal-blogcard::after{
-	content: '続きを読む \f138'; /* 内部リンク右下枠の文言 */
+	content: '続きを読む \f138';
   font-family: 'FontAwesome';
 	position: relative;
 	font-size: 85%;
-	background: linear-gradient(203deg, #7144f7f5 15px, #d675ce); /* 内部リンク右下枠の背景色 */
+	background: linear-gradient(203deg, #7144f7f5 15px, #d675ce);
 	padding: .4em 3em;
 	font-weight: bold;
-	color: #fff; /* 内部リンク右下枠の文字色 */
+	color: #fff;
   -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
 text-align: center;
@@ -1260,12 +1155,312 @@ margin: 0 auto;
 margin-top: 25px;
 }
 
+/* HACK: アフィリエイトボタン */
+.hybtn a{
+  padding: 1em 3.5em 1em 2em;
+  font-size: 17px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right,#10bf4e,#39ff80);/*IE*/
+  background: linear-gradient(166deg,#10bf4ef5 29px,#39ff80);
+  box-shadow: 0 5px 0 #3bad6e;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  display: block;
+  width: 80%;
+  line-height: 1em;
+  margin: 3em auto;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hybtn > img{
+  float: left;
+}
+.hybtn::after{
+  content: '';
+  clear: left;
+}
+.hyflat a{
+    border-radius: 0;
+    box-shadow: 0 10px 10px -5px #6d6d6d!important;
+    font-weight: normal;
+}
+.hybtn.hyred a{
+  background: linear-gradient(to right,#ff4444,#ff198e);
+    background: linear-gradient(166deg,#ff4444 29px,#ff198ef5);
+    box-shadow: 0 5px 0 #a93c64;
+}
+.hybtn.hyblue a{
+    background: linear-gradient(to right,#0a55ff,#00adff);
+      background: linear-gradient(166deg,#0a55fff5 29px,#00adfff5);
+    box-shadow: 0 5px 0 #0c49a5;
+}
+.hybtn.hykon a{
+    background: linear-gradient(to right,#1d356b,#3b1a58);
+    background: linear-gradient(166deg,#1d356bf5 29px,#3b1a58f5);
+    box-shadow: 0 5px 0 #000000;
+}
+.hybtn.hypink a{
+    background: linear-gradient(to right,#ff7979,#ff72ba);
+    background: linear-gradient(166deg,#ff7979f5 29px,#ff72baf5);
+    box-shadow: 0 5px 0 #c74c4c;
+}
+.hybtn.hyki a{
+    background: linear-gradient(to right,#fbb416,#ffeb00);
+    background: linear-gradient(166deg,#fbb416f5 29px,#ffeb00f5);
+    box-shadow: 0 5px 0 #d2b940;
+}
+.hybtn a::after{
+  font-family: 'FontAwesome';
+  width: 2em;
+  position: absolute;
+  right: 0.2em;
+  font-size: 20px;
+  top: 50%;
+  height: 1em;
+  text-align: center;
+  line-height: 0;
+}
+.yubi.hybtn a::after{
+  content: '\f0a4';
+}
+.ya.hybtn a::after{
+  content: '\f138';
+}
+.check.hybtn a::after{
+  content: '\f058';
+}
+.diya.hybtn a::after{
+  content: '\f219';
+}
+.hato.hybtn a::after{
+  content: '\f004';
+}
+.hybtn a:hover{
+  transform: translateY(6px);
+  box-shadow: 0 1px 0 #2f2f2f;
+}
+.hybtn.hyflat a:hover {
+    box-shadow: none!important;
+    transform: unset;
+    background: white;
+    color: #59ef37;
+    box-shadow: 0px 0px 0px 2px!important;
+}
+.hybtn.hyred.hyflat a:hover{
+  color: #ff3a64;
+}
+.hybtn.hyblue.hyflat a:hover{
+  color: #108dff;
+}
+.hybtn.hykon.hyflat a:hover{
+  color: #12135d;
+}
+.hybtn.hypink.hyflat a:hover{
+  color: #ff9ed2;
+}
+.hybtn.hyki.hyflat a:hover{
+  color: #ffd82d;
+}
+.itenmetu.hytext a::before, .itenmetu.hybtn a::after, .tenmetu{
+  animation: tenmetu 1.3s ease-out 0.2s infinite alternate;
+}
+.haneru{
+  animation: haneru 2s ease-out 1.2s infinite alternate;
+}
+.ihaneru.hytext a::before, .ihaneru.hybtn a::after {
+  animation: ihaneru 1.5s ease-out 1.2s infinite alternate;
+}
+.yokoyure{
+  animation: yokoyure 2s ease-out 1.2s infinite alternate;
+}
+.iyokoyure.hytext a::before, .iyokoyure.hybtn a::after{
+  animation: iyokoyure 1.5s ease-out 1.2s infinite ;
+}
+.kakudai {
+  animation: kakudai 1.5s ease-out 0.3s infinite alternate;
+}
+.ikakudai.hytext a::before, .ikakudai.hybtn a::after {
+  animation: ikakudai 1s ease-out 0.3s infinite alternate;
+}
+.iswing.hytext a::before, .iswing.hybtn a::after{
+  animation: swing 1s ease-out 0.5s infinite alternate;
+  transform-origin: left;
+}
+.hikaru.hybtn a::before{
+  display: block;
+  position: absolute;
+  left: -40%;
+  top: -35em;
+  content: '';
+  width: 2em;
+  height: 60em;
+  transform: rotate(45deg);
+  background: white;
+  animation: hikaru 4s ease-in-out 1s infinite;
+}
+.hamon.hybtn a::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background: white;
+  animation: hamon 4.5s ease-in-out 1s infinite;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+@keyframes tenmetu {
+  0%{opacity: 0;}
+  70%{opacity: 1;}
+  100%{opacity: 1;}
+}
+@keyframes haneru {
+  0%, 20%, 40%, 100% {transform: translateY(0%);}
+  10%, 30% {transform: translateY(-1em);}
+}
+@keyframes ihaneru {
+  0%, 40%, 80% {transform: translateY(0em);}
+  20%, 60%, 100% {transform: translateY(-1em);}
+}
+@keyframes yokoyure {
+  0%, 20%, 40% {transform: translatex(0.5em);}
+  10%, 30% {transform: translatex(-0.5em);}
+  80%, 100% {transform: translateX(0%;)}
+}
+@keyframes iyokoyure {
+  0% {transform: translateX(0em);}
+  100% {transform: translateX(0.3em);}
+}
+@keyframes kakudai {
+  0%{transform: scale(0.9);}
+  100%{transform: scale(1.01);}
+}
+@keyframes ikakudai {
+  0%{transform: scale(1);}
+  100%{transform: scale(1.5);}
+}
+@keyframes hikaru {
+  0% { transform: scale(0) rotate(45deg); opacity: 0; }
+      70% { transform: scale(0) rotate(45deg); opacity: 0.3; }
+      75% { transform: scale(4) rotate(45deg); opacity: 0.7; }
+      100% { transform: scale(50) rotate(45deg); opacity: 0; }
+  }
+@keyframes hamon {
+  0%{ transform: scale(0); opacity: 0;}
+  15%{ transform: scale(0); opacity: 0.2;}
+  50%{ transform: scale(30); opacity: 0;}
+  80% { transform: scale(30); opacity: 0;}
+  100% { transform: scale(0); opacity: 0; }
+}
+@keyframes swing {
+  0%{ transform: rotate(-30deg) scale(0.9);}
+  100%{ transform: rotate(10deg) scale(1.39);}
+}
+.hytext{
+  text-align: center;
+  margin: 3em auto;
+}
+.hytext a{
+    margin: 0.5em auto;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 1.5em;
+    text-shadow: 1px 1px 1px #b1adad;
+    color: #26c95a;
+    transition: 0.5s all ease;
+    margin: 0.5em auto;
+    padding: 2em 0 0 0;
+    text-shadow: 1px 1px 1px #b1adad;
+    color: #26c95a;
+    transition: 0.5s all ease;
+    position: relative;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    box-shadow: 0 1px 0 0 grey;
+}
+.hytext > img{
+  float: left;
+}
+.hytext a::before{
+  font-family: 'FontAwesome';
+  padding-right: 0.5em;
+  float: left;
+  font-size: 120%;
+  padding-right: 0.5em;
+  position: absolute;
+  font-size: 120%;
+  left: -1.3em;
+}
+.hytext::after{
+  content: '';
+  clear: left;
+}
+.yubi.hytext a::before{
+  content: '\f0a4';
+}
+.ya.hytext a::before{
+  content: '\f138';
+}
+.check.hytext a::before{
+  content: '\f058';
+}
+.diya.hytext a::before{
+  content: '\f219';
+}
+.hato.hytext a::before{
+  content: '\f004';
+}
+.hytext.hyblue a{
+  color: #1b66ff;
+}
+.hytext.hyred a{
+  color: #ff0000;
+}
+.hytext.hykon a{
+  color: #353b6f;
+}
+.hytext.hypink a{
+  color: #ff7b95;
+}
+.hytext.hyki a{
+  color: #ffcf0c;
+}
+
+.hytext a:hover{
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 5px #26c95a;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+.hyblue.hytext a:hover{
+  text-shadow: 1px 1px 5px #1b5bff;
+}
+.hyred.hytext a:hover{
+  text-shadow: 1px 1px 5px #ff0000;
+}
+.hykon.hytext a:hover{
+  text-shadow: 1px 1px 5px #060435;
+}
+.hypink.hytext a:hover{
+  text-shadow: 1px 1px 5px #f71fa0;
+}
+.hyki.hytext a:hover{
+  text-shadow: 1px 1px 5px #d8b406;
+}
+.hybtn .anchor-icon, .hytext .anchor-icon {
+  display: none;
+}
+
+
 
 /* HACK: テーブル */
 /* 親テーマでも採用させていただきました（スクロールテーブルのことを忘れてました；）
-.scrollable-table{
-  -webkit-overflow-scrolling: touch;
-}*/
+/* HACK: ご丁寧にありがとうございます。 */
 
 /* HACK: 記事下関連記事をカスタマイズ！ */
 /* HACK: ラベルの位置を調整 */
@@ -1727,7 +1922,44 @@ color: white!important;
   transition: 0.7s all ease;
 }
 
+/* HACK: boxをカスタマイズ！ */
+@media screen and (max-width: 440px){
+.information-box::before, .question-box::before, .alert-box::before,
+ .information::before, .question::before, .alert::before, .memo-box::before, .comment-box::before{
+   top: 8px;
+   left: -1px;
+   width: 1.5em;
+   height: 1.5em;
+   line-height: 1.5em;
+   border-radius: 0px 0 90% 0;
+   padding: 0px 3px 3px 0px;
+   box-shadow: 1px 1px 1px #8e8e8e;
+   color: white;
+ }
+ .information-box, .question-box, .alert-box, .information, .question, .alert, .memo-box, .comment-box{
+   border-width: 3px;
+   border-radius: 0px;
+   box-shadow: inset 0px 0px 1px 1px #9c9c9c;
+   padding: 14px 6px 6px 23px;
+   font-size: 95%;
 
+ }
+.information-box::before{
+  background: #bee4fc;
+}
+.question-box::before{
+  background: #ffe766;
+}
+.alert-box::before{
+  background: #f6b9b9;
+}
+.memo-box::before{
+  background: #8cd8c1;
+}
+.comment-box::before{
+  background: #ccccde;
+}
+}
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
@@ -1774,6 +2006,7 @@ color: white!important;
 
 
 }
+
 
 /*480px以下*/
 @media screen and (max-width: 480px){
@@ -1822,6 +2055,10 @@ color: white!important;
 .toc ol ol{
   padding-left: 1em;
 }
+.hybtn a {
+  width: 100%;
+}
+
 
 
 }
@@ -1836,9 +2073,6 @@ color: white!important;
 
 }
 
-/*.cat-label{
-  color: #fff;
-}*/
 
 body{
   background-color: #f2f0ff;
