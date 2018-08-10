@@ -108,7 +108,9 @@ if (get_site_key_text_color()): ?>
 #navi .navi-in a:hover,
 .appeal-content .appeal-button,
 .article h2,
-.sidebar h3{
+.sidebar h3,
+#footer,
+#footer a{
   color: <?php echo get_site_key_text_color(); ?>;
 }
 <?php endif ?>
