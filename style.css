@@ -3782,6 +3782,14 @@ div.sbs-think .speech-balloon::after {
   margin: 0 0 10px;
 }
 
+.kaerebalink-link1 > *,
+.booklink-link2 > *,
+.tomarebalink-link1 > *,
+.amazon-item-buttons > * {
+  background: none !important;
+  padding: 0 !important;
+  display: block !important;
+}
 .kaerebalink-link1 a,
 .booklink-link2 a,
 .tomarebalink-link1 a,
@@ -3873,7 +3881,7 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
   .amazon-item-buttons > * {
-    width: 32%;
+    width: 31.5%;
     margin: 0.5%;
     box-sizing: border-box;
   }

@@ -95,6 +95,11 @@
 .booklink-link2,
 .tomarebalink-link1,
 .amazon-item-buttons {
+  >*{
+    background: none !important;
+    padding: 0 !important;
+    display: block !important;
+  }
   a{
     width: 90%;
     display: block;
@@ -190,10 +195,9 @@
       }
     }
     >*{
-      width: 32%;
+      width: 31.5%;
       margin: 0.5%;
       box-sizing: border-box;
-      //float: left;
     }
   }
 
