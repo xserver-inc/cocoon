@@ -38,6 +38,14 @@ function is_amazon_search_button_visible(){
 }
 endif;
 
+//Amazon検索ボタン文字
+define('OP_AMAZON_SEARCH_BUTTON_TEXT', 'amazon_search_button_text');
+if ( !function_exists( 'get_amazon_search_button_text' ) ):
+function get_amazon_search_button_text(){
+  return get_theme_option(OP_AMAZON_SEARCH_BUTTON_TEXT, __( 'Amazon', THEME_NAME ));
+}
+endif;
+
 //楽天アフィリエイトID
 define('OP_RAKUTEN_AFFILIATE_ID', 'rakuten_affiliate_id');
 if ( !function_exists( 'get_rakuten_affiliate_id' ) ):
@@ -51,6 +59,14 @@ define('OP_RAKUTEN_SEARCH_BUTTON_VISIBLE', 'rakuten_search_button_visible');
 if ( !function_exists( 'is_rakuten_search_button_visible' ) ):
 function is_rakuten_search_button_visible(){
   return get_theme_option(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//楽天検索ボタン文字
+define('OP_RAKUTEN_SEARCH_BUTTON_TEXT', 'rakuten_search_button_text');
+if ( !function_exists( 'get_rakuten_search_button_text' ) ):
+function get_rakuten_search_button_text(){
+  return get_theme_option(op_rakuten_searcH_BUTTON_TEXT, __( '楽天', THEME_NAME ));
 }
 endif;
 
@@ -75,6 +91,14 @@ define('OP_YAHOO_SEARCH_BUTTON_VISIBLE', 'yahoo_search_button_visible');
 if ( !function_exists( 'is_yahoo_search_button_visible' ) ):
 function is_yahoo_search_button_visible(){
   return get_theme_option(OP_YAHOO_SEARCH_BUTTON_VISIBLE, 1);
+}
+endif;
+
+//Yahoo!ショッピング検索ボタン文字
+define('OP_YAHOO_SEARCH_BUTTON_TEXT', 'yahoo_search_button_text');
+if ( !function_exists( 'get_yahoo_search_button_text' ) ):
+function get_yahoo_search_button_text(){
+  return get_theme_option(OP_YAHOO_SEARCH_BUTTON_TEXT, __( 'Yahoo!ショッピング', THEME_NAME ));
 }
 endif;
 
