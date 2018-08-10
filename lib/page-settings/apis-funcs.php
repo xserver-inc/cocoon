@@ -66,7 +66,7 @@ endif;
 define('OP_RAKUTEN_SEARCH_BUTTON_TEXT', 'rakuten_search_button_text');
 if ( !function_exists( 'get_rakuten_search_button_text' ) ):
 function get_rakuten_search_button_text(){
-  return get_theme_option(op_rakuten_searcH_BUTTON_TEXT, __( '楽天', THEME_NAME ));
+  return get_theme_option(OP_RAKUTEN_SEARCH_BUTTON_TEXT, __( '楽天', THEME_NAME ));
 }
 endif;
 
