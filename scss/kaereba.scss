@@ -265,6 +265,10 @@
 // サイズ指定
 ///////////////////////////////////////
 .ais-s{
+  padding: 1em;
+  &::after{
+    font-size: 18px;
+  }
   .amazon-item-thumb{
     width: 90px;
     min-width: 90px;

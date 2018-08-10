@@ -3955,6 +3955,12 @@ div.sbs-think .speech-balloon::after {
   left: 6px;
 }
 
+.ais-s {
+  padding: 1em;
+}
+.ais-s::after {
+  font-size: 18px;
+}
 .ais-s .amazon-item-thumb {
   width: 90px;
   min-width: 90px;
