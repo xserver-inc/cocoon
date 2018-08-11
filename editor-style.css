@@ -73,3 +73,8 @@ body.gutenberg-editor-page .edit-post-text-editor {
   margin: 0 auto;
   width: 800px;
 }
+
+.edit-post-visual-editor, .edit-post-visual-editor input[type="text"].editor-default-block-appender__content, .edit-post-visual-editor p{
+  font-family: inherit;;
+  font-size: inherit;
+}
