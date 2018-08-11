@@ -5,7 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-//var_dump(get_amp_tracking_id());
+
 if ( is_analytics() ) {
   //AMP用Analyticsトラッキングコードを設定している場合
   $tracking_id = get_google_analytics_tracking_id();

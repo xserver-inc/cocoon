@@ -10,17 +10,7 @@ if (is_user_administrator()
   && is_admin_panel_visible()
   && !is_amp()
   && !isset($_GET['demo'])
-  //&& !is_admin()
-  // && (
-  //   //全てで表示する場合
-  //   is_admin_panel_all_visible()
-  //   //パソコンのみ表示の場合
-  //   || (is_admin_panel_pc_only_visible() && !wp_is_mobile())
-  //   //モバイルのみ表示の場合
-  //   || (is_admin_panel_mobile_only_visible() && wp_is_mobile())
-  // )
 ):
-  //_v($_GET);
 ?>
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
 

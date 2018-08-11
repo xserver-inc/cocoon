@@ -15,16 +15,6 @@ input[type="url"],
 textarea,
 select{
   @extend %form_common;
-  // padding: $form_padding;
-  // border: 2px solid $basic_border_color;
-  // font-size: $text_size_default;
-  // width: 100%;
-  // //margin: 1em 0;
-
-  // &:focus{
-  //   background-color: $xxx_thin;
-  //   border: 2px solid $select_bgc;
-  // }
 }
 
 textarea{
@@ -77,6 +67,3 @@ input[type='submit'],
 #wp-comment-cookies-consent{
   margin-right: 5px;
 }
-// .comment-respond label{
-//   display: block;
-// }
