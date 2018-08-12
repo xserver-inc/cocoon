@@ -19,7 +19,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   if (is_amp()) {
     return $cache;
   }
-
+  //_v($url);
   // preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
   // $cache = $match_cache[0];
 
@@ -125,7 +125,14 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
     $youtube_old_url = $m[1];
-    $youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
+    if (includes_string($youtube_old_url, '?')) {
+      $youtube_new_url = $youtube_old_url.'&autoplay=1';
+    } else {
+      $youtube_new_url = $youtube_old_url.'?autoplay=1';
+    }
+    //_v();
+
+    //$youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
     $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
   }
 
