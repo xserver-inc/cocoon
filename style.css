@@ -3707,7 +3707,7 @@ div.sbs-think .speech-balloon::after {
 .booklink-box,
 .kaerebalink-box,
 .tomarebalink-box,
-.amazon-item-box {
+.product-item-box {
   padding: 22px 25px;
   width: 96%;
   margin: 1.6em auto;
@@ -3717,10 +3717,10 @@ div.sbs-think .speech-balloon::after {
   position: relative;
 }
 
-.amazon-item-box {
+.product-item-box {
   position: relative;
 }
-.amazon-item-box::after {
+.product-item-box::after {
   font-family: FontAwesome;
   content: "";
   padding-right: 3px;
@@ -3731,7 +3731,7 @@ div.sbs-think .speech-balloon::after {
   color: #ccc;
 }
 
-.amazon-item-error.cf {
+.product-item-error.cf {
   display: block;
   line-height: 1.2;
 }
@@ -3739,7 +3739,7 @@ div.sbs-think .speech-balloon::after {
 .booklink-image,
 .kaerebalink-image,
 .tomarebalink-image,
-.amazon-item-thumb {
+.product-item-thumb {
   width: 160px;
   min-width: 160px;
   margin: 0 auto 1em !important;
@@ -3749,25 +3749,25 @@ div.sbs-think .speech-balloon::after {
 .booklink-image *,
 .kaerebalink-image *,
 .tomarebalink-image *,
-.amazon-item-thumb * {
+.product-item-thumb * {
   display: block;
 }
 .booklink-image > a > img,
 .kaerebalink-image > a > img,
 .tomarebalink-image > a > img,
-.amazon-item-thumb > a > img {
+.product-item-thumb > a > img {
   margin: 0 auto;
 }
 
 .booklink-info,
 .kaerebalink-info,
 .tomarebalink-info,
-.amazon-item-content {
+.product-item-content {
   line-height: 125%;
   width: 100%;
 }
 
-.amazon-item-snippet {
+.product-item-snippet {
   font-size: 0.8em;
   margin-top: 6px;
 }
@@ -3785,7 +3785,7 @@ div.sbs-think .speech-balloon::after {
 .kaerebalink-link1 > *,
 .booklink-link2 > *,
 .tomarebalink-link1 > *,
-.amazon-item-buttons > * {
+.product-item-buttons > * {
   background: none !important;
   padding: 0 !important;
   display: block !important;
@@ -3793,7 +3793,7 @@ div.sbs-think .speech-balloon::after {
 .kaerebalink-link1 a,
 .booklink-link2 a,
 .tomarebalink-link1 a,
-.amazon-item-buttons a {
+.product-item-buttons a {
   width: 90%;
   display: block;
   margin: 0px auto 8px;
@@ -3807,11 +3807,11 @@ div.sbs-think .speech-balloon::after {
 .kaerebalink-link1 a:hover,
 .booklink-link2 a:hover,
 .tomarebalink-link1 a:hover,
-.amazon-item-buttons a:hover {
+.product-item-buttons a:hover {
   opacity: 0.6;
 }
 
-.amazon-item-buttons {
+.product-item-buttons {
   margin-top: 1em;
 }
 
@@ -3819,7 +3819,7 @@ div.sbs-think .speech-balloon::after {
   .booklink-box,
   .kaerebalink-box,
   .tomarebalink-box,
-  .amazon-item-box {
+  .product-item-box {
     text-align: left;
     display: flex;
     font-size: inherit !important;
@@ -3828,7 +3828,7 @@ div.sbs-think .speech-balloon::after {
   .booklink-image,
   .kaerebalink-image,
   .tomarebalink-image,
-  .amazon-item-thumb {
+  .product-item-thumb {
     vertical-align: top;
     box-sizing: border-box;
     min-width: auto !important;
@@ -3837,7 +3837,7 @@ div.sbs-think .speech-balloon::after {
   .booklink-info,
   .kaerebalink-info,
   .tomarebalink-info,
-  .amazon-item-content {
+  .product-item-content {
     line-height: 125%;
     vertical-align: top;
     box-sizing: border-box;
@@ -3856,14 +3856,14 @@ div.sbs-think .speech-balloon::after {
   .booklink-link2,
   .kaerebalink-link1,
   .tomarebalink-link1,
-  .amazon-item-buttons {
+  .product-item-buttons {
     display: flex;
     flex-wrap: wrap;
   }
   .booklink-link2 a,
   .kaerebalink-link1 a,
   .tomarebalink-link1 a,
-  .amazon-item-buttons a {
+  .product-item-buttons a {
     width: auto;
     text-align: center;
     margin: 0;
@@ -3872,7 +3872,7 @@ div.sbs-think .speech-balloon::after {
   .booklink-link2 a img,
   .kaerebalink-link1 a img,
   .tomarebalink-link1 a img,
-  .amazon-item-buttons a img {
+  .product-item-buttons a img {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -3880,7 +3880,7 @@ div.sbs-think .speech-balloon::after {
   .booklink-link2 > *,
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
-  .amazon-item-buttons > * {
+  .product-item-buttons > * {
     width: 31.5%;
     margin: 0.5%;
     box-sizing: border-box;
@@ -3969,18 +3969,18 @@ div.sbs-think .speech-balloon::after {
 .ais-s::after {
   font-size: 18px;
 }
-.ais-s .amazon-item-thumb {
+.ais-s .product-item-thumb {
   width: 90px;
   min-width: 90px;
 }
-.ais-s .amazon-item-buttons a {
+.ais-s .product-item-buttons a {
   padding: 5px 0;
 }
 
-.ais-l.amazon-item-box {
+.ais-l.product-item-box {
   display: block;
 }
-.ais-l .amazon-item-thumb {
+.ais-l .product-item-thumb {
   width: auto;
   min-width: none;
 }

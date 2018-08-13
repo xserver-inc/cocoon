@@ -199,9 +199,9 @@ function get_http_content($url){
 endif;
 
 //Amazon商品紹介リンクの外枠で囲む
-if ( !function_exists( 'wrap_amazon_item_box' ) ):
-function wrap_amazon_item_box($message){
-  return '<div class="amazon-item-box no-icon amazon-item-error cf"><div>'.$message.'</div></div>';
+if ( !function_exists( 'wrap_product_item_box' ) ):
+function wrap_product_item_box($message){
+  return '<div class="product-item-box no-icon amazon-item-error cf"><div>'.$message.'</div></div>';
 }
 endif;
 
@@ -379,13 +379,13 @@ function generate_amazon_product_link($atts){
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
     $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
-    return wrap_amazon_item_box($error_message);
+    return wrap_product_item_box($error_message);
   }
 
   //ASINがない場合
   if (empty($asin)) {
     $error_message = __( 'Amazon商品リンクショートコード内にASINが入力されていません。', THEME_NAME );
-    return wrap_amazon_item_box($error_message);
+    return wrap_product_item_box($error_message);
   }
 
   //アソシエイトurlの取得
@@ -408,14 +408,14 @@ function generate_amazon_product_link($atts){
         $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。少し時間おいてリロードしてください。それでも改善されない場合は、以下の不具合フォーラムにエラーメッセージとともにご連絡ください。', THEME_NAME ).'</span><br><a href="" target="_blank">'.__( '不具合報告フォーラム', THEME_NAME ).'</a>';
         $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
       }
-      return wrap_amazon_item_box($error_message);
+      return wrap_product_item_box($error_message);
     }
 
     //var_dump($item);
 
     if (!property_exists($xml->Items, 'Item')) {
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-      return wrap_amazon_item_box($error_message);
+      return wrap_product_item_box($error_message);
     }
 
     if (property_exists($xml->Items, 'Item')) {
@@ -530,7 +530,7 @@ function generate_amazon_product_link($atts){
         }
         //ボタンコンテナ
         $buttons_tag =
-          '<div class="amazon-item-buttons">'.
+          '<div class="amazon-item-buttons product-item-buttons">'.
             $amazon_btn_tag.
             $rakuten_btn_tag.
             $yahoo_tag.
@@ -544,25 +544,25 @@ function generate_amazon_product_link($atts){
 
       $desc_tag = null;
       if ($desc) {
-        $desc_tag = '<div class="amazon-item-description">'.esc_html($desc).'</div>';
+        $desc_tag = '<div class="amazon-item-description product-item-description">'.esc_html($desc).'</div>';
       }
 
       //_v($item);
       $tag =
-        '<div class="amazon-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
-          '<figure class="amazon-item-thumb">'.
-            '<a href="'.$associate_url.'" class="amazon-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
-              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image">'.
+        '<div class="amazon-item-box product-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
+          '<figure class="amazon-item-thumb product-item-thumb">'.
+            '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
             '</a>'.
           '</figure>'.
-          '<div class="amazon-item-content">'.
-            '<div class="amazon-item-title">'.
-              '<a href="'.$associate_url.'" class="amazon-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+          '<div class="amazon-item-content product-item-content">'.
+            '<div class="amazon-item-title product-item-title">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                  $TitleHtml.
               '</a>'.
             '</div>'.
-            '<div class="amazon-item-snippet">'.
-              '<div class="amazon-item-maker">'.
+            '<div class="amazon-item-snippet product-item-snippet">'.
+              '<div class="amazon-item-maker product-item-maker">'.
                 $maker.
               '</div>'.
               $desc_tag.
@@ -573,7 +573,7 @@ function generate_amazon_product_link($atts){
         '</div>';
     } else {
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-      $tag = wrap_amazon_item_box($error_message);
+      $tag = wrap_product_item_box($error_message);
     }
 
     return $tag;
