@@ -449,24 +449,41 @@ function generate_amazon_product_link($atts){
       switch ($size) {
         case 's':
           $size_class = 'ais-s';
-          $ImageUrl = $SmallImageUrl;
-          $ImageWidth = $SmallImageWidth;
-          $ImageHeight = $SmallImageHeight;
+          if ($SmallImageUrl) {
+            $ImageUrl = $SmallImageUrl;
+            $ImageWidth = $SmallImageWidth;
+            $ImageHeight = $SmallImageHeight;
+          } else {
+            $ImageUrl = 'https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu._SL75_.gif';
+            $ImageWidth = '75';
+            $ImageHeight = '75';
+          }
           break;
         case 'l':
           $size_class = 'ais-l';
-          $ImageUrl = $LargeImageUrl;
-          $ImageWidth = $LargeImageWidth;
-          $ImageHeight = $LargeImageHeight;
+          if ($LargeImageUrl) {
+            $ImageUrl = $LargeImageUrl;
+            $ImageWidth = $LargeImageWidth;
+            $ImageHeight = $LargeImageHeight;
+          } else {
+            $ImageUrl = 'https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu._SL500_.gif';
+            $ImageWidth = '500';
+            $ImageHeight = '500';
+          }
           break;
         default:
           $size_class = 'ais-m';
-          $ImageUrl = $MediumImageUrl;
-          $ImageWidth = $MediumImageWidth;
-          $ImageHeight = $MediumImageHeight;
+          if ($MediumImageUrl) {
+            $ImageUrl = $MediumImageUrl;
+            $ImageWidth = $MediumImageWidth;
+            $ImageHeight = $MediumImageHeight;
+          } else {
+            $ImageUrl = 'https://images-fe.ssl-images-amazon.com/images/G/09/nav2/dp/no-image-no-ciu._SL160_.gif';
+            $ImageWidth = '160';
+            $ImageHeight = '160';
+          }
           break;
       }
-
 
       $ItemAttributes = $item->ItemAttributes;
 
