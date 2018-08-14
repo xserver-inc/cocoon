@@ -102,6 +102,38 @@ function get_yahoo_search_button_text(){
 }
 endif;
 
+//もしもアフィリエイトリンクを有効にする
+define('OP_MOSHIMO_AFFILIATE_LINK_ENABLE', 'moshimo_affiliate_link_enable');
+if ( !function_exists( 'is_moshimo_affiliate_link_enable' ) ):
+function is_moshimo_affiliate_link_enable(){
+  return get_theme_option(OP_MOSHIMO_AFFILIATE_LINK_ENABLE);
+}
+endif;
+
+//もしもアフィリエイトのAmazon ID
+define('OP_MOSHIMO_AMAZON_ID', 'moshimo_amazon_id');
+if ( !function_exists( 'get_moshimo_amazon_id' ) ):
+function get_moshimo_amazon_id(){
+  return get_theme_option(OP_MOSHIMO_AMAZON_ID);
+}
+endif;
+
+//もしもアフィリエイトの楽天ID
+define('OP_MOSHIMO_RAKUTEN_ID', 'moshimo_rakuten_id');
+if ( !function_exists( 'get_moshimo_rakuten_id' ) ):
+function get_moshimo_rakuten_id(){
+  return get_theme_option(OP_MOSHIMO_RAKUTEN_ID);
+}
+endif;
+
+//もしもアフィリエイトのYahoo!ショッピングID
+define('OP_MOSHIMO_YAHOO_ID', 'moshimo_yahoo_id');
+if ( !function_exists( 'get_moshimo_yahoo_id' ) ):
+function get_moshimo_yahoo_id(){
+  return get_theme_option(OP_MOSHIMO_YAHOO_ID);
+}
+endif;
+
 //APIキャッシュの保存期間
 define('OP_API_CACHE_RETENTION_PERIOD', 'api_cache_retention_period');
 if ( !function_exists( 'get_api_cache_retention_period' ) ):

@@ -42,5 +42,17 @@ update_theme_option(OP_YAHOO_SEARCH_BUTTON_VISIBLE);
 //Yahoo!検索ボタンテキスト
 update_theme_option(OP_YAHOO_SEARCH_BUTTON_TEXT);
 
+//もしもアフィリエイトリンクを有効にする
+update_theme_option(OP_MOSHIMO_AFFILIATE_LINK_ENABLE);
+
+//もしもアフィリエイトのAmazon ID
+update_theme_option(OP_MOSHIMO_AMAZON_ID);
+
+//もしもアフィリエイトの楽天ID
+update_theme_option(OP_MOSHIMO_RAKUTEN_ID);
+
+//もしもアフィリエイトのYahoo!ショッピングID
+update_theme_option(OP_MOSHIMO_YAHOO_ID);
+
 //APIキャッシュの保存期間
 update_theme_option(OP_API_CACHE_RETENTION_PERIOD);

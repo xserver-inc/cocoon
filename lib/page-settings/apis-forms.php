@@ -124,6 +124,37 @@ $help_text = __( '取得方法', THEME_NAME );
           </td>
         </tr>
 
+
+        <!-- もしもアフィリエイト -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'もしもアフィリエイト', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'もしもアフィリエイトを経由するリンクにする', THEME_NAME ));
+            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。', THEME_NAME ));
+
+            generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_MOSHIMO_AMAZON_ID, get_moshimo_amazon_id(), '');
+            generate_tips_tag(__( 'もしもアフィリエイトのAmazon IDを入力してください。', THEME_NAME ));
+
+            generate_label_tag(OP_MOSHIMO_RAKUTEN_ID, __( '楽天 a_id', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_MOSHIMO_RAKUTEN_ID, get_moshimo_rakuten_id(), '');
+            generate_tips_tag(__( 'もしもアフィリエイトの楽天IDを入力してください。', THEME_NAME ));
+
+            generate_label_tag(OP_MOSHIMO_YAHOO_ID, __( 'Yahoo!ショッピング a_id', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_MOSHIMO_YAHOO_ID, get_moshimo_yahoo_id(), '');
+            generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ));
+
+
+            ?>
+          </td>
+        </tr>
+
         <!-- キャッシュの保存期間 -->
         <tr>
           <th scope="row">
