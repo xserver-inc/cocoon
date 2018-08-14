@@ -132,23 +132,23 @@ $help_text = __( '取得方法', THEME_NAME );
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'もしもアフィリエイトを経由するリンクにする', THEME_NAME ));
-            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。', THEME_NAME ));
+            generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'リンクをもしもアフィリエイトを経由にする', THEME_NAME ));
+            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
 
             generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
             echo '<br>';
-            generate_textbox_tag(OP_MOSHIMO_AMAZON_ID, get_moshimo_amazon_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトのAmazon IDを入力してください。', THEME_NAME ));
+            generate_textbox_tag(OP_MOSHIMO_AMAZON_ID, get_moshimo_amazon_id(), 'https://wp-cocoon.com/moshimo-amazon-a_id/');
+            generate_tips_tag(__( 'もしもアフィリエイトのAmazon IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-a_id/', $help_text));
 
             generate_label_tag(OP_MOSHIMO_RAKUTEN_ID, __( '楽天 a_id', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_RAKUTEN_ID, get_moshimo_rakuten_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトの楽天IDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'もしもアフィリエイトの楽天IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-rakuten-a_id/', $help_text));
 
             generate_label_tag(OP_MOSHIMO_YAHOO_ID, __( 'Yahoo!ショッピング a_id', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_YAHOO_ID, get_moshimo_yahoo_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-yahoo-a_id/', $help_text));
 
 
             ?>
@@ -163,7 +163,7 @@ $help_text = __( '取得方法', THEME_NAME );
           <td>
             <?php
             generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), '', 14, 365);
-            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。14～365日の間隔を選べます。', THEME_NAME ));
+            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。14～365日の間隔を選べます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-api-cache/', __( '削除方法', THEME_NAME )));
             ?>
           </td>
         </tr>
