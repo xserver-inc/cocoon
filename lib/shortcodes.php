@@ -214,7 +214,7 @@ endif;
 
 //シンプルなアソシエイトURLの作成
 if ( !function_exists( 'get_amazon_associate_url' ) ):
-function get_amazon_associate_url($asin, $associate_tracking_id){
+function get_amazon_associate_url($asin, $associate_tracking_id = null){
   $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
   $associate_url = $base_url.'/'.$asin.'/';
   if (!empty($associate_tracking_id)) {
@@ -222,6 +222,66 @@ function get_amazon_associate_url($asin, $associate_tracking_id){
   }
   $associate_url = esc_url($associate_url);
   return $associate_url;
+}
+endif;
+
+//Amazon検索用のURLを生成する
+if ( !function_exists( 'get_amazon_search_url' ) ):
+function get_amazon_search_url($keyword, $associate_tracking_id = null){
+  $res = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword);
+  if ($associate_tracking_id) {
+    $res .= '&tag='.$associate_tracking_id;
+  }
+  return $res;
+}
+endif;
+
+//もしもアフィリエイトでAmazon検索用のURLを生成する
+if ( !function_exists( 'get_moshimo_amazon_search_url' ) ):
+function get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id){
+  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url='.urlencode(get_amazon_search_url($keyword));
+}
+endif;
+
+//楽天アフィリエイト検索用のURL生成
+if ( !function_exists( 'get_rakuten_affiliate_search_url' ) ):
+function get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id){
+  return 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';;
+}
+endif;
+
+//楽天検索用のURL生成
+if ( !function_exists( 'get_rakuten_search_url' ) ):
+function get_rakuten_search_url($keyword){
+  return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/';
+}
+endif;
+
+//もしもアフィリエイトの楽天検索用のURL生成
+if ( !function_exists( 'get_moshimo_rakuten_search_url' ) ):
+function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id){
+  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword));
+}
+endif;
+
+//バリューコマースのYahoo!検索用のURL生成
+if ( !function_exists( 'get_valucomace_yahoo_search_url' ) ):
+function get_valucomace_yahoo_search_url($keyword, $sid, $pid){
+  return 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.urlencode($keyword);
+}
+endif;
+
+//Yahoo!ショッピング検索用のURL生成
+if ( !function_exists( 'get_yahoo_search_url' ) ):
+function get_yahoo_search_url($keyword){
+  return 'https://search.shopping.yahoo.co.jp/search?p='.urlencode($keyword);
+}
+endif;
+
+//もしもアフィリエイトのYahoo!ショッピング検索用のURL生成
+if ( !function_exists( 'get_moshimo_yahoo_search_url' ) ):
+function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
+  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502&url='.urlencode(search($keyword));
 }
 endif;
 
@@ -373,8 +433,15 @@ function generate_amazon_product_link($atts){
   // //キャッシュ更新間隔
   // $days = intval(get_api_cache_retention_period());
   //キーワード
-  $kw = trim($kw);
+  $keyword = trim($kw);
 
+  $moshimo_amazon_id = null;
+  $moshimo_rakuten_id = null;
+  $moshimo_yahoo_id = null;
+
+  // $moshimo_amazon_id = '606633';
+  // $moshimo_rakuten_id = '606632';
+  // $moshimo_yahoo_id = '1108205';
 
   //アクセスキーもしくはシークレットキーがない場合
   if (empty($access_key_id) || empty($secret_access_key)) {
@@ -426,9 +493,17 @@ function generate_amazon_product_link($atts){
       //var_dump($xml->Items->Errors);
       // _v($item);
       $ASIN = esc_html($item->ASIN);
+
+      ///////////////////////////////////////
+      // アマゾンURL
+      ///////////////////////////////////////
+      $moshimo_amazon_base_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062&url=';
       $DetailPageURL = esc_url($item->DetailPageURL);
       if ($DetailPageURL) {
         $associate_url = $DetailPageURL;
+      }
+      if ($moshimo_amazon_id) {
+        $associate_url = $moshimo_amazon_base_url.urlencode(get_amazon_associate_url($asin));
       }
 
       $SmallImage = $item->SmallImage;
@@ -516,11 +591,16 @@ function generate_amazon_product_link($atts){
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
       $buttons_tag = null;
-      if ($kw) {
+      if ($keyword) {
         //Amazonボタンの取得
         $amazon_btn_tag = null;
         if (is_amazon_search_button_visible() && $amazon) {
-          $amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($kw).'&tag='.$associate_tracking_id;
+          //$amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword).'&tag='.$associate_tracking_id;
+          //もしもアフィリエイトIDがある場合
+          $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
+          if ($moshimo_amazon_id) {
+            $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
+          }
           $amazon_btn_tag =
             '<div class="shoplinkamazon">'.
               '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().'</a>'.
@@ -529,8 +609,13 @@ function generate_amazon_product_link($atts){
 
         //楽天ボタンの取得
         $rakuten_btn_tag = null;
-        if ($rakuten_affiliate_id && is_rakuten_search_button_visible() && $rakuten) {
-          $rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($kw).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
+        if (($rakuten_affiliate_id || $moshimo_rakuten_id) && is_rakuten_search_button_visible() && $rakuten) {
+          //$rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
+          $rakuten_url = get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id);
+          //もしもアフィリエイトIDがある場合
+          if ($moshimo_rakuten_id) {
+            $rakuten_url = get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id);
+          }
           $rakuten_btn_tag =
             '<div class="shoplinkrakuten">'.
               '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().'</a>'.
@@ -538,8 +623,13 @@ function generate_amazon_product_link($atts){
         }
         //Yahoo!ボタンの取得
         $yahoo_tag = null;
-        if ($sid && $pid && is_yahoo_search_button_visible() && $yahoo) {
-          $yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$kw;
+        if ((($sid && $pid) || $moshimo_yahoo_id) && is_yahoo_search_button_visible() && $yahoo) {
+          //$yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$keyword;
+          $yahoo_url = get_valucomace_yahoo_search_url($keyword, $sid, $pid);
+          //もしもアフィリエイトIDがある場合
+          if ($moshimo_yahoo_id) {
+            $yahoo_url = get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id);
+          }
           $yahoo_tag =
             '<div class="shoplinkyahoo">'.
               '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().'</a>'.
