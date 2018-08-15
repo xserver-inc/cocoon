@@ -2579,7 +2579,7 @@ label.screen-reader-text {
 .blank-box {
   border: 2px solid #999;
   padding: 1.2em 1em;
-  margin: 1em auto;
+  margin: 1em 2%;
 }
 .blank-box.bb-yellow {
   border-color: #fc9f4d;
