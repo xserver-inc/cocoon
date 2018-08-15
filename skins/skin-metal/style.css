@@ -1,0 +1,371 @@
+/*
+  Skin Name: Metal Styles
+  Description: シンプルな1カラムスキン。文章メインのサイトなどに。
+  Skin URI: https://matometaru.com/post-2419/
+  Author: まとめたる
+  Author URI: https://matometaru.com/
+  Screenshot URI:https://im-cocoon.net/wp-content/uploads/skin-metal.png
+  Version: 1.0.0
+  Priority: 200800
+*/
+/*以下にスタイルシートを記入してください*/
+
+/**
+ * base
+ */
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
+body {
+	font-family: "Noto Sans Japanese", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+}
+
+.wrap {
+	width: 1000px;
+}
+
+#content {
+	margin-top: 0;
+}
+
+/**
+ * .header
+ */
+/*.header-container {
+	padding-top: 60px;
+}*/
+
+#header .site-name-text {
+	font-size: 36px;
+	font-family: "Mplus 1p", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+	font-weight: bold;
+}
+
+.header-container-in{
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+/**
+ * .navi
+ */
+.navi {
+/*	position: absolute;
+	top: 0;*/
+	z-index: 100;
+	width: 100%;
+	background: #333;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/*.admin-bar .navi {
+	top: 32px;
+}*/
+
+.navi-in a,
+.navi-in > ul .sub-menu a {
+	background-color: #333;
+	color: #fff;
+}
+
+.navi-in a:hover,
+.navi-in > ul .sub-menu a:hover {
+	background-color: #333;
+	color: #fff;
+	opacity: .7;
+}
+
+.navi-in > ul li {
+	height: 40px;
+	line-height: 40px;
+}
+
+/**
+ * .entry
+ */
+.entry-card-thumb {
+	text-align: center;
+	width: 240px;
+	height: 158px;
+}
+
+.entry-card-thumb img {
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+}
+
+.entry-card-content {
+	margin-left: 250px;
+}
+
+/**
+ * .toc
+ */
+.toc {
+	padding: .5em 1em;
+}
+
+.toc .toc-content .toc-list li {
+	margin: .5em;
+}
+
+.toc .toc-content .toc-list li a {
+	color: #999;
+}
+
+/**
+ * .article
+ */
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+	letter-spacing: .05em;
+}
+
+.article h1 {
+	position: relative;
+	text-align: center;
+	padding: 20px;
+	font-size: 30px;
+}
+
+.article h1:after {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background: #333;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.article h2 {
+	background: none;
+	padding: .6em .5em;
+	border: 1px solid #333;
+	border-width: 1px 0;
+}
+
+.article h3 {
+	padding: .2em .5em;
+	border: 1px solid #333;
+	border-width: 0 0 0 4px;
+}
+
+/**
+ * .entry-content
+ */
+
+.entry-content code {
+	background: #000;
+	color: #b9bdb6;
+	padding: 0 .2em;
+}
+
+/* .blogcard */
+.entry-content .blogcard-title {
+	font-size: 1.2em;
+	margin-bottom: .5em;
+}
+
+.entry-content .blogcard-snipet {
+    line-height: 1.5;
+}
+
+/* .syntaxhighlighter */
+.entry-content .syntaxhighlighter {
+	margin: 1.5em 0!important;
+}
+
+.entry-content .syntaxhighlighter table .code {
+	padding: 10px 0!important;
+}
+
+/* .blogcard-thumbnail */
+.blogcard-wrap {
+   width: 100%;
+}
+
+.blogcard-thumbnail {
+	text-align: center;
+	height: 90px;
+}
+
+.blogcard-thumbnail img {
+	width: auto;
+	height: 90px;
+	object-fit: cover;
+}
+
+/**
+ * .sns-follow
+ */
+
+.sns-follow-message {
+	text-align: left;
+	font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/**
+ * .related-entry
+ */
+.related-entry-card-thumb {
+	text-align: center;
+	height: 90px;
+}
+
+.related-entry-card-thumb img {
+	width: auto;
+	height: 90px;
+	object-fit: cover;
+}
+
+.related-entry-card-snippet {
+	line-height: 1.5;
+}
+
+/**
+ * .pager-post-navi
+ */
+.pager-post-navi a figure {
+	text-align: center;
+	height: 67.5px;
+}
+
+.pager-post-navi a figure img {
+	width: auto;
+	height: 67.5px;
+	object-fit: cover;
+}
+
+/**
+ * .comment
+ */
+.comment-form .submit {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	border: 1px solid #333;
+	display: inline-block;
+	width: 300px;
+	font-size: 15px;
+	padding: 1em;
+}
+
+
+@media screen and (max-width: 480px) {
+
+	/**
+	 * .header
+	 */
+/*	.header-container {
+		padding-top: 20px;
+	}*/
+
+	#header .site-name-text {
+		font-size: 30px;
+	}
+
+	/**
+	 * .toc
+	 */
+	.toc {
+		padding: .5em 1em .5em .5em;
+	}
+
+	.toc .toc-content .toc-list li {
+		margin: .5em;
+	}
+
+	/**
+	 * .article
+	 */
+	.article h1 {
+		padding: 20px;
+		font-size: 20px;
+	}
+
+	.article h1:after {
+		width: 100px;
+		height: 3px;
+	}
+
+	.article h2 {
+		padding: .4em .3em;
+	}
+
+	.article h3 {
+		padding: .1em .4em;
+	}
+
+	/**
+	 * .entry-content
+	 */
+	.entry-content code {
+		padding: 0 .1em;
+	}
+
+	/* .blogcard */
+	.entry-content .blogcard-title {
+		font-size: 1.2em;
+		margin-bottom: .5em;
+	}
+
+	.entry-content .blogcard-snipet {
+	    line-height: 1.5;
+	}
+
+	/* .syntaxhighlighter */
+	.entry-content .syntaxhighlighter {
+		margin: 1.5em 0!important;
+	}
+
+	.entry-content .syntaxhighlighter table .code {
+		padding: 5px 0!important;
+	}
+
+	/* .blogcard-thumbnail */
+	.blogcard {
+		padding: 10px;
+	}
+
+	.blogcard-thumbnail {
+		margin: 0;
+	}
+
+	.blogcard-content {
+		font-size: .94em;
+		line-height: 1.4;
+		margin-left: 32.6%;
+	}
+
+	/**
+	 * .sns-follow
+	 */
+
+	.sns-follow-message {
+		font-size: 18px;
+	}
+
+	/**
+	 * .comment
+	 */
+	.comment-form .submit {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+#sidebar{
+	display: none;
+}
