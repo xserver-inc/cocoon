@@ -78,3 +78,7 @@ body.gutenberg-editor-page .edit-post-text-editor {
   font-family: inherit;;
   font-size: inherit;
 }
+
+div.mce-content-body{
+  line-height: inherit;
+}
