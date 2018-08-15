@@ -2676,6 +2676,18 @@ label.screen-reader-text {
   content: "\f270  AMAZON";
 }
 
+.bb-ok::before {
+  content: "\f10c  OK";
+}
+
+.bb-ng::before {
+  content: "\f00d  NG";
+}
+
+.bb-profile::before {
+  content: "\f007  PROFILE";
+}
+
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/

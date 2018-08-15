@@ -382,9 +382,20 @@ $bb_blue: #2ea9df;
   content: "\f0f4  BREAK";
 }
 
-
 .bb-amazon::before{
   content: "\f270  AMAZON";
+}
+
+.bb-ok::before{
+  content: "\f10c  OK";
+}
+
+.bb-ng::before{
+  content: "\f00d  NG";
+}
+
+.bb-profile::before{
+  content: "\f007  PROFILE";
 }
 
 

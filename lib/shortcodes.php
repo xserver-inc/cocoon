@@ -488,7 +488,7 @@ function generate_amazon_product_link($atts){
     if (property_exists($xml->Items, 'Item')) {
       $item = $xml->Items->Item;
 
-      //var_dump($xml);
+      //_v($xml);
 
       //var_dump($xml->Items->Errors);
       // _v($item);
