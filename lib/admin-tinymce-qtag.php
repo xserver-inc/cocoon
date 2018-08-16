@@ -173,6 +173,31 @@ function initialize_tinymce_styles($init_array) {
           'block' => 'div',
           'classes' => 'comment-box'
         ),
+        array(
+          'title' => __( '補足情報(OK)', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'ok-box common-icon-box'
+        ),
+        array(
+          'title' => __( '補足情報(NG)', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'ng-box common-icon-box'
+        ),
+        array(
+          'title' => __( '補足情報(GOOD)', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'good-box common-icon-box'
+        ),
+        array(
+          'title' => __( '補足情報(BAD)', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'bad-box common-icon-box'
+        ),
+        array(
+          'title' => __( '補足情報(プロフィール)', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'profile-box common-icon-box'
+        ),
       ),
     ),
     array(
