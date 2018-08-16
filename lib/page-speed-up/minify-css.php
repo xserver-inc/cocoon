@@ -176,7 +176,7 @@ function css_url_to_css_minify_code( $url ) {
     //コメントの除去
     $css = preg_replace('{/\*.+?\*/}is', '', $css);
     //@importを利用している場合は変換しない
-    if (strpos($css, '@import') !== false) {
+    if (includes_string($css, '@import') && is_amp()) {
       return false;
     }
 
