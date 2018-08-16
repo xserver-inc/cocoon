@@ -2688,6 +2688,14 @@ label.screen-reader-text {
   content: "\f007  PROFILE";
 }
 
+.bb-good::before {
+  content: "\f164  GOOD";
+}
+
+.bb-bad::before {
+  content: "\f165  BAD";
+}
+
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/

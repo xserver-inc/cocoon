@@ -398,6 +398,14 @@ $bb_blue: #2ea9df;
   content: "\f007  PROFILE";
 }
 
+.bb-good::before{
+  content: "\f164  GOOD";
+}
+
+.bb-bad::before{
+  content: "\f165  BAD";
+}
+
 
 
 /*******************************

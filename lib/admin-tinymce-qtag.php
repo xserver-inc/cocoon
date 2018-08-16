@@ -563,6 +563,58 @@ function initialize_tinymce_styles($init_array) {
         ),
         
         array(
+          'title' => __( 'ボックス（GOOD）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-good'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-good bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-good bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-good bb-blue'
+            ),
+          ),
+        ),
+        
+        array(
+          'title' => __( 'ボックス（BAD）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bad'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bad bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bad bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bad bb-blue'
+            ),
+          ),
+        ),
+        
+        array(
           'title' => __( 'ボックス（プロフィール）', THEME_NAME ),
           'items' => array(
             array(
