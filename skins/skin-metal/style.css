@@ -24,6 +24,10 @@ body {
 	width: 1000px;
 }
 
+#main{
+	width: auto;
+}
+
 #content {
 	margin-top: 0;
 }
@@ -75,9 +79,25 @@ body {
 	opacity: .7;
 }
 
-.navi-in > ul li {
+/* .navi-in > ul li {
 	height: 40px;
 	line-height: 40px;
+} */
+
+#navi-in > ul li{
+  height: 40px;
+  line-height: 40px;
+}
+
+#navi-in > ul li .sub-menu ul{
+	top: -40px;
+}
+
+#navi-in > ul li.menu-item-has-description > a > .caption-wrap{
+	height: 40px;
+	line-height: 16px;
+	font-size: 14px;
+	padding-top: 6px;
 }
 
 /**
