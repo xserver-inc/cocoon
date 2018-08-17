@@ -230,6 +230,7 @@ function initialize_tinymce_styles($init_array) {
         ),
       ),
     ),
+
     array(
       'title' => __( 'ボックス（白抜き）', THEME_NAME ),
       'items' => array(
@@ -253,8 +254,14 @@ function initialize_tinymce_styles($init_array) {
           'block' => 'div',
           'classes' => 'blank-box bb-blue'
         ),
+        array(
+          'title' => __( '緑色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box bb-green'
+        ),
       ),
     ),
+
     array(
       'title' => __( 'ボックス（タブ）', THEME_NAME ),
       'items' => array(
@@ -281,6 +288,11 @@ function initialize_tinymce_styles($init_array) {
             'block' => 'div',
             'classes' => 'blank-box bb-tab bb-check bb-blue'
           ),
+          array(
+            'title' => __( '緑色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-check bb-green'
+          ),
         ),
       ),
       array(
@@ -305,6 +317,11 @@ function initialize_tinymce_styles($init_array) {
             'title' => __( '青色', THEME_NAME ),
             'block' => 'div',
             'classes' => 'blank-box bb-tab bb-comment bb-blue'
+          ),
+          array(
+            'title' => __( '緑色', THEME_NAME ),
+            'block' => 'div',
+            'classes' => 'blank-box bb-tab bb-comment bb-green'
           ),
         ),
       ),
@@ -331,6 +348,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-point bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-point bb-green'
+            ),
           ),
         ),
         array(
@@ -355,6 +377,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-tips bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-tips bb-green'
             ),
           ),
         ),
@@ -381,6 +408,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-hint bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-hint bb-green'
+            ),
           ),
         ),
         array(
@@ -405,6 +437,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-pickup bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-pickup bb-green'
             ),
           ),
         ),
@@ -431,6 +468,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-bookmark bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bookmark bb-green'
+            ),
           ),
         ),
         array(
@@ -455,6 +497,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-memo bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-memo bb-green'
             ),
           ),
         ),
@@ -481,6 +528,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-download bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-download bb-green'
+            ),
           ),
         ),
         array(
@@ -505,6 +557,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-break bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-break bb-green'
             ),
           ),
         ),
@@ -532,6 +589,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-amazon bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-amazon bb-green'
+            ),
           ),
         ),
         
@@ -557,6 +619,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-ok bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-ok bb-green'
             ),
           ),
         ),
@@ -584,6 +651,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-ng bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-ng bb-green'
+            ),
           ),
         ),
         
@@ -609,6 +681,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-good bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-good bb-green'
             ),
           ),
         ),
@@ -636,6 +713,11 @@ function initialize_tinymce_styles($init_array) {
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-bad bb-blue'
             ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-bad bb-green'
+            ),
           ),
         ),
         
@@ -661,6 +743,11 @@ function initialize_tinymce_styles($init_array) {
               'title' => __( '青色', THEME_NAME ),
               'block' => 'div',
               'classes' => 'blank-box bb-tab bb-profile bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-profile bb-green'
             ),
           ),
         ),
@@ -689,6 +776,11 @@ function initialize_tinymce_styles($init_array) {
           'title' => __( '青色', THEME_NAME ),
           'block' => 'div',
           'classes' => 'blank-box sticky st-blue'
+        ),
+        array(
+          'title' => __( '緑色', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'blank-box sticky st-green'
         ),
       ),
     ),

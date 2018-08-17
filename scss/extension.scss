@@ -350,6 +350,7 @@ $bb_gray: #999;
 $bb_yellow: #fc9f4d;
 $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
+$bb_green: #3eb370;
 .blank-box{
   border: 2px solid $bb_gray;
   padding: 1.2em 1em;
@@ -357,6 +358,7 @@ $bb_blue: #2ea9df;
   &.bb-yellow{border-color: $bb_yellow;}
   &.bb-red{border-color: $bb_red;}
   &.bb-blue{border-color: $bb_blue;}
+  &.bb-green{border-color: $bb_green;}
 
   &.bb-tab{
     position: relative;
@@ -375,6 +377,7 @@ $bb_blue: #2ea9df;
     &.bb-yellow::before{background-color: $bb_yellow;}
     &.bb-red::before{background-color: $bb_red;}
     &.bb-blue::before{background-color: $bb_blue;}
+    &.bb-green::before{background-color: $bb_green;}
   }
 
   &.sticky{
@@ -393,6 +396,10 @@ $bb_blue: #2ea9df;
     &.st-blue{
       border-color: #0066cc;
       background-color: #E5F2FF;
+    }
+    &.st-green{
+      border-color: #028760;
+      background-color: #CBEFE4;
     }
   }
 }
