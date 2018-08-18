@@ -30,6 +30,14 @@
   }
 }
 
+.rakuten-item-box::after{
+  content: '\f25d';
+}
+
+.product-item-error::after{
+  content: '\f06a';
+}
+
 .product-item-error.cf{
   display: block;
   line-height: 1.2;
@@ -257,7 +265,7 @@
 }
 
 
-.asin-cache-del-link{
+.cache-delete-link{
   font-size: 10px;
   color: #777;
   position: absolute;
