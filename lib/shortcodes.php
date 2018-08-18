@@ -475,7 +475,7 @@ function get_cache_delete_tag($mode = 'amazon', $id){
 }
 endif;
 
-//商品リンク説明文タグの取得
+//商品リンク説明文タグ
 if ( !function_exists( 'get_item_description_tag' ) ):
 function get_item_description_tag($description){
   $description_tag = null;
@@ -483,6 +483,20 @@ function get_item_description_tag($description){
     $description_tag = '<div class="product-item-description">'.esc_html($description).'</div>';
   }
   return $description_tag;
+}
+endif;
+
+//管理者情報タグ
+if ( !function_exists( 'get_product_item_admin_tag' ) ):
+function get_product_item_admin_tag($cache_delete_tag, $affiliate_rate_tag = null){
+  $tag = null;
+  if (is_user_administrator()) {
+    $tag = '<div class="product-item-admin">'.
+              $cache_delete_tag.
+              $affiliate_rate_tag.
+            '</div>';
+  }
+  return $tag;
 }
 endif;
 
@@ -689,79 +703,21 @@ function generate_amazon_product_link($atts){
       // 検索ボタンの作成
       ///////////////////////////////////////////
       $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
-      // $buttons_tag = null;
-      // if ($keyword) {
-      //   //Amazonボタンの取得
-      //   $amazon_btn_tag = null;
-      //   if (is_amazon_search_button_visible() && $amazon) {
-      //     //$amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword).'&tag='.$associate_tracking_id;
-      //     //もしもアフィリエイトIDがある場合
-      //     $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
-      //     if ($moshimo_amazon_id && is_moshimo_affiliate_link_enable()) {
-      //       $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
-      //     }
-      //     $amazon_btn_tag =
-      //       '<div class="shoplinkamazon">'.
-      //         '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().'</a>'.
-      //       '</div>';
-      //   }
 
-      //   //楽天ボタンの取得
-      //   $rakuten_btn_tag = null;
-      //   $is_moshimo_rakuten = $moshimo_rakuten_id && is_moshimo_affiliate_link_enable();
-      //   if (($rakuten_affiliate_id || $is_moshimo_rakuten) && is_rakuten_search_button_visible() && $rakuten) {
-      //     //$rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
-      //     $rakuten_url = get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id);
-      //     //もしもアフィリエイトIDがある場合
-      //     if ($is_moshimo_rakuten) {
-      //       $rakuten_url = get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id);
-      //     }
-      //     $rakuten_btn_tag =
-      //       '<div class="shoplinkrakuten">'.
-      //         '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().'</a>'.
-      //       '</div>';
-      //   }
-      //   //Yahoo!ボタンの取得
-      //   $yahoo_tag = null;
-      //   $is_moshimo_yahoo = $moshimo_yahoo_id && is_moshimo_affiliate_link_enable();
-      //   if ((($sid && $pid) || $is_moshimo_yahoo) && is_yahoo_search_button_visible() && $yahoo) {
-      //     //$yahoo_url = 'https://ck.jp.ap.valuecommerce.com/servlet/referral?sid='.$sid.'&pid='.$pid.'&vc_url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D'.$keyword;
-      //     $yahoo_url = get_valucomace_yahoo_search_url($keyword, $sid, $pid);
-      //     //もしもアフィリエイトIDがある場合
-      //     if ($is_moshimo_yahoo) {
-      //       $yahoo_url = get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id);
-      //     }
-      //     $yahoo_tag =
-      //       '<div class="shoplinkyahoo">'.
-      //         '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().'</a>'.
-      //       '</div>';
-      //   }
-      //   //ボタンコンテナ
-      //   $buttons_tag =
-      //     '<div class="amazon-item-buttons product-item-buttons">'.
-      //       $amazon_btn_tag.
-      //       $rakuten_btn_tag.
-      //       $yahoo_tag.
-      //     '</div>';
-      // }
+      ///////////////////////////////////////////
+      // 説明文タグ
+      ///////////////////////////////////////////
+      $description_tag = get_item_description_tag($description);
 
       ///////////////////////////////////////////
       // キャッシュ削除リンク
       ///////////////////////////////////////////
       $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
-      // $cache_delete_tag = null;
-      // if (is_user_administrator()) {
-      //   $cache_delete_tag = '<a href="'.add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $asin), admin_url().'admin.php').'" class="asin-cache-del-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
-      // }
 
       ///////////////////////////////////////////
-      // 説明文タグの取得
+      // 管理者情報タグ
       ///////////////////////////////////////////
-      $description_tag = get_item_description_tag($description);
-      // $description_tag = null;
-      // if ($desc) {
-      //   $description_tag = '<div class="amazon-item-description product-item-description">'.esc_html($desc).'</div>';
-      // }
+      $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag);
 
       ///////////////////////////////////////////
       // 商品リンクタグの生成
@@ -787,7 +743,7 @@ function generate_amazon_product_link($atts){
               $buttons_tag.
             '</div>'.
           '</div>'.
-          $cache_delete_tag.
+          $product_item_admin_tag.
         '</div>';
     } else {
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
@@ -902,6 +858,7 @@ function generate_rakuten_product_link($atts){
           $shopAffiliateUrl = esc_attr($Item->{'shopAffiliateUrl'});//shopUrlと同じ
           $shopName = esc_html($Item->{'shopName'});
           $shopCode = $Item->{'shopCode'};
+          $affiliateRate = $Item->{'affiliateRate'};
 
 
           //小さな画像
@@ -982,14 +939,27 @@ function generate_rakuten_product_link($atts){
           $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
           
           ///////////////////////////////////////////
+          // 説明文タグ
+          ///////////////////////////////////////////
+          $description_tag = get_item_description_tag($description);
+          
+          ///////////////////////////////////////////
           // キャッシュ削除リンク
           ///////////////////////////////////////////
           $cache_delete_tag = get_cache_delete_tag('rakuten', $id);
-          
+
           ///////////////////////////////////////////
-          // 説明文タグの取得
+          // アフィリエイト料率タグ
           ///////////////////////////////////////////
-          $description_tag = get_item_description_tag($description);
+          $affiliate_rate_tag = null;
+          if (is_user_administrator()) {
+            $affiliate_rate_tag = '<span class="product-affiliate-rate">'.__('料率：', THEME_NAME).$affiliateRate.'</span>';
+          }
+
+          ///////////////////////////////////////////
+          // 管理者情報タグ
+          ///////////////////////////////////////////
+          $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag, $affiliate_rate_tag);
 
           ///////////////////////////////////////////
           // 商品リンクタグの生成
@@ -1015,7 +985,7 @@ function generate_rakuten_product_link($atts){
                   $buttons_tag.
                 '</div>'.
               '</div>'.
-              $cache_delete_tag.
+              $product_item_admin_tag.
             '</div>';
           //_v($tag);
           return $tag;

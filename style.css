@@ -4055,12 +4055,15 @@ div.sbs-think .speech-balloon::after {
   background: #000066;
 }
 
-.cache-delete-link {
-  font-size: 10px;
-  color: #777;
+.product-item-admin {
   position: absolute;
   bottom: 3px;
   left: 6px;
+}
+.product-item-admin > * {
+  font-size: 10px;
+  color: #777;
+  margin: 6px;
 }
 
 .ais-s {
