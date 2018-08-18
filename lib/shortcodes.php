@@ -801,7 +801,11 @@ function generate_rakuten_product_link($atts){
     'yahoo' => 1,
   ), $atts ) );
 
+  $id = strip_tags($id);
   $id = esc_html(trim($id));
+  $id = mb_convert_kana($id, 'a');
+  $id = str_replace('－', '-', $id);
+
 
   //楽天アプリケーションID
   $rakuten_application_id = trim('38a2bc0cae4deb26166667e2423c4ee3');
@@ -953,7 +957,7 @@ function generate_rakuten_product_link($atts){
           ///////////////////////////////////////////
           $affiliate_rate_tag = null;
           if (is_user_administrator()) {
-            $affiliate_rate_tag = '<span class="product-affiliate-rate">'.__('料率：', THEME_NAME).$affiliateRate.'</span>';
+            $affiliate_rate_tag = '<span class="product-affiliate-rate">'.__('料率：', THEME_NAME).$affiliateRate.'%</span>';
           }
 
           ///////////////////////////////////////////
