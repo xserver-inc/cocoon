@@ -365,7 +365,8 @@ $bb_green: #3eb370;
     margin-top: 2em;
     &::before{
       background-color: $bb_gray;
-      font-family: FontAwesome, Aharoni, sans-serif;
+      //font-family: FontAwesome, Aharoni, sans-serif;
+      font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
       position: absolute;
       font-size: .8em;
       top: -1.8em;

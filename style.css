@@ -2661,7 +2661,7 @@ label.screen-reader-text {
 }
 .blank-box.bb-tab::before {
   background-color: #999;
-  font-family: FontAwesome, Aharoni, sans-serif;
+  font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: .8em;
   top: -1.8em;
