@@ -2339,6 +2339,16 @@ label.screen-reader-text {
   color: #E50202;
 }
 
+/*青色*/
+.blue {
+  color: blue;
+}
+
+/*緑色*/
+.green {
+  color: green;
+}
+
 /*赤のアンダーライン*/
 .red-under {
   border-bottom: 2px solid red;
