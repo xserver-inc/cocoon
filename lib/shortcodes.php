@@ -826,6 +826,8 @@ function generate_rakuten_product_link($atts){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
+  //キャッシュ更新間隔
+  $days = intval(get_api_cache_retention_period());
   //キーワード
   $keyword = trim($kw);
   $description = trim($desc);
@@ -857,8 +859,10 @@ function generate_rakuten_product_link($atts){
 
   //キャッシュがある場合はキャッシュを利用する
   if ($json_cache) {
+    // _v('cahce');
     $json = $json_cache;
   } else {
+    // _v('api');
     $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1&sort=-affiliateRate&hits=1&keyword='.$id;
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
@@ -1019,11 +1023,19 @@ function generate_rakuten_product_link($atts){
             $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
             //Amazon APIキャッシュの保存
             set_transient($transient_id, $json, $expiration);
+            //_v($expiration);
           }
           //_v($tag);
           return $tag;
         }        
       } else {      
+        //キャッシュの保存
+        if (!$json_cache) {
+          //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+          $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+          //Amazon APIキャッシュの保存
+          set_transient($transient_id, $json, $expiration);
+        }
         $error_message = __( '商品IDに該当する商品が見つかりませんでした。無効な商品IDの可能性もあります。', THEME_NAME );
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);         
       }      
