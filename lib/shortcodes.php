@@ -870,6 +870,15 @@ function generate_rakuten_product_link($atts){
 
   if ($json) {
     if (!is_wp_error( $json ) && $json["response"]["code"] === 200) {
+
+      //キャッシュの保存
+      if (!$json_cache) {
+        //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+        $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+        //Amazon APIキャッシュの保存
+        set_transient($transient_id, $json, $expiration);
+      }
+
       $body = $json["body"];
       //ジェイソンの配列化
       $body = json_decode( $body );
@@ -1016,26 +1025,11 @@ function generate_rakuten_product_link($atts){
               '</div>'.
               $product_item_admin_tag.
             '</div>';
-
-          //キャッシュの保存
-          if (!$json_cache) {
-            //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-            $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
-            //Amazon APIキャッシュの保存
-            set_transient($transient_id, $json, $expiration);
-            //_v($expiration);
-          }
+            
           //_v($tag);
           return $tag;
         }        
-      } else {      
-        //キャッシュの保存
-        if (!$json_cache) {
-          //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-          $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
-          //Amazon APIキャッシュの保存
-          set_transient($transient_id, $json, $expiration);
-        }
+      } else {     
         $error_message = __( '商品IDに該当する商品が見つかりませんでした。無効な商品IDの可能性もあります。', THEME_NAME );
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);         
       }      
