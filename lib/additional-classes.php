@@ -290,7 +290,7 @@ function body_class_additional($classes) {
     $classes[] = 'show-pinterest-button';
   }
 
-  return $classes;
+  return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;
 
@@ -307,7 +307,8 @@ function get_additional_main_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;}
+  return apply_filters('get_additional_main_classes', $classes);
+}
 endif;
 
 //メインカラムの追加関数
@@ -333,7 +334,7 @@ function get_additional_entry_content_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_entry_content_classes', $classes);
 }
 endif;
 
@@ -353,7 +354,7 @@ function get_additional_new_entriy_cards_classes($entry_type, $option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_new_entriy_cards_classes', $classes);
 }
 endif;
 
@@ -380,7 +381,7 @@ function get_additional_popular_entriy_cards_classes($entry_type, $ranking_visib
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_popular_entriy_cards_classes', $classes);
 }
 endif;
 
@@ -467,7 +468,7 @@ function get_additional_sns_share_button_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_sns_share_button_classes', $classes);
 }
 endif;
 
@@ -500,7 +501,7 @@ function get_additional_sns_follow_button_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_sns_follow_button_classes', $classes);
 }
 endif;
 
@@ -522,10 +523,10 @@ function get_additional_internal_blogcard_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_internal_blogcard_classes', $classes);
 }
 endif;
-
+apply_filters('get_additional_external_blogcard_classes', $classes);
 //外部ブログカードのclass追加関数
 if ( !function_exists( 'get_additional_external_blogcard_classes' ) ):
 function get_additional_external_blogcard_classes($option = null){
@@ -544,7 +545,7 @@ function get_additional_external_blogcard_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_external_blogcard_classes', $classes);
 }
 endif;
 
@@ -562,7 +563,7 @@ function get_additional_header_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_header_classes', $classes);
 }
 endif;
 
@@ -580,7 +581,7 @@ function get_additional_container_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_container_classes', $classes);
 }
 endif;
 
@@ -620,7 +621,7 @@ function get_additional_header_container_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_header_container_classes', $classes);
 }
 endif;
 
@@ -650,11 +651,11 @@ function get_additional_footer_bottom_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_footer_bottom_classes', $classes);
 }
 endif;
 
-//フッターボトムのclass追加関数
+//関連記事のclass追加関数
 if ( !function_exists( 'get_additional_related_entries_classes' ) ):
 function get_additional_related_entries_classes($option = null){
   $classes = null;
@@ -672,12 +673,12 @@ function get_additional_related_entries_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_related_entries_classes', $classes);
 }
 endif;
 
 
-//フッターボトムのclass追加関数
+//ページナビのclass追加関数
 if ( !function_exists( 'get_additional_post_navi_classes' ) ):
 function get_additional_post_navi_classes($option = null){
   $classes = null;
@@ -695,12 +696,12 @@ function get_additional_post_navi_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_post_navi_classes', $classes);
 }
 endif;
 
 
-//フッターボトムのclass追加関数
+//コメントエリアのclass追加関数
 if ( !function_exists( 'get_additional_comment_area_classes' ) ):
 function get_additional_comment_area_classes($option = null){
   $classes = null;
@@ -712,7 +713,7 @@ function get_additional_comment_area_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_comment_area_classes', $classes);
 }
 endif;
 
@@ -734,7 +735,7 @@ function get_additional_single_breadcrumbs_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_single_breadcrumbs_classes', $classes);
 }
 endif;
 
@@ -756,7 +757,7 @@ function get_additional_page_breadcrumbs_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_page_breadcrumbs_classes', $classes);
 }
 endif;
 
@@ -805,7 +806,7 @@ function get_additional_entry_card_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_entry_card_classes', $classes);
 }
 endif;
 
@@ -819,7 +820,7 @@ function get_additional_toc_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_toc_classes', $classes);
 }
 endif;
 
@@ -840,7 +841,7 @@ function get_additional_appeal_area_classes($option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return $classes;
+  return apply_filters('get_additional_appeal_area_classes', $classes);
 }
 endif;
 
