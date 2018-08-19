@@ -46,6 +46,14 @@ function get_amazon_search_button_text(){
 }
 endif;
 
+//楽天アプリケーションID
+define('OP_RAKUTEN_APPLICATION_ID', 'rakuten_application_id');
+if ( !function_exists( 'get_rakuten_application_id' ) ):
+function get_rakuten_application_id(){
+  return get_theme_option(OP_RAKUTEN_APPLICATION_ID);
+}
+endif;
+
 //楽天アフィリエイトID
 define('OP_RAKUTEN_AFFILIATE_ID', 'rakuten_affiliate_id');
 if ( !function_exists( 'get_rakuten_affiliate_id' ) ):

@@ -306,6 +306,13 @@ function get_rakuten_api_transient_id($id){
 }
 endif;
 
+//楽天APIバックアップキャッシュIDの取得
+if ( !function_exists( 'get_rakuten_api_transient_bk_id' ) ):
+function get_rakuten_api_transient_bk_id($id){
+  return TRANSIENT_BACKUP_RAKUTEN_API_PREFIX.$id;
+}
+endif;
+
 if ( !function_exists( 'get_amazon_itemlookup_xml' ) ):
 function get_amazon_itemlookup_xml($asin){
   //アクセスキー
@@ -817,7 +824,7 @@ function generate_rakuten_product_link($atts){
 
 
   //楽天アプリケーションID
-  $rakuten_application_id = trim('38a2bc0cae4deb26166667e2423c4ee3');
+  $rakuten_application_id = trim(get_rakuten_application_id());
   //楽天アフィリエイトID
   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
   //アソシエイトタグ
@@ -855,6 +862,7 @@ function generate_rakuten_product_link($atts){
 
   //キャッシュの取得
   $transient_id = get_rakuten_api_transient_id($id);
+  $transient_bk_id = get_rakuten_api_transient_bk_id($id);
   $json_cache = get_transient( $transient_id );
 
   //キャッシュがある場合はキャッシュを利用する
@@ -869,14 +877,22 @@ function generate_rakuten_product_link($atts){
   }
 
   if ($json) {
-    if (!is_wp_error( $json ) && $json["response"]["code"] === 200) {
+    $is_request_success = !is_wp_error( $json ) && $json["response"]["code"] === 200;
+    //リクエストに失敗した場合はバックアップキャッシュを取得
+    if (!$is_request_success) {
+      $json_cache = get_transient( $transient_bk_id );
+    }
 
+    //リクエストが成功した時タグを作成する
+    if ($is_request_success) {
       //キャッシュの保存
       if (!$json_cache) {
         //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
         $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
-        //Amazon APIキャッシュの保存
+        //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $expiration);
+        //楽天APIバックアップキャッシュの保存
+        set_transient($transient_bk_id, $json, $expiration * 2);
       }
 
       $body = $json["body"];
@@ -1025,7 +1041,7 @@ function generate_rakuten_product_link($atts){
               '</div>'.
               $product_item_admin_tag.
             '</div>';
-            
+
           //_v($tag);
           return $tag;
         }        
@@ -1043,8 +1059,5 @@ function generate_rakuten_product_link($atts){
     return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
   }
   
-  
-
-
 }
 endif;

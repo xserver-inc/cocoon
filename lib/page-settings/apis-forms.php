@@ -71,6 +71,12 @@ $help_text = __( '取得方法', THEME_NAME );
           </th>
           <td>
             <?php
+
+            generate_label_tag(OP_RAKUTEN_APPLICATION_ID, __( '楽天アプリケーションID', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_RAKUTEN_APPLICATION_ID, get_rakuten_application_id(), __( '', THEME_NAME ));
+            generate_tips_tag(__( '楽天APIを利用するためのアプリケーションIDを入力してください。', THEME_NAME ));
+
             generate_label_tag(OP_RAKUTEN_AFFILIATE_ID, __( '楽天アフィリエイトID', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));

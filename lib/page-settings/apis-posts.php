@@ -21,6 +21,9 @@ update_theme_option(OP_AMAZON_SEARCH_BUTTON_VISIBLE);
 //Amazon検索ボタン文字
 update_theme_option(OP_AMAZON_SEARCH_BUTTON_TEXT);
 
+//楽天アプリケーションID
+update_theme_option(OP_RAKUTEN_APPLICATION_ID);
+
 //楽天アフィリエイトID
 update_theme_option(OP_RAKUTEN_AFFILIATE_ID);
 
