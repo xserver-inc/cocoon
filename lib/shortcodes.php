@@ -285,15 +285,24 @@ function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
 }
 endif;
 
-if ( !function_exists( 'get_asin_transient_id' ) ):
-function get_asin_transient_id($asin){
+//Amazon APIキャッシュIDの取得
+if ( !function_exists( 'get_amazon_api_transient_id' ) ):
+function get_amazon_api_transient_id($asin){
   return TRANSIENT_AMAZON_API_PREFIX.$asin;
 }
 endif;
 
-if ( !function_exists( 'get_asin_transient_bk_id' ) ):
-function get_asin_transient_bk_id($asin){
+//Amazon APIバックアップキャッシュIDの取得
+if ( !function_exists( 'get_amazon_api_transient_bk_id' ) ):
+function get_amazon_api_transient_bk_id($asin){
   return TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+}
+endif;
+
+//楽天APIキャッシュIDの取得
+if ( !function_exists( 'get_rakuten_api_transient_id' ) ):
+function get_rakuten_api_transient_id($id){
+  return TRANSIENT_RAKUTEN_API_PREFIX.$id;
 }
 endif;
 
@@ -310,8 +319,8 @@ function get_amazon_itemlookup_xml($asin){
   //_v($access_key_id);
 
   //キャッシュの存在
-  $transient_id = get_asin_transient_id($asin);
-  $transient_bk_id = get_asin_transient_bk_id($asin);
+  $transient_id = get_amazon_api_transient_id($asin);
+  $transient_bk_id = get_amazon_api_transient_bk_id($asin);
   $xml_cache = get_transient( $transient_id );
   //_v($xml_cache);
   if ($xml_cache) {
@@ -826,6 +835,8 @@ function generate_rakuten_product_link($atts){
   $moshimo_rakuten_id = trim(get_moshimo_rakuten_id());
   $moshimo_yahoo_id   = trim(get_moshimo_yahoo_id());
 
+  
+
   //楽天アフィリエイトIDがない場合
   if (empty($rakuten_application_id) || empty($rakuten_affiliate_id)) {
     $error_message = __( '「楽天アプリケーションID」もしくは「楽天アフィリエイトID」が設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
@@ -840,9 +851,19 @@ function generate_rakuten_product_link($atts){
 
   $default_rakuten_link_tag = get_default_rakuten_link_tag($id, $rakuten_affiliate_id);
 
-  $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1&sort=-affiliateRate&hits=1&keyword='.$id;
-  $args = array( 'sslverify' => true );
-  $json = wp_remote_get( $request_url, $args );
+  //キャッシュの取得
+  $transient_id = get_rakuten_api_transient_id($id);
+  $json_cache = get_transient( $transient_id );
+
+  //キャッシュがある場合はキャッシュを利用する
+  if ($json_cache) {
+    $json = $json_cache;
+  } else {
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1&sort=-affiliateRate&hits=1&keyword='.$id;
+    $args = array( 'sslverify' => true );
+    $json = wp_remote_get( $request_url, $args );
+  }
+
   if ($json) {
     if (!is_wp_error( $json ) && $json["response"]["code"] === 200) {
       $body = $json["body"];
@@ -991,6 +1012,14 @@ function generate_rakuten_product_link($atts){
               '</div>'.
               $product_item_admin_tag.
             '</div>';
+
+          //キャッシュの保存
+          if (!$json_cache) {
+            //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+            $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+            //Amazon APIキャッシュの保存
+            set_transient($transient_id, $json, $expiration);
+          }
           //_v($tag);
           return $tag;
         }        
@@ -1000,7 +1029,7 @@ function generate_rakuten_product_link($atts){
       }      
       
     } else {
-      $error_message = __( 'Bad Requestが返されました。リクエストURLに不備があります。', THEME_NAME );
+      $error_message = __( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
       return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);      
     }
   } else {

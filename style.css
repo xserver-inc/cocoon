@@ -3838,7 +3838,7 @@ div.sbs-think .speech-balloon::after {
 }
 
 .product-item-error::after {
-  content: '\f06a';
+  content: '';
 }
 
 .product-item-error.cf {
