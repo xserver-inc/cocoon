@@ -30,19 +30,21 @@ $help_text = __( '取得方法', THEME_NAME );
           <td>
             <?php
             generate_label_tag(OP_AMAZON_API_ACCESS_KEY_ID, __( 'アクセスキーID', THEME_NAME ));
-            generate_necessity_input_tag();
+            generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_API_ACCESS_KEY_ID, get_amazon_api_access_key_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( 'Amazon APIを使用するためのアクセスキーIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/product-advertising-api/', $help_text));
 
             generate_label_tag(OP_AMAZON_API_SECRET_KEY, __( 'シークレットキー', THEME_NAME ));
-            generate_necessity_input_tag();
+            generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_API_SECRET_KEY, get_amazon_api_secret_key(), __( '', THEME_NAME ));
             generate_tips_tag(__( 'Amazon APIを使用するためのシークレットキーを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/product-advertising-api/', $help_text));
 
             generate_label_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, __( 'トラッキングID', THEME_NAME ));
-            generate_necessity_input_tag();
+            generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, get_amazon_associate_tracking_id(), __( 'yourid-22', THEME_NAME ));
             generate_tips_tag(__( 'AmazonアソシエイトのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-tracking-id/', $help_text));
@@ -73,11 +75,13 @@ $help_text = __( '取得方法', THEME_NAME );
             <?php
 
             generate_label_tag(OP_RAKUTEN_APPLICATION_ID, __( '楽天アプリケーションID', THEME_NAME ));
+            generate_rakuten_badge_tag(__( '楽天必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_RAKUTEN_APPLICATION_ID, get_rakuten_application_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天APIを利用するためのアプリケーションIDを入力してください。', THEME_NAME ));
 
             generate_label_tag(OP_RAKUTEN_AFFILIATE_ID, __( '楽天アフィリエイトID', THEME_NAME ));
+            generate_rakuten_badge_tag(__( '楽天必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-affiliate-id/', $help_text));
@@ -139,22 +143,23 @@ $help_text = __( '取得方法', THEME_NAME );
           <td>
             <?php
             generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'リンクをもしもアフィリエイトを経由にする', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
             generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
 
             generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_AMAZON_ID, get_moshimo_amazon_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトのAmazon IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-a_id/', $help_text));
+            generate_tips_tag(__( 'もしもアフィリエイトのAmazon IDを入力してください。', THEME_NAME ).__( '未入力の場合はデフォルトのリンクが出力されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-a_id/', $help_text));
 
             generate_label_tag(OP_MOSHIMO_RAKUTEN_ID, __( '楽天 a_id', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_RAKUTEN_ID, get_moshimo_rakuten_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトの楽天IDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-rakuten-a_id/', $help_text));
+            generate_tips_tag(__( 'もしもアフィリエイトの楽天IDを入力してください。', THEME_NAME ).__( '未入力の場合はデフォルトのリンクが出力されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-rakuten-a_id/', $help_text));
 
             generate_label_tag(OP_MOSHIMO_YAHOO_ID, __( 'Yahoo!ショッピング a_id', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_MOSHIMO_YAHOO_ID, get_moshimo_yahoo_id(), '');
-            generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-yahoo-a_id/', $help_text));
+            generate_tips_tag(__( 'もしもアフィリエイトのYahoo!ショッピングIDを入力してください。', THEME_NAME ).__( '未入力の場合はデフォルトのリンクが出力されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-yahoo-a_id/', $help_text));
 
 
             ?>
