@@ -42,13 +42,13 @@ function body_class_additional($classes) {
 
   //フロントページかどうか
   if (is_front_top_page()) {
-    $classes[] .= 'front-top-page';
+    $classes[] = 'front-top-page';
   }
 
   //管理画面との差別用
   $classes[] = 'public-page';
   //body
-  $classes[] .= 'page-body';
+  $classes[] = 'page-body';
 
 
   //カテゴリ入りクラスの追加
