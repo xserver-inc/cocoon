@@ -285,31 +285,40 @@ function get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id){
 }
 endif;
 
+if ( !function_exists( 'get_long_str_to_md5_hash' ) ):
+function get_long_str_to_md5_hash($str, $length = 50){
+  if (strlen($str) > $length) {
+    $str = md5($str);
+  }
+  return $str;
+}
+endif;
+
 //Amazon APIキャッシュIDの取得
 if ( !function_exists( 'get_amazon_api_transient_id' ) ):
 function get_amazon_api_transient_id($asin){
-  return TRANSIENT_AMAZON_API_PREFIX.$asin;
+  return TRANSIENT_AMAZON_API_PREFIX.get_long_str_to_md5_hash($asin);
 }
 endif;
 
 //Amazon APIバックアップキャッシュIDの取得
 if ( !function_exists( 'get_amazon_api_transient_bk_id' ) ):
 function get_amazon_api_transient_bk_id($asin){
-  return TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin;
+  return TRANSIENT_BACKUP_AMAZON_API_PREFIX.get_long_str_to_md5_hash($asin);
 }
 endif;
 
 //楽天APIキャッシュIDの取得
 if ( !function_exists( 'get_rakuten_api_transient_id' ) ):
 function get_rakuten_api_transient_id($id){
-  return TRANSIENT_RAKUTEN_API_PREFIX.$id;
+  return TRANSIENT_RAKUTEN_API_PREFIX.get_long_str_to_md5_hash($id);
 }
 endif;
 
 //楽天APIバックアップキャッシュIDの取得
 if ( !function_exists( 'get_rakuten_api_transient_bk_id' ) ):
 function get_rakuten_api_transient_bk_id($id){
-  return TRANSIENT_BACKUP_RAKUTEN_API_PREFIX.$id;
+  return TRANSIENT_BACKUP_RAKUTEN_API_PREFIX.get_long_str_to_md5_hash($id);
 }
 endif;
 
