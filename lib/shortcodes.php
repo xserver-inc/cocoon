@@ -798,7 +798,7 @@ function get_rakuten_error_message_tag($link, $admin_message){
   if (is_user_administrator()) {
     $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
   }
-  return wrap_product_item_box($error_message);     
+  return wrap_product_item_box($error_message);
 }
 endif;
 
@@ -844,7 +844,7 @@ function generate_rakuten_product_link($atts){
   $moshimo_rakuten_id = trim(get_moshimo_rakuten_id());
   $moshimo_yahoo_id   = trim(get_moshimo_yahoo_id());
 
-  
+
 
   //楽天アフィリエイトIDがない場合
   if (empty($rakuten_application_id) || empty($rakuten_affiliate_id)) {
@@ -874,15 +874,24 @@ function generate_rakuten_product_link($atts){
     $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1&sort=-affiliateRate&hits=1&keyword='.$id;
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
-  }
 
-  if ($json) {
-    $is_request_success = !is_wp_error( $json ) && $json["response"]["code"] === 200;
-    //リクエストに失敗した場合はバックアップキャッシュを取得
+    //ジェイソンのリクエスト結果チェック
+    $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
+    //JSON取得に失敗した場合はバックアップキャッシュを取得
     if (!$is_request_success) {
       $json_cache = get_transient( $transient_bk_id );
+      if ($json_cache) {
+        $json = $json_cache;
+        // _v('bk');
+        // _v($json);
+      }
     }
+  }
 
+
+  if ($json) {
+    //ジェイソンのリクエスト結果チェック
+    $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
       //キャッシュの保存
@@ -970,7 +979,7 @@ function generate_rakuten_product_link($atts){
                 $ImageHeight = '128';
               }
               break;
-            } 
+            }
 
 
           ///////////////////////////////////////////
@@ -981,7 +990,7 @@ function generate_rakuten_product_link($atts){
           } else {
             $Title = $itemName;
           }
-    
+
           $TitleAttr = esc_attr($Title);
           $TitleHtml = esc_html($Title);
 
@@ -991,12 +1000,12 @@ function generate_rakuten_product_link($atts){
           // 検索ボタンの作成
           ///////////////////////////////////////////
           $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
-          
+
           ///////////////////////////////////////////
           // 説明文タグ
           ///////////////////////////////////////////
           $description_tag = get_item_description_tag($description);
-          
+
           ///////////////////////////////////////////
           // キャッシュ削除リンク
           ///////////////////////////////////////////
@@ -1044,20 +1053,20 @@ function generate_rakuten_product_link($atts){
 
           //_v($tag);
           return $tag;
-        }        
-      } else {     
+        }
+      } else {
         $error_message = __( '商品IDに該当する商品が見つかりませんでした。無効な商品IDの可能性もあります。', THEME_NAME );
-        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);         
-      }      
-      
+        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
+      }
+
     } else {
       $error_message = __( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
-      return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);      
+      return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
     }
   } else {
     $error_message = __( 'JSONを取得できませんでした。接続環境に問題がある可能性があります。', THEME_NAME );
     return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
   }
-  
+
 }
 endif;
