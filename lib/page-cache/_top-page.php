@@ -23,11 +23,20 @@ if( isset($_GET['cache']) ){
 
   $message = __( 'キャッシュを削除しました。', THEME_NAME );
 
+  //Amazon個別商品情報を削除する場合
   $asin = isset($_GET['asin']) ? trim($_GET['asin']) : null;
   if ($asin) {
     $asin_before = sprintf(__( 'ASIN:%sの', THEME_NAME ), $asin);
     $asin_after = __( '該当の商品リンクページをリロードしてご確認ください。', THEME_NAME );
     $message = $asin_before.$message.$asin_after;
+  }
+
+  //楽天個別商品情報を削除する場合
+  $id = isset($_GET['id']) ? trim($_GET['id']) : null;
+  if ($id) {
+    $id_before = sprintf(__( '楽天商品番号:%sの', THEME_NAME ), $id);
+    $id_after = __( '該当の商品リンクページをリロードしてご確認ください。', THEME_NAME );
+    $message = $id_before.$message.$id_after;
   }
 
 //画面に「設定は保存されました」メッセージを表示
