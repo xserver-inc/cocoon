@@ -821,6 +821,8 @@ if ( !function_exists( 'generate_rakuten_product_link' ) ):
 function generate_rakuten_product_link($atts){
   extract( shortcode_atts( array(
     'id' => null,
+    'no' => null,
+    'search' => null,
     'shop' => null,
     'kw' => null,
     'title' => null,
@@ -834,8 +836,16 @@ function generate_rakuten_product_link($atts){
 
   $id = strip_tags($id);
   $id = esc_html(trim($id));
-  $id = mb_convert_kana($id, 'a');
-  $id = str_replace('－', '-', $id);
+  // $id = mb_convert_kana($id, 'a');
+  // $id = str_replace('－', '-', $id);
+  if ($no) {
+    $search = $no;
+  }
+  $search = strip_tags($search);
+  $search = esc_html(trim($search));
+
+  // $search = mb_convert_kana($search, 'a');
+  // $search = str_replace('－', '-', $search);
 
   $shop = trim($shop);
   $rateup = trim($rateup);
@@ -871,16 +881,23 @@ function generate_rakuten_product_link($atts){
   }
 
   //商品IDがない場合
-  if (empty($id)) {
-    $error_message = __( '楽天商品リンクショートコード内に「楽天商品ID」が入力されていません。', THEME_NAME );
+  if (empty($id) || empty($search)) {
+    $error_message = __( 'idオプション、もしくはsearchオプションが入力されていません。', THEME_NAME );
     return wrap_product_item_box($error_message);
   }
 
   $default_rakuten_link_tag = get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword);
 
+  if ($id) {
+    $cache_id = $id;
+  } else {
+    $cache_id = $search.$shop;
+  }
+
+
   //キャッシュの取得
-  $transient_id = get_rakuten_api_transient_id($id.$shop);
-  $transient_bk_id = get_rakuten_api_transient_bk_id($id.$shop);
+  $transient_id = get_rakuten_api_transient_id($cache_id);
+  $transient_bk_id = get_rakuten_api_transient_bk_id($cache_id);
   $json_cache = get_transient( $transient_id );
 
   //キャッシュがある場合はキャッシュを利用する
@@ -889,15 +906,23 @@ function generate_rakuten_product_link($atts){
     $json = $json_cache;
   } else {
     // _v('api');
+    $itemCode = null;
+    if ($id) {
+      $itemCode = '&itemCode='.$id;
+    }
     $sort = null;
-    if ($rateup) {
+    if ($rateup && !$id) {
       $sort = '&sort=-affiliateRate';
     }
     $shopCode = null;
-    if ($shop) {
+    if ($shop && !$id) {
       $shopCode = '&shopCode='.$shop;
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1&keyword='.$id;
+    $searchkw = null;
+    if ($search && !$id) {
+      $searchkw = '&keyword='.$search;
+    }
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1'.$searchkw.$itemCode;
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
 
