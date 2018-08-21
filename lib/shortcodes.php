@@ -817,7 +817,7 @@ if ( !function_exists( 'generate_rakuten_product_link' ) ):
 function generate_rakuten_product_link($atts){
   extract( shortcode_atts( array(
     'id' => null,
-    'search ' => 0,
+    'shop' => null,
     'kw' => null,
     'title' => null,
     'desc' => null,
@@ -825,6 +825,7 @@ function generate_rakuten_product_link($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
+    'rateup ' => 1,
   ), $atts ) );
 
   $id = strip_tags($id);
@@ -832,7 +833,8 @@ function generate_rakuten_product_link($atts){
   $id = mb_convert_kana($id, 'a');
   $id = str_replace('－', '-', $id);
 
-  $search = trim($search);
+  $shop = trim($shop);
+  $rateup = trim($rateup);
 
 
   //楽天アプリケーションID
@@ -884,10 +886,14 @@ function generate_rakuten_product_link($atts){
   } else {
     // _v('api');
     $sort = null;
-    if (!$search) {
+    if ($rateup) {
       $sort = '&sort=-affiliateRate';
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1'.$sort.'&hits=1&keyword='.$id;
+    $shopCode = null;
+    if ($shop) {
+      $shopCode = '&shopCode='.$shop;
+    }
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1&keyword='.$id;
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
 
@@ -1010,8 +1016,6 @@ function generate_rakuten_product_link($atts){
           $TitleAttr = esc_attr($Title);
           $TitleHtml = esc_html($Title);
 
-          $shop = $shopName;
-
           ///////////////////////////////////////////
           // 検索ボタンの作成
           ///////////////////////////////////////////
@@ -1058,7 +1062,7 @@ function generate_rakuten_product_link($atts){
                 '</div>'.
                 '<div class="rakuten-item-snippet product-item-snippet">'.
                   '<div class="rakuten-item-maker product-item-maker">'.
-                    $shop.
+                    $shopName.
                   '</div>'.
                   $description_tag.
                   $buttons_tag.
