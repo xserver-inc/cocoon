@@ -30,7 +30,7 @@
 
             //prev nextタグ
             generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
-            generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。', THEME_NAME ));
+            generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。無効にした場合はWordPressデフォルトのnext/prev設定になります。', THEME_NAME ));
 
             //カテゴリページの2ページ目以降をnoindexとする
             generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
