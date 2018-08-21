@@ -542,12 +542,15 @@ function generate_amazon_product_link($atts){
     'yahoo' => 1,
   ), $atts ) );
 
-  $asin = esc_html(trim($asin));
+  $asin = sanitize_shortcode_value($asin);
 
   //ASINが取得できない場合はID
   if (empty($asin)) {
-    $asin = $id;
+    $asin = sanitize_shortcode_value($id);
   }
+  //キーワード
+  $keyword = sanitize_shortcode_value($kw);
+  $description = sanitize_shortcode_value($desc);
 
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
@@ -561,9 +564,6 @@ function generate_amazon_product_link($atts){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
-  //キーワード
-  $keyword = trim($kw);
-  $description = trim($desc);
 
   // $moshimo_amazon_id = null;
   // $moshimo_rakuten_id = null;
@@ -831,24 +831,22 @@ function generate_rakuten_product_link($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
-    'rateup ' => 1,
+    'rateup' => 1,
   ), $atts ) );
 
-  $id = strip_tags($id);
-  $id = esc_html(trim($id));
-  // $id = mb_convert_kana($id, 'a');
-  // $id = str_replace('－', '-', $id);
+  $id = sanitize_shortcode_value($id);
+
   if ($no) {
     $search = $no;
   }
-  $search = strip_tags($search);
-  $search = esc_html(trim($search));
+  $search = sanitize_shortcode_value($search);
 
-  // $search = mb_convert_kana($search, 'a');
-  // $search = str_replace('－', '-', $search);
+  //キーワード
+  $keyword = sanitize_shortcode_value($kw);
+  $description = sanitize_shortcode_value($desc);
 
-  $shop = trim($shop);
-  $rateup = trim($rateup);
+  $shop = sanitize_shortcode_value($shop);
+  $rateup = sanitize_shortcode_value($rateup);
 
 
   //楽天アプリケーションID
@@ -863,9 +861,6 @@ function generate_rakuten_product_link($atts){
   $pid = trim(get_yahoo_valuecommerce_pid());
   //キャッシュ更新間隔
   $days = intval(get_api_cache_retention_period());
-  //キーワード
-  $keyword = trim($kw);
-  $description = trim($desc);
 
   //もしもID
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
@@ -881,8 +876,8 @@ function generate_rakuten_product_link($atts){
   }
 
   //商品IDがない場合
-  if (empty($id) || empty($search)) {
-    $error_message = __( 'idオプション、もしくはsearchオプションが入力されていません。', THEME_NAME );
+  if (empty($id) && empty($search)) {
+    $error_message = __( 'id, no, searchオークションのいずれかが入力されていません。', THEME_NAME );
     return wrap_product_item_box($error_message);
   }
 
@@ -923,6 +918,7 @@ function generate_rakuten_product_link($atts){
       $searchkw = '&keyword='.$search;
     }
     $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1'.$searchkw.$itemCode;
+    _v($request_url);
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
 
@@ -1104,7 +1100,7 @@ function generate_rakuten_product_link($atts){
           return $tag;
         }
       } else {
-        $error_message = __( '商品IDに該当する商品が見つかりませんでした。無効な商品IDの可能性もあります。', THEME_NAME );
+        $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
       }
 
