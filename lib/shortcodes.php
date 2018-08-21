@@ -879,8 +879,8 @@ function generate_rakuten_product_link($atts){
   $default_rakuten_link_tag = get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword);
 
   //キャッシュの取得
-  $transient_id = get_rakuten_api_transient_id($id);
-  $transient_bk_id = get_rakuten_api_transient_bk_id($id);
+  $transient_id = get_rakuten_api_transient_id($id.$shop);
+  $transient_bk_id = get_rakuten_api_transient_bk_id($id.$shop);
   $json_cache = get_transient( $transient_id );
 
   //キャッシュがある場合はキャッシュを利用する
