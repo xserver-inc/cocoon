@@ -918,7 +918,7 @@ function generate_rakuten_product_link($atts){
       $searchkw = '&keyword='.$search;
     }
     $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1'.$searchkw.$itemCode;
-    _v($request_url);
+    //_v($request_url);
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
 
