@@ -532,7 +532,7 @@ function generate_amazon_product_link($atts){
   extract( shortcode_atts( array(
     'asin' => null,
     'id' => null,
-    //'isbn ' => null,
+    //'search ' => null,
     'kw' => null,
     'title' => null,
     'desc' => null,
@@ -817,6 +817,7 @@ if ( !function_exists( 'generate_rakuten_product_link' ) ):
 function generate_rakuten_product_link($atts){
   extract( shortcode_atts( array(
     'id' => null,
+    'search ' => 0,
     'kw' => null,
     'title' => null,
     'desc' => null,
@@ -830,6 +831,8 @@ function generate_rakuten_product_link($atts){
   $id = esc_html(trim($id));
   $id = mb_convert_kana($id, 'a');
   $id = str_replace('－', '-', $id);
+
+  $search = trim($search);
 
 
   //楽天アプリケーションID
@@ -880,7 +883,11 @@ function generate_rakuten_product_link($atts){
     $json = $json_cache;
   } else {
     // _v('api');
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1&sort=-affiliateRate&hits=1&keyword='.$id;
+    $sort = null;
+    if (!$search) {
+      $sort = '&sort=-affiliateRate';
+    }
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&availability=1&imageFlag=1'.$sort.'&hits=1&keyword='.$id;
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
 
