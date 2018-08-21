@@ -143,10 +143,14 @@
 
         <!-- publisher設定 -->
         <?php
-        $home_image_url = get_ogp_home_image_url();
+        $home_image_url = get_amp_logo_image_url();
         $size = get_image_width_and_height($home_image_url);
-        $width = isset($size['width']) ? $size['width'] : 880;
-        $height = isset($size['height']) ? $size['height'] : 660;
+        $width = isset($size['width']) ? $size['width'] : 600;
+        $height = isset($size['height']) ? $size['height'] : 60;
+
+        $sizes = calc_publisher_image_sizes($width, $height);
+        $width = $sizes ? $sizes['width'] : 600;
+        $height = $sizes ? $sizes['height'] : 60;
          ?>
         <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">

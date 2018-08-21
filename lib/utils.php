@@ -1913,3 +1913,22 @@ function get_url_params($url){
   }
 }
 endif;
+
+if ( !function_exists( 'calc_publisher_image_sizes' ) ):
+function calc_publisher_image_sizes($width, $height){
+  //ロゴの幅が大きすぎる場合は仕様の範囲内（600px）にする
+  if ($width > 600) {
+    $height = round($height * (600/$width));
+    $width = 600;
+  }
+  //ロゴの高さが大きすぎる場合は仕様の範囲内（60px）にする
+  if ($height > 60) {
+    $width = round($width * (60/$height));
+    $height = 60;
+  }
+  $sizes = array();
+  $sizes['width'] = $width;
+  $sizes['height'] = $height;
+  return $sizes;
+}
+endif;
