@@ -654,7 +654,7 @@ function generate_amazon_product_link($atts){
       $size = strtolower($size);
       switch ($size) {
         case 's':
-          $size_class = 'ais-s';
+          $size_class = 'pis-s';
           if ($SmallImageUrl) {
             $ImageUrl = $SmallImageUrl;
             $ImageWidth = $SmallImageWidth;
@@ -666,7 +666,7 @@ function generate_amazon_product_link($atts){
           }
           break;
         case 'l':
-          $size_class = 'ais-l';
+          $size_class = 'pis-l';
           if ($LargeImageUrl) {
             $ImageUrl = $LargeImageUrl;
             $ImageWidth = $LargeImageWidth;
@@ -678,7 +678,7 @@ function generate_amazon_product_link($atts){
           }
           break;
         default:
-          $size_class = 'ais-m';
+          $size_class = 'pis-m';
           if ($MediumImageUrl) {
             $ImageUrl = $MediumImageUrl;
             $ImageWidth = $MediumImageWidth;
@@ -795,8 +795,12 @@ endif;
 
 //楽天APIで商品情報が取得できなかった際のデフォルトリンク作成
 if ( !function_exists( 'get_default_rakuten_link_tag' ) ):
-function get_default_rakuten_link_tag($keyword, $rakuten_affiliate_id){
-  $rakuten_url = get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id);
+function get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword){
+  $search_keyword = $id;
+  if ($keyword) {
+    $search_keyword = $keyword;
+  }
+  $rakuten_url = get_rakuten_affiliate_search_url(urlencode($search_keyword), $rakuten_affiliate_id);
   return '<a href="'.$rakuten_url.'" target="_blank">'.__( '楽天で商品を見る', THEME_NAME ).'</a>';
 }
 endif;
@@ -872,7 +876,7 @@ function generate_rakuten_product_link($atts){
     return wrap_product_item_box($error_message);
   }
 
-  $default_rakuten_link_tag = get_default_rakuten_link_tag($id, $rakuten_affiliate_id);
+  $default_rakuten_link_tag = get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword);
 
   //キャッシュの取得
   $transient_id = get_rakuten_api_transient_id($id);
@@ -978,7 +982,7 @@ function generate_rakuten_product_link($atts){
           $size = strtolower($size);
           switch ($size) {
             case 's':
-              $size_class = 'ris-s';
+              $size_class = 'pis-s';
               if ($smallImageUrl) {
                 $ImageUrl = $smallImageUrl;
                 $ImageWidth = $smallImageWidth;
@@ -990,7 +994,7 @@ function generate_rakuten_product_link($atts){
               }
               break;
             default:
-              $size_class = 'ris-m';
+              $size_class = 'pis-m';
               if ($mediumImageUrl) {
                 $ImageUrl = $mediumImageUrl;
                 $ImageWidth = $mediumImageWidth;

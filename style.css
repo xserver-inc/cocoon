@@ -4076,24 +4076,24 @@ div.sbs-think .speech-balloon::after {
   margin: 6px;
 }
 
-.ais-s {
+.pis-s {
   padding: 1em;
 }
-.ais-s::after {
+.pis-s::after {
   font-size: 18px;
 }
-.ais-s .product-item-thumb {
+.pis-s .product-item-thumb {
   width: 90px;
   min-width: 90px;
 }
-.ais-s .product-item-buttons a {
+.pis-s .product-item-buttons a {
   padding: 5px 0;
 }
 
-.ais-l.product-item-box {
+.pis-l.product-item-box {
   display: block;
 }
-.ais-l .product-item-thumb {
+.pis-l .product-item-thumb {
   width: auto;
   min-width: none;
 }
