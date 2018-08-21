@@ -18,8 +18,11 @@ if (is_page_breadcrumbs_visible()): ?>
   <?php } ?>
   <?php //ページタイトルを含める場合
   if (is_page_breadcrumbs_include_post()):
+    /*
     $count += 1;
-    ?><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><span itemprop="item"><span itemprop="name"><?php the_title(); ?></span></span><meta itemprop="position" content="<?php echo $count + 1; ?>" /></div>
+    <div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-file-o fa-fw"></span><span itemprop="item"><span itemprop="name"><?php the_title(); ?></span></span><meta itemprop="position" content="<?php echo $count + 1; ?>" /></div>
+    */
+    ?><div class="breadcrumb-item"><span class="fa fa-file-o fa-fw"></span><span><?php the_title(); ?></span></div>
   <?php endif ?>
 </div><!-- /#breadcrumb -->
 <?php endif; ?>
