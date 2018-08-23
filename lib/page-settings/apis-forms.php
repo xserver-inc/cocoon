@@ -86,6 +86,18 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-affiliate-id/', $help_text));
 
+            generate_label_tag(OP_GET_RAKUTEN_API_SORT, __( '商品並び替え優先度', THEME_NAME ));
+            echo '<br>';
+            $options = array(
+              'standard' => __( '楽天標準ソート順', THEME_NAME ),
+              '-affiliateRate' => __( 'アフィリエイト料率順（高い順）', THEME_NAME ),
+              '+itemPrice' => __( '価格順（安い順）', THEME_NAME ),
+              '-itemPrice' => __( '価格順（高い順）', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort());
+            generate_tips_tag(__( '同一商品番号の商品が複数あった場合の表示優先度です。', THEME_NAME ));
+
+
 
             echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
 

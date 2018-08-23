@@ -62,6 +62,14 @@ function get_rakuten_affiliate_id(){
 }
 endif;
 
+//楽天商品検索APIの並び順
+define('OP_GET_RAKUTEN_API_SORT', 'get_rakuten_api_sort');
+if ( !function_exists( 'get_rakuten_api_sort' ) ):
+function get_rakuten_api_sort(){
+  return get_theme_option(OP_GET_RAKUTEN_API_SORT, '-affiliateRate');
+}
+endif;
+
 //楽天検索ボタンを表示する
 define('OP_RAKUTEN_SEARCH_BUTTON_VISIBLE', 'rakuten_search_button_visible');
 if ( !function_exists( 'is_rakuten_search_button_visible' ) ):
