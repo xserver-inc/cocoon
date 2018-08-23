@@ -407,7 +407,7 @@ function get_amazon_itemlookup_xml($asin){
       return $res;
     }
     //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-    $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+    $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
     //Amazon APIキャッシュの保存
     set_transient($transient_id, $res, $expiration);
     //Amazon APIバックアップキャッシュの保存
@@ -948,7 +948,7 @@ function generate_rakuten_product_link($atts){
       //キャッシュの保存
       if (!$json_cache) {
         //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-        $expiration = 60 * 60 * 24 * $days + (rand(0, 60) * 60);
+        $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $expiration);
         //楽天APIバックアップキャッシュの保存

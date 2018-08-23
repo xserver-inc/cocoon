@@ -61,7 +61,7 @@ function fetch_feedly_count(){
 
   //DBキャッシュにカウントを保存
   if (is_sns_follow_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_follow_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
   }
 
   return $res;
@@ -127,7 +127,7 @@ function fetch_push7_info(){
 
     //Push7情報をキャッシュに保存
     if (is_sns_follow_count_cache_enable()) {
-      set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
+      set_transient( $transient_id , $info, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
     }
     // $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
     // $args = array( 'sslverify' => true );
@@ -138,7 +138,7 @@ function fetch_push7_info(){
     //   if ( $info ) {
     //     //Push7情報をキャッシュに保存
     //     if (is_sns_follow_count_cache_enable()) {
-    //       set_transient( $transient_id , $info, 60 * 60 * get_sns_follow_count_cache_interval() );
+    //       set_transient( $transient_id , $info, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
     //     }
 
     //     $res = $info;

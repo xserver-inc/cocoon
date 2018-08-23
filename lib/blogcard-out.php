@@ -180,7 +180,7 @@ function url_to_external_ogp_blogcard_tag($url){
     }
 
     set_transient( $url_hash, $ogp,
-                   60 * 60 * 24 * intval(get_external_blogcard_cache_retention_period()) );
+                   DAY_IN_SECONDS * intval(get_external_blogcard_cache_retention_period()) );
 
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない

@@ -51,23 +51,8 @@ function fetch_twitter_count($url = null) {
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
-  // $url = rawurlencode( $url );
-  // $args = array( 'sslverify' => true );
-  // $subscribers = wp_remote_get( "https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args );
-  // $res = '0';
-  // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
-  //      $body = $subscribers['body'];
-  //   $json = json_decode( $body );
-  //   $res = ($json->{"count"} ? $json->{"count"} : '0');
-
-  //   //DBキャッシュへ保存
-  //   if (is_sns_share_count_cache_enable()) {
-  //     set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-  //   }
-
-  // }
   return $res;
 }
 endif;
@@ -116,10 +101,6 @@ function fetch_facebook_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
       return $count;
     }
   }
@@ -133,27 +114,8 @@ function fetch_facebook_count($url = null) {
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
-  // //URLをURLエンコード
-  // $encoded_url = rawurlencode( $url );
-  // //オプションの設定
-  // $args = array( 'sslverify' => true );
-  // //Facebookにリクエストを送る
-  // $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
-  // $res = 0;
-
-  // //取得に成功した場合
-  // if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
-  //   $body = $response['body'];
-  //   $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
-  //   $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
-
-  //   //DBキャッシュへ保存
-  //   if (is_sns_share_count_cache_enable()) {
-  //     set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
-  //   }
-  // }
   return $res;
 }
 endif;
@@ -214,23 +176,10 @@ function fetch_hatebu_count($url = null) {
     $url = get_the_permalink();
   }
   $res = fetch_hatebu_count_raw($url);
-  // //取得するURL(ついでにURLエンコード)
-  // $encoded_url = rawurlencode($url);
-  // //オプションの設定
-  // $args = array( 'sslverify' => true );
-  // //Facebookにリクエストを送る
-  // $response = wp_remote_get( 'http://api.b.st-hatena.com/entry.count?url='.$encoded_url, $args );
-  // $res = 0;
-
-  // //取得に成功した場合
-  // if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
-  //   $body = $response['body'];
-  //   $res = !empty($body) ? $body : 0;
-  // }
 
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
 
   return $res;
@@ -275,10 +224,6 @@ function fetch_google_plus_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
       return $count;
     }
   }
@@ -288,17 +233,9 @@ function fetch_google_plus_count($url = null) {
   }
   $res = fetch_google_plus_count_raw($url);
 
-  // $query = 'https://apis.google.com/_/+1/fastbutton?url=' . urlencode( $url );
-  // //URL（クエリ）先の情報を取得
-  // $args = array( 'sslverify' => true );
-  // $result = wp_remote_get($query, $args);
-  // // 正規表現でカウント数のところだけを抽出
-  // preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
-  // $res = isset($count[1]) ? intval($count[1]) : 0;
-
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
 
   // 共有数を表示
@@ -351,10 +288,6 @@ function fetch_pocket_count($url = null) {
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
     if ( is_numeric($count) ) {
-      // _edump(
-      //   array('value' => $transient_id.'-'.$count, 'file' => __FILE__, 'line' => __LINE__),
-      //   'label', 'tag', 'ade5ac'
-      // );
       return $count;
     }
   }
@@ -365,19 +298,9 @@ function fetch_pocket_count($url = null) {
   }
   $res = fetch_pocket_count_raw($url);
 
-  // $url = urlencode($url);
-  // $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
-  // //URL（クエリ）先の情報を取得
-  // $args = array( 'sslverify' => true );
-  // $result = wp_remote_get($query, $args);
-  // //var_dump($result["body"]);
-  // // 正規表現でカウント数のところだけを抽出
-  // preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-  // $res = isset($count[1]) ? intval($count[1]) : 0;
-
   //DBキャッシュへ保存
   if (is_sns_share_count_cache_enable()) {
-    set_transient( $transient_id, $res, 60 * 60 * get_sns_share_count_cache_interval() );
+    set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_share_count_cache_interval() );
   }
 
   // 共有数を表示
