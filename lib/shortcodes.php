@@ -906,10 +906,13 @@ function generate_rakuten_product_link($atts){
       $itemCode = '&itemCode='.$id;
     }
 
+
     $sortQuery = '&sort='.get_rakuten_api_sort();
     if ($sort && !$id) {
       $sortQuery = '&sort='.$sort;
     }
+    $sortQuery = str_replace('+', '%2B', $sortQuery);
+
     $shopCode = null;
     if ($shop && !$id) {
       $shopCode = '&shopCode='.$shop;
