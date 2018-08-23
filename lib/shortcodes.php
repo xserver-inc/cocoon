@@ -831,7 +831,7 @@ function generate_rakuten_product_link($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
-    'rateup' => 1,
+    'sort' => null,
   ), $atts ) );
 
   $id = sanitize_shortcode_value($id);
@@ -846,7 +846,7 @@ function generate_rakuten_product_link($atts){
   $description = sanitize_shortcode_value($desc);
 
   $shop = sanitize_shortcode_value($shop);
-  $rateup = sanitize_shortcode_value($rateup);
+  $sort = sanitize_shortcode_value($sort);
 
 
   //楽天アプリケーションID
@@ -905,9 +905,10 @@ function generate_rakuten_product_link($atts){
     if ($id) {
       $itemCode = '&itemCode='.$id;
     }
-    $sort = null;
-    if ($rateup && !$id) {
-      $sort = '&sort=-affiliateRate';
+
+    $sortQuery = '&sort='.get_rakuten_api_sort();
+    if ($sort && !$id) {
+      $sortQuery = '&sort='.$sort;
     }
     $shopCode = null;
     if ($shop && !$id) {
@@ -917,7 +918,7 @@ function generate_rakuten_product_link($atts){
     if ($search && !$id) {
       $searchkw = '&keyword='.$search;
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sort.$shopCode.'&hits=1'.$searchkw.$itemCode;
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
@@ -1105,8 +1106,20 @@ function generate_rakuten_product_link($atts){
       }
 
     } else {
-      $error_message = __( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
+
+      $ebody = json_decode( $json['body'] );
+      $error = $ebody->{'error'};
+      $error_description = $ebody->{'error_description'};
+      switch ($error) {
+        case 'wrong_parameter':
+        $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
+          break;
+        default:
+        $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
+          break;
+      }
       return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
+
     }
   } else {
     $error_message = __( 'JSONを取得できませんでした。接続環境に問題がある可能性があります。', THEME_NAME );
