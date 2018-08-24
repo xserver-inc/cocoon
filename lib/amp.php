@@ -907,8 +907,7 @@ function html_ampfy_call_back( $html ) {
   if ($file_path_cache && DEBUG_CACHE_ENABLE) {
     if (file_exists($transient_file)) {
       $html_cache = get_file_contents($transient_file);
-      $is_include_body = includes_string($html_cache, '</body>');
-      if ($html_cache && $is_include_body) {
+      if ($html_cache) {
         return $html_cache;
       }
     }
@@ -950,8 +949,11 @@ function html_ampfy_call_back( $html ) {
     $html_all = $head_tag . $body_tag;
 
     //AMPキャッシュの保存
-    set_transient($transient_id, $transient_file, DAY_IN_SECONDS * 1);
-    put_file_contents($transient_file, $html_all);
+    $is_include_body = includes_string($html_all, '</body>');
+    if ($is_include_body && DEBUG_CACHE_ENABLE) {
+      set_transient($transient_id, $transient_file, DAY_IN_SECONDS * 1);
+      put_file_contents($transient_file, $html_all);
+    }
 
     return $html_all;
   }
