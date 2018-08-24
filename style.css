@@ -3837,10 +3837,6 @@ div.sbs-think .speech-balloon::after {
   content: '\f25d';
 }
 
-.product-item-error::after {
-  content: '';
-}
-
 .product-item-error.cf {
   display: block;
   line-height: 1.2;

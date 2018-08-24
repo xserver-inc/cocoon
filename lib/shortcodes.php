@@ -200,8 +200,8 @@ endif;
 
 //Amazon商品紹介リンクの外枠で囲む
 if ( !function_exists( 'wrap_product_item_box' ) ):
-function wrap_product_item_box($message){
-  return '<div class="product-item-box no-icon product-item-error cf"><div>'.$message.'</div></div>';
+function wrap_product_item_box($message, $type = 'amazon'){
+  return '<div class="product-item-box '.$type.'-item-box no-icon product-item-error cf"><div>'.$message.'</div></div>';
 }
 endif;
 
@@ -811,7 +811,7 @@ function get_rakuten_error_message_tag($link, $admin_message){
   if (is_user_administrator()) {
     $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
   }
-  return wrap_product_item_box($error_message);
+  return wrap_product_item_box($error_message, 'rakuten');
 }
 endif;
 
