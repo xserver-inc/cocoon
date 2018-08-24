@@ -526,7 +526,7 @@ function get_additional_internal_blogcard_classes($option = null){
   return apply_filters('get_additional_internal_blogcard_classes', $classes);
 }
 endif;
-apply_filters('get_additional_external_blogcard_classes', $classes);
+
 //外部ブログカードのclass追加関数
 if ( !function_exists( 'get_additional_external_blogcard_classes' ) ):
 function get_additional_external_blogcard_classes($option = null){
