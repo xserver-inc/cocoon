@@ -66,6 +66,14 @@ function get_comment_form_heading(){
 }
 endif;
 
+//コメント入力欄の見出し
+define('OP_COMMENT_INFORMATION_MESSAGE', 'comment_information_message');
+if ( !function_exists( 'get_comment_information_message' ) ):
+function get_comment_information_message(){
+  return stripslashes_deep(get_theme_option(OP_COMMENT_INFORMATION_MESSAGE));
+}
+endif;
+
 //ウェブサイト入力欄表示
 define('OP_COMMENT_WEBSITE_VISIBLE', 'comment_website_visible');
 if ( !function_exists( 'is_comment_website_visible' ) ):

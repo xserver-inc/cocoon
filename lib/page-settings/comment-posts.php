@@ -21,6 +21,9 @@ update_theme_option(OP_COMMENT_FORM_DISPLAY_TYPE);
 //コメント入力欄の見出し
 update_theme_option(OP_COMMENT_FORM_HEADING);
 
+//コメント案内メッセージ
+update_theme_option(OP_COMMENT_INFORMATION_MESSAGE);
+
 //ウェブサイト入力欄表示
 update_theme_option(OP_COMMENT_WEBSITE_VISIBLE);
 
