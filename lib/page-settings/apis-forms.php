@@ -197,7 +197,9 @@ $help_text = __( '取得方法', THEME_NAME );
 
   <p style="text-align: right;">
     <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement', THEME_NAME ) ?>" target="_blank"><?php _e( 'Amazon.co.jp Product Advertising API ライセンス契約', THEME_NAME ) ?></a><br>
-    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/topic/t32/', THEME_NAME ) ?>" target="_blank"><?php _e( 'Product Advertising API (PA-API) の利用ガイドライン', THEME_NAME ) ?></a></p>
+    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/topic/t32/', THEME_NAME ) ?>" target="_blank"><?php _e( 'Product Advertising API (PA-API) の利用ガイドライン', THEME_NAME ) ?></a><br>
+    <a href="<?php _e( 'https://webservice.rakuten.co.jp/guide/rule', THEME_NAME ) ?>" target="_blank"><?php _e( '楽天ウェブサービス規約', THEME_NAME ) ?></a>
+  </p>
 
   </div>
 </div>
