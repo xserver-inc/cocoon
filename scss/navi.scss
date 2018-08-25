@@ -100,10 +100,10 @@ $icon_height: 16px;
     .sub-menu{
       display: none;
       position: absolute;
-      margin-left: 0;
+      margin: 0;
       min-width: $sub_menu_width;
       list-style: none;
-      padding-left: 0;
+      padding: 0;
       background-color: $xxx_thin;
       z-index: 99;
       text-align: left;

@@ -39,19 +39,30 @@ if ( is_comment_allow() || have_comments() ): ?>
   ///////////////////////////////////////////
   // メールアドレスが公開されることはありません。
   $req = get_option( 'require_name_email' );
-  $required_text = sprintf( ' ' . __( 'Required fiels are marked %s', 'pietergoosen' ), '<span class="required">*</span>' );
+  $required_text = sprintf( ' ' . __( 'Required fields are marked %s' ), '<span class="required">*</span>' );
+  //コメント案内メッセージ
+  $comment_info_msg = get_comment_information_message();
+  $comment_info_msg_tag = null;
+  if ($comment_info_msg) {
+    $comment_info_msg_tag = '<div class="comment-information-messag">'.$comment_info_msg.'</div>';
+  }
   //コメントフォームの引数
+  $post_id = get_the_ID();
+  $user = wp_get_current_user();
+  $user_identity = $user->exists() ? $user->display_name : '';
   $args = array(
     'title_reply'  => get_comment_form_heading(),
     'label_submit' => get_comment_submit_label(),
-    'logged_in_as' => '<p class="logged-in-as">' .
-      sprintf(
-      __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
-        admin_url( 'profile.php' ),
-        $user_identity,
-        wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
-      ) . '</p>',
-    'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+    'logged_in_as' => '<p class="logged-in-as">' . sprintf(
+      /* translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL */
+      __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
+      get_edit_user_link(),
+      /* translators: %s: user name */
+      esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
+      $user_identity,
+      wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
+    ) . '</p>'.$comment_info_msg_tag,
+    'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. ( $req ? $required_text : '' ) . '</p>'.$comment_info_msg_tag,
   );
   echo '<aside class="comment-form">';
   if (!is_amp()) {

@@ -66,7 +66,7 @@ function get_comment_form_heading(){
 }
 endif;
 
-//コメント入力欄の見出し
+//コメント案内メッセージ
 define('OP_COMMENT_INFORMATION_MESSAGE', 'comment_information_message');
 if ( !function_exists( 'get_comment_information_message' ) ):
 function get_comment_information_message(){

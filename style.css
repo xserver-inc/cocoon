@@ -289,6 +289,11 @@ a:hover {
   color: #e53900;
 }
 
+ol, ul {
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
 /* クリアフィックス */
 .cf::after {
   clear: both;
@@ -662,6 +667,7 @@ img {
 
 .navi-in > ul {
   padding: 0;
+  margin: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -704,10 +710,10 @@ img {
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;
-  margin-left: 0;
+  margin: 0;
   min-width: 240px;
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   background-color: #fafbfc;
   z-index: 99;
   text-align: left;
@@ -766,6 +772,7 @@ img {
 ************************************/
 .navi-footer-in > .menu-footer {
   padding: 0;
+  margin: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -1433,11 +1440,6 @@ table td {
 .article dd {
   margin-left: 40px;
 }
-.article ul,
-.article ol {
-  margin: 1em 0;
-  padding-left: 40px;
-}
 .article ul li,
 .article ol li {
   margin: 0.2em;
@@ -1928,6 +1930,7 @@ label.screen-reader-text {
 }
 .widget ul {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -1976,6 +1979,7 @@ label.screen-reader-text {
 .widget_rss ul,
 .widget_nav_menu ul {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 .widget_recent_entries ul li ul,
@@ -1986,6 +1990,7 @@ label.screen-reader-text {
 .widget_rss ul li ul,
 .widget_nav_menu ul li ul {
   padding-left: 20px;
+  margin: 0;
 }
 .widget_recent_entries ul li a,
 .widget_categories ul li a,
@@ -3146,6 +3151,7 @@ label.screen-reader-text {
 ************************************/
 .commets-list {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 .commets-list .avatar {
