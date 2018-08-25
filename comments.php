@@ -34,10 +34,24 @@ if ( is_comment_allow() || have_comments() ): ?>
   </section>
   <?php
 
+  ///////////////////////////////////////////
   // ここからコメントフォーム
+  ///////////////////////////////////////////
+  // メールアドレスが公開されることはありません。
+  $req = get_option( 'require_name_email' );
+  $required_text = sprintf( ' ' . __( 'Required fiels are marked %s', 'pietergoosen' ), '<span class="required">*</span>' );
+  //コメントフォームの引数
   $args = array(
     'title_reply'  => get_comment_form_heading(),
     'label_submit' => get_comment_submit_label(),
+    'logged_in_as' => '<p class="logged-in-as">' .
+      sprintf(
+      __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
+        admin_url( 'profile.php' ),
+        $user_identity,
+        wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+      ) . '</p>',
+    'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
   );
   echo '<aside class="comment-form">';
   if (!is_amp()) {
