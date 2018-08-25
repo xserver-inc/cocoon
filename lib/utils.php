@@ -1914,6 +1914,7 @@ function get_url_params($url){
 }
 endif;
 
+//パブリシャーロゴのサイズ修正
 if ( !function_exists( 'calc_publisher_image_sizes' ) ):
 function calc_publisher_image_sizes($width, $height){
   //ロゴの幅が大きすぎる場合は仕様の範囲内（600px）にする
@@ -1930,5 +1931,18 @@ function calc_publisher_image_sizes($width, $height){
   $sizes['width'] = $width;
   $sizes['height'] = $height;
   return $sizes;
+}
+endif;
+
+//ショートコードの値をサニタイズする
+if ( !function_exists( 'sanitize_shortcode_value' ) ):
+function sanitize_shortcode_value($value){
+  $value = strip_tags($value);
+  $value = esc_html(trim($value));
+  $value = str_replace('"', '', $value);
+  $value = str_replace("'", '', $value);
+  $value = str_replace('[', '', $value);
+  $value = str_replace(']', '', $value);
+  return $value;
 }
 endif;

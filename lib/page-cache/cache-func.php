@@ -42,16 +42,6 @@ function delete_amazon_api_caches(){
 }
 endif;
 
-//全てのキャッシュを削除
-if ( !function_exists( 'delete_all_theme_caches' ) ):
-function delete_all_theme_caches(){
-  return delete_sns_count_caches() &&
-         delete_popular_entries_caches() &&
-         delete_blogcard_caches() &&
-         delete_amazon_api_caches();
-}
-endif;
-
 //Amazon個別キャシュの削除
 if ( !function_exists( 'delete_amazon_asin_cache' ) ):
 function delete_amazon_asin_cache($asin){
@@ -59,6 +49,36 @@ function delete_amazon_asin_cache($asin){
     return delete_db_cache_records(TRANSIENT_AMAZON_API_PREFIX.$asin) &&
            delete_db_cache_records(TRANSIENT_BACKUP_AMAZON_API_PREFIX.$asin);
   }
+}
+endif;
+
+//楽天APIキャシュの削除
+if ( !function_exists( 'delete_rakuten_api_caches' ) ):
+function delete_rakuten_api_caches(){
+  if (is_user_administrator()) {
+    return delete_db_cache_records(TRANSIENT_RAKUTEN_API_PREFIX);
+  }
+}
+endif;
+
+//楽天個別キャシュの削除
+if ( !function_exists( 'delete_rakuten_id_cache' ) ):
+function delete_rakuten_id_cache($id){
+  if (is_user_administrator()) {
+    return delete_db_cache_records(TRANSIENT_RAKUTEN_API_PREFIX.$id) &&
+    delete_db_cache_records(TRANSIENT_BACKUP_RAKUTEN_API_PREFIX.$id);
+  }
+}
+endif;
+
+//全てのキャッシュを削除
+if ( !function_exists( 'delete_all_theme_caches' ) ):
+function delete_all_theme_caches(){
+  return delete_sns_count_caches() &&
+         delete_popular_entries_caches() &&
+         delete_blogcard_caches() &&
+         delete_amazon_api_caches() &&
+         delete_amp_caches();
 }
 endif;
 
@@ -99,6 +119,13 @@ function delete_theme_storaged_caches(){
         $asin = isset($_GET['asin']) ? $_GET['asin'] : null;
         return delete_amazon_asin_cache($asin);
         break;
+        case 'rakuten_api_caches':
+          return delete_rakuten_api_caches();
+          break;
+          case 'rakuten_id_cache':
+            $id = isset($_GET['id']) ? $_GET['id'] : null;
+            return delete_rakuten_id_cache($id);
+            break;
       case 'amp_caches':
         return delete_amp_caches();
         break;

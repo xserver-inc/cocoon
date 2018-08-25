@@ -85,14 +85,34 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'red'
         ),
         array(
-          'title' => __( '太い赤字', THEME_NAME ),
+          'title' => __( '赤太字', THEME_NAME ),
           'inline' => 'span',
-          'classes' => 'bold-red'
+          'classes' => 'bold red'
         ),
         array(
           'title' => __( '赤アンダーライン', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'red-under'
+        ),
+        array(
+          'title' => __( '青', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'blue'
+        ),
+        array(
+          'title' => __( '青太字', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'bold blue'
+        ),
+        array(
+          'title' => __( '緑', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'green'
+        ),
+        array(
+          'title' => __( '緑太字', THEME_NAME ),
+          'inline' => 'span',
+          'classes' => 'bold green'
         ),
         array(
           'title' => __( '打ち消し線', THEME_NAME ),

@@ -2339,6 +2339,16 @@ label.screen-reader-text {
   color: #E50202;
 }
 
+/*青色*/
+.blue {
+  color: blue;
+}
+
+/*緑色*/
+.green {
+  color: green;
+}
+
 /*赤のアンダーライン*/
 .red-under {
   border-bottom: 2px solid red;
@@ -3823,6 +3833,10 @@ div.sbs-think .speech-balloon::after {
   color: #ccc;
 }
 
+.rakuten-item-box::after {
+  content: '\f25d';
+}
+
 .product-item-error.cf {
   display: block;
   line-height: 1.2;
@@ -4047,32 +4061,35 @@ div.sbs-think .speech-balloon::after {
   background: #000066;
 }
 
-.asin-cache-del-link {
-  font-size: 10px;
-  color: #777;
+.product-item-admin {
   position: absolute;
   bottom: 3px;
   left: 6px;
 }
+.product-item-admin > * {
+  font-size: 10px;
+  color: #777;
+  margin: 6px;
+}
 
-.ais-s {
+.pis-s {
   padding: 1em;
 }
-.ais-s::after {
+.pis-s::after {
   font-size: 18px;
 }
-.ais-s .product-item-thumb {
+.pis-s .product-item-thumb {
   width: 90px;
   min-width: 90px;
 }
-.ais-s .product-item-buttons a {
+.pis-s .product-item-buttons a {
   padding: 5px 0;
 }
 
-.ais-l.product-item-box {
+.pis-l.product-item-box {
   display: block;
 }
-.ais-l .product-item-thumb {
+.pis-l .product-item-thumb {
   width: auto;
   min-width: none;
 }

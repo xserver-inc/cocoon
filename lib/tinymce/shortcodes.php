@@ -120,7 +120,6 @@ function generate_shortcodes_is($value){
   shortcodes[6].after = '<?php echo $after; ?>';
 
   <?php //商品追加ショートコード
-  $title = __( '新しい商品のタイトル', THEME_NAME );
   $after = '" kw="'.$kw.'" amazon=0 rakuten=0 yahoo=0]';
    ?>
   shortcodes[7] = new Array();
@@ -128,6 +127,37 @@ function generate_shortcodes_is($value){
   shortcodes[7].tag = '<?php echo $before.$msg.$after; ?>';
   shortcodes[7].before = '<?php echo $before; ?>';
   shortcodes[7].after = '<?php echo $after; ?>';
+
+  <?php //商品追加ショートコード
+  $msg = __( '商品番号', THEME_NAME );
+  $before = '[rakuten id="';
+  $after = '" kw="'.$kw.'"]';
+  ?>
+  shortcodes[8] = new Array();
+  shortcodes[8].title  = '<?php echo __( '楽天商品リンク', THEME_NAME ); ?>';
+  shortcodes[8].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[8].before = '<?php echo $before; ?>';
+  shortcodes[8].after = '<?php echo $after; ?>';
+
+  <?php //商品追加ショートコード
+  $before = '[rakuten id="';
+  $after = '" kw="'.$kw.'" title="'.$title.'"]';
+  ?>
+  shortcodes[9] = new Array();
+  shortcodes[9].title  = '<?php echo __( '楽天商品リンク（商品タイトル変更）', THEME_NAME ); ?>';
+  shortcodes[9].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[9].before = '<?php echo $before; ?>';
+  shortcodes[9].after = '<?php echo $after; ?>';
+
+  <?php //商品追加ショートコード
+  $before = '[rakuten id="';
+  $after = '" kw="'.$kw.'" amazon=0 rakuten=0 yahoo=0]';
+  ?>
+  shortcodes[10] = new Array();
+  shortcodes[10].title  = '<?php echo __( '楽天商品リンク（全ボタン非表示）', THEME_NAME ); ?>';
+  shortcodes[10].tag = '<?php echo $before.$msg.$after; ?>';
+  shortcodes[10].before = '<?php echo $before; ?>';
+  shortcodes[10].after = '<?php echo $after; ?>';
 
   <?php
   echo '</script>';

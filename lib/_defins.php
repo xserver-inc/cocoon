@@ -151,6 +151,10 @@ define('TRANSIENT_AMP_PREFIX', THEME_NAME.'_amp_');
 define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
 //Amazon APIのバックアッププレフィックス
 define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_api_asin_');
+//楽天APIのプレフィックス
+define('TRANSIENT_RAKUTEN_API_PREFIX', THEME_NAME.'_rakuten_api_id_');
+//楽天APIのバックアッププレフィックス
+define('TRANSIENT_BACKUP_RAKUTEN_API_PREFIX', THEME_NAME.'_backup_rakuten_api_id_');
 
 //最初のH2見出し用の優先度
 define('BEFORE_1ST_H2_WIDGET_PRIORITY_STANDARD', 10002);

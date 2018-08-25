@@ -30,6 +30,10 @@
   }
 }
 
+.rakuten-item-box::after{
+  content: '\f25d';
+}
+
 .product-item-error.cf{
   display: block;
   line-height: 1.2;
@@ -256,19 +260,21 @@
   background: #000066;
 }
 
-
-.asin-cache-del-link{
-  font-size: 10px;
-  color: #777;
+.product-item-admin{
   position: absolute;
   bottom: 3px;
   left: 6px;
+  >*{
+  font-size: 10px;
+  color: #777;
+  margin: 6px;
+  }
 }
 
 ///////////////////////////////////////
 // サイズ指定
 ///////////////////////////////////////
-.ais-s{
+.pis-s{
   padding: 1em;
   &::after{
     font-size: 18px;
@@ -283,7 +289,7 @@
   }
 }
 
-.ais-l{
+.pis-l{
   &.product-item-box{
     display: block;
   }

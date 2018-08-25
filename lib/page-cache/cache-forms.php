@@ -88,9 +88,22 @@
             <?php generate_label_tag('', __( 'Amazon API', THEME_NAME ) ); ?>
           </th>
           <td>
-            <a href="<?php echo add_query_arg(array('cache' => 'amazon_api_caches', 'asin' => null)); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'Amazon APIキャッシュの削除', THEME_NAME ) ?></a>
+            <a href="<?php echo add_query_arg(array('cache' => 'amazon_api_caches', 'asin' => null, 'id' => null, 'ampid' => null)); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( 'Amazon APIキャッシュの削除', THEME_NAME ) ?></a>
             <?php
               generate_tips_tag(__( 'Amazonの商品情報全キャッシュを削除します。全てのキャッシュを削除すると、Amazon APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-api-cache/'));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 楽天API  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( '楽天 API', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <a href="<?php echo add_query_arg(array('cache' => 'rakuten_api_caches', 'asin' => null, 'id' => null, 'ampid' => null)); ?>" class="button"<?php echo ONCLICK_DELETE_CONFIRM; ?>><?php _e( '楽天APIキャッシュの削除', THEME_NAME ) ?></a>
+            <?php
+              generate_tips_tag(__( '楽天商品情報の全キャッシュを削除します。全てのキャッシュを削除すると、楽天APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -21,8 +21,14 @@ update_theme_option(OP_AMAZON_SEARCH_BUTTON_VISIBLE);
 //Amazon検索ボタン文字
 update_theme_option(OP_AMAZON_SEARCH_BUTTON_TEXT);
 
+//楽天アプリケーションID
+update_theme_option(OP_RAKUTEN_APPLICATION_ID);
+
 //楽天アフィリエイトID
 update_theme_option(OP_RAKUTEN_AFFILIATE_ID);
+
+//楽天商品検索APIの並び順
+update_theme_option(OP_GET_RAKUTEN_API_SORT);
 
 //楽天検索ボタンを表示する
 update_theme_option(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE);
