@@ -99,12 +99,12 @@
         <!-- コメント案内メッセージ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_COMMENT_INFORMATION_MESSAGE, __('コメント案内メッセージ', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_COMMENT_INFORMATION_MESSAGE, __('コメント入力案内メッセージ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
             generate_visuel_editor_tag(OP_COMMENT_INFORMATION_MESSAGE, get_comment_information_message(), $editor_id = 'comment-information-message');
-            generate_tips_tag(__( 'コメント入力欄の見出しを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'コメント入力フォームの上に表示する案内メッセージを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
