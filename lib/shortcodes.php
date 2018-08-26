@@ -554,6 +554,7 @@ function generate_amazon_product_link($atts){
     'kw' => null,
     'title' => null,
     'desc' => null,
+    'price' => null,
     'size' => 'm',
     'amazon' => 1,
     'rakuten' => 1,
@@ -753,7 +754,7 @@ function generate_amazon_product_link($atts){
       //_v($acquired_date);
       $item_price_tag = null;
       //_v($FormattedPrice);
-      if (is_amazon_item_price_visible() && $ListPrice) {
+      if (is_amazon_item_price_visible() && $ListPrice && $price !== '0') {
         $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
       }
 
