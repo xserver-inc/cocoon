@@ -38,6 +38,14 @@ function is_amazon_search_button_visible(){
 }
 endif;
 
+//Amazon商品リンク価格表示
+define('OP_AMAZON_ITEM_PRICE_VISIBLE', 'amazon_item_price_visible');
+if ( !function_exists( 'get_amazon_item_price_visible' ) ):
+function get_amazon_item_price_visible(){
+  return get_theme_option(OP_AMAZON_ITEM_PRICE_VISIBLE);
+}
+endif;
+
 //Amazon検索ボタン文字
 define('OP_AMAZON_SEARCH_BUTTON_TEXT', 'amazon_search_button_text');
 if ( !function_exists( 'get_amazon_search_button_text' ) ):
