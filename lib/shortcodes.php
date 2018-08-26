@@ -747,16 +747,22 @@ function generate_amazon_product_link($atts){
       ///////////////////////////////////////////
       // 値段表記
       ///////////////////////////////////////////
+      $item_price_tag = null;
       //XMLのOperationRequesから時間情報を取得
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
-      $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
-      $acquired_date = date('Y/m/d h:i', $timestamp);//フォーマット変更
-      //_v($acquired_date);
-      $item_price_tag = null;
-      //_v($FormattedPrice);
-      if ((is_amazon_item_price_visible() || $price === '1') && $ListPrice && $price !== '0') {
-        $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
+      if ($unix_date) {
+        $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
+        $acquired_date = date('Y/m/d h:i', $timestamp);//フォーマット変更
+        //_v($acquired_date);
+        //_v($FormattedPrice);
+        if ((is_amazon_item_price_visible() || $price === '1')
+             && $ListPrice
+             && $price !== '0'
+           ) {
+          $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
+        }
       }
+
 
       ///////////////////////////////////////////
       // 説明文タグ
