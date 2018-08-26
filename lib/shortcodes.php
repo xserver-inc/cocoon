@@ -754,7 +754,7 @@ function generate_amazon_product_link($atts){
       //_v($acquired_date);
       $item_price_tag = null;
       //_v($FormattedPrice);
-      if (is_amazon_item_price_visible() && $ListPrice && $price !== '0') {
+      if ((is_amazon_item_price_visible() || $price === '1') && $ListPrice && $price !== '0') {
         $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
       }
 
