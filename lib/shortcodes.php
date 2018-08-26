@@ -922,7 +922,12 @@ function generate_rakuten_product_link($atts){
     return wrap_product_item_box($error_message);
   }
 
-  $default_rakuten_link_tag = get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword);
+  if ($id) {
+    $search_id = $id;
+  } else {
+    $search_id = $search;
+  }
+  $default_rakuten_link_tag = get_default_rakuten_link_tag($rakuten_affiliate_id, $search_id, $keyword);
 
   if ($id) {
     $cache_id = $id;
