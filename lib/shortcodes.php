@@ -752,7 +752,7 @@ function generate_amazon_product_link($atts){
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
       if ($unix_date) {
         $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
-        $acquired_date = date('Y/m/d h:i', $timestamp);//フォーマット変更
+        $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ), $timestamp);//フォーマット変更
         //_v($acquired_date);
         //_v($FormattedPrice);
         if ((is_amazon_item_price_visible() || $price === '1')
@@ -986,10 +986,17 @@ function generate_rakuten_product_link($atts){
     $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
+      $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ));
+
       //キャッシュの保存
       if (!$json_cache) {
         //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
         $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
+        $jb = $json['body'];
+        if ($jb) {
+          $jb = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $jb, 1);
+            $json['body'] = $jb;
+        }
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $expiration);
         //楽天APIバックアップキャッシュの保存
@@ -1001,6 +1008,10 @@ function generate_rakuten_product_link($atts){
       $body = json_decode( $body );
       //IDの商品が見つからなかった場合
       if (intval($body->{'count'}) > 0) {
+        if ($body->{'date'}) {
+          $acquired_date = $body->{'date'};
+        }
+
         $Item = $body->{'Items'}['0']->{'Item'};
         if ($Item) {
           $itemName = $Item->{'itemName'};
@@ -1099,7 +1110,8 @@ function generate_rakuten_product_link($atts){
           ///////////////////////////////////////////
           // キャッシュ削除リンク
           ///////////////////////////////////////////
-          $cache_delete_tag = get_cache_delete_tag('rakuten', $id);
+
+          $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
 
           ///////////////////////////////////////////
           // アフィリエイト料率タグ
