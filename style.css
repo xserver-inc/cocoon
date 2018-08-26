@@ -4100,6 +4100,10 @@ div.sbs-think .speech-balloon::after {
   min-width: none;
 }
 
+.item-price {
+  color: #c9171e;
+}
+
 .fb-like-box {
   background-color: #444;
   color: #fff;

@@ -501,6 +501,24 @@ function get_cache_delete_tag($mode = 'amazon', $id){
 endif;
 
 //商品リンク説明文タグ
+if ( !function_exists( 'get_item_price_tag' ) ):
+function get_item_price_tag($price, $date = null){
+  $item_price_tag = null;
+  if ($price) {
+    $date_tag = null;
+    if ($date) {
+      $date_tag = '<span class="acquired-date">'.__( '（', THEME_NAME ).esc_html($date).__( '時点', THEME_NAME ).__( '）', THEME_NAME ).'</span>';
+    }
+    $item_price_tag = '<div class="product-item-price">'.
+      '<span class="item-price">'.esc_html($price).'</span>'.
+      $date_tag.
+    '</div>';
+  }
+  return $item_price_tag;
+}
+endif;
+
+//商品リンク説明文タグ
 if ( !function_exists( 'get_item_description_tag' ) ):
 function get_item_description_tag($description){
   $description_tag = null;
@@ -719,20 +737,35 @@ function generate_amazon_product_link($atts){
         $maker = $Binding;
       }
 
-      $ListPrice = $item->ListPrice;
-      $FormattedPrice = esc_html($item->FormattedPrice);
+      $ListPrice = $item->ItemAttributes->ListPrice;
+      $Price = esc_html($ListPrice->Amount);
+      $FormattedPrice = esc_html($ListPrice->FormattedPrice);
 
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
       ///////////////////////////////////////////
-      // 検索ボタンの作成
+      // 値段表記
       ///////////////////////////////////////////
-      $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
+      //XMLのOperationRequesから時間情報を取得
+      $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
+      $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
+      $acquired_date = date('Y/m/d h:i', $timestamp);//フォーマット変更
+      //_v($acquired_date);
+      $item_price_tag = null;
+      //_v($FormattedPrice);
+      if (is_amazon_item_price_visible() && $ListPrice) {
+        $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
+      }
 
       ///////////////////////////////////////////
       // 説明文タグ
       ///////////////////////////////////////////
       $description_tag = get_item_description_tag($description);
+
+      ///////////////////////////////////////////
+      // 検索ボタンの作成
+      ///////////////////////////////////////////
+      $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
       ///////////////////////////////////////////
       // キャッシュ削除リンク
@@ -764,6 +797,7 @@ function generate_amazon_product_link($atts){
               '<div class="amazon-item-maker product-item-maker">'.
                 $maker.
               '</div>'.
+              $item_price_tag.
               $description_tag.
               $buttons_tag.
             '</div>'.
