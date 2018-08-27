@@ -1014,9 +1014,6 @@ function generate_rakuten_product_link($atts){
       $body = json_decode( $body );
       //IDの商品が見つからなかった場合
       if (intval($body->{'count'}) > 0) {
-        if ($body->{'date'}) {
-          $acquired_date = $body->{'date'};
-        }
 
         $Item = $body->{'Items'}['0']->{'Item'};
         if ($Item) {
@@ -1108,6 +1105,17 @@ function generate_rakuten_product_link($atts){
           // 値段表記
           ///////////////////////////////////////////
           $item_price_tag = null;
+          if ($body->{'date'}) {
+            $acquired_date = $body->{'date'};
+          }
+
+          if ((is_rakuten_item_price_visible() || $price === '1')
+                && $itemPrice
+                && $price !== '0'
+              ) {
+            $FormattedPrice = '￥ '.number_format($itemPrice);;
+            $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
+          }
 
           ///////////////////////////////////////////
           // 説明文タグ
@@ -1158,6 +1166,7 @@ function generate_rakuten_product_link($atts){
                   '<div class="rakuten-item-maker product-item-maker">'.
                     $shopName.
                   '</div>'.
+                  $item_price_tag.
                   $description_tag.
                   $buttons_tag.
                 '</div>'.
