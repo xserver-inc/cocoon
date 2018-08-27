@@ -431,27 +431,32 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   //カテゴリを指定する場合
   if (is_ids_exist($cat_ids) || is_ids_exist($exclude_cat_ids)) {
     global $post;
-    $term_table = $wpdb->term_relationships;
+    $term_relationships = $wpdb->term_relationships;
+    $term_taxonomy = $wpdb->term_taxonomy;
     $joined_table = 'terms_accesses';
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
       $cat_ids = implode(',', $cat_ids);
-      $where .= " AND {$term_table}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
+      $where .= " AND {$term_relationships}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
       $ex_cat_ids = implode(',', $exclude_cat_ids);
-      $where .= " AND {$term_table}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
+      $where .= " AND {$term_relationships}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
+
+    $where .= " AND {$term_taxonomy}.taxonomy = 'category' ".PHP_EOL;
     // //テーブル結合するクエリの場合はWHEREに付け加えるのでANDに変更する
     // $where = str_replace('WHERE', 'AND', $where);
     $query = "
-      SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count
+      SELECT {$joined_table}.post_id, SUM({$joined_table}.count) AS sum_count, {$joined_table}.term_taxonomy_id, {$joined_table}.taxonomy
         FROM (
 
           #カテゴリとアクセステーブルを内部結合してグルーピングし並び替えた結果
-          SELECT * /* {$access_table}.post_id, {$access_table}.countでもいいけど */ FROM {$term_table}
-            INNER JOIN {$access_table} ON {$term_table}.object_id = {$access_table}.post_id
+          SELECT {$access_table}.post_id, {$access_table}.count, {$term_relationships}.term_taxonomy_id, {$term_taxonomy}.taxonomy
+            FROM {$term_relationships}
+            INNER JOIN {$access_table} ON {$term_relationships}.object_id = {$access_table}.post_id
+            INNER JOIN {$term_taxonomy} ON {$term_relationships}.term_taxonomy_id = {$term_taxonomy}.term_taxonomy_id
             $where #WHERE句
             GROUP BY {$access_table}.id
 
@@ -461,6 +466,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         ORDER BY sum_count DESC
         LIMIT $limit
     ";
+    //_v($query);
     //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
     $query = wrap_joined_wp_posts_query($query);
   } else {
