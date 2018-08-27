@@ -869,6 +869,7 @@ function generate_rakuten_product_link($atts){
     'title' => null,
     'desc' => null,
     'size' => 'm',
+    'price' => null,
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
@@ -1102,15 +1103,21 @@ function generate_rakuten_product_link($atts){
           $TitleAttr = esc_attr($Title);
           $TitleHtml = esc_html($Title);
 
+
           ///////////////////////////////////////////
-          // 検索ボタンの作成
+          // 値段表記
           ///////////////////////////////////////////
-          $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
+          $item_price_tag = null;
 
           ///////////////////////////////////////////
           // 説明文タグ
           ///////////////////////////////////////////
           $description_tag = get_item_description_tag($description);
+
+          ///////////////////////////////////////////
+          // 検索ボタンの作成
+          ///////////////////////////////////////////
+          $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
           ///////////////////////////////////////////
           // キャッシュ削除リンク

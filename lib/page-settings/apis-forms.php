@@ -100,7 +100,8 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_selectbox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort());
             generate_tips_tag(__( '同一商品番号の商品が複数あった場合の表示優先度です。', THEME_NAME ));
 
-
+            generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));
+            generate_tips_tag(__( 'データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ));
 
             echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
 

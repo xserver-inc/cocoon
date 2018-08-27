@@ -78,6 +78,14 @@ function get_rakuten_api_sort(){
 }
 endif;
 
+//楽天商品リンク価格表示
+define('OP_RAKUTEN_ITEM_PRICE_VISIBLE', 'rakuten_item_price_visible');
+if ( !function_exists( 'is_rakuten_item_price_visible' ) ):
+function is_rakuten_item_price_visible(){
+  return get_theme_option(OP_RAKUTEN_ITEM_PRICE_VISIBLE);
+}
+endif;
+
 //楽天検索ボタンを表示する
 define('OP_RAKUTEN_SEARCH_BUTTON_VISIBLE', 'rakuten_search_button_visible');
 if ( !function_exists( 'is_rakuten_search_button_visible' ) ):
