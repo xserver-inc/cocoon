@@ -919,7 +919,7 @@ function generate_rakuten_product_link($atts){
 
   //商品IDがない場合
   if (empty($id) && empty($search)) {
-    $error_message = __( 'id, no, searchオークションのいずれかが入力されていません。', THEME_NAME );
+    $error_message = __( 'id, no, searchオプションのいずれかが入力されていません。', THEME_NAME );
     return wrap_product_item_box($error_message);
   }
 
