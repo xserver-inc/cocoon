@@ -752,6 +752,7 @@ function generate_amazon_product_link($atts){
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
       if ($unix_date) {
         $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
+        date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
         $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ), $timestamp);//フォーマット変更
         //_v($acquired_date);
         //_v($FormattedPrice);
@@ -992,6 +993,7 @@ function generate_rakuten_product_link($atts){
     $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
+      date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
       $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ));
 
       //キャッシュの保存
