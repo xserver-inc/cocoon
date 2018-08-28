@@ -44,7 +44,7 @@ endif;
 define('OP_COMMENT_FORM_DISPLAY_TYPE', 'comment_form_display_type');
 if ( !function_exists( 'get_comment_form_display_type' ) ):
 function get_comment_form_display_type(){
-  return get_theme_option(OP_COMMENT_FORM_DISPLAY_TYPE, 'always');
+  return get_theme_option(OP_COMMENT_FORM_DISPLAY_TYPE, 'toggle_button');
 }
 endif;
 if ( !function_exists( 'is_comment_form_display_type_always' ) ):
