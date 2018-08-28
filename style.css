@@ -3821,7 +3821,6 @@ div.sbs-think .speech-balloon::after {
   margin: 1.6em auto;
   border: 3px solid #dfdfdf;
   box-sizing: border-box;
-  text-align: center;
   position: relative;
 }
 
@@ -4120,8 +4119,10 @@ div.sbs-think .speech-balloon::after {
     float: left !important;
   }
 
-  .product-item-content {
-    margin-bottom: 18px;
+  .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content {
+    width: auto;
+    overflow: visible !important;
+    text-align: center !important;
   }
 
   .booklink-link2,
@@ -4137,8 +4138,8 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
   .product-item-buttons > * {
-    width: 49%;
-    margin: 0 .5%;
+    width: 32%;
+    margin: 0 .5% !important;
     flex: 1 1 auto;
   }
   .booklink-link2 > * > a,
@@ -4158,6 +4159,14 @@ div.sbs-think .speech-balloon::after {
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
     width: 80px;
     min-width: 80px;
+  }
+
+  .booklink-link2 > *,
+  .kaerebalink-link1 > *,
+  .tomarebalink-link1 > *,
+  .product-item-buttons > * {
+    width: 49%;
+    margin: 0 .5% !important;
   }
 }
 .fb-like-box {
