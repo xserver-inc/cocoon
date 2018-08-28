@@ -113,7 +113,7 @@ endif;
 define('OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE', 'related_entry_card_post_date_visible');
 if ( !function_exists( 'is_related_entry_card_post_date_visible' ) ):
 function is_related_entry_card_post_date_visible(){
-  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE, 1);
+  return get_theme_option(OP_RELATED_ENTRY_CARD_POST_DATE_VISIBLE);
 }
 endif;
 
