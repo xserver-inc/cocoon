@@ -78,7 +78,7 @@
             <?php
             //generate_alert_tag('この機能は「外部リンク設定」機能に統合されました。この項目は、数バージョン表示の後削除されます。');
             generate_checkbox_tag(OP_EXTERNAL_BLOGCARD_TARGET_BLANK, is_external_blogcard_target_blank(), __( '新しいタブで開く', THEME_NAME ));
-            generate_tips_tag(__( 'ブログカードクリック時に新規タブを開きます。「内部リンク」が設定されている場合は、そちらが優先されます。', THEME_NAME ));
+            generate_tips_tag(__( 'ブログカードクリック時に新規タブを開きます。「外部リンク」が設定されている場合は、そちらが優先されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
