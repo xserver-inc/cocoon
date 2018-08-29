@@ -26,6 +26,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     $title = isset($instance['title']) ? $instance['title'] : '';
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $label = isset( $instance['label'] ) ? $instance['label'] : '';
+    $is_image_circle = !empty( $instance['is_image_circle'] );
 
     echo $args['before_widget'];
     if ($title) {
@@ -35,13 +36,15 @@ class AuthorBoxWidgetItem extends WP_Widget {
     //get_template_part('tmp/author-box');
     // if (!is_bbpress_page()) {
     // }
-    generate_author_box_tag($label);
+    generate_author_box_tag($label, $is_image_circle);
     echo $args['after_widget'];
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] = strip_tags(isset($new_instance['title']) ? $new_instance['title'] : '');
     $instance['label'] = isset($new_instance['label']) ? $new_instance['label'] : '';
+    $instance['is_image_circle'] = !empty($new_instance['is_image_circle']);
+    //_v($instance);
       return $instance;
   }
   function form($instance) {
@@ -49,6 +52,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
       $instance = array(
         'title' => null,
         'label' => null,
+        'is_image_circle' => 0,
       );
     }
     $title = null;
@@ -57,6 +61,9 @@ class AuthorBoxWidgetItem extends WP_Widget {
       $title = esc_attr($instance['title']);
     if (isset($instance['label']))
       $label = esc_attr($instance['label']);
+
+    $is_image_circle = !empty($instance['is_image_circle']);
+
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -72,9 +79,15 @@ class AuthorBoxWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('label'); ?>" name="<?php echo $this->get_field_name('label'); ?>" type="text" value="<?php echo $label; ?>" placeholder="<?php _e( '例：この記事を書いた人', THEME_NAME ) ?>" />
     </p>
+    <?php //画像を円形にする ?>
+    <p>
+      <?php
+      generate_checkbox_tag( $this->get_field_name('is_image_circle'), $is_image_circle, __( '画像を円形にする', THEME_NAME ));
+      ?>
+    </p>
     <?php //プロフィールページへの誘導 ?>
     <p>
-      <?php _e( '※「プロフィール情報」や、「フォローボタン」はプロフィールページにて変更してください。', THEME_NAME ) ?><br>
+      <?php _e( '※「プロフィール画像・情報」や、「フォローボタン」はプロフィールページにて変更してください。', THEME_NAME ) ?><br>
       <a href="profile.php" target="_blank"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>
     </p>
     <?php
