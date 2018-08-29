@@ -78,5 +78,26 @@
 // }
 
 .nwa{
-  @include author_box_nallow;
+  //@include author_box_nallow;
+  .author-box{
+    text-align: center;
+    max-width: 336px;
+    .author-thumb{
+      float: none;
+      max-width: 150px;
+      margin: 9px auto 0;
+    }
+    .author-content{
+      margin: 0;
+      font-size: 0.9em;
+    }
+
+    .sns-follow-buttons{
+      display: block;
+      a{
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
 }

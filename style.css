@@ -1898,29 +1898,6 @@ span.internal-icon {
   font-size: 0.9em;
 }
 
-.nwa .blogcard-wrap {
-  width: 100%;
-}
-.nwa .blogcard-thumbnail {
-  width: 30%;
-}
-.nwa .blogcard-snipet {
-  font-size: 12px;
-}
-.nwa .blogcard-content {
-  margin-left: 31.6%;
-  margin-right: 0;
-  max-height: 120px;
-  min-height: 80px;
-  font-size: 0.9em;
-  line-height: 1.2;
-}
-.nwa .ib-right .blogcard-content,
-.nwa .eb-right .blogcard-content {
-  margin-right: 31.6%;
-  margin-left: 0;
-}
-
 /************************************
 ** ウィジェット
 ************************************/
@@ -3565,14 +3542,24 @@ canvas, iframe, video,
 }
 
 .nwa .author-box {
-  font-size: 0.74em;
-  line-height: 1.3;
+  text-align: center;
+  max-width: 336px;
 }
 .nwa .author-box .author-thumb {
-  width: 24%;
+  float: none;
+  max-width: 150px;
+  margin: 9px auto 0;
 }
 .nwa .author-box .author-content {
-  margin-left: 26%;
+  margin: 0;
+  font-size: 0.9em;
+}
+.nwa .author-box .sns-follow-buttons {
+  display: block;
+}
+.nwa .author-box .sns-follow-buttons a {
+  display: inline-block;
+  margin: 0;
 }
 
 /************************************
