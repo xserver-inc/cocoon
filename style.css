@@ -6497,6 +6497,23 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .e-card-content {
     padding-bottom: 0;
   }
+
+  .ect-entry-card .card-thumb,
+  .rect-entry-card .card-thumb {
+    margin-bottom: 6px;
+  }
+  .ect-entry-card .card-content,
+  .rect-entry-card .card-content {
+    margin: 0;
+  }
+  .ect-entry-card .card-snippet,
+  .rect-entry-card .card-snippet {
+    clear: both;
+  }
+  .ect-entry-card .card-meta,
+  .rect-entry-card .card-meta {
+    clear: both;
+  }
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,

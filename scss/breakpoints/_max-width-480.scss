@@ -374,3 +374,19 @@ a.facebook-follow-button{
 .e-card-content{
   padding-bottom: 0;
 }
+
+.ect-entry-card,
+.rect-entry-card{
+  .card-thumb{
+    margin-bottom: 6px;
+  }
+  .card-content{
+    margin: 0;
+  }
+  .card-snippet{
+    clear: both;
+  }
+  .card-meta{
+    clear: both;
+  }
+}
