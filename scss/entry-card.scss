@@ -169,8 +169,12 @@
     .entry-card-content{
       padding: 0;
     }
+    .card-snippet{
+      padding: 0;
+      margin: 0;
+    }
     .card-meta{
-      position: relative;
+      position: static;
     }
   }
   &.ect-tile-card{

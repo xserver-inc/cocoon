@@ -916,8 +916,12 @@ img {
 .ect-vertical-card.ect-tile-card .entry-card-content {
   padding: 0;
 }
+.ect-vertical-card.ect-tile-card .card-snippet {
+  padding: 0;
+  margin: 0;
+}
 .ect-vertical-card.ect-tile-card .card-meta {
-  position: relative;
+  position: static;
 }
 .ect-vertical-card.ect-tile-card .a-wrap {
   margin: 0 0.16666% 12px;
@@ -6242,6 +6246,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .entry-card-snippet,
   .related-entry-card-snippet {
     font-size: 13px;
+    padding-bottom: 1.6em;
     margin-bottom: 1.6em;
   }
 
@@ -6490,7 +6495,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     display: none;
   }
 
-  .a-wrap {
+  .entry-card-wrap.a-wrap {
     padding: 0.5%;
   }
 
@@ -6503,20 +6508,31 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .ect-entry-card .card-thumb,
-  .rect-entry-card .card-thumb {
+  .rect-entry-card .card-thumb,
+  .ect-big-card-first .card-thumb {
     margin-bottom: 6px;
   }
   .ect-entry-card .card-content,
-  .rect-entry-card .card-content {
+  .rect-entry-card .card-content,
+  .ect-big-card-first .card-content {
     margin: 0;
   }
   .ect-entry-card .card-snippet,
-  .rect-entry-card .card-snippet {
+  .rect-entry-card .card-snippet,
+  .ect-big-card-first .card-snippet {
+    margin-bottom: 0;
     clear: both;
   }
   .ect-entry-card .card-meta,
-  .rect-entry-card .card-meta {
+  .rect-entry-card .card-meta,
+  .ect-big-card-first .card-meta {
     clear: both;
+  }
+
+  .ect-vertical-card .entry-card-wrap {
+    width: 48%;
+    padding: 0.5% !important;
+    margin: 0.5% 0.5% 1.5% !important;
   }
 }
 @media screen and (max-width: 356px) {

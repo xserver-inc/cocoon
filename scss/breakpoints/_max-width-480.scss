@@ -24,6 +24,7 @@ h3{
 .entry-card-snippet,
 .related-entry-card-snippet{
   font-size: 13px;
+  padding-bottom: 1.6em;
   margin-bottom: 1.6em;
 }
 
@@ -367,7 +368,7 @@ a.facebook-follow-button{
   }
 }
 
-.a-wrap{
+.entry-card-wrap.a-wrap{
   padding: 0.5%;
 }
 
@@ -380,7 +381,8 @@ a.facebook-follow-button{
 }
 
 .ect-entry-card,
-.rect-entry-card{
+.rect-entry-card,
+.ect-big-card-first{
   .card-thumb{
     margin-bottom: 6px;
   }
@@ -388,9 +390,20 @@ a.facebook-follow-button{
     margin: 0;
   }
   .card-snippet{
+    margin-bottom: 0;
     clear: both;
   }
   .card-meta{
     clear: both;
+    //position: static;
+  }
+}
+
+
+.ect-vertical-card{
+  .entry-card-wrap{
+    width: 48%;
+    padding: 0.5% !important;
+    margin: 0.5% 0.5% 1.5% !important;
   }
 }
