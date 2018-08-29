@@ -951,12 +951,13 @@ function generate_author_box_tag($label, $is_image_circle = 0){
   ?>
   <div class="author-box no-icon cf">
     <?php //ウィジェット名がある場合
+    $image_class = $is_image_circle ? ' circle-image' : null;
     if ($label): ?>
       <div class="author-widget-name">
         <?php echo $label; ?>
       </div>
     <?php endif ?>
-    <figure class="author-thumb">
+    <figure class="author-thumb<?php echo $image_class; ?>">
       <?php echo get_avatar( $author_id, 200 ); ?>
     </figure>
     <div class="author-content">

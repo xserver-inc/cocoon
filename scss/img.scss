@@ -12,6 +12,10 @@ img{
   -webkit-backface-visibility: hidden;
 }
 
+.circle-image img{
+  border-radius: 50%;
+}
+
 /************************************
 ** 画像の囲み効果
 ************************************/
