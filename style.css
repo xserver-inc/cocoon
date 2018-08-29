@@ -6242,6 +6242,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .entry-card-snippet,
   .related-entry-card-snippet {
     font-size: 13px;
+    margin-bottom: 1.6em;
   }
 
   .cat-label {
@@ -6489,9 +6490,12 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     display: none;
   }
 
+  .a-wrap {
+    padding: 0.5%;
+  }
+
   .e-card-meta {
     margin-top: 2px;
-    position: static;
   }
 
   .e-card-content {

@@ -23,7 +23,8 @@ h3{
 
 .entry-card-snippet,
 .related-entry-card-snippet{
-	font-size: 13px;
+  font-size: 13px;
+  margin-bottom: 1.6em;
 }
 
 .cat-label{
@@ -366,9 +367,12 @@ a.facebook-follow-button{
   }
 }
 
+.a-wrap{
+  padding: 0.5%;
+}
+
 .e-card-meta{
   margin-top: 2px;
-  position: static;
 }
 
 .e-card-content{
