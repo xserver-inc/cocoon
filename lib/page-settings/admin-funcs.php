@@ -287,3 +287,26 @@ function is_admin_multi_screen_resolution_test_visible(){
   return get_theme_option(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, 1);
 }
 endif;
+
+//投稿・固定ページで管理パネルを表示してよいか
+if ( !function_exists( 'is_admin_panel_singular_page_visible' ) ):
+function is_admin_panel_singular_page_visible(){
+  return is_singular() && (
+       is_admin_panel_pv_area_visible()
+    || is_admin_panel_edit_area_visible()
+    || is_admin_panel_amp_area_visible()
+    || is_admin_panel_check_tools_area_visible()
+    || is_admin_panel_responsive_tools_area_visible()
+  );
+}
+endif;
+
+//投稿・固定ページ以外で管理パネルを表示してよいか
+if ( !function_exists( 'is_admin_panel_not_singular_page_visible' ) ):
+function is_admin_panel_not_singular_page_visible(){
+  return !is_singular() && (
+       is_admin_panel_check_tools_area_visible()
+    || is_admin_panel_responsive_tools_area_visible()
+  );
+}
+endif;

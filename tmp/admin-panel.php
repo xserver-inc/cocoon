@@ -10,6 +10,7 @@ if (is_user_administrator()
   && is_admin_panel_visible()
   && !is_amp()
   && !isset($_GET['demo'])
+  && (is_admin_panel_singular_page_visible() || is_admin_panel_not_singular_page_visible())
 ):
 ?>
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
