@@ -356,7 +356,7 @@ function get_amazon_itemlookup_xml($asin){
     //リクエストにより変更↓
     'Operation' => 'ItemLookup',
     'ItemId' => $asin,
-    'ResponseGroup' => 'ItemAttributes,Images',
+    'ResponseGroup' => 'ItemAttributes,Images,Offers',
     //署名用タイムスタンプ
     'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
   );
@@ -745,6 +745,29 @@ function generate_amazon_product_link($atts){
       $Price = esc_html($ListPrice->Amount);
       $FormattedPrice = esc_html($ListPrice->FormattedPrice);
 
+      ///////////////////////////////////////////
+      // OfferSummary尚価格取得
+      ///////////////////////////////////////////
+      $OfferSummary = $item->OfferSummary;
+      if ($OfferSummary) {
+        $LowestNewPrice = $OfferSummary->LowestNewPrice->FormattedPrice;
+        if ($LowestNewPrice) {
+          $FormattedPrice = $LowestNewPrice;
+        } else {
+          $LowestUsedPrice = $OfferSummary->LowestUsedPrice->FormattedPrice;
+          if ($LowestUsedPrice) {
+            $FormattedPrice = $LowestUsedPrice;
+          } else {
+            $LowestCollectiblePrice = $OfferSummary->LowestCollectiblePrice->FormattedPrice;
+            if ($LowestCollectiblePrice) {
+              $FormattedPrice = $LowestCollectiblePrice;
+            }
+          }
+
+        }
+        //_v($OfferSummary);
+      }
+
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
       ///////////////////////////////////////////
@@ -760,7 +783,7 @@ function generate_amazon_product_link($atts){
         //_v($acquired_date);
         //_v($FormattedPrice);
         if ((is_amazon_item_price_visible() || $price === '1')
-             && $ListPrice
+             && $FormattedPrice
              && $price !== '0'
            ) {
           $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
