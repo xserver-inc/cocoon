@@ -3551,7 +3551,7 @@ canvas, iframe, video,
 }
 .nwa .author-box .author-thumb {
   float: none;
-  max-width: 150px;
+  width: 100px;
   margin: 9px auto 0;
 }
 .nwa .author-box .author-content {
