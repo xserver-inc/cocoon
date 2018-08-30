@@ -339,7 +339,7 @@ function get_amazon_itemlookup_xml($asin){
   $transient_bk_id = get_amazon_api_transient_bk_id($asin);
   $xml_cache = get_transient( $transient_id );
   //_v($xml_cache);
-  if ($xml_cache) {
+  if ($xml_cache && DEBUG_CACHE_ENABLE) {
     //_v($xml_cache);
     return $xml_cache;
   }
@@ -401,17 +401,19 @@ function get_amazon_itemlookup_xml($asin){
     if (property_exists($xml->Error, 'Code')) {
       //バックアップキャッシュの確認
       $xml_cache = get_transient( $transient_bk_id );
-      if ($xml_cache) {
+      if ($xml_cache && DEBUG_CACHE_ENABLE) {
         return $xml_cache;
       }
       return $res;
     }
-    //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-    $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
-    //Amazon APIキャッシュの保存
-    set_transient($transient_id, $res, $expiration);
-    //Amazon APIバックアップキャッシュの保存
-    set_transient($transient_bk_id, $res, $expiration * 2);
+    if (DEBUG_CACHE_ENABLE) {
+      //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+      $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
+      //Amazon APIキャッシュの保存
+      set_transient($transient_id, $res, $expiration);
+      //Amazon APIバックアップキャッシュの保存
+      set_transient($transient_bk_id, $res, $expiration * 2);
+    }
 
     return $res;
   }
@@ -610,6 +612,7 @@ function generate_amazon_product_link($atts){
 
 
   $res = get_amazon_itemlookup_xml($asin);
+  //_v($res);
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
@@ -641,7 +644,7 @@ function generate_amazon_product_link($atts){
       //_v($xml);
 
       //var_dump($xml->Items->Errors);
-      // _v($item);
+      //_v($item);
       $ASIN = esc_html($item->ASIN);
 
       ///////////////////////////////////////
