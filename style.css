@@ -174,7 +174,7 @@ div.sub-caption {
 }
 
 .entry-card-content, .related-entry-card-content {
-  padding-bottom: 1.6em;
+  padding-bottom: 1.2em;
 }
 
 .entry-card-title, .related-entry-card-title {
@@ -6233,26 +6233,21 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .entry-card,
   .related-entry-card,
-  .entry-card-title,
-  .related-entry-card-title {
+  .e-card-title {
     line-height: 1.1;
   }
 
-  .entry-card-title,
-  .related-entry-card-title {
+  .e-card-title {
     font-size: 16px;
   }
 
-  .entry-card-snippet,
-  .related-entry-card-snippet {
+  .e-card-snippet {
     font-size: 13px;
-    padding-bottom: 1.6em;
-    margin-bottom: 1.6em;
   }
 
   .cat-label {
-    font-size: 8px;
-    padding: 0 3px;
+    font-size: 10px;
+    padding: 1px 3px;
   }
 
   .page-numbers {
@@ -6501,10 +6496,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .e-card-meta {
     margin-top: 2px;
-  }
-
-  .e-card-content {
-    padding-bottom: 0;
   }
 
   .ect-entry-card .card-thumb,

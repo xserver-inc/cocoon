@@ -10,27 +10,23 @@ h3{
 
 .entry-card,
 .related-entry-card,
-.entry-card-title,
-.related-entry-card-title{
+.e-card-title{
   line-height: 1.1;
 }
 
-
-.entry-card-title,
-.related-entry-card-title{
+.e-card-title{
   font-size: 16px;
 }
 
-.entry-card-snippet,
-.related-entry-card-snippet{
+.e-card-snippet{
   font-size: 13px;
-  padding-bottom: 1.6em;
-  margin-bottom: 1.6em;
+  // padding-bottom: 1.6em;
+  // margin-bottom: 1.6em;
 }
 
 .cat-label{
-  font-size: 8px;
-  padding: 0 3px;
+  font-size: 10px;
+  padding: 1px 3px;
 }
 
 .page-numbers{
@@ -376,9 +372,9 @@ a.facebook-follow-button{
   margin-top: 2px;
 }
 
-.e-card-content{
-  padding-bottom: 0;
-}
+// .e-card-content{
+//   padding-bottom: 1.2em;
+// }
 
 .ect-entry-card,
 .rect-entry-card,

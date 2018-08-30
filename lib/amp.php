@@ -858,6 +858,10 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
     }
     //カッコ{css codf}のみになっているCSSを削除
     $css = preg_replace('/(\{.+?\})(\{.+?\})+/i', '$1', $css);
+
+    //余計なメディアクエリを削除
+    //$css = preg_replace('/@media screen and \(max-width:\d+px\)\{\}/i', '', $css);
+
     // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
     // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
     // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
