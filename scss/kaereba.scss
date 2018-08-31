@@ -294,7 +294,7 @@
   }
 
   .product-item-thumb{
-    width: auto;
+    width: 100%;
     min-width: none;
   }
 }
@@ -358,8 +358,8 @@
 
 @mixin product_item_box_480{
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb{
-    width: 80px !important;
-    min-width: 80px !important;
+    width: 80px;
+    min-width: 80px;
   }
 
   .booklink-link2,
