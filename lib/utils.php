@@ -522,7 +522,7 @@ function wp_enqueue_slick(){
                       }
                     },
                     {
-                      breakpoint: 1030,
+                      breakpoint: 1023,
                       settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4

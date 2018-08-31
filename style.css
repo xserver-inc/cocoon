@@ -5911,7 +5911,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
     margin: 0;
@@ -5977,6 +5977,18 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .logo-footer {
     margin: 8px auto;
+  }
+
+  .mobile-menu-buttons {
+    display: flex;
+  }
+
+  .mobile-button-slide-in .go-to-top-button {
+    display: none;
+  }
+
+  .mblt-slide-in .footer {
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -6203,18 +6215,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .apdt-mobile-only {
     display: flex;
-  }
-
-  .mobile-menu-buttons {
-    display: flex;
-  }
-
-  .mobile-button-slide-in .go-to-top-button {
-    display: none;
-  }
-
-  .mblt-slide-in .footer {
-    margin-bottom: 50px;
   }
 
   .ranking-item-image-tag {
