@@ -52,6 +52,9 @@ function title_parts_custom( $title ){
       $title['title'] = get_the_page_seo_title();
     }
     $title['site'] = '';
+    if ($simplified_site_name = get_simplified_site_name()) {
+      $site_name = $simplified_site_name;
+    }
     switch (get_singular_page_title_format()) {
       case 'pagetitle_sitename':
         $title['site'] = $site_name;
