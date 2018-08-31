@@ -143,6 +143,12 @@
             );
             generate_radiobox_tag(OP_SINGULAR_PAGE_TITLE_FORMAT, $options, get_singular_page_title_format());
             generate_tips_tag(__( '投稿・固定ページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+
+            generate_label_tag(OP_SIMPLIFIED_SITE_NAME, __('簡略化したサイト名', THEME_NAME) );
+            echo '<br>';
+            generate_textbox_tag(OP_SIMPLIFIED_SITE_NAME, get_simplified_site_name(), '', 20);
+            generate_tips_tag(__( 'サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。', THEME_NAME ));
+
             ?>
           </td>
         </tr>

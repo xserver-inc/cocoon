@@ -97,15 +97,26 @@ function get_singular_page_title_format(){
   return get_theme_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
 }
 endif;
+//簡略化したサイト名
+define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
+if ( !function_exists( 'get_simplified_site_name' ) ):
+function get_simplified_site_name(){
+  return esc_html(get_theme_option(OP_SIMPLIFIED_SITE_NAME));
+}
+endif;
 //投稿・固定ページタイトルのキャプションを取得する
 if ( !function_exists( 'get_singular_title_caption' ) ):
 function get_singular_title_caption($post){
+  $site_name = get_simplified_site_name();
+  if (!$site_name) {
+    $site_name = get_bloginfo('name');
+  }
   switch (get_singular_page_title_format()) {
     case 'pagetitle_sitename':
-      $title = $post->post_title.get_title_separator_caption().get_bloginfo('name');
+      $title = $post->post_title.get_title_separator_caption().$site_name;
       break;
     case 'sitename_pagetitle':
-      $title = get_bloginfo('name').get_title_separator_caption().$post->post_title;
+      $title = $site_name.get_title_separator_caption().$post->post_title;
       break;
     default:
       $title = $post->post_title;
