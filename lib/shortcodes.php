@@ -833,8 +833,8 @@ function generate_amazon_product_link($atts){
               '</div>'.
               $item_price_tag.
               $description_tag.
-              $buttons_tag.
             '</div>'.
+            $buttons_tag.
           '</div>'.
           $product_item_admin_tag.
         '</div>';
@@ -1196,8 +1196,8 @@ function generate_rakuten_product_link($atts){
                   '</div>'.
                   $item_price_tag.
                   $description_tag.
-                  $buttons_tag.
                 '</div>'.
+                $buttons_tag.
               '</div>'.
               $product_item_admin_tag.
             '</div>';

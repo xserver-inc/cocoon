@@ -3972,7 +3972,6 @@ div.sbs-think .speech-balloon::after {
   .product-item-buttons a {
     width: auto;
     text-align: center;
-    margin: 0;
     border-radius: 3px;
   }
   .booklink-link2 a img,
@@ -4102,9 +4101,67 @@ div.sbs-think .speech-balloon::after {
   font-size: 0.9em;
 }
 
+.nwa .booklink-box, .nwa .kaerebalink-box, .nwa .tomarebalink-box, .nwa .product-item-box {
+  padding: 10px 10px 24px;
+  display: block;
+}
+.nwa .booklink-image, .nwa .kaerebalink-image, .nwa .tomarebalink-image, .nwa .product-item-thumb {
+  width: 120px;
+  min-width: 120px;
+  margin-right: 3% !important;
+  float: left !important;
+  height: 100% !important;
+}
+.nwa .booklink-info, .nwa .kaerebalink-info, .nwa .tomarebalink-info, .nwa .product-item-content {
+  width: auto !important;
+  overflow: visible !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
+.nwa .booklink-link2,
+.nwa .kaerebalink-link1,
+.nwa .tomarebalink-link1,
+.nwa .product-item-buttons {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.nwa .booklink-link2 > *,
+.nwa .kaerebalink-link1 > *,
+.nwa .tomarebalink-link1 > *,
+.nwa .product-item-buttons > * {
+  width: 32%;
+  margin: 0 .5% !important;
+  flex: 1 1 auto;
+}
+.nwa .booklink-link2 > * > a,
+.nwa .kaerebalink-link1 > * > a,
+.nwa .tomarebalink-link1 > * > a,
+.nwa .product-item-buttons > * > a {
+  width: auto;
+  font-size: 11px;
+  padding: 6px 0;
+}
+.nwa .product-item-box::after {
+  font-size: 18px;
+}
+.nwa .booklink-image, .nwa .kaerebalink-image, .nwa .tomarebalink-image, .nwa .product-item-thumb {
+  width: 80px !important;
+  min-width: 80px !important;
+}
+.nwa .booklink-link2 > *,
+.nwa .kaerebalink-link1 > *,
+.nwa .tomarebalink-link1 > *,
+.nwa .product-item-buttons > * {
+  width: 49%;
+  margin: 0 .5% !important;
+}
+
 @media screen and (max-width: 768px) {
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box {
     padding: 10px 10px 24px;
+    display: block;
   }
 
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
@@ -4112,12 +4169,14 @@ div.sbs-think .speech-balloon::after {
     min-width: 120px;
     margin-right: 3% !important;
     float: left !important;
+    height: 100% !important;
   }
 
   .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content {
-    width: auto;
+    width: auto !important;
     overflow: visible !important;
     text-align: center !important;
+    padding: 0 !important;
   }
 
   .booklink-link2,
@@ -4152,8 +4211,8 @@ div.sbs-think .speech-balloon::after {
 }
 @media screen and (max-width: 480px) {
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
-    width: 80px;
-    min-width: 80px;
+    width: 80px !important;
+    min-width: 80px !important;
   }
 
   .booklink-link2 > *,
