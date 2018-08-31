@@ -101,7 +101,7 @@ endif;
 define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
 if ( !function_exists( 'get_simplified_site_name' ) ):
 function get_simplified_site_name(){
-  return esc_html(get_theme_option(OP_SIMPLIFIED_SITE_NAME));
+  return esc_html(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
 }
 endif;
 //投稿・固定ページタイトルのキャプションを取得する
