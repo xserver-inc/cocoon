@@ -105,3 +105,11 @@ img{
     }
   }
 }
+
+img.emoji {
+	display: inline;
+	width: 1em;
+	height: auto;
+	vertical-align: text-bottom;
+	margin-right: 0.1em;
+}
