@@ -183,7 +183,7 @@
     }
   }
 }
-.ect-2-columns .ad-area{
+.ect-2-columns > *{
   width: 49.5%;
   display: inline-block;
 }
@@ -205,8 +205,9 @@
   //   }
   // }
 }
-.ect-3-columns .ad-area{
+.ect-3-columns > *{
   width: 33%;
+  display: inline-block;
 }
 
 
