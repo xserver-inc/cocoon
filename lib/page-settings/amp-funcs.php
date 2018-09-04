@@ -22,6 +22,24 @@ function get_amp_logo_image_url(){
 }
 endif;
 
+//AMP画像の拡大効果
+define('OP_AMP_IMAGE_ZOOM_EFFECT', 'amp_image_zoom_effect');
+if ( !function_exists( 'get_amp_image_zoom_effect' ) ):
+function get_amp_image_zoom_effect(){
+  return get_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT, 'amp-image-lightbox');
+}
+endif;
+if ( !function_exists( 'is_amp_image_zoom_effect_lightbox' ) ):
+function is_amp_image_zoom_effect_lightbox(){
+  return get_amp_image_zoom_effect() == 'amp-image-lightbox';
+}
+endif;
+if ( !function_exists( 'is_amp_image_zoom_effect_gallery' ) ):
+function is_amp_image_zoom_effect_gallery(){
+  return get_amp_image_zoom_effect() == 'amp-lightbox-gallery';
+}
+endif;
+
 //AMPバリデーションツール
 define('AVT_AMP_TEST', 'https://search.google.com/test/amp');
 define('AVT_THE_AMP_VALIDATOR', 'https://validator.ampproject.org/#');
