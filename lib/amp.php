@@ -492,13 +492,13 @@ function convert_content_for_amp($the_content){
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
       $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      $append      = '<p><amp-img on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
+      $append      = '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
       $the_content = preg_replace( $pattern, $append, $the_content );
       break;
     case 'amp-lightbox-gallery':
       // amp-img を amp-lightbox-gallery 用に置換
       $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      $append      = '<p><amp-img lightbox$1></p>';
+      $append      = '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox$1></p>';
       $the_content = preg_replace( $pattern, $append, $the_content );
       break;
   }

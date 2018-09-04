@@ -140,11 +140,11 @@ a.top-menu-a{
 }
 
 //AMP Lightbox用
-amp-img[role=button] {
+amp-img.amp-lightbox {
   cursor: zoom-in;
 }
 amp-image-lightbox {
-  background: rgba(0, 0, 0, .95);
+  background: rgba(0, 0, 0, .8);
 }
 
 // .amazon-parts amp-iframe{
