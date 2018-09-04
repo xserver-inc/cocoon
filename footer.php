@@ -87,6 +87,9 @@
 
   <?php //フッター挿入用のユーザー用テンプレート
   if (is_amp()) {
+    //親テーマのAMPフッター用
+    get_template_part('tmp/amp-footer-insert');
+    //子テーマのAMPフッター用
     get_template_part('tmp-user/amp-footer-insert');
   } else {
     get_template_part('tmp-user/footer-insert');

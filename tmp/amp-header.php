@@ -42,6 +42,7 @@ $elements = array(
   'amp-iframe' => 'amp-iframe-0.1.js',
   'amp-audio' => 'amp-audio-0.1.js',
   'amp-video' => 'amp-video-0.1.js',
+  'amp-image-lightbox' => 'amp-image-lightbox-0.1.js',
   //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 
@@ -62,6 +63,12 @@ if( (strpos($all_content, 'class="amp-form') !== false) || is_mobile_button_layo
 if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_manager_tracking_id()) )  {
   echo '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'.PHP_EOL;
 }
+
+//AMP Lightboxギャラリーが有効な時
+if (is_amp_image_zoom_effect_gallery()) {
+  echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
+}
+
 //Font Awesome様のスタイルの読み込み
 echo '<link rel="stylesheet" href="'.FONT_AWESOME_CDN_URL.'">'.PHP_EOL;
 //Google Fontsスタイルの読み込み

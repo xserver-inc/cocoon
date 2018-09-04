@@ -41,6 +41,23 @@
           </td>
         </tr>
 
+        <!--  画像の拡大効果 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AMP_IMAGE_ZOOM_EFFECT, __( '画像の拡大効果', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'none' => 'なし',
+              'amp-image-lightbox' => __( 'AMP Lightbox（単一拡大）', THEME_NAME ),
+              'amp-lightbox-gallery' => __( 'AMPギャラリー（複数画像ギャラリー表示対応）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_AMP_IMAGE_ZOOM_EFFECT, $options, get_amp_image_zoom_effect());
+            generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
         <!-- AMPバリデーター -->
         <!--
         <tr>

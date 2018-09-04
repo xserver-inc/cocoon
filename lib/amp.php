@@ -487,11 +487,30 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
 
+
+  switch (get_amp_image_zoom_effect()) {
+    case 'amp-image-lightbox':
+      //amp-img を amp-image-lightbox 用に置換
+      $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
+      $append      = '<p><amp-img on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
+      $the_content = preg_replace( $pattern, $append, $the_content );
+      break;
+    case 'amp-lightbox-gallery':
+      // amp-img を amp-lightbox-gallery 用に置換
+      $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
+      $append      = '<p><amp-img lightbox$1></p>';
+      $the_content = preg_replace( $pattern, $append, $the_content );
+      break;
+  }
+
+    //$the_content = str_replace('</body>', '<amp-image-lightbox id="amp-lightbox" layout="nodisplay"></amp-image-lightbox></body>', $the_content);
+    //_v($the_content);
+
   // echo('<pre>');
   // var_dump(htmlspecialchars($the_content));
   // echo('</pre>');
 
-  return $the_content;
+  return apply_filters('convert_content_for_amp', $the_content);
 }//convert_content_for_amp
 endif;
 
@@ -631,7 +650,11 @@ function get_the_singular_content(){
     dynamic_sidebar('footer-right');
     $footer_content = ob_get_clean();
 
-    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content;
+    ob_start();//バッファリング
+    get_template_part('tmp/amp-footer-insert');
+    $footer_insert = ob_get_clean();
+
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
   //endwhile;
   //$all_content = convert_content_for_amp($all_content);
   return $all_content;
@@ -950,16 +973,21 @@ function html_ampfy_call_back( $html ) {
   if ($head_tag && $body_tag) {
     //bodyタグ内をAMP化
     $body_tag = convert_content_for_amp($body_tag);
-    $html_all = $head_tag . $body_tag;
+    //AMP用headタグ編集用のフック
+    $head_tag = apply_filters('amp_html_head_tag', $head_tag);
+    //AMP用bodyタグ編集用のフック
+    $body_tag = apply_filters('amp_html_body_tag', $body_tag);
+    $all_tag = $head_tag . $body_tag;
 
     //AMPキャッシュの保存
-    $is_include_body = includes_string($html_all, '</body>');
+    $is_include_body = includes_string($all_tag, '</body>');
     if ($is_include_body && DEBUG_CACHE_ENABLE && !is_user_administrator()) {
       set_transient($transient_id, $transient_file, DAY_IN_SECONDS * 1);
-      put_file_contents($transient_file, $html_all);
+      put_file_contents($transient_file, $all_tag);
     }
 
-    return $html_all;
+    //AMP用全てのHTMLタグ編集用のフック
+    return $body_tag = apply_filters('amp_html_all_tag', $all_tag);
   }
 
   //_v($body);

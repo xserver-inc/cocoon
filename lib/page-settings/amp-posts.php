@@ -12,6 +12,9 @@ update_theme_option(OP_AMP_ENABLE);
 //AMPロゴ
 update_theme_option(OP_AMP_LOGO_IMAGE_URL);
 
+//AMP画像の拡大効果
+update_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT);
+
 //AMPバリデーションツール
 update_theme_option(OP_AMP_VALIDATOR);
 

@@ -139,6 +139,14 @@ a.top-menu-a{
   width: 0;
 }
 
+//AMP Lightbox用
+amp-img[role=button] {
+  cursor: zoom-in;
+}
+amp-image-lightbox {
+  background: rgba(0, 0, 0, .95);
+}
+
 // .amazon-parts amp-iframe{
 //   min-height: 208px;
 //   max-width: 120px;
