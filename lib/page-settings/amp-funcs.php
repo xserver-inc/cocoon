@@ -26,7 +26,7 @@ endif;
 define('OP_AMP_IMAGE_ZOOM_EFFECT', 'amp_image_zoom_effect');
 if ( !function_exists( 'get_amp_image_zoom_effect' ) ):
 function get_amp_image_zoom_effect(){
-  return get_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT, 'amp-image-lightbox');
+  return get_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT, 'amp-lightbox-gallery');
 }
 endif;
 if ( !function_exists( 'is_amp_image_zoom_effect_lightbox' ) ):
