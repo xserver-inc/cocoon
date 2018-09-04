@@ -495,7 +495,7 @@ function convert_content_for_amp($the_content){
 
     $the_content = preg_replace( $pattern, $append, $the_content );
 
-    $the_content = str_replace('</body>', '<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script></body>', $the_content);
+    //$the_content = str_replace('</body>', '<amp-image-lightbox id="amp-lightbox" layout="nodisplay"></amp-image-lightbox></body>', $the_content);
     //_v($the_content);
 
   // echo('<pre>');
@@ -642,7 +642,11 @@ function get_the_singular_content(){
     dynamic_sidebar('footer-right');
     $footer_content = ob_get_clean();
 
-    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content;
+    ob_start();//バッファリング
+    get_template_part('tmp/amp-footer-insert');
+    $footer_insert = ob_get_clean();
+
+    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
   //endwhile;
   //$all_content = convert_content_for_amp($all_content);
   return $all_content;

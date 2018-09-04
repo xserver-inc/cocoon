@@ -1,0 +1,1 @@
+<amp-image-lightbox id="amp-lightbox" layout="nodisplay"></amp-image-lightbox>
