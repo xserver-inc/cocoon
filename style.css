@@ -6083,6 +6083,21 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-left: 0;
   }
 
+  .ss-top .sns-share-buttons a,
+  .ss-bottom .sns-share-buttons a {
+    font-size: 14px;
+  }
+  .ss-top .sns-share-buttons a .button-caption,
+  .ss-bottom .sns-share-buttons a .button-caption {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+
+  .sns-share.ss-top.ss-col-6 a,
+  .sns-share.ss-bottom.ss-col-6 a {
+    width: 32%;
+  }
+
   .sns-follow-buttons {
     flex-wrap: wrap;
     justify-content: space-around;
@@ -6356,21 +6371,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   body {
     font-size: 16px;
-  }
-
-  .ss-top .sns-share-buttons a,
-  .ss-bottom .sns-share-buttons a {
-    font-size: 14px;
-  }
-  .ss-top .sns-share-buttons a .button-caption,
-  .ss-bottom .sns-share-buttons a .button-caption {
-    font-size: 14px;
-    margin-left: 4px;
-  }
-
-  .sns-share.ss-top.ss-col-6 a,
-  .sns-share.ss-bottom.ss-col-6 a {
-    width: 32%;
   }
 
   .pager-post-navi a figure {
