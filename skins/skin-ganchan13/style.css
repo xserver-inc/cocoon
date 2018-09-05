@@ -431,6 +431,13 @@ div.list {
     border-bottom: 15px solid transparent;
     content: " ";
 }
+.nwa .author-content:before{
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #666;
+    border-left: 15px solid transparent;
+    top: 90px;
+    left: calc(46%);
+}
 
 @media screen and (max-width: 480px){
   .author-content{
