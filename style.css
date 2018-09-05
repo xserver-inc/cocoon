@@ -6596,8 +6596,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,
-  .rect-vartical-card .related-entry-card-wrap {
-    width: 100%;
+  .rect-vartical-card .related-entry-card-wrap,
+  .ect-2-columns > *,
+  .ect-3-columns > * {
+    width: 100% !important;
   }
 }
 @media print {
