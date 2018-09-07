@@ -479,7 +479,7 @@ function get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affil
         $yahoo_tag.
       '</div>';
   }
-  return $buttons_tag;
+  return apply_filters( 'get_search_buttons_tag', $buttons_tag );
 }
 endif;
 
@@ -516,7 +516,7 @@ function get_item_price_tag($price, $date = null){
       $date_tag.
     '</div>';
   }
-  return $item_price_tag;
+  return apply_filters('get_item_price_tag', $item_price_tag);
 }
 endif;
 
@@ -527,7 +527,7 @@ function get_item_description_tag($description){
   if ($description) {
     $description_tag = '<div class="product-item-description">'.esc_html($description).'</div>';
   }
-  return $description_tag;
+  return apply_filters('get_item_description_tag', $description_tag);
 }
 endif;
 
@@ -843,7 +843,7 @@ function generate_amazon_product_link($atts){
       $tag = wrap_product_item_box($error_message);
     }
 
-    return $tag;
+    return apply_filters('amazon_product_tag', $tag);
   }
 
 }
@@ -869,7 +869,8 @@ function get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword){
     $search_keyword = $keyword;
   }
   $rakuten_url = get_rakuten_affiliate_search_url(urlencode($search_keyword), $rakuten_affiliate_id);
-  return '<a href="'.$rakuten_url.'" target="_blank">'.__( '楽天で商品を見る', THEME_NAME ).'</a>';
+  $tag = '<a href="'.$rakuten_url.'" target="_blank">'.__( '楽天で商品を見る', THEME_NAME ).'</a>';
+  return apply_filters('get_default_rakuten_link_tag', $tag);
 }
 endif;
 
@@ -1203,7 +1204,7 @@ function generate_rakuten_product_link($atts){
             '</div>';
 
           //_v($tag);
-          return $tag;
+          return apply_filters('rakuten_product_tag', $tag);
         }
       } else {
         $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
