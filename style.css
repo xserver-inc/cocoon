@@ -4682,14 +4682,15 @@ div.fb-like-mobile {
   margin-top: 0;
 }
 
-.ranking-item {
+.ranking-item, .timeline-box {
   padding: 3%;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.ranking-item img[width="1"],
-.ranking-item img[height="1"] {
+.ranking-item img[width="1"], .timeline-box img[width="1"],
+.ranking-item img[height="1"],
+.timeline-box img[height="1"] {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -5121,6 +5122,10 @@ div.fb-like-mobile {
   padding-right: 3px;
 }
 
+.timeline-box {
+  padding: 16px 5px;
+}
+
 ul.timeline {
   list-style: none;
   padding: 0;
@@ -5130,6 +5135,7 @@ ul.timeline {
 .timeline-title {
   font-weight: bold;
   font-size: 1.1em;
+  text-align: center;
 }
 
 .timeline > li {
@@ -5169,7 +5175,7 @@ ul.timeline {
   height: 12px;
   background: #6fc173;
   position: absolute;
-  left: 106px;
+  left: 105px;
   top: 24px;
   border-radius: 100%;
 }
