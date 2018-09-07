@@ -1242,11 +1242,12 @@ function timeline_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
     'title' => null,
   ), $atts ) );
+  $content = remove_wrap_shortcode_wpautop('ti', $content);
+  $content = do_shortcode( shortcode_unautop( $content ) );
   $title_tag = null;
   if ($title) {
     $title_tag = '<div class="timeline-title">'.$title.'</div>';
   }
-  $content = do_shortcode( shortcode_unautop( $content ) );
   $tag = '<div class="timeline-box">'.
             $title_tag.
             '<ul class="timeline">'.
@@ -1257,7 +1258,21 @@ function timeline_shortcode( $atts, $content = null ){
 }
 endif;
 
+if ( !function_exists( 'remove_wrap_shortcode_wpautop' ) ):
+function remove_wrap_shortcode_wpautop($shortcode, $content){
+  $pattern = '/\['.$shortcode.'.*?\].*?\[\/'.$shortcode.'\]/is';
+  if (preg_match_all($pattern, $content, $m)) {
+    $all = null;
+    foreach ($m[0] as $code) {
+      $all .= $code;
+    }
+    return $all;
+  }
+}
+endif;
+
 //タイムラインアイテム作成
+//remove_filter('timeline_item_tag', 'wpautop');
 add_shortcode('ti', 'timeline_item_shortcode');
 if ( !function_exists( 'timeline_item_shortcode' ) ):
 function timeline_item_shortcode( $atts, $content = null ){
@@ -1269,6 +1284,7 @@ function timeline_item_shortcode( $atts, $content = null ){
   if ($title) {
     $title_tag = '<div class="timeline-item-title">'.$title.'</div>';
   }
+
   $content = do_shortcode( shortcode_unautop( $content ) );
   $tag = '<li class="timeline-item">'.
             '<div class="timeline-item-label">'.$label.'</div>'.

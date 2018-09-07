@@ -1946,3 +1946,19 @@ function sanitize_shortcode_value($value){
   return $value;
 }
 endif;
+
+//改行を削除
+if ( !function_exists( 'remove_crlf' ) ):
+function remove_crlf($content){
+  $content = str_replace(array("\r", "\n"), '', $content);
+  return $content;
+}
+endif;
+
+//wpautopがつけた段落を削除
+if ( !function_exists( 'wpunautop' ) ):
+function wpunautop($content){
+  $content = str_replace(array('<p>', '</p>', '<br />'), '', $content);
+  return $content;
+}
+endif;

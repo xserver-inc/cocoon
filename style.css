@@ -5121,8 +5121,15 @@ div.fb-like-mobile {
   padding-right: 3px;
 }
 
-.timeline {
+ul.timeline {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-title {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .timeline > li {
@@ -5130,37 +5137,43 @@ div.fb-like-mobile {
 }
 
 /* for Desktop */
-@media (min-width: 640px) {
-  .timeline > li {
-    overflow: hidden;
-    margin: 0;
-    position: relative;
-  }
-
-  .timeline-date {
-    width: 110px;
-    float: left;
-    margin-top: 20px;
-  }
-
-  .timeline-content {
-    width: 75%;
-    float: left;
-    border-left: 3px #e5e5d1 solid;
-    padding-left: 30px;
-  }
-
-  .timeline-content:before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: #6fc173;
-    position: absolute;
-    left: 106px;
-    top: 24px;
-    border-radius: 100%;
-  }
+.timeline > li.timeline-item {
+  overflow: hidden;
+  margin: 0;
+  position: relative;
 }
+
+.timeline-item-label {
+  width: 110px;
+  float: left;
+  padding-top: 18px;
+  text-align: right;
+  padding-right: .6em;
+  font-size: 14px;
+}
+
+.timeline-item-title {
+  font-weight: bold;
+}
+
+.timeline-item-content {
+  width: calc(100% - 110px);
+  float: left;
+  padding: .8em 1.4em;
+  border-left: 3px #e5e5d1 solid;
+}
+
+.timeline-item:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #6fc173;
+  position: absolute;
+  left: 106px;
+  top: 24px;
+  border-radius: 100%;
+}
+
 .display-block {
   display: block;
 }
