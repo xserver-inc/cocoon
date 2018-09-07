@@ -546,9 +546,9 @@ function get_product_item_admin_tag($cache_delete_tag, $affiliate_rate_tag = nul
 endif;
 
 //Amazon商品リンク作成
-add_shortcode('amazon', 'generate_amazon_product_link');
-if ( !function_exists( 'generate_amazon_product_link' ) ):
-function generate_amazon_product_link($atts){
+add_shortcode('amazon', 'amazon_product_link_shortcode');
+if ( !function_exists( 'amazon_product_link_shortcode' ) ):
+function amazon_product_link_shortcode($atts){
   extract( shortcode_atts( array(
     'asin' => null,
     'id' => null,
@@ -843,7 +843,7 @@ function generate_amazon_product_link($atts){
       $tag = wrap_product_item_box($error_message);
     }
 
-    return apply_filters('amazon_product_tag', $tag);
+    return apply_filters('amazon_product_link_tag', $tag);
   }
 
 }
@@ -885,9 +885,9 @@ function get_rakuten_error_message_tag($link, $admin_message){
 endif;
 
 //楽天商品リンク作成
-add_shortcode('rakuten', 'generate_rakuten_product_link');
-if ( !function_exists( 'generate_rakuten_product_link' ) ):
-function generate_rakuten_product_link($atts){
+add_shortcode('rakuten', 'rakuten_product_link_shortcode');
+if ( !function_exists( 'rakuten_product_link_shortcode' ) ):
+function rakuten_product_link_shortcode($atts){
   extract( shortcode_atts( array(
     'id' => null,
     'no' => null,
@@ -1204,7 +1204,7 @@ function generate_rakuten_product_link($atts){
             '</div>';
 
           //_v($tag);
-          return apply_filters('rakuten_product_tag', $tag);
+          return apply_filters('rakuten_product_link_tag', $tag);
         }
       } else {
         $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
@@ -1232,5 +1232,51 @@ function generate_rakuten_product_link($atts){
     return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
   }
 
+}
+endif;
+
+//タイムライン作成
+add_shortcode('timeline', 'timeline_shortcode');
+if ( !function_exists( 'timeline_shortcode' ) ):
+function timeline_shortcode( $atts, $content = null ){
+  extract( shortcode_atts( array(
+    'title' => null,
+  ), $atts ) );
+  $title_tag = null;
+  if ($title) {
+    $title_tag = '<div class="timeline-title">'.$title.'</div>';
+  }
+  $content = do_shortcode( shortcode_unautop( $content ) );
+  $tag = '<div class="timeline-box">'.
+            $title_tag.
+            '<ul class="timeline">'.
+              $content.
+            '</ul>'.
+          '</div>';
+  return apply_filters('timeline_tag', $tag);
+}
+endif;
+
+//タイムラインアイテム作成
+add_shortcode('ti', 'timeline_item_shortcode');
+if ( !function_exists( 'timeline_item_shortcode' ) ):
+function timeline_item_shortcode( $atts, $content = null ){
+  extract( shortcode_atts( array(
+    'title' => null,
+    'label' => null,
+  ), $atts ) );
+  $title_tag = null;
+  if ($title) {
+    $title_tag = '<div class="timeline-item-title">'.$title.'</div>';
+  }
+  $content = do_shortcode( shortcode_unautop( $content ) );
+  $tag = '<li class="timeline-item">'.
+            '<div class="timeline-item-label">'.$label.'</div>'.
+            '<div class="timeline-item-content">'.
+              '<div class="timeline-item-title">'.$title.'</div>'.
+              '<div class="timeline-item-snippet">'.$content.'</div>'.
+            '</div>'.
+          '</li>';
+  return apply_filters('timeline_item_tag', $tag);
 }
 endif;
