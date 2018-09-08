@@ -1301,3 +1301,19 @@ function timeline_item_shortcode( $atts, $content = null ){
   return apply_filters('timeline_item_tag', $tag);
 }
 endif;
+
+//何年前
+add_shortcode('ago', 'ago_shortcode');
+if ( !function_exists( 'ago_shortcode' ) ):
+function ago_shortcode( $atts ){
+  extract( shortcode_atts( array(
+    'from' => null,
+  ), $atts ) );
+  if (!$from) {
+    return '<span class="">'.__( '日付未入力', THEME_NAME ).'</span>';
+  }
+  $from = sanitize_shortcode_value($from);
+  $from = strtotime($from);
+  return get_human_time_diff_advance($from);
+}
+endif;

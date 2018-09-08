@@ -1962,3 +1962,72 @@ function wpunautop($content){
   return $content;
 }
 endif;
+
+//人間感覚的な時間の違い
+if ( !function_exists( 'get_human_time_diff_advance' ) ):
+function get_human_time_diff_advance( $from, $to = '', $detail = true ) {
+  if ( empty($to) )
+      $to = time();
+  $diff = (int) abs($to - $from);
+  // 条件: 3600秒 = 1時間以下なら (元のまま)
+  if ($diff <= 3600) {
+      $mins = round($diff / 60);
+      if ($mins <= 1) {
+          $mins = 1;
+      }
+      $since = sprintf(_n('%s min', '%s mins', $mins), $mins);
+  }
+  // 条件: 86400秒 = 24時間以下かつ、3600秒 = 1時間以上なら (元のまま)
+  else if (($diff <= 86400) && ($diff > 3600)) {
+      $hours = round($diff / 3600);
+      if ($hours <= 1) {
+          $hours = 1;
+      }
+      $since = sprintf(_n('%s hour', '%s hours', $hours), $hours);
+  }
+  // 条件: 604800秒 = 7日以下かつ、86400秒 = 24時間以上なら (条件追加)
+  elseif (($diff <= 604800) && ($diff > 86400)) {
+      $days = round($diff / 86400);
+      if ($days <= 1) {
+          $days = 1;
+      }
+      $since = sprintf(_n('%s day', '%s days', $days), $days);
+  }
+  // 条件: 2678400秒 = 31日以下かつ、2678400秒 = 7日以上なら (条件追加)
+  elseif (($diff <= 2678400) && ($diff > 604800) ) {
+      $weeks = round($diff / 604800);
+      if ($weeks <= 1) {
+          $weeks = 1;
+      }
+      $since = sprintf(_n('%s週間', '%s週間', $weeks), $weeks);
+  }
+  // 条件: 31536000秒 = 365日以下かつ、2678400秒 = 31日以上なら (条件追加)
+  elseif (($diff <= 31536000) && ($diff > 2678400) ) {
+      $months = round($diff / 2678400);
+      if ($months <= 1) {
+          $months = 1;
+      }
+      $since = sprintf(_n('%sヶ月', '%sヶ月', $months), $months);
+  }
+  // 条件: 31536000秒 = 365日以上なら (条件追加)
+  elseif ($diff >= 31536000) {
+    $years = round($diff / 31536000);
+    $months = round(($diff % 31536000) / 2678400);
+    if ($years <= 1) {
+        $years = 1;
+    }
+    //3年以上経っている場合は年だけでOK
+    if (($months == 0) || ($years >= 3)) {
+      $since = sprintf(__('%s年', sprintf), $years);
+    } else {
+      $since = sprintf(__('%s年%sヶ月', THEME_NAME), $years, $months);
+    }
+      // $years = round($diff / 31536000);
+      // if ($years <= 1) {
+      //     $years = 1;
+      // }
+      // $since = sprintf(_n('約%s年', '約%s年', $years), $years);
+  }
+  return $since.__( '前', THEME_NAME );
+}
+endif;
