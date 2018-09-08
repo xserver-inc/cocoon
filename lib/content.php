@@ -22,7 +22,7 @@ function get_the_content_all_scripts($the_content) {
       if (
         //Googleトレンド埋め込み
         includes_string($script, 'ssl.gstatic.com') ||
-        includes_string($script, 'trends.embed.renderExploreWidget')
+        includes_string($script, 'trends.google.co.jp')
          ) {
         continue;
       }
