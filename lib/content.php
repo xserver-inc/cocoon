@@ -18,6 +18,15 @@ function get_the_content_all_scripts($the_content) {
     $js_index = 1;
     $i = 0;
     foreach ($m[$all_index] as $script) {
+      //除外設定
+      _v(strpos($script, '/trends/embed/'));
+      if (
+        //Googleトレンド埋め込み
+        includes_string($script, 'ssl.gstatic.com') ||
+        includes_string($script, 'trends.embed.renderExploreWidget')
+         ) {
+        continue;
+      }
       $js_code = $m[$js_index][$i];
       if (trim($js_code)) {
         //本文中のスクリプトをまとめる
