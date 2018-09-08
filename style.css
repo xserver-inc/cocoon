@@ -5126,7 +5126,7 @@ div.fb-like-mobile {
   padding: 16px 5px;
 }
 
-ul.timeline {
+.timeline-box .timeline {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -5180,6 +5180,38 @@ ul.timeline {
   border-radius: 100%;
 }
 
+/* for Smartphone */
+@media screen and (max-width: 480px) {
+  .timeline-box .timeline {
+    padding-left: 10px;
+  }
+
+  .timeline > li.timeline-item {
+    overflow: visible;
+    border-left: 3px #e5e5d1 solid;
+  }
+
+  .timeline-item-label {
+    width: auto;
+    float: none;
+    text-align: left;
+    padding-left: 16px;
+  }
+
+  .timeline-item-content {
+    width: auto;
+    padding: 8px;
+    float: none;
+    border: none;
+  }
+
+  .timeline-item::before {
+    left: -12px;
+    top: 19px;
+    width: 21px;
+    height: 21px;
+  }
+}
 .display-block {
   display: block;
 }

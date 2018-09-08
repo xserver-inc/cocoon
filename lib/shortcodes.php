@@ -13,6 +13,7 @@ function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
     'label' => '',
   ), $atts));
+  $label = sanitize_shortcode_value($label);
   ob_start();
   generate_author_box_tag($label);
   $res = ob_get_clean();
@@ -167,6 +168,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
   ), $atts ) );
+  $msg = sanitize_shortcode_value($msg);
   if (is_user_logged_in()) {
     return do_shortcode($content);
   } else {
@@ -1244,6 +1246,7 @@ function timeline_shortcode( $atts, $content = null ){
   ), $atts ) );
   $content = remove_wrap_shortcode_wpautop('ti', $content);
   $content = do_shortcode( shortcode_unautop( $content ) );
+  $title = sanitize_shortcode_value($title);
   $title_tag = null;
   if ($title) {
     $title_tag = '<div class="timeline-title">'.$title.'</div>';
@@ -1280,6 +1283,8 @@ function timeline_item_shortcode( $atts, $content = null ){
     'title' => null,
     'label' => null,
   ), $atts ) );
+  $title = sanitize_shortcode_value($title);
+  $label = sanitize_shortcode_value($label);
   $title_tag = null;
   if ($title) {
     $title_tag = '<div class="timeline-item-title">'.$title.'</div>';
