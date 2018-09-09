@@ -1965,7 +1965,7 @@ endif;
 
 //人間感覚的な時間の違い
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
-function get_human_time_diff_advance( $from, $to = '', $detail = true ) {
+function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
       $to = time();
   $diff = (int) abs($to - $from);
@@ -2028,6 +2028,6 @@ function get_human_time_diff_advance( $from, $to = '', $detail = true ) {
       // }
       // $since = sprintf(_n('約%s年', '約%s年', $years), $years);
   }
-  return $since.__( '前', THEME_NAME );
+  return $since;
 }
 endif;
