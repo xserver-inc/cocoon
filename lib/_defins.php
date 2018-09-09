@@ -172,7 +172,7 @@ define('URL_REG', '/'.URL_REG_STR.'/');
 define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 //AMPのトップへ戻る用のコード
-define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375, \'easing\'=\'cubic-bezier(.4,0,.2,1)\')"');
+define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 
 //リンククリック時の削除確認JavaScript
 define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
