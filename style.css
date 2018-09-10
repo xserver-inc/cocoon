@@ -2871,7 +2871,7 @@ label.screen-reader-text {
   content: "\f105";
   position: absolute;
   right: 0;
-  margin-top: -1px;
+  margin-top: -0.15em;
   font-size: 30px;
 }
 
