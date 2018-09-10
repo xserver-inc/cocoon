@@ -10,7 +10,7 @@ if ( is_comment_allow() || have_comments() ): ?>
 <!-- comment area -->
 <div id="comment-area" class="comment-area<?php echo get_additional_comment_area_classes(); ?>">
   <section class="comment-list">
-    <h2 id="comment-title" class="comment-title">
+    <h2 id="comments" class="comment-title">
       <?php echo get_comment_heading(); ?>
       <?php if (get_comment_sub_heading()): ?>
         <span class="comment-sub-heading sub-caption"><?php echo get_comment_sub_heading(); ?></span>
