@@ -88,7 +88,7 @@ function title_parts_custom( $title ){
     $title['title'] = get_404_page_title();
   };
 
-  return $title;
+  return apply_filters('title_parts_custom', $title);
 }
 endif;
 
