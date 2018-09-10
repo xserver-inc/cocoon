@@ -545,7 +545,8 @@ $bb_green: #3eb370;
   }
 }
 
-.btn{
+.btn,
+.btn-wrap > a{
   color: #fff;
   font-weight: bold;
   margin: 1em;
@@ -570,12 +571,15 @@ $bb_green: #3eb370;
 }
 
 .btn:before,
-.btn:after{
+.btn:after,
+.btn-wrap > a:before,
+.btn-wrap > a:after{
   font-family: FontAwesome;
   margin-right: 12px;
 }
 
-.btn.btn-l:after{
+.btn.btn-l:after,
+.btn-wrap.btn-l > a:after{
   content: "\f105";
   position: absolute;
   right: 0;
@@ -584,57 +588,60 @@ $bb_green: #3eb370;
 }
 
 
-#container .btn:hover{
+#container .btn:hover,
+.btn-wrap > a:hover{
   color: #333;
   background-color: #fff;
   border: 2px solid #000;
   transition: $bgc_hover_anime;
 }
 
-.btn-m{
+.btn-m,
+.btn-wrap.btn-m > a{
   padding: 14px 45px;
   font-size: 16px;
 }
 
-.btn-l{
+.btn-l,
+.btn-wrap.btn-l > a{
   padding: 20px 0;
   font-size: 18px;
   display: block;
 }
 
-.btn-white{color: #333;background-color: #fff;}
-#container .btn-white:hover{color: #333;}
-.btn-red{background-color: #f44336;}
-.btn-pink{background-color: #e91e63;}
-.btn-purple{background-color: #9c27b0;}
-.btn-deep{background-color: #673ab7;}
-.btn-indigo{background-color: #3f51b5;}
-.btn-blue{background-color: #2196f3;}
-.btn-light-blue{background-color: #03a9f4;}
-.btn-cyan{background-color: #00bcd4;}
-.btn-teal{background-color: #009688;}
-.btn-green{background-color: #4caf50;}
-.btn-light-green{background-color: #8bc34a;}
-.btn-lime{background-color: #cddc39;}
-.btn-yellow{background-color: #edd60e;}
-.btn-amber{background-color: #ffc107;}
-.btn-orange{background-color: #ff9800;}
-.btn-deep-orange{background-color: #ff5722;}
-.btn-brown{background-color: #795548;}
-.btn-grey{background-color: #9e9e9e;}
-.btn-blue-grey{background-color: #607d8b;}
+.btn-white, .btn-wrap.btn-white > a{color: #333;background-color: #fff;}
+#container .btn-white:hover, #container .btn-wrap.btn-white > a:hover{color: #333;}
+.btn-red, .btn-wrap.btn-red > a{background-color: #f44336;}
+.btn-pink, .btn-wrap.btn-pink > a{background-color: #e91e63;}
+.btn-purple, .btn-wrap.btn-purple > a{background-color: #9c27b0;}
+.btn-deep, .btn-wrap.btn-deep > a{background-color: #673ab7;}
+.btn-indigo, .btn-wrap.btn-indigo > a{background-color: #3f51b5;}
+.btn-blue, .btn-wrap.btn-blue > a{background-color: #2196f3;}
+.btn-light-blue, .btn-wrap.btn-light-blue > a{background-color: #03a9f4;}
+.btn-cyan, .btn-wrap.btn-cyan > a{background-color: #00bcd4;}
+.btn-teal, .btn-wrap.btn-teal > a{background-color: #009688;}
+.btn-green, .btn-wrap.btn-green > a{background-color: #4caf50;}
+.btn-light-green, .btn-wrap.btn-light-green > a{background-color: #8bc34a;}
+.btn-lime, .btn-wrap.btn-lime > a{background-color: #cddc39;}
+.btn-yellow, .btn-wrap.btn-yellow > a{background-color: #edd60e;}
+.btn-amber, .btn-wrap.btn-amber > a{background-color: #ffc107;}
+.btn-orange, .btn-wrap.btn-orange > a{background-color: #ff9800;}
+.btn-deep-orange, .btn-wrap.btn-deep-orange > a{background-color: #ff5722;}
+.btn-brown, .btn-wrap.btn-brown > a{background-color: #795548;}
+.btn-grey, .btn-wrap.btn-grey > a{background-color: #9e9e9e;}
+.btn-blue-grey, .btn-wrap.btn-blue-grey > a{background-color: #607d8b;}
 
-.btn-arrow-right:before{content: "\f061";}
-.btn-chevron-right:before{content: "\f054";}
-.btn-angle-right:before{content: "\f105";}
-.btn-caret-right:before{content: "\f0da";}
-.btn-long-arrow-right:before{content: "\f178";}
-.btn-chevron-circle-right:before{content: "\f138";}
-.btn-angle-double-right:before{content: "\f101";}
-.btn-arrow-circle-right:before{content: "\f0a9";}
-.btn-hand-o-right:before{content: "\f0a4";}
-.btn-arrow-circle-o-right:before{content: "\f18e";}
-.btn-caret-square-o-right:before{content: "\f152";}
+.btn-arrow-right:before, .btn-wrap.btn-arrow-right > a:before{content: "\f061";}
+.btn-chevron-right:before, .btn-wrap.btn-chevron-circle-right > a:before{content: "\f054";}
+.btn-angle-right:before, .btn-wrap.btn-angle-right > a:before{content: "\f105";}
+.btn-caret-right:before, .btn-wrap.btn-caret-right > a:before{content: "\f0da";}
+.btn-long-arrow-right:before, .btn-wrap.btn-long-arrow-right > a:before{content: "\f178";}
+.btn-chevron-circle-right:before, .btn-wrap.btn-chevron-circle-right > a:before{content: "\f138";}
+.btn-angle-double-right:before, .btn-wrap.btn-angle-double-right > a:before{content: "\f101";}
+.btn-arrow-circle-right:before, .btn-wrap.btn-arrow-circle-right > a:before{content: "\f0a9";}
+.btn-hand-o-right:before, .btn-wrap.btn-hand-o-right > a:before{content: "\f0a4";}
+.btn-arrow-circle-o-right:before, .btn-wrap.btn-arrow-circle-o-right > a:before{content: "\f18e";}
+.btn-caret-square-o-right:before, .btn-wrap.btn-caret-square-o-right > a:before{content: "\f152";}
 
 // /*メインカランの2カラム化*/
 // .half-half{
