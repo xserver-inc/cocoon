@@ -12,14 +12,10 @@
   //float: left;
   width: 80px;
   min-width: 80px;
-  .speech-icon img{
-    border-radius: 50%;
-    border: 2px solid $basic_border_color;
-    width: 100%;
-  }
 }
 
-.speech-icon img{
+.speech-icon img,
+.speech-icon amp-img{
   border-radius: 50%;
   border: 2px solid $basic_border_color;
   width: 100%;

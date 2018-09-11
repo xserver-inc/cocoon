@@ -3666,13 +3666,9 @@ canvas, iframe, video,
   width: 80px;
   min-width: 80px;
 }
-.speech-person .speech-icon img {
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  width: 100%;
-}
 
-.speech-icon img {
+.speech-icon img,
+.speech-icon amp-img {
   border-radius: 50%;
   border: 2px solid #ccc;
   width: 100%;
