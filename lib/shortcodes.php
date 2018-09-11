@@ -1237,7 +1237,7 @@ function rakuten_product_link_shortcode($atts){
 }
 endif;
 
-//タイムライン作成
+//タイムラインの作成（timelineショートコード）
 add_shortcode('timeline', 'timeline_shortcode');
 if ( !function_exists( 'timeline_shortcode' ) ):
 function timeline_shortcode( $atts, $content = null ){
@@ -1261,8 +1261,10 @@ function timeline_shortcode( $atts, $content = null ){
 }
 endif;
 
+//timelineショートコードコンテンツ内に余計な改行や文字列が入らないように除外
 if ( !function_exists( 'remove_wrap_shortcode_wpautop' ) ):
 function remove_wrap_shortcode_wpautop($shortcode, $content){
+  //tiショートコードのみを抽出
   $pattern = '/\['.$shortcode.'.*?\].*?\[\/'.$shortcode.'\]/is';
   if (preg_match_all($pattern, $content, $m)) {
     $all = null;
@@ -1274,8 +1276,7 @@ function remove_wrap_shortcode_wpautop($shortcode, $content){
 }
 endif;
 
-//タイムラインアイテム作成
-//remove_filter('timeline_item_tag', 'wpautop');
+//タイムラインアイテム作成（タイムラインの中の項目）
 add_shortcode('ti', 'timeline_item_shortcode');
 if ( !function_exists( 'timeline_item_shortcode' ) ):
 function timeline_item_shortcode( $atts, $content = null ){
