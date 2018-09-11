@@ -1048,6 +1048,7 @@ function rakuten_product_link_shortcode($atts){
 
         $Item = $body->{'Items'}['0']->{'Item'};
         if ($Item) {
+
           $itemName = $Item->{'itemName'};
           $itemCode = $Item->{'itemCode'};
           $itemPrice = $Item->{'itemPrice'};
@@ -1176,6 +1177,23 @@ function rakuten_product_link_shortcode($atts){
           // 管理者情報タグ
           ///////////////////////////////////////////
           $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag, $affiliate_rate_tag);
+
+          ///////////////////////////////////////////
+          // もしも楽天URL
+          ///////////////////////////////////////////
+          if ($moshimo_rakuten_id && is_moshimo_affiliate_link_enable()) {
+            $decoded_affiliateUrl = urldecode($affiliateUrl);
+            $decoded_affiliateUrl = str_replace('&amp;', '&', $decoded_affiliateUrl);
+            //_v(urldecode($decoded_affiliateUrl));
+            if (preg_match_all('{\?pc=(.+?)&m=}i', urldecode($decoded_affiliateUrl), $m)) {
+              if ($m[1][0]) {
+                $rakuten_product_page_url = $m[1][0];
+                $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
+                $affiliateUrl = $moshimo_rakuten_url;
+              }
+            }
+          }
+
 
           ///////////////////////////////////////////
           // 商品リンクタグの生成

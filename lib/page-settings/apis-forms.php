@@ -160,7 +160,7 @@ $help_text = __( '取得方法', THEME_NAME );
             <?php
             generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'リンクをもしもアフィリエイトを経由にする', THEME_NAME ));
             generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
-            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。楽天商品リンクは、検索ボタンしか適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
+            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
 
             generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
             echo '<br>';
