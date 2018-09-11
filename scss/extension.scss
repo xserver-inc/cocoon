@@ -365,6 +365,11 @@ $bb_green: #3eb370;
   border: 2px solid $bb_gray;
   padding: 1.2em 1em;
   margin: 1em 2%;
+
+  ol, ul{
+    margin: 0;
+  }
+
   &.bb-yellow{border-color: $bb_yellow;}
   &.bb-red{border-color: $bb_red;}
   &.bb-blue{border-color: $bb_blue;}

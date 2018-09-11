@@ -2652,6 +2652,9 @@ label.screen-reader-text {
   padding: 1.2em 1em;
   margin: 1em 2%;
 }
+.blank-box ol, .blank-box ul {
+  margin: 0;
+}
 .blank-box.bb-yellow {
   border-color: #fc9f4d;
 }
