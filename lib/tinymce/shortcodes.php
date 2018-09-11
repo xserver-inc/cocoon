@@ -159,6 +159,26 @@ function generate_shortcodes_is($value){
   shortcodes[10].before = '<?php echo $before; ?>';
   shortcodes[10].after = '<?php echo $after; ?>';
 
+  <?php //タイムラインショートコード
+  $before = '[timeline title=""]';
+  $after = '[/timeline]';
+  ?>
+  shortcodes[11] = new Array();
+  shortcodes[11].title  = '<?php echo __( 'タイムライン', THEME_NAME ); ?>';
+  shortcodes[11].tag = '<?php echo $before.$after; ?>';
+  shortcodes[11].before = '<?php echo $before; ?>';
+  shortcodes[11].after = '<?php echo $after; ?>';
+
+  <?php //タイムラインアイテムショートコード
+  $before = '[ti label="" title=""]';
+  $after = '[/ti]';
+  ?>
+  shortcodes[12] = new Array();
+  shortcodes[12].title  = '<?php echo __( 'タイムラインアイテム', THEME_NAME ); ?>';
+  shortcodes[12].tag = '<?php echo $before.$after; ?>';
+  shortcodes[12].before = '<?php echo $before; ?>';
+  shortcodes[12].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }
