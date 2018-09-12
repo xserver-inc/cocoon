@@ -202,8 +202,11 @@ endif;
 
 //Amazon商品紹介リンクの外枠で囲む
 if ( !function_exists( 'wrap_product_item_box' ) ):
-function wrap_product_item_box($message, $type = 'amazon'){
-  return '<div class="product-item-box '.$type.'-item-box no-icon product-item-error cf"><div>'.$message.'</div></div>';
+function wrap_product_item_box($message, $type = 'amazon', $cache_delete_tag = null){
+  if ($cache_delete_tag) {
+    $cache_delete_tag = get_product_item_admin_tag($cache_delete_tag);
+  }
+  return '<div class="product-item-box '.$type.'-item-box no-icon product-item-error cf"><div>'.$message.'</div>'.$cache_delete_tag.'</div>';
 }
 endif;
 
@@ -634,10 +637,14 @@ function amazon_product_link_shortcode($atts){
     }
 
     //var_dump($item);
+    ///////////////////////////////////////////
+    // キャッシュ削除リンク
+    ///////////////////////////////////////////
+    $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!property_exists($xml->Items, 'Item')) {
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-      return wrap_product_item_box($error_message);
+      return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
     }
 
     if (property_exists($xml->Items, 'Item')) {
@@ -806,11 +813,6 @@ function amazon_product_link_shortcode($atts){
       $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
       ///////////////////////////////////////////
-      // キャッシュ削除リンク
-      ///////////////////////////////////////////
-      $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
-
-      ///////////////////////////////////////////
       // 管理者情報タグ
       ///////////////////////////////////////////
       $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag);
@@ -879,12 +881,12 @@ function get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword){
 endif;
 
 if ( !function_exists( 'get_rakuten_error_message_tag' ) ):
-function get_rakuten_error_message_tag($link, $admin_message){
+function get_rakuten_error_message_tag($link, $admin_message, $cache_delete_tag = null){
   $error_message = $link;
   if (is_user_administrator()) {
     $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
   }
-  return wrap_product_item_box($error_message, 'rakuten');
+  return wrap_product_item_box($error_message, 'rakuten', $cache_delete_tag);
 }
 endif;
 
@@ -1042,6 +1044,11 @@ function rakuten_product_link_shortcode($atts){
         set_transient($transient_bk_id, $json, $expiration * 2);
       }
 
+      ///////////////////////////////////////////
+      // キャッシュ削除リンク
+      ///////////////////////////////////////////
+      $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
+
       $body = $json["body"];
       //ジェイソンの配列化
       $body = json_decode( $body );
@@ -1178,10 +1185,10 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
-          ///////////////////////////////////////////
-          // キャッシュ削除リンク
-          ///////////////////////////////////////////
-          $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
+          // ///////////////////////////////////////////
+          // // キャッシュ削除リンク
+          // ///////////////////////////////////////////
+          // $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
 
           ///////////////////////////////////////////
           // アフィリエイト料率タグ
@@ -1230,7 +1237,7 @@ function rakuten_product_link_shortcode($atts){
         }
       } else {
         $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
-        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
+        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
       }
 
     } else {

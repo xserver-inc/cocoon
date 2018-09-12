@@ -267,6 +267,7 @@ function fetch_pocket_count_raw($url){
   $args = array( 'sslverify' => true );
   $result = wp_remote_get($query, $args);
   //var_dump($result["body"]);
+  //_v($result);
   // 正規表現でカウント数のところだけを抽出
   $body = isset($result["body"]) ? $result["body"] : null;
   if ($body) {
