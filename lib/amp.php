@@ -191,6 +191,11 @@ function convert_content_for_amp($the_content){
   //AMPフォームの場合はtarget="_top"を加える
   $the_content = str_replace('<form class="amp-form search-box"', '<form class="amp-form search-box" target="_top"', $the_content);
 
+  //formタグを完全に取り除く
+  $pattern = '{<form action="[^"]+?" method="get">(.*?</form>)?}is';
+  $append = '';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   //ドロップダンスカテゴリの削除
   $pattern = '{<aside class="widget.+?categories-dropdown.+?</aside>}is';
   $append = '';
