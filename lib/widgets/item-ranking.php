@@ -79,7 +79,7 @@ class ItemRankingWidgetItem extends WP_Widget {
           $options[$record->id] = $record->title;
         }
         generate_selectbox_tag($this->get_field_name('ranking_id'), $options, $ranking_id);
-        generate_tips_tag(__( 'ランキングを選択してださい。', THEME_NAME ));
+        generate_tips_tag(__( 'ランキングを選択してください。', THEME_NAME ));
       } else {?>
         <p><?php _e( 'ランキングが設定されていません。', THEME_NAME ) ?></p>
         <p><?php _e( '設定画面からランキングを設定してください→', THEME_NAME ) ?><a href="admin.php?page=theme-ranking"><?php _e( 'ランキング設定', THEME_NAME ) ?></a></p>
