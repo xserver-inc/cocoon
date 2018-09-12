@@ -179,6 +179,16 @@ function generate_shortcodes_is($value){
   shortcodes[12].before = '<?php echo $before; ?>';
   shortcodes[12].after = '<?php echo $after; ?>';
 
+  <?php //過去日時ショートコード
+  $before = '[ago from="';
+  $after = '"]';
+  ?>
+  shortcodes[13] = new Array();
+  shortcodes[13].title  = '<?php echo __( '過去日時', THEME_NAME ); ?><?php echo date(__( '（1年前ならf\r\o\m="Y/m/d"と記入）', THEME_NAME ), strtotime("-1 year")); ?>';
+  shortcodes[13].tag = '<?php echo $before.$after; ?>';
+  shortcodes[13].before = '<?php echo $before; ?>';
+  shortcodes[13].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }
