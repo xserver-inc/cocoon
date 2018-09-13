@@ -428,7 +428,11 @@ endif;
 
 //検索ボタンの作成
 if ( !function_exists( 'get_search_buttons_tag' ) ):
-function get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo){
+// function get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo){
+
+function get_search_buttons_tag($args){
+  extract($args);
+
   $buttons_tag = null;
   if ($keyword) {
     //Amazonボタンの取得
@@ -810,7 +814,21 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // 検索ボタンの作成
       ///////////////////////////////////////////
-      $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
+      $args = array(
+        'keyword' => $keyword,
+        'associate_tracking_id' => $associate_tracking_id,
+        'rakuten_affiliate_id' => $rakuten_affiliate_id,
+        'sid' => $sid,
+        'pid' => $pid,
+        'moshimo_amazon_id' => $moshimo_amazon_id,
+        'moshimo_rakuten_id' => $moshimo_rakuten_id,
+        'moshimo_yahoo_id' => $moshimo_yahoo_id,
+        'amazon' => $amazon,
+        'rakuten' => $rakuten,
+        'yahoo' => $yahoo,
+      );
+      $buttons_tag = get_search_buttons_tag($args);
+      // $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
       ///////////////////////////////////////////
       // 管理者情報タグ
@@ -1183,7 +1201,21 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // 検索ボタンの作成
           ///////////////////////////////////////////
-          $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
+          $args = array(
+            'keyword' => $keyword,
+            'associate_tracking_id' => $associate_tracking_id,
+            'rakuten_affiliate_id' => $rakuten_affiliate_id,
+            'sid' => $sid,
+            'pid' => $pid,
+            'moshimo_amazon_id' => $moshimo_amazon_id,
+            'moshimo_rakuten_id' => $moshimo_rakuten_id,
+            'moshimo_yahoo_id' => $moshimo_yahoo_id,
+            'amazon' => $amazon,
+            'rakuten' => $rakuten,
+            'yahoo' => $yahoo,
+          );
+          $buttons_tag = get_search_buttons_tag($args);
+          //$buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
           // ///////////////////////////////////////////
           // // キャッシュ削除リンク
