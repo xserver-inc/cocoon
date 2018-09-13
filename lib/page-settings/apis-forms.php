@@ -61,6 +61,9 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_AMAZON_SEARCH_BUTTON_TEXT, get_amazon_search_button_text(), '');
             generate_tips_tag(__( 'Amazonの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
 
+            generate_checkbox_tag(OP_AMAZON_BUTTON_SEARCH_TO_DETAIL , is_amazon_button_search_to_detail(), __( '検索ボタンのリンクを詳細ページにする', THEME_NAME ));
+            generate_tips_tag(__( 'Amazon検索ボタンのリンク先を商品詳細ページにするか。', THEME_NAME ));
+
             echo '<div>';
             ?>
 
@@ -110,6 +113,9 @@ $help_text = __( '取得方法', THEME_NAME );
 
             generate_textbox_tag(OP_RAKUTEN_SEARCH_BUTTON_TEXT, get_rakuten_search_button_text(), '');
             generate_tips_tag(__( '楽天の検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL , is_rakuten_button_search_to_detail(), __( '検索ボタンのリンクを詳細ページにする', THEME_NAME ));
+            generate_tips_tag(__( '楽天検索ボタンのリンク先を商品詳細ページにするか。', THEME_NAME ));
 
             echo '<div>';
             ?>

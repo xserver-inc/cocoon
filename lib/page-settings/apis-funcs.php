@@ -54,6 +54,14 @@ function get_amazon_search_button_text(){
 }
 endif;
 
+//Amazon検索ページを詳細ページにする
+define('OP_AMAZON_BUTTON_SEARCH_TO_DETAIL', 'amazon_button_search_to_detail');
+if ( !function_exists( 'is_amazon_button_search_to_detail' ) ):
+function is_amazon_button_search_to_detail(){
+  return get_theme_option(OP_AMAZON_BUTTON_SEARCH_TO_DETAIL);
+}
+endif;
+
 //楽天アプリケーションID
 define('OP_RAKUTEN_APPLICATION_ID', 'rakuten_application_id');
 if ( !function_exists( 'get_rakuten_application_id' ) ):
@@ -99,6 +107,14 @@ define('OP_RAKUTEN_SEARCH_BUTTON_TEXT', 'rakuten_search_button_text');
 if ( !function_exists( 'get_rakuten_search_button_text' ) ):
 function get_rakuten_search_button_text(){
   return get_theme_option(OP_RAKUTEN_SEARCH_BUTTON_TEXT, __( '楽天', THEME_NAME ));
+}
+endif;
+
+//楽天検索ページを詳細ページにする
+define('OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL', 'rakuten_button_search_to_detail');
+if ( !function_exists( 'is_rakuten_button_search_to_detail' ) ):
+function is_rakuten_button_search_to_detail(){
+  return get_theme_option(OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL);
 }
 endif;
 

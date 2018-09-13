@@ -42,6 +42,12 @@ update_theme_option(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE);
 //楽天検索ボタン文字
 update_theme_option(OP_RAKUTEN_SEARCH_BUTTON_TEXT);
 
+//楽天検索ページを詳細ページにする
+update_theme_option(OP_RAKUTEN_BUTTON_SEARCH_TO_DETAIL);
+
+//Amazon検索ページを詳細ページにする
+update_theme_option(OP_AMAZON_BUTTON_SEARCH_TO_DETAIL);
+
 //Yahoo!バリューコマースSID
 update_theme_option(OP_YAHOO_VALUECOMMERCE_SID);
 
