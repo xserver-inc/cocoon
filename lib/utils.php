@@ -1963,7 +1963,7 @@ function wpunautop($content){
 }
 endif;
 
-//人間感覚的な時間の違い
+//人間感覚的な時間取得
 if ( !function_exists( 'get_human_time_diff_advance' ) ):
 function get_human_time_diff_advance( $from, $to = '' ) {
   if ( empty($to) )
@@ -1971,7 +1971,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   $diff = (int) abs($to - $from);
   // 条件: 3600秒 = 1時間以下なら (元のまま)
   if ($diff <= 3600) {
-      $mins = round($diff / 60);
+      $mins = floor($diff / 60);
       if ($mins <= 1) {
           $mins = 1;
       }
@@ -1979,7 +1979,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   }
   // 条件: 86400秒 = 24時間以下かつ、3600秒 = 1時間以上なら (元のまま)
   else if (($diff <= 86400) && ($diff > 3600)) {
-      $hours = round($diff / 3600);
+      $hours = floor($diff / 3600);
       if ($hours <= 1) {
           $hours = 1;
       }
@@ -1987,7 +1987,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   }
   // 条件: 604800秒 = 7日以下かつ、86400秒 = 24時間以上なら (条件追加)
   elseif (($diff <= 604800) && ($diff > 86400)) {
-      $days = round($diff / 86400);
+      $days = floor($diff / 86400);
       if ($days <= 1) {
           $days = 1;
       }
@@ -1995,7 +1995,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   }
   // 条件: 2678400秒 = 31日以下かつ、2678400秒 = 7日以上なら (条件追加)
   elseif (($diff <= 2678400) && ($diff > 604800) ) {
-      $weeks = round($diff / 604800);
+      $weeks = floor($diff / 604800);
       if ($weeks <= 1) {
           $weeks = 1;
       }
@@ -2003,7 +2003,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   }
   // 条件: 31536000秒 = 365日以下かつ、2678400秒 = 31日以上なら (条件追加)
   elseif (($diff <= 31536000) && ($diff > 2678400) ) {
-      $months = round($diff / 2678400);
+      $months = floor($diff / 2678400);
       if ($months <= 1) {
           $months = 1;
       }
@@ -2011,8 +2011,8 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   }
   // 条件: 31536000秒 = 365日以上なら (条件追加)
   elseif ($diff >= 31536000) {
-    $years = round($diff / 31536000);
-    $months = round(($diff % 31536000) / 2678400);
+    $years = floor($diff / 31536000);
+    $months = floor(($diff % 31536000) / 2678400);
     if ($years <= 1) {
         $years = 1;
     }
@@ -2022,11 +2022,6 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     } else {
       $since = sprintf(__('%s年%sヶ月', THEME_NAME), $years, $months);
     }
-      // $years = round($diff / 31536000);
-      // if ($years <= 1) {
-      //     $years = 1;
-      // }
-      // $since = sprintf(_n('約%s年', '約%s年', $years), $years);
   }
   return $since;
 }

@@ -1330,7 +1330,7 @@ function timeline_item_shortcode( $atts, $content = null ){
 }
 endif;
 
-//何年前
+//相対的な時間経過を取得するショートコード
 add_shortcode('ago', 'ago_shortcode');
 if ( !function_exists( 'ago_shortcode' ) ):
 function ago_shortcode( $atts ){
@@ -1338,7 +1338,7 @@ function ago_shortcode( $atts ){
     'from' => null,
   ), $atts ) );
   if (!$from) {
-    return '<span class="">'.__( '日付未入力', THEME_NAME ).'</span>';
+    return '<span class="ago-error">'.__( '日付未入力', THEME_NAME ).'</span>';
   }
   $from = sanitize_shortcode_value($from);
   $from = strtotime($from);
