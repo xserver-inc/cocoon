@@ -184,7 +184,7 @@ function generate_shortcodes_is($value){
   $after = '"]';
   ?>
   shortcodes[13] = new Array();
-  shortcodes[13].title  = '<?php echo __( '過去日時', THEME_NAME ); ?><?php echo date(__( '（1年前ならf\r\o\m="Y/m/d"と記入）', THEME_NAME ), strtotime("-1 year")); ?>';
+  shortcodes[13].title  = '<?php echo __( '過去日時', THEME_NAME ); ?><?php echo date(__( '（1年前なら f\r\o\m="Y/m/d" と記入）', THEME_NAME ), strtotime("-1 year")); ?>';
   shortcodes[13].tag = '<?php echo $before.$after; ?>';
   shortcodes[13].before = '<?php echo $before; ?>';
   shortcodes[13].after = '<?php echo $after; ?>';
