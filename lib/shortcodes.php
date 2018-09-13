@@ -428,8 +428,6 @@ endif;
 
 //検索ボタンの作成
 if ( !function_exists( 'get_search_buttons_tag' ) ):
-// function get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo){
-
 function get_search_buttons_tag($args){
   extract($args);
 
@@ -443,6 +441,10 @@ function get_search_buttons_tag($args){
       $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
       if ($moshimo_amazon_id && is_moshimo_affiliate_link_enable()) {
         $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
+      }
+      //Amazon商品リンクで詳細ページを表示する場合
+      if ($amazon_page_url && is_amazon_button_search_to_detail()) {
+        $amazon_url = $amazon_page_url;
       }
       $amazon_btn_tag =
         '<div class="shoplinkamazon">'.
@@ -459,6 +461,10 @@ function get_search_buttons_tag($args){
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_rakuten) {
         $rakuten_url = get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id);
+      }
+      //楽天商品リンクで詳細ページを表示する場合
+      if ($rakuten_page_url && is_rakuten_button_search_to_detail()) {
+        $rakuten_url = $rakuten_page_url;
       }
       $rakuten_btn_tag =
         '<div class="shoplinkrakuten">'.
@@ -826,9 +832,10 @@ function amazon_product_link_shortcode($atts){
         'amazon' => $amazon,
         'rakuten' => $rakuten,
         'yahoo' => $yahoo,
+        'amazon_page_url' => $associate_url,
+        'rakuten_page_url' => null,
       );
       $buttons_tag = get_search_buttons_tag($args);
-      // $buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
       ///////////////////////////////////////////
       // 管理者情報タグ
@@ -1213,9 +1220,10 @@ function rakuten_product_link_shortcode($atts){
             'amazon' => $amazon,
             'rakuten' => $rakuten,
             'yahoo' => $yahoo,
+            'amazon_page_url' => null,
+            'rakuten_page_url' => $affiliateUrl,
           );
           $buttons_tag = get_search_buttons_tag($args);
-          //$buttons_tag = get_search_buttons_tag($keyword, $associate_tracking_id, $rakuten_affiliate_id, $sid, $pid, $moshimo_amazon_id, $moshimo_rakuten_id, $moshimo_yahoo_id, $amazon, $rakuten, $yahoo);
 
           // ///////////////////////////////////////////
           // // キャッシュ削除リンク
