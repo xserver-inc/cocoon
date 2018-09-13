@@ -20,6 +20,8 @@ function get_the_content_all_scripts($the_content) {
     foreach ($m[$all_index] as $script) {
       //除外設定
       if (
+        //Buddypressアクティビティ
+        includes_string($script, 'tmpl-activity-') ||
         //Googleトレンド埋め込み
         includes_string($script, 'ssl.gstatic.com') ||
         includes_string($script, 'trends.google.co.jp')
