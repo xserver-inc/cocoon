@@ -46,19 +46,6 @@ function fetch_feedly_count(){
   $url = get_bloginfo( 'rss2_url' );
   $res = fetch_feedly_count_raw($url);
 
-  // $res = 0;
-  // $args = array( 'sslverify' => true );
-  // $subscribers = wp_remote_get( "http://cloud.feedly.com/v3/feeds/feed%2F$feed_url", $args );
-  // if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
-  //   $subscribers = json_decode( $subscribers['body'] );
-  //   if ( $subscribers ) {
-  //     $subscribers = $subscribers->subscribers;
-  //     if ($subscribers) {
-  //       $res = $subscribers;
-  //     }
-  //   }
-  // }
-
   //DBキャッシュにカウントを保存
   if (is_sns_follow_count_cache_enable()) {
     set_transient( $transient_id, $res, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
@@ -129,21 +116,6 @@ function fetch_push7_info(){
     if (is_sns_follow_count_cache_enable()) {
       set_transient( $transient_id , $info, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
     }
-    // $url = 'https://api.push7.jp/api/v1/'.$app_no.'/head';//要https:
-    // $args = array( 'sslverify' => true );
-    // //$args = array('sslverify' => true);
-    // $info = wp_remote_get( $url, $args );
-    // if (!is_wp_error( $info ) && $info["response"]["code"] === 200) {
-    //   $info = json_decode( $info['body'] );
-    //   if ( $info ) {
-    //     //Push7情報をキャッシュに保存
-    //     if (is_sns_follow_count_cache_enable()) {
-    //       set_transient( $transient_id , $info, HOUR_IN_SECONDS * get_sns_follow_count_cache_interval() );
-    //     }
-
-    //     $res = $info;
-    //   }
-    // }
   }
   return $res;
 }
@@ -151,6 +123,7 @@ endif;
 
 
 // ユーザープロフィールの項目のカスタマイズ
+add_filter('user_contactmethods', 'user_contactmethods_custom');
 if ( !function_exists( 'user_contactmethods_custom' ) ):
 function user_contactmethods_custom($prof_items){
   //項目の追加
@@ -169,7 +142,7 @@ function user_contactmethods_custom($prof_items){
   return $prof_items;
 }
 endif;
-add_filter('user_contactmethods', 'user_contactmethods_custom');
+
 
 //ユーザーIDの取得
 if ( !function_exists( 'get_the_posts_author_id' ) ):

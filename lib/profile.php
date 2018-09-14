@@ -71,6 +71,10 @@ function update_avatar_to_user_profile($user_id) {
   if ( current_user_can('edit_user',$user_id) ){
     update_user_meta($user_id, 'upladed_avatar', $_POST['upladed_avatar']);
     update_user_meta($user_id, 'profile_page_url', $_POST['profile_page_url']);
+
+    //LINE@ URLの%40が消えるので@に変換する処理
+    $_POST['line_at_url'] = str_replace('%40', '@', $_POST['line_at_url']);
+    //_v($_POST['line_at_url']);
   }
 }
 endif;
