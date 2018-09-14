@@ -6,7 +6,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-if (is_single_breadcrumbs_visible() && is_single()):
+if (is_single_breadcrumbs_visible() && (is_single() || is_category())):
 $cat = get_the_category();
 if($cat && !is_wp_error($cat)){
   $echo = null;
