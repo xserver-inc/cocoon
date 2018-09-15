@@ -431,7 +431,7 @@ endif;
 if ( !function_exists( 'get_moshimo_amazon_impression_tag' ) ):
 function get_moshimo_amazon_impression_tag(){
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
-  return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -439,7 +439,7 @@ endif;
 if ( !function_exists( 'get_moshimo_rakuten_impression_tag' ) ):
 function get_moshimo_rakuten_impression_tag(){
   $moshimo_rakuten_id  = trim(get_moshimo_rakuten_id());
-  return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
 }
 endif;
 
@@ -450,7 +450,7 @@ function get_valucomace_yahoo_impression_tag(){
   $sid = trim(get_yahoo_valuecommerce_sid());
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
-  return '<img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid='.$sid.'&pid='.$pid.'" width="1" height="1" border="0">';
+  return '<img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid='.$sid.'&pid='.$pid.'" width="1" height="1" border="0">';
 }
 endif;
 
@@ -458,7 +458,7 @@ endif;
 if ( !function_exists( 'get_moshimo_yahoo_impression_tag' ) ):
 function get_moshimo_yahoo_impression_tag(){
   $moshimo_yahoo_id  = trim(get_moshimo_yahoo_id());
-  return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
+  return '<img src="https://i.moshimo.com/af/i/impression?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
 }
 endif;
 
