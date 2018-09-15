@@ -727,9 +727,12 @@ function amazon_product_link_shortcode($atts){
         $associate_url = $DetailPageURL;
       }
       $moshimo_amazon_url = null;
+      $moshimo_amazon_impression_tag = null;
       if ($moshimo_amazon_id && is_moshimo_affiliate_link_enable()) {
         $moshimo_amazon_url = $moshimo_amazon_base_url.urlencode(get_amazon_associate_url($asin));
         $associate_url = $moshimo_amazon_url;
+        //インプレッションタグ
+        $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
       }
 
       $SmallImage = $item->SmallImage;
@@ -902,12 +905,14 @@ function amazon_product_link_shortcode($atts){
           '<figure class="amazon-item-thumb product-item-thumb">'.
             '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
+              $moshimo_amazon_impression_tag.
             '</a>'.
           '</figure>'.
           '<div class="amazon-item-content product-item-content">'.
             '<div class="amazon-item-title product-item-title">'.
               '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                  $TitleHtml.
+                 $moshimo_amazon_impression_tag.
               '</a>'.
             '</div>'.
             '<div class="amazon-item-snippet product-item-snippet">'.
