@@ -428,16 +428,16 @@ function get_amazon_itemlookup_xml($asin){
 endif;
 
 //Amazonインプレッションタブの取得
-if ( !function_exists( 'get_amazon_impression_tag' ) ):
-function get_amazon_impression_tag(){
+if ( !function_exists( 'get_moshimo_amazon_impression_tag' ) ):
+function get_moshimo_amazon_impression_tag(){
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
   return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_amazon_id.'&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;">';
 }
 endif;
 
 //楽天インプレッションタブの取得
-if ( !function_exists( 'get_rakuten_impression_tag' ) ):
-function get_rakuten_impression_tag(){
+if ( !function_exists( 'get_moshimo_rakuten_impression_tag' ) ):
+function get_moshimo_rakuten_impression_tag(){
   $moshimo_rakuten_id  = trim(get_moshimo_rakuten_id());
   return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;">';
 }
@@ -455,8 +455,8 @@ function get_valucomace_yahoo_impression_tag(){
 endif;
 
 //Yahoo!インプレッションタブの取得
-if ( !function_exists( 'get_yahoo_impression_tag' ) ):
-function get_yahoo_impression_tag(){
+if ( !function_exists( 'get_moshimo_yahoo_impression_tag' ) ):
+function get_moshimo_yahoo_impression_tag(){
   $moshimo_yahoo_id  = trim(get_moshimo_yahoo_id());
   return '<img src="https//i.moshimo.com/af/i/impression?a_id='.$moshimo_yahoo_id.'&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;">';
 }
@@ -471,20 +471,24 @@ function get_search_buttons_tag($args){
   if ($keyword) {
     //Amazonボタンの取得
     $amazon_btn_tag = null;
+    $is_moshimo_amazon = $moshimo_amazon_id && is_moshimo_affiliate_link_enable();
     if (is_amazon_search_button_visible() && $amazon) {
-      //$amazon_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword).'&tag='.$associate_tracking_id;
-      //もしもアフィリエイトIDがある場合
       $amazon_url = get_amazon_search_url($keyword, $associate_tracking_id);
-      if ($moshimo_amazon_id && is_moshimo_affiliate_link_enable()) {
+      if ($is_moshimo_amazon) {
         $amazon_url = get_moshimo_amazon_search_url($keyword, $moshimo_amazon_id);
       }
       //Amazon商品リンクで詳細ページを表示する場合
       if ($amazon_page_url && is_amazon_button_search_to_detail()) {
         $amazon_url = $amazon_page_url;
       }
+      //インプレッションタグ
+      $amazon_impression_tag = null;
+      if ($is_moshimo_amazon) {
+        $amazon_impression_tag = get_moshimo_amazon_impression_tag();
+      }
       $amazon_btn_tag =
         '<div class="shoplinkamazon">'.
-          '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().'</a>'.
+          '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -502,9 +506,14 @@ function get_search_buttons_tag($args){
       if ($rakuten_page_url && is_rakuten_button_search_to_detail()) {
         $rakuten_url = $rakuten_page_url;
       }
+      //インプレッションタグ
+      $rakuten_impression_tag = null;
+      if ($is_moshimo_rakuten) {
+        $rakuten_impression_tag = get_moshimo_rakuten_impression_tag();
+      }
       $rakuten_btn_tag =
         '<div class="shoplinkrakuten">'.
-          '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().'</a>'.
+          '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
         '</div>';
     }
     //Yahoo!ボタンの取得
@@ -517,9 +526,16 @@ function get_search_buttons_tag($args){
       if ($is_moshimo_yahoo) {
         $yahoo_url = get_moshimo_yahoo_search_url($keyword, $moshimo_yahoo_id);
       }
+      //インプレッションタグ
+      if ($is_moshimo_yahoo) {//もしもアフィリエイトが有効な場合
+        $yahoo_impression_tag = get_moshimo_yahoo_impression_tag();
+      } else {
+        $yahoo_impression_tag = get_valucomace_yahoo_impression_tag();
+      }
+
       $yahoo_tag =
         '<div class="shoplinkyahoo">'.
-          '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().'</a>'.
+          '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
         '</div>';
     }
     //ボタンコンテナ
