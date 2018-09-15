@@ -1249,6 +1249,7 @@ function rakuten_product_link_shortcode($atts){
           // もしも楽天URL
           ///////////////////////////////////////////
           $moshimo_rakuten_url = null;
+          $moshimo_rakuten_impression_tag = null;
           if ($moshimo_rakuten_id && is_moshimo_affiliate_link_enable()) {
             $decoded_affiliateUrl = urldecode($affiliateUrl);
             $decoded_affiliateUrl = str_replace('&amp;', '&', $decoded_affiliateUrl);
@@ -1258,6 +1259,8 @@ function rakuten_product_link_shortcode($atts){
                 $rakuten_product_page_url = $m[1][0];
                 $moshimo_rakuten_url = 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode($rakuten_product_page_url);
                 $affiliateUrl = $moshimo_rakuten_url;
+                //インプレッションタグ
+                $moshimo_rakuten_impression_tag = get_moshimo_rakuten_impression_tag();
               }
             }
           }
@@ -1309,12 +1312,14 @@ function rakuten_product_link_shortcode($atts){
               '<figure class="rakuten-item-thumb product-item-thumb">'.
                 '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                   '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="rakuten-item-thumb-image product-item-thumb-image">'.
+                  $moshimo_rakuten_impression_tag.
                 '</a>'.
               '</figure>'.
               '<div class="rakuten-item-content product-item-content">'.
                 '<div class="rakuten-item-title product-item-title">'.
                   '<a href="'.$affiliateUrl.'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                     $TitleHtml.
+                    $moshimo_rakuten_impression_tag.
                   '</a>'.
                 '</div>'.
                 '<div class="rakuten-item-snippet product-item-snippet">'.
