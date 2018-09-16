@@ -908,7 +908,7 @@ function amazon_product_link_shortcode($atts){
               $moshimo_amazon_impression_tag.
             '</a>'.
           '</figure>'.
-          '<div class="amazon-item-content product-item-content">'.
+          '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
               '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                  $TitleHtml.
@@ -1315,7 +1315,7 @@ function rakuten_product_link_shortcode($atts){
                   $moshimo_rakuten_impression_tag.
                 '</a>'.
               '</figure>'.
-              '<div class="rakuten-item-content product-item-content">'.
+              '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
                   '<a href="'.$affiliateUrl.'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
                     $TitleHtml.
