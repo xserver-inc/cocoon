@@ -100,7 +100,7 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
       <div class="st-comment-meta st-commentmetadata">
         <span class="st-comment-author vcard">
           <?php echo get_avatar( $comment, 48 );//アバター画像 ?>
-          <?php printf(__('名前:<cite class="fn comment-author">%s<span class="admin"></span></a></cite> :'), get_comment_author_link()); //投稿者の設定 ?>
+          <?php printf(__('<span class="comment-author-label">名前:</span><cite class="fn comment-author">%s<span class="admin"></span></a></cite><span class="comment-author-separator"> :</span>'), get_comment_author_link()); //投稿者の設定 ?>
         </span>
         <span class="st-comment-datetime"><?php _e( '投稿日：', THEME_NAME ) ?><?php printf(__('%1$s at %2$s'), get_comment_date(simple_thread_comment_date_format()),  get_comment_time(simple_thread_comment_time_format())); //投稿日の設定 ?></span>
         <span class="st-comment-id">
