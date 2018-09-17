@@ -2843,11 +2843,16 @@ label.screen-reader-text {
     margin-left: -10px;
   }
 }
+.btn-wrap img[width="1"] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a {
   color: #fff;
   font-weight: bold;
-  margin: 1em;
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;
@@ -4699,9 +4704,7 @@ div.fb-like-mobile {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.ranking-item img[width="1"], .timeline-box img[width="1"],
-.ranking-item img[height="1"],
-.timeline-box img[height="1"] {
+.ranking-item img[width="1"], .timeline-box img[width="1"] {
   position: absolute;
   bottom: 0;
   right: 0;

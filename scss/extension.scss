@@ -550,11 +550,18 @@ $bb_green: #3eb370;
   }
 }
 
+.btn-wrap{
+  img[width="1"]{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
 .btn,
 .btn-wrap > a{
   color: #fff;
   font-weight: bold;
-  margin: 1em;
   border-radius: 4px;
   display: inline-block;
   cursor: pointer;

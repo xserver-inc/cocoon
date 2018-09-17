@@ -12,8 +12,7 @@
   border: 1px solid $basic_border_color;
   border-radius: $basic_border_radius;
 
-  img[width="1"],
-  img[height="1"]{
+  img[width="1"]{
     position: absolute;
     bottom: 0;
     right: 0;
