@@ -1156,11 +1156,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'レッド（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-red'
         ),
         array(
           'title' => __( 'レッド（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-red btn-wrap-m'
         ),
         array(
@@ -1172,11 +1174,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ピンク（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-pink'
         ),
         array(
           'title' => __( 'ピンク（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-pink btn-wrap-m'
         ),
         array(
@@ -1188,11 +1192,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'パープル（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-purple'
         ),
         array(
           'title' => __( 'パープル（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-purple btn-wrap-m'
         ),
         array(
@@ -1204,11 +1210,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ディープパープル（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-deep'
         ),
         array(
           'title' => __( 'ディープパープル（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-deep btn-wrap-m'
         ),
         array(
@@ -1220,11 +1228,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'インディゴ[紺色]（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-indigo'
         ),
         array(
           'title' => __( 'インディゴ[紺色]（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-indigo btn-wrap-m'
         ),
         array(
@@ -1236,11 +1246,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ブルー（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-blue'
         ),
         array(
           'title' => __( 'ブルー（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-blue btn-wrap-m'
         ),
         array(
@@ -1252,11 +1264,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ライトブルー（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-light-blue'
         ),
         array(
           'title' => __( 'ライトブルー（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-light-blue btn-wrap-m'
         ),
         array(
@@ -1268,11 +1282,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'シアン（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-cyan'
         ),
         array(
           'title' => __( 'シアン（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-cyan btn-wrap-m'
         ),
         array(
@@ -1284,11 +1300,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ティール[緑色がかった青]（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-teal'
         ),
         array(
           'title' => __( 'ティール[緑色がかった青]（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-teal btn-wrap-m'
         ),
         array(
@@ -1300,11 +1318,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'グリーン（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-green'
         ),
         array(
           'title' => __( 'グリーン（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-green btn-wrap-m'
         ),
         array(
@@ -1316,11 +1336,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ライトグリーン（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-light-green'
         ),
         array(
           'title' => __( 'ライトグリーン（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-light-green btn-wrap-m'
         ),
         array(
@@ -1332,11 +1354,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ライム（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-lime'
         ),
         array(
           'title' => __( 'ライム（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-lime btn-wrap-m'
         ),
         array(
@@ -1348,11 +1372,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'イエロー（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-yellow'
         ),
         array(
           'title' => __( 'イエロー（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-yellow btn-wrap-m'
         ),
         array(
@@ -1364,11 +1390,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'アンバー[琥珀色]（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-amber'
         ),
         array(
           'title' => __( 'アンバー[琥珀色]（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-amber btn-wrap-m'
         ),
         array(
@@ -1380,11 +1408,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'オレンジ（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-orange'
         ),
         array(
           'title' => __( 'オレンジ（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-orange btn-wrap-m'
         ),
         array(
@@ -1396,11 +1426,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ディープオレンジ（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-deep-orange'
         ),
         array(
           'title' => __( 'ディープオレンジ（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-deep-orange btn-wrap-m'
         ),
         array(
@@ -1412,11 +1444,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'ブラウン（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-brown'
         ),
         array(
           'title' => __( 'ブラウン（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-brown btn-wrap-m'
         ),
         array(
@@ -1428,11 +1462,13 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( 'グレー（小）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-grey'
         ),
         array(
           'title' => __( 'グレー（中）', THEME_NAME ),
           'inline' => 'span',
+          'wrapper' => true,
           'classes' => 'btn-wrap btn-wrap-grey btn-wrap-m'
         ),
         array(
