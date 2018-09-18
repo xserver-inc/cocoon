@@ -3042,6 +3042,20 @@ label.screen-reader-text {
   padding: 1em 1.2%;
 }
 
+.column-2-3-1-2 .column-left {
+  width: 34%;
+}
+.column-2-3-1-2 .column-right {
+  width: 66%;
+}
+
+.column-2-3-2-1 .column-left {
+  width: 66%;
+}
+.column-2-3-2-1 .column-right {
+  width: 34%;
+}
+
 /************************************
 ** SNSフォローボタン
 ************************************/
