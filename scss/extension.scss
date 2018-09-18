@@ -619,6 +619,7 @@ $bb_green: #3eb370;
   padding: 20px 0;
   font-size: 18px;
   display: block;
+  margin: 1em;
 }
 // .btn-wrap{
 //   display: inline-block;
@@ -660,6 +661,21 @@ $bb_green: #3eb370;
 .btn-hand-o-right:before, .btn-wrap.btn-wrap-hand-o-right > a:before{content: "\f0a4";}
 .btn-arrow-circle-o-right:before, .btn-wrap.btn-wrap-arrow-circle-o-right > a:before{content: "\f18e";}
 .btn-caret-square-o-right:before, .btn-wrap.btn-wrap-caret-square-o-right > a:before{content: "\f152";}
+
+.micro-t{
+  font-size: 0.8em;
+  margin-bottom: -1em;
+}
+.micro-b{
+  font-size: 0.8em;
+  margin-top: -0.8em;
+}
+.micro-c{
+  text-align: center;
+}
+.micro-r{
+  text-align: right;
+}
 
 // /*メインカランの2カラム化*/
 // .half-half{

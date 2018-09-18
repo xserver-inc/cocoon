@@ -2902,6 +2902,7 @@ label.screen-reader-text {
   padding: 20px 0;
   font-size: 18px;
   display: block;
+  margin: 1em;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
@@ -3031,6 +3032,24 @@ label.screen-reader-text {
 
 .btn-caret-square-o-right:before, .btn-wrap.btn-wrap-caret-square-o-right > a:before {
   content: "\f152";
+}
+
+.micro-t {
+  font-size: 0.8em;
+  margin-bottom: -1em;
+}
+
+.micro-b {
+  font-size: 0.8em;
+  margin-top: -0.8em;
+}
+
+.micro-c {
+  text-align: center;
+}
+
+.micro-r {
+  text-align: right;
 }
 
 .column-wrap {
