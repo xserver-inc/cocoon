@@ -53,7 +53,7 @@ function generate_html_tags_is($value){
   $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
   htmlTags[0] = new Array();
-  htmlTags[0].title  = '<?php echo __( '2カラム', THEME_NAME ); ?>';
+  htmlTags[0].title  = '<?php echo __( '2カラム（1:1, ｜□｜□｜）', THEME_NAME ); ?>';
   htmlTags[0].tag = '<?php echo $before.$left_msg.$after; ?>';
   htmlTags[0].before = '<?php echo $before; ?>';
   htmlTags[0].after = '<?php echo $after; ?>';
@@ -63,7 +63,7 @@ function generate_html_tags_is($value){
   $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
   ?>
   htmlTags[1] = new Array();
-  htmlTags[1].title  = '<?php echo __( '2カラム（1:2, □:□□）', THEME_NAME ); ?>';
+  htmlTags[1].title  = '<?php echo __( '2カラム（1:2, ｜□｜□□｜）', THEME_NAME ); ?>';
   htmlTags[1].tag = '<?php echo $before.$left_msg.$after; ?>';
   htmlTags[1].before = '<?php echo $before; ?>';
   htmlTags[1].after = '<?php echo $after; ?>';
@@ -73,30 +73,50 @@ function generate_html_tags_is($value){
   $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
   ?>
   htmlTags[2] = new Array();
-  htmlTags[2].title  = '<?php echo __( '2カラム（2:1, □□:□）', THEME_NAME ); ?>';
+  htmlTags[2].title  = '<?php echo __( '2カラム（2:1, ｜□□｜□｜）', THEME_NAME ); ?>';
   htmlTags[2].tag = '<?php echo $before.$left_msg.$after; ?>';
   htmlTags[2].before = '<?php echo $before; ?>';
   htmlTags[2].after = '<?php echo $after; ?>';
+
+  <?php //２カラムレイアウト（1:3）
+  $before = '<div class="column-wrap column-2 column-2-4-1-3"><div class="column-left"><p>';
+  $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
+  ?>
+  htmlTags[3] = new Array();
+  htmlTags[3].title  = '<?php echo __( '2カラム（1:3, ｜□｜□□□｜）', THEME_NAME ); ?>';
+  htmlTags[3].tag = '<?php echo $before.$left_msg.$after; ?>';
+  htmlTags[3].before = '<?php echo $before; ?>';
+  htmlTags[3].after = '<?php echo $after; ?>';
+
+  <?php //２カラムレイアウト（3:1）
+  $before = '<div class="column-wrap column-2 column-2-4-3-1"><div class="column-left"><p>';
+  $after = '</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
+  ?>
+  htmlTags[4] = new Array();
+  htmlTags[4].title  = '<?php echo __( '2カラム（3:1, ｜□□□｜□｜）', THEME_NAME ); ?>';
+  htmlTags[4].tag = '<?php echo $before.$left_msg.$after; ?>';
+  htmlTags[4].before = '<?php echo $before; ?>';
+  htmlTags[4].after = '<?php echo $after; ?>';
 
   <?php //3カラムレイアウト
   $before = '<div class="column-wrap column-3"><div class="column-left"><p>';
   $after = '</p></div><div class="column-center"><p>'.$center_msg.'</p></div><div class="column-right"><p>'.$right_msg.'</p></div></div>';
    ?>
-  htmlTags[3] = new Array();
-  htmlTags[3].title  = '<?php echo __( '3カラム', THEME_NAME ); ?>';
-  htmlTags[3].tag = '<?php echo $before.$left_msg.$after; ?>';
-  htmlTags[3].before = '<?php echo $before; ?>';
-  htmlTags[3].after = '<?php echo $after; ?>';
+  htmlTags[5] = new Array();
+  htmlTags[5].title  = '<?php echo __( '3カラム', THEME_NAME ); ?>';
+  htmlTags[5].tag = '<?php echo $before.$left_msg.$after; ?>';
+  htmlTags[5].before = '<?php echo $before; ?>';
+  htmlTags[5].after = '<?php echo $after; ?>';
 
   <?php //検索
   $before = '<div class="search-form"><div class="sform">';
   $after = '</div><div class="sbtn">'.__( '検索', THEME_NAME ).'</div></div>';
    ?>
-  htmlTags[4] = new Array();
-  htmlTags[4].title  = '<?php echo __( '検索フォーム風', THEME_NAME ); ?>';
-  htmlTags[4].tag = '<?php echo $before.$keyword_msg.$after; ?>';
-  htmlTags[4].before = '<?php echo $before; ?>';
-  htmlTags[4].after = '<?php echo $after; ?>';
+  htmlTags[6] = new Array();
+  htmlTags[6].title  = '<?php echo __( '検索フォーム風', THEME_NAME ); ?>';
+  htmlTags[6].tag = '<?php echo $before.$keyword_msg.$after; ?>';
+  htmlTags[6].before = '<?php echo $before; ?>';
+  htmlTags[6].after = '<?php echo $after; ?>';
 
   <?php
 
