@@ -1089,17 +1089,25 @@ if ( !function_exists( 'is_buddypress_page' ) ):
 function is_buddypress_page(){
   if (is_buddypress_exist()) {
     //bp-core-template.phpファイルから
-    if (bp_is_my_profile()
-        || bp_is_user_profile()
-        // || bp_is_forums_component()
-        // || bp_is_user_forums_started()
-        // || bp_is_user_forums_replied_to()
-        // || bp_is_group_forum()
-        // || bp_is_group_forum_topic()
-        // || bp_is_group_forum_topic_edit()
-        // || bp_is_user_forums()
-        || (is_buddypress_exist() && is_bbpress_page())
+    if (!bp_is_blog_page()
+      // || bp_is_single_item()
+      // || bp_is_component_front_page()
+      //|| bp_is_blog_page()
+      //|| bp_is_active()
+      //bp_is_my_profile()
+        //|| bp_is_single_activity()
+        //|| bp_is_user_profile()
+        //|| bp_is_forums_component()
+        //|| bp_is_user_forums_started()
+        //|| bp_is_user_forums_replied_to()
+        //|| bp_is_group_forum()
+        //|| bp_is_group_forum_topic()
+        //|| bp_is_group_forum_topic_edit()
+        //|| bp_is_user_forums()
+        //|| (is_buddypress_exist() && is_bbpress_page())
       ) {
+      //var_dump(true);
+      // _v(true);
       return true;
     }
   }
