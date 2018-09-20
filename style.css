@@ -4188,12 +4188,6 @@ div.sbs-think .speech-balloon::after {
   float: left !important;
   height: 100% !important;
 }
-.nwa .booklink-info, .nwa .kaerebalink-info, .nwa .tomarebalink-info, .nwa .product-item-content {
-  width: auto !important;
-  overflow: visible !important;
-  text-align: center !important;
-  padding: 0 !important;
-}
 .nwa .booklink-link2,
 .nwa .kaerebalink-link1,
 .nwa .tomarebalink-link1,
@@ -4226,6 +4220,12 @@ div.sbs-think .speech-balloon::after {
   width: 80px;
   min-width: 80px;
 }
+.nwa .booklink-info, .nwa .kaerebalink-info, .nwa .tomarebalink-info, .nwa .product-item-content {
+  width: auto !important;
+  overflow: visible !important;
+  text-align: center !important;
+  padding: 0 !important;
+}
 .nwa .booklink-link2 > *,
 .nwa .kaerebalink-link1 > *,
 .nwa .tomarebalink-link1 > *,
@@ -4246,13 +4246,6 @@ div.sbs-think .speech-balloon::after {
     margin-right: 3% !important;
     float: left !important;
     height: 100% !important;
-  }
-
-  .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content {
-    width: auto !important;
-    overflow: visible !important;
-    text-align: center !important;
-    padding: 0 !important;
   }
 
   .booklink-link2,
@@ -4289,6 +4282,13 @@ div.sbs-think .speech-balloon::after {
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb {
     width: 80px;
     min-width: 80px;
+  }
+
+  .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content {
+    width: auto !important;
+    overflow: visible !important;
+    text-align: center !important;
+    padding: 0 !important;
   }
 
   .booklink-link2 > *,

@@ -324,12 +324,6 @@
   //   margin-bottom: 18px;
   // }
 
-  .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content{
-    width: auto !important;
-    overflow: visible !important;
-    text-align: center !important;
-    padding: 0 !important;
-  }
 
   .booklink-link2,
   .kaerebalink-link1,
@@ -360,6 +354,13 @@
   .booklink-image, .kaerebalink-image, .tomarebalink-image, .product-item-thumb{
     width: 80px;
     min-width: 80px;
+  }
+
+  .booklink-info, .kaerebalink-info, .tomarebalink-info, .product-item-content{
+    width: auto !important;
+    overflow: visible !important;
+    text-align: center !important;
+    padding: 0 !important;
   }
 
   .booklink-link2,
