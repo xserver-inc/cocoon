@@ -497,13 +497,53 @@ function convert_content_for_amp($the_content){
       //amp-img を amp-image-lightbox 用に置換
       $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
       $append      = '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
-      $the_content = preg_replace( $pattern, $append, $the_content );
+      // $the_content = preg_replace( $pattern, $append, $the_content );
+      if (preg_match_all($pattern, $the_content, $m)) {
+        $all_idx = 0;
+        $etc_idx = 1;
+        $i = 0;
+        foreach ($m[$all_idx] as $tag) {
+          $all_tag = $tag;
+          $etc_tag = $m[$etc_idx][$i];
+          if (preg_match('/class="(.+?)"/i', $etc_tag, $n)) {
+            $etc_tag = preg_replace('/class=".+?"/i', '', $etc_tag );
+            $the_content = str_replace($all_tag,
+            '<p><amp-img class="amp-lightbox amp-image-lightbox '.$n[1].'" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></p>',
+              $the_content);
+          } else {
+            $the_content = str_replace($all_tag,
+              '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"'.$etc_tag.'></p>',
+              $the_content);
+          }
+          $i++;
+        }
+      }
       break;
     case 'amp-lightbox-gallery':
       // amp-img を amp-lightbox-gallery 用に置換
       $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      $append      = '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox$1></p>';
-      $the_content = preg_replace( $pattern, $append, $the_content );
+      //$append      = '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox$1></p>';
+      //$the_content = preg_replace( $pattern, $append, $the_content );
+      if (preg_match_all($pattern, $the_content, $m)) {
+        $all_idx = 0;
+        $etc_idx = 1;
+        $i = 0;
+        foreach ($m[$all_idx] as $tag) {
+          $all_tag = $tag;
+          $etc_tag = $m[$etc_idx][$i];
+          if (preg_match('/class="(.+?)"/i', $etc_tag, $n)) {
+            $etc_tag = preg_replace('/class=".+?"/i', '', $etc_tag );
+            $the_content = str_replace($all_tag,
+              '<p><amp-img class="amp-lightbox amp-lightbox-gallery '.$n[1].'" lightbox'.$etc_tag.'></p>',
+              $the_content);
+          } else {
+            $the_content = str_replace($all_tag,
+              '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox'.$etc_tag.'></p>',
+              $the_content);
+          }
+          $i++;
+        }
+      }
       break;
   }
 
