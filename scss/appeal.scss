@@ -52,7 +52,7 @@
 }
 
 .appeal-button{
-  @include link_cancel($white_text_color);
+  @include link_cancel($white);
 
   background-color: $google_plus_color;
   font-weight: bold;
@@ -63,7 +63,7 @@
   padding: 10px 2em;
   border-radius: $basic_border_radius;
   &:hover{
-    color: $white_text_color;
+    color: $white;
     opacity: 0.7;
   }
 }

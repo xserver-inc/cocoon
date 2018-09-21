@@ -12,7 +12,6 @@ $text_color: #333;
 $pallid_text_color: #777;
 $x_pallid_text_color: #999;
 $white: #fff;
-$white_text_color: #fff;
 
 //テキストサイズ
 $text_size_default: 18px;
@@ -33,7 +32,6 @@ $thin: #ccc;
 $x_thin: #ddd;
 $xx_thin: #f3f4f5;
 $xxx_thin: #fafbfc;
-$bg_white: #fff;
 //$current_bgc: #eeeff0;
 $current_bgc: #eee;
 
@@ -176,7 +174,7 @@ $bgc_hover_anime: all 0.5s ease;
   right: 0;
   text-align: right;
   line-height: 1;
-  // background-color: $white_text_color;
+  // background-color: $white;
   // padding-left: 8px;
   //display: flex;
 }
@@ -209,14 +207,14 @@ $bgc_hover_anime: all 0.5s ease;
 //     display: block;
 //     background-color: $middle_thickness;
 //     text-align: center;
-//     @include link_cancel($white_text_color);
+//     @include link_cancel($white);
 //     border-radius: $basic_border_radius;
 //     height: 45px;
 //     //line-height: 45px;
 
 //     &:hover{
 //       opacity: 0.7;
-//       color: $white_text_color;
+//       color: $white;
 //       transition: $bgc_hover_anime;
 //     }
 //   }

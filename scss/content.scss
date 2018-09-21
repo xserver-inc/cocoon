@@ -106,14 +106,14 @@
 
 /*本文下カテゴリ*/
 .cat-link{
-  @include link_cancel($bg_white);
+  @include link_cancel($white);
   display: inline-block;
   margin-right: 5px;
   padding: 2px 6px;
   font-size: 12px;
   background-color: $text_color;
   //border: 1px solid $text_color;
-  //color: $bg_white;
+  //color: $white;
   border-radius: $badge_border_radius;
   word-break: break-all;
 
@@ -123,7 +123,7 @@
 
   &:hover{
     opacity: 0.5;
-    color: $white_text_color;
+    color: $white;
     // @include bgc_hover;
     // color: $text_color;
   }

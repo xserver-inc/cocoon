@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 .admin-panel{
   background-color: $text_color;
-  color: $white_text_color;
+  color: $white;
   opacity: 0.8;
   padding: 10px;
   font-size: 16px;
@@ -18,7 +18,7 @@
   z-index: 9999;
 
   a{
-    color: $white_text_color;
+    color: $white;
   }
 
   // &::before{

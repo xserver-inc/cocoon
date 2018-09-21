@@ -63,12 +63,12 @@ amp-img[src*="ad.jp.ap.valuecommerce.com"]{
   top: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: $white_text_color;
+  color: $white;
   position: relative;
   border-radius: $basic_border_radius;
 
   &:hover{
-    color: $white_text_color;
+    color: $white;
     opacity: 0.7;
   }
 }

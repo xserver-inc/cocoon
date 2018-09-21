@@ -21,7 +21,7 @@ label.screen-reader-text{
   display: flex;
   flex-wrap: wrap;
   a {
-    background-color: $bg_white;
+    background-color: $white;
     border: 1px solid $x_thin;
     border-radius: 2px;
     color: #555;
@@ -263,7 +263,7 @@ label.screen-reader-text{
     bottom: 0;
     padding: 10px 5px;
     background-color: $transpalent_black_bgc;
-    color: $white_text_color;
+    color: $white;
     max-height: 30%;
     overflow: hidden;
   }
@@ -334,7 +334,7 @@ label.screen-reader-text{
 
 .recent-comment-content {
   position: relative;
-  background: $bg_white;
+  background: $white;
   border: 1px solid $thin;
   padding: 6px;
   margin-top: 4px;
@@ -354,7 +354,7 @@ label.screen-reader-text{
 
   &::after {
     border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: $bg_white;
+    border-bottom-color: $white;
     border-width: 6px;
     margin-left: -6px;
   }

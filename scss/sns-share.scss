@@ -9,14 +9,14 @@
     display: block;
     background-color: $middle_thickness;
     text-align: center;
-    @include link_cancel($white_text_color);
+    @include link_cancel($white);
     border-radius: $basic_border_radius;
     height: 45px;
     //line-height: 45px;
 
     &:hover{
       opacity: 0.7;
-      color: $white_text_color;
+      color: $white;
       transition: $bgc_hover_anime;
     }
   }
@@ -90,7 +90,7 @@
 
   &.bc-brand-color-white{
     a{
-      background-color: $bg_white;
+      background-color: $white;
       font-weight: 500;
       &:hover{
         //background-color: $bgc_hover_color;
