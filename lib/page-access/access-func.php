@@ -172,6 +172,7 @@ endif;
 //DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
 function logging_page_access($post_id = null, $post_type = 'post'){
+  //_v(111);
   $res = false;
   //投稿・固定ページのみでカウントする
   if (is_access_count_enable()
@@ -199,12 +200,12 @@ function logging_page_access($post_id = null, $post_type = 'post'){
 
       if ($record) {
         //アクセスカウントの連続カウント防止
-        if (($record->last_ip != $last_ip) || DEBUG_MODE) {
+        //if (($record->last_ip != $last_ip) || DEBUG_MODE) {
           $post_id = $record->id;
           $posts['last_ip'] = $last_ip;
           $posts['count'] = intval($record->count) + 1;
           $res = update_accesses_record($post_id, $posts);
-        }
+        //}
       } else {
         $posts['post_id'] = $post_id;
         $posts['date'] = $date;
