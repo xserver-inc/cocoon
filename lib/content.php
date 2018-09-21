@@ -22,9 +22,12 @@ function get_the_content_all_scripts($the_content) {
       if (
         //Buddypressページでは除外
         is_buddypress_page() ||
+        //Amazonアソシエイト
+        includes_string($script, 'amzn_assoc') ||
+        includes_string($script, 'amazon-adsystem.co') ||
         //Googleトレンド埋め込み
         includes_string($script, 'ssl.gstatic.com') ||
-        includes_string($script, 'trends.google.co.jp')
+        includes_string($script, 'trends.google.co')
          ) {
         continue;
       }
