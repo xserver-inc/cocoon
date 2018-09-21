@@ -853,7 +853,7 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'badge badge-grey'
         ),
       ),
-    ),
+    ),/*
     array(
       'title' => __( 'マイクロコピー', THEME_NAME ),
       'items' => array(
@@ -939,7 +939,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
       ),
-    ),
+    ),*/
     array(
       'title' => __( 'ボタン（β機能）', THEME_NAME ),
       'items' => array(
