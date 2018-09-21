@@ -65,10 +65,11 @@ function add_avatar_to_user_profile($user) {
 endif;
 
 //入力した値を保存する
+add_action('profile_update', 'update_avatar_to_user_profile');
 add_action('personal_options_update', 'update_avatar_to_user_profile');
 if ( !function_exists( 'update_avatar_to_user_profile' ) ):
 function update_avatar_to_user_profile($user_id) {
-  if ( current_user_can('edit_user',$user_id) ){
+  if ( current_user_can('edit_user',$user_id) || is_user_administrator() ){
     update_user_meta($user_id, 'upladed_avatar', $_POST['upladed_avatar']);
     update_user_meta($user_id, 'profile_page_url', $_POST['profile_page_url']);
 
