@@ -2392,7 +2392,7 @@ label.screen-reader-text {
 .keyboard-key {
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee);
-  border: 1px solid #aaa;
+  border: 1px solid #777;
   border-radius: 2px;
   box-shadow: 1px 2px 2px #ddd;
   font-family: inherit;
@@ -3041,11 +3041,13 @@ label.screen-reader-text {
 .micro-top {
   font-size: 0.8em;
   margin-bottom: -1em;
+  margin-top: 1em;
 }
 
 .micro-bottom {
   font-size: 0.8em;
   margin-top: -0.8em;
+  margin-bottom: 1em;
 }
 
 .micro-center {
@@ -3056,16 +3058,17 @@ label.screen-reader-text {
   text-align: right;
 }
 
-.miclo-balloon {
+.micro-balloon {
   position: relative;
   background: #fff;
-  border: 1px solid #aaa;
+  border: 1px solid #777;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
+  margin-bottom: -.7em;
 }
 
-.miclo-balloon:after, .miclo-balloon:before {
+.micro-balloon:after, .micro-balloon:before {
   top: 97%;
   left: 50%;
   border: solid transparent;
@@ -3076,39 +3079,43 @@ label.screen-reader-text {
   pointer-events: none;
 }
 
-.miclo-balloon:after {
+.micro-balloon:after {
   border-top-color: #fff;
   border-width: 7px;
   margin-left: -7px;
 }
 
-.miclo-balloon:before {
-  border-top-color: #aaa;
+.micro-balloon:before {
+  border-top-color: #777;
   border-width: 8px;
   margin-left: -8px;
 }
 
-.miclo-balloon-center {
+.micro-balloon-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.miclo-balloon-right {
+.micro-balloon-right {
   margin-left: auto;
 }
 
-.micro-bottom.miclo-balloon:after, .micro-bottom.miclo-balloon:before {
+.micro-bottom.micro-balloon {
+  margin-top: -.5em;
+}
+
+.micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
   bottom: 97%;
   top: auto;
 }
 
-.micro-bottom.miclo-balloon:after {
+.micro-bottom.micro-balloon:after {
   border-bottom-color: #fff;
   border-top-color: transparent;
 }
 
-.micro-bottom.miclo-balloon:before {
-  border-bottom-color: #aaa;
+.micro-bottom.micro-balloon:before {
+  border-bottom-color: #777;
   border-top-color: transparent;
 }
 

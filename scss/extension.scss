@@ -3,7 +3,7 @@
 .ref,
 .reffer,
 .sankou{
-  color: #fff;
+  color: $white;
   background-color: #fc7a22;
   padding: 1px 5px 0;
   border-radius: 2px;
@@ -89,7 +89,7 @@ $marker_u_blue: #a8dafb;
 .keyboard-key {
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(center top , #eee, #f9f9f9, #eee);
-  border: 1px solid #aaa;
+  border: 1px solid $middle_thickness;
   border-radius: 2px;
   box-shadow: 1px 2px 2px #ddd;
   font-family: inherit;
@@ -387,7 +387,7 @@ $bb_green: #3eb370;
       top: -1.8em;
       left: -2px;
       padding: 0 1em 0 .8em;
-      color: #fff;
+      color: $white;
       border-radius: 6px 6px 0 0;
     }
     &.bb-yellow::before{background-color: $bb_yellow;}
@@ -503,7 +503,7 @@ $bb_green: #3eb370;
 
 .search-form div.sform{
   min-width: 280px;
-  background-color: #fff;
+  background-color: $white;
 }
 
 .search-form div.sbtn{
@@ -665,10 +665,12 @@ $bb_green: #3eb370;
 .micro-top{
   font-size: 0.8em;
   margin-bottom: -1em;
+  margin-top: 1em;
 }
 .micro-bottom{
   font-size: 0.8em;
   margin-top: -0.8em;
+  margin-bottom: 1em;
 }
 .micro-center{
   text-align: center;
@@ -677,15 +679,17 @@ $bb_green: #3eb370;
   text-align: right;
 }
 
-.miclo-balloon {
+
+.micro-balloon {
 	position: relative;
-	background: #fff;
-  border: 1px solid #aaa;
+	background: $white;
+  border: 1px solid $middle_thickness;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
+  margin-bottom: -.7em;
 }
-.miclo-balloon:after, .miclo-balloon:before {
+.micro-balloon:after, .micro-balloon:before {
 	top: 97%;
 	left: 50%;
 	border: solid transparent;
@@ -696,34 +700,37 @@ $bb_green: #3eb370;
 	pointer-events: none;
 }
 
-.miclo-balloon:after {
-	border-top-color: #fff;
+.micro-balloon:after {
+	border-top-color: $white;
 	border-width: 7px;
 	margin-left: -7px;
 }
-.miclo-balloon:before {
-	border-top-color: #aaa;
+.micro-balloon:before {
+	border-top-color: $middle_thickness;
 	border-width: 8px;
 	margin-left: -8px;
 }
-.miclo-balloon-center{
+.micro-balloon-center{
   margin-left: auto;
   margin-right: auto;
 }
-.miclo-balloon-right{
+.micro-balloon-right{
   margin-left: auto;
 }
-.micro-bottom.miclo-balloon:after, .micro-bottom.miclo-balloon:before {
+.micro-bottom.micro-balloon{
+  margin-top: -.5em;
+}
+.micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
   bottom: 97%;
   top: auto;
 }
 
-.micro-bottom.miclo-balloon:after {
-	border-bottom-color: #fff;
+.micro-bottom.micro-balloon:after {
+	border-bottom-color: $white;
   border-top-color: transparent;
 }
-.micro-bottom.miclo-balloon:before {
-  border-bottom-color: #aaa;
+.micro-bottom.micro-balloon:before {
+  border-bottom-color: $middle_thickness;
   border-top-color: transparent;
 }
 

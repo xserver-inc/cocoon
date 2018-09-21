@@ -855,6 +855,92 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
+      'title' => __( 'マイクロコピー', THEME_NAME ),
+      'items' => array(
+        array(
+          'title' => __( 'テキスト（上）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '左側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-left'
+            ),
+            array(
+              'title' => __( '中央', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-center'
+            ),
+            array(
+              'title' => __( '右側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-right'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'テキスト（下）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '左側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-left'
+            ),
+            array(
+              'title' => __( '中央', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-center'
+            ),
+            array(
+              'title' => __( '右側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-right'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( '吹き出し（上）', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '左側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-balloon micro-balloon-left'
+            ),
+            array(
+              'title' => __( '中央', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-balloon micro-balloon-center'
+            ),
+            array(
+              'title' => __( '右側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-top micro-balloon micro-balloon-right'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( '吹き出し（下）', THEME_NAME ),
+          'items' => array(
+
+            array(
+              'title' => __( '左側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-balloon micro-balloon-left'
+            ),
+            array(
+              'title' => __( '中央', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-balloon micro-balloon-center'
+            ),
+            array(
+              'title' => __( '右側', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'micro-bottom micro-balloon micro-balloon-right'
+            ),
+          ),
+        ),
+      ),
+    ),
+    array(
       'title' => __( 'ボタン（β機能）', THEME_NAME ),
       'items' => array(
 
