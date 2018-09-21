@@ -3038,22 +3038,78 @@ label.screen-reader-text {
   content: "\f152";
 }
 
-.micro-t {
+.micro-top {
   font-size: 0.8em;
   margin-bottom: -1em;
 }
 
-.micro-b {
+.micro-bottom {
   font-size: 0.8em;
   margin-top: -0.8em;
 }
 
-.micro-c {
+.micro-center {
   text-align: center;
 }
 
-.micro-r {
+.micro-right {
   text-align: right;
+}
+
+.miclo-balloon {
+  position: relative;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 3px 8px;
+  display: table;
+}
+
+.miclo-balloon:after, .miclo-balloon:before {
+  top: 97%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.miclo-balloon:after {
+  border-top-color: #fff;
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.miclo-balloon:before {
+  border-top-color: #aaa;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.miclo-balloon-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.miclo-balloon-right {
+  margin-left: auto;
+}
+
+.micro-bottom.miclo-balloon:after, .micro-bottom.miclo-balloon:before {
+  bottom: 97%;
+  top: auto;
+}
+
+.micro-bottom.miclo-balloon:after {
+  border-bottom-color: #fff;
+  border-top-color: transparent;
+}
+
+.micro-bottom.miclo-balloon:before {
+  border-bottom-color: #aaa;
+  border-top-color: transparent;
 }
 
 .column-wrap {
