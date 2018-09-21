@@ -6,20 +6,44 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
+if ( !function_exists( 'get_big_card_first_thumbnail_size' ) ):
+function get_big_card_first_thumbnail_size($count){
+  if ($count == 1) {
+    return 'large';
+  } else {
+    return 'thumb320';
+  }
+}
+endif;
+
+if ( !function_exists( 'get_big_card__thumbnail_size' ) ):
+function get_big_card__thumbnail_size(){
+  return 'large';
+}
+endif;
+
+if ( !function_exists( 'get_entry_card__thumbnail_size' ) ):
+function get_entry_card__thumbnail_size(){
+  return 'thumb320';
+}
+endif;
+
 //エントリーカードのサムネイルサイズ
 if ( !function_exists( 'get_entry_card_thumbnail_size' ) ):
 function get_entry_card_thumbnail_size($count){
   $thumbnail_size = null;
   switch (get_entry_card_type()) {
     case 'big_card_first':
-      if ($count == 1) {
-        $thumbnail_size = 'large';
-      } else {
-        $thumbnail_size = 'thumb320';
-      }
+      $thumbnail_size = get_big_card_first_thumbnail_size($count);
+        if ($count == 1) {
+          $thumbnail_size = 'large';
+        } else {
+          $thumbnail_size = 'thumb320';
+        }
       break;
     case 'big_card':
-      $thumbnail_size = 'large';
+      $thumbnail_size = get_big_card__thumbnail_size();
+      // $thumbnail_size = 'large';
       break;
     case 'vertical_card_2':
       $thumbnail_size = get_vertical_card_2_thumbnail_size();
@@ -34,7 +58,8 @@ function get_entry_card_thumbnail_size($count){
       $thumbnail_size = get_tile_card_3_thumbnail_size();
       break;
     default://エントリーカード
-      $thumbnail_size = 'thumb320';
+      $thumbnail_size = get_entry_card__thumbnail_size();
+      // $thumbnail_size = 'thumb320';
       break;
   }
   return $thumbnail_size;
