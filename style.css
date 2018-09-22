@@ -3122,10 +3122,24 @@ label.screen-reader-text {
 .column-wrap {
   display: flex;
   position: relative;
+  margin: 1em 0;
+}
+.column-wrap .column-wrap {
+  margin: 0;
+}
+.column-wrap .column-left {
+  padding-left: 0;
+}
+.column-wrap .column-right {
+  padding-right: 0;
 }
 .column-wrap > div {
   width: 100%;
-  padding: 1em 1.2%;
+  padding: 0 0.45em;
+  margin: 0;
+}
+.column-wrap > div p {
+  margin-top: 0;
 }
 
 .column-2-3-1-2 .column-left {
