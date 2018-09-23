@@ -36,7 +36,7 @@ function get_site_initiation_year(){
 }
 endif;
 
-//サイト開始日
+//著作権者表記
 define('OP_COPYRIGHT_NAME', 'copyright_name');
 if ( !function_exists( 'get_copyright_name' ) ):
 function get_copyright_name(){
@@ -60,25 +60,36 @@ function get_user_credit_notation(){
 }
 endif;
 
+//著作権者名表記の取得
+if ( !function_exists( 'get_copyright_display_name' ) ):
+function get_copyright_display_name(){
+  if ($copyright_name = get_copyright_name()) {
+    return $copyright_name;
+  } else {
+    return get_bloginfo('name');
+  }
+}
+endif;
+
 //サイトクレジット表記取得関数
 if ( !function_exists( 'get_the_site_credit' ) ):
 function get_the_site_credit(){
   $credit = null;
   switch (get_credit_notation()) {
     case 'simple':
-      $credit = '© '.get_site_initiation_year().' '.get_bloginfo('name').'.';
+      $credit = '© '.get_site_initiation_year().' '.get_copyright_display_name().'.';
       break;
     // case 'simple_year':
-    //   $credit = '© '.get_site_initiation_year().' '.get_bloginfo('name').'.';
+    //   $credit = '© '.get_site_initiation_year().' '.get_copyright_display_name().'.';
     //   break;
     case 'simple_year_begin_to_now':
-      $credit = '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').'.';
+      $credit = '© '.get_site_initiation_year().'-'.date('Y').' '.get_copyright_display_name().'.';
       break;
     case 'full':
-      $credit = 'Copyright © '.get_site_initiation_year().' '.get_bloginfo('name').' All Rights Reserved.';
+      $credit = 'Copyright © '.get_site_initiation_year().' '.get_copyright_display_name().' All Rights Reserved.';
       break;
     case 'full_year_begin_to_now':
-      $credit = 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.';
+      $credit = 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_copyright_display_name().' All Rights Reserved.';
       break;
     default:
       $credit = get_user_credit_notation();

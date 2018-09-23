@@ -68,14 +68,15 @@
             echo '<br>';
 
             generate_label_tag(OP_COPYRIGHT_NAME, __( '著作権者表記：', THEME_NAME ));
-            generate_textbox_tag(OP_COPYRIGHT_NAME, get_copyright_name(), '', 16);
+            generate_textbox_tag(OP_COPYRIGHT_NAME, get_copyright_name(), '', 15);
+            echo __( '※無記入だとサイト名', THEME_NAME );
 
             $options = array(
-              'simple' => '© '.get_site_initiation_year().' '.get_bloginfo('name').'.',
-              //'simple_year' => '© '.get_site_initiation_year().' '.get_bloginfo('name'),
-              'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').'.',
-              'full' => 'Copyright © '.get_site_initiation_year().' '.get_bloginfo('name').' All Rights Reserved.',
-              'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_bloginfo('name').' All Rights Reserved.',
+              'simple' => '© '.get_site_initiation_year().' '.get_copyright_display_name().'.',
+              //'simple_year' => '© '.get_site_initiation_year().' '.get_copyright_display_name(),
+              'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date('Y').' '.get_copyright_display_name().'.',
+              'full' => 'Copyright © '.get_site_initiation_year().' '.get_copyright_display_name().' All Rights Reserved.',
+              'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date('Y').' '.get_copyright_display_name().' All Rights Reserved.',
               'user_credit' => '独自表記',
             );
             generate_radiobox_tag(OP_CREDIT_NOTATION, $options, get_credit_notation());
