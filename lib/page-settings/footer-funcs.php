@@ -36,6 +36,14 @@ function get_site_initiation_year(){
 }
 endif;
 
+//サイト開始日
+define('OP_COPYRIGHT_NAME', 'copyright_name');
+if ( !function_exists( 'get_copyright_name' ) ):
+function get_copyright_name(){
+  return get_theme_option(OP_COPYRIGHT_NAME);
+}
+endif;
+
 //クレジット表記
 define('OP_CREDIT_NOTATION', 'credit_notation');
 if ( !function_exists( 'get_credit_notation' ) ):

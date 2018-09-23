@@ -65,6 +65,10 @@
             <?php
             generate_label_tag(OP_SITE_INITIATION_YEAR, __( 'サイト開設年：', THEME_NAME ));
             generate_number_tag(OP_SITE_INITIATION_YEAR, get_site_initiation_year(), '', 1970, intval(date('Y')));
+            echo '<br>';
+
+            generate_label_tag(OP_COPYRIGHT_NAME, __( '著作権者表記：', THEME_NAME ));
+            generate_textbox_tag(OP_COPYRIGHT_NAME, get_copyright_name(), '', 16);
 
             $options = array(
               'simple' => '© '.get_site_initiation_year().' '.get_bloginfo('name').'.',
