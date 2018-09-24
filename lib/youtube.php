@@ -146,7 +146,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
   $html = $wrap_start . "<div class='video-click video' data-iframe='$youtube' style='position:relative;background: url($thumb_url) no-repeat scroll center center / cover' ><div class='video-title-grad'><div class='video-title-text'>{$json['title']}</div></div><div class='video-play'></div></div>" . $wrap_end;
 
-  return $html;
+  return apply_filters('youtube_embed_html', $html);
 
 };
 endif;
