@@ -19,7 +19,7 @@ function get_the_content_all_scripts($the_content) {
     $i = 0;
     foreach ($m[$all_index] as $script) {
       //除外設定
-      if (1 ||
+      if (
         //Buddypressページでは除外
         is_buddypress_page() ||
         //WordPressのプレイリストなど
