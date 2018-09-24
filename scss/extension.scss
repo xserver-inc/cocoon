@@ -683,7 +683,7 @@ $bb_green: #3eb370;
 .micro-balloon {
 	position: relative;
 	background: $white;
-  border: 1px solid $middle_thickness;
+  border: 1px solid $x_pallid_text_color;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
@@ -706,7 +706,7 @@ $bb_green: #3eb370;
 	margin-left: -7px;
 }
 .micro-balloon:before {
-	border-top-color: $middle_thickness;
+	border-top-color: $x_pallid_text_color;
 	border-width: 8px;
 	margin-left: -8px;
 }
@@ -730,7 +730,7 @@ $bb_green: #3eb370;
   border-top-color: transparent;
 }
 .micro-bottom.micro-balloon:before {
-  border-bottom-color: $middle_thickness;
+  border-bottom-color: $x_pallid_text_color;
   border-top-color: transparent;
 }
 

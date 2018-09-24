@@ -3061,7 +3061,7 @@ label.screen-reader-text {
 .micro-balloon {
   position: relative;
   background: #fff;
-  border: 1px solid #777;
+  border: 1px solid #999;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
@@ -3086,7 +3086,7 @@ label.screen-reader-text {
 }
 
 .micro-balloon:before {
-  border-top-color: #777;
+  border-top-color: #999;
   border-width: 8px;
   margin-left: -8px;
 }
@@ -3115,7 +3115,7 @@ label.screen-reader-text {
 }
 
 .micro-bottom.micro-balloon:before {
-  border-bottom-color: #777;
+  border-bottom-color: #999;
   border-top-color: transparent;
 }
 
