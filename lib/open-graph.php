@@ -170,11 +170,18 @@ class OpenGraphGetter implements Iterator
 		if (empty($page->_values)) { return false; }
 
     //og:titleが空文字だったとき
-    $page_title = trim($page->_values['title']);
+    $page_title = null;
+    if (isset($page->_values['title'])) {
+      $page_title = trim($page->_values['title']);
+    }
     if (empty($page_title)) {
       $page->_values['title'] = $title;
     }
     //og:descriptionが空文字だったとき
+    $page_description = null;
+    if (isset($page->_values['description'])) {
+      $page_description = trim($page->_values['description']);
+    }
     $page_description = trim($page->_values['description']);
     if (empty($page_description)) {
       $page->_values['description'] = $description;

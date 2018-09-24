@@ -1228,7 +1228,7 @@ function rakuten_product_link_shortcode($atts){
           // 値段表記
           ///////////////////////////////////////////
           $item_price_tag = null;
-          if ($body->{'date'}) {
+          if (isset($body->{'date'})) {
             $acquired_date = $body->{'date'};
           }
 
