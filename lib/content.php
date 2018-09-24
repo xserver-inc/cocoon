@@ -19,9 +19,11 @@ function get_the_content_all_scripts($the_content) {
     $i = 0;
     foreach ($m[$all_index] as $script) {
       //除外設定
-      if (
+      if (1 ||
         //Buddypressページでは除外
         is_buddypress_page() ||
+        //WordPressのプレイリストなど
+        includes_string($script, 'type="application/json"') ||
         //Amazonアソシエイト
         includes_string($script, 'amzn_assoc') ||
         includes_string($script, 'amazon-adsystem.co') ||
