@@ -11,6 +11,8 @@ if ( !function_exists( 'add_custom_js_custom_box' ) ):
 function add_custom_js_custom_box() {
   add_meta_box( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'post', 'normal', 'low' );
   add_meta_box( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'page', 'normal', 'low' );
+  //カスタム投稿タイプに登録
+  add_meta_box_custom_post_types( 'custom_js', __( 'カスタムJavaScript', THEME_NAME ), 'view_custom_js_custom_box', 'page', 'normal', 'low' );
 }
 endif;
 

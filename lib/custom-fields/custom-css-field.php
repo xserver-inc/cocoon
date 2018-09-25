@@ -11,6 +11,8 @@ if ( !function_exists( 'add_custom_css_custom_box' ) ):
 function add_custom_css_custom_box() {
   add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'post', 'normal', 'low' );
   add_meta_box( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'page', 'normal', 'low' );
+  //カスタム投稿タイプに登録
+  add_meta_box_custom_post_types( 'custom_css', __( 'カスタムCSS', THEME_NAME ), 'view_custom_css_custom_box', 'page', 'normal', 'low' );
 }
 endif;
 
