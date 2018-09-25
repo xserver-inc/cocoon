@@ -14,10 +14,17 @@ function get_skin_url(){
 }
 endif;
 
-//スキンのjavascript.jsを取得を
+//スキンのjavascript.jsを取得
 if ( !function_exists( 'get_skin_js_url' ) ):
 function get_skin_js_url(){
   return str_ireplace('style.css', 'javascript.js', get_skin_url());
+}
+endif;
+
+//スキンのfunctions.phpを取得
+if ( !function_exists( 'get_skin_php_url' ) ):
+function get_skin_php_url(){
+  return str_ireplace('style.css', 'functions.php', get_skin_url());
 }
 endif;
 

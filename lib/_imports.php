@@ -10,6 +10,12 @@ require_once ABSPATH.'wp-admin/includes/file.php';//WP_Filesystemの使用
 //abspath(__FILE__)
 require_once abspath(__FILE__).'language.php';   //マルチ言語設定
 require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
+require_once abspath(__FILE__).'page-settings/skin-funcs.php';       //スキン設定関数
+if (get_skin_url()) {
+  require_once abspath(__FILE__).'skin.php';   //スキン
+}
+require_once abspath(__FILE__).'language.php';   //マルチ言語設定
+require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
 require_once abspath(__FILE__).'html-forms.php'; //HTMLフォーム生成関数
 require_once abspath(__FILE__).'html-tooltips.php'; //HTMLツールチップ生成関数
 require_once abspath(__FILE__).'ad.php';         //広告関係の設定
@@ -54,7 +60,6 @@ require_once abspath(__FILE__).'page-settings/footer-funcs.php';     //フッタ
 require_once abspath(__FILE__).'page-settings/buttons-funcs.php';    //ボタン設定関数
 require_once abspath(__FILE__).'page-settings/mobile-buttons-funcs.php'; //モバイルボタン設定関数
 require_once abspath(__FILE__).'page-settings/404-funcs.php';        //404ページ設定関数
-require_once abspath(__FILE__).'page-settings/skin-funcs.php';       //スキン設定関数
 require_once abspath(__FILE__).'page-settings/amp-funcs.php';        //AMP設定関数
 require_once abspath(__FILE__).'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once abspath(__FILE__).'page-settings/editor-funcs.php';     //エディター設定関数
