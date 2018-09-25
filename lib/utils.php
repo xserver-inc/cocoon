@@ -2026,7 +2026,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     }
     //3年以上経っている場合は年だけでOK
     if (($months == 0) || ($years >= 3)) {
-      $since = sprintf(__('%s年', sprintf), $years);
+      $since = sprintf(__('%s年', THEME_NAME), $years);
     } else {
       $since = sprintf(__('%s年%sヶ月', THEME_NAME), $years, $months);
     }
@@ -2044,5 +2044,27 @@ function str_to_bool($string){
     return true;
   }
 
+}
+endif;
+
+//カスタム投稿タイプの配列取得
+if ( !function_exists( 'get_custum_post_types' ) ):
+function get_custum_post_types(){
+  $args = array(
+    'public' => true,
+    '_builtin' => false
+  );
+  $post_types = get_post_types( $args );
+  return $post_types;
+}
+endif;
+
+//カスタムポストタイプをまとめて登録
+if ( !function_exists( 'add_meta_box_custom_post_types' ) ):
+function add_meta_box_custom_post_types($id, $title, $callback, $screen = null, $context = 'advanced', $priority = 'default', $callback_args = null){
+  $post_types = get_custum_post_types();
+  foreach ($post_types as $post_type) {
+    add_meta_box($id, $title, $callback, $post_type, $context, $priority, $callback_args);
+  }
 }
 endif;
