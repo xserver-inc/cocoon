@@ -2034,3 +2034,15 @@ function get_human_time_diff_advance( $from, $to = '' ) {
   return $since;
 }
 endif;
+
+//文字列をBoolean型に変換
+if ( !function_exists( 'str_to_bool' ) ):
+function str_to_bool($string){
+  if (!boolval($string) || $string === 'false') {
+    return false;
+  } else {
+    return true;
+  }
+
+}
+endif;

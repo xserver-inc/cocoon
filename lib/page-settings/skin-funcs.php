@@ -170,15 +170,20 @@ function get_skin_infos(){
           if (preg_match('/Screenshot URI: *(.+)/i', $css, $m)) {
             $screenshot_uri = trim($m[1]);
           }
-          //AMP記述がある場合
-          $amp = null;
-          if (preg_match('/AMP: *(.+)/i', $css, $m)) {
-            $amp = trim($m[1]);
-          }
           //バージョンが設定されている場合
           $version = null;
           if (preg_match('/Version: *(.+)/i', $css, $m)) {
             $version = trim($m[1]);
+          }
+          //スキンの設定画面表示
+          $visibility = true;
+          if (preg_match('/Visibility: *(.+)/i', $css, $m)) {
+            $visibility = str_to_bool(trim($m[1]));
+          }
+          //AMP記述がある場合
+          $amp = true;
+          if (preg_match('/AMP: *(.+)/i', $css, $m)) {
+            $amp = str_to_bool(trim($m[1]));
           }
 
 
@@ -199,6 +204,7 @@ function get_skin_infos(){
             'author_uri' => $author_uri,
             'screenshot_uri' => $screenshot_uri,
             'version' => $version,
+            'visibility' => $visibility,
           );
         }
       }
