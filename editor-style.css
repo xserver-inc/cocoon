@@ -84,6 +84,27 @@ body.gutenberg-editor-page div.editor-block-list__block {
   font-size: inherit !important;
 }
 */
+@media screen and (max-width: 600px){
+  div.edit-post-visual-editor .editor-block-list__block .editor-block-list__block-edit {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  div.editor-block-list__block::before,
+  div.editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit::before {
+    left: 0;
+    right: 0;
+  }
+  div.freeform-toolbar{
+    margin: 0;
+  }
+}
+@media screen and (min-width: 960px){
+  div.edit-post-text-editor {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
 div.mce-content-body{
   line-height: inherit;
 }
