@@ -16,7 +16,8 @@ function add_page_custom_box(){
   //ページ設定
   add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'post', 'side' );
   add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'page', 'side' );
-  add_meta_box( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'topic', 'side' );
+  //カスタム投稿タイプに登録
+  add_meta_box_custom_post_types( 'singular_page_settings',__( 'ページ設定', THEME_NAME ), 'page_custom_box_view', 'custum_post', 'side' );
 }
 endif;
 

@@ -2064,6 +2064,7 @@ if ( !function_exists( 'add_meta_box_custom_post_types' ) ):
 function add_meta_box_custom_post_types($id, $title, $callback, $screen = null, $context = 'advanced', $priority = 'default', $callback_args = null){
   $post_types = get_custum_post_types();
   foreach ($post_types as $post_type) {
+    //_v($post_type);
     add_meta_box($id, $title, $callback, $post_type, $context, $priority, $callback_args);
   }
 }

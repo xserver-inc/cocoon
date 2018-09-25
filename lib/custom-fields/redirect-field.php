@@ -16,7 +16,8 @@ function add_redirect_custom_box(){
   //リダイレクト
   add_meta_box( 'singular_redirect_settings',__( 'リダイレクト', THEME_NAME ), 'redirect_custom_box_view', 'post', 'side' );
   add_meta_box( 'singular_redirect_settings',__( 'リダイレクト', THEME_NAME ), 'redirect_custom_box_view', 'page', 'side' );
-  add_meta_box( 'singular_redirect_settings',__( 'リダイレクト', THEME_NAME ), 'redirect_custom_box_view', 'topic', 'side' );
+  //カスタム投稿タイプに登録
+  add_meta_box_custom_post_types( 'singular_redirect_settings',__( 'リダイレクト', THEME_NAME ), 'redirect_custom_box_view', 'custum_post', 'side' );
 }
 endif;
 
