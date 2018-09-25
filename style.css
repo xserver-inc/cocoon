@@ -3716,10 +3716,12 @@ canvas, iframe, video,
 }
 .nwa .author-box .sns-follow-buttons {
   display: block;
+  font-size: 1px;
+  font-size: 0;
 }
 .nwa .author-box .sns-follow-buttons a {
   display: inline-block;
-  margin: 0;
+  margin: 2px;
 }
 
 /************************************
