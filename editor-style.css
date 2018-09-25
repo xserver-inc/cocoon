@@ -68,17 +68,22 @@ body.gutenberg-editor-page .editor-block-list__layout{
   padding: 0;
 }
 
-body.gutenberg-editor-page .edit-post-text-editor {
+body.gutenberg-editor-page div.editor-post-title__block,
+body.gutenberg-editor-page div.editor-default-block-appender,
+body.gutenberg-editor-page div.editor-block-list__block {
   padding: 0;
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
 }
-
+/*
+.editor-block-list__block, .editor-block-list__block p{
+  font-size: unset;
+}
 .edit-post-visual-editor, .edit-post-visual-editor input[type="text"].editor-default-block-appender__content, .edit-post-visual-editor p{
-  font-family: inherit;;
-  font-size: inherit;
+  font-family: inherit !important;
+  font-size: inherit !important;
 }
-
+*/
 div.mce-content-body{
   line-height: inherit;
 }

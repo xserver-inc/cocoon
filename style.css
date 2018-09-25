@@ -2855,7 +2855,7 @@ label.screen-reader-text {
 
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a {
-  color: #fff;
+  color: #fff !important;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -2867,6 +2867,10 @@ label.screen-reader-text {
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+}
+.btn amp-img, .ranking-item-link-buttons a amp-img,
+.btn-wrap > a amp-img {
+  position: absolute;
 }
 
 .btn:before, .ranking-item-link-buttons a:before,

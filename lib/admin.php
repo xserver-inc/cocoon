@@ -435,10 +435,29 @@ endif;
 
 //投稿管理画面のカテゴリー選択にフィルタリング機能を付ける
 add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
-add_action( 'admin_head-post.php', 'add_category_filter_form' );
-if ( !function_exists( 'add_category_filter_form' ) ):
-function add_category_filter_form() {
+add_action( 'admin_head-post.php', 'add_head_post_custum' );
+if ( !function_exists( 'add_head_post_custum' ) ):
+function add_head_post_custum() {
 ?>
+<style>
+div.editor-block-list__block,
+div.editor-block-list__block p{
+  <?php //フォントサイズ
+  if(get_site_font_size()): ?>
+    font-size: <?php echo get_site_font_size(); ?>;
+  <?php endif; ?>
+
+  <?php //フォントファミリー
+  if(get_site_font_family()): ?>
+    font-family: <?php echo get_site_font_family(); ?>;
+  <?php endif; ?>
+
+  <?php //文字の太さ
+  if(get_site_font_weight()): ?>
+    font-weight: <?php echo get_site_font_weight(); ?>;
+  <?php endif; ?>
+}
+</style>
 <script type="text/javascript">
 jQuery(function($) {
   function zenToHan(text) {

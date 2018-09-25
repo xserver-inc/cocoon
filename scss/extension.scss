@@ -560,7 +560,7 @@ $bb_green: #3eb370;
 
 .btn,
 .btn-wrap > a{
-  color: #fff;
+  color: $white !important;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -572,6 +572,10 @@ $bb_green: #3eb370;
   font-size: 14px;
   border: 2px solid transparent;
   position: relative;
+
+  amp-img{
+    position: absolute;
+  }
 
   // a{
   //   @include link_cancel;
