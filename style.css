@@ -6167,6 +6167,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   white-space: nowrap;
 }
 
+#main .wp-block-embed__wrapper::before {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
