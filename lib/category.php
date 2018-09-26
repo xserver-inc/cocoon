@@ -49,6 +49,15 @@ function get_category_color($cat_id = null){
 }
 endif;
 
+//カテゴリ文字色の取得
+if ( !function_exists( 'get_category_text_color' ) ):
+function get_category_text_color($cat_id = null){
+  $meta = get_category_meta($cat_id);
+  if (!empty($meta['text_color']))
+    return $meta['text_color'];
+}
+endif;
+
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_category_title' ) ):
 function get_category_title($cat_id = null){
@@ -139,11 +148,25 @@ function extra_category_fields( $tag ) {
 ?>
 <tr class="form-field term-color-wrap">
   <th><label for="color"><?php _e( 'カテゴリ色', THEME_NAME ) ?></label></th>
-  <td><?php
-    $color = !empty($cat_meta['color']) ? $cat_meta['color'] : '';
-    generate_color_picker_tag('cat_meta[color]',  $color, '');
-  ?>
-    <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
+  <td>
+    <div style="float: left;padding-right: 30px;">
+      <?php
+      $color = !empty($cat_meta['color']) ? $cat_meta['color'] : '';
+      generate_label_tag('cat_meta[color]', __( '背景色', THEME_NAME ));
+      echo '<br>';
+      generate_color_picker_tag('cat_meta[color]',  $color, '');
+      ?>
+      <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
+    </div>
+    <div style="">
+      <?php
+      $color = !empty($cat_meta['text_color']) ? $cat_meta['text_color'] : '';
+      generate_label_tag('cat_meta[text_color]', __( '文字色', THEME_NAME ));
+      echo '<br>';
+      generate_color_picker_tag('cat_meta[text_color]',  $color, '');
+      ?>
+      <p class="description"><?php _e( 'カテゴリの文字色を指定します。', THEME_NAME ) ?></p>
+    </div>
   </td>
 </tr>
 <tr class="form-field term-title-wrap">

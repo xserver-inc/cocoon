@@ -256,9 +256,11 @@ if (get_appeal_area_button_background_color()): ?>
 ///////////////////////////////////////
 $cats = get_categories();
 $colors = array();
+$text_colors = array();
 //カテゴリ色の振り分け
 foreach ($cats as $cat) {
   $color = get_category_color($cat->cat_ID);
+  $text_color = get_category_text_color($cat->cat_ID);
   $cat_label_pre = '.cat-label.cat-label-';
   $cat_link_pre = '.cat-link.cat-link-';
   if ($color) {
@@ -269,14 +271,30 @@ foreach ($cats as $cat) {
       $colors[$color] = array($selectors);
     }
   }
+  if ($text_color) {
+    $selectors = $cat_label_pre.$cat->cat_ID.', '.$cat_link_pre.$cat->cat_ID;
+    if (isset($text_colors[$text_color])) {
+      array_push($text_colors[$text_color], $selectors);
+    } else {
+      $text_colors[$text_color] = array($selectors);
+    }
+  }
 }
 //CSSの生成
 $css = '';
+//カテゴリー背景色
 foreach ($colors as $color_code => $ids) {
   $selector = implode(', ', $ids);
   $css .= $selector.'{'.PHP_EOL.
     '  background-color: '.$color_code.';'.PHP_EOL.
     '  color: #fff;'.PHP_EOL.
+  '}'.PHP_EOL.PHP_EOL;
+}
+//カテゴリー文字色
+foreach ($text_colors as $color_code => $ids) {
+  $selector = implode(', ', $ids);
+  $css .= $selector.'{'.PHP_EOL.
+    '  color: '.$color_code.';'.PHP_EOL.
   '}'.PHP_EOL.PHP_EOL;
 }
 echo $css;
