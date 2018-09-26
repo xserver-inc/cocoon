@@ -108,6 +108,8 @@ if (get_site_key_text_color()): ?>
 .appeal-content .appeal-button,
 .article h2,
 .sidebar h3,
+.cat-link,
+.cat-label,
 #footer,
 #footer a{
   color: <?php echo get_site_key_text_color(); ?>;
@@ -274,7 +276,7 @@ foreach ($colors as $color_code => $ids) {
   $selector = implode(', ', $ids);
   $css .= $selector.'{'.PHP_EOL.
     '  background-color: '.$color_code.';'.PHP_EOL.
-    //'  border-color: '.$color_code.';'.PHP_EOL.
+    '  color: #fff;'.PHP_EOL.
   '}'.PHP_EOL.PHP_EOL;
 }
 echo $css;
