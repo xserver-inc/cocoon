@@ -27,7 +27,7 @@ class PcTextWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $widget_text = isset( $instance['text_pc_text'] ) ? $instance['text_pc_text'] : '';
     $text = apply_filters( 'widget_text_pc_text', $widget_text, $instance, $this );
-    $filter = !empty( $instance['filter'] ) ? $instance['filter'] : 0;
+    $filter = !empty( $instance['filter'] );
     if ($filter) {
       $text = wpautop($text);
     }
@@ -50,8 +50,7 @@ class PcTextWidgetItem extends WP_Widget {
       $instance['title_pc_text'] = strip_tags($new_instance['title_pc_text']);
     if (isset($new_instance['title_pc_text']))
       $instance['text_pc_text'] = $new_instance['text_pc_text'];
-    if (isset($new_instance['filter']))
-      $instance['filter'] = !empty( $new_instance['filter'] );
+    $instance['filter'] = !empty( $new_instance['filter'] );
     return $instance;
   }
   function form($instance) {
