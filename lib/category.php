@@ -165,7 +165,7 @@ function extra_category_fields( $tag ) {
       echo '<br>';
       generate_color_picker_tag('cat_meta[text_color]',  $color, '');
       ?>
-      <p class="description"><?php _e( 'カテゴリの文字色を指定します。', THEME_NAME ) ?></p>
+      <p class="description"><?php _e( 'カテゴリの文字色を指定します。入力しない場合は、白色になります。', THEME_NAME ) ?></p>
     </div>
   </td>
 </tr>
