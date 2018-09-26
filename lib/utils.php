@@ -1423,7 +1423,7 @@ endif;
 //アクセステーブル用の現在の日時文字列
 if ( !function_exists( 'get_current_db_date' ) ):
 function get_current_db_date(){
-  return current_time('Y-m-d');
+  return date('Y-m-d');
 }
 endif;
 
