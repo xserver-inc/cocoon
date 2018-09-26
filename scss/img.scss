@@ -20,17 +20,20 @@ img{
 ** 画像の囲み効果
 ************************************/
 /*ボーダー*/
-.iwe-border p img{
+.iwe-border p img,
+.iwe-border p amp-img{
   border: 1px solid $basic_border_color;
   //box-shadow: 0 0 1px rgba(0,0,0,.6);
 }
 
 /*ボーダー（太線）*/
-.iwe-border-bold p img{
+.iwe-border-bold p img,
+.iwe-border-bold p amp-img{
   border: 4px solid $current_bgc;
 }
 /*シャドー*/
-.iwe-shadow p img{
+.iwe-shadow p img,
+.iwe-shadow p amp-img{
   box-shadow: 5px 5px 15px $x_thin;
 }
 
