@@ -182,7 +182,6 @@ class OpenGraphGetter implements Iterator
     if (isset($page->_values['description'])) {
       $page_description = trim($page->_values['description']);
     }
-    $page_description = trim($page->_values['description']);
     if (empty($page_description)) {
       $page->_values['description'] = $description;
     }
