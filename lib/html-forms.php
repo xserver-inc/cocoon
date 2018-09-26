@@ -348,7 +348,7 @@ endif;
 
 //ビジュアルエディターの生成
 if ( !function_exists( 'generate_visuel_editor_tag' ) ):
-function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor', $textarea_rows = 10){
+function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor', $textarea_rows = 16){
   $settings = array(
     'textarea_name' => $name,
     'textarea_rows' => $textarea_rows,
