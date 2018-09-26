@@ -433,8 +433,8 @@ function custmuize_load_edit_php(){
 }
 endif;
 
-//投稿管理画面のカテゴリー選択にフィルタリング機能を付ける
-add_action( 'admin_head-post-new.php', 'add_category_filter_form' );
+//投稿管理画面のヘッダーカスタマイズ
+add_action( 'admin_head-post-new.php', 'add_head_post_custum' );
 add_action( 'admin_head-post.php', 'add_head_post_custum' );
 if ( !function_exists( 'add_head_post_custum' ) ):
 function add_head_post_custum() {
