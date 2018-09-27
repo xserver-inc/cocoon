@@ -135,7 +135,8 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     //$youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
     $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
   }
-
+  // $video_tag = '<video src="'.$youtube_new_url.'" muted autoplay></video>';
+  // $youtube   = $video_tag;
   $youtube   = htmlentities($youtube);
   //$youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
 
