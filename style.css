@@ -6849,7 +6849,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     clear: both;
   }
 
-  .ect-vertical-card > * {
+  .list .ect-vertical-card > * {
     width: 48%;
     padding: 0.5% !important;
     margin: 0.5% 0.5% 1.5% !important;
