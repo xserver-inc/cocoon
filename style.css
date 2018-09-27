@@ -2858,7 +2858,7 @@ label.screen-reader-text {
 
 .btn, .ranking-item-link-buttons a,
 .btn-wrap > a {
-  color: #fff !important;
+  color: #fff;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
