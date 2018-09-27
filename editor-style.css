@@ -49,21 +49,21 @@ html[lang="en"] .column-3::before{
 }
 
 /*Gutenbergの引用スタイルを打ち消す*/
-.wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
+/* .wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
   border: 1px solid #ccc;
-}
+} */
 
 /*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
 /*.mce-listbox button {
   max-width: 98px;
 }*/
 /* Main column width */
-body.gutenberg-editor-page .editor-post-title__block,
-body.gutenberg-editor-page .editor-default-block-appender,
-body.gutenberg-editor-page .editor-block-list__block {
-  max-width: 800px;
-}
-
+/* BODY.GUTENBERG-EDITOR-PAGE .EDITOR-POST-TITLE__BLOCK,
+BODY.GUTENBERG-EDITOR-PAGE .EDITOR-DEFAULT-BLOCK-APPENDER,
+BODY.GUTENBERG-EDITOR-PAGE .EDITOR-BLOCK-LIST__BLOCK {
+  MAX-WIDTH: 800PX;
+} */
+/*
 body.gutenberg-editor-page .editor-block-list__layout{
   padding: 0;
 }
@@ -75,15 +75,8 @@ body.gutenberg-editor-page div.editor-block-list__block {
   margin: 0 auto;
   max-width: 800px;
 }
+
 /*
-.editor-block-list__block, .editor-block-list__block p{
-  font-size: unset;
-}
-.edit-post-visual-editor, .edit-post-visual-editor input[type="text"].editor-default-block-appender__content, .edit-post-visual-editor p{
-  font-family: inherit !important;
-  font-size: inherit !important;
-}
-*/
 @media screen and (max-width: 600px){
   div.edit-post-visual-editor .editor-block-list__block .editor-block-list__block-edit {
     margin-left: 5%;
@@ -107,7 +100,7 @@ body.gutenberg-editor-page div.editor-block-list__block {
 
 div.mce-content-body{
   line-height: inherit;
-}
+} */
 br[data-mce-bogus]{
   display: none;
-}
+} */
