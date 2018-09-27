@@ -57,6 +57,14 @@ function get_mobile_site_font_size(){
 }
 endif;
 
+//サイト文字色
+define('OP_SITE_TEXT_COLOR', 'site_text_color');
+if ( !function_exists( 'get_site_text_color' ) ):
+function get_site_text_color(){
+  return get_theme_option(OP_SITE_TEXT_COLOR);
+}
+endif;
+
 //フォントウエイト
 define('OP_SITE_FONT_WEIGHT', 'site_font_weight');
 if ( !function_exists( 'get_site_font_weight' ) ):

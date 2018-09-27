@@ -48,6 +48,9 @@
             <div class="col-2">
               <div style="min-width: 270px;">
                 <?php
+                //フォント
+                generate_label_tag(OP_SITE_FONT_FAMILY, __( 'フォント', THEME_NAME ));
+                echo '<br>';
                 $options = array(
                   'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
                   'meiryo' => __( 'メイリオ, ヒラギノ角ゴ', THEME_NAME ),
@@ -63,6 +66,9 @@
                 generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family());
                 generate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
 
+                //文字サイズ
+                generate_label_tag(OP_SITE_FONT_SIZE, __( '文字サイズ', THEME_NAME ));
+                echo '<br>';
                 $font_options = array(
                   '12px' => __( '12px', THEME_NAME ),
                   '13px' => __( '13px', THEME_NAME ),
@@ -79,6 +85,10 @@
                 generate_selectbox_tag(OP_SITE_FONT_SIZE, $font_options, get_site_font_size());
                 generate_tips_tag(__( 'サイト全体のフォントサイズを変更します。', THEME_NAME ));
 
+                //文字色
+                generate_color_picker_tag(OP_SITE_TEXT_COLOR,  get_site_text_color(), '文字色');
+
+                generate_tips_tag(__( 'サイト全体の文字色を変更します。', THEME_NAME ));
                 ?>
 
               </div>
