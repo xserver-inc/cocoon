@@ -2857,7 +2857,8 @@ label.screen-reader-text {
 }
 
 .btn, .ranking-item-link-buttons a,
-.btn-wrap > a {
+.btn-wrap > a,
+.wp-block-freeform .btn-wrap > a {
   color: #fff;
   font-weight: bold;
   border-radius: 4px;
@@ -2872,7 +2873,8 @@ label.screen-reader-text {
   position: relative;
 }
 .btn amp-img, .ranking-item-link-buttons a amp-img,
-.btn-wrap > a amp-img {
+.btn-wrap > a amp-img,
+.wp-block-freeform .btn-wrap > a amp-img {
   position: absolute;
 }
 

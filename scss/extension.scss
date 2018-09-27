@@ -559,7 +559,8 @@ $bb_green: #3eb370;
 }
 
 .btn,
-.btn-wrap > a{
+.btn-wrap > a,
+.wp-block-freeform .btn-wrap > a{
   color: $white;
   font-weight: bold;
   border-radius: 4px;
