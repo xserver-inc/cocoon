@@ -115,6 +115,12 @@ if (get_site_key_text_color()): ?>
   color: <?php echo get_site_key_text_color(); ?>;
 }
 <?php endif ?>
+<?php //サイト文字色
+if($site_text_color = get_site_text_color()): ?>
+body{
+  color: <?php echo $site_text_color; ?>;
+}
+<?php endif; ?>
 <?php //サイト背景色
 if (get_site_background_color()): ?>
 body.public-page{

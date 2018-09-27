@@ -92,13 +92,19 @@
                 ?>
 
               </div>
+              <?php
+              $demo_style = null;
+              if ($site_text_color = get_site_text_color()) {
+                $demo_style = 'color: '.$site_text_color.';';
+              }
+              ?>
               <div style="width: auto">
                 <?php if (!is_site_font_family_local()): ?>
                   <link rel="stylesheet" href="<?php echo get_site_font_source_url(); ?>">
                 <?php endif ?>
                 <p class="preview-label"><?php _e( 'フォントプレビュー', THEME_NAME ) ?></p>
                 <div class="demo" style="width: 100%">
-                  <div class="<?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?> <?php echo get_site_font_weight_class(); ?>">
+                  <div class="<?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?> <?php echo get_site_font_weight_class(); ?>" style="<?php echo $demo_style; ?>">
                   <p>1234567890</p>
                   <p>abcdefghijklmnopqrstuvwxyz</p>
                   <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>

@@ -3,6 +3,10 @@
 ** ※管理画面にしか適用されません
 ************************************/
 
+body.wp-admin{
+  color: #444;
+}
+
 //固定値
 @import "defins";
 @import "admin-snipets";
