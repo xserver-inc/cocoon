@@ -58,11 +58,6 @@ html[lang="en"] .column-3::before{
   max-width: 98px;
 }
 /* Main column width */
-BODY.GUTENBERG-EDITOR-PAGE .EDITOR-POST-TITLE__BLOCK,
-BODY.GUTENBERG-EDITOR-PAGE .EDITOR-DEFAULT-BLOCK-APPENDER,
-BODY.GUTENBERG-EDITOR-PAGE .EDITOR-BLOCK-LIST__BLOCK {
-  MAX-WIDTH: 800PX;
-}
 
 body.gutenberg-editor-page .editor-block-list__layout{
   padding: 0;
