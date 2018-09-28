@@ -126,9 +126,9 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
     $youtube_old_url = $m[1];
     if (includes_string($youtube_old_url, '?')) {
-      $youtube_new_url = $youtube_old_url.'&autoplay=1';
+      $youtube_new_url = $youtube_old_url.'&autoplay=1&rel=0';
     } else {
-      $youtube_new_url = $youtube_old_url.'?autoplay=1';
+      $youtube_new_url = $youtube_old_url.'?autoplay=1&rel=0';
     }
     //_v();
 
