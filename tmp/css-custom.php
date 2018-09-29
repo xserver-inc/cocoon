@@ -497,7 +497,7 @@ if (is_toc_toggle_switch_enable()): ?>
 }<?php endif ?>
 <?php //アイキャッチを中央表示
 if (is_eyecatch_center_enable()): ?>
-.eye-catch > * {
+.eye-catch {
   margin-left: auto;
   margin-right: auto;
 }
@@ -507,10 +507,31 @@ if (is_eyecatch_width_100_percent_enable()): ?>
 .eye-catch {
   width: 100%;
 }
-.eye-catch img{
+.eye-catch img,
+.eye-catch amp-img{
   width: 100%;
+  min-width: 100%;
+  display: block;
 }
 <?php endif ?>
+<?php //AMPページ用のアイキャッチスタイル
+if(is_amp()):
+$main_column_contents_width = get_main_column_contents_width();
+if (!$main_column_contents_width) {
+  $main_column_contents_width = 800;
+} ?>
+.eye-catch amp-img{
+  display: block;
+}
+@media screen and (max-width: <?php echo $main_column_contents_width; ?>px){
+  .eye-catch {
+    display: block;
+  }
+  .eye-catch amp-img{
+    min-width: 100%;
+  }
+}
+<?php endif; ?>
 <?php //コメント入力欄を表示ボタンで切り替えるとき
 if (is_comment_form_display_type_toggle_button()): ?>
 #respond {

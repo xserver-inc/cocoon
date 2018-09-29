@@ -7,7 +7,8 @@
  */
 //アイキャッチがない場合は非表示クラスを追加
 $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' display-none'; ?>
-<figure class="eye-catch<?php echo $display_none; ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+<div class="eye-catch-wrap<?php echo $display_none; ?>">
+<figure class="eye-catch" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
   <?php
   if (has_post_thumbnail()) {
     // アイキャッチ画像のIDを取得
@@ -47,3 +48,4 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   }
   ?>
 </figure>
+</div>
