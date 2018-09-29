@@ -12,7 +12,7 @@ body#tinymce {
   margin: 16px 0;
 }
 
-.column-2::before,
+/* .column-2::before,
 .column-3::before{
   content: "※カラムへの着色はエディタのみ";
   position: absolute;
@@ -29,7 +29,7 @@ body#tinymce {
 html[lang="en"] .column-2::before,
 html[lang="en"] .column-3::before{
   content: "* Coloring is Editor Only.";
-}
+} */
 
 .column-left{
   background-color: #c7e1ef;
