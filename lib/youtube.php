@@ -19,6 +19,7 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   if (is_amp()) {
     return $cache;
   }
+
   //_v($url);
   // preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
   // $cache = $match_cache[0];
@@ -124,13 +125,24 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
-    $youtube_old_url = $m[1];
-    if (includes_string($youtube_old_url, '?')) {
-      $youtube_new_url = $youtube_old_url.'&autoplay=1&rel=0';
-    } else {
-      $youtube_new_url = $youtube_old_url.'?autoplay=1&rel=0';
+    //元のURL情報の取得
+    $urls = parse_url($url);
+    parse_str($urls['query'], $prams);
+    $prams['autoplay'] = 1;
+    //動画IDは不要なので削除
+    if (isset($prams['v'])) {
+      $prams['v'] = null;
     }
-    //_v();
+    //srcのURL
+    $youtube_old_url = $m[1];
+    //クエリを追加
+    $youtube_new_url = add_query_arg($prams, $youtube_old_url);
+
+    // if (includes_string($youtube_old_url, '?')) {
+    //   $youtube_new_url = $youtube_old_url.'&autoplay=1&rel=0';
+    // } else {
+    //   $youtube_new_url = $youtube_old_url.'?autoplay=1&rel=0';
+    // }
 
     //$youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
     $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
