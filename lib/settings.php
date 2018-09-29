@@ -140,8 +140,19 @@ register_nav_menus(
   )
 );
 
-//固定ページに抜粋を追加
-add_post_type_support( 'page', 'excerpt' );
+//抜粋表示
+add_action('init', 'add_excerpts_custom_init');
+if ( !function_exists( 'add_excerpts_custom_init' ) ):
+function add_excerpts_custom_init(){
+  //固定ページに抜粋を追加
+  add_post_type_support( 'page', 'excerpt' );
+  //カスタム投稿ページにも追加
+  $custum_post_types = get_custum_post_types();
+  foreach ($custum_post_types as $custum_post_type) {
+    add_post_type_support( $custum_post_type, 'excerpt' );
+  }
+}
+endif;
 
 //カスタムヘッダー
 $custom_header_defaults = array(
