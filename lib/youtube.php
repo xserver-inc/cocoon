@@ -129,6 +129,10 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     $urls = parse_url($url);
     parse_str($urls['query'], $prams);
     $prams['autoplay'] = 1;
+    //デフォルトで関連動画は無効にする
+    if (!isset($prams['rel'])) {
+      $prams['rel'] = 1;
+    }
     //動画IDは不要なので削除
     if (isset($prams['v'])) {
       $prams['v'] = null;
