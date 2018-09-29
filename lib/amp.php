@@ -56,7 +56,7 @@ function convert_content_for_amp($the_content){
   }
 
   //iframe用のplaceholderタグ（amp-iframeの呼び出し位置エラー対策）
-  $amp_placeholder = '<amp-img layout="fill" src="'.get_template_directory_uri().'/images/transparence.png'.'" placeholder>＜/amp-img＞';
+  $amp_placeholder = '<amp-img layout="fill" src="'.get_template_directory_uri().'/images/transparence.png'.'" placeholder></amp-img>';
 
 
   //noscriptタグの削除
