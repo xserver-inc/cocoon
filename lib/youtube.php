@@ -139,6 +139,8 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     }
     //srcのURL
     $youtube_old_url = $m[1];
+    //デフォルトのパラメータ設定
+    $prams = apply_filters('youtube_embed_prams', $prams);
     //クエリを追加
     $youtube_new_url = add_query_arg($prams, $youtube_old_url);
 
