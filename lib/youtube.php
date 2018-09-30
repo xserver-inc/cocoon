@@ -125,24 +125,30 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
   $youtube   = preg_replace("/data-youtube=\"(.+?)\"/", "", $cache);
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
+    $default_args = array('rel' => 0, 'autoplay' => 1);
+    $default_args = apply_filters('youtube_embed_default_args', $default_args);
+    //_v($default_args);
     //元のURL情報の取得
     $urls = parse_url($url);
-    parse_str($urls['query'], $prams);
-    $prams['autoplay'] = 1;
-    //デフォルトで関連動画は無効にする
-    if (!isset($prams['rel'])) {
-      $prams['rel'] = 1;
-    }
+    parse_str($urls['query'], $args);
+    //デフォルトパラメータと結合
+    $args = array_merge($default_args, $args);
+    //_v($args);
+    // $args['autoplay'] = 1;
+    // //デフォルトで関連動画は無効にする
+    // if (!isset($args['rel'])) {
+    //   $args['rel'] = 0;
+    // }
     //動画IDは不要なので削除
-    if (isset($prams['v'])) {
-      $prams['v'] = null;
+    if (isset($args['v'])) {
+      $args['v'] = null;
     }
     //srcのURL
     $youtube_old_url = $m[1];
     //デフォルトのパラメータ設定
-    $prams = apply_filters('youtube_embed_prams', $prams);
+    $args = apply_filters('youtube_embed_args', $args);
     //クエリを追加
-    $youtube_new_url = add_query_arg($prams, $youtube_old_url);
+    $youtube_new_url = add_query_arg($args, $youtube_old_url);
 
     // if (includes_string($youtube_old_url, '?')) {
     //   $youtube_new_url = $youtube_old_url.'&autoplay=1&rel=0';
