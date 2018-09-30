@@ -247,7 +247,7 @@ input[type="time"],
 input[type="url"],
 textarea,
 select {
-  padding: 14px;
+  padding: 12px;
   border: 2px solid #ccc;
   font-size: 18px;
   width: 100%;
@@ -5479,7 +5479,7 @@ option {
 input[type='submit'],
 #bbp_reply_submit,
 .bp-login-widget-register-link a {
-  padding: 14px;
+  padding: 12px;
   width: 100%;
   margin: 0;
   cursor: pointer;
