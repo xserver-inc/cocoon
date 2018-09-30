@@ -905,6 +905,7 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       )
     );
   }
+  $args = apply_filters('widget_new_entries_args', $args);
   //_v($args);
   $thumb_size = get_new_entries_thumbnail_size($entry_type);
   //query_posts( $args ); //クエリの作成
