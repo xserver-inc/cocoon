@@ -482,15 +482,16 @@ if (is_toc_toggle_switch_enable()): ?>
 }
 .toc-content{
   visibility: hidden;
-  /* display: block; */
+  /*display: block; */
+  margin-top: -24px;
   height: 0;
-  opacity: 0.4;
+  opacity: 0.2;
   transition: all 0.5s ease-out;
 }
 #toc-checkbox:checked ~ .toc-content {
   /* display: block; */
   visibility: visible;
-  padding-top: 0.6em;
+  margin-top: 0;
   height: 100%;
   opacity: 1;
 }
