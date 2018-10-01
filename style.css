@@ -1300,7 +1300,7 @@ img.emoji {
 .eye-catch {
   position: relative;
   margin-bottom: 1em;
-  display: table;
+  display: inline-block;
 }
 .eye-catch .cat-label {
   position: absolute;
