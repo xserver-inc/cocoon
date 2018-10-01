@@ -65,7 +65,7 @@ function tag_code_to_minify_css($buffer) {
             }
 
             //除外リストにマッチするCSS URLは縮小化しない
-            if (is_url_matche_list($url, get_css_minify_exclude_list())) {
+            if (has_match_list_text($url, get_css_minify_exclude_list())) {
               continue;
             }
 

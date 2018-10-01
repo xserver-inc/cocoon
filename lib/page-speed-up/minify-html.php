@@ -262,7 +262,7 @@ endif;
 
 if ( !function_exists( 'wp_footer_minify' ) ):
 function wp_footer_minify($buffer) {
-
+  //_v($buffer);
   //フッターコードのCSS縮小化
   if (is_css_minify_enable()) {
     $buffer = tag_code_to_minify_css($buffer);
@@ -282,12 +282,12 @@ function wp_footer_minify($buffer) {
 }
 endif;
 
-if ( !function_exists( 'is_url_matche_list' ) ):
-function is_url_matche_list($url, $list){
+if ( !function_exists( 'has_match_list_text' ) ):
+function has_match_list_text($text, $list){
   //除外リストにマッチするCSS URLは縮小化しない
   $excludes = list_text_to_array($list);
   foreach ($excludes as $exclude_str) {
-    if (strpos($url, $exclude_str) !== false) {
+    if (strpos($text, $exclude_str) !== false) {
     // _v($url);
     // _v($exclude_str);
     // _v(strpos($url, $exclude_str) !== false);

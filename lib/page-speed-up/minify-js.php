@@ -11,6 +11,7 @@
 ///////////////////////////////////////
 if ( !function_exists( 'tag_code_to_minify_js' ) ):
 function tag_code_to_minify_js($buffer) {
+  //_v($buffer);
 
   if (is_admin()) {
     return $buffer;
@@ -23,11 +24,12 @@ function tag_code_to_minify_js($buffer) {
     //JSファイルパターン
     $js_file_pattern = '<script[^>]+?javascript[^>]+?src=[\'"]([^\'"]+?)[\'"][^>]*?></script>';
     //JSインラインパターン
-    $js_inline_pattern = '<script([^>]*?)>(.*?)</script>';
+    $js_inline_pattern = '<script(.*?)>(.*?)</script>';
     //JS正規表現パターン
     $pattern = '{'.$js_file_pattern.'|'.$js_inline_pattern.'}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
+    //_v($m);
     //_v($m);
     $all = 0;  //scriptタグ全体にマッチ
     $flie = 1; //src内のファイルURLにマッチ
@@ -50,7 +52,7 @@ function tag_code_to_minify_js($buffer) {
 
 
         //ファイルタイプのscriptタグだった場合
-        if ($url) {
+        if ($url) {//continue;
           //サイトURLが含まれているものだけ処理
           if (includes_site_url($url)) {
             //_v($url);
@@ -61,6 +63,14 @@ function tag_code_to_minify_js($buffer) {
               //アドミンバーのJSは除外
               //(strpos($url, 'js/admin-bar.min.js') !== false)
               includes_string($url, 'js/admin-bar.min.js')
+              // //プレイリストのJSは除外
+              // || includes_string($url, '/wp-playlist.min.js')
+              // || includes_string($url, '/wp-mediaelement.min.js')
+              // || includes_string($url, '/mediaelement-and-player.min.js')
+              // || includes_string($url, '/mediaelement-migrate.min.js')
+              // || includes_string($url, '/wp-includes/js/backbone.min.js')
+              // || includes_string($url, '/wp-includes/js/wp-util.min.js')
+              || includes_string($url, '/wp-includes/js/underscore.min.js')
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               || includes_string($url, '/plugins/highlight-js/highlight.min.js')
               || includes_string($url, '/plugins/ip-geo-block/')
@@ -79,7 +89,7 @@ function tag_code_to_minify_js($buffer) {
             }
 
             //除外リストにマッチするCSS URLは縮小化しない
-            if (is_url_matche_list($url, get_js_minify_exclude_list())) {
+            if (has_match_list_text($url, get_js_minify_exclude_list())) {
               continue;
             }
 
@@ -106,6 +116,11 @@ function tag_code_to_minify_js($buffer) {
 
         //インラインタイプのJavaScriptコードだった場合
         if ($js_code) {
+          // _v($script_tag);
+          // //除外リストにマッチするscriptタグ＆コード
+          // if (has_match_list_text($script_tag, get_js_minify_exclude_list())) {
+          //   continue;
+          // }
           //_v($js_code);
           $js = minify_js($js_code);
           // $attr_tag = null;
