@@ -322,11 +322,15 @@ a.facebook-follow-button{
 .ect-vertical-card .entry-card-wrap{
   margin-bottom: 8px;
 }
-
+///////////////////////////
+//統一できるかも
+.ect-vertical-card.sp-entry-card-1-column .entry-card-wrap{
+  display: block;//不要かも
+}
 .ect-vertical-card.sp-entry-card-1-column > *{
   width: 100%;
-  display: block;
 }
+////////////////////////////
 
 #bbpress-forums .form-allowed-tags code{
   width: 100% !important;

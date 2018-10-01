@@ -6818,9 +6818,12 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-bottom: 8px;
   }
 
+  .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap {
+    display: block;
+  }
+
   .ect-vertical-card.sp-entry-card-1-column > * {
     width: 100%;
-    display: block;
   }
 
   #bbpress-forums .form-allowed-tags code {
