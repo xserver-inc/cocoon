@@ -483,7 +483,7 @@ if (is_toc_toggle_switch_enable()): ?>
 .toc-content{
   visibility: hidden;
   /*display: block; */
-  margin-top: -24px;
+  /* margin-top: -24px; */
   height: 0;
   opacity: 0.2;
   transition: all 0.5s ease-out;
@@ -491,7 +491,7 @@ if (is_toc_toggle_switch_enable()): ?>
 #toc-checkbox:checked ~ .toc-content {
   /* display: block; */
   visibility: visible;
-  margin-top: 0;
+  padding-top: 0.6em;
   height: 100%;
   opacity: 1;
 }
