@@ -1788,9 +1788,10 @@ span.internal-icon {
   border: 1px solid #ccc;
   font-size: 0.9em;
   line-height: 1.5;
-  padding: 8px;
+  padding: 1em;
   margin-bottom: 1em;
   display: table;
+  margin: 0 auto;
 }
 .toc ul, .toc ol {
   padding-left: 20px;
