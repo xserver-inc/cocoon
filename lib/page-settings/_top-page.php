@@ -159,7 +159,7 @@ endif;
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
     <li class="ogp"><?php _e( 'OGP', THEME_NAME ) ?></li>
-    <li class="analytics"><?php _e( 'アクセス解析', THEME_NAME ) ?></li>
+    <li class="analytics"><?php _e( 'アクセス解析・認証', THEME_NAME ) ?></li>
     <li class="column"><?php _e( 'カラム', THEME_NAME ) ?></li>
     <li class="index-page"><?php _e( 'インデックス', THEME_NAME ) ?></li>
     <li class="single-page"><?php _e( '投稿', THEME_NAME ) ?></li>

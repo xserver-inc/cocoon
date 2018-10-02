@@ -175,7 +175,7 @@
   <h2 class="hndle"><?php _e( 'その他のアクセス解析・認証コード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'ヘッダーやフッターに、その他サービスのアクセス解析タグをそのまま貼り付けます。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま貼り付けます。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -183,12 +183,12 @@
         <!-- アクセス解析headタグ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, __( 'アクセス解析タグ（ヘッド用）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, __( 'ヘッド用コード', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, get_other_analytics_head_tags(), __( 'head用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を受けるのが最も楽かと思います。', THEME_NAME ));
+            generate_textarea_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, get_other_analytics_head_tags(), __( 'head用のタグ入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を受けるのが最も楽かと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -196,12 +196,12 @@
         <!-- アクセス解析ヘッダータグ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, __( 'アクセス解析タグ（ヘッダー用）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, __( 'ヘッダー用コード', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, get_other_analytics_header_tags(), __( 'ヘッダー用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_textarea_tag(OP_OTHER_ANALYTICS_HEADER_TAGS, get_other_analytics_header_tags(), __( 'ヘッダー用のタグ入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -209,12 +209,12 @@
         <!-- アクセス解析フッタータグ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, __( 'アクセス解析タグ（フッター用）', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, __( 'フッター用コード', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_textarea_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, get_other_analytics_footer_tags(), __( 'フッター用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_textarea_tag(OP_OTHER_ANALYTICS_FOOTER_TAGS, get_other_analytics_footer_tags(), __( 'フッター用のタグ入力', THEME_NAME )) ;
+            generate_tips_tag(__( 'フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析・認証タグを入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
