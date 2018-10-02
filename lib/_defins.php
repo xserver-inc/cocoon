@@ -50,6 +50,7 @@ define('EC_DEFAULT', 5);
 define('DATA_AD_CLIENT', 'data-ad-client');
 define('DATA_AD_SLOT',   'data-ad-slot');
 //レスポンシブ広告の表示フォーマット
+define('DATA_AD_FORMAT_NONE', 'none'); //おまかせ
 define('DATA_AD_FORMAT_AUTO', 'auto'); //おまかせ
 define('DATA_AD_FORMAT_RECTANGLE', 'rectangle'); //正方形に近い長方形
 define('DATA_AD_FORMAT_HORIZONTAL', 'horizontal'); //横長
