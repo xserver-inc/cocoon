@@ -63,14 +63,15 @@ function tag_code_to_minify_js($buffer) {
               //アドミンバーのJSは除外
               //(strpos($url, 'js/admin-bar.min.js') !== false)
               includes_string($url, 'js/admin-bar.min.js')
-              // //プレイリストのJSは除外
+              //プレイリストのJSは除外
+              || includes_string($url, '/mediaelement-and-player.min.js')
+              || includes_string($url, '/wp-includes/js/underscore.min.js')
               // || includes_string($url, '/wp-playlist.min.js')
               // || includes_string($url, '/wp-mediaelement.min.js')
-              // || includes_string($url, '/mediaelement-and-player.min.js')
               // || includes_string($url, '/mediaelement-migrate.min.js')
               // || includes_string($url, '/wp-includes/js/backbone.min.js')
               // || includes_string($url, '/wp-includes/js/wp-util.min.js')
-              || includes_string($url, '/wp-includes/js/underscore.min.js')
+              //コードハイライト
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
               || includes_string($url, '/plugins/highlight-js/highlight.min.js')
               || includes_string($url, '/plugins/ip-geo-block/')
