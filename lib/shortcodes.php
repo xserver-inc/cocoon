@@ -1000,6 +1000,7 @@ function rakuten_product_link_shortcode($atts){
     'rakuten' => 1,
     'yahoo' => 1,
     'sort' => null,
+    'image_only' => 0,
   ), $atts ) );
 
   $id = sanitize_shortcode_value($id);
@@ -1313,6 +1314,17 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag, $affiliate_rate_tag);
 
+          ///////////////////////////////////////////
+          // イメージリンクタグ
+          ///////////////////////////////////////////
+          $image_link_tag = '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+                  '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="rakuten-item-thumb-image product-item-thumb-image">'.
+                  $moshimo_rakuten_impression_tag.
+                '</a>';
+          //画像のみ出力する場合
+          if ($image_only) {
+            return apply_filters('rakuten_product_image_link_tag', $image_link_tag);
+          }
 
           ///////////////////////////////////////////
           // 商品リンクタグの生成
@@ -1320,10 +1332,7 @@ function rakuten_product_link_shortcode($atts){
           $tag =
             '<div class="rakuten-item-box product-item-box no-icon '.$size_class.' '.$id.' cf">'.
               '<figure class="rakuten-item-thumb product-item-thumb">'.
-                '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
-                  '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="rakuten-item-thumb-image product-item-thumb-image">'.
-                  $moshimo_rakuten_impression_tag.
-                '</a>'.
+              $image_link_tag.
               '</figure>'.
               '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
