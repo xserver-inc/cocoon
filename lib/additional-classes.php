@@ -765,8 +765,8 @@ endif;
 //エントリーカードのclass追加関数
 if ( !function_exists( 'get_additional_entry_card_classes' ) ):
 function get_additional_entry_card_classes($option = null){
-  //検索ページではクラス指定しない
-  if (is_search()) return;
+  // //検索ページではクラス指定しない
+  // if (is_search()) return;
 
   $classes = null;
 
