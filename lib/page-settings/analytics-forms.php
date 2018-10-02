@@ -172,7 +172,7 @@
 
 <!-- その他のアクセス解析設定 -->
 <div id="other" class="postbox">
-  <h2 class="hndle"><?php _e( 'その他のアクセス解析設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'その他のアクセス解析・認証コード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( 'ヘッダーやフッターに、その他サービスのアクセス解析タグをそのまま貼り付けます。', THEME_NAME ) ?></p>
