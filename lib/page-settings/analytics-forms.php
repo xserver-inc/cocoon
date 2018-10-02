@@ -188,7 +188,7 @@
           <td>
             <?php
             generate_textarea_tag(OP_OTHER_ANALYTICS_HEAD_TAGS, get_other_analytics_head_tags(), __( 'head用のアクセス解析タグの入力', THEME_NAME )) ;
-            generate_tips_tag(__( 'ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析タグを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を受けるのが最も楽かと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
