@@ -628,6 +628,7 @@ function amazon_product_link_shortcode($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
+    'image_only' => 0,
   ), $atts ) );
 
   $asin = sanitize_shortcode_value($asin);
@@ -898,15 +899,24 @@ function amazon_product_link_shortcode($atts){
       $product_item_admin_tag = get_product_item_admin_tag($cache_delete_tag);
 
       ///////////////////////////////////////////
+      // イメージリンクタグ
+      ///////////////////////////////////////////
+      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
+              $moshimo_amazon_impression_tag.
+            '</a>';
+      //画像のみ出力する場合
+      if ($image_only) {
+        return apply_filters('amazon_product_image_link_tag', $image_link_tag);
+      }
+
+      ///////////////////////////////////////////
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
         '<div class="amazon-item-box product-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
           '<figure class="amazon-item-thumb product-item-thumb">'.
-            '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
-              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
-              $moshimo_amazon_impression_tag.
-            '</a>'.
+            $image_link_tag.
           '</figure>'.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
