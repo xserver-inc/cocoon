@@ -81,7 +81,7 @@ class NewEntryWidgetItem extends WP_Widget {
       //get_template_part('tmp/new-entries');
 
       //新着記事リストの作成
-      generate_new_entries_tag($entry_count, $entry_type, $categories);
+      generate_widget_entries_tag($entry_count, $entry_type, $categories);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>

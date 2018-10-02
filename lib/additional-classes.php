@@ -339,8 +339,8 @@ function get_additional_entry_content_classes($option = null){
 endif;
 
 //エントリーカードの追加関数
-if ( !function_exists( 'get_additional_new_entriy_cards_classes' ) ):
-function get_additional_new_entriy_cards_classes($entry_type, $option = null){
+if ( !function_exists( 'get_additional_widget_entriy_cards_classes' ) ):
+function get_additional_widget_entriy_cards_classes($entry_type, $option = null){
   $classes = null;
   if ($entry_type != ET_DEFAULT) {
     $classes .= ' not-default';
@@ -354,7 +354,7 @@ function get_additional_new_entriy_cards_classes($entry_type, $option = null){
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return apply_filters('get_additional_new_entriy_cards_classes', $classes);
+  return apply_filters('get_additional_widget_entriy_cards_classes', $classes);
 }
 endif;
 

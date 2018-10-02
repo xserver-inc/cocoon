@@ -39,7 +39,7 @@ function new_entries_shortcode($atts) {
     $categories = explode(',', $cats);
   }
   ob_start();
-  generate_new_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy);
+  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy);
   $res = ob_get_clean();
   return $res;
 }

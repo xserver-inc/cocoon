@@ -125,6 +125,8 @@ require_once abspath(__FILE__).'settings.php';   //Wordpressの設定
 
 //新着記事ウィジェット
 require_once abspath(__FILE__).'widgets/new-entries.php';
+//関連記事ウィジェット
+require_once abspath(__FILE__).'widgets/related-entries.php';
 //人気記事ウィジェット
 require_once abspath(__FILE__).'widgets/popular-entries.php';
 //最近のコメントウィジェット

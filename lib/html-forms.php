@@ -877,9 +877,17 @@ function get_nofollow_link($url, $text){
 }
 endif;
 
-//新着記事ウィジェットのタグ生成
-if ( !function_exists( 'generate_new_entries_tag' ) ):
-function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category'){
+//汎用エントリーウィジェットのタグ生成
+if ( !function_exists( 'generate_widget_entries_tag' ) ):
+function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $randam = 0){
+
+  //ランダムが有効な時は関連記事
+  if ($randam) {
+    $prefix = 'widget-related';
+  } else {
+    $prefix = 'new';
+  }
+
 
   $args = array(
     'posts_per_page' => $entry_count,
@@ -905,18 +913,23 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       )
     );
   }
-  $args = apply_filters('widget_new_entries_args', $args);
+  if ($randam) {
+    $args = apply_filters('widget_related_entries_args', $args);
+  } else {
+    $args = apply_filters('widget_new_entries_args', $args);
+  }
+  $args = apply_filters('widget_entries_args', $args);
   //_v($args);
-  $thumb_size = get_new_entries_thumbnail_size($entry_type);
+  $thumb_size = get_widget_entries_thumbnail_size($entry_type);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>
-  <div class="new-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_new_entriy_cards_classes($entry_type); ?>">
+  <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_widget_entriy_cards_classes($entry_type); ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-  <a href="<?php the_permalink(); ?>" class="new-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
-    <div class="new-entry-card widget-entry-card e-card cf">
-      <figure class="new-entry-card-thumb widget-entry-card-thumb card-thumb">
+  <a href="<?php the_permalink(); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
+    <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
+      <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
         <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
       <?php else: // サムネイルを持っていないときの処理 ?>
@@ -924,15 +937,15 @@ function generate_new_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $c
       <?php endif; ?>
       </figure><!-- /.new-entry-card-thumb -->
 
-      <div class="new-entry-card-content widget-entry-card-content card-content">
-        <div class="new-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
-        <div class="new-entry-card-post-date display-none"><?php the_time(get_site_date_format()); ?></div>
+      <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
+        <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
+        <div class="<?php echo $prefix; ?>-entry-card-post-date display-none"><?php the_time(get_site_date_format()); ?></div>
       </div><!-- /.new-entry-content -->
     </div><!-- /.new-entry-card -->
   </a><!-- /.new-entry-card-link -->
   <?php endwhile;
   else :
-    echo '<p>'.__( '新着記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
+    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>
   <?php wp_reset_postdata(); ?>
   <?php //wp_reset_query(); ?>

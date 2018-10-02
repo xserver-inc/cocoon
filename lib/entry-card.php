@@ -90,9 +90,15 @@ function get_entry_card_no_image_tag($count){
 }
 endif;
 
-//新着記事のサムネイルサイズ
+//新着記事のサムネイルサイズ（エイリアス）
 if ( !function_exists( 'get_new_entries_thumbnail_size' ) ):
 function get_new_entries_thumbnail_size($entry_type = ET_DEFAULT){
+  return get_widget_entries_thumbnail_size($entry_type);
+}
+endif;
+//ウィジェットエントリーのサムネイルサイズ
+if ( !function_exists( 'get_widget_entries_thumbnail_size' ) ):
+function get_widget_entries_thumbnail_size($entry_type = ET_DEFAULT){
   $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
   return $thumb_size;
 }
