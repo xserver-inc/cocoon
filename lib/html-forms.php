@@ -898,6 +898,11 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
       'post_type' => explode(',', $post_type)
     );
   }
+  if ($randam) {
+    $args += array(
+      'orderby' => 'rand'
+    );
+  }
   if ( $cat_ids ) {
     //_v($cat_ids);
     $args += array(
