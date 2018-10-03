@@ -771,18 +771,18 @@ endif;
 
 //更新日の取得（更新日がない場合はnullを返す）
 if ( !function_exists( 'get_update_time' ) ):
-function get_update_time($format = null) {
+function get_update_time($format = null, $post_id = null) {
   if (empty($format)) {
     $format = get_site_date_format();
   }
-  $mtime = get_the_modified_time('Ymd');
-  $ptime = get_the_time('Ymd');
+  $mtime = get_post_modified_time('Ymd', false, $post_id);
+  $ptime = get_the_time('Ymd', $post_id);
   if ($ptime > $mtime) {
-    return get_the_time($format);
+    return get_the_time($format, $post_id);
   } elseif ($ptime === $mtime) {
     return null;
   } else {
-    return get_the_modified_time($format);
+    return get_post_modified_time($format, false, $post_id);
   }
 }
 endif;

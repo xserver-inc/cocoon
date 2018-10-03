@@ -856,7 +856,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
         <?php if ($pv_visible): ?>
           <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.' view' : $pv.' views';?></span>
         <?php endif ?>
-        <div class="popular-entry-card-post-date display-none"><?php echo get_the_date( get_site_date_format(), $post->ID ); ?></div>
+        <?php generate_widget_entry_card_date('popular', $post->ID); ?>
       </div><!-- /.popular-entry-content -->
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
@@ -944,7 +944,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
-        <div class="<?php echo $prefix; ?>-entry-card-post-date display-none"><?php the_time(get_site_date_format()); ?></div>
+        <?php generate_widget_entry_card_date($prefix); ?>
       </div><!-- /.new-entry-content -->
     </div><!-- /.new-entry-card -->
   </a><!-- /.new-entry-card-link -->
@@ -956,6 +956,19 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
   <?php //wp_reset_query(); ?>
   </div>
 <?php
+}
+endif;
+
+if ( !function_exists( 'generate_widget_entry_card_date' ) ):
+function generate_widget_entry_card_date($prefix, $post_id = null){?>
+<div class="<?php echo $prefix; ?>-entry-card-date display-none">
+  <span class="<?php echo $prefix; ?>-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
+    //更新日の取得
+    $update_time = get_update_time(get_site_date_format(), $post_id);
+  if($update_time):
+  ?><span class="<?php echo $prefix; ?>-entry-card-update-date post-update"><?php echo $update_time; ?></span><?php
+  endif; ?>
+</div><?php
 }
 endif;
 
