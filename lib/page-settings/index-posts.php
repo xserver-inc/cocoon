@@ -45,3 +45,6 @@ update_theme_option(OP_ENTRY_CARD_POST_UPDATE_VISIBLE);
 
 //投稿者を表示
 update_theme_option(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE);
+
+//コメント数を表示
+update_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);

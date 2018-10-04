@@ -150,3 +150,11 @@ function is_entry_card_post_author_visible(){
   return get_theme_option(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 }
 endif;
+
+//コメント数を表示
+define('OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE', 'entry_card_post_comment_count_visible');
+if ( !function_exists( 'is_entry_card_post_comment_count_visible' ) ):
+function is_entry_card_post_comment_count_visible(){
+  return get_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
+}
+endif;
