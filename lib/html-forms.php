@@ -961,12 +961,12 @@ endif;
 
 if ( !function_exists( 'generate_widget_entry_card_date' ) ):
 function generate_widget_entry_card_date($prefix, $post_id = null){?>
-<div class="<?php echo $prefix; ?>-entry-card-date display-none">
-  <span class="<?php echo $prefix; ?>-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
+<div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date display-none">
+  <span class="<?php echo $prefix; ?>-entry-card-post-date widget-entry-card-post-date post-date"><?php echo get_the_time(get_site_date_format(), $post_id); ?></span><?php
     //更新日の取得
     $update_time = get_update_time(get_site_date_format(), $post_id);
   if($update_time):
-  ?><span class="<?php echo $prefix; ?>-entry-card-update-date post-update"><?php echo $update_time; ?></span><?php
+  ?><span class="<?php echo $prefix; ?>-entry-card-update-date widget-entry-card-update-date post-update"><?php echo $update_time; ?></span><?php
   endif; ?>
 </div><?php
 }
