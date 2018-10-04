@@ -99,6 +99,14 @@ function is_toc_number_visible(){
 }
 endif;
 
+//目次の中央表示
+define('OP_TOC_POSITION_CENTER', 'toc_position_center');
+if ( !function_exists( 'is_toc_position_center' ) ):
+function is_toc_position_center(){
+  return get_theme_option(OP_TOC_POSITION_CENTER, 1);
+}
+endif;
+
 //目次を広告の手前に表示
 define('OP_TOC_BEFORE_ADS', 'toc_before_ads');
 if ( !function_exists( 'is_toc_before_ads' ) ):

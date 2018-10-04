@@ -157,6 +157,19 @@
           </td>
         </tr>
 
+        <!-- 目次の中央表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_TOC_POSITION_CENTER, __('目次の中央表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_TOC_POSITION_CENTER , is_toc_position_center(), __( '目次をメインカラムの中央に表示する', THEME_NAME ));
+            generate_tips_tag(__( '目次の表示位置です。無効にすると左側に表示されます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 目次の表示順 -->
         <tr>
           <th scope="row">

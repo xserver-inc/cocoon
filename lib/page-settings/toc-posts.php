@@ -39,5 +39,8 @@ update_theme_option(OP_TOC_DEPTH);
 //目次の数字の表示
 update_theme_option(OP_TOC_NUMBER_TYPE);
 
+//目次の中央表示
+update_theme_option(OP_TOC_POSITION_CENTER);
+
 //目次を広告の手前に表示
 update_theme_option(OP_TOC_BEFORE_ADS);
