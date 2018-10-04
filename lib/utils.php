@@ -2038,7 +2038,7 @@ endif;
 //文字列をBoolean型に変換
 if ( !function_exists( 'str_to_bool' ) ):
 function str_to_bool($string){
-  if (!boolval($string) || $string === 'false') {
+  if (!$string || $string === '0' || $string === 'false') {
     return false;
   } else {
     return true;
