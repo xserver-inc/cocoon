@@ -25,37 +25,9 @@ function get_h_inner_content($h_content){
 }
 endif;
 
-//最初のH2タグの前に目次を挿入する
-//ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
-if (is_toc_visible()) {
-  add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
-}
-if ( !function_exists( 'add_toc_before_1st_h2' ) ):
-function add_toc_before_1st_h2($the_content){
-  //フォーラムページだと表示しない
-  if (is_plugin_fourm_page()) {
-    return $the_content;
-  }
-
-  //投稿ページだと表示しない
-  if (!is_single_toc_visible() && is_single()) {
-    return $the_content;
-  }
-  //固定ページだと表示しない
-  if (!is_page_toc_visible() && is_page()) {
-    return $the_content;
-  }
-
-  //投稿ページで非表示になっていると表示しない
-  if (!is_the_page_toc_visible()) {
-    return $the_content;
-  }
-
-  // //マルチページの2ページ目以降は目次を表示しない
-  // if (is_singular() && is_multi_paged()) {
-  //   return $the_content;
-  // }
-
+//目次部分の取得
+if ( !function_exists( 'get_toc_tag' ) ):
+function get_toc_tag($the_content){
   $content     = $the_content;
   $headers     = array();
   $html        = '';
@@ -87,7 +59,6 @@ function add_toc_before_1st_h2($the_content){
 
   if($targetclass===''){$targetclass = get_post_type();}
   for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
-  //$harray = implode(',',$harray);
 
   preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/u', $content, $headers);
   $header_count = count($headers[0]);
@@ -157,42 +128,215 @@ function add_toc_before_1st_h2($the_content){
     $toc_list .= '</li></'.$list_tag.'>';
     $current_depth--;
   }
-  if($counter >= $showcount){
-    if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
-    if (is_toc_toggle_switch_enable()) {
-      $checked = null;
-      if (is_toc_content_visible()) {
-        $checked = ' checked';
-      }
-      $title_elm = 'label';
-      $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
-      $label_for = ' for="toc-checkbox"';
-    } else {
-      $title_elm = 'div';
-      $toc_check = null;
-      $label_for = null;
-    }
-    $html .= '
-    <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">'.$toc_check.
-      '<'.$title_elm.' class="toc-title"'.$label_for.'>' . $title . '</'.$title_elm.'>
-      <div class="toc-content">
-      ' . $toc_list .'
-      </div>
-    </div>';
 
-    //_v($counter);
-    $display_count = intval(get_toc_display_count());
-    if (is_int($display_count) && ($counter < $display_count)) {
+  ///////////////////////////////////////////
+  // 目次タグの生成
+  ///////////////////////////////////////////
+  if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
+  if (is_toc_toggle_switch_enable()) {
+    $checked = null;
+    if (is_toc_content_visible()) {
+      $checked = ' checked';
+    }
+    $title_elm = 'label';
+    $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
+    $label_for = ' for="toc-checkbox"';
+  } else {
+    $title_elm = 'div';
+    $toc_check = null;
+    $label_for = null;
+  }
+  $html .= '
+  <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">'.$toc_check.
+    '<'.$title_elm.' class="toc-title"'.$label_for.'>' . $title . '</'.$title_elm.'>
+    <div class="toc-content">
+    ' . $toc_list .'
+    </div>
+  </div>';
+
+  //_v($counter);
+  $display_count = intval(get_toc_display_count());
+  if (is_int($display_count) && ($counter < $display_count)) {
+    return ;
+  }
+
+  return $html;
+  //}
+}
+endif;
+
+//最初のH2タグの前に目次を挿入する
+//ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
+if (is_toc_visible()) {
+  add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
+}
+if ( !function_exists( 'add_toc_before_1st_h2' ) ):
+function add_toc_before_1st_h2($the_content){
+  //フォーラムページだと表示しない
+  if (is_plugin_fourm_page()) {
+    return $the_content;
+  }
+
+  //投稿ページだと表示しない
+  if (!is_single_toc_visible() && is_single()) {
+    return $the_content;
+  }
+  //固定ページだと表示しない
+  if (!is_page_toc_visible() && is_page()) {
+    return $the_content;
+  }
+
+  //投稿ページで非表示になっていると表示しない
+  if (!is_the_page_toc_visible()) {
+    return $the_content;
+  }
+
+  // //マルチページの2ページ目以降は目次を表示しない
+  // if (is_singular() && is_multi_paged()) {
+  //   return $the_content;
+  // }
+
+  $content     = $the_content;
+  // $headers     = array();
+  // $html        = '';
+  // $toc_list    = '';
+  // $id          = '';
+  // $toggle      = '';
+  // $counters    = array(0,0,0,0,0,0);
+  // $harray      = array();
+
+  // $class       = 'toc';
+  // $title       = get_toc_title(); //目次タイトル
+  // $showcount   = 0;
+  // $top_level   = 2; //h2がトップレベル
+  // $targetclass = 'entry-content'; //目次対象となるHTML要素
+
+  $depth       = intval(get_toc_depth()); //2-6 0で全て
+  $set_depth = $depth;//
+  if (intval($set_depth) == 0) {
+    $set_depth = 6;
+  }
+
+  /*
+  $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
+  if ($number_visible) {
+    $list_tag = 'ol';
+  } else {
+    $list_tag = 'ul';
+  }
+
+
+  if($targetclass===''){$targetclass = get_post_type();}
+  for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
+
+  preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/u', $content, $headers);
+  $header_count = count($headers[0]);
+  if($header_count > 0){
+    $level = strtolower($headers[1][0]);
+    if($top_level < $level){$top_level = $level;}
+  }
+  if($top_level < 1){$top_level = 1;}
+  if($top_level > 6){$top_level = 6;}
+  $top_level = $top_level;
+  $current_depth          = $top_level - 1;
+  $prev_depth             = $top_level - 1;
+  $max_depth              = (($depth == 0) ? 6 : intval($depth)) - $top_level + 1;
+
+
+  if($header_count > 0){
+    $toc_list .= '<' . $list_tag . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
+  }
+  for($i=0;$i < $header_count;$i++){
+    $depth = 0;
+    switch(strtolower($headers[1][$i])){
+      case 'h1': $depth = 1 - $top_level + 1; break;
+      case 'h2': $depth = 2 - $top_level + 1; break;
+      case 'h3': $depth = 3 - $top_level + 1; break;
+      case 'h4': $depth = 4 - $top_level + 1; break;
+      case 'h5': $depth = 5 - $top_level + 1; break;
+      case 'h6': $depth = 6 - $top_level + 1; break;
+    }
+    //var_dump($depth);
+    if($depth >= 1 && $depth <= $max_depth){
+      if($current_depth == $depth && $i != 0){
+        $toc_list .= '</li>';
+        $counters[$current_depth - 1] ++;
+      }
+      while($current_depth > $depth){
+        //_v($current_depth);
+        //_v($depth);
+        $toc_list .= '</li></'.$list_tag.'>';
+
+        $current_depth--;
+
+        $counters[$current_depth] = 0;
+        $counters[$current_depth - 1] ++;
+      }
+      if($current_depth != $prev_depth){
+        $toc_list .= '</li>';
+        $counters[$current_depth - 1] ++;
+      }
+      while($current_depth < $depth){
+        $toc_list .= '<'.$list_tag.'>';
+        //$diff = $depth - $current_depth;
+        // //見出しに不具合がある場合は出力しない
+        // if ($diff >= 2) {
+        //   return $the_content;
+        // }
+
+        $current_depth++;
+        $counters[$current_depth - 1] ++;
+      }
+      //$counters[$current_depth - 1] ++;
+      $counter++;
+      $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
+      $prev_depth = $depth;
+    }
+  }
+  while($current_depth >= 1 ){
+    $toc_list .= '</li></'.$list_tag.'>';
+    $current_depth--;
+  }*/
+  //if($counter >= $showcount){
+    // if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
+    // if (is_toc_toggle_switch_enable()) {
+    //   $checked = null;
+    //   if (is_toc_content_visible()) {
+    //     $checked = ' checked';
+    //   }
+    //   $title_elm = 'label';
+    //   $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
+    //   $label_for = ' for="toc-checkbox"';
+    // } else {
+    //   $title_elm = 'div';
+    //   $toc_check = null;
+    //   $label_for = null;
+    // }
+    // $html .= '
+    // <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">'.$toc_check.
+    //   '<'.$title_elm.' class="toc-title"'.$label_for.'>' . $title . '</'.$title_elm.'>
+    //   <div class="toc-content">
+    //   ' . $toc_list .'
+    //   </div>
+    // </div>';
+    $html = get_toc_tag($content);
+
+    //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
+    if (!$html) {
       return $the_content;
     }
+
+    // //_v($counter);
+    // $display_count = intval(get_toc_display_count());
+    // if (is_int($display_count) && ($counter < $display_count)) {
+    //   return $the_content;
+    // }
 
     ///////////////////////////////////////
     // PHPの見出し処理（条件によっては失敗するかも）
     ///////////////////////////////////////
     $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/i', $the_content, $m);
-    // var_dump($harray);
-    // var_dump($res);
-    //_v($m);
+
     $tag_all_index = 0;
     $tag_index = 1;
     $h_index = 2;
@@ -224,7 +368,7 @@ function add_toc_before_1st_h2($the_content){
         $i++;
         $count++;
       }
-    }
+    //}
 
   }
   $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得

@@ -350,3 +350,5 @@ endif;
 // endif;
 
 //add_filter('gutenberg_can_edit_post_type', '__return_false');
+
+//_v(get_toc_tag(get_the_content()));
