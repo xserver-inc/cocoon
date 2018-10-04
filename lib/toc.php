@@ -27,7 +27,26 @@ endif;
 
 //目次部分の取得
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($the_content){
+function get_toc_tag($the_content, &$harray, $is_widget = false){
+  //フォーラムページだと表示しない
+  if (is_plugin_fourm_page()) {
+    return;
+  }
+
+  //投稿ページだと表示しない
+  if (!is_single_toc_visible() && is_single()) {
+    return;
+  }
+  //固定ページだと表示しない
+  if (!is_page_toc_visible() && is_page()) {
+    return;
+  }
+
+  //投稿ページで非表示になっていると表示しない
+  if (!is_the_page_toc_visible()) {
+    return;
+  }
+
   $content     = $the_content;
   $headers     = array();
   $html        = '';
@@ -139,8 +158,13 @@ function get_toc_tag($the_content){
       $checked = ' checked';
     }
     $title_elm = 'label';
-    $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
-    $label_for = ' for="toc-checkbox"';
+    if ($is_widget) {
+      $toc_check = null;
+      $label_for = null;
+    } else {
+      $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
+      $label_for = ' for="toc-checkbox"';
+    }
   } else {
     $title_elm = 'div';
     $toc_check = null;
@@ -172,24 +196,24 @@ if (is_toc_visible()) {
 }
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
-  //フォーラムページだと表示しない
-  if (is_plugin_fourm_page()) {
-    return $the_content;
-  }
+  // //フォーラムページだと表示しない
+  // if (is_plugin_fourm_page()) {
+  //   return $the_content;
+  // }
 
-  //投稿ページだと表示しない
-  if (!is_single_toc_visible() && is_single()) {
-    return $the_content;
-  }
-  //固定ページだと表示しない
-  if (!is_page_toc_visible() && is_page()) {
-    return $the_content;
-  }
+  // //投稿ページだと表示しない
+  // if (!is_single_toc_visible() && is_single()) {
+  //   return $the_content;
+  // }
+  // //固定ページだと表示しない
+  // if (!is_page_toc_visible() && is_page()) {
+  //   return $the_content;
+  // }
 
-  //投稿ページで非表示になっていると表示しない
-  if (!is_the_page_toc_visible()) {
-    return $the_content;
-  }
+  // //投稿ページで非表示になっていると表示しない
+  // if (!is_the_page_toc_visible()) {
+  //   return $the_content;
+  // }
 
   // //マルチページの2ページ目以降は目次を表示しない
   // if (is_singular() && is_multi_paged()) {
@@ -203,7 +227,7 @@ function add_toc_before_1st_h2($the_content){
   // $id          = '';
   // $toggle      = '';
   // $counters    = array(0,0,0,0,0,0);
-  // $harray      = array();
+  $harray      = array();
 
   // $class       = 'toc';
   // $title       = get_toc_title(); //目次タイトル
@@ -319,7 +343,7 @@ function add_toc_before_1st_h2($the_content){
     //   ' . $toc_list .'
     //   </div>
     // </div>';
-    $html = get_toc_tag($content);
+    $html = get_toc_tag($content, $harray);
 
     //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
     if (!$html) {

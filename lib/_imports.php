@@ -155,5 +155,7 @@ require_once abspath(__FILE__).'widgets/cta-box.php';
 require_once abspath(__FILE__).'widgets/item-ranking.php';
 //広告ウィジェット
 require_once abspath(__FILE__).'widgets/ad.php';
+//目次ウィジェット
+require_once abspath(__FILE__).'widgets/toc.php';
 //ウィジェットの表示制御
 require_once abspath(__FILE__).'widgets/display-widgets.php';
