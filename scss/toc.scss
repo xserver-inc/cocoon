@@ -8,7 +8,7 @@
   padding: 1em;
   margin-bottom: 1em;
   display: table;
-  margin: 0 auto;
+  //margin: 0 auto;
 
   ul, ol{
     padding-left: 20px;
@@ -28,6 +28,10 @@
       text-decoration: underline;
     }
   }
+}
+
+.toc-center{
+  margin: 0 auto;
 }
 
 .toc-title{

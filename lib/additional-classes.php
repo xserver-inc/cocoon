@@ -817,6 +817,10 @@ function get_additional_toc_classes($option = null){
   $classes = null;
 
   $classes .= ' tnt-'.replace_value_to_class(get_toc_number_type());
+
+  if (is_toc_position_center()) {
+    $classes .= ' toc-center';
+  }
   if ($option) {
     $classes .= ' '.trim($option);
   }
