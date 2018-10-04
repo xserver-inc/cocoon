@@ -509,6 +509,9 @@ if (is_toc_toggle_switch_enable()): ?>
 }<?php endif ?>
 <?php //アイキャッチを中央表示
 if (is_eyecatch_center_enable()): ?>
+.eye-catch-wrap{
+  text-align: center;
+}
 .eye-catch {
   margin-left: auto;
   margin-right: auto;
