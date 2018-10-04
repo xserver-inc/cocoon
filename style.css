@@ -865,6 +865,17 @@ img.emoji {
   margin-left: 330px;
 }
 
+.entry-card-info > * {
+  font-size: 0.7em;
+  padding: 2px;
+}
+
+.post-comment-count::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
 .entry-category::before {
   font-family: FontAwesome;
   content: "";

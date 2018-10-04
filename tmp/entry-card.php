@@ -58,6 +58,10 @@
               <span class="post-author-name"><?php echo get_the_author(); ?></span>
             </span>
           <?php endif ?>
+          <?php //コメント数の表示
+          if(is_entry_card_post_comment_count_visible() && is_single_comment_visible()): ?>
+            <span class="post-comment-count"><?php echo get_comments_number(); ?></span>
+          <?php endif; ?>
         </div>
         <div class="entry-card-categorys"><?php the_nolink_categories() ?></div>
       </div>
