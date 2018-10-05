@@ -10,7 +10,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
 <!-- API -->
 <div id="apis" class="postbox">
-  <h2 class="hndle"><?php _e( 'API設定（β機能）', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'API設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php
