@@ -43,7 +43,8 @@ html[lang="en"] .column-3::before{
   background-color: #ffecd3;
 }
 
-.btn-wrap{
+.btn-wrap,
+.blogcard-wrap{
   padding: 6px;
   margin: 4px 0;
   position: relative;
@@ -55,17 +56,25 @@ span.btn-wrap{
   font-size: 0.8em;
 }
 
-.btn-wrap::before{
+.btn-wrap::before,
+.blogcard-wrap::before{
   font-family: FontAwesome;
-  content: '\f146';
   position: absolute;
   top: -2px;
   right: 4px;
+}
+
+.btn-wrap::before{
   color: #DBB004;
+  content: '\f146';
 }
 
 .btn-wrap{
   background-color: #f8e58c;
+}
+
+.blogcard-wrap{
+  background-color: #e6ecf0;
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
