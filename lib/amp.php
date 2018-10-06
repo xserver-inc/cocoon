@@ -347,6 +347,17 @@ function convert_content_for_amp($the_content){
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
 
+  // バリューコマースのバナー変換
+  $pattern = '{<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?</a>}i';
+  $append =
+    '<amp-ad width="300" height="250"
+    type="valuecommerce"
+    data-sid="$1"
+    data-pid="$2">
+    </amp-ad>';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
+
   // Twitterをamp-twitterに置換する（埋め込みコード）
   $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
   $append = '<p><amp-twitter width=592 height=472 layout="responsive" data-tweetid="$1"></amp-twitter></p>';
