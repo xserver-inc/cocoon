@@ -24,6 +24,7 @@ if (get_site_key_color()): ?>
 .cat-label,
 .appeal-content .appeal-button,
 .demo .cat-label,
+.blogcard-wrap .blogcard::before,
 #footer{
   background-color: <?php echo get_site_key_color(); ?>;
 }
@@ -110,6 +111,7 @@ if (get_site_key_text_color()): ?>
 .sidebar h3,
 .cat-link,
 .cat-label,
+.blogcard-wrap .blogcard::before,
 #footer,
 #footer a{
   color: <?php echo get_site_key_text_color(); ?>;
