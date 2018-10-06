@@ -1574,13 +1574,37 @@ function initialize_tinymce_styles($init_array) {
           'title' => __( '関連記事', THEME_NAME ),
           'block' => 'div',
           'wrapper' => true,
-          'classes' => 'blogcard-wrap bcw-related'
+          'classes' => 'blogcard-type bct-related'
+        ),
+        array(
+          'title' => __( '参考記事', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-reference'
+        ),
+        array(
+          'title' => __( '人気記事', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-popular'
         ),
         array(
           'title' => __( 'あわせて読みたい', THEME_NAME ),
           'block' => 'div',
           'wrapper' => true,
-          'classes' => 'blogcard-wrap bcw-together'
+          'classes' => 'blogcard-type bct-together'
+        ),
+        array(
+          'title' => __( 'チェック', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-check'
+        ),
+        array(
+          'title' => __( 'ピックアップ', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-pickup'
         ),
 
       ),

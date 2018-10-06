@@ -3180,24 +3180,39 @@ label.screen-reader-text {
   border-top-color: transparent;
 }
 
-.blogcard-wrap .blogcard::before {
+.blogcard-type .blogcard::before {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: -0.84em;
+  left: 0.8em;
   font-size: 0.7em;
   padding: 1px 6px;
   background-color: #333;
   color: #fff;
   border-radius: 2px;
-  opacity: 0.9;
 }
 
-.bcw-related .blogcard::before {
+.bct-related .blogcard::before {
   content: '関連記事';
 }
 
-.bcw-together .blogcard::before {
+.bct-together .blogcard::before {
   content: 'あわせて読みたい';
+}
+
+.bct-reference .blogcard::before {
+  content: '参考記事';
+}
+
+.bct-popular .blogcard::before {
+  content: '人気記事';
+}
+
+.bct-pickup .blogcard::before {
+  content: 'ピックアップ';
+}
+
+.bct-check .blogcard::before {
+  content: 'チェック';
 }
 
 .column-wrap {
