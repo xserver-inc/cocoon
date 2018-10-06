@@ -91,10 +91,6 @@ span.btn-wrap{
   content: '関連記事';
 }
 
-.blogcard-type.bct-together::before{
-  content: 'あわせて読みたい';
-}
-
 .blogcard-type.bct-reference::before{
   content: '参考記事';
 }
@@ -109,6 +105,14 @@ span.btn-wrap{
 
 .blogcard-type.bct-check::before{
   content: 'チェック';
+}
+
+.blogcard-type.bct-together::before{
+  content: 'あわせて読みたい';
+}
+
+.blogcard-type.bct-detail::before{
+  content: '詳細はこちら';
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/

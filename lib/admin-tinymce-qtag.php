@@ -1595,6 +1595,12 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'blogcard-type bct-together'
         ),
         array(
+          'title' => __( '詳細はこちら', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-detail'
+        ),
+        array(
           'title' => __( 'チェック', THEME_NAME ),
           'block' => 'div',
           'wrapper' => true,
