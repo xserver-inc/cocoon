@@ -1612,6 +1612,12 @@ function initialize_tinymce_styles($init_array) {
           'wrapper' => true,
           'classes' => 'blogcard-type bct-pickup'
         ),
+        array(
+          'title' => __( '公式サイト', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-official'
+        ),
 
       ),
     ),
