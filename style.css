@@ -3182,10 +3182,10 @@ label.screen-reader-text {
 
 .blogcard-type .blogcard::before {
   position: absolute;
-  top: -0.84em;
-  left: 0.8em;
+  top: -0.9em;
+  left: 2%;
   font-size: 0.7em;
-  padding: 1px 6px;
+  padding: 2px 0.6em;
   background-color: #333;
   color: #fff;
   border-radius: 2px;
