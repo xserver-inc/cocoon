@@ -1737,6 +1737,7 @@ span.internal-icon {
   border: 1px solid #ccc;
   border-radius: 4px;
   line-height: 1.3;
+  position: relative;
 }
 
 .blogcard-thumbnail {
@@ -3177,6 +3178,26 @@ label.screen-reader-text {
 .micro-bottom.micro-balloon:before {
   border-bottom-color: #999;
   border-top-color: transparent;
+}
+
+.blogcard-wrap .blogcard::before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.7em;
+  padding: 1px 6px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.bcw-related .blogcard::before {
+  content: '関連記事';
+}
+
+.bcw-together .blogcard::before {
+  content: 'あわせて読みたい';
 }
 
 .column-wrap {

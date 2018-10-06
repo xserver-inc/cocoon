@@ -768,3 +768,21 @@ $bb_green: #3eb370;
 //     padding: 0;
 //   }
 // }
+
+.blogcard-wrap .blogcard::before{
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.7em;
+  padding: 1px 6px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.bcw-related .blogcard::before{
+  content: '関連記事';
+}
+.bcw-together .blogcard::before{
+  content: 'あわせて読みたい';
+}

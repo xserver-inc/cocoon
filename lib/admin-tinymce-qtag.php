@@ -941,7 +941,7 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
     array(
-      'title' => __( 'ボタン（β機能）', THEME_NAME ),
+      'title' => __( 'ボタン', THEME_NAME ),
       'items' => array(
 
         array(
@@ -1236,7 +1236,7 @@ function initialize_tinymce_styles($init_array) {
     ),
 
     array(
-      'title' => __( '囲みボタン（β機能）', THEME_NAME ),
+      'title' => __( '囲みボタン', THEME_NAME ),
       'items' => array(
 
         array(
@@ -1566,6 +1566,25 @@ function initialize_tinymce_styles($init_array) {
       ),
     ),
 
+    array(
+      'title' => __( '囲みブログカード', THEME_NAME ),
+      'items' => array(
+
+        array(
+          'title' => __( '関連記事', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-wrap bcw-related'
+        ),
+        array(
+          'title' => __( 'あわせて読みたい', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-wrap bcw-together'
+        ),
+
+      ),
+    ),
   );
 
   //JSONに変換

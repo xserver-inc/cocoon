@@ -56,17 +56,26 @@ span.btn-wrap{
   font-size: 0.8em;
 }
 
-.btn-wrap::before,
-.blogcard-wrap::before{
-  font-family: FontAwesome;
+.btn-wrap::before{
   position: absolute;
   top: -2px;
   right: 4px;
 }
 
 .btn-wrap::before{
+  font-family: FontAwesome;
   color: #DBB004;
   content: '\f146';
+}
+
+.blogcard-wrap::before{
+  font-size: 0.6em;
+  padding: 0 4px;
+  background-color: #587b93;
+  color: #fff;
+  top: 0;
+  right: 0;
+  position: absolute;
 }
 
 .btn-wrap{
@@ -74,7 +83,16 @@ span.btn-wrap{
 }
 
 .blogcard-wrap{
+  padding-top: 1em;
   background-color: #e6ecf0;
+}
+
+.blogcard-wrap.bcw-related::before{
+  content: '関連記事';
+}
+
+.blogcard-wrap.bcw-together::before{
+  content: 'あわせて読みたい';
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
