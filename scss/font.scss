@@ -5,11 +5,6 @@
 // //Font Awesome
 // @import "fontawesome";
 
-//フォント
-$default_font: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
-$meiryo_font: "Meiryo", sans-serif;
-$navi_font: FontAwesome, $default_font;
-
 //フォントサイズ
 @for $i from 12 through 22 {
   .fz-#{$i}px { font-size: #{$i}px; }

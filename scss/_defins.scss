@@ -1,8 +1,12 @@
+//変数などの定義
+
 //ブランドカラー
 @import 'brand-colors';
 
-//フォントの設定
-@import 'font';
+//フォント
+$default_font: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+$meiryo_font: "Meiryo", sans-serif;
+$navi_font: FontAwesome, $default_font;
 
 //テキスト色
 // $text_color: #333435;
@@ -71,6 +75,15 @@ $widget_max_width: 400px;
 $emtry_card_thumb_margin_top: 3px;
 
 $thumb_content_margin: 1.6%;
+
+$bct-related: '関連記事';
+$bct-reference: '参考記事';
+$bct-popular: '人気記事';
+$bct-pickup: 'ピックアップ';
+$bct-check: 'チェック';
+$bct-together: 'あわせて読みたい';
+$bct-detail: '詳細はこちら';
+$bct-official: '公式サイト';
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;

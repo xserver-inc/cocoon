@@ -780,26 +780,26 @@ $bb_green: #3eb370;
   border-radius: 2px;
 }
 .bct-related .blogcard::before{
-  content: '関連記事';
+  content: $bct-related;
 }
 .bct-reference .blogcard::before{
-  content: '参考記事';
+  content: $bct-reference;
 }
 .bct-popular .blogcard::before{
-  content: '人気記事';
+  content: $bct-popular;
 }
 .bct-pickup .blogcard::before{
-  content: 'ピックアップ';
+  content: $bct-pickup;
 }
 .bct-check .blogcard::before{
-  content: 'チェック';
+  content: $bct-check;
 }
 .bct-together .blogcard::before{
-  content: 'あわせて読みたい';
+  content: $bct-together;
 }
 .bct-detail .blogcard::before{
-  content: '詳細はこちら';
+  content: $bct-detail;
 }
 .bct-official .blogcard::before{
-  content: '公式サイト';
+  content:$bct-official;
 }
