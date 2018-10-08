@@ -25,7 +25,7 @@ function fetch_twitter_count_raw($url){
     $json = json_decode( $body );
     $res = ($json->{"count"} ? $json->{"count"} : '0');
   }
-  return $res;
+  return intval($res);
 }
 endif;
 
@@ -88,7 +88,7 @@ function fetch_facebook_count_raw($url){
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
     $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
   }
-  return $res;
+  return intval($res);
 }
 endif;
 
@@ -150,7 +150,7 @@ function fetch_hatebu_count_raw($url){
     $body = $response['body'];
     $res = !empty($body) ? $body : 0;
   }
-  return $res;
+  return intval($res);
 }
 endif;
 
@@ -210,7 +210,7 @@ function fetch_google_plus_count_raw($url){
   // 正規表現でカウント数のところだけを抽出
   preg_match( '/\[2,([0-9.]+),\[/', $result["body"], $count );
   $res = isset($count[1]) ? intval($count[1]) : 0;
-  return $res;
+  return intval($res);
 }
 endif;
 
@@ -275,7 +275,7 @@ function fetch_pocket_count_raw($url){
     $res = isset($count[1]) ? intval($count[1]) : 0;
   }
 
-  return $res;
+  return intval($res);
 }
 endif;
 

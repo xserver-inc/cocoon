@@ -25,7 +25,7 @@ function fetch_feedly_count_raw($url){
       }
     }
   }
-  return $res;
+  return intval($res);
 }
 endif;
 
