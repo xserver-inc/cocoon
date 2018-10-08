@@ -27,3 +27,5 @@ update_theme_option(OP_SNS_FEEDLY_FOLLOW_COUNT);
 update_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_ENABLE);
 //SNSフォロー数キャッシュ取得間隔
 update_theme_option(OP_SNS_FOLLOW_COUNT_CACHE_INTERVAL);
+//別スキームのSNSフォロー数を取得するか
+update_theme_option(OP_ANOTHER_SNS_FOLLOW_SCHEME_COUNT);
