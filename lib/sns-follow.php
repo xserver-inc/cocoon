@@ -45,6 +45,10 @@ function fetch_feedly_count(){
 
   $url = get_bloginfo( 'rss2_url' );
   $res = fetch_feedly_count_raw($url);
+  //別スキームカウントの取得
+  if (is_sns_follow_count_cache_enable() && is_another_sns_follow_scheme_count()) {
+    $res = $res + fetch_feedly_count_raw(get_another_scheme_url($url));
+  }
 
   //DBキャッシュにカウントを保存
   if (is_sns_follow_count_cache_enable()) {
