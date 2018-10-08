@@ -539,6 +539,7 @@ if (!$main_column_contents_width) {
 } ?>
 .eye-catch amp-img{
   display: block;
+  max-width: <?php echo $main_column_contents_width; ?>px;
 }
 @media screen and (max-width: <?php echo $main_column_contents_width; ?>px){
   .eye-catch {
