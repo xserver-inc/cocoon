@@ -2081,3 +2081,13 @@ function get_another_scheme_url($url){
   return $another_scheme_url;
 }
 endif;
+
+//ブログカードの無効化を解除
+if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
+function cancel_blog_card_deactivation($the_content){
+  $pattern = '{^(<p>)?!(https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)(</p>)?}im';
+  $append = '$2';
+  $the_content = preg_replace($pattern, $append, $the_content);
+  return $the_content;
+}
+endif;
