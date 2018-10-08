@@ -2069,3 +2069,15 @@ function add_meta_box_custom_post_types($id, $title, $callback, $screen = null, 
   }
 }
 endif;
+
+//別スキームのURLの取得
+if ( !function_exists( 'get_another_scheme_url' ) ):
+function get_another_scheme_url($url){
+  if (preg_match('{^https://}', $url)) {
+    $another_scheme_url = preg_replace('{^https://}', 'http://', $url);
+  } else {
+    $another_scheme_url = preg_replace('{^http://}', 'https://', $url);
+  }
+  return $another_scheme_url;
+}
+endif;
