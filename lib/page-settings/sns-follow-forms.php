@@ -217,12 +217,12 @@
         <tr>
           <th scope="row">
             <?php
-            generate_label_tag(OP_ANOTHER_SNS_FOLLOW_SCHEME_COUNT, __('別スキームフォロー数', THEME_NAME) );
+            generate_label_tag(OP_ANOTHER_SCHEME_SNS_FOLLOW_COUNT, __('別スキームフォロー数', THEME_NAME) );
             ?>
           </th>
           <td>
           <?php
-            generate_checkbox_tag(OP_ANOTHER_SNS_FOLLOW_SCHEME_COUNT , is_another_sns_follow_scheme_count(), __( '別スキームのSNSフォロー数をキャッシュする', THEME_NAME ));
+            generate_checkbox_tag(OP_ANOTHER_SCHEME_SNS_FOLLOW_COUNT , is_another_scheme_sns_follow_count(), __( '別スキームのSNSフォロー数をキャッシュする', THEME_NAME ));
             generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ));
             ?>
           </td>

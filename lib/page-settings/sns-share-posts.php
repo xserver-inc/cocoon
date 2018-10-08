@@ -26,4 +26,4 @@ update_theme_option(OP_SNS_SHARE_COUNT_CACHE_ENABLE);
 //SNSシェア数キャッシュ取得間隔
 update_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL);
 //別スキームのSNSシェア数を取得するか
-update_theme_option(OP_ANOTHER_SNS_SHARE_SCHEME_COUNT);
+update_theme_option(OP_ANOTHER_SCHEME_SNS_SHARE_COUNT);

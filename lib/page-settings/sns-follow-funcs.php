@@ -98,9 +98,9 @@ function get_sns_follow_count_cache_interval(){
 endif;
 
 //別スキームのSNSフォロー数を取得するか
-define('OP_ANOTHER_SNS_FOLLOW_SCHEME_COUNT', 'another_sns_follow_scheme_count');
-if ( !function_exists( 'is_another_sns_follow_scheme_count' ) ):
-function is_another_sns_follow_scheme_count(){
-  return intval(get_theme_option(OP_ANOTHER_SNS_FOLLOW_SCHEME_COUNT));
+define('OP_ANOTHER_SCHEME_SNS_FOLLOW_COUNT', 'another_scheme_sns_follow_count');
+if ( !function_exists( 'is_another_scheme_sns_follow_count' ) ):
+function is_another_scheme_sns_follow_count(){
+  return intval(get_theme_option(OP_ANOTHER_SCHEME_SNS_FOLLOW_COUNT));
 }
 endif;

@@ -63,9 +63,9 @@ function get_sns_share_count_cache_interval(){
 endif;
 
 //別スキームのSNSシェア数を取得するか
-define('OP_ANOTHER_SNS_SHARE_SCHEME_COUNT', 'another_sns_share_scheme_count');
-if ( !function_exists( 'is_another_sns_share_scheme_count' ) ):
-function is_another_sns_share_scheme_count(){
-  return intval(get_theme_option(OP_ANOTHER_SNS_SHARE_SCHEME_COUNT));
+define('OP_ANOTHER_SCHEME_SNS_SHARE_COUNT', 'another_scheme_sns_share_count');
+if ( !function_exists( 'is_another_scheme_sns_share_count' ) ):
+function is_another_scheme_sns_share_count(){
+  return intval(get_theme_option(OP_ANOTHER_SCHEME_SNS_SHARE_COUNT));
 }
 endif;

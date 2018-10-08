@@ -49,7 +49,7 @@ function fetch_twitter_count($url = null) {
   }
   $res = fetch_twitter_count_raw($url);
   //別スキームカウントの取得
-  if (is_sns_share_count_cache_enable() && is_another_sns_share_scheme_count()) {
+  if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_twitter_count_raw(get_another_scheme_url($url));
   }
 
@@ -115,7 +115,7 @@ function fetch_facebook_count($url = null) {
   }
   $res = fetch_facebook_count_raw($url);
   //別スキームカウントの取得
-  if (is_sns_share_count_cache_enable() && is_another_sns_share_scheme_count()) {
+  if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_facebook_count_raw(get_another_scheme_url($url));
   }
   //_v($res);
@@ -185,7 +185,7 @@ function fetch_hatebu_count($url = null) {
   }
   $res = fetch_hatebu_count_raw($url);
   //別スキームカウントの取得
-  if (is_sns_share_count_cache_enable() && is_another_sns_share_scheme_count()) {
+  if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_hatebu_count_raw(get_another_scheme_url($url));
   }
 
@@ -245,7 +245,7 @@ function fetch_google_plus_count($url = null) {
   }
   $res = fetch_google_plus_count_raw($url);
   //別スキームカウントの取得
-  if (is_sns_share_count_cache_enable() && is_another_sns_share_scheme_count()) {
+  if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_google_plus_count_raw(get_another_scheme_url($url));
   }
 
@@ -315,7 +315,7 @@ function fetch_pocket_count($url = null) {
   }
   $res = fetch_pocket_count_raw($url);
   //別スキームカウントの取得
-  if (is_sns_share_count_cache_enable() && is_another_sns_share_scheme_count()) {
+  if (is_sns_share_count_cache_enable() && is_another_scheme_sns_share_count()) {
     $res = $res + fetch_pocket_count_raw(get_another_scheme_url($url));
   }
 
