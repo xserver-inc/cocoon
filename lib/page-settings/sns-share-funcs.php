@@ -61,3 +61,11 @@ function get_sns_share_count_cache_interval(){
   return intval(get_theme_option(OP_SNS_SHARE_COUNT_CACHE_INTERVAL, 6));
 }
 endif;
+
+//別スキームのSNSシェア数を取得するか
+define('OP_ANOTHER_SNS_SHARE_SCHEME_COUNT', 'another_sns_share_scheme_count');
+if ( !function_exists( 'is_another_sns_share_scheme_count' ) ):
+function is_another_sns_share_scheme_count(){
+  return intval(get_theme_option(OP_ANOTHER_SNS_SHARE_SCHEME_COUNT));
+}
+endif;
