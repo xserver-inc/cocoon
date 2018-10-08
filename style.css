@@ -3181,6 +3181,7 @@ label.screen-reader-text {
 }
 
 .blogcard-type .blogcard::before {
+  font-family: FontAwesome;
   position: absolute;
   top: -0.9em;
   left: 2%;
@@ -3189,38 +3190,39 @@ label.screen-reader-text {
   background-color: #333;
   color: #fff;
   border-radius: 2px;
+  white-space: pre;
 }
 
 .bct-related .blogcard::before {
-  content: "関連記事";
+  content: "  関連記事";
 }
 
 .bct-reference .blogcard::before {
-  content: "参考記事";
+  content: "  参考記事";
 }
 
 .bct-popular .blogcard::before {
-  content: "人気記事";
+  content: "  人気記事";
 }
 
 .bct-pickup .blogcard::before {
-  content: "ピックアップ";
+  content: "  ピックアップ";
 }
 
 .bct-check .blogcard::before {
-  content: "チェック";
+  content: "  チェック";
 }
 
 .bct-together .blogcard::before {
-  content: "あわせて読みたい";
+  content: "  あわせて読みたい";
 }
 
 .bct-detail .blogcard::before {
-  content: "詳細はこちら";
+  content: "  詳細はこちら";
 }
 
 .bct-official .blogcard::before {
-  content: "公式サイト";
+  content: "  公式サイト";
 }
 
 .column-wrap {

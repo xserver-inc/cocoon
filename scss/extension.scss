@@ -770,6 +770,7 @@ $bb_green: #3eb370;
 // }
 
 .blogcard-type .blogcard::before{
+  font-family: FontAwesome;
   position: absolute;
   top: -0.9em;
   left: 2%;
@@ -778,6 +779,7 @@ $bb_green: #3eb370;
   background-color: #333;
   color: #fff;
   border-radius: 2px;
+  white-space: pre;
 }
 .bct-related .blogcard::before{
   content: $bct-related;

@@ -73,6 +73,7 @@ span.btn-wrap{
 }
 
 .blogcard-type::before{
+  font-family: FontAwesome;
   font-size: 0.6em;
   padding: 0 4px;
   background-color: #587b93;
@@ -80,6 +81,7 @@ span.btn-wrap{
   top: 0;
   right: 0;
   position: absolute;
+  white-space: pre;
 }
 
 .btn-wrap{
