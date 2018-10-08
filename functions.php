@@ -24,7 +24,8 @@ $example_update_checker = new ThemeUpdateChecker(
 if ( !function_exists( 'get_content_excerpt' ) ):
 function get_content_excerpt($content, $length = 70){
   $content = apply_filters( 'content_excerpt_before', $content);
-
+  //_v($content);
+  $content = cancel_blog_card_deactivation($content, false);
   $content = preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
   $content = strip_tags($content);//タグの除去
   $content = strip_shortcodes($content);//ショートコード削除

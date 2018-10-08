@@ -2084,9 +2084,15 @@ endif;
 
 //ブログカードの無効化を解除
 if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
-function cancel_blog_card_deactivation($the_content){
-  $pattern = '{^(<p>)?!(https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)(</p>)?}im';
-  $append = '$2';
+function cancel_blog_card_deactivation($the_content, $is_p = true){
+  $not_url_reg = '!(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
+  if ($is_p) {
+    $pattern = '{^<p>'.$not_url_reg.'</p>}im';
+    $append = '<p>$1</p>';
+  } else {
+    $pattern = '{^'.$not_url_reg.'}im';
+    $append = '$1';
+  }
   $the_content = preg_replace($pattern, $append, $the_content);
   return $the_content;
 }
