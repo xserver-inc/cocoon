@@ -164,7 +164,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           <td>
           <?php
             generate_checkbox_tag(OP_ANOTHER_SNS_SHARE_SCHEME_COUNT , is_another_sns_share_scheme_count(), __( '別スキームのSNSシェア数をキャッシュする', THEME_NAME ));
-            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。', THEME_NAME ));
+            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ));
             ?>
 
           </td>
