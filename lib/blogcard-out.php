@@ -59,6 +59,7 @@ function url_to_external_blog_card($the_content) {
   }
   //ブログカード無効化の解除
   $the_content = cancel_blog_card_deactivation($the_content);
+  $the_content = cancel_blog_card_deactivation($the_content, false);
 
   return $the_content;//置換後のコンテンツを返す
 }
