@@ -59,6 +59,19 @@ function convert_content_for_amp($the_content){
   $amp_placeholder = '<amp-img layout="fill" src="'.get_template_directory_uri().'/images/transparence.png'.'" placeholder></amp-img>';
 
 
+  // バリューコマースのバナー変換
+  $pattern = '/<script .+?ad\.jp\.ap\.valuecommerce\.com\/servlet\/jsbanner.+?<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?<\/a><\/noscript>/';
+  // preg_match($pattern, $the_content, $m);
+  // _v($the_content);
+  // _v($m);
+  $append =
+    '<amp-ad width="300" height="250"
+    type="valuecommerce"
+    data-sid="$1"
+    data-pid="$2">
+    </amp-ad>';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   //noscriptタグの削除
   $the_content = preg_replace('/<noscript>/i', '', $the_content);
   $the_content = preg_replace('/<\/noscript>/i', '', $the_content);
@@ -346,17 +359,6 @@ function convert_content_for_amp($the_content){
 
   //画像タグをAMP用に置換
   $the_content = preg_replace('/<img(.+?)\/?>/is', '<amp-img$1></amp-img>', $the_content);
-
-  // バリューコマースのバナー変換
-  $pattern = '{<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?</a>}i';
-  $append =
-    '<amp-ad width="300" height="250"
-    type="valuecommerce"
-    data-sid="$1"
-    data-pid="$2">
-    </amp-ad>';
-  $the_content = preg_replace($pattern, $append, $the_content);
-
 
   // Twitterをamp-twitterに置換する（埋め込みコード）
   $pattern = '{<blockquote class="twitter-tweet".*?>.+?<a.+?href="https://twitter.com/.*?/status/([^\?"]+).*?">.+?</blockquote>}is';
