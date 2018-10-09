@@ -223,7 +223,7 @@
           <td>
           <?php
             generate_checkbox_tag(OP_ANOTHER_SCHEME_SNS_FOLLOW_COUNT , is_another_scheme_sns_follow_count(), __( '別スキームのSNSフォロー数をキャッシュする', THEME_NAME ));
-            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ));
+            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/another-scheme-sns-follow-count/'));
             ?>
           </td>
         </tr>

@@ -117,4 +117,7 @@
 </div>
 
 
+<?php //ブログカードヘルプ
+require_once abspath(__FILE__).'blogcard-help.php';; ?>
+
 </div><!-- /.metabox-holder -->

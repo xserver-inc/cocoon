@@ -164,7 +164,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           <td>
           <?php
             generate_checkbox_tag(OP_ANOTHER_SCHEME_SNS_SHARE_COUNT , is_another_scheme_sns_share_count(), __( '別スキームのSNSシェア数をキャッシュする', THEME_NAME ));
-            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ));
+            generate_tips_tag(__( 'httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/another-scheme-sns-share-count/'));
             ?>
           </td>
         </tr>
