@@ -629,6 +629,7 @@ function amazon_product_link_shortcode($atts){
     'rakuten' => 1,
     'yahoo' => 1,
     'image_only' => 0,
+    'image_index' => null,
   ), $atts ) );
 
   $asin = sanitize_shortcode_value($asin);
@@ -736,15 +737,34 @@ function amazon_product_link_shortcode($atts){
         $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
       }
 
-      $SmallImage = $item->SmallImage;
+      //画像用のアイテムセット
+      $ImageItem = $item;
+
+      //画像インデックスが設定されている場合
+      if ($image_index !== null) {
+        //インデックスを整数型にする
+        $image_index = intval($image_index);
+        //_v($image_index);
+        //イメージセットを取得する
+        $ImageSets = $item->ImageSets;
+        //_v($ImageSets);
+        //有効なインデックスの場合
+        if (!empty($ImageSets->ImageSet[$image_index])) {
+          //インデックスが有効な場合は画像アイテムを入れ替える
+          $ImageItem = $ImageSets->ImageSet[$image_index];
+          //_v($ImageSets->ImageSet);
+        }
+      }
+
+      $SmallImage = $ImageItem->SmallImage;
       $SmallImageUrl = esc_url($SmallImage->URL);
       $SmallImageWidth = esc_html($SmallImage->Width);
       $SmallImageHeight = esc_html($SmallImage->Height);
-      $MediumImage = $item->MediumImage;
+      $MediumImage = $ImageItem->MediumImage;
       $MediumImageUrl = esc_url($MediumImage->URL);
       $MediumImageWidth = esc_html($MediumImage->Width);
       $MediumImageHeight = esc_html($MediumImage->Height);
-      $LargeImage = $item->LargeImage;
+      $LargeImage = $ImageItem->LargeImage;
       $LargeImageUrl = esc_url($LargeImage->URL);
       $LargeImageWidth = esc_html($LargeImage->Width);
       $LargeImageHeight = esc_html($LargeImage->Height);
