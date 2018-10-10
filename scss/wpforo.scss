@@ -30,6 +30,12 @@ div#wpforo-wrap{
     border: medium none;
     font-size: 17px;
   }
+
+  //リストの余白調整
+  .wpforo-post .wpf-right ol,
+  .wpforo-post .wpf-right ul{
+    margin: 2em 1em;
+  }
 }
 
 .wpforo-list-item p {

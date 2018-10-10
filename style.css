@@ -6166,6 +6166,10 @@ div#wpforo-wrap .wpforo-post .wpf-right code {
   border: medium none;
   font-size: 17px;
 }
+div#wpforo-wrap .wpforo-post .wpf-right ol,
+div#wpforo-wrap .wpforo-post .wpf-right ul {
+  margin: 2em 1em;
+}
 
 .wpforo-list-item p {
   margin: 0;
