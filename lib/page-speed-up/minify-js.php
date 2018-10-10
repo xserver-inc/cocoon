@@ -24,7 +24,7 @@ function tag_code_to_minify_js($buffer) {
     //JSファイルパターン
     $js_file_pattern = '<script[^>]+?javascript[^>]+?src=[\'"]([^\'"]+?)[\'"][^>]*?></script>';
     //JSインラインパターン
-    $js_inline_pattern = '<script(.*?)>(.*?)</script>';
+    $js_inline_pattern = '<script([^>]*?)>(.*?)</script>';
     //JS正規表現パターン
     $pattern = '{'.$js_file_pattern.'|'.$js_inline_pattern.'}is';
     $subject = $buffer;
