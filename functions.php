@@ -188,7 +188,7 @@ function get_archive_chapter_title(){
     $chapter_title .= single_tag_title( '<span class="fa fa-tags"></span>', false );
   } elseif( is_tax() ) {//タクソノミページの場合
     $chapter_title .= single_term_title( '', false );
-  } elseif( is_search() ) {//タクソノミページの場合
+  } elseif( is_search() ) {//検索結果
     $chapter_title .= '<span class="fa fa-search"></span>"'.strip_tags(get_search_query()).'"';
   } elseif (is_day()) {
     //年月日のフォーマットを取得
