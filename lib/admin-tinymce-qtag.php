@@ -1567,7 +1567,7 @@ function initialize_tinymce_styles($init_array) {
     ),
 
     array(
-      'title' => __( '囲みブログカード', THEME_NAME ),
+      'title' => __( '囲みブログカードラベル', THEME_NAME ),
       'items' => array(
 
         array(
