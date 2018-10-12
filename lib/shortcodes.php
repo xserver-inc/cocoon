@@ -462,6 +462,27 @@ function get_moshimo_yahoo_impression_tag(){
 }
 endif;
 
+//アディショナルボタンタグの作成
+if ( !function_exists( 'get_additional_button_tag' ) ):
+function get_additional_button_tag($btn_url, $btn_text, $btn_tag, $name = 'btnex'){
+  //ボタンの作成
+  $button_tag = null;
+  if (($btn_text && $btn_url) || $btn_tag) {
+    if ($btn_tag) {
+      $button_link = htmlspecialchars_decode($btn_tag);
+    } else {
+      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow">'.esc_html($btn_text).'</a>';
+    }
+
+    $button_tag =
+      '<div class="shoplinkbtn shoplink'.esc_attr($name).'">'.
+      $button_link.
+      '</div>';
+  }
+  return $button_tag;
+}
+endif;
+
 //検索ボタンの作成
 if ( !function_exists( 'get_search_buttons_tag' ) ):
 function get_search_buttons_tag($args){
@@ -469,6 +490,10 @@ function get_search_buttons_tag($args){
 
   $buttons_tag = null;
   if ($keyword) {
+
+    //ボタン1の作成
+    $button1_tag = get_additional_button_tag($btn1_url, $btn1_text, $btn1_tag, 'btn1');
+
     //Amazonボタンの取得
     $amazon_btn_tag = null;
     $is_moshimo_amazon = $moshimo_amazon_id && is_moshimo_affiliate_link_enable();
@@ -538,12 +563,21 @@ function get_search_buttons_tag($args){
           '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
         '</div>';
     }
+
+    //ボタン2の作成
+    $button2_tag = get_additional_button_tag($btn2_url, $btn2_text, $btn2_tag, 'btn2');
+    //ボタン3の作成
+    $button3_tag = get_additional_button_tag($btn3_url, $btn3_text, $btn3_tag, 'btn3');
+
     //ボタンコンテナ
     $buttons_tag =
       '<div class="amazon-item-buttons product-item-buttons">'.
+        $button1_tag.
         $amazon_btn_tag.
         $rakuten_btn_tag.
         $yahoo_tag.
+        $button2_tag.
+        $button3_tag.
       '</div>';
   }
   return apply_filters( 'get_search_buttons_tag', $buttons_tag );
@@ -630,6 +664,15 @@ function amazon_product_link_shortcode($atts){
     'yahoo' => 1,
     'image_only' => 0,
     'image_index' => null,
+    'btn1_url' => null,
+    'btn1_text' => __( '公式ページ', THEME_NAME ),
+    'btn1_tag' => null,
+    'btn2_url' => null,
+    'btn2_text' => __( '公式ページ', THEME_NAME ),
+    'btn2_tag' => null,
+    'btn3_url' => null,
+    'btn3_text' => __( '公式ページ', THEME_NAME ),
+    'btn3_tag' => null,
   ), $atts ) );
 
   $asin = sanitize_shortcode_value($asin);
@@ -910,6 +953,15 @@ function amazon_product_link_shortcode($atts){
         'yahoo' => $yahoo,
         'amazon_page_url' => $associate_url,
         'rakuten_page_url' => null,
+        'btn1_url' => $btn1_url,
+        'btn1_text' => $btn1_text,
+        'btn1_tag' => $btn1_tag,
+        'btn2_url' => $btn2_url,
+        'btn2_text' => $btn2_text,
+        'btn2_tag' => $btn2_tag,
+        'btn3_url' => $btn3_url,
+        'btn3_text' => $btn3_text,
+        'btn3_tag' => $btn3_tag,
       );
       $buttons_tag = get_search_buttons_tag($args);
 
@@ -1021,6 +1073,15 @@ function rakuten_product_link_shortcode($atts){
     'yahoo' => 1,
     'sort' => null,
     'image_only' => 0,
+    'btn1_url' => null,
+    'btn1_text' => __( '公式ページ', THEME_NAME ),
+    'btn1_tag' => null,
+    'btn2_url' => null,
+    'btn2_text' => __( '公式ページ', THEME_NAME ),
+    'btn2_tag' => null,
+    'btn3_url' => null,
+    'btn3_text' => __( '公式ページ', THEME_NAME ),
+    'btn3_tag' => null,
   ), $atts ) );
 
   $id = sanitize_shortcode_value($id);
@@ -1313,6 +1374,15 @@ function rakuten_product_link_shortcode($atts){
             'yahoo' => $yahoo,
             'amazon_page_url' => null,
             'rakuten_page_url' => $affiliateUrl,
+            'btn1_url' => $btn1_url,
+            'btn1_text' => $btn1_text,
+            'btn1_tag' => $btn1_tag,
+            'btn2_url' => $btn2_url,
+            'btn2_text' => $btn2_text,
+            'btn2_tag' => $btn2_tag,
+            'btn3_url' => $btn3_url,
+            'btn3_text' => $btn3_text,
+            'btn3_tag' => $btn3_tag,
           );
           $buttons_tag = get_search_buttons_tag($args);
 

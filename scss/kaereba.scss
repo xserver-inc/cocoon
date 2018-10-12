@@ -206,6 +206,21 @@
 
 }
 
+.shoplinkbtn{
+  position: relative;
+  img{
+    position: absolute;
+  }
+}
+.shoplinkbtn1 a {
+  background: #192f60;
+}
+.shoplinkbtn2 a {
+  background: #007b43;
+}
+.shoplinkbtn3 a {
+  background: #522f60;
+}
 .shoplinkamazon a {
   background: #f79901;
 }
