@@ -662,6 +662,8 @@ function amazon_product_link_shortcode($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
+    'border' => 1,
+    'logo' => 1,
     'image_only' => 0,
     'image_index' => null,
     'btn1_url' => null,
@@ -965,6 +967,18 @@ function amazon_product_link_shortcode($atts){
       );
       $buttons_tag = get_search_buttons_tag($args);
 
+      //枠線非表示
+      $border_class = null;
+      if (!$border) {
+        $border_class = ' no-border';
+      }
+
+      //ロゴ非表示
+      $logo_class = null;
+      if (!$logo) {
+        $logo_class = ' no-after';
+      }
+
       ///////////////////////////////////////////
       // 管理者情報タグ
       ///////////////////////////////////////////
@@ -986,7 +1000,7 @@ function amazon_product_link_shortcode($atts){
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
-        '<div class="amazon-item-box product-item-box no-icon '.$size_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
+        '<div class="amazon-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
           '<figure class="amazon-item-thumb product-item-thumb">'.
             $image_link_tag.
           '</figure>'.
@@ -1071,6 +1085,8 @@ function rakuten_product_link_shortcode($atts){
     'amazon' => 1,
     'rakuten' => 1,
     'yahoo' => 1,
+    'border' => 1,
+    'logo' => 1,
     'sort' => null,
     'image_only' => 0,
     'btn1_url' => null,
@@ -1386,6 +1402,19 @@ function rakuten_product_link_shortcode($atts){
           );
           $buttons_tag = get_search_buttons_tag($args);
 
+
+          //枠線非表示
+          $border_class = null;
+          if (!$border) {
+            $border_class = ' no-border';
+          }
+
+          //ロゴ非表示
+          $logo_class = null;
+          if (!$logo) {
+            $logo_class = ' no-after';
+          }
+
           // ///////////////////////////////////////////
           // // キャッシュ削除リンク
           // ///////////////////////////////////////////
@@ -1420,7 +1449,7 @@ function rakuten_product_link_shortcode($atts){
           // 商品リンクタグの生成
           ///////////////////////////////////////////
           $tag =
-            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.' '.$id.' cf">'.
+            '<div class="rakuten-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$id.' cf">'.
               '<figure class="rakuten-item-thumb product-item-thumb">'.
               $image_link_tag.
               '</figure>'.

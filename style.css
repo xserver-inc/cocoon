@@ -7042,6 +7042,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 14pt;
   }
 }
+.no-border {
+  border: none;
+}
+
+.no-after::after {
+  display: none;
+}
+
 /************************************
 ** ソースコード
 ************************************/
