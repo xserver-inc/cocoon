@@ -55,6 +55,9 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
             generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/'));
 
+            generate_checkbox_tag(OP_AMAZON_ITEM_LOGO_VISIBLE , is_amazon_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'Amazon商品リンクのロゴの表示切り替え。', THEME_NAME ));
+
             generate_checkbox_tag(OP_AMAZON_SEARCH_BUTTON_VISIBLE , is_amazon_search_button_visible(), __( 'Amazon検索ボタンを表示する', THEME_NAME ));
             generate_tips_tag(__( 'Amazonのキーワード検索ボタンを表示するか。', THEME_NAME ));
 
@@ -92,6 +95,10 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_textbox_tag(OP_RAKUTEN_AFFILIATE_ID, get_rakuten_affiliate_id(), __( '', THEME_NAME ));
             generate_tips_tag(__( '楽天アフィリエイト用のIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-affiliate-id/', $help_text));
 
+
+            echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
+
+
             generate_label_tag(OP_GET_RAKUTEN_API_SORT, __( '商品並び替え優先度', THEME_NAME ));
             echo '<br>';
             $options = array(
@@ -106,7 +113,8 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));
             generate_tips_tag(__( 'データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/rakuten-link-price/'));
 
-            echo '<div'.get_not_allowed_form_class(get_rakuten_affiliate_id()).'>';
+            generate_checkbox_tag(OP_RAKUTEN_ITEM_LOGO_VISIBLE , is_rakuten_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
+            generate_tips_tag(__( '楽天商品リンクのロゴの表示切り替え。', THEME_NAME ));
 
             generate_checkbox_tag(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE , is_rakuten_search_button_visible(), __( '楽天検索ボタンを表示する', THEME_NAME ));
             generate_tips_tag(__( '楽天のキーワード検索ボタンを表示するか。', THEME_NAME ));

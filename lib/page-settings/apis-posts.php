@@ -21,6 +21,9 @@ update_theme_option(OP_AMAZON_SEARCH_BUTTON_VISIBLE);
 //Amazon商品リンク価格表示
 update_theme_option(OP_AMAZON_ITEM_PRICE_VISIBLE);
 
+//Amazonロゴ表示
+update_theme_option(OP_AMAZON_ITEM_LOGO_VISIBLE);
+
 //Amazon検索ボタン文字
 update_theme_option(OP_AMAZON_SEARCH_BUTTON_TEXT);
 
@@ -35,6 +38,9 @@ update_theme_option(OP_GET_RAKUTEN_API_SORT);
 
 //楽天商品リンク価格表示
 update_theme_option(OP_RAKUTEN_ITEM_PRICE_VISIBLE);
+
+//楽天ロゴ表示
+update_theme_option(OP_RAKUTEN_ITEM_LOGO_VISIBLE);
 
 //楽天検索ボタンを表示する
 update_theme_option(OP_RAKUTEN_SEARCH_BUTTON_VISIBLE);

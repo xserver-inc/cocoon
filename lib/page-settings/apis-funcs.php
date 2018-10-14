@@ -46,6 +46,14 @@ function is_amazon_item_price_visible(){
 }
 endif;
 
+//Amazonロゴ表示
+define('OP_AMAZON_ITEM_LOGO_VISIBLE', 'amazon_item_logo_visible');
+if ( !function_exists( 'is_amazon_item_logo_visible' ) ):
+function is_amazon_item_logo_visible(){
+  return get_theme_option(OP_AMAZON_ITEM_LOGO_VISIBLE, 1);
+}
+endif;
+
 //Amazon検索ボタン文字
 define('OP_AMAZON_SEARCH_BUTTON_TEXT', 'amazon_search_button_text');
 if ( !function_exists( 'get_amazon_search_button_text' ) ):
@@ -91,6 +99,14 @@ define('OP_RAKUTEN_ITEM_PRICE_VISIBLE', 'rakuten_item_price_visible');
 if ( !function_exists( 'is_rakuten_item_price_visible' ) ):
 function is_rakuten_item_price_visible(){
   return get_theme_option(OP_RAKUTEN_ITEM_PRICE_VISIBLE);
+}
+endif;
+
+//楽天ロゴ表示
+define('OP_RAKUTEN_ITEM_LOGO_VISIBLE', 'rakuten_item_logo_visible');
+if ( !function_exists( 'is_rakuten_item_logo_visible' ) ):
+function is_rakuten_item_logo_visible(){
+  return get_theme_option(OP_RAKUTEN_ITEM_LOGO_VISIBLE, 1);
 }
 endif;
 
