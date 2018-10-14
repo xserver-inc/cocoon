@@ -69,7 +69,7 @@ function get_related_wp_query_args(){
       array_push( $category_IDs, $category->cat_ID);
     endforeach ;
     if ( empty($category_IDs) ) return;
-    return $args = array(
+    $args = array(
       'post__not_in' => array($post->ID),
       'posts_per_page'=> intval(get_related_entry_count()),
       'category__in' => $category_IDs,
@@ -84,7 +84,7 @@ function get_related_wp_query_args(){
       array_push( $tag_IDs, $tag->term_id);
     endforeach ;
     if ( empty($tag_IDs) ) return;
-    return $args = array(
+    $args = array(
       'post__not_in' => array($post -> ID),
       'posts_per_page'=> intval(get_related_entry_count()),
       'tag__in' => $tag_IDs,
@@ -92,6 +92,7 @@ function get_related_wp_query_args(){
       'no_found_rows' => true,
     );
   }
+  return apply_filters('get_related_wp_query_args', $args);
 }
 endif;
 
@@ -357,3 +358,4 @@ endif;
 //add_filter('gutenberg_can_edit_post_type', '__return_false');
 
 //_v(get_toc_tag(get_the_content()));
+
