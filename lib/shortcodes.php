@@ -667,13 +667,13 @@ function amazon_product_link_shortcode($atts){
     'image_only' => 0,
     'image_index' => null,
     'btn1_url' => null,
-    'btn1_text' => __( '公式ページ', THEME_NAME ),
+    'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
     'btn2_url' => null,
-    'btn2_text' => __( '公式ページ', THEME_NAME ),
+    'btn2_text' => __( '詳細ページ', THEME_NAME ),
     'btn2_tag' => null,
     'btn3_url' => null,
-    'btn3_text' => __( '公式ページ', THEME_NAME ),
+    'btn3_text' => __( '詳細ページ', THEME_NAME ),
     'btn3_tag' => null,
   ), $atts ) );
 
@@ -1090,13 +1090,13 @@ function rakuten_product_link_shortcode($atts){
     'sort' => null,
     'image_only' => 0,
     'btn1_url' => null,
-    'btn1_text' => __( '公式ページ', THEME_NAME ),
+    'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
     'btn2_url' => null,
-    'btn2_text' => __( '公式ページ', THEME_NAME ),
+    'btn2_text' => __( '詳細ページ', THEME_NAME ),
     'btn2_tag' => null,
     'btn3_url' => null,
-    'btn3_text' => __( '公式ページ', THEME_NAME ),
+    'btn3_text' => __( '詳細ページ', THEME_NAME ),
     'btn3_tag' => null,
   ), $atts ) );
 
