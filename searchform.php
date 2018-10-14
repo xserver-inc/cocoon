@@ -11,6 +11,6 @@ if (!is_amp() || !is_ssl()): ?>
 <?php else: ?>
 <form class="amp-form search-box" method="get" action="<?php echo home_url('/'); ?>" target="_top">
 <?php endif ?>
-  <input type="text" placeholder="<?php _e( 'サイト内を検索', THEME_NAME ) ?>" name="s" class="search-edit">
-  <button type="submit" class="search-submit"></button>
+  <input type="text" placeholder="<?php _e( 'サイト内を検索', THEME_NAME ) ?>" name="s" class="search-edit" aria-label="input">
+  <button type="submit" class="search-submit" role="button" aria-label="button"></button>
 </form>
