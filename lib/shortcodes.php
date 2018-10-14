@@ -663,7 +663,7 @@ function amazon_product_link_shortcode($atts){
     'rakuten' => 1,
     'yahoo' => 1,
     'border' => 1,
-    'logo' => 1,
+    'logo' => null,
     'image_only' => 0,
     'image_index' => null,
     'btn1_url' => null,
@@ -975,7 +975,7 @@ function amazon_product_link_shortcode($atts){
 
       //ロゴ非表示
       $logo_class = null;
-      if (!$logo) {
+      if ((!is_amazon_item_logo_visible() && $logo === null) || !$logo) {
         $logo_class = ' no-after';
       }
 
@@ -1086,7 +1086,7 @@ function rakuten_product_link_shortcode($atts){
     'rakuten' => 1,
     'yahoo' => 1,
     'border' => 1,
-    'logo' => 1,
+    'logo' => null,
     'sort' => null,
     'image_only' => 0,
     'btn1_url' => null,
@@ -1411,7 +1411,7 @@ function rakuten_product_link_shortcode($atts){
 
           //ロゴ非表示
           $logo_class = null;
-          if (!$logo) {
+          if ((!is_rakuten_item_logo_visible() && $logo === null) || !$logo) {
             $logo_class = ' no-after';
           }
 
