@@ -541,12 +541,13 @@ if (!$main_column_contents_width) {
   display: block;
   max-width: <?php echo $main_column_contents_width; ?>px;
 }
-@media screen and (max-width: <?php echo $main_column_contents_width; ?>px){
+@media screen and (max-width: <?php echo $responsive_width; ?>px){
   .eye-catch {
     display: block;
   }
   .eye-catch amp-img{
     min-width: 100%;
+    max-width: 100%;
   }
 }
 <?php endif; ?>
