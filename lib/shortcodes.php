@@ -975,7 +975,7 @@ function amazon_product_link_shortcode($atts){
 
       //ロゴ非表示
       $logo_class = null;
-      if ((!is_amazon_item_logo_visible() && $logo === null) || !$logo) {
+      if ((!is_amazon_item_logo_visible() && $logo === null) || (!$logo && $logo !== null )) {
         $logo_class = ' no-after';
       }
 
@@ -1411,7 +1411,7 @@ function rakuten_product_link_shortcode($atts){
 
           //ロゴ非表示
           $logo_class = null;
-          if ((!is_rakuten_item_logo_visible() && $logo === null) || !$logo) {
+          if ((!is_rakuten_item_logo_visible() && $logo === null) || (!$logo && $logo !== null )) {
             $logo_class = ' no-after';
           }
 
