@@ -4143,6 +4143,20 @@ div.sbs-think .speech-balloon::after {
   display: block;
 }
 
+.swatchimages {
+  display: block;
+  display: flex;
+}
+.swatchimages > * {
+  border: 1px solid #ddd;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+}
+.swatchimages > * > img {
+  display: block;
+}
+
 .booklink-info,
 .kaerebalink-info,
 .tomarebalink-info,

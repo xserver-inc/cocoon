@@ -72,6 +72,25 @@
   display: block;
 }
 
+.swatchimages{
+  display: block;
+  display: flex;
+  //flex-wrap: wrap;
+  >*{
+    border: 1px solid $x_thin;
+    //padding: 1px;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+
+    >img{
+      display: block;
+      //width: 18px;
+    }
+  }
+
+}
+
 // .pis-m .image-content{
 //   left: 170px;
 // }
