@@ -987,27 +987,40 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // イメージリンクタグ
       ///////////////////////////////////////////
+      $image_l = null;
+      if ($size != 'l' && $LargeImageUrl) {
+        $image_l =
+          '<div class="amazon-item-thumb-l product-item-thumb-l image-content">'.
+            '<img src="'.$LargeImageUrl.'" alt="" width="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
+          '</div>';
+      }
       $image_only_class = null;
       if ($image_only) {
         $image_only_class = ' amazon-item-image-only product-item-image-only';
       }
-      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
               $moshimo_amazon_impression_tag.
+              $image_l.
             '</a>';
       //画像のみ出力する場合
       if ($image_only) {
         return apply_filters('amazon_product_image_link_tag', $image_link_tag);
       }
 
+      //画像ブロック
+      $image_figure_tag =
+        '<figure class="amazon-item-thumb product-item-thumb">'.
+          $image_link_tag.
+          //$image_l.
+        '</figure>';
+
       ///////////////////////////////////////////
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
         '<div class="amazon-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
-          '<figure class="amazon-item-thumb product-item-thumb">'.
-            $image_link_tag.
-          '</figure>'.
+          $image_figure_tag.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
               '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.

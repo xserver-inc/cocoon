@@ -4127,6 +4127,22 @@ div.sbs-think .speech-balloon::after {
   margin: 0 auto;
 }
 
+.image-content {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  border: 1px solid #777;
+  background-color: #f3f4f5;
+  border-radius: 2px;
+}
+
+.image-thumb:hover > .image-content {
+  display: block;
+}
+
 .booklink-info,
 .kaerebalink-info,
 .tomarebalink-info,

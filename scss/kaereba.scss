@@ -47,6 +47,7 @@
   margin: 0 auto 1em !important;
   float: none !important;
   text-align: center;
+  //position: relative;
   *{
     display: block;
   }
@@ -54,6 +55,36 @@
     margin: 0 auto;
   }
 }
+
+.image-content{
+  display: none;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  border: 1px solid $pallid_text_color;
+  background-color: $xx_thin;
+  border-radius: $badge_border_radius;
+}
+
+.image-thumb:hover > .image-content{
+  display: block;
+}
+
+// .pis-m .image-content{
+//   left: 170px;
+// }
+
+// .pis-s .image-content{
+//   left: 110px;
+// }
+// @media screen and (max-width: 480px){
+//   .image-thumb .image-content{
+//     left: 0;
+//   }
+// }
+
 
 //.booklink-image img, .kaerebalink-image img {}
 .booklink-info,
