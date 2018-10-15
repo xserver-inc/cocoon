@@ -101,8 +101,9 @@ $marker_u_blue: #a8dafb;
 .primary-box,
 .sp-primary,
 .primary {
-  background-color: #428BCA;
-  color: #FFFFFF;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
   padding:15px;
   border-radius:4px;
   margin-bottom:20px;
@@ -112,8 +113,9 @@ $marker_u_blue: #a8dafb;
 .success-box,
 .sp-success,
 .success {
-  background-color: #DFF0D8;
-  border-color: #D6E9C6;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
   padding:15px;
   border-radius:4px;
   margin-bottom:20px;
@@ -123,8 +125,9 @@ $marker_u_blue: #a8dafb;
 .info-box,
 .sp-info,
 .info {
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
   padding:15px;
   border-radius:4px;
   margin-bottom:20px;
@@ -134,19 +137,51 @@ $marker_u_blue: #a8dafb;
 .warning-box,
 .sp-warning,
 .warning {
-  background-color: #FCF8E3;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
   padding:15px;
   border-radius:4px;
   margin-bottom:20px;
-  border-color: #FAEBCC;
 }
 
 /*警告メッセージ*/
 .danger-box,
 .sp-danger,
 .danger {
-  background-color: #F2DEDE;
-  border-color: #EBCCD1;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*セカンダリー*/
+.secondary-box {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*ライト*/
+.light-box {
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+  padding:15px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+
+/*ダーク*/
+.dark-box {
+  color: #1b1e21;
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
   padding:15px;
   border-radius:4px;
   margin-bottom:20px;

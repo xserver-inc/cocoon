@@ -229,6 +229,11 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'primary-box'
         ),
         array(
+          'title' => __( 'セカンダリー（濃い灰色）', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'secondary-box'
+        ),
+        array(
           'title' => __( 'サクセス（薄い緑）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'success-box'
@@ -247,6 +252,16 @@ function initialize_tinymce_styles($init_array) {
           'title' => __( 'デンジャー（薄い赤色）', THEME_NAME ),
           'block' => 'div',
           'classes' => 'danger-box',
+        ),
+        array(
+          'title' => __( 'ライト（白色）', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'light-box',
+        ),
+        array(
+          'title' => __( 'ダーク（暗い灰色）', THEME_NAME ),
+          'block' => 'div',
+          'classes' => 'dark-box',
         ),
       ),
     ),
