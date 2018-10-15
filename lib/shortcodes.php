@@ -998,10 +998,6 @@ function amazon_product_link_shortcode($atts){
       }
       $swatchimages_tag = null;
       if (1 && $ImageSets) {
-        // $SwatchImage = $ImageSets->ImageSet[0]->SwatchImage;
-        // $SwatchImageURL = $SwatchImage->URL;
-        // $SwatchImageWidth = $SwatchImage->Width;
-        // $SwatchImageHeight = $SwatchImage->Height;
         $SwatchImages = $ImageSets->ImageSet;
         //_v($ImageSets);
         //_v(count($ImageSets->ImageSet));
