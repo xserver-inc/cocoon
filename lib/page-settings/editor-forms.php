@@ -16,6 +16,19 @@
     <table class="form-table">
       <tbody>
 
+      <!-- Gutenberg -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_GUTENBERG_EDITOR_ENABLE, __('Gutenberg', THEME_NAME) ); ?>
+        </th>
+        <td>
+          <?php
+          generate_checkbox_tag(OP_GUTENBERG_EDITOR_ENABLE , is_gutenberg_editor_enable(), __( 'Gutenbergエディターを有効にする', THEME_NAME ));
+          generate_tips_tag(__( '無効化することで旧ビジュアルエディター形式で投稿画面が表示されます。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
         <!-- 文字カウンター -->
         <tr>
           <th scope="row">

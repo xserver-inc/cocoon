@@ -6,6 +6,9 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
+//Gutenbergエディターの有効化
+update_theme_option(OP_GUTENBERG_EDITOR_ENABLE);
+
 //タイトル等の文字数カウンター表示
 update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 

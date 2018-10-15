@@ -6,6 +6,14 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
+//Gutenbergエディターの有効化
+define('OP_GUTENBERG_EDITOR_ENABLE', 'gutenberg_editor_enable');
+if ( !function_exists( 'is_gutenberg_editor_enable' ) ):
+function is_gutenberg_editor_enable(){
+  return get_theme_option(OP_GUTENBERG_EDITOR_ENABLE, 1);
+}
+endif;
+
 //タイトル等の文字数カウンター表示
 define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
 if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
