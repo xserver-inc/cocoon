@@ -13,6 +13,10 @@ function is_gutenberg_editor_enable(){
   return get_theme_option(OP_GUTENBERG_EDITOR_ENABLE, 1);
 }
 endif;
+//Gutenbergを無効化する場合
+if (!is_gutenberg_editor_enable()) {
+  add_filter('gutenberg_can_edit_post_type', '__return_false');
+}
 
 //タイトル等の文字数カウンター表示
 define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
