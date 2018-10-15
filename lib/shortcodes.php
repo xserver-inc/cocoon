@@ -1003,11 +1003,15 @@ function amazon_product_link_shortcode($atts){
         //_v(count($ImageSets->ImageSet));
         $tmp_tag = null;
         for ($i=0; $i < count($ImageSets->ImageSet)-1; $i++) {
-          if (($size == 's') && ($i >= 3)) {
-            break;
-          }
-          if (($size == 'm') && ($i >= 5)) {
-            break;
+          // if (($size == 's') && ($i >= 3)) {
+          //   break;
+          // }
+          // if (($size == 'm') && ($i >= 5)) {
+          //   break;
+          // }
+          $display_none_class = null;
+          if (($size == 's') && ($i >= 3) || ($size == 'm') && ($i >= 5)) {
+            $display_none_class = ' display-none';
           }
 
           $ImageSet = $ImageSets->ImageSet[$i];
@@ -1022,7 +1026,7 @@ function amazon_product_link_shortcode($atts){
           $LargeImageWidth = $LargeImage->Width;
           $LargeImageHeight = $LargeImage->Height;
           $tmp_tag .=
-            '<div class="image-thumb">'.
+            '<div class="image-thumb'.$display_none_class.'">'.
               '<img src="'.$SwatchImageURL.'" alt="" widh="'.$SwatchImageWidth.'" height="'.$SwatchImageHeight.'">'.
               '<div class="image-content">'.
               '<img src="'.$LargeImageURL.'" alt="" widh="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
