@@ -666,6 +666,7 @@ function amazon_product_link_shortcode($atts){
     'logo' => null,
     'image_only' => 0,
     'image_index' => null,
+    'samples' => null,
     'btn1_url' => null,
     'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
@@ -997,7 +998,7 @@ function amazon_product_link_shortcode($atts){
           '</div>';
       }
       $swatchimages_tag = null;
-      if (1 && $ImageSets) {
+      if ($samples && $ImageSets) {
         $SwatchImages = $ImageSets->ImageSet;
         //_v($ImageSets);
         //_v(count($ImageSets->ImageSet));
@@ -1008,6 +1009,11 @@ function amazon_product_link_shortcode($atts){
           // }
           // if (($size == 'm') && ($i >= 5)) {
           //   break;
+          // }
+
+          // //image_indexで指定した画像を含めない
+          // if (($image_index !== null) && ($i == intval($image_index))) {
+          //   continue;
           // }
           $display_none_class = null;
           if (($size != 'l') && ($i >= 3)) {
@@ -1029,6 +1035,8 @@ function amazon_product_link_shortcode($atts){
           $LargeImageURL = $LargeImage->URL;
           $LargeImageWidth = $LargeImage->Width;
           $LargeImageHeight = $LargeImage->Height;
+
+          //$id = ' id="'.$asin.'-'.$i.'"';
           $tmp_tag .=
             '<div class="image-thumb'.$display_none_class.'">'.
               '<img src="'.$SwatchImageURL.'" alt="" widh="'.$SwatchImageWidth.'" height="'.$SwatchImageHeight.'">'.
