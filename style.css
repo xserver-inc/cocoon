@@ -4128,7 +4128,7 @@ div.sbs-think .speech-balloon::after {
 }
 
 .image-content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 99;
   right: 0;
@@ -4136,24 +4136,44 @@ div.sbs-think .speech-balloon::after {
   border: 1px solid #ddd;
   background-color: #f3f4f5;
   border-radius: 2px;
+  transition: all .3s ease;
+  opacity: 0;
 }
 
 .image-thumb:hover > .image-content {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .swatchimages {
   display: block;
   display: flex;
+  flex-wrap: wrap;
 }
 .swatchimages > * {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   margin: 1px;
   display: flex;
   align-items: center;
 }
+.swatchimages > *:hover {
+  box-shadow: 0 0 4px #f79901;
+}
 .swatchimages > * > img {
   display: block;
+}
+.swatchimages:hover .image-thumb {
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.pis-m .image-thumb {
+  width: 18%;
+}
+
+.pis-s .image-thumb {
+  width: 30%;
 }
 
 .booklink-info,

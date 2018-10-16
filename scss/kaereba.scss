@@ -57,7 +57,8 @@
 }
 
 .image-content{
-  display: none;
+  //display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 99;
   right: 0;
@@ -67,22 +68,30 @@
   border: 1px solid $x_thin;
   background-color: $xx_thin;
   border-radius: $badge_border_radius;
+  transition: all .3s ease;
+  opacity: 0;
 }
 
 .image-thumb:hover > .image-content{
-  display: block;
+  //display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .swatchimages{
   display: block;
   display: flex;
-  //flex-wrap: wrap;
+  flex-wrap: wrap;
   >*{
-    border: 1px solid $x_thin;
+    border: 1px solid $thin;
     //padding: 1px;
     margin: 1px;
     display: flex;
     align-items: center;
+
+    &:hover{
+      box-shadow: 0 0 4px #f79901;
+    }
 
     >img{
       display: block;
@@ -90,6 +99,21 @@
     }
   }
 
+  &:hover{
+    .image-thumb{
+      display: block;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+}
+
+.pis-m .image-thumb{
+  width: 18%;
+}
+.pis-s .image-thumb{
+  width: 30%;
 }
 
 // .pis-m .image-content{
