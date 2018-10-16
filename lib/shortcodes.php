@@ -1024,6 +1024,7 @@ function amazon_product_link_shortcode($atts){
           $SwatchImageWidth = $SwatchImage->Width;
           $SwatchImageHeight = $SwatchImage->Height;
           //LargeImage
+          //_v($LargeImage);
           $LargeImage = $ImageSet->LargeImage;
           $LargeImageURL = $LargeImage->URL;
           $LargeImageWidth = $LargeImage->Width;
@@ -1035,6 +1036,7 @@ function amazon_product_link_shortcode($atts){
               '<img src="'.$LargeImageURL.'" alt="" widh="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
               '</div>'.
             '</div>';
+          //_v($tmp_tag);
         }
         $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.$tmp_tag.'</a>';
         // foreach ($ImageSets as $ImageSet) {

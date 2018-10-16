@@ -70,6 +70,9 @@
   border-radius: $badge_border_radius;
   transition: all .3s ease;
   opacity: 0;
+  >amp-img{
+    min-width: 500px;
+  }
 }
 
 .image-thumb:hover > .image-content{
@@ -82,6 +85,7 @@
   display: block;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 3px;
   >*{
     border: 1px solid $thin;
     //padding: 1px;
@@ -109,6 +113,9 @@
 
 }
 
+.pis-l .image-thumb{
+  width: 30px;
+}
 .pis-m .image-thumb{
   width: 18%;
 }

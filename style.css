@@ -4139,6 +4139,9 @@ div.sbs-think .speech-balloon::after {
   transition: all .3s ease;
   opacity: 0;
 }
+.image-content > amp-img {
+  min-width: 500px;
+}
 
 .image-thumb:hover > .image-content {
   visibility: visible;
@@ -4149,6 +4152,7 @@ div.sbs-think .speech-balloon::after {
   display: block;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 3px;
 }
 .swatchimages > * {
   border: 1px solid #ccc;
@@ -4166,6 +4170,10 @@ div.sbs-think .speech-balloon::after {
   display: block;
   display: flex;
   align-items: center;
+}
+
+.pis-l .image-thumb {
+  width: 30px;
 }
 
 .pis-m .image-thumb {
@@ -6740,6 +6748,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .no-mobile-sidebar #sidebar {
     display: none;
   }
+
+  .image-content amp-img {
+    min-width: 360px;
+    max-width: 360px;
+  }
 }
 @media screen and (max-width: 480px) {
   h2,
@@ -7037,6 +7050,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .sp-display-none {
     display: none;
+  }
+
+  .image-content amp-img {
+    min-width: 200px;
+    max-width: 200px;
   }
 }
 @media screen and (max-width: 356px) {
