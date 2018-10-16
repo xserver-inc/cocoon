@@ -52,7 +52,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
             echo '<div'.get_not_allowed_form_class(get_amazon_api_access_key_id() && get_amazon_api_secret_key() && get_amazon_associate_tracking_id()).'>';
 
-            generate_checkbox_tag(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE , is_amazon_item_catalog_image_visible(), __( 'カタログ写真の表示', THEME_NAME ));
+            generate_checkbox_tag(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE , is_amazon_item_catalog_image_visible(), __( 'カタログ写真を表示する', THEME_NAME ));
             generate_tips_tag(__( 'サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。', THEME_NAME ));
 
             generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
