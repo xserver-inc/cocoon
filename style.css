@@ -4139,7 +4139,10 @@ div.sbs-think .speech-balloon::after {
   transition: all .3s ease;
   opacity: 0;
 }
-.image-content > amp-img {
+.image-content img {
+  display: block;
+}
+.image-content amp-img {
   min-width: 500px;
 }
 
@@ -4159,6 +4162,7 @@ div.sbs-think .speech-balloon::after {
   margin: 1px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .swatchimages > *:hover {
   box-shadow: 0 0 4px #f79901;
@@ -4170,6 +4174,7 @@ div.sbs-think .speech-balloon::after {
   display: block;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .pis-l .image-thumb {

@@ -1056,7 +1056,7 @@ function amazon_product_link_shortcode($atts){
             '</div>';
           //_v($tmp_tag);
         }
-        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.$tmp_tag.'</a>';
+        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" rel="nofollow">'.$tmp_tag.'</a>';
         // foreach ($ImageSets as $ImageSet) {
         //   _v($ImageSet);
         // }
