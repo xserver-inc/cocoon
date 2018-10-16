@@ -1010,8 +1010,11 @@ function amazon_product_link_shortcode($atts){
           //   break;
           // }
           $display_none_class = null;
+          if (($size != 'l') && ($i >= 3)) {
+            $display_none_class .= ' sp-display-none';
+          }
           if (($size == 's') && ($i >= 3) || ($size == 'm') && ($i >= 5)) {
-            $display_none_class = ' display-none';
+            $display_none_class .= ' display-none';
           }
 
           $ImageSet = $ImageSets->ImageSet[$i];

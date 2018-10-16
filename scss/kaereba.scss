@@ -116,6 +116,12 @@
   width: 30%;
 }
 
+@media screen and (max-width: 480px){
+  .pis-m .image-thumb{
+    width: 30%;
+  }
+}
+
 // .pis-m .image-content{
 //   left: 170px;
 // }
