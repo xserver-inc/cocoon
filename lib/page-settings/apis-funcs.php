@@ -39,10 +39,10 @@ function is_amazon_search_button_visible(){
 endif;
 
 //見本画像の表示
-define('OP_AMAZON_ITEM_SAMPLE_IMAGE_VISIBLE', 'amazon_item_sample_image_visible');
-if ( !function_exists( 'is_amazon_item_sample_image_visible' ) ):
-function is_amazon_item_sample_image_visible(){
-  return get_theme_option(OP_AMAZON_ITEM_SAMPLE_IMAGE_VISIBLE, 1);
+define('OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE', 'amazon_item_catalog_image_visible');
+if ( !function_exists( 'is_amazon_item_catalog_image_visible' ) ):
+function is_amazon_item_catalog_image_visible(){
+  return get_theme_option(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE, 1);
 }
 endif;
 

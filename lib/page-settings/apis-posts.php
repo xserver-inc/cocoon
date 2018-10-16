@@ -19,7 +19,7 @@ update_theme_option(OP_AMAZON_ASSOCIATE_TRACKING_ID);
 update_theme_option(OP_AMAZON_SEARCH_BUTTON_VISIBLE);
 
 //見本画像の表示
-update_theme_option(OP_AMAZON_ITEM_SAMPLE_IMAGE_VISIBLE);
+update_theme_option(OP_AMAZON_ITEM_CATALOG_IMAGE_VISIBLE);
 
 //Amazon商品リンク価格表示
 update_theme_option(OP_AMAZON_ITEM_PRICE_VISIBLE);

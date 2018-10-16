@@ -667,6 +667,7 @@ function amazon_product_link_shortcode($atts){
     'image_only' => 0,
     'image_index' => null,
     'samples' => null,
+    'catalog' => null,
     'btn1_url' => null,
     'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
@@ -687,6 +688,9 @@ function amazon_product_link_shortcode($atts){
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
   $description = sanitize_shortcode_value($desc);
+  if ($catalog) {
+    $samples = $catalog;
+  }
 
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
@@ -1001,7 +1005,7 @@ function amazon_product_link_shortcode($atts){
 
       if ($ImageSets &&
          (
-           (is_amazon_item_sample_image_visible() && $samples === null) ||
+           (is_amazon_item_catalog_image_visible() && $samples === null) ||
            ($samples !== null && $samples)
          )
       ) {
