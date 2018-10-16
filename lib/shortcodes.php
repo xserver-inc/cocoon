@@ -998,7 +998,13 @@ function amazon_product_link_shortcode($atts){
           '</div>';
       }
       $swatchimages_tag = null;
-      if ($samples && $ImageSets) {
+
+      if ($ImageSets &&
+         (
+           (is_amazon_item_sample_image_visible() && $samples === null) ||
+           ($samples !== null && $samples)
+         )
+      ) {
         $SwatchImages = $ImageSets->ImageSet;
         //_v($ImageSets);
         //_v(count($ImageSets->ImageSet));
