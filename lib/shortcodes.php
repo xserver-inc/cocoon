@@ -1003,7 +1003,7 @@ function amazon_product_link_shortcode($atts){
       }
       $swatchimages_tag = null;
 
-      if ($ImageSets &&
+      if ($ImageSets && !$image_only &&
          (
            (is_amazon_item_catalog_image_visible() && $samples === null) ||
            ($samples !== null && $samples)
@@ -1063,7 +1063,7 @@ function amazon_product_link_shortcode($atts){
       }
       $image_only_class = null;
       if ($image_only) {
-        $image_only_class = ' amazon-item-image-only product-item-image-only';
+        $image_only_class = ' amazon-item-image-only product-item-image-only no-icon';
       }
       $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
