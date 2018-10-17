@@ -42,9 +42,11 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   }
 
   //アイキャッチにキャプションが設定されているとき
-  $eye_catch_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
-  if( $eye_catch_caption ) {
-      echo '<figcaption class="eye-catch-caption">' . $eye_catch_caption . '</figcaption>';
+  if (isset(get_post( get_post_thumbnail_id() )->post_excerpt)) {
+    $eye_catch_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+    if( $eye_catch_caption ) {
+        echo '<figcaption class="eye-catch-caption">' . $eye_catch_caption . '</figcaption>';
+    }
   }
   ?>
 </figure>

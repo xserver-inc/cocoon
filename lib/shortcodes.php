@@ -666,6 +666,8 @@ function amazon_product_link_shortcode($atts){
     'logo' => null,
     'image_only' => 0,
     'image_index' => null,
+    'samples' => null,
+    'catalog' => null,
     'btn1_url' => null,
     'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
@@ -686,6 +688,9 @@ function amazon_product_link_shortcode($atts){
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
   $description = sanitize_shortcode_value($desc);
+  if ($catalog) {
+    $samples = $catalog;
+  }
 
   //アクセスキー
   $access_key_id = trim(get_amazon_api_access_key_id());
@@ -785,13 +790,15 @@ function amazon_product_link_shortcode($atts){
       //画像用のアイテムセット
       $ImageItem = $item;
 
+      //イメージセットを取得する
+      $ImageSets = $item->ImageSets;
+      //_v($ImageSets);
+
       //画像インデックスが設定されている場合
-      if ($image_index !== null) {
+      if ($image_index !== null && $ImageSets) {
         //インデックスを整数型にする
         $image_index = intval($image_index);
         //_v($image_index);
-        //イメージセットを取得する
-        $ImageSets = $item->ImageSets;
         //_v($ImageSets);
         //有効なインデックスの場合
         if (!empty($ImageSets->ImageSet[$image_index])) {
@@ -987,27 +994,101 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // イメージリンクタグ
       ///////////////////////////////////////////
+      $image_l_tag = null;
+      if ($size != 'l' && $LargeImageUrl) {
+        $image_l_tag =
+          '<div class="amazon-item-thumb-l product-item-thumb-l image-content">'.
+            '<img src="'.$LargeImageUrl.'" alt="" width="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
+          '</div>';
+      }
+      $swatchimages_tag = null;
+
+      if ($ImageSets &&
+         (
+           (is_amazon_item_catalog_image_visible() && $samples === null) ||
+           ($samples !== null && $samples)
+         )
+      ) {
+        $SwatchImages = $ImageSets->ImageSet;
+        //_v($ImageSets);
+        //_v(count($ImageSets->ImageSet));
+        $tmp_tag = null;
+        for ($i=0; $i < count($ImageSets->ImageSet)-1; $i++) {
+          // if (($size == 's') && ($i >= 3)) {
+          //   break;
+          // }
+          // if (($size == 'm') && ($i >= 5)) {
+          //   break;
+          // }
+
+          // //image_indexで指定した画像を含めない
+          // if (($image_index !== null) && ($i == intval($image_index))) {
+          //   continue;
+          // }
+          $display_none_class = null;
+          if (($size != 'l') && ($i >= 3)) {
+            $display_none_class .= ' sp-display-none';
+          }
+          if (($size == 's') && ($i >= 3) || ($size == 'm') && ($i >= 5)) {
+            $display_none_class .= ' display-none';
+          }
+
+          $ImageSet = $ImageSets->ImageSet[$i];
+          //SwatchImage
+          $SwatchImage = $ImageSet->SwatchImage;
+          $SwatchImageURL = $SwatchImage->URL;
+          $SwatchImageWidth = $SwatchImage->Width;
+          $SwatchImageHeight = $SwatchImage->Height;
+          //LargeImage
+          //_v($LargeImage);
+          $LargeImage = $ImageSet->LargeImage;
+          $LargeImageURL = $LargeImage->URL;
+          $LargeImageWidth = $LargeImage->Width;
+          $LargeImageHeight = $LargeImage->Height;
+
+          //$id = ' id="'.$asin.'-'.$i.'"';
+          $tmp_tag .=
+            '<div class="image-thumb'.$display_none_class.'">'.
+              '<img src="'.$SwatchImageURL.'" alt="" widh="'.$SwatchImageWidth.'" height="'.$SwatchImageHeight.'">'.
+              '<div class="image-content">'.
+              '<img src="'.$LargeImageURL.'" alt="" widh="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
+              '</div>'.
+            '</div>';
+          //_v($tmp_tag);
+        }
+        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" rel="nofollow">'.$tmp_tag.'</a>';
+        // foreach ($ImageSets as $ImageSet) {
+        //   _v($ImageSet);
+        // }
+      }
       $image_only_class = null;
       if ($image_only) {
         $image_only_class = ' amazon-item-image-only product-item-image-only';
       }
-      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
               '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
               $moshimo_amazon_impression_tag.
-            '</a>';
+              $image_l_tag.
+            '</a>'.
+            $swatchimages_tag;
       //画像のみ出力する場合
       if ($image_only) {
         return apply_filters('amazon_product_image_link_tag', $image_link_tag);
       }
+
+      //画像ブロック
+      $image_figure_tag =
+        '<figure class="amazon-item-thumb product-item-thumb">'.
+          $image_link_tag.
+          //$image_l_tag.
+        '</figure>';
 
       ///////////////////////////////////////////
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
         '<div class="amazon-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
-          '<figure class="amazon-item-thumb product-item-thumb">'.
-            $image_link_tag.
-          '</figure>'.
+          $image_figure_tag.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
               '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
