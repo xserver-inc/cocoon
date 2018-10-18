@@ -294,6 +294,7 @@ function move_default_category_description(){
 
   if ( $current_screen->id == 'edit-category' || $current_screen->id == 'edit-post_tag' )
   {
+    $name_description = __( 'カテゴリーとしてウィジェット等で表示される名前です。', THEME_NAME );
     if ($current_screen->id == 'edit-category') {
       $description = __( '基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     } else {
@@ -303,6 +304,7 @@ function move_default_category_description(){
     <script type="text/javascript">
     jQuery(function($) {
       $('.term-description-wrap').insertAfter('.term-meta-keywords-wrap');
+      $('#name + .description').text('<?php echo $name_description; ?>');
       $('textarea#description + .description').text('<?php echo $description; ?>');
       $('textarea#tag-description + p').text('<?php echo $description; ?>');
     });
