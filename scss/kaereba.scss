@@ -108,7 +108,7 @@
   }
 
   &:hover{
-    .image-thumb{
+    .si-thumb{
       display: block;
       display: flex;
       align-items: center;
@@ -118,18 +118,18 @@
 
 }
 
-.pis-l div.image-thumb{
+.pis-l .si-thumb{
   width: 30px;
 }
-.pis-m div.image-thumb{
+.pis-m .si-thumb{
   width: 18%;
 }
-.pis-s div.image-thumb{
+.pis-s .si-thumb{
   width: 30%;
 }
 
 @media screen and (max-width: 480px){
-  .pis-m .image-thumb{
+  .pis-m .si-thumb{
     width: 30%;
   }
 }

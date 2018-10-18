@@ -1048,7 +1048,7 @@ function amazon_product_link_shortcode($atts){
 
           //$id = ' id="'.$asin.'-'.$i.'"';
           $tmp_tag .=
-            '<div class="image-thumb'.$display_none_class.'">'.
+            '<div class="image-thumb swatch-image-thumb si-thumb'.$display_none_class.'">'.
               '<img src="'.$SwatchImageURL.'" alt="" widh="'.$SwatchImageWidth.'" height="'.$SwatchImageHeight.'">'.
               '<div class="image-content">'.
               '<img src="'.$LargeImageURL.'" alt="" widh="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
