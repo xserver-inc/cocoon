@@ -294,7 +294,7 @@ function move_default_category_description(){
 
   if ( $current_screen->id == 'edit-category' || $current_screen->id == 'edit-post_tag' )
   {
-    $name_description = __( 'カテゴリーとしてウィジェット等で表示される名前です。', THEME_NAME );
+    $name_description = __( 'カテゴリーとしてウィジェットやラベル等で表示される名前です。', THEME_NAME );
     if ($current_screen->id == 'edit-category') {
       $description = __( '基本的にカテゴリ設定の一覧テーブルに説明文を表示するための入力です。', THEME_NAME );
     } else {
