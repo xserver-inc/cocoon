@@ -264,7 +264,7 @@ add_action('pre_comment_on_post', 'verify_google_recaptcha');
 function verify_google_recaptcha($comment_post_ID)
 {
   if (isset($_POST['g-recaptcha-response'])) {
-    $secret_key = '6LehHTgUAAAAAEkr_HmJ7WkkICDgEMb1Pt92g4H2';
+    $secret_key = '';
     $response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=". $secret_key ."&response=". $_POST['g-recaptcha-response']);
     $response = json_decode($response["body"], true);
     if ($response["success"] == true) {
@@ -355,6 +355,4 @@ endif;
 // }
 // endif;
 
-//add_filter('gutenberg_can_edit_post_type', '__return_false');
 
-//_v(get_toc_tag(get_the_content()));

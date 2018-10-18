@@ -994,8 +994,13 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // イメージリンクタグ
       ///////////////////////////////////////////
+      //テーマ設定もしくはcatalog=1で機能が有効な場合
+      $is_catalog_image_visible =
+        (is_amazon_item_catalog_image_visible() && $samples === null) ||
+        ($samples !== null && $samples);
+
       $image_l_tag = null;
-      if ($size != 'l' && $LargeImageUrl) {
+      if ($is_catalog_image_visible && ($size != 'l') && $LargeImageUrl) {
         $image_l_tag =
           '<div class="amazon-item-thumb-l product-item-thumb-l image-content">'.
             '<img src="'.$LargeImageUrl.'" alt="" width="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
@@ -1003,12 +1008,7 @@ function amazon_product_link_shortcode($atts){
       }
       $swatchimages_tag = null;
 
-      if ($ImageSets && !$image_only &&
-         (
-           (is_amazon_item_catalog_image_visible() && $samples === null) ||
-           ($samples !== null && $samples)
-         )
-      ) {
+      if ($ImageSets && !$image_only && $is_catalog_image_visible) {
         $SwatchImages = $ImageSets->ImageSet;
         //_v($ImageSets);
         //_v(count($ImageSets->ImageSet));
