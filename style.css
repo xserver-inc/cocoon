@@ -6785,7 +6785,9 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-top: 10px;
   }
 
-  .no-mobile-sidebar #sidebar {
+  .no-mobile-sidebar #sidebar,
+  .product-item-thumb-l,
+  .swatchimages {
     display: none;
   }
 
