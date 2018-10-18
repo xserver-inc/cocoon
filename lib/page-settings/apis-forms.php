@@ -157,7 +157,7 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '<div'.get_not_allowed_form_class(get_yahoo_valuecommerce_sid() && get_yahoo_valuecommerce_pid()).'>';
 
             generate_checkbox_tag(OP_YAHOO_SEARCH_BUTTON_VISIBLE , is_yahoo_search_button_visible(), __( 'Yahoo!検索ボタンを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Yahoo!のキーワード検索ボタンを表示するか。', THEME_NAME ));
+            generate_tips_tag(__( 'Yahoo!のキーワード検索ボタンを表示するか。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/yahoo-button.png'));
 
             generate_textbox_tag(OP_YAHOO_SEARCH_BUTTON_TEXT, get_yahoo_search_button_text(), '');
             generate_tips_tag(__( 'Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。', THEME_NAME ));
