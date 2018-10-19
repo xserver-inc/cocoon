@@ -156,7 +156,7 @@ function the_prev_next_link_tag() {
         echo '<link rel="next" href="'.$next.'" />'.PHP_EOL;
       }
     }
-  } else{
+  } else if (!is_404()){
     //トップページやカテゴリページなどの分割ページの設定
     global $paged;
     if ( get_previous_posts_link() ){
