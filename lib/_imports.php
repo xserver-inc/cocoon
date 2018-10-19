@@ -84,6 +84,7 @@ require_once abspath(__FILE__).'custom-fields/amp-field.php'; //AMPのページ�
 require_once abspath(__FILE__).'custom-fields/custom-css-field.php'; //カスタムCSS設定
 require_once abspath(__FILE__).'custom-fields/custom-js-field.php';  //カスタJS設定
 require_once abspath(__FILE__).'custom-fields/memo-field.php';  //メモ
+require_once abspath(__FILE__).'custom-fields/sns-image-field.php';  //SNS画像
 require_once abspath(__FILE__).'seo.php';      //SEO関数
 require_once abspath(__FILE__).'ogp.php';      //OGP関数
 require_once abspath(__FILE__).'blogcard-in.php';  //内部ブログカード関数

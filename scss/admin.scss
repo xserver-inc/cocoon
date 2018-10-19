@@ -972,3 +972,12 @@ textarea[name="the_page_memo"]{
 .moshimo-badge{
   background-color: #99c737;
 }
+
+#singular_sns_image_settings{
+  input[type=text]{
+    width: 100%;
+  }
+  #sns_image_url_thumbnail img{
+    width: 100%;
+  }
+}
