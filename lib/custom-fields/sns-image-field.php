@@ -30,7 +30,7 @@ function sns_image_custom_box_view(){
 
   //generate_label_tag('sns_image_url', __('SNS画像', THEME_NAME) );
   generate_upload_image_tag('sns_image_url', $sns_image_url);
-  echo '<p class="howto">'.__( 'SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。', THEME_NAME ).'</p>';
+  echo '<p class="howto">'.__( 'FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。', THEME_NAME ).'</p>';
 
 }
 endif;

@@ -247,65 +247,6 @@ function solecolor_wp_terms_checklist_args( $args, $post_id ){
 }
 endif;
 
-/*
-add_action('comment_form','google_recaptcha_script');
-function google_recaptcha_script(){
-  echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
-}
-
-add_action('comment_form','display_google_recaptcha');
-function display_google_recaptcha() { ?>
-  <div class="g-recaptcha" data-sitekey="6LehHTgUAAAAALR98L7a600Cgqlf2aV3zMFhBWzV"></div>
-<?php }
-
-
-
-add_action('pre_comment_on_post', 'verify_google_recaptcha');
-function verify_google_recaptcha($comment_post_ID)
-{
-  if (isset($_POST['g-recaptcha-response'])) {
-    $secret_key = '';
-    $response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=". $secret_key ."&response=". $_POST['g-recaptcha-response']);
-    $response = json_decode($response["body"], true);
-    if ($response["success"] == true) {
-      return;
-    } else {
-      // $errors->add("reCaptcha Invalid", __("Ошибка Регистрации: Похоже вы не человек.","textdomain"));
-      wp_die(__( 'reCaptchaにより投稿が拒否されました。', THEME_NAME ));
-    }
-  } else {
-    //$errors->add("reCaptcha Invalid", __("Ошибка Регистрации: Похоже вы бот. Если у вас отключен JavaScript","textdomain"));
-    wp_die(__( 'reCaptchaにより投稿が拒否されました。', THEME_NAME ));
-  }
-  return;
-}
-*/
-
-// remove_action('do_feed_rdf', 'do_feed_rdf');
-// remove_action('do_feed_rss', 'do_feed_rss');
-// remove_action('do_feed_rss2', 'do_feed_rss2');
-// remove_action('do_feed_atom', 'do_feed_atom');
-
-// //wp 関数内でクエリが解析されて投稿が読み込まれ、テンプレートが実行されるまでの間に実行する。
-// //出力にテンプレートを必要しないデータにアクセスする場合に活用できる。
-// add_action( 'wp','do_access_counting', 1 );
-// if ( !function_exists( 'do_access_counting' ) ):
-// function do_access_counting() {
-//   // global $post;
-//   // _v($post);
-//   //_v(!is_admin());
-//   //_v(is_singular());
-//   //アクセス数をカウントする
-//   if (!is_admin() && is_singular()) {
-//     //アクセス数のカウント
-//     if (is_access_count_enable()) {
-
-//       logging_page_access();
-//     }
-//   }
-// }
-// endif;
-
 //リダイレクト
 add_action( 'wp','wp_singular_page_redirect', 0 );
 if ( !function_exists( 'wp_singular_page_redirect' ) ):

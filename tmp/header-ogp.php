@@ -46,23 +46,22 @@ $content = '';
 if ( isset( $post->post_content ) ){
   $content = $post->post_content;
 }
-$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
 if (is_singular()){//単一記事ページの場合
-  if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
-    $image_id = get_post_thumbnail_id();
-    $image = wp_get_attachment_image_src( $image_id, 'full');
-    echo '<meta property="og:image" content="'.$image[0].'">';echo "\n";
-  } else if ( preg_match( $searchPattern, $content, $imgurl ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
-    echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
-  } else if ( get_ogp_home_image_url() ){//ホームイメージが設定されている場合
-    echo '<meta property="og:image" content="'.get_ogp_home_image_url().'">';echo "\n";
-  } else {//投稿にサムネイルも画像も無い場合の処理
-    //$ogp_image = get_template_directory_uri().'/images/no-image-320.png';
-    if ($no_image_url = get_no_image_url()) {
-      $ogp_image = $no_image_url;
-    } else {
-      $ogp_image = NO_IMAGE_LARGE;
-    }
+  /*$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる*/
+  // //NO IMAGE画像で初期化
+  // $ogp_image = get_no_image_url();
+  // if ($singular_sns_image_url = get_singular_sns_image_url()) {
+  //   $ogp_image = $singular_sns_image_url;
+  // } else if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
+  //   $image_id = get_post_thumbnail_id();
+  //   $image = wp_get_attachment_image_src( $image_id, 'full');
+  //   $ogp_image = $image[0];
+  // } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
+  //   $ogp_image = $image[2];
+  // } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
+  //   $ogp_image = $ogp_home_image_url;
+  // }
+  if ($ogp_image = get_singular_sns_share_image_url()) {
     echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
@@ -73,10 +72,6 @@ if (is_singular()){//単一記事ページの場合
   } else {
     if ( get_the_site_logo_url() ){//ヘッダーロゴがある場合はロゴを使用
       $ogp_image = get_the_site_logo_url();
-    } elseif ( get_header_image() ){//ヘッダーイメージがある場合はそれを使用
-      //$ogp_image = get_header_image();
-    // } else {//ヘッダーイメージがない場合は、テーマのスクリーンショット
-    //   $ogp_image = get_stylesheet_directory_uri().'/screenshot.png';
     }
   }
   if ( !empty($ogp_image) ) {//使えそうな$ogp_imageがある場合

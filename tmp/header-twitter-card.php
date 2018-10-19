@@ -47,22 +47,9 @@ $content = '';
 if ( isset( $post->post_content ) ){
   $content = $post->post_content;
 }
-$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
 if (is_singular()){//単一記事ページの場合
-  if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
-    $image_id = get_post_thumbnail_id();
-    $image = wp_get_attachment_image_src( $image_id, 'full');
-    $img_url = $image[0];
-    echo '<meta name="twitter:image" content="'.$image[0].'">';echo "\n";
-  } else if ( preg_match( $searchPattern, $content, $imgurl ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
-    $img_url = $imgurl[2];
-    echo '<meta name="twitter:image" content="'.$imgurl[2].'">';echo "\n";
-  } else if ( get_ogp_home_image_url() ){//ホームイメージが設定されている場合
-    echo '<meta name="twitter:image" content="'.get_ogp_home_image_url().'">';echo "\n";
-  } else {//投稿にサムネイルも画像も無い場合の処理
-    $ogp_image = get_template_directory_uri().'/images/og-image.jpg';
-    $img_url = $ogp_image;
-    echo '<meta name="twitter:image" content="'.$ogp_image.'">';echo "\n";
+  if ($ogp_image = get_singular_sns_share_image_url()) {
+    echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch(get_query_var('cat'))) {

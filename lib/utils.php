@@ -2097,3 +2097,25 @@ function cancel_blog_card_deactivation($the_content, $is_p = true){
   return $the_content;
 }
 endif;
+
+//投稿・固定ページのSNSシェア画像の取得
+if ( !function_exists( 'get_singular_sns_share_image_url' ) ):
+function get_singular_sns_share_image_url(){
+  //NO IMAGE画像で初期化
+  $sns_image_url = get_no_image_url();
+  //投稿にイメージがあるか調べるための正規表現
+  $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
+  if ($singular_sns_image_url = get_singular_sns_image_url()) {
+    $sns_image_url = $singular_sns_image_url;
+  } else if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
+    $image_id = get_post_thumbnail_id();
+    $image = wp_get_attachment_image_src( $image_id, 'full');
+    $sns_image_url = $image[0];
+  } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
+    $sns_image_url = $image[2];
+  } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
+    $sns_image_url = $ogp_home_image_url;
+  }
+  return $sns_image_url;
+}
+endif;
