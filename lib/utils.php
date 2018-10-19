@@ -2103,6 +2103,12 @@ if ( !function_exists( 'get_singular_sns_share_image_url' ) ):
 function get_singular_sns_share_image_url(){
   //NO IMAGE画像で初期化
   $sns_image_url = get_no_image_url();
+  //本文を取得
+  global $post;
+  $content = '';
+  if ( isset( $post->post_content ) ){
+    $content = $post->post_content;
+  }
   //投稿にイメージがあるか調べるための正規表現
   $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
   if ($singular_sns_image_url = get_singular_sns_image_url()) {

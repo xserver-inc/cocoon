@@ -42,10 +42,6 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta property="og:title" content="'; echo $title; echo '">';echo "\n";//「一般設定」管理画面で指定したブログのタイトルを表示
   echo '<meta property="og:url" content="'; echo $url; echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示取る
 }
-$content = '';
-if ( isset( $post->post_content ) ){
-  $content = $post->post_content;
-}
 if (is_singular()){//単一記事ページの場合
   /*$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる*/
   // //NO IMAGE画像で初期化
