@@ -64,15 +64,13 @@ function title_parts_custom( $title ){
         $title['site'] = trim( get_the_title() );
         break;
     }
-    // if ( is_site_name_to_singular_title() )://サイト名を追加する場合
-    //   $title['site'] = $site_name;
-    // endif;
   } elseif (is_category()) {
     $cat_id = get_query_var('cat');
     $cat_name = $title['title'];
     if ($cat_id && get_category_title($cat_id)) {
       $cat_name = get_category_title($cat_id);
     }
+    $title['title'] = $cat_name;
     $title['site'] = '';
     switch (get_category_page_title_format()) {
       case 'category_sitename':
