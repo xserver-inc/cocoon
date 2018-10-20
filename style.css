@@ -4185,6 +4185,9 @@ div.sbs-think .speech-balloon::after {
   visibility: visible;
   opacity: 1;
 }
+.image-thumb:hover > .image-content:hover {
+  display: none;
+}
 
 .swatchimages {
   display: block;
