@@ -4446,6 +4446,10 @@ div.sbs-think .speech-balloon::after {
   background: #000066;
 }
 
+.shoplinkwowma a {
+  background: #FF6100;
+}
+
 .product-item-admin {
   position: absolute;
   bottom: 3px;
