@@ -28,3 +28,15 @@ if (file_exists($csv_file_path)) {
   }
   //_v($_THEME_OPTIONS);
 }
+
+//スキン用のoption.jsonがある場合
+$json_file_path = url_to_local(get_skin_json_url());
+if (file_exists($json_file_path)) {
+  global $_THEME_OPTIONS;
+  $json = wp_filesystem_get_contents($json_file_path, true, false);
+  if ($json) {
+    $json_options = json_decode($json, true);
+    $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $json_options);
+    //_v($_THEME_OPTIONS);
+  }
+}

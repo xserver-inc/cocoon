@@ -35,6 +35,13 @@ function get_skin_csv_url(){
 }
 endif;
 
+//スキンのoption.jsonを取得
+if ( !function_exists( 'get_skin_json_url' ) ):
+function get_skin_json_url(){
+  return str_ireplace('style.css', 'option.json', get_skin_url());
+}
+endif;
+
 //親フォルダのスキンを含める
 define('OP_INCLUDE_SKIN_TYPE', 'include_skin_type');
 if ( !function_exists( 'get_include_skin_type' ) ):

@@ -1443,7 +1443,7 @@ endif;
 
 //ファイル内容の取得
 if ( !function_exists( 'wp_filesystem_get_contents' ) ):
-function wp_filesystem_get_contents($file, $is_exfile = false){
+function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enable = true){
   $creds = false;
 
   //ファイルが存在しないときはfalseを返す
@@ -1451,7 +1451,7 @@ function wp_filesystem_get_contents($file, $is_exfile = false){
     return false;
   }
 
-  if (is_request_filesystem_credentials_enable()){
+  if ($credentials_enable && is_request_filesystem_credentials_enable()){
     $creds = request_filesystem_credentials('', '', false, false, null);
   }
 
