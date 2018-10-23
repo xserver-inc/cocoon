@@ -2974,15 +2974,6 @@ label.screen-reader-text {
   margin-right: 12px;
 }
 
-.btn.btn-l:after, .ranking-item-link-buttons a:after,
-.btn-wrap.btn-wrap-l > a:after {
-  content: "\f105";
-  position: absolute;
-  right: 0;
-  margin-top: -0.15em;
-  font-size: 30px;
-}
-
 #container .btn:hover, #container .ranking-item-link-buttons a:hover, .ranking-item-link-buttons #container a:hover,
 #container .btn-wrap > a:hover {
   color: #333;
@@ -2999,10 +2990,17 @@ label.screen-reader-text {
 
 .btn-l, .ranking-item-link-buttons a,
 .btn-wrap.btn-wrap-l > a {
-  padding: 20px 0;
+  padding: 20px 30px;
   font-size: 18px;
   display: block;
   margin: 1em;
+}
+.btn-l::after, .ranking-item-link-buttons a::after,
+.btn-wrap.btn-wrap-l > a::after {
+  content: "\f105";
+  position: absolute;
+  right: 0;
+  font-size: 30px;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
@@ -6801,6 +6799,17 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .image-content amp-img {
     min-width: 360px;
     max-width: 360px;
+  }
+
+  .btn-l, .ranking-item-link-buttons a,
+  .btn-wrap.btn-wrap-l > a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  .btn-l::after, .ranking-item-link-buttons a::after,
+  .btn-wrap.btn-wrap-l > a::after {
+    font-size: 18px;
+    right: -4px;
   }
 }
 @media screen and (max-width: 480px) {

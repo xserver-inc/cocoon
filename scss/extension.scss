@@ -630,16 +630,6 @@ $bb_green: #3eb370;
   margin-right: 12px;
 }
 
-.btn.btn-l:after,
-.btn-wrap.btn-wrap-l > a:after{
-  content: "\f105";
-  position: absolute;
-  right: 0;
-  margin-top: -0.15em;
-  font-size: 30px;
-}
-
-
 #container .btn:hover,
 #container .btn-wrap > a:hover{
   color: #333;
@@ -656,17 +646,18 @@ $bb_green: #3eb370;
 
 .btn-l,
 .btn-wrap.btn-wrap-l > a{
-  padding: 20px 0;
+  padding: 20px 30px;
   font-size: 18px;
   display: block;
   margin: 1em;
+
+  &::after{
+    content: "\f105";
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+  }
 }
-// .btn-wrap{
-//   display: inline-block;
-// }
-// .btn-wrap.btn-wrap-l{
-//   display: block;
-// }
 
 .btn-white, .btn-wrap.btn-wrap-white > a{color: #333;background-color: #fff;}
 #container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: #333;}

@@ -329,3 +329,12 @@ textarea {
   max-width: 360px;
 }
 
+.btn-l,
+.btn-wrap.btn-wrap-l > a{
+  padding: 14px 18px;
+  font-size: 14px;
+  &::after{
+    font-size: 18px;
+    right: -4px;
+  }
+}
