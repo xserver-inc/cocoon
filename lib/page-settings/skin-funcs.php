@@ -28,6 +28,13 @@ function get_skin_php_url(){
 }
 endif;
 
+//スキンのoption.csvを取得
+if ( !function_exists( 'get_skin_csv_url' ) ):
+function get_skin_csv_url(){
+  return str_ireplace('style.css', 'option.csv', get_skin_url());
+}
+endif;
+
 //親フォルダのスキンを含める
 define('OP_INCLUDE_SKIN_TYPE', 'include_skin_type');
 if ( !function_exists( 'get_include_skin_type' ) ):
