@@ -218,7 +218,6 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
 }
 endif;
 
-
 //オプション付きのテンプレート呼び出し
 if ( !function_exists( 'get_template_part_with_option' ) ):
 function get_template_part_with_option($slug, $option = null){
@@ -226,15 +225,6 @@ function get_template_part_with_option($slug, $option = null){
   set_query_var('option', $option);
   //広告テンプレートの呼び出し
   get_template_part($slug);
-}
-endif;
-
-//オプションの値をデータベースに保存する
-if ( !function_exists( 'update_theme_option' ) ):
-function update_theme_option($option_name){
-  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
-  //update_option($option_name, $opt_val);
-  set_theme_mod($option_name, $opt_val);
 }
 endif;
 
@@ -246,6 +236,19 @@ function get_skin_option($name){
   if (isset($_THEME_OPTIONS[$name])) {
     return $_THEME_OPTIONS[$name];
   }
+}
+endif;
+
+//オプションの値をデータベースに保存する
+if ( !function_exists( 'update_theme_option' ) ):
+function update_theme_option($option_name){
+  //スキンにより固定値がある場合はデータベースに保存しない
+  $skin_option = get_skin_option($option_name);
+  if ($skin_option) return;
+
+  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
+  //update_option($option_name, $opt_val);
+  set_theme_mod($option_name, $opt_val);
 }
 endif;
 
