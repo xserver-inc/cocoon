@@ -43,7 +43,7 @@
               $version = $info['version'];
               $visibility = $info['visibility'];
               //表示を無効にしている場合は設定画面に表示しない
-              if (!$visibility) {
+              if (!DEBUG_MODE && !$visibility) {
                 continue;
               }
 
