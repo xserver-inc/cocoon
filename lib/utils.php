@@ -241,6 +241,11 @@ endif;
 //オプションの値をデータベースから取得する
 if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
+  global $_THEME_OPTIONS;
+  //スキンにより固定値がある場合は採用する
+  if (isset($_THEME_OPTIONS[$option_name])) {
+    return $_THEME_OPTIONS[$option_name];
+  }
   return get_theme_mod($option_name, $default);
 }
 endif;
