@@ -238,14 +238,24 @@ function update_theme_option($option_name){
 }
 endif;
 
+//スキンオプションの取得
+if ( !function_exists( 'get_skin_option' ) ):
+function get_skin_option($name){
+  global $_THEME_OPTIONS;
+  //スキンにより固定値がある場合は採用する
+  if (isset($_THEME_OPTIONS[$name])) {
+    return $_THEME_OPTIONS[$name];
+  }
+}
+endif;
+
 //オプションの値をデータベースから取得する
 if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
-  global $_THEME_OPTIONS;
   //スキンにより固定値がある場合は採用する
-  if (isset($_THEME_OPTIONS[$option_name])) {
-    return $_THEME_OPTIONS[$option_name];
-  }
+  $skin_option = get_skin_option($option_name);
+  if ($skin_option) return $skin_option;
+
   return get_theme_mod($option_name, $default);
 }
 endif;
