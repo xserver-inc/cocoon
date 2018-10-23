@@ -3001,6 +3001,7 @@ label.screen-reader-text {
   position: absolute;
   right: 0;
   font-size: 30px;
+  margin-top: -0.15em;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
@@ -6810,6 +6811,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .btn-wrap.btn-wrap-l > a::after {
     font-size: 18px;
     right: -4px;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 480px) {

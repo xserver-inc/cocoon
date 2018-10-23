@@ -651,11 +651,13 @@ $bb_green: #3eb370;
   display: block;
   margin: 1em;
 
+
   &::after{
     content: "\f105";
     position: absolute;
     right: 0;
     font-size: 30px;
+    margin-top: -0.15em;
   }
 }
 
