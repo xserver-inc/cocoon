@@ -18,14 +18,14 @@ if( $is_post_ok ):
   ///////////////////////////////////////
   //リセット
   require_once abspath(__FILE__).'reset-posts.php';
+  //スキン
+  require_once abspath(__FILE__).'skin-posts.php';
   //全体
   require_once abspath(__FILE__).'all-posts.php';
   //ヘッダー
   require_once abspath(__FILE__).'header-posts.php';
   //グローバルナビ
   require_once abspath(__FILE__).'navi-posts.php';
-  //スキン
-  require_once abspath(__FILE__).'skin-posts.php';
   //広告
   require_once abspath(__FILE__).'ads-posts.php';
   //タイトル

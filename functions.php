@@ -295,3 +295,6 @@ endif;
 //   }
 // }
 // endif;
+
+// _v(get_skin_url());
+// _v($_THEME_OPTIONS);
