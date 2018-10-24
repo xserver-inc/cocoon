@@ -242,17 +242,16 @@ endif;
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
-  //スキンにより固定値がある場合はデータベースに保存しない
-  $skin_option = get_skin_option($option_name);
-  if ($skin_option) {
-    // _v($option_name);
-    // _v($skin_option);
-    return;
-  } else {
-    $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
-    //update_option($option_name, $opt_val);
-    set_theme_mod($option_name, $opt_val);
-  }
+  // //スキンにより固定値がある場合はデータベースに保存しない
+  // $skin_option = get_skin_option($option_name);
+  // if ($skin_option) {
+  //   // _v($option_name);
+  //   // _v($skin_option);
+  //   return;
+  // } else {
+  // }
+  $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
+  set_theme_mod($option_name, $opt_val);
 }
 endif;
 
@@ -261,7 +260,7 @@ if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
   //スキンにより固定値がある場合は採用する
   $skin_option = get_skin_option($option_name);
-  if ($skin_option && empty($_POST[OP_SKIN_URL])) {
+  if ($skin_option && !is_admin_php_page()) {
     // _v($_POST);
     // _v($option_name);
     // _v($skin_option);
