@@ -217,11 +217,14 @@ endif;
 
 //ページ情報つきURLを返す
 if ( !function_exists( 'get_paged_archive_url' ) ):
-function get_paged_archive_url($url){
+function get_paged_archive_url($url, $page_num = null){
   if (is_paged()) {
     global $paged;
+    if (empty($page_num)) {
+      $page_num = $paged;
+    }
     $url = trailingslashit($url);
-    $url = user_trailingslashit($url.'page/'.$paged);
+    $url = user_trailingslashit($url.'page/'.$page_num);
   }
   return $url;
 }
@@ -281,7 +284,7 @@ endif;
 if (is_canonical_tag_enable()) {
   //デフォルトのcanonicalタグ削除
   remove_action('wp_head', 'rel_canonical');
-  //分割ページのみnext/prevを表示
+  //canonicalタグを表示
   add_action( 'wp_head', 'generate_canonical_tag' );
 }
 if ( !function_exists( 'generate_canonical_tag' ) ):
