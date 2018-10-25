@@ -215,6 +215,18 @@ function get_the_post_has_multi_page() {
 }
 endif;
 
+//ページ情報つきURLを返す
+if ( !function_exists( 'get_paged_archive_url' ) ):
+function get_paged_archive_url($url){
+  if (is_paged()) {
+    global $paged;
+    $url = trailingslashit($url);
+    $url = user_trailingslashit($url.'page/'.$paged);
+  }
+  return $url;
+}
+endif;
+
 
 //canonical URLの生成
 if ( !function_exists( 'generate_canonical_url' ) ):
@@ -234,15 +246,19 @@ function generate_canonical_url(){
     // _v($paged);
     // _v(get_the_post_has_multi_page());
   if (is_home() && is_paged()) {
+    //$canonical_url = get_paged_archive_url(home_url());
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_home()) {
     $canonical_url = home_url();
   } elseif (is_category()) {
-    //$canonical_url = get_category_link(get_query_var('cat'));
-    $canonical_url = get_query_removed_requested_url();
+    //$canonical_url = get_query_removed_requested_url();
+    //カテゴリページのみcocoon.dev/category/hoge/catname/page/2/といったURLの対策が必要
+    $canonical_url = get_category_link(get_query_var('cat'));
+    $canonical_url = get_paged_archive_url($canonical_url);
   } elseif (is_tag()) {
     // $postTag = get_the_tags();
     // $canonical_url = get_tag_link( $postTag[0]->term_id );
+    // $canonical_url = get_paged_archive_url($canonical_url);
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_singular() && !$multipage) {
     $canonical_url = get_permalink();
@@ -255,10 +271,6 @@ function generate_canonical_url(){
   } else {
     $canonical_url = get_query_removed_requested_url();
   }
-
-  // if ($canonical_url && ( $paged >= 2 || $page >= 2)) {
-  //   $canonical_url = get_query_removed_requested_url();
-  // }
 
   return $canonical_url;
 }
