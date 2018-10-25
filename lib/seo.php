@@ -230,6 +230,28 @@ function get_paged_archive_url($url, $page_num = null){
 }
 endif;
 
+//表示したページのベースURLを取得する
+if ( !function_exists( 'get_page_base_url' ) ):
+function get_page_base_url(){
+  $url = null;
+  if (is_home()) {
+    $url = home_url();
+  } elseif (is_category()) {
+    $url = get_category_link(get_query_var('cat'));
+  } elseif (is_tag()) {
+    $postTag = get_the_tags();
+    $url = get_tag_link( $postTag[0]->term_id );
+  } elseif (is_singular()) {
+    $url = get_permalink();
+  } elseif(is_404()) {
+    $url =  home_url().'/404/';
+  } else {
+    $url = get_query_removed_requested_url();
+  }
+
+  return $url;
+}
+endif;
 
 //canonical URLの生成
 if ( !function_exists( 'generate_canonical_url' ) ):
