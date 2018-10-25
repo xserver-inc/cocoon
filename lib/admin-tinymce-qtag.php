@@ -1638,12 +1638,16 @@ function initialize_tinymce_styles($init_array) {
     ),
   );
 
+  //スタイルドロップダウンリスト変更用のフック
+  $style_formats = apply_filters('tinymce_style_formats', $style_formats);
   //JSONに変換
   $init_array['style_formats'] = json_encode($style_formats);
 
   //ビジュアルエディターのフォントサイズ変更機能の文字サイズ指定
   $init_array['fontsize_formats'] = '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
 
+  //Tinymce配列用のフック
+  $init_array = apply_filters('tinymce_init_array', $init_array);
   return $init_array;
 }
 endif;
