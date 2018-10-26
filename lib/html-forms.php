@@ -91,12 +91,23 @@ function generate_range_tag($name, $value, $min, $max, $step){?>
 }
 endif;
 
+if ( !function_exists( 'get_skin_restriction_tag' ) ):
+function get_skin_restriction_tag($tag){
+  return '<div class="skin-restriction">'.$tag.'</div>';
+}
+endif;
 
 //チェックボックスの生成
 if ( !function_exists( 'generate_checkbox_tag' ) ):
-function generate_checkbox_tag($name, $now_value, $label){?>
+function generate_checkbox_tag($name, $now_value, $label){
+  ob_start();?>
   <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
   <?php
+  $res = ob_get_clean();
+  if (get_skin_option($name)) {
+    $res = get_skin_restriction_tag($res);
+  }
+  echo $res;
 }
 endif;
 

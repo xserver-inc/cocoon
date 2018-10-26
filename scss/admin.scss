@@ -981,3 +981,29 @@ textarea[name="the_page_memo"]{
     width: 100%;
   }
 }
+
+///////////////////////////////////////////
+// スキン制限
+///////////////////////////////////////////
+.skin-restriction{
+  opacity: 0.5;
+  padding: 1.4em 0.6em 0.6em;
+  position: relative;
+  display: inline-block;
+  background-color: $xx_thin;
+  border: 1px solid #ba2636;
+  pointer-events: none;
+  cursor: not-allowed;
+
+  &::before{
+    content: 'スキン制限';
+    font-size: 0.7em;
+    border-bottom-right-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ba2636;
+    color: $white;
+    padding: 2px 6px;
+  }
+}
