@@ -2722,7 +2722,7 @@ label.screen-reader-text {
   .memo-box,
   .comment-box,
   .common-icon-box {
-    padding: 6px 6px 6px 26px;
+    padding: 26px 6px 6px;
   }
 
   .information-box::before,
@@ -2734,8 +2734,10 @@ label.screen-reader-text {
   .memo-box::before,
   .comment-box::before,
   .common-icon-box::before {
-    top: 1em;
-    left: 6px;
+    padding: 0;
+    top: 0.7em;
+    left: 50%;
+    margin-left: -0.5em;
     font-size: 18px;
     border: none;
     width: auto;
