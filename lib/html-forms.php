@@ -108,7 +108,7 @@ endif;
 
 if ( !function_exists( 'get_skin_restriction_tag' ) ):
 function get_skin_restriction_tag($tag){
-  return '<div class="skin-restriction">'.$tag.'</div>';
+  return '<div class="skin-control">'.$tag.'</div>';
 }
 endif;
 
