@@ -2742,6 +2742,11 @@ label.screen-reader-text {
     border: none;
     width: auto;
   }
+
+  .container .blank-box {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .blank-box {
   border: 2px solid #999;
