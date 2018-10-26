@@ -337,7 +337,8 @@ endif;
 
 //カラーピッカーの生成
 if ( !function_exists( 'generate_color_picker_tag' ) ):
-function generate_color_picker_tag($name, $value, $label){?>
+function generate_color_picker_tag($name, $value, $label){
+  ob_start();?>
   <p><label for="<?php echo $name; ?>"><?php echo $label; ?></label></p>
   <p><input type="text" name="<?php echo $name; ?>" value="<?php echo esc_html($value); ?>" ></p>
   <?php wp_enqueue_script( 'wp-color-picker' );
@@ -353,6 +354,11 @@ function generate_color_picker_tag($name, $value, $label){?>
     })( jQuery );');
     wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
 
+    $res = ob_get_clean();
+    if (get_skin_option($name)) {
+      $res = get_skin_restriction_tag($res);
+    }
+    echo $res;
 }
 endif;
 
