@@ -53,28 +53,43 @@ function the_option_selected($val1, $val2){
 }
 endif;
 
+//brタグの出力
+if ( !function_exists( 'generate_br_tag' ) ):
+function generate_br_tag(){
+  echo '<br>';
+}
+endif;
+
 
 //セレクトボックスの生成
 if ( !function_exists( 'generate_selectbox_tag' ) ):
-function generate_selectbox_tag($name, $options, $now_value, $icon_font_visible = false){
-$style = null;
-if ($icon_font_visible) {
-  $style = ' style="font-family: FontAwesome;font-size: 20px;text-align: center;"';
-}
-?>
-<select name="<?php echo $name; ?>"<?php echo $style; ?>>
+function generate_selectbox_tag($name, $options, $now_value, $label = null, $icon_font_visible = false){
+  $style = null;
+  if ($icon_font_visible) {
+    $style = ' style="font-family: FontAwesome;font-size: 20px;text-align: center;"';
+  }
+  ob_start();
+  if ($label) {
+    generate_label_tag($name, $label);
+    generate_br_tag();
+  }
+
+  ?>
+  <select name="<?php echo $name; ?>"<?php echo $style; ?>>
+    <?php
+    foreach ($options as $value => $caption) {
+      //アイコンフォントを利用する場合
+      $add_option_class = null;
+      ?>
+      <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?><?php echo $add_option_class; ?>><?php echo $caption; ?></option>
+    <?php } ?>
+  </select>
   <?php
-  foreach ($options as $value => $caption) {
-    //アイコンフォントを利用する場合
-    $add_option_class = null;
-    // if ($icon_font_visible) {
-    //   $add_option_class = ' class="fa '.$caption.'"';
-    // }
-    ?>
-    <option value="<?php echo $value; ?>"<?php the_option_selected($value, $now_value) ?><?php echo $add_option_class; ?>><?php echo $caption; ?></option>
-  <?php } ?>
-</select>
-<?php
+  $res = ob_get_clean();
+  if (get_skin_option($name)) {
+    $res = get_skin_restriction_tag($res);
+  }
+  echo $res;
 }
 endif;
 
@@ -381,11 +396,10 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
     <div class="detail-area">
-    <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
     global $_MAIN_DATA_AD_FORMATS;
     $options = $_MAIN_DATA_AD_FORMATS;
-    generate_selectbox_tag($name, $options, $value);
+    generate_selectbox_tag($name, $options, $value, __( 'フォーマット', THEME_NAME ));
     //ラベル表示の設定
     if ($label_name) {
       echo '<p>';
@@ -441,11 +455,10 @@ function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
   <span class="toggle-link"><?php _e( '詳細設定', THEME_NAME ) ?></span>
   <div class="toggle-content">
     <div class="detail-area">
-    <?php _e( 'フォーマット：', THEME_NAME ) ?>
     <?php
     global $_SIDEBAR_DATA_AD_FORMATS;
     $options = $_SIDEBAR_DATA_AD_FORMATS;
-    generate_selectbox_tag($name, $options, $value);
+    generate_selectbox_tag($name, $options, $value, __( 'フォーマット', THEME_NAME ));
     //ラベル表示の設定
     echo '<p>';
     generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));

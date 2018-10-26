@@ -101,7 +101,7 @@
               'fa-rocket' => __( '&#xf135', THEME_NAME ),
             );
 
-            generate_selectbox_tag(OP_EXTERNAL_LINK_ICON, $options, get_external_link_icon(), true);
+            generate_selectbox_tag(OP_EXTERNAL_LINK_ICON, $options, get_external_link_icon(),__( 'アイコンフォント', THEME_NAME ) , true);
             generate_tips_tag(__( '外部リンクの右部に表示するFont Awesomeアイコンを設定します。', THEME_NAME ));
             ?>
           </td>
@@ -209,7 +209,7 @@
               'fa-rocket' => __( '&#xf135', THEME_NAME ),
             );
 
-            generate_selectbox_tag(OP_INTERNAL_LINK_ICON, $options, get_internal_link_icon(), true);
+            generate_selectbox_tag(OP_INTERNAL_LINK_ICON, $options, get_internal_link_icon(),__( 'アイコンフォント', THEME_NAME ) , true);
             generate_tips_tag(__( '内部リンクの右部に表示するFont Awesomeアイコンを設定します。', THEME_NAME ));
             ?>
           </td>

@@ -49,8 +49,6 @@
               <div style="min-width: 270px;">
                 <?php
                 //フォント
-                generate_label_tag(OP_SITE_FONT_FAMILY, __( 'フォント', THEME_NAME ));
-                echo '<br>';
                 $options = array(
                   'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
                   'meiryo' => __( 'メイリオ, ヒラギノ角ゴ', THEME_NAME ),
@@ -63,12 +61,10 @@
                   'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
                   'sawarabi_mincho' => __( 'さわらび明朝（WEBフォント）', THEME_NAME ),
                 );
-                generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family());
+                generate_selectbox_tag(OP_SITE_FONT_FAMILY, $options, get_site_font_family(), __( 'フォント', THEME_NAME ));
                 generate_tips_tag(__( 'サイト全体適用されるフォントを選択します。', THEME_NAME ));
 
                 //文字サイズ
-                generate_label_tag(OP_SITE_FONT_SIZE, __( '文字サイズ', THEME_NAME ));
-                echo '<br>';
                 $font_options = array(
                   '12px' => __( '12px', THEME_NAME ),
                   '13px' => __( '13px', THEME_NAME ),
@@ -82,7 +78,7 @@
                   '21px' => __( '21px', THEME_NAME ),
                   '22px' => __( '22px', THEME_NAME ),
                 );
-                generate_selectbox_tag(OP_SITE_FONT_SIZE, $font_options, get_site_font_size());
+                generate_selectbox_tag(OP_SITE_FONT_SIZE, $font_options, get_site_font_size(), __( '文字サイズ', THEME_NAME ));
                 generate_tips_tag(__( 'サイト全体のフォントサイズを変更します。', THEME_NAME ));
 
                 //文字色

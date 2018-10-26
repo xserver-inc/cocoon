@@ -30,7 +30,6 @@ function page_custom_box_view(){
   // $the_page_toc_visible = is_the_page_toc_visible();
 
   //ページタイプ
-  echo '<label>'.__( 'ページタイプ', THEME_NAME ).'</label><br>';
   $options = array(
     'default' => __( 'デフォルト', THEME_NAME ),
     'column1_wide' => __( '1カラム（広い）', THEME_NAME ),
@@ -38,7 +37,7 @@ function page_custom_box_view(){
     'content_only_wide' => __( '本文のみ（広い）', THEME_NAME ),
     'content_only_narrow' => __( '本文のみ（狭い）', THEME_NAME ),
   );
-  generate_selectbox_tag('page_type', $options, get_singular_page_type());
+  generate_selectbox_tag('page_type', $options, get_singular_page_type(), __( 'ページタイプ', THEME_NAME ));
   generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
 
   //目次表示

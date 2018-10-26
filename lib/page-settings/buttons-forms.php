@@ -61,7 +61,7 @@
               'fa-long-arrow-up' => __( '&#xf176', THEME_NAME ),
               'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
             );
-            generate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), true);
+            generate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(), 'アイコンフォント', true);
             generate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
             ?>
           </td>
