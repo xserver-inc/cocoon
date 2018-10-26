@@ -992,18 +992,19 @@ textarea[name="the_page_memo"]{
   display: inline-block;
   background-color: $xx_thin;
   border: 1px solid #ba2636;
+  border-radius: 2px;
   pointer-events: none;
   cursor: not-allowed;
 
   &::before{
-    content: 'スキン制限';
+    content: 'スキン制御';
     font-size: 0.7em;
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 8px;
     position: absolute;
     top: 0;
     left: 0;
     background-color: #ba2636;
     color: $white;
-    padding: 2px 6px;
+    padding: 2px 10px 2px 6px;
   }
 }
