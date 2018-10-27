@@ -30,7 +30,7 @@
             <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
-            <?php //_v(OP_SITE_KEY_COLOR);_v(get_skin_option(OP_SITE_KEY_COLOR));
+            <?php //_v(OP_SITE_KEY_COLOR.'='.get_skin_option(OP_SITE_KEY_COLOR));
             generate_color_picker_tag(OP_SITE_KEY_COLOR,  get_site_key_color(), 'サイトキーカラー');
 
             generate_tips_tag(__( 'サイト全体のポイントとなる部分に適用される背景色を指定します。', THEME_NAME ));

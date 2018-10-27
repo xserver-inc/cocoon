@@ -22,10 +22,10 @@ if( $is_post_ok ):
   require_once abspath(__FILE__).'all-posts.php';
   //ヘッダー
   require_once abspath(__FILE__).'header-posts.php';
-  //グローバルナビ
-  require_once abspath(__FILE__).'navi-posts.php';
   //スキン
   require_once abspath(__FILE__).'skin-posts.php';
+  //グローバルナビ
+  require_once abspath(__FILE__).'navi-posts.php';
   //広告
   require_once abspath(__FILE__).'ads-posts.php';
   //タイトル
@@ -105,6 +105,13 @@ if( $is_post_ok ):
   //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
   //   $wp_filesystem->put_contents($custum_css_file, $custum_css);
   // }
+
+  ///////////////////////////////////////////
+  // テーマ設定ページではスキン設定の読み込みを保存後にするために遅らせる
+  ///////////////////////////////////////////
+  if (get_skin_url() && is_admin_php_page()) {
+    require_once get_template_directory().'/lib/skin.php';   //スキン
+  }
 
 
   //_v($custum_css);
