@@ -64,10 +64,12 @@
 
       </div>
       <div style="width: 380px">
-        <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-        <div class="demo mobile-demo" style="width: 370px;">
-          <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640"></iframe>
-        </div>
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE): ?>
+          <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+          <div class="demo mobile-demo" style="width: 370px;">
+            <iframe id="mobile-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="360" height="640"></iframe>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
 

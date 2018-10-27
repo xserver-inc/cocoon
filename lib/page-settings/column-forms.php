@@ -13,15 +13,18 @@
 
     <p><?php _e( 'メインカラムの幅、余白幅、枠線の設定です。', THEME_NAME ) ?></p>
 
-    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-    <div class="demo iframe-standard-demo column-demo">
-      <?php
-          //iframeからページを呼び出すと以下のPHP警告が出る
-          //unlink(/app/public/wp-content/temp-write-test-1512636307): Text file busy
-          //原因はよくわからないけど警告なので様子見
-       ?>
-      <iframe id="column-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
-    </div>
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE): ?>
+      <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+      <div class="demo iframe-standard-demo column-demo">
+        <?php
+            //iframeからページを呼び出すと以下のPHP警告が出る
+            //unlink(/app/public/wp-content/temp-write-test-1512636307): Text file busy
+            //原因はよくわからないけど警告なので様子見
+        ?>
+        <iframe id="column-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
+      </div>
+    <?php endif; ?>
+
 
     <table class="form-table">
       <tbody>

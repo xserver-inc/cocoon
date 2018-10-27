@@ -13,10 +13,12 @@
 
     <p><?php _e( 'ページ全体の表示に関する設定です。', THEME_NAME ) ?></p>
 
-    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-    <div class="demo iframe-standard-demo all-demo">
-      <iframe id="all-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
-    </div>
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE): ?>
+      <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+      <div class="demo iframe-standard-demo all-demo">
+        <iframe id="all-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>
+      </div>
+    <?php endif; ?>
 
     <table class="form-table">
       <tbody>
@@ -28,7 +30,7 @@
             <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
-            <?php
+            <?php //_v(OP_SITE_KEY_COLOR);_v(get_skin_option(OP_SITE_KEY_COLOR));
             generate_color_picker_tag(OP_SITE_KEY_COLOR,  get_site_key_color(), 'サイトキーカラー');
 
             generate_tips_tag(__( 'サイト全体のポイントとなる部分に適用される背景色を指定します。', THEME_NAME ));
