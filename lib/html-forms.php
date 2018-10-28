@@ -93,13 +93,16 @@ endif;
 
 //レンジボックスの生成
 if ( !function_exists( 'generate_range_tag' ) ):
-function generate_range_tag($name, $value, $min, $max, $step){?>
+function generate_range_tag($name, $value, $min, $max, $step){
+  ob_start();?>
   <div class="range-wrap">
     <output id="<?php echo $name; ?>"><?php echo $value; ?></output>
     <span class="range-min"><?php echo $min; ?></span><input type="range" name="<?php echo $name; ?>" value="<?php echo $value; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>"
     oninput="document.getElementById('<?php echo $name; ?>').value=this.value"><span class="range-min"><?php echo $max; ?></span>
   </div>
   <?php
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
@@ -184,9 +187,6 @@ endif;
 if ( !function_exists( 'generate_not_allowed_form_class' ) ):
 function generate_not_allowed_form_class($is_not_allowed, $in = false){
   echo get_not_allowed_form_class($is_not_allowed);
-  // if (!$is_enable || empty($is_enable)) {
-  //   echo ' class="not-allowed-form"';
-  // }
 }
 endif;
 
