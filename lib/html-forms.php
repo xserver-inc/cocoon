@@ -286,9 +286,12 @@ endif;
 
 //ナンバーボックスの生成
 if ( !function_exists( 'generate_number_tag' ) ):
-function generate_number_tag($name, $value, $placeholder = '', $min = 1, $max = 100, $step = 1){?>
+function generate_number_tag($name, $value, $placeholder = '', $min = 1, $max = 100, $step = 1){
+  ob_start();?>
   <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>">
   <?php
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
