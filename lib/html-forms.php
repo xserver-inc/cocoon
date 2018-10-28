@@ -86,10 +86,7 @@ function generate_selectbox_tag($name, $options, $now_value, $label = null, $ico
   </select>
   <?php
   $res = ob_get_clean();
-  if (get_skin_option($name)) {
-    $res = get_skin_restriction_tag($res);
-  }
-  echo $res;
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
@@ -106,9 +103,21 @@ function generate_range_tag($name, $value, $min, $max, $step){?>
 }
 endif;
 
-if ( !function_exists( 'get_skin_restriction_tag' ) ):
-function get_skin_restriction_tag($tag){
+//スキン制御タグで囲む
+if ( !function_exists( 'get_skin_control_tag' ) ):
+function get_skin_control_tag($tag){
   return '<div class="skin-control">'.$tag.'</div>';
+}
+endif;
+
+//入力フォームをスキン制御タグで囲む
+add_filter( 'admin_input_form_tag', 'wrap_skin_control_tag', 10, 2 );
+if ( !function_exists( 'wrap_skin_control_tag' ) ):
+function wrap_skin_control_tag($name, $tag){
+  if (get_skin_option($name)) {
+    $tag = get_skin_control_tag($tag);
+  }
+  return $tag;
 }
 endif;
 
@@ -119,10 +128,7 @@ function generate_checkbox_tag($name, $now_value, $label){
   <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
   <?php
   $res = ob_get_clean();
-  if (get_skin_option($name)) {
-    $res = get_skin_restriction_tag($res);
-  }
-  echo $res;
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
@@ -370,10 +376,7 @@ function generate_color_picker_tag($name, $value, $label){
     wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
 
     $res = ob_get_clean();
-    if (get_skin_option($name)) {
-      $res = get_skin_restriction_tag($res);
-    }
-    echo $res;
+    echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
