@@ -184,7 +184,7 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return ;
   }
 
-  return $html;
+  return apply_filters('get_toc_tag',$html, $harray, $is_widget );
   //}
 }
 endif;
