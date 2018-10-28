@@ -5,3 +5,5 @@ site_font_size,18px
 align_site_width,1
 site_font_family,meiryo
 site_font_weight,500
+sidebar_position,sidebar_left
+site_date_format,Y.m.d

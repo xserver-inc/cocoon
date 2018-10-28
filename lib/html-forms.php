@@ -138,16 +138,19 @@ endif;
 
 //ラジオボックスの生成
 if ( !function_exists( 'generate_radiobox_tag' ) ):
-function generate_radiobox_tag($name, $options, $now_value){?>
-<ul>
-  <?php foreach ($options as $value => $caption) {
-  // _v($value.' == '.$now_value);
-  // _v($value == $now_value);
-   ?>
-  <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
-  <?php } ?>
-</ul>
+function generate_radiobox_tag($name, $options, $now_value){
+  ob_start();?>
+  <ul>
+    <?php foreach ($options as $value => $caption) {
+    // _v($value.' == '.$now_value);
+    // _v($value == $now_value);
+    ?>
+    <li><input type="radio" name="<?php echo $name; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><?php echo $caption; ?></li>
+    <?php } ?>
+  </ul>
   <?php
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
