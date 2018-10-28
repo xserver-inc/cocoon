@@ -266,9 +266,12 @@ endif;
 
 //テキストボックスの生成
 if ( !function_exists( 'generate_textbox_tag' ) ):
-function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){?>
+function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){
+  ob_start();?>
   <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
