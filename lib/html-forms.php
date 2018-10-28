@@ -396,11 +396,14 @@ endif;
 //ビジュアルエディターの生成
 if ( !function_exists( 'generate_visuel_editor_tag' ) ):
 function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor', $textarea_rows = 16){
+  ob_start();
   $settings = array(
     'textarea_name' => $name,
     'textarea_rows' => $textarea_rows,
   ); //配列としてデータを渡すためname属性を指定する
   wp_editor( $content, $editor_id, $settings );
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 

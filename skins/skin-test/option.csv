@@ -11,3 +11,9 @@ site_background_image_url,https://im-cocoon.net/wp-content/uploads/pink-tile.jpe
 header_area_height,200
 mobile_header_area_height,""
 other_analytics_head_tags,<!-- tag -->
+main_column_border_width,2
+main_column_border_color,#f09199
+sidebar_border_width,2
+sidebar_border_color,#f09199
+comment_information_message,<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>
+
