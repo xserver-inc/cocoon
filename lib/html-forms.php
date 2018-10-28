@@ -652,6 +652,7 @@ endif;
 //階層化カテゴリチェックリストの出力
 if ( !function_exists( 'generate_hierarchical_category_check_list' ) ):
 function generate_hierarchical_category_check_list( $cat, $name, $checks, $width = 0 ) {
+  ob_start();
   if ($width == 0) {
     $width = 'auto';
   } else {
@@ -660,6 +661,9 @@ function generate_hierarchical_category_check_list( $cat, $name, $checks, $width
   echo '<div class="tab-content category-check-list '.$name.'-list" style="width: '.$width.';">';
   hierarchical_category_check_list( $cat, $name, $checks );
   echo '</div>';
+
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 
