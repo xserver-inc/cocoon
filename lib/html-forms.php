@@ -486,6 +486,7 @@ endif;
 if ( !function_exists( 'generate_upload_image_tag' ) ):
 function generate_upload_image_tag($name, $value, $id = null){
   $thumb_id = isset($id) ? $id : $name;
+  ob_start();
   ?>
   <input name="<?php echo $name; ?>" type="text" value="<?php echo $value; ?>" />
   <input type="button" name="<?php echo $name; ?>_select" value="<?php _e( '選択', THEME_NAME ) ?>" />
@@ -568,6 +569,8 @@ function generate_upload_image_tag($name, $value, $id = null){
   })(jQuery);
   </script>
   <?php
+  $res = ob_get_clean();
+  echo apply_filters('admin_input_form_tag', $name, $res);
 }
 endif;
 

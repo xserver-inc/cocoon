@@ -5,5 +5,6 @@ site_font_size,18px
 align_site_width,1
 site_font_family,meiryo
 site_font_weight,500
-sidebar_position,sidebar_left
+sidebar_position,sidebar_right
 site_date_format,Y.m.d
+site_background_image_url,https://im-cocoon.net/wp-content/uploads/pink-tile.jpeg
