@@ -10,3 +10,4 @@ site_date_format,Y.m.d
 site_background_image_url,https://im-cocoon.net/wp-content/uploads/pink-tile.jpeg
 header_area_height,200
 mobile_header_area_height,""
+other_analytics_head_tags,<!-- tag -->
