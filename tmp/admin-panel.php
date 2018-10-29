@@ -140,6 +140,4 @@ if (is_user_administrator()
   <?php endif ?>
 
 </div>
-
-</div>
 <?php endif //is_singular ?>
