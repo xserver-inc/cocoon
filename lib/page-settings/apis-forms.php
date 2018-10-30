@@ -45,6 +45,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
             generate_label_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, __( 'トラッキングID', THEME_NAME ));
             generate_amazon_badge_tag(__( 'Amazon必須', THEME_NAME ));
+            generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_ASSOCIATE_TRACKING_ID, get_amazon_associate_tracking_id(), __( 'yourid-22', THEME_NAME ));
             generate_tips_tag(__( 'AmazonアソシエイトのトラッキングIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-tracking-id/', $help_text));

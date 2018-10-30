@@ -696,7 +696,7 @@ function amazon_product_link_shortcode($atts){
   $access_key_id = trim(get_amazon_api_access_key_id());
   //シークレットキー
   $secret_access_key = trim(get_amazon_api_secret_key());
-  //アソシエイトタグ
+  //トラッキングID
   $associate_tracking_id = trim(get_amazon_associate_tracking_id());
   //楽天アフィリエイトID
   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
@@ -715,8 +715,8 @@ function amazon_product_link_shortcode($atts){
   $moshimo_yahoo_id   = trim(get_moshimo_yahoo_id());
 
   //アクセスキーもしくはシークレットキーがない場合
-  if (empty($access_key_id) || empty($secret_access_key)) {
-    $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
+  if (empty($access_key_id) || empty($secret_access_key) || empty($associate_tracking_id)) {
+    $error_message = __( 'Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定されていません。「Cocoon設定」の「API」タブから入力してください。', THEME_NAME );
     return wrap_product_item_box($error_message);
   }
 
