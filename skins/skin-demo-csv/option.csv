@@ -1,0 +1,27 @@
+//オプション名と値をカンマ区切りで書く
+site_key_color,#f09199
+site_key_text_color,#fff
+site_font_size,18px
+align_site_width,1
+site_font_family,meiryo
+site_font_weight,500
+sidebar_position,sidebar_right
+site_date_format,Y.m.d
+site_background_image_url,https://im-cocoon.net/wp-content/uploads/pink-tile.jpeg
+header_area_height,200
+mobile_header_area_height,""
+other_analytics_head_tags,<!-- tag -->
+main_column_border_width,2
+main_column_border_color,#f09199
+sidebar_border_width,2
+sidebar_border_color,#f09199
+comment_information_message,<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>
+appeal_area_display_type,front_page_only
+appeal_area_height,300
+appeal_area_background_color,#f09199
+appeal_area_title,スキンから入力したタイトル
+appeal_area_message,スキンから入力したアピールエリアメッセージです。
+appeal_area_button_message,スキンボタンキャプション
+appeal_area_button_background_color,#e9546b
+carousel_category_ids,1
+
