@@ -6,7 +6,7 @@
   Author: アオイ
   Author URI: https://mizutama.blog/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-modernblack.png
-  Version: 0.0.1
+  Version: 1.1
   Priority: 200100
 */
 
@@ -218,20 +218,6 @@ blockquote::after {
   background-color: #f9f9f9;
   font-weight: bold;
 }
-.toc ol.toc-list, .toc ul.toc-list {
-  margin: 20px;
-}
-.toc ol.toc-list ol, .toc ol.toc-list ul, .toc ul.toc-list ol, .toc ul.toc-list ul {
-  font-weight: normal;
-}
-.toc ol.toc-list li a, .toc ul.toc-list li a {
-  margin: 4px 0;
-}
-.toc-title {
-  background-color: #202020;
-  color: #fff;
-  letter-spacing: .5em;
-}
 
 /************************************
 ** サイドバー
@@ -248,25 +234,30 @@ blockquote::after {
 ** ボックス
 ************************************/
 .primary-box,
+.sp-primary,
 .primary {
   background-color: #595857;
 }
 .success-box,
+.sp-success,
 .success {
   background-color: #dbe8cf;
   border: #b4d09b;
 }
 .info-box,
+.sp-info,
 .info {
   background-color: #cee2e8;
   border: #9ac4d0;
 }
 .warning-box,
+.sp-warning,
 .warning {
   background-color: #f5efd2;
   border: #e6da94;
 }
 .danger-box,
+.sp-danger,
 .danger {
   background-color: #f4ded7;
   border: #df9a87;
@@ -313,7 +304,7 @@ blockquote::after {
 }
 .question-box,
 .question {
-  border-color: #EBE1A9;
+  border-color: #ebe1a9;
 }
 .alert-box,
 .alert {
@@ -347,6 +338,47 @@ blockquote::after {
     font-size: 30px;
     color: #FFF;
   }
+}
+
+.blank-box.bb-yellow {
+  border-color: #e6da94;
+}
+.blank-box.bb-red {
+  border-color: #df9a87;
+}
+.blank-box.bb-blue {
+  border-color: #9ac4d0;
+}
+.blank-box.bb-green {
+  border-color: #b4d09b;
+}
+.blank-box.bb-tab.bb-yellow::before {
+  background-color: #e6da94;
+}
+.blank-box.bb-tab.bb-red::before {
+  background-color: #df9a87;
+}
+.blank-box.bb-tab.bb-blue::before {
+  background-color: #9ac4d0;
+}
+.blank-box.bb-tab.bb-green::before {
+  background-color: #b4d09b;
+}
+.blank-box.sticky.st-yellow {
+  border-color: #e6da94;
+  background-color: #f7f2db;
+}
+.blank-box.sticky.st-red {
+  border-color: #df9a87;
+  background-color: #f4ded7;
+}
+.blank-box.sticky.st-blue {
+  border-color: #9ac4d0;
+  background-color: #dfecf0;
+}
+.blank-box.sticky.st-green {
+  border-color: #b4d09b;
+  background-color: #e8f0e0;
 }
 
 /************************************
@@ -434,9 +466,13 @@ blockquote::after {
 .author-box {
   border: 1px solid #202020;
   border-radius: 0;
+  background-color: #fff;
 }
 .author-box .sns-follow-buttons a.follow-button {
   border: none;
+}
+.author-box .sns-follow-buttons a.follow-button:hover {
+  background-color: #202020;
 }
 .author-widget-name {
   margin-bottom: 1.4%;
@@ -463,6 +499,9 @@ blockquote::after {
 }
 .mobile-menu-buttons .menu-button:hover {
   background-color: #595857;
+}
+.search-menu-content {
+  top: 50%;
 }
 
 /************************************
@@ -515,4 +554,15 @@ blockquote::after {
 .go-to-top-button:hover {
   background-color: #807e7d;
   color: #fff;
+}
+
+/************************************
+** カルーセル
+************************************/
+.carousel {
+  margin-bottom: 30px;
+}
+
+.carousel-entry-card-title {
+  font-size: 14px;
 }
