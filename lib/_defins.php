@@ -118,7 +118,10 @@ $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
 
 //設定向けのグローバル変数
 global $_THEME_OPTIONS;
-$_THEME_OPTIONS = array();
+if (is_null($_THEME_OPTIONS)) {
+  $_THEME_OPTIONS = array();
+}
+
 
 //管理設定画面の隠しフィールド名
 define('HIDDEN_FIELD_NAME', THEME_NAME.'_submit_hidden');
