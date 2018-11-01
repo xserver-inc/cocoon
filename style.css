@@ -1507,12 +1507,12 @@ table td {
   line-height: 1.25;
   font-weight: bold;
 }
+.article h2,
 .article h3,
 .article h4,
 .article h5,
 .article h6 {
-  margin-top: 35px;
-  margin-bottom: 20px;
+  margin: 2.2em 0 1.2em;
 }
 .article h4,
 .article h5,
@@ -1522,8 +1522,6 @@ table td {
 }
 .article h2 {
   font-size: 24px;
-  margin-top: 40px;
-  margin-bottom: 20px;
   padding: 25px;
   background-color: #f3f4f5;
 }
@@ -6838,7 +6836,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .related-entry-heading,
   .comment-title {
-    margin: 6px 0 12px;
+    margin: 1.2em 0 1em;
   }
 
   .entry-card,
@@ -6886,9 +6884,24 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .article h4,
   .article h5,
   .article h6 {
+    padding: 0.6em;
+    margin: 1.2em 0 0.8em;
+  }
+
+  .entry-title,
+  .article h2 {
     font-size: 20px;
-    padding: 10px;
-    margin: 6px 0 12px;
+    padding: 0.6em 0.8em;
+  }
+
+  .article h3 {
+    font-size: 18px;
+  }
+
+  .article h4,
+  .article h5,
+  .article h6 {
+    font-size: 16px;
   }
 
   .entry-title {

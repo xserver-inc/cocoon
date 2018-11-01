@@ -585,9 +585,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin-top: 35px; margin-bottom: 20px; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1.2em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; margin-top: 40px; margin-bottom: 20px; padding: 25px; background-color: #f3f4f5; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -1599,9 +1599,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin-top: 35px; margin-bottom: 20px; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1.2em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; margin-top: 40px; margin-bottom: 20px; padding: 25px; background-color: #f3f4f5; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -2570,7 +2570,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { font-size: 18px; right: -4px; margin-top: 0; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
   .admin-settings .demo h2, .admin-settings .demo h3 { font-size: 20px; }
-  .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 6px 0 12px; }
+  .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 1.2em 0 1em; }
   .admin-settings .demo .entry-card, .admin-settings .demo .related-entry-card, .admin-settings .demo .e-card-title { line-height: 1.1; }
   .admin-settings .demo .e-card-title { font-size: 16px; }
   .admin-settings .demo .e-card-snippet { font-size: 13px; }
@@ -2579,7 +2579,10 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { font-size: 1em; }
   .admin-settings .demo .related-entry-card-thumb { width: 38%; }
   .admin-settings .demo .related-entry-card-content { margin-left: 40%; font-size: 0.9em; }
-  .admin-settings .demo .entry-title, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 10px; margin: 6px 0 12px; }
+  .admin-settings .demo .entry-title, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { padding: 0.6em; margin: 1.2em 0 0.8em; }
+  .admin-settings .demo .entry-title, .admin-settings .demo .article h2 { font-size: 20px; padding: 0.6em 0.8em; }
+  .admin-settings .demo .article h3 { font-size: 18px; }
+  .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 16px; }
   .admin-settings .demo .entry-title { margin: 0; margin-bottom: 6px; }
   .admin-settings .demo body { font-size: 16px; }
   .admin-settings .demo .pager-post-navi a figure { min-width: 30%; max-width: 30%; }
