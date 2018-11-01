@@ -878,6 +878,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   ?>
   <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
+    $i = 1;
     foreach ($records as $post):
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
@@ -900,7 +901,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
 
       //var_dump($permalink);
       ?>
-  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap rank-<?php echo $i; ?>"" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php echo $post_thumbnail_img; ?>
@@ -916,7 +917,9 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
 
-  <?php endforeach;
+  <?php
+  $i++;
+  endforeach;
   else :
     echo '<p>'.__( '人気記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
   endif; ?>

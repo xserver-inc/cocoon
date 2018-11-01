@@ -2224,13 +2224,13 @@ label.screen-reader-text {
 .widget-entry-cards.ranking-visible {
   counter-reset: p-rank;
 }
-.widget-entry-cards.ranking-visible .popular-entry-card-link:first-child .card-thumb::before {
+.widget-entry-cards.ranking-visible .rank-1 .card-thumb::before {
   background: #cca11f;
 }
-.widget-entry-cards.ranking-visible .popular-entry-card-link:nth-child(2) .card-thumb::before {
+.widget-entry-cards.ranking-visible .rank-2 .card-thumb::before {
   background: #b1b1b3;
 }
-.widget-entry-cards.ranking-visible .popular-entry-card-link:nth-child(3) .card-thumb::before {
+.widget-entry-cards.ranking-visible .rank-3 .card-thumb::before {
   background: #b37036;
 }
 .widget-entry-cards.ranking-visible .card-thumb {
