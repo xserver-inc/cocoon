@@ -13,7 +13,7 @@
 define('OP_CATEGORY_TAG_DISPLAY_TYPE', 'category_tag_display_type');
 if ( !function_exists( 'get_category_tag_display_type' ) ):
 function get_category_tag_display_type(){
-  return get_theme_option(OP_CATEGORY_TAG_DISPLAY_TYPE, 'two_rows');
+  return get_theme_option(OP_CATEGORY_TAG_DISPLAY_TYPE, 'one_row');
 }
 endif;
 
