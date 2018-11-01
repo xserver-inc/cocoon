@@ -38,6 +38,14 @@ function is_eyecatch_width_100_percent_enable(){
 }
 endif;
 
+//アイキャッチキャプションを表示する
+define('OP_EYECATCH_CAPTION_VISIBLE', 'eyecatch_caption_visible');
+if ( !function_exists( 'is_eyecatch_caption_visible' ) ):
+function is_eyecatch_caption_visible(){
+  return get_theme_option(OP_EYECATCH_CAPTION_VISIBLE, 1);
+}
+endif;
+
 //Auto Post Thumbnail
 define('OP_AUTO_POST_THUMBNAIL_ENABLE', 'auto_post_thumbnail_enable');
 if ( !function_exists( 'is_auto_post_thumbnail_enable' ) ):

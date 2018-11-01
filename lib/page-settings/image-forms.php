@@ -68,6 +68,9 @@
 
             generate_checkbox_tag(OP_EYECATCH_WIDTH_100_PERCENT_ENABLE , is_eyecatch_width_100_percent_enable(), __( 'アイキャッチをカラム幅に引き伸ばす', THEME_NAME ));
             generate_tips_tag(__( 'アイキャッチ画像に小さな画像を使っていても、強制的にカラム幅に拡大して表示します。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_EYECATCH_CAPTION_VISIBLE , is_eyecatch_caption_visible(), __( 'アイキャッチにキャプションがある場合は表示する', THEME_NAME ));
+            generate_tips_tag(__( 'アイキャッチ画像にキャプションが設定してある場合、表示するかどうか。', THEME_NAME ));
               ?>
             </div>
           </td>
