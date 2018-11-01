@@ -11,8 +11,8 @@ if ( !function_exists( 'url_to_external_blog_card_tag' ) ):
 function url_to_external_blog_card_tag($url){
   $url = strip_tags($url);//URL
 
-  //サイトの内部リンクは処理しない場合
-  if ( strpos( $url, get_the_site_domain() ) ) {
+  //サイトの内部リンクは処理しない場合（※wpForoページは外部リンクとして処理する）
+  if ( includes_string( $url, get_the_site_domain() ) && !includes_wpforo_url($url) ) {
     $id = url_to_postid( $url );//IDを取得（URLから投稿ID変換
     if ( $id ) {//IDを取得できる場合はループを飛ばす
       return;
@@ -45,6 +45,8 @@ function url_to_external_blog_card($the_content) {
     }
 
     $url = strip_tags($match);//URL
+    // _v($url);
+    // _v(WPF()->url);
     //var_dump(htmlentities($match));
 
     $tag = url_to_external_blog_card_tag($url);

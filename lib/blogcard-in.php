@@ -185,8 +185,15 @@ function url_to_internal_blogcard($the_content) {
     }
 
     $url = strip_tags($match);//URL
+    // _v($url);
+    // _v(WPF()->url);
+    //wpForoのブログカードは外部ブログカードに任せる
+    if (includes_wpforo_url($url)) {
+      continue;
+    }
 
     $tag = url_to_internal_blogcard_tag($url);
+
 
     if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
 

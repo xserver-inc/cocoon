@@ -2151,3 +2151,9 @@ function get_singular_sns_share_image_url(){
   return $sns_image_url;
 }
 endif;
+
+if ( !function_exists( 'includes_wpforo_url' ) ):
+function includes_wpforo_url($url){
+  return is_wpforo_exist() && includes_string($url, WPF()->url);
+}
+endif;
