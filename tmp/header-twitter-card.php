@@ -44,7 +44,7 @@ if (is_singular()){//単一記事ページの場合
 }
 if (is_singular()){//単一記事ページの場合
   if ($ogp_image = get_singular_sns_share_image_url()) {
-    echo '<meta property="twitter:image" content="'.$ogp_image.'">';echo "\n";
+    echo '<meta name="twitter:image" content="'.$ogp_image.'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch(get_query_var('cat'))) {
