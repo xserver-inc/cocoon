@@ -585,7 +585,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1.2em; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
@@ -1599,7 +1599,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1.2em; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }

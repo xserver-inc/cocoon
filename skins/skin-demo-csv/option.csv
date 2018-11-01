@@ -1,27 +1,34 @@
-//オプション名と値をカンマ区切りで書く
+,,オプション名と値をカンマ区切りで書く
+,,行頭にカンマを2つ以上入力することでコメント（相当）になります
 site_key_color,#f09199
 site_key_text_color,#fff
+header_layout_type,center_logo_slim
+tagline_position,header_bottom
 site_font_size,18px
-align_site_width,1
+site_background_color,#fef4f4
 site_font_family,meiryo
 site_font_weight,500
 sidebar_position,sidebar_right
-site_date_format,Y.m.d
-site_background_image_url,https://im-cocoon.net/wp-content/uploads/pink-tile.jpeg
+site_date_format,Y-m-d
 header_area_height,200
 mobile_header_area_height,""
 other_analytics_head_tags,<!-- tag -->
-main_column_border_width,2
-main_column_border_color,#f09199
-sidebar_border_width,2
-sidebar_border_color,#f09199
 comment_information_message,<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>
 appeal_area_display_type,front_page_only
 appeal_area_height,300
+appeal_area_image_url,https://im-cocoon.net/wp-content/uploads/pink-board.jpeg
 appeal_area_background_color,#f09199
 appeal_area_title,スキンから入力したタイトル
 appeal_area_message,スキンから入力したアピールエリアメッセージです。
 appeal_area_button_message,スキンボタンキャプション
-appeal_area_button_background_color,#e9546b
-carousel_category_ids,1
+appeal_area_button_url,https://wp-cocoon.com/
+appeal_area_button_background_color,#f09199
+entry_card_type,vertical_card_2
+entry_card_border_visible,1
+category_tag_display_type,one_row
+related_entry_type,vartical_card_3
+related_entry_count,9
+post_navi_type,square
+single_breadcrumbs_position,main_before
+page_breadcrumbs_position,main_before
 
