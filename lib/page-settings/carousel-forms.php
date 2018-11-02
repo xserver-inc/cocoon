@@ -54,6 +54,21 @@
           </td>
         </tr>
 
+        <!-- 最大表示数 -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag(OP_CAROUSEL_MAX_COUNT, __('最大表示数', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+          <?php
+            generate_number_tag(OP_CAROUSEL_MAX_COUNT,  get_carousel_max_count(), '', 12, 120);
+            generate_tips_tag(__( 'カルーセルに表示するアイテムの最大表示数を設定します。（デフォルト：18、最小：12、最大：120）', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- オートプレイ-->
         <tr>
           <th scope="row">

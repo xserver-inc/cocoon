@@ -27,6 +27,14 @@ function get_carousel_category_ids(){
 }
 endif;
 
+//カルーセルに表示する最大数
+define('OP_CAROUSEL_MAX_COUNT', 'carousel_max_count');
+if ( !function_exists( 'get_carousel_max_count' ) ):
+function get_carousel_max_count(){
+  return get_theme_option(OP_CAROUSEL_MAX_COUNT, 18);
+}
+endif;
+
 //カルーセルオートプレイ
 define('OP_CAROUSEL_AUTOPLAY_ENABLE', 'carousel_autoplay_enable');
 if ( !function_exists( 'is_carousel_autoplay_enable' ) ):

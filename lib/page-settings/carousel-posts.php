@@ -12,6 +12,9 @@ update_theme_option(OP_CAROUSEL_DISPLAY_TYPE);
 //カルーセルに表示するカテゴリID
 update_theme_option(OP_CAROUSEL_CATEGORY_IDS);
 
+//カルーセルに表示する最大数
+update_theme_option(OP_CAROUSEL_MAX_COUNT);
+
 //カルーセルオートプレイ
 update_theme_option(OP_CAROUSEL_AUTOPLAY_ENABLE);
 
