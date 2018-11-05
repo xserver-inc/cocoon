@@ -130,7 +130,8 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     //_v($default_args);
     //元のURL情報の取得
     $urls = parse_url($url);
-    parse_str($urls['query'], $args);
+    $query = isset($urls['query']) ? $urls['query'] : '';
+    parse_str($query, $args);
     //デフォルトパラメータと結合
     $args = array_merge($default_args, $args);
     //_v($args);
