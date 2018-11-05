@@ -65,6 +65,19 @@
           </td>
         </tr>
 
+        <!-- リンクの開き方 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_NOTICE_LINK_TARGET_BLANK, __('リンクの開き方', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_NOTICE_LINK_TARGET_BLANK , is_notice_link_target_blank(), __( '通知リンクを新しいタブで開く', THEME_NAME ));
+            generate_tips_tag(__( '通知エリアのリンクをtarget="_blank"で開くかどうか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 通知タイプ -->
         <tr>
           <th scope="row">
@@ -98,7 +111,6 @@
             ?>
           </td>
         </tr>
-
 
       </tbody>
     </table>

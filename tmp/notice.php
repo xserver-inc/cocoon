@@ -12,8 +12,10 @@ if (is_notice_area_visible() && $msg && !is_amp()):
  ?>
 
 <?php //リンクの開始タグ
-if ($url): ?>
-<a href="<?php echo $url; ?>" class="notice-area-wrap">
+if ($url):
+  $target = is_notice_link_target_blank() ? ' target="_blank"' : '';
+?>
+<a href="<?php echo $url; ?>" class="notice-area-wrap"<?php echo $target; ?>>
 <?php endif ?>
 
 <div id="notice-area" class="notice-area notice-area nt-<?php echo get_notice_type(); ?>">

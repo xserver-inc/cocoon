@@ -15,6 +15,9 @@ update_theme_option(OP_NOTICE_AREA_MESSAGE);
 //通知エリアURL
 update_theme_option(OP_NOTICE_AREA_URL);
 
+//通知リンクを新しいタブで開く
+update_theme_option(OP_NOTICE_LINK_TARGET_BLANK);
+
 //通知タイプ
 update_theme_option(OP_NOTICE_TYPE);
 

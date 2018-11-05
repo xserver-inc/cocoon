@@ -30,6 +30,14 @@ function get_notice_area_url(){
 }
 endif;
 
+//通知リンクを新しいタブで開く
+define('OP_NOTICE_LINK_TARGET_BLANK', 'notice_link_target_blank');
+if ( !function_exists( 'is_notice_link_target_blank' ) ):
+function is_notice_link_target_blank(){
+  return get_theme_option(OP_NOTICE_LINK_TARGET_BLANK);
+}
+endif;
+
 //通知タイプ
 define('OP_NOTICE_TYPE', 'notice_type');
 if ( !function_exists( 'get_notice_type' ) ):
