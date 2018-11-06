@@ -160,6 +160,8 @@ function js_url_to_js_minify_code( $url ) {
     // $js = preg_replace('{^\s+//.+$}im', '', $js);
     //CSS内容を縮小化して書式を統一化する
     $js = minify_js($js);
+    //ScrollHintライブラリの相対パス問題
+    //$js = str_replace('var _util=require("./util");', 'var _util=require("util");', $js);
     //コード内scriptタグの処理
     $js = str_replace('"<script>"', '"</script"+">"', $js);
     $js = str_replace("'<script>'", "'</script'+'>'", $js);
