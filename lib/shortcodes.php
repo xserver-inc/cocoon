@@ -882,7 +882,22 @@ function amazon_product_link_shortcode($atts){
       $Publisher = esc_html($ItemAttributes->Publisher);
       $Manufacturer = esc_html($ItemAttributes->Manufacturer);
       $Binding = esc_html($ItemAttributes->Binding);
-      if ($Publisher) {
+      $Author = esc_html($ItemAttributes->Author);
+      $Artist = esc_html($ItemAttributes->Artist);
+      $Actor = esc_html($ItemAttributes->Actor);
+      $Creator = esc_html($ItemAttributes->Creator);
+      $Director = esc_html($ItemAttributes->Director);
+      if ($Author) {
+        $maker = $Author;
+      } elseif ($Artist) {
+        $maker = $Artist;
+      } elseif ($Actor) {
+        $maker = $Actor;
+      } elseif ($Creator) {
+        $maker = $Creator;
+      } elseif ($Director) {
+        $maker = $Director;
+      } elseif ($Publisher) {
         $maker = $Publisher;
       } elseif ($Manufacturer) {
         $maker = $Manufacturer;
