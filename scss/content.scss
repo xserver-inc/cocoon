@@ -60,6 +60,13 @@
   padding-top: 2em;
 }
 
+///////////////////////////////////////////
+// IE11対策
+///////////////////////////////////////////
+@media all and (-ms-high-contrast:none){
+  .eye-catch { display: block; } /* IE10～ */
+}
+
 .show-pinterest-button{
   .eye-catch:hover{
     .cat-label{

@@ -25,7 +25,7 @@ define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.dev' ? 1 : 0);
 //デバッグモード
 define('DEBUG_MODE', DEBAG_VALU);
 define('DEBUG_CACHE_ENABLE', 1);
-define('DEBUG_ADMIN_DEMO_ENABLE', !DEBUG_MODE);
+define('DEBUG_ADMIN_DEMO_ENABLE', 1/*!DEBUG_MODE*/);
 
 
 define('THEME_JS', THEME_NAME.'-js');
