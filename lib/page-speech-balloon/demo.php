@@ -13,7 +13,7 @@
     <?php
       generate_speech_balloon_tag(
         $record,
-        'VOICE'
+        __( 'ここに入力したテキストが表示されます。', THEME_NAME )
       );
     ?>
     </div>
