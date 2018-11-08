@@ -387,7 +387,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .no-thumbnail .entry-card-meta .entry-card-categorys > span { margin-left: 0.6em; }
 .admin-settings .demo img.emoji { display: inline; width: 1em; height: auto; vertical-align: text-bottom; margin-right: 0.1em; }
 .admin-settings .demo .header-in { display: flex; flex-direction: column; justify-content: center; }
-.admin-settings .demo .tagline { text-align: center; font-size: 14px; }
+.admin-settings .demo .tagline { text-align: center; font-size: 14px; margin: .6em 0; }
 .admin-settings .demo .logo { text-align: center; }
 .admin-settings .demo .logo-image * { display: inline-block; }
 .admin-settings .demo .site-name-text-link { color: #333; text-decoration: none; font-weight: normal; }
@@ -1403,7 +1403,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .no-thumbnail .entry-card-meta .entry-card-categorys > span { margin-left: 0.6em; }
 .admin-settings .demo img.emoji { display: inline; width: 1em; height: auto; vertical-align: text-bottom; margin-right: 0.1em; }
 .admin-settings .demo .header-in { display: flex; flex-direction: column; justify-content: center; }
-.admin-settings .demo .tagline { text-align: center; font-size: 14px; }
+.admin-settings .demo .tagline { text-align: center; font-size: 14px; margin: .6em 0; }
 .admin-settings .demo .logo { text-align: center; }
 .admin-settings .demo .logo-image * { display: inline-block; }
 .admin-settings .demo .site-name-text-link { color: #333; text-decoration: none; font-weight: normal; }
