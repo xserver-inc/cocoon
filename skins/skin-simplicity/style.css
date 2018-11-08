@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*
-  Skin Name: テスト中
-  Description: テスト中のスキン。
+  Skin Name: Simplicity Like
+  Description: 無料WordpressテーマSimplicityっぽいスキンです。
   Skin URI: https://wp-cocoon.com/
   Author: わいひら
   Author URI: https://nelog.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-template.png
   Version: 0.0.1
-  Priority: 9999999999
+  Priority: 11
   Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
@@ -66,3 +66,5 @@ blockquote::before, blockquote::after {
   .article h2 {
     margin: 40px 0;
     padding: 14px; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,7 @@
+,,オプション名と値をカンマ区切りで書く
+header_layout_type,center_logo_slim
+tagline_position,header_bottom
+main_column_padding,29
+main_column_border_width,1
+sidebar_padding,9
+sidebar_border_width,1
