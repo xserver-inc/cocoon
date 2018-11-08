@@ -7,7 +7,7 @@
  */
 
 if (!is_amp() || !is_ssl()): ?>
-<form class="search-box" method="get" action="<?php echo home_url('/'); ?>">
+<form class="search-box input-box" method="get" action="<?php echo home_url('/'); ?>">
 <?php else: ?>
 <form class="amp-form search-box" method="get" action="<?php echo home_url('/'); ?>" target="_top">
 <?php endif ?>
