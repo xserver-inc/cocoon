@@ -483,10 +483,13 @@ function convert_content_for_amp($the_content){
   //カエレバのstyle属性を取り除く
   $pattern = '{<div class="(kaerebalink-box|booklink-box|tomarebalink-box)".+?<div class="booklink-footer"}is';
   if (preg_match_all($pattern, $the_content, $m)) {
-    if (isset($m[0][0])) {
-      $kaereba_tag = $m[0][0];
-      $replaced_kaereba_tag = preg_replace('/ +?style=["][^"]*?["]/i', '', $kaereba_tag);
-      $the_content = str_replace($kaereba_tag, $replaced_kaereba_tag, $the_content);
+    if (isset($m[0])) {
+      foreach ($m[0] as $match) {
+        $kaereba_tag = $match;
+        $replaced_kaereba_tag = preg_replace('/ +?style=["][^"]*?["]/i', '', $kaereba_tag);
+        $the_content = str_replace($kaereba_tag, $replaced_kaereba_tag, $the_content);
+      }
+
     }
   }
 
