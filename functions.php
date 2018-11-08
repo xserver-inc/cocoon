@@ -197,7 +197,7 @@ function get_archive_chapter_title(){
     $chapter_title .= '<span class="fa fa-search"></span>"'.$search_query.'"';
   } elseif (is_day()) {
     //年月日のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y-m-n');
+    $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y-m-d');
   } elseif (is_month()) {
     //年と月のフォーマットを取得
     $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y-m');
