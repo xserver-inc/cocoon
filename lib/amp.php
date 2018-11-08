@@ -127,6 +127,11 @@ function convert_content_for_amp($the_content){
   // $the_content = preg_replace('/ +?style=["][^"]*?["]/i', '', $the_content);
   // $the_content = preg_replace('/ +?style=[\'][^\']*?[\']/i', '', $the_content);
 
+  //style属性にzoomが入っていれば取り除く
+  $pattern = '/style="(.*?)zoom:\s*1;(.*?)"/i';
+  $append = 'style="$1$2"';
+  $the_content = preg_replace($pattern, $append, $the_content);
+
   //target属性を取り除く
   $the_content = preg_replace('/ +?target=["](?!.*_blank).*?["]/i', '', $the_content);
   $the_content = preg_replace('/ +?target=[\'](?!.*_blank).*?[\']/i', '', $the_content);
