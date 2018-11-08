@@ -10,3 +10,28 @@
   Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
+
+$menu_color: #F7F7F7;
+$border_color: #ddd;
+
+.navi{
+  background-color: $menu_color;
+}
+
+.main,
+.navi{
+  border: 1px solid $border_color;
+}
+
+.header-in{
+  padding: 0 30px;
+}
+
+// .logo,
+// .tagline{
+//   text-align: left;
+// }
+
+.logo-text{
+  padding: 0;
+}

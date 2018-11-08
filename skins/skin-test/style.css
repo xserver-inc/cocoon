@@ -7,7 +7,19 @@
   Author URI: https://nelog.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-template.png
   Version: 0.0.1
-  Priority: 9999999999
+  Priority: 10010
   Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
+.navi {
+  background-color: #F7F7F7; }
+
+.main,
+.navi {
+  border: 1px solid #ddd; }
+
+.header-in {
+  padding: 0 30px; }
+
+.logo-text {
+  padding: 0; }
