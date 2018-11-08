@@ -480,6 +480,17 @@ function convert_content_for_amp($the_content){
   $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
   $the_content = preg_replace($pattern, $append, $the_content);
 
+  //カエレバのstyle属性を取り除く
+  $pattern = '{<div class="(kaerebalink-box|booklink-box|tomarebalink-box)".+?<div class="booklink-footer"}is';
+  if (preg_match_all($pattern, $the_content, $m)) {
+    if (isset($m[0][0])) {
+      $kaereba_tag = $m[0][0];
+      $replaced_kaereba_tag = preg_replace('/ +?style=["][^"]*?["]/i', '', $kaereba_tag);
+      $the_content = str_replace($kaereba_tag, $replaced_kaereba_tag, $the_content);
+    }
+  }
+
+
   //スクリプトを除去する
   $pattern = '/<p><script.+?<\/script><\/p>/i';
   $append = '';
