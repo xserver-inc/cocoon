@@ -438,8 +438,10 @@ function convert_content_for_amp($the_content){
         $width = 120;
         $height = 240;
         if (isset($m[$width_idx]) && isset($m[$height_idx])) {
-          $width = $m[$width_idx][$i];
-          $height = $m[$height_idx][$i];
+          if (!empty($m[$width_idx][$i]) && !empty($m[$height_idx][$i])) {
+            $width = $m[$width_idx][$i];
+            $height = $m[$height_idx][$i];
+          }
         }
         $iframe_new = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="'.$url.'" width="'.$width.'" height="'.$height.'">'.$amp_placeholder.'</amp-iframe>';
         //_v($iframe_new);
@@ -471,14 +473,14 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace($pattern, $append, $the_content);
 
 //_v($the_content);
-  //Amazon商品紹介iframeパーツのAMP化
-  $pattern = '/<amp-iframe layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d+" height="\d+")?/i';
-  $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  // //Amazon商品紹介iframeパーツのAMP化
+  // $pattern = '/<amp-iframe layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d+" height="\d+")?/i';
+  // $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
+  // $the_content = preg_replace($pattern, $append, $the_content);
 
-  $pattern = '/<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d*" height="\d*")?/i';
-  $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  // $pattern = '/<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d*" height="\d*")?/i';
+  // $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
+  // $the_content = preg_replace($pattern, $append, $the_content);
 
   //カエレバのstyle属性を取り除く
   $pattern = '{<div class="(kaerebalink-box|booklink-box|tomarebalink-box)".+?<div class="booklink-footer"}is';
