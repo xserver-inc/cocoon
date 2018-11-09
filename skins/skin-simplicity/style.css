@@ -8,7 +8,6 @@
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-template.png
   Version: 0.0.1
   Priority: 11
-  Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
 body {
@@ -66,5 +65,3 @@ blockquote::before, blockquote::after {
   .article h2 {
     margin: 40px 0;
     padding: 14px; } }
-
-/*# sourceMappingURL=style.css.map */
