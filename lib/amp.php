@@ -135,6 +135,10 @@ function convert_content_for_amp($the_content){
   $pattern = '/style="(.*?)-webkit-.+?:.+?;(.*?)"/i';
   $append = 'style="$1$2"';
   $the_content = preg_replace($pattern, $append, $the_content);
+  //style属性に_displayが入っていれば取り除く
+  $pattern = '/style="(.*?)_display:.+?;(.*?)"/i';
+  $append = 'style="$1$2"';
+  $the_content = preg_replace($pattern, $append, $the_content);
   //style属性に!importantが入っていれば取り除く
   $pattern = '/style="(.*?)!important(.*?)"/i';
   $append = 'style="$1$2"';
