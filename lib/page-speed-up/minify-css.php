@@ -155,7 +155,7 @@ function tag_code_to_minify_css($buffer) {
 
 
   //_v($buffer);
-  return $buffer;
+  return apply_filters('tag_code_to_minify_css', $buffer);
 }
 endif;
 
@@ -213,6 +213,6 @@ function css_url_to_css_minify_code( $url ) {
       }//foreach
     }//$res && $m[0]
   }//WP_Filesystem
-  return $css;
+  return apply_filters('css_url_to_css_minify_code', $css);
 }
 endif;
