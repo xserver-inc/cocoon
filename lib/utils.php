@@ -268,7 +268,10 @@ if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
   //スキンにより固定値がある場合は採用する
   $skin_option = get_skin_option($option_name);
-  if ($skin_option && !is_admin_php_page()) {
+  if ($skin_option !== null && !is_admin_php_page()) {
+    if ($skin_option == '0') {
+      $skin_option = 0;
+    }
     // _v($_POST);
     // _v($option_name);
     // _v($skin_option);
