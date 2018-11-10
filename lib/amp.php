@@ -123,26 +123,29 @@ function convert_content_for_amp($the_content){
   //C2A0文字コード（UTF-8の半角スペース）を通常の半角スペースに置換
   $the_content = str_replace('\xc2\xa0', ' ', $the_content);
 
-  // //style属性を取り除く
-  // $the_content = preg_replace('/ +?style=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ +?style=[\'][^\']*?[\']/i', '', $the_content);
-
-  //style属性にzoomが入っていれば取り除く
-  $pattern = '/style="(.*?)zoom:.+?;(.*?)"/i';
-  $append = 'style="$1$2"';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  //style属性に-webkitが入っていれば取り除く
-  $pattern = '/style="(.*?)-webkit-.+?:.+?;(.*?)"/i';
-  $append = 'style="$1$2"';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  //style属性に_displayが入っていれば取り除く
-  $pattern = '/style="(.*?)_display:.+?;(.*?)"/i';
-  $append = 'style="$1$2"';
-  $the_content = preg_replace($pattern, $append, $the_content);
-  //style属性に!importantが入っていれば取り除く
-  $pattern = '/style="(.*?)!important(.*?)"/i';
-  $append = 'style="$1$2"';
-  $the_content = preg_replace($pattern, $append, $the_content);
+  //インラインスタイルを除去する場合
+  if (is_amp_removal_inline_style_enable()) {
+    //style属性を取り除く
+    $the_content = preg_replace('/ +?style=["][^"]*?["]/i', '', $the_content);
+    $the_content = preg_replace('/ +?style=[\'][^\']*?[\']/i', '', $the_content);
+  } else {
+    //style属性にzoomが入っていれば取り除く
+    $pattern = '/style="(.*?)zoom:.+?;(.*?)"/i';
+    $append = 'style="$1$2"';
+    $the_content = preg_replace($pattern, $append, $the_content);
+    //style属性に-webkitが入っていれば取り除く
+    $pattern = '/style="(.*?)-webkit-.+?:.+?;(.*?)"/i';
+    $append = 'style="$1$2"';
+    $the_content = preg_replace($pattern, $append, $the_content);
+    //style属性に_displayが入っていれば取り除く
+    $pattern = '/style="(.*?)_display:.+?;(.*?)"/i';
+    $append = 'style="$1$2"';
+    $the_content = preg_replace($pattern, $append, $the_content);
+    //style属性に!importantが入っていれば取り除く
+    $pattern = '/style="(.*?)!important(.*?)"/i';
+    $append = 'style="$1$2"';
+    $the_content = preg_replace($pattern, $append, $the_content);
+  }
 
   //target属性を取り除く
   $the_content = preg_replace('/ +?target=["](?!.*_blank).*?["]/i', '', $the_content);
