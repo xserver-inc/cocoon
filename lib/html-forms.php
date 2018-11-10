@@ -117,7 +117,10 @@ endif;
 add_filter( 'admin_input_form_tag', 'wrap_skin_control_tag', 10, 2 );
 if ( !function_exists( 'wrap_skin_control_tag' ) ):
 function wrap_skin_control_tag($name, $tag){
-  if (get_skin_option($name)) {
+  // if ($name == '404_page_title') {
+  //   _v(get_skin_option($name));
+  // }
+  if (get_skin_option($name) !== null ) {
     $tag = get_skin_control_tag($tag);
   }
   return $tag;

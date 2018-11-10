@@ -228,6 +228,14 @@ function get_template_part_with_option($slug, $option = null){
 }
 endif;
 
+//スキンオプションが存在するか
+if ( !function_exists( 'is_skin_option' ) ):
+function is_skin_option($name){
+  global $_THEME_OPTIONS;
+  return isset($_THEME_OPTIONS[$name]);
+}
+endif;
+
 //スキンオプションの取得
 if ( !function_exists( 'get_skin_option' ) ):
 function get_skin_option($name){
