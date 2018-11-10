@@ -18,9 +18,6 @@ function tag_code_to_minify_js($buffer) {
   }
 
   if (is_js_minify_enable()) {
-    //最終出力縮小化JSコード
-    //$last_minfified_js = null;
-
     //JSファイルパターン
     $js_file_pattern = '<script[^>]+?javascript[^>]+?src=[\'"]([^\'"]+?)[\'"][^>]*?></script>';
     //JSインラインパターン
@@ -117,17 +114,7 @@ function tag_code_to_minify_js($buffer) {
 
         //インラインタイプのJavaScriptコードだった場合
         if ($js_code) {
-          // _v($script_tag);
-          // //除外リストにマッチするscriptタグ＆コード
-          // if (has_match_list_text($script_tag, get_js_minify_exclude_list())) {
-          //   continue;
-          // }
-          //_v($js_code);
           $js = minify_js($js_code);
-          // $attr_tag = null;
-          // if (!empty($attr_code)) {
-          //   $attr_tag = $attr_code;
-          // }
           //インラインタイプのscriptタグを縮小化して置換する
           $buffer = str_replace($script_tag, '<script'.$attr_code.'>'.$js.'</script>', $buffer);
         }
@@ -136,7 +123,7 @@ function tag_code_to_minify_js($buffer) {
     }//$res && isset($m[1])
   }//is_js_minify_enable()
 
-  return $buffer;
+  return apply_filters('tag_code_to_minify_js', $buffer);
 }
 endif;
 
@@ -151,17 +138,11 @@ function js_url_to_js_minify_code( $url ) {
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
   if ( file_exists($local_file) && $js = wp_filesystem_get_contents($local_file) ) {//WP_Filesystemの初期化
-    // global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    // $js = $wp_filesystem->get_contents($local_file);
 
     //コメントの除去
     $js = remove_code_comments($js);
-    // $js = preg_replace('{/\*.+?\*/}is', '', $js);
-    // $js = preg_replace('{^\s+//.+$}im', '', $js);
     //CSS内容を縮小化して書式を統一化する
     $js = minify_js($js);
-    //ScrollHintライブラリの相対パス問題
-    //$js = str_replace('var _util=require("./util");', 'var _util=require("util");', $js);
     //コード内scriptタグの処理
     $js = str_replace('"<script>"', '"</script"+">"', $js);
     $js = str_replace("'<script>'", "'</script'+'>'", $js);
@@ -172,7 +153,7 @@ function js_url_to_js_minify_code( $url ) {
 
 
   }//WP_Filesystem
-  return $js;
+  return apply_filters('js_url_to_js_minify_code', $js);
 }
 endif;
 
@@ -180,21 +161,9 @@ if ( !function_exists( 'remove_code_comments' ) ):
 function remove_code_comments($code){
   $code = preg_replace('{/\*.+?\*/}is', '', $code);
   $code = preg_replace('{^\s+//.+$}im', '', $code);
-  return $code;
+  return apply_filters('remove_code_comments', $code);
 }
 endif;
-
-// //type='text/javascript'の除去
-// add_filter( 'script_loader_tag', 'remove_type_text_javascript', 9999);
-// if ( !function_exists( 'remove_type_text_javascript' ) ):
-// function remove_type_text_javascript( $tag ) {
-//   //var_dump($tag);
-//   $tag = str_replace(" type='text/javascript'", '', $tag);
-//   $tag = str_replace(' type="text/javascript"', '', $tag);
-//   return $tag;
-// }
-// endif;
-
 
 /*async defer*/
 //add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );

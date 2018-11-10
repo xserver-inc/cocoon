@@ -187,9 +187,6 @@ function has_match_list_text($text, $list){
   $excludes = list_text_to_array($list);
   foreach ($excludes as $exclude_str) {
     if (strpos($text, $exclude_str) !== false) {
-    // _v($url);
-    // _v($exclude_str);
-    // _v(strpos($url, $exclude_str) !== false);
       return true;
     }
   }
