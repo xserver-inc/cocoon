@@ -125,12 +125,6 @@ function tag_code_to_minify_css($buffer) {
     //縮小化したCSSをデータの最後に付け加える
     if ($last_minfified_css) {
       $buffer = $buffer.PHP_EOL.'<style>'.$last_minfified_css.'</style>';
-
-     //$buffer = '<style>'.$last_minfified_css.'</style>'.PHP_EOL.$buffer;
-
-      // $title_end = '</title>';
-      // $all_style_tag = '<style>'.$last_minfified_css.'</style>';
-      // $buffer = str_replace($title_end, $title_end.PHP_EOL.$all_style_tag, $buffer);
     }
 
     ///////////////////////////////////////
@@ -149,8 +143,6 @@ function tag_code_to_minify_css($buffer) {
     }
 
 
-    // $buffer = str_replace('#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}}', '#bbpress-forums div.bbp-reply-author img.avatar{width:40px;height:auto}', $buffer);
-
   }//is_css_minify_enable()
 
 
@@ -168,8 +160,6 @@ function css_url_to_css_minify_code( $url ) {
 
   //if ( WP_Filesystem() && file_exists($local_file) ) {//WP_Filesystemの初期化
   if ( file_exists($local_file) && $css = wp_filesystem_get_contents($local_file) ) {//WP_Filesystemの初期化
-    // global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-    // $css = $wp_filesystem->get_contents($local_file);
 
     //文字セットの除去
     $css = preg_replace('{@charset[^;]+?;}i', '', $css);
