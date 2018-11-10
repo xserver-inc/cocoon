@@ -22,6 +22,14 @@ function get_amp_logo_image_url(){
 }
 endif;
 
+//インラインスタイルを取り除く
+define('OP_AMP_REMOVAL_INLINE_STYLE_ENABLE', 'amp_removal_inline_style_enable');
+if ( !function_exists( 'is_amp_removal_inline_style_enable' ) ):
+function is_amp_removal_inline_style_enable(){
+  return get_theme_option(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, 1);
+}
+endif;
+
 //AMP画像の拡大効果
 define('OP_AMP_IMAGE_ZOOM_EFFECT', 'amp_image_zoom_effect');
 if ( !function_exists( 'get_amp_image_zoom_effect' ) ):
