@@ -153,7 +153,7 @@ function js_url_to_js_minify_code( $url ) {
 
 
   }//WP_Filesystem
-  return apply_filters('js_url_to_js_minify_code', $js);
+  return apply_filters('js_url_to_js_minify_code', $js, $url);
 }
 endif;
 

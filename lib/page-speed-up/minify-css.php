@@ -203,6 +203,6 @@ function css_url_to_css_minify_code( $url ) {
       }//foreach
     }//$res && $m[0]
   }//WP_Filesystem
-  return apply_filters('css_url_to_css_minify_code', $css);
+  return apply_filters('css_url_to_css_minify_code', $css, $url);
 }
 endif;
