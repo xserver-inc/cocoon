@@ -10,21 +10,49 @@
   Visibility: false
 */
 /*以下にスタイルシートを記入してください*/
-
-$menu_color: #F7F7F7;
+$bg_color: #e6ecf0;
+$menu_color: #fff;
+$menu_hover_border_color: #1da1f2;
+$sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
 body {
-  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+  background-color: $bg_color;
 }
 
 .navi{
   background-color: $menu_color;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+  font-weight: bold;
+
+  a {
+    //border-bottom: 4px solid $menu_color;
+    //box-sizing: border-box;
+    &:hover{
+      background-color: $menu_color;
+      text-decoration: underline;
+      //border-bottom: 4px solid $menu_hover_border_color;
+    }
+
+  }
+
+  ul .sub-menu{
+    background-color: $sub_menu_hover_bg_color;
+    a{
+      color: $menu_color;
+      &:hover{
+        background-color: $sub_menu_hover_bg_color;
+      }
+
+      .sub-caption{
+        opacity: .7;
+      }
+    }
+
+  }
 }
 
-.main,
-.navi,
-.sidebar,
+
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select{
   border: 1px solid $border_color;
   border-radius: 4px;

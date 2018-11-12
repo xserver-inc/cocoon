@@ -12,14 +12,24 @@
 */
 /*以下にスタイルシートを記入してください*/
 body {
-  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif; }
+  background-color: #e6ecf0; }
 
 .navi {
-  background-color: #F7F7F7; }
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  font-weight: bold; }
+  .navi a:hover {
+    background-color: #fff;
+    text-decoration: underline; }
+  .navi ul .sub-menu {
+    background-color: #333; }
+    .navi ul .sub-menu a {
+      color: #fff; }
+      .navi ul .sub-menu a:hover {
+        background-color: #333; }
+      .navi ul .sub-menu a .sub-caption {
+        opacity: .7; }
 
-.main,
-.navi,
-.sidebar,
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px; }
