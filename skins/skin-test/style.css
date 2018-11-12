@@ -45,6 +45,10 @@ body {
 .tagcloud a {
   border: 1px solid #0095d9; }
 
+.page-numbers,
+.pagination-next-link {
+  border-radius: 8px; }
+
 .cat-label,
 .pagination-next-link {
   background-color: #0095d9;

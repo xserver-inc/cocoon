@@ -74,6 +74,11 @@ body {
   border: 1px solid $key_color;
 }
 
+.page-numbers,
+.pagination-next-link{
+  border-radius: 8px;
+}
+
 .cat-label,
 .pagination-next-link{
   background-color: $key_color;
