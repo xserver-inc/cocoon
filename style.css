@@ -5774,10 +5774,22 @@ input[type='submit'],
 }
 
 .carousel-entry-card-wrap.a-wrap {
-  padding: 2px 3px;
-  height: 180px;
   overflow: hidden;
   margin: 0 3px 3px;
+  position: relative;
+}
+.carousel-entry-card-wrap.a-wrap::before {
+  content: "";
+  display: block;
+  padding-top: 90%;
+}
+.carousel-entry-card-wrap.a-wrap .e-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 2px 3px;
 }
 
 .carousel-entry-card-thumb {
@@ -6839,6 +6851,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 18px;
     right: -4px;
     margin-top: 0;
+  }
+
+  .slick-dots {
+    display: none !important;
   }
 }
 @media screen and (max-width: 480px) {

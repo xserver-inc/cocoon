@@ -30,10 +30,25 @@
 }
 
 .carousel-entry-card-wrap.a-wrap{
-  padding: 2px 3px;
-  height: 180px;
+  //padding: 2px 3px;
   overflow: hidden;
   margin: 0 3px 3px;
+  //height: 180px;
+  position: relative;
+
+  &::before{
+    content:"";
+    display: block;
+    padding-top: 90%;
+  }
+  .e-card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 2px 3px;
+  }
 }
 
 .carousel-entry-card-thumb{
