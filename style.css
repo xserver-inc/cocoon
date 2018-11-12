@@ -3873,6 +3873,9 @@ canvas, iframe, video,
   margin: 0;
   font-size: 0.9em;
 }
+.nwa .author-box .author-description {
+  text-align: left;
+}
 .nwa .author-box .sns-follow-buttons {
   display: block;
   font-size: 1px;

@@ -1010,6 +1010,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .nwa .author-box { text-align: center; max-width: 336px; }
 .admin-settings .demo .nwa .author-box .author-thumb { float: none; width: 100px; margin: 9px auto 0; }
 .admin-settings .demo .nwa .author-box .author-content { margin: 0; font-size: 0.9em; }
+.admin-settings .demo .nwa .author-box .author-description { text-align: left; }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons { display: block; font-size: 1px; font-size: 0; }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a { display: inline-block; margin: 2px; }
 .admin-settings .demo .cta-box { background-color: #444; color: #fff; padding: 20px; }
@@ -2026,6 +2027,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .nwa .author-box { text-align: center; max-width: 336px; }
 .admin-settings .demo .nwa .author-box .author-thumb { float: none; width: 100px; margin: 9px auto 0; }
 .admin-settings .demo .nwa .author-box .author-content { margin: 0; font-size: 0.9em; }
+.admin-settings .demo .nwa .author-box .author-description { text-align: left; }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons { display: block; font-size: 1px; font-size: 0; }
 .admin-settings .demo .nwa .author-box .sns-follow-buttons a { display: inline-block; margin: 2px; }
 .admin-settings .demo .cta-box { background-color: #444; color: #fff; padding: 20px; }
