@@ -16,57 +16,11 @@ $key_color: #0095d9;
 $sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
+//グローバルナビ
+@import "navi";
+
 body {
   background-color: $bg_color;
-}
-
-#navi.navi{
-  background-color: $white;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
-  font-weight: bold;
-
-  a {
-    //border-bottom: 4px solid $white;
-    //box-sizing: border-box;
-    &:hover{
-      background-color: $white;
-      text-decoration: underline;
-      //border-bottom: 4px solid $key_color;
-    }
-
-  }
-
-  ul .sub-menu{
-    background-color: $sub_menu_hover_bg_color;
-    opacity: 0.9;
-    a{
-      color: $white;
-      &:hover{
-        background-color: $sub_menu_hover_bg_color;
-      }
-
-      .sub-caption{
-        opacity: .7;
-      }
-    }
-
-  }
-}
-
-//メニューアニメーション
-.navi-in > ul {
-  .sub-menu{
-    display: block;
-  }
-  .sub-menu li{
-    visibility: hidden;
-    transition: all 0.2s ease;
-    height: 0;
-}
-  li:hover > ul > li{
-    visibility: visible;
-    height: 60px;
-  }
 }
 
 .page-numbers,
