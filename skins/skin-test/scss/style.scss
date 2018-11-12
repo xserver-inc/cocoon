@@ -37,8 +37,14 @@ a:hover{
 .post-navi-square.post-navi-border a,
 .author-box,
 .ranking-item,
-.pagination-next-link{
+.pagination-next-link,
+.comment-reply-link,
+.toc{
   border: 1px solid $key_sub_color;
+}
+
+.toc{
+  width: 80%;
 }
 
 .page-numbers,
@@ -52,9 +58,16 @@ a:hover{
 .mobile-menu-buttons .menu-button > a,
 .navi-menu-content,
 .navi-menu-content a,
-.go-to-top-button{
+.go-to-top-button,
+#submit{
   background-color: $key_color;
   color: $white;
+}
+
+#submit{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
 }
 
 div.mobile-menu-buttons .menu-button:hover,

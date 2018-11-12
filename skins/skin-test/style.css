@@ -53,8 +53,13 @@ a:hover {
 .post-navi-square.post-navi-border a,
 .author-box,
 .ranking-item,
-.pagination-next-link {
+.pagination-next-link,
+.comment-reply-link,
+.toc {
   border: 1px solid #89c3eb; }
+
+.toc {
+  width: 80%; }
 
 .page-numbers,
 .pagination-next-link {
@@ -66,9 +71,15 @@ a:hover {
 .mobile-menu-buttons .menu-button > a,
 .navi-menu-content,
 .navi-menu-content a,
-.go-to-top-button {
+.go-to-top-button,
+#submit {
   background-color: #0095d9;
   color: #fff; }
+
+#submit {
+  width: 80%;
+  margin: 0 auto;
+  display: block; }
 
 div.mobile-menu-buttons .menu-button:hover,
 .navi-menu-content a:hover {
