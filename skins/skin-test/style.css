@@ -35,11 +35,15 @@
   transition: all 0.2s ease;
   height: 0; }
 .navi-in > ul li:hover > ul > li {
+  transition: all 0.2s ease;
   visibility: visible;
   height: 60px; }
 
 body {
   background-color: #e6ecf0; }
+
+a:hover {
+  background-color: rgba(0, 149, 217, 0.05); }
 
 .page-numbers,
 .tagcloud a,
@@ -98,10 +102,24 @@ div.mobile-menu-buttons .menu-button:hover,
   content: '\f105'; }
 
 .post-count {
-  background-color: #f3f3f3;
+  background-color: rgba(0, 149, 217, 0.05);
   padding: 0 8px;
   border-radius: 6px;
   font-size: 0.8em; }
+
+.a-wrap {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 4px; }
+  .a-wrap:hover {
+    background-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+    transition-duration: 0.3s; }
+
+.comment-list ul.children {
+  padding: 0.6em;
+  background-color: rgba(0, 149, 217, 0.05);
+  border-left: 2px solid #89c3eb; }
 
 .sidebar h3 {
   background: transparent;

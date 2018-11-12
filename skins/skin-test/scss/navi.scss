@@ -43,6 +43,7 @@
     height: 0;
 }
   li:hover > ul > li{
+    transition: all 0.2s ease;
     visibility: visible;
     height: 60px;
   }

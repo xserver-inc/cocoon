@@ -14,6 +14,7 @@ $bg_color: #e6ecf0;
 $white: #fff;
 $key_color: #0095d9;
 $key_sub_color: #89c3eb;
+$key_color_thin: rgba(0, 149, 217, 0.05);
 $sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
@@ -22,6 +23,10 @@ $border_color: #ccc;
 
 body {
   background-color: $bg_color;
+}
+
+a:hover{
+  background-color: $key_color_thin;
 }
 
 .page-numbers,
@@ -89,11 +94,43 @@ div.mobile-menu-buttons .menu-button:hover,
 }
 
 .post-count{
-  background-color: #f3f3f3;
+  background-color: $key_color_thin;
   padding: 0 8px;
   border-radius: 6px;
   font-size: 0.8em;
 }
+
+.a-wrap{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  &:hover{
+    background-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+    transition-duration: 0.3s;
+
+    // .card-thumb{
+    //   overflow: hidden;
+    //   img{
+    //     transition-duration: 0.3s;
+    //     //transform: translateY(-4px);
+    //     transform: scale(1.2);
+    //   }
+    // }
+  }
+
+}
+
+
+
+.comment-list{
+  ul.children{
+    padding: 0.6em;
+    background-color: $key_color_thin;
+    border-left: 2px solid $key_sub_color;
+  }
+}
+
 
 // .header-in{
 //   padding: 0 30px;
