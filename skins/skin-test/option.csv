@@ -2,6 +2,4 @@
 header_layout_type,center_logo
 header_background_color,#0095d9
 header_text_color,#fff
-entry_card_border_visible,1
-related_entry_border_visible,1
-post_navi_border_visible,1
+

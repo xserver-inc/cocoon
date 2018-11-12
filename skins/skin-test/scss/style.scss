@@ -32,9 +32,9 @@ a:hover{
 
 .page-numbers,
 .tagcloud a,
-#list .a-wrap,
-#related-entries .a-wrap,
-.post-navi-square.post-navi-border a,
+// #list .a-wrap,
+// #related-entries .a-wrap,
+// .post-navi-square.post-navi-border a,
 .author-box,
 .ranking-item,
 .pagination-next-link,
@@ -124,6 +124,7 @@ div.mobile-menu-buttons .menu-button:hover,
 .a-wrap{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   border-radius: 4px;
+  transition-duration: 0.3s;
   &:hover{
     background-color: transparent;
     transform: translateY(-4px);
@@ -142,6 +143,15 @@ div.mobile-menu-buttons .menu-button:hover,
 
 }
 
+.carousel-entry-card-wrap{
+  height: 180px;
+  overflow: hidden;
+  margin: 0 3px 3px !important;
+}
+
+.widget-entry-card-link{
+  margin-bottom: 8px;
+}
 
 
 .comment-list{
