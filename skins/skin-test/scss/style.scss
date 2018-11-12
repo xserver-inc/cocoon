@@ -13,6 +13,7 @@
 $bg_color: #e6ecf0;
 $white: #fff;
 $key_color: #0095d9;
+$key_sub_color: #89c3eb;
 $sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
@@ -24,8 +25,13 @@ body {
 }
 
 .page-numbers,
-.tagcloud a{
-  border: 1px solid $key_color;
+.tagcloud a,
+#list .a-wrap,
+#related-entries .a-wrap,
+.post-navi-square.post-navi-border a,
+.author-box,
+.ranking-item{
+  border: 1px solid $key_sub_color;
 }
 
 .page-numbers,
@@ -34,9 +40,24 @@ body {
 }
 
 .cat-label,
-.pagination-next-link{
+.pagination-next-link,
+.mobile-menu-buttons,
+.mobile-menu-buttons .menu-button > a,
+.navi-menu-content,
+.navi-menu-content a{
   background-color: $key_color;
   color: $white;
+}
+
+div.mobile-menu-buttons .menu-button:hover,
+.navi-menu-content a:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  color: $white;
+}
+
+.mobile-menu-buttons .menu-button:hover{
+  background-color: transparent;
+  color: $white;color: $white;
 }
 
 .cat-label{

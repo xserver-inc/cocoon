@@ -4918,11 +4918,11 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 .mobile-menu-buttons .menu-button > a {
   color: #333;
   text-decoration: none;
-  cursor: default;
 }
 .mobile-menu-buttons .menu-button:hover {
   background-color: #f5f8fa;

@@ -42,16 +42,35 @@ body {
   background-color: #e6ecf0; }
 
 .page-numbers,
-.tagcloud a {
-  border: 1px solid #0095d9; }
+.tagcloud a,
+#list .a-wrap,
+#related-entries .a-wrap,
+.post-navi-square.post-navi-border a,
+.author-box,
+.ranking-item {
+  border: 1px solid #89c3eb; }
 
 .page-numbers,
 .pagination-next-link {
   border-radius: 8px; }
 
 .cat-label,
-.pagination-next-link {
+.pagination-next-link,
+.mobile-menu-buttons,
+.mobile-menu-buttons .menu-button > a,
+.navi-menu-content,
+.navi-menu-content a {
   background-color: #0095d9;
+  color: #fff; }
+
+div.mobile-menu-buttons .menu-button:hover,
+.navi-menu-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff; }
+
+.mobile-menu-buttons .menu-button:hover {
+  background-color: transparent;
+  color: #fff;
   color: #fff; }
 
 .cat-label {

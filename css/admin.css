@@ -1193,8 +1193,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { margin-top: 3px; text-align: center; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 12px; text-align: center; display: block; }
-.admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; }
-.admin-settings .demo .mobile-menu-buttons .menu-button > a { color: #333; text-decoration: none; cursor: default; }
+.admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
+.admin-settings .demo .mobile-menu-buttons .menu-button > a { color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
@@ -2209,8 +2209,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { margin-top: 3px; text-align: center; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 12px; text-align: center; display: block; }
-.admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; }
-.admin-settings .demo .mobile-menu-buttons .menu-button > a { color: #333; text-decoration: none; cursor: default; }
+.admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
+.admin-settings .demo .mobile-menu-buttons .menu-button > a { color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
