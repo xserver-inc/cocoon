@@ -241,7 +241,7 @@ endif;
 if ( !function_exists( 'is_the_page_nofollow' ) ):
 function is_the_page_nofollow($id = null){
   $the_id = $id ? $id : get_the_ID();
-  $value = get_post_meta($the_id, 'the_page_noindex', true);
+  $value = get_post_meta($the_id, 'the_page_nofollow', true);
 
   if (is_migrate_from_simplicity())
     $value = $value ? $value : get_post_meta($the_id,'is_nofollow', true);
