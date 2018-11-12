@@ -132,12 +132,7 @@ div.mobile-menu-buttons .menu-button:hover,
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
     transition-duration: 0.3s; }
 
-.carousel-entry-card-wrap {
-  height: 180px;
-  overflow: hidden;
-  margin: 0 3px 3px !important; }
-
-.widget-entry-card-link {
+.widget-entry-cards .a-wrap {
   margin-bottom: 8px; }
 
 .comment-list ul.children {

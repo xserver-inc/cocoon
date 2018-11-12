@@ -5775,7 +5775,9 @@ input[type='submit'],
 
 .carousel-entry-card-wrap.a-wrap {
   padding: 2px 3px;
-  margin: 0;
+  height: 180px;
+  overflow: hidden;
+  margin: 0 3px 3px;
 }
 
 .carousel-entry-card-thumb {
