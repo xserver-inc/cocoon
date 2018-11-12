@@ -97,15 +97,27 @@ body {
   border-radius: 4px;
 }
 
+.widget_recent_entries ul li a,
 .widget_categories ul li a,
 .widget_archive ul li a{
   border-bottom: 1px dashed $border_color;
+  padding: 5px 0;
+}
+
+.cat-item a::before{
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 6px;
+}
+.cat-item .children a::before{
+  content: '\f105';
 }
 
 .post-count{
   background-color: #f3f3f3;
-  padding: 2px 8px;
+  padding: 0 8px;
   border-radius: 6px;
+  font-size: 0.8em;
 }
 
 // .header-in{
