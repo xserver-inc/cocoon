@@ -19,14 +19,14 @@
     background-color: #fff;
     text-decoration: underline; }
   .navi ul .sub-menu {
-    background-color: #333;
+    background-color: #0095d9;
     opacity: 0.9; }
     .navi ul .sub-menu a {
       color: #fff; }
       .navi ul .sub-menu a:hover {
-        background-color: #333; }
+        background-color: #0095d9; }
       .navi ul .sub-menu a .sub-caption {
-        opacity: .7; }
+        opacity: .8; }
 
 .navi-in > ul .sub-menu {
   display: block; }
@@ -40,7 +40,8 @@
   height: 60px; }
 
 body {
-  background-color: #e6ecf0; }
+  background-color: #e6ecf0;
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif; }
 
 a:hover {
   background-color: rgba(0, 149, 217, 0.05); }
@@ -51,19 +52,21 @@ a:hover {
 #related-entries .a-wrap,
 .post-navi-square.post-navi-border a,
 .author-box,
-.ranking-item {
+.ranking-item,
+.pagination-next-link {
   border: 1px solid #89c3eb; }
 
 .page-numbers,
 .pagination-next-link {
-  border-radius: 8px; }
+  border-radius: 8px;
+  background: rgba(0, 149, 217, 0.05); }
 
 .cat-label,
-.pagination-next-link,
 .mobile-menu-buttons,
 .mobile-menu-buttons .menu-button > a,
 .navi-menu-content,
-.navi-menu-content a {
+.navi-menu-content a,
+.go-to-top-button {
   background-color: #0095d9;
   color: #fff; }
 
@@ -106,6 +109,10 @@ div.mobile-menu-buttons .menu-button:hover,
   padding: 0 8px;
   border-radius: 6px;
   font-size: 0.8em; }
+
+.main,
+.sidebar {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 
 .a-wrap {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);

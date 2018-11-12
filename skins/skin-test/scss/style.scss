@@ -23,6 +23,7 @@ $border_color: #ccc;
 
 body {
   background-color: $bg_color;
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
 }
 
 a:hover{
@@ -35,21 +36,23 @@ a:hover{
 #related-entries .a-wrap,
 .post-navi-square.post-navi-border a,
 .author-box,
-.ranking-item{
+.ranking-item,
+.pagination-next-link{
   border: 1px solid $key_sub_color;
 }
 
 .page-numbers,
 .pagination-next-link{
   border-radius: 8px;
+  background: $key_color_thin;
 }
 
 .cat-label,
-.pagination-next-link,
 .mobile-menu-buttons,
 .mobile-menu-buttons .menu-button > a,
 .navi-menu-content,
-.navi-menu-content a{
+.navi-menu-content a,
+.go-to-top-button{
   background-color: $key_color;
   color: $white;
 }
@@ -100,6 +103,11 @@ div.mobile-menu-buttons .menu-button:hover,
   font-size: 0.8em;
 }
 
+.main,
+.sidebar{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+}
+
 .a-wrap{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
   border-radius: 4px;
@@ -130,6 +138,10 @@ div.mobile-menu-buttons .menu-button:hover,
     border-left: 2px solid $key_sub_color;
   }
 }
+
+// .footer{
+//   box-shadow: 3px 0 0 0 rgba(0,0,0,.25);
+// }
 
 
 // .header-in{

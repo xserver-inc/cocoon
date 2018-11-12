@@ -16,16 +16,16 @@
   }
 
   ul .sub-menu{
-    background-color: $sub_menu_hover_bg_color;
+    background-color: $key_color;
     opacity: 0.9;
     a{
       color: $white;
       &:hover{
-        background-color: $sub_menu_hover_bg_color;
+        background-color: $key_color;
       }
 
       .sub-caption{
-        opacity: .7;
+        opacity: .8;
       }
     }
 
