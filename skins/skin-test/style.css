@@ -14,31 +14,60 @@
 body {
   background-color: #e6ecf0; }
 
-.navi {
+#navi.navi {
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
   font-weight: bold; }
-  .navi a:hover {
+  #navi.navi a:hover {
     background-color: #fff;
     text-decoration: underline; }
-  .navi ul .sub-menu {
-    background-color: #333; }
-    .navi ul .sub-menu a {
+  #navi.navi ul .sub-menu {
+    background-color: #333;
+    opacity: 0.9; }
+    #navi.navi ul .sub-menu a {
       color: #fff; }
-      .navi ul .sub-menu a:hover {
+      #navi.navi ul .sub-menu a:hover {
         background-color: #333; }
-      .navi ul .sub-menu a .sub-caption {
+      #navi.navi ul .sub-menu a .sub-caption {
         opacity: .7; }
+
+.navi-in > ul .sub-menu {
+  display: block; }
+.navi-in > ul .sub-menu li {
+  visibility: hidden;
+  transition: all 0.2s ease;
+  height: 0; }
+.navi-in > ul li:hover > ul > li {
+  visibility: visible;
+  height: 60px; }
+
+.page-numbers,
+.tagcloud a {
+  border: 1px solid #0095d9; }
+
+.cat-label,
+.pagination-next-link {
+  background-color: #0095d9;
+  color: #fff; }
+
+.cat-label {
+  top: 0;
+  left: 0;
+  border: none;
+  border-bottom-right-radius: 3px; }
 
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px; }
 
-.header-in {
-  padding: 0 30px; }
+.widget_categories ul li a,
+.widget_archive ul li a {
+  border-bottom: 1px dashed #ccc; }
 
-.logo-text {
-  padding: 0; }
+.post-count {
+  background-color: #f3f3f3;
+  padding: 2px 8px;
+  border-radius: 6px; }
 
 .sidebar h3 {
   background: transparent;

@@ -11,8 +11,8 @@
 */
 /*以下にスタイルシートを記入してください*/
 $bg_color: #e6ecf0;
-$menu_color: #fff;
-$menu_hover_border_color: #1da1f2;
+$white: #fff;
+$key_color: #0095d9;
 $sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
@@ -20,26 +20,27 @@ body {
   background-color: $bg_color;
 }
 
-.navi{
-  background-color: $menu_color;
+#navi.navi{
+  background-color: $white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
   font-weight: bold;
 
   a {
-    //border-bottom: 4px solid $menu_color;
+    //border-bottom: 4px solid $white;
     //box-sizing: border-box;
     &:hover{
-      background-color: $menu_color;
+      background-color: $white;
       text-decoration: underline;
-      //border-bottom: 4px solid $menu_hover_border_color;
+      //border-bottom: 4px solid $key_color;
     }
 
   }
 
   ul .sub-menu{
     background-color: $sub_menu_hover_bg_color;
+    opacity: 0.9;
     a{
-      color: $menu_color;
+      color: $white;
       &:hover{
         background-color: $sub_menu_hover_bg_color;
       }
@@ -52,24 +53,68 @@ body {
   }
 }
 
+//メニューアニメーション
+.navi-in > ul {
+  .sub-menu{
+    display: block;
+  }
+  .sub-menu li{
+    visibility: hidden;
+    transition: all 0.2s ease;
+    height: 0;
+}
+  li:hover > ul > li{
+    visibility: visible;
+    height: 60px;
+  }
+}
+
+.page-numbers,
+.tagcloud a{
+  border: 1px solid $key_color;
+}
+
+.cat-label,
+.pagination-next-link{
+  background-color: $key_color;
+  color: $white;
+}
+
+.cat-label{
+  top: 0;
+  left: 0;
+  border: none;
+  border-bottom-right-radius: 3px;
+}
 
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select{
   border: 1px solid $border_color;
   border-radius: 4px;
 }
 
-.header-in{
-  padding: 0 30px;
+.widget_categories ul li a,
+.widget_archive ul li a{
+  border-bottom: 1px dashed $border_color;
 }
+
+.post-count{
+  background-color: #f3f3f3;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+// .header-in{
+//   padding: 0 30px;
+// }
 
 // .logo,
 // .tagline{
 //   text-align: left;
 // }
 
-.logo-text{
-  padding: 0;
-}
+// .logo-text{
+//   padding: 0;
+// }
 
 .sidebar h3{
   background: transparent;
