@@ -1,0 +1,213 @@
+@charset "UTF-8";
+/*
+  Skin Name: COLORS（イエロー）
+  Description: 日本の伝統食・山吹色（#f8b500）をベースとしたシンプルスキン。
+  Skin URI: https://wp-cocoon.com/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-yellow.png
+  Version: 1.0.0
+  Priority: 104
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+body {
+  background-color: #fbfaf5;
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+  background-color: rgba(248, 181, 0, 0.05);
+}
+
+.page-numbers,
+.tagcloud a,
+.author-box,
+.ranking-item,
+.pagination-next-link,
+.comment-reply-link,
+.toc {
+  border: 1px solid #ffec47;
+}
+
+.toc {
+  width: 80%;
+}
+
+.page-numbers,
+.pagination-next-link {
+  border-radius: 8px;
+  background: rgba(248, 181, 0, 0.05);
+}
+
+.cat-label,
+.mobile-menu-buttons,
+.mobile-menu-buttons .menu-button > a,
+.navi-menu-content,
+.navi-menu-content a,
+.go-to-top-button,
+#submit {
+  background-color: #f8b500;
+  color: #fff;
+}
+
+#submit {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+div.mobile-menu-buttons .menu-button:hover,
+.navi-menu-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.mobile-menu-buttons .menu-button:hover {
+  background-color: transparent;
+  color: #fff;
+  color: #fff;
+}
+
+.cat-label {
+  top: 0;
+  left: 0;
+  border: none;
+  border-bottom-right-radius: 3px;
+}
+
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a {
+  border-bottom: 1px dashed #ccc;
+  padding: 5px 0;
+}
+
+.cat-item a::before {
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 6px;
+}
+
+.cat-item .children a::before {
+  content: '\f105';
+}
+
+.post-count {
+  background-color: #fff6e0;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 0.8em;
+}
+
+.main,
+.sidebar,
+.carousel-in,
+.sbp-main-before,
+.sbp-footer-before,
+.pbp-main-before,
+.pbp-footer-before {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.a-wrap {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  transition-duration: 0.3s;
+}
+.a-wrap:hover {
+  background-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.3s;
+}
+
+.widget-entry-cards .a-wrap {
+  margin-bottom: 8px;
+}
+
+.comment-list ul.children {
+  padding: 0.6em;
+  background-color: rgba(248, 181, 0, 0.05);
+  border-left: 2px solid #ffec47;
+}
+
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  border-radius: 50%;
+  background: #f8b500;
+  top: -10px;
+  left: -10px;
+  border: 2px solid #eee;
+}
+
+.navi {
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+.navi a:hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
+.navi ul .sub-menu {
+  background-color: #f8b500;
+  opacity: 0.96;
+}
+.navi ul .sub-menu a {
+  color: #fff;
+}
+.navi ul .sub-menu a:hover {
+  background-color: #f8b500;
+}
+.navi ul .sub-menu a .sub-caption {
+  opacity: .8;
+}
+
+.navi-in > ul .sub-menu {
+  display: block;
+}
+.navi-in > ul .sub-menu li {
+  visibility: hidden;
+  transition: all 0.2s ease;
+  height: 0;
+}
+.navi-in > ul li:hover > ul > li {
+  transition: all 0.2s ease;
+  visibility: visible;
+  height: 60px;
+}
+
+.sidebar h3 {
+  background: transparent;
+  padding: 0.4em;
+  margin: 0.3em 0;
+}
+
+.article h2 {
+  background: #fff6e0;
+  border-left: solid 5px #f8b500;
+}
+
+.article h3 {
+  border: none;
+  border-left: solid 5px #f8b500;
+}
+
+.article h4 {
+  border: none;
+  border-bottom: 6px solid #fff6e0;
+}
+
+.article h5,
+.article h6 {
+  border: none;
+}
+
+blockquote::before, blockquote::after {
+  content: "“";
+}

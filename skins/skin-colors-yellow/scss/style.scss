@@ -1,0 +1,29 @@
+/*
+  Skin Name: COLORS（イエロー）
+  Description: 日本の伝統食・山吹色（#f8b500）をベースとしたシンプルスキン。
+  Skin URI: https://wp-cocoon.com/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-yellow.png
+  Version: 1.0.0
+  Priority: 104
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+$bg_color: #fbfaf5;
+$white: #fff;
+$key_color: #f8b500;
+$key_sub_color: #ffec47;
+$key_color_thin: rgba(248, 181, 0, 0.05);
+$h_bk_color: #fff6e0;
+$sub_menu_hover_bg_color: #333;
+$border_color: #ccc;
+
+//基本要素
+@import "base";
+//グローバルナビ
+@import "navi";
+//見出し
+@import "h";
+//追加
+@import "add";

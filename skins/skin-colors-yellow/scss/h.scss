@@ -1,0 +1,54 @@
+
+.sidebar h3{
+  background: transparent;
+  padding: 0.4em;
+  margin: 0.3em 0;
+}
+
+.article h2 {
+  background: $h_bk_color;
+  border-left: solid 5px $key_color;
+}
+
+
+.article h3 {
+  border: none;
+  border-left: solid 5px $key_color;
+}
+
+// .article h3 {
+//   border: none;
+//   font-size: 23px;
+//   border-bottom: 5px solid #e7e7e7;
+//   padding: 10px 0;
+// }
+
+.article h4 {
+  border: none;
+  border-bottom: 6px solid $h_bk_color;
+}
+
+.article h5,
+.article h6{
+  border: none;
+}
+
+blockquote::before, blockquote::after{
+  content: "“";
+}
+
+// //768px以下
+// @media screen and (max-width: 768px){
+//   .article h1, .entry h2 a, #archive-title, .article h2, .article h3, .article h4, .article h5 .article h6, .article h3, #comment-area h2, #related-entries h2{
+//     font-size: 20px;
+//   }
+//   .article h2{
+//     margin: 40px 0;
+//     padding: 14px;
+//   }
+// }
+
+// //480px以下
+// @media screen and (max-width: 480px){
+
+// }
