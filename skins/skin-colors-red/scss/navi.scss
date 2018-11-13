@@ -1,0 +1,50 @@
+//グローバルナビ関係
+.navi{
+  background-color: $white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+  font-weight: bold;
+
+  a {
+    //border-bottom: 4px solid $white;
+    //box-sizing: border-box;
+    &:hover{
+      background-color: $white;
+      text-decoration: underline;
+      //border-bottom: 4px solid $key_color;
+    }
+
+  }
+
+  ul .sub-menu{
+    background-color: $key_color;
+    opacity: 0.9;
+    a{
+      color: $white;
+      &:hover{
+        background-color: $key_color;
+      }
+
+      .sub-caption{
+        opacity: .8;
+      }
+    }
+
+  }
+}
+
+//メニューアニメーション
+.navi-in > ul {
+  .sub-menu{
+    display: block;
+  }
+  .sub-menu li{
+    visibility: hidden;
+    transition: all 0.2s ease;
+    height: 0;
+}
+  li:hover > ul > li{
+    transition: all 0.2s ease;
+    visibility: visible;
+    height: 60px;
+  }
+}
