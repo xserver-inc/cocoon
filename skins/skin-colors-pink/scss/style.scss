@@ -1,0 +1,29 @@
+/*
+  Skin Name: COLORS（ピンク）
+  Description: 日本の伝統食・躑躅色（#e95295）をベースとしたシンプルスキン。
+  Skin URI: https://wp-cocoon.com/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-pink.png
+  Version: 1.0.0
+  Priority: 106
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+$bg_color: #fef4f4;
+$white: #fff;
+$key_color: #e95295;
+$key_sub_color: #eebbcb;
+$key_color_thin: rgba(233, 82, 149, 0.05);
+$h_bk_color: #fdeff2;
+$sub_menu_hover_bg_color: #333;
+$border_color: #ccc;
+
+//基本要素
+@import "base";
+//グローバルナビ
+@import "navi";
+//見出し
+@import "h";
+//追加
+@import "add";
