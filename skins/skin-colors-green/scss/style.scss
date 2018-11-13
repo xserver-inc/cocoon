@@ -1,0 +1,29 @@
+/*
+  Skin Name: COLORS（グリーン）
+  Description: 日本の伝統食・常磐色（#007b43）をベースとしたシンプルスキン。
+  Skin URI: https://wp-cocoon.com/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-green.png
+  Version: 1.0.0
+  Priority: 105
+  Visibility: false
+*/
+/*以下にスタイルシートを記入してください*/
+$bg_color: #f3f3f2;
+$white: #fff;
+$key_color: #007b43;
+$key_sub_color: #98d98e;
+$key_color_thin: rgba(211, 56, 28, 0.05);
+$h_bk_color: #f1f7ed;
+$sub_menu_hover_bg_color: #333;
+$border_color: #ccc;
+
+//基本要素
+@import "base";
+//グローバルナビ
+@import "navi";
+//見出し
+@import "h";
+//追加
+@import "add";
