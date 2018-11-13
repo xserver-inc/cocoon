@@ -113,6 +113,13 @@ div.mobile-menu-buttons .menu-button:hover,
   background-color: rgba(0, 149, 217, 0.05);
   border-left: 2px solid #89c3eb; }
 
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  border-radius: 50%;
+  background: #89c3eb;
+  top: -10px;
+  left: -10px;
+  border: 2px solid #eee; }
+
 .navi {
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
