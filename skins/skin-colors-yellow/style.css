@@ -221,3 +221,7 @@ div.mobile-menu-buttons .menu-button:hover,
 blockquote::before, blockquote::after {
   content: "“";
 }
+
+#tinymce.main {
+  box-shadow: none;
+}
