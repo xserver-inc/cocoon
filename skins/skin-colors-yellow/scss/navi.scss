@@ -21,7 +21,7 @@
     a{
       color: $white;
       &:hover{
-        background-color: $key_color;
+        background-color: rgba(255,255,255,0.2);
       }
 
       .sub-caption{
