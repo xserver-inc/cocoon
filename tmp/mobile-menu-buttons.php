@@ -13,7 +13,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
     <!-- メニューボタン -->
     <div class="navi-menu-button menu-button">
       <input id="navi-menu-input" type="checkbox" class="display-none">
-      <label id="navi-menu-open" class="menu-open" for="navi-menu-input">
+      <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
         <span class="navi-menu-icon menu-icon"></span>
         <span class="navi-menu-caption menu-caption"><?php _e( 'メニュー', THEME_NAME ) ?></span>
       </label>
@@ -48,7 +48,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
 
   <!-- ホームボタン -->
   <div class="home-menu-button menu-button">
-    <a href="<?php echo home_url(); ?>">
+    <a href="<?php echo home_url(); ?>" class="menu-button-in">
       <div class="home-menu-icon menu-icon"></div>
       <div class="home-menu-caption menu-caption"><?php _e( 'ホーム', THEME_NAME ) ?></div>
     </a>
@@ -59,7 +59,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
     <!-- 検索ボタン -->
     <div class="search-menu-button menu-button">
       <input id="search-menu-input" type="checkbox" class="display-none">
-      <label id="search-menu-open" class="menu-open" for="search-menu-input">
+      <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
         <span class="search-menu-icon menu-icon"></span>
         <span class="search-menu-caption menu-caption"><?php _e( '検索', THEME_NAME ) ?></span>
       </label>
@@ -81,7 +81,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
    ?>
   <!-- トップボタン -->
   <div class="top-menu-button menu-button">
-    <a class="go-to-top-common top-menu-a"<?php echo $on; ?>>
+    <a class="go-to-top-common top-menu-a"<?php echo $on; ?> class="menu-button-in">
       <div class="top-menu-icon menu-icon"></div>
       <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
     </a>
@@ -91,7 +91,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
   <!-- サイドバーボタン -->
     <div class="sidebar-menu-button menu-button">
       <input id="sidebar-menu-input" type="checkbox" class="display-none">
-      <label id="sidebar-menu-open" class="menu-open" for="sidebar-menu-input">
+      <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
         <span class="sidebar-menu-icon menu-icon"></span>
         <span class="sidebar-menu-caption menu-caption"><?php _e( 'サイドバー', THEME_NAME ) ?></span>
       </label>

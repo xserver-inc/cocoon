@@ -81,10 +81,8 @@ div.mobile-menu-buttons .menu-button:hover,
   color: #fff;
 }
 
-.mobile-menu-buttons .menu-button:hover {
-  background-color: transparent;
-  color: #fff;
-  color: #fff;
+.sidebar-menu-content {
+  color: #333;
 }
 
 .cat-label {
