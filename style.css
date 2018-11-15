@@ -1127,6 +1127,9 @@ img.emoji {
 .bc-brand-color.sns-share .amazon-button, .bc-brand-color.sns-follow .amazon-button {
   background-color: #ff9900;
 }
+.bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button {
+  background-color: #c61e79;
+}
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
   background-color: #4078c0;
 }
@@ -3361,6 +3364,12 @@ label.screen-reader-text {
 
 .fbc-hide .follow-count {
   display: none;
+}
+
+.icon-rakuten-room-logo::before {
+  content: 'R';
+  font-family: Arial, serif;
+  font-weight: 700;
 }
 
 /************************************

@@ -64,6 +64,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_amazon_url(); //Amazon欲しい物リストURLの取得 ?>" class="follow-button amazon-button amazon-follow-button-sq" target="_blank" title="<?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-amazon-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_rakuten_room_url() )://楽天ROOMボタンを表示するか ?>
+    <a href="<?php echo get_the_author_rakuten_room_url(); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rakuten-room-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_github_url() )://GitHubフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_github_url(); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-github-logo"></span></a>
   <?php endif; ?>

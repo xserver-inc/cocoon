@@ -507,6 +507,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
+.admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
 .admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button { background-color: #4078c0; }
 .admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button { background-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button { background-color: #f26522; }
@@ -914,6 +915,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
+.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }
@@ -1524,6 +1526,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
+.admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
 .admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button { background-color: #4078c0; }
 .admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button { background-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button { background-color: #f26522; }
@@ -1931,6 +1934,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
+.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }

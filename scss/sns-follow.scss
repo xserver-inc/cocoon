@@ -48,9 +48,10 @@
   display: none;
 }
 
-// .author-guest{
-//   .feedly-follow-button-sq,
-//   .rss-follow-button-sq{
-//     display: none;
-//   }
-// }
+.icon-rakuten-room-logo{
+  &::before{
+    content: 'R';
+    font-family: Arial, serif;
+    font-weight: 700;
+  }
+}

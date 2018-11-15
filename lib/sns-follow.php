@@ -141,6 +141,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['flickr_url'] = __( 'Flickr URL', THEME_NAME );
   $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
   $prof_items['amazon_url'] = __( 'Amazon URL', THEME_NAME );
+  $prof_items['rakuten_room_url'] = __( '楽天 ROOM URL', THEME_NAME );
   $prof_items['github_url'] = __( 'GitHub URL', THEME_NAME );
 
   return $prof_items;
@@ -307,6 +308,13 @@ endif;
 if ( !function_exists( 'get_the_author_amazon_url' ) ):
 function get_the_author_amazon_url(){
   return esc_html(get_the_author_meta('amazon_url', get_the_posts_author_id()));
+}
+endif;
+
+//プロフィール画面で設定した楽天ROOM URLの取得
+if ( !function_exists( 'get_the_author_rakuten_room_url' ) ):
+function get_the_author_rakuten_room_url(){
+  return esc_html(get_the_author_meta('rakuten_room_url', get_the_posts_author_id()));
 }
 endif;
 
