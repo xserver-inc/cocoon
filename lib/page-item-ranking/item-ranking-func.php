@@ -198,33 +198,53 @@ endif;
 
 //レーティングスタータグの取得
 if ( !function_exists( 'get_rating_star_tag' ) ):
-function get_rating_star_tag($rate){
+function get_rating_star_tag($rate, $number = false){
   //数字じゃない場合
   if (!is_numeric($rate)) {
+    return;
+  }
+  //レーティングが100より多い場合は多すぎるので処理しない
+  if (floatval($rate) > 100) {
     return;
   }
 
   $tag = '<div class="ranking-item-rating rating-star">';
 
+  // //とりあえず小数点1桁形式にする
+  // if (!includes_string('.', $rate)) {
+  //   $rate .= '.0';
+  // }
+  // _v($rate);
+  //小数点で分割
   $rates = explode('.', $rate);
+  //小数点以下が5かどうか
   $has_herf = intval($rates[1]) == 5;
   if ($has_herf) {
     $before = intval($rates[0]);
     $middle = 1;
     $after = 5 - 1 - $before;
   } else {
-    $before = intval($rating);
+    $before = intval($rate);
     $middle = 0;
     $after = 5 - $before;
+    //3.2とかの場合は小数点以下を切り捨てる
+    $rate = floor(floatval($rate));
   }
+  //スターの出力
   for ($j=1; $j <= $before; $j++) {
     $tag .= '<span class="fa fa-star"></span>';
   }
+  //半分スターの出力
   for ($j=1; $j <= $middle; $j++) {
     $tag .= '<span class="fa fa-star-half-o"></span>';
   }
+  //空スターの出力
   for ($j=1; $j <= $after; $j++) {
     $tag .= '<span class="fa fa-star-o"></span>';
+  }
+
+  if ($number) {
+    $tag .= '<span class="rating-number">'.$rate.'</span>';
   }
 
   $tag .= '</div>';

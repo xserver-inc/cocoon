@@ -176,3 +176,15 @@ function login_user_only_shortcode( $atts, $content = null ) {
   }
 }
 endif;
+
+//星ショートコード
+add_shortcode('star', 'rating_star_shortcode');
+if ( !function_exists( 'rating_star_shortcode' ) ):
+function rating_star_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+      'rate' => 5,
+      'number' => 1,
+  ), $atts ) );
+ return get_rating_star_tag($rate, $number);
+}
+endif;
