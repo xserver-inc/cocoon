@@ -100,6 +100,9 @@ require_once abspath(__FILE__).'additional-classes.php'; //スタイリング用
 require_once abspath(__FILE__).'auto-post-thumbnail.php'; //アイキャッチ自動追加関数
 require_once abspath(__FILE__).'ssl.php'; //SSL関係の処理
 require_once abspath(__FILE__).'shortcodes.php'; //ショートコード関係の処理
+require_once abspath(__FILE__).'shortcodes-product-func.php'; //商品リンク関係の処理
+require_once abspath(__FILE__).'shortcodes-amazon.php'; //Amazon商品リンク関係の処理
+require_once abspath(__FILE__).'shortcodes-rakuten.php'; //楽天商品リンク関係の処理
 require_once abspath(__FILE__).'html5.php'; //HTML5チェック関係
 //フルパスを指定しないとうまくいかないファイル
 require_once abspath(__FILE__).'profile.php'; //プロフィール関係の処理
