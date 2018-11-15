@@ -196,6 +196,42 @@ function delete_item_ranking( $id ) {
 }
 endif;
 
+//レーティングスタータグの取得
+if ( !function_exists( 'get_rating_star_tag' ) ):
+function get_rating_star_tag($rate){
+  //数字じゃない場合
+  if (!is_numeric($rate)) {
+    return;
+  }
+
+  $tag = '<div class="ranking-item-rating rating-star">';
+
+  $rates = explode('.', $rate);
+  $has_herf = intval($rates[1]) == 5;
+  if ($has_herf) {
+    $before = intval($rates[0]);
+    $middle = 1;
+    $after = 5 - 1 - $before;
+  } else {
+    $before = intval($rating);
+    $middle = 0;
+    $after = 5 - $before;
+  }
+  for ($j=1; $j <= $before; $j++) {
+    $tag .= '<span class="fa fa-star"></span>';
+  }
+  for ($j=1; $j <= $middle; $j++) {
+    $tag .= '<span class="fa fa-star-half-o"></span>';
+  }
+  for ($j=1; $j <= $after; $j++) {
+    $tag .= '<span class="fa fa-star-o"></span>';
+  }
+
+  $tag .= '</div>';
+  return $tag;
+}
+endif;
+
 //HTMLを生成
 if ( !function_exists( 'generate_item_ranking_tag' ) ):
 function generate_item_ranking_tag($id, $is_first_only = false){
@@ -251,33 +287,9 @@ function generate_item_ranking_tag($id, $is_first_only = false){
       </div>
 
       <?php //評価が設定されている場合
-      if ($rating != 'none'): ?>
-      <div class="ranking-item-rating">
-        <?php
-        $rates = explode('.', $rating);
-        //var_dump($rates);
-        $has_herf = intval($rates[1]) == 5;
-        if ($has_herf) {
-          $before = intval($rates[0]);
-          $middle = 1;
-          $after = 5 - 1 - $before;
-        } else {
-          $before = intval($rating);
-          $middle = 0;
-          $after = 5 - $before;
-        }
-        for ($j=1; $j <= $before; $j++) {
-          echo '<span class="fa fa-star"></span>';
-        }
-        for ($j=1; $j <= $middle; $j++) {
-          echo '<span class="fa fa-star-half-o"></span>';
-        }
-        for ($j=1; $j <= $after; $j++) {
-          echo '<span class="fa fa-star-o"></span>';
-        }
-         ?>
-      </div>
-      <?php endif ?>
+      if ($rating != 'none'){
+        echo get_rating_star_tag($rating);
+      } ?>
 
       <?php //continue; ?>
 
