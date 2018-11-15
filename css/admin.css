@@ -2370,7 +2370,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .carousel-content { margin: 0 30px; padding-bottom: 4px; }
 .admin-settings .demo .carousel-content a { float: left; width: 10%; }
 .admin-settings .demo .carousel-entry-card-wrap.a-wrap { overflow: hidden; margin: 0 3px 3px; position: relative; }
-.admin-settings .demo .carousel-entry-card-wrap.a-wrap::before { content: ""; display: block; padding-top: 100%; }
+.admin-settings .demo .carousel-entry-card-wrap.a-wrap::before { content: ""; display: block; padding-top: 95%; }
 .admin-settings .demo .carousel-entry-card-wrap.a-wrap .e-card { position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: 2px 3px; }
 .admin-settings .demo .carousel-entry-card-thumb { float: none; overflow: hidden; display: inline-block; }
 .admin-settings .demo .carousel-entry-card-title { font-size: 16px; margin-top: 4px; max-height: 3.2em; overflow: hidden; }
@@ -2582,7 +2582,8 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .image-content amp-img { min-width: 360px; max-width: 360px; }
   .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 18px; font-size: 14px; }
   .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { font-size: 18px; right: -4px; margin-top: 0; }
-  .admin-settings .demo .slick-dots { display: none !important; } }
+  .admin-settings .demo .slick-dots { display: none !important; }
+  .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
   .admin-settings .demo h2, .admin-settings .demo h3 { font-size: 20px; }
   .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 1.2em 0 1em; }

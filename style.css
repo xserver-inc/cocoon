@@ -5796,7 +5796,7 @@ input[type='submit'],
 .carousel-entry-card-wrap.a-wrap::before {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-top: 95%;
 }
 .carousel-entry-card-wrap.a-wrap .e-card {
   position: absolute;
@@ -6870,6 +6870,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .slick-dots {
     display: none !important;
+  }
+
+  .carousel-entry-card-title {
+    font-size: 0.7em;
   }
 }
 @media screen and (max-width: 480px) {
