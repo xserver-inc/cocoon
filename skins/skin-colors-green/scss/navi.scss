@@ -47,4 +47,11 @@
     visibility: visible;
     height: 60px;
   }
+
+  .sub-menu .sub-menu li{
+    display: none;
+  }
+  .sub-menu li:hover > ul > li{
+    display: block;
+  }
 }

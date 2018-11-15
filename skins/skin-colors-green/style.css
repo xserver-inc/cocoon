@@ -199,6 +199,12 @@ div.mobile-menu-buttons .menu-button:hover,
   visibility: visible;
   height: 60px;
 }
+.navi-in > ul .sub-menu .sub-menu li {
+  display: none;
+}
+.navi-in > ul .sub-menu li:hover > ul > li {
+  display: block;
+}
 
 .sidebar h3 {
   background: transparent;
