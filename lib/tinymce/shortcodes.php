@@ -189,6 +189,16 @@ function generate_shortcodes_is($value){
   shortcodes[13].before = '<?php echo $before; ?>';
   shortcodes[13].after = '<?php echo $after; ?>';
 
+<?php //評価スター
+$before = '[star rate="';
+$after = '" number="1"]';
+?>
+shortcodes[14] = new Array();
+shortcodes[14].title  = '<?php echo __( '評価スター', THEME_NAME ); ?>';
+shortcodes[14].tag = '<?php echo $before.$after; ?>';
+shortcodes[14].before = '<?php echo $before; ?>';
+shortcodes[14].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }
