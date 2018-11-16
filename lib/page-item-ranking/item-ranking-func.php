@@ -201,11 +201,11 @@ if ( !function_exists( 'get_rating_star_tag' ) ):
 function get_rating_star_tag($rate, $number = false){
   //数字じゃない場合
   if (!is_numeric($rate)) {
-    return;
+    return $rate;
   }
   //レーティングが100より多い場合は多すぎるので処理しない
   if (floatval($rate) > 100) {
-    return;
+    return $rate;
   }
 
   $tag = '<div class="ranking-item-rating rating-star">';
