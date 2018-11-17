@@ -217,6 +217,9 @@ function get_rating_star_tag($rate, $number = false){
   // _v($rate);
   //小数点で分割
   $rates = explode('.', $rate);
+  if (!isset($rates[0]) || !isset($rates[1])) {
+    return $rate;
+  }
   //小数点以下が5かどうか
   $has_herf = intval($rates[1]) == 5;
   if ($has_herf) {
