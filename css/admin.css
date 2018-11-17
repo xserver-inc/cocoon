@@ -2766,10 +2766,10 @@ p.submit { margin: 2px 0; padding: 3px 0; }
 select option.fa { display: block; }
 select option.fa:before { width: 18px; display: inline-block; text-align: center; margin-right: 5px; }
 
-.list-content, .tabs .tab-content { height: 200px; overflow: auto; border: 1px solid #ccc; padding: 5px; margin: 0 0 5px; background-color: #fff; }
-.list-content ul, .tabs .tab-content ul { margin: 0; padding-left: 20px; }
-.list-content ul li, .tabs .tab-content ul li { margin-bottom: 3px; }
-.list-content > ul, .tabs .tab-content > ul { padding-left: 0; }
+.list-content, .tabs .tab-content, .widget-content .tab-content { height: 200px; overflow: auto; border: 1px solid #ccc; padding: 5px; margin: 0 0 5px; background-color: #fff; }
+.list-content ul, .tabs .tab-content ul, .widget-content .tab-content ul { margin: 0; padding-left: 20px; }
+.list-content ul li, .tabs .tab-content ul li, .widget-content .tab-content ul li { margin-bottom: 3px; }
+.list-content > ul, .tabs .tab-content > ul, .widget-content .tab-content > ul { padding-left: 0; }
 
 #edittag { max-width: 1200px; }
 

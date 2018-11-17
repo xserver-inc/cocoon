@@ -439,7 +439,8 @@ select option.fa{
 //   display: none !important;
 // }
 .list-content,
-.tabs .tab-content{
+.tabs .tab-content,
+.widget-content .tab-content{
   height: 200px;
   overflow: auto;
   border: 1px solid #ccc;
