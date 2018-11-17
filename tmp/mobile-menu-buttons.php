@@ -81,7 +81,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
    ?>
   <!-- トップボタン -->
   <div class="top-menu-button menu-button">
-    <a class="go-to-top-common top-menu-a"<?php echo $on; ?> class="menu-button-in">
+    <a class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
       <div class="top-menu-icon menu-icon"></div>
       <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
     </a>

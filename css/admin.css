@@ -2771,7 +2771,7 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 .list-content ul li, .tabs .tab-content ul li, .widget-content .tab-content ul li { margin-bottom: 3px; }
 .list-content > ul, .tabs .tab-content > ul, .widget-content .tab-content > ul { padding-left: 0; }
 
-.widget-content .tab-content { height: 120px; margin-bottom: 0.8em; }
+.widget-content .tab-content { height: 120px; margin-bottom: 1em; }
 
 #edittag { max-width: 1200px; }
 
