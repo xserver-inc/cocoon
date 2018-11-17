@@ -24,7 +24,7 @@ body {
 }
 
 .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .tagcloud a:hover, .pagination a:hover, .pager-links a:hover span, .pagination-next-link:hover, .comment-btn:hover, .comment-reply-link:hover, .navi-footer-in a:hover, .navi-footer-in a:hover {
-  background-color: rgba(211, 56, 28, 0.05);
+  background-color: rgba(0, 123, 67, 0.05);
 }
 
 .page-numbers,
@@ -44,7 +44,7 @@ body {
 .page-numbers,
 .pagination-next-link {
   border-radius: 8px;
-  background: rgba(211, 56, 28, 0.05);
+  background: rgba(0, 123, 67, 0.05);
 }
 
 .pagination .page-numbers,
@@ -149,7 +149,7 @@ div.mobile-menu-buttons .menu-button:hover,
 
 .comment-list ul.children {
   padding: 0.6em;
-  background-color: rgba(211, 56, 28, 0.05);
+  background-color: rgba(0, 123, 67, 0.05);
   border-left: 2px solid #98d98e;
 }
 
