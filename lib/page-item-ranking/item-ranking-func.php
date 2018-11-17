@@ -217,11 +217,15 @@ function get_rating_star_tag($rate, $number = false){
   // _v($rate);
   //小数点で分割
   $rates = explode('.', $rate);
-  if (!isset($rates[0]) || !isset($rates[1])) {
+  if (!isset($rates[0])) {
     return $rate;
   }
   //小数点以下が5かどうか
-  $has_herf = intval($rates[1]) == 5;
+  if (isset($rates[1])) {
+    $has_herf = intval($rates[1]) == 5;
+  } else {
+    $has_herf = false;
+  }
   if ($has_herf) {
     $before = intval($rates[0]);
     $middle = 1;
