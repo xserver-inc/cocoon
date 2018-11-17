@@ -209,7 +209,6 @@ class PopularEntryWidgetItem extends WP_Widget {
       <label for="<?php echo $this->get_field_id('exclude_cat_ids'); ?>">
         <?php _e( '除外カテゴリーID（除外するものを選択してください）', THEME_NAME ) ?>
       </label>
-      <!-- <input class="widefat" id="<?php echo $this->get_field_id('exclude_cat_ids'); ?>" name="<?php echo $this->get_field_name('exclude_cat_ids'); ?>" type="text" value="<?php echo $exclude_cat_ids; ?>" /> -->
       <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
     <?php
   }
