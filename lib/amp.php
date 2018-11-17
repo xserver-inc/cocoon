@@ -238,7 +238,7 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('{<select.+?</select>}is', '', $the_content);
 
   //アプリーチの画像対応
-  $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|googleusercontent\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
+  $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?nabettu\.github\.io[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="120" height="36" sizes="(max-width: 120px) 100vw, 120px"></amp-img>', $the_content);
 
   //imgタグをamp-imgタグに変更する
@@ -274,6 +274,7 @@ function convert_content_for_amp($the_content){
       if ($width_res) {
         $width_attr = ' '.$widths[0];//width属性を作成
         $width_value = $widths[1];//widthの値（幅）を取得する
+
       }
 
       //height属性の取得
@@ -290,8 +291,6 @@ function convert_content_for_amp($the_content){
       if ($class_res) {
         $class_attr = ' '.$classes[0];//class属性を作成
         $class_value = $classes[1];//classの値を取得する
-        // _v($class_attr);
-        // _v($class_value);
         if ($class_value) {
           $class_value = ' '.$class_value;
         }
@@ -314,12 +313,6 @@ function convert_content_for_amp($the_content){
         $title_attr = ' '.$titles[0];//title属性を作成
         $title_value = $titles[1];//titleの値を取得する
       }
-
-      // if (condition) {
-      //   # code...
-      // } else {
-      //   # code...
-      // }
 
       //widthとheight属性のないものは画像から情報取得
       if ($url && (empty($width_value) || empty($height_value))) {
