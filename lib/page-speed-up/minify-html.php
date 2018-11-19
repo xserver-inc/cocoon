@@ -22,6 +22,11 @@ function code_minify_call_back($buffer) {
     $buffer = minify_html($buffer);
   }
 
+  ///////////////////////////////////////////
+  // Lazy Load
+  ///////////////////////////////////////////
+  //$buffer = convert_lazy_load_image_tag($buffer);
+
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
   $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
   $buffer = str_replace('aria-required="true" required="required">', 'aria-required="true">', $buffer);
@@ -190,5 +195,49 @@ function has_match_list_text($text, $list){
       return true;
     }
   }
+}
+endif;
+
+//imgタグをLazy Load用の画像タグに変換
+if ( !function_exists( 'convert_lazy_load_image_tag' ) ):
+function convert_lazy_load_image_tag($the_content){
+  //AMPページでは実行しない
+  if (is_amp()) {
+    return $the_content;
+  }
+
+  //imgタグをamp-imgタグに変更する
+  $res = preg_match_all('/<img(.+?)\/?>/is', $the_content, $m);
+  if ($res) {//画像タグがある場合
+    //_v($m);
+    foreach ($m[0] as $match) {
+      //変数の初期化
+      $src_attr = null;
+      $url = null;
+      //var_dump(htmlspecialchars($match));
+      $tag = $match;
+
+      $search = '{src=["\'](.+?)["\']}i';
+      $replace = 'src="$1" data-src="$1"';
+      $tag = preg_replace($search, $replace, $tag);
+
+
+      if (preg_match('/class=/i', $tag)) {
+        $search = '{class=["\'](.+?)["\']}i';
+        $replace = 'class="$1 lozad"';
+        $tag = preg_replace($search, $replace, $tag);
+      } else {
+        $search = '<img';
+        $replace = '<img class="lozad"';
+        $tag = str_replace($search, $replace, $tag);
+      }
+      //noscriptタグの追加
+      $tag = $tag.'<noscript>'.$match.'</noscript>';
+
+      //imgタグをLazy Load対応に置換
+      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+    }
+  }
+  return $the_content;
 }
 endif;
