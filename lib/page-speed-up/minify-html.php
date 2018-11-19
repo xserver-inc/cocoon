@@ -209,7 +209,8 @@ function convert_lazy_load_image_tag($the_content){
   }
 
   //imgタグをamp-imgタグに変更する
-  $res = preg_match_all('/<img(.+?)\/?>/is', $the_content, $m);
+  $res = preg_match_all('{<img.+?>}is', $the_content, $m);
+  //_v($m);
   if ($res) {//画像タグがある場合
     //_v($m);
     foreach ($m[0] as $match) {
@@ -219,11 +220,12 @@ function convert_lazy_load_image_tag($the_content){
       //var_dump(htmlspecialchars($match));
       $tag = $match;
 
-      $search = '{src=["\'](.+?)["\']}i';
-      $replace = 'data-src="$1"';
+      //画像URLの入れ替え
+      $search = '{ src=["\'](.+?)["\']}i';
+      $replace = ' data-src="$1"';
       $tag = preg_replace($search, $replace, $tag);
 
-
+      //クラスの変更
       if (preg_match('/class=/i', $tag)) {
         $search = '{class=["\'](.+?)["\']}i';
         $replace = 'class="$1 lozad"';
@@ -233,11 +235,28 @@ function convert_lazy_load_image_tag($the_content){
         $replace = '<img class="lozad"';
         $tag = str_replace($search, $replace, $tag);
       }
+
+      // //srcの削除
+      // $search = '{ src=["\'].+?["\']}i';
+      // $replace = '';
+      // $tag = preg_replace($search, $replace, $tag);
+
+      //srcsetの削除
+      $search = '{ ?+srcset=["\'].+?["\']}i';
+      $replace = '';
+      $tag = preg_replace($search, $replace, $tag);
+
+      //sizesの削除
+      $search = '{ ?+sizes=["\'].+?["\']}i';
+      $replace = '';
+      $tag = preg_replace($search, $replace, $tag);
+
       //noscriptタグの追加
       $tag = $tag.'<noscript>'.$match.'</noscript>';
+      //_v($tag);
 
       //imgタグをLazy Load対応に置換
-      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content);
     }
   }
   return $the_content;
