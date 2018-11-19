@@ -89,6 +89,14 @@ function is_baguettebox_effect_enable(){
 }
 endif;
 
+//Lazy Load
+define('OP_LAZY_LOAD_ENABLE', 'lazy_load_enable');
+if ( !function_exists( 'is_lazy_load_enable' ) ):
+function is_lazy_load_enable(){
+  return get_theme_option(OP_LAZY_LOAD_ENABLE);
+}
+endif;
+
 //NO IMAGE画像
 define('OP_NO_IMAGE_URL', 'no_image_url');
 if ( !function_exists( 'get_no_image_url' ) ):

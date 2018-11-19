@@ -135,6 +135,38 @@
 </div>
 
 
+<!-- Lazy Load -->
+<div id="no-image-page" class="postbox">
+  <h2 class="hndle"><?php _e( 'Lazy Load設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'サイト全体の画像をSEOに対応したLazy Load表示する設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- Lazy Load画像 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_LAZY_LOAD_ENABLE, __('Lazy Load', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( '画像遅延読み込みを有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'Googleが推奨する画像の遅延読み込み（Lazy Load）方法でページ表示を高速化します。', THEME_NAME ));
+
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <!-- NO IMAGE -->
 <div id="no-image-page" class="postbox">
   <h2 class="hndle"><?php _e( 'NO IMAGE設定', THEME_NAME ) ?></h2>

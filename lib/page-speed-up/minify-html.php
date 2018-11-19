@@ -25,7 +25,9 @@ function code_minify_call_back($buffer) {
   ///////////////////////////////////////////
   // Lazy Load
   ///////////////////////////////////////////
-  //$buffer = convert_lazy_load_image_tag($buffer);
+  if (is_lazy_load_enable()) {
+    $buffer = convert_lazy_load_image_tag($buffer);
+  }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
   $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
@@ -218,7 +220,7 @@ function convert_lazy_load_image_tag($the_content){
       $tag = $match;
 
       $search = '{src=["\'](.+?)["\']}i';
-      $replace = 'src="$1" data-src="$1"';
+      $replace = 'data-src="$1"';
       $tag = preg_replace($search, $replace, $tag);
 
 
