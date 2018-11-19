@@ -444,6 +444,9 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
+      //空の配列を取り除く
+      $exclude_cat_ids = array_filter($exclude_cat_ids, "strlen");
+      //カンマ区切りにする
       $ex_cat_ids = implode(',', $exclude_cat_ids);
       $where .= " AND {$term_relationships}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
