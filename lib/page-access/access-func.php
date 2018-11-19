@@ -448,6 +448,7 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
       $exclude_cat_ids = array_filter($exclude_cat_ids, "strlen");
       //カンマ区切りにする
       $ex_cat_ids = implode(',', $exclude_cat_ids);
+      $ex_cat_ids = preg_replace('/,$/', '', $ex_cat_ids);
       $where .= " AND {$term_relationships}.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
 
