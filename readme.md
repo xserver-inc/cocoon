@@ -1,82 +1,88 @@
 Cocoon
 ===================================
 
-Cocoon‚ÍAƒ‚ƒoƒCƒ‹E‚‘¬‰»ESEOÅ“K‰»Ï‚İ‚ÌWordpressƒe[ƒ}‚Å‚·B
+Cocoonã¯ã€ãƒ¢ãƒã‚¤ãƒ«ãƒ»é«˜é€ŸåŒ–ãƒ»SEOæœ€é©åŒ–æ¸ˆã¿ã®Wordpressãƒ†ãƒ¼ãƒã§ã™ã€‚
 
-Cocoonƒe[ƒ}‚ÌÚ×‚ÍˆÈ‰º‚ÌURL‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B  
+Cocoonãƒ†ãƒ¼ãƒã®è©³ç´°ã¯ä»¥ä¸‹ã®URLã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 https://wp-cocoon.com/
 
-ƒe[ƒ}ƒtƒ@ƒCƒ‹ƒJƒXƒ^ƒ}ƒCƒY
+ãƒ†ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚º
 --------------------------
-ƒe[ƒ}ƒtƒ@ƒCƒ‹‚ğƒJƒXƒ^ƒ}ƒCƒY‚·‚éê‡‚ÍA‚±‚Ìeƒe[ƒ}‚ğƒJƒXƒ^ƒ}ƒCƒY‚µ‚Ä‚µ‚Ü‚¤‚ÆAƒAƒbƒvƒf[ƒg•ÒW•”•ª‚àã‘‚«‚³‚ê‚Ä‚µ‚Ü‚¢‚Ü‚·B
-‚Å‚·‚Ì‚ÅAqƒe[ƒ}‚ğ—˜—p‚µ‚½ƒJƒXƒ^ƒ}ƒCƒY‚ğ‚¨‚·‚·‚ß‚µ‚Ü‚·B
+ãƒ†ãƒ¼ãƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã™ã‚‹å ´åˆã¯ã€ã“ã®è¦ªãƒ†ãƒ¼ãƒã‚’ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã—ã¦ã—ã¾ã†ã¨ã€ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆæ™‚ç·¨é›†éƒ¨åˆ†ã‚‚ä¸Šæ›¸ãã•ã‚Œã¦ã—ã¾ã„ã¾ã™ã€‚
+ã§ã™ã®ã§ã€å­ãƒ†ãƒ¼ãƒã‚’åˆ©ç”¨ã—ãŸã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚’ãŠã™ã™ã‚ã—ã¾ã™ã€‚
 
-ƒe[ƒ}ƒ‰ƒCƒZƒ“ƒX
+ãƒ†ãƒ¼ãƒãƒ©ã‚¤ã‚»ãƒ³ã‚¹
 ----------
-Cocoonƒe[ƒ}‚ÍA100“GPL‚Å‚·B
+Cocoonãƒ†ãƒ¼ãƒã¯ã€100ï¼…GPLã§ã™ã€‚
 
-PHP‚Í‚à‚Æ‚æ‚èACSSAJavaScriptA‰æ‘œAƒXƒLƒ“—pƒtƒ@ƒCƒ‹‚àŠÜ‚ß‚Äƒ‰ƒCƒZƒ“ƒX‚ÍGPL‚Æ‚È‚è‚Ü‚·B
+PHPã¯ã‚‚ã¨ã‚ˆã‚Šã€CSSã€JavaScriptã€ç”»åƒã€ã‚¹ã‚­ãƒ³ç”¨ãƒ•ã‚¡ã‚¤ãƒ«ã‚‚å«ã‚ã¦ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã¯GPLã¨ãªã‚Šã¾ã™ã€‚
 
-GNU General Public License  
+GNU General Public License
 http://www.gnu.org/licenses/gpl-2.0.html
 
-ŠJ”­Ò
+é–‹ç™ºè€…
 ------
-‚í‚¢‚Ğ‚çF [yhira](https://github.com/yhira)
+ã‚ã„ã²ã‚‰ï¼š [yhira](https://github.com/yhira)
 
-g—pƒ‰ƒCƒuƒ‰ƒŠ
+ä½¿ç”¨ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 ------
-php-html-css-js-minifier.phpiCSSAJavaScriptAHTML‚Ìk¬‰»j  
+php-html-css-js-minifier.phpï¼ˆCSSã€JavaScriptã€HTMLã®ç¸®å°åŒ–ï¼‰
 https://gist.github.com/tovic/d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php
 
-Punycodeiƒsƒ…ƒjƒR[ƒh•ÏŠ·j  
+Punycodeï¼ˆãƒ”ãƒ¥ãƒ‹ã‚³ãƒ¼ãƒ‰å¤‰æ›ï¼‰
 https://github.com/true/php-punycode
 
-Theme Update Checker Libraryiƒe[ƒ}©“®ƒAƒbƒvƒf[ƒgj  
+Theme Update Checker Libraryï¼ˆãƒ†ãƒ¼ãƒè‡ªå‹•ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆï¼‰
 https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/
 
-Open Graph Protocol helper for PHP  
+Open Graph Protocol helper for PHP
 https://github.com/scottmac/opengraph
 
-g—pƒŠƒ\[ƒX
+ä½¿ç”¨ãƒªã‚½ãƒ¼ã‚¹
 ------
-highlight.js  
+highlight.js
 https://highlightjs.org/
 
-Lightbox  
+Lightbox
 http://lokeshdhakar.com/projects/lightbox2/
 
-Lity  
+Lity
 http://sorgalla.com/lity/
 
-baguetteBox  
+baguetteBox
 http://feimosi.github.io/baguetteBox.js/
 
-Masonry  
+Masonry
 http://masonry.desandro.com/
 
-slicknav  
+slicknav
 http://slicknav.io/
 
-slick  
+slick
 http://kenwheeler.github.io/slick/
 
-stickyfill  
+stickyfill
 https://github.com/wilddeer/stickyfill
 
-Font Awesome 4  
+Font Awesome 4
 https://fontawesome.com/v4.7.0/
 
-IcoMoon  
+IcoMoon
 https://icomoon.io/app/
 
-ScrollHint  
+ScrollHint
 https://appleple.github.io/scroll-hint/
 
-ƒR[ƒh‚ğQl‚É‚µ‚½ƒvƒ‰ƒOƒCƒ“
+Lozad.js
+https://github.com/ApoorvSaxena/lozad.js
+
+IntersectionObserver polyfill
+https://github.com/w3c/IntersectionObserver/tree/master/polyfill
+
+ã‚³ãƒ¼ãƒ‰ã‚’å‚è€ƒã«ã—ãŸãƒ—ãƒ©ã‚°ã‚¤ãƒ³
 ------
-Auto Post Thumbnail  
+Auto Post Thumbnail
 https://ja.wordpress.org/plugins/auto-post-thumbnail/
 
-Youtube SpeedLoad  
+Youtube SpeedLoad
 https://ja.wordpress.org/plugins/youtube-speedload/
