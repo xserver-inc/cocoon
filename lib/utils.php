@@ -2183,8 +2183,8 @@ function includes_wpforo_url($url){
 endif;
 
 //robots.txtページかどうか
-if ( !function_exists( 'is_robots_text_page' ) ):
-function is_robots_text_page(){
+if ( !function_exists( 'is_robots_txt_page' ) ):
+function is_robots_txt_page(){
   return isset($_SERVER['REQUEST_URI']) && ($_SERVER['REQUEST_URI'] == '/robots.txt');
 }
 endif;
