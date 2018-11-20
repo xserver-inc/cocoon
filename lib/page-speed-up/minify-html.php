@@ -211,18 +211,24 @@ function convert_lazy_load_tag($the_content, $media){
   if (is_amp()) {
     return $the_content;
   }
-
+  /*
   switch ($media) {
     case 'iframe':
-      $pattern = '{<iframe.+?</iframe>}is';
+      $pattern = '{<iframe.+?>}is';
       break;
     default:
       $pattern = '{<img.+?>}is';
       break;
   }
+  */
+
+  $pattern = '{<'.$media.'.+?>}is';
 
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all($pattern, $the_content, $m);
+  if ($media == 'iframe') {
+    _v($m);
+  }
   //_v($m);
   if ($res) {//画像タグがある場合
     //_v($m);
@@ -275,6 +281,7 @@ function convert_lazy_load_tag($the_content, $media){
 
       //imgタグをLazy Load対応に置換
       $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content);
+      //$the_content = str_replace($match, $tag , $the_content);
     }
   }
   return apply_filters('convert_lazy_load_tag', $the_content, $media);
