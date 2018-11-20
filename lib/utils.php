@@ -353,10 +353,12 @@ endif;
 //Lazy Loadの読み込み
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
-  wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array( 'jquery' ), false, true );
-  wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array( 'jquery', 'polyfill-js' ), false, true );
-  $data = 'const observer = lozad();observer.observe();';
-  wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
+  if (is_lazy_load_enable()) {
+    wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array( 'jquery', 'polyfill-js' ), false, true );
+    $data = 'const observer = lozad();observer.observe();';
+    wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
+  }
 }
 endif;
 

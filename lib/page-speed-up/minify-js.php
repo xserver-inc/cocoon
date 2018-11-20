@@ -97,7 +97,14 @@ function tag_code_to_minify_js($buffer) {
 
             //JS URLからJSコードの取得
             $js = js_url_to_js_minify_code( $url );
-            //縮小化可能ななJSだと時
+            $start_name = $url.'-start';
+            $start = 'performance.mark("'.$start_name.'");';
+            $end_name = $url.'-end';
+            $end = 'performance.mark("'.$end_name.'");';
+            $measure = 'performance.mark("'.$url.'", "'.$start_name.'", "'.$end_name.'");';
+            $js = $start.$js.$end.$measure;
+
+            //縮小化可能なJSな時
             if ($js !== false) {
               //_v($js);//変換したJSコード
 
@@ -115,6 +122,13 @@ function tag_code_to_minify_js($buffer) {
         //インラインタイプのJavaScriptコードだった場合
         if ($js_code) {
           $js = minify_js($js_code);
+          $start_name = 'inline-js-'.$i.'-start';
+          $start = 'performance.mark("'.$start_name.'");';
+          $end_name = 'inline-js-'.$i.'-end';
+          $end = 'performance.mark("'.$end_name.'");';
+          $measure = 'performance.mark("inline-js-'.$i.'", "'.$start_name.'", "'.$end_name.'");';
+          $js = $start.$js.$end.$measure;
+          //_v($js);
           //インラインタイプのscriptタグを縮小化して置換する
           $buffer = str_replace($script_tag, '<script'.$attr_code.'>'.$js.'</script>', $buffer);
         }
