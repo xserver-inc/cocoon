@@ -125,7 +125,7 @@ function get_post_navi_thumbnail_tag($id, $width = 120, $height = 67){
       $image = get_no_image_150x150_url();
       $wh_attr = ' srcset="'.$image.' 120w" width="120" height="120" sizes="(max-width: 120px) 120vw, 120px"';
     }
-    $thumb = '<img src="'.$image.'" alt="NO IMAGE" class="no-image post-navi-no-image"'.$wh_attr.' />';
+    $thumb = '<img src="'.$image.'" alt="" class="no-image post-navi-no-image"'.$wh_attr.' />';
   }
   return $thumb;
 }

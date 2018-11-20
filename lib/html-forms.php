@@ -893,7 +893,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       if ($post_thumbnail) {
         $post_thumbnail_img = $post_thumbnail;
       } else {
-        $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="NO IMAGE" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />';
+        $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />';
       }
 
       // $pv_tag = '';
@@ -999,7 +999,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
         <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
       <?php else: // サムネイルを持っていないときの処理 ?>
-        <img src="<?php echo get_no_image_320x180_url(); ?>" alt="NO IMAGE" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
+        <img src="<?php echo get_no_image_320x180_url(); ?>" alt="" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="320" height="180" />
       <?php endif; ?>
       </figure><!-- /.new-entry-card-thumb -->
 
