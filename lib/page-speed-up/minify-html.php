@@ -222,6 +222,12 @@ function convert_lazy_load_tag($the_content, $media){
   }
   */
   $is_img = ($media == 'img');
+  if (!$is_img) {
+    //YouTube高速化がある場合はiframeは処理しない
+    if (includes_string($the_content, " data-iframe=")) {
+      return $the_content;
+    }
+  }
 
   $pattern = '{<'.$media.'.+?>}is';
 
