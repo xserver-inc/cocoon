@@ -74,13 +74,25 @@ function code_minify_call_back($buffer) {
 }
 endif;
 
+//縮小化して良いページかどうか
+if ( !function_exists( 'is_minify_page' ) ):
+function is_minify_page(){
+  if (is_admin()) return false;
+  if (is_server_request_post()) return false;
+  if (is_server_request_uri_backup_download_php()) return false;
+  if (is_robots_text_page()) return false;
+  return true;
+}
+endif;
+
 //最終HTML取得開始
 add_action('after_setup_theme', 'code_minify_buffer_start', 99999999);
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  if (is_admin()) return;
-  if (is_server_request_post()) return;
-  if (is_server_request_uri_backup_download_php()) return;
+  // if (is_admin()) return;
+  // if (is_server_request_post()) return;
+  // if (is_server_request_uri_backup_download_php()) return;
+  if (!is_minify_page()) return;
 
   ob_start('code_minify_call_back');
 }
@@ -90,9 +102,7 @@ endif;
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  if (is_admin()) return;
-  if (is_server_request_post()) return;
-  if (is_server_request_uri_backup_download_php()) return;
+  if (!is_minify_page()) return;
 
   if (ob_get_length()){
     ob_end_flush();
@@ -224,7 +234,7 @@ function convert_lazy_load_tag($the_content, $media){
   $is_img = ($media == 'img');
   if (!$is_img) {
     //YouTube高速化がある場合はiframeは処理しない
-    if (includes_string($the_content, " data-iframe=")) {
+    if (includes_string($the_content, ' data-iframe=')) {
       return $the_content;
     }
   }

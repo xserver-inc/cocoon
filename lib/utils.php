@@ -2173,8 +2173,16 @@ function get_singular_sns_share_image_url(){
 }
 endif;
 
+//wpForo URLが含まれている場合
 if ( !function_exists( 'includes_wpforo_url' ) ):
 function includes_wpforo_url($url){
   return is_wpforo_exist() && includes_string($url, WPF()->url);
 }
 endif;
+
+//robots.txtページかどうか
+if ( !function_exists( 'is_robots_text_page' ) ):
+  function is_robots_text_page(){
+    return isset($_SERVER['REQUEST_URI']) && ($_SERVER['REQUEST_URI'] == '/robots.txt');
+  }
+  endif;
