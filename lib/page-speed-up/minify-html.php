@@ -26,7 +26,10 @@ function code_minify_call_back($buffer) {
   // Lazy Load
   ///////////////////////////////////////////
   if (is_lazy_load_enable()) {
-    $buffer = convert_lazy_load_image_tag($buffer);
+    //画像の変換
+    $buffer = convert_lazy_load_tag('img', $buffer);
+    //iframeの変換
+    $buffer = convert_lazy_load_tag('iframe', $buffer);
   }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
@@ -200,16 +203,53 @@ function has_match_list_text($text, $list){
 }
 endif;
 
+// //画像URLをLazy Loadタグに変換
+// if ( !function_exists( 'convert_src_to_data_src' ) ):
+// function convert_src_to_data_src($tag){
+//   //画像URLの入れ替え
+//   $search = '{ src=["\'](.+?)["\']}i';
+//   $replace = ' data-src="$1"';
+//   $tag = preg_replace($search, $replace, $tag);
+//   return $tag;
+// }
+// endif;
+
+// //クラスをLazy Loadクラスに変換
+// if ( !function_exists( 'convert_lazy_load_class' ) ):
+// function convert_lazy_load_class($tag){
+//   //既にclass属性がある場合
+//   if (preg_match('/class=/i', $tag)) {
+//     $search = '{class=["\'](.+?)["\']}i';
+//     $replace = 'class="$1 lozad"';
+//     $tag = preg_replace($search, $replace, $tag);
+//   } else {//class属性がない場合は追加
+//     $search = '<img';
+//     $replace = '<img class="lozad"';
+//     $tag = str_replace($search, $replace, $tag);
+//   }
+//   return $tag;
+// }
+// endif;
+
 //imgタグをLazy Load用の画像タグに変換
-if ( !function_exists( 'convert_lazy_load_image_tag' ) ):
-function convert_lazy_load_image_tag($the_content){
+if ( !function_exists( 'convert_lazy_load_tag' ) ):
+function convert_lazy_load_tag($media, $the_content){
   //AMPページでは実行しない
   if (is_amp()) {
     return $the_content;
   }
 
+  switch ($media) {
+    case 'iframe':
+      $pattern = '{<iframe.+?</iframe>}is';
+      break;
+    default:
+      $pattern = '{<img.+?>}is';
+      break;
+  }
+
   //imgタグをamp-imgタグに変更する
-  $res = preg_match_all('{<img.+?>}is', $the_content, $m);
+  $res = preg_match_all($pattern, $the_content, $m);
   //_v($m);
   if ($res) {//画像タグがある場合
     //_v($m);
@@ -224,6 +264,7 @@ function convert_lazy_load_image_tag($the_content){
       $search = '{ src=["\'](.+?)["\']}i';
       $replace = ' data-src="$1"';
       $tag = preg_replace($search, $replace, $tag);
+      //$tag = convert_src_to_data_src($tag);
 
       //クラスの変更
       if (preg_match('/class=/i', $tag)) {
@@ -231,25 +272,29 @@ function convert_lazy_load_image_tag($the_content){
         $replace = 'class="$1 lozad"';
         $tag = preg_replace($search, $replace, $tag);
       } else {
-        $search = '<img';
-        $replace = '<img class="lozad"';
+        $search = '<'.$media;
+        $replace = '<'.$media.' class="lozad"';
         $tag = str_replace($search, $replace, $tag);
       }
+      //$tag = convert_lazy_load_class($tag);
 
       // //srcの削除
       // $search = '{ src=["\'].+?["\']}i';
       // $replace = '';
       // $tag = preg_replace($search, $replace, $tag);
 
-      //srcsetの削除
-      $search = '{ ?+srcset=["\'].+?["\']}i';
-      $replace = '';
-      $tag = preg_replace($search, $replace, $tag);
+      //srcsetの変換宇
+      $tag = str_replace(' srcset=', ' data-srcset=', $tag);
 
-      //sizesの削除
-      $search = '{ ?+sizes=["\'].+?["\']}i';
-      $replace = '';
-      $tag = preg_replace($search, $replace, $tag);
+      // //srcsetの削除
+      // $search = '{ ?+srcset=["\'].+?["\']}i';
+      // $replace = '';
+      // $tag = preg_replace($search, $replace, $tag);
+
+      // //sizesの削除
+      // $search = '{ ?+sizes=["\'].+?["\']}i';
+      // $replace = '';
+      // $tag = preg_replace($search, $replace, $tag);
 
       //noscriptタグの追加
       $tag = $tag.'<noscript>'.$match.'</noscript>';
@@ -262,3 +307,64 @@ function convert_lazy_load_image_tag($the_content){
   return $the_content;
 }
 endif;
+
+// //iframeタグをLazy Load用の画像タグに変換
+// if ( !function_exists( 'convert_lazy_load_iframe_tag' ) ):
+//   function convert_lazy_load_iframe_tag($the_content){
+//     //AMPページでは実行しない
+//     if (is_amp()) {
+//       return $the_content;
+//     }
+
+//     //imgタグをamp-imgタグに変更する
+//     $res = preg_match_all('{<iframe.+?</iframe>}is', $the_content, $m);
+//     //_v($m);
+//     if ($res) {//画像タグがある場合
+//       //_v($m);
+//       foreach ($m[0] as $match) {
+//         //変数の初期化
+//         $src_attr = null;
+//         $url = null;
+//         //var_dump(htmlspecialchars($match));
+//         $tag = $match;
+
+//         //URLの入れ替え
+//         $tag = convert_src_to_data_src($tag);
+
+//         //クラスの変更
+//         if (preg_match('/class=/i', $tag)) {
+//           $search = '{class=["\'](.+?)["\']}i';
+//           $replace = 'class="$1 lozad"';
+//           $tag = preg_replace($search, $replace, $tag);
+//         } else {
+//           $search = '<img';
+//           $replace = '<img class="lozad"';
+//           $tag = str_replace($search, $replace, $tag);
+//         }
+
+//         // //srcの削除
+//         // $search = '{ src=["\'].+?["\']}i';
+//         // $replace = '';
+//         // $tag = preg_replace($search, $replace, $tag);
+
+//         //srcsetの削除
+//         $search = '{ ?+srcset=["\'].+?["\']}i';
+//         $replace = '';
+//         $tag = preg_replace($search, $replace, $tag);
+
+//         //sizesの削除
+//         $search = '{ ?+sizes=["\'].+?["\']}i';
+//         $replace = '';
+//         $tag = preg_replace($search, $replace, $tag);
+
+//         //noscriptタグの追加
+//         $tag = $tag.'<noscript>'.$match.'</noscript>';
+//         //_v($tag);
+
+//         //imgタグをLazy Load対応に置換
+//         $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content);
+//       }
+//     }
+//     return $the_content;
+//   }
+//   endif;
