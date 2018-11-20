@@ -101,7 +101,7 @@ function tag_code_to_minify_js($buffer) {
             $start = 'performance.mark("'.$start_name.'");';
             $end_name = $url.'-end';
             $end = 'performance.mark("'.$end_name.'");';
-            $measure = 'performance.mark("'.$url.'", "'.$start_name.'", "'.$end_name.'");';
+            $measure = 'performance.measure("'.$url.'", "'.$start_name.'", "'.$end_name.'");';
             $js = $start.$js.$end.$measure;
 
             //縮小化可能なJSな時
@@ -126,7 +126,7 @@ function tag_code_to_minify_js($buffer) {
           $start = 'performance.mark("'.$start_name.'");';
           $end_name = 'inline-js-'.$i.'-end';
           $end = 'performance.mark("'.$end_name.'");';
-          $measure = 'performance.mark("inline-js-'.$i.'", "'.$start_name.'", "'.$end_name.'");';
+          $measure = 'performance.measure("inline-js-'.$i.'", "'.$start_name.'", "'.$end_name.'");';
           $js = $start.$js.$end.$measure;
           //_v($js);
           //インラインタイプのscriptタグを縮小化して置換する
