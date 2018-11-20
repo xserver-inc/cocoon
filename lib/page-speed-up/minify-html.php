@@ -221,14 +221,15 @@ function convert_lazy_load_tag($the_content, $media){
       break;
   }
   */
+  $is_img = ($media == 'img');
 
   $pattern = '{<'.$media.'.+?>}is';
 
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all($pattern, $the_content, $m);
-  if ($media == 'iframe') {
-    _v($m);
-  }
+  // if ($media == 'iframe') {
+  //   _v($m);
+  // }
   //_v($m);
   if ($res) {//画像タグがある場合
     //_v($m);
@@ -280,7 +281,11 @@ function convert_lazy_load_tag($the_content, $media){
       // $tag = preg_replace($search, $replace, $tag);
 
       //noscriptタグの追加
-      $tag = $tag.'<noscript>'.$match.'</noscript>';
+      if ($is_img) {
+        $tag = $tag.'<noscript>'.$match.'</noscript>';
+      } else {
+        # code...
+      }
       //_v($tag);
 
       //imgタグをLazy Load対応に置換
