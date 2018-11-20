@@ -265,6 +265,10 @@ function convert_lazy_load_tag($the_content, $media){
       //srcsetの変換宇
       $tag = str_replace(' srcset=', ' data-srcset=', $tag);
 
+      // //data-loadedの削除
+      // $tag = str_replace(' data-loaded="true"', '', $tag);
+      // $tag = str_replace(" data-loaded='true'", '', $tag);
+
       // //srcsetの削除
       // $search = '{ ?+srcset=["\'].+?["\']}i';
       // $replace = '';
