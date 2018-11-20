@@ -30,9 +30,6 @@ update_theme_option(OP_IMAGE_WRAP_EFFECT);
 //画像の拡大効果
 update_theme_option(OP_IMAGE_ZOOM_EFFECT);
 
-//Lazy Load
-update_theme_option(OP_LAZY_LOAD_ENABLE);
-
 //NO IMAGE画像
 update_theme_option(OP_NO_IMAGE_URL);
 //画像が設定された場合は生成

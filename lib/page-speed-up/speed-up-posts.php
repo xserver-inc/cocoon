@@ -21,6 +21,9 @@ update_theme_option(OP_JS_MINIFY_ENABLE);
 //JS縮小化除外ファイルリスト
 update_theme_option(OP_JS_MINIFY_EXCLUDE_LIST);
 
+//Lazy Load
+update_theme_option(OP_LAZY_LOAD_ENABLE);
+
 //ブラウザキャッシュが有効な時
 if (isset($_POST[OP_BROWSER_CACHE_ENABLE])){
   add_browser_cache_to_htaccess();

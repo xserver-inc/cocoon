@@ -29,7 +29,7 @@ function code_minify_call_back($buffer) {
     //画像の変換
     $buffer = convert_lazy_load_tag($buffer, 'img');
     //iframeの変換
-    $buffer = convert_lazy_load_tag($buffer, 'iframe');
+    //$buffer = convert_lazy_load_tag($buffer, 'iframe');
   }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策

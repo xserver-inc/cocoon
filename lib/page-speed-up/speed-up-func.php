@@ -66,6 +66,14 @@ function get_js_minify_exclude_list(){
 }
 endif;
 
+//Lazy Load
+define('OP_LAZY_LOAD_ENABLE', 'lazy_load_enable');
+if ( !function_exists( 'is_lazy_load_enable' ) ):
+function is_lazy_load_enable(){
+  return get_theme_option(OP_LAZY_LOAD_ENABLE);
+}
+endif;
+
 define('HTACCESS_FILE', ABSPATH.'.htaccess');
 define('THEME_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTACCESS');
 define('THEME_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTACCESS');
