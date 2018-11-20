@@ -2182,7 +2182,7 @@ endif;
 
 //robots.txtページかどうか
 if ( !function_exists( 'is_robots_text_page' ) ):
-  function is_robots_text_page(){
-    return isset($_SERVER['REQUEST_URI']) && ($_SERVER['REQUEST_URI'] == '/robots.txt');
-  }
-  endif;
+function is_robots_text_page(){
+  return isset($_SERVER['REQUEST_URI']) && ($_SERVER['REQUEST_URI'] == '/robots.txt');
+}
+endif;

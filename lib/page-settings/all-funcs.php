@@ -170,20 +170,18 @@ function add_default_site_icon_tag(){
 endif;
 
 // //サイトアイコンの設定
-// // add_action( 'wp_head', 'the_site_icon_tag' );
-// // add_action( 'admin_print_styles', 'the_site_icon_tag' );
+// add_action( 'wp_head', 'the_site_icon_tag' );
+// add_action( 'admin_print_styles', 'the_site_icon_tag' );
 // if ( !function_exists( 'the_site_icon_tag' ) ):
 // function the_site_icon_tag(){
-//   if (get_site_icon_url2()) {
-//     $url = get_site_icon_url2();
+//   if (get_site_icon_url()) {
+//     $url = get_site_icon_url();
 //   } else {
 //     $url = get_default_site_icon_url();
 //   }
 //   if ($url) {
-//     $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL;
-//     $tag .= '<link rel="icon" href="'.$url.'">'.PHP_EOL;
-//     $tag .= '<link rel="apple-touch-icon" href="'.$url.'">'.PHP_EOL;
-//     $tag .= '<meta name="msapplication-TileImage" content="'.$url.'">'.PHP_EOL;
+//     $tag = '<!-- '.THEME_NAME_CAMEL.' shortcut icon -->'.PHP_EOL;
+//     $tag .= '<link rel="shortcut icon" href="'.$url.'">'.PHP_EOL;
 //     echo $tag;
 //   }
 // }
