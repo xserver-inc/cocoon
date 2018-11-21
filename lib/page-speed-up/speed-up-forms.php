@@ -122,12 +122,12 @@
         <!-- Lazy Load画像 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_LAZY_LOAD_ENABLE, __('Lazy Load', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_LAZY_LOAD_ENABLE, __('遅延読み込み', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( '画像遅延読み込みを有効にする', THEME_NAME ));
-            generate_tips_tag(__( 'Googleが推奨するimgタグの遅延読み込み方法でページ表示を高速化します。Lazy Loadは、Intersection Observer APIを利用しています。', THEME_NAME ));
+            generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( 'Lazy Loadを有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'Googleが推奨するメディアの遅延読み込み方法でページ表示を高速化します。Lazy Loadは、Intersection Observer APIを利用しています。対応メディアはimgとiframeです。', THEME_NAME ));
 
             ?>
           </td>
