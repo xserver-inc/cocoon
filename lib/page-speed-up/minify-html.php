@@ -217,20 +217,18 @@ endif;
 //imgタグをLazy Load用の画像タグに変換
 if ( !function_exists( 'convert_lazy_load_tag' ) ):
 function convert_lazy_load_tag($the_content, $media){
-  //AMPページでは実行しない
-  if (is_amp()) {
+  //AMP・アクセス解析ページでは実行しない
+  if (is_amp() || is_analytics_access_php_page()) {
     return $the_content;
   }
-  /*
-  switch ($media) {
-    case 'iframe':
-      $pattern = '{<iframe.+?>}is';
-      break;
-    default:
-      $pattern = '{<img.+?>}is';
-      break;
-  }
-  */
+  // //挿入するクラス
+  // $classes = 'lozad lozad-'.$media;
+  // //既に置換後なら処理しない
+  // if (includes_string($the_content, $classes)) {
+  //   return $the_content;
+  // }
+  //_v($_SERVER['REQUEST_URI']);
+
   $is_img = ($media == 'img');
   if (!$is_img) {
     //YouTube高速化がある場合はiframeは処理しない
@@ -275,13 +273,15 @@ function convert_lazy_load_tag($the_content, $media){
       //$tag = convert_src_to_data_src($tag);
 
       //クラスの変更
+      //挿入するクラス
+      $classes = 'lozad lozad-'.$media;
       if (preg_match('/class=/i', $tag)) {
         $search = '{class=["\'](.+?)["\']}i';
-        $replace = 'class="$1 lozad"';
+        $replace = 'class="$1 '.$classes.'"';
         $tag = preg_replace($search, $replace, $tag);
       } else {
         $search = '<'.$media;
-        $replace = '<'.$media.' class="lozad"';
+        $replace = '<'.$media.' class="'.$classes.'"';
         $tag = str_replace($search, $replace, $tag);
       }
       //$tag = convert_lazy_load_class($tag);
