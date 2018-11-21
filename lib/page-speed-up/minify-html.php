@@ -81,6 +81,7 @@ function is_minify_page(){
   if (is_server_request_post()) return false;
   if (is_server_request_uri_backup_download_php()) return false;
   if (is_robots_txt_page()) return false;
+  if (is_analytics_access_php_page()) return false;
   return true;
 }
 endif;
