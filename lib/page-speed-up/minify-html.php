@@ -29,7 +29,7 @@ function code_minify_call_back($buffer) {
     //画像の変換
     $buffer = convert_lazy_load_tag($buffer, 'img');
     //iframeの変換
-    //$buffer = convert_lazy_load_tag($buffer, 'iframe');
+    $buffer = convert_lazy_load_tag($buffer, 'iframe');
   }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
@@ -241,6 +241,10 @@ function convert_lazy_load_tag($the_content, $media){
 
   $pattern = '{<'.$media.'.+?>}is';
 
+  if (!$is_img) {
+    $pattern = '{<iframe.+?</iframe>}is';
+  }
+
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all($pattern, $the_content, $m);
   // if ($media == 'iframe') {
@@ -250,6 +254,11 @@ function convert_lazy_load_tag($the_content, $media){
   if ($res) {//画像タグがある場合
     //_v($m);
     foreach ($m[0] as $match) {
+      //文字列が1024バイト以上の場合はスキップ
+      if (strlen($match) > 1024) {
+        continue;
+      }
+
       //変数の初期化
       $src_attr = null;
       $url = null;
