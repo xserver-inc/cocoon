@@ -326,6 +326,9 @@ function get_additional_entry_content_classes($option = null){
     case 'shadow':
       $classes .= ' iwe-shadow';
       break;
+      case 'shadow_paper':
+        $classes .= ' iwe-shadow-paper';
+        break;
     default:
 
       break;

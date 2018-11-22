@@ -102,6 +102,7 @@
               'border' => 'ボーダー（薄い枠線）',
               'border_bold' => 'ボーダー（薄い太線）',
               'shadow' => 'シャドー（薄い影）',
+              'shadow_paper' => 'シャドー（ペーパー）',
             );
             generate_radiobox_tag(OP_IMAGE_WRAP_EFFECT, $options, get_image_wrap_effect());
             generate_tips_tag(__( '画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。', THEME_NAME ));
