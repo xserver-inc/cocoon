@@ -183,8 +183,9 @@ if ( !function_exists( 'rating_star_shortcode' ) ):
 function rating_star_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
       'rate' => 5,
+      'max' => 1,
       'number' => 1,
   ), $atts ) );
- return get_rating_star_tag($rate, $number);
+ return get_rating_star_tag($rate, $max, $number);
 }
 endif;

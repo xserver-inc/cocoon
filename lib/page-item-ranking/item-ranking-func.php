@@ -198,13 +198,15 @@ endif;
 
 //レーティングスタータグの取得
 if ( !function_exists( 'get_rating_star_tag' ) ):
-function get_rating_star_tag($rate, $number = false){
+function get_rating_star_tag($rate, $max = 5, $number = false){
+  $rate = floatval($rate);
+  $max = intval($max);
   //数字じゃない場合
   if (!is_numeric($rate)) {
     return $rate;
   }
   //レーティングが100より多い場合は多すぎるので処理しない
-  if (floatval($rate) > 100) {
+  if ($rate > 100 && $max > 100) {
     return $rate;
   }
 
@@ -229,11 +231,11 @@ function get_rating_star_tag($rate, $number = false){
   if ($has_herf) {
     $before = intval($rates[0]);
     $middle = 1;
-    $after = 5 - 1 - $before;
+    $after = $max - 1 - $before;
   } else {
     $before = intval($rate);
     $middle = 0;
-    $after = 5 - $before;
+    $after = $max - $before;
     //3.2とかの場合は小数点以下を切り捨てる
     $rate = floor(floatval($rate));
   }
