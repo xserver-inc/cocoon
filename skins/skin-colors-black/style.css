@@ -1,0 +1,239 @@
+@charset "UTF-8";
+/*
+  Skin Name: COLORS（ブラック）
+  Description: 日本の伝統食・藍鉄（#393f4c）をベースとしたシンプルスキン。
+  Skin URI: https://wp-cocoon.com/skin-colors/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-blue.png
+  Version: 1.0.1
+  Priority: 107
+*/
+/*以下にスタイルシートを記入してください*/
+body {
+  background-color: #f3f3f2;
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+}
+
+.header, .header .site-name-text {
+  color: #fff;
+}
+
+.header {
+  background-color: #393f4c;
+}
+
+.widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .tagcloud a:hover, .pagination a:hover, .pager-links a:hover span, .pagination-next-link:hover, .comment-btn:hover, .comment-reply-link:hover, .navi-footer-in a:hover, .navi-footer-in a:hover {
+  background-color: rgba(57, 63, 76, 0.05);
+}
+
+.page-numbers,
+.tagcloud a,
+.author-box,
+.ranking-item,
+.pagination-next-link,
+.comment-reply-link,
+.toc {
+  border: 1px solid #9ea1a3;
+}
+
+.toc {
+  width: 80%;
+}
+
+.page-numbers,
+.pagination-next-link {
+  border-radius: 8px;
+  background: rgba(57, 63, 76, 0.05);
+}
+
+.pagination .page-numbers,
+.pager-numbers .page-numbers {
+  border-radius: 50%;
+}
+
+.pagination .current,
+.page-numbers.current,
+.page-numbers.dots {
+  background: #9ea1a3;
+}
+
+.cat-label,
+.mobile-menu-buttons,
+.mobile-menu-buttons .menu-button > a,
+.navi-menu-content,
+.navi-menu-content a,
+.go-to-top-button,
+#submit {
+  background-color: #393f4c;
+  color: #fff;
+}
+
+#submit {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+div.mobile-menu-buttons .menu-button:hover,
+.navi-menu-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.sidebar-menu-content {
+  color: #333;
+}
+
+.cat-label {
+  top: 0;
+  left: 0;
+  border: none;
+  border-bottom-right-radius: 3px;
+}
+
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a {
+  border-bottom: 1px dashed #ccc;
+  padding: 5px 0;
+}
+
+.cat-item a::before {
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 6px;
+}
+
+.cat-item .children a::before {
+  content: '\f105';
+}
+
+.post-count {
+  background-color: #e5e4e6;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 0.8em;
+}
+
+.main,
+.sidebar,
+.carousel-in,
+.sbp-main-before,
+.sbp-footer-before,
+.pbp-main-before,
+.pbp-footer-before {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.a-wrap {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  transition-duration: 0.3s;
+}
+.a-wrap:hover {
+  background-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.3s;
+}
+
+.widget-entry-cards .a-wrap {
+  margin-bottom: 8px;
+}
+
+.comment-list ul.children {
+  padding: 0.6em;
+  background-color: rgba(57, 63, 76, 0.05);
+  border-left: 2px solid #9ea1a3;
+}
+
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  border-radius: 50%;
+  background: #9ea1a3;
+  top: -10px;
+  left: -10px;
+  border: 2px solid #eee;
+}
+
+.navi {
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+.navi a:hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
+.navi ul .sub-menu {
+  background-color: #393f4c;
+  opacity: 0.95;
+}
+.navi ul .sub-menu a {
+  color: #fff;
+}
+.navi ul .sub-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.navi ul .sub-menu a .sub-caption {
+  opacity: .8;
+}
+
+.navi-in > ul .sub-menu {
+  display: block;
+}
+.navi-in > ul .sub-menu li {
+  visibility: hidden;
+  transition: all 0.2s ease;
+  height: 0;
+}
+.navi-in > ul li:hover > ul > li {
+  transition: all 0.2s ease;
+  visibility: visible;
+  height: 60px;
+}
+.navi-in > ul .sub-menu .sub-menu li {
+  display: none;
+}
+.navi-in > ul .sub-menu li:hover > ul > li {
+  display: block;
+}
+
+.sidebar h3 {
+  background: transparent;
+  padding: 0.4em;
+  margin: 0.3em 0;
+}
+
+.article h2 {
+  background: #e5e4e6;
+  border-left: solid 5px #393f4c;
+}
+
+.article h3 {
+  border: none;
+  border-left: solid 5px #393f4c;
+}
+
+.article h4 {
+  border: none;
+  border-bottom: 6px solid #e5e4e6;
+}
+
+.article h5,
+.article h6 {
+  border: none;
+}
+
+blockquote::before, blockquote::after {
+  content: "“";
+}
+
+#tinymce.main {
+  box-shadow: none;
+}
