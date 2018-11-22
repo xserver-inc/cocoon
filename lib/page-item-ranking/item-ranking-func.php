@@ -202,7 +202,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   $rate = floatval($rate);
   $max = intval($max);
   //数字じゃない場合
-  if (!is_numeric($rate)) {
+  if (!is_numeric($rate) || !is_numeric($max)) {
     return $rate;
   }
   //レーティングが100より多い場合は多すぎるので処理しない
