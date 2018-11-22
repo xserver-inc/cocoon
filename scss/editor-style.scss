@@ -170,8 +170,9 @@ body.gutenberg-editor-page div.editor-block-list__block {
 }
 @media screen and (min-width: 960px){
   div.edit-post-text-editor {
-    padding-left: 10%;
-    padding-right: 10%;
+    // padding-left: 10%;
+    // padding-right: 10%;
+    max-width: 800px;
   }
 }
 
