@@ -6383,6 +6383,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   font-size: 24px;
 }
 
+.wpforo-attached-file {
+  word-break: break-all;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
