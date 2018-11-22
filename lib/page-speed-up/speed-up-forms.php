@@ -127,7 +127,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( 'Lazy Loadを有効にする', THEME_NAME ));
-            generate_tips_tag(__( 'Googleが推奨するメディアの遅延読み込み方法でページ表示を高速化します。Lazy Loadは、Intersection Observer APIを利用しています。対応メディアはimgとiframeです。', THEME_NAME ));
+            generate_tips_tag(__( 'Googleが推奨するメディアの遅延読み込み方法でページ表示を高速化します。Lazy Loadは、Intersection Observer APIを利用しています。対応メディアはimgのみです。', THEME_NAME ));
 
             ?>
           </td>
