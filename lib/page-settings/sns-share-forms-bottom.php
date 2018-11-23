@@ -78,6 +78,9 @@
               <li>
                 <?php generate_checkbox_tag(OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE, is_bottom_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
               </li>
+              <li>
+                <?php generate_checkbox_tag(OP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE, is_bottom_pinterest_share_button_visible(), __( 'Pinterest', THEME_NAME )); ?>
+              </li>
             </ul>
             <p><?php _e( '本文下に表示するシェアボタンを選択してください。', THEME_NAME ) ?></p>
           </td>

@@ -70,6 +70,14 @@ function is_bottom_line_at_share_button_visible(){
 }
 endif;
 
+//ボトムPinterestシェアボタンの表示
+define('OP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE', 'bottom_pinterest_share_button_visible');
+if ( !function_exists( 'is_bottom_pinterest_share_button_visible' ) ):
+function is_bottom_pinterest_share_button_visible(){
+  return get_theme_option(OP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE, 0);
+}
+endif;
+
 //ボトムSNSシェアボタンカラー
 define('OP_SNS_BOTTOM_SHARE_BUTTON_COLOR', 'sns_bottom_share_button_color');
 if ( !function_exists( 'get_sns_bottom_share_button_color' ) ):
