@@ -155,7 +155,7 @@ function url_to_external_ogp_blogcard_tag($url){
 
   require_once abspath(__FILE__).'open-graph.php';
   //ブログカードキャッシュ更新モード、もしくはログインユーザー以外のときはキャッシュの取得
-  if ( !(is_external_blogcard_refresh_mode() && is_user_administrator()) ) {
+  if ( !(is_external_blogcard_refresh_mode()) ) {
     //保存したキャッシュを取得
     $ogp = get_transient( $url_hash );
   }
