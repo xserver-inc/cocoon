@@ -27,29 +27,25 @@
     width: 10%;
   }
 
-}
-
-.carousel-entry-card-wrap.a-wrap{
-  //padding: 2px 3px;
-  overflow: hidden;
-  margin: 0 3px 3px;
-  //height: 180px;
-  position: relative;
-
-  &::before{
-    content:"";
-    display: block;
-    padding-top: 82%;
+  .slick-track{
+    display: flex;
   }
-  .e-card{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: 2px 3px;
+  .slick-slide {
+    height: auto;
+    //display: block;
+  }
+  .a-wrap{
+    margin: 0 3px 3px;
   }
 }
+
+
+
+// .slick-initialized .slick-slide{
+//   display: block !important;
+// }
+
+
 
 .carousel-entry-card-thumb{
   @extend %card_thumb;

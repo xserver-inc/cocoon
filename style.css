@@ -5796,24 +5796,14 @@ input[type='submit'],
   float: left;
   width: 10%;
 }
-
-.carousel-entry-card-wrap.a-wrap {
-  overflow: hidden;
+.carousel-content .slick-track {
+  display: flex;
+}
+.carousel-content .slick-slide {
+  height: auto;
+}
+.carousel-content .a-wrap {
   margin: 0 3px 3px;
-  position: relative;
-}
-.carousel-entry-card-wrap.a-wrap::before {
-  content: "";
-  display: block;
-  padding-top: 82%;
-}
-.carousel-entry-card-wrap.a-wrap .e-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: 2px 3px;
 }
 
 .carousel-entry-card-thumb {
