@@ -483,6 +483,13 @@ function get_line_share_url(){
 }
 endif;
 
+//PinterestのシェアURLを取得
+if ( !function_exists( 'get_pinterest_share_url' ) ):
+function get_pinterest_share_url(){
+  return '//www.pinterest.com/pin/create/button/?url='.urlencode(get_share_page_url());
+}
+endif;
+
 //シェアボタンを表示するか
 if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
 function is_sns_share_buttons_visible($option){
@@ -536,6 +543,14 @@ if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible($option){
   return (is_bottom_line_at_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_line_at_share_button_visible() && $option == SS_TOP);
+}
+endif;
+
+//Pinterestシェアボタンを表示するか
+if ( !function_exists( 'is_pinterest_share_button_visible' ) ):
+function is_pinterest_share_button_visible($option){
+  return (is_bottom_pinterest_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_pinterest_share_button_visible() && $option == SS_TOP);
 }
 endif;
 

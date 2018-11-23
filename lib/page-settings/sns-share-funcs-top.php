@@ -73,7 +73,7 @@ function is_top_line_at_share_button_visible(){
 }
 endif;
 
-//LINE@シェアボタンの表示
+//Pinterestシェアボタンの表示
 define('OP_TOP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE', 'top_pinterest_share_button_visible');
 if ( !function_exists( 'is_top_pinterest_share_button_visible' ) ):
 function is_top_pinterest_share_button_visible(){

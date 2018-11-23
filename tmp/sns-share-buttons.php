@@ -37,6 +37,10 @@
       <a href="<?php echo get_line_share_url(); ?>" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span><span class="share-count line-share-count"></span></a>
     <?php endif; ?>
 
+    <?php if ( is_pinterest_share_button_visible($option) )://Pinterestボタンを表示するか ?>
+      <a href="<?php echo get_pinterest_share_url(); ?>" class="share-button pinterest-button pinterest-share-button-sq" target="_blank" rel="nofollow" data-pin-do="buttonBookmark" data-pin-custom="true"><span class="social-icon icon-pinterest"></span><span class="button-caption"><?php _e( 'Pinterest', THEME_NAME ) ?></span><span class="share-count pinterest-share-count"></span></a>
+    <?php endif; ?>
+
   </div><!-- /.sns-share-buttons -->
 
 </div><!-- /.sns-share -->

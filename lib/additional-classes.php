@@ -286,7 +286,7 @@ function body_class_additional($classes) {
   }
 
   //Pinterestボタンを表示するか
-  if (is_pinterest_share_button_visible() && is_singular()) {
+  if (is_pinterest_share_pin_visible() && is_singular()) {
     $classes[] = 'show-pinterest-button';
   }
 

@@ -83,11 +83,11 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
         <!-- メンション -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_PINTEREST_SHARE_BUTTON_VISIBLE, __( 'Pinterest共有', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_PINTEREST_SHARE_PIN_VISIBLE, __( 'Pinterest共有', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag( OP_PINTEREST_SHARE_BUTTON_VISIBLE, is_pinterest_share_button_visible(), __( 'Pinterestで画像をシェアする', THEME_NAME ));
+            generate_checkbox_tag( OP_PINTEREST_SHARE_PIN_VISIBLE, is_pinterest_share_pin_visible(), __( 'Pinterestで画像をシェアする', THEME_NAME ));
             generate_tips_tag(__( 'この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーすると「ピン」ボタンが表示されます。', THEME_NAME ));
             ?>
           </td>

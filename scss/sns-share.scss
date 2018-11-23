@@ -25,6 +25,9 @@
 // SNSシェアボタン
 ///////////////////////////////////////
 %sns_button_color{
+  a{
+    cursor: pointer;
+  }
   //ボタンカラー
   &.bc-brand-color{
     .twitter-button{

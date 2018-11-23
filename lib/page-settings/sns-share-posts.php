@@ -19,7 +19,7 @@ update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
 update_theme_option(OP_TWITTER_HASH_TAG);
 
 //写真をPinterestで共有する
-update_theme_option(OP_PINTEREST_SHARE_BUTTON_VISIBLE);
+update_theme_option(OP_PINTEREST_SHARE_PIN_VISIBLE);
 
 //SNSシェア数キャッシュ有効
 update_theme_option(OP_SNS_SHARE_COUNT_CACHE_ENABLE);

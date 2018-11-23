@@ -39,10 +39,10 @@ function get_twitter_hash_tag(){
 endif;
 
 //写真をPinterestで共有する
-define('OP_PINTEREST_SHARE_BUTTON_VISIBLE', 'pinterest_share_button_visible');
-if ( !function_exists( 'is_pinterest_share_button_visible' ) ):
-function is_pinterest_share_button_visible(){
-  return get_theme_option(OP_PINTEREST_SHARE_BUTTON_VISIBLE);
+define('OP_PINTEREST_SHARE_PIN_VISIBLE', 'pinterest_share_button_visible');
+if ( !function_exists( 'is_pinterest_share_pin_visible' ) ):
+function is_pinterest_share_pin_visible(){
+  return get_theme_option(OP_PINTEREST_SHARE_PIN_VISIBLE);
 }
 endif;
 

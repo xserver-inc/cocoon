@@ -496,6 +496,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
 .admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.5s ease; }
+.admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a { cursor: pointer; }
 .admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button { background-color: #1da1f2; }
 .admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button { background-color: #3b5998; }
 .admin-settings .demo .bc-brand-color.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color.sns-follow .hatebu-button { background-color: #2c6ebd; }
@@ -1517,6 +1518,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
 .admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.5s ease; }
+.admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a { cursor: pointer; }
 .admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button { background-color: #1da1f2; }
 .admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button { background-color: #3b5998; }
 .admin-settings .demo .bc-brand-color.sns-share .hatebu-button, .admin-settings .demo .bc-brand-color.sns-follow .hatebu-button { background-color: #2c6ebd; }
