@@ -316,3 +316,19 @@ $sns_button_margin_bottom: 8px;
 .sbc-hide .share-count{
   display: none;
 }
+
+/* メッセージ */
+.copy-info {
+  display: none; /* 初期状態は非表示 */
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 1em;
+  /* 画面上部に表示 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  opacity: 0.8;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}

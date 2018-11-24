@@ -12,8 +12,26 @@ if (!is_amp()): ?>
   <script async defer data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
   <?php endif ?>
   <?php //Pinterestシェアボタン用のスクリプト
-  if (is_singular() && (is_top_twitter_share_button_visible() || is_bottom_pinterest_share_button_visible())): ?>
+  if (is_singular() && (is_top_pinterest_share_button_visible() || is_bottom_pinterest_share_button_visible())): ?>
   <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="//assets.pinterest.com/js/pinit_main.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pinterest-btn-js");</script>
+  <?php endif ?>
+  <?php //コピーシェアボタン用のスクリプト
+  if (is_singular() && (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible())): ?>
+  <div class="copy-info"><?php _e('コピーしました', THEME_NAME); ?></div>
+  <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+  <script>
+  (function($){
+    var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
+    clipboard.on('success', function(e) {
+      // console.info('Action:', e.action);
+      // console.info('Text:', e.text);
+      // console.info('Trigger:', e.trigger);
+      $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+
+      e.clearSelection();
+    });
+  })(jQuery);
+  </script>
   <?php endif ?>
   <?php //本文中のJavaScriptをまとめて出力
   global $_THE_CONTENT_SCRIPTS;

@@ -85,7 +85,7 @@ body.wp-admin { color: #444; }
 ** 日付関係のスタイル
 ************************************/ /************************************
 ** パンくずリスト
-************************************/ /************************************
+************************************/ /* メッセージ */ /************************************
 ** 内容
 ************************************/ /*エントリー・アーカイブの見出し*/ /*本文下カテゴリとタグ*/ /*本文下カテゴリ*/ /*本文下タグ*/ /************************************
 ** 投稿・固定ページで使うHTML要素
@@ -203,7 +203,7 @@ body.wp-admin { color: #444; }
 ** 日付関係のスタイル
 ************************************/ /************************************
 ** パンくずリスト
-************************************/ /************************************
+************************************/ /* メッセージ */ /************************************
 ** 内容
 ************************************/ /*エントリー・アーカイブの見出し*/ /*本文下カテゴリとタグ*/ /*本文下カテゴリ*/ /*本文下タグ*/ /************************************
 ** 投稿・固定ページで使うHTML要素
@@ -552,6 +552,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
+.admin-settings .demo .copy-info { display: none; /* 初期状態は非表示 */ padding: 1em 2em; color: #fff; border-radius: 1em; /* 画面上部に表示 */ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
 .admin-settings .demo .content { margin-top: 24px; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: 1em; display: table; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -1574,6 +1575,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
+.admin-settings .demo .copy-info { display: none; /* 初期状態は非表示 */ padding: 1em 2em; color: #fff; border-radius: 1em; /* 画面上部に表示 */ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
 .admin-settings .demo .content { margin-top: 24px; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: 1em; display: table; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
