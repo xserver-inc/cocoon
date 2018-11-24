@@ -127,6 +127,11 @@ function wp_enqueue_scripts_custom() {
 
   //レンダリングをブロックしている jQuery, jQuery-migrate をフッタに移動する
   if (!is_admin()) {
+    ///////////////////////////////////////////
+    // Lazy Load
+    ///////////////////////////////////////////
+    wp_enqueue_lazy_load();
+
     //jQueryライブラリの読み込み
     wp_enqueue_script_jquery_js();
 
@@ -143,12 +148,6 @@ function wp_enqueue_scripts_custom() {
     //タイルカード
     wp_enqueue_jquery_masonry();
   }
-
-
-  ///////////////////////////////////////////
-  // Lazy Load
-  ///////////////////////////////////////////
-  wp_enqueue_lazy_load();
 
   ///////////////////////////////////////////
   //コメント返信時のフォームの移動（WPライブラリから呼び出し）
