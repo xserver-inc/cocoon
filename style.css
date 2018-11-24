@@ -1151,85 +1151,71 @@ img.emoji {
 .bc-brand-color-white.sns-share a, .bc-brand-color-white.sns-follow a {
   background-color: #fff;
   font-weight: 500;
+  border: 1px solid #333;
+  color: #333;
 }
 .bc-brand-color-white.sns-share a:hover, .bc-brand-color-white.sns-follow a:hover {
   opacity: 0.5;
 }
 .bc-brand-color-white.sns-share .twitter-button, .bc-brand-color-white.sns-follow .twitter-button {
   color: #1da1f2;
-  border: 1px solid #1da1f2;
+  border-color: #1da1f2;
 }
 .bc-brand-color-white.sns-share .facebook-button, .bc-brand-color-white.sns-follow .facebook-button {
   color: #3b5998;
-  border: 1px solid #3b5998;
+  border-color: #3b5998;
 }
 .bc-brand-color-white.sns-share .hatebu-button, .bc-brand-color-white.sns-follow .hatebu-button {
   color: #2c6ebd;
-  border: 1px solid #2c6ebd;
+  border-color: #2c6ebd;
 }
 .bc-brand-color-white.sns-share .google-plus-button, .bc-brand-color-white.sns-follow .google-plus-button {
   color: #dd4b39;
-  border: 1px solid #dd4b39;
+  border-color: #dd4b39;
 }
 .bc-brand-color-white.sns-share .pocket-button, .bc-brand-color-white.sns-follow .pocket-button {
   color: #ef4056;
-  border: 1px solid #ef4056;
+  border-color: #ef4056;
 }
 .bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
   color: #00c300;
-  border: 1px solid #00c300;
+  border-color: #00c300;
 }
 .bc-brand-color-white.sns-share .website-button, .bc-brand-color-white.sns-follow .website-button {
   color: #002561;
-  border: 1px solid #002561;
+  border-color: #002561;
 }
 .bc-brand-color-white.sns-share .instagram-button, .bc-brand-color-white.sns-follow .instagram-button {
   color: #405de6;
-  border: 1px solid #405de6;
+  border-color: #405de6;
 }
 .bc-brand-color-white.sns-share .pinterest-button, .bc-brand-color-white.sns-follow .pinterest-button {
   color: #bd081c;
-  border: 1px solid #bd081c;
+  border-color: #bd081c;
 }
 .bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
   color: #cd201f;
-  border: 1px solid #cd201f;
+  border-color: #cd201f;
 }
 .bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
   color: #111;
-  border: 1px solid #111;
+  border-color: #111;
 }
 .bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
   color: #ff9900;
-  border: 1px solid #ff9900;
+  border-color: #ff9900;
 }
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
   color: #4078c0;
-  border: 1px solid #4078c0;
+  border-color: #4078c0;
 }
 .bc-brand-color-white.sns-share .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
   color: #2bb24c;
-  border: 1px solid #2bb24c;
+  border-color: #2bb24c;
 }
 .bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button {
   color: #f26522;
-  border: 1px solid #f26522;
-}
-.bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
-}
-.bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-  color: #00c300;
-  border: 1px solid #00c300;
+  border-color: #f26522;
 }
 
 .ss-top {
@@ -1317,18 +1303,18 @@ img.emoji {
 /* メッセージ */
 .copy-info {
   display: none;
-  /* 初期状態は非表示 */
+  /*初期状態は非表示*/
   padding: 1em 2em;
   color: #fff;
-  border-radius: 1em;
-  /* 画面上部に表示 */
+  border-radius: 8px;
+  /*画面上部に表示*/
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #333;
   opacity: 0.8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px #777;
 }
 
 /************************************
