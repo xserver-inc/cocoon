@@ -5,6 +5,7 @@ body#tinymce {
   margin-top: 0 !important;
   background-image: none;
   background-color: #fff;
+  width: auto;
 }
 
 .column-2,
