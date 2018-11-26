@@ -79,6 +79,9 @@ https://github.com/ApoorvSaxena/lozad.js
 IntersectionObserver polyfill
 https://github.com/w3c/IntersectionObserver/tree/master/polyfill
 
+clipboard.js
+https://clipboardjs.com/
+
 コードを参考にしたプラグイン
 ------
 Auto Post Thumbnail

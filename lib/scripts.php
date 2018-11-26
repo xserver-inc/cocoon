@@ -165,6 +165,11 @@ function wp_enqueue_scripts_custom() {
   wp_enqueue_script_hatebu_share_button_js();
 
   ///////////////////////////////////
+  //クリップボードスクリプトの呼び出し
+  ///////////////////////////////////
+  //wp_enqueue_script_clipboard_js();
+
+  ///////////////////////////////////
   //Pinterest用のスクリプト呼び出し
   ///////////////////////////////////
   //wp_enqueue_script( 'pinterest-js', '//assets.pinterest.com/js/pinit.js', array(), false, true );

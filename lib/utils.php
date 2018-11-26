@@ -392,6 +392,29 @@ function wp_enqueue_script_hatebu_share_button_js(){
 }
 endif;
 
+//clipboard.jsスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_clipboard_js' ) ):
+function wp_enqueue_script_clipboard_js(){
+  if ( is_singular() && (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible()) ){
+    wp_enqueue_script( 'clipboard-js', get_template_directory_uri().'/plugins/clipboard.js-master/dist/clipboard.min.js', array( 'jquery' ), false, true );
+    $data = ("
+    (function($){
+      var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
+      clipboard.on('success', function(e) {
+        // console.info('Action:', e.action);
+        // console.info('Text:', e.text);
+        // console.info('Trigger:', e.trigger);
+        $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+
+        e.clearSelection();
+      });
+    })(jQuery);
+    ");
+    wp_add_inline_script( 'clipboard-js', $data, 'after' ) ;
+  }
+}
+endif;
+
 //ソースコードのハイライト表示に必要なリソースの読み込み
 if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){

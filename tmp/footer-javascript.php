@@ -18,7 +18,7 @@ if (!is_amp()): ?>
   <?php //コピーシェアボタン用のスクリプト
   if (is_singular() && (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible())): ?>
   <div class="copy-info"><?php _e('タイトルとURLをコピーしました', THEME_NAME); ?></div>
-  <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+  <script src="<?php echo get_template_directory_uri().'/plugins/clipboard.js-master/dist/clipboard.min.js'; ?>"></script>
   <script>
   (function($){
     var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
