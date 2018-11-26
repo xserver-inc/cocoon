@@ -181,6 +181,7 @@ class PopularEntryWidgetItem extends WP_Widget {
           '1' => __( '本日', THEME_NAME ),
           '7' => __( '7日間', THEME_NAME ),
           '30' => __( '30日間', THEME_NAME ),
+          '365' => __( '1年間', THEME_NAME ),
           'all' => __( '全期間', THEME_NAME ),
         );
         generate_selectbox_tag($this->get_field_name('count_days'), $options, $count_days);
