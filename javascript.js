@@ -86,7 +86,7 @@
 /////////////////////////////////
 // WEBフォントの非同期読み込み
 /////////////////////////////////
-var loadWebFont = function (url)  {
+function loadWebFont(url)  {
 
   var webfont = url;
   var createLink = function (href) {
@@ -105,4 +105,4 @@ var loadWebFont = function (url)  {
       createLink(webfont);
     });
   }
-  }
+}

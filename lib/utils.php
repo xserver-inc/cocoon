@@ -317,7 +317,7 @@ endif;
 //Font Awesomeの読み込み
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
-  if (!is_web_font_lazy_load_enable()) {
+  if (!is_web_font_lazy_load_enable() || is_admin()) {
     wp_enqueue_style( 'font-awesome-style', FONT_AWESOME_CDN_URL );
   }
 }
@@ -326,7 +326,7 @@ endif;
 //IcoMoonの読み込み
 if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
 function wp_enqueue_style_icomoon(){
-  if (!is_web_font_lazy_load_enable()) {
+  if (!is_web_font_lazy_load_enable() || is_admin()) {
     wp_enqueue_style( 'icomoon-style', FONT_AICOMOON_URL );
   }
 }
