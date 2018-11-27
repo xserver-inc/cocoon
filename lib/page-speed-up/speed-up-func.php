@@ -74,6 +74,14 @@ function is_lazy_load_enable(){
 }
 endif;
 
+//WEBフォントのLazy Load
+define('OP_WEB_FONT_LAZY_LOAD_ENABLE', 'web_font_lazy_load_enable');
+if ( !function_exists( 'is_web_font_lazy_load_enable' ) ):
+function is_web_font_lazy_load_enable(){
+  return get_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
+}
+endif;
+
 define('HTACCESS_FILE', ABSPATH.'.htaccess');
 define('THEME_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTACCESS');
 define('THEME_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTACCESS');

@@ -165,6 +165,11 @@ function wp_enqueue_scripts_custom() {
   wp_enqueue_script_hatebu_share_button_js();
 
   ///////////////////////////////////
+  //WEBフォントの非同期読み込み
+  ///////////////////////////////////
+  wp_enqueue_web_font_lazy_load_js();
+
+  ///////////////////////////////////
   //クリップボードスクリプトの呼び出し
   ///////////////////////////////////
   //wp_enqueue_script_clipboard_js();

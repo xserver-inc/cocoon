@@ -23,6 +23,8 @@ update_theme_option(OP_JS_MINIFY_EXCLUDE_LIST);
 
 //Lazy Load
 update_theme_option(OP_LAZY_LOAD_ENABLE);
+//WEBフォントのLazy Load
+update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 
 //ブラウザキャッシュが有効な時
 if (isset($_POST[OP_BROWSER_CACHE_ENABLE])){
