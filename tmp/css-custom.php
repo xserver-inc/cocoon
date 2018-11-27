@@ -512,11 +512,7 @@ if (is_toc_toggle_switch_enable()): ?>
 <?php //アイキャッチを中央表示
 if (is_eyecatch_center_enable()): ?>
 .eye-catch-wrap{
-  text-align: center;
-}
-.eye-catch {
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
 }
 <?php endif ?>
 <?php //アイキャッチをカラム幅にする
@@ -532,7 +528,7 @@ if (is_eyecatch_width_100_percent_enable()): ?>
 }
 <?php endif ?>
 <?php //AMPページ用のアイキャッチスタイル
-if(is_amp()):
+if(false && is_amp()):
 $main_column_contents_width = get_main_column_contents_width();
 if (!$main_column_contents_width) {
   $main_column_contents_width = 800;

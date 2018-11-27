@@ -1,12 +1,16 @@
 ///////////////////////////////////////////
 // アイキャッチ
 ///////////////////////////////////////////
+.eye-catch-wrap{
+  display: flex;
+}
 .eye-catch{
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: .6em;
+  max-width: 100%;
   //display: table-cell;
   //display: inline-block;
-  display: table;
+  //display: table;
   //display: block;
   //display: inline-block;
 
@@ -28,11 +32,11 @@
 
   }
 
-  img{
-    // width: 100%;
-    // height: auto;
-    display: block;
-  }
+  // img{
+  //   // width: 100%;
+  //   // height: auto;
+  //   //display: block;
+  // }
 
   // img{
   //   width: 100%;
@@ -60,9 +64,12 @@
 // IE11対策
 ///////////////////////////////////////////
 @media all and (-ms-high-contrast:none){
-  .eye-catch { display: block; } /* IE10～ */
+  .eye-catch-wrap { display: block; } /* IE10～ */
 }
 
+///////////////////////////////////////////
+// Pinterest
+///////////////////////////////////////////
 .show-pinterest-button{
   .eye-catch:hover{
     .cat-label{

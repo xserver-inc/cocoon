@@ -1618,10 +1618,14 @@ span.internal-icon {
   margin: 1em 0;
 }
 
+.eye-catch-wrap {
+  display: flex;
+}
+
 .eye-catch {
   position: relative;
-  margin-bottom: 1em;
-  display: table;
+  margin-bottom: .6em;
+  max-width: 100%;
 }
 .eye-catch .cat-label {
   position: absolute;
@@ -1633,9 +1637,6 @@ span.internal-icon {
   padding: 4px 8px;
   opacity: 0.9;
   border: 1px solid #eee;
-}
-.eye-catch img {
-  display: block;
 }
 
 .eye-catch-caption {
@@ -1652,7 +1653,7 @@ span.internal-icon {
 }
 
 @media all and (-ms-high-contrast: none) {
-  .eye-catch {
+  .eye-catch-wrap {
     display: block;
   }
 
