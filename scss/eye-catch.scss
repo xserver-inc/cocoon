@@ -1,0 +1,72 @@
+///////////////////////////////////////////
+// アイキャッチ
+///////////////////////////////////////////
+.eye-catch{
+  position: relative;
+  margin-bottom: 1em;
+  //display: table-cell;
+  //display: inline-block;
+  display: table;
+  //display: block;
+  //display: inline-block;
+
+  .cat-label{
+    position: absolute;
+    // right: 0.4em;
+    // top: 0.4em;
+    // bottom: auto;
+    // left: auto;
+    right: auto;
+    top: 0.4em;
+    bottom: auto;
+    left: 0.4em;
+    font-size: 14px;
+    padding: 4px 8px;
+    opacity: 0.9;
+    //border-radius: 2px;
+    border: 1px solid #eee;
+
+  }
+
+  img{
+    // width: 100%;
+    // height: auto;
+    display: block;
+  }
+
+  // img{
+  //   width: 100%;
+  //   height: auto;
+  // }
+
+  //@extend %bottom_margin;
+  //& +
+}
+
+.eye-catch-caption{
+  color: $white;
+  position: absolute;
+  bottom: 0;
+  padding: 0.2em 0.6em;
+  text-align: right;
+  width: 100%;
+  font-size: 0.9em;
+  background: linear-gradient(180deg, transparent, #555);
+  opacity: 0.9;
+  padding-top: 2em;
+}
+
+///////////////////////////////////////////
+// IE11対策
+///////////////////////////////////////////
+@media all and (-ms-high-contrast:none){
+  .eye-catch { display: block; } /* IE10～ */
+}
+
+.show-pinterest-button{
+  .eye-catch:hover{
+    .cat-label{
+      display: none;
+    }
+  }
+}
