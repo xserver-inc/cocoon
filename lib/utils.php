@@ -423,11 +423,12 @@ endif;
 if ( !function_exists( 'wp_enqueue_web_font_lazy_load_js' ) ):
 function wp_enqueue_web_font_lazy_load_js(){
   if ( is_web_font_lazy_load_enable() ){
+    wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
     $data = ('
       loadWebFont("'.FONT_AWESOME_CDN_URL.'");
       loadWebFont("'.FONT_AICOMOON_URL.'");
     ');
-    wp_add_inline_script( THEME_JS, $data, 'after' ) ;
+    wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
   }
 }
 endif;
