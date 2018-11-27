@@ -5,6 +5,9 @@ body#tinymce {
   margin-top: 0 !important;
   background-image: none;
   background-color: #fff;
+}
+
+body#tinymce.public-page{
   width: auto;
 }
 

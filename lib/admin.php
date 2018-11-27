@@ -591,6 +591,13 @@ function tiny_mce_before_init_custom( $mceInit ) {
   if (isset($mceInit['body_class'])) {
     $mceInit['body_class'] .= ' main article';
 
+    if (is_admin()) {
+      $mceInit['body_class'] .= ' admin-page';
+    } else {
+      $mceInit['body_class'] .= ' public-page';
+    }
+
+
     if (get_site_font_family_class()) {
       $mceInit['body_class'] .= ' '.get_site_font_family_class();
     }
