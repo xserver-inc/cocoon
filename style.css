@@ -1891,7 +1891,7 @@ span.internal-icon {
   counter-reset: c-h3;
 }
 .toc.tnt-number-detail ol > li:before {
-  content: counter(c-h2);
+  content: counter(c-h2) ".";
 }
 .toc.tnt-number-detail ol > li > ol > li {
   counter-increment: c-h3;

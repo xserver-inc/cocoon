@@ -650,7 +650,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
 .admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2); }
+.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }
@@ -1669,7 +1669,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
 .admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2); }
+.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }

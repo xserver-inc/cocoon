@@ -78,7 +78,7 @@
     }
 
     >li:before{
-      content: counter(c-h2);
+      content: counter(c-h2)".";
     }
 
     >li > ol > li{
