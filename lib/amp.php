@@ -771,18 +771,19 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////////
   //スキンのスタイル
   ///////////////////////////////////////////
-  if ( $skin_url = get_skin_url() ) {//設定されたスキンがある場合
+  if ( ($skin_url = get_skin_url()) && is_amp_skin_style_enable() ) {//設定されたスキンがある場合
     //通常のスキンスタイル
-    $amp_css = css_url_to_css_minify_code($skin_url);
+    $skin_css = css_url_to_css_minify_code($skin_url);
+    if ($skin_css !== false) {
+      $css_all .= $skin_css;
+    }
+
+    //AMPのスキンスタイル
+    $amp_css_url = str_replace('style.css', 'amp.css', $skin_url);
+    $amp_css = css_url_to_css_minify_code($amp_css_url);
     if ($amp_css !== false) {
       $css_all .= $amp_css;
     }
-    // $skin_file = url_to_local(get_skin_url());
-    // $amp_css_file = str_replace('style.css', 'amp.css', $skin_file);
-    // if (file_exists($amp_css_file)) {
-    //   $amp_css = $wp_filesystem->get_contents($amp_css_file);//ファイルの読み込み
-    //   $css_all .= $amp_css;
-    // }
   }
 
 
@@ -822,18 +823,20 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////////
   //子テーマのスタイル
   ///////////////////////////////////////////
-  if ( is_child_theme() ) {
+  if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
     //通常のスキンスタイル
-    $css_child_url = get_stylesheet_directory_uri().'/amp.css';
+    $css_child_url = get_stylesheet_directory_uri().'/style.css';
     $child_css = css_url_to_css_minify_code($css_child_url);
     if ($child_css !== false) {
       $css_all .= $child_css;
     }
-    // $css_file_child = get_stylesheet_directory().'/amp.css';
-    // if ( file_exists($css_file_child) ) {
-    //   $css_child = $wp_filesystem->get_contents($css_file_child);//ファイルの読み込み
-    //   $css_all .= $css_child;
-    // }
+
+    //AMPのスキンスタイル
+    $css_child_url = get_stylesheet_directory_uri().'/amp.css';
+    $child_amp_css = css_url_to_css_minify_code($css_child_url);
+    if ($child_amp_css !== false) {
+      $css_all .= $child_amp_css;
+    }
   }
 
   ///////////////////////////////////////////
