@@ -69,6 +69,22 @@ function is_amp_inline_style_enable(){
 }
 endif;
 
+//スキンスタイルを有効
+define('OP_AMP_SKIN_STYLE_ENABLE', 'amp_skin_style_enable');
+if ( !function_exists( 'is_amp_skin_style_enable' ) ):
+function is_amp_skin_style_enable(){
+  return get_theme_option(OP_AMP_SKIN_STYLE_ENABLE, 1);
+}
+endif;
+
+//子テーマスタイルを有効
+define('OP_AMP_CHILD_THEME_STYLE_ENABLE', 'amp_child_theme_style_enable');
+if ( !function_exists( 'is_amp_child_theme_style_enable' ) ):
+function is_amp_child_theme_style_enable(){
+  return get_theme_option(OP_AMP_CHILD_THEME_STYLE_ENABLE, 1);
+}
+endif;
+
 //AMP除外カテゴリ
 define('OP_AMP_EXCLUDE_CATEGORY_IDS', 'amp_exclude_category_ids');
 if ( !function_exists( 'get_amp_exclude_category_ids' ) ):

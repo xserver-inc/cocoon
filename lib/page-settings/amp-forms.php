@@ -85,6 +85,22 @@
           </td>
         </tr>
 
+        <!-- サイズ制限対応 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AMP_SKIN_STYLE_ENABLE, __( 'サイズ制限対応', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_AMP_SKIN_STYLE_ENABLE, is_amp_skin_style_enable(), __('スキンのスタイルを有効にする',THEME_NAME ));
+            generate_tips_tag(__( '凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50KB）を超えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPページでスキンを適用しないことにより、CSSのサイズを減らします。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_AMP_CHILD_THEME_STYLE_ENABLE, is_amp_child_theme_style_enable(), __('子テーマのスタイルを有効にする',THEME_NAME ));
+            generate_tips_tag(__( '子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（50KB）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減らします。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- AMPバリデーター -->
         <!--
         <tr>

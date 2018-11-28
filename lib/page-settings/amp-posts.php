@@ -24,6 +24,12 @@ update_theme_option(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE);
 //インラインスタイル
 update_theme_option(OP_AMP_INLINE_STYLE_ENABLE);
 
+//スキンスタイルを有効
+update_theme_option(OP_AMP_SKIN_STYLE_ENABLE);
+
+//子テーマスタイルを有効
+update_theme_option(OP_AMP_CHILD_THEME_STYLE_ENABLE);
+
 //AMP除外カテゴリ
 update_theme_option(OP_AMP_EXCLUDE_CATEGORY_IDS);
 
