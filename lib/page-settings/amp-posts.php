@@ -12,14 +12,17 @@ update_theme_option(OP_AMP_ENABLE);
 //AMPロゴ
 update_theme_option(OP_AMP_LOGO_IMAGE_URL);
 
-//インラインスタイルを取り除く
-update_theme_option(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE);
-
 //AMP画像の拡大効果
 update_theme_option(OP_AMP_IMAGE_ZOOM_EFFECT);
 
 //AMPバリデーションツール
 update_theme_option(OP_AMP_VALIDATOR);
+
+//インラインスタイルを取り除く
+update_theme_option(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE);
+
+//インラインスタイル
+update_theme_option(OP_AMP_INLINE_STYLE_ENABLE);
 
 //AMP除外カテゴリ
 update_theme_option(OP_AMP_EXCLUDE_CATEGORY_IDS);

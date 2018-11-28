@@ -124,7 +124,7 @@ function convert_content_for_amp($the_content){
   $the_content = str_replace('\xc2\xa0', ' ', $the_content);
 
   //インラインスタイルを除去する場合
-  if (is_amp_removal_inline_style_enable()) {
+  if (!is_amp_inline_style_enable()) {
     //style属性を取り除く
     $the_content = preg_replace('/ +?style=["][^"]*?["]/i', '', $the_content);
     $the_content = preg_replace('/ +?style=[\'][^\']*?[\']/i', '', $the_content);

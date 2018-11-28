@@ -41,19 +41,6 @@
           </td>
         </tr>
 
-        <!-- インラインスタイル処理 -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, __( 'インラインスタイル処理', THEME_NAME )); ?>
-          </th>
-          <td>
-            <?php
-            generate_checkbox_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, is_amp_removal_inline_style_enable(), __("インラインスタイルを取り除く",THEME_NAME ));
-            generate_tips_tag(__( '本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
         <!--  画像の拡大効果 -->
         <tr>
           <th scope="row">
@@ -71,6 +58,33 @@
             ?>
           </td>
         </tr>
+
+        <!-- インラインスタイル処理 -->
+        <!-- <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, __( 'インラインスタイル処理', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, is_amp_removal_inline_style_enable(), __("インラインスタイルを取り除く",THEME_NAME ));
+            generate_tips_tag(__( '本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr> -->
+
+        <!-- インラインスタイル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_AMP_INLINE_STYLE_ENABLE, __( 'インラインスタイル', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_AMP_INLINE_STYLE_ENABLE, is_amp_inline_style_enable(), __("インラインスタイルを有効にする",THEME_NAME ));
+            generate_tips_tag(__( '本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（50KB）を超えやすくなるため有効は推奨はしません。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- AMPバリデーター -->
         <!--
         <tr>
