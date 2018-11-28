@@ -47,7 +47,7 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return;
   }
 
-  $content     = $the_content;
+  $content     = do_shortcode($the_content);
   $headers     = array();
   $html        = '';
   $toc_list    = '';
