@@ -6547,6 +6547,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .mblt-slide-in .footer {
     margin-bottom: 50px;
   }
+
+  .navi-footer-in > .menu-footer {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 768px) {
   .navi-in > .menu-header {

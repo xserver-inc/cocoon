@@ -2506,7 +2506,8 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .logo-footer { margin: 8px auto; }
   .admin-settings .demo .mobile-menu-buttons { display: flex; }
   .admin-settings .demo .mobile-button-slide-in .go-to-top-button { display: none; }
-  .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; } }
+  .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; }
+  .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; } }
 @media screen and (max-width: 768px) { .admin-settings .demo { /************************************
 ** 関連記事
 ************************************/ }
