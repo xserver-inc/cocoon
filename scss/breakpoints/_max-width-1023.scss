@@ -1,6 +1,11 @@
 .navi-footer{
   float: none;
   margin: 0;
+  width: 100%;
+}
+
+.copyright{
+  width: 100%;
 }
 
 .navi-footer-in > ul{
@@ -88,4 +93,8 @@ div.sidebar{
 
 .navi-footer-in > .menu-footer{
   justify-content: center;
+}
+
+.footer-bottom.fdt-left-and-right .footer-bottom-content{
+  flex-direction: column;
 }

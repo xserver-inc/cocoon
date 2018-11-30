@@ -6472,6 +6472,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .navi-footer {
     float: none;
     margin: 0;
+    width: 100%;
+  }
+
+  .copyright {
+    width: 100%;
   }
 
   .navi-footer-in > ul {
@@ -6550,6 +6555,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .navi-footer-in > .menu-footer {
     justify-content: center;
+  }
+
+  .footer-bottom.fdt-left-and-right .footer-bottom-content {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 768px) {
