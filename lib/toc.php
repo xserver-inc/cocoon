@@ -171,7 +171,7 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     $label_for = null;
   }
   $html .= '
-  <div' . $id . ' class="' . $class . get_additional_toc_classes() . '">'.$toc_check.
+  <div' . $id . ' class="' . $class . get_additional_toc_classes() . ' border-element">'.$toc_check.
     '<'.$title_elm.' class="toc-title"'.$label_for.'>' . $title . '</'.$title_elm.'>
     <div class="toc-content">
     ' . $toc_list .'

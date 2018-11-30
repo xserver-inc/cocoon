@@ -1042,7 +1042,7 @@ function generate_author_box_tag($label, $is_image_circle = 0){
   }
 
   ?>
-  <div class="author-box no-icon cf">
+  <div class="author-box border-element no-icon cf">
     <?php //ウィジェット名がある場合
     $image_class = $is_image_circle ? ' circle-image' : null;
     if ($label): ?>

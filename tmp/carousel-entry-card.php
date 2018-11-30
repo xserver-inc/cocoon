@@ -5,7 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */ ?>
-<a href="<?php the_permalink(); ?>" class="carousel-entry-card-wrap a-wrap cf" title="<?php echo esc_attr(get_the_title()); ?>">
+<a href="<?php the_permalink(); ?>" class="carousel-entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
 <article class="carousel-entry-card e-card cf">
 
   <figure class="carousel-entry-card-thumb card-thumb">
