@@ -53,12 +53,19 @@ function body_class_additional($classes) {
   //カテゴリー・タグクラスの追加
   if ( is_single() ) {
     //カテゴリークラスの追加
-    foreach((get_the_category($post->ID)) as $category)
-      $classes[] = 'categoryid-'.$category->cat_ID;
+    $categories = get_the_category($post->ID);
+    if (is_array($categories)) {
+      foreach($categories as $category)
+        $classes[] = 'categoryid-'.$category->cat_ID;
+    }
+
 
     //タグクラスの追加
-    foreach((get_the_tags($post->ID)) as $tag)
+    $tags = get_the_tags($post->ID);
+    if (is_array($categories)) {
+    foreach($tags as $tag)
       $classes[] = 'tagid-'.$tag->term_id;
+    }
   }
 
   //フォントファミリー
