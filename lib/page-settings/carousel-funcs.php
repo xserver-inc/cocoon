@@ -15,7 +15,27 @@ function get_carousel_display_type(){
 endif;
 if ( !function_exists( 'is_carousel_visible' ) ):
 function is_carousel_visible(){
-  return get_carousel_display_type() != 'none';
+  return get_carousel_category_ids() &&
+    (
+      is_carousel_display_type_all_page() ||
+      (is_front_top_page() && is_carousel_display_type_front_page_only()) ||
+      (!is_singular() && is_carousel_display_type_not_singular())
+    );
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_all_page' ) ):
+function is_carousel_display_type_all_page(){
+  return get_carousel_display_type() == 'all_page';
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_front_page_only' ) ):
+function is_carousel_display_type_front_page_only(){
+  return get_carousel_display_type() == 'front_page_only';
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_not_singular' ) ):
+function is_carousel_display_type_not_singular(){
+  return get_carousel_display_type() == 'not_singular';
 }
 endif;
 

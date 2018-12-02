@@ -217,7 +217,7 @@ function body_class_additional($classes) {
   switch (get_carousel_display_type()) {
     //フロントページ以外では表示しない
     case 'front_page_only':
-      if (!(is_front_top_page())) {
+      if (!is_front_top_page()) {
         $add_no_carousel = true;
       }
       break;
