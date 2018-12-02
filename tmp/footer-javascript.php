@@ -33,6 +33,15 @@ if (!is_amp()): ?>
   })(jQuery);
   </script>
   <?php endif ?>
+  <?php //カルーセルが表示されている時
+  if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
+  <script>
+  (function($){
+    //カルーセルの表示
+    $('.carousel').fadeIn();
+  });
+  </script>
+  <?php endif ?>
   <?php //本文中のJavaScriptをまとめて出力
   global $_THE_CONTENT_SCRIPTS;
   if ($_THE_CONTENT_SCRIPTS): ?>

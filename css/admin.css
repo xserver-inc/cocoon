@@ -2373,6 +2373,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .carousel-entry-card-thumb { float: none; overflow: hidden; display: inline-block; }
 .admin-settings .demo .carousel-entry-card-title { font-size: 16px; margin-top: 4px; max-height: 3.2em; overflow: hidden; }
 .admin-settings .demo .no-carousel .carousel { display: none; }
+.admin-settings .demo .carousel { display: none; }
 .admin-settings .demo .admin-panel { background-color: #333; color: #fff; opacity: 0.8; padding: 10px; font-size: 16px; position: fixed; bottom: 0; left: 0; right: 0; display: flex; flex-direction: row; flex-wrap: wrap; transition: .3s; z-index: 9999; }
 .admin-settings .demo .admin-panel a { color: #fff; }
 .admin-settings .demo .admin-pv, .admin-settings .demo .admin-edit, .admin-settings .demo .admin-amp, .admin-settings .demo .admin-checks, .admin-settings .demo .admin-cresponsive { border-radius: 3px; padding: 0 10px; border: 1px solid #ccc; margin: 6px 4px; }

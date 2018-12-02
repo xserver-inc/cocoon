@@ -5830,6 +5830,10 @@ input[type='submit'],
   display: none;
 }
 
+.carousel {
+  display: none;
+}
+
 .admin-panel {
   background-color: #333;
   color: #fff;

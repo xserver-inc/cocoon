@@ -65,7 +65,10 @@
     //$('#respond').slideToggle();
     $('#comment-reply-btn').slideUp();
     $('#respond').slideDown();
-  })
+  });
+
+  //カレーセルの表示
+  $('.carousel').fadeIn(500);
 })(jQuery);
 
 /*
