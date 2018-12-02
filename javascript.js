@@ -68,7 +68,7 @@
   });
 
   //カレーセルの表示
-  $('.carousel').fadeIn(500);
+  $('.carousel').fadeIn(1000);
 })(jQuery);
 
 /*
