@@ -50,11 +50,15 @@ function body_class_additional($classes) {
   //body
   $classes[] = 'page-body';
 
-
-  //カテゴリ入りクラスの追加
+  //カテゴリー・タグクラスの追加
   if ( is_single() ) {
+    //カテゴリークラスの追加
     foreach((get_the_category($post->ID)) as $category)
       $classes[] = 'categoryid-'.$category->cat_ID;
+
+    //タグクラスの追加
+    foreach((get_the_tags($post->ID)) as $tag)
+      $classes[] = 'tagid-'.$tag->term_id;
   }
 
   //フォントファミリー
