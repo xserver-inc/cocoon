@@ -59,10 +59,9 @@ function body_class_additional($classes) {
         $classes[] = 'categoryid-'.$category->cat_ID;
     }
 
-
     //タグクラスの追加
     $tags = get_the_tags($post->ID);
-    if (is_array($categories)) {
+    if (is_array($tags)) {
     foreach($tags as $tag)
       $classes[] = 'tagid-'.$tag->term_id;
     }
