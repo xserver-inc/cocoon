@@ -89,6 +89,14 @@ function is_baguettebox_effect_enable(){
 }
 endif;
 
+//サムネイル画像タイプ
+define('OP_THUMBNAIL_IMAGE_TYPE', 'thumbnail_image_type');
+if ( !function_exists( 'get_thumbnail_image_type' ) ):
+function get_thumbnail_image_type(){
+  return get_theme_option(OP_THUMBNAIL_IMAGE_TYPE, '16_9');
+}
+endif;
+
 //NO IMAGE画像
 define('OP_NO_IMAGE_URL', 'no_image_url');
 if ( !function_exists( 'get_no_image_url' ) ):

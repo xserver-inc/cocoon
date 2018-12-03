@@ -30,6 +30,9 @@ update_theme_option(OP_IMAGE_WRAP_EFFECT);
 //画像の拡大効果
 update_theme_option(OP_IMAGE_ZOOM_EFFECT);
 
+//サムネイル画像タイプ
+update_theme_option(OP_THUMBNAIL_IMAGE_TYPE);
+
 //NO IMAGE画像
 update_theme_option(OP_NO_IMAGE_URL);
 //画像が設定された場合は生成
@@ -50,11 +53,3 @@ if (file_exists(get_no_image_file()) &&
     $image_editor->save( get_no_image_150x150_file() );
   }
 }
-// _v(get_no_image_file());
-// // _v(get_no_image_url());
-// _v(get_no_image_320x180_file());
-// _v(get_no_image_160x90_file());
-// _v(get_no_image_150x150_file());
-// _v(get_no_image_320x180_url());
-// _v(get_no_image_160x90_url());
-// _v(get_no_image_150x150_url());

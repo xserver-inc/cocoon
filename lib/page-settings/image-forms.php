@@ -136,6 +136,42 @@
 </div>
 
 
+<!-- 全体画像 -->
+<div id="no-image-page" class="postbox">
+  <h2 class="hndle"><?php _e( '全体画像設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '全てのページで共通して利用する画像の設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- サムネイル画像 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_THUMBNAIL_IMAGE_TYPE, __('サムネイル画像', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              '16_9' => __( '16:9（ワイド）デフォルト', THEME_NAME ),
+              '4_3' => __( '4:3（スタンダード）', THEME_NAME ),
+              '1_1' => __( '1:1（正方形）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
+            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 <!-- NO IMAGE -->
 <div id="no-image-page" class="postbox">
   <h2 class="hndle"><?php _e( 'NO IMAGE設定', THEME_NAME ) ?></h2>
