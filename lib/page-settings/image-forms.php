@@ -154,13 +154,13 @@
           <td>
             <?php
             $options = array(
-              'wide' => __( '9:16, 1:1.778（ワイド）デフォルト', THEME_NAME ).
+              'wide' => __( '9:16, 1:1.777..（ワイド）デフォルト', THEME_NAME ).
                 get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME )),
-              'golden_ratio' => __( '約5:8, 1:1.618（黄金比）', THEME_NAME ).
+              'golden_ratio' => __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ).
                 get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME )),
-              'silver_ratio' => __( '約5:7, 1:1.414（白銀比）', THEME_NAME ).
+              'silver_ratio' => __( '約5:7, 1:1.414..（白銀比）', THEME_NAME ).
               get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME )),
-              'standard' => __( '3:4, 1.333（スタンダード）', THEME_NAME ).
+              'standard' => __( '3:4, 1:1.333..（スタンダード）', THEME_NAME ).
               get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやPowerPointのスライドと同じ比率。', THEME_NAME )),
               'square' => __( '1:1（正方形）', THEME_NAME ).
               get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME )),
