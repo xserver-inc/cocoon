@@ -16,15 +16,27 @@ function get_big_card_first_thumbnail_size($count){
 }
 endif;
 
-if ( !function_exists( 'get_big_card__thumbnail_size' ) ):
-function get_big_card__thumbnail_size(){
+if ( !function_exists( 'get_big_card_thumbnail_size' ) ):
+function get_big_card_thumbnail_size(){
   return 'large';
 }
 endif;
+//エイリアス（誤った関数だったので。いずれ消す）
+if ( !function_exists( 'get_big_card__thumbnail_size' ) ):
+function get_big_card__thumbnail_size(){
+  return get_big_card_thumbnail_size();
+}
+endif;
 
+if ( !function_exists( 'get_entry_card_thumbnail_size' ) ):
+function get_entry_card_thumbnail_size(){
+  return 'thumb320';
+}
+endif;
+//エイリアス（誤った関数だったので。いずれ消す）
 if ( !function_exists( 'get_entry_card__thumbnail_size' ) ):
 function get_entry_card__thumbnail_size(){
-  return 'thumb320';
+  return get_entry_card_thumbnail_size();
 }
 endif;
 
@@ -42,7 +54,7 @@ function get_entry_card_thumbnail_size($count){
         }
       break;
     case 'big_card':
-      $thumbnail_size = get_big_card__thumbnail_size();
+      $thumbnail_size = get_big_card_thumbnail_size();
       // $thumbnail_size = 'large';
       break;
     case 'vertical_card_2':
@@ -58,7 +70,7 @@ function get_entry_card_thumbnail_size($count){
       $thumbnail_size = get_tile_card_3_thumbnail_size();
       break;
     default://エントリーカード
-      $thumbnail_size = get_entry_card__thumbnail_size();
+      $thumbnail_size = get_entry_card_thumbnail_size();
       // $thumbnail_size = 'thumb320';
       break;
   }
