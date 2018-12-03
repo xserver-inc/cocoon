@@ -419,7 +419,7 @@ function wp_enqueue_script_clipboard_js(){
 }
 endif;
 
-//clipboard.jsスクリプトの読み込み
+//アイコンフォントの読み込み
 if ( !function_exists( 'wp_enqueue_web_font_lazy_load_js' ) ):
 function wp_enqueue_web_font_lazy_load_js(){
   if ( is_web_font_lazy_load_enable() ){
