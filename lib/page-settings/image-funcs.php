@@ -96,6 +96,28 @@ function get_thumbnail_image_type(){
   return get_theme_option(OP_THUMBNAIL_IMAGE_TYPE, '16_9');
 }
 endif;
+//アスペクト比の取得
+if ( !function_exists( 'get_thumbnail_image_aspect_ratio' ) ):
+function get_thumbnail_image_aspect_ratio(){
+  switch (get_thumbnail_image_type()) {
+    case '4_3':
+      $ratio = 3/4;
+      break;
+    case '1_1':
+      $ratio = 1;
+      break;
+    default:
+      $ratio = 9/16;
+      break;
+  }
+}
+endif;
+//サムネイルの縦の画像サイズ
+if ( !function_exists( 'get_thumbnail_image_height_size' ) ):
+function get_thumbnail_image_height_size($width){
+  return round($width * get_thumbnail_image_aspect_ratio());
+}
+endif;
 
 //NO IMAGE画像
 define('OP_NO_IMAGE_URL', 'no_image_url');
