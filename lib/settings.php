@@ -17,9 +17,15 @@ add_theme_support('post-thumbnails');
 //サムネイルサイズ
 add_image_size('thumb100', 100, 100, true);//Facebookバルーン
 add_image_size('thumb150', 150, 150, true);//ページ送りナビ
-add_image_size('thumb120', 120,  67, true);//新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
-add_image_size('thumb160', 160,  90, true);//関連記事デフォルト・関連記事4列
-add_image_size('thumb320', 320, 180, true);//関連記事3列
+//新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
+$width = 120;
+add_image_size('thumb120', $width, get_thumbnail_height($width), true);
+//関連記事デフォルト・関連記事4列
+$width = 160;
+add_image_size('thumb160', $width, get_thumbnail_height($width), true);
+//デフォルトサムネイル・関連記事3列
+$width = 320;
+add_image_size('thumb320', $width, get_thumbnail_height($width), true);
 // //本文レスポンシブ表示用
 // add_image_size('thumb320_raw', 320, 0, false);
 // add_image_size('thumb360_raw', 360, 0, false);

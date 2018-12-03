@@ -177,7 +177,8 @@ endif;
 if ( !function_exists( 'get_vertical_card_2_height' ) ):
 function get_vertical_card_2_height(){
   $vcw = get_vertical_card_2_width();
-  $vch = round($vcw * 9/16);
+  //$vch = round($vcw * 9/16);
+  $vch = get_thumbnail_height($vcw);
   return $vch;
 }
 endif;
@@ -208,7 +209,8 @@ endif;
 if ( !function_exists( 'get_vertical_card_3_height' ) ):
 function get_vertical_card_3_height(){
   $vcw = get_vertical_card_3_width();
-  $vch = round($vcw * 9/16);
+  //$vch = round($vcw * 9/16);
+  $vch = get_thumbnail_height($vcw);
   return $vch;
 }
 endif;

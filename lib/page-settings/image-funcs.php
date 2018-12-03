@@ -97,8 +97,8 @@ function get_thumbnail_image_type(){
 }
 endif;
 //アスペクト比の取得
-if ( !function_exists( 'get_thumbnail_image_aspect_ratio' ) ):
-function get_thumbnail_image_aspect_ratio(){
+if ( !function_exists( 'get_thumbnail_aspect_ratio' ) ):
+function get_thumbnail_aspect_ratio(){
   switch (get_thumbnail_image_type()) {
     case '4_3':
       $ratio = 3/4;
@@ -110,12 +110,13 @@ function get_thumbnail_image_aspect_ratio(){
       $ratio = 9/16;
       break;
   }
+  return $ratio;
 }
 endif;
 //サムネイルの縦の画像サイズ
-if ( !function_exists( 'get_thumbnail_image_height_size' ) ):
-function get_thumbnail_image_height_size($width){
-  return round($width * get_thumbnail_image_aspect_ratio());
+if ( !function_exists( 'get_thumbnail_height' ) ):
+function get_thumbnail_height($width){
+  return round($width * get_thumbnail_aspect_ratio());
 }
 endif;
 
@@ -141,7 +142,8 @@ endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_no_image_sized_url(get_no_image_url(), 320, 180);
+    $width = 320;
+    $res = get_no_image_sized_url(get_no_image_url(), $width, get_thumbnail_height($width));
   } else {
     $res = NO_IMAGE_320;
   }
@@ -156,7 +158,8 @@ endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
 function get_no_image_160x90_url(){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_no_image_sized_url(get_no_image_url(), 160, 90);
+    $width = 160;
+    $res = get_no_image_sized_url(get_no_image_url(), $width, get_thumbnail_height($width));
   } else {
     $res = NO_IMAGE_160;
   }

@@ -43,10 +43,12 @@ if (file_exists(get_no_image_file()) &&
 ) {
   $image_editor = wp_get_image_editor(get_no_image_file());
   if ( !is_wp_error($image_editor) ) {
-    $image_editor->resize(320, 180, true);
+    $width = 320;
+    $image_editor->resize($width, get_thumbnail_height($width), true);
     $image_editor->save( get_no_image_320x180_file() );
 
-    $image_editor->resize(160, 90, true);
+    $width = 160;
+    $image_editor->resize($width, get_thumbnail_height($width), true);
     $image_editor->save( get_no_image_160x90_file() );
 
     $image_editor->resize(150, 150, true);
