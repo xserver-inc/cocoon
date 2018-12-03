@@ -93,17 +93,23 @@ endif;
 define('OP_THUMBNAIL_IMAGE_TYPE', 'thumbnail_image_type');
 if ( !function_exists( 'get_thumbnail_image_type' ) ):
 function get_thumbnail_image_type(){
-  return get_theme_option(OP_THUMBNAIL_IMAGE_TYPE, '16_9');
+  return get_theme_option(OP_THUMBNAIL_IMAGE_TYPE, 'wide');
 }
 endif;
 //アスペクト比の取得
 if ( !function_exists( 'get_thumbnail_aspect_ratio' ) ):
 function get_thumbnail_aspect_ratio(){
   switch (get_thumbnail_image_type()) {
-    case '4_3':
+    case 'golden_ratio':
+      $ratio = 1/((1 + sqrt(5)) / 2);
+      break;
+    case 'silver_ratio':
+      $ratio = 1/sqrt(2);
+      break;
+    case 'standard':
       $ratio = 3/4;
       break;
-    case '1_1':
+    case 'square':
       $ratio = 1;
       break;
     default:

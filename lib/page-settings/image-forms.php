@@ -154,12 +154,19 @@
           <td>
             <?php
             $options = array(
-              '16_9' => __( '16:9（ワイド）デフォルト', THEME_NAME ),
-              '4_3' => __( '4:3（スタンダード）', THEME_NAME ),
-              '1_1' => __( '1:1（正方形）', THEME_NAME ),
+              'wide' => __( '9:16, 1:1.778（ワイド）デフォルト', THEME_NAME ).
+                get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME )),
+              'golden_ratio' => __( '約5:8, 1:1.618（黄金比）', THEME_NAME ).
+                get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME )),
+              'silver_ratio' => __( '約5:7, 1:1.414（白銀比）', THEME_NAME ).
+              get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME )),
+              'standard' => __( '3:4, 1.333（スタンダード）', THEME_NAME ).
+              get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやPowerPointのスライドと同じ比率。', THEME_NAME )),
+              'square' => __( '1:1（正方形）', THEME_NAME ).
+              get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME )),
             );
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
-            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（横縦比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ));
+            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ));
             ?>
           </td>
         </tr>

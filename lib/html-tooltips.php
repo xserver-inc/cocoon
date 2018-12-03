@@ -42,9 +42,9 @@ endif;
 
 //ツールチップの生成
 if ( !function_exists( 'generate_skin_preview_tag' ) ):
-function generate_skin_preview_tag($url, $description = null){?>
+function generate_skin_preview_tag($url, $description = null, $width = 680){?>
   <span class="tooltip fa fa-picture-o">
-    <span class="tip-content">
+    <span class="tip-content" style="width: <?php echo $width; ?>px;">
       <img src="<?php echo $url; ?>" alt="">
       <?php if (!empty($description)): ?>
         <p><?php echo $description; ?></p>
@@ -55,15 +55,15 @@ function generate_skin_preview_tag($url, $description = null){?>
 }
 endif;
 if ( !function_exists( 'get_skin_preview_tag' ) ):
-function get_skin_preview_tag($url, $description = null){
+function get_skin_preview_tag($url, $description = null, $width = 680){
   ob_start();
-  generate_skin_preview_tag($url, $description);
+  generate_skin_preview_tag($url, $description, $width);
   return ob_get_clean();
 }
 endif;
 if ( !function_exists( 'get_image_preview_tag' ) ):
-function get_image_preview_tag($url, $description = null){
-  return get_skin_preview_tag($url, $description);
+function get_image_preview_tag($url, $description = null, $width = 400){
+  return get_skin_preview_tag($url, $description, $width);
 }
 endif;
 
