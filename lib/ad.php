@@ -124,24 +124,82 @@ if ( !function_exists( 'get_amp_adsense_responsive_code' ) ):
 function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null){
   //$codeに広告コードが入っている場合はそこから取得する
   if (get_adsense_ids($code)) {
+    $ad_client = get_adsense_data_ad_client($code);
+    $ad_slot = get_adsense_data_ad_slot($code);
+    //_v($format);
     //関連コンテンツユニットの場合
     if ($format == DATA_AD_FORMAT_AUTORELAXED) {
       $layout = ' layout="fixed-height" height="600" ';
+      $code = '<amp-ad
+        '.$layout.'
+        type="adsense"
+        data-ad-client="'.$ad_client.'"
+        data-ad-slot="'.$ad_slot.'">
+        </amp-ad>';
     } else {
-      $layout = ' width="300" height="250" ';
-      //AMP広告をレスポンシブにすると画面が操作できなくなる不具合発生
-      //$layout = ' layout="responsive" ';
-      //$layout = ' layout="responsive" width="300" height="250" ';
-      //$layout = ' layout="fixed-height" height="280" ';
+      //$layout = ' width="300" height="250" ';
+      //リンクユニットの場合
+      if ($format == DATA_AD_FORMAT_LINK) {
+        $code = '<amp-ad
+          media="(max-width: 515px)"
+          layout="fixed-height"
+          height="250"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>
+
+        <amp-ad
+          media="(min-width: 516px) and (max-width: 840px)"
+          layout="fixed-height"
+          height="90"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>
+
+        <amp-ad
+          media="(min-width: 841px)"
+          width="640"
+          height="90"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>';
+      } else {
+        $code = '<amp-ad
+          media="(max-width: 480px)"
+          width="100vw"
+          height="320"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'"
+          data-auto-format="rspv"
+          data-full-width>
+            <div overflow></div>
+        </amp-ad>
+
+        <amp-ad
+          media="(min-width: 481px) and (max-width: 840px)"
+          layout="fixed-height"
+          height="280"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>
+
+        <amp-ad
+          media="(min-width: 841px)"
+          layout="fixed-height"
+          height="280"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>';
+      }
     }
 
-    return
-      '<amp-ad
-      '.$layout.'
-      type="adsense"
-      data-ad-client="'.get_adsense_data_ad_client($code).'"
-      data-ad-slot="'.get_adsense_data_ad_slot($code).'">
-      </amp-ad>';
+    return $code;
   }
   //AdSense広告でない場合はそのままコードを出力する
   return $code;
