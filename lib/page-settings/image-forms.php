@@ -170,7 +170,7 @@
                 __( '1:1（正方形）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
-            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ));
+            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
             ?>
             <p><?php _e( '変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
             <ol>
