@@ -1,10 +1,4 @@
 <?php //アップデートカスタムフィールドを設置する
-/**
- * Cocoon WordPress Theme
- * @author: yhira
- * @link: https://wp-cocoon.com/
- * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */
 
 ///////////////////////////////////////
 // カスタムボックスの追加
@@ -24,12 +18,16 @@ endif;
 if( !function_exists( 'update_custom_box_view' ) ):
 function update_custom_box_view() {
   global $post;
+  $update_level = get_the_page_update_level();
+  if (empty($update_level)) {
+    $update_level = 'high';
+  }
 ?>
   <div style="padding-top: 5px; overflow: hidden;">
-  <div style="padding:5px 0"><input name="update_level" type="radio" value="high" checked="checked" /><?php _e( '更新', THEME_NAME ) ?></div>
-  <div style="padding: 5px 0"><input name="update_level" type="radio" value="low" /><?php _e( '更新しない', THEME_NAME ) ?></div>
-  <div style="padding: 5px 0"><input name="update_level" type="radio" value="del" /><?php _e( '更新日の消去', THEME_NAME ) ?></div>
-  <div style="padding: 5px 0; margin-bottom: 10px"><input id="update_level_edit" name="update_level" type="radio" value="edit" /><?php _e( '更新日を設定', THEME_NAME ) ?></div>
+  <div style="padding:5px 0"><input name="update_level" type="radio" value="high" <?php the_checkbox_checked($update_level, 'high'); ?> /><?php _e( '更新', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0"><input name="update_level" type="radio" value="low" <?php the_checkbox_checked($update_level, 'low'); ?> /><?php _e( '更新しない', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0"><input name="update_level" type="radio" value="del" <?php the_checkbox_checked($update_level, 'del'); ?> /><?php _e( '更新日の消去', THEME_NAME ) ?></div>
+  <div style="padding: 5px 0; margin-bottom: 10px"><input id="update_level_edit"  <?php the_checkbox_checked($update_level, 'edit'); ?>name="update_level" type="radio" value="edit" /><?php _e( '更新日を設定', THEME_NAME ) ?></div>
   <?php
     if( get_the_modified_date( 'c' ) ) {
       $stamp = __( '更新日時:', THEME_NAME ).' <span style="font-weight:bold">' . get_the_modified_date( __( 'M j, Y @ H:i' ) ) . '</span>';
@@ -107,9 +105,9 @@ function time_mod_form_view() {
 endif;
 
 //「修正のみ」は更新しない。それ以外は、それぞれの更新日時に変更する
-add_filter( 'wp_insert_post_data', 'update_custom_box_save_data', 10, 2 );
-if( !function_exists( 'update_custom_box_save_data' ) ):
-function update_custom_box_save_data( $data, $postarr ){
+add_filter( 'wp_insert_post_data', 'update_custom_insert_post_data', 10, 2 );
+if( !function_exists( 'update_custom_insert_post_data' ) ):
+function update_custom_insert_post_data( $data, $postarr ){
   $mydata = isset( $_POST['update_level'] ) ? $_POST['update_level'] : null;
 
   if( $mydata === 'low' ){
@@ -140,10 +138,27 @@ function update_custom_box_save_data( $data, $postarr ){
 }
 endif;
 
+//SEO保存データ
+add_action('save_post', 'update_custom_box_save_data');
+if ( !function_exists( 'update_custom_box_save_data' ) ):
+function update_custom_box_save_data(){
+  $id = get_the_ID();
+  //タイトル
+  $update_level = null;
+  if ( isset( $_POST['update_level'] ) ){
+    $update_level = $_POST['update_level'];
+    $update_level_key = 'update_level';
+    add_post_meta($id, $update_level_key, $update_level, true);
+    update_post_meta($id, $update_level_key, $update_level);
+  }
+}
+endif;
 
-// add_action( 'wp' , 'update_custom_box_save_data_custom' );
-// function update_custom_box_save_data_custom() {
-//   remove_filter( 'wp_insert_post_data', 'update_custom_box_save_data', 10 );
-//   add_action( 'save_post', 'update_custom_box_save_data', 10);
-// }
-
+//アップデートレベルの取得
+if ( !function_exists( 'get_the_page_update_level' ) ):
+function get_the_page_update_level(){
+  $the_id = get_the_ID();
+  $value = trim(get_post_meta($the_id, 'update_level', true));
+  return $value;
+}
+endif;
