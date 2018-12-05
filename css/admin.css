@@ -2662,7 +2662,7 @@ body.wp-admin { color: #444; }
 ** 印刷用スタイル
 ************************************/ }
   .admin-settings .demo #container { font-size: 11pt; }
-  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer { display: none; }
+  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer, .admin-settings .demo #container #admin-panel, .admin-settings .demo #container #go-to-top, .admin-settings .demo #container .toc, .admin-settings .demo #container .sns-share, .admin-settings .demo #container .widget { display: none !important; }
   .admin-settings .demo #container .main, .admin-settings .demo #container .content, .admin-settings .demo #container .wrap { width: auto; margin: 0; float: none; padding: 0; border: none; overflow-wrap: normal; }
   .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; }
   .admin-settings .demo #container h1 { font-size: 21.5pt; }

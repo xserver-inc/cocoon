@@ -7240,8 +7240,13 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container .breadcrumb-category,
   #container .entry-footer,
   #container .sidebar,
-  #container .footer {
-    display: none;
+  #container .footer,
+  #container #admin-panel,
+  #container #go-to-top,
+  #container .toc,
+  #container .sns-share,
+  #container .widget {
+    display: none !important;
   }
   #container .main,
   #container .content,

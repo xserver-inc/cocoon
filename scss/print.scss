@@ -9,8 +9,13 @@
   .breadcrumb-category,
   .entry-footer,
   .sidebar,
-  .footer{
-    display: none;
+  .footer,
+  #admin-panel,
+  #go-to-top,
+  .toc,
+  .sns-share,
+  .widget{
+    display: none !important;
   }
 
   .main,
