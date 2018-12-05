@@ -180,16 +180,7 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
         </amp-ad>
 
         <amp-ad
-          media="(min-width: 481px) and (max-width: 840px)"
-          layout="fixed-height"
-          height="280"
-          type="adsense"
-          data-ad-client="'.$ad_client.'"
-          data-ad-slot="'.$ad_slot.'">
-        </amp-ad>
-
-        <amp-ad
-          media="(min-width: 841px)"
+          media="(min-width: 481px)"
           layout="fixed-height"
           height="280"
           type="adsense"
