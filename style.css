@@ -7243,6 +7243,9 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container .footer,
   #container #admin-panel,
   #container #go-to-top,
+  #container .go-to-top-button,
+  #container #fb-root,
+  #container .mobile-menu-buttons,
   #container .toc,
   #container .sns-share,
   #container .widget {
