@@ -119,10 +119,17 @@ function get_thumbnail_aspect_ratio(){
   return $ratio;
 }
 endif;
+//サムネイルの横の画像サイズ
+if ( !function_exists( 'get_thumbnail_width' ) ):
+function get_thumbnail_width($width){
+  return $width;
+}
+endif;
 //サムネイルの縦の画像サイズ
 if ( !function_exists( 'get_thumbnail_height' ) ):
 function get_thumbnail_height($width){
-  return round($width * get_thumbnail_aspect_ratio());
+  $height = round($width * get_thumbnail_aspect_ratio());
+  return $height;
 }
 endif;
 
