@@ -15,7 +15,9 @@ https://wp-cocoon.com/
 ----------
 Cocoonテーマは、100％GPLです。
 
-PHPはもとより、CSS、JavaScript、画像、スキン用ファイルも含めてライセンスはGPLとなります。
+Cocoon（テーマ配布物）に含まれているPHP、画像、JavaScript、CSS（スキン含む）等のすべてをGPLとして公開します（100%GPL）。
+Cocoonテーマの再配布もしくは、Cocoonを基盤として作成したテーマを配布する場合は、配布物すべて（PHP、JavaScript、CSS、画像、その他同梱物）をGPLとして公開してください（100％GPL：無料、有料問わず）。
+
 
 GNU General Public License
 http://www.gnu.org/licenses/gpl-2.0.html
