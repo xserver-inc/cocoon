@@ -17,9 +17,12 @@ add_theme_support('post-thumbnails');
 ///////////////////////////////////////////
 // サムネイルサイズ
 ///////////////////////////////////////////
-//100px Facebookバルーン
-add_image_size('thumb100', 100, 100, true);//
-//150px正方形 ページ送りナビ
+//100px
+define('THUMB100', 'thumb100');
+define('THUMB100WIDTH', get_square_thumbnail_width(100));
+define('THUMB100HEIGHT', get_square_thumbnail_height(THUMB100WIDTH));
+add_image_size(THUMB100, THUMB100WIDTH, THUMB100HEIGHT, true);
+//150px正方形 ページ送りナビ、Facebookバルーン
 define('THUMB150', 'thumb150');
 define('THUMB150WIDTH', get_square_thumbnail_width(150));
 define('THUMB150HEIGHT', get_square_thumbnail_height(THUMB150WIDTH));

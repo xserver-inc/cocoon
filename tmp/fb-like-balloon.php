@@ -8,7 +8,7 @@
 <div class="fb-like-balloon">
   <div class="fb-like-balloon-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
-      <?php the_post_thumbnail( 'thumb100', array('class' => 'fb-like-balloon-entry-thumnail', 'alt' => '') ); ?>
+      <?php the_post_thumbnail( THUMB150, array('class' => 'fb-like-balloon-entry-thumnail', 'alt' => '') ); ?>
     <?php else: // サムネイルを持っていない ?>
       <img src="<?php echo get_no_image_150x150_url(); ?>" alt="" class="fb-like-balloon-entry-thumnail no-image" width="150" height="150" />
     <?php endif; ?>
