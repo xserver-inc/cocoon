@@ -62,7 +62,7 @@ function get_skin_preview_tag($url, $description = null, $width = 680){
 }
 endif;
 if ( !function_exists( 'get_image_preview_tag' ) ):
-function get_image_preview_tag($url, $description = null, $width = 400){
+function get_image_preview_tag($url, $description = null, $width = 680){
   return get_skin_preview_tag($url, $description, $width);
 }
 endif;

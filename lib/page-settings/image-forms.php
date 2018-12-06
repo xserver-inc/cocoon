@@ -154,19 +154,19 @@
           <td>
             <?php
             $options = array(
-              'wide' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME )).
+              'wide' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME ), THUMB320WIDTH).
                 __( '9:16, 1:1.777..（ワイド）デフォルト', THEME_NAME ),
 
-              'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME )).
+              'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
 
-              'silver_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME )).
+              'silver_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:7, 1:1.414..（白銀比）', THEME_NAME ),
 
-              'standard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやPowerPointのスライドと同じ比率。', THEME_NAME )).
+              'standard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやPowerPointのスライドと同じ比率。', THEME_NAME ), THUMB320WIDTH).
                 __( '3:4, 1:1.333..（スタンダード）', THEME_NAME ),
 
-              'square' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME )).
+              'square' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME ), THUMB320WIDTH).
                 __( '1:1（正方形）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
@@ -175,8 +175,8 @@
             <p><?php _e( '変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
             <ol>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットもサムネイル。', THEME_NAME )).__('新着記事', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/popular.png', __( '人気記事ウィジェットのサムネイル。', THEME_NAME )).__('人気記事', THEME_NAME); ?></li>
+              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットもサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
+              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/popular.png', __( '人気記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('人気記事', THEME_NAME); ?></li>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/related.png', __( '関連記事のエントリーカードのサムネイル。', THEME_NAME )).__('関連記事', THEME_NAME); ?></li>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
