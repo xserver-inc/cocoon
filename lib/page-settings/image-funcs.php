@@ -146,6 +146,14 @@ function get_square_thumbnail_height($width){
 }
 endif;
 
+//Retinaディスプレイ
+define('OP_RETINA_THUMBNAIL_ENABLE', 'retina_thumbnail_enable');
+if ( !function_exists( 'is_retina_thumbnail_enable' ) ):
+function is_retina_thumbnail_enable(){
+  return get_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
+}
+endif;
+
 //NO IMAGE画像
 define('OP_NO_IMAGE_URL', 'no_image_url');
 if ( !function_exists( 'get_no_image_url' ) ):

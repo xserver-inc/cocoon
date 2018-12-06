@@ -33,6 +33,9 @@ update_theme_option(OP_IMAGE_ZOOM_EFFECT);
 //サムネイル画像タイプ
 update_theme_option(OP_THUMBNAIL_IMAGE_TYPE);
 
+//Retinaディスプレイ
+update_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
+
 //NO IMAGE画像
 update_theme_option(OP_NO_IMAGE_URL);
 //画像が設定された場合は生成

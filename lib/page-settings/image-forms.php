@@ -142,7 +142,6 @@
   <div class="inside">
 
     <p><?php _e( '全てのページで共通して利用する画像の設定です。', THEME_NAME ) ?></p>
-
     <table class="form-table">
       <tbody>
 
@@ -172,16 +171,20 @@
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
             generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
             ?>
-            <p><?php _e( '変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
-            <ol>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットもサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/popular.png', __( '人気記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('人気記事', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/related.png', __( '関連記事のエントリーカードのサムネイル。', THEME_NAME )).__('関連記事', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
-              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/blogcard.png', __( '内部ブログカード、外部ブログカードのサムネイル。', THEME_NAME )).__('ブログカード', THEME_NAME); ?></li>
-            </ol>
+
+          </td>
+        </tr>
+
+        <!-- Retinaディスプレイ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RETINA_THUMBNAIL_ENABLE, __('Retinaディスプレイ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_RETINA_THUMBNAIL_ENABLE , is_retina_thumbnail_enable(), __( 'サムネイルをRetinaディスプレイ対応にする', THEME_NAME ));
+            generate_tips_tag(__( 'サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。※「インデックスカードタイプ」の「大きなカード」には適用されません。', THEME_NAME ));
+            ?>
           </td>
         </tr>
 
@@ -189,6 +192,16 @@
       </tbody>
     </table>
 
+    <p><?php _e( 'これらの設定で変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
+    <ol>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットもサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/popular.png', __( '人気記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('人気記事', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/related.png', __( '関連記事のエントリーカードのサムネイル。', THEME_NAME )).__('関連記事', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/blogcard.png', __( '内部ブログカード、外部ブログカードのサムネイル。', THEME_NAME )).__('ブログカード', THEME_NAME); ?></li>
+    </ol>
   </div>
 </div>
 
