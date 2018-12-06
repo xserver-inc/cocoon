@@ -132,6 +132,19 @@ function get_thumbnail_height($width){
   return $height;
 }
 endif;
+//正方形サムネイルの横の画像サイズ
+if ( !function_exists( 'get_square_thumbnail_width' ) ):
+function get_square_thumbnail_width($width){
+  return $width;
+}
+endif;
+//正方形サムネイルの縦の画像サイズ
+if ( !function_exists( 'get_square_thumbnail_height' ) ):
+function get_square_thumbnail_height($width){
+  $height = $width;
+  return $height;
+}
+endif;
 
 //NO IMAGE画像
 define('OP_NO_IMAGE_URL', 'no_image_url');
@@ -155,8 +168,7 @@ endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
   if ($no_image_url = get_no_image_url()) {
-    $width = 320;
-    $res = get_no_image_sized_url(get_no_image_url(), $width, get_thumbnail_height($width));
+    $res = get_no_image_sized_url(get_no_image_url(), THUMB320WIDTH, THUMB320HEIGHT);
   } else {
     $res = NO_IMAGE_320;
   }
@@ -171,8 +183,7 @@ endif;
 if ( !function_exists( 'get_no_image_160x90_url' ) ):
 function get_no_image_160x90_url(){
   if ($no_image_url = get_no_image_url()) {
-    $width = 160;
-    $res = get_no_image_sized_url(get_no_image_url(), $width, get_thumbnail_height($width));
+    $res = get_no_image_sized_url(get_no_image_url(), THUMB160WIDTH, THUMB160HEIGHT);
   } else {
     $res = NO_IMAGE_160;
   }

@@ -18,14 +18,20 @@ add_theme_support('post-thumbnails');
 add_image_size('thumb100', 100, 100, true);//Facebookバルーン
 add_image_size('thumb150', 150, 150, true);//ページ送りナビ
 //新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
-$width = 120;
-add_image_size('thumb120', $width, get_thumbnail_height($width), true);
+define('THUMB120', 'thumb120');
+define('THUMB120WIDTH', get_thumbnail_width(120));
+define('THUMB120HEIGHT', get_thumbnail_height(THUMB120WIDTH));
+add_image_size(THUMB120, THUMB120WIDTH, THUMB120HEIGHT, true);
 //関連記事デフォルト・関連記事4列
-$width = 160;
-add_image_size('thumb160', $width, get_thumbnail_height($width), true);
+define('THUMB160', 'thumb160');
+define('THUMB160WIDTH', get_thumbnail_width(160));
+define('THUMB160HEIGHT', get_thumbnail_height(THUMB160WIDTH));
+add_image_size(THUMB160, THUMB160WIDTH, THUMB160HEIGHT, true);
 //デフォルトサムネイル・関連記事3列
-$width = 320;
-add_image_size('thumb320', $width, get_thumbnail_height($width), true);
+define('THUMB320', 'thumb320');
+define('THUMB320WIDTH', get_thumbnail_width(320));
+define('THUMB320HEIGHT', get_thumbnail_height(THUMB320WIDTH));
+add_image_size(THUMB320, THUMB320WIDTH, THUMB320HEIGHT, true);
 // //本文レスポンシブ表示用
 // add_image_size('thumb320_raw', 320, 0, false);
 // add_image_size('thumb360_raw', 360, 0, false);

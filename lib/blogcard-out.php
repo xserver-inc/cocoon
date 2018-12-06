@@ -116,9 +116,8 @@ function fetch_card_image($image){
       wp_filesystem_put_contents($new_file, $file_data);
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
-      if ( !is_wp_error($image_editor) ) {
-        $width = 160;
-        $image_editor->resize($width, get_thumbnail_height($width), true);
+      if ( !is_wp_error($image_editor) ){
+        $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
         $image_editor->save( $new_file );
         return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
       }
@@ -253,8 +252,7 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //サムネイルを取得できた場合
   if ( $image ) {
-    $width = 160;
-    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.$width.'" height="'.get_thumbnail_height($width).'" />';
+    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成

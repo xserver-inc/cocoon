@@ -11,7 +11,7 @@ function get_big_card_first_thumbnail_size($count){
   if ($count == 1) {
     return 'large';
   } else {
-    return 'thumb320';
+    return THUMB320;
   }
 }
 endif;
@@ -31,7 +31,7 @@ endif;
 //デフォルトのサムネイルサイズ
 if ( !function_exists( 'get_entry_card_default_thumbnail_size' ) ):
 function get_entry_card_default_thumbnail_size(){
-  return 'thumb320';
+  return THUMB320;
 }
 endif;
 //エイリアス
@@ -51,7 +51,7 @@ function get_entry_card_thumbnail_size($count){
         if ($count == 1) {
           $thumbnail_size = 'large';
         } else {
-          $thumbnail_size = 'thumb320';
+          $thumbnail_size = THUMB320;
         }
       break;
     case 'big_card':
@@ -72,7 +72,6 @@ function get_entry_card_thumbnail_size($count){
       break;
     default://エントリーカード
       $thumbnail_size = get_entry_card_default_thumbnail_size();
-      // $thumbnail_size = 'thumb320';
       break;
   }
   return $thumbnail_size;
@@ -112,7 +111,7 @@ endif;
 //ウィジェットエントリーのサムネイルサイズ
 if ( !function_exists( 'get_widget_entries_thumbnail_size' ) ):
 function get_widget_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
+  $thumb_size = ($entry_type == ET_DEFAULT) ? THUMB120 : THUMB320;
   return $thumb_size;
 }
 endif;
@@ -120,8 +119,6 @@ endif;
 //人気記事のサムネイルサイズ
 if ( !function_exists( 'get_popular_entries_thumbnail_size' ) ):
 function get_popular_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  // $thumb_size = ($entry_type == ET_DEFAULT) ? 'thumb120' : 'thumb320';
-  // return $thumb_size;
   return get_widget_entries_thumbnail_size($entry_type);
 }
 endif;

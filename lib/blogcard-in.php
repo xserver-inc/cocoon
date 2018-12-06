@@ -34,7 +34,7 @@ endif;
 //内部ブログカードのサムネイルサイズ
 if ( !function_exists( 'get_internal_blogcard_thumbnail_size' ) ):
 function get_internal_blogcard_thumbnail_size(){
-  return 'thumb160';
+  return THUMB160;
 }
 endif;
 
