@@ -94,6 +94,8 @@ endif;
 if ( !function_exists( 'get_site_screenshot_url' ) ):
 function get_site_screenshot_url($url){
   $mshot = 'https://s0.wordpress.com/mshots/v1/';
-  return $mshot.urlencode($url).'?w=160&h=90';
+  $width = 160;
+  $height = get_thumbnail_height($width);
+  return $mshot.urlencode($url).'?w='.$width.'&h='.$height;
 }
 endif;
