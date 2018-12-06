@@ -253,7 +253,8 @@ function url_to_external_ogp_blogcard_tag($url){
 
   //サムネイルを取得できた場合
   if ( $image ) {
-    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />';
+    $width = 160;
+    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.$width.'" height="'.get_thumbnail_height($width).'" />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成
