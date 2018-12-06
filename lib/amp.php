@@ -480,16 +480,6 @@ function convert_content_for_amp($the_content){
   $append = $amp_placeholder.'</amp-iframe>';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-//_v($the_content);
-  // //Amazon商品紹介iframeパーツのAMP化
-  // $pattern = '/<amp-iframe layout="responsive" sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d+" height="\d+")?/i';
-  // $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-
-  // $pattern = '/<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="(.+?rcm-fe.amazon-adsystem.com.+?)".+?(width="\d*" height="\d*")?/i';
-  // $append = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="$1" width="120" height="240"';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-
   //カエレバのstyle属性を取り除く
   $pattern = '{<div class="(kaerebalink-box|booklink-box|tomarebalink-box)".+?<div class="booklink-footer"}is';
   if (preg_match_all($pattern, $the_content, $m)) {

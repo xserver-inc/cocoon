@@ -14,7 +14,7 @@ function get_blogcard_thumbnail_image_tag($url, $in = true){
   } else {
     $class = ' external-blogcard-thumb-image';
   }
-  return '<img src="'.$url.'" alt="" class="blogcard-thumb-image'.$class.'" width="160" height="90" />';
+  return '<img src="'.$url.'" alt="" class="blogcard-thumb-image'.$class.'" width="'.THUMB160WIDTH_DEF.'" height="'.THUMB160HEIGHT_DEF.'" />';
 }
 endif;
 

@@ -102,7 +102,9 @@ function get_noimage_sizes_attr($image = null){
   if (!$image) {
     $image = get_no_image_160x90_url();
   }
-  $sizes = ' srcset="'.$image.' 160w" width="160" height="90" sizes="(max-width: 160px) 160vw, 90px"';
+  $w = THUMB160WIDTH_DEF;
+  $h = THUMB160HEIGHT_DEF;
+  $sizes = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
   return $sizes;
 }
 endif;
@@ -116,13 +118,13 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
 
     //表示タイプ＝デフォルト
     if ($width == THUMB120WIDTH) {
-      $w = 120;
-      $h = get_thumbnail_height($w);
+      $w = THUMB120WIDTH_DEF;
+      $h = THUMB120HEIGHT_DEF;
       $image = get_no_image_160x90_url();
       $wh_attr = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
     } else {//表示タイプ＝スクエア
       $image = get_no_image_150x150_url();
-      $wh_attr = ' srcset="'.$image.' 120w" width="120" height="120" sizes="(max-width: 120px) 120vw, 120px"';
+      $wh_attr = ' srcset="'.$image.' '.W120.'w" width="'.W120.'" height="'.W120.'" sizes="(max-width: '.W120.'px) '.W120.'vw, '.W120.'px"';
     }
     $thumb = '<img src="'.$image.'" alt="" class="no-image post-navi-no-image"'.$wh_attr.' />';
   }
