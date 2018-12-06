@@ -119,9 +119,18 @@ function get_thumbnail_aspect_ratio(){
   return $ratio;
 }
 endif;
+//Retinaディスプレイサイズの取得
+if ( !function_exists( 'get_retina_image_size' ) ):
+function get_retina_image_size($size){
+  return intval($size) * 2;
+}
+endif;
 //サムネイルの横の画像サイズ
 if ( !function_exists( 'get_thumbnail_width' ) ):
 function get_thumbnail_width($width){
+  if (is_retina_thumbnail_enable()) {
+    $width = get_retina_image_size($width);
+  }
   return $width;
 }
 endif;
@@ -135,6 +144,9 @@ endif;
 //正方形サムネイルの横の画像サイズ
 if ( !function_exists( 'get_square_thumbnail_width' ) ):
 function get_square_thumbnail_width($width){
+  if (is_retina_thumbnail_enable()) {
+    $width = get_retina_image_size($width);
+  }
   return $width;
 }
 endif;

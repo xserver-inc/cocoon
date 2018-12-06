@@ -171,6 +171,7 @@ function get_vertical_card_2_width(){
     $border = 1;
   }
   $vcw = round($mw * 0.495) - ($padding * 2) - ($border * 2);
+  $vcw = get_thumbnail_width($vcw);
   return $vcw;
 }
 endif;
@@ -203,6 +204,8 @@ function get_vertical_card_3_width(){
     $border = 1;
   }
   $vcw = round($mw * 0.33) - ($padding * 2) - ($border * 2);
+
+  $vcw = get_thumbnail_width($vcw);
   return $vcw;
 }
 endif;
@@ -235,6 +238,7 @@ function get_tile_card_2_width(){
     $border = 1;
   }
   $vcw = round($mw * 0.495) - ($padding * 2) - ($border * 2);
+  $vcw = get_thumbnail_width($vcw);
   return $vcw;
 }
 endif;
@@ -264,6 +268,7 @@ function get_tile_card_3_width(){
     $border = 1;
   }
   $vcw = round($mw * 0.33) - ($padding * 2) - ($border * 2);
+  $vcw = get_thumbnail_width($vcw);
   return $vcw;
 }
 endif;
