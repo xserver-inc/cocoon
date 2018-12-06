@@ -180,6 +180,7 @@
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/related.png', __( '関連記事のエントリーカードのサムネイル。', THEME_NAME )).__('関連記事', THEME_NAME); ?></li>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>
               <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/page-navi.png', __( 'ページ送りナビのサムネイル。※デフォルトのみ）', THEME_NAME )).__('ページ送りナビ', THEME_NAME); ?></li>
+              <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/blogcard.png', __( '内部ブログカード、外部ブログカードのサムネイル。', THEME_NAME )).__('ブログカード', THEME_NAME); ?></li>
             </ol>
           </td>
         </tr>
