@@ -42,6 +42,7 @@ update_theme_option(OP_NO_IMAGE_URL);
 if (file_exists(get_no_image_file()) &&
    (!file_exists(get_no_image_320x180_file())
        || !file_exists(get_no_image_160x90_file())
+       || !file_exists(get_no_image_120x68_file())
        || !file_exists(get_no_image_150x150_file()))
 ) {
   $image_editor = wp_get_image_editor(get_no_image_file());
@@ -51,6 +52,9 @@ if (file_exists(get_no_image_file()) &&
 
     $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
     $image_editor->save( get_no_image_160x90_file() );
+
+    $image_editor->resize(THUMB120WIDTH, THUMB120HEIGHT, true);
+    $image_editor->save( get_no_image_120x68_file() );
 
     $image_editor->resize(THUMB150WIDTH, THUMB150HEIGHT, true);
     $image_editor->save( get_no_image_150x150_file() );

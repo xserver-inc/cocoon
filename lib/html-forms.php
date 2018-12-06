@@ -886,25 +886,20 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       $permalink = get_permalink( $post->ID );
       $title = $post->post_title;
       //$no_thumbnail_url = get_template_directory_uri().'/images/no-image-320.png';
-      $no_thumbnail_url = get_no_image_320x180_url();
+      $no_thumbnail_url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+      $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
+      $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
+      //$no_thumbnail_url = get_no_image_320x180_url();
+
       $post_thumbnail = get_the_post_thumbnail( $post->ID, $thumb_size, array('alt' => '') );
       $pv = $post->sum_count;
 
       if ($post_thumbnail) {
         $post_thumbnail_img = $post_thumbnail;
       } else {
-        $w = THUMB320WIDTH_DEF;
-        $h = THUMB320HEIGHT_DEF;
         $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
       }
 
-      // $pv_tag = '';
-      // if ($pv_visible) {
-      //   $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$post->sum_count.'</span>';
-      // }
-      //_v($post_thumbnail_img);
-
-      //var_dump($permalink);
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
@@ -1000,8 +995,14 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
         <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
-      <?php else: // サムネイルを持っていないときの処理 ?>
-        <img src="<?php echo get_no_image_320x180_url(); ?>" alt="" class="no-image new-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo THUMB320WIDTH_DEF; ?>" height="<?php echo THUMB320HEIGHT_DEF; ?>" />
+      <?php else: // サムネイルを持っていないときの処理
+
+        $url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+        $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
+        $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
+
+        ?>
+        <img src="<?php echo $url; ?>" alt="" class="no-image <?php echo $prefix; ?>-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>" />
       <?php endif; ?>
       </figure><!-- /.new-entry-card-thumb -->
 

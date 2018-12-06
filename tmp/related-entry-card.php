@@ -25,7 +25,7 @@
     }
     echo get_the_post_thumbnail($post->ID, $thumb_size, array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
-    <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH_DEF; ?>" height="<?php echo THUMB160HEIGHT_DEF; ?>" />
+    <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
     <?php endif; ?>
     <?php the_nolink_category(); //カテゴリラベルの取得 ?>
   </figure><!-- /.related-entry-thumb -->

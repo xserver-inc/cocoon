@@ -102,8 +102,8 @@ function get_noimage_sizes_attr($image = null){
   if (!$image) {
     $image = get_no_image_160x90_url();
   }
-  $w = THUMB160WIDTH_DEF;
-  $h = THUMB160HEIGHT_DEF;
+  $w = THUMB160WIDTH;
+  $h = THUMB160HEIGHT;
   $sizes = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
   return $sizes;
 }
@@ -118,8 +118,8 @@ function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUM
 
     //表示タイプ＝デフォルト
     if ($width == THUMB120WIDTH) {
-      $w = THUMB120WIDTH_DEF;
-      $h = THUMB120HEIGHT_DEF;
+      $w = THUMB120WIDTH;
+      $h = THUMB120HEIGHT;
       $image = get_no_image_160x90_url();
       $wh_attr = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
     } else {//表示タイプ＝スクエア

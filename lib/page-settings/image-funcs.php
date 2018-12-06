@@ -215,6 +215,21 @@ function get_no_image_160x90_file(){
   return url_to_local(get_no_image_160x90_url());
 }
 endif;
+if ( !function_exists( 'get_no_image_120x68_url' ) ):
+function get_no_image_120x68_url(){
+  if ($no_image_url = get_no_image_url()) {
+    $res = get_no_image_sized_url(get_no_image_url(), THUMB120WIDTH, THUMB120HEIGHT);
+  } else {
+    $res = NO_IMAGE_120;
+  }
+  return $res;
+}
+endif;
+if ( !function_exists( 'get_no_image_120x68_file' ) ):
+function get_no_image_120x68_file(){
+  return url_to_local(get_no_image_120x68_url());
+}
+endif;
 if ( !function_exists( 'get_no_image_150x150_url' ) ):
 function get_no_image_150x150_url(){
   if ($no_image_url = get_no_image_url()) {

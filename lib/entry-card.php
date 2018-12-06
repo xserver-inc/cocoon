@@ -80,9 +80,7 @@ endif;
 
 if ( !function_exists( 'get_entry_card_no_image_tag' ) ):
 function get_entry_card_no_image_tag($count){
-  $w = THUMB320WIDTH_DEF;
-  $h = THUMB320HEIGHT_DEF;
-  $thumbnail_tag_320 = '<img src="'.get_no_image_320x180_url().'" alt="" class="entry-card-thumb-image no-image list-no-image" width="'.$w.'" height="'.$h.'" />';
+  $thumbnail_tag_320 = '<img src="'.get_no_image_320x180_url().'" alt="" class="entry-card-thumb-image no-image list-no-image" width="'.THUMB320WIDTH.'" height="'.THUMB320HEIGHT.'" />';
   $thumbnail_tag_large = '<img src="'.get_no_image_large_url().'" alt="" class="entry-card-thumb-image no-image list-no-image" />';
   $thumbnail_tag = $thumbnail_tag_large;
   switch (get_entry_card_type()) {
