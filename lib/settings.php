@@ -24,10 +24,13 @@ define('THUMB100HEIGHT', get_square_thumbnail_height(THUMB100WIDTH));
 add_image_size(THUMB100, THUMB100WIDTH, THUMB100HEIGHT, true);
 
 //150px正方形 ページ送りナビ、Facebookバルーン
+define('W150', 150);
 define('THUMB150', 'thumb150');
-define('THUMB150WIDTH', get_square_thumbnail_width(150));
+define('THUMB150WIDTH', get_square_thumbnail_width(W150));
 define('THUMB150HEIGHT', get_square_thumbnail_height(THUMB150WIDTH));
 add_image_size(THUMB150, THUMB150WIDTH, THUMB150HEIGHT, true);
+define('THUMB150WIDTH_DEF', W150);
+define('THUMB150HEIGHT_DEF', W150);
 
 //120px 新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
 define('W120', 120);
