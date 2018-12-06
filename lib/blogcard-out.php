@@ -117,7 +117,8 @@ function fetch_card_image($image){
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
       if ( !is_wp_error($image_editor) ) {
-        $image_editor->resize(160, 90, true);
+        $width = 160;
+        $image_editor->resize($width, get_thumbnail_height($width), true);
         $image_editor->save( $new_file );
         return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
       }
