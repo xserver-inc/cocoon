@@ -198,7 +198,7 @@ endif;
 if ( !function_exists( 'get_no_image_150x150_url' ) ):
 function get_no_image_150x150_url(){
   if ($no_image_url = get_no_image_url()) {
-    $res = get_no_image_sized_url(get_no_image_url(), 150, 150);
+    $res = get_no_image_sized_url(get_no_image_url(), THUMB150WIDTH, THUMB150HEIGHT);
   } else {
     $res = NO_IMAGE_150;
   }

@@ -485,8 +485,8 @@ function get_the_meta_description(){
     $desc = get_the_page_meta_description();
   }
 
-  if ( !$desc ) {//投稿で抜粋が設定されていない場合は、110文字の冒頭の抽出分
-    $desc = strip_shortcodes(get_the_snipet( $post->post_content, 150 ));
+  if ( !$desc ) {//投稿で抜粋が設定されていない場合は、120文字の冒頭の抽出分
+    $desc = strip_shortcodes(get_the_snipet( $post->post_content, 160 ));
     $desc = mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags($desc)), 0, 120);
 
   }

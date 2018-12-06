@@ -11,12 +11,12 @@ if (is_post_navi_visible()): ?>
 <?php
 $prevpost = get_adjacent_post(false, '', true); //前の記事
 $nextpost = get_adjacent_post(false, '', false); //次の記事
-$width = 120;
-$height = 67;
+$width  = THUMB120WIDTH;
+$height = THUMB120HEIGHT;
 switch (get_post_navi_type()) {
   case 'square':
-    $width = 150;
-    $height = 150;
+    $width  = THUMB150WIDTH;
+    $height = THUMB150HEIGHT;
     break;
 }
 if( $prevpost or $nextpost ){ //前の記事、次の記事いずれか存在しているとき

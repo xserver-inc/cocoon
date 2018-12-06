@@ -14,20 +14,27 @@ if (is_admin_php_page()) {
 // アイキャッチ画像を有効化
 add_theme_support('post-thumbnails');
 
-//サムネイルサイズ
-add_image_size('thumb100', 100, 100, true);//Facebookバルーン
-add_image_size('thumb150', 150, 150, true);//ページ送りナビ
-//新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
+///////////////////////////////////////////
+// サムネイルサイズ
+///////////////////////////////////////////
+//100px Facebookバルーン
+add_image_size('thumb100', 100, 100, true);//
+//150px正方形 ページ送りナビ
+define('THUMB150', 'thumb150');
+define('THUMB150WIDTH', get_square_thumbnail_width(150));
+define('THUMB150HEIGHT', get_square_thumbnail_height(THUMB150WIDTH));
+add_image_size(THUMB150, THUMB150WIDTH, THUMB150HEIGHT, true);
+//120px 新着・人気記事ウィジェット・ページ送りナビ・関連記事ミニカード
 define('THUMB120', 'thumb120');
 define('THUMB120WIDTH', get_thumbnail_width(120));
 define('THUMB120HEIGHT', get_thumbnail_height(THUMB120WIDTH));
 add_image_size(THUMB120, THUMB120WIDTH, THUMB120HEIGHT, true);
-//関連記事デフォルト・関連記事4列
+//160px 関連記事デフォルト・関連記事4列
 define('THUMB160', 'thumb160');
 define('THUMB160WIDTH', get_thumbnail_width(160));
 define('THUMB160HEIGHT', get_thumbnail_height(THUMB160WIDTH));
 add_image_size(THUMB160, THUMB160WIDTH, THUMB160HEIGHT, true);
-//デフォルトサムネイル・関連記事3列
+//320px デフォルトサムネイル・関連記事3列
 define('THUMB320', 'thumb320');
 define('THUMB320WIDTH', get_thumbnail_width(320));
 define('THUMB320HEIGHT', get_thumbnail_height(THUMB320WIDTH));

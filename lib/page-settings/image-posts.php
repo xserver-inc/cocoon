@@ -49,7 +49,7 @@ if (file_exists(get_no_image_file()) &&
     $image_editor->resize(THUMB160WIDTH, THUMB160HEIGHT, true);
     $image_editor->save( get_no_image_160x90_file() );
 
-    $image_editor->resize(150, 150, true);
+    $image_editor->resize(THUMB150WIDTH, THUMB150HEIGHT, true);
     $image_editor->save( get_no_image_150x150_file() );
   }
 }

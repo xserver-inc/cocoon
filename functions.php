@@ -109,19 +109,18 @@ endif;
 
 //投稿ナビのサムネイルタグを取得する
 if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
-function get_post_navi_thumbnail_tag($id, $width = 120, $height = 67){
+function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUMB120HEIGHT){
   $thumb = get_the_post_thumbnail( $id, 'thumb'.strval($width), array('alt' => '') );
   if ( !$thumb ) {
     $image = get_template_directory_uri().'/images/no-image-%s.png';
+
     //表示タイプ＝デフォルト
-    if ($width == 120) {
-      //$w = '160';
-      //$image = sprintf($image, $w);
+    if ($width == THUMB120WIDTH) {
+      $w = 120;
+      $h = get_thumbnail_height($w);
       $image = get_no_image_160x90_url();
-      $wh_attr = ' srcset="'.$image.' 120w" width="120" height="67" sizes="(max-width: 120px) 120vw, 67px"';
+      $wh_attr = ' srcset="'.$image.' '.$w.'w" width="'.$w.'" height="'.$h.'" sizes="(max-width: '.$w.'px) '.$w.'vw, '.$h.'px"';
     } else {//表示タイプ＝スクエア
-      //$w = '150';
-      //$image = sprintf($image, $w);
       $image = get_no_image_150x150_url();
       $wh_attr = ' srcset="'.$image.' 120w" width="120" height="120" sizes="(max-width: 120px) 120vw, 120px"';
     }
