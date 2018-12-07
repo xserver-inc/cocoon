@@ -357,7 +357,7 @@ endif;
 //Lazy Loadの読み込み
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
-  if (is_lazy_load_enable()) {
+  if (is_lazy_load_enable() && !is_login_page()) {
     wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array(), false, true );
     wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array('polyfill-js'), false, true );
     $data = 'const observer = lozad();observer.observe();';
@@ -2234,5 +2234,12 @@ endif;
 if ( !function_exists( 'is_analytics_access_php_page' ) ):
 function is_analytics_access_php_page(){
   return isset($_SERVER['REQUEST_URI']) && includes_string($_SERVER['REQUEST_URI'], '/lib/analytics/access.php?');
+}
+endif;
+
+//ログインページかどうか
+if ( !function_exists( 'is_login_page' ) ):
+function is_login_page() {
+  return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
 endif;

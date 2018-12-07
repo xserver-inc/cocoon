@@ -25,7 +25,7 @@ function code_minify_call_back($buffer) {
   ///////////////////////////////////////////
   // Lazy Load
   ///////////////////////////////////////////
-  if (is_lazy_load_enable()) {
+  if (is_lazy_load_enable() && !is_login_page()) {
     //画像の変換
     $buffer = convert_lazy_load_tag($buffer, 'img');
     //iframeの変換
