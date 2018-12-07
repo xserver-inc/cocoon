@@ -15,7 +15,8 @@ function is_gutenberg_editor_enable(){
 endif;
 //Gutenbergを無効化する場合
 if (!is_gutenberg_editor_enable()) {
-  add_filter('gutenberg_can_edit_post_type', '__return_false');
+  //add_filter('gutenberg_can_edit_post_type', '__return_false');
+  add_filter('use_block_editor_for_post', '__return_false');
 }
 
 //タイトル等の文字数カウンター表示
