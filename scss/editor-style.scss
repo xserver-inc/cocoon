@@ -130,24 +130,22 @@ span.btn-wrap{
   position: relative !important;
 }
 
-/*Gutenbergの引用スタイルを打ち消す*/
-.wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
-  border: 1px solid #ccc;
-}
+// /*Gutenbergの引用スタイルを打ち消す*/
+// .wp-block-freeform.core-blocks-rich-text__tinymce blockquote{
+//   border: 1px solid #ccc;
+// }
 
-/*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
-.mce-listbox button {
-  max-width: 98px;
-}
-/* Main column width */
+// /*Gutenbergのテーマ用ドロップダウンリストを1列に収める*/
+// .mce-listbox button {
+//   max-width: 98px;
+// }
+// /* Main column width */
 
-body.gutenberg-editor-page .editor-block-list__layout{
-  padding: 0;
-}
+// body.gutenberg-editor-page .editor-block-list__layout{
+//   padding: 0;
+// }
 
-body.gutenberg-editor-page div.editor-post-title__block,
-body.gutenberg-editor-page div.editor-default-block-appender,
-body.gutenberg-editor-page div.editor-block-list__block {
+.wp-block {
   padding: 0;
   margin: 0 auto;
   max-width: 800px;
@@ -179,7 +177,4 @@ body.gutenberg-editor-page div.editor-block-list__block {
 div.mce-content-body{
   line-height: inherit;
 }
-/*
-br[data-mce-bogus]{
-  display: none;
-} */
+
