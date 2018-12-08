@@ -15,6 +15,9 @@ update_theme_option(OP_CAROUSEL_CATEGORY_IDS);
 //カルーセルに表示する最大数
 update_theme_option(OP_CAROUSEL_MAX_COUNT);
 
+//カードの枠線を表示する
+update_theme_option(OP_CAROUSEL_CARD_BORDER_VISIBLE);
+
 //カルーセルオートプレイ
 update_theme_option(OP_CAROUSEL_AUTOPLAY_ENABLE);
 

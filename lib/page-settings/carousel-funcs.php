@@ -55,6 +55,14 @@ function get_carousel_max_count(){
 }
 endif;
 
+//カードの枠線を表示する
+define('OP_CAROUSEL_CARD_BORDER_VISIBLE', 'carousel_card_border_visible');
+if ( !function_exists( 'is_carousel_card_border_visible' ) ):
+function is_carousel_card_border_visible(){
+  return get_theme_option(OP_CAROUSEL_CARD_BORDER_VISIBLE);
+}
+endif;
+
 //カルーセルオートプレイ
 define('OP_CAROUSEL_AUTOPLAY_ENABLE', 'carousel_autoplay_enable');
 if ( !function_exists( 'is_carousel_autoplay_enable' ) ):

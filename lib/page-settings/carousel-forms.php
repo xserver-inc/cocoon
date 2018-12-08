@@ -69,6 +69,19 @@
           </td>
         </tr>
 
+        <!-- 枠線の表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CAROUSEL_CARD_BORDER_VISIBLE, __('枠線の表示', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_CAROUSEL_CARD_BORDER_VISIBLE , is_carousel_card_border_visible(), __( 'カードの枠線を表示する', THEME_NAME ));
+            generate_tips_tag(__( 'カルーセルのカードの枠となる罫線を表示するか。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- オートプレイ-->
         <tr>
           <th scope="row">
