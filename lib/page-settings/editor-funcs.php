@@ -18,13 +18,13 @@ if (!is_gutenberg_editor_enable()) {
   add_filter('gutenberg_can_edit_post_type', '__return_false');
   add_filter('use_block_editor_for_post', '__return_false');
 }
-//Gutenberg CSS
-add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets_custom');
-if ( !function_exists( 'enqueue_block_editor_assets_custom' ) ):
-function enqueue_block_editor_assets_custom() {
-  wp_enqueue_style( 'gutenberg-editor', get_template_directory_uri() . '/editor-style.css' , false );
-}
-endif;
+// //Gutenberg CSS
+// add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets_custom');
+// if ( !function_exists( 'enqueue_block_editor_assets_custom' ) ):
+// function enqueue_block_editor_assets_custom() {
+//   wp_enqueue_style( 'gutenberg-editor', get_template_directory_uri() . '/editor-style.css' , false );
+// }
+// endif;
 
 //タイトル等の文字数カウンター表示
 define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
