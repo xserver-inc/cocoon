@@ -19,7 +19,7 @@ $query = new WP_Query( $args );
 // var_dump($query);
   if( $query -> have_posts() ): //カルーセルが設定されているとき
 ?>
-<div id="carousel" class="carousel">
+<div id="carousel" class="carousel<?php echo get_additional_carousel_area_classes(); ?>">
   <div id="carousel-in" class="carousel-in wrap">
     <div class="carousel-content cf">
       <?php while ($query -> have_posts()) : $query -> the_post(); ?>

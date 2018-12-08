@@ -5833,6 +5833,13 @@ input[type='submit'],
 .carousel {
   display: none;
 }
+.carousel .a-wrap {
+  padding: 0.2em 0.3em;
+}
+
+.ccb-carousel-border .a-wrap {
+  border: 1px solid #ccc;
+}
 
 .admin-panel {
   background-color: #333;

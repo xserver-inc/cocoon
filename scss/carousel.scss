@@ -73,4 +73,14 @@
 
 .carousel{
   display: none;
+  .a-wrap{
+    padding: 0.2em 0.3em;
+  }
+}
+
+//カルーセルの枠線
+.ccb-carousel-border{
+  .a-wrap{
+    border: 1px solid $basic_border_color;
+  }
 }

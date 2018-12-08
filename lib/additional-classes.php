@@ -863,6 +863,25 @@ function get_additional_appeal_area_classes($option = null){
 endif;
 
 
+//カルーセルのclass追加関数
+if ( !function_exists( 'get_additional_carousel_area_classes' ) ):
+function get_additional_carousel_area_classes($option = null){
+  $classes = null;
+
+
+  //背景画像の固定
+  if (is_carousel_card_border_visible()) {
+    $classes .= ' ccb-carousel-border';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return apply_filters('get_additional_carousel_area_classes', $classes);
+}
+endif;
+
+
 //アピールエリアのclass追加関数
 if ( !function_exists( 'get_additional_categories_tags_area_classes' ) ):
 function get_additional_categories_tags_area_classes($option = null){
