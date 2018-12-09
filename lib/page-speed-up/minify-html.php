@@ -260,6 +260,12 @@ function convert_lazy_load_tag($the_content, $media){
       if (strlen($match) > 1024) {
         continue;
       }
+      ///////////////////////////////////////////
+      // 除外設定
+      ///////////////////////////////////////////
+      if (includes_string($match, 'class="twentytwenty-')) {
+        continue;
+      }
 
       //変数の初期化
       $src_attr = null;
