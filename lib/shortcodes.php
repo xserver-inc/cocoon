@@ -32,7 +32,6 @@ function new_entries_shortcode($atts) {
     'children' => 0,
     'post_type' => 'post',
     'taxonomy' => 'category',
-    'randam' => 0,
   ), $atts));
   $categories = array();
   //var_dump($cats);
@@ -40,7 +39,7 @@ function new_entries_shortcode($atts) {
     $categories = explode(',', $cats);
   }
   ob_start();
-  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $randam);
+  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy);
   $res = ob_get_clean();
   return $res;
 }

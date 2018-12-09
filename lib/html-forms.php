@@ -937,10 +937,10 @@ endif;
 
 //汎用エントリーウィジェットのタグ生成
 if ( !function_exists( 'generate_widget_entries_tag' ) ):
-function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $randam = 0){
+function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0){
 
   //ランダムが有効な時は関連記事
-  if ($randam) {
+  if ($random) {
     $prefix = 'widget-related';
   } else {
     $prefix = 'new';
@@ -956,7 +956,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
       'post_type' => explode(',', $post_type)
     );
   }
-  if ($randam) {
+  if ($random) {
     $args += array(
       'orderby' => 'rand'
     );
@@ -976,7 +976,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
       )
     );
   }
-  if ($randam) {
+  if ($random) {
     $args = apply_filters('widget_related_entries_args', $args);
   } else {
     $args = apply_filters('widget_new_entries_args', $args);
