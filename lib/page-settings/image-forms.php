@@ -154,7 +154,7 @@
             <?php
             $options = array(
               'wide' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/wide.png', __( 'テレビ（地デジ）やYouTubeと同じ比率。', THEME_NAME ), THUMB320WIDTH).
-                __( '9:16, 1:1.777..（ワイド）デフォルト', THEME_NAME ),
+                __( '9:16, 1:1.777..（地デジ・YouTube比）デフォルト', THEME_NAME ),
 
               'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
@@ -166,7 +166,7 @@
                 __( '約5:7, 1:1.414..（白銀比）', THEME_NAME ),
 
               'standard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやデジタルカメラ、PowerPointのスライドと同じ比率。', THEME_NAME ), THUMB320WIDTH).
-                __( '3:4, 1:1.333..（スタンダード）', THEME_NAME ),
+                __( '3:4, 1:1.333..（アナログテレビ・デジカメ比）', THEME_NAME ),
 
               'square' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME ), THUMB320WIDTH).
                 __( '1:1（正方形）', THEME_NAME ),
