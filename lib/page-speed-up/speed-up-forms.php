@@ -129,6 +129,9 @@
             generate_checkbox_tag(OP_LAZY_LOAD_ENABLE , is_lazy_load_enable(), __( 'Lazy Loadを有効にする', THEME_NAME ));
             generate_tips_tag(__( 'Googleが推奨するメディアの遅延読み込み方法でページ表示を高速化します。Lazy Loadは、Intersection Observer APIを利用しています。対応メディアはimgのみです。', THEME_NAME ));
 
+
+            generate_textarea_tag(OP_LAZY_LOAD_EXCLUDE_LIST, get_lazy_load_exclude_list(), __( '除外文字列を入力', THEME_NAME ) , 3);
+            generate_tips_tag(__( 'Lazy Loadを行いたくない場合は、該当するimgタグに含まれている文字列を改行区切りで入力してください。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -23,6 +23,8 @@ update_theme_option(OP_JS_MINIFY_EXCLUDE_LIST);
 
 //Lazy Load
 update_theme_option(OP_LAZY_LOAD_ENABLE);
+//Lazy Load除外文字列リスト
+update_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST);
 //WEBフォントのLazy Load
 update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 

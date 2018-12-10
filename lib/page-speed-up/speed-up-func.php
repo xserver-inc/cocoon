@@ -46,7 +46,7 @@ endif;
 define('OP_CSS_MINIFY_EXCLUDE_LIST', 'css_minify_exclude_list');
 if ( !function_exists( 'get_css_minify_exclude_list' ) ):
 function get_css_minify_exclude_list(){
-  return get_theme_option(OP_CSS_MINIFY_EXCLUDE_LIST);
+  return stripslashes_deep(get_theme_option(OP_CSS_MINIFY_EXCLUDE_LIST));
 }
 endif;
 
@@ -62,7 +62,7 @@ endif;
 define('OP_JS_MINIFY_EXCLUDE_LIST', 'js_minify_exclude_list');
 if ( !function_exists( 'get_js_minify_exclude_list' ) ):
 function get_js_minify_exclude_list(){
-  return get_theme_option(OP_JS_MINIFY_EXCLUDE_LIST);
+  return stripslashes_deep(get_theme_option(OP_JS_MINIFY_EXCLUDE_LIST));
 }
 endif;
 
@@ -71,6 +71,14 @@ define('OP_LAZY_LOAD_ENABLE', 'lazy_load_enable');
 if ( !function_exists( 'is_lazy_load_enable' ) ):
 function is_lazy_load_enable(){
   return get_theme_option(OP_LAZY_LOAD_ENABLE);
+}
+endif;
+
+//Lazy Load除外文字列リスト
+define('OP_LAZY_LOAD_EXCLUDE_LIST', 'lazy_load_exclude_list');
+if ( !function_exists( 'get_lazy_load_exclude_list' ) ):
+function get_lazy_load_exclude_list(){
+  return stripslashes_deep(get_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST));
 }
 endif;
 
