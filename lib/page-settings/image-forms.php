@@ -159,17 +159,20 @@
               'golden_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/golden.png', __( '人間が最も美しいと感じる比率とされています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:8, 1:1.618..（黄金比）', THEME_NAME ),
 
+                'postcard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/postcard.png', __( '一眼レフのアスペクト比。ハガキの縦横比に近いです。', THEME_NAME ), THUMB320WIDTH).
+                  __( '2:3, 1:1.5（一眼レフ比）', THEME_NAME ),
+
               'silver_ratio' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/silver.png', __( '日本の木造建築に古くから使われている比率。大和比とも呼ばれています。', THEME_NAME ), THUMB320WIDTH).
                 __( '約5:7, 1:1.414..（白銀比）', THEME_NAME ),
 
-              'standard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやPowerPointのスライドと同じ比率。', THEME_NAME ), THUMB320WIDTH).
+              'standard' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/standard.png', __( 'アナログテレビやデジタルカメラ、PowerPointのスライドと同じ比率。', THEME_NAME ), THUMB320WIDTH).
                 __( '3:4, 1:1.333..（スタンダード）', THEME_NAME ),
 
               'square' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/square.png', __( '単なる正方形。', THEME_NAME ), THUMB320WIDTH).
                 __( '1:1（正方形）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_THUMBNAIL_IMAGE_TYPE, $options, get_thumbnail_image_type());
-            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像のアスペクト比（縦横比率）を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
+            generate_tips_tag(__( 'インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックスカードタイプ」の「大きなカード」と「タイルカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/thumbnail-aspect-ratio/'));
             ?>
 
           </td>
