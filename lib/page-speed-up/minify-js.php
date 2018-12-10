@@ -86,7 +86,7 @@ function tag_code_to_minify_js($buffer) {
               continue;
             }
 
-            //除外リストにマッチするCSS URLは縮小化しない
+            //除外リストにマッチするJavascript URLは縮小化しない
             if (has_match_list_text($url, get_js_minify_exclude_list())) {
               continue;
             }

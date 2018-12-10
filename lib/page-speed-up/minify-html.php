@@ -205,7 +205,6 @@ endif;
 //リストにマッチするか
 if ( !function_exists( 'has_match_list_text' ) ):
 function has_match_list_text($text, $list){
-  //除外リストにマッチするCSS URLは縮小化しない
   $excludes = list_text_to_array($list);
   foreach ($excludes as $exclude_str) {
     if (strpos($text, $exclude_str) !== false) {
@@ -264,6 +263,11 @@ function convert_lazy_load_tag($the_content, $media){
       // 除外設定
       ///////////////////////////////////////////
       if (includes_string($match, 'class="twentytwenty-')) {
+        continue;
+      }
+      //除外リストにマッチする文字列はLazy Loadしない
+      $exclude_list = get_lazy_load_exclude_list();
+      if ($exclude_list && has_match_list_text($match, $exclude_list)) {
         continue;
       }
 
