@@ -148,7 +148,7 @@
         <!-- サムネイル画像 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_THUMBNAIL_IMAGE_TYPE, __('サムネイル画像（β版）', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_THUMBNAIL_IMAGE_TYPE, __('サムネイル画像', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
