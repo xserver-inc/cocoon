@@ -186,7 +186,7 @@
           <td>
             <?php
             generate_checkbox_tag(OP_RETINA_THUMBNAIL_ENABLE , is_retina_thumbnail_enable(), __( 'サムネイルをRetinaディスプレイ対応にする', THEME_NAME ));
-            generate_tips_tag(__( 'サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。※「インデックスカードタイプ」の「大きなカード」には適用されません。', THEME_NAME ));
+            generate_tips_tag(__( 'サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。※「インデックスカードタイプ」の「大きなカード」には適用されません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/retina-thumbnail/'));
             ?>
           </td>
         </tr>
