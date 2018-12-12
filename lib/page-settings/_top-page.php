@@ -192,10 +192,8 @@ endif;
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
-    <?php if (DEBUG_MODE): ?>
     <li class="widget"><?php _e( 'ウィジェット', THEME_NAME ) ?></li>
     <li class="widget-area"><?php _e( 'ウィジェットエリア', THEME_NAME ) ?></li>
-    <?php endif; ?>
     <li class="editor"><?php _e( 'エディター', THEME_NAME ) ?></li>
     <li class="apis"><?php _e( 'API', THEME_NAME ) ?></li>
     <li class="others"><?php _e( 'その他', THEME_NAME ) ?></li>
@@ -351,7 +349,6 @@ endif;
     <?php require_once abspath(__FILE__).'admin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
-  <?php if (DEBUG_MODE): ?>
   <!-- ウィジェット -->
   <div class="widget metabox-holder">
     <?php require_once abspath(__FILE__).'widget-forms.php'; ?>
@@ -361,7 +358,6 @@ endif;
   <div class="widget-area metabox-holder">
     <?php require_once abspath(__FILE__).'widget-area-forms.php'; ?>
   </div><!-- /.metabox-holder -->
-  <?php endif; ?>
 
   <!-- エディター -->
   <div class="editor metabox-holder">
