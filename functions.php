@@ -285,3 +285,13 @@ function change_main_loop_sort_order( $query ) {
   }
 }
 endif;
+
+
+// add_action( 'widgets_init', function()
+// {
+//     _v($GLOBALS['wp_widget_factory']);
+//     if ( empty ( $GLOBALS['wp_widget_factory'] ) )
+//         return;
+
+//     $GLOBALS['wp_widget_factory']->widgets = array();
+// }, 20);
