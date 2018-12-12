@@ -262,9 +262,6 @@ function convert_lazy_load_tag($the_content, $media){
       ///////////////////////////////////////////
       // 除外設定
       ///////////////////////////////////////////
-      if (includes_string($match, 'class="twentytwenty-')) {
-        continue;
-      }
       //除外リストにマッチする文字列はLazy Loadしない
       $exclude_list = get_lazy_load_exclude_list();
       if ($exclude_list && has_match_list_text($match, $exclude_list)) {
