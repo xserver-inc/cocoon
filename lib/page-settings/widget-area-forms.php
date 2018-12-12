@@ -21,23 +21,18 @@
           </th>
           <td>
             <?php
-              $widgets = $GLOBALS['wp_widget_factory']->widgets;
-              //_v($widgets);
-              // echo '<pre>';
-              // var_dump($widgets);
-              // echo '</pre>';
+              $widget_areas = $GLOBALS['wp_registered_sidebars'];
+              //_v($widget_areas);
             ?>
             <ul>
               <?php
-              foreach ($widgets as $class => $widget) {
+              foreach ($widget_areas as $id => $widget_area) {
                 $checked = null;
                 //_v($widget->widget_options);
-                if (in_array($class, get_exclude_widget_classes())) {
+                if (in_array($id, get_exclude_widget_area_ids())) {
                   $checked = ' checked="checked"';
                 }
-                // _v($class);
-                // _v($widget);
-                echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_CLASSES.'[]" value="'.$class.'"'.$checked.'><b>' . $widget->name.'</b>：'.$widget->widget_options['description'].'</li>';
+                echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_AREA_IDS.'[]" value="'.$id.'"'.$checked.'><b>' . $widget_area['name'].'</b>：'.$widget_area['description'].'</li>';
               }
               ?>
             </ul>

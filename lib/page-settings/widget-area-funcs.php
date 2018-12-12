@@ -15,7 +15,7 @@ function get_exclude_widget_area_ids(){
 endif;
 
 //ウィジェットの除外
-add_action( 'widgets_init', 'unregister_exclude_widget_areas' );
+add_action( 'widgets_init', 'unregister_exclude_widget_areas', 20 );
 if ( !function_exists( 'unregister_exclude_widget_areas' ) ):
 function unregister_exclude_widget_areas() {
   if (!is_admin_php_page()) {

@@ -82,6 +82,8 @@ if( $is_post_ok ):
   require_once abspath(__FILE__).'admin-posts.php';
   //ウィジェット
   require_once abspath(__FILE__).'widget-posts.php';
+  //ウィジェットエリア
+  require_once abspath(__FILE__).'widget-area-posts.php';
   //エディター
   require_once abspath(__FILE__).'editor-posts.php';
   //API
@@ -192,6 +194,7 @@ endif;
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <?php if (DEBUG_MODE): ?>
     <li class="widget"><?php _e( 'ウィジェット', THEME_NAME ) ?></li>
+    <li class="widget-area"><?php _e( 'ウィジェットエリア', THEME_NAME ) ?></li>
     <?php endif; ?>
     <li class="editor"><?php _e( 'エディター', THEME_NAME ) ?></li>
     <li class="apis"><?php _e( 'API', THEME_NAME ) ?></li>
@@ -349,9 +352,14 @@ endif;
   </div><!-- /.metabox-holder -->
 
   <?php if (DEBUG_MODE): ?>
-  <!-- エディター -->
+  <!-- ウィジェット -->
   <div class="widget metabox-holder">
     <?php require_once abspath(__FILE__).'widget-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- ウィジェットエリア -->
+  <div class="widget-area metabox-holder">
+    <?php require_once abspath(__FILE__).'widget-area-forms.php'; ?>
   </div><!-- /.metabox-holder -->
   <?php endif; ?>
 

@@ -15,7 +15,7 @@ function get_exclude_widget_classes(){
 endif;
 
 //ウィジェットの除外
-add_action( 'widgets_init', 'unregister_exclude_widgets' );
+add_action( 'widgets_init', 'unregister_exclude_widgets', 20 );
 if ( !function_exists( 'unregister_exclude_widgets' ) ):
 function unregister_exclude_widgets() {
   if (!is_admin_php_page()) {
