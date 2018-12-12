@@ -295,3 +295,6 @@ endif;
 
 //     $GLOBALS['wp_widget_factory']->widgets = array();
 // }, 20);
+
+// global $wp_registered_sidebars;
+// _v($wp_registered_sidebars);
