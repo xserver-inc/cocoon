@@ -9,7 +9,7 @@
   <h2 class="hndle"><?php _e( 'ウィジェット表示', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( '使用しないウィジェットを表示しないようにする設定です。。', THEME_NAME ); ?></p>
+    <p><?php _e( '使用しないウィジェットを表示しないようにする設定です。', THEME_NAME ); ?></p>
 
     <table class="form-table">
       <tbody>
@@ -21,8 +21,26 @@
           </th>
           <td>
             <?php
-
+              $widgets = $GLOBALS['wp_widget_factory']->widgets;
+              //_v($widgets);
+              // echo '<pre>';
+              // var_dump($widgets);
+              // echo '</pre>';
             ?>
+            <ul>
+              <?php
+              foreach ($widgets as $class => $widget) {
+                $checked = null;
+                //_v($widget->widget_options);
+                if (in_array($class, get_exclude_widget_classes())) {
+                  $checked = ' checked="checked"';
+                }
+                // _v($class);
+                // _v($widget);
+                echo '<li><input type="checkbox" name="'.OP_EXCLUDE_WIDGET_CLASSES.'[]" value="'.$class.'"'.$checked.'><b>' . $widget->name.'</b>：'.$widget->widget_options['description'].'</li>';
+              }
+              ?>
+            </ul>
           </td>
         </tr>
 

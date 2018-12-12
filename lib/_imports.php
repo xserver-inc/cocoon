@@ -63,6 +63,7 @@ require_once abspath(__FILE__).'page-settings/404-funcs.php';        //404ペー
 require_once abspath(__FILE__).'page-settings/amp-funcs.php';        //AMP設定関数
 require_once abspath(__FILE__).'page-settings/admin-funcs.php';      //管理画面設定関数
 require_once abspath(__FILE__).'page-settings/editor-funcs.php';     //エディター設定関数
+require_once abspath(__FILE__).'page-settings/widget-funcs.php';     //ウィジェット設定関数
 require_once abspath(__FILE__).'page-settings/apis-funcs.php';       //API設定関数
 require_once abspath(__FILE__).'page-settings/others-funcs.php';     //その他設定関数
 require_once abspath(__FILE__).'page-settings/reset-funcs.php';      //リセット設定関数
