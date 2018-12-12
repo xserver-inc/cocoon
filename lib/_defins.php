@@ -20,7 +20,7 @@ define('THEME_CHILD_DIR', THEME_NAME.'-child');
 define('THEME_SETTINGS_PAFE', 'theme-settings');
 
 //開発関係の場合デバッグ値を有効にする
-define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.dev' ? 1 : 0);
+define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.local' ? 1 : 0);
 
 //デバッグモード
 define('DEBUG_MODE', DEBAG_VALU);
