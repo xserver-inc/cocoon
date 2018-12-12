@@ -5734,12 +5734,6 @@ option {
   padding: 12px;
 }
 
-/*Firefoxだけに適用されるCSSハック*/
-@-moz-document url-prefix() {
-  select {
-    padding: 0 12px;
-  }
-}
 input[type='submit'],
 #bbp_reply_submit,
 .bp-login-widget-register-link a {

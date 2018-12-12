@@ -25,12 +25,12 @@ option{
   padding: 12px;
 }
 
-/*Firefoxだけに適用されるCSSハック*/
-@-moz-document url-prefix() {
-  select {
-    padding: 0 12px;
-  }
-}
+// /*Firefoxだけに適用されるCSSハック*/
+// @-moz-document url-prefix() {
+//   select {
+//     padding: 0 12px;
+//   }
+// }
 
 
 input[type='submit'],

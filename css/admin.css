@@ -295,7 +295,7 @@ body.wp-admin { color: #444; }
 ** アピールエリア
 ************************************/ /************************************
 ** 入力フォーム
-************************************/ /*Firefoxだけに適用されるCSSハック*/ /************************************
+************************************/ /************************************
 ** カルーセル
 ************************************/ /************************************
 ** カルーセルの非表示設定
@@ -2355,7 +2355,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
-@-moz-document url-prefix() { .admin-settings .demo select { padding: 0 12px; } }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 12px; width: 100%; margin: 0; cursor: pointer; }
 .admin-settings .demo .bp-login-widget-register-link { display: block; margin-top: 10px; }
 .admin-settings .demo .bp-login-widget-register-link a { color: #333; text-decoration: none; display: block; text-align: center; border: 1px solid #777; padding: 6px; border-radius: 2px; }
