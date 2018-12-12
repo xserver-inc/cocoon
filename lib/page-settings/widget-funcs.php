@@ -14,4 +14,16 @@ function get_exclude_widget_classes(){
 }
 endif;
 
+//ウィジェットの除外
+add_action( 'widgets_init', 'unregister_exclude_widgets' );
+if ( !function_exists( 'unregister_exclude_widgets' ) ):
+function unregister_exclude_widgets() {
+  $classes = get_exclude_widget_classes();
+  foreach ($classes as $class) {
+    unregister_widget($class);//クラスの除外
+  }
+}
+
+endif;
+
 
