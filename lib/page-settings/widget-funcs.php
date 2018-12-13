@@ -10,7 +10,11 @@
 define('OP_EXCLUDE_WIDGET_CLASSES', 'exclude_widget_classes');
 if ( !function_exists( 'get_exclude_widget_classes' ) ):
 function get_exclude_widget_classes(){
-  return get_theme_option(OP_EXCLUDE_WIDGET_CLASSES, array());
+  $classes = get_theme_option(OP_EXCLUDE_WIDGET_CLASSES, array());
+  if (!is_array($classes)) {
+    $classes = array();
+  }
+  return $classes;
 }
 endif;
 

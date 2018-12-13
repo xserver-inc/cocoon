@@ -10,7 +10,11 @@
 define('OP_EXCLUDE_WIDGET_AREA_IDS', 'exclude_widget_area_ids');
 if ( !function_exists( 'get_exclude_widget_area_ids' ) ):
 function get_exclude_widget_area_ids(){
-  return get_theme_option(OP_EXCLUDE_WIDGET_AREA_IDS, array());
+  $ids = get_theme_option(OP_EXCLUDE_WIDGET_AREA_IDS, array());
+  if (!is_array($ids)) {
+    $ids = array();
+  }
+  return $ids;
 }
 endif;
 
