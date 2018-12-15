@@ -1090,14 +1090,14 @@ function get_amp_default_image_height(){
 }
 endif;
 
-//AMPの商品画像幅
+//AMPのデフォルト商品画像幅
 if ( !function_exists( 'get_amp_product_image_width' ) ):
 function get_amp_product_image_width(){
   return 75;
 }
 endif;
 
-//AMPの商品画像高さ
+//AMPのデフォルト商品画像高さ
 if ( !function_exists( 'get_amp_product_image_height' ) ):
 function get_amp_product_image_height(){
   return 75;
