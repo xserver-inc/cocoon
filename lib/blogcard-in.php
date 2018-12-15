@@ -48,7 +48,11 @@ function url_to_internal_blogcard_tag($url){
   if ( !is_internal_blogcard_url($url) ) return;
   //_v($url);
 
-  $no_image = get_site_screenshot_url($url);
+  $no_image = get_no_image_160x90_url();
+  if (!$no_image) {
+    $no_image = get_site_screenshot_url($url);
+  }
+
   $thumbnail = null;
   $date_tag = null;
   //投稿・固定ページの場合
