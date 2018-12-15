@@ -334,15 +334,15 @@ function convert_content_for_amp($the_content){
             strpos($url,'//item.shopping.c.yimg.jp') !== false
           ) {
             //Amazon・楽天・Yahoo!ショッピング商品画像にwidthとheightの属性がない場合
-            $width_value = 75;
-            $width_attr = ' width="75"';//width属性を作成
-            $height_value = 75;
-            $height_attr = ' height="75"';//height属性を作成
+            $width_value = get_amp_product_image_width();
+            $width_attr = ' width="'.$width_value.'"';//width属性を作成
+            $height_value = get_amp_product_image_height();
+            $height_attr = ' height="'.$height_value.'"';//height属性を作成
           } else {
-            $width_value = 300;
-            $width_attr = ' width="300"';//width属性を作成
-            $height_value = 300;
-            $height_attr = ' height="300"';//height属性を作成
+            $width_value = get_amp_default_image_width();
+            $width_attr = ' width="'.$width_value.'"';//width属性を作成
+            $height_value = get_amp_default_image_height();
+            $height_attr = ' height="'.$height_value.'"';//height属性を作成
           }
 
         }
@@ -1073,5 +1073,33 @@ function html_ampfy_call_back( $html ) {
   //_v('$html');
 
   return $html;
+}
+endif;
+
+//AMPのデフォルト画像幅
+if ( !function_exists( 'get_amp_default_image_width' ) ):
+function get_amp_default_image_width(){
+  return 300;
+}
+endif;
+
+//AMPのデフォルト画像高さ
+if ( !function_exists( 'get_amp_default_image_height' ) ):
+function get_amp_default_image_height(){
+  return 300;
+}
+endif;
+
+//AMPの商品画像幅
+if ( !function_exists( 'get_amp_product_image_width' ) ):
+function get_amp_product_image_width(){
+  return 75;
+}
+endif;
+
+//AMPの商品画像高さ
+if ( !function_exists( 'get_amp_product_image_height' ) ):
+function get_amp_product_image_height(){
+  return 75;
 }
 endif;
