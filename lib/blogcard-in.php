@@ -64,15 +64,9 @@ function url_to_internal_blogcard_tag($url){
 
     $title = $post_data->post_title;//タイトルの取得
 
-    // if (is_wpforo_plugin_page($url)) {
-    //   $title = wp_get_document_title();
-    // }
-
     //メタディスクリプションの取得
     $snipet = get_the_page_meta_description($id);
-    // _v($id);
-    // _v($snipet);
-    //$snipet = get_the_snipet( get_the_content(), get_entry_card_excerpt_max_length() );
+
     //投稿管理画面の抜粋を取得
     if (!$snipet) {
       $snipet = $post_data->post_excerpt;
@@ -125,13 +119,8 @@ function url_to_internal_blogcard_tag($url){
     if ($image) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
     }
-    // _v($cat);
-    // $title = get_front_page_title_caption();
-    // $snipet = get_front_page_meta_description();
-    // $image = get_ogp_home_image_url();
 
   }
-  //_v(get_category_by_path($url));
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
@@ -189,8 +178,7 @@ function url_to_internal_blogcard($the_content) {
     }
 
     $url = strip_tags($match);//URL
-    // _v($url);
-    // _v(WPF()->url);
+
     //wpForoのブログカードは外部ブログカードに任せる
     if (includes_wpforo_url($url)) {
       continue;
@@ -202,11 +190,6 @@ function url_to_internal_blogcard($the_content) {
     if ( !$tag ) continue;//IDを取得できない場合はループを飛ばす
 
     //本文中のURLをブログカードタグで置換
-    // $count = 1;
-    // _v($match);
-    // _v($tag);
-    // $the_content = str_replace($match, $tag , $the_content, $count);
-    // wp_reset_postdata();
     $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
     wp_reset_postdata();
 
