@@ -31,10 +31,6 @@ if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
   //1行にURLのみが期待されている行（URL）を全て$mに取得
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(?!.*<br *\/?>).*?(<\/p>)?/im', $the_content,$m);
-  /*
-  $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(<\/p>)?/im', $the_content,$m);
-  */
-  //_v($the_content);
 
   //マッチしたURL一つ一つをループしてカードを作成
   foreach ($m[0] as $match) {
@@ -45,19 +41,13 @@ function url_to_external_blog_card($the_content) {
     }
 
     $url = strip_tags($match);//URL
-    // _v($url);
-    // _v(WPF()->url);
-    //var_dump(htmlentities($match));
 
     $tag = url_to_external_blog_card_tag($url);
-    //$tag = $tag.htmlspecialchars($tag);
-    //_v($tag);
 
     if ( !$tag ) continue;
 
     //本文中のURLをブログカードタグで置換
     $the_content = preg_replace('{^'.preg_quote($match, '{}').'}im', $tag , $the_content, 1);
-    //_v($the_content);
   }
   //ブログカード無効化の解除
   $the_content = cancel_blog_card_deactivation($the_content);
@@ -99,8 +89,6 @@ function fetch_card_image($image){
   $dir = get_theme_blog_card_cache_dir();
   //画像の読み込み
   if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
-  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
     //ディレクトリがないときには作成する
     if ( !file_exists($dir) ) {
@@ -109,10 +97,7 @@ function fetch_card_image($image){
     //ローカル画像ファイルパス
     $new_file = $dir.md5($image).'.'.$ext;
 
-    // $file_data = @$wp_filesystem->get_contents($image);
-
     if ( $file_data ) {
-      //$wp_filesystem->put_contents($new_file, $file_data);
       wp_filesystem_put_contents($new_file, $file_data);
       //画像編集オブジェクトの作成
       $image_editor = wp_get_image_editor($new_file);
@@ -121,7 +106,6 @@ function fetch_card_image($image){
         $image_editor->save( $new_file );
         return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
       }
-      //$wp_filesystem->delete($new_file);
       wp_filesystem_delete($new_file);
     }
   }
@@ -225,22 +209,12 @@ function url_to_external_ogp_blogcard_tag($url){
     $snipet = $user_snipet;
   }
 
-  // //ブログカードのサムネイルを右側に
-  // $thumbnail_class = ' blogcard-thumbnail-left';
-  // if ( is_blog_card_external_thumbnail_right() ) {
-  //   $thumbnail_class = ' blogcard-thumbnail-right';
-  // }
-
   //新しいタブで開く場合
   $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
 
   //コメント内でブログカード呼び出しが行われた際はnofollowをつける
   global $comment; //コメント内以外で$commentを呼び出すとnullになる
   $nofollow = $comment || $error_rel_nofollow ? ' rel="nofollow"' : null;
-
-
-  // //はてブを表示する場合
-  // $hatebu_tag = is_blog_card_external_hatena_visible() && !is_amp() ? '<div class="blogcard-hatebu"><a href="//b.hatena.ne.jp/entry/'.$url.'"'.$target.' rel="nofollow"><img src="//b.hatena.ne.jp/entry/image/'.$url.'" alt=""'.$hatena_wh.' /></a></div>' : '';
 
   //GoogleファビコンAPIを利用する
   ////www.google.com/s2/favicons?domain=nelog.jp
