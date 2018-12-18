@@ -25,6 +25,7 @@ if (!is_gutenberg_editor_enable()) {
 //   wp_enqueue_style( 'gutenberg-editor', get_template_directory_uri() . '/editor-style.css' , false );
 // }
 // endif;
+
 add_action('after_setup_theme', 'after_setup_theme_gutenberg_editor_setup');
 if ( !function_exists( 'after_setup_theme_gutenberg_editor_setup' ) ):
 function after_setup_theme_gutenberg_editor_setup(){
