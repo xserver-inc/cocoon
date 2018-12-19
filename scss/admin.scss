@@ -1017,3 +1017,8 @@ textarea[name="the_page_memo"]{
 .backwpup_page_backwpupeditjob #wpfooter{
   display: none;
 }
+
+//ブロックエディターのインクリメントサーチボックス
+.editor-inserter__search {
+  max-width: 370px;
+}
