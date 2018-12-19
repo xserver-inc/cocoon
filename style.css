@@ -2596,6 +2596,13 @@ label.screen-reader-text {
   margin-bottom: 1em;
 }
 
+.block-box > p:first-child {
+  margin-top: 0;
+}
+.block-box > p:last-child {
+  margin-bottom: 0;
+}
+
 .information-box,
 .information {
   background: #f3fafe;

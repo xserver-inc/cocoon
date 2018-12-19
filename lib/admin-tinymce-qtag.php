@@ -171,50 +171,50 @@ function initialize_tinymce_styles($init_array) {
         array(
           'title' => __( '補足情報(i)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'information-box'
+          'classes' => 'information-box common-icon-box'
         ),
         array(
           'title' => __( '補足情報(?)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'question-box'
+          'classes' => 'question-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(!)', THEME_NAME ),
+          'title' => __( '注意喚起(!)', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'alert-box'
+          'classes' => 'alert-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(メモ)', THEME_NAME ),
+          'title' => __( 'メモ', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'memo-box'
+          'classes' => 'memo-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(コメント)', THEME_NAME ),
+          'title' => __( 'コメント', THEME_NAME ),
           'block' => 'div',
-          'classes' => 'comment-box'
+          'classes' => 'comment-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(OK)', THEME_NAME ),
+          'title' => __( 'OK', THEME_NAME ),
           'block' => 'div',
           'classes' => 'ok-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(NG)', THEME_NAME ),
+          'title' => __( 'NG', THEME_NAME ),
           'block' => 'div',
           'classes' => 'ng-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(GOOD)', THEME_NAME ),
+          'title' => __( 'GOOD', THEME_NAME ),
           'block' => 'div',
           'classes' => 'good-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(BAD)', THEME_NAME ),
+          'title' => __( 'BAD', THEME_NAME ),
           'block' => 'div',
           'classes' => 'bad-box common-icon-box'
         ),
         array(
-          'title' => __( '補足情報(プロフィール)', THEME_NAME ),
+          'title' => __( 'プロフィール', THEME_NAME ),
           'block' => 'div',
           'classes' => 'profile-box common-icon-box'
         ),
