@@ -93,6 +93,10 @@ span.btn-wrap{
   background-color: #e6ecf0;
 }
 
+.blogcard-type.bct-none::before{
+  content: $bct-none;
+}
+
 .blogcard-type.bct-related::before{
   content: $bct-related;
 }

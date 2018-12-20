@@ -88,6 +88,10 @@ span.btn-wrap {
   background-color: #e6ecf0;
 }
 
+.blogcard-type.bct-none::before {
+  content: " ラベルなし";
+}
+
 .blogcard-type.bct-related::before {
   content: " 関連記事";
 }
