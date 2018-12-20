@@ -355,12 +355,15 @@ function wp_enqueue_script_theme_js(){
 endif;
 
 //Lazy Loadの読み込み
+//https://apoorv.pro/lozad.js/
+//https://qiita.com/yukagil/items/369a9972fd45223677fd
+//https://qiita.com/ryo_hisano/items/42f5980720bc832e6e09
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
   if (is_lazy_load_enable() && !is_login_page()) {
     wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array(), false, true );
     wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array('polyfill-js'), false, true );
-    $data = 'const observer = lozad();observer.observe();';
+    $data = 'const observer = lozad(".lozad", {rootMargin: "300px 20px",threshold: [0, 0.5, 1.0]});observer.observe();';
     wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
   }
 }
