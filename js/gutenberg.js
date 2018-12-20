@@ -13,6 +13,7 @@ wp.domReady(function () {
 
     // remove style
     const removeStyle = function (regexp, applyTo, index, keep, keepOriginal) {
+        // TODO: consider media query
         $('style').each(function () {
             const html = $(this).html();
 
@@ -47,6 +48,8 @@ wp.domReady(function () {
         });
     };
 
+    /** @var {{background: boolean, title: boolean}} cocoon_gutenberg_params */
+
     // remove style which applied to all elements ( e.g. body, * )
     // body, *
     // -> .editor-styles-wrapper, .editor-styles-wrapper *
@@ -57,28 +60,30 @@ wp.domReady(function () {
     ].join(', '), 2, [
         'font-family',
         // keep style names
-    ], true);
+    ], cocoon_gutenberg_params.background);
 
-    // for background
-    removeStyle(/\.editor-styles-wrapper(\s+\*)?\s*{([\s\S]+?)}/g, '.editor-styles-wrapper', 2, [
-        'background',
-        'background-image',
-        'background-size',
-        'background-repeat',
-        'background-origin',
-        'background-position',
-        'background-position-x',
-        'background-position-y',
-        'background-attachment',
-        'background-clip',
-        'background-color',
-        // keep style names
-    ]);
+    if (cocoon_gutenberg_params.background) {
+        // for background
+        removeStyle(/\.editor-styles-wrapper(\s+\*|\.public-page)?\s*{([\s\S]+?)}/g, '.editor-styles-wrapper', 2, [
+            'background',
+            'background-image',
+            'background-size',
+            'background-repeat',
+            'background-origin',
+            'background-position',
+            'background-position-x',
+            'background-position-y',
+            'background-attachment',
+            'background-clip',
+            'background-color',
+            // keep style names
+        ]);
+    }
 
-    // .article h1 -> title
-    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input', 1);
-    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1::before\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input::before', 1);
-    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1::after\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input::after', 1);
+    if (cocoon_gutenberg_params.title) {
+        // .article h1 -> title
+        removeStyle(/\.editor-styles-wrapper\s+.article\s+h1\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input.entry-title', 1);
+    }
 });
 
 // (function($){
