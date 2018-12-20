@@ -128,30 +128,3 @@ span.btn-wrap {
 .instagram-media {
   position: relative !important;
 }
-
-.wp-block,
-.edit-post-text-editor {
-  padding: 0;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-@media screen and (max-width: 600px) {
-  div.edit-post-visual-editor .editor-block-list__block .editor-block-list__block-edit {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  div.editor-block-list__block::before,
-  div.editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit::before {
-    left: 0;
-    right: 0;
-  }
-
-  div.freeform-toolbar {
-    margin: 0;
-  }
-}
-div.mce-content-body {
-  line-height: inherit;
-}

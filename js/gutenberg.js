@@ -5,7 +5,80 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 wp.domReady(function () {
-    $('#editor .editor-block-list__layout').addClass('article');
+    // add body class
+    $('#editor .editor-writing-flow').addClass('article main');
+
+    // add title class
+    $('#editor .editor-post-title__input').addClass('entry-title');
+
+    // remove style
+    const removeStyle = function (regexp, applyTo, index, keep, keepOriginal) {
+        $('style').each(function () {
+            const html = $(this).html();
+
+            // get all matched styles
+            let m;
+            const matches = [];
+            while ((m = regexp.exec(html)) != null) {
+                matches.push(m);
+            }
+
+            // if exists
+            if (matches.length > 0) {
+                let replaced = keepOriginal ? html : html.replace(regexp, '');
+                matches.forEach(function (match) {
+                    // keep some styles ( for child skin )
+                    // e.g. font-family
+                    let style = '';
+                    match[index].replace(/\/\*[\s\S]+?\*\//g, '').trim().split(/\r\n|\r|\n/).forEach(function (item) {
+                        const split = item.split(':');
+                        if (split.length >= 2) {
+                            if (!keep || $.inArray(split[0], keep) >= 0) {
+                                style += item.replace(/;$/, '') + ';';
+                            }
+                        }
+                    });
+                    if (style) {
+                        replaced += ' ' + applyTo + ' {' + style + '}';
+                    }
+                });
+                $(this).html(replaced);
+            }
+        });
+    };
+
+    // remove style which applied to all elements ( e.g. body, * )
+    // body, *
+    // -> .editor-styles-wrapper, .editor-styles-wrapper *
+    removeStyle(/\.editor-styles-wrapper(\s+\*)?\s*{([\s\S]+?)}/g, [
+        '.editor-post-title__block .editor-post-title__input',
+        'div.editor-block-list__block',
+        'div.editor-block-list__block p',
+    ].join(', '), 2, [
+        'font-family',
+        // keep style names
+    ], true);
+
+    // for background
+    removeStyle(/\.editor-styles-wrapper(\s+\*)?\s*{([\s\S]+?)}/g, '.editor-styles-wrapper', 2, [
+        'background',
+        'background-image',
+        'background-size',
+        'background-repeat',
+        'background-origin',
+        'background-position',
+        'background-position-x',
+        'background-position-y',
+        'background-attachment',
+        'background-clip',
+        'background-color',
+        // keep style names
+    ]);
+
+    // .article h1 -> title
+    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input', 1);
+    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1::before\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input::before', 1);
+    // removeStyle(/\.editor-styles-wrapper\s+.article\s+h1::after\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input::after', 1);
 });
 
 // (function($){

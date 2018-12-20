@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* main */
+.editor-styles-wrapper .editor-writing-flow.main {
+    margin: auto;
+    /* 860px + 30px */
+    width: 890px;
+}
+
+/* title, body padding */
+/* cancel the styles
+@media (min-width:600px){.editor-post-title{padding-left:46px;padding-right:46px}}
+@media (min-width:600px){.editor-block-list__layout{padding-left:46px;padding-right:46px}}
+*/
+.editor-post-title,
+.editor-block-list__layout {
+    padding: 0;
+}
+
+/* each block */
+.wp-block {
+    padding: 0;
+    margin: 0 auto;
+    /* 800px + 30px */
+    max-width: 830px;
+}
+
+/* title height */
+/* cancel the style
+textarea{
+  min-height: 260px;
+}
+ */
+.editor-styles-wrapper textarea.editor-post-title__input {
+    min-height: auto;
+}
+
+/* for classic editor */
+.block-library-rich-text__tinymce {
+    padding: 10px;
+}
+
+/* for IE11 meta boxes */
+.edit-post-layout__content {
+    height: auto;
+    overflow: hidden;
+}
+
+/* for Firefox */
+.editor-rich-text__tinymce:after {
+    white-space: normal;
+}
