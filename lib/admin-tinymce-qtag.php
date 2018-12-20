@@ -300,68 +300,68 @@ function initialize_tinymce_styles($init_array) {
     array(
       'title' => __( 'ボックス（タブ）', THEME_NAME ),
       'items' => array(
-      array(
-        'title' => __( 'ボックス（チェック）', THEME_NAME ),
-        'items' => array(
-          array(
-            'title' => __( '灰色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-check'
-          ),
-          array(
-            'title' => __( '黄色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-check bb-yellow'
-          ),
-          array(
-            'title' => __( '赤色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-check bb-red'
-          ),
-          array(
-            'title' => __( '青色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-check bb-blue'
-          ),
-          array(
-            'title' => __( '緑色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-check bb-green'
-          ),
-        ),
-      ),
-      array(
-        'title' => __( 'ボックス（コメント）', THEME_NAME ),
-        'items' => array(
-          array(
-            'title' => __( '灰色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-comment'
-          ),
-          array(
-            'title' => __( '黄色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-comment bb-yellow'
-          ),
-          array(
-            'title' => __( '赤色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-comment bb-red'
-          ),
-          array(
-            'title' => __( '青色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-comment bb-blue'
-          ),
-          array(
-            'title' => __( '緑色', THEME_NAME ),
-            'block' => 'div',
-            'classes' => 'blank-box bb-tab bb-comment bb-green'
-          ),
-        ),
-      ),
         array(
-          'title' => __( 'ボックス（ポイント）', THEME_NAME ),
+          'title' => __( 'チェック', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-check'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-check bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-check bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-check bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-check bb-green'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'コメント', THEME_NAME ),
+          'items' => array(
+            array(
+              'title' => __( '灰色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-comment'
+            ),
+            array(
+              'title' => __( '黄色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-comment bb-yellow'
+            ),
+            array(
+              'title' => __( '赤色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-comment bb-red'
+            ),
+            array(
+              'title' => __( '青色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-comment bb-blue'
+            ),
+            array(
+              'title' => __( '緑色', THEME_NAME ),
+              'block' => 'div',
+              'classes' => 'blank-box bb-tab bb-comment bb-green'
+            ),
+          ),
+        ),
+        array(
+          'title' => __( 'ポイント', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -391,7 +391,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ティップス）', THEME_NAME ),
+          'title' => __( 'ティップス', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -421,7 +421,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ヒント）', THEME_NAME ),
+          'title' => __( 'ヒント', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -451,7 +451,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ピックアップ）', THEME_NAME ),
+          'title' => __( 'ピックアップ', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -481,7 +481,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ブックマーク）', THEME_NAME ),
+          'title' => __( 'ブックマーク', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -511,7 +511,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（メモ）', THEME_NAME ),
+          'title' => __( 'メモ', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -541,7 +541,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ダウンロード）', THEME_NAME ),
+          'title' => __( 'ダウンロード', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -571,7 +571,7 @@ function initialize_tinymce_styles($init_array) {
           ),
         ),
         array(
-          'title' => __( 'ボックス（ブレイク）', THEME_NAME ),
+          'title' => __( 'ブレイク', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -602,7 +602,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（Amazon）', THEME_NAME ),
+          'title' => __( 'Amazon', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -633,7 +633,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（OK）', THEME_NAME ),
+          'title' => __( 'OK', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -664,7 +664,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（NG）', THEME_NAME ),
+          'title' => __( 'NG', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -695,7 +695,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（GOOD）', THEME_NAME ),
+          'title' => __( 'GOOD', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -726,7 +726,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（BAD）', THEME_NAME ),
+          'title' => __( 'BAD', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
@@ -757,7 +757,7 @@ function initialize_tinymce_styles($init_array) {
         ),
 
         array(
-          'title' => __( 'ボックス（プロフィール）', THEME_NAME ),
+          'title' => __( 'プロフィール', THEME_NAME ),
           'items' => array(
             array(
               'title' => __( '灰色', THEME_NAME ),
