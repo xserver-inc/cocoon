@@ -81,10 +81,14 @@ function convert_punycode($url, $is_encode = true){
   if (empty($url)) return;
   $url_parts = parse_url($url);
   $Punycode = new Punycode();
+  $url_host = null;
+  if (isset($url_parts['host'])) {
+    $url_host = $url_parts['host'];
+  }
   if ( $is_encode ) {
-    $host = $Punycode->encode($url_parts['host']);
+    $host = $Punycode->encode($url_host);
   } else {
-    $host = $Punycode->decode($url_parts['host']);
+    $host = $Punycode->decode($url_host);
   }
   $url_parts['host'] = $host;
   return puny_http_build_url($url, $url_parts);
