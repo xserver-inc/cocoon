@@ -1006,6 +1006,7 @@ img.emoji {
 .date-tags {
   line-height: 0.8;
   text-align: right;
+  margin-bottom: 1em;
 }
 .date-tags span:last-child {
   margin-right: 0;
