@@ -769,7 +769,7 @@ function wp_enqueue_confirmation_before_publish(){
     $data = <<< EOM
 window.onload = function() {
   var id = document.getElementById('publish');
-  if (id.value.indexOf("$post_text", 0) != -1) {
+  if (id && id.value.indexOf("$post_text", 0) != -1) {
     id.onclick = publish_confirm;
   }
 }
