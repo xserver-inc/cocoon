@@ -4,8 +4,8 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-window.addEventListener('DOMContentLoaded', function(){
-    [].forEach.call(document.querySelectorAll("div.edit-post-visual-editor"), e => e.classList.add('article'));
+wp.domReady(function () {
+    $('#editor .editor-block-list__layout').addClass('article');
 });
 
 // (function($){
