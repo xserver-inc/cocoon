@@ -31,7 +31,7 @@ textarea{
   min-height: 260px;
 }
  */
-.editor-styles-wrapper textarea.editor-post-title__input {
+.editor-styles-wrapper textarea {
     min-height: auto;
 }
 
