@@ -823,47 +823,47 @@ function initialize_tinymce_styles($init_array) {
       'title' => __( 'バッジ', THEME_NAME ),
       'items' => array(
         array(
-          'title' => __( 'バッジ（オレンジ）', THEME_NAME ),
+          'title' => __( 'オレンジ', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge'
         ),
         array(
-          'title' => __( 'バッジ（レッド）', THEME_NAME ),
+          'title' => __( 'レッド', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-red'
         ),
         array(
-          'title' => __( 'バッジ（ピンク）', THEME_NAME ),
+          'title' => __( 'ピンク', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-pink'
         ),
         array(
-          'title' => __( 'バッジ（パープル）', THEME_NAME ),
+          'title' => __( 'パープル', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-purple'
         ),
         array(
-          'title' => __( 'バッジ（ブルー）', THEME_NAME ),
+          'title' => __( 'ブルー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-blue'
         ),
         array(
-          'title' => __( 'バッジ（グリーン）', THEME_NAME ),
+          'title' => __( 'グリーン', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-green'
         ),
         array(
-          'title' => __( 'バッジ（イエロー）', THEME_NAME ),
+          'title' => __( 'イエロー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-yellow'
         ),
         array(
-          'title' => __( 'バッジ（ブラウン）', THEME_NAME ),
+          'title' => __( 'ブラウン', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-brown'
         ),
         array(
-          'title' => __( 'バッジ（グレー）', THEME_NAME ),
+          'title' => __( 'グレー', THEME_NAME ),
           'inline' => 'span',
           'classes' => 'badge badge-grey'
         ),
