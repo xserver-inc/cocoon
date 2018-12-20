@@ -50,6 +50,9 @@ get_template_part('tmp/ad-auto-adsense'); ?>
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
 get_template_part('tmp/head-custom-field'); ?>
 
+<?php //headで読み込む必要があるJavaScript
+get_template_part('tmp/head-javascript'); ?>
+
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
 get_template_part('tmp-user/head-insert'); ?>
 </head>
