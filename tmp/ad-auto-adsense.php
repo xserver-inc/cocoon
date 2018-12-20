@@ -6,9 +6,21 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-if (is_ads_visible() && is_auto_adsense_enable()): ?>
+
+
+if (is_ads_visible() && is_auto_adsense_enable()):
+  //アドセンススクリプトコードの設定
+  global $_IS_ADSENSE_SCRIPT_EMPTY;
+  $adsense_script = null;
+  if ($_IS_ADSENSE_SCRIPT_EMPTY) {
+    $adsense_script = ADSENSE_SCRIPT_CODE;
+    $_IS_ADSENSE_SCRIPT_EMPTY = false;
+  }
+  // _v('auto');
+  // _v($_IS_ADSENSE_SCRIPT_EMPTY);
+?>
 <!-- Google Auto AdSense -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<?php echo $adsense_script; ?>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "<?php echo get_adsense_data_ad_client(); ?>",

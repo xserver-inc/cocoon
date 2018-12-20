@@ -101,9 +101,18 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
     if ($format == DATA_AD_FORMAT_FLUID) {
       $data_ad_layout = '     data-ad-layout="in-article"';
     }
-    return
-'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- レスポンシブコード -->
+
+    //アドセンススクリプトコードの設定
+    global $_IS_ADSENSE_SCRIPT_EMPTY;
+    $adsense_script = null;
+    if ($_IS_ADSENSE_SCRIPT_EMPTY) {
+      $adsense_script = ADSENSE_SCRIPT_CODE;
+      $_IS_ADSENSE_SCRIPT_EMPTY = false;
+    }
+    // _v('ad');
+    // _v($_IS_ADSENSE_SCRIPT_EMPTY);
+    return $adsense_script.
+'<!-- レスポンシブコード -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="'.get_adsense_data_ad_client($code).'"
@@ -206,34 +215,8 @@ function get_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = null
   } else {
     //AMPページの場合
     $ad = get_amp_adsense_responsive_code($format, $code);
-    //var_dump($ad);
   }
   return $ad;
-
-//   // _v($code);
-//   // _v(get_adsense_ids($code));
-
-//   //$codeに広告コードが入っている場合はそこから取得する（無い場合はテーマ設定のAdSenseコードを利用）
-//   if (get_adsense_ids($code)) {
-//     $data_ad_layout = null;
-//     if ($format == DATA_AD_FORMAT_FLUID) {
-//       $data_ad_layout = '     data-ad-layout="in-article"';
-//     }
-//     return
-// '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-// <!-- レスポンシブコード -->
-// <ins class="adsbygoogle"
-//      style="display:block"
-//      data-ad-client="'.get_adsense_data_ad_client($code).'"
-//      data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
-//      $data_ad_layout.'
-//      data-ad-format="'.$format.'"></ins>
-// <script>
-// (adsbygoogle = window.adsbygoogle || []).push({});
-// </script>';
-//   }
-//   //AdSense広告でない場合はそのままコードを出力する
-//   return $code;
 }
 endif;
 

@@ -78,6 +78,14 @@ $_MAIN_DATA_AD_FORMATS = array(
 );
 // define('MAIN_DATA_AD_FORMATS', $_MAIN_DATA_AD_FORMATS);
 
+//アドセンス共通スクリプトコード
+define('ADSENSE_SCRIPT_CODE', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
+//アドセンススクリプトコードが読み込まれているか
+global $_IS_ADSENSE_SCRIPT_EMPTY;
+$_IS_ADSENSE_SCRIPT_EMPTY = true;
+// _v('def');
+// _v($_IS_ADSENSE_SCRIPT_EMPTY);
+
 //サイドバー用の広告フォーマット集
 global $_SIDEBAR_DATA_AD_FORMATS;
 $_SIDEBAR_DATA_AD_FORMATS = array(
