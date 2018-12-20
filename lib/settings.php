@@ -197,8 +197,9 @@ add_filter ( 'block_editor_settings', function( $editor_settings ) {
 		}
 		$editor_settings['styles'] = $styles;
 	}
+
 	return $editor_settings;
-}, 10, 2 );
+} );
 
 // RSS2 の feed リンクを出力
 add_theme_support( 'automatic-feed-links' );
