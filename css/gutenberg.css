@@ -25,6 +25,13 @@
     max-width: 830px;
 }
 
+/* full width */
+.editor-styles-wrapper .wp-block[data-align=full] {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* cocoon/style.css
 textarea{
   min-height: 260px;
