@@ -405,11 +405,12 @@ if (!is_admin() && is_singular() && is_access_count_enable()): ?>
 body::after{
   content: url("<?php echo get_template_directory_uri(); ?>/lib/analytics/access.php?post_id=<?php echo get_the_ID(); ?>&post_type=<?php echo get_accesses_post_type(); ?>");
   visibility: hidden;
-  height: 1px;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 <?php endif ?>
 <?php //アピールエリア背景色
