@@ -19,7 +19,6 @@ body {
 .container, .cf ,.header-container {
     background:transparent;
 }
-}
 #main {
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -103,7 +102,7 @@ body {
 	color:#474747;
 	font-weight:lighter;
 border:dashed 2px #fff;
-box-shadow:Opx Opx Opx 4px #dfefff;
+box-shadow:0 0 0 4px #dfefff;
 background:-moz-linear-gradient(to right,rgb(194,234,240),#dfefff);
 background:-webkit-linear-gradient(to right,rgb(194,234,240),#dfefff); background:linear-gradient(to right,rgb(194,234,240),#dfefff);
 text-shadow:1px 1px 1px #fff;
@@ -118,8 +117,7 @@ text-shadow:1px 1px 1px #fff;
 border:none;
 border-top:solid 2px #6cb4e4;
 border-bottom:solid 2px #6cb4e4;
-background:-webkit-repeating-linear-gradient(-45deg,#f0f8ff,#f0f8ff 3px,#
-e9f4ff 3px,#e9f4ff 7px);
+background:-webkit-repeating-linear-gradient(-45deg,#f0f8ff,#f0f8ff 3px,#e9f4ff 3px,#e9f4ff 7px);
 background:repeating-linear-gradient(-45deg,#f0f8ff,#f0f8ff 3px,#e9f4ff 3px,#e9f4ff 7px);
 text-shadow:1px 1px 1px rgba(0,0,0,0.15);
 }
@@ -276,7 +274,7 @@ h3.widget-title:before {
 	background:none;
 	box-shadow: none;
 	border: none;
-	border-radius: none;
+	border-radius: 0;
 }
 .article ul.toc_list li {
 	line-height: 1.5;
