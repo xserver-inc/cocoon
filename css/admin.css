@@ -841,8 +841,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; }
 .admin-settings .demo #container .btn:hover, .admin-settings .demo #container .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons #container a:hover, .admin-settings .demo #container .btn-wrap > a:hover { color: #333; background-color: #fff; border: 2px solid #000; transition: all 0.5s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
-.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 20px 30px; font-size: 18px; display: block; margin: 1em; }
-.admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; margin-top: -0.15em; }
+.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 20px 30px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
+.admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #f44336; }
@@ -1862,8 +1862,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; }
 .admin-settings .demo #container .btn:hover, .admin-settings .demo #container .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons #container a:hover, .admin-settings .demo #container .btn-wrap > a:hover { color: #333; background-color: #fff; border: 2px solid #000; transition: all 0.5s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
-.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 20px 30px; font-size: 18px; display: block; margin: 1em; }
-.admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; margin-top: -0.15em; }
+.admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 20px 30px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
+.admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #f44336; }
