@@ -666,8 +666,11 @@ $bb_green: #3eb370;
 .btn-wrap.btn-wrap-l > a{
   padding: 20px 30px;
   font-size: 18px;
-  display: block;
+  //display: block;
   margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
   &::after{
@@ -675,7 +678,10 @@ $bb_green: #3eb370;
     position: absolute;
     right: 0;
     font-size: 30px;
-    margin-top: -0.15em;
+    // top: 50%;
+    // margin-top: -.5em;
+
+    //margin-top: -0.15em;
   }
 }
 
