@@ -85,6 +85,10 @@ wp.domReady(function () {
         // .article h1 -> title
         removeStyle(/\.editor-styles-wrapper\s+.article\s+h1\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input.entry-title', 1);
     }
+
+    $('style').each(function () {
+        $(this).html($(this).html().replace(/\.editor-styles-wrapper\s+body/g, '.editor-styles-wrapper'));
+    });
 });
 
 // (function($){
