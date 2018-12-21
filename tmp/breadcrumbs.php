@@ -7,7 +7,7 @@
  */
 
 if (is_single_breadcrumbs_visible() && (is_single() || is_category())):
-  $cat = get_category($cat);
+  $cat = is_single() ? get_the_category()[0] : get_category(get_query_var("cat"));
 if($cat && !is_wp_error($cat)){
   $echo = null;
   //var_dump($par);
