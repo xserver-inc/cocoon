@@ -59,6 +59,7 @@ wp.domReady(function () {
         'div.editor-block-list__block p',
     ].join(', '), 2, [
         'font-family',
+        'line-height',
         // keep style names
     ], cocoon_gutenberg_params.background);
 
