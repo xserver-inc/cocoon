@@ -155,3 +155,7 @@ span.btn-wrap {
 div.mce-content-body {
   line-height: inherit;
 }
+
+.postbody.main {
+  width: auto;
+}

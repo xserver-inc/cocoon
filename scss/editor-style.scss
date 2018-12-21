@@ -183,3 +183,7 @@ div.mce-content-body{
   line-height: inherit;
 }
 
+//wpForoの入力フォームをiPhoneでみた場合横揺れする場合の対処
+.postbody.main{
+  width: auto;
+}
