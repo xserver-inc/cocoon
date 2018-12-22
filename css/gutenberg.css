@@ -3,8 +3,8 @@
 /* main */
 .editor-styles-wrapper .editor-writing-flow.main {
     margin: auto;
-    /* 860px + 30px */
-    width: 890px;
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
 /* wp-includes/css/dist/edit-post/style.css
