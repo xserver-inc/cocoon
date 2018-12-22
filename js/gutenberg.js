@@ -87,7 +87,6 @@ wp.domReady(function () {
     }
 
     $('style').each(function () {
-        $(this).html($(this).html().replace(/\.editor-styles-wrapper\s+body/g, '.editor-styles-wrapper'));
         $(this).html($(this).html().replace(/main\.main/g, '.editor-writing-flow.main'));
     });
 });

@@ -128,3 +128,7 @@ span.btn-wrap {
 .instagram-media {
   position: relative !important;
 }
+
+.postbody.main {
+  width: auto;
+}

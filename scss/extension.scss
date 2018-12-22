@@ -858,3 +858,18 @@ $bb_green: #3eb370;
 .bct-official .blogcard::before{
   content:$bct-official;
 }
+
+.button-block{
+  float: none;
+  margin: 6px 0;
+  &.alignleft{
+    text-align: left;
+  }
+  &.aligncenter{
+    text-align: center;
+  }
+  &.alignright{
+    text-align: right;
+  }
+}
+
