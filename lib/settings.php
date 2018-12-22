@@ -156,7 +156,7 @@ function gutenberg_stylesheets_custom() {
      */
     $name = apply_filters( 'cocoon_gutenberg_param_name', 'cocoon_gutenberg_params' );
     /**
-     * Filters script parameter value.
+     * Filters the script parameter value.
      *
      * @since 1.4.8
      *
