@@ -173,53 +173,53 @@ endif;
 
 // Classic Editor用のCSS読み込みを利用してGutenberg用のCSSを設定
 add_filter ( 'block_editor_settings', 'gutenberg_editor_settings', 10, 2 );
-if ( ! function_exists( 'gutenberg_editor_settings' ) ) {
-  function gutenberg_editor_settings( $editor_settings, $post ) {
-    /** @var array $editor_settings */
-    /** @var WP_Post $post */
-    if ( is_visual_editor_style_enable() ) {
-      /**
-       * Filters the styles.
-       *
-       * @since 1.4.8
-       *
-       * @param array $editor_settings Default editor settings.
-       * @param WP_Post $post Post being edited.
-       */
-      $styles = apply_filters( 'cocoon_extract_gutenberg_styles', [], $editor_settings, $post );
+if ( ! function_exists( 'gutenberg_editor_settings' ) ):
+function gutenberg_editor_settings( $editor_settings, $post ) {
+  /** @var array $editor_settings */
+  /** @var WP_Post $post */
+  if ( is_visual_editor_style_enable() ) {
+    /**
+     * Filters the styles.
+     *
+     * @since 1.4.8
+     *
+     * @param array $editor_settings Default editor settings.
+     * @param WP_Post $post Post being edited.
+     */
+    $styles = apply_filters( 'cocoon_extract_gutenberg_styles', [], $editor_settings, $post );
 
-      /**
-       * Filters the stylesheets.
-       *
-       * @since 1.4.8
-       */
-      $stylesheets = apply_filters( 'cocoon_gutenberg_stylesheets', visual_editor_stylesheets_custom( [] ) );
+    /**
+     * Filters the stylesheets.
+     *
+     * @since 1.4.8
+     */
+    $stylesheets = apply_filters( 'cocoon_gutenberg_stylesheets', visual_editor_stylesheets_custom( [] ) );
 
-      foreach ( $stylesheets as $item ) {
-        $item = strtok( $item, '?' );
-        $path = url_to_local( $item );
-        if ( empty( $path ) ) {
-          $response = wp_remote_get( $item );
-          if ( ! is_wp_error( $response ) ) {
-            $styles[] = [
-              'css' => wp_remote_retrieve_body( $response ),
-            ];
-          }
-        } else {
-          if ( file_exists( $path ) ) {
-            $styles[] = [
-              'css'     => file_get_contents( $path ),
-              'baseURL' => $item,
-            ];
-          }
+    foreach ( $stylesheets as $item ) {
+      $item = strtok( $item, '?' );
+      $path = url_to_local( $item );
+      if ( empty( $path ) ) {
+        $response = wp_remote_get( $item );
+        if ( ! is_wp_error( $response ) ) {
+          $styles[] = [
+            'css' => wp_remote_retrieve_body( $response ),
+          ];
+        }
+      } else {
+        if ( file_exists( $path ) ) {
+          $styles[] = [
+            'css'     => file_get_contents( $path ),
+            'baseURL' => $item,
+          ];
         }
       }
-      $editor_settings['styles'] = $styles;
     }
-
-    return $editor_settings;
+    $editor_settings['styles'] = $styles;
   }
+
+  return $editor_settings;
 }
+endif;
 
 // RSS2 の feed リンクを出力
 add_theme_support( 'automatic-feed-links' );
