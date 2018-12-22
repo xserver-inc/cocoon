@@ -155,3 +155,22 @@ span.btn-wrap {
 div.mce-content-body {
   line-height: inherit;
 }
+
+.postbody.main {
+  width: auto;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] {
+  height: auto;
+  padding: 0 0 1px;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="left"] {
+  text-align: left;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="right"] {
+  text-align: right;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit {
+  float: none;
+  margin: 0;
+}

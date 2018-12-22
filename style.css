@@ -365,17 +365,19 @@ ol, ul {
 /************************************
 ** WordPress Misc
 ************************************/
-html body .aligncenter {
+.aligncenter {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
-html body .alignleft {
+
+.alignleft {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-html body .alignright {
+
+.alignright {
   float: right;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -3305,6 +3307,20 @@ label.screen-reader-text {
 
 .bct-official .blogcard::before {
   content: " 公式サイト";
+}
+
+.button-block {
+  float: none;
+  margin: 6px 0;
+}
+.button-block.alignleft {
+  text-align: left;
+}
+.button-block.aligncenter {
+  text-align: center;
+}
+.button-block.alignright {
+  text-align: right;
 }
 
 .column-wrap {
