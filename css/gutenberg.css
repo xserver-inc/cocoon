@@ -307,3 +307,33 @@ ol, ul {
 .editor-rich-text__tinymce:after {
     white-space: normal;
 }
+
+/* for IE11 */
+/* Unnecessary space below element which has large image with flex */
+/* This is Gutenberg's bug */
+/*
+- add [flex-shrink:0] explicitly
+- clear [flex-grow: 1] -> parent has [flex-direction: column;], so this style has no effect
+.edit-post-layout__content {
+    display: flex;
+    flex-direction: column;
+}
+- clear [height: 100%] of .editor-writing-flow
+*/
+.edit-post-layout__content .edit-post-visual-editor {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.editor-styles-wrapper .editor-writing-flow {
+    height: auto;
+    flex-shrink: 0;
+}
+
+.editor-styles-wrapper .editor-writing-flow > div {
+    flex-shrink: 0;
+}
+
+.editor-styles-wrapper .wp-block-image img {
+    flex-shrink: 0;
+}
