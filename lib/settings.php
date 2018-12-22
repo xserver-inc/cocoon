@@ -145,20 +145,6 @@ add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
 if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
   if (is_visual_editor_style_enable()) {
-//    $cache_file_url = get_theme_css_cache_file_url();
-//    $editor_style_url = get_template_directory_uri().'/editor-style.css';
-//    //CSSの読み込み
-//    wp_enqueue_style_font_awesome();
-//    wp_enqueue_style_theme_style();
-//    wp_enqueue_style( THEME_NAME.'-cache-file', $cache_file_url );
-//    wp_enqueue_style( THEME_NAME.'-editor-style', $editor_style_url );
-//    wp_enqueue_style_theme_skin_style();
-//    //子テーマがある場合、子テーマ内のスタイルも読み込む
-//    if (is_child_theme()) {
-//      wp_enqueue_style_theme_child_style();
-//      wp_enqueue_style( THEME_NAME.'-child-editor-style', $editor_style_url );
-//    }
-
     // Gutenberg用のCSSとJSのみ読み込み
     wp_enqueue_script( THEME_NAME.'-gutenberg-js', get_template_directory_uri().'/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME.'-gutenberg-css', get_template_directory_uri().'/css/gutenberg.css');
