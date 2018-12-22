@@ -862,13 +862,14 @@ $bb_green: #3eb370;
 .button-block{
   float: none;
   margin: 6px 0;
+  &.alignleft{
+    text-align: left;
+  }
+  &.aligncenter{
+    text-align: center;
+  }
+  &.alignright{
+    text-align: right;
+  }
 }
-.alignleft{
-  text-align: left;
-}
-.aligncenter{
-  text-align: center;
-}
-.alignright{
-  text-align: right;
-}
+

@@ -3313,16 +3313,13 @@ label.screen-reader-text {
   float: none;
   margin: 6px 0;
 }
-
-.alignleft {
+.button-block.alignleft {
   text-align: left;
 }
-
-.aligncenter {
+.button-block.aligncenter {
   text-align: center;
 }
-
-.alignright {
+.button-block.alignright {
   text-align: right;
 }
 
