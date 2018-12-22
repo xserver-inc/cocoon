@@ -191,6 +191,7 @@ div.mce-content-body{
 //ブロックエディターの左右回り込み
 .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"]{
   height: auto;
+  padding: 0 0 1px;
   &[data-align="left"] {
     text-align: left;
   }
@@ -199,5 +200,6 @@ div.mce-content-body{
   }
   .editor-block-list__block-edit{
     float: none;
+    margin: 0;
   }
 }
