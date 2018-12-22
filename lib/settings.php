@@ -144,14 +144,29 @@ endif;
 add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
 if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
-  if (is_visual_editor_style_enable()) {
+  if ( is_visual_editor_style_enable() ) {
     // Gutenberg用のCSSとJSのみ読み込み
-    wp_enqueue_script( THEME_NAME.'-gutenberg-js', get_template_directory_uri().'/js/gutenberg.js', array( 'jquery' ), false, true );
-    wp_enqueue_style( THEME_NAME.'-gutenberg-css', get_template_directory_uri().'/css/gutenberg.css');
-    wp_localize_script( THEME_NAME.'-gutenberg-js', 'cocoon_gutenberg_params', array(
+    wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', [ 'jquery' ], false, true );
+    wp_enqueue_style( THEME_NAME . '-gutenberg-css', get_template_directory_uri() . '/css/gutenberg.css' );
+
+    /**
+     * Filters the script parameter name.
+     *
+     * @since 1.4.8
+     */
+    $name = apply_filters( 'cocoon_gutenberg_param_name', 'cocoon_gutenberg_params' );
+    /**
+     * Filters script parameter value.
+     *
+     * @since 1.4.8
+     *
+     * @param array $params Default parameter.
+     */
+    $value = apply_filters( 'cocoon_gutenberg_param_value', [
       'background' => true,
       'title'      => false,
-    ) );
+    ] );
+    wp_localize_script( THEME_NAME . '-gutenberg-js', $name, $value );
   }
 }
 endif;
