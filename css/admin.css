@@ -356,9 +356,9 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
-.admin-settings .demo html body .aligncenter { display: block; margin-right: auto; margin-left: auto; }
-.admin-settings .demo html body .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
-.admin-settings .demo html body .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
+.admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
+.admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
+.admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 80%; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
@@ -898,6 +898,10 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .button-block { float: none; margin: 6px 0; }
+.admin-settings .demo .button-block.alignleft { text-align: left; }
+.admin-settings .demo .button-block.aligncenter { text-align: center; }
+.admin-settings .demo .button-block.alignright { text-align: right; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
 .admin-settings .demo .column-wrap .column-wrap { margin: 0; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
@@ -1377,9 +1381,9 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
-.admin-settings .demo html body .aligncenter { display: block; margin-right: auto; margin-left: auto; }
-.admin-settings .demo html body .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
-.admin-settings .demo html body .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
+.admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
+.admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
+.admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
 .admin-settings .demo .wp-caption { padding-top: 4px; border: 1px solid #ddd; border-radius: 3px; background-color: #f3f4f5; text-align: center; max-width: 100%; }
 .admin-settings .demo .wp-caption-text, .admin-settings .demo .gallery-caption { font-size: 80%; }
 .admin-settings .demo .wp-caption img { margin: 0; padding: 0; border: 0 none; }
@@ -1919,6 +1923,10 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .button-block { float: none; margin: 6px 0; }
+.admin-settings .demo .button-block.alignleft { text-align: left; }
+.admin-settings .demo .button-block.aligncenter { text-align: center; }
+.admin-settings .demo .button-block.alignright { text-align: right; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
 .admin-settings .demo .column-wrap .column-wrap { margin: 0; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
