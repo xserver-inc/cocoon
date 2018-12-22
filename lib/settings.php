@@ -146,7 +146,7 @@ if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
   if ( is_visual_editor_style_enable() ) {
     // Gutenberg用のCSSとJSのみ読み込み
-    wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', [ 'jquery' ], false, true );
+    wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME . '-gutenberg-css', get_template_directory_uri() . '/css/gutenberg.css' );
 
     /**
@@ -162,10 +162,10 @@ function gutenberg_stylesheets_custom() {
      *
      * @param array $params Default parameter.
      */
-    $value = apply_filters( 'cocoon_gutenberg_param_value', [
+    $value = apply_filters( 'cocoon_gutenberg_param_value', array(
       'background' => true,
       'title'      => false,
-    ] );
+    ) );
     wp_localize_script( THEME_NAME . '-gutenberg-js', $name, $value );
   }
 }
@@ -186,14 +186,14 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
      * @param array $editor_settings Default editor settings.
      * @param WP_Post $post Post being edited.
      */
-    $styles = apply_filters( 'cocoon_extract_gutenberg_styles', [], $editor_settings, $post );
+    $styles = apply_filters( 'cocoon_extract_gutenberg_styles', array(), $editor_settings, $post );
 
     /**
      * Filters the stylesheets.
      *
      * @since 1.4.8
      */
-    $stylesheets = apply_filters( 'cocoon_gutenberg_stylesheets', visual_editor_stylesheets_custom( [] ) );
+    $stylesheets = apply_filters( 'cocoon_gutenberg_stylesheets', visual_editor_stylesheets_custom( array() ) );
 
     foreach ( $stylesheets as $item ) {
       $item = strtok( $item, '?' );
@@ -201,16 +201,16 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
       if ( empty( $path ) ) {
         $response = wp_remote_get( $item );
         if ( ! is_wp_error( $response ) ) {
-          $styles[] = [
+          $styles[] = array(
             'css' => wp_remote_retrieve_body( $response ),
-          ];
+          );
         }
       } else {
         if ( file_exists( $path ) ) {
-          $styles[] = [
+          $styles[] = array(
             'css'     => file_get_contents( $path ),
             'baseURL' => $item,
-          ];
+          );
         }
       }
     }
