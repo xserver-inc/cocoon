@@ -281,6 +281,24 @@ ol, ul {
     margin-right: 0;
 }
 
+@media screen and (max-width: 768px) {
+    .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block .editor-block-drop-zone {
+        margin: 0;
+    }
+
+    .editor-block-list__layout .editor-block-list__block {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .editor-block-list__layout .editor-block-list__block {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 /* for classic editor */
 .block-library-rich-text__tinymce {
     padding: 10px;

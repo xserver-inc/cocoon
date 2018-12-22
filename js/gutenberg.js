@@ -6,7 +6,7 @@
  */
 wp.domReady(function () {
     // add body class
-    $('#editor .editor-writing-flow').addClass('article main');
+    $('#editor .editor-writing-flow').addClass('article main page-body');
 
     // add title class
     $('#editor .editor-post-title__input').addClass('entry-title');
