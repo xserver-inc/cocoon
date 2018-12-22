@@ -303,12 +303,6 @@ ol, ul {
     padding: 10px;
 }
 
-/* for IE11 meta boxes */
-.edit-post-layout__content {
-    height: auto;
-    overflow: hidden;
-}
-
 /* for Firefox */
 .editor-rich-text__tinymce:after {
     white-space: normal;
