@@ -44,6 +44,13 @@
 }
 
 /* main */
+.editor-writing-flow {
+    max-width: 860px;
+    margin: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: white;
+}
 .editor-styles-wrapper .editor-writing-flow.main {
     margin: auto;
     padding-left: 14px;
