@@ -159,3 +159,19 @@ div.mce-content-body {
 .postbody.main {
   width: auto;
 }
+
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] {
+  height: auto;
+  padding: 0 0 1px;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="left"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"][data-align="left"] {
+  text-align: left;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="right"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"][data-align="right"] {
+  text-align: right;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit, .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit {
+  float: none;
+  margin-left: 0;
+  margin-right: 0;
+}
