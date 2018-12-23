@@ -604,6 +604,7 @@ $bb_green: #3eb370;
 }
 
 .btn-wrap{
+    min-height: 2em;
   img[width="1"]{
     position: absolute;
     bottom: 0;
@@ -859,6 +860,9 @@ $bb_green: #3eb370;
   content:$bct-official;
 }
 
+///////////////////////////////////////////
+// ボタンブロック
+///////////////////////////////////////////
 .button-block{
   float: none;
   margin: 6px 0;
