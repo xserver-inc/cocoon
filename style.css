@@ -2985,6 +2985,9 @@ label.screen-reader-text {
     margin-left: -10px;
   }
 }
+.btn-wrap {
+  min-height: 2em;
+}
 .btn-wrap img[width="1"] {
   position: absolute;
   bottom: 0;

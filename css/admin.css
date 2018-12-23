@@ -835,6 +835,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
@@ -1860,6 +1861,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }

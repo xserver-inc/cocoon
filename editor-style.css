@@ -175,3 +175,7 @@ div.mce-content-body {
   margin-left: 0;
   margin-right: 0;
 }
+
+.small-msg {
+  font-size: 10px;
+}
