@@ -129,15 +129,6 @@ span.btn-wrap {
   position: relative !important;
 }
 
-@media screen and (max-width: 600px) {
-  div.freeform-toolbar {
-    margin: 0;
-  }
-}
-div.mce-content-body {
-  line-height: inherit;
-}
-
 .postbody.main {
   width: auto;
 }

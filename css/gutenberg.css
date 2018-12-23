@@ -25,6 +25,10 @@
     }
 }
 
+div.mce-content-body {
+    line-height: inherit;
+}
+
 .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] {
     height: auto;
     padding: 0 0 1px;
