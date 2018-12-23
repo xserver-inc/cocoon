@@ -835,6 +835,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
@@ -1860,6 +1861,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
+.admin-settings .demo .btn-wrap { min-height: 2em; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
 .admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
@@ -2503,6 +2505,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .video-title-grad { position: absolute; top: 0; left: 0; right: 0; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABiCAQAAAA7fHH2AAAAQUlEQVQYV22KQQoAIAzDyv7/Et/oVlGZVCfkkIYamsENXESyi8vc0u/PKZ6o8+7fZ0h8ShRYnD+BFKToRJkHFpkM2hZSxuyWpEYAAAAASUVORK5CYII="); background-position: center top; }
 .admin-settings .demo .video-title-text { color: #eeeeee; font-family: Roboto,Arial,Helvetica,sans-serif; font-size: 17px; overflow: hidden; padding: 12px 16px 4px; text-overflow: ellipsis; white-space: nowrap; }
 .admin-settings .demo #main .wp-block-embed__wrapper::before { display: none; }
+.admin-settings .demo .wp-block-gallery .blocks-gallery-item { display: list-item; }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }

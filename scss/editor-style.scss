@@ -189,17 +189,29 @@ div.mce-content-body{
 }
 
 //ブロックエディターの左右回り込み
-.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"]{
-  height: auto;
-  padding: 0 0 1px;
-  &[data-align="left"] {
-    text-align: left;
-  }
-  &[data-align="right"] {
-    text-align: right;
-  }
-  .editor-block-list__block-edit{
-    float: none;
-    margin: 0;
+.editor-block-list__layout .editor-block-list__block{
+  &[data-type="cocoon-blocks/button"],
+  &[data-type="cocoon-blocks/button-wrap"]{
+    height: auto;
+    padding: 0 0 1px;
+    &[data-align="left"] {
+      text-align: left;
+    }
+    &[data-align="right"] {
+      text-align: right;
+    }
+    .editor-block-list__block-edit{
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
+
+.small-msg{
+  font-size: 10px;
+}
+
+// .btn-wrap > a{
+//   pointer-events: none;
+// }

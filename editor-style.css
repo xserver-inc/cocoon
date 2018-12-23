@@ -141,3 +141,7 @@ div.mce-content-body {
 .postbody.main {
   width: auto;
 }
+
+.small-msg {
+  font-size: 10px;
+}

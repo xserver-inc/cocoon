@@ -25,22 +25,23 @@
     }
 }
 
-.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] {
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] {
     height: auto;
     padding: 0 0 1px;
 }
 
-.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="left"] {
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="left"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"][data-align="left"] {
     text-align: left;
 }
 
-.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="right"] {
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="right"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"][data-align="right"] {
     text-align: right;
 }
 
-.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit {
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit, .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit {
     float: none;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* main */
@@ -51,6 +52,7 @@
     padding-right: 14px;
     background-color: white;
 }
+
 .editor-styles-wrapper .editor-writing-flow.main {
     margin: auto;
     padding-left: 14px;

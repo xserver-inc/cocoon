@@ -2985,6 +2985,9 @@ label.screen-reader-text {
     margin-left: -10px;
   }
 }
+.btn-wrap {
+  min-height: 2em;
+}
 .btn-wrap img[width="1"] {
   position: absolute;
   bottom: 0;
@@ -6496,6 +6499,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
 #main .wp-block-embed__wrapper::before {
   display: none;
+}
+
+.wp-block-gallery .blocks-gallery-item {
+  display: list-item;
 }
 
 @media screen and (max-width: 1023px) {
