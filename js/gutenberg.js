@@ -5,7 +5,27 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 wp.domReady(function () {
-    $('#editor .editor-block-list__layout').addClass('article');
+    // add classes
+    const addClasses = function () {
+        $('#editor .editor-block-list__layout').addClass('article');
+    };
+    addClasses();
+
+    // subscribe switch editor mode
+    wp.data.subscribe(function (selector, listener) {
+        let previousValue = selector();
+        return function () {
+            let selectedValue = selector();
+            if (selectedValue !== previousValue) {
+                previousValue = selectedValue;
+                listener(selectedValue);
+            }
+        };
+    }(function () {
+        return wp.data.select('core/edit-post').getEditorMode();
+    }, function () {
+        setTimeout(addClasses, 1);
+    }));
 });
 
 // (function($){
