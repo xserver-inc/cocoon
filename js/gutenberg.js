@@ -5,11 +5,31 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 wp.domReady(function () {
-    // add body class
-    $('#editor .editor-writing-flow').addClass('article main page-body');
+    // add classes
+    const addClasses = function () {
+        // add body class
+        $('#editor .editor-writing-flow').addClass('article main page-body');
 
-    // add title class
-    $('#editor .editor-post-title__input').addClass('entry-title');
+        // add title class
+        $('#editor .editor-post-title__input').addClass('entry-title');
+    };
+    addClasses();
+
+    // subscribe switch editor mode
+    wp.data.subscribe(function (selector, listener) {
+        let previousValue = selector();
+        return function () {
+            let selectedValue = selector();
+            if (selectedValue !== previousValue) {
+                previousValue = selectedValue;
+                listener(selectedValue);
+            }
+        };
+    }(function () {
+        return wp.data.select('core/edit-post').getEditorMode();
+    }, function () {
+        setTimeout(addClasses, 1);
+    }));
 
     // remove style
     const removeStyle = function (regexp, applyTo, index, keep, keepOriginal) {
