@@ -124,7 +124,7 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'tinymce/shortcodes.php'; //ショートコード追加
   require_once abspath(__FILE__).'admin-tools.php'; //外部ツールを利用したもの
   require_once abspath(__FILE__).'admin-forms.php'; //管理画面で使用するフォームパーツ
-  require_once abspath(__FILE__).'block-editor.php';   //ブロックエディター関係の関数
+  require_once abspath(__FILE__).'gutenberg.php';   //ブロックエディター関係の関数
 }
 
 require_once abspath(__FILE__).'settings.php';   //Wordpressの設定

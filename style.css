@@ -6501,6 +6501,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: none;
 }
 
+.wp-block-gallery .blocks-gallery-item {
+  display: list-item;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
