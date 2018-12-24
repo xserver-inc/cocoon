@@ -18,6 +18,7 @@ if (is_ads_visible() && is_auto_adsense_enable()):
   }
   // _v('auto');
   // _v($_IS_ADSENSE_SCRIPT_EMPTY);
+  // _v($adsense_script);
 ?>
 <!-- Google Auto AdSense -->
 <?php echo $adsense_script; ?>

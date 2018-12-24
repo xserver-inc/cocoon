@@ -469,3 +469,12 @@ ol, ul {
     flex-shrink: 0;
   }
 }
+
+//ブロックボックス内のインナーブロックのマージン変更
+.block-box{
+  .editor-block-list__block-edit{
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+}

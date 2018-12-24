@@ -349,3 +349,8 @@ ol, ul {
 .editor-styles-wrapper .wp-block-image img {
   flex-shrink: 0;
 }
+
+.block-box .editor-block-list__block-edit {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
