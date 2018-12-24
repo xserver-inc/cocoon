@@ -144,23 +144,80 @@ endif;
 add_action( 'enqueue_block_editor_assets', 'gutenberg_stylesheets_custom' );
 if ( !function_exists( 'gutenberg_stylesheets_custom' ) ):
 function gutenberg_stylesheets_custom() {
-  if (is_visual_editor_style_enable()) {
-    $cache_file_url = get_theme_css_cache_file_url();
-    $editor_style_url = get_template_directory_uri().'/editor-style.css';
-    //CSSの読み込み
-    wp_enqueue_style_font_awesome();
-    wp_enqueue_style_theme_style();
-    wp_enqueue_style( THEME_NAME.'-cache-file', $cache_file_url );
-    wp_enqueue_style( THEME_NAME.'-editor-style', $editor_style_url );
-    wp_enqueue_style_theme_skin_style();
-    //子テーマがある場合、子テーマ内のスタイルも読み込む
-    if (is_child_theme()) {
-      wp_enqueue_style_theme_child_style();
-      wp_enqueue_style( THEME_NAME.'-child-editor-style', $editor_style_url );
-    }
+  if ( is_visual_editor_style_enable() ) {
+    // Gutenberg用のCSSとJSのみ読み込み
+    wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
+    wp_enqueue_style( THEME_NAME . '-gutenberg-css', get_template_directory_uri() . '/css/gutenberg.css' );
 
-    wp_enqueue_script( THEME_NAME.'-gutenberg-js', get_template_directory_uri().'/js/gutenberg.js', array( 'jquery' ), false, true );
+    /**
+     * Filters the script parameter name.
+     *
+     * @since 1.4.8
+     */
+    $name = apply_filters( 'cocoon_gutenberg_param_name', 'cocoon_gutenberg_params' );
+    /**
+     * Filters the script parameter value.
+     *
+     * @since 1.4.8
+     *
+     * @param array $params Default parameter.
+     */
+    $value = apply_filters( 'cocoon_gutenberg_param_value', array(
+      'background' => true,
+      'title'      => false,
+    ) );
+    wp_localize_script( THEME_NAME . '-gutenberg-js', $name, $value );
   }
+}
+endif;
+
+// Classic Editor用のCSS読み込みを利用してGutenberg用のCSSを設定
+add_filter ( 'block_editor_settings', 'gutenberg_editor_settings', 10, 2 );
+if ( ! function_exists( 'gutenberg_editor_settings' ) ):
+function gutenberg_editor_settings( $editor_settings, $post ) {
+  /** @var array $editor_settings */
+  /** @var WP_Post $post */
+  if ( is_visual_editor_style_enable() ) {
+    /**
+     * Filters the styles.
+     *
+     * @since 1.4.8
+     *
+     * @param array $editor_settings Default editor settings.
+     * @param WP_Post $post Post being edited.
+     */
+    $styles = apply_filters( 'cocoon_extract_gutenberg_styles', array(), $editor_settings, $post );
+
+    /**
+     * Filters the stylesheets.
+     *
+     * @since 1.4.8
+     */
+    $stylesheets = apply_filters( 'cocoon_gutenberg_stylesheets', visual_editor_stylesheets_custom( array() ) );
+
+    foreach ( $stylesheets as $item ) {
+      $item = strtok( $item, '?' );
+      $path = url_to_local( $item );
+      if ( empty( $path ) ) {
+        $response = wp_remote_get( $item );
+        if ( ! is_wp_error( $response ) ) {
+          $styles[] = array(
+            'css' => wp_remote_retrieve_body( $response ),
+          );
+        }
+      } else {
+        if ( file_exists( $path ) ) {
+          $styles[] = array(
+            'css'     => file_get_contents( $path ),
+            'baseURL' => $item,
+          );
+        }
+      }
+    }
+    $editor_settings['styles'] = $styles;
+  }
+
+  return $editor_settings;
 }
 endif;
 
