@@ -126,7 +126,7 @@ body {
 	position:relative;
 	padding:2px 5px 2px 25px;
 	margin-left:1em;
-	line-height: 1,4;
+	line-height: 1.4;
 	border: 1px solid #ffd98a;
 	color: #474747;
 	font-size:20px;
@@ -359,7 +359,7 @@ h3.widget-title:before {
 	background:none;
 	box-shadow: none;
 	border: none;
-	border-radius: none;
+	border-radius: 0;
 }
 .article ul.toc_list li {
 	line-height: 1.5;

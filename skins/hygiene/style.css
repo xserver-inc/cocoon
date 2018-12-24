@@ -1329,7 +1329,7 @@ margin-top: 25px;
 @keyframes yokoyure {
   0%, 20%, 40% {transform: translatex(0.5em);}
   10%, 30% {transform: translatex(-0.5em);}
-  80%, 100% {transform: translateX(0%;)}
+  80%, 100% {transform: translateX(0%);}
 }
 @keyframes iyokoyure {
   0% {transform: translateX(0em);}
