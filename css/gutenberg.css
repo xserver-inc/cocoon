@@ -42,6 +42,10 @@ div.mce-content-body {
     text-align: right;
 }
 
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"][data-align="center"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"][data-align="center"] {
+    text-align: center;
+}
+
 .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit, .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit {
     float: none;
     margin-left: 0;
