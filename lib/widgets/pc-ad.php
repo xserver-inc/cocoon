@@ -26,10 +26,10 @@ class PcAdWidgetItem extends WP_Widget {
     $format = apply_filters( 'widget_pc_ad_format', $instance['ad_format'] );
     $is_label_visible = apply_filters( 'widget_is_label_visible', !empty($instance['is_label_visible']) ? $instance['is_label_visible'] : 0 );
 
-    //フォーマットが指定されているときはAdSenseコードフォーマットに合わせる
-    if ($format != 'none') {
-      $ad = get_adsense_responsive_code(to_adsense_format($format), $ad);
-    }
+    // //フォーマットが指定されているときはAdSenseコードフォーマットに合わせる
+    // if ($format != 'none') {
+    //   $ad = get_adsense_responsive_code(to_adsense_format($format), $ad);
+    // }
 
 
     //_v($ad);
