@@ -6505,7 +6505,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: none;
 }
 
-.wp-block-gallery .blocks-gallery-item {
+.entry-content .wp-block-gallery .blocks-gallery-item {
   display: list-item;
 }
 
