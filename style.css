@@ -2605,6 +2605,10 @@ label.screen-reader-text {
 .block-box > p:last-child {
   margin-bottom: 0;
 }
+.block-box ol,
+.block-box ul {
+  margin: 0;
+}
 
 .information-box,
 .information {

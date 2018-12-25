@@ -216,6 +216,11 @@ $marker_u_blue: #a8dafb;
   >p:last-child{
     margin-bottom: 0;
   }
+
+  ol,
+  ul{
+    margin: 0;
+  }
 }
 
 .information-box,

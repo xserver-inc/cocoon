@@ -767,6 +767,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; margin-top: 1em; margin-bottom: 1em; }
 .admin-settings .demo .block-box > p:first-child { margin-top: 0; }
 .admin-settings .demo .block-box > p:last-child { margin-bottom: 0; }
+.admin-settings .demo .block-box ol, .admin-settings .demo .block-box ul { margin: 0; }
 .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
@@ -1793,6 +1794,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 20px 20px 20px 72px; border-radius: 4px; position: relative; display: block; margin-top: 1em; margin-bottom: 1em; }
 .admin-settings .demo .block-box > p:first-child { margin-top: 0; }
 .admin-settings .demo .block-box > p:last-child { margin-bottom: 0; }
+.admin-settings .demo .block-box ol, .admin-settings .demo .block-box ul { margin: 0; }
 .admin-settings .demo .information-box, .admin-settings .demo .information { background: #f3fafe; border: 1px solid #bde4fc; }
 .admin-settings .demo .question-box, .admin-settings .demo .question { background: #fff7cc; border: 1px solid #ffe766; }
 .admin-settings .demo .alert-box, .admin-settings .demo .alert { background: #fdf2f2; border: 1px solid #f6b9b9; }
