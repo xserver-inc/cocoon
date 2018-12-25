@@ -827,7 +827,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
 .admin-settings .demo .search-form { margin: 3em 0; }
-.admin-settings .demo .search-form div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
+.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
 .admin-settings .demo .search-form div.sbtn:before { content: "\f002"; font-family: FontAwesome; margin-right: 7px; }
@@ -1854,7 +1854,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
 .admin-settings .demo .search-form { margin: 3em 0; }
-.admin-settings .demo .search-form div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
+.admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
 .admin-settings .demo .search-form div.sbtn:before { content: "\f002"; font-family: FontAwesome; margin-right: 7px; }
