@@ -137,6 +137,23 @@
           </td>
         </tr>
 
+      <!-- ボタンリンク先 -->
+      <tr>
+        <th scope="row">
+          <?php generate_label_tag(OP_APPEAL_AREA_BUTTON_TARGET, __('ボタンリンクの開き方', THEME_NAME) ); ?>
+        </th>
+        <td>
+          <?php
+            $options = array(
+              '_self' => __( '同じタブで開く（_self）', THEME_NAME ),
+              '_blank' => __( '新しいタブで開く（_blank）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_APPEAL_AREA_BUTTON_TARGET, $options, get_appeal_area_button_target());
+            generate_tips_tag(__( 'アピールエリアボタンのリンクの開き方を設定します。', THEME_NAME ));
+          ?>
+        </td>
+      </tr>
+
         <!-- ボタン色 -->
         <tr>
           <th scope="row">

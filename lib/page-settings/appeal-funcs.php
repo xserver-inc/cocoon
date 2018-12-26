@@ -92,6 +92,14 @@ function get_appeal_area_button_url(){
 }
 endif;
 
+//アピールエリアボタンのブラウザでの開き方
+define('OP_APPEAL_AREA_BUTTON_TARGET', 'appeal_area_button_target');
+if ( !function_exists( 'get_appeal_area_button_target' ) ):
+function get_appeal_area_button_target(){
+  return get_theme_option(OP_APPEAL_AREA_BUTTON_TARGET, '_self');
+}
+endif;
+
 //アピールエリアボタン色
 define('OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR', 'appeal_area_button_background_color');
 if ( !function_exists( 'get_appeal_area_button_background_color' ) ):

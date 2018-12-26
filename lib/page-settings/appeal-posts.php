@@ -33,5 +33,8 @@ update_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE);
 //アピールエリアボタンURL
 update_theme_option(OP_APPEAL_AREA_BUTTON_URL);
 
+//アピールエリアボタンのブラウザでの開き方
+update_theme_option(OP_APPEAL_AREA_BUTTON_TARGET);
+
 //アピールエリアボタン色
 update_theme_option(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR);
