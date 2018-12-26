@@ -19,16 +19,16 @@
     } catch (e) {
     }
 
-    // https://stackoverflow.com/questions/36675693/eventtarget-interface-in-safari
-    const target = window.EventTarget || Element;
-    const originalAddEventListener = target.prototype.addEventListener;
-    target.prototype.addEventListener = function (type, listener, options) {
-        if ('wheel' === type || 'mousewheel' === type || 'touchstart' === type || 'touchmove' === type) {
-            if (supportsPassive) {
+    if (supportsPassive) {
+        // https://stackoverflow.com/questions/36675693/eventtarget-interface-in-safari
+        const target = window.EventTarget || Element;
+        const originalAddEventListener = target.prototype.addEventListener;
+        target.prototype.addEventListener = function (type, listener, options) {
+            if ('wheel' === type || 'mousewheel' === type || 'touchstart' === type || 'touchmove' === type) {
                 options = options || {};
                 options.passive = true;
             }
-        }
-        originalAddEventListener.call(this, type, listener, options);
-    };
+            originalAddEventListener.call(this, type, listener, options);
+        };
+    }
 })();
