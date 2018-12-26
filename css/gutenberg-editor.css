@@ -53,6 +53,7 @@ div.mce-content-body {
 }
 
 .editor-styles-wrapper .editor-writing-flow.main {
+  width: auto;
   margin: auto;
   padding-left: 14px;
   padding-right: 14px;
