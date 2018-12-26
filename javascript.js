@@ -84,8 +84,3 @@
     }
     }
 })();
-
-//Passive Event Listener を使用してサイトでのスクロール パフォーマンスを向上させる
-if ('ontouchstart' in document.documentElement) {
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
-}
