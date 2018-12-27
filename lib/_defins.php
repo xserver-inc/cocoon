@@ -80,9 +80,12 @@ $_MAIN_DATA_AD_FORMATS = array(
 
 //アドセンス共通スクリプトコード
 define('ADSENSE_SCRIPT_CODE', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-//アドセンススクリプトコードが読み込まれているか
-global $_IS_ADSENSE_SCRIPT_EMPTY;
-$_IS_ADSENSE_SCRIPT_EMPTY = true;
+//AdSenseの存在フラグ
+global $_IS_ADSENSE_EXIST;
+$_IS_ADSENSE_EXIST = false; //最初はAdSenseの存在がない
+// //アドセンススクリプトコードが読み込まれているか
+// global $_IS_ADSENSE_SCRIPT_EMPTY;
+// $_IS_ADSENSE_SCRIPT_EMPTY = true;
 // _v('def');
 // _v($_IS_ADSENSE_SCRIPT_EMPTY);
 

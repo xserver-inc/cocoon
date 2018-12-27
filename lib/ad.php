@@ -102,14 +102,17 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
       $data_ad_layout = '     data-ad-layout="in-article"';
     }
 
-    //アドセンススクリプトコードの設定
-    global $_IS_ADSENSE_SCRIPT_EMPTY;
+    global $_IS_ADSENSE_EXIST;
+    $_IS_ADSENSE_EXIST = true;
+
+    // //アドセンススクリプトコードの設定
+    // global $_IS_ADSENSE_SCRIPT_EMPTY;
     $adsense_script = null;
-    if ($_IS_ADSENSE_SCRIPT_EMPTY) {
-      $adsense_script = ADSENSE_SCRIPT_CODE;
-      $_IS_ADSENSE_SCRIPT_EMPTY = false;
-      //_v($adsense_script);
-    }
+    // if ($_IS_ADSENSE_SCRIPT_EMPTY) {
+    //   $adsense_script = ADSENSE_SCRIPT_CODE;
+    //   $_IS_ADSENSE_SCRIPT_EMPTY = false;
+    //   //_v($adsense_script);
+    // }
     // _v($format);
     // _v($_IS_ADSENSE_SCRIPT_EMPTY);
     // _v($adsense_script);

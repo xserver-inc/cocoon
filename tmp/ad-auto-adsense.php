@@ -9,13 +9,15 @@
 
 
 if (is_ads_visible() && is_auto_adsense_enable()):
+  global $_IS_ADSENSE_EXIST;
+  $_IS_ADSENSE_EXIST = true;
   //アドセンススクリプトコードの設定
-  global $_IS_ADSENSE_SCRIPT_EMPTY;
-  $adsense_script = null;
-  if ($_IS_ADSENSE_SCRIPT_EMPTY) {
-    $adsense_script = ADSENSE_SCRIPT_CODE;
-    $_IS_ADSENSE_SCRIPT_EMPTY = false;
-  }
+  // global $_IS_ADSENSE_SCRIPT_EMPTY;
+  // $adsense_script = null;
+  // if ($_IS_ADSENSE_SCRIPT_EMPTY) {
+  //   $adsense_script = ADSENSE_SCRIPT_CODE;
+  //   $_IS_ADSENSE_SCRIPT_EMPTY = false;
+  // }
   // _v('auto');
   // _v($_IS_ADSENSE_SCRIPT_EMPTY);
   // _v($adsense_script);

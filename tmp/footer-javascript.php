@@ -7,6 +7,12 @@
  */
 
 if (!is_amp()): ?>
+  <?php //AdSense非同期スクリプトを出力
+  global $_IS_ADSENSE_EXIST;
+  if ($_IS_ADSENSE_EXIST) {
+    echo ADSENSE_SCRIPT_CODE;
+  }
+  ?>
   <?php //Pinterestシェア用のスクリプト
   if (is_singular() && is_pinterest_share_pin_visible()): ?>
   <script async defer data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
