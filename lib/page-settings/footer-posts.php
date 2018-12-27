@@ -14,6 +14,9 @@ update_theme_option(OP_FOOTER_TEXT_COLOR);
 //フッターの表示タイプ
 update_theme_option(OP_FOOTER_DISPLAY_TYPE);
 
+//フッターロゴ
+update_theme_option(OP_FOOTER_LOGO_URL);
+
 //サイト開始日
 update_theme_option(OP_SITE_INITIATION_YEAR);
 

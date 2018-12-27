@@ -36,6 +36,7 @@
             ?>
           </td>
         </tr>
+
         <!-- フッター表示タイプ  -->
         <tr>
           <th scope="row">
@@ -55,6 +56,18 @@
           </td>
         </tr>
 
+        <!-- フッターロゴ  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FOOTER_LOGO_URL, __( 'フッターロゴ', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_upload_image_tag(OP_FOOTER_LOGO_URL, get_footer_logo_url());
+            generate_tips_tag(__( 'フッター部分に表示されるロゴ画像です。未入力だとヘッダーロゴが出力されます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
         <!-- クレジット表記  -->
         <tr>

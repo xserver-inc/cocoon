@@ -20,11 +20,20 @@ function get_footer_text_color(){
   return get_theme_option(OP_FOOTER_TEXT_COLOR);
 }
 endif;
+
 //フッターの表示タイプ
 define('OP_FOOTER_DISPLAY_TYPE', 'footer_display_type');
 if ( !function_exists( 'get_footer_display_type' ) ):
 function get_footer_display_type(){
   return get_theme_option(OP_FOOTER_DISPLAY_TYPE, 'logo_enable');
+}
+endif;
+
+//フッターロゴ
+define('OP_FOOTER_LOGO_URL', 'footer_logo_url');
+if ( !function_exists( 'get_footer_logo_url' ) ):
+function get_footer_logo_url(){
+  return get_theme_option(OP_FOOTER_LOGO_URL, '');
 }
 endif;
 
