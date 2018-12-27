@@ -355,3 +355,7 @@ ol, ul {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
 }
+
+.editor-styles-wrapper .article .editor-rich-text__tinymce {
+  margin: 0;
+}

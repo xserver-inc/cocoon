@@ -479,3 +479,8 @@ ol, ul {
   }
 
 }
+
+//見出しが二重になれ不具合修正
+.editor-styles-wrapper .article .editor-rich-text__tinymce{
+  margin: 0;
+}
