@@ -493,3 +493,32 @@ ol, ul {
 [aria-label="赤太字"]{
   color: #E50202;
 }
+[aria-label="青字"],
+[aria-label="青太字"]{
+  color: blue;
+}
+[aria-label="緑字"],
+[aria-label="緑太字"]{
+  color: green;
+}
+
+[aria-label="黄色マーカー"]{
+  background-color: #ff6;
+}
+[aria-label="黄色アンダーラインマーカー"]{
+  color: #fcc800;
+}
+
+[aria-label="青色マーカー"]{
+  background-color: #a5d7f9;
+}
+[aria-label="青色アンダーラインマーカー"]{
+  color: #a5d7f9;
+}
+
+[aria-label="赤色マーカー"]{
+  background-color: #ffb6b9;
+}
+[aria-label="赤色アンダーラインマーカー"]{
+  color: #ffb6b9;
+}
