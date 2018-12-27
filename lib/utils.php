@@ -351,7 +351,9 @@ endif;
 if ( !function_exists( 'wp_enqueue_script_theme_js' ) ):
 function wp_enqueue_script_theme_js(){
   wp_enqueue_script( THEME_JS, get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
-  wp_enqueue_script( 'event-passive', get_template_directory_uri() . '/js/set-event-passive.js', array( ), false, false );
+
+  // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
+  wp_enqueue_script( 'set-event-passive', get_template_directory_uri() . '/js/set-event-passive.js', array( ), false, true );
 }
 endif;
 
