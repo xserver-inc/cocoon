@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* copy from editor-style.css */
 .wp-block {
   padding: 0;
@@ -358,4 +359,12 @@ ol, ul {
 
 .editor-styles-wrapper .article .editor-rich-text__tinymce {
   margin: 0;
+}
+
+.editor-styles-wrapper .red {
+  margin-left: 0;
+}
+
+[aria-label="赤字"] {
+  color: #E50202;
 }

@@ -484,3 +484,11 @@ ol, ul {
 .editor-styles-wrapper .article .editor-rich-text__tinymce{
   margin: 0;
 }
+
+//インラインツールバー調整
+.editor-styles-wrapper .red{
+  margin-left: 0;
+}
+[aria-label="赤字"]{
+  color: #E50202;
+}
