@@ -341,7 +341,13 @@ function generate_the_site_logo_tag($is_header = true){
   } else {
     $class = ' logo-footer';
   }
-  if (get_the_site_logo_url()) {
+
+  $logo_url = get_the_site_logo_url();
+  $footer_logo_ur = get_footer_logo_url();
+  if (!$is_header && $footer_logo_ur) {
+    $logo_url = $footer_logo_ur;
+  }
+  if ( $logo_url ) {
     $class .= ' logo-image';
   } else {
     $class .= ' logo-text';
@@ -349,21 +355,21 @@ function generate_the_site_logo_tag($is_header = true){
   //ロゴの幅設定
   $site_logo_width = get_the_site_logo_width();
   $width_attr = null;
-  if ($site_logo_width) {
+  if ($site_logo_width && $is_header) {
     $width_attr = ' width="'.$site_logo_width.'"';
   }
   //ロゴの高さ設定
   $site_logo_height = get_the_site_logo_height();
   $height_attr = null;
-  if ($site_logo_height) {
+  if ($site_logo_height && $is_header) {
     $height_attr = ' height="'.$site_logo_height.'"';
   }
 
 
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.get_home_url().'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
-  if (get_the_site_logo_url()) {
-    $site_logo_tag = '<img src="'.get_the_site_logo_url().'" alt="'.get_bloginfo('name').'"'.$width_attr.$height_attr.'>';
+  if ($logo_url) {
+    $site_logo_tag = '<img src="'.$logo_url.'" alt="'.get_bloginfo('name').'"'.$width_attr.$height_attr.'>';
   } else {
     $site_logo_tag = get_bloginfo('name');
   }
