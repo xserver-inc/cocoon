@@ -23,7 +23,7 @@ if (is_appeal_area_visible() && !is_amp()): ?>
       </div>
       <?php endif ?>
       <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>
-      <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button">
+      <a href="<?php echo get_appeal_area_button_url(); ?>" class="appeal-button" target="<?php echo get_appeal_area_button_target(); ?>">
         <?php echo get_appeal_area_button_message(); ?>
       </a>
       <?php endif ?>
