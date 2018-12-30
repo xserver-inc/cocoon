@@ -879,9 +879,9 @@ function get_cleaned_css_selector($selector){
   // //:last-of-typeを取り除く
   // $selector = str_replace(':last-of-type', '', $selector);
 
-  $classes = array(':active',':any',':checked',':default',':disabled',':empty',':enabled',':first',':first-child',':first-of-type',':fullscreen',':focus',':hover',':indeterminate',':in-range',':invalid',':last-child',':last-of-type',':left',':link',':only-child',':only-of-type',':optional',':out-of-range',':read-only',':read-write',':required',':right',':root',':scope',':target',':valid',':visited');
+  $classes = array(':nth-last-of-type\(.*?\)',':nth-last-child\(.*?\)',':nth-of-type\(.*?\)',':nth-child\(.*?\)',':active',':checked',':default',':disabled',':empty',':enabled',':first-child',':first-of-type',':fullscreen',':indeterminate',':in-range',':invalid',':last-child',':last-of-type',':only-child',':only-of-type',':optional',':out-of-range',':read-only',':read-write',':required',':right',':root',':scope',':target',':valid',':visited',':first',':any',':focus',':hover',':left',':link');
   foreach ($classes as $class) {
-    $selector = str_replace($class, '', $selector);
+    $selector = preg_replace('/'.$class.'/', '', $selector);
   }
   //:を取り除く
   $selector = str_replace(':', '', $selector);
@@ -898,6 +898,9 @@ function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $
   if (strpos($comma_splited_selector, 'amp-img') !== false) {
     return true;
   }
+  // if (strpos($comma_splited_selector, 'first-child') !== false) {
+  //   return true;
+  // }
   $comma_splited_selector = get_cleaned_css_selector($comma_splited_selector);
   $space_splited_selectors = explode(' ', $comma_splited_selector);
   // if (count($space_splited_selectors) > 8) {
@@ -980,7 +983,6 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
     //   _v($m[0]);
     // }
   }
-  //_v($css);
   return $css;
 }
 endif;
