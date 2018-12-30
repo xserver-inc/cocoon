@@ -2192,6 +2192,9 @@ label.screen-reader-text {
   font-style: italic;
   font-size: 0.8em;
 }
+.widget-entry-cards .cat-label {
+  display: none;
+}
 
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）

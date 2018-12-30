@@ -702,6 +702,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
 .admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
 .admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .widget-entry-cards .cat-label { display: none; }
 .admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
 .admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
 .admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
@@ -1731,6 +1732,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
 .admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
 .admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .widget-entry-cards .cat-label { display: none; }
 .admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
 .admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
 .admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }

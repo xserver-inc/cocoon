@@ -1010,6 +1010,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
         ?>
         <img src="<?php echo $url; ?>" alt="" class="no-image <?php echo $prefix; ?>-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>" />
       <?php endif; ?>
+      <?php the_nolink_category(); //カテゴリラベルの取得 ?>
       </figure><!-- /.new-entry-card-thumb -->
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
