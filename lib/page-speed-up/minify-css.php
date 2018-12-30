@@ -16,6 +16,11 @@ function tag_code_to_minify_css($buffer) {
     return $buffer;
   }
 
+  //wpForoページでは縮小化しない（画面が真っ白になる※エラーメッセージは出ないメモリー関係か？）
+  if (is_wpforo_plugin_page()) {
+    return $buffer;
+  }
+
   if (is_css_minify_enable()) {
     //最終出力縮小化CSSコード
     $last_minfified_css = null;
