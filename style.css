@@ -274,7 +274,7 @@ body {
   color: #333;
   /* カーニングの設定 */
   /* 行間の設定 */
-  line-height: 1.75;
+  line-height: 1.8;
   margin: 0;
   overflow-wrap: break-word;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
@@ -1417,7 +1417,7 @@ img.emoji {
 ** 投稿・固定ページで使うHTML要素
 ************************************/
 p {
-  margin: 1em 0;
+  margin: 1.2em 0;
 }
 
 table {
@@ -1494,7 +1494,7 @@ table td {
 .article h4,
 .article h5,
 .article h6 {
-  margin: 2.2em 0 1em;
+  margin: 2.4em 0 1em;
 }
 .article h4,
 .article h5,
@@ -6412,7 +6412,7 @@ div#wpforo-wrap .wpforo-post .wpf-right ul {
 }
 
 div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .bleft {

@@ -302,7 +302,7 @@ body.wp-admin { color: #444; }
 ************************************/ /* Slider */ /* Mobile Menu Core Style
 */ /* IE6/7 support */ /* User Default Style Change the following styles to modify the appearance of the menu.
 */ /* Button */ /* Button Text */ /* Button Lines */ /*bbPressのスタイルを整える*/ /** Cocoon WordPress Theme @author: yhira @link: https://wp-cocoon.com/ @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later  Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
-"Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2 */ /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.75; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
+"Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2 */ /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
 .admin-settings .demo .fz-12px { font-size: 12px; }
 .admin-settings .demo .fz-13px { font-size: 13px; }
 .admin-settings .demo .fz-14px { font-size: 14px; }
@@ -341,7 +341,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
 .admin-settings .demo div.sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.4; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.75; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -565,7 +565,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo p { margin: 1em 0; }
+.admin-settings .demo p { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
@@ -580,7 +580,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1em; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
@@ -1371,7 +1371,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
 .admin-settings .demo div.sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.4; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.75; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -1595,7 +1595,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo p { margin: 1em 0; }
+.admin-settings .demo p { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
@@ -1610,7 +1610,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
-.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.2em 0 1em; }
+.admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
@@ -2495,7 +2495,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo div#wpforo-wrap pre, .admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right code { background: rgba(0, 0, 0, 0) none repeat scroll 0 0; border: medium none; font-size: 17px; }
 .admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right ol, .admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right ul { margin: 2em 1em; }
 .admin-settings .demo .wpforo-list-item p { margin: 0; }
-.admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p { line-height: 1.75; }
+.admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p { line-height: 1.8; }
 .admin-settings .demo .bleft { font-weight: bold; }
 .admin-settings .demo #wpf-form-wrapper .mce-edit-area iframe { min-height: 400px; }
 .admin-settings .demo .mce-wpf-emoji-extra-wrap { min-width: 300px !important; min-height: 300px !important; }
