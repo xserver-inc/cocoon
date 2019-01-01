@@ -6,7 +6,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */ ?>
  <a href="<?php the_permalink(); ?>" class="related-entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
-<article <?php post_class( array('post-'.get_the_ID(), 'related-entry-card','e-card', 'cf') ); ?>>
+<article class="related-entry-card e-card cf">
 
   <figure class="related-entry-card-thumb card-thumb e-card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
