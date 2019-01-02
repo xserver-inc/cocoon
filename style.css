@@ -362,6 +362,10 @@ ol, ul {
   font-size: 13px;
 }
 
+.wp-caption {
+  margin: 1em 0;
+}
+
 /************************************
 ** WordPress Misc
 ************************************/
@@ -1615,10 +1619,6 @@ span.internal-icon {
 .no-post-update .post-update,
 .no-post-author .author-info {
   display: none;
-}
-
-.wp-caption {
-  margin: 1em 0;
 }
 
 .eye-catch-wrap {

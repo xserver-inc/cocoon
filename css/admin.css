@@ -356,6 +356,7 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
+.admin-settings .demo .wp-caption { margin: 1em 0; }
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
@@ -599,7 +600,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
 .admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .wp-caption { margin: 1em 0; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
@@ -1386,6 +1386,7 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
+.admin-settings .demo .wp-caption { margin: 1em 0; }
 .admin-settings .demo .aligncenter { display: block; margin-right: auto; margin-left: auto; }
 .admin-settings .demo .alignleft { float: left; margin-right: 10px; margin-bottom: 10px; }
 .admin-settings .demo .alignright { float: right; margin-left: 10px; margin-bottom: 10px; }
@@ -1629,7 +1630,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo span.external-icon, .admin-settings .demo span.internal-icon { margin-left: 3px; font-size: 0.8em; }
 .admin-settings .demo .login-user-only { text-align: center; padding: 2em; background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; }
 .admin-settings .demo .no-post-date .post-date, .admin-settings .demo .no-post-update .post-update, .admin-settings .demo .no-post-author .author-info { display: none; }
-.admin-settings .demo .wp-caption { margin: 1em 0; }
 .admin-settings .demo .eye-catch-wrap { display: flex; }
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
