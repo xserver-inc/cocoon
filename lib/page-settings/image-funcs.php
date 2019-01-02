@@ -89,6 +89,14 @@ function is_baguettebox_effect_enable(){
 }
 endif;
 
+//本文中画像の中央寄せ
+define('OP_CONTENT_IMAGE_CENTER_ENABLE', 'content_image_center_enable');
+if ( !function_exists( 'is_content_image_center_enable' ) ):
+function is_content_image_center_enable(){
+  return get_theme_option(OP_CONTENT_IMAGE_CENTER_ENABLE);
+}
+endif;
+
 //サムネイル画像タイプ
 define('OP_THUMBNAIL_IMAGE_TYPE', 'thumbnail_image_type');
 if ( !function_exists( 'get_thumbnail_image_type' ) ):

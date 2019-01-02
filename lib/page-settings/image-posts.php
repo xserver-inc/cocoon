@@ -30,6 +30,9 @@ update_theme_option(OP_IMAGE_WRAP_EFFECT);
 //画像の拡大効果
 update_theme_option(OP_IMAGE_ZOOM_EFFECT);
 
+//本文中画像の中央寄せ
+update_theme_option(OP_CONTENT_IMAGE_CENTER_ENABLE);
+
 //サムネイル画像タイプ
 update_theme_option(OP_THUMBNAIL_IMAGE_TYPE);
 
