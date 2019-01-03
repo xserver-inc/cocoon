@@ -344,7 +344,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
         <?php //詳細ページURLがあるとき
         if ($detail_url): ?>
         <div class="ranking-item-detail">
-          <a href="<?php echo $detail_url; ?>"><?php _e( '詳細ページ', THEME_NAME ) ?></a>
+          <a href="<?php echo $detail_url; ?>"><?php echo apply_filters('cocoon_ranking_detail_page_caption', __( '詳細ページ', THEME_NAME ) )  ?></a>
         </div>
         <?php endif ?>
 
@@ -353,7 +353,7 @@ function generate_item_ranking_tag($id, $is_first_only = false){
         if ($link_url || $link_tag): ?>
         <div class="ranking-item-link">
           <?php if ($link_url): ?>
-            <a href="<?php echo $link_url; ?>" target="_blank"><?php _e( '公式ページ', THEME_NAME ) ?></a>
+            <a href="<?php echo $link_url; ?>" target="_blank"><?php echo apply_filters('cocoon_ranking_official_page_caption', __( '公式ページ', THEME_NAME )) ?></a>
           <?php else: ?>
             <?php echo $link_tag; ?>
           <?php endif ?>
