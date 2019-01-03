@@ -297,7 +297,6 @@ endif;
 //吹き出しテーブルレコードの取得
 if ( !function_exists( 'get_speech_balloons' ) ):
 function get_speech_balloons( $keyword = null, $order_by = null ) {
-
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
 }
