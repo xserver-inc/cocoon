@@ -300,25 +300,6 @@ function get_speech_balloons( $keyword = null, $order_by = null ) {
 
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   return get_db_table_records($table_name, 'title', $keyword, $order_by);
-
-  // update_speech_balloons_table();
-  // global $wpdb;
-  // $table_name = SPEECH_BALLOONS_TABLE_NAME;
-  // $where = null;
-  // if ($keyword) {
-  //   $where = $wpdb->prepare(" WHERE title LIKE %s", '%'.$keyword.'%');
-  //   //$where = (" WHERE title LIKE %%$keyword%%");
-  // }
-  // if ($order_by) {
-  //   $order_by = esc_sql(" ORDER BY $order_by");
-  // }
-  // $query = "SELECT * FROM {$table_name}".
-  //             $where.
-  //             $order_by;
-
-  // $records = $wpdb->get_results( $query );
-
-  // return $records;
 }
 endif;
 
