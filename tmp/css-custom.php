@@ -573,7 +573,8 @@ if ($footer_background_color = get_footer_background_color()): ?>
 <?php //フッター文字色
 if ($footer_text_color = get_footer_text_color()): ?>
 #footer,
-#footer a {
+#footer a,
+.footer-title {
   color: <?php echo $footer_text_color; ?>;
 }
 <?php endif ?>
