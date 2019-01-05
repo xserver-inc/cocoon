@@ -18,11 +18,15 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     $url = $eye_img[0];
     $width = $eye_img[1];
     $height = $eye_img[2];
+    $size = $width.'x'.$height.' size-'.$width.'x'.$height;
+    $attr = array(
+      'class' => "attachment-$size eye-catch-image",
+    );
     //アイキャッチの表示
     if ($width && $height) {
-      the_post_thumbnail(array($width, $height));
+      the_post_thumbnail(array($width, $height), $attr);
     } else {
-      the_post_thumbnail();
+      the_post_thumbnail('post-thumbnail', $attr);
     }
 
   } else {
