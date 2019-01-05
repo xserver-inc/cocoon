@@ -112,7 +112,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     $cache_file_url = get_theme_css_cache_file_url();
     $editor_style_url = get_template_directory_uri().'/editor-style.css';
     array_push($stylesheets,
-      FONT_AWESOME_CDN_URL,
+      FONT_AWESOME4_CDN_URL,
       add_file_ver_to_css_js($style_url),
       add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル
       add_file_ver_to_css_js($editor_style_url)

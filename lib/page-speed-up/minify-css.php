@@ -92,7 +92,7 @@ function tag_code_to_minify_css($buffer) {
           } else {
             //外部ファイル名の場合
             //_v($url);
-            if (!is_amp() && strpos($url, FONT_AWESOME_CDN_URL) !== false) {
+            if (!is_amp() && strpos($url, FONT_AWESOME4_CDN_URL) !== false) {
               $css = wp_filesystem_get_contents(get_template_directory().'/css/fontawesome.min.css');
               if ($css !== false) {
                 //ヘッダー出力コードからstyleタグを削除

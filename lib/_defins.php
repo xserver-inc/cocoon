@@ -189,8 +189,8 @@ define('BEFORE_1ST_H2_TOC_PRIORITY_HIGH', 10000);
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
 define('URL_REG', '/'.URL_REG_STR.'/');
 
-//Font AwesomeのCDN
-define('FONT_AWESOME_CDN_URL', 'https://max'.'cdn.boot'.'strapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+//Font Awesome4.7のCDN
+define('FONT_AWESOME4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //IcoMoonフォント
 define('FONT_AICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 
