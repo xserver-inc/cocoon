@@ -298,3 +298,28 @@ endif;
 
 // global $wp_registered_sidebars;
 // _v($wp_registered_sidebars);
+
+// add_action( 'rest_api_init', 'slug_register_starship' );
+// function slug_register_starship() {
+//     register_rest_field( 'balloon',
+//         'starship',
+//         array(
+//             'get_callback'    => 'slug_get_starship',
+//             'update_callback' => null,
+//             'schema'          => null,
+//         )
+//     );
+// }
+
+// /**
+//  * "starship"フィールドの値を取得
+//  *
+//  * @param array $object 現在の投稿の詳細データ
+//  * @param string $field_name フィールド名
+//  * @param WP_REST_Request $request 現在のリクエスト
+//  *
+//  * @return mixed
+//  */
+// function slug_get_starship( $object, $field_name, $request ) {
+//     return 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+// }

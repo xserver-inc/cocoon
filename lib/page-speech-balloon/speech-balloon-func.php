@@ -358,3 +358,48 @@ function is_icon_irasutoya($record){
 
 }
 endif;
+
+//REST API出力用の吹き出しデータをまとめて取得
+if ( !function_exists( 'get_rest_speech_balloons' ) ):
+function get_rest_speech_balloons( $data ) {
+  $records = get_speech_balloons();
+  $results = array();
+  if ($records) {
+    foreach ($records as $record) {
+      //オブジェクトを配列に変換
+      $result = json_decode(json_encode($record), true);
+      $results[] = $result;
+    }
+  }
+  return $results;
+}
+endif;
+
+//https://cocoon.local/wp-json/cocoon/v1/balloon/
+add_action( 'rest_api_init', function () {
+  register_rest_route( THEME_NAME.'/v1', '/balloon/', array(
+    'methods' => 'GET',
+    'callback' => 'get_rest_speech_balloons',
+  ) );
+} );
+
+//REST API出力用の吹き出しデータ取得
+if ( !function_exists( 'get_rest_speech_balloon' ) ):
+function get_rest_speech_balloon( $data ) {
+  $result = array();
+  if (isset($data['id'])) {
+    $result = get_speech_balloon( $data['id'] );
+    //オブジェクトを配列に変換
+    $result = json_decode(json_encode($result), true);
+  }
+  return $result;
+}
+endif;
+
+//https://cocoon.local/wp-json/cocoon/v1/balloon/1
+add_action( 'rest_api_init', function () {
+  register_rest_route( THEME_NAME.'/v1', '/balloon/(?P<id>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'get_rest_speech_balloon',
+  ) );
+} );
