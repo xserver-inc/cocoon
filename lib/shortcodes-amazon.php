@@ -396,7 +396,7 @@ function amazon_product_link_shortcode($atts){
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
       if ($unix_date) {
         $timestamp = strtotime($unix_date);//UNIX形式の日付文字列をタイムスタンプに変換
-        date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
+        //date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
         $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ), $timestamp);//フォーマット変更
         //_v($acquired_date);
         //_v($FormattedPrice);
