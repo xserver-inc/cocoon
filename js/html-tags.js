@@ -5,6 +5,20 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 (function() {
+  function getDateID(){
+    //Dateオブジェクトを利用
+    var d = new Date();
+    var year  = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var month = ( month          < 10 ) ? '0' + month          : month;
+    var day   = ( d.getDate()    < 10 ) ? '0' + d.getDate()    : d.getDate();
+    var hour  = ( d.getHours()   < 10 ) ? '0' + d.getHours()   : d.getHours();
+    var min   = ( d.getMinutes() < 10 ) ? '0' + d.getMinutes() : d.getMinutes();
+    var sec   = ( d.getSeconds() < 10 ) ? '0' + d.getSeconds() : d.getSeconds();
+    var dateID = '' + year + month + day + hour + min + sec;
+    return dateID;
+  }
+
   tinymce.PluginManager.add('html_tags', function( editor, url )  {
 		//console.log(editor);
     var dropdownValues = [];
@@ -30,11 +44,14 @@
         var after  = e.control.settings.after ;
         var tag  = e.control.settings.tag ;
         var content = '';
+
         if (selectedText) {
           content = before + selectedText + after;
         } else {
           content = tag;
         }
+        var dateID = getDateID();
+        var content = content.replace(/COCOON_DATE_ID/g, dateID);
         tinyMCE.activeEditor.selection.setContent(content);
 
       },
