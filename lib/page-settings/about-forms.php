@@ -20,11 +20,11 @@
     $all .= __( 'サイト名：', THEME_NAME ).get_bloginfo('name').PHP_EOL;
     $all .= __( 'サイトURL：', THEME_NAME ).site_url().PHP_EOL;
     $all .= __( 'ホームURL：', THEME_NAME ).home_url().PHP_EOL;
-    $all .= __( 'コンテンツURL：', THEME_NAME ).str_replace(home_url(), '', content_url()).PHP_EOL;
-    $all .= __( 'インクルードURL：', THEME_NAME ).str_replace(home_url(), '', includes_url()).PHP_EOL;
-    $all .= __( 'テンプレートURL：', THEME_NAME ).str_replace(home_url(), '', get_template_directory_uri()).PHP_EOL;
-    $all .= __( 'スタイルシートURL：', THEME_NAME ).str_replace(home_url(), '', get_stylesheet_directory_uri()).PHP_EOL;
-    $all .= __( '使用スキンURL：', THEME_NAME ).str_replace(home_url(), '', get_skin_url()).PHP_EOL;
+    $all .= __( 'コンテンツURL：', THEME_NAME ).get_remove_home_url(content_url()).PHP_EOL;
+    $all .= __( 'インクルードURL：', THEME_NAME ).get_remove_home_url(includes_url()).PHP_EOL;
+    $all .= __( 'テンプレートURL：', THEME_NAME ).get_remove_home_url(get_template_directory_uri()).PHP_EOL;
+    $all .= __( 'スタイルシートURL：', THEME_NAME ).get_remove_home_url(get_stylesheet_directory_uri()).PHP_EOL;
+    $all .= __( '使用スキンURL：', THEME_NAME ).get_remove_home_url(get_skin_url()).PHP_EOL;
     $ip = @$_SERVER['REMOTE_ADDR'];
     if ($ip) {
       //IP形式の場合は表示しない
@@ -89,6 +89,12 @@
         }
         $all .= $sep;
       }
+    }
+
+    //スキン
+    if (get_skin_url()) {
+      $all .= __( 'HTML縮小化：', THEME_NAME ).intval(is_html_minify_enable()).PHP_EOL;
+      $all .= $sep;
     }
 
     //高速化設定

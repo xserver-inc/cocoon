@@ -154,37 +154,7 @@ function to_adsense_format($format){
     case AD_FORMAT_DABBLE_RECTANGLE:
       $format = DATA_AD_FORMAT_RECTANGLE;
       break;
-    // case 'none':
-    //   $format = DATA_AD_FORMAT_RECTANGLE;
-    //   break;
   }
-
-  // switch ($format) {
-  //   case DATA_AD_FORMAT_AUTO:
-  //     $format = DATA_AD_FORMAT_AUTO;
-  //     break;
-  //   case DATA_AD_FORMAT_RECTANGLE:
-  //     $format = DATA_AD_FORMAT_RECTANGLE;
-  //     break;
-  //   case DATA_AD_FORMAT_HORIZONTAL:
-  //     $format = DATA_AD_FORMAT_HORIZONTAL;
-  //     break;
-  //   case DATA_AD_FORMAT_VERTICAL:
-  //     $format = DATA_AD_FORMAT_VERTICAL;
-  //     break;
-  //   case DATA_AD_FORMAT_AUTORELAXED:
-  //     $format = DATA_AD_FORMAT_AUTORELAXED;
-  //     break;
-  //   case DATA_AD_FORMAT_FLUID:
-  //     $format = DATA_AD_FORMAT_FLUID;
-  //     break;
-  //   case DATA_AD_FORMAT_LINK:
-  //     $format = DATA_AD_FORMAT_LINK;
-  //     break;
-  //   default:
-  //     $format = DATA_AD_FORMAT_RECTANGLE;
-  //     break;
-  // }
   return $format;
 }
 endif;
@@ -2247,5 +2217,12 @@ endif;
 if ( !function_exists( 'is_login_page' ) ):
 function is_login_page() {
   return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+}
+endif;
+
+//ホームURLを除いた文字列
+if ( !function_exists( 'get_remove_home_url' ) ):
+function get_remove_home_url($url){
+  return str_replace(home_url(), '', $url);
 }
 endif;
