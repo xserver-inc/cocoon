@@ -98,6 +98,11 @@
       }
     }
 
+    //Cocoon設定
+    $all .= __( 'Gutenberg：', THEME_NAME ).intval(is_gutenberg_editor_enable()).PHP_EOL;
+    $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_ogp_home_image_url()).PHP_EOL;
+    $all .= $sep;
+
     //高速化設定
     $all .= __( 'ブラウザキャッシュ有効化：', THEME_NAME ).intval(is_browser_cache_enable()).PHP_EOL;
     $all .= __( 'HTML縮小化：', THEME_NAME ).intval(is_html_minify_enable()).PHP_EOL;
