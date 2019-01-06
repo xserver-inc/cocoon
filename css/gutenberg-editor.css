@@ -57,6 +57,8 @@ div.mce-content-body {
   width: auto;
   padding-left: 14px;
   padding-right: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* wp-includes/css/dist/edit-post/style.css
@@ -338,6 +340,7 @@ ol, ul {
 .edit-post-layout__content .edit-post-visual-editor {
   flex-shrink: 0;
   flex-grow: 0;
+  padding: 0 10px;
 }
 
 .editor-styles-wrapper .editor-writing-flow {
