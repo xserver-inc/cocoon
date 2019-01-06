@@ -3397,6 +3397,48 @@ label.screen-reader-text {
 }
 
 /************************************
+** トグル表示ボタン
+************************************/
+.toggle-wrap {
+  margin: 1.2em 0;
+  position: relative;
+}
+.toggle-wrap > p {
+  display: none;
+}
+.toggle-wrap .toggle-button {
+  display: block;
+  cursor: pointer;
+  padding: 3px 10px;
+  background-color: #f3f4f5;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 4px;
+}
+.toggle-wrap .toggle-button:hover {
+  opacity: 0.7;
+}
+.toggle-wrap > input[type="checkbox"] {
+  display: none;
+}
+.toggle-wrap .toggle-content {
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 1em;
+  height: 0;
+  transition: all 0.5s ease;
+}
+.toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content {
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+  transition: all 0.5s ease;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-top-width: 0;
+}
+
+/************************************
 ** SNSフォローボタン
 ************************************/
 .sns-follow-buttons a {

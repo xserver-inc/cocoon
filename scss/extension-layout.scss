@@ -58,3 +58,51 @@
     width: 25%;
   }
 }
+
+/************************************
+** トグル表示ボタン
+************************************/
+.toggle-wrap {
+  margin: 1.2em 0;
+  position: relative;
+  >p{
+    display: none;
+  }
+  .toggle-button {
+    display: block;
+    cursor: pointer;
+    padding: 3px 10px;
+    background-color: $xx_thin;
+    border: 1px solid $basic_border_color;
+    text-align: center;
+    border-radius: $basic_border_radius;
+  }
+
+  .toggle-button:hover {
+    opacity: 0.7;
+  }
+
+  > input[type="checkbox"]{
+    display: none;
+  }
+
+  .toggle-content {
+    //display: none;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0 1em;
+    height: 0;
+    transition: $bgc_hover_anime;
+  }
+
+  > input[type="checkbox"]:checked ~ .toggle-content {
+    //display: block;
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    transition: $bgc_hover_anime;
+    padding: 1em;
+    border: 1px solid $basic_border_color;
+    border-top-width: 0;
+}
+}
