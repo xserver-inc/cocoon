@@ -3414,6 +3414,14 @@ label.screen-reader-text {
   border: 1px solid #ccc;
   text-align: center;
   border-radius: 4px;
+  position: relative;
+}
+.toggle-wrap .toggle-button::before {
+  content: '\f067';
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  color: #999;
 }
 .toggle-wrap .toggle-button:hover {
   opacity: 0.7;
@@ -3427,6 +3435,9 @@ label.screen-reader-text {
   padding: 0 1em;
   height: 0;
   transition: all 0.5s ease;
+}
+.toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before {
+  content: '\f068';
 }
 .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content {
   visibility: visible;

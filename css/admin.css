@@ -927,10 +927,12 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
-.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; }
+.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; }
+.admin-settings .demo .toggle-wrap .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-wrap .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"] { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
+.admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.5s ease; padding: 1em; border: 1px solid #ccc; border-top-width: 0; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
@@ -1964,10 +1966,12 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
-.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; }
+.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; }
+.admin-settings .demo .toggle-wrap .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-wrap .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"] { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
+.admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.5s ease; padding: 1em; border: 1px solid #ccc; border-top-width: 0; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }

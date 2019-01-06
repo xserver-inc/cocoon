@@ -76,6 +76,15 @@
     border: 1px solid $basic_border_color;
     text-align: center;
     border-radius: $basic_border_radius;
+    position: relative;
+
+    &::before{
+      content: '\f067';
+      font-family: FontAwesome;
+      margin-right: 0.4em;
+      font-size: 0.8em;
+      color: $x_pallid_text_color;
+    }
   }
 
   .toggle-button:hover {
@@ -93,6 +102,12 @@
     padding: 0 1em;
     height: 0;
     transition: $bgc_hover_anime;
+  }
+
+  > input[type="checkbox"]:checked ~ .toggle-button{
+    &::before{
+      content: '\f068';
+    }
   }
 
   > input[type="checkbox"]:checked ~ .toggle-content {
