@@ -927,7 +927,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
-.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; }
+.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-wrap .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"] { display: none; }
@@ -1966,7 +1966,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
-.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; }
+.admin-settings .demo .toggle-wrap .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-wrap .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"] { display: none; }

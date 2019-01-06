@@ -3415,6 +3415,7 @@ label.screen-reader-text {
   text-align: center;
   border-radius: 4px;
   position: relative;
+  margin: 0;
 }
 .toggle-wrap .toggle-button::before {
   content: '\f067';
