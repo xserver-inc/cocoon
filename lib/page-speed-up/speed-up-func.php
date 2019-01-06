@@ -42,7 +42,7 @@ function is_css_minify_enable(){
 }
 endif;
 
-//CSSS縮小化除外ファイルリスト
+//CSS縮小化除外ファイルリスト
 define('OP_CSS_MINIFY_EXCLUDE_LIST', 'css_minify_exclude_list');
 if ( !function_exists( 'get_css_minify_exclude_list' ) ):
 function get_css_minify_exclude_list(){

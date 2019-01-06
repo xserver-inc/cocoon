@@ -91,17 +91,26 @@
       }
     }
 
-      //plugin.phpを読み込む
-      include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-      $plugins = get_plugins();
-      if (!empty($plugins)) {
-        $all .= __('利用中のプラグイン：').PHP_EOL;
-        foreach ($plugins as $path => $plugin) {
-          if (is_plugin_active( $path )) {
-            $all .= $plugin['Name'];
-            $all .= ' '.$plugin['Version'].PHP_EOL;
-          }
+    //高速化設定
+    $all .= __( 'ブラウザキャッシュ有効化：', THEME_NAME ).intval(is_browser_cache_enable()).PHP_EOL;
+    $all .= __( 'HTML縮小化：', THEME_NAME ).intval(is_html_minify_enable()).PHP_EOL;
+    $all .= __( 'CSS縮小化：', THEME_NAME ).intval(is_css_minify_enable()).PHP_EOL;
+    $all .= __( 'JavaScript縮小化：', THEME_NAME ).intval(is_js_minify_enable()).PHP_EOL;
+    $all .= __( 'Lazy Load：', THEME_NAME ).intval(is_lazy_load_enable()).PHP_EOL;
+    $all .= __( 'WEBフォントLazy Load：', THEME_NAME ).intval(is_web_font_lazy_load_enable()).PHP_EOL;
+    $all .= $sep;
+
+    //plugin.phpを読み込む
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    $plugins = get_plugins();
+    if (!empty($plugins)) {
+      $all .= __('利用中のプラグイン：').PHP_EOL;
+      foreach ($plugins as $path => $plugin) {
+        if (is_plugin_active( $path )) {
+          $all .= $plugin['Name'];
+          $all .= ' '.$plugin['Version'].PHP_EOL;
         }
+      }
       $all .= $sep;
     }
 
