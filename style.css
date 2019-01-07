@@ -3449,6 +3449,50 @@ label.screen-reader-text {
   border: 1px solid #ccc;
   border-top-width: 0;
 }
+.toggle-wrap.tb-yellow .toggle-button {
+  border: 1px solid #fc9f4d;
+  background: #fc9f4d;
+  color: #fff;
+}
+.toggle-wrap.tb-yellow .toggle-button::before {
+  color: #ccc;
+}
+.toggle-wrap.tb-yellow > input[type="checkbox"]:checked ~ .toggle-content {
+  border-color: #fc9f4d;
+}
+.toggle-wrap.tb-red .toggle-button {
+  border: 1px solid #d05a6e;
+  background: #d05a6e;
+  color: #fff;
+}
+.toggle-wrap.tb-red .toggle-button::before {
+  color: #ccc;
+}
+.toggle-wrap.tb-red > input[type="checkbox"]:checked ~ .toggle-content {
+  border-color: #d05a6e;
+}
+.toggle-wrap.tb-blue .toggle-button {
+  border: 1px solid #2ea9df;
+  background: #2ea9df;
+  color: #fff;
+}
+.toggle-wrap.tb-blue .toggle-button::before {
+  color: #ccc;
+}
+.toggle-wrap.tb-blue > input[type="checkbox"]:checked ~ .toggle-content {
+  border-color: #2ea9df;
+}
+.toggle-wrap.tb-green .toggle-button {
+  border: 1px solid #3eb370;
+  background: #3eb370;
+  color: #fff;
+}
+.toggle-wrap.tb-green .toggle-button::before {
+  color: #ccc;
+}
+.toggle-wrap.tb-green > input[type="checkbox"]:checked ~ .toggle-content {
+  border-color: #3eb370;
+}
 
 /************************************
 ** SNSフォローボタン

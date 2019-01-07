@@ -934,6 +934,18 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.5s ease; padding: 1em; border: 1px solid #ccc; border-top-width: 0; }
+.admin-settings .demo .toggle-wrap.tb-yellow .toggle-button { border: 1px solid #fc9f4d; background: #fc9f4d; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-yellow .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-yellow > input[type="checkbox"]:checked ~ .toggle-content { border-color: #fc9f4d; }
+.admin-settings .demo .toggle-wrap.tb-red .toggle-button { border: 1px solid #d05a6e; background: #d05a6e; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-red .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-red > input[type="checkbox"]:checked ~ .toggle-content { border-color: #d05a6e; }
+.admin-settings .demo .toggle-wrap.tb-blue .toggle-button { border: 1px solid #2ea9df; background: #2ea9df; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-blue > input[type="checkbox"]:checked ~ .toggle-content { border-color: #2ea9df; }
+.admin-settings .demo .toggle-wrap.tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-green > input[type="checkbox"]:checked ~ .toggle-content { border-color: #3eb370; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
@@ -1973,6 +1985,18 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before { content: '\f068'; }
 .admin-settings .demo .toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.5s ease; padding: 1em; border: 1px solid #ccc; border-top-width: 0; }
+.admin-settings .demo .toggle-wrap.tb-yellow .toggle-button { border: 1px solid #fc9f4d; background: #fc9f4d; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-yellow .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-yellow > input[type="checkbox"]:checked ~ .toggle-content { border-color: #fc9f4d; }
+.admin-settings .demo .toggle-wrap.tb-red .toggle-button { border: 1px solid #d05a6e; background: #d05a6e; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-red .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-red > input[type="checkbox"]:checked ~ .toggle-content { border-color: #d05a6e; }
+.admin-settings .demo .toggle-wrap.tb-blue .toggle-button { border: 1px solid #2ea9df; background: #2ea9df; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-blue .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-blue > input[type="checkbox"]:checked ~ .toggle-content { border-color: #2ea9df; }
+.admin-settings .demo .toggle-wrap.tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
+.admin-settings .demo .toggle-wrap.tb-green .toggle-button::before { color: #ccc; }
+.admin-settings .demo .toggle-wrap.tb-green > input[type="checkbox"]:checked ~ .toggle-content { border-color: #3eb370; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
