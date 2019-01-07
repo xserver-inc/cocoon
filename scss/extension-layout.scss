@@ -107,6 +107,8 @@
   }
 
   > input[type="checkbox"]:checked ~ .toggle-button{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     &::before{
       content: '\f068';
     }
@@ -121,6 +123,8 @@
     padding: 1em;
     border: 1px solid $basic_border_color;
     border-top-width: 0;
+    border-bottom-left-radius: $basic_border_radius;
+    border-bottom-right-radius: $basic_border_radius;
   }
 
   @mixin toggle_color($color: $bb_yellow) {
