@@ -2614,10 +2614,10 @@ label.screen-reader-text {
   margin-bottom: 1em;
 }
 
-.block-box > p:first-child {
+.block-box p:first-child {
   margin-top: 0;
 }
-.block-box > p:last-child {
+.block-box p:last-child {
   margin-bottom: 0;
 }
 .block-box ol,

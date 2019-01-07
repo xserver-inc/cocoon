@@ -405,3 +405,7 @@ ol, ul {
 [aria-label="赤色アンダーラインマーカー"] {
   color: #ffb6b9;
 }
+
+.toggle-wrap .toggle-button div {
+  display: inline;
+}
