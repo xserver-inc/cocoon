@@ -868,23 +868,13 @@ function get_cleaned_css_selector($selector){
   $selector = str_replace(':after', '', $selector);
 
   ///////////////////////////////////////
-  // 疑似クラス
+  // 疑似クラスなどを取り除く
   ///////////////////////////////////////
-  // //:hoverを取り除く
-  // $selector = str_replace(':hover', '', $selector);
-  // //:first-childを取り除く
-  // $selector = str_replace(':first-child', '', $selector);
-  // //:last-childを取り除く
-  // $selector = str_replace(':last-child', '', $selector);
-  // //:first-of-typeを取り除く
-  // $selector = str_replace(':first-of-type', '', $selector);
-  // //:last-of-typeを取り除く
-  // $selector = str_replace(':last-of-type', '', $selector);
-
   $classes = array('input\[type="checkbox"\]',':nth-last-of-type\(.*?\)',':nth-last-child\(.*?\)',':nth-of-type\(.*?\)',':nth-child\(.*?\)',':active',':checked',':default',':disabled',':empty',':enabled',':first-child',':first-of-type',':fullscreen',':indeterminate',':in-range',':invalid',':last-child',':last-of-type',':only-child',':only-of-type',':optional',':out-of-range',':read-only',':read-write',':required',':right',':root',':scope',':target',':valid',':visited',':first',':any',':focus',':hover',':left',':link');
   foreach ($classes as $class) {
     $selector = preg_replace('/'.$class.'/', '', $selector);
   }
+
   //:を取り除く
   $selector = str_replace(':', '', $selector);
   //連続した半角スペースを1つに置換
