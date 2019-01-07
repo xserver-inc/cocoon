@@ -90,7 +90,7 @@ function replace_anchor_links($the_content) {
         $rels = get_noreferrer_rels( is_internal_link_noreferrer_enable(), $rels );
 
         if (!is_anchor_link_tag_blogcard($value)) {
-          //アイコフォントの表示
+          //アイコンフォントの表示
           $new_a = replace_link_icon_font_tag( is_internal_link_icon_visible(), get_internal_link_icon(), 'internal-icon anchor-icon', $new_a );
         }
 
@@ -111,7 +111,7 @@ function replace_anchor_links($the_content) {
         $rels = get_external_rels( is_external_link_external_enable(), $rels );
 
         if (!is_anchor_link_tag_blogcard($value)) {
-          //アイコフォントの表示
+          //アイコンフォントの表示
           $new_a = replace_link_icon_font_tag( is_external_link_icon_visible(), get_external_link_icon(), 'external-icon anchor-icon', $new_a );
         }
       }//内部リンクか外部リンクか条件分岐の終わり
@@ -231,7 +231,7 @@ endif;
 //リンクアイコンフォントの置換
 if ( !function_exists( 'replace_link_icon_font_tag' ) ):
 function replace_link_icon_font_tag( $icon_font_visible, $icon_font, $class, $the_a_tag ) {
-  //アイコフォントの表示
+  //アイコンフォントの表示
   if ($icon_font_visible) {
     $the_a_tag = str_replace('</a>', '<span class="fa '.$icon_font.' '.$class.'"></span></a>', $the_a_tag);
   }

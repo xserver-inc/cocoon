@@ -144,7 +144,7 @@
         <td>
           <?php
           generate_checkbox_tag(OP_WEB_FONT_LAZY_LOAD_ENABLE , is_web_font_lazy_load_enable(), __( 'アイコンフォントの非同期読み込みを有効にする', THEME_NAME ));
-          generate_tips_tag(__( 'サイズが大きくなりがちなアイコフォントを非同期読み込みしてページ表示を高速化します。ただし、JavaScriptによりアイコフォントが正常に読み込まれるまでは、多少タイムラグがあります。', THEME_NAME ));
+          generate_tips_tag(__( 'サイズが大きくなりがちなアイコンフォントを非同期読み込みしてページ表示を高速化します。ただし、JavaScriptによりアイコンフォントが正常に読み込まれるまでは、多少タイムラグがあります。', THEME_NAME ));
 
           ?>
         </td>
