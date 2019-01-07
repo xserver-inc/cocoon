@@ -369,7 +369,7 @@ function generate_the_site_logo_tag($is_header = true){
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.get_home_url().'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img src="'.$logo_url.'" alt="'.get_bloginfo('name').'"'.$width_attr.$height_attr.'>';
+    $site_logo_tag = '<img class="site-logo-image" src="'.$logo_url.'" alt="'.get_bloginfo('name').'"'.$width_attr.$height_attr.'>';
   } else {
     $site_logo_tag = get_bloginfo('name');
   }
