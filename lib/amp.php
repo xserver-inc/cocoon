@@ -857,6 +857,8 @@ function get_cleaned_css_selector($selector){
   $selector = str_replace('#', ' ', $selector);
   //>をスペースに変換
   $selector = str_replace('>', ' ', $selector);
+  //~をスペースに変換
+  $selector = str_replace('~', ' ', $selector);
   ///////////////////////////////////////
   // 擬似要素
   ///////////////////////////////////////
@@ -879,7 +881,7 @@ function get_cleaned_css_selector($selector){
   // //:last-of-typeを取り除く
   // $selector = str_replace(':last-of-type', '', $selector);
 
-  $classes = array(':nth-last-of-type\(.*?\)',':nth-last-child\(.*?\)',':nth-of-type\(.*?\)',':nth-child\(.*?\)',':active',':checked',':default',':disabled',':empty',':enabled',':first-child',':first-of-type',':fullscreen',':indeterminate',':in-range',':invalid',':last-child',':last-of-type',':only-child',':only-of-type',':optional',':out-of-range',':read-only',':read-write',':required',':right',':root',':scope',':target',':valid',':visited',':first',':any',':focus',':hover',':left',':link');
+  $classes = array('input\[type="checkbox"\]',':nth-last-of-type\(.*?\)',':nth-last-child\(.*?\)',':nth-of-type\(.*?\)',':nth-child\(.*?\)',':active',':checked',':default',':disabled',':empty',':enabled',':first-child',':first-of-type',':fullscreen',':indeterminate',':in-range',':invalid',':last-child',':last-of-type',':only-child',':only-of-type',':optional',':out-of-range',':read-only',':read-write',':required',':right',':root',':scope',':target',':valid',':visited',':first',':any',':focus',':hover',':left',':link');
   foreach ($classes as $class) {
     $selector = preg_replace('/'.$class.'/', '', $selector);
   }
