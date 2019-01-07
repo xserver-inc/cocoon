@@ -12,7 +12,7 @@
 <title><?php echo wp_get_document_title(); ?></title>
 <?php //サイトアイコンの呼び出し
 if ($icon = get_site_favicon_url()): ?>
-<link rel="shortcut icon" href="<?php echo $icon; ?>" >
+<link rel="icon" href="<?php echo $icon; ?>" >
 <?php endif ?>
 <?php //canonicalタグの出力
 generate_canonical_tag() ?>
