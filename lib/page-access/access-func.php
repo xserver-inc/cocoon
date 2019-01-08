@@ -231,7 +231,7 @@ function get_accesse_record_from($post_id, $date, $post_type = 'post'){
   $index = INDEX_ACCESSES_PID_PTYPE_DATE;
   $args = array($post_id, $date, $post_type);
 
-  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND post_type = '$post_type'", $args);
+  $query = $wpdb->prepare("SELECT * FROM {$table_name} USE INDEX({$index}) WHERE post_id = %d AND date = %s AND post_type = %s", $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);
