@@ -289,11 +289,9 @@ function get_several_access_count($post_id = null, $days = 'all'){
     if (!$post_id) {
       $post_id = $post->ID;
     }
-    // $date = current_time('Y-m-d');
-    // $date_before = date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
+
     $date = get_current_db_date();
-    // date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
-    // _v(date('c'));
+
     $date_before = get_current_db_date_before($days);
     $table_name = ACCESSES_TABLE_NAME;
     $post_type = get_accesses_post_type();
