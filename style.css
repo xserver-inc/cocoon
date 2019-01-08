@@ -3406,7 +3406,8 @@ label.screen-reader-text {
 .toggle-wrap > p {
   display: none;
 }
-.toggle-wrap .toggle-button {
+
+.toggle-button {
   display: block;
   cursor: pointer;
   padding: 3px 10px;
@@ -3417,34 +3418,39 @@ label.screen-reader-text {
   position: relative;
   margin: 0;
 }
-.toggle-wrap .toggle-button::before {
+.toggle-button::before {
   content: '\f067';
   font-family: FontAwesome;
   margin-right: 0.4em;
   font-size: 0.8em;
   color: #999;
 }
-.toggle-wrap .toggle-button:hover {
+
+.toggle-button:hover {
   opacity: 0.7;
 }
-.toggle-wrap > input[type="checkbox"] {
+
+.toggle-checkbox {
   display: none;
 }
-.toggle-wrap .toggle-content {
+
+.toggle-content {
   visibility: hidden;
   opacity: 0;
   padding: 0 1em;
   height: 0;
   transition: all 0.5s ease;
 }
-.toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button {
+
+.toggle-checkbox:checked ~ .toggle-button {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.toggle-wrap > input[type="checkbox"]:checked ~ .toggle-button::before {
+.toggle-checkbox:checked ~ .toggle-button::before {
   content: '\f068';
 }
-.toggle-wrap > input[type="checkbox"]:checked ~ .toggle-content {
+
+.toggle-checkbox:checked ~ .toggle-content {
   visibility: visible;
   opacity: 1;
   height: 100%;
@@ -3455,48 +3461,52 @@ label.screen-reader-text {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.toggle-wrap.tb-yellow .toggle-button {
+
+.tb-yellow .toggle-button {
   border: 1px solid #fc9f4d;
   background: #fc9f4d;
   color: #fff;
 }
-.toggle-wrap.tb-yellow .toggle-button::before {
+.tb-yellow .toggle-button::before {
   color: #ccc;
 }
-.toggle-wrap.tb-yellow > input[type="checkbox"]:checked ~ .toggle-content {
+.tb-yellow .toggle-checkbox:checked ~ .toggle-content {
   border-color: #fc9f4d;
 }
-.toggle-wrap.tb-red .toggle-button {
+
+.tb-red .toggle-button {
   border: 1px solid #d05a6e;
   background: #d05a6e;
   color: #fff;
 }
-.toggle-wrap.tb-red .toggle-button::before {
+.tb-red .toggle-button::before {
   color: #ccc;
 }
-.toggle-wrap.tb-red > input[type="checkbox"]:checked ~ .toggle-content {
+.tb-red .toggle-checkbox:checked ~ .toggle-content {
   border-color: #d05a6e;
 }
-.toggle-wrap.tb-blue .toggle-button {
+
+.tb-blue .toggle-button {
   border: 1px solid #2ea9df;
   background: #2ea9df;
   color: #fff;
 }
-.toggle-wrap.tb-blue .toggle-button::before {
+.tb-blue .toggle-button::before {
   color: #ccc;
 }
-.toggle-wrap.tb-blue > input[type="checkbox"]:checked ~ .toggle-content {
+.tb-blue .toggle-checkbox:checked ~ .toggle-content {
   border-color: #2ea9df;
 }
-.toggle-wrap.tb-green .toggle-button {
+
+.tb-green .toggle-button {
   border: 1px solid #3eb370;
   background: #3eb370;
   color: #fff;
 }
-.toggle-wrap.tb-green .toggle-button::before {
+.tb-green .toggle-button::before {
   color: #ccc;
 }
-.toggle-wrap.tb-green > input[type="checkbox"]:checked ~ .toggle-content {
+.tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
 }
 

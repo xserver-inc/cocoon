@@ -68,81 +68,81 @@
   >p{
     display: none;
   }
-
-  .toggle-button {
-    display: block;
-    cursor: pointer;
-    padding: 3px 10px;
-    background-color: $xx_thin;
-    border: 1px solid $basic_border_color;
-    text-align: center;
-    border-radius: $basic_border_radius;
-    position: relative;
-    margin: 0;
-
-    &::before{
-      content: '\f067';
-      font-family: FontAwesome;
-      margin-right: 0.4em;
-      font-size: 0.8em;
-      color: $x_pallid_text_color;
-    }
-  }
-
-  .toggle-button:hover {
-    opacity: 0.7;
-  }
-
-  > input[type="checkbox"]{
-    display: none;
-  }
-
-  .toggle-content {
-    //display: none;
-    visibility: hidden;
-    opacity: 0;
-    padding: 0 1em;
-    height: 0;
-    transition: $bgc_hover_anime;
-  }
-
-  > input[type="checkbox"]:checked ~ .toggle-button{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    &::before{
-      content: '\f068';
-    }
-  }
-
-  > input[type="checkbox"]:checked ~ .toggle-content {
-    //display: block;
-    visibility: visible;
-    opacity: 1;
-    height: 100%;
-    transition: $bgc_hover_anime;
-    padding: 1em;
-    border: 1px solid $basic_border_color;
-    border-top-width: 0;
-    border-bottom-left-radius: $basic_border_radius;
-    border-bottom-right-radius: $basic_border_radius;
-  }
-
-  @mixin toggle_color($color: $bb_yellow) {
-    .toggle-button{
-      border: 1px solid $color;
-      background: $color;
-      color: $white;
-      &::before{
-        color: $thin;
-      }
-    }
-    >input[type="checkbox"]:checked ~ .toggle-content{
-      border-color: $color;
-    }
-  }
-
-  &.tb-yellow{@include toggle_color($bb_yellow);}
-  &.tb-red{@include toggle_color($bb_red);}
-  &.tb-blue{@include toggle_color($bb_blue);}
-  &.tb-green{@include toggle_color($bb_green);}
 }
+
+.toggle-button {
+  display: block;
+  cursor: pointer;
+  padding: 3px 10px;
+  background-color: $xx_thin;
+  border: 1px solid $basic_border_color;
+  text-align: center;
+  border-radius: $basic_border_radius;
+  position: relative;
+  margin: 0;
+
+  &::before{
+    content: '\f067';
+    font-family: FontAwesome;
+    margin-right: 0.4em;
+    font-size: 0.8em;
+    color: $x_pallid_text_color;
+  }
+}
+
+.toggle-button:hover {
+  opacity: 0.7;
+}
+
+.toggle-checkbox{
+  display: none;
+}
+
+.toggle-content {
+  //display: none;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 1em;
+  height: 0;
+  transition: $bgc_hover_anime;
+}
+
+.toggle-checkbox:checked ~ .toggle-button{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  &::before{
+    content: '\f068';
+  }
+}
+
+.toggle-checkbox:checked ~ .toggle-content {
+  //display: block;
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+  transition: $bgc_hover_anime;
+  padding: 1em;
+  border: 1px solid $basic_border_color;
+  border-top-width: 0;
+  border-bottom-left-radius: $basic_border_radius;
+  border-bottom-right-radius: $basic_border_radius;
+}
+
+@mixin toggle_color($color: $bb_yellow) {
+  .toggle-button{
+    border: 1px solid $color;
+    background: $color;
+    color: $white;
+    &::before{
+      color: $thin;
+    }
+  }
+  .toggle-checkbox:checked ~ .toggle-content{
+    border-color: $color;
+  }
+}
+
+.tb-yellow{@include toggle_color($bb_yellow);}
+.tb-red{@include toggle_color($bb_red);}
+.tb-blue{@include toggle_color($bb_blue);}
+.tb-green{@include toggle_color($bb_green);}
