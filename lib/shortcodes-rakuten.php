@@ -148,8 +148,7 @@ function rakuten_product_link_shortcode($atts){
     $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
-      date_default_timezone_set(__( 'Asia/Tokyo', THEME_NAME ));
-      $acquired_date = date(__( 'Y/m/d H:i', THEME_NAME ));
+      $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
 
       //キャッシュの保存
       if (!$json_cache) {
