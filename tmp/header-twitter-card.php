@@ -63,7 +63,7 @@ if (is_singular()){//単一記事ページの場合
 ?>
 <meta name="twitter:domain" content="<?php echo get_the_site_domain() ?>">
 <?php if ( get_the_author_twitter_url() )://TwitterIDが設定されている場合 ?>
-<meta name="twitter:creator" content="@<?php echo esc_html( get_the_author_twitter_url() ) ?>">
-<meta name="twitter:site" content="@<?php echo esc_html( get_the_author_twitter_url() ) ?>">
+<meta name="twitter:creator" content="@<?php echo esc_html( get_the_author_twitter_id() ) ?>">
+<meta name="twitter:site" content="@<?php echo esc_html( get_the_author_twitter_id() ) ?>">
 <?php endif; ?>
 <!-- /Twitter Card -->
