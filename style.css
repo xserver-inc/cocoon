@@ -6638,6 +6638,24 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: list-item;
 }
 
+/* 検索フォーム風スタイルのボタンを装飾 */
+.search-form div.sbtn {
+  transition: 0.3s;
+  /* 変化をなめらかにする */
+}
+
+/* ボタンにカーソルを合わせた時のスタイル */
+.search-form div.sbtn:hover {
+  color: #333;
+  /* 文字色 */
+  background: #fff;
+  /* 背景色 */
+  border-color: #333;
+  /* ボーダーの色 */
+  cursor: pointer;
+  /* カーソルをポインターに */
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

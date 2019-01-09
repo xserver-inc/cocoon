@@ -69,6 +69,12 @@
 
   //カレーセルの表示
   $('.carousel').fadeIn(1000);
+
+  //Google検索ボタン
+  $('.sbtn').click(function(){
+		var w = $(this).prev('.sform').text();
+		if(w) window.open('https://www.google.co.jp/search?q='+encodeURIComponent(w),'_blank');
+	});
 })(jQuery);
 
 /*
