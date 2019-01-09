@@ -308,6 +308,7 @@ if ( !function_exists( 'get_speech_balloon' ) ):
 function get_speech_balloon( $id ) {
   $table_name = SPEECH_BALLOONS_TABLE_NAME;
   $record = get_db_table_record( $table_name, $id );
+  if (empty($record)) return false;
   $record->title = !empty($record->title) ? $record->title : '';
   $record->name = !empty($record->name) ? $record->name : null;
   $record->icon = !empty($record->icon) ? $record->icon : SB_DEFAULT_MAN_ICON;
