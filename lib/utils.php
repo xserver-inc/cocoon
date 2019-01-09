@@ -2226,3 +2226,11 @@ function get_remove_home_url($url){
   return str_replace(home_url(), '', $url);
 }
 endif;
+
+//WordPressで設定されているタイムゾーンを取得する
+if ( !function_exists( 'get_wordpress_timezone' ) ):
+function get_wordpress_timezone(){
+  return get_option('timezone_string');
+
+}
+endif;
