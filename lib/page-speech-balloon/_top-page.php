@@ -8,7 +8,7 @@
 
 if (isset($_POST['action']) && $_POST['action'] == 'delete') {
   if( isset($_POST[HIDDEN_DELETE_FIELD_NAME]) &&
-    $_POST[HIDDEN_DELETE_FIELD_NAME] == 'Y' ){
+      wp_verify_nonce($_POST[HIDDEN_DELETE_FIELD_NAME], 'delete-speech-balloon') ){
 
     ///////////////////////////////////////
     // 内容の削除
@@ -17,7 +17,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'delete') {
   }
 } else {
   if( isset($_POST[HIDDEN_FIELD_NAME]) &&
-    $_POST[HIDDEN_FIELD_NAME] == 'Y' ){
+      wp_verify_nonce($_POST[HIDDEN_FIELD_NAME], 'speech-balloon') ){
 
     ///////////////////////////////////////
     // 内容の保存
