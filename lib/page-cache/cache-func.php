@@ -90,6 +90,7 @@ function delete_all_theme_caches(){
   $result |= delete_popular_entries_caches();
   $result |= delete_blogcard_caches();
   $result |= delete_amazon_api_caches();
+  $result |= delete_rakuten_api_caches();
   $result |= delete_amp_caches();
   return $result;
 }
