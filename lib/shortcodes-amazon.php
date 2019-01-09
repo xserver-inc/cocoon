@@ -395,9 +395,12 @@ function amazon_product_link_shortcode($atts){
       //XMLのOperationRequesから時間情報を取得
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
       if ($unix_date) {
-        $t = new DateTime($unix_date);
-        $t->setTimeZone(new DateTimeZone(get_wordpress_timezone()));
-        $acquired_date = $t->format(__( 'Y/m/d H:i', THEME_NAME ));
+        $timestamp = strtotime(get_date_from_gmt($unix_date));
+        $acquired_date = date_i18n( 'Y/m/d H:i', $timestamp );
+
+        // $t = new DateTime($unix_date);
+        // $t->setTimeZone(new DateTimeZone(get_wordpress_timezone()));
+        // $acquired_date = $t->format(__( 'Y/m/d H:i', THEME_NAME ));
         // _v($unix_date);
         // _v($t);
         // _v($acquired_date);
