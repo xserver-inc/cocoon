@@ -9,7 +9,6 @@
 //外部のphpからWordpress のAPIを扱う
 require_once('../../../../../wp-load.php');
 require_once('../_defins.php');
-if ( !defined( 'ABSPATH' ) ) exit;
 //管理者権限を持っているログインユーザーかどうか
 if (is_user_administrator()) {
   global $wpdb;
