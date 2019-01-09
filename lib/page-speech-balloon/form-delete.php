@@ -11,15 +11,12 @@ $list_url = SB_LIST_URL;
  ?>
 <form name="form1" method="post" action="<?php echo $list_url; ?>" class="admin-settings">
   <?php
-  $id = isset($_GET['id']) ? $_GET['id'] : null;
+  $id = isset($_GET['id']) ? intval($_GET['id']) : null;
 
-  if ($id) {
-    $record = get_speech_balloon($id);
-    if (!$record) {
-      //指定IDの関数テキストが存在しない場合は一覧にリダイレクト
-      redirect_to_url($list_url);
-    }
-
+  $record = get_speech_balloon($id);
+  if (!$record) {
+	  //指定IDの関数テキストが存在しない場合は一覧にリダイレクト
+	  redirect_to_url($list_url);
   }
   ?>
   <p><?php _e( '以下の内容を削除しますか？', THEME_NAME ) ?></p>
