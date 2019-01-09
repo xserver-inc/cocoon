@@ -237,6 +237,7 @@ blockquote::after {
 .sp-primary,
 .primary {
   background-color: #595857;
+  color: #fff;
 }
 .success-box,
 .sp-success,
