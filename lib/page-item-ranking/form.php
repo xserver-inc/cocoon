@@ -230,7 +230,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
   <input type="hidden" name="count" value="<?php echo $count; ?>">
   <input type="hidden" name="action" value="<?php echo $action; ?>">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
-  <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+  <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('item-ranking');?>">
 
   </div>
 </div>
