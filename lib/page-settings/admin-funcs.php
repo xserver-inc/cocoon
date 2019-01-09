@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //アドミンバーに独自管理メニューを表示
 define('OP_ADMIN_TOOL_MENU_VISIBLE', 'admin_tool_menu_visible');

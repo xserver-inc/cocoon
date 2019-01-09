@@ -6,6 +6,7 @@
  * Based on `https://github.com/mecha-cms/mecha-cms/blob/master/engine/plug/converter.php`
  * ----------------------------------------------------------------------------------------
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 
 // Helper function(s) ...

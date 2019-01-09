@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //本文下フォローボタンの表示
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE);

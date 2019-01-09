@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_post_navi_visible()): ?>
 <div id="pager-post-navi" class="pager-post-navi<?php echo get_additional_post_navi_classes(); ?> cf">

@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //_v(isset($_POST['title'], $_POST['text'], $_POST['action']));
 if (!empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['action'])) {

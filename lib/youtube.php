@@ -9,6 +9,7 @@
  * Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //Jetpackとの競合対応
 remove_action( 'init', 'wpcom_youtube_embed_crazy_url_init' );

@@ -5,6 +5,8 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
+
 //フォーマットはリンクユニットの場合
 if ($format == DATA_AD_FORMAT_LINK && !$ad_code) {
   $ad_code = get_ad_link_unit_code();

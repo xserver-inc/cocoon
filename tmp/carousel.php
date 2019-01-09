@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
 <?php //カルーセルに関連付けられた投稿の取得

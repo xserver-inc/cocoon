@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //バックアップが保存されているオプションテーブルの項目名を取得する
 if ( !function_exists( 'get_theme_mods_option_name' ) ):

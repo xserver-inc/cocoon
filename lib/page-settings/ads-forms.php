@@ -3,7 +3,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <!-- 広告設定 -->
 <div id="ads" class="postbox">
   <h2 class="hndle"><?php _e( '広告設定', THEME_NAME ) ?></h2>

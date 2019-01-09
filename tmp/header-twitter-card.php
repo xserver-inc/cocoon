@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="<?php echo get_twitter_card_type();//Twitterのカードタイプを取得 ?>">
 <?php

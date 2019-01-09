@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーマを変更時にテーマのリソースキャッシュを削除
 //add_action('switch_theme', 'delete_theme_resource_caches');

@@ -1,4 +1,11 @@
 <?php //外部ツールを利用するもの
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //商品リンク追加ボタンの作成
 //add_filter( "media_buttons_context", "wp_product_button_context");

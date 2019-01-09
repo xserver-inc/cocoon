@@ -5,6 +5,8 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
+
 //フッターカラー
 define('OP_FOOTER_BACKGROUND_COLOR', 'footer_background_color');
 if ( !function_exists( 'get_footer_background_color' ) ):

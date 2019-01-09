@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //外部ブログカードが有効
 define('OP_EXTERNAL_BLOGCARD_ENABLE', 'external_blogcard_enable');

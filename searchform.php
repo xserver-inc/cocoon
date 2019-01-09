@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 if (!is_amp() || !is_ssl()): ?>
 <form class="search-box input-box" method="get" action="<?php echo home_url('/'); ?>">

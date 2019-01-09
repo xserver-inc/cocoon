@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <div class="footer-bottom<?php echo get_additional_footer_bottom_classes(); ?> cf">
   <div class="footer-bottom-logo">
     <?php generate_the_site_logo_tag(false); ?>

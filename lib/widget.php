@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //タグクラウドのカスタマイズ
 add_filter( 'widget_tag_cloud_args', 'widget_tag_cloud_args_custom' );

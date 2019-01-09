@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //Wordpress管理画面にオリジナルメニューを追加する
 add_action('admin_menu', 'add_original_menu_in_admin_page');

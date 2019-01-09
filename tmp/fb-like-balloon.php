@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <div class="fb-like-balloon">
   <div class="fb-like-balloon-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>

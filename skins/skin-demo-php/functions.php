@@ -1,6 +1,8 @@
 <?php
 //$_THEME_OPTIONSグローバル変数に値を追加することで設定値の制御が可能
 //スキンから親テーマの定義済み関数をオーバーライドして設定の書き換えが可能
+if ( !defined( 'ABSPATH' ) ) exit;
+
 global $_THEME_OPTIONS;
 $_THEME_OPTIONS =
 array(

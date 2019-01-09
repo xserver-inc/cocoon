@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //Wordpress4.1からのタイトル自動作成
 //https://www.nxworld.net/wordpress/wp-custom-title-tag.html

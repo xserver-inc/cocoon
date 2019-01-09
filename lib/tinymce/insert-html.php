@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 // ビジュアルエディタにHTMLを直挿入するためのボタンを追加
 add_filter( 'mce_buttons_2', 'add_insert_html_button' );

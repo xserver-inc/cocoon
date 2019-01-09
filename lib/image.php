@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //Lightboxのようなギャラリー系のjQueryプラグインが動作しているか
 if ( !function_exists( 'is_lightbox_plugin_exist' ) ):

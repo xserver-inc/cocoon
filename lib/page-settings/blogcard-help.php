@@ -1,3 +1,12 @@
+<?php
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+if ( !defined( 'ABSPATH' ) ) exit;
+?>
 <!-- ブログカード関連ヘルプ -->
 <div id="single-page" class="postbox">
   <h2 class="hndle"><?php _e( 'ブログカード関連ヘルプ', THEME_NAME ) ?></h2>

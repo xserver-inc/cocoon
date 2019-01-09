@@ -1,4 +1,11 @@
 <?php //Amazon商品リンク
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //Amazon APIから情報の取得
 if ( !function_exists( 'get_amazon_itemlookup_xml' ) ):

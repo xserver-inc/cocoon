@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <a href="<?php the_permalink(); ?>" class="entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
   <article id="post-<?php the_ID(); ?>" <?php post_class( array('post-'.get_the_ID(), 'entry-card','e-card', 'cf') ); ?>>
     <figure class="entry-card-thumb card-thumb e-card-thumb">

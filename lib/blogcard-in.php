@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //ブログカードのサムネイルタグの取得
 if ( !function_exists( 'get_blogcard_thumbnail_image_tag' ) ):

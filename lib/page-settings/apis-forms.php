@@ -4,6 +4,8 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
+
 $help_text = __( '取得方法', THEME_NAME );
 ?>
 <div class="metabox-holder">

@@ -4,7 +4,8 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
 <nav id="navi-footer" class="navi-footer">
   <div id="navi-footer-in" class="navi-footer-in">
     <?php wp_nav_menu(

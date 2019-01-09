@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <?php //パンくずリストを表示するとき
 if (is_page_breadcrumbs_visible()): ?>
 <?php if ( !is_front_page() ): //個別ページでパンくずリストを表示する場合?>

@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 //アイキャッチがない場合は非表示クラスを追加
 $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' display-none'; ?>
 <div class="eye-catch-wrap<?php echo $display_none; ?>">

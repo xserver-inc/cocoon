@@ -4,7 +4,9 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
 <div class="cta-box <?php echo $_LAYOUT; ?>">
   <?php if ($_HEADING): ?>
     <div class="cta-heading">

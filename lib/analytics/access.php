@@ -7,6 +7,7 @@
  */
 
 require_once('../../../../../wp-load.php');
+if ( !defined( 'ABSPATH' ) ) exit;
 //_v($_GET);
 $post_id = !empty($_GET['post_id']) ? $_GET['post_id'] : null;
 $post_type = !empty($_GET['post_type']) ? $_GET['post_type'] : null;

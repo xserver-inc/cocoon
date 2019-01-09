@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 // wp-admin以下の全てのページが表示されたらDBのアップデートチェックをする
 add_action('admin_head', 'update_db_tables');

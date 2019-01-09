@@ -8,6 +8,7 @@
  * Cocoon WordPress Theme incorporates code from "Auto Post Thumbnail" WordPress Plugin, Copyright 2009  Aditya Mooley
 "Auto Post Thumbnail" WordPress Plugin is distributed under the terms of the GNU GPL v2
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 /*  Copyright 2009  Aditya Mooley  (email : adityamooley@sanisoft.com)
 

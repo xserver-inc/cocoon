@@ -1,6 +1,7 @@
 <?php
 
 // Based on <https://github.com/mecha-cms/extend.minify>
+if ( !defined( 'ABSPATH' ) ) exit;
 
 define('MINIFY_STRING', '"(?:[^"\\\]|\\\.)*"|\'(?:[^\'\\\]|\\\.)*\'|`(?:[^`\\\]|\\\.)*`');
 define('MINIFY_COMMENT_CSS', '/\*[\s\S]*?\*/');

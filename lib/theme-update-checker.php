@@ -7,6 +7,7 @@
  * Licensed under the GNU GPL license.
  * http://www.gnu.org/licenses/gpl.html
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 if ( !class_exists('ThemeUpdateChecker') ):
 

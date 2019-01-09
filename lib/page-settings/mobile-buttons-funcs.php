@@ -5,6 +5,7 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+if ( !defined( 'ABSPATH' ) ) exit;
 
 //モバイルボタンレイアウト
 define('OP_MOBILE_BUTTON_LAYOUT_TYPE', 'mobile_button_layout_type');

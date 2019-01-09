@@ -5,6 +5,8 @@
  *
  * @link http://tools.ietf.org/html/rfc3492
  */
+if ( !defined( 'ABSPATH' ) ) exit;
+
 class Punycode
 {
 

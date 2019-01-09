@@ -4,7 +4,8 @@
  * @author: yhira
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
- */ ?>
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php if ( is_sns_share_buttons_visible($option) ):
 //var_dump($option) ?>
 <div class="sns-share<?php echo get_additional_sns_share_button_classes($option); ?>">
