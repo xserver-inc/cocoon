@@ -41,7 +41,7 @@
                 <?php _e( 'このファイルをアップロード: ', THEME_NAME ) ?>
                 <input name="settings" type="file" /><br>
                 <input type="submit" class="button" value="<?php _e( '設定の復元', THEME_NAME ) ?>" />
-                <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+                <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('backup');?>">
                 <?php
                 generate_tips_tag(__( '参照ボタンでテーマ設定ファイルを選択し、「設定の復元」ボタンを押してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/how-to-theme-settings-restore/'));
                  ?>
