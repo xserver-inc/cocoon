@@ -91,3 +91,14 @@ https://ja.wordpress.org/plugins/auto-post-thumbnail/
 
 Youtube SpeedLoad
 https://ja.wordpress.org/plugins/youtube-speedload/
+
+ご協力（スペシャル サンクス）
+------
+technote-space
+https://github.com/technote-space
+
+31o3
+https://github.com/31o3
+
+Daisuke Sato
+https://github.com/Tiryoh
