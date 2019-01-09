@@ -9,7 +9,7 @@
 
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
-if( isset($_GET['cache']) ){
+if( isset($_GET['cache']) && isset($_GET[HIDDEN_DELETE_FIELD_NAME]) && wp_verify_nonce($_GET[HIDDEN_DELETE_FIELD_NAME], 'delete-cache') ){
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
