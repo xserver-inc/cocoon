@@ -9,7 +9,7 @@
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
-          $_POST[HIDDEN_FIELD_NAME] == 'Y' ){
+    wp_verify_nonce($_POST[HIDDEN_FIELD_NAME], 'speed-up') ){
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
@@ -45,7 +45,7 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
       <?php require_once abspath(__FILE__).'speed-up-forms.php'; ?>
     </div><!-- /.metabox-holder -->
 
-    <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+    <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('speed-up');?>">
 
     <?php submit_button(__( '変更を保存', THEME_NAME )); ?>
 
