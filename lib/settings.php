@@ -403,7 +403,7 @@ function add_file_ver_to_css_js( $src ) {
     $stylesheet_file = url_to_local( $removed_src );
     if (file_exists($stylesheet_file)) {
       //ファイルの編集時間バージョンを追加
-      $src = add_query_arg( 'fver', date('Ymdhis', filemtime($stylesheet_file)), $src );
+      $src = add_query_arg( 'fver', date_i18n('Ymdhis', filemtime($stylesheet_file)), $src );
     }
 
   }

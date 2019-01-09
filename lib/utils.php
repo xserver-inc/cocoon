@@ -1490,14 +1490,14 @@ endif;
 //アクセステーブル用の現在の日時文字列
 if ( !function_exists( 'get_current_db_date' ) ):
 function get_current_db_date(){
-  return date('Y-m-d');
+  return date_i18n('Y-m-d');
 }
 endif;
 
 //アクセステーブル用の現在の日時文字列（$days日前）
 if ( !function_exists( 'get_current_db_date_before' ) ):
 function get_current_db_date_before($days){
-  return date('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
+  return date_i18n('Y-m-d', strtotime(current_time('Y-m-d').' -'.$days.' day'));
 }
 endif;
 

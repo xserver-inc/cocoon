@@ -166,9 +166,6 @@ function update_accesses_table() {
 
 }
 endif;
-//update_accesses_table();
-//_v( date('Y-m-d', strtotime(date('Y-m-d').' -99 day')) );
-//_v(date('Y-m-d'));
 
 //DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
@@ -405,10 +402,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
 
   global $wpdb;
   $access_table = ACCESSES_TABLE_NAME;
-  // $post_type = get_accesses_post_type();
-  // if (!is_page()) {
-  //   $post_type = 'post';
-  // }
   $post_type = 'post';
   $date = get_current_db_date();
 
