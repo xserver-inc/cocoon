@@ -35,5 +35,5 @@ $list_url = IR_LIST_URL;
 
   <input type="hidden" name="action" value="delete">
   <input type="hidden" name="id" value="<?php echo $id; ?>">
-  <input type="hidden" name="<?php echo HIDDEN_DELETE_FIELD_NAME; ?>" value="Y">
+  <input type="hidden" name="<?php echo HIDDEN_DELETE_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('delete-item-ranking');?>">
 </form>
