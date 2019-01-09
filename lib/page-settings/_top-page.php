@@ -9,7 +9,7 @@
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 $is_post_ok = isset($_POST[HIDDEN_FIELD_NAME]) &&
-              $_POST[HIDDEN_FIELD_NAME] == 'Y';
+              wp_verify_nonce($_POST[HIDDEN_FIELD_NAME], 'settings');
 if( $is_post_ok ):
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
@@ -385,7 +385,7 @@ endif;
   </div><!-- /.metabox-holder -->
 
 </div><!-- /#tabs -->
-<input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="Y">
+<input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('settings');?>">
 <input type="hidden" id="<?php echo SELECT_INDEX_NAME; ?>" name="<?php echo SELECT_INDEX_NAME; ?>" value="<?php echo ($_POST && $_POST[SELECT_INDEX_NAME] ? $_POST[SELECT_INDEX_NAME] : 0); ?>">
 
 <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
