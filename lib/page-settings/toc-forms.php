@@ -42,7 +42,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_TOC_VISIBLE , is_toc_visible(), __( '目次を表示する', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページの内容から目次を自動付加します。', THEME_NAME ));
+            generate_tips_tag(__( '投稿・固定ページの内容から目次を自動付加します。※[toc]ショートコードで目次を表示させている場合は一貫して表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -57,7 +57,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_SINGLE_TOC_VISIBLE , is_single_toc_visible(), __( '投稿ページ', THEME_NAME ));
             echo '<br>';
             generate_checkbox_tag(OP_PAGE_TOC_VISIBLE , is_page_toc_visible(), __( '固定ページ', THEME_NAME ));
-            generate_tips_tag(__( '上記のページの目次表示を切り替えることができます。※それ以外のページでは表示されません。', THEME_NAME ));
+            generate_tips_tag(__( '上記のページの目次表示を切り替えることができます。※[toc]ショートコードで目次を表示させている場合は一貫して表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
