@@ -47,6 +47,9 @@ define('WM_DEFAULT', 'all');
 define('PCD_DEFAULT', 30);
 //新着・人気ウィジェットのデフォルト表示数字
 define('EC_DEFAULT', 5);
+//目次のインデックス番号
+global $_TOC_INDEX;
+$_TOC_INDEX = 1;
 
 //アドセンスID名
 define('DATA_AD_CLIENT', 'data-ad-client');

@@ -152,8 +152,12 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
       $toc_check = null;
       $label_for = null;
     } else {
-      $toc_check = '<input type="checkbox" id="toc-checkbox"'.$checked.'>';
-      $label_for = ' for="toc-checkbox"';
+      global $_TOC_INDEX;
+      //_v($_TOC_INDEX);
+      $toc_id = 'toc-checkbox-'.$_TOC_INDEX;
+      $toc_check = '<input type="checkbox" class="toc-checkbox" id="'.$toc_id.'"'.$checked.'>';
+      $label_for = ' for="'.$toc_id.'"';
+      $_TOC_INDEX++;
     }
   } else {
     $title_elm = 'div';

@@ -483,7 +483,7 @@ if ($mhah = get_mobile_header_area_height()): ?>
 <?php //目次切り換えが有効な時
 if (is_toc_toggle_switch_enable()): ?>
 /* .toc-content, */
-#toc-checkbox {
+.toc-checkbox {
   display: none;
 }
 .toc-content{
@@ -494,7 +494,7 @@ if (is_toc_toggle_switch_enable()): ?>
   opacity: 0.2;
   transition: all 0.5s ease-out;
 }
-#toc-checkbox:checked ~ .toc-content {
+.toc-checkbox:checked ~ .toc-content {
   /* display: block; */
   visibility: visible;
   padding-top: 0.6em;
@@ -510,7 +510,7 @@ if (is_toc_toggle_switch_enable()): ?>
 .toc-title:hover::after{
   text-decoration: underline;
 }
-#toc-checkbox:checked + .toc-title::after{
+.toc-checkbox:checked + .toc-title::after{
   content: '[<?php echo get_toc_close_caption(); ?>]';
 }<?php endif ?>
 <?php //アイキャッチを中央表示
