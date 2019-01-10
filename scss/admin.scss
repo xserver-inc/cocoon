@@ -928,17 +928,39 @@ textarea[name="the_page_memo"]{
 //   color: #333 !important;
 
 // }
-.mce-menu-item{
-  background: #fff !important;
-  border: 0 !important;
-  span{
-    color: #333 !important;
-  }
-  &:hover{
-    background-color: #0073aa !important;
+// .mce-menu-item{
+//   background: #fff !important;
+//   border: 0 !important;
+//   span{
+//     color: #333 !important;
+//   }
+//   &:hover{
+//     background-color: #0073aa !important;
+//     span{
+//       color: #fff !important;
+//     }
+//   }
+// }
+
+//装飾中のスタイルドロップダウンアイテムを選択中にする
+.mce-menu {
+  .mce-menu-item-normal.mce-active,
+  .mce-menu-item-preview.mce-active,
+  .mce-menu-item.mce-selected,
+  .mce-menu-item:focus,
+  .mce-menu-item:hover{
+    background: #0073aa !important;
+    color: #fff !important;
     span{
       color: #fff !important;
-    }
+    };
+  }
+
+  .mce-menu-item-normal.mce-active,
+  .mce-menu-item-preview.mce-active,
+  .mce-menu-item:focus,{
+    background: #e7609e !important;
+    border-left: 5px solid #60e5a7 !important;
   }
 }
 
