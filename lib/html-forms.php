@@ -942,7 +942,7 @@ endif;
 
 //汎用エントリーウィジェットのタグ生成
 if ( !function_exists( 'generate_widget_entries_tag' ) ):
-function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0){
+function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0, $action = null){
 
   //ランダムが有効な時は関連記事
   if ($random) {
@@ -955,6 +955,7 @@ function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT,
   $args = array(
     'posts_per_page' => $entry_count,
     'no_found_rows' => true,
+    'action' => $action,
   );
   if ($post_type) {
     $args += array(

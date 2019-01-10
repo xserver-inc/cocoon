@@ -38,14 +38,14 @@ function new_entries_shortcode($atts) {
     'post_type' => 'post',
     'taxonomy' => 'category',
     'random' => 0,
+    'action' => null,
   ), $atts));
   $categories = array();
-  //var_dump($cats);
   if ($cats && $cats != 'all') {
     $categories = explode(',', $cats);
   }
   ob_start();
-  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $random);
+  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $random, $action);
   $res = ob_get_clean();
   return $res;
 }
