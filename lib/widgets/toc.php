@@ -10,7 +10,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_toc_visible()) {
+if (is_total_the_page_toc_visible()) {
   add_action('widgets_init', function(){register_widget('TOCWidgetItem');});
 }
 if ( !class_exists( 'TOCWidgetItem' ) ):
@@ -30,7 +30,7 @@ class TOCWidgetItem extends WP_Widget {
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $title = apply_filters( 'toc_widget_title', $title, $instance, $this->id_base );
 
-    if ( is_singular() && is_toc_visible() ){
+    if ( is_singular() && is_total_the_page_toc_visible() ){
       $harray = array();
       $html = get_toc_tag(get_the_content(), $harray, true);
       //目次が出力されている場合

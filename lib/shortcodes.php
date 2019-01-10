@@ -292,6 +292,23 @@ function rating_star_shortcode( $atts, $content = null ) {
       'max' => 5,
       'number' => 1,
   ), $atts ) );
- return get_rating_star_tag($rate, $max, $number);
+  return get_rating_star_tag($rate, $max, $number);
 }
 endif;
+
+
+//目次ショートコード
+if (!shortcode_exists('toc')) {
+  add_shortcode('toc', 'toc_shortcode');
+}
+if ( !function_exists( 'toc_shortcode' ) ):
+function toc_shortcode( $atts, $content = null ) {
+  if (is_singular( )) {
+    $harray = array();
+    //_v(get_the_content());
+    return get_toc_tag(get_the_content(), $harray);
+
+  }
+}
+endif;
+

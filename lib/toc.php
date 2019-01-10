@@ -34,20 +34,9 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return;
   }
 
-  //投稿ページだと表示しない
-  if (!is_single_toc_visible() && is_single()) {
-    return;
-  }
-  //固定ページだと表示しない
-  if (!is_page_toc_visible() && is_page()) {
-    return;
-  }
-
-  //投稿ページで非表示になっていると表示しない
-  if (!is_the_page_toc_visible()) {
-    return;
-  }
-
+  //_v($the_content);
+  //目次ショートコードを取り除く
+  $the_content = preg_replace('/\[toc.*\]/', '', $the_content);
   $content     = do_shortcode($the_content);
   $headers     = array();
   $html        = '';
@@ -190,6 +179,37 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
 }
 endif;
 
+if ( !function_exists( 'is_total_the_page_toc_visible' ) ):
+function is_total_the_page_toc_visible(){
+  //投稿・固定ページでない場合
+  if (!is_singular()) {
+    return false;
+  }
+
+  //目次が非表示の場合
+  if (!is_toc_visible()) {
+    return false;
+  }
+
+  //投稿ページだと表示しない
+  if (!is_single_toc_visible() && is_single()) {
+    return false;
+  }
+
+  //固定ページだと表示しない
+  if (!is_page_toc_visible() && is_page()) {
+    return false;
+  }
+
+  //投稿ページで非表示になっていると表示しない
+  if (!is_the_page_toc_visible()) {
+    return false;
+  }
+
+  return true;
+}
+endif;
+
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 if (is_toc_visible()) {
@@ -197,6 +217,25 @@ if (is_toc_visible()) {
 }
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
+  //ページ上で目次が非表示設定になっている場合
+  if (!is_total_the_page_toc_visible()) {
+    return $the_content;
+  }
+  // //投稿ページだと表示しない
+  // if (!is_single_toc_visible() && is_single()) {
+  //   return $the_content;
+  // }
+
+  // //固定ページだと表示しない
+  // if (!is_page_toc_visible() && is_page()) {
+  //   return $the_content;
+  // }
+
+  // //投稿ページで非表示になっていると表示しない
+  // if (!is_the_page_toc_visible()) {
+  //   return $the_content;
+  // }
+
   $content     = $the_content;
   $harray      = array();
 
