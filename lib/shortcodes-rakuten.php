@@ -8,7 +8,9 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //楽天商品リンク作成
-add_shortcode('rakuten', 'rakuten_product_link_shortcode');
+if (!shortcode_exists('rakuten')) {
+  add_shortcode('rakuten', 'rakuten_product_link_shortcode');
+}
 if ( !function_exists( 'rakuten_product_link_shortcode' ) ):
 function rakuten_product_link_shortcode($atts){
   extract( shortcode_atts( array(
@@ -443,7 +445,9 @@ function rakuten_product_link_shortcode($atts){
 endif;
 
 //タイムラインの作成（timelineショートコード）
-add_shortcode('timeline', 'timeline_shortcode');
+if (!shortcode_exists('timeline')) {
+  add_shortcode('timeline', 'timeline_shortcode');
+}
 if ( !function_exists( 'timeline_shortcode' ) ):
 function timeline_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
@@ -482,7 +486,9 @@ function remove_wrap_shortcode_wpautop($shortcode, $content){
 endif;
 
 //タイムラインアイテム作成（タイムラインの中の項目）
-add_shortcode('ti', 'timeline_item_shortcode');
+if (!shortcode_exists('ti')) {
+  add_shortcode('ti', 'timeline_item_shortcode');
+}
 if ( !function_exists( 'timeline_item_shortcode' ) ):
 function timeline_item_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
@@ -509,7 +515,9 @@ function timeline_item_shortcode( $atts, $content = null ){
 endif;
 
 //相対的な時間経過を取得するショートコード
-add_shortcode('ago', 'ago_shortcode');
+if (!shortcode_exists('ago')) {
+  add_shortcode('ago', 'ago_shortcode');
+}
 if ( !function_exists( 'ago_shortcode' ) ):
 function ago_shortcode( $atts ){
   extract( shortcode_atts( array(

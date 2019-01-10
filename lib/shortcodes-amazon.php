@@ -108,7 +108,9 @@ function get_amazon_itemlookup_xml($asin){
 endif;
 
 //Amazon商品リンク作成
-add_shortcode('amazon', 'amazon_product_link_shortcode');
+if (!shortcode_exists('amazon')) {
+  add_shortcode('amazon', 'amazon_product_link_shortcode');
+}
 if ( !function_exists( 'amazon_product_link_shortcode' ) ):
 function amazon_product_link_shortcode($atts){
   extract( shortcode_atts( array(

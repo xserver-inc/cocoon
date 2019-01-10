@@ -8,7 +8,9 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //プロフィールショートコード関数
-add_shortcode('author_box', 'author_box_shortcode');
+if (!shortcode_exists('author_box')) {
+  add_shortcode('author_box', 'author_box_shortcode');
+}
 if ( !function_exists( 'author_box_shortcode' ) ):
 function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -23,7 +25,9 @@ function author_box_shortcode($atts) {
 endif;
 
 //新着記事ショートコード関数
-add_shortcode('new_list', 'new_entries_shortcode');
+if (!shortcode_exists('new_list')) {
+  add_shortcode('new_list', 'new_entries_shortcode');
+}
 if ( !function_exists( 'new_entries_shortcode' ) ):
 function new_entries_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -48,7 +52,9 @@ function new_entries_shortcode($atts) {
 endif;
 
 //人気記事ショートコード関数
-add_shortcode('popular_list', 'popular_entries_shortcode');
+if (!shortcode_exists('popular_list')) {
+  add_shortcode('popular_list', 'popular_entries_shortcode');
+}
 if ( !function_exists( 'popular_entries_shortcode' ) ):
 function popular_entries_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -72,7 +78,9 @@ endif;
 
 define('AFFI_SHORTCODE', 'affi');
 //アフィリエイトタグショートコード関数
-add_shortcode(AFFI_SHORTCODE, 'affiliate_tag_shortcode');
+if (!shortcode_exists(AFFI_SHORTCODE)) {
+  add_shortcode(AFFI_SHORTCODE, 'affiliate_tag_shortcode');
+}
 if ( !function_exists( 'affiliate_tag_shortcode' ) ):
 function affiliate_tag_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -111,7 +119,9 @@ endif;
 
 define('TEMPLATE_SHORTCODE', 'temp');
 //関数テキストショートコード関数
-add_shortcode(TEMPLATE_SHORTCODE, 'function_text_shortcode');
+if (!shortcode_exists(TEMPLATE_SHORTCODE)) {
+  add_shortcode(TEMPLATE_SHORTCODE, 'function_text_shortcode');
+}
 if ( !function_exists( 'function_text_shortcode' ) ):
 function function_text_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -138,7 +148,9 @@ endif;
 
 define('RANKING_SHORTCODE', 'rank');
 //ランキングショートコード関数
-add_shortcode(RANKING_SHORTCODE, 'item_ranking_shortcode');
+if (!shortcode_exists(RANKING_SHORTCODE)) {
+  add_shortcode(RANKING_SHORTCODE, 'item_ranking_shortcode');
+}
 if ( !function_exists( 'item_ranking_shortcode' ) ):
 function item_ranking_shortcode($atts) {
   extract(shortcode_atts(array(
@@ -164,7 +176,9 @@ function get_item_ranking_shortcode($id) {
 endif;
 
 //ログインユーザーのみに表示するコンテンツ
-add_shortcode('login_user_only', 'login_user_only_shortcode');
+if (!shortcode_exists('login_user_only')) {
+  add_shortcode('login_user_only', 'login_user_only_shortcode');
+}
 if ( !function_exists( 'login_user_only_shortcode' ) ):
 function login_user_only_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
@@ -178,9 +192,99 @@ function login_user_only_shortcode( $atts, $content = null ) {
   }
 }
 endif;
+//タイムラインの作成（timelineショートコード）
+if (!shortcode_exists('timeline')) {
+  add_shortcode('timeline', 'timeline_shortcode');
+}
+if ( !function_exists( 'timeline_shortcode' ) ):
+function timeline_shortcode( $atts, $content = null ){
+  extract( shortcode_atts( array(
+    'title' => null,
+  ), $atts ) );
+  $content = remove_wrap_shortcode_wpautop('ti', $content);
+  $content = do_shortcode( shortcode_unautop( $content ) );
+  $title = sanitize_shortcode_value($title);
+  $title_tag = null;
+  if ($title) {
+    $title_tag = '<div class="timeline-title">'.$title.'</div>';
+  }
+  $tag = '<div class="timeline-box">'.
+            $title_tag.
+            '<ul class="timeline">'.
+              $content.
+            '</ul>'.
+          '</div>';
+  return apply_filters('timeline_tag', $tag);
+}
+endif;
+
+//timelineショートコードコンテンツ内に余計な改行や文字列が入らないように除外
+if ( !function_exists( 'remove_wrap_shortcode_wpautop' ) ):
+function remove_wrap_shortcode_wpautop($shortcode, $content){
+  //tiショートコードのみを抽出
+  $pattern = '/\['.$shortcode.'.*?\].*?\[\/'.$shortcode.'\]/is';
+  if (preg_match_all($pattern, $content, $m)) {
+    $all = null;
+    foreach ($m[0] as $code) {
+      $all .= $code;
+    }
+    return $all;
+  }
+}
+endif;
+
+//タイムラインアイテム作成（タイムラインの中の項目）
+if (!shortcode_exists('ti')) {
+  add_shortcode('ti', 'timeline_item_shortcode');
+}
+if ( !function_exists( 'timeline_item_shortcode' ) ):
+function timeline_item_shortcode( $atts, $content = null ){
+  extract( shortcode_atts( array(
+    'title' => null,
+    'label' => null,
+  ), $atts ) );
+  $title = sanitize_shortcode_value($title);
+  $label = sanitize_shortcode_value($label);
+  $title_tag = null;
+  if ($title) {
+    $title_tag = '<div class="timeline-item-title">'.$title.'</div>';
+  }
+
+  $content = do_shortcode( shortcode_unautop( $content ) );
+  $tag = '<li class="timeline-item">'.
+            '<div class="timeline-item-label">'.$label.'</div>'.
+            '<div class="timeline-item-content">'.
+              '<div class="timeline-item-title">'.$title.'</div>'.
+              '<div class="timeline-item-snippet">'.$content.'</div>'.
+            '</div>'.
+          '</li>';
+  return apply_filters('timeline_item_tag', $tag);
+}
+endif;
+
+//相対的な時間経過を取得するショートコード
+if (!shortcode_exists('ago')) {
+  add_shortcode('ago', 'ago_shortcode');
+}
+if ( !function_exists( 'ago_shortcode' ) ):
+function ago_shortcode( $atts ){
+  extract( shortcode_atts( array(
+    'from' => null,
+  ), $atts ) );
+  if (!$from) {
+    return '<span class="ago-error">'.__( '日付未入力', THEME_NAME ).'</span>';
+  }
+  $from = sanitize_shortcode_value($from);
+  $from = strtotime($from);
+  return get_human_time_diff_advance($from);
+}
+endif;
+
 
 //星ショートコード
-add_shortcode('star', 'rating_star_shortcode');
+if (!shortcode_exists('star')) {
+  add_shortcode('star', 'rating_star_shortcode');
+}
 if ( !function_exists( 'rating_star_shortcode' ) ):
 function rating_star_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(

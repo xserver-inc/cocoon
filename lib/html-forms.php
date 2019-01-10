@@ -595,8 +595,6 @@ endif;
 
 
 //カテゴリチェックリストの作成
-//require_once( ABSPATH . '/wp-admin/includes/template.php' );
-//add_shortcode('frontend-category-checklist', 'frontend_category_checklist');
 if ( !function_exists( 'generate_category_checklist' ) ):
 function generate_category_checklist( $post_id = 0, $descendants_and_self = 0, $selected_cats = false,
         $popular_cats = false, $walker = null, $checked_ontop = true) {
