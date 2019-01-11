@@ -2102,6 +2102,17 @@ function get_human_time_diff_advance( $from, $to = '' ) {
 }
 endif;
 
+//人間感覚の年の取得
+if ( !function_exists( 'get_human_years_ago' ) ):
+function get_human_years_ago( $from, $unit = '' ) {
+  $to = time();
+  $diff = (int) abs($to - $from);
+  $years = floor($diff / 31536000);
+  $since = sprintf('%s'.$unit, $years);
+  return $since;
+}
+endif;
+
 //文字列をBoolean型に変換
 if ( !function_exists( 'str_to_bool' ) ):
 function str_to_bool($string){
@@ -2110,7 +2121,6 @@ function str_to_bool($string){
   } else {
     return true;
   }
-
 }
 endif;
 

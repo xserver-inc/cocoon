@@ -262,6 +262,7 @@ function timeline_item_shortcode( $atts, $content = null ){
 }
 endif;
 
+define('AGO_ERROR_MESSAGE', '<span class="ago-error">'.__( '日付未入力', THEME_NAME ).'</span>');
 //相対的な時間経過を取得するショートコード
 if (!shortcode_exists('ago')) {
   add_shortcode('ago', 'ago_shortcode');
@@ -272,7 +273,7 @@ function ago_shortcode( $atts ){
     'from' => null,
   ), $atts ) );
   if (!$from) {
-    return '<span class="ago-error">'.__( '日付未入力', THEME_NAME ).'</span>';
+    return AGO_ERROR_MESSAGE;
   }
   $from = sanitize_shortcode_value($from);
   $from = strtotime($from);
@@ -312,3 +313,51 @@ function toc_shortcode( $atts, $content = null ) {
 }
 endif;
 
+//人間感覚の年の取得
+if ( !function_exists( 'get_human_years_ago' ) ):
+function get_human_years_ago( $from, $unit = '' ) {
+  $to = time();
+  $diff = (int) abs($to - $from);
+  $years = floor($diff / 31536000);
+  $since =  $since = sprintf(__('%s'.$unit, sprintf), $years);
+  return $since;
+}
+endif;
+
+//誕生日から年齢を取得するショートコード
+add_shortcode('age', 'age_shortcode');
+if ( !function_exists( 'age_shortcode' ) ):
+function age_shortcode( $atts ){
+  extract( shortcode_atts( array(
+    'from' => null,
+    'birth' => null,
+    'unit' => __( '歳', THEME_NAME ),
+  ), $atts ) );
+  if (!$from) {
+    $from = $birth;
+  }
+  //入力エラー出力
+  if (!$from) {
+    return AGO_ERROR_MESSAGE;
+  }
+  $from = strtotime($from);
+  return get_human_years_ago($from, $unit);
+}
+endif;
+
+//相対的な時間経過（年）を取得するショートコード
+add_shortcode('yago', 'yago_shortcode');
+if ( !function_exists( 'yago_shortcode' ) ):
+function yago_shortcode( $atts ){
+  extract( shortcode_atts( array(
+    'from' => null,
+    'unit' => '',
+  ), $atts ) );
+  //入力エラー出力
+  if (!$from) {
+    return AGO_ERROR_MESSAGE;
+  }
+  $from = strtotime($from);
+  return get_human_years_ago($from, $unit);
+}
+endif;
