@@ -7,14 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-// //アピールエリアの表示
-// define('OP_APPEAL_AREA_VISIBLE', 'appeal_area_visible');
-// if ( !function_exists( 'is_appeal_area_visible' ) ):
-// function is_appeal_area_visible(){
-//   return get_theme_option(OP_APPEAL_AREA_VISIBLE, 1);
-// }
-// endif;
-
 //アピールエリアの表示
 define('OP_APPEAL_AREA_DISPLAY_TYPE', 'appeal_area_display_type');
 if ( !function_exists( 'get_appeal_area_display_type' ) ):

@@ -281,49 +281,6 @@ function ago_shortcode( $atts ){
 }
 endif;
 
-
-//星ショートコード
-if (!shortcode_exists('star')) {
-  add_shortcode('star', 'rating_star_shortcode');
-}
-if ( !function_exists( 'rating_star_shortcode' ) ):
-function rating_star_shortcode( $atts, $content = null ) {
-  extract( shortcode_atts( array(
-      'rate' => 5,
-      'max' => 5,
-      'number' => 1,
-  ), $atts ) );
-  return get_rating_star_tag($rate, $max, $number);
-}
-endif;
-
-
-//目次ショートコード
-if (!shortcode_exists('toc')) {
-  add_shortcode('toc', 'toc_shortcode');
-}
-if ( !function_exists( 'toc_shortcode' ) ):
-function toc_shortcode( $atts, $content = null ) {
-  if (is_singular( )) {
-    $harray = array();
-    //_v(get_the_content());
-    return get_toc_tag(get_the_content(), $harray);
-
-  }
-}
-endif;
-
-//人間感覚の年の取得
-if ( !function_exists( 'get_human_years_ago' ) ):
-function get_human_years_ago( $from, $unit = '' ) {
-  $to = time();
-  $diff = (int) abs($to - $from);
-  $years = floor($diff / 31536000);
-  $since =  $since = sprintf(__('%s'.$unit, sprintf), $years);
-  return $since;
-}
-endif;
-
 //誕生日から年齢を取得するショートコード
 add_shortcode('age', 'age_shortcode');
 if ( !function_exists( 'age_shortcode' ) ):
@@ -359,5 +316,37 @@ function yago_shortcode( $atts ){
   }
   $from = strtotime($from);
   return get_human_years_ago($from, $unit);
+}
+endif;
+
+
+//星ショートコード
+if (!shortcode_exists('star')) {
+  add_shortcode('star', 'rating_star_shortcode');
+}
+if ( !function_exists( 'rating_star_shortcode' ) ):
+function rating_star_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+      'rate' => 5,
+      'max' => 5,
+      'number' => 1,
+  ), $atts ) );
+  return get_rating_star_tag($rate, $max, $number);
+}
+endif;
+
+
+//目次ショートコード
+if (!shortcode_exists('toc')) {
+  add_shortcode('toc', 'toc_shortcode');
+}
+if ( !function_exists( 'toc_shortcode' ) ):
+function toc_shortcode( $atts, $content = null ) {
+  if (is_singular( )) {
+    $harray = array();
+    //_v(get_the_content());
+    return get_toc_tag(get_the_content(), $harray);
+
+  }
 }
 endif;
