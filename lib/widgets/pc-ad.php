@@ -23,17 +23,12 @@ class PcAdWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    $ad = apply_filters( 'widget_pc_ad_text', $instance['ad_text'] );
-    $format = apply_filters( 'widget_pc_ad_format', $instance['ad_format'] );
+    $ad_text = isset($instance['ad_text']) ? $instance['ad_text'] : null ;
+    $ad_format = isset($instance['ad_format']) ? $instance['ad_format'] : null ;
+
+    $ad = apply_filters( 'widget_pc_ad_text', $ad_text );
+    $format = apply_filters( 'widget_pc_ad_format', $ad_format );
     $is_label_visible = apply_filters( 'widget_is_label_visible', !empty($instance['is_label_visible']) ? $instance['is_label_visible'] : 0 );
-
-    // //フォーマットが指定されているときはAdSenseコードフォーマットに合わせる
-    // if ($format != 'none') {
-    //   $ad = get_adsense_responsive_code(to_adsense_format($format), $ad);
-    // }
-
-
-    //_v($ad);
 
     if ( !is_404() && //404ページでないとき
          is_all_ads_visible() ):
@@ -47,8 +42,8 @@ class PcAdWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['ad_text'] = $new_instance['ad_text'];
-    $instance['ad_format'] = $new_instance['ad_format'];
+    $instance['ad_text'] = isset($new_instance['ad_text']) ? $new_instance['ad_text'] : null;
+    $instance['ad_format'] = isset($new_instance['ad_format']) ? $new_instance['ad_format'] : null;
     $instance['is_label_visible'] = !empty($new_instance['is_label_visible']) ? 1 : 0;
     return $instance;
   }
