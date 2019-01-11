@@ -8,7 +8,8 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
-  $cat = is_single() ? get_the_category()[0] : get_category(get_query_var("cat"));
+  $cats = get_the_category();
+  $cat = is_single() ? $cats[0] : get_category(get_query_var("cat"));
   if($cat && !is_wp_error($cat)){
     $echo = null;
     //var_dump($par);
