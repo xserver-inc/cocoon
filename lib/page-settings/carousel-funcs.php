@@ -20,7 +20,10 @@ function is_carousel_visible(){
     (
       is_carousel_display_type_all_page() ||
       (is_front_top_page() && is_carousel_display_type_front_page_only()) ||
-      (!is_singular() && is_carousel_display_type_not_singular())
+      (!is_singular() && is_carousel_display_type_not_singular()) ||
+      (is_singular() && is_carousel_display_type_singular_only()) ||
+      (is_single() && is_carousel_display_type_single_only()) ||
+      (is_page() && is_carousel_display_type_page_only())
     );
 }
 endif;
@@ -37,6 +40,21 @@ endif;
 if ( !function_exists( 'is_carousel_display_type_not_singular' ) ):
 function is_carousel_display_type_not_singular(){
   return get_carousel_display_type() == 'not_singular';
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_singular_only' ) ):
+function is_carousel_display_type_singular_only(){
+  return get_carousel_display_type() == 'singular_only';
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_single_only' ) ):
+function is_carousel_display_type_single_only(){
+  return get_carousel_display_type() == 'single_only';
+}
+endif;
+if ( !function_exists( 'is_carousel_display_type_page_only' ) ):
+function is_carousel_display_type_page_only(){
+  return get_carousel_display_type() == 'page_only';
 }
 endif;
 
