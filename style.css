@@ -3425,6 +3425,13 @@ label.screen-reader-text {
   font-size: 0.8em;
   color: #999;
 }
+.toggle-button .toggle-content {
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 1em;
+  height: 0;
+  transition: all 0.5s ease;
+}
 
 .toggle-button:hover {
   opacity: 0.7;
@@ -3432,14 +3439,6 @@ label.screen-reader-text {
 
 .toggle-checkbox {
   display: none;
-}
-
-.toggle-content {
-  visibility: hidden;
-  opacity: 0;
-  padding: 0 1em;
-  height: 0;
-  transition: all 0.5s ease;
 }
 
 .toggle-checkbox:checked ~ .toggle-button {

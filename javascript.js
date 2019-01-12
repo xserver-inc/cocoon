@@ -84,9 +84,9 @@
 (function(){
     var f = document.querySelectorAll(".video-click");
     for (var i = 0; i < f.length; ++i) {
-    f[i].onclick = function () {
-      var iframe = this.getAttribute("data-iframe");
-      this.parentElement.innerHTML = '<div class="video">' + iframe + '</div>';
-    }
+      f[i].onclick = function () {
+        var iframe = this.getAttribute("data-iframe");
+        this.parentElement.innerHTML = '<div class="video">' + iframe + '</div>';
+      }
     }
 })();

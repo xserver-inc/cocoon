@@ -279,12 +279,18 @@ form.admin-settings{
     &:hover{
       color: #00a0d2;
     }
+
+
   }
 
   .toggle-content{
     display: none;
     width: 100%;
+    // visibility: visible;
+    // height: auto;
+    // opacity: 1;
   }
+
   //
   // color: blue;
   // font-size: 0.8em;
