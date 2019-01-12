@@ -50,7 +50,7 @@ endif;
 define('OP_RELATED_ENTRY_HEADING', 'related_entry_heading');
 if ( !function_exists( 'get_related_entry_heading' ) ):
 function get_related_entry_heading(){
-  return get_theme_option(OP_RELATED_ENTRY_HEADING, __( '関連記事', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_RELATED_ENTRY_HEADING, __( '関連記事', THEME_NAME )));
 }
 endif;
 
@@ -58,7 +58,7 @@ endif;
 define('OP_RELATED_ENTRY_SUB_HEADING', 'related_entry_sub_heading');
 if ( !function_exists( 'get_related_entry_sub_heading' ) ):
 function get_related_entry_sub_heading(){
-  return get_theme_option(OP_RELATED_ENTRY_SUB_HEADING);
+  return stripslashes_deep(get_theme_option(OP_RELATED_ENTRY_SUB_HEADING));
 }
 endif;
 

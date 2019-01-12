@@ -51,7 +51,7 @@ endif;
 define('OP_COPYRIGHT_NAME', 'copyright_name');
 if ( !function_exists( 'get_copyright_name' ) ):
 function get_copyright_name(){
-  return get_theme_option(OP_COPYRIGHT_NAME);
+  return stripslashes_deep(get_theme_option(OP_COPYRIGHT_NAME));
 }
 endif;
 

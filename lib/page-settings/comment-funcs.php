@@ -29,7 +29,7 @@ endif;
 define('OP_COMMENT_HEADING', 'comment_heading');
 if ( !function_exists( 'get_comment_heading' ) ):
 function get_comment_heading(){
-  return get_theme_option(OP_COMMENT_HEADING, __( 'コメント', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_HEADING, __( 'コメント', THEME_NAME )));
 }
 endif;
 
@@ -37,7 +37,7 @@ endif;
 define('OP_COMMENT_SUB_HEADING', 'comment_sub_heading');
 if ( !function_exists( 'get_comment_sub_heading' ) ):
 function get_comment_sub_heading(){
-  return get_theme_option(OP_COMMENT_SUB_HEADING);
+  return stripslashes_deep(get_theme_option(OP_COMMENT_SUB_HEADING));
 }
 endif;
 
@@ -63,7 +63,7 @@ endif;
 define('OP_COMMENT_FORM_HEADING', 'comment_form_heading');
 if ( !function_exists( 'get_comment_form_heading' ) ):
 function get_comment_form_heading(){
-  return get_theme_option(OP_COMMENT_FORM_HEADING, __( 'コメントをどうぞ', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_FORM_HEADING, __( 'コメントをどうぞ', THEME_NAME )));
 }
 endif;
 
@@ -87,6 +87,6 @@ endif;
 define('OP_COMMENT_SUBMIT_LABEL', 'comment_submit_label');
 if ( !function_exists( 'get_comment_submit_label' ) ):
 function get_comment_submit_label(){
-  return get_theme_option(OP_COMMENT_SUBMIT_LABEL, __( 'コメントを送信', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_COMMENT_SUBMIT_LABEL, __( 'コメントを送信', THEME_NAME )));
 }
 endif;

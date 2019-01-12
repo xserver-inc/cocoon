@@ -24,7 +24,7 @@ endif;
 define('OP_404_PAGE_TITLE', '404_page_title');
 if ( !function_exists( 'get_404_page_title' ) ):
 function get_404_page_title(){
-  return get_theme_option(OP_404_PAGE_TITLE, __( '404 NOT FOUND', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_404_PAGE_TITLE, __( '404 NOT FOUND', THEME_NAME )));
 }
 endif;
 

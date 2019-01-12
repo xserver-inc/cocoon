@@ -51,7 +51,7 @@ endif;
 define('OP_TOC_OPEN_CAPTION', 'toc_open_caption');
 if ( !function_exists( 'get_toc_open_caption' ) ):
 function get_toc_open_caption(){
-  return get_theme_option(OP_TOC_OPEN_CAPTION, __( '開く', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_TOC_OPEN_CAPTION, __( '開く', THEME_NAME )));
 }
 endif;
 
@@ -59,7 +59,7 @@ endif;
 define('OP_TOC_CLOSE_CAPTION', 'toc_close_caption');
 if ( !function_exists( 'get_toc_close_caption' ) ):
 function get_toc_close_caption(){
-  return get_theme_option(OP_TOC_CLOSE_CAPTION, __( '閉じる', THEME_NAME ));
+  return stripslashes_deep(get_theme_option(OP_TOC_CLOSE_CAPTION, __( '閉じる', THEME_NAME )));
 }
 endif;
 

@@ -37,11 +37,11 @@ function get_front_page_title_format(){
 }
 endif;
 
-//自由形式のフロントページのイトル
+//自由形式のフロントページのタイトル
 define('OP_FREE_FRONT_PAGE_TITLE', 'free_front_page_title');
 if ( !function_exists( 'get_free_front_page_title' ) ):
 function get_free_front_page_title(){
-  return get_theme_option(OP_FREE_FRONT_PAGE_TITLE, trim( get_bloginfo('name') ));
+  return stripslashes_deep(get_theme_option(OP_FREE_FRONT_PAGE_TITLE, trim( get_bloginfo('name') )));
 }
 endif;
 
@@ -102,7 +102,7 @@ endif;
 define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
 if ( !function_exists( 'get_simplified_site_name' ) ):
 function get_simplified_site_name(){
-  return esc_html(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
+  return stripslashes_deep(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
 }
 endif;
 //投稿・固定ページタイトルのキャプションを取得する

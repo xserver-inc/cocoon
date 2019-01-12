@@ -19,7 +19,7 @@ endif;
 define('OP_NOTICE_AREA_MESSAGE', 'notice_area_message');
 if ( !function_exists( 'get_notice_area_message' ) ):
 function get_notice_area_message(){
-  return get_theme_option(OP_NOTICE_AREA_MESSAGE);
+  return stripslashes_deep(get_theme_option(OP_NOTICE_AREA_MESSAGE));
 }
 endif;
 

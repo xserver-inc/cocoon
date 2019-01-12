@@ -56,7 +56,7 @@ endif;
 define('OP_APPEAL_AREA_TITLE', 'appeal_area_title');
 if ( !function_exists( 'get_appeal_area_title' ) ):
 function get_appeal_area_title(){
-  return get_theme_option(OP_APPEAL_AREA_TITLE);
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_TITLE));
 }
 endif;
 
@@ -73,7 +73,7 @@ endif;
 define('OP_APPEAL_AREA_BUTTON_MESSAGE', 'appeal_area_button_message');
 if ( !function_exists( 'get_appeal_area_button_message' ) ):
 function get_appeal_area_button_message(){
-  return get_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE);
+  return stripslashes_deep(get_theme_option(OP_APPEAL_AREA_BUTTON_MESSAGE));
 }
 endif;
 

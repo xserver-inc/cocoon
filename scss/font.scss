@@ -54,11 +54,14 @@ $i: 24;
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
 
-div.sub-caption{
+.sub-caption{
   //Gisha, Vrinda, Calibri, Candara, Rod, Euphemia
   font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", $default_font;
   //font-family: KaiTi, SimHei, Kokila, Tunga, Helvetica, Monaco, $default_font;
   font-weight: 400;
   font-size: 0.75em;
   opacity: 0.4;
+}
+span.sub-caption{
+  opacity: 0.8;
 }
