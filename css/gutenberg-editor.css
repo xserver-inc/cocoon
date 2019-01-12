@@ -57,7 +57,7 @@ div.mce-content-body {
   width: auto;
   padding-left: 14px;
   padding-right: 14px;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 /* wp-includes/css/dist/edit-post/style.css
