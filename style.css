@@ -3208,6 +3208,20 @@ label.screen-reader-text {
   content: "\f152";
 }
 
+.micro-copy.alignleft {
+  float: none;
+  margin-right: 0;
+  text-align: left;
+}
+.micro-copy.alignright {
+  float: none;
+  margin-left: 0;
+  text-align: right;
+}
+.micro-copy.aligncenter {
+  text-align: center;
+}
+
 .micro-top {
   font-size: 0.8em;
   margin-bottom: -1em;
@@ -3410,6 +3424,13 @@ label.screen-reader-text {
 .toggle-wrap > p {
   display: none;
 }
+.toggle-wrap .toggle-content {
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 1em;
+  height: 0;
+  transition: all 0.5s ease;
+}
 
 .toggle-button {
   display: block;
@@ -3428,13 +3449,6 @@ label.screen-reader-text {
   margin-right: 0.4em;
   font-size: 0.8em;
   color: #999;
-}
-.toggle-button .toggle-content {
-  visibility: hidden;
-  opacity: 0;
-  padding: 0 1em;
-  height: 0;
-  transition: all 0.5s ease;
 }
 
 .toggle-button:hover {

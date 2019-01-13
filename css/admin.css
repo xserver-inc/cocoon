@@ -885,6 +885,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .btn-hand-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-hand-o-right > a:before { content: "\f0a4"; }
 .admin-settings .demo .btn-arrow-circle-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-circle-o-right > a:before { content: "\f18e"; }
 .admin-settings .demo .btn-caret-square-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-caret-square-o-right > a:before { content: "\f152"; }
+.admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
+.admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
+.admin-settings .demo .micro-copy.aligncenter { text-align: center; }
 .admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: -1em; margin-top: 1em; }
 .admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -0.8em; margin-bottom: 1em; }
 .admin-settings .demo .micro-center { text-align: center; }
@@ -928,9 +931,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
+.admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
-.admin-settings .demo .toggle-button .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
@@ -1938,6 +1941,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .btn-hand-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-hand-o-right > a:before { content: "\f0a4"; }
 .admin-settings .demo .btn-arrow-circle-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-circle-o-right > a:before { content: "\f18e"; }
 .admin-settings .demo .btn-caret-square-o-right:before, .admin-settings .demo .btn-wrap.btn-wrap-caret-square-o-right > a:before { content: "\f152"; }
+.admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
+.admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
+.admin-settings .demo .micro-copy.aligncenter { text-align: center; }
 .admin-settings .demo .micro-top { font-size: 0.8em; margin-bottom: -1em; margin-top: 1em; }
 .admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -0.8em; margin-bottom: 1em; }
 .admin-settings .demo .micro-center { text-align: center; }
@@ -1981,9 +1987,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
+.admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
-.admin-settings .demo .toggle-button .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }

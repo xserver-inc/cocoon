@@ -737,6 +737,24 @@ $bb_green: #3eb370;
 .btn-arrow-circle-o-right:before, .btn-wrap.btn-wrap-arrow-circle-o-right > a:before{content: "\f18e";}
 .btn-caret-square-o-right:before, .btn-wrap.btn-wrap-caret-square-o-right > a:before{content: "\f152";}
 
+.micro-copy{
+  &.alignleft{
+    float: none;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  &.alignright{
+    float: none;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  &.aligncenter{
+    text-align: center;
+  }
+}
+
 .micro-top{
   font-size: 0.8em;
   margin-bottom: -1em;

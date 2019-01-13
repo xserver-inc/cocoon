@@ -35,16 +35,24 @@ div.mce-content-body {
     height: auto;
     padding: 0 0 1px;
   }
-  &[data-type="cocoon-blocks/button"][data-align="left"], &[data-type="cocoon-blocks/button-wrap"][data-align="left"] {
+  &[data-type="cocoon-blocks/button"][data-align="left"],
+  &[data-type="cocoon-blocks/button-wrap"][data-align="left"],
+  &[data-type="cocoon-blocks/micro-text"][data-align="left"] {
     text-align: left;
   }
-  &[data-type="cocoon-blocks/button"][data-align="right"], &[data-type="cocoon-blocks/button-wrap"][data-align="right"] {
+  &[data-type="cocoon-blocks/button"][data-align="right"],
+  &[data-type="cocoon-blocks/button-wrap"][data-align="right"],
+  &[data-type="cocoon-blocks/micro-text"][data-align="right"] {
     text-align: right;
   }
-  &[data-type="cocoon-blocks/button"][data-align="center"], &[data-type="cocoon-blocks/button-wrap"][data-align="center"] {
+  &[data-type="cocoon-blocks/button"][data-align="center"],
+  &[data-type="cocoon-blocks/button-wrap"][data-align="center"],
+  &[data-type="cocoon-blocks/micro-text"][data-align="center"] {
     text-align: center;
   }
-  &[data-type="cocoon-blocks/button"] .editor-block-list__block-edit, &[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit {
+  &[data-type="cocoon-blocks/button"] .editor-block-list__block-edit,
+  &[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit,
+  &[data-type="cocoon-blocks/micro-text"] .editor-block-list__block-edit {
     float: none;
     margin-left: 0;
     margin-right: 0;
