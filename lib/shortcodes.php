@@ -352,11 +352,9 @@ function toc_shortcode( $atts, $content = null ) {
 endif;
 
 //サイトマップショートコード
-if (!shortcode_exists('site_map')) {
-  add_shortcode('site_map', 'site_map_shortcode');
-}
-if ( !function_exists( 'site_map_shortcode' ) ):
-function site_map_shortcode( $atts, $content = null ) {
+add_shortcode('sitemap', 'sitemap_shortcode');
+if ( !function_exists( 'sitemap_shortcode' ) ):
+function sitemap_shortcode( $atts, $content = null ) {
   ob_start();?>
   <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
   <ul>
