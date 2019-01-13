@@ -204,3 +204,6 @@ label {
   cursor:pointer;
 }
 
+.sitemap li a::before{
+  display: none;
+}

@@ -356,34 +356,24 @@ add_shortcode('sitemap', 'sitemap_shortcode');
 if ( !function_exists( 'sitemap_shortcode' ) ):
 function sitemap_shortcode( $atts, $content = null ) {
   ob_start();?>
-  <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
-  <ul>
-    <?php wp_list_pages('title_li='); ?>
-  </ul>
-	<h2><?php _e( '記事一覧', THEME_NAME ) ?></h2>
-	<ul>
-	  <?php wp_get_archives( 'type=alpha' ); ?>
-	</ul>
-	<h2><?php _e( '月別アーカイブ', THEME_NAME ) ?></h2>
-	<ul>
-	  <?php wp_get_archives('type=monthly'); ?>
-	</ul>
-	<h2><?php _e( 'カテゴリー別', THEME_NAME ) ?></h2>
-	<?php
-	$args=array('orderby' => 'name', 'order' => 'ASC' );
-	$categories=get_categories($args);
-	foreach($categories as $category) {
-	    echo '<h3><a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </h3> ';
-	    ?>
-	<ul>
-		<?php
-		global $post;$myposts = get_posts('numberposts=100&category=' . $category->term_id);
-		foreach($myposts as $post) : setup_postdata($post);
-		?>
-		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		<?php endforeach; ?>
-	</ul>
-  <?php }; ?>
+  <div class="sitemap">
+    <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
+    <ul>
+      <?php wp_list_pages('title_li='); ?>
+    </ul>
+    <h2><?php _e( '記事一覧', THEME_NAME ) ?></h2>
+    <ul>
+      <?php wp_get_archives( 'type=alpha' ); ?>
+    </ul>
+    <h2><?php _e( 'カテゴリー', THEME_NAME ) ?></h2>
+    <ul>
+      <?php wp_list_categories('title_li='); ?>
+    </ul>
+    <h2><?php _e( '月別アーカイブ', THEME_NAME ) ?></h2>
+    <ul>
+      <?php wp_get_archives('type=monthly'); ?>
+    </ul>
+  </div>
   <?php
   return ob_get_clean();
 }
