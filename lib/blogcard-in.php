@@ -219,6 +219,11 @@ function url_shortcode_to_blogcard($the_content) {
     $url = preg_replace('/[\[\]]/', '', $url);//[と]の除去
     $url = str_replace('?', '%3F', $url);//?をエンコード
 
+    //wpForoのブログカードは外部ブログカードに任せる
+    if (includes_wpforo_url($url)) {
+      continue;
+    }
+
     //取得した内部URLからブログカードのHTMLタグを作成
     $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
     //URLをブログカードに変換
