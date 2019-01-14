@@ -57,6 +57,19 @@ div.mce-content-body {
     margin-left: 0;
     margin-right: 0;
   }
+  &[data-type="cocoon-blocks/micro-balloon"] .editor-block-list__block-edit {
+    float: none;
+  }
+  &[data-type="cocoon-blocks/micro-balloon"][data-align="left"] .micro-copy {
+    margin-right: auto;
+  }
+  &[data-type="cocoon-blocks/micro-balloon"][data-align="center"] .micro-copy {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &[data-type="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
+    margin-left: auto;
+  }
 }
 
 /* main */

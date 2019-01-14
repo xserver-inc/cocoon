@@ -3254,6 +3254,7 @@ label.screen-reader-text {
   padding: 3px 8px;
   display: table;
   margin-bottom: -.7em;
+  font-size: 0.8em;
 }
 
 .micro-balloon:after, .micro-balloon:before {
@@ -3305,6 +3306,15 @@ label.screen-reader-text {
 .micro-bottom.micro-balloon:before {
   border-bottom-color: #999;
   border-top-color: transparent;
+}
+
+.micro-copy.alignleft,
+.micro-copy.alignright {
+  float: none;
+}
+
+.micro-copy.alignright {
+  margin-left: auto;
 }
 
 .blogcard-type .blogcard::before {

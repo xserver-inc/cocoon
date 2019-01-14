@@ -781,6 +781,7 @@ $bb_green: #3eb370;
   padding: 3px 8px;
   display: table;
   margin-bottom: -.7em;
+  font-size: 0.8em;
 }
 .micro-balloon:after, .micro-balloon:before {
 	top: 97%;
@@ -803,6 +804,7 @@ $bb_green: #3eb370;
 	border-width: 8px;
 	margin-left: -8px;
 }
+
 .micro-balloon-center{
   margin-left: auto;
   margin-right: auto;
@@ -825,6 +827,14 @@ $bb_green: #3eb370;
 .micro-bottom.micro-balloon:before {
   border-bottom-color: $x_pallid_text_color;
   border-top-color: transparent;
+}
+
+.micro-copy.alignleft,
+.micro-copy.alignright{
+  float: none;
+}
+.micro-copy.alignright{
+  margin-left: auto;
 }
 
 // /*メインカランの2カラム化*/
