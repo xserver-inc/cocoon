@@ -355,24 +355,38 @@ endif;
 add_shortcode('sitemap', 'sitemap_shortcode');
 if ( !function_exists( 'sitemap_shortcode' ) ):
 function sitemap_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'page' => 1,
+    'single' => 1,
+    'category' => 1,
+    'archive' => 0,
+  ), $atts ) );
   ob_start();?>
   <div class="sitemap">
+    <?php if ($page): ?>
     <h2><?php _e( '固定ページ', THEME_NAME ) ?></h2>
     <ul>
       <?php wp_list_pages('title_li='); ?>
     </ul>
+    <?php endif; ?>
+    <?php if ($single): ?>
     <h2><?php _e( '記事一覧', THEME_NAME ) ?></h2>
     <ul>
       <?php wp_get_archives( 'type=alpha' ); ?>
     </ul>
+    <?php endif; ?>
+    <?php if ($category): ?>
     <h2><?php _e( 'カテゴリー', THEME_NAME ) ?></h2>
     <ul>
       <?php wp_list_categories('title_li='); ?>
     </ul>
+    <?php endif; ?>
+    <?php if ($archive): ?>
     <h2><?php _e( '月別アーカイブ', THEME_NAME ) ?></h2>
     <ul>
       <?php wp_get_archives('type=monthly'); ?>
     </ul>
+    <?php endif; ?>
   </div>
   <?php
   return ob_get_clean();
