@@ -335,14 +335,13 @@ function rating_star_shortcode( $atts, $content = null ) {
 }
 endif;
 
-
 //目次ショートコード
 if (!shortcode_exists('toc')) {
   add_shortcode('toc', 'toc_shortcode');
 }
 if ( !function_exists( 'toc_shortcode' ) ):
 function toc_shortcode( $atts, $content = null ) {
-  if (is_singular( )) {
+  if (is_singular()) {
     $harray = array();
     //_v(get_the_content());
     return get_toc_tag(get_the_content(), $harray);
@@ -390,5 +389,24 @@ function sitemap_shortcode( $atts, $content = null ) {
   </div>
   <?php
   return ob_get_clean();
+}
+endif;
+
+//ブログカードショートコード
+if (!shortcode_exists('blogcard')) {
+}
+  add_shortcode('blogcard', 'blogcard_shortcode');
+if ( !function_exists( 'blogcard_shortcode' ) ):
+function blogcard_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'url' => null,
+  ), $atts ) );
+  if ($url) {
+    $tag = url_to_internal_blogcard_tag($url);
+    if (!$tag) {
+      $tag = url_to_external_blog_card($url);
+    }
+    return $tag;
+  }
 }
 endif;
