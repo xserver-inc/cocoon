@@ -157,6 +157,22 @@ function the_prev_next_link_tag() {
         echo '<link rel="next" href="'.$next_path.'" />'.PHP_EOL;
       }
     }
+  } else if (is_search()){
+    //トップページやカテゴリページなどの分割ページの設定
+    global $paged;
+    $search_query = htmlspecialchars(get_search_query());
+    if ( get_previous_posts_link() ){
+      $page = $paged - 1;
+      $url = user_trailingslashit(get_site_url()).'?s='.$search_query.'&amp;paged='.$page;
+      echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
+      echo '<link rel="prev" href="'.$url.'" />'.PHP_EOL;
+    }
+    if ( get_next_posts_link() ){
+      $page = $paged + 1;
+      $url = user_trailingslashit(get_site_url()).'?s='.$search_query.'&amp;paged='.$page;
+      echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
+      echo '<link rel="next" href="'.$url.'" />'.PHP_EOL;
+    }
   } else if (!is_404()){
     //トップページやカテゴリページなどの分割ページの設定
     global $paged;
