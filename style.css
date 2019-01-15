@@ -1649,6 +1649,9 @@ span.internal-icon {
   opacity: 0.9;
   border: 1px solid #eee;
 }
+.eye-catch img {
+  vertical-align: bottom;
+}
 
 .eye-catch-caption {
   color: #fff;
