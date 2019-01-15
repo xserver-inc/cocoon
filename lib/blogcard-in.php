@@ -237,7 +237,7 @@ function url_shortcode_to_blogcard($the_content) {
     }
 
     //pタグで囲んでいるとブラウザで勝手にタグが変換されてしまうのでdivに付け替える
-    $the_content = preg_replace('{<p>(.+?) class="blogcard-wrap (.+?)</p>}is', '<div class="blogcard-shortcode-wrap">$1(.+?) class="blogcard-wrap $2</div>' , $the_content, 1);
+    $the_content = preg_replace('{<p>(.+?) class="blogcard-wrap (.+?)</p>}is', '<div class="blogcard-shortcode-wrap">$1 class="blogcard-wrap $2</div>' , $the_content, 1);
   }
 
   return $the_content;//置換後のコンテンツを返す
