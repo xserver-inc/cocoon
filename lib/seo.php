@@ -144,15 +144,17 @@ function the_prev_next_link_tag() {
     global $multipage;
     //$multipage = check_multi_page();
     if($multipage) {
-      $prev = user_trailingslashit(generate_multipage_url('prev'));
-      $next = user_trailingslashit(generate_multipage_url('next'));
+      $prev = get_multipage_url('prev');
+      $prev_path = user_trailingslashit($prev);
+      $next = get_multipage_url('next');
+      $next_path = user_trailingslashit($next);
       if($prev) {
         echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
-        echo '<link rel="prev" href="'.$prev.'" />'.PHP_EOL;
+        echo '<link rel="prev" href="'.$prev_path.'" />'.PHP_EOL;
       }
       if($next) {
         echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
-        echo '<link rel="next" href="'.$next.'" />'.PHP_EOL;
+        echo '<link rel="next" href="'.$next_path.'" />'.PHP_EOL;
       }
     }
   } else if (!is_404()){
@@ -175,8 +177,8 @@ endif;
 //分割ページ（マルチページ）URLの取得
 //参考ページ：
 //http://seophp.net/wordpress-fix-rel-prev-and-rel-next-without-plugin/
-if ( !function_exists( 'generate_multipage_url' ) ):
-function generate_multipage_url($rel='prev') {
+if ( !function_exists( 'get_multipage_url' ) ):
+function get_multipage_url($rel='prev') {
   global $post;
   global $multipage;
   global $page;
