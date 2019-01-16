@@ -220,7 +220,7 @@ add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
   global $_TOC_SHORTCODE_USE;
-  //ページ上で目次が非表示設定になっている場合
+  //ページ上で目次が非表示設定（ショートコードも未使用）になっている場合
   if (!is_total_the_page_toc_visible() && !$_TOC_SHORTCODE_USE) {
     return $the_content;
   }
