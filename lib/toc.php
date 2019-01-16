@@ -216,13 +216,12 @@ endif;
 
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
-if (is_toc_visible()) {
-  add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
-}
+add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
+  global $_TOC_SHORTCODE_USE;
   //ページ上で目次が非表示設定になっている場合
-  if (!is_total_the_page_toc_visible()) {
+  if (!is_total_the_page_toc_visible() && !$_TOC_SHORTCODE_USE) {
     return $the_content;
   }
   // //投稿ページだと表示しない
@@ -294,8 +293,12 @@ function add_toc_before_1st_h2($the_content){
     }
 
   }
-  $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
-  $the_content = preg_replace(H2_REG, $html.PHP_EOL.PHP_EOL.$h2result, $the_content, 1);
+  //機能が有効な時のみ（ショートコードでは実行しない）
+  if (is_total_the_page_toc_visible()) {
+    $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
+    $the_content = preg_replace(H2_REG, $html.PHP_EOL.PHP_EOL.$h2result, $the_content, 1);
+  }
+
   //var_dump($the_content);
   return $the_content;
 }

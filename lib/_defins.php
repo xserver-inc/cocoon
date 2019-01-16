@@ -50,6 +50,9 @@ define('EC_DEFAULT', 5);
 //目次のインデックス番号
 global $_TOC_INDEX;
 $_TOC_INDEX = 1;
+//目次利用フラグ
+global $_TOC_SHORTCODE_USE;
+$_TOC_SHORTCODE_USE = false;
 
 //アドセンスID名
 define('DATA_AD_CLIENT', 'data-ad-client');
