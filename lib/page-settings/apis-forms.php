@@ -180,7 +180,7 @@ $help_text = __( '取得方法', THEME_NAME );
             <?php
             generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'リンクをもしもアフィリエイトを経由にする', THEME_NAME ));
             generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
-            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。2019年1月16日の<a href="https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f" target="_blank">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなります。ですので、<span class="red">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>（※他サイトの同一認証キーを用いたAmazonリンクから発生していない限りは）。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
+            generate_tips_tag(__( 'Amazonアソシエイトの審査に通らなかった場合など、もしもアフィリエイト経由でAmazonリンクを掲載します。2019年1月23日の<a href="https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f" target="_blank">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなります。ですので、<span class="red">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>（※他サイトの同一認証キーを用いたAmazonリンクから発生していない限りは）。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
 
             generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
             echo '<br>';
