@@ -15,6 +15,7 @@ $args = array(
   'no_found_rows' => true,
   'posts_per_page' => get_carousel_max_count(),
 );
+$args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );
 // var_dump($query -> have_posts());
 // var_dump($query);

@@ -59,10 +59,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <!-- カルーセルの表示順 -->
+        <!-- カルーセルの並び替え -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_CAROUSEL_ORDERBY, __('カルーセルの表示順', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_CAROUSEL_ORDERBY, __('カルーセルの並び替え', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
