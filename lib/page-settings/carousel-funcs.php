@@ -66,6 +66,14 @@ function get_carousel_category_ids(){
 }
 endif;
 
+//カルーセルの表示順
+define('OP_CAROUSEL_ORDERBY', 'carousel_orderby');
+if ( !function_exists( 'get_carousel_orderby' ) ):
+function get_carousel_orderby(){
+  return get_theme_option(OP_CAROUSEL_ORDERBY, 'rand');
+}
+endif;
+
 //カルーセルに表示する最大数
 define('OP_CAROUSEL_MAX_COUNT', 'carousel_max_count');
 if ( !function_exists( 'get_carousel_max_count' ) ):

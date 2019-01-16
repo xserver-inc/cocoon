@@ -11,7 +11,7 @@ if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
   'cat' => get_carousel_category_ids(),
-  'orderby' => 'rand', //ランダム表示
+  'orderby' => get_carousel_orderby(), //ランダム表示
   'no_found_rows' => true,
   'posts_per_page' => get_carousel_max_count(),
 );

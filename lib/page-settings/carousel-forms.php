@@ -59,6 +59,24 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- カルーセルの表示順 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CAROUSEL_ORDERBY, __('カルーセルの表示順', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'rand' => __( 'ランダム', THEME_NAME ),
+              'post_date' => __( '投稿日（降順）', THEME_NAME ),
+              'post_modified' => __( '更新日（降順）', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_CAROUSEL_ORDERBY, $options, get_carousel_orderby());
+            generate_tips_tag(__( 'カルーセルを表示する順番を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 最大表示数 -->
         <tr>
           <th scope="row">
