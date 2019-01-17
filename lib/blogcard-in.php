@@ -210,64 +210,64 @@ if ( is_internal_blogcard_enable() ) {
 
 //本文中のURLショートコードをブログカードタグに変更する
 if ( !function_exists( 'url_shortcode_to_blogcard' ) ):
-  function url_shortcode_to_blogcard($the_content) {
-    //1行にURLのみが期待されている行（URL）を全て$mに取得
-    $reg = '\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\]';
-    //_v(preg_match('/'.$reg.'/i', $the_content));
+function url_shortcode_to_blogcard($the_content) {
+  //1行にURLのみが期待されている行（URL）を全て$mに取得
+  $reg = '\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\]';
+  //_v(preg_match('/'.$reg.'/i', $the_content));
+  //$the_content = preg_replace('/<p>('.$reg.')<\/p>/i', '$1', $the_content);
+  $res = preg_match_all('/'.$reg.'/i', $the_content, $m);
+  if ($res) {
+    //_v($the_content);
+    $the_content = str_replace('<p>', '<div class="paragraph">', $the_content);
+    $the_content = str_replace('</p>', '</div>', $the_content);
+    // $pres = preg_match_all('/<p>(.*?)?'.$reg.'<\/p>/is', $the_content, $n);
+    // _v($n);
+    //$the_content = preg_replace('/<p>((?!<\/p>)*?)('.$reg.')((?!<p>)*?)<\/p>/is', '<div class="blogcard-shortcode-wrap">$1$2$3</div>' , $the_content);
     //$the_content = preg_replace('/<p>('.$reg.')<\/p>/i', '$1', $the_content);
-    $res = preg_match_all('/'.$reg.'/i', $the_content, $m);
-    if ($res) {
-      //_v($the_content);
-      $the_content = str_replace('<p>', '<div class="paragraph">', $the_content);
-      $the_content = str_replace('</p>', '</div>', $the_content);
-      // $pres = preg_match_all('/<p>(.*?)?'.$reg.'<\/p>/is', $the_content, $n);
-      // _v($n);
-      //$the_content = preg_replace('/<p>((?!<\/p>)*?)('.$reg.')((?!<p>)*?)<\/p>/is', '<div class="blogcard-shortcode-wrap">$1$2$3</div>' , $the_content);
-      //$the_content = preg_replace('/<p>('.$reg.')<\/p>/i', '$1', $the_content);
-      //_v($the_content);
-    }
-    //_v($res);
     //_v($the_content);
-    //_v($m);
-    foreach ($m[0] as $match) {
-    //マッチしたURL一つ一つをループしてカードを作成
-      $url = strip_tags($match);//URL
-      $url = preg_replace('{[\[\]]}', '', $url);//[と]の除去
-      //$url = str_replace('?', '%3F', $url);//?をエンコード
-
-      //wpForoのブログカードは外部ブログカードに任せる
-      if (includes_wpforo_url($url)) {
-        continue;
-      }
-
-      //取得した内部URLからブログカードのHTMLタグを作成
-      $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
-      //URLをブログカードに変換
-      if ( !$tag ) {//取得したURLが外部URLだった場合
-        $tag = url_to_external_blog_card($url);//外部ブログカードタグに変換
-      }
-
-      if ( $tag ) {//内部・外部ブログカードどちらかでタグを作成できた場合
-        //本文中のURLをブログカードタグで置換
-        $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
-        //$the_content = str_replace('<p>'.$tag.'</p>', $tag , $the_content);
-      }
-      //_v($the_content);((?!.*<\/p>).*?)
-      //pタグで囲んでいるとブラウザで勝手にタグが変換されてしまうのでdivに付け替える
-      //$the_content = preg_replace('{<p>((?!.*</p>).+?) class="blogcard-wrap (.+?)</p>}is', '<div class="blogcard-shortcode-wrap">$1 class="blogcard-wrap $2</div>' , $the_content);
-      //_v($the_content);
-    }
-    //_v($the_content);
-    return $the_content;//置換後のコンテンツを返す
   }
-  endif;
-  add_filter('the_content', 'url_shortcode_to_blogcard' ,9999);
-  add_filter('widget_text', 'url_shortcode_to_blogcard' ,9999);
-  add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 9999);
-  add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 9999);
-  add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 9999);
-  add_filter('comment_text', 'url_shortcode_to_blogcard', 9999);
-  add_filter('the_category_content', 'url_shortcode_to_blogcard', 9999);
+  //_v($res);
+  //_v($the_content);
+  //_v($m);
+  foreach ($m[0] as $match) {
+  //マッチしたURL一つ一つをループしてカードを作成
+    $url = strip_tags($match);//URL
+    $url = preg_replace('{[\[\]]}', '', $url);//[と]の除去
+    //$url = str_replace('?', '%3F', $url);//?をエンコード
+
+    //wpForoのブログカードは外部ブログカードに任せる
+    if (includes_wpforo_url($url)) {
+      continue;
+    }
+
+    //取得した内部URLからブログカードのHTMLタグを作成
+    $tag = url_to_internal_blogcard_tag($url);//外部ブログカードタグに変換
+    //URLをブログカードに変換
+    if ( !$tag ) {//取得したURLが外部URLだった場合
+      $tag = url_to_external_blog_card($url);//外部ブログカードタグに変換
+    }
+
+    if ( $tag ) {//内部・外部ブログカードどちらかでタグを作成できた場合
+      //本文中のURLをブログカードタグで置換
+      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
+      //$the_content = str_replace('<p>'.$tag.'</p>', $tag , $the_content);
+    }
+    //_v($the_content);((?!.*<\/p>).*?)
+    //pタグで囲んでいるとブラウザで勝手にタグが変換されてしまうのでdivに付け替える
+    //$the_content = preg_replace('{<p>((?!.*</p>).+?) class="blogcard-wrap (.+?)</p>}is', '<div class="blogcard-shortcode-wrap">$1 class="blogcard-wrap $2</div>' , $the_content);
+    //_v($the_content);
+  }
+  //_v($the_content);
+  return $the_content;//置換後のコンテンツを返す
+}
+endif;
+add_filter('the_content', 'url_shortcode_to_blogcard' ,9999);
+add_filter('widget_text', 'url_shortcode_to_blogcard' ,9999);
+add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 9999);
+add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 9999);
+add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 9999);
+add_filter('comment_text', 'url_shortcode_to_blogcard', 9999);
+add_filter('the_category_content', 'url_shortcode_to_blogcard', 9999);
 
 //ブログカード置換用テキストにpタグが含まれているかどうか
 if ( !function_exists( 'is_p_tag_appropriate' ) ):

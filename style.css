@@ -1977,10 +1977,6 @@ span.internal-icon {
 .sidebar-left .content-in {
   flex-direction: row-reverse;
 }
-.sidebar-left .main {
-  margin-right: 0;
-  margin-left: 20px;
-}
 
 .nwa .ranking-item-img-desc,
 .nwa .ranking-item-link-buttons {
