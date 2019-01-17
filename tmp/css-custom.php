@@ -369,7 +369,11 @@ if (get_sidebar_border_color()): ?>
 <?php //カラム間の幅
 if (get_main_sidebar_margin()): ?>
 .main{
+  <?php if(is_sidebar_position_right()): ?>
   margin-right: <?php echo get_main_sidebar_margin(); ?>px;
+  <?php else: ?>
+  margin-left: <?php echo get_main_sidebar_margin(); ?>px;
+  <?php endif; ?>
 }
 <?php endif ?>
 <?php //サイト幅

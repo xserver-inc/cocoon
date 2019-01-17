@@ -129,6 +129,11 @@ function get_sidebar_position(){
   return get_theme_option(OP_SIDEBAR_POSITION, 'sidebar_right');
 }
 endif;
+if ( !function_exists( 'is_sidebar_position_right' ) ):
+function is_sidebar_position_right(){
+  return get_sidebar_position() == 'sidebar_right';
+}
+endif;
 
 //サイドバーの表示状態の設定
 define('OP_SIDEBAR_DISPLAY_TYPE', 'sidebar_display_type');
