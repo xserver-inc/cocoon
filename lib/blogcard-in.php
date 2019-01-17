@@ -222,7 +222,7 @@ function url_shortcode_to_blogcard($the_content) {
     // $the_content = str_replace('</p>', '</div>', $the_content);
     $pres = preg_match_all('/<p>.*?<\/p>/is', $the_content, $n);
     //_v($n);
-    //URLショートコードが含まれているパラグラフだってdivにする
+    //URLショートコードが含まれているパラグラフだけdivにする
     if ($pres) {
       foreach ($n[0] as $paragraph) {
         if (preg_match($reg, $paragraph)) {
