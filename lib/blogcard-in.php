@@ -212,16 +212,26 @@ if ( is_internal_blogcard_enable() ) {
 if ( !function_exists( 'url_shortcode_to_blogcard' ) ):
 function url_shortcode_to_blogcard($the_content) {
   //1行にURLのみが期待されている行（URL）を全て$mに取得
-  $reg = '\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\]';
+  $reg = '/\[https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+\]/i';
   //_v(preg_match('/'.$reg.'/i', $the_content));
   //$the_content = preg_replace('/<p>('.$reg.')<\/p>/i', '$1', $the_content);
-  $res = preg_match_all('/'.$reg.'/i', $the_content, $m);
+  $res = preg_match_all($reg, $the_content, $m);
   if ($res) {
     //_v($the_content);
-    $the_content = str_replace('<p>', '<div class="paragraph">', $the_content);
-    $the_content = str_replace('</p>', '</div>', $the_content);
-    // $pres = preg_match_all('/<p>(.*?)?'.$reg.'<\/p>/is', $the_content, $n);
-    // _v($n);
+    // $the_content = str_replace('<p>', '<div class="paragraph">', $the_content);
+    // $the_content = str_replace('</p>', '</div>', $the_content);
+    $pres = preg_match_all('/<p>.*?<\/p>/is', $the_content, $n);
+    //_v($n);
+    //URLショートコードが含まれているパラグラフだってdivにする
+    if ($pres) {
+      foreach ($n[0] as $paragraph) {
+        if (preg_match($reg, $paragraph)) {
+          $div = str_replace('<p>', '<div class="blogcard-shortcode-wrap">', $paragraph);
+          $div = str_replace('</p>', '</div>', $div);
+          $the_content = str_replace($paragraph, $div, $the_content);
+        }
+      }
+    }
     //$the_content = preg_replace('/<p>((?!<\/p>)*?)('.$reg.')((?!<p>)*?)<\/p>/is', '<div class="blogcard-shortcode-wrap">$1$2$3</div>' , $the_content);
     //$the_content = preg_replace('/<p>('.$reg.')<\/p>/i', '$1', $the_content);
     //_v($the_content);
