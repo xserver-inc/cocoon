@@ -572,7 +572,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo p { margin: 1.2em 0; }
+.admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
@@ -1632,7 +1632,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo p { margin: 1.2em 0; }
+.admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
