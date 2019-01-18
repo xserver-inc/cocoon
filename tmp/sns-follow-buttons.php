@@ -74,7 +74,7 @@ if ( is_any_sns_follow_buttons_exist()
   <?php endif; ?>
 
   <?php if ( is_feedly_follow_button_visible() )://feedlyフォローボタンを表示するか ?>
-    <a href="//feedly.com/i/subscription/feed/<?php bloginfo("rss2_url"); ?>" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"><?php echo get_feedly_count(); ?></span></a>
+    <a href="//feedly.com/i/subscription/feed/<?php echo urlencode(get_bloginfo("rss2_url")); ?>" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"><?php echo get_feedly_count(); ?></span></a>
   <?php endif; ?>
 
   <?php if ( is_rss_follow_button_visible() )://RSSフォローボタンを表示するか ?>
