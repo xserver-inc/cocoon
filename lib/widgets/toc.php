@@ -10,7 +10,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_total_the_page_toc_visible()) {
+if (is_toc_visible()) {
   add_action('widgets_init', function(){register_widget('TOCWidgetItem');});
 }
 if ( !class_exists( 'TOCWidgetItem' ) ):
