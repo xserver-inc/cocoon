@@ -105,6 +105,7 @@ if (is_mobile_button_layout_type_slide_in()): ?>
         $sidebar = ob_get_clean();
         //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
         $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
+        $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
         echo $sidebar;
          ?>
         <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
