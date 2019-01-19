@@ -226,7 +226,7 @@ function url_shortcode_to_blogcard($the_content) {
     if ($pres) {
       foreach ($n[0] as $paragraph) {
         if (preg_match($reg, $paragraph)) {
-          $div = str_replace('<p>', '<div class="blogcard-shortcode-wrap">', $paragraph);
+          $div = str_replace('<p>', '<div class="blogcard-shortcode-wrap paragraph">', $paragraph);
           $div = str_replace('</p>', '</div>', $div);
           $the_content = str_replace($paragraph, $div, $the_content);
         }
