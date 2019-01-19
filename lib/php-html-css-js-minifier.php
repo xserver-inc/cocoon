@@ -8,7 +8,7 @@ define('MINIFY_COMMENT_CSS', '/\*[\s\S]*?\*/');
 define('MINIFY_COMMENT_HTML', '<!\-{2}[\s\S]*?\-{2}>');
 define('MINIFY_COMMENT_JS', '//[^\n]*');
 define('MINIFY_PATTERN_JS', '/[^\n]+?/[gimuy]*');
-// define('MINIFY_PATTERN_JS', '/[^\n]{2,}?/(/)?[gimuy]*');
+// define('MINIFY_PATTERN_JS', '/([^\n]{2,}?|\w)/(/)?[gimuy]*');
 define('MINIFY_HTML', '<[!/]?[a-zA-Z\d:.-]+[\s\S]*?>');
 define('MINIFY_HTML_ENT', '&(?:[a-zA-Z\d]+|\#\d+|\#x[a-fA-F\d]+);');
 define('MINIFY_HTML_KEEP', '<pre(?:\s[^<>]*?)?>[\s\S]*?</pre>|<code(?:\s[^<>]*?)?>[\s\S]*?</code>|<script(?:\s[^<>]*?)?>[\s\S]*?</script>|<style(?:\s[^<>]*?)?>[\s\S]*?</style>|<textarea(?:\s[^<>]*?)?>[\s\S]*?</textarea>');
