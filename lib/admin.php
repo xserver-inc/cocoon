@@ -161,6 +161,11 @@ function customize_admin_manage_posts_columns($columns) {
     unset($columns['date']);
   }
 
+  //文字数表示
+  if (is_admin_list_word_count_visible()) {
+    $columns['word-count'] = __( '文字数', THEME_NAME );
+  }
+
   //アイキャッチ表示
   if (is_admin_list_eyecatch_visible()) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
@@ -182,6 +187,37 @@ endif;
 add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
+
+  //文字数表示
+  if ( 'word-count' == $column_name ) {
+    //テーマで設定されているサムネイルを利用する場合
+    $post = get_post($post_id);
+    //_v($post);
+    $title_count = mb_strlen(strip_tags($post->post_title));
+    $content_count = mb_strlen(strip_tags(do_shortcode($post->post_content)));
+    $digit = max(array(strlen($title_count), strlen($content_count)));
+    //var_dump($digit);
+    $thum =
+    '<div class="word-count-wrap">'.
+      '<div class="word-count-title">'.
+        '<span class="word-count-title-label">'.
+          __( '　題：', THEME_NAME ).
+        '</span>'.
+        '<span class="word-count-title-count">'.
+          sprintf( '%s', $title_count ).
+        '</span>'.
+      '</div>'.
+      '<div class="word-count-coutent">'.
+        '<span class="word-count-coutent-label">'.
+          __( '本文：', THEME_NAME ).
+        '</span>'.
+        '<span class="word-count-coutent-count">'.
+          sprintf( '%s', $content_count ).
+        '</span>'.
+      '</div>'.
+    '</div>';
+  }
+
   //アイキャッチ表示
   if ( 'thumbnail' == $column_name ) {
     //テーマで設定されているサムネイルを利用する場合

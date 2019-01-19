@@ -136,6 +136,15 @@ body.wp-admin{
 .column-thumbnail{
   width:80px;
 }
+/*記事一覧の文字数幅*/
+.column-word-count{
+  width:76px;
+}
+// .word-count-title-count,
+// .word-count-content-count{
+//   white-space: pre-wrap;
+//   font-family: Consolas, monospace;
+// }
 
 .admin-custum-label{
   margin-left: -30px;
