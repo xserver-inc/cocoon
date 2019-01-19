@@ -8,6 +8,7 @@ define('MINIFY_COMMENT_CSS', '/\*[\s\S]*?\*/');
 define('MINIFY_COMMENT_HTML', '<!\-{2}[\s\S]*?\-{2}>');
 define('MINIFY_COMMENT_JS', '//[^\n]*');
 define('MINIFY_PATTERN_JS', '/[^\n]+?/[gimuy]*');
+// define('MINIFY_PATTERN_JS', '/[^\n]{2,}?/(/)?[gimuy]*');
 define('MINIFY_HTML', '<[!/]?[a-zA-Z\d:.-]+[\s\S]*?>');
 define('MINIFY_HTML_ENT', '&(?:[a-zA-Z\d]+|\#\d+|\#x[a-fA-F\d]+);');
 define('MINIFY_HTML_KEEP', '<pre(?:\s[^<>]*?)?>[\s\S]*?</pre>|<code(?:\s[^<>]*?)?>[\s\S]*?</code>|<script(?:\s[^<>]*?)?>[\s\S]*?</script>|<style(?:\s[^<>]*?)?>[\s\S]*?</style>|<textarea(?:\s[^<>]*?)?>[\s\S]*?</textarea>');
@@ -185,24 +186,24 @@ function fn_minify_html_union($input, $quote) {
                     return $m[1] . $m[2] . fn_minify_css($m[3]) . $m[2];
                 }, $m[2]);
             }
-            // Minify URL(s)
-            if (strpos($m[2], '://') !== false) {
-                $m[2] = str_replace([
-                    $url . '/',
-                    $url . '?',
-                    $url . '&',
-                    $url . '#',
-                    $url . '"',
-                    $url . "'"
-                ], [
-                    '/',
-                    '?',
-                    '&',
-                    '#',
-                    '/"',
-                    "/'"
-                ], $m[2]);
-            }
+            // // Minify URL(s)
+            // if (strpos($m[2], '://') !== false) {
+            //     $m[2] = str_replace([
+            //         $url . '/',
+            //         $url . '?',
+            //         $url . '&',
+            //         $url . '#',
+            //         $url . '"',
+            //         $url . "'"
+            //     ], [
+            //         '/',
+            //         '?',
+            //         '&',
+            //         '#',
+            //         '/"',
+            //         "/'"
+            //     ], $m[2]);
+            // }
             $a = 'a(sync|uto(focus|play))|c(hecked|ontrols)|d(efer|isabled)|hidden|ismap|loop|multiple|open|re(adonly|quired)|s((cop|elect)ed|pellcheck)';
             $a = '<' . $m[1] . preg_replace([
                 // From `a="a"`, `a='a'`, `a="true"`, `a='true'`, `a=""` and `a=''` to `a` [^1]
