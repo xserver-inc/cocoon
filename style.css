@@ -3317,6 +3317,10 @@ label.screen-reader-text {
   margin-left: auto;
 }
 
+.cb-circle {
+  border-radius: 2em;
+}
+
 .blogcard-type .blogcard::before {
   font-family: FontAwesome;
   position: absolute;
