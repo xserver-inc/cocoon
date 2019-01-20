@@ -837,9 +837,44 @@ $bb_green: #3eb370;
   margin-left: auto;
 }
 
-.cb-circle{
+///////////////////////////////////////////
+// Cocoon Blocks共通オプション
+///////////////////////////////////////////
+.mc-circle{
   border-radius: 2em;
 }
+@mixin micro_copycolor($color: 'red'){
+  background-color: $color;
+  color:$white;
+  border: none;
+  &.micro-bottom{
+    &::after{
+      border-bottom-color: $color;
+      border-top-color: transparent;
+    }
+  }
+  &::before{
+    border-bottom-color: transparent;
+  }
+  &::after{
+    border-top-color: $color;
+  }
+}
+.micro-balloon{
+  &.mc-yellow{
+    @include micro_copycolor($bb_yellow);
+  }
+  &.mc-red{
+    @include micro_copycolor($bb_red);
+  }
+  &.mc-blue{
+    @include micro_copycolor($bb_blue);
+  }
+  &.mc-green{
+    @include micro_copycolor($bb_green);
+  }
+}
+
 
 // /*メインカランの2カラム化*/
 // .half-half{
