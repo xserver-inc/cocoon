@@ -440,7 +440,7 @@ function countdown_shortcode( $atts ){
   if (!$to) {
     return TIME_ERROR_MESSAGE;
   }
-  $to = strtotime($to.' 23:59:59');
+  $to = strtotime($to.' 00:00:00');
   return get_countdown_days($to).$unit;
 }
 endif;
