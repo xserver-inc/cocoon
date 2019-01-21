@@ -12,7 +12,11 @@ if ( is_any_sns_follow_buttons_exist()
       //   is_author_administrator()
       //   || (is_author_exits() && is_author_follow_buttons_exits())
       // )
-    ): //全てのフォローボタンを表示するかどうか?>
+    ): //全てのフォローボタンを表示するかどうか
+
+    //呼び出し前にユーザーIDが設定されている場合
+    $user_id = $_USER_ID ? $_USER_ID : get_the_posts_author_id();
+    ?>
 <!-- SNSページ -->
 <div class="sns-follow<?php echo get_additional_sns_follow_button_classes(); ?>">
 
@@ -21,56 +25,56 @@ if ( is_any_sns_follow_buttons_exist()
   <?php endif; ?>
   <div class="sns-follow-buttons sns-buttons">
 
-  <?php if ( get_the_author_website_url() )://ウェブサイトフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_website_url(); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home-logo"></span></a>
+  <?php if ( get_the_author_website_url($user_id) )://ウェブサイトフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_website_url($user_id); //ウェブサイトフォローIDの取得?>" class="follow-button website-button website-follow-button-sq" target="_blank" title="<?php _e( '著者サイト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-home-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_twitter_url() )://Twitterフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_twitter_url(); //TwitterフォローIDの取得?>" class="follow-button twitter-button twitter-follow-button-sq" target="_blank" title="<?php _e( 'Twitterをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-twitter-logo"></span></a>
+  <?php if ( get_the_author_twitter_url($user_id) )://Twitterフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_twitter_url($user_id); //TwitterフォローIDの取得?>" class="follow-button twitter-button twitter-follow-button-sq" target="_blank" title="<?php _e( 'Twitterをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-twitter-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_facebook_url() )://Facebookフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_facebook_url(); //FacebookフォローIDの取得?>" class="follow-button facebook-button facebook-follow-button-sq" target="_blank" title="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-facebook-logo"></span></a>
+  <?php if ( get_the_author_facebook_url($user_id) )://Facebookフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_facebook_url($user_id); //FacebookフォローIDの取得?>" class="follow-button facebook-button facebook-follow-button-sq" target="_blank" title="<?php _e( 'Facebookをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-facebook-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_hatebu_url() )://はてブフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_hatebu_url(); //はてブフォローIDの取得 ?>" class="follow-button hatebu-button hatebu-follow-button-sq" target="_blank" title="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-hatebu-logo"></span></a>
+  <?php if ( get_the_author_hatebu_url($user_id) )://はてブフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_hatebu_url($user_id); //はてブフォローIDの取得 ?>" class="follow-button hatebu-button hatebu-follow-button-sq" target="_blank" title="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-hatebu-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_google_plus_url() )://Google＋フォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_google_plus_url(); //Google＋フォローIDの取得 ?>" class="follow-button google-plus-button google-plus-follow-button-sq" target="_blank" title="<?php _e( 'Google＋をフォロー', THEME_NAME ) ?>" rel="nofollow publisher"><span class="icon-google-plus-logo"></span></a>
+  <?php if ( get_the_author_google_plus_url($user_id) )://Google＋フォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_google_plus_url($user_id); //Google＋フォローIDの取得 ?>" class="follow-button google-plus-button google-plus-follow-button-sq" target="_blank" title="<?php _e( 'Google＋をフォロー', THEME_NAME ) ?>" rel="nofollow publisher"><span class="icon-google-plus-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_instagram_url() )://Instagramフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_instagram_url(); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-instagram-new"></span></a>
+  <?php if ( get_the_author_instagram_url($user_id) )://Instagramフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_instagram_url($user_id); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-instagram-new"></span></a>
   <?php endif; ?>
 
-  <?php if (  get_the_author_youtube_url() )://YouTubeフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_youtube_url(); //YouTubeフォローURLの取得 ?>" class="follow-button youtube-button youtube-follow-button-sq" target="_blank" title="<?php _e( 'YouTubeをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-youtube-logo"></span></a>
+  <?php if (  get_the_author_youtube_url($user_id) )://YouTubeフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_youtube_url($user_id); //YouTubeフォローURLの取得 ?>" class="follow-button youtube-button youtube-follow-button-sq" target="_blank" title="<?php _e( 'YouTubeをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-youtube-logo"></span></a>
   <?php endif; ?>
 
-  <?php if (  get_the_author_flickr_url() )://Flickrフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_flickr_url(); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-flickr-logo"></span></a>
+  <?php if (  get_the_author_flickr_url($user_id) )://Flickrフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_flickr_url($user_id); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-flickr-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_pinterest_url() )://Pinterestフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_pinterest_url(); //PinterestフォローIDの取得 ?>" class="follow-button pinterest-button pinterest-follow-button-sq" target="_blank" title="<?php _e( 'Pinterestをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-pinterest-logo"></span></a>
+  <?php if ( get_the_author_pinterest_url($user_id) )://Pinterestフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_pinterest_url($user_id); //PinterestフォローIDの取得 ?>" class="follow-button pinterest-button pinterest-follow-button-sq" target="_blank" title="<?php _e( 'Pinterestをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-pinterest-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_line_at_url() )://LINE@フォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_line_at_url(); //LINE@フォローURLの取得 ?>" class="follow-button line-button line-follow-button-sq" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a>
+  <?php if ( get_the_author_line_at_url($user_id) )://LINE@フォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_line_at_url($user_id); //LINE@フォローURLの取得 ?>" class="follow-button line-button line-follow-button-sq" target="_blank" title="<?php _e( 'LINE@をフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-line-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_amazon_url() )://Amazon欲しい物リストボタンを表示するか ?>
-    <a href="<?php echo get_the_author_amazon_url(); //Amazon欲しい物リストURLの取得 ?>" class="follow-button amazon-button amazon-follow-button-sq" target="_blank" title="<?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-amazon-logo"></span></a>
+  <?php if ( get_the_author_amazon_url($user_id) )://Amazon欲しい物リストボタンを表示するか ?>
+    <a href="<?php echo get_the_author_amazon_url($user_id); //Amazon欲しい物リストURLの取得 ?>" class="follow-button amazon-button amazon-follow-button-sq" target="_blank" title="<?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?>" rel="nofollow"><span class="icon-amazon-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_rakuten_room_url() )://楽天ROOMボタンを表示するか ?>
-    <a href="<?php echo get_the_author_rakuten_room_url(); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rakuten-room-logo"></span></a>
+  <?php if ( get_the_author_rakuten_room_url($user_id) )://楽天ROOMボタンを表示するか ?>
+    <a href="<?php echo get_the_author_rakuten_room_url($user_id); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow"><span class="icon-rakuten-room-logo"></span></a>
   <?php endif; ?>
 
-  <?php if ( get_the_author_github_url() )://GitHubフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_github_url(); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-github-logo"></span></a>
+  <?php if ( get_the_author_github_url($user_id) )://GitHubフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_github_url($user_id); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow"><span class="icon-github-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( is_feedly_follow_button_visible() )://feedlyフォローボタンを表示するか ?>

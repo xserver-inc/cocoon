@@ -1046,10 +1046,13 @@ endif;
 
 //プロフィールボックス生成関数
 if ( !function_exists( 'generate_author_box_tag' ) ):
-function generate_author_box_tag($label, $is_image_circle = 0){
-  $author_id = get_the_author_meta( 'ID' );
-  if (!$author_id || is_404()) {
-    $author_id = get_sns_default_follow_user();
+function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
+  $user_id = get_the_author_meta( 'ID' );
+  if (!$user_id || is_404()) {
+    $user_id = get_sns_default_follow_user();
+  }
+  if ($id && get_userdata( $id )) {
+    $user_id = $id;
   }
 
   ?>
@@ -1062,34 +1065,42 @@ function generate_author_box_tag($label, $is_image_circle = 0){
       </div>
     <?php endif ?>
     <figure class="author-thumb<?php echo $image_class; ?>">
-      <?php echo get_avatar( $author_id, 200 ); ?>
+      <?php echo get_avatar( $user_id, 200 ); ?>
     </figure>
     <div class="author-content">
       <div class="author-name">
         <?php
-        if ($author_id) {
-          $description = get_the_author_description_text();
+        if ($user_id) {
+          $description = get_the_author_description_text($user_id);
           //$description = trim(get_the_author_description_text());
           if (empty($description)) {
-            $description = get_the_author_meta('description', $author_id);
+            $description = get_the_author_meta('description', $user_id);
           }
           $description = wpautop($description);
 
           if (!is_buddypress_page()) {
             //プロフィールページURLの取得
-            $profile_page_url = get_the_author_profile_page_url($author_id);
+            $profile_page_url = get_the_author_profile_page_url($user_id);
 
+            $author_display_name = strip_tags(get_the_author_display_name($user_id));
             if ($profile_page_url) {
-              $author_display_name = strip_tags(get_the_author_display_name());
               $name = '<a href="'.$profile_page_url.'">'.$author_display_name.'</a>';
               //$name = get_nofollow_link($profile_page_url, $author_display_name);
               //echo $name;
             } else {
-              $name = get_the_author_posts_link($author_id);
+              //$name = get_the_author_posts_link($user_id);
+              $user = get_userdata( $user_id );
+              $name = sprintf( '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
+                esc_url( get_author_posts_url( $user->ID, $user->user_nicename ) ),
+                /* translators: %s: author's display name */
+                esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
+                $user->display_name
+              );
+              //_v($user);
             }
           } else {
-            $author_display_name = strip_tags(get_the_author_display_name());
-            $author_website_url = strip_tags(get_the_author_website_url());
+            $author_display_name = strip_tags(get_the_author_display_name($user_id));
+            $author_website_url = strip_tags(get_the_author_website_url($user_id));
             $description = strip_tags($description);
             $name = $author_display_name;
             if ($author_website_url) {
@@ -1109,7 +1120,7 @@ function generate_author_box_tag($label, $is_image_circle = 0){
         <?php
         if ($description) {
           echo $description;
-        } elseif (!$author_id) {
+        } elseif (!$user_id) {
           if (is_buddypress_exist()) {
             echo __( '未登録のユーザーさんです。', THEME_NAME );
             echo '<br>';
@@ -1123,16 +1134,14 @@ function generate_author_box_tag($label, $is_image_circle = 0){
           echo __( 'プロフィール内容は管理画面から変更可能です→', THEME_NAME ).'<a href="/wp-admin/user-edit.php?user_id='.get_the_author_meta( 'ID' ).'">'.__( 'プロフィール設定画面', THEME_NAME ).'</a><br>'.__( '※このメッセージは、ログインユーザーにしか表示されません。', THEME_NAME );
         }
         ?>
-        <?php if (0&&get_the_author_website_url()): ?>
-          <span class="site-url">
-            <a href="<?php echo get_the_author_website_url(); ?>" target="_blank"><?php echo get_the_author_website_url(); ?></a>
-          </span>
-        <?php endif ?>
 
       </div>
-      <?php if ($author_id): ?>
+      <?php if ($user_id): ?>
       <div class="author-follows">
-        <?php get_template_part('tmp/sns-follow-buttons'); ?>
+        <?php
+        set_query_var( '_USER_ID', $user_id );
+        get_template_part('tmp/sns-follow-buttons');
+        set_query_var( '_USER_ID', null ); ?>
       </div>
       <?php endif ?>
 

@@ -193,30 +193,34 @@ endif;
 
 //投稿者名の取得
 if ( !function_exists( 'get_the_author_display_name' ) ):
-function get_the_author_display_name(){
-  return esc_html(get_the_author_meta('display_name', get_the_posts_author_id()));
+function get_the_author_display_name($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('display_name', $user_id));
 }
 endif;
 
 //投稿者情報の取得
 if ( !function_exists( 'get_the_author_description_text' ) ):
-function get_the_author_description_text(){
-  return get_the_author_meta('description', get_the_posts_author_id());
+function get_the_author_description_text($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return get_the_author_meta('description', $user_id);
 }
 endif;
 
 
 //プロフィール画面で設定したウェブサイトURLの取得
 if ( !function_exists( 'get_the_author_website_url' ) ):
-function get_the_author_website_url(){
-  return esc_html(get_the_author_meta('url', get_the_posts_author_id()));
+function get_the_author_website_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したTwitter URLの取得
 if ( !function_exists( 'get_the_author_twitter_url' ) ):
-function get_the_author_twitter_url(){
-  return esc_html(get_the_author_meta('twitter_url', get_the_posts_author_id()));
+function get_the_author_twitter_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('twitter_url', $user_id));
 }
 endif;
 
@@ -235,57 +239,65 @@ endif;
 
 //プロフィール画面で設定したFacebook URLの取得
 if ( !function_exists( 'get_the_author_facebook_url' ) ):
-function get_the_author_facebook_url(){
-  return esc_html(get_the_author_meta('facebook_url', get_the_posts_author_id()));
+function get_the_author_facebook_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('facebook_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したGoogle+ URLの取得
 if ( !function_exists( 'get_the_author_google_plus_url' ) ):
-function get_the_author_google_plus_url(){
-  return esc_html(get_the_author_meta('google_plus_url', get_the_posts_author_id()));
+function get_the_author_google_plus_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('google_plus_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したはてブ URLの取得
 if ( !function_exists( 'get_the_author_hatebu_url' ) ):
-function get_the_author_hatebu_url(){
-  return esc_html(get_the_author_meta('hatebu_url', get_the_posts_author_id()));
+function get_the_author_hatebu_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('hatebu_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したInstagram URLの取得
 if ( !function_exists( 'get_the_author_instagram_url' ) ):
-function get_the_author_instagram_url(){
-  return esc_html(get_the_author_meta('instagram_url', get_the_posts_author_id()));
+function get_the_author_instagram_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('instagram_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したPinterest URLの取得
 if ( !function_exists( 'get_the_author_pinterest_url' ) ):
-function get_the_author_pinterest_url(){
-  return esc_html(get_the_author_meta('pinterest_url', get_the_posts_author_id()));
+function get_the_author_pinterest_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('pinterest_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したYouTube URLの取得
 if ( !function_exists( 'get_the_author_youtube_url' ) ):
-function get_the_author_youtube_url(){
-  return esc_html(get_the_author_meta('youtube_url', get_the_posts_author_id()));
+function get_the_author_youtube_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('youtube_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定した立夏 URLの取得
 if ( !function_exists( 'get_the_author_flickr_url' ) ):
-function get_the_author_flickr_url(){
-  return esc_html(get_the_author_meta('flickr_url', get_the_posts_author_id()));
+function get_the_author_flickr_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('flickr_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したLINE@ URLの取得
 if ( !function_exists( 'get_the_author_line_at_url' ) ):
-function get_the_author_line_at_url(){
-  return esc_html(get_the_author_meta('line_at_url', get_the_posts_author_id()));
+function get_the_author_line_at_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('line_at_url', $user_id));
 }
 endif;
 //プロフィール画面で設定したTwitter URLからLINE IDの取得
@@ -307,22 +319,25 @@ endif;
 
 //プロフィール画面で設定したAmazon URLの取得
 if ( !function_exists( 'get_the_author_amazon_url' ) ):
-function get_the_author_amazon_url(){
-  return esc_html(get_the_author_meta('amazon_url', get_the_posts_author_id()));
+function get_the_author_amazon_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('amazon_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定した楽天ROOM URLの取得
 if ( !function_exists( 'get_the_author_rakuten_room_url' ) ):
-function get_the_author_rakuten_room_url(){
-  return esc_html(get_the_author_meta('rakuten_room_url', get_the_posts_author_id()));
+function get_the_author_rakuten_room_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('rakuten_room_url', $user_id));
 }
 endif;
 
 //プロフィール画面で設定したGitHub URLの取得
 if ( !function_exists( 'get_the_author_github_url' ) ):
-function get_the_author_github_url(){
-  return esc_html(get_the_author_meta('github_url', get_the_posts_author_id()));
+function get_the_author_github_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('github_url', $user_id));
 }
 endif;
 

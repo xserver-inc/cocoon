@@ -14,11 +14,12 @@ if (!shortcode_exists('author_box')) {
 if ( !function_exists( 'author_box_shortcode' ) ):
 function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
-    'label' => '',
+    'id' => null,
+    'label' => null,
   ), $atts));
   $label = sanitize_shortcode_value($label);
   ob_start();
-  generate_author_box_tag($label);
+  generate_author_box_tag($id, $label);
   $res = ob_get_clean();
   return $res;
 }
