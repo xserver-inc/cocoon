@@ -415,13 +415,10 @@ endif;
 
 //カウントダウンタイマーの取得
 if ( !function_exists( 'get_countdown_days' ) ):
-function get_countdown_days( $from, $to = null ) {
-  if (empty($to)) {
-   $to = time();
-  }
-  $diff = (int) ($from - $to);
+function get_countdown_days( $to ) {
+  $now = time();
+  $diff = (int) ($to - $now);
   $days = floor($diff / 86400);
-  //var_dump($days);
   if ($days <= 0) {
     $days = 0;
   }
@@ -435,14 +432,14 @@ add_shortcode('countdown', 'countdown_shortcode');
 if ( !function_exists( 'countdown_shortcode' ) ):
 function countdown_shortcode( $atts ){
   extract( shortcode_atts( array(
-    'from' => null,
+    'to' => null,
     'unit' => null,
   ), $atts ) );
   //入力エラー出力
-  if (!$from) {
+  if (!$to) {
     return TIME_ERROR_MESSAGE;
   }
-  $from = strtotime($from.' 23:59:59');
-  return get_countdown_days($from).$unit;
+  $to = strtotime($to.' 23:59:59');
+  return get_countdown_days($to).$unit;
 }
 endif;

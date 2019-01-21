@@ -210,15 +210,25 @@ function generate_shortcodes_is($value){
   shortcodes[15].before = '<?php echo $before; ?>';
   shortcodes[15].after = '<?php echo $after; ?>';
 
+  <?php //カウントダウンショートコード
+  $before = '[countdown from="';
+  $after = '"]';
+  ?>
+  shortcodes[16] = new Array();
+  shortcodes[16].title  = '<?php echo __( 'カウントダウン（日にちを入力）', THEME_NAME ); ?>';
+  shortcodes[16].tag = '<?php echo $before.$after; ?>';
+  shortcodes[16].before = '<?php echo $before; ?>';
+  shortcodes[16].after = '<?php echo $after; ?>';
+
   <?php //評価スター
   $before = '[star rate="';
   $after = '" number="1"]';
   ?>
-  shortcodes[16] = new Array();
-  shortcodes[16].title  = '<?php echo __( '評価スター', THEME_NAME ); ?>';
-  shortcodes[16].tag = '<?php echo $before.$after; ?>';
-  shortcodes[16].before = '<?php echo $before; ?>';
-  shortcodes[16].after = '<?php echo $after; ?>';
+  shortcodes[17] = new Array();
+  shortcodes[17].title  = '<?php echo __( '評価スター', THEME_NAME ); ?>';
+  shortcodes[17].tag = '<?php echo $before.$after; ?>';
+  shortcodes[17].before = '<?php echo $before; ?>';
+  shortcodes[17].after = '<?php echo $after; ?>';
 
   <?php
   echo '</script>';
