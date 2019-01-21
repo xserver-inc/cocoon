@@ -262,7 +262,7 @@ function timeline_item_shortcode( $atts, $content = null ){
 }
 endif;
 
-define('AGO_ERROR_MESSAGE', '<span class="ago-error">'.__( '日付未入力', THEME_NAME ).'</span>');
+define('TIME_ERROR_MESSAGE', '<span class="time-error">'.__( '日付未入力', THEME_NAME ).'</span>');
 //相対的な時間経過を取得するショートコード
 if (!shortcode_exists('ago')) {
   add_shortcode('ago', 'ago_shortcode');
@@ -273,7 +273,7 @@ function ago_shortcode( $atts ){
     'from' => null,
   ), $atts ) );
   if (!$from) {
-    return AGO_ERROR_MESSAGE;
+    return TIME_ERROR_MESSAGE;
   }
   $from = sanitize_shortcode_value($from);
   $from = strtotime($from);
@@ -295,7 +295,7 @@ function age_shortcode( $atts ){
   }
   //入力エラー出力
   if (!$from) {
-    return AGO_ERROR_MESSAGE;
+    return TIME_ERROR_MESSAGE;
   }
   $from = strtotime($from);
   return get_human_years_ago($from, $unit);
@@ -312,7 +312,7 @@ function yago_shortcode( $atts ){
   ), $atts ) );
   //入力エラー出力
   if (!$from) {
-    return AGO_ERROR_MESSAGE;
+    return TIME_ERROR_MESSAGE;
   }
   $from = strtotime($from);
   return get_human_years_ago($from, $unit);
@@ -410,5 +410,37 @@ function blogcard_shortcode( $atts, $content = null ) {
     }
     return $tag;
   }
+}
+endif;
+
+//カウントダウンタイマーの取得
+if ( !function_exists( 'get_countdown_days' ) ):
+function get_countdown_days( $from ) {
+  $to = time();
+  $from .= ' 23:59:59:99';
+  $diff = (int) ($from - $to);
+  $days = ceil($diff / 86400);
+  //var_dump($days);
+  if ($days <= 0) {
+    $days = 0;
+  }
+  $till = sprintf(_n('%s day', '%s days', $days), $days);
+  return $till;
+}
+endif;
+
+//相対的な時間経過を取得するショートコード
+add_shortcode('countdown', 'countdown_shortcode');
+if ( !function_exists( 'countdown_shortcode' ) ):
+function countdown_shortcode( $atts ){
+  extract( shortcode_atts( array(
+    'from' => null,
+  ), $atts ) );
+  //入力エラー出力
+  if (!$from) {
+    return TIME_ERROR_MESSAGE;
+  }
+  $from = strtotime($from);
+  return get_countdown_days($from);
 }
 endif;
