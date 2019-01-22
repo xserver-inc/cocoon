@@ -350,6 +350,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
+.admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
 .admin-settings .demo .wrap { width: 1236px; margin: 0 auto; }
@@ -1426,6 +1427,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
+.admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
 .admin-settings .demo .wrap { width: 1236px; margin: 0 auto; }
