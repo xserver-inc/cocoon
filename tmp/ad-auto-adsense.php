@@ -22,7 +22,7 @@ if (is_ads_visible() && is_auto_adsense_enable()):
   // _v($adsense_script);
 ?>
 <!-- Google Auto AdSense -->
-<?php echo $adsense_script; ?>
+<?php //echo $adsense_script; ?>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "<?php echo get_adsense_data_ad_client(); ?>",
