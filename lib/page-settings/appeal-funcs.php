@@ -16,7 +16,44 @@ function get_appeal_area_display_type(){
 endif;
 if ( !function_exists( 'is_appeal_area_visible' ) ):
 function is_appeal_area_visible(){
-  return get_appeal_area_display_type() != 'none';
+  return (
+    is_appeal_area_display_type_all_page() ||
+    (is_front_top_page() && is_appeal_area_display_type_front_page_only()) ||
+    (!is_singular() && is_appeal_area_display_type_not_singular()) ||
+    (is_singular() && is_appeal_area_display_type_singular_only()) ||
+    (is_single() && is_appeal_area_display_type_single_only()) ||
+    (is_page() && is_appeal_area_display_type_page_only())
+  );
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_all_page' ) ):
+function is_appeal_area_display_type_all_page(){
+  return get_appeal_area_display_type() == 'all_page';
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_front_page_only' ) ):
+function is_appeal_area_display_type_front_page_only(){
+  return get_appeal_area_display_type() == 'front_page_only';
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_not_singular' ) ):
+function is_appeal_area_display_type_not_singular(){
+  return get_appeal_area_display_type() == 'not_singular';
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_singular_only' ) ):
+function is_appeal_area_display_type_singular_only(){
+  return get_appeal_area_display_type() == 'singular_only';
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_single_only' ) ):
+function is_appeal_area_display_type_single_only(){
+  return get_appeal_area_display_type() == 'single_only';
+}
+endif;
+if ( !function_exists( 'is_appeal_area_display_type_page_only' ) ):
+function is_appeal_area_display_type_page_only(){
+  return get_appeal_area_display_type() == 'page_only';
 }
 endif;
 
