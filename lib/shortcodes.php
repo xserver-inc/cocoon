@@ -417,11 +417,11 @@ endif;
 //カウントダウンタイマーの取得
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
-  $now = time();
+  $now = date_i18n('U');
   //$now = strtotime('2019/01/22 23:59:59');
   $diff = (int) ($to - $now);
-  // _v(date("Y-m-d H:i:s", $to).'='.$to);
-  // _v(date("Y-m-d H:i:s", $now).'='.$now);
+  // _v(date_i18n("Y-m-d H:i:s", $to).'='.$to);
+  // _v(date_i18n("Y-m-d H:i:s", $now).'='.$now);
   // _v($diff / 86400);
   $days = ceil($diff / 86400);
   if ($days <= 0) {
