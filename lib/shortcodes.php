@@ -418,6 +418,7 @@ endif;
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
   $now = time();
+  //$now = strtotime('2019/01/22 23:59:59');
   $diff = (int) ($to - $now);
   // _v(date("Y-m-d H:i:s", $to).'='.$to);
   // _v(date("Y-m-d H:i:s", $now).'='.$now);
