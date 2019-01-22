@@ -298,6 +298,10 @@ ol, ul {
   padding-left: 40px;
 }
 
+hr {
+  color: #ddd;
+}
+
 /* クリアフィックス */
 .cf::after {
   clear: both;

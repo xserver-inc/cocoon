@@ -55,6 +55,10 @@ ol, ul{
   padding-left: 40px;
 }
 
+hr{
+  color: $x_thin;
+}
+
 /* クリアフィックス */
 .cf::after {
   clear: both;
