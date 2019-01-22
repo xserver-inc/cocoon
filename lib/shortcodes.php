@@ -419,7 +419,10 @@ if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
   $now = time();
   $diff = (int) ($to - $now);
-  $days = floor($diff / 86400);
+  // _v(date("Y-m-d H:i:s", $to).'='.$to);
+  // _v(date("Y-m-d H:i:s", $now).'='.$now);
+  // _v($diff / 86400);
+  $days = ceil($diff / 86400);
   if ($days <= 0) {
     $days = 0;
   }
@@ -440,7 +443,7 @@ function countdown_shortcode( $atts ){
   if (!$to) {
     return TIME_ERROR_MESSAGE;
   }
-  $to = strtotime($to.' 00:00:00');
+  $to = strtotime($to);
   return get_countdown_days($to).$unit;
 }
 endif;
