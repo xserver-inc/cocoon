@@ -1366,7 +1366,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: "Meiryo", sans-serif; }
-.admin-settings .demo .search-submit { position: absolute; right: 0; top: 50%; margin-top: -0.65em; font-size: 20px; cursor: pointer; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 0; top: 2px; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
@@ -2443,7 +2443,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: "Meiryo", sans-serif; }
-.admin-settings .demo .search-submit { position: absolute; right: 0; top: 50%; margin-top: -0.65em; font-size: 20px; cursor: pointer; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 0; top: 2px; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }

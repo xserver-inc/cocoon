@@ -5800,10 +5800,10 @@ div.fb-like-mobile {
 .search-submit {
   position: absolute;
   right: 0;
-  top: 50%;
-  margin-top: -0.65em;
+  top: 2px;
   font-size: 20px;
   cursor: pointer;
+  line-height: 49px;
   border: none;
   color: #ccc;
   padding: 0 8px;
