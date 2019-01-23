@@ -40,8 +40,10 @@ div.mce-content-body {
 }
 .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button"] .editor-block-list__block-edit, .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit, .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/micro-text"] .editor-block-list__block-edit {
   float: none;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
+}
+.editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/micro-text"], .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/micro-balloon"] {
+  height: auto !important;
 }
 .editor-block-list__layout .editor-block-list__block[data-type="cocoon-blocks/micro-balloon"] .editor-block-list__block-edit {
   float: none;

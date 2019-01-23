@@ -54,8 +54,11 @@ div.mce-content-body {
   &[data-type="cocoon-blocks/button-wrap"] .editor-block-list__block-edit,
   &[data-type="cocoon-blocks/micro-text"] .editor-block-list__block-edit {
     float: none;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
+  }
+  &[data-type="cocoon-blocks/micro-text"],
+  &[data-type="cocoon-blocks/micro-balloon"]{
+    height: auto !important;
   }
   &[data-type="cocoon-blocks/micro-balloon"] .editor-block-list__block-edit {
     float: none;
