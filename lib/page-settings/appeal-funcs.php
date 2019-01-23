@@ -22,7 +22,8 @@ function is_appeal_area_visible(){
     (!is_singular() && is_appeal_area_display_type_not_singular()) ||
     (is_singular() && is_appeal_area_display_type_singular_only()) ||
     (is_single() && is_appeal_area_display_type_single_only()) ||
-    (is_page() && is_appeal_area_display_type_page_only())
+    (is_page() && is_appeal_area_display_type_page_only()) ||
+    (is_admin() && get_appeal_area_display_type() != 'none') //設定プレビュー
   );
 }
 endif;

@@ -23,7 +23,8 @@ function is_carousel_visible(){
       (!is_singular() && is_carousel_display_type_not_singular()) ||
       (is_singular() && is_carousel_display_type_singular_only()) ||
       (is_single() && is_carousel_display_type_single_only()) ||
-      (is_page() && is_carousel_display_type_page_only())
+      (is_page() && is_carousel_display_type_page_only()) ||
+      (is_admin() && get_carousel_display_type() != 'none') //設定プレビュー
     );
 }
 endif;

@@ -3026,3 +3026,5 @@ textarea[name="the_page_memo"] { width: 100%; }
 .backwpup_page_backwpupeditjob #wpfooter { display: none; }
 
 .editor-inserter__search { max-width: 370px; }
+
+#carousel { display: block; }
