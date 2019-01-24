@@ -975,8 +975,23 @@ $bb_green: #3eb370;
   background-color: $current_bgc;
 }
 .caption-box-content{
-  padding: 0 0.8em;
+  padding: 0.4em 0.8em;
 }
+
+@mixin caption_color($color: $bb_yellow) {
+  &.caption-box{
+    border-color: $color;
+  }
+  .caption-box-title{
+    background-color: $color;
+    color: $white;
+  }
+}
+
+.cb-yellow{@include caption_color($bb_yellow);}
+.cb-red{@include caption_color($bb_red);}
+.cb-blue{@include caption_color($bb_blue);}
+.cb-green{@include caption_color($bb_green);}
 
 /************************************
 ** トグル表示ボタン

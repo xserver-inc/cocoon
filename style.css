@@ -3460,7 +3460,39 @@ label.screen-reader-text {
 }
 
 .caption-box-content {
-  padding: 0 0.8em;
+  padding: 0.4em 0.8em;
+}
+
+.cb-yellow.caption-box {
+  border-color: #fc9f4d;
+}
+.cb-yellow .caption-box-title {
+  background-color: #fc9f4d;
+  color: #fff;
+}
+
+.cb-red.caption-box {
+  border-color: #d05a6e;
+}
+.cb-red .caption-box-title {
+  background-color: #d05a6e;
+  color: #fff;
+}
+
+.cb-blue.caption-box {
+  border-color: #2ea9df;
+}
+.cb-blue .caption-box-title {
+  background-color: #2ea9df;
+  color: #fff;
+}
+
+.cb-green.caption-box {
+  border-color: #3eb370;
+}
+.cb-green .caption-box-title {
+  background-color: #3eb370;
+  color: #fff;
 }
 
 /************************************
