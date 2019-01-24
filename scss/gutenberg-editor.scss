@@ -35,6 +35,9 @@ div.mce-content-body {
     height: auto;
     padding: 0 0 1px;
   }
+  &[data-type="cocoon-blocks/micro-text"]{
+    padding: 0.5em;
+  }
   &[data-type="cocoon-blocks/button"][data-align="left"],
   &[data-type="cocoon-blocks/button-wrap"][data-align="left"],
   &[data-type="cocoon-blocks/micro-text"][data-align="left"] {

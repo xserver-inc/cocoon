@@ -932,7 +932,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
-.admin-settings .demo .button-block { float: none; margin: 6px 0; }
+.admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
@@ -2009,7 +2009,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
-.admin-settings .demo .button-block { float: none; margin: 6px 0; }
+.admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }

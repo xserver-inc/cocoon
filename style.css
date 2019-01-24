@@ -3434,7 +3434,7 @@ label.screen-reader-text {
 
 .button-block {
   float: none;
-  margin: 6px 0;
+  margin: 1em 0;
 }
 .button-block.alignleft {
   text-align: left;
