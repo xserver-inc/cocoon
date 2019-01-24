@@ -940,17 +940,17 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
-.admin-settings .demo .caption-box { border: 2px solid #eee; border-radius: 4px; }
-.admin-settings .demo .caption-box-title { padding: 0.2em 0.8em; background-color: #eee; }
+.admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
 .admin-settings .demo .cb-yellow.caption-box { border-color: #fc9f4d; }
-.admin-settings .demo .cb-yellow .caption-box-title { background-color: #fc9f4d; color: #fff; }
+.admin-settings .demo .cb-yellow .caption-box-label { background-color: #fc9f4d; color: #fff; }
 .admin-settings .demo .cb-red.caption-box { border-color: #d05a6e; }
-.admin-settings .demo .cb-red .caption-box-title { background-color: #d05a6e; color: #fff; }
+.admin-settings .demo .cb-red .caption-box-label { background-color: #d05a6e; color: #fff; }
 .admin-settings .demo .cb-blue.caption-box { border-color: #2ea9df; }
-.admin-settings .demo .cb-blue .caption-box-title { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
-.admin-settings .demo .cb-green .caption-box-title { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
@@ -2028,17 +2028,17 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
-.admin-settings .demo .caption-box { border: 2px solid #eee; border-radius: 4px; }
-.admin-settings .demo .caption-box-title { padding: 0.2em 0.8em; background-color: #eee; }
+.admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
 .admin-settings .demo .cb-yellow.caption-box { border-color: #fc9f4d; }
-.admin-settings .demo .cb-yellow .caption-box-title { background-color: #fc9f4d; color: #fff; }
+.admin-settings .demo .cb-yellow .caption-box-label { background-color: #fc9f4d; color: #fff; }
 .admin-settings .demo .cb-red.caption-box { border-color: #d05a6e; }
-.admin-settings .demo .cb-red .caption-box-title { background-color: #d05a6e; color: #fff; }
+.admin-settings .demo .cb-red .caption-box-label { background-color: #d05a6e; color: #fff; }
 .admin-settings .demo .cb-blue.caption-box { border-color: #2ea9df; }
-.admin-settings .demo .cb-blue .caption-box-title { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
-.admin-settings .demo .cb-green .caption-box-title { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }

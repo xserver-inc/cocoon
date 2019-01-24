@@ -966,11 +966,12 @@ $bb_green: #3eb370;
 ** キャプションボックス
 ************************************/
 .caption-box{
+  margin: 1.2em 0;
   border: 2px solid $current_bgc;
   border-radius: $basic_border_radius;
 }
 
-.caption-box-title{
+.caption-box-label{
   padding: 0.2em 0.8em;
   background-color: $current_bgc;
 }
@@ -982,7 +983,7 @@ $bb_green: #3eb370;
   &.caption-box{
     border-color: $color;
   }
-  .caption-box-title{
+  .caption-box-label{
     background-color: $color;
     color: $white;
   }

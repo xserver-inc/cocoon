@@ -3450,11 +3450,12 @@ label.screen-reader-text {
 ** キャプションボックス
 ************************************/
 .caption-box {
+  margin: 1.2em 0;
   border: 2px solid #eee;
   border-radius: 4px;
 }
 
-.caption-box-title {
+.caption-box-label {
   padding: 0.2em 0.8em;
   background-color: #eee;
 }
@@ -3466,7 +3467,7 @@ label.screen-reader-text {
 .cb-yellow.caption-box {
   border-color: #fc9f4d;
 }
-.cb-yellow .caption-box-title {
+.cb-yellow .caption-box-label {
   background-color: #fc9f4d;
   color: #fff;
 }
@@ -3474,7 +3475,7 @@ label.screen-reader-text {
 .cb-red.caption-box {
   border-color: #d05a6e;
 }
-.cb-red .caption-box-title {
+.cb-red .caption-box-label {
   background-color: #d05a6e;
   color: #fff;
 }
@@ -3482,7 +3483,7 @@ label.screen-reader-text {
 .cb-blue.caption-box {
   border-color: #2ea9df;
 }
-.cb-blue .caption-box-title {
+.cb-blue .caption-box-label {
   background-color: #2ea9df;
   color: #fff;
 }
@@ -3490,7 +3491,7 @@ label.screen-reader-text {
 .cb-green.caption-box {
   border-color: #3eb370;
 }
-.cb-green .caption-box-title {
+.cb-green .caption-box-label {
   background-color: #3eb370;
   color: #fff;
 }
