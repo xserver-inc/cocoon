@@ -3447,6 +3447,23 @@ label.screen-reader-text {
 }
 
 /************************************
+** キャプションボックス
+************************************/
+.caption-box {
+  border: 2px solid #eee;
+  border-radius: 4px;
+}
+
+.caption-box-title {
+  padding: 0.2em 0.8em;
+  background-color: #eee;
+}
+
+.caption-box-content {
+  padding: 0 0.8em;
+}
+
+/************************************
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {

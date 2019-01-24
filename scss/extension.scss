@@ -963,6 +963,22 @@ $bb_green: #3eb370;
 
 
 /************************************
+** キャプションボックス
+************************************/
+.caption-box{
+  border: 2px solid $current_bgc;
+  border-radius: $basic_border_radius;
+}
+
+.caption-box-title{
+  padding: 0.2em 0.8em;
+  background-color: $current_bgc;
+}
+.caption-box-content{
+  padding: 0 0.8em;
+}
+
+/************************************
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {
