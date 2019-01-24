@@ -426,3 +426,7 @@ ol, ul {
 .toggle-wrap .toggle-button div {
   display: inline;
 }
+
+.editor-block-list__empty-block-inserter {
+  left: -16px;
+}
