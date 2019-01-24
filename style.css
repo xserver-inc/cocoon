@@ -3446,57 +3446,6 @@ label.screen-reader-text {
   text-align: right;
 }
 
-.column-wrap {
-  display: flex;
-  position: relative;
-  margin: 1em 0;
-}
-.column-wrap .column-wrap {
-  margin: 0;
-}
-.column-wrap .column-left {
-  padding-left: 0;
-}
-.column-wrap .column-right {
-  padding-right: 0;
-}
-.column-wrap > div {
-  width: 100%;
-  padding: 0 0.45em;
-  margin: 0;
-}
-.column-wrap > div p {
-  margin-top: 0;
-}
-
-.column-2-3-1-2 .column-left {
-  width: 34%;
-}
-.column-2-3-1-2 .column-right {
-  width: 66%;
-}
-
-.column-2-3-2-1 .column-left {
-  width: 66%;
-}
-.column-2-3-2-1 .column-right {
-  width: 34%;
-}
-
-.column-2-4-1-3 .column-left {
-  width: 25%;
-}
-.column-2-4-1-3 .column-right {
-  width: 75%;
-}
-
-.column-2-4-3-1 .column-left {
-  width: 75%;
-}
-.column-2-4-3-1 .column-right {
-  width: 25%;
-}
-
 /************************************
 ** トグル表示ボタン
 ************************************/
@@ -3608,6 +3557,57 @@ label.screen-reader-text {
 }
 .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
+}
+
+.column-wrap {
+  display: flex;
+  position: relative;
+  margin: 1em 0;
+}
+.column-wrap .column-wrap {
+  margin: 0;
+}
+.column-wrap .column-left {
+  padding-left: 0;
+}
+.column-wrap .column-right {
+  padding-right: 0;
+}
+.column-wrap > div {
+  width: 100%;
+  padding: 0 0.45em;
+  margin: 0;
+}
+.column-wrap > div p {
+  margin-top: 0;
+}
+
+.column-2-3-1-2 .column-left {
+  width: 34%;
+}
+.column-2-3-1-2 .column-right {
+  width: 66%;
+}
+
+.column-2-3-2-1 .column-left {
+  width: 66%;
+}
+.column-2-3-2-1 .column-right {
+  width: 34%;
+}
+
+.column-2-4-1-3 .column-left {
+  width: 25%;
+}
+.column-2-4-1-3 .column-right {
+  width: 75%;
+}
+
+.column-2-4-3-1 .column-left {
+  width: 75%;
+}
+.column-2-4-3-1 .column-right {
+  width: 25%;
 }
 
 /************************************

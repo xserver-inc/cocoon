@@ -936,20 +936,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
-.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }
-.admin-settings .demo .column-wrap > div p { margin-top: 0; }
-.admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
-.admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
@@ -972,6 +958,20 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
+.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
+.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
+.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
+.admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap > div p { margin-top: 0; }
+.admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
+.admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
@@ -2013,20 +2013,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
-.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }
-.admin-settings .demo .column-wrap > div p { margin-top: 0; }
-.admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
-.admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
@@ -2049,6 +2035,20 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
+.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
+.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
+.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
+.admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap > div p { margin-top: 0; }
+.admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
+.admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
