@@ -3497,6 +3497,28 @@ label.screen-reader-text {
 }
 
 /************************************
+** キャプションタブボックス
+************************************/
+.caption-tab-box {
+  margin: 1.2em 0;
+}
+
+.caption-tab-box-label {
+  padding: 0.2em 0.8em;
+  background-color: #eee;
+  display: inline-block;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.caption-tab-box-content {
+  border: 2px solid #eee;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+}
+
+/************************************
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {

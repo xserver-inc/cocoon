@@ -961,7 +961,6 @@ $bb_green: #3eb370;
   }
 }
 
-
 /************************************
 ** キャプションボックス
 ************************************/
@@ -993,6 +992,28 @@ $bb_green: #3eb370;
 .cb-red{@include caption_color($bb_red);}
 .cb-blue{@include caption_color($bb_blue);}
 .cb-green{@include caption_color($bb_green);}
+
+/************************************
+** キャプションタブボックス
+************************************/
+.caption-tab-box{
+  margin: 1.2em 0;
+}
+.caption-tab-box-label{
+  padding: 0.2em 0.8em;
+  background-color: $current_bgc;
+  display: inline-block;
+  border-top-left-radius: $middle_border_radius;
+  border-top-right-radius: $middle_border_radius;
+}
+.caption-tab-box-content{
+  border: 2px solid $current_bgc;
+  padding: 0.4em 0.8em;
+  border-radius: $middle_border_radius;
+  border-top-left-radius: 0;
+
+}
+
 
 /************************************
 ** トグル表示ボタン

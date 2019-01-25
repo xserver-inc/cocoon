@@ -138,6 +138,8 @@ body.wp-admin { color: #444; }
 ********************************/ /************************************
 ** キャプションボックス
 ************************************/ /************************************
+** キャプションタブボックス
+************************************/ /************************************
 ** トグル表示ボタン
 ************************************/ /************************************
 ** SNSフォローボタン
@@ -259,6 +261,8 @@ body.wp-admin { color: #444; }
 * 続きはWEBで的な検索ボックス
 ********************************/ /************************************
 ** キャプションボックス
+************************************/ /************************************
+** キャプションタブボックス
 ************************************/ /************************************
 ** トグル表示ボタン
 ************************************/ /************************************
@@ -951,6 +955,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
+.admin-settings .demo .caption-tab-box-label { padding: 0.2em 0.8em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+.admin-settings .demo .caption-tab-box-content { border: 2px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
@@ -2039,6 +2046,9 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
+.admin-settings .demo .caption-tab-box-label { padding: 0.2em 0.8em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+.admin-settings .demo .caption-tab-box-content { border: 2px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
