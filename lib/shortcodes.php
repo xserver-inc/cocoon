@@ -42,6 +42,7 @@ function new_entries_shortcode($atts) {
     'random' => 0,
     'action' => null,
   ), $atts));
+
   //カテゴリを配列化
   $cat_ids = array();
   if ($cats && $cats != 'all') {

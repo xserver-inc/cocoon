@@ -965,7 +965,6 @@ function generate_widget_entries_tag($atts){
     $prefix = 'new';
   }
 
-
   $args = array(
     'posts_per_page' => $entry_count,
     'no_found_rows' => true,
@@ -981,17 +980,29 @@ function generate_widget_entries_tag($atts){
       'orderby' => 'rand'
     );
   }
-  if ( $cat_ids ) {
+  if ( $cat_ids || $tag_ids ) {
     //_v($cat_ids);
+    $tax_querys = array();
+    if ($cat_ids) {
+      $tax_querys += array(
+        'taxonomy' => $taxonomy,
+        'terms' => $cat_ids,
+        'include_children' => $include_children,
+        'field' => 'term_id',
+        'operator' => 'IN'
+      );
+    }
+    if ($tag_ids) {
+      $tax_querys += array(
+        'taxonomy' => 'post_tag',
+        'terms' => $tag_ids,
+        'field' => 'term_id',
+        'operator' => 'IN'
+      );
+    }
     $args += array(
       'tax_query' => array(
-        array(
-          'taxonomy' => $taxonomy,
-          'terms' => $cat_ids,
-          'include_children' => $include_children,
-          'field' => 'term_id',
-          'operator' => 'IN'
-          ),
+        $tax_querys,
         'relation' => 'AND'
       )
     );
