@@ -47,8 +47,19 @@ class RelatedEntryWidgetItem extends WP_Widget {
         echo $args['after_title'];
       }
 
+      //引数配列のセット
+      $atts = array(
+        'entry_count' => $entry_count,
+        'cat_ids' => $categories,
+        'entry_type' => $entry_type,
+        'include_children' => 0,
+        'post_type' => 'post',
+        'taxonomy' => 'category',
+        'random' => 1,
+      );
       //関連記事リストの作成
-      generate_widget_entries_tag($entry_count, $entry_type, $categories, 0, 'post', 'category', 1);
+      generate_widget_entries_tag($atts);
+      //generate_widget_entries_tag($entry_count, $entry_type, $categories, 0, 'post', 'category', 1);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>

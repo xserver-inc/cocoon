@@ -955,6 +955,7 @@ function generate_widget_entries_tag($atts){
     'include_children' => 0,
     'post_type' => null,
     'taxonomy' => 'category',
+    'sticky' => 1,
     'random' => 0,
     'action' => null,
   ), $atts));
@@ -970,6 +971,11 @@ function generate_widget_entries_tag($atts){
     'no_found_rows' => true,
     'action' => $action,
   );
+  if (!$sticky) {
+    $args += array(
+      'post__not_in' => get_sticky_post_ids(),
+    );
+  }
   if ($post_type) {
     $args += array(
       'post_type' => explode(',', $post_type)
@@ -984,8 +990,8 @@ function generate_widget_entries_tag($atts){
     //_v($cat_ids);
     $tax_querys = array();
     if ($cat_ids) {
-      $tax_querys += array(
-        'taxonomy' => $taxonomy,
+      $tax_querys[] = array(
+        'taxonomy' => 'category',
         'terms' => $cat_ids,
         'include_children' => $include_children,
         'field' => 'term_id',
@@ -993,20 +999,23 @@ function generate_widget_entries_tag($atts){
       );
     }
     if ($tag_ids) {
-      $tax_querys += array(
+      $tax_querys[] = array(
         'taxonomy' => 'post_tag',
         'terms' => $tag_ids,
         'field' => 'term_id',
         'operator' => 'IN'
       );
     }
+    //_v($tax_querys);
     $args += array(
       'tax_query' => array(
         $tax_querys,
         'relation' => 'AND'
       )
     );
+
   }
+  // _v($args);
   if ($random) {
     $args = apply_filters('widget_related_entries_args', $args);
   } else {

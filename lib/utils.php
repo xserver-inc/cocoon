@@ -2251,3 +2251,11 @@ function get_wordpress_timezone(){
 
 }
 endif;
+
+//来て表示されている投稿IDを取得する
+if ( !function_exists( 'get_sticky_post_ids' ) ):
+function get_sticky_post_ids(){
+  return get_option('sticky_posts');
+
+}
+endif;

@@ -39,6 +39,7 @@ function new_entries_shortcode($atts) {
     'children' => 0,
     'post_type' => 'post',
     'taxonomy' => 'category',
+    'sticky' => 1,
     'random' => 0,
     'action' => null,
   ), $atts));
@@ -62,6 +63,7 @@ function new_entries_shortcode($atts) {
     'include_children' => $children,
     'post_type' => $post_type,
     'taxonomy' => $taxonomy,
+    'sticky' => $sticky,
     'random' => $random,
     'action' => $action,
   );
