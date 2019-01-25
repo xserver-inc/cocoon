@@ -945,8 +945,19 @@ endif;
 
 //汎用エントリーウィジェットのタグ生成
 if ( !function_exists( 'generate_widget_entries_tag' ) ):
-function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0, $action = null){
-
+// function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0, $action = null){
+function generate_widget_entries_tag($atts){
+  extract(shortcode_atts(array(
+    'entry_count' => 5,
+    'cat_ids' => array(),
+    'tag_ids' => array(),
+    'entry_type' => ET_DEFAULT,
+    'include_children' => 0,
+    'post_type' => null,
+    'taxonomy' => 'category',
+    'random' => 0,
+    'action' => null,
+  ), $atts));
   //ランダムが有効な時は関連記事
   if ($random) {
     $prefix = 'widget-related';

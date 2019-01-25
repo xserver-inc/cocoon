@@ -34,6 +34,7 @@ function new_entries_shortcode($atts) {
   extract(shortcode_atts(array(
     'count' => 5,
     'cats' => 'all',
+    'tags' => 'all',
     'type' => 'default',
     'children' => 0,
     'post_type' => 'post',
@@ -41,12 +42,31 @@ function new_entries_shortcode($atts) {
     'random' => 0,
     'action' => null,
   ), $atts));
-  $categories = array();
+  //カテゴリを配列化
+  $cat_ids = array();
   if ($cats && $cats != 'all') {
-    $categories = explode(',', $cats);
+    $cat_ids = explode(',', $cats);
   }
+  //タグを配列化
+  $tag_ids = array();
+  if ($tags && $tags != 'all') {
+    $tag_ids = explode(',', $tags);
+  }
+  //引数配列のセット
+  $atts = array(
+    'entry_count' => $count,
+    'cat_ids' => $cat_ids,
+    'tag_ids' => $tag_ids,
+    'entry_type' => $type,
+    'include_children' => $children,
+    'post_type' => $post_type,
+    'taxonomy' => $taxonomy,
+    'random' => $random,
+    'action' => $action,
+  );
   ob_start();
-  generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $random, $action);
+  generate_widget_entries_tag($atts);
+  // generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $random, $action);
   $res = ob_get_clean();
   return $res;
 }
