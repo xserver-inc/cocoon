@@ -1027,6 +1027,37 @@ $bb_green: #3eb370;
 .ctb-blue{@include caption_tab_color($bb_blue);}
 .ctb-green{@include caption_tab_color($bb_green);}
 
+/************************************
+** ラベルボックス
+************************************/
+.label-box{
+  margin: 1.2em 0;
+}
+.label-box-label{
+  margin-left: 2em;
+  padding: 0 0.8em;
+  font-size: 0.9em;
+  background-color: $white;
+  display: inline-block;
+  // border: 2px solid $middle_thickness;
+  // border-radius: $middle_border_radius;
+}
+.label-box-content{
+  margin-top: -0.9em;
+  border: 3px solid $middle_thickness;
+  padding: 1em 0.8em 0.4em;
+  border-radius: $middle_border_radius;
+}
+@mixin label_color($color: $bb_yellow) {
+  .label-box-content{
+    border-color: $color;
+  }
+}
+.lb-yellow{@include label_color($bb_yellow);}
+.lb-red{@include label_color($bb_red);}
+.lb-blue{@include label_color($bb_blue);}
+.lb-green{@include label_color($bb_green);}
+
 
 /************************************
 ** トグル表示ボタン

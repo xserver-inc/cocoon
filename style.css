@@ -3553,6 +3553,44 @@ label.screen-reader-text {
 }
 
 /************************************
+** ラベルボックス
+************************************/
+.label-box {
+  margin: 1.2em 0;
+}
+
+.label-box-label {
+  margin-left: 2em;
+  padding: 0 0.8em;
+  font-size: 0.9em;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.label-box-content {
+  margin-top: -0.9em;
+  border: 3px solid #777;
+  padding: 1em 0.8em 0.4em;
+  border-radius: 8px;
+}
+
+.lb-yellow .label-box-content {
+  border-color: #fc9f4d;
+}
+
+.lb-red .label-box-content {
+  border-color: #d05a6e;
+}
+
+.lb-blue .label-box-content {
+  border-color: #2ea9df;
+}
+
+.lb-green .label-box-content {
+  border-color: #3eb370;
+}
+
+/************************************
 ** トグル表示ボタン
 ************************************/
 .toggle-wrap {
