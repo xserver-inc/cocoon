@@ -609,7 +609,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
 .admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; padding: 10px 1.2em; position: relative; }
-.admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; content: "\""; font-family: serif; position: absolute; font-size: 300%; }
+.admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; content: "“"; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { line-height: 0; right: 10px; bottom: 0px; }
 .admin-settings .demo .footer-meta { font-size: 0.8em; text-align: right; }
@@ -1715,7 +1715,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
 .admin-settings .demo .article .column-wrap h1, .admin-settings .demo .article .column-wrap h2, .admin-settings .demo .article .column-wrap h3, .admin-settings .demo .article .column-wrap h4, .admin-settings .demo .article .column-wrap h5, .admin-settings .demo .article .column-wrap h6 { margin-top: 0; }
 .admin-settings .demo blockquote { background-color: #fafbfc; border: 1px solid #ccc; margin: 1em 0; padding: 10px 1.2em; position: relative; }
-.admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; content: "\""; font-family: serif; position: absolute; font-size: 300%; }
+.admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; content: "“"; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { line-height: 0; right: 10px; bottom: 0px; }
 .admin-settings .demo .footer-meta { font-size: 0.8em; text-align: right; }

@@ -202,7 +202,3 @@ div.mobile-menu-buttons .menu-button:hover,
 .article h6 {
   border: none;
 }
-
-blockquote::before, blockquote::after {
-  content: "“";
-}

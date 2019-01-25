@@ -1558,7 +1558,7 @@ blockquote {
 }
 blockquote::before, blockquote::after {
   color: #C8C8C8;
-  content: "\"";
+  content: "“";
   font-family: serif;
   position: absolute;
   font-size: 300%;
