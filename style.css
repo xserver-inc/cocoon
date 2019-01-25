@@ -3504,7 +3504,8 @@ label.screen-reader-text {
 }
 
 .caption-tab-box-label {
-  padding: 0.2em 0.8em;
+  padding: 0 0.8em;
+  font-size: 0.9em;
   background-color: #eee;
   display: inline-block;
   border-top-left-radius: 8px;
@@ -3512,10 +3513,43 @@ label.screen-reader-text {
 }
 
 .caption-tab-box-content {
+  margin-top: -1px;
   border: 2px solid #eee;
   padding: 0.4em 0.8em;
   border-radius: 8px;
   border-top-left-radius: 0;
+}
+
+.ctb-yellow .caption-tab-box-label {
+  background-color: #fc9f4d;
+  color: #fff;
+}
+.ctb-yellow .caption-tab-box-content {
+  border-color: #fc9f4d;
+}
+
+.ctb-red .caption-tab-box-label {
+  background-color: #d05a6e;
+  color: #fff;
+}
+.ctb-red .caption-tab-box-content {
+  border-color: #d05a6e;
+}
+
+.ctb-blue .caption-tab-box-label {
+  background-color: #2ea9df;
+  color: #fff;
+}
+.ctb-blue .caption-tab-box-content {
+  border-color: #2ea9df;
+}
+
+.ctb-green .caption-tab-box-label {
+  background-color: #3eb370;
+  color: #fff;
+}
+.ctb-green .caption-tab-box-content {
+  border-color: #3eb370;
 }
 
 /************************************
