@@ -57,7 +57,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     } else {
       $exclude_post_ids = explode(',', $exclude_post_ids);
     }
-    // $exclude_cat_ids = str_replace(' ', '', $exclude_cat_ids);
+
     if (empty($exclude_cat_ids)) {
       $exclude_cat_ids = array();
     } else {

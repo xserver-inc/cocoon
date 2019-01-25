@@ -873,6 +873,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   //var_dump($cat_ids);
 
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
+  //_v($records);
 
   // if (DEBUG_MODE) {
   //   $time = microtime(true) - $time_start;
@@ -910,7 +911,8 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
-      <?php echo $post_thumbnail_img; ?>
+        <?php echo $post_thumbnail_img; ?>
+        <?php the_nolink_category($post->ID); //カテゴリラベルの取得 ?>
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">

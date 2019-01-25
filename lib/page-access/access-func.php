@@ -370,13 +370,6 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   // }
   //var_dump($cat_ids);
 
-
-
-  //$exclude_cat_ids = array(62);
-
-
-
-
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cats = implode(',', $cat_ids);

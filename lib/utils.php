@@ -62,8 +62,13 @@ endif;
 
 //リンクのないカテゴリーの取得
 if ( !function_exists( 'get_the_nolink_category' ) ):
-function get_the_nolink_category(){
-  $categories = get_the_category();
+function get_the_nolink_category($id = null){
+  if ($id) {
+    $categories = get_the_category($id);
+  } else {
+    $categories = get_the_category();
+  }
+
   //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
@@ -75,10 +80,9 @@ endif;
 
 //リンクのないカテゴリーの出力
 if ( !function_exists( 'the_nolink_category' ) ):
-function the_nolink_category(){
-  echo get_the_nolink_category();
+function the_nolink_category($id = null){
+  echo get_the_nolink_category($id);
 }
-
 endif;
 
 
