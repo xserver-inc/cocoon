@@ -393,11 +393,9 @@ $form_padding: 12px;
 %form_common {
   padding: $form_padding;
   border: 2px solid $basic_border_color;
+  //border-radius: $basic_border_radius;
   font-size: $text_size_default;
   width: 100%;
-  //margin: 1em 0;
-
-  // &:focus{
   //   background-color: $xxx_thin;
   //   border: 2px solid $select_bgc;
   // }

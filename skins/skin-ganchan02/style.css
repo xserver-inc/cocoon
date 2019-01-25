@@ -205,8 +205,6 @@ main.main, div.sidebar {
 }
 
 .widget_author_box.author-thumb img {
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
 	border-radius: 50px;
 }
 .author-display-name{

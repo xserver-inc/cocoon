@@ -2597,7 +2597,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .slicknav_menu .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
 .admin-settings .demo .slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
 .admin-settings .demo .slicknav_menu .slicknav_no-text { margin: 0; }
-.admin-settings .demo .slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.admin-settings .demo .slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
 .admin-settings .demo .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em; }
 .admin-settings .demo .slicknav_nav { clear: both; }
 .admin-settings .demo .slicknav_nav ul, .admin-settings .demo .slicknav_nav li { display: block; }
@@ -2611,7 +2611,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .slicknav_menu:after { clear: both; }
 .admin-settings .demo .slicknav_menu { *zoom: 1; }
 .admin-settings .demo .slicknav_menu { font-size: 16px; box-sizing: border-box; }
-.admin-settings .demo .slicknav_btn { margin: 5px 5px 6px; text-decoration: none; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-color: #222222; }
+.admin-settings .demo .slicknav_btn { margin: 5px 5px 6px; text-decoration: none; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); border-radius: 4px; background-color: #222222; }
 .admin-settings .demo .slicknav_menu .slicknav_menutxt { color: #FFF; font-weight: bold; text-shadow: 0 1px 3px #000; }
 .admin-settings .demo .slicknav_menu .slicknav_icon-bar { background-color: #f5f5f5; }
 .admin-settings .demo .slicknav_menu { background: #4c4c4c; padding: 5px; }
@@ -2621,8 +2621,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .slicknav_nav .slicknav_row { padding: 5px 10px; margin: 2px 5px; }
 .admin-settings .demo .slicknav_nav a { padding: 5px 10px; margin: 2px 5px; text-decoration: none; color: #fff; }
 .admin-settings .demo .slicknav_nav .slicknav_item a, .admin-settings .demo .slicknav_nav .slicknav_parent-link a { padding: 0; margin: 0; }
-.admin-settings .demo .slicknav_nav .slicknav_row:hover { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; background: #ccc; color: #fff; }
-.admin-settings .demo .slicknav_nav a:hover { -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; background: #ccc; color: #222; }
+.admin-settings .demo .slicknav_nav .slicknav_row:hover { border-radius: 6px; background: #ccc; color: #fff; }
+.admin-settings .demo .slicknav_nav a:hover { border-radius: 6px; background: #ccc; color: #222; }
 .admin-settings .demo .slicknav_nav .slicknav_txtnode { margin-left: 15px; }
 .admin-settings .demo .slicknav_brand { color: #fff; font-size: 18px; line-height: 30px; padding: 7px 12px; height: 44px; }
 .admin-settings .demo .slicknav_nav .caption-wrap, .admin-settings .demo .slicknav_nav .item-label, .admin-settings .demo .slicknav_nav .item-description { display: inline; }

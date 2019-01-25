@@ -6,7 +6,7 @@
 .slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
 .slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
 .slicknav_menu .slicknav_no-text { margin: 0 }
-.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
 .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
 .slicknav_nav { clear: both }
 .slicknav_nav ul,
@@ -41,8 +41,6 @@
     margin: 5px 5px 6px;
     text-decoration:none;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
     background-color: #222222;
 }
@@ -90,15 +88,11 @@
     margin:0;
 }
 .slicknav_nav .slicknav_row:hover {
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     border-radius: 6px;
     background:#ccc;
     color:#fff;
 }
 .slicknav_nav a:hover{
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     border-radius: 6px;
     background:#ccc;
     color:#222;
