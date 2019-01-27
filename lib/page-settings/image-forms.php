@@ -183,7 +183,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- Retinaディスプレイ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_RETINA_THUMBNAIL_ENABLE, __('Retinaディスプレイ（β版）', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_RETINA_THUMBNAIL_ENABLE, __('Retinaディスプレイ', THEME_NAME) ); ?>
           </th>
           <td>
             <?php

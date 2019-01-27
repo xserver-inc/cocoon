@@ -124,7 +124,7 @@ function generate_html_tags_is($value){
   $after = '</div></div>';
   ?>
   htmlTags[7] = new Array();
-  htmlTags[7].title  = '<?php echo __( 'トグルボックス（β版）', THEME_NAME ); ?>';
+  htmlTags[7].title  = '<?php echo __( 'トグルボックス', THEME_NAME ); ?>';
   htmlTags[7].tag = '<?php echo $before.__( 'トグルボックス内容', THEME_NAME ).$after; ?>';
   htmlTags[7].before = '<?php echo $before; ?>';
   htmlTags[7].after = '<?php echo $after; ?>';
