@@ -214,27 +214,6 @@ $bgc_hover_anime: all 0.5s ease;
   margin-bottom: 3px;
 }
 
-// .sns-buttons{
-//   display: flex;
-//   align-items: center;
-
-//   a{
-//     display: block;
-//     background-color: $middle_thickness;
-//     text-align: center;
-//     @include link_cancel($white);
-//     border-radius: $basic_border_radius;
-//     height: 45px;
-//     //line-height: 45px;
-
-//     &:hover{
-//       opacity: 0.7;
-//       color: $white;
-//       transition: $bgc_hover_anime;
-//     }
-//   }
-// }
-
 %background_image{
   /* 画像を常に左右の中央に配置 */
   background-position: top center;
