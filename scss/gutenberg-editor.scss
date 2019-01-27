@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+//Font Awesomeのアイコン
+@import "fontawesome-before";
+.components-button.is-button{
+  padding: 0 4px;
+}
 /* copy from editor-style.css */
 
 .wp-block {
