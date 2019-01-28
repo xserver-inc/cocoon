@@ -586,3 +586,18 @@ if ($footer_text_color = get_footer_text_color()): ?>
   color: <?php echo $footer_text_color; ?>;
 }
 <?php endif ?>
+<?php //行の高さ
+if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
+.entry-content,
+.demo .entry-content p {
+  line-height: <?php echo $entry_content_line_hight; ?>;
+}
+<?php endif ?>
+<?php //行の余白
+if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
+.entry-content > *,
+.entry-content p,
+.demo .entry-content p {
+  margin: <?php echo $entry_content_margin_hight; ?>em 0;
+}
+<?php endif ?>
