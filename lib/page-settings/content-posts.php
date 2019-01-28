@@ -13,6 +13,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //行の高さ
 update_theme_option(OP_ENTRY_CONTENT_LINE_HIGHT);
 
+//行の余白
+update_theme_option(OP_ENTRY_CONTENT_MARGIN_HIGHT);
+
 ///////////////////////////////////////
 // 外部リンク
 ///////////////////////////////////////
