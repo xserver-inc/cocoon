@@ -425,7 +425,8 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
       $cat_ids = implode(',', $cat_ids);
-      $where .= " AND {$term_relationships}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
+      //$where .= " AND {$term_relationships}.term_taxonomy_id IN ({$cat_ids}) ".PHP_EOL;
+      $where .= " AND {$term_taxonomy}.term_id IN ({$cat_ids}) ".PHP_EOL;
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
