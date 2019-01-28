@@ -8,6 +8,38 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <div class="metabox-holder">
 
+<!-- 本文行間 -->
+<div id="entry-content-page" class="postbox">
+  <h2 class="hndle"><?php _e( '本文行間設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '本文の行の高さや余白の設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- サイトフォント  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SITE_FONT_FAMILY, __('サイトフォント', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <div class="col-2">
+              <div style="min-width: 270px;">
+
+              </div>
+              <div style="width: auto">
+                <?php get_template_part('tmp/font-preview'); ?>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 <!-- 外部リンク -->
 <div id="external-link" class="postbox">
   <h2 class="hndle"><?php _e( '外部リンク設定', THEME_NAME ) ?></h2>
