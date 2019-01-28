@@ -17,15 +17,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
-        <!-- サイトフォント  -->
+        <!-- 本文余白  -->
         <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_SITE_FONT_FAMILY, __('サイトフォント', THEME_NAME) ); ?>
+          <th scope="row" style="width: 100px;">
+            <?php generate_label_tag('', __('本文余白', THEME_NAME) ); ?>
           </th>
           <td>
             <div class="col-2">
               <div style="min-width: 270px;">
-
+              <?php
+              generate_label_tag(OP_ENTRY_CONTENT_LINE_HIGHT, '行の高さ');
+              generate_range_tag(OP_ENTRY_CONTENT_LINE_HIGHT, get_entry_content_line_hight(), 1, 3, 0.1);
+              generate_tips_tag(__( 'line-hightで、行の高さを指定します。1にすると文字列と同等の高さになります。', THEME_NAME ));
+             ?>
               </div>
               <div style="width: auto">
                 <?php get_template_part('tmp/font-preview'); ?>

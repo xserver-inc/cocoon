@@ -14,7 +14,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_ENTRY_CONTENT_LINE_HIGHT', 'entry_content_line_hight');
 if ( !function_exists( 'get_entry_content_line_hight' ) ):
 function get_entry_content_line_hight(){
-  return get_theme_option(OP_ENTRY_CONTENT_LINE_HIGHT);
+  return get_theme_option(OP_ENTRY_CONTENT_LINE_HIGHT, 1.8);
 }
 endif;
 
