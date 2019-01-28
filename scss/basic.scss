@@ -28,6 +28,10 @@ body {
   background-attachment: fixed;
 }
 
+.container {
+  overflow: hidden;
+}
+
 /*デフォルトリンク*/
 a{
   color: #1967d2;
