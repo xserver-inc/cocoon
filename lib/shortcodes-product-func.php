@@ -307,7 +307,7 @@ function get_cache_delete_tag($mode = 'amazon', $id){
     $url = add_query_arg(array('page' => 'theme-cache', 'cache' => 'rakuten_id_cache', 'id' => $id), admin_url().'admin.php');
       break;
     default:
-      $url = add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $id), admin_url().'admin.php');
+      $url = add_query_arg(array('page' => 'theme-cache', 'cache' => 'amazon_asin_cache', 'asin' => $id, HIDDEN_DELETE_FIELD_NAME => wp_create_nonce('delete-cache')), admin_url().'admin.php');
       break;
   }
   $cache_delete_tag = null;
