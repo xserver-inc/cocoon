@@ -34,7 +34,7 @@ function new_entries_shortcode($atts) {
   extract(shortcode_atts(array(
     'count' => 5,
     'cats' => 'all',
-    'tags' => 'all',
+    'tags' => null,
     'type' => 'default',
     'children' => 0,
     'post_type' => 'post',
