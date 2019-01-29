@@ -961,7 +961,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
 .admin-settings .demo .caption-tab-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
-.admin-settings .demo .caption-tab-box-content { margin-top: -1px; border: 2px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
+.admin-settings .demo .caption-tab-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .ctb-yellow .caption-tab-box-label { background-color: #fc9f4d; color: #fff; }
 .admin-settings .demo .ctb-yellow .caption-tab-box-content { border-color: #fc9f4d; }
 .admin-settings .demo .ctb-red .caption-tab-box-label { background-color: #d05a6e; color: #fff; }
@@ -1424,6 +1424,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
+.admin-settings .demo .block-box [class*="fab-"]::before { margin-right: 0.4em; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }
@@ -2120,7 +2121,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
 .admin-settings .demo .caption-tab-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
-.admin-settings .demo .caption-tab-box-content { margin-top: -1px; border: 2px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
+.admin-settings .demo .caption-tab-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .ctb-yellow .caption-tab-box-label { background-color: #fc9f4d; color: #fff; }
 .admin-settings .demo .ctb-yellow .caption-tab-box-content { border-color: #fc9f4d; }
 .admin-settings .demo .ctb-red .caption-tab-box-label { background-color: #d05a6e; color: #fff; }
@@ -2583,6 +2584,7 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
+.admin-settings .demo .block-box [class*="fab-"]::before { margin-right: 0.4em; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }
