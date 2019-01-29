@@ -991,7 +991,7 @@ function generate_widget_entries_tag($atts){
     $tax_querys = array();
     if ($cat_ids) {
       $tax_querys[] = array(
-        'taxonomy' => 'category',
+        'taxonomy' => $taxonomy,
         'terms' => $cat_ids,
         'include_children' => $include_children,
         'field' => 'term_id',
