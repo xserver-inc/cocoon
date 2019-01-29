@@ -598,6 +598,7 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .entry-content > *,
 .entry-content p,
 .demo .entry-content p {
-  margin: <?php echo $entry_content_margin_hight; ?>em 0;
+  margin-top: <?php echo $entry_content_margin_hight; ?>em;
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
 <?php endif ?>
