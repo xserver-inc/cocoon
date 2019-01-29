@@ -571,3 +571,17 @@ ol, ul {
 .editor-block-list__empty-block-inserter {
   left: -16px;
 }
+
+.icon-setting-buttons{
+  .fab-none::before{
+    content: 'none';
+  }
+}
+
+.label-box-label,
+.caption-tab-box-label{
+  *{
+    display: inline;
+  }
+}
+

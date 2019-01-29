@@ -136,6 +136,8 @@ body.wp-admin { color: #444; }
 ********************************/ /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/ /************************************
+** 汎用ボックス共通
+************************************/ /************************************
 ** キャプションボックス
 ************************************/ /************************************
 ** キャプションタブボックス
@@ -262,6 +264,8 @@ body.wp-admin { color: #444; }
 ********************************/ /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/ /************************************
+** 汎用ボックス共通
+************************************/ /************************************
 ** キャプションボックス
 ************************************/ /************************************
 ** キャプションタブボックス
@@ -948,6 +952,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
+.admin-settings .demo .block-box-label { display: flex; }
+.admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
@@ -1424,7 +1430,6 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
-.admin-settings .demo .block-box [class*="fab-"]::before { margin-right: 0.4em; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }
@@ -2108,6 +2113,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
 .admin-settings .demo .button-block.alignright { text-align: right; }
+.admin-settings .demo .block-box-label { display: flex; }
+.admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
@@ -2584,7 +2591,6 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
-.admin-settings .demo .block-box [class*="fab-"]::before { margin-right: 0.4em; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }

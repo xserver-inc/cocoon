@@ -3448,6 +3448,16 @@ label.screen-reader-text {
 }
 
 /************************************
+** 汎用ボックス共通
+************************************/
+.block-box-label {
+  display: flex;
+}
+.block-box-label::before {
+  margin-right: 0.3em;
+}
+
+/************************************
 ** キャプションボックス
 ************************************/
 .caption-box {
@@ -6052,10 +6062,6 @@ div.fb-like-mobile {
 }
 [class*="fab-"] {
   font-family: FontAwesome;
-}
-
-.block-box [class*="fab-"]::before {
-  margin-right: 0.4em;
 }
 
 .fab-info-circle::before {

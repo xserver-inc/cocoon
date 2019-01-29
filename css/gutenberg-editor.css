@@ -3,10 +3,6 @@
   font-family: FontAwesome;
 }
 
-.block-box [class*="fab-"]::before {
-  margin-right: 0.4em;
-}
-
 .fab-info-circle::before {
   content: '\f05a';
 }
@@ -649,4 +645,13 @@ ol, ul {
 
 .editor-block-list__empty-block-inserter {
   left: -16px;
+}
+
+.icon-setting-buttons .fab-none::before {
+  content: 'none';
+}
+
+.label-box-label *,
+.caption-tab-box-label * {
+  display: inline;
 }
