@@ -285,10 +285,6 @@ body {
   background-attachment: fixed;
 }
 
-.container {
-  overflow: hidden;
-}
-
 /*デフォルトリンク*/
 a {
   color: #1967d2;
@@ -1692,6 +1688,7 @@ span.internal-icon {
 .ad-area {
   text-align: center;
   margin-bottom: 1.8em;
+  overflow: hidden;
 }
 
 .entry-content .ad-area {

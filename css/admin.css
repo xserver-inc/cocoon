@@ -363,7 +363,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
-.admin-settings .demo .container { overflow: hidden; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -632,7 +631,7 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
-.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; }
+.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
 .admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
@@ -1524,7 +1523,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
-.admin-settings .demo .container { overflow: hidden; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -1793,7 +1791,7 @@ body.wp-admin { color: #444; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
-.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; }
+.admin-settings .demo .ad-area { text-align: center; margin-bottom: 1.8em; overflow: hidden; }
 .admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
