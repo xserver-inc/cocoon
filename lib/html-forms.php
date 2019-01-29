@@ -912,7 +912,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
     <div class="popular-entry-card widget-entry-card e-card cf">
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
-        <?php the_nolink_category($post->ID); //カテゴリラベルの取得 ?>
+        <?php the_nolink_category($post->ID, false); //カテゴリラベルの取得 ?>
       </figure><!-- /.popular-entry-card-thumb -->
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
@@ -1044,7 +1044,7 @@ function generate_widget_entries_tag($atts){
         ?>
         <img src="<?php echo $url; ?>" alt="" class="no-image <?php echo $prefix; ?>-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>" />
       <?php endif; ?>
-      <?php the_nolink_category(); //カテゴリラベルの取得 ?>
+      <?php the_nolink_category(null, false); //カテゴリラベルの取得 ?>
       </figure><!-- /.new-entry-card-thumb -->
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">

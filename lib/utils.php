@@ -62,17 +62,21 @@ endif;
 
 //リンクのないカテゴリーの取得
 if ( !function_exists( 'get_the_nolink_category' ) ):
-function get_the_nolink_category($id = null){
+function get_the_nolink_category($id = null, $is_display = true){
   if ($id) {
     $categories = get_the_category($id);
   } else {
     $categories = get_the_category();
   }
+  $display_class = null;
+  if (!$is_display) {
+    $display_class = ' display-none';
+  }
 
   //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
-    return '<span class="cat-label cat-label-'.$category->cat_ID.'">'.$category->cat_name.'</span>';
+    return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
   }
 }
 endif;
@@ -80,8 +84,8 @@ endif;
 
 //リンクのないカテゴリーの出力
 if ( !function_exists( 'the_nolink_category' ) ):
-function the_nolink_category($id = null){
-  echo get_the_nolink_category($id);
+function the_nolink_category($id = null, $is_display = true){
+  echo get_the_nolink_category($id, $is_display);
 }
 endif;
 
