@@ -546,10 +546,13 @@ endif;
 //本文抜粋を取得する関数
 //使用方法：http://nelog.jp/get_the_snipet
 if ( !function_exists( 'get_the_all_in_one_seo_pack_meta_description' ) ):
-function get_the_all_in_one_seo_pack_meta_description() {
+function get_the_all_in_one_seo_pack_meta_description($id = null) {
   global $post;
+  if (!$id) {
+    $id = $post->ID;
+  }
   if (class_exists( 'All_in_One_SEO_Pack' )) {
-    $aioseop_description = get_post_meta($post->ID, '_aioseop_description', true);
+    $aioseop_description = get_post_meta($id, '_aioseop_description', true);
     if ($aioseop_description) {
       return $aioseop_description;
     }

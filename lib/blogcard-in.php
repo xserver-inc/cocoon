@@ -72,6 +72,10 @@ function url_to_internal_blogcard_tag($url){
     if (!$snipet) {
       $snipet = $post_data->post_excerpt;
     }
+    //All in One SEO Packのメタディスクリプションを取得
+    if (!$snipet) {
+      $snipet = get_the_all_in_one_seo_pack_meta_description($id);
+    }
     //記事本文の抜粋文を取得
     if (!$snipet) {
       $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
