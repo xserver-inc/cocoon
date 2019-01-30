@@ -210,6 +210,8 @@ function url_to_external_ogp_blogcard_tag($url){
   if ($user_snipet) {
     $snipet = $user_snipet;
   }
+  $snipet = apply_filters( 'cocoon_blogcard_snipet', $snipet );
+  $snipet = apply_filters( 'cocoon_external_blogcard_snipet', $snipet );
 
   //新しいタブで開く場合
   $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';

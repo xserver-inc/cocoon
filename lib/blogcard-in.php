@@ -77,6 +77,8 @@ function url_to_internal_blogcard_tag($url){
       $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
     }
     $snipet = preg_replace('/\n/', '', $snipet);
+    $snipet = apply_filters( 'cocoon_blogcard_snipet', $snipet );
+    $snipet = apply_filters( 'cocoon_internal_blogcard_snipet', $snipet );
 
     //日付表示
     $date = null;
