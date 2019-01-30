@@ -3507,11 +3507,11 @@ label.screen-reader-text {
 /************************************
 ** キャプションタブボックス
 ************************************/
-.caption-tab-box {
+.tab-caption-box {
   margin: 1.2em 0;
 }
 
-.caption-tab-box-label {
+.tab-caption-box-label {
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: #eee;
@@ -3520,7 +3520,7 @@ label.screen-reader-text {
   border-top-right-radius: 8px;
 }
 
-.caption-tab-box-content {
+.tab-caption-box-content {
   margin-top: -3px;
   border: 3px solid #eee;
   padding: 0.4em 0.8em;
@@ -3528,35 +3528,35 @@ label.screen-reader-text {
   border-top-left-radius: 0;
 }
 
-.ctb-yellow .caption-tab-box-label {
+.tcb-yellow .tab-caption-box-label {
   background-color: #fc9f4d;
   color: #fff;
 }
-.ctb-yellow .caption-tab-box-content {
+.tcb-yellow .tab-caption-box-content {
   border-color: #fc9f4d;
 }
 
-.ctb-red .caption-tab-box-label {
+.tcb-red .tab-caption-box-label {
   background-color: #d05a6e;
   color: #fff;
 }
-.ctb-red .caption-tab-box-content {
+.tcb-red .tab-caption-box-content {
   border-color: #d05a6e;
 }
 
-.ctb-blue .caption-tab-box-label {
+.tcb-blue .tab-caption-box-label {
   background-color: #2ea9df;
   color: #fff;
 }
-.ctb-blue .caption-tab-box-content {
+.tcb-blue .tab-caption-box-content {
   border-color: #2ea9df;
 }
 
-.ctb-green .caption-tab-box-label {
+.tcb-green .tab-caption-box-label {
   background-color: #3eb370;
   color: #fff;
 }
-.ctb-green .caption-tab-box-content {
+.tcb-green .tab-caption-box-content {
   border-color: #3eb370;
 }
 

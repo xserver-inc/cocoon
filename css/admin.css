@@ -964,17 +964,17 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
-.admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
-.admin-settings .demo .caption-tab-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
-.admin-settings .demo .caption-tab-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
-.admin-settings .demo .ctb-yellow .caption-tab-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .ctb-yellow .caption-tab-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .ctb-red .caption-tab-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .ctb-red .caption-tab-box-content { border-color: #d05a6e; }
-.admin-settings .demo .ctb-blue .caption-tab-box-label { background-color: #2ea9df; color: #fff; }
-.admin-settings .demo .ctb-blue .caption-tab-box-content { border-color: #2ea9df; }
-.admin-settings .demo .ctb-green .caption-tab-box-label { background-color: #3eb370; color: #fff; }
-.admin-settings .demo .ctb-green .caption-tab-box-content { border-color: #3eb370; }
+.admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
+.admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+.admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #fc9f4d; color: #fff; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #fc9f4d; }
+.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #d05a6e; color: #fff; }
+.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #d05a6e; }
+.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #2ea9df; }
+.admin-settings .demo .tcb-green .tab-caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .tcb-green .tab-caption-box-content { border-color: #3eb370; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -2124,17 +2124,17 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
-.admin-settings .demo .caption-tab-box { margin: 1.2em 0; }
-.admin-settings .demo .caption-tab-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
-.admin-settings .demo .caption-tab-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
-.admin-settings .demo .ctb-yellow .caption-tab-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .ctb-yellow .caption-tab-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .ctb-red .caption-tab-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .ctb-red .caption-tab-box-content { border-color: #d05a6e; }
-.admin-settings .demo .ctb-blue .caption-tab-box-label { background-color: #2ea9df; color: #fff; }
-.admin-settings .demo .ctb-blue .caption-tab-box-content { border-color: #2ea9df; }
-.admin-settings .demo .ctb-green .caption-tab-box-label { background-color: #3eb370; color: #fff; }
-.admin-settings .demo .ctb-green .caption-tab-box-content { border-color: #3eb370; }
+.admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
+.admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
+.admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #fc9f4d; color: #fff; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #fc9f4d; }
+.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #d05a6e; color: #fff; }
+.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #d05a6e; }
+.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #2ea9df; }
+.admin-settings .demo .tcb-green .tab-caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .tcb-green .tab-caption-box-content { border-color: #3eb370; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }

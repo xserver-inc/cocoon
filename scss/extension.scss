@@ -1005,10 +1005,10 @@ $bb_green: #3eb370;
 /************************************
 ** キャプションタブボックス
 ************************************/
-.caption-tab-box{
+.tab-caption-box{
   margin: 1.2em 0;
 }
-.caption-tab-box-label{
+.tab-caption-box-label{
   padding: 0 0.8em;
   font-size: 0.9em;
   background-color: $current_bgc;
@@ -1016,7 +1016,7 @@ $bb_green: #3eb370;
   border-top-left-radius: $middle_border_radius;
   border-top-right-radius: $middle_border_radius;
 }
-.caption-tab-box-content{
+.tab-caption-box-content{
   margin-top: -3px;
   border: 3px solid $current_bgc;
   padding: 0.4em 0.8em;
@@ -1024,18 +1024,18 @@ $bb_green: #3eb370;
   border-top-left-radius: 0;
 }
 @mixin caption_tab_color($color: $bb_yellow) {
-  .caption-tab-box-label{
+  .tab-caption-box-label{
     background-color: $color;
     color: $white;
   }
-  .caption-tab-box-content{
+  .tab-caption-box-content{
     border-color: $color;
   }
 }
-.ctb-yellow{@include caption_tab_color($bb_yellow);}
-.ctb-red{@include caption_tab_color($bb_red);}
-.ctb-blue{@include caption_tab_color($bb_blue);}
-.ctb-green{@include caption_tab_color($bb_green);}
+.tcb-yellow{@include caption_tab_color($bb_yellow);}
+.tcb-red{@include caption_tab_color($bb_red);}
+.tcb-blue{@include caption_tab_color($bb_blue);}
+.tcb-green{@include caption_tab_color($bb_green);}
 
 /************************************
 ** ラベルボックス
