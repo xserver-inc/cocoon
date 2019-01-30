@@ -596,7 +596,7 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
 <?php //行の余白
 if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .entry-content > *,
-.entry-content p,
+.entry-content > p,
 .demo .entry-content p {
   margin-top: <?php echo $entry_content_margin_hight; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
