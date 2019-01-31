@@ -255,11 +255,20 @@ function convert_lazy_load_tag($the_content, $media){
   //_v($m);
   if ($res) {//画像タグがある場合
     //_v($m);
+    //置換するタグ格納用
+    $img_tags = array();
     foreach ($m[0] as $match) {
       //文字列が1024バイト以上の場合はスキップ
       if (strlen($match) > 1024) {
         continue;
       }
+
+      //重複置換を避ける
+      if (in_array($match, $img_tags, true)) {
+        continue;
+      }
+      //置換するタグを格納してく
+      $img_tags[] = $match;
       ///////////////////////////////////////////
       // 除外設定
       ///////////////////////////////////////////
@@ -326,9 +335,10 @@ function convert_lazy_load_tag($the_content, $media){
       //_v($tag);
 
       //imgタグをLazy Load対応に置換
-      $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content);
+      $the_content = preg_replace('{'.preg_quote($match).'(?!<noscript>)}', $tag , $the_content);
       //$the_content = str_replace($match, $tag , $the_content);
     }
+    //_v($img_tags);
   }
   return apply_filters('convert_lazy_load_tag', $the_content, $media);
 }
