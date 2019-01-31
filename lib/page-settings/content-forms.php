@@ -30,13 +30,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <div style="min-width: 270px;">
               <?php
               generate_label_tag(OP_ENTRY_CONTENT_LINE_HIGHT, '行の高さ');
-              generate_range_tag(OP_ENTRY_CONTENT_LINE_HIGHT, get_entry_content_line_hight(), 1, 3, 0.1);
+              generate_range_tag(OP_ENTRY_CONTENT_LINE_HIGHT, get_entry_content_line_hight(), 1, 4, 0.1);
               generate_tips_tag(__( 'line-hightで、行の高さを指定します。1にすると文字列と同等の高さになります。', THEME_NAME ));
               echo '<br>';
               echo '<br>';
 
               generate_label_tag(OP_ENTRY_CONTENT_MARGIN_HIGHT, '行の余白（単位：em）');
-              generate_range_tag(OP_ENTRY_CONTENT_MARGIN_HIGHT, get_entry_content_margin_hight(), 1, 4, 0.1);
+              generate_range_tag(OP_ENTRY_CONTENT_MARGIN_HIGHT, get_entry_content_margin_hight(), 0.1, 4, 0.1);
               generate_tips_tag(__( '行間の余白の高さを設定します。1emは、フォントサイズ（font-size）と同等の高さになります。フォントサイズが18pxの場合は余白も18pxになります。', THEME_NAME ));
              ?>
               </div>
