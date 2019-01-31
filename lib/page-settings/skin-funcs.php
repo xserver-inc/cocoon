@@ -142,7 +142,7 @@ function get_skin_infos(){
 
   $results = array();
   foreach($skin_dirs as $dir){
-    $dir = str_replace('\\', '/', $dir);
+    //$dir = str_replace('\\', '/', $dir);
     $style_css_file = $dir.'/style.css';
     //var_dump($style_css_file);
 
