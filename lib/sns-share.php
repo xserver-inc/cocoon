@@ -416,7 +416,7 @@ function get_share_page_title(){
   } else {
     $title = wp_get_document_title();
   }
-  return $title;
+  return html_entity_decode($title);
 }
 endif;
 
