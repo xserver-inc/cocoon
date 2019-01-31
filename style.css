@@ -4939,7 +4939,7 @@ div.sbs-think .speech-balloon::after {
 }
 .pis-l figure.product-item-thumb {
   width: 100%;
-  min-width: 0;
+  min-width: auto;
 }
 
 .item-price {

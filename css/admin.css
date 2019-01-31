@@ -1238,7 +1238,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .pis-s .product-item-thumb { width: 90px; min-width: 90px; }
 .admin-settings .demo .pis-s .product-item-buttons a { padding: 5px 0; }
 .admin-settings .demo .pis-l.product-item-box { display: block; }
-.admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: 0; }
+.admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
@@ -2398,7 +2398,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .pis-s .product-item-thumb { width: 90px; min-width: 90px; }
 .admin-settings .demo .pis-s .product-item-buttons a { padding: 5px 0; }
 .admin-settings .demo .pis-l.product-item-box { display: block; }
-.admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: 0; }
+.admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
