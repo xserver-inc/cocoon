@@ -239,7 +239,7 @@ function generate_help_page_tag($url, $text = null){
 endif;
 
 
-//通知メッセージのの生成
+//通知メッセージの生成
 if ( !function_exists( 'generate_notice_message_tag' ) ):
 function generate_notice_message_tag($caption){?>
   <div class="updated">
@@ -253,7 +253,7 @@ function generate_notice_message_tag($caption){?>
 }
 endif;
 
-//エラーメッセージのの生成
+//エラーメッセージの生成
 if ( !function_exists( 'generate_error_message_tag' ) ):
 function generate_error_message_tag($caption){?>
   <div class="error">
