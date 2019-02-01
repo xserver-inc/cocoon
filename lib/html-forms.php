@@ -957,6 +957,7 @@ function generate_widget_entries_tag($atts){
     'taxonomy' => 'category',
     'sticky' => 1,
     'random' => 0,
+    'order' => 'desc',
     'action' => null,
   ), $atts));
   //ランダムが有効な時は関連記事
@@ -974,6 +975,11 @@ function generate_widget_entries_tag($atts){
   if (!$sticky) {
     $args += array(
       'post__not_in' => get_sticky_post_ids(),
+    );
+  }
+  if ($order) {
+    $args += array(
+      'order' => strtoupper($order),
     );
   }
   if ($post_type) {
