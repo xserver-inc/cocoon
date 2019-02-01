@@ -4082,7 +4082,6 @@ label.screen-reader-text {
   align-items: center;
   line-height: 1.2;
   font-size: 0.8em;
-  height: 100%;
 }
 .pager-post-navi a::before {
   font-size: 1.8em;
