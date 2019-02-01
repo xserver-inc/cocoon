@@ -76,4 +76,60 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+
+<!-- JavaScriptライブラリ -->
+<div id="others" class="postbox">
+  <h2 class="hndle"><?php _e( 'JavaScriptライブラリ設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'JavaScriptライブラリのバージョンを設定できます。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- jQuery -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag(OP_JQUERY_VERSION, __('jQuery', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+          <?php
+            $options = array(
+              '3' => __( 'jQuery Core 3.3.1', THEME_NAME ),
+              '2' => __( 'jQuery Core 2.2.4', THEME_NAME ),
+              '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_JQUERY_VERSION, $options, get_jquery_version());
+            generate_tips_tag(__( 'jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- jQuery Migrate -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag(OP_JQUERY_MIGRATE_VERSION, __('jQuery Migrate', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+          <?php
+            $options = array(
+              '3' => __( 'jQuery Migrate 3.0.1', THEME_NAME ),
+              '1' => __( 'jQuery Migrate 1.4.1', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_JQUERY_MIGRATE_VERSION, $options, get_jquery_migrate_version());
+            generate_tips_tag(__( 'jQuery Migrateのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 </div><!-- /.metabox-holder -->

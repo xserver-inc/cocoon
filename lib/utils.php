@@ -321,10 +321,30 @@ function wp_enqueue_script_jquery_js(){
   wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
   wp_enqueue_script('jquery');
 
-  // wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
-  // wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
-  wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
-  wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array(), '3.0.1', true);
+  //jQueryの読み込み
+  switch (get_jquery_version()) {
+    case '3':
+      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
+      break;
+    case '2':
+      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
+      break;
+    case '1':
+      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
+      break;
+  }
+
+  //jQuery Migrateの読み込み
+  switch (get_jquery_migrate_version()) {
+    case '3':
+      wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array(), '3.0.1', true);
+      break;
+    case '1':
+      wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
+      break;
+  }
+
+
 }
 endif;
 

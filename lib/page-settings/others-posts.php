@@ -18,3 +18,13 @@ update_theme_option(OP_MIGRATE_FROM_SIMPLICITY);
 
 //スラッグが日本語の時はpost-XXXXのような連番形式にする
 update_theme_option(OP_AUTO_POST_SLUG_ENABLE);
+
+///////////////////////////////////////////
+// JavaScriptライブラリ
+///////////////////////////////////////////
+
+//jQueryのバージョン
+update_theme_option(OP_JQUERY_VERSION);
+
+//jQueryのバージョン
+update_theme_option(OP_JQUERY_MIGRATE_VERSION);
