@@ -214,13 +214,6 @@ function is_total_the_page_toc_visible(){
 }
 endif;
 
-if ( !function_exists( 'toc_widget_callback' ) ):
-function toc_widget_callback($w){
-  _v($w);
-  return false;
-}
-endif;
-
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
@@ -234,7 +227,7 @@ function add_toc_before_1st_h2($the_content){
     return $the_content;
   }
   //ページ上で目次が非表示設定（ショートコードも未使用）になっている場合
-  if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USE && !is_active_widget( 'toc_widget_callback', false, 'toc', true )) {
+  if (!is_total_the_page_toc_visible() && !$_TOC_WIDGET_OR_SHORTCODE_USE && !is_active_widget( false, false, 'toc', true )) {
     return $the_content;
   }
 
