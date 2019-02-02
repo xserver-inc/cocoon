@@ -65,10 +65,10 @@ function get_jquery_version(){
 }
 endif;
 
-//jQueryのバージョン
+//jQuery Mygrateのバージョン
 define('OP_JQUERY_MIGRATE_VERSION', 'jquery_migrate_version');
 if ( !function_exists( 'get_jquery_migrate_version' ) ):
 function get_jquery_migrate_version(){
-  return get_theme_option(OP_JQUERY_MIGRATE_VERSION, '3');
+  return get_theme_option(OP_JQUERY_MIGRATE_VERSION, '1');
 }
 endif;
