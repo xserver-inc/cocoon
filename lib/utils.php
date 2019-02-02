@@ -1548,7 +1548,7 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
     return false;
   }
 
-  return @file_get_contents($file);
+  return file_get_contents($file);
 
   // if ($credentials_enable && is_request_filesystem_credentials_enable()){
   //   $creds = request_filesystem_credentials('', '', false, false, null);
@@ -1582,7 +1582,7 @@ if (!defined('FS_CHMOD_FILE')) {
 //ファイル内容の出力
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):
 function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
-  return @file_put_contents($new_file, $file_data, $chmod);
+  return file_put_contents($new_file, $file_data, $chmod);
   // $creds = false;
   // if (is_request_filesystem_credentials_enable())
   //   $creds = request_filesystem_credentials('', '', false, false, null);

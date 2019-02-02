@@ -52,7 +52,8 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
       // プレイリストIDの抽出
       preg_match( '/(?<=list=)(.+?)(?=")/', $cache, $list );
       // ビデオIDの取得
-      $json = json_decode(wp_filesystem_get_contents('https://www.youtube.com/oembed?url=http://www.youtube.com/playlist?list='.$list[1], true), true);
+      $json_data = @wp_filesystem_get_contents('https://www.youtube.com/oembed?url=http://www.youtube.com/playlist?list='.$list[1], true);
+      $json = json_decode($json_data, true);
       // ビデオIDの抽出
       preg_match( '/(?<=vi\/)(.+?)(?=\/)/', $json['thumbnail_url'], $video_id );
     } else {
