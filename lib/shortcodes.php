@@ -39,7 +39,7 @@ function new_entries_shortcode($atts) {
     'children' => 0,
     'post_type' => 'post',
     'taxonomy' => 'category',
-    'sticky' => 1,
+    'sticky' => 0,
     'random' => 0,
     'order' => 'desc',
     'action' => null,

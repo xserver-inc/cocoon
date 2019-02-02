@@ -955,7 +955,7 @@ function generate_widget_entries_tag($atts){
     'include_children' => 0,
     'post_type' => null,
     'taxonomy' => 'category',
-    'sticky' => 1,
+    'sticky' => 0,
     'random' => 0,
     'order' => 'desc',
     'action' => null,
