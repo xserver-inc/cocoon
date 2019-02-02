@@ -213,7 +213,7 @@ blockquote::after {
 ** 目次
 ************************************/
 .toc {
-  padding: 0;
+  padding: 1em;
   border: 2px solid #202020;
   background-color: #f9f9f9;
   font-weight: bold;
