@@ -1007,7 +1007,7 @@ function html_ampfy_call_back( $html ) {
   $file_path_cache = get_transient( $transient_id );
   if ($file_path_cache && DEBUG_CACHE_ENABLE && !is_user_administrator()) {
     if (file_exists($transient_file)) {
-      $html_cache = get_file_contents($transient_file);
+      $html_cache = wp_filesystem_get_contents($transient_file);
       if ($html_cache) {
         return $html_cache;
       }
@@ -1057,7 +1057,7 @@ function html_ampfy_call_back( $html ) {
     $is_include_body = includes_string($all_tag, '</body>');
     if ($is_include_body && DEBUG_CACHE_ENABLE && !is_user_administrator()) {
       set_transient($transient_id, $transient_file, DAY_IN_SECONDS * 1);
-      put_file_contents($transient_file, $all_tag);
+      wp_filesystem_put_contents($transient_file, $all_tag);
     }
 
     //AMP用全てのHTMLタグ編集用のフック

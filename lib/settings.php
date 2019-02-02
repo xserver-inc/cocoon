@@ -209,7 +209,7 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
       } else {
         if ( file_exists( $path ) ) {
           $styles[] = array(
-            'css'     => file_get_contents( $path ),
+            'css'     => wp_filesystem_get_contents( $path ),
             'baseURL' => $item,
           );
         }
