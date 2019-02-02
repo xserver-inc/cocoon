@@ -29,10 +29,11 @@ class TOCWidgetItem extends WP_Widget {
     $title = apply_filters( 'toc_widget_title', $title, $instance, $this->id_base );
 
     if ( is_singular() ){
-      // global $_TOC_WIDGET_OR_SHORTCODE_USE;
-      // $_TOC_WIDGET_OR_SHORTCODE_USE = true;
+      //global $_TOC_WIDGET_OR_SHORTCODE_USE;
+
       $harray = array();
       $html = get_toc_tag(get_the_content(), $harray, true);
+
       //目次が出力されている場合
       if ($html) {
         echo $args['before_widget'];
