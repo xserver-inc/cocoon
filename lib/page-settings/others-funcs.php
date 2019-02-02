@@ -61,7 +61,7 @@ endif;
 define('OP_JQUERY_VERSION', 'jquery_version');
 if ( !function_exists( 'get_jquery_version' ) ):
 function get_jquery_version(){
-  return get_theme_option(OP_JQUERY_VERSION, '3');
+  return get_theme_option(OP_JQUERY_VERSION, '1');
 }
 endif;
 
