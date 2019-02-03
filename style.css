@@ -3605,6 +3605,9 @@ label.screen-reader-text {
   margin: 1.2em 0;
   position: relative;
 }
+.toggle-wrap > p {
+  margin: 0;
+}
 .toggle-wrap .toggle-content {
   visibility: hidden;
   opacity: 0;
