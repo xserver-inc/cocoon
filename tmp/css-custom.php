@@ -592,6 +592,13 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
 .demo .entry-content p {
   line-height: <?php echo $entry_content_line_hight; ?>;
 }
+  <?php //管理画面用
+  if(is_admin() && is_gutenberg_editor_enable()): ?>
+  .main p,
+  .main p.wp-block-paragraph {
+    line-height: <?php echo $entry_content_line_hight; ?>;
+  }
+  <?php endif; ?>
 <?php endif ?>
 <?php //行の余白
 if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
@@ -600,4 +607,12 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
   margin-top: <?php echo $entry_content_margin_hight; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
+  <?php ////管理画面用
+  if(is_admin() && is_gutenberg_editor_enable()): ?>
+  .main p,
+  .main p.wp-block-paragraph {
+    margin-top: <?php echo $entry_content_margin_hight; ?>em;
+    margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+  }
+  <?php endif; ?>
 <?php endif ?>

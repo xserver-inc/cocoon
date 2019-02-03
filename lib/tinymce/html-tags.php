@@ -120,7 +120,7 @@ function generate_html_tags_is($value){
   htmlTags[6].after = '<?php echo $after; ?>';
 
   <?php //トグルボックス
-  $before = '<div class="toggle-wrap"><input id="toggle-checkbox-COCOON_DATE_ID" class="toggle-checkbox" type="checkbox"> <label class="toggle-button" for="toggle-checkbox-COCOON_DATE_ID">'.__( 'トグルボックス見出し', THEME_NAME ).'</label><div class="toggle-content">';
+  $before = '<div class="toggle-wrap"><input id="toggle-checkbox-COCOON_DATE_ID" class="toggle-checkbox" type="checkbox"><label class="toggle-button" for="toggle-checkbox-COCOON_DATE_ID">'.__( 'トグルボックス見出し', THEME_NAME ).'</label><div class="toggle-content">';
   $after = '</div></div>';
   ?>
   htmlTags[7] = new Array();

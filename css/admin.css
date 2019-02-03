@@ -983,7 +983,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .lb-blue .label-box-content { border-color: #2ea9df; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
-.admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
@@ -2143,7 +2142,6 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .lb-blue .label-box-content { border-color: #2ea9df; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
-.admin-settings .demo .toggle-wrap > p { display: none; }
 .admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
@@ -3123,7 +3121,7 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .ir-list-title { font-size: 22px; font-weight: bold; padding: 1em 0 0.6em; }
 
-.speech-balloon p { font-size: 16px; }
+.speech-wrap div.speech-balloon p { font-size: 16px; margin: 0; }
 
 .balloon-box { margin: 10px 0; padding: 12px; border-top: 1px solid #ccc; }
 .balloon-box:first-child { border-top: 0px solid transparent; }
