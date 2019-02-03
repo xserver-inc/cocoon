@@ -3609,6 +3609,7 @@ label.screen-reader-text {
   margin: 0;
 }
 .toggle-wrap .toggle-content {
+  display: block;
   visibility: hidden;
   opacity: 0;
   padding: 0 1em;

@@ -984,7 +984,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
-.admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
+.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
@@ -2144,7 +2144,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
-.admin-settings .demo .toggle-wrap .toggle-content { visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
+.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.5s ease; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
