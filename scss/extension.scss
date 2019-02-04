@@ -784,7 +784,7 @@ $bb_green: #3eb370;
   font-size: 0.8em;
 }
 .micro-balloon:after, .micro-balloon:before {
-	top: 97%;
+  top: calc(100% - 1px);
 	left: 50%;
 	border: solid transparent;
 	content: " ";
@@ -816,7 +816,7 @@ $bb_green: #3eb370;
   margin-top: -.5em;
 }
 .micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
-  bottom: 97%;
+  bottom: calc(100% - 1px);
   top: auto;
 }
 

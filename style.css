@@ -3255,7 +3255,7 @@ label.screen-reader-text {
 }
 
 .micro-balloon:after, .micro-balloon:before {
-  top: 97%;
+  top: calc(100% - 1px);
   left: 50%;
   border: solid transparent;
   content: " ";
@@ -3291,7 +3291,7 @@ label.screen-reader-text {
 }
 
 .micro-bottom.micro-balloon:after, .micro-bottom.micro-balloon:before {
-  bottom: 97%;
+  bottom: calc(100% - 1px);
   top: auto;
 }
 

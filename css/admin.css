@@ -910,13 +910,13 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
 .admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
-.admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: 97%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+.admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
 .admin-settings .demo .micro-balloon-center { margin-left: auto; margin-right: auto; }
 .admin-settings .demo .micro-balloon-right { margin-left: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon { margin-top: -.5em; }
-.admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: 97%; top: auto; }
+.admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: calc(100% - 1px); top: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon:after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .micro-bottom.micro-balloon:before { border-bottom-color: #999; border-top-color: transparent; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
@@ -2070,13 +2070,13 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
 .admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
-.admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: 97%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+.admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
 .admin-settings .demo .micro-balloon-center { margin-left: auto; margin-right: auto; }
 .admin-settings .demo .micro-balloon-right { margin-left: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon { margin-top: -.5em; }
-.admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: 97%; top: auto; }
+.admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: calc(100% - 1px); top: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon:after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .micro-bottom.micro-balloon:before { border-bottom-color: #999; border-top-color: transparent; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
