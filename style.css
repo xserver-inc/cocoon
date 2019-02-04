@@ -3228,15 +3228,12 @@ label.screen-reader-text {
   text-align: center;
 }
 
-.container .micro-top {
+.micro-top {
   font-size: 0.8em;
-  margin-bottom: -1em;
-  margin-top: 1em;
 }
-.container .micro-bottom {
+
+.micro-bottom {
   font-size: 0.8em;
-  margin-top: -0.8em;
-  margin-bottom: 1em;
 }
 
 .micro-center {
@@ -3247,14 +3244,13 @@ label.screen-reader-text {
   text-align: right;
 }
 
-.container .micro-balloon {
+.micro-balloon {
   position: relative;
   background: #fff;
   border: 1px solid #999;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
-  margin-bottom: -.7em;
   font-size: 0.8em;
 }
 

@@ -607,6 +607,19 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
   margin-top: <?php echo $entry_content_margin_hight; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
+.entry-content .micro-top{
+  margin-bottom: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
+}
+.entry-content .micro-balloon{
+  margin-bottom: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
+}
+.entry-content .micro-bottom{
+  margin-top: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
+}
+.entry-content .micro-bottom.micro-balloon{
+  margin-top: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
+  margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
+}
   <?php ////管理画面用
   if(is_admin() && is_gutenberg_editor_enable()): ?>
   .main p,

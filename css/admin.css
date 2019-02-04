@@ -905,11 +905,11 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
 .admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
 .admin-settings .demo .micro-copy.aligncenter { text-align: center; }
-.admin-settings .demo .container .micro-top { font-size: 0.8em; margin-bottom: -1em; margin-top: 1em; }
-.admin-settings .demo .container .micro-bottom { font-size: 0.8em; margin-top: -0.8em; margin-bottom: 1em; }
+.admin-settings .demo .micro-top { font-size: 0.8em; }
+.admin-settings .demo .micro-bottom { font-size: 0.8em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .container .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; margin-bottom: -.7em; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: 97%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
@@ -2065,11 +2065,11 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .micro-copy.alignleft { float: none; margin-right: 0; text-align: left; }
 .admin-settings .demo .micro-copy.alignright { float: none; margin-left: 0; text-align: right; }
 .admin-settings .demo .micro-copy.aligncenter { text-align: center; }
-.admin-settings .demo .container .micro-top { font-size: 0.8em; margin-bottom: -1em; margin-top: 1em; }
-.admin-settings .demo .container .micro-bottom { font-size: 0.8em; margin-top: -0.8em; margin-bottom: 1em; }
+.admin-settings .demo .micro-top { font-size: 0.8em; }
+.admin-settings .demo .micro-bottom { font-size: 0.8em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .container .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; margin-bottom: -.7em; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: 97%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }

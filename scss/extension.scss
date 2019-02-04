@@ -754,19 +754,17 @@ $bb_green: #3eb370;
     text-align: center;
   }
 }
-.container{
-  .micro-top{
-    font-size: 0.8em;
-    margin-bottom: -1em;
-    margin-top: 1em;
-  }
-  .micro-bottom{
-    font-size: 0.8em;
-    margin-top: -0.8em;
-    margin-bottom: 1em;
-  }
-}
 
+.micro-top{
+  font-size: 0.8em;
+  // margin-bottom: -1em;
+  // margin-top: 1em;
+}
+.micro-bottom{
+  font-size: 0.8em;
+  // margin-top: -0.8em;
+  // margin-bottom: 1em;
+}
 .micro-center{
   text-align: center;
 }
@@ -775,14 +773,14 @@ $bb_green: #3eb370;
 }
 
 
-.container .micro-balloon {
+.micro-balloon {
 	position: relative;
 	background: $white;
   border: 1px solid $x_pallid_text_color;
   border-radius: 4px;
   padding: 3px 8px;
   display: table;
-  margin-bottom: -.7em;
+  //margin-bottom: -.7em;
   font-size: 0.8em;
 }
 .micro-balloon:after, .micro-balloon:before {
