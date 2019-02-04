@@ -343,9 +343,11 @@ function generate_item_ranking_tag($id, $is_first_only = false){
       <div class="ranking-item-link-buttons">
 
         <?php //詳細ページURLがあるとき
-        if ($detail_url): ?>
+        if ($detail_url):
+          $target = apply_filters('cocoon_ranking_detail_page_target', '_self' );
+        ?>
         <div class="ranking-item-detail">
-          <a href="<?php echo $detail_url; ?>"><?php echo apply_filters('cocoon_ranking_detail_page_caption', __( '詳細ページ', THEME_NAME ) )  ?></a>
+          <a href="<?php echo $detail_url; ?>" target="<?php echo $target; ?>"><?php echo apply_filters('cocoon_ranking_detail_page_caption', __( '詳細ページ', THEME_NAME ) )  ?></a>
         </div>
         <?php endif ?>
 
@@ -353,8 +355,10 @@ function generate_item_ranking_tag($id, $is_first_only = false){
         <?php //リンク情報があるとき
         if ($link_url || $link_tag): ?>
         <div class="ranking-item-link">
-          <?php if ($link_url): ?>
-            <a href="<?php echo $link_url; ?>" target="_blank"><?php echo apply_filters('cocoon_ranking_official_page_caption', __( '公式ページ', THEME_NAME )) ?></a>
+          <?php if ($link_url):
+              $target = apply_filters('cocoon_ranking_official_page_target', '_blank' );
+            ?>
+            <a href="<?php echo $link_url; ?>" target="<?php echo $target; ?>"><?php echo apply_filters('cocoon_ranking_official_page_caption', __( '公式ページ', THEME_NAME )) ?></a>
           <?php else: ?>
             <?php echo $link_tag; ?>
           <?php endif ?>
