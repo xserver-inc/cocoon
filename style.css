@@ -3328,6 +3328,7 @@ label.screen-reader-text {
   border-top-color: transparent;
 }
 .micro-balloon.mc-yellow::before {
+  border-top-color: transparent;
   border-bottom-color: transparent;
 }
 .micro-balloon.mc-yellow::after {
@@ -3343,6 +3344,7 @@ label.screen-reader-text {
   border-top-color: transparent;
 }
 .micro-balloon.mc-red::before {
+  border-top-color: transparent;
   border-bottom-color: transparent;
 }
 .micro-balloon.mc-red::after {
@@ -3358,6 +3360,7 @@ label.screen-reader-text {
   border-top-color: transparent;
 }
 .micro-balloon.mc-blue::before {
+  border-top-color: transparent;
   border-bottom-color: transparent;
 }
 .micro-balloon.mc-blue::after {
@@ -3373,6 +3376,7 @@ label.screen-reader-text {
   border-top-color: transparent;
 }
 .micro-balloon.mc-green::before {
+  border-top-color: transparent;
   border-bottom-color: transparent;
 }
 .micro-balloon.mc-green::after {

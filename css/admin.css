@@ -924,19 +924,19 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .mc-circle { border-radius: 2em; }
 .admin-settings .demo .micro-balloon.mc-yellow { background-color: #fc9f4d; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after { border-bottom-color: #fc9f4d; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-yellow::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-yellow::after { border-top-color: #fc9f4d; }
 .admin-settings .demo .micro-balloon.mc-red { background-color: #d05a6e; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-red.micro-bottom::after { border-bottom-color: #d05a6e; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-red::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-red::after { border-top-color: #d05a6e; }
 .admin-settings .demo .micro-balloon.mc-blue { background-color: #2ea9df; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after { border-bottom-color: #2ea9df; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-blue::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-blue::after { border-top-color: #2ea9df; }
 .admin-settings .demo .micro-balloon.mc-green { background-color: #3eb370; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-green::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-green::after { border-top-color: #3eb370; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
@@ -2084,19 +2084,19 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .mc-circle { border-radius: 2em; }
 .admin-settings .demo .micro-balloon.mc-yellow { background-color: #fc9f4d; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-yellow.micro-bottom::after { border-bottom-color: #fc9f4d; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-yellow::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-yellow::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-yellow::after { border-top-color: #fc9f4d; }
 .admin-settings .demo .micro-balloon.mc-red { background-color: #d05a6e; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-red.micro-bottom::after { border-bottom-color: #d05a6e; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-red::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-red::after { border-top-color: #d05a6e; }
 .admin-settings .demo .micro-balloon.mc-blue { background-color: #2ea9df; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-blue.micro-bottom::after { border-bottom-color: #2ea9df; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-blue::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-blue::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-blue::after { border-top-color: #2ea9df; }
 .admin-settings .demo .micro-balloon.mc-green { background-color: #3eb370; color: #fff; border: none; }
 .admin-settings .demo .micro-balloon.mc-green.micro-bottom::after { border-bottom-color: #3eb370; border-top-color: transparent; }
-.admin-settings .demo .micro-balloon.mc-green::before { border-bottom-color: transparent; }
+.admin-settings .demo .micro-balloon.mc-green::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .micro-balloon.mc-green::after { border-top-color: #3eb370; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }

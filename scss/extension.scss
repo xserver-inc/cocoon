@@ -854,6 +854,7 @@ $bb_green: #3eb370;
     }
   }
   &::before{
+    border-top-color: transparent;
     border-bottom-color: transparent;
   }
   &::after{
