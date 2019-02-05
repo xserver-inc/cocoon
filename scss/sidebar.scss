@@ -14,7 +14,8 @@
     background-color: $xx_thin;
     padding: 16px 10px;
     margin: 16px 0;
-  }
+    border-radius: $badge_border_radius;
+}
 }
 
 .no-scrollable-sidebar .sidebar{

@@ -100,6 +100,7 @@ select {
   border: 2px solid #ccc;
   font-size: 18px;
   width: 100%;
+  border-radius: 2px;
 }
 
 .fz-12px {
@@ -1523,6 +1524,7 @@ table td {
   font-size: 24px;
   padding: 25px;
   background-color: #f3f4f5;
+  border-radius: 2px;
 }
 .article h3 {
   border-left: 6px solid #777;
@@ -1956,6 +1958,7 @@ span.internal-icon {
   background-color: #f3f4f5;
   padding: 16px 10px;
   margin: 16px 0;
+  border-radius: 2px;
 }
 
 .no-scrollable-sidebar .sidebar {

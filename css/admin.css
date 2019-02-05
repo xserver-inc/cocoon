@@ -28,7 +28,7 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .entry-category, .admin-settings .demo .post-date, .admin-settings .demo .post-update, .admin-settings .demo .post-author, .admin-settings .demo .amp-back { padding: 2px; display: inline; font-size: 0.7em; }
 
-.admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 12px; border: 2px solid #ccc; font-size: 18px; width: 100%; }
+.admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 12px; border: 2px solid #ccc; font-size: 18px; width: 100%; border-radius: 2px; }
 
 .snipet-list { padding: 20px; display: flex; flex-wrap: wrap; }
 
@@ -606,7 +606,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -684,7 +684,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
 .admin-settings .demo .sidebar { width: 356px; border: 1px solid transparent; padding: 9px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 16px 10px; margin: 16px 0; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 16px 10px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -1766,7 +1766,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
 .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
-.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; }
+.admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
 .admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
@@ -1844,7 +1844,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
 .admin-settings .demo .sidebar { width: 356px; border: 1px solid transparent; padding: 9px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 16px 10px; margin: 16px 0; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 16px 10px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }

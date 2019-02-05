@@ -53,10 +53,11 @@ h6{
 
 h2 {
   font-size: 24px;
-  // margin-top: 40px;
-  // margin-bottom: 20px;
+  //margin-top: 40px;
+  //margin-bottom: 20px;
   padding: 25px;
   background-color: $xx_thin;
+  border-radius: $badge_border_radius;
 }
 
 h3 {
