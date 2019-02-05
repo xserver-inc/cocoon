@@ -112,8 +112,11 @@ class PopularEntryWidgetItem extends WP_Widget {
 
     if (isset($new_instance['exclude_post_ids']))
       $instance['exclude_post_ids'] = strip_tags($new_instance['exclude_post_ids']);
-    if (isset($new_instance['exclude_cat_ids']))
+    if (isset($new_instance['exclude_cat_ids'])){
       $instance['exclude_cat_ids'] = $new_instance['exclude_cat_ids'];
+    } else {
+      $instance['exclude_cat_ids'] = array();
+    }
 
     return $instance;
   }
@@ -140,6 +143,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
     $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
     $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
+    //_v($exclude_cat_ids);
     //var_dump($instance);
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
