@@ -159,7 +159,7 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////
   //はてブシェアボタン用のスクリプト呼び出し
   ///////////////////////////////////
-  wp_enqueue_script_hatebu_share_button_js();
+  //wp_enqueue_script_hatebu_share_button_js();
 
   ///////////////////////////////////
   //クリップボードスクリプトの呼び出し
