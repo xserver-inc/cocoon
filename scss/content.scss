@@ -184,7 +184,6 @@ blockquote {
   &::before,
   &::after{
     color: #C8C8C8;
-    content: "“";
     font-family: serif;
     position: absolute;
     font-size: 300%;
@@ -192,12 +191,14 @@ blockquote {
   }
 
   &::before {
+    content: "“";
     line-height: 1.1;
     left: 10px;
     top: 0;
   }
 
   &::after {
+    content: "”";
     line-height: 0;
     right: 10px;
     bottom: 0px;
