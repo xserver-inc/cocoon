@@ -9,3 +9,24 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //PWAを有効にする
 update_theme_option(OP_PWA_ENABLE);
+
+//PWAアプリ名
+update_theme_option(OP_PWA_NAME);
+
+//PWAホーム画面に表示されるアプリ名
+update_theme_option(OP_PWA_SHORT_NAME);
+
+//PWAアプリの説明
+update_theme_option(OP_PWA_DESCRIPTION);
+
+//PWAテーマカラー
+update_theme_option(OP_PWA_THEME_COLOR);
+
+//PWA背景色
+update_theme_option(OP_PWA_BACKGROUND_COLOR);
+
+//PWA表示モード
+update_theme_option(OP_PWA_DISPLAY);
+
+//PWA画面の向き
+update_theme_option(OP_PWA_ORIENTATION);
