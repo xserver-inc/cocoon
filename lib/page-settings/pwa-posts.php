@@ -7,4 +7,5 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-
+//PWAを有効にする
+update_theme_option(OP_PWA_ENABLE);

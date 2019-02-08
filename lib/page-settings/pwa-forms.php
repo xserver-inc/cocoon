@@ -20,7 +20,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-
+        <!-- PWAの有効化 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PWA_ENABLE, __( 'PWAの有効化', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_PWA_ENABLE, is_pwa_enable(), __("PWA機能を有効化する",THEME_NAME ));
+            generate_tips_tag(__( '有効化することで、PWA機能が有効化されスマートフォンからサイトがアプリのように利用できます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
 
       </tbody>
     </table>
