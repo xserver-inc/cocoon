@@ -1014,6 +1014,15 @@ function get_theme_css_cache_dir(){
 }
 endif;
 
+//テーマのPWAキャッシュディレクトリ
+if ( !function_exists( 'get_theme_pwa_cache_dir' ) ):
+function get_theme_pwa_cache_dir(){
+  $dir = get_theme_resources_dir().'pwa-cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
 //テーマのカスタムCSSファイル
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){
@@ -1033,8 +1042,6 @@ function get_theme_css_cache_file_url(){
   return $url;
 }
 endif;
-
-
 
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
