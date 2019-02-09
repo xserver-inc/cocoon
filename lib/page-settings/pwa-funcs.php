@@ -19,7 +19,7 @@ endif;
 define('OP_PWA_NAME', 'pwa_name');
 if ( !function_exists( 'get_pwa_name' ) ):
 function get_pwa_name(){
-  return get_theme_option(OP_PWA_NAME, get_bloginfo('name'));
+  return stripslashes_deep(trim(get_theme_option(OP_PWA_NAME, get_bloginfo('name'))));
 }
 endif;
 
@@ -27,11 +27,9 @@ endif;
 define('OP_PWA_SHORT_NAME', 'pwa_short_name');
 if ( !function_exists( 'get_pwa_short_name' ) ):
 function get_pwa_short_name(){
-  $short_name = get_simplified_site_name();
-  return get_theme_option(
-    OP_PWA_SHORT_NAME,
-    $short_name ? $short_name : get_bloginfo('name')
-  );
+  $default_name = get_simplified_site_name();
+  $default_name = $default_name ? $default_name : get_bloginfo('name');
+  return stripslashes_deep(trim(get_theme_option(OP_PWA_SHORT_NAME, $default_name)));
 }
 endif;
 
@@ -39,7 +37,7 @@ endif;
 define('OP_PWA_DESCRIPTION', 'pwa_description');
 if ( !function_exists( 'get_pwa_description' ) ):
 function get_pwa_description(){
-  return get_theme_option(OP_PWA_DESCRIPTION, bloginfo('description'));
+  return stripslashes_deep(trim(get_theme_option(OP_PWA_DESCRIPTION, get_bloginfo('description'))));
 }
 endif;
 
@@ -71,6 +69,6 @@ endif;
 define('OP_PWA_ORIENTATION', 'pwa_orientation');
 if ( !function_exists( 'get_pwa_orientation' ) ):
 function get_pwa_orientation(){
-  return get_theme_option(OP_PWA_ORIENTATION);
+  return get_theme_option(OP_PWA_ORIENTATION, 'any');
 }
 endif;
