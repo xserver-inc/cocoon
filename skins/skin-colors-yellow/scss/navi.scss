@@ -54,4 +54,12 @@
   .sub-menu li:hover > ul > li{
     display: block;
   }
+
+  > li {
+    &:last-of-type {
+      .sub-menu {
+        right: 0;
+      }
+    }
+  }
 }

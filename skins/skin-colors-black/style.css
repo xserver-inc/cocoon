@@ -199,6 +199,9 @@ div.mobile-menu-buttons .menu-button:hover,
 .navi-in > ul .sub-menu li:hover > ul > li {
   display: block;
 }
+.navi-in > ul > li:last-of-type .sub-menu {
+  right: 0;
+}
 
 .sidebar h3 {
   background: transparent;
