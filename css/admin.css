@@ -694,6 +694,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .nwa .ranking-item-image-tag { max-width: 100%; text-align: center; display: flex; justify-content: center; }
 .admin-settings .demo .nwa .ranking-item-name-text, .admin-settings .demo .nwa .widget_item_ranking .main-widget-label { font-size: 20px; }
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
+.admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .widget { margin-bottom: 38px; }
 .admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
@@ -1854,6 +1855,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .nwa .ranking-item-image-tag { max-width: 100%; text-align: center; display: flex; justify-content: center; }
 .admin-settings .demo .nwa .ranking-item-name-text, .admin-settings .demo .nwa .widget_item_ranking .main-widget-label { font-size: 20px; }
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
+.admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .widget { margin-bottom: 38px; }
 .admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
