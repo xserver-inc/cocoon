@@ -80,7 +80,7 @@ function get_category_content($cat_id = null){
   if (!empty($meta['content']))
     $content = $meta['content'];
   else
-    $content = category_description();
+    $content = category_description($cat_id);
 
   $content = wpautop($content);
   $content = apply_filters( 'the_category_content', $content );
@@ -112,7 +112,7 @@ function get_category_snipet($cat_id){
   $snipet = get_category_description($cat_id);
   if (!$snipet) {
     //カテゴリ説明を取得
-    $snipet = category_description();
+    $snipet = category_description($cat_id);
   }
   if (!$snipet) {
     //カテゴリ内容の抜粋
