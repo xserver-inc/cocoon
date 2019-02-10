@@ -41,6 +41,8 @@ if (is_pwa_enable()) {
   $orientation = get_pwa_orientation();
   $theme_color = get_pwa_theme_color();
   $background_color = get_pwa_background_color();
+  $icon_url_192 =  get_site_icon_url(192);
+  $icon_url_512 =  get_site_icon_url(512);
   $manifest =
   "{
     'name': '{$name}',
@@ -55,16 +57,16 @@ if (is_pwa_enable()) {
     'background_color': '{$background_color}',
     'icons': [
         {
-            'src': '/pwa_192.png',
+            'src': '{$icon_url_192}',
             'type': 'image/png',
             'sizes': '192x192'
         },
         {
-            'src': '/pwa_512.png',
+            'src': '{$icon_url_512}',
             'type': 'image/png',
             'sizes': '512x512'
         }
     ]
   }";
-  //_v($manifest);
+  // _v($manifest);
 }
