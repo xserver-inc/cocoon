@@ -3238,13 +3238,13 @@ label.screen-reader-text {
 
 .micro-top {
   font-size: 0.8em;
-  margin-bottom: -1em;
+  margin-bottom: -1.2em;
   margin-top: 1em;
 }
 
 .micro-bottom {
   font-size: 0.8em;
-  margin-top: -0.8em;
+  margin-top: -1.2em;
   margin-bottom: 1em;
 }
 
