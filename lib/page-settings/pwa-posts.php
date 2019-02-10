@@ -44,29 +44,34 @@ if (is_pwa_enable()) {
   $icon_url_192 =  get_site_icon_url(192);
   $icon_url_512 =  get_site_icon_url(512);
   $manifest =
-  "{
-    'name': '{$name}',
-    'short_name': '{$short_name}',
-    'description': '{description}',
-    'start_url': '{$start_url}',
-    'display': '{$display}',
-    'lang': 'ja',
-    'dir': 'auto',
-    'orientation': '{$orientation}',
-    'theme_color': '{$theme_color}',
-    'background_color': '{$background_color}',
-    'icons': [
+  "
+  {
+    \"name\": \"{$name}\",
+    \"short_name\": \"{$short_name}\",
+    \"description\": \"{$description}\",
+    \"start_url\": \"{$start_url}\",
+    \"display\": \"{$display}\",
+    \"lang\": \"ja\",
+    \"dir\": \"auto\",
+    \"orientation\": \"{$orientation}\",
+    \"theme_color\": \"{$theme_color}\",
+    \"background_color\": \"{$background_color}\",
+    \"icons\": [
         {
-            'src': '{$icon_url_192}',
-            'type': 'image/png',
-            'sizes': '192x192'
+            \"src\": \"{$icon_url_192}\",
+            \"type\": \"image/png\",
+            \"sizes\": \"192x192\"
         },
         {
-            'src': '{$icon_url_512}',
-            'type': 'image/png',
-            'sizes': '512x512'
+            \"src\": \"{$icon_url_512}\",
+            \"type\": \"image/png\",
+            \"sizes\": \"512x512\"
         }
     ]
   }";
+  //マニフェストファイルの作成
+  $manifest_file = get_theme_pwa_cache_dir().'manifest.json';
+  wp_filesystem_put_contents($manifest_file, $manifest, 0);
+
   // _v($manifest);
 }
