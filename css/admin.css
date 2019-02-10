@@ -2894,7 +2894,8 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 18px; font-size: 14px; }
   .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { font-size: 18px; right: -4px; margin-top: 0; }
   .admin-settings .demo .slick-dots { display: none !important; }
-  .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; } }
+  .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; }
+  .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
   .admin-settings .demo h2, .admin-settings .demo h3 { font-size: 20px; }
   .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 1.2em 0 1em; }
