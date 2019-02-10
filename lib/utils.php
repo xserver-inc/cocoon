@@ -2287,11 +2287,18 @@ function get_wordpress_timezone(){
 }
 endif;
 
-//来て表示されている投稿IDを取得する
+//固定表示されている投稿IDを取得する
 if ( !function_exists( 'get_sticky_post_ids' ) ):
 function get_sticky_post_ids(){
   return get_option('sticky_posts');
-
 }
 endif;
+
+//"を\"にエスケープする
+if ( !function_exists( 'get_double_quotation_escape' ) ):
+function get_double_quotation_escape($str){
+  return str_replace('"', '\"', $str);
+}
+endif;
+
 
