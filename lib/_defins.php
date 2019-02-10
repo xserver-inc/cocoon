@@ -203,6 +203,13 @@ define('FONT_AWESOME5_CDN_URL', 'https://use.fontawesome.com/releases/v5.6.3/css
 //IcoMoonフォント
 define('FONT_AICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 
+//親テーマのJavaScript
+define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
+//子テーマのJavaScript
+define('THEME_CHILD_JS_URL', get_stylesheet_directory_uri() . '/javascript.js');
+//set-event-passive
+define('SET_EVENT_PASSIVE_JS_URL', get_template_directory_uri() . '/js/set-event-passive.js');
+
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 
