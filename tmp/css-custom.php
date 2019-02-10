@@ -588,7 +588,7 @@ if ($footer_text_color = get_footer_text_color()): ?>
 <?php endif ?>
 <?php //行の高さ
 if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
-.entry-content,
+.entry-content > *,
 .demo .entry-content p {
   line-height: <?php echo $entry_content_line_hight; ?>;
 }
@@ -603,21 +603,20 @@ if ($entry_content_line_hight = get_entry_content_line_hight()): ?>
 <?php //行の余白
 if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .entry-content > *,
-.entry-content [class$="-box"] > *,
 .demo .entry-content p {
   margin-top: <?php echo $entry_content_margin_hight; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
-.entry-content .micro-top{
+.entry-content > .micro-top{
   margin-bottom: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
 }
-.entry-content .micro-balloon{
+.entry-content > .micro-balloon{
   margin-bottom: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
 }
-.entry-content .micro-bottom{
+.entry-content > .micro-bottom{
   margin-top: -<?php echo $entry_content_margin_hight * 1.1; ?>em;
 }
-.entry-content .micro-bottom.micro-balloon{
+.entry-content > .micro-bottom.micro-balloon{
   margin-top: -<?php echo $entry_content_margin_hight * 0.8; ?>em;
   margin-bottom: <?php echo $entry_content_margin_hight; ?>em;
 }
