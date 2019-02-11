@@ -36,7 +36,7 @@ if (is_pwa_enable()) {
   $name = get_double_quotation_escape(get_pwa_name());
   $short_name = get_double_quotation_escape(get_pwa_short_name());
   $description = get_double_quotation_escape(get_pwa_description());
-  $start_url = home_url().'/?utm_source=homescreen&utm_medium=pwa';
+  $start_url = '/?utm_source=homescreen&utm_medium=pwa';
   $display = get_pwa_display();
   $orientation = get_pwa_orientation();
   $theme_color = get_pwa_theme_color();
@@ -99,11 +99,10 @@ if (is_pwa_enable()) {
     '/',
     '{$icon_url_s}',
     '{$icon_url_l}',
-    '{$site_logo}',
     '{$jquery_core_url}',
     '{$jquery_migrate_url}',
     '{$theme_js_url}',
-    '{$theme_child_js_url}',
+    '{$theme_child_js_url}'
   ];
 
   self.addEventListener('install', function(event) {
