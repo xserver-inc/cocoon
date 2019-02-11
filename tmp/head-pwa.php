@@ -34,7 +34,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- 以下はiOS用のコードです -->
 <!-- ホーム画面に表示されるアプリ名 -->
-<meta name="apple-mobile-web-app-title" content="<?php echo esc_attr(mb_substr(get_pwa_short_name(), 12)); ?>">
+<meta name="apple-mobile-web-app-title" content="<?php echo esc_attr(mb_substr(get_pwa_short_name(), 0, 12)); ?>">
 <!-- URLバーの非表示 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- ステータスバーのスタイル（default / black / black-translucent） -->

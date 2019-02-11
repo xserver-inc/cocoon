@@ -34,7 +34,7 @@ update_theme_option(OP_PWA_ORIENTATION);
 //PWAが有効な時
 if (is_pwa_enable()) {
   $name = get_double_quotation_escape(get_pwa_name());
-  $short_name = get_double_quotation_escape(get_pwa_short_name());
+  $short_name = get_double_quotation_escape(mb_substr(get_pwa_short_name(), 0, 12));
   $description = get_double_quotation_escape(get_pwa_description());
   $start_url = '/?utm_source=homescreen&utm_medium=pwa';
   $display = get_pwa_display();
