@@ -43,40 +43,40 @@ if (is_pwa_enable()) {
   $background_color = get_pwa_background_color();
   $icon_url_s = get_site_icon_url(192);
   if (empty($icon_url_s)) {
-    $icon_url_s = DEFAULT_SITE_ICON_192;
+  $icon_url_s = DEFAULT_SITE_ICON_192;
   }
   $icon_size_s = get_site_icon_size_text($icon_url_s);
 
   $icon_url_l = get_site_icon_url(512);
   if (empty($icon_url_l)) {
-    $icon_url_l = DEFAULT_SITE_ICON_270;
+  $icon_url_l = DEFAULT_SITE_ICON_270;
   }
   $icon_size_l = get_site_icon_size_text($icon_url_l);
   $manifest =
   "
   {
-    \"name\": \"{$name}\",
-    \"short_name\": \"{$short_name}\",
-    \"description\": \"{$description}\",
-    \"start_url\": \"{$start_url}\",
-    \"display\": \"{$display}\",
-    \"lang\": \"ja\",
-    \"dir\": \"auto\",
-    \"orientation\": \"{$orientation}\",
-    \"theme_color\": \"{$theme_color}\",
-    \"background_color\": \"{$background_color}\",
-    \"icons\": [
-        {
-            \"src\": \"{$icon_url_s}\",
-            \"type\": \"image/png\",
-            \"sizes\": \"{$icon_size_s}\"
-        },
-        {
-            \"src\": \"{$icon_url_l}\",
-            \"type\": \"image/png\",
-            \"sizes\": \"{$icon_size_l}\"
-        }
-    ]
+  \"name\": \"{$name}\",
+  \"short_name\": \"{$short_name}\",
+  \"description\": \"{$description}\",
+  \"start_url\": \"{$start_url}\",
+  \"display\": \"{$display}\",
+  \"lang\": \"ja\",
+  \"dir\": \"auto\",
+  \"orientation\": \"{$orientation}\",
+  \"theme_color\": \"{$theme_color}\",
+  \"background_color\": \"{$background_color}\",
+  \"icons\": [
+    {
+      \"src\": \"{$icon_url_s}\",
+      \"type\": \"image/png\",
+      \"sizes\": \"{$icon_size_s}\"
+    },
+    {
+      \"src\": \"{$icon_url_l}\",
+      \"type\": \"image/png\",
+      \"sizes\": \"{$icon_size_l}\"
+    }
+  ]
   }";
   //マニフェストファイルの作成
   $manifest_file = get_theme_pwa_cache_dir().'manifest.json';
@@ -93,94 +93,97 @@ if (is_pwa_enable()) {
   "
   const CACHE_NAME = '{$theme_name}_ver_1';
   const urlsToCache = [
-      '/',
-      '{$icon_url_s}',
-      '{$icon_url_l}',
-      '{$site_logo}',
-      '{$jquery_core_url}',
-      '{$jquery_migrate_url}',
-      '{$theme_js_url}',
-      '{$theme_child_js_url}',
+    '/',
+    '{$icon_url_s}',
+    '{$icon_url_l}',
+    '{$site_logo}',
+    '{$jquery_core_url}',
+    '{$jquery_migrate_url}',
+    '{$theme_js_url}',
+    '{$theme_child_js_url}',
   ];
 
   self.addEventListener('install', function(event) {
-      // インストール処理
-      event.waitUntil(
-          caches.open(CACHE_NAME)
-          .then(function(cache) {
-              console.log('Opened cache');
-              return cache.addAll(urlsToCache);
-          })
-      );
+    // インストール処理
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+    );
   });
 
   self.addEventListener('activate', function(event) {
-      const cacheWhitelist = [CACHE_NAME];
+    const cacheWhitelist = [CACHE_NAME];
 
-      event.waitUntil(
-          caches.keys().then(function(cacheNames) {
-              return Promise.all(
-                  cacheNames.map(function(cacheName) {
-                      if (cacheWhitelist.indexOf(cacheName) === -1) {
-                          return caches.delete(cacheName);
-                      }
-                  })
-              );
+    event.waitUntil(
+      caches.keys().then(function(cacheNames) {
+        return Promise.all(
+          cacheNames.map(function(cacheName) {
+            if (cacheWhitelist.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName);
+            }
           })
-      );
+        );
+      })
+    );
   });
 
   self.addEventListener('fetch', function(event) {
 
-      // 管理画面はキャッシュを使用しない
-      if (/\/wp-admin|\/wp-login|preview=true/.test(event.request.url)) {
-          return;
-      }
+    // 管理画面はキャッシュを使用しない
+    if (/\/wp-admin|\/wp-login|preview=true/.test(event.request.url)) {
+      return;
+    }
 
-      // POSTの場合はキャッシュを使用しない
-      if ('POST' === event.request.method) {
-          return;
-      }
+    // POSTの場合はキャッシュを使用しない
+    if ('POST' === event.request.method) {
+      return;
+    }
 
-      // 管理画面にログイン時はキャッシュを使用しない
-      console.log(event);
+    // 管理画面にログイン時はキャッシュを使用しない
+    console.log(event);
 
-      event.respondWith(
-          caches.match(event.request)
-          .then(function(response) {
-              // キャッシュがあったら、そのレスポンスを返す
-              if (response) {
-                  return response;
-              }
+    event.respondWith(
+      caches.match(event.request)
+      .then(function(response) {
+        // キャッシュがあったら、そのレスポンスを返す
+        if (response) {
+          return response;
+        }
 
-              // 重要：リクエストをcloneする。リクエストはStreamなので
-              // 一度しか処理できない。ここではキャッシュ用、fetch用と2回
-              // 必要なのでリクエストはcloneしないといけない
-              const fetchRequest = event.request.clone();
+        // 重要：リクエストをcloneする。リクエストはStreamなので
+        // 一度しか処理できない。ここではキャッシュ用、fetch用と2回
+        // 必要なのでリクエストはcloneしないといけない
+        const fetchRequest = event.request.clone();
 
-              return fetch(fetchRequest,{credentials: 'include'}).then(
-                  function(response) {
-                      // レスポンスが正しいかをチェック
-                      if (!response || response.status !== 200 || response.type !== 'basic') {
-                          return response;
-                      }
+        return fetch(fetchRequest,{credentials: 'include'}).then(
+          function(response) {
+            // レスポンスが正しいかをチェック
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
 
-                      // 重要：レスポンスを clone する。レスポンスは Stream で
-                      // ブラウザ用とキャッシュ用の2回必要。なので clone して
-                      // 2つの Stream があるようにする
-                      const responseToCache = response.clone();
+            // 重要：レスポンスを clone する。レスポンスは Stream で
+            // ブラウザ用とキャッシュ用の2回必要。なので clone して
+            // 2つの Stream があるようにする
+            const responseToCache = response.clone();
 
-                      caches.open(CACHE_NAME)
-                          .then(function(cache) {
-                              cache.put(event.request, responseToCache);
-                          });
+            caches.open(CACHE_NAME)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
 
-                      return response;
-                  }
-              );
-          })
-      );
+            return response;
+          }
+        );
+      })
+    );
   });
   ";
+  //マニフェストファイルの作成
+  $service_worker_file = get_theme_pwa_cache_dir().'service_worker.js';
+  wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
   //_v($service_worker);
 }
