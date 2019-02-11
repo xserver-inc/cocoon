@@ -82,16 +82,16 @@ if (is_pwa_enable()) {
   $manifest_file = get_theme_pwa_cache_dir().'manifest.json';
   wp_filesystem_put_contents($manifest_file, $manifest, 0);
 
-  // _v($manifest);
+  //service-worker.js
+  $service_worker_ver = THEME_NAME.'_ver_1'; //PWAに変更を加えたらバージョン変更
   $site_logo = get_the_site_logo_url();
   $jquery_core_url = get_jquery_core_url(get_jquery_version());
   $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
   $theme_js_url = THEME_JS_URL;
   $theme_child_js_url = THEME_CHILD_JS_URL;
-  $theme_name = THEME_NAME;
   $service_worker =
   "
-  const CACHE_NAME = '{$theme_name}_ver_1';
+  const CACHE_NAME = '{$service_worker_ver}';
   const urlsToCache = [
     '/',
     '{$icon_url_s}',
