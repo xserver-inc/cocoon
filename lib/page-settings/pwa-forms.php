@@ -47,7 +47,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             generate_label_tag(OP_PWA_SHORT_NAME, __('短いアプリ名', THEME_NAME) );
             echo '<br>';
-            generate_textbox_tag(OP_PWA_SHORT_NAME, mb_substr(get_pwa_short_name(), 12), '');
+            generate_textbox_tag(OP_PWA_SHORT_NAME, mb_substr(get_pwa_short_name(), 0, 12), '');
             generate_tips_tag(__( 'アプリの短縮名を入力してください。ホーム画面に表示される短い名前で利用されます。※最大12文字', THEME_NAME ));
             ?>
           </td>
