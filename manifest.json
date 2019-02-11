@@ -1,0 +1,25 @@
+
+  {
+  "name": "cocoon",
+  "short_name": "アプリの短縮名を入力して",
+  "description": "Just another WordPress site",
+  "start_url": "/?utm_source=homescreen&utm_medium=pwa",
+  "display": "minimal-ui",
+  "lang": "ja",
+  "dir": "auto",
+  "orientation": "any",
+  "theme_color": "#19448e",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://cocoon.local/wp-content/uploads/2018/12/cropped-pexels-photo-1144439-192x192.jpeg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cocoon.local/wp-content/uploads/2018/12/cropped-pexels-photo-1144439.jpeg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+  }
