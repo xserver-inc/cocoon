@@ -104,9 +104,7 @@ if (is_pwa_enable()) {
     '{$jquery_core_url}',
     '{$jquery_migrate_url}',
     '{$theme_js_url}',
-    '{$theme_child_js_url}', 
-    '{$font_awesome4_cdn_url}',
-    '{$font_aicomoon_url}'
+    '{$theme_child_js_url}'
   ];
 
   self.addEventListener('install', function(event) {
