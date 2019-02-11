@@ -54,6 +54,9 @@ get_template_part('tmp/head-custom-field'); ?>
 <?php //headで読み込む必要があるJavaScript
 get_template_part('tmp/head-javascript'); ?>
 
+<?php //PWAスクリプト
+get_template_part('tmp/head-pwa'); ?>
+
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
 get_template_part('tmp-user/head-insert'); ?>
 </head>

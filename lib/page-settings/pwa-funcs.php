@@ -73,11 +73,33 @@ function get_pwa_orientation(){
 }
 endif;
 
+//SサイズのサイトアイコンURLを取得
+if ( !function_exists( 'get_site_icon_url_s' ) ):
+function get_site_icon_url_s(){
+  $icon_url = get_site_icon_url(192);
+  if (empty($icon_url)) {
+    $icon_url = DEFAULT_SITE_ICON_192;
+  }
+  return $icon_url;
+}
+endif;
+
+//LサイズのサイトアイコンURLを取得
+if ( !function_exists( 'get_site_icon_url_l' ) ):
+function get_site_icon_url_l(){
+  $icon_url = get_site_icon_url(512);
+  if (empty($icon_url)) {
+    $icon_url = DEFAULT_SITE_ICON_270;
+  }
+  return $icon_url;
+}
+endif;
+
 //サイトアイコンURLからサイズの取得
 if ( !function_exists( 'get_site_icon_size_text' ) ):
 function get_site_icon_size_text($url){
   $size = null;
-  $res = preg_match('/(\d+?x\d+?)\./', $url, $m);
+  $res = preg_match('/(\d+?x\d+?)[\.\-]/', $url, $m);
   if (isset($m[1])) {
     $size = $m[1];
   }

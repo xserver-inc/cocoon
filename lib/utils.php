@@ -1097,6 +1097,34 @@ function get_theme_pwa_cache_dir(){
 }
 endif;
 
+//PWAのマニフェストファイルへのパス
+if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
+function get_theme_pwa_manifest_json_file(){
+  return get_theme_pwa_cache_dir().'manifest.json';
+}
+endif;
+
+//PWAのマニフェストファイルへのURL
+if ( !function_exists( 'get_theme_pwa_manifest_json_url' ) ):
+function get_theme_pwa_manifest_json_url(){
+  return local_to_url(get_theme_pwa_manifest_json_file());
+}
+endif;
+
+//PWAのサービスワーカーへのパス
+if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
+function get_theme_pwa_service_worker_js_file(){
+  return get_theme_pwa_cache_dir().'service_worker.js';
+}
+endif;
+
+//PWAのサービスワーカーへのパス
+if ( !function_exists( 'get_theme_pwa_service_worker_js_url' ) ):
+function get_theme_pwa_service_worker_js_url(){
+  return local_to_url(get_theme_pwa_service_worker_js_file());
+}
+endif;
+
 //テーマのカスタムCSSファイル
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){

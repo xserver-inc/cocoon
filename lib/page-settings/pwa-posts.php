@@ -41,16 +41,19 @@ if (is_pwa_enable()) {
   $orientation = get_pwa_orientation();
   $theme_color = get_pwa_theme_color();
   $background_color = get_pwa_background_color();
-  $icon_url_s = get_site_icon_url(192);
-  if (empty($icon_url_s)) {
-  $icon_url_s = DEFAULT_SITE_ICON_192;
-  }
+
+  // $icon_url_s = get_site_icon_url(192);
+  // if (empty($icon_url_s)) {
+  //   $icon_url_s = DEFAULT_SITE_ICON_192;
+  // }
+  $icon_url_s  = get_site_icon_url_s();
   $icon_size_s = get_site_icon_size_text($icon_url_s);
 
-  $icon_url_l = get_site_icon_url(512);
-  if (empty($icon_url_l)) {
-  $icon_url_l = DEFAULT_SITE_ICON_270;
-  }
+  // $icon_url_l = get_site_icon_url(512);
+  // if (empty($icon_url_l)) {
+  //   $icon_url_l = DEFAULT_SITE_ICON_270;
+  // }
+  $icon_url_l  = get_site_icon_url_l();
   $icon_size_l = get_site_icon_size_text($icon_url_l);
   $manifest =
   "
@@ -79,7 +82,7 @@ if (is_pwa_enable()) {
   ]
   }";
   //マニフェストファイルの作成
-  $manifest_file = get_theme_pwa_cache_dir().'manifest.json';
+  $manifest_file = get_theme_pwa_manifest_json_file();
   wp_filesystem_put_contents($manifest_file, $manifest, 0);
 
   //service-worker.js
@@ -183,7 +186,7 @@ if (is_pwa_enable()) {
   });
   ";
   //マニフェストファイルの作成
-  $service_worker_file = get_theme_pwa_cache_dir().'service_worker.js';
+  $service_worker_file = get_theme_pwa_service_worker_js_file();
   wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
   //_v($service_worker);
 }
