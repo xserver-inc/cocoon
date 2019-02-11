@@ -385,14 +385,17 @@ endif;
 if ( !function_exists( 'wp_enqueue_script_jquery_js' ) ):
 function wp_enqueue_script_jquery_js(){
   wp_deregister_script('jquery');
-  //wp_deregister_script('jquery-core');
+  wp_deregister_script('jquery-core');
   wp_deregister_script('jquery-migrate');
 
-  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), false, true);
-  wp_enqueue_script('jquery');
+  $ver = get_jquery_version();
+
+  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), true);
+  // wp_enqueue_script('jquery');
 
   //jQueryの読み込み
-  $ver = get_jquery_version();
+  // _v(get_jquery_core_url($ver));
+  // _v(get_jquery_core_full_version($ver));
   wp_enqueue_script('jquery-core', get_jquery_core_url($ver), array(), get_jquery_core_full_version($ver), true);
   // switch (get_jquery_version()) {
   //   case '3':
