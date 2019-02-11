@@ -50,7 +50,7 @@
 .carousel-entry-card-thumb{
   @extend %card_thumb;
   float: none;
-  overflow: hidden;
+  overflow: visible;
   display: inline-block;
 }
 

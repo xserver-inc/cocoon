@@ -6442,7 +6442,7 @@ input[type='submit'],
 
 .carousel-entry-card-thumb {
   float: none;
-  overflow: hidden;
+  overflow: visible;
   display: inline-block;
 }
 
