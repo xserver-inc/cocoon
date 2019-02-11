@@ -216,6 +216,12 @@ define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 //リンククリック時の削除確認JavaScript
 define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
 
+//デフォルトサイトアイコン
+define('DEFAULT_SITE_ICON_32',  get_template_directory_uri().'/images/site-icon32x32.png');
+define('DEFAULT_SITE_ICON_180', get_template_directory_uri().'/images/site-icon180x180.png');
+define('DEFAULT_SITE_ICON_192', get_template_directory_uri().'/images/site-icon192x192.png');
+define('DEFAULT_SITE_ICON_270', get_template_directory_uri().'/images/site-icon270x270.png');
+
 //インポートファイルの読み込み
 
 require_once abspath(__FILE__).'_imports.php';

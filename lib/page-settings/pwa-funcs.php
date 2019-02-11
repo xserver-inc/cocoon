@@ -72,3 +72,15 @@ function get_pwa_orientation(){
   return get_theme_option(OP_PWA_ORIENTATION, 'any');
 }
 endif;
+
+//サイトアイコンURLからサイズの取得
+if ( !function_exists( 'get_site_icon_size_text' ) ):
+function get_site_icon_size_text($url){
+  $size = null;
+  $res = preg_match('/(\d+?x\d+?)\./', $url, $m);
+  if (isset($m[1])) {
+    $size = $m[1];
+  }
+  return $size;
+}
+endif;

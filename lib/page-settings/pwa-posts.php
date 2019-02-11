@@ -41,8 +41,17 @@ if (is_pwa_enable()) {
   $orientation = get_pwa_orientation();
   $theme_color = get_pwa_theme_color();
   $background_color = get_pwa_background_color();
-  $icon_url_192 =  get_site_icon_url(192);
-  $icon_url_512 =  get_site_icon_url(512);
+  $icon_url_s = get_site_icon_url(192);
+  if (empty($icon_url_s)) {
+    $icon_url_s = DEFAULT_SITE_ICON_192;
+  }
+  $icon_size_s = get_site_icon_size_text($icon_url_s);
+
+  $icon_url_l = get_site_icon_url(512);
+  if (empty($icon_url_l)) {
+    $icon_url_l = DEFAULT_SITE_ICON_270;
+  }
+  $icon_size_l = get_site_icon_size_text($icon_url_l);
   $manifest =
   "
   {
@@ -58,14 +67,14 @@ if (is_pwa_enable()) {
     \"background_color\": \"{$background_color}\",
     \"icons\": [
         {
-            \"src\": \"{$icon_url_192}\",
+            \"src\": \"{$icon_url_s}\",
             \"type\": \"image/png\",
-            \"sizes\": \"192x192\"
+            \"sizes\": \"{$icon_size_s}\"
         },
         {
-            \"src\": \"{$icon_url_512}\",
+            \"src\": \"{$icon_url_l}\",
             \"type\": \"image/png\",
-            \"sizes\": \"512x512\"
+            \"sizes\": \"{$icon_size_l}\"
         }
     ]
   }";
@@ -85,8 +94,8 @@ if (is_pwa_enable()) {
   const CACHE_NAME = '{$theme_name}_ver_1';
   const urlsToCache = [
       '/',
-      '{$icon_url_192}',
-      '{$icon_url_512}',
+      '{$icon_url_s}',
+      '{$icon_url_l}',
       '{$site_logo}',
       '{$jquery_core_url}',
       '{$jquery_migrate_url}',

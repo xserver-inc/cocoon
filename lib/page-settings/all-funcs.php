@@ -167,10 +167,10 @@ if (!get_site_icon_url()) {//カスタマイザーでサイトアイコンが設
 if ( !function_exists( 'add_default_site_icon_tag' ) ):
 function add_default_site_icon_tag(){
   $tag = '<!-- '.THEME_NAME_CAMEL.' site icon -->'.PHP_EOL;
-  $tag .= '<link rel="icon" href="'.get_template_directory_uri().'/images/site-icon32x32.png'.'" sizes="32x32" />'.PHP_EOL;
-  $tag .= '<link rel="icon" href="'.get_template_directory_uri().'/images/site-icon192x192.png'.'" sizes="192x192" />'.PHP_EOL;
-  $tag .= '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/images/site-icon180x180.png'.'" />'.PHP_EOL;
-  $tag .= '<meta name="msapplication-TileImage" content="'.get_template_directory_uri().'/images/site-icon270x270.png'.'" />'.PHP_EOL;
+  $tag .= '<link rel="icon" href="'.DEFAULT_SITE_ICON_32.'" sizes="32x32" />'.PHP_EOL;
+  $tag .= '<link rel="icon" href="'.DEFAULT_SITE_ICON_192.'" sizes="192x192" />'.PHP_EOL;
+  $tag .= '<link rel="apple-touch-icon" href="'.DEFAULT_SITE_ICON_180.'" />'.PHP_EOL;
+  $tag .= '<meta name="msapplication-TileImage" content="'.DEFAULT_SITE_ICON_270.'" />'.PHP_EOL;
   echo $tag;
 }
 endif;
