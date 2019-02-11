@@ -92,6 +92,8 @@ if (is_pwa_enable()) {
   $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
   $theme_js_url = THEME_JS_URL;
   $theme_child_js_url = THEME_CHILD_JS_URL;
+  $font_awesome4_cdn_url = FONT_AWESOME4_CDN_URL;
+  $font_aicomoon_url = FONT_AICOMOON_URL;
   $service_worker =
   "
   const CACHE_NAME = '{$service_worker_ver}';
@@ -102,7 +104,9 @@ if (is_pwa_enable()) {
     '{$jquery_core_url}',
     '{$jquery_migrate_url}',
     '{$theme_js_url}',
-    '{$theme_child_js_url}'
+    '{$theme_child_js_url}', 
+    '{$font_awesome4_cdn_url}',
+    '{$font_aicomoon_url}'
   ];
 
   self.addEventListener('install', function(event) {

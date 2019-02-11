@@ -70,7 +70,7 @@ if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
 
-//Font Awesome様のスタイルの読み込み
+//Font Awesomeのスタイルの読み込み
 echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
 //Google Fontsスタイルの読み込み
 if (!is_site_font_family_local()) {
