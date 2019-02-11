@@ -40,6 +40,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <!-- ステータスバーのスタイル（default / black / black-translucent） -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <!-- アイコンの指定 -->
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_site_icon_url_l(); ?>" sizes="<?php echo get_site_icon_size_text(get_site_icon_url_l()); ?>">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_site_icon_url_l(); ?>" sizes="512x512">
 <!-- /PWA -->
 <?php endif; ?>
