@@ -126,15 +126,10 @@ div.mobile-menu-buttons .menu-button:hover,
     transform: translateY(-4px);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
     transition-duration: 0.3s;
+  }
 
-    // .card-thumb{
-    //   overflow: hidden;
-    //   img{
-    //     transition-duration: 0.3s;
-    //     //transform: translateY(-4px);
-    //     transform: scale(1.2);
-    //   }
-    // }
+  > div{
+    border: none;
   }
 
 }
