@@ -2673,7 +2673,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .carousel-content .slick-track { display: flex; }
 .admin-settings .demo .carousel-content .slick-slide { height: auto; }
 .admin-settings .demo .carousel-content .a-wrap { margin: 0 3px 3px; }
-.admin-settings .demo .carousel-entry-card-thumb { float: none; overflow: visible; display: inline-block; }
+.admin-settings .demo .carousel-entry-card-thumb { float: none; display: inline-block; }
 .admin-settings .demo .carousel-entry-card-title { font-size: 16px; margin-top: 4px; max-height: 3.2em; overflow: hidden; }
 .admin-settings .demo .no-carousel .carousel { display: none; }
 .admin-settings .demo .carousel { display: none; }
