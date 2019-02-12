@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'PWA設定（β版）', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。<span class="red">現在β版機能となっています。不具合が起きても対処できる方の利用をおすすめします。</span>', THEME_NAME ) ?></p>
+    <p><?php _e( 'PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる方の利用をおすすめします。', THEME_NAME ) ?></p>
 
     <?php if (!is_ssl()): ?>
     <p class="alert"><?php _e( 'PWAを利用するにはサイトをSSL化（https化）する必要があります。httpサイトでは、当設定項目を変更しても反映されません。', THEME_NAME ) ?></p>
@@ -55,7 +55,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_textbox_tag(OP_PWA_SHORT_NAME, mb_substr(get_pwa_short_name(), 0, 12), '');
             generate_tips_tag(__( 'アプリの短縮名を入力してください。ホーム画面に表示される短い名前で利用されます。※最大12文字', THEME_NAME ));
             ?>
-            <p class="alert"><?php _e( '12文字以上は自動的に削除されます。', THEME_NAME ) ?></p>
+            <p class="alert"><?php _e( '13文字以降は自動的に削除されます。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
