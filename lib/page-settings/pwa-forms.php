@@ -15,7 +15,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。', THEME_NAME ) ?></p>
 
+    <?php if (!is_ssl()): ?>
+    <p class="alert"><?php _e( 'PWAを利用するにはサイトをSSL化（https化）する必要があります。httpサイトでは、当設定項目を変更しても反映されません。', THEME_NAME ) ?></p>
+    <?php endif; ?>
 
+    <!-- PWA囲み -->
+    <div <?php echo get_not_allowed_form_class(is_ssl()); ?>>
 
     <table class="form-table">
       <tbody>
@@ -50,6 +55,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_textbox_tag(OP_PWA_SHORT_NAME, mb_substr(get_pwa_short_name(), 0, 12), '');
             generate_tips_tag(__( 'アプリの短縮名を入力してください。ホーム画面に表示される短い名前で利用されます。※最大12文字', THEME_NAME ));
             ?>
+            <p class="alert"><?php _e( '12文字以上は自動的に削除されます。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
@@ -79,7 +85,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'アプリのテーマカラーです。OSによってどこに適用されるかは異なります。', THEME_NAME ));
 
             generate_color_picker_tag(OP_PWA_BACKGROUND_COLOR,  get_pwa_background_color(), '背景色');
-            generate_tips_tag(__( 'アプリの背景色です。サイトが表示されるまでの間、この色が適用される場合があります。。', THEME_NAME ));
+            generate_tips_tag(__( 'アプリの背景色です。サイトが表示されるまでの間、この色が適用される場合があります。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -123,6 +129,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       </tbody>
     </table>
+
+    </div><!-- /PWA囲み -->
 
   </div>
 </div>
