@@ -96,6 +96,7 @@ function tag_code_to_minify_css($buffer) {
             if (!is_amp() && strpos($url, FONT_AWESOME4_CDN_URL) !== false) {
               $css = wp_filesystem_get_contents(get_template_directory().'/css/fontawesome.min.css');
               if ($css !== false) {
+                //$css = str_replace('[theme_url]', get_template_directory_uri().'/webfonts/fontawesome', $css);
                 //ヘッダー出力コードからstyleタグを削除
                 $buffer = str_replace($tag, '', $buffer);
                 $last_minfified_css .= $css;
