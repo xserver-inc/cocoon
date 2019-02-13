@@ -3632,6 +3632,7 @@ label.screen-reader-text {
   padding: 0 1em;
   height: 0;
   transition: all 0.5s ease;
+  overflow: hidden;
 }
 
 .toggle-button {
