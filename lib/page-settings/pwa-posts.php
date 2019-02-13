@@ -89,7 +89,11 @@ if (is_pwa_enable()) {
   wp_filesystem_put_contents($manifest_file, $manifest, 0);
 
   //service-worker.js
-  $service_worker_ver = THEME_NAME.'_ver_1.0.0'; //PWAに変更を加えたらバージョン変更
+  $admin_ver = null;
+  if (is_user_administrator()) {
+    $admin_ver = '_admin';
+  }
+  $service_worker_ver = THEME_NAME.'_ver_1.0.0'.$admin_ver; //PWAに変更を加えたらバージョン変更
   $site_logo = get_the_site_logo_url();
   $jquery_core_url = get_jquery_core_url(get_jquery_version());
   $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
