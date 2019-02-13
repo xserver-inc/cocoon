@@ -5825,11 +5825,6 @@ div.fb-like-mobile {
 .footer-bottom-logo .logo-text {
   padding: 0;
 }
-.footer-bottom-logo .site-name-text-link,
-.footer-bottom-logo .site-name-text,
-.footer-bottom-logo img {
-  display: block;
-}
 .footer-bottom-logo .site-name-text {
   font-size: 18px;
   padding-bottom: 8px;
