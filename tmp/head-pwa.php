@@ -10,7 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php if (
   !is_amp() &&
   is_ssl() &&
-  is_pwa_enable() &&
+	is_pwa_enable() &&
+	(is_pwa_admin_enable() || !is_user_administrator()) &&
   file_exists(get_theme_pwa_manifest_json_file()) &&
   file_exists(get_theme_pwa_service_worker_js_file())): ?>
 <!-- PWA -->
