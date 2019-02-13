@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //PWAを有効にする
 update_theme_option(OP_PWA_ENABLE);
 
+//管理者にPWAを有効にする
+update_theme_option(OP_PWA_ADMIN_ENABLE);
+
 //PWAアプリ名
 update_theme_option(OP_PWA_NAME);
 
@@ -104,7 +107,7 @@ if (is_pwa_enable()) {
     '{$jquery_core_url}',
     '{$jquery_migrate_url}',
     '{$theme_js_url}',
-    '{$theme_child_js_url}', 
+    '{$theme_child_js_url}',
     '{$font_awesome4_url}',
     '{$font_aicomoon_url}'
   ];

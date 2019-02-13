@@ -15,6 +15,14 @@ function is_pwa_enable(){
 }
 endif;
 
+//管理者にPWAを有効にする
+define('OP_PWA_ADMIN_ENABLE', 'pwa_admin_enable');
+if ( !function_exists( 'is_pwa_admin_enable' ) ):
+function is_pwa_admin_enable(){
+  return get_theme_option(OP_PWA_ADMIN_ENABLE);
+}
+endif;
+
 //PWAアプリ名
 define('OP_PWA_NAME', 'pwa_name');
 if ( !function_exists( 'get_pwa_name' ) ):
