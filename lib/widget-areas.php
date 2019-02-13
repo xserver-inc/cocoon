@@ -106,22 +106,6 @@ function register_below_single_content_title_widget_area(){
 endif;
 register_below_single_content_title_widget_area();
 
-if ( !function_exists( 'register_single_content_top_widget_area' ) ):
-function register_single_content_top_widget_area(){
-  register_sidebars(1,
-    array(
-    'name' => __( '投稿本文上', THEME_NAME ),
-    'id' => 'single-content-top',
-    'description' => __( '投稿本文上に表示されるウイジェット。', THEME_NAME ),
-    'before_widget' => '<div id="%1$s" class="widget widget-single-content-top %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<div class="widget-single-content-top-title main-widget-label">',
-    'after_title' => '</div>',
-  ));
-}
-endif;
-register_single_content_top_widget_area();
-
 if ( !function_exists( 'register_single_content_middle_widget_area' ) ):
 function register_single_content_middle_widget_area(){
   register_sidebars(1,
@@ -346,6 +330,38 @@ function register_index_bottom_widget_area(){
 }
 endif;
 register_index_bottom_widget_area();
+
+if ( !function_exists( 'register_content_top_widget_area' ) ):
+function register_content_top_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( 'コンテンツ上部', THEME_NAME ),
+    'id' => 'content-top',
+    'description' => __( 'メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。', THEME_NAME ),
+    'before_widget' => '<aside id="%1$s" class="widget widget-content-top %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h2 class="widget-content-top-title main-widget-label">',
+    'after_title' => '</h2>',
+  ));
+}
+endif;
+register_content_top_widget_area();
+
+if ( !function_exists( 'register_content_bottom_widget_area' ) ):
+function register_content_bottom_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( 'コンテンツ下部', THEME_NAME ),
+    'id' => 'content-bottom',
+    'description' => __( 'メインカラムとサイドバーの下部エリア。フッターの上になります。', THEME_NAME ),
+    'before_widget' => '<aside id="%1$s" class="widget widget-content-bottom %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h2 class="widget-content-bottom-title main-widget-label">',
+    'after_title' => '</h2>',
+  ));
+}
+endif;
+register_content_bottom_widget_area();
 
 if ( !function_exists( 'register_footer_left_widget_area' ) ):
 function register_footer_left_widget_area(){

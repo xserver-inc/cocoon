@@ -14,6 +14,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     </div>
 
+    <?php
+    ////////////////////////////
+    //コンテンツ下部ウィジェット
+    ////////////////////////////
+    if ( is_active_sidebar( 'content-bottom' ) ) : ?>
+    <div id="content-bottom" class="content-bottom">
+      <div id="content-bottom-in" class="content-bottom-in wrap">
+        <?php dynamic_sidebar( 'content-bottom' ); ?>
+      </div>
+    </div>
+    <?php endif; ?>
+
     <?php //投稿パンくずリストがフッター手前の場合
     if (is_single() && is_single_breadcrumbs_position_footer_before()){
       get_template_part('tmp/breadcrumbs');
