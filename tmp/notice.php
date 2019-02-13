@@ -19,7 +19,7 @@ if ($url):
 <a href="<?php echo $url; ?>" class="notice-area-wrap"<?php echo $target; ?>>
 <?php endif ?>
 
-<div id="notice-area" class="notice-area notice-area nt-<?php echo get_notice_type(); ?>">
+<div id="notice-area" class="notice-area nt-<?php echo get_notice_type(); ?>">
   <?php echo $msg; ?>
 </div>
 

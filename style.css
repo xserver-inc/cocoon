@@ -1616,7 +1616,10 @@ blockquote::after {
 .content-only .breadcrumb,
 .content-only .main-scroll,
 .content-only .footer,
-.content-only .go-to-top-button {
+.content-only .go-to-top-button,
+.content-only .notice-area,
+.content-only .content-top,
+.content-only .content-bottom {
   display: none;
 }
 
