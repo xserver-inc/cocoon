@@ -47,6 +47,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <div id="content" class="content cf">
 
-    <div id="content-in" class="content-in wrap cf">
+    <div id="content-in" class="content-in wrap">
 
         <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
