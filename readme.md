@@ -94,6 +94,9 @@ https://ja.wordpress.org/plugins/youtube-speedload/
 
 ご協力（スペシャル サンクス）
 ------
+
+### プルリクエストでのご協力
+
 technote-space
 https://github.com/technote-space
 
