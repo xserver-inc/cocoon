@@ -115,7 +115,7 @@ function get_site_icon_size_text($url){
 }
 endif;
 
-//.htaccessにHTTPSリダイレクトを書き込む
+//.htaccessにHTTPSリダイレクトルールを書き込む
 if ( !function_exists( 'add_https_rewriterule_to_htaccess' ) ):
 function add_https_rewriterule_to_htaccess(){
   $resoce_file = get_template_directory().'/configs/https-rewriterule.conf';
@@ -123,5 +123,13 @@ function add_https_rewriterule_to_htaccess(){
   $end = THEME_HTTPS_REDIRECT_HTACCESS_END;
   $reg = THEME_HTTPS_REDIRECT_HTACCESS_REG;
   add_code_to_htaccess($resoce_file, $begin, $end, $reg);
+}
+endif;
+
+//.htaccessからHTTPSリダイレクトルールを削除する
+if ( !function_exists( 'remove_https_rewriterule_from_htacccess' ) ):
+function remove_https_rewriterule_from_htacccess(){
+  $reg = THEME_HTTPS_REDIRECT_HTACCESS_REG;
+  remove_code_from_htacccess($reg);
 }
 endif;
