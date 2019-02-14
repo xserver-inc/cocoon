@@ -196,6 +196,8 @@ function amazon_product_link_shortcode($atts){
   $res = get_amazon_itemlookup_xml($asin);
   //_v($res);
   if ($res) {
+    //&nbsp;の置換
+    $res = str_ireplace('&nbsp;', '', $res);
     // xml取得
     $xml = simplexml_load_string($res);
     //_v($xml);
