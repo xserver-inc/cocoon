@@ -103,15 +103,9 @@ define('THEME_HTACCESS_REG', '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'
 //ブラウザキャッシュを.htaccessに追加する
 if ( !function_exists( 'add_browser_cache_to_htaccess' ) ):
 function add_browser_cache_to_htaccess(){
-  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
 
   $resoce_file = 'browser-cache.conf';
-  // //リソースファイルがない場合はfalseを返す
-  // if (!file_exists($resoce_file)) {
-  //   return false;
-  // }
-  // _v('r');
+
   ob_start();
   require_once($resoce_file);
   $browser_cache = ob_get_clean();
@@ -125,32 +119,12 @@ function add_browser_cache_to_htaccess(){
     $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
     if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
       if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
-        //$wp_filesystemオブジェクトのメソッドとしてファイルを取得する
-        //$current_htaccess = @$wp_filesystem->get_contents(HTACCESS_FILE);
 
-        //$pattern = '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s';
         $res = preg_match(THEME_HTACCESS_REG, $current_htaccess, $m);
-        //_v($m);
 
         //テーマファイル用のブラウザキャッシュコードが書き込まれている場合
         if ($res && isset($m[0])) {
-          // //正規表現にマッチした.htaccessに書き込まれている現在のブラウザキャッシュを取得
-          // $current_browser_cache = $m[0];
-          // //現在のブラウザキャッシュと新しいブラウザキャッシュが違えば置換する
-          // if ($current_browser_cache != $new_browser_cache) {
-          //   //新しいブラウザキャッシュで古いブラウザキャッシュを置換する
-          //   $last_htaccess = str_replace($current_browser_cache, $new_browser_cache, $current_htaccess);
-          //   //ブラウザキャッシュを.htaccessファイルに書き込む
-          //   wp_filesystem_put_contents(
-          //     HTACCESS_FILE,
-          //      $last_htaccess,
-          //     0644
-          //   );
-          // } else {
-          //   //新しいブラウザキャッシュと書き込まれたブラウザキャッシュが同じなら何もしない
-          //   //_v('何もしない');
-          //   //$last_htaccess = $current_htaccess;
-          // }
+
         } else {//書き込まれていない場合
           //.htaccessにブラウザキャッシュの書き込みがなかった場合には単に追記する
           $last_htaccess = $current_htaccess.PHP_EOL.
@@ -174,18 +148,12 @@ function add_browser_cache_to_htaccess(){
       0644
     );
   }//file_exists(HTACCESS_FILE)
-  //_v($last_htaccess);;
-
-  // }
 }
 endif;
 
 //.htaccessからブラウザキャッシュコードを削除する
 if ( !function_exists( 'remove_browser_cache_from_htacccess' ) ):
 function remove_browser_cache_from_htacccess(){
-  // if ( WP_Filesystem() ) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-
   //.htaccessファイルが存在しているとき
   if (file_exists(HTACCESS_FILE)) {
     if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
@@ -207,13 +175,5 @@ function remove_browser_cache_from_htacccess(){
     }
 
   }//file_exists(HTACCESS_FILE)
-
-  //}//WP_Filesystem
 }
 endif;
-
-
-
-// echo('<pre>');
-// var_dump($browser_cache_code);
-// echo('</pre>');
