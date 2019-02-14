@@ -108,7 +108,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_CONTENTS_WIDTH,  get_sidebar_contents_width(), 336, 200, 500, 10);
+            generate_number_tag(OP_SIDEBAR_CONTENTS_WIDTH,  get_sidebar_contents_width(), 336, 200, 500, 1);
             generate_tips_tag(__( 'サイドバーコンテンツ部分の幅を設定します。（最小：200px、最大：500px）', THEME_NAME ));
             ?>
           </td>
