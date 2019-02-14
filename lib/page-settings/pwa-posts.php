@@ -199,4 +199,16 @@ if (is_pwa_enable()) {
   $service_worker_file = get_theme_pwa_service_worker_js_file();
   wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
   //_v($service_worker);
+
+  //HTTPSリダイレクトの書き込み
+  if (file_exists(HTACCESS_FILE)){
+    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)){
+      //HTTPSリダイレクトの書き込みが.htaccessに存在するか
+      $res = preg_match(THEME_HTTPS_REWRITERULE_REG, $current_htaccess, $m);
+      //リダイレクト書き込むが存在しない場合
+      if ($res) {
+        # code...
+      }
+    }
+  }
 }

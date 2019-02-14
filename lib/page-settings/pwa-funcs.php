@@ -114,3 +114,14 @@ function get_site_icon_size_text($url){
   return $size;
 }
 endif;
+
+//.htaccessにHTTPSリダイレクトを書き込む
+if ( !function_exists( 'add_https_rewriterule_to_htaccess' ) ):
+function add_https_rewriterule_to_htaccess(){
+  $resoce_file = get_template_directory().'/configs/https-rewriterule.conf';
+  $begin = THEME_HTTPS_REDIRECT_HTACCESS_BEGIN;
+  $end = THEME_HTTPS_REDIRECT_HTACCESS_END;
+  $reg = THEME_HTTPS_REDIRECT_HTACCESS_REG;
+  add_code_to_htaccess($resoce_file, $begin, $end, $reg);
+}
+endif;

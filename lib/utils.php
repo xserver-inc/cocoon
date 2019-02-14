@@ -2411,6 +2411,10 @@ if ( !function_exists( 'add_code_to_htaccess' ) ):
 function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
 
   //$resoce_file = 'browser-cache.conf';
+  //設定ファイルが存在しない場合
+  if (!file_exists($resoce_file)) {
+    return ;
+  }
 
   ob_start();
   require_once($resoce_file);
