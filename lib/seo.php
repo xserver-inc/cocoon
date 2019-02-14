@@ -292,7 +292,7 @@ function generate_canonical_url(){
   if (is_home() && is_paged()) {
     //$canonical_url = get_paged_archive_url(home_url());
     $canonical_url = get_query_removed_requested_url();
-  } elseif (is_home()) {
+  } elseif (is_front_page()) {
     $canonical_url = home_url();
   } elseif (is_category()) {
     //$canonical_url = get_query_removed_requested_url();
