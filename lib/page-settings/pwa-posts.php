@@ -206,9 +206,17 @@ if (is_pwa_enable()) {
       //HTTPSリダイレクトの書き込みが.htaccessに存在するか
       $res = preg_match(THEME_HTTPS_REWRITERULE_REG, $current_htaccess, $m);
       //リダイレクト書き込むが存在しない場合
-      if ($res) {
-        # code...
+      if (!$res) {
+        //SSL化してある場合のみ書き込む
+        if (is_ssl()) {
+          add_https_rewriterule_to_htaccess();
+        } else {
+          remove_https_rewriterule_from_htacccess();
+        }
       }
     }
   }
+} else {
+  //.htaccessからリダイレクトルールの削除
+  remove_https_rewriterule_from_htacccess();
 }
