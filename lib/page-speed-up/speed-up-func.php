@@ -91,15 +91,6 @@ function is_web_font_lazy_load_enable(){
 }
 endif;
 
-define('HTACCESS_FILE', ABSPATH.'.htaccess');
-define('THEME_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTACCESS');
-define('THEME_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTACCESS');
-define('THEME_HTACCESS_REG', '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s');
-
-
-
-
-
 //ブラウザキャッシュを.htaccessに追加する
 if ( !function_exists( 'add_browser_cache_to_htaccess' ) ):
 function add_browser_cache_to_htaccess(){

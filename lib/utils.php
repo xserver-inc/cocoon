@@ -2406,4 +2406,81 @@ function get_double_quotation_escape($str){
 }
 endif;
 
+//.htaccessへの書き込み関数
+if ( !function_exists( 'add_code_to_htaccess' ) ):
+function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
+
+  //$resoce_file = 'browser-cache.conf';
+
+  ob_start();
+  require_once($resoce_file);
+  $code = ob_get_clean();
+  $new_code = $begin.PHP_EOL.
+                $code.PHP_EOL.
+              $end;
+
+  //.htaccessファイルが存在する場合
+  if (file_exists(HTACCESS_FILE)) {
+    //書き込む前にバックアップファイルを用意する
+    $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
+    if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
+      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+
+        $res = preg_match($reg, $current_htaccess, $m);
+
+        //テーマファイル用のブラウザキャッシュコードが書き込まれている場合
+        if ($res && isset($m[0])) {
+
+        } else {//書き込まれていない場合
+          //.htaccessにブラウザキャッシュの書き込みがなかった場合には単に追記する
+          $last_htaccess = $current_htaccess.PHP_EOL.
+                                $new_code;
+          //ブラウザキャッシュを.htaccessファイルに書き込む
+          wp_filesystem_put_contents(
+            HTACCESS_FILE,
+            $last_htaccess,
+            0644
+          );
+        }
+      }//wp_filesystem_get_contents
+    }//copy
+  } else {//.htaccessが存在しない場合
+    //.htaccessファイルがない場合は、新しく生成したブラウザキャッシュが最終.htaccess書き込みファイルになる
+    $last_htaccess = $new_code;
+    //ブラウザキャッシュを.htaccessファイルに書き込む
+    wp_filesystem_put_contents(
+      HTACCESS_FILE,
+      $last_htaccess,
+      0644
+    );
+  }//file_exists(HTACCESS_FILE)
+}
+endif;
+
+//.htaccessのコード削除関数
+if ( !function_exists( 'remove_code_from_htacccess' ) ):
+function remove_code_from_htacccess($reg){
+  //.htaccessファイルが存在しているとき
+  if (file_exists(HTACCESS_FILE)) {
+    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+      $res = preg_match($reg, $current_htaccess, $m);
+      //書き込まれたブラウザキャッシュが見つかった場合
+      if ($res && $m[0]) {
+        //正規表現にマッチした.htaccessに書き込まれている現在のブラウザキャッシュを取得
+        $current_code = $m[0];
+        //正規表現で見つかったブラウザキャッシュコードを正規表現で削除
+        $last_htaccess = str_replace($current_code, '', $current_htaccess);
+        //_v($last_htaccess);
+        //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
+        wp_filesystem_put_contents(
+          HTACCESS_FILE,
+          $last_htaccess,
+          0644
+        );
+      }//$res && $[0]
+    }
+  }//file_exists(HTACCESS_FILE)
+}
+endif;
+
 
