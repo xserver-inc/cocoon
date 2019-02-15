@@ -23,7 +23,11 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   $title = get_bloginfo('name');
-  $url = home_url();
+  if (is_front_page()) {
+    $url = home_url();
+  } else {
+    $url = generate_canonical_url();
+  }
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();
@@ -45,20 +49,6 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta property="og:url" content="'; echo $url; echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示取る
 }
 if (is_singular()){//単一記事ページの場合
-  /*$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる*/
-  // //NO IMAGE画像で初期化
-  // $ogp_image = get_no_image_url();
-  // if ($singular_sns_image_url = get_singular_sns_image_url()) {
-  //   $ogp_image = $singular_sns_image_url;
-  // } else if (has_post_thumbnail()){//投稿にサムネイルがある場合の処理
-  //   $image_id = get_post_thumbnail_id();
-  //   $image = wp_get_attachment_image_src( $image_id, 'full');
-  //   $ogp_image = $image[0];
-  // } else if ( preg_match( $searchPattern, $content, $image ) && !is_archive()) {//投稿にサムネイルは無いが画像がある場合の処理
-  //   $ogp_image = $image[2];
-  // } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
-  //   $ogp_image = $ogp_home_image_url;
-  // }
   if ($ogp_image = get_singular_sns_share_image_url()) {
     echo '<meta property="og:image" content="'.$ogp_image.'">';echo "\n";
   }

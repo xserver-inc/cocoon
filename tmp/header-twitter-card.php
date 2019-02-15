@@ -23,7 +23,11 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta name="twitter:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
   $title = get_bloginfo('name');
-  $url = home_url();
+  if (is_front_page()) {
+    $url = home_url();
+  } else {
+    $url = generate_canonical_url();
+  }
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();
