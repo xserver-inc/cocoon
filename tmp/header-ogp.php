@@ -22,12 +22,14 @@ if (is_singular()){//単一記事ページの場合
   echo '<meta property="og:title" content="'; echo $title; echo '">';echo "\n";//単一記事タイトルを表示
   echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";//単一記事URLを表示
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-  $title = get_bloginfo('name');
   if (is_front_page()) {
     $url = home_url();
+    $title = get_bloginfo('name');
   } else {
     $url = generate_canonical_url();
+    $title = wp_get_document_title();
   }
+  $description = get_bloginfo('description');
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();
