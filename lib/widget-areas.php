@@ -106,6 +106,22 @@ function register_below_single_content_title_widget_area(){
 endif;
 register_below_single_content_title_widget_area();
 
+if ( !function_exists( 'register_single_content_top_widget_area' ) ):
+function register_single_content_top_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( '投稿本文上', THEME_NAME ),
+    'id' => 'single-content-top',
+    'description' => __( '投稿本文上に表示されるウイジェット。', THEME_NAME ),
+    'before_widget' => '<div id="%1$s" class="widget widget-single-content-top %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="widget-single-content-top-title main-widget-label">',
+    'after_title' => '</div>',
+  ));
+}
+endif;
+register_single_content_top_widget_area();
+
 if ( !function_exists( 'register_single_content_middle_widget_area' ) ):
 function register_single_content_middle_widget_area(){
   register_sidebars(1,
