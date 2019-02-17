@@ -200,8 +200,18 @@ define('URL_REG', '/'.URL_REG_STR.'/');
 define('FONT_AWESOME4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //Font Awesome5のCDN
 define('FONT_AWESOME5_CDN_URL', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+//Font Awesome4
+define('FONT_AWESOME4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
 //IcoMoonフォント
 define('FONT_AICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
+
+//親テーマのJavaScript
+define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
+//子テーマのJavaScript
+define('THEME_CHILD_JS_URL', get_stylesheet_directory_uri() . '/javascript.js');
+//set-event-passive
+define('SET_EVENT_PASSIVE_JS_URL', get_template_directory_uri() . '/js/set-event-passive.js');
 
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
@@ -209,6 +219,24 @@ define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
 //リンククリック時の削除確認JavaScript
 define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
 
-//インポートファイルの読み込み
+//デフォルトサイトアイコン
+define('DEFAULT_SITE_ICON_32',  get_template_directory_uri().'/images/site-icon32x32.png');
+define('DEFAULT_SITE_ICON_180', get_template_directory_uri().'/images/site-icon180x180.png');
+define('DEFAULT_SITE_ICON_192', get_template_directory_uri().'/images/site-icon192x192.png');
+define('DEFAULT_SITE_ICON_270', get_template_directory_uri().'/images/site-icon270x270.png');
 
+//.htaccess関連の定数
+define('HTACCESS_FILE', ABSPATH.'.htaccess');
+//高速化用
+define('THEME_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTACCESS');
+define('THEME_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTACCESS');
+define('THEME_HTACCESS_REG', '{'.THEME_HTACCESS_BEGIN.'.+?'.THEME_HTACCESS_END.'}s');
+//HTTPSリダイレクト用
+define('THEME_HTTPS_REDIRECT_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTTPS REDIRECT HTACCESS');
+define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS REDIRECT HTACCESS');
+define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
+define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
+
+
+//インポートファイルの読み込み
 require_once abspath(__FILE__).'_imports.php';

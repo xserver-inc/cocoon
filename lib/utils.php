@@ -297,7 +297,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
   if (!is_web_font_lazy_load_enable() || is_admin()) {
-    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME4_CDN_URL );
+    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME4_URL );
   }
 }
 endif;
@@ -311,38 +311,115 @@ function wp_enqueue_style_icomoon(){
 }
 endif;
 
+//jQueryコアURLの取得
+if ( !function_exists( 'get_jquery_core_url' ) ):
+function get_jquery_core_url($ver){
+  $url = null;
+  switch ($ver) {
+    case '3':
+      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+      break;
+    case '2':
+      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js';
+      break;
+    case '1':
+      $url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js';
+      break;
+  }
+  return $url;
+}
+endif;
+
+//jQueryコアのフルバージョンの取得
+if ( !function_exists( 'get_jquery_core_full_version' ) ):
+function get_jquery_core_full_version($ver){
+  $full_ver = null;
+  switch ($ver) {
+    case '3':
+      $full_ver = '3.3.1';
+      break;
+    case '2':
+      $full_ver = '2.2.4';
+      break;
+    case '1':
+      $full_ver = '1.12.4';
+      break;
+  }
+  return $full_ver;
+}
+endif;
+
+//jQuery MigrateURLの取得
+if ( !function_exists( 'get_jquery_migrate_url' ) ):
+function get_jquery_migrate_url($ver){
+  $url = null;
+  switch ($ver) {
+    case '3':
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js';
+      break;
+    case '1':
+      $url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js';
+      break;
+  }
+  return $url;
+}
+endif;
+
+//jQuery Migrateのフルバージョンの取得
+if ( !function_exists( 'get_jquery_migrate_full_version' ) ):
+function get_jquery_migrate_full_version($ver){
+  $full_ver = null;
+  switch ($ver) {
+    case '3':
+      $full_ver = '3.0.1';
+      break;
+    case '1':
+      $full_ver = '1.4.1';
+      break;
+  }
+  return $full_ver;
+}
+endif;
+
 //jQueryファイルの読み込み
 if ( !function_exists( 'wp_enqueue_script_jquery_js' ) ):
 function wp_enqueue_script_jquery_js(){
   wp_deregister_script('jquery');
-  //wp_deregister_script('jquery-core');
+  wp_deregister_script('jquery-core');
   wp_deregister_script('jquery-migrate');
 
-  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), '1.12.4', true);
-  wp_enqueue_script('jquery');
+  $ver = get_jquery_version();
+
+  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), true);
+  // wp_enqueue_script('jquery');
 
   //jQueryの読み込み
-  switch (get_jquery_version()) {
-    case '3':
-      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
-      break;
-    case '2':
-      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
-      break;
-    case '1':
-      wp_enqueue_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
-      break;
-  }
+  // _v(get_jquery_core_url($ver));
+  // _v(get_jquery_core_full_version($ver));
+  wp_enqueue_script('jquery-core', get_jquery_core_url($ver), array(), get_jquery_core_full_version($ver), true);
+  // switch (get_jquery_version()) {
+  //   case '3':
+  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
+  //     break;
+  //   case '2':
+  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
+  //     break;
+  //   case '1':
+  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
+  //     break;
+  // }
 
   //jQuery Migrateの読み込み
-  switch (get_jquery_migrate_version()) {
-    case '3':
-      wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array(), '3.0.1', true);
-      break;
-    case '1':
-      wp_enqueue_script('jquery-migrate', '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
-      break;
-  }
+  $ver = get_jquery_migrate_version();
+  wp_enqueue_script('jquery-migrate', get_jquery_migrate_url($ver), array(), get_jquery_migrate_full_version($ver), true);
+  // switch (get_jquery_migrate_version()) {
+  //   case '3':
+  //     wp_enqueue_script('jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array(), '3.0.1', true);
+  //     break;
+  //   case '1':
+  //     wp_enqueue_script('jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
+  //     break;
+  // }
 
 
 }
@@ -351,10 +428,10 @@ endif;
 //親テーマのjavascript.jsの読み込み
 if ( !function_exists( 'wp_enqueue_script_theme_js' ) ):
 function wp_enqueue_script_theme_js(){
-  wp_enqueue_script( THEME_JS, get_template_directory_uri() . '/javascript.js', array( 'jquery' ), false, true );
+  wp_enqueue_script( THEME_JS, THEME_JS_URL, array( 'jquery' ), false, true );
 
   // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
-  wp_enqueue_script( 'set-event-passive', get_template_directory_uri() . '/js/set-event-passive.js', array( ), false, true );
+  wp_enqueue_script( 'set-event-passive', SET_EVENT_PASSIVE_JS_URL, array( ), false, true );
 }
 endif;
 
@@ -389,7 +466,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_script_theme_child_js' ) ):
 function wp_enqueue_script_theme_child_js(){
   if (is_child_theme()) {
-    wp_enqueue_script( THEME_CHILD_JS, get_stylesheet_directory_uri() . '/javascript.js', array( 'jquery', THEME_JS ), false, true );
+    wp_enqueue_script( THEME_CHILD_JS, THEME_CHILD_JS_URL, array( 'jquery', THEME_JS ), false, true );
   }
 }
 endif;
@@ -432,7 +509,7 @@ function wp_enqueue_web_font_lazy_load_js(){
   if ( is_web_font_lazy_load_enable() ){
     wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
     $data = ('
-      loadWebFont("'.FONT_AWESOME4_CDN_URL.'");
+      loadWebFont("'.FONT_AWESOME4_URL.'");
       loadWebFont("'.FONT_AICOMOON_URL.'");
     ');
     wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
@@ -1014,6 +1091,43 @@ function get_theme_css_cache_dir(){
 }
 endif;
 
+//テーマのPWAキャッシュディレクトリ
+if ( !function_exists( 'get_theme_pwa_cache_dir' ) ):
+function get_theme_pwa_cache_dir(){
+  $dir = get_theme_resources_dir().'pwa-cache/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
+//PWAのマニフェストファイルへのパス
+if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
+function get_theme_pwa_manifest_json_file(){
+  return ABSPATH.THEME_NAME.'-manifest.json';
+}
+endif;
+
+//PWAのマニフェストファイルへのURL
+if ( !function_exists( 'get_theme_pwa_manifest_json_url' ) ):
+function get_theme_pwa_manifest_json_url(){
+  return local_to_url(get_theme_pwa_manifest_json_file());
+}
+endif;
+
+//PWAのサービスワーカーへのパス
+if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
+function get_theme_pwa_service_worker_js_file(){
+  return ABSPATH.THEME_NAME.'-service-worker.js';
+}
+endif;
+
+//PWAのサービスワーカーへのパス
+if ( !function_exists( 'get_theme_pwa_service_worker_js_url' ) ):
+function get_theme_pwa_service_worker_js_url(){
+  return local_to_url(get_theme_pwa_service_worker_js_file());
+}
+endif;
+
 //テーマのカスタムCSSファイル
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){
@@ -1033,8 +1147,6 @@ function get_theme_css_cache_file_url(){
   return $url;
 }
 endif;
-
-
 
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
@@ -2280,10 +2392,99 @@ function get_wordpress_timezone(){
 }
 endif;
 
-//来て表示されている投稿IDを取得する
+//固定表示されている投稿IDを取得する
 if ( !function_exists( 'get_sticky_post_ids' ) ):
 function get_sticky_post_ids(){
   return get_option('sticky_posts');
-
 }
 endif;
+
+//"を\"にエスケープする
+if ( !function_exists( 'get_double_quotation_escape' ) ):
+function get_double_quotation_escape($str){
+  return str_replace('"', '\"', $str);
+}
+endif;
+
+//.htaccessへの書き込み関数
+if ( !function_exists( 'add_code_to_htaccess' ) ):
+function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
+
+  //$resoce_file = 'browser-cache.conf';
+  //設定ファイルが存在しない場合
+  if (!file_exists($resoce_file)) {
+    return ;
+  }
+
+  ob_start();
+  require_once($resoce_file);
+  $code = ob_get_clean();
+  $new_code = $begin.PHP_EOL.
+                $code.PHP_EOL.
+              $end;
+
+  //.htaccessファイルが存在する場合
+  if (file_exists(HTACCESS_FILE)) {
+    //書き込む前にバックアップファイルを用意する
+    $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
+    if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
+      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+
+        $res = preg_match($reg, $current_htaccess, $m);
+
+        //テーマファイル用のブラウザキャッシュコードが書き込まれている場合
+        if ($res && isset($m[0])) {
+
+        } else {//書き込まれていない場合
+          //.htaccessにブラウザキャッシュの書き込みがなかった場合には単に追記する
+          $last_htaccess = $current_htaccess.PHP_EOL.
+                                $new_code;
+          //ブラウザキャッシュを.htaccessファイルに書き込む
+          wp_filesystem_put_contents(
+            HTACCESS_FILE,
+            $last_htaccess,
+            0644
+          );
+        }
+      }//wp_filesystem_get_contents
+    }//copy
+  } else {//.htaccessが存在しない場合
+    //.htaccessファイルがない場合は、新しく生成したブラウザキャッシュが最終.htaccess書き込みファイルになる
+    $last_htaccess = $new_code;
+    //ブラウザキャッシュを.htaccessファイルに書き込む
+    wp_filesystem_put_contents(
+      HTACCESS_FILE,
+      $last_htaccess,
+      0644
+    );
+  }//file_exists(HTACCESS_FILE)
+}
+endif;
+
+//.htaccessのコード削除関数
+if ( !function_exists( 'remove_code_from_htacccess' ) ):
+function remove_code_from_htacccess($reg){
+  //.htaccessファイルが存在しているとき
+  if (file_exists(HTACCESS_FILE)) {
+    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+      $res = preg_match($reg, $current_htaccess, $m);
+      //書き込まれたブラウザキャッシュが見つかった場合
+      if ($res && $m[0]) {
+        //正規表現にマッチした.htaccessに書き込まれている現在のブラウザキャッシュを取得
+        $current_code = $m[0];
+        //正規表現で見つかったブラウザキャッシュコードを正規表現で削除
+        $last_htaccess = str_replace($current_code, '', $current_htaccess);
+        //_v($last_htaccess);
+        //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
+        wp_filesystem_put_contents(
+          HTACCESS_FILE,
+          $last_htaccess,
+          0644
+        );
+      }//$res && $[0]
+    }
+  }//file_exists(HTACCESS_FILE)
+}
+endif;
+
+

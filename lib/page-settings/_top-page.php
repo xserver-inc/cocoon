@@ -79,6 +79,8 @@ if( $is_post_ok ):
   require_once abspath(__FILE__).'404-posts.php';
   //AMP
   require_once abspath(__FILE__).'amp-posts.php';
+  //PWA
+  require_once abspath(__FILE__).'pwa-posts.php';
   //管理画面
   require_once abspath(__FILE__).'admin-posts.php';
   //ウィジェット
@@ -100,16 +102,9 @@ if( $is_post_ok ):
   $custum_css = ob_get_clean();
   if ($custum_css) {
     $custum_css_file = get_theme_css_cache_file();
-    //_v($custum_css_file);
     //ビジュアルエディター用CSSファイルの書き出し
     wp_filesystem_put_contents($custum_css_file, $custum_css);
   }
-  // if ($custum_css && WP_Filesystem()) {
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   $custum_css_file = get_theme_css_cache_file();
-  //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
-  //   $wp_filesystem->put_contents($custum_css_file, $custum_css);
-  // }
 
   ///////////////////////////////////////////
   // テーマ設定ページではスキン設定の読み込みを保存後にするために遅らせる
@@ -118,10 +113,8 @@ if( $is_post_ok ):
     require_once get_template_directory().'/lib/skin.php';   //スキン
   }
 
-
-  //_v($custum_css);
-
 endif;
+
 //画面に「設定は保存されました」メッセージを表示
 $is_reset_ok = isset($_GET['reset']) && $_GET['reset'];
 if ($is_post_ok || $is_reset_ok):
@@ -192,6 +185,7 @@ endif;
     <li class="mobile-buttons"><?php _e( 'モバイル', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
+    <li class="pwa"><?php _e( 'PWA', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="widget"><?php _e( 'ウィジェット', THEME_NAME ) ?></li>
     <li class="widget-area"><?php _e( 'ウィジェットエリア', THEME_NAME ) ?></li>
@@ -343,6 +337,11 @@ endif;
   <!-- AMP -->
   <div class="amp metabox-holder">
     <?php require_once abspath(__FILE__).'amp-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- PWA -->
+  <div class="pwa metabox-holder">
+    <?php require_once abspath(__FILE__).'pwa-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->

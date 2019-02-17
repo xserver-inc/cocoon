@@ -112,10 +112,14 @@ class RecentCommentsWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['count'] = $new_instance['count'];
-    $instance['str_count'] = $new_instance['str_count'];
-    $instance['author_not_in'] = $new_instance['author_not_in'];
+    $instance['title'] =
+      isset($new_instance['title']) ? strip_tags($new_instance['title']) : null;
+    $instance['count'] =
+      isset($new_instance['count']) ? $new_instance['count'] : null;
+    $instance['str_count'] =
+      isset($new_instance['str_count']) ? $new_instance['str_count'] : null;
+    $instance['author_not_in'] =
+      isset($new_instance['author_not_in']) ? $new_instance['author_not_in'] : null;
     return $instance;
   }
   function form($instance) {
