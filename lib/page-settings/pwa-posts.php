@@ -90,9 +90,9 @@ if (is_pwa_enable()) {
 
   //service-worker.js
   $admin_ver = null;
-  if (is_user_administrator()) {
-    $admin_ver = '_admin';
-  }
+  // if (is_user_administrator()) {
+  //   $admin_ver = '_admin';
+  // }
   $service_worker_ver = THEME_NAME.'_ver_1.0.0'.$admin_ver; //PWAに変更を加えたらバージョン変更
   $site_logo = get_the_site_logo_url();
   $jquery_core_url = get_jquery_core_url(get_jquery_version());
