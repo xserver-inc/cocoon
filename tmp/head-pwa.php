@@ -10,6 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php if (
   !is_amp() &&
   !is_admin() &&
+  !is_plugin_fourm_page() &&
   is_ssl() &&
 	is_pwa_enable() &&
 	(!is_user_administrator() || is_pwa_admin_enable()) &&
