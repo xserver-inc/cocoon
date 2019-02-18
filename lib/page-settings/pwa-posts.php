@@ -60,31 +60,30 @@ if (is_pwa_enable()) {
   $icon_url_l  = get_site_icon_url_l();
   $icon_size_l = '512x512';//get_site_icon_size_text($icon_url_l);
   $manifest =
-  "
+"{
+\"name\": \"{$name}\",
+\"short_name\": \"{$short_name}\",
+\"description\": \"{$description}\",
+\"start_url\": \"{$start_url}\",
+\"display\": \"{$display}\",
+\"lang\": \"ja\",
+\"dir\": \"auto\",
+\"orientation\": \"{$orientation}\",
+\"theme_color\": \"{$theme_color}\",
+\"background_color\": \"{$background_color}\",
+\"icons\": [
   {
-  \"name\": \"{$name}\",
-  \"short_name\": \"{$short_name}\",
-  \"description\": \"{$description}\",
-  \"start_url\": \"{$start_url}\",
-  \"display\": \"{$display}\",
-  \"lang\": \"ja\",
-  \"dir\": \"auto\",
-  \"orientation\": \"{$orientation}\",
-  \"theme_color\": \"{$theme_color}\",
-  \"background_color\": \"{$background_color}\",
-  \"icons\": [
-    {
-      \"src\": \"{$icon_url_s}\",
-      \"type\": \"image/png\",
-      \"sizes\": \"{$icon_size_s}\"
-    },
-    {
-      \"src\": \"{$icon_url_l}\",
-      \"type\": \"image/png\",
-      \"sizes\": \"{$icon_size_l}\"
-    }
-  ]
-  }";
+    \"src\": \"{$icon_url_s}\",
+    \"type\": \"image/png\",
+    \"sizes\": \"{$icon_size_s}\"
+  },
+  {
+    \"src\": \"{$icon_url_l}\",
+    \"type\": \"image/png\",
+    \"sizes\": \"{$icon_size_l}\"
+  }
+]
+}";
   //マニフェストファイルの作成
   $manifest_file = get_theme_pwa_manifest_json_file();
   wp_filesystem_put_contents($manifest_file, $manifest, 0);
@@ -99,19 +98,17 @@ if (is_pwa_enable()) {
   $font_awesome4_url = FONT_AWESOME4_URL;
   $font_aicomoon_url = FONT_AICOMOON_URL;
   $service_worker =
-  // ,
-  // '{$jquery_core_url}',
-  // '{$jquery_migrate_url}',
-  // '{$theme_js_url}',
-  // '{$theme_child_js_url}',
-  // '{$font_awesome4_url}',
-  // '{$font_aicomoon_url}'
-  "
-const CACHE_NAME = '{$service_worker_ver}';
+"const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
   '/',
   '{$icon_url_s}',
-  '{$icon_url_l}'
+  '{$icon_url_l}',
+  '{$jquery_core_url}',
+  '{$jquery_migrate_url}',
+  '{$theme_js_url}',
+  '{$theme_child_js_url}',
+  '{$font_awesome4_url}',
+  '{$font_aicomoon_url}'
 ];
 
 self.addEventListener('install', function(event) {
@@ -191,8 +188,7 @@ self.addEventListener('fetch', function(event) {
       );
     })
   );
-});
-  ";
+});";
   //マニフェストファイルの作成
   $service_worker_file = get_theme_pwa_service_worker_js_file();
   wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
