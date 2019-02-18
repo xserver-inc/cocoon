@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if ( !function_exists( 'get_big_card_first_thumbnail_size' ) ):
 function get_big_card_first_thumbnail_size($count){
-  if ($count == 1) {
+  if ($count == 1 && is_front_top_page()) {
     return 'large';
   } else {
     return THUMB320;
@@ -49,11 +49,11 @@ function get_entry_card_thumbnail_size($count){
   switch (get_entry_card_type()) {
     case 'big_card_first':
       $thumbnail_size = get_big_card_first_thumbnail_size($count);
-        if ($count == 1) {
-          $thumbnail_size = 'large';
-        } else {
-          $thumbnail_size = THUMB320;
-        }
+      // if ($count == 1) {
+      //   $thumbnail_size = 'large';
+      // } else {
+      //   $thumbnail_size = THUMB320;
+      // }
       break;
     case 'big_card':
       $thumbnail_size = get_big_card_thumbnail_size();
