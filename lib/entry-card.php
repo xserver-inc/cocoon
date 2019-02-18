@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if ( !function_exists( 'get_big_card_first_thumbnail_size' ) ):
 function get_big_card_first_thumbnail_size($count){
-  if ($count == 1 && is_front_top_page()) {
+  if ($count == 1 && !is_paged()) {
     return 'large';
   } else {
     return THUMB320;
