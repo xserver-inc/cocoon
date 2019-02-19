@@ -596,7 +596,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; margin: 1em 0; max-width: 100%; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: 100%; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto; margin-bottom: 1em; }
@@ -1757,7 +1757,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .scrollable-table table { border-collapse: collapse; margin: 1em 0; max-width: 100%; }
+.admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: 100%; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto; margin-bottom: 1em; }

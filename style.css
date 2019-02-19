@@ -1470,7 +1470,6 @@ table td {
 
 .scrollable-table table {
   border-collapse: collapse;
-  margin: 1em 0;
   max-width: 100%;
 }
 
