@@ -98,18 +98,21 @@ if (is_pwa_enable()) {
   $font_awesome4_url = FONT_AWESOME4_URL;
   $font_aicomoon_url = FONT_AICOMOON_URL;
 // ,
-//   '{$jquery_core_url}',
-//   '{$jquery_migrate_url}',
-//   '{$theme_js_url}',
-//   '{$theme_child_js_url}',
-//   '{$font_awesome4_url}',
-//   '{$font_aicomoon_url}'
   $service_worker =
 "const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
   '/',
   '{$icon_url_s}',
-  '{$icon_url_l}'
+  '{$icon_url_l}',
+  '{$jquery_core_url}',
+  '{$jquery_migrate_url}',
+  '{$theme_js_url}',
+  '{$theme_child_js_url}',
+  '{$font_awesome4_url}',
+  '{$font_aicomoon_url}'
+  '/wp-content/themes/cocoon-master/webfonts/fontawesome/fonts/fontawesome-webfont.woff2',
+  '/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.ttf',
+  '/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js'
 ];
 
 self.addEventListener('install', function(event) {

@@ -1111,6 +1111,8 @@ endif;
 if ( !function_exists( 'get_theme_pwa_manifest_json_url' ) ):
 function get_theme_pwa_manifest_json_url(){
   return local_to_url(get_theme_pwa_manifest_json_file());
+  // $url = local_to_url(get_theme_pwa_manifest_json_file());
+  // return str_replace(site_url(), '', $url);
 }
 endif;
 
@@ -1125,6 +1127,8 @@ endif;
 if ( !function_exists( 'get_theme_pwa_service_worker_js_url' ) ):
 function get_theme_pwa_service_worker_js_url(){
   return local_to_url(get_theme_pwa_service_worker_js_file());
+  // $url = local_to_url(get_theme_pwa_service_worker_js_file());
+  // return str_replace(site_url(), '', $url);
 }
 endif;
 
