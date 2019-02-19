@@ -580,7 +580,8 @@ img.emoji {
   height: 100%;
 }
 
-.logo-image * {
+.logo-image span,
+.logo-image a {
   display: block;
 }
 
