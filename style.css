@@ -577,10 +577,11 @@ img.emoji {
 
 .logo {
   text-align: center;
+  height: 100%;
 }
 
 .logo-image * {
-  display: inline-block;
+  display: block;
 }
 
 .site-name-text-link {
