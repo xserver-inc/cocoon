@@ -362,6 +362,10 @@ hr {
     position: static;
     top: auto;
   }
+
+  .logo {
+    height: 100%;
+  }
 }
 .publisher {
   display: none;

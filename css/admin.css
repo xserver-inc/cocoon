@@ -375,7 +375,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
 .admin-settings .demo .no-scrollable-main .main { height: 100%; }
 .admin-settings .demo .main-scroll { position: -webkit-sticky; position: sticky; top: 0; margin-top: 2em; }
-@media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
+@media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; }
+  .admin-settings .demo .logo { height: 100%; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
 .admin-settings .demo .wp-caption { margin: 1em 0; }
@@ -1536,7 +1537,8 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
 .admin-settings .demo .no-scrollable-main .main { height: 100%; }
 .admin-settings .demo .main-scroll { position: -webkit-sticky; position: sticky; top: 0; margin-top: 2em; }
-@media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; } }
+@media all and (-ms-high-contrast: none) { .admin-settings .demo .main-scroll { position: static; top: auto; }
+  .admin-settings .demo .logo { height: 100%; } }
 .admin-settings .demo .publisher { display: none; }
 .admin-settings .demo #wpadminbar { font-size: 13px; }
 .admin-settings .demo .wp-caption { margin: 1em 0; }
