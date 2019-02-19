@@ -414,7 +414,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo img.emoji { display: inline; width: 1em; height: auto; vertical-align: text-bottom; margin-right: 0.1em; }
 .admin-settings .demo .header-in { display: flex; flex-direction: column; justify-content: center; }
 .admin-settings .demo .tagline { text-align: center; font-size: 14px; margin: .6em 0; }
-.admin-settings .demo .logo { text-align: center; height: 100%; }
+.admin-settings .demo .logo { text-align: center; }
 .admin-settings .demo .logo-image span, .admin-settings .demo .logo-image a { display: block; }
 .admin-settings .demo .site-name-text-link { color: #333; text-decoration: none; font-weight: normal; }
 .admin-settings .demo .site-name-text-link:hover { color: inherit; }
@@ -1575,7 +1575,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo img.emoji { display: inline; width: 1em; height: auto; vertical-align: text-bottom; margin-right: 0.1em; }
 .admin-settings .demo .header-in { display: flex; flex-direction: column; justify-content: center; }
 .admin-settings .demo .tagline { text-align: center; font-size: 14px; margin: .6em 0; }
-.admin-settings .demo .logo { text-align: center; height: 100%; }
+.admin-settings .demo .logo { text-align: center; }
 .admin-settings .demo .logo-image span, .admin-settings .demo .logo-image a { display: block; }
 .admin-settings .demo .site-name-text-link { color: #333; text-decoration: none; font-weight: normal; }
 .admin-settings .demo .site-name-text-link:hover { color: inherit; }
