@@ -117,7 +117,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(function(cache) {
-      console.log('Opened cache');
+      // console.log('Opened cache');
       return cache.addAll(urlsToCache);
     })
   );
@@ -152,7 +152,7 @@ self.addEventListener('fetch', function(event) {
   }
 
   // 管理画面にログイン時はキャッシュを使用しない
-  console.log(event);
+  // console.log(event);
 
   event.respondWith(
     caches.match(event.request)
