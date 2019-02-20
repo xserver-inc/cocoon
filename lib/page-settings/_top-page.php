@@ -80,7 +80,7 @@ if( $is_post_ok ):
   //AMP
   require_once abspath(__FILE__).'amp-posts.php';
   //PWA
-  //require_once abspath(__FILE__).'pwa-posts.php';
+  require_once abspath(__FILE__).'pwa-posts.php';
   //管理画面
   require_once abspath(__FILE__).'admin-posts.php';
   //ウィジェット
@@ -185,6 +185,7 @@ endif;
     <li class="mobile-buttons"><?php _e( 'モバイル', THEME_NAME ) ?></li>
     <li class="page-404"><?php _e( '404ページ', THEME_NAME ) ?></li>
     <li class="amp"><?php _e( 'AMP', THEME_NAME ) ?></li>
+    <li class="pwa"><?php _e( 'PWA', THEME_NAME ) ?></li>
     <li class="admin"><?php _e( '管理者画面', THEME_NAME ) ?></li>
     <li class="widget"><?php _e( 'ウィジェット', THEME_NAME ) ?></li>
     <li class="widget-area"><?php _e( 'ウィジェットエリア', THEME_NAME ) ?></li>
@@ -336,6 +337,11 @@ endif;
   <!-- AMP -->
   <div class="amp metabox-holder">
     <?php require_once abspath(__FILE__).'amp-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- PWA -->
+  <div class="pwa metabox-holder">
+    <?php require_once abspath(__FILE__).'pwa-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 管理画面 -->
