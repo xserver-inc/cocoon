@@ -327,9 +327,10 @@ if (get_main_column_padding()): ?>
 }
 <?php endif ?>
 <?php //枠線の幅
-if (get_main_column_border_width()): ?>
+$main_column_border_width = get_main_column_border_width();
+if (is_numeric($main_column_border_width)): ?>
 .main{
-  border-width: <?php echo get_main_column_border_width(); ?>px;
+  border-width: <?php echo $main_column_border_width; ?>px;
 }
 <?php endif ?>
 <?php //枠線の色
@@ -355,9 +356,10 @@ if (get_sidebar_padding()): ?>
 }
 <?php endif ?>
 <?php //枠線の幅
-if (get_sidebar_border_width()): ?>
+$sidebar_border_width = get_sidebar_border_width();
+if (is_numeric($sidebar_border_width)): ?>
 .sidebar{
-  border-width: <?php echo get_sidebar_border_width(); ?>px;
+  border-width: <?php echo $sidebar_border_width; ?>px;
 }
 <?php endif ?>
 <?php //枠線の色
@@ -367,13 +369,14 @@ if (get_sidebar_border_color()): ?>
 }
 <?php endif ?>
 <?php //カラム間の幅
-if (get_main_sidebar_margin()): ?>
+$main_sidebar_margin = get_main_sidebar_margin();
+if (is_numeric($main_sidebar_margin)): ?>
 .main{
   <?php if(is_sidebar_position_right()): ?>
-  margin-right: <?php echo get_main_sidebar_margin(); ?>px;
+  margin-right: <?php echo $main_sidebar_margin; ?>px;
   margin-left: 0;
   <?php else: ?>
-  margin-left: <?php echo get_main_sidebar_margin(); ?>px;
+  margin-left: <?php echo $main_sidebar_margin; ?>px;
   margin-right: 0;
   <?php endif; ?>
 }

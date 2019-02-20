@@ -120,7 +120,7 @@ if ( !function_exists( 'get_main_column_width' ) ):
 function get_main_column_width(){
   $main_column_contents_width = get_main_column_contents_width() ? get_main_column_contents_width() : 800;
   $main_column_padding = get_main_column_padding() ? get_main_column_padding() : 29;
-  $main_column_border_width = get_main_column_border_width() ? get_main_column_border_width() : 1;
+  $main_column_border_width = is_numeric(get_main_column_border_width()) ? get_main_column_border_width() : 1;
   return intval($main_column_contents_width) +
          (intval($main_column_padding) * 2) +
          (intval($main_column_border_width) * 2);
@@ -289,7 +289,7 @@ if ( !function_exists( 'get_sidebar_width' ) ):
 function get_sidebar_width(){
   $sidebar_contents_width = get_sidebar_contents_width() ? get_sidebar_contents_width() : 336;
   $sidebar_padding = get_sidebar_padding() ? get_sidebar_padding() : 9;
-  $sidebar_border_width = get_sidebar_border_width() ? get_sidebar_border_width() : 1;
+  $sidebar_border_width = is_numeric(get_sidebar_border_width()) ? get_sidebar_border_width() : 1;
   return intval($sidebar_contents_width) +
          (intval($sidebar_padding) * 2) +
          (intval($sidebar_border_width) * 2);
@@ -298,11 +298,9 @@ endif;
 
 if ( !function_exists( 'get_site_wrap_width' ) ):
 function get_site_wrap_width(){
-  // _v(get_main_column_width());
-  // _v(get_sidebar_width());
-  $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
+  $main_sidebar_margin = is_numeric(get_main_sidebar_margin()) ? get_main_sidebar_margin() : 20;
   return get_main_column_width() +
          get_sidebar_width() +
-         intval($main_sidebar_margin) + 2;
+         intval($main_sidebar_margin);
 }
 endif;
