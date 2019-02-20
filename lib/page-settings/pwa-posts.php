@@ -89,7 +89,7 @@ if (is_pwa_enable()) {
   wp_filesystem_put_contents($manifest_file, $manifest, 0);
 
   //service-worker.js
-  $service_worker_ver = THEME_NAME.'_ver_1.0.0'; //PWAに変更を加えたらバージョン変更
+  $service_worker_ver = THEME_NAME.'_20190220'; //PWAに変更を加えたらバージョン変更
   $site_logo = get_the_site_logo_url();
   $jquery_core_url = get_jquery_core_url(get_jquery_version());
   $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
@@ -97,19 +97,23 @@ if (is_pwa_enable()) {
   $theme_child_js_url = THEME_CHILD_JS_URL;
   $font_awesome4_url = FONT_AWESOME4_URL;
   $font_aicomoon_url = FONT_AICOMOON_URL;
-// ,
+
+  // '{$jquery_core_url}',
+  // '{$jquery_migrate_url}',
+
+  //Service Worker
   $service_worker =
 "const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
   '/',
   '{$icon_url_s}',
   '{$icon_url_l}',
-  '{$jquery_core_url}',
-  '{$jquery_migrate_url}',
   '{$theme_js_url}',
   '{$theme_child_js_url}',
   '{$font_awesome4_url}',
   '{$font_aicomoon_url}',
+  '/wp-includes/js/jquery/jquery.js',
+  '/wp-includes/js/jquery/jquery-migrate.min.js',
   '/wp-content/themes/cocoon-master/webfonts/fontawesome/fonts/fontawesome-webfont.woff2',
   '/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.ttf',
   '/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js'
@@ -118,8 +122,7 @@ const urlsToCache = [
 self.addEventListener('install', function(event) {
   // インストール処理
   event.waitUntil(
-    caches.open(CACHE_NAME)
-    .then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       // console.log('Opened cache');
       return cache.addAll(urlsToCache);
     })
@@ -127,17 +130,15 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-  const cacheWhitelist = [CACHE_NAME];
+  var cacheWhitelist = [CACHE_NAME];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
+      return Promise.all(cacheNames.map(function(cacheName) {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
             return caches.delete(cacheName);
           }
-        })
-      );
+      }));
     })
   );
 });
@@ -154,42 +155,28 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-  // 管理画面にログイン時はキャッシュを使用しない
-  // console.log(event);
-
   event.respondWith(
-    caches.match(event.request)
-    .then(function(response) {
-      // キャッシュがあったら、そのレスポンスを返す
+    caches.match(event.request).then(function(response) {
       if (response) {
         return response;
       }
 
-      // 重要：リクエストをcloneする。リクエストはStreamなので
-      // 一度しか処理できない。ここではキャッシュ用、fetch用と2回
-      // 必要なのでリクエストはcloneしないといけない
-      const fetchRequest = event.request.clone();
-
-      return fetch(fetchRequest,{credentials: 'include'}).then(
-        function(response) {
-          // レスポンスが正しいかをチェック
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          // 重要：レスポンスを clone する。レスポンスは Stream で
-          // ブラウザ用とキャッシュ用の2回必要。なので clone して
-          // 2つの Stream があるようにする
-          const responseToCache = response.clone();
-
-          caches.open(CACHE_NAME)
-            .then(function(cache) {
-              cache.put(event.request, responseToCache);
-            });
-
+      // リクエストのクローンを作成する
+      let ReqClone = event.request.clone();
+      return fetch(ReqClone).then(function(response) {
+        if (!response ||
+            response.status !== 200 ||
+            response.type !== 'basic') {
           return response;
         }
-      );
+
+        // レスポンスのクローンを作成する
+        let ResClone = response.clone();
+        caches.open(CACHE_NAME).then(function(cache) {
+          cache.put(event.request, ResClone);
+        });
+        return response;
+      });
     })
   );
 });";
