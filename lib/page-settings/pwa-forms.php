@@ -13,7 +13,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'PWA設定（β版）', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる方の利用をおすすめします。', THEME_NAME ) ?></p>
+    <p><?php _e( 'PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる方の利用をおすすめします。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/pwa/'); ?></p>
 
     <?php if (!is_ssl()): ?>
     <p class="alert"><?php _e( 'PWAを利用するにはサイトをSSL化（https化）する必要があります。httpサイトでは、当設定項目を変更しても反映されません。', THEME_NAME ) ?></p>
