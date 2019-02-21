@@ -4008,6 +4008,7 @@ label.screen-reader-text {
   margin: 0 4px;
   line-height: 50px;
   text-align: center;
+  border-radius: 4px;
   display: inline-flex;
   justify-content: center;
 }
