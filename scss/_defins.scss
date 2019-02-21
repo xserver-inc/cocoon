@@ -368,12 +368,11 @@ $bgc_hover_anime: all 0.5s ease;
 ///////////////////////////////////////
 // フォーム共通
 ///////////////////////////////////////
-$form_padding: 12px;
+$form_padding: 11px;
 %form_common {
   padding: $form_padding;
-  border: 2px solid $basic_border_color;
-  //border-radius: $basic_border_radius;
+  border: 1px solid $basic_border_color;
+  border-radius: $basic_border_radius;
   font-size: $text_size_default;
   width: 100%;
-  border-radius: $badge_border_radius;
 }

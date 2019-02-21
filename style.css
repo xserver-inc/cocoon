@@ -96,11 +96,11 @@ input[type="time"],
 input[type="url"],
 textarea,
 select {
-  padding: 12px;
-  border: 2px solid #ccc;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 18px;
   width: 100%;
-  border-radius: 2px;
 }
 
 .fz-12px {
@@ -5972,7 +5972,6 @@ div.fb-like-mobile {
 .search-submit {
   position: absolute;
   right: 0;
-  top: 2px;
   font-size: 20px;
   cursor: pointer;
   line-height: 49px;
@@ -6382,7 +6381,7 @@ option {
 input[type='submit'],
 #bbp_reply_submit,
 .bp-login-widget-register-link a {
-  padding: 12px;
+  padding: 11px;
   width: 100%;
   margin: 0;
   cursor: pointer;

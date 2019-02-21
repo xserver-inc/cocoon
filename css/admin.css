@@ -28,7 +28,7 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .entry-category, .admin-settings .demo .post-date, .admin-settings .demo .post-update, .admin-settings .demo .post-author, .admin-settings .demo .amp-back { padding: 2px; display: inline; font-size: 0.7em; }
 
-.admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 12px; border: 2px solid #ccc; font-size: 18px; width: 100%; border-radius: 2px; }
+.admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 11px; border: 1px solid #ccc; border-radius: 4px; font-size: 18px; width: 100%; }
 
 .snipet-list { padding: 20px; display: flex; flex-wrap: wrap; }
 
@@ -1414,7 +1414,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: "Meiryo", sans-serif; }
-.admin-settings .demo .search-submit { position: absolute; right: 0; top: 2px; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 0; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
@@ -2576,7 +2576,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: "Meiryo", sans-serif; }
-.admin-settings .demo .search-submit { position: absolute; right: 0; top: 2px; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
+.admin-settings .demo .search-submit { position: absolute; right: 0; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
@@ -2661,7 +2661,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
-.admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 12px; width: 100%; margin: 0; cursor: pointer; }
+.admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
 .admin-settings .demo .bp-login-widget-register-link { display: block; margin-top: 10px; }
 .admin-settings .demo .bp-login-widget-register-link a { color: #333; text-decoration: none; display: block; text-align: center; border: 1px solid #777; padding: 6px; border-radius: 2px; }
 .admin-settings .demo .bp-login-widget-register-link a:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
