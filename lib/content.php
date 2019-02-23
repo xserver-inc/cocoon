@@ -19,9 +19,8 @@ function get_the_content_all_scripts($the_content) {
     $js_index = 1;
     $i = 0;
     foreach ($m[$all_index] as $script) {
-      //除外設定
-      if (
-        //Buddypressページでは除外
+      $is_exclude =
+        ////Buddypressページでは除外
         is_buddypress_page() ||
         //WordPressのプレイリストなど
         includes_string($script, 'type="application/json"') ||
@@ -30,8 +29,10 @@ function get_the_content_all_scripts($the_content) {
         includes_string($script, 'amazon-adsystem.co') ||
         //Googleトレンド埋め込み
         includes_string($script, 'ssl.gstatic.com') ||
-        includes_string($script, 'trends.google.co')
-         ) {
+        includes_string($script, 'trends.google.co');
+        $is_exclude = apply_filters('cocoon_exclude_script_movement_from_content', $is_exclude, $script);
+      //除外設定
+      if ($is_exclude) {
         continue;
       }
       $js_code = $m[$js_index][$i];
