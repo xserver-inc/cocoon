@@ -38,8 +38,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
             <div class="indent">
               <?php
-              generate_checkbox_tag(OP_PWA_ADMIN_ENABLE, is_pwa_admin_enable(), __("管理者ログイン時もPWAを有効化する",THEME_NAME ));
-              generate_tips_tag(__( 'サイト管理者がログイン時のPWA動作を制御します。', THEME_NAME ));
+              generate_checkbox_tag(OP_PWA_ADMIN_ENABLE, is_pwa_admin_enable(), __("ログイン時もPWAを有効化する",THEME_NAME ));
+              generate_tips_tag(__( 'ユーザーがログイン時のPWA動作を制御します。', THEME_NAME ));
               ?>
             </div>
           </td>

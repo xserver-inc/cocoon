@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   !is_plugin_fourm_page() &&
   is_ssl() &&
 	is_pwa_enable() &&
-	(!is_user_administrator() || is_pwa_admin_enable()) &&
+	(!is_user_logged_in() || is_pwa_admin_enable()) &&
   file_exists(get_theme_pwa_manifest_json_file()) &&
   file_exists(get_theme_pwa_service_worker_js_file())): ?>
 <!-- PWA -->
