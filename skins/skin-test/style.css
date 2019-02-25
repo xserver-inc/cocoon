@@ -71,11 +71,6 @@ div.mobile-menu-buttons .menu-button:hover,
   border-bottom-right-radius: 3px;
 }
 
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .widget_recent_entries ul li a,
 .widget_categories ul li a,
 .widget_archive ul li a {
