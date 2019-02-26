@@ -1100,6 +1100,29 @@ function get_theme_pwa_cache_dir(){
 }
 endif;
 
+//テーマのログディレクトリ
+if ( !function_exists( 'get_theme_logs_dir' ) ):
+function get_theme_logs_dir(){
+  $dir = get_theme_resources_dir().'logs/';
+  if (!file_exists($dir)) mkdir($dir, 0777, true);
+  return $dir;
+}
+endif;
+
+//Amazonログファイル
+if ( !function_exists( 'get_theme_amazon_log_file' ) ):
+function get_theme_amazon_log_file(){
+  return get_theme_logs_dir().'amazon.log';
+}
+endif;
+
+//楽天ログファイル
+if ( !function_exists( 'get_theme_rakuten_log_file' ) ):
+function get_theme_rakuten_log_file(){
+  return get_theme_logs_dir().'rakuten.log';
+}
+endif;
+
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
