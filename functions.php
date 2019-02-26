@@ -286,3 +286,17 @@ function change_main_loop_sort_order( $query ) {
   }
 }
 endif;
+
+//強制付与されるnoreferrer削除
+add_filter( 'wp_targeted_link_rel', 'wp_targeted_link_rel_custom', 10, 2 );
+if ( !function_exists( 'wp_targeted_link_rel_custom' ) ):
+function wp_targeted_link_rel_custom( $rel_value, $link_html ){
+  // _v($link_html);
+  // _v($rel_value);
+  // if( !includes_string( $link_html, home_url() ) ){
+  //   $rel_value = 'noopener';
+  // }
+  $rel_value = str_replace(' noreferrer', '', $rel_value);
+  return $rel_value;
+}
+endif;

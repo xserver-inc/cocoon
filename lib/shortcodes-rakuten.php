@@ -168,6 +168,8 @@ function rakuten_product_link_shortcode($atts){
           $jb = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $jb, 1);
             $json['body'] = $jb;
         }
+        //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+        $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $expiration);
         //楽天APIバックアップキャッシュの保存
