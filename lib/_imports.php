@@ -114,7 +114,7 @@ require_once abspath(__FILE__).'youtube.php'; //YouTube関係の処理
 require_once abspath(__FILE__).'admin.php'; //管理者機能
 
 //Cocoon Blocks
-if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) ):
+if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) && is_gutenberg_editor_enable() ):
   require_once get_template_directory().'/blocks/plugin.php';
 endif;
 
