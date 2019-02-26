@@ -1110,16 +1110,16 @@ function get_theme_logs_path(){
 endif;
 
 //Amazonログファイル
-if ( !function_exists( 'get_theme_amazon_log_file' ) ):
-function get_theme_amazon_log_file(){
-  return get_theme_logs_path().'amazon.log';
+if ( !function_exists( 'get_theme_amazon_product_error_log_file' ) ):
+function get_theme_amazon_product_error_log_file(){
+  return get_theme_logs_path().'amazon_product_error.log';
 }
 endif;
 
 //楽天ログファイル
-if ( !function_exists( 'get_theme_rakuten_log_file' ) ):
-function get_theme_rakuten_log_file(){
-  return get_theme_logs_path().'rakuten.log';
+if ( !function_exists( 'get_theme_rakuten_product_error_log_file' ) ):
+function get_theme_rakuten_product_error_log_file(){
+  return get_theme_logs_path().'rakuten_product_error.log';
 }
 endif;
 

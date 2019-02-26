@@ -84,6 +84,10 @@ function get_amazon_itemlookup_xml($asin){
   if ($res) {
     //xml取得
     $xml = simplexml_load_string($res);
+    //取得できなかった商品のログ出力
+    if (!property_exists($xml->Items, 'Item')) {
+      error_log_to_amazon_product($asin);
+    }
     if (property_exists($xml->Error, 'Code')) {
       //バックアップキャッシュの確認
       $xml_cache = get_transient( $transient_bk_id );
@@ -600,5 +604,15 @@ function amazon_product_link_shortcode($atts){
     return apply_filters('amazon_product_link_tag', $tag);
   }
 
+}
+endif;
+
+if ( !function_exists( 'error_log_to_amazon_product' ) ):
+function error_log_to_amazon_product($asin){
+  $msg = date_i18n("Y-m-d H:i:s").','.
+         $asin.','.
+         get_the_permalink().
+         PHP_EOL;
+  error_log($msg, 3, get_theme_amazon_product_error_log_file());
 }
 endif;
