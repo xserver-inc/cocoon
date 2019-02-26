@@ -60,7 +60,7 @@ endif;
 define('OP_EXTERNAL_LINK_NOOPENER_ENABLE', 'external_link_noopener_enable');
 if ( !function_exists( 'is_external_link_noopener_enable' ) ):
 function is_external_link_noopener_enable(){
-  return get_theme_option(OP_EXTERNAL_LINK_NOOPENER_ENABLE);
+  return get_theme_option(OP_EXTERNAL_LINK_NOOPENER_ENABLE, 1);
 }
 endif;
 
