@@ -12,7 +12,7 @@ if (is_user_administrator()) {
   // 4.1.0より前のPHPでは$FILESの代わりに$HTTP_POST_FILESを使用する必要あり
 
   //テーマ用のキャッシュディレクトリの取得
-  $uploaddir = get_theme_cache_dir();
+  $uploaddir = get_theme_cache_path();
   //キャシュディレクトリのアップロードファイルパス
   $uploadfile = $uploaddir .'/'. basename($_FILES['settings']['name']);
 

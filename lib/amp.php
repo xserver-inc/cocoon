@@ -1003,7 +1003,7 @@ function html_ampfy_call_back( $html ) {
   global $post;
   //キャッシュの存在
   $transient_id = TRANSIENT_AMP_PREFIX.$post->ID;
-  $transient_file = get_theme_amp_cache_dir().$transient_id;
+  $transient_file = get_theme_amp_cache_path().$transient_id;
   $file_path_cache = get_transient( $transient_id );
   if ($file_path_cache && DEBUG_CACHE_ENABLE && !is_user_administrator()) {
     if (file_exists($transient_file)) {

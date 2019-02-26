@@ -87,7 +87,7 @@ function fetch_card_image($image){
   }
 
   //キャッシュディレクトリ
-  $dir = get_theme_blog_card_cache_dir();
+  $dir = get_theme_blog_card_cache_path();
   //画像の読み込み
   if ( $file_data = @wp_filesystem_get_contents($image, true) ) {
 

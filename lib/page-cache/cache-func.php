@@ -102,7 +102,7 @@ endif;
 if ( !function_exists( 'delete_amp_caches' ) ):
 function delete_amp_caches(){
   if (is_user_administrator()) {
-    remove_all_directory(get_theme_amp_cache_dir());
+    remove_all_directory(get_theme_amp_cache_path());
     return delete_db_cache_records(TRANSIENT_AMP_PREFIX);
   }
   return false;

@@ -1047,8 +1047,8 @@ endif;
 
 
 //テーマのリソースディレクトリ
-if ( !function_exists( 'get_theme_resources_dir' ) ):
-function get_theme_resources_dir(){
+if ( !function_exists( 'get_theme_resources_path' ) ):
+function get_theme_resources_path(){
   $dir = WP_CONTENT_DIR.'/uploads/'.THEME_NAME.'-resources/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
@@ -1056,54 +1056,54 @@ function get_theme_resources_dir(){
 endif;
 
 //テーマの汎用キャッシュディレクトリ
-if ( !function_exists( 'get_theme_cache_dir' ) ):
-function get_theme_cache_dir(){
-  $dir = get_theme_resources_dir().'cache/';
+if ( !function_exists( 'get_theme_cache_path' ) ):
+function get_theme_cache_path(){
+  $dir = get_theme_resources_path().'cache/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
 
 //テーマのブログカードキャッシュディレクトリ
-if ( !function_exists( 'get_theme_blog_card_cache_dir' ) ):
-function get_theme_blog_card_cache_dir(){
-  $dir = get_theme_resources_dir().'blog-card-cache/';
+if ( !function_exists( 'get_theme_blog_card_cache_path' ) ):
+function get_theme_blog_card_cache_path(){
+  $dir = get_theme_resources_path().'blog-card-cache/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
 
 //AMPキャッシュディレクトリ
-if ( !function_exists( 'get_theme_amp_cache_dir' ) ):
-function get_theme_amp_cache_dir(){
-  $dir = get_theme_resources_dir().'amp-cache/';
+if ( !function_exists( 'get_theme_amp_cache_path' ) ):
+function get_theme_amp_cache_path(){
+  $dir = get_theme_resources_path().'amp-cache/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
 
 //テーマのCSSキャッシュディレクトリ
-if ( !function_exists( 'get_theme_css_cache_dir' ) ):
-function get_theme_css_cache_dir(){
-  $dir = get_theme_resources_dir().'css-cache/';
+if ( !function_exists( 'get_theme_css_cache_path' ) ):
+function get_theme_css_cache_path(){
+  $dir = get_theme_resources_path().'css-cache/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
 
 //テーマのPWAキャッシュディレクトリ
-if ( !function_exists( 'get_theme_pwa_cache_dir' ) ):
-function get_theme_pwa_cache_dir(){
-  $dir = get_theme_resources_dir().'pwa-cache/';
+if ( !function_exists( 'get_theme_pwa_cache_path' ) ):
+function get_theme_pwa_cache_path(){
+  $dir = get_theme_resources_path().'pwa-cache/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
 endif;
 
 //テーマのログディレクトリ
-if ( !function_exists( 'get_theme_logs_dir' ) ):
-function get_theme_logs_dir(){
-  $dir = get_theme_resources_dir().'logs/';
+if ( !function_exists( 'get_theme_logs_path' ) ):
+function get_theme_logs_path(){
+  $dir = get_theme_resources_path().'logs/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
   return $dir;
 }
@@ -1112,14 +1112,14 @@ endif;
 //Amazonログファイル
 if ( !function_exists( 'get_theme_amazon_log_file' ) ):
 function get_theme_amazon_log_file(){
-  return get_theme_logs_dir().'amazon.log';
+  return get_theme_logs_path().'amazon.log';
 }
 endif;
 
 //楽天ログファイル
 if ( !function_exists( 'get_theme_rakuten_log_file' ) ):
 function get_theme_rakuten_log_file(){
-  return get_theme_logs_dir().'rakuten.log';
+  return get_theme_logs_path().'rakuten.log';
 }
 endif;
 
@@ -1158,7 +1158,7 @@ endif;
 //テーマのカスタムCSSファイル
 if ( !function_exists( 'get_theme_css_cache_file' ) ):
 function get_theme_css_cache_file(){
-  $file = get_theme_css_cache_dir().'css-custom.css';
+  $file = get_theme_css_cache_path().'css-custom.css';
   //キャッシュファイルが存在しない場合はからのファイルを生成
   if (!file_exists($file)) {
     wp_filesystem_put_contents($file,  '');
