@@ -416,6 +416,10 @@ function rakuten_product_link_shortcode($atts){
           return apply_filters('rakuten_product_link_tag', $tag);
         }
       } else {
+        //楽天商品取得エラーの出力
+        if (!$json_cache) {
+          error_log_to_rakuten_product($id, $search);
+        }
         $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
       }
@@ -443,3 +447,15 @@ function rakuten_product_link_shortcode($atts){
 
 }
 endif;
+
+//楽天APIで商品情報を取得できなかった場合のエラーログ
+if ( !function_exists( 'error_log_to_rakuten_product' ) ):
+  function error_log_to_rakuten_product($id, $no){
+    $msg = date_i18n("Y-m-d H:i:s").','.
+           $id.','.
+           $no.','.
+           get_the_permalink().
+           PHP_EOL;
+    error_log($msg, 3, get_theme_rakuten_product_error_log_file());
+  }
+  endif;

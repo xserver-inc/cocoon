@@ -607,6 +607,7 @@ function amazon_product_link_shortcode($atts){
 }
 endif;
 
+//PA-APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_amazon_product' ) ):
 function error_log_to_amazon_product($asin){
   $msg = date_i18n("Y-m-d H:i:s").','.
