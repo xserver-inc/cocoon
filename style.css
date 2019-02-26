@@ -5973,6 +5973,7 @@ div.fb-like-mobile {
 .search-submit {
   position: absolute;
   right: 0;
+  top: 0;
   font-size: 20px;
   cursor: pointer;
   line-height: 49px;
