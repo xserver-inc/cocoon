@@ -255,7 +255,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_label_tag('', __('ファビコン', THEME_NAME) ); ?>
           </th>
           <td>
-            <p><?php _e( 'ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。', THEME_NAME ) ?></p>
+            <p><?php _e( 'ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。', THEME_NAME );
+            echo get_help_page_tag('https://wp-cocoon.com/site-icon/') ?></p>
           </td>
         </tr>
 

@@ -228,7 +228,7 @@ endif;
 if ( !function_exists( 'get_help_page_tag' ) ):
 function get_help_page_tag($url, $text = null){
   $link_text = $text ? $text : __( '解説ページ', THEME_NAME );
-  $tag = ' <a href="'.$url.'" target="_blank" class="help-page">'.$link_text.'</a>';
+  $tag = ' <a href="'.$url.'" target="_blank" rel="noopener" class="help-page">'.$link_text.'</a>';
   return $tag;
 }
 endif;
