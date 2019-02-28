@@ -22,12 +22,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 	document.addEventListener('DOMContentLoaded', function() {
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('<?php echo get_theme_pwa_service_worker_js_url(); ?>').then(function(registration) {
+				navigator.serviceWorker.register('./cocoon-service-worker.js').then(function(registration) {
 					// Registration was successful
 					console.log('ServiceWorker registration successful with scope: ', registration.scope);
 					registration.onupdatefound = function() {
 						registration.update();
-						console.log('ServiceWorker update successful'),
+						console.log('ServiceWorker update successful');
 					}
 				}, function(err) {
 					// registration failed
@@ -52,13 +52,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <!-- /PWA -->
 <?php else: ?>
 <script>
-	document.addEventListener('DOMContentLoaded', function() {
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.getRegistration()
-				.then(registration => {
-					registration.unregister();
-			})
-		}
-	}, false);
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	if ('serviceWorker' in navigator) {
+	// 		navigator.serviceWorker.getRegistration()
+	// 			.then(registration => {
+	// 				registration.unregister();
+	// 		})
+	// 	}
+	// }, false);
 </script>
 <?php endif; ?>
