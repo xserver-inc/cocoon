@@ -180,7 +180,7 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });";
-  //マニフェストファイルの作成
+  //サービスワーカーファイルの作成
   $service_worker_file = get_theme_pwa_service_worker_js_file();
   wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
   //_v($service_worker);
@@ -202,6 +202,16 @@ self.addEventListener('fetch', function(event) {
     }
   }
 } else {
+  //マニフェストファイルの削除
+  $manifest_file = get_theme_pwa_manifest_json_file();
+  if (file_exists($manifest_file)) {
+    wp_delete_file($manifest_file);
+  }
+  //サービスワーカーファイルの削除
+  $service_worker_file = get_theme_pwa_service_worker_js_file();
+  if (file_exists($service_worker_file)) {
+    wp_delete_file($service_worker_file);
+  }
   //.htaccessからリダイレクトルールの削除
   remove_https_rewriterule_from_htacccess();
 }
