@@ -25,6 +25,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 				navigator.serviceWorker.register('<?php echo get_theme_pwa_service_worker_js_url(); ?>').then(function(registration) {
 					// Registration was successful
 					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+					registration.onupdatefound = function() {
+						registration.update();
+						console.log('ServiceWorker update successful'),
+					}
 				}, function(err) {
 					// registration failed
 					console.log('ServiceWorker registration failed: ', err);
@@ -46,4 +50,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <!-- アイコンの指定 -->
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_site_icon_url_l(); ?>" sizes="512x512">
 <!-- /PWA -->
+<?php else: ?>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.getRegistration()
+				.then(registration => {
+					registration.unregister();
+			})
+		}
+	}, false);
+</script>
 <?php endif; ?>
