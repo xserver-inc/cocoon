@@ -22,7 +22,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 	document.addEventListener('DOMContentLoaded', function() {
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('./cocoon-service-worker.js').then(function(registration) {
+				navigator.serviceWorker.register('<?php echo get_theme_pwa_service_worker_js_url(); ?>').then(function(registration) {
 					// Registration was successful
 					console.log('ServiceWorker registration successful with scope: ', registration.scope);
 					registration.onupdatefound = function() {
