@@ -243,57 +243,132 @@ self.addEventListener('install', function(event) {
   );
 });
 
-self.addEventListener('activate', function(event) {
-  var cacheWhitelist = [CACHE_NAME];
+// self.addEventListener('activate', function(event) {
+//   var cacheWhitelist = [CACHE_NAME];
 
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(cacheNames.map(function(cacheName) {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-      }));
-    })
-  );
+//   event.waitUntil(
+//     caches.keys().then(function(cacheNames) {
+//       return Promise.all(cacheNames.map(function(cacheName) {
+//           if (cacheWhitelist.indexOf(cacheName) === -1) {
+//             return caches.delete(cacheName);
+//           }
+//       }));
+//     })
+//   );
+// });
+
+// Activate
+self.addEventListener('activate', function(e) {
+	console.log('SuperPWA service worker activation');
+	e.waitUntil(
+		caches.keys().then(function(keyList) {
+			return Promise.all(keyList.map(function(key) {
+				if ( key !== CACHE_NAME ) {
+					console.log('SuperPWA old cache removed', key);
+					return caches.delete(key);
+				}
+			}));
+		})
+	);
+	return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(event) {
+// self.addEventListener('fetch', function(event) {
+
+//   // 管理画面はキャッシュを使用しない
+//   if (/\/wp-admin|\/wp-login|preview=true/.test(event.request.url)) {
+//     return;
+//   }
+
+//   // POSTの場合はキャッシュを使用しない
+//   if ('POST' === event.request.method) {
+//     return;
+//   }
+
+//   event.respondWith(
+//     caches.match(event.request).then(function(response) {
+//       if (response) {
+//         return response;
+//       }
+
+//       // リクエストのクローンを作成する
+//       let ReqClone = event.request.clone();
+//       return fetch(ReqClone).then(function(response) {
+//         if (!response ||
+//             response.status !== 200 ||
+//             response.type !== 'basic') {
+//           return response;
+//         }
+
+//         // レスポンスのクローンを作成する
+//         let ResClone = response.clone();
+//         caches.open(CACHE_NAME).then(function(cache) {
+//           cache.put(event.request, ResClone);
+//         });
+//         return response;
+//       });
+//     })
+//   );
+// });
+
+// Fetch
+self.addEventListener('fetch', function(e) {
 
   // 管理画面はキャッシュを使用しない
-  if (/\/wp-admin|\/wp-login|preview=true/.test(event.request.url)) {
+  if (/\/wp-admin|\/wp-login|preview=true/.test(e.request.url)) {
     return;
   }
 
   // POSTの場合はキャッシュを使用しない
-  if ('POST' === event.request.method) {
+  if ('POST' === e.request.method) {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        return response;
-      }
+	// Return if request url protocal isn't http or https
+	if ( ! e.request.url.match(/^(http|https):\/\//i) )
+		return;
 
-      // リクエストのクローンを作成する
-      let ReqClone = event.request.clone();
-      return fetch(ReqClone).then(function(response) {
-        if (!response ||
-            response.status !== 200 ||
-            response.type !== 'basic') {
-          return response;
-        }
+	// Return if request url is from an external domain.
+	if ( new URL(e.request.url).origin !== location.origin )
+		return;
 
-        // レスポンスのクローンを作成する
-        let ResClone = response.clone();
-        caches.open(CACHE_NAME).then(function(cache) {
-          cache.put(event.request, ResClone);
-        });
-        return response;
-      });
-    })
-  );
-});";
+	// For POST requests, do not use the cache. Serve offline page if offline.
+	if ( e.request.method !== 'GET' ) {
+		e.respondWith(
+			fetch(e.request).catch( function() {
+				return caches.match(offlinePage);
+			})
+		);
+		return;
+	}
+
+	// Revving strategy
+	if ( e.request.mode === 'navigate' && navigator.onLine ) {
+		e.respondWith(
+			fetch(e.request).then(function(response) {
+				return caches.open(CACHE_NAME).then(function(cache) {
+					cache.put(e.request, response.clone());
+					return response;
+				});
+			})
+		);
+		return;
+	}
+
+	e.respondWith(
+		caches.match(e.request).then(function(response) {
+			return response || fetch(e.request).then(function(response) {
+				return caches.open(CACHE_NAME).then(function(cache) {
+					cache.put(e.request, response.clone());
+					return response;
+				});
+			});
+		}).catch(function() {
+			//return caches.match(offlinePage);
+		})
+	);
+});
+";
     //サービスワーカーファイルの作成
     $service_worker_file = get_theme_pwa_service_worker_js_file();
     wp_filesystem_put_contents($service_worker_file, $service_worker, 0);
