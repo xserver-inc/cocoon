@@ -286,7 +286,7 @@ self.addEventListener('fetch', function(e) {
 	if ( e.request.method !== 'GET' ) {
 		e.respondWith(
 			fetch(e.request).catch( function() {
-				return caches.match(offlinePage);
+				return caches.match('/');
 			})
 		);
 		return;
@@ -314,7 +314,7 @@ self.addEventListener('fetch', function(e) {
 				});
 			});
 		}).catch(function() {
-			//return caches.match(offlinePage);
+			return caches.match('/');
 		})
 	);
 });
