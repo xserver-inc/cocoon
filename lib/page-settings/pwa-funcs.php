@@ -144,6 +144,7 @@ function manage_cocoon_pwa_files(){
     $short_name = get_double_quotation_escape(mb_substr(get_pwa_short_name(), 0, 12));
     $description = get_double_quotation_escape(get_pwa_description());
     $start_url = '/';
+    $offline_page = $start_url;
     //$start_url = '/?utm_source=homescreen&utm_medium=pwa';
     $display = get_pwa_display();
     $orientation = get_pwa_orientation();
