@@ -216,6 +216,7 @@ function manage_cocoon_pwa_files(){
     // '{$jquery_migrate_url}',
 
     //Service Worker
+    //参考：https://github.com/SuperPWA/Super-Progressive-Web-Apps/blob/master/public/sw.php @Super PWA GitHub repository
     $service_worker =
 "const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
@@ -243,20 +244,6 @@ self.addEventListener('install', function(event) {
   );
 });
 
-// self.addEventListener('activate', function(event) {
-//   var cacheWhitelist = [CACHE_NAME];
-
-//   event.waitUntil(
-//     caches.keys().then(function(cacheNames) {
-//       return Promise.all(cacheNames.map(function(cacheName) {
-//           if (cacheWhitelist.indexOf(cacheName) === -1) {
-//             return caches.delete(cacheName);
-//           }
-//       }));
-//     })
-//   );
-// });
-
 // Activate
 self.addEventListener('activate', function(e) {
 	console.log('SuperPWA service worker activation');
@@ -272,44 +259,6 @@ self.addEventListener('activate', function(e) {
 	);
 	return self.clients.claim();
 });
-
-// self.addEventListener('fetch', function(event) {
-
-//   // 管理画面はキャッシュを使用しない
-//   if (/\/wp-admin|\/wp-login|preview=true/.test(event.request.url)) {
-//     return;
-//   }
-
-//   // POSTの場合はキャッシュを使用しない
-//   if ('POST' === event.request.method) {
-//     return;
-//   }
-
-//   event.respondWith(
-//     caches.match(event.request).then(function(response) {
-//       if (response) {
-//         return response;
-//       }
-
-//       // リクエストのクローンを作成する
-//       let ReqClone = event.request.clone();
-//       return fetch(ReqClone).then(function(response) {
-//         if (!response ||
-//             response.status !== 200 ||
-//             response.type !== 'basic') {
-//           return response;
-//         }
-
-//         // レスポンスのクローンを作成する
-//         let ResClone = response.clone();
-//         caches.open(CACHE_NAME).then(function(cache) {
-//           cache.put(event.request, ResClone);
-//         });
-//         return response;
-//       });
-//     })
-//   );
-// });
 
 // Fetch
 self.addEventListener('fetch', function(e) {
