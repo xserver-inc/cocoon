@@ -86,6 +86,10 @@ function replace_anchor_links($the_content) {
 
         //noopenerの追加と削除
         $rels = get_noopener_rels( is_internal_link_noopener_enable(), $rels );
+        //target="_blank"のnoopener
+        if (!is_internal_link_noopener_enable() && includes_target_blalk($new_a)) {
+          $rels = get_noopener_rels( is_internal_target_blank_link_noopener_enable(), $rels );
+        }
 
         //noreferrerの追加と削除
         $rels = get_noreferrer_rels( is_internal_link_noreferrer_enable(), $rels );

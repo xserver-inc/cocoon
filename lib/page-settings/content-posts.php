@@ -57,6 +57,9 @@ update_theme_option(OP_INTERNAL_LINK_FOLLOW_TYPE);
 //noopener
 update_theme_option(OP_INTERNAL_LINK_NOOPENER_ENABLE);
 
+//target="_blank"のnoopener
+update_theme_option(OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE);
+
 //noreferrer
 update_theme_option(OP_INTERNAL_LINK_NOREFERRER_ENABLE);
 
