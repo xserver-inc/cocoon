@@ -21,9 +21,3 @@ http://www.gnu.org/licenses/gpl-2.0.html
 開発者
 ------
 わいひら： [yhira](https://github.com/yhira)
-
-使用ライブラリ
-------
-
-Plugin Update Checker（プラグイン自動アップデート）
-https://github.com/YahnisElsts/plugin-update-checker
