@@ -2492,4 +2492,9 @@ function remove_code_from_htacccess($reg){
 }
 endif;
 
-
+//テキスト内にtarget="_blank"が含まれるか
+if ( !function_exists( 'includes_target_blalk' ) ):
+function includes_target_blalk($target){
+  return includes_string($target, ' target="_blank"');
+}
+endif;

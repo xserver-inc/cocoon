@@ -107,7 +107,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_EXTERNAL_LINK_NOOPENER_ENABLE, is_external_link_noopener_enable(), __( 'noopenerを追加', THEME_NAME ));
-            generate_tips_tag(__( 'rel属性にnoopenerを追加します。', THEME_NAME ));
+            generate_tips_tag(__( 'rel属性にnoopenerを追加します。', THEME_NAME ));?>
+            <div class="indent<?php echo get_not_allowed_form_class(!is_external_link_noopener_enable(), true); ?>">
+              <?php
+              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, is_external_target_blank_link_noopener_enable(), __( 'target="_blank"の際はnoopenerを追加', THEME_NAME ));
+              generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoopenerを追加します。', THEME_NAME ));
+              ?>
+            </div>
+            <?php
             generate_checkbox_tag(OP_EXTERNAL_LINK_NOREFERRER_ENABLE, is_external_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));
             generate_checkbox_tag(OP_EXTERNAL_LINK_EXTERNAL_ENABLE, is_external_link_external_enable(), __( 'externalを追加', THEME_NAME ));

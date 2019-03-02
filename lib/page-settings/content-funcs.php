@@ -37,9 +37,14 @@ function get_external_link_open_type(){
   return get_theme_option(OP_EXTERNAL_LINK_OPEN_TYPE, 'default');
 }
 endif;
-if ( !function_exists( 'get_external_link_open_type_default' ) ):
-function get_external_link_open_type_default(){
+if ( !function_exists( 'is_external_link_open_type_default' ) ):
+function is_external_link_open_type_default(){
   return get_external_link_open_type() == 'default';
+}
+endif;
+if ( !function_exists( 'is_external_link_open_type_blank' ) ):
+function is_external_link_open_type_blank(){
+  return get_external_link_open_type() == 'blank';
 }
 endif;
 
@@ -61,6 +66,14 @@ define('OP_EXTERNAL_LINK_NOOPENER_ENABLE', 'external_link_noopener_enable');
 if ( !function_exists( 'is_external_link_noopener_enable' ) ):
 function is_external_link_noopener_enable(){
   return get_theme_option(OP_EXTERNAL_LINK_NOOPENER_ENABLE);
+}
+endif;
+
+//target="_blank"のnoopener
+define('OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE', 'external_target_blank_link_noopener_enable');
+if ( !function_exists( 'is_external_target_blank_link_noopener_enable' ) ):
+function is_external_target_blank_link_noopener_enable(){
+  return get_theme_option(OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, 1);
 }
 endif;
 
