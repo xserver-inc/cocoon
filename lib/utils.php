@@ -1178,23 +1178,26 @@ endif;
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
+
+    //相対パスの場合はURLを追加
+    if (preg_match('{^/wp-content/uploads/}', $image_url)) {
+      $image_url = site_url() . $image_url;
+    }
+
   //URLにサイトアドレスが含まれていない場合
   if (!includes_site_url($image_url)) {
     return false;
   }
-  // $wp_upload_dir = wp_upload_dir();
-  // $uploads_dir = $wp_upload_dir['basedir'];
-  // $uploads_url = $wp_upload_dir['baseurl'];
-  // $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
+
   $image_file = url_to_local($image_url);
-  //_v($image_file);
+
   if (file_exists($image_file)) {
     $imagesize = getimagesize($image_file);
     if ($imagesize) {
       $res = array();
       $res['width'] = $imagesize[0];
       $res['height'] = $imagesize[1];
-      //_v($res);
+
       return $res;
     }
   }
