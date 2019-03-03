@@ -61,21 +61,6 @@ add_image_size(THUMB320, THUMB320WIDTH, THUMB320HEIGHT, true);
 define('THUMB320WIDTH_DEF', W320);
 define('THUMB320HEIGHT_DEF', get_thumbnail_height(THUMB320WIDTH_DEF));
 
-// //本文レスポンシブ表示用
-// add_image_size('thumb320_raw', 320, 0, false);
-// add_image_size('thumb360_raw', 360, 0, false);
-// add_image_size('thumb375_raw', 375, 0, false);
-// add_image_size('thumb414_raw', 414, 0, false);
-// add_image_size('thumb600_raw', 600, 0, false);
-// add_image_size('thumb768_raw', 768, 0, false);
-//Retinaディスプレイ用
-//add_image_size('thumb640', 640, 360, true);
-
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_content', 'wptexturize' );
-// add_filter( 'the_content', 'wpautop' , 7);
-// add_filter( 'the_content', 'wptexturize' , 7);
-
 //縦型カード2列用の可変サムネイル
 if (is_entry_card_type_vertical_card_2()) {
   add_image_size(get_vertical_card_2_thumbnail_size(), get_vertical_card_2_width(), get_vertical_card_2_height(), true);
