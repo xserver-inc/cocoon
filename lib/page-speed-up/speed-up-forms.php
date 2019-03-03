@@ -124,7 +124,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- Lazy Load画像 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_LAZY_LOAD_ENABLE, __('遅延読み込み（β版）', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_LAZY_LOAD_ENABLE, __('遅延読み込み', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
