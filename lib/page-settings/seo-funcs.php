@@ -122,8 +122,6 @@ function get_the_date_tags(){
         $date_tags .= $time_update_date_tag;
       }
       break;
-
-      break;
   }
   return $date_tags;
 }

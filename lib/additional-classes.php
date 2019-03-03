@@ -308,7 +308,7 @@ function body_class_additional($classes) {
   }
 
   //投稿・固定ページの投稿日を表示するか
-  if (is_singular() && !is_post_date_visible()) {
+  if (is_singular() && !is_post_date_visible() && get_update_time()) {
     $classes[] = 'no-post-date';
   }
 
