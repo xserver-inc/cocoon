@@ -227,7 +227,7 @@ self.addEventListener('install', function(event) {
   // インストール処理
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
-      // console.log('Opened cache');
+      console.log('PWA cache opened');
       return cache.addAll(urlsToCache);
     })
   );
@@ -235,12 +235,12 @@ self.addEventListener('install', function(event) {
 
 // Activate
 self.addEventListener('activate', function(e) {
-	console.log('SuperPWA service worker activation');
+	console.log('PWA service worker activation');
 	e.waitUntil(
 		caches.keys().then(function(keyList) {
 			return Promise.all(keyList.map(function(key) {
 				if ( key !== CACHE_NAME ) {
-					console.log('SuperPWA old cache removed', key);
+					console.log('PWA old cache removed', key);
 					return caches.delete(key);
 				}
 			}));
@@ -262,15 +262,15 @@ self.addEventListener('fetch', function(e) {
     return;
   }
 
-	// Return if request url protocal isn't http or https
+	// URLプロトコルがhttpもしくはHTTPSでないときはキャッシュを使用しない
 	if ( ! e.request.url.match(/^(http|https):\/\//i) )
 		return;
 
-	// Return if request url is from an external domain.
+  // リクエストURLが外部ドメインだったときはキャッシュを使用しない
 	if ( new URL(e.request.url).origin !== location.origin )
 		return;
 
-	// For POST requests, do not use the cache. Serve offline page if offline.
+    // POSTリクエストのとき、Cacheを使用しないときオフラインキャッシュを返す（上にPOST用の処理があるので不要かも）
 	if ( e.request.method !== 'GET' ) {
 		e.respondWith(
 			fetch(e.request).catch( function() {
