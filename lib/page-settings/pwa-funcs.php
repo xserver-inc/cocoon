@@ -145,23 +145,14 @@ function manage_cocoon_pwa_files(){
     $description = get_double_quotation_escape(get_pwa_description());
     $start_url = '/';
     $offline_page = $start_url;
-    //$start_url = '/?utm_source=homescreen&utm_medium=pwa';
     $display = get_pwa_display();
     $orientation = get_pwa_orientation();
     $theme_color = get_pwa_theme_color();
     $background_color = get_pwa_background_color();
 
-    // $icon_url_s = get_site_icon_url(192);
-    // if (empty($icon_url_s)) {
-    //   $icon_url_s = DEFAULT_SITE_ICON_192;
-    // }
     $icon_url_s  = get_site_icon_url_s();
     $icon_size_s = get_site_icon_size_text($icon_url_s);
 
-    // $icon_url_l = get_site_icon_url(512);
-    // if (empty($icon_url_l)) {
-    //   $icon_url_l = DEFAULT_SITE_ICON_270;
-    // }
     $icon_url_l  = get_site_icon_url_l();
     $icon_size_l = '512x512';//get_site_icon_size_text($icon_url_l);
     $manifest =
@@ -212,9 +203,6 @@ function manage_cocoon_pwa_files(){
     $theme_child_js_url = THEME_CHILD_JS_URL;
     $font_awesome4_url = FONT_AWESOME4_URL;
     $font_aicomoon_url = FONT_AICOMOON_URL;
-
-    // '{$jquery_core_url}',
-    // '{$jquery_migrate_url}',
 
     //Service Worker
     //参考：https://github.com/SuperPWA/Super-Progressive-Web-Apps/blob/master/public/sw.php @Super PWA GitHub repository
@@ -286,7 +274,7 @@ self.addEventListener('fetch', function(e) {
 	if ( e.request.method !== 'GET' ) {
 		e.respondWith(
 			fetch(e.request).catch( function() {
-				return caches.match('/');
+				return caches.match('{$offline_page}');
 			})
 		);
 		return;
@@ -314,7 +302,7 @@ self.addEventListener('fetch', function(e) {
 				});
 			});
 		}).catch(function() {
-			return caches.match('/');
+			return caches.match('{$offline_page}');
 		})
 	);
 });
