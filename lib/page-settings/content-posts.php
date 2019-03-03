@@ -29,11 +29,11 @@ update_theme_option(OP_EXTERNAL_LINK_FOLLOW_TYPE);
 //noopener
 update_theme_option(OP_EXTERNAL_LINK_NOOPENER_ENABLE);
 
-//noreferrer
-update_theme_option(OP_EXTERNAL_LINK_NOREFERRER_ENABLE);
-
 //target="_blank"のnoopener
 update_theme_option(OP_EXTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE);
+
+//noreferrer
+update_theme_option(OP_EXTERNAL_LINK_NOREFERRER_ENABLE);
 
 //external
 update_theme_option(OP_EXTERNAL_LINK_EXTERNAL_ENABLE);
