@@ -117,7 +117,7 @@ if( !function_exists( 'update_custom_insert_post_data' ) ):
 function update_custom_insert_post_data( $data, $postarr ){
   $mydata = isset( $_POST['update_level'] ) ? $_POST['update_level'] : null;
 
-  if( $mydata === 'low' ){
+  if( $mydata === 'low' || $mydata == null ){
     unset( $data['post_modified'] );
     unset( $data['post_modified_gmt'] );
   }
@@ -140,12 +140,14 @@ function update_custom_insert_post_data( $data, $postarr ){
   }
   elseif( $mydata === 'del' ) {
     $data['post_modified'] = $data['post_date'];
+    $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
   }
+
   return $data;
 }
 endif;
 
-//SEO保存データ
+//データ保存
 add_action('save_post', 'update_custom_box_save_data');
 if ( !function_exists( 'update_custom_box_save_data' ) ):
 function update_custom_box_save_data(){
