@@ -237,6 +237,15 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
 
+//メール関連
+define('THEME_MAIL_CREDIT', "
+____________________________________
+WordPress Theme Cocoon
+https://wp-cocoon.com/
+Support forum
+https://wp-cocoon.com/community/
+____________________________________");
+
 
 //インポートファイルの読み込み
 require_once abspath(__FILE__).'_imports.php';
