@@ -126,7 +126,9 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
      $data_ad_layout.'
      data-ad-format="'.$format.'"></ins>
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+window.onload = function() {
+  (adsbygoogle = window.adsbygoogle || []).push({});
+}
 </script>';
   }
   //コードが設定されていない場合はそのままコードを出力する
