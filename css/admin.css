@@ -2874,8 +2874,6 @@ body.wp-admin { color: #444; }
   .admin-settings .demo .sbp-r { margin-left: auto; }
   .admin-settings .demo .speech-wrap.sbs-think.sbp-l { margin-right: 0; }
   .admin-settings .demo .speech-wrap.sbs-think.sbp-r { margin-left: 0; }
-  .admin-settings .demo .column-wrap { flex-direction: column; }
-  .admin-settings .demo .column-wrap .column-left, .admin-settings .demo .column-wrap .column-right { width: 100%; padding: 1em 0; }
   .admin-settings .demo .admin-panel { padding: 5px; font-size: 14px; line-height: 1.4; }
   .admin-settings .demo .admin-panel > div { margin: 3px; }
   .admin-settings .demo .apdt-pc-only { display: none; }
