@@ -457,11 +457,24 @@ endif;
 //楽天APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_rakuten_product' ) ):
   function error_log_to_rakuten_product($id, $no){
+    //エラーログに出力
     $msg = date_i18n("Y-m-d H:i:s").','.
            $id.','.
            $no.','.
            get_the_permalink().
            PHP_EOL;
     error_log($msg, 3, get_theme_rakuten_product_error_log_file());
+
+    //メールで送信
+    if (0) {
+      $subject = __( '楽天商品取得エラー', THEME_NAME );
+      $mail_msg =
+        __( '楽天商品リンクが取得できませんでした。', THEME_NAME ).PHP_EOL.
+        PHP_EOL.
+        'ID:'.$id.PHP_EOL.
+        'No.(Search):'.$no.PHP_EOL.
+        'URL:'.get_the_permalink();
+      wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
+    }
   }
   endif;

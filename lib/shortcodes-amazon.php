@@ -616,11 +616,11 @@ function error_log_to_amazon_product($asin){
          $asin.','.
          get_the_permalink().
          PHP_EOL;
-  $subject = __( 'Amazon商品取得エラー', THEME_NAME );
   error_log($msg, 3, get_theme_amazon_product_error_log_file());
 
   //メールで送信
   if (0) {
+    $subject = __( 'Amazon商品取得エラー', THEME_NAME );
     $mail_msg =
       __( 'Amazon商品リンクが取得できませんでした。', THEME_NAME ).PHP_EOL.
       PHP_EOL.
