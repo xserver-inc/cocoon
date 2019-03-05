@@ -610,10 +610,23 @@ endif;
 //PA-APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_amazon_product' ) ):
 function error_log_to_amazon_product($asin){
-  $msg = date_i18n("Y-m-d H:i:s").','.
+  //エラーログに出力
+  $date = date_i18n("Y-m-d H:i:s");
+  $msg = $date.','.
          $asin.','.
          get_the_permalink().
          PHP_EOL;
+  $subject = __( 'Amazon商品取得エラー', THEME_NAME );
   error_log($msg, 3, get_theme_amazon_product_error_log_file());
+
+  //メールで送信
+  if (0) {
+    $mail_msg =
+      __( 'Amazon商品リンクが取得できませんでした。', THEME_NAME ).PHP_EOL.
+      PHP_EOL.
+      'ASIN:'.$asin.PHP_EOL.
+      'URL:'.get_the_permalink();
+    wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
+  }
 }
 endif;

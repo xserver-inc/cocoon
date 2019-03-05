@@ -2400,6 +2400,13 @@ function get_wordpress_timezone(){
 }
 endif;
 
+//WordPressで設定されているメールアドレス取得する
+if ( !function_exists( 'get_wordpress_admin_email' ) ):
+function get_wordpress_admin_email(){
+  return get_option('admin_email');
+}
+endif;
+
 //固定表示されている投稿IDを取得する
 if ( !function_exists( 'get_sticky_post_ids' ) ):
 function get_sticky_post_ids(){
