@@ -106,6 +106,8 @@ function rakuten_product_link_shortcode($atts){
   $transient_id = get_rakuten_api_transient_id($cache_id);
   $transient_bk_id = get_rakuten_api_transient_bk_id($cache_id);
   $json_cache = get_transient( $transient_id );
+  //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
+  $cache_expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
 
   //キャッシュがある場合はキャッシュを利用する
   if ($json_cache) {
@@ -155,31 +157,27 @@ function rakuten_product_link_shortcode($atts){
   if ($json) {
     //ジェイソンのリクエスト結果チェック
     $is_request_success = !is_wp_error( $json ) && $json['response']['code'] === 200;
+    ///////////////////////////////////////////
+    // キャッシュ削除リンク
+    ///////////////////////////////////////////
+    $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
     //リクエストが成功した時タグを作成する
     if ($is_request_success) {
       $acquired_date = date_i18n(__( 'Y/m/d H:i', THEME_NAME ));
 
       //キャッシュの保存
       if (!$json_cache) {
-        //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-        $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
         $jb = $json['body'];
         if ($jb) {
           $jb = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $jb, 1);
             $json['body'] = $jb;
         }
-        //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
-        $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
         //楽天APIキャッシュの保存
-        set_transient($transient_id, $json, $expiration);
+        set_transient($transient_id, $json, $cache_expiration);
         //楽天APIバックアップキャッシュの保存
-        set_transient($transient_bk_id, $json, $expiration * 2);
+        set_transient($transient_bk_id, $json, $cache_expiration * 2);
       }
 
-      ///////////////////////////////////////////
-      // キャッシュ削除リンク
-      ///////////////////////////////////////////
-      $cache_delete_tag = get_cache_delete_tag('rakuten', $cache_id);
 
       $body = $json["body"];
       //ジェイソンの配列化
@@ -433,14 +431,20 @@ function rakuten_product_link_shortcode($atts){
       $error_description = $ebody->{'error_description'};
       switch ($error) {
         case 'wrong_parameter':
+        //楽天商品取得エラーの出力
+        if (!$json_cache) {
+          error_log_to_rakuten_product($id, $search);
+        }
         $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
+        //楽天APIキャッシュの保存
+        set_transient($transient_id, $json, $cache_expiration);
+        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
           break;
         default:
         $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
           break;
       }
       return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
-
     }
   } else {
     $error_message = __( 'JSONを取得できませんでした。接続環境に問題がある可能性があります。', THEME_NAME );
