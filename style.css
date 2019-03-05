@@ -4074,6 +4074,9 @@ label.screen-reader-text {
   clear: both;
   text-align: center;
 }
+.pager-links .post-page-numbers {
+  background-color: transparent;
+}
 .pager-links span {
   background-color: #eee;
 }
