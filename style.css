@@ -4995,7 +4995,6 @@ div.sbs-think .speech-balloon::after {
 .nwa .kaerebalink-link1,
 .nwa .tomarebalink-link1,
 .nwa .product-item-buttons {
-  clear: both;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -5004,7 +5003,7 @@ div.sbs-think .speech-balloon::after {
 .nwa .kaerebalink-link1 > *,
 .nwa .tomarebalink-link1 > *,
 .nwa .product-item-buttons > * {
-  width: 32%;
+  width: auto;
   margin: 0 .5% !important;
   flex: 1 1 auto;
 }
@@ -5055,7 +5054,6 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1,
   .tomarebalink-link1,
   .product-item-buttons {
-    clear: both;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -5064,7 +5062,7 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
   .product-item-buttons > * {
-    width: 32%;
+    width: auto;
     margin: 0 .5% !important;
     flex: 1 1 auto;
   }
