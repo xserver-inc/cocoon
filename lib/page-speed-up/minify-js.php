@@ -145,6 +145,9 @@ function tag_code_to_minify_js($buffer) {
     }//$res && isset($m[1])
   }//is_js_minify_enable()
 
+  //対症療法
+  $buffer = str_replace("'s our plugin doing the blocking", '', $buffer);
+
   return apply_filters('tag_code_to_minify_js', $buffer);
 }
 endif;
