@@ -416,11 +416,11 @@ function rakuten_product_link_shortcode($atts){
           return apply_filters('rakuten_product_link_tag', $tag);
         }
       } else {
+        $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
         //楽天商品取得エラーの出力
         if (!$json_cache) {
-          error_log_to_rakuten_product($id, $search);
+          error_log_to_rakuten_product($id, $search, $error_message);
         }
-        $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
       }
 
@@ -431,11 +431,11 @@ function rakuten_product_link_shortcode($atts){
       $error_description = $ebody->{'error_description'};
       switch ($error) {
         case 'wrong_parameter':
+        $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
         //楽天商品取得エラーの出力
         if (!$json_cache) {
-          error_log_to_rakuten_product($id, $search);
+          error_log_to_rakuten_product($id, $search, $error_message);
         }
-        $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $cache_expiration);
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
@@ -456,7 +456,7 @@ endif;
 
 //楽天APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_rakuten_product' ) ):
-  function error_log_to_rakuten_product($id, $no){
+  function error_log_to_rakuten_product($id, $no, $message = ''){
     //エラーログに出力
     $msg = date_i18n("Y-m-d H:i:s").','.
            $id.','.
@@ -466,14 +466,15 @@ if ( !function_exists( 'error_log_to_rakuten_product' ) ):
     error_log($msg, 3, get_theme_rakuten_product_error_log_file());
 
     //メールで送信
-    if (0) {
+    if (is_api_error_mail_enable()) {
       $subject = __( '楽天商品取得エラー', THEME_NAME );
       $mail_msg =
         __( '楽天商品リンクが取得できませんでした。', THEME_NAME ).PHP_EOL.
         PHP_EOL.
         'ID:'.$id.PHP_EOL.
         'No.(Search):'.$no.PHP_EOL.
-        'URL:'.get_the_permalink();
+        'URL:'.get_the_permalink().PHP_EOL.
+        'Message:'.$message;
       wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
     }
   }

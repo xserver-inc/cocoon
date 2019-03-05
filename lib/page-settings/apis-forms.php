@@ -228,4 +228,34 @@ $help_text = __( '取得方法', THEME_NAME );
   </div>
 </div>
 
+
+<!-- エラー -->
+<div id="api-error" class="postbox">
+  <h2 class="hndle"><?php _e( 'エラー設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'APIに関するエラー通知の設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+        <!-- メール通知 -->
+        <tr>
+          <th scope="row">
+            <?php
+            generate_label_tag(OP_API_ERROR_MAIL_ENABLE, __('メール通知', THEME_NAME) );
+            ?>
+          </th>
+          <td>
+          <?php
+            generate_checkbox_tag(OP_API_ERROR_MAIL_ENABLE , is_api_error_mail_enable(), __( '商品リンク切れ情報をメールで送信する', THEME_NAME ));
+            generate_tips_tag(__( 'APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もあります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 </div><!-- /.metabox-holder -->

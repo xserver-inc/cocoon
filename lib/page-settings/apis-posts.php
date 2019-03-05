@@ -84,3 +84,7 @@ update_theme_option(OP_MOSHIMO_YAHOO_ID);
 
 //APIキャッシュの保存期間
 update_theme_option(OP_API_CACHE_RETENTION_PERIOD);
+
+
+//APIエラーメールを送信する
+update_theme_option(OP_API_ERROR_MAIL_ENABLE);

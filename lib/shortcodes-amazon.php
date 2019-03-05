@@ -86,7 +86,7 @@ function get_amazon_itemlookup_xml($asin){
     $xml = simplexml_load_string($res);
     //取得できなかった商品のログ出力
     if (!property_exists($xml->Items, 'Item')) {
-      error_log_to_amazon_product($asin);
+      error_log_to_amazon_product($asin, __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
     }
     if (property_exists($xml->Error, 'Code')) {
       //バックアップキャッシュの確認
@@ -609,7 +609,7 @@ endif;
 
 //PA-APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_amazon_product' ) ):
-function error_log_to_amazon_product($asin){
+function error_log_to_amazon_product($asin, $message = ''){
   //エラーログに出力
   $date = date_i18n("Y-m-d H:i:s");
   $msg = $date.','.
@@ -619,13 +619,14 @@ function error_log_to_amazon_product($asin){
   error_log($msg, 3, get_theme_amazon_product_error_log_file());
 
   //メールで送信
-  if (0) {
+  if (is_api_error_mail_enable()) {
     $subject = __( 'Amazon商品取得エラー', THEME_NAME );
     $mail_msg =
       __( 'Amazon商品リンクが取得できませんでした。', THEME_NAME ).PHP_EOL.
       PHP_EOL.
       'ASIN:'.$asin.PHP_EOL.
-      'URL:'.get_the_permalink();
+      'URL:'.get_the_permalink().PHP_EOL.
+      'Message:'.$message;
     wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
   }
 }
