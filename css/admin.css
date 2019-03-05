@@ -637,6 +637,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
+.admin-settings .demo .ad-responsive ins { width: 100%; }
 .admin-settings .demo .ad-single-rectangle .ad-responsive, .admin-settings .demo .ad-dabble-rectangle .ad-responsive { max-width: 336px; margin: auto; }
 .admin-settings .demo .ad-dabble-rectangle .ad-wrap { display: flex; }
 .admin-settings .demo .ad-dabble-rectangle .ad-responsive { width: 336px; }
@@ -1799,6 +1800,7 @@ body.wp-admin { color: #444; }
 .admin-settings .demo .entry-content .ad-area { margin: 1em 0; }
 .admin-settings .demo .ad-label-invisible .ad-label { display: none; }
 .admin-settings .demo .ad-content-top { margin-top: 1em; }
+.admin-settings .demo .ad-responsive ins { width: 100%; }
 .admin-settings .demo .ad-single-rectangle .ad-responsive, .admin-settings .demo .ad-dabble-rectangle .ad-responsive { max-width: 336px; margin: auto; }
 .admin-settings .demo .ad-dabble-rectangle .ad-wrap { display: flex; }
 .admin-settings .demo .ad-dabble-rectangle .ad-responsive { width: 336px; }

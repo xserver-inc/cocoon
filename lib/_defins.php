@@ -256,7 +256,8 @@ WordPress Theme Cocoon
 https://wp-cocoon.com/
 Support forum
 https://wp-cocoon.com/community/
---------------------------------");
+--------------------------------
+※本メールアドレスは送信専用のため、返信できません。");
 
 
 //インポートファイルの読み込み
