@@ -473,3 +473,48 @@ function countdown_shortcode( $atts ){
   return get_countdown_days($to).$unit;
 }
 endif;
+
+//ナビメニューショートコード
+add_shortcode('navi', 'navi_menu_shortcode');
+if ( !function_exists( 'navi_menu_shortcode' ) ):
+function navi_menu_shortcode($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'type' => '',
+  ), $atts));
+  $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+  foreach ($menu_items as $menu):
+    $page_id = $menu->object_id;
+    $url = $menu->url;
+    //サムネイル画像URL
+    //thumbnail - 120*120 | thumb120 - 120*68 | thumb320 - 320x180
+    $thumbnail_id = get_post_thumbnail_id($page_id);
+    $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
+    //アイキャッチがない場合
+    if (!$image_attributes) {
+      $image_attributes[0] = get_no_image_120x68_url();
+      $image_attributes[1] = 120;
+      $image_attributes[2] = 68;
+    }
+    $content = get_page($page_id);
+    $title = $menu->title;
+    $text = $menu->description;
+    $osusume = $menu->classes[0];
+
+    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
+    if ($osusume == "1"){
+      $osusume = '<div class="ribbon ribbon-top-left ribboncolor1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
+    }
+    if ($osusume == "2"){
+      $osusume = '<div class="ribbon ribbon-top-left ribboncolor2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
+    }
+    //_v($image_attributes);
+    $outputdata .= <<<EOT
+<a href="$url" title="$title" class="entrycard-wrap a-wrap entrycard$type"><div class="entrycard-box cf">$osusume<figure class="entrycard-thumb"><img src="$image_attributes[0]" alt="$title" width="$image_attributes[1]" height="$image_attributes[2]"></figure><div class="entrycard-title">$title</div><div class="entrycard-text">$text</div></div></a>
+EOT;
+
+  endforeach;
+
+  return $outputdata;
+}
+endif;
