@@ -94,12 +94,12 @@ https://ja.wordpress.org/plugins/youtube-speedload/
 
 カスタマイズ参考
 ------
-Cocoon用記事一覧ショートコード HTML&CSS。トップの固定ページ化に。 | 中古ドメイン騎士 オーラン
+Cocoon用記事一覧ショートコード（中古ドメイン騎士 オーラン）
 https://www.orank.net/1972
 
 CSS参考
 ------
-nxworld（リボン参考）
+リボン参考（nxworld）
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
 https://codepen.io/nxworld/pen/oLdoWb
 
