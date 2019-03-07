@@ -94,9 +94,6 @@ CSS参考
 ------
 [Amazon商品リンクブックマークレット（naenote.net）](https://www.naenote.net/entry/cocoon-amazon-shortcode-javascript)
 
-ご協力（スペシャル サンクス）
-------
-
 プルリクエストでのご協力
 ------
 
