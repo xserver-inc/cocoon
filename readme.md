@@ -28,14 +28,14 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 使用ライブラリ
 ------
-php-html-css-js-minifier.php（CSS、JavaScript、HTMLの縮小化）
-https://gist.github.com/tovic/d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php
+[php-html-css-js-minifier.php（CSS、JavaScript、HTMLの縮小化）]
+(https://gist.github.com/tovic/d7b310dea3b33e4732c0#file-php-html-css-js-minifier-php)
 
-Punycode（ピュニコード変換）
-https://github.com/true/php-punycode
+[Punycode（ピュニコード変換）]
+(https://github.com/true/php-punycode)
 
-Theme Update Checker Library（テーマ自動アップデート）
-https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/
+[Theme Update Checker Library（テーマ自動アップデート）]
+(https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/)
 
 Open Graph Protocol helper for PHP
 https://github.com/scottmac/opengraph
