@@ -29,7 +29,10 @@ function get_the_content_all_scripts($the_content) {
         includes_string($script, 'amazon-adsystem.co') ||
         //Googleトレンド埋め込み
         includes_string($script, 'ssl.gstatic.com') ||
-        includes_string($script, 'trends.google.co');
+        includes_string($script, 'trends.google.co') ||
+        //もしもモーションウィジェット
+        includes_string($script, 'MafRakutenWidgetParam') ||
+        includes_string($script, '/rakuten/widget.js');
         $is_exclude = apply_filters('cocoon_exclude_script_movement_from_content', $is_exclude, $script);
       //除外設定
       if ($is_exclude) {
