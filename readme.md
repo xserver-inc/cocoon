@@ -4,6 +4,7 @@ Cocoon
 Cocoonは、モバイル・高速化・SEO最適化済みのWordpressテーマです。
 
 Cocoonテーマの詳細は以下のURLを参照してください。
+
 https://wp-cocoon.com/
 
 テーマファイルカスタマイズ
@@ -34,82 +35,63 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 [Theme Update Checker Library（テーマ自動アップデート）](https://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/comment-page-8/)
 
-Open Graph Protocol helper for PHP
-https://github.com/scottmac/opengraph
+[Open Graph Protocol helper for PHP](https://github.com/scottmac/opengraph)
 
 使用リソース
 ------
-highlight.js
-https://highlightjs.org/
+(highlight.js)[https://highlightjs.org/]
 
-Lightbox
-http://lokeshdhakar.com/projects/lightbox2/
+(Lightbox)[http://lokeshdhakar.com/projects/lightbox2/]
 
-Lity
-http://sorgalla.com/lity/
+[Lity](http://sorgalla.com/lity/)
 
-baguetteBox
-http://feimosi.github.io/baguetteBox.js/
+[baguetteBox](http://feimosi.github.io/baguetteBox.js/)
 
-Masonry
-http://masonry.desandro.com/
+[Masonry](http://masonry.desandro.com/)
 
-slicknav
-http://slicknav.io/
+[slicknav](http://slicknav.io/)
 
-slick
-http://kenwheeler.github.io/slick/
+[slick](http://kenwheeler.github.io/slick/)
 
-stickyfill
-https://github.com/wilddeer/stickyfill
+[stickyfill](https://github.com/wilddeer/stickyfill)
 
-Font Awesome 4
-https://fontawesome.com/v4.7.0/
+[Font Awesome 4](https://fontawesome.com/v4.7.0/)
 
-IcoMoon
-https://icomoon.io/app/
+[IcoMoon](https://icomoon.io/app/)
 
-ScrollHint
-https://appleple.github.io/scroll-hint/
+[ScrollHint](https://appleple.github.io/scroll-hint/)
 
-Lozad.js
-https://github.com/ApoorvSaxena/lozad.js
+[Lozad.js](https://github.com/ApoorvSaxena/lozad.js)
 
-IntersectionObserver polyfill
-https://github.com/w3c/IntersectionObserver/tree/master/polyfill
+[IntersectionObserver polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
 
-clipboard.js
-https://clipboardjs.com/
+[clipboard.js](https://clipboardjs.com/)
 
 コードを参考にしたプラグイン
 ------
-Auto Post Thumbnail
-https://ja.wordpress.org/plugins/auto-post-thumbnail/
+[Auto Post Thumbnail](https://ja.wordpress.org/plugins/auto-post-thumbnail/)
 
-Youtube SpeedLoad
-https://ja.wordpress.org/plugins/youtube-speedload/
+[Youtube SpeedLoad](https://ja.wordpress.org/plugins/youtube-speedload/)
 
 カスタマイズ参考
 ------
-Cocoon用記事一覧ショートコード（中古ドメイン騎士 オーラン）
-https://www.orank.net/1972
+[Cocoon用記事一覧ショートコード（中古ドメイン騎士 オーラン）](https://www.orank.net/1972)
+
+[年齢を表示するショートコード（fullnote）](https://fullnoteblog.com/age-short-code/)
+
+[カウントダウンタイマを設置するショートコード（fullnote）](https://fullnoteblog.com/count-down-timer/)
 
 CSS参考
 ------
-リボン参考（nxworld）
-https://www.nxworld.net/tips/pure-css-corner-ribbon.html
-https://codepen.io/nxworld/pen/oLdoWb
+[リボン参考（nxworld）](https://www.nxworld.net/tips/pure-css-corner-ribbon.html) [(CodePen)](https://codepen.io/nxworld/pen/oLdoWb)
 
 ご協力（スペシャル サンクス）
 ------
 
 ### プルリクエストでのご協力
 
-technote-space
-https://github.com/technote-space
+[technote-space](https://github.com/technote-space)
 
-31o3
-https://github.com/31o3
+[31o3](https://github.com/31o3)
 
-Daisuke Sato
-https://github.com/Tiryoh
+[Daisuke Sato](https://github.com/Tiryoh)
