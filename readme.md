@@ -85,10 +85,15 @@ CSS参考
 ------
 [リボン参考（nxworld）](https://www.nxworld.net/tips/pure-css-corner-ribbon.html) [(CodePen)](https://codepen.io/nxworld/pen/oLdoWb)
 
+ブックマークレット参考
+------
+[Amazon商品リンクブックマークレット（naenote.net）](https://www.naenote.net/entry/cocoon-amazon-shortcode-javascript)
+
 ご協力（スペシャル サンクス）
 ------
 
-### プルリクエストでのご協力
+プルリクエストでのご協力
+------
 
 [technote-space](https://github.com/technote-space)
 
