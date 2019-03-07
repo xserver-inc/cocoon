@@ -39,9 +39,9 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 使用リソース
 ------
-(highlight.js)[https://highlightjs.org/]
+[highlight.js](https://highlightjs.org/)
 
-(Lightbox)[http://lokeshdhakar.com/projects/lightbox2/]
+[Lightbox](http://lokeshdhakar.com/projects/lightbox2/)
 
 [Lity](http://sorgalla.com/lity/)
 
