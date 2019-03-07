@@ -296,7 +296,7 @@ function wp_targeted_link_rel_custom( $rel_value, $link_html ){
   // if( !includes_string( $link_html, home_url() ) ){
   //   $rel_value = 'noopener';
   // }
-  $rel_value = str_replace(' noreferrer', '', $rel_value);
+  $rel_value = str_replace('noopener noreferrer', '', $rel_value);
   return $rel_value;
 }
 endif;
