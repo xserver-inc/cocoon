@@ -17,6 +17,10 @@ https://wp-cocoon.com/terms-of-use/
 
 ですので、子テーマを利用したカスタマイズをおすすめします。
 
+子テーマはこちらからダウンロードできます。
+
+https://github.com/yhira/cocoon-child
+
 テーマライセンス
 ----------
 Cocoonテーマは、100％GPLです。
