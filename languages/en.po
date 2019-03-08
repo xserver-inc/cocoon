@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-03-08 23:16+0900\n"
-"PO-Revision-Date: 2019-03-08 23:37+0900\n"
+"PO-Revision-Date: 2019-03-08 23:40+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -825,7 +825,7 @@ msgstr "Title:"
 
 #: lib/admin.php:212
 msgid "本文："
-msgstr "Body"
+msgstr "Body:"
 
 #: lib/admin.php:248
 msgid "管理メニュー"
@@ -904,10 +904,8 @@ msgstr "Backup"
 
 #: lib/admin.php:387 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
 #: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:315
-#, fuzzy
-#| msgid "キャッシュ"
 msgid "キャッシュ削除"
-msgstr "Cache Settings"
+msgstr "Delete Cache"
 
 #: lib/admin.php:508
 msgid "カテゴリー検索"
@@ -927,20 +925,16 @@ msgid "カテゴリ色"
 msgstr "Category color"
 
 #: lib/category.php:156
-#, fuzzy
-#| msgid "茶色"
 msgid "背景色"
-msgstr "Site selection background color"
+msgstr "Background color"
 
 #: lib/category.php:160
 msgid "カテゴリの色を指定します。"
 msgstr "Select category key color."
 
 #: lib/category.php:165
-#, fuzzy
-#| msgid "文字数"
 msgid "文字色"
-msgstr "Character count"
+msgstr "Text color"
 
 #: lib/category.php:169
 #, fuzzy
@@ -1052,17 +1046,15 @@ msgid "H:i:s"
 msgstr "g:i a"
 
 #: lib/comments.php:104
-#, fuzzy, php-format
-#| msgid ""
-#| "名前:<cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></"
-#| "cite> :"
+#, php-format
 msgid ""
 "<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-"
 "author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-"
 "author-separator\"> :</span>"
 msgstr ""
-"Name:<cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></"
-"cite> :"
+"<span class=\"comment-author-label\">Name</span><cite class=\"fn comment-author"
+"\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-"
+"separator\"> :</span>"
 
 #: lib/comments.php:106
 msgid "投稿日："
