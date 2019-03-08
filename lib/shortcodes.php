@@ -485,6 +485,7 @@ function navi_menu_shortcode($atts){
     'name' => '', // メニュー名
     'type' => '',
   ), $atts));
+  $outputdata = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
   foreach ($menu_items as $menu):
     $page_id = $menu->object_id;
