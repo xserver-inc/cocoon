@@ -329,6 +329,7 @@ function age_shortcode( $atts ){
 endif;
 
 //相対的な時間経過（年）を取得するショートコード
+//参考：https://fullnoteblog.com/age-short-code/
 add_shortcode('yago', 'yago_shortcode');
 if ( !function_exists( 'yago_shortcode' ) ):
 function yago_shortcode( $atts ){
@@ -457,7 +458,8 @@ function get_countdown_days( $to ) {
 }
 endif;
 
-//相対的な時間経過を取得するショートコード
+//カウントダウンショートコード
+//参考：https://fullnoteblog.com/count-down-timer/
 add_shortcode('countdown', 'countdown_shortcode');
 if ( !function_exists( 'countdown_shortcode' ) ):
 function countdown_shortcode( $atts ){
@@ -475,6 +477,7 @@ function countdown_shortcode( $atts ){
 endif;
 
 //ナビメニューショートコード
+//参考：https://www.orank.net/1972
 add_shortcode('navi', 'navi_menu_shortcode');
 if ( !function_exists( 'navi_menu_shortcode' ) ):
 function navi_menu_shortcode($atts){
