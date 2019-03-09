@@ -6423,6 +6423,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   content: '\f007';
 }
 
+.no-border {
+  border: none;
+}
+
+.no-after::after {
+  display: none;
+}
+
 .display-block {
   display: block;
 }
@@ -8085,14 +8093,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 14pt;
   }
 }
-.no-border {
-  border: none;
-}
-
-.no-after::after {
-  display: none;
-}
-
 /************************************
 ** ソースコード
 ************************************/

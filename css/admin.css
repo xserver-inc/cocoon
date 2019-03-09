@@ -1515,6 +1515,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-download::before { content: '\f019'; }
 .admin-settings .demo .fab-coffee::before { content: '\f0f4'; }
 .admin-settings .demo .fab-user::before { content: '\f007'; }
+.admin-settings .demo .no-border { border: none; }
+.admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
 .admin-settings .demo .display-none { display: none; }
 .admin-settings .demo .fz-12px { font-size: 12px; }
@@ -2699,6 +2701,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-download::before { content: '\f019'; }
 .admin-settings .demo .fab-coffee::before { content: '\f0f4'; }
 .admin-settings .demo .fab-user::before { content: '\f007'; }
+.admin-settings .demo .no-border { border: none; }
+.admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
 .admin-settings .demo .display-none { display: none; }
 .admin-settings .demo .notice-area-wrap { display: block; text-decoration: none; }
@@ -3034,8 +3038,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #container h2 { font-size: 18.5pt; }
   .admin-settings .demo #container h3 { font-size: 16pt; }
   .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; } }
-.admin-settings .demo .no-border { border: none; }
-.admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo pre { padding: 10px; }
 .admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
 .admin-settings .demo .search-result .title { color: #1a0dab; font-weight: bold; text-decoration: none; }

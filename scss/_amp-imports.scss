@@ -83,7 +83,14 @@
 //Font Awesomeのアイコン
 @import "fontawesome-before";
 
+//優先度を高くしたい
+.no-border{
+  border: none;
+}
 
+.no-after::after{
+  display: none;
+}
 
 .display-block{
   display: block;

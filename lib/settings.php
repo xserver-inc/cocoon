@@ -18,7 +18,7 @@ add_theme_support('post-thumbnails');
 ///////////////////////////////////////////
 // サムネイルサイズ
 ///////////////////////////////////////////
-//100px
+//100px 管理画面記事リスト一覧のサムネイル
 define('THUMB100', 'thumb100');
 define('THUMB100WIDTH', get_square_thumbnail_width(100));
 define('THUMB100HEIGHT', get_square_thumbnail_height(THUMB100WIDTH));
@@ -41,7 +41,6 @@ define('THUMB120HEIGHT', get_thumbnail_height(THUMB120WIDTH));
 add_image_size(THUMB120, THUMB120WIDTH, THUMB120HEIGHT, true);
 define('THUMB120WIDTH_DEF', W120);
 define('THUMB120HEIGHT_DEF', get_thumbnail_height(THUMB120WIDTH_DEF));
-
 
 //160px 関連記事デフォルト・関連記事4列
 define('W160', 160);
