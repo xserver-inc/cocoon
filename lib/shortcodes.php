@@ -488,19 +488,32 @@ function navi_menu_shortcode($atts){
   $outputdata = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
   foreach ($menu_items as $menu):
-    $page_id = $menu->object_id;
+    //_v($menu);
+    $object_id = $menu->object_id;
     $url = $menu->url;
+    $object = $menu->object;
     //サムネイル画像URL
     //thumbnail - 120*120 | thumb120 - 120*68 | thumb320 - 320x180
-    $thumbnail_id = get_post_thumbnail_id($page_id);
-    $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
-    //アイキャッチがない場合
-    if (!$image_attributes) {
+
+
+    if ($object == 'post' || $object == 'page') {
+      $thumbnail_id = get_post_thumbnail_id($object_id);
+      $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
+    } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
+      $image_url = get_category_eye_catch($object_id);
+      $image_url = get_image_sized_url($image_url, 120, 68);
+      if (file_exists(url_to_local($image_url))) {
+        $image_attributes[0] = $image_url;
+        $image_attributes[1] = 120;
+        $image_attributes[2] = 68;
+      }
+    }
+    if (!$image_attributes) {//アイキャッチがない場合
       $image_attributes[0] = get_no_image_120x68_url();
       $image_attributes[1] = 120;
       $image_attributes[2] = 68;
     }
-    $content = get_page($page_id);
+    //$content = get_page($page_id);
     $title = $menu->title;
     $text = $menu->description;
     $osusume = $menu->classes[0];
