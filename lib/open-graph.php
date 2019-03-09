@@ -99,8 +99,8 @@ class OpenGraphGetter implements Iterator
     // if (get_option('WPLANG') == 'ja') {
     //   mb_language("Japanese");
     // }
-    //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
-    $HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
+    $HTML = @mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8, EUC-JP, SJIS');
+    //$HTML = mb_convert_encoding($HTML,'HTML-ENTITIES', 'ASCII, JIS, UTF-8');
 		$doc->loadHTML($HTML);
 
     //タイトルタグからタイトル情報を取得
