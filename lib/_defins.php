@@ -25,8 +25,8 @@ define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.local' ? 1 : 0);
 
 //デバッグモード
 define('DEBUG_MODE', DEBAG_VALU);
-define('DEBUG_CACHE_ENABLE', 1);
-define('DEBUG_ADMIN_DEMO_ENABLE', 1/*!DEBUG_MODE*/);
+define('DEBUG_CACHE_ENABLE', 1);//キャッシュ機能を有効にするか（def：1）
+define('DEBUG_ADMIN_DEMO_ENABLE', 1);//設定ページのプレビューを有効にするか（def：1）
 
 
 define('THEME_JS', THEME_NAME.'-js');

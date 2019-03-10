@@ -84,18 +84,22 @@ function get_amazon_itemlookup_xml($asin){
   if ($res) {
     //xml取得
     $xml = simplexml_load_string($res);
-    //取得できなかった商品のログ出力
-    if (!property_exists($xml->Items, 'Item')) {
-      error_log_to_amazon_product($asin, __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
-    }
-    if (property_exists($xml->Error, 'Code')) {
-      //バックアップキャッシュの確認
-      $xml_cache = get_transient( $transient_bk_id );
-      if ($xml_cache && DEBUG_CACHE_ENABLE) {
-        return $xml_cache;
+
+    if ($xml) {
+      //取得できなかった商品のログ出力
+      if (!property_exists($xml->Items, 'Item')) {
+        error_log_to_amazon_product($asin, __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
       }
-      return $res;
+      if (property_exists($xml->Error, 'Code')) {
+        //バックアップキャッシュの確認
+        $xml_cache = get_transient( $transient_bk_id );
+        if ($xml_cache && DEBUG_CACHE_ENABLE) {
+          return $xml_cache;
+        }
+        return $res;
+      }
     }
+
     if (DEBUG_CACHE_ENABLE) {
       //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
       $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
@@ -205,6 +209,11 @@ function amazon_product_link_shortcode($atts){
     // xml取得
     $xml = simplexml_load_string($res);
     //_v($xml);
+
+    if (!$xml) {
+      $error_message = __( 'XMLエラー。', THEME_NAME );
+      return wrap_product_item_box($error_message, 'amazon');
+    }
 
     if (property_exists($xml->Error, 'Code')) {
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
@@ -596,10 +605,10 @@ function amazon_product_link_shortcode($atts){
           '</div>'.
           $product_item_admin_tag.
         '</div>';
-    } else {
+    } else {//property_exists($xml->Items, 'Item')
       $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
       $tag = wrap_product_item_box($error_message);
-    }
+    }//property_exists($xml->Items, 'Item')
 
     return apply_filters('amazon_product_link_tag', $tag);
   }
