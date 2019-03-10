@@ -92,6 +92,8 @@ Cocoonテーマの再配布もしくは、Cocoonを基盤として作成した�
 
 CSS参考
 ------
+[ボックス参考（naenote.net）](https://www.naenote.net/entry/cocoon-box-customize)
+
 [リボン参考（nxworld）](https://www.nxworld.net/tips/pure-css-corner-ribbon.html) [(CodePen)](https://codepen.io/nxworld/pen/oLdoWb)
 
 ブックマークレット参考
