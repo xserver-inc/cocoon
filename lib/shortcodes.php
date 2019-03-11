@@ -485,8 +485,10 @@ function navi_menu_shortcode($atts){
     'name' => '', // メニュー名
     'type' => '',
   ), $atts));
-  $outputdata = null;
+
+  $tag = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+
   foreach ($menu_items as $menu):
     //_v($menu);
     $object_id = $menu->object_id;
@@ -525,13 +527,13 @@ function navi_menu_shortcode($atts){
     if ($osusume == "2"){
       $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
     }
+
     $navi_card_class = '';
-    _v($type);
     if ($type) {
       $navi_card_class = ' navi-card-type-'.$type;
     }
     //_v($image_attributes);
-    $outputdata .=  <<<EOT
+    $tag .=  <<<EOT
 <a href="$url" title="$title" class="navi-card-wrap a-wrap$navi_card_class">
   <div class="navi-card-box cf">
     $osusume
@@ -548,6 +550,11 @@ EOT;
 
   endforeach;
 
-  return $outputdata;
+  //ラッパーの取り付け
+  if ($menu_items) {
+    $tag = '<div class="navi-cards">'.$tag.'</div>';
+  }
+
+  return apply_filters('cocoon_navi_card_tag', $tag);
 }
 endif;

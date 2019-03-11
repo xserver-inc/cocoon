@@ -6102,12 +6102,9 @@ div.fb-like-mobile {
   border-bottom: 2px dotted #f3f4f5;
 }
 .navi-card-type-1:first-of-type {
-  padding-bottom: 2px;
   border-top: 2px solid #f3f4f5;
-  border-bottom: 2px dotted #f3f4f5;
 }
 .navi-card-type-1:last-of-type {
-  padding-bottom: 2px;
   border-bottom: 2px solid #f3f4f5;
 }
 
@@ -6136,14 +6133,17 @@ div.fb-like-mobile {
   margin: 6px 10px;
   width: 120px;
 }
+.navi-card-wrap .navi-card-content {
+  margin: 0 24px 0 140px;
+}
 .navi-card-wrap .navi-card-title {
-  margin: 2px 24px 6px 140px;
+  margin: 2px 0 6px;
   font-size: 0.9em;
   color: #333;
   font-weight: 700;
 }
 .navi-card-wrap .navi-card-text {
-  margin: 0px 24px 2px 140px;
+  margin: 0px 0 2px;
   font-size: 0.7em;
   color: #777;
 }

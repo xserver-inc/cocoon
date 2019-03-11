@@ -15,15 +15,15 @@
 }
 
 .navi-card-type-1 {
-  &:first-of-type {
-    padding-bottom: 2px;
-    border-top: 2px solid $xx_thin;
-    border-bottom: 2px dotted $xx_thin;
-  }
+
   padding-bottom: 2px;
   border-bottom: 2px dotted $xx_thin;
+
+  &:first-of-type {
+    border-top: 2px solid $xx_thin;
+  }
+
   &:last-of-type {
-    padding-bottom: 2px;
     border-bottom: 2px solid $xx_thin;
   }
 }
@@ -54,14 +54,17 @@
     margin: 6px 10px;
     width: 120px;
   }
+  .navi-card-content{
+    margin: 0 24px 0 140px;
+  }
   .navi-card-title {
-    margin: 2px 24px 6px 140px;
+    margin: 2px 0 6px;
     font-size: 0.9em;
     color: $text_color;
     font-weight: 700;
   }
   .navi-card-text {
-    margin: 0px 24px 2px 140px;
+    margin: 0px 0 2px;
     font-size: 0.7em;
     color: $pallid_text_color;
   }
