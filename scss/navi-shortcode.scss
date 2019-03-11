@@ -1,5 +1,5 @@
 /*Cocoon用記事ボックス*/
-.entrycard-wrap {
+.navi-card-wrap {
   &.a-wrap {
     position: relative;
     padding: 5px 3px;
@@ -7,13 +7,14 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  .entrycard-box {
-    padding: 4px;
-    background-color: $white;
-  }
 }
 
-.entrycard1 {
+.navi-card-box {
+  background-color: $white;
+  padding: 0;
+}
+
+.navi-card-type-1 {
   &:first-of-type {
     padding-bottom: 2px;
     border-top: 2px solid $xx_thin;
@@ -27,12 +28,12 @@
   }
 }
 
-.entrycard2 .entrycard-box {
+.navi-card-type-2 .navi-card-box {
   border-radius: 5px;
   border: 1px solid $thin;
 }
 
-.entrycard-wrap {
+.navi-card-wrap {
   &:after {
     display: block;
     content: '';
@@ -48,18 +49,18 @@
     transform: rotate(45deg);
     margin-top: -3px;
   }
-  .entrycard-thumb {
+  .navi-card-thumb {
     float: left;
     margin: 6px 10px;
     width: 120px;
   }
-  .entrycard-title {
+  .navi-card-title {
     margin: 2px 24px 6px 140px;
     font-size: 0.9em;
     color: $text_color;
     font-weight: 700;
   }
-  .entrycard-text {
+  .navi-card-text {
     margin: 0px 24px 2px 140px;
     font-size: 0.7em;
     color: $pallid_text_color;
@@ -79,6 +80,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   height: 80px;
   overflow: hidden;
   position: absolute;
+  z-index: 1;
   &:before, &:after {
     position: absolute;
     z-index: 0;
@@ -100,11 +102,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   }
 }
 
-.ribboncolor1 span {
+.ribbon-color-1 span {
   background-color: #ea7e7e;
 }
 
-.ribboncolor2 span {
+.ribbon-color-2 span {
   background-color: #7e95ea;
 }
 

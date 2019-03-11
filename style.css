@@ -6084,38 +6084,39 @@ div.fb-like-mobile {
   }
 }
 /*Cocoon用記事ボックス*/
-.entrycard-wrap.a-wrap {
+.navi-card-wrap.a-wrap {
   position: relative;
   padding: 5px 3px;
   line-height: 1.3;
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.entrycard-wrap .entrycard-box {
-  padding: 4px;
+
+.navi-card-box {
   background-color: #fff;
+  padding: 0;
 }
 
-.entrycard1 {
+.navi-card-type-1 {
   padding-bottom: 2px;
   border-bottom: 2px dotted #f3f4f5;
 }
-.entrycard1:first-of-type {
+.navi-card-type-1:first-of-type {
   padding-bottom: 2px;
   border-top: 2px solid #f3f4f5;
   border-bottom: 2px dotted #f3f4f5;
 }
-.entrycard1:last-of-type {
+.navi-card-type-1:last-of-type {
   padding-bottom: 2px;
   border-bottom: 2px solid #f3f4f5;
 }
 
-.entrycard2 .entrycard-box {
+.navi-card-type-2 .navi-card-box {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-.entrycard-wrap:after {
+.navi-card-wrap:after {
   display: block;
   content: '';
   position: absolute;
@@ -6130,18 +6131,18 @@ div.fb-like-mobile {
   transform: rotate(45deg);
   margin-top: -3px;
 }
-.entrycard-wrap .entrycard-thumb {
+.navi-card-wrap .navi-card-thumb {
   float: left;
   margin: 6px 10px;
   width: 120px;
 }
-.entrycard-wrap .entrycard-title {
+.navi-card-wrap .navi-card-title {
   margin: 2px 24px 6px 140px;
   font-size: 0.9em;
   color: #333;
   font-weight: 700;
 }
-.entrycard-wrap .entrycard-text {
+.navi-card-wrap .navi-card-text {
   margin: 0px 24px 2px 140px;
   font-size: 0.7em;
   color: #777;
@@ -6159,6 +6160,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   height: 80px;
   overflow: hidden;
   position: absolute;
+  z-index: 1;
 }
 .ribbon:before, .ribbon:after {
   position: absolute;
@@ -6180,11 +6182,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   text-align: center;
 }
 
-.ribboncolor1 span {
+.ribbon-color-1 span {
   background-color: #ea7e7e;
 }
 
-.ribboncolor2 span {
+.ribbon-color-2 span {
   background-color: #7e95ea;
 }
 

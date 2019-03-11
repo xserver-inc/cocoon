@@ -520,14 +520,30 @@ function navi_menu_shortcode($atts){
 
     // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
     if ($osusume == "1"){
-      $osusume = '<div class="ribbon ribbon-top-left ribboncolor1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
+      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
     }
     if ($osusume == "2"){
-      $osusume = '<div class="ribbon ribbon-top-left ribboncolor2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
+      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
+    }
+    $navi_card_class = '';
+    _v($type);
+    if ($type) {
+      $navi_card_class = ' navi-card-type-'.$type;
     }
     //_v($image_attributes);
-    $outputdata .= <<<EOT
-<a href="$url" title="$title" class="entrycard-wrap a-wrap entrycard$type"><div class="entrycard-box cf">$osusume<figure class="entrycard-thumb"><img src="$image_attributes[0]" alt="$title" width="$image_attributes[1]" height="$image_attributes[2]"></figure><div class="entrycard-title">$title</div><div class="entrycard-text">$text</div></div></a>
+    $outputdata .=  <<<EOT
+<a href="$url" title="$title" class="navi-card-wrap a-wrap$navi_card_class">
+  <div class="navi-card-box cf">
+    $osusume
+    <figure class="navi-card-thumb">
+      <img src="$image_attributes[0]" alt="$title" width="$image_attributes[1]" height="$image_attributes[2]">
+    </figure>
+    <div class="navi-card-content">
+      <div class="navi-card-title">$title</div>
+      <div class="navi-card-text">$text</div>
+    </div>
+  </div>
+</a>
 EOT;
 
   endforeach;
