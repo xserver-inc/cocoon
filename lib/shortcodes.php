@@ -542,7 +542,7 @@ function navi_menu_shortcode($atts){
     </figure>
     <div class="navi-card-content">
       <div class="navi-card-title">$title</div>
-      <div class="navi-card-text">$text</div>
+      <div class="navi-card-snippet">$text</div>
     </div>
   </div>
 </a>

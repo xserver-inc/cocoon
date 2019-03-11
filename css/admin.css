@@ -1452,7 +1452,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
 .admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
 .admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-text { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
+.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
@@ -2639,7 +2639,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
 .admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
 .admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-text { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
+.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
