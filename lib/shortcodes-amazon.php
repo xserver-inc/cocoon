@@ -204,14 +204,13 @@ function amazon_product_link_shortcode($atts){
   $res = get_amazon_itemlookup_xml($asin);
   //_v($res);
   if ($res) {
-    //&nbsp;の置換
-    $res = str_ireplace('&nbsp;', '', $res);
     // xml取得
     $xml = simplexml_load_string($res);
     //_v($xml);
-
     if (!$xml) {
       $error_message = __( 'XMLエラー。', THEME_NAME );
+      $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
+      wp_filesystem_put_contents($xml_file, $res);
       return wrap_product_item_box($error_message, 'amazon');
     }
 
