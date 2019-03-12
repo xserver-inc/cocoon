@@ -237,7 +237,7 @@ function amazon_product_link_shortcode($atts){
       //   $error_message .= get_message_box_tag($admin_message, 'warning-box fz-14px');
       // }
       // return wrap_product_item_box($error_message);
-      $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
+      $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
       $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
       return get_amazon_admin_error_message_tag($associate_url, $admin_message);
