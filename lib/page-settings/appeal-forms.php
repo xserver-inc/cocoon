@@ -14,13 +14,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="inside">
 
     <p><?php _e( 'ヘッダー下でアピールしたい内容を入力します。', THEME_NAME ) ?></p>
-    <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
-    <div class="demo appeal-area-demo" style="">
-      <?php get_template_part('tmp/appeal') ?>
-    </div>
-    <?php
-    generate_tips_tag(__( 'デモの表示は実際の表示と多少変わる可能性があります。', THEME_NAME ));
-    ?>
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_appeal', true)): ?>
+      <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
+      <div class="demo appeal-area-demo" style="">
+        <?php get_template_part('tmp/appeal') ?>
+      </div>
+      <?php
+      generate_tips_tag(__( 'デモの表示は実際の表示と多少変わる可能性があります。', THEME_NAME ));
+      ?>
+    <?php endif; ?>
 
     <table class="form-table">
       <tbody>

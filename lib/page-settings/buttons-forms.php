@@ -17,6 +17,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+      <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_buttons', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -29,6 +31,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- トップへ戻るボタンの表示 -->
         <tr>

@@ -17,6 +17,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_front', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -33,6 +35,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )) ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- フロントページタイトル  -->
         <tr>
@@ -97,6 +100,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_singular', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -130,6 +135,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- 投稿・固定ページタイトル  -->
         <tr>
@@ -197,6 +203,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_category', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -234,6 +242,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があります。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- カテゴリーページタイトル  -->
         <tr>

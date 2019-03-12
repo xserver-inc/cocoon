@@ -17,6 +17,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_singular_categories_tags', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -29,6 +31,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_tips_tag(__( 'デモはランダムです。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- カテゴリ・タグ表示 -->
         <tr>
@@ -66,6 +69,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_singular_related_entries', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -80,6 +85,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_tips_tag(__( 'デモの関連記事はランダムです。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- 表示 -->
         <tr>
@@ -233,6 +239,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_singular_pager_post_navi', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -247,6 +256,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- 表示 -->
         <tr>
