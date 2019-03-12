@@ -661,7 +661,7 @@ endif;
 //Amazonエラーの際に出力するリンクを
 if ( !function_exists( 'get_amazon_error_product_link' ) ):
 function get_amazon_error_product_link($url){
-  return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a><br><br>';
+  return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 }
 endif;
 
@@ -670,7 +670,7 @@ if ( !function_exists( 'get_amazon_admin_error_message_tag' ) ):
 function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = null){
   $error_message = get_amazon_error_product_link($url);
   if (is_user_administrator()) {
-    $error_message .= get_admin_errormessage_box_tag($message);
+    $error_message .= '<br><br>'.get_admin_errormessage_box_tag($message);
   }
   return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
 }
