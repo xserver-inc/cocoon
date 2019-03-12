@@ -137,21 +137,6 @@
   }
 }
 
-// .pis-m .image-content{
-//   left: 170px;
-// }
-
-// .pis-s .image-content{
-//   left: 110px;
-// }
-// @media screen and (max-width: 480px){
-//   .image-thumb .image-content{
-//     left: 0;
-//   }
-// }
-
-
-//.booklink-image img, .kaerebalink-image img {}
 .booklink-info,
 .kaerebalink-info,
 .tomarebalink-info,
@@ -159,22 +144,6 @@
   line-height: 125%;
   width: 100%;
 }
-// .booklink-name,
-// .kaerebalink-name,
-// .tomarebalink-name,
-// .product-item-title {
-//   margin: 0 0 4px 0;
-//   // a{
-//   //   color: #0066cc;
-//   //   text-decoration: underline;
-//   //   &:hover{
-//   //     color: #FF9900;
-//   //   }
-//   // }
-//   // >a{
-//   //   font-size: 16px;
-//   // }
-// }
 
 .product-item-snippet{
   font-size: 0.8em;
@@ -224,7 +193,7 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 
   .booklink-box,
   .kaerebalink-box,
@@ -256,16 +225,6 @@
     padding-left: 25px;
     width: 100%;
   }
-
-  // .booklink-name,
-  // .kaerebalink-name,
-  // .tomarebalink-name,
-  // .product-item-title {
-  //   margin: 0 0 24px 0;
-  //   // >a{
-  //   //   font-size: 16px;
-  //   // }
-  // }
 
   .booklink-powered-date, .kaerebalink-powered-date, .tomarebalink-powered-date {
     margin: 6px 0 0;
