@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'ページ全体の表示に関する設定です。', THEME_NAME ) ?></p>
 
-    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_all', true)): ?>
+    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_all', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
       <div class="demo iframe-standard-demo all-demo">
         <iframe id="all-demo" class="iframe-demo" src="<?php echo home_url(); ?>" width="1000" height="400"></iframe>

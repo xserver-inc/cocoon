@@ -66,7 +66,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       </div>
 
-      <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_mobile', true)): ?>
+      <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_mobile', true)): ?>
       <div style="width: 380px">
           <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
           <div class="demo mobile-demo" style="width: 370px;">
