@@ -19,11 +19,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
      ?>
     </p>
 
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_notice', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo notice-area-demo">
       <?php //通知エリア
       get_template_part('tmp/notice'); ?>
     </div>
+    <?php endif; ?>
 
     <table class="form-table">
       <tbody>

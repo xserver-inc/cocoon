@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <div class="metabox-holder">
 
 <!-- リスト -->
-<div id="single-page" class="postbox">
+<div id="index-page" class="postbox">
   <h2 class="hndle"><?php _e( 'リスト設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -17,6 +17,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
+        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_index', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -33,6 +35,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <!-- <p><?php _e( '※タイル表示はうまくプレビューできないかも。今のところ原因不明。', THEME_NAME ) ?></p> -->
           </td>
         </tr>
+        <?php endif; ?>
 
         <!-- 並び順 -->
         <tr>

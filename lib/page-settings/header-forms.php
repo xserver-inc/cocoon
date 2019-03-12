@@ -15,10 +15,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'ヘッダーの表示設定を行います。', THEME_NAME ) ?></p>
 
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_header', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo header-demo">
       <?php get_template_part('tmp/header-container'); ?>
     </div>
+    <?php endif; ?>
 
     <table class="form-table">
       <tbody>

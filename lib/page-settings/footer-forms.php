@@ -14,10 +14,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <div class="inside">
 
     <p><?php _e( 'フッターやクレジット表示設定です。', THEME_NAME ) ?></p>
+
+    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_footer', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div id="footer" class="demo">
       <?php get_template_part('tmp/footer-bottom'); ?>
     </div>
+    <?php endif; ?>
 
     <table class="form-table">
       <tbody>
