@@ -227,16 +227,20 @@ function amazon_product_link_shortcode($atts){
     $xml = simplexml_load_string($res);
 
     if (property_exists($xml->Error, 'Code')) {
-      $error_message = get_amazon_error_product_link($associate_url);
+      // $error_message = get_amazon_error_product_link($associate_url);
 
-      if (is_user_administrator()) {
-        $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
-        $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-        $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
-        $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。少し時間おいてリロードしてください。それでも改善されない場合は、以下の不具合フォーラムにエラーメッセージとともにご連絡ください。', THEME_NAME ).'</span><br><a href="" target="_blank">'.__( '不具合報告フォーラム', THEME_NAME ).'</a>';
-        $error_message .= get_message_box_tag($admin_message, 'warning-box fz-14px');
-      }
-      return wrap_product_item_box($error_message);
+      // if (is_user_administrator()) {
+      //   $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
+      //   $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
+      //   $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
+      //   $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
+      //   $error_message .= get_message_box_tag($admin_message, 'warning-box fz-14px');
+      // }
+      // return wrap_product_item_box($error_message);
+      $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
+      $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
+      $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
+      return get_amazon_admin_error_message_tag($associate_url, $admin_message);
     }
 
     //var_dump($item);
