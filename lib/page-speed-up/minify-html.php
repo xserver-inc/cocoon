@@ -219,16 +219,9 @@ endif;
 if ( !function_exists( 'convert_lazy_load_tag' ) ):
 function convert_lazy_load_tag($the_content, $media){
   //AMP・アクセス解析ページでは実行しない
-  if (is_amp() || is_analytics_access_php_page()) {
+  if (is_amp() || is_analytics_access_php_page() || is_feed()) {
     return $the_content;
   }
-  // //挿入するクラス
-  // $classes = 'lozad lozad-'.$media;
-  // //既に置換後なら処理しない
-  // if (includes_string($the_content, $classes)) {
-  //   return $the_content;
-  // }
-  //_v($_SERVER['REQUEST_URI']);
 
   $is_img = ($media == 'img');
   if (!$is_img) {
