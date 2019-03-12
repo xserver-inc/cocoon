@@ -210,7 +210,11 @@ function amazon_product_link_shortcode($atts){
 
   $res = get_amazon_itemlookup_xml($asin);
   if ($res === false) {//503エラーの場合
-    $error_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
+    $error_message = get_amazon_error_product_link($associate_url);
+    if (is_user_administrator()) {
+      $admin_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
+      $error_message .= get_admin_errormessage_box_tag($admin_message);
+    }
     // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
     // wp_filesystem_put_contents($xml_file, $res);
     return wrap_product_item_box($error_message, 'amazon');
@@ -222,14 +226,14 @@ function amazon_product_link_shortcode($atts){
     $xml = simplexml_load_string($res);
 
     if (property_exists($xml->Error, 'Code')) {
-      $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
+      $error_message = get_amazon_error_product_link($associate_url);
 
       if (is_user_administrator()) {
         $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
         $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
         $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
         $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。少し時間おいてリロードしてください。それでも改善されない場合は、以下の不具合フォーラムにエラーメッセージとともにご連絡ください。', THEME_NAME ).'</span><br><a href="" target="_blank">'.__( '不具合報告フォーラム', THEME_NAME ).'</a>';
-        $error_message .= '<br><br>'.get_message_box_tag($admin_message, 'warning-box fz-14px');
+        $error_message .= get_message_box_tag($admin_message, 'warning-box fz-14px');
       }
       return wrap_product_item_box($error_message);
     }
@@ -647,3 +651,10 @@ function error_log_to_amazon_product($asin, $message = ''){
   }
 }
 endif;
+
+//Amazonエラーの際に出力するリンクを
+if ( !function_exists( 'get_amazon_error_product_link' ) ):
+  function get_amazon_error_product_link($url){
+    return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a><br><br>';
+  }
+  endif;
