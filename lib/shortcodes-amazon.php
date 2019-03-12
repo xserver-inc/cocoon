@@ -95,7 +95,7 @@ function get_amazon_itemlookup_xml($asin){
     if ($xml) {
       //取得できなかった商品のログ出力
       if (!property_exists($xml->Items, 'Item')) {
-        error_log_to_amazon_product($asin, __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
+        error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
       }
       if (property_exists($xml->Error, 'Code')) {
         //バックアップキャッシュの確認
@@ -210,14 +210,15 @@ function amazon_product_link_shortcode($atts){
 
   $res = get_amazon_itemlookup_xml($asin);
   if ($res === false) {//503エラーの場合
-    $error_message = get_amazon_error_product_link($associate_url);
-    if (is_user_administrator()) {
-      $admin_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
-      $error_message .= get_admin_errormessage_box_tag($admin_message);
-    }
-    // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
-    // wp_filesystem_put_contents($xml_file, $res);
-    return wrap_product_item_box($error_message, 'amazon');
+    // $error_message = get_amazon_error_product_link($associate_url);
+    // if (is_user_administrator()) {
+    //   $admin_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
+    //   $error_message .= get_admin_errormessage_box_tag($admin_message);
+    // }
+    // // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
+    // // wp_filesystem_put_contents($xml_file, $res);
+    // return wrap_product_item_box($error_message, 'amazon');
+    return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));
   }
 
   //_v($res);
@@ -245,8 +246,12 @@ function amazon_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!property_exists($xml->Items, 'Item')) {
-      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-      return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
+      // $error_message = get_amazon_error_product_link($associate_url);
+      // if (is_user_administrator()) {
+      //   $error_message .= get_admin_errormessage_box_tag(AMAZON_ASIN_ERROR_MESSAGE);
+      // }
+      // return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
+      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
     }
 
     if (property_exists($xml->Items, 'Item')) {
@@ -616,8 +621,9 @@ function amazon_product_link_shortcode($atts){
           $product_item_admin_tag.
         '</div>';
     } else {//property_exists($xml->Items, 'Item')
-      $error_message = __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME );
-      $tag = wrap_product_item_box($error_message);
+      // $error_message = AMAZON_ASIN_ERROR_MESSAGE;
+      // $tag = wrap_product_item_box($error_message);
+      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
     }//property_exists($xml->Items, 'Item')
 
     return apply_filters('amazon_product_link_tag', $tag);
@@ -654,7 +660,18 @@ endif;
 
 //Amazonエラーの際に出力するリンクを
 if ( !function_exists( 'get_amazon_error_product_link' ) ):
-  function get_amazon_error_product_link($url){
-    return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a><br><br>';
+function get_amazon_error_product_link($url){
+  return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a><br><br>';
+}
+endif;
+
+//AmazonのASINエラータグ取得
+if ( !function_exists( 'get_amazon_admin_error_message_tag' ) ):
+function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = null){
+  $error_message = get_amazon_error_product_link($url);
+  if (is_user_administrator()) {
+    $error_message .= get_admin_errormessage_box_tag($message);
   }
-  endif;
+  return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
+}
+endif;

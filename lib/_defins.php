@@ -237,6 +237,8 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
 
+//Amazon ASINエラー
+define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
 //メール関連
 define('THEME_MAIL_CREDIT', "
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[PR]━┓
