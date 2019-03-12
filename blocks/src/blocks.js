@@ -28,7 +28,7 @@ import './old/micro-balloon/block.js';
 
 // import './demo/test/block.js';
 // import './demo/info-box-drop/block.js';
-// import './demo/balloon/block.js';
+import './demo/balloon/block.js';
 // import './demo/blank-box-demo/block.js';
 // import './demo/test-as-shortcode-text/block.js';
 // import './demo/test-severside-as-shortcode-input/block.js';
