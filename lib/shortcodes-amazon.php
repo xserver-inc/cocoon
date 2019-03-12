@@ -79,6 +79,13 @@ function get_amazon_itemlookup_xml($asin){
 
   $res = get_http_content($request_url);
   //var_dump($res);
+  // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
+  // $res = wp_filesystem_get_contents($xml_file);
+
+  //503エラーの場合はfalseを返す
+  if (includes_string($res, 'Website Temporarily Unavailable')) {
+    return false;
+  }
 
   //_v($res);
   if ($res) {
@@ -202,17 +209,17 @@ function amazon_product_link_shortcode($atts){
 
 
   $res = get_amazon_itemlookup_xml($asin);
+  if ($res === false) {//503エラーの場合
+    $error_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
+    // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
+    // wp_filesystem_put_contents($xml_file, $res);
+    return wrap_product_item_box($error_message, 'amazon');
+  }
+
   //_v($res);
   if ($res) {
     // xml取得
     $xml = simplexml_load_string($res);
-    //_v($xml);
-    if (!$xml) {
-      $error_message = __( 'XMLエラー。', THEME_NAME );
-      $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
-      wp_filesystem_put_contents($xml_file, $res);
-      return wrap_product_item_box($error_message, 'amazon');
-    }
 
     if (property_exists($xml->Error, 'Code')) {
       $error_message = '<a href="'.$associate_url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
