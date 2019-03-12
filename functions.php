@@ -300,30 +300,3 @@ function wp_targeted_link_rel_custom( $rel_value, $link_html ){
   return $rel_value;
 }
 endif;
-
-// add_filter('cocoon_setting_preview_404', '__false');
-// add_filter('cocoon_setting_preview_all', '__false');
-// add_filter('cocoon_setting_preview_appeal', '__false');
-// add_filter('cocoon_setting_preview_internal_blogcard', '__false');
-// add_filter('cocoon_setting_preview_external_blogcard', '__false');
-// add_filter('cocoon_setting_preview_buttons', '__false');
-// add_filter('cocoon_setting_preview_carousel', '__false');
-// add_filter('cocoon_setting_preview_code', '__false');
-// add_filter('cocoon_setting_preview_columns', '__false');
-// add_filter('cocoon_setting_preview_footer', '__false');
-// add_filter('cocoon_setting_preview_header', '__false');
-// add_filter('cocoon_setting_preview_images', '__false');
-// add_filter('cocoon_setting_preview_index', '__false');
-// add_filter('cocoon_setting_preview_mobile', '__false');
-// add_filter('cocoon_setting_preview_notice', '__false');
-// add_filter('cocoon_setting_preview_singular_categories_tags', '__false');
-// add_filter('cocoon_setting_preview_singular_related_entries', '__false');
-// add_filter('cocoon_setting_preview_singular_pager_post_navi', '__false');
-// add_filter('cocoon_setting_preview_skins', '__false');
-// add_filter('cocoon_setting_preview_sns_follow', '__false');
-// add_filter('cocoon_setting_preview_sns_share_bottom', '__false');
-// add_filter('cocoon_setting_preview_sns_share_top', '__false');
-// add_filter('cocoon_setting_preview_title_front', '__false');
-// add_filter('cocoon_setting_preview_title_singular', '__false');
-// add_filter('cocoon_setting_preview_title_category', '__false');
-// add_filter('cocoon_setting_preview_toc', '__false');
