@@ -17,7 +17,7 @@ remove_action( 'init', 'wpcom_youtube_embed_crazy_url_init' );
 add_filter('embed_oembed_html', 'youtube_embed_oembed_html', 1, 3);
 if ( !function_exists( 'youtube_embed_oembed_html' ) ):
 function youtube_embed_oembed_html ($cache, $url, $attr) {
-  if (is_amp()) {
+  if (is_amp() || is_feed()) {
     return $cache;
   }
 
