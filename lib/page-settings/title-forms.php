@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_front', true)): ?>
+        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_front', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -101,7 +101,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_singular', true)): ?>
+        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_singular', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
@@ -204,7 +204,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_category', true)): ?>
+        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_title_category', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">

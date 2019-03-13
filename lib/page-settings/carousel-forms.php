@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <p><?php _e( 'ヘッダー下でカルーセル表示させたい投稿の設定を行います。', THEME_NAME );
              echo get_help_page_tag('https://wp-cocoon.com/carousel-setting/') ?></p>
 
-    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_carousel', true)): ?>
+    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_carousel', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo carousel-area-demo" style="">
       <?php get_template_part('tmp/carousel'); ?>

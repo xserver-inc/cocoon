@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'メインカラムの幅、余白幅、枠線の設定です。', THEME_NAME ) ?></p>
 
-    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_columns', true)): ?>
+    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_columns', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
       <div class="demo iframe-standard-demo column-demo">
         <?php

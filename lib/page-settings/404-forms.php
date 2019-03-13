@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'ページが見つからなかった場合の404ページの表示設定です。', THEME_NAME ) ?></p>
 
-    <?php if(DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_404', true)): ?>
+    <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_404', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
       <div class="demo iframe-standard-demo page-404-demo">
         <?php
