@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-03-08 23:16+0900\n"
-"PO-Revision-Date: 2019-03-09 19:15+0900\n"
+"PO-Revision-Date: 2019-03-14 23:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -797,7 +797,7 @@ msgstr "Widgets"
 
 #: lib/admin.php:309 tmp/mobile-menu-buttons.php:19 tmp/navi-drawer.php:14
 msgid "メニュー"
-msgstr "Menus"
+msgstr "Menu"
 
 #: lib/admin.php:316
 msgid "テーマの編集"
