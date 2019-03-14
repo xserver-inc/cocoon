@@ -165,7 +165,7 @@ function amazon_product_link_shortcode($atts){
   }
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
-  $description = sanitize_shortcode_value($desc);
+  $description = $desc;
   if ($catalog !== null) {
     $samples = $catalog;
   }
