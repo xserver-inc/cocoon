@@ -7,7 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( is_analytics() ) {
+//タグマネージャIDが設定されているときは計測しない
+if ( is_analytics() && !get_google_tag_manager_tracking_id() ) {
   //AMP用Analyticsトラッキングコードを設定している場合
   $tracking_id = get_google_analytics_tracking_id();
   $after_title = '[AMP]';

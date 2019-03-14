@@ -197,6 +197,16 @@ function get_image_sized_url($url, $w, $h){
   return $sized_url;
 }
 endif;
+if ( !function_exists( 'get_no_image_large_url' ) ):
+function get_no_image_large_url(){
+  if ($no_image_url = get_no_image_url()) {
+    $res = $no_image_url;
+  } else {
+    $res = NO_IMAGE_LARGE;
+  }
+  return $res;
+}
+endif;
 if ( !function_exists( 'get_no_image_320x180_url' ) ):
 function get_no_image_320x180_url(){
   if ($no_image_url = get_no_image_url()) {

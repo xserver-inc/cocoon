@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //HTMLソースコードの縮小化
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($buffer) {
-  if (is_admin()) {
+  if (is_admin() || is_feed()) {
     return $buffer;
   }
   //何故かa開始タグがpタグでラップされるのを修正
@@ -83,6 +83,7 @@ function is_minify_page(){
   if (is_server_request_uri_backup_download_php()) return false;
   if (is_robots_txt_page()) return false;
   if (is_analytics_access_php_page()) return false;
+  if (is_feed()) return false;
   return true;
 }
 endif;
