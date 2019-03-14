@@ -4,6 +4,7 @@
 *
 * @package SmartNews
 */
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -126,10 +127,6 @@ do_action( 'rss_tag_pre', 'rss2' );
 		<?php endif; ?>
 		<?php
 		$content = get_the_content_feed('rss2');
-		//ブログカードを通常リンクに置換。SmartNewsの仕様？
-		/*
-		$content = preg_replace('{<a .+?href="(.+?)".+?title="(.+?)".*?>.+?class="blogcard.+?</a>}i', '<a href="$1">$2</a>', $content);
-		*/
 		//aリンクは含めない。SmartNewsの仕様？リンクが多くあると以下のエラーが出る
 		//item.content:encoded の記事内に多くのリンクが含まれています - item.title: 記事のタイトル
 		//https://publishers.smartnews.com/ja/smartformat/specification_rss/
