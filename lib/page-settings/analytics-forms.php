@@ -98,7 +98,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_textbox_tag(OP_GOOGLE_ANALYTICS_TRACKING_ID, get_google_analytics_tracking_id(), __( 'UA-00000000-0', THEME_NAME ));
-            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
+            generate_tips_tag(__( 'Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキングIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキングIDとしても利用します', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/google-analytics/'));
             ?>
           </td>
         </tr>
