@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //HTMLソースコードの縮小化
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($buffer) {
-  if (is_admin()) {
+  if (is_admin() || is_feed()) {
     return $buffer;
   }
   //何故かa開始タグがpタグでラップされるのを修正
