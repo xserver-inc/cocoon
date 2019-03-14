@@ -7,7 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_analytics() && !is_amp()): ?>
+//タグマネージャIDが設定されているときは計測しない
+if (is_analytics() && !get_google_tag_manager_tracking_id() && !is_amp()): ?>
   <?php //Google Analytics(gtag.js)
   if ( $ga_tracking_id = get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->

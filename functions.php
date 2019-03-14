@@ -300,3 +300,11 @@ function wp_targeted_link_rel_custom( $rel_value, $link_html ){
   return $rel_value;
 }
 endif;
+
+add_action( 'do_feed_smartnews', 'do_feed_smartnews' );
+if ( !function_exists( 'do_feed_smartnews' ) ):
+function do_feed_smartnews() {
+  $feed_template = get_template_directory() . '/tmp/smartnews.php';
+  load_template( $feed_template );
+}
+endif;
