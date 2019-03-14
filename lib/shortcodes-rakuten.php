@@ -50,7 +50,7 @@ function rakuten_product_link_shortcode($atts){
 
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
-  $description = sanitize_shortcode_value($desc);
+  $description = $desc;
 
   $shop = sanitize_shortcode_value($shop);
   $sort = sanitize_shortcode_value($sort);
