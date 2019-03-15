@@ -14,12 +14,12 @@ const { PanelBody, SelectControl, BaseControl } = wp.components;
 const { Fragment } = wp.element;
 const DEFAULT_NAME = __( '未入力', THEME_NAME );
 
-registerBlockType( 'cocoon-blocks/balloon-box', {
+registerBlockType( 'cocoon-blocks/balloon-ex-box', {
 
-  title: __( '吹き出し', THEME_NAME ),
-  icon: 'admin-comments',
+  title: __( '吹き出しEX', THEME_NAME ),
+  icon: 'format-chat',
   category: THEME_NAME + '-block',
-  description: __( '登録されている吹き出しを挿入できます。', THEME_NAME ),
+  description: __( '登録されている吹き出しのオプションを変更できます。', THEME_NAME ),
 
   attributes: {
     content: {
@@ -31,10 +31,22 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
       type: 'string',
       default: '0',
     },
+    style: {
+      type: 'string',
+      default: 'stn',
+    },
+    position: {
+      type: 'string',
+      default: 'l',
+    },
+    iconstyle: {
+      type: 'string',
+      default: 'cb',
+    },
   },
 
   edit( { attributes, setAttributes } ) {
-    const { content, index } = attributes;
+    const { content, index, style, position, iconstyle } = attributes;
 
     //console.log(speechBaloons);
     var balloons = [];
@@ -62,15 +74,79 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
               options={ balloons }
             />
 
+            <SelectControl
+              label={ __( '吹き出しスタイル', THEME_NAME ) }
+              value={ style }
+              onChange={ ( value ) => setAttributes( { style: value } ) }
+              options={ [
+                {
+                  value: 'stn',
+                  label: __( 'デフォルト', THEME_NAME ),
+                },
+                {
+                  value: 'flat',
+                  label: __( 'フラット', THEME_NAME ),
+                },
+                {
+                  value: 'line',
+                  label: __( 'LINE風', THEME_NAME ),
+                },
+                {
+                  value: 'think',
+                  label: __( '考え事', THEME_NAME ),
+                },
+              ] }
+            />
+
+            <SelectControl
+              label={ __( '人物位置', THEME_NAME ) }
+              value={ position }
+              onChange={ ( value ) => setAttributes( { position: value } ) }
+              options={ [
+                {
+                  value: 'l',
+                  label: __( '左', THEME_NAME ),
+                },
+                {
+                  value: 'r',
+                  label: __( '右', THEME_NAME ),
+                },
+              ] }
+            />
+
+            <SelectControl
+              label={ __( 'アイコンスタイル', THEME_NAME ) }
+              value={ iconstyle }
+              onChange={ ( value ) => setAttributes( { iconstyle: value } ) }
+              options={ [
+                {
+                  value: 'sn',
+                  label: __( '四角（枠線なし）', THEME_NAME ),
+                },
+                {
+                  value: 'sb',
+                  label: __( '四角（枠線あり）', THEME_NAME ),
+                },
+                {
+                  value: 'cn',
+                  label: __( '丸（枠線なし）', THEME_NAME ),
+                },
+                {
+                  value: 'cb',
+                  label: __( '丸（枠線あり）', THEME_NAME ),
+                },
+              ] }
+            />
+
           </PanelBody>
         </InspectorControls>
 
         <div
           className={
             "speech-wrap sb-id-" + speechBaloons[index].id +
-            " sbs-" + speechBaloons[index].style +
-            " sbp-" + speechBaloons[index].position +
-            " sbis-" + speechBaloons[index].iconindex +
+            " sbs-" + style +
+            " sbp-" + position +
+            " sbis-" + iconstyle +
             " cf" +
             BLOCK_CLASS
           }>
@@ -100,14 +176,14 @@ registerBlockType( 'cocoon-blocks/balloon-box', {
   },
 
   save( { attributes } ) {
-    const { content, index } = attributes;
+    const { content, index, style, position, iconstyle } = attributes;
     return (
         <div
           className={
             "speech-wrap sb-id-" + speechBaloons[index].id +
-            " sbs-" + speechBaloons[index].style +
-            " sbp-" + speechBaloons[index].position +
-            " sbis-" + speechBaloons[index].iconindex +
+            " sbs-" + style +
+            " sbp-" + position +
+            " sbis-" + iconstyle +
             " cf" +
             BLOCK_CLASS
           }>
