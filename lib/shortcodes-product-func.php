@@ -341,7 +341,7 @@ if ( !function_exists( 'get_item_description_tag' ) ):
 function get_item_description_tag($description){
   $description_tag = null;
   if ($description) {
-    $description_tag = '<div class="product-item-description">'.esc_html($description).'</div>';
+    $description_tag = '<div class="product-item-description">'.htmlspecialchars_decode($description).'</div>';
   }
   return apply_filters('get_item_description_tag', $description_tag);
 }
