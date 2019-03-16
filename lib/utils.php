@@ -2508,3 +2508,10 @@ function includes_target_blalk($target){
   return includes_string($target, ' target="_blank"');
 }
 endif;
+
+//XMLのエスケープ
+if ( !function_exists( 'xmlspecialchars' ) ):
+function xmlspecialchars($string){
+  return preg_replace ('/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u', ' ', $string);
+}
+endif;
