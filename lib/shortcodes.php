@@ -503,7 +503,7 @@ function navi_menu_shortcode($atts){
       $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
     } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
       $image_url = get_category_eye_catch($object_id);
-      $image_url_120 = get_image_sized_url($image_url, 120, 68);
+      $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
       $image_attributes[1] = 120;
       $image_attributes[2] = 68;
       if (file_exists(url_to_local($image_url_120))) {
