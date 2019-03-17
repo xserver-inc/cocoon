@@ -35,7 +35,7 @@ endif;
 define('OP_TWITTER_CARD_TYPE', 'twitter_card_type');
 if ( !function_exists( 'get_twitter_card_type' ) ):
 function get_twitter_card_type(){
-  return get_theme_option(OP_TWITTER_CARD_TYPE, 'summary');
+  return get_theme_option(OP_TWITTER_CARD_TYPE, 'summary_large_image');
 }
 endif;
 
