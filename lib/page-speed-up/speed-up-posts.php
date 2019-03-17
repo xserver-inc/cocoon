@@ -29,6 +29,9 @@ update_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST);
 //WEBフォントのLazy Load
 update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 
+//スクリプトをフッターで読み込む
+update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
+
 //ブラウザキャッシュが有効な時
 if (isset($_POST[OP_BROWSER_CACHE_ENABLE])){
   add_browser_cache_to_htaccess();

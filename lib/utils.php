@@ -389,38 +389,16 @@ function wp_enqueue_script_jquery_js(){
   wp_deregister_script('jquery-migrate');
 
   $ver = get_jquery_version();
+  $in_footer = is_footer_javascript_enable() ? true : false;
 
-  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), true);
-  // wp_enqueue_script('jquery');
+  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), $in_footer);
 
   //jQueryの読み込み
-  // _v(get_jquery_core_url($ver));
-  // _v(get_jquery_core_full_version($ver));
-  wp_enqueue_script('jquery-core', get_jquery_core_url($ver), array(), get_jquery_core_full_version($ver), true);
-  // switch (get_jquery_version()) {
-  //   case '3':
-  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
-  //     break;
-  //   case '2':
-  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4', true);
-  //     break;
-  //   case '1':
-  //     wp_enqueue_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', true);
-  //     break;
-  // }
+  wp_enqueue_script('jquery-core', get_jquery_core_url($ver), array(), get_jquery_core_full_version($ver), $in_footer);
 
   //jQuery Migrateの読み込み
   $ver = get_jquery_migrate_version();
-  wp_enqueue_script('jquery-migrate', get_jquery_migrate_url($ver), array(), get_jquery_migrate_full_version($ver), true);
-  // switch (get_jquery_migrate_version()) {
-  //   case '3':
-  //     wp_enqueue_script('jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array(), '3.0.1', true);
-  //     break;
-  //   case '1':
-  //     wp_enqueue_script('jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js', array(), '1.4.1', true);
-  //     break;
-  // }
-
+  wp_enqueue_script('jquery-migrate', get_jquery_migrate_url($ver), array(), get_jquery_migrate_full_version($ver), $in_footer);
 
 }
 endif;

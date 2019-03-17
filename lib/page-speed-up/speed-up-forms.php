@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 <!-- Lazy Load -->
-<div id="no-image-page" class="postbox">
+<div id="lazy-load" class="postbox">
   <h2 class="hndle"><?php _e( 'Lazy Load設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -158,6 +158,37 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
+
+
+<!-- スクリプト読み込み -->
+<div id="script-load" class="postbox">
+  <h2 class="hndle"><?php _e( 'スクリプト読み込み設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'JavaScriptの読み込み方式を変更する設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- Lazy Load画像 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FOOTER_JAVASCRIPT_ENABLE, __('スクリプト', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_FOOTER_JAVASCRIPT_ENABLE , is_footer_javascript_enable(), __( 'JavaScriptをフッターで読み込む', THEME_NAME ));
+            generate_tips_tag(__( 'JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレンダリングブロックが発生するので、速さは犠牲になります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 
 
 </div><!-- /.metabox-holder -->
