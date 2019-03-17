@@ -480,7 +480,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
 .admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; }
 .admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 10px; margin-bottom: 20px; }
+.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; }
 .admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .card-thumb img { width: 100%; }
 .admin-settings .demo .entry-card-thumb { width: 320px; }
@@ -1668,7 +1668,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
 .admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; }
 .admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 10px; margin-bottom: 20px; }
+.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; }
 .admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .card-thumb img { width: 100%; }
 .admin-settings .demo .entry-card-thumb { width: 320px; }
@@ -2894,7 +2894,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #navi .navi-in > .menu-mobile li a:after { display: none; }
   .admin-settings .demo main.main, .admin-settings .demo div.sidebar { padding: 10px; margin: 10px 0; border-width: 0; }
   .admin-settings .demo .article ul, .admin-settings .demo .article ol { padding-left: 26px; }
-  .admin-settings .demo .a-wrap { padding: 7px; }
   .admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 17px; }
   .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 14px; }
   .admin-settings .demo table th, .admin-settings .demo table td { padding: 3px; font-size: 0.8em; }
@@ -3021,7 +3020,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #bbpress-forums .form-allowed-tags code { width: 100% !important; }
   .admin-settings .demo .no-sp-snippet .entry-card-snippet { display: none; }
   .admin-settings .demo .no-sp-snippet-related .related-entry-card-snippet { display: none; }
-  .admin-settings .demo .entry-card-wrap.a-wrap { padding: 0.5%; }
   .admin-settings .demo .e-card-meta { margin-top: 2px; }
   .admin-settings .demo .ect-entry-card .card-thumb, .admin-settings .demo .rect-entry-card .card-thumb, .admin-settings .demo .ect-big-card-first .card-thumb { margin-bottom: 6px; }
   .admin-settings .demo .ect-entry-card .card-content, .admin-settings .demo .rect-entry-card .card-content, .admin-settings .demo .ect-big-card-first .card-content { margin: 0; }

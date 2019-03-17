@@ -862,8 +862,8 @@ img.emoji {
   text-decoration: none;
   display: block;
   color: #333;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 1.5%;
+  margin-bottom: 3%;
 }
 .a-wrap:hover {
   background-color: #f5f8fa;
@@ -7410,10 +7410,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     padding-left: 26px;
   }
 
-  .a-wrap {
-    padding: 7px;
-  }
-
   .entry-card-title,
   .related-entry-card-title {
     font-size: 17px;
@@ -7985,10 +7981,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .no-sp-snippet-related .related-entry-card-snippet {
     display: none;
-  }
-
-  .entry-card-wrap.a-wrap {
-    padding: 0.5%;
   }
 
   .e-card-meta {
