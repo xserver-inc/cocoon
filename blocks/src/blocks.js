@@ -5,7 +5,6 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-//const THEME_NAME = 'cocoon';
 //ブロック
 import './block/icon-box/block.js';
 import './block/info-box/block.js';
@@ -15,6 +14,8 @@ import './block/tab-box/block.js';
 import './block/caption-box/block.js';
 import './block/tab-caption-box/block.js';
 import './block/label-box/block.js';
+import './block/balloon/block.js';
+import './block/balloon-ex/block.js';
 import './block/blogcard/block.js';
 import './block/button/block.js';
 import './block/button-wrap/block.js';
@@ -28,7 +29,6 @@ import './old/micro-balloon/block.js';
 
 // import './demo/test/block.js';
 // import './demo/info-box-drop/block.js';
-// import './demo/balloon/block.js';
 // import './demo/blank-box-demo/block.js';
 // import './demo/test-as-shortcode-text/block.js';
 // import './demo/test-severside-as-shortcode-input/block.js';

@@ -71,12 +71,19 @@ if (is_admin()) {
 function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(
-		'cocoon_blocks-cgb-block-js', // Handle.
+		'cocoon-blocks-js', // Handle.
 		get_template_directory_uri().'/blocks/dist/blocks.build.js',
 		//plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		true // Enqueue the script in the footer.
+	);
+  $baloons = get_speech_balloons();
+  //_v($baloons);
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'speechBaloons', //任意のオブジェクト名
+    $baloons //プロバティ
 	);
 
 	// Styles.
