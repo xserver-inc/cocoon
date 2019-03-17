@@ -8040,7 +8040,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     width: 100% !important;
   }
 
-  .blogcard {
+  .blogcard-type .blogcard {
     padding-top: 3.5%;
   }
 }
