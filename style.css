@@ -8039,6 +8039,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .ect-3-columns > * {
     width: 100% !important;
   }
+
+  .blogcard {
+    padding-top: 3.5%;
+  }
 }
 @media print {
   /************************************
