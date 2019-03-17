@@ -8031,6 +8031,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     min-width: 200px;
     max-width: 200px;
   }
+
+  .blogcard-type .blogcard {
+    padding-top: 3.5%;
+  }
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,
@@ -8038,10 +8042,6 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .ect-2-columns > *,
   .ect-3-columns > * {
     width: 100% !important;
-  }
-
-  .blogcard-type .blogcard {
-    padding-top: 3.5%;
   }
 }
 @media print {

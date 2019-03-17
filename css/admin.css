@@ -3029,9 +3029,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .ect-entry-card .card-meta, .admin-settings .demo .rect-entry-card .card-meta, .admin-settings .demo .ect-big-card-first .card-meta { clear: both; }
   .admin-settings .demo .list .ect-vertical-card > * { width: 48%; padding: 0.5% !important; margin: 0.5% 0.5% 1.5% !important; }
   .admin-settings .demo .sp-display-none { display: none; }
-  .admin-settings .demo .image-content amp-img { min-width: 200px; max-width: 200px; } }
-@media screen and (max-width: 356px) { .admin-settings .demo .ect-vertical-card .entry-card-wrap, .admin-settings .demo .rect-vartical-card .related-entry-card-wrap, .admin-settings .demo .ect-2-columns > *, .admin-settings .demo .ect-3-columns > * { width: 100% !important; }
+  .admin-settings .demo .image-content amp-img { min-width: 200px; max-width: 200px; }
   .admin-settings .demo .blogcard-type .blogcard { padding-top: 3.5%; } }
+@media screen and (max-width: 356px) { .admin-settings .demo .ect-vertical-card .entry-card-wrap, .admin-settings .demo .rect-vartical-card .related-entry-card-wrap, .admin-settings .demo .ect-2-columns > *, .admin-settings .demo .ect-3-columns > * { width: 100% !important; } }
 @media print { .admin-settings .demo { /************************************
 ** 印刷用スタイル
 ************************************/ }
