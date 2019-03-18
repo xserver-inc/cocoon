@@ -115,3 +115,11 @@ function is_toc_before_ads(){
   return get_theme_option(OP_TOC_BEFORE_ADS);
 }
 endif;
+
+//見出し内のHTMLタグを有効にする
+define('OP_TOC_HEADING_INNER_HTML_TAG_ENABLE', 'toc_heading_inner_html_tag_enable');
+if ( !function_exists( 'is_toc_heading_inner_html_tag_enable' ) ):
+function is_toc_heading_inner_html_tag_enable(){
+  return get_theme_option(OP_TOC_HEADING_INNER_HTML_TAG_ENABLE);
+}
+endif;

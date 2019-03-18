@@ -45,3 +45,6 @@ update_theme_option(OP_TOC_POSITION_CENTER);
 
 //目次を広告の手前に表示
 update_theme_option(OP_TOC_BEFORE_ADS);
+
+//見出し内のHTMLタグを有効にする
+update_theme_option(OP_TOC_HEADING_INNER_HTML_TAG_ENABLE);

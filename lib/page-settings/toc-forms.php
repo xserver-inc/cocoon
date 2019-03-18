@@ -188,6 +188,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 目次の表示順 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_TOC_HEADING_INNER_HTML_TAG_ENABLE, __('見出し内タグ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_TOC_HEADING_INNER_HTML_TAG_ENABLE , is_toc_heading_inner_html_tag_enable(), __( 'H見出し内のタグを有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'h2-h6見出し内のHTMLタグをそのまま出力します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>

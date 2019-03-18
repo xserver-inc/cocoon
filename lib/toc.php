@@ -22,7 +22,11 @@ endif;
 //見出し内容取得関数
 if ( !function_exists( 'get_h_inner_content' ) ):
 function get_h_inner_content($h_content){
-  return strip_tags($h_content);
+  if (is_toc_heading_inner_html_tag_enable()) {
+    return $h_content;
+  } else {
+    return strip_tags($h_content);
+  }
 }
 endif;
 
