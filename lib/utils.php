@@ -2413,7 +2413,7 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
   require_once($resoce_file);
   $code = ob_get_clean();
   $new_code = $begin.PHP_EOL.
-                $code.PHP_EOL.
+                trim($code).PHP_EOL.
               $end;
 
   //.htaccessファイルが存在する場合
@@ -2430,7 +2430,7 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
 
         } else {//書き込まれていない場合
           //.htaccessにブラウザキャッシュの書き込みがなかった場合には単に追記する
-          $last_htaccess = $current_htaccess.PHP_EOL.
+          $last_htaccess = rtrim($current_htaccess).PHP_EOL.
                                 $new_code;
           //ブラウザキャッシュを.htaccessファイルに書き込む
           wp_filesystem_put_contents(
