@@ -2900,7 +2900,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .blogcard-wrap { width: 100%; }
   .admin-settings .demo .blogcard-thumbnail { width: 30%; }
   .admin-settings .demo .blogcard-snipet { font-size: 12px; }
-  .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 80px; font-size: 0.9em; line-height: 1.2; }
+  .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
   .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
   .admin-settings .demo .ss-top .sns-share-buttons a, .admin-settings .demo .ss-bottom .sns-share-buttons a { font-size: 14px; }
   .admin-settings .demo .ss-top .sns-share-buttons a .button-caption, .admin-settings .demo .ss-bottom .sns-share-buttons a .button-caption { font-size: 14px; margin-left: 4px; }
