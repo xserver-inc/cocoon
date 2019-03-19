@@ -120,16 +120,16 @@ function add_cocoon_theme_block_categories( $categories, $post ){
         'title' => __( 'Cocoonマイクロコピー', THEME_NAME ),
         //'icon' => 'heart',
 			),
+      array(
+        'slug' => THEME_NAME.'-layout',
+        'title' => __( 'Cocoonレイアウト', THEME_NAME ),
+        //'icon' => 'heart',
+      ),
 			array(
 				'slug' => THEME_NAME.'-old',
         'title' => __( 'Cocoon旧ブロック（非推奨）', THEME_NAME ),
         //'icon' => 'heart',
 			),
-			// array(
-			// 	'slug' => THEME_NAME.'-layout',
-   //      'title' => __( 'Cocoonレイアウト', THEME_NAME ),
-   //      //'icon' => 'heart',
-			// ),
 		)
 	);
 }
