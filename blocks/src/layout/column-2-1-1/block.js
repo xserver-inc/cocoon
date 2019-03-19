@@ -30,11 +30,11 @@ registerBlockType( 'cocoon-blocks/column-2-1-1', {
   edit( { attributes, setAttributes } ) {
     return (
       <Fragment>
-        <div class={"column-wrap column-2" + BLOCK_CLASS}>
-          <div class="column-left">
+        <div className={"column-wrap column-2" + BLOCK_CLASS}>
+          <div className="column-left">
             <InnerBlocks />
           </div>
-          <div class="column-right">
+          <div className="column-right">
             <InnerBlocks />
           </div>
         </div>
@@ -44,11 +44,11 @@ registerBlockType( 'cocoon-blocks/column-2-1-1', {
 
   save( { attributes } ) {
     return (
-      <div class={"column-wrap column-2" + BLOCK_CLASS}>
-        <div class="column-left">
+      <div className={"column-wrap column-2" + BLOCK_CLASS}>
+        <div className="column-left">
           <InnerBlocks.Content />
         </div>
-        <div class="column-right">
+        <div className="column-right">
           <InnerBlocks.Content />
         </div>
       </div>

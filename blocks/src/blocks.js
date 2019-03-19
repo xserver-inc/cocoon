@@ -36,10 +36,11 @@ import './old/micro-balloon/block.js';
 
 
 //レイアウト
-//import './layout/column-2-1-1/block.js';
+// import './layout/column-2-1-1/block.js';
 
 //ツールボタン
 //import './toolbutton/block.js';
+// import './toolbutton/letter-colors.js';
 import './toolbutton/bold.js';
 import './toolbutton/red.js';
 import './toolbutton/bold-red.js';
