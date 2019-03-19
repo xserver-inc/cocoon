@@ -4671,6 +4671,7 @@ div.sbs-think .speech-balloon::after {
   border-radius: 2px;
   transition: all .3s ease;
   opacity: 0;
+  max-width: calc(100% - 160px);
 }
 .image-content img {
   display: block;

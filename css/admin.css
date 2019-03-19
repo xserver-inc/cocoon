@@ -1193,7 +1193,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
@@ -2381,7 +2381,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
 .admin-settings .demo .booklink-image > a > img, .admin-settings .demo .kaerebalink-image > a > img, .admin-settings .demo .tomarebalink-image > a > img, .admin-settings .demo .product-item-thumb > a > img { margin: 0 auto; }
-.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; }
+.admin-settings .demo .image-content { visibility: hidden; position: absolute; z-index: 99; right: 0; top: 0; border: 1px solid #ddd; background-color: #f3f4f5; border-radius: 2px; transition: all .3s ease; opacity: 0; max-width: calc(100% - 160px); }
 .admin-settings .demo .image-content img { display: block; }
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }

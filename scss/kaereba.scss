@@ -70,6 +70,7 @@
   border-radius: $badge_border_radius;
   transition: all .3s ease;
   opacity: 0;
+  max-width: calc(100% - 160px);
   img{
     display: block;
   }
