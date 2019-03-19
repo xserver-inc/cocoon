@@ -73,7 +73,7 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
   if($targetclass===''){$targetclass = get_post_type();}
   for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
 
-  preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/u', $content, $headers);
+  preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
   $header_count = count($headers[0]);
   if($header_count > 0){
     $level = strtolower($headers[1][0]);
