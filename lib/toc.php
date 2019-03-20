@@ -269,7 +269,7 @@ function add_toc_before_1st_h2($the_content){
   ///////////////////////////////////////
   // PHPの見出し処理（条件によっては失敗するかも）
   ///////////////////////////////////////
-  $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/i', $the_content, $m);
+  $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/is', $the_content, $m);
 
   $tag_all_index = 0;
   $tag_index = 1;
