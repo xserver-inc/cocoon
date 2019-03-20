@@ -40,11 +40,10 @@ import './old/micro-balloon/block.js';
 
 //ツールボタン
 //import './toolbutton/block.js';
-// import './toolbutton/letter-colors.js';
 import './toolbutton/bold.js';
 import './toolbutton/red.js';
 import './toolbutton/bold-red.js';
-// import './toolbutton/blue.js';
+import './toolbutton/blue.js';
 // import './toolbutton/bold-blue.js';
 // import './toolbutton/green.js';
 // import './toolbutton/bold-green.js';
@@ -55,6 +54,7 @@ import './toolbutton/marker-under-red.js';
 import './toolbutton/marker-blue.js';
 import './toolbutton/marker-under-blue.js';
 import './toolbutton/strike.js';
+import './toolbutton/letter-colors.js';
 // import './toolbutton/badge.js';
 
 

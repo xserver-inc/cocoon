@@ -9,47 +9,79 @@ const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { BlockControls, RichTextShortcut, RichTextToolbarButton } = wp.editor;
+const { Toolbar, DropdownMenu } = wp.components;
 const THEME_NAME = 'cocoon';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/letter-colors';
-import { Toolbar, DropdownMenu } from '@wordpress/components';
+const FORMAT_TYPE_NAME_RED = 'cocoon-blocks/red';
+//import { Toolbar, DropdownMenu } from '@wordpress/components';
 
-console.log('DropdownMenu');
+//console.log('DropdownMenu');
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title: __( 'aaaaa色', THEME_NAME ),
+  title: __( '文字', THEME_NAME ),
   tagName: 'span',
-  className: 'blue',
+  className: 'letter-colors',
   edit( { isActive, value, onChange } ) {
-    const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+    //const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+
+    // console.log(isActive);
+    //console.log(value);
+    // console.log(onChange);
 
     return (
       <Fragment>
+        <BlockControls>
+          <Toolbar>
             <DropdownMenu
-        icon="move"
-        label="Select a direction"
-        controls={ [
-            {
-                title: 'Up',
-                icon: 'arrow-up-alt',
-                onClick: () => console.log( 'up' )
-            },
-            {
-                title: 'Right',
-                icon: 'arrow-right-alt',
-                onClick: () => console.log( 'right' )
-            },
-            {
-                title: 'Down',
-                icon: 'arrow-down-alt',
-                onClick: () => console.log( 'down' )
-            },
-            {
-                title: 'Left',
-                icon: 'arrow-left-alt',
-                onClick: () => console.log( 'left' )
-            },
-        ] }
-    />
+              icon="editor-textcolor"
+              label="テキスト色"
+              controls={ [
+                  {
+                      title: __( '太字（boldクラス指定）', THEME_NAME ),
+                      icon: 'editor-bold',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold' } ) )
+                  },
+                  {
+                      title: __( '赤色', THEME_NAME ),
+                      icon: 'editor-textcolor',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/red' } ) )
+                  },
+                  {
+                      title: __( '赤太字', THEME_NAME ),
+                      icon: 'editor-bold',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-red' } ) )
+                  },
+                  {
+                      title: __( '青色', THEME_NAME ),
+                      icon: 'editor-textcolor',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/blue' } ) )
+                  },
+                  {
+                      title: __( '青太字', THEME_NAME ),
+                      icon: 'editor-bold',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-blue' } ) )
+                  },
+                  {
+                      title: __( '緑色', THEME_NAME ),
+                      icon: 'editor-textcolor',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/green' } ) )
+                  },
+                  {
+                      title: __( '緑太字', THEME_NAME ),
+                      icon: 'editor-bold',
+                      isActive: { isActive },
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-green' } ) )
+                  },
+              ] }
+          />
+          </Toolbar>
+        </BlockControls>
       </Fragment>
     );
   },
