@@ -780,12 +780,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .badge-brown { background-color: #795548; }
 .admin-settings .demo .badge-grey { background-color: #9e9e9e; }
 .admin-settings .demo .bold { font-weight: bold; }
-.admin-settings .demo .red { color: #E50202; }
-.admin-settings .demo .bold-red { font-weight: bold; color: #E50202; }
-.admin-settings .demo .blue { color: blue; }
-.admin-settings .demo .bold-blue { font-weight: bold; color: blue; }
-.admin-settings .demo .green { color: green; }
-.admin-settings .demo .bold-green { font-weight: bold; color: green; }
+.admin-settings .demo .red { color: #e60033; }
+.admin-settings .demo .bold-red { font-weight: bold; color: #e60033; }
+.admin-settings .demo .blue { color: #0095d9; }
+.admin-settings .demo .bold-blue { font-weight: bold; color: #0095d9; }
+.admin-settings .demo .green { color: #3eb370; }
+.admin-settings .demo .bold-green { font-weight: bold; color: #3eb370; }
 .admin-settings .demo .red-under { border-bottom: 2px solid red; }
 .admin-settings .demo .marker { background-color: #ff9; }
 .admin-settings .demo .marker-red { background-color: #ffd0d1; }
@@ -1968,12 +1968,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .badge-brown { background-color: #795548; }
 .admin-settings .demo .badge-grey { background-color: #9e9e9e; }
 .admin-settings .demo .bold { font-weight: bold; }
-.admin-settings .demo .red { color: #E50202; }
-.admin-settings .demo .bold-red { font-weight: bold; color: #E50202; }
-.admin-settings .demo .blue { color: blue; }
-.admin-settings .demo .bold-blue { font-weight: bold; color: blue; }
-.admin-settings .demo .green { color: green; }
-.admin-settings .demo .bold-green { font-weight: bold; color: green; }
+.admin-settings .demo .red { color: #e60033; }
+.admin-settings .demo .bold-red { font-weight: bold; color: #e60033; }
+.admin-settings .demo .blue { color: #0095d9; }
+.admin-settings .demo .bold-blue { font-weight: bold; color: #0095d9; }
+.admin-settings .demo .green { color: #3eb370; }
+.admin-settings .demo .bold-green { font-weight: bold; color: #3eb370; }
 .admin-settings .demo .red-under { border-bottom: 2px solid red; }
 .admin-settings .demo .marker { background-color: #ff9; }
 .admin-settings .demo .marker-red { background-color: #ffd0d1; }

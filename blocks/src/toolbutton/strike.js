@@ -17,25 +17,25 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '打ち消し線（訂正）', THEME_NAME ),
   tagName: 's',
   className: null,
-  edit( { isActive, value, onChange } ) {
-    const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+  // edit( { isActive, value, onChange } ) {
+  //   const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
-    return (
-      <Fragment>
-        <RichTextShortcut
-          type='primary'
-          character=''
-          onUse={ onToggle }
-        />
-        <RichTextToolbarButton
-          title={ __( '打ち消し線（訂正）', THEME_NAME ) }
-          icon={ <FontAwesomeIcon icon="strikethrough" /> }
-          onClick={ onToggle }
-          isActive={ isActive }
-          shortcutType='primary'
-          shortcutCharacter=''
-        />
-      </Fragment>
-    );
-  },
+  //   return (
+  //     <Fragment>
+  //       <RichTextShortcut
+  //         type='primary'
+  //         character=''
+  //         onUse={ onToggle }
+  //       />
+  //       <RichTextToolbarButton
+  //         title={ __( '打ち消し線（訂正）', THEME_NAME ) }
+  //         icon={ <FontAwesomeIcon icon="strikethrough" /> }
+  //         onClick={ onToggle }
+  //         isActive={ isActive }
+  //         shortcutType='primary'
+  //         shortcutCharacter=''
+  //       />
+  //     </Fragment>
+  //   );
+  // },
 } );
