@@ -37,6 +37,8 @@ function replace_anchor_links($the_content) {
       //初期値の設定
       $old_a = $value;
       $new_a = $value;
+      //aタグの均一化
+      $value = strtolower(str_replace('&#8221;', '"', $value));
 
       //rel属性値の取得
       $rels = array();
@@ -56,6 +58,8 @@ function replace_anchor_links($the_content) {
         continue;
       }
 
+      // _v($value);
+      // _v(includes_string($value, 'href="'.home_url()));
       if (
           //ホームURLを含んでいるか
           includes_string($value, 'href="'.home_url()) ||
