@@ -12,22 +12,22 @@ const { BlockControls, RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const { Toolbar, DropdownMenu } = wp.components;
 const THEME_NAME = 'cocoon';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/letter-colors';
-const FORMAT_TYPE_NAME_RED = 'cocoon-blocks/red';
 //import { Toolbar, DropdownMenu } from '@wordpress/components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //console.log('DropdownMenu');
 
 registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '文字', THEME_NAME ),
   tagName: 'span',
-  className: 'letter-colors',
-  edit( { isActive, value, onChange } ) {
+  className: 'letters',
+  edit( { isActive, value, onChange , activeAttributes, speak } ) {
     //const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     // console.log(isActive);
     //console.log(value);
     // console.log(onChange);
+    //console.log(activeAttributes);
 
     return (
       <Fragment>
@@ -35,11 +35,13 @@ registerFormatType( FORMAT_TYPE_NAME, {
           <Toolbar>
             <DropdownMenu
               icon="editor-textcolor"
-              label="テキスト色"
+              label={__( '文字', THEME_NAME )}
+              className='letters'
               controls={ [
                   {
                       title: __( '太字（boldクラス指定）', THEME_NAME ),
                       icon: 'editor-bold',
+                      className: 'bold',
                       // isActive: { isActive },
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold' } ) )
                   },
@@ -81,7 +83,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
                   },
                   {
                       title: __( '打ち消し線（訂正）', THEME_NAME ),
-                      icon: 'editor-bold',
+                      icon: 'minus',
                       // isActive: { isActive },
                       onClick: () => onChange( toggleFormat( value, { type: 's' } ) )
                   },
