@@ -21,7 +21,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '文字', THEME_NAME ),
   tagName: 'span',
   className: 'letters',
-  edit( { isActive, value, onChange , activeAttributes, speak } ) {
+  edit( { isActive, value, onChange } ) {
     //const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
     // console.log(isActive);
