@@ -17,7 +17,7 @@ class PcAdWidgetItem extends WP_Widget {
     parent::__construct(
       'pc_ad', //ウイジェット名
       WIDGET_NAME_PREFIX.__( '広告（PC用）', THEME_NAME ),
-      array('description' => __( 'パソコンのみで表示される広告ウィジェットです。768pxより大きな画面で表示されます。', THEME_NAME )),
+      array('description' => __( 'パソコンのみで表示される広告ウィジェットです。834pxより大きな画面で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }

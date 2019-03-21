@@ -142,7 +142,7 @@ table th {
 /************************************
 ** モバイルヘッダーナビ
 ************************************/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   #navi .navi-in > .menu-mobile a {
     border-top: 1px solid #d6d3ce;
     border-right: 1px solid #d6d3ce;
@@ -630,7 +630,7 @@ a.page-numbers:hover {
   border-left: 1px solid #e2dfdc;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .navi-footer-in > .menu-footer li.menu-item {
     border: none;
   }

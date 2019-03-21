@@ -17,7 +17,7 @@ class PcTextWidgetItem extends WP_Widget {
      parent::__construct(
       'pc_text',
       WIDGET_NAME_PREFIX.__( 'テキスト（PC用）', THEME_NAME ),//ウイジェット名
-      array('description' => __( 'パソコンのみで表示されるテキストウィジェットです。768pxより大きな画面で表示されます。', THEME_NAME )),
+      array('description' => __( 'パソコンのみで表示されるテキストウィジェットです。834pxより大きな画面で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }

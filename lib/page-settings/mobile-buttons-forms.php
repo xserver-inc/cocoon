@@ -36,7 +36,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                       // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
                     );
                     generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
-                    generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。768px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
+                    generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
 
                     echo '<div'.get_not_allowed_form_class(is_mobile_button_layout_type_slide_in()).'>';
                     generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'スライドインボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));

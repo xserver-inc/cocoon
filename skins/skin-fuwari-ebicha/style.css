@@ -142,7 +142,7 @@ p{
 /************************************
 ** モバイルヘッダーナビ
 ************************************/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   #navi .navi-in > .menu-mobile a {
     border-top: 1px solid #e6c7c0;
     border-right: 1px solid #e6c7c0;
@@ -630,7 +630,7 @@ a.page-numbers:hover {
   border-left: 1px solid #edd7d2;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .navi-footer-in > .menu-footer li.menu-item {
     border: none;
   }

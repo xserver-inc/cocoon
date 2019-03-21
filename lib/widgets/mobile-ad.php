@@ -17,7 +17,7 @@ class MobileAdWidgetItem extends WP_Widget {
     parent::__construct(
       'mobile_ad',
       WIDGET_NAME_PREFIX.__( '広告（モバイル用）', THEME_NAME ), //ウイジェット名
-      array('description' => __( 'モバイルのみで表示される広告ウィジェットです。768px以下で表示されます。', THEME_NAME )),
+      array('description' => __( 'モバイルのみで表示される広告ウィジェットです。834px以下で表示されます。', THEME_NAME )),
       array( 'width' => 400, 'height' => 350 )
     );
   }

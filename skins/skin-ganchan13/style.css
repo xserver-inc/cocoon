@@ -668,8 +668,8 @@ div.list {
 }
 
 
-/*768px以下の画面*/
-@media screen and (max-width: 768px){
+/*834px以下の画面*/
+@media screen and (max-width: 834px){
 
 main.main, div.sidebar {
     padding: 5px;
@@ -758,7 +758,7 @@ article.article {
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 834px){
   #navi .navi-in > .menu-mobile li{
     width: 46%;
     margin: 1% 2%;
