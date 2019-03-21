@@ -16,25 +16,25 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '青色', THEME_NAME ),
   tagName: 'span',
   className: 'blue',
-  edit( { isActive, value, onChange } ) {
-    const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+  // edit( { isActive, value, onChange } ) {
+  //   const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
-    return (
-      <Fragment>
-        <RichTextShortcut
-          type='primary'
-          character='b'
-          onUse={ onToggle }
-        />
-        <RichTextToolbarButton
-          title={ __( '青字', THEME_NAME ) }
-          icon='editor-textcolor'
-          onClick={ onToggle }
-          isActive={ isActive }
-          shortcutType='primary'
-          shortcutCharacter='b'
-        />
-      </Fragment>
-    );
-  },
+  //   return 0;(
+  //     <Fragment>
+  //       <RichTextShortcut
+  //         type='primary'
+  //         character='b'
+  //         onUse={ onToggle }
+  //       />
+  //       <RichTextToolbarButton
+  //         title={ __( '青字', THEME_NAME ) }
+  //         icon='editor-textcolor'
+  //         onClick={ onToggle }
+  //         isActive={ isActive }
+  //         shortcutType='primary'
+  //         shortcutCharacter='b'
+  //       />
+  //     </Fragment>
+  //   );
+  // },
 } );
