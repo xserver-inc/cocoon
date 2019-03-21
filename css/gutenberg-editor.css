@@ -532,7 +532,7 @@ ol, ul {
     margin-right: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .editor-styles-wrapper .editor-block-list__layout .editor-block-list__block .editor-block-drop-zone {
     margin: 0;
   }
