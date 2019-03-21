@@ -16,25 +16,25 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '太字（boldクラス指定）', THEME_NAME ),
   tagName: 'span',
   className: 'bold',
-  // edit( { isActive, value, onChange } ) {
-  //   const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+  edit( { isActive, value, onChange } ) {
+    const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
-  //   return (
-  //     <Fragment>
-  //       <RichTextShortcut
-  //         type='primary'
-  //         character=''
-  //         onUse={ onToggle }
-  //       />
-  //       <RichTextToolbarButton
-  //         title={ __( '太字（boldクラス指定）', THEME_NAME ) }
-  //         icon='editor-bold'
-  //         onClick={ onToggle }
-  //         isActive={ isActive }
-  //         shortcutType='primary'
-  //         shortcutCharacter=''
-  //       />
-  //     </Fragment>
-  //   );
-  // },
+    return (
+      <Fragment>
+        <RichTextShortcut
+          type='primary'
+          character=''
+          onUse={ onToggle }
+        />
+        <RichTextToolbarButton
+          title={ __( '太字（boldクラス指定）', THEME_NAME ) }
+          icon='editor-bold'
+          onClick={ onToggle }
+          isActive={ isActive }
+          shortcutType='primary'
+          shortcutCharacter=''
+        />
+      </Fragment>
+    );
+  },
 } );
