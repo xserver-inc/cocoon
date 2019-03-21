@@ -80,30 +80,4 @@ $pagination_wh: 50px;
   }
 }
 
-/************************************
-** マルチページのページャーリンク
-************************************/
-.pager-links{
-  @include pagination_wrap;
 
-  span{
-    background-color: $current_bgc;
-  }
-
-  a{
-    display: inline-block;
-
-    span{
-      background-color: $white;
-    }
-
-    &:hover span {
-      @include bgc_hover;
-    }
-  }
-
-  // span{
-  //   @include pagination_button;
-  // }
-
-}
