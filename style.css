@@ -4415,8 +4415,8 @@ canvas, iframe, video,
 }
 
 .speech-person {
-  width: 80px;
-  min-width: 80px;
+  width: 12%;
+  min-width: 12%;
 }
 
 .speech-icon img,
@@ -7818,8 +7818,8 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .speech-person {
-    width: 40px;
-    min-width: 40px;
+    width: 16%;
+    min-width: 16%;
   }
 
   .speech-name {
