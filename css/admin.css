@@ -164,8 +164,6 @@ body.wp-admin { color: #444; }
 ************************************/ /************************************
 ** マルチページのページャーリンク
 ************************************/ /************************************
-** マルチページのページャーリンク
-************************************/ /************************************
 ** 投稿ナビ
 ************************************/ /*!動画の最大幅を指定する*/ /*!動画の大きさを調整*/ /*!Instagramの大きさを調整*/ /*!動画を囲んでいるdiv目一杯に広げる*/ /*!Twitterビデオの最小幅を上書き変更*/ /************************************
 ** プロフィールボックス
@@ -294,8 +292,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** ページネーション
 ************************************/ /************************************
 ** 「次のページ」ページネーション
-************************************/ /************************************
-** マルチページのページャーリンク
 ************************************/ /************************************
 ** マルチページのページャーリンク
 ************************************/ /************************************
@@ -1078,11 +1074,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
-.admin-settings .demo .pager-links span { background-color: #eee; }
-.admin-settings .demo .pager-links a { display: inline-block; }
-.admin-settings .demo .pager-links a span { background-color: #fff; }
-.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
 .admin-settings .demo .pager-links span { background-color: #eee; }
@@ -2266,11 +2257,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
-.admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
-.admin-settings .demo .pager-links span { background-color: #eee; }
-.admin-settings .demo .pager-links a { display: inline-block; }
-.admin-settings .demo .pager-links a span { background-color: #fff; }
-.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.5s ease; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
 .admin-settings .demo .pager-links span { background-color: #eee; }

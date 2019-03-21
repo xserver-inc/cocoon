@@ -3,9 +3,6 @@
 ************************************/
 .pager-links{
   @include pagination_wrap;
-  // display: inline-flex;
-  // justify-content: center;
-  // width: 100%;
 
   .post-page-numbers{
     background-color: transparent;
@@ -26,10 +23,6 @@
       @include bgc_hover;
     }
   }
-
-  // span{
-  //   @include pagination_button;
-  // }
 
 }
 
