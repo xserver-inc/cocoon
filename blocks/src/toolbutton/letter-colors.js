@@ -24,10 +24,14 @@ registerFormatType( FORMAT_TYPE_NAME, {
   edit( { isActive, value, onChange } ) {
     //const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
-    // console.log(isActive);
+    //console.log(isActive);
     //console.log(value);
-    // console.log(onChange);
+    //console.log(onChange);
     //console.log(activeAttributes);
+    var cursolPositionObject = value.formats[value.start];
+    var type = cursolPositionObject ? cursolPositionObject[0].type : '';
+    // console.log(value.formats[value.start]);
+    // console.log(type);
 
     return (
       <Fragment>
@@ -42,50 +46,50 @@ registerFormatType( FORMAT_TYPE_NAME, {
                       title: __( '太字（boldクラス指定）', THEME_NAME ),
                       icon: 'editor-bold',
                       className: 'bold',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/bold',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold' } ) )
                   },
                   {
                       title: __( '赤色', THEME_NAME ),
                       icon: 'editor-textcolor',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/red' } ) )
                   },
                   {
                       title: __( '赤太字', THEME_NAME ),
                       icon: 'editor-bold',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/bold-red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-red' } ) )
                   },
                   {
                       title: __( '青色', THEME_NAME ),
                       icon: 'editor-textcolor',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/blue' } ) )
                   },
                   {
                       title: __( '青太字', THEME_NAME ),
                       icon: 'editor-bold',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/bold-blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-blue' } ) )
                   },
                   {
                       title: __( '緑色', THEME_NAME ),
                       icon: 'editor-textcolor',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/green',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/green' } ) )
                   },
                   {
                       title: __( '緑太字', THEME_NAME ),
                       icon: 'editor-bold',
-                      // isActive: { isActive },
+                      isActive: type === 'cocoon-blocks/bold-green',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-green' } ) )
                   },
                   {
                       title: __( '打ち消し線（訂正）', THEME_NAME ),
                       icon: 'minus',
-                      // isActive: { isActive },
-                      onClick: () => onChange( toggleFormat( value, { type: 's' } ) )
+                      isActive: type === 'cocoon-blocks/strike',
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/strike' } ) )
                   },
               ] }
           />
