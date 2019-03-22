@@ -11,9 +11,8 @@ const { registerFormatType, toggleFormat } = wp.richText;
 const { BlockControls, RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const { Toolbar, DropdownMenu } = wp.components;
 const THEME_NAME = 'cocoon';
-const FORMAT_TYPE_NAME = 'cocoon-blocks/letter-colors';
-//import { Toolbar, DropdownMenu } from '@wordpress/components';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/letters';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //console.log('DropdownMenu');
 
@@ -93,7 +92,7 @@ registerFormatType( FORMAT_TYPE_NAME, {
                   },
                   {
                       title: __( '打ち消し線（訂正）', THEME_NAME ),
-                      icon: 'minus',
+                      icon: <FontAwesomeIcon icon="strikethrough" />,
                       isActive: type === 'cocoon-blocks/strike',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/strike' } ) )
                   },

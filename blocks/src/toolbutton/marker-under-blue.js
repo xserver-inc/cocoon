@@ -17,25 +17,25 @@ registerFormatType( FORMAT_TYPE_NAME, {
   title: __( '青色アンダーラインマーカー', THEME_NAME ),
   tagName: 'span',
   className: 'marker-under-blue',
-  edit( { isActive, value, onChange } ) {
-    const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
+  // edit( { isActive, value, onChange } ) {
+  //   const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
-    return (
-      <Fragment>
-        <RichTextShortcut
-          type='primary'
-          character=''
-          onUse={ onToggle }
-        />
-        <RichTextToolbarButton
-          title={ __( '青色アンダーラインマーカー', THEME_NAME ) }
-          icon={ <FontAwesomeIcon icon="window-minimize" /> }
-          onClick={ onToggle }
-          isActive={ isActive }
-          shortcutType='primary'
-          shortcutCharacter=''
-        />
-      </Fragment>
-    );
-  },
+  //   return (
+  //     <Fragment>
+  //       <RichTextShortcut
+  //         type='primary'
+  //         character=''
+  //         onUse={ onToggle }
+  //       />
+  //       <RichTextToolbarButton
+  //         title={ __( '青色アンダーラインマーカー', THEME_NAME ) }
+  //         icon={ <FontAwesomeIcon icon="window-minimize" /> }
+  //         onClick={ onToggle }
+  //         isActive={ isActive }
+  //         shortcutType='primary'
+  //         shortcutCharacter=''
+  //       />
+  //     </Fragment>
+  //   );
+  // },
 } );

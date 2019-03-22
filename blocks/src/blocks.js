@@ -49,13 +49,16 @@ import './toolbutton/green.js';
 import './toolbutton/bold-green.js';
 import './toolbutton/strike.js';
 import './toolbutton/keyboard-key.js';
-import './toolbutton/marker.js';
-import './toolbutton/marker-under.js';
+
+import './toolbutton/marker-yellow.js';
+import './toolbutton/marker-under-yellow.js';
 import './toolbutton/marker-red.js';
 import './toolbutton/marker-under-red.js';
 import './toolbutton/marker-blue.js';
 import './toolbutton/marker-under-blue.js';
+
 import './toolbutton/dropdown-letters.js';
+import './toolbutton/dropdown-markers.js';
 // import './toolbutton/badge.js';
 
 
