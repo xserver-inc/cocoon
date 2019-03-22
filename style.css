@@ -3101,7 +3101,7 @@ label.screen-reader-text {
 
 .btn-l, .ranking-item-link-buttons a,
 .btn-wrap.btn-wrap-l > a {
-  padding: 20px 30px;
+  padding: 14px 20px;
   font-size: 18px;
   margin: 1em;
   display: flex;
