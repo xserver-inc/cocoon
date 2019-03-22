@@ -1066,4 +1066,7 @@ textarea[name="the_page_memo"]{
 #wpbody-content{
   //拡張クラス
   @import "extension";
+  .red{
+    margin: 0;
+  }
 }

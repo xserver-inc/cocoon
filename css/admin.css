@@ -3524,3 +3524,4 @@ textarea[name="the_page_memo"] { width: 100%; }
 #wpbody-content .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 #wpbody-content .tb-green .toggle-button::before { color: #ccc; }
 #wpbody-content .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+#wpbody-content .red { margin: 0; }

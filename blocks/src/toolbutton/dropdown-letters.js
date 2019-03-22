@@ -42,56 +42,56 @@ registerFormatType( FORMAT_TYPE_NAME, {
               className='letters'
               controls={ [
                   {
-                      title: __( '太字（boldクラス指定）', THEME_NAME ),
+                      title: <span className="bold">{__( '太字（boldクラス指定）', THEME_NAME )}</span>,
                       icon: 'editor-bold',
                       className: 'bold',
                       isActive: type === 'cocoon-blocks/bold',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold' } ) )
                   },
                   {
-                      title: __( '赤色', THEME_NAME ),
+                      title: <span className="red">{__( '赤色', THEME_NAME )}</span>,
                       icon: 'editor-textcolor',
                       isActive: type === 'cocoon-blocks/red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/red' } ) )
                   },
                   {
-                      title: __( '赤太字', THEME_NAME ),
+                      title: <span className="bold-red">{__( '赤太字', THEME_NAME )}</span>,
                       icon: 'editor-bold',
                       isActive: type === 'cocoon-blocks/bold-red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-red' } ) )
                   },
                   {
-                      title: __( '青色', THEME_NAME ),
+                      title: <span className="blue">{__( '青色', THEME_NAME )}</span>,
                       icon: 'editor-textcolor',
                       isActive: type === 'cocoon-blocks/blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/blue' } ) )
                   },
                   {
-                      title: __( '青太字', THEME_NAME ),
+                      title: <span className="bold-blue">{__( '青太字', THEME_NAME )}</span>,
                       icon: 'editor-bold',
                       isActive: type === 'cocoon-blocks/bold-blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-blue' } ) )
                   },
                   {
-                      title: __( '緑色', THEME_NAME ),
+                      title: <span className="green">{__( '緑色', THEME_NAME )}</span>,
                       icon: 'editor-textcolor',
                       isActive: type === 'cocoon-blocks/green',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/green' } ) )
                   },
                   {
-                      title: __( '緑太字', THEME_NAME ),
+                      title: <span className="bold-green">{__( '緑太字', THEME_NAME )}</span>,
                       icon: 'editor-bold',
                       isActive: type === 'cocoon-blocks/bold-green',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-green' } ) )
                   },
                   {
-                      title: __( 'キーボードキー', THEME_NAME ),
+                      title: <span className="keyboard-key">{__( 'キーボードキー', THEME_NAME )}</span>,
                       icon: 'screenoptions',
                       isActive: type === 'cocoon-blocks/keyboard-key',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/keyboard-key' } ) )
                   },
                   {
-                      title: __( '打ち消し線（訂正）', THEME_NAME ),
+                      title: <s>{__( '打ち消し線（訂正）', THEME_NAME )}</s>,
                       icon: <FontAwesomeIcon icon="strikethrough" />,
                       isActive: type === 'cocoon-blocks/strike',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/strike' } ) )
