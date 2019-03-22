@@ -11,13 +11,13 @@ const { registerFormatType, toggleFormat } = wp.richText;
 const { BlockControls, RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const { Toolbar, DropdownMenu } = wp.components;
 const THEME_NAME = 'cocoon';
-const FORMAT_TYPE_NAME = 'cocoon-blocks/markers';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/badges';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title: __( '文字', THEME_NAME ),
+  title: __( 'バッジ', THEME_NAME ),
   tagName: 'span',
-  className: 'markers',
+  className: 'badges',
   edit( { isActive, value, onChange } ) {
 
     var cursolPositionObject = value.formats[value.start];
@@ -28,44 +28,43 @@ registerFormatType( FORMAT_TYPE_NAME, {
         <BlockControls>
           <Toolbar>
             <DropdownMenu
-              icon={ <FontAwesomeIcon icon="highlighter" /> }
+              icon={ <FontAwesomeIcon icon="tag" /> }
               label={__( '文字', THEME_NAME )}
               className='letters'
               controls={ [
                   {
-                      title: __( '黄色マーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="highlighter" />,
-                      className: 'marker',
+                      title: <span className="marker">{__( '黄色マーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker' } ) )
                   },
                   {
-                      title: __( '黄色アンダーラインマーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="window-minimize" />,
+                      title: <span className="marker-under">{__( '黄色アンダーラインマーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker-under',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker-under' } ) )
                   },
                   {
-                      title: __( '赤色マーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="highlighter" />,
+                      title: <span className="marker-red">{__( '赤色マーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker-red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker-red' } ) )
                   },
                   {
-                      title: __( '赤色アンダーラインマーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="window-minimize" />,
+                      title: <span className="marker-under-red">{__( '赤色アンダーラインマーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker-under-red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker-under-red' } ) )
                   },
                   {
-                      title: __( '青色マーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="highlighter" />,
+                      title: <span className="marker-blue">{__( '青色マーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker-blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker-blue' } ) )
                   },
                   {
-                      title: __( '青色アンダーラインマーカー', THEME_NAME ),
-                      icon: <FontAwesomeIcon icon="window-minimize" />,
+                      title: <span className="marker-under-blue">{__( '青色アンダーラインマーカー', THEME_NAME )}</span>,
+                      icon: <FontAwesomeIcon icon="tag" />,
                       isActive: type === 'cocoon-blocks/marker-under-blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/marker-under-blue' } ) )
                   },
