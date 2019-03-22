@@ -8,10 +8,10 @@
 const { __ } = wp.i18n;
 const { registerFormatType } = wp.richText;
 const THEME_NAME = 'cocoon';
-const FORMAT_TYPE_NAME = 'cocoon-blocks/badge-red';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/badge-blue';
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title: __( '赤色', THEME_NAME ),
+  title: __( '青色', THEME_NAME ),
   tagName: 'span',
-  className: 'badge-red',
+  className: 'badge-blue',
 } );

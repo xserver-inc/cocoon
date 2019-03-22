@@ -38,8 +38,7 @@ import './old/micro-balloon/block.js';
 //レイアウト
 // import './layout/column-2-1-1/block.js';
 
-//ツールボタン
-//import './toolbutton/block.js';
+//文字色変更など
 import './toolbutton/bold.js';
 import './toolbutton/red.js';
 import './toolbutton/bold-red.js';
@@ -50,6 +49,7 @@ import './toolbutton/bold-green.js';
 import './toolbutton/strike.js';
 import './toolbutton/keyboard-key.js';
 
+//マーカー
 import './toolbutton/marker-yellow.js';
 import './toolbutton/marker-under-yellow.js';
 import './toolbutton/marker-red.js';
@@ -57,17 +57,18 @@ import './toolbutton/marker-under-red.js';
 import './toolbutton/marker-blue.js';
 import './toolbutton/marker-under-blue.js';
 
+//バッジ
 import './toolbutton/badge-orange.js';
 import './toolbutton/badge-red.js';
+import './toolbutton/badge-pink.js';
+import './toolbutton/badge-purple.js';
+import './toolbutton/badge-blue.js';
+import './toolbutton/badge-green.js';
+import './toolbutton/badge-yellow.js';
+import './toolbutton/badge-brown.js';
+import './toolbutton/badge-grey.js';
 
+//ドロップダウン
 import './toolbutton/dropdown-letters.js';
 import './toolbutton/dropdown-markers.js';
 import './toolbutton/dropdown-badges.js';
-
-
-
-// const { _wpLoadBlockEditor } = window;
-// const { unregisterBlockType } = wp.blocks;
-// _wpLoadBlockEditor.then( () => {
-//     unregisterBlockType( 'cocoon-blocks/micro-balloon' );
-// } );

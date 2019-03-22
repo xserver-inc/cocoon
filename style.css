@@ -2413,12 +2413,18 @@ label.screen-reader-text {
 .badge,
 .ref,
 .reffer,
-.sankou {
+.sankou, .badge-red, .badge-pink, .badge-purple, .badge-blue, .badge-green, .badge-yellow, .badge-brown, .badge-grey {
   color: #fff;
-  background-color: #fc7a22;
   padding: 1px 5px 0;
   border-radius: 2px;
   font-size: 12px;
+}
+
+.badge,
+.ref,
+.reffer,
+.sankou {
+  background-color: #fc7a22;
 }
 
 .badge-red {

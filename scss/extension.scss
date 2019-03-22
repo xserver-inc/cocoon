@@ -1,23 +1,31 @@
 /*拡張クラスを追加するスタイルシート*/
-.badge,
-.ref,
-.reffer,
-.sankou{
+%badge{
   color: $white;
-  background-color: #fc7a22;
   padding: 1px 5px 0;
   border-radius: 2px;
   font-size: 12px;
 }
+.badge,
+.ref,
+.reffer,
+.sankou{
+  @extend %badge;
+  background-color: #fc7a22;
+  // color: $white;
+  // background-color: #fc7a22;
+  // padding: 1px 5px 0;
+  // border-radius: 2px;
+  // font-size: 12px;
+}
 
-.badge-red{background-color: #d71d3b;}
-.badge-pink{background-color: #e91e63;}
-.badge-purple{background-color: #9c27b0;}
-.badge-blue{background-color: #2196f3;}
-.badge-green{background-color: #4caf50;}
-.badge-yellow{background-color: #edd60e;}
-.badge-brown{background-color: #795548;}
-.badge-grey{background-color: #9e9e9e;}
+.badge-red{@extend %badge;background-color: #d71d3b;}
+.badge-pink{@extend %badge;background-color: #e91e63;}
+.badge-purple{@extend %badge;background-color: #9c27b0;}
+.badge-blue{@extend %badge;background-color: #2196f3;}
+.badge-green{@extend %badge;background-color: #4caf50;}
+.badge-yellow{@extend %badge;background-color: #edd60e;}
+.badge-brown{@extend %badge;background-color: #795548;}
+.badge-grey{@extend %badge;background-color: #9e9e9e;}
 
 /*太字*/
 .bold{

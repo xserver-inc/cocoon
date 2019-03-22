@@ -5,18 +5,18 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-const { Fragment } = wp.element;
+// const { Fragment } = wp.element;
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+// const { registerBlockType } = wp.blocks;
 const { registerFormatType, toggleFormat } = wp.richText;
-const { RichTextShortcut, RichTextToolbarButton, InspectorControls } = wp.editor;
-const { PanelBody, SelectControl, BaseControl } = wp.components;
+// const { RichTextShortcut, RichTextToolbarButton, InspectorControls } = wp.editor;
+// const { PanelBody, SelectControl, BaseControl } = wp.components;
 const THEME_NAME = 'cocoon';
 const FORMAT_TYPE_NAME = 'cocoon-blocks/badge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title: __( 'バッジ', THEME_NAME ),
+  title: __( 'オレンジ', THEME_NAME ),
   tagName: 'span',
   className: 'badge',
   // attributes: {

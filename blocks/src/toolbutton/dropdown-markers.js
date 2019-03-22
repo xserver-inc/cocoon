@@ -29,8 +29,8 @@ registerFormatType( FORMAT_TYPE_NAME, {
           <Toolbar>
             <DropdownMenu
               icon={ <FontAwesomeIcon icon="highlighter" /> }
-              label={__( '文字', THEME_NAME )}
-              className='letters'
+              label={__( 'マーカー', THEME_NAME )}
+              className='merkers'
               controls={ [
                   {
                       title: <span className="marker">{__( '黄色マーカー', THEME_NAME )}</span>,
