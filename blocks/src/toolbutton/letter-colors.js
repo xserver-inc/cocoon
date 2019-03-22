@@ -86,6 +86,12 @@ registerFormatType( FORMAT_TYPE_NAME, {
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/bold-green' } ) )
                   },
                   {
+                      title: __( 'キーボードキー', THEME_NAME ),
+                      icon: 'screenoptions',
+                      isActive: type === 'cocoon-blocks/keyboard-key',
+                      onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/keyboard-key' } ) )
+                  },
+                  {
                       title: __( '打ち消し線（訂正）', THEME_NAME ),
                       icon: 'minus',
                       isActive: type === 'cocoon-blocks/strike',
