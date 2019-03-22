@@ -10,22 +10,22 @@
 .reffer,
 .sankou{
   @extend %badge;
-  background-color: #fc7a22;
+  background-color: #f39800;
   // color: $white;
-  // background-color: #fc7a22;
+  // background-color: #f39800;
   // padding: 1px 5px 0;
   // border-radius: 2px;
   // font-size: 12px;
 }
 
-.badge-red{@extend %badge;background-color: #d71d3b;}
-.badge-pink{@extend %badge;background-color: #e91e63;}
-.badge-purple{@extend %badge;background-color: #9c27b0;}
-.badge-blue{@extend %badge;background-color: #2196f3;}
-.badge-green{@extend %badge;background-color: #4caf50;}
-.badge-yellow{@extend %badge;background-color: #edd60e;}
-.badge-brown{@extend %badge;background-color: #795548;}
-.badge-grey{@extend %badge;background-color: #9e9e9e;}
+.badge-red{@extend %badge;background-color: #e60033;}
+.badge-pink{@extend %badge;background-color: #e95295;}
+.badge-purple{@extend %badge;background-color: #884898;}
+.badge-blue{@extend %badge;background-color: #0095d9;}
+.badge-green{@extend %badge;background-color: #3eb370;}
+.badge-yellow{@extend %badge;background-color: #ffd900;}
+.badge-brown{@extend %badge;background-color: #956f29;}
+.badge-grey{@extend %badge;background-color: #949495;}
 
 /*太字*/
 .bold{
@@ -713,24 +713,24 @@ $bb_green: #3eb370;
 
 .btn-white, .btn-wrap.btn-wrap-white > a{color: #333;background-color: #fff;}
 #container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: #333;}
-.btn-red, .btn-wrap.btn-wrap-red > a{background-color: #f44336;}
-.btn-pink, .btn-wrap.btn-wrap-pink > a{background-color: #e91e63;}
-.btn-purple, .btn-wrap.btn-wrap-purple > a{background-color: #9c27b0;}
+.btn-red, .btn-wrap.btn-wrap-red > a{background-color: #e60033;}
+.btn-pink, .btn-wrap.btn-wrap-pink > a{background-color: #e95295;}
+.btn-purple, .btn-wrap.btn-wrap-purple > a{background-color: #884898;}
 .btn-deep, .btn-wrap.btn-wrap-deep > a{background-color: #673ab7;}
 .btn-indigo, .btn-wrap.btn-wrap-indigo > a{background-color: #3f51b5;}
-.btn-blue, .btn-wrap.btn-wrap-blue > a{background-color: #2196f3;}
+.btn-blue, .btn-wrap.btn-wrap-blue > a{background-color: #0095d9;}
 .btn-light-blue, .btn-wrap.btn-wrap-light-blue > a{background-color: #03a9f4;}
 .btn-cyan, .btn-wrap.btn-wrap-cyan > a{background-color: #00bcd4;}
 .btn-teal, .btn-wrap.btn-wrap-teal > a{background-color: #009688;}
-.btn-green, .btn-wrap.btn-wrap-green > a{background-color: #4caf50;}
+.btn-green, .btn-wrap.btn-wrap-green > a{background-color: #3eb370;}
 .btn-light-green, .btn-wrap.btn-wrap-light-green > a{background-color: #8bc34a;}
 .btn-lime, .btn-wrap.btn-wrap-lime > a{background-color: #cddc39;}
-.btn-yellow, .btn-wrap.btn-wrap-yellow > a{background-color: #edd60e;}
+.btn-yellow, .btn-wrap.btn-wrap-yellow > a{background-color: #ffd900;}
 .btn-amber, .btn-wrap.btn-wrap-amber > a{background-color: #ffc107;}
 .btn-orange, .btn-wrap.btn-wrap-orange > a{background-color: #ff9800;}
 .btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a{background-color: #ff5722;}
-.btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: #795548;}
-.btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: #9e9e9e;}
+.btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: #956f29;}
+.btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: #949495;}
 .btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: #607d8b;}
 
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before{content: "\f061";}

@@ -767,15 +767,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
 .admin-settings .demo .widget h2 { font-size: 20px; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou, .admin-settings .demo .badge-red, .admin-settings .demo .badge-pink, .admin-settings .demo .badge-purple, .admin-settings .demo .badge-blue, .admin-settings .demo .badge-green, .admin-settings .demo .badge-yellow, .admin-settings .demo .badge-brown, .admin-settings .demo .badge-grey, .admin-settings .demo #wpbody-content .badge, #wpbody-content .admin-settings .demo .badge, .admin-settings .demo #wpbody-content .ref, #wpbody-content .admin-settings .demo .ref, .admin-settings .demo #wpbody-content .reffer, #wpbody-content .admin-settings .demo .reffer, .admin-settings .demo #wpbody-content .sankou, #wpbody-content .admin-settings .demo .sankou, .admin-settings .demo #wpbody-content .badge-red, #wpbody-content .admin-settings .demo .badge-red, .admin-settings .demo #wpbody-content .badge-pink, #wpbody-content .admin-settings .demo .badge-pink, .admin-settings .demo #wpbody-content .badge-purple, #wpbody-content .admin-settings .demo .badge-purple, .admin-settings .demo #wpbody-content .badge-blue, #wpbody-content .admin-settings .demo .badge-blue, .admin-settings .demo #wpbody-content .badge-green, #wpbody-content .admin-settings .demo .badge-green, .admin-settings .demo #wpbody-content .badge-yellow, #wpbody-content .admin-settings .demo .badge-yellow, .admin-settings .demo #wpbody-content .badge-brown, #wpbody-content .admin-settings .demo .badge-brown, .admin-settings .demo #wpbody-content .badge-grey, #wpbody-content .admin-settings .demo .badge-grey { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; }
-.admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #fc7a22; }
-.admin-settings .demo .badge-red { background-color: #d71d3b; }
-.admin-settings .demo .badge-pink { background-color: #e91e63; }
-.admin-settings .demo .badge-purple { background-color: #9c27b0; }
-.admin-settings .demo .badge-blue { background-color: #2196f3; }
-.admin-settings .demo .badge-green { background-color: #4caf50; }
-.admin-settings .demo .badge-yellow { background-color: #edd60e; }
-.admin-settings .demo .badge-brown { background-color: #795548; }
-.admin-settings .demo .badge-grey { background-color: #9e9e9e; }
+.admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #f39800; }
+.admin-settings .demo .badge-red { background-color: #e60033; }
+.admin-settings .demo .badge-pink { background-color: #e95295; }
+.admin-settings .demo .badge-purple { background-color: #884898; }
+.admin-settings .demo .badge-blue { background-color: #0095d9; }
+.admin-settings .demo .badge-green { background-color: #3eb370; }
+.admin-settings .demo .badge-yellow { background-color: #ffd900; }
+.admin-settings .demo .badge-brown { background-color: #956f29; }
+.admin-settings .demo .badge-grey { background-color: #949495; }
 .admin-settings .demo .bold { font-weight: bold; }
 .admin-settings .demo .red { color: #e60033; }
 .admin-settings .demo .bold-red { font-weight: bold; color: #e60033; }
@@ -883,24 +883,24 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
-.admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #f44336; }
-.admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e91e63; }
-.admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #9c27b0; }
+.admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
+.admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
+.admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
 .admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
 .admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
-.admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #2196f3; }
+.admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
 .admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
 .admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
 .admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
-.admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #4caf50; }
+.admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 .admin-settings .demo .btn-light-green, .admin-settings .demo .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
 .admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
-.admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #edd60e; }
+.admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 .admin-settings .demo .btn-amber, .admin-settings .demo .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
 .admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
 .admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
-.admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #795548; }
-.admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #9e9e9e; }
+.admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #956f29; }
+.admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 .admin-settings .demo .btn-chevron-right:before, .admin-settings .demo .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }
@@ -1951,15 +1951,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
 .admin-settings .demo .widget h2 { font-size: 20px; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou, .admin-settings .demo .badge-red, .admin-settings .demo .badge-pink, .admin-settings .demo .badge-purple, .admin-settings .demo .badge-blue, .admin-settings .demo .badge-green, .admin-settings .demo .badge-yellow, .admin-settings .demo .badge-brown, .admin-settings .demo .badge-grey, .admin-settings .demo #wpbody-content .badge, #wpbody-content .admin-settings .demo .badge, .admin-settings .demo #wpbody-content .ref, #wpbody-content .admin-settings .demo .ref, .admin-settings .demo #wpbody-content .reffer, #wpbody-content .admin-settings .demo .reffer, .admin-settings .demo #wpbody-content .sankou, #wpbody-content .admin-settings .demo .sankou, .admin-settings .demo #wpbody-content .badge-red, #wpbody-content .admin-settings .demo .badge-red, .admin-settings .demo #wpbody-content .badge-pink, #wpbody-content .admin-settings .demo .badge-pink, .admin-settings .demo #wpbody-content .badge-purple, #wpbody-content .admin-settings .demo .badge-purple, .admin-settings .demo #wpbody-content .badge-blue, #wpbody-content .admin-settings .demo .badge-blue, .admin-settings .demo #wpbody-content .badge-green, #wpbody-content .admin-settings .demo .badge-green, .admin-settings .demo #wpbody-content .badge-yellow, #wpbody-content .admin-settings .demo .badge-yellow, .admin-settings .demo #wpbody-content .badge-brown, #wpbody-content .admin-settings .demo .badge-brown, .admin-settings .demo #wpbody-content .badge-grey, #wpbody-content .admin-settings .demo .badge-grey { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; }
-.admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #fc7a22; }
-.admin-settings .demo .badge-red { background-color: #d71d3b; }
-.admin-settings .demo .badge-pink { background-color: #e91e63; }
-.admin-settings .demo .badge-purple { background-color: #9c27b0; }
-.admin-settings .demo .badge-blue { background-color: #2196f3; }
-.admin-settings .demo .badge-green { background-color: #4caf50; }
-.admin-settings .demo .badge-yellow { background-color: #edd60e; }
-.admin-settings .demo .badge-brown { background-color: #795548; }
-.admin-settings .demo .badge-grey { background-color: #9e9e9e; }
+.admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #f39800; }
+.admin-settings .demo .badge-red { background-color: #e60033; }
+.admin-settings .demo .badge-pink { background-color: #e95295; }
+.admin-settings .demo .badge-purple { background-color: #884898; }
+.admin-settings .demo .badge-blue { background-color: #0095d9; }
+.admin-settings .demo .badge-green { background-color: #3eb370; }
+.admin-settings .demo .badge-yellow { background-color: #ffd900; }
+.admin-settings .demo .badge-brown { background-color: #956f29; }
+.admin-settings .demo .badge-grey { background-color: #949495; }
 .admin-settings .demo .bold { font-weight: bold; }
 .admin-settings .demo .red { color: #e60033; }
 .admin-settings .demo .bold-red { font-weight: bold; color: #e60033; }
@@ -2067,24 +2067,24 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
-.admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #f44336; }
-.admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e91e63; }
-.admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #9c27b0; }
+.admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
+.admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
+.admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
 .admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
 .admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
-.admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #2196f3; }
+.admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
 .admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
 .admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
 .admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
-.admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #4caf50; }
+.admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 .admin-settings .demo .btn-light-green, .admin-settings .demo .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
 .admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
-.admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #edd60e; }
+.admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 .admin-settings .demo .btn-amber, .admin-settings .demo .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
 .admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
 .admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
-.admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #795548; }
-.admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #9e9e9e; }
+.admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #956f29; }
+.admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 .admin-settings .demo .btn-chevron-right:before, .admin-settings .demo .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }
@@ -3279,15 +3279,15 @@ textarea[name="the_page_memo"] { width: 100%; }
 ** トグル表示ボタン
 ************************************/ }
 #wpbody-content .badge, #wpbody-content .ref, #wpbody-content .reffer, #wpbody-content .sankou, #wpbody-content .badge-red, #wpbody-content .badge-pink, #wpbody-content .badge-purple, #wpbody-content .badge-blue, #wpbody-content .badge-green, #wpbody-content .badge-yellow, #wpbody-content .badge-brown, #wpbody-content .badge-grey { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; }
-#wpbody-content .badge, #wpbody-content .ref, #wpbody-content .reffer, #wpbody-content .sankou { background-color: #fc7a22; }
-#wpbody-content .badge-red { background-color: #d71d3b; }
-#wpbody-content .badge-pink { background-color: #e91e63; }
-#wpbody-content .badge-purple { background-color: #9c27b0; }
-#wpbody-content .badge-blue { background-color: #2196f3; }
-#wpbody-content .badge-green { background-color: #4caf50; }
-#wpbody-content .badge-yellow { background-color: #edd60e; }
-#wpbody-content .badge-brown { background-color: #795548; }
-#wpbody-content .badge-grey { background-color: #9e9e9e; }
+#wpbody-content .badge, #wpbody-content .ref, #wpbody-content .reffer, #wpbody-content .sankou { background-color: #f39800; }
+#wpbody-content .badge-red { background-color: #e60033; }
+#wpbody-content .badge-pink { background-color: #e95295; }
+#wpbody-content .badge-purple { background-color: #884898; }
+#wpbody-content .badge-blue { background-color: #0095d9; }
+#wpbody-content .badge-green { background-color: #3eb370; }
+#wpbody-content .badge-yellow { background-color: #ffd900; }
+#wpbody-content .badge-brown { background-color: #956f29; }
+#wpbody-content .badge-grey { background-color: #949495; }
 #wpbody-content .bold { font-weight: bold; }
 #wpbody-content .red { color: #e60033; }
 #wpbody-content .bold-red { font-weight: bold; color: #e60033; }
@@ -3395,24 +3395,24 @@ textarea[name="the_page_memo"] { width: 100%; }
 #wpbody-content .btn-l::after, #wpbody-content .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .ranking-item-link-buttons #wpbody-content a::after, #wpbody-content .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 30px; }
 #wpbody-content .btn-white, #wpbody-content .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 #wpbody-content #container .btn-white:hover, #wpbody-content #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
-#wpbody-content .btn-red, #wpbody-content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link #wpbody-content a, #wpbody-content .btn-wrap.btn-wrap-red > a { background-color: #f44336; }
-#wpbody-content .btn-pink, #wpbody-content .btn-wrap.btn-wrap-pink > a { background-color: #e91e63; }
-#wpbody-content .btn-purple, #wpbody-content .btn-wrap.btn-wrap-purple > a { background-color: #9c27b0; }
+#wpbody-content .btn-red, #wpbody-content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link #wpbody-content a, #wpbody-content .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
+#wpbody-content .btn-pink, #wpbody-content .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
+#wpbody-content .btn-purple, #wpbody-content .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
 #wpbody-content .btn-deep, #wpbody-content .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
 #wpbody-content .btn-indigo, #wpbody-content .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
-#wpbody-content .btn-blue, #wpbody-content .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .ranking-item-detail #wpbody-content a, #wpbody-content .btn-wrap.btn-wrap-blue > a { background-color: #2196f3; }
+#wpbody-content .btn-blue, #wpbody-content .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .ranking-item-detail #wpbody-content a, #wpbody-content .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
 #wpbody-content .btn-light-blue, #wpbody-content .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
 #wpbody-content .btn-cyan, #wpbody-content .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
 #wpbody-content .btn-teal, #wpbody-content .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
-#wpbody-content .btn-green, #wpbody-content .btn-wrap.btn-wrap-green > a { background-color: #4caf50; }
+#wpbody-content .btn-green, #wpbody-content .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 #wpbody-content .btn-light-green, #wpbody-content .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
 #wpbody-content .btn-lime, #wpbody-content .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
-#wpbody-content .btn-yellow, #wpbody-content .btn-wrap.btn-wrap-yellow > a { background-color: #edd60e; }
+#wpbody-content .btn-yellow, #wpbody-content .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 #wpbody-content .btn-amber, #wpbody-content .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
 #wpbody-content .btn-orange, #wpbody-content .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
 #wpbody-content .btn-deep-orange, #wpbody-content .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
-#wpbody-content .btn-brown, #wpbody-content .btn-wrap.btn-wrap-brown > a { background-color: #795548; }
-#wpbody-content .btn-grey, #wpbody-content .btn-wrap.btn-wrap-grey > a { background-color: #9e9e9e; }
+#wpbody-content .btn-brown, #wpbody-content .btn-wrap.btn-wrap-brown > a { background-color: #956f29; }
+#wpbody-content .btn-grey, #wpbody-content .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 #wpbody-content .btn-blue-grey, #wpbody-content .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
 #wpbody-content .btn-arrow-right:before, #wpbody-content .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 #wpbody-content .btn-chevron-right:before, #wpbody-content .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }

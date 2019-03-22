@@ -2424,39 +2424,39 @@ label.screen-reader-text {
 .ref,
 .reffer,
 .sankou {
-  background-color: #fc7a22;
+  background-color: #f39800;
 }
 
 .badge-red {
-  background-color: #d71d3b;
+  background-color: #e60033;
 }
 
 .badge-pink {
-  background-color: #e91e63;
+  background-color: #e95295;
 }
 
 .badge-purple {
-  background-color: #9c27b0;
+  background-color: #884898;
 }
 
 .badge-blue {
-  background-color: #2196f3;
+  background-color: #0095d9;
 }
 
 .badge-green {
-  background-color: #4caf50;
+  background-color: #3eb370;
 }
 
 .badge-yellow {
-  background-color: #edd60e;
+  background-color: #ffd900;
 }
 
 .badge-brown {
-  background-color: #795548;
+  background-color: #956f29;
 }
 
 .badge-grey {
-  background-color: #9e9e9e;
+  background-color: #949495;
 }
 
 /*太字*/
@@ -3126,15 +3126,15 @@ label.screen-reader-text {
 }
 
 .btn-red, .ranking-item-link a, .btn-wrap.btn-wrap-red > a {
-  background-color: #f44336;
+  background-color: #e60033;
 }
 
 .btn-pink, .btn-wrap.btn-wrap-pink > a {
-  background-color: #e91e63;
+  background-color: #e95295;
 }
 
 .btn-purple, .btn-wrap.btn-wrap-purple > a {
-  background-color: #9c27b0;
+  background-color: #884898;
 }
 
 .btn-deep, .btn-wrap.btn-wrap-deep > a {
@@ -3146,7 +3146,7 @@ label.screen-reader-text {
 }
 
 .btn-blue, .ranking-item-detail a, .btn-wrap.btn-wrap-blue > a {
-  background-color: #2196f3;
+  background-color: #0095d9;
 }
 
 .btn-light-blue, .btn-wrap.btn-wrap-light-blue > a {
@@ -3162,7 +3162,7 @@ label.screen-reader-text {
 }
 
 .btn-green, .btn-wrap.btn-wrap-green > a {
-  background-color: #4caf50;
+  background-color: #3eb370;
 }
 
 .btn-light-green, .btn-wrap.btn-wrap-light-green > a {
@@ -3174,7 +3174,7 @@ label.screen-reader-text {
 }
 
 .btn-yellow, .btn-wrap.btn-wrap-yellow > a {
-  background-color: #edd60e;
+  background-color: #ffd900;
 }
 
 .btn-amber, .btn-wrap.btn-wrap-amber > a {
@@ -3190,11 +3190,11 @@ label.screen-reader-text {
 }
 
 .btn-brown, .btn-wrap.btn-wrap-brown > a {
-  background-color: #795548;
+  background-color: #956f29;
 }
 
 .btn-grey, .btn-wrap.btn-wrap-grey > a {
-  background-color: #9e9e9e;
+  background-color: #949495;
 }
 
 .btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a {
