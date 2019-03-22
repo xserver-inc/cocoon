@@ -3528,3 +3528,41 @@ textarea[name="the_page_memo"] { width: 100%; }
 #wpbody-content .tb-green .toggle-button::before { color: #ccc; }
 #wpbody-content .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
 #wpbody-content .red { margin: 0; }
+#wpbody-content .fz-12px { font-size: 12px; }
+#wpbody-content .fz-13px { font-size: 13px; }
+#wpbody-content .fz-14px { font-size: 14px; }
+#wpbody-content .fz-15px { font-size: 15px; }
+#wpbody-content .fz-16px { font-size: 16px; }
+#wpbody-content .fz-17px { font-size: 17px; }
+#wpbody-content .fz-18px { font-size: 18px; }
+#wpbody-content .fz-19px { font-size: 19px; }
+#wpbody-content .fz-20px { font-size: 20px; }
+#wpbody-content .fz-21px { font-size: 21px; }
+#wpbody-content .fz-22px { font-size: 22px; }
+#wpbody-content .fz-24px { font-size: 24px; }
+#wpbody-content .fz-28px { font-size: 28px; }
+#wpbody-content .fz-32px { font-size: 32px; }
+#wpbody-content .fz-36px { font-size: 36px; }
+#wpbody-content .fz-40px { font-size: 40px; }
+#wpbody-content .fz-44px { font-size: 44px; }
+#wpbody-content .fz-48px { font-size: 48px; }
+#wpbody-content .fw-100 { font-weight: 100; }
+#wpbody-content .fw-200 { font-weight: 200; }
+#wpbody-content .fw-300 { font-weight: 300; }
+#wpbody-content .fw-400 { font-weight: 400; }
+#wpbody-content .fw-500 { font-weight: 500; }
+#wpbody-content .fw-600 { font-weight: 600; }
+#wpbody-content .fw-700 { font-weight: 700; }
+#wpbody-content .fw-800 { font-weight: 800; }
+#wpbody-content .fw-900 { font-weight: 900; }
+#wpbody-content .ff-meiryo { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+#wpbody-content .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
+#wpbody-content .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
+#wpbody-content .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
+#wpbody-content .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
+#wpbody-content .ff-hannari { font-family: "Hannari" ,sans-serif; }
+#wpbody-content .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
+#wpbody-content .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
+#wpbody-content .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
+#wpbody-content .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
+#wpbody-content span.sub-caption { opacity: 0.8; }

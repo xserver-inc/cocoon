@@ -72,3 +72,4 @@ import './toolbutton/badge-grey.js';
 import './toolbutton/dropdown-letters.js';
 import './toolbutton/dropdown-markers.js';
 import './toolbutton/dropdown-badges.js';
+import './toolbutton/dropdown-font-sizes.js';

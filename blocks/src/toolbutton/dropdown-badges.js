@@ -34,55 +34,55 @@ registerFormatType( FORMAT_TYPE_NAME, {
               controls={ [
                   {
                       title: <span className="badge">{__( 'オレンジ', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge' } ) )
                   },
                   {
                       title: <span className="badge-red">{__( '赤色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-red',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-red' } ) )
                   },
                   {
                       title: <span className="badge-pink">{__( 'ピンク', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-pink',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-pink' } ) )
                   },
                   {
                       title: <span className="badge-purple">{__( '紫色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-purple',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-purple' } ) )
                   },
                   {
                       title: <span className="badge-blue">{__( '青色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-blue',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-blue' } ) )
                   },
                   {
                       title: <span className="badge-green">{__( '緑色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-green',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-green' } ) )
                   },
                   {
                       title: <span className="badge-yellow">{__( '黄色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-yellow',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-yellow' } ) )
                   },
                   {
                       title: <span className="badge-brown">{__( '茶色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-brown',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-brown' } ) )
                   },
                   {
                       title: <span className="badge-grey">{__( '灰色', THEME_NAME )}</span>,
-                      icon: <FontAwesomeIcon icon="tag" />,
+                      icon: 'tag',
                       isActive: type === 'cocoon-blocks/badge-grey',
                       onClick: () => onChange( toggleFormat( value, { type: 'cocoon-blocks/badge-grey' } ) )
                   },
