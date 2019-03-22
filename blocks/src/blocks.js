@@ -55,7 +55,7 @@ import './toolbutton/marker-red.js';
 import './toolbutton/marker-under-red.js';
 import './toolbutton/marker-blue.js';
 import './toolbutton/marker-under-blue.js';
-import './toolbutton/letter-colors.js';
+import './toolbutton/dropdown-letters.js';
 // import './toolbutton/badge.js';
 
 
