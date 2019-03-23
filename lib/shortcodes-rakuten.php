@@ -441,7 +441,7 @@ function rakuten_product_link_shortcode($atts){
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
           break;
         default:
-        $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いたとリロードすると商品リンクが表示される可能性があります。', THEME_NAME );
+        $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。', THEME_NAME );
           break;
       }
       return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
