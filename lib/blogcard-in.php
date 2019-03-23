@@ -298,3 +298,12 @@ function is_p_tag_appropriate($match){
   return true;
 }
 endif;
+
+//figure.wp-block-embedとdiv.wp-block-embed__wrapperの除外
+add_filter('the_content', 'remove_wp_block_embeds');
+if ( !function_exists( 'remove_wp_block_embeds' ) ):
+function remove_wp_block_embeds($the_content){
+  $the_content = preg_replace('/<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">(.*?'.URL_REG_STR.'.*?)<\/div><\/figure>/is', '$1', $the_content);
+  return $the_content;
+}
+endif;
