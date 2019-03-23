@@ -3113,7 +3113,7 @@ label.screen-reader-text {
   content: "\f105";
   position: absolute;
   right: 0;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
