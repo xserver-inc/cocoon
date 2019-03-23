@@ -3792,6 +3792,12 @@ label.screen-reader-text {
   width: 25%;
 }
 
+@media (min-width: 600px) {
+  .wp-block-columns .wp-block-column {
+    margin: 1%;
+    flex-basis: 48%;
+  }
+}
 /************************************
 ** SNSフォローボタン
 ************************************/
