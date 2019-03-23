@@ -10,13 +10,12 @@ const { __ } = wp.i18n;
 const { registerFormatType, toggleFormat } = wp.richText;
 const { RichTextShortcut, RichTextToolbarButton } = wp.editor;
 const THEME_NAME = 'cocoon';
-const FORMAT_TYPE_NAME = 'cocoon-blocks/marker-under-red';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const FORMAT_TYPE_NAME = 'cocoon-blocks/keyboard-key';
 
 registerFormatType( FORMAT_TYPE_NAME, {
-  title: __( '赤色アンダーラインマーカー', THEME_NAME ),
+  title: __( 'キーボードキー', THEME_NAME ),
   tagName: 'span',
-  className: 'marker-under-red',
+  className: 'keyboard-key',
   // edit( { isActive, value, onChange } ) {
   //   const onToggle = () => onChange( toggleFormat( value, { type: FORMAT_TYPE_NAME } ) );
 
@@ -28,8 +27,8 @@ registerFormatType( FORMAT_TYPE_NAME, {
   //         onUse={ onToggle }
   //       />
   //       <RichTextToolbarButton
-  //         title={ __( '赤色アンダーラインマーカー', THEME_NAME ) }
-  //         icon={ <FontAwesomeIcon icon="window-minimize" /> }
+  //         title={ __( 'キーボードキー', THEME_NAME ) }
+  //         icon='editor-bold'
   //         onClick={ onToggle }
   //         isActive={ isActive }
   //         shortcutType='primary'

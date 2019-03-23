@@ -1062,3 +1062,13 @@ textarea[name="the_page_memo"]{
 #carousel{
   display: block;
 }
+
+#wpbody-content{
+  //拡張クラス
+  @import "extension";
+  .red{
+    margin: 0;
+  }
+  //フォント
+  @import "font";
+}
