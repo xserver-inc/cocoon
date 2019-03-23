@@ -60,9 +60,8 @@
 }
 
 //ブロックエディターカラムの不具合修正
-@media (min-width: 600px){
-  .wp-block-columns .wp-block-column {
-      margin: 1%;
-      flex-basis: 48%;
+@media (min-width: 600px) {
+  .wp-block-columns {
+   flex-wrap: nowrap;
   }
-}
+ }

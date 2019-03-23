@@ -3793,9 +3793,8 @@ label.screen-reader-text {
 }
 
 @media (min-width: 600px) {
-  .wp-block-columns .wp-block-column {
-    margin: 1%;
-    flex-basis: 48%;
+  .wp-block-columns {
+    flex-wrap: nowrap;
   }
 }
 /************************************
