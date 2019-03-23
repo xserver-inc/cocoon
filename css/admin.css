@@ -920,7 +920,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
@@ -2105,7 +2105,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
-.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
@@ -3434,7 +3434,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 #wpbody-content .micro-bottom { font-size: 0.8em; margin-top: -1.2em; margin-bottom: 1em; }
 #wpbody-content .micro-center { text-align: center; }
 #wpbody-content .micro-right { text-align: right; }
-#wpbody-content .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 8px; display: table; font-size: 0.8em; }
+#wpbody-content .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
 #wpbody-content .micro-balloon:after, #wpbody-content .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 #wpbody-content .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 #wpbody-content .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }

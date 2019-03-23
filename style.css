@@ -3284,7 +3284,7 @@ label.screen-reader-text {
   background: #fff;
   border: 1px solid #999;
   border-radius: 4px;
-  padding: 3px 8px;
+  padding: 3px 12px;
   display: table;
   font-size: 0.8em;
 }
