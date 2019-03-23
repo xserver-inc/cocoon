@@ -34,6 +34,7 @@ add_action('show_user_profile', 'add_avatar_to_user_profile');
 add_action('edit_user_profile', 'add_avatar_to_user_profile');
 if ( !function_exists( 'add_avatar_to_user_profile' ) ):
 function add_avatar_to_user_profile($user) {
+  if (is_admin()) {
 ?>
   <h3><?php _e( 'プロフィール画像', THEME_NAME ) ?></h3>
   <table class="form-table">
@@ -62,6 +63,7 @@ function add_avatar_to_user_profile($user) {
     </tr>
   </table>
 <?php
+  }
 }
 endif;
 
