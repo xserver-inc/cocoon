@@ -116,9 +116,11 @@ function get_the_date_tags(){
       break;
     //更新日・投稿日を伝える
     default:
+      // _v(get_the_time('U'));
+      // _v(get_update_time('U'));
       $date_tags = $time_post_date_tag;
       //更新日があるとき
-      if ($update_time) {
+      if ($update_time && (get_the_time('U') < get_update_time('U'))) {
         $date_tags .= $time_update_date_tag;
       }
       break;
