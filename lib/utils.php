@@ -419,7 +419,7 @@ endif;
 //https://qiita.com/ryo_hisano/items/42f5980720bc832e6e09
 if ( !function_exists( 'wp_enqueue_lazy_load' ) ):
 function wp_enqueue_lazy_load(){
-  if (is_lazy_load_enable() && !is_login_page()) {
+  if (is_lazy_load_enable() && !is_admin() && !is_login_page()) {
     wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array(), false, true );
     wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array('polyfill-js'), false, true );
     $data = 'const observer = lozad(".lozad", {rootMargin: "500px"});observer.observe();';
@@ -484,7 +484,7 @@ endif;
 //アイコンフォントの読み込み
 if ( !function_exists( 'wp_enqueue_web_font_lazy_load_js' ) ):
 function wp_enqueue_web_font_lazy_load_js(){
-  if ( is_web_font_lazy_load_enable() ){
+  if ( is_web_font_lazy_load_enable() && !is_admin() ){
     wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
     $data = ('
       loadWebFont("'.FONT_AWESOME4_URL.'");
