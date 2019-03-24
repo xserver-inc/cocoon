@@ -53,7 +53,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif ?>
         <?php //更新時の表示
         //_v(is_related_entry_card_post_update_visible());
-        if (is_related_entry_card_post_update_visible() && $update_time): ?>
+        if (is_related_entry_card_post_update_visible() && $update_time && (get_the_time('U') < get_update_time('U'))): ?>
           <span class="post-update"><?php echo $update_time; ?></span>
         <?php endif ?>
         <?php //投稿者の表示
