@@ -7,6 +7,7 @@
   color: $text_color;
   padding: 1.5%;
   margin-bottom: 3%;
+  transition: $bgc_hover_anime;
 
   &:hover {
     @include bgc_hover;

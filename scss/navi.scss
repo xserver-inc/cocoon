@@ -133,6 +133,7 @@ $icon_height: 16px;
     @include link_cancel;
     display: block;
     font-size: 16px;
+    transition: $bgc_hover_anime;
     &:hover{
       @include bgc_hover;
 
@@ -190,6 +191,7 @@ $icon_height: 16px;
     @include link_cancel;
     display: block;
     font-size: 14px;
+    transition: $bgc_hover_anime;
     &:hover{
       @include bgc_hover;
     }
