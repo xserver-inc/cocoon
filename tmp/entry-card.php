@@ -49,8 +49,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <span class="post-date"><?php the_time(get_site_date_format()); ?></span>
           <?php endif ?>
           <?php //更新時の表示
-
-          if (is_entry_card_post_update_visible() && $update_time): ?>
+          if (is_entry_card_post_update_visible() && $update_time && (get_the_time('U') < get_update_time('U'))): ?>
             <span class="post-update"><?php echo $update_time; ?></span>
           <?php endif ?>
           <?php //投稿者の表示
