@@ -1782,7 +1782,7 @@ span.internal-icon {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .sidebar .ad-vertical .ad-usual {
     display: none;
   }
@@ -5037,7 +5037,7 @@ div.sbs-think .speech-balloon::after {
   margin: 0 .5% !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box {
     padding: 10px 10px 24px;
     display: block;
@@ -7366,7 +7366,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .navi-in > .menu-header {
     display: none;
   }

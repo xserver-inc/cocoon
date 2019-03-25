@@ -1978,8 +1978,8 @@ color: white!important;
 
 }
 
-/*768px以下*/
-@media screen and (max-width: 768px){
+/*834px以下*/
+@media screen and (max-width: 834px){
   /*必要ならばここにコードを書く*/
   /* HACK: モバイルのフッター */
 .mblt-slide-in .footer {

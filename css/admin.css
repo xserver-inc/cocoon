@@ -654,7 +654,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .ad-dabble-rectangle .ad-additional-double { display: none; } }
 .admin-settings .demo .sidebar .ad-additional-double { display: none; }
 .admin-settings .demo .sidebar .ad-additional-vertical { display: none; }
-@media screen and (max-width: 768px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
+@media screen and (max-width: 834px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical { display: block; } }
 .admin-settings .demo .blogcard-wrap { margin: 24px auto; padding: 0; width: 90%; background-color: #fff; }
 .admin-settings .demo .blogcard { padding: 1.4% 2% 1.8%; border: 1px solid #ccc; border-radius: 4px; line-height: 1.3; position: relative; }
@@ -1259,7 +1259,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 80px; min-width: 80px; }
 .admin-settings .demo .nwa .booklink-info, .admin-settings .demo .nwa .kaerebalink-info, .admin-settings .demo .nwa .tomarebalink-info, .admin-settings .demo .nwa .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
 .admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 49%; margin: 0 .5% !important; }
-@media screen and (max-width: 768px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
+@media screen and (max-width: 834px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
   .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
@@ -1839,7 +1839,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .ad-dabble-rectangle .ad-additional-double { display: none; } }
 .admin-settings .demo .sidebar .ad-additional-double { display: none; }
 .admin-settings .demo .sidebar .ad-additional-vertical { display: none; }
-@media screen and (max-width: 768px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
+@media screen and (max-width: 834px) { .admin-settings .demo .sidebar .ad-vertical .ad-usual { display: none; }
   .admin-settings .demo .sidebar .ad-vertical .ad-additional-vertical { display: block; } }
 .admin-settings .demo .blogcard-wrap { margin: 24px auto; padding: 0; width: 90%; background-color: #fff; }
 .admin-settings .demo .blogcard { padding: 1.4% 2% 1.8%; border: 1px solid #ccc; border-radius: 4px; line-height: 1.3; position: relative; }
@@ -2444,7 +2444,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 80px; min-width: 80px; }
 .admin-settings .demo .nwa .booklink-info, .admin-settings .demo .nwa .kaerebalink-info, .admin-settings .demo .nwa .tomarebalink-info, .admin-settings .demo .nwa .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
 .admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 49%; margin: 0 .5% !important; }
-@media screen and (max-width: 768px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
+@media screen and (max-width: 834px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
   .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
@@ -2873,7 +2873,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; } }
-@media screen and (max-width: 768px) { .admin-settings .demo { /************************************
+@media screen and (max-width: 834px) { .admin-settings .demo { /************************************
 ** 関連記事
 ************************************/ }
   .admin-settings .demo .navi-in > .menu-header { display: none; }

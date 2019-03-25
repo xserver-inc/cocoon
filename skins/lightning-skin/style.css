@@ -42,7 +42,7 @@ input::placeholder { /* プレースホルダーの文字を薄くする */
   color: #cccdce;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 834px){
 	.a-wrap{
 		padding: 0;
 	}
@@ -177,7 +177,7 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 	background-color: #85c6f4;
 	padding: 5px 0;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 834px){
 	#navi .navi-in > .menu-mobile li{
 		min-height: 37px;
 		height: auto;
@@ -320,7 +320,7 @@ ul.sub-menu li a{
 .blogcard-domain {
 	color: #808080;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 834px){
 	.blogcard-content{
 		max-height: 110px;
 	}
@@ -490,7 +490,7 @@ table{
 }
 #commentform input#submit:active{
 	color: white;
-  background-color: #53b768;
+  background-color: #53b834;
 }
 #commentform textarea#comment,#commentform input#author, #commentform input#email, #commentform input#url{
 	border: 3px solid #2fa7e4;

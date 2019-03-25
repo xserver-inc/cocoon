@@ -168,7 +168,7 @@ p.wp-caption-text {
   padding: 20px 30px;
   background-color: #e6e6e6;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .article-footer, .entry-footer {
     margin-right: -10px;
     margin-left: -10px;
@@ -453,7 +453,7 @@ blockquote::after {
     width: 65%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
   .pager-post-navi {
     margin-right: -10px;
     margin-left: -10px;

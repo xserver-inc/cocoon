@@ -380,7 +380,7 @@
   font-size: 0.9em;
 }
 
-@mixin product_item_box_768{
+@mixin product_item_box_834{
   .booklink-box, .kaerebalink-box, .tomarebalink-box, .product-item-box{
     padding: 10px 10px 24px;
     display: block;
@@ -449,13 +449,13 @@
 }
 
 .nwa{
-  @include product_item_box_768;
+  @include product_item_box_834;
   @include product_item_box_480;
 }
 
-//768px以下
-@media screen and (max-width: 768px){
-  @include product_item_box_768;
+//834px以下
+@media screen and (max-width: 834px){
+  @include product_item_box_834;
 }
 
 //480px以下

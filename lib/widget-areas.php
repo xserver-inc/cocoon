@@ -434,7 +434,7 @@ function register_footer_mobile_widget_area(){
     array(
     'name' => __( 'フッター（モバイル用）', THEME_NAME ),
     'id' => 'footer-mobile',
-    'description' => __( 'モバイルで表示するウィジットエリアです。768px以下で表示されます。', THEME_NAME ),
+    'description' => __( 'モバイルで表示するウィジットエリアです。834px以下で表示されます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-footer-mobile %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-footer-mobile-title footer-title">',
