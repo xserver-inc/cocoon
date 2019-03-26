@@ -1063,7 +1063,7 @@ textarea[name="the_page_memo"]{
   display: block;
 }
 
-#wpbody-content{
+.components-popover__content{
   //拡張クラス
   @import "extension";
   .red{
