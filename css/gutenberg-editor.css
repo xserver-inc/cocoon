@@ -276,6 +276,24 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
   margin-left: auto;
 }
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout {
+  display: flex;
+  position: relative;
+  margin: 1em 0;
+}
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div {
+  width: 100%;
+  margin: 0;
+}
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div p {
+  margin-top: 0;
+}
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout [data-type^="cocoon-blocks/column-left"] {
+  background-color: #c7e1ef;
+}
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout [data-type^="cocoon-blocks/column-right"] {
+  background-color: #ffecd3;
+}
 
 /* main */
 .editor-writing-flow {

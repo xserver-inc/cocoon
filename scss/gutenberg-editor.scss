@@ -81,6 +81,37 @@ div.mce-content-body {
   &[data-type^="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
     margin-left: auto;
   }
+
+  .column-wrap > .editor-inner-blocks > .editor-block-list__layout{
+    display: flex;
+    position: relative;
+    margin: 1em 0;
+    // .column-wrap{
+    //   margin: 0;
+    // }
+    // .column-left{
+    //   padding-left: 0;
+    // }
+    // .column-right{
+    //   padding-right: 0;
+    // }
+
+    >div{
+      width: 100%;
+      //padding: 0 0.45em;
+      margin: 0;
+      p{
+        margin-top: 0;
+      }
+    }
+
+    [data-type^="cocoon-blocks/column-left"]{
+      background-color: #c7e1ef;
+    }
+    [data-type^="cocoon-blocks/column-right"]{
+      background-color: #ffecd3;
+    }
+  }
 }
 
 /* main */
