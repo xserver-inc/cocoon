@@ -82,35 +82,89 @@ div.mce-content-body {
     margin-left: auto;
   }
 
-  .column-wrap > .editor-inner-blocks > .editor-block-list__layout{
-    display: flex;
-    position: relative;
-    margin: 1em 0;
-    // .column-wrap{
-    //   margin: 0;
-    // }
-    // .column-left{
-    //   padding-left: 0;
-    // }
-    // .column-right{
-    //   padding-right: 0;
-    // }
 
-    >div{
-      width: 100%;
-      //padding: 0 0.45em;
-      margin: 0;
-      p{
-        margin-top: 0;
+  .column-2,
+  .column-3{
+    .editor-inner-blocks{
+      .column-left,
+      .column-center,
+      .column-right{
+        width: auto;
+      }
+    }
+  }
+
+  .column-wrap{
+     > .editor-inner-blocks > .editor-block-list__layout{
+      display: flex;
+      position: relative;
+      margin: 1em 0;
+
+      >div{
+        width: 100%;
+        //padding: 0 0.45em;
+        margin: 0;
+        p{
+          margin-top: 0;
+        }
+      }
+
+      [data-type^="cocoon-blocks/column-left"]{
+        background-color: #c7e1ef;
+      }
+      [data-type^="cocoon-blocks/column-right"]{
+        background-color: #ffecd3;
       }
     }
 
-    [data-type^="cocoon-blocks/column-left"]{
-      background-color: #c7e1ef;
+    //1:2
+    &.column-2-3-1-2{
+      > .editor-inner-blocks > .editor-block-list__layout{
+        [data-type^="cocoon-blocks/column-left"]{
+          width: 34%;
+        }
+        [data-type^="cocoon-blocks/column-right"]{
+          width: 66%;
+        }
+      }
     }
-    [data-type^="cocoon-blocks/column-right"]{
-      background-color: #ffecd3;
+
+    //2:1
+    &.column-2-3-2-1{
+      > .editor-inner-blocks > .editor-block-list__layout{
+        [data-type^="cocoon-blocks/column-left"]{
+          width: 66%;
+        }
+        [data-type^="cocoon-blocks/column-right"]{
+          width: 34%;
+        }
+      }
     }
+
+    //1:3
+    &.column-2-4-1-3{
+      > .editor-inner-blocks > .editor-block-list__layout{
+        [data-type^="cocoon-blocks/column-left"]{
+          width: 25%;
+        }
+        [data-type^="cocoon-blocks/column-right"]{
+          width: 75%;
+        }
+      }
+    }
+
+    //3:1
+    &.column-2-4-3-1{
+      > .editor-inner-blocks > .editor-block-list__layout{
+        [data-type^="cocoon-blocks/column-left"]{
+          width: 75%;
+        }
+        [data-type^="cocoon-blocks/column-right"]{
+          width: 25%;
+        }
+      }
+    }
+
   }
 }
 
