@@ -276,6 +276,10 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
   margin-left: auto;
 }
+.editor-block-list__layout .editor-block-list__block .column-2,
+.editor-block-list__layout .editor-block-list__block .column-3 {
+  word-break: break-all;
+}
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-left,
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-center,
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-right,
@@ -298,6 +302,9 @@ div.mce-content-body {
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout [data-type^="cocoon-blocks/column-left"] {
   background-color: #c7e1ef;
+}
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout [data-type^="cocoon-blocks/column-center"] {
+  background-color: #c9e8d8;
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout [data-type^="cocoon-blocks/column-right"] {
   background-color: #ffecd3;
