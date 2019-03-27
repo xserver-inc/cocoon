@@ -125,6 +125,11 @@ function add_cocoon_theme_block_categories( $categories, $post ){
         'title' => __( 'Cocoonレイアウト', THEME_NAME ),
         //'icon' => 'heart',
       ),
+      array(
+        'slug' => THEME_NAME.'-shortcode',
+        'title' => __( 'Cocoonショートコード', THEME_NAME ),
+        //'icon' => 'heart',
+      ),
 			array(
 				'slug' => THEME_NAME.'-old',
         'title' => __( 'Cocoon旧ブロック（非推奨）', THEME_NAME ),
