@@ -3,9 +3,9 @@
   display: flex;
   position: relative;
   margin: 1em 0;
-  .column-wrap{
-    margin: 0;
-  }
+  margin: 0;
+  word-break: break-all;
+
   .column-left{
     padding-left: 0;
   }

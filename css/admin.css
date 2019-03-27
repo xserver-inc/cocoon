@@ -1015,8 +1015,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
-.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
 .admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }
@@ -2200,8 +2199,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; }
-.admin-settings .demo .column-wrap .column-wrap { margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
 .admin-settings .demo .column-wrap > div { width: 100%; padding: 0 0.45em; margin: 0; }

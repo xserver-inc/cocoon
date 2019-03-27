@@ -3754,9 +3754,8 @@ label.screen-reader-text {
   display: flex;
   position: relative;
   margin: 1em 0;
-}
-.column-wrap .column-wrap {
   margin: 0;
+  word-break: break-all;
 }
 .column-wrap .column-left {
   padding-left: 0;
