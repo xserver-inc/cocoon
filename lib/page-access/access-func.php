@@ -384,6 +384,8 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
         echo('<pre>');
         echo $transient_id;
         echo('</pre>');
+      } elseif (is_user_administrator()){
+
       } else {
         return $cache;
       }
