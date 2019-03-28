@@ -3764,12 +3764,15 @@ label.screen-reader-text {
   padding-right: 0;
 }
 .column-wrap > div {
-  width: 100%;
+  width: 50%;
   padding: 0 0.45em;
   margin: 0;
 }
 .column-wrap > div p {
   margin-top: 0;
+}
+.column-wrap.column-3 > div {
+  width: 33%;
 }
 
 .column-2-3-1-2 .column-left {
@@ -7692,11 +7695,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 }
 @media screen and (max-width: 599px) {
-  .column-wrap {
+  div.column-wrap {
     flex-direction: column;
   }
-  .column-wrap .column-left,
-  .column-wrap .column-right {
+  div.column-wrap .column-left,
+  div.column-wrap .column-right {
     width: 100%;
     padding: 1em 0;
   }
