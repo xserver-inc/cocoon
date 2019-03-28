@@ -293,13 +293,16 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block .column-3 .editor-inner-blocks .column-right {
   width: auto;
 }
+.editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks {
+  width: 100% !important;
+}
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout {
   display: flex;
   position: relative;
   margin: 1em 0;
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div {
-  width: 100%;
+  width: 100% !important;
   margin: 0;
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div p {

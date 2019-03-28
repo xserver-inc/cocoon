@@ -105,13 +105,17 @@ div.mce-content-body {
   }
 
   .column-wrap{
+    >.editor-inner-blocks{
+      width: 100% !important;
+    }
      > .editor-inner-blocks > .editor-block-list__layout{
       display: flex;
       position: relative;
       margin: 1em 0;
 
+
       >div{
-        width: 100%;
+        width: 100% !important;
         //padding: 0 0.45em;
         margin: 0;
         p{
