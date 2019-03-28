@@ -238,6 +238,7 @@ function update_theme_option($option_name){
   // } else {
   // }
   $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
+  //広告コードからscriptを除外する（サーバーのファイアウォール・403エラー対策）
   if (($option_name == OP_AD_CODE) || ($option_name == OP_AD_LINK_UNIT_CODE)) {
     $opt_val = preg_replace('{<script.+?</script>}is', '', $opt_val);
   }
