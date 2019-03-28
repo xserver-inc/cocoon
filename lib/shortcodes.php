@@ -234,7 +234,7 @@ function timeline_shortcode( $atts, $content = null ){
   if ($title) {
     $title_tag = '<div class="timeline-title">'.$title.'</div>';
   }
-  $tag = '<div class="timeline-box">'.
+  $tag = '<div class="timeline-box cf">'.
             $title_tag.
             '<ul class="timeline">'.
               $content.
