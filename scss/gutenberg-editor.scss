@@ -19,6 +19,15 @@
   max-width: 800px;
 }
 
+
+//ブロックボックス内のインナーブロックのマージン変更
+.block-box{
+  .editor-block-list__layout .editor-block-list__block-edit{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   div {
     &.editor-block-list__block::before, &.editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit::before {
@@ -169,6 +178,22 @@ div.mce-content-body {
       }
     }
 
+  }
+}
+
+//タイムライン
+.timeline-box{
+  .editor-block-list__layout .editor-block-list__block-edit{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .editor-inner-blocks{
+    margin-top: 1em;
+  }
+
+  .editor-block-list__block-edit li.timeline-item{
+    margin: 0;
   }
 }
 
@@ -593,15 +618,6 @@ ol, ul {
   .wp-block-image img {
     flex-shrink: 0;
   }
-}
-
-//ブロックボックス内のインナーブロックのマージン変更
-.block-box{
-  .editor-block-list__block-edit{
-    margin-top: 8px !important;
-    margin-bottom: 8px !important;
-  }
-
 }
 
 //見出しが二重になれ不具合修正
