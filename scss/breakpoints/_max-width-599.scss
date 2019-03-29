@@ -1,10 +1,9 @@
 ///////////////////////////////////////
 // カラム
 ///////////////////////////////////////
-div.column-wrap{
+.main .column-wrap{
   flex-direction: column;
-  .column-left,
-  .column-right{
+  >div{
     width: 100%;
     padding: 1em 0;
   }

@@ -7695,11 +7695,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 }
 @media screen and (max-width: 599px) {
-  div.column-wrap {
+  .main .column-wrap {
     flex-direction: column;
   }
-  div.column-wrap .column-left,
-  div.column-wrap .column-right {
+  .main .column-wrap > div {
     width: 100%;
     padding: 1em 0;
   }
