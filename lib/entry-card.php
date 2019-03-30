@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if ( !function_exists( 'get_big_card_first_thumbnail_size' ) ):
 function get_big_card_first_thumbnail_size($count){
-  if ($count == 1 && !is_paged()) {
+  if ($count == 1 && is_front_page() && !is_paged()) {
     return 'large';
   } else {
     return THUMB320;
@@ -86,7 +86,7 @@ function get_entry_card_no_image_tag($count){
   $thumbnail_tag = $thumbnail_tag_large;
   switch (get_entry_card_type()) {
     case 'big_card_first':
-      if ($count == 1) {
+      if ($count == 1 && is_front_page() && !is_paged()) {
         $thumbnail_tag = $thumbnail_tag_large;
       } else {
         $thumbnail_tag = $thumbnail_tag_320;
