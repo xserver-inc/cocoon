@@ -63,6 +63,14 @@ function is_amazon_item_customer_reviews_visible(){
 }
 endif;
 
+//Amazon商品レビュー文字
+define('OP_AMAZON_ITEM_CUSTOMER_REVIEWS_TEXT', 'amazon_item_customer_reviews_text');
+if ( !function_exists( 'get_amazon_item_customer_reviews_text' ) ):
+function get_amazon_item_customer_reviews_text(){
+  return stripslashes_deep(get_theme_option(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_TEXT, __( 'Amazonの商品レビュー・口コミを見る', THEME_NAME )));
+}
+endif;
+
 //Amazonロゴ表示
 define('OP_AMAZON_ITEM_LOGO_VISIBLE', 'amazon_item_logo_visible');
 if ( !function_exists( 'is_amazon_item_logo_visible' ) ):

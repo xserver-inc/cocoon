@@ -470,7 +470,7 @@ function amazon_product_link_shortcode($atts){
         $review_tag =
           '<div class="amazon-item-review product-item-review item-review">'.
             '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.$review_url.'" target="_blank">'.
-              __( 'Amazonの商品レビュー・口コミを見る', THEME_NAME ).
+              get_amazon_item_customer_reviews_text().
             '</a>'.
           '</div>';
           //_v($review_tag);
