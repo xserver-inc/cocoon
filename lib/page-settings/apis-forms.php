@@ -61,6 +61,9 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
             generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
 
+            generate_checkbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE , is_amazon_item_customer_reviews_visible(), __( 'レビューを表示する', THEME_NAME ));
+            generate_tips_tag(__( 'レビューページへのリンクを表示します。', THEME_NAME ));
+
             generate_checkbox_tag(OP_AMAZON_ITEM_LOGO_VISIBLE , is_amazon_item_logo_visible(), __( 'ロゴを表示する', THEME_NAME ));
             generate_tips_tag(__( 'Amazon商品リンクのロゴの表示切り替え。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-logo.png'));
 
