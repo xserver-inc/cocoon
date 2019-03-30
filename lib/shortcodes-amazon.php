@@ -136,6 +136,7 @@ function amazon_product_link_shortcode($atts){
     'title' => null,
     'desc' => null,
     'price' => null,
+    'review' => null,
     'size' => 'm',
     'amazon' => 1,
     'rakuten' => 1,
@@ -460,8 +461,10 @@ function amazon_product_link_shortcode($atts){
       // レビュー
       ///////////////////////////////////////////
       $review_tag = null;
-      if (is_amazon_item_customer_reviews_visible() &&
-          isset($item->ItemLinks->ItemLink[2])) {
+      //_v($review);
+      if ((is_amazon_item_customer_reviews_visible() || $review === '1')
+          && isset($item->ItemLinks->ItemLink[2])
+          && $review !== '0') {
         $review_url = $item->ItemLinks->ItemLink[2]->URL;
         //_v($review_url);
         $review_tag =
