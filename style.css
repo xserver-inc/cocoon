@@ -3768,7 +3768,7 @@ label.screen-reader-text {
   padding: 0 0.45em;
   margin: 0;
 }
-.column-wrap > div p {
+.column-wrap > div > *:first-child {
   margin-top: 0;
 }
 .column-wrap.column-3 > div {
