@@ -758,7 +758,7 @@ img.emoji {
 .navi-in > ul > .menu-item-has-children > a::after {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   position: absolute;
   right: 3px;
   top: 0;
@@ -784,7 +784,7 @@ img.emoji {
 .navi-in > ul .sub-menu .menu-item-has-children > a::after {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   position: absolute;
   right: 3px;
   top: 0;
@@ -913,13 +913,13 @@ img.emoji {
 .post-comment-count::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .entry-category::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .entry-card-meta .entry-card-categorys {
@@ -1059,19 +1059,19 @@ img.emoji {
 .post-date::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .post-update::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .amp-back::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   padding-right: 0;
 }
 
@@ -1414,7 +1414,7 @@ img.emoji {
 .cat-link::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 .cat-link:hover {
   opacity: 0.5;
@@ -1436,7 +1436,7 @@ img.emoji {
 .tag-link::before, .comment-reply-link::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
@@ -1604,7 +1604,7 @@ blockquote::after {
 .author-info::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   padding-right: 0;
 }
 
@@ -2083,7 +2083,7 @@ label.screen-reader-text {
 .tagcloud a .tag-caption::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -2354,7 +2354,7 @@ label.screen-reader-text {
 .recent-comment-article::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .recent-comment-content {
@@ -4003,13 +4003,13 @@ label.screen-reader-text {
 .pagination .prev::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   padding-right: 3px;
 }
 .pagination .next::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   padding-left: 3px;
 }
 .pagination a:hover {
@@ -4125,7 +4125,7 @@ label.screen-reader-text {
 .pager-post-navi a.prev-post::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   margin-right: 5px;
   padding-right: 0;
 }
@@ -4139,7 +4139,7 @@ label.screen-reader-text {
 .pager-post-navi a.next-post::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   margin-left: 5px;
   padding-right: 0;
 }
@@ -4613,7 +4613,7 @@ div.sbs-think .speech-balloon::after {
 .product-item-box::after {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   position: absolute;
   bottom: 0;
   right: 6px;
@@ -4982,7 +4982,7 @@ div.sbs-think .speech-balloon::after {
 .item-review::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .acquired-date {
@@ -5546,7 +5546,7 @@ div.fb-like-mobile {
 .menu-close-button::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
   padding: 0;
   font-size: 2em;
 }
@@ -5996,7 +5996,7 @@ div.fb-like-mobile {
 .search-submit::before {
   font-family: FontAwesome;
   content: "";
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 .timeline-box {

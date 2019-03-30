@@ -100,7 +100,7 @@ $bgc_hover_anime: all .7s ease;
 @mixin fontawesome($unicode:'/f004') {
   font-family: FontAwesome;
   content: $unicode;
-  padding-right: 3px;
+  padding-right: 4px;
 }
 
 //リンクキャンセル
