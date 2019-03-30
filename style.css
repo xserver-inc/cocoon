@@ -4979,6 +4979,12 @@ div.sbs-think .speech-balloon::after {
   color: #c9171e;
 }
 
+.item-review::before {
+  font-family: FontAwesome;
+  content: "";
+  padding-right: 3px;
+}
+
 .acquired-date {
   font-size: 0.9em;
 }

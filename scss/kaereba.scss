@@ -376,6 +376,11 @@
 .item-price{
   color: #c9171e;
 }
+
+.item-review::before{
+  @include fontawesome('\f086');
+}
+
 .acquired-date{
   font-size: 0.9em;
 }

@@ -1249,6 +1249,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pis-l.product-item-box { display: block; }
 .admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
+.admin-settings .demo .item-review::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
@@ -2434,6 +2435,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pis-l.product-item-box { display: block; }
 .admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
+.admin-settings .demo .item-review::before { font-family: FontAwesome; content: ""; padding-right: 3px; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
