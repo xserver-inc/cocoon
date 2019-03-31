@@ -197,15 +197,12 @@ class OpenGraphGetter implements Iterator
      && includes_string($HTML, '//m.media-amazon.com')
     ) {
       //Amazonページなら画像取得
-      if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z][1-3]\d{2}_\.jpg|i', $HTML, $m)) {
+      if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z]\d{3}_\.jpg|i', $HTML, $m)) {
         if (isset($m[0])) {
+          //_v($m[0]);
           $page->_values['image'] = $m[0];
         }
       }
-    }
-
-
-    if (!isset($page->values['image'])) {
     }
 
 		return $page;
