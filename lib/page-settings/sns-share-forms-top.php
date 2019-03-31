@@ -60,9 +60,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li>
                 <?php generate_checkbox_tag(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE, is_top_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
               </li>
-              <li>
+              <!-- <li>
                 <?php generate_checkbox_tag(OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_top_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
-              </li>
+              </li> -->
               <li>
                 <?php generate_checkbox_tag(OP_TOP_POCKET_SHARE_BUTTON_VISIBLE, is_top_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li>

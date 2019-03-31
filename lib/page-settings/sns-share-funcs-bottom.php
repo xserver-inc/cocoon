@@ -51,7 +51,7 @@ endif;
 define('OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE', 'bottom_google_plus_share_button_visible');
 if ( !function_exists( 'is_bottom_google_plus_share_button_visible' ) ):
 function is_bottom_google_plus_share_button_visible(){
-  return get_theme_option(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 0);
+  return 0;//get_theme_option(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, 0);
 }
 endif;
 

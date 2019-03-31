@@ -134,7 +134,7 @@ function user_contactmethods_custom($prof_items){
   //項目の追加
   $prof_items['twitter_url'] = __( 'Twitter URL', THEME_NAME );
   $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
-  $prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
+  //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
   $prof_items['hatebu_url'] = __( 'はてブ URL', THEME_NAME );
   $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
   $prof_items['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
@@ -249,7 +249,7 @@ endif;
 if ( !function_exists( 'get_the_author_google_plus_url' ) ):
 function get_the_author_google_plus_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
-  return esc_html(get_the_author_meta('google_plus_url', $user_id));
+  return null;//esc_html(get_the_author_meta('google_plus_url', $user_id));
 }
 endif;
 
@@ -347,7 +347,7 @@ function is_author_follow_buttons_exits(){
   return get_the_author_website_url()
          || get_the_author_twitter_url()
          || get_the_author_facebook_url()
-         || get_the_author_google_plus_url()
+         //|| get_the_author_google_plus_url()
          || get_the_author_hatebu_url()
          || get_the_author_instagram_url()
          || get_the_author_pinterest_url()
@@ -361,7 +361,7 @@ endif;
 //全てのフォローボタンのうちどれかが表示されているか
 if ( !function_exists( 'is_any_sns_follow_buttons_exist' ) ):
 function is_any_sns_follow_buttons_exist(){
-  return get_the_author_website_url() || get_the_author_twitter_url() || get_the_author_facebook_url() || get_the_author_google_plus_url() || get_the_author_hatebu_url() || get_the_author_instagram_url() || get_the_author_pinterest_url() || get_the_author_youtube_url() || get_the_author_flickr_url() || get_the_author_line_at_url() || get_the_author_github_url() || is_feedly_follow_button_visible() || is_rss_follow_button_visible();
+  return get_the_author_website_url() || get_the_author_twitter_url() || get_the_author_facebook_url() || /*get_the_author_google_plus_url() || */get_the_author_hatebu_url() || get_the_author_instagram_url() || get_the_author_pinterest_url() || get_the_author_youtube_url() || get_the_author_flickr_url() || get_the_author_line_at_url() || get_the_author_github_url() || is_feedly_follow_button_visible() || is_rss_follow_button_visible();
 }
 endif;
 
