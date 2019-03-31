@@ -13,7 +13,6 @@
     "@fortawesome/react-fontawesome": "^0.1.3",
     "@wordpress/api-fetch": "^2.2.7",
     "cgb-scripts": "1.13.0",
-    "classnames": "^2.2.6",
-    "lodash": "~3.10.0"
+    "classnames": "^2.2.6"
   }
 }
