@@ -677,7 +677,7 @@ function error_log_to_amazon_product($asin, $message = ''){
       'ASIN:'.$asin.PHP_EOL.
       'URL:'.get_the_permalink().PHP_EOL.
       'Message:'.$message.PHP_EOL.
-      THEME_MAIL_CREDIT;
+      THEME_MAIL_AMAZON_PR.THEME_MAIL_CREDIT;
     wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
   }
 }
