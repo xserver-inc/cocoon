@@ -29,10 +29,22 @@ class RelatedEntryWidgetItem extends WP_Widget {
     //表示数を取得
     $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    //除外カテゴリーIDを取得
+    $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
+    $exclude_cat_ids = apply_filters( 'widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
     //現在のカテゴリを取得
     $categories = array();
     $categories = get_category_ids();//カテゴリ配列の取得
+    //除外カテゴリ配列のサニタイズ
+    if (empty($exclude_cat_ids)) {
+      $exclude_cat_ids = array();
+    } else {
+      if (!is_array($exclude_cat_ids)) {
+        $exclude_cat_ids = explode(',', $exclude_cat_ids);
+      }
+    }
+    //_v($exclude_cat_ids);
 
     //classにwidgetと一意となるクラス名を追加する
     if ( is_single() && get_category_ids() ):
@@ -46,6 +58,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         }
         echo $args['after_title'];
       }
+      //_v($exclude_cat_ids);
 
       //引数配列のセット
       $atts = array(
@@ -56,6 +69,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'post_type' => 'post',
         'taxonomy' => 'category',
         'random' => 1,
+        'exclude_cat_ids' => $exclude_cat_ids,
       );
       //関連記事リストの作成
       generate_widget_entries_tag($atts);
@@ -70,6 +84,11 @@ class RelatedEntryWidgetItem extends WP_Widget {
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+    if (isset($new_instance['exclude_cat_ids'])){
+      $instance['exclude_cat_ids'] = $new_instance['exclude_cat_ids'];
+    } else {
+      $instance['exclude_cat_ids'] = array();
+    }
       return $instance;
   }
   function form($instance) {
@@ -78,6 +97,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'title'   => '',
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
+        'exclude_cat_ids' => array(),
       );
     }
     $title   = '';
@@ -89,6 +109,8 @@ class RelatedEntryWidgetItem extends WP_Widget {
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
+
+    $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
@@ -112,6 +134,13 @@ class RelatedEntryWidgetItem extends WP_Widget {
       <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_DEFAULT; ?>" <?php echo ( ($entry_type == ET_DEFAULT || !$entry_type ) ? ' checked="checked"' : ""); ?> /><?php _e( 'デフォルト', THEME_NAME ) ?><br />
       <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB; ?>"<?php echo ($entry_type == ET_LARGE_THUMB ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', THEME_NAME ) ?><br />
       <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB_ON; ?>"<?php echo ($entry_type == ET_LARGE_THUMB_ON ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', THEME_NAME ) ?><br />
+    </p>
+    <p>
+    <?php //除外カテゴリーID ?>
+      <label>
+        <?php _e( '除外カテゴリーID（除外するものを選択してください）', THEME_NAME ) ?>
+      </label>
+      <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
     </p>
     <?php
   }

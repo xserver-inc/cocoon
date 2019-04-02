@@ -959,6 +959,7 @@ function generate_widget_entries_tag($atts){
     'random' => 0,
     'order' => 'desc',
     'action' => null,
+    'exclude_cat_ids' => array(),
   ), $atts));
   //ランダムが有効な時は関連記事
   if ($random) {
@@ -992,6 +993,14 @@ function generate_widget_entries_tag($atts){
       'orderby' => 'rand'
     );
   }
+  //除外カテゴリーの設定
+  if (!empty($exclude_cat_ids)) {
+    // _v($cat_ids);
+    // _v($exclude_cat_ids);
+    $cat_ids = array_diff($cat_ids, $exclude_cat_ids);
+    // _v($cat_ids);
+  }
+  //カテゴリー・タグの指定
   if ( $cat_ids || $tag_ids ) {
     //_v($cat_ids);
     $tax_querys = array();

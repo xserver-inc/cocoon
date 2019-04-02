@@ -51,13 +51,17 @@ class PopularEntryWidgetItem extends WP_Widget {
     if ($widget_mode == 'category') {
       $cat_ids = get_category_ids();//カテゴリ配列の取得
     }
-    $exclude_post_ids = str_replace(' ', '', $exclude_post_ids);
-    if (empty($exclude_post_ids)) {
-      $exclude_post_ids = array();
-    } else {
-      $exclude_post_ids = explode(',', $exclude_post_ids);
-    }
+    //除外投稿ID配列のサニタイズ
+    $exclude_post_ids = comma_text_to_array($exclude_post_ids);
+    // $exclude_post_ids = str_replace(' ', '', $exclude_post_ids);
+    // if (empty($exclude_post_ids)) {
+    //   $exclude_post_ids = array();
+    // } else {
+    //   $exclude_post_ids = explode(',', $exclude_post_ids);
+    // }
 
+    //除外カテゴリ配列のサニタイズ
+    //$exclude_cat_ids = comma_text_to_array($exclude_cat_ids);
     if (empty($exclude_cat_ids)) {
       $exclude_cat_ids = array();
     } else {
@@ -211,11 +215,13 @@ class PopularEntryWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('exclude_post_ids'); ?>" name="<?php echo $this->get_field_name('exclude_post_ids'); ?>" type="text" value="<?php echo $exclude_post_ids; ?>" />
     </p>
+    <p>
     <?php //除外カテゴリーID ?>
       <label>
         <?php _e( '除外カテゴリーID（除外するものを選択してください）', THEME_NAME ) ?>
       </label>
       <?php echo generate_hierarchical_category_check_list(0, $this->get_field_name('exclude_cat_ids'), $exclude_cat_ids); ?>
+    </p>
     <?php
   }
 }
