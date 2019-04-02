@@ -247,7 +247,7 @@ define('THEME_MAIL_AMAZON_PR', "
 
 //楽天メール広告
 define('THEME_MAIL_RAKUTEN_PR', "
-エラーの楽天商品をチェック。
+楽天の代替え商品をチェック。
 https://a.r10.to/hllTWS");
 
 //メール関連
