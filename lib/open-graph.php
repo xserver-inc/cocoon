@@ -61,7 +61,7 @@ class OpenGraphGetter implements Iterator
         global $wp_version;
 
         $args = array(
-          'sslverify' => false,
+          //'sslverify' => false,
           //'redirection' => 10,
           'cocoon' => true,
           'user-agent' => $_SERVER['HTTP_USER_AGENT'],
