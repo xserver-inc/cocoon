@@ -886,7 +886,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
   //var_dump($records);
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   ?>
-  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
+  <div class="popular-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_popular_entry_cards_classes($entry_type, $ranking_visible, $pv_visible, null); ?>">
   <?php if ( $records ) :
     $i = 1;
     foreach ($records as $post):

@@ -409,8 +409,8 @@ function get_additional_widget_entriy_cards_classes($entry_type, $option = null)
 endif;
 
 //エントリーカードの追加関数
-if ( !function_exists( 'get_additional_popular_entriy_cards_classes' ) ):
-function get_additional_popular_entriy_cards_classes($entry_type, $ranking_visible, $option = null){
+if ( !function_exists( 'get_additional_popular_entry_cards_classes' ) ):
+function get_additional_popular_entry_cards_classes($entry_type, $ranking_visible, $option = null){
   // global $_ENTRY_TYPE;
   // global $_RANKING_VISIBLE;
 
@@ -431,7 +431,7 @@ function get_additional_popular_entriy_cards_classes($entry_type, $ranking_visib
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return apply_filters('get_additional_popular_entriy_cards_classes', $classes);
+  return apply_filters('get_additional_popular_entry_cards_classes', $classes);
 }
 endif;
 
