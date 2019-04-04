@@ -6452,6 +6452,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   opacity: 0.7;
 }
 
+.iconlist-title {
+  font-weight: 700;
+  text-align: center;
+}
+
 .fab-check-circle::before,
 .list-check-circle li::before {
   content: '\f058';

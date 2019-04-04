@@ -1515,6 +1515,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }
 .admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; opacity: 0.7; }
+.admin-settings .demo .iconlist-title { font-weight: 700; text-align: center; }
 .admin-settings .demo .fab-check-circle::before, .admin-settings .demo .list-check-circle li::before { content: '\f058'; }
 .admin-settings .demo .fab-check-circle-o::before, .admin-settings .demo .list-check-circle-o li::before { content: '\f05d'; }
 .admin-settings .demo .fab-check-square::before, .admin-settings .demo .list-check-square li::before { content: '\f14a'; }
@@ -2741,6 +2742,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }
 .admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; opacity: 0.7; }
+.admin-settings .demo .iconlist-title { font-weight: 700; text-align: center; }
 .admin-settings .demo .fab-check-circle::before, .admin-settings .demo .list-check-circle li::before { content: '\f058'; }
 .admin-settings .demo .fab-check-circle-o::before, .admin-settings .demo .list-check-circle-o li::before { content: '\f05d'; }
 .admin-settings .demo .fab-check-square::before, .admin-settings .demo .list-check-square li::before { content: '\f14a'; }
