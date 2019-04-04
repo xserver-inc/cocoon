@@ -301,28 +301,6 @@ function wp_targeted_link_rel_custom( $rel_value, $link_html ){
 }
 endif;
 
-// add_action( 'do_feed_smartnews', 'do_feed_smartnews' );
-// if ( !function_exists( 'do_feed_smartnews' ) ):
-// function do_feed_smartnews() {
-//   $feed_template = get_template_directory() . '/tmp/smartnews.php';
-//   load_template( $feed_template );
-// }
-// endif;
-
-// add_action( 'init', function() {
-//   add_feed( 'smartnews', function() {
-//     $feed_template = get_template_directory() . '/tmp/smartnews.php';
-//     load_template( $feed_template );
-//   } );
-// } );
-// add_action( 'wp_feed_options', function( &$feed ) {
-//   $feed->enable_cache( false );
-// } );
-// //フィード追加
-// add_action('init', function() {
-//   add_feed('smartnews', function() { get_template_part('/tmp/smartnews'); });
-// });
-
 //SmartNewsフィード追加
 add_action('init', 'smartnews_feed_init');
 if ( !function_exists( 'smartnews_feed_init' ) ):
