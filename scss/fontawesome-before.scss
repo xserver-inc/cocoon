@@ -84,7 +84,8 @@
   content: '\f0f5';
 }
 
-.fab-heart::before{
+.fab-heart::before,
+.list-heart li::before{
   content: '\f004';
 }
 
@@ -188,7 +189,8 @@
   content: '\f165';
 }
 
-.fab-check::before{
+.fab-check::before,
+.list-check li::before{
   content: '\f00c';
 }
 
@@ -196,7 +198,8 @@
   content: '\f0f3';
 }
 
-.fab-star::before{
+.fab-star::before,
+.list-star li::before{
   content: '\f005';
 }
 
@@ -216,148 +219,203 @@
   content: '\f007';
 }
 
+.iconlist-box{
+  ul,
+  ol{
+    list-style: none;
+  }
+  &.list-none{
+    ul{
+      list-style: disc;
+    }
+    ol{
+      list-style: decimal;
+    }
+  }
+}
+.iconlist-box li::before{
+  font-family: FontAwesome;
+  margin-right: 0.4em;
+  margin-left: -1em;
+  opacity: 0.7;
+}
 
-
-.fab-check-circle::before{
+.fab-check-circle::before,
+.list-check-circle li::before{
   content: '\f058';
 }
 
-.fab-check-circle-o::before{
+.fab-check-circle-o::before,
+.list-check-circle-o li::before{
   content: '\f05d';
 }
 
-.fab-check-square::before{
+.fab-check-square::before,
+.list-check-square li::before{
   content: '\f14a';
 }
 
-.fab-check-square-o::before{
+.fab-check-square-o::before,
+.list-check-square-o li::before{
   content: '\f046';
 }
 
-.fab-caret-right::before{
+.fab-caret-right::before,
+.list-caret-right li::before{
   content: '\f0da';
 }
 
-.fab-caret-square-o-right::before{
+.fab-caret-square-o-right::before,
+.list-caret-square-o-right li::before{
   content: '\f152';
 }
 
-.fab-arrow-right::before{
+.fab-arrow-right::before,
+.list-arrow-right li::before{
   content: '\f061';
 }
 
-.fab-angle-right::before{
+.fab-angle-right::before,
+.list-angle-right li::before{
   content: '\f105';
 }
 
-.fab-angle-double-right::before{
+.fab-angle-double-right::before,
+.list-angle-double-right li::before{
   content: '\f101';
 }
 
-.fab-arrow-circle-right::before{
+.fab-arrow-circle-right::before,
+.list-arrow-circle-right li::before{
   content: '\f0a9';
 }
 
-.fab-arrow-circle-o-right::before{
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before{
   content: '\f18e';
 }
 
-.fab-play-circle::before{
+.fab-play-circle::before,
+.list-play-circle li::before{
   content: '\f144';
 }
 
-.fab-play-circle-o::before{
+.fab-play-circle-o::before,
+.list-play-circle-o li::before{
   content: '\f01d';
 }
 
-.fab-chevron-right::before{
+.fab-chevron-right::before,
+.list-chevron-right li::before{
   content: '\f054';
 }
 
-.fab-chevron-circle-right::before{
+.fab-chevron-circle-right::before,
+.list-chevron-circle-right li::before{
   content: '\f138';
 }
 
-.fab-hand-o-right::before{
+.fab-hand-o-right::before,
+.list-hand-o-right li::before{
   content: '\f0a4';
 }
 
-.fab-star-o::before{
+.fab-star-o::before,
+.list-star-o li::before{
   content: '\f006';
 }
 
-.fab-heart-o::before{
+.fab-heart-o::before,
+.list-heart-o li::before{
   content: '\f08a';
 }
 
-.fab-square::before{
+.fab-square::before,
+.list-square li::before{
   content: '\f0c8';
 }
 
-.fab-square-o::before{
+.fab-square-o::before,
+.list-square-o li::before{
   content: '\f096';
 }
 
-.fab-circle::before{
+.fab-circle::before,
+.list-circle li::before{
   content: '\f111';
 }
 
-.fab-circle-o::before{
+.fab-circle-o::before,
+.list-circle-o li::before{
   content: '\f10c';
 }
 
-.fab-dot-circle-o::before{
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before{
   content: '\f192';
 }
 
-.fab-plus::before{
+.fab-plus::before,
+.list-plus li::before{
   content: '\f067';
 }
 
-.fab-plus-circle::before{
+.fab-plus-circle::before,
+.list-plus-circle li::before{
   content: '\f055';
 }
 
-.fab-plus-square::before{
+.fab-plus-square::before,
+.list-plus-square li::before{
   content: '\f0fe';
 }
 
-.fab-plus-square-o::before{
+.fab-plus-square-o::before,
+.list-plus-square-o li::before{
   content: '\f196';
 }
 
-.fab-minus::before{
+.fab-minus::before,
+.list-minus li::before{
   content: '\f068';
 }
 
-.fab-minus-circle::before{
+.fab-minus-circle::before,
+.list-minus-circle li::before{
   content: '\f056';
 }
 
-.fab-minus-square::before{
+.fab-minus-square::before,
+.list-minus-square li::before{
   content: '\f146';
 }
 
-.fab-minus-square-o::before{
+.fab-minus-square-o::before,
+.list-minus-square-o li::before{
   content: '\f147';
 }
 
-.fab-times::before{
+.fab-times::before,
+.list-times li::before{
   content: '\f00d';
 }
 
-.fab-times-circle::before{
+.fab-times-circle::before,
+.list-times-circle li::before{
   content: '\f057';
 }
 
-.fab-times-circle-o::before{
+.fab-times-circle-o::before,
+.list-times-circle-o li::before{
   content: '\f05c';
 }
 
-.fab-window-close::before{
+.fab-window-close::before,
+.list-window-close li::before{
   content: '\f2d3';
 }
 
-.fab-window-close-o::before{
+.fab-window-close-o::before,
+.list-window-close-o li::before{
   content: '\f2d4';
 }
