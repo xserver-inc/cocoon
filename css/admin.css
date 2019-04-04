@@ -1516,7 +1516,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-check-square::before { content: '\f14a'; }
 .admin-settings .demo .fab-check-square-o::before { content: '\f046'; }
 .admin-settings .demo .fab-caret-right::before { content: '\f0da'; }
-.admin-settings .demo .caret-square-o-right::before { content: '\f152'; }
+.admin-settings .demo .fab-caret-square-o-right::before { content: '\f152'; }
 .admin-settings .demo .fab-arrow-right::before { content: '\f061'; }
 .admin-settings .demo .fab-angle-right::before { content: '\f105'; }
 .admin-settings .demo .fab-angle-double-right::before { content: '\f101'; }
@@ -2738,7 +2738,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-check-square::before { content: '\f14a'; }
 .admin-settings .demo .fab-check-square-o::before { content: '\f046'; }
 .admin-settings .demo .fab-caret-right::before { content: '\f0da'; }
-.admin-settings .demo .caret-square-o-right::before { content: '\f152'; }
+.admin-settings .demo .fab-caret-square-o-right::before { content: '\f152'; }
 .admin-settings .demo .fab-arrow-right::before { content: '\f061'; }
 .admin-settings .demo .fab-angle-right::before { content: '\f105'; }
 .admin-settings .demo .fab-angle-double-right::before { content: '\f101'; }
