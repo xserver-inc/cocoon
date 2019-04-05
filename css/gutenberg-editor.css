@@ -508,7 +508,7 @@ div.mce-content-body {
   margin: 1em 0;
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div {
-  width: 100% !important;
+  width: 100%;
   margin: 0;
 }
 .editor-block-list__layout .editor-block-list__block .column-wrap > .editor-inner-blocks > .editor-block-list__layout > div p {
