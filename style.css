@@ -586,7 +586,7 @@ img.emoji {
 
 .logo-image span,
 .logo-image a {
-  display: block;
+  display: inline-block;
 }
 
 .site-name-text-link {
