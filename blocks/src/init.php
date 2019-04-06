@@ -149,29 +149,62 @@ function cocoon_allowed_block_types_custom( $allowed_block_types ) {
 endif;
 
 //カラーパレット
-//add_action('after_setup_theme', 'cocoon_editor_color_palette_setup');
+add_action('after_setup_theme', 'cocoon_editor_color_palette_setup');
 if ( !function_exists( 'cocoon_editor_color_palette_setup' ) ):
 function cocoon_editor_color_palette_setup() {
     // カラーパレットの設定
-    add_theme_support('editor-color-palette', [
-        [
-            'name' => '赤',
+    add_theme_support('editor-color-palette', array(
+        array(
+            'name' => __( '赤', THEME_NAME ),
             'slug' => 'red',
-            'color' => '#D92A2D',
-        ],[
-            'name' => '青',
+            'color' => '#e60033',
+        ),
+        array(
+            'name' => __( 'ピンク', THEME_NAME ),
+            'slug' => 'pink',
+            'color' => '#e95295',
+        ),
+        array(
+            'name' => __( '紫', THEME_NAME ),
+            'slug' => 'purple',
+            'color' => '#884898',
+        ),
+        array(
+            'name' => __( '青', THEME_NAME ),
             'slug' => 'blue',
-            'color' => '#4F759B',
-        ],[
-            'name' => 'オレンジ',
+            'color' => '#0095d9',
+        ),
+        array(
+            'name' => __( '緑', THEME_NAME ),
+            'slug' => 'green',
+            'color' => '#3eb370',
+        ),
+        array(
+            'name' => __( 'オレンジ', THEME_NAME ),
             'slug' => 'orange',
-            'color' => '#F9A32A',
-        ], [
-            'name' => '白',
-            'slug' => 'white',
-            'color' => '#fff',
-        ]
-    ]);
+            'color' => '#f39800',
+        ),
+        array(
+            'name' => __( '黄', THEME_NAME ),
+            'slug' => 'yellow',
+            'color' => '#ffd900',
+        ),
+        array(
+            'name' => __( '茶', THEME_NAME ),
+            'slug' => 'brown',
+            'color' => '#954e2a',
+        ),
+        array(
+            'name' => __( '灰', THEME_NAME ),
+            'slug' => 'grey',
+            'color' => '#949495',
+        ),
+        array(
+            'name' => __( '黒', THEME_NAME ),
+            'slug' => 'black',
+            'color' => '#333',
+        ),
+    ));
     // 自由色選択を無効
     add_theme_support('disable-custom-colors');
 }

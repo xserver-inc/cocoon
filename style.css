@@ -2854,31 +2854,49 @@ label.screen-reader-text {
   }
 }
 .blank-box {
-  border: 2px solid #999;
+  border: 2px solid #949495;
   padding: 1.2em 1em;
   margin: 1em 2%;
 }
 .blank-box ol, .blank-box ul {
   margin: 0;
 }
-.blank-box.bb-yellow {
-  border-color: #fc9f4d;
-}
 .blank-box.bb-red {
-  border-color: #d05a6e;
+  border-color: #e60033;
+}
+.blank-box.bb-pink {
+  border-color: #e95295;
+}
+.blank-box.bb-purple {
+  border-color: #884898;
 }
 .blank-box.bb-blue {
-  border-color: #2ea9df;
+  border-color: #0095d9;
 }
 .blank-box.bb-green {
   border-color: #3eb370;
+}
+.blank-box.bb-orange {
+  border-color: #f39800;
+}
+.blank-box.bb-yellow {
+  border-color: #ffd900;
+}
+.blank-box.bb-brown {
+  border-color: #954e2a;
+}
+.blank-box.bb-grey {
+  border-color: #949495;
+}
+.blank-box.bb-black {
+  border-color: #333;
 }
 .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
 }
 .blank-box.bb-tab::before {
-  background-color: #999;
+  background-color: #949495;
   font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
   font-size: .8em;

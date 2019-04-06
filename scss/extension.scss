@@ -440,7 +440,7 @@ $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
 $bb_green: $green_color;
 .blank-box{
-  border: 2px solid $bb_gray;
+  border: 2px solid $grey_color;
   padding: 1.2em 1em;
   margin: 1em 2%;
 
@@ -448,16 +448,22 @@ $bb_green: $green_color;
     margin: 0;
   }
 
-  &.bb-yellow{border-color: $bb_yellow;}
-  &.bb-red{border-color: $bb_red;}
-  &.bb-blue{border-color: $bb_blue;}
-  &.bb-green{border-color: $bb_green;}
+  &.bb-red{border-color: $red_color;}
+  &.bb-pink{border-color: $pink_color;}
+  &.bb-purple{border-color: $purple_color;}
+  &.bb-blue{border-color: $blue_color;}
+  &.bb-green{border-color: $green_color;}
+  &.bb-orange{border-color: $orange_color;}
+  &.bb-yellow{border-color: $yellow_color;}
+  &.bb-brown{border-color: $brown_color;}
+  &.bb-grey{border-color: $grey_color;}
+  &.bb-black{border-color: $black_color;}
 
   &.bb-tab{
     position: relative;
     margin-top: 2em;
     &::before{
-      background-color: $bb_gray;
+      background-color: $grey_color;
       //font-family: FontAwesome, Aharoni, sans-serif;
       font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
       position: absolute;
