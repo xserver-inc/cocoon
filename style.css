@@ -3770,6 +3770,46 @@ label.screen-reader-text {
   border-color: #3eb370;
 }
 
+.iic-red li::before {
+  color: #e60033;
+}
+
+.iic-pink li::before {
+  color: #e95295;
+}
+
+.iic-purple li::before {
+  color: #884898;
+}
+
+.iic-blue li::before {
+  color: #0095d9;
+}
+
+.iic-green li::before {
+  color: #3eb370;
+}
+
+.iic-orange li::before {
+  color: #f39800;
+}
+
+.iic-yellow li::before {
+  color: #ffd900;
+}
+
+.iic-brown li::before {
+  color: #954e2a;
+}
+
+.iic-grey li::before {
+  color: #949495;
+}
+
+.iic-black li::before {
+  color: #333;
+}
+
 .column-wrap {
   display: flex;
   position: relative;
@@ -6469,7 +6509,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   font-family: FontAwesome;
   margin-right: 0.4em;
   margin-left: -1em;
-  opacity: 0.7;
 }
 
 .iconlist-title {

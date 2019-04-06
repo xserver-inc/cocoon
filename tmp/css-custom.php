@@ -635,3 +635,6 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .blank-box.bb-key-color{
   border-color: <?php echo get_editor_key_color(); ?>;
 }
+.iic-key-color li::before{
+  color: <?php echo get_editor_key_color(); ?>;
+}

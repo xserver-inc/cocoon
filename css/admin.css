@@ -1021,6 +1021,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+.admin-settings .demo .iic-red li::before { color: #e60033; }
+.admin-settings .demo .iic-pink li::before { color: #e95295; }
+.admin-settings .demo .iic-purple li::before { color: #884898; }
+.admin-settings .demo .iic-blue li::before { color: #0095d9; }
+.admin-settings .demo .iic-green li::before { color: #3eb370; }
+.admin-settings .demo .iic-orange li::before { color: #f39800; }
+.admin-settings .demo .iic-yellow li::before { color: #ffd900; }
+.admin-settings .demo .iic-brown li::before { color: #954e2a; }
+.admin-settings .demo .iic-grey li::before { color: #949495; }
+.admin-settings .demo .iic-black li::before { color: #333; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
@@ -1520,7 +1530,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iconlist-box ul, .admin-settings .demo .iconlist-box ol { list-style: none; }
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }
-.admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; opacity: 0.7; }
+.admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; }
 .admin-settings .demo .iconlist-title { font-weight: 700; text-align: center; }
 .admin-settings .demo .fab-check-circle::before, .admin-settings .demo .list-check-circle li::before { content: '\f058'; }
 .admin-settings .demo .fab-check-circle-o::before, .admin-settings .demo .list-check-circle-o li::before { content: '\f05d'; }
@@ -2254,6 +2264,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .admin-settings .demo .tb-green .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+.admin-settings .demo .iic-red li::before { color: #e60033; }
+.admin-settings .demo .iic-pink li::before { color: #e95295; }
+.admin-settings .demo .iic-purple li::before { color: #884898; }
+.admin-settings .demo .iic-blue li::before { color: #0095d9; }
+.admin-settings .demo .iic-green li::before { color: #3eb370; }
+.admin-settings .demo .iic-orange li::before { color: #f39800; }
+.admin-settings .demo .iic-yellow li::before { color: #ffd900; }
+.admin-settings .demo .iic-brown li::before { color: #954e2a; }
+.admin-settings .demo .iic-grey li::before { color: #949495; }
+.admin-settings .demo .iic-black li::before { color: #333; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
@@ -2753,7 +2773,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iconlist-box ul, .admin-settings .demo .iconlist-box ol { list-style: none; }
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }
-.admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; opacity: 0.7; }
+.admin-settings .demo .iconlist-box li::before { font-family: FontAwesome; margin-right: 0.4em; margin-left: -1em; }
 .admin-settings .demo .iconlist-title { font-weight: 700; text-align: center; }
 .admin-settings .demo .fab-check-circle::before, .admin-settings .demo .list-check-circle li::before { content: '\f058'; }
 .admin-settings .demo .fab-check-circle-o::before, .admin-settings .demo .list-check-circle-o li::before { content: '\f05d'; }
@@ -3631,6 +3651,16 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tb-green .toggle-button { border: 1px solid #3eb370; background: #3eb370; color: #fff; }
 .components-popover__content .tb-green .toggle-button::before { color: #ccc; }
 .components-popover__content .tb-green .toggle-checkbox:checked ~ .toggle-content { border-color: #3eb370; }
+.components-popover__content .iic-red li::before { color: #e60033; }
+.components-popover__content .iic-pink li::before { color: #e95295; }
+.components-popover__content .iic-purple li::before { color: #884898; }
+.components-popover__content .iic-blue li::before { color: #0095d9; }
+.components-popover__content .iic-green li::before { color: #3eb370; }
+.components-popover__content .iic-orange li::before { color: #f39800; }
+.components-popover__content .iic-yellow li::before { color: #ffd900; }
+.components-popover__content .iic-brown li::before { color: #954e2a; }
+.components-popover__content .iic-grey li::before { color: #949495; }
+.components-popover__content .iic-black li::before { color: #333; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

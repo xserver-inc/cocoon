@@ -1174,13 +1174,13 @@ $bb_green: $green_color;
 .tb-blue{@include toggle_color($bb_blue);}
 .tb-green{@include toggle_color($bb_green);}
 
-// &.bb-red{border-color: $red_color;}
-// &.bb-pink{border-color: $pink_color;}
-// &.bb-purple{border-color: $purple_color;}
-// &.bb-blue{border-color: $blue_color;}
-// &.bb-green{border-color: $green_color;}
-// &.bb-orange{border-color: $orange_color;}
-// &.bb-yellow{border-color: $yellow_color;}
-// &.bb-brown{border-color: $brown_color;}
-// &.bb-grey{border-color: $grey_color;}
-// &.bb-black{border-color: $black_color;}
+.iic-red li::before{color: $red_color;}
+.iic-pink li::before{color: $pink_color;}
+.iic-purple li::before{color: $purple_color;}
+.iic-blue li::before{color: $blue_color;}
+.iic-green li::before{color: $green_color;}
+.iic-orange li::before{color: $orange_color;}
+.iic-yellow li::before{color: $yellow_color;}
+.iic-brown li::before{color: $brown_color;}
+.iic-grey li::before{color: $grey_color;}
+.iic-black li::before{color: $black_color;}
