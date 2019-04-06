@@ -829,7 +829,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 440px) { .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 26px 6px 6px; }
   .admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .admin-settings .demo .container .blank-box { margin-left: 0; margin-right: 0; } }
-.admin-settings .demo .blank-box { border: 2px solid #949495; padding: 1.2em 1em; margin: 1em 2%; }
+.admin-settings .demo .blank-box { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul { margin: 0; }
 .admin-settings .demo .blank-box.bb-red { border-color: #e60033; }
 .admin-settings .demo .blank-box.bb-pink { border-color: #e95295; }
@@ -2062,7 +2062,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 440px) { .admin-settings .demo .information-box, .admin-settings .demo .question-box, .admin-settings .demo .alert-box, .admin-settings .demo .information, .admin-settings .demo .question, .admin-settings .demo .alert, .admin-settings .demo .memo-box, .admin-settings .demo .comment-box, .admin-settings .demo .common-icon-box { padding: 26px 6px 6px; }
   .admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .admin-settings .demo .container .blank-box { margin-left: 0; margin-right: 0; } }
-.admin-settings .demo .blank-box { border: 2px solid #949495; padding: 1.2em 1em; margin: 1em 2%; }
+.admin-settings .demo .blank-box { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
 .admin-settings .demo .blank-box ol, .admin-settings .demo .blank-box ul { margin: 0; }
 .admin-settings .demo .blank-box.bb-red { border-color: #e60033; }
 .admin-settings .demo .blank-box.bb-pink { border-color: #e95295; }
@@ -3439,7 +3439,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 @media screen and (max-width: 440px) { .components-popover__content .information-box, .components-popover__content .question-box, .components-popover__content .alert-box, .components-popover__content .information, .components-popover__content .question, .components-popover__content .alert, .components-popover__content .memo-box, .components-popover__content .comment-box, .components-popover__content .common-icon-box { padding: 26px 6px 6px; }
   .components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { padding: 0; top: 0.7em; left: 50%; margin-left: -0.5em; font-size: 18px; border: none; width: auto; }
   .components-popover__content .container .blank-box { margin-left: 0; margin-right: 0; } }
-.components-popover__content .blank-box { border: 2px solid #949495; padding: 1.2em 1em; margin: 1em 2%; }
+.components-popover__content .blank-box { border: 3px solid #949495; padding: 1.2em 1em; margin: 1em 2%; border-radius: 4px; }
 .components-popover__content .blank-box ol, .components-popover__content .blank-box ul { margin: 0; }
 .components-popover__content .blank-box.bb-red { border-color: #e60033; }
 .components-popover__content .blank-box.bb-pink { border-color: #e95295; }

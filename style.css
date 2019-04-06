@@ -2854,9 +2854,10 @@ label.screen-reader-text {
   }
 }
 .blank-box {
-  border: 2px solid #949495;
+  border: 3px solid #949495;
   padding: 1.2em 1em;
   margin: 1em 2%;
+  border-radius: 4px;
 }
 .blank-box ol, .blank-box ul {
   margin: 0;

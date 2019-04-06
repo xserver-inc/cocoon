@@ -440,11 +440,11 @@ $bb_red: #d05a6e;
 $bb_blue: #2ea9df;
 $bb_green: $green_color;
 .blank-box{
-  border: 2px solid $grey_color;
+  border: 3px solid $grey_color;
   padding: 1.2em 1em;
   margin: 1em 2%;
-
-  ol, ul{
+  border-radius: $basic_border_radius;
+    ol, ul {
     margin: 0;
   }
 
@@ -1173,3 +1173,14 @@ $bb_green: $green_color;
 .tb-red{@include toggle_color($bb_red);}
 .tb-blue{@include toggle_color($bb_blue);}
 .tb-green{@include toggle_color($bb_green);}
+
+// &.bb-red{border-color: $red_color;}
+// &.bb-pink{border-color: $pink_color;}
+// &.bb-purple{border-color: $purple_color;}
+// &.bb-blue{border-color: $blue_color;}
+// &.bb-green{border-color: $green_color;}
+// &.bb-orange{border-color: $orange_color;}
+// &.bb-yellow{border-color: $yellow_color;}
+// &.bb-brown{border-color: $brown_color;}
+// &.bb-grey{border-color: $grey_color;}
+// &.bb-black{border-color: $black_color;}
