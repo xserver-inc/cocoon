@@ -147,3 +147,32 @@ function cocoon_allowed_block_types_custom( $allowed_block_types ) {
   return $allowed_block_types;
 }
 endif;
+
+//カラーパレット
+//add_action('after_setup_theme', 'cocoon_editor_color_palette_setup');
+if ( !function_exists( 'cocoon_editor_color_palette_setup' ) ):
+function cocoon_editor_color_palette_setup() {
+    // カラーパレットの設定
+    add_theme_support('editor-color-palette', [
+        [
+            'name' => '赤',
+            'slug' => 'red',
+            'color' => '#D92A2D',
+        ],[
+            'name' => '青',
+            'slug' => 'blue',
+            'color' => '#4F759B',
+        ],[
+            'name' => 'オレンジ',
+            'slug' => 'orange',
+            'color' => '#F9A32A',
+        ], [
+            'name' => '白',
+            'slug' => 'white',
+            'color' => '#fff',
+        ]
+    ]);
+    // 自由色選択を無効
+    add_theme_support('disable-custom-colors');
+}
+endif;
