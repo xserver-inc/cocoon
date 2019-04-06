@@ -54,6 +54,9 @@ $_TOC_INDEX = 1;
 global $_TOC_WIDGET_OR_SHORTCODE_USE;
 $_TOC_WIDGET_OR_SHORTCODE_USE = false;
 
+//エディターキーカラー
+define('DEFAULT_EDITOR_KEY_COLOR', '#19448e');
+
 //アドセンスID名
 define('DATA_AD_CLIENT', 'data-ad-client');
 define('DATA_AD_SLOT',   'data-ad-slot');

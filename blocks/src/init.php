@@ -85,6 +85,11 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'speechBaloons', //任意のオブジェクト名
     $baloons //プロバティ
 	);
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'keyColor', //任意のオブジェクト名
+     get_editor_key_color()//プロバティ
+  );
 
 	// Styles.
 	wp_enqueue_style(
@@ -154,6 +159,11 @@ if ( !function_exists( 'cocoon_editor_color_palette_setup' ) ):
 function cocoon_editor_color_palette_setup() {
     // カラーパレットの設定
     add_theme_support('editor-color-palette', array(
+        array(
+            'name' => __( 'キーカラー', THEME_NAME ),
+            'slug' => 'key-color',
+            'color' => get_editor_key_color(),
+        ),
         array(
             'name' => __( '赤', THEME_NAME ),
             'slug' => 'red',

@@ -10,8 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //サイトキーカラー
 define('OP_SITE_KEY_COLOR', 'site_key_color');
 if ( !function_exists( 'get_site_key_color' ) ):
-function get_site_key_color(){
-  return get_theme_option(OP_SITE_KEY_COLOR);
+function get_site_key_color($default = null){
+  return get_theme_option(OP_SITE_KEY_COLOR, $default);
 }
 endif;
 

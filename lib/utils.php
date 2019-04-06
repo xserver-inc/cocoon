@@ -2510,3 +2510,10 @@ function comma_text_to_array($comma_text){
   return $array;
 }
 endif;
+
+//エディターカラーパレット用の木から
+if ( !function_exists( 'get_editor_key_color' ) ):
+function get_editor_key_color(){
+  return !empty(get_site_key_color()) ? get_site_key_color() : DEFAULT_EDITOR_KEY_COLOR;
+}
+endif;
