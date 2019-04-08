@@ -279,8 +279,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_checkbox_tag(OP_ADMIN_SIZZY_VISIBLE, is_admin_sizzy_visible(), __( 'Sizzyチェックを表示する', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://sizzy.co/" target="_blank">Sizzy</a>チェック用リンクの表示。', THEME_NAME ));
 
-              generate_checkbox_tag(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, is_admin_multi_screen_resolution_test_visible(), __( 'ScreenResolutionチェックを表示する', THEME_NAME ));
-              generate_tips_tag(__( '<a href="http://whatismyscreenresolution.net/multi-screen-test" target="_blank">WhatIsMyScreenResolution</a>チェック用リンクの表示。', THEME_NAME ));
+              // generate_checkbox_tag(OP_ADMIN_MULTI_SCREEN_RESOLUTION_TEST_VISIBLE, is_admin_multi_screen_resolution_test_visible(), __( 'ScreenResolutionチェックを表示する', THEME_NAME ));
+              // generate_tips_tag(__( '<a href="http://whatismyscreenresolution.net/multi-screen-test" target="_blank">WhatIsMyScreenResolution</a>チェック用リンクの表示。', THEME_NAME ));
               ?>
 
             </div>
