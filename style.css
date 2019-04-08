@@ -3734,14 +3734,14 @@ label.screen-reader-text {
   height: 100%;
   transition: all 0.7s ease;
   padding: 1em;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-top-width: 0;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
 .tb-red .toggle-button {
-  border: 1px solid #e60033;
+  border: 2px solid #e60033;
   background: #e60033;
   color: #fff;
 }
@@ -3753,7 +3753,7 @@ label.screen-reader-text {
 }
 
 .tb-pink .toggle-button {
-  border: 1px solid #e95295;
+  border: 2px solid #e95295;
   background: #e95295;
   color: #fff;
 }
@@ -3765,7 +3765,7 @@ label.screen-reader-text {
 }
 
 .tb-purple .toggle-button {
-  border: 1px solid #884898;
+  border: 2px solid #884898;
   background: #884898;
   color: #fff;
 }
@@ -3777,7 +3777,7 @@ label.screen-reader-text {
 }
 
 .tb-blue .toggle-button {
-  border: 1px solid #0095d9;
+  border: 2px solid #0095d9;
   background: #0095d9;
   color: #fff;
 }
@@ -3789,7 +3789,7 @@ label.screen-reader-text {
 }
 
 .tb-green .toggle-button {
-  border: 1px solid #3eb370;
+  border: 2px solid #3eb370;
   background: #3eb370;
   color: #fff;
 }
@@ -3801,7 +3801,7 @@ label.screen-reader-text {
 }
 
 .tb-orange .toggle-button {
-  border: 1px solid #f39800;
+  border: 2px solid #f39800;
   background: #f39800;
   color: #fff;
 }
@@ -3813,7 +3813,7 @@ label.screen-reader-text {
 }
 
 .tb-yellow .toggle-button {
-  border: 1px solid #ffd900;
+  border: 2px solid #ffd900;
   background: #ffd900;
   color: #fff;
 }
@@ -3825,7 +3825,7 @@ label.screen-reader-text {
 }
 
 .tb-brown .toggle-button {
-  border: 1px solid #954e2a;
+  border: 2px solid #954e2a;
   background: #954e2a;
   color: #fff;
 }
@@ -3837,7 +3837,7 @@ label.screen-reader-text {
 }
 
 .tb-grey .toggle-button {
-  border: 1px solid #949495;
+  border: 2px solid #949495;
   background: #949495;
   color: #fff;
 }
@@ -3849,7 +3849,7 @@ label.screen-reader-text {
 }
 
 .tb-black .toggle-button {
-  border: 1px solid #333;
+  border: 2px solid #333;
   background: #333;
   color: #fff;
 }

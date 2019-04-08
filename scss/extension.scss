@@ -1155,15 +1155,15 @@ $bb_green: $green_color;
   height: 100%;
   transition: $bgc_hover_anime;
   padding: 1em;
-  border: 1px solid $basic_border_color;
+  border: 2px solid $basic_border_color;
   border-top-width: 0;
   border-bottom-left-radius: $basic_border_radius;
   border-bottom-right-radius: $basic_border_radius;
 }
 
-@mixin toggle_color($color: $bb_yellow) {
+@mixin toggle_color($color: $blue_color) {
   .toggle-button{
-    border: 1px solid $color;
+    border: 2px solid $color;
     background: $color;
     color: $white;
     &::before{
