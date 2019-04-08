@@ -474,10 +474,16 @@ $bb_green: $green_color;
       color: $white;
       border-radius: 6px 6px 0 0;
     }
-    &.bb-yellow::before{background-color: $bb_yellow;}
-    &.bb-red::before{background-color: $bb_red;}
-    &.bb-blue::before{background-color: $bb_blue;}
-    &.bb-green::before{background-color: $bb_green;}
+    &.bb-red::before{background-color: $red_color;}
+    &.bb-pink::before{background-color: $pink_color;}
+    &.bb-purple::before{background-color: $purple_color;}
+    &.bb-blue::before{background-color: $blue_color;}
+    &.bb-green::before{background-color: $green_color;}
+    &.bb-orange::before{background-color: $orange_color;}
+    &.bb-yellow::before{background-color: $yellow_color;}
+    &.bb-brown::before{background-color: $brown_color;}
+    &.bb-grey::before{background-color: $grey_color;}
+    &.bb-black::before{background-color: $black_color;}
   }
 
   &.sticky{

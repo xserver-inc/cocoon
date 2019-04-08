@@ -638,3 +638,6 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .iic-key-color li::before{
   color: <?php echo get_editor_key_color(); ?>;
 }
+.blank-box.bb-tab.bb-key-color::before {
+  background-color: <?php echo get_editor_key_color(); ?>;
+}

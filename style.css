@@ -2907,17 +2907,35 @@ label.screen-reader-text {
   color: #fff;
   border-radius: 6px 6px 0 0;
 }
-.blank-box.bb-tab.bb-yellow::before {
-  background-color: #fc9f4d;
-}
 .blank-box.bb-tab.bb-red::before {
-  background-color: #d05a6e;
+  background-color: #e60033;
+}
+.blank-box.bb-tab.bb-pink::before {
+  background-color: #e95295;
+}
+.blank-box.bb-tab.bb-purple::before {
+  background-color: #884898;
 }
 .blank-box.bb-tab.bb-blue::before {
-  background-color: #2ea9df;
+  background-color: #0095d9;
 }
 .blank-box.bb-tab.bb-green::before {
   background-color: #3eb370;
+}
+.blank-box.bb-tab.bb-orange::before {
+  background-color: #f39800;
+}
+.blank-box.bb-tab.bb-yellow::before {
+  background-color: #ffd900;
+}
+.blank-box.bb-tab.bb-brown::before {
+  background-color: #954e2a;
+}
+.blank-box.bb-tab.bb-grey::before {
+  background-color: #949495;
+}
+.blank-box.bb-tab.bb-black::before {
+  background-color: #333;
 }
 .blank-box.sticky {
   border-width: 0 0 0 6px;
