@@ -4,6 +4,7 @@
 
 .header{
   @extend %background_image;
+  height: 100%;
 }
 
 .header-in{
@@ -25,6 +26,7 @@
 .logo-image span,
 .logo-image a{
   display: inline-block;
+  max-width: 100%;
 }
 
 

@@ -568,6 +568,10 @@ img.emoji {
 /************************************
 ** ヘッダー
 ************************************/
+.header {
+  height: 100%;
+}
+
 .header-in {
   display: flex;
   flex-direction: column;
@@ -587,6 +591,7 @@ img.emoji {
 .logo-image span,
 .logo-image a {
   display: inline-block;
+  max-width: 100%;
 }
 
 .site-name-text-link {
