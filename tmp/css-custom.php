@@ -641,3 +641,14 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .blank-box.bb-tab.bb-key-color::before {
   background-color: <?php echo get_editor_key_color(); ?>;
 }
+.tb-key-color .toggle-button {
+  border: 1px solid <?php echo get_editor_key_color(); ?>;
+  background: <?php echo get_editor_key_color(); ?>;
+  color: #fff;
+}
+.tb-key-color .toggle-button::before {
+  color: #ccc;
+}
+.tb-key-color .toggle-checkbox:checked ~ .toggle-content {
+  border-color: <?php echo get_editor_key_color(); ?>;
+}
