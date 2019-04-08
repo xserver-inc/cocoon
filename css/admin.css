@@ -1008,7 +1008,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -2275,7 +2275,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
-.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
@@ -3686,7 +3686,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
-.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 1px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
+.components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .components-popover__content .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .components-popover__content .toggle-button:hover { opacity: 0.7; }
 .components-popover__content .toggle-checkbox { display: none; }

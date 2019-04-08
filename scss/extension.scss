@@ -1110,12 +1110,13 @@ $bb_green: $green_color;
   }
 }
 
+$toggle_border_width: 2px;
 .toggle-button {
   display: block;
   cursor: pointer;
   padding: 3px 10px;
   background-color: $xx_thin;
-  border: 1px solid $basic_border_color;
+  border: $toggle_border_width solid $basic_border_color;
   text-align: center;
   border-radius: $basic_border_radius;
   position: relative;
@@ -1155,7 +1156,7 @@ $bb_green: $green_color;
   height: 100%;
   transition: $bgc_hover_anime;
   padding: 1em;
-  border: 2px solid $basic_border_color;
+  border: $toggle_border_width solid $basic_border_color;
   border-top-width: 0;
   border-bottom-left-radius: $basic_border_radius;
   border-bottom-right-radius: $basic_border_radius;
@@ -1163,7 +1164,7 @@ $bb_green: $green_color;
 
 @mixin toggle_color($color: $blue_color) {
   .toggle-button{
-    border: 2px solid $color;
+    border: $toggle_border_width solid $color;
     background: $color;
     color: $white;
     &::before{
