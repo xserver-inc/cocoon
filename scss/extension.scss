@@ -723,27 +723,27 @@ $bb_green: $green_color;
   }
 }
 
-.btn-white, .btn-wrap.btn-wrap-white > a{color: #333;background-color: #fff;}
-#container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: #333;}
+.btn-white, .btn-wrap.btn-wrap-white > a{color: $text_color;background-color: $white;}
+#container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: $text_color;}
 .btn-red, .btn-wrap.btn-wrap-red > a{background-color: $red_color;}
 .btn-pink, .btn-wrap.btn-wrap-pink > a{background-color: $pink_color;}
 .btn-purple, .btn-wrap.btn-wrap-purple > a{background-color: $purple_color;}
-.btn-deep, .btn-wrap.btn-wrap-deep > a{background-color: #673ab7;}
-.btn-indigo, .btn-wrap.btn-wrap-indigo > a{background-color: #3f51b5;}
+.btn-deep, .btn-wrap.btn-wrap-deep > a{background-color: $deep_color;}
+.btn-indigo, .btn-wrap.btn-wrap-indigo > a{background-color: $indigo_color;}
 .btn-blue, .btn-wrap.btn-wrap-blue > a{background-color: $blue_color;}
-.btn-light-blue, .btn-wrap.btn-wrap-light-blue > a{background-color: #03a9f4;}
-.btn-cyan, .btn-wrap.btn-wrap-cyan > a{background-color: #00bcd4;}
-.btn-teal, .btn-wrap.btn-wrap-teal > a{background-color: #009688;}
+.btn-light-blue, .btn-wrap.btn-wrap-light-blue > a{background-color: $light_blue_color;}
+.btn-cyan, .btn-wrap.btn-wrap-cyan > a{background-color: $cyan_color;}
+.btn-teal, .btn-wrap.btn-wrap-teal > a{background-color: $teal_color;}
 .btn-green, .btn-wrap.btn-wrap-green > a{background-color: $green_color;}
-.btn-light-green, .btn-wrap.btn-wrap-light-green > a{background-color: #8bc34a;}
-.btn-lime, .btn-wrap.btn-wrap-lime > a{background-color: #cddc39;}
+.btn-light-green, .btn-wrap.btn-wrap-light-green > a{background-color: $light_green_color;}
+.btn-lime, .btn-wrap.btn-wrap-lime > a{background-color:$lime_color}
 .btn-yellow, .btn-wrap.btn-wrap-yellow > a{background-color: $yellow_color;}
-.btn-amber, .btn-wrap.btn-wrap-amber > a{background-color: #ffc107;}
-.btn-orange, .btn-wrap.btn-wrap-orange > a{background-color: #ff9800;}
-.btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a{background-color: #ff5722;}
+.btn-amber, .btn-wrap.btn-wrap-amber > a{background-color: $amber_color;}
+.btn-orange, .btn-wrap.btn-wrap-orange > a{background-color: $orange_color;}
+.btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a{background-color: $deep_orange_color;}
 .btn-brown, .btn-wrap.btn-wrap-brown > a{background-color: $brown_color;}
 .btn-grey, .btn-wrap.btn-wrap-grey > a{background-color: $grey_color;}
-.btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: #607d8b;}
+.btn-blue-grey, .btn-wrap.btn-wrap-blue-grey > a{background-color: $blue_gray_color;}
 
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before{content: "\f061";}
 .btn-chevron-right:before, .btn-wrap.btn-wrap-chevron-circle-right > a:before{content: "\f054";}

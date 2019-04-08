@@ -3179,11 +3179,11 @@ label.screen-reader-text {
 }
 
 .btn-deep, .btn-wrap.btn-wrap-deep > a {
-  background-color: #673ab7;
+  background-color: #55295b;
 }
 
 .btn-indigo, .btn-wrap.btn-wrap-indigo > a {
-  background-color: #3f51b5;
+  background-color: #1e50a2;
 }
 
 .btn-blue, .ranking-item-detail a, .btn-wrap.btn-wrap-blue > a {
@@ -3191,15 +3191,15 @@ label.screen-reader-text {
 }
 
 .btn-light-blue, .btn-wrap.btn-wrap-light-blue > a {
-  background-color: #03a9f4;
+  background-color: #2ca9e1;
 }
 
 .btn-cyan, .btn-wrap.btn-wrap-cyan > a {
-  background-color: #00bcd4;
+  background-color: #00a3af;
 }
 
 .btn-teal, .btn-wrap.btn-wrap-teal > a {
-  background-color: #009688;
+  background-color: #007b43;
 }
 
 .btn-green, .btn-wrap.btn-wrap-green > a {
@@ -3211,7 +3211,7 @@ label.screen-reader-text {
 }
 
 .btn-lime, .btn-wrap.btn-wrap-lime > a {
-  background-color: #cddc39;
+  background-color: #c3d825;
 }
 
 .btn-yellow, .btn-wrap.btn-wrap-yellow > a {
@@ -3223,11 +3223,11 @@ label.screen-reader-text {
 }
 
 .btn-orange, .btn-wrap.btn-wrap-orange > a {
-  background-color: #ff9800;
+  background-color: #f39800;
 }
 
 .btn-deep-orange, .btn-wrap.btn-wrap-deep-orange > a {
-  background-color: #ff5722;
+  background-color: #ea5506;
 }
 
 .btn-brown, .btn-wrap.btn-wrap-brown > a {

@@ -9,10 +9,7 @@ $meiryo_font: "Meiryo", sans-serif;
 $navi_font: FontAwesome, $default_font;
 
 //テキスト色
-// $text_color: #333435;
-// $pallid_text_color: #777879;
-// $x_pallid_text_color: #999a9b;
-$text_color: #333;
+$text_color: $black_color;
 $pallid_text_color: #777;
 $x_pallid_text_color: #999;
 $white: #fff;

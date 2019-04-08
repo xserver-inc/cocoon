@@ -898,19 +898,19 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
 .admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
 .admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
-.admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
-.admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
+.admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #55295b; }
+.admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #1e50a2; }
 .admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
-.admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
-.admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
-.admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
+.admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #2ca9e1; }
+.admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00a3af; }
+.admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #007b43; }
 .admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 .admin-settings .demo .btn-light-green, .admin-settings .demo .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
-.admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
+.admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #c3d825; }
 .admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 .admin-settings .demo .btn-amber, .admin-settings .demo .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
-.admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
-.admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
+.admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #f39800; }
+.admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ea5506; }
 .admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
@@ -2165,19 +2165,19 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
 .admin-settings .demo .btn-pink, .admin-settings .demo .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
 .admin-settings .demo .btn-purple, .admin-settings .demo .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
-.admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
-.admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
+.admin-settings .demo .btn-deep, .admin-settings .demo .btn-wrap.btn-wrap-deep > a { background-color: #55295b; }
+.admin-settings .demo .btn-indigo, .admin-settings .demo .btn-wrap.btn-wrap-indigo > a { background-color: #1e50a2; }
 .admin-settings .demo .btn-blue, .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
-.admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
-.admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
-.admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
+.admin-settings .demo .btn-light-blue, .admin-settings .demo .btn-wrap.btn-wrap-light-blue > a { background-color: #2ca9e1; }
+.admin-settings .demo .btn-cyan, .admin-settings .demo .btn-wrap.btn-wrap-cyan > a { background-color: #00a3af; }
+.admin-settings .demo .btn-teal, .admin-settings .demo .btn-wrap.btn-wrap-teal > a { background-color: #007b43; }
 .admin-settings .demo .btn-green, .admin-settings .demo .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 .admin-settings .demo .btn-light-green, .admin-settings .demo .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
-.admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
+.admin-settings .demo .btn-lime, .admin-settings .demo .btn-wrap.btn-wrap-lime > a { background-color: #c3d825; }
 .admin-settings .demo .btn-yellow, .admin-settings .demo .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 .admin-settings .demo .btn-amber, .admin-settings .demo .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
-.admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
-.admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
+.admin-settings .demo .btn-orange, .admin-settings .demo .btn-wrap.btn-wrap-orange > a { background-color: #f39800; }
+.admin-settings .demo .btn-deep-orange, .admin-settings .demo .btn-wrap.btn-wrap-deep-orange > a { background-color: #ea5506; }
 .admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
@@ -3576,19 +3576,19 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .btn-red, .components-popover__content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
 .components-popover__content .btn-pink, .components-popover__content .btn-wrap.btn-wrap-pink > a { background-color: #e95295; }
 .components-popover__content .btn-purple, .components-popover__content .btn-wrap.btn-wrap-purple > a { background-color: #884898; }
-.components-popover__content .btn-deep, .components-popover__content .btn-wrap.btn-wrap-deep > a { background-color: #673ab7; }
-.components-popover__content .btn-indigo, .components-popover__content .btn-wrap.btn-wrap-indigo > a { background-color: #3f51b5; }
+.components-popover__content .btn-deep, .components-popover__content .btn-wrap.btn-wrap-deep > a { background-color: #55295b; }
+.components-popover__content .btn-indigo, .components-popover__content .btn-wrap.btn-wrap-indigo > a { background-color: #1e50a2; }
 .components-popover__content .btn-blue, .components-popover__content .admin-settings .demo .ranking-item-detail a, .admin-settings .demo .ranking-item-detail .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-blue > a { background-color: #0095d9; }
-.components-popover__content .btn-light-blue, .components-popover__content .btn-wrap.btn-wrap-light-blue > a { background-color: #03a9f4; }
-.components-popover__content .btn-cyan, .components-popover__content .btn-wrap.btn-wrap-cyan > a { background-color: #00bcd4; }
-.components-popover__content .btn-teal, .components-popover__content .btn-wrap.btn-wrap-teal > a { background-color: #009688; }
+.components-popover__content .btn-light-blue, .components-popover__content .btn-wrap.btn-wrap-light-blue > a { background-color: #2ca9e1; }
+.components-popover__content .btn-cyan, .components-popover__content .btn-wrap.btn-wrap-cyan > a { background-color: #00a3af; }
+.components-popover__content .btn-teal, .components-popover__content .btn-wrap.btn-wrap-teal > a { background-color: #007b43; }
 .components-popover__content .btn-green, .components-popover__content .btn-wrap.btn-wrap-green > a { background-color: #3eb370; }
 .components-popover__content .btn-light-green, .components-popover__content .btn-wrap.btn-wrap-light-green > a { background-color: #8bc34a; }
-.components-popover__content .btn-lime, .components-popover__content .btn-wrap.btn-wrap-lime > a { background-color: #cddc39; }
+.components-popover__content .btn-lime, .components-popover__content .btn-wrap.btn-wrap-lime > a { background-color: #c3d825; }
 .components-popover__content .btn-yellow, .components-popover__content .btn-wrap.btn-wrap-yellow > a { background-color: #ffd900; }
 .components-popover__content .btn-amber, .components-popover__content .btn-wrap.btn-wrap-amber > a { background-color: #ffc107; }
-.components-popover__content .btn-orange, .components-popover__content .btn-wrap.btn-wrap-orange > a { background-color: #ff9800; }
-.components-popover__content .btn-deep-orange, .components-popover__content .btn-wrap.btn-wrap-deep-orange > a { background-color: #ff5722; }
+.components-popover__content .btn-orange, .components-popover__content .btn-wrap.btn-wrap-orange > a { background-color: #f39800; }
+.components-popover__content .btn-deep-orange, .components-popover__content .btn-wrap.btn-wrap-deep-orange > a { background-color: #ea5506; }
 .components-popover__content .btn-brown, .components-popover__content .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .components-popover__content .btn-grey, .components-popover__content .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .components-popover__content .btn-blue-grey, .components-popover__content .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
