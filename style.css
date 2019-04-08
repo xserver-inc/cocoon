@@ -3740,40 +3740,52 @@ label.screen-reader-text {
   border-bottom-right-radius: 4px;
 }
 
-.tb-yellow .toggle-button {
-  border: 1px solid #fc9f4d;
-  background: #fc9f4d;
-  color: #fff;
-}
-.tb-yellow .toggle-button::before {
-  color: #ccc;
-}
-.tb-yellow .toggle-checkbox:checked ~ .toggle-content {
-  border-color: #fc9f4d;
-}
-
 .tb-red .toggle-button {
-  border: 1px solid #d05a6e;
-  background: #d05a6e;
+  border: 1px solid #e60033;
+  background: #e60033;
   color: #fff;
 }
 .tb-red .toggle-button::before {
   color: #ccc;
 }
 .tb-red .toggle-checkbox:checked ~ .toggle-content {
-  border-color: #d05a6e;
+  border-color: #e60033;
+}
+
+.tb-pink .toggle-button {
+  border: 1px solid #e95295;
+  background: #e95295;
+  color: #fff;
+}
+.tb-pink .toggle-button::before {
+  color: #ccc;
+}
+.tb-pink .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #e95295;
+}
+
+.tb-purple .toggle-button {
+  border: 1px solid #884898;
+  background: #884898;
+  color: #fff;
+}
+.tb-purple .toggle-button::before {
+  color: #ccc;
+}
+.tb-purple .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #884898;
 }
 
 .tb-blue .toggle-button {
-  border: 1px solid #2ea9df;
-  background: #2ea9df;
+  border: 1px solid #0095d9;
+  background: #0095d9;
   color: #fff;
 }
 .tb-blue .toggle-button::before {
   color: #ccc;
 }
 .tb-blue .toggle-checkbox:checked ~ .toggle-content {
-  border-color: #2ea9df;
+  border-color: #0095d9;
 }
 
 .tb-green .toggle-button {
@@ -3786,6 +3798,66 @@ label.screen-reader-text {
 }
 .tb-green .toggle-checkbox:checked ~ .toggle-content {
   border-color: #3eb370;
+}
+
+.tb-orange .toggle-button {
+  border: 1px solid #f39800;
+  background: #f39800;
+  color: #fff;
+}
+.tb-orange .toggle-button::before {
+  color: #ccc;
+}
+.tb-orange .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39800;
+}
+
+.tb-yellow .toggle-button {
+  border: 1px solid #ffd900;
+  background: #ffd900;
+  color: #fff;
+}
+.tb-yellow .toggle-button::before {
+  color: #ccc;
+}
+.tb-yellow .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ffd900;
+}
+
+.tb-brown .toggle-button {
+  border: 1px solid #954e2a;
+  background: #954e2a;
+  color: #fff;
+}
+.tb-brown .toggle-button::before {
+  color: #ccc;
+}
+.tb-brown .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #954e2a;
+}
+
+.tb-grey .toggle-button {
+  border: 1px solid #949495;
+  background: #949495;
+  color: #fff;
+}
+.tb-grey .toggle-button::before {
+  color: #ccc;
+}
+.tb-grey .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #949495;
+}
+
+.tb-black .toggle-button {
+  border: 1px solid #333;
+  background: #333;
+  color: #fff;
+}
+.tb-black .toggle-button::before {
+  color: #ccc;
+}
+.tb-black .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #333;
 }
 
 .iic-red li::before {
