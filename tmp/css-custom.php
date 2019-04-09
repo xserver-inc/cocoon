@@ -685,3 +685,6 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .mc-key-color::after {
   border-top-color: <?php echo get_editor_key_color(); ?>;
 }
+.btn-key-color, .ranking-item-link a, .btn-wrap.btn-wrap-key-color > a {
+  background-color: <?php echo get_editor_key_color(); ?>;
+}

@@ -915,6 +915,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a { background-color: #333; }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 .admin-settings .demo .btn-chevron-right:before, .admin-settings .demo .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }
 .admin-settings .demo .btn-angle-right:before, .admin-settings .demo .btn-wrap.btn-wrap-angle-right > a:before { content: "\f105"; }
@@ -2237,6 +2238,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .btn-brown, .admin-settings .demo .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .admin-settings .demo .btn-grey, .admin-settings .demo .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .admin-settings .demo .btn-blue-grey, .admin-settings .demo .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
+.admin-settings .demo .btn-black, .admin-settings .demo .btn-wrap.btn-wrap-black > a { background-color: #333; }
 .admin-settings .demo .btn-arrow-right:before, .admin-settings .demo .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 .admin-settings .demo .btn-chevron-right:before, .admin-settings .demo .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }
 .admin-settings .demo .btn-angle-right:before, .admin-settings .demo .btn-wrap.btn-wrap-angle-right > a:before { content: "\f105"; }
@@ -3702,6 +3704,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .btn-brown, .components-popover__content .btn-wrap.btn-wrap-brown > a { background-color: #954e2a; }
 .components-popover__content .btn-grey, .components-popover__content .btn-wrap.btn-wrap-grey > a { background-color: #949495; }
 .components-popover__content .btn-blue-grey, .components-popover__content .btn-wrap.btn-wrap-blue-grey > a { background-color: #607d8b; }
+.components-popover__content .btn-black, .components-popover__content .btn-wrap.btn-wrap-black > a { background-color: #333; }
 .components-popover__content .btn-arrow-right:before, .components-popover__content .btn-wrap.btn-wrap-arrow-right > a:before { content: "\f061"; }
 .components-popover__content .btn-chevron-right:before, .components-popover__content .btn-wrap.btn-wrap-chevron-circle-right > a:before { content: "\f054"; }
 .components-popover__content .btn-angle-right:before, .components-popover__content .btn-wrap.btn-wrap-angle-right > a:before { content: "\f105"; }

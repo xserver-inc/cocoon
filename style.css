@@ -3247,6 +3247,10 @@ label.screen-reader-text {
   background-color: #607d8b;
 }
 
+.btn-black, .btn-wrap.btn-wrap-black > a {
+  background-color: #333;
+}
+
 .btn-arrow-right:before, .btn-wrap.btn-wrap-arrow-right > a:before {
   content: "\f061";
 }
