@@ -1093,16 +1093,22 @@ $bb_green: $green_color;
   padding: 1em 0.8em 0.4em;
   border-radius: $middle_border_radius;
 }
-@mixin label_color($color: $bb_yellow) {
+@mixin label_color($color: $red_color) {
   .label-box-content{
     border-color: $color;
   }
 }
-.lb-yellow{@include label_color($bb_yellow);}
-.lb-red{@include label_color($bb_red);}
-.lb-blue{@include label_color($bb_blue);}
-.lb-green{@include label_color($bb_green);}
 
+.lb-red{@include label_color($red_color);}
+.lb-pink{@include label_color($pink_color);}
+.lb-purple{@include label_color($purple_color);}
+.lb-blue{@include label_color($blue_color);}
+.lb-green{@include label_color($green_color);}
+.lb-orange{@include label_color($orange_color);}
+.lb-yellow{@include label_color($yellow_color);}
+.lb-brown{@include label_color($brown_color);}
+.lb-grey{@include label_color($grey_color);}
+.lb-black{@include label_color($black_color);}
 
 /************************************
 ** トグル表示ボタン

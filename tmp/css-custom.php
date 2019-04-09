@@ -666,3 +666,6 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .tcb-key-color .tab-caption-box-content {
   border-color: <?php echo get_editor_key_color(); ?>;
 }
+.lb-key-color .label-box-content {
+  border-color: <?php echo get_editor_key_color(); ?>;
+}

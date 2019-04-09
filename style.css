@@ -3758,20 +3758,44 @@ label.screen-reader-text {
   border-radius: 8px;
 }
 
-.lb-yellow .label-box-content {
-  border-color: #fc9f4d;
+.lb-red .label-box-content {
+  border-color: #e60033;
 }
 
-.lb-red .label-box-content {
-  border-color: #d05a6e;
+.lb-pink .label-box-content {
+  border-color: #e95295;
+}
+
+.lb-purple .label-box-content {
+  border-color: #884898;
 }
 
 .lb-blue .label-box-content {
-  border-color: #2ea9df;
+  border-color: #0095d9;
 }
 
 .lb-green .label-box-content {
   border-color: #3eb370;
+}
+
+.lb-orange .label-box-content {
+  border-color: #f39800;
+}
+
+.lb-yellow .label-box-content {
+  border-color: #ffd900;
+}
+
+.lb-brown .label-box-content {
+  border-color: #954e2a;
+}
+
+.lb-grey .label-box-content {
+  border-color: #949495;
+}
+
+.lb-black .label-box-content {
+  border-color: #333;
 }
 
 /************************************

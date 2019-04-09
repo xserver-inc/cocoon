@@ -1026,10 +1026,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
-.admin-settings .demo .lb-yellow .label-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .lb-red .label-box-content { border-color: #d05a6e; }
-.admin-settings .demo .lb-blue .label-box-content { border-color: #2ea9df; }
+.admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
+.admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
+.admin-settings .demo .lb-purple .label-box-content { border-color: #884898; }
+.admin-settings .demo .lb-blue .label-box-content { border-color: #0095d9; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
+.admin-settings .demo .lb-orange .label-box-content { border-color: #f39800; }
+.admin-settings .demo .lb-yellow .label-box-content { border-color: #ffd900; }
+.admin-settings .demo .lb-brown .label-box-content { border-color: #954e2a; }
+.admin-settings .demo .lb-grey .label-box-content { border-color: #949495; }
+.admin-settings .demo .lb-black .label-box-content { border-color: #333; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
@@ -2318,10 +2324,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
-.admin-settings .demo .lb-yellow .label-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .lb-red .label-box-content { border-color: #d05a6e; }
-.admin-settings .demo .lb-blue .label-box-content { border-color: #2ea9df; }
+.admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
+.admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
+.admin-settings .demo .lb-purple .label-box-content { border-color: #884898; }
+.admin-settings .demo .lb-blue .label-box-content { border-color: #0095d9; }
 .admin-settings .demo .lb-green .label-box-content { border-color: #3eb370; }
+.admin-settings .demo .lb-orange .label-box-content { border-color: #f39800; }
+.admin-settings .demo .lb-yellow .label-box-content { border-color: #ffd900; }
+.admin-settings .demo .lb-brown .label-box-content { border-color: #954e2a; }
+.admin-settings .demo .lb-grey .label-box-content { border-color: #949495; }
+.admin-settings .demo .lb-black .label-box-content { border-color: #333; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
@@ -3753,10 +3765,16 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .label-box { margin: 1.2em 0; }
 .components-popover__content .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
-.components-popover__content .lb-yellow .label-box-content { border-color: #fc9f4d; }
-.components-popover__content .lb-red .label-box-content { border-color: #d05a6e; }
-.components-popover__content .lb-blue .label-box-content { border-color: #2ea9df; }
+.components-popover__content .lb-red .label-box-content { border-color: #e60033; }
+.components-popover__content .lb-pink .label-box-content { border-color: #e95295; }
+.components-popover__content .lb-purple .label-box-content { border-color: #884898; }
+.components-popover__content .lb-blue .label-box-content { border-color: #0095d9; }
 .components-popover__content .lb-green .label-box-content { border-color: #3eb370; }
+.components-popover__content .lb-orange .label-box-content { border-color: #f39800; }
+.components-popover__content .lb-yellow .label-box-content { border-color: #ffd900; }
+.components-popover__content .lb-brown .label-box-content { border-color: #954e2a; }
+.components-popover__content .lb-grey .label-box-content { border-color: #949495; }
+.components-popover__content .lb-black .label-box-content { border-color: #333; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
