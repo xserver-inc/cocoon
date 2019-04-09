@@ -725,6 +725,7 @@ function get_the_singular_content(){
     dynamic_sidebar('footer-left');
     dynamic_sidebar('footer-center');
     dynamic_sidebar('footer-right');
+    dynamic_sidebar('footer-mobile');
     $footer_content = ob_get_clean();
 
     ob_start();//バッファリング
