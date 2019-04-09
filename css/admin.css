@@ -1003,14 +1003,26 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
-.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #d05a6e; }
-.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #2ea9df; color: #fff; }
-.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #2ea9df; }
+.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }
+.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #e60033; }
+.admin-settings .demo .tcb-pink .tab-caption-box-label { background-color: #e95295; color: #fff; }
+.admin-settings .demo .tcb-pink .tab-caption-box-content { border-color: #e95295; }
+.admin-settings .demo .tcb-purple .tab-caption-box-label { background-color: #884898; color: #fff; }
+.admin-settings .demo .tcb-purple .tab-caption-box-content { border-color: #884898; }
+.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #0095d9; color: #fff; }
+.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #0095d9; }
 .admin-settings .demo .tcb-green .tab-caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .tcb-green .tab-caption-box-content { border-color: #3eb370; }
+.admin-settings .demo .tcb-orange .tab-caption-box-label { background-color: #f39800; color: #fff; }
+.admin-settings .demo .tcb-orange .tab-caption-box-content { border-color: #f39800; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #ffd900; color: #fff; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #ffd900; }
+.admin-settings .demo .tcb-brown .tab-caption-box-label { background-color: #954e2a; color: #fff; }
+.admin-settings .demo .tcb-brown .tab-caption-box-content { border-color: #954e2a; }
+.admin-settings .demo .tcb-grey .tab-caption-box-label { background-color: #949495; color: #fff; }
+.admin-settings .demo .tcb-grey .tab-caption-box-content { border-color: #949495; }
+.admin-settings .demo .tcb-black .tab-caption-box-label { background-color: #333; color: #fff; }
+.admin-settings .demo .tcb-black .tab-caption-box-content { border-color: #333; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -2283,14 +2295,26 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
-.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #fc9f4d; }
-.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #d05a6e; }
-.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #2ea9df; color: #fff; }
-.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #2ea9df; }
+.admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }
+.admin-settings .demo .tcb-red .tab-caption-box-content { border-color: #e60033; }
+.admin-settings .demo .tcb-pink .tab-caption-box-label { background-color: #e95295; color: #fff; }
+.admin-settings .demo .tcb-pink .tab-caption-box-content { border-color: #e95295; }
+.admin-settings .demo .tcb-purple .tab-caption-box-label { background-color: #884898; color: #fff; }
+.admin-settings .demo .tcb-purple .tab-caption-box-content { border-color: #884898; }
+.admin-settings .demo .tcb-blue .tab-caption-box-label { background-color: #0095d9; color: #fff; }
+.admin-settings .demo .tcb-blue .tab-caption-box-content { border-color: #0095d9; }
 .admin-settings .demo .tcb-green .tab-caption-box-label { background-color: #3eb370; color: #fff; }
 .admin-settings .demo .tcb-green .tab-caption-box-content { border-color: #3eb370; }
+.admin-settings .demo .tcb-orange .tab-caption-box-label { background-color: #f39800; color: #fff; }
+.admin-settings .demo .tcb-orange .tab-caption-box-content { border-color: #f39800; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-label { background-color: #ffd900; color: #fff; }
+.admin-settings .demo .tcb-yellow .tab-caption-box-content { border-color: #ffd900; }
+.admin-settings .demo .tcb-brown .tab-caption-box-label { background-color: #954e2a; color: #fff; }
+.admin-settings .demo .tcb-brown .tab-caption-box-content { border-color: #954e2a; }
+.admin-settings .demo .tcb-grey .tab-caption-box-label { background-color: #949495; color: #fff; }
+.admin-settings .demo .tcb-grey .tab-caption-box-content { border-color: #949495; }
+.admin-settings .demo .tcb-black .tab-caption-box-label { background-color: #333; color: #fff; }
+.admin-settings .demo .tcb-black .tab-caption-box-content { border-color: #333; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -3706,14 +3730,26 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tab-caption-box { margin: 1.2em 0; }
 .components-popover__content .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .components-popover__content .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
-.components-popover__content .tcb-yellow .tab-caption-box-label { background-color: #fc9f4d; color: #fff; }
-.components-popover__content .tcb-yellow .tab-caption-box-content { border-color: #fc9f4d; }
-.components-popover__content .tcb-red .tab-caption-box-label { background-color: #d05a6e; color: #fff; }
-.components-popover__content .tcb-red .tab-caption-box-content { border-color: #d05a6e; }
-.components-popover__content .tcb-blue .tab-caption-box-label { background-color: #2ea9df; color: #fff; }
-.components-popover__content .tcb-blue .tab-caption-box-content { border-color: #2ea9df; }
+.components-popover__content .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }
+.components-popover__content .tcb-red .tab-caption-box-content { border-color: #e60033; }
+.components-popover__content .tcb-pink .tab-caption-box-label { background-color: #e95295; color: #fff; }
+.components-popover__content .tcb-pink .tab-caption-box-content { border-color: #e95295; }
+.components-popover__content .tcb-purple .tab-caption-box-label { background-color: #884898; color: #fff; }
+.components-popover__content .tcb-purple .tab-caption-box-content { border-color: #884898; }
+.components-popover__content .tcb-blue .tab-caption-box-label { background-color: #0095d9; color: #fff; }
+.components-popover__content .tcb-blue .tab-caption-box-content { border-color: #0095d9; }
 .components-popover__content .tcb-green .tab-caption-box-label { background-color: #3eb370; color: #fff; }
 .components-popover__content .tcb-green .tab-caption-box-content { border-color: #3eb370; }
+.components-popover__content .tcb-orange .tab-caption-box-label { background-color: #f39800; color: #fff; }
+.components-popover__content .tcb-orange .tab-caption-box-content { border-color: #f39800; }
+.components-popover__content .tcb-yellow .tab-caption-box-label { background-color: #ffd900; color: #fff; }
+.components-popover__content .tcb-yellow .tab-caption-box-content { border-color: #ffd900; }
+.components-popover__content .tcb-brown .tab-caption-box-label { background-color: #954e2a; color: #fff; }
+.components-popover__content .tcb-brown .tab-caption-box-content { border-color: #954e2a; }
+.components-popover__content .tcb-grey .tab-caption-box-label { background-color: #949495; color: #fff; }
+.components-popover__content .tcb-grey .tab-caption-box-content { border-color: #949495; }
+.components-popover__content .tcb-black .tab-caption-box-label { background-color: #333; color: #fff; }
+.components-popover__content .tcb-black .tab-caption-box-content { border-color: #333; }
 .components-popover__content .label-box { margin: 1.2em 0; }
 .components-popover__content .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }

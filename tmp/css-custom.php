@@ -659,3 +659,10 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
   background-color: <?php echo get_editor_key_color(); ?>;
   color: #fff;
 }
+.tcb-key-color .tab-caption-box-label {
+  background-color: <?php echo get_editor_key_color(); ?>;
+  color: #fff;
+}
+.tcb-key-color .tab-caption-box-content {
+  border-color: <?php echo get_editor_key_color(); ?>;
+}
