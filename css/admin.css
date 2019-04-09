@@ -980,14 +980,26 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
-.admin-settings .demo .cb-yellow.caption-box { border-color: #fc9f4d; }
-.admin-settings .demo .cb-yellow .caption-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .cb-red.caption-box { border-color: #d05a6e; }
-.admin-settings .demo .cb-red .caption-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .cb-blue.caption-box { border-color: #2ea9df; }
-.admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .cb-red.caption-box { border-color: #e60033; }
+.admin-settings .demo .cb-red .caption-box-label { background-color: #e60033; color: #fff; }
+.admin-settings .demo .cb-pink.caption-box { border-color: #e95295; }
+.admin-settings .demo .cb-pink .caption-box-label { background-color: #e95295; color: #fff; }
+.admin-settings .demo .cb-purple.caption-box { border-color: #884898; }
+.admin-settings .demo .cb-purple .caption-box-label { background-color: #884898; color: #fff; }
+.admin-settings .demo .cb-blue.caption-box { border-color: #0095d9; }
+.admin-settings .demo .cb-blue .caption-box-label { background-color: #0095d9; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .cb-orange.caption-box { border-color: #f39800; }
+.admin-settings .demo .cb-orange .caption-box-label { background-color: #f39800; color: #fff; }
+.admin-settings .demo .cb-yellow.caption-box { border-color: #ffd900; }
+.admin-settings .demo .cb-yellow .caption-box-label { background-color: #ffd900; color: #fff; }
+.admin-settings .demo .cb-brown.caption-box { border-color: #954e2a; }
+.admin-settings .demo .cb-brown .caption-box-label { background-color: #954e2a; color: #fff; }
+.admin-settings .demo .cb-grey.caption-box { border-color: #949495; }
+.admin-settings .demo .cb-grey .caption-box-label { background-color: #949495; color: #fff; }
+.admin-settings .demo .cb-black.caption-box { border-color: #333; }
+.admin-settings .demo .cb-black .caption-box-label { background-color: #333; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
@@ -2248,14 +2260,26 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
-.admin-settings .demo .cb-yellow.caption-box { border-color: #fc9f4d; }
-.admin-settings .demo .cb-yellow .caption-box-label { background-color: #fc9f4d; color: #fff; }
-.admin-settings .demo .cb-red.caption-box { border-color: #d05a6e; }
-.admin-settings .demo .cb-red .caption-box-label { background-color: #d05a6e; color: #fff; }
-.admin-settings .demo .cb-blue.caption-box { border-color: #2ea9df; }
-.admin-settings .demo .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
+.admin-settings .demo .cb-red.caption-box { border-color: #e60033; }
+.admin-settings .demo .cb-red .caption-box-label { background-color: #e60033; color: #fff; }
+.admin-settings .demo .cb-pink.caption-box { border-color: #e95295; }
+.admin-settings .demo .cb-pink .caption-box-label { background-color: #e95295; color: #fff; }
+.admin-settings .demo .cb-purple.caption-box { border-color: #884898; }
+.admin-settings .demo .cb-purple .caption-box-label { background-color: #884898; color: #fff; }
+.admin-settings .demo .cb-blue.caption-box { border-color: #0095d9; }
+.admin-settings .demo .cb-blue .caption-box-label { background-color: #0095d9; color: #fff; }
 .admin-settings .demo .cb-green.caption-box { border-color: #3eb370; }
 .admin-settings .demo .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
+.admin-settings .demo .cb-orange.caption-box { border-color: #f39800; }
+.admin-settings .demo .cb-orange .caption-box-label { background-color: #f39800; color: #fff; }
+.admin-settings .demo .cb-yellow.caption-box { border-color: #ffd900; }
+.admin-settings .demo .cb-yellow .caption-box-label { background-color: #ffd900; color: #fff; }
+.admin-settings .demo .cb-brown.caption-box { border-color: #954e2a; }
+.admin-settings .demo .cb-brown .caption-box-label { background-color: #954e2a; color: #fff; }
+.admin-settings .demo .cb-grey.caption-box { border-color: #949495; }
+.admin-settings .demo .cb-grey .caption-box-label { background-color: #949495; color: #fff; }
+.admin-settings .demo .cb-black.caption-box { border-color: #333; }
+.admin-settings .demo .cb-black .caption-box-label { background-color: #333; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
@@ -3659,14 +3683,26 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
 .components-popover__content .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .components-popover__content .caption-box-content { padding: 0.4em 0.8em; }
-.components-popover__content .cb-yellow.caption-box { border-color: #fc9f4d; }
-.components-popover__content .cb-yellow .caption-box-label { background-color: #fc9f4d; color: #fff; }
-.components-popover__content .cb-red.caption-box { border-color: #d05a6e; }
-.components-popover__content .cb-red .caption-box-label { background-color: #d05a6e; color: #fff; }
-.components-popover__content .cb-blue.caption-box { border-color: #2ea9df; }
-.components-popover__content .cb-blue .caption-box-label { background-color: #2ea9df; color: #fff; }
+.components-popover__content .cb-red.caption-box { border-color: #e60033; }
+.components-popover__content .cb-red .caption-box-label { background-color: #e60033; color: #fff; }
+.components-popover__content .cb-pink.caption-box { border-color: #e95295; }
+.components-popover__content .cb-pink .caption-box-label { background-color: #e95295; color: #fff; }
+.components-popover__content .cb-purple.caption-box { border-color: #884898; }
+.components-popover__content .cb-purple .caption-box-label { background-color: #884898; color: #fff; }
+.components-popover__content .cb-blue.caption-box { border-color: #0095d9; }
+.components-popover__content .cb-blue .caption-box-label { background-color: #0095d9; color: #fff; }
 .components-popover__content .cb-green.caption-box { border-color: #3eb370; }
 .components-popover__content .cb-green .caption-box-label { background-color: #3eb370; color: #fff; }
+.components-popover__content .cb-orange.caption-box { border-color: #f39800; }
+.components-popover__content .cb-orange .caption-box-label { background-color: #f39800; color: #fff; }
+.components-popover__content .cb-yellow.caption-box { border-color: #ffd900; }
+.components-popover__content .cb-yellow .caption-box-label { background-color: #ffd900; color: #fff; }
+.components-popover__content .cb-brown.caption-box { border-color: #954e2a; }
+.components-popover__content .cb-brown .caption-box-label { background-color: #954e2a; color: #fff; }
+.components-popover__content .cb-grey.caption-box { border-color: #949495; }
+.components-popover__content .cb-grey .caption-box-label { background-color: #949495; color: #fff; }
+.components-popover__content .cb-black.caption-box { border-color: #333; }
+.components-popover__content .cb-black .caption-box-label { background-color: #333; color: #fff; }
 .components-popover__content .tab-caption-box { margin: 1.2em 0; }
 .components-popover__content .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .components-popover__content .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }

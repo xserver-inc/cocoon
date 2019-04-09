@@ -652,3 +652,10 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .tb-key-color .toggle-checkbox:checked ~ .toggle-content {
   border-color: <?php echo get_editor_key_color(); ?>;
 }
+.cb-key-color.caption-box {
+  border-color: <?php echo get_editor_key_color(); ?>;
+}
+.cb-key-color .caption-box-label {
+  background-color: <?php echo get_editor_key_color(); ?>;
+  color: #fff;
+}

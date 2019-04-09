@@ -1018,10 +1018,17 @@ $bb_green: $green_color;
     color: $white;
   }
 }
-.cb-yellow{@include caption_color($bb_yellow);}
-.cb-red{@include caption_color($bb_red);}
-.cb-blue{@include caption_color($bb_blue);}
-.cb-green{@include caption_color($bb_green);}
+
+.cb-red{@include caption_color($red_color);}
+.cb-pink{@include caption_color($pink_color);}
+.cb-purple{@include caption_color($purple_color);}
+.cb-blue{@include caption_color($blue_color);}
+.cb-green{@include caption_color($green_color);}
+.cb-orange{@include caption_color($orange_color);}
+.cb-yellow{@include caption_color($yellow_color);}
+.cb-brown{@include caption_color($brown_color);}
+.cb-grey{@include caption_color($grey_color);}
+.cb-black{@include caption_color($black_color);}
 
 /************************************
 ** キャプションタブボックス
