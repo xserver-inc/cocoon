@@ -706,14 +706,25 @@ $bb_green: $green_color;
 .btn-wrap > a:after{
   font-family: FontAwesome;
   margin-right: 12px;
+  transition: all .2s ease;
 }
 
-#container .btn:hover,
-#container .btn-wrap > a:hover{
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #000;
+// #container .btn:hover,
+// #container .btn-wrap > a:hover{
+//   color: #333;
+//   background-color: #fff;
+//   border: 2px solid #000;
+//   transition: $bgc_hover_anime;
+// }
+
+.btn:hover,
+.btn-wrap > a:hover{
+  opacity: 0.3;
   transition: $bgc_hover_anime;
+  &::after{
+    right: -3px;
+    transition: $bgc_hover_anime;
+  }
 }
 
 .btn-m,

@@ -3184,13 +3184,17 @@ label.screen-reader-text {
 .btn-wrap > a:after {
   font-family: FontAwesome;
   margin-right: 12px;
+  transition: all .2s ease;
 }
 
-#container .btn:hover, #container .ranking-item-link-buttons a:hover, .ranking-item-link-buttons #container a:hover,
-#container .btn-wrap > a:hover {
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #000;
+.btn:hover, .ranking-item-link-buttons a:hover,
+.btn-wrap > a:hover {
+  opacity: 0.3;
+  transition: all 0.7s ease;
+}
+.btn:hover::after, .ranking-item-link-buttons a:hover::after,
+.btn-wrap > a:hover::after {
+  right: -3px;
   transition: all 0.7s ease;
 }
 
