@@ -459,6 +459,17 @@ $bb_green: $green_color;
   &.bb-grey{border-color: $grey_color;}
   &.bb-black{border-color: $black_color;}
 
+  &.bb-deep{border-color: $deep_color;}
+  &.bb-indigo{border-color: $indigo_color;}
+  &.bb-light-blue{border-color: $light_blue_color;}
+  &.bb-cyan{border-color: $cyan_color;}
+  &.bb-teal{border-color: $teal_color;}
+  &.bb-light-green{border-color: $light_green_color;}
+  &.bb-lime{border-color: $lime_color;}
+  &.bb-amber{border-color: $amber_color;}
+  &.bb-deep-orange{border-color: $deep_orange_color;}
+
+
   &.bb-tab{
     position: relative;
     margin-top: 2em;
@@ -484,6 +495,16 @@ $bb_green: $green_color;
     &.bb-brown::before{background-color: $brown_color;}
     &.bb-grey::before{background-color: $grey_color;}
     &.bb-black::before{background-color: $black_color;}
+
+    &.bb-deep::before{background-color: $deep_color;}
+    &.bb-indigo::before{background-color: $indigo_color;}
+    &.bb-light-blue::before{background-color: $light_blue_color;}
+    &.bb-cyan::before{background-color: $cyan_color;}
+    &.bb-teal::before{background-color: $teal_color;}
+    &.bb-light-green::before{background-color: $light_green_color;}
+    &.bb-lime::before{background-color: $lime_color;}
+    &.bb-amber::before{background-color: $amber_color;}
+    &.bb-deep-orange::before{background-color: $deep_orange_color;}
   }
 
   &.sticky{
@@ -894,36 +915,15 @@ $bb_green: $green_color;
 .mc-grey{@include micro_copycolor($grey_color);}
 .mc-black{@include micro_copycolor($black_color);}
 
-
-// /*メインカランの2カラム化*/
-// .half-half{
-// }
-// .half-l,
-// .half-r{
-//   margin: 1em 0;
-// }
-// .half-l{
-//   float: left;
-//   width: 50%;
-//   padding-right: 10px;
-//   box-sizing: border-box;
-// }
-
-// .half-r{
-//   float: right;
-//   width: 50%;
-//   padding-left: 10px;
-//   box-sizing: border-box;
-// }
-
-// @media screen and (max-width:639px){
-//   .half-l,
-//   .half-r{
-//     float: none;
-//     width: auto;
-//     padding: 0;
-//   }
-// }
+.mc-deep{@include micro_copycolor($deep_color);}
+.mc-indigo{@include micro_copycolor($indigo_color);}
+.mc-light-blue{@include micro_copycolor($light_blue_color);}
+.mc-cyan{@include micro_copycolor($cyan_color);}
+.mc-teal{@include micro_copycolor($teal_color);}
+.mc-light-green{@include micro_copycolor($light_green_color);}
+.mc-lime{@include micro_copycolor($lime_color);}
+.mc-amber{@include micro_copycolor($amber_color);}
+.mc-deep-orange{@include micro_copycolor($deep_orange_color);}
 
 .blogcard-type .blogcard::before{
   font-family: FontAwesome;
@@ -1007,7 +1007,7 @@ $bb_green: $green_color;
   padding: 0.4em 0.8em;
 }
 
-@mixin caption_color($color: $bb_yellow) {
+@mixin caption_color($color: $red_color) {
   &.caption-box{
     border-color: $color;
   }
@@ -1027,6 +1027,16 @@ $bb_green: $green_color;
 .cb-brown{@include caption_color($brown_color);}
 .cb-grey{@include caption_color($grey_color);}
 .cb-black{@include caption_color($black_color);}
+
+.cb-deep{@include caption_color($deep_color);}
+.cb-indigo{@include caption_color($indigo_color);}
+.cb-light-blue{@include caption_color($light_blue_color);}
+.cb-cyan{@include caption_color($cyan_color);}
+.cb-teal{@include caption_color($teal_color);}
+.cb-light-green{@include caption_color($light_green_color);}
+.cb-lime{@include caption_color($lime_color);}
+.cb-amber{@include caption_color($amber_color);}
+.cb-deep-orange{@include caption_color($deep_orange_color);}
 
 /************************************
 ** キャプションタブボックス
@@ -1070,6 +1080,16 @@ $bb_green: $green_color;
 .tcb-grey{@include caption_tab_color($grey_color);}
 .tcb-black{@include caption_tab_color($black_color);}
 
+.tcb-deep{@include caption_tab_color($deep_color);}
+.tcb-indigo{@include caption_tab_color($indigo_color);}
+.tcb-light-blue{@include caption_tab_color($light_blue_color);}
+.tcb-cyan{@include caption_tab_color($cyan_color);}
+.tcb-teal{@include caption_tab_color($teal_color);}
+.tcb-light-green{@include caption_tab_color($light_green_color);}
+.tcb-lime{@include caption_tab_color($lime_color);}
+.tcb-amber{@include caption_tab_color($amber_color);}
+.tcb-deep-orange{@include caption_tab_color($deep_orange_color);}
+
 /************************************
 ** ラベルボックス
 ************************************/
@@ -1107,6 +1127,16 @@ $bb_green: $green_color;
 .lb-brown{@include label_color($brown_color);}
 .lb-grey{@include label_color($grey_color);}
 .lb-black{@include label_color($black_color);}
+
+.lb-deep{@include label_color($deep_color);}
+.lb-indigo{@include label_color($indigo_color);}
+.lb-light-blue{@include label_color($light_blue_color);}
+.lb-cyan{@include label_color($cyan_color);}
+.lb-teal{@include label_color($teal_color);}
+.lb-light-green{@include label_color($light_green_color);}
+.lb-lime{@include label_color($lime_color);}
+.lb-amber{@include label_color($amber_color);}
+.lb-deep-orange{@include label_color($deep_orange_color);}
 
 /************************************
 ** トグル表示ボタン
@@ -1205,6 +1235,16 @@ $toggle_border_width: 2px;
 .tb-grey{@include toggle_color($grey_color);}
 .tb-black{@include toggle_color($black_color);}
 
+.tb-deep{@include toggle_color($deep_color);}
+.tb-indigo{@include toggle_color($indigo_color);}
+.tb-light-blue{@include toggle_color($light_blue_color);}
+.tb-cyan{@include toggle_color($cyan_color);}
+.tb-teal{@include toggle_color($teal_color);}
+.tb-light-green{@include toggle_color($light_green_color);}
+.tb-lime{@include toggle_color($lime_color);}
+.tb-amber{@include toggle_color($amber_color);}
+.tb-deep-orange{@include toggle_color($deep_orange_color);}
+
 .iic-red li::before{color: $red_color;}
 .iic-pink li::before{color: $pink_color;}
 .iic-purple li::before{color: $purple_color;}
@@ -1215,3 +1255,13 @@ $toggle_border_width: 2px;
 .iic-brown li::before{color: $brown_color;}
 .iic-grey li::before{color: $grey_color;}
 .iic-black li::before{color: $black_color;}
+
+.iic-deep li::before{color: $deep_color;}
+.iic-indigo li::before{color: $indigo_color;}
+.iic-light-blue li::before{color: $light_blue_color;}
+.iic-cyan li::before{color: $cyan_color;}
+.iic-teal li::before{color: $teal_color;}
+.iic-light-green li::before{color: $light_green_color;}
+.iic-lime li::before{color: $lime_color;}
+.iic-amber li::before{color: $amber_color;}
+.iic-deep-orange li::before{color: $deep_orange_color;}
