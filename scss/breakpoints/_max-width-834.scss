@@ -305,13 +305,13 @@ textarea {
 
 .btn-l,
 .btn-wrap.btn-wrap-l > a{
-  padding: 14px 18px;
+  //padding: 14px 18px;
   font-size: 14px;
-  &::after{
-    font-size: 18px;
-    right: -4px;
-    margin-top: 0;
-  }
+  // &::after{
+  //   //font-size: 18px;
+  //   //right: -4px;
+  //   margin-top: 0;
+  // }
 }
 
 
