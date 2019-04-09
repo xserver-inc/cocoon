@@ -852,7 +852,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -2310,7 +2310,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -3911,7 +3911,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-amber { border-color: #ffc107; }
 .components-popover__content .blank-box.bb-deep-orange { border-color: #ea5506; }
 .components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .components-popover__content .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .components-popover__content .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .components-popover__content .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
