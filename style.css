@@ -3399,69 +3399,174 @@ label.screen-reader-text {
   border-radius: 2em;
 }
 
-.micro-balloon.mc-yellow {
-  background-color: #fc9f4d;
+.mc-red {
+  background-color: #e60033;
   color: #fff;
   border: none;
 }
-.micro-balloon.mc-yellow.micro-bottom::after {
-  border-bottom-color: #fc9f4d;
+.mc-red.micro-bottom::after {
+  border-bottom-color: #e60033;
   border-top-color: transparent;
 }
-.micro-balloon.mc-yellow::before {
+.mc-red::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.micro-balloon.mc-yellow::after {
-  border-top-color: #fc9f4d;
+.mc-red::after {
+  border-top-color: #e60033;
 }
-.micro-balloon.mc-red {
-  background-color: #d05a6e;
+
+.mc-pink {
+  background-color: #e95295;
   color: #fff;
   border: none;
 }
-.micro-balloon.mc-red.micro-bottom::after {
-  border-bottom-color: #d05a6e;
+.mc-pink.micro-bottom::after {
+  border-bottom-color: #e95295;
   border-top-color: transparent;
 }
-.micro-balloon.mc-red::before {
+.mc-pink::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.micro-balloon.mc-red::after {
-  border-top-color: #d05a6e;
+.mc-pink::after {
+  border-top-color: #e95295;
 }
-.micro-balloon.mc-blue {
-  background-color: #2ea9df;
+
+.mc-purple {
+  background-color: #884898;
   color: #fff;
   border: none;
 }
-.micro-balloon.mc-blue.micro-bottom::after {
-  border-bottom-color: #2ea9df;
+.mc-purple.micro-bottom::after {
+  border-bottom-color: #884898;
   border-top-color: transparent;
 }
-.micro-balloon.mc-blue::before {
+.mc-purple::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.micro-balloon.mc-blue::after {
-  border-top-color: #2ea9df;
+.mc-purple::after {
+  border-top-color: #884898;
 }
-.micro-balloon.mc-green {
+
+.mc-blue {
+  background-color: #0095d9;
+  color: #fff;
+  border: none;
+}
+.mc-blue.micro-bottom::after {
+  border-bottom-color: #0095d9;
+  border-top-color: transparent;
+}
+.mc-blue::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-blue::after {
+  border-top-color: #0095d9;
+}
+
+.mc-green {
   background-color: #3eb370;
   color: #fff;
   border: none;
 }
-.micro-balloon.mc-green.micro-bottom::after {
+.mc-green.micro-bottom::after {
   border-bottom-color: #3eb370;
   border-top-color: transparent;
 }
-.micro-balloon.mc-green::before {
+.mc-green::before {
   border-top-color: transparent;
   border-bottom-color: transparent;
 }
-.micro-balloon.mc-green::after {
+.mc-green::after {
   border-top-color: #3eb370;
+}
+
+.mc-orange {
+  background-color: #f39800;
+  color: #fff;
+  border: none;
+}
+.mc-orange.micro-bottom::after {
+  border-bottom-color: #f39800;
+  border-top-color: transparent;
+}
+.mc-orange::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-orange::after {
+  border-top-color: #f39800;
+}
+
+.mc-yellow {
+  background-color: #ffd900;
+  color: #fff;
+  border: none;
+}
+.mc-yellow.micro-bottom::after {
+  border-bottom-color: #ffd900;
+  border-top-color: transparent;
+}
+.mc-yellow::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-yellow::after {
+  border-top-color: #ffd900;
+}
+
+.mc-brown {
+  background-color: #954e2a;
+  color: #fff;
+  border: none;
+}
+.mc-brown.micro-bottom::after {
+  border-bottom-color: #954e2a;
+  border-top-color: transparent;
+}
+.mc-brown::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-brown::after {
+  border-top-color: #954e2a;
+}
+
+.mc-grey {
+  background-color: #949495;
+  color: #fff;
+  border: none;
+}
+.mc-grey.micro-bottom::after {
+  border-bottom-color: #949495;
+  border-top-color: transparent;
+}
+.mc-grey::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-grey::after {
+  border-top-color: #949495;
+}
+
+.mc-black {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+.mc-black.micro-bottom::after {
+  border-bottom-color: #333;
+  border-top-color: transparent;
+}
+.mc-black::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-black::after {
+  border-top-color: #333;
 }
 
 .blogcard-type .blogcard::before {

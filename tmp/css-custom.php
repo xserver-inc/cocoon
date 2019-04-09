@@ -669,3 +669,19 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .lb-key-color .label-box-content {
   border-color: <?php echo get_editor_key_color(); ?>;
 }
+.mc-key-color {
+  background-color: <?php echo get_editor_key_color(); ?>;
+  color: #fff;
+  border: none;
+}
+.mc-key-color.micro-bottom::after {
+  border-bottom-color: <?php echo get_editor_key_color(); ?>;
+  border-top-color: transparent;
+}
+.mc-key-color::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-key-color::after {
+  border-top-color: <?php echo get_editor_key_color(); ?>;
+}

@@ -881,20 +881,17 @@ $bb_green: $green_color;
     border-top-color: $color;
   }
 }
-.micro-balloon{
-  &.mc-yellow{
-    @include micro_copycolor($bb_yellow);
-  }
-  &.mc-red{
-    @include micro_copycolor($bb_red);
-  }
-  &.mc-blue{
-    @include micro_copycolor($bb_blue);
-  }
-  &.mc-green{
-    @include micro_copycolor($bb_green);
-  }
-}
+
+.mc-red{@include micro_copycolor($red_color);}
+.mc-pink{@include micro_copycolor($pink_color);}
+.mc-purple{@include micro_copycolor($purple_color);}
+.mc-blue{@include micro_copycolor($blue_color);}
+.mc-green{@include micro_copycolor($green_color);}
+.mc-orange{@include micro_copycolor($orange_color);}
+.mc-yellow{@include micro_copycolor($yellow_color);}
+.mc-brown{@include micro_copycolor($brown_color);}
+.mc-grey{@include micro_copycolor($grey_color);}
+.mc-black{@include micro_copycolor($black_color);}
 
 
 // /*メインカランの2カラム化*/
