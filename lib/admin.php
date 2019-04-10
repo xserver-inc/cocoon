@@ -194,7 +194,7 @@ function customize_admin_add_column($column_name, $post_id) {
     $post = get_post($post_id);
     //_v($post);
     $title_count = mb_strlen(strip_tags($post->post_title));
-    $content_count = mb_strlen(strip_tags(do_shortcode($post->post_content)));
+    $content_count = mb_strlen(strip_tags($post->post_content));
     $digit = max(array(strlen($title_count), strlen($content_count)));
     //var_dump($digit);
     $thum =
