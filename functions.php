@@ -33,7 +33,7 @@ function get_content_excerpt($content, $length = 70){
   $content = str_replace('&nbsp;', '', $content);//特殊文字の削除（今回はスペースのみ）
   $content = preg_replace('/\[.+?\]/i', '', $content); //ショートコードを取り除く
   $content = preg_replace(URL_REG, '', $content); //URLを取り除く
-  // $content = preg_replace('/\s/iu',"",$content); //余分な空白を削除
+
   //$lengthが整数じゃなかった場合の処理
   if (is_int(intval($length))) {
     $length = intval($length);
