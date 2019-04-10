@@ -82,6 +82,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             generate_textarea_tag(OP_CSS_MINIFY_EXCLUDE_LIST, get_css_minify_exclude_list(), __( '縮小化除外CSSファイルの文字列を入力', THEME_NAME ) , 3);
             generate_tips_tag(__( '縮小化しないCSSファイルのパス、もしくはパスの一部を改行で区切って入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'プラグインCSSを除外する例：/plugins/plugin-folder-name/', THEME_NAME ));
 
             ?>
           </td>
@@ -99,6 +100,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             generate_textarea_tag(OP_JS_MINIFY_EXCLUDE_LIST, get_js_minify_exclude_list(), __( '縮小化除外JavaScriptファイルの文字列を入力', THEME_NAME ) , 3);
             generate_tips_tag(__( '縮小化しないJavaScriptファイルのパス、もしくはパスの一部を改行で区切って入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'プラグインJavaScriptを除外する例：/plugins/plugin-folder-name/', THEME_NAME ));
 
             ?>
           </td>
