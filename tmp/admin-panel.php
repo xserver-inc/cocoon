@@ -133,7 +133,7 @@ if (is_user_administrator()
         <a href="https://sizzy.co/?url=<?php echo $encoded_url; ?> " target="_blank"><?php _e( 'Sizzy', THEME_NAME ) ?></a>
       <?php endif ?>
       <?php
-      if (0 && is_admin_multi_screen_resolution_test_visible()): ?>
+      if (is_admin_multi_screen_resolution_test_visible()): ?>
          <a href="http://whatismyscreenresolution.net/multi-screen-test?site-url=<?php echo $encoded_url; ?>&w=414&h=736" target="_blank"><?php _e( 'Resolution Test', THEME_NAME ) ?></a>
       <?php endif ?>
 
