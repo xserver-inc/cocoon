@@ -3492,8 +3492,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .slick-dots { display: none !important; }
   .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; }
   .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; } }
-@media screen and (max-width: 599px) { .admin-settings .demo .main .column-wrap { flex-direction: column; }
-  .admin-settings .demo .main .column-wrap > div { width: 100%; padding: 1em 0; } }
+@media screen and (max-width: 599px) { .admin-settings .demo .container .column-wrap { flex-direction: column; }
+  .admin-settings .demo .container .column-wrap > div { width: 100%; padding: 1em 0; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
   .admin-settings .demo h2, .admin-settings .demo h3 { font-size: 20px; }
   .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 1.2em 0 1em; }
