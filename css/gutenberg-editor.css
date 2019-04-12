@@ -891,3 +891,7 @@ ol, ul {
 .tab-caption-box-label * {
   display: inline;
 }
+
+.editor-styles-wrapper .article .iconlist-box ul li, .editor-styles-wrapper .article .iconlist-box ol li {
+  margin: 0;
+}

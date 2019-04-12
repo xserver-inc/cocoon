@@ -694,3 +694,13 @@ ol, ul {
   }
 }
 
+//アイコンリスト内のCSS不具合修正
+.editor-styles-wrapper .article{
+  .iconlist-box{
+    ul, ol{
+      li{
+        margin: 0;
+      }
+    }
+  }
+}
