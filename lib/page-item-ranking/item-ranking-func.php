@@ -213,11 +213,6 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
 
   $tag = '<div class="ranking-item-rating rating-star">';
 
-  // //とりあえず小数点1桁形式にする
-  // if (!includes_string('.', $rate)) {
-  //   $rate .= '.0';
-  // }
-  // _v($rate);
   //小数点で分割
   $rates = explode('.', $rate);
   if (!isset($rates[0])) {
