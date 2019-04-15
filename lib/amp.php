@@ -356,15 +356,6 @@ function convert_content_for_amp($the_content){
 
       //amp-imgタグの作成
       $tag = '<amp-img'.$src_attr.$width_attr.$height_attr.$alt_attr.$title_attr.$sizes_attr.$class_attr.'></amp-img>';
-      //_v($tag);
-      // echo('<pre>');
-      // var_dump($srcs);
-      // var_dump(htmlspecialchars($tag));
-      // var_dump($widths);
-      // var_dump($heights);
-      // var_dump($alts);
-      // var_dump($titles);
-      // echo('</pre>');
 
       //imgタグをamp-imgタグに置換
       $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
@@ -580,13 +571,6 @@ function convert_content_for_amp($the_content){
       break;
   }
 
-    //$the_content = str_replace('</body>', '<amp-image-lightbox id="amp-lightbox" layout="nodisplay"></amp-image-lightbox></body>', $the_content);
-    //_v($the_content);
-
-  // echo('<pre>');
-  // var_dump(htmlspecialchars($the_content));
-  // echo('</pre>');
-
   return apply_filters('convert_content_for_amp', $the_content);
 }//convert_content_for_amp
 endif;
@@ -659,25 +643,6 @@ function get_amp_permalink(){
   return $amp_permalink;
 }
 endif;
-
-// //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
-// function get_image_width_and_height($image_url){
-//   //URLにサイトアドレスが含まれていない場合
-//   if (!includes_site_url($image_url)) {
-//     return false;
-//   }
-//   $wp_upload_dir = wp_upload_dir();
-//   $uploads_dir = $wp_upload_dir['basedir'];
-//   $uploads_url = $wp_upload_dir['baseurl'];
-//   $image_file = str_replace($uploads_url, $uploads_dir, $image_url);
-//   $imagesize = getimagesize($image_file);
-//   if ($imagesize) {
-//     $res = array();
-//     $res['width'] = $imagesize[0];
-//     $res['height'] = $imagesize[1];
-//     return $res;
-//   }
-// }
 
 //AMPページではCrayon Syntax Highlighterを表示しない
 add_action( 'wp_loaded','remove_crayon_syntax_highlighter' );
@@ -961,21 +926,6 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
     //余計なメディアクエリを削除
     //$css = preg_replace('/@media screen and \(max-width:\d+px\)\{\}/i', '', $css);
 
-    // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
-    // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
-    // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
-    // $css = preg_replace('/\}\{.+?\}/i', '}', $css);
-
-    // if (preg_match_all('/\}(\{.+?\})/i', $css, $m) && $m[1]) {
-    //   //_v($m[1]);
-    //   $delete_css_codes = $m[1];
-    //   foreach ($delete_css_codes as $delete_css_code) {
-    //     $css = str_replace($delete_css_code, '', $css);
-    //   }
-    // }
-    // if (preg_match_all('/[\.#\-a-zA-Z0-9\s>,:@]+?\{.+?\}/i', $css, $m)) {
-    //   _v($m[0]);
-    // }
   }
   return $css;
 }
