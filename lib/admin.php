@@ -134,6 +134,7 @@ endif;
 //投稿記事一覧にアイキャッチ画像を表示
 //カラムの挿入
 add_filter( 'manage_posts_columns', 'customize_admin_manage_posts_columns' );
+add_filter( 'manage_pages_columns', 'customize_admin_manage_posts_columns' );
 if ( !function_exists( 'customize_admin_manage_posts_columns' ) ):
 function customize_admin_manage_posts_columns($columns) {
   //作成者表示
@@ -185,6 +186,7 @@ endif;
 
 //管理画面の記事一覧テーブルにサムネイルの挿入
 add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
+add_action( 'manage_pages_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
 
