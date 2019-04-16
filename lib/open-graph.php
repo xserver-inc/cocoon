@@ -76,7 +76,7 @@ class OpenGraphGetter implements Iterator
         }
         //var_dump($response);
         if (!empty($response)) {
-            return self::_parse($response);
+            return self::_parse($response, $URI);
         } else {
             return false;
         }
@@ -89,7 +89,7 @@ class OpenGraphGetter implements Iterator
    * @param $HTML    HTML to parse
    * @return OpenGraphGetter
    */
-	static private function _parse($HTML) {
+	static private function _parse($HTML, $URI = null) {
 		$old_libxml_error = libxml_use_internal_errors(true);
 
 		$doc = new DOMDocument();
@@ -193,11 +193,12 @@ class OpenGraphGetter implements Iterator
     }
 
     //Amazonページかどうか
-    if (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
-     && includes_string($HTML, '//m.media-amazon.com')
+    if ((includes_string($URI, '//amzn.to/') || includes_string($URI, '//www.amazon.co')) ||
+     (includes_string($HTML, '//images-fe.ssl-images-amazon.com')
+     && includes_string($HTML, '//m.media-amazon.com'))
     ) {
       //Amazonページなら画像取得
-      if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z]\d{3}_\.jpg|i', $HTML, $m)) {
+      if (preg_match('|https://images-na.ssl-images-amazon.com/images/I/\d[^&"]+?_S[A-Z]\d{3}(,\d{3})?_\.jpg|i', $HTML, $m)) {
         if (isset($m[0])) {
           //_v($m[0]);
           $page->_values['image'] = $m[0];
