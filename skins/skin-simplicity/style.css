@@ -12,6 +12,7 @@
 /*以下にスタイルシートを記入してください*/
 body {
   font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+  background-color: transparent;
 }
 
 .navi {
