@@ -68,9 +68,10 @@ class OpenGraphGetter implements Iterator
         );
         $res = wp_remote_get( $URI, $args );
         $response_code = wp_remote_retrieve_response_code( $res );
-        // echo('<pre>');
-        // var_dump($res);
-        // echo('</pre>');
+        echo('<pre>');
+        var_dump($res);
+        var_dump($response_code);
+        echo('</pre>');
         if (!is_wp_error( $res ) && $response_code === 200) {
           $response = $res['body'];
         }
