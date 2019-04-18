@@ -2517,3 +2517,27 @@ function get_editor_key_color(){
   return !empty(get_site_key_color()) ? get_site_key_color() : DEFAULT_EDITOR_KEY_COLOR;
 }
 endif;
+
+//httpコンテンツの取得
+if ( !function_exists( 'get_http_content' ) ):
+function get_http_content($url){
+  try {
+    $ch = curl_init();
+    curl_setopt_array($ch, array(
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => true,
+    ));
+    $body = curl_exec($ch);
+    $errno = curl_errno($ch);
+    $error = curl_error($ch);
+    curl_close($ch);
+    if (CURLE_OK !== $errno) {
+      throw new RuntimeException($error, $errno);
+    }
+    return $body;
+  } catch (Exception $e) {
+    return false;
+    //echo $e->getMessage();
+  }
+}
+endif;

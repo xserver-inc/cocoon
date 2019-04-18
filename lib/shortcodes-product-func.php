@@ -7,30 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//httpコンテンツの取得
-if ( !function_exists( 'get_http_content' ) ):
-function get_http_content($url){
-  try {
-    $ch = curl_init();
-    curl_setopt_array($ch, array(
-      CURLOPT_URL => $url,
-      CURLOPT_RETURNTRANSFER => true,
-    ));
-    $body = curl_exec($ch);
-    $errno = curl_errno($ch);
-    $error = curl_error($ch);
-    curl_close($ch);
-    if (CURLE_OK !== $errno) {
-      throw new RuntimeException($error, $errno);
-    }
-    return $body;
-  } catch (Exception $e) {
-    return false;
-    //echo $e->getMessage();
-  }
-}
-endif;
-
 //シンプルなアソシエイトURLの作成
 if ( !function_exists( 'get_amazon_associate_url' ) ):
 function get_amazon_associate_url($asin, $associate_tracking_id = null){
