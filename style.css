@@ -2926,6 +2926,9 @@ label.screen-reader-text {
 .blank-box.bb-deep-orange {
   border-color: #ea5506;
 }
+.blank-box.bb-white {
+  border-color: #fff;
+}
 .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
@@ -2998,6 +3001,9 @@ label.screen-reader-text {
 }
 .blank-box.bb-tab.bb-deep-orange::before {
   background-color: #ea5506;
+}
+.blank-box.bb-tab.bb-white::before {
+  background-color: #fff;
 }
 .blank-box.sticky {
   border-width: 0 0 0 6px;
@@ -3788,6 +3794,23 @@ label.screen-reader-text {
   border-top-color: #ea5506;
 }
 
+.mc-white {
+  background-color: #fff;
+  color: #fff;
+  border: none;
+}
+.mc-white.micro-bottom::after {
+  border-bottom-color: #fff;
+  border-top-color: transparent;
+}
+.mc-white::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-white::after {
+  border-top-color: #fff;
+}
+
 .blogcard-type .blogcard::before {
   font-family: FontAwesome;
   position: absolute;
@@ -4028,6 +4051,14 @@ label.screen-reader-text {
   color: #fff;
 }
 
+.cb-white.caption-box {
+  border-color: #fff;
+}
+.cb-white .caption-box-label {
+  background-color: #fff;
+  color: #fff;
+}
+
 /************************************
 ** キャプションタブボックス
 ************************************/
@@ -4204,6 +4235,14 @@ label.screen-reader-text {
   border-color: #ea5506;
 }
 
+.tcb-white .tab-caption-box-label {
+  background-color: #fff;
+  color: #fff;
+}
+.tcb-white .tab-caption-box-content {
+  border-color: #fff;
+}
+
 /************************************
 ** ラベルボックス
 ************************************/
@@ -4300,6 +4339,10 @@ label.screen-reader-text {
 
 .lb-deep-orange .label-box-content {
   border-color: #ea5506;
+}
+
+.lb-white .label-box-content {
+  border-color: #fff;
 }
 
 /************************************
@@ -4597,6 +4640,18 @@ label.screen-reader-text {
   border-color: #ea5506;
 }
 
+.tb-white .toggle-button {
+  border: 2px solid #fff;
+  background: #fff;
+  color: #fff;
+}
+.tb-white .toggle-button::before {
+  color: #ccc;
+}
+.tb-white .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #fff;
+}
+
 .iic-red li::before {
   color: #e60033;
 }
@@ -4671,6 +4726,132 @@ label.screen-reader-text {
 
 .iic-deep-orange li::before {
   color: #ea5506;
+}
+
+.iic-white li::before {
+  color: #fff;
+}
+
+.has-text-color.has-red-color {
+  color: #e60033;
+}
+.has-text-color.has-pink-color {
+  color: #e95295;
+}
+.has-text-color.has-purple-color {
+  color: #884898;
+}
+.has-text-color.has-blue-color {
+  color: #0095d9;
+}
+.has-text-color.has-green-color {
+  color: #3eb370;
+}
+.has-text-color.has-orange-color {
+  color: #f39800;
+}
+.has-text-color.has-yellow-color {
+  color: #ffd900;
+}
+.has-text-color.has-brown-color {
+  color: #954e2a;
+}
+.has-text-color.has-grey-color {
+  color: #949495;
+}
+.has-text-color.has-black-color {
+  color: #333;
+}
+.has-text-color.has-deep-color {
+  color: #55295b;
+}
+.has-text-color.has-indigo-color {
+  color: #1e50a2;
+}
+.has-text-color.has-light-blue-color {
+  color: #2ca9e1;
+}
+.has-text-color.has-cyan-color {
+  color: #00a3af;
+}
+.has-text-color.has-teal-color {
+  color: #007b43;
+}
+.has-text-color.has-light-green-color {
+  color: #8bc34a;
+}
+.has-text-color.has-lime-color {
+  color: #c3d825;
+}
+.has-text-color.has-amber-color {
+  color: #ffc107;
+}
+.has-text-color.has-deep-orange-color {
+  color: #ea5506;
+}
+.has-text-color.has-white-color {
+  color: #fff;
+}
+
+.has-background.has-red-background-color {
+  background-color: #e60033;
+}
+.has-background.has-pink-background-color {
+  background-color: #e95295;
+}
+.has-background.has-purple-background-color {
+  background-color: #884898;
+}
+.has-background.has-blue-background-color {
+  background-color: #0095d9;
+}
+.has-background.has-green-background-color {
+  background-color: #3eb370;
+}
+.has-background.has-orange-background-color {
+  background-color: #f39800;
+}
+.has-background.has-yellow-background-color {
+  background-color: #ffd900;
+}
+.has-background.has-brown-background-color {
+  background-color: #954e2a;
+}
+.has-background.has-grey-background-color {
+  background-color: #949495;
+}
+.has-background.has-black-background-color {
+  background-color: #333;
+}
+.has-background.has-deep-background-color {
+  background-color: #55295b;
+}
+.has-background.has-indigo-background-color {
+  background-color: #1e50a2;
+}
+.has-background.has-light-blue-background-color {
+  background-color: #2ca9e1;
+}
+.has-background.has-cyan-background-color {
+  background-color: #00a3af;
+}
+.has-background.has-teal-background-color {
+  background-color: #007b43;
+}
+.has-background.has-light-green-background-color {
+  background-color: #8bc34a;
+}
+.has-background.has-lime-background-color {
+  background-color: #c3d825;
+}
+.has-background.has-amber-background-color {
+  background-color: #ffc107;
+}
+.has-background.has-deep-orange-background-color {
+  background-color: #ea5506;
+}
+.has-background.has-white-background-color {
+  background-color: #fff;
 }
 
 .column-wrap {

@@ -851,6 +851,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-lime { border-color: #c3d825; }
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
 .admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
@@ -872,6 +873,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
 .admin-settings .demo .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-tab.bb-white::before { background-color: #fff; }
 .admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
@@ -1042,6 +1044,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
 .admin-settings .demo .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-deep-orange::after { border-top-color: #ea5506; }
+.admin-settings .demo .mc-white { background-color: #fff; color: #fff; border: none; }
+.admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
 .admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
@@ -1098,6 +1104,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-amber .caption-box-label { background-color: #ffc107; color: #fff; }
 .admin-settings .demo .cb-deep-orange.caption-box { border-color: #ea5506; }
 .admin-settings .demo .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
+.admin-settings .demo .cb-white.caption-box { border-color: #fff; }
+.admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
@@ -1139,6 +1147,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-amber .tab-caption-box-content { border-color: #ffc107; }
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-label { background-color: #ea5506; color: #fff; }
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
+.admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
+.admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -1161,6 +1171,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-lime .label-box-content { border-color: #c3d825; }
 .admin-settings .demo .lb-amber .label-box-content { border-color: #ffc107; }
 .admin-settings .demo .lb-deep-orange .label-box-content { border-color: #ea5506; }
+.admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
@@ -1228,6 +1239,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
 .admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
+.admin-settings .demo .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
+.admin-settings .demo .tb-white .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .admin-settings .demo .iic-red li::before { color: #e60033; }
 .admin-settings .demo .iic-pink li::before { color: #e95295; }
 .admin-settings .demo .iic-purple li::before { color: #884898; }
@@ -1247,6 +1261,47 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-lime li::before { color: #c3d825; }
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
+.admin-settings .demo .iic-white li::before { color: #fff; }
+.admin-settings .demo .has-text-color.has-red-color { color: #e60033; }
+.admin-settings .demo .has-text-color.has-pink-color { color: #e95295; }
+.admin-settings .demo .has-text-color.has-purple-color { color: #884898; }
+.admin-settings .demo .has-text-color.has-blue-color { color: #0095d9; }
+.admin-settings .demo .has-text-color.has-green-color { color: #3eb370; }
+.admin-settings .demo .has-text-color.has-orange-color { color: #f39800; }
+.admin-settings .demo .has-text-color.has-yellow-color { color: #ffd900; }
+.admin-settings .demo .has-text-color.has-brown-color { color: #954e2a; }
+.admin-settings .demo .has-text-color.has-grey-color { color: #949495; }
+.admin-settings .demo .has-text-color.has-black-color { color: #333; }
+.admin-settings .demo .has-text-color.has-deep-color { color: #55295b; }
+.admin-settings .demo .has-text-color.has-indigo-color { color: #1e50a2; }
+.admin-settings .demo .has-text-color.has-light-blue-color { color: #2ca9e1; }
+.admin-settings .demo .has-text-color.has-cyan-color { color: #00a3af; }
+.admin-settings .demo .has-text-color.has-teal-color { color: #007b43; }
+.admin-settings .demo .has-text-color.has-light-green-color { color: #8bc34a; }
+.admin-settings .demo .has-text-color.has-lime-color { color: #c3d825; }
+.admin-settings .demo .has-text-color.has-amber-color { color: #ffc107; }
+.admin-settings .demo .has-text-color.has-deep-orange-color { color: #ea5506; }
+.admin-settings .demo .has-text-color.has-white-color { color: #fff; }
+.admin-settings .demo .has-background.has-red-background-color { background-color: #e60033; }
+.admin-settings .demo .has-background.has-pink-background-color { background-color: #e95295; }
+.admin-settings .demo .has-background.has-purple-background-color { background-color: #884898; }
+.admin-settings .demo .has-background.has-blue-background-color { background-color: #0095d9; }
+.admin-settings .demo .has-background.has-green-background-color { background-color: #3eb370; }
+.admin-settings .demo .has-background.has-orange-background-color { background-color: #f39800; }
+.admin-settings .demo .has-background.has-yellow-background-color { background-color: #ffd900; }
+.admin-settings .demo .has-background.has-brown-background-color { background-color: #954e2a; }
+.admin-settings .demo .has-background.has-grey-background-color { background-color: #949495; }
+.admin-settings .demo .has-background.has-black-background-color { background-color: #333; }
+.admin-settings .demo .has-background.has-deep-background-color { background-color: #55295b; }
+.admin-settings .demo .has-background.has-indigo-background-color { background-color: #1e50a2; }
+.admin-settings .demo .has-background.has-light-blue-background-color { background-color: #2ca9e1; }
+.admin-settings .demo .has-background.has-cyan-background-color { background-color: #00a3af; }
+.admin-settings .demo .has-background.has-teal-background-color { background-color: #007b43; }
+.admin-settings .demo .has-background.has-light-green-background-color { background-color: #8bc34a; }
+.admin-settings .demo .has-background.has-lime-background-color { background-color: #c3d825; }
+.admin-settings .demo .has-background.has-amber-background-color { background-color: #ffc107; }
+.admin-settings .demo .has-background.has-deep-orange-background-color { background-color: #ea5506; }
+.admin-settings .demo .has-background.has-white-background-color { background-color: #fff; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
@@ -2309,6 +2364,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-lime { border-color: #c3d825; }
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
 .admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
@@ -2330,6 +2386,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
 .admin-settings .demo .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-tab.bb-white::before { background-color: #fff; }
 .admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
@@ -2500,6 +2557,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
 .admin-settings .demo .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-deep-orange::after { border-top-color: #ea5506; }
+.admin-settings .demo .mc-white { background-color: #fff; color: #fff; border: none; }
+.admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.admin-settings .demo .mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
 .admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
@@ -2556,6 +2617,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-amber .caption-box-label { background-color: #ffc107; color: #fff; }
 .admin-settings .demo .cb-deep-orange.caption-box { border-color: #ea5506; }
 .admin-settings .demo .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
+.admin-settings .demo .cb-white.caption-box { border-color: #fff; }
+.admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
@@ -2597,6 +2660,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-amber .tab-caption-box-content { border-color: #ffc107; }
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-label { background-color: #ea5506; color: #fff; }
 .admin-settings .demo .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
+.admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
+.admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
 .admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -2619,6 +2684,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-lime .label-box-content { border-color: #c3d825; }
 .admin-settings .demo .lb-amber .label-box-content { border-color: #ffc107; }
 .admin-settings .demo .lb-deep-orange .label-box-content { border-color: #ea5506; }
+.admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
 .admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
@@ -2686,6 +2752,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
 .admin-settings .demo .tb-deep-orange .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
+.admin-settings .demo .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
+.admin-settings .demo .tb-white .toggle-button::before { color: #ccc; }
+.admin-settings .demo .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .admin-settings .demo .iic-red li::before { color: #e60033; }
 .admin-settings .demo .iic-pink li::before { color: #e95295; }
 .admin-settings .demo .iic-purple li::before { color: #884898; }
@@ -2705,6 +2774,47 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-lime li::before { color: #c3d825; }
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
+.admin-settings .demo .iic-white li::before { color: #fff; }
+.admin-settings .demo .has-text-color.has-red-color { color: #e60033; }
+.admin-settings .demo .has-text-color.has-pink-color { color: #e95295; }
+.admin-settings .demo .has-text-color.has-purple-color { color: #884898; }
+.admin-settings .demo .has-text-color.has-blue-color { color: #0095d9; }
+.admin-settings .demo .has-text-color.has-green-color { color: #3eb370; }
+.admin-settings .demo .has-text-color.has-orange-color { color: #f39800; }
+.admin-settings .demo .has-text-color.has-yellow-color { color: #ffd900; }
+.admin-settings .demo .has-text-color.has-brown-color { color: #954e2a; }
+.admin-settings .demo .has-text-color.has-grey-color { color: #949495; }
+.admin-settings .demo .has-text-color.has-black-color { color: #333; }
+.admin-settings .demo .has-text-color.has-deep-color { color: #55295b; }
+.admin-settings .demo .has-text-color.has-indigo-color { color: #1e50a2; }
+.admin-settings .demo .has-text-color.has-light-blue-color { color: #2ca9e1; }
+.admin-settings .demo .has-text-color.has-cyan-color { color: #00a3af; }
+.admin-settings .demo .has-text-color.has-teal-color { color: #007b43; }
+.admin-settings .demo .has-text-color.has-light-green-color { color: #8bc34a; }
+.admin-settings .demo .has-text-color.has-lime-color { color: #c3d825; }
+.admin-settings .demo .has-text-color.has-amber-color { color: #ffc107; }
+.admin-settings .demo .has-text-color.has-deep-orange-color { color: #ea5506; }
+.admin-settings .demo .has-text-color.has-white-color { color: #fff; }
+.admin-settings .demo .has-background.has-red-background-color { background-color: #e60033; }
+.admin-settings .demo .has-background.has-pink-background-color { background-color: #e95295; }
+.admin-settings .demo .has-background.has-purple-background-color { background-color: #884898; }
+.admin-settings .demo .has-background.has-blue-background-color { background-color: #0095d9; }
+.admin-settings .demo .has-background.has-green-background-color { background-color: #3eb370; }
+.admin-settings .demo .has-background.has-orange-background-color { background-color: #f39800; }
+.admin-settings .demo .has-background.has-yellow-background-color { background-color: #ffd900; }
+.admin-settings .demo .has-background.has-brown-background-color { background-color: #954e2a; }
+.admin-settings .demo .has-background.has-grey-background-color { background-color: #949495; }
+.admin-settings .demo .has-background.has-black-background-color { background-color: #333; }
+.admin-settings .demo .has-background.has-deep-background-color { background-color: #55295b; }
+.admin-settings .demo .has-background.has-indigo-background-color { background-color: #1e50a2; }
+.admin-settings .demo .has-background.has-light-blue-background-color { background-color: #2ca9e1; }
+.admin-settings .demo .has-background.has-cyan-background-color { background-color: #00a3af; }
+.admin-settings .demo .has-background.has-teal-background-color { background-color: #007b43; }
+.admin-settings .demo .has-background.has-light-green-background-color { background-color: #8bc34a; }
+.admin-settings .demo .has-background.has-lime-background-color { background-color: #c3d825; }
+.admin-settings .demo .has-background.has-amber-background-color { background-color: #ffc107; }
+.admin-settings .demo .has-background.has-deep-orange-background-color { background-color: #ea5506; }
+.admin-settings .demo .has-background.has-white-background-color { background-color: #fff; }
 .admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap .column-left { padding-left: 0; }
 .admin-settings .demo .column-wrap .column-right { padding-right: 0; }
@@ -3909,6 +4019,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-lime { border-color: #c3d825; }
 .components-popover__content .blank-box.bb-amber { border-color: #ffc107; }
 .components-popover__content .blank-box.bb-deep-orange { border-color: #ea5506; }
+.components-popover__content .blank-box.bb-white { border-color: #fff; }
 .components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; }
 .components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .components-popover__content .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
@@ -3930,6 +4041,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
 .components-popover__content .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
 .components-popover__content .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
+.components-popover__content .blank-box.bb-tab.bb-white::before { background-color: #fff; }
 .components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .components-popover__content .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .components-popover__content .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
@@ -4100,6 +4212,10 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .mc-deep-orange.micro-bottom::after { border-bottom-color: #ea5506; border-top-color: transparent; }
 .components-popover__content .mc-deep-orange::before { border-top-color: transparent; border-bottom-color: transparent; }
 .components-popover__content .mc-deep-orange::after { border-top-color: #ea5506; }
+.components-popover__content .mc-white { background-color: #fff; color: #fff; border: none; }
+.components-popover__content .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
+.components-popover__content .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
+.components-popover__content .mc-white::after { border-top-color: #fff; }
 .components-popover__content .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .components-popover__content .bct-related .blogcard::before { content: " 関連記事"; }
 .components-popover__content .bct-reference .blogcard::before { content: " 参考記事"; }
@@ -4156,6 +4272,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .cb-amber .caption-box-label { background-color: #ffc107; color: #fff; }
 .components-popover__content .cb-deep-orange.caption-box { border-color: #ea5506; }
 .components-popover__content .cb-deep-orange .caption-box-label { background-color: #ea5506; color: #fff; }
+.components-popover__content .cb-white.caption-box { border-color: #fff; }
+.components-popover__content .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .components-popover__content .tab-caption-box { margin: 1.2em 0; }
 .components-popover__content .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .components-popover__content .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
@@ -4197,6 +4315,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tcb-amber .tab-caption-box-content { border-color: #ffc107; }
 .components-popover__content .tcb-deep-orange .tab-caption-box-label { background-color: #ea5506; color: #fff; }
 .components-popover__content .tcb-deep-orange .tab-caption-box-content { border-color: #ea5506; }
+.components-popover__content .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
+.components-popover__content .tcb-white .tab-caption-box-content { border-color: #fff; }
 .components-popover__content .label-box { margin: 1.2em 0; }
 .components-popover__content .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
 .components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
@@ -4219,6 +4339,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .lb-lime .label-box-content { border-color: #c3d825; }
 .components-popover__content .lb-amber .label-box-content { border-color: #ffc107; }
 .components-popover__content .lb-deep-orange .label-box-content { border-color: #ea5506; }
+.components-popover__content .lb-white .label-box-content { border-color: #fff; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
 .components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
@@ -4286,6 +4407,9 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tb-deep-orange .toggle-button { border: 2px solid #ea5506; background: #ea5506; color: #fff; }
 .components-popover__content .tb-deep-orange .toggle-button::before { color: #ccc; }
 .components-popover__content .tb-deep-orange .toggle-checkbox:checked ~ .toggle-content { border-color: #ea5506; }
+.components-popover__content .tb-white .toggle-button { border: 2px solid #fff; background: #fff; color: #fff; }
+.components-popover__content .tb-white .toggle-button::before { color: #ccc; }
+.components-popover__content .tb-white .toggle-checkbox:checked ~ .toggle-content { border-color: #fff; }
 .components-popover__content .iic-red li::before { color: #e60033; }
 .components-popover__content .iic-pink li::before { color: #e95295; }
 .components-popover__content .iic-purple li::before { color: #884898; }
@@ -4305,6 +4429,47 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .iic-lime li::before { color: #c3d825; }
 .components-popover__content .iic-amber li::before { color: #ffc107; }
 .components-popover__content .iic-deep-orange li::before { color: #ea5506; }
+.components-popover__content .iic-white li::before { color: #fff; }
+.components-popover__content .has-text-color.has-red-color { color: #e60033; }
+.components-popover__content .has-text-color.has-pink-color { color: #e95295; }
+.components-popover__content .has-text-color.has-purple-color { color: #884898; }
+.components-popover__content .has-text-color.has-blue-color { color: #0095d9; }
+.components-popover__content .has-text-color.has-green-color { color: #3eb370; }
+.components-popover__content .has-text-color.has-orange-color { color: #f39800; }
+.components-popover__content .has-text-color.has-yellow-color { color: #ffd900; }
+.components-popover__content .has-text-color.has-brown-color { color: #954e2a; }
+.components-popover__content .has-text-color.has-grey-color { color: #949495; }
+.components-popover__content .has-text-color.has-black-color { color: #333; }
+.components-popover__content .has-text-color.has-deep-color { color: #55295b; }
+.components-popover__content .has-text-color.has-indigo-color { color: #1e50a2; }
+.components-popover__content .has-text-color.has-light-blue-color { color: #2ca9e1; }
+.components-popover__content .has-text-color.has-cyan-color { color: #00a3af; }
+.components-popover__content .has-text-color.has-teal-color { color: #007b43; }
+.components-popover__content .has-text-color.has-light-green-color { color: #8bc34a; }
+.components-popover__content .has-text-color.has-lime-color { color: #c3d825; }
+.components-popover__content .has-text-color.has-amber-color { color: #ffc107; }
+.components-popover__content .has-text-color.has-deep-orange-color { color: #ea5506; }
+.components-popover__content .has-text-color.has-white-color { color: #fff; }
+.components-popover__content .has-background.has-red-background-color { background-color: #e60033; }
+.components-popover__content .has-background.has-pink-background-color { background-color: #e95295; }
+.components-popover__content .has-background.has-purple-background-color { background-color: #884898; }
+.components-popover__content .has-background.has-blue-background-color { background-color: #0095d9; }
+.components-popover__content .has-background.has-green-background-color { background-color: #3eb370; }
+.components-popover__content .has-background.has-orange-background-color { background-color: #f39800; }
+.components-popover__content .has-background.has-yellow-background-color { background-color: #ffd900; }
+.components-popover__content .has-background.has-brown-background-color { background-color: #954e2a; }
+.components-popover__content .has-background.has-grey-background-color { background-color: #949495; }
+.components-popover__content .has-background.has-black-background-color { background-color: #333; }
+.components-popover__content .has-background.has-deep-background-color { background-color: #55295b; }
+.components-popover__content .has-background.has-indigo-background-color { background-color: #1e50a2; }
+.components-popover__content .has-background.has-light-blue-background-color { background-color: #2ca9e1; }
+.components-popover__content .has-background.has-cyan-background-color { background-color: #00a3af; }
+.components-popover__content .has-background.has-teal-background-color { background-color: #007b43; }
+.components-popover__content .has-background.has-light-green-background-color { background-color: #8bc34a; }
+.components-popover__content .has-background.has-lime-background-color { background-color: #c3d825; }
+.components-popover__content .has-background.has-amber-background-color { background-color: #ffc107; }
+.components-popover__content .has-background.has-deep-orange-background-color { background-color: #ea5506; }
+.components-popover__content .has-background.has-white-background-color { background-color: #fff; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

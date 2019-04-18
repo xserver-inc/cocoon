@@ -259,11 +259,11 @@ function cocoon_editor_color_palette_setup() {
             'slug' => 'black',
             'color' => '#333',
         ),
-        // array(
-        //     'name' => __( '白', THEME_NAME ),
-        //     'slug' => 'white',
-        //     'color' => '#fff',
-        // ),
+        array(
+            'name' => __( '白', THEME_NAME ),
+            'slug' => 'white',
+            'color' => '#fff',
+        ),
     ));
     // 自由色選択を無効
     add_theme_support('disable-custom-colors');
