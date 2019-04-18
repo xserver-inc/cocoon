@@ -75,7 +75,11 @@ class OpenGraphGetter implements Iterator
         if (!is_wp_error( $res ) && $response_code === 200) {
           $response = $res['body'];
         } else {
-          $response = get_http_content($URI);
+          $response = wp_filesystem_get_contents($URI, true);
+
+          if (!$response) {
+            $response = get_http_content($URI);
+          }
         }
         //var_dump($response);
         if (!empty($response)) {
