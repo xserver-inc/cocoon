@@ -41,11 +41,13 @@
     visibility: hidden;
     transition: all 0.2s ease;
     height: 0;
+    opacity: 0;
   }
   li:hover > ul > li{
     transition: all 0.2s ease;
     visibility: visible;
     height: 60px;
+    opacity: 1;
   }
 
   .sub-menu .sub-menu li{

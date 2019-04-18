@@ -185,11 +185,13 @@ div.mobile-menu-buttons .menu-button:hover,
   visibility: hidden;
   transition: all 0.2s ease;
   height: 0;
+  opacity: 0;
 }
 .navi-in > ul li:hover > ul > li {
   transition: all 0.2s ease;
   visibility: visible;
   height: 60px;
+  opacity: 1;
 }
 .navi-in > ul .sub-menu .sub-menu li {
   display: none;
