@@ -460,11 +460,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap { line-height: 21.4285714286px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; height: 60px; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div { width: 100%; }
 .admin-settings .demo .navi-in > ul > .menu-item-has-children { position: relative; }
-.admin-settings .demo .navi-in > ul > .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; }
+.admin-settings .demo .navi-in > ul > .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu { display: none; position: absolute; margin: 0; min-width: 240px; list-style: none; padding: 0; background-color: #fafbfc; z-index: 99; text-align: left; /*サブメニューのサブメニュー*/ }
 .admin-settings .demo .navi-in > ul .sub-menu li { width: auto; }
 .admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children { position: relative; }
-.admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; }
+.admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu a { padding-left: 16px; padding-right: 16px; }
 .admin-settings .demo .navi-in > ul .sub-menu ul { top: -60px; left: 240px; position: relative; }
 .admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s ease; }
@@ -1918,11 +1918,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap { line-height: 21.4285714286px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; height: 60px; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div { width: 100%; }
 .admin-settings .demo .navi-in > ul > .menu-item-has-children { position: relative; }
-.admin-settings .demo .navi-in > ul > .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; }
+.admin-settings .demo .navi-in > ul > .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu { display: none; position: absolute; margin: 0; min-width: 240px; list-style: none; padding: 0; background-color: #fafbfc; z-index: 99; text-align: left; /*サブメニューのサブメニュー*/ }
 .admin-settings .demo .navi-in > ul .sub-menu li { width: auto; }
 .admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children { position: relative; }
-.admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; }
+.admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu a { padding-left: 16px; padding-right: 16px; }
 .admin-settings .demo .navi-in > ul .sub-menu ul { top: -60px; left: 240px; position: relative; }
 .admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s ease; }

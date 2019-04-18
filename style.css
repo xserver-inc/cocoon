@@ -768,6 +768,7 @@ img.emoji {
   position: absolute;
   right: 3px;
   top: 0;
+  font-size: 12px;
 }
 .navi-in > ul .sub-menu {
   display: none;
@@ -794,6 +795,7 @@ img.emoji {
   position: absolute;
   right: 3px;
   top: 0;
+  font-size: 12px;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
