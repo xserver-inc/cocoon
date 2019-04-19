@@ -63,7 +63,10 @@ function get_related_wp_query_args(){
   //var_dump($post);
   //if ( 1 ) {
   $categories = get_the_category($post->ID);
-  $is_cat_count_over_1 = $categories->count > 1;
+  $is_cat_count_over_1 = false;
+  if (isset($categories->category_count)) {
+    $is_cat_count_over_1 = ($categories->category_count > 1);
+  }
   $tags = wp_get_post_tags($post->ID);
   //タグが優先されている場合
   if ( (is_related_association_type_tag() && !empty($tags)) || (is_related_association_type_category() && !$is_cat_count_over_1) ) {
