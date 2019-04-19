@@ -91,7 +91,7 @@ function fetch_facebook_count_raw($url){
   if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
     $body = $response['body'];
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
-    $res = ($json->{'share'}->{'share_count'} ? $json->{'share'}->{'share_count'} : 0);
+    $res = (isset($json->{'share'}->{'share_count'}) ? $json->{'share'}->{'share_count'} : 0);
   }
   return intval($res);
 }
