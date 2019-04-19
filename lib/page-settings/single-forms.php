@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'tag' => __( 'タグ', THEME_NAME ),
             );
             generate_radiobox_tag(OP_RELATED_ASSOCIATION_TYPE, $options, get_related_association_type());
-            generate_tips_tag(__( '関連記事にカテゴリーを関連づけるかタグを関連づけるか。', THEME_NAME ));
+            generate_tips_tag(__( '関連記事にカテゴリーを関連づけるかタグを関連づけるか。タグに関連付けて、タグがない場合はカテゴリー関連記事が表示されます。逆もしかり。', THEME_NAME ));
             ?>
           </td>
         </tr>
