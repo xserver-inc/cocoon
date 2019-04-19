@@ -62,24 +62,12 @@ function get_related_wp_query_args(){
   }
   //var_dump($post);
   //if ( 1 ) {
-  if ( is_related_association_type_category() ) {
-    //カテゴリ情報から関連記事をランダムに呼び出す
-    $categories = get_the_category($post->ID);
-    $category_IDs = array();
-    foreach($categories as $category):
-      array_push( $category_IDs, $category->cat_ID);
-    endforeach ;
-    if ( empty($category_IDs) ) return;
-    $args = array(
-      'post__not_in' => array($post->ID),
-      'posts_per_page'=> intval(get_related_entry_count()),
-      'category__in' => $category_IDs,
-      'orderby' => 'rand',
-      'no_found_rows' => true,
-    );
-  } else {
+  $categories = get_the_category($post->ID);
+  $is_cat_count_over_1 = $categories->count > 1;
+  $tags = wp_get_post_tags($post->ID);
+  //タグが優先されている場合
+  if ( (is_related_association_type_tag() && !empty($tags)) || (is_related_association_type_category() && !$is_cat_count_over_1) ) {
     //タグ情報から関連記事をランダムに呼び出す
-    $tags = wp_get_post_tags($post->ID);
     $tag_IDs = array();
     foreach($tags as $tag):
       array_push( $tag_IDs, $tag->term_id);
@@ -89,6 +77,20 @@ function get_related_wp_query_args(){
       'post__not_in' => array($post -> ID),
       'posts_per_page'=> intval(get_related_entry_count()),
       'tag__in' => $tag_IDs,
+      'orderby' => 'rand',
+      'no_found_rows' => true,
+    );
+  } else {
+    //カテゴリ情報から関連記事をランダムに呼び出す
+    $category_IDs = array();
+    foreach($categories as $category):
+      array_push( $category_IDs, $category->cat_ID);
+    endforeach ;
+    if ( empty($category_IDs) ) return;
+    $args = array(
+      'post__not_in' => array($post->ID),
+      'posts_per_page'=> intval(get_related_entry_count()),
+      'category__in' => $category_IDs,
       'orderby' => 'rand',
       'no_found_rows' => true,
     );
