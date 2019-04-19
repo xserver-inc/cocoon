@@ -127,7 +127,8 @@ function tag_code_to_minify_js($buffer) {
         //インラインタイプのJavaScriptコードだった場合
         if ($js_code) {
           $js = minify_js($js_code);
-          if ($js) {
+          //JSON-LDスクリプトは除外
+          if ($js && !includes_string($script_tag, '<script type="application/ld+json">')) {
             $start_name_in = 'inline-js-'.$i.'-start';
             $start_in = 'performance.mark("'.$start_name_in.'");';
             $end_name_in = 'inline-js-'.$i.'-end';
