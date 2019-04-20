@@ -235,6 +235,6 @@ endif;
 define('OP_API_ERROR_MAIL_ENABLE', 'api_error_mail_enable');
 if ( !function_exists( 'is_api_error_mail_enable' ) ):
 function is_api_error_mail_enable(){
-  return get_theme_option(OP_API_ERROR_MAIL_ENABLE);
+  return get_theme_option(OP_API_ERROR_MAIL_ENABLE, 1);
 }
 endif;
