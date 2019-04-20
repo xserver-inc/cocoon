@@ -376,7 +376,7 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // イメージリンクタグ
           ///////////////////////////////////////////
-          $image_link_tag = '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+          $image_link_tag = '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
                   '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="rakuten-item-thumb-image product-item-thumb-image">'.
                   $moshimo_rakuten_impression_tag.
                 '</a>';
@@ -395,7 +395,7 @@ function rakuten_product_link_shortcode($atts){
               '</figure>'.
               '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
-                  '<a href="'.$affiliateUrl.'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+                  '<a href="'.$affiliateUrl.'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
                     $TitleHtml.
                     $moshimo_rakuten_impression_tag.
                   '</a>'.

@@ -469,7 +469,7 @@ function amazon_product_link_shortcode($atts){
         //_v($review_url);
         $review_tag =
           '<div class="amazon-item-review product-item-review item-review">'.
-            '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.$review_url.'" target="_blank">'.
+            '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.$review_url.'" target="_blank" rel="nofollow noopener">'.
               get_amazon_item_customer_reviews_text().
             '</a>'.
           '</div>';
@@ -593,7 +593,7 @@ function amazon_product_link_shortcode($atts){
             '</div>';
           //_v($tmp_tag);
         }
-        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" rel="nofollow">'.$tmp_tag.'</a>';
+        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" rel="nofollow noopener">'.$tmp_tag.'</a>';
         // foreach ($ImageSets as $ImageSet) {
         //   _v($ImageSet);
         // }
@@ -602,7 +602,7 @@ function amazon_product_link_shortcode($atts){
       if ($image_only) {
         $image_only_class = ' amazon-item-image-only product-item-image-only no-icon';
       }
-      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
               '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
               $moshimo_amazon_impression_tag.
               $image_l_tag.
@@ -628,7 +628,7 @@ function amazon_product_link_shortcode($atts){
           $image_figure_tag.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
-              '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow">'.
+              '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
                  $TitleHtml.
                  $moshimo_amazon_impression_tag.
               '</a>'.
