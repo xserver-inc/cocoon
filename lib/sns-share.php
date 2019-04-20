@@ -84,14 +84,15 @@ function fetch_facebook_count_raw($url){
   //オプションの設定
   $args = array( 'sslverify' => true );
   //Facebookにリクエストを送る
-  $response = wp_remote_get( 'https://graph.facebook.com/?id='.$encoded_url, $args );
+  $request_url = 'https://graph.facebook.com/?id='.$encoded_url.'&fields=engagement&access_token='.trim(get_facebook_access_token());
+  $response = wp_remote_get( $request_url, $args );
   $res = 0;
 
   //取得に成功した場合
   if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
     $body = $response['body'];
     $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
-    $res = (isset($json->{'share'}->{'share_count'}) ? $json->{'share'}->{'share_count'} : 0);
+    $res = (isset($json->{'engagement'}->{'reaction_count'}) ? $json->{'engagement'}->{'reaction_count'} : 0);
   }
   return intval($res);
 }
@@ -132,7 +133,7 @@ endif;
 //Facebookカウントの取得
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
-  if (!is_sns_share_buttons_count_visible())
+  if (!is_sns_share_buttons_count_visible() || !get_facebook_access_token())
     return null;
 
   if (is_scc_facebook_exists()) {

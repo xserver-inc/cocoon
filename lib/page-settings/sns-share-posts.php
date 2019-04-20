@@ -19,6 +19,9 @@ update_theme_option(OP_TWITTER_RELATED_FOLLOW_ENABLE);
 //ツイートに含めるハッシュタグ
 update_theme_option(OP_TWITTER_HASH_TAG);
 
+//Facebookのアクセストークン
+update_theme_option(OP_FACEBOOK_ACCESS_TOKEN);
+
 //写真をPinterestで共有する
 update_theme_option(OP_PINTEREST_SHARE_PIN_VISIBLE);
 

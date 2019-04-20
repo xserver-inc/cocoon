@@ -74,6 +74,40 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
 
 
 
+<!-- Facebook設定 -->
+<div id="sns-share-facebook" class="postbox">
+  <h2 class="hndle"><?php _e( 'Facebook設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+    <p><?php _e( 'Facebookのシェア数に関する設定です。', THEME_NAME ) ?></p>
+    <table class="form-table">
+      <tbody>
+
+        <!-- メンション -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FACEBOOK_ACCESS_TOKEN, __( 'アクセストークン', THEME_NAME )); ?>
+          </th>
+          <td>
+          <td>
+            <?php
+            generate_textbox_tag(OP_FACEBOOK_ACCESS_TOKEN, get_facebook_access_token(), __( 'access_tokenを入力', THEME_NAME ));
+            generate_tips_tag(__( 'Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマではリアクションカウントをシェア数として採用しています。', THEME_NAME ));
+
+            ?>
+          </td>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
 <!-- Pinterest設定 -->
 <div id="sns-share-pinterest" class="postbox">
   <h2 class="hndle"><?php _e( 'Pinterest設定', THEME_NAME ) ?></h2>

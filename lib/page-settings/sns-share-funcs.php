@@ -40,6 +40,14 @@ function get_twitter_hash_tag(){
 }
 endif;
 
+//Facebookのアクセストークン
+define('OP_FACEBOOK_ACCESS_TOKEN', 'facebook_access_token');
+if ( !function_exists( 'get_facebook_access_token' ) ):
+function get_facebook_access_token(){
+  return get_theme_option(OP_FACEBOOK_ACCESS_TOKEN);
+}
+endif;
+
 //写真をPinterestで共有する
 define('OP_PINTEREST_SHARE_PIN_VISIBLE', 'pinterest_share_button_visible');
 if ( !function_exists( 'is_pinterest_share_pin_visible' ) ):
