@@ -125,6 +125,6 @@ function get_additional_related_wp_query_args($args) {
       if (!empty($set_args['category__in'])) $args = $set_args;
     }
   }
-  return $args;
+  return apply_filters('get_additional_related_wp_query_args', $args);
 }
 endif;
