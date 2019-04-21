@@ -87,7 +87,7 @@ function get_the_category_ids($post_id){
   foreach($categories as $category):
     $cat_count += (intval($category->count) - 1);
   endforeach ;
-  if ($cat_count > 1) {
+  if ($cat_count > 0) {
     foreach($categories as $category):
       array_push( $category_IDs, $category->cat_ID);
     endforeach ;
