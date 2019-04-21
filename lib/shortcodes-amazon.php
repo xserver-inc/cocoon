@@ -686,7 +686,7 @@ endif;
 //Amazonエラーの際に出力するリンクを
 if ( !function_exists( 'get_amazon_error_product_link' ) ):
 function get_amazon_error_product_link($url){
-  return '<a href="'.$url.'" target="_blank">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
+  return '<a href="'.$url.'" target="_blank" rel="nofollow noopener">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 }
 endif;
 

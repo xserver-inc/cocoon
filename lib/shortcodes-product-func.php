@@ -369,7 +369,7 @@ function get_default_rakuten_link_tag($rakuten_affiliate_id, $id, $keyword){
     $search_keyword = $keyword;
   }
   $rakuten_url = get_rakuten_affiliate_search_url(urlencode($search_keyword), $rakuten_affiliate_id);
-  $tag = '<a href="'.$rakuten_url.'" target="_blank">'.__( '楽天で商品を見る', THEME_NAME ).'</a>';
+  $tag = '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow noopener">'.__( '楽天で詳細を見る', THEME_NAME ).'</a>';
   return apply_filters('get_default_rakuten_link_tag', $tag);
 }
 endif;
