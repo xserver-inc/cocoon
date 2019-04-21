@@ -43,7 +43,7 @@ if ( !function_exists( 'get_rakuten_affiliate_search_url' ) ):
 function get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id, $ng_keywords = null){
   $nitem = null;
   if (!empty($ng_keywords)) {
-    $nitem = '%3Fnitem='.implode('%2520', $ng_keywords);
+    $nitem = '%3Fnitem='.implode('%2B', $ng_keywords);
   }
   $decoded_url = 'https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F'.$nitem;
   return 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc='.$decoded_url.'&m='.$decoded_url;
@@ -55,7 +55,7 @@ if ( !function_exists( 'get_rakuten_search_url' ) ):
 function get_rakuten_search_url($keyword, $ng_keywords){
   $nitem = null;
   if (!empty($ng_keywords)) {
-    $nitem = '?nitem='.implode('%20', $ng_keywords);
+    $nitem = '?nitem='.implode('+', $ng_keywords);
   }
   return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/'.$nitem;
 }
