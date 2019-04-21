@@ -688,3 +688,9 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .btn-key-color, .btn-wrap.btn-wrap-key-color > a {
   background-color: <?php echo get_editor_key_color(); ?>;
 }
+.has-text-color.has-key-color-color {
+  color: <?php echo get_editor_key_color(); ?>;
+}
+.has-background.has-key-color-background-color {
+  background-color: <?php echo get_editor_key_color(); ?>;
+}
