@@ -40,7 +40,11 @@ endif;
 
 //楽天アフィリエイト検索用のURL生成
 if ( !function_exists( 'get_rakuten_affiliate_search_url' ) ):
-function get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id, $nitem = null){
+function get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id, $ng_keywords = null){
+  $nitem = null;
+  if (!empty($ng_keywords)) {
+    $nitem = '%3Fnitem='.implode('%2520', $ng_keywords);
+  }
   $decoded_url = 'https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F'.$nitem;
   return 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc='.$decoded_url.'&m='.$decoded_url;
 }
@@ -48,15 +52,19 @@ endif;
 
 //楽天検索用のURL生成
 if ( !function_exists( 'get_rakuten_search_url' ) ):
-function get_rakuten_search_url($keyword, $nitem){
-  return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/'.str_replace('%3F', '?', str_replace('%2520', '%20', $nitem));
+function get_rakuten_search_url($keyword, $ng_keywords){
+  $nitem = null;
+  if (!empty($ng_keywords)) {
+    $nitem = '?nitem='.implode('%20', $ng_keywords);
+  }
+  return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/'.$nitem;
 }
 endif;
 
 //もしもアフィリエイトの楽天検索用のURL生成
 if ( !function_exists( 'get_moshimo_rakuten_search_url' ) ):
-function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id, $nitem){
-  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $nitem));
+function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id, $ng_keywords){
+  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $ng_keywords));
 }
 endif;
 
@@ -216,7 +224,6 @@ function get_search_buttons_tag($args){
       $rakuten_keyword = $keyword;
       $keys = explode(' -', $rakuten_keyword);
       $ng_keywords = array();
-      $nitem = null;
       //除外キーワードがある場合
       if (count($keys) > 1) {
         $i = 0;
@@ -228,14 +235,13 @@ function get_search_buttons_tag($args){
           }
           ++$i;
         }
-        $nitem = '%3Fnitem='.implode('%2520', $ng_keywords);
       }
       //$rakuten_keyword = preg_replace('/ +-\S+/', '', $rakuten_keyword);
       //$rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
-      $rakuten_url = get_rakuten_affiliate_search_url($rakuten_keyword, $rakuten_affiliate_id, $nitem);
+      $rakuten_url = get_rakuten_affiliate_search_url($rakuten_keyword, $rakuten_affiliate_id, $ng_keywords);
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_rakuten) {
-        $rakuten_url = get_moshimo_rakuten_search_url($rakuten_keyword, $moshimo_rakuten_id, $nitem);
+        $rakuten_url = get_moshimo_rakuten_search_url($rakuten_keyword, $moshimo_rakuten_id, $ng_keywords);
       }
       //楽天商品リンクで詳細ページを表示する場合
       if ($rakuten_page_url && is_rakuten_button_search_to_detail()) {
