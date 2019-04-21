@@ -50,6 +50,15 @@ function rakuten_product_link_shortcode($atts){
 
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
+  //全角スペースを半角に置換
+  $keyword = str_replace('　', ' ', $keyword);
+  //連続した半角スペースを1つに置換
+  $keyword = preg_replace('/\s{2,}/', ' ', $keyword);
+  //全角のハイフンを半角に置換
+  $keyword = str_replace(' －', ' -', $keyword);
+  //全角のダッシュを半角に置換
+  $keyword = str_replace(' ―', ' -', $keyword);
+
   $description = $desc;
 
   $shop = sanitize_shortcode_value($shop);
