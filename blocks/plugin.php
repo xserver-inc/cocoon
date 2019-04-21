@@ -19,6 +19,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 /**
  * Block Initializer.
  */
-require_once abspath(__FILE__) . 'src/init.php';
+if ( !function_exists( 'cocoon_blocks_cgb_block_assets' ) ){
+  require_once abspath(__FILE__) . 'src/init.php';
+}
+
 
 
