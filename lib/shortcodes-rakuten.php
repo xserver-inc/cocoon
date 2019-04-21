@@ -58,22 +58,6 @@ function rakuten_product_link_shortcode($atts){
   $keyword = str_replace(' －', ' -', $keyword);
   //全角のダッシュを半角に置換
   $keyword = str_replace(' ―', ' -', $keyword);
-  $keys = explode(' -', $keyword);
-  $ng_keywords = array();
-  $NGKeyword = null;
-  //除外キーワードがある場合
-  if (count($keys) > 1) {
-    $i = 0;
-    foreach ($keys as $key) {
-      if ($i > 0) {
-        $ng_keywords[] = $key;
-        // //除外キーワードの削除
-        // $keyword = str_replace(' -'.$key, '', $keyword);
-      }
-      ++$i;
-    }
-    $NGKeyword = '&NGKeyword='.urlencode(implode(' ', $ng_keywords));
-  }
 
   $description = $desc;
 
