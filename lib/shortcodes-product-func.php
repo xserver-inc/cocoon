@@ -48,15 +48,15 @@ endif;
 
 //楽天検索用のURL生成
 if ( !function_exists( 'get_rakuten_search_url' ) ):
-function get_rakuten_search_url($keyword){
-  return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/';
+function get_rakuten_search_url($keyword, $nitem){
+  return 'https://search.rakuten.co.jp/search/mall/'.urlencode($keyword).'/'.str_replace('%3F', '?', str_replace('%2520', '%20', $nitem));
 }
 endif;
 
 //もしもアフィリエイトの楽天検索用のURL生成
 if ( !function_exists( 'get_moshimo_rakuten_search_url' ) ):
-function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id){
-  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword));
+function get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id, $nitem){
+  return 'https://af.moshimo.com/af/c/click?a_id='.$moshimo_rakuten_id.'&p_id=54&pc_id=54&pl_id=616&url='.urlencode(get_rakuten_search_url($keyword, $nitem));
 }
 endif;
 
@@ -235,7 +235,7 @@ function get_search_buttons_tag($args){
       $rakuten_url = get_rakuten_affiliate_search_url($rakuten_keyword, $rakuten_affiliate_id, $nitem);
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_rakuten) {
-        $rakuten_url = get_moshimo_rakuten_search_url($rakuten_keyword, $moshimo_rakuten_id);
+        $rakuten_url = get_moshimo_rakuten_search_url($rakuten_keyword, $moshimo_rakuten_id, $nitem);
       }
       //楽天商品リンクで詳細ページを表示する場合
       if ($rakuten_page_url && is_rakuten_button_search_to_detail()) {
