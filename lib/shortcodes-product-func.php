@@ -212,11 +212,13 @@ function get_search_buttons_tag($args){
     $rakuten_btn_tag = null;
     $is_moshimo_rakuten = $moshimo_rakuten_id && is_moshimo_affiliate_link_enable();
     if (($rakuten_affiliate_id || $is_moshimo_rakuten) && is_rakuten_search_button_visible() && $rakuten) {
+      $rakuten_keyword = $keyword;
+      $rakuten_keyword = preg_replace('/ +-\S+/', '', $rakuten_keyword);
       //$rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
-      $rakuten_url = get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id);
+      $rakuten_url = get_rakuten_affiliate_search_url($rakuten_keyword, $rakuten_affiliate_id);
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_rakuten) {
-        $rakuten_url = get_moshimo_rakuten_search_url($keyword, $moshimo_rakuten_id);
+        $rakuten_url = get_moshimo_rakuten_search_url($rakuten_keyword, $moshimo_rakuten_id);
       }
       //楽天商品リンクで詳細ページを表示する場合
       if ($rakuten_page_url && is_rakuten_button_search_to_detail()) {

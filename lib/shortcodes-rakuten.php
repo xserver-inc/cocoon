@@ -50,6 +50,31 @@ function rakuten_product_link_shortcode($atts){
 
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
+  //全角スペースを半角に置換
+  $keyword = str_replace('　', ' ', $keyword);
+  //連続した半角スペースを1つに置換
+  $keyword = preg_replace('/\s{2,}/', ' ', $keyword);
+  //全角のハイフンを半角に置換
+  $keyword = str_replace(' －', ' -', $keyword);
+  //全角のダッシュを半角に置換
+  $keyword = str_replace(' ―', ' -', $keyword);
+  $keys = explode(' -', $keyword);
+  $ng_keywords = array();
+  $NGKeyword = null;
+  //除外キーワードがある場合
+  if (count($keys) > 1) {
+    $i = 0;
+    foreach ($keys as $key) {
+      if ($i > 0) {
+        $ng_keywords[] = $key;
+        // //除外キーワードの削除
+        // $keyword = str_replace(' -'.$key, '', $keyword);
+      }
+      ++$i;
+    }
+    $NGKeyword = '&NGKeyword='.urlencode(implode(' ', $ng_keywords));
+  }
+
   $description = $desc;
 
   $shop = sanitize_shortcode_value($shop);
@@ -135,7 +160,7 @@ function rakuten_product_link_shortcode($atts){
     if ($search && !$id) {
       $searchkw = '&keyword='.$search;
     }
-    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode;
+    $request_url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?applicationId='.$rakuten_application_id.'&affiliateId='.$rakuten_affiliate_id.'&imageFlag=1'.$sortQuery.$shopCode.'&hits=1'.$searchkw.$itemCode.$NGKeyword;
     //_v($request_url);
     $args = array( 'sslverify' => true );
     $json = wp_remote_get( $request_url, $args );
