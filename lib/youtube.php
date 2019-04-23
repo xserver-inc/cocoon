@@ -178,12 +178,3 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
 
 };
 endif;
-
-
-// add_action('after_setup_theme', 'remove_filter_video', 9999);
-// function remove_filter_video(){
-//   // remove_filter( 'video_embed_html',   'jetpack_responsive_videos_embed_html' );
-//   // remove_filter( 'embed_oembed_html', 'jetpack_responsive_videos_maybe_wrap_oembed', 10 );
-//   // remove_filter( 'embed_handler_html', 'jetpack_responsive_videos_maybe_wrap_oembed', 10 );
-//   remove_action( 'after_setup_theme', 'jetpack_responsive_videos_init', 99 );
-// }
