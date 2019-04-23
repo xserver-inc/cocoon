@@ -118,11 +118,13 @@ function get_the_date_tags(){
     default:
       // _v(get_the_time('U'));
       // _v(get_update_time('U'));
-      $date_tags = $time_post_date_tag;
+      $date_tags = null;
       //更新日があるとき
       if ($update_time && (get_the_time('U') < get_update_time('U'))) {
         $date_tags .= $time_update_date_tag;
       }
+      //投稿日
+      $date_tags .= $time_post_date_tag;
       break;
   }
   return $date_tags;
