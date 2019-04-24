@@ -229,3 +229,11 @@ function is_post_author_visible(){
   return get_theme_option(OP_POST_AUTHOR_VISIBLE, 1);
 }
 endif;
+
+//記事を読む時間表示
+define('OP_CONTENT_READ_TIME_VISIBLE', 'content_read_time_visible');
+if ( !function_exists( 'is_content_read_time_visible' ) ):
+function is_content_read_time_visible(){
+  return get_theme_option(OP_CONTENT_READ_TIME_VISIBLE);
+}
+endif;

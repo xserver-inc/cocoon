@@ -88,3 +88,6 @@ update_theme_option(OP_POST_UPDATE_VISIBLE);
 
 //投稿者を表示
 update_theme_option(OP_POST_AUTHOR_VISIBLE);
+
+//記事を読む時間表示
+update_theme_option(OP_CONTENT_READ_TIME_VISIBLE);
