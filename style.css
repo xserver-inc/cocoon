@@ -1666,6 +1666,9 @@ span.internal-icon {
 .read-time {
   text-align: center;
   font-size: 0.7em;
+  border-top: 4px double #ddd;
+  border-bottom: 4px double #ddd;
+  margin: 0 3%;
 }
 
 .eye-catch-wrap {
