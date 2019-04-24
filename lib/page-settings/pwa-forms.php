@@ -55,7 +55,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_label_tag(OP_PWA_NAME, __('アプリ名', THEME_NAME) );
             echo '<br>';
             generate_textbox_tag(OP_PWA_NAME, get_pwa_name(), '');
-            generate_tips_tag(__( 'WEBアプリ名として表示される名前を入力してるださい。', THEME_NAME ));
+            generate_tips_tag(__( 'WEBアプリ名として表示される名前を入力してください。', THEME_NAME ));
 
             generate_label_tag(OP_PWA_SHORT_NAME, __('短いアプリ名', THEME_NAME) );
             echo '<br>';
