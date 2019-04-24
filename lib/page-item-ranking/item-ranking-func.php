@@ -218,9 +218,9 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   if (!isset($rates[0])) {
     return $rate;
   }
-  //小数点以下が5かどうか
+  //小数点以下が5以上かどうか
   if (isset($rates[1])) {
-    $has_herf = intval($rates[1]) == 5;
+    $has_herf = intval($rates[1]) >= 5;
   } else {
     $has_herf = false;
   }
@@ -233,7 +233,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
     $middle = 0;
     $after = $max - $before;
     //3.2とかの場合は小数点以下を切り捨てる
-    $rate = floor(floatval($rate));
+    //$rate = floor(floatval($rate));
   }
   //スターの出力
   for ($j=1; $j <= $before; $j++) {
