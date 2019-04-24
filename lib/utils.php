@@ -2540,3 +2540,13 @@ function get_http_content($url){
   }
 }
 endif;
+
+//本文を読むのにかかる時間
+if ( !function_exists( 'get_time_to_content_read' ) ):
+function get_time_to_content_read($content){
+  $word = mb_strlen(strip_tags($content));
+  $m = floor($word / 600) + 1;
+  $time = ($m == 0 ? '' : $m);
+  return $time;
+}
+endif;
