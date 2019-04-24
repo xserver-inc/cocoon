@@ -325,10 +325,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-        <!-- 投稿関連情報の表示 -->
+        <!-- 投稿関連情報 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __('投稿関連情報の表示', THEME_NAME) ); ?>
+            <?php generate_label_tag('', __('投稿関連情報', THEME_NAME) ); ?>
           </th>
           <td>
             <?php

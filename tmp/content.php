@@ -55,6 +55,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿日と更新日テンプレート
         get_template_part('tmp/date-tags'); ?>
 
+        <?php if (is_content_read_time_visible()): ?>
+          <div class="read-time"><?php echo sprintf(__( 'この記事は%s分ほどで読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
+        <?php endif; ?>
+
          <?php //本文上の広告表示
         if (is_ad_pos_content_top_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_content_top_format(), 'ad-content-top', is_ad_pos_content_top_label_visible());
