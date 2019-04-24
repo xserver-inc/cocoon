@@ -31,6 +31,21 @@
   // }
 }
 
+.star::before,
+.star-half-o::before,
+.star-o::before{
+  font-family: FontAwesome;
+}
+.star::before{
+  content: '\f005';
+}
+.star-half-o::before{
+  content: '\f123';
+}
+.star-o::before{
+  content: '\f006';
+}
+
 .ranking-item-name{
   padding: 3px 2px 6px;
 }
