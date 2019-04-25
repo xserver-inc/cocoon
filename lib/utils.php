@@ -1659,7 +1659,7 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
 
   if (!$is_exfile) {//ローカル
     return file_get_contents($file);
-  } else {//外部ファイル
+  } else {//外部URL
     return file_get_contents($file, false, stream_context_create($options));
   }
 
