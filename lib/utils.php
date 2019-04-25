@@ -1650,7 +1650,18 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
     return false;
   }
 
-  return file_get_contents($file);
+  $options = array(
+    'http' => array(
+        'method'  => 'GET',
+        'timeout' => 2, // タイムアウト時間
+    )
+  );
+
+  if (!$is_exfile) {//ローカル
+    return file_get_contents($file);
+  } else {//外部ファイル
+    return file_get_contents($file, false, stream_context_create($options));
+  }
 
   // if ($credentials_enable && is_request_filesystem_credentials_enable()){
   //   $creds = request_filesystem_credentials('', '', false, false, null);
