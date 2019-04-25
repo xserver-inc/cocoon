@@ -719,17 +719,6 @@ $bb_green: $green_color;
 //   transition: $bgc_hover_anime;
 // }
 
-.btn:hover,
-.btn-wrap > a:hover{
-  opacity: 0.7;
-  color: $white;
-  transition: $bgc_hover_anime;
-  &::after{
-    right: -3px;
-    transition: $bgc_hover_anime;
-  }
-}
-
 .btn-m,
 .btn-wrap.btn-wrap-m > a{
   padding: 14px 45px;
@@ -756,6 +745,17 @@ $bb_green: $green_color;
     // margin-top: -.5em;
 
     //margin-top: -0.15em;
+  }
+}
+
+.btn:hover,
+.btn-wrap > a:hover{
+  opacity: 0.7;
+  color: $white;
+  transition: $bgc_hover_anime;
+  &::after{
+    right: -3px;
+    transition: $bgc_hover_anime;
   }
 }
 

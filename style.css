@@ -3205,18 +3205,6 @@ label.screen-reader-text {
   transition: all .2s ease;
 }
 
-.btn:hover, .ranking-item-link-buttons a:hover,
-.btn-wrap > a:hover {
-  opacity: 0.7;
-  color: #fff;
-  transition: all 0.7s ease;
-}
-.btn:hover::after, .ranking-item-link-buttons a:hover::after,
-.btn-wrap > a:hover::after {
-  right: -3px;
-  transition: all 0.7s ease;
-}
-
 .btn-m,
 .btn-wrap.btn-wrap-m > a {
   padding: 14px 45px;
@@ -3238,6 +3226,18 @@ label.screen-reader-text {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.btn:hover, .ranking-item-link-buttons a:hover,
+.btn-wrap > a:hover {
+  opacity: 0.7;
+  color: #fff;
+  transition: all 0.7s ease;
+}
+.btn:hover::after, .ranking-item-link-buttons a:hover::after,
+.btn-wrap > a:hover::after {
+  right: -3px;
+  transition: all 0.7s ease;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a {
