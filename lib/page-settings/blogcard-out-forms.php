@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
-        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_internal_blogcard', true)): ?>
+        <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_external_blogcard', true)): ?>
         <!-- プレビュー画面 -->
         <tr>
           <th scope="row">
