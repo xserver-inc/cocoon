@@ -267,6 +267,14 @@ function convert_lazy_load_tag($the_content, $media){
       ///////////////////////////////////////////
       // 除外設定
       ///////////////////////////////////////////
+      if (
+        //サイトロゴ
+        includes_string($match, 'class="site-logo-image"')
+        //アイキャッチ
+        || includes_string($match, ' eye-catch-image ')
+      ) {
+        continue;
+      }
       //除外リストにマッチする文字列はLazy Loadしない
       $exclude_list = get_lazy_load_exclude_list();
       if ($exclude_list && has_match_list_text($match, $exclude_list)) {
