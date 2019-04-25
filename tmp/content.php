@@ -56,7 +56,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         get_template_part('tmp/date-tags'); ?>
 
         <?php if (is_content_read_time_visible()): ?>
-          <div class="read-time"><?php echo sprintf(__( 'この記事は%s分ほどで読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
+          <div class="read-time"><?php echo '<span class="fa fa-hourglass-half"></span>
+'.sprintf(__( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
         <?php endif; ?>
 
          <?php //本文上の広告表示
