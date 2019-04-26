@@ -1650,29 +1650,29 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
     return false;
   }
 
-  $options = array(
-    'http' => array(
-        'method'  => 'GET',
-        'timeout' => 1.5, // タイムアウト時間
-        //'protocol_version'  => '1.1',
-    )
-  );
+  // $options = array(
+  //   'http' => array(
+  //       'method'  => 'GET',
+  //       'timeout' => 1.5, // タイムアウト時間
+  //       //'protocol_version'  => '1.1',
+  //   )
+  // );
 
-  if (!$is_exfile) {//ローカル
-    return file_get_contents($file);
-  } else {//外部URL
-    return file_get_contents($file, false, stream_context_create($options));
+  // if (!$is_exfile) {//ローカル
+  //   return file_get_contents($file);
+  // } else {//外部URL
+  //   return file_get_contents($file, false, stream_context_create($options));
+  // }
+
+  if ($credentials_enable && is_request_filesystem_credentials_enable()){
+    $creds = request_filesystem_credentials('', '', false, false, null);
   }
 
-  // if ($credentials_enable && is_request_filesystem_credentials_enable()){
-  //   $creds = request_filesystem_credentials('', '', false, false, null);
-  // }
-
-  // if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   $contents = $wp_filesystem->get_contents($file);
-  //   return $contents;
-  // }
+  if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
+    global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
+    $contents = $wp_filesystem->get_contents($file);
+    return $contents;
+  }
 
   // if (file_exists($file)) {
   //   ob_start();
