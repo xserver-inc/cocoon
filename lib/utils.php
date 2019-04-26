@@ -1653,7 +1653,8 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
   $options = array(
     'http' => array(
         'method'  => 'GET',
-        'timeout' => 2, // タイムアウト時間
+        'timeout' => 1.5, // タイムアウト時間
+        //'protocol_version'  => '1.1',
     )
   );
 
