@@ -55,7 +55,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿日と更新日テンプレート
         get_template_part('tmp/date-tags'); ?>
 
-        <?php if (is_content_read_time_visible()): ?>
+        <?php if (is_content_read_time_visible() && !is_plugin_fourm_page()): ?>
           <div class="read-time"><?php echo '<span class="fa fa-hourglass-half"></span>
 '.sprintf(__( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
         <?php endif; ?>
