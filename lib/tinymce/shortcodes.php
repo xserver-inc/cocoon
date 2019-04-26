@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 add_action('admin_init', 'add_shortcodes_dropdown');
-add_action('admin_head', 'generate_shortcodes_is');
+add_action('admin_head', 'generate_shortcodes_js');
 
 if ( !function_exists( 'add_shortcodes_dropdown' ) ):
 function add_shortcodes_dropdown(){
@@ -37,8 +37,8 @@ function register_shortcodes( $buttons ){
 endif;
 
 //吹き出しの値渡し用のJavaScriptを生成
-if ( !function_exists( 'generate_shortcodes_is' ) ):
-function generate_shortcodes_is($value){
+if ( !function_exists( 'generate_shortcodes_js' ) ):
+function generate_shortcodes_js($value){
   echo '<script type="text/javascript">
   var shortcodesTitle = "'.__( 'ショートコード', THEME_NAME ).'";
   var shortcodes = new Array();';
