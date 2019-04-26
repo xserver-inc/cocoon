@@ -2537,6 +2537,7 @@ function get_http_content($url){
     curl_setopt_array($ch, array(
       CURLOPT_URL => $url,
       CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_TIMEOUT => 1.5,
     ));
     $body = curl_exec($ch);
     $errno = curl_errno($ch);
