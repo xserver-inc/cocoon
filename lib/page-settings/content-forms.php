@@ -350,7 +350,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_CONTENT_READ_TIME_VISIBLE , is_content_read_time_visible(), __( '記事を読む時間の目安を表示する', THEME_NAME ));
-            generate_tips_tag(__( '本文を読むのに必要な所要時間を表示します。時間はあくまで目安です。', THEME_NAME ));
+            generate_tips_tag(__( '本文を読むのに必要な所要時間を表示します。時間はあくまで目安です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/read-time/'));
             ?>
           </td>
         </tr>
