@@ -91,7 +91,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
           <td>
             <?php
             generate_textbox_tag(OP_FACEBOOK_ACCESS_TOKEN, get_facebook_access_token(), __( 'access_tokenを入力', THEME_NAME ));
-            generate_tips_tag(__( 'Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマではリアクションカウントをシェア数として採用しています。', THEME_NAME ));
+            generate_tips_tag(__( 'Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマではリアクションカウントをシェア数として採用しています。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/facebook-share-count/'));
 
             ?>
           </td>
