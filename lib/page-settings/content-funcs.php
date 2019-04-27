@@ -85,6 +85,14 @@ function is_external_link_noreferrer_enable(){
 }
 endif;
 
+//target="_blank"のnoreferrer
+define('OP_EXTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE', 'external_target_blank_link_noreferrer_enable');
+if ( !function_exists( 'is_external_target_blank_link_noreferrer_enable' ) ):
+function is_external_target_blank_link_noreferrer_enable(){
+  return get_theme_option(OP_EXTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE);
+}
+endif;
+
 //external
 define('OP_EXTERNAL_LINK_EXTERNAL_ENABLE', 'external_link_external_enable');
 if ( !function_exists( 'is_external_link_external_enable' ) ):
@@ -157,7 +165,7 @@ endif;
 define('OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE', 'internal_target_blank_link_noopener_enable');
 if ( !function_exists( 'is_internal_target_blank_link_noopener_enable' ) ):
 function is_internal_target_blank_link_noopener_enable(){
-  return get_theme_option(OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE, 1);
+  return get_theme_option(OP_INTERNAL_TARGET_BLANK_LINK_NOOPENER_ENABLE);
 }
 endif;
 
@@ -166,6 +174,14 @@ define('OP_INTERNAL_LINK_NOREFERRER_ENABLE', 'internal_link_noreferrer_enable');
 if ( !function_exists( 'is_internal_link_noreferrer_enable' ) ):
 function is_internal_link_noreferrer_enable(){
   return get_theme_option(OP_INTERNAL_LINK_NOREFERRER_ENABLE);
+}
+endif;
+
+//target="_blank"のnoreferrer
+define('OP_INTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE', 'internal_target_blank_link_noreferrer_enable');
+if ( !function_exists( 'is_internal_target_blank_link_noreferrer_enable' ) ):
+function is_internal_target_blank_link_noreferrer_enable(){
+  return get_theme_option(OP_INTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE);
 }
 endif;
 
