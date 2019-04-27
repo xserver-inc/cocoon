@@ -116,7 +116,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             </div>
             <?php
             generate_checkbox_tag(OP_EXTERNAL_LINK_NOREFERRER_ENABLE, is_external_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
-            generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));
+            generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));?>
+            <div class="indent<?php echo get_not_allowed_form_class(!is_external_link_noreferrer_enable(), true); ?>">
+              <?php
+              generate_checkbox_tag(OP_EXTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_external_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoreferrerを追加', THEME_NAME ));
+              generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoreferrerを追加します。', THEME_NAME ));
+              ?>
+            </div>
+            <?php
             generate_checkbox_tag(OP_EXTERNAL_LINK_EXTERNAL_ENABLE, is_external_link_external_enable(), __( 'externalを追加', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にexternalを追加します。', THEME_NAME ));
             ?>
@@ -234,6 +241,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_INTERNAL_LINK_NOREFERRER_ENABLE, is_internal_link_noreferrer_enable(), __( 'noreferrerを追加', THEME_NAME ));
             generate_tips_tag(__( 'rel属性にnoreferrerを追加します。', THEME_NAME ));
             ?>
+            <div class="indent<?php echo get_not_allowed_form_class(!is_internal_link_noreferrer_enable(), true); ?>">
+              <?php
+              generate_checkbox_tag(OP_INTERNAL_TARGET_BLANK_LINK_NOREFERRER_ENABLE, is_internal_target_blank_link_noreferrer_enable(), __( 'target="_blank"の際はnoreferrerを追加', THEME_NAME ));
+              generate_tips_tag(__( '新しいタブで開くリンクのrel属性にnoreferrerを追加します。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 
