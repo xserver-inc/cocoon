@@ -209,7 +209,7 @@ function manage_cocoon_pwa_files(){
     $service_worker =
 "const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
-  '/',
+  './',
   '{$icon_url_s}',
   '{$icon_url_l}',
   '{$theme_js_url}',
