@@ -83,6 +83,10 @@ function replace_anchor_links($the_content) {
 
         //noreferrerの追加と削除
         $rels = get_noreferrer_rels( is_internal_link_noreferrer_enable(), $rels );
+        //target="_blank"のnoreferrer
+        if (!is_internal_link_noreferrer_enable() && includes_target_blalk($new_a)) {
+          $rels = get_noreferrer_rels( is_internal_target_blank_link_noreferrer_enable(), $rels );
+        }
 
         if (!is_anchor_link_tag_blogcard($value)) {
           //アイコンフォントの表示
@@ -105,6 +109,10 @@ function replace_anchor_links($the_content) {
 
         //noreferrerの追加と削除
         $rels = get_noreferrer_rels( is_external_link_noreferrer_enable(), $rels );
+        //target="_blank"のnoreferrer
+        if (!is_external_link_noreferrer_enable() && includes_target_blalk($new_a)) {
+          $rels = get_noreferrer_rels( is_external_target_blank_link_noreferrer_enable(), $rels );
+        }
 
         //externalの追加と削除
         $rels = get_external_rels( is_external_link_external_enable(), $rels );
