@@ -132,8 +132,6 @@ class CTABoxWidgetItem extends WP_Widget {
        ?>
     </p>
 
-<!--       <script type="text/javascript" src="http://cocoon.dev/wp-includes/js/thickbox/thickbox.js"></script>
-      <script type="text/javascript" src="http://cocoon.dev/wp-admin/js/media-upload.min.js"></script> -->
     <?php //メッセージ?>
     <p>
       <label for="<?php echo $this->get_field_id('message'); ?>">
