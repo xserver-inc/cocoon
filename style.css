@@ -270,6 +270,13 @@ span.sub-caption {
   overflow-wrap: break-word;
 }
 
+.container {
+  padding-right: constant(safe-area-inset-right);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+}
+
 body {
   /* フォントの種類 */
   font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
@@ -6527,6 +6534,8 @@ div.fb-like-mobile {
   display: none;
   line-height: 1.4;
   height: 50px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 .mobile-menu-buttons .menu-icon {
   margin-top: 3px;
