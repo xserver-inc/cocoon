@@ -6533,7 +6533,7 @@ div.fb-like-mobile {
   z-index: 2;
   display: none;
   line-height: 1.4;
-  height: 50px;
+  min-height: 50px;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
 }
