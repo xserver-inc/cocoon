@@ -2565,3 +2565,4 @@ function get_time_to_content_read($content){
   return $minutes;
 }
 endif;
+
