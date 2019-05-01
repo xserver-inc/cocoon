@@ -140,12 +140,12 @@
   transition: .3s ease-in-out;
   position: fixed;
   top: 40%;
-  z-index: 9999;
+  z-index: 99;
   width: 90%;
   left: 5%;
   right: 5%;
-  -webkit-transform: translateY(600%);
-  transform: translateY(600%);//下に隠す
+  -webkit-transform: translateY(900%);
+  transform: translateY(900%);//下に隠す
   .search-edit{
     width: 100%;
   }
