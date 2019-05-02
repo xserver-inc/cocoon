@@ -506,6 +506,16 @@ function get_tag_meta_description($tag = null){
 }
 endif;
 
+//タグキーワード用のワードを取得
+if ( !function_exists( 'get_tag_meta_keywords' ) ):
+function get_tag_meta_keywords(){
+  if ($keywords = get_tag_keywords()) {
+    return $keywords;
+  } else {
+    return single_tag_title('', false);
+  }
+}
+endif;
 
 //json-ldタグを出力する
 add_action( 'wp_head', 'the_json_ld_tag' );
