@@ -83,6 +83,24 @@ function title_parts_custom( $title ){
         $title['site'] = $cat_name;
         break;
     }
+  } elseif (is_tag()) {
+    $tag_id = get_query_var('tag_id');
+    $tag_name = $title['title'];
+    if ($tag_id && get_tag_title($tag_id)) {
+      $tag_name = get_tag_title($tag_id);
+    }
+    $title['title'] = $tag_name;
+    $title['site'] = '';
+    switch (get_category_page_title_format()) {//※カテゴリーと共通？
+      case 'category_sitename':
+        $title['title'] = $tag_name;
+        $title['site'] = $site_name;
+        break;
+      case 'sitename_category':
+        $title['title'] = $site_name;
+        $title['site'] = $tag_name;
+        break;
+    }
   } elseif (is_404()) {
     $title['title'] = get_404_page_title();
   };
