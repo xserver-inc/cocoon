@@ -23,6 +23,14 @@ function is_prev_next_enable(){
 }
 endif;
 
+//カテゴリページをnoindexとする
+define('OP_CATEGORY_PAGE_NOINDEX', 'category_page_noindex');
+if ( !function_exists( 'is_category_page_noindex' ) ):
+function is_category_page_noindex(){
+  return get_theme_option(OP_CATEGORY_PAGE_NOINDEX);
+}
+endif;
+
 //カテゴリページの2ページ目以降をnoindexとする
 define('OP_PAGED_CATEGORY_PAGE_NOINDEX', 'paged_category_page_noindex');
 if ( !function_exists( 'is_paged_category_page_noindex' ) ):

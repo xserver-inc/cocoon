@@ -114,7 +114,9 @@ endif;
 if ( !function_exists( 'is_noindex_page' ) ):
 function is_noindex_page(){
   return (is_archive() && !is_category() && !is_tag() && !is_tax() && is_other_archive_page_noindex()) || //アーカイブページはインデックスに含めない
-  ( (is_tag() || is_tax()) && is_tag_page_noindex() ) || //タグページをインデックスしたい場合はこの行を削除
+  ( is_tax() && is_tag_page_noindex() ) || //タクソノミ
+  ( is_tag() && is_paged() && is_tag_page_noindex() ) || //タグページ
+  ( is_category()  && is_category_page_noindex() )  || //カテゴリページ
   ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //ページの2ページ目以降はインデックスに含めない（似たような内容の薄いコンテンツの除外）
   (is_attachment() && is_attachment_page_noindex()) || //添付ファイルページも含めない
   is_search() || //検索結果ページはインデックスに含めない
