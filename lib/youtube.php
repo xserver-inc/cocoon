@@ -21,10 +21,6 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     return $cache;
   }
 
-  //_v($url);
-  // preg_match( '{<iframe.+?</iframe>}i', $cache, $match_cache);
-  // $cache = $match_cache[0];
-
   // data-youtubeチェック
   if (strpos($cache, 'data-youtube')) {
     preg_match( '/(?<=data-youtube=")(.+?)(?=")/', $cache, $match_cache);
@@ -129,19 +125,14 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
   if (preg_match( '{src=[\'"](.+?)[\'"]}i', $youtube, $m)) {
     $default_args = array('rel' => 0, 'autoplay' => 1);
     $default_args = apply_filters('youtube_embed_default_args', $default_args);
-    //_v($default_args);
+
     //元のURL情報の取得
     $urls = parse_url($url);
     $query = isset($urls['query']) ? $urls['query'] : '';
     parse_str($query, $args);
     //デフォルトパラメータと結合
     $args = array_merge($default_args, $args);
-    //_v($args);
-    // $args['autoplay'] = 1;
-    // //デフォルトで関連動画は無効にする
-    // if (!isset($args['rel'])) {
-    //   $args['rel'] = 0;
-    // }
+
     //動画IDは不要なので削除
     if (isset($args['v'])) {
       $args['v'] = null;
@@ -153,19 +144,10 @@ function youtube_embed_oembed_html ($cache, $url, $attr) {
     //クエリを追加
     $youtube_new_url = add_query_arg($args, $youtube_old_url);
 
-    // if (includes_string($youtube_old_url, '?')) {
-    //   $youtube_new_url = $youtube_old_url.'&autoplay=1&rel=0';
-    // } else {
-    //   $youtube_new_url = $youtube_old_url.'?autoplay=1&rel=0';
-    // }
-
-    //$youtube_new_url = 'https://www.youtube.com/embed/'.$json['video_id'].'?feature=oembed&autoplay=1';
     $youtube = str_replace($youtube_old_url, $youtube_new_url, $youtube);
   }
-  // $video_tag = '<video src="'.$youtube_new_url.'" muted autoplay></video>';
-  // $youtube   = $video_tag;
+
   $youtube   = htmlentities($youtube);
-  //$youtube   = htmlentities(str_replace( '=oembed','=oembed&autoplay=1', $youtube ));
 
   $thumb_url  = "https://i.ytimg.com/vi/{$json['video_id']}/hqdefault.jpg";
   $wrap_start = '<div class="video-container">';
