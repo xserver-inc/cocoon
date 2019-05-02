@@ -144,7 +144,13 @@ function get_archive_chapter_title(){
       $chapter_title .= single_cat_title( $icon_font, false );
     }
   } elseif( is_tag() ) {//タグページの場合
-    $chapter_title .= single_tag_title( '<span class="fa fa-tags"></span>', false );
+    $tag_id = get_query_var('tag_id');
+    $icon_font = '<span class="fa fa-tags"></span>';
+    if ($tag_id && get_tag_title($tag_id)) {
+      $chapter_title .= $icon_font.get_tag_title($tag_id);
+    } else {
+      $chapter_title .= single_tag_title( $icon_font, false );
+    }
   } elseif( is_tax() ) {//タクソノミページの場合
     $chapter_title .= single_term_title( '', false );
   } elseif( is_search() ) {//検索結果
