@@ -47,6 +47,14 @@ function is_tag_page_noindex(){
 }
 endif;
 
+//タグページの2ページ目以降をnoindexとする
+define('OP_PAGED_TAG_PAGE_NOINDEX', 'paged_tag_page_noindex');
+if ( !function_exists( 'is_paged_tag_page_noindex' ) ):
+function is_paged_tag_page_noindex(){
+  return get_theme_option(OP_PAGED_TAG_PAGE_NOINDEX, 1);
+}
+endif;
+
 //その他のアーカイブページをnoindexとする
 define('OP_OTHER_ARCHIVE_PAGE_NOINDEX', 'other_archive_page_noindex');
 if ( !function_exists( 'is_other_archive_page_noindex' ) ):

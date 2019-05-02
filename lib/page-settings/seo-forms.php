@@ -45,10 +45,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             echo '</div>';
 
 
-
             //タグページをnoindexとする
             generate_checkbox_tag(OP_TAG_PAGE_NOINDEX, is_tag_page_noindex(), __( 'タグページをnoindexとする', THEME_NAME ));
             generate_tips_tag(__( 'タグのインデックスページをnoindex設定にします。', THEME_NAME ));
+
+
+            echo '<div class="indent'.get_not_allowed_form_class(!is_tag_page_noindex(), true).'">';
+              //タグページの2ページ目以降をnoindexとする
+              generate_checkbox_tag(OP_PAGED_TAG_PAGE_NOINDEX, is_paged_tag_page_noindex(), __( 'タグページの2ページ目以降をnoindexとする', THEME_NAME ));
+              generate_tips_tag(__( 'タグページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+            echo '</div>';
 
             //その他のアーカイブページをnoindexとする
             generate_checkbox_tag(OP_OTHER_ARCHIVE_PAGE_NOINDEX, is_other_archive_page_noindex(), __( 'その他のアーカイブページをnoindexとする', THEME_NAME ));
