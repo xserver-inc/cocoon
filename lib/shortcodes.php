@@ -476,6 +476,21 @@ function countdown_shortcode( $atts ){
 }
 endif;
 
+if ( !function_exists( 'get_navi_card_image_attributes' ) ):
+function get_navi_card_image_attributes($image_url){
+  $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
+  $image_attributes = array();
+  $image_attributes[1] = 120;
+  $image_attributes[2] = 68;
+  if (file_exists(url_to_local($image_url_120))) {
+    $image_attributes[0] = $image_url_120;
+  } else {
+    $image_attributes[0] = $image_url;
+  }
+  return $image_attributes;
+}
+endif;
+
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
 add_shortcode('navi', 'navi_menu_shortcode');
@@ -497,19 +512,28 @@ function navi_menu_shortcode($atts){
     //サムネイル画像URL
     //thumbnail - 120*120 | thumb120 - 120*68 | thumb320 - 320x180
 
-
+    $image_attributes = array();
     if ($object == 'post' || $object == 'page') {
       $thumbnail_id = get_post_thumbnail_id($object_id);
       $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
     } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
       $image_url = get_category_eye_catch($object_id);
-      $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
-      $image_attributes[1] = 120;
-      $image_attributes[2] = 68;
-      if (file_exists(url_to_local($image_url_120))) {
-        $image_attributes[0] = $image_url_120;
-      } else {
-        $image_attributes[0] = $image_url;
+      $image_attributes = get_navi_card_image_attributes($image_url);
+      // $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
+      // $image_attributes[1] = 120;
+      // $image_attributes[2] = 68;
+      // if (file_exists(url_to_local($image_url_120))) {
+      //   $image_attributes[0] = $image_url_120;
+      // } else {
+      //   $image_attributes[0] = $image_url;
+      // }
+    }
+    elseif ($object == 'custom') {//カスタムメニュー
+      //タグページのアイキャッチを取得
+      $tag_obj = url_to_tag_object($url);
+      if ($tag_obj && isset($tag_obj->term_id)) {
+        $image_url = get_tag_eye_catch($tag_obj->term_id);
+        $image_attributes = get_navi_card_image_attributes($image_url);
       }
     }
     if (!$image_attributes) {//アイキャッチがない場合
