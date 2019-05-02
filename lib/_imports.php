@@ -28,6 +28,7 @@ require_once abspath(__FILE__).'punycode.php';   //ピュニコードライブ�
 require_once abspath(__FILE__).'medias.php';     //メディアライブラリ
 require_once abspath(__FILE__).'links.php';      //本文リンクライブラリ
 require_once abspath(__FILE__).'content-category.php';   //カテゴリー関係の関数
+require_once abspath(__FILE__).'content-tag.php';   //タグ関係の関数
 require_once abspath(__FILE__).'entry-card.php'; //エントリーカード関数
 require_once abspath(__FILE__).'amp.php';        //AMP関係の関数
 require_once abspath(__FILE__).'content.php';    //本文関係の関数
