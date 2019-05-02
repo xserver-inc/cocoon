@@ -43,9 +43,14 @@ if (is_singular()){//単一記事ページの場合
 
   if ( is_tag() ) {//タグ用設定
     $description = get_tag_meta_description();
-    $title = wp_title(null, false).' | '.get_bloginfo('name');
+    if ($tag_title =  get_tag_title(get_query_var('tag_id'))) {
+      $title = $tag_title;
+    } else {
+      $title = wp_title(null, false).' | '.get_bloginfo('name');
+    }
     $url = generate_canonical_url();
   }
+
   echo '<meta name="twitter:description" content="'; echo $description; echo '">';echo "\n";//「一般設定」管理画面で指定したブログの説明文を表示
   echo '<meta name="twitter:title" content="'; echo $title; echo '">';echo "\n";//「一般設定」管理画面で指定したブログのタイトルを表示
   echo '<meta name="twitter:url" content="'; echo $url; echo '">';echo "\n";//「一般設定」管理画面で指定したブログのURLを表示
