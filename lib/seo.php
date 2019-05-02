@@ -425,7 +425,7 @@ function get_meta_description_text(){
     $description = get_the_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
-  } elseif (is_tag() && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（今後要検討）
+  } elseif (is_tag() && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $description = get_tag_meta_description();
   }
   return apply_filters('meta_description_text', $description);
@@ -440,7 +440,6 @@ function generate_meta_description_tag() {
 
   if ($description && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
-    //var_dump('<meta name="description" content="'.$description.'">');
     echo '<meta name="description" content="'.$description.'">'.PHP_EOL;
   }
 }
@@ -450,13 +449,14 @@ endif;
 if ( !function_exists( 'get_meta_keywords_text' ) ):
 function get_meta_keywords_text(){
   $keywords = null;
-  //var_dump(get_the_meta_keywords());
   if (is_front_page() && get_front_page_meta_keywords()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
     $keywords = get_the_meta_keywords();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
+  } elseif (is_tag() && is_meta_keywords_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
+    $keywords = get_tag_meta_keywords();
   }
   return apply_filters('meta_keywords_text', $keywords);
 }
