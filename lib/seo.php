@@ -479,12 +479,29 @@ endif;
 
 //タグメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_tag_meta_description' ) ):
-function get_tag_meta_description(){
+function get_tag_meta_description($tag = null){
+  //タグ設定ページのディスクリプションを取得
+  $tag_desc = trim( strip_tags( get_tag_description() ) );
+  if ( $tag_desc ) {//ディスクリプションが設定されている場合
+    return htmlspecialchars($tag_desc);
+  }
+  //タグ説明文を取得
   $tag_desc = trim( strip_tags( tag_description() ) );
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
-  $tag_desc = sprintf( __( '「%s」の記事一覧です。', 'simplicity2' ), single_cat_title('', false) );
+  //タグ本文から抜粋文を作成
+  $tag_desc = trim( strip_tags( get_content_excerpt(get_tag_content(), 160) ) );
+  if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
+    return htmlspecialchars($tag_desc);
+  }
+  //タグ名から作成
+  if ($tag) {
+    $tag_name = $tag->name;
+  } else {
+    $tag_name = single_tag_title('', false);
+  }
+  $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
   return htmlspecialchars($tag_desc);
 }
 endif;
