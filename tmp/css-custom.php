@@ -699,7 +699,7 @@ $editor_background_color = get_editor_background_color();
 if (!$editor_background_color) {
   $editor_background_color = '#fff';
 } ?>
-.editor-styles-wrapper .article.page-body,
+.article.page-body,
 body#tinymce.wp-editor{
   background-color: <?php echo $editor_background_color; ?>
 }
@@ -708,7 +708,7 @@ $editor_text_color = get_editor_text_color();
 if (!$editor_text_color) {
   $editor_text_color = '#333';
 } ?>
-.editor-styles-wrapper .article.page-body,
+.article.page-body,
 .editor-post-title__block .editor-post-title__input,
 body#tinymce.wp-editor{
   color: <?php echo $editor_text_color; ?>
