@@ -35,19 +35,35 @@ function after_setup_theme_gutenberg_editor_setup(){
 }
 endif;
 
-//タイトル等の文字数カウンター表示
-define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
-if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
-function is_admin_editor_counter_visible(){
-  return get_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE, 1);
-}
-endif;
-
 //ビジュアルエディタースタイル
 define('OP_VISUAL_EDITOR_STYLE_ENABLE', 'visual_editor_style_enable');
 if ( !function_exists( 'is_visual_editor_style_enable' ) ):
 function is_visual_editor_style_enable(){
   return get_theme_option(OP_VISUAL_EDITOR_STYLE_ENABLE, 1);
+}
+endif;
+
+//エディター背景色
+define('OP_EDITOR_BACKGROUND_COLOR', 'editor_background_color');
+if ( !function_exists( 'get_editor_background_color' ) ):
+function get_editor_background_color(){
+  return get_theme_option(OP_EDITOR_BACKGROUND_COLOR);
+}
+endif;
+
+//エディター文字色
+define('OP_EDITOR_TEXT_COLOR', 'editor_text_color');
+if ( !function_exists( 'get_editor_text_color' ) ):
+function get_editor_text_color(){
+  return get_theme_option(OP_EDITOR_TEXT_COLOR);
+}
+endif;
+
+//タイトル等の文字数カウンター表示
+define('OP_ADMIN_EDITOR_COUNTER_VISIBLE', 'admin_editor_counter_visible');
+if ( !function_exists( 'is_admin_editor_counter_visible' ) ):
+function is_admin_editor_counter_visible(){
+  return get_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE, 1);
 }
 endif;
 
