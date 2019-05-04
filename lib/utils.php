@@ -1157,6 +1157,26 @@ function get_theme_css_cache_file_url(){
 }
 endif;
 
+// //テーマのカスタム管理者用CSSファイル
+// if ( !function_exists( 'get_theme_admin_css_cache_file' ) ):
+// function get_theme_admin_css_cache_file(){
+//   $file = get_theme_css_cache_path().'css-custom-admin.css';
+//   //キャッシュファイルが存在しない場合はからのファイルを生成
+//   if (!file_exists($file)) {
+//     wp_filesystem_put_contents($file,  '');
+//   }
+//   return $file;
+// }
+// endif;
+
+// //テーマのカスタム管理者用CSSファイルURL
+// if ( !function_exists( 'get_theme_admin_css_cache_file_url' ) ):
+// function get_theme_admin_css_cache_file_url(){
+//   $url = local_to_url(get_theme_admin_css_cache_file());
+//   return $url;
+// }
+// endif;
+
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){

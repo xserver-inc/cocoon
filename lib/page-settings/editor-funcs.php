@@ -19,13 +19,6 @@ if (!is_gutenberg_editor_enable()) {
   add_filter('gutenberg_can_edit_post_type', '__return_false');
   add_filter('use_block_editor_for_post', '__return_false');
 }
-// //Gutenberg CSS
-// add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets_custom');
-// if ( !function_exists( 'enqueue_block_editor_assets_custom' ) ):
-// function enqueue_block_editor_assets_custom() {
-//   wp_enqueue_style( 'gutenberg-editor', get_template_directory_uri() . '/editor-style.css' , false );
-// }
-// endif;
 
 add_action('after_setup_theme', 'after_setup_theme_gutenberg_editor_setup');
 if ( !function_exists( 'after_setup_theme_gutenberg_editor_setup' ) ):
