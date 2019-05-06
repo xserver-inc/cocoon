@@ -101,12 +101,18 @@ endif;
 //投稿日・更新日タグを取得する
 if ( !function_exists( 'get_the_date_tags' ) ):
 function get_the_date_tags(){
+  $is_reservation_post = (get_the_time('U') >= get_update_time('U'));
+  // _v(get_the_time('U'));
+  // _v(get_update_time('U'));
+  // _v($is_reservation_post);
+
   $update_time = get_update_time();
   $published = is_seo_date_type_update_date_only() ? ' published' : null;
   $date_published = is_seo_date_type_update_date_only() ? 'datePublished ' : null;
+  $is_update_output = !$update_time || $is_reservation_post || is_seo_date_type_post_date_only();
   //更新日が存在するときは、投稿日にupdatedクラスを出力しない
-  $updated = !$update_time || is_seo_date_type_post_date_only() ? ' updated' : null;
-  $date_modified = !$update_time || is_seo_date_type_post_date_only() ? ' dateModified' : null;
+  $updated = $is_update_output ? ' updated' : null;
+  $date_modified = $is_update_output ? ' dateModified' : null;
   $display_none = is_seo_date_type_none() ? ' display-none' : null;
   //timeタグがある投稿日
   $time_post_date_tag = '<span class="post-date'.$display_none.'"><time class="entry-date date published'.$updated.'" datetime="'.get_the_time('c').'" itemprop="datePublished'.$date_modified.'">'.get_the_time(get_site_date_format()).'</time></span>';
@@ -136,7 +142,7 @@ function get_the_date_tags(){
       // _v(get_update_time('U'));
       $date_tags = null;
       //更新日があるとき
-      if ($update_time && (get_the_time('U') < get_update_time('U'))) {
+      if ($update_time && !$is_reservation_post) {
         $date_tags .= $time_update_date_tag;
       }
       //投稿日
