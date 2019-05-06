@@ -308,8 +308,8 @@ self.addEventListener('fetch', function(e) {
     //_v($service_worker);
 
     //HTTPSリダイレクトの書き込み
-    if (file_exists(HTACCESS_FILE)){
-      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)){
+    if (file_exists(get_abs_htaccess_file())){
+      if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())){
         //HTTPSリダイレクトの書き込みが.htaccessに存在するか
         $res = preg_match(THEME_HTTPS_REWRITERULE_REG, $current_htaccess, $m);
         //リダイレクト書き込むが存在しない場合

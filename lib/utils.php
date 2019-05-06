@@ -2478,11 +2478,11 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
               $end;
 
   //.htaccessファイルが存在する場合
-  if (file_exists(HTACCESS_FILE)) {
+  if (file_exists(get_abs_htaccess_file())) {
     //書き込む前にバックアップファイルを用意する
-    $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
-    if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
-      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+    $htaccess_backup_file = get_abs_htaccess_file().'.'.THEME_NAME;
+    if (copy(get_abs_htaccess_file(), $htaccess_backup_file)) {
+      if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())) {
 
         $res = preg_match($reg, $current_htaccess, $m);
 
@@ -2495,7 +2495,7 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
                                 $new_code;
           //ブラウザキャッシュを.htaccessファイルに書き込む
           wp_filesystem_put_contents(
-            HTACCESS_FILE,
+            get_abs_htaccess_file(),
             $last_htaccess,
             0644
           );
@@ -2507,11 +2507,11 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
     $last_htaccess = $new_code;
     //ブラウザキャッシュを.htaccessファイルに書き込む
     wp_filesystem_put_contents(
-      HTACCESS_FILE,
+      get_abs_htaccess_file(),
       $last_htaccess,
       0644
     );
-  }//file_exists(HTACCESS_FILE)
+  }//file_exists(get_abs_htaccess_file())
 }
 endif;
 
@@ -2519,8 +2519,8 @@ endif;
 if ( !function_exists( 'remove_code_from_htacccess' ) ):
 function remove_code_from_htacccess($reg){
   //.htaccessファイルが存在しているとき
-  if (file_exists(HTACCESS_FILE)) {
-    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+  if (file_exists(get_abs_htaccess_file())) {
+    if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())) {
       $res = preg_match($reg, $current_htaccess, $m);
       //書き込まれたブラウザキャッシュが見つかった場合
       if ($res && $m[0]) {
@@ -2531,13 +2531,13 @@ function remove_code_from_htacccess($reg){
         //_v($last_htaccess);
         //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
         wp_filesystem_put_contents(
-          HTACCESS_FILE,
+          get_abs_htaccess_file(),
           $last_htaccess,
           0644
         );
       }//$res && $[0]
     }
-  }//file_exists(HTACCESS_FILE)
+  }//file_exists(get_abs_htaccess_file())
 }
 endif;
 
@@ -2645,5 +2645,12 @@ function get_abs_home_path(){
       return ABSPATH;
     }
   }
+}
+endif;
+
+//.htaccessファイルの取得
+if ( !function_exists( 'get_abs_htaccess_file' ) ):
+function get_abs_htaccess_file(){
+  return get_abs_home_path().'.htaccess';
 }
 endif;
