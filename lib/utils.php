@@ -971,7 +971,7 @@ endif;
 if ( !function_exists( 'includes_home_url' ) ):
 function includes_home_url($url){
   //URLにホームアドレスが含まれていない場合
-  if (includes_string($url, home_url())) {
+  if (!includes_string($url, home_url())) {
     return false;
   } else {
     return true;
@@ -995,7 +995,7 @@ endif;
 if ( !function_exists( 'includes_home_path' ) ):
 function includes_home_path($local){
   //URLにサイトアドレスが含まれていない場合
-  if (includes_string($local, get_home_path())) {
+  if (!includes_string($local, get_home_path())) {
     return false;
   } else {
     return true;
@@ -1024,6 +1024,10 @@ endif;
 //ローカルパスを内部URLに変更
 if ( !function_exists( 'local_to_url' ) ):
 function local_to_url($local){
+  // _v($local);
+  // _v(get_home_path());
+  // _v(includes_home_path($local));
+  // _v('----------');
   //URLにサイトアドレスが含まれていない場合
   if (!includes_home_path($local)) {
     return false;
@@ -1120,6 +1124,7 @@ endif;
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
+  //_v(get_home_path().THEME_NAME.'-manifest.json');
   return get_home_path().THEME_NAME.'-manifest.json';
 }
 endif;
@@ -1136,6 +1141,7 @@ endif;
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
 function get_theme_pwa_service_worker_js_file(){
+  //_v(get_home_path().THEME_NAME.'-service-worker.js');
   return get_home_path().THEME_NAME.'-service-worker.js';
 }
 endif;
