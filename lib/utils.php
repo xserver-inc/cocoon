@@ -978,11 +978,24 @@ function includes_home_url($url){
   }
 }
 endif;
+
 //Wordpressインストールフォルダが含まれているか
 if ( !function_exists( 'includes_abspath' ) ):
 function includes_abspath($local){
   //URLにサイトアドレスが含まれていない場合
-  if (strpos($local, ABSPATH) === false) {
+  if (includes_string($local, ABSPATH)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+endif;
+
+//ホームパスが含まれているか
+if ( !function_exists( 'includes_home_path' ) ):
+function includes_home_path($local){
+  //URLにサイトアドレスが含まれていない場合
+  if (includes_string($local, get_home_path())) {
     return false;
   } else {
     return true;
