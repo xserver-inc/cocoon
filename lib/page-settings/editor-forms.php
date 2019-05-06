@@ -18,28 +18,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
-      <!-- Gutenberg -->
-      <tr>
-        <th scope="row">
-          <?php generate_label_tag(OP_GUTENBERG_EDITOR_ENABLE, __('Gutenberg', THEME_NAME) ); ?>
-        </th>
-        <td>
-          <?php
-          generate_checkbox_tag(OP_GUTENBERG_EDITOR_ENABLE , is_gutenberg_editor_enable(), __( 'Gutenbergエディターを有効にする', THEME_NAME ));
-          generate_tips_tag(__( '無効化することで旧ビジュアルエディター形式で投稿画面が表示されます。', THEME_NAME ));
-          ?>
-        </td>
-      </tr>
-
-        <!-- 文字カウンター -->
+        <!-- Gutenberg -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, __('文字カウンター', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_GUTENBERG_EDITOR_ENABLE, __('Gutenberg', THEME_NAME) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE , is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
-            generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。', THEME_NAME ));
+            generate_checkbox_tag(OP_GUTENBERG_EDITOR_ENABLE , is_gutenberg_editor_enable(), __( 'Gutenbergエディターを有効にする', THEME_NAME ));
+            generate_tips_tag(__( '無効化することで旧ビジュアルエディター形式で投稿画面が表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -51,8 +38,38 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_VISUAL_EDITOR_STYLE_ENABLE , is_visual_editor_style_enable(), __( 'ビジュアルエディターにテーマスタイルを反映させる', THEME_NAME ));
-            generate_tips_tag(__( '無効にするとWordPressデフォルトのビジュアルエディターになります。', THEME_NAME ));
+            generate_checkbox_tag(OP_VISUAL_EDITOR_STYLE_ENABLE , is_visual_editor_style_enable(), __( 'エディターにテーマスタイルを反映させる', THEME_NAME ));
+            generate_tips_tag(__( '無効にするとWordPressデフォルトのエディターになります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- エディター色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('エディター色', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_EDITOR_BACKGROUND_COLOR,  get_editor_background_color(), '背景色');
+
+            generate_tips_tag(__( 'エディターの背景色を指定します。', THEME_NAME ));
+
+            generate_color_picker_tag(OP_EDITOR_TEXT_COLOR,  get_editor_text_color(), '文字色');
+            generate_tips_tag(__( 'エディターのテキスト色を指定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 文字カウンター -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE, __('文字カウンター', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_ADMIN_EDITOR_COUNTER_VISIBLE , is_admin_editor_counter_visible(), __( 'タイトル等の文字数カウンター表示', THEME_NAME ));
+            generate_tips_tag(__( 'タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロックエディターではタイトル文字数は表示されません。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -65,7 +82,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_CONFIRMATION_BEFORE_PUBLISH , is_confirmation_before_publish(), __( 'ページ公開前に確認アラートを出す', THEME_NAME ));
-            generate_tips_tag(__( '記事を投稿する前に確認ダイアログを表示します。', THEME_NAME ));
+            generate_tips_tag(__( '記事を投稿する前に確認ダイアログを表示します。※旧エディター用の設定', THEME_NAME ));
             ?>
           </td>
         </tr>

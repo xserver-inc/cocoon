@@ -694,3 +694,22 @@ if ($entry_content_margin_hight = get_entry_content_margin_hight()): ?>
 .has-background.has-key-color-background-color {
   background-color: <?php echo get_editor_key_color(); ?>;
 }
+<?php //エディター背景色
+$editor_background_color = get_editor_background_color();
+if (!$editor_background_color) {
+  $editor_background_color = '#fff';
+} ?>
+.article.page-body,
+body#tinymce.wp-editor{
+  background-color: <?php echo $editor_background_color; ?>
+}
+<?php //エディター文字色
+$editor_text_color = get_editor_text_color();
+if (!$editor_text_color) {
+  $editor_text_color = '#333';
+} ?>
+.article.page-body,
+.editor-post-title__block .editor-post-title__input,
+body#tinymce.wp-editor{
+  color: <?php echo $editor_text_color; ?>
+}

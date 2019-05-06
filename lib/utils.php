@@ -1157,6 +1157,26 @@ function get_theme_css_cache_file_url(){
 }
 endif;
 
+// //テーマのカスタム管理者用CSSファイル
+// if ( !function_exists( 'get_theme_admin_css_cache_file' ) ):
+// function get_theme_admin_css_cache_file(){
+//   $file = get_theme_css_cache_path().'css-custom-admin.css';
+//   //キャッシュファイルが存在しない場合はからのファイルを生成
+//   if (!file_exists($file)) {
+//     wp_filesystem_put_contents($file,  '');
+//   }
+//   return $file;
+// }
+// endif;
+
+// //テーマのカスタム管理者用CSSファイルURL
+// if ( !function_exists( 'get_theme_admin_css_cache_file_url' ) ):
+// function get_theme_admin_css_cache_file_url(){
+//   $url = local_to_url(get_theme_admin_css_cache_file());
+//   return $url;
+// }
+// endif;
+
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
 function get_image_width_and_height($image_url){
@@ -1775,11 +1795,19 @@ function get_requested_url(){
 }
 endif;
 
+//クエリを取り除いたURLを取得
+if ( !function_exists( 'get_query_removed_url' ) ):
+function get_query_removed_url($url){
+  $url = preg_replace('{\?.+$}', '', $url);
+  return $url;
+}
+endif;
+
 //現在表示しているページのURL（クエリを取り除く）
 if ( !function_exists( 'get_query_removed_requested_url' ) ):
 function get_query_removed_requested_url(){
   $url = get_requested_url();
-  $url = preg_replace('{\?.+$}', '', $url);
+  $url = get_query_removed_url($url);
   $url = user_trailingslashit($url);
   return $url;
 }
@@ -2566,3 +2594,15 @@ function get_time_to_content_read($content){
 }
 endif;
 
+//内部URLからタグオブジェクトを取得する
+if ( !function_exists( 'url_to_tag_object' ) ):
+function url_to_tag_object($url){
+  $tag_slug = str_replace(TAG_BASE_URL, '', get_query_removed_url($url));
+  $tag_slug = str_replace('/', '', $tag_slug);
+  $tags = get_tags(array('slug' => $tag_slug));
+  if (isset($tags[0])) {
+    $tag = $tags[0];
+    return $tag;
+  }
+}
+endif;

@@ -10,11 +10,17 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //Gutenbergエディターの有効化
 update_theme_option(OP_GUTENBERG_EDITOR_ENABLE);
 
-//タイトル等の文字数カウンター表示
-update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
-
 //ビジュアルエディタースタイル
 update_theme_option(OP_VISUAL_EDITOR_STYLE_ENABLE);
+
+//エディター背景色
+update_theme_option(OP_EDITOR_BACKGROUND_COLOR);
+
+//エディター文字色
+update_theme_option(OP_EDITOR_TEXT_COLOR);
+
+//タイトル等の文字数カウンター表示
+update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 
 //ページ公開前に確認アラートを出す
 update_theme_option(OP_CONFIRMATION_BEFORE_PUBLISH);

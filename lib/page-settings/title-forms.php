@@ -164,7 +164,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_DESCRIPTION_TO_SINGULAR, __( 'メタディスクリプション', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -177,7 +177,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_META_KEYWORDS_TO_SINGULAR, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_KEYWORDS_TO_SINGULAR, __( 'メタキーワード', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -194,12 +194,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
-<!-- カテゴリーページタイトル設定 -->
-<div id="title-category" class="postbox">
-  <h2 class="hndle"><?php _e( 'カテゴリーページ設定', THEME_NAME ) ?></h2>
+<!-- カテゴリー・タグページタイトル設定 -->
+<div id="title-category-tag" class="postbox">
+  <h2 class="hndle"><?php _e( 'カテゴリー・タグページ設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'カテゴリーページの、タイトル、メタディスクリプション、メタキーワードの設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>
@@ -247,7 +247,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- カテゴリーページタイトル  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, __( 'カテゴリーページタイトル', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, __( 'ページタイトル', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
@@ -257,7 +257,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'sitename_category' => __( 'サイト名', THEME_NAME ).get_title_separator_caption().__( 'ページタイトル', THEME_NAME ),
             );
             generate_radiobox_tag(OP_CATEGORY_PAGE_TITLE_FORMAT, $options, get_category_page_title_format());
-            generate_tips_tag(__( 'カテゴリーページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグページで出力するタイトルタグのフォーマットを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -265,12 +265,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!--  メタディスクリプション -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプションの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_DESCRIPTION_TO_CATEGORY, __( 'メタディスクリプション', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
             generate_checkbox_tag(OP_META_DESCRIPTION_TO_CATEGORY, is_meta_description_to_category(), __( 'メタディスクリプションタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタディスクリプションタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力するか。※SEO的にはほとんど意味のない設定だと思います。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -278,12 +278,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!--  メタキーワード -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_META_KEYWORDS_TO_CATEGORY, __( 'メタキーワードの出力', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_META_KEYWORDS_TO_CATEGORY, __( 'メタキーワード', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
             generate_checkbox_tag(OP_META_KEYWORDS_TO_CATEGORY, is_meta_keywords_to_category(), __( 'メタキーワードタグを出力する', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリーページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリー・タグページのページのheadタグ内に、メタキーワードタグを出力するか。', THEME_NAME ));
             ?>
           </td>
         </tr>

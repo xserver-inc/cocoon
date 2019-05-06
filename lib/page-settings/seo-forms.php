@@ -34,13 +34,27 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_PREV_NEXT_ENABLE, is_prev_next_enable(), __( '分割ページにrel="next"/"prev"タグの追加', THEME_NAME ));
             generate_tips_tag(__( '検索エンジンに続き物ページの順番を知らせます。無効にした場合はWordPressデフォルトのnext/prev設定になります。', THEME_NAME ));
 
-            //カテゴリページの2ページ目以降をnoindexとする
-            generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
-            generate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+            //カテゴリページをnoindexとする
+            generate_checkbox_tag(OP_CATEGORY_PAGE_NOINDEX, is_category_page_noindex(), __( 'カテゴリページをnoindexとする', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリページ全体をnoindex設定にします。', THEME_NAME ));
+
+            echo '<div class="indent'.get_not_allowed_form_class(!is_category_page_noindex(), true).'">';
+              //カテゴリページの2ページ目以降をnoindexとする
+              generate_checkbox_tag(OP_PAGED_CATEGORY_PAGE_NOINDEX, is_paged_category_page_noindex(), __( 'カテゴリページの2ページ目以降をnoindexとする', THEME_NAME ));
+              generate_tips_tag(__( 'カテゴリページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+            echo '</div>';
+
 
             //タグページをnoindexとする
             generate_checkbox_tag(OP_TAG_PAGE_NOINDEX, is_tag_page_noindex(), __( 'タグページをnoindexとする', THEME_NAME ));
             generate_tips_tag(__( 'タグのインデックスページをnoindex設定にします。', THEME_NAME ));
+
+
+            echo '<div class="indent'.get_not_allowed_form_class(!is_tag_page_noindex(), true).'">';
+              //タグページの2ページ目以降をnoindexとする
+              generate_checkbox_tag(OP_PAGED_TAG_PAGE_NOINDEX, is_paged_tag_page_noindex(), __( 'タグページの2ページ目以降をnoindexとする', THEME_NAME ));
+              generate_tips_tag(__( 'タグページのトップページ以外はnoindex設定にします。', THEME_NAME ));
+            echo '</div>';
 
             //その他のアーカイブページをnoindexとする
             generate_checkbox_tag(OP_OTHER_ARCHIVE_PAGE_NOINDEX, is_other_archive_page_noindex(), __( 'その他のアーカイブページをnoindexとする', THEME_NAME ));

@@ -83,6 +83,24 @@ function title_parts_custom( $title ){
         $title['site'] = $cat_name;
         break;
     }
+  } elseif (is_tag()) {
+    $tag_id = get_query_var('tag_id');
+    $tag_name = $title['title'];
+    if ($tag_id && get_tag_title($tag_id)) {
+      $tag_name = get_tag_title($tag_id);
+    }
+    $title['title'] = $tag_name;
+    $title['site'] = '';
+    switch (get_category_page_title_format()) {//※カテゴリーと共通？
+      case 'category_sitename':
+        $title['title'] = $tag_name;
+        $title['site'] = $site_name;
+        break;
+      case 'sitename_category':
+        $title['title'] = $site_name;
+        $title['site'] = $tag_name;
+        break;
+    }
   } elseif (is_404()) {
     $title['title'] = get_404_page_title();
   };
@@ -96,8 +114,11 @@ endif;
 if ( !function_exists( 'is_noindex_page' ) ):
 function is_noindex_page(){
   return (is_archive() && !is_category() && !is_tag() && !is_tax() && is_other_archive_page_noindex()) || //アーカイブページはインデックスに含めない
-  ( (is_tag() || is_tax()) && is_tag_page_noindex() ) || //タグページをインデックスしたい場合はこの行を削除
-  ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //ページの2ページ目以降はインデックスに含めない（似たような内容の薄いコンテンツの除外）
+  ( is_category()  && is_category_page_noindex() )  || //カテゴリページ
+  ( is_category() && is_paged() && is_paged_category_page_noindex() )  || //カテゴリページ（2ページ目以降）
+  ( is_tax() && is_tag_page_noindex() ) || //タクソノミ
+  ( is_tag()  && is_tag_page_noindex() ) || //タグページ（2ページ目以降）
+  ( is_tag() && is_paged() && is_paged_tag_page_noindex() ) || //タグページ（2ページ目以降）
   (is_attachment() && is_attachment_page_noindex()) || //添付ファイルページも含めない
   is_search() || //検索結果ページはインデックスに含めない
   is_404(); //404ページはインデックスに含めない
@@ -398,13 +419,14 @@ endif;
 if ( !function_exists( 'get_meta_description_text' ) ):
 function get_meta_description_text(){
   $description = null;
-
   if (is_front_page() && get_front_page_meta_description()) {
     $description = get_front_page_meta_description();
   } elseif (is_singular() && is_meta_description_to_singular()) {
     $description = get_the_meta_description();
   } elseif (is_category() && is_meta_description_to_category()) {
     $description = get_category_meta_description();
+  } elseif (is_tag() && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
+    $description = get_tag_meta_description();
   }
   return apply_filters('meta_description_text', $description);
 }
@@ -418,7 +440,6 @@ function generate_meta_description_tag() {
 
   if ($description && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
-    //var_dump('<meta name="description" content="'.$description.'">');
     echo '<meta name="description" content="'.$description.'">'.PHP_EOL;
   }
 }
@@ -428,13 +449,14 @@ endif;
 if ( !function_exists( 'get_meta_keywords_text' ) ):
 function get_meta_keywords_text(){
   $keywords = null;
-  //var_dump(get_the_meta_keywords());
   if (is_front_page() && get_front_page_meta_keywords()) {
     $keywords = get_front_page_meta_keywords();
   } elseif (is_singular() && is_meta_keywords_to_singular()) {
     $keywords = get_the_meta_keywords();
   } elseif (is_category() && is_meta_keywords_to_category()) {
     $keywords = get_category_meta_keywords();
+  } elseif (is_tag() && is_meta_keywords_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
+    $keywords = get_tag_meta_keywords();
   }
   return apply_filters('meta_keywords_text', $keywords);
 }
@@ -458,16 +480,43 @@ endif;
 
 //タグメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_tag_meta_description' ) ):
-function get_tag_meta_description(){
+function get_tag_meta_description($tag = null){
+  //タグ設定ページのディスクリプションを取得
+  $tag_desc = trim( strip_tags( get_tag_description() ) );
+  if ( $tag_desc ) {//ディスクリプションが設定されている場合
+    return htmlspecialchars($tag_desc);
+  }
+  //タグ説明文を取得
   $tag_desc = trim( strip_tags( tag_description() ) );
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
-  $tag_desc = sprintf( __( '「%s」の記事一覧です。', 'simplicity2' ), single_cat_title('', false) );
+  //タグ本文から抜粋文を作成
+  $tag_desc = trim( strip_tags( get_content_excerpt(get_tag_content(), 160) ) );
+  if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
+    return htmlspecialchars($tag_desc);
+  }
+  //タグ名から作成
+  if ($tag) {
+    $tag_name = $tag->name;
+  } else {
+    $tag_name = single_tag_title('', false);
+  }
+  $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
   return htmlspecialchars($tag_desc);
 }
 endif;
 
+//タグキーワード用のワードを取得
+if ( !function_exists( 'get_tag_meta_keywords' ) ):
+function get_tag_meta_keywords(){
+  if ($keywords = get_tag_keywords()) {
+    return $keywords;
+  } else {
+    return single_tag_title('', false);
+  }
+}
+endif;
 
 //json-ldタグを出力する
 add_action( 'wp_head', 'the_json_ld_tag' );

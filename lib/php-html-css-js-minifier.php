@@ -37,10 +37,10 @@ function __replace_html_style_for_minify($m) {
 
 function __replace_html_for_minify($m) {
     if(isset($m[2])) {
-        // Minify inline CSS declaration(s)
-        if(stripos($m[2], ' style=') !== false) {
-            $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', '__replace_html_style_for_minify', $m[2]);
-        }
+        // // Minify inline CSS declaration(s)
+        // if(stripos($m[2], ' style=') !== false) {
+        //     $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', '__replace_html_style_for_minify', $m[2]);
+        // }
         return '<' . $m[1] . preg_replace(
             array(
                 // From `defer="defer"`, `defer='defer'`, `defer="true"`, `defer='true'`, `defer=""` and `defer=''` to `defer` [^1]
