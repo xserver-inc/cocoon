@@ -995,7 +995,7 @@ endif;
 if ( !function_exists( 'includes_home_path' ) ):
 function includes_home_path($local){
   //URLにサイトアドレスが含まれていない場合
-  if (!includes_string($local, get_home_path())) {
+  if (!includes_string($local, get_abs_home_path())) {
     return false;
   } else {
     return true;
@@ -1011,7 +1011,7 @@ function url_to_local($url){
     return false;
   }
 
-  $path = str_replace(home_url('/'), get_home_path(), $url);
+  $path = str_replace(home_url('/'), get_abs_home_path(), $url);
   $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
 
@@ -1025,14 +1025,14 @@ endif;
 if ( !function_exists( 'local_to_url' ) ):
 function local_to_url($local){
   // _v($local);
-  // _v(get_home_path());
+  // _v(get_abs_home_path());
   // _v(includes_home_path($local));
   // _v('----------');
   //URLにサイトアドレスが含まれていない場合
   if (!includes_home_path($local)) {
     return false;
   }
-  $url = str_replace(get_home_path(), home_url('/'), $local);
+  $url = str_replace(get_abs_home_path(), home_url('/'), $local);
   $url = str_replace('\\', '/', $url);
   // _v($local);
   // _v(ABSPATH);
@@ -1124,8 +1124,8 @@ endif;
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
-  //_v(get_home_path().THEME_NAME.'-manifest.json');
-  return get_home_path().THEME_NAME.'-manifest.json';
+  //_v(get_abs_home_path().THEME_NAME.'-manifest.json');
+  return get_abs_home_path().THEME_NAME.'-manifest.json';
 }
 endif;
 
@@ -1141,8 +1141,8 @@ endif;
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
 function get_theme_pwa_service_worker_js_file(){
-  //_v(get_home_path().THEME_NAME.'-service-worker.js');
-  return get_home_path().THEME_NAME.'-service-worker.js';
+  //_v(get_abs_home_path().THEME_NAME.'-service-worker.js');
+  return get_abs_home_path().THEME_NAME.'-service-worker.js';
 }
 endif;
 
@@ -2621,6 +2621,29 @@ function url_to_tag_object($url){
   if (isset($tags[0])) {
     $tag = $tags[0];
     return $tag;
+  }
+}
+endif;
+
+//確実にホームパスを取得するget_home_path関数
+if ( !function_exists( 'get_abs_home_path' ) ):
+function get_abs_home_path(){
+  $site_url = get_site_url(null, '/');
+  $home_url = get_home_url(null, '/');
+  // _v($site_url);
+  // _v($home_url);
+  if ($site_url == $home_url) {
+    return ABSPATH;
+  } else {
+    if (includes_string($site_url, $home_url)) {
+      $dir = str_replace($home_url, '', $site_url);
+      // _v($dir);
+      // _v(preg_quote($dir, '/'));
+      $home_path = preg_replace('/'.preg_quote($dir, '/').'$/', '', ABSPATH);
+      return $home_path;
+    } else {
+      return ABSPATH;
+    }
   }
 }
 endif;

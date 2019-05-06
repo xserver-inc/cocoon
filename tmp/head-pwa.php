@@ -6,7 +6,17 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
-
+<?php
+// _v(get_home_url());
+// _v(get_site_url());
+// _v(ABSPATH);
+// _v(get_abs_home_path());
+// _v(get_abs_home_path());
+// _v(file_exists(get_theme_pwa_manifest_json_file()));
+// _v((get_theme_pwa_manifest_json_file()));
+// _v(file_exists(get_theme_pwa_service_worker_js_file()));
+// _v((get_theme_pwa_service_worker_js_file()));
+?>
 <?php if (
   !is_amp() &&
   !is_admin() &&

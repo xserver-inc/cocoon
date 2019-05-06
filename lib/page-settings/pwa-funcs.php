@@ -215,12 +215,7 @@ const urlsToCache = [
   '{$theme_js_url}',
   '{$theme_child_js_url}',
   '{$font_awesome4_url}',
-  '{$font_aicomoon_url}',
-  '/wp-includes/js/jquery/jquery.js',
-  '/wp-includes/js/jquery/jquery-migrate.min.js',
-  '/wp-content/themes/cocoon-master/webfonts/fontawesome/fonts/fontawesome-webfont.woff2',
-  '/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.ttf',
-  '/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js'
+  '{$font_aicomoon_url}'
 ];
 
 self.addEventListener('install', function(event) {
