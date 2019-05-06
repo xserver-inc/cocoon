@@ -1120,7 +1120,7 @@ endif;
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
-  return ABSPATH.THEME_NAME.'-manifest.json';
+  return get_home_path().THEME_NAME.'-manifest.json';
 }
 endif;
 
@@ -1136,7 +1136,7 @@ endif;
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
 function get_theme_pwa_service_worker_js_file(){
-  return ABSPATH.THEME_NAME.'-service-worker.js';
+  return get_home_path().THEME_NAME.'-service-worker.js';
 }
 endif;
 
