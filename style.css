@@ -5610,7 +5610,7 @@ canvas, iframe, video,
   font-size: 13px;
 }
 
-.speech-balloon {
+div.speech-balloon {
   height: 100%;
   position: relative;
   padding: 10px;
@@ -5619,7 +5619,7 @@ canvas, iframe, video,
   border-radius: 6px;
   word-break: break-all;
 }
-.speech-balloon p {
+div.speech-balloon p {
   margin: 0;
 }
 
