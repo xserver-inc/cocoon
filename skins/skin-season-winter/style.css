@@ -27,7 +27,7 @@ body {
 /************************************
 ** p
 ************************************/
-#main p, #sidebar p {
+.main p, .sidebar p {
 	margin: 2em 0;
 	color: #44566d;
 	line-height: 2;

@@ -243,34 +243,6 @@ body{
   }
 }
 
-// .speech-balloon::before {
-//     border-bottom: 7px solid transparent;
-//     border-right: 7px solid #cccfd2;
-//     border-top: 7px solid transparent;
-//     content: "";
-//     display: block;
-//     height: 0;
-//     left: -7px;
-//     position: absolute;
-//     top: 10px;
-//     width: 0;
-// }
-// .sbs-line .speech-balloon::after {
-//     left: -5px;
-// }
-// .speech-balloon::after {
-//     border-bottom: 7px solid transparent;
-//     border-right: 7px solid #fff;
-//     border-top: 7px solid transparent;
-//     content: "";
-//     display: block;
-//     height: 0;
-//     left: -5px;
-//     position: absolute;
-//     top: 10px;
-//     width: 0;
-// }
-
 .admin-panel{
   // flex-direction: column;
   // display: block;
@@ -360,17 +332,9 @@ a.facebook-follow-button{
   }
 }
 
-// .entry-card-wrap.a-wrap{
-//   padding: 0.5%;
-// }
-
 .e-card-meta{
   margin-top: 2px;
 }
-
-// .e-card-content{
-//   padding-bottom: 1.2em;
-// }
 
 .ect-entry-card,
 .rect-entry-card,
