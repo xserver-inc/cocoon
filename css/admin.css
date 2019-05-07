@@ -1440,8 +1440,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
-.admin-settings .demo div.speech-balloon p { margin: 0; }
+.admin-settings .demo .speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo .speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .sbp-l { margin-right: 100px; }
@@ -2960,8 +2960,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
-.admin-settings .demo div.speech-balloon p { margin: 0; }
+.admin-settings .demo .speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo .speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .sbp-l { margin-right: 100px; }
