@@ -15,7 +15,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     // アイキャッチ画像のIDを取得
     $thumbnail_id = get_post_thumbnail_id();
     // mediumサイズの画像内容を取得（引数にmediumをセット）
-    $eye_img = wp_get_attachment_image_src( $thumbnail_id , 'post-thumbnail' );
+    $eye_img = wp_get_attachment_image_src( $thumbnail_id , 'full' );
     $url = $eye_img[0];
     $width = $eye_img[1];
     $height = $eye_img[2];
@@ -27,7 +27,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     if ($width && $height) {
       the_post_thumbnail(array($width, $height), $attr);
     } else {
-      the_post_thumbnail('post-thumbnail', $attr);
+      the_post_thumbnail('full', $attr);
     }
 
   } else {
