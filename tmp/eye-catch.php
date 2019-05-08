@@ -14,7 +14,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   if (has_post_thumbnail()) {
     // アイキャッチ画像のIDを取得
     $thumbnail_id = get_post_thumbnail_id();
-    // mediumサイズの画像内容を取得（引数にmediumをセット）
+    // fullサイズの画像内容を取得（引数にfullをセット）
     $eye_img = wp_get_attachment_image_src( $thumbnail_id , 'full' );
     $url = $eye_img[0];
     $width = $eye_img[1];
