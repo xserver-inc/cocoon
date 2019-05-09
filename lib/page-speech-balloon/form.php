@@ -151,5 +151,3 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('speech-balloon');?>">
   <?php submit_button(__( '保存', THEME_NAME )); ?>
 </form>
-
-<p class="alert"><?php _e( 'ブロックエディターの「吹き出しブロック」で利用後、設定を変更すると、ブロックエディター上で再編集できなくなります。', THEME_NAME ) ?></p>
