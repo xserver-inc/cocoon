@@ -97,13 +97,13 @@ a {
 	font-weight: bold;
 }
 #header .logo .site-name-text {
-	font-size: 1.5em;
+	font-size: 1em;
 }
 .logo-text {
 	padding: 2em 0;
 }
 .logo-image {
-	padding: 0.4em 0 0;
+	padding: 0.4em 0;
 	margin: 0 auto -0.4em;
 }
 /************************************
@@ -420,6 +420,20 @@ article .tag-link:hover {
 }
 .widget .popular-entry-cards .popular-entry-card{
 	font-size:1em;
+}
+/************************************
+** CTA
+************************************/
+.cta-box {
+   background-color: #fff;
+   color: #335361;
+   border: 1px solid #ccc;
+   padding: 2em;
+	margin-top:0.5em;
+}
+.cta-heading{
+	padding:0;
+	margin-bottom:0.5em;
 }
 /************************************
 ** プロフィール profile
