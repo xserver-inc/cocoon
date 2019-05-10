@@ -855,8 +855,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
-.admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -1440,8 +1440,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo .speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
-.admin-settings .demo .speech-balloon p { margin: 0; }
+.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .sbp-l { margin-right: 100px; }
@@ -2375,8 +2375,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-amber { border-color: #ffc107; }
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
-.admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -2960,8 +2960,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo .speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
-.admin-settings .demo .speech-balloon p { margin: 0; }
+.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .sbp-l { margin-right: 100px; }
@@ -4034,8 +4034,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-amber { border-color: #ffc107; }
 .components-popover__content .blank-box.bb-deep-orange { border-color: #ea5506; }
 .components-popover__content .blank-box.bb-white { border-color: #fff; }
-.components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; }
-.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -2px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
+.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .components-popover__content .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .components-popover__content .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .components-popover__content .blank-box.bb-tab.bb-purple::before { background-color: #884898; }

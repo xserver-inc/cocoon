@@ -2953,6 +2953,7 @@ label.screen-reader-text {
 .blank-box.bb-tab {
   position: relative;
   margin-top: 2em;
+  border-top-left-radius: 0;
 }
 .blank-box.bb-tab::before {
   background-color: #949495;
@@ -2960,7 +2961,7 @@ label.screen-reader-text {
   position: absolute;
   font-size: .8em;
   top: -1.8em;
-  left: -2px;
+  left: -3px;
   line-height: 1.6;
   padding: 0 1em 0 .8em;
   color: #fff;
