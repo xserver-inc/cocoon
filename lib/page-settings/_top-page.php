@@ -157,9 +157,9 @@ endif;
 <!-- タブ機能の実装 -->
 <div id="tabs" class="tabs">
   <ul>
+    <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="all"><?php _e( '全体', THEME_NAME ) ?></li>
     <li class="theme-header"><?php _e( 'ヘッダー', THEME_NAME ) ?></li>
-    <li class="skin"><?php _e( 'スキン', THEME_NAME ) ?></li>
     <li class="ads"><?php _e( '広告', THEME_NAME ) ?></li>
     <li class="title"><?php _e( 'タイトル', THEME_NAME ) ?></li>
     <li class="seo"><?php _e( 'SEO', THEME_NAME ) ?></li>
@@ -198,6 +198,11 @@ endif;
 
   <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
 
+  <!-- スキン -->
+  <div class="skin metabox-holder">
+    <?php require_once abspath(__FILE__).'skin-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
   <!-- 全体タブ -->
   <div class="all metabox-holder">
     <?php require_once abspath(__FILE__).'all-forms.php'; ?>
@@ -206,11 +211,6 @@ endif;
   <!-- ヘッダータブ -->
   <div class="theme-header metabox-holder">
     <?php require_once abspath(__FILE__).'header-forms.php'; ?>
-  </div><!-- /.metabox-holder -->
-
-  <!-- スキン -->
-  <div class="skin metabox-holder">
-    <?php require_once abspath(__FILE__).'skin-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- 広告タブ -->
