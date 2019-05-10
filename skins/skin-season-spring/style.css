@@ -1247,8 +1247,13 @@ table th{
     transition: 0.8s;
 }
 .hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
+	padding: 10px 0;
+	height: auto;
+	opacity: 1;
 	text-align:left;
+}
+
+.recent-comments .a-wrap{
+	padding: 1.5%;
+	margin-bottom: 3%;
 }

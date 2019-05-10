@@ -1287,3 +1287,8 @@ table th {
 	opacity: 1;
 	text-align: left;
 }
+
+.recent-comments .a-wrap{
+	padding: 1.5%;
+	margin-bottom: 3%;
+}
