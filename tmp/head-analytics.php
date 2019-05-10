@@ -23,11 +23,13 @@ if (is_analytics() && !get_google_tag_manager_tracking_id() && !is_amp()): ?>
   <!-- /Global site tag (gtag.js) - Google Analytics -->
   <?php endif; ?>
 
+<?php endif ?>
+<?php //その他の解析コード
+if (is_analytics() && !is_amp()): ?>
   <?php //その他<head></head>内用の解析コード
   if ($head_tags = get_other_analytics_head_tags()) {
     echo '<!-- Other Analytics -->'.PHP_EOL;
     echo $head_tags.PHP_EOL;
     echo '<!-- /Other Analytics -->'.PHP_EOL;
   }?>
-
-<?php endif ?>
+<?php endif; ?>
