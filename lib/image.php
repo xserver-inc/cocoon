@@ -26,6 +26,7 @@ endif;
 if ( is_lightbox_effect_enable() ) {
   add_filter( 'the_content', 'add_lightbox_property', 9 );
   add_filter( 'the_category_content', 'add_lightbox_property', 9 );
+  add_filter( 'the_tag_content', 'add_lightbox_property', 9 );
 }
 if ( !function_exists( 'add_lightbox_property' ) ):
 function add_lightbox_property( $content ) {
@@ -53,6 +54,7 @@ endif;
 if ( is_lity_effect_enable() ) {
   add_filter( 'the_content', 'add_lity_property', 11 );
   add_filter( 'the_category_content', 'add_lity_property', 11 );
+  add_filter( 'the_tag_content', 'add_lity_property', 11 );
 }
 if ( !function_exists( 'add_lity_property' ) ):
 function add_lity_property( $content ) {

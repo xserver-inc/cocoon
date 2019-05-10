@@ -64,6 +64,7 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
   add_filter('widget_classic_text', 'url_to_external_blog_card', 11);
   add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 11);
   add_filter('the_category_content', 'url_to_external_blog_card', 11);
+  add_filter('the_tag_content', 'url_to_external_blog_card', 11);
 }
 
 
