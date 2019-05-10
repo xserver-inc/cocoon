@@ -137,6 +137,9 @@ a {
 	padding-left: 1em;
 	font-weight: 500;
 }
+.navi-in > ul > .menu-item-has-children a::after {
+	display: none;
+}
 /************************************
 ** 通知エリア
 ************************************/
