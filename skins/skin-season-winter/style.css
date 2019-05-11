@@ -137,17 +137,15 @@ a {
   background: #88abda;
 }
 .navi-in > ul > .menu-item-has-children > a::after {
-  right: 1em;
-  font-size: 1.2em;
+  right: .6em;
+  font-size: 1em;
   font-weight: 600;
 }
 .sub-menu .caption-wrap{
   padding-left: 1em;
   font-weight: 500;
 }
-.navi-in > ul > .menu-item-has-children a::after {
-  display: none;
-}
+
 /************************************
 ** 通知エリア
 ************************************/
