@@ -109,35 +109,43 @@ a {
 ** グローバルナビ navi
 ************************************/
 .navi-in > ul li {
-	height: auto;
-	font-weight: bold;
-	line-height: normal;
+  font-weight: bold;
+  height: 72px;
+  line-height: 72px;
 }
-#header-container #navi {
-	background: #9b7b6c;
+.navi-in > ul .menu-item-has-description > a > .caption-wrap{
+  line-height: 28px;
+  height: 72px;
 }
-#header-container #navi a {
-	color: #fff;
-	padding: 0.5em 0;
+#navi .menu-item-has-description>a>.caption-wrap{
+  line-height: 28px;
 }
-#header-container #navi a:hover {
-	color: #9b7b6c;
+.navi-in > ul .sub-menu ul{
+  top: -72px;
 }
-.navi-in > ul .sub-menu {
-	background: #9b7b6c;
+#header-container #navi{
+  background: #9b7b6c;
+}
+#header-container #navi a{
+  color: #fff;
+}
+#header-container #navi a:hover{
+  color: #9b7b6c;
+}
+.navi-in > ul .sub-menu{
+  background: #9b7b6c;
 }
 .navi-in > ul > .menu-item-has-children > a::after {
-    right: 1em;
-    top: 0.6em;
-    font-size: 1.2em;
-    font-weight: 600;
+  right: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 .sub-menu .caption-wrap{
-	padding-left:1em;
-	font-weight:500;
+  padding-left: 1em;
+  font-weight: 500;
 }
 .navi-in > ul > .menu-item-has-children a::after {
-	display: none;
+  display: none;
 }
 /************************************
 ** 通知エリア
