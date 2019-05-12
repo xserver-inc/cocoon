@@ -78,6 +78,14 @@ function get_related_entry_count(){
 }
 endif;
 
+//関連記事取得期間
+define('OP_RELATED_ENTRY_PERIOD', 'related_entry_period');
+if ( !function_exists( 'get_related_entry_period' ) ):
+function get_related_entry_period(){
+  return get_theme_option(OP_RELATED_ENTRY_PERIOD);
+}
+endif;
+
 //関連記事枠線の表示
 define('OP_RELATED_ENTRY_BORDER_VISIBLE', 'related_entry_border_visible');
 if ( !function_exists( 'is_related_entry_border_visible' ) ):

@@ -28,6 +28,9 @@ update_theme_option(OP_RELATED_ENTRY_SUB_HEADING);
 //関連記事の表示数
 update_theme_option(OP_RELATED_ENTRY_COUNT);
 
+//関連記事取得期間
+update_theme_option(OP_RELATED_ENTRY_PERIOD);
+
 //関連記事の表示タイプ
 update_theme_option(OP_RELATED_ENTRY_TYPE);
 

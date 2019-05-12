@@ -165,6 +165,32 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 取得期間 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RELATED_ENTRY_PERIOD, __('取得期間', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              '' => __( '全期間', THEME_NAME ),
+              '-1 week' => __( '1週間', THEME_NAME ),
+              '-2 week' => __( '2週間', THEME_NAME ),
+              '-3 week' => __( '3週間', THEME_NAME ),
+              '-1 month' => __( '1ヶ月', THEME_NAME ),
+              '-2 month' => __( '2ヶ月', THEME_NAME ),
+              '-3 month' => __( '3ヶ月', THEME_NAME ),
+              '-6 month' => __( '6ヶ月', THEME_NAME ),
+              '-1 year' => __( '1年', THEME_NAME ),
+              '-2 year' => __( '2年', THEME_NAME ),
+              '-3 year' => __( '3年', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_RELATED_ENTRY_PERIOD, $options, get_related_entry_period());
+            generate_tips_tag(__( '関連記事を取得する期間を選択します。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 枠線の表示 -->
         <tr>
           <th scope="row">
