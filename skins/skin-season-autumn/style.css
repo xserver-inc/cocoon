@@ -109,19 +109,19 @@ a {
 ** グローバルナビ navi
 ************************************/
 .navi-in > ul li {
-  font-weight: bold;
-  height: 72px;
-  line-height: 72px;
+		font-weight: bold;
+		height: 64px;
+		line-height: 64px;
 }
 .navi-in > ul .menu-item-has-description > a > .caption-wrap{
-  line-height: 28px;
-  height: 72px;
+	line-height: 28px;
+	height: 64px;
 }
 #navi .menu-item-has-description>a>.caption-wrap{
-  line-height: 28px;
+	line-height: 1.6;
 }
 .navi-in > ul .sub-menu ul{
-  top: -72px;
+	top: -64px;
 }
 #header-container #navi{
   background: #9b7b6c;
@@ -587,6 +587,11 @@ article .tag-link:hover {
 .sns-share, .sns-follow {
 	margin: 0;
 }
+.sns-share-buttons a .share-count {
+    right: -10px;
+    bottom: -10px;
+    color: #aaa;
+}
 /************************************
 ** 目次
 ************************************/
@@ -954,39 +959,49 @@ input[type='submit']:hover {
 
 /*1030px以下*/
 @media screen and (max-width: 1030px) {
-.navi-in > .menu-header {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	overflow-x: scroll;
-	white-space: nowrap;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
-	-ms-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-}
-.navi-in > ul li {
-	min-width: auto;
-}
-#header-container #navi a {
-	font-size: 0.8em;
-	padding: 1em 1.2em;
-}
-.navi-footer-in > .menu-footer li.menu-item {
-	border: none;
-	border-left: 1px solid #fff;
-}
-.navi-footer-in > .menu-footer li.menu-item:first-child {
-	border: none;
-}
-#sidebar {
-	padding: 0 2em;
-}
-.entry-card-content {
-	flex: 2;
-}
+	#header-container .menu-mobile{
+		display:none;
+	}
+	.navi-in > .menu-mobile{
+		display:-webkit-box;
+  		display:-ms-flexbox;
+  		display:flex;
+		overflow-x: scroll;
+		white-space: nowrap;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+      flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+	}
+	#navi .navi-in > .menu-mobile li {
+		height: auto;
+		line-height: 1.8;
+	}
+  .navi-in > ul li {
+	  min-width: auto;
+  }
+  #header-container #navi a {
+	  font-size: 0.8em;
+	  padding: 1em 1.2em;
+  }
+  .navi-footer-in > .menu-footer li.menu-item {
+	  border: none;
+	  border-right: 1px solid #fff;
+  }
+  .navi-footer-in > .menu-footer li.menu-item:nth-child(even) {
+	  border: none;
+  }
+  #sidebar {
+	  padding: 0 2em;
+  }
+  .entry-card-content {
+	  flex: 2;
+  }
+	.mobile-menu-buttons{
+	   height:auto;
+   }
 }
 
 /*768px以下*/
