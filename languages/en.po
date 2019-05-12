@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-05-12 18:13+0900\n"
-"PO-Revision-Date: 2019-05-12 19:18+0900\n"
+"POT-Creation-Date: 2019-05-12 20:10+0900\n"
+"PO-Revision-Date: 2019-05-12 20:24+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -47,7 +47,7 @@ msgid "キーワード指定なし"
 msgstr "No keyword specified"
 
 #: lib/_defins.php:38
-msgid " 設定"
+msgid "設定"
 msgstr "Settings"
 
 #: lib/_defins.php:81 lib/_defins.php:105 lib/_defins.php:117 lib/_defins.php:132
@@ -2126,7 +2126,7 @@ msgstr "Grade:"
 #: lib/page-item-ranking/form.php:125 lib/page-settings/blogcard-in-forms.php:86
 #: lib/page-settings/skin-forms.php:36
 msgid "なし"
-msgstr "from BTCBOX"
+msgstr "None"
 
 #: lib/page-item-ranking/form.php:126
 msgid "0"

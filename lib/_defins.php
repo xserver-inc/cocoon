@@ -9,6 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //テーマ名
 define('THEME_NAME', 'cocoon');
+require_once abspath(__FILE__).'language.php';   //マルチ言語設定
 //テーマ名（最初の一文字だけ大文字）
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //テーマ名（大文字）
@@ -35,7 +36,7 @@ define('THEME_SKIN_JS', THEME_NAME.'-skin-js');
 //ウィジェット名プレフィックス
 define('WIDGET_NAME_PREFIX', '['.substr(THEME_NAME_CAMEL, 0, 1).'] '); //ex.[C]
 //トップレベルオリジナル設定名
-define('SETTING_NAME_TOP', THEME_NAME_CAMEL.__( ' 設定', THEME_NAME ));
+define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
 
 //ウィジェットのエントリータイプ
 define('ET_DEFAULT',        'default');
