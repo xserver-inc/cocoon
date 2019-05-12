@@ -10,6 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //テーマ名
 define('THEME_NAME', 'cocoon');
 require_once abspath(__FILE__).'language.php';   //マルチ言語設定
+
 //テーマ名（最初の一文字だけ大文字）
 define('THEME_NAME_CAMEL', ucfirst(THEME_NAME));
 //テーマ名（大文字）

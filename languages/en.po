@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-05-12 20:10+0900\n"
-"PO-Revision-Date: 2019-05-12 20:24+0900\n"
+"PO-Revision-Date: 2019-05-12 20:36+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -4981,7 +4981,7 @@ msgstr ""
 #: lib/page-settings/carousel-forms.php:101 lib/page-settings/index-forms.php:90
 #: lib/page-settings/single-forms.php:197
 msgid "枠線の表示"
-msgstr "Show Gridlines"
+msgstr "Show Border"
 
 #: lib/page-settings/carousel-forms.php:105 lib/page-settings/index-forms.php:94
 #: lib/page-settings/single-forms.php:201
