@@ -18,7 +18,7 @@ registerBlockType( 'cocoon-blocks/affi', {
   title: __( 'アフィリエイトタグタグ', THEME_NAME ),
   icon: 'grid-view',
   category: THEME_NAME + '-shortcode',
-  description: __( '', THEME_NAME ),
+  description: __( 'アフィリエイトタグ', THEME_NAME ),
 
   edit( { attributes, setAttributes } ) {
     return (
