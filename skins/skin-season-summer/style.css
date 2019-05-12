@@ -996,10 +996,11 @@ input[type='submit']:hover {
   }
   .navi-footer-in > .menu-footer li.menu-item {
 	  border: none;
-	  border-right: 1px solid #fff;
+	  border-left: 1px solid #fff;
+	  margin-bottom:5px;
   }
-  .navi-footer-in > .menu-footer li.menu-item:nth-child(even) {
-	  border: none;
+  .navi-footer-in > .menu-footer li.menu-item:nth-child(odd) {
+	  border: none !important;
   }
   #sidebar {
 	  padding: 0 2em;
