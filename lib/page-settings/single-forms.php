@@ -186,7 +186,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               '-3 year' => __( '3年', THEME_NAME ),
             );
             generate_selectbox_tag(OP_RELATED_ENTRY_PERIOD, $options, get_related_entry_period());
-            generate_tips_tag(__( '関連記事を取得する期間を選択します。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。', THEME_NAME ));
+            generate_tips_tag(__( '関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新していない場合は利用しないことをおすすめします。', THEME_NAME ));
             ?>
           </td>
         </tr>

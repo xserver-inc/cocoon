@@ -10,12 +10,24 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //関連記事の共通引数を取得
 if ( !function_exists( 'get_common_related_args' ) ):
 function get_common_related_args($post_id){
-  return array(
+  $related_args = array(
     'post__not_in' => array($post_id),
     'posts_per_page'=> intval(get_related_entry_count()),
     'orderby' => 'rand',
     'no_found_rows' => true,
   );
+  //取得期間指定
+  if (get_related_entry_period()) {
+    $ago = date_i18n('Y-m-d 0:0:0', strtotime(get_related_entry_period()));
+    $related_args['date_query'] = array(
+      array(
+        'after'     => $ago,
+        'inclusive' => true
+      ),
+    );
+  }
+  //_v($related_args);
+  return $related_args;
 }
 endif;
 
