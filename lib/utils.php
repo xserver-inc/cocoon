@@ -2550,7 +2550,7 @@ function comma_text_to_array($comma_text){
 }
 endif;
 
-//エディターカラーパレット用の木から
+//エディターカラーパレット用のキーカラー
 if ( !function_exists( 'get_editor_key_color' ) ):
 function get_editor_key_color(){
   $site_key_color = get_site_key_color();
