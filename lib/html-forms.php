@@ -957,6 +957,7 @@ function generate_widget_entries_tag($atts){
     'taxonomy' => 'category',
     'sticky' => 0,
     'random' => 0,
+    'modified' => 0,
     'order' => 'desc',
     'action' => null,
     'exclude_cat_ids' => array(),
@@ -988,11 +989,23 @@ function generate_widget_entries_tag($atts){
       'post_type' => explode(',', $post_type)
     );
   }
-  if ($random) {
+  if ($random && $modified) {
     $args += array(
-      'orderby' => 'rand'
+      'orderby' => array('rand', 'modified')
     );
+  } else {
+    if ($random) {
+      $args += array(
+        'orderby' => 'rand'
+      );
+    }
+    if ($modified) {
+      $args += array(
+        'orderby' => 'modified',
+      );
+    }
   }
+
   //除外カテゴリーの設定
   if (!empty($exclude_cat_ids)) {
     // _v($cat_ids);

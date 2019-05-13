@@ -41,6 +41,7 @@ function new_entries_shortcode($atts) {
     'taxonomy' => 'category',
     'sticky' => 0,
     'random' => 0,
+    'modified' => 0,
     'order' => 'desc',
     'action' => null,
   ), $atts));
@@ -66,6 +67,7 @@ function new_entries_shortcode($atts) {
     'taxonomy' => $taxonomy,
     'sticky' => $sticky,
     'random' => $random,
+    'modified' => $modified,
     'order' => $order,
     'action' => $action,
   );
