@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-05-12 20:10+0900\n"
-"PO-Revision-Date: 2019-05-12 20:36+0900\n"
+"PO-Revision-Date: 2019-05-14 02:47+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -95,12 +95,10 @@ msgid "本当に削除してもいいですか？"
 msgstr "Do you really want to delete it?"
 
 #: lib/_defins.php:247
-#, fuzzy
-msgid ""
-"商品を取得できませんでした。存在しないASINを指定している可能性があります。"
+msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
-"The product could not be retrieved. You may have specified a ASIN that does "
-"not exist."
+"The product could not be retrieved. You may have specified a ASIN that does not "
+"exist."
 
 #: lib/admin-tinymce-qtag.php:23
 msgid "ふりがな"
@@ -238,9 +236,9 @@ msgstr "Box (icon)"
 msgid "注意喚起(!)"
 msgstr "Alert (!)"
 
-#: lib/admin-tinymce-qtag.php:188 lib/admin-tinymce-qtag.php:515
-#: lib/admin.php:177 lib/custom-fields/memo-field.php:17
-#: lib/custom-fields/memo-field.php:18 lib/custom-fields/memo-field.php:21
+#: lib/admin-tinymce-qtag.php:188 lib/admin-tinymce-qtag.php:515 lib/admin.php:177
+#: lib/custom-fields/memo-field.php:17 lib/custom-fields/memo-field.php:18
+#: lib/custom-fields/memo-field.php:21
 msgid "メモ"
 msgstr "Note"
 
@@ -887,9 +885,9 @@ msgstr "g:i a"
 #: lib/comments.php:104
 #, php-format
 msgid ""
-"<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-"
-"author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-"
-"author-separator\"> :</span>"
+"<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-author"
+"\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-"
+"separator\"> :</span>"
 msgstr ""
 "<span class=\"comment-author-label\">Name</span><cite class=\"fn comment-author"
 "\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-"
@@ -941,8 +939,8 @@ msgstr "The title of the category page"
 
 #: lib/content-category.php:175
 msgid ""
-"カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力"
-"したテキストが適用されます。"
+"カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力し"
+"たテキストが適用されます。"
 msgstr "Enter the title of the category page."
 
 #: lib/content-category.php:179
@@ -969,11 +967,11 @@ msgstr "Enter the description text for the category page."
 
 #: lib/content-category.php:203
 msgid ""
-"カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプショ"
-"ンタグとして利用されます。"
+"カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプション"
+"タグとして利用されます。"
 msgstr ""
-"Enter the description for the category page. The text entered here will be "
-"used as a meta description tag."
+"Enter the description for the category page. The text entered here will be used "
+"as a meta description tag."
 
 #: lib/content-category.php:207 lib/content-tag.php:161
 #: lib/custom-fields/seo-field.php:99 lib/page-settings/title-forms.php:77
@@ -992,10 +990,8 @@ msgid ""
 msgstr "Enter category page meta keywords separated by commas."
 
 #: lib/content-category.php:238
-#, fuzzy
-#| msgid "投稿タイトル上に表示されるウイジェット。設定しないと表示されません。"
 msgid "カテゴリーとしてウィジェットやラベル等で表示される名前です。"
-msgstr "Widget area to display on mobile. It is displayed under 768px."
+msgstr "It is the name displayed by the widget and the label as a category."
 
 #: lib/content-category.php:240
 #, fuzzy
@@ -1025,8 +1021,8 @@ msgstr "Tag Page title"
 #| "カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入"
 #| "力したテキストが適用されます。"
 msgid ""
-"タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテキ"
-"ストが適用されます。"
+"タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテキス"
+"トが適用されます。"
 msgstr "Enter the title of the category page."
 
 #: lib/content-tag.php:133
@@ -1034,14 +1030,10 @@ msgid "タグ本文"
 msgstr "Tag Body"
 
 #: lib/content-tag.php:138
-#, fuzzy
-#| msgid "カテゴリページで表示されるメインコンテンツを入力してください。"
 msgid "タグページで表示されるメインコンテンツを入力してください。"
-msgstr "Enter the main content will appear on the category page."
+msgstr "Enter the main content that appears on the tag page."
 
 #: lib/content-tag.php:155
-#, fuzzy
-#| msgid "カテゴリページの説明文を入力してください"
 msgid "タグページの説明文を入力してください"
 msgstr "Enter the description text for the category page."
 
@@ -1051,17 +1043,17 @@ msgstr "Enter the description text for the category page."
 #| "カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプ"
 #| "ションタグとして利用されます。"
 msgid ""
-"タグページの説明を入力します。ここに入力したテキストはメタディスクリプションタ"
-"グとして利用されます。"
+"タグページの説明を入力します。ここに入力したテキストはメタディスクリプションタグ"
+"として利用されます。"
 msgstr ""
-"Enter the description for the category page. The text entered here will be "
-"used as a meta description tag."
+"Enter the description for the category page. The text entered here will be used "
+"as a meta description tag."
 
 #: lib/content-tag.php:164
 #, fuzzy
 #| msgid ""
-#| "カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあま"
-#| "り意味のない設定となっています。"
+#| "カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり"
+#| "意味のない設定となっています。"
 msgid ""
 "タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味の"
 "ない設定となっています。"
@@ -1161,8 +1153,8 @@ msgstr "Page Type"
 
 #: lib/custom-fields/page-field.php:42
 msgid ""
-"このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）な"
-"どにどうぞ。"
+"このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）など"
+"にどうぞ。"
 msgstr "You can only display a main column or only a entry contentt."
 
 #: lib/custom-fields/page-field.php:45
@@ -1173,8 +1165,7 @@ msgstr "Hide table of contents"
 msgid "このページに目次を表示するかを切り替えます。"
 msgstr "Toggle whether to display the table of contents on this page."
 
-#: lib/custom-fields/redirect-field.php:18
-#: lib/custom-fields/redirect-field.php:19
+#: lib/custom-fields/redirect-field.php:18 lib/custom-fields/redirect-field.php:19
 #: lib/custom-fields/redirect-field.php:21
 msgid "リダイレクト"
 msgstr "Redirect"
@@ -1206,10 +1197,10 @@ msgstr "Enter SEO title here"
 
 #: lib/custom-fields/seo-field.php:86
 msgid ""
-"検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こち"
-"らに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的"
-"に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出"
-"し部分には「記事のタイトル」が利用されます）"
+"検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちら"
+"に入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的に"
+"日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し"
+"部分には「記事のタイトル」が利用されます）"
 msgstr ""
 "Enter the title you want to display on search engines.The title you enter here "
 "will be used for the title tag."
@@ -1221,14 +1212,13 @@ msgstr "Enter meta description here"
 #: lib/custom-fields/seo-field.php:96
 msgid ""
 "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめしま"
-"す。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリ"
-"プションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力"
-"しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されま"
-"す。"
+"す。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプ"
+"ションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しな"
+"い場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
 msgstr ""
-"Enter the description of the content, the Meta Description will also be used "
-"as a snippet for blog cards. If it is not filled in, \"Excerpt\" is used as "
-"the Meta Description."
+"Enter the description of the content, the Meta Description will also be used as "
+"a snippet for blog cards. If it is not filled in, \"Excerpt\" is used as the "
+"Meta Description."
 
 #: lib/custom-fields/seo-field.php:100
 msgid "記事の関連キーワードを半角カンマ区切りで入力してください。"
@@ -1247,8 +1237,7 @@ msgid "インデックスしない（noindex）"
 msgstr "Noindex"
 
 #: lib/custom-fields/seo-field.php:107
-msgid ""
-"このページが検索エンジンにインデックスされないようにメタタグを設定します。"
+msgid "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr "If noindex is enabled, it will not appear in search engines result."
 
 #: lib/custom-fields/seo-field.php:112
@@ -1269,8 +1258,8 @@ msgstr "SNS image"
 #: lib/custom-fields/sns-image-field.php:34
 #, fuzzy
 msgid ""
-"FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイ"
-"キャッチが利用されます。"
+"FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッ"
+"チが利用されます。"
 msgstr ""
 "Set up images to share on SNS, such as Facebook and Twitter. If it is not set, "
 "an eye catch is used."
@@ -1523,8 +1512,8 @@ msgstr "Administrative error Messages"
 
 #: lib/html-tooltips.php:76
 msgid ""
-"良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好み"
-"の色を見つけ出し、カラーコードをカラーピッカーにコピペすると設定できます。"
+"良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好みの"
+"色を見つけ出し、カラーコードをカラーピッカーにコピペすると設定できます。"
 msgstr ""
 "In choosing a good color for color sample site. You can find the color of "
 "choice from the site and to copy and paste the color in the color picker."
@@ -1558,8 +1547,8 @@ msgstr "Changed the settings."
 
 #: lib/page-access/_top-page.php:41
 msgid ""
-"テーマ内で独自にアクセス集計を行います。集計結果は、人気ウィジェットなどで使用"
-"されます。"
+"テーマ内で独自にアクセス集計を行います。集計結果は、人気ウィジェットなどで使用さ"
+"れます。"
 msgstr ""
 "Theme in your own access aggregation. Summary results will be used in such "
 "popular widget."
@@ -1583,8 +1572,8 @@ msgid ""
 "Wordpress Popular Postsプラグインを実装しているようなものなのでレンタルサーバー"
 "から負荷が高いといわれたら無効にしてください。"
 msgstr ""
-"\"Popular posts\" Widget, are now available in enable. Please disable high "
-"load from the rental server."
+"\"Popular posts\" Widget, are now available in enable. Please disable high load "
+"from the rental server."
 
 #: lib/page-access/access-forms.php:39
 msgid "キャッシュ"
@@ -1596,8 +1585,8 @@ msgstr "Access cache enable"
 
 #: lib/page-access/access-forms.php:44
 msgid ""
-"アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利用"
-"をおすすめします。"
+"アクセス統計情報の取得は多少なりともサーバーに負荷をかけるのでキャッシュの利用を"
+"おすすめします。"
 msgstr ""
 "Get access statistics puts a load on the server at least because we recommend "
 "use of the cache."
@@ -1682,43 +1671,41 @@ msgid "アフィリエイトタグ管理"
 msgstr "Affiliate tag management"
 
 #: lib/page-affiliate-tag/_top-page.php:41 lib/page-func-text/_top-page.php:41
-#: lib/page-item-ranking/_top-page.php:41
-#: lib/page-speech-balloon/_top-page.php:41
+#: lib/page-item-ranking/_top-page.php:41 lib/page-speech-balloon/_top-page.php:41
 msgid "一覧ページへ"
 msgstr "To the list page"
 
 #: lib/page-affiliate-tag/_top-page.php:42 lib/page-func-text/_top-page.php:42
-#: lib/page-item-ranking/_top-page.php:42
-#: lib/page-speech-balloon/_top-page.php:42
+#: lib/page-item-ranking/_top-page.php:42 lib/page-speech-balloon/_top-page.php:42
 msgid "新規追加"
 msgstr "Add New"
 
 #: lib/page-affiliate-tag/_top-page.php:45
 msgid ""
-"アフィリエイトタグの一括管理を行います。ショートコードで何度でも使い回すことが"
-"できます。"
+"アフィリエイトタグの一括管理を行います。ショートコードで何度でも使い回すことがで"
+"きます。"
 msgstr ""
-"Manages the bulk of the affiliate tag. Too many times in the short code you "
-"can consistently reuses."
+"Manages the bulk of the affiliate tag. Too many times in the short code you can "
+"consistently reuses."
 
 #: lib/page-affiliate-tag/affiliate-tag-func.php:38
 msgid "アフィリエイトタグサンプル"
 msgstr "Affiliate tag sample"
 
-#: lib/page-affiliate-tag/form-delete.php:26
-#: lib/page-func-text/form-delete.php:26 lib/page-item-ranking/form-delete.php:26
+#: lib/page-affiliate-tag/form-delete.php:26 lib/page-func-text/form-delete.php:26
+#: lib/page-item-ranking/form-delete.php:26
 #: lib/page-speech-balloon/form-delete.php:23
 msgid "以下の内容を削除しますか？"
 msgstr "Deletes the contents?"
 
-#: lib/page-affiliate-tag/form-delete.php:39
-#: lib/page-func-text/form-delete.php:39 lib/page-item-ranking/form-delete.php:33
+#: lib/page-affiliate-tag/form-delete.php:39 lib/page-func-text/form-delete.php:39
+#: lib/page-item-ranking/form-delete.php:33
 #: lib/page-speech-balloon/form-delete.php:30
 msgid "削除する"
 msgstr "Remove"
 
-#: lib/page-affiliate-tag/form-delete.php:40
-#: lib/page-func-text/form-delete.php:40 lib/page-item-ranking/form-delete.php:34
+#: lib/page-affiliate-tag/form-delete.php:40 lib/page-func-text/form-delete.php:40
+#: lib/page-item-ranking/form-delete.php:34
 #: lib/page-speech-balloon/form-delete.php:31
 msgid "削除しないで一覧に戻る"
 msgstr "Do not remove back to the list"
@@ -1890,9 +1877,8 @@ msgid "ASIN:%sの"
 msgstr "ASIN: %s"
 
 #: lib/page-cache/_top-page.php:30 lib/page-cache/_top-page.php:38
-#, fuzzy
 msgid "該当の商品リンクページをリロードしてご確認ください。"
-msgstr "If settings are not reflected, try reloading."
+msgstr "Please reload and confirm the relevant product link page."
 
 #: lib/page-cache/_top-page.php:37
 #, php-format
@@ -1900,9 +1886,8 @@ msgid "楽天商品番号:%sの"
 msgstr "Rakuten Item Number: %s"
 
 #: lib/page-cache/cache-forms.php:17
-#, fuzzy
 msgid "テーマで利用されている各種キャッシュを削除します。"
-msgstr "Select the link color to be used at the site."
+msgstr "Delete the various caches that are used in the theme."
 
 #: lib/page-cache/cache-forms.php:25
 msgid "すべて"
@@ -1913,9 +1898,8 @@ msgid "全てのキャッシュの削除"
 msgstr "Delete all caches"
 
 #: lib/page-cache/cache-forms.php:30
-#, fuzzy
 msgid "テーマで利用されているすべてのキャッシュを削除します。"
-msgstr "Select the link color to be used at the site."
+msgstr "Delete all the caches that are used in the theme."
 
 #: lib/page-cache/cache-forms.php:38
 msgid "SNSキャッシュ"
@@ -1926,10 +1910,8 @@ msgid "SNSキャッシュの削除"
 msgstr "Delete SNS Caches"
 
 #: lib/page-cache/cache-forms.php:43
-#, fuzzy
-#| msgid "サイト全体のフォントサイズを変更します。"
 msgid "SNSカウントのキャッシュを削除します。"
-msgstr "Change the font size of the entire site."
+msgstr "Delete the SNS count caches."
 
 #: lib/page-cache/cache-forms.php:51
 msgid "人気記事ウィジェット"
@@ -1954,9 +1936,8 @@ msgid "ブログカードキャッシュの削除"
 msgstr "Delete blogcard caches"
 
 #: lib/page-cache/cache-forms.php:69
-#, fuzzy
 msgid "外部ブログカードのOGP情報キャッシュを削除します。"
-msgstr "Open the new tab when you click blog card."
+msgstr "Delete the OGP information caches for the external blog card."
 
 #: lib/page-cache/cache-forms.php:77 lib/page-settings/_top-page.php:187
 msgid "AMP"
@@ -1967,10 +1948,8 @@ msgid "AMPキャッシュの削除"
 msgstr "Delete AMP caches"
 
 #: lib/page-cache/cache-forms.php:82
-#, fuzzy
-#| msgid "タイトルを入力してください。"
 msgid "AMPページの全キャッシュを削除します。"
-msgstr "Reduce the source code of the AMP page."
+msgstr "Delete all the caches for the AMP pages."
 
 #: lib/page-cache/cache-forms.php:90
 msgid "Amazon API"
@@ -1981,17 +1960,16 @@ msgid "Amazon APIキャッシュの削除"
 msgstr "Delete Amazon API caches"
 
 #: lib/page-cache/cache-forms.php:95
-#, fuzzy
 msgid ""
 "Amazonの商品情報全キャッシュを削除します。全てのキャッシュを削除すると、Amazon "
 "APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品"
-"リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいず"
-"れ正常表示されます。"
+"リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ"
+"正常表示されます。"
 msgstr ""
-"Remove Amazon's full product information cache. If you delete all caches, the "
-"Amazon API response may not be able to catch up. It is not recommended that "
-"the product link may not display properly until the cache is generated. "
-"However, it will appear normal any time."
+"Remove Amazon's full product information caches. If you delete all caches, the "
+"Amazon API response may not be able to catch up. It is not recommended that the "
+"product link may not display properly until the cache is generated. However, it "
+"will appear normal any time."
 
 #: lib/page-cache/cache-forms.php:103
 msgid "楽天 API"
@@ -2002,17 +1980,16 @@ msgid "楽天APIキャッシュの削除"
 msgstr "Delete Rakuten API caches"
 
 #: lib/page-cache/cache-forms.php:108
-#, fuzzy
 msgid ""
 "楽天商品情報の全キャッシュを削除します。全てのキャッシュを削除すると、楽天APIの"
-"レスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リン"
-"クが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正"
-"常表示されます。"
+"レスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンク"
+"が正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表"
+"示されます。"
 msgstr ""
-"We will delete the entire cache of Rakuten product information. If you delete "
-"all the caches, you may not be able to catch up with the Rakuten API response. "
-"It is not recommended that the product link may not display properly until the "
-"cache is generated. However, it will appear normal any time."
+"Delete the entire cache of Rakuten product information. If you delete all the "
+"caches, you may not be able to catch up with the Rakuten API response. It is "
+"not recommended that the product link may not display properly until the cache "
+"is generated. However, it will appear normal any time."
 
 #: lib/page-func-text/_top-page.php:37
 msgid "テキストテンプレート"
@@ -2020,8 +1997,8 @@ msgstr "Text templates"
 
 #: lib/page-func-text/_top-page.php:45
 msgid ""
-"頻繁に利用する文章のテンプレートを登録する機能です。ショートコードで何度でも使"
-"い回すことができます。"
+"頻繁に利用する文章のテンプレートを登録する機能です。ショートコードで何度でも使い"
+"回すことができます。"
 msgstr ""
 "To create templates of frequently used sentences. Too many times in the short "
 "code you can consistently reuses."
@@ -2036,13 +2013,12 @@ msgstr "WordPress customization notes statement sample"
 
 #: lib/page-func-text/func-text-func.php:40
 msgid ""
-"Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存し"
-"てください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復"
-"元してください。 "
+"Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存して"
+"ください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元し"
+"てください。 "
 msgstr ""
-"Before editing Wordpress functions.php, be sure to take a backup before "
-"editing and save. If you see an error after editing please restore the backup "
-"file."
+"Before editing Wordpress functions.php, be sure to take a backup before editing "
+"and save. If you see an error after editing please restore the backup file."
 
 #: lib/page-func-text/posts-delete.php:18
 msgid "テキストが削除されました。"
@@ -2071,8 +2047,7 @@ msgstr "You will see the text you entered here."
 
 #: lib/page-item-ranking/form.php:10
 msgid ""
-"ランキングを作成します。次のランキングを入力するには保存ボタンを押してくださ"
-"い。"
+"ランキングを作成します。次のランキングを入力するには保存ボタンを押してください。"
 msgstr "Create a ranking. Please press the save button to enter a next ranking."
 
 #: lib/page-item-ranking/form.php:27 lib/page-settings/404-forms.php:19
@@ -2182,8 +2157,7 @@ msgstr "Images and Bana tag"
 
 #: lib/page-item-ranking/form.php:148
 msgid ""
-"商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能で"
-"す。"
+"商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能です。"
 msgstr "Enter a tag product images or banners. Short code is also valid."
 
 #: lib/page-item-ranking/form.php:149
@@ -2241,8 +2215,8 @@ msgid ""
 "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショート"
 "コードも入力できます。"
 msgstr ""
-"When entering an affiliate tag directly. Tag change is invalid for ASP "
-"setting. Short code is also valid."
+"When entering an affiliate tag directly. Tag change is invalid for ASP setting. "
+"Short code is also valid."
 
 #: lib/page-item-ranking/form.php:208
 msgid "アイテムを上に移動"
@@ -2261,8 +2235,8 @@ msgstr "Official Page"
 
 #: lib/page-item-ranking/list.php:21 lib/page-speech-balloon/list.php:38
 msgid ""
-"設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボ"
-"タンから追加できます。"
+"設定を変更したり不要なものは削除してご利用ください。新しいものは「新規作成」ボタ"
+"ンから追加できます。"
 msgstr ""
 "Please change settings and delete unnecessary items. You can add new ones from "
 "the \"Create New\" button."
@@ -2419,11 +2393,11 @@ msgstr "Contents"
 
 #: lib/page-settings/_top-page.php:174
 msgid "SNSシェア"
-msgstr "SNS Share Buttons"
+msgstr "SNS Share"
 
 #: lib/page-settings/_top-page.php:175
 msgid "SNSフォロー"
-msgstr "SNS Follow Buttons"
+msgstr "SNS Follow"
 
 #: lib/page-settings/_top-page.php:176
 msgid "画像"
@@ -2648,17 +2622,15 @@ msgstr "Plugins in use:"
 #: lib/page-settings/about-forms.php:137
 #, fuzzy
 msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
-msgstr ""
-"Problem I would have with the following information during the reporting."
+msgstr "Problem I would have with the following information during the reporting."
 
 #: lib/page-settings/admin-forms.php:13
 msgid "管理画面設定"
 msgstr "Control display settings"
 
 #: lib/page-settings/admin-forms.php:16
-#, fuzzy
 msgid "管理画面の機能設定です。"
-msgstr "It is a function setting of the management screen."
+msgstr "This is the function setting of the management screen."
 
 #: lib/page-settings/admin-forms.php:24
 msgid "管理者メニュー"
@@ -2821,10 +2793,8 @@ msgid "編集エリアを表示する"
 msgstr "Display edit area"
 
 #: lib/page-settings/admin-forms.php:185
-#, fuzzy
-#| msgid "管理者のコメントを表示しない"
 msgid "管理者パネル内の編集エリアを表示します。"
-msgstr "Displays the edit area in the Admin Panel."
+msgstr "Displays the editing area in the administrator panel."
 
 #: lib/page-settings/admin-forms.php:189
 msgid "投稿編集リンクの表示"
@@ -2834,8 +2804,7 @@ msgstr "Display edit link"
 #, fuzzy
 msgid "Wordpress管理画面で投稿内容を編集するためのリンクです。"
 msgstr ""
-"Is the link for editing the post content in the WordPress Administration "
-"screen."
+"Is the link for editing the post content in the WordPress Administration screen."
 
 #: lib/page-settings/admin-forms.php:192
 msgid "WLW編集リンクの表示"
@@ -2891,12 +2860,12 @@ msgstr "Display AMPBench"
 #: lib/page-settings/admin-forms.php:218
 #, fuzzy
 msgid ""
-"<a href=\"https://ampbench.appspot.com/\" target=\"_blank\">AMPBench</a>で"
-"チェックするためのリンクの表示。"
+"<a href=\"https://ampbench.appspot.com/\" target=\"_blank\">AMPBench</a>でチェッ"
+"クするためのリンクの表示。"
 msgstr ""
-"<a href=\"https://ampbench.appspot.com/\" target=\"_blank\">Display</a> of "
-"link to check with <a href=\"https://ampbench.appspot.com/\" target=\"_blank"
-"\">AMP Bench</a> ."
+"<a href=\"https://ampbench.appspot.com/\" target=\"_blank\">Display</a> of link "
+"to check with <a href=\"https://ampbench.appspot.com/\" target=\"_blank\">AMP "
+"Bench</a> ."
 
 #: lib/page-settings/admin-forms.php:227
 msgid "チェックツールエリアの表示"
@@ -2910,8 +2879,8 @@ msgstr "Display the check tools area"
 #, fuzzy
 msgid ""
 "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed "
-"Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの"
-"反応など。"
+"Insights、構造化データチェック、HTML5チェック、アウトラインチェック、Twitterの反"
+"応など。"
 msgstr ""
 "Displays an area displaying the check tool for diagnosing the page. PageSpeed ​​"
 "Insights, structured data check, HTML5 check, outline check, Twitter's "
@@ -2925,8 +2894,8 @@ msgstr "Display PageSpeed Insights"
 #, fuzzy
 msgid ""
 "<a href=\"https://developers.google.com/speed/pagespeed/insights/?"
-"filter_third_party_resources=true\" target=\"_blank\">PageSpeed Insights</a>リ"
-"ンクの表示。"
+"filter_third_party_resources=true\" target=\"_blank\">PageSpeed Insights</a>リン"
+"クの表示。"
 msgstr ""
 "Display of <a href=\"https://developers.google.com/speed/pagespeed/insights/?"
 "filter_third_party_resources=true\" target=\"_blank\">PageSpeed ​​Insights</a> "
@@ -2977,8 +2946,8 @@ msgstr "Display HTML5 check"
 #: lib/page-settings/admin-forms.php:249
 #, fuzzy
 msgid ""
-"<a href=\"https://validator.w3.org/nu/\" target=\"_blank\">Nu Html Checker</a>"
-"リンクの表示。"
+"<a href=\"https://validator.w3.org/nu/\" target=\"_blank\">Nu Html Checker</a>リ"
+"ンクの表示。"
 msgstr ""
 "Display of <a href=\"https://validator.w3.org/nu/\" target=\"_blank\">Nu Html "
 "Checker</a> link."
@@ -3071,8 +3040,7 @@ msgstr ""
 
 #: lib/page-settings/ads-forms.php:14
 #, fuzzy
-msgid ""
-"広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。"
+msgid "広告全般に関する設定です。アドセンス設定や、ウィジェットの設定も含みます。"
 msgstr ""
 "Are specific to advertising in General. Contains the AdSense settings, widget "
 "settings."
@@ -3114,11 +3082,9 @@ msgstr "AdSense settings"
 #: lib/page-settings/ads-forms.php:56
 #, fuzzy
 msgid ""
-"アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっていま"
-"す。"
+"アドセンス広告に関する設定です。一応通常広告でも利用できるようにはなっています。"
 msgstr ""
-"It is set on the AdSense ads. Although usually available advertising has "
-"become."
+"It is set on the AdSense ads. Although usually available advertising has become."
 
 #: lib/page-settings/ads-forms.php:65
 msgid "アドセンス広告の表示"
@@ -3144,8 +3110,8 @@ msgstr "Enter your AdSense responsive code"
 #: lib/page-settings/ads-forms.php:84
 #, fuzzy
 msgid ""
-"アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォー"
-"ルにより、保存時に403エラーが出る場合はscriptタグを取り除いて入力してみてくださ"
+"アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォール"
+"により、保存時に403エラーが出る場合はscriptタグを取り除いて入力してみてくださ"
 "い。"
 msgstr ""
 "Please enter a responsive AdSense ad code. If you get 403 errors when you save "
@@ -3158,12 +3124,12 @@ msgstr "Enter your AdSense link unit responsive code"
 #: lib/page-settings/ads-forms.php:90
 #, fuzzy
 msgid ""
-"リンクユニットのレスポンシブ広告コードを入力してください。ここに広告コードを入"
-"力することでAMPページでもリンクユニットが表示されます。入力しない場合はAMPペー"
-"ジで「レクタングル（中）」サイズの広告が表示されます。"
+"リンクユニットのレスポンシブ広告コードを入力してください。ここに広告コードを入力"
+"することでAMPページでもリンクユニットが表示されます。入力しない場合はAMPページで"
+"「レクタングル（中）」サイズの広告が表示されます。"
 msgstr ""
-"Please enter a responsive link unit ad code. Displays the link unit AMP page "
-"by entering the ad code here. If you do not enter AMP page display ad size is "
+"Please enter a responsive link unit ad code. Displays the link unit AMP page by "
+"entering the ad code here. If you do not enter AMP page display ad size is "
 "\"medium rectangle\"."
 
 #: lib/page-settings/ads-forms.php:92
@@ -3190,12 +3156,12 @@ msgstr "Manual ad setting only"
 #, fuzzy
 msgid ""
 "「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はでき"
-"ません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショートコー"
-"ド」で設定した広告の表示は無効になります。"
+"ません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショートコード」"
+"で設定した広告の表示は無効になります。"
 msgstr ""
 "See AdSense ads automatically only in the form if you have to rely entirely on "
-"AdSense ads. Display Auto ads only when the [ad] short code and display its "
-"ads ads will be disabled."
+"AdSense ads. Display Auto ads only when the [ad] short code and display its ads "
+"ads will be disabled."
 
 #: lib/page-settings/ads-forms.php:127
 msgid "広告の表示位置"
@@ -3273,8 +3239,8 @@ msgstr "Set the location to display ads on each page."
 #: lib/page-settings/ads-forms.php:237 lib/page-settings/ads-forms.php:255
 #, fuzzy
 msgid ""
-"設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに動"
-"作確認をしてください。"
+"設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに動作"
+"確認をしてください。"
 msgstr ""
 "Depending on the setting, it may be a violation of adsense policy, so please "
 "carefully check the operation after setting."
@@ -3290,8 +3256,8 @@ msgstr "[ad] Enable short code"
 #: lib/page-settings/ads-forms.php:253
 #, fuzzy
 msgid ""
-"本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示し"
-"ます。"
+"本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示しま"
+"す。"
 msgstr ""
 "If you enter [ad] in the text, you will see ads that are set to \"ad code\" in "
 "that part."
@@ -3487,15 +3453,15 @@ msgstr "Font weight:"
 #, fuzzy
 #| msgid ""
 #| "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
-#| "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもあり"
-#| "ますので実際の太さを確認しながら設定してください"
+#| "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありま"
+#| "すので実際の太さを確認しながら設定してください"
 msgid ""
 "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～"
 "900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもあります"
 "ので実際の太さを確認しながら設定してください。"
 msgstr ""
-"font-weight specifies the font weight. Font weight ' 100 (thin)-900 (thick) "
-"\", can be specified. However, since there are no font thickness over while "
+"font-weight specifies the font weight. Font weight ' 100 (thin)-900 (thick) \", "
+"can be specified. However, since there are no font thickness over while "
 "checking the thickness of a actual set"
 
 #: lib/page-settings/all-forms.php:132
@@ -3514,8 +3480,8 @@ msgstr "Site background image"
 #: lib/page-settings/all-forms.php:151
 #, fuzzy
 msgid ""
-"サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を無"
-"効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
+"サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を無効"
+"にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
 msgstr ""
 "Select the background image of the whole site. To set the background image in "
 "more detail, disable this setting and go from the \"Background image\" setting "
@@ -3619,9 +3585,9 @@ msgstr "Favicon"
 #: lib/page-settings/all-forms.php:258
 #, fuzzy
 msgid ""
-"ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト"
-"基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は"
-"512×512 pxのPNG画像を推奨します。"
+"ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基"
+"本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 px"
+"のPNG画像を推奨します。"
 msgstr ""
 "Favicon (site icon) settings are from site settings from the management screen "
 "\"appearance → Customize site information\" is."
@@ -3633,8 +3599,8 @@ msgstr "Site Icon"
 #: lib/page-settings/all-forms.php:272
 #, fuzzy
 msgid ""
-"サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコ"
-"ンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
+"サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイコン"
+"は正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
 msgstr ""
 "Site icons are used as site apps and browser icon. You must be at least 512 "
 "pixels with width and height icon is a square."
@@ -3670,8 +3636,8 @@ msgstr ""
 
 #: lib/page-settings/all-forms.php:301
 msgid ""
-"<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書式の"
-"解説</a>"
+"<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書式の解"
+"説</a>"
 msgstr ""
 "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">Explanation of the "
 "format of the date and time</a>"
@@ -3713,9 +3679,9 @@ msgstr "AMP Logo"
 #: lib/page-settings/amp-forms.php:41
 #, fuzzy
 msgid ""
-"Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、"
-"高さ60px以下にしてください。構造化データのArticle > publisher > logoでも利用さ"
-"れます。"
+"Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、高"
+"さ60px以下にしてください。構造化データのArticle > publisher > logoでも利用されま"
+"す。"
 msgstr ""
 "Set the logo image for AMP displayed in Google search results. The size of the "
 "logo should be less than 600px width and 60px height. It is also used for "
@@ -3749,14 +3715,13 @@ msgstr "Remove inline styles"
 #: lib/page-settings/amp-forms.php:72
 #, fuzzy
 msgid ""
-"本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内でも"
-"インラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になった"
-"り、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。"
+"本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内でもイ"
+"ンラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、"
+"AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。"
 msgstr ""
 "Remove the inline style in the text (recommended). If disabled, the inline "
 "style attribute can also be styled in the body. However, disabling is not "
-"recommended because it can cause AMP errors or exceed the amp size limit "
-"(50kb)."
+"recommended because it can cause AMP errors or exceed the amp size limit (50kb)."
 
 #: lib/page-settings/amp-forms.php:80
 msgid "インラインスタイル"
@@ -3769,9 +3734,9 @@ msgstr "Enable inline styles"
 #: lib/page-settings/amp-forms.php:85
 #, fuzzy
 msgid ""
-"本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でも"
-"インラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になった"
-"り、AMPのサイズ制限（50KB）を超えやすくなるため有効は推奨はしません。"
+"本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもイ"
+"ンラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、"
+"AMPのサイズ制限（50KB）を超えやすくなるため有効は推奨はしません。"
 msgstr ""
 "Enable inline styles in the body (disabled recommended). When enabled, the "
 "inline style attribute can also be styled in the body. However, it is not "
@@ -3789,9 +3754,9 @@ msgstr "Enable Skin Styles"
 #: lib/page-settings/amp-forms.php:98
 #, fuzzy
 msgid ""
-"凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50KB）を超えてしま"
-"う可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMP"
-"ページでスキンを適用しないことにより、CSSのサイズを減らします。"
+"凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50KB）を超えてしまう"
+"可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPペー"
+"ジでスキンを適用しないことにより、CSSのサイズを減らします。"
 msgstr ""
 "If you are using a fancy-style skin, you may exceed the amp's CSS size limit "
 "(50KB). If you've applied a skin, and you get an amp error, reduce the size of "
@@ -3805,9 +3770,9 @@ msgstr "Enable Child theme Styles"
 #, fuzzy
 msgid ""
 "子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（50KB）"
-"を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続"
-"出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減"
-"らします。"
+"を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出"
+"した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減ら"
+"します。"
 msgstr ""
 "If you customize the style.css of a child theme, it may exceed the amp's CSS "
 "size limit (50KB). CSS customization of child themes reduces the size of the "
@@ -3864,8 +3829,8 @@ msgstr "Analyze access including site administrator"
 #: lib/page-settings/analytics-forms.php:29
 #, fuzzy
 msgid ""
-"サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。サイト管理者"
-"を解析したくない場合は無効にしてください。"
+"サイト管理者に対してアクセス解析タグを出力するかどうかの設定です。サイト管理者を"
+"解析したくない場合は無効にしてください。"
 msgstr ""
 "It is a setting whether or not to output the access analysis tag to the site "
 "administrator. If you do not want to analyze the site administrator, please "
@@ -3892,11 +3857,11 @@ msgstr "GTM-XXXXXXX"
 #: lib/page-settings/analytics-forms.php:59
 #, fuzzy
 msgid ""
-"GoogleタグマネージャのトラッキングIDを入力してください。Google Analyticsトラッ"
-"キングIDが入っていてもこちらが優先して計測されます。"
+"GoogleタグマネージャのトラッキングIDを入力してください。Google Analyticsトラッキ"
+"ングIDが入っていてもこちらが優先して計測されます。"
 msgstr ""
-"Please enter the tracking ID of Google Tag Manager for AMP. Please create a "
-"new AMP container and set the ID."
+"Please enter the tracking ID of Google Tag Manager for AMP. Please create a new "
+"AMP container and set the ID."
 
 #: lib/page-settings/analytics-forms.php:67
 msgid "AMP用 タグマネージャID"
@@ -3905,11 +3870,11 @@ msgstr "AMP Tag Manager ID"
 #: lib/page-settings/analytics-forms.php:72
 #, fuzzy
 msgid ""
-"AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用のコ"
-"ンテナを作成しIDを設定してください。"
+"AMP用のGoogleタグマネージャのトラッキングIDを入力してください。新たにAMP用のコン"
+"テナを作成しIDを設定してください。"
 msgstr ""
-"Please enter the tracking ID of Google Tag Manager for AMP. Please create a "
-"new AMP container and set the ID."
+"Please enter the tracking ID of Google Tag Manager for AMP. Please create a new "
+"AMP container and set the ID."
 
 #: lib/page-settings/analytics-forms.php:85
 msgid "Google Analytics設定"
@@ -3932,9 +3897,9 @@ msgstr "UA-00000000-0"
 #: lib/page-settings/analytics-forms.php:101
 #, fuzzy
 msgid ""
-"Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキン"
-"グIDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキ"
-"ングIDとしても利用します"
+"Google AnalyticsのトラッキングIDを入力してください。タグマネージャのトラッキング"
+"IDが入っている場合はタグマネージャが優先されます。SmartNewsフィードのトラッキン"
+"グIDとしても利用します"
 msgstr ""
 "Enter your Google Analytics tracking ID. Tag Manager takes precedence when Tag "
 "manager's tracking ID is included. It's also used as a tracking ID for "
@@ -3992,8 +3957,8 @@ msgstr "Other access analysis and authentication code settings"
 #: lib/page-settings/analytics-forms.php:180
 #, fuzzy
 msgid ""
-"ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま貼"
-"り付けます。"
+"ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま貼り"
+"付けます。"
 msgstr "In the header or footer and other service access analysis as tag."
 
 #: lib/page-settings/analytics-forms.php:188
@@ -4010,8 +3975,8 @@ msgstr "Enter access analysis tag for head"
 #, fuzzy
 msgid ""
 "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解"
-"析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査"
-"を受けるのが最も楽かと思います。"
+"析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を"
+"受けるのが最も楽かと思います。"
 msgstr ""
 "Other that must be inserted in the head tag (< head >< /head >), enter your "
 "access analysis tag."
@@ -4027,8 +3992,8 @@ msgstr "Tag input for header"
 #: lib/page-settings/analytics-forms.php:206
 #, fuzzy
 msgid ""
-"ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タグ"
-"を入力してください。"
+"ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タグを"
+"入力してください。"
 msgstr ""
 "Need to insert in the header (immediately after the < body >), any other enter "
 "your access analysis tag."
@@ -4115,8 +4080,8 @@ msgstr "Display Catalog Photos"
 #: lib/page-settings/apis-forms.php:59
 #, fuzzy
 msgid ""
-"サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボ"
-"タン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。"
+"サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタ"
+"ン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。"
 msgstr ""
 "The \"Catalog photo (sample image)\" associated with the product is displayed "
 "separately from the thumbnail in the form of a button. Hover your mouse over "
@@ -4287,8 +4252,7 @@ msgstr "ValueCommerce PID"
 
 #: lib/page-settings/apis-forms.php:162
 #, fuzzy
-msgid ""
-"バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。"
+msgid "バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。"
 msgstr "Register for Yahoo! Shopping from value Commerce and get Sid and PID."
 
 #: lib/page-settings/apis-forms.php:167
@@ -4320,21 +4284,20 @@ msgid ""
 "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23"
 "日の<a href=\"https://affiliate.amazon.co.jp/help/topic/t52/"
 "ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-"
-"b2c640121b1f\" target=\"_blank\">PA-APIの仕様変更</a>により、APIが生成するリン"
-"クから売上が発生しないとAPIが利用できなくなりました。ですので、<span class="
-"\"red\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があ"
-"ります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおす"
-"すめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用くださ"
-"い。"
+"b2c640121b1f\" target=\"_blank\">PA-APIの仕様変更</a>により、APIが生成するリンク"
+"から売上が発生しないとAPIが利用できなくなりました。ですので、<span class=\"red"
+"\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります"
+"</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめしま"
+"す。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。"
 msgstr ""
 "If you don't pass the Amazon Associate review, we'll post an Amazon link via "
 "affiliate. On January 23, 2019, the API is no longer available if no sales "
 "occur from the link that the API generates by using the < a href = \"https://"
 "affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?"
 "pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" target = \"_blank\" > PA-API "
-"specification Change </a>. So if < a0/&gt; If via affiliate, the API may not "
-"be available in 30 days </span>. If you cannot clear the PA-API limit, please "
-"use the Rakuten product link."
+"specification Change </a>. So if < a0/&gt; If via affiliate, the API may not be "
+"available in 30 days </span>. If you cannot clear the PA-API limit, please use "
+"the Rakuten product link."
 
 #: lib/page-settings/apis-forms.php:190
 msgid "Amazon a_id"
@@ -4526,8 +4489,8 @@ msgstr "Appeal area fixing the background image"
 #: lib/page-settings/appeal-forms.php:77
 #, fuzzy
 msgid ""
-"アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画"
-"像が移動しなくなります。"
+"アピールエリアに設定した背景画像を固定します。上下にスクロールしたときに背景画像"
+"が移動しなくなります。"
 msgstr ""
 "Fix the background image set in the appealing area. The background image does "
 "not move when scrolling up and down."
@@ -4539,8 +4502,8 @@ msgstr "Area background Color"
 #: lib/page-settings/appeal-forms.php:90
 #, fuzzy
 msgid ""
-"アピールエリアの背景色を設定してください。背景画像を設定すると隠れるエリアとな"
-"ります。ただ、画像読み込み中に表示される部分でもあります。"
+"アピールエリアの背景色を設定してください。背景画像を設定すると隠れるエリアとなり"
+"ます。ただ、画像読み込み中に表示される部分でもあります。"
 msgstr ""
 "Sets the background color of the appeals area. Cover and set the background "
 "image area. However, while loading the image that is visible also."
@@ -4631,8 +4594,8 @@ msgstr "Button color"
 #: lib/page-settings/appeal-forms.php:173
 #, fuzzy
 msgid ""
-"ボタン全体の色を選択してください。文字は白色となるので濃いめの色を設定すること"
-"をおすすめします。"
+"ボタン全体の色を選択してください。文字は白色となるので濃いめの色を設定することを"
+"おすすめします。"
 msgstr ""
 "Please select the color of the entire button. Character is white and so dark "
 "because of it is recommended to set the color."
@@ -4669,8 +4632,8 @@ msgstr "Internal blog card settings"
 #: lib/page-settings/blogcard-in-forms.php:16
 #, fuzzy
 msgid ""
-"URLやURLリンクをブログカード形式で表示するための設定です。内部ブログカードは、"
-"投稿・固定ページを表示するためのものです。"
+"URLやURLリンクをブログカード形式で表示するための設定です。内部ブログカードは、投"
+"稿・固定ページを表示するためのものです。"
 msgstr ""
 "This is a setting for displaying URLs and URL links in blog card format. "
 "Internal blog cards are for displaying posted / fixed pages."
@@ -4723,8 +4686,8 @@ msgstr "Update date"
 #: lib/page-settings/blogcard-in-forms.php:91
 #, fuzzy
 msgid ""
-"ブログカードに表示する日付を設定します。更新日設定時、更新日がない場合は投稿日"
-"が表示されます。"
+"ブログカードに表示する日付を設定します。更新日設定時、更新日がない場合は投稿日が"
+"表示されます。"
 msgstr ""
 "Set the date to be displayed in the blog card. Update settings on the renewal "
 "date is not displayed by day."
@@ -4780,8 +4743,7 @@ msgstr ""
 #: lib/page-settings/blogcard-out-forms.php:99
 #, fuzzy
 msgid ""
-"ブログカードキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べま"
-"す。"
+"ブログカードキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。"
 msgstr ""
 "Sets the refresh interval of the blog card cache. You can choose the interval "
 "from 1 to 365 days."
@@ -4797,8 +4759,8 @@ msgstr "Enable cache refresh Mode"
 #: lib/page-settings/blogcard-out-forms.php:112
 #, fuzzy
 msgid ""
-"キャッシュ更新モードを有効にした状態でページを開くと、ページ上の外部ブログカー"
-"ドキャッシュを新たに取得します。"
+"キャッシュ更新モードを有効にした状態でページを開くと、ページ上の外部ブログカード"
+"キャッシュを新たに取得します。"
 msgstr ""
 "If you open the page with the cache update mode enabled, you will get a new "
 "external blog card cache on the page."
@@ -4901,8 +4863,8 @@ msgstr "Button image"
 #: lib/page-settings/buttons-forms.php:100
 #, fuzzy
 msgid ""
-"トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。こちらに"
-"画像を設定するとアイコンフォントボタンは表示されません。最大横幅は120pxになりま"
+"トップへ戻るボタンのアイコンフォント代わりに表示する画像を選択します。こちらに画"
+"像を設定するとアイコンフォントボタンは表示されません。最大横幅は120pxになりま"
 "す。"
 msgstr ""
 "Back to Top Button Icon Select the image to display instead of font. Icon font "
@@ -4938,8 +4900,7 @@ msgstr "Categories"
 
 #: lib/page-settings/carousel-forms.php:60
 #, fuzzy
-msgid ""
-"カルーセルと関連付けるカテゴリを選択してください。ランダムで表示されます。"
+msgid "カルーセルと関連付けるカテゴリを選択してください。ランダムで表示されます。"
 msgstr ""
 "Please select the category associated with the carousel. Random, is displayed."
 
@@ -5017,11 +4978,11 @@ msgstr "Second(s)"
 #: lib/page-settings/carousel-forms.php:136
 #, fuzzy
 msgid ""
-"カルーセルの自動送り間隔です。オートプレイが有効な時のみ設定した秒数ごとに入れ"
-"替わります。"
+"カルーセルの自動送り間隔です。オートプレイが有効な時のみ設定した秒数ごとに入れ替"
+"わります。"
 msgstr ""
-"Carousel feeding interval is. Replace every number of seconds you set only "
-"when AutoPlay is enabled."
+"Carousel feeding interval is. Replace every number of seconds you set only when "
+"AutoPlay is enabled."
 
 #: lib/page-settings/code-forms.php:13
 msgid "ソースコード設定"
@@ -5057,8 +5018,8 @@ msgstr "Highlight style"
 #: lib/page-settings/code-forms.php:67
 msgid ""
 "ソースコードのハイライトテーマです。スタイルについては、<a href=\"https://"
-"highlightjs.org/static/demo/\" target=\"_blank\">highlight.js demo</a>を参照し"
-"てください。"
+"highlightjs.org/static/demo/\" target=\"_blank\">highlight.js demo</a>を参照して"
+"ください。"
 msgstr ""
 "Highlight theme of source codes. For styling , see <a href=\"https://"
 "highlightjs.org/static/demo/\" target=\"_blank\">highlight.js demo</a> ."
@@ -5116,8 +5077,8 @@ msgstr "Content margin width"
 msgid ""
 "メインカラムコンテンツ両サイドの余白幅を設定します。（最小：10px、最大：80px）"
 msgstr ""
-"Set the margins on both sides of the main column content. (Minimum: 10 px, "
-"Max: 80 px)"
+"Set the margins on both sides of the main column content. (Minimum: 10 px, Max: "
+"80 px)"
 
 #: lib/page-settings/column-forms.php:63
 msgid "コンテンツ枠線幅"
@@ -5185,8 +5146,7 @@ msgstr "Sidebar border color"
 
 #: lib/page-settings/column-forms.php:151
 #, fuzzy
-msgid ""
-"サイドバーのボーダー色を設定します。未入力でデフォルトの透過色になります。"
+msgid "サイドバーのボーダー色を設定します。未入力でデフォルトの透過色になります。"
 msgstr ""
 "Sets the border color of the sidebar. It becomes the default transparent color "
 "when it is not entered."
@@ -5359,8 +5319,8 @@ msgstr ""
 #: lib/page-settings/content-forms.php:40
 #, fuzzy
 msgid ""
-"行間の余白の高さを設定します。1emは、フォントサイズ（font-size）と同等の高さに"
-"なります。フォントサイズが18pxの場合は余白も18pxになります。"
+"行間の余白の高さを設定します。1emは、フォントサイズ（font-size）と同等の高さにな"
+"ります。フォントサイズが18pxの場合は余白も18pxになります。"
 msgstr ""
 "Sets the height of the space between lines. 1em is the same height as the font "
 "size (font-size). If the font size is 18px, the margins are also 18px."
@@ -5381,8 +5341,7 @@ msgid "外部リンクの開き方"
 msgstr "How to open external link"
 
 #: lib/page-settings/content-forms.php:74 lib/page-settings/content-forms.php:92
-#: lib/page-settings/content-forms.php:197
-#: lib/page-settings/content-forms.php:215
+#: lib/page-settings/content-forms.php:197 lib/page-settings/content-forms.php:215
 msgid "変更しない"
 msgstr "Do Not Change"
 
@@ -5408,52 +5367,43 @@ msgstr "Follow"
 msgid "本文内の外部リンクのフォロー状態を設定します。"
 msgstr "Sets the follow state of the external link in the text."
 
-#: lib/page-settings/content-forms.php:105
-#: lib/page-settings/content-forms.php:228
+#: lib/page-settings/content-forms.php:105 lib/page-settings/content-forms.php:228
 msgid "追加rel属性"
 msgstr "Additional rel attribute"
 
-#: lib/page-settings/content-forms.php:109
-#: lib/page-settings/content-forms.php:232
+#: lib/page-settings/content-forms.php:109 lib/page-settings/content-forms.php:232
 msgid "noopenerを追加"
 msgstr "Add to noopener"
 
-#: lib/page-settings/content-forms.php:110
-#: lib/page-settings/content-forms.php:233
+#: lib/page-settings/content-forms.php:110 lib/page-settings/content-forms.php:233
 msgid "rel属性にnoopenerを追加します。"
 msgstr "Add noopener to rel attributes."
 
-#: lib/page-settings/content-forms.php:113
-#: lib/page-settings/content-forms.php:236
+#: lib/page-settings/content-forms.php:113 lib/page-settings/content-forms.php:236
 #, fuzzy
 msgid "target=\"_blank\"の際はnoopenerを追加"
 msgstr "Add Noopener for target = \"_blank\""
 
-#: lib/page-settings/content-forms.php:114
-#: lib/page-settings/content-forms.php:237
+#: lib/page-settings/content-forms.php:114 lib/page-settings/content-forms.php:237
 #, fuzzy
 #| msgid "rel属性にnoopenerを追加します。"
 msgid "新しいタブで開くリンクのrel属性にnoopenerを追加します。"
 msgstr "Add noopener to rel attributes."
 
-#: lib/page-settings/content-forms.php:118
-#: lib/page-settings/content-forms.php:241
+#: lib/page-settings/content-forms.php:118 lib/page-settings/content-forms.php:241
 msgid "noreferrerを追加"
 msgstr "Add to noopener"
 
-#: lib/page-settings/content-forms.php:119
-#: lib/page-settings/content-forms.php:242
+#: lib/page-settings/content-forms.php:119 lib/page-settings/content-forms.php:242
 msgid "rel属性にnoreferrerを追加します。"
 msgstr "Add noreferrer to rel attributes."
 
-#: lib/page-settings/content-forms.php:122
-#: lib/page-settings/content-forms.php:246
+#: lib/page-settings/content-forms.php:122 lib/page-settings/content-forms.php:246
 #, fuzzy
 msgid "target=\"_blank\"の際はnoreferrerを追加"
 msgstr "Add Noopener for target = \"_blank\""
 
-#: lib/page-settings/content-forms.php:123
-#: lib/page-settings/content-forms.php:247
+#: lib/page-settings/content-forms.php:123 lib/page-settings/content-forms.php:247
 #, fuzzy
 #| msgid "rel属性にnoopenerを追加します。"
 msgid "新しいタブで開くリンクのrel属性にnoreferrerを追加します。"
@@ -5467,13 +5417,11 @@ msgstr "Add to external"
 msgid "rel属性にexternalを追加します。"
 msgstr "Add a external to rel attributes."
 
-#: lib/page-settings/content-forms.php:136
-#: lib/page-settings/content-forms.php:256
+#: lib/page-settings/content-forms.php:136 lib/page-settings/content-forms.php:256
 msgid "アイコン表示"
 msgstr "Icon"
 
-#: lib/page-settings/content-forms.php:140
-#: lib/page-settings/content-forms.php:260
+#: lib/page-settings/content-forms.php:140 lib/page-settings/content-forms.php:260
 msgid "アイコンの表示"
 msgstr "Show icons"
 
@@ -5484,53 +5432,43 @@ msgstr ""
 "Do you want to display the Font Awesome icon in the right part of the external "
 "link?"
 
-#: lib/page-settings/content-forms.php:149
-#: lib/page-settings/content-forms.php:269
+#: lib/page-settings/content-forms.php:149 lib/page-settings/content-forms.php:269
 msgid "アイコン"
 msgstr "Icon"
 
-#: lib/page-settings/content-forms.php:154
-#: lib/page-settings/content-forms.php:274
+#: lib/page-settings/content-forms.php:154 lib/page-settings/content-forms.php:274
 msgid "&#xf08e"
 msgstr "&#xf08e"
 
-#: lib/page-settings/content-forms.php:155
-#: lib/page-settings/content-forms.php:275
+#: lib/page-settings/content-forms.php:155 lib/page-settings/content-forms.php:275
 msgid "&#xf0c1"
 msgstr "&#xf0c1"
 
-#: lib/page-settings/content-forms.php:156
-#: lib/page-settings/content-forms.php:276
+#: lib/page-settings/content-forms.php:156 lib/page-settings/content-forms.php:276
 msgid "&#xf148"
 msgstr "&#xf148"
 
-#: lib/page-settings/content-forms.php:157
-#: lib/page-settings/content-forms.php:277
+#: lib/page-settings/content-forms.php:157 lib/page-settings/content-forms.php:277
 msgid "&#xf064"
 msgstr "&#xf064"
 
-#: lib/page-settings/content-forms.php:158
-#: lib/page-settings/content-forms.php:278
+#: lib/page-settings/content-forms.php:158 lib/page-settings/content-forms.php:278
 msgid "&#xf045"
 msgstr "&#xf045"
 
-#: lib/page-settings/content-forms.php:159
-#: lib/page-settings/content-forms.php:279
+#: lib/page-settings/content-forms.php:159 lib/page-settings/content-forms.php:279
 msgid "&#xf14d"
 msgstr "&#xf14d"
 
-#: lib/page-settings/content-forms.php:160
-#: lib/page-settings/content-forms.php:280
+#: lib/page-settings/content-forms.php:160 lib/page-settings/content-forms.php:280
 msgid "&#xf08b"
 msgstr "&#xf08b"
 
-#: lib/page-settings/content-forms.php:161
-#: lib/page-settings/content-forms.php:282
+#: lib/page-settings/content-forms.php:161 lib/page-settings/content-forms.php:282
 msgid "&#xf072"
 msgstr "&#xf072"
 
-#: lib/page-settings/content-forms.php:162
-#: lib/page-settings/content-forms.php:283
+#: lib/page-settings/content-forms.php:162 lib/page-settings/content-forms.php:283
 msgid "&#xf135"
 msgstr "&#xf135"
 
@@ -5598,11 +5536,11 @@ msgstr "Horizontal table wide side scroll"
 #: lib/page-settings/content-forms.php:318
 #, fuzzy
 msgid ""
-"端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないよ"
-"うにします。"
+"端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないよう"
+"にします。"
 msgstr ""
-"When a table wider than the terminal width is displayed, scroll horizontally "
-"so that it does not collapse."
+"When a table wider than the terminal width is displayed, scroll horizontally so "
+"that it does not collapse."
 
 #: lib/page-settings/content-forms.php:333
 msgid "投稿情報表示設定"
@@ -5635,8 +5573,8 @@ msgstr "Show contributor names"
 #: lib/page-settings/content-forms.php:353
 #, fuzzy
 msgid ""
-"投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防ぐ"
-"ためCSSで非表示化されます。"
+"投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防ぐた"
+"めCSSで非表示化されます。"
 msgstr ""
 "Whether or not to display the related information in posts or static pages. "
 "Structured data errors to avoid in CSS hiding."
@@ -5714,8 +5652,8 @@ msgstr "Title characters counter display"
 #: lib/page-settings/editor-forms.php:72
 #, fuzzy
 msgid ""
-"タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロック"
-"エディターではタイトル文字数は表示されません。"
+"タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロックエ"
+"ディターではタイトル文字数は表示されません。"
 msgstr "Displays the title, SEO Title and meta characters."
 
 #: lib/page-settings/editor-forms.php:80
@@ -5836,8 +5774,8 @@ msgstr "Select the format of the header."
 #: lib/page-settings/header-forms.php:59
 #, fuzzy
 msgid ""
-"ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用さ"
-"れます。未入力でデフォルトになります。（最小：0px、最大：800px）"
+"ヘッダーの高さをpx数で指定します。モバイル環境ではモバイル用設定のものが利用され"
+"ます。未入力でデフォルトになります。（最小：0px、最大：800px）"
 msgstr ""
 "Specifies the header height in px. Mobile settings that will be used in mobile "
 "environments. In the default. (Minimum: 0 px, Max: 800 px)"
@@ -5853,8 +5791,8 @@ msgid ""
 "い端末用です。未入力でデフォルトになります。（最小：0px、最大：600px）"
 msgstr ""
 "Specifies the height of the header in the mobile, in px. is a narrow width of "
-"768px following Tablet less equipment. In the default. (Minimum: 0 px, Max: "
-"600 px)"
+"768px following Tablet less equipment. In the default. (Minimum: 0 px, Max: 600 "
+"px)"
 
 #: lib/page-settings/header-forms.php:79
 msgid "ヘッダーロゴ"
@@ -5862,8 +5800,7 @@ msgstr "Header logo"
 
 #: lib/page-settings/header-forms.php:84
 #, fuzzy
-msgid ""
-"ヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
+msgid "ヘッダー部分に表示する画像を設定します。jpg、jpeg、png形式の画像推奨です。"
 msgstr ""
 "Sets the image to display in the header section. It is a jpg, jpeg, and PNG "
 "images recommended."
@@ -5887,9 +5824,9 @@ msgstr "Height:"
 #: lib/page-settings/header-forms.php:102
 #, fuzzy
 msgid ""
-"ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄"
-"にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの"
-"変更までは行われません（AMP用の幅と高さ属性は出力されます）。"
+"ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄に"
+"してください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更"
+"までは行われません（AMP用の幅と高さ属性は出力されます）。"
 msgstr ""
 "Specifies the aspect the width of the logo. Such as the Retina for the logo. "
 "Sizing is not necessary to empty. \"Header layout\" is not \"Center logo\", "
@@ -5933,11 +5870,11 @@ msgstr "Fixing header background Images"
 #: lib/page-settings/header-forms.php:136
 #, fuzzy
 msgid ""
-"ヘッダーに設定した背景画像を背景に固定します。上下にスクロールしたときに背景画"
-"像が背景に対して移動しなくなります。"
+"ヘッダーに設定した背景画像を背景に固定します。上下にスクロールしたときに背景画像"
+"が背景に対して移動しなくなります。"
 msgstr ""
-"You set the header background image to be fixed. When you scroll up and down "
-"to the background image no longer move against the background."
+"You set the header background image to be fixed. When you scroll up and down to "
+"the background image no longer move against the background."
 
 #: lib/page-settings/header-forms.php:144
 msgid "ヘッダー全体色"
@@ -5998,8 +5935,8 @@ msgstr "Show Eye Catch label"
 msgid ""
 "投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
 msgstr ""
-"This is the toggle to display the category labels on the eye-catching posts "
-"and static pages."
+"This is the toggle to display the category labels on the eye-catching posts and "
+"static pages."
 
 #: lib/page-settings/image-forms.php:71
 msgid "アイキャッチの中央寄せ"
@@ -6044,11 +5981,11 @@ msgstr "Enable Featured Image automatic setting"
 #: lib/page-settings/image-forms.php:93
 #, fuzzy
 msgid ""
-"記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチ"
-"にします。※プレビューには反映されません。"
+"記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチに"
+"します。※プレビューには反映されません。"
 msgstr ""
-"No picture when you publish or save the article to come up first in the text. "
-"* Will not be reflected in the preview."
+"No picture when you publish or save the article to come up first in the text. * "
+"Will not be reflected in the preview."
 
 #: lib/page-settings/image-forms.php:101
 msgid "画像の囲み効果"
@@ -6128,8 +6065,7 @@ msgstr "About 5:7, 1:1.414... (Silver Ratio)"
 #: lib/page-settings/image-forms.php:173
 #, fuzzy
 msgid "アナログテレビやデジタルカメラ、PowerPointのスライドと同じ比率。"
-msgstr ""
-"Analog TV and digital cameras, the same proportions as PowerPoint slides."
+msgstr "Analog TV and digital cameras, the same proportions as PowerPoint slides."
 
 #: lib/page-settings/image-forms.php:174
 msgid "3:4, 1:1.333..（アナログテレビ・デジカメ比）"
@@ -6243,8 +6179,8 @@ msgstr "NO IMAGE image"
 #: lib/page-settings/image-forms.php:235
 #, fuzzy
 msgid ""
-"アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイルを"
-"指定してください。"
+"アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイルを指"
+"定してください。"
 msgstr ""
 "Please specify the image files used in the thumbnail does not exist no posts "
 "and static pages."
@@ -6308,8 +6244,8 @@ msgstr "Tile card 3 columns"
 #: lib/page-settings/index-forms.php:74
 #, fuzzy
 msgid ""
-"一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページ"
-"に表示する最大投稿数」から変更してください。"
+"一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ページに"
+"表示する最大投稿数」から変更してください。"
 msgstr ""
 "Change the cards on the list. Change from \"Settings-page 1 to the maximum "
 "number of posts to display\" to change the number of cards."
@@ -6347,14 +6283,14 @@ msgstr "Maximum auto generated excerpt characters"
 #: lib/page-settings/index-forms.php:108
 #, fuzzy
 msgid ""
-"「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文"
-"字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最"
-"大：500）"
+"「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字"
+"数を\n"
+"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大："
+"500）"
 msgstr ""
 "Sets the maximum number of characters to display the \"auto-generated from the "
-"text excerpt\", \"entry cards\". * Not a excerpt of the post edit screen. "
-"(Min: 0, Max: 500)"
+"text excerpt\", \"entry cards\". * Not a excerpt of the post edit screen. (Min: "
+"0, Max: 500)"
 
 #: lib/page-settings/index-forms.php:117
 msgid "省略文字列"
@@ -6367,8 +6303,8 @@ msgstr "..."
 #: lib/page-settings/index-forms.php:122
 #, fuzzy
 msgid ""
-"「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力し"
-"てください。"
+"「自動生成抜粋文字数」を自動抜粋文が超えたときに表示する省略を表す文字を入力して"
+"ください。"
 msgstr ""
 "Please enter the characters that represents the default view automatically "
 "generated excerpts from character number exceeded automatic excerpt."
@@ -6438,8 +6374,8 @@ msgstr "Display the sidebar content below the slide button at the"
 #: lib/page-settings/mobile-buttons-forms.php:43
 #, fuzzy
 msgid ""
-"「モバイルボタンレイアウト」で「スライドインボタン」が表示されているときメイン"
-"カラム下に表示されるサイドバーを表示するかどうか。"
+"「モバイルボタンレイアウト」で「スライドインボタン」が表示されているときメインカ"
+"ラム下に表示されるサイドバーを表示するかどうか。"
 msgstr ""
 "Whether to display the sidebar displayed under the main column when \"slide in "
 "button\" is displayed in \"mobile button layout\"."
@@ -6523,8 +6459,8 @@ msgstr "Show notification area"
 #: lib/page-settings/notice-forms.php:41
 #, fuzzy
 msgid ""
-"通知メッセージを入力して「通知表示」を有効にすればヘッダー下に通知メッセージが"
-"表示されます。"
+"通知メッセージを入力して「通知表示」を有効にすればヘッダー下に通知メッセージが表"
+"示されます。"
 msgstr ""
 "If you enter a notification message and activate \"notification display\", a "
 "notification message will be displayed under the header."
@@ -6593,8 +6529,8 @@ msgstr "Colors"
 #: lib/page-settings/notice-forms.php:111
 #, fuzzy
 msgid ""
-"メッセージに対して独自の背景色を設定したい場合は色を選択してください。デフォル"
-"ト色を変更したい場合は、こちらの色が優先されます。"
+"メッセージに対して独自の背景色を設定したい場合は色を選択してください。デフォルト"
+"色を変更したい場合は、こちらの色が優先されます。"
 msgstr ""
 "You can choose if you want to set the background color of your own message "
 "color. If you want to change the default color, this color takes precedence."
@@ -6605,8 +6541,8 @@ msgid ""
 "メッセージに対して独自の背テキスト色を設定したい場合は色を選択してください。デ"
 "フォルト色を変更したい場合は、こちらの色が優先されます。"
 msgstr ""
-"Please select a color if you want to set your own background text color for "
-"the message. If you want to change the default color, this color will take "
+"Please select a color if you want to set your own background text color for the "
+"message. If you want to change the default color, this color will take "
 "precedence."
 
 #: lib/page-settings/ogp-forms.php:13
@@ -6635,8 +6571,7 @@ msgstr "Insert OGP tag"
 #: lib/page-settings/ogp-forms.php:30
 #, fuzzy
 msgid ""
-"headタグ内にFacebookや外部サイトなどに、ページの概要情報伝えるタグを挿入しま"
-"す。"
+"headタグ内にFacebookや外部サイトなどに、ページの概要情報伝えるタグを挿入します。"
 msgstr ""
 "In the head tag, insert tags to convey page summary information to Facebook, "
 "external sites, etc."
@@ -6749,8 +6684,7 @@ msgstr "To enable authentication"
 
 #: lib/page-settings/others-forms.php:42
 #, fuzzy
-msgid ""
-"KUSANAGI等のファイルシステム認証が必要なサーバの場合に有効にしてください。"
+msgid "KUSANAGI等のファイルシステム認証が必要なサーバの場合に有効にしてください。"
 msgstr ""
 "Please enable this for servers that require file system authentication such as "
 "KUSANAGI."
@@ -6785,8 +6719,8 @@ msgstr "Make Japanese slang alphanumeric"
 #: lib/page-settings/others-forms.php:68
 #, fuzzy
 msgid ""
-"日本語スラッグを投稿の場合は「post-XXXX」、固定ページの場合は「page-XXXX」のよ"
-"うな短縮文字列に変更します。"
+"日本語スラッグを投稿の場合は「post-XXXX」、固定ページの場合は「page-XXXX」のよう"
+"な短縮文字列に変更します。"
 msgstr ""
 "Change it to an abbreviated character string such as \"post-XXXX\" for posting "
 "Japanese slag or \"page-XXXX\" for fixed page."
@@ -6817,8 +6751,7 @@ msgid "jQuery Core 1.12.4"
 msgstr "JQuery Core 1.12.4"
 
 #: lib/page-settings/others-forms.php:105
-msgid ""
-"jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。"
+msgid "jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。"
 msgstr ""
 "If you have a program that does not work with the jquery version difference, "
 "change it."
@@ -6904,8 +6837,8 @@ msgstr "Include the article title in breadcrumbs"
 #: lib/page-settings/page-forms.php:76
 #, fuzzy
 msgid ""
-"固定ページのパンくずリストに対して、表示されているページのタイトルを含めるか切"
-"り替えます。"
+"固定ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り"
+"替えます。"
 msgstr ""
 "Include the title of the page that is displayed for a fixed page breadcrumbs, "
 "or switch."
@@ -6917,9 +6850,9 @@ msgstr "PWA settings (Beta version)"
 #: lib/page-settings/pwa-forms.php:16
 #, fuzzy
 msgid ""
-"PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプ"
-"リのように使える仕組みです。現在β版機能となっています。不具合が起きても対処でき"
-"る方の利用をおすすめします。"
+"PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリ"
+"のように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる"
+"方の利用をおすすめします。"
 msgstr ""
 "PWA (Progressive Web Apps) is a mobile web site that can be used as a "
 "smartphone app. It is now a beta version function. We recommend the use of the "
@@ -6981,8 +6914,8 @@ msgstr "Short app Name"
 #: lib/page-settings/pwa-forms.php:63
 #, fuzzy
 msgid ""
-"アプリの短縮名を入力してください。ホーム画面に表示される短い名前で利用されま"
-"す。※最大12文字"
+"アプリの短縮名を入力してください。ホーム画面に表示される短い名前で利用されます。"
+"※最大12文字"
 msgstr ""
 "Please enter a short name for the app. It is used in the short name displayed "
 "on the home screen. * Up to 12 characters"
@@ -7017,8 +6950,8 @@ msgid ""
 "アプリの背景色です。サイトが表示されるまでの間、この色が適用される場合がありま"
 "す。"
 msgstr ""
-"The background color of the app. This color may be applied to the site until "
-"it is displayed."
+"The background color of the app. This color may be applied to the site until it "
+"is displayed."
 
 #: lib/page-settings/pwa-forms.php:103 lib/widgets/new-entries.php:119
 #: lib/widgets/popular-entries.php:156
@@ -7078,8 +7011,8 @@ msgstr "Reset theme settings"
 #: lib/page-settings/reset-forms.php:16
 #, fuzzy
 msgid ""
-"全テーマ設定の内容をリセットします。リセットを行う前にバックアップ機能を用いて"
-"設定の保存をしておくことをおすすめします。そうすれば、リストアも可能です。"
+"全テーマ設定の内容をリセットします。リセットを行う前にバックアップ機能を用いて設"
+"定の保存をしておくことをおすすめします。そうすれば、リストアも可能です。"
 msgstr ""
 "Reset the contents of all theme settings. It is recommended that you save the "
 "settings using the backup function before resetting. Then you can restore it."
@@ -7102,8 +7035,7 @@ msgstr "Confirm the reset action"
 
 #: lib/page-settings/reset-forms.php:33
 #, fuzzy
-msgid ""
-"誤って設定を削除するのを防ぐために確認のためもう一度チェックしてください。"
+msgid "誤って設定を削除するのを防ぐために確認のためもう一度チェックしてください。"
 msgstr ""
 "Please check it again for confirmation to prevent erroneously deleting the "
 "setting."
@@ -7126,8 +7058,7 @@ msgstr "Add a canonical tag"
 
 #: lib/page-settings/seo-forms.php:31
 #, fuzzy
-msgid ""
-"Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
+msgid "Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
 msgstr ""
 "Wordpress By default, the canonical tag is inserted on posting / fixed page."
 
@@ -7137,8 +7068,7 @@ msgid ""
 "この機能を有効にするとトップページやカテゴリページ等にもcanonicalタグが挿入され"
 "ます。"
 msgstr ""
-"To enable this feature insert a canonical tag home page and category pages, "
-"etc."
+"To enable this feature insert a canonical tag home page and category pages, etc."
 
 #: lib/page-settings/seo-forms.php:34
 msgid "分割ページにrel=\"next\"/\"prev\"タグの追加"
@@ -7228,11 +7158,11 @@ msgstr "Display only update date"
 #: lib/page-settings/seo-forms.php:102
 #, fuzzy
 msgid ""
-"表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり"
-"方が変わります。"
+"表示する日付形式を選択してください。表示する日付によって検索エンジンへの伝わり方"
+"が変わります。"
 msgstr ""
-"Please select the date format to display. How you transfer to the search "
-"engine will change depending on the date displayed."
+"Please select the date format to display. How you transfer to the search engine "
+"will change depending on the date displayed."
 
 #: lib/page-settings/single-forms.php:13
 msgid "カテゴリ・タグ表示設定"
@@ -7314,12 +7244,12 @@ msgstr "Tags"
 #: lib/page-settings/single-forms.php:115
 #, fuzzy
 msgid ""
-"関連記事にカテゴリーを関連づけるかタグを関連づけるか。タグに関連付けて、タグが"
-"ない場合はカテゴリー関連記事が表示されます。逆もしかり。"
+"関連記事にカテゴリーを関連づけるかタグを関連づけるか。タグに関連付けて、タグがな"
+"い場合はカテゴリー関連記事が表示されます。逆もしかり。"
 msgstr ""
-"Do you associate categories with related articles or tags? If there are no "
-"tags associated with the tag, you will see the category related article. And "
-"vice versa."
+"Do you associate categories with related articles or tags? If there are no tags "
+"associated with the tag, you will see the category related article. And vice "
+"versa."
 
 #: lib/page-settings/single-forms.php:123
 msgid "関連記事見出し"
@@ -7362,8 +7292,8 @@ msgstr "AdSense-related content unit"
 #: lib/page-settings/single-forms.php:150
 #, fuzzy
 msgid ""
-"関連記事の表示タイプを選択します。※「AdSense関連コンテンツユニット」は広告設定"
-"でAdSenseコードが設定してある必要があります"
+"関連記事の表示タイプを選択します。※「AdSense関連コンテンツユニット」は広告設定で"
+"AdSenseコードが設定してある必要があります"
 msgstr ""
 "Select the display type of the related articles. * Have you is AdSense-related "
 "content unit by advertising AdSense code is set"
@@ -7426,9 +7356,9 @@ msgstr "3 years"
 #: lib/page-settings/single-forms.php:189
 #, fuzzy
 msgid ""
-"関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュース"
-"サイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新していな"
-"い場合は利用しないことをおすすめします。"
+"関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュースサ"
+"イト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新していない場"
+"合は利用しないことをおすすめします。"
 msgstr ""
 "Make it easier to view fresh articles by choosing how long to get related "
 "articles. I set it when I want a new article in line with a news site etc. If "
@@ -7441,14 +7371,14 @@ msgstr "Maximum auto generated excerpt characters"
 #: lib/page-settings/single-forms.php:215
 #, fuzzy
 msgid ""
-"「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合"
-"の最大文字数を\n"
-"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最"
-"大：500）"
+"「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の"
+"最大文字数を\n"
+"              設定します。※投稿編集画面の抜粋文ではありません。（最小：0、最大："
+"500）"
 msgstr ""
-"Sets the maximum number of characters when displaying the \"auto-generated "
-"from the text excerpt\" related post entry card. * Not a excerpt of the post "
-"edit screen. (Min: 0, Max: 500)"
+"Sets the maximum number of characters when displaying the \"auto-generated from "
+"the text excerpt\" related post entry card. * Not a excerpt of the post edit "
+"screen. (Min: 0, Max: 500)"
 
 #: lib/page-settings/single-forms.php:261
 msgid "ページ送りナビ設定"
@@ -7511,8 +7441,8 @@ msgstr "Set the bread crumbs list position of the post."
 #: lib/page-settings/single-forms.php:401
 #, fuzzy
 msgid ""
-"投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切"
-"り替えます。"
+"投稿ページのパンくずリストに対して、表示されているページのタイトルを含めるか切り"
+"替えます。"
 msgstr ""
 "Toggle whether to include the title of the displayed page on the breadcrumbs "
 "list on the posting page."
@@ -7566,8 +7496,8 @@ msgstr "Original skin"
 #: lib/page-settings/skin-forms.php:113
 #, fuzzy
 msgid ""
-"もしスキンを作成された際には、是非ご連絡ください。サイトで紹介させていただけれ"
-"ばと思います。"
+"もしスキンを作成された際には、是非ご連絡ください。サイトで紹介させていただければ"
+"と思います。"
 msgstr ""
 "If, when it created the skin contact us. I hope you'll let me introduce at the "
 "site."
@@ -7741,11 +7671,10 @@ msgstr "Default user"
 
 #: lib/page-settings/sns-follow-forms.php:140
 #, fuzzy
-msgid ""
-"投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
+msgid "投稿・固定ページ以外でフォローボタンを表示するユーザーを選択してください。"
 msgstr ""
-"Please select the user who will show the follow buttons other than post · "
-"fixed page."
+"Please select the user who will show the follow buttons other than post · fixed "
+"page."
 
 #: lib/page-settings/sns-follow-forms.php:148
 msgid "フォロー数の表示"
@@ -7770,8 +7699,8 @@ msgstr "feedly subscribers"
 #: lib/page-settings/sns-follow-forms.php:166
 #, fuzzy
 msgid ""
-"feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで設"
-"定された購読者数が表示されます。"
+"feedlyは購読者情報がエラーで取得できない場合があります。その際には、こちらで設定"
+"された購読者数が表示されます。"
 msgstr ""
 "feedly may not be able to acquire the subscriber information with an error. In "
 "that case, the number of subscribers set here will be displayed."
@@ -7784,8 +7713,8 @@ msgstr "Cache Settings"
 #: lib/page-settings/sns-follow-forms.php:182
 #, fuzzy
 msgid ""
-"フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示ス"
-"ピードを多少なりともあげることができます。"
+"フォロー数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピー"
+"ドを多少なりともあげることができます。"
 msgstr ""
 "Cache usage setting when acquiring follow counts. By using the cache you can "
 "raise the page display speed somewhat."
@@ -7826,8 +7755,8 @@ msgstr "3 days"
 #: lib/page-settings/sns-share-forms.php:187
 #, fuzzy
 msgid ""
-"キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担は"
-"増えます（主に相手サーバー）。"
+"キャッシュの取得間隔を設定します。間隔が狭いほど更新は増えますがサーバー負担は増"
+"えます（主に相手サーバー）。"
 msgstr ""
 "Sets the interval for the cache. Increases server load may increase the update "
 "interval narrower (primary servers)."
@@ -7848,8 +7777,8 @@ msgid ""
 "有効でないと利用できない仕様です。"
 msgstr ""
 "If you have an HTTPS site, you can get the number of shares around the HTTP "
-"site (HTTPS for HTTP). It is a specification that the cache is not valid and "
-"is not available because it takes time to put the load of the opponent server "
+"site (HTTPS for HTTP). It is a specification that the cache is not valid and is "
+"not available because it takes time to put the load of the opponent server "
 "twice and to acquire it."
 
 #: lib/page-settings/sns-follow-funcs.php:27
@@ -7863,8 +7792,7 @@ msgstr "Bottom share buttons display"
 #: lib/page-settings/sns-share-forms-bottom.php:13
 #, fuzzy
 msgid ""
-"本文下シェアボタンの表示に関する設定です。※AMPページでスタイルは反映されませ"
-"ん。"
+"本文下シェアボタンの表示に関する設定です。※AMPページでスタイルは反映されません。"
 msgstr ""
 "It is setting concerning the display of the share button under the text. * The "
 "style is not reflected on the AMP page."
@@ -7985,8 +7913,7 @@ msgstr "Display of content top share buttons"
 #: lib/page-settings/sns-share-forms-top.php:13
 #, fuzzy
 msgid ""
-"本文上シェアボタンの表示に関する設定です。※AMPページでスタイルは反映されませ"
-"ん。"
+"本文上シェアボタンの表示に関する設定です。※AMPページでスタイルは反映されません。"
 msgstr ""
 "This is the settings for the display of text on the newsfeed. * Style reflects "
 "not the AMP here."
@@ -8005,8 +7932,8 @@ msgstr "Display of main column content top share buttons"
 msgid ""
 "投稿・固定ページのメインカラムにある本文上シェアボタンの表示を切り替えます。"
 msgstr ""
-"Switch the display of the share button on the body in the main column of post "
-"· fixed page."
+"Switch the display of the share button on the body in the main column of post · "
+"fixed page."
 
 #: lib/page-settings/sns-share-forms-top.php:79
 #, fuzzy
@@ -8079,9 +8006,9 @@ msgstr "#Hashtag"
 #: lib/page-settings/sns-share-forms.php:62
 #, fuzzy
 msgid ""
-"ツイート時に含めるハッシュタグを入力してください。半角スペースで区切って複数入"
-"力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性も"
-"あります。"
+"ツイート時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力"
+"も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあり"
+"ます。"
 msgstr ""
 "Please enter the hashtag tweets when you include. Separated by a single space, "
 "and more than one type is possible. You may not work if more than 140 "
@@ -8108,8 +8035,8 @@ msgstr "Enter Access_token"
 #: lib/page-settings/sns-share-forms.php:94
 #, fuzzy
 msgid ""
-"Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマで"
-"はリアクションカウントをシェア数として採用しています。"
+"Facebookのシェア数を取得するのに必要なアクセストークンを入力します。当テーマでは"
+"リアクションカウントをシェア数として採用しています。"
 msgstr ""
 "Enter the access token that you need to get the number of shares on Facebook. "
 "This theme adopts the reaction count as a share number."
@@ -8134,8 +8061,8 @@ msgstr "To share a picture with Pinterest"
 #: lib/page-settings/sns-share-forms.php:127
 #, fuzzy
 msgid ""
-"この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーすると「ピン」ボ"
-"タンが表示されます。"
+"この機能を有効にすると、投稿・固定ページ内の画像にマウスホバーすると「ピン」ボタ"
+"ンが表示されます。"
 msgstr ""
 "When this function is enabled, \"Pin\" button will be displayed when mouse "
 "hovers to the image in post · fixed page."
@@ -8143,8 +8070,8 @@ msgstr ""
 #: lib/page-settings/sns-share-forms.php:146
 #, fuzzy
 msgid ""
-"シェア数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピー"
-"ドを多少なりともあげることができます。"
+"シェア数取得時のキャッシュ利用設定です。キャッシュを利用するとページ表示スピード"
+"を多少なりともあげることができます。"
 msgstr ""
 "It is a cache setting of share acquisition. You can use the cache page display "
 "speed up at least."
@@ -8186,8 +8113,8 @@ msgstr "Cache the SNS share number of another scheme"
 #, fuzzy
 msgid ""
 "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合は"
-"https）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが"
-"有効でないと利用できない仕様です。"
+"https）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有"
+"効でないと利用できない仕様です。"
 msgstr ""
 "If you have an HTTPS site, you can get the number of shares around the HTTP "
 "site (HTTPS for HTTP). Because it takes time to put the load of twice to the "
@@ -8208,8 +8135,8 @@ msgstr "It is setting of the front page, title, meta description, meta keyword."
 #: lib/page-settings/title-forms.php:242
 #, fuzzy
 msgid ""
-"プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性があり"
-"ます。"
+"プレビューはあくまで目安です。表示は検索エンジンによって変更される可能性がありま"
+"す。"
 msgstr ""
 "Preview is approximate only. You may view is modified by the search engine."
 
@@ -8242,11 +8169,11 @@ msgstr "Enter a free-form title"
 #: lib/page-settings/title-forms.php:56
 #, fuzzy
 msgid ""
-"フロントページで出力するタイトルタグのフォーマットを選択してください。自由に設"
-"定する場合は「自由形式タイトル」ボックスに入力してください。"
+"フロントページで出力するタイトルタグのフォーマットを選択してください。自由に設定"
+"する場合は「自由形式タイトル」ボックスに入力してください。"
 msgstr ""
-"Please select the format of the title printed on the front page. If you want "
-"to enter free-form title box."
+"Please select the format of the title printed on the front page. If you want to "
+"enter free-form title box."
 
 #: lib/page-settings/title-forms.php:64
 msgid "サイトの説明"
@@ -8259,8 +8186,8 @@ msgstr "Enter meta description"
 #: lib/page-settings/title-forms.php:69
 #, fuzzy
 msgid ""
-"フロントページで出力するメタディスクリプションタグの内容を入力してください。入"
-"力しない場合は、メタタグは出力されません。"
+"フロントページで出力するメタディスクリプションタグの内容を入力してください。入力"
+"しない場合は、メタタグは出力されません。"
 msgstr ""
 "Enter the contents of the metadiscriptiontag printed on the front page. If you "
 "don't enter, meta tags are printed."
@@ -8273,8 +8200,8 @@ msgstr "Keyword 1, Keyword 2, Keyword 3, ..."
 #, fuzzy
 msgid ""
 "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してく"
-"ださい。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のな"
-"い設定だと思います。"
+"ださい。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない"
+"設定だと思います。"
 msgstr ""
 "Please enter the content of the meta keyword tag to be output on the front "
 "page, separated by (comma). When not entering, meta tag is not output. * I "
@@ -8287,8 +8214,7 @@ msgstr "Postsosts and Pages settings"
 #: lib/page-settings/title-forms.php:99
 #, fuzzy
 msgid ""
-"投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定で"
-"す。"
+"投稿・固定ページの、タイトル、メタディスクリプション、メタキーワードの設定です。"
 msgstr ""
 "It is setting of posting / fixed page, title, meta description, meta keyword."
 
@@ -8317,8 +8243,8 @@ msgstr "Short Site Name:"
 #: lib/page-settings/title-forms.php:158
 #, fuzzy
 msgid ""
-"サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してくだ"
-"さい。入力しない場合は、通常のサイト名が表示されます。"
+"サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してくださ"
+"い。入力しない場合は、通常のサイト名が表示されます。"
 msgstr ""
 "Please enter the title of the appealing area. It will not be displayed if you "
 "do not enter it."
@@ -8330,8 +8256,7 @@ msgstr "To output meta description tag"
 #: lib/page-settings/title-forms.php:172
 #, fuzzy
 msgid ""
-"投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力する"
-"か。"
+"投稿・固定ページのページのheadタグ内に、メタディスクリプションタグを出力するか。"
 msgstr ""
 "Whether the output within the head tags in posts and static pages \"page, "
 "metadiscriptiontag."
@@ -8343,8 +8268,8 @@ msgstr "To output meta keywords tag"
 #: lib/page-settings/title-forms.php:185
 #, fuzzy
 msgid ""
-"投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的"
-"にはほとんど意味のない設定だと思います。"
+"投稿・固定ページのページのheadタグ内に、メタキーワードタグを出力するか。※SEO的に"
+"はほとんど意味のない設定だと思います。"
 msgstr ""
 "To output the meta keywords tag within the head tags in posts and static pages "
 "\"page, either. I think * SEO there is little sense of setting."
@@ -8356,8 +8281,8 @@ msgstr "Category/Tag pages settings"
 #: lib/page-settings/title-forms.php:202
 #, fuzzy
 msgid ""
-"カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設"
-"定です。"
+"カテゴリー・タグページの、タイトル、メタディスクリプション、メタキーワードの設定"
+"です。"
 msgstr "Is the setting of the category page, title, meta, meta keywords."
 
 #: lib/page-settings/title-forms.php:241
@@ -8375,11 +8300,11 @@ msgstr ""
 #: lib/page-settings/title-forms.php:273
 #, fuzzy
 msgid ""
-"カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力"
-"するか。※SEO的にはほとんど意味のない設定だと思います。"
+"カテゴリー・タグページのページのheadタグ内に、メタディスクリプションタグを出力す"
+"るか。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr ""
-"Prints the metadiscriptiontag within the head tags of category pages? I think "
-"* SEO there is little sense of setting."
+"Prints the metadiscriptiontag within the head tags of category pages? I think * "
+"SEO there is little sense of setting."
 
 #: lib/page-settings/title-forms.php:286
 #, fuzzy
@@ -8447,12 +8372,12 @@ msgstr "To view the table of contents"
 #: lib/page-settings/toc-forms.php:48
 #, fuzzy
 msgid ""
-"投稿・固定ページの内容から目次を自動付加します。※[toc]ショートコードで目次を表"
-"示させている場合は一貫して表示されます。"
+"投稿・固定ページの内容から目次を自動付加します。※[toc]ショートコードで目次を表示"
+"させている場合は一貫して表示されます。"
 msgstr ""
 "The contents of the post/fixed page are automatically appended to the table of "
-"contents. * If you are displaying a table of contents with the [TOC] "
-"shortcode, it will be displayed consistently."
+"contents. * If you are displaying a table of contents with the [TOC] shortcode, "
+"it will be displayed consistently."
 
 #: lib/page-settings/toc-forms.php:56
 msgid "表示ページ"
@@ -8465,8 +8390,8 @@ msgstr "Single"
 #: lib/page-settings/toc-forms.php:63
 #, fuzzy
 msgid ""
-"上記のページの目次表示を切り替えることができます。※[toc]ショートコードで目次を"
-"表示させている場合は一貫して表示されます。"
+"上記のページの目次表示を切り替えることができます。※[toc]ショートコードで目次を表"
+"示させている場合は一貫して表示されます。"
 msgstr ""
 "You can toggle the table of contents display on the above page. ※ It will not "
 "be displayed on other pages."
@@ -8662,10 +8587,10 @@ msgstr "Exclusion Widgets"
 msgid ""
 "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモで"
 "す。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意する"
-"か、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\">いらすとや</a>」"
-"さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップし"
-"て利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっ"
-"ても保証はできませんのでご了承ください。"
+"か、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\">いらすとや</a>」さ"
+"んの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利"
+"用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても"
+"保証はできませんのでご了承ください。"
 msgstr ""
 "This icon is a demo being distributed on CDN server of this theme under the "
 "permission of 'irattei'. Since there is a possibility that it may not be "
@@ -8686,8 +8611,8 @@ msgstr "Enter Title"
 
 #: lib/page-speech-balloon/form.php:54
 msgid ""
-"吹き出しのタイトルを入力してください。タイトルは管理画面（検索など）で利用され"
-"ます"
+"吹き出しのタイトルを入力してください。タイトルは管理画面（検索など）で利用されま"
+"す"
 msgstr "Enter the title of the balloon. The title is used in the admin page."
 
 #: lib/page-speech-balloon/form.php:65
@@ -8789,8 +8714,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:12
 #, fuzzy
 msgid ""
-"吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何で"
-"も薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。"
+"吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当けんとうがつかぬ。何でも"
+"薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。"
 msgstr ""
 "Spence's cat. The name is still there. Where was born I guess review do not "
 "know. Everything in the dark dank, miaowing, only thing that I remember."
@@ -8807,8 +8732,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:14
 #, fuzzy
 msgid ""
-"私わたくしはその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本"
-"名は打ち明けない。"
+"私わたくしはその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本名"
+"は打ち明けない。"
 msgstr ""
 "I have always called that person a teacher. That's why I can not just tell my "
 "real name just by writing a teacher here."
@@ -8816,8 +8741,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:15
 #, fuzzy
 msgid ""
-"メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。メロス"
-"には政治がわからぬ。"
+"メロスは激怒した。必ず、かの邪智暴虐の王を除かなければならぬと決意した。メロスに"
+"は政治がわからぬ。"
 msgstr ""
 "Melos was furious. Sure, some decided and must exclude the King of satol "
 "dishonest cruelty. Meros did not understand politics."
@@ -8831,8 +8756,7 @@ msgstr "I have seen the three leaf photos of the man."
 #, fuzzy
 msgid "ある日の暮方の事である。一人の下人が、羅生門の下で雨やみを待っていた。"
 msgstr ""
-"It is a living one day. A lone person was waiting for rain drops under "
-"Rashomon."
+"It is a living one day. A lone person was waiting for rain drops under Rashomon."
 
 #: lib/page-speech-balloon/list.php:18
 #, fuzzy
@@ -8848,8 +8772,8 @@ msgstr "Heaven is not on the people and not people below says Ellie."
 #: lib/page-speech-balloon/list.php:20
 #, fuzzy
 msgid ""
-"「おい地獄さ行えぐんだで！」　二人はデッキの手すりに寄りかかって、蝸牛が背のび"
-"をしたように延びて、海を抱かかえ込んでいる函館の街を見ていた。"
+"「おい地獄さ行えぐんだで！」　二人はデッキの手すりに寄りかかって、蝸牛が背のびを"
+"したように延びて、海を抱かかえ込んでいる函館の街を見ていた。"
 msgstr ""
 "\"Hey hell performed by gunnda! \"Leaning on the railing of the deck two, had "
 "seen the city of Hakodate into 抱kakae sea, extends cochlea to was there."
@@ -8857,8 +8781,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:21
 #, fuzzy
 msgid ""
-"私がウスウスと眼を覚ました時、こうした蜜蜂の唸るような音は、まだ、その弾力の深"
-"い余韻を、私の耳の穴の中にハッキリと引き残していた。"
+"私がウスウスと眼を覚ました時、こうした蜜蜂の唸るような音は、まだ、その弾力の深い"
+"余韻を、私の耳の穴の中にハッキリと引き残していた。"
 msgstr ""
 "I and uses sounds like moan when I woke up, these bees are still deep "
 "reverberations of the elastic in my ear hole clearly pull leave was."
@@ -8866,8 +8790,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:22
 #, fuzzy
 msgid ""
-"うとうととして目がさめると女はいつのまにか、隣のじいさんと話を始めている。この"
-"じいさんはたしかに前の前の駅から乗ったいなか者である。"
+"うとうととして目がさめると女はいつのまにか、隣のじいさんと話を始めている。このじ"
+"いさんはたしかに前の前の駅から乗ったいなか者である。"
 msgstr ""
 "A woman starts talking to the grandfather next door when she turns aside. This "
 "old man is indeed a citizen who got in from the station in front."
@@ -8875,8 +8799,8 @@ msgstr ""
 #: lib/page-speech-balloon/list.php:23
 #, fuzzy
 msgid ""
-"ゴーシュは町の活動写真館でセロを弾く係りでした。けれどもあんまり上手でないとい"
-"う評判でした。"
+"ゴーシュは町の活動写真館でセロを弾く係りでした。けれどもあんまり上手でないという"
+"評判でした。"
 msgstr ""
 "Ghosh was playing the cello in town activities Photo Gallery dependency. "
 "However, had the reputation of being very good at."
@@ -8987,17 +8911,16 @@ msgstr "Site speed up"
 msgid "サイト表示スピードの高速化設定を行います。"
 msgstr "Site display speed high speed set."
 
-#: lib/page-speed-up/speed-up-forms.php:14
-#: lib/page-speed-up/speed-up-forms.php:25
+#: lib/page-speed-up/speed-up-forms.php:14 lib/page-speed-up/speed-up-forms.php:25
 msgid "ブラウザキャッシュ"
 msgstr "Browser Cache"
 
 #: lib/page-speed-up/speed-up-forms.php:17
 #, fuzzy
 msgid ""
-"ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回から"
-"サーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が"
-"図れます。"
+"ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサー"
+"バーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れま"
+"す。"
 msgstr ""
 "Sets the browser cache. Become a local resource file by setting the browser "
 "cache, instead of from the next server is loaded faster, faster."
@@ -9025,8 +8948,8 @@ msgid ""
 "HTML、CSS、JavaScriptの縮小化を行うことにより転送サイズを減らし高速化を図りま"
 "す。AMPページも縮小化されます。"
 msgstr ""
-"By reducing the size of HTML, CSS, and JavaScript, we will reduce transfer "
-"size and speed up. The AMP page is also scaled down."
+"By reducing the size of HTML, CSS, and JavaScript, we will reduce transfer size "
+"and speed up. The AMP page is also scaled down."
 
 #: lib/page-speed-up/speed-up-forms.php:57
 msgid "HTML縮小化"
@@ -9041,8 +8964,8 @@ msgstr "Reduced HTML"
 msgid ""
 "HTMLの余分な改行や余白を削除することによりソースコードのサイズを減らします。"
 msgstr ""
-"Reduce the size of the source code by deleting extra line breaks and margins "
-"in HTML."
+"Reduce the size of the source code by deleting extra line breaks and margins in "
+"HTML."
 
 #: lib/page-speed-up/speed-up-forms.php:66
 msgid "AMPページのHTMLも縮小化"
@@ -9098,8 +9021,8 @@ msgstr "Reduced JavaScript"
 #: lib/page-speed-up/speed-up-forms.php:99
 #, fuzzy
 msgid ""
-"JavaScript（jQuery）の余分な改行や余白を削除することによりソースコードのサイズ"
-"を減らします。"
+"JavaScript（jQuery）の余分な改行や余白を削除することによりソースコードのサイズを"
+"減らします。"
 msgstr ""
 "Reduce the size of the source code by removing extra line breaks JavaScript "
 "(jQuery) and margins."
@@ -9111,8 +9034,8 @@ msgstr "Enter texts of reduced exclude JavaScript files"
 #: lib/page-speed-up/speed-up-forms.php:102
 #, fuzzy
 msgid ""
-"縮小化しないJavaScriptファイルのパス、もしくはパスの一部を改行で区切って入力し"
-"てください。"
+"縮小化しないJavaScriptファイルのパス、もしくはパスの一部を改行で区切って入力して"
+"ください。"
 msgstr ""
 "Please enter the reduction not JavaScript file path, or a path part separated "
 "by newlines."
@@ -9157,11 +9080,11 @@ msgstr "Enter exclusion string"
 #: lib/page-speed-up/speed-up-forms.php:138
 #, fuzzy
 msgid ""
-"Lazy Loadを行いたくない場合は、該当するimgタグに含まれている文字列を改行区切り"
-"で入力してください。"
+"Lazy Loadを行いたくない場合は、該当するimgタグに含まれている文字列を改行区切りで"
+"入力してください。"
 msgstr ""
-"If you do not want to perform a Lazy load, enter the string that is included "
-"in the appropriate IMG tag with a newline separator."
+"If you do not want to perform a Lazy load, enter the string that is included in "
+"the appropriate IMG tag with a newline separator."
 
 #: lib/page-speed-up/speed-up-forms.php:146
 msgid "WEBフォント（β版）"
@@ -9174,9 +9097,9 @@ msgstr "Enable asynchronous loading of icon fonts"
 #: lib/page-speed-up/speed-up-forms.php:151
 #, fuzzy
 msgid ""
-"サイズが大きくなりがちなアイコンフォントを非同期読み込みしてページ表示を高速化"
-"します。ただし、JavaScriptによりアイコンフォントが正常に読み込まれるまでは、多"
-"少タイムラグがあります。"
+"サイズが大きくなりがちなアイコンフォントを非同期読み込みしてページ表示を高速化し"
+"ます。ただし、JavaScriptによりアイコンフォントが正常に読み込まれるまでは、多少タ"
+"イムラグがあります。"
 msgstr ""
 "Asynchronously loads an icon font that tends to grow in size to speed up page "
 "display. However, JavaScript has some time lag until the icon font is "
@@ -9202,9 +9125,9 @@ msgstr "Loading JavaScript in the footer"
 #: lib/page-speed-up/speed-up-forms.php:183
 #, fuzzy
 msgid ""
-"JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読"
-"み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレン"
-"ダリングブロックが発生するので、速さは犠牲になります。"
+"JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読み"
+"込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレンダリ"
+"ングブロックが発生するので、速さは犠牲になります。"
 msgstr ""
 "Load the JS file in the footer to avoid rendering blocks of JavaScript files. "
 "If the plug-in does not work properly, disable it. However, because rendering "
@@ -9221,9 +9144,8 @@ msgstr "Upload profile picture"
 #: lib/profile.php:49
 #, fuzzy
 msgid ""
-"自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatar"
-"よりこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めで"
-"す。"
+"自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよ"
+"りこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めです。"
 msgstr ""
 "Select the image when you upload a profile picture on their own. Gravatar "
 "override your profile picture here. 240 x 240 px square images is recommended."
@@ -9245,8 +9167,8 @@ msgstr "Profile Page URL"
 #, fuzzy
 msgid ""
 "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリン"
-"クがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページに"
-"リンクされます。"
+"クがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリ"
+"ンクされます。"
 msgstr ""
 "Please enter the URL of the page your profile information has been input. "
 "Profile name link is changed on the profile page. If left blank, is linked to "
@@ -9272,8 +9194,8 @@ msgstr "webservices.amazon.co.jp"
 #: lib/shortcodes-amazon.php:198
 #, fuzzy
 msgid ""
-"Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定さ"
-"れていません。「Cocoon設定」の「API」タブから入力してください。"
+"Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定され"
+"ていません。「Cocoon設定」の「API」タブから入力してください。"
 msgstr ""
 "Amazon API access key or secret key or Tracking ID is not set. Please enter "
 "from the \"API\" tab of \"Cocoon Settings\"."
@@ -9288,14 +9210,14 @@ msgstr "The title is not entered."
 #, fuzzy
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中など"
-"により、リクエストに応答できない場合に出力されるエラーコードです。このエラーが"
-"頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定すること"
-"をおすすめします。"
+"により、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻"
+"出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することを"
+"おすすめします。"
 msgstr ""
 "503 error. This error is the error code that is emitted when the PA-API access "
 "limit is exceeded, or during maintenance, and the request cannot be answered. "
-"If this error is frequent, it is recommended that you set the \"cache "
-"retention period\" in the \"API\" setting item to longer."
+"If this error is frequent, it is recommended that you set the \"cache retention "
+"period\" in the \"API\" setting item to longer."
 
 #: lib/shortcodes-amazon.php:241
 #, fuzzy
@@ -9349,11 +9271,11 @@ msgstr "Read more on Amazon"
 #: lib/shortcodes-rakuten.php:90
 #, fuzzy
 msgid ""
-"「楽天アプリケーションID」もしくは「楽天アフィリエイトID」が設定されていませ"
-"ん。「Cocoon設定」の「API」タブから入力してください。"
+"「楽天アプリケーションID」もしくは「楽天アフィリエイトID」が設定されていません。"
+"「Cocoon設定」の「API」タブから入力してください。"
 msgstr ""
-"\"Rakuten Application ID\" or \"Rakuten affiliate ID\" has not been set. "
-"Please enter from the \"API\" tab of \"Cocoon Settings\"."
+"\"Rakuten Application ID\" or \"Rakuten affiliate ID\" has not been set. Please "
+"enter from the \"API\" tab of \"Cocoon Settings\"."
 
 #: lib/shortcodes-rakuten.php:96
 #, fuzzy
@@ -9704,8 +9626,8 @@ msgstr "Sidebar Scroll Tracking"
 #: lib/widget-areas.php:35
 #, fuzzy
 #| msgid ""
-#| "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示"
-#| "されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
+#| "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示さ"
+#| "れません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
 msgid ""
 "サイドバーで下にスクロールすると追いかけてくるエリアです。※ここにGoogle AdSense"
 "を貼るのはポリシー違反です。"
@@ -9720,11 +9642,11 @@ msgstr "Men Column Scroll Following"
 #: lib/widget-areas.php:51
 #, fuzzy
 #| msgid ""
-#| "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示"
-#| "されません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
+#| "サイドバーで下にスクロールすると追いかけてくるエリアです。※モバイルでは表示さ"
+#| "れません。（ここにGoogle AdSenseを貼るのはポリシー違反です。）"
 msgid ""
-"メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長"
-"い場合に追従してきます。※ここにGoogle AdSenseを貼るのはポリシー違反です。"
+"メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い"
+"場合に追従してきます。※ここにGoogle AdSenseを貼るのはポリシー違反です。"
 msgstr ""
 "It is chasing and scroll down in the main column area. You can follow the "
 "sidebar is longer. Put Google AdSense on here is a violation of policy."
@@ -9764,8 +9686,8 @@ msgstr "Post Content Middle"
 #| "告が表示されている場合は、広告の下に表示されます。設定しないと表示されませ"
 #| "ん。"
 msgid ""
-"投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告"
-"が表示されている場合は、広告の下に表示されます。"
+"投稿本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。広告が"
+"表示されている場合は、広告の下に表示されます。"
 msgstr "Widget area displayed in a post content."
 
 #: lib/widget-areas.php:145
@@ -9785,8 +9707,8 @@ msgstr "Over Post SNS Buttons"
 #: lib/widget-areas.php:163
 #, fuzzy
 #| msgid ""
-#| "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告"
-#| "を表示している場合は、広告の下になります。設定しないと表示されません。"
+#| "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を"
+#| "表示している場合は、広告の下になります。設定しないと表示されません。"
 msgid ""
 "投稿のメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広告を表"
 "示している場合は、広告の下になります。"
@@ -9799,8 +9721,8 @@ msgstr "Under Post SNS Buttons"
 #: lib/widget-areas.php:179
 #, fuzzy
 #| msgid ""
-#| "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。設定"
-#| "しないと表示されません。"
+#| "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。設定し"
+#| "ないと表示されません。"
 msgid "投稿のメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
 msgstr "Widget area displayed below the SNS buttons at the bottom of a post."
 
@@ -9848,8 +9770,8 @@ msgstr "Page Content Middle"
 #| "す。広告が表示されている場合は、広告の下に表示されます。設定しないと表示され"
 #| "ません。"
 msgid ""
-"固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されま"
-"す。広告が表示されている場合は、広告の下に表示されます。"
+"固定ページ本文中に表示されるウイジェット。文中最初のH2タグの手前に表示されます。"
+"広告が表示されている場合は、広告の下に表示されます。"
 msgstr ""
 "Widget area displayed in a page content. It is displayed before the first H2 "
 "tag in the content."
@@ -9871,9 +9793,8 @@ msgstr "Over Page SNS Buttons"
 #: lib/widget-areas.php:276
 #, fuzzy
 #| msgid ""
-#| "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェッ"
-#| "ト。広告を表示している場合は、広告の下になります。設定しないと表示されませ"
-#| "ん。"
+#| "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。"
+#| "広告を表示している場合は、広告の下になります。設定しないと表示されません。"
 msgid ""
 "固定ページのメインカラムの一番下となるSNSボタンの上に表示されるウイジェット。広"
 "告を表示している場合は、広告の下になります。"
@@ -9886,8 +9807,8 @@ msgstr "Under Page SNS Buttons"
 #: lib/widget-areas.php:292
 #, fuzzy
 #| msgid ""
-#| "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェッ"
-#| "ト。設定しないと表示されません。"
+#| "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
+#| "設定しないと表示されません。"
 msgid ""
 "固定ページのメインカラムの一番下となるSNSボタンの下に表示されるウイジェット。"
 msgstr "Widget area displayed below SNS buttons at the bottom of a page."
@@ -9902,8 +9823,8 @@ msgstr "Index Top"
 #| "インデックスリストのトップに表示されるウイジェット。広告が表示されているとき"
 #| "は広告の下に表示されます。設定しないと表示されません。"
 msgid ""
-"インデックスリストのトップに表示されるウイジェット。広告が表示されているときは"
-"広告の下に表示されます。"
+"インデックスリストのトップに表示されるウイジェット。広告が表示されているときは広"
+"告の下に表示されます。"
 msgstr "Widget area displayed at the top of a index page."
 
 #: lib/widget-areas.php:322
@@ -9913,13 +9834,13 @@ msgstr "Index Middle"
 #: lib/widget-areas.php:324
 #, fuzzy
 #| msgid ""
-#| "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイ"
-#| "ル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告"
-#| "の下に表示されます。設定しないと表示されません。"
+#| "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」"
+#| "が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下"
+#| "に表示されます。設定しないと表示されません。"
 msgid ""
 "インデックスリストの3つ目下に表示されるウイジェット。「一覧リストのスタイル」が"
-"「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表"
-"示されます。"
+"「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示"
+"されます。"
 msgstr "Widget area displayed at the middle of a index page."
 
 #: lib/widget-areas.php:338
@@ -9932,8 +9853,8 @@ msgstr "Index Bottom"
 #| "インデックスリストのボトムに表示されるウイジェット。広告が表示されているとき"
 #| "は広告の下に表示されます。設定しないと表示されません。"
 msgid ""
-"インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは"
-"広告の下に表示されます。"
+"インデックスリストのボトムに表示されるウイジェット。広告が表示されているときは広"
+"告の下に表示されます。"
 msgstr "Widget area displayed at the bottom of a index page."
 
 #: lib/widget-areas.php:354
@@ -9942,8 +9863,7 @@ msgstr "Content Top"
 
 #: lib/widget-areas.php:356
 #, fuzzy
-msgid ""
-"メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。"
+msgid "メインカラムとサイドバーの上部エリア。グローバルメニューの下にもなります。"
 msgstr ""
 "Sets the border color of the main column. Missing default transparent color."
 
@@ -10009,8 +9929,8 @@ msgid ""
 "AdSenseの場合はレスポンシブタグを挿入してください。未記入の場合は、設定項目に指"
 "定したAdSenseコードが利用されます。"
 msgstr ""
-"AdSense if you try the responsive tag. AdSense code blank if the specified "
-"item is used."
+"AdSense if you try the responsive tag. AdSense code blank if the specified item "
+"is used."
 
 #: lib/widgets/ad.php:71 lib/widgets/mobile-ad.php:71 lib/widgets/pc-ad.php:73
 msgid "広告フォーマット（AdSenseコード入力時のみ有効）"
@@ -10049,8 +9969,8 @@ msgstr ""
 
 #: lib/widgets/classic-text.php:17
 msgid ""
-"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビ"
-"ジュアルエディターのないテキストウィジェット）。"
+"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビジュ"
+"アルエディターのないテキストウィジェット）。"
 msgstr "Old type text widget with only text editor (without visual editor)."
 
 #: lib/widgets/classic-text.php:19
@@ -10196,11 +10116,11 @@ msgstr "Facebook Balloon"
 #, fuzzy
 #| msgid ""
 #| "投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタン"
-#| "を表示するSimplicity用ウィジェットです。（※「Facebookページ」のみで利用でき"
-#| "ます。「個人ページ」で設定されている場合は利用できません）"
+#| "を表示するSimplicity用ウィジェットです。（※「Facebookページ」のみで利用できま"
+#| "す。「個人ページ」で設定されている場合は利用できません）"
 msgid ""
-"投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを"
-"表示するウィジェットです。"
+"投稿・個別ページのアイキャッチを利用したFacebookページへの「いいね！」ボタンを表"
+"示するウィジェットです。"
 msgstr ""
 "It is a widget that displays a \"Like\" button to a Facebook page using "
 "posting / individual page eye catching."
@@ -10211,8 +10131,8 @@ msgid ""
 "この記事が気に入ったら最新ニュース情報を、<br><span class=\"bold-red\">いいね</"
 "span>してチェックしよう！"
 msgstr ""
-"You liked this article, latest news<br><span class=\"bold-red\">Nice</span> "
-"try to check!"
+"You liked this article, latest news<br><span class=\"bold-red\">Nice</span> try "
+"to check!"
 
 #: lib/widgets/fb-like-balloon.php:88 lib/widgets/fb-like-box.php:115
 msgid "FacebookページURL"
@@ -10306,8 +10226,7 @@ msgstr "Advertising (for mobile)"
 #, fuzzy
 #| msgid "投稿タイトル上に表示されるウイジェット。設定しないと表示されません。"
 msgid "モバイルのみで表示される広告ウィジェットです。834px以下で表示されます。"
-msgstr ""
-"It is an ad widget displayed on mobile only. It is displayed under 768px."
+msgstr "It is an ad widget displayed on mobile only. It is displayed under 768px."
 
 #: lib/widgets/mobile-text.php:19
 msgid "テキスト（モバイル用）"
@@ -10512,8 +10431,8 @@ msgstr "Nondisplay administrator's comment"
 #: lib/widgets/related-entries.php:20
 #, fuzzy
 msgid ""
-"関連記事リストをサムネイルつきで表示するウィジェットです。投稿ページのみ表示さ"
-"れます。"
+"関連記事リストをサムネイルつきで表示するウィジェットです。投稿ページのみ表示され"
+"ます。"
 msgstr "This is a widget to display a list of new articles with thumbnails."
 
 #: lib/widgets/related-entries.php:118
@@ -10656,14 +10575,13 @@ msgstr "Font preview"
 #: tmp/font-preview.php:16
 #, fuzzy
 msgid ""
-"吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗い"
-"じめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初めて"
-"人間というものを見た。"
+"吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじ"
+"めじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初めて人間"
+"というものを見た。"
 msgstr ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
-"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
-"consequat."
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor "
+"incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis "
+"nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
 #: tmp/footer-javascript.php:27
 msgid "タイトルとURLをコピーしました"
@@ -11097,8 +11015,8 @@ msgstr "Copy"
 #~ "ラーメッセージとともにご連絡ください。"
 #~ msgstr ""
 #~ "This error message is listed in \"site administrator only\". Please reload "
-#~ "for a little while. If it still does not improve, please contact us with "
-#~ "the error message in the following bug forum."
+#~ "for a little while. If it still does not improve, please contact us with the "
+#~ "error message in the following bug forum."
 
 #~ msgid "不具合報告フォーラム"
 #~ msgstr "Bug Report Forum"
@@ -11334,8 +11252,8 @@ msgstr "Copy"
 #~ msgid ""
 #~ "モバイル環境で表示するメニューボタンの設定です。768px以下で表示されます。"
 #~ msgstr ""
-#~ "Is the setting of menu buttons to display in a mobile environment. "
-#~ "displayed in 768 px below."
+#~ "Is the setting of menu buttons to display in a mobile environment. displayed "
+#~ "in 768 px below."
 
 #, fuzzy
 #~ msgid "HTMLコード："
@@ -11400,8 +11318,8 @@ msgstr "Copy"
 
 #, fuzzy
 #~ msgid ""
-#~ "直接リンクを入力する場合はタグを入力してください。※入力しない場合はボタンが"
-#~ "表示されません。"
+#~ "直接リンクを入力する場合はタグを入力してください。※入力しない場合はボタンが表"
+#~ "示されません。"
 #~ msgstr ""
 #~ "If you directly link to enter your tags. If you do not want displayed "
 #~ "buttons."
@@ -11473,8 +11391,8 @@ msgstr "Copy"
 #~ "トップページで「人気記事」リストを、それ以外のページで「新着記事」リストを表"
 #~ "示するSimplicityウィジェットです。（※要Wordpress Popular Postsプラグイン）"
 #~ msgstr ""
-#~ "\"popular posts\" or \"new posts\" widget. (* Wordpress Popular Posts "
-#~ "plugin required)"
+#~ "\"popular posts\" or \"new posts\" widget. (* Wordpress Popular Posts plugin "
+#~ "required)"
 
 #~ msgid "固定ページの表示（人気記事のみ）"
 #~ msgstr "Pages display (popular posts only)"
@@ -11501,8 +11419,7 @@ msgstr "Copy"
 #~ msgstr "Ranking Display (popular posts only)"
 
 #~ msgid "除外する投稿ID（カンマ区切りで指定。※Popular Posts使用時のみ）"
-#~ msgstr ""
-#~ "Exclude Post IDs (separated by comma. * When using Popular Posts only)"
+#~ msgstr "Exclude Post IDs (separated by comma. * When using Popular Posts only)"
 
 #~ msgid "除外するカテゴリID（カンマ区切りで指定。※Popular Posts使用時のみ）"
 #~ msgstr ""
@@ -11531,8 +11448,7 @@ msgstr "Copy"
 #~ msgstr "Standard link color.(default:#aaaaaa)"
 
 #, fuzzy
-#~ msgid ""
-#~ "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
+#~ msgid "広告を非表示にするカテゴリーのIDを,（カンマ）区切りで指定してください。"
 #~ msgstr ""
 #~ "Please specify the IDs of categories to hide advertisements, separated by "
 #~ "(comma)."
@@ -11555,8 +11471,8 @@ msgstr "Copy"
 #~ msgstr "Title"
 
 #~ msgid ""
-#~ "モバイルのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの"
-#~ "場合は広告コードのみを記入してください。）"
+#~ "モバイルのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの場"
+#~ "合は広告コードのみを記入してください。）"
 #~ msgstr "Ad widget displayed on mobile only."
 
 #~ msgid "左マージンのピクセル数（－指定で左に移動）"
@@ -11569,8 +11485,8 @@ msgstr "Copy"
 #~ msgstr "Apply customizer ad exclusion settings"
 
 #~ msgid ""
-#~ "パソコンのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの"
-#~ "場合は広告コードのみを記入してください。）"
+#~ "パソコンのみで表示されるSimplicity用の広告ウィジェットです。（※アドセンスの場"
+#~ "合は広告コードのみを記入してください。）"
 #~ msgstr "Ad widget displayed only on PC."
 
 #~ msgid "[S] PC用広告ダブルレクタングル"
@@ -11593,8 +11509,8 @@ msgstr "Copy"
 #~ "訪問者にフォローを促すメッセージを入力してください。%sは、投稿者の表示名に変"
 #~ "換されます。"
 #~ msgstr ""
-#~ "Please enter a message urging visitors to follow up. %s will be converted "
-#~ "to the display name of the contributor."
+#~ "Please enter a message urging visitors to follow up. %s will be converted to "
+#~ "the display name of the contributor."
 
 #, fuzzy
 #~ msgid "ブログカード（外部）"
