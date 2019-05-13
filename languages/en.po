@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-05-12 20:10+0900\n"
-"PO-Revision-Date: 2019-05-14 02:47+0900\n"
+"PO-Revision-Date: 2019-05-14 02:55+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -2931,7 +2931,6 @@ msgid "構造化データチェックを表示する"
 msgstr "Display Structured Data check"
 
 #: lib/page-settings/admin-forms.php:246
-#, fuzzy
 msgid ""
 "<a href=\"https://search.google.com/structured-data/testing-tool#\" target="
 "\"_blank\">構造化データ テストツール</a>リンクの表示。"
@@ -2944,7 +2943,6 @@ msgid "HTML5チェックを表示する"
 msgstr "Display HTML5 check"
 
 #: lib/page-settings/admin-forms.php:249
-#, fuzzy
 msgid ""
 "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\">Nu Html Checker</a>リ"
 "ンクの表示。"
@@ -2957,7 +2955,6 @@ msgid "HTML5アウトラインチェックを表示する"
 msgstr "Display HTML5 Outline check"
 
 #: lib/page-settings/admin-forms.php:252
-#, fuzzy
 msgid ""
 "<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\">HTML 5 "
 "Outliner</a>リンクの表示。"
@@ -3071,9 +3068,8 @@ msgid "「スポンサーリンク」か「広告」推奨"
 msgstr "\"Sponsored links\" or \"advertisements\" recommended"
 
 #: lib/page-settings/ads-forms.php:40
-#, fuzzy
 msgid "広告上部ラベルに表示されるテキストの入力です。"
-msgstr "Is the text that appears in the ad at the top labeled input."
+msgstr "Enter the text to be displayed on the top labels of the ads."
 
 #: lib/page-settings/ads-forms.php:53
 msgid "アドセンス設定"
@@ -3304,9 +3300,8 @@ msgid "全体設定"
 msgstr "Global settings"
 
 #: lib/page-settings/all-forms.php:16
-#, fuzzy
 msgid "ページ全体の表示に関する設定です。"
-msgstr "It is set on the whole page."
+msgstr "Settings for displaying the entire page."
 
 #: lib/page-settings/all-forms.php:31
 msgid "キーカラー"
@@ -3429,9 +3424,8 @@ msgid "サイト全体のフォントサイズを変更します。"
 msgstr "Change the font size of the entire site."
 
 #: lib/page-settings/all-forms.php:91
-#, fuzzy
 msgid "サイト全体の文字色を変更します。"
-msgstr "Select the background color for the entire site."
+msgstr "Change the text color of the entire site."
 
 #: lib/page-settings/all-forms.php:105
 msgid "モバイルサイトフォント"
@@ -3966,10 +3960,8 @@ msgid "ヘッド用コード"
 msgstr "Head Code"
 
 #: lib/page-settings/analytics-forms.php:192
-#, fuzzy
-#| msgid "ヘッダー用のアクセス解析タグの入力"
 msgid "head用のタグ入力"
-msgstr "Enter access analysis tag for head"
+msgstr "Tag input for head"
 
 #: lib/page-settings/analytics-forms.php:193
 #, fuzzy
@@ -4024,9 +4016,8 @@ msgid "API設定"
 msgstr "API settings"
 
 #: lib/page-settings/apis-forms.php:19
-#, fuzzy
 msgid "各種APIやアフィリエイトIDの設定です。"
-msgstr "This is the page setting of the sidebar."
+msgstr "Various API and affiliate ID settings."
 
 #: lib/page-settings/apis-forms.php:34
 msgid "アクセスキーID"
@@ -4044,20 +4035,16 @@ msgid "もしも必須"
 msgstr "Moshimo required"
 
 #: lib/page-settings/apis-forms.php:39
-#, fuzzy
-#| msgid "ランキングを識別するためのタイトルを入力してください。"
 msgid "Amazon APIを使用するためのアクセスキーIDを入力してください。"
-msgstr "Enter a title that identifies the ranking."
+msgstr "Enter the access key ID to use the Amazon API."
 
 #: lib/page-settings/apis-forms.php:41
 msgid "シークレットキー"
 msgstr "Secret key"
 
 #: lib/page-settings/apis-forms.php:46
-#, fuzzy
-#| msgid "ランキングを識別するためのタイトルを入力してください。"
 msgid "Amazon APIを使用するためのシークレットキーを入力してください。"
-msgstr "Enter a title that identifies the ranking."
+msgstr "Enter the secret key to use the Amazon API."
 
 #: lib/page-settings/apis-forms.php:48
 msgid "トラッキングID"
@@ -4170,10 +4157,8 @@ msgid "楽天アフィリエイトID"
 msgstr "Rakuten Affiliate ID"
 
 #: lib/page-settings/apis-forms.php:109
-#, fuzzy
-#| msgid "アフィリエイトタグを入力してください。"
 msgid "楽天アフィリエイト用のIDを入力してください。"
-msgstr "Enter your affiliate tag."
+msgstr "Enter your ID for Rakuten affiliate."
 
 #: lib/page-settings/apis-forms.php:116
 msgid "楽天標準ソート順"
