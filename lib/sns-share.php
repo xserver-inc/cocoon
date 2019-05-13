@@ -147,7 +147,7 @@ endif;
 //Facebookカウントの取得
 if ( !function_exists( 'get_facebook_count' ) ):
 function get_facebook_count($url = null) {
-  if (!is_sns_share_buttons_count_visible() || !get_facebook_access_token())
+  if (!is_sns_share_buttons_count_visible())
     return null;
 
   if (is_scc_facebook_exists()) {
