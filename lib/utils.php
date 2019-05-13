@@ -2553,7 +2553,12 @@ endif;
 //エディターカラーパレット用の木から
 if ( !function_exists( 'get_editor_key_color' ) ):
 function get_editor_key_color(){
-  return !empty(get_site_key_color()) ? get_site_key_color() : DEFAULT_EDITOR_KEY_COLOR;
+  $site_key_color = get_site_key_color();
+  if (!empty($site_key_color)) {
+    return $site_key_color;
+  } else {
+    return DEFAULT_EDITOR_KEY_COLOR;
+  }
 }
 endif;
 
