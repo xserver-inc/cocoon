@@ -75,6 +75,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
 
 
 <!-- Facebook設定 -->
+<!--
 <div id="sns-share-facebook" class="postbox">
   <h2 class="hndle"><?php _e( 'Facebook設定', THEME_NAME ) ?></h2>
   <div class="inside">
@@ -82,7 +83,6 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
     <table class="form-table">
       <tbody>
 
-        <!-- メンション -->
         <tr>
           <th scope="row">
             <?php generate_label_tag(OP_FACEBOOK_ACCESS_TOKEN, __( 'アクセストークン', THEME_NAME )); ?>
@@ -102,7 +102,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
     </table>
 
   </div>
-</div>
+</div> -->
 
 
 
