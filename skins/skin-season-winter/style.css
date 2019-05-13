@@ -588,7 +588,8 @@ article .tag-link:hover {
 .sns-share, .sns-follow {
 	margin: 0;
 }
-.sns-share-buttons a .share-count {
+.sns-share-buttons a .share-count,
+.sns-follow-buttons a .follow-count {
     right: -10px;
     bottom: -10px;
     color: #aaa;
