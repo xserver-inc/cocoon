@@ -75,7 +75,6 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
 
 
 <!-- Facebook設定 -->
-<!--
 <div id="sns-share-facebook" class="postbox">
   <h2 class="hndle"><?php _e( 'Facebook設定', THEME_NAME ) ?></h2>
   <div class="inside">
@@ -102,7 +101,7 @@ require_once abspath(__FILE__).'sns-share-forms-bottom.php';
     </table>
 
   </div>
-</div> -->
+</div>
 
 
 

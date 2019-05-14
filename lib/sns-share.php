@@ -83,31 +83,52 @@ function fetch_facebook_count_raw($url){
   $encoded_url = rawurlencode( $url );
   //オプションの設定
   $args = array( 'sslverify' => true );
+  //Facebookアクセストークンがある場合
+  if (get_facebook_access_token()) {
+    //Facebookにリクエストを送る
+    $request_url = 'https://graph.facebook.com/?id='.$encoded_url.'&fields=engagement&access_token='.trim(get_facebook_access_token());
+    $response = wp_remote_get( $request_url, $args );
+    $res = 0;
+
+    //取得に成功した場合
+    if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+      $body = $response['body'];
+      $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
+      $reaction_count = isset($json->{'engagement'}->{'reaction_count'}) ? $json->{'engagement'}->{'reaction_count'} : 0;
+      $comment_count = isset($json->{'engagement'}->{'comment_count'}) ? $json->{'engagement'}->{'comment_count'} : 0;
+      $share_count = isset($json->{'engagement'}->{'share_count'}) ? $json->{'engagement'}->{'share_count'} : 0;
+      $comment_plugin_count = isset($json->{'engagement'}->{'comment_plugin_count'}) ? $json->{'engagement'}->{'comment_plugin_count'} : 0;
+      $res = intval($reaction_count) + intval($comment_count) + intval($share_count) + intval($comment_plugin_count);
+    }
+  } else {//Facebookアクセストークンがない場合
+    //Facebookにリクエストを送る
+    $request_url = 'https://graph.facebook.com?id='.$encoded_url.'&fields=og_object{engagement}';
+    $response = wp_remote_get( $request_url );
+    $res = 0;
+    //取得に成功した場合
+    if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
+      $body = $response['body'];
+      //ジェイソンオブジェクトに変換する
+      $json = json_decode( $body );
+      //エンゲージメントカウントをシェア数として取得する
+      $res = (isset($json->{'og_object'}->{'engagement'}->{'count'}) ? $json->{'og_object'}->{'engagement'}->{'count'} : 0);
+    }
+  }
+
+
+  return intval($res);
+
   //Facebookにリクエストを送る
-  $request_url = 'https://graph.facebook.com?id='.$encoded_url.'&fields=og_object{engagement}';
-  $response = wp_remote_get( $request_url );
+  $request_url = 'https://graph.facebook.com/?id='.$encoded_url.'&fields=engagement&access_token='.trim(get_facebook_access_token());
+  $response = wp_remote_get( $request_url, $args );
   $res = 0;
+
   //取得に成功した場合
   if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
     $body = $response['body'];
-    //ジェイソンオブジェクトに変換する
-    $json = json_decode( $body );
-    //エンゲージメントカウントをシェア数として取得する
-    $res = (isset($json->{'og_object'}->{'engagement'}->{'count'}) ? $json->{'og_object'}->{'engagement'}->{'count'} : 0);
+    $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
+    $res = (isset($json->{'engagement'}->{'reaction_count'}) ? $json->{'engagement'}->{'reaction_count'} : 0);
   }
-  return intval($res);
-
-  // //Facebookにリクエストを送る
-  // $request_url = 'https://graph.facebook.com/?id='.$encoded_url.'&fields=engagement&access_token='.trim(get_facebook_access_token());
-  // $response = wp_remote_get( $request_url, $args );
-  // $res = 0;
-
-  // //取得に成功した場合
-  // if (!is_wp_error( $response ) && $response["response"]["code"] === 200) {
-  //   $body = $response['body'];
-  //   $json = json_decode( $body ); //ジェイソンオブジェクトに変換する
-  //   $res = (isset($json->{'engagement'}->{'reaction_count'}) ? $json->{'engagement'}->{'reaction_count'} : 0);
-  // }
   // return intval($res);
 }
 endif;
