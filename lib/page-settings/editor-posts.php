@@ -19,6 +19,30 @@ update_theme_option(OP_EDITOR_BACKGROUND_COLOR);
 //エディター文字色
 update_theme_option(OP_EDITOR_TEXT_COLOR);
 
+//ブロックエディターインラインスタイルドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_INLINE_STYLE_DROPDOWN_ENABLE);
+
+//ブロックエディターマーカースタイルドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_MARKER_STYLE_DROPDOWN_ENABLE);
+
+//ブロックエディターバッジスタイルドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_BADGE_STYLE_DROPDOWN_ENABLE);
+
+//ブロックエディター文字サイズスタイルドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_FONT_SIZE_STYLE_DROPDOWN_ENABLE);
+
+//ブロックエディター汎用ショートコードドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_GENERAL_SHORTCODE_DROPDOWN_ENABLE);
+
+//ブロックエディターテンプレートショートコードドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_TEMPLATE_SHORTCODE_DROPDOWN_ENABLE);
+
+//ブロックエディターアフィリエイトショートコードドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_AFFILIATE_SHORTCODE_DROPDOWN_ENABLE);
+
+//ブロックエディターランキングショートコードドロップダウン有効
+update_theme_option(OP_BLOCK_EDITOR_RANKING_SHORTCODE_DROPDOWN_ENABLE);
+
 //タイトル等の文字数カウンター表示
 update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 
