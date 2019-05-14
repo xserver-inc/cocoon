@@ -83,9 +83,12 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $templates = get_function_texts();
   $affiliates = get_affiliate_tags();
   $rankings = get_item_rankings();
-  $is_templates_visible = !empty($templates) && is_block_editor_template_shortcode_dropdown_visible();
-  $is_affiliates_visible = !empty($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible();
-  $is_rankings_visible = !empty($rankings) && is_block_editor_ranking_shortcode_dropdown_visible();
+  $is_templates_visible = (!empty($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
+  $is_affiliates_visible = (!empty($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
+  $is_rankings_visible = (!empty($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
+
+  // _v(is_block_editor_template_shortcode_dropdown_visible());
+  // _v( $is_templates_visible);
   ///////////////////////////////////////////
   // 表示
   ///////////////////////////////////////////
@@ -156,27 +159,34 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   );
   //テンプレート情報を渡す
   //_v($templates);
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'templates', //任意のオブジェクト名
-    $templates //プロバティ
-  );
+  if ($is_templates_visible) {
+    wp_localize_script(
+      'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+      'templates', //任意のオブジェクト名
+      $templates //プロバティ
+    );
+  }
 
   //アフィリエイト情報を渡す
   //_v($affiliates);
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'affiliateTags', //任意のオブジェクト名
-    $affiliates //プロバティ
-  );
+  if ($is_affiliates_visible) {
+    wp_localize_script(
+      'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+      'affiliateTags', //任意のオブジェクト名
+      $affiliates //プロバティ
+    );
+  }
 
   //ランキング情報を渡す
   //_v($rankings);
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'itemRankings', //任意のオブジェクト名
-    $rankings //プロバティ
-  );
+  if ($is_rankings_visible) {
+    wp_localize_script(
+      'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+      'itemRankings', //任意のオブジェクト名
+      $rankings //プロバティ
+    );
+  }
+
 
 
   // Styles.
