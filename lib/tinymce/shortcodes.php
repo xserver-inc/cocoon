@@ -211,7 +211,7 @@ function generate_shortcodes_js($value){
   shortcodes[15].after = '<?php echo $after; ?>';
 
   <?php //カウントダウンショートコード
-  $before = '[countdown from="';
+  $before = '[countdown to="';
   $after = '"]';
   ?>
   shortcodes[16] = new Array();
