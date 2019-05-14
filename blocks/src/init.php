@@ -92,6 +92,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'keyColor', //任意のオブジェクト名
      get_editor_key_color()//プロバティ
   );
+  //テンプレート情報を渡す
+  $templates = get_function_texts();
+  //_v($templates);
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'templates', //任意のオブジェクト名
+    $templates //プロバティ
+  );
   //アフィリエイト情報を渡す
   $affiliates = get_affiliate_tags();
   //_v($affiliates);
