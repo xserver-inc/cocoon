@@ -53,10 +53,10 @@ function get_editor_text_color(){
 endif;
 
 //ブロックエディターインラインスタイルドロップダウン有効
-define('OP_BLOCK_EDITOR_INLINE_STYLE_DROPDOWN_ENABLE', 'block_editor_inline_style_dropdown_enable');
-if ( !function_exists( 'is_block_editor_inline_style_dropdown_enable' ) ):
-function is_block_editor_inline_style_dropdown_enable(){
-  return get_theme_option(OP_BLOCK_EDITOR_INLINE_STYLE_DROPDOWN_ENABLE, 1);
+define('OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_ENABLE', 'block_editor_letter_style_dropdown_enable');
+if ( !function_exists( 'is_block_editor_letter_style_dropdown_enable' ) ):
+function is_block_editor_letter_style_dropdown_enable(){
+  return get_theme_option(OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_ENABLE, 1);
 }
 endif;
 
