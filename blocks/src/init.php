@@ -113,7 +113,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   //_v($rankings);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'itemRanking', //任意のオブジェクト名
+    'itemRankings', //任意のオブジェクト名
     $rankings //プロバティ
   );
 
