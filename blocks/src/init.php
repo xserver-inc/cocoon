@@ -108,6 +108,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'affiliateTags', //任意のオブジェクト名
     $affiliates //プロバティ
   );
+  //ランキング情報を渡す
+  $rankings = get_item_rankings();
+  //_v($rankings);
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'itemRanking', //任意のオブジェクト名
+    $rankings //プロバティ
+  );
 
   // Styles.
   wp_enqueue_style(

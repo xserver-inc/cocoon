@@ -222,7 +222,7 @@ function generate_shortcodes_js($value){
 
   <?php //評価スター
   $before = '[star rate="';
-  $after = '" number="1"]';
+  $after = '" max="5" number="1"]';
   ?>
   shortcodes[17] = new Array();
   shortcodes[17].title  = '<?php echo __( '評価スター', THEME_NAME ); ?>';
