@@ -84,16 +84,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_ENABLE , is_block_editor_letter_style_dropdown_enable(), __( '文字スタイル表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_VISIBLE , is_block_editor_letter_style_dropdown_visible(), __( '文字スタイル表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーの文字スタイルドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_MARKER_STYLE_DROPDOWN_ENABLE , is_block_editor_marker_style_dropdown_enable(), __( 'マーカースタイル表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_MARKER_STYLE_DROPDOWN_VISIBLE , is_block_editor_marker_style_dropdown_visible(), __( 'マーカー表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーのマーカースタイルドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_BADGE_STYLE_DROPDOWN_ENABLE , is_block_editor_badge_style_dropdown_enable(), __( 'バッジスタイル表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_BADGE_STYLE_DROPDOWN_VISIBLE , is_block_editor_badge_style_dropdown_visible(), __( 'バッジ表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーのバッジスタイルドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_FONT_SIZE_STYLE_DROPDOWN_ENABLE , is_block_editor_font_size_style_dropdown_enable(), __( '文字サイズスタイル表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_FONT_SIZE_STYLE_DROPDOWN_VISIBLE , is_block_editor_font_size_style_dropdown_visible(), __( '文字サイズ表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーの文字サイズスタイルドロップダウンを表示するか。', THEME_NAME ));
             ?>
           </td>
@@ -106,16 +106,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(op_block_editor_general_shortcode_dropdown_enable , is_block_editor_general_shortcode_dropdown_enable(), __( '汎用ショートコード表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_GENERAL_SHORTCODE_DROPDOWN_VISIBLE , is_block_editor_general_shortcode_dropdown_visible(), __( '汎用ショートコード表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーの汎用ショートコードドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_TEMPLATE_SHORTCODE_DROPDOWN_ENABLE , is_block_editor_template_shortcode_dropdown_enable(), __( 'テンプレートショートコード表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_TEMPLATE_SHORTCODE_DROPDOWN_VISIBLE , is_block_editor_template_shortcode_dropdown_visible(), __( 'テンプレート表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーのテンプレートショートコードドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_AFFILIATE_SHORTCODE_DROPDOWN_ENABLE , is_block_editor_affiliate_shortcode_dropdown_enable(), __( 'アフィリエイトショートコード表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_AFFILIATE_SHORTCODE_DROPDOWN_VISIBLE , is_block_editor_affiliate_shortcode_dropdown_visible(), __( 'アフィリエイト表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーのアフィリエイトショートコードドロップダウンを表示するか。', THEME_NAME ));
 
-            generate_checkbox_tag(OP_BLOCK_EDITOR_RANKING_SHORTCODE_DROPDOWN_ENABLE , is_block_editor_ranking_shortcode_dropdown_enable(), __( 'ランキングショートコード表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_RANKING_SHORTCODE_DROPDOWN_VISIBLE , is_block_editor_ranking_shortcode_dropdown_visible(), __( 'ランキング表示', THEME_NAME ));
             generate_tips_tag(__( 'ツールバーのランキングショートコードドロップダウンを表示するか。', THEME_NAME ));
             ?>
           </td>
