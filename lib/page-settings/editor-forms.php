@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- その他 -->
 <div id="editor" class="postbox">
-  <h2 class="hndle"><?php _e( 'エディター設定', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'エディター共通設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( '投稿・固定ページ管理画面の設定です。', THEME_NAME ) ?></p>
@@ -61,6 +61,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
+<div id="editor" class="postbox">
+  <h2 class="hndle"><?php _e( '旧エディター設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+  <table class="form-table">
+    <tbody>
+    <p><?php _e( 'ビジュアルエディター用の設定です。', THEME_NAME ) ?></p>
         <!-- 文字カウンター -->
         <tr>
           <th scope="row">
