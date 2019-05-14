@@ -41,6 +41,10 @@ function page_custom_box_view(){
   generate_selectbox_tag('page_type', $options, get_singular_page_type(), __( 'ページタイプ', THEME_NAME ));
   generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
 
+  //記事を読む時間
+  generate_checkbox_tag('the_page_read_time_novisible' , is_the_page_read_time_novisible(), __( '読む時間を表示しない', THEME_NAME ));
+  generate_howro_tag(__( 'このページに「記事を読む時間」を表示するかを切り替えます。', THEME_NAME ));
+
   //目次表示
   generate_checkbox_tag('the_page_toc_novisible' , is_the_page_toc_novisible(), __( '目次を表示しない', THEME_NAME ));
   generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
@@ -90,6 +94,12 @@ function page_custom_box_save_data(){
     add_post_meta($id, $page_type_key, $page_type, true);
     update_post_meta($id, $page_type_key, $page_type);
   }
+
+  //読む時間
+  $the_page_read_time_novisible = !empty($_POST['the_page_read_time_novisible']) ? 1 : 0;
+  $the_page_read_time_novisible_key = 'the_page_read_time_novisible';
+  add_post_meta($id, $the_page_read_time_novisible_key, $the_page_read_time_novisible, true);
+  update_post_meta($id, $the_page_read_time_novisible_key, $the_page_read_time_novisible);
 
   //目次表示
   $the_page_toc_novisible = !empty($_POST['the_page_toc_novisible']) ? 1 : 0;
@@ -172,6 +182,20 @@ endif;
 if ( !function_exists( 'is_singular_page_type_content_only' ) ):
 function is_singular_page_type_content_only(){
   return is_singular_page_type_content_only_narrow() || is_singular_page_type_content_only_wide();
+}
+endif;
+
+//このページで読む時間を表示するか
+if ( !function_exists( 'is_the_page_read_time_novisible' ) ):
+function is_the_page_read_time_novisible(){
+  return get_post_meta(get_the_ID(), 'the_page_read_time_novisible', true);
+}
+endif;
+
+//このページで読む時間を表示するか
+if ( !function_exists( 'is_the_page_read_time_visible' ) ):
+function is_the_page_read_time_visible(){
+  return !is_the_page_read_time_novisible();
 }
 endif;
 
