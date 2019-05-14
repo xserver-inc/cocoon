@@ -77,28 +77,38 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		true // Enqueue the script in the footer.
-	);
+  );
+  //吹き出し情報渡す
   $baloons = get_speech_balloons();
   //_v($baloons);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'speechBaloons', //任意のオブジェクト名
     $baloons //プロバティ
-	);
+  );
+  //テーマのキーカラーを渡す
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'keyColor', //任意のオブジェクト名
      get_editor_key_color()//プロバティ
   );
+  //アフィリエイト情報を渡す
+  $affiliates = get_affiliate_tags();
+  //_v($affiliates);
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'affiliateTags', //任意のオブジェクト名
+    $affiliates //プロバティ
+  );
 
-	// Styles.
-	wp_enqueue_style(
-		'cocoon_blocks-cgb-block-editor-css', // Handle.
-		get_template_directory_uri().'/blocks/dist/blocks.editor.build.css',
-		//plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
-		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
-		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
-	);
+  // Styles.
+  wp_enqueue_style(
+      'cocoon_blocks-cgb-block-editor-css', // Handle.
+      get_template_directory_uri().'/blocks/dist/blocks.editor.build.css',
+      //plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
+      array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+      // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+  );
 }
 
 //Cocoonカテゴリーを追加
