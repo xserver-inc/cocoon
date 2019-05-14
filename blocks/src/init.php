@@ -78,6 +78,14 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		true // Enqueue the script in the footer.
   );
+  //ショートコードオブジェクトの取得
+  $baloons = get_speech_balloons();
+  $templates = get_function_texts();
+  $affiliates = get_affiliate_tags();
+  $rankings = get_item_rankings();
+  $is_templates_visible = !empty($templates) && is_block_editor_template_shortcode_dropdown_visible();
+  $is_affiliates_visible = !empty($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible();
+  $is_rankings_visible = !empty($rankings) && is_block_editor_ranking_shortcode_dropdown_visible();
   ///////////////////////////////////////////
   // 表示
   ///////////////////////////////////////////
@@ -115,26 +123,25 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'isTemplateVisible', //任意のオブジェクト名
-    is_block_editor_template_shortcode_dropdown_visible() //プロバティ
+    $is_templates_visible //プロバティ
   );
   //アフィリエイトショートコード
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'isAffiliateVisible', //任意のオブジェクト名
-    is_block_editor_affiliate_shortcode_dropdown_visible() //プロバティ
+    $is_affiliates_visible //プロバティ
   );
   //ランキングショートコード
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'isRankingVisible', //任意のオブジェクト名
-    is_block_editor_ranking_shortcode_dropdown_visible() //プロバティ
+    $is_rankings_visible //プロバティ
   );
 
   ///////////////////////////////////////////
   // オブジェクト渡し
   ///////////////////////////////////////////
   //吹き出し情報を渡す
-  $baloons = get_speech_balloons();
   //_v($baloons);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
@@ -148,29 +155,29 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
      get_editor_key_color()//プロバティ
   );
   //テンプレート情報を渡す
-  $templates = get_function_texts();
   //_v($templates);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'templates', //任意のオブジェクト名
     $templates //プロバティ
   );
+
   //アフィリエイト情報を渡す
-  $affiliates = get_affiliate_tags();
   //_v($affiliates);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'affiliateTags', //任意のオブジェクト名
     $affiliates //プロバティ
   );
+
   //ランキング情報を渡す
-  $rankings = get_item_rankings();
   //_v($rankings);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'itemRankings', //任意のオブジェクト名
     $rankings //プロバティ
   );
+
 
   // Styles.
   wp_enqueue_style(
