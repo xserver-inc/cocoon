@@ -86,59 +86,27 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $is_templates_visible = (!empty($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (!empty($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (!empty($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
+  $dropdowns = array(
+    'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
+    'isMarkerVisible' => is_block_editor_marker_style_dropdown_visible() ? 1 : 0,
+    'isBadgeVisible'  => is_block_editor_badge_style_dropdown_visible() ? 1 : 0,
+    'isFontSizeVisible' => is_block_editor_font_size_style_dropdown_visible() ? 1 : 0,
+    'isGeneralVisible' => is_block_editor_general_shortcode_dropdown_visible() ? 1 : 0,
+    'isTemplateVisible' => $is_templates_visible,
+    'isAffiliateVisible' => $is_affiliates_visible,
+    'isRankingVisible' => $is_rankings_visible,
+  );
+
 
   // _v(is_block_editor_template_shortcode_dropdown_visible());
   // _v( $is_templates_visible);
   ///////////////////////////////////////////
   // 表示
   ///////////////////////////////////////////
-  //文字スタイル
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isLetterVisible', //任意のオブジェクト名
-    is_block_editor_letter_style_dropdown_visible() //プロバティ
-  );
-  //マーカーのスタイル
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isMarkerVisible', //任意のオブジェクト名
-    is_block_editor_marker_style_dropdown_visible() //プロバティ
-  );
-  //バッジスタイル
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isBadgeVisible', //任意のオブジェクト名
-    is_block_editor_badge_style_dropdown_visible() //プロバティ
-  );
-  //文字サイズスタイル
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isFontSizeVisible', //任意のオブジェクト名
-    is_block_editor_font_size_style_dropdown_visible() //プロバティ
-  );
-  //汎用ショートコード
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isGeneralVisible', //任意のオブジェクト名
-    is_block_editor_general_shortcode_dropdown_visible() //プロバティ
-  );
-  //テンプレートショートコード
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isTemplateVisible', //任意のオブジェクト名
-    $is_templates_visible //プロバティ
-  );
-  //アフィリエイトショートコード
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isAffiliateVisible', //任意のオブジェクト名
-    $is_affiliates_visible //プロバティ
-  );
-  //ランキングショートコード
-  wp_localize_script(
-    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'isRankingVisible', //任意のオブジェクト名
-    $is_rankings_visible //プロバティ
+    'dropdowns', //任意のオブジェクト名
+    $dropdowns //プロバティ
   );
 
   ///////////////////////////////////////////
