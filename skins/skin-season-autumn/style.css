@@ -390,7 +390,7 @@ article .tag-link:hover {
 .sidebar .widget_recent_entries ul li,.sidebar .widget_categories ul li a,.sidebar .widget_archive ul li,.sidebar .widget_pages ul li,.sidebar .widget_meta ul li,.sidebar .widget_rss ul li,.sidebar .widget_nav_menu ul li{
 	border-bottom: 2px dotted #ccc;
 }
-.sidebar .widget_recent_entries ul li:last-child, .sidebar .widget_categories > ul > li:last-child a, .sidebar .widget_archive ul li:last-child, .sidebar .widget_pages ul li:last-child, .sidebar .widget_meta ul li:last-child, .sidebar .widget_rss ul li:last-child, .sidebar .widget_nav_menu ul li:last-child{
+.sidebar .widget_recent_entries ul li:last-child, /*.sidebar .widget_categories > ul > li:last-child a,*/ .sidebar .widget_archive ul li:last-child, .sidebar .widget_pages ul li:last-child, .sidebar .widget_meta ul li:last-child, .sidebar .widget_rss ul li:last-child, .sidebar .widget_nav_menu ul li:last-child{
 	border:none;
 }
 .sidebar .widget_recent_entries ul li a, .sidebar .widget_categories ul li a, .sidebar .widget_archive ul li a, .sidebar .widget_pages ul li a, .sidebar .widget_meta ul li a, .sidebar .widget_rss ul li a, .sidebar .widget_nav_menu ul li a {
