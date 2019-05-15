@@ -2147,6 +2147,7 @@ function ampersand_urldecode($url){
   //$url = urldecode($url);//urlエンコードされている場合に元に戻す（?が&amp;になっている時など）
   $url = str_replace('&amp;', '&', $url);
   $url = str_replace('#038;', '&', $url);
+  $url = str_replace('&&', '&', $url);
   return $url;
 }
 endif;
