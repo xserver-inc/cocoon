@@ -74,7 +74,13 @@
   $('.sbtn').click(function(){
 		var w = $(this).prev('.sform').text();
 		if(w) window.open('https://www.google.co.jp/search?q='+encodeURIComponent(w),'_blank');
-	});
+  });
+
+  //スライドインサイドバーのアーカイブセレクトボックス選択処理
+  $('.sidebar-menu-content .widget_archive select').change(function(){
+		document.location.href = this.options[this.selectedIndex].value;
+  });
+
 })(jQuery);
 
 /*
