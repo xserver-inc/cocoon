@@ -7269,6 +7269,9 @@ div.fb-like-mobile {
   }
 }
 /*Cocoon用記事ボックス*/
+.navi-card-wrap {
+  background-color: #fff;
+}
 .navi-card-wrap.a-wrap {
   position: relative;
   padding: 5px 3px;
@@ -7278,7 +7281,6 @@ div.fb-like-mobile {
 }
 
 .navi-card-box {
-  background-color: #fff;
   padding: 0;
 }
 

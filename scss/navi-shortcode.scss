@@ -1,5 +1,6 @@
 /*Cocoon用記事ボックス*/
 .navi-card-wrap {
+  background-color: $white;
   &.a-wrap {
     position: relative;
     padding: 5px 3px;
@@ -10,7 +11,7 @@
 }
 
 .navi-card-box {
-  background-color: $white;
+  //background-color: $white;
   padding: 0;
 }
 
