@@ -83,9 +83,9 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $templates = get_function_texts();
   $affiliates = get_affiliate_tags();
   $rankings = get_item_rankings();
-  $is_templates_visible = (!empty($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
-  $is_affiliates_visible = (!empty($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
-  $is_rankings_visible = (!empty($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
+  $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
+  $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
+  $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
   $dropdowns = array(
     'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
     'isMarkerVisible' => is_block_editor_marker_style_dropdown_visible() ? 1 : 0,
