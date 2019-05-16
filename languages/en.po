@@ -1748,7 +1748,7 @@ msgstr "Includes Visual Editor dropdown list"
 #: lib/page-affiliate-tag/form.php:42 lib/page-func-text/form.php:44
 #: lib/page-item-ranking/form.php:79 lib/page-speech-balloon/form.php:142
 msgid ""
-"ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合は、"
+"エディターのドロップダウンリストに表示しなくて良い場合は、"
 "無効にしてください。"
 msgstr ""
 "Not to appear in the drop-down list in the Visual Editor (TinyMCE) try to "

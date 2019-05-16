@@ -2072,7 +2072,7 @@ msgstr "비주얼 편집기 목록에 표시"
 #: lib/page-item-ranking/form.php:79 lib/page-speech-balloon/form.php:141
 #, fuzzy
 msgid ""
-"ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合"
+"エディターのドロップダウンリストに表示しなくて良い場合"
 "は、無効にしてください。"
 msgstr ""
 "비주얼 편집기 (TinyMCE) 드롭다운 목록에 표시 하지 않아도 좋은 경우 비활성화 "

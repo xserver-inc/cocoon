@@ -2095,7 +2095,7 @@ msgstr "Afficher dans la liste des éditeurs visuels"
 #: lib/page-item-ranking/form.php:79 lib/page-speech-balloon/form.php:141
 #, fuzzy
 msgid ""
-"ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合"
+"エディターのドロップダウンリストに表示しなくて良い場合"
 "は、無効にしてください。"
 msgstr ""
 "Si vous ne souhaitez pas apparaître dans la liste déroulante de l'éditeur "

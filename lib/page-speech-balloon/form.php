@@ -139,7 +139,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <td>
           <?php
           generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
-          generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
+          generate_tips_tag(__( 'エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
           ?>
         </td>
       </tr>

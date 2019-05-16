@@ -76,7 +76,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
 
     //TinyMCE表示
     generate_checkbox_tag('visible' , $visible, __( 'ビジュアルエディターのリストに表示', THEME_NAME ));
-    generate_tips_tag(__( 'ビジュアルエディター（TinyMCE）のドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
+    generate_tips_tag(__( 'エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてください。', THEME_NAME ));
     echo '<br>';
 
     submit_button('保存');
