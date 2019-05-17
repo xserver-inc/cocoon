@@ -39,5 +39,6 @@ array(
 	'entry_card_excerpt_max_length' => 60,
 	'related_excerpt_max_length' => 50,
 	'related_entry_border_visible' =>0,
-	'related_entry_type' => 'entry_card'
+	'related_entry_type' => 'entry_card',
+  'amp_skin_style_enable' => 0,
 );
