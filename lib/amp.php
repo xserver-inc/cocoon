@@ -743,32 +743,6 @@ function generate_style_amp_custom_tag(){?>
     }
   }
 
-
-  /*
-  ///////////////////////////////////////
-  // 本文中に挿入されたスタイル（ギャラリーなど）
-  ///////////////////////////////////////
-  //$content = do_shortcode(get_the_content());
-  //_v($content);
-  $pattern = '{<style[^>]*?>(.+?)</style>}is';
-  if (preg_match_all($pattern, $content, $m)) {
-    $all_idx = 0;
-    $css_idx = 1;
-    //_v($m);
-    if ($m[$css_idx]) {
-      foreach ($m[$css_idx] as$key => $css) {
-        //do_shortcodeすると、おそらくIDが一つ進むと思われ
-        //それに対応するためID番号に＋1している
-        if (preg_match('{#gallery-(\d+)}', $css, $n)) {
-          $css = str_replace($n[$all_idx], '#gallery-'.strval(intval($n[1])+1), $css);
-        }
-        $css_all .= minify_css($css);
-      }
-    }
-  }
-  */
-
-
   ///////////////////////////////////////////
   //カスタマイザーのスタイル
   ///////////////////////////////////////////

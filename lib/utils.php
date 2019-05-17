@@ -2619,3 +2619,14 @@ function has_valid_shortcode_item($shortcodes){
   return !empty(array_filter($shortcodes, function($v, $k) { return $v->visible === "1"; }, ARRAY_FILTER_USE_BOTH));
 }
 endif;
+
+//不要なショートコードを除外した文字列を返す
+if ( !function_exists( 'get_shortcode_removed_content' ) ):
+function get_shortcode_removed_content($content){
+  $removed_content = $content;
+  $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
+  return $removed_content;
+}
+endif;

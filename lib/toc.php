@@ -38,10 +38,16 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return;
   }
 
+  //実行したくないショートコードを除外した本文
+  $removed_content = get_shortcode_removed_content($the_content);
+  // $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
+  // $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
+  // $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
+
   //_v($the_content);
   //目次ショートコードを取り除く
-  $the_content = preg_replace('/\[toc.*\]/', '', $the_content);
-  $content     = do_shortcode($the_content);
+  //$the_content = preg_replace('/\[toc.*\]/', '', $the_content);
+  $content     = do_shortcode($removed_content);
   $headers     = array();
   $html        = '';
   $toc_list    = '';
