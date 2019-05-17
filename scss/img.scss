@@ -20,25 +20,25 @@ img{
 ** 画像の囲み効果
 ************************************/
 /*ボーダー*/
-.iwe-border p img,
-.iwe-border p amp-img{
+.iwe-border img,
+.iwe-border amp-img{
   border: 1px solid $basic_border_color;
   //box-shadow: 0 0 1px rgba(0,0,0,.6);
 }
 
 /*ボーダー（太線）*/
-.iwe-border-bold p img,
-.iwe-border-bold p amp-img{
+.iwe-border-bold img,
+.iwe-border-bold amp-img{
   border: 4px solid $current_bgc;
 }
 /*シャドー*/
-.iwe-shadow p img,
-.iwe-shadow p amp-img{
+.iwe-shadow img,
+.iwe-shadow amp-img{
   box-shadow: 5px 5px 15px $x_thin;
 }
 /*シャドーペーパー*/
-.iwe-shadow-paper p img,
-.iwe-shadow-paper p amp-img{
+.iwe-shadow-paper img,
+.iwe-shadow-paper amp-img{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.08);
 }
 
