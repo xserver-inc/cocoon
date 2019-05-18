@@ -1,0 +1,44 @@
+<?php //モバイル用のスライドインボタンメニューの表示
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+if ( !defined( 'ABSPATH' ) ) exit; ?>
+
+<?php if (has_nav_menu( 'navi-header' )): ?>
+  <!-- メニューボタン -->
+  <div class="navi-menu-button menu-button">
+    <input id="navi-menu-input" type="checkbox" class="display-none">
+    <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
+      <span class="navi-menu-icon menu-icon"></span>
+      <span class="navi-menu-caption menu-caption"><?php _e( 'メニュー', THEME_NAME ) ?></span>
+    </label>
+    <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
+    <div id="navi-menu-content" class="navi-menu-content menu-content">
+      <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
+      <?php //ヘッダーナビ
+      ob_start();
+      wp_nav_menu(
+        array (
+          //カスタムメニュー名
+          'theme_location' => 'navi-header',
+          //ul 要素に適用するCSS クラス名
+          'menu_class' => 'menu-drawer',
+          //コンテナを表示しない
+          'container' => false,
+          //カスタムメニューを設定しない際に固定ページでメニューを作成しない
+          'fallback_cb' => false,
+        )
+      );
+      $wp_nav_menu = ob_get_clean();
+      //ドロワーメニュー用のグローバルナビからIDを削除（IDの重複HTML5エラー対応）
+      $wp_nav_menu = preg_replace('/ id="[^"]+?"/i', '', $wp_nav_menu);
+      //_v($wp_nav_menu);
+      echo $wp_nav_menu;
+        ?>
+      <!-- <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label> -->
+    </div>
+  </div>
+<?php endif ?>
