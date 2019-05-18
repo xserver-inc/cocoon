@@ -116,7 +116,7 @@ class menu_description_walker extends Walker_Nav_Menu {
 
     $prepend = '<div class="item-label">';
     $append = '</div>';
-    $description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_attr( $item->description ).'</div>' : '';
+    $description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
@@ -127,7 +127,7 @@ class menu_description_walker extends Walker_Nav_Menu {
     $item_output .= '</a>';
     $item_output .= $args->after;
 
-    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    $output .= apply_filters( 'menu_description_walker', $item_output, $item, $depth, $args );
   }
 }
 
