@@ -13,6 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !class_exists( 'menu_description_walker' ) ):
 class menu_description_walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+    //_v($args);
     global $wp_query;
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -50,3 +51,51 @@ class menu_description_walker extends Walker_Nav_Menu {
   }
 }
 endif;
+
+///////////////////////////////////////
+// モバイルメニューのウォーカークラス
+///////////////////////////////////////
+if ( !class_exists( 'mobile_menu_walker' ) ):
+  class mobile_menu_walker extends Walker_Nav_Menu {
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+      global $wp_query;
+      $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+      $class_names = $value = '';
+
+      $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+      $fa_classes = array_filter($classes, function($v, $k) { return preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
+      $classes = array_filter($classes, function($v, $k) { return !preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
+
+      $classes[] = 'menu-button';
+      if ($item->description) {
+        $classes[] = 'menu-item-has-description';
+      }
+
+      $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+      $class_names = ' class="'. esc_attr( $class_names ) . '"';
+      $output .= $indent . '<div id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+      $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+      $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+      $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+      $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+      $prepend = '<div class="menu-caption">';
+      $append = '</div>';
+      //$description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
+
+      $item_output = $args->before;
+      $item_output .= '<a'. $attributes .' class="menu-button-in">';
+      //$item_output .= '<div class="caption-wrap">';
+      $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+      $item_output .= $description.$args->link_after;
+      //$item_output .= '</div>';
+      $item_output .= '</a>';
+      $item_output .= $args->after;
+
+      $output .= apply_filters( 'mobile_menu_walker', $item_output, $item, $depth, $args );
+    }
+  }
+  endif;
+
