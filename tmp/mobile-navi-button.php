@@ -1,4 +1,4 @@
-<?php //モバイル用のスライドインボタンメニューの表示
+<?php //モバイル用のグローバルナビメニューボタン
 /**
  * Cocoon WordPress Theme
  * @author: yhira

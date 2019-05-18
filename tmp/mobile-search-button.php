@@ -1,4 +1,4 @@
-<?php //モバイル用のスライドインボタンメニューの表示
+<?php //モバイル用の検索ボタン
 /**
  * Cocoon WordPress Theme
  * @author: yhira
