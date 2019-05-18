@@ -65,6 +65,10 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
       $classes = empty( $item->classes ) ? array() : (array) $item->classes;
       $fa_classes = array_filter($classes, function($v, $k) { return preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
+      if (empty($fa_classes)) {
+        $fa_classes[] = 'fa';
+        $fa_classes[] = 'fa-star';
+      }
       $fa_classes[] = 'menu-icon';
       //_v($fa_classes);
       $classes = array_filter($classes, function($v, $k) { return !preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);

@@ -12,8 +12,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
-      <span class="navi-menu-icon menu-icon"></span>
-      <span class="navi-menu-caption menu-caption"><?php _e( 'メニュー', THEME_NAME ) ?></span>
+      <div class="navi-menu-icon menu-icon"></div>
+      <div class="navi-menu-caption menu-caption"><?php _e( 'メニュー', THEME_NAME ) ?></div>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
     <div id="navi-menu-content" class="navi-menu-content menu-content">
