@@ -40,6 +40,13 @@
             scrollTop: 1
         }, 800);
   });
+  //ボタン(.go-to-toc-common)のクリックイベント
+  $('.go-to-toc-common').click(function(){
+  //目次へ移動する
+    $('#toc').animate({
+            scrollTop: 1
+        }, 800);
+  });
 
 
   //下にスクロールで管理パネルを隠す
