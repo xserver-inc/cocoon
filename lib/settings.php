@@ -219,9 +219,10 @@ add_theme_support( 'menus' );
 //register_nav_menu( 'header-navi', 'ヘッダーナビゲーション' );
 register_nav_menus(
   array(
-    'navi-header' => __( 'ヘッダーナビ', THEME_NAME ),
-    'navi-mobile' => __( 'モバイルヘッダーナビ（サブ不可）', THEME_NAME ),
-    'navi-footer' => __( 'フッターナビ（サブ不可）', THEME_NAME ),
+    'navi-header' => __( 'ヘッダーメニュー', THEME_NAME ),
+    'navi-mobile' => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
+    'navi-footer' => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
+    'navi-footer-mobile' => __( 'フッターモバイルメニュー（サブ不可）', THEME_NAME ),
   )
 );
 
