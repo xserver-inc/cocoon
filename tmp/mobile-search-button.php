@@ -5,7 +5,10 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit; ?>
+if ( !defined( 'ABSPATH' ) ) exit;
+global $_MENU_CAPTION;
+global $_MENU_ICON;
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'search-menu-icon'; ?>
 
 <!-- 検索ボタン -->
 <?php if (!is_amp() || (is_amp() && is_ssl())): ?>
@@ -13,8 +16,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <li class="search-menu-button menu-button">
     <input id="search-menu-input" type="checkbox" class="display-none">
     <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
-      <div class="search-menu-icon menu-icon"></div>
-      <div class="search-menu-caption menu-caption"><?php _e( '検索', THEME_NAME ) ?></div>
+      <div class="<?php echo $icon_class; ?> menu-icon"></div>
+      <div class="search-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '検索', THEME_NAME ); ?></div>
     </label>
     <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
     <div id="search-menu-content" class="search-menu-content">

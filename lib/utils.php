@@ -2630,3 +2630,47 @@ function get_shortcode_removed_content($content){
   return $removed_content;
 }
 endif;
+
+//テンプレートのタグ取得
+if ( !function_exists( 'get_template_part_tag( $slug )' ) ):
+function get_template_part_tag($slug){
+  ob_start();
+  get_template_part($slug);
+  return ob_get_clean();
+}
+endif;
+
+//モバイルメニューボタンタグの取得
+if ( !function_exists( 'get_mobile_navi_button_tag' ) ):
+function get_mobile_navi_button_tag(){
+  return get_template_part_tag('tmp/mobile-navi-button');
+}
+endif;
+
+//モバイルホームボタンタグの取得
+if ( !function_exists( 'get_mobile_home_button_tag' ) ):
+function get_mobile_home_button_tag(){
+  return get_template_part_tag('tmp/mobile-home-button');
+}
+endif;
+
+//モバイル検索ボタンタグの取得
+if ( !function_exists( 'get_mobile_search_button_tag' ) ):
+function get_mobile_search_button_tag(){
+  return get_template_part_tag('tmp/mobile-search-button');
+}
+endif;
+
+//モバイルトップボタンタグの取得
+if ( !function_exists( 'get_mobile_top_button_tag' ) ):
+function get_mobile_top_button_tag(){
+  return get_template_part_tag('tmp/mobile-top-button');
+}
+endif;
+
+//モバイルサイドバーボタンタグの取得
+if ( !function_exists( 'get_mobile_sidebar_button_tag' ) ):
+function get_mobile_sidebar_button_tag(){
+  return get_template_part_tag('tmp/mobile-sidebar-button');
+}
+endif;

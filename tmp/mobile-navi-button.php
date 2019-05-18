@@ -5,15 +5,18 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit; ?>
+if ( !defined( 'ABSPATH' ) ) exit;
+global $_MENU_CAPTION;
+global $_MENU_ICON;
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
 
 <?php if (has_nav_menu( 'navi-header' )): ?>
   <!-- メニューボタン -->
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
-      <div class="navi-menu-icon menu-icon"></div>
-      <div class="navi-menu-caption menu-caption"><?php _e( 'メニュー', THEME_NAME ) ?></div>
+      <div class="<?php echo $icon_class; ?> menu-icon"></div>
+      <div class="navi-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'メニュー', THEME_NAME ); ?></div>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
     <div id="navi-menu-content" class="navi-menu-content menu-content">

@@ -5,7 +5,10 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
-if ( !defined( 'ABSPATH' ) ) exit; ?>
+if ( !defined( 'ABSPATH' ) ) exit;
+global $_MENU_CAPTION;
+global $_MENU_ICON;
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'top-menu-icon'; ?>
 
 <?php
 $on = null;
@@ -17,7 +20,7 @@ if (is_amp()) {
 <!-- トップボタン -->
 <li class="top-menu-button menu-button">
   <a class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
-    <div class="top-menu-icon menu-icon"></div>
-    <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
+    <div class="<?php echo $icon_class; ?> menu-icon"></div>
+    <div class="top-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'トップ', THEME_NAME ); ?></div>
   </a>
 </li>
