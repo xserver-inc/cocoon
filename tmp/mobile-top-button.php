@@ -15,9 +15,9 @@ if (is_amp()) {
 }
   ?>
 <!-- トップボタン -->
-<div class="top-menu-button menu-button">
+<li class="top-menu-button menu-button">
   <a class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
     <div class="top-menu-icon menu-icon"></div>
     <div class="top-menu-caption menu-caption"><?php _e( 'トップ', THEME_NAME ) ?></div>
   </a>
-</div>
+</li>

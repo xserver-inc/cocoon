@@ -9,11 +9,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php if (is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' )): ?>
 <!-- サイドバーボタン -->
-  <div class="sidebar-menu-button menu-button">
+  <li class="sidebar-menu-button menu-button">
     <input id="sidebar-menu-input" type="checkbox" class="display-none">
     <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
-      <span class="sidebar-menu-icon menu-icon"></span>
-      <span class="sidebar-menu-caption menu-caption"><?php _e( 'サイドバー', THEME_NAME ) ?></span>
+      <div class="sidebar-menu-icon menu-icon"></div>
+      <div class="sidebar-menu-caption menu-caption"><?php _e( 'サイドバー', THEME_NAME ) ?></div>
     </label>
     <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
     <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
@@ -29,5 +29,5 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         ?>
       <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
     </div>
-  </div>
+  </li>
 <?php endif ?>

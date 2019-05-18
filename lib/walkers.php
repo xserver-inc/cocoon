@@ -65,6 +65,8 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
       $classes = empty( $item->classes ) ? array() : (array) $item->classes;
       $fa_classes = array_filter($classes, function($v, $k) { return preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
+      $fa_classes[] = 'menu-icon';
+      //_v($fa_classes);
       $classes = array_filter($classes, function($v, $k) { return !preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
 
       $classes[] = 'menu-button';
@@ -72,24 +74,31 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $classes[] = 'menu-item-has-description';
       }
 
+      $fa_class_names = join( ' ', apply_filters( 'nav_menu_fa_css_class', array_filter( $fa_classes ), $item ) );
+
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
       $class_names = ' class="'. esc_attr( $class_names ) . '"';
-      $output .= $indent . '<div id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+      $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
       $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
       $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
       $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
       $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
-      $prepend = '<div class="menu-caption">';
-      $append = '</div>';
+      $icon_before = '<div class="'.esc_attr($fa_class_names).'">';
+      $icon_after = '</div>';
+
+      $caption_before = '<div class="menu-caption">';
+      $caption_after = '</div>';
       //$description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
 
       $item_output = $args->before;
       $item_output .= '<a'. $attributes .' class="menu-button-in">';
       //$item_output .= '<div class="caption-wrap">';
-      $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
-      $item_output .= $description.$args->link_after;
+      //$item_output .= $args->link_before;
+      $item_output .= $icon_before.$icon_after;
+      $item_output .= $caption_before.apply_filters( 'the_title', $item->title, $item->ID ).$caption_after;
+      //$item_output .= $args->link_after;
       //$item_output .= '</div>';
       $item_output .= '</a>';
       $item_output .= $args->after;

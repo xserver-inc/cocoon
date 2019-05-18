@@ -14,11 +14,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       //カスタムメニュー名
       'theme_location' => 'navi-footer-mobile',
       //ul 要素に適用するCSS クラス名
-      'menu_class' => 'menu-drawer',
+      'menu_class' => 'mobile-menu-buttons',
       //コンテナを表示しない
       'container' => false,
       //カスタムメニューを設定しない際に固定ページでメニューを作成しない
       'fallback_cb' => false,
+      'walker' => new mobile_menu_walker(),
     )
   );
     ?>

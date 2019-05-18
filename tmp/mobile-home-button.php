@@ -8,9 +8,9 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- ホームボタン -->
-<div class="home-menu-button menu-button">
+<li class="home-menu-button menu-button">
   <a href="<?php echo home_url(); ?>" class="menu-button-in">
     <div class="home-menu-icon menu-icon"></div>
     <div class="home-menu-caption menu-caption"><?php _e( 'ホーム', THEME_NAME ) ?></div>
   </a>
-</div>
+</li>

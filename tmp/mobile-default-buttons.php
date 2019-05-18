@@ -7,17 +7,21 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<?php //ナビメニュー
-get_template_part( 'tmp/mobile-navi-button' ); ?>
+<ul class="mobile-menu-buttons">
 
-<?php //ホームメニュー
-get_template_part( 'tmp/mobile-home-button' ); ?>
+  <?php //ナビメニュー
+  get_template_part( 'tmp/mobile-navi-button' ); ?>
 
-<?php //検索メニュー
-get_template_part( 'tmp/mobile-search-button' ); ?>
+  <?php //ホームメニュー
+  get_template_part( 'tmp/mobile-home-button' ); ?>
 
-<?php //トップメニュー
-get_template_part( 'tmp/mobile-top-button' ); ?>
+  <?php //検索メニュー
+  get_template_part( 'tmp/mobile-search-button' ); ?>
 
-<?php //サイドバーメニュー
-get_template_part( 'tmp/mobile-sidebar-button' ); ?>
+  <?php //トップメニュー
+  get_template_part( 'tmp/mobile-top-button' ); ?>
+
+  <?php //サイドバーメニュー
+  get_template_part( 'tmp/mobile-sidebar-button' ); ?>
+
+</ul>

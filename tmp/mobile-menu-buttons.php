@@ -9,17 +9,15 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 if (is_mobile_button_layout_type_slide_in()): ?>
 
-<div class="mobile-menu-buttons">
-  <?php
-  if (has_nav_menu( 'navi-footer-mobile' )) {
-    //モバイルフッターメニュー
-    get_template_part( 'tmp/mobile-footer-menu-buttons' );
-  } else {
-    //デフォルトモバイルボタン
-    get_template_part( 'tmp/mobile-default-buttons' );
-  }
-  ?>
-</div>
+<?php
+if (has_nav_menu( 'navi-footer-mobile' )) {
+  //モバイルフッターメニュー
+  get_template_part( 'tmp/mobile-footer-menu-buttons' );
+} else {
+  //デフォルトモバイルボタン
+  get_template_part( 'tmp/mobile-default-buttons' );
+}
+?>
 
 <?php endif ?>
 

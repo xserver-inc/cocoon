@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php if (has_nav_menu( 'navi-header' )): ?>
   <!-- メニューボタン -->
-  <div class="navi-menu-button menu-button">
+  <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
       <span class="navi-menu-icon menu-icon"></span>
@@ -40,5 +40,5 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         ?>
       <!-- <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label> -->
     </div>
-  </div>
+  </li>
 <?php endif ?>
