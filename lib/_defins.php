@@ -229,6 +229,8 @@ define('SET_EVENT_PASSIVE_JS_URL', get_template_directory_uri() . '/js/set-event
 
 //AMPのトップへ戻る用のコード
 define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:header.scrollTo(\'duration\'=375)"');
+//AMPの目次へ戻る用のコード
+define('AMP_GO_TO_TOP_ON_CODE', ' on="tap:toc.scrollTo(\'duration\'=375)"');
 
 //リンククリック時の削除確認JavaScript
 define('ONCLICK_DELETE_CONFIRM', ' onclick="if(!confirm(\''.__( '本当に削除してもいいですか？', THEME_NAME ).'\'))return false"');
