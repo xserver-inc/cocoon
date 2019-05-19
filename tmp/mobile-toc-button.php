@@ -10,6 +10,8 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'top-menu-icon'; ?>
 
+<?php if (is_singular() && is_toc_visible() && is_page_toc_visible()): ?>
+
 <?php
 $on = null;
 //AMP用のイベントを設定
@@ -24,3 +26,5 @@ if (is_amp()) {
     <div class="cop-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '目次へ', THEME_NAME ); ?></div>
   </a>
 </li>
+
+<?php endif; ?>
