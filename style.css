@@ -6536,16 +6536,15 @@ div.fb-like-mobile {
   left: 0;
   right: 0;
   z-index: 2;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   display: none;
+  align-items: center;
   line-height: 1.4;
   min-height: 50px;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
-}
-.mobile-menu-buttons .menu-icon {
-  margin-top: 3px;
-  text-align: center;
-  display: block;
 }
 .mobile-menu-buttons .menu-icon::before {
   font-family: FontAwesome;
@@ -6553,22 +6552,25 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-caption {
   font-size: 12px;
-  text-align: center;
-  display: block;
 }
 .mobile-menu-buttons .menu-button {
+  text-align: center;
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 .mobile-menu-buttons .menu-button > a {
+  display: block;
   color: #333;
   text-decoration: none;
-  cursor: default;
 }
 .mobile-menu-buttons .menu-button:hover {
   background-color: #f5f8fa;
   transition: all 0.7s ease;
   color: #333;
+}
+.mobile-menu-buttons .sub-menu {
+  display: none;
 }
 .mobile-menu-buttons .ad-area {
   display: none;
