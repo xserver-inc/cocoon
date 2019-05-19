@@ -6546,15 +6546,19 @@ div.fb-like-mobile {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
 }
+.mobile-menu-buttons .menu-icon {
+  text-align: center;
+  width: 100%;
+}
 .mobile-menu-buttons .menu-icon::before {
   font-family: FontAwesome;
   font-size: 1em;
 }
 .mobile-menu-buttons .menu-caption {
   font-size: 12px;
+  text-align: center;
 }
 .mobile-menu-buttons .menu-button {
-  text-align: center;
   position: relative;
   width: 100%;
   cursor: pointer;

@@ -28,7 +28,8 @@
 
   .menu-icon{
     //margin-top: 3px;
-    // text-align: center;
+    text-align: center;
+    width: 100%;
     // display: block;
     &::before{
       font-family: FontAwesome;
@@ -38,12 +39,12 @@
 
   .menu-caption{
     font-size: 12px;
-    //text-align: center;
+    text-align: center;
     //display: block;
   }
 
   .menu-button {
-    text-align: center;
+    //text-align: center;
     position: relative;
     width: 100%;
     cursor: pointer;
