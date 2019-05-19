@@ -16,6 +16,7 @@ class menu_description_walker extends Walker_Nav_Menu {
     //_v($args);
     global $wp_query;
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    $url = trim($item->url);
 
     $class_names = $value = '';
 
@@ -32,7 +33,7 @@ class menu_description_walker extends Walker_Nav_Menu {
     $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
     $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-    $attributes .= ! empty( $url )        ? ' href="'   . esc_attr( $url        ) .'"' : '';
+    $attributes .= ! empty( $url )        ? ' href="'   . esc_attr( $url ) .'"' : '';
 
     $prepend = '<div class="item-label">';
     $append = '</div>';
