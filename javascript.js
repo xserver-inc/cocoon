@@ -43,8 +43,8 @@
   //ボタン(.go-to-toc-common)のクリックイベント
   $('.go-to-toc-common').click(function(){
   //目次へ移動する
-    $('#toc').animate({
-            scrollTop: 1
+    $('body,html').animate({
+            scrollTop: $('.toc').offset().top
         }, 800);
   });
 
