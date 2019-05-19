@@ -6596,6 +6596,10 @@ div.fb-like-mobile {
   content: '\f062';
 }
 
+.toc-menu-icon::before {
+  content: '\f0ca';
+}
+
 .sidebar-menu-icon::before {
   content: '\f03b';
 }

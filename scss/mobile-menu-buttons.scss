@@ -93,6 +93,12 @@
   }
 }
 
+.toc-menu-icon{
+  &::before{
+    content: '\f0ca';
+  }
+}
+
 .sidebar-menu-icon{
   &::before{
     content: '\f03b';

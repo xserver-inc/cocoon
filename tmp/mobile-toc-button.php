@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
-$icon_class = $_MENU_ICON ? $_MENU_ICON : 'top-menu-icon'; ?>
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'toc-menu-icon'; ?>
 
 <?php if (is_singular() && is_toc_visible() && is_page_toc_visible()): ?>
 
