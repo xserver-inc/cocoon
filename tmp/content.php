@@ -127,7 +127,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
         <?php //SNSフォローボタン
         if (is_sns_follow_buttons_visible())
-          get_template_part('tmp/sns-follow-buttons'); ?>
+        get_template_part_with_option('tmp/sns-follow-buttons', SF_BOTTOM); ?>
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_below_sns_buttons_visible() && is_all_adsenses_visible()){

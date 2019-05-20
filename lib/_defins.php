@@ -61,6 +61,9 @@ $_MENU_CAPTION = null;
 //モバイルフッターメニューのアイコン
 global $_MENU_ICON;
 $_MENU_ICON = null;
+//モバイルフッターコピーボタン
+global $_MOBILE_COPY_BUTTON;
+$_MOBILE_COPY_BUTTON = null;
 
 //エディターキーカラー
 define('DEFAULT_EDITOR_KEY_COLOR', '#19448e');
@@ -165,6 +168,13 @@ define('DEFAULT_INPUT_ROWS', 10);
 //SNSシェアオプション
 define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
+define('SS_MOBILE', 'ss-mobile');
+
+//SNSフォローをオプション
+define('SF_BOTTOM', 'sf-bottom');
+define('SF_WIDGET', 'sf-widget');
+define('SF_PROFILE', 'sf-profile');
+define('SF_MOBILE', 'sf-mobile');
 
 //NO IMAGE画像URL
 define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');

@@ -1370,6 +1370,7 @@ img.emoji {
   background-color: #333;
   opacity: 0.8;
   box-shadow: 0 4px 8px #777;
+  z-index: 2;
 }
 
 /************************************
@@ -6604,10 +6605,20 @@ div.fb-like-mobile {
   content: '\f03b';
 }
 
+.share-menu-icon::before {
+  content: '\f1e0';
+}
+
+.follow-menu-icon::before {
+  content: '\f004';
+}
+
 /*閉じる用の薄黒カバー*/
 #navi-menu-close,
 #sidebar-menu-close,
-#search-menu-close {
+#search-menu-close,
+#share-menu-close,
+#follow-menu-close {
   display: none;
   /*はじめは隠しておく*/
   position: fixed;
@@ -6662,7 +6673,9 @@ div.fb-like-mobile {
   transform: translateX(105%);
 }
 
-.search-menu-content {
+.search-menu-content,
+.share-menu-content,
+.follow-menu-content {
   transition: .3s ease-in-out;
   position: fixed;
   top: 40%;
@@ -6673,14 +6686,18 @@ div.fb-like-mobile {
   -webkit-transform: translateY(900%);
   transform: translateY(900%);
 }
-.search-menu-content .search-edit {
+.search-menu-content .search-edit,
+.share-menu-content .search-edit,
+.follow-menu-content .search-edit {
   width: 100%;
 }
 
 /*チェックが入ったらもろもろ表示*/
 #navi-menu-input:checked ~ #navi-menu-close,
 #sidebar-menu-input:checked ~ #sidebar-menu-close,
-#search-menu-input:checked ~ #search-menu-close {
+#search-menu-input:checked ~ #search-menu-close,
+#share-menu-input:checked ~ #share-menu-close,
+#follow-menu-input:checked ~ #follow-menu-close {
   display: block;
   /*カバーを表示*/
   opacity: .5;
@@ -6688,7 +6705,9 @@ div.fb-like-mobile {
 
 #navi-menu-input:checked ~ #navi-menu-content,
 #sidebar-menu-input:checked ~ #sidebar-menu-content,
-#search-menu-input:checked ~ #search-menu-content {
+#search-menu-input:checked ~ #search-menu-content,
+#share-menu-input:checked ~ #share-menu-content,
+#follow-menu-input:checked ~ #follow-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
@@ -6725,6 +6744,23 @@ div.fb-like-mobile {
   padding-right: 4px;
   padding: 0;
   font-size: 2em;
+}
+
+.share-menu-content .sns-buttons {
+  justify-content: space-between;
+}
+.share-menu-content .sns-buttons .share-count {
+  color: #fff;
+}
+.share-menu-content .button-caption {
+  display: none;
+}
+
+.follow-menu-content .sns-buttons {
+  justify-content: space-between;
+}
+.follow-menu-content .sns-follow-message {
+  display: none;
 }
 
 .ranking-items {

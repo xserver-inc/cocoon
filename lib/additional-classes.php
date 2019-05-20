@@ -439,6 +439,12 @@ endif;
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):
 function get_additional_sns_share_button_classes($option = null){
   $classes = null;
+  if ($option == SS_MOBILE) {
+    //_v($option);
+    $classes .= ' ss-col-4 bc-brand-color sbc-hide '.SS_MOBILE;
+    return apply_filters('get_additional_sns_share_button_classes', $classes);
+  }
+
   //カラム数
   if ($option == SS_TOP) {
     $value = get_sns_top_share_column_count();
@@ -526,6 +532,11 @@ endif;
 if ( !function_exists( 'get_additional_sns_follow_button_classes' ) ):
 function get_additional_sns_follow_button_classes($option = null){
   $classes = null;
+
+  if ($option == SF_MOBILE) {
+    $classes .= ' bc-brand-color fbc-hide '.SF_MOBILE;
+    return apply_filters('get_additional_sns_follow_button_classes', $classes);
+  }
 
   //ボタンカラー
   switch (get_sns_follow_button_color()) {

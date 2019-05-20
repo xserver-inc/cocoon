@@ -2681,3 +2681,17 @@ function get_mobile_toc_button_tag(){
   return get_template_part_tag('tmp/mobile-toc-button');
 }
 endif;
+
+//モバイルシェアボタンタグの取得
+if ( !function_exists( 'get_mobile_share_button_tag' ) ):
+function get_mobile_share_button_tag(){
+  return get_template_part_tag('tmp/mobile-share-button');
+}
+endif;
+
+//モバイルフォローボタンタグの取得
+if ( !function_exists( 'get_mobile_follow_button_tag' ) ):
+function get_mobile_follow_button_tag(){
+  return get_template_part_tag('tmp/mobile-follow-button');
+}
+endif;
