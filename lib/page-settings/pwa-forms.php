@@ -79,6 +79,39 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- アイコン -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'アイコン', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php $site_icon_url = get_site_icon_url();
+            //拡張子の取得
+            $arr = explode('.', $site_icon_url);
+            $ext = end($arr);
+            $is_png = preg_match('/^png$/i', $ext);
+            //サイズの取得
+            $size = get_image_width_and_height($site_icon_url);
+            $width = isset($size['width']) ? $size['width'] : 0;
+            $height = isset($size['height']) ? $size['height'] : 0; ?>
+            <?php if (!$site_icon_url || ($width < 512) || ($height < 512) || !$is_png): ?>
+            <p style="color:red;font-weight: bold;">
+              <?php _e( '512x512px の PNG画像 をサイトアイコンに設定してださい。設定方法は<a href="https://wp-cocoon.com/site-icon/" target="_blank" rel="noopener noreferrer">こちら</a>。', THEME_NAME ) ?>
+            </p>
+            <?php else: ?>
+            <p style="color:#3eb370;font-weight: bold;"><?php _e( '現在適切なアイコンが設定されています。', THEME_NAME ) ?></p>
+            <?php endif; ?>
+            <?php if ($site_icon_url): ?>
+            <div style="width:192px;">
+              <img src="<?php echo $site_icon_url; ?>" alt="" style="width:100%;">
+            </div>
+            <?php endif; ?>
+          <?php
+            generate_tips_tag(__( 'PWA用のアイコンは<b>512×512px</b>の<b>PNG画像</b>が必要です。サイトアイコンから設定できます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/site-icon/'));
+          ?>
+          </td>
+        </tr>
+
         <!-- 配色 -->
         <tr>
           <th scope="row">
