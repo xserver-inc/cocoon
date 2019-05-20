@@ -151,7 +151,7 @@ function manage_cocoon_pwa_files(){
     $background_color = get_pwa_background_color();
 
     $icon_url_s  = get_site_icon_url_s();
-    $icon_size_s = get_site_icon_size_text($icon_url_s);
+    $icon_size_s = '192x192';//get_site_icon_size_text($icon_url_s);
 
     $icon_url_l  = get_site_icon_url_l();
     $icon_size_l = '512x512';//get_site_icon_size_text($icon_url_l);
@@ -209,7 +209,7 @@ function manage_cocoon_pwa_files(){
     $service_worker =
 "const CACHE_NAME = '{$service_worker_ver}';
 const urlsToCache = [
-  '/',
+  '{$start_url}',
   '{$icon_url_s}',
   '{$icon_url_l}',
   '{$theme_js_url}',
