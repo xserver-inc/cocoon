@@ -18,7 +18,7 @@ if ( is_any_sns_follow_buttons_exist()
     $user_id = isset($_USER_ID) ? $_USER_ID : get_the_posts_author_id();
     ?>
 <!-- SNSページ -->
-<div class="sns-follow<?php echo get_additional_sns_follow_button_classes(); ?>">
+<div class="sns-follow<?php echo get_additional_sns_follow_button_classes($option); ?>">
 
   <?php if ( get_sns_follow_message() ): //フォローメッセージがあるか?>
   <div class="sns-follow-message"><?php echo get_sns_follow_display_message(); //フォローメッセージの取得?></div>

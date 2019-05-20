@@ -36,7 +36,7 @@ class SocialFollowWidgetItem extends WP_Widget {
       echo $args['after_title'];
     }
 
-    get_template_part('tmp/sns-follow-buttons'); //SNSフォローボタン
+    get_template_part_with_option('tmp/sns-follow-buttons', SF_WIDGET); //SNSフォローボタン
     echo $args['after_widget']; ?>
   <?php
   }

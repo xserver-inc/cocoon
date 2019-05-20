@@ -170,6 +170,12 @@ define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
 define('SS_MOBILE', 'ss-mobile');
 
+//SNSフォローをオプション
+define('SF_BOTTOM', 'sf-bottom');
+define('SF_WIDGET', 'sf-widget');
+define('SF_PROFILE', 'sf-profile');
+define('SF_MOBILE', 'sf-mobile');
+
 //NO IMAGE画像URL
 define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');
 define('NO_IMAGE_160', get_template_directory_uri().'/images/no-image-160.png');
