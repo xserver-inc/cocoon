@@ -1637,6 +1637,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .share-menu-content .sns-buttons .share-count { color: #fff; }
 .admin-settings .demo .share-menu-content .button-caption { display: none; }
 .admin-settings .demo .follow-menu-content .sns-buttons { justify-content: space-between; }
+.admin-settings .demo .follow-menu-content .sns-buttons a { width: 24%; }
 .admin-settings .demo .follow-menu-content .sns-follow-message { display: none; }
 .admin-settings .demo .ranking-items { line-height: 1.4; }
 .admin-settings .demo .ranking-items p { font-size: 18px; margin-top: 0; }
@@ -3167,6 +3168,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .share-menu-content .sns-buttons .share-count { color: #fff; }
 .admin-settings .demo .share-menu-content .button-caption { display: none; }
 .admin-settings .demo .follow-menu-content .sns-buttons { justify-content: space-between; }
+.admin-settings .demo .follow-menu-content .sns-buttons a { width: 24%; }
 .admin-settings .demo .follow-menu-content .sns-follow-message { display: none; }
 .admin-settings .demo .ranking-items { line-height: 1.4; }
 .admin-settings .demo .ranking-items p { font-size: 18px; margin-top: 0; }
