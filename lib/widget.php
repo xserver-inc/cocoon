@@ -27,6 +27,7 @@ add_filter( 'wp_list_categories', 'remove_post_count_parentheses' );
 add_filter( 'get_archives_link',  'remove_post_count_parentheses' );
 if ( !function_exists( 'remove_post_count_parentheses' ) ):
 function remove_post_count_parentheses( $output ) {
+  $output = str_replace('<a href=','<a class="cf" href=',$output);
   $output = preg_replace('/<\/a>.*\(([0-9,]+)\)/','<span class="post-count">$1</span></a>',$output);
   return $output;
 }
