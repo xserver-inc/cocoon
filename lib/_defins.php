@@ -61,6 +61,9 @@ $_MENU_CAPTION = null;
 //モバイルフッターメニューのアイコン
 global $_MENU_ICON;
 $_MENU_ICON = null;
+//モバイルフッターコピーボタン
+global $_MOBILE_COPY_BUTTON;
+$_MOBILE_COPY_BUTTON = null;
 
 //エディターキーカラー
 define('DEFAULT_EDITOR_KEY_COLOR', '#19448e');

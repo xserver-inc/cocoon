@@ -439,6 +439,12 @@ endif;
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):
 function get_additional_sns_share_button_classes($option = null){
   $classes = null;
+  if ($option == SS_MOBILE) {
+    //_v($option);
+    $classes .= ' ss-nowrap bc-brand-color ss-mobile';
+    return apply_filters('get_additional_sns_share_button_classes', $classes);
+  }
+
   //カラム数
   if ($option == SS_TOP) {
     $value = get_sns_top_share_column_count();

@@ -532,7 +532,7 @@ function get_pinterest_share_url(){
 }
 endif;
 
-//PinterestのシェアURLを取得
+//コピーURLを取得
 if ( !function_exists( 'get_copy_share_url' ) ):
 function get_copy_share_url(){
   if (is_amp()) {
@@ -547,7 +547,8 @@ endif;
 if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
 function is_sns_share_buttons_visible($option){
   return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
-         (is_sns_top_share_buttons_visible() && $option == SS_TOP);
+         (is_sns_top_share_buttons_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -555,7 +556,8 @@ endif;
 if ( !function_exists( 'is_twitter_share_button_visible' ) ):
 function is_twitter_share_button_visible($option){
   return (is_bottom_twitter_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_twitter_share_button_visible() && $option == SS_TOP);
+         (is_top_twitter_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -563,7 +565,8 @@ endif;
 if ( !function_exists( 'is_facebook_share_button_visible' ) ):
 function is_facebook_share_button_visible($option){
   return (is_bottom_facebook_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_facebook_share_button_visible() && $option == SS_TOP);
+         (is_top_facebook_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -571,7 +574,8 @@ endif;
 if ( !function_exists( 'is_hatebu_share_button_visible' ) ):
 function is_hatebu_share_button_visible($option){
   return (is_bottom_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_hatebu_share_button_visible() && $option == SS_TOP);
+         (is_top_hatebu_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -579,7 +583,8 @@ endif;
 if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
 function is_google_plus_share_button_visible($option){
   return (is_bottom_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_google_plus_share_button_visible() && $option == SS_TOP);
+         (is_top_google_plus_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -587,7 +592,8 @@ endif;
 if ( !function_exists( 'is_pocket_share_button_visible' ) ):
 function is_pocket_share_button_visible($option){
   return (is_bottom_pocket_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_pocket_share_button_visible() && $option == SS_TOP);
+         (is_top_pocket_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -595,7 +601,8 @@ endif;
 if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible($option){
   return (is_bottom_line_at_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_line_at_share_button_visible() && $option == SS_TOP);
+         (is_top_line_at_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -603,7 +610,8 @@ endif;
 if ( !function_exists( 'is_pinterest_share_button_visible' ) ):
 function is_pinterest_share_button_visible($option){
   return (is_bottom_pinterest_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_pinterest_share_button_visible() && $option == SS_TOP);
+         (is_top_pinterest_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 
@@ -611,7 +619,8 @@ endif;
 if ( !function_exists( 'is_copy_share_button_visible' ) ):
 function is_copy_share_button_visible($option){
   return (is_bottom_copy_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_copy_share_button_visible() && $option == SS_TOP);
+         (is_top_copy_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
 }
 endif;
 

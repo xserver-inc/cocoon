@@ -105,11 +105,18 @@
   }
 }
 
+.share-menu-icon{
+  &::before{
+    content: '\f1e0';
+  }
+}
+
 
 /*閉じる用の薄黒カバー*/
 #navi-menu-close,
 #sidebar-menu-close,
-#search-menu-close {
+#search-menu-close,
+#share-menu-close {
   display: none;/*はじめは隠しておく*/
   position: fixed;
   z-index: 99;
@@ -158,7 +165,8 @@
   -webkit-transform: translateX(105%);
   transform: translateX(105%);//右に隠す
 }
-.search-menu-content{
+.search-menu-content,
+.share-menu-content{
   transition: .3s ease-in-out;
   position: fixed;
   top: 40%;
@@ -176,14 +184,16 @@
 /*チェックが入ったらもろもろ表示*/
 #navi-menu-input:checked ~ #navi-menu-close,
 #sidebar-menu-input:checked ~ #sidebar-menu-close,
-#search-menu-input:checked ~ #search-menu-close {
+#search-menu-input:checked ~ #search-menu-close,
+#share-menu-input:checked ~ #share-menu-close {
   display: block;/*カバーを表示*/
   opacity: .5;
 }
 
 #navi-menu-input:checked ~ #navi-menu-content,
 #sidebar-menu-input:checked ~ #sidebar-menu-content,
-#search-menu-input:checked ~ #search-menu-content {
+#search-menu-input:checked ~ #search-menu-content,
+#share-menu-input:checked ~ #share-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   //box-shadow: 6px 0 25px rgba(0,0,0,.15);
@@ -222,4 +232,21 @@
     padding: 0;
     font-size: 2em;
   }
+}
+
+.share-menu-content{
+  .sns-buttons{
+    flex-wrap: nowrap;
+    a{
+      margin: 0.6em;
+      padding: 1em;
+    }
+    .share-count{
+      color: $white;
+    }
+  }
+  .button-caption{
+    display: none;
+  }
+  .ss-nowrap{}
 }

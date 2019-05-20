@@ -8,6 +8,8 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
+global $_MOBILE_COPY_BUTTON;
+$_MOBILE_COPY_BUTTON = true;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'share-menu-icon'; ?>
 
 <!-- シェアボタン -->
