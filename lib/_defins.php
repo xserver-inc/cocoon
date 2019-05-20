@@ -165,6 +165,7 @@ define('DEFAULT_INPUT_ROWS', 10);
 //SNSシェアオプション
 define('SS_TOP', 'ss-top');
 define('SS_BOTTOM', 'ss-bottom');
+define('SS_MOBILE', 'ss-mobile');
 
 //NO IMAGE画像URL
 define('NO_IMAGE_320', get_template_directory_uri().'/images/no-image-320.png');
