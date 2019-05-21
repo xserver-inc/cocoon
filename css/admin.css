@@ -3627,7 +3627,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .header-container-in.hlt-top-menu .logo-header { max-height: none; }
   .admin-settings .demo .eye-catch .cat-label { font-size: 10px; padding: 2px 4px; }
   .admin-settings .demo textarea { min-height: 160px; }
-  .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item { width: 32%; border: 1px solid #ddd; margin: 2px; display: flex; flex: 1 1 auto; text-align: center; }
+  .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item { width: 32%; border: 0; margin: 2px; display: flex; flex: 1 1 auto; text-align: center; }
   .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item a { padding: 0; width: 100%; }
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
   .admin-settings .demo #wpf-form-wrapper .mce-edit-area iframe { min-height: 200px; }

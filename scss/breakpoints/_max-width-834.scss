@@ -262,13 +262,9 @@ textarea {
   min-height: 160px;
 }
 
-.navi-footer-in > .menu-footer{
-
-}
-
 .navi-footer-in > .menu-footer li.menu-item{
   width: 32%;
-  border: 1px solid $x_thin;
+  border: 0;
   margin: 2px;
   display: flex;
   flex: 1 1 auto;
