@@ -70,21 +70,22 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
 
       //定形へメニューボタンの処理
       $url = trim($item->url);
-      if ($url === '#menu') {
+      $lower_url = strtolower($url);
+      if ($lower_url === '#menu') {
         $item_output = get_mobile_navi_button_tag();
-      } elseif ($url === '#home') {
+      } elseif ($lower_url === '#home') {
         $item_output = get_mobile_home_button_tag();
-      } elseif ($url === '#search') {
+      } elseif ($lower_url === '#search') {
         $item_output = get_mobile_search_button_tag();
-      } elseif ($url === '#top') {
+      } elseif ($lower_url === '#top') {
         $item_output = get_mobile_top_button_tag();
-      } elseif ($url === '#sidebar') {
+      } elseif ($lower_url === '#sidebar') {
         $item_output = get_mobile_sidebar_button_tag();
-      } elseif ($url === '#toc') {
+      } elseif ($lower_url === '#toc') {
         $item_output = get_mobile_toc_button_tag();
-      } elseif ($url === '#share') {
+      } elseif ($lower_url === '#share') {
         $item_output = get_mobile_share_button_tag();
-      } elseif ($url === '#follow') {
+      } elseif ($lower_url === '#follow') {
         $item_output = get_mobile_follow_button_tag();
       } else {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
