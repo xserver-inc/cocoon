@@ -580,7 +580,7 @@ EOT;
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = '<div class="navi-cards">'.$tag.'</div>';
+    $tag = '<div class="navi-cards no-icon">'.$tag.'</div>';
   }
 
   return apply_filters('cocoon_navi_card_tag', $tag);
