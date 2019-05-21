@@ -6757,7 +6757,7 @@ div.fb-like-mobile {
 }
 
 .follow-menu-content .sns-buttons {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .follow-menu-content .sns-buttons a {
   width: 24%;
