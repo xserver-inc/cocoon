@@ -441,7 +441,7 @@ function get_additional_sns_share_button_classes($option = null){
   $classes = null;
   if ($option == SS_MOBILE) {
     //_v($option);
-    $classes .= ' ss-col-4 bc-brand-color sbc-hide '.SS_MOBILE;
+    $classes .= ' ss-col-3 bc-brand-color sbc-hide '.SS_MOBILE;
     return apply_filters('get_additional_sns_share_button_classes', $classes);
   }
 

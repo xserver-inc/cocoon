@@ -619,8 +619,7 @@ endif;
 if ( !function_exists( 'is_copy_share_button_visible' ) ):
 function is_copy_share_button_visible($option){
   return (is_bottom_copy_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_copy_share_button_visible() && $option == SS_TOP) ||
-         ($option == SS_MOBILE);
+         (is_top_copy_share_button_visible() && $option == SS_TOP);
 }
 endif;
 

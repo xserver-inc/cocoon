@@ -6747,7 +6747,7 @@ div.fb-like-mobile {
 }
 
 .share-menu-content .sns-buttons {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .share-menu-content .sns-buttons .share-count {
   color: #fff;

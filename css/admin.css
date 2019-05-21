@@ -1633,7 +1633,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .menu-drawer .sub-menu { padding-left: 20px; }
 .admin-settings .demo .menu-close-button { display: block; cursor: pointer; text-align: center; }
 .admin-settings .demo .menu-close-button::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding: 0; font-size: 2em; }
-.admin-settings .demo .share-menu-content .sns-buttons { justify-content: space-between; }
+.admin-settings .demo .share-menu-content .sns-buttons { justify-content: space-around; }
 .admin-settings .demo .share-menu-content .sns-buttons .share-count { color: #fff; }
 .admin-settings .demo .share-menu-content .button-caption { display: none; }
 .admin-settings .demo .follow-menu-content .sns-buttons { justify-content: space-between; }
@@ -3164,7 +3164,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .menu-drawer .sub-menu { padding-left: 20px; }
 .admin-settings .demo .menu-close-button { display: block; cursor: pointer; text-align: center; }
 .admin-settings .demo .menu-close-button::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding: 0; font-size: 2em; }
-.admin-settings .demo .share-menu-content .sns-buttons { justify-content: space-between; }
+.admin-settings .demo .share-menu-content .sns-buttons { justify-content: space-around; }
 .admin-settings .demo .share-menu-content .sns-buttons .share-count { color: #fff; }
 .admin-settings .demo .share-menu-content .button-caption { display: none; }
 .admin-settings .demo .follow-menu-content .sns-buttons { justify-content: space-between; }

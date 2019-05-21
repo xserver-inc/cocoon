@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo get_hatebu_share_url(); ?>" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="<?php echo esc_attr(get_the_title()); ?>" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"><?php echo get_hatebu_count(); ?></span></a>
     <?php endif; ?>
 
-    <?php if ( is_google_plus_share_button_visible($option) )://Google＋ボタンを表示するか ?>
+    <?php if ( false && is_google_plus_share_button_visible($option) )://Google＋ボタンを表示するか ?>
       <a href="<?php echo get_google_plus_share_url(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="share-button google-plus-button google-plus-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-googleplus"></span><span class="button-caption"><?php _e( 'Google+', THEME_NAME ) ?></span><span class="share-count googleplus-share-count"><?php echo get_google_plus_count(); ?></span></a>
     <?php endif; ?>
 
