@@ -6580,6 +6580,9 @@ div.fb-like-mobile {
 .mobile-menu-buttons .ad-area {
   display: none;
 }
+.mobile-menu-buttons .menu-content {
+  cursor: default;
+}
 
 .navi-menu-icon::before {
   content: '\f0c9';
