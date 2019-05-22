@@ -15,6 +15,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       'theme_location' => 'navi-footer-mobile',
       //ul 要素に適用するCSS クラス名
       'menu_class' => 'mobile-menu-buttons',
+      //深さ
+      'depth' => 1,
       //コンテナを表示しない
       'container' => false,
       //カスタムメニューを設定しない際に固定ページでメニューを作成しない
