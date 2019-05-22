@@ -1606,7 +1606,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .mobile-menu-buttons .sub-menu { display: none; }
+.admin-settings .demo .mobile-menu-buttons > .sub-menu { display: none; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }
@@ -3137,7 +3137,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .mobile-menu-buttons .sub-menu { display: none; }
+.admin-settings .demo .mobile-menu-buttons > .sub-menu { display: none; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }

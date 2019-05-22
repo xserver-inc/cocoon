@@ -6574,7 +6574,7 @@ div.fb-like-mobile {
   transition: all 0.7s ease;
   color: #333;
 }
-.mobile-menu-buttons .sub-menu {
+.mobile-menu-buttons > .sub-menu {
   display: none;
 }
 .mobile-menu-buttons .ad-area {
