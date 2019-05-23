@@ -86,6 +86,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php $site_icon_url = get_site_icon_url();
+            //アイコンが設定されていない場合は、デフォルトアイコン
+            if (!$site_icon_url) {
+              $site_icon_url = get_default_site_icon_url();
+            }
             //拡張子の取得
             $arr = explode('.', $site_icon_url);
             $ext = end($arr);
