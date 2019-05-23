@@ -246,3 +246,4 @@ function smartnews_feed_content_type( $content_type, $type ) {
 	return $content_type;
 }
 endif;
+

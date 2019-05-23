@@ -971,18 +971,31 @@ endif;
 if ( !function_exists( 'includes_home_url' ) ):
 function includes_home_url($url){
   //URLにホームアドレスが含まれていない場合
-  if (strpos($url, home_url()) === false) {
+  if (!includes_string($url, home_url())) {
     return false;
   } else {
     return true;
   }
 }
 endif;
+
 //Wordpressインストールフォルダが含まれているか
 if ( !function_exists( 'includes_abspath' ) ):
 function includes_abspath($local){
   //URLにサイトアドレスが含まれていない場合
-  if (strpos($local, ABSPATH) === false) {
+  if (includes_string($local, ABSPATH)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+endif;
+
+//ホームパスが含まれているか
+if ( !function_exists( 'includes_home_path' ) ):
+function includes_home_path($local){
+  //URLにサイトアドレスが含まれていない場合
+  if (!includes_string($local, get_abs_home_path())) {
     return false;
   } else {
     return true;
@@ -994,11 +1007,11 @@ endif;
 if ( !function_exists( 'url_to_local' ) ):
 function url_to_local($url){
   //URLにサイトアドレスが含まれていない場合
-  if (!includes_site_url($url)) {
+  if (!includes_home_url($url)) {
     return false;
   }
 
-  $path = str_replace(site_url(), ABSPATH, $url);
+  $path = str_replace(home_url('/'), get_abs_home_path(), $url);
   $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
 
@@ -1011,12 +1024,15 @@ endif;
 //ローカルパスを内部URLに変更
 if ( !function_exists( 'local_to_url' ) ):
 function local_to_url($local){
+  // _v($local);
+  // _v(get_abs_home_path());
+  // _v(includes_home_path($local));
+  // _v('----------');
   //URLにサイトアドレスが含まれていない場合
-  if (!includes_abspath($local)) {
+  if (!includes_home_path($local)) {
     return false;
   }
-  $url = str_replace(ABSPATH, site_url().'/', $local);
-  //$url = str_replace('//', '/', $url);
+  $url = str_replace(get_abs_home_path(), home_url('/'), $local);
   $url = str_replace('\\', '/', $url);
   // _v($local);
   // _v(ABSPATH);
@@ -1108,7 +1124,8 @@ endif;
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
-  return ABSPATH.THEME_NAME.'-manifest.json';
+  //_v(get_abs_home_path().THEME_NAME.'-manifest.json');
+  return get_abs_home_path().THEME_NAME.'-manifest.json';
 }
 endif;
 
@@ -1124,7 +1141,8 @@ endif;
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
 function get_theme_pwa_service_worker_js_file(){
-  return ABSPATH.THEME_NAME.'-service-worker.js';
+  //_v(get_abs_home_path().THEME_NAME.'-service-worker.js');
+  return get_abs_home_path().THEME_NAME.'-service-worker.js';
 }
 endif;
 
@@ -2461,11 +2479,11 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
               $end;
 
   //.htaccessファイルが存在する場合
-  if (file_exists(HTACCESS_FILE)) {
+  if (file_exists(get_abs_htaccess_file())) {
     //書き込む前にバックアップファイルを用意する
-    $htaccess_backup_file = HTACCESS_FILE.'.'.THEME_NAME;
-    if (copy(HTACCESS_FILE, $htaccess_backup_file)) {
-      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+    $htaccess_backup_file = get_abs_htaccess_file().'.'.THEME_NAME;
+    if (copy(get_abs_htaccess_file(), $htaccess_backup_file)) {
+      if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())) {
 
         $res = preg_match($reg, $current_htaccess, $m);
 
@@ -2478,7 +2496,7 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
                                 $new_code;
           //ブラウザキャッシュを.htaccessファイルに書き込む
           wp_filesystem_put_contents(
-            HTACCESS_FILE,
+            get_abs_htaccess_file(),
             $last_htaccess,
             0644
           );
@@ -2490,11 +2508,11 @@ function add_code_to_htaccess($resoce_file, $begin, $end, $reg){
     $last_htaccess = $new_code;
     //ブラウザキャッシュを.htaccessファイルに書き込む
     wp_filesystem_put_contents(
-      HTACCESS_FILE,
+      get_abs_htaccess_file(),
       $last_htaccess,
       0644
     );
-  }//file_exists(HTACCESS_FILE)
+  }//file_exists(get_abs_htaccess_file())
 }
 endif;
 
@@ -2502,8 +2520,8 @@ endif;
 if ( !function_exists( 'remove_code_from_htacccess' ) ):
 function remove_code_from_htacccess($reg){
   //.htaccessファイルが存在しているとき
-  if (file_exists(HTACCESS_FILE)) {
-    if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)) {
+  if (file_exists(get_abs_htaccess_file())) {
+    if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())) {
       $res = preg_match($reg, $current_htaccess, $m);
       //書き込まれたブラウザキャッシュが見つかった場合
       if ($res && $m[0]) {
@@ -2514,13 +2532,13 @@ function remove_code_from_htacccess($reg){
         //_v($last_htaccess);
         //ブラウザキャッシュを削除したコードを.htaccessファイルに書き込む
         wp_filesystem_put_contents(
-          HTACCESS_FILE,
+          get_abs_htaccess_file(),
           $last_htaccess,
           0644
         );
       }//$res && $[0]
     }
-  }//file_exists(HTACCESS_FILE)
+  }//file_exists(get_abs_htaccess_file())
 }
 endif;
 
@@ -2693,5 +2711,35 @@ endif;
 if ( !function_exists( 'get_mobile_follow_button_tag' ) ):
 function get_mobile_follow_button_tag(){
   return get_template_part_tag('tmp/mobile-follow-button');
+}
+endif;
+
+//確実にホームパスを取得するget_home_path関数
+if ( !function_exists( 'get_abs_home_path' ) ):
+function get_abs_home_path(){
+  $site_url = get_site_url(null, '/');
+  $home_url = get_home_url(null, '/');
+  // _v($site_url);
+  // _v($home_url);
+  if ($site_url == $home_url) {
+    return ABSPATH;
+  } else {
+    if (includes_string($site_url, $home_url)) {
+      $dir = str_replace($home_url, '', $site_url);
+      // _v($dir);
+      // _v(preg_quote($dir, '/'));
+      $home_path = preg_replace('/'.preg_quote($dir, '/').'$/', '', ABSPATH);
+      return $home_path;
+    } else {
+      return ABSPATH;
+    }
+  }
+}
+endif;
+
+//.htaccessファイルの取得
+if ( !function_exists( 'get_abs_htaccess_file' ) ):
+function get_abs_htaccess_file(){
+  return get_abs_home_path().'.htaccess';
 }
 endif;

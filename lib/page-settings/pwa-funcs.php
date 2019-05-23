@@ -143,7 +143,7 @@ function manage_cocoon_pwa_files(){
     $name = get_double_quotation_escape(get_pwa_name());
     $short_name = get_double_quotation_escape(mb_substr(get_pwa_short_name(), 0, 12));
     $description = get_double_quotation_escape(get_pwa_description());
-    $start_url = '/';
+    $start_url = home_url('/');
     $offline_page = $start_url;
     $display = get_pwa_display();
     $orientation = get_pwa_orientation();
@@ -215,12 +215,7 @@ const urlsToCache = [
   '{$theme_js_url}',
   '{$theme_child_js_url}',
   '{$font_awesome4_url}',
-  '{$font_aicomoon_url}',
-  '/wp-includes/js/jquery/jquery.js',
-  '/wp-includes/js/jquery/jquery-migrate.min.js',
-  '/wp-content/themes/cocoon-master/webfonts/fontawesome/fonts/fontawesome-webfont.woff2',
-  '/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.ttf',
-  '/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js'
+  '{$font_aicomoon_url}'
 ];
 
 self.addEventListener('install', function(event) {
@@ -313,8 +308,8 @@ self.addEventListener('fetch', function(e) {
     //_v($service_worker);
 
     //HTTPSリダイレクトの書き込み
-    if (file_exists(HTACCESS_FILE)){
-      if ($current_htaccess = @wp_filesystem_get_contents(HTACCESS_FILE)){
+    if (file_exists(get_abs_htaccess_file())){
+      if ($current_htaccess = @wp_filesystem_get_contents(get_abs_htaccess_file())){
         //HTTPSリダイレクトの書き込みが.htaccessに存在するか
         $res = preg_match(THEME_HTTPS_REWRITERULE_REG, $current_htaccess, $m);
         //リダイレクト書き込むが存在しない場合

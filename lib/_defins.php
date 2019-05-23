@@ -21,6 +21,8 @@ define('THEME_PARENT_DIR', THEME_NAME.'-master');
 define('THEME_CHILD_DIR', THEME_NAME.'-child');
 //テーマ設定ページ用のURLクエリ
 define('THEME_SETTINGS_PAFE', 'theme-settings');
+//ホームバスの取得
+define('ROOT_PATH', trailingslashit($_SERVER['DOCUMENT_ROOT']));
 
 //開発関係の場合デバッグ値を有効にする
 define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.local' ? 1 : 0);
