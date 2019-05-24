@@ -70,7 +70,7 @@ if (is_singular()){//単一記事ページの場合
     }
   }
   if ( !empty($ogp_image) ) {//使えそうな$ogp_imageがある場合
-    echo '<meta name="twitter:image" content="'.get_url($ogp_image).'">';echo "\n";
+    echo '<meta name="twitter:image" content="'.esc_url($ogp_image).'">';echo "\n";
   }
 }
 ?>
