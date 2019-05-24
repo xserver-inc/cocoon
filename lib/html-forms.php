@@ -667,22 +667,22 @@ endif;
 //タグチェックリスト
 if ( !function_exists( 'generate_tag_check_list' ) ):
 function generate_tag_check_list($name, $checks = array()){
-  ob_start();
-  echo '<div class="tab-content tag-check-list '.$name.'-list" style="width: 100%;">';
+  $html = '<div class="tagcloud tagcloud-list '.$name.'-list" style="width: 100%;">';
   $tags = get_tags();
+  //_v($tags);
 	if ($tags) {
 		foreach($tags as $tag) {
+      $checked = null;
       if (in_array($tag->term_id, $checks)) {
         $checked = ' checked="checked"';
       }
-			echo '<span class="tag-cloud-link tag-link-"'.$tag->term_id.'"><input type="checkbox" name="'.$name.'[]" value="'.$tag->term_id.'"'.$checked.'>' . $tag->name . '</span>';
+      $id = $tag->term_id;
+      $input_id = $name.'-'.$id;
+			$html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">'.$tag->count.'</span></label></span>';
 		}
 	}
-  //hierarchical_category_check_list( $cat, $name, $checks );
-  echo '</ul></div>';
-
-  $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  $html .= '</div>';
+  echo apply_filters('admin_input_form_tag', $name, $html);
 }
 endif;
 
