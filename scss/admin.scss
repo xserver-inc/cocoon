@@ -455,6 +455,7 @@ select option.fa{
 // }
 .list-content,
 .tabs .tab-content,
+.tabs .tagcloud-list,
 .widget-content .tab-content{
   height: 200px;
   overflow: auto;
@@ -478,7 +479,10 @@ select option.fa{
   height: 120px;
   margin-bottom: 1em;
 }
-
+.tabs .tagcloud-list{
+  height: auto;
+  max-height: 200px;
+}
 
 // .tabs-widget{
 //   padding-top: 6px;
@@ -1076,11 +1080,19 @@ textarea[name="the_page_memo"]{
 .tagcloud {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   .admin-tag {
     @include tagcloud_a;
     flex: 0 1 auto;
   }
   input{
-    margin-right: 4px;
+    margin-right: 5px;
   }
+  // .tag-link-count{
+  //   margin-left: 20px;
+  //   // padding: 0px 4px;
+  //   // background-color: #eee;
+  //   // border: 1px solid #ddd;
+  //   // border-radius: 6px;
+  // }
 }

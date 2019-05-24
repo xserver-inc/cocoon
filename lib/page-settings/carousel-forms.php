@@ -52,12 +52,15 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- カルーセルカテゴリーID -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_CAROUSEL_CATEGORY_IDS, __( '表示カテゴリー', THEME_NAME )); ?>
+            <?php generate_label_tag('', __( '表示内容', THEME_NAME )); ?>
           </th>
           <td>
             <?php
+            echo __( 'カテゴリー', THEME_NAME ).'<br>';
             generate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
-            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリを選択してください。ランダムで表示されます。', THEME_NAME ));
+            echo __( 'タグ', THEME_NAME ).'<br>';
+            generate_tag_check_list(OP_CAROUSEL_TAG_IDS, get_carousel_tag_ids());
+            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリもしくはタグを選択してください。選択されたカテゴリー・タグに属する投稿がランダムで表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

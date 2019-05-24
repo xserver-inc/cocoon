@@ -7,10 +7,11 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_carousel_visible() && get_carousel_category_ids() && !is_amp()): ?>
+if (is_carousel_visible() && !is_amp()): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
-  'cat' => get_carousel_category_ids(),
+  'category__in' => get_carousel_category_ids(),
+  'tag__in' => get_carousel_tag_ids(),
   'orderby' => get_carousel_orderby(), //ランダム表示
   'no_found_rows' => true,
   'posts_per_page' => get_carousel_max_count(),

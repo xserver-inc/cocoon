@@ -3823,12 +3823,14 @@ p.submit { margin: 2px 0; padding: 3px 0; }
 select option.fa { display: block; }
 select option.fa:before { width: 18px; display: inline-block; text-align: center; margin-right: 5px; }
 
-.list-content, .tabs .tab-content, .widget-content .tab-content { height: 200px; overflow: auto; border: 1px solid #ccc; padding: 5px; margin: 0 0 5px; background-color: #fff; }
-.list-content ul, .tabs .tab-content ul, .widget-content .tab-content ul { margin: 0; padding-left: 20px; }
-.list-content ul li, .tabs .tab-content ul li, .widget-content .tab-content ul li { margin-bottom: 3px; }
-.list-content > ul, .tabs .tab-content > ul, .widget-content .tab-content > ul { padding-left: 0; }
+.list-content, .tabs .tab-content, .tabs .tagcloud-list, .widget-content .tab-content { height: 200px; overflow: auto; border: 1px solid #ccc; padding: 5px; margin: 0 0 5px; background-color: #fff; }
+.list-content ul, .tabs .tab-content ul, .tabs .tagcloud-list ul, .widget-content .tab-content ul { margin: 0; padding-left: 20px; }
+.list-content ul li, .tabs .tab-content ul li, .tabs .tagcloud-list ul li, .widget-content .tab-content ul li { margin-bottom: 3px; }
+.list-content > ul, .tabs .tab-content > ul, .tabs .tagcloud-list > ul, .widget-content .tab-content > ul { padding-left: 0; }
 
 .widget-content .tab-content { height: 120px; margin-bottom: 1em; }
+
+.tabs .tagcloud-list { height: auto; max-height: 200px; }
 
 #edittag { max-width: 1200px; }
 
@@ -4546,10 +4548,10 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
-.tagcloud { display: flex; flex-wrap: wrap; }
+.tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }
 .tagcloud .admin-tag { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; flex: 0 1 auto; }
 .tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .tagcloud .admin-tag .tag-caption { word-break: break-all; }
 .tagcloud .admin-tag .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .tagcloud .admin-tag .tag-link-count { margin-left: 8px; }
-.tagcloud input { margin-right: 4px; }
+.tagcloud input { margin-right: 5px; }
