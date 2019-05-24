@@ -21,35 +21,7 @@ label.screen-reader-text{
   display: flex;
   flex-wrap: wrap;
   a {
-    background-color: $white;
-    border: 1px solid $x_thin;
-    border-radius: 2px;
-    color: #555;
-    display: inline-block;
-    padding: 3px 8px;
-    text-decoration: none;
-    font-size: 12px;
-    margin: 2px;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-
-
-
-    &:hover {
-      @include bgc_hover;
-    }
-
-    .tag-caption{
-      word-break: break-all;
-      &::before{
-        @include fontawesome('\f02b');
-      }
-    }
-
-    .tag-link-count{
-      margin-left: 8px;
-    }
+    @include tagcloud_a;
   }
 }
 

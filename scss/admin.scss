@@ -1072,3 +1072,15 @@ textarea[name="the_page_memo"]{
   //フォント
   @import "font";
 }
+
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  .admin-tag {
+    @include tagcloud_a;
+    flex: 0 1 auto;
+  }
+  input{
+    margin-right: 4px;
+  }
+}
