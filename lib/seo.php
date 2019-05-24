@@ -327,7 +327,7 @@ function generate_canonical_url(){
     $canonical_url = get_query_removed_requested_url();
   }
 
-  return $canonical_url;
+  return apply_filters('cocoon_canonical_url', $canonical_url);
 }
 endif;
 
@@ -345,7 +345,7 @@ function generate_canonical_tag(){
   // var_dump($canonical_url);
   if ( $canonical_url && !is_wpforo_plugin_page() ) {
     echo '<!-- '.THEME_NAME_CAMEL.' canonical -->'.PHP_EOL;
-    echo '<link rel="canonical" href="'.$canonical_url.'">'.PHP_EOL;
+    echo '<link rel="canonical" href="'.esc_url($canonical_url).'">'.PHP_EOL;
   }
 }
 endif;
@@ -380,7 +380,7 @@ function get_category_meta_description($category = null){
   }
 
   $cat_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
-  return htmlspecialchars($cat_desc);
+  return apply_filters('get_category_meta_description', $cat_desc);
 }
 endif;
 
@@ -389,10 +389,11 @@ endif;
 if ( !function_exists( 'get_category_meta_keywords' ) ):
 function get_category_meta_keywords(){
   if ($keywords = get_category_keywords()) {
-    return $keywords;
+    $res = $keywords;
   } else {
-    return single_cat_title('', false);
+    $res = single_cat_title('', false);
   }
+  return apply_filters('get_category_meta_keywords', $res);
 }
 endif;
 
@@ -440,7 +441,7 @@ function generate_meta_description_tag() {
 
   if ($description && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta description -->'.PHP_EOL;
-    echo '<meta name="description" content="'.$description.'">'.PHP_EOL;
+    echo '<meta name="description" content="'.esc_attr($description).'">'.PHP_EOL;
   }
 }
 endif;
@@ -471,8 +472,7 @@ function generate_meta_keywords_tag() {
 
   if ($keywords && !is_wpforo_plugin_page()) {
     echo '<!-- '.THEME_NAME_CAMEL.' meta keywords -->'.PHP_EOL;
-    //var_dump('<meta name="keywords" content="'.$keywords.'">');
-    echo '<meta name="keywords" content="'.$keywords.'">'.PHP_EOL;
+    echo '<meta name="keywords" content="'.esc_attr($keywords).'">'.PHP_EOL;
   }
 }
 endif;
