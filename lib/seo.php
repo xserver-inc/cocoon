@@ -327,7 +327,7 @@ function generate_canonical_url(){
     $canonical_url = get_query_removed_requested_url();
   }
 
-  return apply_filters('cocoon_canonical_url', $canonical_url);
+  return apply_filters('generate_canonical_url', $canonical_url);
 }
 endif;
 
@@ -380,6 +380,7 @@ function get_category_meta_description($category = null){
   }
 
   $cat_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat_name );
+  $cat_desc = htmlspecialchars($cat_desc);
   return apply_filters('get_category_meta_description', $cat_desc);
 }
 endif;
@@ -393,6 +394,7 @@ function get_category_meta_keywords(){
   } else {
     $res = single_cat_title('', false);
   }
+  $res = htmlspecialchars($res);
   return apply_filters('get_category_meta_keywords', $res);
 }
 endif;
@@ -412,7 +414,8 @@ function get_the_meta_keywords(){
     endforeach ;
     $keywords = implode($category_names, ',');
   }
-  return $keywords;
+  $keywords = htmlspecialchars($keywords);
+  return apply_filters('get_the_meta_keywords', $keywords);
 }
 endif;
 
@@ -429,7 +432,8 @@ function get_meta_description_text(){
   } elseif (is_tag() && is_meta_description_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $description = get_tag_meta_description();
   }
-  return apply_filters('meta_description_text', $description);
+  $description = htmlspecialchars($description);
+  return apply_filters('get_meta_description_text', $description);
 }
 endif;
 
@@ -459,7 +463,8 @@ function get_meta_keywords_text(){
   } elseif (is_tag() && is_meta_keywords_to_category()) {//※カテゴリーページのメタタグ設定と共通？（※今後要検討）
     $keywords = get_tag_meta_keywords();
   }
-  return apply_filters('meta_keywords_text', $keywords);
+  $keywords = htmlspecialchars($keywords);
+  return apply_filters('get_meta_keywords_text', $keywords);
 }
 endif;
 
@@ -503,7 +508,8 @@ function get_tag_meta_description($tag = null){
     $tag_name = single_tag_title('', false);
   }
   $tag_desc = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag_name );
-  return htmlspecialchars($tag_desc);
+  $tag_desc = htmlspecialchars($tag_desc);
+  return apply_filters('get_tag_meta_description', $tag_desc);
 }
 endif;
 
@@ -511,10 +517,12 @@ endif;
 if ( !function_exists( 'get_tag_meta_keywords' ) ):
 function get_tag_meta_keywords(){
   if ($keywords = get_tag_keywords()) {
-    return $keywords;
+    $res = $keywords;
   } else {
-    return single_tag_title('', false);
+    $res = single_tag_title('', false);
   }
+  $res = htmlspecialchars($res);
+  return apply_filters('get_tag_meta_keywords', $res);
 }
 endif;
 
@@ -549,7 +557,7 @@ function get_the_meta_description(){
 
   }
   $desc = htmlspecialchars($desc);
-  return $desc;
+  return apply_filters('get_the_meta_description', $desc);
 }
 endif;
 
