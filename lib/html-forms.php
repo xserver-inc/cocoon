@@ -972,18 +972,27 @@ function generate_widget_entries_tag($atts){
   }
   if ($random && $modified) {
     $args += array(
-      'orderby' => array('rand', 'modified')
+      'orderby' => array('rand', 'modified'),
     );
   } else {
     if ($random) {
       $args += array(
-        'orderby' => 'rand'
+        'orderby' => 'rand',
       );
     }
     if ($modified) {
       $args += array(
         'orderby' => 'modified',
       );
+    }
+  }
+  //関連記事の場合は表示ページを除外
+  if ($random) {
+    $post_id = get_the_ID();
+    if (isset($args['post__not_in'])) {
+      $args['post__not_in'][] = $post_id;
+    } else {
+      $args['post__not_in'] = array($post_id);
     }
   }
 
