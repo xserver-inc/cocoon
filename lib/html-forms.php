@@ -885,7 +885,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       if ($post_thumbnail) {
         $post_thumbnail_img = $post_thumbnail;
       } else {
-        $post_thumbnail_img = '<img src="'.$no_thumbnail_url.'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+        $post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
       }
 
       ?>
