@@ -1155,7 +1155,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $description = strip_tags($description);
             $name = $author_display_name;
             if ($author_website_url) {
-              $name = '<a href="'.$author_website_url.'" target="_blank" rel="nofollow">'.$author_display_name.'</a>';
+              $name = '<a href="'.esc_url($author_website_url).'" target="_blank" rel="nofollow">'.esc_html($author_display_name).'</a>';
             }
             //echo $name;
           }
