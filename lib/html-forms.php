@@ -1048,7 +1048,7 @@ function generate_widget_entries_tag($atts){
   <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_widget_entriy_cards_classes($entry_type); ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-  <a href="<?php the_permalink(); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php the_title(); ?>">
+  <a href="<?php echo esc_url(get_the_permalink()); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr(get_the_title()); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
@@ -1060,7 +1060,7 @@ function generate_widget_entries_tag($atts){
         $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
 
         ?>
-        <img src="<?php echo $url; ?>" alt="" class="no-image <?php echo $prefix; ?>-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>" />
+        <img src="<?php echo esc_url($url); ?>" alt="" class="no-image <?php echo $prefix; ?>-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="<?php echo $w; ?>" height="<?php echo $h; ?>" />
       <?php endif; ?>
       <?php the_nolink_category(null, false); //カテゴリラベルの取得 ?>
       </figure><!-- /.new-entry-card-thumb -->
