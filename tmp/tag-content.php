@@ -16,7 +16,7 @@ if ($tag_id && get_tag_meta($tag_id)): ?>
   <?php if ($eye_catch = get_tag_eye_catch($tag_id)): ?>
     <header class="article-header tag-header">
       <figure class="eye-catch">
-        <img src="<?php echo $eye_catch; ?>" alt="<?php echo get_tag_title($tag_id); ?>">
+        <img src="<?php echo esc_url($eye_catch); ?>" alt="<?php echo esc_attr(get_tag_title($tag_id)); ?>">
       </figure>
     </header>
   <?php endif ?>
