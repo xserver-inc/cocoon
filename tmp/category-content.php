@@ -16,7 +16,7 @@ if ($cat_id && get_category_meta($cat_id)): ?>
   <?php if ($eye_catch = get_category_eye_catch($cat_id)): ?>
     <header class="article-header category-header">
       <figure class="eye-catch">
-        <img src="<?php echo $eye_catch; ?>" alt="<?php echo get_category_title($cat_id); ?>">
+        <img src="<?php echo esc_url($eye_catch); ?>" alt="<?php echo esc_attr(get_category_title($cat_id)); ?>">
         <?php echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>'; //カテゴリラベル ?>
       </figure>
     </header>
