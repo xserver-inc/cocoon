@@ -44,7 +44,7 @@
   $('.go-to-toc-common').click(function(){
   //目次へ移動する
     $('body,html').animate({
-            scrollTop: $('.toc').offset().top
+            scrollTop: $('.entry-content .toc').offset().top
         }, 800);
   });
 
