@@ -321,3 +321,25 @@ function add_toc_before_1st_h2($the_content){
   return $the_content;
 }
 endif;
+
+
+//ページ上で目次を利用しているか
+if ( !function_exists( 'is_the_page_toc_use' ) ):
+function is_the_page_toc_use(){
+  $content = get_the_content();
+  return is_singular() && !is_plugin_fourm_page() &&
+    //最初のH2手前に表示する場合
+    (
+      is_toc_visible() &&
+      is_the_page_toc_visible() &&
+      (
+        (is_single() && is_single_toc_visible()) ||
+        (is_page() && is_page_toc_visible())
+      ) &&
+      //H2見出しがあるか
+      includes_string($content, '<h2')
+    )
+    //ショートコードで表示する場合
+    || includes_string($content, '[toc]');
+}
+endif;
