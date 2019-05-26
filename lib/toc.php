@@ -313,7 +313,7 @@ function add_toc_before_1st_h2($the_content){
   //機能が有効な時のみ（ショートコードでは実行しない）
   if (is_total_the_page_toc_visible()) {
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
-    //$html = str_replace('<div class="toc ', '<div id="toc" class="toc ', $html);
+    $html = str_replace('<div class="toc ', '<div id="toc" class="toc ', $html);
     $the_content = preg_replace(H2_REG, $html.PHP_EOL.PHP_EOL.$h2result, $the_content, 1);
   }
 
