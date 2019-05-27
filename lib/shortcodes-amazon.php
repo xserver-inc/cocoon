@@ -433,6 +433,9 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // Amazon価格の取得
       ///////////////////////////////////////////
+      if (is_amazon_item_stock_price_visible() && isset($item->Offers->Offer->OfferListing->Price->FormattedPrice)) {
+        $FormattedPrice = $item->Offers->Offer->OfferListing->Price->FormattedPrice;
+      }
 
       $FormattedPrice = esc_html($FormattedPrice);
 
