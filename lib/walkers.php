@@ -142,7 +142,7 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
       $_MENU_ICON = null;
     }
 
-    function end_el( &$output, $item, $depth, $args ) {
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
       if (in_array('menu-item-has-children', $item->classes)) {
         // 親の場合
         $output .= "\n".'</ul></li>';
