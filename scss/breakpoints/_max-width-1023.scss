@@ -81,6 +81,10 @@ div.sidebar{
 
 .mobile-menu-buttons{
   display: flex;
+  align-items: stretch;
+  >li{
+    padding-top: 3px;
+  }
 }
 
 .mobile-button-slide-in .go-to-top-button{

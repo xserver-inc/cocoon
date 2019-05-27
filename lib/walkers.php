@@ -87,6 +87,10 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $item_output = get_mobile_share_button_tag();
       } elseif ($lower_url === '#follow') {
         $item_output = get_mobile_follow_button_tag();
+      } elseif ($lower_url === '#prev') {
+        $item_output = get_mobile_prev_button_tag();
+      } elseif ($lower_url === '#next') {
+        $item_output = get_mobile_next_button_tag();
       } else {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 

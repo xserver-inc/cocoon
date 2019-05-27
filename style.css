@@ -6613,6 +6613,14 @@ div.fb-like-mobile {
   content: '\f004';
 }
 
+.prev-menu-icon::before {
+  content: '\f060';
+}
+
+.next-menu-icon::before {
+  content: '\f061';
+}
+
 /*閉じる用の薄黒カバー*/
 #navi-menu-close,
 #sidebar-menu-close,
@@ -8791,6 +8799,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .mobile-menu-buttons {
     display: flex;
+    align-items: stretch;
+  }
+  .mobile-menu-buttons > li {
+    padding-top: 3px;
   }
 
   .mobile-button-slide-in .go-to-top-button {

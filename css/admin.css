@@ -1616,6 +1616,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar-menu-icon::before { content: '\f03b'; }
 .admin-settings .demo .share-menu-icon::before { content: '\f1e0'; }
 .admin-settings .demo .follow-menu-icon::before { content: '\f004'; }
+.admin-settings .demo .prev-menu-icon::before { content: '\f060'; }
+.admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
@@ -3147,6 +3149,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar-menu-icon::before { content: '\f03b'; }
 .admin-settings .demo .share-menu-icon::before { content: '\f1e0'; }
 .admin-settings .demo .follow-menu-icon::before { content: '\f004'; }
+.admin-settings .demo .prev-menu-icon::before { content: '\f060'; }
+.admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
@@ -3560,7 +3564,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .header, .admin-settings .demo .appeal { background-size: cover; }
   .admin-settings .demo .footer-bottom-logo { position: relative; bottom: auto; }
   .admin-settings .demo .logo-footer { margin: 8px auto; }
-  .admin-settings .demo .mobile-menu-buttons { display: flex; }
+  .admin-settings .demo .mobile-menu-buttons { display: flex; align-items: stretch; }
+  .admin-settings .demo .mobile-menu-buttons > li { padding-top: 3px; }
   .admin-settings .demo .mobile-button-slide-in .go-to-top-button { display: none; }
   .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
