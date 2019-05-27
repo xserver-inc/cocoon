@@ -59,7 +59,7 @@ endif;
 define('OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE', 'amazon_item_stock_price_visible');
 if ( !function_exists( 'is_amazon_item_stock_price_visible' ) ):
 function is_amazon_item_stock_price_visible(){
-  return get_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE);
+  return get_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE, 1);
 }
 endif;
 
