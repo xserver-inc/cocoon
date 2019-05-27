@@ -507,12 +507,9 @@ function navi_menu_shortcode($atts){
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
 
   foreach ($menu_items as $menu):
-    //_v($menu);
     $object_id = $menu->object_id;
     $url = $menu->url;
     $object = $menu->object;
-    //サムネイル画像URL
-    //thumbnail - 120*120 | thumb120 - 120*68 | thumb320 - 320x180
 
     $image_attributes = array();
     if ($object == 'post' || $object == 'page') {
@@ -521,14 +518,6 @@ function navi_menu_shortcode($atts){
     } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
       $image_url = get_category_eye_catch($object_id);
       $image_attributes = get_navi_card_image_attributes($image_url);
-      // $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
-      // $image_attributes[1] = 120;
-      // $image_attributes[2] = 68;
-      // if (file_exists(url_to_local($image_url_120))) {
-      //   $image_attributes[0] = $image_url_120;
-      // } else {
-      //   $image_attributes[0] = $image_url;
-      // }
     }
     elseif ($object == 'custom') {//カスタムメニュー
       //タグページのアイキャッチを取得
@@ -543,7 +532,7 @@ function navi_menu_shortcode($atts){
       $image_attributes[1] = 120;
       $image_attributes[2] = 68;
     }
-    //$content = get_page($page_id);
+
     $title = $menu->title;
     $text = $menu->description;
     $osusume = $menu->classes[0];
@@ -560,21 +549,20 @@ function navi_menu_shortcode($atts){
     if ($type) {
       $navi_card_class = ' navi-card-type-'.$type;
     }
-    //_v($image_attributes);
-    $tag .=  <<<EOT
-<a href="$url" title="$title" class="navi-card-wrap a-wrap$navi_card_class">
+
+    $tag .=
+'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap'.esc_attr($navi_card_class).'">
   <div class="navi-card-box cf">
-    $osusume
+    '.$osusume.'
     <figure class="navi-card-thumb">
-      <img src="$image_attributes[0]" alt="$title" width="$image_attributes[1]" height="$image_attributes[2]">
+      <img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">
     </figure>
     <div class="navi-card-content">
-      <div class="navi-card-title">$title</div>
-      <div class="navi-card-snippet">$text</div>
+      <div class="navi-card-title">'.$title.'</div>
+      <div class="navi-card-snippet">'.$text.'</div>
     </div>
   </div>
-</a>
-EOT;
+</a>';
 
   endforeach;
 
