@@ -668,8 +668,8 @@ function hierarchical_category_check_list( $cat, $name, $checks ) {
 endif;
 
 //タグチェックリスト
-if ( !function_exists( 'generate_tag_check_list' ) ):
-function generate_tag_check_list($name, $checks = array()){
+if ( !function_exists( 'generate_tagcloud_check_list' ) ):
+function generate_tagcloud_check_list($name, $checks = array()){
   if (is_string($checks)) {
     $checks = array();
   }
