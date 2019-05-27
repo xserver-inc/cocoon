@@ -55,6 +55,14 @@ function is_amazon_item_price_visible(){
 }
 endif;
 
+//Amazon商品リンク在庫価格表示
+define('OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE', 'amazon_item_stock_price_visible');
+if ( !function_exists( 'is_amazon_item_stock_price_visible' ) ):
+function is_amazon_item_stock_price_visible(){
+  return get_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE);
+}
+endif;
+
 //Amazon商品レビュー表示
 define('OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE', 'amazon_item_customer_reviews_visible');
 if ( !function_exists( 'is_amazon_item_customer_reviews_visible' ) ):

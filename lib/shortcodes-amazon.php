@@ -406,10 +406,10 @@ function amazon_product_link_shortcode($atts){
 
       $ListPrice = $item->ItemAttributes->ListPrice;
       $Price = esc_html($ListPrice->Amount);
-      $FormattedPrice = esc_html($ListPrice->FormattedPrice);
+      $FormattedPrice = $ListPrice->FormattedPrice;
 
       ///////////////////////////////////////////
-      // OfferSummary尚価格取得
+      // OfferSummary価格取得
       ///////////////////////////////////////////
       $OfferSummary = $item->OfferSummary;
       if ($OfferSummary) {
@@ -426,10 +426,15 @@ function amazon_product_link_shortcode($atts){
               $FormattedPrice = $LowestCollectiblePrice;
             }
           }
-
         }
         //_v($OfferSummary);
       }
+
+      ///////////////////////////////////////////
+      // Amazon価格の取得
+      ///////////////////////////////////////////
+
+      $FormattedPrice = esc_html($FormattedPrice);
 
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
@@ -443,13 +448,6 @@ function amazon_product_link_shortcode($atts){
         $timestamp = strtotime(get_date_from_gmt($unix_date));
         $acquired_date = date_i18n( 'Y/m/d H:i', $timestamp );
 
-        // $t = new DateTime($unix_date);
-        // $t->setTimeZone(new DateTimeZone(get_wordpress_timezone()));
-        // $acquired_date = $t->format(__( 'Y/m/d H:i', THEME_NAME ));
-        // _v($unix_date);
-        // _v($t);
-        // _v($acquired_date);
-        //_v($FormattedPrice);
         if ((is_amazon_item_price_visible() || $price === '1')
              && $FormattedPrice
              && $price !== '0'
