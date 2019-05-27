@@ -213,7 +213,7 @@ function get_search_buttons_tag($args){
       }
       $amazon_btn_tag =
         '<div class="shoplinkamazon">'.
-          '<a href="'.$amazon_url.'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
+          '<a href="'.esc_url($amazon_url).'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -254,7 +254,7 @@ function get_search_buttons_tag($args){
       }
       $rakuten_btn_tag =
         '<div class="shoplinkrakuten">'.
-          '<a href="'.$rakuten_url.'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
+          '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
         '</div>';
     }
     //Yahoo!ボタンの取得
@@ -276,7 +276,7 @@ function get_search_buttons_tag($args){
 
       $yahoo_tag =
         '<div class="shoplinkyahoo">'.
-          '<a href="'.$yahoo_url.'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
+          '<a href="'.esc_url($yahoo_url).'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
         '</div>';
     }
 

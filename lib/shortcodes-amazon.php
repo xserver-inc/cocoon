@@ -308,17 +308,17 @@ function amazon_product_link_shortcode($atts){
       }
 
       $SmallImage = $ImageItem->SmallImage;
-      $SmallImageUrl = esc_url($SmallImage->URL);
-      $SmallImageWidth = esc_html($SmallImage->Width);
-      $SmallImageHeight = esc_html($SmallImage->Height);
+      $SmallImageUrl = $SmallImage->URL;
+      $SmallImageWidth = $SmallImage->Width;
+      $SmallImageHeight = $SmallImage->Height;
       $MediumImage = $ImageItem->MediumImage;
-      $MediumImageUrl = esc_url($MediumImage->URL);
-      $MediumImageWidth = esc_html($MediumImage->Width);
-      $MediumImageHeight = esc_html($MediumImage->Height);
+      $MediumImageUrl = $MediumImage->URL;
+      $MediumImageWidth = $MediumImage->Width;
+      $MediumImageHeight = $MediumImage->Height;
       $LargeImage = $ImageItem->LargeImage;
-      $LargeImageUrl = esc_url($LargeImage->URL);
-      $LargeImageWidth = esc_html($LargeImage->Width);
-      $LargeImageHeight = esc_html($LargeImage->Height);
+      $LargeImageUrl = $LargeImage->URL;
+      $LargeImageWidth = $LargeImage->Width;
+      $LargeImageHeight = $LargeImage->Height;
 
       //サイズ設定
       $size = strtolower($size);
@@ -470,7 +470,7 @@ function amazon_product_link_shortcode($atts){
         //_v($review_url);
         $review_tag =
           '<div class="amazon-item-review product-item-review item-review">'.
-            '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.$review_url.'" target="_blank" rel="nofollow noopener">'.
+            '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.esc_url($review_url).'" target="_blank" rel="nofollow noopener">'.
               get_amazon_item_customer_reviews_text().
             '</a>'.
           '</div>';
@@ -541,7 +541,7 @@ function amazon_product_link_shortcode($atts){
       if ($is_catalog_image_visible && ($size != 'l') && $LargeImageUrl) {
         $image_l_tag =
           '<div class="amazon-item-thumb-l product-item-thumb-l image-content">'.
-            '<img src="'.$LargeImageUrl.'" alt="" width="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
+            '<img src="'.esc_url($LargeImageUrl).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
           '</div>';
       }
       $swatchimages_tag = null;
@@ -586,15 +586,15 @@ function amazon_product_link_shortcode($atts){
 
           //$id = ' id="'.$asin.'-'.$i.'"';
           $tmp_tag .=
-            '<div class="image-thumb swatch-image-thumb si-thumb'.$display_none_class.'">'.
-              '<img src="'.$SwatchImageURL.'" alt="" widh="'.$SwatchImageWidth.'" height="'.$SwatchImageHeight.'">'.
+            '<div class="image-thumb swatch-image-thumb si-thumb'.esc_attr($display_none_class).'">'.
+              '<img src="'.esc_url($SwatchImageURL).'" alt="" widh="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'">'.
               '<div class="image-content">'.
-              '<img src="'.$LargeImageURL.'" alt="" widh="'.$LargeImageWidth.'" height="'.$LargeImageHeight.'">'.
+              '<img src="'.esc_url($LargeImageURL).'" alt="" widh="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
               '</div>'.
             '</div>';
           //_v($tmp_tag);
         }
-        $swatchimages_tag = '<a href="'.$associate_url.'" class="swatchimages" target="_blank" rel="nofollow noopener">'.$tmp_tag.'</a>';
+        $swatchimages_tag = '<a href="'.esc_url($associate_url).'" class="swatchimages" target="_blank" rel="nofollow noopener">'.$tmp_tag.'</a>';
         // foreach ($ImageSets as $ImageSet) {
         //   _v($ImageSet);
         // }
@@ -603,8 +603,8 @@ function amazon_product_link_shortcode($atts){
       if ($image_only) {
         $image_only_class = ' amazon-item-image-only product-item-image-only no-icon';
       }
-      $image_link_tag = '<a href="'.$associate_url.'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.$image_only_class.'" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
-              '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="amazon-item-thumb-image product-item-thumb-image">'.
+      $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb'.esc_attr($image_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+              '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
               $moshimo_amazon_impression_tag.
               $image_l_tag.
             '</a>'.
@@ -625,11 +625,11 @@ function amazon_product_link_shortcode($atts){
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
-        '<div class="amazon-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.$ProductGroupClass.' '.$asin.' cf">'.
+        '<div class="amazon-item-box product-item-box no-icon '.$size_class.$border_class.$logo_class.' '.esc_attr($ProductGroupClass).' '.esc_attr($asin).' cf">'.
           $image_figure_tag.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
-              '<a href="'.$associate_url.'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
+              '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
                  $TitleHtml.
                  $moshimo_amazon_impression_tag.
               '</a>'.
@@ -687,7 +687,7 @@ endif;
 //Amazonエラーの際に出力するリンクを
 if ( !function_exists( 'get_amazon_error_product_link' ) ):
 function get_amazon_error_product_link($url){
-  return '<a href="'.$url.'" target="_blank" rel="nofollow noopener">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
+  return '<a href="'.esc_url($url).'" target="_blank" rel="nofollow noopener">'.__( 'Amazonで詳細を見る', THEME_NAME ).'</a>';
 }
 endif;
 
