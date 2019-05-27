@@ -133,13 +133,26 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         //$item_output .= $args->link_after;
         //$item_output .= '</div>';
         $item_output .= '</a>';
-        $item_output .= $args->after;
+        $item_output .= $args->after.'</li>';
       }
 
       $output .= apply_filters( 'mobile_menu_walker', $item_output, $item, $depth, $args );
+
       $_MENU_CAPTION = null;
       $_MENU_ICON = null;
     }
+
+    function end_el( &$output, $item, $depth, $args ) {
+      if (in_array('menu-item-has-children', $item->classes)) {
+        // 親の場合
+        $output .= "\n".'</ul></li>';
+      }
+      else {
+        // 子の場合
+
+        $output .= "\n";
+      }
+  }
   }
   endif;
 
