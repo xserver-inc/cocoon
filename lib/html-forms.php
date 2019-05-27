@@ -638,16 +638,19 @@ endif;
 //階層化カテゴリチェックリストの出力の再帰関数
 if ( !function_exists( 'hierarchical_category_check_list' ) ):
 function hierarchical_category_check_list( $cat, $name, $checks ) {
+  if (empty($checks)) {
+    $checks = array();
+  }
     // wpse-41548 // alchymyth // a hierarchical list of all categories //
 
   $next = get_categories('hide_empty=false&orderby=name&order=ASC&parent=' . $cat);
 
   if( $next ) :
     foreach( $next as $cat ) :
-      $checked = '';
-      if (is_string($checks)) {
-        $checks = array();
-      }
+      // $checked = '';
+      // if (is_string($checks)) {
+      //   $checks = array();
+      // }
       // //デフォルトのカテゴリは誤動作を起こすので除外
       // if ($cat->term_id == 1) {
       //   continue;
@@ -667,6 +670,9 @@ endif;
 //タグチェックリスト
 if ( !function_exists( 'generate_tag_check_list' ) ):
 function generate_tag_check_list($name, $checks = array()){
+  if (empty($checks)) {
+    $checks = array();
+  }
   $html = '<div class="tagcloud tagcloud-list '.$name.'-list" style="width: 100%;">';
   $tags = get_tags();
   //_v($tags);
