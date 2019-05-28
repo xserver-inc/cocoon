@@ -128,7 +128,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     <input type="checkbox" id="<?php echo $checkbox_id; ?>">
     <div class="display-widgets-area toggle-content">
       <label for="<?php echo $widget->get_field_id('widget_action'); ?>">
-        <?php esc_html_e('ウィジェットの表示', THEME_NAME) ?>
+        <?php _e('ウィジェットの表示', THEME_NAME) ?>
       </label>
       <?php
         $options = array(
