@@ -895,3 +895,7 @@ ol, ul {
 .editor-styles-wrapper .article .iconlist-box ul li, .editor-styles-wrapper .article .iconlist-box ol li {
   margin: 0;
 }
+
+.wp-block .widget.open {
+  margin-left: 0;
+}
