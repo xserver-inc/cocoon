@@ -23,7 +23,7 @@ if ( is_go_to_top_button_visible() ): //トップへ戻るボタンを表示す�
 </div>
 <?php endif; ?>
 <?php //AMPトップへ戻るボタン用のトリガー
-if (is_amp() && (is_go_to_top_button_visible() || is_mobile_button_layout_type_slide_in())): ?>
+if (is_amp() && (is_go_to_top_button_visible())): ?>
   <div class="go-to-top-trigger">
     <amp-position-observer on="enter:hide-page-top.start; exit:show-page-top.start" layout="nodisplay"></amp-position-observer>
   </div>
