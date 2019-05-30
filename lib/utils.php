@@ -2634,7 +2634,8 @@ endif;
 //有効なショートコードアイテムを保持しているか
 if ( !function_exists( 'has_valid_shortcode_item' ) ):
 function has_valid_shortcode_item($shortcodes){
-  return !empty(array_filter($shortcodes, function($v, $k) { return $v->visible === "1"; }, ARRAY_FILTER_USE_BOTH));
+  $items = array_filter($shortcodes, function($v, $k) { return $v->visible === "1"; }, ARRAY_FILTER_USE_BOTH);
+  return !empty($items);
 }
 endif;
 
