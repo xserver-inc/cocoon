@@ -1674,7 +1674,9 @@ endif;
 //ユーザーが管理者か
 if ( !function_exists( 'is_user_administrator' ) ):
 function is_user_administrator(){
-  return current_user_can( 'administrator' );
+  $cocoon_admin_capability = apply_filters('cocoon_admin_capability', 'administrator');
+  $res = current_user_can( $cocoon_admin_capability );
+  return apply_filters('is_user_administrator', $res);
 }
 endif;
 
