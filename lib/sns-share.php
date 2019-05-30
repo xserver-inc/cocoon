@@ -546,80 +546,89 @@ endif;
 //シェアボタンを表示するか
 if ( !function_exists( 'is_sns_share_buttons_visible' ) ):
 function is_sns_share_buttons_visible($option){
-  return (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
+  $res = (is_sns_bottom_share_buttons_visible() && $option == SS_BOTTOM) ||
          (is_sns_top_share_buttons_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_sns_share_buttons_visible', $res, $option);
 }
 endif;
 
 //Twitterシェアボタンを表示するか
 if ( !function_exists( 'is_twitter_share_button_visible' ) ):
 function is_twitter_share_button_visible($option){
-  return (is_bottom_twitter_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_twitter_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_twitter_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_twitter_share_button_visible', $res, $option);
 }
 endif;
 
 //Facebookシェアボタンを表示するか
 if ( !function_exists( 'is_facebook_share_button_visible' ) ):
 function is_facebook_share_button_visible($option){
-  return (is_bottom_facebook_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_facebook_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_facebook_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_facebook_share_button_visible', $res, $option);
 }
 endif;
 
 //はてブシェアボタンを表示するか
 if ( !function_exists( 'is_hatebu_share_button_visible' ) ):
 function is_hatebu_share_button_visible($option){
-  return (is_bottom_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_hatebu_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_hatebu_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_hatebu_share_button_visible', $res, $option);
 }
 endif;
 
 //Google+シェアボタンを表示するか
 if ( !function_exists( 'is_google_plus_share_button_visible' ) ):
 function is_google_plus_share_button_visible($option){
-  return (is_bottom_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_google_plus_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_google_plus_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_google_plus_share_button_visible', $res, $option);
 }
 endif;
 
 //Pocketシェアボタンを表示するか
 if ( !function_exists( 'is_pocket_share_button_visible' ) ):
 function is_pocket_share_button_visible($option){
-  return (is_bottom_pocket_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_pocket_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_pocket_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_pocket_share_button_visible', $res, $option);
 }
 endif;
 
 //LINE@シェアボタンを表示するか
 if ( !function_exists( 'is_line_at_share_button_visible' ) ):
 function is_line_at_share_button_visible($option){
-  return (is_bottom_line_at_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_line_at_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_line_at_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_line_at_share_button_visible', $res, $option);
 }
 endif;
 
 //Pinterestシェアボタンを表示するか
 if ( !function_exists( 'is_pinterest_share_button_visible' ) ):
 function is_pinterest_share_button_visible($option){
-  return (is_bottom_pinterest_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_pinterest_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_pinterest_share_button_visible() && $option == SS_TOP) ||
          ($option == SS_MOBILE);
+  return apply_filters('is_pinterest_share_button_visible', $res, $option);
 }
 endif;
 
 //コピーシェアボタンを表示するか
 if ( !function_exists( 'is_copy_share_button_visible' ) ):
 function is_copy_share_button_visible($option){
-  return (is_bottom_copy_share_button_visible() && $option == SS_BOTTOM) ||
+  $res = (is_bottom_copy_share_button_visible() && $option == SS_BOTTOM) ||
          (is_top_copy_share_button_visible() && $option == SS_TOP);
+  return apply_filters('is_copy_share_button_visible', $res, $option);
 }
 endif;
 
