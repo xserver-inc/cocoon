@@ -277,8 +277,8 @@ function rakuten_product_link_shortcode($atts){
             $Title = $itemName;
           }
 
-          $TitleAttr = esc_attr($Title);
-          $TitleHtml = esc_html($Title);
+          $TitleAttr = $Title;
+          $TitleHtml = $Title;
 
 
           ///////////////////////////////////////////
@@ -385,8 +385,8 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // イメージリンクタグ
           ///////////////////////////////////////////
-          $image_link_tag = '<a href="'.$affiliateUrl.'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
-                  '<img src="'.$ImageUrl.'" alt="'.$TitleAttr.'" width="'.$ImageWidth.'" height="'.$ImageHeight.'" class="rakuten-item-thumb-image product-item-thumb-image">'.
+          $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+                  '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
                   $moshimo_rakuten_impression_tag.
                 '</a>';
           //画像のみ出力する場合
@@ -404,8 +404,8 @@ function rakuten_product_link_shortcode($atts){
               '</figure>'.
               '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
-                  '<a href="'.$affiliateUrl.'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.$TitleAttr.'" rel="nofollow noopener">'.
-                    $TitleHtml.
+                  '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+                  esc_html($TitleHtml).
                     $moshimo_rakuten_impression_tag.
                   '</a>'.
                 '</div>'.
