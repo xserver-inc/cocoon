@@ -236,8 +236,7 @@ function get_search_buttons_tag($args){
           ++$i;
         }
       }
-      //$rakuten_keyword = preg_replace('/ +-\S+/', '', $rakuten_keyword);
-      //$rakuten_url = 'https://hb.afl.rakuten.co.jp/hgc/'.$rakuten_affiliate_id.'/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F'.urlencode($keyword).'%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0%26scid%3Daf_ich_link_urltxt%26m%3Dhttp%3A%2F%2Fm.rakuten.co.jp%2F';
+
       $rakuten_url = get_rakuten_affiliate_search_url($rakuten_keyword, $rakuten_affiliate_id, $ng_keywords);
       //もしもアフィリエイトIDがある場合
       if ($is_moshimo_rakuten) {
