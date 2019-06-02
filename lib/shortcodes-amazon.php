@@ -184,10 +184,6 @@ function amazon_product_link_shortcode($atts){
   //Yahoo!バリューコマースPID
   $pid = trim(get_yahoo_valuecommerce_pid());
 
-  // $moshimo_amazon_id = null;
-  // $moshimo_rakuten_id = null;
-  // $moshimo_yahoo_id = null;
-
   //もしもID
   $moshimo_amazon_id  = trim(get_moshimo_amazon_id());
   $moshimo_rakuten_id = trim(get_moshimo_rakuten_id());
@@ -211,14 +207,6 @@ function amazon_product_link_shortcode($atts){
 
   $res = get_amazon_itemlookup_xml($asin);
   if ($res === false) {//503エラーの場合
-    // $error_message = get_amazon_error_product_link($associate_url);
-    // if (is_user_administrator()) {
-    //   $admin_message = __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME );
-    //   $error_message .= get_admin_errormessage_box_tag($admin_message);
-    // }
-    // // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
-    // // wp_filesystem_put_contents($xml_file, $res);
-    // return wrap_product_item_box($error_message, 'amazon');
     return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));
   }
 
@@ -228,16 +216,6 @@ function amazon_product_link_shortcode($atts){
     $xml = simplexml_load_string($res);
 
     if (property_exists($xml->Error, 'Code')) {
-      // $error_message = get_amazon_error_product_link($associate_url);
-
-      // if (is_user_administrator()) {
-      //   $admin_message = '<b>'.__( '管理者用エラーメッセージ', THEME_NAME ).'</b><br>';
-      //   $admin_message .= __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-      //   $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
-      //   $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
-      //   $error_message .= get_message_box_tag($admin_message, 'warning-box fz-14px');
-      // }
-      // return wrap_product_item_box($error_message);
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
       $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
@@ -251,22 +229,12 @@ function amazon_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!property_exists($xml->Items, 'Item')) {
-      // $error_message = get_amazon_error_product_link($associate_url);
-      // if (is_user_administrator()) {
-      //   $error_message .= get_admin_errormessage_box_tag(AMAZON_ASIN_ERROR_MESSAGE);
-      // }
-      // return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
       return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
     }
 
     if (property_exists($xml->Items, 'Item')) {
       $item = $xml->Items->Item;
 
-      //_v($xml);
-      // _v($item->ItemLinks->ItemLink[2]);
-
-      //var_dump($xml->Items->Errors);
-      //_v($item);
       $ASIN = esc_html($item->ASIN);
 
       ///////////////////////////////////////
@@ -291,19 +259,16 @@ function amazon_product_link_shortcode($atts){
 
       //イメージセットを取得する
       $ImageSets = $item->ImageSets;
-      //_v($ImageSets);
 
       //画像インデックスが設定されている場合
       if ($image_index !== null && $ImageSets) {
         //インデックスを整数型にする
         $image_index = intval($image_index);
-        //_v($image_index);
-        //_v($ImageSets);
+
         //有効なインデックスの場合
         if (!empty($ImageSets->ImageSet[$image_index])) {
           //インデックスが有効な場合は画像アイテムを入れ替える
           $ImageItem = $ImageSets->ImageSet[$image_index];
-          //_v($ImageSets->ImageSet);
         }
       }
 
@@ -548,21 +513,9 @@ function amazon_product_link_shortcode($atts){
 
       if ($ImageSets && !$image_only && $is_catalog_image_visible) {
         $SwatchImages = $ImageSets->ImageSet;
-        //_v($ImageSets);
-        //_v(count($ImageSets->ImageSet));
+
         $tmp_tag = null;
         for ($i=0; $i < count($ImageSets->ImageSet)-1; $i++) {
-          // if (($size == 's') && ($i >= 3)) {
-          //   break;
-          // }
-          // if (($size == 'm') && ($i >= 5)) {
-          //   break;
-          // }
-
-          // //image_indexで指定した画像を含めない
-          // if (($image_index !== null) && ($i == intval($image_index))) {
-          //   continue;
-          // }
           $display_none_class = null;
           if (($size != 'l') && ($i >= 3)) {
             $display_none_class .= ' sp-display-none';
@@ -577,14 +530,13 @@ function amazon_product_link_shortcode($atts){
           $SwatchImageURL = $SwatchImage->URL;
           $SwatchImageWidth = $SwatchImage->Width;
           $SwatchImageHeight = $SwatchImage->Height;
+
           //LargeImage
-          //_v($LargeImage);
           $LargeImage = $ImageSet->LargeImage;
           $LargeImageURL = $LargeImage->URL;
           $LargeImageWidth = $LargeImage->Width;
           $LargeImageHeight = $LargeImage->Height;
 
-          //$id = ' id="'.$asin.'-'.$i.'"';
           $tmp_tag .=
             '<div class="image-thumb swatch-image-thumb si-thumb'.esc_attr($display_none_class).'">'.
               '<img src="'.esc_url($SwatchImageURL).'" alt="" widh="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'">'.
@@ -592,12 +544,8 @@ function amazon_product_link_shortcode($atts){
               '<img src="'.esc_url($LargeImageURL).'" alt="" widh="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
               '</div>'.
             '</div>';
-          //_v($tmp_tag);
         }
         $swatchimages_tag = '<a href="'.esc_url($associate_url).'" class="swatchimages" target="_blank" rel="nofollow noopener">'.$tmp_tag.'</a>';
-        // foreach ($ImageSets as $ImageSet) {
-        //   _v($ImageSet);
-        // }
       }
       $image_only_class = null;
       if ($image_only) {
@@ -647,8 +595,6 @@ function amazon_product_link_shortcode($atts){
           $product_item_admin_tag.
         '</div>';
     } else {//property_exists($xml->Items, 'Item')
-      // $error_message = AMAZON_ASIN_ERROR_MESSAGE;
-      // $tag = wrap_product_item_box($error_message);
       $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
     }//property_exists($xml->Items, 'Item')
 
