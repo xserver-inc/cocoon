@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php else: // サムネイルを持っていないとき ?>
         <?php echo get_entry_card_no_image_tag($count); ?>
       <?php endif; ?>
-      <?php the_nolink_category(); //カテゴリラベルの取得 ?>
+      <?php the_nolink_category(null, apply_filters('is_entry_card_nolink_category_visible', true)); //カテゴリラベルの取得 ?>
     </figure><!-- /.entry-card-thumb -->
 
     <div class="entry-card-content card-content e-card-content">

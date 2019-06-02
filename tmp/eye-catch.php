@@ -43,7 +43,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   <meta itemprop="height" content="<?php echo $height; ?>">
   <?php //アイキャッチラベルの表示
   if (is_eyecatch_label_visible()) {
-    the_nolink_category(); //カテゴリラベルの取得
+    the_nolink_category(null, apply_filters('is_eyecatch_nolink_category_visible', true)); //カテゴリラベルの取得
   }
 
   //アイキャッチにキャプションが設定されているとき

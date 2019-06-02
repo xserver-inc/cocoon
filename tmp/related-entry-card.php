@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
     <?php endif; ?>
-    <?php the_nolink_category(); //カテゴリラベルの取得 ?>
+    <?php the_nolink_category(null, apply_filters('is_related_entry_card_nolink_category_visible', true)); //カテゴリラベルの取得 ?>
   </figure><!-- /.related-entry-thumb -->
 
   <div class="related-entry-card-content card-content e-card-content">
