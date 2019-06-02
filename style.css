@@ -7214,7 +7214,7 @@ div.fb-like-mobile {
 }
 
 .search-edit {
-  font-family: "Meiryo", sans-serif;
+  font-family: inherit;
 }
 
 .search-submit {
