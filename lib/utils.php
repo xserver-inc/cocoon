@@ -84,8 +84,9 @@ endif;
 
 //リンクのないカテゴリーの出力
 if ( !function_exists( 'the_nolink_category' ) ):
-function the_nolink_category($id = null, $is_display = true){
-  echo get_the_nolink_category($id, $is_display);
+function the_nolink_category($id = null, $is_visible = true){
+  $is_visible = apply_filters( 'is_nolink_category_visible', $is_visible );
+  echo get_the_nolink_category($id, $is_visible);
 }
 endif;
 
