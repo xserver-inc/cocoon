@@ -59,6 +59,14 @@ function is_carousel_display_type_page_only(){
 }
 endif;
 
+//カルーセルをスマホで表示する
+define('OP_CAROUSEL_SMARTPHONE_VISIBLE', 'carousel_smartphone_visible');
+if ( !function_exists( 'is_carousel_smartphone_visible' ) ):
+function is_carousel_smartphone_visible(){
+  return get_theme_option(OP_CAROUSEL_SMARTPHONE_VISIBLE, 1);
+}
+endif;
+
 //カルーセルに表示するカテゴリID
 define('OP_CAROUSEL_CATEGORY_IDS', 'carousel_category_ids');
 if ( !function_exists( 'get_carousel_category_ids' ) ):

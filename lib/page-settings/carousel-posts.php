@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //カルーセルの表示
 update_theme_option(OP_CAROUSEL_DISPLAY_TYPE);
 
+//カルーセルをスマホで表示する
+update_theme_option(OP_CAROUSEL_SMARTPHONE_VISIBLE);
+
 //カルーセルに表示するカテゴリID
 update_theme_option(OP_CAROUSEL_CATEGORY_IDS);
 

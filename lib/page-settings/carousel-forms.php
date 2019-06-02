@@ -45,6 +45,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             );
             generate_selectbox_tag(OP_CAROUSEL_DISPLAY_TYPE, $options, get_carousel_display_type());
             generate_tips_tag(__( 'カルーセルを表示するページを設定します。', THEME_NAME ));
+
+            generate_checkbox_tag(OP_CAROUSEL_SMARTPHONE_VISIBLE , is_carousel_smartphone_visible(), __( 'スマートフォンで表示（480px以下）', THEME_NAME ));
             ?>
           </td>
         </tr>
