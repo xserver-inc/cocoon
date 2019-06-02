@@ -9455,7 +9455,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .sp-display-none {
-    display: none;
+    display: none !important;
   }
 
   .image-content amp-img {

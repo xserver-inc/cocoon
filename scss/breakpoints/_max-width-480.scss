@@ -125,9 +125,6 @@ body{
     border-left-width: 1px;
   }
 
-  // a.prev-next-home{
-  //   display: none;
-  // }
 }
 
 
@@ -365,7 +362,7 @@ a.facebook-follow-button{
 }
 
 .sp-display-none{
-  display: none;
+  display: none !important;
 }
 
 .image-content amp-img{

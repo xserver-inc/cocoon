@@ -922,6 +922,11 @@ function get_additional_carousel_area_classes($option = null){
     $classes .= ' ccb-carousel-border';
   }
 
+  //スマホ表示
+  if (!is_carousel_smartphone_visible()) {
+    $classes .= ' sp-display-none';
+  }
+
   if ($option) {
     $classes .= ' '.trim($option);
   }
