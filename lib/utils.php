@@ -62,14 +62,14 @@ endif;
 
 //リンクのないカテゴリーの取得
 if ( !function_exists( 'get_the_nolink_category' ) ):
-function get_the_nolink_category($id = null, $is_display = true){
+function get_the_nolink_category($id = null, $is_visible = true){
   if ($id) {
     $categories = get_the_category($id);
   } else {
     $categories = get_the_category();
   }
   $display_class = null;
-  if (!$is_display) {
+  if (!$is_visible) {
     $display_class = ' display-none';
   }
 
