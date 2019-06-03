@@ -6,7 +6,7 @@
   Author: アオイ
   Author URI: https://mizutama.blog/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-modernblack.png
-  Version: 1.1
+  Version: 1.2
   Priority: 200100
 */
 
@@ -14,220 +14,202 @@
 ** 基本表示
 ************************************/
 body {
-  background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 /************************************
 ** ヘッダー
 ************************************/
 .header-container {
-  border-top: 3px solid #202020;
+	border-top: 3px solid #202020;
 }
 
 /************************************
 ** WordPress Misc
 ************************************/
 .wp-caption {
-  border: 1px solid #595857;
-  border-radius: 0;
-  background-color: #fff;
+	border: 1px solid #595857;
+	border-radius: 0;
+	background-color: #fff;
 }
 p.wp-caption-text {
-  margin: 0;
-  padding: 1em 0;
-  background-color: #f6f6f6;
+	margin: 0;
+	padding: 1em 0;
+	background-color: #f6f6f6;
 }
 
 /************************************
 ** グローバルメニュー
 ************************************/
 .navi {
-  background-color: #202020;
+	background-color: #202020;
 }
 .navi-in > ul .sub-menu {
-  background-color: #595857;
+	background-color: #595857;
 }
 .navi-in a {
-  color: #fff;
+	color: #fff;
 }
 .navi-in a:hover {
-  background-color: #595857;
-  color: #fff;
+	background-color: #595857;
+	color: #fff;
 }
 
 /************************************
 ** エントリーカード
 ************************************/
 .a-wrap:hover {
-  background-color: #FFF;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.24);
+	background-color: #fff;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.24);
 }
 .cat-label {
-  top: 0;
-  left: 0;
-  border: none;
-  background-color: #202020;
-}
-
-/************************************
-** SNS
-************************************/
-.article-footer, .entry-footer {
-  margin-bottom: 20px;
-}
-.article-footer .sns-share-message, .article-footer .sns-follow-message, .entry-footer .sns-share-message, .entry-footer .sns-follow-message {
-  margin-right: 20px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-}
-.author-box .author-follows .sns-follow-message{
-  display: none;
-}
-.article-footer .sns-share-message:before, .article-footer .sns-follow-message:before, .entry-footer .sns-share-message:before, .entry-footer .sns-follow-message:before {
-  margin-right: 10px;
-  border-top: 1px solid #202020;
-  content: "";
-  flex-grow: 1;
-}
-.article-footer .sns-share-message:after, .article-footer .sns-follow-message:after, .entry-footer .sns-share-message:after, .entry-footer .sns-follow-message:after {
-  margin-left: 10px;
-  border-top: 1px solid #202020;
-  content: "";
-  flex-grow: 1;
-}
-
-/* SNSボタン */
-.bc-brand-color.sns-share.ss-top a[class*="button"],
-.bc-brand-color.sns-share.ss-top a, .bc-brand-color.sns-share.ss-bottom a[class*="button"],
-.bc-brand-color.sns-share.ss-bottom a, .bc-brand-color.sns-follow a[class*="button"],
-.bc-brand-color.sns-follow a {
-  background-color: #202020;
-  color: #FFF;
-}
-.bc-brand-color-white.sns-share.ss-top a[class*="button"],
-.bc-brand-color-white.sns-share.ss-top a, .bc-brand-color-white.sns-share.ss-bottom a[class*="button"],
-.bc-brand-color-white.sns-share.ss-bottom a, .bc-brand-color-white.sns-follow a[class*="button"],
-.bc-brand-color-white.sns-follow a {
-  color: #202020;
-  border: 1px solid #202020;
+	top: 0;
+	left: 0;
+	border: none;
+	background-color: #202020;
 }
 
 /************************************
 ** 内容
 ************************************/
 .eye-catch .cat-label {
-  top: 0;
-  left: 0;
-  border: none;
+	top: 0;
+	left: 0;
+	border: none;
 }
-.tag-link, .comment-reply-link {
-  background-color: #fff;
+.tag-link,
+.comment-reply-link {
+	background-color: #fff;
 }
 
 /************************************
 ** 投稿・固定ページ
 ************************************/
 .article h2 {
-  position: relative;
-  margin-top: 50px;
-  margin-bottom: 28px;
-  padding: 15px;
-  background-color: transparent;
-  border-top: solid 2px #202020;
-  border-bottom: solid 2px #202020;
+	position: relative;
+	margin-top: 50px;
+	margin-bottom: 28px;
+	padding: 15px;
+	background-color: transparent;
+	border-top: solid 2px #202020;
+	border-bottom: solid 2px #202020;
 }
-.article h2:before, .article h2:after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  left: 0;
+.article h2:before,
+.article h2:after {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 100%;
+	left: 0;
 }
 .article h2:before {
-  border-top: solid 4px #202020;
-  top: -8px;
+	border-top: solid 4px #202020;
+	top: -8px;
 }
 .article h2:after {
-  border-bottom: solid 4px #202020;
-  bottom: -8px;
+	border-bottom: solid 4px #202020;
+	bottom: -8px;
 }
 .article h3 {
-  margin-top: 45px;
-  padding: 6px 15px;
-  border: none;
-  border-bottom: 3px solid #202020;
+	margin-top: 45px;
+	padding: 6px 15px;
+	border: none;
+	border-bottom: 3px solid #202020;
 }
 .article h4 {
-  border-top: none;
-  border-bottom: 3px dotted #595857;
+	border-top: none;
+	border-bottom: 3px dotted #595857;
 }
-.article-footer, .entry-footer {
-  margin-right: -30px;
-  margin-left: -30px;
-  padding: 20px 30px;
-  background-color: #e6e6e6;
+.article-footer,
+.entry-footer {
+	margin-right: -30px;
+	margin-left: -30px;
+	padding: 20px 30px;
+	background-color: #e6e6e6;
 }
 @media screen and (max-width: 834px) {
-  .article-footer, .entry-footer {
-    margin-right: -10px;
-    margin-left: -10px;
-    padding: 20px 10px;
-  }
+	.article-footer,
+	.entry-footer {
+		margin-right: -10px;
+		margin-left: -10px;
+		padding: 20px 10px;
+	}
 }
 
 /************************************
 ** 引用（blockquote）
 ************************************/
 blockquote {
-  background-color: #fff;
-  border-color: #ccc;
-  border-left-width: 5px;
-  padding: 10px 10px 10px 50px;
+	background-color: #fff;
+	border-color: #ccc;
+	border-left-width: 5px;
+	padding: 10px 10px 10px 50px;
 }
 blockquote:before {
-  display: inline-block;
-  position: absolute;
-  top: 15px;
-  left: 12px;
-  vertical-align: middle;
-  font-family: FontAwesome;
-  content: "\f10d";
-  color: #e0e0e0;
-  font-size: 30px;
-  line-height: 1;
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	vertical-align: middle;
+	font-family: FontAwesome;
+	content: "\f10d";
+	color: #e0e0e0;
+	font-size: 30px;
+	line-height: 1;
 }
 blockquote::after {
-  content: none;
+	content: none;
 }
 
 /************************************
 ** ブログカード
 ************************************/
 .blogcard {
-  border: 1px solid #202020;
-  border-radius: 0;
+	border: 1px solid #202020;
+	border-radius: 0;
 }
 
 /************************************
 ** 目次
 ************************************/
 .toc {
-  padding: 1em;
-  border: 2px solid #202020;
-  background-color: #f9f9f9;
-  font-weight: bold;
+	padding: 0;
+	border: 2px solid #202020;
+}
+
+.toc-content {
+	border-top: 1px solid #ccc;
+}
+.toc ol.toc-list,
+.toc ul.toc-list {
+	margin: 0 20px 20px;
+}
+.toc ol.toc-list ol,
+.toc ol.toc-list ul,
+.toc ul.toc-list ol,
+.toc ul.toc-list ul {
+	font-weight: normal;
+}
+.toc ol.toc-list li,
+.toc ul.toc-list li {
+	margin: 0 0 6px;
+}
+.toc-title {
+	letter-spacing: 0.5em;
+}
+.toc-title::after {
+	letter-spacing: normal;
 }
 
 /************************************
 ** サイドバー
 ************************************/
 .sidebar h3 {
-  padding: 6px;
-  font-size: 0.95em;
-  letter-spacing: .4px;
-  border-bottom: 1px solid #595857;
-  background-color: transparent;
+	padding: 6px;
+	font-size: 0.95em;
+	letter-spacing: 0.4px;
+	border-bottom: 1px solid #595857;
+	background-color: transparent;
 }
 
 /************************************
@@ -236,150 +218,189 @@ blockquote::after {
 .primary-box,
 .sp-primary,
 .primary {
-  background-color: #595857;
-  color: #fff;
+	background-color: #a6a5a3;
+	color: #fff;
 }
 .success-box,
-.sp-success,
-.success {
-  background-color: #dbe8cf;
-  border: #b4d09b;
+.sp-success .success {
+	background-color: #dbe8cf;
+	border: #b4d09b;
 }
 .info-box,
 .sp-info,
 .info {
-  background-color: #cee2e8;
-  border: #9ac4d0;
+	background-color: #cee2e8;
+	border: #9ac4d0;
 }
 .warning-box,
 .sp-warning,
 .warning {
-  background-color: #f5efd2;
-  border: #e6da94;
+	background-color: #f7f2db;
+	border: #e6da94;
 }
 .danger-box,
 .sp-danger,
 .danger {
-  background-color: #f4ded7;
-  border: #df9a87;
+	background-color: #f4ded7;
+	border: #df9a87;
 }
 .information-box,
 .question-box,
 .alert-box,
+.information,
+.question,
+.alert,
 .memo-box,
-.comment-box {
-  margin-top: 2em;
-  padding: 16px;
-  line-height: 2;
-  border-width: 4px 4px 4px 60px;
-  background-color: #fff;
+.comment-box,
+.common-icon-box {
+	margin-top: 2em;
+	padding: 16px;
+	line-height: 2;
+	border-width: 4px 4px 4px 60px;
+	background-color: #fff;
 }
-.information-box:before,
-.question-box:before,
-.alert-box:before,
-.memo-box:before,
-.comment-box:before {
-  left: -52px;
-  padding: 0;
-  font-size: 40px;
-  color: #fff;
-  border-right: none;
+
+.information-box::before,
+.question-box::before,
+.alert-box::before,
+.information::before,
+.question::before,
+.alert::before,
+.memo-box::before,
+.comment-box::before,
+.common-icon-box::before {
+	left: -52px;
+	padding: 0;
+	font-size: 40px;
+	color: #fff;
+	border-right: none;
 }
+
 .information-box p,
 .question-box p,
 .alert-box p,
+.information p,
+.question p,
+.alert p,
 .memo-box p,
-.comment-box p {
-  margin: 0;
+.comment-box p,
+.common-icon-box p {
+	margin: 0;
 }
+
 .information-box p + p,
 .question-box p + p,
 .alert-box p + p,
+.information p + p,
+.question p + p,
+.alert p + p,
 .memo-box p + p,
-.comment-box p + p {
-  margin-top: 10px;
+.comment-box p + p,
+.common-icon-box p + p {
+	margin-top: 10px;
 }
+
 .information-box,
 .information {
-  border-color: #abced8;
+	border-color: #bcd8e0;
 }
 .question-box,
 .question {
-  border-color: #ebe1a9;
+	border-color: #ebe1a9;
 }
 .alert-box,
 .alert {
-  border-color: #e4ab9b;
+	border-color: #e9bcaf;
 }
 .memo-box {
-  border-color: #C1D8AC;
+	border-color: #cee0bd;
 }
 .comment-box {
-  border-color: #c0c6c9;
+	border-color: #ced2d5;
+}
+.ok-box {
+	border-color: #8dd2e1;
+}
+.ng-box {
+	border-color: #eea9a9;
+}
+.good-box {
+	border-color: #a6c978;
+}
+.bad-box {
+	border-color: #f196a6;
 }
 
 @media screen and (max-width: 440px) {
-  .information-box,
-  .question-box,
-  .alert-box,
-  .memo-box,
-  .comment-box {
-    padding: 6px;
-    border-width: 40px 4px 4px 4px;
-  }
-  .information-box::before,
-  .question-box::before,
-  .alert-box::before,
-  .memo-box::before,
-  .comment-box::before {
-    padding: 0;
-    top: -20px;
-    left: 50%;
-    margin-left: -0.5em;
-    font-size: 30px;
-    color: #FFF;
-  }
+	.information-box,
+	.question-box,
+	.alert-box,
+	.information,
+	.question,
+	.alert,
+	.memo-box,
+	.comment-box,
+	.common-icon-box {
+		padding: 6px;
+		border-width: 40px 4px 4px 4px;
+	}
+	.information-box::before,
+	.question-box::before,
+	.alert-box::before,
+	.information::before,
+	.question::before,
+	.alert::before,
+	.memo-box::before,
+	.comment-box::before,
+	.common-icon-box::before {
+		padding: 0;
+		top: -20px;
+		left: 50%;
+		margin-left: -0.5em;
+		font-size: 30px;
+		color: #fff;
+	}
 }
 
 .blank-box.bb-yellow {
-  border-color: #e6da94;
+	border-color: #e6da94;
 }
 .blank-box.bb-red {
-  border-color: #df9a87;
+	border-color: #df9a87;
 }
 .blank-box.bb-blue {
-  border-color: #9ac4d0;
+	border-color: #9ac4d0;
 }
 .blank-box.bb-green {
-  border-color: #b4d09b;
+	border-color: #b4d09b;
 }
 .blank-box.bb-tab.bb-yellow::before {
-  background-color: #e6da94;
+	background-color: #e6da94;
 }
 .blank-box.bb-tab.bb-red::before {
-  background-color: #df9a87;
+	background-color: #df9a87;
 }
 .blank-box.bb-tab.bb-blue::before {
-  background-color: #9ac4d0;
+	background-color: #9ac4d0;
 }
 .blank-box.bb-tab.bb-green::before {
-  background-color: #b4d09b;
+	background-color: #b4d09b;
 }
 .blank-box.sticky.st-yellow {
-  border-color: #e6da94;
-  background-color: #f7f2db;
+	border-color: #e6da94;
+	background-color: #f7f2db;
 }
 .blank-box.sticky.st-red {
-  border-color: #df9a87;
-  background-color: #f4ded7;
+	border-color: #df9a87;
+	background-color: #f4ded7;
 }
 .blank-box.sticky.st-blue {
-  border-color: #9ac4d0;
-  background-color: #dfecf0;
+	border-color: #9ac4d0;
+	background-color: #dfecf0;
 }
 .blank-box.sticky.st-green {
-  border-color: #b4d09b;
-  background-color: #e8f0e0;
+	border-color: #b4d09b;
+	background-color: #e8f0e0;
 }
 
 /************************************
@@ -387,183 +408,163 @@ blockquote::after {
 ************************************/
 .related-entry-heading,
 .comment-title {
-  text-align: center;
-  letter-spacing: .5em;
-  border-top: 2px solid #202020;
-  border-bottom: 2px solid;
+	text-align: center;
+	letter-spacing: 0.5em;
+	border-top: 2px solid #202020;
+	border-bottom: 2px solid;
 }
 
 /************************************
 ** ページネーション
 ************************************/
 .page-numbers {
-  border: 1px solid #595857;
+	border: 1px solid #595857;
 }
 
 /************************************
 ** 「次のページ」ページネーション
 ************************************/
 .pagination-next-link {
-  border: none;
-  background-color: #202020;
-  color: #fff;
+	border: none;
+	background-color: #202020;
+	color: #fff;
 }
 .pagination-next-link:hover {
-  background-color: #595857;
-  color: #fff;
+	background-color: #595857;
+	color: #fff;
 }
 
 /************************************
 ** マルチページのページャーリンク
 ************************************/
 .pager-links a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /************************************
 ** 投稿ナビ
 ************************************/
 .pager-post-navi {
-  margin-right: -30px;
-  margin-left: -30px;
-  padding: 20px 30px;
-  background-color: #c9c9c9;
+	margin-right: -30px;
+	margin-left: -30px;
+	padding: 20px 30px;
+	background-color: #c9c9c9;
 }
 .pager-post-navi a {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: #fff;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 0;
+	padding-bottom: 0;
+	background-color: #fff;
 }
 .pager-post-navi a + a {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 .pager-post-navi a.prev-post::before,
 .pager-post-navi a.next-post::before {
-  color: #202020;
+	color: #202020;
 }
 .pager-post-navi .card-thumb img {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 
 @media screen and (min-width: 769px) {
-  .pager-post-navi a {
-    width: 65%;
-  }
+	.pager-post-navi a {
+		width: 65%;
+	}
 }
 @media screen and (max-width: 834px) {
-  .pager-post-navi {
-    margin-right: -10px;
-    margin-left: -10px;
-    padding: 20px 10px;
-  }
+	.pager-post-navi {
+		margin-right: -10px;
+		margin-left: -10px;
+		padding: 20px 10px;
+	}
 }
 
 /************************************
 ** プロフィールボックス
 ************************************/
 .author-box {
-  border: 1px solid #202020;
-  border-radius: 0;
-  background-color: #fff;
-}
-.author-box .sns-follow-buttons a.follow-button {
-  border: none;
-}
-.author-box .sns-follow-buttons a.follow-button:hover {
-  background-color: #202020;
+	border: 1px solid #202020;
+	border-radius: 0;
+	background: #fff;
 }
 .author-widget-name {
-  margin-bottom: 1.4%;
-  padding: 2px 0;
-  text-align: center;
-  background-color: #202020;
-  color: #fff;
+	margin-bottom: 1.4%;
+	padding: 2px 0;
+	text-align: center;
+	background-color: #202020;
+	color: #fff;
 }
 .author-description {
-  margin-top: 10px;
-  font-size: 14px;
+	margin-top: 10px;
+	font-size: 14px;
 }
 
 /************************************
 ** モバイルフッターバー
 ************************************/
 .mobile-menu-buttons {
-  background: #202020;
-  border-top: 1px solid #595857;
+	background: #202020;
+	border-top: 1px solid #595857;
 }
 .mobile-menu-buttons .menu-caption,
 .mobile-menu-buttons .menu-icon {
-  color: #fff;
+	color: #fff;
 }
 .mobile-menu-buttons .menu-button:hover {
-  background-color: #595857;
-}
-.search-menu-content {
-  top: 50%;
+	background-color: #595857;
 }
 
 /************************************
 ** フッター
 ************************************/
 .footer {
-  background-color: #202020;
-  color: #FFF;
+	background-color: #202020;
+	color: #fff;
 }
 .footer a {
-  color: #FFF !important;
+	color: #fff !important;
 }
 .footer a:hover {
-  background-color: #464646 !important;
+	background-color: #464646 !important;
 }
 .footer .author-box {
-  background-color: #FFF;
-  color: #333435;
+	background-color: #fff;
+	color: #333435;
 }
 .footer .author-box a {
-  color: #333435 !important;
+	color: #333435 !important;
 }
 .footer .sns-follow-buttons a {
-  color: #fff !important;
+	color: #fff !important;
 }
 .footer .tagcloud a {
-  background-color: #202020;
+	background-color: #202020;
 }
 .footer .sns-follow.bc-brand-color a {
-  border: 1px solid #dddedf;
+	border: 1px solid #dddedf;
 }
 .footer.logo-text,
 .footer-title {
-  color: #ffffff;
+	color: #ffffff;
 }
 .footer-widgets {
-  border-bottom: 1px solid #807e7d;
+	border-bottom: 1px solid #807e7d;
 }
 .footer-bottom {
-  margin-top: 30px;
+	margin-top: 30px;
 }
 
 /************************************
 ** トップへ戻るボタン
 ************************************/
 .go-to-top-button {
-  background-color: #595857;
-  color: #ccc;
+	background-color: #595857;
+	color: #ccc;
 }
 .go-to-top-button:hover {
-  background-color: #807e7d;
-  color: #fff;
-}
-
-/************************************
-** カルーセル
-************************************/
-.carousel {
-  margin-bottom: 30px;
-}
-
-.carousel-entry-card-title {
-  font-size: 14px;
+	background-color: #807e7d;
+	color: #fff;
 }
