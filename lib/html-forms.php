@@ -952,6 +952,8 @@ function generate_widget_entries_tag($atts){
     'action' => null,
     'exclude_cat_ids' => array(),
   ), $atts));
+  global $post;
+
   //ランダムが有効な時は関連記事
   if ($random) {
     $prefix = 'widget-related';
@@ -1078,7 +1080,8 @@ function generate_widget_entries_tag($atts){
           $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
         }
         $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-        the_nolink_category($post->ID, $is_visible); //カテゴリラベルの取得 ?>
+        $post_id = isset($post->ID) ? $post->ID : null;
+        the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得 ?>
       </figure><!-- /.new-entry-card-thumb -->
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
