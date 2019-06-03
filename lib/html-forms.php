@@ -900,8 +900,8 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
       <figure class="popular-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php echo $post_thumbnail_img; ?>
         <?php
-        $is_visible = apply_filters('is_popular_entry_card_nolink_category_visible', false);
-        $is_visible = apply_filters('is_widget_entry_card_nolink_category_visible', $is_visible);
+        $is_visible = apply_filters('is_popular_entry_card_category_label_visible', false);
+        $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
         the_nolink_category($post->ID, $is_visible); //カテゴリラベルの取得 ?>
       </figure><!-- /.popular-entry-card-thumb -->
 
@@ -1073,11 +1073,11 @@ function generate_widget_entries_tag($atts){
       <?php endif; ?>
       <?php
         if ($random) {
-          $is_visible = apply_filters('is_widget_related_entry_card_nolink_category_visible', false);
+          $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
         } else {
-          $is_visible = apply_filters('is_new_entry_card_nolink_category_visible', false);
+          $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
         }
-        $is_visible = apply_filters('is_widget_entry_card_nolink_category_visible', $is_visible);
+        $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
         the_nolink_category($post->ID, $is_visible); //カテゴリラベルの取得 ?>
       </figure><!-- /.new-entry-card-thumb -->
 
