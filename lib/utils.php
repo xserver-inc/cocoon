@@ -70,7 +70,8 @@ function get_the_nolink_category($id = null, $is_visible = true){
   }
   $display_class = null;
   if (!$is_visible) {
-    $display_class = ' display-none';
+    return;
+    //$display_class = ' display-none';
   }
 
   //var_dump($categories);
