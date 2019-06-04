@@ -28,6 +28,9 @@ update_theme_option(OP_SITE_TEXT_COLOR);
 //フォントウエイト
 update_theme_option(OP_SITE_FONT_WEIGHT);
 
+//サイトアイコンフォント
+update_theme_option(OP_SITE_ICON_FONT);
+
 //サイト背景色
 update_theme_option(OP_SITE_BACKGROUND_COLOR);
 
