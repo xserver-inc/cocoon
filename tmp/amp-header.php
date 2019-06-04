@@ -71,7 +71,7 @@ if (is_amp_image_zoom_effect_gallery()) {
 }
 
 //Font Awesomeのスタイルの読み込み
-echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
+echo '<link rel="stylesheet" href="'.FONT_AWESOME_4_CDN_URL.'">'.PHP_EOL;
 //Google Fontsスタイルの読み込み
 if (!is_site_font_family_local()) {
   echo '<link rel="stylesheet" href="'.get_site_font_source_url().'">'.PHP_EOL;
