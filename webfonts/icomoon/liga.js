@@ -37,6 +37,8 @@
             'brand': '&#xea87;',
             'linkedin2': '&#xeaca;',
             'brand65': '&#xeaca;',
+            'codepen': '&#xeae8;',
+            'brand81': '&#xeae8;',
           '0': 0
         };
         delete icons['0'];
