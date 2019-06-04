@@ -47,7 +47,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php endif ?>
           </div>
         <?php endif ?>
-
+        <?php do_action('fb_like_box_other_buttons'); ?>
       </div>
       <div class="fb-like-sub-message"><?php _e( $_SUB_MESSAGE, THEME_NAME ) ?></div>
     </div>
