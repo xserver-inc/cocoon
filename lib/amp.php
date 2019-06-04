@@ -392,7 +392,7 @@ function convert_content_for_amp($the_content){
 
   // videoをamp-videoに置換する
   $pattern = '/<video/i';
-  $append = '<amp-video controls layout="responsive" width="640" height="360"';
+  $append = '<amp-video layout="responsive" width="640" height="360"';
   $the_content = preg_replace($pattern, $append, $the_content);
   $pattern = '/<\/video>/i';
   $append = '</amp-video>';
