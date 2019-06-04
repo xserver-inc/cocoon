@@ -58,10 +58,10 @@ endif;
 if ( !function_exists( 'is_the_page_ads_novisible' ) ):
 function is_the_page_ads_novisible(){
   $value = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
-
-  if (is_migrate_from_simplicity())
-    $value = $value ? $value : get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true);
-
+  if (is_migrate_from_simplicity()){
+    $simplicity_value = get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true) ? 1 : 0;
+    $value = $value ? $value : $simplicity_value;
+  }
   return $value;
 }
 endif;
@@ -70,6 +70,6 @@ endif;
 //広告を表示するか
 if ( !function_exists( 'is_the_page_ads_visible' ) ):
 function is_the_page_ads_visible(){
-  return !is_the_page_ads_novisible() || !is_singular();
+  return !is_the_page_ads_novisible();
 }
 endif;
