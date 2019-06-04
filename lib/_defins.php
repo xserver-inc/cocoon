@@ -231,6 +231,8 @@ define('FONT_AWESOME5_CDN_URL', 'https://use.fontawesome.com/releases/v5.6.3/css
 
 //Font Awesome4
 define('FONT_AWESOME4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
+//Font Awesome5
+define('FONT_AWESOME5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 
