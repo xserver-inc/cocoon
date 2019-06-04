@@ -312,7 +312,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_style_icomoon' ) ):
 function wp_enqueue_style_icomoon(){
   if (!is_web_font_lazy_load_enable() || is_admin()) {
-    wp_enqueue_style( 'icomoon-style', FONT_AICOMOON_URL );
+    wp_enqueue_style( 'icomoon-style', FONT_ICOMOON_URL );
   }
 }
 endif;
@@ -494,7 +494,7 @@ function wp_enqueue_web_font_lazy_load_js(){
     wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
     $data = ('
       loadWebFont("'.FONT_AWESOME4_URL.'");
-      loadWebFont("'.FONT_AICOMOON_URL.'");
+      loadWebFont("'.FONT_ICOMOON_URL.'");
     ');
     wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
   }

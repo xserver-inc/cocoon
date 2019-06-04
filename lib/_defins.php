@@ -232,7 +232,7 @@ define('FONT_AWESOME5_CDN_URL', 'https://use.fontawesome.com/releases/v5.6.3/css
 //Font Awesome4
 define('FONT_AWESOME4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
 //IcoMoonフォント
-define('FONT_AICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
+define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 
 //親テーマのJavaScript
 define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');

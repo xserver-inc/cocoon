@@ -202,7 +202,7 @@ function manage_cocoon_pwa_files(){
     $theme_js_url = THEME_JS_URL;
     $theme_child_js_url = THEME_CHILD_JS_URL;
     $font_awesome4_url = FONT_AWESOME4_URL;
-    $font_aicomoon_url = FONT_AICOMOON_URL;
+    $font_icomoon_url = FONT_ICOMOON_URL;
 
     //Service Worker
     //参考：https://github.com/SuperPWA/Super-Progressive-Web-Apps/blob/master/public/sw.php @Super PWA GitHub repository
@@ -215,7 +215,7 @@ const urlsToCache = [
   '{$theme_js_url}',
   '{$theme_child_js_url}',
   '{$font_awesome4_url}',
-  '{$font_aicomoon_url}'
+  '{$font_icomoon_url}'
 ];
 
 self.addEventListener('install', function(event) {
