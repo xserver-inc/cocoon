@@ -35,6 +35,8 @@
             'house3': '&#xe902;',
             'amazon': '&#xea87;',
             'brand': '&#xea87;',
+            'linkedin2': '&#xeaca;',
+            'brand65': '&#xeaca;',
           '0': 0
         };
         delete icons['0'];
