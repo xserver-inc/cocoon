@@ -376,7 +376,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
-.admin-settings .demo .wrap { width: 1236px; margin: 0 auto; }
+.admin-settings .demo .wrap { width: 1256px; margin: 0 auto; }
 .admin-settings .demo .content-in { display: flex; justify-content: space-between; flex-wrap: wrap; }
 .admin-settings .demo .main { width: 860px; margin-right: 20px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
@@ -696,7 +696,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
-.admin-settings .demo .sidebar { width: 356px; border: 1px solid transparent; padding: 9px; border-radius: 4px; background-color: #fff; }
+.admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
@@ -1909,7 +1909,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo hr { color: #eee; }
 .admin-settings .demo .cf::after { clear: both; content: ""; display: block; }
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
-.admin-settings .demo .wrap { width: 1236px; margin: 0 auto; }
+.admin-settings .demo .wrap { width: 1256px; margin: 0 auto; }
 .admin-settings .demo .content-in { display: flex; justify-content: space-between; flex-wrap: wrap; }
 .admin-settings .demo .main { width: 860px; margin-right: 20px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
@@ -2229,7 +2229,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
-.admin-settings .demo .sidebar { width: 356px; border: 1px solid transparent; padding: 9px; border-radius: 4px; background-color: #fff; }
+.admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }

@@ -144,17 +144,6 @@ function get_index_main_column_contents_width(){
     $mw = $sw - ($main_column_padding*2) - ($main_column_border_width*2);
     //var_dump($mw);
   }
-
-  // if (!is_index_page_sidebar_visible()) {
-  //   $main_sidebar_margin = get_main_sidebar_margin() ? get_main_sidebar_margin() : 20;
-  //   $main_column_border_width = get_main_column_border_width() ? get_main_column_border_width() : 1;
-  //   $mw = intval($mw) + intval(get_sidebar_width()) + $main_sidebar_margin + ($main_column_border_width*2);
-  //   //var_dump($mw);
-  // }
-  //_v(get_sidebar_width());
-  //_v($mw);
-  //_v(get_sidebar_width());
-  //var_dump($mw);
   return $mw;
 }
 endif;
@@ -288,7 +277,7 @@ endif;
 if ( !function_exists( 'get_sidebar_width' ) ):
 function get_sidebar_width(){
   $sidebar_contents_width = get_sidebar_contents_width() ? get_sidebar_contents_width() : 336;
-  $sidebar_padding = get_sidebar_padding() ? get_sidebar_padding() : 9;
+  $sidebar_padding = get_sidebar_padding() ? get_sidebar_padding() : 19;
   $sidebar_border_width = is_numeric(get_sidebar_border_width()) ? get_sidebar_border_width() : 1;
   return intval($sidebar_contents_width) +
          (intval($sidebar_padding) * 2) +

@@ -327,7 +327,7 @@ hr {
 
 /* インナーを囲む */
 .wrap {
-  width: 1236px;
+  width: 1256px;
   margin: 0 auto;
 }
 
@@ -1999,9 +1999,9 @@ span.internal-icon {
 ** サイドバーのスタイル
 ************************************/
 .sidebar {
-  width: 356px;
+  width: 376px;
   border: 1px solid transparent;
-  padding: 9px;
+  padding: 19px;
   border-radius: 4px;
   background-color: #fff;
 }
