@@ -352,7 +352,7 @@ if (get_sidebar_width()): ?>
 <?php //パディング
 if (get_sidebar_padding()): ?>
 .sidebar{
-  padding: 9px <?php echo get_sidebar_padding(); ?>px;
+  padding: 19px <?php echo get_sidebar_padding(); ?>px;
 }
 <?php endif ?>
 <?php //枠線の幅

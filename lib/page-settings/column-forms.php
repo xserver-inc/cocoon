@@ -121,7 +121,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 9, 5, 40);
+            generate_number_tag(OP_SIDEBAR_PADDING,  get_sidebar_padding(), 19, 5, 40);
             generate_tips_tag(__( 'サイドバーコンテンツ両サイドの余白幅を設定します。（最小：5px、最大：40px）', THEME_NAME ));
             ?>
           </td>
