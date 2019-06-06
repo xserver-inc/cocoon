@@ -318,7 +318,7 @@ if ( !function_exists( 'fetch_pocket_count_raw' ) ):
 function fetch_pocket_count_raw($url){
   $res = 0;
   $url = urlencode($url);
-  $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
+  $query = 'https://widgets.getpocket.com/api/saves?url='.$url;
   //URL（クエリ）先の情報を取得
   $args = array( 'sslverify' => true );
   $result = wp_remote_get($query, $args);
@@ -328,8 +328,8 @@ function fetch_pocket_count_raw($url){
     // 正規表現でカウント数のところだけを抽出
     $body = isset($result["body"]) ? $result["body"] : null;
     if ($body) {
-      preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-      $res = isset($count[1]) ? intval($count[1]) : 0;
+      $json = json_decode($body); //ジェイソンオブジェクトに変換する
+      $res = isset($json->{'saves'}) ? $json->{'saves'} : 0;
     }
   }
 
