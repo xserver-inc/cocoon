@@ -89,6 +89,12 @@ define('DATA_AD_FORMAT_FLUID', 'fluid'); //記事中広告
 define('DATA_AD_FORMAT_AUTORELAXED', 'autorelaxed'); //関連記事
 //リンクユニット
 define('DATA_AD_FORMAT_LINK', 'link');
+//ナビゲーションメニュー
+define('NAV_MENU_HEADER', 'navi-header');
+define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
+define('NAV_MENU_FOOTER', 'navi-footer');
+define('NAV_MENU_FOOTER_MOBILE', 'navi-footer-mobile');
+define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 
 //メインカラム用の広告フォーマット集
 global $_MAIN_DATA_AD_FORMATS;

@@ -12,7 +12,7 @@
     wp_nav_menu(
       array (
         //カスタムメニュー名
-        'theme_location' => 'navi-header',
+        'theme_location' => NAV_MENU_HEADER,
         //ul 要素に適用するCSS クラス名
         'menu_class' => 'menu-header',
         //コンテナを表示しない
@@ -29,7 +29,7 @@
     wp_nav_menu(
       array (
         //カスタムメニュー名
-        'theme_location' => 'navi-mobile',
+        'theme_location' => NAV_MENU_HEADER_MOBILE,
         //ul 要素に適用するCSS クラス名
         'menu_class' => 'menu-mobile',
         //コンテナを表示しない

@@ -219,11 +219,11 @@ add_theme_support( 'menus' );
 //register_nav_menu( 'header-navi', 'ヘッダーナビゲーション' );
 register_nav_menus(
   array(
-    'navi-header' => __( 'ヘッダーメニュー', THEME_NAME ),
-    'navi-mobile' => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
-    'navi-footer' => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
-    'navi-footer-mobile' => __( 'フッターモバイルボタン（サブ不可）', THEME_NAME ),
-    'navi-mobile-slide-in' => __( 'モバイルスライドインメニュー', THEME_NAME ),
+    NAV_MENU_HEADER => __( 'ヘッダーメニュー', THEME_NAME ),
+    NAV_MENU_HEADER_MOBILE => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
+    NAV_MENU_FOOTER => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
+    NAV_MENU_FOOTER_MOBILE => __( 'フッターモバイルボタン（サブ不可）', THEME_NAME ),
+    NAV_MENU_MOBILE_SLIDE_IN => __( 'モバイルスライドインメニュー', THEME_NAME ),
   )
 );
 

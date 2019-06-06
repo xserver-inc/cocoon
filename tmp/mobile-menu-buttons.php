@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (is_mobile_button_layout_type_slide_in()): ?>
 
 <?php
-if (has_nav_menu( 'navi-footer-mobile' )) {
+if (has_nav_menu( NAV_MENU_FOOTER_MOBILE )) {
   //モバイルフッターメニュー
   get_template_part( 'tmp/mobile-footer-menu-buttons' );
 } else {

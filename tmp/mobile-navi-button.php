@@ -10,7 +10,7 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
 
-<?php if (has_nav_menu( 'navi-header' ) || has_nav_menu( 'navi-footer-mobile-slide-in' )): ?>
+<?php if (has_nav_menu( NAV_MENU_HEADER ) || has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )): ?>
   <!-- メニューボタン -->
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
@@ -23,11 +23,11 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
       <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
       <?php //ヘッダーナビ
       ob_start();
-      if (has_nav_menu( 'navi-footer-mobile-slide-in' )) {
+      if (has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )) {
         wp_nav_menu(
           array (
             //カスタムメニュー名
-            'theme_location' => 'navi-footer-mobile-slide-in',
+            'theme_location' => NAV_MENU_MOBILE_SLIDE_IN,
             //ul 要素に適用するCSS クラス名
             'menu_class' => 'menu-drawer',
             //コンテナを表示しない
@@ -40,7 +40,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
         wp_nav_menu(
           array (
             //カスタムメニュー名
-            'theme_location' => 'navi-header',
+            'theme_location' => NAV_MENU_HEADER,
             //ul 要素に適用するCSS クラス名
             'menu_class' => 'menu-drawer',
             //コンテナを表示しない

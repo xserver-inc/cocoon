@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php wp_nav_menu(
       array (
         //カスタムメニュー名
-        'theme_location' => 'navi-footer',
+        'theme_location' => NAV_MENU_FOOTER,
         //ul 要素に適用するCSS クラス名
         'menu_class' => 'menu-footer',
         //コンテナを表示しない
