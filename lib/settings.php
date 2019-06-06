@@ -222,7 +222,8 @@ register_nav_menus(
     'navi-header' => __( 'ヘッダーメニュー', THEME_NAME ),
     'navi-mobile' => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
     'navi-footer' => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
-    'navi-footer-mobile' => __( 'フッターモバイルメニュー（サブ不可）', THEME_NAME ),
+    'navi-footer-mobile' => __( 'フッターモバイルボタン（サブ不可）', THEME_NAME ),
+    'navi-mobile-slide-in' => __( 'モバイルスライドインメニュー', THEME_NAME ),
   )
 );
 
