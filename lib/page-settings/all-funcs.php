@@ -86,6 +86,11 @@ function is_site_icon_font_font_awesome_4(){
   return get_site_icon_font() == 'font_awesome_4';
 }
 endif;
+if ( !function_exists( 'is_site_icon_font_font_awesome_5' ) ):
+function is_site_icon_font_font_awesome_5(){
+  return get_site_icon_font() == 'font_awesome_5';
+}
+endif;
 
 //サイト背景色
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');

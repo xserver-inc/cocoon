@@ -71,6 +71,38 @@ function code_minify_call_back($buffer) {
       }
     }
   }
+
+  //Font Awesome5変換
+  if (is_site_icon_font_font_awesome_5() &&
+      preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)) {
+    //_v($m);
+    $fa4_alls = $m[0];
+    $befores = $m[1];
+    $classes = $m[2];
+    $fa4_classes = $m[3];
+    $afters = $m[4];
+    $list = get_font_awesome_exchange_list();
+    $fa4_classes = array_unique($fa4_classes);
+    $i = 0;
+    foreach ($fa4_classes as $fa4_class) {
+      $fa5_class = str_replace('fa ', 'fas ', $fa4_class);
+      foreach ($list as $ex) {
+        $fa4 = $ex[0];
+        $fa5 = $ex[1];
+
+        if ($fa4 == $fa4_class) {
+          $fa5_class = $fa5;
+        }
+      }
+      $fa4_all_tag = $fa4_alls[$i];
+      $fa5_all_tag = str_replace($fa4_class, $fa5_class, $fa4_all_tag);
+      // _v($fa4_all_tag);
+      // _v($fa5_all_tag);
+      $buffer = str_replace($fa4_all_tag, $fa5_all_tag, $buffer);
+      $i++;
+    }
+
+  }
   //_v($buffer);
   return apply_filters('code_minify_call_back', $buffer);
 }
