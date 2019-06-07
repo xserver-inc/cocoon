@@ -87,16 +87,6 @@ div#header-container {
     box-shadow: 0 1px 5px darkgrey;
 }
 
-@media (min-width:835px){
-    div#header-container {
-    position: sticky;
-     position: -webkit-sticky;
-    top: 0;
-    z-index: 999;
-}
-}
-
-
 /*description*/
 .tagline {
     position: relative;
