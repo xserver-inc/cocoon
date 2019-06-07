@@ -260,7 +260,8 @@ input::placeholder,input:-ms-input-placeholder,input::-ms-input-placeholder {
 article .ranking-items {
     border: 1px solid lightskyblue;
 	 position:relative;
-	 padding-top:20px;
+     padding-top:20px;
+     margin-top: 40px;
 }
 
 article .ranking-item {
