@@ -1620,7 +1620,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
+.admin-settings .demo .menu-content .menu-drawer { padding: 0 1em 30px; }
 .admin-settings .demo .menu-content .sidebar { width: 100%; display: block; margin: 0; }
 .admin-settings .demo .navi-menu-content { left: 0; -webkit-transform: translateX(-105%); transform: translateX(-105%); }
 .admin-settings .demo .sidebar-menu-content { right: 0; -webkit-transform: translateX(105%); transform: translateX(105%); }
@@ -3153,7 +3153,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
+.admin-settings .demo .menu-content .menu-drawer { padding: 0 1em 30px; }
 .admin-settings .demo .menu-content .sidebar { width: 100%; display: block; margin: 0; }
 .admin-settings .demo .navi-menu-content { left: 0; -webkit-transform: translateX(-105%); transform: translateX(-105%); }
 .admin-settings .demo .sidebar-menu-content { right: 0; -webkit-transform: translateX(105%); transform: translateX(105%); }

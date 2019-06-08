@@ -6622,7 +6622,7 @@ div.fb-like-mobile {
   -webkit-overflow-scrolling: touch;
 }
 .menu-content .menu-drawer {
-  padding: 0 0 30px;
+  padding: 0 1em 30px;
 }
 .menu-content .sidebar {
   width: 100%;
