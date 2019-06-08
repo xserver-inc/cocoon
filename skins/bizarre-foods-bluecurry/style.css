@@ -8,7 +8,6 @@
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/bizarre-foods-bluecurry.png
   Version: 1.0
   Priority: 89.2
-  Visibility: false
 */
 
 /*Common*********************************************************/
@@ -48,12 +47,6 @@ header.article-header.entry-header {
 	 max-width: 880px;
 	 position:relative;
 	 margin:auto;
-}
-
-@media (max-width:834px){
-	header.article-header.entry-header {
-   		 height: 390px;
-	}
 }
 
 #header-in{
