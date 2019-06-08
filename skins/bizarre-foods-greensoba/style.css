@@ -1224,3 +1224,13 @@ select {
 .editor-styles-wrapper {
     background: white;
 }
+
+/*PLUG-IN******************************************************************************************/
+
+h3.wpforo-forum-title {
+    background-color: transparent;
+}
+h3.wpforo-forum-title::before {
+    display: none;
+}
+
