@@ -1305,19 +1305,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
 .admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
 .admin-settings .demo div .has-white-background-color { background-color: #fff; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 50%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
-.admin-settings .demo .column-wrap.column-3 > div { width: 33%; }
+.admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
 .admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 65%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 65%; }
 .admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
 .admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 74%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
@@ -2839,19 +2837,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
 .admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
 .admin-settings .demo div .has-white-background-color { background-color: #fff; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 50%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
-.admin-settings .demo .column-wrap.column-3 > div { width: 33%; }
+.admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
 .admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 65%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 65%; }
 .admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
 .admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 74%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
