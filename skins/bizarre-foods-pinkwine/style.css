@@ -897,7 +897,11 @@ ol.toc-list > li > a{
 ol.toc-list > li:before {
     counter-increment: item;
     content: counter(item)'';
-    padding: .5em .7em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
     background: lightpink;
     color: white;
     border-radius: 50%;
