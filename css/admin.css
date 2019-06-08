@@ -1608,6 +1608,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .fa.menu-icon { font: inherit; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }
 .admin-settings .demo .search-menu-icon::before { content: '\f002'; }
@@ -3141,6 +3142,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .fa.menu-icon { font: inherit; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }
 .admin-settings .demo .search-menu-icon::before { content: '\f002'; }

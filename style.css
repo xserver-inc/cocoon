@@ -6542,6 +6542,10 @@ div.fb-like-mobile {
   cursor: default;
 }
 
+.fa.menu-icon {
+  font: inherit;
+}
+
 .navi-menu-icon::before {
   content: '\f0c9';
 }
