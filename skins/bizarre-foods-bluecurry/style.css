@@ -638,11 +638,6 @@ a.tag-link {
     border-style: solid;
 }
 
-.bc-brand-color-white .sns-buttons a.share-button{
-    border-width: 1px;
-    border-style: solid;
-}
-
 .sns-buttons a:hover {
     transform: translateY(-4px);
     transition:all 500ms;
