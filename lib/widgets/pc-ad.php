@@ -55,9 +55,11 @@ class PcAdWidgetItem extends WP_Widget {
         'is_label_visible' => 1,
       );
     }
-    $ad = esc_attr($instance['ad_text']);
-    $format = esc_attr($instance['ad_format']);
-    $is_label_visible = esc_attr(!empty($instance['is_label_visible']) ? 1 : 0);
+    $ad = isset($instance['ad_text']) ? $instance['ad_text'] : '';
+    $ad = esc_attr($ad);
+    $format = isset($instance['ad_format']) ? $instance['ad_format'] : '';
+    $format = esc_attr($format);
+    $is_label_visible = !empty($instance['is_label_visible']) ? 1 : 0;
 ?>
 <?php //広告入力フォーム ?>
 <p>
