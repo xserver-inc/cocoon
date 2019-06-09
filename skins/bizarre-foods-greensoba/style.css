@@ -659,7 +659,7 @@ a.tag-link {
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button,
 .bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button,
 .bc-brand-color.sns-share .rss-button, .bc-brand-color.sns-follow .rss-button,
-.bc-monochrome .sns-buttons a
+.bc-monochrome .sns-buttons a{
     background:#fff;
     border:none;
 }

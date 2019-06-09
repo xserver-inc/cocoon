@@ -20,8 +20,8 @@ body{
 /************************************
 ** main
 ************************************/
-.single #main{
-	padding:0 3em;
+.single #main {
+	padding: 1em 3em;
 }
 /************************************
 ** p
@@ -124,13 +124,13 @@ a {
 .navi-in > ul .sub-menu ul{
 	top: -64px;
 }
-#header-container #navi{
+#header-container .navi{
 	background:#89c997;
 }
-#header-container #navi a{
+#header-container .navi a{
 	color:#fff;
 }
-#header-container #navi a:hover{
+#header-container .navi a:hover{
 	color:#89c997;
 }
 .navi-in > ul .sub-menu{
@@ -377,9 +377,8 @@ article .tag-link:hover{
 /************************************
 ** サイドバー sidebar
 ************************************/
-.sidebar{
-	padding:0;
-	font-size:0.9em;
+.sidebar {
+	font-size: 0.9em;
 }
 .sidebar h3{
 	background: #89c997;
@@ -943,7 +942,7 @@ input[type='submit']:hover{
 	.navi-in > ul li {
 		min-width: auto;
 	}
-	#header-container #navi a{
+	#header-container .navi a{
 		font-size:0.8em;
 		padding: 1em 1.2em;
 	}
