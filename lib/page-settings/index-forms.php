@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
               <div <?php body_class(); ?>>
-              <?php query_posts('no_found_rows=1'); ?>
+              <?php query_posts('no_found_rows=1&posts_per_page=10'); ?>
               <?php get_template_part('tmp/list'); ?>
               <?php wp_reset_query(); ?>
               </div>
