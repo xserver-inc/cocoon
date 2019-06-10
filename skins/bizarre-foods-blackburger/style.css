@@ -1190,6 +1190,10 @@ h1#archive-title {
     padding: .5em;
      color: slategrey;
 }
+/* カテゴリー・タグページ */
+.article-header h1#archive-title{
+    color: #545454;
+}
 span.fa.fa-search:before {
     content: "\f002";
     color: #292929;
