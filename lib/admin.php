@@ -162,6 +162,11 @@ function customize_admin_manage_posts_columns($columns) {
     unset($columns['date']);
   }
 
+  //投稿ID表示
+  if (is_admin_list_post_id_visible()) {
+    $columns['post-id'] = __( 'ID', THEME_NAME );
+  }
+
   //文字数表示
   if (is_admin_list_word_count_visible()) {
     $columns['word-count'] = __( '文字数', THEME_NAME );
@@ -189,6 +194,10 @@ add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 add_action( 'manage_pages_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
+  //投稿ID
+  if ( 'post-id' == $column_name ) {
+    $thum = $post_id;
+  }
 
   //文字数表示
   if ( 'word-count' == $column_name ) {
