@@ -82,10 +82,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ADMIN_LIST_DATE_VISIBLE , is_admin_list_date_visible(), __( '日付を表示する', THEME_NAME ));
             echo '<br>';
 
-            generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_LIST_POST_ID_VISIBLE , is_admin_list_post_id_visible(), __( '投稿IDを表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_WORD_COUNT_VISIBLE , is_admin_list_word_count_visible(), __( '文字数を表示する', THEME_NAME ));
+            echo '<br>';
+
+            generate_checkbox_tag(OP_ADMIN_LIST_EYECATCH_VISIBLE , is_admin_list_eyecatch_visible(), __( 'アイキャッチを表示する', THEME_NAME ));
             echo '<br>';
 
             generate_checkbox_tag(OP_ADMIN_LIST_MEMO_VISIBLE , is_admin_list_memo_visible(), __( 'メモの内容を表示する', THEME_NAME ));

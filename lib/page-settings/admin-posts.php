@@ -28,11 +28,14 @@ update_theme_option(OP_ADMIN_LIST_COMMENTS_VISIBLE);
 //投稿一覧に日付を表示する
 update_theme_option(OP_ADMIN_LIST_DATE_VISIBLE);
 
-//投稿一覧にアイキャッチを表示する
-update_theme_option(OP_ADMIN_LIST_EYECATCH_VISIBLE);
+//投稿IDを表示する
+update_theme_option(OP_ADMIN_LIST_POST_ID_VISIBLE);
 
 //投稿一覧に文字数を表示する
 update_theme_option(OP_ADMIN_LIST_WORD_COUNT_VISIBLE);
+
+//投稿一覧にアイキャッチを表示する
+update_theme_option(OP_ADMIN_LIST_EYECATCH_VISIBLE);
 
 //投稿一覧にメモを表示する
 update_theme_option(OP_ADMIN_LIST_MEMO_VISIBLE);
