@@ -19,6 +19,9 @@ update_theme_option(OP_EDITOR_BACKGROUND_COLOR);
 //エディター文字色
 update_theme_option(OP_EDITOR_TEXT_COLOR);
 
+//ルビボタン有効
+update_theme_option(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE);
+
 //ブロックエディターインラインスタイルドロップダウン有効
 update_theme_option(OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_VISIBLE);
 
