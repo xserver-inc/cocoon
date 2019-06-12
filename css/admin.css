@@ -697,7 +697,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -1360,9 +1360,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .prev::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 3px; }
 .admin-settings .demo .pagination .next::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-left: 3px; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 50px; width: 50px; border: 1px solid #ccc; margin: 0 4px; line-height: 50px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
@@ -2229,7 +2229,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
 .admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -2892,9 +2892,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .prev::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 3px; }
 .admin-settings .demo .pagination .next::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-left: 3px; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 50px; width: 50px; border: 1px solid #ccc; margin: 0 4px; line-height: 50px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }

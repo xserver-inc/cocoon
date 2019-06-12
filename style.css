@@ -2007,9 +2007,10 @@ span.internal-icon {
 }
 .sidebar h3 {
   background-color: #f3f4f5;
-  padding: 14px 10px;
+  padding: 12px;
   margin: 16px 0;
   border-radius: 2px;
+  font-size: 1em;
 }
 
 .no-scrollable-sidebar .sidebar {
@@ -5142,11 +5143,11 @@ div .has-white-background-color {
   color: #333;
   text-decoration: none;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 46px;
+  width: 46px;
   border: 1px solid #ccc;
   margin: 0 4px;
-  line-height: 50px;
+  line-height: 46px;
   text-align: center;
   border-radius: 4px;
   display: inline-flex;
@@ -5166,11 +5167,11 @@ div .has-white-background-color {
   border: 1px solid #ccc;
   color: #333;
   display: block;
-  font-size: 1.25em;
+  font-size: 1.2em;
   text-decoration: none;
   width: 100%;
   text-align: center;
-  padding: 12px 0;
+  padding: 10px;
   display: block;
 }
 .pagination-next-link:hover, .comment-btn:hover {
