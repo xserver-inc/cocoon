@@ -84,7 +84,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE , is_block_editor_ruby_button_visible(), __( 'ルビボタン表示', THEME_NAME ));
+            generate_checkbox_tag(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE , is_block_editor_ruby_button_visible(), __( 'ふりがな（ルビ）ボタン表示', THEME_NAME ));
             generate_tips_tag(__( 'Cocoonのルビボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。', THEME_NAME ));
             ?>
           </td>
