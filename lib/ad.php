@@ -313,22 +313,24 @@ endif;
 //ウィジェットをトップページのリスト表示中間に掲載するか
 if ( !function_exists( 'is_index_middle_widget_visible' ) ):
 function is_index_middle_widget_visible($count){
-  if (
-      //3個目の表示のときのみ
-      ($count == 3) &&
-      // //トップページリストのみ
-      // is_home() &&
-      // //ページネーションの最終ページでないとき
-      // !is_pagination_last_page() &&
-      //1ページに表示する最大投稿数が6以上の時
-      is_posts_per_page_6_and_over() &&
-      //エントリーカードタイプの一覧のとき
-      //is_entry_card_type_entry_card() &&
-      //タイル表示じゃないとき
-      !is_entry_card_type_tile_card() &&
-      //&&//公開記事が6以上の時
-      (get_all_post_count_in_publish() >= 6)
-  ) {
+  $is_visible =
+    //3個目の表示のときのみ
+    ($count == 3) &&
+    // //トップページリストのみ
+    // is_home() &&
+    // //ページネーションの最終ページでないとき
+    // !is_pagination_last_page() &&
+    //1ページに表示する最大投稿数が6以上の時
+    is_posts_per_page_6_and_over() &&
+    //エントリーカードタイプの一覧のとき
+    //is_entry_card_type_entry_card() &&
+    //タイル表示じゃないとき
+    !is_entry_card_type_tile_card() &&
+    //&&//公開記事が6以上の時
+    (get_all_post_count_in_publish() >= 6);
+
+    $is_visible =apply_filters('is_index_middle_widget_visible', $is_visible);
+  if ($is_visible ) {
     return true;
   }
 }
@@ -337,23 +339,25 @@ endif;
 //広告をトップページのリスト表示中間に掲載するか
 if ( !function_exists( 'is_index_middle_ad_visible' ) ):
 function is_index_middle_ad_visible($count){
-  if (
-      //広告表示設定が有効な時
-      is_ad_pos_index_middle_visible() &&
-      // //3個目の表示のときのみ
-      // ($count == 3) &&
-      // //トップページリストのみ
-      // is_home() &&
-      //ページネーションの最終ページでないとき
-      !is_pagination_last_page() &&
-      // //1ページに表示する最大投稿数が6以上の時
-      // is_posts_per_page_6_and_over() &&
-      // //エントリーカードタイプの一覧のとき
-      // is_entry_card_type_entry_card() &&
-      // //&&//公開記事が6以上の時
-      // (get_all_post_count_in_publish() >= 6)
-      is_index_middle_widget_visible($count)
-  ) {
+  $is_visible =
+    //広告表示設定が有効な時
+    is_ad_pos_index_middle_visible() &&
+    // //3個目の表示のときのみ
+    // ($count == 3) &&
+    // //トップページリストのみ
+    // is_home() &&
+    //ページネーションの最終ページでないとき
+    !is_pagination_last_page() &&
+    // //1ページに表示する最大投稿数が6以上の時
+    // is_posts_per_page_6_and_over() &&
+    // //エントリーカードタイプの一覧のとき
+    // is_entry_card_type_entry_card() &&
+    // //&&//公開記事が6以上の時
+    // (get_all_post_count_in_publish() >= 6)
+    is_index_middle_widget_visible($count);
+
+  $is_visible = apply_filters('is_index_middle_ad_visible', $is_visible);
+  if ($is_visible) {
     return true;
   }
 }
