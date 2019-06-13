@@ -45,11 +45,11 @@ main.main {
     font-weight: 500;
 }
 
-.entry-title, .archive-title {
+.entry-title, #editor .entry-title, .archive-title {
     padding: 20px;
     margin:38px 0;
     background-color: #234777;
-    color: #fff;
+    color: #fff !important;
     font-size: 24px;
     border-left: solid 4px #FEBF00;
 }
