@@ -761,6 +761,11 @@ $bb_green: $green_color;
   }
 }
 
+.btn-circle,
+.btn-wrap-circle > a{
+  border-radius: 99px;
+}
+
 .btn-white, .btn-wrap.btn-wrap-white > a{color: $text_color;background-color: $white;}
 #container .btn-white:hover, #container .btn-wrap.btn-wrap-white > a:hover{color: $text_color;}
 .btn-red, .btn-wrap.btn-wrap-red > a{background-color: $red_color;}

@@ -3254,6 +3254,11 @@ label.screen-reader-text {
   transition: all 0.7s ease;
 }
 
+.btn-circle,
+.btn-wrap-circle > a {
+  border-radius: 99px;
+}
+
 .btn-white, .btn-wrap.btn-wrap-white > a {
   color: #333;
   background-color: #fff;
