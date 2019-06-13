@@ -3254,6 +3254,74 @@ label.screen-reader-text {
   transition: all 0.7s ease;
 }
 
+/* ボタンを光らせる */
+.btn-shine,
+.btn-wrap-shine > a {
+  overflow: hidden;
+}
+
+.btn-shine:before,
+.btn-wrap-shine > a:before {
+  -moz-animation: shine 5s ease-in-out infinite;
+  -moz-transform: rotate(45deg);
+  -ms-animation: shine 5s ease-in-out infinite;
+  -ms-transform: rotate(45deg);
+  -o-animation: shine 5s ease-in-out infinite;
+  -o-transform: rotate(45deg);
+  -webkit-animation: shine 5s ease-in-out infinite;
+  -webkit-transform: rotate(45deg);
+  animation: shine 5s ease-in-out infinite;
+  background-color: #fff;
+  content: " ";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: -180px;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+@keyframes shine {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
 .btn-circle,
 .btn-wrap-circle > a {
   border-radius: 99px;
