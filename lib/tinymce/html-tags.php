@@ -134,7 +134,7 @@ function generate_html_tags_is($value){
   $after = '<rt>'.__( 'ふりがな', THEME_NAME ).'</rt></ruby>';
   ?>
   htmlTags[8] = new Array();
-  htmlTags[8].title  = '<?php echo __( 'ふりがな', THEME_NAME ); ?>';
+  htmlTags[8].title  = '<?php echo __( 'ふりがな（ルビ）', THEME_NAME ); ?>';
   htmlTags[8].tag = '<?php echo $before.__( '振り仮名', THEME_NAME ).$after; ?>';
   htmlTags[8].before = '<?php echo $before; ?>';
   htmlTags[8].after = '<?php echo $after; ?>';
