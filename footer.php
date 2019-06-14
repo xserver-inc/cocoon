@@ -113,6 +113,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     get_template_part('tmp-user/footer-insert');
   }
   ?>
+
 </body>
 
 </html>

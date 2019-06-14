@@ -815,14 +815,13 @@ function generate_style_amp_keyframes_tag(){?>
     }
   }
 
-
   ///////////////////////////////////////////
   //子テーマのスタイル
   ///////////////////////////////////////////
   if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
     //通常のスキンスタイル
     $css_child_keyframes_url = CHILD_THEME_KEYFRAMES_CSS_URL;
-    $child_css = css_url_to_css_minify_code($css_child_keyframes_url);
+    $child_keyframes_css = css_url_to_css_minify_code($css_child_keyframes_url);
     if ($child_keyframes_css !== false) {
       $css_all .= apply_filters( 'amp_child_keyframes_css', $child_keyframes_css );
     }
@@ -836,7 +835,7 @@ function generate_style_amp_keyframes_tag(){?>
 
   //全てのCSSの出力
   echo apply_filters( 'amp_all_keyframes_css', $css_all );
-  //}?></style>
+  ?></style>
 <?php
 }
 endif;

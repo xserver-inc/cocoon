@@ -92,6 +92,10 @@ get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 
 <?php //ユーザーカスタマイズ用
 get_template_part('tmp-user/amp-head-insert'); ?>
+
+
+<?php //AMP @keyframes用スタイルの出力
+  generate_style_amp_keyframes_tag(); ?>
 </head>
 <body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
 
