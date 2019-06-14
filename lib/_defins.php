@@ -100,10 +100,18 @@ define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 define('PARENT_THEME_STYLE_CSS_URL', get_template_directory_uri().'/style.css');
 //親テーマのstyle.cssのファイルパス
 define('PARENT_THEME_STYLE_CSS_FILE', get_template_directory().'/style.css');
+//親テーマのkeyframes.cssのURL
+define('PARENT_THEME_KEYFRAMES_CSS_URL', get_template_directory_uri().'/keyframes.css');
+//親テーマのkeyframes.cssのファイルパス
+define('PARENT_THEME_KEYFRAMES_CSS_FILE', get_template_directory().'/keyframes.css');
 //子テーマのstyle.cssのURL
 define('CHILD_THEME_STYLE_CSS_URL', get_stylesheet_directory_uri().'/style.css');
 //子テーマのstyle.cssのファイルパス
 define('CHILD_THEME_STYLE_CSS_FILE', get_stylesheet_directory().'/style.css');
+//子テーマのkeyframes.cssのURL
+define('CHILD_THEME_KEYFRAMES_CSS_URL', get_stylesheet_directory_uri().'/keyframes.css');
+//子テーマのkeyframes.cssのファイルパス
+define('CHILD_THEME_KEYFRAMES_CSS_FILE', get_stylesheet_directory().'/keyframes.css');
 
 
 //メインカラム用の広告フォーマット集

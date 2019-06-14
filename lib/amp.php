@@ -790,6 +790,58 @@ function generate_style_amp_custom_tag(){?>
 }
 endif;
 
+//<style amp-keyframes>タグの作成
+if ( !function_exists( 'generate_style_amp_keyframes_tag' ) ):
+function generate_style_amp_keyframes_tag(){?>
+<style amp-keyframes><?php
+
+  $css_all = '';
+  //AMPスタイルの取得（SCSSで出力したAMP用のCSS）
+  $keyframes_css_url = get_template_directory_uri().'/keyframes.css';
+  $css = css_url_to_css_minify_code($keyframes_css_url);
+  if ($css !== false) {
+    $css_all .= apply_filters( 'amp_parent_keyframes_css', $css );
+  }
+
+  ///////////////////////////////////////////
+  //スキンのスタイル
+  ///////////////////////////////////////////
+  if ( ($skin_url = get_skin_url()) && is_amp_skin_style_enable() ) {//設定されたスキンがある場合
+    //通常のスキンスタイル
+    $skin_keyframes_url = str_replace('style.css', 'keyframes.css', $skin_url);
+    $skin_keyframes_css = css_url_to_css_minify_code($skin_keyframes_url);
+    if ($skin_keyframes_css !== false) {
+      $css_all .= apply_filters( 'amp_skin_keyframes_css', $skin_keyframes_css );
+    }
+  }
+
+
+  ///////////////////////////////////////////
+  //子テーマのスタイル
+  ///////////////////////////////////////////
+  if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
+    //通常のスキンスタイル
+    $css_child_keyframes_url = CHILD_THEME_KEYFRAMES_CSS_URL;
+    $child_css = css_url_to_css_minify_code($css_child_keyframes_url);
+    if ($child_keyframes_css !== false) {
+      $css_all .= apply_filters( 'amp_child_keyframes_css', $child_keyframes_css );
+    }
+  }
+
+  //!importantの除去
+  $css_all = preg_replace('/!important/i', '', $css_all);
+
+  //CSSの縮小化
+  $css_all = minify_css($css_all);
+
+  //全てのCSSの出力
+  echo apply_filters( 'amp_all_keyframes_css', $css_all );
+  //}?></style>
+<?php
+}
+endif;
+
+
 if ( !function_exists( 'get_cleaned_css_selector' ) ):
 function get_cleaned_css_selector($selector){
   //class用のドットを取り除く

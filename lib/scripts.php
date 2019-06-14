@@ -20,6 +20,7 @@ function wp_enqueue_scripts_custom() {
   //テーマスタイルの呼び出し
   ///////////////////////////////////////////
   wp_enqueue_style_theme_style();
+  wp_enqueue_style_theme_keyframes();
 
   ///////////////////////////////////////////
   //Font Awesome
@@ -114,6 +115,7 @@ function wp_enqueue_scripts_custom() {
   //子テーマのstyle.css
   ///////////////////////////////////////////
   wp_enqueue_style_theme_child_style();
+  wp_enqueue_style_theme_child_keyframes();
 
 ////////////////////////////////////////////////////////////////
 //

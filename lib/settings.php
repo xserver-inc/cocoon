@@ -94,11 +94,13 @@ function visual_editor_stylesheets_custom($stylesheets) {
   //ビジュアルエディタースタイルが有効な時
   if (is_visual_editor_style_enable()) {
     $style_url = PARENT_THEME_STYLE_CSS_URL;
+    $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
     $cache_file_url = get_theme_css_cache_file_url();
     $editor_style_url = get_template_directory_uri().'/editor-style.css';
     array_push($stylesheets,
       FONT_AWESOME4_URL,
       add_file_ver_to_css_js($style_url),
+      add_file_ver_to_css_js($keyframes_url),
       add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル
       add_file_ver_to_css_js($editor_style_url)
     );

@@ -281,12 +281,26 @@ function wp_enqueue_style_theme_style(){
 }
 endif;
 
+//親テーマkeyframes.cssの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_keyframes' ) ):
+function wp_enqueue_style_theme_keyframes(){
+  wp_enqueue_style( THEME_NAME.'-keyframes', PARENT_THEME_KEYFRAMES_CSS_URL );
+}
+endif;
+
 //子テーマstyle.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_child_style' ) ):
 function wp_enqueue_style_theme_child_style(){
   if (is_child_theme()) {
     wp_enqueue_style( THEME_NAME.'-child-style', CHILD_THEME_STYLE_CSS_URL );
   }
+}
+endif;
+
+//子テーマkeyframes.cssの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_child_keyframes' ) ):
+function wp_enqueue_style_theme_child_keyframes(){
+  wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
 }
 endif;
 
