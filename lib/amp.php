@@ -756,7 +756,7 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////////
   if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
     //通常のスキンスタイル
-    $css_child_url = get_stylesheet_directory_uri().'/style.css';
+    $css_child_url = CHILD_THEME_STYLE_CSS_URL;
     $child_css = css_url_to_css_minify_code($css_child_url);
     if ($child_css !== false) {
       $css_all .= apply_filters( 'amp_child_css', $child_css );

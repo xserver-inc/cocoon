@@ -93,7 +93,7 @@ if ( !function_exists( 'visual_editor_stylesheets_custom' ) ):
 function visual_editor_stylesheets_custom($stylesheets) {
   //ビジュアルエディタースタイルが有効な時
   if (is_visual_editor_style_enable()) {
-    $style_url = get_template_directory_uri().'/style.css';
+    $style_url = PARENT_THEME_STYLE_CSS_URL;
     $cache_file_url = get_theme_css_cache_file_url();
     $editor_style_url = get_template_directory_uri().'/editor-style.css';
     array_push($stylesheets,
@@ -111,7 +111,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     //子テーマがある場合、子テーマ内のスタイルも読み込む
     if (is_child_theme()) {
       array_push($stylesheets,
-        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/style.css'),
+        add_file_ver_to_css_js(CHILD_THEME_STYLE_CSS_URL),
         add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }

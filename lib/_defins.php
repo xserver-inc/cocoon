@@ -96,6 +96,16 @@ define('NAV_MENU_FOOTER', 'navi-footer');
 define('NAV_MENU_FOOTER_MOBILE', 'navi-footer-mobile');
 define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 
+//親テーマのstyle.cssのURL
+define('PARENT_THEME_STYLE_CSS_URL', get_template_directory_uri().'/style.css');
+//親テーマのstyle.cssのファイルパス
+define('PARENT_THEME_STYLE_CSS_FILE', get_template_directory().'/style.css');
+//子テーマのstyle.cssのURL
+define('CHILD_THEME_STYLE_CSS_URL', get_stylesheet_directory_uri().'/style.css');
+//子テーマのstyle.cssのファイルパス
+define('CHILD_THEME_STYLE_CSS_FILE', get_stylesheet_directory().'/style.css');
+
+
 //メインカラム用の広告フォーマット集
 global $_MAIN_DATA_AD_FORMATS;
 $_MAIN_DATA_AD_FORMATS = array(
