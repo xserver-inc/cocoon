@@ -28,17 +28,8 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
       //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
       $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
       $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
-      //Adsense広告を表示しないようにする
-      $sidebar = preg_replace('/(?:\n|\r|\r\n)/', '', $sidebar );
-      $sidebar = preg_replace('/<div class="ad-label.+?<\/div>/', '', $sidebar);
-      $sidebar = preg_replace('/<div class="ad-responsive ad-usual.+?<\/div>/', '', $sidebar);
-      $sidebar = preg_replace('/<div class="ad-responsive ad-additional.+?<\/div>/', '', $sidebar);
-      $sidebar = preg_replace('/<div class="ad-wrap".+?<\/div>/','',$sidebar);
-      $sidebar = preg_replace('/<div class="ad-area .+?<\/div>/','',$sidebar);
 
-      echo $sidebar;
-        ?>
-      <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
+      echo $sidebar; ?>
     </div>
   </li>
 <?php endif ?>
