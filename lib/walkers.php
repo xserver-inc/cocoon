@@ -147,16 +147,17 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
     }
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
-      if (in_array('menu-item-has-children', $item->classes)) {
-        // 親の場合
-        $output .= "\n".'</ul></li>';
-      }
-      else {
-        // 子の場合
+      $output .= "\n";
+      // if (in_array('menu-item-has-children', $item->classes)) {
+      //   // 親の場合
+      //   $output .= "\n".'</ul></li>';
+      // }
+      // else {
+      //   // 子の場合
 
-        $output .= "\n";
-      }
-  }
+      //   $output .= "\n";
+      // }
+    }
   }
   endif;
 
