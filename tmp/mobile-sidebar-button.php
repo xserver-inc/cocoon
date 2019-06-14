@@ -34,6 +34,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
       $sidebar = preg_replace('/<div class="ad-responsive ad-usual.+?<\/div>/', '', $sidebar);
       $sidebar = preg_replace('/<div class="ad-responsive ad-additional.+?<\/div>/', '', $sidebar);
       $sidebar = preg_replace('/<div class="ad-wrap".+?<\/div>/','',$sidebar);
+      $sidebar = preg_replace('/<div class="ad-area .+?<\/div>/','',$sidebar);
 
       echo $sidebar;
         ?>
