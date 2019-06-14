@@ -3274,6 +3274,28 @@ label.screen-reader-text {
   width: 30px;
 }
 
+@keyframes shine {
+  0% {
+    /*-webkit-transform: scale(0) rotate(45deg);*/
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    /*-webkit-transform: scale(0) rotate(45deg);*/
+    transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    /*-webkit-transform: scale(4) rotate(45deg);*/
+    transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    /*-webkit-transform: scale(50) rotate(45deg);*/
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
 .btn-circle,
 .btn-wrap-circle > a {
   border-radius: 99px;
