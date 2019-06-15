@@ -302,7 +302,7 @@ endif;
 //子テーマkeyframes.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_child_keyframes' ) ):
 function wp_enqueue_style_theme_child_keyframes(){
-  if (file_exists(CHILD_THEME_KEYFRAMES_CSS_URL)) {
+  if (file_exists(CHILD_THEME_KEYFRAMES_CSS_FILE)) {
     wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
   }
 }
@@ -313,6 +313,36 @@ if ( !function_exists( 'wp_enqueue_style_theme_skin_style' ) ):
 function wp_enqueue_style_theme_skin_style(){
   if ($skin_url = get_skin_url()) {
     wp_enqueue_style( THEME_NAME.'-skin-style', $skin_url );
+  }
+}
+endif;
+
+//スキンスタイルの読み込み
+if ( !function_exists( 'wp_enqueue_style_theme_skin_keyframes' ) ):
+function wp_enqueue_style_theme_skin_keyframes(){
+  if ($skin_url = get_skin_url()) {
+    $skin_keyframes_url = get_theme_skin_keyframes_url();
+    //_v($skin_keyframes_url);
+    if ($skin_keyframes_url) {
+      wp_enqueue_style( THEME_NAME.'-skin-keyframes', $skin_keyframes_url );
+    }
+  }
+}
+endif;
+
+//スキンのkeyframes.css URLを取得
+if ( !function_exists( 'get_theme_skin_keyframes_url' ) ):
+function get_theme_skin_keyframes_url(){
+  if ($skin_url = get_skin_url()) {
+    $keyframes_url = str_replace('style.css', 'keyframes.css', $skin_url);
+    $keyframes_file = url_to_local($keyframes_url);
+    if (file_exists($keyframes_file)) {
+      return $keyframes_url;
+    } else {
+      return ;
+    }
+  } else {
+    return ;
   }
 }
 endif;
@@ -901,7 +931,12 @@ function wp_add_css_custome_to_inline_style(){
   //HTMLにインラインでスタイルを書く
   if (get_skin_url()) {
     //スキンがある場合
-    wp_add_inline_style( THEME_NAME.'-skin-style', $css_custom );
+    $skin_keyframes_url = get_theme_skin_keyframes_url();
+    if ($skin_keyframes_url) {
+      wp_add_inline_style( THEME_NAME.'-skin-keyframes', $css_custom );
+    } else {
+      wp_add_inline_style( THEME_NAME.'-skin-style', $css_custom );
+    }
   } else {
     //スキンを使用しない場合
     wp_add_inline_style( THEME_NAME.'-style', $css_custom );

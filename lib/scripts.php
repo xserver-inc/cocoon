@@ -92,6 +92,7 @@ function wp_enqueue_scripts_custom() {
   //スキンスタイルの読み込み
   ///////////////////////////////////////////
   wp_enqueue_style_theme_skin_style();
+  wp_enqueue_style_theme_skin_keyframes();
 
 
 ////////////////////////////////////////////////////////////////
