@@ -125,10 +125,9 @@ div#header-container {
 
 
 .sidebar{
-	padding:0;
-	border:none;
-	background:transparent;
-	margin-right:20px;
+    padding:0;
+    border:none;
+    background:transparent;
 }
 
 .sidebar h3{
