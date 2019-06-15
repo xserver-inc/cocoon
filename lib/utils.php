@@ -1756,7 +1756,7 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
   if (!$is_exfile) {//ローカル
     return file_get_contents($file);
   } else {//外部URL
-    return file_get_contents($file, false, stream_context_create($options));
+    return @file_get_contents($file, false, stream_context_create($options));
   }
 
   // if ($credentials_enable && is_request_filesystem_credentials_enable()){
