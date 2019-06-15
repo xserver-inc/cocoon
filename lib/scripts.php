@@ -20,7 +20,7 @@ function wp_enqueue_scripts_custom() {
   //テーマスタイルの呼び出し
   ///////////////////////////////////////////
   wp_enqueue_style_theme_style();
-  //wp_enqueue_style_theme_keyframes();
+  wp_enqueue_style_theme_keyframes();
 
   ///////////////////////////////////////////
   //Font Awesome
@@ -92,6 +92,7 @@ function wp_enqueue_scripts_custom() {
   //スキンスタイルの読み込み
   ///////////////////////////////////////////
   wp_enqueue_style_theme_skin_style();
+  wp_enqueue_style_theme_skin_keyframes();
 
 
 ////////////////////////////////////////////////////////////////
@@ -115,7 +116,7 @@ function wp_enqueue_scripts_custom() {
   //子テーマのstyle.css
   ///////////////////////////////////////////
   wp_enqueue_style_theme_child_style();
-  //wp_enqueue_style_theme_child_keyframes();
+  wp_enqueue_style_theme_child_keyframes();
 
 ////////////////////////////////////////////////////////////////
 //

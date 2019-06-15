@@ -114,11 +114,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   }
   ?>
 
-  <?php //AMP @keyframes用スタイルの出力
-  // if (is_amp()) {
-  //   generate_style_amp_keyframes_tag();
-  // }
-  ?>
 </body>
 
 </html>
