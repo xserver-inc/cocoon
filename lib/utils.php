@@ -284,7 +284,9 @@ endif;
 //親テーマkeyframes.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_keyframes' ) ):
 function wp_enqueue_style_theme_keyframes(){
-  wp_enqueue_style( THEME_NAME.'-keyframes', PARENT_THEME_KEYFRAMES_CSS_URL );
+  if (file_exists(PARENT_THEME_KEYFRAMES_CSS_FILE)) {
+    wp_enqueue_style( THEME_NAME.'-keyframes', PARENT_THEME_KEYFRAMES_CSS_URL );
+  }
 }
 endif;
 
@@ -300,7 +302,9 @@ endif;
 //子テーマkeyframes.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_child_keyframes' ) ):
 function wp_enqueue_style_theme_child_keyframes(){
-  wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
+  if (file_exists(CHILD_THEME_KEYFRAMES_CSS_URL)) {
+    wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
+  }
 }
 endif;
 
