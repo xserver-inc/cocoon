@@ -498,6 +498,12 @@ function convert_content_for_amp($the_content){
   $pattern = '{<style.+?</style>}is';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
+  //@keyframesスタイルを</body>手前に記入
+  $amp_keyframes_tag = get_style_amp_keyframes_tag();
+  $pattern = '</body>';
+  $append = $amp_keyframes_tag."\n".$pattern;
+  $the_content = str_replace($pattern, $append, $the_content);
+
 
   // $pattern = '/<script.+?<\/script>/is';
   // $append = '';
@@ -790,11 +796,9 @@ function generate_style_amp_custom_tag(){?>
 }
 endif;
 
-//<style amp-keyframes>タグの作成
-if ( !function_exists( 'generate_style_amp_keyframes_tag' ) ):
-function generate_style_amp_keyframes_tag(){?>
-<style amp-keyframes><?php
-
+//<style amp-keyframes>タグの取得
+if ( !function_exists( 'get_style_amp_keyframes_tag' ) ):
+function get_style_amp_keyframes_tag(){
   $css_all = '';
   //AMPスタイルの取得（SCSSで出力したAMP用のCSS）
   $keyframes_css_url = get_template_directory_uri().'/keyframes.css';
@@ -832,11 +836,18 @@ function generate_style_amp_keyframes_tag(){?>
 
   //CSSの縮小化
   $css_all = minify_css($css_all);
+  $css_all = apply_filters( 'amp_all_keyframes_css', $css_all );
 
+  $tag = '<style amp-keyframes>'.$css_all.'</style>';
   //全てのCSSの出力
-  echo apply_filters( 'amp_all_keyframes_css', $css_all );
-  ?></style>
-<?php
+  return $tag;
+}
+endif;
+
+//<style amp-keyframes>タグの出力
+if ( !function_exists( 'generate_style_amp_keyframes_tag' ) ):
+function generate_style_amp_keyframes_tag(){
+ echo get_style_amp_keyframes_tag();
 }
 endif;
 
