@@ -29,6 +29,10 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
       $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
       $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
 
+      //AdSense広告の除去
+      $sidebar = preg_replace('/<ins.+?<\/ins>/is', '', $sidebar);
+      $sidebar = preg_replace('/<script.+?<\/script>/is', '', $sidebar);
+
       echo $sidebar; ?>
     </div>
   </li>
