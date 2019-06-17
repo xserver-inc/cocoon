@@ -1,40 +1,22 @@
 @keyframes shine {
   0% {
-    -webkit-transform: scale(0) rotate(45deg);
     transform: scale(0) rotate(45deg);
     opacity: 0;
+    -webkit-transform: scale(0) rotate(45deg);
+    -moz-transform: scale(0) rotate(45deg);
+    -ms-transform: scale(0) rotate(45deg);
+    -o-transform: scale(0) rotate(45deg);
   }
   80% {
-    -webkit-transform: scale(0) rotate(45deg);
     transform: scale(0) rotate(45deg);
     opacity: 0.5;
   }
   81% {
-    -webkit-transform: scale(4) rotate(45deg);
     transform: scale(4) rotate(45deg);
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(50) rotate(45deg);
     transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes shine {
-  0% {
-    -webkit-transform: scale(0) rotate(45deg);
-    opacity: 0;
-  }
-  80% {
-    -webkit-transform: scale(0) rotate(45deg);
-    opacity: 0.5;
-  }
-  81% {
-    -webkit-transform: scale(4) rotate(45deg);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(50) rotate(45deg);
     opacity: 0;
   }
 }
