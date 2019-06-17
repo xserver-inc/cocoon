@@ -104,6 +104,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'Gutenberg：', THEME_NAME ).intval(is_gutenberg_editor_enable()).PHP_EOL;
     $all .= __( 'AMP：', THEME_NAME ).intval(is_amp_enable()).PHP_EOL;
     $all .= __( 'PWA：', THEME_NAME ).intval(is_pwa_enable()).PHP_EOL;
+    $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(is_auto_post_thumbnail_enable()).PHP_EOL;
     $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_ogp_home_image_url()).PHP_EOL;
     $all .= $sep;
 
