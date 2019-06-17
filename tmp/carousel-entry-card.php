@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <figure class="carousel-entry-card-thumb card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
-    <?php echo get_the_post_thumbnail($post->ID, THUMB320, array('class' => 'carousel-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
+    <?php echo get_the_post_thumbnail($post->ID, apply_filters('get_carousel_entry_card_thumbnail_size', THUMB320), array('class' => 'carousel-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
           <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_no_image_320x180_url(); ?>" alt="" class="no-image carousel-entry-card-no-image" width="<?php echo THUMB320WIDTH; ?>" height="<?php echo THUMB320HEIGHT; ?>" />
     <?php endif; ?>
