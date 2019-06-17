@@ -231,6 +231,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $site_logo_tag = '<div class="blogcard-site external-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
   //サムネイルを取得できた場合
+  $image = apply_filters('get_external_blogcard_thumbnail_url', $image);
   if ( $image ) {
     $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
   }

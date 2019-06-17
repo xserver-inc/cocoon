@@ -12,19 +12,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <figure class="related-entry-card-thumb card-thumb e-card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
     <?php
-    //適切なサムネイルサイズの選択
-    switch (get_related_entry_type()) {
-      case 'vartical_card_3':
-        $thumb_size = THUMB320;
-        break;
-      case 'mini_card':
-        $thumb_size = THUMB120;
-        break;
-      default:
-        $thumb_size = THUMB160;
-        break;
-    }
-    echo get_the_post_thumbnail($post->ID, $thumb_size, array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
+    echo get_the_post_thumbnail($post->ID, get_related_entry_card_thumbnail_size(), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
     <?php endif; ?>
