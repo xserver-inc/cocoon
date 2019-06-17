@@ -36,7 +36,8 @@ endif;
 //内部ブログカードのサムネイルサイズ
 if ( !function_exists( 'get_internal_blogcard_thumbnail_size' ) ):
 function get_internal_blogcard_thumbnail_size(){
-  return THUMB160;
+  $thumbnail_size = apply_filters('get_blogcard_thumbnail_size', THUMB160);
+  return apply_filters('get_internal_blogcard_thumbnail_size', $thumbnail_size);
 }
 endif;
 
