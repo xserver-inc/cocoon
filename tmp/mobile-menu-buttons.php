@@ -12,10 +12,10 @@ if (is_mobile_button_layout_type_slide_in()): ?>
 <?php
 if (has_nav_menu( NAV_MENU_FOOTER_MOBILE )) {
   //モバイルフッターメニュー
-  get_template_part( 'tmp/mobile-footer-menu-buttons' );
+  get_template_part( 'tmp/mobile-footer-custom-navi-buttons' );
 } else {
   //デフォルトモバイルボタン
-  get_template_part( 'tmp/mobile-default-buttons' );
+  get_template_part( 'tmp/mobile-footer-default-buttons' );
 }
 ?>
 
