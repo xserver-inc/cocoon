@@ -113,7 +113,7 @@ endif;
 if ( !function_exists( 'get_widget_entries_thumbnail_size' ) ):
 function get_widget_entries_thumbnail_size($entry_type = ET_DEFAULT){
   $thumb_size = ($entry_type == ET_DEFAULT) ? THUMB120 : THUMB320;
-  return $thumb_size;
+  return apply_filters('get_widget_entries_thumbnail_size', $thumb_size, $entry_type);
 }
 endif;
 
