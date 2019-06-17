@@ -75,7 +75,7 @@ function get_entry_card_thumbnail_size($count){
       $thumbnail_size = get_entry_card_default_thumbnail_size();
       break;
   }
-  return $thumbnail_size;
+  return apply_filters('get_entry_card_thumbnail_size', $thumbnail_size, $count);
 }
 endif;
 
