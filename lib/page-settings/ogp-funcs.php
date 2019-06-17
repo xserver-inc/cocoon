@@ -50,7 +50,7 @@ function get_ogp_home_image_url(){
   if (empty($url)) {
     $url = $def_url;
   }
-  return $url;
+  return apply_filters('get_ogp_home_image_url', $url);
 }
 endif;
 
