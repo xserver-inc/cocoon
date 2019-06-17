@@ -1045,15 +1045,17 @@ function generate_widget_entries_tag($atts){
 
   }
   // _v($args);
+  $thumb_size = get_widget_entries_thumbnail_size($entry_type);
+
   if ($random) {
     $args = apply_filters('widget_related_entries_args', $args);
+    $thumb_size = apply_filters('get_related_entries_thumbnail_size', $thumb_size, $entry_type);
   } else {
     $args = apply_filters('widget_new_entries_args', $args);
+    $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $entry_type);
   }
   $args = apply_filters('widget_entries_args', $args);
   //_v($args);
-  $thumb_size = get_widget_entries_thumbnail_size($entry_type);
-  $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $entry_type);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   ?>
