@@ -18,7 +18,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'logo-menu-icon'; ?>
     //ロゴが存在する場合は画像
     if ($logo_url): ?>
       <img class="site-logo-image" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
-    <?php elseif: ?>
+    <?php else: ?>
       <?php bloginfo('name'); ?>
     <?php endif; ?>
   </a>

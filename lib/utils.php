@@ -2786,6 +2786,13 @@ function get_mobile_next_button_tag(){
 }
 endif;
 
+//モバイルロゴボタンタグの取得
+if ( !function_exists( 'get_mobile_logo_button_tag' ) ):
+function get_mobile_logo_button_tag(){
+  return get_template_part_tag('tmp/mobile-logo-button');
+}
+endif;
+
 //確実にホームパスを取得するget_home_path関数
 if ( !function_exists( 'get_abs_home_path' ) ):
 function get_abs_home_path(){
