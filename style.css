@@ -1956,43 +1956,12 @@ span.internal-icon {
 }
 .toc.tnt-number-detail ol {
   list-style: none;
+  counter-reset: toc;
 }
 .toc.tnt-number-detail ol li:before {
   margin-right: 6px;
-}
-.toc.tnt-number-detail ol > li {
-  counter-increment: c-h2;
-  counter-reset: c-h3;
-}
-.toc.tnt-number-detail ol > li:before {
-  content: counter(c-h2) ".";
-}
-.toc.tnt-number-detail ol > li > ol > li {
-  counter-increment: c-h3;
-  counter-reset: c-h4;
-}
-.toc.tnt-number-detail ol > li > ol > li:before {
-  content: counter(c-h2) "." counter(c-h3) ".";
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li {
-  counter-increment: c-h4;
-  counter-reset: c-h5;
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li:before {
-  content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) ".";
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li {
-  counter-increment: c-h5;
-  counter-reset: c-h6;
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before {
-  content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) ".";
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li {
-  counter-increment: c-h6;
-}
-.toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before {
-  content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) ".";
+  counter-increment: toc;
+  content: counters(toc,".") ".";
 }
 
 /************************************

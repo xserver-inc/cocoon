@@ -684,18 +684,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
 .admin-settings .demo .toc.tnt-number-detail > ol { padding-left: 0; }
-.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
-.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
-.admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li { counter-increment: c-h5; counter-reset: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
+.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
+.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
@@ -2219,18 +2209,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
 .admin-settings .demo .toc.tnt-number-detail > ol { padding-left: 0; }
-.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
-.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
-.admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li { counter-increment: c-h5; counter-reset: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
+.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
+.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
