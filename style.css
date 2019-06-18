@@ -6562,6 +6562,19 @@ div.fb-like-mobile {
   cursor: default;
 }
 
+.logo-menu-button {
+  text-align: center;
+  font-weight: 900;
+  line-height: 50px;
+  min-width: 200px;
+  overflow: hidden;
+}
+.logo-menu-button img {
+  max-height: 44px;
+  display: block;
+  margin: 0 auto;
+}
+
 .fa.menu-icon {
   font: inherit;
 }
