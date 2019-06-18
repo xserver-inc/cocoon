@@ -7,12 +7,12 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<?php if (has_nav_menu( NAV_MENU_HEADER_MOBILE )): ?>
+<?php if (has_nav_menu( NAV_MENU_HEADER_MOBILE_BUTTONS )): ?>
   <?php //ヘッダーナビ
   wp_nav_menu(
     array (
       //カスタムメニュー名
-      'theme_location' => NAV_MENU_HEADER_MOBILE,
+      'theme_location' => NAV_MENU_HEADER_MOBILE_BUTTONS,
       //ul 要素に適用するCSS クラス名
       'menu_class' => 'mobile-header-menu-buttons mobile-menu-buttons',
       //メニューの深さ
