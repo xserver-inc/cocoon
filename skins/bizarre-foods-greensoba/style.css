@@ -455,12 +455,11 @@ div#list {
 h2.entry-card-title.card-title.e-card-title {
     font-weight: 100;
     color: #545454;
-    padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 0;
 }
 
 .entry-card-snippet.card-snippet.e-card-snippet {
     color: slategray;
-    padding-left: 20px;
 }
 
 .entry-card-info.e-card-info {
@@ -844,6 +843,10 @@ a.comment-reply-link {
 
 @media (max-width: 480px){
     .article h2:before{top:.75em;}
+
+    h2.entry-card-title.card-title.e-card-title {
+        padding: 0 0 0px 0;
+    }
 }
 
 
