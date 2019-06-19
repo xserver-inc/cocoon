@@ -90,6 +90,15 @@ div.sidebar{
 .mobile-header-menu-buttons{
   top: 0;
   bottom: auto;
+  justify-content: space-around;
+
+  .menu-button{
+    width: 70px;
+  }
+
+  .logo-menu-button{
+    flex-grow: 99;
+  }
 }
 
 .mobile-button-fmb .go-to-top-button{

@@ -8775,6 +8775,13 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .mobile-header-menu-buttons {
     top: 0;
     bottom: auto;
+    justify-content: space-around;
+  }
+  .mobile-header-menu-buttons .menu-button {
+    width: 70px;
+  }
+  .mobile-header-menu-buttons .logo-menu-button {
+    flex-grow: 99;
   }
 
   .mobile-button-fmb .go-to-top-button {
