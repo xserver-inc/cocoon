@@ -61,9 +61,6 @@
 ** h2-h6の見出し目次に連番を振る
 ************************************/
 .toc.tnt-number-detail{
-  >ol{
-    padding-left: 0;
-  }
   ol{
     list-style: none;
     counter-reset:toc;
