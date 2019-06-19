@@ -49,14 +49,14 @@ $elements = array(
 
 //var_dump($the_content);
 foreach( $elements as $key => $val ) {
-  if( strpos($all_content, '<'.$key) !== false ) {
+  if( includes_string($all_content, '<'.$key) ) {
     echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
 
   }
 }
 
 //AMP用の検索フォームが存在するか
-if( (strpos($all_content, 'class="amp-form') !== false) || is_mobile_button_layout_type_footer_mobile_buttons() ) {
+if( includes_string($all_content, 'class="amp-form') ) {
   echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>'.PHP_EOL;
 }
 

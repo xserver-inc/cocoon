@@ -85,7 +85,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   get_template_part('tmp/admin-panel'); ?>
 
   <?php //モバイルメニューボタン
-  get_template_part('tmp/mobile-menu-buttons'); ?>
+  get_template_part('tmp/mobile-footer-menu-buttons'); ?>
 
   <?php if (!is_amp()) wp_footer(); ?>
 

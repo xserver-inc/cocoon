@@ -1,4 +1,4 @@
-<?php //モバイル用のスライドインボタンメニューの表示
+<?php //モバイル用のフッターボタンメニューの表示
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_mobile_button_layout_type_footer_mobile_buttons()): ?>
+if (is_mobile_button_layout_type_footer_mobile_buttons() || is_mobile_button_layout_type_header_and_footer_mobile_buttons()): ?>
 
 <?php
 if (has_nav_menu( NAV_MENU_FOOTER_MOBILE_BUTTONS )) {
