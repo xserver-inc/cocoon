@@ -662,6 +662,30 @@ div.list {
 	opacity:1;
 }
 
+.bc-brand-color.sns-share.ss-top .copy-button, .bc-brand-color.sns-share.ss-bottom .copy-button {
+	background-color: #fff;
+   color: #333;
+	border:solid 2px #333;
+}
+
+.bc-brand-color.sns-share.ss-top .copy-button:hover, .bc-brand-color.sns-share.ss-bottom .copy-button:hover {
+   background-color: #333;
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .pinterest-button, .bc-brand-color.sns-share.ss-bottom .pinterest-button {
+	background-color: #fff;
+   color: #bd081c;
+	border:solid 2px #bd081c;
+}
+
+.bc-brand-color.sns-share.ss-top .pinterest-button:hover, .bc-brand-color.sns-share.ss-bottom .pinterest-button:hover {
+   background-color: #bd081c;
+	color: #fff;
+	opacity:1;
+}
+
 .sns-share a {
     border-radius: 4px;
 }
