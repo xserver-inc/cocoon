@@ -69,7 +69,9 @@ endif;
 //投稿ナビのサムネイルタグを取得する
 if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUMB120HEIGHT){
-  $thumb = get_the_post_thumbnail( $id, 'thumb'.strval($width), array('alt' => '') );
+  $thumbnail_size = 'thumb'.strval($width);
+  $thumbnail_size = apply_filters('get_post_navi_thumbnail_size', $thumbnail_size);
+  $thumb = get_the_post_thumbnail( $id, $thumbnail_size, array('alt' => '') );
   if ( !$thumb ) {
     $image = get_template_directory_uri().'/images/no-image-%s.png';
 
