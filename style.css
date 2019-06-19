@@ -1562,12 +1562,12 @@ table td {
   border-radius: 2px;
 }
 .article h3 {
-  border-left: 6px solid #777;
+  border-left: 7px solid #777;
   border-right: 1px solid #ccc;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   font-size: 22px;
-  padding: 9px 20px;
+  padding: 12px 20px;
 }
 .article h4 {
   border-top: 2px solid #ccc;
