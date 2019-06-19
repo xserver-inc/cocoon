@@ -8772,11 +8772,25 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     padding-top: 3px;
   }
 
+  .mobile-header-menu-buttons {
+    top: 0;
+    bottom: auto;
+  }
+
   .mobile-button-fmb .go-to-top-button {
     display: none;
   }
 
-  .mblt-slide-in .footer {
+  .mblt-header-mobile-buttons {
+    margin-top: 50px;
+  }
+
+  .mblt-footer-mobile-buttons {
+    margin-bottom: 50px;
+  }
+
+  .mblt-header-and-footer-mobile-buttons {
+    margin-top: 50px;
     margin-bottom: 50px;
   }
 

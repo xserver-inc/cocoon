@@ -3554,8 +3554,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .logo-footer { margin: 8px auto; }
   .admin-settings .demo .mobile-menu-buttons { display: flex; align-items: stretch; }
   .admin-settings .demo .mobile-menu-buttons > li { padding-top: 3px; }
+  .admin-settings .demo .mobile-header-menu-buttons { top: 0; bottom: auto; }
   .admin-settings .demo .mobile-button-fmb .go-to-top-button { display: none; }
-  .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; }
+  .admin-settings .demo .mblt-header-mobile-buttons { margin-top: 50px; }
+  .admin-settings .demo .mblt-footer-mobile-buttons { margin-bottom: 50px; }
+  .admin-settings .demo .mblt-header-and-footer-mobile-buttons { margin-top: 50px; margin-bottom: 50px; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; } }
 @media screen and (max-width: 834px) { .admin-settings .demo { /************************************
