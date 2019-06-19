@@ -293,12 +293,12 @@ function body_class_additional($classes) {
   $classes[] = $auther_class;
 
   //モバイルボタンはスライドインタイプか
-  if (is_mobile_button_layout_type_slide_in()) {
-    $classes[] = 'mobile-button-slide-in';
+  if (is_mobile_button_layout_type_footer_mobile_buttons()) {
+    $classes[] = 'mobile-button-fmb';
   }
 
   //スライドインボタン表示時にサイドバーを表示するか
-  if (is_mobile_button_layout_type_slide_in() && !is_slide_in_content_bottom_sidebar_visible()) {
+  if (is_mobile_button_layout_type_mobile_buttons() && !is_slide_in_content_bottom_sidebar_visible()) {
     $classes[] = 'no-mobile-sidebar';
   }
 

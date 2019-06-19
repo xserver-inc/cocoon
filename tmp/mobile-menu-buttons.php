@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_mobile_button_layout_type_slide_in()): ?>
+if (is_mobile_button_layout_type_footer_mobile_buttons()): ?>
 
 <?php
 if (has_nav_menu( NAV_MENU_FOOTER_MOBILE_BUTTONS )) {

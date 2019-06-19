@@ -56,7 +56,7 @@ foreach( $elements as $key => $val ) {
 }
 
 //AMP用の検索フォームが存在するか
-if( (strpos($all_content, 'class="amp-form') !== false) || is_mobile_button_layout_type_slide_in() ) {
+if( (strpos($all_content, 'class="amp-form') !== false) || is_mobile_button_layout_type_footer_mobile_buttons() ) {
   echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>'.PHP_EOL;
 }
 

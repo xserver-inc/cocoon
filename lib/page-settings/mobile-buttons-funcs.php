@@ -11,12 +11,33 @@ if ( !defined( 'ABSPATH' ) ) exit;
 define('OP_MOBILE_BUTTON_LAYOUT_TYPE', 'mobile_button_layout_type');
 if ( !function_exists( 'get_mobile_button_layout_type' ) ):
 function get_mobile_button_layout_type(){
-  return get_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE, 'slide_in');
+  $res = get_theme_option(OP_MOBILE_BUTTON_LAYOUT_TYPE, 'footer_mobile_buttons');
+  if ($res == 'slide_in') {
+    $res = 'footer_mobile_buttons';
+  }
+  return $res;
 }
 endif;
-if ( !function_exists( 'is_mobile_button_layout_type_slide_in' ) ):
-function is_mobile_button_layout_type_slide_in(){
-  return get_mobile_button_layout_type() == 'slide_in';
+if ( !function_exists( 'is_mobile_button_layout_type_footer_mobile_buttons' ) ):
+function is_mobile_button_layout_type_footer_mobile_buttons(){
+  return get_mobile_button_layout_type() == 'footer_mobile_buttons';
+}
+endif;
+if ( !function_exists( 'is_mobile_button_layout_type_header_mobile_buttons' ) ):
+function is_mobile_button_layout_type_header_mobile_buttons(){
+  return get_mobile_button_layout_type() == 'header_mobile_buttons';
+}
+endif;
+if ( !function_exists( 'is_mobile_button_layout_type_header_and_footer_mobile_buttons' ) ):
+function is_mobile_button_layout_type_header_and_footer_mobile_buttons(){
+  return get_mobile_button_layout_type() == 'header_and_footer_mobile_buttons';
+}
+endif;
+if ( !function_exists( 'is_mobile_button_layout_type_mobile_buttons' ) ):
+function is_mobile_button_layout_type_mobile_buttons(){
+  return is_mobile_button_layout_type_footer_mobile_buttons() ||
+    is_mobile_button_layout_type_header_mobile_buttons() ||
+    is_mobile_button_layout_type_header_and_footer_mobile_buttons();
 }
 endif;
 
