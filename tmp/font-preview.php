@@ -1,4 +1,11 @@
-<?php
+<?php //フォントプレビュー
+/**
+ * Cocoon WordPress Theme
+ * @author: yhira
+ * @link: https://wp-cocoon.com/
+ * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ */
+
 $demo_style = null;
 if ($site_text_color = get_site_text_color()) {
   $demo_style = 'color: '.$site_text_color.';';
