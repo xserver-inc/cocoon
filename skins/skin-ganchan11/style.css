@@ -410,14 +410,14 @@ div.list {
 	padding:20px;
 	color:#fff;
 	background-color:#666;
-	border-radius:4px;
+    border-radius:4px;
+    position: relative;
 }
 .author-content:before{
   width: 0;
   height: 0;
    position: absolute;
-	top: 80px;
-    left: 132px;
+    left: -.7em;
     display: inline-block;
     border-top: 15px solid transparent;
     border-right: 15px solid #666;
@@ -429,7 +429,7 @@ div.list {
     border-right: 15px solid transparent;
     border-bottom: 15px solid #666;
     border-left: 15px solid transparent;
-    top: 7em;
+    top: -1.6em;
     left: calc(46%);
 }
 
