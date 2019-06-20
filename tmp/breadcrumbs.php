@@ -12,9 +12,11 @@ if (is_single_breadcrumbs_visible() && (is_single() || is_category())){
   $cat = (is_single() && isset($cats[0])) ? $cats[0] : get_category(get_query_var("cat"));
   if($cat && !is_wp_error($cat)){
     $echo = null;
+    $root_text = __( 'ホーム', THEME_NAME );
+    $root_text = apply_filters('breadcrumb_single_root_text', $root_text);
     //var_dump($par);
     echo '<div id="breadcrumb" class="breadcrumb breadcrumb-category'.get_additional_single_breadcrumbs_classes().'" itemscope itemtype="https://schema.org/BreadcrumbList">';
-    echo '<div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a href="'.home_url().'" itemprop="item"><span itemprop="name">'.__( 'ホーム', THEME_NAME ).'</span></a><meta itemprop="position" content="1" /><span class="sp"><span class="fa fa-angle-right"></span></span></div>';
+    echo '<div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a href="'.home_url().'" itemprop="item"><span itemprop="name">'.$root_text.'</span></a><meta itemprop="position" content="1" /><span class="sp"><span class="fa fa-angle-right"></span></span></div>';
     $count = 1;
     $par = get_category($cat->parent);
     //カテゴリ情報の取得
