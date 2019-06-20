@@ -460,7 +460,15 @@ endif;
 //親テーマのjavascript.jsの読み込み
 if ( !function_exists( 'wp_enqueue_script_theme_js' ) ):
 function wp_enqueue_script_theme_js(){
+
   wp_enqueue_script( THEME_JS, THEME_JS_URL, array( 'jquery' ), false, true );
+
+  //親テーマのjavascript.jsに設定値を渡す
+  $name = apply_filters( 'cocoon_localize_script_options_name', 'cocoon_localize_script_options' );
+  $value = apply_filters( 'cocoon_localize_script_options_value', array(
+    'is_lazy_load_enable' => is_lazy_load_enable(),
+  ) );
+  wp_localize_script( THEME_JS, $name, $value );
 
   // TODO: ファイル読みこみ位置 もしくは HTML側に直接出力など よい方法を考慮
   wp_enqueue_script( 'set-event-passive', SET_EVENT_PASSIVE_JS_URL, array( ), false, true );
