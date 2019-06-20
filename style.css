@@ -1100,8 +1100,7 @@ img.emoji {
 ** パンくずリスト
 ************************************/
 .breadcrumb {
-  margin-top: 20px;
-  margin-bottom: 1em;
+  margin: 1em .4em;
   color: #777;
   font-size: 13px;
 }
@@ -1125,7 +1124,7 @@ img.emoji {
 .breadcrumb.pbp-footer-before {
   background-color: #fff;
   margin: 12px auto 0;
-  padding: 5px;
+  padding: .6em;
 }
 
 .breadcrumb.sbp-main-before + .content,
