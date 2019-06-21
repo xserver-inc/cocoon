@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_mobile_button_layout_type_header_mobile_buttons() || is_mobile_button_layout_type_header_and_footer_mobile_buttons()): ?>
+if (!is_amp() && (is_mobile_button_layout_type_header_mobile_buttons() || is_mobile_button_layout_type_header_and_footer_mobile_buttons())): ?>
 
 <?php
 if (has_nav_menu( NAV_MENU_HEADER_MOBILE_BUTTONS )) {
