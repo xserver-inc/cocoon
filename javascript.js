@@ -76,9 +76,9 @@
     $(window).scroll(function() {
       var headerCurrentPos = $(this).scrollTop();
       if ( headerCurrentPos > headerStartPos ) {
-        if($(window).scrollTop() >= 200) {
+        //if($(window).scrollTop() >= 200) {
           headerMenu.css('top', '-' + headerHight + 'px');
-        }
+        //}
       } else {
         headerMenu.css('top', 0);
       }
@@ -92,9 +92,9 @@
     $(window).scroll(function(){
       var footerCurrentPos = $(this).scrollTop();
       if (footerCurrentPos > footerStartPos) {
-        if($(window).scrollTop() >= 200) {
+        //if($(window).scrollTop() >= 200) {
           footerMenu.css("bottom", "-" + footerHeight + "px");
-        }
+        //}
       } else {
         footerMenu.css("bottom", 0);
       }
