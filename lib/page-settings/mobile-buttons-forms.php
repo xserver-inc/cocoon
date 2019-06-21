@@ -41,8 +41,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                     generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
 
                     echo '<div'.get_not_allowed_form_class(is_mobile_button_layout_type_mobile_buttons()).'>';
-                    generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'スライドインボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
-                    generate_tips_tag(__( '「モバイルボタンレイアウト」で「スライドインボタン」が表示されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
+                    generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'モバイルボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
+                    generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が表示されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
                     echo '<div>';
                     ?>
 
