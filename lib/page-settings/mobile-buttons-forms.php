@@ -21,10 +21,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <table class="form-table">
           <tbody>
 
-            <!-- モバイルボタンレイアウト -->
+            <!-- モバイルメニュー -->
             <tr>
               <th scope="row">
-                <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルボタンレイアウト', THEME_NAME) ); ?>
+                <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルメニュー', THEME_NAME) ); ?>
               </th>
               <td>
                 <?php
@@ -39,16 +39,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 );
                 generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
                 generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
-
-                echo '<div'.get_not_allowed_form_class(is_mobile_button_layout_type_mobile_buttons()).'>';
-
-                generate_checkbox_tag(OP_FIXED_MOBILE_BUTTONS_ENABLE , is_fixed_mobile_buttons_enable(), __( 'モバイルボタンの固定表示', THEME_NAME ));
-                generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。', THEME_NAME ));
-
-                generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'モバイルボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
-                generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
-
-                echo '<div>';
                 ?>
 
               </td>

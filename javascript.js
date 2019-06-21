@@ -51,35 +51,58 @@
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
-  var footerMenu = $("#admin-panel, .mobile-footer-menu-buttons");
-  var footerHeight = footerMenu.outerHeight();
-  var footerStartPos = 0;
+  var adminMenu = $("#admin-panel");
+  var adminHeight = adminMenu.outerHeight();
+  var adminStartPos = 0;
   $(window).scroll(function(){
-    var footerCurrentPos = $(this).scrollTop();
-    if (footerCurrentPos > footerStartPos) {
+    var adminCurrentPos = $(this).scrollTop();
+    if (adminCurrentPos > adminStartPos) {
       if($(window).scrollTop() >= 200) {
-        footerMenu.css("bottom", "-" + footerHeight + "px");
+        adminMenu.css("bottom", "-" + adminHeight + "px");
       }
     } else {
-      footerMenu.css("bottom", 0);
+      adminMenu.css("bottom", 0);
     }
-    footerStartPos = footerCurrentPos;
+    adminStartPos = adminCurrentPos;
   });
 
-  var headerMenu = $('.mobile-header-menu-buttons');
-  var headerHight = headerMenu.outerHeight();
-  var headerStartPos = 0;
-  $(window).scroll(function() {
-    var headerCurrentPos = $(this).scrollTop();
-    if ( headerCurrentPos > headerStartPos ) {
-      if($(window).scrollTop() >= 200) {
-        headerMenu.css('top', '-' + headerHight + 'px');
+  //モバイルボタンが固定じゃない場合
+  console.log(cocoon_localize_script_options);
+  if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
+    //ヘッダーモバイルメニュー
+    var headerMenu = $('.mobile-header-menu-buttons');
+    var headerHight = headerMenu.outerHeight();
+    var headerStartPos = 0;
+    $(window).scroll(function() {
+      var headerCurrentPos = $(this).scrollTop();
+      if ( headerCurrentPos > headerStartPos ) {
+        if($(window).scrollTop() >= 200) {
+          headerMenu.css('top', '-' + headerHight + 'px');
+        }
+      } else {
+        headerMenu.css('top', 0);
       }
-    } else {
-      headerMenu.css('top', 0);
-    }
-    headerStartPos = headerCurrentPos;
-  });
+      headerStartPos = headerCurrentPos;
+    });
+
+    //フッターモバイルメニュー
+    var footerMenu = $(".mobile-footer-menu-buttons");
+    var footerHeight = footerMenu.outerHeight();
+    var footerStartPos = 0;
+    $(window).scroll(function(){
+      var footerCurrentPos = $(this).scrollTop();
+      if (footerCurrentPos > footerStartPos) {
+        if($(window).scrollTop() >= 200) {
+          footerMenu.css("bottom", "-" + footerHeight + "px");
+        }
+      } else {
+        footerMenu.css("bottom", 0);
+      }
+      footerStartPos = footerCurrentPos;
+    });
+  }
+
+
 
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function() {
