@@ -8774,6 +8774,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     bottom: auto;
     justify-content: space-around;
     min-width: 46px;
+    z-index: 3;
   }
   .mobile-header-menu-buttons .menu-button {
     width: 70px;

@@ -100,6 +100,18 @@
       }
       footerStartPos = footerCurrentPos;
     });
+
+    var headerButtons = $(".mobile-header-menu-buttons");
+    var footerButtons = $(".mobile-footer-menu-buttons");
+    headerButtons.click(function() {
+      headerButtons.css("z-index", "3");
+      footerButtons.css("z-index", "2");
+    });
+
+    footerButtons.click(function() {
+      headerButtons.css("z-index", "2");
+      footerButtons.css("z-index", "3");
+    })
   }
 
 
