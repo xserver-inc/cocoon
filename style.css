@@ -9525,6 +9525,25 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     font-size: 14pt;
   }
 }
+.admin-bar .mobile-header-menu-buttons {
+  margin-top: 32px;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons {
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar .mobile-header-menu-buttons {
+    margin-top: 0;
+  }
+
+  .admin-bar.mblt-header-mobile-buttons,
+  .admin-bar.mblt-header-and-footer-mobile-buttons {
+    margin-top: 0;
+  }
+}
 /************************************
 ** ソースコード
 ************************************/
