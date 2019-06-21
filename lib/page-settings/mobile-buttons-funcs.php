@@ -53,6 +53,14 @@ function is_slicknav_visible(){
 }
 endif;
 
+//モバイルボタンを固定表示するか
+define('OP_FIXED_MOBILE_BUTTONS_ENABLE', 'fixed_mobile_buttons_enable');
+if ( !function_exists( 'is_fixed_mobile_buttons_enable' ) ):
+function is_fixed_mobile_buttons_enable(){
+  return get_theme_option(OP_FIXED_MOBILE_BUTTONS_ENABLE);
+}
+endif;
+
 //スライドインメニュー表示の際にメインコンテンツ下にサイドバーを表示するか
 define('OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE', 'slide_in_content_bottom_sidebar_visible');
 if ( !function_exists( 'is_slide_in_content_bottom_sidebar_visible' ) ):
