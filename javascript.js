@@ -51,20 +51,34 @@
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
-  var panel = $("#admin-panel");
-  var menuHeight = panel.height()*2;
-  var startPos = 0;
+  var footerMenu = $("#admin-panel, .mobile-footer-menu-buttons");
+  var footerHeight = footerMenu.outerHeight();
+  var footerStartPos = 0;
   $(window).scroll(function(){
-    var currentPos = $(this).scrollTop();
-    if (currentPos > startPos) {
+    var footerCurrentPos = $(this).scrollTop();
+    if (footerCurrentPos > footerStartPos) {
       if($(window).scrollTop() >= 200) {
-        //console.log(currentPos);
-        panel.css("bottom", "-" + menuHeight + "px");
+        footerMenu.css("bottom", "-" + footerHeight + "px");
       }
     } else {
-      panel.css("bottom", 0 + "px");
+      footerMenu.css("bottom", 0);
     }
-    startPos = currentPos;
+    footerStartPos = footerCurrentPos;
+  });
+
+  var headerMenu = $('.mobile-header-menu-buttons');
+  var headerHight = headerMenu.outerHeight();
+  var headerStartPos = 0;
+  $(window).scroll(function() {
+    var headerCurrentPos = $(this).scrollTop();
+    if ( headerCurrentPos > headerStartPos ) {
+      if($(window).scrollTop() >= 200) {
+        headerMenu.css('top', '-' + headerHight + 'px');
+      }
+    } else {
+      headerMenu.css('top', 0);
+    }
+    headerStartPos = headerCurrentPos;
   });
 
   //コメントボタンがクリックされたとき
