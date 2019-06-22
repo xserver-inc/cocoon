@@ -549,6 +549,11 @@ footer.article-footer.entry-footer {
     text-shadow: 2px 2px 5px whitesmoke;
 }
 
+.article-header.category-header h1,
+.article-header.tag-header h1{
+    position: static;
+}
+
 .eye-catch {
     position: relative;
     margin-bottom: .6em;
