@@ -1,5 +1,7 @@
 .mobile-menu-buttons {
-  background: #eee;
+  background: $white;
+  box-shadow: 0 0 5px darkgrey;
+  font-size: 19px;
   position: fixed;
   // display: block;
   // width: 100%;
@@ -40,8 +42,9 @@
   }
 
   .menu-caption{
-    font-size: 12px;
+    font-size: 9px;
     text-align: center;
+    color: #aaa;
     //display: block;
   }
 
