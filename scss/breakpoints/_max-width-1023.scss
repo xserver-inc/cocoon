@@ -93,13 +93,10 @@ div.sidebar{
   justify-content: space-around;
   min-width: 46px;
   z-index: 3;
+  box-shadow: 0 0 5px darkgrey;
 
   .menu-button{
     width: 70px;
-  }
-
-  .menu-caption{
-    font-size: 10px;
   }
 
   .logo-menu-button{

@@ -8773,12 +8773,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     justify-content: space-around;
     min-width: 46px;
     z-index: 3;
+    box-shadow: 0 0 5px darkgrey;
   }
   .mobile-header-menu-buttons .menu-button {
     width: 70px;
-  }
-  .mobile-header-menu-buttons .menu-caption {
-    font-size: 10px;
   }
   .mobile-header-menu-buttons .logo-menu-button {
     flex-grow: 99;
