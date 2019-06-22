@@ -6472,7 +6472,9 @@ div.fb-like-mobile {
   }
 }
 .mobile-menu-buttons {
-  background: #eee;
+  background: #fff;
+  box-shadow: 0 0 5px darkgrey;
+  font-size: 19px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -6497,8 +6499,9 @@ div.fb-like-mobile {
   font-size: 1em;
 }
 .mobile-menu-buttons .menu-caption {
-  font-size: 12px;
+  font-size: 9px;
   text-align: center;
+  color: #aaa;
 }
 .mobile-menu-buttons .menu-button {
   position: relative;

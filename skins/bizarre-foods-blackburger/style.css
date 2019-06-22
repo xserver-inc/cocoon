@@ -43,7 +43,6 @@ a{
 /*header*/
 
 header.article-header.entry-header {
-     max-width: 880px;
      position:relative;
      margin:auto;
 }
@@ -516,7 +515,6 @@ main > article {
 }
 
 .entry-content {
-    max-width: 880px;
      padding:1em;
     margin: 1em auto 3em auto;
 }
@@ -527,7 +525,6 @@ header .article-header{
 }
 
 footer.article-footer.entry-footer {
-    max-width: 880px;
     margin: auto;
 }
 
@@ -771,14 +768,12 @@ span.related-entry-main-heading.main-caption:before{
 }
 
 .related-list {
-   max-width: 880px;
    margin: auto;
 }
 
 /*comments*/
 
 section.comment-list,div#respond,.comment-btn {
-    max-width: 880px;
     margin: auto;
 }
 
