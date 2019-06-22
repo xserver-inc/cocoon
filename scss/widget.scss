@@ -288,13 +288,13 @@ label.screen-reader-text{
 ************************************/
 .recent-comments{
   line-height: 1.3;
-  .a-wrap{
-    &:hover{
-      .recent-comment-content{
-        @include bgc_hover;
-      }
-    }
-  }
+  // .a-wrap{
+  //   &:hover{
+  //     .recent-comment-content{
+  //       @include bgc_hover;
+  //     }
+  //   }
+  // }
 }
 
 .recent-comment-avatar{
