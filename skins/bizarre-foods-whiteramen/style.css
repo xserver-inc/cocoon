@@ -569,7 +569,7 @@ footer.article-footer.entry-footer {
 }
 
 .eye-catch img {
-     height:260px;
+     height: 260px !important;
     -webkit-filter: blur(5px);
      filter:blur(5px);
      opacity: .5;
