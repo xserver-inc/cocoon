@@ -120,7 +120,7 @@ endif;
 //人気記事のサムネイルサイズ
 if ( !function_exists( 'get_popular_entries_thumbnail_size' ) ):
 function get_popular_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  $thumbnail_size = get_widget_entries_thumbnail_size($entry_type);
-  return $thumb_size = apply_filters('get_popular_entries_thumbnail_size', $thumb_size, $entry_type);
+  $thumb_size = get_widget_entries_thumbnail_size($entry_type);
+  return apply_filters('get_popular_entries_thumbnail_size', $thumb_size, $entry_type);
 }
 endif;
