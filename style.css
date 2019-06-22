@@ -7039,7 +7039,7 @@ div.fb-like-mobile {
   max-width: 120px;
 }
 .footer-bottom-logo img {
-  height: 50px;
+  height: 50px !important;
   width: auto;
 }
 
