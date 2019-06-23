@@ -96,7 +96,7 @@ endif;
 define('OP_ADMIN_PANEL_DISPLAY_TYPE', 'admin_panel_display_type');
 if ( !function_exists( 'get_admin_panel_display_type' ) ):
 function get_admin_panel_display_type(){
-  return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'all');
+  return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'pc_only');
 }
 endif;
 if ( !function_exists( 'is_admin_panel_all_visible' ) ):

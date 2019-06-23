@@ -688,10 +688,6 @@ function get_the_singular_content(){
     dynamic_sidebar( 'sidebar-scroll' );
     $sidebar_scroll_content = ob_get_clean();
 
-    // ob_start();//バッファリング
-    // get_template_part('tmp/mobile-menu-buttons');
-    // $mobile_menu_buttons = ob_get_clean();
-
     ob_start();//バッファリング
     dynamic_sidebar('footer-left');
     dynamic_sidebar('footer-center');
@@ -702,6 +698,25 @@ function get_the_singular_content(){
     ob_start();//バッファリング
     get_template_part('tmp/amp-footer-insert');
     $footer_insert = ob_get_clean();
+
+    //モバイルメニューボタン
+    //モバイルフッターボタンのみ
+    if (is_mobile_button_layout_type_footer_mobile_buttons()) {
+      ob_start();
+      get_template_part('tmp/mobile-footer-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    } elseif //モバイルヘッダーボタンのみ
+    (is_mobile_button_layout_type_header_mobile_buttons()) {
+      ob_start();
+      get_template_part('tmp/mobile-header-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    } else {//ヘッダーとフッター双方のモバイルボタン
+      ob_start();
+      get_template_part('tmp/mobile-header-menu-buttons');
+      get_template_part('tmp/mobile-footer-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    }
+
 
     $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
   //endwhile;

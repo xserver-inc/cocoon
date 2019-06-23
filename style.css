@@ -6489,6 +6489,7 @@ div.fb-like-mobile {
   min-height: 50px;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+  transition: .3s;
 }
 .mobile-menu-buttons .menu-icon {
   text-align: center;
@@ -6523,6 +6524,19 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-content {
   cursor: default;
+}
+
+.logo-menu-button {
+  text-align: center;
+  font-weight: 900;
+  line-height: 50px;
+  min-width: 200px;
+  overflow: hidden;
+}
+.logo-menu-button img {
+  max-height: 44px;
+  display: block;
+  margin: 0 auto;
 }
 
 .fa.menu-icon {
@@ -8753,11 +8767,35 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     padding-top: 3px;
   }
 
-  .mobile-button-slide-in .go-to-top-button {
+  .mobile-header-menu-buttons {
+    top: 0;
+    bottom: auto;
+    justify-content: space-around;
+    min-width: 46px;
+    z-index: 3;
+    box-shadow: 0 0 5px darkgrey;
+  }
+  .mobile-header-menu-buttons .menu-button {
+    width: 70px;
+  }
+  .mobile-header-menu-buttons .logo-menu-button {
+    flex-grow: 99;
+  }
+
+  .mobile-button-fmb .go-to-top-button {
     display: none;
   }
 
-  .mblt-slide-in .footer {
+  .mblt-header-mobile-buttons {
+    margin-top: 46px;
+  }
+
+  .mblt-footer-mobile-buttons {
+    margin-bottom: 50px;
+  }
+
+  .mblt-header-and-footer-mobile-buttons {
+    margin-top: 46px;
     margin-bottom: 50px;
   }
 
@@ -9482,6 +9520,25 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container h5,
   #container .article h6 {
     font-size: 14pt;
+  }
+}
+.admin-bar .mobile-header-menu-buttons {
+  margin-top: 32px;
+}
+
+.admin-bar.mblt-header-mobile-buttons,
+.admin-bar.mblt-header-and-footer-mobile-buttons {
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar .mobile-header-menu-buttons {
+    margin-top: 0;
+  }
+
+  .admin-bar.mblt-header-mobile-buttons,
+  .admin-bar.mblt-header-and-footer-mobile-buttons {
+    margin-top: 0;
   }
 }
 /************************************

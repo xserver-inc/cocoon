@@ -51,21 +51,70 @@
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
-  var panel = $("#admin-panel");
-  var menuHeight = panel.height()*2;
-  var startPos = 0;
+  var adminMenu = $("#admin-panel");
+  var adminHeight = adminMenu.outerHeight();
+  var adminStartPos = 0;
   $(window).scroll(function(){
-    var currentPos = $(this).scrollTop();
-    if (currentPos > startPos) {
+    var adminCurrentPos = $(this).scrollTop();
+    if (adminCurrentPos > adminStartPos) {
       if($(window).scrollTop() >= 200) {
-        //console.log(currentPos);
-        panel.css("bottom", "-" + menuHeight + "px");
+        adminMenu.css("bottom", "-" + adminHeight + "px");
       }
     } else {
-      panel.css("bottom", 0 + "px");
+      adminMenu.css("bottom", 0);
     }
-    startPos = currentPos;
+    adminStartPos = adminCurrentPos;
   });
+
+  //モバイルボタンが固定じゃない場合
+  console.log(cocoon_localize_script_options);
+  if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
+    //ヘッダーモバイルメニュー
+    var headerMenu = $('.mobile-header-menu-buttons');
+    var headerHight = headerMenu.outerHeight();
+    var headerStartPos = 0;
+    $(window).scroll(function() {
+      var headerCurrentPos = $(this).scrollTop();
+      if ( headerCurrentPos > headerStartPos ) {
+        //if($(window).scrollTop() >= 200) {
+          headerMenu.css('top', '-' + headerHight + 'px');
+        //}
+      } else {
+        headerMenu.css('top', 0);
+      }
+      headerStartPos = headerCurrentPos;
+    });
+
+    //フッターモバイルメニュー
+    var footerMenu = $(".mobile-footer-menu-buttons");
+    var footerHeight = footerMenu.outerHeight();
+    var footerStartPos = 0;
+    $(window).scroll(function(){
+      var footerCurrentPos = $(this).scrollTop();
+      if (footerCurrentPos > footerStartPos) {
+        //if($(window).scrollTop() >= 200) {
+          footerMenu.css("bottom", "-" + footerHeight + "px");
+        //}
+      } else {
+        footerMenu.css("bottom", 0);
+      }
+      footerStartPos = footerCurrentPos;
+    });
+
+    var headerButtons = $(".mobile-header-menu-buttons");
+    var footerButtons = $(".mobile-footer-menu-buttons");
+    headerButtons.click(function() {
+      headerButtons.css("z-index", "3");
+      footerButtons.css("z-index", "2");
+    });
+
+    footerButtons.click(function() {
+      headerButtons.css("z-index", "2");
+      footerButtons.css("z-index", "3");
+    })
+  }
+
+
 
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function() {
