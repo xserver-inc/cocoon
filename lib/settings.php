@@ -222,10 +222,10 @@ add_theme_support( 'menus' );
 register_nav_menus(
   array(
     NAV_MENU_HEADER => __( 'ヘッダーメニュー', THEME_NAME ),
-    NAV_MENU_HEADER_MOBILE => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
-    NAV_MENU_HEADER_MOBILE_BUTTONS => __( 'ヘッダーモバイルボタン（サブ不可）', THEME_NAME ),
-    NAV_MENU_FOOTER => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
-    NAV_MENU_FOOTER_MOBILE_BUTTONS => __( 'フッターモバイルボタン（サブ不可）', THEME_NAME ),
+    NAV_MENU_HEADER_MOBILE => __( 'ヘッダーモバイルメニュー', THEME_NAME ),
+    NAV_MENU_HEADER_MOBILE_BUTTONS => __( 'ヘッダーモバイルボタン', THEME_NAME ),
+    NAV_MENU_FOOTER => __( 'フッターメニュー', THEME_NAME ),
+    NAV_MENU_FOOTER_MOBILE_BUTTONS => __( 'フッターモバイルボタン', THEME_NAME ),
     NAV_MENU_MOBILE_SLIDE_IN => __( 'モバイルスライドインメニュー', THEME_NAME ),
   )
 );
