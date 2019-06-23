@@ -374,7 +374,6 @@ function toc_shortcode( $atts, $content = null ) {
     global $_TOC_WIDGET_OR_SHORTCODE_USE;
     $_TOC_WIDGET_OR_SHORTCODE_USE = true;
     $harray = array();
-    //_v(get_the_content());
     return get_toc_tag(get_the_content(), $harray);
 
   }

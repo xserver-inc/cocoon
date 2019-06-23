@@ -250,7 +250,7 @@ function add_toc_before_1st_h2($the_content){
   //   return $the_content;
   // }
 
-  $content     = $the_content;
+  $content     = get_the_content();
   $harray      = array();
 
   $depth       = intval(get_toc_depth()); //2-6 0で全て
