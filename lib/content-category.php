@@ -86,12 +86,15 @@ function get_category_content($cat_id = null){
 }
 endif;
 
-//カテゴリ色の取得
+//アイキャッチの取得
 if ( !function_exists( 'get_category_eye_catch' ) ):
 function get_category_eye_catch($cat_id = null){
   $meta = get_category_meta($cat_id);
-  if (!empty($meta['eye_catch']))
+  if (!empty($meta['eye_catch'])){
     return $meta['eye_catch'];
+  } else {
+    return '';
+  }
 }
 endif;
 
