@@ -9,12 +9,14 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //カテゴリIDの取得
 $cat_id = get_query_var('cat');
-if ($cat_id && get_category_meta($cat_id)): ?>
+$eye_catch = get_category_eye_catch($cat_id);
+$content = get_category_content($cat_id);
+if ($eye_catch || $content): ?>
 <article class="category-content article">
   <header class="article-header category-header">
     <?php //カテゴリタイトル
     get_template_part('tmp/list-title'); ?>
-    <?php if ($eye_catch = get_category_eye_catch($cat_id)): ?>
+    <?php if ($eye_catch): ?>
       <div class="eye-catch-wrap">
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch); ?>" alt="<?php echo esc_attr(get_category_title($cat_id)); ?>">
@@ -23,7 +25,7 @@ if ($cat_id && get_category_meta($cat_id)): ?>
       </div>
     <?php endif ?>
   </header>
-  <?php if ($content = get_category_content($cat_id)): ?>
+  <?php if ($content): ?>
     <div class="category-page-content entry-content">
       <?php echo $content; ?>
     </div>
