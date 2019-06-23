@@ -375,7 +375,7 @@ function generate_the_site_logo_tag($is_header = true){
     $site_logo_tag = get_bloginfo('name');
   }
   $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
-  echo apply_filters( 'the_site_logo_tag', $all_tag );
+  echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header );
 }
 endif;
 
