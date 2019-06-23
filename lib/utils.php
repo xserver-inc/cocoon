@@ -2712,6 +2712,7 @@ function get_shortcode_removed_content($content){
   $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[\[.*\]\]/', '', $removed_content);
   return $removed_content;
 }
 endif;

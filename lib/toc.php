@@ -38,15 +38,9 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return;
   }
 
-  //実行したくないショートコードを除外した本文
+  //実行したくないショートコードを除外した本文の取得
   $removed_content = get_shortcode_removed_content($the_content);
-  // $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
-  // $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
-  // $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
-
-  //_v($the_content);
-  //目次ショートコードを取り除く
-  //$the_content = preg_replace('/\[toc.*\]/', '', $the_content);
+  //ショートコードを実行した本文を取得
   $content     = do_shortcode($removed_content);
   $headers     = array();
   $html        = '';
