@@ -113,7 +113,7 @@
 
 //画像のLazy Load中高さを保持する
 if (cocoon_localize_script_options.is_lazy_load_enable) {
-  const imgs = document.querySelectorAll('body img'),
+  const imgs = document.querySelectorAll('body .lozad-img'),
       sSize = window.parent.screen.width;
   imgs.forEach(function (ele) {
     const imgHeight = ele.getAttribute('height'),
