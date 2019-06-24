@@ -65,8 +65,8 @@ function get_tag_content($tag_id = null){
 endif;
 
 //画像の取得
-if ( !function_exists( 'get_tag_eye_catch' ) ):
-function get_tag_eye_catch($tag_id = null){
+if ( !function_exists( 'get_tag_eye_catch_url' ) ):
+function get_tag_eye_catch_url($tag_id = null){
   $meta = get_tag_meta($tag_id);
   if (!empty($meta['eye_catch'])){
     return $meta['eye_catch'];

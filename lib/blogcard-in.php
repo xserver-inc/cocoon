@@ -132,7 +132,7 @@ function url_to_internal_blogcard_tag($url){
     $tag_id = $tag->term_id;
     $title = get_tag_title($tag_id);
     $snipet = get_tag_snipet($tag_id);
-    $image = get_tag_eye_catch($tag_id);
+    $image = get_tag_eye_catch_url($tag_id);
 
     if ($image) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);

@@ -92,6 +92,7 @@ function get_category_eye_catch_url($cat_id = null){
   $meta = get_category_meta($cat_id);
   if (!empty($meta['eye_catch'])){
     $eye_catch_url = $meta['eye_catch'];
+    //画像が存在しているか
     if (file_exists(url_to_local($eye_catch_url))) {
       return $eye_catch_url;
     } else {

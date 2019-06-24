@@ -522,7 +522,7 @@ function navi_menu_shortcode($atts){
       //タグページのアイキャッチを取得
       $tag_obj = url_to_tag_object($url);
       if ($tag_obj && isset($tag_obj->term_id)) {
-        $image_url = get_tag_eye_catch($tag_obj->term_id);
+        $image_url = get_tag_eye_catch_url($tag_obj->term_id);
         $image_attributes = get_navi_card_image_attributes($image_url);
       }
     }

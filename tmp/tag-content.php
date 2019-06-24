@@ -9,17 +9,17 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //タグIDの取得
 $tag_id = get_query_var('tag_id');
-$eye_catch = get_tag_eye_catch($tag_id);
+$eye_catch_url = get_tag_eye_catch_url($tag_id);
 $content = get_tag_content($tag_id);
-if ($eye_catch || $content): ?>
+if ($eye_catch_url || $content): ?>
 <article class="tag-content article">
   <header class="article-header tag-header">
     <?php //タイトル
     get_template_part('tmp/list-title'); ?>
-    <?php if ($eye_catch): ?>
+    <?php if ($eye_catch_url): ?>
       <div class="eye-catch-wrap">
         <figure class="eye-catch">
-          <img src="<?php echo esc_url($eye_catch); ?>" alt="<?php echo esc_attr(get_tag_title($tag_id)); ?>">
+          <img src="<?php echo esc_url($eye_catch_url); ?>" alt="<?php echo esc_attr(get_tag_title($tag_id)); ?>">
         </figure>
       </div>
     <?php endif ?>
