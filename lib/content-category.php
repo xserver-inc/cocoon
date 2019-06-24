@@ -87,11 +87,16 @@ function get_category_content($cat_id = null){
 endif;
 
 //アイキャッチの取得
-if ( !function_exists( 'get_category_eye_catch' ) ):
-function get_category_eye_catch($cat_id = null){
+if ( !function_exists( 'get_category_eye_catch_url' ) ):
+function get_category_eye_catch_url($cat_id = null){
   $meta = get_category_meta($cat_id);
   if (!empty($meta['eye_catch'])){
-    return $meta['eye_catch'];
+    $eye_catch_url = $meta['eye_catch'];
+    if (file_exists(url_to_local($eye_catch_url))) {
+      return $eye_catch_url;
+    } else {
+      return '';
+    }
   } else {
     return '';
   }

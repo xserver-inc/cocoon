@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //カテゴリIDの取得
 $cat_id = get_query_var('cat');
-$eye_catch = get_category_eye_catch($cat_id);
+$eye_catch = get_category_eye_catch_url($cat_id);
 $content = get_category_content($cat_id);
 if ($eye_catch || $content): ?>
 <article class="category-content article">

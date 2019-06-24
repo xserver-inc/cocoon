@@ -515,7 +515,7 @@ function navi_menu_shortcode($atts){
       $thumbnail_id = get_post_thumbnail_id($object_id);
       $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
     } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
-      $image_url = get_category_eye_catch($object_id);
+      $image_url = get_category_eye_catch_url($object_id);
       $image_attributes = get_navi_card_image_attributes($image_url);
     }
     elseif ($object == 'custom') {//カスタムメニュー

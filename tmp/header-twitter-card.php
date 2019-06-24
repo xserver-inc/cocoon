@@ -60,7 +60,7 @@ if (is_singular()){//単一記事ページの場合
     echo '<meta name="twitter:image" content="'.esc_url($ogp_image).'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-  if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch(get_query_var('cat'))) {
+  if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch_url(get_query_var('cat'))) {
     $ogp_image = $eye_catch;
   } elseif ( get_ogp_home_image_url() ) {
     $ogp_image = get_ogp_home_image_url();

@@ -123,7 +123,7 @@ function url_to_internal_blogcard_tag($url){
 
     $title = get_category_title($cat_id);
     $snipet = get_category_snipet($cat_id);
-    $image = get_category_eye_catch($cat_id);
+    $image = get_category_eye_catch_url($cat_id);
 
     if ($image) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
