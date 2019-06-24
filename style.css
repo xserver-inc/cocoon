@@ -8799,6 +8799,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     margin-bottom: 50px;
   }
 
+  .scrollable-mobile-buttons {
+    margin-bottom: 0;
+  }
+
   .navi-footer-in > .menu-footer {
     justify-content: center;
   }

@@ -278,6 +278,10 @@ function body_class_additional($classes) {
 
   //モバイルボタンタイプ
   $classes[] = 'mblt-'.replace_value_to_class(get_mobile_button_layout_type());
+  //モバイルボタンでスクロール動作するか
+  if (!is_fixed_mobile_buttons_enable()) {
+    $classes[] = 'scrollable-mobile-buttons';
+  }
 
   //管理者クラス
   $author_id = get_the_author_meta( 'ID' );
