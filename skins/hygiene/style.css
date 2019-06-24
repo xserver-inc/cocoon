@@ -1095,7 +1095,6 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 .blogcard-thumbnail {
 	line-height: 0;
 	margin-right: 1rem;
-	overflow: hidden;
   margin-top: 15px;
 }
 
