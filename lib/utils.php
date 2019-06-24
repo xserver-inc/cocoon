@@ -2709,9 +2709,17 @@ endif;
 if ( !function_exists( 'get_shortcode_removed_content' ) ):
 function get_shortcode_removed_content($content){
   $removed_content = $content;
+  //$removed_content = str_replace('[ad]', '', $removed_content);
   $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[navi.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[new_list.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[popular_list.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[sitemap.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[author_box.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[rank.*\]/', '', $removed_content);
+  $removed_content = preg_replace('/\[star.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[\[.*\]\]/', '', $removed_content);
   return $removed_content;
 }
