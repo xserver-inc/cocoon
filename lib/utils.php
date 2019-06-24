@@ -2716,7 +2716,6 @@ function get_shortcode_removed_content($content){
   $removed_content = preg_replace('/\[navi.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[new_list.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[popular_list.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[sitemap.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[author_box.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[rank.*\]/', '', $removed_content);
   $removed_content = preg_replace('/\[star.*\]/', '', $removed_content);
