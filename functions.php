@@ -135,7 +135,7 @@ function get_archive_chapter_title(){
   } else {
     $chapter_title .= 'Archives';
   }
-  return $chapter_title;
+  return apply_filters('get_archive_chapter_title', $chapter_title);
 }
 endif;
 
