@@ -162,8 +162,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'any' => __( 'any（回転を許可）', THEME_NAME ),
-              'landscape' => __( 'landscape（縦方向に固定）', THEME_NAME ),
-              'portrait' => __( 'portrait（横方向に固定）', THEME_NAME ),
+              'landscape' => __( 'landscape（横向きに固定）', THEME_NAME ),
+              'portrait' => __( 'portrait（縦向きに固定）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_PWA_ORIENTATION, $options, get_pwa_orientation());
             generate_tips_tag(__( '画面の縦方向、横方向の向きを設定します。', THEME_NAME ));
