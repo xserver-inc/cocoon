@@ -30,9 +30,9 @@ function get_h_inner_content($h_content){
 }
 endif;
 
-//目次部分の取得
+//目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($the_content, &$harray, $is_widget = false){
+function get_toc_tag($expanded_content, &$harray, $is_widget = false){
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
@@ -42,7 +42,7 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
   // $removed_content = get_shortcode_removed_content($the_content);
   // //ショートコードを実行した本文を取得
   // $content     = do_shortcode($removed_content);
-  $content     = $the_content;
+  $content     = $expanded_content;
   $headers     = array();
   $html        = '';
   $toc_list    = '';
