@@ -38,10 +38,11 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     return;
   }
 
-  //実行したくないショートコードを除外した本文の取得
-  $removed_content = get_shortcode_removed_content($the_content);
-  //ショートコードを実行した本文を取得
-  $content     = do_shortcode($removed_content);
+  // //実行したくないショートコードを除外した本文の取得
+  // $removed_content = get_shortcode_removed_content($the_content);
+  // //ショートコードを実行した本文を取得
+  // $content     = do_shortcode($removed_content);
+  $content     = $the_content;
   $headers     = array();
   $html        = '';
   $toc_list    = '';
@@ -259,7 +260,7 @@ function add_toc_before_1st_h2($the_content){
     $set_depth = 6;
   }
 
-  $html = get_toc_tag(get_the_content(), $harray);
+  $html = get_toc_tag($the_content, $harray);
 
   //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
   if (!$html) {

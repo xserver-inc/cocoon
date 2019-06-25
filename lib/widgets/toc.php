@@ -32,7 +32,8 @@ class TOCWidgetItem extends WP_Widget {
       //global $_TOC_WIDGET_OR_SHORTCODE_USE;
 
       $harray = array();
-      $html = get_toc_tag(get_the_content(), $harray, true);
+      $the_content = get_shortcode_removed_content(get_the_content());
+      $html = get_toc_tag($the_content, $harray, true);
 
       //目次が出力されている場合
       if ($html) {
