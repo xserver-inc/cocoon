@@ -361,6 +361,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .admin-settings .demo .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
 .admin-settings .demo .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
+.admin-settings .demo .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.admin-settings .demo .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .admin-settings .demo .ff-hannari { font-family: "Hannari" ,sans-serif; }
 .admin-settings .demo .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
@@ -1886,6 +1888,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .admin-settings .demo .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
 .admin-settings .demo .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
+.admin-settings .demo .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.admin-settings .demo .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .admin-settings .demo .ff-hannari { font-family: "Hannari" ,sans-serif; }
 .admin-settings .demo .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
@@ -4547,6 +4551,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .components-popover__content .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
 .components-popover__content .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
+.components-popover__content .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.components-popover__content .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .components-popover__content .ff-hannari { font-family: "Hannari" ,sans-serif; }
 .components-popover__content .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
 .components-popover__content .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }

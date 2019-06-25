@@ -60,6 +60,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   'noto_sans_jp' => __( 'Noto Sans JP（WEBフォント）', THEME_NAME ),
                   'mplus_1p' => __( 'Mplus 1p（WEBフォント）', THEME_NAME ),
                   'rounded_mplus_1c' => __( 'Rounded Mplus 1c（WEBフォント）', THEME_NAME ),
+                  'Kosugi' => __( '小杉ゴシック（WEBフォント）', THEME_NAME ),
+                  'Kosugi_maru' => __( '小杉丸ゴシック（WEBフォント）', THEME_NAME ),
                   'hannari' => __( 'はんなり明朝（WEBフォント）', THEME_NAME ),
                   'kokoro' => __( 'こころ明朝（WEBフォント）', THEME_NAME ),
                   'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
