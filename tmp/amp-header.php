@@ -69,13 +69,6 @@ if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_man
 if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
-
-//Font Awesomeのスタイルの読み込み
-echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
-//Google Fontsスタイルの読み込み
-if (!is_site_font_family_local()) {
-  echo '<link rel="stylesheet" href="'.get_site_font_source_url().'">'.PHP_EOL;
-}
 ?>
 <?php //JSON-LDの読み込み
 get_template_part('tmp/json-ld'); ?>
@@ -93,6 +86,15 @@ get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 <?php //ユーザーカスタマイズ用
 get_template_part('tmp-user/amp-head-insert'); ?>
 
+<?php //WEBフォント読み込み
+
+//Font Awesomeのスタイルの読み込み
+echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
+//Google Fontsスタイルの読み込み
+if (!is_site_font_family_local()) {
+  echo '<link rel="stylesheet" href="'.get_site_font_source_url().'">'.PHP_EOL;
+}
+?>
 </head>
 <body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
 
