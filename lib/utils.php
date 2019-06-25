@@ -1606,10 +1606,47 @@ function get_site_font_source(){
 endif;
 
 
+//サイトフォントソースコードの取得
+if ( !function_exists( 'get_site_font_source_family' ) ):
+function get_site_font_source_family(){
+  switch (get_site_font_family()) {
+    case 'noto_sans_jp':
+      $font_source_family = 'Noto+Sans+JP';
+      break;
+    case 'noto_serif_jp':
+      $font_source_family = 'Noto+Serif+JP';
+      break;
+    case 'mplus_1p':
+      $font_source_family = 'M+PLUS+1p';
+      break;
+    case 'rounded_mplus_1c':
+      $font_source_family = 'M+PLUS+Rounded+1c';
+      break;
+    case 'kosugi':
+      $font_source_family = 'Kosugi';
+      break;
+    case 'kosugi_maru':
+      $font_source_family = 'Kosugi+Maru';
+      break;
+    case 'sawarabi_gothic':
+      $font_source_family = 'Sawarabi+Gothic';
+      break;
+    case 'sawarabi_mincho':
+      $font_source_family = 'Sawarabi+Mincho';
+      break;
+    default:
+    $font_source_family = null;
+      break;
+  }
+  return $font_source_family;
+}
+endif;
+
+
 //サイトフォントソースコードURLの取得
 if ( !function_exists( 'get_site_font_source_url' ) ):
 function get_site_font_source_url(){
-  return 'https://fonts.googleapis.com/earlyaccess/'.get_site_font_source().'.css';
+  return 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().'&display=swap';
 }
 endif;
 
