@@ -250,7 +250,7 @@ function add_toc_before_1st_h2($the_content){
   //   return $the_content;
   // }
 
-  $content     = get_the_content();
+  //$content     = get_the_content();
   $harray      = array();
 
   $depth       = intval(get_toc_depth()); //2-6 0で全て
@@ -259,7 +259,7 @@ function add_toc_before_1st_h2($the_content){
     $set_depth = 6;
   }
 
-  $html = get_toc_tag($content, $harray);
+  $html = get_toc_tag(get_the_content(), $harray);
 
   //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
   if (!$html) {
