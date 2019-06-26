@@ -468,6 +468,7 @@ function wp_enqueue_script_theme_js(){
   $value = apply_filters( 'cocoon_localize_script_options_value', array(
     'is_lazy_load_enable' => is_lazy_load_enable(),
     'is_fixed_mobile_buttons_enable' => is_fixed_mobile_buttons_enable(),
+    'is_google_font_lazy_load_enable' => is_google_font_lazy_load_enable(),
   ) );
   wp_localize_script( THEME_JS, $name, $value );
 

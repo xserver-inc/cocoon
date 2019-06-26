@@ -143,6 +143,12 @@
     }
   });
 
+
+  //通常のGoogleフォント読み込み
+  if (cocoon_localize_script_options.is_google_font_lazy_load_enable != 1) {
+    $('html').addClass('wf-active');
+  }
+
 })(jQuery);
 
 /*
