@@ -73,6 +73,9 @@ function title_parts_custom( $title ){
     }
     $title['title'] = $cat_name;
     $title['site'] = '';
+    if ($simplified_site_name = get_simplified_site_name()) {
+      $site_name = $simplified_site_name;
+    }
     switch (get_category_page_title_format()) {
       case 'category_sitename':
         $title['title'] = $cat_name;
@@ -91,6 +94,9 @@ function title_parts_custom( $title ){
     }
     $title['title'] = $tag_name;
     $title['site'] = '';
+    if ($simplified_site_name = get_simplified_site_name()) {
+      $site_name = $simplified_site_name;
+    }
     switch (get_category_page_title_format()) {//※カテゴリーと共通？
       case 'category_sitename':
         $title['title'] = $tag_name;

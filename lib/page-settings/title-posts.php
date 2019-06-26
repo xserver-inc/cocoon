@@ -7,9 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//タイトルセパレーター
-update_theme_option(OP_TITLE_SEPARATOR);
-
 //フロントページのタイトルタイプ
 update_theme_option(OP_FRONT_PAGE_TITLE_FORMAT);
 
@@ -24,9 +21,6 @@ update_theme_option(OP_FRONT_PAGE_META_KEYWORDS);
 
 //投稿・固定ページのタイトル
 update_theme_option(OP_SINGULAR_PAGE_TITLE_FORMAT);
-
-//簡略化したサイト名
-update_theme_option(OP_SIMPLIFIED_SITE_NAME);
 
 //投稿・固定ページにメタディスクリプションを含める
 update_theme_option(OP_META_DESCRIPTION_TO_SINGULAR);
@@ -45,3 +39,9 @@ update_theme_option(OP_META_KEYWORDS_TO_CATEGORY);
 
 //検索エンジンに知らせる日付
 update_theme_option(OP_SEO_DATE_TYPE);
+
+//簡略化したサイト名
+update_theme_option(OP_SIMPLIFIED_SITE_NAME);
+
+//タイトルセパレーター
+update_theme_option(OP_TITLE_SEPARATOR);
