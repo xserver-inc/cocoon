@@ -289,7 +289,8 @@ function convert_lazy_load_tag($the_content, $media){
 
       //画像URLの入れ替え
       $search = '{ src=["\'](.+?)["\']}i';
-      $replace = ' src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="$1"';
+      //$replace = ' src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="$1"';
+      $replace = ' data-src="$1"';
       $tag = preg_replace($search, $replace, $tag);
       //$tag = convert_src_to_data_src($tag);
 
