@@ -83,6 +83,14 @@ function get_lazy_load_exclude_list(){
 }
 endif;
 
+//GoogleフォントのLazy Load
+define('OP_GOOGLE_FONT_LAZY_LOAD_ENABLE', 'google_font_lazy_load_enable');
+if ( !function_exists( 'is_google_font_lazy_load_enable' ) ):
+function is_google_font_lazy_load_enable(){
+  return get_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE);
+}
+endif;
+
 //WEBフォントのLazy Load
 define('OP_WEB_FONT_LAZY_LOAD_ENABLE', 'web_font_lazy_load_enable');
 if ( !function_exists( 'is_web_font_lazy_load_enable' ) ):
