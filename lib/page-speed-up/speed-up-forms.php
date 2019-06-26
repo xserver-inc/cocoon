@@ -144,7 +144,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- Lazy Load Googleフォント -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE, __('Googleフォント（β版）', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE, __('Googleフォント', THEME_NAME) ); ?>
           </th>
           <td>
             <?php

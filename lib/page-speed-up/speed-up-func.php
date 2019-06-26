@@ -87,7 +87,7 @@ endif;
 define('OP_GOOGLE_FONT_LAZY_LOAD_ENABLE', 'google_font_lazy_load_enable');
 if ( !function_exists( 'is_google_font_lazy_load_enable' ) ):
 function is_google_font_lazy_load_enable(){
-  return get_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE);
+  return get_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE, 1);
 }
 endif;
 

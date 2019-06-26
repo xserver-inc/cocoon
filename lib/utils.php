@@ -922,8 +922,26 @@ endif;
 //Google Fontsの読み込み
 if ( !function_exists( 'wp_enqueue_google_fonts' ) ):
 function wp_enqueue_google_fonts(){
-  if (!is_site_font_family_local()) {
+  if (!is_site_font_family_local() && !is_google_font_lazy_load_enable()) {
     wp_enqueue_style( 'google-fonts-'.get_site_font_source(), get_site_font_source_url() );
+  }
+  if (!is_site_font_family_local() && is_google_font_lazy_load_enable()) {
+    $code = "window.WebFontConfig = {
+      google: { families: ['".get_site_font_source_family()."'] },
+      active: function() {
+        sessionStorage.fonts = true;
+      }
+    };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();";
+    wp_add_inline_script( THEME_JS, $code, 'after' );
   }
 }
 endif;
@@ -1606,7 +1624,7 @@ function get_site_font_source(){
 endif;
 
 
-//サイトフォントソースコードの取得
+//サイトフォントソースフォント名の取得
 if ( !function_exists( 'get_site_font_source_family' ) ):
 function get_site_font_source_family(){
   switch (get_site_font_family()) {
