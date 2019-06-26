@@ -486,7 +486,7 @@ function wp_enqueue_lazy_load(){
   if (is_lazy_load_enable() && !is_admin() && !is_login_page()) {
     wp_enqueue_script( 'polyfill-js', get_template_directory_uri() . '/plugins/polyfill/intersection-observer.js', array(), false, true );
     wp_enqueue_script( 'lazy-load-js', get_template_directory_uri() . '/plugins/lozad.js-master/dist/lozad.min.js', array('polyfill-js'), false, true );
-    $data = 'const observer = lozad(".lozad", {rootMargin: "500px"});observer.observe();';
+    $data = 'const observer = lozad(".lozad", {rootMargin: "0px 500px 500px"});observer.observe();';
     wp_add_inline_script( 'lazy-load-js', $data, 'after' ) ;
   }
 }
