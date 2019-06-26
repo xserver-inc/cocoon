@@ -67,7 +67,6 @@
   });
 
   //モバイルボタンが固定じゃない場合
-  console.log(cocoon_localize_script_options);
   if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
     //ヘッダーモバイルメニュー
     var headerMenu = $('.mobile-header-menu-buttons');
@@ -76,9 +75,9 @@
     $(window).scroll(function() {
       var headerCurrentPos = $(this).scrollTop();
       if ( headerCurrentPos > headerStartPos ) {
-        //if($(window).scrollTop() >= 200) {
+        if($(window).scrollTop() >= 100) {
           headerMenu.css('top', '-' + headerHight + 'px');
-        //}
+        }
       } else {
         headerMenu.css('top', 0);
       }
@@ -92,9 +91,9 @@
     $(window).scroll(function(){
       var footerCurrentPos = $(this).scrollTop();
       if (footerCurrentPos > footerStartPos) {
-        //if($(window).scrollTop() >= 200) {
+        if($(window).scrollTop() >= 100) {
           footerMenu.css("bottom", "-" + footerHeight + "px");
-        //}
+        }
       } else {
         footerMenu.css("bottom", 0);
       }
@@ -160,14 +159,15 @@
     }
 })();
 
-// //画像のLazy Load中高さを保持する
-// if (cocoon_localize_script_options.is_lazy_load_enable) {
-//   const imgs = document.querySelectorAll('body .lozad-img'),
-//       sSize = window.parent.screen.width;
-//   imgs.forEach(function (ele) {
-//     const imgHeight = ele.getAttribute('height'),
-//           imgWidth = ele.getAttribute('width');
-//     ele.setAttribute('style','max-height:' + imgHeight * (sSize/imgWidth) +'px; height:initial;');
-//   });
-// }
-
+/*
+//画像のLazy Load中高さを保持する
+if (cocoon_localize_script_options.is_lazy_load_enable) {
+  const imgs = document.querySelectorAll('body .lozad-img'),
+      sSize = window.parent.screen.width;
+  imgs.forEach(function (ele) {
+    const imgHeight = ele.getAttribute('height'),
+          imgWidth = ele.getAttribute('width');
+    ele.setAttribute('style','max-height:' + imgHeight * (sSize/imgWidth) +'px; height:initial;');
+  });
+}
+*/
