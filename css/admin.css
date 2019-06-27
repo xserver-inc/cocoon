@@ -3725,6 +3725,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .admin-bar.mblt-header-mobile-buttons, .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons { margin-top: 0; } }
 
 .admin-settings .demo pre { padding: 10px; }
+.admin-settings .demo .entry-content { margin: 0; }
 .admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
 .admin-settings .demo .search-result .title { color: #1a0dab; font-weight: bold; text-decoration: none; }
 .admin-settings .demo .search-result .url { color: #006621; font-size: 14px; max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
