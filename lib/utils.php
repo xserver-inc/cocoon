@@ -1624,7 +1624,6 @@ function get_site_font_source(){
 }
 endif;
 
-
 //サイトフォントソースフォント名の取得
 if ( !function_exists( 'get_site_font_source_family' ) ):
 function get_site_font_source_family(){
@@ -1661,11 +1660,47 @@ function get_site_font_source_family(){
 }
 endif;
 
+//サイトフォントソースフォントウェイト（太さ）の取得
+if ( !function_exists( 'get_site_font_source_weight' ) ):
+function get_site_font_source_weight(){
+  switch (get_site_font_family()) {
+    case 'noto_sans_jp':
+      $font_source_weight = ':100,300,400,500,700,900';
+      break;
+    case 'noto_serif_jp':
+      $font_source_weight = ':200,300,400,500,600,700,900';
+      break;
+    case 'mplus_1p':
+      $font_source_weight = ':100,300,400,500,700,800,900';
+      break;
+    case 'rounded_mplus_1c':
+      $font_source_weight = ':100,300,400,500,700,800,900';
+      break;
+    case 'kosugi':
+      $font_source_weight = '';
+      break;
+    case 'kosugi_maru':
+      $font_source_weight = '';
+      break;
+    case 'sawarabi_gothic':
+      $font_source_weight = '';
+      break;
+    case 'sawarabi_mincho':
+      $font_source_weight = '';
+      break;
+    default:
+    $font_source_weight = null;
+      break;
+  }
+  return $font_source_weight;
+}
+endif;
+
 
 //サイトフォントソースコードURLの取得
 if ( !function_exists( 'get_site_font_source_url' ) ):
 function get_site_font_source_url(){
-  return 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().'&display=swap';
+  return 'https://fonts.googleapis.com/css?family='.get_site_font_source_family().get_site_font_source_weight().'&display=swap';
 }
 endif;
 
