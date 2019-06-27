@@ -1696,7 +1696,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
 .admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; padding-bottom: 8px; }
 .admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
-.admin-settings .demo .footer-bottom-logo img { height: 50px !important; width: auto; }
+.admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
 .admin-settings .demo .go-to-top { position: fixed; display: none; right: 10px; bottom: 10px; z-index: 99999; }
 .admin-settings .demo .go-to-top-button { background-color: #eee; color: #333; text-decoration: none; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; cursor: pointer; text-align: center; line-height: 1; border-radius: 5px; font-size: 22px; }
@@ -3222,7 +3222,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .footer-bottom-logo .logo-text { padding: 0; }
 .admin-settings .demo .footer-bottom-logo .site-name-text { font-size: 18px; padding-bottom: 8px; }
 .admin-settings .demo .footer-bottom-logo .logo-image { padding: 0; max-width: 120px; }
-.admin-settings .demo .footer-bottom-logo img { height: 50px !important; width: auto; }
+.admin-settings .demo .footer-bottom-logo img { height: 50px; width: auto; }
 .admin-settings .demo .footer-bottom-content { float: right; text-align: right; }
 .admin-settings .demo .go-to-top { position: fixed; display: none; right: 10px; bottom: 10px; z-index: 99999; }
 .admin-settings .demo .go-to-top-button { background-color: #eee; color: #333; text-decoration: none; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; cursor: pointer; text-align: center; line-height: 1; border-radius: 5px; font-size: 22px; }
