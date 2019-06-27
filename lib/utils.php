@@ -928,7 +928,7 @@ function wp_enqueue_google_fonts(){
   }
   if (!is_site_font_family_local() && is_google_font_lazy_load_enable()) {
     $code = "window.WebFontConfig = {
-      google: { families: ['".get_site_font_source_family()."'] },
+      google: { families: ['".get_site_font_source_family().get_site_font_source_weight()."'] },
       active: function() {
         sessionStorage.fonts = true;
       }
