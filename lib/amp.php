@@ -790,6 +790,12 @@ function generate_style_amp_custom_tag(){?>
       $css_all .= apply_filters( 'amp_child_amp_css', $child_amp_css );
     }
   }
+  ///////////////////////////////////////////
+  //カスタマイザー「追加CSS」のスタイル
+  ///////////////////////////////////////////
+  if ($wp_custom_css = wp_get_custom_css()){
+    $css_all .= apply_filters( 'amp_wp_custom_css', $wp_custom_css );
+  }
 
   ///////////////////////////////////////////
   //投稿・固定ページに記入されているカスタムCSS
