@@ -340,8 +340,8 @@ function is_the_page_toc_use(){
 endif;
 
 //目次生成用の展開した本文の取得
-if ( !function_exists( 'get_toc_do_shortcode_content' ) ):
-function get_toc_do_shortcode_content(){
+if ( !function_exists( 'get_toc_expanded_content' ) ):
+function get_toc_expanded_content(){
   if (is_singular()) {
     $the_content = get_shortcode_removed_content(get_the_content());
     $the_content = do_shortcode($the_content);
