@@ -345,6 +345,7 @@ function get_toc_do_shortcode_content(){
   if (is_singular()) {
     $the_content = get_shortcode_removed_content(get_the_content());
     $the_content = do_shortcode($the_content);
+    $the_content = do_blocks($the_content);
     return $the_content;
   }
 }
