@@ -57,7 +57,7 @@
   $(window).scroll(function(){
     var adminCurrentPos = $(this).scrollTop();
     if (adminCurrentPos > adminStartPos) {
-      if($(window).scrollTop() >= 200) {
+      if(adminCurrentPos >= 200) {
         adminMenu.css("bottom", "-" + adminHeight + "px");
       }
     } else {
@@ -75,7 +75,7 @@
     $(window).scroll(function() {
       var headerCurrentPos = $(this).scrollTop();
       if ( headerCurrentPos > headerStartPos ) {
-        if($(window).scrollTop() >= 100) {
+        if(headerCurrentPos >= 100) {
           headerMenu.css('top', '-' + headerHight + 'px');
         }
       } else {
@@ -91,7 +91,7 @@
     $(window).scroll(function(){
       var footerCurrentPos = $(this).scrollTop();
       if (footerCurrentPos > footerStartPos) {
-        if($(window).scrollTop() >= 100) {
+        if(footerCurrentPos >= 100) {
           footerMenu.css("bottom", "-" + footerHeight + "px");
         }
       } else {
