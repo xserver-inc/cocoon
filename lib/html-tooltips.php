@@ -72,9 +72,13 @@ endif;
 if ( !function_exists( 'generate_select_color_tip_tag' ) ):
 function generate_select_color_tip_tag(){
   ob_start();?>
-    <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/10/color-sample.png" alt="カラーサンプルサイト" />
+    <img src="https://im-cocoon.net/wp-content/uploads/ironodata.info_.png" alt="カラーサンプルサイト" />
     <p><?php _e( '良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好みの色を見つけ出し、カラーコードをカラーピッカーにコピペすると設定できます。', THEME_NAME ) ?><br>
-    <a href="http://www.color-sample.com/" target="_blank">color-sample.com</a></p>
+    <a href="https://ironodata.info/" target="_blank"><?php _e('配色の見本帳', THEME_NAME); ?></a><br>
+    <a href="https://www.colordic.org/w/" target="_blank"><?php _e('日本の伝統食', THEME_NAME); ?></a><br>
+    <a href="http://nipponcolors.com/" target="_blank"><?php _e('NIPPON COLORS', THEME_NAME); ?></a><br>
+    <a href="https://colorhunt.co/" target="_blank"><?php _e('Color Hunt', THEME_NAME); ?></a><br>
+  </p>
   <?php
   $content = ob_get_clean();
   generate_tooltip_tag($content);
