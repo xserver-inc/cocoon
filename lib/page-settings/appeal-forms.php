@@ -82,7 +82,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- 背景色 -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_APPEAL_AREA_BACKGROUND_COLOR, __('エリア背景色', THEME_NAME) ); ?>
+            <?php generate_label_tag(OP_APPEAL_AREA_BACKGROUND_COLOR, __('エリア背景色', THEME_NAME) );
+            generate_select_color_tip_tag(); ?>
           </th>
           <td>
             <?php
