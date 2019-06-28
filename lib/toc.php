@@ -344,9 +344,9 @@ if ( !function_exists( 'get_toc_expanded_content' ) ):
 function get_toc_expanded_content(){
   if (is_singular()) {
     $the_content = get_shortcode_removed_content(get_the_content());
-    $the_content = do_shortcode($the_content);
     $the_content = do_blocks($the_content);
-    return $the_content;
+    $the_content = do_shortcode($the_content);
+    return apply_filters('get_toc_expanded_content', $the_content);
   }
 }
 endif;
