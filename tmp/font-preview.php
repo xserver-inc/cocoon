@@ -15,7 +15,7 @@ if ($site_text_color = get_site_text_color()) {
   <link rel="stylesheet" href="<?php echo get_site_font_source_url(); ?>">
 <?php endif ?>
 <p class="preview-label"><?php _e( 'フォントプレビュー', THEME_NAME ) ?></p>
-<div class="demo" style="width: 100%">
+<div class="demo" style="width: 100%;overflow: visible;">
   <div class="entry-content <?php echo get_site_font_family_class(); ?> <?php echo get_site_font_size_class(); ?> <?php echo get_site_font_weight_class(); ?>" style="<?php echo $demo_style; ?>">
   <p>1234567890</p>
   <p>abcdefghijklmnopqrstuvwxyz</p>
@@ -26,6 +26,8 @@ if ($site_text_color = get_site_text_color()) {
     _e('現文字の太さ：', THEME_NAME);
     echo '</b>';
     echo get_site_font_weight();
+    $content = '<img src="https://im-cocoon.net/wp-content/uploads/site-font-weight.gif" alt=""><br>'.__( '「文字の太さ」変更でフォントに合った太さに調整しよう。', THEME_NAME );
+    generate_tooltip_tag($content);
   ?>
   <?php if (!is_site_font_family_local()): ?>
   <?php
