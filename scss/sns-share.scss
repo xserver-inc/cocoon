@@ -94,6 +94,10 @@
       background-color: $github_color;
     }
 
+    .codepen-button{
+      background-color: $codepen_color;
+    }
+
     .feedly-button{
       background-color: $feedly_color;
     }
@@ -194,6 +198,11 @@
     .github-button{
       color: $github_color;
       border-color: $github_color;
+    }
+
+    .codepen-button{
+      color: $codepen_color;
+      border-color: $codepen_color;
     }
 
     .feedly-button{

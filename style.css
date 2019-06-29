@@ -1215,6 +1215,9 @@ img.emoji {
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
   background-color: #4078c0;
 }
+.bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button {
+  background-color: #333;
+}
 .bc-brand-color.sns-share .feedly-button, .bc-brand-color.sns-follow .feedly-button {
   background-color: #2bb24c;
 }
@@ -1293,6 +1296,10 @@ img.emoji {
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
   color: #4078c0;
   border-color: #4078c0;
+}
+.bc-brand-color-white.sns-share .codepen-button, .bc-brand-color-white.sns-follow .codepen-button {
+  color: #333;
+  border-color: #333;
 }
 .bc-brand-color-white.sns-share .feedly-button, .bc-brand-color-white.sns-follow .feedly-button {
   color: #2bb24c;
