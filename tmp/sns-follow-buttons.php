@@ -73,6 +73,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_rakuten_room_url($user_id); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-rakuten-room-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_slack_url($user_id) )://Slackフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_slack_url($user_id); //SlackフォローURLの取得 ?>" class="follow-button slack-button slack-follow-button-sq" target="_blank" title="<?php _e( 'Slackをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-slack-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_github_url($user_id) )://GitHubフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_github_url($user_id); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-github-logo"></span></a>
   <?php endif; ?>

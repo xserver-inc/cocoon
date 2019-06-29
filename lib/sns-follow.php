@@ -143,6 +143,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
   $prof_items['amazon_url'] = __( 'Amazon URL', THEME_NAME );
   $prof_items['rakuten_room_url'] = __( '楽天 ROOM URL', THEME_NAME );
+  $prof_items['slack_url'] = __( 'Slack URL', THEME_NAME );
   $prof_items['github_url'] = __( 'GitHub URL', THEME_NAME );
 
   return $prof_items;
@@ -330,6 +331,14 @@ if ( !function_exists( 'get_the_author_rakuten_room_url' ) ):
 function get_the_author_rakuten_room_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
   return esc_html(get_the_author_meta('rakuten_room_url', $user_id));
+}
+endif;
+
+//プロフィール画面で設定したSlack URLの取得
+if ( !function_exists( 'get_the_author_slack_url' ) ):
+function get_the_author_slack_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('slack_url', $user_id));
 }
 endif;
 

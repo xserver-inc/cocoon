@@ -515,6 +515,7 @@ article .tag-link:hover{
 .author-box .line-button { background-color: #00c300 !important; }
 .author-box .amazon-button { background-color: #ff9900 !important; }
 .author-box .rakuten-room-button { background-color: #c42e7f !important; }
+.author-box .slack-button { background-color: #e01563 !important; }
 .author-box .github-button { background-color: #333 !important; }
 .author-box .feedly-button { background-color: #2bb24c !important; }
 .author-box .rss-button { background-color: #f26522 !important; }

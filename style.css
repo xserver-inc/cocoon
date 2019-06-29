@@ -1206,6 +1206,9 @@ img.emoji {
 .bc-brand-color.sns-share .rakuten-room-button, .bc-brand-color.sns-follow .rakuten-room-button {
   background-color: #c61e79;
 }
+.bc-brand-color.sns-share .slack-button, .bc-brand-color.sns-follow .slack-button {
+  background-color: #e01563;
+}
 .bc-brand-color.sns-share .github-button, .bc-brand-color.sns-follow .github-button {
   background-color: #4078c0;
 }
@@ -1271,6 +1274,14 @@ img.emoji {
 .bc-brand-color-white.sns-share .amazon-button, .bc-brand-color-white.sns-follow .amazon-button {
   color: #ff9900;
   border-color: #ff9900;
+}
+.bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button {
+  color: #c61e79;
+  border-color: #c61e79;
+}
+.bc-brand-color-white.sns-share .slack-button, .bc-brand-color-white.sns-follow .slack-button {
+  color: #e01563;
+  border-color: #e01563;
 }
 .bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
   color: #4078c0;

@@ -82,6 +82,10 @@
       background-color: $rakuten_room_color;
     }
 
+    .slack-button{
+      background-color: $slack_color;
+    }
+
     .github-button{
       background-color: $github_color;
     }
@@ -166,6 +170,16 @@
     .amazon-button{
       color: $amazon_color;
       border-color: $amazon_color;
+    }
+
+    .rakuten-room-button{
+      color: $rakuten_room_color;
+      border-color: $rakuten_room_color;
+    }
+
+    .slack-button{
+      color: $slack_color;
+      border-color: $slack_color;
     }
 
     .github-button{

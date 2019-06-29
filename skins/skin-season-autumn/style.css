@@ -539,6 +539,9 @@ article .tag-link:hover {
 .author-box .rakuten-room-button {
 	background-color: #c42e7f !important;
 }
+.author-box .slack-button {
+	background-color: #e01563 !important;
+}
 .author-box .github-button {
 	background-color: #333 !important;
 }
