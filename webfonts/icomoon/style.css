@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?cavqpi');
-  src:  url('fonts/icomoon.eot?cavqpi#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?cavqpi') format('truetype'),
-    url('fonts/icomoon.woff?cavqpi') format('woff'),
-    url('fonts/icomoon.svg?cavqpi#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?g0b3k8');
+  src:  url('fonts/icomoon.eot?g0b3k8#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?g0b3k8') format('truetype'),
+    url('fonts/icomoon.woff?g0b3k8') format('woff'),
+    url('fonts/icomoon.svg?g0b3k8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -58,15 +58,6 @@
 }
 .icon-hatebu-logo:before {
   content: "\e931";
-}
-.icon-instagram-logo:before {
-  content: "\e932";
-}
-.icon-instagram-logo-new:before {
-  content: "\e933";
-}
-.icon-instagram-logo-new-sq:before {
-  content: "\e934";
 }
 .icon-line-logo:before {
   content: "\e935";
@@ -125,7 +116,7 @@
 .icon-googleplus:before {
   content: "\ea8b";
 }
-.icon-instagram-new:before {
+.icon-instagram-logo:before {
   content: "\ea92";
 }
 .icon-github-logo:before {
@@ -142,4 +133,7 @@
 }
 .icon-codepen-logo:before {
   content: "\eae8";
+}
+.icon-linkedin:before {
+  content: "\eacb";
 }
