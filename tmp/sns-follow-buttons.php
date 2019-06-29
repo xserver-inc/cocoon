@@ -53,6 +53,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_youtube_url($user_id); //YouTubeフォローURLの取得 ?>" class="follow-button youtube-button youtube-follow-button-sq" target="_blank" title="<?php _e( 'YouTubeをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-youtube-logo"></span></a>
   <?php endif; ?>
 
+  <?php if (  get_the_author_linkedin_url($user_id) )://LinkedInフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_linkedin_url($user_id); //LinkedInフォローURLの取得 ?>" class="follow-button linkedin-button linkedin-follow-button-sq" target="_blank" title="<?php _e( 'LinkedInをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-linkedin-logo"></span></a>
+  <?php endif; ?>
+
   <?php if (  get_the_author_flickr_url($user_id) )://Flickrフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_flickr_url($user_id); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
   <?php endif; ?>
