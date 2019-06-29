@@ -77,6 +77,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'Pinterest', THEME_NAME ) ?></li>
               <li><?php _e( 'YouTube', THEME_NAME ) ?></li>
               <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
+              <li><?php _e( '楽天ROOM', THEME_NAME ) ?></li>
+              <li><?php _e( 'Slack', THEME_NAME ) ?></li>
               <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
             </ul>
             <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>から設定</p>
