@@ -529,6 +529,13 @@ function get_pinterest_share_url(){
 }
 endif;
 
+//LinkedInのシェアURLを取得
+if ( !function_exists( 'get_linkedin_share_url' ) ):
+function get_linkedin_share_url(){
+  return '//www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_share_page_url());
+}
+endif;
+
 //コピーURLを取得
 if ( !function_exists( 'get_copy_share_url' ) ):
 function get_copy_share_url(){
