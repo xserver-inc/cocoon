@@ -443,17 +443,17 @@ article .tag-link:hover {
 	max-width: 100%;
 	margin: 0 auto;
 }
-#sidebar .author-box .author-name {
+.nwa .author-box .author-name {
 	margin-bottom: 20px;
 }
-#sidebar .author-box .author-name a {
+.nwa .author-box .author-name a {
 	color: #9b7b6c;
 }
-#sidebar .author-box p {
+.nwa .author-box p {
 	margin: 1em 0;
 	line-height: 1.7;
 }
-#sidebar .author-box .sns-follow-buttons a.follow-button {
+.nwa .author-box .sns-follow-buttons a.follow-button {
 	font-size: 25px;
 	width: 35px;
 	height: 35px;
@@ -461,6 +461,7 @@ article .tag-link:hover {
 	line-height: 1.5;
 	margin: 4px;
 	opacity: 0.8;
+	padding: 0 !important;
 }
 .author-widget-name {
 	position: relative;
@@ -494,11 +495,11 @@ article .tag-link:hover {
 	border-width: 21px;
 	margin-left: -21px;
 }
-#sidebar .author-box a {
+#container .nwa .author-box a {
 	color: #fff;
 	border: none;
 }
-#sidebar .author-box .sns-follow-message {
+.nwa .author-box .sns-follow-message {
 	margin: 2.3em 0 0;
 	display: block;
 	font-size: 1em;
