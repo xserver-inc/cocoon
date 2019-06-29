@@ -465,6 +465,13 @@ border-bottom:4px solid #5572ff;
 .pinterest-share-count::after {
   content: 'PIN';
 }
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-linkedin,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.linkedin-share-count{
+  filter: drop-shadow(1px 1px 1px #0077b5);
+}
+.linkedin-share-count::after {
+  content: 'SHARE';
+}
 .bc-brand-color.sns-share .sns-share-buttons a .fa.fa-clipboard,
 .bc-brand-color.sns-share .sns-share-buttons a .share-count.copy-share-count{
   filter: drop-shadow(1px 1px 1px #333);
@@ -591,6 +598,14 @@ border-bottom:4px solid #5572ff;
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-youtube-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-youtube-logo{
   color: #cd201f;
+}
+.bc-brand-color-white.sns-follow .youtube-button,
+.author-box .sns-follow-buttons a.follow-button.linkedin-button{
+  filter: drop-shadow(1px 1px 1px #0077b5);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-linkedin-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-linkedin-logo{
+  color: #0077b5;
 }
 .bc-brand-color-white.sns-follow .flickr-button,
 .author-box .sns-follow-buttons a.follow-button.flickr-button{
