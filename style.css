@@ -1275,6 +1275,10 @@ img.emoji {
   color: #ff9900;
   border-color: #ff9900;
 }
+.bc-brand-color-white.sns-share .rakuten-room-button, .bc-brand-color-white.sns-follow .rakuten-room-button {
+  color: #c61e79;
+  border-color: #c61e79;
+}
 .bc-brand-color-white.sns-share .slack-button, .bc-brand-color-white.sns-follow .slack-button {
   color: #e01563;
   border-color: #e01563;
