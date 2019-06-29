@@ -146,6 +146,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['rakuten_room_url'] = __( '楽天 ROOM URL', THEME_NAME );
   $prof_items['slack_url'] = __( 'Slack URL', THEME_NAME );
   $prof_items['github_url'] = __( 'GitHub URL', THEME_NAME );
+  $prof_items['codepen_url'] = __( 'CodePen URL', THEME_NAME );
 
   return $prof_items;
 }
@@ -359,6 +360,14 @@ function get_the_author_github_url($id = null){
 }
 endif;
 
+//プロフィール画面で設定したCodePen URLの取得
+if ( !function_exists( 'get_the_author_codepen_url' ) ):
+function get_the_author_codepen_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('codepen_url', $user_id));
+}
+endif;
+
 //フォローボタンが存在する場合（feedly、RSS以外）
 if ( !function_exists( 'is_author_follow_buttons_exits' ) ):
 function is_author_follow_buttons_exits(){
@@ -375,7 +384,8 @@ function is_author_follow_buttons_exits(){
          || get_the_author_line_at_url()
          || get_the_author_rakuten_room_url()
          || get_the_author_slack_url()
-         || get_the_author_github_url();
+         || get_the_author_github_url()
+         || get_the_author_codepen_url();
 }
 endif;
 
@@ -396,6 +406,7 @@ function is_any_sns_follow_buttons_exist(){
       || get_the_author_rakuten_room_url()
       || get_the_author_slack_url()
       || get_the_author_github_url()
+      || get_the_author_codepen_url()
       || is_feedly_follow_button_visible()
       || is_rss_follow_button_visible();
 }

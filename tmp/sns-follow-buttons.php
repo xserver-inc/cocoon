@@ -85,6 +85,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_github_url($user_id); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-github-logo"></span></a>
   <?php endif; ?>
 
+    <?php if ( get_the_author_codepen_url($user_id) )://CodePenフォローボタンを表示するか ?>
+      <a href="<?php echo get_the_author_codepen_url($user_id); //CodePenフォローURLの取得 ?>" class="follow-button codepen-button codepen-follow-button-sq" target="_blank" title="<?php _e( 'CodePenをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-codepen-logo"></span></a>
+    <?php endif; ?>
+
   <?php if ( is_feedly_follow_button_visible() )://feedlyフォローボタンを表示するか ?>
     <a href="//feedly.com/i/subscription/feed/<?php echo urlencode(get_bloginfo("rss2_url")); ?>" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"><?php echo get_feedly_count(); ?></span></a>
   <?php endif; ?>
