@@ -663,6 +663,14 @@ border-bottom:4px solid #5572ff;
 .author-box .sns-follow-buttons a.follow-button:hover .icon-github-logo{
   color: #4078c0;
 }
+.bc-brand-color-white.sns-follow .codepen-button,
+.author-box .sns-follow-buttons a.follow-button.codepen-button{
+  filter: drop-shadow(1px 1px 1px #333);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-codepen-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-codepen-logo{
+  color: #333;
+}
 .bc-brand-color-white.sns-follow .feedly-button,
 .author-box .sns-follow-buttons a.follow-button.feedly-button {
   filter: drop-shadow(1px 1px 1px #2bb24c)
