@@ -23,16 +23,20 @@ if ($site_text_color = get_site_text_color()) {
   <p><?php _e( '吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初めて人間というものを見た。', THEME_NAME ) ?></p>
   <p><?php
     echo '<b>';
-    _e('現文字の太さ：', THEME_NAME);
+    _e('現在の太さ：', THEME_NAME);
     echo '</b>';
     echo get_site_font_weight();
     $content = '<img src="https://im-cocoon.net/wp-content/uploads/site-font-weight.gif" alt=""><br>'.__( '「文字の太さ」変更でフォントに合った太さに調整しよう。', THEME_NAME );
     generate_tooltip_tag($content);
+    echo '<br><b>';
+    _e('太さ見本：', THEME_NAME);
+    echo '</b>';
+    echo get_font_weight_demo_tag(array(100, 200, 300, 400, 500, 600, 700, 800, 900));
   ?>
   <?php if (!is_site_font_family_local()): ?>
   <?php
     echo '<br><b>';
-    _e('太さの種類：', THEME_NAME);
+    _e('利用可：', THEME_NAME);
     echo '</b>';
     if ($weight_str = get_site_font_source_weight()) {
       $weight_str = str_replace(':', '', $weight_str);
@@ -40,11 +44,12 @@ if ($site_text_color = get_site_text_color()) {
     } else {
       $weights = array(400);
     }
-    $taged_weights = array();
-    foreach ($weights as $weight) {
-      $taged_weights[] = '<span style="font-weight:'.$weight.';">'.$weight.'</span>';
-    }
-    echo implode(', ', $taged_weights);
+    // $taged_weights = array();
+    // foreach ($weights as $weight) {
+    //   $taged_weights[] = '<span style="font-weight:'.$weight.';">'.$weight.'</span>';
+    // }
+    // echo implode(', ', $taged_weights);
+    echo get_font_weight_demo_tag($weights);
     _e('（WEBフォント）', THEME_NAME);
   ?>
   <?php endif; ?>

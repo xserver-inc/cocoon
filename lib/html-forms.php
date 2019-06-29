@@ -1246,3 +1246,14 @@ function get_admin_errormessage_box_tag($message){
   return get_message_box_tag($admin_message, 'warning-box fz-14px');
 }
 endif;
+
+//フォントの太さサンプルタグの取得
+if ( !function_exists( 'get_font_weight_demo_tag' ) ):
+function get_font_weight_demo_tag($weights){
+  $taged_weights = array();
+  foreach ($weights as $weight) {
+    $taged_weights[] = '<span style="font-weight:'.$weight.';">'.$weight.'</span>';
+  }
+  return implode(', ', $taged_weights);
+}
+endif;
