@@ -48,6 +48,12 @@
         }, 800);
   });
 
+  //検索ボタンクリックでフォーカスを入力エリアに移す
+  $('.search-menu-button').click(function(){
+    //フォーカスの移動
+    $('#search-menu-content .search-edit').first().focus();;
+  });
+
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
