@@ -42,8 +42,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <a href="<?php echo get_pinterest_share_url(); ?>" class="share-button pinterest-button pinterest-share-button-sq" target="_blank" rel="nofollow noopener noreferrer" data-pin-do="buttonBookmark" data-pin-custom="true"><span class="social-icon icon-pinterest"></span><span class="button-caption"><?php _e( 'Pinterest', THEME_NAME ) ?></span><span class="share-count pinterest-share-count"></span></a>
     <?php endif; ?>
 
+    <?php if ( is_linkedin_share_button_visible($option) )://LinkedInボタンを表示するか ?>
+      <a href="<?php echo get_linkedin_share_url(); ?>" class="share-button linkedin-button linkedin-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-linkedin"></span><span class="button-caption"><?php _e( 'LinkedIn', THEME_NAME ) ?></span><span class="share-count linkedin-share-count"></span></a>
+    <?php endif; ?>
+
     <?php if ( is_copy_share_button_visible($option) )://コピーボタンを表示するか ?>
-      <a href="<?php echo get_copy_share_url(); ?>" class="share-button copy-button copy-share-button-sq" rel="nofollow noopener noreferrer"<?php if (is_amp()) echo ' target="_blank"'; ?> data-clipboard-text="<?php echo get_share_page_title(); ?> <?php the_permalink(); ?>"><span class="fa fa-clipboard"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
+      <a href="<?php echo get_copy_share_url(); ?>" class="share-button copy-button copy-share-button-sq" rel="nofollow noopener noreferrer"<?php if (is_amp()) echo ' target="_blank"'; ?> data-clipboard-text="<?php echo get_share_page_title(); ?> <?php the_permalink(); ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
     <?php endif; ?>
 
   </div><!-- /.sns-share-buttons -->

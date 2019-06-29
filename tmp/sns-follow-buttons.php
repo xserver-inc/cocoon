@@ -46,7 +46,7 @@ if ( is_any_sns_follow_buttons_exist()
   <?php endif; ?>
 
   <?php if ( get_the_author_instagram_url($user_id) )://Instagramフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_instagram_url($user_id); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-instagram-new"></span></a>
+    <a href="<?php echo get_the_author_instagram_url($user_id); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-instagram-logo"></span></a>
   <?php endif; ?>
 
   <?php if (  get_the_author_youtube_url($user_id) )://YouTubeフォローボタンを表示するか ?>
