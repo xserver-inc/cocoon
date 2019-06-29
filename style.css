@@ -1197,6 +1197,9 @@ img.emoji {
 .bc-brand-color.sns-share .youtube-button, .bc-brand-color.sns-follow .youtube-button {
   background-color: #cd201f;
 }
+.bc-brand-color.sns-share .linkedin-button, .bc-brand-color.sns-follow .linkedin-button {
+  background-color: #0077b5;
+}
 .bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button {
   background-color: #111;
 }
@@ -1266,6 +1269,10 @@ img.emoji {
 .bc-brand-color-white.sns-share .youtube-button, .bc-brand-color-white.sns-follow .youtube-button {
   color: #cd201f;
   border-color: #cd201f;
+}
+.bc-brand-color-white.sns-share .linkedin-button, .bc-brand-color-white.sns-follow .linkedin-button {
+  color: #0077b5;
+  border-color: #0077b5;
 }
 .bc-brand-color-white.sns-share .flickr-button, .bc-brand-color-white.sns-follow .flickr-button {
   color: #111;

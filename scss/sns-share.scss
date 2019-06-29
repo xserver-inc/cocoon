@@ -70,6 +70,10 @@
       background-color: $youtube_color;
     }
 
+    .linkedin-button{
+      background-color: $linkedin_color;
+    }
+
     .flickr-button{
       background-color: $flickr_color;
     }
@@ -160,6 +164,11 @@
     .youtube-button{
       color: $youtube_color;
       border-color: $youtube_color;
+    }
+
+    .linkedin-button{
+      color: $linkedin_color;
+      border-color: $linkedin_color;
     }
 
     .flickr-button{

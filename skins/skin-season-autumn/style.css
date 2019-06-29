@@ -524,6 +524,9 @@ article .tag-link:hover {
 .author-box .youtube-button {
 	background-color: #ef1515 !important;
 }
+.author-box .linkedin-button {
+	background-color: #0077b5 !important;
+}
 .author-box .flickr-button {
 	background-color: #0063dc !important;
 }
