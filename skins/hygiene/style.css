@@ -472,7 +472,7 @@ border-bottom:4px solid #5572ff;
 .linkedin-share-count::after {
   content: 'SHARE';
 }
-.bc-brand-color.sns-share .sns-share-buttons a .fa.fa-clipboard,
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-copy,
 .bc-brand-color.sns-share .sns-share-buttons a .share-count.copy-share-count{
   filter: drop-shadow(1px 1px 1px #333);
 }
