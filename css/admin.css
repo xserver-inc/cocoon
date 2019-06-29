@@ -1321,7 +1321,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
-.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }
@@ -2854,7 +2853,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
-.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }
