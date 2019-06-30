@@ -589,7 +589,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share.ss-high-and-low-lc a > span { padding-top: 3px; }
 .admin-settings .demo .sns-share.ss-high-and-low-cl a { flex-direction: column-reverse; }
 .admin-settings .demo .sns-share-buttons { flex-wrap: wrap; justify-content: space-around; align-content: center; }
-.admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
+.admin-settings .demo .sns-share-buttons a { width: 24%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
@@ -2123,7 +2123,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share.ss-high-and-low-lc a > span { padding-top: 3px; }
 .admin-settings .demo .sns-share.ss-high-and-low-cl a { flex-direction: column-reverse; }
 .admin-settings .demo .sns-share-buttons { flex-wrap: wrap; justify-content: space-around; align-content: center; }
-.admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
+.admin-settings .demo .sns-share-buttons a { width: 24%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
