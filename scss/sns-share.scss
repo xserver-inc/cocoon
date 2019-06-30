@@ -74,6 +74,10 @@
       background-color: $linkedin_color;
     }
 
+    .note-button{
+      background-color: $note_color;
+    }
+
     .flickr-button{
       background-color: $flickr_color;
     }
@@ -173,6 +177,11 @@
     .linkedin-button{
       color: $linkedin_color;
       border-color: $linkedin_color;
+    }
+
+    .note-button{
+      color: $note_color;
+      border-color: $note_color;
     }
 
     .flickr-button{

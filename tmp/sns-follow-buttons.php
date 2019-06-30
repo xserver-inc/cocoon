@@ -57,8 +57,12 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_linkedin_url($user_id); //LinkedInフォローURLの取得 ?>" class="follow-button linkedin-button linkedin-follow-button-sq" target="_blank" title="<?php _e( 'LinkedInをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-linkedin-logo"></span></a>
   <?php endif; ?>
 
+  <?php if (  get_the_author_note_url($user_id) )://noteフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_note_url($user_id); //noteフォローIDの取得 ?>" class="follow-button note-button note-follow-button-sq" target="_blank" title="<?php _e( 'noteをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-note-logo"></span></a>
+  <?php endif; ?>
+
   <?php if (  get_the_author_flickr_url($user_id) )://Flickrフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_flickr_url($user_id); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
+    <a href="<?php echo get_the_author_flickr_url($user_id); //FlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_pinterest_url($user_id) )://Pinterestフォローボタンを表示するか ?>

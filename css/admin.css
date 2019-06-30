@@ -544,6 +544,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button { background-color: #bd081c; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
 .admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button { background-color: #0077b5; }
+.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button { background-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
 .admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
@@ -565,6 +566,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button { color: #bd081c; border-color: #bd081c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button { color: #cd201f; border-color: #cd201f; }
 .admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button { color: #0077b5; border-color: #0077b5; }
+.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button { color: #41c9b4; border-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button { color: #111; border-color: #111; }
 .admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button { color: #ff9900; border-color: #ff9900; }
 .admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button { color: #c61e79; border-color: #c61e79; }
@@ -2076,6 +2078,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button { background-color: #bd081c; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
 .admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button { background-color: #0077b5; }
+.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button { background-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
 .admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
@@ -2097,6 +2100,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button { color: #bd081c; border-color: #bd081c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button { color: #cd201f; border-color: #cd201f; }
 .admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button { color: #0077b5; border-color: #0077b5; }
+.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button { color: #41c9b4; border-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button { color: #111; border-color: #111; }
 .admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button { color: #ff9900; border-color: #ff9900; }
 .admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button { color: #c61e79; border-color: #c61e79; }
