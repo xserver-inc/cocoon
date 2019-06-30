@@ -7,3 +7,16 @@
     }
   }
 }
+
+//Googleカスタム検索
+#cse-search-box input[name="q"] {
+  line-height: 34px;
+  width: calc(100% - 60px);
+  float: left;
+}
+
+#cse-search-box input[name="sa"] {
+  width: 60px;
+  padding: 0;
+  line-height: 34px;
+}
