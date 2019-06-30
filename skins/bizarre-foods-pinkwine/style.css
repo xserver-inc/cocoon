@@ -675,6 +675,10 @@ a.tag-link {
     color: #0077b5;
 }
 
+.bc-brand-color a.note-button {
+    color: #41c9b4;
+}
+
 .bc-brand-color a.flickr-button {
     color: #111;
 }
