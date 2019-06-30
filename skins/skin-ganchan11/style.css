@@ -105,6 +105,10 @@ body.public-page,.content .cf .main, .navi {
     border-bottom: solid 6px #FF847C;
 }
 
+#footer a {
+    background: none;
+}
+
 .footer.logo-text {
     color:#fff;
 }
