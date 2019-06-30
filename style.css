@@ -2973,7 +2973,7 @@ label.screen-reader-text {
   font-size: .8em;
   top: -1.8em;
   left: -3px;
-  line-height: 1.8em;
+  line-height: 1.8;
   padding: 0 1em 0 .8em;
   color: #fff;
   border-radius: 6px 6px 0 0;
