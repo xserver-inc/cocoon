@@ -529,6 +529,9 @@ article .tag-link:hover {
 .author-box .linkedin-button {
 	background-color: #0077b5 !important;
 }
+.author-box .note-button {
+	background-color: #41c9b4 !important;
+}
 .author-box .flickr-button {
 	background-color: #0063dc !important;
 }
