@@ -6,10 +6,10 @@ Error: Invalid CSS after "...ic ProN,"メイリオ",": expected ";", was ", "Mei
 
 29: .ff-meiryo,
 30: .wf-loading body{
-31: 
+31:   font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
 32: }
 33: .ff-hiragino{
-34:    font-family: 'ヒラギノ角ゴ ProN W3',Hiragino Sans,'ヒラギノ角ゴ ProN W3',Hiragino Kaku Gothic ProN,"メイリオ",, "Meiryo",  "游ゴシック体", "Yu Gothic",sans-serif;
+34:   font-family: 'ヒラギノ角ゴ ProN W3',Hiragino Sans,'ヒラギノ角ゴ ProN W3',Hiragino Kaku Gothic ProN,"メイリオ",, "Meiryo",  "游ゴシック体", "Yu Gothic",sans-serif;
 35: }
 36: .ff-ms-pgothic{
 37:   font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
@@ -87,4 +87,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...ic ProN,\"メイリオ\",\": expected \";\", was \", \"Meiryo\",  \"游...\"\A         on line 34 of C:/Users/yhira777/Local Sites/cocoon/app/public/wp-content/themes/cocoon-master/scss/font.scss\A         from line 4 of C:/Users/yhira777/Local Sites/cocoon/app/public/wp-content/themes/cocoon-master/scss/_amp-imports.scss\A         from line 4 of C:\Users\yhira777\Local Sites\cocoon\app\public\wp-content\themes\cocoon-master\scss\amp.scss\A \A 29: .ff-meiryo,\A 30: .wf-loading body{\A 31: \A 32: }\A 33: .ff-hiragino{\A 34:    font-family: 'ヒラギノ角ゴ ProN W3',Hiragino Sans,'ヒラギノ角ゴ ProN W3',Hiragino Kaku Gothic ProN,\"メイリオ\",, \"Meiryo\",  \"游ゴシック体\", \"Yu Gothic\",sans-serif;\A 35: }\A 36: .ff-ms-pgothic{\A 37:   font-family: \"MS PGothic\", \"Hiragino Kaku Gothic Pro\", \"游ゴシック体\", \"Yu Gothic\", \"Meiryo\", sans-serif;\A 38: }\A 39: "; }
+  content: "Error: Invalid CSS after \"...ic ProN,\"メイリオ\",\": expected \";\", was \", \"Meiryo\",  \"游...\"\A         on line 34 of C:/Users/yhira777/Local Sites/cocoon/app/public/wp-content/themes/cocoon-master/scss/font.scss\A         from line 4 of C:/Users/yhira777/Local Sites/cocoon/app/public/wp-content/themes/cocoon-master/scss/_amp-imports.scss\A         from line 4 of C:\Users\yhira777\Local Sites\cocoon\app\public\wp-content\themes\cocoon-master\scss\amp.scss\A \A 29: .ff-meiryo,\A 30: .wf-loading body{\A 31:   font-family: \"Meiryo\",  \"Hiragino Kaku Gothic Pro\", \"游ゴシック体\", \"Yu Gothic\",sans-serif;\A 32: }\A 33: .ff-hiragino{\A 34:   font-family: 'ヒラギノ角ゴ ProN W3',Hiragino Sans,'ヒラギノ角ゴ ProN W3',Hiragino Kaku Gothic ProN,\"メイリオ\",, \"Meiryo\",  \"游ゴシック体\", \"Yu Gothic\",sans-serif;\A 35: }\A 36: .ff-ms-pgothic{\A 37:   font-family: \"MS PGothic\", \"Hiragino Kaku Gothic Pro\", \"游ゴシック体\", \"Yu Gothic\", \"Meiryo\", sans-serif;\A 38: }\A 39: "; }
