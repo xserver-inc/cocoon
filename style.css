@@ -7220,8 +7220,11 @@ div.fb-like-mobile {
 }
 
 .search-edit {
-  font-size: 16px;
   font-family: inherit;
+}
+
+#search-menu-content .search-edit {
+  font-size: 16px;
 }
 
 .search-submit {
