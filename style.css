@@ -211,9 +211,8 @@ select {
   font-weight: 900;
 }
 
-.ff-meiryo,
-.wf-loading body {
-  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+.ff-hiragino {
+  font-family: "Hiragino Kaku Gothic Pro", 'ヒラギノ角ゴ ProN W3', "Meiryo",  "游ゴシック体", "Yu Gothic",sans-serif;
 }
 
 .ff-ms-pgothic {

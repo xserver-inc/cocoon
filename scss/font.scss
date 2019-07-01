@@ -28,7 +28,10 @@ $i: 24;
 //フォントファミリー
 .ff-meiryo,
 .wf-loading body{
-  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+
+}
+.ff-hiragino{
+   font-family: 'ヒラギノ角ゴ ProN W3',Hiragino Sans,'ヒラギノ角ゴ ProN W3',Hiragino Kaku Gothic ProN,"メイリオ",, "Meiryo",  "游ゴシック体", "Yu Gothic",sans-serif;
 }
 .ff-ms-pgothic{
   font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
