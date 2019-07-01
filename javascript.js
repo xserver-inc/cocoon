@@ -145,7 +145,7 @@
   //スライドインサイドバーのカテゴリーセレクトボックス選択処理
   $('.sidebar-menu-content .widget_categories select').change(function(){
     if ( this.options[ this.selectedIndex ].value > 0 ) {
-      this.parentNode.parentNode.submit();
+      this.parentNode.submit();
     }
   });
 
