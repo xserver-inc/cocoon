@@ -86,7 +86,7 @@ $bct-official: '\f024  公式サイト';
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;
-$bgc_hover_anime: all .7s ease;
+$bgc_hover_anime: all .7s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
@@ -378,6 +378,7 @@ $bgc_hover_anime: all .7s ease;
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
+  transition: $bgc_hover_anime;
 
   &:hover {
     @include bgc_hover;
