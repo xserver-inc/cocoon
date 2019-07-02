@@ -2778,7 +2778,7 @@ endif;
 //内部URLからタグオブジェクトを取得する
 if ( !function_exists( 'url_to_tag_object' ) ):
 function url_to_tag_object($url){
-  $tag_slug = str_replace(TAG_BASE_URL, '', get_query_removed_url($url));
+  $tag_slug = preg_replace(TAG_BASE_REG, '', get_query_removed_url($url));
   $tag_slug = preg_replace('{/.+}', '', $tag_slug);
   $tags = get_tags(array('slug' => $tag_slug));
   if (isset($tags[0])) {
