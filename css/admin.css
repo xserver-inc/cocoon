@@ -713,7 +713,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget { margin-bottom: 38px; }
 .admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; }
+.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s ease; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
@@ -2250,7 +2250,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget { margin-bottom: 38px; }
 .admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; }
+.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s ease; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
@@ -4585,7 +4585,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
 .tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }
-.tagcloud .admin-tag { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; flex: 0 1 auto; }
+.tagcloud .admin-tag { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s ease; flex: 0 1 auto; }
 .tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .tagcloud .admin-tag .tag-caption { word-break: break-all; }
 .tagcloud .admin-tag .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }

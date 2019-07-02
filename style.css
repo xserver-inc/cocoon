@@ -2120,6 +2120,7 @@ label.screen-reader-text {
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
+  transition: all 0.7s ease;
 }
 .tagcloud a:hover {
   background-color: #f5f8fa;

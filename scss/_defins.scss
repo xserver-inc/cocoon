@@ -378,6 +378,7 @@ $bgc_hover_anime: all .7s ease;
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
+  transition: $bgc_hover_anime;
 
   &:hover {
     @include bgc_hover;
