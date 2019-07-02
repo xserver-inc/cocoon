@@ -16,6 +16,18 @@ $args = array(
   'no_found_rows' => true,
   'posts_per_page' => get_carousel_max_count(),
 );
+//人気記事が有効の場合
+if ( is_carousel_popular_posts_enable()) {
+  $days = get_carousel_popular_posts_count_days();
+  $limit = get_carousel_max_count();
+  $records = get_access_ranking_records($days, $limit);
+  $post_ids = array();
+  //取得した投稿IDをセット
+  foreach ($records as $post) {
+    $post_ids[] = $post->ID; // 配列に追加
+  }
+  $args += array('post__in' => $post_ids);
+}
 $args = apply_filters('cocoon_carousel_args', $args);
 $query = new WP_Query( $args );
 // var_dump($query -> have_posts());

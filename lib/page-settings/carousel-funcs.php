@@ -16,7 +16,7 @@ function get_carousel_display_type(){
 endif;
 if ( !function_exists( 'is_carousel_visible' ) ):
 function is_carousel_visible(){
-  return (get_carousel_category_ids() || get_carousel_tag_ids()) &&
+  return (is_carousel_popular_posts_enable() || get_carousel_category_ids() || get_carousel_tag_ids()) &&
     (
       is_carousel_display_type_all_page() ||
       (is_front_top_page() && is_carousel_display_type_front_page_only()) ||
