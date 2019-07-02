@@ -23,6 +23,12 @@ function is_mobile_button_layout_type_footer_mobile_buttons(){
   return get_mobile_button_layout_type() == 'footer_mobile_buttons';
 }
 endif;
+//is_mobile_button_layout_type_footer_mobile_buttonsの旧関数名
+if ( !function_exists( 'is_mobile_button_layout_type_slide_in' ) ):
+function is_mobile_button_layout_type_slide_in(){
+  return is_mobile_button_layout_type_footer_mobile_buttons();
+}
+endif;
 if ( !function_exists( 'is_mobile_button_layout_type_header_mobile_buttons' ) ):
 function is_mobile_button_layout_type_header_mobile_buttons(){
   return get_mobile_button_layout_type() == 'header_mobile_buttons';
