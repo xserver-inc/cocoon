@@ -8894,6 +8894,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .footer-bottom.fdt-left-and-right .footer-bottom-content {
     flex-direction: column;
   }
+
+  .no-mobile-header-logo .logo-header {
+    display: none;
+  }
 }
 @media screen and (max-width: 834px) {
   .navi-in > .menu-header {

@@ -341,6 +341,11 @@ function body_class_additional($classes) {
     $classes[] = 'show-pinterest-button';
   }
 
+  //ヘッダーモバイルボタン表示時にサイトロゴを表示しない場合
+  if (!is_mobile_header_logo_visible()) {
+    $classes[] = 'no-mobile-header-logo';
+  }
+
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
 endif;

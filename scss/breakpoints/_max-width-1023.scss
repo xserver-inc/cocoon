@@ -129,3 +129,8 @@ div.sidebar{
 .footer-bottom.fdt-left-and-right .footer-bottom-content{
   flex-direction: column;
 }
+
+//ヘッダーモバイルボタン表示時にサイトロゴを表示しない
+.no-mobile-header-logo .logo-header {
+  display: none;
+}
