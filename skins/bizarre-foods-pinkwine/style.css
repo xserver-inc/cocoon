@@ -337,6 +337,14 @@ aside .ranking-item-rating {
 	.ranking-item-rating {
     font-size: .9em;
     }
+    .go-to-top {
+        right: 10px;
+        bottom: 10px;
+    }
+    .go-to-top-button {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 480px){
