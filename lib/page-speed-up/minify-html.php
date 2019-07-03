@@ -11,6 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($buffer) {
   global $post;
+  //_v($post);
   if (is_admin() || is_feed() || !$post) {
     return $buffer;
   }
@@ -80,11 +81,16 @@ endif;
 if ( !function_exists( 'is_minify_page' ) ):
 function is_minify_page(){
   if (is_admin()) return false;
+  if (includes_wp_admin_in_request_uri()) return false;
+  if (includes_wp_cron_php_in_request_uri()) return false;
+  if (includes_service_worker_js_in_http_referer()) return false;
   if (is_server_request_post()) return false;
   if (is_server_request_uri_backup_download_php()) return false;
   if (is_robots_txt_page()) return false;
   if (is_analytics_access_php_page()) return false;
   if (is_feed()) return false;
+  //_v($_SERVER);
+  //_v(time());
   return true;
 }
 endif;

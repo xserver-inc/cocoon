@@ -2190,6 +2190,50 @@ function is_server_request_uri_backup_download_php(){
 }
 endif;
 
+//リクエストURIが/app/public/index.phpか（再利用ブロック対策）
+if ( !function_exists( 'is_server_request_uri_app_public_index_php' ) ):
+function is_server_request_uri_app_public_index_php(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_URI'])) {
+    $res = $_SERVER['REQUEST_URI'] == '/app/public/index.php';
+  }
+  return $res;
+}
+endif;
+
+//service-worker.js除外
+if ( !function_exists( 'includes_service_worker_js_in_http_referer' ) ):
+function includes_service_worker_js_in_http_referer(){
+  $res = false;
+  if (isset($_SERVER['HTTP_REFERER'])) {
+    $res = includes_string($_SERVER['HTTP_REFERER'], 'service-worker.js');
+  }
+  return $res;
+}
+endif;
+
+//cron除外
+if ( !function_exists( 'includes_wp_cron_php_in_request_uri' ) ):
+function includes_wp_cron_php_in_request_uri(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_URI'])) {
+    $res = includes_string($_SERVER['REQUEST_URI'], '/wp-cron.php');
+  }
+  return $res;
+}
+endif;
+
+//管理画面除外（再利用ブロック対策）
+if ( !function_exists( 'includes_wp_admin_in_request_uri' ) ):
+function includes_wp_admin_in_request_uri(){
+  $res = false;
+  if (isset($_SERVER['REQUEST_URI'])) {
+    $res = includes_string($_SERVER['REQUEST_URI'], '/wp-admin/');
+  }
+  return $res;
+}
+endif;
+
 //現在のページでサイドバーが表示されるか
 if ( !function_exists( 'is_the_page_sidebar_visible' ) ):
 function is_the_page_sidebar_visible(){
