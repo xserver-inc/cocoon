@@ -246,9 +246,6 @@ define('BEFORE_1ST_H2_TOC_PRIORITY_HIGH', 10000);
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
 define('URL_REG', '/'.URL_REG_STR.'/');
 
-//タグのベース正規表現
-define('TAG_BASE_REG', '/'.preg_quote(home_url('/'), '/').'(.+\/)*tag\/'.'/');
-
 //Font Awesome4.7のCDN
 define('FONT_AWESOME4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //Font Awesome5のCDN

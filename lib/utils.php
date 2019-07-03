@@ -2778,12 +2778,21 @@ endif;
 //内部URLからタグオブジェクトを取得する
 if ( !function_exists( 'url_to_tag_object' ) ):
 function url_to_tag_object($url){
-  $tag_slug = preg_replace(TAG_BASE_REG, '', get_query_removed_url($url));
-  $tag_slug = preg_replace('{/.+}', '', $tag_slug);
-  $tags = get_tags(array('slug' => $tag_slug));
-  if (isset($tags[0])) {
-    $tag = $tags[0];
-    return $tag;
+  //タグのベースURLの正規表現
+  $tag_base = get_option('tag_base');
+  $tag_base = $tag_base ? preg_quote($tag_base, '/') : 'tag';
+  $tag_base_reg = '/'.preg_quote(home_url('/'), '/').'(.+\/)*'.$tag_base.'\/'.'/';
+
+  $removed_url = get_query_removed_url($url);
+  $tag_slug = preg_replace($tag_base_reg, '', $removed_url);
+  //置換が行われた場合
+  if ($removed_url != $tag_slug) {
+    $tag_slug = preg_replace('{/.+}', '', $tag_slug);
+    $tags = get_tags(array('slug' => $tag_slug));
+    if (isset($tags[0])) {
+      $tag = $tags[0];
+      return $tag;
+    }
   }
 }
 endif;
