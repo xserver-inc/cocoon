@@ -69,6 +69,10 @@ $_MENU_ICON = null;
 global $_MOBILE_COPY_BUTTON;
 $_MOBILE_COPY_BUTTON = null;
 
+//モバイルフッターコピーボタン
+global $_IS_HTTP_MINIFY;
+$_IS_HTTP_MINIFY = false;
+
 //エディターキーカラー
 define('DEFAULT_EDITOR_KEY_COLOR', '#19448e');
 

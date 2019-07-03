@@ -21,8 +21,11 @@ function code_minify_call_back($buffer) {
   $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
 
   //HTMLの縮小化
-  if (is_html_minify_enable()) {
+  global $_IS_HTTP_MINIFY;
+  if (is_html_minify_enable() && !$_IS_HTTP_MINIFY) {
     $buffer = minify_html($buffer);
+    $_IS_HTTP_MINIFY = true;
+    //_v('minify_html');
   }
 
   ///////////////////////////////////////////
@@ -89,7 +92,7 @@ function is_minify_page(){
   if (is_robots_txt_page()) return false;
   if (is_analytics_access_php_page()) return false;
   if (is_feed()) return false;
-  //_v($_SERVER);
+  // _v($_SERVER);
   //_v(time());
   return true;
 }
