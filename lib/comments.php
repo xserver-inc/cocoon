@@ -132,11 +132,11 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
 }
 endif;
 
-//get_avatarで取得するタグの変更
-add_filter('get_avatar', 'get_avatar_tag_custom');
-if ( !function_exists( 'get_avatar_tag_custom' ) ):
-function get_avatar_tag_custom($avatar){
-  $avatar = str_replace("'", '"', $avatar);
-  return $avatar;
-}
-endif;
+// //get_avatarで取得するタグの変更
+// add_filter('get_avatar', 'get_avatar_tag_custom');
+// if ( !function_exists( 'get_avatar_tag_custom' ) ):
+// function get_avatar_tag_custom($avatar){
+//   $avatar = str_replace("'", '"', $avatar);
+//   return $avatar;
+// }
+// endif;
