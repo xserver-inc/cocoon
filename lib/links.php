@@ -25,8 +25,7 @@ add_filter('widget_text', 'replace_anchor_links', 12);//テキストウィジェ
 add_filter('widget_text_pc_text', 'replace_anchor_links', 12);
 add_filter('widget_classic_text', 'replace_anchor_links', 12);
 add_filter('widget_text_mobile_text', 'replace_anchor_links', 12);
-add_filter('the_category_content', 'replace_anchor_links', 12);
-add_filter('the_tag_content', 'replace_anchor_links', 12);
+add_filter('the_category_tag_content', 'replace_anchor_links', 12);
 if ( !function_exists( 'replace_anchor_links' ) ):
 function replace_anchor_links($the_content) {
   $res = preg_match_all('{<a [^>]+?>.+?</a>}is', $the_content, $m);

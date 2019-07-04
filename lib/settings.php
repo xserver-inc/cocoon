@@ -275,12 +275,9 @@ add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
 //アピールリア
 add_filter('appeal_area_message', 'do_shortcode');
-//カテゴリページ
-add_filter('the_category_content', 'do_shortcode');
-add_filter('the_category_content', 'shortcode_unautop');
-//タグページ
-add_filter('the_tag_content', 'do_shortcode');
-add_filter('the_tag_content', 'shortcode_unautop');
+//カテゴリ・タグページ
+add_filter('the_category_tag_content', 'do_shortcode');
+add_filter('the_category_tag_content', 'shortcode_unautop');
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
