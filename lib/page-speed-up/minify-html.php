@@ -21,10 +21,12 @@ function code_minify_call_back($buffer) {
   $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
 
   //HTMLの縮小化
-  global $_IS_HTTP_MINIFY;
-  if (is_html_minify_enable() && !$_IS_HTTP_MINIFY) {
+  //global $_IS_HTTP_MINIFY;
+  //_v($_SERVER);
+  // if (is_html_minify_enable() && !$_IS_HTTP_MINIFY) {
+  if (is_html_minify_enable()) {
     $buffer = minify_html($buffer);
-    $_IS_HTTP_MINIFY = true;
+    //$_IS_HTTP_MINIFY = true;
     //_v('minify_html');
   }
 
@@ -99,13 +101,10 @@ function is_minify_page(){
 endif;
 
 //最終HTML取得開始
-add_action('after_setup_theme', 'code_minify_buffer_start', 99999999);
+add_action('get_header', 'code_minify_buffer_start', 99999999);
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  // if (is_admin()) return;
-  // if (is_server_request_post()) return;
-  // if (is_server_request_uri_backup_download_php()) return;
-  if (!is_minify_page()) return;
+  // if (!is_minify_page()) return;
 
   ob_start('code_minify_call_back');
 }
@@ -115,7 +114,7 @@ endif;
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  if (!is_minify_page()) return;
+  // if (!is_minify_page()) return;
 
   if (ob_get_length()){
     ob_end_flush();
