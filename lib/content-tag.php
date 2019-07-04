@@ -59,6 +59,7 @@ function get_tag_content($tag_id = null){
     $content = tag_description($tag_id);
 
   $content = wpautop($content);
+  $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
   $content = apply_filters( 'the_tag_content', $content );
   return $content;
 }
