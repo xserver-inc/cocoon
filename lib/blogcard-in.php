@@ -219,7 +219,7 @@ if ( is_internal_blogcard_enable() ) {
   add_filter('the_content', 'url_to_internal_blogcard', 11);
   add_filter('widget_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_pc_text', 'url_to_internal_blogcard', 11);
-  add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
+  //add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
   add_filter('the_category_tag_content', 'url_to_internal_blogcard', 11);
 }
@@ -290,7 +290,7 @@ endif;
 add_filter('the_content', 'url_shortcode_to_blogcard' ,9999);
 add_filter('widget_text', 'url_shortcode_to_blogcard' ,9999);
 add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 9999);
-add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 9999);
+//add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 9999);
 add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 9999);
 add_filter('comment_text', 'url_shortcode_to_blogcard', 9999);
 add_filter('the_category_tag_content', 'url_shortcode_to_blogcard', 9999);

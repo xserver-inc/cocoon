@@ -23,7 +23,7 @@ add_filter('the_author_box_name', 'replace_anchor_links', 12);
 add_filter('get_the_author_description', 'replace_anchor_links', 12);
 add_filter('widget_text', 'replace_anchor_links', 12);//テキストウィジェットをフック
 add_filter('widget_text_pc_text', 'replace_anchor_links', 12);
-add_filter('widget_classic_text', 'replace_anchor_links', 12);
+//add_filter('widget_classic_text', 'replace_anchor_links', 12);
 add_filter('widget_text_mobile_text', 'replace_anchor_links', 12);
 add_filter('the_category_tag_content', 'replace_anchor_links', 12);
 if ( !function_exists( 'replace_anchor_links' ) ):
