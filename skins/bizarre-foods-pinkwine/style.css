@@ -65,7 +65,7 @@ span.site-name-text {
     color: #545454;
 }
 
-.item-label {
+#navi .navi-in a, #navi .navi-in a:hover {
     color: slategrey;
 }
 
