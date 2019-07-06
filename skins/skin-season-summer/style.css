@@ -503,10 +503,6 @@ article .tag-link:hover {
 	border-width: 21px;
 	margin-left: -21px;
 }
-#container .nwa .author-box a {
-	color: #fff;
-	border: none;
-}
 .nwa .author-box .sns-follow-message {
 	margin: 2.3em 0 0;
 	display: block;
