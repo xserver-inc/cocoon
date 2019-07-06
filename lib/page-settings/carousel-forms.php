@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_carousel', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo carousel-area-demo" style="">
-      <?php get_template_part('tmp/carousel'); ?>
+      <?php get_sanitize_preview_template_part('tmp/carousel'); ?>
     </div>
     <?php generate_tips_tag(__( '設定が反映されない場合はリロードしてみてください。', THEME_NAME )); ?>
     <?php endif; ?>

@@ -659,3 +659,13 @@ function tiny_mce_before_init_custom( $mceInit ) {
 }
 endif;
 
+//無害化したプレーで医療のテンプレートファイル呼び出し
+if ( !function_exists( 'get_sanitize_preview_template_part' ) ):
+function get_sanitize_preview_template_part($slug, $name = null){
+  ob_start();
+  get_template_part($slug, $name);
+  $tag = ob_get_clean();
+  $tag = preg_replace('{<form.+?</form>}is', '', $tag);
+  echo $tag;
+}
+endif;

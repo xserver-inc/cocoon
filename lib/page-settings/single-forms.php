@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <div class="demo" style="overflow: auto;">
-              <?php get_template_part('tmp/categories-tags'); ?>
+              <?php get_sanitize_preview_template_part('tmp/categories-tags'); ?>
             </div>
             <?php generate_tips_tag(__( 'デモはランダムです。', THEME_NAME )); ?>
           </td>
@@ -79,7 +79,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
               <div <?php body_class(); ?>>
-              <?php get_template_part('tmp/related-entries') ?>
+              <?php get_sanitize_preview_template_part('tmp/related-entries') ?>
               </div>
             </div>
             <?php generate_tips_tag(__( 'デモの関連記事はランダムです。', THEME_NAME )); ?>
@@ -276,7 +276,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo">
               <div <?php body_class(); ?>>
-              <?php get_template_part('tmp/pager-post-navi') ?>
+              <?php get_sanitize_preview_template_part('tmp/pager-post-navi') ?>
               </div>
             </div>
             <?php generate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
