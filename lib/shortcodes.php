@@ -425,8 +425,8 @@ endif;
 
 //ブログカードショートコード
 if (!shortcode_exists('blogcard')) {
-}
   add_shortcode('blogcard', 'blogcard_shortcode');
+}
 if ( !function_exists( 'blogcard_shortcode' ) ):
 function blogcard_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
@@ -574,3 +574,15 @@ function navi_menu_shortcode($atts){
   return apply_filters('cocoon_navi_card_tag', $tag);
 }
 endif;
+
+
+// //検索フォームショートコード
+// add_shortcode('searchform', 'searchform_shortcode');
+// if ( !function_exists( 'searchform_shortcode' ) ):
+// function searchform_shortcode( $atts, $content = null ) {
+//   extract( shortcode_atts( array(), $atts ) );
+//   if (!is_admin()) {
+//     get_template_part('searchform');
+//   }
+// }
+// endif;
