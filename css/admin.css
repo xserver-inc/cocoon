@@ -1599,7 +1599,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .fb-like-balloon-button { float: none; width: 100%; height: 30px; display: block; padding-top: 0; line-height: 24px; }
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
-.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); transition: .3s; }
+.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
@@ -1608,6 +1608,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
 .admin-settings .demo .logo-menu-button { text-align: center; font-weight: 900; line-height: 50px; min-width: 200px; overflow: hidden; }
 .admin-settings .demo .logo-menu-button img { max-height: 44px; display: block; margin: 0 auto; }
 .admin-settings .demo .fa.menu-icon { font: inherit; }
@@ -3136,7 +3137,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .fb-like-balloon-button { float: none; width: 100%; height: 30px; display: block; padding-top: 0; line-height: 24px; }
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
-.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); transition: .3s; }
+.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
@@ -3145,6 +3146,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
 .admin-settings .demo .logo-menu-button { text-align: center; font-weight: 900; line-height: 50px; min-width: 200px; overflow: hidden; }
 .admin-settings .demo .logo-menu-button img { max-height: 44px; display: block; margin: 0 auto; }
 .admin-settings .demo .fa.menu-icon { font: inherit; }
