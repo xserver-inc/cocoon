@@ -155,7 +155,7 @@
     $('html').addClass('wf-active');
   }
   */
-
+/*
   $(function(){
     // #で始まるアンカーをクリックした場合に処理
     $('a[href^=#]').click(function() {
@@ -172,7 +172,7 @@
       return false;
     });
   });
-
+*/
 })(jQuery);
 
 /*
