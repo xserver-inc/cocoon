@@ -22,15 +22,17 @@ define('THEME_CHILD_DIR', THEME_NAME.'-child');
 //テーマ設定ページ用のURLクエリ
 define('THEME_SETTINGS_PAFE', 'theme-settings');
 //ホームバスの取得
-define('ROOT_PATH', trailingslashit($_SERVER['DOCUMENT_ROOT']));
+$document_root = isset($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '';
+define('ROOT_PATH', trailingslashit($document_root));
 //PWA Service Workerのバージョン
 define('PWA_SERVICE_WORKER_VERSION', '20190523');
 
 //開発関係の場合デバッグ値を有効にする
-define('DEBAG_VALU', $_SERVER["HTTP_HOST"] == THEME_NAME.'.local' ? 1 : 0);
+$http_host = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : '';
+define('DEBAG_VALUE', $http_host == THEME_NAME.'.local' ? 1 : 0);
 
 //デバッグモード
-define('DEBUG_MODE', DEBAG_VALU);
+define('DEBUG_MODE', DEBAG_VALUE);
 define('DEBUG_CACHE_ENABLE', 1);//キャッシュ機能を有効にするか（def：1）
 define('DEBUG_ADMIN_DEMO_ENABLE', apply_filters('cocoon_setting_all_previews', true));//設定ページのプレビューを有効にするか（def：1）
 
