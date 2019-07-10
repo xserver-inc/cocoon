@@ -539,9 +539,9 @@ function amazon_product_link_shortcode($atts){
 
           $tmp_tag .=
             '<div class="image-thumb swatch-image-thumb si-thumb'.esc_attr($display_none_class).'">'.
-              '<img src="'.esc_url($SwatchImageURL).'" alt="" widh="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'">'.
+              '<img src="'.esc_url($SwatchImageURL).'" alt="" width="'.esc_attr($SwatchImageWidth).'" height="'.esc_attr($SwatchImageHeight).'">'.
               '<div class="image-content">'.
-              '<img src="'.esc_url($LargeImageURL).'" alt="" widh="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
+              '<img src="'.esc_url($LargeImageURL).'" alt="" width="'.esc_attr($LargeImageWidth).'" height="'.esc_attr($LargeImageHeight).'">'.
               '</div>'.
             '</div>';
         }
