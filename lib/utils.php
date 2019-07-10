@@ -1812,6 +1812,17 @@ function sanitize_comma_text($value){
 }
 endif;
 
+//配列のサニタイズ
+if ( !function_exists( 'sanitize_array' ) ):
+function sanitize_array($array){
+  if (is_array($array)) {
+    return $array;
+  } else {
+    return array();
+  }
+}
+endif;
+
 //アクセステーブル用の現在の日時文字列
 if ( !function_exists( 'get_current_db_date' ) ):
 function get_current_db_date(){

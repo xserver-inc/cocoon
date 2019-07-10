@@ -10,8 +10,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (is_post_navi_visible()): ?>
 <div id="pager-post-navi" class="pager-post-navi<?php echo get_additional_post_navi_classes(); ?> cf">
 <?php
-$prevpost = get_adjacent_post(false, '', true); //前の記事
-$nextpost = get_adjacent_post(false, '', false); //次の記事
+$in_same_term = is_post_navi_same_category_enable();
+$excluded_terms = sanitize_array(get_post_navi_exclude_category_ids());
+$prevpost = get_adjacent_post($in_same_term, $excluded_terms, true); //前の記事
+$nextpost = get_adjacent_post($in_same_term, $excluded_terms, false); //次の記事
 if( $prevpost or $nextpost ){ //前の記事、次の記事いずれか存在しているとき
 ?>
 <?php
