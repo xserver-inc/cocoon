@@ -314,6 +314,24 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- カテゴリー -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_POST_NAVI_SAME_CATEGORY_ENABLE, __('カテゴリー', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_POST_NAVI_SAME_CATEGORY_ENABLE , is_post_navi_same_category_enable(), __( '同一カテゴリーのものを表示する', THEME_NAME ));
+            generate_tips_tag(__( '投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定してある場合は、複数に属するものが表示されます。', THEME_NAME ));
+
+            //除外カテゴリー
+            generate_label_tag(OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, __('除外カテゴリー', THEME_NAME) );
+            generate_hierarchical_category_check_list( 0, OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, get_post_navi_exclude_category_ids(), 300 );
+            generate_tips_tag(__( 'ページ送りナビに表示させないカテゴリを選択してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- 枠線表示 -->
         <tr>
           <th scope="row">

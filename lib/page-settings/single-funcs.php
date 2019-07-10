@@ -174,6 +174,22 @@ function is_post_navi_type_spuare(){
 }
 endif;
 
+//ページ送りナビに表示するカテゴリーは同一にする
+define('OP_POST_NAVI_SAME_CATEGORY_ENABLE', 'post_navi_same_category_enable');
+if ( !function_exists( 'is_post_navi_same_category_enable' ) ):
+function is_post_navi_same_category_enable(){
+  return get_theme_option(OP_POST_NAVI_SAME_CATEGORY_ENABLE);
+}
+endif;
+
+//ページ送りナビで除外するカテゴリーID
+define('OP_POST_NAVI_EXCLUDE_CATEGORY_IDS', 'post_navi_exclude_category_ids');
+if ( !function_exists( 'get_post_navi_exclude_category_ids' ) ):
+function get_post_navi_exclude_category_ids(){
+  return get_theme_option(OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, array());
+}
+endif;
+
 //ページ送りナビ枠線の表示
 define('OP_POST_NAVI_BORDER_VISIBLE', 'post_navi_border_visible');
 if ( !function_exists( 'is_post_navi_border_visible' ) ):
