@@ -314,6 +314,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 表示位置 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_POST_NAVI_POSITION, __('表示位置', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'under_content' => __( '本文下', THEME_NAME ),
+              'over_related' => __( '関連記事上', THEME_NAME ),
+              'under_related' => __( '関連記事下', THEME_NAME ),
+              'under_comment' => __( 'コメント下', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_POST_NAVI_POSITION, $options, get_post_navi_position());
+            generate_tips_tag(__( 'ページ送りナビを表示する位置を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- カテゴリー -->
         <tr>
           <th scope="row">

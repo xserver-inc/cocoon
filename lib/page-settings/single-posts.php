@@ -67,6 +67,9 @@ update_theme_option(OP_POST_NAVI_VISIBLE);
 //ページ送りナビの表示タイプ
 update_theme_option(OP_POST_NAVI_TYPE);
 
+//ページ送りナビの表示位置
+update_theme_option(OP_POST_NAVI_POSITION);
+
 //ページ送りナビに表示するカテゴリーは同一にする
 update_theme_option(OP_POST_NAVI_SAME_CATEGORY_ENABLE);
 
