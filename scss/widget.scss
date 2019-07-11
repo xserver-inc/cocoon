@@ -6,15 +6,15 @@ label.screen-reader-text{
   display: none;
 }
 
-/*ウィジェットリスト*/
-.widget{
-  margin-bottom: 38px;
+// /*ウィジェットリスト*/
+// .widget{
+//   margin-bottom: 38px;
 
-  ul{
-    @include list_cancel;
-  }
+//   ul{
+//     @include list_cancel;
+//   }
 
-}
+// }
 
 /*タグクラウド*/
 .tagcloud {

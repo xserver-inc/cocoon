@@ -2092,16 +2092,6 @@ label.screen-reader-text {
   display: none;
 }
 
-/*ウィジェットリスト*/
-.widget {
-  margin-bottom: 38px;
-}
-.widget ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 /*タグクラウド*/
 .tagcloud {
   display: flex;
