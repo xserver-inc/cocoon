@@ -324,7 +324,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'under_content' => __( '本文下', THEME_NAME ),
               'over_related' => __( '関連記事上', THEME_NAME ),
-              'under_related' => __( '関連記事下', THEME_NAME ),
+              'under_related' => __( '関連記事下（デフォルト）', THEME_NAME ),
               'under_comment' => __( 'コメント下', THEME_NAME ),
             );
             generate_radiobox_tag(OP_POST_NAVI_POSITION, $options, get_post_navi_position());
