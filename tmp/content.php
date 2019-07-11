@@ -97,6 +97,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
 
+        <?php //本文下ページ送りナビ
+        if (is_post_navi_position_under_content()) {
+          get_template_part('tmp/pager-post-navi');
+        } ?>
+
         <?php //カテゴリー・タグ
         get_template_part('tmp/categories-tags'); ?>
 
