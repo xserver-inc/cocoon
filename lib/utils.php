@@ -2994,3 +2994,13 @@ function get_abs_htaccess_file(){
   return get_abs_home_path().'.htaccess';
 }
 endif;
+
+//ブログカードコンテンツ
+if ( !function_exists( 'fix_blogcard_content' ) ):
+function fix_blogcard_content($the_content){
+  $the_content = str_replace('</p><p>', "</p>\n<p>", $the_content);
+  $the_content = preg_replace('{<p> +}', '<p>', $the_content);
+  $the_content = preg_replace('{ +</p>}', '</p>', $the_content);
+  return $the_content;
+}
+endif;
