@@ -328,7 +328,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'under_comment' => __( 'コメント下', THEME_NAME ),
             );
             generate_radiobox_tag(OP_POST_NAVI_POSITION, $options, get_post_navi_position());
-            generate_tips_tag(__( 'ページ送りナビを表示する位置を変更します。', THEME_NAME ));
+            generate_tips_tag(__( 'ページ送りナビを表示する位置を変更します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/post-navi-position/'));
             ?>
           </td>
         </tr>
@@ -341,12 +341,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_POST_NAVI_SAME_CATEGORY_ENABLE , is_post_navi_same_category_enable(), __( '同一カテゴリーのものを表示する', THEME_NAME ));
-            generate_tips_tag(__( '投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定してある場合は、複数に属するものが表示されます。', THEME_NAME ));
+            generate_tips_tag(__( '投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定してある場合は、複数に属するものが表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/in-same-categories-post-navi/'));
 
             //除外カテゴリー
             generate_label_tag(OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, __('除外カテゴリー', THEME_NAME) );
             generate_hierarchical_category_check_list( 0, OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, get_post_navi_exclude_category_ids(), 300 );
-            generate_tips_tag(__( 'ページ送りナビに表示させないカテゴリを選択してください。', THEME_NAME ));
+            generate_tips_tag(__( 'ページ送りナビに表示させないカテゴリを選択してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/excluded-categories-post-navi/'));
             ?>
           </td>
         </tr>
