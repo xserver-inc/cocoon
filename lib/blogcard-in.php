@@ -185,8 +185,8 @@ endif;
 //本文中のURLをブログカードタグに変更する
 if ( !function_exists( 'url_to_internal_blogcard' ) ):
 function url_to_internal_blogcard($the_content) {
-  //ブロックエディターのブログカード用の本文整形
-  $the_content = fix_blogcard_content($the_content);
+  // //ブロックエディターのブログカード用の本文整形
+  // $the_content = fix_blogcard_content($the_content);
   //_v($the_content);
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/'.preg_quote(get_the_site_domain()).'(\/)?([-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)?(<\/a>)?(<\/p>)?/im', $the_content,$m);
   //_v($m);
