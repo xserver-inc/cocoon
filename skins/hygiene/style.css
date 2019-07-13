@@ -1735,8 +1735,8 @@ input[type="checkbox"] {
 
 /* HACK:検索ボタン */
 .search-submit {
-    right: 10px;
-    top: 3.2px;
+    right: 0;
+    top: -1px;
     font-size: 25px;
     line-height: 45px;
     border: none;
