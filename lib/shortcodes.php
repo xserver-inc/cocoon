@@ -519,7 +519,7 @@ function navi_menu_shortcode($atts){
       $image_url = get_category_eye_catch_url($object_id);
       $image_attributes = get_navi_card_image_attributes($image_url);
     }
-    elseif ($object == 'custom') {//カスタムメニュー
+    elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
       //タグページのアイキャッチを取得
       $tag_obj = url_to_tag_object($url);
       if ($tag_obj && isset($tag_obj->term_id)) {
