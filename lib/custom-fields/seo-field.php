@@ -75,7 +75,7 @@ function seo_custom_box_view(){
   $the_page_meta_keywords = get_the_page_meta_keywords();
   $the_page_noindex = is_the_page_noindex();
   $the_page_nofollow = is_the_page_nofollow();
-  $the_page_canonical = get_the_page_canonical();
+  $the_page_canonical_url = get_the_page_canonical_url();
 
   //タイトル
   echo '<label class="box-label">'.__( 'SEOタイトル', THEME_NAME );
@@ -115,7 +115,7 @@ function seo_custom_box_view(){
 
   //canonical
   $canonical_form = '<label class="box-label">'.__( 'canonical', THEME_NAME ).'</label>';
-  $canonical_form .= '<input type="text" style="width:100%" placeholder="'.__( 'canonical URLの入力', THEME_NAME ).'" name="the_page_canonical" value="'.$the_page_canonical.'" />';
+  $canonical_form .= '<input type="text" style="width:100%" placeholder="'.__( 'canonical URLの入力', THEME_NAME ).'" name="the_page_canonical_url" value="'.$the_page_canonical_url.'" />';
   $canonical_form .= '<p class="howto">'.__( 'ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンからのページ評価が分散されないよう、正規のURLがどれなのかを検索エンジンに示すために用いる記述です。コンテンツが重複している場合は、正規ページのURLを入力してください。', THEME_NAME ).'</p>';
   generate_toggle_area(__( '詳細設定', THEME_NAME ), $canonical_form);
 }
@@ -181,12 +181,12 @@ function seo_custom_box_save_data(){
     update_post_meta($id, 'is_nofollow', $the_page_nofollow);
   }
   //canonical
-  $the_page_canonical = null;
-  if ( isset( $_POST['the_page_canonical'] ) ){
-    $the_page_canonical = $_POST['the_page_canonical'];
-    $the_page_canonical_key = 'the_page_canonical';
-    add_post_meta($id, $the_page_canonical_key, $the_page_canonical, true);
-    update_post_meta($id, $the_page_canonical_key, $the_page_canonical);
+  $the_page_canonical_url = null;
+  if ( isset( $_POST['the_page_canonical_url'] ) ){
+    $the_page_canonical_url = $_POST['the_page_canonical_url'];
+    $the_page_canonical_url_key = 'the_page_canonical_url';
+    add_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url, true);
+    update_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url);
   }
 }
 endif;
@@ -267,10 +267,10 @@ function is_the_page_nofollow($id = null){
 endif;
 
 //canonicalを取得
-if ( !function_exists( 'get_the_page_canonical' ) ):
-  function get_the_page_canonical($id = null){
+if ( !function_exists( 'get_the_page_canonical_url' ) ):
+  function get_the_page_canonical_url($id = null){
     $the_id = $id ? $id : get_the_ID();
-    $value = trim(get_post_meta($the_id, 'the_page_canonical', true));
+    $value = trim(get_post_meta($the_id, 'the_page_canonical_url', true));
 
     return $value;
   }
