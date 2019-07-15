@@ -312,7 +312,8 @@ function generate_canonical_url(){
   //タグページはnoindexにしているけどcanonicalタグは必要か？
   //404ページはAll in One SEO Packはcanonicalタグを出力していないようだけど必要か？
   $canonical_url = null;
-
+  //投稿・固定ページの場合のcanonical URL
+  $the_page_canonical_url = get_the_page_canonical_url();
   if (is_home() && is_paged()) {
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_front_page()) {
@@ -324,11 +325,23 @@ function generate_canonical_url(){
   } elseif (is_tag()) {
     $canonical_url = get_query_removed_requested_url();
   } elseif (is_singular() && !$multipage) {
-    $canonical_url = get_permalink();
+    if ($the_page_canonical_url) {
+      $canonical_url = $the_page_canonical_url;
+    } else {
+      $canonical_url = get_permalink();
+    }
   } elseif (is_singular() && ($paged >= 2 || $page >= 2)) {
-    $canonical_url = get_query_removed_requested_url();
-  } elseif (is_singular()) {
-    $canonical_url = get_permalink();
+    if ($the_page_canonical_url) {
+      $canonical_url = $the_page_canonical_url;
+    } else {
+      $canonical_url = get_query_removed_requested_url();
+    }
+  } elseif (is_singular()) {//この条件分岐は不要かも
+    if ($the_page_canonical_url) {
+      $canonical_url = $the_page_canonical_url;
+    } else {
+      $canonical_url = get_permalink();
+    }
   } elseif(is_404()) {
     $canonical_url =  home_url().'/404/';
   } else {
