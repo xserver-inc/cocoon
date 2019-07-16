@@ -548,13 +548,8 @@ function navi_menu_shortcode($atts){
       $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
     }
 
-    $navi_card_class = '';
-    if ($type) {
-      $navi_card_class = ' navi-card-type-'.$type;
-    }
-
     $tag .=
-'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap'.esc_attr($navi_card_class).'">
+'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
   <div class="navi-card-box cf">
     '.$osusume.'
     <figure class="navi-card-thumb">
@@ -571,7 +566,11 @@ function navi_menu_shortcode($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = '<div class="navi-cards no-icon">'.$tag.'</div>';
+    $navi_card_class = '';
+    if ($type) {
+      $navi_card_class = ' navi-card-type-'.$type;
+    }
+    $tag = '<div class="navi-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   }
 
   return apply_filters('cocoon_navi_card_tag', $tag);

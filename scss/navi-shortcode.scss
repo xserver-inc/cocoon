@@ -15,7 +15,7 @@
   padding: 0;
 }
 
-.navi-card-type-1 {
+.navi-card-type-1 a {
 
   padding-bottom: 2px;
   border-bottom: 2px dotted $xx_thin;
@@ -29,7 +29,7 @@
   }
 }
 
-.navi-card-type-2 {
+.navi-card-type-2 a {
   border-radius: $basic_border_radius;
   border: 1px solid $thin;
 }

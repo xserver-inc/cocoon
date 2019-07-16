@@ -7349,18 +7349,18 @@ div.fb-like-mobile {
   padding: 0;
 }
 
-.navi-card-type-1 {
+.navi-card-type-1 a {
   padding-bottom: 2px;
   border-bottom: 2px dotted #f3f4f5;
 }
-.navi-card-type-1:first-of-type {
+.navi-card-type-1 a:first-of-type {
   border-top: 2px solid #f3f4f5;
 }
-.navi-card-type-1:last-of-type {
+.navi-card-type-1 a:last-of-type {
   border-bottom: 2px solid #f3f4f5;
 }
 
-.navi-card-type-2 {
+.navi-card-type-2 a {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
