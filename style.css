@@ -3266,7 +3266,7 @@ label.screen-reader-text {
 
 .btn-shine:before,
 .btn-wrap-shine > a:before {
-  animation: shine 5s ease-in-out infinite;
+  animation: shine 3s ease-in-out infinite;
   background-color: #fff;
   content: " ";
   height: 100%;
