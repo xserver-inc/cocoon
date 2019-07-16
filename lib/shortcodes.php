@@ -480,6 +480,9 @@ endif;
 
 if ( !function_exists( 'get_navi_card_image_attributes' ) ):
 function get_navi_card_image_attributes($image_url){
+  if (!$image_url) {
+    return false;
+  }
   $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
   $image_attributes = array();
   $image_attributes[1] = 120;
