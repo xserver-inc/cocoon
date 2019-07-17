@@ -1,185 +1,138 @@
 /*
   Skin Name: ミックスブルー
   Description: 青を基調としたシンプルなスキン
-  Skin URI: https://zvalinf.info/archives/18
+  Skin URI: https://zvalinf.info/skin-check/
   Author: y.hiroaki
   Author URI: https://zvalinf.info
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-mixblue.png
-  Version: 0.0.1
+  Version: 0.0.2
   Priority: 200501
 */
 
 /* ---------------------------------------------------------
 / 『グローバルメニュー』
-/
-/   ・文字の色＋マウスオーバーでの文字、背景の色
-/   ・背景色（グラデーション）
-/   ・マウスオーバーで文字間を広げる
 --------------------------------------------------------- */
-/* ----- 文字の色 ----- */
-#navi .navi-in a {
-  color: #dedfef;
+#navi .navi-in>.menu-header .sub-menu {
+  background-color:#28569a;
 }
 
-/* ----- 文字の色、背景の色（マウスオーバー） ----- */
+.header-container{
+  box-shadow: 0 6px 5px -3px rgba(0,0,0,0.24),
+                0 6px 10px -3px rgba(0,0,0,0.18);
+}
+
+.header-container .navi {
+  background-color:#28569a;
+}
+
+#navi .navi-in a{
+  color: white;
+  background-color:#28569a;
+  transition:0.5s;
+}
+
 #navi .navi-in a:hover {
-  color: yellow;
-  background-color: #6d85af;
+  background-color: rgba(214, 232, 232, 0.3);
 }
 
-/* ----- 背景色（グラデーション） ----- */
-#header-container .navi, #navi .navi-in>.menu-header .sub-menu {
-  background: linear-gradient(#0a2e63 0% , #3f65a9 100%);
+/* □■-----------------------------------------------------
+/ 『メインカラム、サイドバー』
+-----------------------------------------------------■□ */
+.main,
+.sidebar,
+.carousel-in,
+.sbp-main-before,
+.sbp-footer-before,
+.pbp-main-before,
+.pbp-footer-before {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
 }
 
-/* ----- マウスオーバーで文字間を広げる ----- */
-.navi-in a {
-  letter-spacing: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-}
-
-.navi-in a:hover,
-.navi-in a:active {
-  letter-spacing: 2px;
-}
-
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『エントリーカード』
-/
-/   ・背景色＋borderカラー＋マウスオーバーでふわっと浮かせる
---------------------------------------------------------- */
-/* ----- 背景色 ----- */
+-----------------------------------------------------■□ */
 .a-wrap {
-  background-color: #f9f9f9;
+  background-color: #f8fbff;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-/* ----- border ----- */
-.a-wrap .blogcard {
-  border-color: #7086aa;
+/* ----- 右下グラデーション ----- */
+.entry-card-wrap.a-wrap,
+.related-entry-card-wrap.a-wrap,
+.prev-post.a-wrap,
+.next-post.a-wrap {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #f7fafd 0%,
+    #f7fafd 80%,
+    #fdebf2
+  );
 }
 
 /* ----- ふわっと浮かせる ----- */
 .a-wrap:hover {
-  background-color: #e8ecf3;
-  -webkit-transform: translateY(-5px);
-  -ms-transform: translateY(-5px);
-  transform: translateY(-5px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: #eff5ff;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 6px 8px rgba(0,0,0,0.22);
 }
 
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
+/ 『ブログカード』
+-----------------------------------------------------■□ */
+.a-wrap .blogcard {
+  border-color: #85aff3;
+}
+
+/* □■-----------------------------------------------------
 / 『目次』
-/
-/   ・中央揃え＋borderカラー＋左上／右下の○
---------------------------------------------------------- */
-/* ----- 中央揃え＋borderカラー ----- */
+-----------------------------------------------------■□ */
 .toc-title {
-  color: #444;
-  font-size: 24px;
-  border-bottom: 1px solid #3261ab;
+  color: #333;
+  font-size: 120%;
+  border-radius: 4px;
+  background-color: #eff5ff;
 }
 
-/* ----- borderカラー ----- */
 .article .toc{
   margin: 15px auto;
+  min-width:50%;
   max-width:95%;
   position: relative;
-  border-top: solid 1px #b61972;
-  border-left: solid 1px #b61972;
-  border-bottom: solid 1px #3261ab;
-  border-right: solid 1px #3261ab;
-  border-radius: 3px 0 3px 0;
+  border: solid 2px #f4f6f9;
+  border-radius: 4px;
+  background-color: #fdffff;
+  box-shadow: 0px 0px 3px 2px #eee;
 }
 
-/* ----- 右下の○ ----- */
-.article .toc:before
-{
-  content: '';
-  position: absolute;
-  width:10px;
-  height: 10px;
-  border: solid 1px #3261ab;
-  border-radius: 50%;
-  bottom:-10px;
-  right:-10px;
-}
-
-/* ----- 左上の○ ----- */
-.article .toc:after
-{
-  content: '';
-  position: absolute;
-  width:10px;
-  height: 10px;
-  border: solid 1px #b61972;
-  border-radius: 50%;
-  top:-10px;
-  left:-10px;
-}
-
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『見出し（h2）』
-/
-/   ・グラデーション＋吹き出し＋先頭文字だけ大きく＋影
---------------------------------------------------------- */
-/* ----- グラデーション＋影 ----- */
-.article h2{
-  position: relative;
-  margin-bottom: 30px;
-  padding: 0.8em;
-  background: linear-gradient(#0a2e63 0% , #3f65a9 100%);
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+-----------------------------------------------------■□ */
+.article h2 {
+    font-size: 24px;
+    padding: 12px;
+    color: #333;
+    background-color: #f8faff;
+    border-top: 2px solid #3261ab;
+    border-bottom: 2px solid #3261ab;
 }
 
-/* ----- 吹き出し ----- */
-.article h2:after{
-  position: absolute;
-  bottom: -15px;
-  left: 10%;
-  z-index: 90;
-  margin-left: -15px;
-  border-top: 15px solid #3f65a9;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 0;
-  content: "";
-}
-
-/* ----- 先頭文字だけ大きく ----- */
-.article h2:first-letter {
-    font-size: 1.7em;
-}
-
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『見出し（h3）』
-/
-/   ・borderカラー
---------------------------------------------------------- */
+-----------------------------------------------------■□ */
+/* ----- ベースのボーダー ----- */
 .article h3 {
-  border-color: #3261ab;
-}
-
-/* ---------------------------------------------------------
-/ 『見出し（h4）』
-/
-/   ・border（2色ライン）
---------------------------------------------------------- */
-/* ----- ベースのborder ----- */
-.article h4 {
-  border-top: none;
+  margin-top: 40px;
+  padding: 6px 10px;
+  border: none;
   border-bottom: solid 3px #3261ab;
   position: relative;
 }
 
-/* ----- 2色目のborder ----- */
-.article h4:after {
+/* ----- 2色目のボーダー ----- */
+.article h3:after {
   position: absolute;
   content: " ";
   display: block;
@@ -189,53 +142,50 @@
   width: 15%;
 }
 
-/* ---------------------------------------------------------
-/ 『見出し（h5）』
-/
-/   ・border＋ワンポイント（レクタングル2つ）
---------------------------------------------------------- */
-/* ----- border ----- */
-.article h5 {
+/* □■-----------------------------------------------------
+/ 『見出し（h4）』
+-----------------------------------------------------■□ */
+.article h4 {
+  border: none;
   position: relative;
   padding: 0 0 2px 32px;
   border-bottom: 2px solid #3261ab;
 }
 
-/* ----- ワンポイント ----- */
-.article h5:before, .article h5:after {
+.article h4:before, .article h4:after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 12px;
   height: 12px;
-  border: 2px solid #3261ab;
   margin: auto;
 }
 
-.article h5:before {
+/* ----- 2色目のレクタングル ----- */
+.article h4:before {
+  border: 2px solid #eaa8bf;
   top: -20px;
   left: 0px;
 }
 
-.article h5:after {
+/* ----- ベースのレクタングル ----- */
+.article h4:after {
+  border: 2px solid #3261ab;
   top: -8px;
   left: 6px;
 }
 
-/* ---------------------------------------------------------
-/ 『見出し（h6）』
-/
-/   ・border＋ワンポイント（◆）
---------------------------------------------------------- */
-/* ----- border ----- */
-.article h6 {
+/* □■-----------------------------------------------------
+/ 『見出し（h5）』
+-----------------------------------------------------■□ */
+.article h5 {
   position: relative;
   padding: 0 0 2px 32px;
   border-bottom: 1px solid #3261ab;
 }
 
 /* ----- ワンポイント ----- */
-.article h6:after {
+.article h5:after {
   position: absolute;
   top: 5px;
   left: 4px;
@@ -244,17 +194,21 @@
   width: 12px;
   height: 12px;
   background-color: #3261ab;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-/* ---------------------------------------------------------
-/ 『サイドバーの見出し（h3）』
-/
-/   ・border（2色ライン）
-/   ・マウスオーバーで背景色変更
---------------------------------------------------------- */
-/* ----- ベースのborder ----- */
+/* □■-----------------------------------------------------
+/ 『見出し（h6）』
+-----------------------------------------------------■□ */
+.article h6 {
+  border:none;
+  border-bottom: 1px solid #3261ab;
+}
+
+/* □■-----------------------------------------------------
+/ 『サイドバーの見出し（h3）』　　投稿のh3と同じ
+-----------------------------------------------------■□ */
+/* ----- ベースのボーダー ----- */
 .sidebar h3 {
   background: none;
   border-top: none;
@@ -264,7 +218,7 @@
   position: relative;
 }
 
-/* ----- 2色目のborder ----- */
+/* ----- 2色目のボーダー ----- */
 .sidebar h3:after {
   position: absolute;
   content: " ";
@@ -275,99 +229,59 @@
   width: 15%;
 }
 
-/* ----- マウスオーバーで背景色変更 ----- */
+/* ----- カテゴリーなどのマウスオーバー ----- */
 .sidebar ul li a:hover{
-    background-color: #e8ecf3;
+    background-color: #eff5ff;
 }
 
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『ページネーション』
-/
-/   ・ページ番号のborder（角丸）
-/   ・カレントページの文字拡大、背景色変更
-/   ・ページ番号、次へのマウスオーバーで背景に斜め線を走らせる
---------------------------------------------------------- */
-/* ----- ページ番号のborder（角丸） ----- */
+-----------------------------------------------------■□ */
+/* ----- ページ番号のボーダー ----- */
 .page-numbers {
-  border-radius: 5px;
+  border-radius: 50%;
   border: 1px solid #3261ab;
+  transition: 0.4s;
+  box-shadow: 4px 4px 5px -3px rgba(0,0,0,0.24),
+                4px 4px 10px -3px rgba(0,0,0,0.18);
+
 }
 
-/* ----- カレントページの文字拡大、背景色変更 ----- */
+.pagination a:hover, .pagination a:focus, .pagination a:active {
+  transform: translateY(-4px);
+}
+/* ----- カレントページ ----- */
 .pagination .current{
-  background-color: #eaa8bf;
-  font-size: 160%;
-  border: 1px solid #3261ab;
-  border-radius: 5px;
+  color:#eaa8bf;
+  background-color: #3261ab;
+  font-size: 140%;
+  border: 1px solid #eaa8bf;
 }
 
-/* ----- ページ番号のマウスオーバーで背景に斜め線を走らせる ----- */
-.pagination a{
-  overflow: hidden;
-  position: relative;
-  z-index: 20;
+/* ----- 『次のページへ』リンク他 ----- */
+.pagination-next-link,
+.comment-btn,
+input[type='submit']  {
+  border: 1px solid #85aff3;
+  background-color: #f8faff;
+  border-radius: 4px;
+  transition: 0.4s;
 }
 
-.pagination a:after{
-  background: #eaa8bf;
-  content: "";
-  height: 155px;
-  left: -55px;
-  opacity: .2;
-  position: absolute;
-  top: -50px;
-  -webkit-transform: rotate(35deg);
-          transform: rotate(35deg);
-  width: 20px;
-  z-index: -10;
+.pagination-next-link:hover,
+.pagination a:hover,
+.comment-btn:hover,
+input[type='submit']:hover  {
+  background-color: #d5e5ff;
 }
 
-.pagination a:hover:after{
-  left: 180%;
-  transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-/* ----- 「次のページ」のマウスオーバーで背景に斜め線を走らせる ----- */
-.pagination-next-link {
-  overflow: hidden;
-  position: relative;
-  background-color: #e8ecf3;
-  border: 1px solid #3261ab;
-  border-radius: 5px;
-  z-index: 20;
-}
-
-.pagination-next-link:after {
-  background: #eaa8bf;
-  content: "";
-  height: 155px;
-  left: -105px;
-  opacity: .2;
-  position: absolute;
-  top: -50px;
-  -webkit-transform: rotate(35deg);
-          transform: rotate(35deg);
-  width: 80px;
-  z-index: -10;
-}
-
-.pagination-next-link:hover:after {
-  left: 120%;
-  transition: all 1400ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.pagination-next-link:hover {
-  background-color: #e8ecf3;
-}
-
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『テーブル』
-/
-/   ・見出し＋ゼブラ
---------------------------------------------------------- */
+-----------------------------------------------------■□ */
 /* ----- 見出し ----- */
 table th, .scrollable-table th {
-  background: linear-gradient(#f9d0de 0% , #ffffff 100%);
+  background-color: #9fc3fd;
+  color: white;
 }
 
 /* ----- ゼブラ ----- */
@@ -375,78 +289,164 @@ table tr:nth-of-type(2n+1) {
   background-color:#eff5ff;
 }
 
-/* ---------------------------------------------------------
+/* □■-----------------------------------------------------
 / 『入力ボックス』
-/
-/   ・テキストボックスなどを角丸
-/   ・submitボタン（送信ボタン）を角丸＋グラデーション
---------------------------------------------------------- */
-/* ----- 角丸 ----- */
-.search-edit,
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea, select {
-  border-radius: 5px;
-}
-
-/* ----- submitボタン（送信ボタン）を角丸＋グラデーション ----- */
+-----------------------------------------------------■□ */
 input[type='submit'] {
-  background: linear-gradient(#0a2e63 0% , #3f65a9 100%);
-  color: #fff;
   font-size: 22px;
-  border:none;
-  border-radius: 5px;
 }
 
 /* ---------------------------------------------------------
-/ 『次の記事と前の記事の隙間』
-/
-/   ・エントリカードを浮かせるので、次の記事と前の記事の間に隙間をつくる
+/ 『投稿ナビ』
+/　　カードを浮かせるので、次の記事と前の記事の隙間をあける
 --------------------------------------------------------- */
 .pager-post-navi a.prev-post {
   margin-bottom: 8px;
 }
 
-/* ---------------------------------------------------------
-/ 『番号付きリスト』
-/    ※このリストを使う場合は、投稿時のテキストエディタで
-/      olタグにnumlist-customクラスを指定する
-/
-/   ・フォントの変更
---------------------------------------------------------- */
-ol.numlist-custom{
-  counter-reset:li;
-  padding-left: 20px;
+/* □■-----------------------------------------------------
+/ 『ウィジェット』
+-----------------------------------------------------■□ */
+/* ----- エントリーカード、コメント ----- */
+.widget-entry-cards .a-wrap,
+.recent-comments .a-wrap {
+  border-bottom: 1px solid #d0d0c7;
+  box-shadow: 0px 2px 0px #fbfafa;
+  color: #5a5129;
 }
 
-ol.numlist-custom li{
-  margin:0.2em;
-  list-style-type:none;
-  list-style-image:none;
-  position:relative;
-  display: block;
-  padding:0px 0px 0px 25px;
-  margin-left:0px;
+/* ----- 境界線 ----- */
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+  border-bottom: 1px solid #e0e5ec;
+  transition-duration: 0.2s;
+  box-shadow: 0px 2px 0px #fdfdfd;
 }
 
-ol.numlist-custom li:after{
-  counter-increment: li;
-  content: counter(li) ".";
-  position: absolute;
-  display: block;
-  text-align: center;
-  font-style: italic;
-  left: 0px;
-  top: -5px;
-  font-size: 20px;
-  color:#3261ab;
-  font-family:'Goudy Bookletter 1911',Georgia,serif;
+.widget_recent_entries ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.widget_rss ul li a:hover,
+.widget_nav_menu ul li a:hover {
+  background-color: #eff5ff;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a {
+  padding: 5px 0;
+}
+
+/* □■-----------------------------------------------------
+/ 『Topへ戻るボタン』
+-----------------------------------------------------■□ */
+.go-to-top-button{
+  background-color:#3261ab;
+  border:1px solid #eaa8bf;
+  color:#eaa8bf;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.go-to-top-button:hover{
+  background-color:#3261ab;
+  border:1px solid #eaa8bf;
+  color:#eaa8bf;
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* □■-----------------------------------------------------
+/ 『カテゴリー』
+-----------------------------------------------------■□ */
+/* ----- 親カテゴリ ----- */
+.cat-item a::before {
+  font-family: FontAwesome;
+  content: '\f054';
+  color: rgba(50, 97, 171, 0.6);
+  margin: 0 8px 0 16px;
+}
+
+/* ----- 子カテゴリ ----- */
+.cat-item .children a::before {
+  font-family: FontAwesome;
+  content: '\f054';
+  color: rgba(234, 168, 191, 0.6);
+}
+
+/* □■-----------------------------------------------------
+/ 『引用』
+-----------------------------------------------------■□ */
+blockquote::before,
+blockquote::after {
+  color: #a3a8bf;
+}
+
+blockquote{
+  padding: 1.5em 1em;
+  margin: 2em 0;
+  color: #5d627b;
+  background-color: #f8faff;
+  border-top: solid 5px #9fc3fd;
+  border-radius:5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+/* □■-----------------------------------------------------
+/ 『ランキング』
+-----------------------------------------------------■□ */
+/* ----- 標準のランキングを隠す ----- */
+.widget-entry-cards.ranking-visible [class*="no-"] .card-thumb::before {
+    background: none;
+}
+
+/* ----- デフォルト ----- */
+.widget-entry-cards.ranking-visible .card-thumb::before {
+    content: counter(p-rank);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    line-height: 30px;
+    opacity: .9;
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial,sans-serif;
+    z-index: 1;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: -2px -1px 0 #fff, 2px 1px 0 rgba(0,0,0,.9);
+    color: #edad0b;
+}
+
+/* ----- 大きなサムネイル、タイトルを重ねた大きなサムネイル ----- */
+.large-thumb.widget-entry-cards.ranking-visible .card-thumb::before,
+.large-thumb-on.widget-entry-cards.ranking-visible .card-thumb::before {
+    top: 6px;
+    left: 8px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+/* □■-----------------------------------------------------
+/ 『カテゴリーなどの数』
+-----------------------------------------------------■□ */
+.widget_recent_entries ul li a .post-count,
+.widget_categories ul li a .post-count,
+.widget_archive ul li a .post-count,
+.widget_pages ul li a .post-count,
+.widget_meta ul li a .post-count,
+.widget_rss ul li a .post-count,
+.widget_nav_menu ul li a .post-count {
+    font-style: italic;
+    font-size: 90%;
+    color: #3261ab;
+    text-shadow: 1px 1px 0 rgba(234, 168, 191, 0.7);
 }
