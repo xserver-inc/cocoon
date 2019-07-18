@@ -251,7 +251,7 @@ endif;
 
 //ウィジェットエントリーカードリンクタグの取得
 if ( !function_exists( 'get_widget_entry_card_link_tag' ) ):
-function get_widget_entry_card_link_tag($prefix, $url, $title, $thumb_size = null, $image_attributes = null){
+function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size = null, $image_attributes = null){
   ob_start(); ?>
   <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">

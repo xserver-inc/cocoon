@@ -635,13 +635,13 @@ function get_navi_card_list_tag($atts){
 
     $url = $menu->url;
     $title = $menu->title;
-    $text = $menu->description;
+    $snippet = $menu->description;
     $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
     //リボンタグの取得
     $ribbon_tag = get_navi_card_ribbon_tag($no);
 
-    $tag = get_widget_entry_card_link_tag($prefix, $url, $title, null, $image_attributes);
+    $tag = get_widget_entry_card_link_tag(WIDGET_NAVI_ENTRY_CARD_PREFIX, $url, $title, $snippet, null, $image_attributes);
 
   endforeach;
 

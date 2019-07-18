@@ -1072,7 +1072,8 @@ function generate_widget_entries_tag($atts){
     <?php //エントリーカードリンクタグの生成
     $url = get_the_permalink();
     $title = get_the_title();
-    echo get_widget_entry_card_link_tag($prefix, $url, $title, $thumb_size, null); ?>
+    $snippet = null;
+    echo get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size, null); ?>
   <?php endwhile;
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
