@@ -1110,6 +1110,37 @@ function generate_widget_entries_tag($atts){
 }
 endif;
 
+//ウィジェットエントリーカードサムネイルの取得
+if ( !function_exists( 'get_widget_entry_card_thumbnail_tag' ) ):
+function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size){
+  global $post;
+  ob_start();
+  if ( has_post_thumbnail() ){ // サムネイルを持っているときの処理
+    the_post_thumbnail( $thumb_size, array('alt' => '') );
+  } else { // サムネイルを持っていないときの処理
+    echo get_widget_entry_card_no_image_tag(ET_DEFAULT, $prefix);
+  }
+  if (!is_widget_navi_entry_card_prefix($prefix)) {//ナビカードではないとき
+    if ($prefix == WIDGET_RELATED_ENTRY_CARD_PREFIX) {//関連記事
+      $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
+    } else {//新着記事
+      $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
+    }
+    $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
+    $post_id = isset($post->ID) ? $post->ID : null;
+    the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得
+  }
+  return ob_get_clean();
+}
+endif;
+
+//ナビカードサムネイルの取得
+if ( !function_exists( 'get_navi_entry_card_thumbnail_tag' ) ):
+function get_navi_entry_card_thumbnail_tag($image_attributes, $title){
+  return '<img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">';
+}
+endif;
+
 //ナビカードのプレフィックスかどうか
 if ( !function_exists( 'is_widget_navi_entry_card_prefix' ) ):
 function is_widget_navi_entry_card_prefix($prefix){

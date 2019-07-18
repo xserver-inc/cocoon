@@ -552,9 +552,9 @@ function navi_menu_shortcode($atts){
 '<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
   <div class="navi-card-box cf">
     '.$osusume.'
-    <figure class="navi-card-thumb">
-      <img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">
-    </figure>
+    <figure class="navi-card-thumb">'.
+      get_navi_entry_card_thumbnail_tag($image_attributes, $title)
+    .'</figure>
     <div class="navi-card-content">
       <div class="navi-card-title">'.$title.'</div>
       <div class="navi-card-snippet">'.$text.'</div>

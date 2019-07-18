@@ -248,3 +248,33 @@ function smartnews_feed_content_type( $content_type, $type ) {
 	return $content_type;
 }
 endif;
+
+//ウィジェットエントリーカードリンクタグの取得
+if ( !function_exists( 'get_widget_entry_card_link_tag' ) ):
+function get_widget_entry_card_link_tag($prefix, $url, $title, $thumb_size = null, $image_attributes = null){
+  ob_start(); ?>
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
+    <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
+      <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
+        <?php
+        if (is_widget_navi_entry_card_prefix($prefix)) {
+          # code...
+        } else {
+          echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size);
+        }
+        ?>
+      </figure><!-- /.entry-card-thumb -->
+
+      <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
+        <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <?php
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
+          generate_widget_entry_card_date($prefix);
+        } ?>
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-card -->
+  </a><!-- /.entry-card-link -->
+<?php
+  return ob_get_clean();
+}
+endif;
