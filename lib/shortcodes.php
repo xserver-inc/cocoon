@@ -568,9 +568,9 @@ endif;
 
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
-add_shortcode('navi', 'navi_menu_shortcode');
-if ( !function_exists( 'navi_menu_shortcode' ) ):
-function navi_menu_shortcode($atts){
+add_shortcode('navi', 'get_navi_card_menu_tag');
+if ( !function_exists( 'get_navi_card_menu_tag' ) ):
+function get_navi_card_menu_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
     'type' => '',
@@ -612,6 +612,44 @@ function navi_menu_shortcode($atts){
     $tag = get_navi_card_wrap_tag($tag, $type);
   }
 
-  return apply_filters('cocoon_navi_card_tag', $tag);
+  return apply_filters('get_navi_card_menu_tag', $tag);
+}
+endif;
+
+//ナビメニューリストショートコード
+//参考：https://www.orank.net/1972
+add_shortcode('navi_list', 'get_navi_card_list_tag');
+if ( !function_exists( 'get_navi_card_list_tag' ) ):
+function get_navi_card_list_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'type' => '',
+  ), $atts));
+
+  $tag = null;
+  $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+
+  foreach ($menu_items as $menu):
+    //画像情報の取得
+    $image_attributes = get_navi_card_image_attributes($menu);
+
+    $url = $menu->url;
+    $title = $menu->title;
+    $text = $menu->description;
+    $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
+
+    //リボンタグの取得
+    $ribbon_tag = get_navi_card_ribbon_tag($no);
+
+    $tag = get_widget_entry_card_link_tag($prefix, $url, $title, null, $image_attributes);
+
+  endforeach;
+
+  //ラッパーの取り付け
+  if ($menu_items) {
+    $tag = get_navi_card_wrap_tag($tag, $type);
+  }
+
+  return apply_filters('get_navi_card_list_tag', $tag);
 }
 endif;

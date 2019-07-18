@@ -258,7 +258,7 @@ function get_widget_entry_card_link_tag($prefix, $url, $title, $thumb_size = nul
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php
         if (is_widget_navi_entry_card_prefix($prefix)) {
-          # code...
+          echo get_navi_entry_card_thumbnail_tag($image_attributes, $title);
         } else {
           echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size);
         }
