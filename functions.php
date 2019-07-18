@@ -248,3 +248,14 @@ function smartnews_feed_content_type( $content_type, $type ) {
 	return $content_type;
 }
 endif;
+
+//ウィジェットエントリーカードもNO IMAGEタグの取得
+if ( !function_exists( 'get_widget_entry_card_no_image_tag' ) ):
+function get_widget_entry_card_no_image_tag($entry_type){
+  $url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+  $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
+  $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
+  $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+  return $tag;
+}
+endif;
