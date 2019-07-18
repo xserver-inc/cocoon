@@ -1069,36 +1069,10 @@ function generate_widget_entries_tag($atts){
   <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_widget_entriy_cards_classes($entry_type); ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
-  <a href="<?php echo esc_url(get_the_permalink()); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr(get_the_title()); ?>">
-    <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
-      <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
-      <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
-        <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
-      <?php else: // サムネイルを持っていないときの処理
-        echo get_widget_entry_card_no_image_tag($entry_type, $prefix);
-      endif; ?>
-      <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) {//ナビカードではないとき
-          if ($prefix == WIDGET_RELATED_ENTRY_CARD_PREFIX) {//関連記事
-            $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
-          } else {//新着記事
-            $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
-          }
-          $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-          $post_id = isset($post->ID) ? $post->ID : null;
-          the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得
-        } ?>
-      </figure><!-- /.entry-card-thumb -->
-
-      <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
-        <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
-        <?php
-        if (!is_widget_navi_entry_card_prefix($prefix)) {
-          generate_widget_entry_card_date($prefix);
-        } ?>
-      </div><!-- /.entry-content -->
-    </div><!-- /.entry-card -->
-  </a><!-- /.entry-card-link -->
+    <?php //エントリーカードリンクタグの生成
+    $url = get_the_permalink();
+    $title = get_the_title();
+    echo get_widget_entry_card_link_tag($prefix, $url, $title, $thumb_size, null); ?>
   <?php endwhile;
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ
