@@ -446,11 +446,7 @@ endif;
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
   $now = date_i18n('U');
-  //$now = strtotime('2019/01/22 23:59:59');
   $diff = (int) ($to - $now);
-  // _v(date_i18n("Y-m-d H:i:s", $to).'='.$to);
-  // _v(date_i18n("Y-m-d H:i:s", $now).'='.$now);
-  // _v($diff / 86400);
   $days = ceil($diff / 86400);
   if ($days <= 0) {
     $days = 0;
@@ -558,6 +554,18 @@ function get_navi_card_ribbon_tag($no){
 }
 endif;
 
+//ナビカードを囲むタグ
+if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
+function get_navi_card_wrap_tag($tag, $type){
+  $navi_card_class = '';
+  if ($type) {
+    $navi_card_class = ' navi-card-type-'.$type;
+  }
+  $tag = '<div class="navi-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  return $tag;
+}
+endif;
+
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
 add_shortcode('navi', 'navi_menu_shortcode');
@@ -601,11 +609,7 @@ function navi_menu_shortcode($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $navi_card_class = '';
-    if ($type) {
-      $navi_card_class = ' navi-card-type-'.$type;
-    }
-    $tag = '<div class="navi-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+    $tag = get_navi_card_wrap_tag($tag, $type);
   }
 
   return apply_filters('cocoon_navi_card_tag', $tag);
