@@ -585,7 +585,7 @@ function get_navi_card_menu_tag($atts){
 
     $url = $menu->url;
     $title = $menu->title;
-    $text = $menu->description;
+    $snippet = $menu->description;
     $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
     //リボンタグの取得
@@ -600,7 +600,7 @@ function get_navi_card_menu_tag($atts){
     .'</figure>
     <div class="navi-card-content">
       <div class="navi-card-title">'.$title.'</div>
-      <div class="navi-card-snippet">'.$text.'</div>
+      <div class="navi-card-snippet">'.$snippet.'</div>
     </div>
   </div>
 </a>';

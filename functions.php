@@ -267,6 +267,9 @@ function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <?php if ($snippet): ?>
+        <div class="<?php echo $prefix; ?>-entry-card-snippet"><?php echo $snippet; ?></div>
+        <?php endif; ?>
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {
           generate_widget_entry_card_date($prefix);
