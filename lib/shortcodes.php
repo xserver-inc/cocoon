@@ -529,6 +529,35 @@ function get_navi_card_image_attributes($menu){
 }
 endif;
 
+//リボンタグ取得関数
+if ( !function_exists( 'get_navi_card_ribbon_tag' ) ):
+function get_navi_card_ribbon_tag($no){
+    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
+    switch ($no) {
+      case '1':
+        $caption = __( 'おすすめ', THEME_NAME );
+        break;
+      case '2':
+        $caption = __( '新着', THEME_NAME );
+        break;
+      case '3':
+        $caption = __( '注目', THEME_NAME );
+        break;
+      case '4':
+        $caption = __( '必見', THEME_NAME );
+        break;
+      case '5':
+        $caption = __( 'お得', THEME_NAME );
+        break;
+    }
+    $tag = '';
+    if ($no){
+      $tag = '<div class="ribbon ribbon-top-left ribbon-color-'.$no.'"><span>'.$caption.'</span></div>';
+    }
+    return $tag;
+}
+endif;
+
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
 add_shortcode('navi', 'navi_menu_shortcode');
@@ -543,27 +572,21 @@ function navi_menu_shortcode($atts){
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
 
   foreach ($menu_items as $menu):
-    $url = $menu->url;
-
     //画像情報の取得
     $image_attributes = get_navi_card_image_attributes($menu);
 
+    $url = $menu->url;
     $title = $menu->title;
     $text = $menu->description;
-    $osusume = $menu->classes[0];
+    $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
-    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
-    if ($osusume == "1"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
-    }
-    if ($osusume == "2"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
-    }
+    //リボンタグの取得
+    $ribbon_tag = get_navi_card_ribbon_tag($no);
 
     $tag .=
 '<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
   <div class="navi-card-box cf">
-    '.$osusume.'
+    '.$ribbon_tag.'
     <figure class="navi-card-thumb">'.
       get_navi_entry_card_thumbnail_tag($image_attributes, $title)
     .'</figure>
