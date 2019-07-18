@@ -497,6 +497,38 @@ function get_navi_card_image_url_attributes($image_url){
 }
 endif;
 
+//ナビカードイメージ属性の取得
+if ( !function_exists( 'get_navi_card_image_attributes' ) ):
+function get_navi_card_image_attributes($menu){
+  $url = $menu->url;
+  $object_id = $menu->object_id;
+  $object = $menu->object;
+
+  $image_attributes = array();
+  if ($object == 'post' || $object == 'page') {
+    $thumbnail_id = get_post_thumbnail_id($object_id);
+    $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
+  } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
+    $image_url = get_category_eye_catch_url($object_id);
+    $image_attributes = get_navi_card_image_url_attributes($image_url);
+  }
+  elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
+    //タグページのアイキャッチを取得
+    $tag_obj = url_to_tag_object($url);
+    if ($tag_obj && isset($tag_obj->term_id)) {
+      $image_url = get_tag_eye_catch_url($tag_obj->term_id);
+      $image_attributes = get_navi_card_image_url_attributes($image_url);
+    }
+  }
+  if (!$image_attributes) {//アイキャッチがない場合
+    $image_attributes[0] = get_no_image_120x68_url();
+    $image_attributes[1] = 120;
+    $image_attributes[2] = 68;
+  }
+  return $image_attributes;
+}
+endif;
+
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
 add_shortcode('navi', 'navi_menu_shortcode');
@@ -511,31 +543,10 @@ function navi_menu_shortcode($atts){
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
 
   foreach ($menu_items as $menu):
-    $object_id = $menu->object_id;
     $url = $menu->url;
-    $object = $menu->object;
 
-    $image_attributes = array();
-    if ($object == 'post' || $object == 'page') {
-      $thumbnail_id = get_post_thumbnail_id($object_id);
-      $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
-    } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
-      $image_url = get_category_eye_catch_url($object_id);
-      $image_attributes = get_navi_card_image_url_attributes($image_url);
-    }
-    elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
-      //タグページのアイキャッチを取得
-      $tag_obj = url_to_tag_object($url);
-      if ($tag_obj && isset($tag_obj->term_id)) {
-        $image_url = get_tag_eye_catch_url($tag_obj->term_id);
-        $image_attributes = get_navi_card_image_url_attributes($image_url);
-      }
-    }
-    if (!$image_attributes) {//アイキャッチがない場合
-      $image_attributes[0] = get_no_image_120x68_url();
-      $image_attributes[1] = 120;
-      $image_attributes[2] = 68;
-    }
+    //画像情報の取得
+    $image_attributes = get_navi_card_image_attributes($menu);
 
     $title = $menu->title;
     $text = $menu->description;
