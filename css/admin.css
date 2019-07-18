@@ -30,25 +30,25 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 11px; border: 1px solid #ccc; border-radius: 4px; font-size: 18px; width: 100%; }
 
-.snipet-list { padding: 20px; display: flex; flex-wrap: wrap; }
+.snippet-list { padding: 20px; display: flex; flex-wrap: wrap; }
 
-.snipet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
+.snippet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
 
-.snipet-title, .snipet-short-code, .snipet-content { margin-bottom: 6px; }
+.snippet-title, .snippet-short-code, .snippet-content { margin-bottom: 6px; }
 
-.snipet-short-code input { width: 120px; }
+.snippet-short-code input { width: 120px; }
 
-.snipet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
+.snippet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
 
 .op-message { text-align: center; font-size: 16px; margin: 0; }
 
-.snipet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
-.snipet-menu a { margin-left: 8px; }
-.snipet-menu .snipet-menu-left { position: absolute; left: 10px; }
+.snippet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
+.snippet-menu a { margin-left: 8px; }
+.snippet-menu .snippet-menu-left { position: absolute; left: 10px; }
 
-.snipet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
-.snipet-confirm-wrap .snipet-confirm-title { font-size: 16px; font-weight: bold; }
-.snipet-confirm-wrap .snipet-confirm-text pre { max-height: 300px; overflow: auto; }
+.snippet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
+.snippet-confirm-wrap .snippet-confirm-title { font-size: 16px; font-weight: bold; }
+.snippet-confirm-wrap .snippet-confirm-text pre { max-height: 300px; overflow: auto; }
 
 .operation-buttons { margin: 4px 0; padding: 5px; }
 .operation-buttons a { padding: 5px 10px; font-weight: bold; background-color: #fff; border: 2px solid #ccc; }
@@ -678,7 +678,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -2213,7 +2213,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -3604,7 +3604,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo table th, .admin-settings .demo table td { padding: 3px; font-size: 0.8em; }
   .admin-settings .demo .blogcard-wrap { width: 100%; }
   .admin-settings .demo .blogcard-thumbnail { width: 30%; }
-  .admin-settings .demo .blogcard-snipet { font-size: 12px; }
+  .admin-settings .demo .blogcard-snippet { font-size: 12px; }
   .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
   .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
   .admin-settings .demo .ss-top .sns-share-buttons a, .admin-settings .demo .ss-bottom .sns-share-buttons a { font-size: 14px; }
@@ -3717,7 +3717,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .tagline { font-size: 12px; }
   .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item { width: 46%; }
   .admin-settings .demo .blogcard-content { font-size: 0.84em; }
-  .admin-settings .demo .blogcard-snipet { font-size: 0.74em; }
+  .admin-settings .demo .blogcard-snippet { font-size: 0.74em; }
   .admin-settings .demo .ect-vertical-card .entry-card-wrap { margin-bottom: 8px; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap { display: block; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column > * { width: 100%; }

@@ -1164,7 +1164,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
   margin-top: 0.7em;
 }
 
-.blogcard-snipet{
+.blogcard-snippet{
 	font-size: 70%;
 	line-height: 1.7;
 	padding-right: 10%;
@@ -1175,7 +1175,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 		width: 40%;
     margin-top: 10px
 	}
-	.blogcard-snipet{
+	.blogcard-snippet{
 		display: none;
 	}
 }

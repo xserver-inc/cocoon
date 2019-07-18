@@ -115,26 +115,26 @@ function get_category_description($cat_id = null){
 endif;
 
 //カテゴリのスニペット文を取得
-if ( !function_exists( 'get_category_snipet' ) ):
-function get_category_snipet($cat_id){
-  $snipet = get_category_description($cat_id);
-  if (!$snipet) {
+if ( !function_exists( 'get_category_snippet' ) ):
+function get_category_snippet($cat_id){
+  $snippet = get_category_description($cat_id);
+  if (!$snippet) {
     //カテゴリ説明を取得
-    $snipet = category_description($cat_id);
+    $snippet = category_description($cat_id);
   }
-  if (!$snipet) {
+  if (!$snippet) {
     //カテゴリ内容の抜粋
-    $snipet = get_content_excerpt(get_category_content($cat_id), get_entry_card_excerpt_max_length());
+    $snippet = get_content_excerpt(get_category_content($cat_id), get_entry_card_excerpt_max_length());
   }
-  if (!$snipet) {
+  if (!$snippet) {
     //カテゴリ説明を取得
     $cat = get_category($cat_id);
     if ($cat) {
-      $snipet = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat->name );
+      $snippet = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $cat->name );
     }
 
   }
-  return $snipet;
+  return $snippet;
 }
 endif;
 

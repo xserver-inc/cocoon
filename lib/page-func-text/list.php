@@ -25,28 +25,28 @@ generate_sort_options_tag($keyword, $order_by);
   echo get_help_page_tag('https://wp-cocoon.com/how-to-use-template-text/'); ?></p>
 <?php endif ?>
 
-<div class="snipet-list">
+<div class="snippet-list">
   <?php foreach ($records as $record):
   //var_dump($record);
   $edit_url   = add_query_arg(array('action' => 'edit',   'id' => $record->id));
   $delete_url = add_query_arg(array('action' => 'delete', 'id' => $record->id));
    ?>
-    <div class="snipet-wrap">
-      <div class="snipet-title">
+    <div class="snippet-wrap">
+      <div class="snippet-title">
         <a href="<?php echo $edit_url; ?>"><?php echo esc_html(stripslashes_deep($record->title)); ?></a>
       </div>
-      <div class="snipet-short-code">
+      <div class="snippet-short-code">
         <?php _e( 'ショートコード：', THEME_NAME ) ?><input type="text" name="" value="<?php echo get_function_text_shortcode($record->id); ?>">
       </div>
-      <div class="snipet-content">
+      <div class="snippet-content">
         <?php
         $text = strip_tags(stripslashes_deep($record->text));
         $text = mb_substr($text, 0, 200);;
         echo $text; ?>
       </div>
-      <div class="snipet-menu">
+      <div class="snippet-menu">
         <?php if (!$record->visible): ?>
-          <div class="snipet-menu-left">[<?php _e( '非表示', THEME_NAME ) ?>]</div>
+          <div class="snippet-menu-left">[<?php _e( '非表示', THEME_NAME ) ?>]</div>
         <?php endif ?>
 
         <a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a>

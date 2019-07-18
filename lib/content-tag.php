@@ -93,26 +93,26 @@ function get_tag_description($tag_id = null){
 endif;
 
 //スニペット文を取得
-if ( !function_exists( 'get_tag_snipet' ) ):
-function get_tag_snipet($tag_id){
-  $snipet = get_tag_description($tag_id);
-  if (!$snipet) {
+if ( !function_exists( 'get_tag_snippet' ) ):
+function get_tag_snippet($tag_id){
+  $snippet = get_tag_description($tag_id);
+  if (!$snippet) {
     //説明を取得
-    $snipet = tag_description($tag_id);
+    $snippet = tag_description($tag_id);
   }
-  if (!$snipet) {
+  if (!$snippet) {
     //内容の抜粋
-    $snipet = get_content_excerpt(get_tag_content($tag_id), get_entry_card_excerpt_max_length());
+    $snippet = get_content_excerpt(get_tag_content($tag_id), get_entry_card_excerpt_max_length());
   }
-  if (!$snipet) {
+  if (!$snippet) {
     //説明を取得
     $tag = get_tag($tag_id);
     if ($tag) {
-      $snipet = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag->name );
+      $snippet = sprintf( __( '「%s」の記事一覧です。', THEME_NAME ), $tag->name );
     }
 
   }
-  return $snipet;
+  return $snippet;
 }
 endif;
 

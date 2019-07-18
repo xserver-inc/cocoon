@@ -36,7 +36,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php //スニペットの表示
       if (is_entry_card_snippet_visible()): ?>
       <div class="entry-card-snippet card-snippet e-card-snippet">
-        <?php echo get_the_snipet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+        <?php echo get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
       <div class="entry-card-meta card-meta e-card-meta">
