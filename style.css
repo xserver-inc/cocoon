@@ -7350,13 +7350,10 @@ div.fb-like-mobile {
 }
 
 .navi-card-type-1 a {
-  border-bottom: 2px dotted #f3f4f5;
+  border-bottom: 2px dotted #ddd;
 }
 .navi-card-type-1 a:first-of-type {
-  border-top: 2px solid #f3f4f5;
-}
-.navi-card-type-1 a:last-of-type {
-  border-bottom: 2px solid #f3f4f5;
+  border-top: 2px dotted #ddd;
 }
 
 .navi-card-type-2 a {

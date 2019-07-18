@@ -16,15 +16,15 @@
 }
 
 .navi-card-type-1 a {
-  border-bottom: 2px dotted $xx_thin;
+  border-bottom: 2px dotted $x_thin;
 
   &:first-of-type {
-    border-top: 2px solid $xx_thin;
+    border-top: 2px dotted $x_thin;
   }
 
-  &:last-of-type {
-    border-bottom: 2px solid $xx_thin;
-  }
+  // &:last-of-type {
+  //   border-bottom: 2px solid $x_thin;
+  // }
 }
 
 .navi-card-type-2 a {
