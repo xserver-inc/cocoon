@@ -963,9 +963,9 @@ function generate_widget_entries_tag($atts){
 
   //ランダムが有効な時は関連記事
   if ($random) {
-    $prefix = 'widget-related';
+    $prefix = WIDGET_RELATED_ENTRY_CARD_PLEFIX;
   } else {
-    $prefix = 'new';
+    $prefix = WIDGET_NEW_ENTRY_CARD_PLEFIX;
   }
 
   $args = array(
@@ -1078,22 +1078,24 @@ function generate_widget_entries_tag($atts){
         echo get_widget_entry_card_no_image_tag($entry_type);
       endif; ?>
       <?php
-        if ($random) {
-          $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
-        } else {
-          $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
-        }
-        $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
-        $post_id = isset($post->ID) ? $post->ID : null;
-        the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得 ?>
-      </figure><!-- /.new-entry-card-thumb -->
+        if ($prefix != WIDGET_NAVI_ENTRY_CARD_PLEFIX) {//ナビカードではないとき
+          if ($prefix == WIDGET_RELATED_ENTRY_CARD_PLEFIX) {//関連記事
+            $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
+          } else {//新着記事
+            $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
+          }
+          $is_visible = apply_filters('is_widget_entry_card_category_label_visible', $is_visible);
+          $post_id = isset($post->ID) ? $post->ID : null;
+          the_nolink_category($post_id, $is_visible); //カテゴリラベルの取得
+        } ?>
+      </figure><!-- /.entry-card-thumb -->
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
         <?php generate_widget_entry_card_date($prefix); ?>
-      </div><!-- /.new-entry-content -->
-    </div><!-- /.new-entry-card -->
-  </a><!-- /.new-entry-card-link -->
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-card -->
+  </a><!-- /.entry-card-link -->
   <?php endwhile;
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ

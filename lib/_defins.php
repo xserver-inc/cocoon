@@ -55,6 +55,12 @@ define('WM_DEFAULT', 'all');
 define('PCD_DEFAULT', 30);
 //新着・人気ウィジェットのデフォルト表示数字
 define('EC_DEFAULT', 5);
+
+//ウィジェットエントリーカードのプレフィックス
+define('WIDGET_NEW_ENTRY_CARD_PLEFIX', 'new');
+define('WIDGET_RELATED_ENTRY_CARD_PLEFIX', 'widget-related');
+define('WIDGET_NAVI_ENTRY_CARD_PLEFIX', 'navi');
+
 //目次のインデックス番号
 global $_TOC_INDEX;
 $_TOC_INDEX = 1;
