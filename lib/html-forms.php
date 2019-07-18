@@ -963,9 +963,9 @@ function generate_widget_entries_tag($atts){
 
   //ランダムが有効な時は関連記事
   if ($random) {
-    $prefix = WIDGET_RELATED_ENTRY_CARD_PLEFIX;
+    $prefix = WIDGET_RELATED_ENTRY_CARD_PREFIX;
   } else {
-    $prefix = WIDGET_NEW_ENTRY_CARD_PLEFIX;
+    $prefix = WIDGET_NEW_ENTRY_CARD_PREFIX;
   }
 
   $args = array(
@@ -1075,11 +1075,11 @@ function generate_widget_entries_tag($atts){
       <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
         <?php the_post_thumbnail( $thumb_size, array('alt' => '') ); ?>
       <?php else: // サムネイルを持っていないときの処理
-        echo get_widget_entry_card_no_image_tag($entry_type);
+        echo get_widget_entry_card_no_image_tag($entry_type, $prefix);
       endif; ?>
       <?php
-        if ($prefix != WIDGET_NAVI_ENTRY_CARD_PLEFIX) {//ナビカードではないとき
-          if ($prefix == WIDGET_RELATED_ENTRY_CARD_PLEFIX) {//関連記事
+        if (!is_widget_navi_entry_card_prefix($prefix)) {//ナビカードではないとき
+          if ($prefix == WIDGET_RELATED_ENTRY_CARD_PREFIX) {//関連記事
             $is_visible = apply_filters('is_widget_related_entry_card_category_label_visible', false);
           } else {//新着記事
             $is_visible = apply_filters('is_new_entry_card_category_label_visible', false);
@@ -1092,7 +1092,10 @@ function generate_widget_entries_tag($atts){
 
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php the_title();?></div>
-        <?php generate_widget_entry_card_date($prefix); ?>
+        <?php
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
+          generate_widget_entry_card_date($prefix);
+        } ?>
       </div><!-- /.entry-content -->
     </div><!-- /.entry-card -->
   </a><!-- /.entry-card-link -->
@@ -1107,6 +1110,25 @@ function generate_widget_entries_tag($atts){
 }
 endif;
 
+//ナビカードのプレフィックスかどうか
+if ( !function_exists( 'is_widget_navi_entry_card_prefix' ) ):
+function is_widget_navi_entry_card_prefix($prefix){
+  return $prefix == WIDGET_NAVI_ENTRY_CARD_PREFIX;
+}
+endif;
+
+//ウィジェットエントリーカードもNO IMAGEタグの取得
+if ( !function_exists( 'get_widget_entry_card_no_image_tag' ) ):
+function get_widget_entry_card_no_image_tag($entry_type, $prefix){
+  $url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+  $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
+  $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
+  $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
+  return $tag;
+}
+endif;
+
+//ウィジェットエントリーカードの日付
 if ( !function_exists( 'generate_widget_entry_card_date' ) ):
 function generate_widget_entry_card_date($prefix, $post_id = null){?>
 <div class="<?php echo $prefix; ?>-entry-card-date widget-entry-card-date display-none">

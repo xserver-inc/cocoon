@@ -57,9 +57,9 @@ define('PCD_DEFAULT', 30);
 define('EC_DEFAULT', 5);
 
 //ウィジェットエントリーカードのプレフィックス
-define('WIDGET_NEW_ENTRY_CARD_PLEFIX', 'new');
-define('WIDGET_RELATED_ENTRY_CARD_PLEFIX', 'widget-related');
-define('WIDGET_NAVI_ENTRY_CARD_PLEFIX', 'navi');
+define('WIDGET_NEW_ENTRY_CARD_PREFIX', 'new');
+define('WIDGET_RELATED_ENTRY_CARD_PREFIX', 'widget-related');
+define('WIDGET_NAVI_ENTRY_CARD_PREFIX', 'navi');
 
 //目次のインデックス番号
 global $_TOC_INDEX;
