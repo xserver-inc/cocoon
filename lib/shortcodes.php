@@ -478,8 +478,9 @@ function countdown_shortcode( $atts ){
 }
 endif;
 
-if ( !function_exists( 'get_navi_card_image_attributes' ) ):
-function get_navi_card_image_attributes($image_url){
+//イメージURLから属性の取得
+if ( !function_exists( 'get_navi_card_image_url_attributes' ) ):
+function get_navi_card_image_url_attributes($image_url){
   if (!$image_url) {
     return false;
   }
@@ -520,14 +521,14 @@ function navi_menu_shortcode($atts){
       $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
     } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
       $image_url = get_category_eye_catch_url($object_id);
-      $image_attributes = get_navi_card_image_attributes($image_url);
+      $image_attributes = get_navi_card_image_url_attributes($image_url);
     }
     elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
       //タグページのアイキャッチを取得
       $tag_obj = url_to_tag_object($url);
       if ($tag_obj && isset($tag_obj->term_id)) {
         $image_url = get_tag_eye_catch_url($tag_obj->term_id);
-        $image_attributes = get_navi_card_image_attributes($image_url);
+        $image_attributes = get_navi_card_image_url_attributes($image_url);
       }
     }
     if (!$image_attributes) {//アイキャッチがない場合
