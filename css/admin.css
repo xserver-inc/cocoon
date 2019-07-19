@@ -1762,9 +1762,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-color-3 span { background-color: #e8ac51; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
 .admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
-.admin-settings .demo .ribbon-color-5 span { background-color: #ba79b1; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
 .admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
@@ -3301,9 +3301,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-color-3 span { background-color: #e8ac51; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
 .admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
-.admin-settings .demo .ribbon-color-5 span { background-color: #ba79b1; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
 .admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
