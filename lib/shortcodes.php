@@ -527,30 +527,31 @@ endif;
 
 //リボンタグ取得関数
 if ( !function_exists( 'get_navi_card_ribbon_tag' ) ):
-function get_navi_card_ribbon_tag($no){
-    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
-    switch ($no) {
-      case '1':
-        $caption = __( 'おすすめ', THEME_NAME );
-        break;
-      case '2':
-        $caption = __( '新着', THEME_NAME );
-        break;
-      case '3':
-        $caption = __( '注目', THEME_NAME );
-        break;
-      case '4':
-        $caption = __( '必見', THEME_NAME );
-        break;
-      case '5':
-        $caption = __( 'お得', THEME_NAME );
-        break;
-    }
-    $tag = '';
-    if ($no){
-      $tag = '<div class="ribbon ribbon-top-left ribbon-color-'.$no.'"><span>'.$caption.'</span></div>';
-    }
-    return $tag;
+function get_navi_card_ribbon_tag($ribbon_no){
+  $caption = null;
+  // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
+  switch ($ribbon_no) {
+    case '1':
+      $caption = __( 'おすすめ', THEME_NAME );
+      break;
+    case '2':
+      $caption = __( '新着', THEME_NAME );
+      break;
+    case '3':
+      $caption = __( '注目', THEME_NAME );
+      break;
+    case '4':
+      $caption = __( '必見', THEME_NAME );
+      break;
+    case '5':
+      $caption = __( 'お得', THEME_NAME );
+      break;
+  }
+  $tag = '';
+  if ($caption){
+    $tag = '<div class="ribbon ribbon-top-left ribbon-color-'.$ribbon_no.'"><span>'.$caption.'</span></div>';
+  }
+  return $tag;
 }
 endif;
 
@@ -561,7 +562,7 @@ function get_navi_card_wrap_tag($tag, $type){
   if ($type) {
     $navi_card_class = ' navi-card-type-'.$type;
   }
-  $tag = '<div class="navi-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  $tag = '<div class="navi-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
 }
 endif;
@@ -586,10 +587,10 @@ function get_navi_card_menu_tag($atts){
     $url = $menu->url;
     $title = $menu->title;
     $snippet = $menu->description;
-    $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
+    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
     //リボンタグの取得
-    $ribbon_tag = get_navi_card_ribbon_tag($no);
+    $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
 
     $tag .=
 '<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
@@ -636,12 +637,12 @@ function get_navi_card_list_tag($atts){
     $url = $menu->url;
     $title = $menu->title;
     $snippet = $menu->description;
-    $no = isset($menu->classes[0]) ? $menu->classes[0] : null;
+    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
-    //リボンタグの取得
-    $ribbon_tag = get_navi_card_ribbon_tag($no);
+    // //リボンタグの取得
+    // $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
 
-    $tag = get_widget_entry_card_link_tag(WIDGET_NAVI_ENTRY_CARD_PREFIX, $url, $title, $snippet, null, $image_attributes);
+    $tag .= get_widget_entry_card_link_tag(WIDGET_NAVI_ENTRY_CARD_PREFIX, $url, $title, $snippet, null, $image_attributes, $ribbon_no);
 
   endforeach;
 

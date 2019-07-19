@@ -251,10 +251,13 @@ endif;
 
 //ウィジェットエントリーカードリンクタグの取得
 if ( !function_exists( 'get_widget_entry_card_link_tag' ) ):
-function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size = null, $image_attributes = null){
+function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size = null, $image_attributes = null, $ribbon_no = null){
+  //リボンタグの取得
+  $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
   ob_start(); ?>
   <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
+      <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
         <?php
         if (is_widget_navi_entry_card_prefix($prefix)) {
@@ -268,7 +271,7 @@ function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_
       <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
         <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
         <?php if ($snippet): ?>
-        <div class="<?php echo $prefix; ?>-entry-card-snippet"><?php echo $snippet; ?></div>
+        <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
         <?php endif; ?>
         <?php
         if (!is_widget_navi_entry_card_prefix($prefix)) {

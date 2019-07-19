@@ -2258,17 +2258,26 @@ label.screen-reader-text {
   line-height: 1.3;
   margin-bottom: 4px;
 }
-.widget-entry-cards .widget-entry-card {
-  font-size: 0.8em;
-  position: relative;
-}
 .widget-entry-cards figure {
   width: 120px;
 }
-.widget-entry-cards .widget-entry-card-content {
+
+.widget-entry-card {
+  font-size: 16px;
+  position: relative;
+}
+
+.widget-entry-card-content {
   margin-left: 124px;
 }
-.widget-entry-cards .widget-entry-card-pv {
+
+.widget-entry-card-snippet {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.widget-entry-card-pv {
   margin-left: 5px;
   font-style: italic;
   font-size: 0.8em;
