@@ -7359,14 +7359,14 @@ div.fb-like-mobile {
   position: relative;
 }
 
-.navi-card-type-1 a {
+.card-type-1 a {
   border-bottom: 2px dotted #ddd;
 }
-.navi-card-type-1 a:first-of-type {
+.card-type-1 a:first-of-type {
   border-top: 2px dotted #ddd;
 }
 
-.navi-card-type-2 a {
+.card-type-2 a {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -7483,12 +7483,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   transform: rotate(-45deg);
 }
 
-.navi-card-box .ribbon-top-left {
-  top: -3px;
-  left: -3px;
-}
-
-.navi-card-type-2 .ribbon-top-left {
+.card-type-2 .ribbon-top-left {
   top: -13px;
   left: -13px;
 }

@@ -1005,15 +1005,15 @@ if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
     $classes = null;
 
     if ($type) {
-      $classes .= ' navi-card-type-'.$type;
+      $classes .= ' card-type-'.$type;
     }
 
     if ($bold) {
-      $classes .= ' navi-card-title-bold';
+      $classes .= ' card-title-bold';
     }
 
     if ($arrow) {
-      $classes .= ' navi-card-arrow';
+      $classes .= ' card-arrow';
     }
 
     if ($option) {

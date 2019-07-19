@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.navi-card-type-1 a {
+.card-type-1 a {
   border-bottom: 2px dotted $x_thin;
 
   &:first-of-type {
@@ -28,7 +28,7 @@
   // }
 }
 
-.navi-card-type-2 a {
+.card-type-2 a {
   border-radius: $basic_border_radius;
   border: 1px solid $thin;
 }
@@ -148,12 +148,12 @@ https://codepen.io/nxworld/pen/oLdoWb
   }
 }
 
-.navi-card-box .ribbon-top-left {
-  top: -3px;
-  left: -3px;
-}
+// .navi-card-box .ribbon-top-left {
+//   top: -3px;
+//   left: -3px;
+// }
 
-.navi-card-type-2 .ribbon-top-left {
+.card-type-2 .ribbon-top-left {
   top: -13px;
   left: -13px;
 }
