@@ -557,12 +557,12 @@ endif;
 
 //ナビカードを囲むタグ
 if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
-function get_navi_card_wrap_tag($tag, $type){
+function get_navi_card_wrap_tag($tag, $type = 0, $bold = 0, $arrow = 0){
   $navi_card_class = '';
   if ($type) {
     $navi_card_class = ' navi-card-type-'.$type;
   }
-  $tag = '<div class="navi-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
   return $tag;
 }
 endif;
@@ -612,7 +612,7 @@ function get_ord_navi_card_list_tag($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = get_navi_card_wrap_tag($tag, $type);
+    $tag = get_navi_card_wrap_tag($tag, $type, $bold, $arrow);
   }
 
   return apply_filters('get_ord_navi_card_list_tag', $tag);
@@ -659,7 +659,7 @@ function get_navi_card_list_tag($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = get_navi_card_wrap_tag($tag, $type);
+    $tag = get_navi_card_wrap_tag($tag, $type, $bold, $arrow);
   }
 
   return apply_filters('get_navi_card_list_tag', $tag);
