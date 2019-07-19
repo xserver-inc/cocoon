@@ -1778,12 +1778,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
 .admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
 .admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
-.admin-settings .demo .ribbon-top-left { top: -8px; left: -12px; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
-.admin-settings .demo .card-type-2 .ribbon-top-left, .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -3313,12 +3314,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
 .admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
 .admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
-.admin-settings .demo .ribbon-top-left { top: -8px; left: -12px; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
-.admin-settings .demo .card-type-2 .ribbon-top-left, .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }

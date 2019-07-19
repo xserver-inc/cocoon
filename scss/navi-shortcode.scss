@@ -111,8 +111,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 /* top left*/
 .ribbon-top-left {
-  top: -8px;
-  left: -12px;
+  top: -3px;
+  left: -9px;
   &::before, &::after {
     border-top-color: transparent;
     border-left-color: transparent;
@@ -137,8 +137,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 //   left: -3px;
 // }
 
-.card-type-2 .ribbon-top-left,
 .border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
+}
+
+.card-large-image .ribbon-top-left {
+  top: -7px;
+  left: -9px;
 }
