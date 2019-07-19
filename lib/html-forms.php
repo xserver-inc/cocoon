@@ -1070,10 +1070,13 @@ function generate_widget_entries_tag($atts){
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
-    $url = get_the_permalink();
-    $title = get_the_title();
-    $snippet = null;
-    echo get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size, null); ?>
+    $atts = array(
+      'prefix' => $prefix,
+      'url' => get_the_permalink(),
+      'title' => get_the_title(),
+      'thumb_size' => $thumb_size,
+    );
+    echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
   else :
     echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';//見つからない時のメッセージ

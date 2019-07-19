@@ -569,12 +569,14 @@ endif;
 
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
-add_shortcode('navi', 'get_navi_card_menu_tag');
-if ( !function_exists( 'get_navi_card_menu_tag' ) ):
-function get_navi_card_menu_tag($atts){
+add_shortcode('navi', 'get_ord_navi_card_list_tag');
+if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
+function get_ord_navi_card_list_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
     'type' => '',
+    'bold' => 1,
+    'arrow' => 1,
   ), $atts));
 
   $tag = null;
@@ -613,7 +615,7 @@ function get_navi_card_menu_tag($atts){
     $tag = get_navi_card_wrap_tag($tag, $type);
   }
 
-  return apply_filters('get_navi_card_menu_tag', $tag);
+  return apply_filters('get_ord_navi_card_list_tag', $tag);
 }
 endif;
 
@@ -625,6 +627,8 @@ function get_navi_card_list_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
     'type' => '',
+    'bold' => 0,
+    'arrow' => 0,
   ), $atts));
 
   $tag = null;
@@ -641,8 +645,15 @@ function get_navi_card_list_tag($atts){
 
     // //リボンタグの取得
     // $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
-
-    $tag .= get_widget_entry_card_link_tag(WIDGET_NAVI_ENTRY_CARD_PREFIX, $url, $title, $snippet, null, $image_attributes, $ribbon_no);
+    $atts = array(
+      'prefix' => WIDGET_NAVI_ENTRY_CARD_PREFIX,
+      'url' => $url,
+      'title' => $title,
+      'snippet' => $snippet,
+      'image_attributes' => $image_attributes,
+      'ribbon_no' => $ribbon_no,
+    );
+    $tag .= get_widget_entry_card_link_tag($atts);
 
   endforeach;
 

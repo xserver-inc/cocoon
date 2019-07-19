@@ -251,7 +251,16 @@ endif;
 
 //ウィジェットエントリーカードリンクタグの取得
 if ( !function_exists( 'get_widget_entry_card_link_tag' ) ):
-function get_widget_entry_card_link_tag($prefix, $url, $title, $snippet, $thumb_size = null, $image_attributes = null, $ribbon_no = null){
+function get_widget_entry_card_link_tag($atts){
+  extract(shortcode_atts(array(
+    'prefix' => WIDGET_NEW_ENTRY_CARD_PREFIX,
+    'url' => null,
+    'title' => null,
+    'snippet' => null,
+    'thumb_size' => null,
+    'image_attributes' => null,
+    'ribbon_no' => null,
+  ), $atts));
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
   ob_start(); ?>
