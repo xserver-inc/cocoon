@@ -1065,8 +1065,12 @@ function generate_widget_entries_tag($atts){
   //_v($args);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
+  $atts = array(
+    'entry_type' => $entry_type,
+  );
+  $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
-  <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo get_additional_widget_entriy_cards_classes($entry_type); ?>">
+  <div class="<?php echo $prefix; ?>-entry-cards widget-entry-cards no-icon cf<?php echo $cards_classes; ?>">
   <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php if ( $query -> have_posts() ) : while ( $query -> have_posts() ) : $query -> the_post(); ?>
     <?php //エントリーカードリンクタグの生成
@@ -1416,6 +1420,7 @@ if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
 function get_navi_card_wrap_tag($atts){
   extract(shortcode_atts(array(
     'tag' => '',
+    'entry_type' => ET_DEFAULT,
     'type' => 0,
     'bold' => 0,
     'arrow' => 0,

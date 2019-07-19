@@ -398,8 +398,14 @@ function get_additional_entry_content_classes($option = null){
 endif;
 
 //エントリーカードの追加関数
-if ( !function_exists( 'get_additional_widget_entriy_cards_classes' ) ):
-function get_additional_widget_entriy_cards_classes($entry_type, $option = null){
+if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
+function get_additional_widget_entry_cards_classes($atts, $option = null){
+  extract(shortcode_atts(array(
+    'entry_type' => ET_DEFAULT,
+    'type' => 0,
+    'bold' => 0,
+    'arrow' => 0,
+  ), $atts));
   $classes = null;
   if ($entry_type != ET_DEFAULT) {
     $classes .= ' not-default';
@@ -410,10 +416,22 @@ function get_additional_widget_entriy_cards_classes($entry_type, $option = null)
     }
   }
 
+  if ($type) {
+    $classes .= ' card-type-'.$type;
+  }
+
+  if ($bold) {
+    $classes .= ' card-title-bold';
+  }
+
+  if ($arrow) {
+    $classes .= ' card-arrow';
+  }
+
   if ($option) {
     $classes .= ' '.trim($option);
   }
-  return apply_filters('get_additional_widget_entriy_cards_classes', $classes);
+  return apply_filters('get_additional_widget_entry_cards_classes', $classes);
 }
 endif;
 
@@ -994,31 +1012,31 @@ function filter_post_class( $classes, $class, $post_id ) {
 };
 endif;
 
-//ウィジェットエントリーカードリストのclass追加関数
-if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
-  function get_additional_widget_entry_cards_classes($atts, $option = null){
-    extract(shortcode_atts(array(
-      'type' => 0,
-      'bold' => 0,
-      'arrow' => 0,
-    ), $atts));
-    $classes = null;
+// //ウィジェットエントリーカードリストのclass追加関数
+// if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
+// function get_additional_widget_entry_cards_classes($atts, $option = null){
+//   extract(shortcode_atts(array(
+//     'type' => 0,
+//     'bold' => 0,
+//     'arrow' => 0,
+//   ), $atts));
+//   $classes = null;
 
-    if ($type) {
-      $classes .= ' card-type-'.$type;
-    }
+//   if ($type) {
+//     $classes .= ' card-type-'.$type;
+//   }
 
-    if ($bold) {
-      $classes .= ' card-title-bold';
-    }
+//   if ($bold) {
+//     $classes .= ' card-title-bold';
+//   }
 
-    if ($arrow) {
-      $classes .= ' card-arrow';
-    }
+//   if ($arrow) {
+//     $classes .= ' card-arrow';
+//   }
 
-    if ($option) {
-      $classes .= ' '.trim($option);
-    }
-    return $classes;
-  }
-  endif;
+//   if ($option) {
+//     $classes .= ' '.trim($option);
+//   }
+//   return $classes;
+// }
+// endif;
