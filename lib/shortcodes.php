@@ -530,6 +530,7 @@ function get_navi_card_list_tag($atts){
       'snippet' => $snippet,
       'image_attributes' => $image_attributes,
       'ribbon_no' => $ribbon_no,
+      'type' => $type,
     );
     $tag .= get_widget_entry_card_link_tag($atts);
 

@@ -1085,6 +1085,7 @@ function generate_widget_entries_tag($atts){
       'url' => get_the_permalink(),
       'title' => get_the_title(),
       'thumb_size' => $thumb_size,
+      'type' => $type,
     );
     echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
@@ -1100,13 +1101,13 @@ endif;
 
 //ウィジェットエントリーカードサムネイルの取得
 if ( !function_exists( 'get_widget_entry_card_thumbnail_tag' ) ):
-function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size){
+function get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type){
   global $post;
   ob_start();
   if ( has_post_thumbnail() ){ // サムネイルを持っているときの処理
     the_post_thumbnail( $thumb_size, array('alt' => '') );
   } else { // サムネイルを持っていないときの処理
-    echo get_widget_entry_card_no_image_tag(ET_DEFAULT, $prefix);
+    echo get_widget_entry_card_no_image_tag($type, $prefix);
   }
   if (!is_widget_navi_entry_card_prefix($prefix)) {//ナビカードではないとき
     if ($prefix == WIDGET_RELATED_ENTRY_CARD_PREFIX) {//関連記事
@@ -1138,10 +1139,11 @@ endif;
 
 //ウィジェットエントリーカードもNO IMAGEタグの取得
 if ( !function_exists( 'get_widget_entry_card_no_image_tag' ) ):
-function get_widget_entry_card_no_image_tag($entry_type, $prefix){
-  $url = ($entry_type == ET_DEFAULT) ? get_no_image_120x68_url() : get_no_image_320x180_url();
-  $w   = ($entry_type == ET_DEFAULT) ? THUMB120WIDTH  : THUMB320WIDTH;
-  $h   = ($entry_type == ET_DEFAULT) ? THUMB120HEIGHT : THUMB320HEIGHT;
+function get_widget_entry_card_no_image_tag($type, $prefix){
+  $is_large_image_use = is_widget_entry_card_large_image_use($type);
+  $url = (!$is_large_image_use) ? get_no_image_120x68_url() : get_no_image_320x180_url();
+  $w   = (!$is_large_image_use) ? THUMB120WIDTH  : THUMB320WIDTH;
+  $h   = (!$is_large_image_use) ? THUMB120HEIGHT : THUMB320HEIGHT;
   $tag = '<img src="'.esc_url($url).'" alt="" class="no-image '.$prefix.'-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
   return $tag;
 }
@@ -1306,6 +1308,7 @@ function get_widget_entry_card_link_tag($atts){
     'thumb_size' => null,
     'image_attributes' => null,
     'ribbon_no' => null,
+    'type' => null,
   ), $atts));
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
@@ -1318,7 +1321,7 @@ function get_widget_entry_card_link_tag($atts){
         if (is_widget_navi_entry_card_prefix($prefix)) {
           echo get_navi_entry_card_thumbnail_tag($image_attributes, $title);
         } else {
-          echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size);
+          echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size, $type);
         }
         ?>
       </figure><!-- /.entry-card-thumb -->
@@ -1342,16 +1345,28 @@ endif;
 
 //イメージURLから属性の取得
 if ( !function_exists( 'get_navi_card_image_url_attributes' ) ):
-function get_navi_card_image_url_attributes($image_url){
+function get_navi_card_image_url_attributes($image_url, $type = ET_DEFAULT){
   if (!$image_url) {
     return false;
   }
-  $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
+  if (is_widget_entry_card_large_image_use($type)) {
+    $w = THUMB320WIDTH;
+    $h = THUMB320HEIGHT;
+    $aw = THUMB320WIDTH_DEF;
+    $ah = THUMB320HEIGHT_DEF;
+  } else {
+    $w = THUMB120WIDTH;
+    $h = THUMB120HEIGHT;
+    $aw = THUMB120WIDTH_DEF;
+    $ah = THUMB120HEIGHT_DEF;
+  }
+
+  $sized_image_url = get_image_sized_url($image_url, $w, $h);
   $image_attributes = array();
-  $image_attributes[1] = 120;
-  $image_attributes[2] = 68;
-  if (file_exists(url_to_local($image_url_120))) {
-    $image_attributes[0] = $image_url_120;
+  $image_attributes[1] = $aw;
+  $image_attributes[2] = $ah;
+  if (file_exists(url_to_local($sized_image_url))) {
+    $image_attributes[0] = $sized_image_url;
   } else {
     $image_attributes[0] = $image_url;
   }
@@ -1359,33 +1374,50 @@ function get_navi_card_image_url_attributes($image_url){
 }
 endif;
 
+//大きな画像を使用するか
+if ( !function_exists( 'is_widget_entry_card_large_image_use' ) ):
+function is_widget_entry_card_large_image_use($type){
+  return ($type = ET_LARGE_THUMB) || ($type = ET_LARGE_THUMB_ON);
+}
+endif;
+
 //ナビカードイメージ属性の取得
 if ( !function_exists( 'get_navi_card_image_attributes' ) ):
-function get_navi_card_image_attributes($menu){
+function get_navi_card_image_attributes($menu, $type = ET_DEFAULT){
   $url = $menu->url;
   $object_id = $menu->object_id;
   $object = $menu->object;
 
+  $is_large_image_use = is_widget_entry_card_large_image_use($type);
+  //大きなサムネイル画像を使用する場合
   $image_attributes = array();
   if ($object == 'post' || $object == 'page') {
+    $thumb_size = $is_large_image_use ? THUMB320 : THUMB120;
     $thumbnail_id = get_post_thumbnail_id($object_id);
-    $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
+    $image_attributes = wp_get_attachment_image_src($thumbnail_id, $thumb_size);
   } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
     $image_url = get_category_eye_catch_url($object_id);
-    $image_attributes = get_navi_card_image_url_attributes($image_url);
+    $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
   }
   elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
     //タグページのアイキャッチを取得
     $tag_obj = url_to_tag_object($url);
     if ($tag_obj && isset($tag_obj->term_id)) {
       $image_url = get_tag_eye_catch_url($tag_obj->term_id);
-      $image_attributes = get_navi_card_image_url_attributes($image_url);
+      $image_attributes = get_navi_card_image_url_attributes($image_url, $type);
     }
   }
+
   if (!$image_attributes) {//アイキャッチがない場合
-    $image_attributes[0] = get_no_image_120x68_url();
-    $image_attributes[1] = 120;
-    $image_attributes[2] = 68;
+    if ($is_large_image_use) {
+      $image_attributes[0] = get_no_image_320x180_url();
+      $image_attributes[1] = THUMB320WIDTH_DEF;
+      $image_attributes[2] = THUMB320HEIGHT_DEF;
+    } else {
+      $image_attributes[0] = get_no_image_120x68_url();
+      $image_attributes[1] = THUMB120WIDTH_DEF;
+      $image_attributes[2] = THUMB120HEIGHT_DEF;
+    }
   }
   return $image_attributes;
 }

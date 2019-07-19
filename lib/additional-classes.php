@@ -450,7 +450,7 @@ function get_additional_widget_entry_cards_classes($atts, $option = null){
     $classes .= ' card-title-bold';
   }
 
-  if ($arrow) {
+  if ($arrow && !is_widget_entry_card_large_image_use($type)) {
     $classes .= ' card-arrow';
   }
 
