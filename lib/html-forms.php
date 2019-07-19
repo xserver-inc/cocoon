@@ -1284,3 +1284,144 @@ function get_font_weight_demo_tag($weights){
   return implode(', ', $taged_weights);
 }
 endif;
+
+//ウィジェットエントリーカードリンクタグの取得
+if ( !function_exists( 'get_widget_entry_card_link_tag' ) ):
+function get_widget_entry_card_link_tag($atts){
+  extract(shortcode_atts(array(
+    'prefix' => WIDGET_NEW_ENTRY_CARD_PREFIX,
+    'url' => null,
+    'title' => null,
+    'snippet' => null,
+    'thumb_size' => null,
+    'image_attributes' => null,
+    'ribbon_no' => null,
+  ), $atts));
+  //リボンタグの取得
+  $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
+  ob_start(); ?>
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
+    <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
+      <?php echo $ribbon_tag; ?>
+      <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">
+        <?php
+        if (is_widget_navi_entry_card_prefix($prefix)) {
+          echo get_navi_entry_card_thumbnail_tag($image_attributes, $title);
+        } else {
+          echo get_widget_entry_card_thumbnail_tag($prefix, $thumb_size);
+        }
+        ?>
+      </figure><!-- /.entry-card-thumb -->
+
+      <div class="<?php echo $prefix; ?>-entry-card-content widget-entry-card-content card-content">
+        <div class="<?php echo $prefix; ?>-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></div>
+        <?php if ($snippet): ?>
+        <div class="<?php echo $prefix; ?>-entry-card-snippet widget-entry-card-snippet card-snippet"><?php echo $snippet; ?></div>
+        <?php endif; ?>
+        <?php
+        if (!is_widget_navi_entry_card_prefix($prefix)) {
+          generate_widget_entry_card_date($prefix);
+        } ?>
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-card -->
+  </a><!-- /.entry-card-link -->
+<?php
+  return ob_get_clean();
+}
+endif;
+
+//イメージURLから属性の取得
+if ( !function_exists( 'get_navi_card_image_url_attributes' ) ):
+function get_navi_card_image_url_attributes($image_url){
+  if (!$image_url) {
+    return false;
+  }
+  $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
+  $image_attributes = array();
+  $image_attributes[1] = 120;
+  $image_attributes[2] = 68;
+  if (file_exists(url_to_local($image_url_120))) {
+    $image_attributes[0] = $image_url_120;
+  } else {
+    $image_attributes[0] = $image_url;
+  }
+  return $image_attributes;
+}
+endif;
+
+//ナビカードイメージ属性の取得
+if ( !function_exists( 'get_navi_card_image_attributes' ) ):
+function get_navi_card_image_attributes($menu){
+  $url = $menu->url;
+  $object_id = $menu->object_id;
+  $object = $menu->object;
+
+  $image_attributes = array();
+  if ($object == 'post' || $object == 'page') {
+    $thumbnail_id = get_post_thumbnail_id($object_id);
+    $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
+  } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
+    $image_url = get_category_eye_catch_url($object_id);
+    $image_attributes = get_navi_card_image_url_attributes($image_url);
+  }
+  elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
+    //タグページのアイキャッチを取得
+    $tag_obj = url_to_tag_object($url);
+    if ($tag_obj && isset($tag_obj->term_id)) {
+      $image_url = get_tag_eye_catch_url($tag_obj->term_id);
+      $image_attributes = get_navi_card_image_url_attributes($image_url);
+    }
+  }
+  if (!$image_attributes) {//アイキャッチがない場合
+    $image_attributes[0] = get_no_image_120x68_url();
+    $image_attributes[1] = 120;
+    $image_attributes[2] = 68;
+  }
+  return $image_attributes;
+}
+endif;
+
+//リボンタグ取得関数
+if ( !function_exists( 'get_navi_card_ribbon_tag' ) ):
+function get_navi_card_ribbon_tag($ribbon_no){
+  $caption = null;
+  // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
+  switch ($ribbon_no) {
+    case '1':
+      $caption = __( 'おすすめ', THEME_NAME );
+      break;
+    case '2':
+      $caption = __( '新着', THEME_NAME );
+      break;
+    case '3':
+      $caption = __( '注目', THEME_NAME );
+      break;
+    case '4':
+      $caption = __( '必見', THEME_NAME );
+      break;
+    case '5':
+      $caption = __( 'お得', THEME_NAME );
+      break;
+  }
+  $tag = '';
+  if ($caption){
+    $tag = '<div class="ribbon ribbon-top-left ribbon-color-'.$ribbon_no.'"><span>'.$caption.'</span></div>';
+  }
+  return $tag;
+}
+endif;
+
+//ナビカードを囲むタグ
+if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
+function get_navi_card_wrap_tag($atts){
+  extract(shortcode_atts(array(
+    'tag' => '',
+    'type' => 0,
+    'bold' => 0,
+    'arrow' => 0,
+  ), $atts));
+  $navi_card_class = get_additional_widget_entry_cards_classes($atts);
+  $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+  return $tag;
+}
+endif;
