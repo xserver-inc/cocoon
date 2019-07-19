@@ -16,23 +16,6 @@
   position: relative;
 }
 
-.card-type-1 a {
-  border-bottom: 2px dotted $x_thin;
-
-  &:first-of-type {
-    border-top: 2px dotted $x_thin;
-  }
-
-  // &:last-of-type {
-  //   border-bottom: 2px solid $x_thin;
-  // }
-}
-
-.card-type-2 a {
-  border-radius: $basic_border_radius;
-  border: 1px solid $thin;
-}
-
 .navi-card-wrap {
   &:after {
     display: block;
@@ -45,7 +28,6 @@
     height: 6px;
     border-top: solid 2px #697b91;
     border-right: solid 2px #697b91;
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     margin-top: -3px;
   }
