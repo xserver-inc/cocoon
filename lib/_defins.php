@@ -49,6 +49,8 @@ define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
 define('ET_DEFAULT',        'default');
 define('ET_LARGE_THUMB',    'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
+define('ET_BORDER_PARTITION',    'border_partition');
+define('ET_BORDER_SQUARE', 'border_square');
 //ウィジェットモードデフォルト
 define('WM_DEFAULT', 'all');
 //人気ウィジェット集計期間デフォルト

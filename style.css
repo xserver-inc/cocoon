@@ -2283,14 +2283,14 @@ label.screen-reader-text {
   font-size: 0.8em;
 }
 
-.card-type-1 a {
+.border-partition a {
   border-bottom: 2px dotted #ddd;
 }
-.card-type-1 a:first-of-type {
+.border-partition a:first-of-type {
   border-top: 2px dotted #ddd;
 }
 
-.card-type-2 a {
+.border-square a {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -2320,23 +2320,23 @@ label.screen-reader-text {
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
-.widget-entry-cards.not-default .a-wrap {
+.widget-entry-cards.card-large-image .a-wrap {
   max-width: 400px;
 }
-.widget-entry-cards.not-default .e-card {
+.widget-entry-cards.card-large-image .e-card {
   font-size: 18px;
 }
-.widget-entry-cards.not-default figure {
+.widget-entry-cards.card-large-image figure {
   float: none;
   width: 100%;
 }
-.widget-entry-cards.not-default figure img {
+.widget-entry-cards.card-large-image figure img {
   width: 100%;
 }
-.widget-entry-cards.not-default .card-content {
+.widget-entry-cards.card-large-image .card-content {
   margin: 0 0 0.5em;
 }
-.widget-entry-cards.not-default .widget-entry-card-pv {
+.widget-entry-cards.card-large-image .widget-entry-card-pv {
   opacity: 0.7;
   position: absolute;
   top: 0;
@@ -7508,7 +7508,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   transform: rotate(-45deg);
 }
 
-.card-type-2 .ribbon-top-left {
+.card-type-2 .ribbon-top-left,
+.border-square .ribbon-top-left {
   top: -13px;
   left: -13px;
 }

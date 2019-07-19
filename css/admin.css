@@ -757,18 +757,18 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-card-content { margin-left: 124px; }
 .admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
 .admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .card-type-1 a { border-bottom: 2px dotted #ddd; }
-.admin-settings .demo .card-type-1 a:first-of-type { border-top: 2px dotted #ddd; }
-.admin-settings .demo .card-type-2 a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
@@ -1783,7 +1783,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
-.admin-settings .demo .card-type-2 .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-type-2 .ribbon-top-left, .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -2292,18 +2292,18 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-card-content { margin-left: 124px; }
 .admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
 .admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .card-type-1 a { border-bottom: 2px dotted #ddd; }
-.admin-settings .demo .card-type-1 a:first-of-type { border-top: 2px dotted #ddd; }
-.admin-settings .demo .card-type-2 a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
@@ -3318,7 +3318,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
-.admin-settings .demo .card-type-2 .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-type-2 .ribbon-top-left, .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }

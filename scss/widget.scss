@@ -179,8 +179,7 @@ label.screen-reader-text{
   //font-weight: bold;
 }
 
-
-.card-type-1 a {
+.border-partition a {
   border-bottom: 2px dotted $x_thin;
 
   &:first-of-type {
@@ -192,7 +191,7 @@ label.screen-reader-text{
   // }
 }
 
-.card-type-2 a {
+.border-square a {
   border-radius: $basic_border_radius;
   border: 1px solid $thin;
 }
@@ -223,7 +222,7 @@ label.screen-reader-text{
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
-.widget-entry-cards.not-default{
+.widget-entry-cards.card-large-image{
   .a-wrap{
     max-width: $widget_max_width;
   }
