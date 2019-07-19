@@ -61,7 +61,7 @@ function new_entries_shortcode($atts) {
     'entry_count' => $count,
     'cat_ids' => $cat_ids,
     'tag_ids' => $tag_ids,
-    'entry_type' => $type,
+    'type' => $type,
     'include_children' => $children,
     'post_type' => $post_type,
     'taxonomy' => $taxonomy,

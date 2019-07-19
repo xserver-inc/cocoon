@@ -948,7 +948,7 @@ function generate_widget_entries_tag($atts){
     'entry_count' => 5,
     'cat_ids' => array(),
     'tag_ids' => array(),
-    'entry_type' => ET_DEFAULT,
+    'type' => ET_DEFAULT,
     'include_children' => 0,
     'post_type' => null,
     'taxonomy' => 'category',
@@ -1052,21 +1052,21 @@ function generate_widget_entries_tag($atts){
 
   }
   // _v($args);
-  $thumb_size = get_widget_entries_thumbnail_size($entry_type);
+  $thumb_size = get_widget_entries_thumbnail_size($type);
 
   if ($random) {
     $args = apply_filters('widget_related_entries_args', $args);
-    $thumb_size = apply_filters('get_related_entries_thumbnail_size', $thumb_size, $entry_type);
+    $thumb_size = apply_filters('get_related_entries_thumbnail_size', $thumb_size, $type);
   } else {
     $args = apply_filters('widget_new_entries_args', $args);
-    $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $entry_type);
+    $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $type);
   }
   $args = apply_filters('widget_entries_args', $args);
   //_v($args);
   //query_posts( $args ); //クエリの作成
   $query = new WP_Query( $args );
   $atts = array(
-    'entry_type' => $entry_type,
+    'type' => $type,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
@@ -1420,7 +1420,6 @@ if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
 function get_navi_card_wrap_tag($atts){
   extract(shortcode_atts(array(
     'tag' => '',
-    'entry_type' => ET_DEFAULT,
     'type' => 0,
     'bold' => 0,
     'arrow' => 0,

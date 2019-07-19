@@ -401,24 +401,28 @@ endif;
 if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
 function get_additional_widget_entry_cards_classes($atts, $option = null){
   extract(shortcode_atts(array(
-    'entry_type' => ET_DEFAULT,
     'type' => 0,
     'bold' => 0,
     'arrow' => 0,
   ), $atts));
   $classes = null;
-  if ($entry_type != ET_DEFAULT) {
-    $classes .= ' not-default';
-    if ($entry_type == ET_LARGE_THUMB) {
-      $classes .= ' large-thumb';
-    } else if ($entry_type == ET_LARGE_THUMB_ON) {
-      $classes .= ' large-thumb-on';
+  if (is_numeric($type)) {
+    $classes .= ' card-type-'.$type;
+  } else {
+    if ($type != ET_DEFAULT && $type) {
+      $classes .= ' not-default';
+      if ($type == ET_LARGE_THUMB) {
+        $classes .= ' large-thumb';
+      } else if ($type == ET_LARGE_THUMB_ON) {
+        $classes .= ' large-thumb-on';
+      }
     }
   }
 
-  if ($type) {
-    $classes .= ' card-type-'.$type;
-  }
+
+  // if ($type) {
+  //   $classes .= ' card-type-'.$type;
+  // }
 
   if ($bold) {
     $classes .= ' card-title-bold';
