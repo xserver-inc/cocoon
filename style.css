@@ -7377,56 +7377,60 @@ div.fb-like-mobile {
   }
 }
 /*Cocoon用記事ボックス*/
+/*
 .navi-card-wrap {
-  background-color: #fff;
-}
-.navi-card-wrap.a-wrap {
-  position: relative;
-  padding: 5px 3px;
-  line-height: 1.3;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  background-color: $white;
+  &.a-wrap {
+    position: relative;
+    padding: 5px 3px;
+    line-height: 1.3;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
 }
 
 .navi-card-box {
+  //background-color: $white;
   padding: 0;
   position: relative;
 }
 
-.navi-card-wrap:after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 50%;
-  bottom: 0;
-  right: 20px;
-  width: 6px;
-  height: 6px;
-  border-top: solid 2px #697b91;
-  border-right: solid 2px #697b91;
-  transform: rotate(45deg);
-  margin-top: -3px;
+.navi-card-wrap {
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 20px;
+    width: 6px;
+    height: 6px;
+    border-top: solid 2px #697b91;
+    border-right: solid 2px #697b91;
+    transform: rotate(45deg);
+    margin-top: -3px;
+  }
+  .navi-card-thumb {
+    float: left;
+    margin: 6px 10px;
+    width: 120px;
+  }
+  .navi-card-content{
+    margin: 0 24px 0 140px;
+  }
+  .navi-card-title {
+    margin: 2px 0 6px;
+    font-size: 0.9em;
+    color: $text_color;
+    font-weight: 700;
+  }
+  .navi-card-snippet {
+    margin: 0px 0 2px;
+    font-size: 0.7em;
+    color: $pallid_text_color;
+  }
 }
-.navi-card-wrap .navi-card-thumb {
-  float: left;
-  margin: 6px 10px;
-  width: 120px;
-}
-.navi-card-wrap .navi-card-content {
-  margin: 0 24px 0 140px;
-}
-.navi-card-wrap .navi-card-title {
-  margin: 2px 0 6px;
-  font-size: 0.9em;
-  color: #333;
-  font-weight: 700;
-}
-.navi-card-wrap .navi-card-snippet {
-  margin: 0px 0 2px;
-  font-size: 0.7em;
-  color: #777;
-}
-
+*/
 /* リボン部分 */
 /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。

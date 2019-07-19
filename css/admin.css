@@ -181,7 +181,16 @@ body.wp-admin { color: #444; }
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
@@ -312,7 +321,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
@@ -1752,14 +1770,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; position: relative; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
@@ -3295,14 +3305,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; position: relative; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }

@@ -581,48 +581,13 @@ function get_ord_navi_card_list_tag($atts){
     'bold' => 1,
     'arrow' => 1,
   ), $atts));
-
-  $tag = null;
-  $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
-
-  foreach ($menu_items as $menu):
-    //画像情報の取得
-    $image_attributes = get_navi_card_image_attributes($menu);
-
-    $url = $menu->url;
-    $title = $menu->title;
-    $snippet = $menu->description;
-    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
-
-    //リボンタグの取得
-    $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
-
-    $tag .=
-'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
-  <div class="navi-card-box cf">
-    '.$ribbon_tag.'
-    <figure class="navi-card-thumb">'.
-      get_navi_entry_card_thumbnail_tag($image_attributes, $title)
-    .'</figure>
-    <div class="navi-card-content">
-      <div class="navi-card-title">'.$title.'</div>
-      <div class="navi-card-snippet">'.$snippet.'</div>
-    </div>
-  </div>
-</a>';
-
-  endforeach;
-
-  //ラッパーの取り付け
-  if ($menu_items) {
-    $atts = array(
-      'tag' => $tag,
-      'type' => $type,
-      'bold' => $bold,
-      'arrow' => $arrow,
-    );
-    $tag = get_navi_card_wrap_tag($atts);
-  }
+  $atts = array(
+    'name' => $name,
+    'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
+  );
+  $tag = get_navi_card_list_tag($atts);
 
   return apply_filters('get_ord_navi_card_list_tag', $tag);
 }
