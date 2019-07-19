@@ -997,9 +997,24 @@ endif;
 //ウィジェットエントリーカードリストのclass追加関数
 if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
   function get_additional_widget_entry_cards_classes($atts, $option = null){
+    extract(shortcode_atts(array(
+      'type' => 0,
+      'bold' => 0,
+      'arrow' => 0,
+    ), $atts));
     $classes = null;
 
-    $classes .= ' apdt-'.replace_value_to_class(get_admin_panel_display_type());
+    if ($type) {
+      $classes .= ' navi-card-type-'.$type;
+    }
+
+    if ($bold) {
+      $classes .= ' navi-card-title-bold';
+    }
+
+    if ($arrow) {
+      $classes .= ' navi-card-arrow';
+    }
 
     if ($option) {
       $classes .= ' '.trim($option);
