@@ -958,7 +958,6 @@ function get_additional_categories_tags_area_classes($option = null){
 }
 endif;
 
-
 //管理パネルエリアのclass追加関数
 if ( !function_exists( 'get_additional_admin_panel_area_classes' ) ):
 function get_additional_admin_panel_area_classes($option = null){
@@ -995,3 +994,16 @@ function filter_post_class( $classes, $class, $post_id ) {
 };
 endif;
 
+//ウィジェットエントリーカードリストのclass追加関数
+if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
+  function get_additional_widget_entry_cards_classes($atts, $option = null){
+    $classes = null;
+
+    $classes .= ' apdt-'.replace_value_to_class(get_admin_panel_display_type());
+
+    if ($option) {
+      $classes .= ' '.trim($option);
+    }
+    return $classes;
+  }
+  endif;

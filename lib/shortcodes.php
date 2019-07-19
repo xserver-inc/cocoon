@@ -557,7 +557,13 @@ endif;
 
 //ナビカードを囲むタグ
 if ( !function_exists( 'get_navi_card_wrap_tag' ) ):
-function get_navi_card_wrap_tag($tag, $type = 0, $bold = 0, $arrow = 0){
+function get_navi_card_wrap_tag($atts){
+  extract(shortcode_atts(array(
+    'tag' => '',
+    'type' => 0,
+    'bold' => 0,
+    'arrow' => 0,
+  ), $atts));
   $navi_card_class = '';
   if ($type) {
     $navi_card_class = ' navi-card-type-'.$type;
@@ -612,7 +618,13 @@ function get_ord_navi_card_list_tag($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = get_navi_card_wrap_tag($tag, $type, $bold, $arrow);
+    $atts = array(
+      'tag' => $tag,
+      'type' => $type,
+      'bold' => $bold,
+      'arrow' => $arrow,
+    );
+    $tag = get_navi_card_wrap_tag($atts);
   }
 
   return apply_filters('get_ord_navi_card_list_tag', $tag);
@@ -659,7 +671,13 @@ function get_navi_card_list_tag($atts){
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = get_navi_card_wrap_tag($tag, $type, $bold, $arrow);
+    $atts = array(
+      'tag' => $tag,
+      'type' => $type,
+      'bold' => $bold,
+      'arrow' => $arrow,
+    );
+    $tag = get_navi_card_wrap_tag($atts);
   }
 
   return apply_filters('get_navi_card_list_tag', $tag);
