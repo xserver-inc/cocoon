@@ -509,8 +509,15 @@ function get_navi_card_list_tag($atts){
     'arrow' => 0,
   ), $atts));
 
+  if (is_admin()) {
+    return;
+  }
+
   $tag = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+  if (!$menu_items) {
+    return;
+  }
 
   foreach ($menu_items as $menu):
     //画像情報の取得
