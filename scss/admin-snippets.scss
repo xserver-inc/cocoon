@@ -1,14 +1,14 @@
 ///////////////////////////////////////
 // 関数テキスト関係のCSS
 ///////////////////////////////////////
-.snipet-list{
+.snippet-list{
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
 
 }
 
-.snipet-wrap{
+.snippet-wrap{
   width: 240px;
   margin: 5px;
   padding: 10px;
@@ -17,19 +17,19 @@
   position: relative;
 }
 
-.snipet-title,
-.snipet-short-code,
-.snipet-content{
+.snippet-title,
+.snippet-short-code,
+.snippet-content{
   margin-bottom: 6px;
 }
 
-.snipet-short-code{
+.snippet-short-code{
   input{
     width: 120px;
   }
 }
 
-.snipet-content{
+.snippet-content{
   max-height: 100px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -41,7 +41,7 @@
   margin: 0;
 }
 
-.snipet-menu{
+.snippet-menu{
   text-align: right;
   position: absolute;
   bottom: 0;
@@ -53,22 +53,22 @@
     margin-left: 8px;
   }
 
-  .snipet-menu-left{
+  .snippet-menu-left{
     position: absolute;
     left: 10px;
   }
 }
 
-.snipet-confirm-wrap{
+.snippet-confirm-wrap{
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 20px;
 
-  .snipet-confirm-title{
+  .snippet-confirm-title{
     font-size: 16px;
     font-weight: bold;
   }
-  .snipet-confirm-text{
+  .snippet-confirm-text{
     pre{
       max-height: 300px;
       overflow: auto;

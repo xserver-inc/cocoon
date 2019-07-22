@@ -68,7 +68,7 @@ class NewEntryWidgetItem extends WP_Widget {
       $atts = array(
         'entry_count' => $entry_count,
         'cat_ids' => $categories,
-        'entry_type' => $entry_type,
+        'type' => $entry_type,
         'sticky' => $is_sticky_visible,
       );
       //新着記事リストの作成

@@ -64,7 +64,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       $atts = array(
         'entry_count' => $entry_count,
         'cat_ids' => $categories,
-        'entry_type' => $entry_type,
+        'type' => $entry_type,
         'include_children' => 0,
         'post_type' => 'post',
         'taxonomy' => 'category',

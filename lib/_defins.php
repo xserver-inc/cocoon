@@ -49,12 +49,20 @@ define('SETTING_NAME_TOP', THEME_NAME_CAMEL.' '.__( '設定', THEME_NAME ));
 define('ET_DEFAULT',        'default');
 define('ET_LARGE_THUMB',    'large_thumb');
 define('ET_LARGE_THUMB_ON', 'large_thumb_on');
+define('ET_BORDER_PARTITION',    'border_partition');
+define('ET_BORDER_SQUARE', 'border_square');
 //ウィジェットモードデフォルト
 define('WM_DEFAULT', 'all');
 //人気ウィジェット集計期間デフォルト
 define('PCD_DEFAULT', 30);
 //新着・人気ウィジェットのデフォルト表示数字
 define('EC_DEFAULT', 5);
+
+//ウィジェットエントリーカードのプレフィックス
+define('WIDGET_NEW_ENTRY_CARD_PREFIX', 'new');
+define('WIDGET_RELATED_ENTRY_CARD_PREFIX', 'widget-related');
+define('WIDGET_NAVI_ENTRY_CARD_PREFIX', 'navi');
+
 //目次のインデックス番号
 global $_TOC_INDEX;
 $_TOC_INDEX = 1;

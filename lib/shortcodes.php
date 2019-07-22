@@ -61,7 +61,7 @@ function new_entries_shortcode($atts) {
     'entry_count' => $count,
     'cat_ids' => $cat_ids,
     'tag_ids' => $tag_ids,
-    'entry_type' => $type,
+    'type' => $type,
     'include_children' => $children,
     'post_type' => $post_type,
     'taxonomy' => $taxonomy,
@@ -446,11 +446,7 @@ endif;
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
   $now = date_i18n('U');
-  //$now = strtotime('2019/01/22 23:59:59');
   $diff = (int) ($to - $now);
-  // _v(date_i18n("Y-m-d H:i:s", $to).'='.$to);
-  // _v(date_i18n("Y-m-d H:i:s", $now).'='.$now);
-  // _v($diff / 86400);
   $days = ceil($diff / 86400);
   if ($days <= 0) {
     $days = 0;
@@ -478,101 +474,86 @@ function countdown_shortcode( $atts ){
 }
 endif;
 
-if ( !function_exists( 'get_navi_card_image_attributes' ) ):
-function get_navi_card_image_attributes($image_url){
-  if (!$image_url) {
-    return false;
-  }
-  $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
-  $image_attributes = array();
-  $image_attributes[1] = 120;
-  $image_attributes[2] = 68;
-  if (file_exists(url_to_local($image_url_120))) {
-    $image_attributes[0] = $image_url_120;
-  } else {
-    $image_attributes[0] = $image_url;
-  }
-  return $image_attributes;
-}
-endif;
-
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
-add_shortcode('navi', 'navi_menu_shortcode');
-if ( !function_exists( 'navi_menu_shortcode' ) ):
-function navi_menu_shortcode($atts){
+add_shortcode('navi', 'get_ord_navi_card_list_tag');
+if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
+function get_ord_navi_card_list_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
     'type' => '',
+    'bold' => 1,
+    'arrow' => 1,
   ), $atts));
+  $atts = array(
+    'name' => $name,
+    'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
+  );
+  $tag = get_navi_card_list_tag($atts);
+
+  return apply_filters('get_ord_navi_card_list_tag', $tag);
+}
+endif;
+
+//ナビメニューリストショートコード
+//参考：https://www.orank.net/1972
+add_shortcode('navi_list', 'get_navi_card_list_tag');
+if ( !function_exists( 'get_navi_card_list_tag' ) ):
+function get_navi_card_list_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'type' => '',
+    'bold' => 0,
+    'arrow' => 0,
+  ), $atts));
+
+  if (is_admin()) {
+    return;
+  }
 
   $tag = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+  if (!$menu_items) {
+    return;
+  }
 
   foreach ($menu_items as $menu):
-    $object_id = $menu->object_id;
+    //画像情報の取得
+    $image_attributes = get_navi_card_image_attributes($menu);
+
     $url = $menu->url;
-    $object = $menu->object;
-
-    $image_attributes = array();
-    if ($object == 'post' || $object == 'page') {
-      $thumbnail_id = get_post_thumbnail_id($object_id);
-      $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
-    } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
-      $image_url = get_category_eye_catch_url($object_id);
-      $image_attributes = get_navi_card_image_attributes($image_url);
-    }
-    elseif ($object == 'post_tag' || $object == 'custom') {//カスタムメニュー
-      //タグページのアイキャッチを取得
-      $tag_obj = url_to_tag_object($url);
-      if ($tag_obj && isset($tag_obj->term_id)) {
-        $image_url = get_tag_eye_catch_url($tag_obj->term_id);
-        $image_attributes = get_navi_card_image_attributes($image_url);
-      }
-    }
-    if (!$image_attributes) {//アイキャッチがない場合
-      $image_attributes[0] = get_no_image_120x68_url();
-      $image_attributes[1] = 120;
-      $image_attributes[2] = 68;
-    }
-
     $title = $menu->title;
-    $text = $menu->description;
-    $osusume = $menu->classes[0];
+    $snippet = $menu->description;
+    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
-    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
-    if ($osusume == "1"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
-    }
-    if ($osusume == "2"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
-    }
-
-    $tag .=
-'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap">
-  <div class="navi-card-box cf">
-    '.$osusume.'
-    <figure class="navi-card-thumb">
-      <img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">
-    </figure>
-    <div class="navi-card-content">
-      <div class="navi-card-title">'.$title.'</div>
-      <div class="navi-card-snippet">'.$text.'</div>
-    </div>
-  </div>
-</a>';
+    // //リボンタグの取得
+    // $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
+    $atts = array(
+      'prefix' => WIDGET_NAVI_ENTRY_CARD_PREFIX,
+      'url' => $url,
+      'title' => $title,
+      'snippet' => $snippet,
+      'image_attributes' => $image_attributes,
+      'ribbon_no' => $ribbon_no,
+      'type' => $type,
+    );
+    $tag .= get_widget_entry_card_link_tag($atts);
 
   endforeach;
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $navi_card_class = '';
-    if ($type) {
-      $navi_card_class = ' navi-card-type-'.$type;
-    }
-    $tag = '<div class="navi-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';
+    $atts = array(
+      'tag' => $tag,
+      'type' => $type,
+      'bold' => $bold,
+      'arrow' => $arrow,
+    );
+    $tag = get_navi_card_wrap_tag($atts);
   }
 
-  return apply_filters('cocoon_navi_card_tag', $tag);
+  return apply_filters('get_navi_card_list_tag', $tag);
 }
 endif;

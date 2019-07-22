@@ -30,25 +30,25 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 11px; border: 1px solid #ccc; border-radius: 4px; font-size: 18px; width: 100%; }
 
-.snipet-list { padding: 20px; display: flex; flex-wrap: wrap; }
+.snippet-list { padding: 20px; display: flex; flex-wrap: wrap; }
 
-.snipet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
+.snippet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
 
-.snipet-title, .snipet-short-code, .snipet-content { margin-bottom: 6px; }
+.snippet-title, .snippet-short-code, .snippet-content { margin-bottom: 6px; }
 
-.snipet-short-code input { width: 120px; }
+.snippet-short-code input { width: 120px; }
 
-.snipet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
+.snippet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
 
 .op-message { text-align: center; font-size: 16px; margin: 0; }
 
-.snipet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
-.snipet-menu a { margin-left: 8px; }
-.snipet-menu .snipet-menu-left { position: absolute; left: 10px; }
+.snippet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
+.snippet-menu a { margin-left: 8px; }
+.snippet-menu .snippet-menu-left { position: absolute; left: 10px; }
 
-.snipet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
-.snipet-confirm-wrap .snipet-confirm-title { font-size: 16px; font-weight: bold; }
-.snipet-confirm-wrap .snipet-confirm-text pre { max-height: 300px; overflow: auto; }
+.snippet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
+.snippet-confirm-wrap .snippet-confirm-title { font-size: 16px; font-weight: bold; }
+.snippet-confirm-wrap .snippet-confirm-text pre { max-height: 300px; overflow: auto; }
 
 .operation-buttons { margin: 4px 0; padding: 5px; }
 .operation-buttons a { padding: 5px 10px; font-weight: bold; background-color: #fff; border: 2px solid #ccc; }
@@ -181,7 +181,16 @@ body.wp-admin { color: #444; }
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
@@ -312,7 +321,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
@@ -678,7 +696,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -733,17 +751,24 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
-.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px 3px; line-height: 1.3; margin-bottom: 4px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card { font-size: 0.8em; position: relative; }
+.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-card { font-size: 16px; position: relative; }
+.admin-settings .demo .widget-entry-card-content { margin-left: 124px; }
+.admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+.admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
+.admin-settings .demo .card-arrow .a-wrap { position: relative; }
+.admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
@@ -1745,28 +1770,21 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; }
-.admin-settings .demo .navi-card-type-1 a { border-bottom: 2px dotted #f3f4f5; }
-.admin-settings .demo .navi-card-type-1 a:first-of-type { border-top: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-1 a:last-of-type { border-bottom: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-2 a { border-radius: 4px; border: 1px solid #ccc; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; -webkit-transform: rotate(45deg); transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
+.admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -2214,7 +2232,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -2269,17 +2287,24 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
-.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px 3px; line-height: 1.3; margin-bottom: 4px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card { font-size: 0.8em; position: relative; }
+.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-card { font-size: 16px; position: relative; }
+.admin-settings .demo .widget-entry-card-content { margin-left: 124px; }
+.admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+.admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
+.admin-settings .demo .card-arrow .a-wrap { position: relative; }
+.admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
@@ -3281,28 +3306,21 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; }
-.admin-settings .demo .navi-card-type-1 a { border-bottom: 2px dotted #f3f4f5; }
-.admin-settings .demo .navi-card-type-1 a:first-of-type { border-top: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-1 a:last-of-type { border-bottom: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-2 a { border-radius: 4px; border: 1px solid #ccc; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; -webkit-transform: rotate(45deg); transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
+.admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -3606,7 +3624,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo table th, .admin-settings .demo table td { padding: 3px; font-size: 0.8em; }
   .admin-settings .demo .blogcard-wrap { width: 100%; }
   .admin-settings .demo .blogcard-thumbnail { width: 30%; }
-  .admin-settings .demo .blogcard-snipet { font-size: 12px; }
+  .admin-settings .demo .blogcard-snippet { font-size: 12px; }
   .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
   .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
   .admin-settings .demo .ss-top .sns-share-buttons a, .admin-settings .demo .ss-bottom .sns-share-buttons a { font-size: 14px; }
@@ -3719,7 +3737,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .tagline { font-size: 12px; }
   .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item { width: 46%; }
   .admin-settings .demo .blogcard-content { font-size: 0.84em; }
-  .admin-settings .demo .blogcard-snipet { font-size: 0.74em; }
+  .admin-settings .demo .blogcard-snippet { font-size: 0.74em; }
   .admin-settings .demo .ect-vertical-card .entry-card-wrap { margin-bottom: 8px; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap { display: block; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column > * { width: 100%; }

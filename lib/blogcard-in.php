@@ -68,23 +68,23 @@ function url_to_internal_blogcard_tag($url){
     $title = $post_data->post_title;//タイトルの取得
 
     //メタディスクリプションの取得
-    $snipet = get_the_page_meta_description($id);
+    $snippet = get_the_page_meta_description($id);
 
     //投稿管理画面の抜粋を取得
-    if (!$snipet) {
-      $snipet = $post_data->post_excerpt;
+    if (!$snippet) {
+      $snippet = $post_data->post_excerpt;
     }
     //All in One SEO Packのメタディスクリプションを取得
-    if (!$snipet) {
-      $snipet = get_the_all_in_one_seo_pack_meta_description($id);
+    if (!$snippet) {
+      $snippet = get_the_all_in_one_seo_pack_meta_description($id);
     }
     //記事本文の抜粋文を取得
-    if (!$snipet) {
-      $snipet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
+    if (!$snippet) {
+      $snippet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
     }
-    $snipet = preg_replace('/\n/', '', $snipet);
-    $snipet = apply_filters( 'cocoon_blogcard_snipet', $snipet );
-    $snipet = apply_filters( 'cocoon_internal_blogcard_snipet', $snipet );
+    $snippet = preg_replace('/\n/', '', $snippet);
+    $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
+    $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
 
     //日付表示
     $date = null;
@@ -112,7 +112,7 @@ function url_to_internal_blogcard_tag($url){
   } elseif (is_home_url($url)){
     //トップページの場合
     $title = get_front_page_title_caption();
-    $snipet = get_front_page_meta_description();
+    $snippet = get_front_page_meta_description();
     $image = get_ogp_home_image_url();
     if (!empty($image)) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
@@ -122,7 +122,7 @@ function url_to_internal_blogcard_tag($url){
     $cat_id = $cat->cat_ID;
 
     $title = get_category_title($cat_id);
-    $snipet = get_category_snipet($cat_id);
+    $snippet = get_category_snippet($cat_id);
     $image = get_category_eye_catch_url($cat_id);
 
     if ($image) {
@@ -131,7 +131,7 @@ function url_to_internal_blogcard_tag($url){
   } elseif ($tag = url_to_tag_object($url)) {
     $tag_id = $tag->term_id;
     $title = get_tag_title($tag_id);
-    $snipet = get_tag_snipet($tag_id);
+    $snippet = get_tag_snippet($tag_id);
     $image = get_tag_eye_catch_url($tag_id);
 
     if ($image) {
@@ -169,7 +169,7 @@ function url_to_internal_blogcard_tag($url){
       '<figure class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content internal-blogcard-content">'.
         '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.
-        '<div class="blogcard-snipet internal-blogcard-snipet">'.$snipet.'</div>'.
+        '<div class="blogcard-snippet internal-blogcard-snippet">'.$snippet.'</div>'.
 
       '</div>'.
       '<div class="blogcard-footer internal-blogcard-footer cf">'.

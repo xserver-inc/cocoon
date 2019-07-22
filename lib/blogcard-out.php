@@ -126,8 +126,8 @@ function url_to_external_ogp_blogcard_tag($url){
   $url = ampersand_urldecode($url);
   $params = get_url_params($url);
   $user_title = !empty($params['title']) ? $params['title'] : null;
-  $user_snipet = !empty($params['snipet']) ? $params['snipet'] : null;
-  //$url = add_query_arg(array('title' => null, 'snipet' => null), $url);
+  $user_snippet = !empty($params['snippet']) ? $params['snippet'] : null;
+  //$url = add_query_arg(array('title' => null, 'snippet' => null), $url);
   //_v($url);
 
   $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
@@ -136,7 +136,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $error_image = get_site_screenshot_url($url);
 
   $image = $error_image;
-  $snipet = '';
+  $snippet = '';
   $error_rel_nofollow = ' rel="nofollow"';
 
 
@@ -165,7 +165,7 @@ function url_to_external_ogp_blogcard_tag($url){
         $title = $ogp->title;//タイトルの取得
 
       if ( isset( $ogp->description ) )
-        $snipet = $ogp->description;//ディスクリプションの取得
+        $snippet = $ogp->description;//ディスクリプションの取得
 
       if ( isset( $ogp->image ) )
         $image = $ogp->image;////画像URLの取得
@@ -183,7 +183,7 @@ function url_to_external_ogp_blogcard_tag($url){
       $title = $ogp->title;//タイトルの取得
 
     if ( isset( $ogp->description ) )
-      $snipet = $ogp->description;//ディスクリプションの取得
+      $snippet = $ogp->description;//ディスクリプションの取得
 
     if ( isset( $ogp->image ) )
       $image = $ogp->image;//画像URLの取得
@@ -208,13 +208,13 @@ function url_to_external_ogp_blogcard_tag($url){
 
   $image = strip_tags($image);
 
-  $snipet = get_content_excerpt( $snipet, 160 );
-  $snipet = strip_tags($snipet);
-  if ($user_snipet) {
-    $snipet = $user_snipet;
+  $snippet = get_content_excerpt( $snippet, 160 );
+  $snippet = strip_tags($snippet);
+  if ($user_snippet) {
+    $snippet = $user_snippet;
   }
-  $snipet = apply_filters( 'cocoon_blogcard_snipet', $snipet );
-  $snipet = apply_filters( 'cocoon_external_blogcard_snipet', $snipet );
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
+  $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet );
 
   //新しいタブで開く場合
   $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
@@ -244,7 +244,7 @@ function url_to_external_ogp_blogcard_tag($url){
       '<figure class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content external-blogcard-content">'.
         '<div class="blogcard-title external-blogcard-title">'.$title.'</div>'.
-        '<div class="blogcard-snipet external-blogcard-snipet">'.$snipet.'</div>'.
+        '<div class="blogcard-snippet external-blogcard-snippet">'.$snippet.'</div>'.
       '</div>'.
       '<div class="blogcard-footer external-blogcard-footer cf">'.$site_logo_tag.'</div>'.
     '</div>'.

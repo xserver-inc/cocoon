@@ -148,39 +148,81 @@ label.screen-reader-text{
 
 .widget-entry-cards{
   .a-wrap{
-    padding: 5px 3px;
+    padding: 5px;
     line-height: 1.3;
     margin-bottom: 4px;
-  }
-
-  .widget-entry-card{
-    font-size: $text_size_s;
-    position: relative;
   }
 
   figure{
     width: 120px;
   }
+}
+.widget-entry-card{
+  font-size: 16px;
+  position: relative;
+}
 
-  .widget-entry-card-content{
-    margin-left: 124px;
+.widget-entry-card-content{
+  margin-left: 124px;
+}
+
+.widget-entry-card-snippet{
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.widget-entry-card-pv{
+  margin-left: 5px;
+  font-style: italic;
+  font-size: 0.8em;
+  //font-weight: bold;
+}
+
+.border-partition a {
+  border-bottom: 2px dotted $x_thin;
+
+  &:first-of-type {
+    border-top: 2px dotted $x_thin;
   }
 
-  .widget-entry-card-pv{
-    margin-left: 5px;
-    font-style: italic;
-    font-size: 0.8em;
-    //font-weight: bold;
-  }
-  // .cat-label{
-  //   display: none;
+  // &:last-of-type {
+  //   border-bottom: 2px solid $x_thin;
   // }
 }
 
+.border-square a {
+  border-radius: $basic_border_radius;
+  border: 1px solid $thin;
+}
+
+.card-title-bold .card-title{
+  font-weight: 700;
+}
+
+.card-arrow{
+  .a-wrap{
+    position: relative;
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      right: 20px;
+      width: 6px;
+      height: 6px;
+      border-top: solid 2px #697b91;
+      border-right: solid 2px #697b91;
+      transform: rotate(45deg);
+      margin-top: -3px;
+    }
+  }
+}
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
 ************************************/
-.widget-entry-cards.not-default{
+.widget-entry-cards.card-large-image{
   .a-wrap{
     max-width: $widget_max_width;
   }
