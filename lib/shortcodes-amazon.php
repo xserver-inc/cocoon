@@ -229,7 +229,7 @@ function amazon_product_link_shortcode($atts){
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
     if (!property_exists($xml->Items, 'Item')) {
-      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
+      return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
     }
 
     if (property_exists($xml->Items, 'Item')) {
@@ -595,7 +595,7 @@ function amazon_product_link_shortcode($atts){
           $product_item_admin_tag.
         '</div>';
     } else {//property_exists($xml->Items, 'Item')
-      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag);
+      $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
     }//property_exists($xml->Items, 'Item')
 
     return apply_filters('amazon_product_link_tag', $tag);
@@ -639,10 +639,14 @@ endif;
 
 //AmazonのASINエラータグ取得
 if ( !function_exists( 'get_amazon_admin_error_message_tag' ) ):
-function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = null){
+function get_amazon_admin_error_message_tag($url, $message, $cache_delete_tag = null, $asin = null){
   $error_message = get_amazon_error_product_link($url);
   if (is_user_administrator()) {
-    $error_message .= '<br><br>'.get_admin_errormessage_box_tag($message);
+    $asin_msg = null;
+    if ($asin) {
+      $asin_msg = '(ASIN:'.$asin.')';
+    }
+    $error_message .= '<br><br>'.get_admin_errormessage_box_tag($message.$asin_msg);
   }
   return wrap_product_item_box($error_message, 'amazon', $cache_delete_tag);
 }
