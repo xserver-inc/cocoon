@@ -3602,14 +3602,13 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .mobile-header-menu-buttons { top: 0; bottom: auto; justify-content: space-around; min-width: 46px; z-index: 3; box-shadow: 0 0 5px darkgrey; }
   .admin-settings .demo .mobile-header-menu-buttons .menu-button { width: 70px; }
   .admin-settings .demo .mobile-header-menu-buttons .logo-menu-button { flex-grow: 99; }
-  .admin-settings .demo .mobile-button-fmb .go-to-top-button { display: none; }
+  .admin-settings .demo .no-mobile-sidebar #sidebar, .admin-settings .demo .mobile-button-fmb .go-to-top-button, .admin-settings .demo .no-mobile-header-logo .logo-header { display: none; }
   .admin-settings .demo .mblt-header-mobile-buttons { margin-top: 46px; }
   .admin-settings .demo .mblt-footer-mobile-buttons { margin-bottom: 50px; }
   .admin-settings .demo .mblt-header-and-footer-mobile-buttons { margin-top: 46px; margin-bottom: 50px; }
   .admin-settings .demo .scrollable-mobile-buttons { margin-bottom: 0; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
-  .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
-  .admin-settings .demo .no-mobile-header-logo .logo-header { display: none; } }
+  .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; } }
 @media screen and (max-width: 834px) { .admin-settings .demo { /************************************
 ** 関連記事
 ************************************/ }
@@ -3677,7 +3676,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
   .admin-settings .demo #wpf-form-wrapper .mce-edit-area iframe { min-height: 200px; }
   .admin-settings .demo .content { margin-top: 10px; }
-  .admin-settings .demo .no-mobile-sidebar #sidebar, .admin-settings .demo .product-item-thumb-l, .admin-settings .demo .swatchimages { display: none; }
+  .admin-settings .demo .product-item-thumb-l, .admin-settings .demo .swatchimages { display: none; }
   .admin-settings .demo .image-content amp-img { min-width: 360px; max-width: 360px; }
   .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { font-size: 14px; }
   .admin-settings .demo .slick-dots { display: none !important; }

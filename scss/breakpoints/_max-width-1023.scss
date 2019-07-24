@@ -104,7 +104,9 @@ div.sidebar{
   }
 }
 
-.mobile-button-fmb .go-to-top-button{
+.no-mobile-sidebar #sidebar,
+.mobile-button-fmb .go-to-top-button,
+.no-mobile-header-logo .logo-header{
   display: none;
 }
 
@@ -130,7 +132,7 @@ div.sidebar{
   flex-direction: column;
 }
 
-//ヘッダーモバイルボタン表示時にサイトロゴを表示しない
-.no-mobile-header-logo .logo-header {
-  display: none;
-}
+// //ヘッダーモバイルボタン表示時にサイトロゴを表示しない
+// .no-mobile-header-logo .logo-header {
+//   display: none;
+// }
