@@ -521,7 +521,7 @@ function get_navi_card_list_tag($atts){
 
   foreach ($menu_items as $menu):
     //画像情報の取得
-    $image_attributes = get_navi_card_image_attributes($menu);
+    $image_attributes = get_navi_card_image_attributes($menu, $type);
 
     $url = $menu->url;
     $title = $menu->title;
