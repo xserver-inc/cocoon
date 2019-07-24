@@ -1377,7 +1377,7 @@ endif;
 //大きな画像を使用するか
 if ( !function_exists( 'is_widget_entry_card_large_image_use' ) ):
 function is_widget_entry_card_large_image_use($type){
-  return ($type = ET_LARGE_THUMB) || ($type = ET_LARGE_THUMB_ON);
+  return ($type == ET_LARGE_THUMB) || ($type == ET_LARGE_THUMB_ON);
 }
 endif;
 
