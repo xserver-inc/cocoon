@@ -399,13 +399,14 @@ endif;
 
 //エントリーカードの追加関数
 if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
-function get_additional_widget_entry_cards_classes($atts, $option = null){
+function get_additional_widget_entry_cards_classes($atts){
   extract(shortcode_atts(array(
     'type' => 0,
     'bold' => 0,
     'arrow' => 0,
     'ranking_visible' => 0,
     'pv_visible' => 0,
+    'class' => null,
   ), $atts));
   $classes = null;
   // if (is_numeric($type)) {
@@ -458,8 +459,8 @@ function get_additional_widget_entry_cards_classes($atts, $option = null){
     $classes .= ' ranking-visible';
   }
 
-  if ($option) {
-    $classes .= ' '.trim($option);
+  if ($class) {
+    $classes .= ' '.trim($class);
   }
   return apply_filters('get_additional_widget_entry_cards_classes', $classes);
 }

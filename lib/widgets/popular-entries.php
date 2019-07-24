@@ -92,7 +92,18 @@ class PopularEntryWidgetItem extends WP_Widget {
 
 
       //get_template_part('tmp/popular-entries');
-      generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
+      $atts = array(
+        'days' => $count_days,
+        'entry_count' => $entry_count,
+        'entry_type' => $entry_type,
+        'ranking_visible' => $ranking_visible,
+        'pv_visible' => $pv_visible,
+        'cat_ids' => $cat_ids,
+        'exclude_post_ids' => $exclude_post_ids,
+        'exclude_cat_ids' => $cat_ids,
+      );
+      generate_popular_entries_tag($atts);
+      //generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
       echo $args['after_widget']; ?>
     <?php endif; ?>

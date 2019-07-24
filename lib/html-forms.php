@@ -860,7 +860,19 @@ endif;
 
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
-function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
+function generate_popular_entries_tag($atts){
+//function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
+  extract(shortcode_atts(array(
+    'days' => 'all',
+    'entry_count' => 5,
+    'entry_type' => ET_DEFAULT,
+    'ranking_visible' => 0,
+    'pv_visible' => 0,
+    'cat_ids' => array(),
+    'exclude_post_ids' => array(),
+    'exclude_cat_ids' => array(),
+    'class' => null,
+  ), $atts));
   // if (DEBUG_MODE) {
   //   $time_start = microtime(true);
   // }
@@ -883,6 +895,7 @@ function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_ty
     'type' => $entry_type,
     'ranking_visible' => $ranking_visible,
     'pv_visible' => $pv_visible,
+    'class' => $class,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
@@ -964,6 +977,7 @@ function generate_widget_entries_tag($atts){
     'order' => 'desc',
     'action' => null,
     'exclude_cat_ids' => array(),
+    'class' => null,
   ), $atts));
   global $post;
 
@@ -1073,6 +1087,7 @@ function generate_widget_entries_tag($atts){
   $query = new WP_Query( $args );
   $atts = array(
     'type' => $type,
+    'class' => $class,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
   ?>
@@ -1461,6 +1476,7 @@ function get_navi_card_wrap_tag($atts){
     'type' => 0,
     'bold' => 0,
     'arrow' => 0,
+    'class' => null,
   ), $atts));
   $navi_card_class = get_additional_widget_entry_cards_classes($atts);
   $tag = '<div class="navi-entry-cards widget-entry-cards no-icon'.esc_attr($navi_card_class).'">'.$tag.'</div>';

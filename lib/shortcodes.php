@@ -44,6 +44,7 @@ function new_entries_shortcode($atts) {
     'modified' => 0,
     'order' => 'desc',
     'action' => null,
+    'class' => null,
   ), $atts));
 
   //カテゴリを配列化
@@ -70,6 +71,7 @@ function new_entries_shortcode($atts) {
     'modified' => $modified,
     'order' => $order,
     'action' => $action,
+    'class' => $class,
   );
   ob_start();
   generate_widget_entries_tag($atts);
@@ -92,13 +94,24 @@ function popular_entries_shortcode($atts) {
     'rank' => 0,
     'pv' => 0,
     'cats' => 'all',
+    'class' => null,
   ), $atts));
   $categories = array();
   if ($cats && $cats != 'all') {
     $categories = explode(',', $cats);
   }
+  $atts = array(
+    'days' => $days,
+    'entry_count' => $count,
+    'entry_type' => $type,
+    'ranking_visible' => $rank,
+    'pv_visible' => $pv,
+    'cat_ids' => $categories,
+    'class' => $class,
+  );
   ob_start();
-  generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
+  generate_popular_entries_tag($atts);
+  //generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
   $res = ob_get_clean();
   return $res;
 }
@@ -484,12 +497,14 @@ function get_ord_navi_card_list_tag($atts){
     'type' => '',
     'bold' => 1,
     'arrow' => 1,
+    'class' => null,
   ), $atts));
   $atts = array(
     'name' => $name,
     'type' => $type,
     'bold' => $bold,
     'arrow' => $arrow,
+    'class' => $class,
   );
   $tag = get_navi_card_list_tag($atts);
 
@@ -507,6 +522,7 @@ function get_navi_card_list_tag($atts){
     'type' => '',
     'bold' => 0,
     'arrow' => 0,
+    'class' => null,
   ), $atts));
 
   if (is_admin()) {
@@ -550,6 +566,7 @@ function get_navi_card_list_tag($atts){
       'type' => $type,
       'bold' => $bold,
       'arrow' => $arrow,
+      'class' => $class,
     );
     $tag = get_navi_card_wrap_tag($atts);
   }
