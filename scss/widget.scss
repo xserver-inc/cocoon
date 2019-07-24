@@ -272,17 +272,21 @@ label.screen-reader-text{
 
   .card-content{
     margin: 0;
-  }
-
-  .card-title{
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 10px 5px;
+    padding: 5px;
     background-color: $transpalent_black_bgc;
     color: $white;
-    max-height: 30%;
+    max-height: 4em;
     overflow: hidden;
+  }
+
+  // .card-title{
+  // }
+
+  .card-snippet{
+    margin: 0;
   }
 }
 
