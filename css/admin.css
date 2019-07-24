@@ -763,6 +763,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .card-arrow .card-content { margin-right: 22px; }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
 .admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
@@ -2299,6 +2300,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
 .admin-settings .demo .card-arrow .a-wrap { position: relative; }
 .admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .card-arrow .card-content { margin-right: 22px; }
 .admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
 .admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
 .admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }

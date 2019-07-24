@@ -2316,6 +2316,9 @@ label.screen-reader-text {
   transform: rotate(45deg);
   margin-top: -3px;
 }
+.card-arrow .card-content {
+  margin-right: 22px;
+}
 
 /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
