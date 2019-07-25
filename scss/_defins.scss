@@ -366,7 +366,7 @@ $bgc_hover_anime: all .7s;
 // タグクラウド
 ///////////////////////////////////////////
 @mixin tagcloud_a {
-  background-color: $white;
+  //background-color: $white;
   border: 1px solid $x_thin;
   border-radius: 2px;
   color: #555;

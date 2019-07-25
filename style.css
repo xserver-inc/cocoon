@@ -2098,7 +2098,6 @@ label.screen-reader-text {
   flex-wrap: wrap;
 }
 .tagcloud a {
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 2px;
   color: #555;
