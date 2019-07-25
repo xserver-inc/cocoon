@@ -1432,7 +1432,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
 .admin-settings .demo .author-box .sns-follow-buttons { flex-wrap: wrap; justify-content: flex-start; }
-.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: #fff; color: #777; border: 1px solid #ccc; border-radius: 2px; }
+.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: transparent; color: #777; border: 1px solid #ccc; border-radius: 2px; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover { background-color: #fafbfc; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count { display: none; }
 .admin-settings .demo .author-box .author-name { font-size: 1.1em; font-weight: bold; margin-bottom: 0.4em; }
@@ -2969,7 +2969,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
 .admin-settings .demo .author-box .sns-follow-buttons { flex-wrap: wrap; justify-content: flex-start; }
-.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: #fff; color: #777; border: 1px solid #ccc; border-radius: 2px; }
+.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: transparent; color: #777; border: 1px solid #ccc; border-radius: 2px; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover { background-color: #fafbfc; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count { display: none; }
 .admin-settings .demo .author-box .author-name { font-size: 1.1em; font-weight: bold; margin-bottom: 0.4em; }

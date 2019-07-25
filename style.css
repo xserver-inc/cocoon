@@ -5485,7 +5485,7 @@ canvas, iframe, video,
   height: 24px;
   margin-bottom: 4px;
   margin-right: 4px;
-  background-color: #fff;
+  background-color: transparent;
   color: #777;
   border: 1px solid #ccc;
   border-radius: 2px;
