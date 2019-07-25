@@ -871,6 +871,8 @@ function generate_popular_entries_tag($atts){
     'cat_ids' => array(),
     'exclude_post_ids' => array(),
     'exclude_cat_ids' => array(),
+    'bold' => 0,
+    'arrow' => 0,
     'class' => null,
   ), $atts));
   // if (DEBUG_MODE) {
@@ -895,6 +897,8 @@ function generate_popular_entries_tag($atts){
     'type' => $entry_type,
     'ranking_visible' => $ranking_visible,
     'pv_visible' => $pv_visible,
+    'bold' => $bold,
+    'arrow' => $arrow,
     'class' => $class,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);
@@ -977,6 +981,8 @@ function generate_widget_entries_tag($atts){
     'order' => 'desc',
     'action' => null,
     'exclude_cat_ids' => array(),
+    'bold' => 0,
+    'arrow' => 0,
     'class' => null,
   ), $atts));
   global $post;
@@ -1087,6 +1093,8 @@ function generate_widget_entries_tag($atts){
   $query = new WP_Query( $args );
   $atts = array(
     'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
     'class' => $class,
   );
   $cards_classes = get_additional_widget_entry_cards_classes($atts);

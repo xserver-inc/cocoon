@@ -44,6 +44,8 @@ function new_entries_shortcode($atts) {
     'modified' => 0,
     'order' => 'desc',
     'action' => null,
+    'bold' => 0,
+    'arrow' => 0,
     'class' => null,
   ), $atts));
 
@@ -71,6 +73,8 @@ function new_entries_shortcode($atts) {
     'modified' => $modified,
     'order' => $order,
     'action' => $action,
+    'bold' => $bold,
+    'arrow' => $arrow,
     'class' => $class,
   );
   ob_start();
@@ -94,6 +98,8 @@ function popular_entries_shortcode($atts) {
     'rank' => 0,
     'pv' => 0,
     'cats' => 'all',
+    'bold' => 0,
+    'arrow' => 0,
     'class' => null,
   ), $atts));
   $categories = array();
@@ -107,6 +113,8 @@ function popular_entries_shortcode($atts) {
     'ranking_visible' => $rank,
     'pv_visible' => $pv,
     'cat_ids' => $categories,
+    'bold' => $bold,
+    'arrow' => $arrow,
     'class' => $class,
   );
   ob_start();
