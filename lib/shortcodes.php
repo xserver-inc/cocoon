@@ -102,9 +102,9 @@ function popular_entries_shortcode($atts) {
     'arrow' => 0,
     'class' => null,
   ), $atts));
-  $categories = array();
+  $cat_ids = array();
   if ($cats && $cats != 'all') {
-    $categories = explode(',', $cats);
+    $cat_ids = explode(',', $cats);
   }
   $atts = array(
     'days' => $days,
@@ -112,13 +112,14 @@ function popular_entries_shortcode($atts) {
     'entry_type' => $type,
     'ranking_visible' => $rank,
     'pv_visible' => $pv,
-    'cat_ids' => $categories,
+    'cat_ids' => $cat_ids,
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
   );
   ob_start();
   generate_popular_entries_tag($atts);
+  //_v($atts);
   //generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
   $res = ob_get_clean();
   return $res;

@@ -50,6 +50,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     $cat_ids = array();
     if ($widget_mode == 'category') {
       $cat_ids = get_category_ids();//カテゴリ配列の取得
+      //_v($cat_ids);
     }
     //除外投稿ID配列のサニタイズ
     $exclude_post_ids = comma_text_to_array($exclude_post_ids);
@@ -100,9 +101,10 @@ class PopularEntryWidgetItem extends WP_Widget {
         'pv_visible' => $pv_visible,
         'cat_ids' => $cat_ids,
         'exclude_post_ids' => $exclude_post_ids,
-        'exclude_cat_ids' => $cat_ids,
+        'exclude_cat_ids' => $exclude_cat_ids,
       );
       generate_popular_entries_tag($atts);
+      //_v($atts);
       //generate_popular_entries_tag($count_days, $entry_count, $entry_type, $ranking_visible, $pv_visible, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
       echo $args['after_widget']; ?>

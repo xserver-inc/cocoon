@@ -879,9 +879,9 @@ function generate_popular_entries_tag($atts){
   //   $time_start = microtime(true);
   // }
   //var_dump($cat_ids);
+  //_v($atts);
 
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
-  //_v($records);
 
   // if (DEBUG_MODE) {
   //   $time = microtime(true) - $time_start;
