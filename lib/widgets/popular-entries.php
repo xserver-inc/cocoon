@@ -187,10 +187,9 @@ class PopularEntryWidgetItem extends WP_Widget {
     </p>
     <?php //表示タイプフォーム ?>
     <p>
-      <label for="<?php echo $this->get_field_id('entry_type'); ?>">
-        <?php _e( '表示タイプ', THEME_NAME ) ?>
-      </label><br />
       <?php
+      generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
+      echo '<br>';
       $options = array(
         ET_DEFAULT => __( 'デフォルト', THEME_NAME ),
         ET_BORDER_PARTITION => __( '区切り線', THEME_NAME ),

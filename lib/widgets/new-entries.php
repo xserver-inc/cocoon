@@ -32,6 +32,8 @@ class NewEntryWidgetItem extends WP_Widget {
     $entry_count = apply_filters( 'cocoon_new_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //$is_top_visible = apply_filters( 'cocoon_new_widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
     $entry_type = apply_filters( 'cocoon_new_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    $is_bold = apply_filters( 'cocoon_new_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
+    $is_arrow = apply_filters( 'cocoon_new_widget_is_arrow', empty($instance['is_arrow']) ? 0 : 1 );
     $is_sticky_visible = apply_filters( 'cocoon_new_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
 
     //現在のカテゴリを取得
@@ -69,6 +71,8 @@ class NewEntryWidgetItem extends WP_Widget {
         'entry_count' => $entry_count,
         'cat_ids' => $categories,
         'type' => $entry_type,
+        'bold' => $is_bold,
+        'arrow' => $is_arrow,
         'sticky' => $is_sticky_visible,
       );
       //新着記事リストの作成
@@ -85,6 +89,8 @@ class NewEntryWidgetItem extends WP_Widget {
     $instance['title_new'] = strip_tags($new_instance['title_new']);
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+    $instance['is_bold'] = strip_tags($new_instance['is_bold']);
+    $instance['is_arrow'] = strip_tags($new_instance['is_arrow']);
     $instance['is_sticky_visible'] = strip_tags($new_instance['is_sticky_visible']);
       return $instance;
   }
@@ -95,6 +101,8 @@ class NewEntryWidgetItem extends WP_Widget {
         'title_new'   => '',
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
+        'is_bold'  => 0,
+        'is_arrow'  => 0,
         'is_sticky_visible'  => 1,
       );
     }
@@ -111,6 +119,8 @@ class NewEntryWidgetItem extends WP_Widget {
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
+    $is_bold = empty($instance['is_bold']) ? 0 : 1;
+    $is_arrow = empty($instance['is_arrow']) ? 0 : 1;
     $is_sticky_visible = empty($instance['is_sticky_visible']) ? 0 : 1;
     ?>
     <?php //ウィジェットモード（全てか、カテゴリ別か） ?>
@@ -137,10 +147,9 @@ class NewEntryWidgetItem extends WP_Widget {
     </p>
     <?php //表示タイプフォーム ?>
     <p>
-      <label for="<?php echo $this->get_field_id('entry_type'); ?>">
-        <?php _e( '表示タイプ', THEME_NAME ) ?>
-      </label><br />
       <?php
+      generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
+      echo '<br>';
       $options = array(
         ET_DEFAULT => __( 'デフォルト', THEME_NAME ),
         ET_BORDER_PARTITION => __( '区切り線', THEME_NAME ),
@@ -149,6 +158,22 @@ class NewEntryWidgetItem extends WP_Widget {
         ET_LARGE_THUMB_ON => __( 'タイトルを重ねた大きなサムネイル', THEME_NAME ),
       );
       generate_selectbox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      ?>
+    </p>
+    <?php //タイトルを太字にする ?>
+    <p>
+      <?php
+        generate_label_tag($this->get_field_id('is_bold'), __('タイトル', THEME_NAME) );
+        echo '<br>';
+        generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( '太字にする', THEME_NAME ));
+      ?>
+    </p>
+    <?php //矢印表示 ?>
+    <p>
+      <?php
+        generate_label_tag($this->get_field_id('is_arrow'), __('矢印', THEME_NAME) );
+        echo '<br>';
+        generate_checkbox_tag($this->get_field_name('is_arrow') , $is_arrow, __( '表示する', THEME_NAME ));
       ?>
     </p>
     <?php //固定表示記事を表示する ?>
