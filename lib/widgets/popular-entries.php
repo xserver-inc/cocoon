@@ -29,23 +29,27 @@ class PopularEntryWidgetItem extends WP_Widget {
     $widget_mode = apply_filters( 'widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
     $title = empty($instance['title']) ? '' : $instance['title'];
-    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+    $title = apply_filters( 'cocoon_popular_widget_title', $title, $instance, $this->id_base );
     //表示数を取得
-    $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
+    $entry_count = apply_filters( 'cocoon_popular_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //表示タイプ
-    $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    $entry_type = apply_filters( 'cocoon_popular_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //集計期間
-    $count_days = apply_filters( 'widget_count_days', empty($instance['count_days']) ? PCD_DEFAULT : $instance['count_days'] );
+    $count_days = apply_filters( 'cocoon_popular_widget_count_days', empty($instance['count_days']) ? PCD_DEFAULT : $instance['count_days'] );
     //ランキング表示
-    $ranking_visible = apply_filters( 'widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
+    $ranking_visible = apply_filters( 'cocoon_popular_widget_ranking_visible', empty($instance['ranking_visible']) ? 0 : $instance['ranking_visible'] );
     //PV表示
-    $pv_visible = apply_filters( 'widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
+    $pv_visible = apply_filters( 'cocoon_popular_widget_pv_visible', empty($instance['pv_visible']) ? 0 : $instance['pv_visible'] );
+    //タイトルを太字に
+    $is_bold = apply_filters( 'cocoon_popular_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
+    //矢印表示
+    $is_arrow_visible = apply_filters( 'cocoon_popular_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : $instance['is_arrow_visible'] );
     //除外投稿IDを取得
     $exclude_post_ids = empty($instance['exclude_post_ids']) ? '' : $instance['exclude_post_ids'];
-    $exclude_post_ids = apply_filters( 'widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
+    $exclude_post_ids = apply_filters( 'cocoon_popular_widget_exclude_post_ids', $exclude_post_ids, $instance, $this->id_base );
     //除外カテゴリーIDを取得
     $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
-    $exclude_cat_ids = apply_filters( 'widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
+    $exclude_cat_ids = apply_filters( 'cocoon_popular_widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
     $cat_ids = array();
     if ($widget_mode == 'category') {
@@ -99,6 +103,8 @@ class PopularEntryWidgetItem extends WP_Widget {
         'entry_type' => $entry_type,
         'ranking_visible' => $ranking_visible,
         'pv_visible' => $pv_visible,
+        'bold' => $is_bold,
+        'arrow' => $is_arrow_visible,
         'cat_ids' => $cat_ids,
         'exclude_post_ids' => $exclude_post_ids,
         'exclude_cat_ids' => $exclude_cat_ids,
@@ -126,6 +132,8 @@ class PopularEntryWidgetItem extends WP_Widget {
 
     $instance['ranking_visible'] = !empty($new_instance['ranking_visible']) ? 1 : 0;
     $instance['pv_visible'] = !empty($new_instance['pv_visible']) ? 1 : 0;
+    $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
+    $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
 
     if (isset($new_instance['exclude_post_ids']))
       $instance['exclude_post_ids'] = strip_tags($new_instance['exclude_post_ids']);
@@ -147,6 +155,8 @@ class PopularEntryWidgetItem extends WP_Widget {
         'count_days' => PCD_DEFAULT,
         'ranking_visible' => 0,
         'pv_visible' => 0,
+        'is_bold' => 0,
+        'is_arrow_visible' => 0,
         'exclude_post_ids' => '',
         'exclude_cat_ids' => array(),
       );
@@ -158,6 +168,8 @@ class PopularEntryWidgetItem extends WP_Widget {
     $count_days = isset($instance['count_days']) ? esc_attr($instance['count_days']) : PCD_DEFAULT;
     $ranking_visible = !empty($instance['ranking_visible']) ? 1 : 0;
     $pv_visible = !empty($instance['pv_visible']) ? 1 : 0;
+    $is_bold = !empty($instance['is_bold']) ? 1 : 0;
+    $is_arrow_visible = !empty($instance['is_arrow_visible']) ? 1 : 0;
     $exclude_post_ids = isset($instance['exclude_post_ids']) ? esc_attr($instance['exclude_post_ids']) : '';
     $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
     //_v($exclude_cat_ids);
@@ -226,6 +238,18 @@ class PopularEntryWidgetItem extends WP_Widget {
       <?php
         generate_checkbox_tag($this->get_field_name('pv_visible') , $pv_visible, __( 'PV表示', THEME_NAME ));
        ?>
+    </p>
+    <?php //タイトルを太字にする ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
+      ?>
+    </p>
+    <?php //矢印表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+      ?>
     </p>
     <?php //除外投稿ID ?>
     <p>
