@@ -126,14 +126,20 @@ class RelatedEntryWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : EC_DEFAULT; ?>" />
     </p>
-    <?php //表示タイプフォーム ?>
+    <?php //表示タイプ ?>
     <p>
-      <label for="<?php echo $this->get_field_id('entry_type'); ?>">
-        <?php _e( '表示タイプ', THEME_NAME ) ?>
-      </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_DEFAULT; ?>" <?php echo ( ($entry_type == ET_DEFAULT || !$entry_type ) ? ' checked="checked"' : ""); ?> /><?php _e( 'デフォルト', THEME_NAME ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB; ?>"<?php echo ($entry_type == ET_LARGE_THUMB ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', THEME_NAME ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB_ON; ?>"<?php echo ($entry_type == ET_LARGE_THUMB_ON ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', THEME_NAME ) ?><br />
+      <?php
+      generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
+      echo '<br>';
+      $options = array(
+        ET_DEFAULT => __( 'デフォルト', THEME_NAME ),
+        ET_BORDER_PARTITION => __( '区切り線', THEME_NAME ),
+        ET_BORDER_SQUARE => __( '囲み枠', THEME_NAME ),
+        ET_LARGE_THUMB => __( '大きなサムネイル', THEME_NAME ),
+        ET_LARGE_THUMB_ON => __( 'タイトルを重ねた大きなサムネイル', THEME_NAME ),
+      );
+      generate_selectbox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      ?>
     </p>
     <?php //除外カテゴリーID ?>
       <label>

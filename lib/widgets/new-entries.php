@@ -24,17 +24,16 @@ class NewEntryWidgetItem extends WP_Widget {
   function widget($args, $instance) {
     extract( $args );
     //ウィジェットモード（全ての新着記事を表示するか、カテゴリ別に表示するか）
-    $widget_mode = apply_filters( 'cocoon_new_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
+    $widget_mode = apply_filters( 'new_entries_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
-    $title_new = apply_filters( 'cocoon_new_widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
-    $title_new = apply_filters( 'cocoon_new_widget_title', $title_new, $instance, $this->id_base );
+    $title_new = apply_filters( 'new_entries_widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
+    $title_new = apply_filters( 'new_entries_widget_title', $title_new, $instance, $this->id_base );
     //表示数を取得
-    $entry_count = apply_filters( 'cocoon_new_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
-    //$is_top_visible = apply_filters( 'cocoon_new_widget_is_top_visible', empty($instance['is_top_visible']) ? true : $instance['is_top_visible'] );
-    $entry_type = apply_filters( 'cocoon_new_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
-    $is_bold = apply_filters( 'cocoon_new_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
-    $is_arrow_visible = apply_filters( 'cocoon_new_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : 1 );
-    $is_sticky_visible = apply_filters( 'cocoon_new_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
+    $entry_count = apply_filters( 'new_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
+    $entry_type = apply_filters( 'new_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    $is_bold = apply_filters( 'new_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : 1 );
+    $is_arrow_visible = apply_filters( 'new_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : 1 );
+    $is_sticky_visible = apply_filters( 'new_entries_widget_is_sticky_visible', empty($instance['is_sticky_visible']) ? 0 : 1 );
 
     //現在のカテゴリを取得
     $categories = array();
@@ -145,7 +144,7 @@ class NewEntryWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : EC_DEFAULT; ?>" />
     </p>
-    <?php //表示タイプフォーム ?>
+    <?php //表示タイプ ?>
     <p>
       <?php
       generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
