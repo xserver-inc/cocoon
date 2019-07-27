@@ -119,8 +119,8 @@ class RelatedEntryWidgetItem extends WP_Widget {
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
-      $is_bold = empty($instance['is_bold']) ? 0 : 1;
-      $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
+    $is_bold = empty($instance['is_bold']) ? 0 : 1;
+    $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
 
     $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
     ?>
