@@ -3246,7 +3246,7 @@ label.screen-reader-text {
   display: inline-block;
   cursor: pointer;
   line-height: normal;
-  padding: 10px 16px;
+  padding: 8px 1em;
   text-decoration: none;
   text-align: center;
   font-size: 14px;
