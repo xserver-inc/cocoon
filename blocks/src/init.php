@@ -224,114 +224,117 @@ endif;
 add_action('after_setup_theme', 'cocoon_editor_color_palette_setup');
 if ( !function_exists( 'cocoon_editor_color_palette_setup' ) ):
 function cocoon_editor_color_palette_setup() {
+    $colors = array(
+      array(
+          'name' => __( 'キーカラー', THEME_NAME ),
+          'slug' => 'key-color',
+          'color' => get_editor_key_color(),
+      ),
+      array(
+          'name' => __( '赤色', THEME_NAME ),
+          'slug' => 'red',
+          'color' => '#e60033',
+      ),
+      array(
+          'name' => __( 'ピンク', THEME_NAME ),
+          'slug' => 'pink',
+          'color' => '#e95295',
+      ),
+      array(
+          'name' => __( '紫色', THEME_NAME ),
+          'slug' => 'purple',
+          'color' => '#884898',
+      ),
+      array(
+          'name' => __( '深紫色', THEME_NAME ),
+          'slug' => 'deep',
+          'color' => '#55295b',
+      ),
+      array(
+          'name' => __( '紺色', THEME_NAME ),
+          'slug' => 'indigo',
+          'color' => '#1e50a2',
+      ),
+      array(
+          'name' => __( '青色', THEME_NAME ),
+          'slug' => 'blue',
+          'color' => '#0095d9',
+      ),
+      array(
+          'name' => __( '天色', THEME_NAME ),
+          'slug' => 'light-blue',
+          'color' => '#2ca9e1',
+      ),
+      array(
+          'name' => __( '浅葱色', THEME_NAME ),
+          'slug' => 'cyan',
+          'color' => '#00a3af',
+      ),
+      array(
+          'name' => __( '深緑色', THEME_NAME ),
+          'slug' => 'teal',
+          'color' => '#007b43',
+      ),
+      array(
+          'name' => __( '緑色', THEME_NAME ),
+          'slug' => 'green',
+          'color' => '#3eb370',
+      ),
+      array(
+          'name' => __( '黄緑色', THEME_NAME ),
+          'slug' => 'light-green',
+          'color' => '#8bc34a',
+      ),
+      array(
+          'name' => __( 'ライム', THEME_NAME ),
+          'slug' => 'lime',
+          'color' => '#c3d825',
+      ),
+      array(
+          'name' => __( '黄色', THEME_NAME ),
+          'slug' => 'yellow',
+          'color' => '#ffd900',
+      ),
+      array(
+          'name' => __( 'アンバー', THEME_NAME ),
+          'slug' => 'amber',
+          'color' => '#ffc107',
+      ),
+      array(
+          'name' => __( 'オレンジ', THEME_NAME ),
+          'slug' => 'orange',
+          'color' => '#f39800',
+      ),
+      array(
+          'name' => __( 'ディープオレンジ', THEME_NAME ),
+          'slug' => 'deep-orange',
+          'color' => '#ea5506',
+      ),
+      array(
+          'name' => __( '茶色', THEME_NAME ),
+          'slug' => 'brown',
+          'color' => '#954e2a',
+      ),
+      array(
+          'name' => __( '灰色', THEME_NAME ),
+          'slug' => 'grey',
+          'color' => '#949495',
+      ),
+      array(
+          'name' => __( '黒', THEME_NAME ),
+          'slug' => 'black',
+          'color' => '#333',
+      ),
+      array(
+          'name' => __( '白', THEME_NAME ),
+          'slug' => 'white',
+          'color' => '#fff',
+      ),
+    );
+    //カラーパレットフック
+    $colors = apply_filters('block_editor_color_palette_colors', $colors);
     // カラーパレットの設定
-    add_theme_support('editor-color-palette', array(
-        array(
-            'name' => __( 'キーカラー', THEME_NAME ),
-            'slug' => 'key-color',
-            'color' => get_editor_key_color(),
-        ),
-        array(
-            'name' => __( '赤色', THEME_NAME ),
-            'slug' => 'red',
-            'color' => '#e60033',
-        ),
-        array(
-            'name' => __( 'ピンク', THEME_NAME ),
-            'slug' => 'pink',
-            'color' => '#e95295',
-        ),
-        array(
-            'name' => __( '紫色', THEME_NAME ),
-            'slug' => 'purple',
-            'color' => '#884898',
-        ),
-        array(
-            'name' => __( '深紫色', THEME_NAME ),
-            'slug' => 'deep',
-            'color' => '#55295b',
-        ),
-        array(
-            'name' => __( '紺色', THEME_NAME ),
-            'slug' => 'indigo',
-            'color' => '#1e50a2',
-        ),
-        array(
-            'name' => __( '青色', THEME_NAME ),
-            'slug' => 'blue',
-            'color' => '#0095d9',
-        ),
-        array(
-            'name' => __( '天色', THEME_NAME ),
-            'slug' => 'light-blue',
-            'color' => '#2ca9e1',
-        ),
-        array(
-            'name' => __( '浅葱色', THEME_NAME ),
-            'slug' => 'cyan',
-            'color' => '#00a3af',
-        ),
-        array(
-            'name' => __( '深緑色', THEME_NAME ),
-            'slug' => 'teal',
-            'color' => '#007b43',
-        ),
-        array(
-            'name' => __( '緑色', THEME_NAME ),
-            'slug' => 'green',
-            'color' => '#3eb370',
-        ),
-        array(
-            'name' => __( '黄緑色', THEME_NAME ),
-            'slug' => 'light-green',
-            'color' => '#8bc34a',
-        ),
-        array(
-            'name' => __( 'ライム', THEME_NAME ),
-            'slug' => 'lime',
-            'color' => '#c3d825',
-        ),
-        array(
-            'name' => __( '黄色', THEME_NAME ),
-            'slug' => 'yellow',
-            'color' => '#ffd900',
-        ),
-        array(
-            'name' => __( 'アンバー', THEME_NAME ),
-            'slug' => 'amber',
-            'color' => '#ffc107',
-        ),
-        array(
-            'name' => __( 'オレンジ', THEME_NAME ),
-            'slug' => 'orange',
-            'color' => '#f39800',
-        ),
-        array(
-            'name' => __( 'ディープオレンジ', THEME_NAME ),
-            'slug' => 'deep-orange',
-            'color' => '#ea5506',
-        ),
-        array(
-            'name' => __( '茶色', THEME_NAME ),
-            'slug' => 'brown',
-            'color' => '#954e2a',
-        ),
-        array(
-            'name' => __( '灰色', THEME_NAME ),
-            'slug' => 'grey',
-            'color' => '#949495',
-        ),
-        array(
-            'name' => __( '黒', THEME_NAME ),
-            'slug' => 'black',
-            'color' => '#333',
-        ),
-        array(
-            'name' => __( '白', THEME_NAME ),
-            'slug' => 'white',
-            'color' => '#fff',
-        ),
-    ));
+    add_theme_support('editor-color-palette', $colors);
     // 自由色選択を無効
     add_theme_support('disable-custom-colors');
 }
