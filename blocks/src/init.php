@@ -174,7 +174,7 @@ if (is_admin()) {
 }
 if ( !function_exists( 'add_cocoon_theme_block_categories' ) ):
 function add_cocoon_theme_block_categories( $categories, $post ){
-	return array_merge(
+  $block_categories = array_merge(
 		$categories,
 		array(
 			array(
@@ -208,7 +208,10 @@ function add_cocoon_theme_block_categories( $categories, $post ){
         //'icon' => 'heart',
 			),
 		)
-	);
+  );
+  //ブロックカテゴリーのフィルターフック
+  $block_categories = apply_filters('cocoon_theme_block_categories', $block_categories);
+	return $block_categories;
 }
 endif;
 
