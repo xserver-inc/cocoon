@@ -770,7 +770,7 @@ function generate_style_amp_custom_tag(){?>
   ob_start();//バッファリング
   get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
   $css_custom = ob_get_clean();
-  $css_all .= apply_filters( 'amp_custum_css', minify_css($css_custom) );
+  $css_all .= apply_filters( 'amp_custum_css', $css_custom );
 
   ///////////////////////////////////////////
   //子テーマのスタイル
