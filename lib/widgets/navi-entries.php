@@ -23,8 +23,10 @@ class NaviEntryWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
+    //メニュー名
+    $name = apply_filters( 'navi_entries_widget_name', empty($instance['name']) ? '' : $instance['name'] );
     //タイトル名を取得
-    $title = apply_filters( 'navi_entries_widget_title', $title, $instance, $this->id_base );
+    $title = apply_filters( 'navi_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
     //表示タイプ
     $entry_type = apply_filters( 'navi_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //タイトルの太さ
@@ -34,36 +36,31 @@ class NaviEntryWidgetItem extends WP_Widget {
 
 
     echo $args['before_widget'];
-    if ($title !== null) {
+    if ($title) {
       echo $args['before_title'];
       if ($title) {
         echo $title;//タイトルが設定されている場合は使用する
-      } else {
-        if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
-          _e( '新着記事', THEME_NAME );
-        } else {
-          _e( 'カテゴリー別新着記事', THEME_NAME );
-        }
-        //echo '新着記事';
       }
       echo $args['after_title'];
+    }
 
+    //引数配列のセット
+    $atts = array(
+      'name' => $name,
+      'type' => $entry_type,
+      'bold' => $is_bold,
+      'arrow' => $is_arrow_visible,
+    );
+    // _v($atts);
+    //リストの作成
+    echo get_navi_card_list_tag($atts);
 
-      //引数配列のセット
-      $atts = array(
-        'type' => $entry_type,
-        'bold' => $is_bold,
-        'arrow' => $is_arrow_visible,
-      );
-      //新着記事リストの作成
-      generate_widget_entries_tag($atts);
-
-      echo $args['after_widget']; ?>
-    <?php endif; ?>
+    echo $args['after_widget']; ?>
   <?php
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
+    $instance['name'] = strip_tags($new_instance['name']);
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
     $instance['is_bold'] = strip_tags($new_instance['is_bold']);
@@ -73,25 +70,45 @@ class NaviEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
+        'name'   => '',
         'title'   => '',
         'entry_type'  => ET_DEFAULT,
         'is_bold'  => 0,
         'is_arrow_visible'  => 0,
       );
     }
+    $name   = '';
     $title   = '';
     $entry_type  = ET_DEFAULT;
+    if (isset($instance['name']))
+      $name = esc_attr($instance['name']);
     if (isset($instance['title']))
       $title = esc_attr($instance['title']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
     $is_bold = empty($instance['is_bold']) ? 0 : 1;
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
+
     ?>
+    <?php //メニュー名 ?>
+    <p>
+      <?php
+      generate_label_tag($this->get_field_id('name'), __('メニュー名', THEME_NAME) );
+      echo '<br>';
+      $options = array();
+      $menus = wp_get_nav_menus();
+      //_v($menus);
+      foreach ($menus as $menu) {
+        $menu_name = $menu->name;
+        $options[$menu_name] = $menu_name;
+      }
+      generate_selectbox_tag($this->get_field_name('name'), $options, $name);
+      ?>
+    </p>
     <?php //タイトル入力フォーム ?>
     <p>
       <label for="<?php echo $this->get_field_id('title'); ?>">
-        <?php _e( '新着記事のタイトル', THEME_NAME ) ?>
+        <?php _e( 'タイトル', THEME_NAME ) ?>
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>

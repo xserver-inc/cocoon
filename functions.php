@@ -248,6 +248,3 @@ function smartnews_feed_content_type( $content_type, $type ) {
 	return $content_type;
 }
 endif;
-
-// $menus = wp_get_nav_menus();
-// _v($menus);
