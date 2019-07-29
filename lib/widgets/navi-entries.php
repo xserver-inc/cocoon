@@ -63,9 +63,9 @@ class NaviEntryWidgetItem extends WP_Widget {
     $instance['name'] = strip_tags($new_instance['name']);
     $instance['title'] = strip_tags($new_instance['title']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
-    $instance['is_bold'] = strip_tags($new_instance['is_bold']);
-    $instance['is_arrow_visible'] = strip_tags($new_instance['is_arrow_visible']);
-      return $instance;
+    $instance['is_bold'] = isset($new_instance['is_bold']) ? 1 : 0;
+    $instance['is_arrow_visible'] = isset($new_instance['is_arrow_visible']) ? 1 : 0;
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){
