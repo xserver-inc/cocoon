@@ -26,7 +26,6 @@ class NewEntryWidgetItem extends WP_Widget {
     //ウィジェットモード（全ての新着記事を表示するか、カテゴリ別に表示するか）
     $widget_mode = apply_filters( 'new_entries_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
-    $title_new = apply_filters( 'new_entries_widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
     $title_new = apply_filters( 'new_entries_widget_title', $title_new, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'new_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
