@@ -2351,8 +2351,16 @@ label.screen-reader-text {
 /************************************
 ** 新着記事ウィジェット（タイトルを重ねた大きなサムネイル）
 ************************************/
+.widget-entry-cards.large-thumb-on .a-wrap {
+  overflow: hidden;
+}
 .widget-entry-cards.large-thumb-on .a-wrap:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+}
+.widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
+  margin-bottom: -4em;
+  transition: all 0.7s;
+  opacity: 0;
 }
 .widget-entry-cards.large-thumb-on .e-card {
   position: relative;
@@ -2367,6 +2375,10 @@ label.screen-reader-text {
   color: #fff;
   max-height: 4em;
   overflow: hidden;
+  transition: all 0.7s;
+}
+.widget-entry-cards.large-thumb-on .card-title {
+  padding: 0.6em;
 }
 .widget-entry-cards.large-thumb-on .card-snippet {
   margin: 0;

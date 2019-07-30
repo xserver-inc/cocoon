@@ -264,8 +264,14 @@ label.screen-reader-text{
 ************************************/
 .widget-entry-cards.large-thumb-on{
   .a-wrap{
+    overflow: hidden;
     &:hover{
-      opacity: 0.7;
+      opacity: 0.8;
+      .card-content{
+        margin-bottom: -4em;
+        transition: $bgc_hover_anime;
+        opacity: 0;
+      }
     }
   }
 
@@ -283,10 +289,12 @@ label.screen-reader-text{
     color: $white;
     max-height: 4em;
     overflow: hidden;
+    transition: $bgc_hover_anime;
   }
 
-  // .card-title{
-  // }
+  .card-title{
+    padding: 0.6em;
+  }
 
   .card-snippet{
     margin: 0;
