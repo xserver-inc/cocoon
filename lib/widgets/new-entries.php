@@ -26,8 +26,7 @@ class NewEntryWidgetItem extends WP_Widget {
     //ウィジェットモード（全ての新着記事を表示するか、カテゴリ別に表示するか）
     $widget_mode = apply_filters( 'new_entries_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
-    $title_new = apply_filters( 'new_entries_widget_title_new', empty($instance['title_new']) ? '' : $instance['title_new'] );
-    $title_new = apply_filters( 'new_entries_widget_title', $title_new, $instance, $this->id_base );
+    $title = apply_filters( 'new_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
     //表示数を取得
     $entry_count = apply_filters( 'new_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     $entry_type = apply_filters( 'new_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
@@ -48,10 +47,10 @@ class NewEntryWidgetItem extends WP_Widget {
                //「表示モード」が「カテゴリ別新着記事」のとき
                ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
-      if ($title_new !== null) {
+      if ($title !== null) {
         echo $args['before_title'];
-        if ($title_new) {
-          echo $title_new;//タイトルが設定されている場合は使用する
+        if ($title) {
+          echo $title;//タイトルが設定されている場合は使用する
         } else {
           if ( $widget_mode == WM_DEFAULT ) {//全ての表示モードの時は
             _e( '新着記事', THEME_NAME );
@@ -85,7 +84,7 @@ class NewEntryWidgetItem extends WP_Widget {
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
-    $instance['title_new'] = strip_tags($new_instance['title_new']);
+    $instance['title'] = strip_tags($new_instance['title']);
     $instance['entry_count'] = strip_tags($new_instance['entry_count']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
     $instance['is_bold'] = strip_tags($new_instance['is_bold']);
@@ -97,7 +96,7 @@ class NewEntryWidgetItem extends WP_Widget {
     if(empty($instance)){
       $instance = array(
         'widget_mode' => WM_DEFAULT,
-        'title_new'   => '',
+        'title'   => '',
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
         'is_bold'  => 0,
@@ -106,14 +105,14 @@ class NewEntryWidgetItem extends WP_Widget {
       );
     }
     $widget_mode = WM_DEFAULT;
-    $title_new   = '';
+    $title   = '';
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
     $is_sticky_visible  = 1;
     if (isset($instance['widget_mode']))
       $widget_mode = esc_attr($instance['widget_mode']);
-    if (isset($instance['title_new']))
-      $title_new = esc_attr($instance['title_new']);
+    if (isset($instance['title']))
+      $title = esc_attr($instance['title']);
     if (isset($instance['entry_count']))
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
@@ -132,10 +131,10 @@ class NewEntryWidgetItem extends WP_Widget {
     </p>
     <?php //タイトル入力フォーム ?>
     <p>
-      <label for="<?php echo $this->get_field_id('title_new'); ?>">
+      <label for="<?php echo $this->get_field_id('title'); ?>">
         <?php _e( '新着記事のタイトル', THEME_NAME ) ?>
       </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('title_new'); ?>" name="<?php echo $this->get_field_name('title_new'); ?>" type="text" value="<?php echo $title_new; ?>" />
+      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>
     <?php //表示数入力フォーム ?>
     <p>

@@ -146,6 +146,8 @@ require_once abspath(__FILE__).'widgets/new-entries.php';
 require_once abspath(__FILE__).'widgets/related-entries.php';
 //人気記事ウィジェット
 require_once abspath(__FILE__).'widgets/popular-entries.php';
+//ナビカードウィジェット
+require_once abspath(__FILE__).'widgets/navi-entries.php';
 //最近のコメントウィジェット
 require_once abspath(__FILE__).'widgets/recent-comments.php';
 //フォローボタンウィジェット
