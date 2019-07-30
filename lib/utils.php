@@ -1505,7 +1505,7 @@ endif;
 if ( !function_exists( 'get_browser_info' ) ):
 function get_browser_info(){
 
-  $ua = $_SERVER['HTTP_USER_AGENT'];
+  $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
   $browser_name = $browser_version = $webkit_version = $platform = NULL;
   $is_webkit = false;
 
@@ -1869,23 +1869,6 @@ function wp_filesystem_get_contents($file, $is_exfile = false, $credentials_enab
   } else {//外部URL
     return @file_get_contents($file, false, stream_context_create($options));
   }
-
-  // if ($credentials_enable && is_request_filesystem_credentials_enable()){
-  //   $creds = request_filesystem_credentials('', '', false, false, null);
-  // }
-
-  // if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   $contents = $wp_filesystem->get_contents($file);
-  //   return $contents;
-  // }
-
-  // if (file_exists($file)) {
-  //   ob_start();
-  //   include($file);
-  //   $contents = ob_get_clean();
-  //   return $contents;
-  // }
 }
 endif;
 if ( !function_exists( 'get_file_contents' ) ):
@@ -1903,15 +1886,6 @@ if (!defined('FS_CHMOD_FILE')) {
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):
 function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
   return file_put_contents($new_file, $file_data, $chmod);
-  // $creds = false;
-  // if (is_request_filesystem_credentials_enable())
-  //   $creds = request_filesystem_credentials('', '', false, false, null);
-
-  // if (WP_Filesystem($creds)) {//WP_Filesystemの初期化
-  //   global $wp_filesystem;//$wp_filesystemオブジェクトの呼び出し
-  //   //$wp_filesystemオブジェクトのメソッドとしてファイルに書き込む
-  //   return $wp_filesystem->put_contents($new_file, $file_data, $chmod);
-  // }
 }
 endif;
 if ( !function_exists( 'put_file_contents' ) ):
@@ -1951,15 +1925,6 @@ function get_first_post_year(){
   endwhile; endif;
   wp_reset_postdata();
   return $year;
-
-  // //記事を古い順に1件だけ取得
-  // query_posts($args);
-  // //query_posts('posts_per_page=1&order=ASC');
-  // if ( have_posts() ) : while ( have_posts() ) : the_post();
-  //   $year = intval(get_the_time('Y'));//最初の投稿の年を取得
-  // endwhile; endif;
-  // wp_reset_query();
-  // return $year;
 }
 endif;
 
@@ -2024,7 +1989,7 @@ endif;
 //ユーザーエージェントが、Windows Live Writer、もしくはOpen Live Writerかどうか
 if ( !function_exists( 'is_user_agent_live_writer' ) ):
 function is_user_agent_live_writer(){
-  $ua = $_SERVER['HTTP_USER_AGENT'];// ユーザエージェントを取得
+  $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';// ユーザエージェントを取得
   if((strpos($ua, 'Windows Live Writer') !== false)
       || (strpos($ua, 'Open Live Writer') !== false)
     ){
