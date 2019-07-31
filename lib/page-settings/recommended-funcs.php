@@ -70,6 +70,6 @@ endif;
 define('OP_RECOMMENDED_CARDS_TITLE_VISIBLE', 'recommended_cards_title_visible');
 if ( !function_exists( 'get_recommended_cards_title_visible' ) ):
 function is_recommended_cards_title_visible(){
-  return get_theme_option(OP_RECOMMENDED_CARDS_TITLE_VISIBLE);
+  return get_theme_option(OP_RECOMMENDED_CARDS_TITLE_VISIBLE, 1);
 }
 endif;

@@ -67,6 +67,8 @@ if( $is_post_ok ):
   require_once abspath(__FILE__).'notice-posts.php';
   //アピールエリア
   require_once abspath(__FILE__).'appeal-posts.php';
+  //おすすめカード
+  require_once abspath(__FILE__).'recommended-posts.php';
   //カルーセル
   require_once abspath(__FILE__).'carousel-posts.php';
   //フッター
@@ -179,7 +181,8 @@ endif;
     <li class="comment"><?php _e( 'コメント', THEME_NAME ) ?></li>
     <li class="notice-area"><?php _e( '通知', THEME_NAME ) ?></li>
     <li class="appeal-area"><?php _e( 'アピールエリア', THEME_NAME ) ?></li>
-    <li class="carousel-area"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
+    <li class="recommended"><?php _e( 'おすすめカード', THEME_NAME ) ?></li>
+    <li class="carousel"><?php _e( 'カルーセル', THEME_NAME ) ?></li>
     <li class="footer"><?php _e( 'フッター', THEME_NAME ) ?></li>
     <li class="buttons"><?php _e( 'ボタン', THEME_NAME ) ?></li>
     <li class="mobile-buttons"><?php _e( 'モバイル', THEME_NAME ) ?></li>
@@ -307,6 +310,11 @@ endif;
   <!-- アピールエリア -->
   <div class="appeal-area metabox-holder">
     <?php require_once abspath(__FILE__).'appeal-forms.php'; ?>
+  </div><!-- /.metabox-holder -->
+
+  <!-- おすすめカード -->
+  <div class="recommended metabox-holder">
+    <?php require_once abspath(__FILE__).'recommended-forms.php'; ?>
   </div><!-- /.metabox-holder -->
 
   <!-- カルーセル -->
