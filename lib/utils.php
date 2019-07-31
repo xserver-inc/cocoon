@@ -2969,3 +2969,12 @@ function fix_blogcard_content($the_content){
   return $the_content;
 }
 endif;
+
+//コメントが許可されているか
+function is_comment_open(){
+  global $post;
+  if ( isset($post->comment_status) ) {
+    return $post->comment_status == 'open';
+  }
+  return false;
+}
