@@ -106,9 +106,10 @@ define('DATA_AD_FORMAT_LINK', 'link');
 //ナビゲーションメニュー
 define('NAV_MENU_HEADER', 'navi-header');
 define('NAV_MENU_HEADER_MOBILE', 'navi-mobile');
+define('NAV_MENU_HEADER_MOBILE_BUTTONS', 'navi-header-mobile');
+define('NAV_MENU_RECOMMENDED', 'navi-recommended');
 define('NAV_MENU_FOOTER', 'navi-footer');
 define('NAV_MENU_FOOTER_MOBILE_BUTTONS', 'navi-footer-mobile');
-define('NAV_MENU_HEADER_MOBILE_BUTTONS', 'navi-header-mobile');
 define('NAV_MENU_MOBILE_SLIDE_IN', 'navi-mobile-slide-in');
 
 //親テーマのstyle.cssのURL
