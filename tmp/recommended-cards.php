@@ -9,8 +9,8 @@
 $name = get_recommended_cards_menu_name();
 if (is_recommended_cards_visible() && $name): ?>
 <!-- Recommended -->
-<div id="recommended" class="recommended cf">
-  <div id="recommended-in" class="recommended-in wrap cf">
+<div id="recommended" class="recommended cf<?php echo get_additional_recommend_cards_classes(); ?>">
+  <div id="recommended-in" class="recommended-in cf">
     <?php
     $atts = array(
       'name' => $name,

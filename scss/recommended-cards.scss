@@ -5,6 +5,14 @@
   .navi-entry-cards{
     display: flex;
     justify-content: center;
+    a{
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  figure{
+    margin: 0;
   }
 
   .card-content{
@@ -13,5 +21,11 @@
   }
   .card-snippet{
     display: none;
+  }
+
+  &.no-title{
+    .card-content{
+      display: none;
+    }
   }
 }

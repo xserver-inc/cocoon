@@ -8041,11 +8041,21 @@ https://codepen.io/nxworld/pen/oLdoWb
   display: flex;
   justify-content: center;
 }
+.recommended .navi-entry-cards a {
+  padding: 0;
+  margin: 0;
+}
+.recommended figure {
+  margin: 0;
+}
 .recommended .card-content {
   font-size: 0.8em;
   text-align: center;
 }
 .recommended .card-snippet {
+  display: none;
+}
+.recommended.no-title .card-content {
   display: none;
 }
 

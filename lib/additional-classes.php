@@ -1043,31 +1043,18 @@ function filter_post_class( $classes, $class, $post_id ) {
 };
 endif;
 
-// //ウィジェットエントリーカードリストのclass追加関数
-// if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
-// function get_additional_widget_entry_cards_classes($atts, $option = null){
-//   extract(shortcode_atts(array(
-//     'type' => 0,
-//     'bold' => 0,
-//     'arrow' => 0,
-//   ), $atts));
-//   $classes = null;
+//おすすめカードのclass追加関数
+if ( !function_exists( 'get_additional_recommend_cards_classes' ) ):
+function get_additional_recommend_cards_classes($option = null){
+  $classes = null;
 
-//   if ($type) {
-//     $classes .= ' card-type-'.$type;
-//   }
+  if (!is_recommended_cards_title_visible()) {
+    $classes .= ' no-title';
+  }
 
-//   if ($bold) {
-//     $classes .= ' card-title-bold';
-//   }
-
-//   if ($arrow) {
-//     $classes .= ' card-arrow';
-//   }
-
-//   if ($option) {
-//     $classes .= ' '.trim($option);
-//   }
-//   return $classes;
-// }
-// endif;
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;

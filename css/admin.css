@@ -3440,8 +3440,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .appeal-button { color: #fff; text-decoration: none; background-color: #dd4b39; font-weight: bold; text-align: center; display: block; max-width: 80%; margin: auto; padding: 10px 2em; border-radius: 4px; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; }
+.admin-settings .demo .recommended figure { margin: 0; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
+.admin-settings .demo .recommended.no-title .card-content { display: none; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
