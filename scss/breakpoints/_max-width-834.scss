@@ -323,3 +323,12 @@ textarea {
     height: auto;
   }
 }
+
+.recommended{
+  .navi-entry-cards{
+    flex-wrap: wrap;
+    a{
+      width: 50%;
+    }
+  }
+}

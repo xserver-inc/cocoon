@@ -9288,6 +9288,13 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .header-container-in.hlt-top-menu.hlt-tm-small .logo-header {
     height: auto;
   }
+
+  .recommended .navi-entry-cards {
+    flex-wrap: wrap;
+  }
+  .recommended .navi-entry-cards a {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 599px) {
   .container .column-wrap {
