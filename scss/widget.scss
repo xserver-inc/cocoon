@@ -284,17 +284,14 @@ label.screen-reader-text{
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 5px;
+    padding: .6em;
     background-color: $transpalent_black_bgc;
     color: $white;
-    max-height: 4em;
+    max-height: 40%;
     overflow: hidden;
     transition: $bgc_hover_anime;
   }
 
-  .card-title{
-    padding: 0.6em;
-  }
 
   .card-snippet{
     margin: 0;

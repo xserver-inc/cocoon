@@ -1,0 +1,17 @@
+/************************************
+** おすすめカード
+************************************/
+.recommended{
+  .navi-entry-cards{
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-content{
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .card-snippet{
+    display: none;
+  }
+}
