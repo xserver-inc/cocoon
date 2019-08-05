@@ -924,6 +924,11 @@ function generate_popular_entries_tag($atts){
         $post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
       }
 
+      $pv_tag = null;
+      if ($pv_visible){
+        $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
+        $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
+      }
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
@@ -937,11 +942,14 @@ function generate_popular_entries_tag($atts){
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
         <span class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></span>
-        <?php if ($pv_visible): ?>
-          <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.' view' : $pv.' views';?></span>
+        <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
+          <?php echo $pv_tag; ?>
         <?php endif ?>
         <?php generate_widget_entry_card_date('popular', $post->ID); ?>
       </div><!-- /.popular-entry-content -->
+      <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
+        <?php echo $pv_tag; ?>
+      <?php endif ?>
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
 
