@@ -177,9 +177,12 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false){
     </div>
   </div>';
 
+  global $_TOC_AVAILABLE_H_COUNT;
+  $_TOC_AVAILABLE_H_COUNT = $counter;
   //_v($counter);
-  $display_count = intval(get_toc_display_count());
-  if (is_int($display_count) && ($counter < $display_count)) {
+  // $display_count = intval(get_toc_display_count());
+  // if (is_int($display_count) && ($counter < $display_count)) {
+  if (!is_toc_display_count_available($counter)){
     return ;
   }
 
@@ -321,6 +324,7 @@ endif;
 //ページ上で目次を利用しているか
 if ( !function_exists( 'is_the_page_toc_use' ) ):
 function is_the_page_toc_use(){
+  global $_TOC_AVAILABLE_H_COUNT;
   $content = get_the_content();
   return is_singular() && !is_plugin_fourm_page() &&
     //最初のH2手前に表示する場合
@@ -330,7 +334,8 @@ function is_the_page_toc_use(){
       (
         (is_single() && is_single_toc_visible()) ||
         (is_page() && is_page_toc_visible())
-      )
+      ) &&
+      is_toc_display_count_available($_TOC_AVAILABLE_H_COUNT)
     )
     //ショートコードで表示する場合
     || includes_string($content, '[toc]');
@@ -346,5 +351,13 @@ function get_toc_expanded_content(){
     $the_content = do_shortcode($the_content);
     return apply_filters('get_toc_expanded_content', $the_content);
   }
+}
+endif;
+
+//目次の表示数は満たしているか
+if ( !function_exists( 'is_toc_display_count_available' ) ):
+function is_toc_display_count_available($h_count){
+  $display_count = intval(get_toc_display_count());
+  return ($h_count >= $display_count);
 }
 endif;

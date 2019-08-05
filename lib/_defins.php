@@ -69,6 +69,10 @@ $_TOC_INDEX = 1;
 //目次利用フラグ
 global $_TOC_WIDGET_OR_SHORTCODE_USE;
 $_TOC_WIDGET_OR_SHORTCODE_USE = false;
+//有効な目次見出しカウント
+global $_TOC_AVAILABLE_H_COUNT;
+$_TOC_AVAILABLE_H_COUNT = 0;
+
 //モバイルフッターメニューのキャプション
 global $_MENU_CAPTION;
 $_MENU_CAPTION = null;
