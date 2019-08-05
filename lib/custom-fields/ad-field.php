@@ -57,10 +57,13 @@ endif;
 //広告を除外しているか
 if ( !function_exists( 'is_the_page_ads_novisible' ) ):
 function is_the_page_ads_novisible(){
-  $value = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
-  if (is_migrate_from_simplicity()){
-    $simplicity_value = get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true) ? 1 : 0;
-    $value = $value ? $value : $simplicity_value;
+  $value = 0;
+  if (is_singular()) {
+    $value = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
+    if (is_migrate_from_simplicity()){
+      $simplicity_value = get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true) ? 1 : 0;
+      $value = $value ? $value : $simplicity_value;
+    }
   }
   return $value;
 }
