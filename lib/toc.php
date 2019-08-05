@@ -330,9 +330,7 @@ function is_the_page_toc_use(){
       (
         (is_single() && is_single_toc_visible()) ||
         (is_page() && is_page_toc_visible())
-      ) &&
-      //H2見出しがあるか
-      includes_string($content, '<h2')
+      )
     )
     //ショートコードで表示する場合
     || includes_string($content, '[toc]');
