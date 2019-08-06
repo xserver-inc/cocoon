@@ -89,6 +89,32 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- カード余白 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RECOMMENDED_CARDS_MARGIN_ENABLE, __('カード余白', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_RECOMMENDED_CARDS_MARGIN_ENABLE, is_recommended_cards_margin_enable(), __( 'おすすめカード毎に余白を設ける', THEME_NAME ));
+            generate_tips_tag(__( 'デフォルトだとカードはすべてくっついています。この機能を有効にすることにより、カードごとに余白を設けます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- カードエリア左右余白 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RECOMMENDED_CARDS_AREA_BOTH_SIDES_MARGIN_ENABLE, __('カードエリア左右余白', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_RECOMMENDED_CARDS_AREA_BOTH_SIDES_MARGIN_ENABLE, is_recommended_cards_area_both_sides_margin_enable(), __( 'おすすめカードエリアの左右に余白を設ける', THEME_NAME ));
+            generate_tips_tag(__( 'デフォルトだと、カードエリアは画面幅いっぱいになっています。この設定を有効にすることにより、コンテンツ部分と同等に左右余白を設けます。※PC表示のみ。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

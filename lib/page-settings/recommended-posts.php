@@ -16,5 +16,8 @@ update_theme_option(OP_RECOMMENDED_CARDS_MENU_NAME);
 //お勧め記事の表示スタイル
 update_theme_option(OP_RECOMMENDED_CARDS_STYLE);
 
-//お勧め記事のタイトルを表示するか
-update_theme_option(OP_RECOMMENDED_CARDS_TITLE_VISIBLE);
+//お勧め記事の余白は有効か
+update_theme_option(OP_RECOMMENDED_CARDS_MARGIN_ENABLE);
+
+//お勧め記事エリアの左右余白は有効か
+update_theme_option(OP_RECOMMENDED_CARDS_AREA_BOTH_SIDES_MARGIN_ENABLE);

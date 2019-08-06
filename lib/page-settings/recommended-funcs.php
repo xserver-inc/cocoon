@@ -74,10 +74,18 @@ function get_recommended_cards_style(){
 }
 endif;
 
-//お勧め記事のタイトルを表示するか
-define('OP_RECOMMENDED_CARDS_TITLE_VISIBLE', 'recommended_cards_title_visible');
-if ( !function_exists( 'get_recommended_cards_title_visible' ) ):
-function is_recommended_cards_title_visible(){
-  return get_theme_option(OP_RECOMMENDED_CARDS_TITLE_VISIBLE, 1);
+//お勧め記事の余白は有効か
+define('OP_RECOMMENDED_CARDS_MARGIN_ENABLE', 'recommended_cards_margin_enable');
+if ( !function_exists( 'is_recommended_cards_margin_enable' ) ):
+function is_recommended_cards_margin_enable(){
+  return get_theme_option(OP_RECOMMENDED_CARDS_MARGIN_ENABLE);
+}
+endif;
+
+//お勧め記事エリアの左右余白は有効か
+define('OP_RECOMMENDED_CARDS_AREA_BOTH_SIDES_MARGIN_ENABLE', 'recommended_cards_area_both_sides_margin_enable');
+if ( !function_exists( 'is_recommended_cards_area_both_sides_margin_enable' ) ):
+function is_recommended_cards_area_both_sides_margin_enable(){
+  return get_theme_option(OP_RECOMMENDED_CARDS_AREA_BOTH_SIDES_MARGIN_ENABLE);
 }
 endif;
