@@ -448,3 +448,26 @@ function header_last_modified_and_etag() {
 
 }
 endif;
+
+//ウィジェット表示タイプのオプション配列
+if ( !function_exists( 'get_widget_entry_type_options' ) ):
+function get_widget_entry_type_options(){
+  return array(
+    ET_DEFAULT =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/default.png', __( '通常のカード表示', THEME_NAME ), 360).
+      __( 'デフォルト', THEME_NAME ),
+    ET_BORDER_PARTITION =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_partition.png', __( 'カードの上下に破線の区切り線が表示されます。', THEME_NAME ), 360).
+      __( '区切り線', THEME_NAME ),
+    ET_BORDER_SQUARE =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_square.png', __( 'カード自体を罫線で囲みます。', THEME_NAME ), 360).
+      __( '囲み枠', THEME_NAME ),
+    ET_LARGE_THUMB =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/large_thumb-1.jpg', __( '大きなサムネイル画像の下にタイトルを表示します。', THEME_NAME ), 360).
+      __( '大きなサムネイル', THEME_NAME ),
+    ET_LARGE_THUMB_ON =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/large_thumb_on-1.jpg', __( '大きなサムネイル画像の下段にタイトルを重ねます。', THEME_NAME ), 360).
+        __( 'タイトルを重ねた大きなサムネイル', THEME_NAME ),
+  );
+}
+endif;
