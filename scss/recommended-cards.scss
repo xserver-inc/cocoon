@@ -28,7 +28,7 @@
       display: none;
     }
   }
-  &.rcs-center-white-title{
+  &.rcs-center-title{
     .card-content{
       left: 0;
       top: 0;
@@ -36,21 +36,42 @@
       bottom: 0;
       text-align: center;
       opacity: 1;
-      background-color: rgba(51, 51, 51, 0.3);
+      //background-color: rgba(51, 51, 51, 0.3);
       font-size: 1em;
       max-height: none;
-      display: table;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
-      font-weight: 700;
-      .card-title{
-        display:table-cell;
-        vertical-align:middle;
-      }
+      //font-weight: 700;
+      // .card-title{
+      //   display:table-cell;
+      //   vertical-align:middle;
+      // }
     }
     .a-wrap:hover{
       .card-content{
         opacity: 1;
       }
+    }
+  }
+  &.rcs-center-white-title{
+    .card-content{
+      background-color: rgba(51, 51, 51, 0.3);
+    }
+  }
+  &.rcs-center-label-title{
+    .card-content{
+      background-color: rgba(51, 51, 51, 0);
+
+      .card-title{
+        color: $text_color;
+        background-color: $white;
+        padding: 3px 10px;
+        opacity: 0.8;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 6px;
+}
     }
   }
 

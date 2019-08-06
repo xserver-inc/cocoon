@@ -1053,10 +1053,10 @@ function get_additional_recommend_cards_classes($option = null){
       $classes .= ' rcs-image-only';
       break;
     case 'center_white_title':
-      $classes .= ' rcs-center-white-title';
+      $classes .= ' rcs-center-white-title rcs-center-title';
       break;
     case 'center_label_title':
-      $classes .= ' rcs-center-label-title';
+      $classes .= ' rcs-center-label-title rcs-center-title';
       break;
     case ET_LARGE_THUMB_ON:
       $classes .= ' rcs-large-thumb-on';

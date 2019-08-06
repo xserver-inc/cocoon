@@ -8060,26 +8060,36 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended.rcs-image-only .card-content {
   display: none;
 }
-.recommended.rcs-center-white-title .card-content {
+.recommended.rcs-center-title .card-content {
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   text-align: center;
   opacity: 1;
-  background-color: rgba(51, 51, 51, 0.3);
   font-size: 1em;
   max-height: none;
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  font-weight: 700;
 }
-.recommended.rcs-center-white-title .card-content .card-title {
-  display: table-cell;
-  vertical-align: middle;
-}
-.recommended.rcs-center-white-title .a-wrap:hover .card-content {
+.recommended.rcs-center-title .a-wrap:hover .card-content {
   opacity: 1;
+}
+.recommended.rcs-center-white-title .card-content {
+  background-color: rgba(51, 51, 51, 0.3);
+}
+.recommended.rcs-center-label-title .card-content {
+  background-color: rgba(51, 51, 51, 0);
+}
+.recommended.rcs-center-label-title .card-content .card-title {
+  color: #333;
+  background-color: #fff;
+  padding: 3px 10px;
+  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
 }
 .recommended.rcs-card-margin a {
   margin: 1em 10px;
