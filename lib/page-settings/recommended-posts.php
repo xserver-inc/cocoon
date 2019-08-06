@@ -13,5 +13,8 @@ update_theme_option(OP_RECOMMENDED_CARDS_DISPLAY_TYPE);
 //お勧め記事のメニュー名
 update_theme_option(OP_RECOMMENDED_CARDS_MENU_NAME);
 
+//お勧め記事の表示スタイル
+update_theme_option(OP_RECOMMENDED_CARDS_STYLE);
+
 //お勧め記事のタイトルを表示するか
 update_theme_option(OP_RECOMMENDED_CARDS_TITLE_VISIBLE);

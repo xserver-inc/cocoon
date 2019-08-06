@@ -70,6 +70,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 表示スタイル -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RECOMMENDED_CARDS_STYLE, __('表示スタイル', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'image_only' => __( '画像のみ', THEME_NAME ),
+              'center_white_title' => __( '画像中央に白文字タイトル', THEME_NAME ),
+              'center_label_title' => __( '画像中央にラベルでタイトル', THEME_NAME ),
+              ET_LARGE_THUMB_ON => __( '画像下段もを黒背景にしタイトルを重ねる', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_RECOMMENDED_CARDS_STYLE, $options, get_recommended_cards_style());
+            generate_tips_tag(__( 'おすすめカードの表示スタイルを変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- エリア画像 -->
         <tr>
           <th scope="row">

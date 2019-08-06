@@ -66,6 +66,14 @@ function get_recommended_cards_menu_name(){
 }
 endif;
 
+//お勧め記事の表示スタイル
+define('OP_RECOMMENDED_CARDS_STYLE', 'recommended_cards_style');
+if ( !function_exists( 'get_recommended_cards_style' ) ):
+function get_recommended_cards_style(){
+  return get_theme_option(OP_RECOMMENDED_CARDS_STYLE, ET_LARGE_THUMB_ON);
+}
+endif;
+
 //お勧め記事のタイトルを表示するか
 define('OP_RECOMMENDED_CARDS_TITLE_VISIBLE', 'recommended_cards_title_visible');
 if ( !function_exists( 'get_recommended_cards_title_visible' ) ):
