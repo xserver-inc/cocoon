@@ -7,10 +7,14 @@
  */ ?>
 <?php
 $name = get_recommended_cards_menu_name();
+$wrap = null;
+if (is_recommended_cards_area_both_sides_margin_enable()) {
+  $wrap = ' wrap';
+}
 if (is_recommended_cards_visible() && $name): ?>
 <!-- Recommended -->
 <div id="recommended" class="recommended cf<?php echo get_additional_recommend_cards_classes(); ?>">
-  <div id="recommended-in" class="recommended-in cf">
+  <div id="recommended-in" class="recommended-in<?php echo $wrap; ?> cf">
     <?php
     $atts = array(
       'name' => $name,

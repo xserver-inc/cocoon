@@ -116,6 +116,10 @@ body.wp-admin{
     width: 100%;
     height: 100%;
   }
+
+  .recommended-in.wrap{
+    padding: 0 5%;
+  }
 }
 
 .demo #related-entries h2{
@@ -1104,3 +1108,4 @@ textarea[name="the_page_memo"]{
   //   // border-radius: 6px;
   // }
 }
+
