@@ -87,7 +87,7 @@ function generate_selectbox_tag($name, $options, $now_value, $label = null, $ico
   </select>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -103,7 +103,7 @@ function generate_range_tag($name, $value, $min, $max, $step){
   </div>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -117,7 +117,7 @@ endif;
 //入力フォームをスキン制御タグで囲む
 add_filter( 'admin_input_form_tag', 'wrap_skin_control_tag', 10, 2 );
 if ( !function_exists( 'wrap_skin_control_tag' ) ):
-function wrap_skin_control_tag($name, $tag){
+function wrap_skin_control_tag($tag, $name){
   // if ($name == '404_page_title') {
   //   _v(get_skin_option($name));
   // }
@@ -135,7 +135,7 @@ function generate_checkbox_tag($name, $now_value, $label){
   <input type="checkbox" name="<?php echo $name; ?>" value="1"<?php the_checkbox_checked($now_value); ?>><?php echo $label; ?>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -154,7 +154,7 @@ function generate_radiobox_tag($name, $options, $now_value){
   </ul>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -275,7 +275,7 @@ function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT
   <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -286,7 +286,7 @@ function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPU
   <textarea name="<?php echo $name; ?>" placeholder="<?php echo $placeholder; ?>" rows="<?php echo $rows; ?>" cols="<?php echo $cols; ?>"><?php echo $value; ?></textarea>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -298,7 +298,7 @@ function generate_number_tag($name, $value, $placeholder = '', $min = 1, $max = 
   <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>">
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -406,7 +406,7 @@ function generate_color_picker_tag($name, $value, $label){
     wp_add_inline_script( 'wp-color-picker', $data, 'after' ) ;
 
     $res = ob_get_clean();
-    echo apply_filters('admin_input_form_tag', $name, $res);
+    echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -421,7 +421,7 @@ function generate_visuel_editor_tag($name, $content, $editor_id = 'wp_editor', $
   ); //配列としてデータを渡すためname属性を指定する
   wp_editor( $content, $editor_id, $settings );
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -597,7 +597,7 @@ function generate_upload_image_tag($name, $value, $id = null){
   </script>
   <?php
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -638,7 +638,7 @@ function generate_hierarchical_category_check_list( $cat, $name, $checks, $width
   echo '</div>';
 
   $res = ob_get_clean();
-  echo apply_filters('admin_input_form_tag', $name, $res);
+  echo apply_filters('admin_input_form_tag', $res, $name);
 }
 endif;
 
@@ -695,7 +695,7 @@ function generate_tagcloud_check_list($name, $checks = array()){
 		}
 	}
   $html .= '</div>';
-  echo apply_filters('admin_input_form_tag', $name, $html);
+  echo apply_filters('admin_input_form_tag', $html, $name);
 }
 endif;
 
@@ -924,6 +924,11 @@ function generate_popular_entries_tag($atts){
         $post_thumbnail_img = '<img src="'.esc_url($no_thumbnail_url).'" alt="" class="no-image popular-entry-card-thumb-no-image widget-entry-card-thumb-no-image" width="'.$w.'" height="'.$h.'" />';
       }
 
+      $pv_tag = null;
+      if ($pv_visible){
+        $pv_text = $pv == '1' ? $pv.' view' : $pv.' views';
+        $pv_tag = '<span class="popular-entry-card-pv widget-entry-card-pv">'.$pv_text.'</span>';
+      }
       ?>
   <a href="<?php echo $permalink; ?>" class="popular-entry-card-link a-wrap no-<?php echo $i; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="popular-entry-card widget-entry-card e-card cf">
@@ -937,11 +942,14 @@ function generate_popular_entries_tag($atts){
 
       <div class="popular-entry-card-content widget-entry-card-content card-content">
         <span class="popular-entry-card-title widget-entry-card-title card-title"><?php echo $title;?></span>
-        <?php if ($pv_visible): ?>
-          <span class="popular-entry-card-pv widget-entry-card-pv"><?php echo $pv == '1' ? $pv.' view' : $pv.' views';?></span>
+        <?php if ($entry_type != ET_LARGE_THUMB_ON): ?>
+          <?php echo $pv_tag; ?>
         <?php endif ?>
         <?php generate_widget_entry_card_date('popular', $post->ID); ?>
       </div><!-- /.popular-entry-content -->
+      <?php if ($entry_type == ET_LARGE_THUMB_ON): ?>
+        <?php echo $pv_tag; ?>
+      <?php endif ?>
     </div><!-- /.popular-entry-card -->
   </a><!-- /.popular-entry-card-link -->
 
