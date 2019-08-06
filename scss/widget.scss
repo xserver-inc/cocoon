@@ -270,7 +270,7 @@ label.screen-reader-text{
       opacity: 0.8;
       .card-content{
         margin-bottom: -4em;
-        transition: $bgc_hover_anime;
+        transition: all 0.5s;
         opacity: 0;
       }
     }
@@ -290,7 +290,7 @@ label.screen-reader-text{
     color: $white;
     max-height: 40%;
     overflow: hidden;
-    transition: $bgc_hover_anime;
+    transition: all 0.5s;
   }
 
 

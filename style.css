@@ -2360,7 +2360,7 @@ label.screen-reader-text {
 }
 .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content {
   margin-bottom: -4em;
-  transition: all 0.7s;
+  transition: all 0.5s;
   opacity: 0;
 }
 .widget-entry-cards.large-thumb-on .e-card {
@@ -2376,7 +2376,7 @@ label.screen-reader-text {
   color: #fff;
   max-height: 40%;
   overflow: hidden;
-  transition: all 0.7s;
+  transition: all 0.5s;
 }
 .widget-entry-cards.large-thumb-on .card-snippet {
   margin: 0;
