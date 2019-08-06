@@ -58,7 +58,7 @@ endif;
 if ( !function_exists( 'is_the_page_ads_novisible' ) ):
 function is_the_page_ads_novisible(){
   $value = 0;
-  if (is_singular()) {
+  if (is_singular() || is_admin()) {
     $value = get_post_meta(get_the_ID(), 'the_page_ads_novisible', true);
     if (is_migrate_from_simplicity()){
       $simplicity_value = get_post_meta(get_the_ID(), 'is_ads_removed_in_page', true) ? 1 : 0;
