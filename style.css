@@ -8085,11 +8085,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .recommended.rcs-center-label-title .card-content .card-title {
   color: #333;
-  background-color: #fff;
-  padding: 3px 10px;
+  background-color: #fffffc;
+  padding: 4px 10px;
   opacity: 0.8;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
+  max-width: 80%;
 }
 .recommended.rcs-card-margin a {
   margin: 1em 10px;
