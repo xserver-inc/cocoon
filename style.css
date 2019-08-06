@@ -8079,6 +8079,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .recommended.rcs-center-white-title .card-content {
   background-color: rgba(51, 51, 51, 0.3);
+  transition: all .7s;
+}
+.recommended.rcs-center-white-title .a-wrap:hover .card-content {
+  transition: all .7s;
+  opacity: 0;
 }
 .recommended.rcs-center-label-title .card-content {
   background-color: rgba(51, 51, 51, 0);
@@ -8091,8 +8096,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   opacity: 0.8;
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
-  transition: all .3s;
-  overflow: hidden;
+  transition: all .5s;
 }
 .recommended.rcs-center-label-title .card-content:hover .card-title {
   transition: all .3s;

@@ -3447,9 +3447,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
 .admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
 .admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
-.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 4px 10px; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .3s; overflow: hidden; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 4px 10px; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; width: 0; height: 0; opacity: 0; font-size: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em 10px; }
 .admin-settings .demo .recommended .ribbon { display: none; }
