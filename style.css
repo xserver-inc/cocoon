@@ -8060,6 +8060,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended.rcs-image-only .card-content {
   display: none;
 }
+.recommended.rcs-card-margin a {
+  margin: 1em 10px;
+}
 
 /************************************
 ** 入力フォーム
@@ -9303,9 +9306,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .recommended .navi-entry-cards {
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   .recommended .navi-entry-cards a {
     width: 50%;
+  }
+  .recommended.rcs-card-margin a {
+    margin: .3em 0;
+    width: 46%;
   }
 }
 @media screen and (max-width: 599px) {

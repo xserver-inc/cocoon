@@ -1063,9 +1063,9 @@ function get_additional_recommend_cards_classes($option = null){
       break;
   }
 
-  // if (!is_recommended_cards_title_visible()) {
-  //   $classes .= ' no-title';
-  // }
+  if (is_recommended_cards_margin_enable()) {
+    $classes .= ' rcs-card-margin';
+  }
 
   if ($option) {
     $classes .= ' '.trim($option);

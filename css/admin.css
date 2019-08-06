@@ -3445,6 +3445,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em 10px; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
@@ -3694,8 +3695,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .slick-dots { display: none !important; }
   .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; }
   .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; }
-  .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; }
-  .admin-settings .demo .recommended .navi-entry-cards a { width: 50%; } }
+  .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+  .admin-settings .demo .recommended .navi-entry-cards a { width: 50%; }
+  .admin-settings .demo .recommended.rcs-card-margin a { margin: .3em 0; width: 46%; } }
 @media screen and (max-width: 599px) { .admin-settings .demo .container .column-wrap { flex-direction: column; }
   .admin-settings .demo .container .column-wrap > div { width: 100%; padding: 1em 0; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
