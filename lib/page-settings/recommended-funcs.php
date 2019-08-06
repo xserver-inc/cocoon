@@ -70,7 +70,7 @@ endif;
 define('OP_RECOMMENDED_CARDS_STYLE', 'recommended_cards_style');
 if ( !function_exists( 'get_recommended_cards_style' ) ):
 function get_recommended_cards_style(){
-  return get_theme_option(OP_RECOMMENDED_CARDS_STYLE, ET_LARGE_THUMB_ON);
+  return get_theme_option(OP_RECOMMENDED_CARDS_STYLE, 'center_label_title');
 }
 endif;
 
