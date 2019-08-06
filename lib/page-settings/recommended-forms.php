@@ -56,7 +56,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            $options = array();
+            $options = array(
+              '' => __( '未選択', THEME_NAME )
+            );
             $menus = wp_get_nav_menus();
             //_v($menus);
             foreach ($menus as $menu) {
