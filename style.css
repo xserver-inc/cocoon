@@ -2334,6 +2334,7 @@ label.screen-reader-text {
 }
 .widget-entry-cards.card-large-image figure img {
   width: 100%;
+  display: block;
 }
 .widget-entry-cards.card-large-image .card-content {
   margin: 0 0 0.5em;
