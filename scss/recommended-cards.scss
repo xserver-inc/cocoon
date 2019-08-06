@@ -28,6 +28,31 @@
       display: none;
     }
   }
+  &.rcs-center-white-title{
+    .card-content{
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      opacity: 1;
+      background-color: rgba(51, 51, 51, 0.3);
+      font-size: 1em;
+      max-height: none;
+      display: table;
+      height: 100%;
+      font-weight: 700;
+      .card-title{
+        display:table-cell;
+        vertical-align:middle;
+      }
+    }
+    .a-wrap:hover{
+      .card-content{
+        opacity: 1;
+      }
+    }
+  }
 
   &.rcs-card-margin{
     a{
