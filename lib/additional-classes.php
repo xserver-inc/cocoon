@@ -1048,9 +1048,24 @@ if ( !function_exists( 'get_additional_recommend_cards_classes' ) ):
 function get_additional_recommend_cards_classes($option = null){
   $classes = null;
 
-  if (!is_recommended_cards_title_visible()) {
-    $classes .= ' no-title';
+  switch (get_recommended_cards_style()) {
+    case 'image_only':
+      $classes .= ' rcs-image-only';
+      break;
+    case 'center_white_title':
+      $classes .= ' rcs-center-white-title';
+      break;
+    case 'center_label_title':
+      $classes .= ' rcs-center-label-title';
+      break;
+    case ET_LARGE_THUMB_ON:
+      $classes .= ' rcs-large-thumb-on';
+      break;
   }
+
+  // if (!is_recommended_cards_title_visible()) {
+  //   $classes .= ' no-title';
+  // }
 
   if ($option) {
     $classes .= ' '.trim($option);

@@ -89,20 +89,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <!-- エリア画像 -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_RECOMMENDED_CARDS_TITLE_VISIBLE, __('タイトル表示', THEME_NAME) ); ?>
-          </th>
-          <td>
-            <?php
-            //ヘッダー背景画像の固定
-            generate_checkbox_tag(OP_RECOMMENDED_CARDS_TITLE_VISIBLE, is_recommended_cards_title_visible(), __( 'おすすめカードタイトルを表示する', THEME_NAME ));
-            generate_tips_tag(__( 'おすすめカードのタイトルに設定した文字列を表示するかどうか。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
       </tbody>
     </table>
 
