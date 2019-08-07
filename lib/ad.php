@@ -313,9 +313,10 @@ endif;
 //ウィジェットをトップページのリスト表示中間に掲載するか
 if ( !function_exists( 'is_index_middle_widget_visible' ) ):
 function is_index_middle_widget_visible($count){
+  $display_count_condition = apply_filters('index_middle_display_count_condition', $count == 3);
   $is_visible =
     //3個目の表示のときのみ
-    ($count == 3) &&
+    $display_count_condition && //何番目に表示するかの表示条件（デフォルト：3）
     // //トップページリストのみ
     // is_home() &&
     // //ページネーションの最終ページでないとき
