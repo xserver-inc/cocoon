@@ -278,7 +278,7 @@ function convert_lazy_load_tag($the_content, $media){
       ///////////////////////////////////////////
       if (
         //サイトロゴ
-        includes_string($match, 'class="header-site-logo-image"')
+        includes_string($match, 'header-site-logo-image')
         //アイキャッチ
         || includes_string($match, ' eye-catch-image ')
       ) {
