@@ -3440,7 +3440,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .appeal-button { color: #fff; text-decoration: none; background-color: #dd4b39; font-weight: bold; text-align: center; display: block; max-width: 80%; margin: auto; padding: 10px 2em; border-radius: 4px; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; }
 .admin-settings .demo .recommended figure { margin: 0; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
@@ -3450,8 +3450,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 4px 10px; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; width: 0; height: 0; opacity: 0; font-size: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em 10px; }
 .admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo textarea { min-height: 260px; }

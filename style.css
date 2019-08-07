@@ -8046,6 +8046,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended .navi-entry-cards a {
   padding: 0;
   margin: 0;
+  width: 25%;
 }
 .recommended figure {
   margin: 0;
@@ -8092,7 +8093,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended.rcs-center-label-title .card-content .card-title {
   color: #333;
   background-color: #fffffc;
-  padding: 4px 10px;
+  padding: 6px 1em;
   opacity: 0.8;
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
@@ -8100,10 +8101,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .recommended.rcs-center-label-title .card-content:hover .card-title {
   transition: all .3s;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  font-size: 0;
 }
 .recommended.rcs-card-margin a {
   margin: 1em 10px;
