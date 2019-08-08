@@ -553,8 +553,7 @@ function get_navi_card_list_tag($atts){
     $snippet = $menu->description;
     $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
-    // //リボンタグの取得
-    // $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
+    //リボンタグの取得
     $atts = array(
       'prefix' => WIDGET_NAVI_ENTRY_CARD_PREFIX,
       'url' => $url,
