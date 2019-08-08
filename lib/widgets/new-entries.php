@@ -27,6 +27,7 @@ class NewEntryWidgetItem extends WP_Widget {
     $widget_mode = apply_filters( 'new_entries_widget_mode', empty($instance['widget_mode']) ? WM_DEFAULT : $instance['widget_mode'] );
     //タイトル名を取得
     $title = apply_filters( 'new_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'new_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     $entry_type = apply_filters( 'new_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );

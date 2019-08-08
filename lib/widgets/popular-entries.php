@@ -30,6 +30,7 @@ class PopularEntryWidgetItem extends WP_Widget {
     //タイトル名を取得
     $title = empty($instance['title']) ? '' : $instance['title'];
     $title = apply_filters( 'popular_entries_widget_title', $title, $instance, $this->id_base );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'popular_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //表示タイプ

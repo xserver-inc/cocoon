@@ -25,6 +25,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     extract( $args );
     //タイトル名を取得
     $title = apply_filters( 'related_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示数を取得
     $entry_count = apply_filters( 'related_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
     //表示タイプ

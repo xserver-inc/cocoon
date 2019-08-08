@@ -27,6 +27,7 @@ class NaviEntryWidgetItem extends WP_Widget {
     $name = apply_filters( 'navi_entries_widget_name', empty($instance['name']) ? '' : $instance['name'] );
     //タイトル名を取得
     $title = apply_filters( 'navi_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
+    $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示タイプ
     $entry_type = apply_filters( 'navi_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
     //タイトルの太さ
