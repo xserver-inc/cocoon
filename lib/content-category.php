@@ -11,24 +11,22 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // 拡張カテゴリ設定
 ///////////////////////////////////////
 
-//define('CATEGORY_META_PREFIX', 'category_meta_');
-
-if ( !function_exists( 'get_category_meta_key' ) ):
-function get_category_meta_key($cat_id){
+if ( !function_exists( 'get_the_category_meta_key' ) ):
+function get_the_category_meta_key($cat_id){
   return 'category_meta_'.$cat_id;
 }
 endif;
 
 //カテゴリメタ情報の取得
-if ( !function_exists( 'get_category_meta' ) ):
-function get_category_meta($cat_id = null){
+if ( !function_exists( 'get_the_category_meta' ) ):
+function get_the_category_meta($cat_id = null){
   if (empty($cat_id) && is_category()) {
     //カテゴリがないときはカテゴリIDを取得
     $cat_id = get_query_var('cat');
   }
   //カテゴリIDが正常な場合
   if ($cat_id) {
-    $res = get_term_meta( $cat_id, get_category_meta_key($cat_id), true );
+    $res = get_term_meta( $cat_id, get_the_category_meta_key($cat_id), true );
     //_v($res);
     if (is_array($res)) {
       return $res;
@@ -40,45 +38,65 @@ function get_category_meta($cat_id = null){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_color' ) ):
-function get_category_color($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['color']))
-    return $meta['color'];
+if ( !function_exists( 'get_the_category_color' ) ):
+function get_the_category_color($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_color', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['color']))
+      return $meta['color'];
+  }
 }
 endif;
 
 //カテゴリ文字色の取得
-if ( !function_exists( 'get_category_text_color' ) ):
-function get_category_text_color($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['text_color']))
-    return $meta['text_color'];
+if ( !function_exists( 'get_the_category_text_color' ) ):
+function get_the_category_text_color($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_text_color', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['text_color']))
+      return $meta['text_color'];
+  }
 }
 endif;
 
 //カテゴリタイトルの取得
-if ( !function_exists( 'get_category_title' ) ):
-function get_category_title($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['title']))
-    return $meta['title'];
-  else
-    return get_category($cat_id)->name;
+if ( !function_exists( 'get_the_category_title' ) ):
+function get_the_category_title($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_title', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['title']))
+      return $meta['title'];
+    else
+      return get_category($cat_id)->name;
+  }
 }
 endif;
 
 //カテゴリ本文の取得
-if ( !function_exists( 'get_category_content' ) ):
-function get_category_content($cat_id = null){
-  if (!$cat_id) {
-    $cat_id = get_query_var('cat');
+if ( !function_exists( 'get_the_category_content' ) ):
+function get_the_category_content($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_content', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    if (!$cat_id) {
+      $cat_id = get_query_var('cat');
+    }
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['content']))
+      $content = $meta['content'];
+    else
+      $content = category_description($cat_id);
   }
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['content']))
-    $content = $meta['content'];
-  else
-    $content = category_description($cat_id);
 
   $content = wpautop($content);
   $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
@@ -88,17 +106,23 @@ function get_category_content($cat_id = null){
 endif;
 
 //アイキャッチの取得
-if ( !function_exists( 'get_category_eye_catch_url' ) ):
-function get_category_eye_catch_url($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['eye_catch'])){
-    $eye_catch_url = $meta['eye_catch'];
-    //画像が存在しているか
-    if (file_exists(url_to_local($eye_catch_url))) {
-      return $eye_catch_url;
+if ( !function_exists( 'get_the_category_eye_catch_url' ) ):
+function get_the_category_eye_catch_url($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
+  if ($res) {
+    $eye_catch_url = $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['eye_catch'])){
+      $eye_catch_url = $meta['eye_catch'];
     } else {
-      return '';
+      $eye_catch_url = '';
     }
+  }
+
+  //画像が存在しているか
+  if (file_exists(url_to_local($eye_catch_url))) {
+    return $eye_catch_url;
   } else {
     return '';
   }
@@ -106,25 +130,30 @@ function get_category_eye_catch_url($cat_id = null){
 endif;
 
 //カテゴリ色の取得
-if ( !function_exists( 'get_category_description' ) ):
-function get_category_description($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['description']))
-    return $meta['description'];
+if ( !function_exists( 'get_the_category_meta_description' ) ):
+function get_the_category_meta_description($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_meta_description', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['description']))
+      return $meta['description'];
+  }
 }
 endif;
 
 //カテゴリのスニペット文を取得
-if ( !function_exists( 'get_category_snippet' ) ):
-function get_category_snippet($cat_id){
-  $snippet = get_category_description($cat_id);
+if ( !function_exists( 'get_the_category_snippet' ) ):
+function get_the_category_snippet($cat_id){
+  $snippet = get_the_category_meta_description($cat_id);
   if (!$snippet) {
     //カテゴリ説明を取得
     $snippet = category_description($cat_id);
   }
   if (!$snippet) {
     //カテゴリ内容の抜粋
-    $snippet = get_content_excerpt(get_category_content($cat_id), get_entry_card_excerpt_max_length());
+    $snippet = get_content_excerpt(get_the_category_content($cat_id), get_entry_card_excerpt_max_length());
   }
   if (!$snippet) {
     //カテゴリ説明を取得
@@ -138,12 +167,17 @@ function get_category_snippet($cat_id){
 }
 endif;
 
-//カテゴリ色の取得
-if ( !function_exists( 'get_category_keywords' ) ):
-function get_category_keywords($cat_id = null){
-  $meta = get_category_meta($cat_id);
-  if (!empty($meta['keywords']))
-    return $meta['keywords'];
+//キーワードの取得
+if ( !function_exists( 'get_the_category_keywords' ) ):
+function get_the_category_keywords($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_keywords', true );
+  if ($res) {
+    return $res;
+  } else {//旧バージョン対応
+    $meta = get_the_category_meta($cat_id);
+    if (!empty($meta['keywords']))
+      return $meta['keywords'];
+  }
 }
 endif;
 
@@ -152,7 +186,7 @@ add_action ( 'edit_category_form_fields', 'extra_category_fields');
 if ( !function_exists( 'extra_category_fields' ) ):
 function extra_category_fields( $tag ) {
     $cat_id = $tag->term_id;
-    $cat_meta = get_category_meta($cat_id);
+    $cat_meta = get_the_category_meta($cat_id);
     //_v($cat_meta);
 ?>
 <tr class="form-field term-color-wrap">
@@ -160,19 +194,19 @@ function extra_category_fields( $tag ) {
   <td>
     <div style="float: left;padding-right: 30px;">
       <?php
-      $color = !empty($cat_meta['color']) ? $cat_meta['color'] : '';
-      generate_label_tag('cat_meta[color]', __( '背景色', THEME_NAME ));
+      $the_category_color = get_the_category_color($cat_id);
+      generate_label_tag('the_category_color', __( '背景色', THEME_NAME ));
       echo '<br>';
-      generate_color_picker_tag('cat_meta[color]',  $color, '');
+      generate_color_picker_tag('the_category_color',  $the_category_color, '');
       ?>
       <p class="description"><?php _e( 'カテゴリの色を指定します。', THEME_NAME ) ?></p>
     </div>
     <div style="">
       <?php
-      $color = !empty($cat_meta['text_color']) ? $cat_meta['text_color'] : '';
-      generate_label_tag('cat_meta[text_color]', __( '文字色', THEME_NAME ));
+      $the_category_text_color = get_the_category_text_color($cat_id);
+      generate_label_tag('the_category_text_color', __( '文字色', THEME_NAME ));
       echo '<br>';
-      generate_color_picker_tag('cat_meta[text_color]',  $color, '');
+      generate_color_picker_tag('the_category_text_color',  $the_category_text_color, '');
       ?>
       <p class="description"><?php _e( 'カテゴリの文字色を指定します。入力しない場合は、白色になります。', THEME_NAME ) ?></p>
     </div>
@@ -181,15 +215,18 @@ function extra_category_fields( $tag ) {
 <tr class="form-field term-title-wrap">
   <th><label for="title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
   <td>
-    <input type="text" name="cat_meta[title]" id="title" size="25" value="<?php if(isset ( $cat_meta['title'])) echo esc_html($cat_meta['title']) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
+    <?php
+    $the_category_title = get_the_category_title($cat_id);
+    ?>
+    <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
   </td>
 </tr>
 <tr class="form-field term-content-wrap">
   <th><label for="content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
   <td><?php
-    $content = isset($cat_meta['content']) ? $cat_meta['content'] : '';
-    generate_visuel_editor_tag('cat_meta[content]', $content, 'content');
+    $the_category_content = get_the_category_content($cat_id);
+    generate_visuel_editor_tag('the_category_content', $the_category_content, 'content');
    ?>
     <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
    </td>
@@ -197,8 +234,8 @@ function extra_category_fields( $tag ) {
 <tr class="form-field term-eye-catch-wrap">
   <th><label for="eye_catch"><?php _e( 'アイキャッチ', THEME_NAME ) ?></label></th>
   <td><?php
-    $eye_catch = isset($cat_meta['eye_catch']) ? $cat_meta['eye_catch'] : '';
-    generate_upload_image_tag('cat_meta[eye_catch]', $eye_catch, 'eye_catch');
+    $the_category_eye_catch_url = get_the_category_eye_catch_url($cat_id);
+    generate_upload_image_tag('the_category_eye_catch_url', $the_category_eye_catch_url, 'eye_catch');
    ?>
     <p class="description"><?php _e( 'タイトル下に表示されるアイキャッチ画像を選択してください。', THEME_NAME ) ?></p>
    </td>
@@ -207,8 +244,8 @@ function extra_category_fields( $tag ) {
   <th><label for="description"><?php _e( 'メタディスクリプション', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $description = isset($cat_meta['description']) ? $cat_meta['description'] : '';
-    generate_textarea_tag('cat_meta[description]', $description, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
+    $the_category_meta_description = get_the_category_meta_description($cat_id);
+    generate_textarea_tag('the_category_meta_description', $the_category_meta_description, __( 'カテゴリページの説明文を入力してください', THEME_NAME ), 3) ;
      ?>
     <p class="description"><?php _e( 'カテゴリページの説明を入力します。ここに入力したテキストはメタディスクリプションタグとして利用されます。', THEME_NAME ) ?></p>
   </td>
@@ -216,7 +253,10 @@ function extra_category_fields( $tag ) {
 <tr class="form-field term-meta-keywords-wrap">
   <th><label for="keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
   <td>
-    <input type="text" name="cat_meta[keywords]" id="keywords" size="25" value="<?php if(isset ( $cat_meta['keywords'])) echo esc_html($cat_meta['keywords']) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
+    <?php
+    $the_category_keywords = get_the_category_keywords($cat_id);
+    ?>
+    <input type="text" name="the_category_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_category_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
@@ -228,12 +268,49 @@ endif;
 add_action ( 'edited_term', 'save_extra_category_fileds');
 if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
-  if ( isset( $_POST['cat_meta'] ) ) {
-    $cat_id = $term_id;
-    $cat_meta = $_POST['cat_meta'];
+  $cat_id = $term_id;
 
-    update_term_meta( $cat_id, get_category_meta_key($cat_id), $cat_meta );
+  if ( isset( $_POST['the_category_color'] ) ) {
+    $the_category_color = $_POST['the_category_color'];
+    update_term_meta( $cat_id, 'the_category_color', $the_category_color );
   }
+
+  if ( isset( $_POST['the_category_text_color'] ) ) {
+    $the_category_text_color = $_POST['the_category_text_color'];
+    update_term_meta( $cat_id, 'the_category_text_color', $the_category_text_color );
+  }
+
+  if ( isset( $_POST['the_category_title'] ) ) {
+    $the_category_title = $_POST['the_category_title'];
+    update_term_meta( $cat_id, 'the_category_title', $the_category_title );
+  }
+
+  if ( isset( $_POST['the_category_content'] ) ) {
+    $the_category_content = $_POST['the_category_content'];
+    update_term_meta( $cat_id, 'the_category_content', $the_category_content );
+  }
+
+  if ( isset( $_POST['the_category_eye_catch_url'] ) ) {
+    $the_category_eye_catch_url = $_POST['the_category_eye_catch_url'];
+    update_term_meta( $cat_id, 'the_category_eye_catch_url', $the_category_eye_catch_url );
+  }
+
+  if ( isset( $_POST['the_category_meta_description'] ) ) {
+    $the_category_meta_description = $_POST['the_category_meta_description'];
+    update_term_meta( $cat_id, 'the_category_meta_description', $the_category_meta_description );
+  }
+
+  if ( isset( $_POST['the_category_keywords'] ) ) {
+    $the_category_keywords = $_POST['the_category_keywords'];
+    update_term_meta( $cat_id, 'the_category_keywords', $the_category_keywords );
+  }
+
+  // if ( isset( $_POST['cat_meta'] ) ) {
+  //   $cat_id = $term_id;
+  //   $cat_meta = $_POST['cat_meta'];
+
+  //   update_term_meta( $cat_id, get_the_category_meta_key($cat_id), $cat_meta );
+  // }
 }
 endif;
 

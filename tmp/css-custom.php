@@ -270,8 +270,8 @@ $colors = array();
 $text_colors = array();
 //カテゴリ色の振り分け
 foreach ($cats as $cat) {
-  $color = get_category_color($cat->cat_ID);
-  $text_color = get_category_text_color($cat->cat_ID);
+  $color = get_the_category_color($cat->cat_ID);
+  $text_color = get_the_category_text_color($cat->cat_ID);
   $cat_label_pre = '.cat-label.cat-label-';
   $cat_link_pre = '.cat-link.cat-link-';
   if ($color) {

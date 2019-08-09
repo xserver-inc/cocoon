@@ -98,8 +98,8 @@ function get_archive_chapter_title(){
   if( is_category() ) {//カテゴリページの場合
     $cat_id = get_query_var('cat');
     $icon_font = '<span class="fa fa-folder-open"></span>';
-    if ($cat_id && get_category_title($cat_id)) {
-      $chapter_title .= $icon_font.get_category_title($cat_id);
+    if ($cat_id && get_the_category_title($cat_id)) {
+      $chapter_title .= $icon_font.get_the_category_title($cat_id);
     } else {
       $chapter_title .= single_cat_title( $icon_font, false );
     }

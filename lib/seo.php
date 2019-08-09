@@ -68,8 +68,8 @@ function title_parts_custom( $title ){
   } elseif (is_category()) {
     $cat_id = get_query_var('cat');
     $cat_name = $title['title'];
-    if ($cat_id && get_category_title($cat_id)) {
-      $cat_name = get_category_title($cat_id);
+    if ($cat_id && get_the_category_title($cat_id)) {
+      $cat_name = get_the_category_title($cat_id);
     }
     $title['title'] = $cat_name;
     $title['site'] = '';
@@ -376,7 +376,7 @@ endif;
 if ( !function_exists( 'get_category_meta_description' ) ):
 function get_category_meta_description($category = null){
   //カテゴリー設定ページのディスクリプションを取得
-  $cat_desc = trim( strip_tags( get_category_description() ) );
+  $cat_desc = trim( strip_tags( get_the_category_meta_description() ) );
   if ( $cat_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($cat_desc);
   }
@@ -388,7 +388,7 @@ function get_category_meta_description($category = null){
   }
 
   //カテゴリ本文から抜粋文を作成
-  $cat_desc = trim( strip_tags( get_content_excerpt(get_category_content(), 160) ) );
+  $cat_desc = trim( strip_tags( get_content_excerpt(get_the_category_content(), 160) ) );
   if ( $cat_desc ) {//カテゴリ設定に説明がある場合はそれを返す
     return htmlspecialchars($cat_desc);
   }
@@ -410,7 +410,7 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_keywords' ) ):
 function get_category_meta_keywords(){
-  if ($keywords = get_category_keywords()) {
+  if ($keywords = get_the_category_keywords()) {
     $res = $keywords;
   } else {
     $res = single_cat_title('', false);

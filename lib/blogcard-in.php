@@ -121,9 +121,9 @@ function url_to_internal_blogcard_tag($url){
     //カテゴリページの場合
     $cat_id = $cat->cat_ID;
 
-    $title = get_category_title($cat_id);
-    $snippet = get_category_snippet($cat_id);
-    $image = get_category_eye_catch_url($cat_id);
+    $title = get_the_category_title($cat_id);
+    $snippet = get_the_category_snippet($cat_id);
+    $image = get_the_category_eye_catch_url($cat_id);
 
     if ($image) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
