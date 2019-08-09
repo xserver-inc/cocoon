@@ -1,4 +1,4 @@
-<?php //カテゴリ関係
+<?php //タグ関係
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 ///////////////////////////////////////
-// 拡張カテゴリ設定
+// 拡張タグ設定
 ///////////////////////////////////////
 if ( !function_exists( 'get_tag_meta_key' ) ):
 function get_tag_meta_key($tag_id){
