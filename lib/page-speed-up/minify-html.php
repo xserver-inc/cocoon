@@ -109,8 +109,8 @@ function code_minify_buffer_start() {
 
   ob_start('code_minify_call_back');
 }
-
 endif;
+
 //最終HTML取得終了
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
