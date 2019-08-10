@@ -130,9 +130,9 @@ function url_to_internal_blogcard_tag($url){
     }
   } elseif ($tag = url_to_tag_object($url)) {
     $tag_id = $tag->term_id;
-    $title = get_tag_title($tag_id);
-    $snippet = get_tag_snippet($tag_id);
-    $image = get_tag_eye_catch_url($tag_id);
+    $title = get_the_tag_title($tag_id);
+    $snippet = get_the_tag_snippet($tag_id);
+    $image = get_the_tag_eye_catch_url($tag_id);
 
     if ($image) {
       $thumbnail = get_blogcard_thumbnail_image_tag($image);

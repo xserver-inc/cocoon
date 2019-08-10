@@ -9,8 +9,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //タグIDの取得
 $tag_id = get_query_var('tag_id');
-$eye_catch_url = get_tag_eye_catch_url($tag_id);
-$content = get_tag_content($tag_id);
+$eye_catch_url = get_the_tag_eye_catch_url($tag_id);
+$content = get_the_tag_content($tag_id);
 if ($eye_catch_url || $content): ?>
 <article class="tag-content article">
   <header class="article-header tag-header">
@@ -19,7 +19,7 @@ if ($eye_catch_url || $content): ?>
     <?php if ($eye_catch_url): ?>
       <div class="eye-catch-wrap">
         <figure class="eye-catch">
-          <img src="<?php echo esc_url($eye_catch_url); ?>" alt="<?php echo esc_attr(get_tag_title($tag_id)); ?>">
+          <img src="<?php echo esc_url($eye_catch_url); ?>" alt="<?php echo esc_attr(get_the_tag_title($tag_id)); ?>">
         </figure>
       </div>
     <?php endif ?>

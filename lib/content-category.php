@@ -129,7 +129,7 @@ function get_the_category_eye_catch_url($cat_id = null){
 }
 endif;
 
-//カテゴリ色の取得
+//カテゴリのメタディスクリプション
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_meta_description', true );
@@ -184,9 +184,9 @@ endif;
 //拡張カテゴリ編集フォーム
 add_action ( 'edit_category_form_fields', 'extra_category_fields');
 if ( !function_exists( 'extra_category_fields' ) ):
-function extra_category_fields( $tag ) {
-    $cat_id = $tag->term_id;
-    $cat_meta = get_the_category_meta($cat_id);
+function extra_category_fields( $cat ) {
+    $cat_id = $cat->term_id;
+    //$cat_meta = get_the_category_meta($cat_id);
     //_v($cat_meta);
 ?>
 <tr class="form-field term-color-wrap">

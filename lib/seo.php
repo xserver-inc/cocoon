@@ -89,8 +89,8 @@ function title_parts_custom( $title ){
   } elseif (is_tag()) {
     $tag_id = get_query_var('tag_id');
     $tag_name = $title['title'];
-    if ($tag_id && get_tag_title($tag_id)) {
-      $tag_name = get_tag_title($tag_id);
+    if ($tag_id && get_the_tag_title($tag_id)) {
+      $tag_name = get_the_tag_title($tag_id);
     }
     $title['title'] = $tag_name;
     $title['site'] = '';
@@ -508,7 +508,7 @@ endif;
 if ( !function_exists( 'get_tag_meta_description' ) ):
 function get_tag_meta_description($tag = null){
   //タグ設定ページのディスクリプションを取得
-  $tag_desc = trim( strip_tags( get_tag_description() ) );
+  $tag_desc = trim( strip_tags( get_the_tag_meta_description() ) );
   if ( $tag_desc ) {//ディスクリプションが設定されている場合
     return htmlspecialchars($tag_desc);
   }
@@ -518,7 +518,7 @@ function get_tag_meta_description($tag = null){
     return htmlspecialchars($tag_desc);
   }
   //タグ本文から抜粋文を作成
-  $tag_desc = trim( strip_tags( get_content_excerpt(get_tag_content(), 160) ) );
+  $tag_desc = trim( strip_tags( get_content_excerpt(get_the_tag_content(), 160) ) );
   if ( $tag_desc ) {//タグ設定に説明がある場合はそれを返す
     return htmlspecialchars($tag_desc);
   }
@@ -537,7 +537,7 @@ endif;
 //タグキーワード用のワードを取得
 if ( !function_exists( 'get_tag_meta_keywords' ) ):
 function get_tag_meta_keywords(){
-  if ($keywords = get_tag_keywords()) {
+  if ($keywords = get_the_tag_keywords()) {
     $res = $keywords;
   } else {
     $res = single_tag_title('', false);
