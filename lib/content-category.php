@@ -27,7 +27,6 @@ function get_the_category_meta($cat_id = null){
   //カテゴリIDが正常な場合
   if ($cat_id) {
     $res = get_term_meta( $cat_id, get_the_category_meta_key($cat_id), true );
-    //_v($res);
     if (is_array($res)) {
       return $res;
     } else {
@@ -41,7 +40,7 @@ endif;
 if ( !function_exists( 'get_the_category_color' ) ):
 function get_the_category_color($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_color', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -55,7 +54,7 @@ endif;
 if ( !function_exists( 'get_the_category_text_color' ) ):
 function get_the_category_text_color($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_text_color', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -67,16 +66,20 @@ endif;
 
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_the_category_title' ) ):
-function get_the_category_title($cat_id = null){
+function get_the_category_title($cat_id = null, $is_cat_name = true){
   $res = get_term_meta( $cat_id, 'the_category_title', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
-    if (!empty($meta['title']))
+    if (!empty($meta['title'])){
       return $meta['title'];
-    else
-      return get_category($cat_id)->name;
+    } else {
+      //タイトルが存在しない場合はカテゴリ名を利用する
+      if ($is_cat_name) {
+        return get_category($cat_id)->name;
+      }
+    }
   }
 }
 endif;
@@ -85,7 +88,7 @@ endif;
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_content', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     if (!$cat_id) {
@@ -109,7 +112,7 @@ endif;
 if ( !function_exists( 'get_the_category_eye_catch_url' ) ):
 function get_the_category_eye_catch_url($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
-  if ($res) {
+  if ($res !== false) {
     $eye_catch_url = $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -133,7 +136,7 @@ endif;
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_meta_description', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -171,7 +174,7 @@ endif;
 if ( !function_exists( 'get_the_category_keywords' ) ):
 function get_the_category_keywords($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_keywords', true );
-  if ($res) {
+  if ($res !== false) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -216,7 +219,7 @@ function extra_category_fields( $cat ) {
   <th><label for="title"><?php _e( 'カテゴリタイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $the_category_title = get_the_category_title($cat_id);
+    $the_category_title = get_the_category_title($cat_id, false);
     ?>
     <input type="text" name="the_category_title" id="title" size="25" value="<?php echo esc_attr($the_category_title) ?>" placeholder="<?php _e( 'カテゴリページのタイトル', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのタイトルを指定します。カテゴリページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
@@ -269,42 +272,60 @@ add_action ( 'edited_term', 'save_extra_category_fileds');
 if ( !function_exists( 'save_extra_category_fileds' ) ):
 function save_extra_category_fileds( $term_id ) {
   $cat_id = $term_id;
+  //旧バージョン用の配列
+  $cat_meta = array();
 
   if ( isset( $_POST['the_category_color'] ) ) {
     $the_category_color = $_POST['the_category_color'];
     update_term_meta( $cat_id, 'the_category_color', $the_category_color );
+    //旧バージョン用の値
+    $cat_meta['color'] = $the_category_color;
   }
 
   if ( isset( $_POST['the_category_text_color'] ) ) {
     $the_category_text_color = $_POST['the_category_text_color'];
     update_term_meta( $cat_id, 'the_category_text_color', $the_category_text_color );
+    //旧バージョン用の値
+    $cat_meta['text_color'] = $the_category_text_color;
   }
 
   if ( isset( $_POST['the_category_title'] ) ) {
     $the_category_title = $_POST['the_category_title'];
     update_term_meta( $cat_id, 'the_category_title', $the_category_title );
+    //旧バージョン用の値
+    $cat_meta['title'] = $the_category_title;
   }
 
   if ( isset( $_POST['the_category_content'] ) ) {
     $the_category_content = $_POST['the_category_content'];
     update_term_meta( $cat_id, 'the_category_content', $the_category_content );
+    //旧バージョン用の値
+    $cat_meta['content'] = $the_category_content;
   }
 
   if ( isset( $_POST['the_category_eye_catch_url'] ) ) {
     $the_category_eye_catch_url = $_POST['the_category_eye_catch_url'];
     update_term_meta( $cat_id, 'the_category_eye_catch_url', $the_category_eye_catch_url );
+    //旧バージョン用の値
+    $cat_meta['eye_catch'] = $the_category_eye_catch;
   }
 
   if ( isset( $_POST['the_category_meta_description'] ) ) {
     $the_category_meta_description = $_POST['the_category_meta_description'];
     update_term_meta( $cat_id, 'the_category_meta_description', $the_category_meta_description );
+    //旧バージョン用の値
+    $cat_meta['description'] = $the_category_description;
   }
 
   if ( isset( $_POST['the_category_keywords'] ) ) {
     $the_category_keywords = $_POST['the_category_keywords'];
     update_term_meta( $cat_id, 'the_category_keywords', $the_category_keywords );
+    //旧バージョン用の値
+    $cat_meta['keywords'] = $the_category_keywords;
   }
 
+  //旧バージョン対応
+  update_term_meta( $cat_id, get_the_category_meta_key($cat_id), $cat_meta );
   // if ( isset( $_POST['cat_meta'] ) ) {
   //   $cat_id = $term_id;
   //   $cat_meta = $_POST['cat_meta'];
