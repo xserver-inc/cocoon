@@ -138,9 +138,9 @@ function get_the_tag_snippet($tag_id){
 endif;
 
 //キーワードの取得
-if ( !function_exists( 'get_the_tag_keywords' ) ):
-function get_the_tag_keywords($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_keywords', true );
+if ( !function_exists( 'get_the_tag_meta_keywords' ) ):
+function get_the_tag_meta_keywords($tag_id = null){
+  $res = get_term_meta( $tag_id, 'the_tag_meta_keywords', true );
   if ($res) {
     return $res;
   } else {//旧バージョン対応
@@ -200,9 +200,9 @@ function extra_tag_fields( $tag ) {
   <th><label for="keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $the_tag_keywords = get_the_tag_keywords($tag_id);
+    $the_tag_meta_keywords = get_the_tag_meta_keywords($tag_id);
     ?>
-    <input type="text" name="the_tag_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_tag_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
+    <input type="text" name="the_tag_meta_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_tag_meta_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'タグページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
@@ -236,9 +236,9 @@ function save_extra_tag_fileds( $term_id ) {
     update_term_meta( $tag_id, 'the_tag_meta_description', $the_tag_meta_description );
   }
 
-  if ( isset( $_POST['the_tag_keywords'] ) ) {
-    $the_tag_keywords = $_POST['the_tag_keywords'];
-    update_term_meta( $tag_id, 'the_tag_keywords', $the_tag_keywords );
+  if ( isset( $_POST['the_tag_meta_keywords'] ) ) {
+    $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
+    update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
   }
 }
 endif;

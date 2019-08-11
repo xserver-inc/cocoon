@@ -537,7 +537,7 @@ endif;
 //タグキーワード用のワードを取得
 if ( !function_exists( 'get_tag_meta_keywords' ) ):
 function get_tag_meta_keywords(){
-  if ($keywords = get_the_tag_keywords()) {
+  if ($keywords = get_the_tag_meta_keywords()) {
     $res = $keywords;
   } else {
     $res = single_tag_title('', false);
