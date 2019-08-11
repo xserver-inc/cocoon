@@ -171,9 +171,9 @@ function get_the_category_snippet($cat_id){
 endif;
 
 //キーワードの取得
-if ( !function_exists( 'get_the_category_keywords' ) ):
-function get_the_category_keywords($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_keywords', true );
+if ( !function_exists( 'get_the_category_meta_keywords' ) ):
+function get_the_category_meta_keywords($cat_id = null){
+  $res = get_term_meta( $cat_id, 'the_category_meta_keywords', true );
   if ($res) {
     return $res;
   } else {//旧バージョン対応
@@ -257,9 +257,9 @@ function extra_category_fields( $cat ) {
   <th><label for="keywords"><?php _e( 'メタキーワード', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $the_category_keywords = get_the_category_keywords($cat_id);
+    $the_category_meta_keywords = get_the_category_meta_keywords($cat_id);
     ?>
-    <input type="text" name="the_category_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_category_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
+    <input type="text" name="the_category_meta_keywords" id="keywords" size="25" value="<?php echo esc_attr($the_category_meta_keywords) ?>" placeholder="<?php _e( 'キーワード1,キーワード2,キーワード3', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'カテゴリページのメタキーワードをカンマ区切りで入力してください。※現在はあまり意味のない設定となっています。', THEME_NAME ) ?></p>
   </td>
 </tr>
@@ -317,11 +317,11 @@ function save_extra_category_fileds( $term_id ) {
     $cat_meta['description'] = $the_category_meta_description;
   }
 
-  if ( isset( $_POST['the_category_keywords'] ) ) {
-    $the_category_keywords = $_POST['the_category_keywords'];
-    update_term_meta( $cat_id, 'the_category_keywords', $the_category_keywords );
+  if ( isset( $_POST['the_category_meta_keywords'] ) ) {
+    $the_category_meta_keywords = $_POST['the_category_meta_keywords'];
+    update_term_meta( $cat_id, 'the_category_meta_keywords', $the_category_meta_keywords );
     //旧バージョン用の値
-    $cat_meta['keywords'] = $the_category_keywords;
+    $cat_meta['keywords'] = $the_category_meta_keywords;
   }
 
   //旧バージョン対応

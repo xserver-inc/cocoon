@@ -410,7 +410,7 @@ endif;
 //カテゴリーメタディスクリプション用の説明文を取得
 if ( !function_exists( 'get_category_meta_keywords' ) ):
 function get_category_meta_keywords(){
-  if ($keywords = get_the_category_keywords()) {
+  if ($keywords = get_the_category_meta_keywords()) {
     $res = $keywords;
   } else {
     $res = single_cat_title('', false);
