@@ -2971,6 +2971,7 @@ function fix_blogcard_content($the_content){
 endif;
 
 //コメントが許可されているか
+if ( !function_exists( 'is_comment_open' ) ):
 function is_comment_open(){
   global $post;
   if ( isset($post->comment_status) ) {
@@ -2978,3 +2979,12 @@ function is_comment_open(){
   }
   return false;
 }
+endif;
+
+
+//タームのメタデーターが存在しているか
+if ( !function_exists( 'term_metadata_exists' ) ):
+function term_metadata_exists($term_id, $meta_key){
+  return metadata_exists('term', $term_id, $meta_key);
+}
+endif;
