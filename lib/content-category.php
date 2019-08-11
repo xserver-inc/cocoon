@@ -26,22 +26,23 @@ function get_the_category_meta($cat_id = null){
   }
   //カテゴリIDが正常な場合
   if ($cat_id) {
-    $res = get_term_meta( $cat_id, get_the_category_meta_key($cat_id), true );
-    if (is_array($res)) {
-      return $res;
-    } else {
-      return array();
+    $key = get_the_category_meta_key($cat_id);
+    if (term_metadata_exists($cat_id, $key)) {
+      $res = get_term_meta( $cat_id, $key, true );
+      if (is_array($res)) {
+        return $res;
+      }
     }
   }
+  return array();
 }
 endif;
 
 //カテゴリ色の取得
 if ( !function_exists( 'get_the_category_color' ) ):
 function get_the_category_color($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_color', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_color')) {
+    return get_term_meta( $cat_id, 'the_category_color', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['color']))
@@ -53,9 +54,8 @@ endif;
 //カテゴリ文字色の取得
 if ( !function_exists( 'get_the_category_text_color' ) ):
 function get_the_category_text_color($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_text_color', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_text_color')) {
+    return get_term_meta( $cat_id, 'the_category_text_color', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['text_color']))
@@ -67,9 +67,8 @@ endif;
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_the_category_title' ) ):
 function get_the_category_title($cat_id = null, $is_cat_name = true){
-  $res = get_term_meta( $cat_id, 'the_category_title', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_title')) {
+    return get_term_meta( $cat_id, 'the_category_title', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['title'])){
@@ -87,9 +86,8 @@ endif;
 //カテゴリ本文の取得
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_content', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_content')) {
+    return get_term_meta( $cat_id, 'the_category_content', true );
   } else {//旧バージョン対応
     if (!$cat_id) {
       $cat_id = get_query_var('cat');
@@ -111,9 +109,8 @@ endif;
 //アイキャッチの取得
 if ( !function_exists( 'get_the_category_eye_catch_url' ) ):
 function get_the_category_eye_catch_url($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
-  if ($res) {
-    $eye_catch_url = $res;
+  if (term_metadata_exists($cat_id, 'the_category_eye_catch_url')) {
+    $eye_catch_url = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['eye_catch'])){
@@ -135,9 +132,8 @@ endif;
 //カテゴリのメタディスクリプション
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_meta_description', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_meta_description')) {
+    return get_term_meta( $cat_id, 'the_category_meta_description', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['description']))
@@ -173,9 +169,8 @@ endif;
 //キーワードの取得
 if ( !function_exists( 'get_the_category_meta_keywords' ) ):
 function get_the_category_meta_keywords($cat_id = null){
-  $res = get_term_meta( $cat_id, 'the_category_meta_keywords', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($cat_id, 'the_category_meta_keywords')) {
+    return get_term_meta( $cat_id, 'the_category_meta_keywords', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['keywords']))
