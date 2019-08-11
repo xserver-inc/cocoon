@@ -307,7 +307,7 @@ function save_extra_category_fileds( $term_id ) {
     $the_category_eye_catch_url = $_POST['the_category_eye_catch_url'];
     update_term_meta( $cat_id, 'the_category_eye_catch_url', $the_category_eye_catch_url );
     //旧バージョン用の値
-    $cat_meta['eye_catch'] = $the_category_eye_catch;
+    $cat_meta['eye_catch'] = $the_category_eye_catch_url;
   }
 
   if ( isset( $_POST['the_category_meta_description'] ) ) {
