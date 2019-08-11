@@ -40,7 +40,7 @@ endif;
 if ( !function_exists( 'get_the_category_color' ) ):
 function get_the_category_color($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_color', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -54,7 +54,7 @@ endif;
 if ( !function_exists( 'get_the_category_text_color' ) ):
 function get_the_category_text_color($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_text_color', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -68,7 +68,7 @@ endif;
 if ( !function_exists( 'get_the_category_title' ) ):
 function get_the_category_title($cat_id = null, $is_cat_name = true){
   $res = get_term_meta( $cat_id, 'the_category_title', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -88,7 +88,7 @@ endif;
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_content', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     if (!$cat_id) {
@@ -112,7 +112,7 @@ endif;
 if ( !function_exists( 'get_the_category_eye_catch_url' ) ):
 function get_the_category_eye_catch_url($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
-  if ($res !== false) {
+  if ($res) {
     $eye_catch_url = $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -136,7 +136,7 @@ endif;
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_meta_description', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -174,7 +174,7 @@ endif;
 if ( !function_exists( 'get_the_category_keywords' ) ):
 function get_the_category_keywords($cat_id = null){
   $res = get_term_meta( $cat_id, 'the_category_keywords', true );
-  if ($res !== false) {
+  if ($res) {
     return $res;
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
@@ -314,7 +314,7 @@ function save_extra_category_fileds( $term_id ) {
     $the_category_meta_description = $_POST['the_category_meta_description'];
     update_term_meta( $cat_id, 'the_category_meta_description', $the_category_meta_description );
     //旧バージョン用の値
-    $cat_meta['description'] = $the_category_description;
+    $cat_meta['description'] = $the_category_meta_description;
   }
 
   if ( isset( $_POST['the_category_keywords'] ) ) {
