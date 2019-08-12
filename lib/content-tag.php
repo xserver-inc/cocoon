@@ -26,41 +26,46 @@ function get_the_tag_meta($tag_id = null){
   }
   //タグIDが正常な場合
   if ($tag_id) {
-    $res = get_term_meta( $tag_id, get_the_tag_meta_key($tag_id), true );
-    if (is_array($res)) {
-      return $res;
-    } else {
-      return array();
+    $key = get_the_tag_meta_key($tag_id);
+    if (term_metadata_exists($tag_id, $key)) {
+      $res = get_term_meta( $tag_id, $key, true );
+      if (is_array($res)) {
+        return $res;
+      }
     }
   }
+  return array();
 }
 endif;
 
 //タグタイトルの取得
 if ( !function_exists( 'get_the_tag_title' ) ):
-function get_the_tag_title($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_title', true );
-  if ($res) {
-    return $res;
+function get_the_tag_title($tag_id = null, $is_tag_name = true){
+  $res = null;
+  if (term_metadata_exists($tag_id, 'the_tag_title')) {
+    $res = get_term_meta( $tag_id, 'the_tag_title', true );
   } else {//旧バージョン対応
     $meta = get_the_tag_meta($tag_id);
-    if (!empty($meta['title']))
-      return $meta['title'];
-    else
-      return get_tag($tag_id)->name;
+    if (!empty($meta['title'])){
+      $res = $meta['title'];
+    }
   }
+  //タイトルが存在しない場合はタグ名を利用する
+  if (!$res && $is_tag_name) {
+    $res = get_tag($tag_id)->name;
+  }
+  return $res;
 }
 endif;
 
 //タグ本文の取得
 if ( !function_exists( 'get_the_tag_content' ) ):
 function get_the_tag_content($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_content', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($tag_id, 'the_tag_content')) {
+    $content = get_term_meta( $tag_id, 'the_tag_content', true );
   } else {//旧バージョン対応
     if (!$tag_id) {
-      $tag_id = get_query_var('tag_id');;
+      $tag_id = get_query_var('tag_id');
     }
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['content']))
@@ -79,9 +84,8 @@ endif;
 //アイキャッチの取得
 if ( !function_exists( 'get_the_tag_eye_catch_url' ) ):
 function get_the_tag_eye_catch_url($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_eye_catch_url', true );
-  if ($res) {
-    $eye_catch_url = $res;
+  if (term_metadata_exists($tag_id, 'the_tag_eye_catch_url')) {
+    $eye_catch_url = get_term_meta( $tag_id, 'the_tag_eye_catch_url', true );
   } else {//旧バージョン対応
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['eye_catch'])){
@@ -103,9 +107,8 @@ endif;
 //タグのメタディスクリプション
 if ( !function_exists( 'get_the_tag_meta_description' ) ):
 function get_the_tag_meta_description($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_meta_description', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($tag_id, 'the_tag_meta_description')) {
+    return get_term_meta( $tag_id, 'the_tag_meta_description', true );
   } else {//旧バージョン対応
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['description']))
@@ -140,9 +143,8 @@ endif;
 //キーワードの取得
 if ( !function_exists( 'get_the_tag_meta_keywords' ) ):
 function get_the_tag_meta_keywords($tag_id = null){
-  $res = get_term_meta( $tag_id, 'the_tag_meta_keywords', true );
-  if ($res) {
-    return $res;
+  if (term_metadata_exists($tag_id, 'the_tag_meta_keywords')) {
+    return get_term_meta( $tag_id, 'the_tag_meta_keywords', true );
   } else {//旧バージョン対応
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['keywords']))
@@ -162,7 +164,7 @@ function extra_tag_fields( $tag ) {
   <th><label for="title"><?php _e( 'タグタイトル', THEME_NAME ) ?></label></th>
   <td>
     <?php
-    $the_tag_title = get_the_tag_title($tag_id);
+    $the_tag_title = get_the_tag_title($tag_id, false);
     ?>
     <input type="text" name="the_tag_title" id="title" size="25" value="<?php echo esc_attr($the_tag_title) ?>" placeholder="<?php _e( 'タグページのタイトル', THEME_NAME ) ?>" />
     <p class="description"><?php _e( 'タグページのタイトルを指定します。タグページのタイトルタグにここで入力したテキストが適用されます。', THEME_NAME ) ?></p>
@@ -239,6 +241,12 @@ function save_extra_tag_fileds( $term_id ) {
   if ( isset( $_POST['the_tag_meta_keywords'] ) ) {
     $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
     update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
+  }
+
+  //旧バージョンの値を削除
+  $key = get_the_tag_meta_key($tag_id);
+  if (term_metadata_exists($tag_id, $key)) {
+    delete_term_meta($tag_id, $key);
   }
 }
 endif;
