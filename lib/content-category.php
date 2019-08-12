@@ -67,19 +67,20 @@ endif;
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_the_category_title' ) ):
 function get_the_category_title($cat_id = null, $is_cat_name = true){
+  $res = null;
   if (term_metadata_exists($cat_id, 'the_category_title')) {
-    return get_term_meta( $cat_id, 'the_category_title', true );
+    $res = get_term_meta( $cat_id, 'the_category_title', true );
   } else {//旧バージョン対応
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['title'])){
-      return $meta['title'];
-    } else {
-      //タイトルが存在しない場合はカテゴリ名を利用する
-      if ($is_cat_name) {
-        return get_category($cat_id)->name;
-      }
+      $res = $meta['title'];
     }
   }
+  //タイトルが存在しない場合はカテゴリ名を利用する
+  if (!$res && $is_cat_name) {
+    $res = get_category($cat_id)->name;
+  }
+  return $res;
 }
 endif;
 
@@ -87,7 +88,7 @@ endif;
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null){
   if (term_metadata_exists($cat_id, 'the_category_content')) {
-    return get_term_meta( $cat_id, 'the_category_content', true );
+    $content = get_term_meta( $cat_id, 'the_category_content', true );
   } else {//旧バージョン対応
     if (!$cat_id) {
       $cat_id = get_query_var('cat');
