@@ -53,12 +53,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               $skin_text = $skin_name.' ';
               if ($skin_page_uri) {
-                $skin_text = '<a href="'.$skin_page_uri.'" target="_blank">'.$skin_name.'</a> ';
+                $skin_text = '<a href="'.$skin_page_uri.'" target="_blank" rel="noopener">'.$skin_name.'</a> ';
               }
 
               $author_text = $author.' ';
               if ($author_uri) {
-                $author_text = '&nbsp;&nbsp;<span style="font-style: italic;font-size: 0.9em;">['.__( '作者', THEME_NAME ).': <a href="'.$author_uri.'" target="_blank">'.$author.'</a>]</span>';
+                $author_text = '&nbsp;&nbsp;<span style="font-style: italic;font-size: 0.9em;">['.__( '作者', THEME_NAME ).': <a href="'.$author_uri.'" target="_blank" rel="noopener">'.$author.'</a>]</span>';
               }
 
               $screenshot_text = null;

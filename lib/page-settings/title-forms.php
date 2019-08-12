@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo">
               <div class="search-result">
-                <a href="<?php echo home_url(); ?>" class="title" target="_blank"><?php echo get_front_page_title_caption(); ?></a>
+                <a href="<?php echo home_url(); ?>" class="title" target="_blank" rel="noopener"><?php echo get_front_page_title_caption(); ?></a>
                 <div class="url"><?php echo home_url(); ?></div>
                 <div class="description"><?php echo get_front_page_meta_description(); ?></div>
               </div>
@@ -115,7 +115,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php if ($rand_post): ?>
               <div class="demo">
                 <div class="search-result">
-                  <a href="<?php the_permalink($rand_post->ID); ?>" class="title" target="_blank"><?php echo get_singular_title_caption($rand_post); ?></a>
+                  <a href="<?php the_permalink($rand_post->ID); ?>" class="title" target="_blank" rel="noopener"><?php echo get_singular_title_caption($rand_post); ?></a>
                   <div class="url"><?php the_permalink($rand_post->ID); ?></div>
                   <div class="description">
                     <?php
@@ -220,7 +220,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
              ?>
               <div class="demo">
                 <div class="search-result">
-                  <a href="<?php echo get_category_link($rand_category->term_id); ?>" class="title" target="_blank"><?php echo get_category_title_caption($rand_category); ?></a>
+                  <a href="<?php echo get_category_link($rand_category->term_id); ?>" class="title" target="_blank" rel="noopener"><?php echo get_category_title_caption($rand_category); ?></a>
                   <div class="url"><?php echo get_category_link($rand_category->term_id); ?></div>
                   <div class="description">
                     <?php

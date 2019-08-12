@@ -32,10 +32,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               <?php endif ?>
               <?php if (is_eyecatch_visible()){
-              $content = '<p><a href="https://im-cocoon.net/wp-content/uploads/cocoon.jpg" target="_blank">
+              $content = '<p><a href="https://im-cocoon.net/wp-content/uploads/cocoon.jpg" target="_blank" rel="noopener">
                   <img src="https://im-cocoon.net/wp-content/uploads/cocoon-267.jpg" alt="デモ画像">
                 </a>&nbsp;
-                <a href="https://im-cocoon.net/wp-content/uploads/tree.jpg" target="_blank">
+                <a href="https://im-cocoon.net/wp-content/uploads/tree.jpg" target="_blank" rel="noopener">
                   <img src="https://im-cocoon.net/wp-content/uploads/tree-300.jpg" alt="デモ画像">
                 </a></p>
                 ';

@@ -89,7 +89,7 @@ class AuthorBoxWidgetItem extends WP_Widget {
     <?php //プロフィールページへの誘導 ?>
     <p>
       <?php _e( '※「プロフィール画像・情報」や、「フォローボタン」はプロフィールページにて変更してください。', THEME_NAME ) ?><br>
-      <a href="profile.php" target="_blank"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>
+      <a href="profile.php" target="_blank" rel="noopener"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>
     </p>
     <?php
   }

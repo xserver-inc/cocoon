@@ -148,7 +148,7 @@ function url_to_internal_blogcard_tag($url){
   $additional_class = get_additional_internal_blogcard_classes();
 
   //新しいタブで開く場合
-  $target = is_internal_blogcard_target_blank() ? ' target="_blank"' : '';
+  $target = is_internal_blogcard_target_blank() ? ' target="_blank" rel="noopener"' : '';
 
   //ファビコン
   $favicon_tag =

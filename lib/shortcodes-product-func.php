@@ -171,7 +171,7 @@ function get_additional_button_tag($btn_url, $btn_text, $btn_tag, $name = 'btnex
     if ($btn_tag) {
       $button_link = htmlspecialchars_decode($btn_tag);
     } else {
-      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow">'.esc_html($btn_text).'</a>';
+      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow noopener">'.esc_html($btn_text).'</a>';
     }
 
     $button_tag =
@@ -213,7 +213,7 @@ function get_search_buttons_tag($args){
       }
       $amazon_btn_tag =
         '<div class="shoplinkamazon">'.
-          '<a href="'.esc_url($amazon_url).'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
+          '<a href="'.esc_url($amazon_url).'" target="_blank" rel="nofollow noopener">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -253,7 +253,7 @@ function get_search_buttons_tag($args){
       }
       $rakuten_btn_tag =
         '<div class="shoplinkrakuten">'.
-          '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
+          '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow noopener">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
         '</div>';
     }
     //Yahoo!ボタンの取得
@@ -275,7 +275,7 @@ function get_search_buttons_tag($args){
 
       $yahoo_tag =
         '<div class="shoplinkyahoo">'.
-          '<a href="'.esc_url($yahoo_url).'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
+          '<a href="'.esc_url($yahoo_url).'" target="_blank" rel="nofollow noopener">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -312,7 +312,7 @@ function get_cache_delete_tag($mode = 'amazon', $id){
   }
   $cache_delete_tag = null;
   if (is_user_administrator()) {
-    $cache_delete_tag = '<a href="'.$url.'" class="cache-delete-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+    $cache_delete_tag = '<a href="'.$url.'" class="cache-delete-link" target="_blank" rel="nofollow noopener"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
   }
   return $cache_delete_tag;
 }

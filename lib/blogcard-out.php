@@ -217,7 +217,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet );
 
   //新しいタブで開く場合
-  $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
+  $target = is_external_blogcard_target_blank() ? ' target="_blank" rel="noopener"' : '';
 
   //コメント内でブログカード呼び出しが行われた際はnofollowをつける
   global $comment; //コメント内以外で$commentを呼び出すとnullになる

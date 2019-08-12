@@ -190,7 +190,7 @@ $help_text = __( '取得方法', THEME_NAME );
             <?php
             generate_checkbox_tag(OP_MOSHIMO_AFFILIATE_LINK_ENABLE , is_moshimo_affiliate_link_enable(), __( 'リンクをもしもアフィリエイトを経由にする', THEME_NAME ));
             generate_moshimo_badge_tag(__( 'もしも必須', THEME_NAME ));
-            generate_tips_tag(__( 'もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a href="https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f" target="_blank">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span class="red">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
+            generate_tips_tag(__( 'もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a href="https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f" target="_blank" rel="noopener">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span class="red">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/moshimo-amazon-link/'));
 
             generate_label_tag(OP_MOSHIMO_AMAZON_ID, __( 'Amazon a_id', THEME_NAME ));
             echo '<br>';
@@ -230,9 +230,9 @@ $help_text = __( '取得方法', THEME_NAME );
     </table>
 
   <p style="text-align: right;">
-    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement', THEME_NAME ) ?>" target="_blank"><?php _e( 'Amazon.co.jp Product Advertising API ライセンス契約', THEME_NAME ) ?></a><br>
-    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/topic/t32/', THEME_NAME ) ?>" target="_blank"><?php _e( 'Product Advertising API (PA-API) の利用ガイドライン', THEME_NAME ) ?></a><br>
-    <a href="<?php _e( 'https://webservice.rakuten.co.jp/guide/rule', THEME_NAME ) ?>" target="_blank"><?php _e( '楽天ウェブサービス規約', THEME_NAME ) ?></a>
+    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement', THEME_NAME ) ?>" target="_blank" rel="noopener"><?php _e( 'Amazon.co.jp Product Advertising API ライセンス契約', THEME_NAME ) ?></a><br>
+    <a href="<?php _e( 'https://affiliate.amazon.co.jp/help/topic/t32/', THEME_NAME ) ?>" target="_blank" rel="noopener"><?php _e( 'Product Advertising API (PA-API) の利用ガイドライン', THEME_NAME ) ?></a><br>
+    <a href="<?php _e( 'https://webservice.rakuten.co.jp/guide/rule', THEME_NAME ) ?>" target="_blank" rel="noopener"><?php _e( '楽天ウェブサービス規約', THEME_NAME ) ?></a>
   </p>
 
   </div>

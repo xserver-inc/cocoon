@@ -14,7 +14,7 @@ if (is_notice_area_visible() && $msg && !is_amp()):
 
 <?php //リンクの開始タグ
 if ($url):
-  $target = is_notice_link_target_blank() ? ' target="_blank"' : '';
+  $target = is_notice_link_target_blank() ? ' target="_blank" rel="noopener"' : '';
 ?>
 <a href="<?php echo $url; ?>" class="notice-area-wrap"<?php echo $target; ?>>
 <?php endif ?>
