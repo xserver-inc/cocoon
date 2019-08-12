@@ -84,14 +84,19 @@ class NewEntryWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['entry_count'] = strip_tags($new_instance['entry_count']);
-    $instance['entry_type'] = strip_tags($new_instance['entry_type']);
-    $instance['is_bold'] = strip_tags($new_instance['is_bold']);
-    $instance['is_arrow_visible'] = strip_tags($new_instance['is_arrow_visible']);
-    $instance['is_sticky_visible'] = strip_tags($new_instance['is_sticky_visible']);
-      return $instance;
+    if (isset($new_instance['widget_mode']))
+      $instance['widget_mode'] = strip_tags($new_instance['widget_mode']);
+    if (isset($new_instance['title']))
+      $instance['title'] = strip_tags($new_instance['title']);
+    if (isset($new_instance['entry_count']))
+      $instance['entry_count'] = strip_tags($new_instance['entry_count']);
+    if (isset($new_instance['entry_type']))
+      $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+
+    $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
+    $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
+    $instance['is_sticky_visible'] = !empty($new_instance['is_sticky_visible']) ? 1 : 0;
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){
