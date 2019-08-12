@@ -242,5 +242,11 @@ function save_extra_tag_fileds( $term_id ) {
     $the_tag_meta_keywords = $_POST['the_tag_meta_keywords'];
     update_term_meta( $tag_id, 'the_tag_meta_keywords', $the_tag_meta_keywords );
   }
+
+  //旧バージョンの値を削除
+  $key = get_the_tag_meta_key($tag_id);
+  if (term_metadata_exists($tag_id, $key)) {
+    delete_term_meta($tag_id, $key);
+  }
 }
 endif;
