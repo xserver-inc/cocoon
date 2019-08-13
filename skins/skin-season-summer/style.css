@@ -1342,3 +1342,7 @@ table th {
 .ranking-items p {
 	margin-top: 0;
 }
+
+.wpforo-list-item p {
+	margin: 0;
+}
