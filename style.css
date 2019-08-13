@@ -8103,7 +8103,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   transition: all .3s;
 }
 .recommended.rcs-card-margin a {
-  margin: 1em 10px;
+  margin: 1em;
+  margin-right: 0;
+}
+.recommended.rcs-card-margin a:last-child {
+  margin-right: 1em;
 }
 .recommended .ribbon {
   display: none;
