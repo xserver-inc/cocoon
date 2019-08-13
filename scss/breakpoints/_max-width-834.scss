@@ -323,3 +323,21 @@ textarea {
     height: auto;
   }
 }
+
+.recommended{
+  .navi-entry-cards{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    a{
+      width: 50%;
+    }
+  }
+  &.rcs-card-margin{
+      a{
+        margin: .3em 0;
+        width: 46%;
+       }
+    // .navi-entry-cards{
+    // }
+  }
+}

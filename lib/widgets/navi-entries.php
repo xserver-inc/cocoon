@@ -118,14 +118,8 @@ class NaviEntryWidgetItem extends WP_Widget {
       <?php
       generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
       echo '<br>';
-      $options = array(
-        ET_DEFAULT => __( 'デフォルト', THEME_NAME ),
-        ET_BORDER_PARTITION => __( '区切り線', THEME_NAME ),
-        ET_BORDER_SQUARE => __( '囲み枠', THEME_NAME ),
-        ET_LARGE_THUMB => __( '大きなサムネイル', THEME_NAME ),
-        ET_LARGE_THUMB_ON => __( 'タイトルを重ねた大きなサムネイル', THEME_NAME ),
-      );
-      generate_selectbox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      $options = get_widget_entry_type_options();
+      generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
       ?>
     </p>
     <?php //タイトルを太字にする ?>

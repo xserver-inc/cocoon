@@ -534,7 +534,7 @@ function get_navi_card_list_tag($atts){
     'class' => null,
   ), $atts));
 
-  if (is_admin()) {
+  if (is_admin() && !is_admin_php_page()) {
     return;
   }
 

@@ -1043,31 +1043,33 @@ function filter_post_class( $classes, $class, $post_id ) {
 };
 endif;
 
-// //ウィジェットエントリーカードリストのclass追加関数
-// if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
-// function get_additional_widget_entry_cards_classes($atts, $option = null){
-//   extract(shortcode_atts(array(
-//     'type' => 0,
-//     'bold' => 0,
-//     'arrow' => 0,
-//   ), $atts));
-//   $classes = null;
+//おすすめカードのclass追加関数
+if ( !function_exists( 'get_additional_recommend_cards_classes' ) ):
+function get_additional_recommend_cards_classes($option = null){
+  $classes = null;
 
-//   if ($type) {
-//     $classes .= ' card-type-'.$type;
-//   }
+  switch (get_recommended_cards_style()) {
+    case 'image_only':
+      $classes .= ' rcs-image-only';
+      break;
+    case 'center_white_title':
+      $classes .= ' rcs-center-white-title rcs-center-title';
+      break;
+    case 'center_label_title':
+      $classes .= ' rcs-center-label-title rcs-center-title';
+      break;
+    case ET_LARGE_THUMB_ON:
+      $classes .= ' rcs-large-thumb-on';
+      break;
+  }
 
-//   if ($bold) {
-//     $classes .= ' card-title-bold';
-//   }
+  if (is_recommended_cards_margin_enable()) {
+    $classes .= ' rcs-card-margin';
+  }
 
-//   if ($arrow) {
-//     $classes .= ' card-arrow';
-//   }
-
-//   if ($option) {
-//     $classes .= ' '.trim($option);
-//   }
-//   return $classes;
-// }
-// endif;
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;

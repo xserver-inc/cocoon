@@ -59,6 +59,7 @@ require_once abspath(__FILE__).'page-settings/code-funcs.php';       //コード
 require_once abspath(__FILE__).'page-settings/comment-funcs.php';    //コメント設定関数
 require_once abspath(__FILE__).'page-settings/notice-funcs.php';     //通知エリア設定関数
 require_once abspath(__FILE__).'page-settings/appeal-funcs.php';     //アピールエリア設定関数
+require_once abspath(__FILE__).'page-settings/recommended-funcs.php';//おすすめカード設定関数
 require_once abspath(__FILE__).'page-settings/carousel-funcs.php';   //カルーセル設定関数
 require_once abspath(__FILE__).'page-settings/footer-funcs.php';     //フッター設定関数
 require_once abspath(__FILE__).'page-settings/buttons-funcs.php';    //ボタン設定関数
