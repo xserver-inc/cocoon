@@ -79,7 +79,7 @@ function widget_title_hidable($title){
   // _v($title);
   // _v(strpos($title, '!') === 0);
   //ウィジェットタイトルの最初の一文字が！のとき
-  if (!is_widget_title_visible($title)) {
+  if (is_first_char_exclamation($title)) {
     return null;
   }
   return $title;
