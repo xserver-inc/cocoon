@@ -138,15 +138,6 @@ function get_category_ids(){
     endforeach ;
     return $category_IDs;
   } elseif ( is_category() ) {//カテゴリページではトップカテゴリーのみ取得
-    // $categories = get_the_category();
-    // //_v($categories);
-    // $cat_now = $categories[0];
-    // //_v($cat_now->cat_ID);
-    // return array( $cat_now->cat_ID );
-    // global $cat;
-    // return $cat;
-    // $cat_info = get_category( $cat );
-    // _v($cat_info);
     $obj = get_queried_object();
     return array( $obj->cat_ID );
   }
@@ -173,9 +164,6 @@ endif;
 //フォーマットを指定して広告テンプレートファイル呼び出す
 if ( !function_exists( 'get_template_part_with_ad_format' ) ):
 function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_class = null, $label_visible = 1, $ad_code = null){
-  // if ($wrap_class) {
-  //   echo '<div class="'.$wrap_class.'">';
-  // }
   if (isset($wrap_class)) {
     $wrap_class = ' '.trim($wrap_class).' ad-'.$format;
   }
@@ -184,7 +172,6 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   } else {
     $wrap_class .= ' ad-label-invisible';
   }
-  //var_dump($format);
   //$format変数をテンプレートファイルに渡す
   set_query_var('format', $format);
   //$wrap_class変数をテンプレートファイルに渡す
@@ -193,9 +180,6 @@ function get_template_part_with_ad_format($format = DATA_AD_FORMAT_AUTO, $wrap_c
   set_query_var('ad_code', $ad_code);
   //広告テンプレートの呼び出し
   get_template_part('tmp/ad');
-  // if ($wrap_class) {
-  //   echo '</div>';
-  // }
 }
 endif;
 
@@ -231,19 +215,7 @@ endif;
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
-  // //スキンにより固定値がある場合はデータベースに保存しない
-  // $skin_option = get_skin_option($option_name);
-  // if ($skin_option) {
-  //   // _v($option_name);
-  //   // _v($skin_option);
-  //   return;
-  // } else {
-  // }
   $opt_val = isset($_POST[$option_name]) ? $_POST[$option_name] : '';
-  // //広告コードからscriptを除外する（サーバーのファイアウォール・403エラー対策）
-  // if (($option_name == OP_AD_CODE) || ($option_name == OP_AD_LINK_UNIT_CODE)) {
-  //   $opt_val = preg_replace('{<script.+?</script>}is', '', $opt_val);
-  // }
   set_theme_mod($option_name, $opt_val);
 }
 endif;
@@ -257,9 +229,6 @@ function get_theme_option($option_name, $default = null){
     if ($skin_option == '0') {
       $skin_option = 0;
     }
-    // _v($_POST);
-    // _v($option_name);
-    // _v($skin_option);
     return $skin_option;
   }
 
@@ -586,24 +555,6 @@ function wp_enqueue_highlight_js(){
 }
 endif;
 
-// //LightboxプラグインURLの取得
-// if ( !function_exists( 'get_lightbox_css_url' ) ):
-// function get_lightbox_css_url(){
-//   return get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css';
-// }
-// endif;
-
-// //画像ズームエフェクト用のスタイルタグを出力（管理画面用）
-// if ( !function_exists( 'the_zoom_effect_link_tag' ) ):
-// function the_zoom_effect_link_tag(){
-//   if (is_admin_php_page()) {
-//     if (is_lightbox_effect_enable()) {
-//       echo '<link rel="stylesheet" href="'.get_lightbox_css_url().'" />';
-//     }
-//   }
-
-// }
-// endif;
 
 //Lightboxの読み込み
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
@@ -1258,25 +1209,6 @@ function get_theme_css_cache_file_url(){
 }
 endif;
 
-// //テーマのカスタム管理者用CSSファイル
-// if ( !function_exists( 'get_theme_admin_css_cache_file' ) ):
-// function get_theme_admin_css_cache_file(){
-//   $file = get_theme_css_cache_path().'css-custom-admin.css';
-//   //キャッシュファイルが存在しない場合はからのファイルを生成
-//   if (!file_exists($file)) {
-//     wp_filesystem_put_contents($file,  '');
-//   }
-//   return $file;
-// }
-// endif;
-
-// //テーマのカスタム管理者用CSSファイルURL
-// if ( !function_exists( 'get_theme_admin_css_cache_file_url' ) ):
-// function get_theme_admin_css_cache_file_url(){
-//   $url = local_to_url(get_theme_admin_css_cache_file());
-//   return $url;
-// }
-// endif;
 
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
