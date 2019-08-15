@@ -83,8 +83,6 @@ function url_to_internal_blogcard_tag($url){
       $snippet = get_content_excerpt($post_data->post_content, get_entry_card_excerpt_max_length());
     }
     $snippet = preg_replace('/\n/', '', $snippet);
-    $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
-    $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
 
     //日付表示
     $date = null;
@@ -138,6 +136,9 @@ function url_to_internal_blogcard_tag($url){
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
     }
   }
+  //スニペットのフック
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
+  $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
