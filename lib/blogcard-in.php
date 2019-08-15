@@ -289,13 +289,13 @@ function url_shortcode_to_blogcard($the_content) {
   return $the_content;//置換後のコンテンツを返す
 }
 endif;
-add_filter('the_content', 'url_shortcode_to_blogcard' ,9999);
-add_filter('widget_text', 'url_shortcode_to_blogcard' ,9999);
-add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 9999);
-//add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 9999);
-add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 9999);
-add_filter('comment_text', 'url_shortcode_to_blogcard', 9999);
-add_filter('the_category_tag_content', 'url_shortcode_to_blogcard', 9999);
+add_filter('the_content', 'url_shortcode_to_blogcard' ,11);
+add_filter('widget_text', 'url_shortcode_to_blogcard' ,11);
+add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 11);
+//add_filter('widget_classic_text', 'url_shortcode_to_blogcard', 11);
+add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 11);
+add_filter('comment_text', 'url_shortcode_to_blogcard', 11);
+add_filter('the_category_tag_content', 'url_shortcode_to_blogcard', 11);
 
 //ブログカード置換用テキストにpタグが含まれているかどうか
 if ( !function_exists( 'is_p_tag_appropriate' ) ):
