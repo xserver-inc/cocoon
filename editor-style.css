@@ -128,6 +128,10 @@ span.btn-wrap {
   content: " 公式サイト";
 }
 
+.blogcard-type.bct-dl::before {
+  content: " ダウンロード";
+}
+
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
 .instagram-media {
   position: relative !important;

@@ -134,6 +134,10 @@ span.btn-wrap{
   content: $bct-official;
 }
 
+.blogcard-type.bct-dl::before{
+  content: $bct-dl;
+}
+
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
 .instagram-media {
   position: relative !important;

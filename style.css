@@ -3967,6 +3967,10 @@ label.screen-reader-text {
   content: " 公式サイト";
 }
 
+.bct-dl .blogcard::before {
+  content: " ダウンロード";
+}
+
 .button-block {
   float: none;
   margin: 1em 0;

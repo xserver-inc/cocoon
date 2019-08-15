@@ -1091,6 +1091,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -2630,6 +2631,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -4340,6 +4342,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .components-popover__content .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .components-popover__content .bct-official .blogcard::before { content: " 公式サイト"; }
+.components-popover__content .bct-dl .blogcard::before { content: " ダウンロード"; }
 .components-popover__content .button-block { float: none; margin: 1em 0; }
 .components-popover__content .button-block.alignleft { text-align: left; }
 .components-popover__content .button-block.aligncenter { text-align: center; }
