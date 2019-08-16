@@ -9038,6 +9038,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   .footer-bottom.fdt-left-and-right .footer-bottom-content {
     flex-direction: column;
   }
+
+  .mblt-footer-mobile-buttons .go-to-top-button,
+  .mblt-header-and-footer-mobile-buttons .go-to-top-button {
+    display: none;
+  }
 }
 @media screen and (max-width: 834px) {
   .navi-in > .menu-header {
