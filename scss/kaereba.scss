@@ -27,6 +27,12 @@
     font-size: 24px;
     color: $thin;
   }
+  .image-thumb{
+    img{
+      border: none;
+      box-shadow: none;
+    }
+  }
 }
 
 .rakuten-item-box::after{
