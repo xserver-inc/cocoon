@@ -64,6 +64,8 @@ function tag_code_to_minify_js($buffer) {
               //プレイリストのJSは除外
               || includes_string($url, '/mediaelement-and-player.min.js')
               || includes_string($url, '/wp-includes/js/underscore.min.js')
+              //Lityの除外
+              || includes_string($url, '/plugins/lity/dist/lity.min.js')
               // || includes_string($url, '/wp-playlist.min.js')
               // || includes_string($url, '/wp-mediaelement.min.js')
               // || includes_string($url, '/mediaelement-migrate.min.js')
@@ -98,6 +100,9 @@ function tag_code_to_minify_js($buffer) {
 
             //JS URLからJSコードの取得
             $js = js_url_to_js_minify_code( $url );
+            // if (includes_string($url, '/plugins/lity/dist/lity.min.js')) {
+            //   _v($js);
+            // }
             if ($js) {
               $start_name_url = $url.'-start';
               $start_url = 'performance.mark("'.$start_name_url.'");';
@@ -167,6 +172,9 @@ function js_url_to_js_minify_code( $url ) {
 
     //コメントの除去
     $js = remove_code_comments($js);
+    // if (!includes_string($url, '/plugins/lity/dist/lity.min.js')) {
+    //   _v($js);
+    // }
     //CSS内容を縮小化して書式を統一化する
     $js = minify_js($js);
     //コード内scriptタグの処理
