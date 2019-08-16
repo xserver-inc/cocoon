@@ -267,10 +267,16 @@ function convert_lazy_load_tag($the_content, $media){
         continue;
       }
 
+      //URLが含まれていない場合はスキップ
+      if (!preg_match(URL_REG, $match)) {
+        continue;
+      }
+
       //重複置換を避ける
       if (in_array($match, $img_tags, true)) {
         continue;
       }
+
       //置換するタグを格納してく
       $img_tags[] = $match;
       ///////////////////////////////////////////
