@@ -58,7 +58,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。', THEME_NAME ));
 
                 generate_checkbox_tag(OP_MOBILE_HEADER_LOGO_VISIBLE , is_mobile_header_logo_visible(), __( 'サイトヘッダーロゴを表示する（モバイルヘッダーボタン表示時）', THEME_NAME ));
-                generate_tips_tag(__( '「モバイルボタンレイアウト」で「ヘッダーモバイルボタン」が選択されているとき通常のヘッダーロゴを表示するか。', THEME_NAME ));
+                generate_tips_tag(__( 'ヘッダーロゴを表示するか。', THEME_NAME ));
 
                 generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'モバイルボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
                 generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
