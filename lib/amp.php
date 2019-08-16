@@ -525,8 +525,8 @@ function convert_content_for_amp($the_content){
   switch (get_amp_image_zoom_effect()) {
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
-      $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      $append      = '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
+      $pattern     = '{<a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a>}i';
+      $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1>';
       // $the_content = preg_replace( $pattern, $append, $the_content );
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
