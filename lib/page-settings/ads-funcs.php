@@ -446,7 +446,16 @@ endif;
 define('OP_AD_LINKSWITCH_ID', 'ad_linkswitch_id');
 if ( !function_exists( 'get_ad_linkswitch_id' ) ):
 function get_ad_linkswitch_id(){
-  return get_theme_option(OP_AD_LINKSWITCH_ID);
+  $linkswitch_id = get_theme_option(OP_AD_LINKSWITCH_ID);
+  $linkswitch_id = trim($linkswitch_id);
+  $linkswitch_id = strip_tags($linkswitch_id);
+  return $linkswitch_id;
+}
+endif;
+//LinkSwitchトータルとして有効か
+if ( !function_exists( 'is_all_linkswitch_enable' ) ):
+function is_all_linkswitch_enable(){
+  return is_all_ads_visible() && is_ad_linkswitch_enable() && get_ad_linkswitch_id();
 }
 endif;
 
