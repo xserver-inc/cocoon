@@ -434,6 +434,22 @@ function is_ad_shortcode_label_visible(){
 }
 endif;
 
+//LinkSwitch有効
+define('OP_AD_LINKSWITCH_ENABLE', 'ad_linkswitch_enable');
+if ( !function_exists( 'is_ad_linkswitch_enable' ) ):
+function is_ad_linkswitch_enable(){
+  return get_theme_option(OP_AD_LINKSWITCH_ENABLE);
+}
+endif;
+
+//LinkSwitch ID
+define('OP_AD_LINKSWITCH_ID', 'ad_linkswitch_id');
+if ( !function_exists( 'get_ad_linkswitch_id' ) ):
+function get_ad_linkswitch_id(){
+  return get_theme_option(OP_AD_LINKSWITCH_ID);
+}
+endif;
+
 //広告除外記事ID
 define('OP_AD_EXCLUDE_POST_IDS', 'ad_exclude_post_ids');
 if ( !function_exists( 'get_ad_exclude_post_ids' ) ):

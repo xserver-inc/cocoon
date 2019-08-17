@@ -124,6 +124,12 @@ update_theme_option(OP_AD_SHORTCODE_FORMAT);
 //[ad]ショートコード広告ラベル表示
 update_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE);
 
+
+//LinkSwitch有効
+update_theme_option(OP_AD_LINKSWITCH_ENABLE);
+//LinkSwitch ID
+update_theme_option(OP_AD_LINKSWITCH_ID);
+
 //広告除外記事ID
 update_theme_option(OP_AD_EXCLUDE_POST_IDS);
 //広告除外カテゴリーID
