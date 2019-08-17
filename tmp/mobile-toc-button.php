@@ -10,7 +10,7 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'toc-menu-icon'; ?>
 
-<?php if (is_the_page_toc_use() && is_singular()): ?>
+<?php if (is_the_page_toc_use()): ?>
 
 <?php
 $on = null;
