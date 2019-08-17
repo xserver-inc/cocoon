@@ -66,6 +66,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               $options[$menu_name] = $menu_name;
             }
             generate_selectbox_tag(OP_RECOMMENDED_CARDS_MENU_NAME, $options, get_recommended_cards_menu_name());
+            generate_tips_tag(__( '「外観 → メニュー」で作成した「おすすめカード」用のメニューを選択してください。', THEME_NAME ));
             ?>
           </td>
         </tr>
