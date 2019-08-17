@@ -196,6 +196,8 @@ Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
 https://codepen.io/nxworld/pen/oLdoWb
 */ /* top left*/ /************************************
+** おすすめカード
+************************************/ /************************************
 ** 基本表示
 ************************************/ /*初期化*/ /*デフォルトリンク*/ /* クリアフィックス */ /* インナーを囲む */ /************************************
 ** 本文部分
@@ -336,9 +338,9 @@ Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
 https://codepen.io/nxworld/pen/oLdoWb
 */ /* top left*/ /************************************
-** アピールエリア
-************************************/ /************************************
 ** おすすめカード
+************************************/ /************************************
+** アピールエリア
 ************************************/ /************************************
 ** 入力フォーム
 ************************************/ /************************************
@@ -1886,6 +1888,22 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
+.admin-settings .demo .recommended .card-snippet { display: none; }
+.admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
+.admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
+.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -3427,6 +3445,22 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
+.admin-settings .demo .recommended .card-snippet { display: none; }
+.admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
+.admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
+.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -3443,22 +3477,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .appeal-message { margin-bottom: 1em; }
 .admin-settings .demo .appeal-button { color: #fff; text-decoration: none; background-color: #dd4b39; font-weight: bold; text-align: center; display: block; max-width: 80%; margin: auto; padding: 10px 2em; border-radius: 4px; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
-.admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; }
-.admin-settings .demo .recommended figure { margin: 0; }
-.admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
-.admin-settings .demo .recommended .card-snippet { display: none; }
-.admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
-.admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
-.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
-.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
-.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
-.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
-.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
-.admin-settings .demo .recommended .ribbon { display: none; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }

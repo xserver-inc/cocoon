@@ -7957,6 +7957,84 @@ https://codepen.io/nxworld/pen/oLdoWb
   content: '\f2d4';
 }
 
+/************************************
+** おすすめカード
+************************************/
+.recommended .navi-entry-cards {
+  display: flex;
+  justify-content: center;
+}
+.recommended .navi-entry-cards a {
+  padding: 0;
+  margin: 0;
+  width: 25%;
+  border-radius: 0;
+}
+.recommended figure {
+  margin: 0;
+}
+.recommended .card-content {
+  font-size: 0.8em;
+  text-align: center;
+}
+.recommended .card-snippet {
+  display: none;
+}
+.recommended.rcs-image-only .card-content {
+  display: none;
+}
+.recommended.rcs-center-title .card-content {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  opacity: 1;
+  font-size: 1em;
+  max-height: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.recommended.rcs-center-title .a-wrap:hover .card-content {
+  opacity: 1;
+}
+.recommended.rcs-center-white-title .card-content {
+  background-color: rgba(51, 51, 51, 0.3);
+  transition: all .7s;
+}
+.recommended.rcs-center-white-title .a-wrap:hover .card-content {
+  transition: all .7s;
+  opacity: 0;
+}
+.recommended.rcs-center-label-title .card-content {
+  background-color: rgba(51, 51, 51, 0);
+  padding: 0;
+}
+.recommended.rcs-center-label-title .card-content .card-title {
+  color: #333;
+  background-color: #fffffc;
+  padding: 6px 1em;
+  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  transition: all .5s;
+}
+.recommended.rcs-center-label-title .card-content:hover .card-title {
+  transition: all .3s;
+}
+.recommended.rcs-card-margin a {
+  margin: 1em;
+  margin-right: 0;
+}
+.recommended.rcs-card-margin a:last-child {
+  margin-right: 1em;
+}
+.recommended .ribbon {
+  display: none;
+}
+
 .no-border {
   border: none;
 }
@@ -8042,83 +8120,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .appeal-button:hover {
   color: #fff;
   opacity: 0.7;
-}
-
-/************************************
-** おすすめカード
-************************************/
-.recommended .navi-entry-cards {
-  display: flex;
-  justify-content: center;
-}
-.recommended .navi-entry-cards a {
-  padding: 0;
-  margin: 0;
-  width: 25%;
-}
-.recommended figure {
-  margin: 0;
-}
-.recommended .card-content {
-  font-size: 0.8em;
-  text-align: center;
-}
-.recommended .card-snippet {
-  display: none;
-}
-.recommended.rcs-image-only .card-content {
-  display: none;
-}
-.recommended.rcs-center-title .card-content {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  opacity: 1;
-  font-size: 1em;
-  max-height: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.recommended.rcs-center-title .a-wrap:hover .card-content {
-  opacity: 1;
-}
-.recommended.rcs-center-white-title .card-content {
-  background-color: rgba(51, 51, 51, 0.3);
-  transition: all .7s;
-}
-.recommended.rcs-center-white-title .a-wrap:hover .card-content {
-  transition: all .7s;
-  opacity: 0;
-}
-.recommended.rcs-center-label-title .card-content {
-  background-color: rgba(51, 51, 51, 0);
-  padding: 0;
-}
-.recommended.rcs-center-label-title .card-content .card-title {
-  color: #333;
-  background-color: #fffffc;
-  padding: 6px 1em;
-  opacity: 0.8;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  transition: all .5s;
-}
-.recommended.rcs-center-label-title .card-content:hover .card-title {
-  transition: all .3s;
-}
-.recommended.rcs-card-margin a {
-  margin: 1em;
-  margin-right: 0;
-}
-.recommended.rcs-card-margin a:last-child {
-  margin-right: 1em;
-}
-.recommended .ribbon {
-  display: none;
 }
 
 /************************************
