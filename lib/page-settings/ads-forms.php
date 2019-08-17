@@ -275,16 +275,18 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- LinkSwitch -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag('', __( 'LinkSwitch', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_AD_LINKSWITCH_ENABLE, __( 'LinkSwitch', THEME_NAME )); ?>
           </th>
           <td>
             <?php
             generate_checkbox_tag(OP_AD_LINKSWITCH_ENABLE, is_ad_linkswitch_enable(), __( 'LinkSwitchを有効にする', THEME_NAME ));
             generate_tips_tag(__('バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている必要があります。', THEME_NAME));
 
+
+            generate_label_tag(OP_AD_LINKSWITCH_ID, __( 'LinkSwitch ID', THEME_NAME ));
             generate_textbox_tag(OP_AD_LINKSWITCH_ID, get_ad_linkswitch_id(), __( 'LinkSwitch IDの入力', THEME_NAME ));
             echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/linkswtch-id.png', __( 'バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してください。', THEME_NAME ));
-            generate_tips_tag(__( 'LinkSwitchタグから取得できるIDを入力してください。', THEME_NAME ));
+            generate_tips_tag(__( 'LinkSwitchタグから取得できるIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/linkswitch/'));
             ?>
           </td>
         </tr>
