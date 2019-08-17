@@ -44,6 +44,7 @@ $elements = array(
   'amp-audio' => 'amp-audio-0.1.js',
   'amp-video' => 'amp-video-0.1.js',
   'amp-image-lightbox' => 'amp-image-lightbox-0.1.js',
+  //'amp-link-rewriter' => 'amp-link-rewriter-0.1.js',
   //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 
@@ -69,6 +70,11 @@ if ( is_analytics() && (get_google_analytics_tracking_id() || get_google_tag_man
 if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
+
+// //LinkSwitchが有効な時
+// if (is_all_linkswitch_enable()) {
+//   echo '<script async custom-element="amp-link-rewriter" src="https://cdn.ampproject.org/v0/amp-link-rewriter-0.1.js"></script>'.PHP_EOL;
+// }
 ?>
 <?php //JSON-LDの読み込み
 get_template_part('tmp/json-ld'); ?>
@@ -80,6 +86,9 @@ get_template_part('tmp/json-ld'); ?>
 <?php //AdSense AMP自動広告の</head>手前コード
 get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 
+<?php //LinkSwitchの</head>手前コード
+get_template_part('tmp/ad-amp-linkswitch-in-head') ?>
+
 <?php //トップに戻るの</head>手前コード
 get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 
@@ -87,7 +96,6 @@ get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 get_template_part('tmp-user/amp-head-insert'); ?>
 
 <?php //WEBフォント読み込み
-
 //Font Awesomeのスタイルの読み込み
 echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
 //Google Fontsスタイルの読み込み
@@ -100,6 +108,9 @@ if (!is_site_font_family_local()) {
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
+
+  <?php //LinkSwitchの<body>直後コード
+  get_template_part('tmp/ad-amp-linkswitch-in-body') ?>
 
   <?php //トップに戻るの<body>直後コード
   get_template_part('tmp/amp-button-go-to-top-in-body') ?>
