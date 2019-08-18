@@ -32,11 +32,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- 広告ラベル -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_AD_LABEL, __( '広告ラベル', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_AD_LABEL_CAPTION, __( '広告ラベル', THEME_NAME )); ?>
           </th>
           <td>
             <?php
-            generate_textbox_tag(OP_AD_LABEL, get_ad_label(), __( '「スポンサーリンク」か「広告」推奨', THEME_NAME ));
+            generate_textbox_tag(OP_AD_LABEL_CAPTION, get_ad_label_caption(), __( '「スポンサーリンク」か「広告」推奨', THEME_NAME ));
             generate_tips_tag(__( '広告上部ラベルに表示されるテキストの入力です。', THEME_NAME ));
             ?>
           </td>

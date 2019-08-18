@@ -40,10 +40,10 @@ function get_ad_link_unit_code(){
 endif;
 
 //広告ラベル
-define('OP_AD_LABEL', 'ad_label');
-if ( !function_exists( 'get_ad_label' ) ):
-function get_ad_label(){
-  return get_theme_option(OP_AD_LABEL, __( 'スポンサーリンク', THEME_NAME ));
+define('OP_AD_LABEL_CAPTION', 'ad_label_caption');
+if ( !function_exists( 'get_ad_label_caption' ) ):
+function get_ad_label_caption(){
+  return get_theme_option(OP_AD_LABEL_CAPTION, __( 'スポンサーリンク', THEME_NAME ));
 }
 endif;
 

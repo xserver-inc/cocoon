@@ -16,7 +16,7 @@ update_theme_option(OP_AD_CODE);
 //リンクユニット広告コード
 update_theme_option(OP_AD_LINK_UNIT_CODE);
 //広告ラベル
-update_theme_option(OP_AD_LABEL);
+update_theme_option(OP_AD_LABEL_CAPTION);
 
 
 //アドセンス表示方式
