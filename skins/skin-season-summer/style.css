@@ -33,6 +33,9 @@ body {
 .entry-content {
 	color: #335361;
 }
+.entry-content .wp-caption-text {
+	margin: 0;
+}
 /************************************
 ** a
 ************************************/

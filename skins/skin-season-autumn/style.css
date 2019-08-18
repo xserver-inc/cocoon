@@ -33,6 +33,10 @@ body {
 .entry-content {
 	color: #745c51;
 }
+.entry-content .wp-caption-text {
+	margin: 0;
+}
+
 /************************************
 ** a
 ************************************/
