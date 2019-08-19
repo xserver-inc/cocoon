@@ -134,6 +134,7 @@ class NaviEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
       ?>
     </p>
+    <p><?php echo get_help_page_tag('https://wp-cocoon.com/navi-card-widget/'); ?></p>
     <?php
   }
 }

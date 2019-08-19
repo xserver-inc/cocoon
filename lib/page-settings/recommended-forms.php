@@ -13,7 +13,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'おすすめカード設定（β版）', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'おすすめしたい記事やカテゴリーなどをヘッダー下の目立つ部分に表示させます。', THEME_NAME ) ?></p>
+    <p><?php _e( 'おすすめしたい記事やカテゴリーの画像リンクをヘッダー下の目立つ部分に表示させます。', THEME_NAME );
+    echo get_help_page_tag('https://wp-cocoon.com/recommended-cards/'); ?></p>
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_recommended_cards', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
       <div class="demo recommended-cards-demo" style="">
