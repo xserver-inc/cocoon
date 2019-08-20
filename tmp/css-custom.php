@@ -10,7 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php //モバイルサイトフォント
 if (get_mobile_site_font_size()): ?>
 @media screen and (max-width: 480px){
-  .page-body{
+  .page-body,
+  .menu-content{
     font-size: <?php echo get_mobile_site_font_size(); ?>;
   }
 }

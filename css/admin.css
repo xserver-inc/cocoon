@@ -720,7 +720,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -2277,7 +2277,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; font-size: 1em; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
