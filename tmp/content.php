@@ -23,6 +23,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php dynamic_sidebar( 'above-single-content-title' ); ?>
       <?php endif; ?>
 
+      <?php //固定ページタイトル上ウイジェット
+      if ( is_page() && is_active_sidebar( 'above-page-content-title' ) ): ?>
+        <?php dynamic_sidebar( 'above-page-content-title' ); ?>
+      <?php endif; ?>
+
       <header class="article-header entry-header">
         <h1 class="entry-title" itemprop="headline">
           <?php
@@ -42,6 +47,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿タイトル下ウイジェット
         if ( is_single() && is_active_sidebar( 'below-single-content-title' ) ): ?>
           <?php dynamic_sidebar( 'below-single-content-title' ); ?>
+        <?php endif; ?>
+
+        <?php //個性ページタイトル下ウイジェット
+        if ( is_page() && is_active_sidebar( 'below-page-content-title' ) ): ?>
+          <?php dynamic_sidebar( 'below-page-content-title' ); ?>
         <?php endif; ?>
 
         <?php //アイキャッチ挿入

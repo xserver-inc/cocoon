@@ -218,6 +218,38 @@ register_sidebars(1,
 endif;
 register_below_single_comment_form_widget_area();
 
+if ( !function_exists( 'register_above_page_content_title_widget_area' ) ):
+function register_above_page_content_title_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( '固定ページタイトル上', THEME_NAME ),
+    'id' => 'above-page-content-title',
+    'description' => __( '固定ページタイトル上に表示されるウイジェット。', THEME_NAME ),
+    'before_widget' => '<div id="%1$s" class="widget widget-above-page-content-title %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="widget-above-page-content-title-title main-widget-label">',
+    'after_title' => '</div>',
+  ));
+}
+endif;
+register_above_page_content_title_widget_area();
+
+if ( !function_exists( 'register_below_page_content_title_widget_area' ) ):
+function register_below_page_content_title_widget_area(){
+  register_sidebars(1,
+    array(
+    'name' => __( '固定ページタイトル下', THEME_NAME ),
+    'id' => 'below-page-content-title',
+    'description' => __( '固定ページタイトル下に表示されるウイジェット。', THEME_NAME ),
+    'before_widget' => '<div id="%1$s" class="widget widget-below-page-content-title %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="widget-below-page-content-title-title main-widget-label">',
+    'after_title' => '</div>',
+  ));
+}
+endif;
+register_below_page_content_title_widget_area();
+
 if ( !function_exists( 'register_page_content_top_widget_area' ) ):
 function register_page_content_top_widget_area(){
   register_sidebars(1,
