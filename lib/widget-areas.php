@@ -496,7 +496,7 @@ endif;
 /////////////////////////////////////
 // 固定ページ本文中にウィジェットを表示する
 /////////////////////////////////////
-add_filter('the_content','add_widget_area_before_1st_h2_in_page');
+add_filter('the_content','add_widget_area_before_1st_h2_in_page', BEFORE_1ST_H2_AD_PRIORITY_STANDARD);
 if ( !function_exists( 'add_widget_area_before_1st_h2_in_page' ) ):
 function add_widget_area_before_1st_h2_in_page($the_content) {
   // if ( is_amp() ) {

@@ -228,7 +228,6 @@ add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
   global $_TOC_WIDGET_OR_SHORTCODE_USE;
-  //_v($_TOC_WIDGET_OR_SHORTCODE_USE);
 
   //Table of Contents Plusプラグインが有効な際は目次機能は無効
   if (class_exists( 'toc' )) {
@@ -239,22 +238,6 @@ function add_toc_before_1st_h2($the_content){
     return $the_content;
   }
 
-  // //投稿ページだと表示しない
-  // if (!is_single_toc_visible() && is_single()) {
-  //   return $the_content;
-  // }
-
-  // //固定ページだと表示しない
-  // if (!is_page_toc_visible() && is_page()) {
-  //   return $the_content;
-  // }
-
-  // //投稿ページで非表示になっていると表示しない
-  // if (!is_the_page_toc_visible()) {
-  //   return $the_content;
-  // }
-
-  //$content     = get_the_content();
   $harray      = array();
 
   $depth       = intval(get_toc_depth()); //2-6 0で全て
