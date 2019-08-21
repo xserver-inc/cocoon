@@ -715,8 +715,12 @@ body#tinymce.wp-editor{
   color: <?php echo $editor_text_color; ?>
 }
 <?php //Internet Explorer（IE）用
-if($is_IE): ?>
+global $is_IE;
+if ($is_IE): ?>
 .wp-block-image figure.aligncenter {
 	display: block;
+}
+.main .eye-catch-wrap {
+  display: flex;
 }
 <?php endif; ?>
