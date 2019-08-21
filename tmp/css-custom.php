@@ -714,3 +714,9 @@ if (!$editor_text_color) {
 body#tinymce.wp-editor{
   color: <?php echo $editor_text_color; ?>
 }
+<?php //Internet Explorer（IE）用
+if($is_IE): ?>
+.wp-block-image figure.aligncenter {
+	display: block;
+}
+<?php endif; ?>
