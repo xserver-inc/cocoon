@@ -720,7 +720,9 @@ if ($is_IE): ?>
 .wp-block-image figure.aligncenter {
 	display: block;
 }
-.main .eye-catch-wrap {
-  display: flex;
-}
+  <?php if(is_singular() && is_eyecatch_visible() && has_post_thumbnail()): ?>
+  .main .eye-catch-wrap {
+    display: flex;
+  }
+  <?php endif; ?>
 <?php endif; ?>
