@@ -62,7 +62,8 @@ endif;
 if ( !function_exists( 'get_the_tag_content' ) ):
 function get_the_tag_content($tag_id = null){
   if (term_metadata_exists($tag_id, 'the_tag_content')) {
-    $content = get_term_meta( $tag_id, 'the_tag_content', true );
+    //取得できた場合はそのまま返す（本文編集などでも使われる）
+    return get_term_meta( $tag_id, 'the_tag_content', true );
   } else {//旧バージョン対応
     if (!$tag_id) {
       $tag_id = get_query_var('tag_id');

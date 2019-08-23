@@ -88,7 +88,8 @@ endif;
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null){
   if (term_metadata_exists($cat_id, 'the_category_content')) {
-    $content = get_term_meta( $cat_id, 'the_category_content', true );
+    //取得できた場合はそのまま返す（本文編集などでも使われる）
+    return get_term_meta( $cat_id, 'the_category_content', true );
   } else {//旧バージョン対応
     if (!$cat_id) {
       $cat_id = get_query_var('cat');
