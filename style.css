@@ -9208,16 +9208,12 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   }
 
   .fb-like-box {
-    max-width: 640px;
+    max-width: none;
     display: block;
   }
   .fb-like-box > div,
   .fb-like-box > figure {
     width: 100%;
-    max-width: none;
-  }
-
-  .fb-like-box {
     max-width: none;
   }
 

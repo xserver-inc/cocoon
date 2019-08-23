@@ -3691,9 +3691,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .widget_pc_text, .admin-settings .demo .widget_pc_ad, .admin-settings .demo .widget_pc_double_ads { display: none; }
   .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: block; }
   .admin-settings .demo .slicknav_menu { display: block; }
-  .admin-settings .demo .fb-like-box { max-width: 640px; display: block; }
+  .admin-settings .demo .fb-like-box { max-width: none; display: block; }
   .admin-settings .demo .fb-like-box > div, .admin-settings .demo .fb-like-box > figure { width: 100%; max-width: none; }
-  .admin-settings .demo .fb-like-box { max-width: none; }
   .admin-settings .demo .cta-box { font-size: 0.8em; }
   .admin-settings .demo .cta-heading { font-size: 20px; padding: 8px; }
   .admin-settings .demo .cta-left-and-right .cta-content, .admin-settings .demo .cta-right-and-left .cta-content { display: block; }
