@@ -419,6 +419,7 @@ function amazon_product_link_shortcode($atts){
         if ((is_amazon_item_price_visible() || $price === '1')
              && $FormattedPrice
              && $price !== '0'
+             && $timestamp > 0
            ) {
           $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
         }
