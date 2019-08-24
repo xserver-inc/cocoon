@@ -260,13 +260,13 @@ $bgc_hover_anime: all .7s;
 @mixin fb_like_box($max_width: 640px){
   .fb-like-box{
     max-width: $max_width;
-    display: block;
-    //flex-direction: column;
-    >div,
-    >figure{
-      width: 100%;
-      max-width: none;
-    }
+    //display: block;
+    flex-direction: column;
+    // >div,
+    // >figure{
+    //   width: 100%;
+    //   max-width: none;
+    // }
   }
 }
 

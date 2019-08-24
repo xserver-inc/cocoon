@@ -6328,10 +6328,6 @@ div.sbs-think .speech-balloon::after {
 .fb-like-box .fb-like-content {
   width: 100%;
 }
-.fb-like-box .fb-like-thumb > *,
-.fb-like-box .fb-like-content > * {
-  min-width: 100%;
-}
 .fb-like-box img {
   display: block;
   width: 100%;
@@ -6341,16 +6337,9 @@ div.sbs-think .speech-balloon::after {
   display: none;
 }
 
-.fb-like-thumb {
-  max-width: 56%;
-}
-
 .fb-like-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: space-around;
   text-align: center;
 }
 .fb-like-content > div {
@@ -6375,7 +6364,6 @@ div.sbs-think .speech-balloon::after {
 .fb-like-buttons > div {
   margin: 8px;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 .fb-like-buttons > div > * {
@@ -6388,12 +6376,7 @@ div.sbs-think .speech-balloon::after {
 
 .sidebar .fb-like-box {
   max-width: 640px;
-  display: block;
-}
-.sidebar .fb-like-box > div,
-.sidebar .fb-like-box > figure {
-  width: 100%;
-  max-width: none;
+  flex-direction: column;
 }
 
 /************************************
@@ -9209,12 +9192,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
   .fb-like-box {
     max-width: none;
-    display: block;
-  }
-  .fb-like-box > div,
-  .fb-like-box > figure {
-    width: 100%;
-    max-width: none;
+    flex-direction: column;
   }
 
   .cta-box {

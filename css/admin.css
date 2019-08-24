@@ -1593,20 +1593,17 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
-.admin-settings .demo .fb-like-box .fb-like-thumb > *, .admin-settings .demo .fb-like-box .fb-like-content > * { min-width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
 .admin-settings .demo .fb-like-box .fb_reset { display: none; }
-.admin-settings .demo .fb-like-thumb { max-width: 56%; }
-.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; justify-content: center; align-items: center; align-content: space-around; text-align: center; }
+.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; text-align: center; }
 .admin-settings .demo .fb-like-content > div { padding-top: 8px; }
 .admin-settings .demo .fb-like-message { color: #eee; font-size: 0.9em; }
 .admin-settings .demo .fb-like-sub-message { color: #ccc; font-size: 0.7em; margin-bottom: 8px; }
 .admin-settings .demo .fb-like-buttons { padding: 0; text-align: center; }
-.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; justify-content: center; }
 .admin-settings .demo .fb-like-buttons > div > * { height: 100%; }
 .admin-settings .demo .fb-like-facebook { margin-bottom: -7px; }
-.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; display: block; }
-.admin-settings .demo .sidebar .fb-like-box > div, .admin-settings .demo .sidebar .fb-like-box > figure { width: 100%; max-width: none; }
+.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; flex-direction: column; }
 .admin-settings .demo div.fb-like-mobile { display: none; }
 .admin-settings .demo .fb-like-balloon { height: 100px; margin-top: 30px; margin-bottom: 30px; clear: both; }
 .admin-settings .demo .fb-like-balloon-thumb { float: left; width: 100px; }
@@ -3150,20 +3147,17 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
-.admin-settings .demo .fb-like-box .fb-like-thumb > *, .admin-settings .demo .fb-like-box .fb-like-content > * { min-width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
 .admin-settings .demo .fb-like-box .fb_reset { display: none; }
-.admin-settings .demo .fb-like-thumb { max-width: 56%; }
-.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; justify-content: center; align-items: center; align-content: space-around; text-align: center; }
+.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; text-align: center; }
 .admin-settings .demo .fb-like-content > div { padding-top: 8px; }
 .admin-settings .demo .fb-like-message { color: #eee; font-size: 0.9em; }
 .admin-settings .demo .fb-like-sub-message { color: #ccc; font-size: 0.7em; margin-bottom: 8px; }
 .admin-settings .demo .fb-like-buttons { padding: 0; text-align: center; }
-.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; justify-content: center; }
 .admin-settings .demo .fb-like-buttons > div > * { height: 100%; }
 .admin-settings .demo .fb-like-facebook { margin-bottom: -7px; }
-.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; display: block; }
-.admin-settings .demo .sidebar .fb-like-box > div, .admin-settings .demo .sidebar .fb-like-box > figure { width: 100%; max-width: none; }
+.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; flex-direction: column; }
 .admin-settings .demo div.fb-like-mobile { display: none; }
 .admin-settings .demo .fb-like-balloon { height: 100px; margin-top: 30px; margin-bottom: 30px; clear: both; }
 .admin-settings .demo .fb-like-balloon-thumb { float: left; width: 100px; }
@@ -3691,8 +3685,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .widget_pc_text, .admin-settings .demo .widget_pc_ad, .admin-settings .demo .widget_pc_double_ads { display: none; }
   .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: block; }
   .admin-settings .demo .slicknav_menu { display: block; }
-  .admin-settings .demo .fb-like-box { max-width: none; display: block; }
-  .admin-settings .demo .fb-like-box > div, .admin-settings .demo .fb-like-box > figure { width: 100%; max-width: none; }
+  .admin-settings .demo .fb-like-box { max-width: none; flex-direction: column; }
   .admin-settings .demo .cta-box { font-size: 0.8em; }
   .admin-settings .demo .cta-heading { font-size: 20px; padding: 8px; }
   .admin-settings .demo .cta-left-and-right .cta-content, .admin-settings .demo .cta-right-and-left .cta-content { display: block; }
