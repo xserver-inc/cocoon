@@ -86,10 +86,10 @@ endif;
 
 //カテゴリ本文の取得
 if ( !function_exists( 'get_the_category_content' ) ):
-function get_the_category_content($cat_id = null){
+function get_the_category_content($cat_id = null, $for_editor = false){
   if (term_metadata_exists($cat_id, 'the_category_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
-    return get_term_meta( $cat_id, 'the_category_content', true );
+    $content = get_term_meta( $cat_id, 'the_category_content', true );
   } else {//旧バージョン対応
     if (!$cat_id) {
       $cat_id = get_query_var('cat');
@@ -100,10 +100,12 @@ function get_the_category_content($cat_id = null){
     else
       $content = category_description($cat_id);
   }
+  if (!$for_editor) {
+    $content = wpautop($content);
+    $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
+    $content = apply_filters( 'the_category_content', $content );
+  }
 
-  $content = wpautop($content);
-  $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
-  $content = apply_filters( 'the_category_content', $content );
   return $content;
 }
 endif;
@@ -224,7 +226,7 @@ function extra_category_fields( $cat ) {
 <tr class="form-field term-content-wrap">
   <th><label for="content"><?php _e( 'カテゴリ本文', THEME_NAME ) ?></label></th>
   <td><?php
-    $the_category_content = get_the_category_content($cat_id);
+    $the_category_content = get_the_category_content($cat_id, true);
     generate_visuel_editor_tag('the_category_content', $the_category_content, 'content');
    ?>
     <p class="description"><?php _e( 'カテゴリページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>

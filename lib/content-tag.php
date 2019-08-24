@@ -60,10 +60,10 @@ endif;
 
 //タグ本文の取得
 if ( !function_exists( 'get_the_tag_content' ) ):
-function get_the_tag_content($tag_id = null){
+function get_the_tag_content($tag_id = null, $for_editor = false){
   if (term_metadata_exists($tag_id, 'the_tag_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
-    return get_term_meta( $tag_id, 'the_tag_content', true );
+    $content = get_term_meta( $tag_id, 'the_tag_content', true );
   } else {//旧バージョン対応
     if (!$tag_id) {
       $tag_id = get_query_var('tag_id');
@@ -74,10 +74,11 @@ function get_the_tag_content($tag_id = null){
     else
       $content = tag_description($tag_id);
   }
-
-  $content = wpautop($content);
-  $content = apply_filters( 'the_category_tag_content', $content );//カテゴリ・タグ本文共通
-  $content = apply_filters( 'the_tag_content', $content );
+  if (!$for_editor) {
+    $content = wpautop($content);
+    $content = apply_filters( 'the_category_tag_content', $content );//カテゴリ・タグ本文共通
+    $content = apply_filters( 'the_tag_content', $content );
+  }
   return $content;
 }
 endif;
@@ -174,7 +175,7 @@ function extra_tag_fields( $tag ) {
 <tr class="form-field term-content-wrap">
   <th><label for="content"><?php _e( 'タグ本文', THEME_NAME ) ?></label></th>
   <td><?php
-    $the_tag_content = get_the_tag_content($tag_id);
+    $the_tag_content = get_the_tag_content($tag_id, true);
     generate_visuel_editor_tag('the_tag_content', $the_tag_content, 'content');
     ?>
     <p class="description"><?php _e( 'タグページで表示されるメインコンテンツを入力してください。', THEME_NAME ) ?></p>
