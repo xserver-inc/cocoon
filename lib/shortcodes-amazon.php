@@ -108,6 +108,9 @@ function get_amazon_itemlookup_xml($asin){
     }
 
     if (DEBUG_CACHE_ENABLE) {
+      //一応、XML取得時のタイムスタンプを保存しておく
+      $count = 1;
+      $res = str_replace('<Items>', '<Items><Date>'.date_i18n( 'Y/m/d H:i').'</Date>', $res, $count);
       //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
       $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
       //Amazon APIキャッシュの保存
@@ -412,9 +415,17 @@ function amazon_product_link_shortcode($atts){
       $item_price_tag = null;
       //XMLのOperationRequesから時間情報を取得
       $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
+      //_v($xml);
+      //_v($xml->Items);
       if ($unix_date) {
         $timestamp = strtotime(get_date_from_gmt($unix_date));
         $acquired_date = date_i18n( 'Y/m/d H:i', $timestamp );
+       // _v($acquired_date);
+        //Amazon APIからタイムスタンプを取得できなかった場合
+        if (!$timestamp) {
+          $acquired_date = (string)$xml->Items->Date;
+          //_v($acquired_date);
+        }
 
         if ((is_amazon_item_price_visible() || $price === '1')
              && $FormattedPrice
