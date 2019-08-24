@@ -75,7 +75,7 @@ function get_the_tag_content($tag_id = null, $for_editor = false){
       $content = tag_description($tag_id);
   }
   if (!$for_editor) {
-    $content = wpautop($content);
+    //$content = wpautop($content);
     $content = apply_filters( 'the_category_tag_content', $content );//カテゴリ・タグ本文共通
     $content = apply_filters( 'the_tag_content', $content );
   }

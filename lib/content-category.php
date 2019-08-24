@@ -101,7 +101,7 @@ function get_the_category_content($cat_id = null, $for_editor = false){
       $content = category_description($cat_id);
   }
   if (!$for_editor) {
-    $content = wpautop($content);
+    //$content = wpautop($content);
     $content = apply_filters( 'the_category_tag_content', $content );//カテゴリー・タグ本文共通
     $content = apply_filters( 'the_category_content', $content );
   }
