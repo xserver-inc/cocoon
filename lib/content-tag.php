@@ -41,6 +41,9 @@ endif;
 //タグタイトルの取得
 if ( !function_exists( 'get_the_tag_title' ) ):
 function get_the_tag_title($tag_id = null, $is_tag_name = true){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
   $res = null;
   if (term_metadata_exists($tag_id, 'the_tag_title')) {
     $res = get_term_meta( $tag_id, 'the_tag_title', true );
@@ -61,13 +64,13 @@ endif;
 //タグ本文の取得
 if ( !function_exists( 'get_the_tag_content' ) ):
 function get_the_tag_content($tag_id = null, $for_editor = false){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
   if (term_metadata_exists($tag_id, 'the_tag_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
     $content = get_term_meta( $tag_id, 'the_tag_content', true );
   } else {//旧バージョン対応
-    if (!$tag_id) {
-      $tag_id = get_query_var('tag_id');
-    }
     $meta = get_the_tag_meta($tag_id);
     if (!empty($meta['content']))
       $content = $meta['content'];
@@ -86,6 +89,9 @@ endif;
 //アイキャッチの取得
 if ( !function_exists( 'get_the_tag_eye_catch_url' ) ):
 function get_the_tag_eye_catch_url($tag_id = null){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
   if (term_metadata_exists($tag_id, 'the_tag_eye_catch_url')) {
     $eye_catch_url = get_term_meta( $tag_id, 'the_tag_eye_catch_url', true );
   } else {//旧バージョン対応
@@ -109,6 +115,9 @@ endif;
 //タグのメタディスクリプション
 if ( !function_exists( 'get_the_tag_meta_description' ) ):
 function get_the_tag_meta_description($tag_id = null){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
   if (term_metadata_exists($tag_id, 'the_tag_meta_description')) {
     return get_term_meta( $tag_id, 'the_tag_meta_description', true );
   } else {//旧バージョン対応
@@ -145,6 +154,9 @@ endif;
 //キーワードの取得
 if ( !function_exists( 'get_the_tag_meta_keywords' ) ):
 function get_the_tag_meta_keywords($tag_id = null){
+  if (!$tag_id) {
+    $tag_id = get_query_var('tag_id');
+  }
   if (term_metadata_exists($tag_id, 'the_tag_meta_keywords')) {
     return get_term_meta( $tag_id, 'the_tag_meta_keywords', true );
   } else {//旧バージョン対応
