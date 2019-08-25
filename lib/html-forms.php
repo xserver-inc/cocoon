@@ -973,7 +973,6 @@ endif;
 
 //汎用エントリーウィジェットのタグ生成
 if ( !function_exists( 'generate_widget_entries_tag' ) ):
-// function generate_widget_entries_tag($entry_count = 5, $entry_type = ET_DEFAULT, $cat_ids = array(), $include_children = 0, $post_type = null, $taxonomy = 'category', $random = 0, $action = null){
 function generate_widget_entries_tag($atts){
   extract(shortcode_atts(array(
     'entry_count' => 5,
@@ -1059,7 +1058,7 @@ function generate_widget_entries_tag($atts){
   if ( $cat_ids || $tag_ids ) {
     //_v($cat_ids);
     $tax_querys = array();
-    if ($cat_ids) {
+    if ($cat_ids && $taxonomy == 'category') {
       $tax_querys[] = array(
         'taxonomy' => $taxonomy,
         'terms' => $cat_ids,
@@ -1068,7 +1067,9 @@ function generate_widget_entries_tag($atts){
         'operator' => 'IN'
       );
     }
-    if ($tag_ids) {
+    if ($tag_ids && $taxonomy == 'post_tag') {
+      // _v($taxonomy);
+      // _v($tag_ids);
       $tax_querys[] = array(
         'taxonomy' => 'post_tag',
         'terms' => $tag_ids,
@@ -1083,7 +1084,6 @@ function generate_widget_entries_tag($atts){
         'relation' => 'AND'
       )
     );
-
   }
   // _v($args);
   $thumb_size = get_widget_entries_thumbnail_size($type);
