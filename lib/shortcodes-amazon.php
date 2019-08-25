@@ -424,6 +424,7 @@ function amazon_product_link_shortcode($atts){
         //Amazon APIからタイムスタンプを取得できなかった場合
         if (!$timestamp) {
           $acquired_date = (string)$xml->Items->Date;
+          $timestamp = strtotime($acquired_date);
           //_v($acquired_date);
         }
 
