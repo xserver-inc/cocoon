@@ -288,7 +288,7 @@ function save_extra_category_fileds( $term_id ) {
 
   if ( isset( $_POST['the_category_content'] ) ) {
     $the_category_content = $_POST['the_category_content'];
-    update_term_meta( $cat_id, 'the_category_content', $the_category_content );nt;
+    update_term_meta( $cat_id, 'the_category_content', $the_category_content );
   }
 
   if ( isset( $_POST['the_category_eye_catch_url'] ) ) {
