@@ -276,9 +276,14 @@ add_filter('ranking_item_link_tag', 'do_shortcode');
 //アピールリア
 add_filter('appeal_area_message', 'do_shortcode');
 //カテゴリ・タグページ（※フックの順番が大事）
+add_filter('the_category_tag_content', 'wptexturize');
+add_filter('the_category_tag_content', 'convert_smilies');
+add_filter('the_category_tag_content', 'convert_chars');
 add_filter('the_category_tag_content', 'wpautop');
 add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
+add_filter('the_category_tag_content', 'prepend_attachment');
+add_filter('the_category_tag_content', 'wp_make_content_images_responsive');
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
