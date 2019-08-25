@@ -276,9 +276,9 @@ add_filter('ranking_item_link_tag', 'do_shortcode');
 //アピールリア
 add_filter('appeal_area_message', 'do_shortcode');
 //カテゴリ・タグページ
-add_filter('the_category_tag_content', 'do_shortcode');
-add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'wpautop');
+add_filter('the_category_tag_content', 'shortcode_unautop');
+add_filter('the_category_tag_content', 'do_shortcode');
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
