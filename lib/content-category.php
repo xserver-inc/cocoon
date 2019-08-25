@@ -41,6 +41,9 @@ endif;
 //カテゴリ色の取得
 if ( !function_exists( 'get_the_category_color' ) ):
 function get_the_category_color($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_color')) {
     return get_term_meta( $cat_id, 'the_category_color', true );
   } else {//旧バージョン対応
@@ -54,6 +57,9 @@ endif;
 //カテゴリ文字色の取得
 if ( !function_exists( 'get_the_category_text_color' ) ):
 function get_the_category_text_color($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_text_color')) {
     return get_term_meta( $cat_id, 'the_category_text_color', true );
   } else {//旧バージョン対応
@@ -67,6 +73,9 @@ endif;
 //カテゴリタイトルの取得
 if ( !function_exists( 'get_the_category_title' ) ):
 function get_the_category_title($cat_id = null, $is_cat_name = true){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   $res = null;
   if (term_metadata_exists($cat_id, 'the_category_title')) {
     $res = get_term_meta( $cat_id, 'the_category_title', true );
@@ -87,13 +96,13 @@ endif;
 //カテゴリ本文の取得
 if ( !function_exists( 'get_the_category_content' ) ):
 function get_the_category_content($cat_id = null, $for_editor = false){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_content')) {
     //取得できた場合はそのまま返す（本文編集などでも使われる）
     $content = get_term_meta( $cat_id, 'the_category_content', true );
   } else {//旧バージョン対応
-    if (!$cat_id) {
-      $cat_id = get_query_var('cat');
-    }
     $meta = get_the_category_meta($cat_id);
     if (!empty($meta['content']))
       $content = $meta['content'];
@@ -113,6 +122,9 @@ endif;
 //アイキャッチの取得
 if ( !function_exists( 'get_the_category_eye_catch_url' ) ):
 function get_the_category_eye_catch_url($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_eye_catch_url')) {
     $eye_catch_url = get_term_meta( $cat_id, 'the_category_eye_catch_url', true );
   } else {//旧バージョン対応
@@ -136,6 +148,9 @@ endif;
 //カテゴリのメタディスクリプション
 if ( !function_exists( 'get_the_category_meta_description' ) ):
 function get_the_category_meta_description($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_meta_description')) {
     return get_term_meta( $cat_id, 'the_category_meta_description', true );
   } else {//旧バージョン対応
@@ -172,6 +187,9 @@ endif;
 //キーワードの取得
 if ( !function_exists( 'get_the_category_meta_keywords' ) ):
 function get_the_category_meta_keywords($cat_id = null){
+  if (!$cat_id) {
+    $cat_id = get_query_var('cat');
+  }
   if (term_metadata_exists($cat_id, 'the_category_meta_keywords')) {
     return get_term_meta( $cat_id, 'the_category_meta_keywords', true );
   } else {//旧バージョン対応
