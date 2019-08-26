@@ -212,6 +212,17 @@ function get_skin_option($name){
 }
 endif;
 
+//フォームの際のスキンオプションの取得
+if ( !function_exists( 'get_form_skin_option' ) ):
+function get_form_skin_option($name){
+  global $_FORM_SKIN_OPTIONS;
+  //スキンにより固定値がある場合は採用する
+  if (isset($_FORM_SKIN_OPTIONS[$name])) {
+    return $_FORM_SKIN_OPTIONS[$name];
+  }
+}
+endif;
+
 //オプションの値をデータベースに保存する
 if ( !function_exists( 'update_theme_option' ) ):
 function update_theme_option($option_name){
@@ -225,7 +236,7 @@ if ( !function_exists( 'get_theme_option' ) ):
 function get_theme_option($option_name, $default = null){
   //スキンにより固定値がある場合は採用する
   $skin_option = get_skin_option($option_name);
-  if (!is_null($skin_option) && !is_admin_php_page()) {
+  if (!is_null($skin_option)) {
     if ($skin_option == '0') {
       $skin_option = 0;
     }
@@ -2952,5 +2963,22 @@ endif;
 if ( !function_exists( 'term_metadata_exists' ) ):
 function term_metadata_exists($term_id, $meta_key){
   return metadata_exists('term', $term_id, $meta_key);
+}
+endif;
+
+//スキン制御変数をクリアしてバックアップする
+if ( !function_exists( 'clear_global_skin_theme_options' ) ):
+function clear_global_skin_theme_options(){
+  global $_THEME_OPTIONS, $_FORM_SKIN_OPTIONS;
+  $_FORM_SKIN_OPTIONS = $_THEME_OPTIONS;
+  $_THEME_OPTIONS = array();
+}
+endif;
+
+//スキン制御変数を元に戻す
+if ( !function_exists( 'restore_global_skin_theme_options' ) ):
+function restore_global_skin_theme_options(){
+  global $_THEME_OPTIONS, $_FORM_SKIN_OPTIONS;
+  $_THEME_OPTIONS = $_FORM_SKIN_OPTIONS;
 }
 endif;
