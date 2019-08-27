@@ -426,7 +426,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo span.fa { font-family: FontAwesome; }
 .admin-settings .demo figure { margin: 0; }
-.admin-settings .demo img { max-width: 100%; height: auto; border: 0; -webkit-backface-visibility: hidden; }
+.admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }
@@ -1980,7 +1980,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo span.fa { font-family: FontAwesome; }
 .admin-settings .demo figure { margin: 0; }
-.admin-settings .demo img { max-width: 100%; height: auto; border: 0; -webkit-backface-visibility: hidden; }
+.admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }

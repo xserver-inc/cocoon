@@ -7,9 +7,9 @@ figure{
 
 img{
   max-width: 100%;
+  //display: inline-block;
   height: auto;
   border: 0;
-  -webkit-backface-visibility: hidden;
 }
 
 .circle-image img{
