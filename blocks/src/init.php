@@ -79,10 +79,10 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		true // Enqueue the script in the footer.
   );
   //ショートコードオブジェクトの取得
-  $baloons = get_speech_balloons();
-  $templates = get_function_texts();
-  $affiliates = get_affiliate_tags();
-  $rankings = get_item_rankings();
+  $baloons = get_speech_balloons(null, 'title');
+  $templates = get_function_texts(null, 'title');
+  $affiliates = get_affiliate_tags(null, 'title');
+  $rankings = get_item_rankings(null, 'title');
   $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
