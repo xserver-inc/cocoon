@@ -622,6 +622,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
+.admin-settings .demo .entry-content pre { line-height: 1.6; }
 .admin-settings .demo .entry-categories-tags { font-family: "Meiryo", sans-serif; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
@@ -2176,6 +2177,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
+.admin-settings .demo .entry-content pre { line-height: 1.6; }
 .admin-settings .demo .entry-categories-tags { font-family: "Meiryo", sans-serif; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
