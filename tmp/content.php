@@ -49,7 +49,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <?php dynamic_sidebar( 'below-single-content-title' ); ?>
         <?php endif; ?>
 
-        <?php //個性ページタイトル下ウイジェット
+        <?php //固定ページタイトル下ウイジェット
         if ( is_page() && is_active_sidebar( 'below-page-content-title' ) ): ?>
           <?php dynamic_sidebar( 'below-page-content-title' ); ?>
         <?php endif; ?>
