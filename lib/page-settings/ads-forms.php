@@ -284,6 +284,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
             generate_label_tag(OP_AD_LINKSWITCH_ID, __( 'LinkSwitch ID', THEME_NAME ));
+            echo '<br>';
             generate_textbox_tag(OP_AD_LINKSWITCH_ID, get_ad_linkswitch_id(), __( 'LinkSwitch IDの入力', THEME_NAME ));
             echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/linkswtch-id.png', __( 'バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してください。', THEME_NAME ));
             generate_tips_tag(__( 'LinkSwitchタグから取得できるIDを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/linkswitch/'));
