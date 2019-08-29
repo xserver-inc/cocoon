@@ -348,6 +348,8 @@ function generate_canonical_url(){
     $canonical_url = get_query_removed_requested_url();
   }
 
+  $canonical_url = user_trailingslashit($canonical_url);
+
   return apply_filters('generate_canonical_url', $canonical_url);
 }
 endif;
