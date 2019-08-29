@@ -659,13 +659,17 @@ function tiny_mce_before_init_custom( $mceInit ) {
 }
 endif;
 
-//無害化したプレーで医療のテンプレートファイル呼び出し
+//無害化したプレビューのテンプレートファイル呼び出し
 if ( !function_exists( 'get_sanitize_preview_template_part' ) ):
 function get_sanitize_preview_template_part($slug, $name = null){
+  restore_global_skin_theme_options();
+  // global $_THEME_OPTIONS;
+  // _v($_THEME_OPTIONS);
   ob_start();
   get_template_part($slug, $name);
   $tag = ob_get_clean();
   $tag = preg_replace('{<form.+?</form>}is', '', $tag);
   echo $tag;
+  clear_global_skin_theme_options();
 }
 endif;

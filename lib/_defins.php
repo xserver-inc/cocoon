@@ -196,10 +196,14 @@ $_MOBILE_WIDGET_DATA_AD_FORMATS = array(
 );
 // define('MOBILE_WIDGET_DATA_AD_FORMATS', $_MOBILE_WIDGET_DATA_AD_FORMATS);
 
-//設定向けのグローバル変数
+//スキン制御向けのグローバル変数
 global $_THEME_OPTIONS;
 if (is_null($_THEME_OPTIONS)) {
   $_THEME_OPTIONS = array();
+}
+global $_FORM_SKIN_OPTIONS;
+if (is_null($_FORM_SKIN_OPTIONS)) {
+  $_FORM_SKIN_OPTIONS = array();
 }
 
 

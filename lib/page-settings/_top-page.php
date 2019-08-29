@@ -14,6 +14,7 @@ $is_post_ok = isset($_POST[HIDDEN_FIELD_NAME]) &&
 if( $is_post_ok ):
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
+  do_action('cocoon_settings_before_save');
   ///////////////////////////////////////
   // 設定の保存
   ///////////////////////////////////////
@@ -115,6 +116,8 @@ if( $is_post_ok ):
     require_once get_template_directory().'/lib/skin.php';   //スキン
   }
 
+  do_action('cocoon_settings_after_save');
+
 endif;
 
 //画面に「設定は保存されました」メッセージを表示
@@ -200,6 +203,9 @@ endif;
   </ul>
 
   <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
+
+  <?php //スキン制御変数のクリアとバックアップ
+  clear_global_skin_theme_options(); ?>
 
   <!-- スキン -->
   <div class="skin metabox-holder">
@@ -391,6 +397,9 @@ endif;
   <div class="theme-about metabox-holder">
     <?php require_once abspath(__FILE__).'about-forms.php'; ?>
   </div><!-- /.metabox-holder -->
+
+  <?php //スキン制御変数の復元
+  restore_global_skin_theme_options(); ?>
 
 </div><!-- /#tabs -->
 <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('settings');?>">
