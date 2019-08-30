@@ -1055,7 +1055,7 @@ function generate_widget_entries_tag($atts){
   if ( $cat_ids || $tag_ids ) {
     //_v($cat_ids);
     $tax_querys = array();
-    if ($cat_ids && $taxonomy == 'category') {
+    if ($cat_ids && empty($tag_ids)) {
       $tax_querys[] = array(
         'taxonomy' => $taxonomy,
         'terms' => $cat_ids,
@@ -1064,7 +1064,7 @@ function generate_widget_entries_tag($atts){
         'operator' => 'IN'
       );
     }
-    if ($tag_ids && $taxonomy == 'post_tag') {
+    if ($tag_ids) {
       // _v($taxonomy);
       // _v($tag_ids);
       $tax_querys[] = array(
