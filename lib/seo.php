@@ -553,7 +553,7 @@ endif;
 add_action( 'wp_head', 'the_json_ld_tag' );
 if ( !function_exists( 'the_json_ld_tag' ) ):
 function the_json_ld_tag() {
-  if (is_singular()) {
+  if (is_singular() && is_json_ld_tag_enable()) {
     echo '<!-- '.THEME_NAME_CAMEL.' JSON-LD -->'.PHP_EOL;
     get_template_part('tmp/json-ld');
   }
