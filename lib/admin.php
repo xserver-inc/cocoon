@@ -673,3 +673,9 @@ function get_sanitize_preview_template_part($slug, $name = null){
   clear_global_skin_theme_options();
 }
 endif;
+
+if ( !function_exists( 'is_cocoon_settings_preview' ) ):
+function is_cocoon_settings_preview(){
+  return isset($_GET['preview']) && $_GET['preview'] == 'theme-settings';
+}
+endif;
