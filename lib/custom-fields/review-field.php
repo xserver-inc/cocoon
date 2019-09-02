@@ -32,7 +32,7 @@ function review_custom_box_view(){
 
   generate_label_tag('the_review_name', __('レビュー対象', THEME_NAME) );
   generate_textbox_tag('the_review_name', $the_review_name, '');
-  echo '<p class="howto">'.__( 'レビュー対象名を入力してください。', THEME_NAME ).'</p>';
+  echo '<p class="howto">'.__( 'レビュー対象名を入力してください。こちらを入力すると、レビュー構造化データを出力します。入力しないと出力されません。', THEME_NAME ).'</p>';
 
   //レート
   $the_review_rate = get_the_review_rate();

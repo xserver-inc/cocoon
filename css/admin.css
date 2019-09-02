@@ -3932,6 +3932,9 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .postbox input[type="text"] { width: 100%; }
 
+.postbox input[type="range"] { width: calc(100% - 18px); }
+.postbox .range-wrap { width: 100%; }
+
 .list-option { width: 50px; text-align: center; }
 
 #ranking-items { counter-reset: ranking-item-number; }

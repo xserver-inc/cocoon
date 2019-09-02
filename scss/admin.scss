@@ -561,6 +561,15 @@ select option.fa{
   width: 100%;
 }
 
+.postbox {
+  input[type="range"]{
+    width: calc(100% - 18px);
+  }
+  .range-wrap{
+    width: 100%;
+  }
+}
+
 
 // table.sb-list{
 //   border-collapse: collapse;
