@@ -40,7 +40,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         </h1>
 
         <?php //レビュー表示
-        if (is_the_review_enable()) {
+        if (is_the_page_review_enable()) {
           echo '<div class="review-rating">';
           echo get_rating_star_tag(get_the_review_rate(), 5, true);
           echo '</div>';

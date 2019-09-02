@@ -79,7 +79,7 @@ if (is_amp_image_zoom_effect_gallery()) {
 <?php //JSON-LDの読み込み
 if (is_json_ld_tag_enable()) {
   get_template_part('tmp/json-ld');
-  if (is_the_review_enable()) {
+  if (is_the_page_review_enable()) {
     get_template_part('tmp/json-ld-review');
   }
 }?>

@@ -27,12 +27,18 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'review_custom_box_view' ) ):
 function review_custom_box_view(){
+
+
+  //AMPの除外
+  $the_review_enable = is_the_review_enable();
+  generate_checkbox_tag('the_review_enable' , $the_review_enable, __( '評価を表示する', THEME_NAME ));
+  generate_howro_tag(__( 'レビュー構造化データを出力するか。', THEME_NAME ));
+
   //対象
   $the_review_name = get_the_review_name();
-
   generate_label_tag('the_review_name', __('レビュー対象', THEME_NAME) );
   generate_textbox_tag('the_review_name', $the_review_name, '');
-  echo '<p class="howto">'.__( 'レビュー対象名を入力してください。こちらを入力すると、レビュー構造化データを出力します。入力しないと出力されません。', THEME_NAME ).'</p>';
+  generate_howro_tag(__( 'レビュー対象名を入力。※必須', THEME_NAME ));
 
   //レート
   $the_review_rate = get_the_review_rate();
@@ -41,7 +47,7 @@ function review_custom_box_view(){
   }
   generate_label_tag('the_review_rate', __('レビュー評価', THEME_NAME) );
   generate_range_tag('the_review_rate',$the_review_rate, 0, 5, 0.5);
-  echo '<p class="howto">'.__( '0から5の範囲で評価を入力してください。', THEME_NAME ).'</p>';
+  generate_howro_tag(__( '0から5の範囲で評価を入力。', THEME_NAME ));
 
 }
 endif;
@@ -50,6 +56,12 @@ add_action('save_post', 'review_custom_box_save_data');
 if ( !function_exists( 'review_custom_box_save_data' ) ):
 function review_custom_box_save_data(){
   $id = get_the_ID();
+  //有効/無効
+  $the_review_enable = !empty($_POST['the_review_enable']) ? 1 : 0;
+  $the_review_enable_key = 'the_review_enable';
+  add_post_meta($id, $the_review_enable_key, $the_review_enable, true);
+  update_post_meta($id, $the_review_enable_key, $the_review_enable);
+
   //名前
   if ( isset( $_POST['the_review_name'] ) ){
     $the_review_name = $_POST['the_review_name'];
@@ -82,13 +94,19 @@ function get_the_review_rate(){
 }
 endif;
 
-
 //レビューが有効か
 if ( !function_exists( 'is_the_review_enable' ) ):
-  function is_the_review_enable(){
-    return get_the_review_name();
-  }
-  endif;
+function is_the_review_enable(){
+  return get_post_meta(get_the_ID(), 'the_review_enable', true);
+}
+endif;
+
+//ページのレビューが有効か
+if ( !function_exists( 'is_the_page_review_enable' ) ):
+function is_the_page_review_enable(){
+  return is_the_review_enable() && get_the_review_name();
+}
+endif;
 
 
 
