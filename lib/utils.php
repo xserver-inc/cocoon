@@ -2212,7 +2212,7 @@ function is_the_page_sidebar_visible(){
   if (!is_active_sidebar( 'sidebar' )) {
     $sidebar_visible = false;
   }
-  return $sidebar_visible;
+  return apply_filters('is_sidebar_visible', $sidebar_visible);
 }
 endif;
 
