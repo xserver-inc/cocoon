@@ -12,7 +12,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-$author = (get_the_author_meta('nickname') ? get_the_author_meta('nickname') : get_bloginfo('name'));
+$author = (get_the_author_meta('display_name') ? get_the_author_meta('display_name') : get_bloginfo('name'));
  ?>
 <script type="application/ld+json">
 {
