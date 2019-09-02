@@ -10,6 +10,8 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit;
+
+$author = (get_the_author_meta('nickname') ? get_the_author_meta('nickname') : get_bloginfo('name'));
  ?>
 <script type="application/ld+json">
 {
@@ -17,10 +19,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
   "@type": "Article",
   "mainEntityOfPage":{
     "@type":"WebPage",
-    "@id":"<?php the_permalink(); ?>"<?php  // パーマリンクを取得 ?>
+    "@id":"<?php echo esc_attr(get_the_permalink()); ?>"<?php  // パーマリンクを取得 ?>
 
   },
-  "headline": "<?php the_title();?>",<?php // ページタイトルを取得 ?>
+  "headline": "<?php echo esc_attr(get_the_title());?>",<?php // ページタイトルを取得 ?>
 
   "image": {
     "@type": "ImageObject",
@@ -53,23 +55,23 @@ if ($image_url && file_exists($image_file)) {
   $width = 800;
   $height = 451;
 } ?>
-    "url": "<?php echo $image_url;?>",
+    "url": "<?php echo esc_url($image_url);?>",
     "width": <?php echo $width; ?>,
     "height": <?php echo $height; ?>
 
   },
-  "datePublished": "<?php echo get_seo_post_time(); ?>",<?php  // 記事投稿時間（分岐しているのbbPressのトピック対策） ?>
+  "datePublished": "<?php echo esc_attr(get_seo_post_time()); ?>",<?php  // 記事投稿時間（分岐しているのbbPressのトピック対策） ?>
 
-  "dateModified": "<?php echo get_seo_update_time(); ?>",<?php  // 記事更新時間 ?>
+  "dateModified": "<?php echo esc_attr(get_seo_update_time()); ?>",<?php  // 記事更新時間 ?>
 
   "author": {
     "@type": "Person",
-    "name": "<?php echo (get_the_author_meta('nickname') ? get_the_author_meta('nickname') : get_bloginfo('name')); ?>"<?php // 投稿者ニックネーム ?>
+    "name": "<?php echo esc_attr($author); ?>"<?php // 投稿者ニックネーム ?>
 
   },
   "publisher": {
     "@type": "Organization",
-    "name": "<?php bloginfo('name'); ?>",<?php // サイト名 ?>
+    "name": "<?php echo esc_attr(get_bloginfo( 'name' )); ?>",<?php // サイト名 ?>
 
 <?php //後で修正
 $image_url = get_amp_logo_image_url();
@@ -98,14 +100,14 @@ if ($image_url && file_exists($image_file)) {//ロゴ画像がある場合
 }?>
     "logo": {
       "@type": "ImageObject",
-      "url": "<?php echo $image_url; ?>",<?php  // ロゴ画像 ?>
+      "url": "<?php echo esc_url($image_url); ?>",<?php  // ロゴ画像 ?>
 
       "width": <?php echo $width; ?>,
       "height": <?php echo $height; ?>
 
     }
   },
-  "description": "<?php echo get_meta_description_text(); ?>…"<?php  // 抜粋 ?>
+  "description": "<?php echo esc_attr(get_meta_description_text()); ?>…"<?php  // 抜粋 ?>
 
 }
 </script>
