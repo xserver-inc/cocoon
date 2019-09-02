@@ -556,6 +556,10 @@ function the_json_ld_tag() {
   if (is_singular() && is_json_ld_tag_enable()) {
     echo '<!-- '.THEME_NAME_CAMEL.' JSON-LD -->'.PHP_EOL;
     get_template_part('tmp/json-ld');
+    if (is_the_review_enable()) {
+      echo '<!-- '.THEME_NAME_CAMEL.' Review JSON-LD -->'.PHP_EOL;
+      get_template_part('tmp/json-ld-review');
+    }
   }
 }
 endif;

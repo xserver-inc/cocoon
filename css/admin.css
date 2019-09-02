@@ -3930,7 +3930,7 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .red { color: red; margin-left: 1em; }
 
-#singular_redirect_settings input[type="text"] { width: 100%; }
+.postbox input[type="text"] { width: 100%; }
 
 .list-option { width: 50px; text-align: center; }
 

@@ -39,6 +39,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
            ?>
         </h1>
 
+        <?php //レビュー表示
+        if (is_the_review_enable()) {
+          echo '<div class="review-rating">';
+          echo get_rating_star_tag(get_the_review_rate(), 5, true);
+          echo '</div>';
+        }
+        ?>
+
         <?php //タイトル下の広告表示
         if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
