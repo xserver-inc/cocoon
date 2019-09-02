@@ -87,6 +87,7 @@ require_once abspath(__FILE__).'custom-fields/seo-field.php'; //SEOのページ�
 require_once abspath(__FILE__).'custom-fields/ad-field.php';  //広告のページ設定
 require_once abspath(__FILE__).'custom-fields/page-field.php';//投稿・固定ページのページ設定
 require_once abspath(__FILE__).'custom-fields/update-field.php'; //アップデートのページ設定
+require_once abspath(__FILE__).'custom-fields/review-field.php'; //レビュー設定
 require_once abspath(__FILE__).'custom-fields/redirect-field.php'; //リダイレクト設定
 require_once abspath(__FILE__).'custom-fields/amp-field.php'; //AMPのページ設定
 require_once abspath(__FILE__).'custom-fields/custom-css-field.php'; //カスタムCSS設定
