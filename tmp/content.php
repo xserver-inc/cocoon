@@ -42,7 +42,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //レビュー表示
         if (is_the_review_enable()) {
           echo '<div class="review-rating">';
-          echo get_rating_star_tag(get_the_review_rate(), 10, true);
+          echo get_rating_star_tag(get_the_review_rate(), 5, true);
           echo '</div>';
         }
         ?>

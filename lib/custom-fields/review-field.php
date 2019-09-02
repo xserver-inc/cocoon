@@ -40,8 +40,8 @@ function review_custom_box_view(){
     $the_review_rate = 5;
   }
   generate_label_tag('the_review_rate', __('レビュー評価', THEME_NAME) );
-  generate_range_tag('the_review_rate',$the_review_rate, 0, 10, 0.5);
-  echo '<p class="howto">'.__( '評価を入力してください。', THEME_NAME ).'</p>';
+  generate_range_tag('the_review_rate',$the_review_rate, 0, 5, 0.5);
+  echo '<p class="howto">'.__( '0から5の範囲で評価を入力してください。', THEME_NAME ).'</p>';
 
 }
 endif;
