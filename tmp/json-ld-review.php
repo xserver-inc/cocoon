@@ -25,7 +25,7 @@ $author = (get_the_author_meta('nickname') ? get_the_author_meta('nickname') : g
   "reviewRating": {
     "@type": "Rating",
     "ratingValue": "<?php echo esc_attr(get_the_review_rate()); ?>",
-    "bestRating": "10"
+    "bestRating": "10",
     "worstRating": "0"
   },
   "datePublished": "<?php echo esc_attr(get_seo_post_time()); ?>",
