@@ -73,7 +73,7 @@ function tag_code_to_minify_js($buffer) {
               // || includes_string($url, '/wp-includes/js/wp-util.min.js')
               //コードハイライト
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
-              || includes_string($url, '/plugins/highlight-js/highlight.min.js')
+              || includes_string($url, '/plugins/highlight-js/highlight')
               || includes_string($url, '/plugins/ip-geo-block/')
               //|| (strpos($url, '/plugins/wpforo/') !== false)
               //|| (strpos($url, '/buddypress/bp-core/js/') !== false)

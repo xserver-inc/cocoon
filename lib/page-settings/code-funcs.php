@@ -22,6 +22,11 @@ function get_code_highlight_package(){
   return get_theme_option(OP_CODE_HIGHLIGHT_PACKAGE, 'light');
 }
 endif;
+if ( !function_exists( 'is_code_highlight_package_light' ) ):
+function is_code_highlight_package_light(){
+  return get_code_highlight_package() == 'light';
+}
+endif;
 
 //ソースコードのハイライトタイプ
 define('OP_CODE_HIGHLIGHT_STYLE', 'code_highlight_style');

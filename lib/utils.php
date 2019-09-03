@@ -544,10 +544,17 @@ if ( !function_exists( 'wp_enqueue_highlight_js' ) ):
 function wp_enqueue_highlight_js(){
   //global $pagenow;
   if ( (is_code_highlight_enable() && is_singular()) || is_admin_php_page() ) {
-
+    if (is_code_highlight_package_light()) {
+      $file_name = 'highlight.min.js';
+    } else {
+      $file_name = 'highlight.all.min.js';
+    }
     //ソースコードハイライト表示用のスタイル
     wp_enqueue_style( 'code-highlight-style',  get_highlight_js_css_url() );
-    wp_enqueue_script( 'code-highlight-js', get_template_directory_uri() . '/plugins/highlight-js/highlight.min.js', array( 'jquery' ), false, true );
+    //ソースコードハイライト表示用のライブラリ
+    $url = get_template_directory_uri() . '/plugins/highlight-js/'.$file_name;
+    $url = apply_filters( 'code_highlight_js_url', $url );
+    wp_enqueue_script( 'code-highlight-js', $url, array( 'jquery' ), false, true );
     if (is_admin_php_page()) {
       $selector = '.entry-content pre';
     } else {
