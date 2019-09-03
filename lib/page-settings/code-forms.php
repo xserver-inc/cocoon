@@ -55,6 +55,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- ライブラリ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CODE_HIGHLIGHT_PACKAGE, __( 'ライブラリ', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'light' => '軽量版（よく利用されている言語のみ）',
+              'all' => '全て（対応している言語全て）',
+            );
+            generate_radiobox_tag(OP_CODE_HIGHLIGHT_PACKAGE, $options, get_code_highlight_package());
+            generate_tips_tag(__( 'ソースコードの対応言語を増やすには「全て」を選択してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- ハイライトスタイル -->
         <tr>
           <th scope="row">

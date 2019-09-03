@@ -15,6 +15,14 @@ function is_code_highlight_enable(){
 }
 endif;
 
+//ソースコードのライブラリ
+define('OP_CODE_HIGHLIGHT_PACKAGE', 'code_highlight_package');
+if ( !function_exists( 'get_code_highlight_package' ) ):
+function get_code_highlight_package(){
+  return get_theme_option(OP_CODE_HIGHLIGHT_PACKAGE, 'light');
+}
+endif;
+
 //ソースコードのハイライトタイプ
 define('OP_CODE_HIGHLIGHT_STYLE', 'code_highlight_style');
 if ( !function_exists( 'get_code_highlight_style' ) ):
