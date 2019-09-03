@@ -1452,9 +1452,6 @@ img.emoji {
 }
 
 /*本文下カテゴリとタグ*/
-.entry-categories-tags {
-  font-family: "Meiryo", sans-serif;
-}
 .entry-categories-tags > div {
   margin-bottom: 0.5em;
 }
