@@ -10,9 +10,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <html <?php language_attributes(); ?>>
 
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
 get_template_part('tmp/head-analytics'); ?>
-<meta charset="utf-8">
 <?php //AMPの案内タグを出力
 if ( has_amp_page() ): ?>
 <link rel="amphtml" href="<?php echo get_amp_permalink(); ?>">
@@ -33,14 +35,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','<?php echo $tracking_id; ?>');</script>
 <!-- End Google Tag Manager -->
 <?php endif //Google Tag Manager終了 ?>
-
-<?php // force Internet Explorer to use the latest rendering engine available ?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<?php // mobile meta (hooray!) ?>
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 
 <?php //自動アドセンス
 get_template_part('tmp/ad-auto-adsense'); ?>
