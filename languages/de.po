@@ -14,7 +14,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: blocks\n"
+"X-Poedit-SearchPathExcluded-0: blocks/.git\n"
+"X-Poedit-SearchPathExcluded-1: blocks/bower_components\n"
+"X-Poedit-SearchPathExcluded-2: blocks/node_modules\n"
+"X-Poedit-SearchPathExcluded-3: .git\n"
+"X-Poedit-SearchPathExcluded-4: .vscode\n"
+"X-Poedit-SearchPathExcluded-5: plugins\n"
 
 #: comments.php:43
 #, fuzzy, php-format
