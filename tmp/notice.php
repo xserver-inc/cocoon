@@ -17,7 +17,7 @@ if ($url):
   $target = is_notice_link_target_blank() ? ' target="_blank" rel="noopener"' : '';
 ?>
 <div id="notice-area-wrap" class="notice-area-wrap">
-  <a href="<?php echo $url; ?>" class="notice-area-link" class="notice-area-link"<?php echo $target; ?>>
+  <a href="<?php echo $url; ?>" id="notice-area-link" class="notice-area-link"<?php echo $target; ?>>
   <?php endif ?>
 
     <div id="notice-area" class="notice-area nt-<?php echo get_notice_type(); ?>">
