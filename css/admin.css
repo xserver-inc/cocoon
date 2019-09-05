@@ -3459,8 +3459,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
 .admin-settings .demo .display-none { display: none; }
-.admin-settings .demo .notice-area-wrap { display: block; text-decoration: none; }
-.admin-settings .demo .notice-area-wrap:hover { opacity: 0.8; }
+.admin-settings .demo .notice-area-link { display: block; text-decoration: none; }
+.admin-settings .demo .notice-area-link:hover { opacity: 0.8; }
 .admin-settings .demo .notice-area { color: #fff; text-align: center; background-color: #4cae4c; padding: 0.6em; font-size: 0.8em; }
 .admin-settings .demo .notice-area.nt-warning { background-color: #f7ab00; }
 .admin-settings .demo .notice-area.nt-danger { background-color: #ff6666; }

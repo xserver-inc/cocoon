@@ -8032,11 +8032,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   display: none;
 }
 
-.notice-area-wrap {
+.notice-area-link {
   display: block;
   text-decoration: none;
 }
-.notice-area-wrap:hover {
+.notice-area-link:hover {
   opacity: 0.8;
 }
 

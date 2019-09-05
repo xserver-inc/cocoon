@@ -1145,7 +1145,7 @@ ul.menu-drawer:after{
     font-size: 1em;
      transition:all 500ms ease-in-out;
 }
-.notice-area-wrap:hover {
+.notice-area-link:hover {
     opacity: .8;
 }
 .notice-area:hover{
