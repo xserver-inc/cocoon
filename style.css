@@ -9711,7 +9711,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container .mobile-menu-buttons,
   #container .toc,
   #container .sns-share,
-  #container .widget {
+  #container .widget,
+  #container #notice-area-wrap,
+  #container #wpadminbar,
+  #container #appeal {
     display: none !important;
   }
   #container .main,
@@ -9723,6 +9726,9 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
     padding: 0;
     border: none;
     overflow-wrap: normal;
+  }
+  #container .main {
+    width: 100% !important;
   }
   #container h1,
   #container h2,

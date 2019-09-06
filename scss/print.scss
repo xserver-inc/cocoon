@@ -17,7 +17,10 @@
   .mobile-menu-buttons,
   .toc,
   .sns-share,
-  .widget{
+  .widget,
+  #notice-area-wrap,
+  #wpadminbar,
+  #appeal{
     display: none !important;
   }
 
@@ -30,6 +33,9 @@
     padding: 0;
     border: none;
     overflow-wrap: normal;
+  }
+  .main{
+    width: 100% !important;
   }
 
   h1,
