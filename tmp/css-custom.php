@@ -721,8 +721,11 @@ if ($is_IE): ?>
 	display: block;
 }
   <?php if(is_singular() && is_eyecatch_visible() && has_post_thumbnail()): ?>
-  .main .eye-catch-wrap {
-    display: flex;
+  .eye-catch-wrap {
+    text-align: center;
+  }
+  .eye-catch{
+    display: inline-block;
   }
   <?php endif; ?>
 <?php endif; ?>
