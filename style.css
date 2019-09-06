@@ -9713,8 +9713,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container .sns-share,
   #container .widget,
   #container #notice-area-wrap,
+  #container #notice-area,
   #container #wpadminbar,
-  #container #appeal {
+  #container #appeal,
+  #container #recommended,
+  #container #carousel {
     display: none !important;
   }
   #container .main,
