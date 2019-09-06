@@ -31,14 +31,11 @@ class PcAdWidgetItem extends WP_Widget {
     $is_label_visible = apply_filters( 'widget_is_label_visible', !empty($instance['is_label_visible']) ? $instance['is_label_visible'] : 0 );
 
     if ( !is_404() && //404ページでないとき
-         is_all_ads_visible() ):
+         is_ads_visible() ){
       echo $args['before_widget'];
       get_template_part_with_ad_format($format, 'pc-ad-widget', $is_label_visible, $ad);
-       ?>
-
-      <?php echo $args['after_widget'];
-    endif //!is_404 ?>
-  <?php
+      echo $args['after_widget'];
+    } //!is_404
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
