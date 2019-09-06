@@ -27,9 +27,7 @@ endif;
 ///////////////////////////////////////
 if ( !function_exists( 'review_custom_box_view' ) ):
 function review_custom_box_view(){
-
-
-  //AMPの除外
+  //レビュー切り換え
   $the_review_enable = is_the_review_enable();
   generate_checkbox_tag('the_review_enable' , $the_review_enable, __( '評価を表示する', THEME_NAME ));
   generate_howro_tag(__( 'レビュー構造化データを出力するか。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/review-structured-data/'));

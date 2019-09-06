@@ -91,7 +91,6 @@ function generate_selectbox_tag($name, $options, $now_value, $label = null, $ico
 }
 endif;
 
-
 //レンジボックスの生成
 if ( !function_exists( 'generate_range_tag' ) ):
 function generate_range_tag($name, $value, $min, $max, $step){
