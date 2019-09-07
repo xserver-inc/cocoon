@@ -505,6 +505,10 @@ h2.entry-card-title.card-title.e-card-title {
     box-shadow: 0 1px 1px slategrey;
 }
 
+.pager-prev-next .page-numbers{
+    border-radius: 20px;
+}
+
 a.page-numbers:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 5px slategrey;
