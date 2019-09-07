@@ -563,6 +563,14 @@ footer.article-footer.entry-footer {
     position: static;
 }
 
+.review-rating .rating-star{
+    background-color: transparent;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+
 .eye-catch {
     position: relative;
     margin-bottom: .6em;
