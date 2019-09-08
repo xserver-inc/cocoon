@@ -557,11 +557,11 @@ select option.fa{
   margin-left: 1em;
 }
 
-.postbox input[type="text"]{
+.components-panel input[type="text"]{
   width: 100%;
 }
 
-.postbox {
+.components-panel {
   input[type="range"]{
     width: calc(100% - 18px);
   }

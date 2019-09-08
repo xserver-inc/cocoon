@@ -3929,10 +3929,10 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .red { color: red; margin-left: 1em; }
 
-.postbox input[type="text"] { width: 100%; }
+.components-panel input[type="text"] { width: 100%; }
 
-.postbox input[type="range"] { width: calc(100% - 18px); }
-.postbox .range-wrap { width: 100%; }
+.components-panel input[type="range"] { width: calc(100% - 18px); }
+.components-panel .range-wrap { width: 100%; }
 
 .list-option { width: 50px; text-align: center; }
 
