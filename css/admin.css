@@ -3809,7 +3809,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #container h2 { font-size: 18.5pt; }
   .admin-settings .demo #container h3 { font-size: 16pt; }
   .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; }
-  .admin-settings .demo #wpadminbar, .admin-settings .demo #go-to-top #admin-panel { display: none !important; } }
+  .admin-settings .demo #wpadminbar, .admin-settings .demo #go-to-top, .admin-settings .demo #admin-panel { display: none !important; } }
 .admin-settings .demo pre { padding: 10px; }
 .admin-settings .demo .entry-content { margin: 0; }
 .admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
