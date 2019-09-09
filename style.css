@@ -9714,11 +9714,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container .widget,
   #container #notice-area-wrap,
   #container #notice-area,
-  #container #wpadminbar,
   #container #appeal,
   #container #recommended,
-  #container #carousel {
+  #container #carousel,
+  #container #go-to-top {
     display: none !important;
+  }
+  #container .content-in {
+    display: block;
   }
   #container .main,
   #container .content,
@@ -9757,6 +9760,12 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #container h5,
   #container .article h6 {
     font-size: 14pt;
+  }
+
+  #wpadminbar,
+  #go-to-top
+  #admin-panel {
+    display: none !important;
   }
 }
 /************************************

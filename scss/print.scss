@@ -20,11 +20,15 @@
   .widget,
   #notice-area-wrap,
   #notice-area,
-  #wpadminbar,
   #appeal,
   #recommended,
-  #carousel{
+  #carousel,
+  #go-to-top{
     display: none !important;
+  }
+
+  .content-in{
+    display: block;
   }
 
   .main,
@@ -40,6 +44,13 @@
   .main{
     width: 100% !important;
   }
+
+  // .entry-content,
+  // .entry-content *{
+  //   margin-top: 10pt;
+  //   margin-bottom: 10pt;
+  //   font-size: 14pt;
+  // }
 
   h1,
   h2,
@@ -72,5 +83,10 @@
   .article h6 {
     font-size: 14pt;
   }
+}
+#wpadminbar,
+#go-to-top
+#admin-panel,{
+  display: none !important;
 }
 

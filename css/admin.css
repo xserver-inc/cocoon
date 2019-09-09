@@ -3800,14 +3800,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** 印刷用スタイル
 ************************************/ }
   .admin-settings .demo #container { font-size: 11pt; }
-  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer, .admin-settings .demo #container #admin-panel, .admin-settings .demo #container #go-to-top, .admin-settings .demo #container .go-to-top-button, .admin-settings .demo #container #fb-root, .admin-settings .demo #container .mobile-menu-buttons, .admin-settings .demo #container .toc, .admin-settings .demo #container .sns-share, .admin-settings .demo #container .widget, .admin-settings .demo #container #notice-area-wrap, .admin-settings .demo #container #notice-area, .admin-settings .demo #container #wpadminbar, .admin-settings .demo #container #appeal, .admin-settings .demo #container #recommended, .admin-settings .demo #container #carousel { display: none !important; }
+  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer, .admin-settings .demo #container #admin-panel, .admin-settings .demo #container #go-to-top, .admin-settings .demo #container .go-to-top-button, .admin-settings .demo #container #fb-root, .admin-settings .demo #container .mobile-menu-buttons, .admin-settings .demo #container .toc, .admin-settings .demo #container .sns-share, .admin-settings .demo #container .widget, .admin-settings .demo #container #notice-area-wrap, .admin-settings .demo #container #notice-area, .admin-settings .demo #container #appeal, .admin-settings .demo #container #recommended, .admin-settings .demo #container #carousel, .admin-settings .demo #container #go-to-top { display: none !important; }
+  .admin-settings .demo #container .content-in { display: block; }
   .admin-settings .demo #container .main, .admin-settings .demo #container .content, .admin-settings .demo #container .wrap { width: auto; margin: 0; float: none; padding: 0; border: none; overflow-wrap: normal; }
   .admin-settings .demo #container .main { width: 100% !important; }
   .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; }
   .admin-settings .demo #container h1 { font-size: 21.5pt; }
   .admin-settings .demo #container h2 { font-size: 18.5pt; }
   .admin-settings .demo #container h3 { font-size: 16pt; }
-  .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; } }
+  .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; }
+  .admin-settings .demo #wpadminbar, .admin-settings .demo #go-to-top #admin-panel { display: none !important; } }
 .admin-settings .demo pre { padding: 10px; }
 .admin-settings .demo .entry-content { margin: 0; }
 .admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
