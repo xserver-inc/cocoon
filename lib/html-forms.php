@@ -1247,14 +1247,13 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
           } else {
             $author_display_name = strip_tags(get_the_author_display_name($user_id));
             $author_website_url = strip_tags(get_the_author_website_url($user_id));
-            $description = strip_tags($description);
             $name = $author_display_name;
             if ($author_website_url) {
               $name = '<a href="'.esc_url($author_website_url).'" target="_blank" rel="nofollow noopener">'.esc_html($author_display_name).'</a>';
             }
             //echo $name;
           }
-          echo apply_filters( 'the_author_box_name', $name );
+          echo apply_filters( 'the_author_box_name', $name, $user_id );
 
 
         } else {
@@ -1265,7 +1264,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
       <div class="author-description">
         <?php
         if ($description) {
-          echo $description;
+          echo apply_filters( 'the_author_box_description', $description, $user_id );
         } elseif (!$user_id) {
           if (is_buddypress_exist()) {
             echo __( '未登録のユーザーさんです。', THEME_NAME );
