@@ -3804,7 +3804,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo #container .content-in { display: block; }
   .admin-settings .demo #container .main, .admin-settings .demo #container .content, .admin-settings .demo #container .wrap { width: auto; margin: 0; float: none; padding: 0; border: none; overflow-wrap: normal; }
   .admin-settings .demo #container .main { width: 100% !important; }
-  .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; }
+  .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; color: #333; }
   .admin-settings .demo #container h1 { font-size: 21.5pt; }
   .admin-settings .demo #container h2 { font-size: 18.5pt; }
   .admin-settings .demo #container h3 { font-size: 16pt; }
