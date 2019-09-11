@@ -249,9 +249,9 @@ define('TRANSIENT_BLOGCARD_PREFIX', THEME_NAME.'_bcc_');
 //AMPのプレフィックス
 define('TRANSIENT_AMP_PREFIX', THEME_NAME.'_amp_');
 //Amazon APIのプレフィックス
-define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_api_asin_');
+define('TRANSIENT_AMAZON_API_PREFIX', THEME_NAME.'_amazon_paapi_v5_asin_');
 //Amazon APIのバックアッププレフィックス
-define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_api_asin_');
+define('TRANSIENT_BACKUP_AMAZON_API_PREFIX', THEME_NAME.'_backup_amazon_paapi_v5_asin_');
 //楽天APIのプレフィックス
 define('TRANSIENT_RAKUTEN_API_PREFIX', THEME_NAME.'_rakuten_api_id_');
 //楽天APIのバックアッププレフィックス
@@ -313,6 +313,9 @@ define('THEME_HTTPS_REDIRECT_HTACCESS_BEGIN', '#BEGIN '.THEME_NAME_UPPER.' HTTPS
 define('THEME_HTTPS_REDIRECT_HTACCESS_END',   '#END '  .THEME_NAME_UPPER.' HTTPS REDIRECT HTACCESS');
 define('THEME_HTTPS_REDIRECT_HTACCESS_REG', '{'.THEME_HTTPS_REDIRECT_HTACCESS_BEGIN.'.+?'.THEME_HTTPS_REDIRECT_HTACCESS_END.'}s');
 define('THEME_HTTPS_REWRITERULE_REG', '/RewriteRule .+ https:\/\/%{HTTP_HOST}%{REQUEST_URI}/i');
+
+//サービスドメイン
+define('AMAZON_DOMAIN', __( 'www.amazon.co.jp', THEME_NAME ));
 
 //Amazon ASINエラー
 define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした。存在しないASINを指定している可能性があります。', THEME_NAME ));
