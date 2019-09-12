@@ -179,7 +179,7 @@ function rakuten_product_link_shortcode($atts){
         $jb = $json['body'];
         if ($jb) {
           $jb = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $jb, 1);
-            $json['body'] = $jb;
+          $json['body'] = $jb;
         }
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $cache_expiration);

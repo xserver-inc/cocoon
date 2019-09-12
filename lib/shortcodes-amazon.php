@@ -7,80 +7,288 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+if ( !class_exists( 'CocoonAwsV4' ) ):
+class CocoonAwsV4 {
+
+  private $accessKey = null;
+  private $secretKey = null;
+  private $path = null;
+  private $regionName = null;
+  private $serviceName = null;
+  private $httpMethodName = null;
+  private $queryParametes = array ();
+  private $awsHeaders = array ();
+  private $payload = "";
+
+  private $HMACAlgorithm = "AWS4-HMAC-SHA256";
+  private $aws4Request = "aws4_request";
+  private $strSignedHeader = null;
+  private $xAmzDate = null;
+  private $currentDate = null;
+
+  public function __construct($accessKey, $secretKey) {
+      $this->accessKey = $accessKey;
+      $this->secretKey = $secretKey;
+      $this->xAmzDate = $this->getTimeStamp ();
+      $this->currentDate = $this->getDate ();
+  }
+
+  function setPath($path) {
+      $this->path = $path;
+  }
+
+  function setServiceName($serviceName) {
+      $this->serviceName = $serviceName;
+  }
+
+  function setRegionName($regionName) {
+      $this->regionName = $regionName;
+  }
+
+  function setPayload($payload) {
+      $this->payload = $payload;
+  }
+
+  function setRequestMethod($method) {
+      $this->httpMethodName = $method;
+  }
+
+  function addHeader($headerName, $headerValue) {
+      $this->awsHeaders [$headerName] = $headerValue;
+  }
+
+  private function prepareCanonicalRequest() {
+      $canonicalURL = "";
+      $canonicalURL .= $this->httpMethodName . "\n";
+      $canonicalURL .= $this->path . "\n" . "\n";
+      $signedHeaders = '';
+      foreach ( $this->awsHeaders as $key => $value ) {
+          $signedHeaders .= $key . ";";
+          $canonicalURL .= $key . ":" . $value . "\n";
+      }
+      $canonicalURL .= "\n";
+      $this->strSignedHeader = substr ( $signedHeaders, 0, - 1 );
+      $canonicalURL .= $this->strSignedHeader . "\n";
+      $canonicalURL .= $this->generateHex ( $this->payload );
+      return $canonicalURL;
+  }
+
+  private function prepareStringToSign($canonicalURL) {
+      $stringToSign = '';
+      $stringToSign .= $this->HMACAlgorithm . "\n";
+      $stringToSign .= $this->xAmzDate . "\n";
+      $stringToSign .= $this->currentDate . "/" . $this->regionName . "/" . $this->serviceName . "/" . $this->aws4Request . "\n";
+      $stringToSign .= $this->generateHex ( $canonicalURL );
+      return $stringToSign;
+  }
+
+  private function calculateSignature($stringToSign) {
+      $signatureKey = $this->getSignatureKey ( $this->secretKey, $this->currentDate, $this->regionName, $this->serviceName );
+      $signature = hash_hmac ( "sha256", $stringToSign, $signatureKey, true );
+      $strHexSignature = strtolower ( bin2hex ( $signature ) );
+      return $strHexSignature;
+  }
+
+  public function getHeaders() {
+      $this->awsHeaders ['x-amz-date'] = $this->xAmzDate;
+      ksort ( $this->awsHeaders );
+
+      // Step 1: CREATE A CANONICAL REQUEST
+      $canonicalURL = $this->prepareCanonicalRequest ();
+
+      // Step 2: CREATE THE STRING TO SIGN
+      $stringToSign = $this->prepareStringToSign ( $canonicalURL );
+
+      // Step 3: CALCULATE THE SIGNATURE
+      $signature = $this->calculateSignature ( $stringToSign );
+
+      // Step 4: CALCULATE AUTHORIZATION HEADER
+      if ($signature) {
+          $this->awsHeaders ['Authorization'] = $this->buildAuthorizationString ( $signature );
+          return $this->awsHeaders;
+      }
+  }
+
+  private function buildAuthorizationString($strSignature) {
+      return $this->HMACAlgorithm . " " . "Credential=" . $this->accessKey . "/" . $this->getDate () . "/" . $this->regionName . "/" . $this->serviceName . "/" . $this->aws4Request . "," . "SignedHeaders=" . $this->strSignedHeader . "," . "Signature=" . $strSignature;
+  }
+
+  private function generateHex($data) {
+      return strtolower ( bin2hex ( hash ( "sha256", $data, true ) ) );
+  }
+
+  private function getSignatureKey($key, $date, $regionName, $serviceName) {
+      $kSecret = "AWS4" . $key;
+      $kDate = hash_hmac ( "sha256", $date, $kSecret, true );
+      $kRegion = hash_hmac ( "sha256", $regionName, $kDate, true );
+      $kService = hash_hmac ( "sha256", $serviceName, $kRegion, true );
+      $kSigning = hash_hmac ( "sha256", $this->aws4Request, $kService, true );
+
+      return $kSigning;
+  }
+
+  private function getTimeStamp() {
+      return gmdate ( "Ymd\THis\Z" );
+  }
+
+  private function getDate() {
+      return gmdate ( "Ymd" );
+  }
+}
+endif;
+
+
+
+
+
+//JSONがエラーを出力しているか
+if ( !function_exists( 'is_paapi_json_error' ) ):
+function is_paapi_json_error($json){
+  return property_exists($json, 'Errors');
+}
+endif;
+
+//PA-APIの返り値のJSONにアイテムが存在するか
+if ( !function_exists( 'is_paapi_json_item_exist' ) ):
+  function is_paapi_json_item_exist($json){
+    return property_exists($json->{'ItemsResult'}, 'Items');
+  }
+  endif;
+
+
 //Amazon APIから情報の取得
-if ( !function_exists( 'get_amazon_itemlookup_xml' ) ):
-function get_amazon_itemlookup_xml($asin){
-  //アクセスキー
-  $access_key_id = trim(get_amazon_api_access_key_id());
-  //シークレットキー
-  $secret_access_key = trim(get_amazon_api_secret_key());
-  //アソシエイトタグ
-  $associate_tracking_id = trim(get_amazon_associate_tracking_id());
-  //キャッシュ更新間隔
-  $days = intval(get_api_cache_retention_period());
-  //_v($access_key_id);
+if ( !function_exists( 'get_amazon_itemlookup_json' ) ):
+function get_amazon_itemlookup_json($asin){
+  $asin = trim($asin);
 
   //キャッシュの存在
   $transient_id = get_amazon_api_transient_id($asin);
   $transient_bk_id = get_amazon_api_transient_bk_id($asin);
-  $xml_cache = get_transient( $transient_id );
-  //_v($xml_cache);
-  if ($xml_cache && DEBUG_CACHE_ENABLE) {
-    //_v($xml_cache);
-    return $xml_cache;
+  $json_cache = get_transient( $transient_id );
+  //_v($json_cache);
+  if ($json_cache && DEBUG_CACHE_ENABLE) {
+    //_v($json_cache);
+    return $json_cache;
   }
 
-  //APIエンドポイントURL
-  $endpoint = 'https://ecs.amazonaws.jp/onca/xml';
+  $serviceName = 'ProductAdvertisingAPI';
+  $region = 'us-west-2';
 
-  // パラメータ
-  $params = array(
-    //共通↓
-    'Service' => 'AWSECommerceService',
-    'AWSAccessKeyId' => $access_key_id,
-    'AssociateTag' => $associate_tracking_id,
-    //リクエストにより変更↓
-    'Operation' => 'ItemLookup',
-    'ItemId' => $asin,
-    'ResponseGroup' => 'ItemAttributes,Images,Offers',
-    //署名用タイムスタンプ
-    'Timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
+  //アクセスキー
+  $accessKey = trim(get_amazon_api_access_key_id());
+  //シークレットキー
+  $secretKey = trim(get_amazon_api_secret_key());
+  //アソシエイトタグ
+  $partnerTag = trim(get_amazon_associate_tracking_id());
+  //キャッシュ更新間隔
+  $days = intval(get_api_cache_retention_period());
+  //_v($access_key_id);
+
+  $payload = '{'
+    .' "ItemIds": ['
+    .'  "'.$asin.'"'
+    .' ],'
+    .' "Resources": ['
+    .'  "BrowseNodeInfo.BrowseNodes",'
+    .'  "BrowseNodeInfo.BrowseNodes.Ancestor",'
+    .'  "BrowseNodeInfo.BrowseNodes.SalesRank",'
+    .'  "BrowseNodeInfo.WebsiteSalesRank",'
+    .'  "CustomerReviews.Count",'
+    .'  "CustomerReviews.StarRating",'
+    .'  "Images.Primary.Small",'
+    .'  "Images.Primary.Medium",'
+    .'  "Images.Primary.Large",'
+    .'  "Images.Variants.Small",'
+    .'  "Images.Variants.Medium",'
+    .'  "Images.Variants.Large",'
+    .'  "ItemInfo.ByLineInfo",'
+    .'  "ItemInfo.ContentInfo",'
+    .'  "ItemInfo.ContentRating",'
+    .'  "ItemInfo.Classifications",'
+    .'  "ItemInfo.ExternalIds",'
+    .'  "ItemInfo.Features",'
+    .'  "ItemInfo.ManufactureInfo",'
+    .'  "ItemInfo.ProductInfo",'
+    .'  "ItemInfo.TechnicalInfo",'
+    .'  "ItemInfo.Title",'
+    .'  "ItemInfo.TradeInInfo",'
+    .'  "Offers.Listings.Availability.MaxOrderQuantity",'
+    .'  "Offers.Listings.Availability.Message",'
+    .'  "Offers.Listings.Availability.MinOrderQuantity",'
+    .'  "Offers.Listings.Availability.Type",'
+    .'  "Offers.Listings.Condition",'
+    .'  "Offers.Listings.Condition.SubCondition",'
+    .'  "Offers.Listings.DeliveryInfo.IsAmazonFulfilled",'
+    .'  "Offers.Listings.DeliveryInfo.IsFreeShippingEligible",'
+    .'  "Offers.Listings.DeliveryInfo.IsPrimeEligible",'
+    .'  "Offers.Listings.DeliveryInfo.ShippingCharges",'
+    .'  "Offers.Listings.IsBuyBoxWinner",'
+    .'  "Offers.Listings.LoyaltyPoints.Points",'
+    .'  "Offers.Listings.MerchantInfo",'
+    .'  "Offers.Listings.Price",'
+    .'  "Offers.Listings.ProgramEligibility.IsPrimeExclusive",'
+    .'  "Offers.Listings.ProgramEligibility.IsPrimePantry",'
+    .'  "Offers.Listings.Promotions",'
+    .'  "Offers.Listings.SavingBasis",'
+    .'  "Offers.Summaries.HighestPrice",'
+    .'  "Offers.Summaries.LowestPrice",'
+    .'  "Offers.Summaries.OfferCount",'
+    .'  "ParentASIN",'
+    .'  "RentalOffers.Listings.Availability.MaxOrderQuantity",'
+    .'  "RentalOffers.Listings.Availability.Message",'
+    .'  "RentalOffers.Listings.Availability.MinOrderQuantity",'
+    .'  "RentalOffers.Listings.Availability.Type",'
+    .'  "RentalOffers.Listings.BasePrice",'
+    .'  "RentalOffers.Listings.Condition",'
+    .'  "RentalOffers.Listings.Condition.SubCondition",'
+    .'  "RentalOffers.Listings.DeliveryInfo.IsAmazonFulfilled",'
+    .'  "RentalOffers.Listings.DeliveryInfo.IsFreeShippingEligible",'
+    .'  "RentalOffers.Listings.DeliveryInfo.IsPrimeEligible",'
+    .'  "RentalOffers.Listings.DeliveryInfo.ShippingCharges",'
+    .'  "RentalOffers.Listings.MerchantInfo"'
+    .' ],'
+    .' "PartnerTag": "'.$partnerTag.'",'
+    .' "PartnerType": "Associates",'
+    .' "Marketplace": "'.AMAZON_DOMAIN.'"'
+    .'}';
+  $host = __( 'webservices.amazon.co.jp', THEME_NAME );
+  $uriPath = '/paapi5/getitems';
+  $awsv4 = new CocoonAwsV4 ($accessKey, $secretKey);
+  $awsv4->setRegionName($region);
+  $awsv4->setServiceName($serviceName);
+  $awsv4->setPath ($uriPath);
+  $awsv4->setPayload ($payload);
+  $awsv4->setRequestMethod ("POST");
+  $awsv4->addHeader ('content-encoding', 'amz-1.0');
+  $awsv4->addHeader ('content-type', 'application/json; charset=utf-8');
+  $awsv4->addHeader ('host', $host);
+  $awsv4->addHeader ('x-amz-target', 'com.amazon.paapi5.v1.ProductAdvertisingAPIv1.GetItems');
+  $headers = $awsv4->getHeaders ();
+  $headerString = "";
+  foreach ( $headers as $key => $value ) {
+    $headerString .= $key . ': ' . $value . "\r\n";
+  }
+  $params = array (
+    'http' => array (
+      'header' => $headerString,
+      'method' => 'POST',
+      'content' => $payload
+    )
   );
+  $stream = stream_context_create( $params );
 
-  //パラメータと値のペアをバイト順？で並べかえ。
-  ksort($params);
+  $fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
 
-
-  // エンドポイントを指定します。
-  $endpoint = __( 'webservices.amazon.co.jp', THEME_NAME );
-
-  $uri = '/onca/xml';
-
-  $pairs = array();
-
-  // パラメータを key=value の形式に編集します。
-  // 同時にURLエンコードを行います。
-  foreach ($params as $key => $value) {
-    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+  if (! $fp) {
+    //throw new Exception ( "Exception Occured" );
+    return false;
   }
-
-  // パラメータを&で連結します。
-  $canonical_query_string = join("&", $pairs);
-
-  // 署名に必要な文字列を先頭に追加します。
-  $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
-
-  // RFC2104準拠のHMAC-SHA256ハッシュアルゴリズムの計算を行います。
-  // これがSignatureの値になります。
-  $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $secret_access_key, true));
-
-  // Siginatureの値のURLエンコードを行い、リクエストの最後に追加します。
-  $request_url = 'https://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
-
-  $res = get_http_content($request_url);
-  //var_dump($res);
-  // $xml_file = get_theme_logs_path().'amazon_last_xml_error.xml';
-  // $res = wp_filesystem_get_contents($xml_file);
+  $res = @stream_get_contents( $fp );
+  if ($res === false) {
+    //throw new Exception ( "Exception Occured" );
+    return false;
+  }
 
   //503エラーの場合はfalseを返す
   if (includes_string($res, 'Website Temporarily Unavailable')) {
@@ -90,27 +298,33 @@ function get_amazon_itemlookup_xml($asin){
   //_v($res);
   if ($res) {
     //xml取得
-    $xml = simplexml_load_string($res);
+    $json = json_decode( $res );
+    //_v($json);
+    //_v(is_paapi_json_item_exist($json));
+    //_v(is_paapi_json_error($json));
 
-    if ($xml) {
-      //取得できなかった商品のログ出力
-      if (!property_exists($xml->Items, 'Item')) {
-        error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
-      }
-      if (property_exists($xml->Error, 'Code')) {
+    if ($json) {
+      //エラーだった場合
+      if (is_paapi_json_error($json)) {
         //バックアップキャッシュの確認
-        $xml_cache = get_transient( $transient_bk_id );
-        if ($xml_cache && DEBUG_CACHE_ENABLE) {
-          return $xml_cache;
+        $json_cache = get_transient( $transient_bk_id );
+        if ($json_cache && DEBUG_CACHE_ENABLE) {
+          return $json_cache;
         }
         return $res;
+      }
+
+      //取得できなかった商品のログ出力
+      if (!is_paapi_json_item_exist($json)) {
+        error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
       }
     }
 
     if (DEBUG_CACHE_ENABLE) {
       //一応、XML取得時のタイムスタンプを保存しておく
       $count = 1;
-      $res = str_replace('<Items>', '<Items><Date>'.date_i18n( 'Y/m/d H:i').'</Date>', $res, $count);
+      $res = str_replace(',"BrowseNodeInfo":{', ',"date":"'.date_i18n( 'Y/m/d H:i').'","BrowseNodeInfo":{', $res, $count);
+      //_v($res);
       //キャッシュ更新間隔（randで次回の同時読み込みを防ぐ）
       $expiration = DAY_IN_SECONDS * $days + (rand(0, 60) * 60);
       //Amazon APIキャッシュの保存
@@ -124,6 +338,12 @@ function get_amazon_itemlookup_xml($asin){
   return false;
 }
 endif;
+
+
+
+
+
+
 
 //Amazon商品リンク作成
 if (!shortcode_exists('amazon')) {
@@ -208,7 +428,7 @@ function amazon_product_link_shortcode($atts){
   $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
 
 
-  $res = get_amazon_itemlookup_xml($asin);
+  $res = get_amazon_itemlookup_json($asin);
   if ($res === false) {//503エラーの場合
     return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));
   }
@@ -216,11 +436,11 @@ function amazon_product_link_shortcode($atts){
   //_v($res);
   if ($res) {
     // xml取得
-    $xml = simplexml_load_string($res);
+    $json = json_decode( $res );
 
-    if (property_exists($xml->Error, 'Code')) {
+    if (is_paapi_json_error($json)) {
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-      $admin_message .= '<pre class="nohighlight"><b>'.$xml->Error->Code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $xml->Error->Message).'</pre>';
+      $admin_message .= '<pre class="nohighlight"><b>'.$json->{'Errors'}[0]->{'Code'}.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json->{'Errors'}[0]->{'Message'}).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
       return get_amazon_admin_error_message_tag($associate_url, $admin_message);
     }
@@ -231,14 +451,15 @@ function amazon_product_link_shortcode($atts){
     ///////////////////////////////////////////
     $cache_delete_tag = get_cache_delete_tag('amazon', $asin);
 
-    if (!property_exists($xml->Items, 'Item')) {
+    if (!is_paapi_json_item_exist($json)) {
       return get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
     }
 
-    if (property_exists($xml->Items, 'Item')) {
-      $item = $xml->Items->Item;
+    if (is_paapi_json_item_exist($json)) {
+      $item = $json->{'ItemsResult'}->{'Items'}[0];
+      //_v($item);
 
-      $ASIN = esc_html($item->ASIN);
+      //$ASIN = esc_html($item->{'ASIN'});
 
       ///////////////////////////////////////
       // アマゾンURL
@@ -257,36 +478,37 @@ function amazon_product_link_shortcode($atts){
         $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
       }
 
-      //画像用のアイテムセット
-      $ImageItem = $item;
-
       //イメージセットを取得する
-      $ImageSets = $item->ImageSets;
+      $Images = $item->{'Images'};
+      //_v($Images);
 
-      //画像インデックスが設定されている場合
-      if ($image_index !== null && $ImageSets) {
-        //インデックスを整数型にする
-        $image_index = intval($image_index);
+      // //画像インデックスが設定されている場合
+      // if ($image_index !== null && $Images) {
+      //   //インデックスを整数型にする
+      //   $image_index = intval($image_index);
 
-        //有効なインデックスの場合
-        if (!empty($ImageSets->ImageSet[$image_index])) {
-          //インデックスが有効な場合は画像アイテムを入れ替える
-          $ImageItem = $ImageSets->ImageSet[$image_index];
-        }
-      }
-
-      $SmallImage = $ImageItem->SmallImage;
+      //   //有効なインデックスの場合
+      //   if (!empty($Images->ImageSet[$image_index])) {
+      //     //インデックスが有効な場合は画像アイテムを入れ替える
+      //     $ImageItem = $Images->ImageSet[$image_index];
+      //   }
+      // }
+      $Primary = $Images->{'Primary'};
+      $SmallImage = $Primary->{'Small'};
       $SmallImageUrl = $SmallImage->URL;
       $SmallImageWidth = $SmallImage->Width;
       $SmallImageHeight = $SmallImage->Height;
-      $MediumImage = $ImageItem->MediumImage;
+      $MediumImage = $Primary->{'Medium'};
       $MediumImageUrl = $MediumImage->URL;
       $MediumImageWidth = $MediumImage->Width;
       $MediumImageHeight = $MediumImage->Height;
-      $LargeImage = $ImageItem->LargeImage;
+      $LargeImage = $Primary->{'Large'};
       $LargeImageUrl = $LargeImage->URL;
       $LargeImageWidth = $LargeImage->Width;
       $LargeImageHeight = $LargeImage->Height;
+      // _v($SmallImage);
+      // _v($MediumImage);
+      // _v($LargeImage);
 
       //サイズ設定
       $size = strtolower($size);
@@ -329,7 +551,7 @@ function amazon_product_link_shortcode($atts){
           break;
       }
 
-      $ItemAttributes = $item->ItemAttributes;
+      $ItemInfo = $item->{'ItemInfo'};
 
       ///////////////////////////////////////////
       // 商品リンク出力用の変数設定
@@ -337,23 +559,29 @@ function amazon_product_link_shortcode($atts){
       if ($title) {
         $Title = $title;
       } else {
-        $Title = $ItemAttributes->Title;
+        $Title = $ItemInfo->{'Title'}->{'DisplayValue'};
       }
-
+      //_v($Title);
       $TitleAttr = esc_attr($Title);
       $TitleHtml = esc_html($Title);
 
-      $ProductGroup = esc_html($ItemAttributes->ProductGroup);
+      //商品グレープ
+      $Classifications = $ItemInfo->{'Classifications'};
+      $ProductGroup = esc_html($Classifications->{'ProductGroup'}->{'DisplayValue'});
       $ProductGroupClass = strtolower($ProductGroup);
       $ProductGroupClass = str_replace(' ', '-', $ProductGroupClass);
-      $Publisher = esc_html($ItemAttributes->Publisher);
-      $Manufacturer = esc_html($ItemAttributes->Manufacturer);
-      $Binding = esc_html($ItemAttributes->Binding);
-      $Author = esc_html($ItemAttributes->Author);
-      $Artist = esc_html($ItemAttributes->Artist);
-      $Actor = esc_html($ItemAttributes->Actor);
-      $Creator = esc_html($ItemAttributes->Creator);
-      $Director = esc_html($ItemAttributes->Director);
+      //_v($ProductGroup);
+
+      $ByLineInfo = $ItemInfo->{'ByLineInfo'};
+      $Publisher = esc_html(isset($ByLineInfo->{'Publisher'}->{'DisplayValue'}) ? $ByLineInfo->{'Publisher'}->{'DisplayValue'} : null);
+      $Manufacturer = esc_html(isset($ByLineInfo->{'Manufacturer'}->{'DisplayValue'}) ? $ByLineInfo->{'Manufacturer'}->{'DisplayValue'} : null);
+      $Brand = esc_html(isset($ByLineInfo->{'Brand'}->{'DisplayValue'}) ? $ByLineInfo->{'Brand'}->{'DisplayValue'} : null);
+      $Binding = esc_html(isset($ByLineInfo->{'Binding'}->{'DisplayValue'}) ? $ByLineInfo->{'Binding'}->{'DisplayValue'} : null);
+      $Author = esc_html(isset($ByLineInfo->{'Author'}->{'DisplayValue'}) ? $ByLineInfo->{'Author'}->{'DisplayValue'} : null);
+      $Artist = esc_html(isset($ByLineInfo->{'Artist'}->{'DisplayValue'}) ? $ByLineInfo->{'Artist'}->{'DisplayValue'} : null);
+      $Actor = esc_html(isset($ByLineInfo->{'Actor'}->{'DisplayValue'}) ? $ByLineInfo->{'Actor'}->{'DisplayValue'} : null);
+      $Creator = esc_html(isset($ByLineInfo->{'Creator'}->{'DisplayValue'}) ? $ByLineInfo->{'Creator'}->{'DisplayValue'} : null);
+      $Director = esc_html(isset($ByLineInfo->{'Director'}->{'DisplayValue'}) ? $ByLineInfo->{'Director'}->{'DisplayValue'} : null);
       if ($Author) {
         $maker = $Author;
       } elseif ($Artist) {
@@ -366,46 +594,43 @@ function amazon_product_link_shortcode($atts){
         $maker = $Director;
       } elseif ($Publisher) {
         $maker = $Publisher;
+      } elseif ($Brand) {
+        $maker = $Brand;
       } elseif ($Manufacturer) {
         $maker = $Manufacturer;
       } else {
         $maker = $Binding;
       }
+      //_v($maker);
 
-      $ListPrice = $item->ItemAttributes->ListPrice;
-      $Price = esc_html($ListPrice->Amount);
-      $FormattedPrice = $ListPrice->FormattedPrice;
+      $Offers = $item->{'Offers'};
+      $HighestPrice = isset($Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'} : null;
+      $LowestPrice = isset($Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'} : null;
+      $Price = isset($Offers->{'Summaries'}[0]->{'Price'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'Price'}->{'DisplayAmount'} : null;
+      //$ListPrice = $item->ItemAttributes->ListPrice;
+      //_v($FormattedPrice);
 
       ///////////////////////////////////////////
-      // OfferSummary価格取得
+      // 価格取得
       ///////////////////////////////////////////
-      $OfferSummary = $item->OfferSummary;
-      if ($OfferSummary) {
-        $LowestNewPrice = $OfferSummary->LowestNewPrice->FormattedPrice;
-        if ($LowestNewPrice) {
-          $FormattedPrice = $LowestNewPrice;
+      if ($Price) {
+        $FormattedPrice = $Price;
+      } else {
+        if ($LowestPrice) {
+          $FormattedPrice = $LowestPrice;
         } else {
-          $LowestUsedPrice = $OfferSummary->LowestUsedPrice->FormattedPrice;
-          if ($LowestUsedPrice) {
-            $FormattedPrice = $LowestUsedPrice;
-          } else {
-            $LowestCollectiblePrice = $OfferSummary->LowestCollectiblePrice->FormattedPrice;
-            if ($LowestCollectiblePrice) {
-              $FormattedPrice = $LowestCollectiblePrice;
-            }
-          }
+          $FormattedPrice = $HighestPrice;
         }
-        //_v($OfferSummary);
       }
 
       ///////////////////////////////////////////
       // Amazon価格の取得
       ///////////////////////////////////////////
-      if (is_amazon_item_stock_price_visible() && isset($item->Offers->Offer->OfferListing->Price->FormattedPrice)) {
-        $FormattedPrice = $item->Offers->Offer->OfferListing->Price->FormattedPrice;
+      if (is_amazon_item_stock_price_visible()) {
+        $FormattedPrice = esc_html($FormattedPrice);
       }
 
-      $FormattedPrice = esc_html($FormattedPrice);
+
 
       //$associate_url = esc_url($base_url.$ASIN.'/'.$associate_tracking_id.'/');
 
@@ -413,28 +638,13 @@ function amazon_product_link_shortcode($atts){
       // 値段表記
       ///////////////////////////////////////////
       $item_price_tag = null;
-      //XMLのOperationRequesから時間情報を取得
-      $unix_date = (string)$xml->OperationRequest->Arguments->Argument[6]->attributes()->Value;
-      //_v($xml);
-      //_v($xml->Items);
-      if ($unix_date) {
-        $timestamp = strtotime(get_date_from_gmt($unix_date));
-        $acquired_date = date_i18n( 'Y/m/d H:i', $timestamp );
-       // _v($acquired_date);
-        //Amazon APIからタイムスタンプを取得できなかった場合
-        if (!$timestamp) {
-          $acquired_date = (string)$xml->Items->Date;
-          $timestamp = strtotime($acquired_date);
-          //_v($acquired_date);
-        }
-
-        if ((is_amazon_item_price_visible() || $price === '1')
-             && $FormattedPrice
-             && $price !== '0'
-             && $timestamp > 0
-           ) {
-          $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
-        }
+      //JSONから時間情報を取得（無い場合は現時間）
+      $acquired_date = isset($item->{'date'}) ? $item->{'date'} : date_i18n( 'Y/m/d H:i');
+      if ((is_amazon_item_price_visible() || $price === '1')
+            && $FormattedPrice
+            && $price !== '0'
+          ) {
+        $item_price_tag = get_item_price_tag($FormattedPrice, $acquired_date);
       }
       ///////////////////////////////////////////
       // レビュー
@@ -442,9 +652,9 @@ function amazon_product_link_shortcode($atts){
       $review_tag = null;
       //_v($review);
       if ((is_amazon_item_customer_reviews_visible() || $review === '1')
-          && isset($item->ItemLinks->ItemLink[2])
+          && $associate_tracking_id
           && $review !== '0') {
-        $review_url = $item->ItemLinks->ItemLink[2]->URL;
+        $review_url = $review_url = get_amazon_review_url($asin, $associate_tracking_id);
         //_v($review_url);
         $review_tag =
           '<div class="amazon-item-review product-item-review item-review">'.
@@ -524,11 +734,11 @@ function amazon_product_link_shortcode($atts){
       }
       $swatchimages_tag = null;
 
-      if ($ImageSets && !$image_only && $is_catalog_image_visible) {
-        $SwatchImages = $ImageSets->ImageSet;
+      if ($Images && !$image_only && $is_catalog_image_visible) {
+        $Variants = $Images->{'Variants'};
 
         $tmp_tag = null;
-        for ($i=0; $i < count($ImageSets->ImageSet)-1; $i++) {
+        for ($i=0; $i < count($Variants)-1; $i++) {
           $display_none_class = null;
           if (($size != 'l') && ($i >= 3)) {
             $display_none_class .= ' sp-display-none';
@@ -537,15 +747,15 @@ function amazon_product_link_shortcode($atts){
             $display_none_class .= ' display-none';
           }
 
-          $ImageSet = $ImageSets->ImageSet[$i];
+          $Variant = $Variants[$i];
           //SwatchImage
-          $SwatchImage = $ImageSet->SwatchImage;
+          $SwatchImage = $Variant->{'Small'};
           $SwatchImageURL = $SwatchImage->URL;
           $SwatchImageWidth = $SwatchImage->Width;
           $SwatchImageHeight = $SwatchImage->Height;
 
           //LargeImage
-          $LargeImage = $ImageSet->LargeImage;
+          $LargeImage = $Variant->{'Large'};
           $LargeImageURL = $LargeImage->URL;
           $LargeImageWidth = $LargeImage->Width;
           $LargeImageHeight = $LargeImage->Height;
@@ -591,8 +801,8 @@ function amazon_product_link_shortcode($atts){
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
               '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-                 $TitleHtml.
-                 $moshimo_amazon_impression_tag.
+                  $TitleHtml.
+                  $moshimo_amazon_impression_tag.
               '</a>'.
             '</div>'.
             '<div class="amazon-item-snippet product-item-snippet">'.
@@ -607,15 +817,16 @@ function amazon_product_link_shortcode($atts){
           '</div>'.
           $product_item_admin_tag.
         '</div>';
-    } else {//property_exists($xml->Items, 'Item')
+    } else {
       $tag = get_amazon_admin_error_message_tag($associate_url, AMAZON_ASIN_ERROR_MESSAGE, $cache_delete_tag, $asin);
-    }//property_exists($xml->Items, 'Item')
+    }
 
     return apply_filters('amazon_product_link_tag', $tag);
   }
 
 }
 endif;
+
 
 //PA-APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_amazon_product' ) ):

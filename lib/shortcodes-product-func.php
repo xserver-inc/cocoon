@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //シンプルなアソシエイトURLの作成
 if ( !function_exists( 'get_amazon_associate_url' ) ):
 function get_amazon_associate_url($asin, $associate_tracking_id = null){
-  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
+  $base_url = 'https://'.AMAZON_DOMAIN.'/exec/obidos/ASIN';
   $associate_url = $base_url.'/'.$asin.'/';
   if (!empty($associate_tracking_id)) {
     $associate_url .= $associate_tracking_id.'/';
@@ -23,9 +23,20 @@ endif;
 //Amazon検索用のURLを生成する
 if ( !function_exists( 'get_amazon_search_url' ) ):
 function get_amazon_search_url($keyword, $associate_tracking_id = null){
-  $res = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword);
+  $res = 'https://'.AMAZON_DOMAIN.'/gp/search?keywords='.urlencode($keyword);
   if ($associate_tracking_id) {
     $res .= '&tag='.$associate_tracking_id;
+  }
+  return $res;
+}
+endif;
+
+//Amazonレビュー用のURLを生成する
+if ( !function_exists( 'get_amazon_review_url' ) ):
+function get_amazon_review_url($asin, $associate_tracking_id = null){
+  $res = 'https://'.AMAZON_DOMAIN.'/product-reviews/'.trim($asin).'/';
+  if ($associate_tracking_id) {
+    $res .= '?tag='.$associate_tracking_id;
   }
   return $res;
 }
