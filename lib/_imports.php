@@ -111,7 +111,6 @@ require_once abspath(__FILE__).'ssl.php'; //SSL関係の処理
 require_once abspath(__FILE__).'shortcodes.php'; //ショートコード関係の処理
 require_once abspath(__FILE__).'shortcodes-product-func.php'; //商品リンク関係の処理
 require_once abspath(__FILE__).'shortcodes-amazon.php'; //Amazon商品リンク関係の処理
-require_once abspath(__FILE__).'shortcodes-amazon-v5.php'; //Amazon商品リンク関係の処理
 require_once abspath(__FILE__).'shortcodes-rakuten.php'; //楽天商品リンク関係の処理
 require_once abspath(__FILE__).'html5.php'; //HTML5チェック関係
 //フルパスを指定しないとうまくいかないファイル
