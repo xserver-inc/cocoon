@@ -557,6 +557,9 @@ select option.fa{
   margin-left: 1em;
 }
 
+//ビジュアルエディター
+.postbox-container input[type="text"],
+//ブロックエディター
 .components-panel input[type="text"]{
   width: 100%;
 }
