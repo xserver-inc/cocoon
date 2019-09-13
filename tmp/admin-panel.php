@@ -17,40 +17,7 @@ if (is_user_administrator()
 <div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
 
   <?php //PVエリアの表示
-  if (is_admin_panel_pv_area_visible() && is_singular()): ?>
-    <div class="admin-pv">
-      <span class="admin-pv-by">
-        <?php if (get_admin_panel_pv_type() == THEME_NAME): ?>
-          by <?php echo THEME_NAME_CAMEL; ?>
-        <?php else: ?>
-          by Jetpack
-        <?php endif ?>
-      </span>
-      <span class="fa fa-bar-chart fa-fw"></span>
-      <span class="today-pv">
-        <span class="today-pv-label"><?php _e( '本日', THEME_NAME ) ?></span>
-        <span class="today-pv-count"><?php echo get_todays_pv(); ?></span>
-      </span>
-      <span class="week-pv">
-        <span class="week-pv-label"><?php _e( '週', THEME_NAME ) ?></span>
-        <span class="week-pv-count"><?php echo get_last_7days_pv(); ?></span>
-      </span>
-      <span class="month-pv">
-        <span class="month-pv-label"><?php _e( '月', THEME_NAME ) ?></span>
-        <span class="month-pv-count"><?php echo get_last_30days_pv(); ?></span>
-      </span>
-      <span class="all-pv">
-        <span class="all-pv-label"><?php _e( '全体', THEME_NAME ) ?></span>
-        <span class="all-pv-count"><?php echo get_all_pv(); ?></span>
-      </span>
-      <?php //Jetpackチャート表示
-      if ((get_admin_panel_pv_type() == 'jetpack') &&
-          //Jetpackが有効の場合
-          is_jetpack_stats_module_active()) {
-        echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', THEME_NAME ).'" target="_blank" rel="noopener noreferrer"><span class="fa fa-line-chart"></span></a></span>';
-      } ?>
-    </div>
-  <?php endif ?>
+  get_template_part('tmp/admin-pv'); ?>
 
   <?php //編集エリアの表示
   if (is_admin_panel_edit_area_visible() && is_singular()): ?>

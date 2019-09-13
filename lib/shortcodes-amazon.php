@@ -181,7 +181,7 @@ function get_amazon_itemlookup_json($asin){
   $secretKey = trim(get_amazon_api_secret_key());
   //アソシエイトタグ
   $partnerTag = trim(get_amazon_associate_tracking_id());
-  //キャッシュ更新間隔
+  //キャッシュ更新間隔（日）
   $days = intval(get_api_cache_retention_period());
   //_v($access_key_id);
 
