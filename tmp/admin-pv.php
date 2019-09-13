@@ -35,9 +35,11 @@ if (is_admin_panel_pv_area_visible()): ?>
       <span class="all-pv-count"><?php echo get_all_pv(); ?></span>
     </span>
     <?php //Jetpackチャート表示
-    if ((get_admin_panel_pv_type() == 'jetpack') &&
+    if ((get_admin_panel_pv_type() == 'jetpack')
         //Jetpackが有効の場合
-        is_jetpack_stats_module_active()) {
+        && is_jetpack_stats_module_active()
+        //高校・固定ページの場合
+        && is_singular()) {
       echo '<span class="jetpack-page"><a href="'.admin_url().'admin.php?page=stats&view=post&post='.get_the_ID().'"title="'.__( 'Jetpackの統計', THEME_NAME ).'" target="_blank" rel="noopener noreferrer"><span class="fa fa-line-chart"></span></a></span>';
     } ?>
   </div>
