@@ -64,6 +64,7 @@ do_action( 'rss_tag_pre', 'rss2' );
 	if (!$logo_url) {
 		$logo_url = get_amp_logo_image_url();
 	}
+	$logo_url = apply_filters('smartnews_logo_url', $logo_url);
 	?>
 	<snf:logo>
 			<url><?php echo $logo_url; ?></url>
