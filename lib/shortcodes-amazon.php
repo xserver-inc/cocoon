@@ -478,31 +478,36 @@ function amazon_product_link_shortcode($atts){
         $moshimo_amazon_impression_tag = get_moshimo_amazon_impression_tag();
       }
 
+
       //イメージセットを取得する
       $Images = $item->{'Images'};
-      //_v($Images);
+      $ImageItem = $Images->{'Primary'};
+      //メイン画像以外の画像
+      $Variants = $Images->{'Variants'};
 
-      // //画像インデックスが設定されている場合
-      // if ($image_index !== null && $Images) {
-      //   //インデックスを整数型にする
-      //   $image_index = intval($image_index);
+      //画像インデックスが設定されている場合
+      if ($image_index !== null && $Variants) {
+        //インデックスを整数型にする
+        $image_index = intval($image_index);
 
-      //   //有効なインデックスの場合
-      //   if (!empty($Images->ImageSet[$image_index])) {
-      //     //インデックスが有効な場合は画像アイテムを入れ替える
-      //     $ImageItem = $Images->ImageSet[$image_index];
-      //   }
-      // }
-      $Primary = $Images->{'Primary'};
-      $SmallImage = $Primary->{'Small'};
+        //有効なインデックスの場合
+        if (!empty($Variants[$image_index])) {
+          //インデックスが有効な場合は画像アイテムを入れ替える
+          $ImageItem = $Variants[$image_index];
+        }
+      }
+      //_v($ImageItem);
+
+      //$Primary = $ImageItem->{'Primary'};
+      $SmallImage = $ImageItem->{'Small'};
       $SmallImageUrl = $SmallImage->URL;
       $SmallImageWidth = $SmallImage->Width;
       $SmallImageHeight = $SmallImage->Height;
-      $MediumImage = $Primary->{'Medium'};
+      $MediumImage = $ImageItem->{'Medium'};
       $MediumImageUrl = $MediumImage->URL;
       $MediumImageWidth = $MediumImage->Width;
       $MediumImageHeight = $MediumImage->Height;
-      $LargeImage = $Primary->{'Large'};
+      $LargeImage = $ImageItem->{'Large'};
       $LargeImageUrl = $LargeImage->URL;
       $LargeImageWidth = $LargeImage->Width;
       $LargeImageHeight = $LargeImage->Height;
@@ -735,7 +740,6 @@ function amazon_product_link_shortcode($atts){
       $swatchimages_tag = null;
 
       if ($Images && !$image_only && $is_catalog_image_visible) {
-        $Variants = $Images->{'Variants'};
 
         $tmp_tag = null;
         for ($i=0; $i < count($Variants)-1; $i++) {
