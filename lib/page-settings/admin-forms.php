@@ -147,13 +147,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), __( 'PVエリアを表示する', THEME_NAME ));
+            generate_checkbox_tag(OP_ADMIN_PANEL_PV_AREA_VISIBLE, is_admin_panel_pv_area_visible(), get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-panel-pv.png').__( 'PVエリアを表示する', THEME_NAME ));
             generate_tips_tag(__( '管理者パネル内のPVエリアを表示します。', THEME_NAME ));
             ?>
             <div class="indent">
               <?php
               //インデックスのエントリーカードにPV数を表示
-              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示', THEME_NAME ));
+              generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png').__( 'インデックスにPV数を表示', THEME_NAME ));
               generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。', THEME_NAME ));
                ?>
               <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
