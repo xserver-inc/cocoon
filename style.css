@@ -8299,6 +8299,14 @@ input[type='submit'],
     margin-top: 0;
   }
 }
+.entry-card .admin-pv {
+  margin: 0 0 8px;
+  padding: 0 2px;
+}
+.entry-card .admin-pv .admin-pv-by {
+  background-color: #fff;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;

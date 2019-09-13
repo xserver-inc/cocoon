@@ -3507,6 +3507,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 1023px) and (max-width: 782px) { .admin-settings .demo .admin-bar .mobile-header-menu-buttons { margin-top: 0; }
   .admin-settings .demo .admin-bar.mblt-header-mobile-buttons, .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons { margin-top: 0; } }
 
+.admin-settings .demo .entry-card .admin-pv { margin: 0 0 8px; padding: 0 2px; }
+.admin-settings .demo .entry-card .admin-pv .admin-pv-by { background-color: #fff; }
 .admin-settings .demo .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 .admin-settings .demo .slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }
 .admin-settings .demo .slick-list:focus { outline: none; }
