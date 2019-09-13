@@ -68,7 +68,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
     //classにwidgetと一意となるクラス名を追加する
     if ( is_single() && get_category_ids() ):
       echo $args['before_widget'];
-      if ($title !== null) {
+      if (!is_null($title)) {
         echo $args['before_title'];
         if ($title) {
           echo $title;//タイトルが設定されている場合は使用する

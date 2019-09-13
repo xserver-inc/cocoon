@@ -38,7 +38,7 @@ class RecentCommentsWidgetItem extends WP_Widget {
       <?php //classにwidgetと一意となるクラス名を追加する ?>
       <?php echo $args['before_widget']; ?>
         <?php
-        if ($title !== null) {
+        if (!is_null($title)) {
           echo $args['before_title'];
           if ($title) {
             echo $title;//タイトルが設定されている場合は使用する

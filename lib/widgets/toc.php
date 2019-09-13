@@ -38,7 +38,7 @@ class TOCWidgetItem extends WP_Widget {
       //目次が出力されている場合
       if ($html) {
         echo $args['before_widget'];
-        if ($title !== null) {
+        if (!is_null($title)) {
           if (empty($title)) {
             $title = __( '目次', THEME_NAME );
           }

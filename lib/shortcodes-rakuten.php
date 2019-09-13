@@ -360,7 +360,7 @@ function rakuten_product_link_shortcode($atts){
 
           //ロゴ非表示
           $logo_class = null;
-          if ((!is_rakuten_item_logo_visible() && $logo === null) || (!$logo && $logo !== null )) {
+          if ((!is_rakuten_item_logo_visible() && is_null($logo)) || (!$logo && !is_null($logo) )) {
             $logo_class = ' no-after';
           }
 
