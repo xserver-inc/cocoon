@@ -15,6 +15,14 @@ function is_admin_tool_menu_visible(){
 }
 endif;
 
+//インデックスのエントリーカードにPV数を表示
+define('OP_ADMIN_INDEX_PV_VISIBLE', 'admin_index_pv_visible');
+if ( !function_exists( 'is_admin_index_pv_visible' ) ):
+function is_admin_index_pv_visible(){
+  return get_theme_option(OP_ADMIN_INDEX_PV_VISIBLE);
+}
+endif;
+
 //投稿一覧に作成者を表示する
 define('OP_ADMIN_LIST_AUTHOR_VISIBLE', 'admin_list_author_visible');
 if ( !function_exists( 'is_admin_list_author_visible' ) ):

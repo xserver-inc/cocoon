@@ -98,8 +98,10 @@
 
 .entry-card .admin-pv {
   margin: 0 0 8px;
-  padding: 0 2px;
+  padding: 0;
+  border-width: 0;
   .admin-pv-by{
-    background-color: $white;
+    background-color: transparent;
+    bottom: 0;
   }
 }

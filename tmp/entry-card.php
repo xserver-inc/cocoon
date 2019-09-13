@@ -33,14 +33,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <div class="entry-card-content card-content e-card-content">
       <h2 class="entry-card-title card-title e-card-title" itemprop="headline"><?php the_title() ?></h2>
-      <?php //PVエリアの表示
-      get_template_part('tmp/admin-pv'); ?>
       <?php //スニペットの表示
       if (is_entry_card_snippet_visible()): ?>
       <div class="entry-card-snippet card-snippet e-card-snippet">
         <?php echo get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
+      <?php //PVエリアの表示
+      if (is_admin_index_pv_visible() && is_user_administrator()) {
+        get_template_part('tmp/admin-pv');
+      } ?>
       <div class="entry-card-meta card-meta e-card-meta">
         <div class="entry-card-info e-card-info">
           <?php
