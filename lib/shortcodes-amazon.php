@@ -713,7 +713,7 @@ function amazon_product_link_shortcode($atts){
 
       //ロゴ非表示
       $logo_class = null;
-      if ((!is_amazon_item_logo_visible() && $logo === null) || (!$logo && !is_null($logo) )) {
+      if ((!is_amazon_item_logo_visible() && is_null($logo)) || (!$logo && !is_null($logo) )) {
         $logo_class = ' no-after';
       }
 
@@ -727,7 +727,7 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       //テーマ設定もしくはcatalog=1で機能が有効な場合
       $is_catalog_image_visible =
-        (is_amazon_item_catalog_image_visible() && $samples === null) ||
+        (is_amazon_item_catalog_image_visible() && is_null($samples)) ||
         (!is_null($samples) && $samples);
 
       $image_l_tag = null;

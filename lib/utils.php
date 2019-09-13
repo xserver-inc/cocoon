@@ -2028,7 +2028,7 @@ endif;
 
 if ( !function_exists( 'is_field_checkbox_value_default' ) ):
 function is_field_checkbox_value_default($value){
-  if ($value === '' || $value === null) {
+  if ($value === '' || is_null($value)) {
     return true;
   } else {
     return false;
