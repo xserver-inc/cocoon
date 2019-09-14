@@ -154,7 +154,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <?php
               //インデックスのエントリーカードにPV数を表示
               generate_checkbox_tag(OP_ADMIN_INDEX_PV_VISIBLE, is_admin_index_pv_visible(), __( 'インデックスにPV数を表示', THEME_NAME ));
-              generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png'));
+              generate_tips_tag(__( 'インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpackの場合は、初回アクセス時に情報取得に時間がかかります。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/admin-index-pv/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/admin-index-pv.png'));
                ?>
               <span><?php _e( 'アクセス集計方法', THEME_NAME ) ?></span>
               <?php
