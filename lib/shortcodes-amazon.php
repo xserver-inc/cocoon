@@ -389,7 +389,11 @@ function amazon_product_link_shortcode($atts){
   }
   //キーワード
   $keyword = sanitize_shortcode_value($kw);
+
+  //説明文
   $description = $desc;
+
+  //カタログ
   if (!is_null($catalog)) {
     $samples = $catalog;
   }
@@ -556,7 +560,19 @@ function amazon_product_link_shortcode($atts){
           break;
       }
 
-      $ItemInfo = $item->{'ItemInfo'};
+      $ItemInfo = isset($item->{'ItemInfo'}) ? $item->{'ItemInfo'} : null;
+      //_v( $ItemInfo);
+
+      if ($ItemInfo) {
+        //説明文
+        if (is_null($description)) {
+          if (is_amazon_item_description_visible()) {
+            $Features = isset($ItemInfo->{'Features'}) ? $ItemInfo->{'Features'} : null;
+            $description = isset($Features->{'DisplayValues'}[0]) ? $Features->{'DisplayValues'}[0] : null;
+          }
+        }
+      }
+
 
       ///////////////////////////////////////////
       // 商品リンク出力用の変数設定

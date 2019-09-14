@@ -66,6 +66,11 @@ $help_text = __( '取得方法', THEME_NAME );
 
             generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
 
+
+            generate_checkbox_tag(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE , is_amazon_item_description_visible(), __( '説明文を表示する', THEME_NAME ));
+            generate_tips_tag(__( 'Amazon側に登録されている説明文を表示します。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ));
+
+
             generate_checkbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE , is_amazon_item_customer_reviews_visible(), __( 'レビューを表示する', THEME_NAME ));
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_TEXT, get_amazon_item_customer_reviews_text(), __( 'レビューページへのリンクテキストを入力', THEME_NAME ));
