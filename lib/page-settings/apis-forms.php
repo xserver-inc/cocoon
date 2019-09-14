@@ -68,7 +68,7 @@ $help_text = __( '取得方法', THEME_NAME );
 
 
             generate_checkbox_tag(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE , is_amazon_item_description_visible(), __( '説明文を表示する', THEME_NAME ));
-            generate_tips_tag(__( 'Amazon側に登録されている説明文を表示します。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。', THEME_NAME ));
 
 
             generate_checkbox_tag(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE , is_amazon_item_customer_reviews_visible(), __( 'レビューを表示する', THEME_NAME ));
