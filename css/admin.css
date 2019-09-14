@@ -928,7 +928,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
-.admin-settings .demo .search-form { margin: 3em 0; }
+.admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
@@ -2482,7 +2482,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
-.admin-settings .demo .search-form { margin: 3em 0; }
+.admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
@@ -4199,7 +4199,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bb-good::before { content: "\f164  GOOD"; }
 .components-popover__content .bb-bad::before { content: "\f165  BAD"; }
 .components-popover__content .bb-profile::before { content: "\f007  PROFILE"; }
-.components-popover__content .search-form { margin: 3em 0; }
+.components-popover__content .container .search-form { margin: 3em 0; }
 .components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .components-popover__content .search-form div.sform { min-width: 280px; background-color: #fff; }
 .components-popover__content .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }

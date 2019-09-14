@@ -3176,7 +3176,7 @@ label.screen-reader-text {
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/
-.search-form {
+.container .search-form {
   margin: 3em 0;
 }
 
