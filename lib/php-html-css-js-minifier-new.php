@@ -180,12 +180,13 @@ function fn_minify_html_union($input, $quote) {
     global $url;
     return preg_replace_callback('#<\s*([^\/\s]+)\s*(?:>|(\s[^<>]+?)\s*>)#', function($m) use($quote, $url) {
         if (isset($m[2])) {
-            // Minify inline CSS(s)
-            if (stripos($m[2], ' style=') !== false) {
-                $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', function($m) {
-                    return $m[1] . $m[2] . fn_minify_css($m[3]) . $m[2];
-                }, $m[2]);
-            }
+            // // Minify inline CSS(s)
+            // if (stripos($m[2], ' style=') !== false) {
+            //     $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', function($m) {
+            //         return $m[1] . $m[2] . fn_minify_css($m[3]) . $m[2];
+            //     }, $m[2]);
+            // }
+
             // // Minify URL(s)
             // if (strpos($m[2], '://') !== false) {
             //     $m[2] = str_replace([
