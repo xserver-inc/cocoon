@@ -367,6 +367,7 @@ function amazon_product_link_shortcode($atts){
     'border' => 1,
     'logo' => null,
     'image_only' => 0,
+    'text_only' => 0,
     'image_index' => null,
     'samples' => null,
     'catalog' => null,
@@ -813,6 +814,18 @@ function amazon_product_link_shortcode($atts){
         '</figure>';
 
       ///////////////////////////////////////////
+      // Amazonテキストリンク
+      ///////////////////////////////////////////
+      $text_link_tag =
+        '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+        $TitleHtml.
+        $moshimo_amazon_impression_tag.
+        '</a>';
+      if ($text_only) {
+        return $text_link_tag;
+      }
+
+      ///////////////////////////////////////////
       // 商品リンクタグの生成
       ///////////////////////////////////////////
       $tag =
@@ -820,10 +833,7 @@ function amazon_product_link_shortcode($atts){
           $image_figure_tag.
           '<div class="amazon-item-content product-item-content cf">'.
             '<div class="amazon-item-title product-item-title">'.
-              '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-                  $TitleHtml.
-                  $moshimo_amazon_impression_tag.
-              '</a>'.
+            $text_link_tag.
             '</div>'.
             '<div class="amazon-item-snippet product-item-snippet">'.
               '<div class="amazon-item-maker product-item-maker">'.
