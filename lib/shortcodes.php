@@ -135,7 +135,7 @@ if ( !function_exists( 'affiliate_tag_shortcode' ) ):
 function affiliate_tag_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, 'affiliate_tag'));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
 
