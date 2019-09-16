@@ -23,11 +23,14 @@ function widget_tag_cloud_args_custom($args) {
 endif;
 
 //カテゴリウィジェットの投稿数のカッコを取り除く
-add_filter( 'wp_list_categories', 'remove_post_count_parentheses' );
-add_filter( 'get_archives_link',  'remove_post_count_parentheses' );
+add_filter( 'wp_list_categories', 'remove_post_count_parentheses', 10, 2 );
+add_filter( 'get_archives_link',  'remove_post_count_parentheses', 10, 2 );
 if ( !function_exists( 'remove_post_count_parentheses' ) ):
-function remove_post_count_parentheses( $output ) {
-  $output = str_replace('<a href=','<a class="cf" href=',$output);
+function remove_post_count_parentheses( $output, $var ) {
+  //カテゴリの場合（wp_list_categoriesは配列を返す、get_archives_linkはURLを返す）
+  if (is_array($var)) {
+    $output = str_replace('<a href=','<a class="cf" href=',$output);
+  }
   $output = preg_replace('/<\/a>.*\(([0-9,]+)\)/','<span class="post-count">$1</span></a>',$output);
   return $output;
 }
