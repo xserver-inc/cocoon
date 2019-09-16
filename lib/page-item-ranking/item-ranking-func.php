@@ -211,7 +211,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
     return $rate;
   }
 
-  $tag = '<div class="ranking-item-rating rating-star">';
+  $tag = '<span class="rating-star">';
 
   //小数点で分割
   $rates = explode('.', $rate);
@@ -252,7 +252,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
     $tag .= '<span class="rating-number">'.$rate.'</span>';
   }
 
-  $tag .= '</div>';
+  $tag .= '</span>';
   return $tag;
 }
 endif;
@@ -313,7 +313,9 @@ function generate_item_ranking_tag($id, $is_first_only = false){
 
       <?php //評価が設定されている場合
       if ($rating != 'none'){
+        echo '<div class="ranking-item-rating">';
         echo get_rating_star_tag($rating);
+        echo '</div>';
       } ?>
 
       <?php //continue; ?>

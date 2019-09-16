@@ -1684,7 +1684,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .star-half-o::before { content: '\f123'; }
 .admin-settings .demo .star-o::before { content: '\f006'; }
 .admin-settings .demo .ranking-item-name { padding: 3px 2px 6px; }
-.admin-settings .demo .ranking-item-rating { color: #f5bc55; font-size: 1.2em; }
+.admin-settings .demo .rating-star { color: #f5bc55; font-size: 1.2em; }
 .admin-settings .demo .rating-number { color: #333; font-size: 0.9em; margin-left: 0.4em; }
 .admin-settings .demo .ranking-item-img-desc, .admin-settings .demo .ranking-item-link-buttons { display: flex; }
 .admin-settings .demo .ranking-item-img-desc > div, .admin-settings .demo .ranking-item-link-buttons > div { width: 100%; padding: 2px 0; }
@@ -3238,7 +3238,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .star-half-o::before { content: '\f123'; }
 .admin-settings .demo .star-o::before { content: '\f006'; }
 .admin-settings .demo .ranking-item-name { padding: 3px 2px 6px; }
-.admin-settings .demo .ranking-item-rating { color: #f5bc55; font-size: 1.2em; }
+.admin-settings .demo .rating-star { color: #f5bc55; font-size: 1.2em; }
 .admin-settings .demo .rating-number { color: #333; font-size: 0.9em; margin-left: 0.4em; }
 .admin-settings .demo .ranking-item-img-desc, .admin-settings .demo .ranking-item-link-buttons { display: flex; }
 .admin-settings .demo .ranking-item-img-desc > div, .admin-settings .demo .ranking-item-link-buttons > div { width: 100%; padding: 2px 0; }
@@ -3950,13 +3950,13 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 #ranking-items .ranking-item .toggle .toggle-link, #ranking-items .admin-settings .demo .timeline-box .toggle .toggle-link, .admin-settings .demo #ranking-items .timeline-box .toggle .toggle-link { margin: 0; font-size: 1em; font-weight: bold; }
 #ranking-items .demo { font-size: 14px; padding: 12px 18px; }
 #ranking-items .ranking-title input[type=text] { font-weight: bold; }
-#ranking-items .ranking-item-rating { color: #333; font-size: 1em; }
+#ranking-items .rating-star { color: #333; font-size: 1em; }
 #ranking-items input[type='text'], #ranking-items textarea { width: 100%; font-size: 14px; }
 #ranking-items input[type='text'] { padding: 10px; border-width: 2px; }
 #ranking-items .tips { margin: 0; }
-#ranking-items .ranking-item-rating label { float: left; }
-#ranking-items .ranking-item-rating ul { margin: 0; display: flex; }
-#ranking-items .ranking-item-rating ul li { margin-right: 1em; }
+#ranking-items .rating-star label { float: left; }
+#ranking-items .rating-star ul { margin: 0; display: flex; }
+#ranking-items .rating-star ul li { margin-right: 1em; }
 #ranking-items textarea { resize: both; min-height: 0px; height: 120px; max-height: 600px; }
 #ranking-items .ranking-item-link-tag textarea { height: 80px; }
 #ranking-items .ranking-item-img-desc > div, #ranking-items .ranking-item-link-buttons > div { padding: 0 6px; }
