@@ -8790,6 +8790,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   word-break: break-all;
 }
 
+#tinymce.main.article {
+  width: 100%;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
