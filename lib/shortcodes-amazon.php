@@ -487,7 +487,7 @@ function amazon_product_link_shortcode($atts){
       $Images = $item->{'Images'};
       $ImageItem = $Images->{'Primary'};
       //メイン画像以外の画像
-      $Variants = $Images->{'Variants'};
+      $Variants = isset($Images->{'Variants'}) ? $Images->{'Variants'} : array();
 
       //画像インデックスが設定されている場合
       if (!is_null($image_index) && $Variants) {
