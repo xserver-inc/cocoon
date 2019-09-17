@@ -280,7 +280,7 @@ function get_amazon_itemlookup_json($asin){
 
   $fp = @fopen ( 'https://'.$host.$uriPath, 'rb', false, $stream );
 
-  if (! $fp) {
+  if (!$fp) {
     //throw new Exception ( "Exception Occured" );
     return false;
   }
