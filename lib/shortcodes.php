@@ -16,7 +16,7 @@ function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => null,
     'label' => null,
-  ), $atts));
+  ), $atts, 'author_box'));
   $label = sanitize_shortcode_value($label);
   ob_start();
   generate_author_box_tag($id, $label);
@@ -47,7 +47,7 @@ function new_entries_shortcode($atts) {
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
-  ), $atts));
+  ), $atts, 'new_list'));
 
   //カテゴリを配列化
   $cat_ids = array();
@@ -101,7 +101,7 @@ function popular_entries_shortcode($atts) {
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
-  ), $atts));
+  ), $atts, 'popular_list'));
   $cat_ids = array();
   if ($cats && $cats != 'all') {
     $cat_ids = explode(',', $cats);
@@ -135,7 +135,7 @@ if ( !function_exists( 'affiliate_tag_shortcode' ) ):
 function affiliate_tag_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts, 'affi'));
+  ), $atts, AFFI_SHORTCODE));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
 
@@ -176,7 +176,7 @@ if ( !function_exists( 'function_text_shortcode' ) ):
 function function_text_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, TEMPLATE_SHORTCODE));
   if ($id) {
     if ($recode = get_function_text($id)) {
       //無限ループ要素の除去
@@ -207,7 +207,7 @@ if ( !function_exists( 'item_ranking_shortcode' ) ):
 function item_ranking_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, RANKING_SHORTCODE));
   if ($id) {
     // //無限ループ回避
     // if ($recode->id == $id) return;
@@ -235,7 +235,7 @@ if ( !function_exists( 'login_user_only_shortcode' ) ):
 function login_user_only_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
-  ), $atts ) );
+  ), $atts, 'login_user_only' ) );
   $msg = sanitize_shortcode_value($msg);
   if (is_user_logged_in()) {
     return do_shortcode($content);
@@ -252,7 +252,7 @@ if ( !function_exists( 'timeline_shortcode' ) ):
 function timeline_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
     'title' => null,
-  ), $atts ) );
+  ), $atts, 'timeline' ) );
   $content = remove_wrap_shortcode_wpautop('ti', $content);
   $content = do_shortcode( shortcode_unautop( $content ) );
   $title = sanitize_shortcode_value($title);
@@ -294,7 +294,7 @@ function timeline_item_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
     'title' => null,
     'label' => null,
-  ), $atts ) );
+  ), $atts, 'ti' ) );
   $title = sanitize_shortcode_value($title);
   $label = sanitize_shortcode_value($label);
   $title_tag = null;
@@ -323,7 +323,7 @@ if ( !function_exists( 'ago_shortcode' ) ):
 function ago_shortcode( $atts ){
   extract( shortcode_atts( array(
     'from' => null,
-  ), $atts ) );
+  ), $atts, 'ago' ) );
   if (!$from) {
     return TIME_ERROR_MESSAGE;
   }
@@ -341,7 +341,7 @@ function age_shortcode( $atts ){
     'from' => null,
     'birth' => null,
     'unit' => __( '歳', THEME_NAME ),
-  ), $atts ) );
+  ), $atts, 'age' ) );
   if (!$from) {
     $from = $birth;
   }
@@ -362,7 +362,7 @@ function yago_shortcode( $atts ){
   extract( shortcode_atts( array(
     'from' => null,
     'unit' => '',
-  ), $atts ) );
+  ), $atts, 'yago' ) );
   //入力エラー出力
   if (!$from) {
     return TIME_ERROR_MESSAGE;
@@ -383,7 +383,7 @@ function rating_star_shortcode( $atts, $content = null ) {
       'rate' => 5,
       'max' => 5,
       'number' => 1,
-  ), $atts ) );
+  ), $atts, 'star' ) );
   return get_rating_star_tag($rate, $max, $number);
 }
 endif;
@@ -414,7 +414,7 @@ function sitemap_shortcode( $atts, $content = null ) {
     'single' => 1,
     'category' => 1,
     'archive' => 0,
-  ), $atts ) );
+  ), $atts, 'sitemap' ) );
   ob_start();?>
   <div class="sitemap">
     <?php if ($page): ?>
@@ -455,7 +455,7 @@ if ( !function_exists( 'blogcard_shortcode' ) ):
 function blogcard_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
     'url' => null,
-  ), $atts ) );
+  ), $atts, 'blogcard' ) );
   if ($url) {
     $tag = url_to_internal_blogcard_tag($url);
     if (!$tag) {
@@ -488,7 +488,7 @@ function countdown_shortcode( $atts ){
   extract( shortcode_atts( array(
     'to' => null,
     'unit' => null,
-  ), $atts ) );
+  ), $atts, 'countdown' ) );
   //入力エラー出力
   if (!$to) {
     return TIME_ERROR_MESSAGE;
@@ -509,7 +509,7 @@ function get_ord_navi_card_list_tag($atts){
     'bold' => 1,
     'arrow' => 1,
     'class' => null,
-  ), $atts));
+  ), $atts, 'navi'));
   $atts = array(
     'name' => $name,
     'type' => $type,
@@ -534,7 +534,7 @@ function get_navi_card_list_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
-  ), $atts));
+  ), $atts, 'navi_list'));
 
   if (is_admin() && !is_admin_php_page()) {
     return;

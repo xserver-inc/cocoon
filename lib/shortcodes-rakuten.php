@@ -39,7 +39,7 @@ function rakuten_product_link_shortcode($atts){
     'btn3_url' => null,
     'btn3_text' => __( '詳細ページ', THEME_NAME ),
     'btn3_tag' => null,
-  ), $atts ) );
+  ), $atts, 'rakuten' ) );
 
   $id = sanitize_shortcode_value($id);
 
