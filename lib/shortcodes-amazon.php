@@ -273,7 +273,8 @@ function get_amazon_itemlookup_json($asin){
     'http' => array (
       'header' => $headerString,
       'method' => 'POST',
-      'content' => $payload
+      'content' => $payload,
+      'ignore_errors' => true,
     )
   );
   $stream = stream_context_create( $params );
