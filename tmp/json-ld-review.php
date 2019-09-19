@@ -13,13 +13,14 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 $author = (get_the_author_meta('display_name') ? get_the_author_meta('display_name') : get_bloginfo('name'));
+$review_type = get_the_review_type() ? get_the_review_type() : 'Product';
  ?>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Review",
   "itemReviewed": {
-    "@type": "Thing",
+    "@type": "<?php echo esc_attr($review_type); ?>",
     "name": "<?php echo esc_attr(get_the_review_name()); ?>"
   },
   "reviewRating": {

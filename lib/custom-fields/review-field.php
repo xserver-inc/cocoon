@@ -33,8 +33,29 @@ function review_custom_box_view(){
   generate_howro_tag(__( 'レビュー構造化データを出力するか。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/review-structured-data/'));
 
   //対象
+  $the_review_type = get_the_review_type();
+  if (!$the_review_type) {
+    $the_review_type = 'Product';
+  }
+  generate_label_tag('the_review_type', __('レビュー対象', THEME_NAME) );
+  $options = array(
+    'Product' => __( '製品・サービス', THEME_NAME ),
+    'Game' => __( 'ゲーム', THEME_NAME ),
+    'MusicPlaylist' => __( 'プレイリスト形式の音楽トラックのコレクション', THEME_NAME ),
+    'MusicRecording' => __( '音楽のトラック、通常は1曲', THEME_NAME ),
+    'CreativeWorkSeason' => __( 'テレビ、ラジオ、ビデオゲームなどのメディアシーズン', THEME_NAME ),
+    'CreativeWorkSeries' => __( 'メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）
+    ', THEME_NAME ),
+    'Episode' => __( 'シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）', THEME_NAME ),
+    'MediaObjectWeb' => __( 'ダウンロードデータ（画像、ビデオ、オーディオなど）', THEME_NAME ),
+    'Organization' => __( '学校、NGO、企業、クラブなどの組織', THEME_NAME ),
+  );
+  generate_selectbox_tag('the_review_type', $options, $the_review_type, '');
+  generate_howro_tag(__( 'レビュー対象となるschema typeを入力。※必須', THEME_NAME ));
+
+  //対象名
   $the_review_name = get_the_review_name();
-  generate_label_tag('the_review_name', __('レビュー対象', THEME_NAME) );
+  generate_label_tag('the_review_name', __('レビュー対象名', THEME_NAME) );
   generate_textbox_tag('the_review_name', $the_review_name, '');
   generate_howro_tag(__( 'レビュー対象名を入力。※必須', THEME_NAME ));
 
@@ -60,6 +81,14 @@ function review_custom_box_save_data(){
   add_post_meta($id, $the_review_enable_key, $the_review_enable, true);
   update_post_meta($id, $the_review_enable_key, $the_review_enable);
 
+  //対象
+  if ( isset( $_POST['the_review_type'] ) ){
+    $the_review_type = $_POST['the_review_type'];
+    $the_review_type_key = 'the_review_type';
+    add_post_meta($id, $the_review_type_key, $the_review_type, true);
+    update_post_meta($id, $the_review_type_key, $the_review_type);
+  }
+
   //名前
   if ( isset( $_POST['the_review_name'] ) ){
     $the_review_name = $_POST['the_review_name'];
@@ -75,6 +104,13 @@ function review_custom_box_save_data(){
     add_post_meta($id, $the_review_rate_key, $the_review_rate, true);
     update_post_meta($id, $the_review_rate_key, $the_review_rate);
   }
+}
+endif;
+
+//対象
+if ( !function_exists( 'get_the_review_type' ) ):
+function get_the_review_type(){
+  return trim(get_post_meta(get_the_ID(), 'the_review_type', 'Product'));
 }
 endif;
 
