@@ -30,7 +30,7 @@ function review_custom_box_view(){
   //レビュー切り換え
   $the_review_enable = is_the_review_enable();
   generate_checkbox_tag('the_review_enable' , $the_review_enable, __( '評価を表示する', THEME_NAME ));
-  generate_howro_tag(__( 'レビュー構造化データを出力するか。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/review-structured-data/'));
+  generate_howto_tag(__( 'レビュー構造化データを出力するか。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/review-structured-data/'));
 
   //対象
   $the_review_type = get_the_review_type();
@@ -51,13 +51,13 @@ function review_custom_box_view(){
     'Organization' => __( '学校、NGO、企業、クラブなどの組織', THEME_NAME ),
   );
   generate_selectbox_tag('the_review_type', $options, $the_review_type, '');
-  generate_howro_tag(__( 'レビュー対象となるschema typeを入力。※必須', THEME_NAME ));
+  generate_howto_tag(__( 'レビュー対象となるschema typeを入力。※必須', THEME_NAME ));
 
   //対象名
   $the_review_name = get_the_review_name();
   generate_label_tag('the_review_name', __('レビュー対象名', THEME_NAME) );
   generate_textbox_tag('the_review_name', $the_review_name, '');
-  generate_howro_tag(__( 'レビュー対象名を入力。※必須', THEME_NAME ));
+  generate_howto_tag(__( 'レビュー対象名を入力。※必須', THEME_NAME ));
 
   //レート
   $the_review_rate = get_the_review_rate();
@@ -66,7 +66,7 @@ function review_custom_box_view(){
   }
   generate_label_tag('the_review_rate', __('レビュー評価', THEME_NAME) );
   generate_range_tag('the_review_rate',$the_review_rate, 0, 5, 0.5);
-  generate_howro_tag(__( '0から5の範囲で評価を入力。', THEME_NAME ));
+  generate_howto_tag(__( '0から5の範囲で評価を入力。', THEME_NAME ));
 
 }
 endif;

@@ -39,19 +39,19 @@ function page_custom_box_view(){
     'content_only_narrow' => __( '本文のみ（狭い）', THEME_NAME ),
   );
   generate_selectbox_tag('page_type', $options, get_singular_page_type(), __( 'ページタイプ', THEME_NAME ));
-  generate_howro_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
+  generate_howto_tag(__( 'このページの表示状態を設定します。「本文のみ」表示はランディングページ（LP）などにどうぞ。', THEME_NAME ));
 
   //記事を読む時間
   generate_checkbox_tag('the_page_read_time_novisible' , is_the_page_read_time_novisible(), __( '読む時間を表示しない', THEME_NAME ));
-  generate_howro_tag(__( 'このページに「記事を読む時間」を表示するかを切り替えます。', THEME_NAME ));
+  generate_howto_tag(__( 'このページに「記事を読む時間」を表示するかを切り替えます。', THEME_NAME ));
 
   //目次表示
   generate_checkbox_tag('the_page_toc_novisible' , is_the_page_toc_novisible(), __( '目次を表示しない', THEME_NAME ));
-  generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
+  generate_howto_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
 
   // //目次表示
   // generate_checkbox_tag('the_page_toc_visible' , is_the_page_toc_visible(), __( '目次を表示しない', THEME_NAME ));
-  // generate_howro_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
+  // generate_howto_tag(__( 'このページに目次を表示するかを切り替えます。', THEME_NAME ));
 
 
   // //ページタイプ

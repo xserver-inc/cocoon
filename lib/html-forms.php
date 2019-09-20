@@ -213,8 +213,8 @@ endif;
 
 
 //ハウツー説明文の生成
-if ( !function_exists( 'generate_howro_tag' ) ):
-function generate_howro_tag($caption){?>
+if ( !function_exists( 'generate_howto_tag' ) ):
+function generate_howto_tag($caption){?>
   <p class="howto"><?php echo $caption; ?></p>
   <?php
 }
