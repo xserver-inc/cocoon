@@ -155,11 +155,18 @@ function generate_radiobox_tag($name, $options, $now_value){
 endif;
 
 
+//ラベルの取得
+if ( !function_exists( 'get_label_tag' ) ):
+function get_label_tag($name, $caption){
+  return '<label for="'. $name.'">'.$caption.'</label>';
+}
+endif;
+
+
 //ラベルの生成
 if ( !function_exists( 'generate_label_tag' ) ):
-function generate_label_tag($name, $caption){?>
-  <label for="<?php echo $name; ?>"><?php echo $caption; ?></label>
-  <?php
+function generate_label_tag($name, $caption){
+  echo get_label_tag($name, $caption);
 }
 endif;
 
@@ -211,12 +218,19 @@ function generate_alert_tag($caption){?>
 }
 endif;
 
+//ハウツー説明文の取得
+if ( !function_exists( 'get_howto_tag' ) ):
+function get_howto_tag($caption, $id = ''){
+  $caption = apply_filters('howto_tag_caption', $caption, $id);
+  return '<p class="howto">'.$caption.'</p>';
+}
+endif;
+
 
 //ハウツー説明文の生成
 if ( !function_exists( 'generate_howto_tag' ) ):
-function generate_howro_tag($caption, $id = ''){
-  $caption = apply_filters('howto_tag_caption', $caption, $id);
-  echo '<p class="howto">'.$caption.'</p>';
+function generate_howto_tag($caption, $id = ''){
+  echo get_howto_tag($caption, $id);
 }
 endif;
 
@@ -268,7 +282,7 @@ endif;
 if ( !function_exists( 'generate_textbox_tag' ) ):
 function generate_textbox_tag($name, $value, $placeholder, $cols = DEFAULT_INPUT_COLS){
   ob_start();?>
-  <input type="text" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
+  <input type="text" id="<?php echo $name; ?>" name="<?php echo $name; ?>" size="<?php echo $cols; ?>" value="<?php echo esc_attr(stripslashes_deep(strip_tags($value))); ?>" placeholder="<?php echo esc_attr($placeholder); ?>">
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
@@ -277,9 +291,13 @@ endif;
 
 //テキストエリアの生成
 if ( !function_exists( 'generate_textarea_tag' ) ):
-function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS){
+function generate_textarea_tag($name, $value, $placeholder, $rows = DEFAULT_INPUT_ROWS,  $cols = DEFAULT_INPUT_COLS, $style = null){
+  $style_tag = null;
+  if ($style) {
+    $style_tag = ' style="'.$style.'"';
+  }
   ob_start();?>
-  <textarea name="<?php echo $name; ?>" placeholder="<?php echo $placeholder; ?>" rows="<?php echo $rows; ?>" cols="<?php echo $cols; ?>"><?php echo $value; ?></textarea>
+  <textarea id="<?php echo $name; ?>" name="<?php echo $name; ?>" placeholder="<?php echo $placeholder; ?>" rows="<?php echo $rows; ?>" cols="<?php echo $cols; ?>"<?php echo $style_tag; ?>><?php echo $value; ?></textarea>
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);

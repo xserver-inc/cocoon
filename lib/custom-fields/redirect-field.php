@@ -31,7 +31,7 @@ function redirect_custom_box_view(){
 
   generate_label_tag('redirect_url', __('リダイレクトURL', THEME_NAME) );
   generate_textbox_tag('redirect_url', $redirect_url, __( 'https://', THEME_NAME ));
-  echo '<p class="howto">'.__( 'このページに訪れるユーザーを設定したURLに301リダイレクトします。', THEME_NAME ).'</p>';
+  generate_howto_tag(__( 'このページに訪れるユーザーを設定したURLに301リダイレクトします。', THEME_NAME ), 'redirect_url');
 
 }
 endif;
