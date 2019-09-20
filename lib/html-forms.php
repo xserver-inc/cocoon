@@ -214,9 +214,9 @@ endif;
 
 //ハウツー説明文の生成
 if ( !function_exists( 'generate_howto_tag' ) ):
-function generate_howto_tag($caption){?>
-  <p class="howto"><?php echo $caption; ?></p>
-  <?php
+function generate_howro_tag($caption, $id = ''){
+  $caption = apply_filters('howto_tag_caption', $caption, $id);
+  echo '<p class="howto">'.$caption.'</p>';
 }
 endif;
 
