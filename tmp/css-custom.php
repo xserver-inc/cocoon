@@ -718,7 +718,11 @@ body#tinymce.wp-editor{
 global $is_IE;
 if ($is_IE): ?>
 .wp-block-image figure.aligncenter {
-	display: block;
+  display: block;
+  text-align: center;
+}
+.wp-block-image figure.aligncenter figcaption{
+  display: block;
 }
   <?php if(is_singular() && is_eyecatch_visible() && has_post_thumbnail()): ?>
   .eye-catch-wrap {
