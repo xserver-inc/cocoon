@@ -9782,6 +9782,11 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   #admin-panel {
     display: none !important;
   }
+
+  body {
+    background-image: none !important;
+    background-break: transparent;
+  }
 }
 /************************************
 ** ソースコード
