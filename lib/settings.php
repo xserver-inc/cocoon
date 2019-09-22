@@ -478,6 +478,18 @@ function get_widget_entry_type_options(){
 }
 endif;
 
+//ウィジェット表示スタイルのオプション配列
+if ( !function_exists( 'get_widget_style_options' ) ):
+function get_widget_style_options(){
+  return array(
+    'image_only' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_image_only.png').__( '画像のみ', THEME_NAME ),
+    RC_DEFAULT => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_white_title.png').__( '画像中央に白文字タイトル', THEME_NAME ),
+    'center_label_title' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_label_title.png').__( '画像中央にラベルでタイトル', THEME_NAME ),
+    ET_LARGE_THUMB_ON => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_large_thumb_on.png').__( '画像下段を黒背景にしタイトルを重ねる', THEME_NAME ),
+  );
+}
+endif;
+
 //カスタム投稿動作確認用
 if (DEBUG_MODE) {
   add_action( 'init', 'debug_create_post_type' );

@@ -1055,7 +1055,7 @@ function get_additional_recommend_cards_classes($style = null, $is_margin = null
     case 'image_only':
       $classes .= ' rcs-image-only';
       break;
-    case 'center_white_title':
+    case RC_DEFAULT:
       $classes .= ' rcs-center-white-title rcs-center-title';
       break;
     case 'center_label_title':
