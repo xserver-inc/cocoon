@@ -1045,10 +1045,13 @@ endif;
 
 //おすすめカードのclass追加関数
 if ( !function_exists( 'get_additional_recommend_cards_classes' ) ):
-function get_additional_recommend_cards_classes($option = null){
+function get_additional_recommend_cards_classes($style = null, $is_margin = null, $option = null){
   $classes = null;
 
-  switch (get_recommended_cards_style()) {
+  $style = $style ? $style : get_recommended_cards_style();
+  $is_margin = !is_null($is_margin) ? $is_margin : is_recommended_cards_margin_enable();
+
+  switch ($style) {
     case 'image_only':
       $classes .= ' rcs-image-only';
       break;
@@ -1063,7 +1066,7 @@ function get_additional_recommend_cards_classes($option = null){
       break;
   }
 
-  if (is_recommended_cards_margin_enable()) {
+  if ($is_margin) {
     $classes .= ' rcs-card-margin';
   }
 

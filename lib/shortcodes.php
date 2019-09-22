@@ -584,3 +584,36 @@ function get_navi_card_list_tag($atts){
   return apply_filters('get_navi_card_list_tag', $tag);
 }
 endif;
+
+//おすすめカード
+if ( !function_exists( 'get_recommend_cards_tag' ) ):
+function get_recommend_cards_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'style' => '',
+    'wrap' => null,
+    'margin' => null,
+    'class' => null,
+  ), $atts, 'recommend'));
+  ob_start();
+  $wrap_class = $wrap ? ' wrap' : null;
+  $class = $class ? ' '.$class : null;
+  ?>
+  <!-- Recommended -->
+  <div id="recommended" class="recommended cf<?php echo get_additional_recommend_cards_classes($style, $margin); ?>">
+    <div id="recommended-in" class="recommended-in<?php echo $wrap_class; ?><?php echo $class; ?> cf">
+      <?php
+      $atts = array(
+        'name' => $name,
+        'type' => ET_LARGE_THUMB_ON,
+      );
+      echo get_navi_card_list_tag($atts);
+      ?>
+    </div><!-- /#recommended-in -->
+  </div><!-- /.recommended -->
+  <?php
+  $tag = ob_get_clean();
+  return apply_filters('get_recommend_cards_tag', $tag);
+}
+endif;
+
