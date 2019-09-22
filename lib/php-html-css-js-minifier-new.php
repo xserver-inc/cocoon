@@ -38,7 +38,7 @@ function fn_minify($pattern, $input) {
     return preg_split('#(' . implode('|', $pattern) . ')#', $input, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 }
 
-function fn_minify_css($input, $comment = 2, $quote = 2) {
+function fn_minify_css($input, $comment = 0, $quote = 2) {
     if (!is_string($input) || !$input = n(trim($input))) return $input;
     $output = $prev = "";
     foreach (fn_minify([MINIFY_COMMENT_CSS, MINIFY_STRING], $input) as $part) {
