@@ -319,23 +319,4 @@ textarea {
   }
 }
 
-.recommended{
-  .navi-entry-cards{
-    flex-wrap: wrap;
-    justify-content: space-around;
-    a{
-      width: 50%;
-    }
-  }
-  &.rcs-card-margin{
-      a{
-        margin: .3em 0;
-        width: 48%;
-        &:last-child{
-          margin-right: 0;
-        }
-       }
-    // .navi-entry-cards{
-    // }
-  }
-}
+@include recommended_nallow;
