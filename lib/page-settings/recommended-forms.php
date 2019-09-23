@@ -79,12 +79,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            $options = array(
-              'image_only' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_image_only.png').__( '画像のみ', THEME_NAME ),
-              'center_white_title' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_white_title.png').__( '画像中央に白文字タイトル', THEME_NAME ),
-              'center_label_title' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_label_title.png').__( '画像中央にラベルでタイトル', THEME_NAME ),
-              ET_LARGE_THUMB_ON => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_large_thumb_on.png').__( '画像下段を黒背景にしタイトルを重ねる', THEME_NAME ),
-            );
+            $options = get_widget_style_options();
             generate_radiobox_tag(OP_RECOMMENDED_CARDS_STYLE, $options, get_recommended_cards_style());
             generate_tips_tag(__( 'おすすめカードの表示スタイルを変更します。', THEME_NAME ));
             ?>

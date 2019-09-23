@@ -150,6 +150,8 @@ require_once abspath(__FILE__).'widgets/related-entries.php';
 require_once abspath(__FILE__).'widgets/popular-entries.php';
 //ナビカードウィジェット
 require_once abspath(__FILE__).'widgets/navi-entries.php';
+//おすすめカードウィジェット
+require_once abspath(__FILE__).'widgets/recommended-cards.php';
 //最近のコメントウィジェット
 require_once abspath(__FILE__).'widgets/recent-comments.php';
 //フォローボタンウィジェット

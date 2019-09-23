@@ -91,6 +91,13 @@ class NaviEntryWidgetItem extends WP_Widget {
     $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
 
     ?>
+    <?php //タイトル入力フォーム ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('title'); ?>">
+        <?php _e( 'タイトル', THEME_NAME ) ?>
+      </label>
+      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+    </p>
     <?php //メニュー名 ?>
     <p>
       <?php
@@ -105,13 +112,6 @@ class NaviEntryWidgetItem extends WP_Widget {
       }
       generate_selectbox_tag($this->get_field_name('name'), $options, $name);
       ?>
-    </p>
-    <?php //タイトル入力フォーム ?>
-    <p>
-      <label for="<?php echo $this->get_field_id('title'); ?>">
-        <?php _e( 'タイトル', THEME_NAME ) ?>
-      </label>
-      <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>
     <?php //表示タイプ ?>
     <p>

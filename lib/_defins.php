@@ -57,6 +57,8 @@ define('WM_DEFAULT', 'all');
 define('PCD_DEFAULT', 30);
 //新着・人気ウィジェットのデフォルト表示数字
 define('EC_DEFAULT', 5);
+//おすすめカードのデフォルト値
+define('RC_DEFAULT', 'center_white_title');
 
 //ウィジェットエントリーカードのプレフィックス
 define('WIDGET_NEW_ENTRY_CARD_PREFIX', 'new');
