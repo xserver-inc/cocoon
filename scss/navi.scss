@@ -9,6 +9,7 @@ $icon_height: 16px;
   >a{
     &::after{
       @include fontawesome($unicode);
+      font-family: FontAwesome;
       position: absolute;
       right: 3px;
       top: 0;

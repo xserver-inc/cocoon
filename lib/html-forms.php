@@ -705,7 +705,7 @@ function generate_tagcloud_check_list($name, $checks = array()){
       }
       $id = $tag->term_id;
       $input_id = $name.'-'.$id;
-			$html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.'"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
+			$html .= '<span class="tag-cloud-link admin-tag tag-link-"'.$id.' faw"><label for="'.$input_id.'"><input type="checkbox" id="'.$input_id.'" name="'.$name.'[]" value="'.$id.'"'.$checked.'>' . $tag->name . '<span class="tag-link-count">('.$tag->count.')</span></label></span>';
 		}
 	}
   $html .= '</div>';

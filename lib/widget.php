@@ -43,7 +43,7 @@ function wp_tag_cloud_custom( $output, $args ) {
   //style属性を取り除く
   $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
   //タグテキストにspanタグの取り付け
-  $output = preg_replace( '/ aria-label="([^"]+?)">/i', ' aria-label="$1"><span class="tag-caption">',  $output);
+  $output = preg_replace( '/ aria-label="([^"]+?)">/i', ' aria-label="$1"><span class="tag-caption faw">',  $output);
   //数字を表示しているとき
   if (isset($args['show_count']) && $args['show_count']) {
     $output = str_replace( '<span class="tag-link-count">', '</span><span class="tag-link-count">',  $output);

@@ -20,7 +20,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
     <div id="navi-menu-content" class="navi-menu-content menu-content">
-      <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
+      <label class="navi-menu-close-button menu-close-button faw" for="navi-menu-input"></label>
       <?php //ヘッダーナビ
       ob_start();
       if (has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )) {
@@ -57,7 +57,6 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
       //_v($wp_nav_menu);
       echo $wp_nav_menu;
         ?>
-      <!-- <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label> -->
     </div>
   </li>
 <?php endif ?>

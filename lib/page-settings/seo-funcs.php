@@ -115,13 +115,9 @@ function get_the_date_tags(){
   $date_modified = $is_update_output ? ' dateModified' : null;
   $display_none = is_seo_date_type_none() ? ' display-none' : null;
   //timeタグがある投稿日
-  $time_post_date_tag = '<span class="post-date'.$display_none.'"><time class="entry-date date published'.$updated.'" datetime="'.get_the_time('c').'" itemprop="datePublished'.$date_modified.'">'.get_the_time(get_site_date_format()).'</time></span>';
-  // //通常の投稿日
-  // $post_date_tag = '<span class="post-date"><time class="entry-date date published" datetime="'.get_the_time('c').' itemprop="datePublished">'.get_the_time(get_site_date_format()).'</time></span>';
+  $time_post_date_tag = '<span class="post-date faw'.$display_none.'"><time class="entry-date date published'.$updated.'" datetime="'.get_the_time('c').'" itemprop="datePublished'.$date_modified.'">'.get_the_time(get_site_date_format()).'</time></span>';
   //timeタグがある更新日
-  $time_update_date_tag = '<span class="post-update'.$display_none.'"><time class="entry-date date'.$published.' updated" datetime="'.get_update_time('c').'" itemprop="'.$date_published.'dateModified">'.get_update_time(get_site_date_format()).'</time></span>';
-  // //通常の更新日
-  // $update_date_tag = '<span class="post-update"><time class="entry-date date updated" datetime="'.get_update_time('c').'" itemprop="dateModified">'.get_update_time(get_site_date_format()).'</time></span>';
+  $time_update_date_tag = '<span class="post-update faw'.$display_none.'"><time class="entry-date date'.$published.' updated" datetime="'.get_update_time('c').'" itemprop="'.$date_published.'dateModified">'.get_update_time(get_site_date_format()).'</time></span>';
   switch (get_seo_date_type()) {
     //投稿日のみを伝える
     case 'post_date_only':

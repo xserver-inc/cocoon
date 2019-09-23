@@ -23,7 +23,7 @@ if ( !function_exists( 'get_the_nolink_categories' ) ):
 function get_the_nolink_categories(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $categories .= '<span class="entry-category">'.$category->cat_name.'</span>';
+    $categories .= '<span class="entry-category faw">'.$category->cat_name.'</span>';
   }
   return $categories;
 }
@@ -46,7 +46,7 @@ function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
     $style = null;//get_category_label_style_attr($category->cat_ID);
-    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
+    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.' faw" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
   }
   return $categories;
 }

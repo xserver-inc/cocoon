@@ -680,7 +680,7 @@ function amazon_product_link_shortcode($atts){
         $review_url = $review_url = get_amazon_review_url($asin, $associate_tracking_id);
         //_v($review_url);
         $review_tag =
-          '<div class="amazon-item-review product-item-review item-review">'.
+          '<div class="amazon-item-review product-item-review item-review faw">'.
             '<a class="amazon-item-review-link  product-item-review-link item-review-link" href="'.esc_url($review_url).'" target="_blank" rel="nofollow noopener">'.
               get_amazon_item_customer_reviews_text().
             '</a>'.

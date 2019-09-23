@@ -11,6 +11,11 @@ Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
 .entry-card, .related-entry-card {
   position: relative;
   height: 100%;
@@ -789,9 +794,8 @@ img.emoji {
   position: relative;
 }
 .navi-in > ul > .menu-item-has-children > a::after {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
+  font-family: FontAwesome;
   position: absolute;
   right: 3px;
   top: 0;
@@ -816,9 +820,8 @@ img.emoji {
   position: relative;
 }
 .navi-in > ul .sub-menu .menu-item-has-children > a::after {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
+  font-family: FontAwesome;
   position: absolute;
   right: 3px;
   top: 0;
@@ -946,15 +949,11 @@ img.emoji {
 }
 
 .post-comment-count::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .entry-category::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .entry-card-meta .entry-card-categorys {
@@ -1094,21 +1093,15 @@ img.emoji {
 }
 
 .post-date::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .post-update::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .amp-back::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
   padding-right: 0;
 }
 
@@ -1485,9 +1478,7 @@ img.emoji {
   word-break: break-all;
 }
 .cat-link::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 .cat-link:hover {
   opacity: 0.5;
@@ -1507,9 +1498,7 @@ img.emoji {
   word-break: break-all;
 }
 .tag-link::before, .comment-reply-link::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
@@ -1675,9 +1664,7 @@ blockquote::after {
 }
 
 .author-info::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
   padding-right: 0;
 }
 
@@ -2118,9 +2105,7 @@ label.screen-reader-text {
   word-break: break-all;
 }
 .tagcloud a .tag-caption::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 .tagcloud a .tag-link-count {
   margin-left: 8px;
@@ -2441,9 +2426,7 @@ label.screen-reader-text {
   margin-top: 3px;
 }
 .recent-comment-article::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .recent-comment-content {
@@ -5204,15 +5187,13 @@ div .has-white-background-color {
   background-color: #eee;
 }
 .pagination .prev::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
+  font-family: FontAwesome;
   padding-right: 3px;
 }
 .pagination .next::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
+  font-family: FontAwesome;
   padding-left: 3px;
 }
 .pagination a:hover {
@@ -5326,9 +5307,7 @@ div .has-white-background-color {
   padding-left: 5px;
 }
 .pager-post-navi a.prev-post::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
   margin-right: 5px;
   padding-right: 0;
 }
@@ -5340,9 +5319,7 @@ div .has-white-background-color {
   padding-right: 5px;
 }
 .pager-post-navi a.next-post::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
   margin-left: 5px;
   padding-right: 0;
 }
@@ -5814,9 +5791,8 @@ div.sbs-think .speech-balloon::after {
   position: relative;
 }
 .product-item-box::after {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
+  font-family: FontAwesome;
   position: absolute;
   bottom: 0;
   right: 6px;
@@ -6188,9 +6164,7 @@ div.sbs-think .speech-balloon::after {
 }
 
 .item-review::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .acquired-date {
@@ -6797,9 +6771,7 @@ div.fb-like-mobile {
   text-align: center;
 }
 .menu-close-button::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
   padding: 0;
   font-size: 2em;
 }
@@ -7284,9 +7256,7 @@ div.fb-like-mobile {
   background-color: rgba(255, 255, 255, 0);
 }
 .search-submit::before {
-  font-family: FontAwesome;
   content: "";
-  padding-right: 4px;
 }
 
 .timeline-box {

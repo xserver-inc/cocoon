@@ -26,7 +26,7 @@ if( $prevpost or $nextpost ){ //前の記事、次の記事いずれか存在し
 ?>
 <?php
 if ( $prevpost ) { //前の記事が存在しているとき
-  echo '<a href="' . get_permalink($prevpost->ID) . '" title="' . esc_attr(get_the_title($prevpost->ID)) . '" class="prev-post a-wrap border-element cf">
+  echo '<a href="' . get_permalink($prevpost->ID) . '" title="' . esc_attr(get_the_title($prevpost->ID)) . '" class="prev-post faw a-wrap border-element cf">
         <figure class="prev-post-thumb card-thumb">' .
         get_post_navi_thumbnail_tag( $prevpost->ID, $width, $height ).
         '</figure>
@@ -37,7 +37,7 @@ if ( $prevpost ) { //前の記事が存在しているとき
   }
 }
 if ( $nextpost ) { //次の記事が存在しているとき
-  echo '<a href="' . get_permalink($nextpost->ID) . '" title="'. esc_attr(get_the_title($nextpost->ID)) . '" class="next-post a-wrap cf">
+  echo '<a href="' . get_permalink($nextpost->ID) . '" title="'. esc_attr(get_the_title($nextpost->ID)) . '" class="next-post faw a-wrap cf">
         <figure class="next-post-thumb card-thumb">
         ' .
         get_post_navi_thumbnail_tag( $nextpost->ID, $width, $height ).

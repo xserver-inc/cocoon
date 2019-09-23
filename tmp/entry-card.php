@@ -50,11 +50,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           $update_time = get_update_time(get_site_date_format());
           //投稿日の表示
           if (is_entry_card_post_date_visible() || (is_entry_card_post_date_or_update_visible() && !$update_time && is_entry_card_post_update_visible())): ?>
-            <span class="post-date"><?php the_time(get_site_date_format()); ?></span>
+            <span class="post-date faw"><?php the_time(get_site_date_format()); ?></span>
           <?php endif ?>
           <?php //更新時の表示
           if (is_entry_card_post_update_visible() && $update_time && (get_the_time('U') < get_update_time('U'))): ?>
-            <span class="post-update"><?php echo $update_time; ?></span>
+            <span class="post-update faw"><?php echo $update_time; ?></span>
           <?php endif ?>
           <?php //投稿者の表示
           if (is_entry_card_post_author_visible()): ?>
@@ -65,7 +65,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <?php endif ?>
           <?php //コメント数の表示
           if(is_entry_card_post_comment_count_visible() && is_single_comment_visible()): ?>
-            <span class="post-comment-count"><?php echo get_comments_number(); ?></span>
+            <span class="post-comment-count faw"><?php echo get_comments_number(); ?></span>
           <?php endif; ?>
         </div>
         <div class="entry-card-categorys"><?php the_nolink_categories() ?></div>

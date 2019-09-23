@@ -21,6 +21,7 @@
   position: relative;
   &::after{
     @include fontawesome('\f270');
+    font-family: FontAwesome;
     position: absolute;
     bottom: 0;
     right: 6px;

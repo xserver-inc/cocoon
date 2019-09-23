@@ -33,11 +33,13 @@ $pagination_wh: 46px;
 
   .prev::before{
     @include fontawesome('\f104');
+    font-family: FontAwesome;
     padding-right: 3px;
   }
 
   .next::before{
     @include fontawesome('\f105');
+    font-family: FontAwesome;
     padding-left: 3px;
   }
 

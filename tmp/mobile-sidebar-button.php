@@ -20,7 +20,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
     </label>
     <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
     <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
-      <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
+      <label class="sidebar-menu-close-button menu-close-button faw" for="sidebar-menu-input"></label>
       <?php //サイドバー
       ob_start();
       get_template_part('sidebar');
