@@ -11,10 +11,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 add_filter('the_content', 'theme_html5_fix');
 add_filter('widget_text', 'theme_html5_fix');
 add_filter('widget_text_pc_text', 'theme_html5_fix');
-add_filter('widget_classic_text', 'theme_html5_fix');
+//add_filter('widget_classic_text', 'theme_html5_fix');
 add_filter('widget_text_mobile_text', 'theme_html5_fix');
-add_filter('the_category_content', 'theme_html5_fix');
-add_filter('the_tag_content', 'theme_html5_fix');
+add_filter('the_category_tag_content', 'theme_html5_fix');
 if ( !function_exists( 'theme_html5_fix' ) ):
 function theme_html5_fix($the_content){
   //</div>に</p></div>が追加されてしまう

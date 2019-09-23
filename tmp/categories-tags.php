@@ -9,5 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <div class="entry-categories-tags<?php echo get_additional_categories_tags_area_classes(); ?>">
   <div class="entry-categories"><?php the_category_links() ?></div>
+  <?php if (get_the_tags()): ?>
   <div class="entry-tags"><?php the_tag_links() ?></div>
+  <?php endif; ?>
 </div>

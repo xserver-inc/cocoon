@@ -21,44 +21,51 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <table class="form-table">
           <tbody>
 
-            <!-- モバイルボタンレイアウト -->
+            <!-- モバイルメニュー -->
             <tr>
               <th scope="row">
-                <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルボタンレイアウト', THEME_NAME) ); ?>
+                <?php generate_label_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, __('モバイルメニュー', THEME_NAME) ); ?>
               </th>
               <td>
-                    <?php
-                    $options = array(
-                      'none' => __( 'ボタンを表示しない（ミドルメニューのみ）', THEME_NAME ),
-                      'top' => __( 'トップボタン', THEME_NAME ),
-                      'slide_in' => __( 'スライドインボタン', THEME_NAME ),
-                      // 'slidein' => __( 'スライドインメニューボタン', THEME_NAME ),
-                      // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
-                    );
-                    generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
-                    generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
-
-                    echo '<div'.get_not_allowed_form_class(is_mobile_button_layout_type_slide_in()).'>';
-                    generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'スライドインボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
-                    generate_tips_tag(__( '「モバイルボタンレイアウト」で「スライドインボタン」が表示されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
-                    echo '<div>';
-                    ?>
+                <?php
+                $options = array(
+                  'none' => __( 'ボタンを表示しない（ミドルメニューのみ）', THEME_NAME ),
+                  'top' => __( 'トップメニュー', THEME_NAME ),
+                  'header_mobile_buttons' => __( 'ヘッダーモバイルボタン', THEME_NAME ).__( '（β版）', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-header-buttons/'),
+                  'footer_mobile_buttons' => __( 'フッターモバイルボタン', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-footer-menu/'),
+                  'header_and_footer_mobile_buttons' => __( 'ヘッダー・フッターモバイルボタン', THEME_NAME ).__( '（β版）', THEME_NAME ),
+                  // 'slidein' => __( 'スライドインメニューボタン', THEME_NAME ),
+                  // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
+                );
+                generate_radiobox_tag(OP_MOBILE_BUTTON_LAYOUT_TYPE, $options, get_mobile_button_layout_type());
+                generate_tips_tag(__( 'モバイルメニュー等を表示するための設定を行います。834px以下で表示されます。※「トップボタン」はAMPページでは表示されません。', THEME_NAME ));
+                ?>
 
               </td>
             </tr>
 
-            <!-- エントリーカードスニペット -->
-<!--             <tr>
+
+
+            <!-- モバイルボタン -->
+            <tr <?php echo get_not_allowed_form_class(is_mobile_button_layout_type_mobile_buttons()); ?>>
               <th scope="row">
-                <?php //generate_label_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE, __('エントリーカードスニペット', THEME_NAME) ); ?>
+                <?php generate_label_tag('', __('モバイルボタン', THEME_NAME) ); ?>
               </th>
               <td>
                 <?php
-                // generate_checkbox_tag(OP_SMARTPHONE_ENTRY_CARD_SNIPPET_VISIBLE , is_smartphone_entry_card_snippet_visible(), __( 'スマホ端末でスニペットを表示', THEME_NAME ));
-                // generate_tips_tag(__( 'スマホ環境でスニペット（抜粋）を表示するかどうか。スマホ向けの480px以下で適用されます。', THEME_NAME ));
+
+                generate_checkbox_tag(OP_FIXED_MOBILE_BUTTONS_ENABLE , is_fixed_mobile_buttons_enable(), __( 'モバイルボタンの固定表示', THEME_NAME ));
+                generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときボタンを固定表示するか。無効の場合はスクロールするとモバイルボタンが隠れます。', THEME_NAME ));
+
+                generate_checkbox_tag(OP_MOBILE_HEADER_LOGO_VISIBLE , is_mobile_header_logo_visible(), __( 'サイトヘッダーロゴを表示する', THEME_NAME ));
+                generate_tips_tag(__( 'モバイルでヘッダーロゴを表示するか。', THEME_NAME ));
+
+                generate_checkbox_tag(OP_SLIDE_IN_CONTENT_BOTTOM_SIDEBAR_VISIBLE , is_slide_in_content_bottom_sidebar_visible(), __( 'モバイルボタン時コンテンツ下のサイドバーを表示', THEME_NAME ));
+                generate_tips_tag(__( '「モバイルボタンレイアウト」で「モバイルボタン」が選択されているときメインカラム下に表示されるサイドバーを表示するかどうか。', THEME_NAME ));
+
                 ?>
               </td>
-            </tr> -->
+            </tr>
 
 
           </tbody>

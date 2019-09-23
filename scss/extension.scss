@@ -306,7 +306,7 @@ $marker_u_blue: #a8dafb;
 .comment-box::before,
 .common-icon-box::before{
   font-family: "FontAwesome";
-  font-size: 50px;
+  font-size: 46px;
   position: absolute;
   //top: 20px;
   top: -13px;
@@ -484,7 +484,7 @@ $bb_green: $green_color;
       font-size: .8em;
       top: -1.8em;
       left: -3px;
-      line-height: 1.6;
+      line-height: 1.8;
       padding: 0 1em 0 .8em;
       color: $white;
       border-radius: 6px 6px 0 0;
@@ -605,7 +605,7 @@ $bb_green: $green_color;
 /*******************************
 * 続きはWEBで的な検索ボックス
 ********************************/
-.search-form{
+.container .search-form{
   margin: 3em 0;
 }
 
@@ -667,7 +667,8 @@ $bb_green: $green_color;
 }
 
 .btn-wrap{
-    min-height: 2em;
+  min-height: 2em;
+  margin: 1.6em 0;
   img[width="1"]{
     position: absolute;
     bottom: 0;
@@ -684,7 +685,7 @@ $bb_green: $green_color;
   display: inline-block;
   cursor: pointer;
   line-height: normal;
-  padding: 10px 16px;
+  padding: 8px 1em;
   text-decoration: none;
   text-align: center;
   font-size: 14px;
@@ -759,6 +760,30 @@ $bb_green: $green_color;
     right: -3px;
     transition: $bgc_hover_anime;
   }
+}
+
+/* ボタンを光らせる */
+.btn-shine,
+.btn-wrap-shine > a {
+  overflow: hidden;
+}
+.btn-shine:before,
+.btn-wrap-shine > a:before {
+  animation: shine 3s ease-in-out infinite;
+  background-color: #fff;
+  content: " ";
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: -180px;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.btn-circle,
+.btn-wrap-circle > a{
+  border-radius: 99px;
 }
 
 .btn-white, .btn-wrap.btn-wrap-white > a{color: $text_color;background-color: $white;}
@@ -979,6 +1004,9 @@ $bb_green: $green_color;
 }
 .bct-official .blogcard::before{
   content:$bct-official;
+}
+.bct-dl .blogcard::before{
+  content:$bct-dl;
 }
 
 ///////////////////////////////////////////

@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_footer', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div id="footer" class="demo">
-      <?php get_template_part('tmp/footer-bottom'); ?>
+      <?php get_sanitize_preview_template_part('tmp/footer-bottom'); ?>
     </div>
     <?php endif; ?>
 

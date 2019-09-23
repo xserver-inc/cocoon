@@ -40,10 +40,10 @@ function get_ad_link_unit_code(){
 endif;
 
 //広告ラベル
-define('OP_AD_LABEL', 'ad_label');
-if ( !function_exists( 'get_ad_label' ) ):
-function get_ad_label(){
-  return get_theme_option(OP_AD_LABEL, __( 'スポンサーリンク', THEME_NAME ));
+define('OP_AD_LABEL_CAPTION', 'ad_label_caption');
+if ( !function_exists( 'get_ad_label_caption' ) ):
+function get_ad_label_caption(){
+  return get_theme_option(OP_AD_LABEL_CAPTION, __( 'スポンサーリンク', THEME_NAME ));
 }
 endif;
 
@@ -431,6 +431,31 @@ define('OP_AD_SHORTCODE_LABEL_VISIBLE', 'ad_shortcode_label_visible');
 if ( !function_exists( 'is_ad_shortcode_label_visible' ) ):
 function is_ad_shortcode_label_visible(){
   return get_theme_option(OP_AD_SHORTCODE_LABEL_VISIBLE, 1);
+}
+endif;
+
+//LinkSwitch有効
+define('OP_AD_LINKSWITCH_ENABLE', 'ad_linkswitch_enable');
+if ( !function_exists( 'is_ad_linkswitch_enable' ) ):
+function is_ad_linkswitch_enable(){
+  return get_theme_option(OP_AD_LINKSWITCH_ENABLE);
+}
+endif;
+
+//LinkSwitch ID
+define('OP_AD_LINKSWITCH_ID', 'ad_linkswitch_id');
+if ( !function_exists( 'get_ad_linkswitch_id' ) ):
+function get_ad_linkswitch_id(){
+  $linkswitch_id = get_theme_option(OP_AD_LINKSWITCH_ID);
+  $linkswitch_id = trim($linkswitch_id);
+  $linkswitch_id = strip_tags($linkswitch_id);
+  return $linkswitch_id;
+}
+endif;
+//LinkSwitchトータルとして有効か
+if ( !function_exists( 'is_all_linkswitch_enable' ) ):
+function is_all_linkswitch_enable(){
+  return is_all_ads_visible() && is_ad_linkswitch_enable() && get_ad_linkswitch_id();
 }
 endif;
 

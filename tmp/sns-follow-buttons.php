@@ -46,15 +46,23 @@ if ( is_any_sns_follow_buttons_exist()
   <?php endif; ?>
 
   <?php if ( get_the_author_instagram_url($user_id) )://Instagramフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_instagram_url($user_id); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-instagram-new"></span></a>
+    <a href="<?php echo get_the_author_instagram_url($user_id); //InstagramフォローIDの取得 ?>" class="follow-button instagram-button instagram-follow-button-sq" target="_blank" title="<?php _e( 'Instagramをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-instagram-logo"></span></a>
   <?php endif; ?>
 
   <?php if (  get_the_author_youtube_url($user_id) )://YouTubeフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_youtube_url($user_id); //YouTubeフォローURLの取得 ?>" class="follow-button youtube-button youtube-follow-button-sq" target="_blank" title="<?php _e( 'YouTubeをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-youtube-logo"></span></a>
   <?php endif; ?>
 
+  <?php if (  get_the_author_linkedin_url($user_id) )://LinkedInフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_linkedin_url($user_id); //LinkedInフォローURLの取得 ?>" class="follow-button linkedin-button linkedin-follow-button-sq" target="_blank" title="<?php _e( 'LinkedInをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-linkedin-logo"></span></a>
+  <?php endif; ?>
+
+  <?php if (  get_the_author_note_url($user_id) )://noteフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_note_url($user_id); //noteフォローIDの取得 ?>" class="follow-button note-button note-follow-button-sq" target="_blank" title="<?php _e( 'noteをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-note-logo"></span></a>
+  <?php endif; ?>
+
   <?php if (  get_the_author_flickr_url($user_id) )://Flickrフォローボタンを表示するか ?>
-    <a href="<?php echo get_the_author_flickr_url($user_id); //YFlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
+    <a href="<?php echo get_the_author_flickr_url($user_id); //FlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
   <?php endif; ?>
 
   <?php if ( get_the_author_pinterest_url($user_id) )://Pinterestフォローボタンを表示するか ?>
@@ -73,12 +81,20 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_rakuten_room_url($user_id); //楽天ROOM URLの取得 ?>" class="follow-button rakuten-room-button rakuten-room-follow-button-sq" target="_blank" title="<?php _e( '楽天ROOM', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-rakuten-room-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( get_the_author_slack_url($user_id) )://Slackフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_slack_url($user_id); //SlackフォローURLの取得 ?>" class="follow-button slack-button slack-follow-button-sq" target="_blank" title="<?php _e( 'Slackをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-slack-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( get_the_author_github_url($user_id) )://GitHubフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_github_url($user_id); //GitHubフォローURLの取得 ?>" class="follow-button github-button github-follow-button-sq" target="_blank" title="<?php _e( 'GitHubをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-github-logo"></span></a>
   <?php endif; ?>
 
+    <?php if ( get_the_author_codepen_url($user_id) )://CodePenフォローボタンを表示するか ?>
+      <a href="<?php echo get_the_author_codepen_url($user_id); //CodePenフォローURLの取得 ?>" class="follow-button codepen-button codepen-follow-button-sq" target="_blank" title="<?php _e( 'CodePenをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-codepen-logo"></span></a>
+    <?php endif; ?>
+
   <?php if ( is_feedly_follow_button_visible() )://feedlyフォローボタンを表示するか ?>
-    <a href="//feedly.com/i/subscription/feed/<?php echo urlencode(get_bloginfo("rss2_url")); ?>" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"><?php echo get_feedly_count(); ?></span></a>
+    <a href="//feedly.com/i/subscription/feed/<?php echo urlencode(get_bloginfo("rss2_url")); ?>" class="follow-button feedly-button feedly-follow-button-sq" target="_blank" title="<?php _e( 'feedlyで更新情報を購読', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"><?php echo get_feedly_count(); ?></span></a>
   <?php endif; ?>
 
   <?php if ( is_rss_follow_button_visible() )://RSSフォローボタンを表示するか ?>

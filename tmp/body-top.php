@@ -17,6 +17,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php //アピールエリア
   get_template_part('tmp/appeal'); ?>
 
+  <?php //おすすめカード
+  get_template_part('tmp/recommended-cards'); ?>
+
   <?php //カルーセル
   get_template_part('tmp/carousel'); ?>
 

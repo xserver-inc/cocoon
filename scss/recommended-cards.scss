@@ -1,0 +1,119 @@
+/************************************
+** おすすめカード
+************************************/
+.recommended{
+  .navi-entry-cards{
+    display: flex;
+    justify-content: center;
+    a{
+      padding: 0;
+      margin: 0;
+      width: 25%;
+      border-radius: 0;
+    }
+  }
+
+  figure{
+    margin: 0;
+  }
+
+  .card-content{
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .card-snippet{
+    display: none;
+  }
+
+  &.rcs-image-only{
+    .card-content{
+      display: none;
+    }
+  }
+  &.rcs-center-title{
+    .card-content{
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      opacity: 1;
+      //background-color: rgba(51, 51, 51, 0.3);
+      font-size: 1em;
+      max-height: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      //font-weight: 700;
+      // .card-title{
+      //   display:table-cell;
+      //   vertical-align:middle;
+      // }
+    }
+    .a-wrap:hover{
+      .card-content{
+        opacity: 1;
+      }
+    }
+  }
+  &.rcs-center-white-title{
+    .card-content{
+      background-color: rgba(51, 51, 51, 0.3);
+      transition: all .7s;
+      // &:hover{
+      //   transition: all .3s;
+      //   opacity: 0;
+      // }
+    }
+
+    .a-wrap:hover{
+      .card-content{
+        transition: all .7s;
+        opacity: 0;
+      }
+    }
+  }
+  &.rcs-center-label-title{
+    .card-content{
+      background-color: rgba(51, 51, 51, 0);
+      padding: 0;
+
+      .card-title{
+        color: $text_color;
+        background-color: #fffffc;
+        padding: 6px 1em;
+        opacity: 0.8;
+        background-color: rgba(255, 255, 255, 0.9);
+        //border-radius: 6px;
+        width: 100%;
+        //border: 2px solid #888084;
+        transition: all .5s;
+      }
+      &:hover{
+        .card-title{
+          transition: all .3s;
+          //opacity: 0;
+        }
+      }
+    }
+  }
+
+  &.rcs-card-margin{
+    a{
+      margin: 1em;
+      margin-right: 0;
+      &:last-child{
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .ribbon{
+    display: none;
+  }
+}
+
+.nwa{
+  @include recommended_nallow;
+}

@@ -176,13 +176,8 @@ table{
 ///////////////////////////////////////
 // Facebookボックス
 ///////////////////////////////////////
-@include fb_like_box;
-.fb-like-box{
-  max-width: none;
-}
-// .fb-like-thumb{
-//   display: none;
-// }
+@include fb_like_box(none);
+
 
 ///////////////////////////////////////
 // CTAボックス
@@ -288,7 +283,6 @@ textarea {
   margin-top: 10px;
 }
 
-.no-mobile-sidebar #sidebar,
 .product-item-thumb-l,
 .swatchimages{
   display: none;
@@ -324,3 +318,5 @@ textarea {
     height: auto;
   }
 }
+
+@include recommended_nallow;

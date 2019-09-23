@@ -6,9 +6,9 @@
   .fb-like-thumb,
   .fb-like-content{
     width: 100%;
-    >*{
-      min-width: 100%;
-    }
+    // >*{
+    //   min-width: 100%;
+    // }
   }
 
   img{
@@ -24,25 +24,20 @@
 
 }
 
-.fb-like-thumb{
-  max-width: 56%;
-}
+// .fb-like-thumb{
+//   max-width: 56%;
+// }
 
 .fb-like-content{
-//  width: 44%;
-  //display: block;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: space-around;
+  // justify-content: center;
+  // align-items: center;
+  // align-content: space-around;
   text-align: center;
 
   >div{
-    //height: 100%;
     padding-top: 8px;
-    //margin-top: 8px;
-    //margin: 10px;
   }
 }
 
@@ -60,19 +55,11 @@
 .fb-like-buttons{
   padding: 0;
   text-align: center;
-  // >div{
-  //   line-height: 32px;
-  // }
   >div{
     margin: 8px;
-    // position: relative;
-
-    // >iframe{
-    //   line-height: 32px;
-    // }
 
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
 
     >*{
@@ -85,10 +72,6 @@
 .fb-like-facebook{
   margin-bottom: -7px;
 }
-
-// .line-it-button{
-//   display: none;
-// }
 
 ///////////////////////////////////////
 // サイドバーのFacebookボックス

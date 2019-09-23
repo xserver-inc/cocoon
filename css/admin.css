@@ -30,25 +30,25 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .search-edit, .admin-settings .demo input[type="text"], .admin-settings .demo input[type="password"], .admin-settings .demo input[type="date"], .admin-settings .demo input[type="datetime"], .admin-settings .demo input[type="email"], .admin-settings .demo input[type="number"], .admin-settings .demo input[type="search"], .admin-settings .demo input[type="tel"], .admin-settings .demo input[type="time"], .admin-settings .demo input[type="url"], .admin-settings .demo textarea, .admin-settings .demo select { padding: 11px; border: 1px solid #ccc; border-radius: 4px; font-size: 18px; width: 100%; }
 
-.snipet-list { padding: 20px; display: flex; flex-wrap: wrap; }
+.snippet-list { padding: 20px; display: flex; flex-wrap: wrap; }
 
-.snipet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
+.snippet-wrap { width: 240px; margin: 5px; padding: 10px; border: 1px solid #ccc; background-color: #fff; position: relative; }
 
-.snipet-title, .snipet-short-code, .snipet-content { margin-bottom: 6px; }
+.snippet-title, .snippet-short-code, .snippet-content { margin-bottom: 6px; }
 
-.snipet-short-code input { width: 120px; }
+.snippet-short-code input { width: 120px; }
 
-.snipet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
+.snippet-content { max-height: 100px; overflow: hidden; margin-bottom: 20px; }
 
 .op-message { text-align: center; font-size: 16px; margin: 0; }
 
-.snipet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
-.snipet-menu a { margin-left: 8px; }
-.snipet-menu .snipet-menu-left { position: absolute; left: 10px; }
+.snippet-menu { text-align: right; position: absolute; bottom: 0; left: 0; right: 0; padding: 5px; background-color: #fff; }
+.snippet-menu a { margin-left: 8px; }
+.snippet-menu .snippet-menu-left { position: absolute; left: 10px; }
 
-.snipet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
-.snipet-confirm-wrap .snipet-confirm-title { font-size: 16px; font-weight: bold; }
-.snipet-confirm-wrap .snipet-confirm-text pre { max-height: 300px; overflow: auto; }
+.snippet-confirm-wrap { border: 1px solid #ccc; background-color: #fff; padding: 20px; }
+.snippet-confirm-wrap .snippet-confirm-title { font-size: 16px; font-weight: bold; }
+.snippet-confirm-wrap .snippet-confirm-text pre { max-height: 300px; overflow: auto; }
 
 .operation-buttons { margin: 4px 0; padding: 5px; }
 .operation-buttons a { padding: 5px 10px; font-weight: bold; background-color: #fff; border: 2px solid #ccc; }
@@ -119,7 +119,7 @@ body.wp-admin { color: #444; }
 ** サイドバーの位置
 ************************************/ /************************************
 ** ウィジェット
-************************************/ /*ウィジェットリスト*/ /*タグクラウド*/ /*ウィジェット（カテゴリー・アーカイブなど）*/ /*カレンダー*/ /************************************
+************************************/ /*タグクラウド*/ /*ウィジェット（カテゴリー・アーカイブなど）*/ /*カレンダー*/ /************************************
 ** 新着記事ウィジェット（デフォルト）
 ************************************/ /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
@@ -135,7 +135,7 @@ body.wp-admin { color: #444; }
 * 補足説明
 ********************************/ /*******************************
 * 続きはWEBで的な検索ボックス
-********************************/ /************************************
+********************************/ /* ボタンを光らせる */ /************************************
 ** 汎用ボックス共通
 ************************************/ /************************************
 ** キャプションボックス
@@ -181,12 +181,23 @@ body.wp-admin { color: #444; }
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
 https://codepen.io/nxworld/pen/oLdoWb
 */ /* top left*/ /************************************
+** おすすめカード
+************************************/ /************************************
 ** 基本表示
 ************************************/ /*初期化*/ /*デフォルトリンク*/ /* クリアフィックス */ /* インナーを囲む */ /************************************
 ** 本文部分
@@ -250,7 +261,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** サイドバーの位置
 ************************************/ /************************************
 ** ウィジェット
-************************************/ /*ウィジェットリスト*/ /*タグクラウド*/ /*ウィジェット（カテゴリー・アーカイブなど）*/ /*カレンダー*/ /************************************
+************************************/ /*タグクラウド*/ /*ウィジェット（カテゴリー・アーカイブなど）*/ /*カレンダー*/ /************************************
 ** 新着記事ウィジェット（デフォルト）
 ************************************/ /************************************
 ** 新着記事ウィジェット（大きなサムネイル）
@@ -266,7 +277,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 * 補足説明
 ********************************/ /*******************************
 * 続きはWEBで的な検索ボックス
-********************************/ /************************************
+********************************/ /* ボタンを光らせる */ /************************************
 ** 汎用ボックス共通
 ************************************/ /************************************
 ** キャプションボックス
@@ -312,12 +323,23 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** フッターボトム
 ************************************/ /************************************
 ** トップへ戻るボタン
-************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
+************************************/ /*検索フォーム*/ /* for Desktop */ /* for Smartphone */ /*Cocoon用記事ボックス*/ /*
+.navi-card-wrap { background-color: $white; &.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
+}
+
+.navi-card-box { //background-color: $white; padding: 0; position: relative;
+}
+
+.navi-card-wrap { &:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; } .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; } .navi-card-content{ margin: 0 24px 0 140px; } .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: $text_color; font-weight: 700; } .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: $pallid_text_color; }
+}
+*/ /* リボン部分 */ /*  リボンCSSはnxworld様のページの斜めリボンを改変して利用。
 多くのカスタマイズを公開していらっしゃるので 「リボン css nxworld」などgoogle検索すると便利。
 Copyright (c)
 https://www.nxworld.net/tips/pure-css-corner-ribbon.html
 https://codepen.io/nxworld/pen/oLdoWb
 */ /* top left*/ /************************************
+** おすすめカード
+************************************/ /************************************
 ** アピールエリア
 ************************************/ /************************************
 ** 入力フォーム
@@ -356,15 +378,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fw-700 { font-weight: 700; }
 .admin-settings .demo .fw-800 { font-weight: 800; }
 .admin-settings .demo .fw-900 { font-weight: 900; }
-.admin-settings .demo .ff-meiryo { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.admin-settings .demo .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
 .admin-settings .demo .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
-.admin-settings .demo .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
-.admin-settings .demo .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
-.admin-settings .demo .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
-.admin-settings .demo .ff-hannari { font-family: "Hannari" ,sans-serif; }
-.admin-settings .demo .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
-.admin-settings .demo .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
-.admin-settings .demo .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
+.admin-settings .demo .ff-noto-sans-jp, .admin-settings .demo .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
+.admin-settings .demo .ff-noto-serif-jp, .admin-settings .demo .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
+.admin-settings .demo .ff-mplus-1p, .admin-settings .demo .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
+.admin-settings .demo .ff-rounded-mplus-1c, .admin-settings .demo .wf-active .ff-rounded-mplus-1c { font-family: "M PLUS Rounded 1c" ,sans-serif; }
+.admin-settings .demo .ff-kosugi, .admin-settings .demo .wf-active .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.admin-settings .demo .ff-kosugi-maru, .admin-settings .demo .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
+.admin-settings .demo .ff-sawarabi-gothic, .admin-settings .demo .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
+.admin-settings .demo .ff-sawarabi-mincho, .admin-settings .demo .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
 .admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
@@ -402,7 +426,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo span.fa { font-family: FontAwesome; }
 .admin-settings .demo figure { margin: 0; }
-.admin-settings .demo img { max-width: 100%; height: auto; border: 0; -webkit-backface-visibility: hidden; }
+.admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }
@@ -469,18 +493,18 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu a { padding-left: 16px; padding-right: 16px; }
 .admin-settings .demo .navi-in > ul .sub-menu ul { top: -60px; left: 240px; position: relative; }
-.admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s ease; }
-.admin-settings .demo .navi-in a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s; }
+.admin-settings .demo .navi-in a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .navi-in a:hover > ul { display: block; }
 .admin-settings .demo .navi-in > .menu-mobile { display: none; }
 .admin-settings .demo .navi-in > .menu-mobile .sub-menu { display: none; }
 .admin-settings .demo .navi-footer-in > .menu-footer { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: flex-end; text-align: center; margin: 0; }
 .admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ccc; }
 .admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
-.admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.7s ease; }
-.admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.7s ease; }
-.admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.7s; }
+.admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
+.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.7s; }
+.admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .card-thumb img { width: 100%; }
 .admin-settings .demo .entry-card-thumb { width: 320px; }
 .admin-settings .demo .related-entry-card-thumb { width: 160px; }
@@ -522,15 +546,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .post-date::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .post-update::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .amp-back::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 0; }
-.admin-settings .demo .breadcrumb { margin-top: 20px; margin-bottom: 1em; color: #777; font-size: 13px; }
+.admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
 .admin-settings .demo .breadcrumb div { display: inline; }
 .admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
-.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: 5px; }
+.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
-.admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.7s ease; }
+.admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.7s; }
 .admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a { cursor: pointer; }
 .admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button { background-color: #1da1f2; }
 .admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button { background-color: #3b5998; }
@@ -542,10 +566,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color.sns-share .instagram-button, .admin-settings .demo .bc-brand-color.sns-follow .instagram-button { background-color: #405de6; }
 .admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button { background-color: #bd081c; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
+.admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button { background-color: #0077b5; }
+.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button { background-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
 .admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
+.admin-settings .demo .bc-brand-color.sns-share .slack-button, .admin-settings .demo .bc-brand-color.sns-follow .slack-button { background-color: #e01563; }
 .admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button { background-color: #4078c0; }
+.admin-settings .demo .bc-brand-color.sns-share .codepen-button, .admin-settings .demo .bc-brand-color.sns-follow .codepen-button { background-color: #333; }
 .admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button { background-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button { background-color: #f26522; }
 .admin-settings .demo .bc-brand-color-white.sns-share a, .admin-settings .demo .bc-brand-color-white.sns-follow a { background-color: #fff; font-weight: 500; border: 1px solid #333; color: #333; }
@@ -560,9 +588,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color-white.sns-share .instagram-button, .admin-settings .demo .bc-brand-color-white.sns-follow .instagram-button { color: #405de6; border-color: #405de6; }
 .admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button { color: #bd081c; border-color: #bd081c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button { color: #cd201f; border-color: #cd201f; }
+.admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button { color: #0077b5; border-color: #0077b5; }
+.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button { color: #41c9b4; border-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button { color: #111; border-color: #111; }
 .admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button { color: #ff9900; border-color: #ff9900; }
+.admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button { color: #c61e79; border-color: #c61e79; }
+.admin-settings .demo .bc-brand-color-white.sns-share .slack-button, .admin-settings .demo .bc-brand-color-white.sns-follow .slack-button { color: #e01563; border-color: #e01563; }
 .admin-settings .demo .bc-brand-color-white.sns-share .github-button, .admin-settings .demo .bc-brand-color-white.sns-follow .github-button { color: #4078c0; border-color: #4078c0; }
+.admin-settings .demo .bc-brand-color-white.sns-share .codepen-button, .admin-settings .demo .bc-brand-color-white.sns-follow .codepen-button { color: #333; border-color: #333; }
 .admin-settings .demo .bc-brand-color-white.sns-share .feedly-button, .admin-settings .demo .bc-brand-color-white.sns-follow .feedly-button { color: #2bb24c; border-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .rss-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rss-button { color: #f26522; border-color: #f26522; }
 .admin-settings .demo .ss-top { margin-top: 0; margin-bottom: 0; }
@@ -582,13 +615,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .share-menu-content .sns-share-buttons a { width: 24%; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
 .admin-settings .demo .copy-info { display: none; /*初期状態は非表示*/ padding: 1em 2em; color: #fff; border-radius: 8px; /*画面上部に表示*/ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px #777; z-index: 2; }
 .admin-settings .demo .content { margin-top: 24px; }
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
-.admin-settings .demo .entry-categories-tags { font-family: "Meiryo", sans-serif; }
+.admin-settings .demo .entry-content pre { line-height: 1.6; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
@@ -599,7 +633,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
-.admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
@@ -616,9 +650,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
-.admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
+.admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
-.admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
+.admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
@@ -666,7 +700,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -683,21 +717,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
-.admin-settings .demo .toc.tnt-number-detail > ol { padding-left: 0; }
-.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
-.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
-.admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li { counter-increment: c-h5; counter-reset: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
+.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
+.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -709,18 +732,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
-.admin-settings .demo .widget { margin-bottom: 38px; }
-.admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; }
-.admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
+.admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
 .admin-settings .demo .widget_recent_entries ul, .admin-settings .demo .widget_categories ul, .admin-settings .demo .widget_archive ul, .admin-settings .demo .widget_pages ul, .admin-settings .demo .widget_meta ul, .admin-settings .demo .widget_rss ul, .admin-settings .demo .widget_nav_menu ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .widget_recent_entries ul li ul, .admin-settings .demo .widget_categories ul li ul, .admin-settings .demo .widget_archive ul li ul, .admin-settings .demo .widget_pages ul li ul, .admin-settings .demo .widget_meta ul li ul, .admin-settings .demo .widget_rss ul li ul, .admin-settings .demo .widget_nav_menu ul li ul { padding-left: 20px; margin: 0; }
 .admin-settings .demo .widget_recent_entries ul li a, .admin-settings .demo .widget_categories ul li a, .admin-settings .demo .widget_archive ul li a, .admin-settings .demo .widget_pages ul li a, .admin-settings .demo .widget_meta ul li a, .admin-settings .demo .widget_rss ul li a, .admin-settings .demo .widget_nav_menu ul li a { color: #333; text-decoration: none; padding: 10px 0; display: block; padding-right: 4px; padding-left: 4px; }
-.admin-settings .demo .widget_recent_entries ul li a:hover, .admin-settings .demo .widget_categories ul li a:hover, .admin-settings .demo .widget_archive ul li a:hover, .admin-settings .demo .widget_pages ul li a:hover, .admin-settings .demo .widget_meta ul li a:hover, .admin-settings .demo .widget_rss ul li a:hover, .admin-settings .demo .widget_nav_menu ul li a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .widget_recent_entries ul li a:hover, .admin-settings .demo .widget_categories ul li a:hover, .admin-settings .demo .widget_archive ul li a:hover, .admin-settings .demo .widget_pages ul li a:hover, .admin-settings .demo .widget_meta ul li a:hover, .admin-settings .demo .widget_rss ul li a:hover, .admin-settings .demo .widget_nav_menu ul li a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .widget_recent_entries ul li a .post-count, .admin-settings .demo .widget_categories ul li a .post-count, .admin-settings .demo .widget_archive ul li a .post-count, .admin-settings .demo .widget_pages ul li a .post-count, .admin-settings .demo .widget_meta ul li a .post-count, .admin-settings .demo .widget_rss ul li a .post-count, .admin-settings .demo .widget_nav_menu ul li a .post-count { display: block; float: right; }
 .admin-settings .demo .widget_recent_comments li { padding: 10px 0; }
 .admin-settings .demo .calendar_wrap { margin: 20px 0; }
@@ -734,21 +755,31 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
-.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px 3px; line-height: 1.3; margin-bottom: 4px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card { font-size: 0.8em; position: relative; }
+.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
+.admin-settings .demo .widget-entry-card { font-size: 16px; position: relative; }
+.admin-settings .demo .widget-entry-card-content { margin-left: 126px; }
+.admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+.admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
+.admin-settings .demo .card-arrow .a-wrap { position: relative; }
+.admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .card-arrow .card-content { margin-right: 22px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; display: block; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap { overflow: hidden; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.8; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content { margin-bottom: -4em; transition: all 0.5s; opacity: 0; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-title { position: absolute; width: 100%; bottom: 0; padding: 10px 5px; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 30%; overflow: hidden; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-snippet { margin: 0; }
 .admin-settings .demo .widget-entry-cards.ranking-visible { counter-reset: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-1 .card-thumb::before { background: #cca11f; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
@@ -756,7 +787,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; font-family: Arial,sans-serif; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
-.admin-settings .demo .recent-comments .a-wrap:hover .recent-comment-content { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
 .admin-settings .demo .recent-comment-info, .admin-settings .demo .recent-comment-article { font-size: 16px; }
@@ -818,7 +848,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .admin-settings .demo .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .admin-settings .demo .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 50px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 46px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
 .admin-settings .demo .information-box::before, .admin-settings .demo .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .admin-settings .demo .question-box::before, .admin-settings .demo .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .admin-settings .demo .alert-box::before, .admin-settings .demo .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -856,7 +886,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -898,7 +928,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
-.admin-settings .demo .search-form { margin: 3em 0; }
+.admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
@@ -908,16 +938,19 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
-.admin-settings .demo .btn-wrap { min-height: 2em; }
+.admin-settings .demo .btn-wrap { min-height: 2em; margin: 1.6em 0; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
-.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 8px 1em; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
 .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
-.admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s ease; }
-.admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s ease; }
+.admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s; }
+.admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s; }
+.admin-settings .demo .btn-shine, .admin-settings .demo .btn-wrap-shine > a { overflow: hidden; }
+.admin-settings .demo .btn-shine:before, .admin-settings .demo .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
+.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
@@ -1060,6 +1093,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -1177,14 +1211,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
-.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
+.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s; overflow: hidden; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
-.admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s ease; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .admin-settings .demo .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
 .admin-settings .demo .tb-red .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
@@ -1305,26 +1339,23 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
 .admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
 .admin-settings .demo div .has-white-background-color { background-color: #fff; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 50%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
-.admin-settings .demo .column-wrap.column-3 > div { width: 33%; }
+.admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
 .admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 65%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 65%; }
 .admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
 .admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 74%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
-.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }
@@ -1361,17 +1392,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination .prev::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 3px; }
 .admin-settings .demo .pagination .next::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-left: 3px; }
-.admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 50px; width: 50px; border: 1px solid #ccc; margin: 0 4px; line-height: 50px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
+.admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
-.admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
+.admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
 .admin-settings .demo .pager-links span { background-color: #eee; }
 .admin-settings .demo .pager-links a { display: inline-block; }
 .admin-settings .demo .pager-links a span { background-color: #fff; }
-.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .pager-prev-next a { width: 30%; margin: 0 4px; }
 .admin-settings .demo .pager-prev-next span { width: 100%; margin: 0; }
 .admin-settings .demo .pager-post-navi { margin: 38px 0; display: flex; flex-direction: column; }
@@ -1408,7 +1439,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
 .admin-settings .demo .author-box .sns-follow-buttons { flex-wrap: wrap; justify-content: flex-start; }
-.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: #fff; color: #777; border: 1px solid #ccc; border-radius: 2px; }
+.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: transparent; color: #777; border: 1px solid #ccc; border-radius: 2px; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover { background-color: #fafbfc; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count { display: none; }
 .admin-settings .demo .author-box .author-name { font-size: 1.1em; font-weight: bold; margin-bottom: 0.4em; }
@@ -1471,7 +1502,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
 .admin-settings .demo .product-item-box::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
-.admin-settings .demo .rakuten-item-box::after { content: '\f25d'; }
+.admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
+.admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
@@ -1561,20 +1593,17 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
-.admin-settings .demo .fb-like-box .fb-like-thumb > *, .admin-settings .demo .fb-like-box .fb-like-content > * { min-width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
 .admin-settings .demo .fb-like-box .fb_reset { display: none; }
-.admin-settings .demo .fb-like-thumb { max-width: 56%; }
-.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; justify-content: center; align-items: center; align-content: space-around; text-align: center; }
+.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; text-align: center; }
 .admin-settings .demo .fb-like-content > div { padding-top: 8px; }
 .admin-settings .demo .fb-like-message { color: #eee; font-size: 0.9em; }
 .admin-settings .demo .fb-like-sub-message { color: #ccc; font-size: 0.7em; margin-bottom: 8px; }
 .admin-settings .demo .fb-like-buttons { padding: 0; text-align: center; }
-.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; justify-content: center; }
 .admin-settings .demo .fb-like-buttons > div > * { height: 100%; }
 .admin-settings .demo .fb-like-facebook { margin-bottom: -7px; }
-.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; display: block; }
-.admin-settings .demo .sidebar .fb-like-box > div, .admin-settings .demo .sidebar .fb-like-box > figure { width: 100%; max-width: none; }
+.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; flex-direction: column; }
 .admin-settings .demo div.fb-like-mobile { display: none; }
 .admin-settings .demo .fb-like-balloon { height: 100px; margin-top: 30px; margin-bottom: 30px; clear: both; }
 .admin-settings .demo .fb-like-balloon-thumb { float: left; width: 100px; }
@@ -1599,15 +1628,19 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .fb-like-balloon-button { float: none; width: 100%; height: 30px; display: block; padding-top: 0; line-height: 24px; }
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
-.admin-settings .demo .mobile-menu-buttons { background: #eee; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
+.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
-.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 12px; text-align: center; }
+.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
-.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
+.admin-settings .demo .logo-menu-button { text-align: center; font-weight: 900; line-height: 50px; min-width: 200px; overflow: hidden; }
+.admin-settings .demo .logo-menu-button img { max-height: 44px; display: block; margin: 0 auto; }
+.admin-settings .demo .fa.menu-icon { font: inherit; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }
 .admin-settings .demo .search-menu-icon::before { content: '\f002'; }
@@ -1620,7 +1653,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
+.admin-settings .demo .menu-content .menu-drawer { padding: 0 1em 30px; }
 .admin-settings .demo .menu-content .sidebar { width: 100%; display: block; margin: 0; }
 .admin-settings .demo .navi-menu-content { left: 0; -webkit-transform: translateX(-105%); transform: translateX(-105%); }
 .admin-settings .demo .sidebar-menu-content { right: 0; -webkit-transform: translateX(105%); transform: translateX(105%); }
@@ -1631,7 +1664,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .menu-drawer ul { list-style: none; }
 .admin-settings .demo .menu-drawer li { display: block; }
 .admin-settings .demo .menu-drawer a { color: #333; text-decoration: none; padding: 6px; display: block; }
-.admin-settings .demo .menu-drawer a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .menu-drawer a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .menu-drawer .sub-menu { padding-left: 20px; }
 .admin-settings .demo .menu-close-button { display: block; cursor: pointer; text-align: center; }
 .admin-settings .demo .menu-close-button::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding: 0; font-size: 2em; }
@@ -1651,7 +1684,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .star-half-o::before { content: '\f123'; }
 .admin-settings .demo .star-o::before { content: '\f006'; }
 .admin-settings .demo .ranking-item-name { padding: 3px 2px 6px; }
-.admin-settings .demo .ranking-item-rating { color: #f5bc55; font-size: 1.2em; }
+.admin-settings .demo .rating-star { color: #f5bc55; font-size: 1.2em; }
 .admin-settings .demo .rating-number { color: #333; font-size: 0.9em; margin-left: 0.4em; }
 .admin-settings .demo .ranking-item-img-desc, .admin-settings .demo .ranking-item-link-buttons { display: flex; }
 .admin-settings .demo .ranking-item-img-desc > div, .admin-settings .demo .ranking-item-link-buttons > div { width: 100%; padding: 2px 0; }
@@ -1726,6 +1759,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: inherit; }
+.admin-settings .demo #search-menu-content .search-edit { font-size: 16px; }
 .admin-settings .demo .search-submit { position: absolute; right: 0; top: 0; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
@@ -1742,28 +1776,21 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; }
-.admin-settings .demo .navi-card-type-1 { padding-bottom: 2px; border-bottom: 2px dotted #f3f4f5; }
-.admin-settings .demo .navi-card-type-1:first-of-type { border-top: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-1:last-of-type { border-bottom: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-2 { border-radius: 4px; border: 1px solid #ccc; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; -webkit-transform: rotate(45deg); transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
+.admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -1858,6 +1885,26 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
+.admin-settings .demo .recommended .card-snippet { display: none; }
+.admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
+.admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
+.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended .ribbon { display: none; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -1889,15 +1936,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fw-700 { font-weight: 700; }
 .admin-settings .demo .fw-800 { font-weight: 800; }
 .admin-settings .demo .fw-900 { font-weight: 900; }
-.admin-settings .demo .ff-meiryo { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.admin-settings .demo .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
 .admin-settings .demo .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
-.admin-settings .demo .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
-.admin-settings .demo .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
-.admin-settings .demo .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
-.admin-settings .demo .ff-hannari { font-family: "Hannari" ,sans-serif; }
-.admin-settings .demo .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
-.admin-settings .demo .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
-.admin-settings .demo .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
+.admin-settings .demo .ff-noto-sans-jp, .admin-settings .demo .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
+.admin-settings .demo .ff-noto-serif-jp, .admin-settings .demo .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
+.admin-settings .demo .ff-mplus-1p, .admin-settings .demo .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
+.admin-settings .demo .ff-rounded-mplus-1c, .admin-settings .demo .wf-active .ff-rounded-mplus-1c { font-family: "M PLUS Rounded 1c" ,sans-serif; }
+.admin-settings .demo .ff-kosugi, .admin-settings .demo .wf-active .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.admin-settings .demo .ff-kosugi-maru, .admin-settings .demo .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
+.admin-settings .demo .ff-sawarabi-gothic, .admin-settings .demo .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
+.admin-settings .demo .ff-sawarabi-mincho, .admin-settings .demo .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
 .admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
@@ -1935,7 +1984,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .content-top, .admin-settings .demo .content-bottom { margin: 1em 0; }
 .admin-settings .demo span.fa { font-family: FontAwesome; }
 .admin-settings .demo figure { margin: 0; }
-.admin-settings .demo img { max-width: 100%; height: auto; border: 0; -webkit-backface-visibility: hidden; }
+.admin-settings .demo img { max-width: 100%; height: auto; border: 0; }
 .admin-settings .demo .circle-image img { border-radius: 50%; }
 .admin-settings .demo .iwe-border img, .admin-settings .demo .iwe-border amp-img { border: 1px solid #ccc; }
 .admin-settings .demo .iwe-border-bold img, .admin-settings .demo .iwe-border-bold amp-img { border: 4px solid #eee; }
@@ -2002,18 +2051,18 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in > ul .sub-menu .menu-item-has-children > a::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; right: 3px; top: 0; font-size: 12px; }
 .admin-settings .demo .navi-in > ul .sub-menu a { padding-left: 16px; padding-right: 16px; }
 .admin-settings .demo .navi-in > ul .sub-menu ul { top: -60px; left: 240px; position: relative; }
-.admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s ease; }
-.admin-settings .demo .navi-in a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .navi-in a { color: #333; text-decoration: none; display: block; font-size: 16px; transition: all 0.7s; }
+.admin-settings .demo .navi-in a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .navi-in a:hover > ul { display: block; }
 .admin-settings .demo .navi-in > .menu-mobile { display: none; }
 .admin-settings .demo .navi-in > .menu-mobile .sub-menu { display: none; }
 .admin-settings .demo .navi-footer-in > .menu-footer { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: flex-end; text-align: center; margin: 0; }
 .admin-settings .demo .navi-footer-in > .menu-footer li { width: 120px; border-left: 1px solid #ccc; }
 .admin-settings .demo .navi-footer-in > .menu-footer li:last-child { border-right: 1px solid #ccc; }
-.admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.7s ease; }
-.admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.7s ease; }
-.admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .navi-footer-in a { color: #333; text-decoration: none; display: block; font-size: 14px; transition: all 0.7s; }
+.admin-settings .demo .navi-footer-in a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
+.admin-settings .demo .a-wrap { text-decoration: none; display: block; color: #333; padding: 1.5%; margin-bottom: 3%; transition: all 0.7s; }
+.admin-settings .demo .a-wrap:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .card-thumb img { width: 100%; }
 .admin-settings .demo .entry-card-thumb { width: 320px; }
 .admin-settings .demo .related-entry-card-thumb { width: 160px; }
@@ -2055,15 +2104,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .post-date::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .post-update::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .amp-back::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 0; }
-.admin-settings .demo .breadcrumb { margin-top: 20px; margin-bottom: 1em; color: #777; font-size: 13px; }
+.admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
 .admin-settings .demo .breadcrumb div { display: inline; }
 .admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
-.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: 5px; }
+.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
-.admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.7s ease; }
+.admin-settings .demo .sns-buttons a:hover { opacity: 0.7; color: #fff; transition: all 0.7s; }
 .admin-settings .demo .sns-share a, .admin-settings .demo .sns-follow a { cursor: pointer; }
 .admin-settings .demo .bc-brand-color.sns-share .twitter-button, .admin-settings .demo .bc-brand-color.sns-follow .twitter-button { background-color: #1da1f2; }
 .admin-settings .demo .bc-brand-color.sns-share .facebook-button, .admin-settings .demo .bc-brand-color.sns-follow .facebook-button { background-color: #3b5998; }
@@ -2075,10 +2124,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color.sns-share .instagram-button, .admin-settings .demo .bc-brand-color.sns-follow .instagram-button { background-color: #405de6; }
 .admin-settings .demo .bc-brand-color.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color.sns-follow .pinterest-button { background-color: #bd081c; }
 .admin-settings .demo .bc-brand-color.sns-share .youtube-button, .admin-settings .demo .bc-brand-color.sns-follow .youtube-button { background-color: #cd201f; }
+.admin-settings .demo .bc-brand-color.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color.sns-follow .linkedin-button { background-color: #0077b5; }
+.admin-settings .demo .bc-brand-color.sns-share .note-button, .admin-settings .demo .bc-brand-color.sns-follow .note-button { background-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color.sns-share .flickr-button, .admin-settings .demo .bc-brand-color.sns-follow .flickr-button { background-color: #111; }
 .admin-settings .demo .bc-brand-color.sns-share .amazon-button, .admin-settings .demo .bc-brand-color.sns-follow .amazon-button { background-color: #ff9900; }
 .admin-settings .demo .bc-brand-color.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color.sns-follow .rakuten-room-button { background-color: #c61e79; }
+.admin-settings .demo .bc-brand-color.sns-share .slack-button, .admin-settings .demo .bc-brand-color.sns-follow .slack-button { background-color: #e01563; }
 .admin-settings .demo .bc-brand-color.sns-share .github-button, .admin-settings .demo .bc-brand-color.sns-follow .github-button { background-color: #4078c0; }
+.admin-settings .demo .bc-brand-color.sns-share .codepen-button, .admin-settings .demo .bc-brand-color.sns-follow .codepen-button { background-color: #333; }
 .admin-settings .demo .bc-brand-color.sns-share .feedly-button, .admin-settings .demo .bc-brand-color.sns-follow .feedly-button { background-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color.sns-share .rss-button, .admin-settings .demo .bc-brand-color.sns-follow .rss-button { background-color: #f26522; }
 .admin-settings .demo .bc-brand-color-white.sns-share a, .admin-settings .demo .bc-brand-color-white.sns-follow a { background-color: #fff; font-weight: 500; border: 1px solid #333; color: #333; }
@@ -2093,9 +2146,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bc-brand-color-white.sns-share .instagram-button, .admin-settings .demo .bc-brand-color-white.sns-follow .instagram-button { color: #405de6; border-color: #405de6; }
 .admin-settings .demo .bc-brand-color-white.sns-share .pinterest-button, .admin-settings .demo .bc-brand-color-white.sns-follow .pinterest-button { color: #bd081c; border-color: #bd081c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .youtube-button, .admin-settings .demo .bc-brand-color-white.sns-follow .youtube-button { color: #cd201f; border-color: #cd201f; }
+.admin-settings .demo .bc-brand-color-white.sns-share .linkedin-button, .admin-settings .demo .bc-brand-color-white.sns-follow .linkedin-button { color: #0077b5; border-color: #0077b5; }
+.admin-settings .demo .bc-brand-color-white.sns-share .note-button, .admin-settings .demo .bc-brand-color-white.sns-follow .note-button { color: #41c9b4; border-color: #41c9b4; }
 .admin-settings .demo .bc-brand-color-white.sns-share .flickr-button, .admin-settings .demo .bc-brand-color-white.sns-follow .flickr-button { color: #111; border-color: #111; }
 .admin-settings .demo .bc-brand-color-white.sns-share .amazon-button, .admin-settings .demo .bc-brand-color-white.sns-follow .amazon-button { color: #ff9900; border-color: #ff9900; }
+.admin-settings .demo .bc-brand-color-white.sns-share .rakuten-room-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rakuten-room-button { color: #c61e79; border-color: #c61e79; }
+.admin-settings .demo .bc-brand-color-white.sns-share .slack-button, .admin-settings .demo .bc-brand-color-white.sns-follow .slack-button { color: #e01563; border-color: #e01563; }
 .admin-settings .demo .bc-brand-color-white.sns-share .github-button, .admin-settings .demo .bc-brand-color-white.sns-follow .github-button { color: #4078c0; border-color: #4078c0; }
+.admin-settings .demo .bc-brand-color-white.sns-share .codepen-button, .admin-settings .demo .bc-brand-color-white.sns-follow .codepen-button { color: #333; border-color: #333; }
 .admin-settings .demo .bc-brand-color-white.sns-share .feedly-button, .admin-settings .demo .bc-brand-color-white.sns-follow .feedly-button { color: #2bb24c; border-color: #2bb24c; }
 .admin-settings .demo .bc-brand-color-white.sns-share .rss-button, .admin-settings .demo .bc-brand-color-white.sns-follow .rss-button { color: #f26522; border-color: #f26522; }
 .admin-settings .demo .ss-top { margin-top: 0; margin-bottom: 0; }
@@ -2115,13 +2173,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
 .admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .share-menu-content .sns-share-buttons a { width: 24%; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
 .admin-settings .demo .copy-info { display: none; /*初期状態は非表示*/ padding: 1em 2em; color: #fff; border-radius: 8px; /*画面上部に表示*/ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px #777; z-index: 2; }
 .admin-settings .demo .content { margin-top: 24px; }
 .admin-settings .demo .entry-title, .admin-settings .demo .archive-title { font-size: 26px; margin: 16px 0; line-height: 1.3; }
 .admin-settings .demo .archive-title span { margin-right: 10px; }
 .admin-settings .demo .entry-content { margin-top: 1em; margin-bottom: 3em; }
-.admin-settings .demo .entry-categories-tags { font-family: "Meiryo", sans-serif; }
+.admin-settings .demo .entry-content pre { line-height: 1.6; }
 .admin-settings .demo .entry-categories-tags > div { margin-bottom: 0.5em; }
 .admin-settings .demo .ctdt-one-row > div { display: inline-block; }
 .admin-settings .demo .ctdt-category-only .entry-tags { display: none; }
@@ -2132,7 +2191,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cat-link:hover { opacity: 0.5; color: #fff; }
 .admin-settings .demo .tag-link, .admin-settings .demo .comment-reply-link { color: #333; text-decoration: none; display: inline-block; margin-right: 5px; padding: 1px 5px; font-size: 12px; border: 1px solid #999; border-radius: 2px; word-break: break-all; }
 .admin-settings .demo .tag-link::before, .admin-settings .demo .comment-reply-link::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
-.admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .tag-link:hover, .admin-settings .demo .comment-reply-link:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo p, .admin-settings .demo .paragraph { margin: 1.2em 0; }
 .admin-settings .demo table { margin-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; border-spacing: 0; }
 .admin-settings .demo table th { background-color: #f3f4f5; }
@@ -2149,9 +2208,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .article ul ul, .admin-settings .demo .article ul ol, .admin-settings .demo .article ol ul, .admin-settings .demo .article ol ol { margin: 0; }
 .admin-settings .demo .article h1, .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { line-height: 1.25; font-weight: bold; }
 .admin-settings .demo .article h2, .admin-settings .demo .article h3, .admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { margin: 2.4em 0 1em; }
-.admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 6px 10px; }
+.admin-settings .demo .article h4, .admin-settings .demo .article h5, .admin-settings .demo .article h6 { font-size: 20px; padding: 9px 10px; }
 .admin-settings .demo .article h2 { font-size: 24px; padding: 25px; background-color: #f3f4f5; border-radius: 2px; }
-.admin-settings .demo .article h3 { border-left: 6px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 6px 20px; }
+.admin-settings .demo .article h3 { border-left: 7px solid #777; border-right: 1px solid #ccc; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; font-size: 22px; padding: 12px 20px; }
 .admin-settings .demo .article h4 { border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h5 { border-bottom: 2px solid #ccc; }
 .admin-settings .demo .article h6 { border-bottom: 1px solid #ccc; }
@@ -2199,7 +2258,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-thumbnail img { width: 100%; }
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; }
-.admin-settings .demo .blogcard-snipet { font-size: 0.8em; }
+.admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
 .admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
@@ -2216,21 +2275,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
-.admin-settings .demo .toc.tnt-number-detail > ol { padding-left: 0; }
-.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; }
-.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; }
-.admin-settings .demo .toc.tnt-number-detail ol > li { counter-increment: c-h2; counter-reset: c-h3; }
-.admin-settings .demo .toc.tnt-number-detail ol > li:before { content: counter(c-h2) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li { counter-increment: c-h3; counter-reset: c-h4; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li { counter-increment: c-h4; counter-reset: c-h5; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li { counter-increment: c-h5; counter-reset: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "."; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li { counter-increment: c-h6; }
-.admin-settings .demo .toc.tnt-number-detail ol > li > ol > li > ol > li > ol > li > ol > li:before { content: counter(c-h2) "." counter(c-h3) "." counter(c-h4) "." counter(c-h5) "." counter(c-h6) "."; }
+.admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
+.admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
-.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 14px 10px; margin: 16px 0; border-radius: 2px; }
+.admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
@@ -2242,18 +2290,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .ranking-item-description p { font-size: 0.9em; }
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
-.admin-settings .demo .widget { margin-bottom: 38px; }
-.admin-settings .demo .widget ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; }
-.admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
+.admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
 .admin-settings .demo .widget_recent_entries ul, .admin-settings .demo .widget_categories ul, .admin-settings .demo .widget_archive ul, .admin-settings .demo .widget_pages ul, .admin-settings .demo .widget_meta ul, .admin-settings .demo .widget_rss ul, .admin-settings .demo .widget_nav_menu ul { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .widget_recent_entries ul li ul, .admin-settings .demo .widget_categories ul li ul, .admin-settings .demo .widget_archive ul li ul, .admin-settings .demo .widget_pages ul li ul, .admin-settings .demo .widget_meta ul li ul, .admin-settings .demo .widget_rss ul li ul, .admin-settings .demo .widget_nav_menu ul li ul { padding-left: 20px; margin: 0; }
 .admin-settings .demo .widget_recent_entries ul li a, .admin-settings .demo .widget_categories ul li a, .admin-settings .demo .widget_archive ul li a, .admin-settings .demo .widget_pages ul li a, .admin-settings .demo .widget_meta ul li a, .admin-settings .demo .widget_rss ul li a, .admin-settings .demo .widget_nav_menu ul li a { color: #333; text-decoration: none; padding: 10px 0; display: block; padding-right: 4px; padding-left: 4px; }
-.admin-settings .demo .widget_recent_entries ul li a:hover, .admin-settings .demo .widget_categories ul li a:hover, .admin-settings .demo .widget_archive ul li a:hover, .admin-settings .demo .widget_pages ul li a:hover, .admin-settings .demo .widget_meta ul li a:hover, .admin-settings .demo .widget_rss ul li a:hover, .admin-settings .demo .widget_nav_menu ul li a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .widget_recent_entries ul li a:hover, .admin-settings .demo .widget_categories ul li a:hover, .admin-settings .demo .widget_archive ul li a:hover, .admin-settings .demo .widget_pages ul li a:hover, .admin-settings .demo .widget_meta ul li a:hover, .admin-settings .demo .widget_rss ul li a:hover, .admin-settings .demo .widget_nav_menu ul li a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .widget_recent_entries ul li a .post-count, .admin-settings .demo .widget_categories ul li a .post-count, .admin-settings .demo .widget_archive ul li a .post-count, .admin-settings .demo .widget_pages ul li a .post-count, .admin-settings .demo .widget_meta ul li a .post-count, .admin-settings .demo .widget_rss ul li a .post-count, .admin-settings .demo .widget_nav_menu ul li a .post-count { display: block; float: right; }
 .admin-settings .demo .widget_recent_comments li { padding: 10px 0; }
 .admin-settings .demo .calendar_wrap { margin: 20px 0; }
@@ -2267,21 +2313,31 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #wp-calendar td { text-align: center; padding: 0px; border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: #ddd; border-left-color: #ddd; }
 .admin-settings .demo #wp-calendar td a { color: #333; display: block; background-color: #ffface; }
 .admin-settings .demo #wp-calendar td a:hover { background-color: #fff69b; }
-.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px 3px; line-height: 1.3; margin-bottom: 4px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card { font-size: 0.8em; position: relative; }
+.admin-settings .demo .widget-entry-cards .a-wrap { padding: 5px; line-height: 1.3; margin-bottom: 4px; }
 .admin-settings .demo .widget-entry-cards figure { width: 120px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-content { margin-left: 124px; }
-.admin-settings .demo .widget-entry-cards .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
-.admin-settings .demo .widget-entry-cards.not-default .a-wrap { max-width: 400px; }
-.admin-settings .demo .widget-entry-cards.not-default .e-card { font-size: 18px; }
-.admin-settings .demo .widget-entry-cards.not-default figure { float: none; width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default figure img { width: 100%; }
-.admin-settings .demo .widget-entry-cards.not-default .card-content { margin: 0 0 0.5em; }
-.admin-settings .demo .widget-entry-cards.not-default .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.7; }
+.admin-settings .demo .widget-entry-card { font-size: 16px; position: relative; }
+.admin-settings .demo .widget-entry-card-content { margin-left: 126px; }
+.admin-settings .demo .widget-entry-card-snippet { margin-top: 6px; font-size: 12px; opacity: 0.8; }
+.admin-settings .demo .widget-entry-card-pv { margin-left: 5px; font-style: italic; font-size: 0.8em; }
+.admin-settings .demo .border-partition a { border-bottom: 2px dotted #ddd; }
+.admin-settings .demo .border-partition a:first-of-type { border-top: 2px dotted #ddd; }
+.admin-settings .demo .border-square a { border-radius: 4px; border: 1px solid #ccc; }
+.admin-settings .demo .card-title-bold .card-title { font-weight: 700; }
+.admin-settings .demo .card-arrow .a-wrap { position: relative; }
+.admin-settings .demo .card-arrow .a-wrap::after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; transform: rotate(45deg); margin-top: -3px; }
+.admin-settings .demo .card-arrow .card-content { margin-right: 22px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .a-wrap { max-width: 400px; }
+.admin-settings .demo .widget-entry-cards.card-large-image .e-card { font-size: 18px; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure { float: none; width: 100%; }
+.admin-settings .demo .widget-entry-cards.card-large-image figure img { width: 100%; display: block; }
+.admin-settings .demo .widget-entry-cards.card-large-image .card-content { margin: 0 0 0.5em; }
+.admin-settings .demo .widget-entry-cards.card-large-image .widget-entry-card-pv { opacity: 0.7; position: absolute; top: 0; right: 0; padding: 3px 6px; background-color: #333; color: #fff; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap { overflow: hidden; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.8; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content { margin-bottom: -4em; transition: all 0.5s; opacity: 0; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-title { position: absolute; width: 100%; bottom: 0; padding: 10px 5px; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 30%; overflow: hidden; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-snippet { margin: 0; }
 .admin-settings .demo .widget-entry-cards.ranking-visible { counter-reset: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-1 .card-thumb::before { background: #cca11f; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
@@ -2289,7 +2345,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; font-family: Arial,sans-serif; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
-.admin-settings .demo .recent-comments .a-wrap:hover .recent-comment-content { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
 .admin-settings .demo .recent-comment-info, .admin-settings .demo .recent-comment-article { font-size: 16px; }
@@ -2351,7 +2406,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .admin-settings .demo .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .admin-settings .demo .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 50px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 46px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
 .admin-settings .demo .information-box::before, .admin-settings .demo .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .admin-settings .demo .question-box::before, .admin-settings .demo .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .admin-settings .demo .alert-box::before, .admin-settings .demo .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -2389,7 +2444,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -2431,7 +2486,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
 .admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
 .admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
-.admin-settings .demo .search-form { margin: 3em 0; }
+.admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
 .admin-settings .demo .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
@@ -2441,16 +2496,19 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .search-form div.sform { min-width: 180px; }
   .admin-settings .demo .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .admin-settings .demo .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
-.admin-settings .demo .btn-wrap { min-height: 2em; }
+.admin-settings .demo .btn-wrap { min-height: 2em; margin: 1.6em 0; }
 .admin-settings .demo .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
-.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
+.admin-settings .demo .btn, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap > a, .admin-settings .demo .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 8px 1em; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .admin-settings .demo .btn amp-img, .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .btn-wrap > a amp-img, .admin-settings .demo .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .admin-settings .demo .btn:before, .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .btn:after, .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .btn-wrap > a:before, .admin-settings .demo .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .admin-settings .demo .btn-m, .admin-settings .demo .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
 .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .btn-l::after, .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
-.admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s ease; }
-.admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s ease; }
+.admin-settings .demo .btn:hover, .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s; }
+.admin-settings .demo .btn:hover::after, .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s; }
+.admin-settings .demo .btn-shine, .admin-settings .demo .btn-wrap-shine > a { overflow: hidden; }
+.admin-settings .demo .btn-shine:before, .admin-settings .demo .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
+.admin-settings .demo .btn-circle, .admin-settings .demo .btn-wrap-circle > a { border-radius: 99px; }
 .admin-settings .demo .btn-white, .admin-settings .demo .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .admin-settings .demo #container .btn-white:hover, .admin-settings .demo #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .admin-settings .demo .btn-red, .admin-settings .demo .ranking-item-link a, .admin-settings .demo .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
@@ -2593,6 +2651,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -2710,14 +2769,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .lb-white .label-box-content { border-color: #fff; }
 .admin-settings .demo .toggle-wrap { margin: 1.2em 0; position: relative; }
 .admin-settings .demo .toggle-wrap > p { margin: 0; }
-.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
+.admin-settings .demo .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s; overflow: hidden; }
 .admin-settings .demo .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .admin-settings .demo .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .admin-settings .demo .toggle-button:hover { opacity: 0.7; }
 .admin-settings .demo .toggle-checkbox { display: none; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .admin-settings .demo .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
-.admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s ease; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.admin-settings .demo .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .admin-settings .demo .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
 .admin-settings .demo .tb-red .toggle-button::before { color: #ccc; }
 .admin-settings .demo .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
@@ -2838,26 +2897,23 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
 .admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
 .admin-settings .demo div .has-white-background-color { background-color: #fff; }
-.admin-settings .demo .column-wrap { display: flex; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
-.admin-settings .demo .column-wrap .column-left { padding-left: 0; }
-.admin-settings .demo .column-wrap .column-right { padding-right: 0; }
-.admin-settings .demo .column-wrap > div { width: 50%; padding: 0 0.45em; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
-.admin-settings .demo .column-wrap.column-3 > div { width: 33%; }
+.admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
 .admin-settings .demo .column-2-3-1-2 .column-left { width: 34%; }
-.admin-settings .demo .column-2-3-1-2 .column-right { width: 66%; }
-.admin-settings .demo .column-2-3-2-1 .column-left { width: 66%; }
+.admin-settings .demo .column-2-3-1-2 .column-right { width: 65%; }
+.admin-settings .demo .column-2-3-2-1 .column-left { width: 65%; }
 .admin-settings .demo .column-2-3-2-1 .column-right { width: 34%; }
 .admin-settings .demo .column-2-4-1-3 .column-left { width: 25%; }
-.admin-settings .demo .column-2-4-1-3 .column-right { width: 75%; }
-.admin-settings .demo .column-2-4-3-1 .column-left { width: 75%; }
+.admin-settings .demo .column-2-4-1-3 .column-right { width: 74%; }
+.admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
-.admin-settings .demo .icon-rakuten-room-logo::before { content: 'R'; font-family: Arial, serif; font-weight: 700; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
 .admin-settings .demo .related-entry-card-content { margin-left: 170px; }
@@ -2894,17 +2950,17 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination .prev::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-right: 3px; }
 .admin-settings .demo .pagination .next::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding-left: 3px; }
-.admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
-.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 50px; width: 50px; border: 1px solid #ccc; margin: 0 4px; line-height: 50px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
+.admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
+.admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; display: inline-flex; justify-content: center; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
-.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.25em; text-decoration: none; width: 100%; text-align: center; padding: 12px 0; display: block; }
-.admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
+.admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .pager-links { margin: 24px 0; clear: both; text-align: center; }
 .admin-settings .demo .pager-links .post-page-numbers { background-color: transparent; }
 .admin-settings .demo .pager-links span { background-color: #eee; }
 .admin-settings .demo .pager-links a { display: inline-block; }
 .admin-settings .demo .pager-links a span { background-color: #fff; }
-.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .pager-links a:hover span { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .pager-prev-next a { width: 30%; margin: 0 4px; }
 .admin-settings .demo .pager-prev-next span { width: 100%; margin: 0; }
 .admin-settings .demo .pager-post-navi { margin: 38px 0; display: flex; flex-direction: column; }
@@ -2941,7 +2997,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-box .sns-follow { margin: 0; }
 .admin-settings .demo .author-box .sns-follow-message { display: none; }
 .admin-settings .demo .author-box .sns-follow-buttons { flex-wrap: wrap; justify-content: flex-start; }
-.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: #fff; color: #777; border: 1px solid #ccc; border-radius: 2px; }
+.admin-settings .demo .author-box .sns-follow-buttons a.follow-button { font-size: 18px; width: 24px; height: 24px; margin-bottom: 4px; margin-right: 4px; background-color: transparent; color: #777; border: 1px solid #ccc; border-radius: 2px; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button:hover { background-color: #fafbfc; }
 .admin-settings .demo .author-box .sns-follow-buttons a.follow-button .follow-count { display: none; }
 .admin-settings .demo .author-box .author-name { font-size: 1.1em; font-weight: bold; margin-bottom: 0.4em; }
@@ -3004,7 +3060,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
 .admin-settings .demo .product-item-box::after { font-family: FontAwesome; content: ""; padding-right: 4px; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
-.admin-settings .demo .rakuten-item-box::after { content: '\f25d'; }
+.admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
+.admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }
 .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 160px; min-width: 160px; margin: 0 auto 1em !important; float: none !important; text-align: center; }
 .admin-settings .demo .booklink-image *, .admin-settings .demo .kaerebalink-image *, .admin-settings .demo .tomarebalink-image *, .admin-settings .demo .product-item-thumb * { display: block; }
@@ -3094,20 +3151,17 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
-.admin-settings .demo .fb-like-box .fb-like-thumb > *, .admin-settings .demo .fb-like-box .fb-like-content > * { min-width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
 .admin-settings .demo .fb-like-box .fb_reset { display: none; }
-.admin-settings .demo .fb-like-thumb { max-width: 56%; }
-.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; justify-content: center; align-items: center; align-content: space-around; text-align: center; }
+.admin-settings .demo .fb-like-content { display: flex; flex-direction: column; text-align: center; }
 .admin-settings .demo .fb-like-content > div { padding-top: 8px; }
 .admin-settings .demo .fb-like-message { color: #eee; font-size: 0.9em; }
 .admin-settings .demo .fb-like-sub-message { color: #ccc; font-size: 0.7em; margin-bottom: 8px; }
 .admin-settings .demo .fb-like-buttons { padding: 0; text-align: center; }
-.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .fb-like-buttons > div { margin: 8px; display: flex; justify-content: center; }
 .admin-settings .demo .fb-like-buttons > div > * { height: 100%; }
 .admin-settings .demo .fb-like-facebook { margin-bottom: -7px; }
-.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; display: block; }
-.admin-settings .demo .sidebar .fb-like-box > div, .admin-settings .demo .sidebar .fb-like-box > figure { width: 100%; max-width: none; }
+.admin-settings .demo .sidebar .fb-like-box { max-width: 640px; flex-direction: column; }
 .admin-settings .demo div.fb-like-mobile { display: none; }
 .admin-settings .demo .fb-like-balloon { height: 100px; margin-top: 30px; margin-bottom: 30px; clear: both; }
 .admin-settings .demo .fb-like-balloon-thumb { float: left; width: 100px; }
@@ -3132,15 +3186,19 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .fb-like-balloon-button { float: none; width: 100%; height: 30px; display: block; padding-top: 0; line-height: 24px; }
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
-.admin-settings .demo .mobile-menu-buttons { background: #eee; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
+.admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
-.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 12px; text-align: center; }
+.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
-.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
+.admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
+.admin-settings .demo .logo-menu-button { text-align: center; font-weight: 900; line-height: 50px; min-width: 200px; overflow: hidden; }
+.admin-settings .demo .logo-menu-button img { max-height: 44px; display: block; margin: 0 auto; }
+.admin-settings .demo .fa.menu-icon { font: inherit; }
 .admin-settings .demo .navi-menu-icon::before { content: '\f0c9'; }
 .admin-settings .demo .home-menu-icon::before { content: '\f015'; }
 .admin-settings .demo .search-menu-icon::before { content: '\f002'; }
@@ -3153,7 +3211,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .next-menu-icon::before { content: '\f061'; }
 .admin-settings .demo #navi-menu-close, .admin-settings .demo #sidebar-menu-close, .admin-settings .demo #search-menu-close, .admin-settings .demo #share-menu-close, .admin-settings .demo #follow-menu-close { display: none; /*はじめは隠しておく*/ position: fixed; z-index: 99; top: 0; /*全体に広がるように*/ left: 0; width: 100%; height: 100%; background: black; transition: .3s ease-in-out; }
 .admin-settings .demo .menu-content { overflow: auto; position: fixed; top: 0; z-index: 9999; /*最前面に*/ width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/ max-width: 400px; /*最大幅（調整してください）*/ height: 100%; background: #fff; /*背景色*/ transition: .3s ease-in-out; /*滑らかに表示*/ opacity: 1; overflow: scroll; -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .menu-content .menu-drawer { padding: 0 0 30px; }
+.admin-settings .demo .menu-content .menu-drawer { padding: 0 1em 30px; }
 .admin-settings .demo .menu-content .sidebar { width: 100%; display: block; margin: 0; }
 .admin-settings .demo .navi-menu-content { left: 0; -webkit-transform: translateX(-105%); transform: translateX(-105%); }
 .admin-settings .demo .sidebar-menu-content { right: 0; -webkit-transform: translateX(105%); transform: translateX(105%); }
@@ -3164,7 +3222,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .menu-drawer ul { list-style: none; }
 .admin-settings .demo .menu-drawer li { display: block; }
 .admin-settings .demo .menu-drawer a { color: #333; text-decoration: none; padding: 6px; display: block; }
-.admin-settings .demo .menu-drawer a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .menu-drawer a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .menu-drawer .sub-menu { padding-left: 20px; }
 .admin-settings .demo .menu-close-button { display: block; cursor: pointer; text-align: center; }
 .admin-settings .demo .menu-close-button::before { font-family: FontAwesome; content: ""; padding-right: 4px; padding: 0; font-size: 2em; }
@@ -3184,7 +3242,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .star-half-o::before { content: '\f123'; }
 .admin-settings .demo .star-o::before { content: '\f006'; }
 .admin-settings .demo .ranking-item-name { padding: 3px 2px 6px; }
-.admin-settings .demo .ranking-item-rating { color: #f5bc55; font-size: 1.2em; }
+.admin-settings .demo .rating-star { color: #f5bc55; font-size: 1.2em; }
 .admin-settings .demo .rating-number { color: #333; font-size: 0.9em; margin-left: 0.4em; }
 .admin-settings .demo .ranking-item-img-desc, .admin-settings .demo .ranking-item-link-buttons { display: flex; }
 .admin-settings .demo .ranking-item-img-desc > div, .admin-settings .demo .ranking-item-link-buttons > div { width: 100%; padding: 2px 0; }
@@ -3259,6 +3317,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .gallery .gallery-item dd { margin: 0; }
 .admin-settings .demo .search-box { margin: 1em 0 2em; position: relative; }
 .admin-settings .demo .search-edit { font-family: inherit; }
+.admin-settings .demo #search-menu-content .search-edit { font-size: 16px; }
 .admin-settings .demo .search-submit { position: absolute; right: 0; top: 0; font-size: 20px; cursor: pointer; line-height: 49px; border: none; color: #ccc; padding: 0 8px; background-color: rgba(255, 255, 255, 0); }
 .admin-settings .demo .search-submit::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .admin-settings .demo .timeline-box { padding: 16px 5px; }
@@ -3275,28 +3334,21 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .timeline-item-label { width: auto; float: none; text-align: left; padding-left: 16px; }
   .admin-settings .demo .timeline-item-content { width: auto; padding: 8px; float: none; border: none; }
   .admin-settings .demo .timeline-item::before { left: -12px; top: 19px; width: 21px; height: 21px; } }
-.admin-settings .demo .navi-card-wrap { background-color: #fff; }
-.admin-settings .demo .navi-card-wrap.a-wrap { position: relative; padding: 5px 3px; line-height: 1.3; margin-top: 0px; margin-bottom: 10px; }
-.admin-settings .demo .navi-card-box { padding: 0; }
-.admin-settings .demo .navi-card-type-1 { padding-bottom: 2px; border-bottom: 2px dotted #f3f4f5; }
-.admin-settings .demo .navi-card-type-1:first-of-type { border-top: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-1:last-of-type { border-bottom: 2px solid #f3f4f5; }
-.admin-settings .demo .navi-card-type-2 { border-radius: 4px; border: 1px solid #ccc; }
-.admin-settings .demo .navi-card-wrap:after { display: block; content: ''; position: absolute; top: 50%; bottom: 0; right: 20px; width: 6px; height: 6px; border-top: solid 2px #697b91; border-right: solid 2px #697b91; -webkit-transform: rotate(45deg); transform: rotate(45deg); margin-top: -3px; }
-.admin-settings .demo .navi-card-wrap .navi-card-thumb { float: left; margin: 6px 10px; width: 120px; }
-.admin-settings .demo .navi-card-wrap .navi-card-content { margin: 0 24px 0 140px; }
-.admin-settings .demo .navi-card-wrap .navi-card-title { margin: 2px 0 6px; font-size: 0.9em; color: #333; font-weight: 700; }
-.admin-settings .demo .navi-card-wrap .navi-card-snippet { margin: 0px 0 2px; font-size: 0.7em; color: #777; }
 .admin-settings .demo .ribbon { width: 80px; height: 80px; overflow: hidden; position: absolute; z-index: 1; }
 .admin-settings .demo .ribbon:before, .admin-settings .demo .ribbon:after { position: absolute; z-index: 0; content: ''; display: block; border: 4px solid #224963; }
 .admin-settings .demo .ribbon span { position: absolute; display: block; width: 185px; padding: 5px 0; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); color: #fff; font: 700 11px/1 'Lato',sans-serif; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); text-transform: uppercase; text-align: center; }
 .admin-settings .demo .ribbon-color-1 span { background-color: #ea7e7e; }
 .admin-settings .demo .ribbon-color-2 span { background-color: #7e95ea; }
-.admin-settings .demo .ribbon-top-left { top: -1px; left: -5px; }
+.admin-settings .demo .ribbon-color-3 span { background-color: #f7c114; }
+.admin-settings .demo .ribbon-color-4 span { background-color: #dc669b; }
+.admin-settings .demo .ribbon-color-5 span { background-color: #e9546b; }
+.admin-settings .demo .ribbon-top-left { top: -3px; left: -9px; }
 .admin-settings .demo .ribbon-top-left::before, .admin-settings .demo .ribbon-top-left::after { border-top-color: transparent; border-left-color: transparent; }
 .admin-settings .demo .ribbon-top-left:before { top: -1px; right: 4px; }
 .admin-settings .demo .ribbon-top-left::after { bottom: 4px; left: 1px; }
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
+.admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
+.admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
 .admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
@@ -3391,12 +3443,32 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-times-circle-o::before, .admin-settings .demo .list-times-circle-o li::before { content: '\f05c'; }
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
+.admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
+.admin-settings .demo .recommended .card-snippet { display: none; }
+.admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
+.admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
+.admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
+.admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
+.admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
+.admin-settings .demo .recommended .ribbon { display: none; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
+.admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
 .admin-settings .demo .display-none { display: none; }
-.admin-settings .demo .notice-area-wrap { display: block; text-decoration: none; }
-.admin-settings .demo .notice-area-wrap:hover { opacity: 0.8; }
+.admin-settings .demo .notice-area-link { display: block; text-decoration: none; }
+.admin-settings .demo .notice-area-link:hover { opacity: 0.8; }
 .admin-settings .demo .notice-area { color: #fff; text-align: center; background-color: #4cae4c; padding: 0.6em; font-size: 0.8em; }
 .admin-settings .demo .notice-area.nt-warning { background-color: #f7ab00; }
 .admin-settings .demo .notice-area.nt-danger { background-color: #ff6666; }
@@ -3412,7 +3484,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
 .admin-settings .demo .bp-login-widget-register-link { display: block; margin-top: 10px; }
 .admin-settings .demo .bp-login-widget-register-link a { color: #333; text-decoration: none; display: block; text-align: center; border: 1px solid #777; padding: 6px; border-radius: 2px; }
-.admin-settings .demo .bp-login-widget-register-link a:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.admin-settings .demo .bp-login-widget-register-link a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .widget.buddypress #bp-login-widget-form input#bp-login-widget-submit { margin: 0; }
 .admin-settings .demo #wp-comment-cookies-consent { margin-right: 5px; }
 .admin-settings .demo .carousel { margin-top: 10px; line-height: 1.1; }
@@ -3438,6 +3510,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .admin-pv .admin-pv-by { position: absolute; bottom: -1em; right: 0.4em; font-size: 0.6em; background-color: #333; padding: 0 5px; }
 .admin-settings .demo .apdt-pc-only { display: flex; }
 .admin-settings .demo .apdt-mobile-only { display: none; }
+@media screen and (max-width: 1023px) { .admin-settings .demo .admin-bar .mobile-header-menu-buttons { margin-top: 32px; }
+  .admin-settings .demo .admin-bar.mblt-header-mobile-buttons, .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons { margin-top: 32px; } }
+@media screen and (max-width: 1023px) and (max-width: 782px) { .admin-settings .demo .admin-bar .mobile-header-menu-buttons { margin-top: 0; }
+  .admin-settings .demo .admin-bar.mblt-header-mobile-buttons, .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons { margin-top: 0; } }
+
+.admin-settings .demo .entry-card .admin-pv { margin: 0 0 8px; padding: 0; border-width: 0; }
+.admin-settings .demo .entry-card .admin-pv .admin-pv-by { background-color: transparent; bottom: 0; }
 .admin-settings .demo .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 .admin-settings .demo .slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }
 .admin-settings .demo .slick-list:focus { outline: none; }
@@ -3533,12 +3612,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mce-wpf-emoji-extra-wrap { min-width: 300px !important; min-height: 300px !important; }
 .admin-settings .demo .wpf-emoji-wrap .wpf-emoji { font-size: 24px; }
 .admin-settings .demo .wpforo-attached-file { word-break: break-all; }
+.admin-settings .demo #tinymce.main.article { width: 100%; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }
 .admin-settings .demo .live-writer blockquote::before, .admin-settings .demo .live-writer blockquote::after, .admin-settings .demo .live-writer .information-box::before, .admin-settings .demo .live-writer .information-box::after, .admin-settings .demo .live-writer .question-box::before, .admin-settings .demo .live-writer .question-box::after, .admin-settings .demo .live-writer .alert-box::before, .admin-settings .demo .live-writer .alert-box::after { display: none; }
 .admin-settings .demo .gsc-search-box table { margin-bottom: 0; }
 .admin-settings .demo .gsc-search-box table th, .admin-settings .demo .gsc-search-box table td { border: 0; }
+.admin-settings .demo #cse-search-box input[name="q"] { line-height: 34px; width: calc(100% - 60px); float: left; }
+.admin-settings .demo #cse-search-box input[name="sa"] { width: 60px; padding: 0; line-height: 34px; }
 .admin-settings .demo .video-click { cursor: pointer; }
 .admin-settings .demo .video-click:hover .video-play { background: url("images/youtube-play.png") no-repeat scroll -101px -13px rgba(0, 0, 0, 0); }
 .admin-settings .demo .video-play { background: url("images/youtube-play.png") no-repeat scroll 2px -13px rgba(0, 0, 0, 0); height: 62px; left: 50%; margin-left: -45px; margin-top: -33px; position: absolute; top: 50%; width: 100px; opacity: 0.8; }
@@ -3566,10 +3648,17 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .logo-footer { margin: 8px auto; }
   .admin-settings .demo .mobile-menu-buttons { display: flex; align-items: stretch; }
   .admin-settings .demo .mobile-menu-buttons > li { padding-top: 3px; }
-  .admin-settings .demo .mobile-button-slide-in .go-to-top-button { display: none; }
-  .admin-settings .demo .mblt-slide-in .footer { margin-bottom: 50px; }
+  .admin-settings .demo .mobile-header-menu-buttons { top: 0; bottom: auto; justify-content: space-around; min-width: 46px; z-index: 3; box-shadow: 0 0 5px darkgrey; }
+  .admin-settings .demo .mobile-header-menu-buttons .menu-button { width: 70px; }
+  .admin-settings .demo .mobile-header-menu-buttons .logo-menu-button { flex-grow: 99; }
+  .admin-settings .demo .no-mobile-sidebar #sidebar, .admin-settings .demo .mobile-button-fmb .go-to-top-button, .admin-settings .demo .no-mobile-header-logo .logo-header { display: none; }
+  .admin-settings .demo .mblt-header-mobile-buttons { margin-top: 46px; }
+  .admin-settings .demo .mblt-footer-mobile-buttons { margin-bottom: 50px; }
+  .admin-settings .demo .mblt-header-and-footer-mobile-buttons { margin-top: 46px; margin-bottom: 50px; }
+  .admin-settings .demo .scrollable-mobile-buttons { margin-bottom: 0; }
   .admin-settings .demo .navi-footer-in > .menu-footer { justify-content: center; }
-  .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; } }
+  .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
+  .admin-settings .demo .mblt-footer-mobile-buttons .go-to-top-button, .admin-settings .demo .mblt-header-and-footer-mobile-buttons .go-to-top-button { display: none; } }
 @media screen and (max-width: 834px) { .admin-settings .demo { /************************************
 ** 関連記事
 ************************************/ }
@@ -3586,7 +3675,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo table th, .admin-settings .demo table td { padding: 3px; font-size: 0.8em; }
   .admin-settings .demo .blogcard-wrap { width: 100%; }
   .admin-settings .demo .blogcard-thumbnail { width: 30%; }
-  .admin-settings .demo .blogcard-snipet { font-size: 12px; }
+  .admin-settings .demo .blogcard-snippet { font-size: 12px; }
   .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
   .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
   .admin-settings .demo .ss-top .sns-share-buttons a, .admin-settings .demo .ss-bottom .sns-share-buttons a { font-size: 14px; }
@@ -3607,9 +3696,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .widget_pc_text, .admin-settings .demo .widget_pc_ad, .admin-settings .demo .widget_pc_double_ads { display: none; }
   .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: block; }
   .admin-settings .demo .slicknav_menu { display: block; }
-  .admin-settings .demo .fb-like-box { max-width: 640px; display: block; }
-  .admin-settings .demo .fb-like-box > div, .admin-settings .demo .fb-like-box > figure { width: 100%; max-width: none; }
-  .admin-settings .demo .fb-like-box { max-width: none; }
+  .admin-settings .demo .fb-like-box { max-width: none; flex-direction: column; }
   .admin-settings .demo .cta-box { font-size: 0.8em; }
   .admin-settings .demo .cta-heading { font-size: 20px; padding: 8px; }
   .admin-settings .demo .cta-left-and-right .cta-content, .admin-settings .demo .cta-right-and-left .cta-content { display: block; }
@@ -3637,12 +3724,16 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .footer-bottom.fdt-left-and-right .footer-bottom-content { flex-direction: column; }
   .admin-settings .demo #wpf-form-wrapper .mce-edit-area iframe { min-height: 200px; }
   .admin-settings .demo .content { margin-top: 10px; }
-  .admin-settings .demo .no-mobile-sidebar #sidebar, .admin-settings .demo .product-item-thumb-l, .admin-settings .demo .swatchimages { display: none; }
+  .admin-settings .demo .product-item-thumb-l, .admin-settings .demo .swatchimages { display: none; }
   .admin-settings .demo .image-content amp-img { min-width: 360px; max-width: 360px; }
   .admin-settings .demo .btn-l, .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .btn-wrap.btn-wrap-l > a { font-size: 14px; }
   .admin-settings .demo .slick-dots { display: none !important; }
   .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; }
-  .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; } }
+  .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; }
+  .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+  .admin-settings .demo .recommended .navi-entry-cards a { width: 50%; }
+  .admin-settings .demo .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
+  .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 0; } }
 @media screen and (max-width: 599px) { .admin-settings .demo .container .column-wrap { flex-direction: column; }
   .admin-settings .demo .container .column-wrap > div { width: 100%; padding: 1em 0; } }
 @media screen and (max-width: 480px) { .admin-settings .demo { /*本文の見出し*/ }
@@ -3699,7 +3790,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .tagline { font-size: 12px; }
   .admin-settings .demo .navi-footer-in > .menu-footer li.menu-item { width: 46%; }
   .admin-settings .demo .blogcard-content { font-size: 0.84em; }
-  .admin-settings .demo .blogcard-snipet { font-size: 0.74em; }
+  .admin-settings .demo .blogcard-snippet { font-size: 0.74em; }
   .admin-settings .demo .ect-vertical-card .entry-card-wrap { margin-bottom: 8px; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column .entry-card-wrap { display: block; }
   .admin-settings .demo .ect-vertical-card.sp-entry-card-1-column > * { width: 100%; }
@@ -3720,14 +3811,19 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** 印刷用スタイル
 ************************************/ }
   .admin-settings .demo #container { font-size: 11pt; }
-  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer, .admin-settings .demo #container #admin-panel, .admin-settings .demo #container #go-to-top, .admin-settings .demo #container .go-to-top-button, .admin-settings .demo #container #fb-root, .admin-settings .demo #container .mobile-menu-buttons, .admin-settings .demo #container .toc, .admin-settings .demo #container .sns-share, .admin-settings .demo #container .widget { display: none !important; }
+  .admin-settings .demo #container .header-container, .admin-settings .demo #container .ad-area, .admin-settings .demo #container .pager-links, .admin-settings .demo #container .under-entry-content, .admin-settings .demo #container .breadcrumb-category, .admin-settings .demo #container .entry-footer, .admin-settings .demo #container .sidebar, .admin-settings .demo #container .footer, .admin-settings .demo #container #admin-panel, .admin-settings .demo #container #go-to-top, .admin-settings .demo #container .go-to-top-button, .admin-settings .demo #container #fb-root, .admin-settings .demo #container .mobile-menu-buttons, .admin-settings .demo #container .toc, .admin-settings .demo #container .sns-share, .admin-settings .demo #container .widget, .admin-settings .demo #container #notice-area-wrap, .admin-settings .demo #container #notice-area, .admin-settings .demo #container #appeal, .admin-settings .demo #container #recommended, .admin-settings .demo #container #carousel, .admin-settings .demo #container #go-to-top { display: none !important; }
+  .admin-settings .demo #container .content-in { display: block; }
   .admin-settings .demo #container .main, .admin-settings .demo #container .content, .admin-settings .demo #container .wrap { width: auto; margin: 0; float: none; padding: 0; border: none; overflow-wrap: normal; }
-  .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; }
+  .admin-settings .demo #container .main { width: 100% !important; }
+  .admin-settings .demo #container h1, .admin-settings .demo #container h2, .admin-settings .demo #container h3, .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container h6 { background-color: transparent; border-width: 0; padding: 0; margin: 10px 0; color: #333; }
   .admin-settings .demo #container h1 { font-size: 21.5pt; }
   .admin-settings .demo #container h2 { font-size: 18.5pt; }
   .admin-settings .demo #container h3 { font-size: 16pt; }
-  .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; } }
+  .admin-settings .demo #container h4, .admin-settings .demo #container h5, .admin-settings .demo #container .article h6 { font-size: 14pt; }
+  .admin-settings .demo #wpadminbar, .admin-settings .demo #go-to-top, .admin-settings .demo #admin-panel { display: none !important; }
+  .admin-settings .demo body { background-image: none !important; background-break: transparent; } }
 .admin-settings .demo pre { padding: 10px; }
+.admin-settings .demo .entry-content { margin: 0; }
 .admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
 .admin-settings .demo .search-result .title { color: #1a0dab; font-weight: bold; text-decoration: none; }
 .admin-settings .demo .search-result .url { color: #006621; font-size: 14px; max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -3744,6 +3840,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo.iframe-standard-demo { height: 400px; }
 .admin-settings .demo.mobile-demo { height: 640px; }
 .admin-settings .demo .iframe-demo { width: 100%; height: 100%; }
+.admin-settings .demo .recommended-in.wrap { padding: 0 5%; }
 
 .demo #related-entries h2 { font-size: 1.3em; margin: 1em 0; font-weight: bold; line-height: unset; margin: unset; }
 
@@ -3756,6 +3853,9 @@ pre { background-color: #f3f4f5; border: 1px solid #ccc; overflow: auto; padding
 
 /*記事一覧のサムネイル幅*/
 .column-thumbnail { width: 80px; }
+
+/*記事一覧の投稿ID幅*/
+.column-post-id { width: 42px; }
 
 /*記事一覧の文字数幅*/
 .column-word-count { width: 76px; }
@@ -3843,7 +3943,10 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 
 .red { color: red; margin-left: 1em; }
 
-#singular_redirect_settings input[type="text"] { width: 100%; }
+.postbox-container input[type="text"], .components-panel input[type="text"] { width: 100%; }
+
+.components-panel input[type="range"] { width: calc(100% - 18px); }
+.components-panel .range-wrap { width: 100%; }
 
 .list-option { width: 50px; text-align: center; }
 
@@ -3857,13 +3960,13 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 #ranking-items .ranking-item .toggle .toggle-link, #ranking-items .admin-settings .demo .timeline-box .toggle .toggle-link, .admin-settings .demo #ranking-items .timeline-box .toggle .toggle-link { margin: 0; font-size: 1em; font-weight: bold; }
 #ranking-items .demo { font-size: 14px; padding: 12px 18px; }
 #ranking-items .ranking-title input[type=text] { font-weight: bold; }
-#ranking-items .ranking-item-rating { color: #333; font-size: 1em; }
+#ranking-items .rating-star { color: #333; font-size: 1em; }
 #ranking-items input[type='text'], #ranking-items textarea { width: 100%; font-size: 14px; }
 #ranking-items input[type='text'] { padding: 10px; border-width: 2px; }
 #ranking-items .tips { margin: 0; }
-#ranking-items .ranking-item-rating label { float: left; }
-#ranking-items .ranking-item-rating ul { margin: 0; display: flex; }
-#ranking-items .ranking-item-rating ul li { margin-right: 1em; }
+#ranking-items .rating-star label { float: left; }
+#ranking-items .rating-star ul { margin: 0; display: flex; }
+#ranking-items .rating-star ul li { margin-right: 1em; }
 #ranking-items textarea { resize: both; min-height: 0px; height: 120px; max-height: 600px; }
 #ranking-items .ranking-item-link-tag textarea { height: 80px; }
 #ranking-items .ranking-item-img-desc > div, #ranking-items .ranking-item-link-buttons > div { padding: 0 6px; }
@@ -3967,7 +4070,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 * 補足説明
 ********************************/ /*******************************
 * 続きはWEBで的な検索ボックス
-********************************/ /************************************
+********************************/ /* ボタンを光らせる */ /************************************
 ** 汎用ボックス共通
 ************************************/ /************************************
 ** キャプションボックス
@@ -4026,7 +4129,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .components-popover__content .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .components-popover__content .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { font-family: "FontAwesome"; font-size: 50px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { font-family: "FontAwesome"; font-size: 46px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
 .components-popover__content .information-box::before, .components-popover__content .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .components-popover__content .question-box::before, .components-popover__content .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .components-popover__content .alert-box::before, .components-popover__content .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -4064,7 +4167,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-deep-orange { border-color: #ea5506; }
 .components-popover__content .blank-box.bb-white { border-color: #fff; }
 .components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.6; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
+.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
 .components-popover__content .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
 .components-popover__content .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
 .components-popover__content .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
@@ -4106,7 +4209,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bb-good::before { content: "\f164  GOOD"; }
 .components-popover__content .bb-bad::before { content: "\f165  BAD"; }
 .components-popover__content .bb-profile::before { content: "\f007  PROFILE"; }
-.components-popover__content .search-form { margin: 3em 0; }
+.components-popover__content .container .search-form { margin: 3em 0; }
 .components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .components-popover__content .search-form div.sform { min-width: 280px; background-color: #fff; }
 .components-popover__content .search-form div.sbtn { background-color: #1155EE; color: #fff; padding-left: 20px; padding-right: 30px; position: absolute; }
@@ -4116,16 +4219,19 @@ textarea[name="the_page_memo"] { width: 100%; }
   .components-popover__content .search-form div.sform { min-width: 180px; }
   .components-popover__content .search-form div.sbtn { padding-left: 5px; padding-right: 10px; }
   .components-popover__content .search-form div.sbtn:after { font-size: 20px; margin-left: -10px; } }
-.components-popover__content .btn-wrap { min-height: 2em; }
+.components-popover__content .btn-wrap { min-height: 2em; margin: 1.6em 0; }
 .components-popover__content .btn-wrap img[width="1"] { position: absolute; bottom: 0; right: 0; }
-.components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap > a, .components-popover__content .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 10px 16px; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
+.components-popover__content .btn, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap > a, .components-popover__content .wp-block-freeform .btn-wrap > a { color: #fff; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; line-height: normal; padding: 8px 1em; text-decoration: none; text-align: center; font-size: 14px; border: 2px solid transparent; position: relative; }
 .components-popover__content .btn amp-img, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a amp-img, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a amp-img, .components-popover__content .btn-wrap > a amp-img, .components-popover__content .wp-block-freeform .btn-wrap > a amp-img { position: absolute; }
 .components-popover__content .btn:before, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:before, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:before, .components-popover__content .btn:after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:after, .components-popover__content .btn-wrap > a:before, .components-popover__content .btn-wrap > a:after { font-family: FontAwesome; margin-right: 12px; transition: all .2s ease; }
 .components-popover__content .btn-m, .components-popover__content .btn-wrap.btn-wrap-m > a { padding: 14px 45px; font-size: 16px; }
 .components-popover__content .btn-l, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-l > a { padding: 14px 20px; font-size: 18px; margin: 1em; display: flex; justify-content: center; align-items: center; }
 .components-popover__content .btn-l::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a::after, .components-popover__content .btn-wrap.btn-wrap-l > a::after { content: "\f105"; position: absolute; right: 0; font-size: 20px; }
-.components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover, .components-popover__content .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s ease; }
-.components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after, .components-popover__content .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s ease; }
+.components-popover__content .btn:hover, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover, .components-popover__content .btn-wrap > a:hover { opacity: 0.7; color: #fff; transition: all 0.7s; }
+.components-popover__content .btn:hover::after, .components-popover__content .admin-settings .demo .ranking-item-link-buttons a:hover::after, .admin-settings .demo .ranking-item-link-buttons .components-popover__content a:hover::after, .components-popover__content .btn-wrap > a:hover::after { right: -3px; transition: all 0.7s; }
+.components-popover__content .btn-shine, .components-popover__content .btn-wrap-shine > a { overflow: hidden; }
+.components-popover__content .btn-shine:before, .components-popover__content .btn-wrap-shine > a:before { animation: shine 3s ease-in-out infinite; background-color: #fff; content: " "; height: 100%; left: 0; opacity: 0; position: absolute; top: -180px; transform: rotate(45deg); width: 30px; }
+.components-popover__content .btn-circle, .components-popover__content .btn-wrap-circle > a { border-radius: 99px; }
 .components-popover__content .btn-white, .components-popover__content .btn-wrap.btn-wrap-white > a { color: #333; background-color: #fff; }
 .components-popover__content #container .btn-white:hover, .components-popover__content #container .btn-wrap.btn-wrap-white > a:hover { color: #333; }
 .components-popover__content .btn-red, .components-popover__content .admin-settings .demo .ranking-item-link a, .admin-settings .demo .ranking-item-link .components-popover__content a, .components-popover__content .btn-wrap.btn-wrap-red > a { background-color: #e60033; }
@@ -4268,6 +4374,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bct-together .blogcard::before { content: " あわせて読みたい"; }
 .components-popover__content .bct-detail .blogcard::before { content: " 詳細はこちら"; }
 .components-popover__content .bct-official .blogcard::before { content: " 公式サイト"; }
+.components-popover__content .bct-dl .blogcard::before { content: " ダウンロード"; }
 .components-popover__content .button-block { float: none; margin: 1em 0; }
 .components-popover__content .button-block.alignleft { text-align: left; }
 .components-popover__content .button-block.aligncenter { text-align: center; }
@@ -4385,14 +4492,14 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .lb-white .label-box-content { border-color: #fff; }
 .components-popover__content .toggle-wrap { margin: 1.2em 0; position: relative; }
 .components-popover__content .toggle-wrap > p { margin: 0; }
-.components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s ease; overflow: hidden; }
+.components-popover__content .toggle-wrap .toggle-content { display: block; visibility: hidden; opacity: 0; padding: 0 1em; height: 0; transition: all 0.7s; overflow: hidden; }
 .components-popover__content .toggle-button { display: block; cursor: pointer; padding: 3px 10px; background-color: #f3f4f5; border: 2px solid #ccc; text-align: center; border-radius: 4px; position: relative; margin: 0; }
 .components-popover__content .toggle-button::before { content: '\f067'; font-family: FontAwesome; margin-right: 0.4em; font-size: 0.8em; color: #999; }
 .components-popover__content .toggle-button:hover { opacity: 0.7; }
 .components-popover__content .toggle-checkbox { display: none; }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-button { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .components-popover__content .toggle-checkbox:checked ~ .toggle-button::before { content: '\f068'; }
-.components-popover__content .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s ease; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.components-popover__content .toggle-checkbox:checked ~ .toggle-content { visibility: visible; opacity: 1; height: 100%; transition: all 0.7s; padding: 1em; border: 2px solid #ccc; border-top-width: 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 .components-popover__content .tb-red .toggle-button { border: 2px solid #e60033; background: #e60033; color: #fff; }
 .components-popover__content .tb-red .toggle-button::before { color: #ccc; }
 .components-popover__content .tb-red .toggle-checkbox:checked ~ .toggle-content { border-color: #e60033; }
@@ -4541,21 +4648,23 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .fw-700 { font-weight: 700; }
 .components-popover__content .fw-800 { font-weight: 800; }
 .components-popover__content .fw-900 { font-weight: 900; }
-.components-popover__content .ff-meiryo { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.components-popover__content .ff-meiryo, .components-popover__content .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
+.components-popover__content .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
 .components-popover__content .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
-.components-popover__content .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
-.components-popover__content .ff-mplus-1p { font-family: "Mplus 1p" ,sans-serif; }
-.components-popover__content .ff-rounded-mplus-1c { font-family: "Rounded Mplus 1c" ,sans-serif; }
-.components-popover__content .ff-hannari { font-family: "Hannari" ,sans-serif; }
-.components-popover__content .ff-kokoro { font-family: "Kokoro" ,sans-serif; }
-.components-popover__content .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
-.components-popover__content .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
+.components-popover__content .ff-noto-sans-jp, .components-popover__content .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
+.components-popover__content .ff-noto-serif-jp, .components-popover__content .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
+.components-popover__content .ff-mplus-1p, .components-popover__content .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
+.components-popover__content .ff-rounded-mplus-1c, .components-popover__content .wf-active .ff-rounded-mplus-1c { font-family: "M PLUS Rounded 1c" ,sans-serif; }
+.components-popover__content .ff-kosugi, .components-popover__content .wf-active .ff-kosugi { font-family: "Kosugi" ,sans-serif; }
+.components-popover__content .ff-kosugi-maru, .components-popover__content .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
+.components-popover__content .ff-sawarabi-gothic, .components-popover__content .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
+.components-popover__content .ff-sawarabi-mincho, .components-popover__content .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
 .components-popover__content .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
 .tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }
-.tagcloud .admin-tag { background-color: #fff; border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; flex: 0 1 auto; }
-.tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.7s ease; color: #333; }
+.tagcloud .admin-tag { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; flex: 0 1 auto; }
+.tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .tagcloud .admin-tag .tag-caption { word-break: break-all; }
 .tagcloud .admin-tag .tag-caption::before { font-family: FontAwesome; content: ""; padding-right: 4px; }
 .tagcloud .admin-tag .tag-link-count { margin-left: 8px; }

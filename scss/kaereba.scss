@@ -27,10 +27,17 @@
     font-size: 24px;
     color: $thin;
   }
+  .image-thumb{
+    img{
+      border: none;
+      box-shadow: none;
+    }
+  }
 }
 
 .rakuten-item-box::after{
-  content: '\f25d';
+  content: '\e903';
+  font-family: icomoon;
 }
 
 .product-item-error.cf{

@@ -33,7 +33,7 @@ if (is_singular()){//単一記事ページの場合
 
   if ( is_category() ) {//カテゴリ用設定
     $description = get_category_meta_description();
-    if ($category_title =  get_category_title(get_query_var('cat'))) {
+    if ($category_title =  get_the_category_title(get_query_var('cat'))) {
       $title = $category_title;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
@@ -43,7 +43,7 @@ if (is_singular()){//単一記事ページの場合
 
   if ( is_tag() ) {//タグ用設定
     $description = get_tag_meta_description();
-    if ($tag_title =  get_tag_title(get_query_var('tag_id'))) {
+    if ($tag_title =  get_the_tag_title(get_query_var('tag_id'))) {
       $title = $tag_title;
     } else {
       $title = wp_title(null, false).' | '.get_bloginfo('name');
@@ -60,7 +60,9 @@ if (is_singular()){//単一記事ページの場合
     echo '<meta property="og:image" content="'.esc_url($ogp_image).'">';echo "\n";
   }
 } else {//単一記事ページページ以外の場合（アーカイブページやホームなど）
-  if (is_category() && !is_paged() && $eye_catch = get_category_eye_catch(get_query_var('cat'))) {
+  if (is_category() && !is_paged() && $eye_catch = get_the_category_eye_catch_url(get_query_var('cat'))) {
+    $ogp_image = $eye_catch;
+  } elseif (is_tag() && !is_paged() && $eye_catch = get_the_tag_eye_catch_url(get_query_var('tag_id'))) {
     $ogp_image = $eye_catch;
   } elseif ( get_ogp_home_image_url() ) {
     $ogp_image = get_ogp_home_image_url();

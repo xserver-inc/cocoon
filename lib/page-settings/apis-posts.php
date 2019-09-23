@@ -28,6 +28,9 @@ update_theme_option(OP_AMAZON_ITEM_PRICE_VISIBLE);
 //Amazon商品リンク在庫価格表示
 update_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE);
 
+//Amazon商品リンク説明文表示
+update_theme_option(OP_AMAZON_ITEM_DESCRIPTION_VISIBLE);
+
 //Amazon商品レビュー表示
 update_theme_option(OP_AMAZON_ITEM_CUSTOMER_REVIEWS_VISIBLE);
 

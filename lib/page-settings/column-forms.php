@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'メインカラム設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'メインカラムの幅、余白幅、枠線の設定です。', THEME_NAME ) ?></p>
+    <p><?php echo __( 'メインカラムの幅、余白幅、枠線の設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/column-settiongs/') ?></p>
 
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_columns', true)): ?>
       <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
@@ -96,7 +96,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'サイドバー設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'サイドバーの幅、余白幅、枠線の設定です。', THEME_NAME ) ?></p>
+    <p><?php echo __( 'サイドバーの幅、余白幅、枠線の設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/column-settiongs/') ?></p>
 
     <table class="form-table">
       <tbody>
@@ -165,7 +165,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'カラム間余白設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'メインカラムとサイドバーの間隔設定です。', THEME_NAME ) ?></p>
+    <p><?php echo __( 'メインカラムとサイドバーの間隔設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/column-settiongs/') ?></p>
 
     <table class="form-table">
       <tbody>

@@ -91,6 +91,8 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $item_output = get_mobile_prev_button_tag();
       } elseif ($lower_url === '#next') {
         $item_output = get_mobile_next_button_tag();
+      } elseif ($lower_url === '#logo') {
+        $item_output = get_mobile_logo_button_tag();
       } else {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -147,16 +149,17 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
     }
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
-      if (in_array('menu-item-has-children', $item->classes)) {
-        // 親の場合
-        $output .= "\n".'</ul></li>';
-      }
-      else {
-        // 子の場合
+      $output .= "\n";
+      // if (in_array('menu-item-has-children', $item->classes)) {
+      //   // 親の場合
+      //   $output .= "\n".'</ul></li>';
+      // }
+      // else {
+      //   // 子の場合
 
-        $output .= "\n";
-      }
-  }
+      //   $output .= "\n";
+      // }
+    }
   }
   endif;
 

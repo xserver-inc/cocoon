@@ -486,6 +486,9 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
   margin-left: auto;
 }
+.editor-block-list__layout .editor-block-list__block[data-type="core/freeform"] {
+  clear: both;
+}
 .editor-block-list__layout .editor-block-list__block .column-2,
 .editor-block-list__layout .editor-block-list__block .column-3 {
   word-break: break-all;

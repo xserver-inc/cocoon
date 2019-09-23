@@ -77,6 +77,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <tbody>
     <p><?php _e( 'ブロックエディターのみに適用される設定です。', THEME_NAME ) ?></p>
 
+        <!-- ボタン -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('ボタン', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE , is_block_editor_ruby_button_visible(), __( 'ふりがな（ルビ）ボタン表示', THEME_NAME ));
+            generate_tips_tag(__( 'Cocoonのルビボタン表示を切り替えます。プラグインのルビ機能を利用していてエラーが出る場合は無効にしてください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         <!-- スタイルドロップダウン -->
         <tr>
           <th scope="row">

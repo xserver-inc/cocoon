@@ -38,7 +38,7 @@ function fn_minify($pattern, $input) {
     return preg_split('#(' . implode('|', $pattern) . ')#', $input, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 }
 
-function fn_minify_css($input, $comment = 2, $quote = 2) {
+function fn_minify_css($input, $comment = 0, $quote = 2) {
     if (!is_string($input) || !$input = n(trim($input))) return $input;
     $output = $prev = "";
     foreach (fn_minify([MINIFY_COMMENT_CSS, MINIFY_STRING], $input) as $part) {
@@ -180,12 +180,13 @@ function fn_minify_html_union($input, $quote) {
     global $url;
     return preg_replace_callback('#<\s*([^\/\s]+)\s*(?:>|(\s[^<>]+?)\s*>)#', function($m) use($quote, $url) {
         if (isset($m[2])) {
-            // Minify inline CSS(s)
-            if (stripos($m[2], ' style=') !== false) {
-                $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', function($m) {
-                    return $m[1] . $m[2] . fn_minify_css($m[3]) . $m[2];
-                }, $m[2]);
-            }
+            // // Minify inline CSS(s)
+            // if (stripos($m[2], ' style=') !== false) {
+            //     $m[2] = preg_replace_callback('#( style=)([\'"]?)(.*?)\2#i', function($m) {
+            //         return $m[1] . $m[2] . fn_minify_css($m[3]) . $m[2];
+            //     }, $m[2]);
+            // }
+
             // // Minify URL(s)
             // if (strpos($m[2], '://') !== false) {
             //     $m[2] = str_replace([

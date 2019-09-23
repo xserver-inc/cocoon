@@ -30,7 +30,7 @@ if ( !function_exists( 'view_memo_custom_box' ) ):
 function view_memo_custom_box(){
   //メモ記入欄
   generate_textarea_tag('the_page_memo', get_the_page_memo(), '') ;
-  generate_howro_tag(__( 'この投稿に記録しておきたいメモがある場合は記入してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/memo/'));
+  generate_howto_tag(__( 'この投稿に記録しておきたいメモがある場合は記入してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/memo/'), 'the_page_memo');
 }
 endif;
 

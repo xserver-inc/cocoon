@@ -29,9 +29,8 @@ if ( !function_exists( 'sns_image_custom_box_view' ) ):
 function sns_image_custom_box_view(){
   $sns_image_url = get_post_meta(get_the_ID(),'sns_image_url', true);
 
-  //generate_label_tag('sns_image_url', __('SNS画像', THEME_NAME) );
   generate_upload_image_tag('sns_image_url', $sns_image_url);
-  echo '<p class="howto">'.__( 'FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。', THEME_NAME ).'</p>';
+  generate_howto_tag(__( 'FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイキャッチが利用されます。', THEME_NAME ), 'sns_image_url');
 
 }
 endif;

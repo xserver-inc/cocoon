@@ -10,7 +10,7 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
 
-<?php if (is_active_sidebar( 'sidebar' ) || is_active_sidebar( 'sidebar-scroll' )): ?>
+<?php if (is_active_sidebar( 'sidebar' )): ?>
 <!-- サイドバーボタン -->
   <li class="sidebar-menu-button menu-button">
     <input id="sidebar-menu-input" type="checkbox" class="display-none">
@@ -28,9 +28,12 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
       //ドロワーメニュー用のサイドバーからIDを削除（IDの重複HTML5エラー対応）
       $sidebar = preg_replace('/ id="([^"]+?)"/i', ' id="slide-in-$1"', $sidebar);
       $sidebar = preg_replace('/ for="([^"]+?)"/i', ' for="slide-in-$1"', $sidebar);
-      echo $sidebar;
-        ?>
-      <!-- <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label> -->
+
+      //AdSense広告の除去
+      $sidebar = preg_replace('/<ins.+?<\/ins>/is', '', $sidebar);
+      $sidebar = preg_replace('/<script.+?<\/script>/is', '', $sidebar);
+
+      echo $sidebar; ?>
     </div>
   </li>
 <?php endif ?>

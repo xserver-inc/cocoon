@@ -70,6 +70,14 @@
       background-color: $youtube_color;
     }
 
+    .linkedin-button{
+      background-color: $linkedin_color;
+    }
+
+    .note-button{
+      background-color: $note_color;
+    }
+
     .flickr-button{
       background-color: $flickr_color;
     }
@@ -82,8 +90,16 @@
       background-color: $rakuten_room_color;
     }
 
+    .slack-button{
+      background-color: $slack_color;
+    }
+
     .github-button{
       background-color: $github_color;
+    }
+
+    .codepen-button{
+      background-color: $codepen_color;
     }
 
     .feedly-button{
@@ -158,6 +174,16 @@
       border-color: $youtube_color;
     }
 
+    .linkedin-button{
+      color: $linkedin_color;
+      border-color: $linkedin_color;
+    }
+
+    .note-button{
+      color: $note_color;
+      border-color: $note_color;
+    }
+
     .flickr-button{
       color: $flickr_color;
       border-color: $flickr_color;
@@ -168,9 +194,24 @@
       border-color: $amazon_color;
     }
 
+    .rakuten-room-button{
+      color: $rakuten_room_color;
+      border-color: $rakuten_room_color;
+    }
+
+    .slack-button{
+      color: $slack_color;
+      border-color: $slack_color;
+    }
+
     .github-button{
       color: $github_color;
       border-color: $github_color;
+    }
+
+    .codepen-button{
+      color: $codepen_color;
+      border-color: $codepen_color;
     }
 
     .feedly-button{
@@ -292,6 +333,10 @@ $sns_button_margin_bottom: 8px;
       @include service_count;
     }
   }
+}
+
+.share-menu-content .sns-share-buttons a{
+  width: 24%;
 }
 
 //シェア数の非表示

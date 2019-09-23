@@ -11,6 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'code_minify_call_back' ) ):
 function code_minify_call_back($buffer) {
   global $post;
+  //_v($post);
   if (is_admin() || is_feed() || !$post) {
     return $buffer;
   }
@@ -20,8 +21,13 @@ function code_minify_call_back($buffer) {
   $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
 
   //HTMLの縮小化
+  //global $_IS_HTTP_MINIFY;
+  //_v($_SERVER);
+  // if (is_html_minify_enable() && !$_IS_HTTP_MINIFY) {
   if (is_html_minify_enable()) {
     $buffer = minify_html($buffer);
+    //$_IS_HTTP_MINIFY = true;
+    //_v('minify_html');
   }
 
   ///////////////////////////////////////////
@@ -112,33 +118,36 @@ endif;
 if ( !function_exists( 'is_minify_page' ) ):
 function is_minify_page(){
   if (is_admin()) return false;
+  if (includes_wp_admin_in_request_uri()) return false;
+  if (includes_wp_cron_php_in_request_uri()) return false;
+  if (includes_service_worker_js_in_http_referer()) return false;
   if (is_server_request_post()) return false;
   if (is_server_request_uri_backup_download_php()) return false;
   if (is_robots_txt_page()) return false;
   if (is_analytics_access_php_page()) return false;
   if (is_feed()) return false;
+  // _v($_SERVER);
+  //_v(time());
   return true;
 }
 endif;
 
 //最終HTML取得開始
-add_action('after_setup_theme', 'code_minify_buffer_start', 99999999);
+add_action('get_header', 'code_minify_buffer_start', 99999999);
+add_action('get_template_part_tmp/amp-header', 'code_minify_buffer_start', 99999999);//AMP
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  // if (is_admin()) return;
-  // if (is_server_request_post()) return;
-  // if (is_server_request_uri_backup_download_php()) return;
-  if (!is_minify_page()) return;
+  // if (!is_minify_page()) return;
 
   ob_start('code_minify_call_back');
 }
-
 endif;
+
 //最終HTML取得終了
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  if (!is_minify_page()) return;
+  // if (!is_minify_page()) return;
 
   if (ob_get_length()){
     ob_end_flush();
@@ -290,10 +299,16 @@ function convert_lazy_load_tag($the_content, $media){
         continue;
       }
 
+      //URLが含まれていない場合はスキップ
+      if (!preg_match(URL_REG, $match)) {
+        continue;
+      }
+
       //重複置換を避ける
       if (in_array($match, $img_tags, true)) {
         continue;
       }
+
       //置換するタグを格納してく
       $img_tags[] = $match;
       ///////////////////////////////////////////
@@ -301,7 +316,7 @@ function convert_lazy_load_tag($the_content, $media){
       ///////////////////////////////////////////
       if (
         //サイトロゴ
-        includes_string($match, 'class="site-logo-image"')
+        includes_string($match, 'header-site-logo-image')
         //アイキャッチ
         || includes_string($match, ' eye-catch-image ')
       ) {
@@ -321,6 +336,7 @@ function convert_lazy_load_tag($the_content, $media){
 
       //画像URLの入れ替え
       $search = '{ src=["\'](.+?)["\']}i';
+      //$replace = ' src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="$1"';
       $replace = ' data-src="$1"';
       $tag = preg_replace($search, $replace, $tag);
       //$tag = convert_src_to_data_src($tag);

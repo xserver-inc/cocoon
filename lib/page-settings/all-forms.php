@@ -56,12 +56,16 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 $options = array(
                   'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
                   'meiryo' => __( 'メイリオ, ヒラギノ角ゴ', THEME_NAME ),
+                  'hiragino' => __( 'ヒラギノ角ゴ, メイリオ', THEME_NAME ),
                   'ms_pgothic' => __( 'ＭＳ Ｐゴシック, ヒラギノ角ゴ', THEME_NAME ),
                   'noto_sans_jp' => __( 'Noto Sans JP（WEBフォント）', THEME_NAME ),
+                  'noto_serif_jp' => __( 'Noto Serif JP（WEBフォント）', THEME_NAME ),
                   'mplus_1p' => __( 'Mplus 1p（WEBフォント）', THEME_NAME ),
                   'rounded_mplus_1c' => __( 'Rounded Mplus 1c（WEBフォント）', THEME_NAME ),
-                  'hannari' => __( 'はんなり明朝（WEBフォント）', THEME_NAME ),
-                  'kokoro' => __( 'こころ明朝（WEBフォント）', THEME_NAME ),
+                  'kosugi' => __( '小杉ゴシック（WEBフォント）', THEME_NAME ),
+                  'kosugi_maru' => __( '小杉丸ゴシック（WEBフォント）', THEME_NAME ),
+                  // 'hannari' => __( 'はんなり明朝（WEBフォント）', THEME_NAME ),
+                  // 'kokoro' => __( 'こころ明朝（WEBフォント）', THEME_NAME ),
                   'sawarabi_gothic' => __( 'さわらびゴシック（WEBフォント）', THEME_NAME ),
                   'sawarabi_mincho' => __( 'さわらび明朝（WEBフォント）', THEME_NAME ),
                 );

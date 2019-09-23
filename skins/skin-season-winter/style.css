@@ -21,7 +21,7 @@ body {
 ** main
 ************************************/
 .single #main {
-	padding: 0 3em;
+	padding: 1em 3em;
 }
 /************************************
 ** p
@@ -33,6 +33,9 @@ body {
 }
 .entry-content {
 	color: #44566d;
+}
+.entry-content .wp-caption-text {
+	margin: 0;
 }
 /************************************
 ** a
@@ -124,13 +127,13 @@ a {
 .navi-in > ul .sub-menu ul{
 	top: -64px;
 }
-#header-container #navi{
+#header-container .navi{
   background: #88abda;
 }
-#header-container #navi a{
+#header-container .navi a{
   color: #fff;
 }
-#header-container #navi a:hover{
+#header-container .navi a:hover{
   color: #88abda;
 }
 .navi-in > ul .sub-menu{
@@ -253,7 +256,7 @@ a {
 .blogcard-wrap {
 	margin: 2.5em auto;
 }
-.blogcard-snipet {
+.blogcard-snippet {
 	color: #b4bbc5;
 }
 .bct-related .blogcard::before {
@@ -379,7 +382,6 @@ article .tag-link:hover {
 ** サイドバー sidebar
 ************************************/
 .sidebar {
-	padding: 0;
 	font-size: 0.9em;
 }
 .sidebar h3 {
@@ -445,17 +447,17 @@ article .tag-link:hover {
 	max-width: 100%;
 	margin: 0 auto;
 }
-#sidebar .author-box .author-name {
+.nwa .author-box .author-name {
 	margin-bottom: 20px;
 }
-#sidebar .author-box .author-name a {
+.nwa .author-box .author-name a {
 	color: #88abda;
 }
-#sidebar .author-box p {
+.nwa .author-box p {
 	margin: 1em 0;
 	line-height: 1.7;
 }
-#sidebar .author-box .sns-follow-buttons a.follow-button {
+.nwa .author-box .sns-follow-buttons a.follow-button {
 	font-size: 25px;
 	width: 35px;
 	height: 35px;
@@ -463,6 +465,7 @@ article .tag-link:hover {
 	line-height: 1.5;
 	margin: 4px;
 	opacity: 0.8;
+	padding: 0 !important;
 }
 .author-widget-name {
 	position: relative;
@@ -496,11 +499,11 @@ article .tag-link:hover {
 	border-width: 21px;
 	margin-left: -21px;
 }
-#sidebar .author-box a {
+.nwa .author-box .sns-follow-buttons a {
 	color: #fff;
 	border: none;
 }
-#sidebar .author-box .sns-follow-message {
+.nwa .author-box .sns-follow-message {
 	margin: 2.3em 0 0;
 	display: block;
 	font-size: 1em;
@@ -526,6 +529,12 @@ article .tag-link:hover {
 .author-box .youtube-button {
 	background-color: #ef1515 !important;
 }
+.author-box .linkedin-button {
+	background-color: #0077b5 !important;
+}
+.author-box .note-button {
+	background-color: #41c9b4 !important;
+}
 .author-box .flickr-button {
 	background-color: #0063dc !important;
 }
@@ -541,7 +550,13 @@ article .tag-link:hover {
 .author-box .rakuten-room-button {
 	background-color: #c42e7f !important;
 }
+.author-box .slack-button {
+	background-color: #e01563 !important;
+}
 .author-box .github-button {
+	background-color: #333 !important;
+}
+.author-box .codepen-button {
 	background-color: #333 !important;
 }
 .author-box .feedly-button {
@@ -980,7 +995,7 @@ input[type='submit']:hover {
   .navi-in > ul li {
 	  min-width: auto;
   }
-  #header-container #navi a {
+  #header-container .navi a {
 	  font-size: 0.8em;
 	  padding: 1em 1.2em;
   }
@@ -1317,4 +1332,8 @@ table th {
 }
 .ranking-items p {
 	margin-top: 0;
+}
+
+.wpforo-list-item p {
+	margin: 0;
 }

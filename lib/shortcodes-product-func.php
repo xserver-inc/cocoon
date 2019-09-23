@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //シンプルなアソシエイトURLの作成
 if ( !function_exists( 'get_amazon_associate_url' ) ):
 function get_amazon_associate_url($asin, $associate_tracking_id = null){
-  $base_url = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/exec/obidos/ASIN';
+  $base_url = 'https://'.AMAZON_DOMAIN.'/exec/obidos/ASIN';
   $associate_url = $base_url.'/'.$asin.'/';
   if (!empty($associate_tracking_id)) {
     $associate_url .= $associate_tracking_id.'/';
@@ -23,9 +23,20 @@ endif;
 //Amazon検索用のURLを生成する
 if ( !function_exists( 'get_amazon_search_url' ) ):
 function get_amazon_search_url($keyword, $associate_tracking_id = null){
-  $res = 'https://'.__( 'www.amazon.co.jp', THEME_NAME ).'/gp/search?keywords='.urlencode($keyword);
+  $res = 'https://'.AMAZON_DOMAIN.'/gp/search?keywords='.urlencode($keyword);
   if ($associate_tracking_id) {
     $res .= '&tag='.$associate_tracking_id;
+  }
+  return $res;
+}
+endif;
+
+//Amazonレビュー用のURLを生成する
+if ( !function_exists( 'get_amazon_review_url' ) ):
+function get_amazon_review_url($asin, $associate_tracking_id = null){
+  $res = 'https://'.AMAZON_DOMAIN.'/product-reviews/'.trim($asin).'/';
+  if ($associate_tracking_id) {
+    $res .= '?tag='.$associate_tracking_id;
   }
   return $res;
 }
@@ -171,7 +182,7 @@ function get_additional_button_tag($btn_url, $btn_text, $btn_tag, $name = 'btnex
     if ($btn_tag) {
       $button_link = htmlspecialchars_decode($btn_tag);
     } else {
-      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow">'.esc_html($btn_text).'</a>';
+      $button_link = '<a href="'.esc_attr($btn_url).'" target="_blank" rel="nofollow noopener">'.esc_html($btn_text).'</a>';
     }
 
     $button_tag =
@@ -213,7 +224,7 @@ function get_search_buttons_tag($args){
       }
       $amazon_btn_tag =
         '<div class="shoplinkamazon">'.
-          '<a href="'.esc_url($amazon_url).'" target="_blank" rel="nofollow">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
+          '<a href="'.esc_url($amazon_url).'" target="_blank" rel="nofollow noopener">'.get_amazon_search_button_text().$amazon_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -253,7 +264,7 @@ function get_search_buttons_tag($args){
       }
       $rakuten_btn_tag =
         '<div class="shoplinkrakuten">'.
-          '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
+          '<a href="'.esc_url($rakuten_url).'" target="_blank" rel="nofollow noopener">'.get_rakuten_search_button_text().$rakuten_impression_tag.'</a>'.
         '</div>';
     }
     //Yahoo!ボタンの取得
@@ -275,7 +286,7 @@ function get_search_buttons_tag($args){
 
       $yahoo_tag =
         '<div class="shoplinkyahoo">'.
-          '<a href="'.esc_url($yahoo_url).'" target="_blank" rel="nofollow">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
+          '<a href="'.esc_url($yahoo_url).'" target="_blank" rel="nofollow noopener">'.get_yahoo_search_button_text().$yahoo_impression_tag.'</a>'.
         '</div>';
     }
 
@@ -312,7 +323,7 @@ function get_cache_delete_tag($mode = 'amazon', $id){
   }
   $cache_delete_tag = null;
   if (is_user_administrator()) {
-    $cache_delete_tag = '<a href="'.$url.'" class="cache-delete-link" target="_blank" rel="nofollow"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
+    $cache_delete_tag = '<a href="'.$url.'" class="cache-delete-link" target="_blank" rel="nofollow noopener"'.ONCLICK_DELETE_CONFIRM.'>'.__( 'キャッシュ削除', THEME_NAME ).'</a>';
   }
   return $cache_delete_tag;
 }

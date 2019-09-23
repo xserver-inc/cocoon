@@ -39,7 +39,7 @@ function rakuten_product_link_shortcode($atts){
     'btn3_url' => null,
     'btn3_text' => __( '詳細ページ', THEME_NAME ),
     'btn3_tag' => null,
-  ), $atts ) );
+  ), $atts, 'rakuten' ) );
 
   $id = sanitize_shortcode_value($id);
 
@@ -179,7 +179,7 @@ function rakuten_product_link_shortcode($atts){
         $jb = $json['body'];
         if ($jb) {
           $jb = preg_replace('/{/', '{"date":"'.$acquired_date.'",', $jb, 1);
-            $json['body'] = $jb;
+          $json['body'] = $jb;
         }
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $cache_expiration);
@@ -360,7 +360,7 @@ function rakuten_product_link_shortcode($atts){
 
           //ロゴ非表示
           $logo_class = null;
-          if ((!is_rakuten_item_logo_visible() && $logo === null) || (!$logo && $logo !== null )) {
+          if ((!is_rakuten_item_logo_visible() && is_null($logo)) || (!$logo && !is_null($logo) )) {
             $logo_class = ' no-after';
           }
 

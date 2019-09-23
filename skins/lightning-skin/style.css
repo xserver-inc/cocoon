@@ -143,7 +143,7 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 /* ------- メニュー ------- */
-#header-container #navi{
+#header-container .navi{
 	background-color: #95e7a5;
 }
 
@@ -313,7 +313,7 @@ ul.sub-menu li a{
 	transition: all .5s ease;
 }
 
-.blogcard-snipet {
+.blogcard-snippet {
   color: #808080;
   font-size: 12px;
 }

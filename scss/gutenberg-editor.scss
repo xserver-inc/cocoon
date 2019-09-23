@@ -90,6 +90,9 @@ div.mce-content-body {
   &[data-type^="cocoon-blocks/micro-balloon"][data-align="right"] .micro-copy {
     margin-left: auto;
   }
+  &[data-type="core/freeform"] {
+    clear: both;
+  }
 
 
   .column-2,
@@ -708,3 +711,4 @@ ol, ul {
 .wp-block .widget.open{
   margin-left: 0;
 }
+

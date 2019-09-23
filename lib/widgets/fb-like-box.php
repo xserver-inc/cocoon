@@ -33,14 +33,20 @@ class FBLikeBoxWidgetItem extends WP_Widget {
 
     $facebook_url = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : get_the_author_facebook_url();
 
-    $twitter_id = !empty( $instance['twitter_id'] ) ? $instance['twitter_id'] : get_the_author_twitter_id();
-    if ($twitter_id == '0') {
+    $twitter_id = isset( $instance['twitter_id'] ) ? $instance['twitter_id'] : '';
+    if ($twitter_id === '0') {
       $twitter_id = null;
     }
+    if ($twitter_id === '') {
+      $twitter_id = get_the_author_twitter_id();
+    }
 
-    $line_id = !empty( $instance['line_id'] ) ? $instance['line_id'] : get_the_author_line_id();
-    if ($line_id == '0') {
+    $line_id = isset( $instance['line_id'] ) ? $instance['line_id'] : '';
+    if ($line_id === '0') {
       $line_id = null;
+    }
+    if ($line_id === '') {
+      $line_id = get_the_author_line_id();
     }
 
     echo $args['before_widget'];
@@ -62,8 +68,8 @@ class FBLikeBoxWidgetItem extends WP_Widget {
     $instance['message'] = !empty( $new_instance['message'] ) ? $new_instance['message'] : '';
     $instance['sub_message'] = !empty( $new_instance['sub_message'] ) ? $new_instance['sub_message'] : '';
     $instance['facebook_url'] = strip_tags(!empty($new_instance['facebook_url']) ? $new_instance['facebook_url'] : '');
-    $instance['twitter_id'] = strip_tags(($new_instance['twitter_id'] != '0') ? $new_instance['twitter_id'] : 0);
-    $instance['line_id'] = strip_tags(($new_instance['line_id'] != '0') ? $new_instance['line_id'] : 0);
+    $instance['twitter_id'] = strip_tags(($new_instance['twitter_id'] !== '0') ? $new_instance['twitter_id'] : 0);
+    $instance['line_id'] = strip_tags(($new_instance['line_id'] !== '0') ? $new_instance['line_id'] : 0);
       return $instance;
   }
   function form($instance) {

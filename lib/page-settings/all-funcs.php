@@ -35,6 +35,7 @@ function is_site_font_family_local(){
   switch (get_site_font_family()) {
     case 'yu_gothic':
     case 'meiryo':
+    case 'hiragino':
     case 'ms_pgothic':
       return true;
       break;

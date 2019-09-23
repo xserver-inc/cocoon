@@ -1634,7 +1634,12 @@ function initialize_tinymce_styles($init_array) {
           'wrapper' => true,
           'classes' => 'blogcard-type bct-official'
         ),
-
+        array(
+          'title' => __( 'ダウンロード', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-dl'
+        ),
       ),
     ),
   );

@@ -16,7 +16,7 @@ function author_box_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => null,
     'label' => null,
-  ), $atts));
+  ), $atts, 'author_box'));
   $label = sanitize_shortcode_value($label);
   ob_start();
   generate_author_box_tag($id, $label);
@@ -44,7 +44,10 @@ function new_entries_shortcode($atts) {
     'modified' => 0,
     'order' => 'desc',
     'action' => null,
-  ), $atts));
+    'bold' => 0,
+    'arrow' => 0,
+    'class' => null,
+  ), $atts, 'new_list'));
 
   //カテゴリを配列化
   $cat_ids = array();
@@ -61,7 +64,7 @@ function new_entries_shortcode($atts) {
     'entry_count' => $count,
     'cat_ids' => $cat_ids,
     'tag_ids' => $tag_ids,
-    'entry_type' => $type,
+    'type' => $type,
     'include_children' => $children,
     'post_type' => $post_type,
     'taxonomy' => $taxonomy,
@@ -70,6 +73,9 @@ function new_entries_shortcode($atts) {
     'modified' => $modified,
     'order' => $order,
     'action' => $action,
+    'bold' => $bold,
+    'arrow' => $arrow,
+    'class' => $class,
   );
   ob_start();
   generate_widget_entries_tag($atts);
@@ -92,13 +98,29 @@ function popular_entries_shortcode($atts) {
     'rank' => 0,
     'pv' => 0,
     'cats' => 'all',
-  ), $atts));
-  $categories = array();
+    'bold' => 0,
+    'arrow' => 0,
+    'class' => null,
+  ), $atts, 'popular_list'));
+  $cat_ids = array();
   if ($cats && $cats != 'all') {
-    $categories = explode(',', $cats);
+    $cat_ids = explode(',', $cats);
   }
+  $atts = array(
+    'days' => $days,
+    'entry_count' => $count,
+    'entry_type' => $type,
+    'ranking_visible' => $rank,
+    'pv_visible' => $pv,
+    'cat_ids' => $cat_ids,
+    'bold' => $bold,
+    'arrow' => $arrow,
+    'class' => $class,
+  );
   ob_start();
-  generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
+  generate_popular_entries_tag($atts);
+  //_v($atts);
+  //generate_popular_entries_tag($days, $count, $type, $rank, $pv, $categories);
   $res = ob_get_clean();
   return $res;
 }
@@ -113,7 +135,7 @@ if ( !function_exists( 'affiliate_tag_shortcode' ) ):
 function affiliate_tag_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, AFFI_SHORTCODE));
   if ($id) {
     if ($recode = get_affiliate_tag($id)) {
 
@@ -154,12 +176,14 @@ if ( !function_exists( 'function_text_shortcode' ) ):
 function function_text_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, TEMPLATE_SHORTCODE));
   if ($id) {
     if ($recode = get_function_text($id)) {
       //無限ループ要素の除去
       //$shortcode = get_function_text_shortcode($id);
       $template = preg_replace('{\['.TEMPLATE_SHORTCODE.'[^\]]*?id=[\'"]?'.$id.'[\'"]?[^\]]*?\]}i', '', $recode->text);
+      //余計な改行を取り除く
+      $template = shortcode_unautop($template);
 
       return do_shortcode($template);
     }
@@ -183,7 +207,7 @@ if ( !function_exists( 'item_ranking_shortcode' ) ):
 function item_ranking_shortcode($atts) {
   extract(shortcode_atts(array(
     'id' => 0,
-  ), $atts));
+  ), $atts, RANKING_SHORTCODE));
   if ($id) {
     // //無限ループ回避
     // if ($recode->id == $id) return;
@@ -211,7 +235,7 @@ if ( !function_exists( 'login_user_only_shortcode' ) ):
 function login_user_only_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
       'msg' => __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME ),
-  ), $atts ) );
+  ), $atts, 'login_user_only' ) );
   $msg = sanitize_shortcode_value($msg);
   if (is_user_logged_in()) {
     return do_shortcode($content);
@@ -228,7 +252,7 @@ if ( !function_exists( 'timeline_shortcode' ) ):
 function timeline_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
     'title' => null,
-  ), $atts ) );
+  ), $atts, 'timeline' ) );
   $content = remove_wrap_shortcode_wpautop('ti', $content);
   $content = do_shortcode( shortcode_unautop( $content ) );
   $title = sanitize_shortcode_value($title);
@@ -270,7 +294,7 @@ function timeline_item_shortcode( $atts, $content = null ){
   extract( shortcode_atts( array(
     'title' => null,
     'label' => null,
-  ), $atts ) );
+  ), $atts, 'ti' ) );
   $title = sanitize_shortcode_value($title);
   $label = sanitize_shortcode_value($label);
   $title_tag = null;
@@ -299,7 +323,7 @@ if ( !function_exists( 'ago_shortcode' ) ):
 function ago_shortcode( $atts ){
   extract( shortcode_atts( array(
     'from' => null,
-  ), $atts ) );
+  ), $atts, 'ago' ) );
   if (!$from) {
     return TIME_ERROR_MESSAGE;
   }
@@ -317,7 +341,7 @@ function age_shortcode( $atts ){
     'from' => null,
     'birth' => null,
     'unit' => __( '歳', THEME_NAME ),
-  ), $atts ) );
+  ), $atts, 'age' ) );
   if (!$from) {
     $from = $birth;
   }
@@ -338,7 +362,7 @@ function yago_shortcode( $atts ){
   extract( shortcode_atts( array(
     'from' => null,
     'unit' => '',
-  ), $atts ) );
+  ), $atts, 'yago' ) );
   //入力エラー出力
   if (!$from) {
     return TIME_ERROR_MESSAGE;
@@ -359,7 +383,7 @@ function rating_star_shortcode( $atts, $content = null ) {
       'rate' => 5,
       'max' => 5,
       'number' => 1,
-  ), $atts ) );
+  ), $atts, 'star' ) );
   return get_rating_star_tag($rate, $max, $number);
 }
 endif;
@@ -374,8 +398,8 @@ function toc_shortcode( $atts, $content = null ) {
     global $_TOC_WIDGET_OR_SHORTCODE_USE;
     $_TOC_WIDGET_OR_SHORTCODE_USE = true;
     $harray = array();
-    //_v(get_the_content());
-    return get_toc_tag(get_the_content(), $harray);
+    $the_content = get_toc_expanded_content();
+    return get_toc_tag($the_content, $harray);
 
   }
 }
@@ -390,7 +414,7 @@ function sitemap_shortcode( $atts, $content = null ) {
     'single' => 1,
     'category' => 1,
     'archive' => 0,
-  ), $atts ) );
+  ), $atts, 'sitemap' ) );
   ob_start();?>
   <div class="sitemap">
     <?php if ($page): ?>
@@ -425,13 +449,13 @@ endif;
 
 //ブログカードショートコード
 if (!shortcode_exists('blogcard')) {
-}
   add_shortcode('blogcard', 'blogcard_shortcode');
+}
 if ( !function_exists( 'blogcard_shortcode' ) ):
 function blogcard_shortcode( $atts, $content = null ) {
   extract( shortcode_atts( array(
     'url' => null,
-  ), $atts ) );
+  ), $atts, 'blogcard' ) );
   if ($url) {
     $tag = url_to_internal_blogcard_tag($url);
     if (!$tag) {
@@ -446,11 +470,7 @@ endif;
 if ( !function_exists( 'get_countdown_days' ) ):
 function get_countdown_days( $to ) {
   $now = date_i18n('U');
-  //$now = strtotime('2019/01/22 23:59:59');
   $diff = (int) ($to - $now);
-  // _v(date_i18n("Y-m-d H:i:s", $to).'='.$to);
-  // _v(date_i18n("Y-m-d H:i:s", $now).'='.$now);
-  // _v($diff / 86400);
   $days = ceil($diff / 86400);
   if ($days <= 0) {
     $days = 0;
@@ -468,7 +488,7 @@ function countdown_shortcode( $atts ){
   extract( shortcode_atts( array(
     'to' => null,
     'unit' => null,
-  ), $atts ) );
+  ), $atts, 'countdown' ) );
   //入力エラー出力
   if (!$to) {
     return TIME_ERROR_MESSAGE;
@@ -478,99 +498,124 @@ function countdown_shortcode( $atts ){
 }
 endif;
 
-if ( !function_exists( 'get_navi_card_image_attributes' ) ):
-function get_navi_card_image_attributes($image_url){
-  $image_url_120 = get_image_sized_url($image_url, THUMB120WIDTH, THUMB120HEIGHT);
-  $image_attributes = array();
-  $image_attributes[1] = 120;
-  $image_attributes[2] = 68;
-  if (file_exists(url_to_local($image_url_120))) {
-    $image_attributes[0] = $image_url_120;
-  } else {
-    $image_attributes[0] = $image_url;
-  }
-  return $image_attributes;
-}
-endif;
-
 //ナビメニューショートコード
 //参考：https://www.orank.net/1972
-add_shortcode('navi', 'navi_menu_shortcode');
-if ( !function_exists( 'navi_menu_shortcode' ) ):
-function navi_menu_shortcode($atts){
+add_shortcode('navi', 'get_ord_navi_card_list_tag');
+if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
+function get_ord_navi_card_list_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
     'type' => '',
-  ), $atts));
+    'bold' => 1,
+    'arrow' => 1,
+    'class' => null,
+  ), $atts, 'navi'));
+  $atts = array(
+    'name' => $name,
+    'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
+    'class' => $class,
+  );
+  $tag = get_navi_card_list_tag($atts);
+
+  return apply_filters('get_ord_navi_card_list_tag', $tag);
+}
+endif;
+
+//ナビメニューリストショートコード
+//参考：https://www.orank.net/1972
+add_shortcode('navi_list', 'get_navi_card_list_tag');
+if ( !function_exists( 'get_navi_card_list_tag' ) ):
+function get_navi_card_list_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'type' => '',
+    'bold' => 0,
+    'arrow' => 0,
+    'class' => null,
+  ), $atts, 'navi_list'));
+
+  if (is_admin() && !is_admin_php_page()) {
+    return;
+  }
 
   $tag = null;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+  if (!$menu_items) {
+    return;
+  }
 
   foreach ($menu_items as $menu):
-    $object_id = $menu->object_id;
+    //画像情報の取得
+    $image_attributes = get_navi_card_image_attributes($menu, $type);
+
     $url = $menu->url;
-    $object = $menu->object;
-
-    $image_attributes = array();
-    if ($object == 'post' || $object == 'page') {
-      $thumbnail_id = get_post_thumbnail_id($object_id);
-      $image_attributes = wp_get_attachment_image_src($thumbnail_id,'thumb120');
-    } elseif ($object == 'category'){//カテゴリーアイキャッチの取得
-      $image_url = get_category_eye_catch($object_id);
-      $image_attributes = get_navi_card_image_attributes($image_url);
-    }
-    elseif ($object == 'custom') {//カスタムメニュー
-      //タグページのアイキャッチを取得
-      $tag_obj = url_to_tag_object($url);
-      if ($tag_obj && isset($tag_obj->term_id)) {
-        $image_url = get_tag_eye_catch($tag_obj->term_id);
-        $image_attributes = get_navi_card_image_attributes($image_url);
-      }
-    }
-    if (!$image_attributes) {//アイキャッチがない場合
-      $image_attributes[0] = get_no_image_120x68_url();
-      $image_attributes[1] = 120;
-      $image_attributes[2] = 68;
-    }
-
     $title = $menu->title;
-    $text = $menu->description;
-    $osusume = $menu->classes[0];
+    $snippet = $menu->description;
+    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
 
-    // おすすめ・新着記事　名称を変えれば何にでも使える（注目・必見・お得etc）
-    if ($osusume == "1"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-1"><span>'.__( 'おすすめ', THEME_NAME ).'</span></div>';
-    }
-    if ($osusume == "2"){
-      $osusume = '<div class="ribbon ribbon-top-left ribbon-color-2"><span>'.__( '新着', THEME_NAME ).'</span></div>';
-    }
-
-    $navi_card_class = '';
-    if ($type) {
-      $navi_card_class = ' navi-card-type-'.$type;
-    }
-
-    $tag .=
-'<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="navi-card-wrap a-wrap'.esc_attr($navi_card_class).'">
-  <div class="navi-card-box cf">
-    '.$osusume.'
-    <figure class="navi-card-thumb">
-      <img src="'.esc_attr($image_attributes[0]).'" alt="'.esc_attr($title).'" width="'.esc_attr($image_attributes[1]).'" height="'.esc_attr($image_attributes[2]).'">
-    </figure>
-    <div class="navi-card-content">
-      <div class="navi-card-title">'.$title.'</div>
-      <div class="navi-card-snippet">'.$text.'</div>
-    </div>
-  </div>
-</a>';
+    //リボンタグの取得
+    $atts = array(
+      'prefix' => WIDGET_NAVI_ENTRY_CARD_PREFIX,
+      'url' => $url,
+      'title' => $title,
+      'snippet' => $snippet,
+      'image_attributes' => $image_attributes,
+      'ribbon_no' => $ribbon_no,
+      'type' => $type,
+    );
+    $tag .= get_widget_entry_card_link_tag($atts);
 
   endforeach;
 
   //ラッパーの取り付け
   if ($menu_items) {
-    $tag = '<div class="navi-cards no-icon">'.$tag.'</div>';
+    $atts = array(
+      'tag' => $tag,
+      'type' => $type,
+      'bold' => $bold,
+      'arrow' => $arrow,
+      'class' => $class,
+    );
+    $tag = get_navi_card_wrap_tag($atts);
   }
 
-  return apply_filters('cocoon_navi_card_tag', $tag);
+  return apply_filters('get_navi_card_list_tag', $tag);
 }
 endif;
+
+//おすすめカード
+if ( !function_exists( 'get_recommend_cards_tag' ) ):
+function get_recommend_cards_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'style' => '', //表示スタイル
+    'margin' => null, //カード毎の余白
+    'wrap' => null, //全体の左右余白
+    'class' => null, //拡張クラス
+  ), $atts, 'recommend'));
+  if ($name) {
+    ob_start();
+    $wrap_class = $wrap ? ' wrap' : null;
+    $class = $class ? ' '.$class : null;
+    ?>
+    <!-- Recommended -->
+    <div id="recommended" class="recommended cf<?php echo get_additional_recommend_cards_classes($style, $margin); ?>">
+      <div id="recommended-in" class="recommended-in<?php echo $wrap_class; ?><?php echo $class; ?> cf">
+        <?php
+        $atts = array(
+          'name' => $name,
+          'type' => ET_LARGE_THUMB_ON,
+        );
+        echo get_navi_card_list_tag($atts);
+        ?>
+      </div><!-- /#recommended-in -->
+    </div><!-- /.recommended -->
+    <?php
+    $tag = ob_get_clean();
+    return apply_filters('get_recommend_cards_tag', $tag);
+  }
+}
+endif;
+

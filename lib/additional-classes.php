@@ -278,6 +278,10 @@ function body_class_additional($classes) {
 
   //モバイルボタンタイプ
   $classes[] = 'mblt-'.replace_value_to_class(get_mobile_button_layout_type());
+  //モバイルボタンでスクロール動作するか
+  if (!is_fixed_mobile_buttons_enable()) {
+    $classes[] = 'scrollable-mobile-buttons';
+  }
 
   //管理者クラス
   $author_id = get_the_author_meta( 'ID' );
@@ -293,12 +297,12 @@ function body_class_additional($classes) {
   $classes[] = $auther_class;
 
   //モバイルボタンはスライドインタイプか
-  if (is_mobile_button_layout_type_slide_in()) {
-    $classes[] = 'mobile-button-slide-in';
+  if (is_mobile_button_layout_type_footer_mobile_buttons()) {
+    $classes[] = 'mobile-button-fmb';
   }
 
   //スライドインボタン表示時にサイドバーを表示するか
-  if (is_mobile_button_layout_type_slide_in() && !is_slide_in_content_bottom_sidebar_visible()) {
+  if (is_mobile_button_layout_type_mobile_buttons() && !is_slide_in_content_bottom_sidebar_visible()) {
     $classes[] = 'no-mobile-sidebar';
   }
 
@@ -335,6 +339,11 @@ function body_class_additional($classes) {
   //Pinterestボタンを表示するか
   if (is_pinterest_share_pin_visible() && is_singular()) {
     $classes[] = 'show-pinterest-button';
+  }
+
+  //ヘッダーモバイルボタン表示時にサイトロゴを表示しない場合
+  if (!is_mobile_header_logo_visible() && !is_amp()) {
+    $classes[] = 'no-mobile-header-logo';
   }
 
   return apply_filters('body_class_additional', $classes);
@@ -389,51 +398,100 @@ function get_additional_entry_content_classes($option = null){
 endif;
 
 //エントリーカードの追加関数
-if ( !function_exists( 'get_additional_widget_entriy_cards_classes' ) ):
-function get_additional_widget_entriy_cards_classes($entry_type, $option = null){
+if ( !function_exists( 'get_additional_widget_entry_cards_classes' ) ):
+function get_additional_widget_entry_cards_classes($atts){
+  extract(shortcode_atts(array(
+    'type' => 0,
+    'bold' => 0,
+    'arrow' => 0,
+    'ranking_visible' => 0,
+    'pv_visible' => 0,
+    'class' => null,
+  ), $atts));
   $classes = null;
-  if ($entry_type != ET_DEFAULT) {
-    $classes .= ' not-default';
-    if ($entry_type == ET_LARGE_THUMB) {
+  // if (is_numeric($type)) {
+  //   $classes .= ' card-type-'.$type;
+  // } else {
+  //   if (includes_string($type, ET_LARGE_THUMB) && $type) {
+  //     $classes .= ' card-large-image';
+  //     if ($type == ET_LARGE_THUMB) {
+  //       $classes .= ' large-thumb';
+  //     } else if ($type == ET_LARGE_THUMB_ON) {
+  //       $classes .= ' large-thumb-on';
+  //     }
+  //   } else {
+  //     if ($type == ET_BORDER_PARTITION) {
+  //       $classes .= ' border-partition';
+  //     } else if ($type == ET_BORDER_SQUARE) {
+  //       $classes .= ' border-square';
+  //     }
+  //   }
+  // }
+
+  if (includes_string($type, ET_LARGE_THUMB) && $type) {
+    $classes .= ' card-large-image';
+    if ($type == ET_LARGE_THUMB) {
       $classes .= ' large-thumb';
-    } else if ($entry_type == ET_LARGE_THUMB_ON) {
+    } else if ($type == ET_LARGE_THUMB_ON) {
       $classes .= ' large-thumb-on';
+    }
+  } else {
+    if ($type == ET_BORDER_PARTITION || $type == 1) {
+      $classes .= ' border-partition';
+    } else if ($type == ET_BORDER_SQUARE || $type == 2) {
+      $classes .= ' border-square';
     }
   }
 
-  if ($option) {
-    $classes .= ' '.trim($option);
+  // if ($type) {
+  //   $classes .= ' card-type-'.$type;
+  // }
+
+  if ($bold) {
+    $classes .= ' card-title-bold';
   }
-  return apply_filters('get_additional_widget_entriy_cards_classes', $classes);
-}
-endif;
 
-//エントリーカードの追加関数
-if ( !function_exists( 'get_additional_popular_entry_cards_classes' ) ):
-function get_additional_popular_entry_cards_classes($entry_type, $ranking_visible, $option = null){
-  // global $_ENTRY_TYPE;
-  // global $_RANKING_VISIBLE;
-
-  $classes = null;
-  if ($entry_type != ET_DEFAULT) {
-    $classes .= ' not-default';
-    if ($entry_type == ET_LARGE_THUMB) {
-      $classes .= ' large-thumb';
-    } else if ($entry_type == ET_LARGE_THUMB_ON) {
-      $classes .= ' large-thumb-on';
-    }
+  if ($arrow && !is_widget_entry_card_large_image_use($type)) {
+    $classes .= ' card-arrow';
   }
 
   if ($ranking_visible) {
     $classes .= ' ranking-visible';
   }
 
-  if ($option) {
-    $classes .= ' '.trim($option);
+  if ($class) {
+    $classes .= ' '.trim($class);
   }
-  return apply_filters('get_additional_popular_entry_cards_classes', $classes);
+  return apply_filters('get_additional_widget_entry_cards_classes', $classes);
 }
 endif;
+
+// //エントリーカードの追加関数
+// if ( !function_exists( 'get_additional_popular_entry_cards_classes' ) ):
+// function get_additional_popular_entry_cards_classes($entry_type, $ranking_visible, $option = null){
+//   // global $_ENTRY_TYPE;
+//   // global $_RANKING_VISIBLE;
+
+//   $classes = null;
+//   if ($entry_type != ET_DEFAULT) {
+//     $classes .= ' card-large-image';
+//     if ($entry_type == ET_LARGE_THUMB) {
+//       $classes .= ' large-thumb';
+//     } else if ($entry_type == ET_LARGE_THUMB_ON) {
+//       $classes .= ' large-thumb-on';
+//     }
+//   }
+
+//   if ($ranking_visible) {
+//     $classes .= ' ranking-visible';
+//   }
+
+//   if ($option) {
+//     $classes .= ' '.trim($option);
+//   }
+//   return apply_filters('get_additional_popular_entry_cards_classes', $classes);
+// }
+// endif;
 
 //SNSシェアボタンの追加関数
 if ( !function_exists( 'get_additional_sns_share_button_classes' ) ):
@@ -949,7 +1007,6 @@ function get_additional_categories_tags_area_classes($option = null){
 }
 endif;
 
-
 //管理パネルエリアのclass追加関数
 if ( !function_exists( 'get_additional_admin_panel_area_classes' ) ):
 function get_additional_admin_panel_area_classes($option = null){
@@ -986,3 +1043,36 @@ function filter_post_class( $classes, $class, $post_id ) {
 };
 endif;
 
+//おすすめカードのclass追加関数
+if ( !function_exists( 'get_additional_recommend_cards_classes' ) ):
+function get_additional_recommend_cards_classes($style = null, $is_margin = null, $option = null){
+  $classes = null;
+
+  $style = $style ? $style : get_recommended_cards_style();
+  $is_margin = !is_null($is_margin) ? $is_margin : is_recommended_cards_margin_enable();
+
+  switch ($style) {
+    case 'image_only':
+      $classes .= ' rcs-image-only';
+      break;
+    case RC_DEFAULT:
+      $classes .= ' rcs-center-white-title rcs-center-title';
+      break;
+    case 'center_label_title':
+      $classes .= ' rcs-center-label-title rcs-center-title';
+      break;
+    case ET_LARGE_THUMB_ON:
+      $classes .= ' rcs-large-thumb-on';
+      break;
+  }
+
+  if ($is_margin) {
+    $classes .= ' rcs-card-margin';
+  }
+
+  if ($option) {
+    $classes .= ' '.trim($option);
+  }
+  return $classes;
+}
+endif;

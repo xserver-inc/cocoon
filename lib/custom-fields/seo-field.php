@@ -46,16 +46,16 @@ jQuery(document).ready(function($){
     }
   }
   //SEOタイトルの文字数取得
-  $("#seo-title").bind("keydown keyup keypress change",function(){
-    count_characters("#seo-title", ".seo-title-count");
+  $("#the_page_seo_title").bind("keydown keyup keypress change",function(){
+    count_characters("#the_page_seo_title", ".seo-title-count");
   });
-  count_characters("#seo-title", ".seo-title-count");
+  count_characters("#the_page_seo_title", ".seo-title-count");
 
   //SEOメタディスクリプションの文字数取得
-  $("#meta-description").bind("keydown keyup keypress change",function(){
-    count_characters("#meta-description", ".meta-description-count");
+  $("#the_page_meta_description").bind("keydown keyup keypress change",function(){
+    count_characters("#the_page_meta_description", ".meta-description-count");
   });
-  count_characters("#meta-description", ".meta-description-count");
+  count_characters("#the_page_meta_description", ".meta-description-count");
 
   //Wordpressタイトルの文字数
   $('#titlewrap').after('<div class="str-wp-title-cou" style="position:absolute;top:-23px;right:0;color:#666;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;"><?php _e( '文字数', THEME_NAME ); ?>:<span class="wp-title-count">0</span></div>');
@@ -75,45 +75,46 @@ function seo_custom_box_view(){
   $the_page_meta_keywords = get_the_page_meta_keywords();
   $the_page_noindex = is_the_page_noindex();
   $the_page_nofollow = is_the_page_nofollow();
+  $the_page_canonical_url = get_the_page_canonical_url();
 
   //タイトル
-  echo '<label class="box-label">'.__( 'SEOタイトル', THEME_NAME );
+  $meta_title_count_tag = null;
   if (is_admin_editor_counter_visible()) {
-    echo '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="seo-title-count">0</span></span>';
+    $meta_title_count_tag = '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="seo-title-count">0</span></span>';
   }
-  echo '</label>';
-  echo '<input id="seo-title" type="text" style="width:100%" placeholder="'.__( 'タイトルを入力してください。', THEME_NAME ).'" name="the_page_seo_title" value="'.$the_page_seo_title.'" />';
-  echo '<p class="howto">'.__( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）', THEME_NAME ).'</p>';
+  generate_label_tag('the_page_seo_title', __('SEOタイトル', THEME_NAME).$meta_title_count_tag );
+  generate_textbox_tag('the_page_seo_title', $the_page_seo_title, __( 'タイトルを入力してください。', THEME_NAME ));
+  generate_howto_tag(__( '検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。一般的に日本語の場合は、32文字以内が最適とされています。（※ページやインデックスの見出し部分には「記事のタイトル」が利用されます）', THEME_NAME ), 'the_page_seo_title');
 
 
   //メタディスクリプション
-  echo '<label class="box-label">'.__( 'メタディスクリプション', THEME_NAME );
+  $meta_description_count_tag = null;
   if (is_admin_editor_counter_visible()) {
-    echo '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="meta-description-count">0</span></span>';
+    $meta_description_count_tag = '<span class="str-count">'.__( '文字数', THEME_NAME ).':<span class="meta-description-count">0</span></span>';
   }
-  echo '</label>';
-  echo '<textarea id="meta-description" style="width:100%" placeholder="'.__( '記事の説明文を入力してください。', THEME_NAME ).'" name="the_page_meta_description" rows="3">'.$the_page_meta_description.'</textarea>';
-  echo '<p class="howto">'.__( '記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。', THEME_NAME ).'</p>';
+  generate_label_tag('the_page_meta_description', __('メタディスクリプション', THEME_NAME).$meta_description_count_tag  );
+
+  generate_textarea_tag('the_page_meta_description', $the_page_meta_description, __( '記事の説明文を入力してください。', THEME_NAME ), 3, DEFAULT_INPUT_COLS, 'width:100%') ;
+  generate_howto_tag(__( '記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。', THEME_NAME ), 'the_page_meta_description');
 
   //メタキーワード
-  echo '<label class="box-label">'.__( 'メタキーワード', THEME_NAME ).'</label>';
-  echo '<input type="text" style="width:100%" placeholder="'.__( '記事の関連キーワードを半角カンマ区切りで入力してください。', THEME_NAME ).'" name="the_page_meta_keywords" value="'.$the_page_meta_keywords.'" />';
-  echo '<p class="howto">'.__( '記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合は、カテゴリ名などから自動で設定されます。', THEME_NAME ).'</p>';
+  generate_label_tag('the_page_meta_keywords', __('メタキーワード', THEME_NAME) );
+  generate_textbox_tag('the_page_meta_keywords', $the_page_meta_keywords, __( '記事の関連キーワードを半角カンマ区切りで入力してください。', THEME_NAME ));
+  generate_howto_tag(__( '記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合は、カテゴリ名などから自動で設定されます。', THEME_NAME ), 'the_page_meta_keywords');
 
   //noindex
-  echo '<label><input type="checkbox" name="the_page_noindex"';
-  if( $the_page_noindex ){echo " checked";}
-  echo '>'.__( 'インデックスしない（noindex）', THEME_NAME ).'</label>';
-  echo '<p class="howto">'.__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ).'</p>';
+  generate_checkbox_tag('the_page_noindex' , $the_page_noindex, __( 'インデックスしない（noindex）', THEME_NAME ));
+  generate_howto_tag(__( 'このページが検索エンジンにインデックスされないようにメタタグを設定します。', THEME_NAME ), 'the_page_noindex');
 
   //nofollow
-  echo '<label><input type="checkbox" name="the_page_nofollow"';
-  if( $the_page_nofollow ){echo " checked";}
-  echo '>'.__( 'リンクをフォローしない（nofollow）', THEME_NAME ).'</label>';
-  echo '<p class="howto">'.__( '検索エンジンがこのページ上のリンクをフォローしないようにメタタグを設定します。', THEME_NAME ).'</p>';
+  generate_checkbox_tag('the_page_nofollow' , $the_page_nofollow, __('リンクをフォローしない（nofollow）', THEME_NAME));
+  generate_howto_tag(__( '検索エンジンがこのページ上のリンクをフォローしないようにメタタグを設定します。', THEME_NAME ), 'the_page_nofollow');
 
-  //SEO設定ページへのリンク
-  //echo '<p><a href="https://wp-simplicity.com/singular-seo-settings/" target="_blank">'.__( 'SEO項目の設定方法', THEME_NAME ).'</a></p>';
+  //canonical
+  $canonical_form = get_label_tag('the_page_canonical_url', __( 'canonical', THEME_NAME ));
+  $canonical_form .= '<input type="text" style="width:100%" placeholder="'.__( 'canonical URLの入力', THEME_NAME ).'" name="the_page_canonical_url" value="'.$the_page_canonical_url.'" />';
+  $canonical_form .= get_howto_tag(__( 'ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンからのページ評価が分散されないよう、正規のURLがどれなのかを検索エンジンに示すために用いる記述です。コンテンツが重複している場合は、正規ページのURLを入力してください。', THEME_NAME ), 'the_page_canonical_url');
+  generate_toggle_area(__( '詳細設定', THEME_NAME ), $canonical_form);
 }
 endif;
 
@@ -167,7 +168,6 @@ function seo_custom_box_save_data(){
     add_post_meta($id, 'is_noindex', $the_page_noindex, true);
     update_post_meta($id, 'is_noindex', $the_page_noindex);
   }
-
   //nofollow
   $the_page_nofollow = !empty($_POST['the_page_nofollow']) ? 1 : 0;
   $the_page_nofollow_key = 'the_page_nofollow';
@@ -176,6 +176,14 @@ function seo_custom_box_save_data(){
   if (is_migrate_from_simplicity()) {
     add_post_meta($id, 'is_nofollow', $the_page_nofollow, true);
     update_post_meta($id, 'is_nofollow', $the_page_nofollow);
+  }
+  //canonical
+  $the_page_canonical_url = null;
+  if ( isset( $_POST['the_page_canonical_url'] ) ){
+    $the_page_canonical_url = $_POST['the_page_canonical_url'];
+    $the_page_canonical_url_key = 'the_page_canonical_url';
+    add_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url, true);
+    update_post_meta($id, $the_page_canonical_url_key, $the_page_canonical_url);
   }
 }
 endif;
@@ -255,3 +263,12 @@ function is_the_page_nofollow($id = null){
 }
 endif;
 
+//canonicalを取得
+if ( !function_exists( 'get_the_page_canonical_url' ) ):
+  function get_the_page_canonical_url($id = null){
+    $the_id = $id ? $id : get_the_ID();
+    $value = trim(get_post_meta($the_id, 'the_page_canonical_url', true));
+
+    return $value;
+  }
+  endif;

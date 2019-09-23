@@ -26,33 +26,58 @@ $i: 24;
 }
 
 //フォントファミリー
-.ff-meiryo{
+.ff-meiryo,
+.wf-loading body{
   font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+}
+.ff-hiragino{
+  font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif;
 }
 .ff-ms-pgothic{
   font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
 }
-.ff-noto-sans-jp{
+
+.ff-noto-sans-jp,
+.wf-active .ff-noto-sans-jp{
   font-family: "Noto Sans JP" ,sans-serif;
 }
-.ff-mplus-1p{
-  font-family: "Mplus 1p" ,sans-serif;
+.ff-noto-serif-jp,
+.wf-active .ff-noto-serif-jp{
+  font-family: "Noto Serif JP" ,sans-serif;
 }
-.ff-rounded-mplus-1c{
-  font-family: "Rounded Mplus 1c" ,sans-serif;
+.ff-mplus-1p,
+.wf-active .ff-mplus-1p{
+  font-family: "M PLUS 1p" ,sans-serif;
 }
-.ff-hannari{
-  font-family: "Hannari" ,sans-serif;
+.ff-rounded-mplus-1c,
+.wf-active .ff-rounded-mplus-1c{
+  font-family: "M PLUS Rounded 1c" ,sans-serif;
 }
-.ff-kokoro{
-  font-family: "Kokoro" ,sans-serif;
+.ff-kosugi,
+.wf-active .ff-kosugi{
+  font-family: "Kosugi" ,sans-serif;
 }
-.ff-sawarabi-gothic{
+.ff-kosugi-maru,
+.wf-active .ff-kosugi-maru{
+  font-family: "Kosugi Maru" ,sans-serif;
+}
+// .ff-hannari,
+// .wf-active .ff-hannari{
+//   font-family: "Hannari" ,sans-serif;
+// }
+// .ff-kokoro,
+// .wf-active .ff-kokoro{
+//   font-family: "Kokoro" ,sans-serif;
+// }
+.ff-sawarabi-gothic,
+.wf-active .ff-sawarabi-gothic{
   font-family: "Sawarabi Gothic" ,sans-serif;
 }
-.ff-sawarabi-mincho{
+.ff-sawarabi-mincho,
+.wf-active .ff-sawarabi-mincho{
   font-family: "Sawarabi Mincho" ,sans-serif;
 }
+
 
 .sub-caption{
   //Gisha, Vrinda, Calibri, Candara, Rod, Euphemia
@@ -65,3 +90,4 @@ $i: 24;
 span.sub-caption{
   opacity: 0.8;
 }
+

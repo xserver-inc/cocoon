@@ -392,7 +392,7 @@ function convert_content_for_amp($the_content){
 
   // videoをamp-videoに置換する
   $pattern = '/<video/i';
-  $append = '<amp-video layout="responsive" width="640" height="360"';
+  $append = '<amp-video layout="responsive"';
   $the_content = preg_replace($pattern, $append, $the_content);
   $pattern = '/<\/video>/i';
   $append = '</amp-video>';
@@ -498,6 +498,12 @@ function convert_content_for_amp($the_content){
   $pattern = '{<style.+?</style>}is';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
+  //@keyframesスタイルを</body>手前に記入
+  $amp_keyframes_tag = get_style_amp_keyframes_tag();
+  $pattern = '</body>';
+  $append = $amp_keyframes_tag."\n".$pattern;
+  $the_content = str_replace($pattern, $append, $the_content);
+
 
   // $pattern = '/<script.+?<\/script>/is';
   // $append = '';
@@ -519,8 +525,8 @@ function convert_content_for_amp($the_content){
   switch (get_amp_image_zoom_effect()) {
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
-      $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      $append      = '<p><amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1></p>';
+      $pattern     = '{<a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a>}i';
+      $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1>';
       // $the_content = preg_replace( $pattern, $append, $the_content );
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
@@ -545,9 +551,7 @@ function convert_content_for_amp($the_content){
       break;
     case 'amp-lightbox-gallery':
       // amp-img を amp-lightbox-gallery 用に置換
-      $pattern     = '{<p><a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a></p>}i';
-      //$append      = '<p><amp-img class="amp-lightbox amp-lightbox-gallery" lightbox$1></p>';
-      //$the_content = preg_replace( $pattern, $append, $the_content );
+      $pattern     = '{<a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a>}i';
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
         $etc_idx = 1;
@@ -682,10 +686,6 @@ function get_the_singular_content(){
     dynamic_sidebar( 'sidebar-scroll' );
     $sidebar_scroll_content = ob_get_clean();
 
-    // ob_start();//バッファリング
-    // get_template_part('tmp/mobile-menu-buttons');
-    // $mobile_menu_buttons = ob_get_clean();
-
     ob_start();//バッファリング
     dynamic_sidebar('footer-left');
     dynamic_sidebar('footer-center');
@@ -696,6 +696,25 @@ function get_the_singular_content(){
     ob_start();//バッファリング
     get_template_part('tmp/amp-footer-insert');
     $footer_insert = ob_get_clean();
+
+    //モバイルメニューボタン
+    //モバイルフッターボタンのみ
+    if (is_mobile_button_layout_type_footer_mobile_buttons()) {
+      ob_start();
+      get_template_part('tmp/mobile-footer-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    } elseif //モバイルヘッダーボタンのみ
+    (is_mobile_button_layout_type_header_mobile_buttons()) {
+      ob_start();
+      get_template_part('tmp/mobile-header-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    } else {//ヘッダーとフッター双方のモバイルボタン
+      ob_start();
+      get_template_part('tmp/mobile-header-menu-buttons');
+      get_template_part('tmp/mobile-footer-menu-buttons');
+      $mobile_menu_buttons = ob_get_clean();
+    }
+
 
     $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
   //endwhile;
@@ -749,14 +768,14 @@ function generate_style_amp_custom_tag(){?>
   ob_start();//バッファリング
   get_template_part('tmp/css-custom');//カスタムテンプレートの呼び出し
   $css_custom = ob_get_clean();
-  $css_all .= apply_filters( 'amp_custum_css', minify_css($css_custom) );
+  $css_all .= apply_filters( 'amp_custum_css', $css_custom );
 
   ///////////////////////////////////////////
   //子テーマのスタイル
   ///////////////////////////////////////////
   if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
     //通常のスキンスタイル
-    $css_child_url = get_stylesheet_directory_uri().'/style.css';
+    $css_child_url = CHILD_THEME_STYLE_CSS_URL;
     $child_css = css_url_to_css_minify_code($css_child_url);
     if ($child_css !== false) {
       $css_all .= apply_filters( 'amp_child_css', $child_css );
@@ -768,6 +787,12 @@ function generate_style_amp_custom_tag(){?>
     if ($child_amp_css !== false) {
       $css_all .= apply_filters( 'amp_child_amp_css', $child_amp_css );
     }
+  }
+  ///////////////////////////////////////////
+  //カスタマイザー「追加CSS」のスタイル
+  ///////////////////////////////////////////
+  if ($wp_custom_css = wp_get_custom_css()){
+    $css_all .= apply_filters( 'amp_wp_custom_css', $wp_custom_css );
   }
 
   ///////////////////////////////////////////
@@ -789,6 +814,62 @@ function generate_style_amp_custom_tag(){?>
 <?php
 }
 endif;
+
+//<style amp-keyframes>タグの取得
+if ( !function_exists( 'get_style_amp_keyframes_tag' ) ):
+function get_style_amp_keyframes_tag(){
+  $css_all = '';
+  //AMPスタイルの取得（SCSSで出力したAMP用のCSS）
+  $keyframes_css_url = get_template_directory_uri().'/keyframes.css';
+  $css = css_url_to_css_minify_code($keyframes_css_url);
+  if ($css !== false) {
+    $css_all .= apply_filters( 'amp_parent_keyframes_css', $css );
+  }
+
+  ///////////////////////////////////////////
+  //スキンのスタイル
+  ///////////////////////////////////////////
+  if ( ($skin_url = get_skin_url()) && is_amp_skin_style_enable() ) {//設定されたスキンがある場合
+    //通常のスキンスタイル
+    $skin_keyframes_url = str_replace('style.css', 'keyframes.css', $skin_url);
+    $skin_keyframes_css = css_url_to_css_minify_code($skin_keyframes_url);
+    if ($skin_keyframes_css !== false) {
+      $css_all .= apply_filters( 'amp_skin_keyframes_css', $skin_keyframes_css );
+    }
+  }
+
+  ///////////////////////////////////////////
+  //子テーマのスタイル
+  ///////////////////////////////////////////
+  if ( is_child_theme() && is_amp_child_theme_style_enable() ) {
+    //通常のスキンスタイル
+    $css_child_keyframes_url = CHILD_THEME_KEYFRAMES_CSS_URL;
+    $child_keyframes_css = css_url_to_css_minify_code($css_child_keyframes_url);
+    if ($child_keyframes_css !== false) {
+      $css_all .= apply_filters( 'amp_child_keyframes_css', $child_keyframes_css );
+    }
+  }
+
+  //!importantの除去
+  $css_all = preg_replace('/!important/i', '', $css_all);
+
+  //CSSの縮小化
+  $css_all = minify_css($css_all);
+  $css_all = apply_filters( 'amp_all_keyframes_css', $css_all );
+
+  $tag = '<style amp-keyframes>'.$css_all.'</style>';
+  //全てのCSSの出力
+  return $tag;
+}
+endif;
+
+//<style amp-keyframes>タグの出力
+if ( !function_exists( 'generate_style_amp_keyframes_tag' ) ):
+function generate_style_amp_keyframes_tag(){
+ echo get_style_amp_keyframes_tag();
+}
+endif;
+
 
 if ( !function_exists( 'get_cleaned_css_selector' ) ):
 function get_cleaned_css_selector($selector){

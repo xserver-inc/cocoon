@@ -22,11 +22,14 @@
 .entry-content{
   margin-top: 1em;
   margin-bottom: 3em;
+  pre{
+    line-height: 1.6;
+  }
 }
 
 /*本文下カテゴリとタグ*/
 .entry-categories-tags{
-  font-family: $meiryo_font;
+  //font-family: $meiryo_font;
   @extend %bottom_margin;
   >div{
     margin-bottom: 0.5em;

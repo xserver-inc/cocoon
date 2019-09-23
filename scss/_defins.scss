@@ -83,10 +83,11 @@ $bct-check: '\f00c  チェック';
 $bct-together: '\f02d  あわせて読みたい';
 $bct-detail: '\f15c  詳細はこちら';
 $bct-official: '\f024  公式サイト';
+$bct-dl: '\f019  ダウンロード';
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;
-$bgc_hover_anime: all .7s ease;
+$bgc_hover_anime: all .7s;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
@@ -256,16 +257,16 @@ $bgc_hover_anime: all .7s ease;
 ///////////////////////////////////////
 // Facebookボックス
 ///////////////////////////////////////
-@mixin fb_like_box{
+@mixin fb_like_box($max_width: 640px){
   .fb-like-box{
-    max-width: 640px;
-    display: block;
-    //flex-direction: column;
-    >div,
-    >figure{
-      width: 100%;
-      max-width: none;
-    }
+    max-width: $max_width;
+    //display: block;
+    flex-direction: column;
+    // >div,
+    // >figure{
+    //   width: 100%;
+    //   max-width: none;
+    // }
   }
 }
 
@@ -339,7 +340,7 @@ $bgc_hover_anime: all .7s ease;
     width: 30%;
   }
 
-  .blogcard-snipet{
+  .blogcard-snippet{
     font-size: 12px;
   }
 
@@ -366,7 +367,7 @@ $bgc_hover_anime: all .7s ease;
 // タグクラウド
 ///////////////////////////////////////////
 @mixin tagcloud_a {
-  background-color: $white;
+  //background-color: $white;
   border: 1px solid $x_thin;
   border-radius: 2px;
   color: #555;
@@ -378,6 +379,7 @@ $bgc_hover_anime: all .7s ease;
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
+  transition: $bgc_hover_anime;
 
   &:hover {
     @include bgc_hover;
@@ -405,4 +407,28 @@ $form_padding: 11px;
   border-radius: $basic_border_radius;
   font-size: $text_size_default;
   width: 100%;
+}
+
+///////////////////////////////////////////
+// おすすめカード（狭いエリア）
+///////////////////////////////////////////
+@mixin recommended_nallow{
+  .recommended{
+    .navi-entry-cards{
+      flex-wrap: wrap;
+      justify-content: space-around;
+      a{
+        width: 50%;
+      }
+    }
+    &.rcs-card-margin{
+      a{
+        margin: .3em 0;
+        width: 48%;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

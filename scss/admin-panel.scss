@@ -72,3 +72,36 @@
 .apdt-mobile-only{
   display: none;
 }
+
+//管理バーとヘッダーモバイルボタンとの兼ね合い
+//1023px以下
+@media screen and (max-width: 1023px){
+	.admin-bar .mobile-header-menu-buttons{
+		margin-top: 32px;
+	}
+
+	.admin-bar.mblt-header-mobile-buttons,
+	.admin-bar.mblt-header-and-footer-mobile-buttons{
+		margin-top: 32px;
+	}
+	@media screen and (max-width: 782px){
+		.admin-bar .mobile-header-menu-buttons{
+			margin-top: 0;
+		}
+
+		.admin-bar.mblt-header-mobile-buttons,
+		.admin-bar.mblt-header-and-footer-mobile-buttons{
+			margin-top: 0;
+		}
+	}
+}
+
+.entry-card .admin-pv {
+  margin: 0 0 8px;
+  padding: 0;
+  border-width: 0;
+  .admin-pv-by{
+    background-color: transparent;
+    bottom: 0;
+  }
+}

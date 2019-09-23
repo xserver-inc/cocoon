@@ -318,21 +318,18 @@ if ( !function_exists( 'fetch_pocket_count_raw' ) ):
 function fetch_pocket_count_raw($url){
   $res = 0;
   $url = urlencode($url);
-  $query = 'https://widgets.getpocket.com/v1/button?label=pocket&count=horizontal&v=1&url='.$url.'&src=' . $url;
-  //URL（クエリ）先の情報を取得
+  $query = 'https://widgets.getpocket.com/api/saves?url='.$url;
   $args = array( 'sslverify' => true );
+  //URL（クエリ）先の情報を取得
   $result = wp_remote_get($query, $args);
-  //var_dump($result["body"]);
-  //_v($result);
+  //エラーチェック
   if (!is_wp_error($result)) {
-    // 正規表現でカウント数のところだけを抽出
     $body = isset($result["body"]) ? $result["body"] : null;
     if ($body) {
-      preg_match( '/<em id="cnt">([0-9.]+)<\/em>/i', $result["body"], $count );
-      $res = isset($count[1]) ? intval($count[1]) : 0;
+      $json = json_decode($body); //ジェイソンオブジェクトに変換する
+      $res = isset($json->{'saves'}) ? $json->{'saves'} : 0;
     }
   }
-
   return intval($res);
 }
 endif;
@@ -532,6 +529,13 @@ function get_pinterest_share_url(){
 }
 endif;
 
+//LinkedInのシェアURLを取得
+if ( !function_exists( 'get_linkedin_share_url' ) ):
+function get_linkedin_share_url(){
+  return '//www.linkedin.com/shareArticle?mini=true&url='.urlencode(get_share_page_url());
+}
+endif;
+
 //コピーURLを取得
 if ( !function_exists( 'get_copy_share_url' ) ):
 function get_copy_share_url(){
@@ -623,11 +627,22 @@ function is_pinterest_share_button_visible($option){
 }
 endif;
 
+//LinkedInシェアボタンを表示するか
+if ( !function_exists( 'is_linkedin_share_button_visible' ) ):
+function is_linkedin_share_button_visible($option){
+  $res = (is_bottom_linkedin_share_button_visible() && $option == SS_BOTTOM) ||
+         (is_top_linkedin_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
+  return apply_filters('is_linkedin_share_button_visible', $res, $option);
+}
+endif;
+
 //コピーシェアボタンを表示するか
 if ( !function_exists( 'is_copy_share_button_visible' ) ):
 function is_copy_share_button_visible($option){
   $res = (is_bottom_copy_share_button_visible() && $option == SS_BOTTOM) ||
-         (is_top_copy_share_button_visible() && $option == SS_TOP);
+         (is_top_copy_share_button_visible() && $option == SS_TOP) ||
+         ($option == SS_MOBILE);
   return apply_filters('is_copy_share_button_visible', $res, $option);
 }
 endif;

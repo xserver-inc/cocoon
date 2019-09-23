@@ -35,7 +35,7 @@ require_once abspath(__FILE__).'comments.php';   //コメント関係の関数
 require_once abspath(__FILE__).'related-entries.php';   //関連記事関係の関数
 require_once abspath(__FILE__).'walkers.php';  //Walker_Nav_Menuまとめ
 require_once abspath(__FILE__).'plugins.php';   //プラグイン関係の関数
-require_once abspath(__FILE__).'php-html-css-js-minifier.php'; //HTML・CSS・JavaScript縮小化ライブラリ
+require_once abspath(__FILE__).'php-html-css-js-minifier-new.php'; //HTML・CSS・JavaScript縮小化ライブラリ
 require_once abspath(__FILE__).'page-settings/all-funcs.php';        //全体設定関数
 require_once abspath(__FILE__).'page-settings/header-funcs.php';     //ヘッダー設定関数
 require_once abspath(__FILE__).'page-settings/navi-funcs.php';       //グローバルナビ設定関数
@@ -59,6 +59,7 @@ require_once abspath(__FILE__).'page-settings/code-funcs.php';       //コード
 require_once abspath(__FILE__).'page-settings/comment-funcs.php';    //コメント設定関数
 require_once abspath(__FILE__).'page-settings/notice-funcs.php';     //通知エリア設定関数
 require_once abspath(__FILE__).'page-settings/appeal-funcs.php';     //アピールエリア設定関数
+require_once abspath(__FILE__).'page-settings/recommended-funcs.php';//おすすめカード設定関数
 require_once abspath(__FILE__).'page-settings/carousel-funcs.php';   //カルーセル設定関数
 require_once abspath(__FILE__).'page-settings/footer-funcs.php';     //フッター設定関数
 require_once abspath(__FILE__).'page-settings/buttons-funcs.php';    //ボタン設定関数
@@ -86,6 +87,7 @@ require_once abspath(__FILE__).'custom-fields/seo-field.php'; //SEOのページ�
 require_once abspath(__FILE__).'custom-fields/ad-field.php';  //広告のページ設定
 require_once abspath(__FILE__).'custom-fields/page-field.php';//投稿・固定ページのページ設定
 require_once abspath(__FILE__).'custom-fields/update-field.php'; //アップデートのページ設定
+require_once abspath(__FILE__).'custom-fields/review-field.php'; //レビュー設定
 require_once abspath(__FILE__).'custom-fields/redirect-field.php'; //リダイレクト設定
 require_once abspath(__FILE__).'custom-fields/amp-field.php'; //AMPのページ設定
 require_once abspath(__FILE__).'custom-fields/custom-css-field.php'; //カスタムCSS設定
@@ -147,6 +149,10 @@ require_once abspath(__FILE__).'widgets/new-entries.php';
 require_once abspath(__FILE__).'widgets/related-entries.php';
 //人気記事ウィジェット
 require_once abspath(__FILE__).'widgets/popular-entries.php';
+//ナビカードウィジェット
+require_once abspath(__FILE__).'widgets/navi-entries.php';
+//おすすめカードウィジェット
+require_once abspath(__FILE__).'widgets/recommended-cards.php';
 //最近のコメントウィジェット
 require_once abspath(__FILE__).'widgets/recent-comments.php';
 //フォローボタンウィジェット

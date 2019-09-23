@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="demo toc" style="height: 300px;overflow: auto;">
               <article class="article">
                 <?php query_posts('posts_per_page=1&orderby=rand&no_found_rows=1'); ?>
-                <?php get_template_part('tmp/content') ?>
+                <?php get_sanitize_preview_template_part('tmp/content') ?>
                 <?php wp_reset_query(); ?>
               </article>
             </div>

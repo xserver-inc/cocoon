@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <div class="demo go-to-top" style="">
-              <?php get_template_part('tmp/button-go-to-top') ?>
+              <?php get_sanitize_preview_template_part('tmp/button-go-to-top') ?>
             </div>
             <?php generate_tips_tag(__( 'デモは動作しません。', THEME_NAME )); ?>
           </td>

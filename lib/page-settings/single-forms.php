@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <div class="demo" style="overflow: auto;">
-              <?php get_template_part('tmp/categories-tags'); ?>
+              <?php get_sanitize_preview_template_part('tmp/categories-tags'); ?>
             </div>
             <?php generate_tips_tag(__( 'デモはランダムです。', THEME_NAME )); ?>
           </td>
@@ -79,7 +79,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo" style="height: 300px;overflow: auto;">
               <div <?php body_class(); ?>>
-              <?php get_template_part('tmp/related-entries') ?>
+              <?php get_sanitize_preview_template_part('tmp/related-entries') ?>
               </div>
             </div>
             <?php generate_tips_tag(__( 'デモの関連記事はランダムです。', THEME_NAME )); ?>
@@ -276,7 +276,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <div class="demo">
               <div <?php body_class(); ?>>
-              <?php get_template_part('tmp/pager-post-navi') ?>
+              <?php get_sanitize_preview_template_part('tmp/pager-post-navi') ?>
               </div>
             </div>
             <?php generate_tips_tag(__( 'デモはランダム表示です。', THEME_NAME )); ?>
@@ -310,6 +310,43 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             );
             generate_radiobox_tag(OP_POST_NAVI_TYPE, $options, get_post_navi_type());
             generate_tips_tag(__( 'ページ送りナビの見た目を変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+        <!-- 表示位置 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_POST_NAVI_POSITION, __('表示位置', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'under_content' => __( '本文下', THEME_NAME ),
+              'over_related' => __( '関連記事上', THEME_NAME ),
+              'under_related' => __( '関連記事下（デフォルト）', THEME_NAME ),
+              'under_comment' => __( 'コメント下', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_POST_NAVI_POSITION, $options, get_post_navi_position());
+            generate_tips_tag(__( 'ページ送りナビを表示する位置を変更します。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/post-navi-position/'));
+            ?>
+          </td>
+        </tr>
+
+        <!-- カテゴリー -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_POST_NAVI_SAME_CATEGORY_ENABLE, __('カテゴリー', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_POST_NAVI_SAME_CATEGORY_ENABLE , is_post_navi_same_category_enable(), __( '同一カテゴリーのものを表示する', THEME_NAME ));
+            generate_tips_tag(__( '投稿と同一カテゴリーのページ送りナビを表示するかどうか。複数カテゴリが設定してある場合は、複数に属するものが表示されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/in-same-categories-post-navi/'));
+
+            //除外カテゴリー
+            generate_label_tag(OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, __('除外カテゴリー', THEME_NAME) );
+            generate_hierarchical_category_check_list( 0, OP_POST_NAVI_EXCLUDE_CATEGORY_IDS, get_post_navi_exclude_category_ids(), 300 );
+            generate_tips_tag(__( 'ページ送りナビに表示させないカテゴリを選択してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/excluded-categories-post-navi/'));
             ?>
           </td>
         </tr>

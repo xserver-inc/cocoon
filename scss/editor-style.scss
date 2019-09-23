@@ -11,6 +11,11 @@ body#tinymce {
   background-color: #fff;
 }
 
+//背景を適用しない
+body#tinymce.wp-editor::before {
+  background: none;
+}
+
 .column-2,
 .column-3{
   margin: 16px 0;
@@ -127,6 +132,10 @@ span.btn-wrap{
 
 .blogcard-type.bct-official::before{
   content: $bct-official;
+}
+
+.blogcard-type.bct-dl::before{
+  content: $bct-dl;
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/

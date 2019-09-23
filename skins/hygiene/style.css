@@ -458,6 +458,27 @@ border-bottom:4px solid #5572ff;
 .bc-brand-color.sns-share .sns-share-buttons a .share-count.line-share-count{
   filter: drop-shadow(1px 1px 1px #00c400);
 }
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-pinterest,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.pinterest-share-count{
+  filter: drop-shadow(1px 1px 1px #bd081c);
+}
+.pinterest-share-count::after {
+  content: 'PIN';
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-linkedin,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.linkedin-share-count{
+  filter: drop-shadow(1px 1px 1px #0077b5);
+}
+.linkedin-share-count::after {
+  content: 'SHARE';
+}
+.bc-brand-color.sns-share .sns-share-buttons a .social-icon.icon-copy,
+.bc-brand-color.sns-share .sns-share-buttons a .share-count.copy-share-count{
+  filter: drop-shadow(1px 1px 1px #333);
+}
+.copy-share-count::after {
+  content: 'COPY';
+}
 
 
 
@@ -578,6 +599,22 @@ border-bottom:4px solid #5572ff;
 .author-box .sns-follow-buttons a.follow-button:hover .icon-youtube-logo{
   color: #cd201f;
 }
+.bc-brand-color-white.sns-follow .youtube-button,
+.author-box .sns-follow-buttons a.follow-button.linkedin-button{
+  filter: drop-shadow(1px 1px 1px #0077b5);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-linkedin-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-linkedin-logo{
+  color: #0077b5;
+}
+.bc-brand-color-white.sns-follow .note-button,
+.author-box .sns-follow-buttons a.follow-button.note-button{
+  filter: drop-shadow(1px 1px 1px #41c9b4);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-note-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-note-logo{
+  color: #41c9b4;
+}
 .bc-brand-color-white.sns-follow .flickr-button,
 .author-box .sns-follow-buttons a.follow-button.flickr-button{
   filter: drop-shadow(1px 1px 1px #111)
@@ -610,6 +647,22 @@ border-bottom:4px solid #5572ff;
 .author-box .sns-follow-buttons a.follow-button:hover .icon-amazon-logo{
   color: #ff9900;
 }
+.bc-brand-color-white.sns-follow .rakuten-room-button,
+.author-box .sns-follow-buttons a.follow-button.rakuten-room-button{
+  filter: drop-shadow(1px 1px 1px #c61e79);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-rakuten-room-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-rakuten-room-logo{
+  color: #c61e79;
+}
+.bc-brand-color-white.sns-follow .slack-button,
+.author-box .sns-follow-buttons a.follow-button.slack-button{
+  filter: drop-shadow(1px 1px 1px #e01563);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-slack-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-slack-logo{
+  color: #e01563;
+}
 .bc-brand-color-white.sns-follow .github-button,
 .author-box .sns-follow-buttons a.follow-button.github-button{
   filter: drop-shadow(1px 1px 1px #4078c0)
@@ -617,6 +670,14 @@ border-bottom:4px solid #5572ff;
 .sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-github-logo,
 .author-box .sns-follow-buttons a.follow-button:hover .icon-github-logo{
   color: #4078c0;
+}
+.bc-brand-color-white.sns-follow .codepen-button,
+.author-box .sns-follow-buttons a.follow-button.codepen-button{
+  filter: drop-shadow(1px 1px 1px #333);
+}
+.sns-follow.bc-brand-color-white > .sns-follow-buttons a:hover .icon-codepen-logo,
+.author-box .sns-follow-buttons a.follow-button:hover .icon-codepen-logo{
+  color: #333;
 }
 .bc-brand-color-white.sns-follow .feedly-button,
 .author-box .sns-follow-buttons a.follow-button.feedly-button {
@@ -1095,7 +1156,6 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 .blogcard-thumbnail {
 	line-height: 0;
 	margin-right: 1rem;
-	overflow: hidden;
   margin-top: 15px;
 }
 
@@ -1104,7 +1164,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
   margin-top: 0.7em;
 }
 
-.blogcard-snipet{
+.blogcard-snippet{
 	font-size: 70%;
 	line-height: 1.7;
 	padding-right: 10%;
@@ -1115,7 +1175,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 		width: 40%;
     margin-top: 10px
 	}
-	.blogcard-snipet{
+	.blogcard-snippet{
 		display: none;
 	}
 }
@@ -1683,8 +1743,8 @@ input[type="checkbox"] {
 
 /* HACK:検索ボタン */
 .search-submit {
-    right: 10px;
-    top: 3.2px;
+    right: 0;
+    top: -1px;
     font-size: 25px;
     line-height: 45px;
     border: none;

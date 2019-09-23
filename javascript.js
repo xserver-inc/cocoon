@@ -48,24 +48,78 @@
         }, 800);
   });
 
+  //検索ボタンクリックでフォーカスを入力エリアに移す
+  $('.search-menu-button').click(function(){
+    //フォーカスの移動
+    $('#search-menu-content .search-edit').first().focus();;
+  });
+
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
-  var panel = $("#admin-panel");
-  var menuHeight = panel.height()*2;
-  var startPos = 0;
+  var adminMenu = $("#admin-panel");
+  var adminHeight = adminMenu.outerHeight();
+  var adminStartPos = 0;
   $(window).scroll(function(){
-    var currentPos = $(this).scrollTop();
-    if (currentPos > startPos) {
-      if($(window).scrollTop() >= 200) {
-        //console.log(currentPos);
-        panel.css("bottom", "-" + menuHeight + "px");
+    var adminCurrentPos = $(this).scrollTop();
+    if (adminCurrentPos > adminStartPos) {
+      if(adminCurrentPos >= 200) {
+        adminMenu.css("bottom", "-" + adminHeight + "px");
       }
     } else {
-      panel.css("bottom", 0 + "px");
+      adminMenu.css("bottom", 0);
     }
-    startPos = currentPos;
+    adminStartPos = adminCurrentPos;
   });
+
+  //モバイルボタンが固定じゃない場合
+  if (cocoon_localize_script_options.is_fixed_mobile_buttons_enable != 1) {
+    //ヘッダーモバイルメニュー
+    var headerMenu = $('.mobile-header-menu-buttons');
+    var headerHight = headerMenu.outerHeight();
+    var headerStartPos = 0;
+    $(window).scroll(function() {
+      var headerCurrentPos = $(this).scrollTop();
+      if ( headerCurrentPos > headerStartPos ) {
+        if(headerCurrentPos >= 100) {
+          headerMenu.css('top', '-' + headerHight + 'px');
+        }
+      } else {
+        headerMenu.css('top', 0);
+      }
+      headerStartPos = headerCurrentPos;
+    });
+
+    //フッターモバイルメニュー
+    var footerMenu = $(".mobile-footer-menu-buttons");
+    var footerHeight = footerMenu.outerHeight();
+    var footerStartPos = 0;
+    $(window).scroll(function(){
+      var footerCurrentPos = $(this).scrollTop();
+      if (footerCurrentPos > footerStartPos) {
+        if(footerCurrentPos >= 100) {
+          footerMenu.css("bottom", "-" + footerHeight + "px");
+        }
+      } else {
+        footerMenu.css("bottom", 0);
+      }
+      footerStartPos = footerCurrentPos;
+    });
+
+    var headerButtons = $(".mobile-header-menu-buttons");
+    var footerButtons = $(".mobile-footer-menu-buttons");
+    headerButtons.click(function() {
+      headerButtons.css("z-index", "3");
+      footerButtons.css("z-index", "2");
+    });
+
+    footerButtons.click(function() {
+      headerButtons.css("z-index", "2");
+      footerButtons.css("z-index", "3");
+    })
+  }
+
+
 
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function() {
@@ -91,10 +145,34 @@
   //スライドインサイドバーのカテゴリーセレクトボックス選択処理
   $('.sidebar-menu-content .widget_categories select').change(function(){
     if ( this.options[ this.selectedIndex ].value > 0 ) {
-      this.parentNode.parentNode.submit();
+      this.parentNode.submit();
     }
   });
 
+  /*
+  //通常のGoogleフォント読み込み
+  if (cocoon_localize_script_options.is_google_font_lazy_load_enable != 1) {
+    $('html').addClass('wf-active');
+  }
+  */
+/*
+  $(function(){
+    // #で始まるアンカーをクリックした場合に処理
+    $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 800; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+    });
+  });
+*/
 })(jQuery);
 
 /*
@@ -110,3 +188,16 @@
       }
     }
 })();
+
+/*
+//画像のLazy Load中高さを保持する
+if (cocoon_localize_script_options.is_lazy_load_enable) {
+  const imgs = document.querySelectorAll('body .lozad-img'),
+      sSize = window.parent.screen.width;
+  imgs.forEach(function (ele) {
+    const imgHeight = ele.getAttribute('height'),
+          imgWidth = ele.getAttribute('width');
+    ele.setAttribute('style','max-height:' + imgHeight * (sSize/imgWidth) +'px; height:initial;');
+  });
+}
+*/

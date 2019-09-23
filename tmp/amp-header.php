@@ -44,19 +44,20 @@ $elements = array(
   'amp-audio' => 'amp-audio-0.1.js',
   'amp-video' => 'amp-video-0.1.js',
   'amp-image-lightbox' => 'amp-image-lightbox-0.1.js',
+  //'amp-link-rewriter' => 'amp-link-rewriter-0.1.js',
   //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
 
 //var_dump($the_content);
 foreach( $elements as $key => $val ) {
-  if( strpos($all_content, '<'.$key) !== false ) {
+  if( includes_string($all_content, '<'.$key) ) {
     echo '<script async custom-element="'.$key.'" src="https://cdn.ampproject.org/v0/'.$val.'"></script>'.PHP_EOL;
 
   }
 }
 
 //AMP用の検索フォームが存在するか
-if( (strpos($all_content, 'class="amp-form') !== false) || is_mobile_button_layout_type_slide_in() ) {
+if( includes_string($all_content, 'class="amp-form') ) {
   echo '<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>'.PHP_EOL;
 }
 
@@ -70,15 +71,26 @@ if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
 
+
 //Font Awesomeのスタイルの読み込み
 echo '<link rel="stylesheet" href="'.esc_url(get_site_icon_font_cdn_url()).'">'.PHP_EOL;
 //Google Fontsスタイルの読み込み
 if (!is_site_font_family_local()) {
   echo '<link rel="stylesheet" href="'.esc_url(get_site_font_source_url()).'">'.PHP_EOL;
 }
+
+// //LinkSwitchが有効な時
+// if (is_all_linkswitch_enable()) {
+//   echo '<script async custom-element="amp-link-rewriter" src="https://cdn.ampproject.org/v0/amp-link-rewriter-0.1.js"></script>'.PHP_EOL;
+// }
 ?>
 <?php //JSON-LDの読み込み
-get_template_part('tmp/json-ld'); ?>
+if (is_json_ld_tag_enable()) {
+  get_template_part('tmp/json-ld');
+  if (is_the_page_review_enable()) {
+    get_template_part('tmp/json-ld-review');
+  }
+}?>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 <?php //AMP用スタイルの出力
@@ -87,16 +99,31 @@ get_template_part('tmp/json-ld'); ?>
 <?php //AdSense AMP自動広告の</head>手前コード
 get_template_part('tmp/ad-amp-auto-adsense-in-head') ?>
 
+<?php //LinkSwitchの</head>手前コード
+get_template_part('tmp/ad-amp-linkswitch-in-head') ?>
+
 <?php //トップに戻るの</head>手前コード
 get_template_part('tmp/amp-button-go-to-top-in-head') ?>
 
 <?php //ユーザーカスタマイズ用
 get_template_part('tmp-user/amp-head-insert'); ?>
+
+<?php //WEBフォント読み込み
+//Font Awesomeのスタイルの読み込み
+echo '<link rel="stylesheet" href="'.FONT_AWESOME4_CDN_URL.'">'.PHP_EOL;
+//Google Fontsスタイルの読み込み
+if (!is_site_font_family_local()) {
+  echo '<link rel="stylesheet" href="'.get_site_font_source_url().'">'.PHP_EOL;
+}
+?>
 </head>
 <body <?php body_class('amp'); ?> itemscope itemtype="http://schema.org/WebPage">
 
   <?php //AdSense AMP自動広告の<body>直後コード
   get_template_part('tmp/ad-amp-auto-adsense-in-body') ?>
+
+  <?php //LinkSwitchの<body>直後コード
+  get_template_part('tmp/ad-amp-linkswitch-in-body') ?>
 
   <?php //トップに戻るの<body>直後コード
   get_template_part('tmp/amp-button-go-to-top-in-body') ?>

@@ -10,7 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <?php //モバイルサイトフォント
 if (get_mobile_site_font_size()): ?>
 @media screen and (max-width: 480px){
-  .page-body{
+  .page-body,
+  .menu-content{
     font-size: <?php echo get_mobile_site_font_size(); ?>;
   }
 }
@@ -270,8 +271,8 @@ $colors = array();
 $text_colors = array();
 //カテゴリ色の振り分け
 foreach ($cats as $cat) {
-  $color = get_category_color($cat->cat_ID);
-  $text_color = get_category_text_color($cat->cat_ID);
+  $color = get_the_category_color($cat->cat_ID);
+  $text_color = get_the_category_text_color($cat->cat_ID);
   $cat_label_pre = '.cat-label.cat-label-';
   $cat_link_pre = '.cat-link.cat-link-';
   if ($color) {
@@ -713,3 +714,22 @@ if (!$editor_text_color) {
 body#tinymce.wp-editor{
   color: <?php echo $editor_text_color; ?>
 }
+<?php //Internet Explorer（IE）用
+global $is_IE;
+if ($is_IE): ?>
+.wp-block-image figure.aligncenter {
+  display: block;
+  text-align: center;
+}
+.wp-block-image figure.aligncenter figcaption{
+  display: block;
+}
+  <?php if(is_singular() && is_eyecatch_visible() && has_post_thumbnail()): ?>
+  .eye-catch-wrap {
+    text-align: center;
+  }
+  .eye-catch{
+    display: inline-block;
+  }
+  <?php endif; ?>
+<?php endif; ?>

@@ -9,7 +9,7 @@ body.wp-admin{
 
 //固定値
 @import "defins";
-@import "admin-snipets";
+@import "admin-snippets";
 .admin-settings .demo{
   @import "amp-imports";
   @import "imports";
@@ -27,6 +27,10 @@ body.wp-admin{
 
   pre{
     padding: 10px;
+  }
+
+  .entry-content{
+    margin: 0;
   }
 
   .search-result{
@@ -112,6 +116,10 @@ body.wp-admin{
     width: 100%;
     height: 100%;
   }
+
+  .recommended-in.wrap{
+    padding: 0 5%;
+  }
 }
 
 .demo #related-entries h2{
@@ -135,6 +143,10 @@ body.wp-admin{
 /*記事一覧のサムネイル幅*/
 .column-thumbnail{
   width:80px;
+}
+/*記事一覧の投稿ID幅*/
+.column-post-id{
+  width:42px;
 }
 /*記事一覧の文字数幅*/
 .column-word-count{
@@ -545,8 +557,20 @@ select option.fa{
   margin-left: 1em;
 }
 
-#singular_redirect_settings input[type="text"]{
+//ビジュアルエディター
+.postbox-container input[type="text"],
+//ブロックエディター
+.components-panel input[type="text"]{
   width: 100%;
+}
+
+.components-panel {
+  input[type="range"]{
+    width: calc(100% - 18px);
+  }
+  .range-wrap{
+    width: 100%;
+  }
 }
 
 
@@ -636,7 +660,7 @@ select option.fa{
     }
   }
 
-  .ranking-item-rating{
+  .rating-star{
     color: #333;
     font-size: 1em;
   }
@@ -665,7 +689,7 @@ select option.fa{
   .tips{
     margin: 0;
   }
-  .ranking-item-rating{
+  .rating-star{
     label{
       float: left;
     }

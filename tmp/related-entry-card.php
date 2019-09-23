@@ -12,19 +12,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <figure class="related-entry-card-thumb card-thumb e-card-thumb">
     <?php if ( has_post_thumbnail() ): // サムネイルを持っているとき ?>
     <?php
-    //適切なサムネイルサイズの選択
-    switch (get_related_entry_type()) {
-      case 'vartical_card_3':
-        $thumb_size = THUMB320;
-        break;
-      case 'mini_card':
-        $thumb_size = THUMB120;
-        break;
-      default:
-        $thumb_size = THUMB160;
-        break;
-    }
-    echo get_the_post_thumbnail($post->ID, $thumb_size, array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
+    echo get_the_post_thumbnail($post->ID, get_related_entry_card_thumbnail_size(), array('class' => 'related-entry-card-thumb-image card-thumb-image', 'alt' => '') ); //サムネイルを呼び出す?>
     <?php else: // サムネイルを持っていないとき ?>
     <img src="<?php echo get_no_image_160x90_url(); ?>" alt="" class="no-image related-entry-card-no-image" width="<?php echo THUMB160WIDTH; ?>" height="<?php echo THUMB160HEIGHT; ?>" />
     <?php endif; ?>
@@ -38,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php //スニペットの表示
     if (is_related_entry_card_snippet_visible()): ?>
     <div class="related-entry-card-snippet card-snippet e-card-snippet">
-      <?php echo get_the_snipet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+      <?php echo get_the_snippet( get_the_content(''), get_related_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
     </div>
     <?php endif ?>
     <div class="related-entry-card-meta card-meta e-card-meta">

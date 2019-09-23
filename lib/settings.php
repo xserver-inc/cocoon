@@ -93,12 +93,14 @@ if ( !function_exists( 'visual_editor_stylesheets_custom' ) ):
 function visual_editor_stylesheets_custom($stylesheets) {
   //ビジュアルエディタースタイルが有効な時
   if (is_visual_editor_style_enable()) {
-    $style_url = get_template_directory_uri().'/style.css';
+    $style_url = PARENT_THEME_STYLE_CSS_URL;
+    $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
     $cache_file_url = get_theme_css_cache_file_url();
     $editor_style_url = get_template_directory_uri().'/editor-style.css';
     array_push($stylesheets,
       add_file_ver_to_css_js(get_site_icon_font_url()),
       add_file_ver_to_css_js($style_url),
+      add_file_ver_to_css_js($keyframes_url),
       add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル
       add_file_ver_to_css_js($editor_style_url)
     );
@@ -111,7 +113,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     //子テーマがある場合、子テーマ内のスタイルも読み込む
     if (is_child_theme()) {
       array_push($stylesheets,
-        add_file_ver_to_css_js(get_stylesheet_directory_uri().'/style.css'),
+        add_file_ver_to_css_js(CHILD_THEME_STYLE_CSS_URL),
         add_file_ver_to_css_js(get_stylesheet_directory_uri().'/editor-style.css')
       );
     }
@@ -219,10 +221,12 @@ add_theme_support( 'menus' );
 //register_nav_menu( 'header-navi', 'ヘッダーナビゲーション' );
 register_nav_menus(
   array(
-    'navi-header' => __( 'ヘッダーメニュー', THEME_NAME ),
-    'navi-mobile' => __( 'モバイルヘッダーメニュー（サブ不可）', THEME_NAME ),
-    'navi-footer' => __( 'フッターメニュー（サブ不可）', THEME_NAME ),
-    'navi-footer-mobile' => __( 'フッターモバイルメニュー（サブ不可）', THEME_NAME ),
+    NAV_MENU_HEADER => __( 'ヘッダーメニュー', THEME_NAME ),
+    NAV_MENU_HEADER_MOBILE => __( 'ヘッダーモバイルメニュー', THEME_NAME ),
+    NAV_MENU_HEADER_MOBILE_BUTTONS => __( 'ヘッダーモバイルボタン', THEME_NAME ),
+    NAV_MENU_FOOTER => __( 'フッターメニュー', THEME_NAME ),
+    NAV_MENU_FOOTER_MOBILE_BUTTONS => __( 'フッターモバイルボタン', THEME_NAME ),
+    NAV_MENU_MOBILE_SLIDE_IN => __( 'モバイルスライドインメニュー', THEME_NAME ),
   )
 );
 
@@ -259,7 +263,7 @@ add_filter('widget_text', 'do_shortcode');
 add_filter('widget_text_pc_text', 'do_shortcode');
 add_filter('widget_text_mobile_text', 'do_shortcode');
 add_filter('widget_mobile_ad_text', 'do_shortcode');
-add_filter('widget_classic_text', 'do_shortcode');
+//add_filter('widget_classic_text', 'do_shortcode');
 add_filter('widget_ad_text', 'do_shortcode');
 add_filter('widget_pc_ad_text', 'do_shortcode');
 add_filter('widget_pc_double_ad1_text', 'do_shortcode');
@@ -271,12 +275,15 @@ add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
 //アピールリア
 add_filter('appeal_area_message', 'do_shortcode');
-//カテゴリページ
-add_filter('the_category_content', 'do_shortcode');
-add_filter('the_category_content', 'shortcode_unautop');
-//タグページ
-add_filter('the_tag_content', 'do_shortcode');
-add_filter('the_tag_content', 'shortcode_unautop');
+//カテゴリ・タグページ（※フックの順番が大事）
+add_filter('the_category_tag_content', 'wptexturize');
+add_filter('the_category_tag_content', 'convert_smilies');
+add_filter('the_category_tag_content', 'convert_chars');
+add_filter('the_category_tag_content', 'wpautop');
+add_filter('the_category_tag_content', 'shortcode_unautop');
+add_filter('the_category_tag_content', 'do_shortcode');
+add_filter('the_category_tag_content', 'prepend_attachment');
+add_filter('the_category_tag_content', 'wp_make_content_images_responsive');
 
 //generator を削除
 remove_action('wp_head', 'wp_generator');
@@ -447,3 +454,58 @@ function header_last_modified_and_etag() {
 
 }
 endif;
+
+//ウィジェット表示タイプのオプション配列
+if ( !function_exists( 'get_widget_entry_type_options' ) ):
+function get_widget_entry_type_options(){
+  return array(
+    ET_DEFAULT =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/default.png', __( '通常のカード表示', THEME_NAME ), 360).
+      __( 'デフォルト', THEME_NAME ),
+    ET_BORDER_PARTITION =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_partition.png', __( 'カードの上下に破線の区切り線が表示されます。', THEME_NAME ), 360).
+      __( '区切り線', THEME_NAME ),
+    ET_BORDER_SQUARE =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/border_square.png', __( 'カード自体を罫線で囲みます。', THEME_NAME ), 360).
+      __( '囲み枠', THEME_NAME ),
+    ET_LARGE_THUMB =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/large_thumb-1.jpg', __( '大きなサムネイル画像の下にタイトルを表示します。', THEME_NAME ), 360).
+      __( '大きなサムネイル', THEME_NAME ),
+    ET_LARGE_THUMB_ON =>
+      get_image_preview_tag('https://wp-cocoon.com/wp-content/uploads/2019/07/large_thumb_on-1.jpg', __( '大きなサムネイル画像の下段にタイトルを重ねます。', THEME_NAME ), 360).
+        __( 'タイトルを重ねた大きなサムネイル', THEME_NAME ),
+  );
+}
+endif;
+
+//ウィジェット表示スタイルのオプション配列
+if ( !function_exists( 'get_widget_style_options' ) ):
+function get_widget_style_options(){
+  return array(
+    'image_only' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_image_only.png').__( '画像のみ', THEME_NAME ),
+    RC_DEFAULT => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_white_title.png').__( '画像中央に白文字タイトル', THEME_NAME ),
+    'center_label_title' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_center_label_title.png').__( '画像中央にラベルでタイトル', THEME_NAME ),
+    ET_LARGE_THUMB_ON => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/rcs_large_thumb_on.png').__( '画像下段を黒背景にしタイトルを重ねる', THEME_NAME ),
+  );
+}
+endif;
+
+//カスタム投稿動作確認用
+if (DEBUG_MODE) {
+  add_action( 'init', 'debug_create_post_type' );
+  function debug_create_post_type() {
+    register_post_type( 'news',
+      array( // 投稿タイプ名の定義
+          'labels' => [
+              'name'          => 'ニュース', // 管理画面上で表示する投稿タイプ名
+              'singular_name' => 'news',    // カスタム投稿の識別名
+          ],
+          'public'        => true,  // 投稿タイプをpublicにするか
+          'has_archive'   => false, // アーカイブ機能ON/OFF
+          'menu_position' => 5,     // 管理画面上での配置場所
+          'show_in_rest'  => true,  // 5系から出てきた新エディタ「Gutenberg」を有効にする
+          'supports' => array('title','editor','thumbnail'),
+      )
+    );
+  }
+}

@@ -259,19 +259,12 @@ endif;
 if ( !function_exists( 'get_todays_access_count' ) ):
 function get_todays_access_count($post_id = null){
   $res = 0;
-  if (is_singular()) {
-    global $post;
-    if (!$post_id) {
-      $post_id = $post->ID;
-    }
-    // $date = current_time('Y-m-d');
-    // $post_type = get_accesses_post_type();
-
-    // $record = get_accesse_record_from($post_id, $date, $post_type);
-    // $res = $record->count;
-
-    $res = get_several_access_count($post_id, 1);
+  global $post;
+  if (!$post_id) {
+    $post_id = $post->ID;
   }
+
+  $res = get_several_access_count($post_id, 1);
   return $res;
 }
 endif;
@@ -280,7 +273,7 @@ endif;
 if ( !function_exists( 'get_several_access_count' ) ):
 function get_several_access_count($post_id = null, $days = 'all'){
   $res = 0;
-  if (is_singular() && is_access_count_enable()) {
+  if (is_access_count_enable()) {
     global $post;
     global $wpdb;
 

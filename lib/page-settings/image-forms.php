@@ -32,11 +32,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               <?php endif ?>
               <?php if (is_eyecatch_visible()){
-              $content = '<p><a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup.jpeg" target="_blank">
-                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/cup-370.jpg" alt="デモ画像">
+              $content = '<p><a href="https://im-cocoon.net/wp-content/uploads/cocoon.jpg" target="_blank" rel="noopener">
+                  <img src="https://im-cocoon.net/wp-content/uploads/cocoon-267.jpg" alt="デモ画像">
                 </a>&nbsp;
-                <a href="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree.jpg" target="_blank">
-                  <img src="https://simplicity.sample.mixh.jp/wp-content/uploads/2017/09/tree300.jpg" alt="デモ画像">
+                <a href="https://im-cocoon.net/wp-content/uploads/tree.jpg" target="_blank" rel="noopener">
+                  <img src="https://im-cocoon.net/wp-content/uploads/tree-300.jpg" alt="デモ画像">
                 </a></p>
                 ';
                 if (is_lightbox_effect_enable()) {

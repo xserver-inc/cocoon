@@ -29,7 +29,7 @@ if ( !function_exists( 'view_amp_custom_box' ) ):
 function view_amp_custom_box(){
   //AMPページを生成する
   generate_checkbox_tag('the_page_no_amp' , is_the_page_no_amp(), __( 'AMPページを生成しない', THEME_NAME ));
-  generate_howro_tag(__( 'AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切り替えます。', THEME_NAME ));
+  generate_howto_tag(__( 'AMP(Accelerated Mobile Pages)ページを生成して、モバイル端末に最適化するかを切り替えます。', THEME_NAME ), 'the_page_no_amp');
 }
 endif;
 

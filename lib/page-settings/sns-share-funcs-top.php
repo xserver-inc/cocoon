@@ -79,7 +79,15 @@ endif;
 define('OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE', 'top_pinterest_share_button_visible');
 if ( !function_exists( 'is_top_pinterest_share_button_visible' ) ):
 function is_top_pinterest_share_button_visible(){
-  return get_theme_option(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE, 0);
+  return get_theme_option(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE);
+}
+endif;
+
+//LinkedInシェアボタンの表示
+define('OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE', 'top_linkedin_share_button_visible');
+if ( !function_exists( 'is_top_linkedin_share_button_visible' ) ):
+function is_top_linkedin_share_button_visible(){
+  return get_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE);
 }
 endif;
 

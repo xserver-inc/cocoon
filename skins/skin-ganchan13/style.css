@@ -105,6 +105,10 @@ body.public-page,.content .cf .main, .navi {
     border-bottom: solid 6px #FEF05C;
 }
 
+#footer a {
+    background: none;
+}
+
 .footer.logo-text {
     color:#fff;
 }
@@ -182,10 +186,6 @@ body.public-page,.content .cf .main, .navi {
 
 
 /*ウィジェット*/
-
-.sidebar {
-	margin:17px 0 0px;
-}
 
 .sidebar .widget h3 {
     margin: 0 30px;
@@ -417,25 +417,26 @@ div.list {
 	padding:20px;
 	color:#fff;
 	background-color:#666;
-	border-radius:4px;
+    border-radius:4px;
+    position: relative;
 }
 .author-content:before{
   width: 0;
   height: 0;
    position: absolute;
-	top: 80px;
-    left: 132px;
+    left: -.7em;
     display: inline-block;
     border-top: 15px solid transparent;
     border-right: 15px solid #666;
     border-bottom: 15px solid transparent;
     content: " ";
 }
+
 .nwa .author-content:before{
     border-right: 15px solid transparent;
     border-bottom: 15px solid #666;
     border-left: 15px solid transparent;
-    top: 90px;
+    top: -1.6em;
     left: calc(46%);
 }
 
@@ -661,6 +662,42 @@ div.list {
    background-color: #00c300;
   color: #fff;
   opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .copy-button, .bc-brand-color.sns-share.ss-bottom .copy-button {
+	background-color: #fff;
+   color: #333;
+	border:solid 2px #333;
+}
+
+.bc-brand-color.sns-share.ss-top .copy-button:hover, .bc-brand-color.sns-share.ss-bottom .copy-button:hover {
+   background-color: #333;
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .pinterest-button, .bc-brand-color.sns-share.ss-bottom .pinterest-button {
+	background-color: #fff;
+   color: #bd081c;
+	border:solid 2px #bd081c;
+}
+
+.bc-brand-color.sns-share.ss-top .pinterest-button:hover, .bc-brand-color.sns-share.ss-bottom .pinterest-button:hover {
+   background-color: #bd081c;
+	color: #fff;
+	opacity:1;
+}
+
+.bc-brand-color.sns-share.ss-top .linkedin-button, .bc-brand-color.sns-share.ss-bottom .linkedin-button {
+	background-color: #fff;
+   color: #0077b5;
+	border:solid 2px #0077b5;
+}
+
+.bc-brand-color.sns-share.ss-top .linkedin-button:hover, .bc-brand-color.sns-share.ss-bottom .linkedin-button:hover {
+   background-color: #0077b5;
+	color: #fff;
+	opacity:1;
 }
 
 .sns-share a {

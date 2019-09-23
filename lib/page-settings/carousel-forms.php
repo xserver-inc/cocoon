@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php if (DEBUG_ADMIN_DEMO_ENABLE && apply_filters('cocoon_setting_preview_carousel', true)): ?>
     <p class="preview-label"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
     <div class="demo carousel-area-demo" style="">
-      <?php get_template_part('tmp/carousel'); ?>
+      <?php get_sanitize_preview_template_part('tmp/carousel'); ?>
     </div>
     <?php generate_tips_tag(__( '設定が反映されない場合はリロードしてみてください。', THEME_NAME )); ?>
     <?php endif; ?>
@@ -58,11 +58,28 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
+            echo __( '人気記事', THEME_NAME ).'<br>';
+            generate_checkbox_tag( OP_CAROUSEL_POPULAR_POSTS_ENABLE, is_carousel_popular_posts_enable(), '');
+
+            $options = array(
+              '1' => __( '本日', THEME_NAME ),
+              '7' => __( '7日間', THEME_NAME ),
+              '30' => __( '30日間', THEME_NAME ),
+              '365' => __( '1年間', THEME_NAME ),
+              'all' => __( '全期間', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, $options,  get_carousel_popular_posts_count_days());
+            generate_label_tag(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, __('で集計した人気記事を含める', THEME_NAME) );
+            echo '<br>';
+            echo '<br>';
+
             echo __( 'カテゴリー', THEME_NAME ).'<br>';
             generate_hierarchical_category_check_list( 0, OP_CAROUSEL_CATEGORY_IDS, get_carousel_category_ids(), 300 );
+            echo '<br>';
+
             echo __( 'タグ', THEME_NAME ).'<br>';
             generate_tagcloud_check_list(OP_CAROUSEL_TAG_IDS, get_carousel_tag_ids());
-            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリもしくはタグを選択してください。選択されたカテゴリー・タグに属する投稿がランダムで表示されます。', THEME_NAME ));
+            generate_tips_tag(__( 'カルーセルと関連付けるカテゴリもしくはタグを選択してください。人気記事を有効にしカテゴリーのタグを選択した場合は、すべて合算しランダムで表示されます。', THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -75,7 +75,7 @@ function get_entry_card_thumbnail_size($count){
       $thumbnail_size = get_entry_card_default_thumbnail_size();
       break;
   }
-  return $thumbnail_size;
+  return apply_filters('get_entry_card_thumbnail_size', $thumbnail_size, $count);
 }
 endif;
 
@@ -105,21 +105,22 @@ endif;
 
 //新着記事のサムネイルサイズ（エイリアス）
 if ( !function_exists( 'get_new_entries_thumbnail_size' ) ):
-function get_new_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  return get_widget_entries_thumbnail_size($entry_type);
+function get_new_entries_thumbnail_size($type = ET_DEFAULT){
+  return get_widget_entries_thumbnail_size($type);
 }
 endif;
 //ウィジェットエントリーのサムネイルサイズ
 if ( !function_exists( 'get_widget_entries_thumbnail_size' ) ):
-function get_widget_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  $thumb_size = ($entry_type == ET_DEFAULT) ? THUMB120 : THUMB320;
-  return $thumb_size;
+function get_widget_entries_thumbnail_size($type = ET_DEFAULT){
+  $thumb_size = is_widget_entry_card_large_image_use($type) ? THUMB320 : THUMB120;
+  return apply_filters('get_widget_entries_thumbnail_size', $thumb_size, $type);
 }
 endif;
 
 //人気記事のサムネイルサイズ
 if ( !function_exists( 'get_popular_entries_thumbnail_size' ) ):
-function get_popular_entries_thumbnail_size($entry_type = ET_DEFAULT){
-  return get_widget_entries_thumbnail_size($entry_type);
+function get_popular_entries_thumbnail_size($type = ET_DEFAULT){
+  $thumb_size = get_widget_entries_thumbnail_size($type);
+  return apply_filters('get_popular_entries_thumbnail_size', $thumb_size, $type);
 }
 endif;

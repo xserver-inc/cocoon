@@ -57,15 +57,5 @@ function insert_custom_css() {
     echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
     echo '<style>' . $custom_css . '</style>'.PHP_EOL;
   }
-  // if ( is_singular() ) {
-  //   if ( have_posts() ) : while ( have_posts() ) : the_post();
-  //     $custom_css = get_post_meta(get_the_ID(), '_custom_css', true);
-  //     if ($custom_css) {
-  //       echo '<!-- '.THEME_NAME.' Custom CSS -->'.PHP_EOL;
-  //       echo '<style>' . $custom_css . '</style>'.PHP_EOL;
-  //     }
-  //   endwhile; endif;
-  //   rewind_posts();
-  // }
 }
 endif;

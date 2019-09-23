@@ -69,7 +69,9 @@ endif;
 //投稿ナビのサムネイルタグを取得する
 if ( !function_exists( 'get_post_navi_thumbnail_tag' ) ):
 function get_post_navi_thumbnail_tag($id, $width = THUMB120WIDTH, $height = THUMB120HEIGHT){
-  $thumb = get_the_post_thumbnail( $id, 'thumb'.strval($width), array('alt' => '') );
+  $thumbnail_size = 'thumb'.strval($width);
+  $thumbnail_size = apply_filters('get_post_navi_thumbnail_size', $thumbnail_size);
+  $thumb = get_the_post_thumbnail( $id, $thumbnail_size, array('alt' => '') );
   if ( !$thumb ) {
     $image = get_template_directory_uri().'/images/no-image-%s.png';
 
@@ -96,16 +98,16 @@ function get_archive_chapter_title(){
   if( is_category() ) {//カテゴリページの場合
     $cat_id = get_query_var('cat');
     $icon_font = '<span class="fa fa-folder-open"></span>';
-    if ($cat_id && get_category_title($cat_id)) {
-      $chapter_title .= $icon_font.get_category_title($cat_id);
+    if ($cat_id && get_the_category_title($cat_id)) {
+      $chapter_title .= $icon_font.get_the_category_title($cat_id);
     } else {
       $chapter_title .= single_cat_title( $icon_font, false );
     }
   } elseif( is_tag() ) {//タグページの場合
     $tag_id = get_query_var('tag_id');
     $icon_font = '<span class="fa fa-tags"></span>';
-    if ($tag_id && get_tag_title($tag_id)) {
-      $chapter_title .= $icon_font.get_tag_title($tag_id);
+    if ($tag_id && get_the_tag_title($tag_id)) {
+      $chapter_title .= $icon_font.get_the_tag_title($tag_id);
     } else {
       $chapter_title .= single_tag_title( $icon_font, false );
     }
@@ -133,7 +135,7 @@ function get_archive_chapter_title(){
   } else {
     $chapter_title .= 'Archives';
   }
-  return $chapter_title;
+  return apply_filters('get_archive_chapter_title', $chapter_title);
 }
 endif;
 
@@ -246,4 +248,3 @@ function smartnews_feed_content_type( $content_type, $type ) {
 	return $content_type;
 }
 endif;
-

@@ -141,7 +141,7 @@ function _minify_css($input) {
             // Remove white-space(s) around punctuation(s) [^4]
             '#\s*([~!@*\(\)+=\{\}\[\]:;,>\/])\s*#',
             // Replace zero unit(s) with `0` [^5]
-            '#\b(?:0\.)?0([a-z]+\b|%)#i',
+            '#\b(?:0\.)?0([a-z]+\b)#i',
             // Replace `0.6` with `.6` [^6]
             '#\b0+\.(\d+)#',
             // Replace `:0 0`, `:0 0 0` and `:0 0 0 0` with `:0` [^7]

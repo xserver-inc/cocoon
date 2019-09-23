@@ -87,12 +87,41 @@ div.sidebar{
   }
 }
 
-.mobile-button-slide-in .go-to-top-button{
+.mobile-header-menu-buttons{
+  top: 0;
+  bottom: auto;
+  justify-content: space-around;
+  min-width: 46px;
+  z-index: 3;
+  box-shadow: 0 0 5px darkgrey;
+
+  .menu-button{
+    width: 70px;
+  }
+
+  .logo-menu-button{
+    flex-grow: 99;
+  }
+}
+
+.no-mobile-sidebar #sidebar,
+.mobile-button-fmb .go-to-top-button,
+.no-mobile-header-logo .logo-header{
   display: none;
 }
 
-.mblt-slide-in .footer{
+.mblt-header-mobile-buttons{
+  margin-top: 46px;
+}
+.mblt-footer-mobile-buttons{
   margin-bottom: 50px;
+}
+.mblt-header-and-footer-mobile-buttons{
+  margin-top: 46px;
+  margin-bottom: 50px;
+}
+.scrollable-mobile-buttons{
+  margin-bottom: 0;
 }
 
 .navi-footer-in > .menu-footer{
@@ -101,4 +130,14 @@ div.sidebar{
 
 .footer-bottom.fdt-left-and-right .footer-bottom-content{
   flex-direction: column;
+}
+
+// //ヘッダーモバイルボタン表示時にサイトロゴを表示しない
+// .no-mobile-header-logo .logo-header {
+//   display: none;
+// }
+
+.mblt-footer-mobile-buttons .go-to-top-button,
+.mblt-header-and-footer-mobile-buttons .go-to-top-button {
+  display: none;
 }

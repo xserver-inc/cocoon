@@ -15,6 +15,14 @@ function is_admin_tool_menu_visible(){
 }
 endif;
 
+//インデックスのエントリーカードにPV数を表示
+define('OP_ADMIN_INDEX_PV_VISIBLE', 'admin_index_pv_visible');
+if ( !function_exists( 'is_admin_index_pv_visible' ) ):
+function is_admin_index_pv_visible(){
+  return get_theme_option(OP_ADMIN_INDEX_PV_VISIBLE);
+}
+endif;
+
 //投稿一覧に作成者を表示する
 define('OP_ADMIN_LIST_AUTHOR_VISIBLE', 'admin_list_author_visible');
 if ( !function_exists( 'is_admin_list_author_visible' ) ):
@@ -63,6 +71,14 @@ function is_admin_list_eyecatch_visible(){
 }
 endif;
 
+//投稿IDを表示する
+define('OP_ADMIN_LIST_POST_ID_VISIBLE', 'admin_list_post_id_visible');
+if ( !function_exists( 'is_admin_list_post_id_visible' ) ):
+function is_admin_list_post_id_visible(){
+  return get_theme_option(OP_ADMIN_LIST_POST_ID_VISIBLE, 1);
+}
+endif;
+
 //投稿一覧に文字数を表示する
 define('OP_ADMIN_LIST_WORD_COUNT_VISIBLE', 'admin_list_word_count_visible');
 if ( !function_exists( 'is_admin_list_word_count_visible' ) ):
@@ -88,7 +104,7 @@ endif;
 define('OP_ADMIN_PANEL_DISPLAY_TYPE', 'admin_panel_display_type');
 if ( !function_exists( 'get_admin_panel_display_type' ) ):
 function get_admin_panel_display_type(){
-  return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'all');
+  return get_theme_option(OP_ADMIN_PANEL_DISPLAY_TYPE, 'pc_only');
 }
 endif;
 if ( !function_exists( 'is_admin_panel_all_visible' ) ):

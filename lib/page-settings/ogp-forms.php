@@ -93,7 +93,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'summary_large_image' => __( '大きな画像のサマリー（summary_large_image）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_TWITTER_CARD_TYPE, $options, get_twitter_card_type());
-            generate_tips_tag(__( 'Twitterカードの表示形式の設定です。', THEME_NAME ).'<a href="https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/ja/cards/overview" target="_blank">'.__( 'カードタイプ', THEME_NAME ).'</a>');
+            generate_tips_tag(__( 'Twitterカードの表示形式の設定です。', THEME_NAME ).'<a href="https://dev.twitter.com/web/sign-inhttps://dev.twitter.com/ja/cards/overview" target="_blank" rel="noopener">'.__( 'カードタイプ', THEME_NAME ).'</a>');
             ?>
           </td>
         </tr>

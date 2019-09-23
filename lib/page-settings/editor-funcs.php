@@ -52,6 +52,14 @@ function get_editor_text_color(){
 }
 endif;
 
+//ルビボタン有効
+define('OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE', 'block_editor_ruby_button_visible');
+if ( !function_exists( 'is_block_editor_ruby_button_visible' ) ):
+function is_block_editor_ruby_button_visible(){
+  return get_theme_option(OP_BLOCK_EDITOR_RUBY_BUTTON_VISIBLE, 1);
+}
+endif;
+
 //ブロックエディターインラインスタイルドロップダウン有効
 define('OP_BLOCK_EDITOR_LETTER_STYLE_DROPDOWN_VISIBLE', 'block_editor_letter_style_dropdown_visible');
 if ( !function_exists( 'is_block_editor_letter_style_dropdown_visible' ) ):

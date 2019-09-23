@@ -8,5 +8,5 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php if (is_tagline_visible()): ?>
-<div class="tagline" itemprop="alternativeHeadline"><?php bloginfo('description') ?></div>
+<div class="tagline" itemprop="alternativeHeadline"><?php echo apply_filters('get_tagline_text', get_bloginfo('description')) ?></div>
 <?php endif ?>

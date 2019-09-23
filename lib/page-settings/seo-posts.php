@@ -30,3 +30,6 @@ update_theme_option(OP_OTHER_ARCHIVE_PAGE_NOINDEX);
 
 //添付ファイルページをnoindexとする
 update_theme_option(OP_ATTACHMENT_PAGE_NOINDEX);
+
+//JSON-LDを出力する
+update_theme_option(OP_JSON_LD_TAG_ENABLE);

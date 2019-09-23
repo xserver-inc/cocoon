@@ -16,7 +16,7 @@ function get_carousel_display_type(){
 endif;
 if ( !function_exists( 'is_carousel_visible' ) ):
 function is_carousel_visible(){
-  return (get_carousel_category_ids() || get_carousel_tag_ids()) &&
+  return (is_carousel_popular_posts_enable() || get_carousel_category_ids() || get_carousel_tag_ids()) &&
     (
       is_carousel_display_type_all_page() ||
       (is_front_top_page() && is_carousel_display_type_front_page_only()) ||
@@ -64,6 +64,22 @@ define('OP_CAROUSEL_SMARTPHONE_VISIBLE', 'carousel_smartphone_visible');
 if ( !function_exists( 'is_carousel_smartphone_visible' ) ):
 function is_carousel_smartphone_visible(){
   return get_theme_option(OP_CAROUSEL_SMARTPHONE_VISIBLE, 1);
+}
+endif;
+
+//カルーセルに人気記事を表示する
+define('OP_CAROUSEL_POPULAR_POSTS_ENABLE', 'carousel_popular_posts_enable');
+if ( !function_exists( 'is_carousel_popular_posts_enable' ) ):
+function is_carousel_popular_posts_enable(){
+  return get_theme_option(OP_CAROUSEL_POPULAR_POSTS_ENABLE);
+}
+endif;
+
+//カルーセル人気記事の集計期間
+define('OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS', 'carousel_popular_posts_count_days');
+if ( !function_exists( 'get_carousel_popular_posts_count_days' ) ):
+function get_carousel_popular_posts_count_days(){
+  return get_theme_option(OP_CAROUSEL_POPULAR_POSTS_COUNT_DAYS, 'all');
 }
 endif;
 

@@ -30,24 +30,19 @@ function get_h_inner_content($h_content){
 }
 endif;
 
-//目次部分の取得
+//目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($the_content, &$harray, $is_widget = false){
+function get_toc_tag($expanded_content, &$harray, $is_widget = false){
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
   }
 
-  //実行したくないショートコードを除外した本文
-  $removed_content = get_shortcode_removed_content($the_content);
-  // $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
-  // $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
-  // $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
-
-  //_v($the_content);
-  //目次ショートコードを取り除く
-  //$the_content = preg_replace('/\[toc.*\]/', '', $the_content);
-  $content     = do_shortcode($removed_content);
+  // //実行したくないショートコードを除外した本文の取得
+  // $removed_content = get_shortcode_removed_content($the_content);
+  // //ショートコードを実行した本文を取得
+  // $content     = do_shortcode($removed_content);
+  $content     = $expanded_content;
   $headers     = array();
   $html        = '';
   $toc_list    = '';
@@ -182,9 +177,12 @@ function get_toc_tag($the_content, &$harray, $is_widget = false){
     </div>
   </div>';
 
+  global $_TOC_AVAILABLE_H_COUNT;
+  $_TOC_AVAILABLE_H_COUNT = $counter;
   //_v($counter);
-  $display_count = intval(get_toc_display_count());
-  if (is_int($display_count) && ($counter < $display_count)) {
+  // $display_count = intval(get_toc_display_count());
+  // if (is_int($display_count) && ($counter < $display_count)) {
+  if (!is_toc_display_count_available($counter)){
     return ;
   }
 
@@ -230,7 +228,6 @@ add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
   global $_TOC_WIDGET_OR_SHORTCODE_USE;
-  //_v($_TOC_WIDGET_OR_SHORTCODE_USE);
 
   //Table of Contents Plusプラグインが有効な際は目次機能は無効
   if (class_exists( 'toc' )) {
@@ -241,22 +238,6 @@ function add_toc_before_1st_h2($the_content){
     return $the_content;
   }
 
-  // //投稿ページだと表示しない
-  // if (!is_single_toc_visible() && is_single()) {
-  //   return $the_content;
-  // }
-
-  // //固定ページだと表示しない
-  // if (!is_page_toc_visible() && is_page()) {
-  //   return $the_content;
-  // }
-
-  // //投稿ページで非表示になっていると表示しない
-  // if (!is_the_page_toc_visible()) {
-  //   return $the_content;
-  // }
-
-  $content     = $the_content;
   $harray      = array();
 
   $depth       = intval(get_toc_depth()); //2-6 0で全て
@@ -265,7 +246,7 @@ function add_toc_before_1st_h2($the_content){
     $set_depth = 6;
   }
 
-  $html = get_toc_tag($content, $harray);
+  $html = get_toc_tag($the_content, $harray);
 
   //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
   if (!$html) {
@@ -326,6 +307,7 @@ endif;
 //ページ上で目次を利用しているか
 if ( !function_exists( 'is_the_page_toc_use' ) ):
 function is_the_page_toc_use(){
+  global $_TOC_AVAILABLE_H_COUNT;
   $content = get_the_content();
   return is_singular() && !is_plugin_fourm_page() &&
     //最初のH2手前に表示する場合
@@ -336,10 +318,29 @@ function is_the_page_toc_use(){
         (is_single() && is_single_toc_visible()) ||
         (is_page() && is_page_toc_visible())
       ) &&
-      //H2見出しがあるか
-      includes_string($content, '<h2')
+      is_toc_display_count_available($_TOC_AVAILABLE_H_COUNT)
     )
     //ショートコードで表示する場合
-    || includes_string($content, '[toc]');
+    || (is_singular() && includes_string($content, '[toc]'));
+}
+endif;
+
+//目次生成用の展開した本文の取得
+if ( !function_exists( 'get_toc_expanded_content' ) ):
+function get_toc_expanded_content(){
+  if (is_singular()) {
+    $the_content = get_shortcode_removed_content(get_the_content());
+    $the_content = do_blocks($the_content);
+    $the_content = do_shortcode($the_content);
+    return apply_filters('get_toc_expanded_content', $the_content);
+  }
+}
+endif;
+
+//目次の表示数は満たしているか
+if ( !function_exists( 'is_toc_display_count_available' ) ):
+function is_toc_display_count_available($h_count){
+  $display_count = intval(get_toc_display_count());
+  return ($h_count >= $display_count);
 }
 endif;

@@ -20,6 +20,12 @@ get_template_part('tmp/content') ?>
 
 
 <div class="under-entry-content">
+
+  <?php //関連記事上ページ送りナビ
+  if (is_post_navi_position_over_related()) {
+    get_template_part('tmp/pager-post-navi');
+  } ?>
+
   <?php get_template_part('tmp/related-entries'); //関連記事 ?>
 
   <?php //関連記事下の広告表示
@@ -32,7 +38,10 @@ get_template_part('tmp/content') ?>
     <?php dynamic_sidebar( 'below-single-related-entries' ); ?>
   <?php endif; ?>
 
-  <?php get_template_part('tmp/pager-post-navi'); //投稿ナビ ?>
+  <?php //関連記事下ページ送りナビ
+  if (is_post_navi_position_under_related()) {
+    get_template_part('tmp/pager-post-navi');
+  } ?>
 
   <?php //コメントを表示する場合
   if (is_single_comment_visible()) {
@@ -43,6 +52,11 @@ get_template_part('tmp/content') ?>
   if ( is_active_sidebar( 'below-single-comment-form' ) ): ?>
     <?php dynamic_sidebar( 'below-single-comment-form' ); ?>
   <?php endif; ?>
+
+  <?php //コメント下ページ送りナビ
+  if (is_post_navi_position_under_comment()) {
+    get_template_part('tmp/pager-post-navi');
+  } ?>
 
 </div>
 

@@ -9,7 +9,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //ソースコードをハイライト表示するか
 update_theme_option(OP_CODE_HIGHLIGHT_ENABLE);
+
+//ソースコードのライブラリ
+update_theme_option(OP_CODE_HIGHLIGHT_PACKAGE);
+
 //ソースコードのハイライトスタイル
 update_theme_option(OP_CODE_HIGHLIGHT_STYLE);
+
 //ソースコードをハイライト表示するCSSセレクタ
 update_theme_option(OP_CODE_HIGHLIGHT_CSS_SELECTOR);

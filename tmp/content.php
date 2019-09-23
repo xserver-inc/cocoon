@@ -23,6 +23,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php dynamic_sidebar( 'above-single-content-title' ); ?>
       <?php endif; ?>
 
+      <?php //固定ページタイトル上ウイジェット
+      if ( is_page() && is_active_sidebar( 'above-page-content-title' ) ): ?>
+        <?php dynamic_sidebar( 'above-page-content-title' ); ?>
+      <?php endif; ?>
+
       <header class="article-header entry-header">
         <h1 class="entry-title" itemprop="headline">
           <?php
@@ -34,6 +39,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
            ?>
         </h1>
 
+        <?php //レビュー表示
+        if (is_the_page_review_enable()) {
+          echo '<div class="review-rating">';
+          echo get_rating_star_tag(get_the_review_rate(), 5, true);
+          echo '</div>';
+        }
+        ?>
+
         <?php //タイトル下の広告表示
         if (is_ad_pos_below_title_visible() && is_all_adsenses_visible()){
           get_template_part_with_ad_format(get_ad_pos_below_title_format(), 'ad-below-title', is_ad_pos_below_title_label_visible());
@@ -42,6 +55,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿タイトル下ウイジェット
         if ( is_single() && is_active_sidebar( 'below-single-content-title' ) ): ?>
           <?php dynamic_sidebar( 'below-single-content-title' ); ?>
+        <?php endif; ?>
+
+        <?php //固定ページタイトル下ウイジェット
+        if ( is_page() && is_active_sidebar( 'below-page-content-title' ) ): ?>
+          <?php dynamic_sidebar( 'below-page-content-title' ); ?>
         <?php endif; ?>
 
         <?php //アイキャッチ挿入
@@ -96,6 +114,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         if ( is_page() && is_active_sidebar( 'page-content-bottom' ) ): ?>
           <?php dynamic_sidebar( 'page-content-bottom' ); ?>
         <?php endif; ?>
+
+        <?php //本文下ページ送りナビ
+        if (is_post_navi_position_under_content()) {
+          get_template_part('tmp/pager-post-navi');
+        } ?>
 
         <?php //カテゴリー・タグ
         get_template_part('tmp/categories-tags'); ?>

@@ -1,5 +1,7 @@
 .mobile-menu-buttons {
-  background: #eee;
+  background: $white;
+  box-shadow: 0 0 5px darkgrey;
+  font-size: 19px;
   position: fixed;
   // display: block;
   // width: 100%;
@@ -18,8 +20,7 @@
   min-height: 50px;
   //padding-bottom: 5px;
 
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
+  transition: .3s;
 
   // ul{
   //   padding: 0;
@@ -38,9 +39,9 @@
   }
 
   .menu-caption{
-    font-size: 12px;
+    font-size: 9px;
     text-align: center;
-    //display: block;
+    opacity: 0.8;
   }
 
   .menu-button {
@@ -71,6 +72,28 @@
     cursor: default;
   }
 
+}
+
+.mobile-footer-menu-buttons{
+   padding-bottom: constant(safe-area-inset-bottom);
+   padding-bottom: env(safe-area-inset-bottom);
+ }
+
+.logo-menu-button{
+  text-align: center;
+  font-weight: 900;
+  line-height: 50px;
+  min-width: 200px;
+  overflow: hidden;
+  img{
+    max-height: 44px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.fa.menu-icon{
+  font: inherit;
 }
 
 .navi-menu-icon{
@@ -167,7 +190,7 @@
   -webkit-overflow-scrolling: touch;
 
   .menu-drawer{
-    padding: 0 0 30px;
+    padding: 0 1em 30px;
   }
 
 

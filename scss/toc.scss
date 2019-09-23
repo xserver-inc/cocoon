@@ -61,59 +61,59 @@
 ** h2-h6の見出し目次に連番を振る
 ************************************/
 .toc.tnt-number-detail{
-  >ol{
-    padding-left: 0;
-  }
   ol{
     list-style: none;
+    counter-reset:toc;
     li:before{
       margin-right: 6px;
+      counter-increment:toc;
+      content:counters(toc, ".") ".";
     }
   }
 
-  ol{
-    >li{
-      counter-increment: c-h2;
-      counter-reset: c-h3;
-    }
+  // ol{
+  //   >li{
+  //     counter-increment: c-h2;
+  //     counter-reset: c-h3;
+  //   }
 
-    >li:before{
-      content: counter(c-h2)".";
-    }
+  //   >li:before{
+  //     content: counter(c-h2)".";
+  //   }
 
-    >li > ol > li{
-      counter-increment: c-h3;
-      counter-reset: c-h4;
-    }
+  //   >li > ol > li{
+  //     counter-increment: c-h3;
+  //     counter-reset: c-h4;
+  //   }
 
-    >li > ol > li:before{
-      content: counter(c-h2)"."counter(c-h3)".";
-    }
+  //   >li > ol > li:before{
+  //     content: counter(c-h2)"."counter(c-h3)".";
+  //   }
 
-    >li > ol > li > ol > li{
-      counter-increment: c-h4;
-      counter-reset: c-h5;
-    }
+  //   >li > ol > li > ol > li{
+  //     counter-increment: c-h4;
+  //     counter-reset: c-h5;
+  //   }
 
-    >li > ol > li > ol > li:before{
-      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)".";
-    }
+  //   >li > ol > li > ol > li:before{
+  //     content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)".";
+  //   }
 
-    >li > ol > li > ol > li > ol > li{
-      counter-increment: c-h5;
-      counter-reset: c-h6;
-    }
+  //   >li > ol > li > ol > li > ol > li{
+  //     counter-increment: c-h5;
+  //     counter-reset: c-h6;
+  //   }
 
-    >li > ol > li > ol > li > ol > li:before{
-      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)".";
-    }
+  //   >li > ol > li > ol > li > ol > li:before{
+  //     content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)".";
+  //   }
 
-    >li > ol > li > ol > li > ol > li > ol > li{
-      counter-increment: c-h6;
-    }
+  //   >li > ol > li > ol > li > ol > li > ol > li{
+  //     counter-increment: c-h6;
+  //   }
 
-    >li > ol > li > ol > li > ol > li > ol > li:before{
-      content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)"."counter(c-h6)".";
-    }
-  }
+  //   >li > ol > li > ol > li > ol > li > ol > li:before{
+  //     content: counter(c-h2)"."counter(c-h3)"."counter(c-h4)"."counter(c-h5)"."counter(c-h6)".";
+  //   }
+  // }
 }

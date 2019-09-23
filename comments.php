@@ -66,18 +66,21 @@ if ( is_comment_allow() || have_comments() ): ?>
     'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. ( $req ? $required_text : '' ) . '</p>'.$comment_info_msg_tag,
   );
   echo '<aside class="comment-form">';
-  if (!is_amp()) {
-    if (is_comment_form_display_type_toggle_button()) {?>
-      <button id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
-    <?php }
-    //通常ページ
-    comment_form($args);
-  } else {
-    //AMPページ?>
-    <h3 id="reply-title" class="comment-reply-title"><?php echo get_comment_form_heading(); ?></h3>
-    <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
-    <?php
+  if (is_comment_open()) {
+    if (!is_amp()) {
+      if (is_comment_form_display_type_toggle_button()) {?>
+        <button id="comment-reply-btn" class="comment-btn key-btn"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></button>
+      <?php }
+      //通常ページ
+      comment_form($args);
+    } else {
+      //AMPページ?>
+      <h3 id="reply-title" class="comment-reply-title"><?php echo get_comment_form_heading(); ?></h3>
+      <a class="comment-btn" href="<?php echo get_permalink().'#comment-area'; ?>"><?php _e( 'コメントを書き込む', THEME_NAME ) ?></a>
+      <?php
+    }
   }
+
 
 
   echo '</aside>';

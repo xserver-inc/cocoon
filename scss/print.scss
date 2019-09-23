@@ -17,8 +17,18 @@
   .mobile-menu-buttons,
   .toc,
   .sns-share,
-  .widget{
+  .widget,
+  #notice-area-wrap,
+  #notice-area,
+  #appeal,
+  #recommended,
+  #carousel,
+  #go-to-top{
     display: none !important;
+  }
+
+  .content-in{
+    display: block;
   }
 
   .main,
@@ -31,6 +41,16 @@
     border: none;
     overflow-wrap: normal;
   }
+  .main{
+    width: 100% !important;
+  }
+
+  // .entry-content,
+  // .entry-content *{
+  //   margin-top: 10pt;
+  //   margin-bottom: 10pt;
+  //   font-size: 14pt;
+  // }
 
   h1,
   h2,
@@ -42,6 +62,7 @@
     border-width: 0;
     padding: 0;
     margin: 10px 0;
+    color: #333;
   }
 
   font-size: 11pt;
@@ -64,4 +85,13 @@
     font-size: 14pt;
   }
 }
+#wpadminbar,
+#go-to-top,
+#admin-panel{
+  display: none !important;
+}
 
+body{
+  background-image: none !important;
+  background-break: transparent;
+}

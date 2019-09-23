@@ -64,6 +64,8 @@ function tag_code_to_minify_js($buffer) {
               //プレイリストのJSは除外
               || includes_string($url, '/mediaelement-and-player.min.js')
               || includes_string($url, '/wp-includes/js/underscore.min.js')
+              // //Lityの除外
+              // || includes_string($url, '/plugins/lity/dist/lity.min.js')
               // || includes_string($url, '/wp-playlist.min.js')
               // || includes_string($url, '/wp-mediaelement.min.js')
               // || includes_string($url, '/mediaelement-migrate.min.js')
@@ -71,7 +73,7 @@ function tag_code_to_minify_js($buffer) {
               // || includes_string($url, '/wp-includes/js/wp-util.min.js')
               //コードハイライト
               //|| (strpos($url, '/plugins/highlight-js/highlight.min.js') !== false)
-              || includes_string($url, '/plugins/highlight-js/highlight.min.js')
+              || includes_string($url, '/plugins/highlight-js/highlight')
               || includes_string($url, '/plugins/ip-geo-block/')
               //|| (strpos($url, '/plugins/wpforo/') !== false)
               //|| (strpos($url, '/buddypress/bp-core/js/') !== false)
@@ -98,6 +100,9 @@ function tag_code_to_minify_js($buffer) {
 
             //JS URLからJSコードの取得
             $js = js_url_to_js_minify_code( $url );
+            // if (includes_string($url, '/plugins/lity/dist/lity.min.js')) {
+            //   _v($js);
+            // }
             if ($js) {
               $start_name_url = $url.'-start';
               $start_url = 'performance.mark("'.$start_name_url.'");';
@@ -128,7 +133,7 @@ function tag_code_to_minify_js($buffer) {
         if ($js_code) {
           $js = minify_js($js_code);
           //JSON-LDスクリプトは除外
-          if ($js && !includes_string($script_tag, '<script type="application/ld+json">')) {
+          if ($js && !preg_match('/<script.*? type="application\/ld\+json".*?>/i', $script_tag)) {
             $start_name_in = 'inline-js-'.$i.'-start';
             $start_in = 'performance.mark("'.$start_name_in.'");';
             $end_name_in = 'inline-js-'.$i.'-end';
@@ -167,6 +172,9 @@ function js_url_to_js_minify_code( $url ) {
 
     //コメントの除去
     $js = remove_code_comments($js);
+    // if (!includes_string($url, '/plugins/lity/dist/lity.min.js')) {
+    //   _v($js);
+    // }
     //CSS内容を縮小化して書式を統一化する
     $js = minify_js($js);
     //コード内scriptタグの処理

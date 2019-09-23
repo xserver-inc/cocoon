@@ -26,6 +26,8 @@ update_theme_option(OP_JS_MINIFY_EXCLUDE_LIST);
 update_theme_option(OP_LAZY_LOAD_ENABLE);
 //Lazy Load除外文字列リスト
 update_theme_option(OP_LAZY_LOAD_EXCLUDE_LIST);
+//GoogleフォントのLazy Load
+update_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE);
 //WEBフォントのLazy Load
 update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 

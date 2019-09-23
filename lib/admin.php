@@ -162,6 +162,11 @@ function customize_admin_manage_posts_columns($columns) {
     unset($columns['date']);
   }
 
+  //投稿ID表示
+  if (is_admin_list_post_id_visible()) {
+    $columns['post-id'] = __( 'ID', THEME_NAME );
+  }
+
   //文字数表示
   if (is_admin_list_word_count_visible()) {
     $columns['word-count'] = __( '文字数', THEME_NAME );
@@ -189,6 +194,10 @@ add_action( 'manage_posts_custom_column', 'customize_admin_add_column', 10, 2 );
 add_action( 'manage_pages_custom_column', 'customize_admin_add_column', 10, 2 );
 if ( !function_exists( 'customize_admin_add_column' ) ):
 function customize_admin_add_column($column_name, $post_id) {
+  //投稿ID
+  if ( 'post-id' == $column_name ) {
+    $thum = $post_id;
+  }
 
   //文字数表示
   if ( 'word-count' == $column_name ) {
@@ -650,3 +659,23 @@ function tiny_mce_before_init_custom( $mceInit ) {
 }
 endif;
 
+//無害化したプレビューのテンプレートファイル呼び出し
+if ( !function_exists( 'get_sanitize_preview_template_part' ) ):
+function get_sanitize_preview_template_part($slug, $name = null){
+  restore_global_skin_theme_options();
+  // global $_THEME_OPTIONS;
+  // _v($_THEME_OPTIONS);
+  ob_start();
+  get_template_part($slug, $name);
+  $tag = ob_get_clean();
+  $tag = preg_replace('{<form.+?</form>}is', '', $tag);
+  echo $tag;
+  clear_global_skin_theme_options();
+}
+endif;
+
+if ( !function_exists( 'is_cocoon_settings_preview' ) ):
+function is_cocoon_settings_preview(){
+  return isset($_GET['preview']) && $_GET['preview'] == 'theme-settings';
+}
+endif;

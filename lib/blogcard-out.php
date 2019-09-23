@@ -30,6 +30,8 @@ endif;
 //本文中の外部URLをはてなブログカードタグに変更する
 if ( !function_exists( 'url_to_external_blog_card' ) ):
 function url_to_external_blog_card($the_content) {
+  // //ブロックエディターのブログカード用の本文整形
+  // $the_content = fix_blogcard_content($the_content);
   //1行にURLのみが期待されている行（URL）を全て$mに取得
   $res = preg_match_all('/^(<p>)?(<a[^>]+?>)?https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+(<\/a>)?(?!.*<br *\/?>).*?(<\/p>)?/im', $the_content,$m);
 
@@ -61,10 +63,9 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
   add_filter('the_content','url_to_external_blog_card', 11);//本文表示をフック
   add_filter('widget_text', 'url_to_external_blog_card', 11);//テキストウィジェットをフック
   add_filter('widget_text_pc_text', 'url_to_external_blog_card', 11);
-  add_filter('widget_classic_text', 'url_to_external_blog_card', 11);
+  //add_filter('widget_classic_text', 'url_to_external_blog_card', 11);
   add_filter('widget_text_mobile_text', 'url_to_external_blog_card', 11);
-  add_filter('the_category_content', 'url_to_external_blog_card', 11);
-  add_filter('the_tag_content', 'url_to_external_blog_card', 11);
+  add_filter('the_category_tag_content', 'url_to_external_blog_card', 11);
 }
 
 
@@ -125,8 +126,8 @@ function url_to_external_ogp_blogcard_tag($url){
   $url = ampersand_urldecode($url);
   $params = get_url_params($url);
   $user_title = !empty($params['title']) ? $params['title'] : null;
-  $user_snipet = !empty($params['snipet']) ? $params['snipet'] : null;
-  //$url = add_query_arg(array('title' => null, 'snipet' => null), $url);
+  $user_snippet = !empty($params['snippet']) ? $params['snippet'] : null;
+  //$url = add_query_arg(array('title' => null, 'snippet' => null), $url);
   //_v($url);
 
   $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
@@ -135,7 +136,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $error_image = get_site_screenshot_url($url);
 
   $image = $error_image;
-  $snipet = '';
+  $snippet = '';
   $error_rel_nofollow = ' rel="nofollow"';
 
 
@@ -164,7 +165,7 @@ function url_to_external_ogp_blogcard_tag($url){
         $title = $ogp->title;//タイトルの取得
 
       if ( isset( $ogp->description ) )
-        $snipet = $ogp->description;//ディスクリプションの取得
+        $snippet = $ogp->description;//ディスクリプションの取得
 
       if ( isset( $ogp->image ) )
         $image = $ogp->image;////画像URLの取得
@@ -182,7 +183,7 @@ function url_to_external_ogp_blogcard_tag($url){
       $title = $ogp->title;//タイトルの取得
 
     if ( isset( $ogp->description ) )
-      $snipet = $ogp->description;//ディスクリプションの取得
+      $snippet = $ogp->description;//ディスクリプションの取得
 
     if ( isset( $ogp->image ) )
       $image = $ogp->image;//画像URLの取得
@@ -207,16 +208,16 @@ function url_to_external_ogp_blogcard_tag($url){
 
   $image = strip_tags($image);
 
-  $snipet = get_content_excerpt( $snipet, 160 );
-  $snipet = strip_tags($snipet);
-  if ($user_snipet) {
-    $snipet = $user_snipet;
+  $snippet = get_content_excerpt( $snippet, 160 );
+  $snippet = strip_tags($snippet);
+  if ($user_snippet) {
+    $snippet = $user_snippet;
   }
-  $snipet = apply_filters( 'cocoon_blogcard_snipet', $snipet );
-  $snipet = apply_filters( 'cocoon_external_blogcard_snipet', $snipet );
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
+  $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet );
 
   //新しいタブで開く場合
-  $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
+  $target = is_external_blogcard_target_blank() ? ' target="_blank" rel="noopener"' : '';
 
   //コメント内でブログカード呼び出しが行われた際はnofollowをつける
   global $comment; //コメント内以外で$commentを呼び出すとnullになる
@@ -231,6 +232,7 @@ function url_to_external_ogp_blogcard_tag($url){
   $site_logo_tag = '<div class="blogcard-site external-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
   //サムネイルを取得できた場合
+  $image = apply_filters('get_external_blogcard_thumbnail_url', $image);
   if ( $image ) {
     $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
   }
@@ -242,7 +244,7 @@ function url_to_external_ogp_blogcard_tag($url){
       '<figure class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content external-blogcard-content">'.
         '<div class="blogcard-title external-blogcard-title">'.$title.'</div>'.
-        '<div class="blogcard-snipet external-blogcard-snipet">'.$snipet.'</div>'.
+        '<div class="blogcard-snippet external-blogcard-snippet">'.$snippet.'</div>'.
       '</div>'.
       '<div class="blogcard-footer external-blogcard-footer cf">'.$site_logo_tag.'</div>'.
     '</div>'.

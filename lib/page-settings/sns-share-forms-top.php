@@ -73,6 +73,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 <?php generate_checkbox_tag(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE, is_top_pinterest_share_button_visible(), __( 'Pinterest', THEME_NAME )); ?>
               </li>
               <li>
+                <?php generate_checkbox_tag(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE, is_top_linkedin_share_button_visible(), __( 'LinkedIn', THEME_NAME )); ?>
+              </li>
+              <li>
                 <?php generate_checkbox_tag(OP_TOP_COPY_SHARE_BUTTON_VISIBLE,  is_top_copy_share_button_visible(), __( 'タイトルとURLをコピー', THEME_NAME )); ?>
               </li>
             </ul>

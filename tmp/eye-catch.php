@@ -31,7 +31,7 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
     }
 
   } else {
-    $url = get_ogp_home_image_url();
+    $url = get_singular_eyecatch_image_url();
     $size = get_image_width_and_height($url);
     $width = isset($size['width']) ? $size['width'] : 800;
     $height = isset($size['height']) ? $size['height'] : 600;

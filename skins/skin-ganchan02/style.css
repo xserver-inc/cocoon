@@ -44,7 +44,7 @@ main.main {
     font-weight: 500;
 }
 
-.entry-title, .archive-title {
+.entry-title, #editor .entry-title, .archive-title {
     padding: 20px;
     margin:38px 0;
     background-color: #F57388;
@@ -142,18 +142,8 @@ main.main, div.sidebar {
     font-size: 16px;
 }
 
-.widget-sidebar h3 {
-    margin:0px;
-}
 .widget_item_ranking h3 {
     margin: 16px 0;
-}
-
-
-
-.widget-sidebar a {
-    border: 1px solid #ddd;
-    border-top: 0;
 }
 
 .widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a {

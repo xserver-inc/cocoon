@@ -10,7 +10,7 @@ global $_MENU_CAPTION;
 global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
 
-<?php if (has_nav_menu( 'navi-header' )): ?>
+<?php if (has_nav_menu( NAV_MENU_HEADER ) || has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )): ?>
   <!-- メニューボタン -->
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
@@ -23,18 +23,34 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
       <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"></label>
       <?php //ヘッダーナビ
       ob_start();
-      wp_nav_menu(
-        array (
-          //カスタムメニュー名
-          'theme_location' => 'navi-header',
-          //ul 要素に適用するCSS クラス名
-          'menu_class' => 'menu-drawer',
-          //コンテナを表示しない
-          'container' => false,
-          //カスタムメニューを設定しない際に固定ページでメニューを作成しない
-          'fallback_cb' => false,
-        )
-      );
+      if (has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )) {
+        wp_nav_menu(
+          array (
+            //カスタムメニュー名
+            'theme_location' => NAV_MENU_MOBILE_SLIDE_IN,
+            //ul 要素に適用するCSS クラス名
+            'menu_class' => 'menu-drawer',
+            //コンテナを表示しない
+            'container' => false,
+            //カスタムメニューを設定しない際に固定ページでメニューを作成しない
+            'fallback_cb' => false,
+          )
+        );
+      } else {
+        wp_nav_menu(
+          array (
+            //カスタムメニュー名
+            'theme_location' => NAV_MENU_HEADER,
+            //ul 要素に適用するCSS クラス名
+            'menu_class' => 'menu-drawer',
+            //コンテナを表示しない
+            'container' => false,
+            //カスタムメニューを設定しない際に固定ページでメニューを作成しない
+            'fallback_cb' => false,
+          )
+        );
+      }
+
       $wp_nav_menu = ob_get_clean();
       //ドロワーメニュー用のグローバルナビからIDを削除（IDの重複HTML5エラー対応）
       $wp_nav_menu = preg_replace('/ id="[^"]+?"/i', '', $wp_nav_menu);

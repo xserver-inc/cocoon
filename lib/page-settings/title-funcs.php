@@ -98,13 +98,7 @@ function get_singular_page_title_format(){
   return get_theme_option(OP_SINGULAR_PAGE_TITLE_FORMAT, 'pagetitle_sitename');
 }
 endif;
-//簡略化したサイト名
-define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
-if ( !function_exists( 'get_simplified_site_name' ) ):
-function get_simplified_site_name(){
-  return stripslashes_deep(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
-}
-endif;
+
 //投稿・固定ページタイトルのキャプションを取得する
 if ( !function_exists( 'get_singular_title_caption' ) ):
 function get_singular_title_caption($post){
@@ -150,15 +144,20 @@ function get_category_page_title_format(){
   return get_theme_option(OP_CATEGORY_PAGE_TITLE_FORMAT, 'category_sitename');
 }
 endif;
+
 //カテゴリーページタイトルのキャプションを取得する
 if ( !function_exists( 'get_category_title_caption' ) ):
 function get_category_title_caption($category){
+  $site_name = get_simplified_site_name();
+  if (!$site_name) {
+    $site_name = get_bloginfo('name');
+  }
   switch (get_category_page_title_format()) {
     case 'category_sitename':
-      $title = $category->name.get_title_separator_caption().get_bloginfo('name');
+      $title = $category->name.get_title_separator_caption().$site_name;
       break;
     case 'sitename_category':
-      $title = get_bloginfo('name').get_title_separator_caption().$category->name;
+      $title = $site_name.get_title_separator_caption().$category->name;
       break;
     default:
       $title = $category->name;
@@ -174,6 +173,14 @@ define('OP_META_DESCRIPTION_TO_CATEGORY', 'meta_description_to_category');
 if ( !function_exists( 'is_meta_description_to_category' ) ):
 function is_meta_description_to_category(){
   return get_theme_option(OP_META_DESCRIPTION_TO_CATEGORY, 1);
+}
+endif;
+
+//簡略化したサイト名
+define('OP_SIMPLIFIED_SITE_NAME', 'simplified_site_name');
+if ( !function_exists( 'get_simplified_site_name' ) ):
+function get_simplified_site_name(){
+  return stripslashes_deep(trim(get_theme_option(OP_SIMPLIFIED_SITE_NAME)));
 }
 endif;
 

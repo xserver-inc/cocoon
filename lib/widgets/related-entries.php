@@ -24,14 +24,21 @@ class RelatedEntryWidgetItem extends WP_Widget {
   function widget($args, $instance) {
     extract( $args );
     //タイトル名を取得
-    $title = apply_filters( 'widget_title_related', empty($instance['title']) ? '' : $instance['title'] );
+    $title = apply_filters( 'related_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示数を取得
-    $entry_count = apply_filters( 'widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
-    $entry_type = apply_filters( 'widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    $entry_count = apply_filters( 'related_entries_widget_entry_count', empty($instance['entry_count']) ? EC_DEFAULT : $instance['entry_count'] );
+    //表示タイプ
+    $entry_type = apply_filters( 'related_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
+    //関連付け
+    $taxonomy = apply_filters( 'related_entries_widget_taxonomy', empty($instance['taxonomy']) ? 'category' : $instance['taxonomy'] );
+    //タイトルを太字にする
+    $is_bold = apply_filters( 'related_entries_widget_is_bold', empty($instance['is_bold']) ? 0 : $instance['is_bold'] );
+    //矢印表示
+    $is_arrow_visible = apply_filters( 'related_entries_widget_is_arrow_visible', empty($instance['is_arrow_visible']) ? 0 : $instance['is_bold'] );
     //除外カテゴリーIDを取得
     $exclude_cat_ids = empty($instance['exclude_cat_ids']) ? array() : $instance['exclude_cat_ids'];
-    $exclude_cat_ids = apply_filters( 'widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
+    $exclude_cat_ids = apply_filters( 'related_entries_widget_exclude_cat_ids', $exclude_cat_ids, $instance, $this->id_base );
 
     //現在のカテゴリを取得
     $categories = array();
@@ -45,11 +52,23 @@ class RelatedEntryWidgetItem extends WP_Widget {
       }
     }
     //_v($exclude_cat_ids);
+    //タグの設定
+    $tags = array();
+    if ($taxonomy == 'post_tag') {
+      global $post;
+      $tags = get_the_tag_ids($post->ID);
+      // _v($tags);
+      // _v($post->ID);
+    }
+    //タグがない場合はカテゴリを表示
+    if (!$tags) {
+      $taxonomy = 'category';
+    }
 
     //classにwidgetと一意となるクラス名を追加する
     if ( is_single() && get_category_ids() ):
       echo $args['before_widget'];
-      if ($title !== null) {
+      if (!is_null($title)) {
         echo $args['before_title'];
         if ($title) {
           echo $title;//タイトルが設定されている場合は使用する
@@ -64,10 +83,13 @@ class RelatedEntryWidgetItem extends WP_Widget {
       $atts = array(
         'entry_count' => $entry_count,
         'cat_ids' => $categories,
-        'entry_type' => $entry_type,
+        'tag_ids' => $tags,
+        'type' => $entry_type,
+        'bold' => $is_bold,
+        'arrow' => $is_arrow_visible,
         'include_children' => 0,
         'post_type' => 'post',
-        'taxonomy' => 'category',
+        'taxonomy' => $taxonomy,
         'random' => 1,
         'exclude_cat_ids' => $exclude_cat_ids,
       );
@@ -81,9 +103,17 @@ class RelatedEntryWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['entry_count'] = strip_tags($new_instance['entry_count']);
-    $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+    if (isset($new_instance['title']))
+      $instance['title'] = strip_tags($new_instance['title']);
+    if (isset($new_instance['entry_count']))
+      $instance['entry_count'] = strip_tags($new_instance['entry_count']);
+    if (isset($new_instance['entry_type']))
+      $instance['entry_type'] = strip_tags($new_instance['entry_type']);
+    if (isset($new_instance['taxonomy']))
+      $instance['taxonomy'] = strip_tags($new_instance['taxonomy']);
+
+    $instance['is_bold'] = !empty($new_instance['is_bold']) ? 1 : 0;
+    $instance['is_arrow_visible'] = !empty($new_instance['is_arrow_visible']) ? 1 : 0;
     if (isset($new_instance['exclude_cat_ids'])){
       $instance['exclude_cat_ids'] = $new_instance['exclude_cat_ids'];
     } else {
@@ -97,18 +127,26 @@ class RelatedEntryWidgetItem extends WP_Widget {
         'title'   => '',
         'entry_count' => EC_DEFAULT,
         'entry_type'  => ET_DEFAULT,
+        'taxonomy'  => 'category',
+        'is_bold'  => 0,
+        'is_arrow_visible'  => 0,
         'exclude_cat_ids' => array(),
       );
     }
     $title   = '';
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
+    $taxonomy = 'category';
     if (isset($instance['title']))
       $title = esc_attr($instance['title']);
     if (isset($instance['entry_count']))
       $entry_count = esc_attr($instance['entry_count']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
+    if (isset($instance['taxonomy']))
+      $taxonomy = esc_attr($instance['taxonomy']);
+    $is_bold = empty($instance['is_bold']) ? 0 : 1;
+    $is_arrow_visible = empty($instance['is_arrow_visible']) ? 0 : 1;
 
     $exclude_cat_ids = isset($instance['exclude_cat_ids']) ? $instance['exclude_cat_ids'] : array();
     ?>
@@ -126,14 +164,38 @@ class RelatedEntryWidgetItem extends WP_Widget {
       </label>
       <input class="widefat" id="<?php echo $this->get_field_id('entry_count'); ?>" name="<?php echo $this->get_field_name('entry_count'); ?>" type="number" value="<?php echo $entry_count ? $entry_count : EC_DEFAULT; ?>" />
     </p>
-    <?php //表示タイプフォーム ?>
+    <?php //表示タイプ ?>
     <p>
-      <label for="<?php echo $this->get_field_id('entry_type'); ?>">
-        <?php _e( '表示タイプ', THEME_NAME ) ?>
-      </label><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_DEFAULT; ?>" <?php echo ( ($entry_type == ET_DEFAULT || !$entry_type ) ? ' checked="checked"' : ""); ?> /><?php _e( 'デフォルト', THEME_NAME ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB; ?>"<?php echo ($entry_type == ET_LARGE_THUMB ? ' checked="checked"' : ""); ?> /><?php _e( '大きなサムネイル', THEME_NAME ) ?><br />
-      <input class="widefat" id="<?php echo $this->get_field_id('entry_type'); ?>" name="<?php echo $this->get_field_name('entry_type'); ?>"  type="radio" value="<?php echo ET_LARGE_THUMB_ON; ?>"<?php echo ($entry_type == ET_LARGE_THUMB_ON ? ' checked="checked"' : ""); ?> /><?php _e( 'タイトルを重ねた大きなサムネイル', THEME_NAME ) ?><br />
+      <?php
+      generate_label_tag($this->get_field_id('entry_type'), __('表示タイプ', THEME_NAME) );
+      echo '<br>';
+      $options = get_widget_entry_type_options();
+      generate_radiobox_tag($this->get_field_name('entry_type'), $options, $entry_type);
+      ?>
+    </p>
+    <?php //関連付け ?>
+    <p>
+      <?php
+      generate_label_tag($this->get_field_id('taxonomy'), __('関連付け', THEME_NAME) );
+      echo '<br>';
+      $options = array(
+        'category' => 'カテゴリー',
+        'post_tag' => 'タグ（無い場合はカテゴリ表示）',
+      );
+      generate_radiobox_tag($this->get_field_name('taxonomy'), $options, $taxonomy);
+      ?>
+    </p>
+    <?php //タイトルを太字にする ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_bold') , $is_bold, __( 'タイトルを太字にする', THEME_NAME ));
+      ?>
+    </p>
+    <?php //矢印表示 ?>
+    <p>
+      <?php
+        generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( '矢印表示', THEME_NAME ));
+      ?>
     </p>
     <?php //除外カテゴリーID ?>
       <label>

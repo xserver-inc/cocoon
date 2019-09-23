@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?cavqpi');
-  src:  url('fonts/icomoon.eot?cavqpi#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?cavqpi') format('truetype'),
-    url('fonts/icomoon.woff?cavqpi') format('woff'),
-    url('fonts/icomoon.svg?cavqpi#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?36esek');
+  src:  url('fonts/icomoon.eot?36esek#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?36esek') format('truetype'),
+    url('fonts/icomoon.woff?36esek') format('woff'),
+    url('fonts/icomoon.svg?36esek#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,6 +35,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-note-logo:before {
+  content: "\e905";
+}
+.icon-rakuten-logo:before {
+  content: "\e903";
+}
+.icon-rakuten-room-logo:before {
+  content: "\e904";
+}
 .icon-slack-logo:before {
   content: "\e900";
 }
@@ -58,15 +67,6 @@
 }
 .icon-hatebu-logo:before {
   content: "\e931";
-}
-.icon-instagram-logo:before {
-  content: "\e932";
-}
-.icon-instagram-logo-new:before {
-  content: "\e933";
-}
-.icon-instagram-logo-new-sq:before {
-  content: "\e934";
 }
 .icon-line-logo:before {
   content: "\e935";
@@ -104,6 +104,9 @@
 .icon-hatena:before {
   content: "\e916";
 }
+.icon-copy:before {
+  content: "\e901";
+}
 .icon-facebook:before {
   content: "\e919";
 }
@@ -125,7 +128,7 @@
 .icon-googleplus:before {
   content: "\ea8b";
 }
-.icon-instagram-new:before {
+.icon-instagram-logo:before {
   content: "\ea92";
 }
 .icon-github-logo:before {
@@ -142,4 +145,7 @@
 }
 .icon-codepen-logo:before {
   content: "\eae8";
+}
+.icon-linkedin:before {
+  content: "\eacb";
 }

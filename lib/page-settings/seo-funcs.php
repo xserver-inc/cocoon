@@ -152,3 +152,11 @@ function get_the_date_tags(){
   return $date_tags;
 }
 endif;
+
+//JSON-LDを出力する
+define('OP_JSON_LD_TAG_ENABLE', 'json_ld_tag_enable');
+if ( !function_exists( 'is_json_ld_tag_enable' ) ):
+function is_json_ld_tag_enable(){
+  return get_theme_option(OP_JSON_LD_TAG_ENABLE, 1);
+}
+endif;

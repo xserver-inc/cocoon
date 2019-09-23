@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'スタイルシートURL：', THEME_NAME ).get_remove_home_url(get_stylesheet_directory_uri()).PHP_EOL;
     //子テーマ
     if (is_child_theme()) {
-      $all .= __( '子テーマスタイル：', THEME_NAME ).get_remove_home_url(get_stylesheet_directory_uri().'/style.css').PHP_EOL;
+      $all .= __( '子テーマスタイル：', THEME_NAME ).get_remove_home_url(CHILD_THEME_STYLE_CSS_URL).PHP_EOL;
     }
     //スキン
     if (get_skin_url()) {
@@ -60,7 +60,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= $sep;
 
     //親テーマ
-    $file = get_template_directory().'/style.css';
+    $file = PARENT_THEME_STYLE_CSS_FILE;
     $info = get_theme_info($file);
     if ($info) {
       if (isset($info['theme_name'])) {
@@ -87,7 +87,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     //子テーマ
     if (is_child_theme()) {
-      $file = get_stylesheet_directory().'/style.css';
+      $file = CHILD_THEME_STYLE_CSS_FILE;
       $info = get_theme_info($file);
       if ($info) {
         if (isset($info['theme_name'])) {
@@ -104,6 +104,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     $all .= __( 'Gutenberg：', THEME_NAME ).intval(is_gutenberg_editor_enable()).PHP_EOL;
     $all .= __( 'AMP：', THEME_NAME ).intval(is_amp_enable()).PHP_EOL;
     $all .= __( 'PWA：', THEME_NAME ).intval(is_pwa_enable()).PHP_EOL;
+    $all .= __( 'Auto Post Thumbnail：', THEME_NAME ).intval(is_auto_post_thumbnail_enable()).PHP_EOL;
     $all .= __( 'ホームイメージ：', THEME_NAME ).get_remove_home_url(get_ogp_home_image_url()).PHP_EOL;
     $all .= $sep;
 

@@ -129,6 +129,16 @@ function generate_html_tags_is($value){
   htmlTags[7].before = '<?php echo $before; ?>';
   htmlTags[7].after = '<?php echo $after; ?>';
 
+  <?php //ふりがな
+  $before = '<ruby>';
+  $after = '<rt>'.__( 'ふりがな', THEME_NAME ).'</rt></ruby>';
+  ?>
+  htmlTags[8] = new Array();
+  htmlTags[8].title  = '<?php echo __( 'ふりがな（ルビ）', THEME_NAME ); ?>';
+  htmlTags[8].tag = '<?php echo $before.__( '振り仮名', THEME_NAME ).$after; ?>';
+  htmlTags[8].before = '<?php echo $before; ?>';
+  htmlTags[8].after = '<?php echo $after; ?>';
+
   <?php
 
   echo '</script>';

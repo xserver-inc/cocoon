@@ -31,14 +31,11 @@ class PcAdWidgetItem extends WP_Widget {
     $is_label_visible = apply_filters( 'widget_is_label_visible', !empty($instance['is_label_visible']) ? $instance['is_label_visible'] : 0 );
 
     if ( !is_404() && //404ページでないとき
-         is_all_ads_visible() ):
+         is_ads_visible() ){
       echo $args['before_widget'];
       get_template_part_with_ad_format($format, 'pc-ad-widget', $is_label_visible, $ad);
-       ?>
-
-      <?php echo $args['after_widget'];
-    endif //!is_404 ?>
-  <?php
+      echo $args['after_widget'];
+    } //!is_404
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
@@ -55,9 +52,11 @@ class PcAdWidgetItem extends WP_Widget {
         'is_label_visible' => 1,
       );
     }
-    $ad = esc_attr($instance['ad_text']);
-    $format = esc_attr($instance['ad_format']);
-    $is_label_visible = esc_attr(!empty($instance['is_label_visible']) ? 1 : 0);
+    $ad = isset($instance['ad_text']) ? $instance['ad_text'] : '';
+    $ad = esc_attr($ad);
+    $format = isset($instance['ad_format']) ? $instance['ad_format'] : '';
+    $format = esc_attr($format);
+    $is_label_visible = !empty($instance['is_label_visible']) ? 1 : 0;
 ?>
 <?php //広告入力フォーム ?>
 <p>
