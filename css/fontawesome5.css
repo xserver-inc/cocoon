@@ -1,7 +1,10 @@
 .comment-box::before,
 .ok-box::before,
 .blank-box.bb-comment::before,
-.blank-box.bb-ok::before {
+.blank-box.bb-ok::before,
+.fab-ok::before,
+.fab-lightbulb::before,
+.fab-clock::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
@@ -10,7 +13,7 @@
   content: "\f075";
 }
 
-.ok-box::before {
+.ok-box::before, .fab-ok::before {
   content: "\f111";
 }
 
@@ -49,12 +52,60 @@
 .bct-together .blogcard::before,
 .bct-detail .blogcard::before,
 .bct-official .blogcard::before,
-.bct-dl .blogcard::before {
+.bct-dl .blogcard::before,
+.fab-info-circle::before,
+.fab-question-circle::before,
+.fab-exclamation-circle::before,
+.fab-pencil::before,
+.fab-edit::before,
+.fab-comment::before,
+.fab-bad::before,
+.fab-graduation-cap::before,
+.fab-book::before,
+.fab-envelope::before,
+.fab-flag::before,
+.fab-ban::before,
+.fab-bolt::before,
+.fab-calendar::before,
+.fab-cutlery::before,
+.fab-heart::before,
+.list-heart li::before,
+.fab-camera::before,
+.fab-search::before,
+.fab-folder::before,
+.fab-tag::before,
+.fab-trophy::before,
+.fab-car::before,
+.fab-truck::before,
+.fab-bicycle::before,
+.fab-motorcycle::before,
+.fab-bus::before,
+.fab-plane::before,
+.fab-train::before,
+.fab-subway::before,
+.fab-taxi::before,
+.fab-file-text::before,
+.fab-jpy::before,
+.fab-usd::before,
+.fab-eur::before,
+.fab-ship::before,
+.fab-thumbs-up::before,
+.fab-thumbs-down::before,
+.fab-check::before,
+.list-check li::before,
+.fab-bell::before,
+.fab-star::before,
+.list-star li::before,
+.fab-bookmark::before,
+.fab-download::before,
+.fab-coffee::before,
+.fab-user::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
-.memo-box::before {
+.memo-box::before,
+.fab-pencil::before {
   content: "\f303";
 }
 
@@ -62,7 +113,16 @@
   content: "\f303  MEMO";
 }
 
-.blank-box.bb-amazon::before {
+.fab-cutlery::before {
+  content: "\f2e7";
+}
+
+.blank-box.bb-amazon::before,
+.fab-amazon::before,
+.fab-btc::before,
+.fab-apple::before,
+.fab-android::before,
+.fab-wordpress::before {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }

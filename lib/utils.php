@@ -331,7 +331,7 @@ if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
   if (!is_web_font_lazy_load_enable() || is_admin()) {
     wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
-    if (is_site_icon_font_font_awesome_5()) {
+    if (is_site_icon_font_font_awesome_5() && !is_admin()) {
       wp_enqueue_style( 'font-awesome5-update-style', get_template_directory_uri().'/css/fontawesome5.css' );
     }
   }
