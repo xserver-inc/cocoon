@@ -19,7 +19,7 @@ endif;
 define('OP_ADMIN_INDEX_PV_VISIBLE', 'admin_index_pv_visible');
 if ( !function_exists( 'is_admin_index_pv_visible' ) ):
 function is_admin_index_pv_visible(){
-  return get_theme_option(OP_ADMIN_INDEX_PV_VISIBLE);
+  return get_theme_option(OP_ADMIN_INDEX_PV_VISIBLE, 1);
 }
 endif;
 
