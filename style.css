@@ -4951,6 +4951,10 @@ div .has-white-background-color {
     flex-wrap: nowrap;
   }
 }
+.wp-block-media-text__content {
+  padding: 0 1em;
+}
+
 /************************************
 ** SNSフォローボタン
 ************************************/
