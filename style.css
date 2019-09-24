@@ -759,6 +759,17 @@ img.emoji {
   background-color: #fff;
 }
 
+.navi-in a {
+  position: relative;
+}
+.navi-in .has-icon {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  display: inline-block;
+  opacity: 0.7;
+  font-size: 11px;
+}
 .navi-in > ul {
   padding: 0;
   margin: 0;
@@ -790,17 +801,6 @@ img.emoji {
 .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
   width: 100%;
 }
-.navi-in > ul > .menu-item-has-children {
-  position: relative;
-}
-.navi-in > ul > .menu-item-has-children > a::after {
-  content: "";
-  font-family: FontAwesome;
-  position: absolute;
-  right: 3px;
-  top: 0;
-  font-size: 12px;
-}
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;
@@ -815,17 +815,6 @@ img.emoji {
 }
 .navi-in > ul .sub-menu li {
   width: auto;
-}
-.navi-in > ul .sub-menu .menu-item-has-children {
-  position: relative;
-}
-.navi-in > ul .sub-menu .menu-item-has-children > a::after {
-  content: "";
-  font-family: FontAwesome;
-  position: absolute;
-  right: 3px;
-  top: 0;
-  font-size: 12px;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
@@ -946,14 +935,6 @@ img.emoji {
 .entry-card-info > * {
   font-size: 0.7em;
   padding: 2px;
-}
-
-.post-comment-count::before {
-  content: "";
-}
-
-.entry-category::before {
-  content: "";
 }
 
 .entry-card-meta .entry-card-categorys {
@@ -1090,19 +1071,6 @@ img.emoji {
 
 .related-entry-post-date {
   margin-right: 0;
-}
-
-.post-date::before {
-  content: "";
-}
-
-.post-update::before {
-  content: "";
-}
-
-.amp-back::before {
-  content: "";
-  padding-right: 0;
 }
 
 /************************************
@@ -1477,9 +1445,6 @@ img.emoji {
   border-radius: 2px;
   word-break: break-all;
 }
-.cat-link::before {
-  content: "";
-}
 .cat-link:hover {
   opacity: 0.5;
   color: #fff;
@@ -1496,9 +1461,6 @@ img.emoji {
   border: 1px solid #999;
   border-radius: 2px;
   word-break: break-all;
-}
-.tag-link::before, .comment-reply-link::before {
-  content: "";
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
@@ -1661,11 +1623,6 @@ blockquote::after {
 /*投稿者*/
 .author-info .post-author {
   font-size: 14px;
-}
-
-.author-info::before {
-  content: "";
-  padding-right: 0;
 }
 
 /************************************
@@ -2104,9 +2061,6 @@ label.screen-reader-text {
 .tagcloud a .tag-caption {
   word-break: break-all;
 }
-.tagcloud a .tag-caption::before {
-  content: "";
-}
 .tagcloud a .tag-link-count {
   margin-left: 8px;
 }
@@ -2424,9 +2378,6 @@ label.screen-reader-text {
 
 .recent-comment-article {
   margin-top: 3px;
-}
-.recent-comment-article::before {
-  content: "";
 }
 
 .recent-comment-content {
@@ -5186,16 +5137,6 @@ div .has-white-background-color {
 .pagination .current {
   background-color: #eee;
 }
-.pagination .prev::before {
-  content: "";
-  font-family: FontAwesome;
-  padding-right: 3px;
-}
-.pagination .next::before {
-  content: "";
-  font-family: FontAwesome;
-  padding-left: 3px;
-}
 .pagination a:hover {
   background-color: #f5f8fa;
   transition: all 0.7s;
@@ -5213,8 +5154,6 @@ div .has-white-background-color {
   line-height: 46px;
   text-align: center;
   border-radius: 4px;
-  display: inline-flex;
-  justify-content: center;
 }
 
 .page-numbers.dots {
@@ -5294,9 +5233,10 @@ div .has-white-background-color {
   line-height: 1.2;
   font-size: 0.8em;
 }
-.pager-post-navi a::before {
+.pager-post-navi a .iconfont {
   font-size: 1.8em;
   color: #ccc;
+  padding: 8px;
 }
 .pager-post-navi a figure {
   min-width: 120px;
@@ -5306,22 +5246,12 @@ div .has-white-background-color {
   flex-direction: row;
   padding-left: 5px;
 }
-.pager-post-navi a.prev-post::before {
-  content: "";
-  margin-right: 5px;
-  padding-right: 0;
-}
 .pager-post-navi a.prev-post .prev-post-title {
   margin-left: 10px;
 }
 .pager-post-navi a.next-post {
   flex-direction: row-reverse;
   padding-right: 5px;
-}
-.pager-post-navi a.next-post::before {
-  content: "";
-  margin-left: 5px;
-  padding-right: 0;
 }
 .pager-post-navi a.next-post .next-post-title {
   margin-right: 10px;
@@ -6163,10 +6093,6 @@ div.sbs-think .speech-balloon::after {
   color: #c9171e;
 }
 
-.item-review::before {
-  content: "";
-}
-
 .acquired-date {
   font-size: 0.9em;
 }
@@ -6552,10 +6478,6 @@ div.fb-like-mobile {
   text-align: center;
   width: 100%;
 }
-.mobile-menu-buttons .menu-icon::before {
-  font-family: FontAwesome;
-  font-size: 1em;
-}
 .mobile-menu-buttons .menu-caption {
   font-size: 9px;
   text-align: center;
@@ -6603,46 +6525,6 @@ div.fb-like-mobile {
 
 .fa.menu-icon {
   font: inherit;
-}
-
-.navi-menu-icon::before {
-  content: '\f0c9';
-}
-
-.home-menu-icon::before {
-  content: '\f015';
-}
-
-.search-menu-icon::before {
-  content: '\f002';
-}
-
-.top-menu-icon::before {
-  content: '\f062';
-}
-
-.toc-menu-icon::before {
-  content: '\f0ca';
-}
-
-.sidebar-menu-icon::before {
-  content: '\f03b';
-}
-
-.share-menu-icon::before {
-  content: '\f1e0';
-}
-
-.follow-menu-icon::before {
-  content: '\f004';
-}
-
-.prev-menu-icon::before {
-  content: '\f060';
-}
-
-.next-menu-icon::before {
-  content: '\f061';
 }
 
 /*閉じる用の薄黒カバー*/
@@ -6769,10 +6651,6 @@ div.fb-like-mobile {
   display: block;
   cursor: pointer;
   text-align: center;
-}
-.menu-close-button::before {
-  content: "";
-  padding: 0;
   font-size: 2em;
 }
 
@@ -7254,9 +7132,6 @@ div.fb-like-mobile {
   color: #ccc;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
-}
-.search-submit::before {
-  content: "";
 }
 
 .timeline-box {

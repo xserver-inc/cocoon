@@ -31,19 +31,6 @@ $pagination_wh: 46px;
     background-color: $current_bgc;
   }
 
-  .prev::before{
-    @include fontawesome('\f104');
-    font-family: FontAwesome;
-    padding-right: 3px;
-  }
-
-  .next::before{
-    @include fontawesome('\f105');
-    font-family: FontAwesome;
-    padding-left: 3px;
-  }
-
-
   a{
     &:hover {
       @include bgc_hover;
@@ -53,8 +40,6 @@ $pagination_wh: 46px;
 
 .page-numbers{
   @include pagination_button;
-  display: inline-flex;
-  justify-content: center;
 }
 
 .page-numbers.dots {

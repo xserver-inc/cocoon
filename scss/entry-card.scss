@@ -72,40 +72,12 @@
   padding: 2px;
 }
 
-.post-comment-count::before{
-  @include fontawesome('\f0e5');
-}
-
-// .entry-card-meta{
-//   //margin-top: 0.3em;
-//   // text-overflow: ellipsis;
-//   // white-space: nowrap;
-//   // width: 100%;
-//   div{
-//     display: inline;
-//   }
-
-// }
-
-// .published::before,
-// .category::before{
-//   margin-right: 2px;
-// }
-
 .entry-card-meta{
   @extend %card_meta;
 }
 
 .entry-category{
   @extend %entry_category;
-  // padding: 2px;
-  // //margin-right: 8px;
-  // display: inline;
-  // font-size: 0.7em;
-}
-
-.entry-category::before{
-  @include fontawesome('\f07b');
 }
 
 .entry-card-meta .entry-card-categorys{

@@ -369,9 +369,6 @@ label.screen-reader-text{
 
 .recent-comment-article{
   margin-top: 3px;
-  &::before{
-    @include fontawesome('\f0c1');
-  }
 }
 
 .recent-comment-content {

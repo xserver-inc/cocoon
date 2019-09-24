@@ -22,7 +22,7 @@ if (is_amp()) {
 <!-- 目次へボタン -->
 <li class="toc-menu-button menu-button">
   <a class="go-to-toc-common toc-menu-a menu-button-in"<?php echo $on; ?>>
-    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
+    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"><div class="fa fa-list-ul" aria-hidden="true"></div></div>
     <div class="cop-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '目次へ', THEME_NAME ); ?></div>
   </a>
 </li>

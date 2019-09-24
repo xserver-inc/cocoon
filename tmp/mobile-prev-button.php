@@ -14,7 +14,7 @@ $prevpost = get_adjacent_post(false, '', true); //前の記事 ?>
 <!-- 前へボタン -->
 <li class="prev-menu-button menu-button">
   <a href="<?php echo esc_url(get_the_permalink($prevpost->ID)); ?>" title="<?php echo esc_attr(get_the_title($prevpost->ID)); ?>" class="menu-button-in">
-    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
+    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"><div class="fa fa-arrow-left" aria-hidden="true"></div></div>
     <div class="prev-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '前へ', THEME_NAME ); ?></div>
   </a>
 </li>

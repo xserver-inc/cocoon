@@ -13,8 +13,8 @@ $display_none = is_seo_date_type_none() && !is_amp() ? ' display-none' : null; ?
   echo get_the_date_tags(); ?>
 
   <?php if (is_amp() && is_user_administrator()): ?>
-    <span class="amp-back faw">
-      <a href="<?php the_permalink() ?>"><?php _e( '通常ページへ', THEME_NAME ) ?></a>
+    <span class="amp-back">
+    <span class="fa fa-bolt" aria-hidden="true"></span> <a href="<?php the_permalink() ?>"><?php _e( '通常ページへ', THEME_NAME ) ?></a>
     </span>
 
   <?php endif ?>

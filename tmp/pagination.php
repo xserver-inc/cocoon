@@ -56,7 +56,7 @@ if($pages != 1) {
     'total' => $wp_query->max_num_pages,
     'mid_size' => 2,
     'current' => ($paged ? $paged : 1),
-    'prev_text' => '',
-    'next_text' => '',
+    'prev_text' => '<span class="fa fa-angle-left" aria-hidden="true"></span>',
+    'next_text' => '<span class="fa fa-angle-right" aria-hidden="true"></span>',
   )); ?>
 </div><!-- /.pagination -->

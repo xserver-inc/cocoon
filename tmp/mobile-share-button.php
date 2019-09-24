@@ -16,7 +16,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'share-menu-icon'; ?>
 <li class="share-menu-button menu-button">
   <input id="share-menu-input" type="checkbox" class="display-none">
   <label id="share-menu-open" class="menu-open menu-button-in" for="share-menu-input">
-    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
+    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"><div class="fa fa-share-alt" aria-hidden="true"></div></div>
     <div class="share-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'シェア', THEME_NAME ); ?></div>
   </label>
   <label class="display-none" id="share-menu-close" for="share-menu-input"></label>

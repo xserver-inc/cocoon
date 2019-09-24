@@ -32,16 +32,3 @@
 .related-entry-post-date{
   margin-right: 0;
 }
-
-.post-date::before{
-  @include fontawesome('\f017');
-}
-
-.post-update::before{
-  @include fontawesome('\f1da');
-}
-
-.amp-back::before{
-  @include fontawesome('\f0e7');
-  padding-right: 0;
-}

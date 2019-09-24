@@ -22,8 +22,8 @@ if (get_the_author()) {
 }
  ?>
 <div class="footer-meta">
-  <div class="author-info faw fa5f">
-    <a href="<?php echo $url; ?>" class="author-link">
+  <div class="author-info">
+    <span class="fa fa-pencil" aria-hidden="true"></span> <a href="<?php echo $url; ?>" class="author-link">
       <span class="post-author vcard author" itemprop="editor author creator copyrightHolder" itemscope itemtype="https://schema.org/Person">
         <span class="author-name fn" itemprop="name"><?php echo $name; ?></span>
       </span>

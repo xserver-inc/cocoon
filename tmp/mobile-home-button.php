@@ -13,7 +13,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'home-menu-icon'; ?>
 <!-- ホームボタン -->
 <li class="home-menu-button menu-button">
   <a href="<?php echo esc_url(get_home_url()); ?>" class="menu-button-in">
-    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
+    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"><div class="fa fa-home" aria-hidden="true"></div></div>
     <div class="home-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'ホーム', THEME_NAME ); ?></div>
   </a>
 </li>

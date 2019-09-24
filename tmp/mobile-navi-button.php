@@ -15,12 +15,12 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
-      <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
+      <div class="<?php echo esc_attr($icon_class); ?> menu-icon"><div class="fa fa-bars" aria-hidden="true"></div></div>
       <div class="navi-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'メニュー', THEME_NAME ); ?></div>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
     <div id="navi-menu-content" class="navi-menu-content menu-content">
-      <label class="navi-menu-close-button menu-close-button faw" for="navi-menu-input"></label>
+      <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"><span class="fa fa-close" aria-hidden="true"></span></label>
       <?php //ヘッダーナビ
       ob_start();
       if (has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )) {
