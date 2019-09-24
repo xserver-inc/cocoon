@@ -3825,7 +3825,8 @@ form.admin-settings { margin-top: 2em; }
 #tabs > div { display: none; }
 
 #tabs .tabs-nav { border-bottom: 1px solid #999; list-style-type: none; margin: 0; padding: 0; }
-#tabs > ul > li { background-color: #f1f1f1; cursor: pointer; display: inline-block !important; margin: 0 !important; padding: 5px 8px 3px !important; border-color: #999 #999 currentcolor; border-image: none; border-style: solid solid none; border-width: 1px 1px medium; }
+#tabs > ul > li { background-color: #f1f1f1; cursor: pointer; display: inline-block !important; margin: 0 !important; padding: 4px 9px 3px !important; border-color: #999 #999 currentcolor; border-image: none; border-style: solid solid none; border-width: 1px 1px medium; border-top-left-radius: 4px; border-top-right-radius: 4px; }
+#tabs > ul > li:hover { background-color: #fff; }
 #tabs > ul > li.selected { background-color: #fff; }
 #tabs input[type="text"], #tabs input[type="password"], #tabs input[type="search"], #tabs input[type="number"], #tabs textarea, #tabs select { border-color: #ddd; }
 
