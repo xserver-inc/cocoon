@@ -1352,6 +1352,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
+.admin-settings .demo .wp-block-media-text__content { padding: 0 1em; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
@@ -2910,6 +2911,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .column-2-4-3-1 .column-left { width: 74%; }
 .admin-settings .demo .column-2-4-3-1 .column-right { width: 25%; }
 @media (min-width: 600px) { .admin-settings .demo .wp-block-columns { flex-wrap: nowrap; } }
+.admin-settings .demo .wp-block-media-text__content { padding: 0 1em; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
 .admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
