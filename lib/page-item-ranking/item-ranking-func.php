@@ -237,15 +237,15 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   }
   //スターの出力
   for ($j=1; $j <= $before; $j++) {
-    $tag .= '<span class="star"></span>';
+    $tag .= '<span class="fa fa-star" aria-hidden="true"></span>';
   }
   //半分スターの出力
   for ($j=1; $j <= $middle; $j++) {
-    $tag .= '<span class="star-half-o"></span>';
+    $tag .= '<span class="fa fa-star-half-o" aria-hidden="true"></span>';
   }
   //空スターの出力
   for ($j=1; $j <= $after; $j++) {
-    $tag .= '<span class="star-o"></span>';
+    $tag .= '<span class="fa fa-star-o" aria-hidden="true"></span>';
   }
 
   if ($number) {

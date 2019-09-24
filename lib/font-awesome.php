@@ -410,7 +410,7 @@ function get_font_awesome_exchange_list(){
     array('fa fa-stack-overflow', 'fab fa-stack-overflow'),
     array('fa fa-star-half-empty', 'far fa-star-half'),
     array('fa fa-star-half-full', 'far fa-star-half'),
-    array('fa fa-star-half-o', 'far fa-star-half'),
+    array('fa fa-star-half-o', 'fas fa-star-half-alt'),
     array('fa fa-star-o', 'far fa-star'),
     array('fa fa-steam', 'fab fa-steam'),
     array('fa fa-steam-square', 'fab fa-steam-square'),
