@@ -22,7 +22,7 @@ if (is_user_administrator()
   <?php //編集エリアの表示
   if (is_admin_panel_edit_area_visible() && is_singular()): ?>
     <div class="admin-edit">
-      <span class="fa fa-edit fa-fw"></span>
+      <span class="fa fa-edit fa-fw" aria-hidden="true"></span>
       <?php //投稿編集リンクの表示
       if (is_admin_panel_wp_edit_visible()): ?>
         <span class="post-edit"><?php edit_post_link(__( '編集', THEME_NAME )); ?></span>
@@ -56,7 +56,7 @@ if (is_user_administrator()
 
   <?php if (is_admin_panel_check_tools_area_visible()): ?>
     <div class="admin-checks">
-      <span class="fa fa-check"></span>
+      <span class="fa fa-check" aria-hidden="true"></span>
       <?php
         $encoded_url = get_encoded_url(get_requested_url());
       ?>
@@ -89,7 +89,7 @@ if (is_user_administrator()
 
   <?php if (is_admin_panel_responsive_tools_area_visible()): ?>
     <div class="admin-cresponsive">
-      <span class="fa fa-tablet"></span>
+      <span class="fa fa-tablet" aria-hidden="true"></span>
       <?php
         $encoded_url = get_encoded_url(get_requested_url());
       ?>

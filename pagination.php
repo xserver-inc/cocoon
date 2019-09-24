@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     'total' => $wp_query->max_num_pages,
     'mid_size' => 2,
     'current' => ($paged ? $paged : 1),
-    'prev_text' => '<span class="fa fa-caret-left fa-fx"></span>&#160;',
-    'next_text' => '&#160;<span class="fa fa-caret-right fa-fx"></span>',
+    'prev_text' => '<span class="fa fa-caret-left fa-fx" aria-hidden="true"></span>&#160;',
+    'next_text' => '&#160;<span class="fa fa-caret-right fa-fx" aria-hidden="true"></span>',
   )); ?>
 </div><!-- /.pagination -->

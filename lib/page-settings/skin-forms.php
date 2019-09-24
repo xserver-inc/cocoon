@@ -111,7 +111,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <p><?php _e( 'もしスキンを作成された際には、是非ご連絡ください。サイトで紹介させていただければと思います。', THEME_NAME ) ?></p>
-            <p><?php _e( '詳しくはこちら', THEME_NAME ) ?> <span class="fa fa-arrow-right"></span> <a href="https://wp-cocoon.com/skin-make/" target="_blanl"><?php _e( 'オリジナルスキンのCocoonサイト紹介について', THEME_NAME ) ?></a></p>
+            <p><?php _e( '詳しくはこちら', THEME_NAME ) ?> <span class="fa fa-arrow-right" aria-hidden="true"></span> <a href="https://wp-cocoon.com/skin-make/" target="_blanl"><?php _e( 'オリジナルスキンのCocoonサイト紹介について', THEME_NAME ) ?></a></p>
           </td>
         </tr>
 
