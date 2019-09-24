@@ -41,7 +41,15 @@
 .blank-box.bb-good::before,
 .blank-box.bb-bad::before,
 .blank-box.bb-profile::before,
-.blank-box.bb-hint::before {
+.bct-related .blogcard::before,
+.bct-reference .blogcard::before,
+.bct-popular .blogcard::before,
+.bct-pickup .blogcard::before,
+.bct-check .blogcard::before,
+.bct-together .blogcard::before,
+.bct-detail .blogcard::before,
+.bct-official .blogcard::before,
+.bct-dl .blogcard::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
