@@ -20,8 +20,10 @@
 .product-item-box{
   position: relative;
   &::after{
-    @include fontawesome('\f270');
-    font-family: FontAwesome;
+    // @include fontawesome('\f270');
+    // font-family: FontAwesome;
+    content: '\ea87';
+    font-family: icomoon;
     position: absolute;
     bottom: 0;
     right: 6px;

@@ -1503,7 +1503,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
-.admin-settings .demo .product-item-box::after { content: ""; font-family: FontAwesome; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
+.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
 .admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }
@@ -3061,7 +3061,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbs-think.sbp-r .speech-balloon::after { left: auto; right: -44px; }
 .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 22px 25px; width: 96%; margin: 1.6em auto; border: 3px solid #dfdfdf; box-sizing: border-box; position: relative; }
 .admin-settings .demo .product-item-box { position: relative; }
-.admin-settings .demo .product-item-box::after { content: ""; font-family: FontAwesome; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
+.admin-settings .demo .product-item-box::after { content: '\ea87'; font-family: icomoon; position: absolute; bottom: 0; right: 6px; font-size: 24px; color: #ccc; }
 .admin-settings .demo .product-item-box .image-thumb img { border: none; box-shadow: none; }
 .admin-settings .demo .rakuten-item-box::after { content: '\e903'; font-family: icomoon; }
 .admin-settings .demo .product-item-error.cf { display: block; line-height: 1.2; }

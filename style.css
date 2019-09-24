@@ -5791,8 +5791,8 @@ div.sbs-think .speech-balloon::after {
   position: relative;
 }
 .product-item-box::after {
-  content: "";
-  font-family: FontAwesome;
+  content: '\ea87';
+  font-family: icomoon;
   position: absolute;
   bottom: 0;
   right: 6px;
