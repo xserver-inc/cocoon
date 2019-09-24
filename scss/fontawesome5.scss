@@ -3,14 +3,18 @@
 // .pager-post-navi a.next-post::before,
 // .memo-box::before
 .comment-box::before,
-.ok-box::before
+.ok-box::before,
+.blank-box.bb-comment::before,
+.blank-box.bb-ok::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
 
 .comment-box::before{content: "\f075";}
+// .bb-comment::before{content: "\f075";}
 .ok-box::before{content: "\f111";}
+.bb-ok::before{content: "\f111  OK";}
 
 // .fa5r::before{
 
@@ -22,22 +26,40 @@
 .information-box::before,
 .information::before,
 .question-box::before,
-.question::before,.alert-box::before,
+.question::before,
+.alert-box::before,
 .alert::before,
 .memo-box::before,
 .profile-box::before,
 .ng-box::before,
 .good-box::before,
-.bad-box::before
+.bad-box::before,
+.blank-box.bb-check::before,
+.blank-box.bb-point::before,
+.blank-box.bb-tips::before,
+.blank-box.bb-pickup::before,
+.blank-box.bb-bookmark::before,
+.blank-box.bb-memo::before,
+.blank-box.bb-download::before,
+.blank-box.bb-break::before,
+.blank-box.bb-ng::before,
+.blank-box.bb-good::before,
+.blank-box.bb-bad::before,
+.blank-box.bb-profile::before,
+.blank-box.bb-hint::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
-.memo-box::before{
-  content: "\f303";
-}
+.memo-box::before{content: "\f303";}
+.bb-memo::before{content: "\f303  MEMO";}
 
+
+.blank-box.bb-amazon::before{
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
 
 // .far5::before{
 //   font-family: "Font Awesome 5 Regular";
