@@ -1,10 +1,16 @@
 // .faw::before,
 // .pager-post-navi a.prev-post::before,
-// .pager-post-navi a.next-post::before
-// {
-//   font-family: "Font Awesome 5 Free";
-//   font-weight: 400;
-// }
+// .pager-post-navi a.next-post::before,
+// .memo-box::before
+.comment-box::before,
+.ok-box::before
+{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.comment-box::before{content: "\f075";}
+.ok-box::before{content: "\f111";}
 
 // .fa5r::before{
 
@@ -13,9 +19,24 @@
 // .fa5s::before,
 // .pager-post-navi a.prev-post::before,
 // .pager-post-navi a.next-post::before
-// {
-//   font-weight: 900;
-// }
+.information-box::before,
+.information::before,
+.question-box::before,
+.question::before,.alert-box::before,
+.alert::before,
+.memo-box::before,
+.profile-box::before,
+.ng-box::before,
+.good-box::before,
+.bad-box::before
+{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.memo-box::before{
+  content: "\f303";
+}
 
 
 // .far5::before{
