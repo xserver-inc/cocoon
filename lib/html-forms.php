@@ -387,8 +387,8 @@ function generate_the_site_logo_tag($is_header = true){
     $height_attr = ' height="'.$site_logo_height.'"';
   }
 
-
-  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url(get_home_url()).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
+  $home_url = user_trailingslashit(get_home_url());
+  $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
     $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr(get_bloginfo('name')).'"'.$width_attr.$height_attr.'>';
