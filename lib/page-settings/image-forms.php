@@ -127,10 +127,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'none' => 'なし',
-              'spotlight' => __( 'Spotlight（軽量・高機能ギャラリー）', THEME_NAME ),
-              'baguettebox' => __( 'baguetteBox（軽量・スマホ向け）', THEME_NAME ),
-              'lity' => __( 'Lity（軽量・1枚ずつ表示）', THEME_NAME ),
-              'lightbox' => __( 'Lightbox', THEME_NAME ),
+              'spotlight' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/spotlight.gif').__( 'Spotlight（軽量・高機能ギャラリー）', THEME_NAME ),
+              'baguettebox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/baguettebox.gif').__( 'baguetteBox（軽量・スマホ向け）', THEME_NAME ),
+              'lity' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lity.gif').__( 'Lity（軽量・1枚ずつ表示）', THEME_NAME ),
+              'lightbox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lightbox.gif').__( 'Lightbox', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());
             generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));

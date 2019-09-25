@@ -127,11 +127,10 @@ function add_spotlight_property( $content ) {
     $abefors = $m[1];
     $i = 0;
     $count = 1;
+    //class="spotlight"の追加
     foreach ($abefors as $ab) {
       if (includes_string($ab, ' class="')) {
         if (preg_match('/ class="(.+?)"/i', $ab, $n)) {
-            // _v($n);
-            // _v($n[1] == 'spotlight');
           if ($n[1] != 'spotlight') {
             $replaced_a = str_replace(' class="', ' class="spotlight ', $ab, $count);
             $content = str_replace($ab, $replaced_a, $content, $count);
