@@ -619,7 +619,17 @@ function wp_enqueue_baguettebox(){
           })(jQuery);
         ');
     wp_add_inline_script( 'baguettebox-js', $data, 'after' ) ;
+  }
+}
+endif;
 
+
+//Spotlightの読み込み
+if ( !function_exists( 'wp_enqueue_spotlight' ) ):
+function wp_enqueue_spotlight(){
+ if ( ((is_spotlight_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
+    //spotlightスクリプトの呼び出し
+    wp_enqueue_script( 'spotlight-js', get_template_directory_uri() . '/plugins/spotlight-master/dist/spotlight.bundle.js', array(), false, true  );
   }
 }
 endif;

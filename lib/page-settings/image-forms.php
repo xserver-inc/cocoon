@@ -39,6 +39,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   <img src="https://im-cocoon.net/wp-content/uploads/tree-300.jpg" alt="デモ画像">
                 </a></p>
                 ';
+                if (is_spotlight_effect_enable()) {
+                  $content = add_spotlight_property($content);
+                }
                 if (is_lightbox_effect_enable()) {
                   $content = add_lightbox_property($content);
                 }
@@ -124,8 +127,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             $options = array(
               'none' => 'なし',
-              'baguettebox' => __( 'baguetteBox（スマホ向け）', THEME_NAME ),
-              'lity' => __( 'Lity（単機能・軽量）', THEME_NAME ),
+              'spotlight' => __( 'Spotlight（軽量・高機能ギャラリー）', THEME_NAME ),
+              'baguettebox' => __( 'baguetteBox（軽量・スマホ向け）', THEME_NAME ),
+              'lity' => __( 'Lity（軽量・1枚ずつ表示）', THEME_NAME ),
               'lightbox' => __( 'Lightbox', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());

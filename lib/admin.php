@@ -77,6 +77,8 @@ function admin_print_styles_custom() {
     wp_enqueue_lity();
     //画像リンク拡大効果がbaguetteboxのとき
     wp_enqueue_baguettebox();
+    //画像リンク拡大効果がspotlightのとき
+    wp_enqueue_spotlight();
     //カルーセル用
     wp_enqueue_slick();
     //ツリー型モバイルボタン（iframeで読み込むので不要）

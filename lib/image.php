@@ -11,10 +11,13 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'is_lightbox_plugin_exist' ) ):
 function is_lightbox_plugin_exist($content){
   //lity
-  if ( false !== strpos( $content, 'data-lity="' ) )
+  if ( includes_string( $content, 'data-lity="' ) )
     return true;
   //Lightbox
-  if ( false !== strpos( $content, 'data-lightbox="image-set"' ) )
+  if ( includes_string( $content, 'data-lightbox="image-set"' ) )
+    return true;
+  //Spotlight
+  if ( includes_string( $content, ' class="spotlight"' ) || includes_string( $content, ' class="spotlight ' ) )
     return true;
 
   return false;
@@ -96,5 +99,51 @@ if ( !function_exists( 'get_site_screenshot_url' ) ):
 function get_site_screenshot_url($url){
   $mshot = 'https://s0.wordpress.com/mshots/v1/';
   return $mshot.urlencode($url).'?w='.THUMB160WIDTH.'&h='.THUMB160HEIGHT;
+}
+endif;
+
+
+//画像リンクのAタグをSpotlightに対応するように付け替え
+//https://github.com/nextapps-de/spotlight
+if ( is_spotlight_effect_enable() ) {
+  add_filter( 'the_content', 'add_spotlight_property', 11 );
+  add_filter( 'the_category_tag_content', 'add_spotlight_property', 11 );
+}
+if ( !function_exists( 'add_spotlight_property' ) ):
+function add_spotlight_property( $content ) {
+  //プレビューやフィードで表示しない
+  if( is_feed() )
+    return $content;
+
+  //既に適用させているところは処理しない
+  if ( is_lightbox_plugin_exist($content) )
+    return $content;
+
+  //画像用の正規表現
+  $img_reg = '\.jpe?g|\.png|\.gif|\.gif';
+  $res = preg_match_all('/(<a([^>]+?('.$img_reg.')[\'\"][^>]*?)>)([\s\w\W\d]+?)<\/a>/i', $content, $m);
+  if ($res && isset($m[1])) {
+    //$alls = $m[0];
+    $abefors = $m[1];
+    $i = 0;
+    $count = 1;
+    foreach ($abefors as $ab) {
+      if (includes_string($ab, ' class="')) {
+        if (preg_match('/ class="(.+?)"/i', $ab, $n)) {
+            // _v($n);
+            // _v($n[1] == 'spotlight');
+          if ($n[1] != 'spotlight') {
+            $replaced_a = str_replace(' class="', ' class="spotlight ', $ab, $count);
+            $content = str_replace($ab, $replaced_a, $content, $count);
+          }
+        }
+      } else {
+        $replaced_a = str_replace('<a ', '<a class="spotlight"', $ab, $count);
+        $content = str_replace($ab, $replaced_a, $content, $count);
+      }
+      $i++;
+    }
+  }
+  return $content;
 }
 endif;
