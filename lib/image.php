@@ -11,13 +11,13 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'is_lightbox_plugin_exist' ) ):
 function is_lightbox_plugin_exist($content){
   //lity
-  if ( includes_string( $content, 'data-lity="' ) )
+  if ( is_lity_effect_enable() && includes_string( $content, 'data-lity="' ) )
     return true;
   //Lightbox
-  if ( includes_string( $content, 'data-lightbox="image-set"' ) )
+  if ( is_lightbox_effect_enable() && includes_string( $content, 'data-lightbox="image-set"' ) )
     return true;
   //Spotlight
-  if ( includes_string( $content, ' class="spotlight"' ) || includes_string( $content, ' class="spotlight ' ) )
+  if ( is_spotlight_effect_enable() && includes_string( $content, ' class="spotlight"' ) || includes_string( $content, ' class="spotlight ' ) )
     return true;
 
   return false;
@@ -124,25 +124,36 @@ function add_spotlight_property( $content ) {
   $res = preg_match_all('/(<a([^>]+?('.$img_reg.')[\'\"][^>]*?)>)([\s\w\W\d]+?)<\/a>/i', $content, $m);
   if ($res && isset($m[1])) {
     //$alls = $m[0];
-    $abefors = $m[1];
+    $a_starts = $m[1];
     $i = 0;
     $count = 1;
     //class="spotlight"の追加
-    foreach ($abefors as $ab) {
-      if (includes_string($ab, ' class="')) {
-        if (preg_match('/ class="(.+?)"/i', $ab, $n)) {
-          if ($n[1] != 'spotlight') {
-            $replaced_a = str_replace(' class="', ' class="spotlight ', $ab, $count);
-            $content = str_replace($ab, $replaced_a, $content, $count);
+    foreach ($a_starts as $a_start) {
+      if (includes_string($a_start, ' class="')) {
+        if (preg_match('/ class="(.+?)"/i', $a_start, $n)) {
+        	//class内のクラス名の分解
+        	$classes = explode(' ', $n[1]);
+        	//spotlightが含まれているか
+          if ( !in_array('spotlight', $classes) ) {
+            $replaced_a = str_replace(' class="', ' class="spotlight ', $a_start, $count);
+            $content = str_replace($a_start, $replaced_a, $content, $count);
           }
         }
       } else {
-        $replaced_a = str_replace('<a ', '<a class="spotlight"', $ab, $count);
-        $content = str_replace($ab, $replaced_a, $content, $count);
+      	//classがない場合はclass="spotlight"を追加
+        $replaced_a = str_replace('<a ', '<a class="spotlight" ', $a_start, $count);
+        $content = str_replace($a_start, $replaced_a, $content, $count);
       }
       $i++;
     }
   }
   return $content;
+}
+endif;
+
+//Lightboxを表示するページかどうか
+if ( !function_exists( 'is_lightboxable_page' ) ):
+function is_lightboxable_page(){
+  return is_singular() || (is_category() && !is_paged()) || (is_tag() && !is_paged());
 }
 endif;
