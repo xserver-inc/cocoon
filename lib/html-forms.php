@@ -386,7 +386,7 @@ function generate_the_site_logo_tag($is_header = true){
   if ($site_logo_height && $is_header) {
     $height_attr = ' height="'.$site_logo_height.'"';
   }
-
+  //パーマリンク設定とホームURLの出力を合わせる
   $home_url = user_trailingslashit(get_home_url());
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
