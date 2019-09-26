@@ -578,7 +578,7 @@ endif;
 if ( !function_exists( 'wp_enqueue_lightbox' ) ):
 function wp_enqueue_lightbox(){
   //_v(get_image_zoom_effect());
- if ( ((is_lightbox_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
+ if ( ((is_lightbox_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //Lightboxスタイルの呼び出し
     wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/plugins/lightbox2/dist/css/lightbox.min.css' );
     //Lightboxスクリプトの呼び出し
@@ -590,7 +590,7 @@ endif;
 //lityの読み込み
 if ( !function_exists( 'wp_enqueue_lity' ) ):
 function wp_enqueue_lity(){
- if ( ((is_lity_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
+ if ( ((is_lity_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //lityスタイルの呼び出し
     wp_enqueue_style( 'lity-style', get_template_directory_uri() . '/plugins/lity/dist/lity.min.css' );
     //lityスクリプトの呼び出し
@@ -603,23 +603,29 @@ endif;
 //baguetteboxの読み込み
 if ( !function_exists( 'wp_enqueue_baguettebox' ) ):
 function wp_enqueue_baguettebox(){
- if ( ((is_baguettebox_effect_enable() && (is_singular() || is_category())) || is_admin_php_page()) ) {
+ if ( ((is_baguettebox_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
     //baguetteboxスタイルの呼び出し
     wp_enqueue_style( 'baguettebox-style', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.css' );
     //baguetteboxスクリプトの呼び出し
     wp_enqueue_script( 'baguettebox-js', get_template_directory_uri() . '/plugins/baguettebox/dist/baguetteBox.min.js', array( 'jquery' ), false, true  );
-    if (is_singular() || is_category()) {
-      $selector = '.entry-content';
-    } else {
-      $selector = '.entry-demo';
-    }
+    $selector = '.entry-content';
     $data = minify_js('
           (function($){
            baguetteBox.run("'.$selector.'");
           })(jQuery);
         ');
     wp_add_inline_script( 'baguettebox-js', $data, 'after' ) ;
+  }
+}
+endif;
 
+
+//Spotlightの読み込み
+if ( !function_exists( 'wp_enqueue_spotlight' ) ):
+function wp_enqueue_spotlight(){
+ if ( ((is_spotlight_effect_enable() && is_lightboxable_page()) || is_admin_php_page()) ) {
+    //spotlightスクリプトの呼び出し
+    wp_enqueue_script( 'spotlight-js', get_template_directory_uri() . '/plugins/spotlight-master/dist/spotlight.bundle.js', array(), false, true  );
   }
 }
 endif;

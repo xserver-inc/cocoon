@@ -89,6 +89,12 @@ function is_baguettebox_effect_enable(){
   return get_image_zoom_effect() == 'baguettebox';
 }
 endif;
+//Spotlightが有効
+if ( !function_exists( 'is_spotlight_effect_enable' ) ):
+function is_spotlight_effect_enable(){
+  return get_image_zoom_effect() == 'spotlight';
+}
+endif;
 
 //本文中画像の中央寄せ
 define('OP_CONTENT_IMAGE_CENTER_ENABLE', 'content_image_center_enable');
