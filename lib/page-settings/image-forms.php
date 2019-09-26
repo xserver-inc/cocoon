@@ -133,7 +133,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'lightbox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lightbox.gif').__( 'Lightbox', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_ZOOM_EFFECT, $options, get_image_zoom_effect());
-            generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ));
+            generate_tips_tag(__( 'リンク画像をクリックしたときの拡大効果の設定です。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/lightbox-libraries/'));
             ?>
           </td>
         </tr>
