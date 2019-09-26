@@ -1887,7 +1887,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 100%; border-radius: 0; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
 .admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
@@ -3447,7 +3447,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 100%; border-radius: 0; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
 .admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
