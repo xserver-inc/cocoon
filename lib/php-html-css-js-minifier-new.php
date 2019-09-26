@@ -287,7 +287,7 @@ function fn_minify_js_union($input) {
         // Replace `true` with `!0` and `false` with `!1` [^3]
         '#\btrue\b#', '#\bfalse\b#', '#\b(return\s?)\s*\b#',
         // Replace `new Array(x)` with `[x]` … [^4]
-        '#\b(?:new\s+)?Array\((.*?)\)#', '#\b(?:new\s+)?Object\((.*?)\)#'
+        //'#\b(?:new\s+)?Array\((.*?)\)#', '#\b(?:new\s+)?Object\((.*?)\)#'
     ], [
         // [^1]
         '$1',
@@ -296,7 +296,7 @@ function fn_minify_js_union($input) {
         // [^3]
         '!0', '!1', '$1',
         // [^4]
-        '[$1]', '{$1}'
+        //'[$1]', '{$1}'
     ], $input);
 }
 
