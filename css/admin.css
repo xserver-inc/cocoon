@@ -1889,6 +1889,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 100%; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
@@ -3448,6 +3449,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
 .admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 100%; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }

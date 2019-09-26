@@ -7958,6 +7958,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended figure {
   margin: 0;
 }
+.recommended img {
+  vertical-align: bottom;
+}
 .recommended .card-content {
   font-size: 0.8em;
   text-align: center;
