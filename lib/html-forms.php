@@ -388,6 +388,12 @@ function generate_the_site_logo_tag($is_header = true){
   }
   //パーマリンク設定とホームURLの出力を合わせる
   $home_url = user_trailingslashit(get_home_url());
+  $home_url = apply_filters('site_logo_url', $home_url);
+  if ($is_header) {
+    $home_url = apply_filters('header_site_logo_url', $home_url);
+  } else {
+    $home_url = apply_filters('footer_site_logo_url', $home_url);
+  }
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
