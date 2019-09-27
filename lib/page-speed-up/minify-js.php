@@ -12,7 +12,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ///////////////////////////////////////
 if ( !function_exists( 'tag_code_to_minify_js' ) ):
 function tag_code_to_minify_js($buffer) {
-  //_v($buffer);
+  //Aurora Heatmapプラグインの分析画面の場合
+  if (isset($_GET['aurora-heatmap'])) {
+    return $buffer;
+  }
 
   if (is_admin()) {
     return $buffer;
