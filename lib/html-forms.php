@@ -389,17 +389,21 @@ function generate_the_site_logo_tag($is_header = true){
   //パーマリンク設定とホームURLの出力を合わせる
   $home_url = user_trailingslashit(get_home_url());
   $home_url = apply_filters('site_logo_url', $home_url);
+  //サイトロゴテキスト（Alt属性）
+  $site_logo_text = apply_filters('site_logo_text', get_bloginfo('name'));
   if ($is_header) {
+    $site_logo_text = apply_filters('header_site_logo_text', $site_logo_text);
     $home_url = apply_filters('header_site_logo_url', $home_url);
   } else {
+    $site_logo_text = apply_filters('footer_site_logo_text', $site_logo_text);
     $home_url = apply_filters('footer_site_logo_url', $home_url);
   }
   $logo_before_tag = '<'.$tag.' class="logo'.$class.'"><a href="'.esc_url($home_url).'" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">';
   $logo_after_tag = '</span></a></'.$tag.'>';
   if ($logo_url) {
-    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr(get_bloginfo('name')).'"'.$width_attr.$height_attr.'>';
+    $site_logo_tag = '<img class="site-logo-image '.$img_class.'" src="'.$logo_url.'" alt="'.esc_attr($site_logo_text).'"'.$width_attr.$height_attr.'>';
   } else {
-    $site_logo_tag = get_bloginfo('name');
+    $site_logo_tag = esc_html($site_logo_text);
   }
   $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
   echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header );
