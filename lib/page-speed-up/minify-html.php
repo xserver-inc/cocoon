@@ -302,7 +302,7 @@ function convert_lazy_load_tag($the_content, $media){
       //var_dump(htmlspecialchars($match));
       $tag = $match;
 
-      //画像URLの入れ替え
+      //Lazy Load：画像URLの入れ替え
       $search = '{ src=["\'](.+?)["\']}i';
       //$replace = ' src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="$1"';
       $replace = ' data-src="$1"';
@@ -312,13 +312,14 @@ function convert_lazy_load_tag($the_content, $media){
       //クラスの変更
       //挿入するクラス
       $classes = 'lozad lozad-'.$media;
+      $chrome_lazy = 'loading="lazy"';
       if (preg_match('/class=/i', $tag)) {
         $search = '{class=["\'](.+?)["\']}i';
-        $replace = 'class="$1 '.$classes.'"';
+        $replace = 'class="$1 '.$classes.'" '.$chrome_lazy;
         $tag = preg_replace($search, $replace, $tag);
       } else {
         $search = '<'.$media;
-        $replace = '<'.$media.' class="'.$classes.'"';
+        $replace = '<'.$media.' class="'.$classes.'" '.$chrome_lazy;
         $tag = str_replace($search, $replace, $tag);
       }
       //$tag = convert_lazy_load_class($tag);
