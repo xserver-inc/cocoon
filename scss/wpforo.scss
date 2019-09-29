@@ -66,6 +66,14 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p{
   word-break: break-all;
 }
 
-#tinymce.main.article{
-  width: 100%;
+// #tinymce.main.article{
+//   width: 100%;
+// }
+
+body[class*="wpf-reply-create"]{
+  width: auto;
 }
+
+// [class^="wpf-reply-create"]#tinymce.main.article{
+//   width: 100%;
+// }
