@@ -406,7 +406,7 @@ function generate_the_site_logo_tag($is_header = true){
     $site_logo_tag = esc_html($site_logo_text);
   }
   $all_tag = $logo_before_tag.$site_logo_tag.$logo_after_tag;
-  echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header );
+  echo apply_filters( 'the_site_logo_tag', $all_tag, $is_header, $home_url, $site_logo_text, $site_logo_width, $site_logo_height );
 }
 endif;
 
