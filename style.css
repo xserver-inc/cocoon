@@ -8859,6 +8859,10 @@ body[class*="wpf-reply-create"] {
   line-height: 34px;
 }
 
+twitter-widget {
+  overflow: hidden;
+}
+
 /**
  * Cocoon WordPress Theme
  * @author: yhira
