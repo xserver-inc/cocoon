@@ -63,7 +63,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php endif; ?>
 
         <?php //アイキャッチ挿入
-        get_template_part('tmp/eye-catch'); ?>
+        get_template_part('tmp/eye-catch');
+
+        do_action('singular_eye_catch_after');
+        ?>
 
         <?php //SNSシェアボタン
         if (is_sns_top_share_buttons_visible())

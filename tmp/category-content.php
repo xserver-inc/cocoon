@@ -26,6 +26,7 @@ if ($eye_catch_url || $content): ?>
           } ?>
         </figure>
       </div>
+      <?php do_action('category_eye_catch_after'); ?>
     <?php endif ?>
   </header>
   <?php if ($content): ?>
