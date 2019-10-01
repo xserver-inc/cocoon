@@ -1859,8 +1859,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
@@ -3388,8 +3389,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-window-close::before, .admin-settings .demo .list-window-close li::before { content: '\f2d3'; }
 .admin-settings .demo .fab-window-close-o::before, .admin-settings .demo .list-window-close-o li::before { content: '\f2d4'; }
 .admin-settings .demo .recommended .navi-entry-cards { display: flex; justify-content: center; }
-.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; width: 25%; border-radius: 0; }
+.admin-settings .demo .recommended .navi-entry-cards a { padding: 0; margin: 0; border-radius: 0; }
 .admin-settings .demo .recommended figure { margin: 0; }
+.admin-settings .demo .recommended img { vertical-align: bottom; }
 .admin-settings .demo .recommended .card-content { font-size: 0.8em; text-align: center; }
 .admin-settings .demo .recommended .card-snippet { display: none; }
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
@@ -3556,7 +3558,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mce-wpf-emoji-extra-wrap { min-width: 300px !important; min-height: 300px !important; }
 .admin-settings .demo .wpf-emoji-wrap .wpf-emoji { font-size: 24px; }
 .admin-settings .demo .wpforo-attached-file { word-break: break-all; }
-.admin-settings .demo #tinymce.main.article { width: 100%; }
+.admin-settings .demo body[class*="wpf-reply-create"] { width: auto; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }
@@ -3565,6 +3567,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .gsc-search-box table th, .admin-settings .demo .gsc-search-box table td { border: 0; }
 .admin-settings .demo #cse-search-box input[name="q"] { line-height: 34px; width: calc(100% - 60px); float: left; }
 .admin-settings .demo #cse-search-box input[name="sa"] { width: 60px; padding: 0; line-height: 34px; }
+.admin-settings .demo twitter-widget { overflow: hidden; }
 .admin-settings .demo .video-click { cursor: pointer; }
 .admin-settings .demo .video-click:hover .video-play { background: url("images/youtube-play.png") no-repeat scroll -101px -13px rgba(0, 0, 0, 0); }
 .admin-settings .demo .video-play { background: url("images/youtube-play.png") no-repeat scroll 2px -13px rgba(0, 0, 0, 0); height: 62px; left: 50%; margin-left: -45px; margin-top: -33px; position: absolute; top: 50%; width: 100px; opacity: 0.8; }

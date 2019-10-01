@@ -20,3 +20,8 @@
   padding: 0;
   line-height: 34px;
 }
+
+//Twitterウィジェットはみ出し対策
+twitter-widget {
+  overflow: hidden;
+}

@@ -19,9 +19,11 @@ if (is_appeal_area_visible() && !is_amp()): ?>
       </div>
       <?php endif ?>
       <?php //メッセージが存在するか
-      if (get_appeal_area_message()): ?>
+      if ($message = get_appeal_area_message()):
+        $message = apply_filters('appeal_area_message', $message);
+       ?>
       <div class="appeal-message">
-        <?php echo wpautop(get_appeal_area_message()); ?>
+        <?php echo $message; ?>
       </div>
       <?php endif ?>
       <?php if (get_appeal_area_button_message() && get_appeal_area_button_url()): ?>

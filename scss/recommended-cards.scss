@@ -8,13 +8,17 @@
     a{
       padding: 0;
       margin: 0;
-      width: 25%;
+      //width: 100%;
       border-radius: 0;
     }
   }
 
   figure{
     margin: 0;
+  }
+
+  img{
+    vertical-align: bottom;
   }
 
   .card-content{

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-09-16 23:10+0900\n"
-"PO-Revision-Date: 2019-09-16 23:11+0900\n"
+"POT-Creation-Date: 2019-09-29 22:38+0900\n"
+"PO-Revision-Date: 2019-09-29 22:39+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -112,13 +112,13 @@ msgstr "Tab Heading Box"
 #: blocks/src/old/balloon-2/block.js:17
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16 blocks/src/old/balloon-ex/block.js:17
-#: blocks/src/old/balloon/block.js:15 lib/html-forms.php:476
+#: blocks/src/old/balloon/block.js:15 lib/html-forms.php:504
 msgid "未入力"
 msgstr "Missing"
 
 #: blocks/src/block/balloon/block.js:21 blocks/src/old/balloon-1/block.js:37
 #: blocks/src/old/balloon-2/block.js:21 blocks/src/old/balloon/block.js:20
-#: lib/admin.php:349 lib/original-menu.php:27
+#: lib/admin.php:351 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 msgid "吹き出し"
 msgstr "Speech balloon"
@@ -140,7 +140,7 @@ msgstr "Speech balloon style"
 #: blocks/src/old/tab-caption-box/block.js:61
 #: blocks/src/old/toggle-box/block.js:64 lib/custom-fields/page-field.php:35
 #: lib/page-settings/comment-forms.php:43 lib/page-settings/single-forms.php:308
-#: lib/page-speech-balloon/form.php:90 lib/settings.php:464
+#: lib/page-speech-balloon/form.php:90 lib/settings.php:470
 msgid "デフォルト"
 msgstr "Default"
 
@@ -221,7 +221,7 @@ msgstr "Border color"
 
 #: blocks/src/block/blogcard/block.js:18
 #: blocks/src/old/blogcard-class/block.js:31 lib/page-cache/cache-forms.php:64
-#: lib/page-settings/_top-page.php:182 lib/page-settings/image-forms.php:211
+#: lib/page-settings/_top-page.php:182 lib/page-settings/image-forms.php:215
 msgid "ブログカード"
 msgstr "Blogcard"
 
@@ -241,7 +241,7 @@ msgid "なし"
 msgstr "None"
 
 #: blocks/src/block/blogcard/block.js:64 lib/admin-tinymce-qtag.php:1590
-#: lib/page-settings/image-forms.php:208 lib/page-settings/single-funcs.php:53
+#: lib/page-settings/image-forms.php:212 lib/page-settings/single-funcs.php:53
 #: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:76
 msgid "関連記事"
 msgstr "Related Posts"
@@ -251,7 +251,7 @@ msgid "参考記事"
 msgstr "Reference"
 
 #: blocks/src/block/blogcard/block.js:72 lib/admin-tinymce-qtag.php:1602
-#: lib/page-settings/carousel-forms.php:61 lib/page-settings/image-forms.php:207
+#: lib/page-settings/carousel-forms.php:61 lib/page-settings/image-forms.php:211
 #: lib/widgets/popular-entries.php:21 lib/widgets/popular-entries.php:91
 msgid "人気記事"
 msgstr "Popular"
@@ -401,7 +401,7 @@ msgstr "Info (!)"
 
 #: blocks/src/block/icon-box/block.js:109 blocks/src/block/tab-box/block.js:130
 #: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:188
-#: lib/admin-tinymce-qtag.php:515 lib/admin.php:182
+#: lib/admin-tinymce-qtag.php:515 lib/admin.php:184
 #: lib/custom-fields/memo-field.php:17 lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
 msgid "メモ"
@@ -688,8 +688,9 @@ msgstr "Number of items"
 #: lib/widgets/author-box.php:72 lib/widgets/cta-box.php:99
 #: lib/widgets/fb-like-balloon.php:70 lib/widgets/fb-like-box.php:97
 #: lib/widgets/item-ranking.php:64 lib/widgets/mobile-text.php:73
-#: lib/widgets/navi-entries.php:112 lib/widgets/pc-text.php:72
-#: lib/widgets/recent-comments.php:142 lib/widgets/toc.php:75
+#: lib/widgets/navi-entries.php:97 lib/widgets/pc-text.php:72
+#: lib/widgets/recent-comments.php:142 lib/widgets/recommended-cards.php:89
+#: lib/widgets/toc.php:75
 msgid "タイトル"
 msgstr "Title"
 
@@ -1422,7 +1423,7 @@ msgid "アフィリエイトタグタグ"
 msgstr "Affiliate tags"
 
 #: blocks/src/shortcode/affi/block.js:21
-#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:363
+#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:365
 #: lib/original-menu.php:33 lib/tinymce/affiliate-tags.php:48
 msgid "アフィリエイトタグ"
 msgstr "Affiliate tag"
@@ -1457,7 +1458,7 @@ msgstr "Font Size"
 #, fuzzy
 #| msgid "文字数"
 msgid "文字"
-msgstr "Abbreviation string"
+msgstr "Charset:"
 
 #: blocks/src/toolbutton/dropdown-markers.js:21 lib/admin-tinymce-qtag.php:131
 msgid "マーカー"
@@ -1488,7 +1489,7 @@ msgid "ナビカード一覧"
 msgstr "List of Navi Cards"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:65 lib/tinymce/shortcodes.php:78
-#: lib/widgets/navi-entries.php:97
+#: lib/widgets/navi-entries.php:104 lib/widgets/recommended-cards.php:96
 msgid "メニュー名"
 msgstr "Menu name"
 
@@ -1577,7 +1578,7 @@ msgid "ショートコード"
 msgstr "Shortcode"
 
 #: blocks/src/toolbutton/dropdown-templates.js:48
-#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:356
+#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:358
 #: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
 msgid "テンプレート"
 msgstr "Template"
@@ -1663,59 +1664,59 @@ msgstr "No keyword specified"
 msgid "設定"
 msgstr "Settings"
 
-#: lib/_defins.php:140 lib/_defins.php:164 lib/_defins.php:176
-#: lib/_defins.php:191
+#: lib/_defins.php:142 lib/_defins.php:166 lib/_defins.php:178
+#: lib/_defins.php:193
 msgid "オート（AdSenseにおまかせ）"
 msgstr "Auto (to AdSense)"
 
-#: lib/_defins.php:141 lib/_defins.php:165 lib/_defins.php:177
-#: lib/_defins.php:192
+#: lib/_defins.php:143 lib/_defins.php:167 lib/_defins.php:179
+#: lib/_defins.php:194
 msgid "バナー"
 msgstr "Banner"
 
-#: lib/_defins.php:142 lib/_defins.php:178 lib/_defins.php:193
+#: lib/_defins.php:144 lib/_defins.php:180 lib/_defins.php:195
 msgid "レスポンシブレクタングル"
 msgstr "Responsive rectangle"
 
-#: lib/_defins.php:143 lib/_defins.php:179 lib/_defins.php:194
+#: lib/_defins.php:145 lib/_defins.php:181 lib/_defins.php:196
 msgid "シングルレクタングル"
 msgstr "Single rectangle"
 
-#: lib/_defins.php:144 lib/_defins.php:180
+#: lib/_defins.php:146 lib/_defins.php:182
 msgid "ダブルレクタングル"
 msgstr "Double rectangle"
 
-#: lib/_defins.php:145 lib/_defins.php:182
+#: lib/_defins.php:147 lib/_defins.php:184
 msgid "記事内広告"
 msgstr "In Article"
 
-#: lib/_defins.php:146 lib/_defins.php:168 lib/_defins.php:183
-#: lib/_defins.php:195
+#: lib/_defins.php:148 lib/_defins.php:170 lib/_defins.php:185
+#: lib/_defins.php:197
 msgid "リンクユニット"
 msgstr "Link unit"
 
-#: lib/_defins.php:166
+#: lib/_defins.php:168
 msgid "レクタングル"
 msgstr "Rectangle"
 
-#: lib/_defins.php:167 lib/_defins.php:181
+#: lib/_defins.php:169 lib/_defins.php:183
 msgid "ラージスカイスクレイパー"
 msgstr "Large sky skraper"
 
-#: lib/_defins.php:175 lib/_defins.php:190
+#: lib/_defins.php:177 lib/_defins.php:192
 msgid "広告コードをそのまま表示"
 msgstr "The ad code will appear as"
 
-#: lib/_defins.php:297
+#: lib/_defins.php:299
 msgid "本当に削除してもいいですか？"
 msgstr "Do you really want to delete it?"
 
-#: lib/_defins.php:318
+#: lib/_defins.php:320
 #, fuzzy
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.co.jp"
 
-#: lib/_defins.php:321
+#: lib/_defins.php:323
 msgid ""
 "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr ""
@@ -2077,99 +2078,99 @@ msgstr "Surround Blog Card Label"
 msgid "商品リンクの追加"
 msgstr "Add Product link"
 
-#: lib/admin.php:167
+#: lib/admin.php:169
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:172 lib/custom-fields/seo-field.php:61
+#: lib/admin.php:174 lib/custom-fields/seo-field.php:61
 #: lib/custom-fields/seo-field.php:83 lib/custom-fields/seo-field.php:93
 msgid "文字数"
 msgstr "Character count"
 
-#: lib/admin.php:177 lib/content-category.php:254 lib/content-tag.php:197
+#: lib/admin.php:179 lib/content-category.php:254 lib/content-tag.php:197
 msgid "アイキャッチ"
 msgstr "Featured Image"
 
-#: lib/admin.php:215
+#: lib/admin.php:217
 msgid "　題："
 msgstr "Title:"
 
-#: lib/admin.php:223
+#: lib/admin.php:225
 msgid "本文："
 msgstr "Body:"
 
-#: lib/admin.php:259
+#: lib/admin.php:261
 msgid "管理メニュー"
 msgstr "Admin Menus"
 
-#: lib/admin.php:271
+#: lib/admin.php:273
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:278
+#: lib/admin.php:280
 msgid "投稿一覧"
 msgstr "Posts"
 
-#: lib/admin.php:285
+#: lib/admin.php:287
 msgid "固定ページ一覧"
 msgstr "Pages"
 
-#: lib/admin.php:292
+#: lib/admin.php:294
 msgid "メディア一覧"
 msgstr "Media"
 
-#: lib/admin.php:299
+#: lib/admin.php:301
 msgid "テーマ"
 msgstr "Themes"
 
-#: lib/admin.php:306
+#: lib/admin.php:308
 msgid "カスタマイズ"
 msgstr "Customize"
 
-#: lib/admin.php:313 lib/page-settings/_top-page.php:196
+#: lib/admin.php:315 lib/page-settings/_top-page.php:196
 msgid "ウィジェット"
 msgstr "Widgets"
 
-#: lib/admin.php:320 tmp/mobile-navi-button.php:19
+#: lib/admin.php:322 tmp/mobile-navi-button.php:19
 msgid "メニュー"
 msgstr "Menu"
 
-#: lib/admin.php:327
+#: lib/admin.php:329
 msgid "テーマの編集"
 msgstr "Edit themes"
 
-#: lib/admin.php:334
+#: lib/admin.php:336
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:370 lib/original-menu.php:36
+#: lib/admin.php:372 lib/original-menu.php:36
 msgid "ランキング作成"
 msgstr "Creatie Ranking"
 
-#: lib/admin.php:377 lib/original-menu.php:39 lib/page-access/_top-page.php:39
+#: lib/admin.php:379 lib/original-menu.php:39 lib/page-access/_top-page.php:39
 #: lib/page-access/access-forms.php:14 lib/page-access/access-forms.php:26
 msgid "アクセス集計"
 msgstr "Access Statistics"
 
-#: lib/admin.php:384 lib/original-menu.php:42
+#: lib/admin.php:386 lib/original-menu.php:42
 msgid "高速化"
 msgstr "Speed Up"
 
-#: lib/admin.php:391 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
+#: lib/admin.php:393 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
 #: lib/page-backup/backup-forms.php:24
 msgid "バックアップ"
 msgstr "Backup"
 
-#: lib/admin.php:398 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
+#: lib/admin.php:400 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
 #: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:326
 msgid "キャッシュ削除"
 msgstr "Delete Cache"
 
-#: lib/admin.php:519
+#: lib/admin.php:521
 msgid "カテゴリー検索"
 msgstr "Category Search"
 
-#: lib/admin.php:578 lib/admin.php:591
+#: lib/admin.php:580 lib/admin.php:593
 msgid "Excerpt"
 msgstr "Excerpt"
 
@@ -2273,7 +2274,7 @@ msgid "タイトル下に表示されるアイキャッチ画像を選択して�
 msgstr "Select the eye-catching image that appears under the title."
 
 #: lib/content-category.php:263 lib/content-tag.php:206
-#: lib/custom-fields/seo-field.php:91 lib/page-settings/title-forms.php:162
+#: lib/custom-fields/seo-field.php:95 lib/page-settings/title-forms.php:162
 #: lib/page-settings/title-forms.php:263
 msgid "メタディスクリプション"
 msgstr "Meta Description"
@@ -2291,7 +2292,7 @@ msgstr ""
 "used as a meta description tag."
 
 #: lib/content-category.php:273 lib/content-tag.php:216
-#: lib/custom-fields/seo-field.php:100 lib/page-settings/title-forms.php:77
+#: lib/custom-fields/seo-field.php:101 lib/page-settings/title-forms.php:77
 #: lib/page-settings/title-forms.php:175 lib/page-settings/title-forms.php:276
 msgid "メタキーワード"
 msgstr "Meta Keywords"
@@ -2520,22 +2521,81 @@ msgstr "Display Price"
 msgid "レビュー構造化データを出力するか。"
 msgstr "To output meta keywords tag"
 
-#: lib/custom-fields/review-field.php:37
+#: lib/custom-fields/review-field.php:40
 #, fuzzy
 #| msgid "プレビュー"
 msgid "レビュー対象"
 msgstr "Preview"
 
-#: lib/custom-fields/review-field.php:39
+#: lib/custom-fields/review-field.php:42
+#, fuzzy
+msgid "製品・サービス"
+msgstr "Products and Services"
+
+#: lib/custom-fields/review-field.php:43
+#, fuzzy
+#| msgid "カラム"
+msgid "ゲーム"
+msgstr "Columns"
+
+#: lib/custom-fields/review-field.php:44
+#, fuzzy
+msgid "プレイリスト形式の音楽トラックのコレクション"
+msgstr "A collection of playlist-style music tracks"
+
+#: lib/custom-fields/review-field.php:45
+#, fuzzy
+msgid "音楽のトラック、通常は1曲"
+msgstr "A track of music, usually one song"
+
+#: lib/custom-fields/review-field.php:46
+#, fuzzy
+msgid "テレビ、ラジオ、ビデオゲームなどのメディアシーズン"
+msgstr "Media seasons such as television, radio and video games"
+
+#: lib/custom-fields/review-field.php:47
+#, fuzzy
+msgid ""
+"メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）\n"
+"    "
+msgstr "Media publications (books, periodicals, television, radio, games, etc.)"
+
+#: lib/custom-fields/review-field.php:49
+#, fuzzy
+msgid "シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）"
+msgstr "Series of episodes (TV, radio, video games, etc.)"
+
+#: lib/custom-fields/review-field.php:50
+#, fuzzy
+msgid "ダウンロードデータ（画像、ビデオ、オーディオなど）"
+msgstr "Download data (images, video, audio, etc.)"
+
+#: lib/custom-fields/review-field.php:51
+#, fuzzy
+msgid "学校、NGO、企業、クラブなどの組織"
+msgstr "Organizations such as schools, NGOs, companies, clubs, etc."
+
+#: lib/custom-fields/review-field.php:54
+#, fuzzy
+msgid "レビュー対象となるschema typeを入力。※必須"
+msgstr "Enter the name to be reviewed. *Required"
+
+#: lib/custom-fields/review-field.php:58
+#, fuzzy
+#| msgid "プレビュー"
+msgid "レビュー対象名"
+msgstr "Preview"
+
+#: lib/custom-fields/review-field.php:60
 #, fuzzy
 msgid "レビュー対象名を入力。※必須"
 msgstr "Enter the name to be reviewed. *Required"
 
-#: lib/custom-fields/review-field.php:46
+#: lib/custom-fields/review-field.php:67
 msgid "レビュー評価"
 msgstr "Review Rating"
 
-#: lib/custom-fields/review-field.php:48
+#: lib/custom-fields/review-field.php:69
 #, fuzzy
 msgid "0から5の範囲で評価を入力。"
 msgstr "Enter a rating between 0 and 5."
@@ -2545,7 +2605,7 @@ msgstr "Enter a rating between 0 and 5."
 msgid "SEO設定"
 msgstr "SEO Settings"
 
-#: lib/custom-fields/seo-field.php:81
+#: lib/custom-fields/seo-field.php:85
 msgid "SEOタイトル"
 msgstr "SEO Title"
 
@@ -2563,11 +2623,11 @@ msgstr ""
 "Enter the title you want to display on search engines.The title you enter here "
 "will be used for the title tag."
 
-#: lib/custom-fields/seo-field.php:96
+#: lib/custom-fields/seo-field.php:97
 msgid "記事の説明文を入力してください。"
 msgstr "Enter meta description here"
 
-#: lib/custom-fields/seo-field.php:97
+#: lib/custom-fields/seo-field.php:98
 msgid ""
 "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめしま"
 "す。スマホではそのうちの約50文字が表示されます。こちらに入力したメタディスクリ"
@@ -2579,11 +2639,11 @@ msgstr ""
 "as a snippet for blog cards. If it is not filled in, \"Excerpt\" is used as "
 "the Meta Description."
 
-#: lib/custom-fields/seo-field.php:101
+#: lib/custom-fields/seo-field.php:102
 msgid "記事の関連キーワードを半角カンマ区切りで入力してください。"
 msgstr "Enter meta keywords here"
 
-#: lib/custom-fields/seo-field.php:102
+#: lib/custom-fields/seo-field.php:103
 msgid ""
 "記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合"
 "は、カテゴリ名などから自動で設定されます。"
@@ -2591,33 +2651,33 @@ msgstr ""
 "Enter keywords related to the content, separated by comma. If you do not enter "
 "it, it will be set automatically from the category name."
 
-#: lib/custom-fields/seo-field.php:107
+#: lib/custom-fields/seo-field.php:106
 msgid "インデックスしない（noindex）"
 msgstr "Noindex"
 
-#: lib/custom-fields/seo-field.php:108
+#: lib/custom-fields/seo-field.php:107
 msgid ""
 "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr "If noindex is enabled, it will not appear in search engines result."
 
-#: lib/custom-fields/seo-field.php:113
+#: lib/custom-fields/seo-field.php:110
 msgid "リンクをフォローしない（nofollow）"
 msgstr "Nofollow"
 
-#: lib/custom-fields/seo-field.php:114
+#: lib/custom-fields/seo-field.php:111
 msgid ""
 "検索エンジンがこのページ上のリンクをフォローしないようにメタタグを設定します。"
 msgstr "If nofollow is enabled, search engines will not crawl links on the page."
 
-#: lib/custom-fields/seo-field.php:117
+#: lib/custom-fields/seo-field.php:114
 msgid "canonical"
 msgstr "canonical"
 
-#: lib/custom-fields/seo-field.php:118
+#: lib/custom-fields/seo-field.php:115
 msgid "canonical URLの入力"
 msgstr "Add a canonical URL"
 
-#: lib/custom-fields/seo-field.php:119
+#: lib/custom-fields/seo-field.php:116
 #, fuzzy
 msgid ""
 "ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンからの"
@@ -2630,8 +2690,8 @@ msgstr ""
 "that the page evaluation from the search engine is not distributed. If the "
 "content is duplicated, enter the URL of the canonical page."
 
-#: lib/custom-fields/seo-field.php:120 lib/html-forms.php:428
-#: lib/html-forms.php:487
+#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:456
+#: lib/html-forms.php:515
 msgid "詳細設定"
 msgstr "Advanced"
 
@@ -2641,7 +2701,7 @@ msgstr "Advanced"
 msgid "SNS画像"
 msgstr "SNS image"
 
-#: lib/custom-fields/sns-image-field.php:34
+#: lib/custom-fields/sns-image-field.php:33
 #, fuzzy
 msgid ""
 "FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイ"
@@ -2692,219 +2752,219 @@ msgstr "Month"
 msgid "日"
 msgstr "Day"
 
-#: lib/html-forms.php:226
+#: lib/html-forms.php:240
 msgid "解説ページ"
 msgstr "Description page"
 
-#: lib/html-forms.php:308
+#: lib/html-forms.php:326
 msgid "タイトル検索"
 msgstr "Title Search"
 
-#: lib/html-forms.php:312
+#: lib/html-forms.php:330
 msgid "タイトル昇順"
 msgstr "Title ascending"
 
-#: lib/html-forms.php:313
+#: lib/html-forms.php:331
 msgid "タイトル降順"
 msgstr "Title descending"
 
-#: lib/html-forms.php:314
+#: lib/html-forms.php:332
 msgid "作成日昇順"
 msgstr "Creation date ascending"
 
-#: lib/html-forms.php:315
+#: lib/html-forms.php:333
 msgid "作成日降順"
 msgstr "Creation date descending"
 
-#: lib/html-forms.php:316
+#: lib/html-forms.php:334
 msgid "編集日昇順"
 msgstr "Edit date ascending"
 
-#: lib/html-forms.php:317
+#: lib/html-forms.php:335
 msgid "編集日降順"
 msgstr "Edit date descending"
 
-#: lib/html-forms.php:321
+#: lib/html-forms.php:339
 msgid "抽出"
 msgstr "Extract"
 
-#: lib/html-forms.php:434 lib/html-forms.php:493
+#: lib/html-forms.php:462 lib/html-forms.php:521
 msgid "フォーマット"
 msgstr "Format: "
 
-#: lib/html-forms.php:438 lib/html-forms.php:496
+#: lib/html-forms.php:466 lib/html-forms.php:524
 msgid "広告ラベルを表示"
 msgstr "Ad labels visible"
 
-#: lib/html-forms.php:445
+#: lib/html-forms.php:473
 msgid "全てのH2見出し手前に広告を挿入"
 msgstr "Insert ad before all headings H2"
 
-#: lib/html-forms.php:474
+#: lib/html-forms.php:502
 msgid "入力済"
 msgstr "Entered"
 
-#: lib/html-forms.php:515
+#: lib/html-forms.php:543
 msgid "選択"
 msgstr "Select"
 
-#: lib/html-forms.php:516
+#: lib/html-forms.php:544
 msgid "クリア"
 msgstr "Clear"
 
-#: lib/html-forms.php:523
+#: lib/html-forms.php:551
 msgid "大きな画像は縮小して表示されます。"
 msgstr "Large images are displayed in reduced size."
 
-#: lib/html-forms.php:544
+#: lib/html-forms.php:572
 msgid "画像を選択してください"
 msgstr "Select Image"
 
-#: lib/html-forms.php:552
+#: lib/html-forms.php:580
 msgid "画像の選択"
 msgstr "Select Image"
 
-#: lib/html-forms.php:715
+#: lib/html-forms.php:743
 msgid "トップページのみ"
 msgstr "Top page only"
 
-#: lib/html-forms.php:719 lib/page-settings/_top-page.php:175
+#: lib/html-forms.php:747 lib/page-settings/_top-page.php:175
 #: lib/widgets/display-widgets.php:171
 msgid "投稿"
 msgstr "Posts"
 
-#: lib/html-forms.php:723 lib/page-settings/_top-page.php:176
+#: lib/html-forms.php:751 lib/page-settings/_top-page.php:176
 #: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:421
 #: lib/widgets/display-widgets.php:174
 msgid "固定ページ"
 msgstr "Pages"
 
-#: lib/html-forms.php:727
+#: lib/html-forms.php:755
 msgid "カテゴリ一覧"
 msgstr "Categories list"
 
-#: lib/html-forms.php:731
+#: lib/html-forms.php:759
 msgid "タグ一覧"
 msgstr "Tags list"
 
-#: lib/html-forms.php:735
+#: lib/html-forms.php:763
 msgid "著者一覧"
 msgstr "Authors list"
 
-#: lib/html-forms.php:739
+#: lib/html-forms.php:767
 msgid "アーカイブ一覧"
 msgstr "Archives list"
 
-#: lib/html-forms.php:743
+#: lib/html-forms.php:771
 msgid "検索結果一覧"
 msgstr "Search results list"
 
-#: lib/html-forms.php:747
+#: lib/html-forms.php:775
 msgid "404ページ一覧"
 msgstr "404 pages list"
 
-#: lib/html-forms.php:751
+#: lib/html-forms.php:779
 msgid "AMPページ"
 msgstr "AMP Pages"
 
-#: lib/html-forms.php:756
+#: lib/html-forms.php:784
 msgid "wpForoページ"
 msgstr "wpForo Pages"
 
-#: lib/html-forms.php:762
+#: lib/html-forms.php:790
 msgid "bbPressページ"
 msgstr "bbPress pages"
 
-#: lib/html-forms.php:768
+#: lib/html-forms.php:796
 msgid "BuddyPressページ"
 msgstr "BuddyPress Pages"
 
-#: lib/html-forms.php:774
+#: lib/html-forms.php:802
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "Plug-ins forum pages (bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:819
+#: lib/html-forms.php:847
 msgid "投稿ID入力"
 msgstr "Post IDs"
 
-#: lib/html-forms.php:820 lib/html-forms.php:840
+#: lib/html-forms.php:848 lib/html-forms.php:868
 msgid "例：111,222,333"
 msgstr "Example: 111, 222, 333"
 
-#: lib/html-forms.php:821
+#: lib/html-forms.php:849
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Enter Post ID in the comma-separated values."
 
-#: lib/html-forms.php:839
+#: lib/html-forms.php:867
 msgid "固定ページID入力"
 msgstr "Fixed page IDs"
 
-#: lib/html-forms.php:841
+#: lib/html-forms.php:869
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Enter Post ID in the comma-separated values."
 
-#: lib/html-forms.php:956
+#: lib/html-forms.php:984
 msgid "人気記事は見つかりませんでした。"
 msgstr "popular articles were not found."
 
-#: lib/html-forms.php:1120
+#: lib/html-forms.php:1148
 msgid "記事は見つかりませんでした。"
 msgstr "No entrys found."
 
-#: lib/html-forms.php:1242
+#: lib/html-forms.php:1270
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1260
+#: lib/html-forms.php:1288
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:1270
+#: lib/html-forms.php:1298
 msgid "未登録のユーザーさんです。"
 msgstr "An unregistered user."
 
-#: lib/html-forms.php:1272
+#: lib/html-forms.php:1300
 msgid "ログイン・登録はこちら→"
 msgstr "Login & registration click here"
 
-#: lib/html-forms.php:1274
+#: lib/html-forms.php:1302
 msgid "ログインページ"
 msgstr "Login Page"
 
-#: lib/html-forms.php:1279
+#: lib/html-forms.php:1307
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed hear →"
 
-#: lib/html-forms.php:1279
+#: lib/html-forms.php:1307
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1279
+#: lib/html-forms.php:1307
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "* This message is displayed to logged in users only."
 
-#: lib/html-forms.php:1309
+#: lib/html-forms.php:1337
 msgid "管理者用エラーメッセージ"
 msgstr "Administrative error Messages"
 
-#: lib/html-forms.php:1461
+#: lib/html-forms.php:1489
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1492
 msgid "新着"
 msgstr "New Posts"
 
-#: lib/html-forms.php:1467
+#: lib/html-forms.php:1495
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1470
+#: lib/html-forms.php:1498
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1473
+#: lib/html-forms.php:1501
 msgid "お得"
 msgstr "Great deal"
 
@@ -3613,8 +3673,8 @@ msgstr ""
 msgid "アイテムを上に移動"
 msgstr "Move Item Up"
 
-#: lib/page-item-ranking/item-ranking-func.php:347 lib/shortcodes-amazon.php:375
-#: lib/shortcodes-amazon.php:378 lib/shortcodes-amazon.php:381
+#: lib/page-item-ranking/item-ranking-func.php:347 lib/shortcodes-amazon.php:376
+#: lib/shortcodes-amazon.php:379 lib/shortcodes-amazon.php:382
 #: lib/shortcodes-rakuten.php:34 lib/shortcodes-rakuten.php:37
 #: lib/shortcodes-rakuten.php:40
 msgid "詳細ページ"
@@ -3802,11 +3862,11 @@ msgstr "Notification"
 msgid "アピールエリア"
 msgstr "Appeal Area"
 
-#: lib/page-settings/_top-page.php:187
+#: lib/page-settings/_top-page.php:187 lib/widgets/recommended-cards.php:19
 msgid "おすすめカード"
 msgstr "Featured Cards"
 
-#: lib/page-settings/_top-page.php:188 lib/page-settings/image-forms.php:209
+#: lib/page-settings/_top-page.php:188 lib/page-settings/image-forms.php:213
 msgid "カルーセル"
 msgstr "Carousel"
 
@@ -5171,7 +5231,7 @@ msgstr ""
 "logo should be less than 600px width and 60px height. It is also used for "
 "Article> publisher> logo of structured data."
 
-#: lib/page-settings/amp-forms.php:49 lib/page-settings/image-forms.php:121
+#: lib/page-settings/amp-forms.php:49 lib/page-settings/image-forms.php:124
 msgid "画像の拡大効果"
 msgstr "Image magnification effect"
 
@@ -5183,7 +5243,7 @@ msgstr "AMP Lightbox (Single zoom)"
 msgid "AMPギャラリー（複数画像ギャラリー表示対応）"
 msgstr "AMP Gallery (Multi-image gallery)"
 
-#: lib/page-settings/amp-forms.php:59 lib/page-settings/image-forms.php:132
+#: lib/page-settings/amp-forms.php:59 lib/page-settings/image-forms.php:136
 #, fuzzy
 msgid "リンク画像をクリックしたときの拡大効果の設定です。"
 msgstr "It is a setting of the enlargement effect when clicking the link image."
@@ -7608,24 +7668,24 @@ msgstr "Body image settings"
 msgid "投稿・固定ページの本文部分に関する画像の設定です。"
 msgstr "Is the set of images on posts and static pages of text."
 
-#: lib/page-settings/image-forms.php:59
+#: lib/page-settings/image-forms.php:62
 msgid "アイキャッチの表示"
 msgstr "Show Eye Catch"
 
-#: lib/page-settings/image-forms.php:63
+#: lib/page-settings/image-forms.php:66
 msgid "本文上にアイキャッチを表示する"
 msgstr "Show eye Catch on Content"
 
-#: lib/page-settings/image-forms.php:64
+#: lib/page-settings/image-forms.php:67
 #, fuzzy
 msgid "投稿・固定ページトップにアイキャッチを表示します。"
 msgstr "Displays the eye-catching post and fixed top."
 
-#: lib/page-settings/image-forms.php:68
+#: lib/page-settings/image-forms.php:71
 msgid "アイキャッチラベルを表示する"
 msgstr "Show Eye Catch label"
 
-#: lib/page-settings/image-forms.php:69
+#: lib/page-settings/image-forms.php:72
 #, fuzzy
 msgid ""
 "投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
@@ -7633,21 +7693,21 @@ msgstr ""
 "This is the toggle to display the category labels on the eye-catching posts "
 "and static pages."
 
-#: lib/page-settings/image-forms.php:71
+#: lib/page-settings/image-forms.php:74
 msgid "アイキャッチの中央寄せ"
 msgstr "Center of Eye Catch"
 
-#: lib/page-settings/image-forms.php:72
+#: lib/page-settings/image-forms.php:75
 #, fuzzy
 msgid "投稿・固定ページに表示されるアイキャッチをカラムの中央に表示します。"
 msgstr ""
 "All anime shown in posts and static pages displays in the middle of the column."
 
-#: lib/page-settings/image-forms.php:74
+#: lib/page-settings/image-forms.php:77
 msgid "アイキャッチをカラム幅に引き伸ばす"
 msgstr "Stretch eye catch to column width"
 
-#: lib/page-settings/image-forms.php:75
+#: lib/page-settings/image-forms.php:78
 #, fuzzy
 msgid ""
 "アイキャッチ画像に小さな画像を使っていても、強制的にカラム幅に拡大して表示しま"
@@ -7656,24 +7716,24 @@ msgstr ""
 "Even if you use a small image for eye catch image, it is forcibly enlarged to "
 "the column width and displayed."
 
-#: lib/page-settings/image-forms.php:77
+#: lib/page-settings/image-forms.php:80
 msgid "アイキャッチにキャプションがある場合は表示する"
 msgstr "Show if an eye catch has captions"
 
-#: lib/page-settings/image-forms.php:78
+#: lib/page-settings/image-forms.php:81
 #, fuzzy
 msgid "アイキャッチ画像にキャプションが設定してある場合、表示するかどうか。"
 msgstr "Whether or not to display the button to scroll to the top."
 
-#: lib/page-settings/image-forms.php:87
+#: lib/page-settings/image-forms.php:90
 msgid "アイキャッチの自動設定"
 msgstr "Automatically Featured Image"
 
-#: lib/page-settings/image-forms.php:92
+#: lib/page-settings/image-forms.php:95
 msgid "アイキャッチ自動設定を有効にする"
 msgstr "Enable Featured Image automatic setting"
 
-#: lib/page-settings/image-forms.php:93
+#: lib/page-settings/image-forms.php:96
 #, fuzzy
 msgid ""
 "記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッチ"
@@ -7682,11 +7742,11 @@ msgstr ""
 "No picture when you publish or save the article to come up first in the text. "
 "* Will not be reflected in the preview."
 
-#: lib/page-settings/image-forms.php:101
+#: lib/page-settings/image-forms.php:104
 msgid "画像の囲み効果"
 msgstr "Image Surround Effect"
 
-#: lib/page-settings/image-forms.php:113
+#: lib/page-settings/image-forms.php:116
 #, fuzzy
 msgid ""
 "画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。"
@@ -7694,88 +7754,96 @@ msgstr ""
 "It is the setting of the border of the image. If it is enabled, it will be "
 "easier to recognize white-based images as images."
 
-#: lib/page-settings/image-forms.php:127
-msgid "baguetteBox（スマホ向け）"
+#: lib/page-settings/image-forms.php:130
+#, fuzzy
+msgid "Spotlight（軽量・高機能ギャラリー）"
+msgstr "Spotlight (Lightweight and High-Performance Gallery)"
+
+#: lib/page-settings/image-forms.php:131
+#, fuzzy
+#| msgid "baguetteBox（スマホ向け）"
+msgid "baguetteBox（軽量・スマホ向け）"
 msgstr "baguetteBox (for smartphone)"
 
-#: lib/page-settings/image-forms.php:128
-msgid "Lity（単機能・軽量）"
-msgstr "Lity (single function · light weight)"
+#: lib/page-settings/image-forms.php:132
+#, fuzzy
+msgid "Lity（軽量・1枚ずつ表示）"
+msgstr "Lity (lightweight, one by one)"
 
-#: lib/page-settings/image-forms.php:129
+#: lib/page-settings/image-forms.php:133
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: lib/page-settings/image-forms.php:146
+#: lib/page-settings/image-forms.php:150
 msgid "全体画像設定"
 msgstr "Overall image settings"
 
-#: lib/page-settings/image-forms.php:149
+#: lib/page-settings/image-forms.php:153
 #, fuzzy
 msgid "全てのページで共通して利用する画像の設定です。"
 msgstr "Is the set of images on posts and static pages of text."
 
-#: lib/page-settings/image-forms.php:156
+#: lib/page-settings/image-forms.php:160
 msgid "サムネイル画像"
 msgstr "Thumbnail image"
 
-#: lib/page-settings/image-forms.php:161
+#: lib/page-settings/image-forms.php:165
 #, fuzzy
 msgid "テレビ（地デジ）やYouTubeと同じ比率。"
 msgstr "The same ratio as TV (terrestrial digital) and YouTube."
 
-#: lib/page-settings/image-forms.php:162
+#: lib/page-settings/image-forms.php:166
 msgid "9:16, 1:1.777..（地デジ・YouTube比）デフォルト"
 msgstr "9:16, 1:1.777... (Terrestrial digital YouTube ratio) default"
 
-#: lib/page-settings/image-forms.php:164
+#: lib/page-settings/image-forms.php:168
 #, fuzzy
 msgid "人間が最も美しいと感じる比率とされています。"
 msgstr "It is the ratio that people feel most beautiful."
 
-#: lib/page-settings/image-forms.php:165
+#: lib/page-settings/image-forms.php:169
 msgid "約5:8, 1:1.618..（黄金比）"
 msgstr "About 5:8, 1:1.618... (Golden Ratio)"
 
-#: lib/page-settings/image-forms.php:167
+#: lib/page-settings/image-forms.php:171
 #, fuzzy
 msgid "一眼レフのアスペクト比。ハガキの縦横比に近いです。"
 msgstr "SLR aspect ratio. It is close to the aspect ratio of the postcard."
 
-#: lib/page-settings/image-forms.php:168
+#: lib/page-settings/image-forms.php:172
 msgid "2:3, 1:1.5（一眼レフ比）"
 msgstr "2:3, 1:1.5 (SLR ratio)"
 
-#: lib/page-settings/image-forms.php:170
+#: lib/page-settings/image-forms.php:174
 #, fuzzy
 msgid "日本の木造建築に古くから使われている比率。大和比とも呼ばれています。"
 msgstr ""
 "The ratio of Japan wooden construction used for a long time. It is also called "
 "the Yamato ratio."
 
-#: lib/page-settings/image-forms.php:171
+#: lib/page-settings/image-forms.php:175
 msgid "約5:7, 1:1.414..（白銀比）"
 msgstr "About 5:7, 1:1.414... (Silver Ratio)"
 
-#: lib/page-settings/image-forms.php:173
+#: lib/page-settings/image-forms.php:177
 #, fuzzy
 msgid "アナログテレビやデジタルカメラ、PowerPointのスライドと同じ比率。"
 msgstr ""
 "Analog TV and digital cameras, the same proportions as PowerPoint slides."
 
-#: lib/page-settings/image-forms.php:174
+#: lib/page-settings/image-forms.php:178
 msgid "3:4, 1:1.333..（アナログテレビ・デジカメ比）"
 msgstr "3:4, 1:1.333... (Analog TV/digital camera ratio)"
 
-#: lib/page-settings/image-forms.php:176
+#: lib/page-settings/image-forms.php:180
 msgid "単なる正方形。"
 msgstr "Just a square."
 
-#: lib/page-settings/image-forms.php:177
+#: lib/page-settings/image-forms.php:181
 msgid "1:1（正方形）"
 msgstr "1:1 (square)"
 
-#: lib/page-settings/image-forms.php:180
+#: lib/page-settings/image-forms.php:184
 #, fuzzy
 msgid ""
 "インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックス"
@@ -7784,15 +7852,15 @@ msgstr ""
 "Change the aspect ratio of the thumbnail image used in the index, etc. * It "
 "does not apply to \"large card\" and \"Tile card\" of \"index card type\"."
 
-#: lib/page-settings/image-forms.php:189
+#: lib/page-settings/image-forms.php:193
 msgid "Retinaディスプレイ"
 msgstr "Retina Display"
 
-#: lib/page-settings/image-forms.php:193
+#: lib/page-settings/image-forms.php:197
 msgid "サムネイルをRetinaディスプレイ対応にする"
 msgstr "Make thumbnails Retina display compatible"
 
-#: lib/page-settings/image-forms.php:194
+#: lib/page-settings/image-forms.php:198
 #, fuzzy
 msgid ""
 "サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。"
@@ -7801,78 +7869,78 @@ msgstr ""
 "The thumbnail is displayed neatly even if it sees on the Retina display "
 "compatible terminal. * Not applicable to \"large card\" of \"index card type\"."
 
-#: lib/page-settings/image-forms.php:203
+#: lib/page-settings/image-forms.php:207
 #, fuzzy
 msgid "これらの設定で変更されるサムネイル部分はこちら。"
 msgstr "Here is the thumbnail part that is changed in these settings."
 
-#: lib/page-settings/image-forms.php:205
+#: lib/page-settings/image-forms.php:209
 #, fuzzy
 msgid "インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。"
 msgstr ""
 "Index The thumbnail of the entry card for the archive, search results page."
 
-#: lib/page-settings/image-forms.php:205
+#: lib/page-settings/image-forms.php:209
 msgid "インデックスカード"
 msgstr "Index cards"
 
-#: lib/page-settings/image-forms.php:206
+#: lib/page-settings/image-forms.php:210
 #, fuzzy
 msgid "新着記事ウィジェットもサムネイル。"
 msgstr "New articles widgets are also thumbnails."
 
-#: lib/page-settings/image-forms.php:206 lib/widgets/new-entries.php:19
+#: lib/page-settings/image-forms.php:210 lib/widgets/new-entries.php:19
 #: lib/widgets/new-entries.php:57
 msgid "新着記事"
 msgstr "New Posts"
 
-#: lib/page-settings/image-forms.php:207
+#: lib/page-settings/image-forms.php:211
 #, fuzzy
 msgid "人気記事ウィジェットのサムネイル。"
 msgstr "Popular articles widget thumbnails."
 
-#: lib/page-settings/image-forms.php:208
+#: lib/page-settings/image-forms.php:212
 #, fuzzy
 #| msgid "エントリーカード（デフォルト）"
 msgid "関連記事のエントリーカードのサムネイル。"
 msgstr "Entry card (default)"
 
-#: lib/page-settings/image-forms.php:209
+#: lib/page-settings/image-forms.php:213
 #, fuzzy
 #| msgid "タイトルを重ねた大きなサムネイル"
 msgid "カルーセルカードのサムネイル。"
 msgstr "Large thumbnails with overlapping title"
 
-#: lib/page-settings/image-forms.php:210
+#: lib/page-settings/image-forms.php:214
 #, fuzzy
 msgid "ページ送りナビのサムネイル。※デフォルトのみ）"
 msgstr "Thumbnail of the page feed navigation. * Default only)"
 
-#: lib/page-settings/image-forms.php:210
+#: lib/page-settings/image-forms.php:214
 msgid "ページ送りナビ"
 msgstr "Page Navigation"
 
-#: lib/page-settings/image-forms.php:211
+#: lib/page-settings/image-forms.php:215
 #, fuzzy
 msgid "内部ブログカード、外部ブログカードのサムネイル。"
 msgstr ""
 "Is the setting of the external links work. Will be applied to external blog "
 "card."
 
-#: lib/page-settings/image-forms.php:219
+#: lib/page-settings/image-forms.php:223
 msgid "NO IMAGE設定"
 msgstr "NO IMAGE settings"
 
-#: lib/page-settings/image-forms.php:222
+#: lib/page-settings/image-forms.php:226
 #, fuzzy
 msgid "アイキャッチの存在しない投稿のサムネイル画像設定です。"
 msgstr "Is no eye-catching post thumbnail image setting."
 
-#: lib/page-settings/image-forms.php:230
+#: lib/page-settings/image-forms.php:234
 msgid "NO IMAGE画像"
 msgstr "NO IMAGE image"
 
-#: lib/page-settings/image-forms.php:235
+#: lib/page-settings/image-forms.php:239
 #, fuzzy
 msgid ""
 "アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイルを"
@@ -8827,49 +8895,28 @@ msgstr ""
 "Please select the format of the title tag to be output on the category page."
 
 #: lib/page-settings/recommended-forms.php:78
+#: lib/widgets/recommended-cards.php:111
 #, fuzzy
 #| msgid "[S] モバイル用テキスト"
 msgid "表示スタイル"
 msgstr "Display style setting of index pages."
 
-#: lib/page-settings/recommended-forms.php:83
-#, fuzzy
-msgid "画像のみ"
-msgstr "Images only"
-
 #: lib/page-settings/recommended-forms.php:84
-#, fuzzy
-msgid "画像中央に白文字タイトル"
-msgstr "White text title in the center of the image"
-
-#: lib/page-settings/recommended-forms.php:85
-#, fuzzy
-#| msgid "フロントページタイトル"
-msgid "画像中央にラベルでタイトル"
-msgstr "Front Page Title"
-
-#: lib/page-settings/recommended-forms.php:86
-#, fuzzy
-msgid "画像下段もを黒背景にしタイトルを重ねる"
-msgstr ""
-"The title is piled up with the lower part of the image on a black background."
-
-#: lib/page-settings/recommended-forms.php:89
 #, fuzzy
 msgid "おすすめカードの表示スタイルを変更します。"
 msgstr "Sets the page to display the carousel."
 
-#: lib/page-settings/recommended-forms.php:97
+#: lib/page-settings/recommended-forms.php:92
 #, fuzzy
 msgid "カード余白"
 msgstr "Card margins"
 
-#: lib/page-settings/recommended-forms.php:101
+#: lib/page-settings/recommended-forms.php:96
 #, fuzzy
 msgid "おすすめカード毎に余白を設ける"
 msgstr "Make a margin for each recommended card"
 
-#: lib/page-settings/recommended-forms.php:102
+#: lib/page-settings/recommended-forms.php:97
 #, fuzzy
 msgid ""
 "デフォルトだとカードはすべてくっついています。この機能を有効にすることにより、"
@@ -8878,17 +8925,17 @@ msgstr ""
 "By default, all the cards stick together. By enabling this feature, you can "
 "create margins for each card."
 
-#: lib/page-settings/recommended-forms.php:110
+#: lib/page-settings/recommended-forms.php:105
 #, fuzzy
 msgid "カードエリア左右余白"
 msgstr "Card area left and right margins"
 
-#: lib/page-settings/recommended-forms.php:114
+#: lib/page-settings/recommended-forms.php:109
 #, fuzzy
 msgid "おすすめカードエリアの左右に余白を設ける"
 msgstr "Make a margin on the left and right of the recommended card area"
 
-#: lib/page-settings/recommended-forms.php:115
+#: lib/page-settings/recommended-forms.php:110
 #, fuzzy
 msgid ""
 "デフォルトだと、カードエリアは画面幅いっぱいになっています。この設定を有効にす"
@@ -11155,53 +11202,75 @@ msgstr "Footer Menu"
 msgid "モバイルスライドインメニュー"
 msgstr "Mobile Slide In Menu"
 
-#: lib/settings.php:463
+#: lib/settings.php:469
 msgid "通常のカード表示"
 msgstr "Normal card display"
 
-#: lib/settings.php:466
+#: lib/settings.php:472
 #, fuzzy
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr "A dashed line appears above and below the card."
 
-#: lib/settings.php:467
+#: lib/settings.php:473
 msgid "区切り線"
 msgstr "Separator line"
 
-#: lib/settings.php:469
+#: lib/settings.php:475
 #, fuzzy
 msgid "カード自体を罫線で囲みます。"
 msgstr "Surround the card itself with a border."
 
-#: lib/settings.php:470
+#: lib/settings.php:476
 #, fuzzy
 msgid "囲み枠"
 msgstr "Enclosed frame"
 
-#: lib/settings.php:472
+#: lib/settings.php:478
 #, fuzzy
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr "This is a random display of category pages."
 
-#: lib/settings.php:473
+#: lib/settings.php:479
 msgid "大きなサムネイル"
 msgstr "Large thumbnail"
 
-#: lib/settings.php:475
+#: lib/settings.php:481
 #, fuzzy
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr "The title is piled up on the lower part of a big thumbnail image."
 
-#: lib/settings.php:476
+#: lib/settings.php:482
 msgid "タイトルを重ねた大きなサムネイル"
 msgstr "Large thumbnails with overlapping title"
+
+#: lib/settings.php:491
+#, fuzzy
+msgid "画像のみ"
+msgstr "Images only"
+
+#: lib/settings.php:492
+#, fuzzy
+msgid "画像中央に白文字タイトル"
+msgstr "White text title in the center of the image"
+
+#: lib/settings.php:493
+#, fuzzy
+#| msgid "フロントページタイトル"
+msgid "画像中央にラベルでタイトル"
+msgstr "Front Page Title"
+
+#: lib/settings.php:494
+#, fuzzy
+msgid "画像下段を黒背景にしタイトルを重ねる"
+msgstr ""
+"The title is piled up with the lower part of the image on a black background."
 
 #: lib/shortcodes-amazon.php:255
 #, fuzzy
 msgid "webservices.amazon.co.jp"
 msgstr "webservices.amazon.co.jp"
 
-#: lib/shortcodes-amazon.php:422
+#: lib/shortcodes-amazon.php:423
 #, fuzzy
 msgid ""
 "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定さ"
@@ -11210,49 +11279,50 @@ msgstr ""
 "Amazon API access key or secret key or Tracking ID is not set. Please enter "
 "from the \"API\" tab of \"Cocoon Settings\"."
 
-#: lib/shortcodes-amazon.php:428
+#: lib/shortcodes-amazon.php:429
 #, fuzzy
 #| msgid "タイトルが入力されていません。"
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "The title is not entered."
 
-#: lib/shortcodes-amazon.php:438
+#: lib/shortcodes-amazon.php:439
 #, fuzzy
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中など"
-"により、リクエストに応答できない場合に出力されるエラーコードです。このエラーが"
-"頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定すること"
-"をおすすめします。"
+"により、リクエストに応答できない場合に出力されるエラーコードです。サーバーの"
+"「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してくださ"
+"い。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長"
+"めに設定することをおすすめします。"
 msgstr ""
 "503 error. This error is the error code that is emitted when the PA-API access "
 "limit is exceeded, or during maintenance, and the request cannot be answered. "
 "If this error is frequent, it is recommended that you set the \"cache "
 "retention period\" in the \"API\" setting item to longer."
 
-#: lib/shortcodes-amazon.php:447
+#: lib/shortcodes-amazon.php:448
 #, fuzzy
 #| msgid "ランキングを更新できませんでした。"
 msgid "アイテムを取得できませんでした。"
 msgstr "Failed to update new rankings."
 
-#: lib/shortcodes-amazon.php:449
+#: lib/shortcodes-amazon.php:450
 #, fuzzy
 #| msgid ""
 #| "投稿のパンくずリスト上に表示されるウイジェット。設定しないと表示されません。"
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "This content is displayed to logged in users only."
 
-#: lib/shortcodes-amazon.php:874
+#: lib/shortcodes-amazon.php:875
 msgid "Amazon商品取得エラー"
 msgstr "Amazon Product retrieval Error"
 
-#: lib/shortcodes-amazon.php:876
+#: lib/shortcodes-amazon.php:877
 #, fuzzy
 #| msgid "ランキングを更新できませんでした。"
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Failed to update new rankings."
 
-#: lib/shortcodes-amazon.php:890
+#: lib/shortcodes-amazon.php:891
 msgid "Amazonで詳細を見る"
 msgstr "Read more on Amazon"
 
@@ -11529,24 +11599,24 @@ msgstr "Enter the content to display to logged-in users."
 msgid "ログインユーザーのみ表示"
 msgstr "Only logged-in users"
 
-#: lib/utils.php:771
+#: lib/utils.php:777
 msgid "スクロールできます"
 msgstr "Can scroll"
 
-#: lib/utils.php:859
+#: lib/utils.php:865
 msgid "公開"
 msgstr "Publish"
 
-#: lib/utils.php:860
+#: lib/utils.php:866
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure to publish the page?"
 
-#: lib/utils.php:2418
+#: lib/utils.php:2424
 #, php-format
 msgid "%s年"
 msgstr "%s Year"
 
-#: lib/utils.php:2420
+#: lib/utils.php:2426
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s Years %s months"
@@ -12373,6 +12443,18 @@ msgstr "Exclude administrators"
 msgid "管理者のコメントを表示しない"
 msgstr "Nondisplay administrator's comment"
 
+#: lib/widgets/recommended-cards.php:20
+#, fuzzy
+#| msgid "最近投稿されたコメントを表示するウィジェットです。"
+msgid "おすすめカード一覧を表示するウィジェットです。"
+msgstr "Recently posted comments widget."
+
+#: lib/widgets/recommended-cards.php:120
+#, fuzzy
+#| msgid "認証を有効にする"
+msgid "余白を有効にする"
+msgstr "To enable authentication"
+
 #: lib/widgets/related-entries.php:20
 #, fuzzy
 msgid ""
@@ -12672,6 +12754,9 @@ msgstr "LINE"
 #: tmp/sns-share-buttons.php:50
 msgid "コピー"
 msgstr "Copy"
+
+#~ msgid "Lity（単機能・軽量）"
+#~ msgstr "Lity (single function · light weight)"
 
 #~ msgid "<iframe frameborder='0' width='0' height='0'/>"
 #~ msgstr "<iframe frameborder='0' width='0' height='0'>"

@@ -56,6 +56,8 @@ Cocoonテーマの再配布もしくは、Cocoonを基盤として作成した�
 
 [baguetteBox](http://feimosi.github.io/baguetteBox.js/)
 
+[Spotlight](https://github.com/nextapps-de/spotlight)
+
 [Masonry](http://masonry.desandro.com/)
 
 [slicknav](http://slicknav.io/)

@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 1.9.8.2
+Version: 1.9.9.2
 Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7797,11 +7797,13 @@ https://codepen.io/nxworld/pen/oLdoWb
 .recommended .navi-entry-cards a {
   padding: 0;
   margin: 0;
-  width: 25%;
   border-radius: 0;
 }
 .recommended figure {
   margin: 0;
+}
+.recommended img {
+  vertical-align: bottom;
 }
 .recommended .card-content {
   font-size: 0.8em;
@@ -8654,8 +8656,8 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   word-break: break-all;
 }
 
-#tinymce.main.article {
-  width: 100%;
+body[class*="wpf-reply-create"] {
+  width: auto;
 }
 
 .live-writer .main {
@@ -8700,6 +8702,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   width: 60px;
   padding: 0;
   line-height: 34px;
+}
+
+twitter-widget {
+  overflow: hidden;
 }
 
 /**

@@ -120,6 +120,7 @@ class RecommendedCardWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_margin') , $is_margin, __( '余白を有効にする', THEME_NAME ));
       ?>
     </p>
+    <p><?php echo get_help_page_tag('https://wp-cocoon.com/recommended-cards-widget/'); ?></p>
     <?php
   }
 }

@@ -37,7 +37,7 @@ function code_minify_call_back($buffer) {
     //画像の変換
     $buffer = convert_lazy_load_tag($buffer, 'img');
     //iframeの変換
-    //$buffer = convert_lazy_load_tag($buffer, 'iframe');
+    $buffer = convert_lazy_load_tag($buffer, 'iframe');
   }
 
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
@@ -284,7 +284,7 @@ function convert_lazy_load_tag($the_content, $media){
   $pattern = '{<'.$media.'.+?>}is';
 
   if (!$is_img) {
-    $pattern = '{<iframe.+?</iframe>}is';
+    $pattern = '{<iframe.+?>}is';
   }
 
   //imgタグをamp-imgタグに変更する
@@ -341,7 +341,7 @@ function convert_lazy_load_tag($the_content, $media){
       //var_dump(htmlspecialchars($match));
       $tag = $match;
 
-      //画像URLの入れ替え
+      //Lazy Load：画像URLの入れ替え
       $search = '{ src=["\'](.+?)["\']}i';
       //$replace = ' src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="$1"';
       $replace = ' data-src="$1"';
@@ -351,52 +351,26 @@ function convert_lazy_load_tag($the_content, $media){
       //クラスの変更
       //挿入するクラス
       $classes = 'lozad lozad-'.$media;
+      $chrome_lazy = 'loading="lazy"';
       if (preg_match('/class=/i', $tag)) {
         $search = '{class=["\'](.+?)["\']}i';
-        $replace = 'class="$1 '.$classes.'"';
+        $replace = 'class="$1 '.$classes.'" '.$chrome_lazy;
         $tag = preg_replace($search, $replace, $tag);
       } else {
         $search = '<'.$media;
-        $replace = '<'.$media.' class="'.$classes.'"';
+        $replace = '<'.$media.' class="'.$classes.'" '.$chrome_lazy;
         $tag = str_replace($search, $replace, $tag);
       }
-      //$tag = convert_lazy_load_class($tag);
-
-      // //srcの削除
-      // $search = '{ src=["\'].+?["\']}i';
-      // $replace = '';
-      // $tag = preg_replace($search, $replace, $tag);
 
       //srcsetの変換宇
       $tag = str_replace(' srcset=', ' data-srcset=', $tag);
 
-      // //data-loadedの削除
-      // $tag = str_replace(' data-loaded="true"', '', $tag);
-      // $tag = str_replace(" data-loaded='true'", '', $tag);
-
-      // //srcsetの削除
-      // $search = '{ ?+srcset=["\'].+?["\']}i';
-      // $replace = '';
-      // $tag = preg_replace($search, $replace, $tag);
-
-      // //sizesの削除
-      // $search = '{ ?+sizes=["\'].+?["\']}i';
-      // $replace = '';
-      // $tag = preg_replace($search, $replace, $tag);
-
       //noscriptタグの追加
-      // if ($is_img) {
-        $tag = $tag.'<noscript>'.$match.'</noscript>';
-      // } else {
-      //   # code...
-      // }
-      //_v($tag);
+      $tag = $tag.'<noscript>'.$match.'</noscript>';
 
       //imgタグをLazy Load対応に置換
       $the_content = preg_replace('{'.preg_quote($match).'(?!<noscript>)}', $tag , $the_content);
-      //$the_content = str_replace($match, $tag , $the_content);
     }
-    //_v($img_tags);
   }
   return apply_filters('convert_lazy_load_tag', $the_content, $media);
 }

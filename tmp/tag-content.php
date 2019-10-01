@@ -22,6 +22,7 @@ if ($eye_catch_url || $content): ?>
           <img src="<?php echo esc_url($eye_catch_url); ?>" alt="<?php echo esc_attr(get_the_tag_title($tag_id)); ?>">
         </figure>
       </div>
+      <?php do_action('tag_eye_catch_after'); ?>
     <?php endif ?>
   </header>
   <?php if ($content): ?>

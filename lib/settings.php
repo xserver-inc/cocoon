@@ -273,8 +273,14 @@ add_filter('ranking_item_name', 'do_shortcode');
 add_filter('ranking_item_image_tag', 'do_shortcode');
 add_filter('ranking_item_description', 'do_shortcode');
 add_filter('ranking_item_link_tag', 'do_shortcode');
-//アピールリア
+//アピールリアadd_filter('appeal_area_message', 'wptexturize');
+add_filter('appeal_area_message', 'convert_smilies');
+add_filter('appeal_area_message', 'convert_chars');
+add_filter('appeal_area_message', 'wpautop');
+add_filter('appeal_area_message', 'shortcode_unautop');
 add_filter('appeal_area_message', 'do_shortcode');
+add_filter('appeal_area_message', 'prepend_attachment');
+add_filter('appeal_area_message', 'wp_make_content_images_responsive');
 //カテゴリ・タグページ（※フックの順番が大事）
 add_filter('the_category_tag_content', 'wptexturize');
 add_filter('the_category_tag_content', 'convert_smilies');
