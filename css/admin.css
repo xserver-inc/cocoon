@@ -1630,9 +1630,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
 .admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
-.admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
+.admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
-.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
+.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
@@ -3190,9 +3190,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo div.fb-like-mobile { display: block; }
   .admin-settings .demo div.fb-like-pc { display: none; } }
 .admin-settings .demo .mobile-menu-buttons { background: #fff; box-shadow: 0 0 5px darkgrey; font-size: 19px; position: fixed; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0; margin: 0; list-style: none; display: none; align-items: center; line-height: 1.4; min-height: 50px; transition: .3s; }
-.admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; }
+.admin-settings .demo .mobile-menu-buttons .menu-icon { text-align: center; width: 100%; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-icon::before { font-family: FontAwesome; font-size: 1em; }
-.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; }
+.admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }

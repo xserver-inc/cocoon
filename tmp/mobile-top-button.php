@@ -20,7 +20,7 @@ if (is_amp()) {
 <!-- トップボタン -->
 <li class="top-menu-button menu-button">
   <a class="go-to-top-common top-menu-a menu-button-in"<?php echo $on; ?>>
-    <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
-    <div class="top-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'トップ', THEME_NAME ); ?></div>
+    <span class="<?php echo esc_attr($icon_class); ?> menu-icon"></span>
+    <span class="top-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'トップ', THEME_NAME ); ?></span>
   </a>
 </li>

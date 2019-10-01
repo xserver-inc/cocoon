@@ -31,7 +31,7 @@
     //padding-top: 3px;
     text-align: center;
     width: 100%;
-    // display: block;
+    display: block;
     &::before{
       font-family: FontAwesome;
       font-size: 1em;
@@ -42,6 +42,7 @@
     font-size: 9px;
     text-align: center;
     opacity: 0.8;
+    display: block;
   }
 
   .menu-button {

@@ -15,8 +15,8 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'sidebar-menu-icon'; ?>
   <li class="sidebar-menu-button menu-button">
     <input id="sidebar-menu-input" type="checkbox" class="display-none">
     <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
-      <div class="<?php echo esc_attr($icon_class); ?> menu-icon"></div>
-      <div class="sidebar-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'サイドバー', THEME_NAME ); ?></div>
+      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"></span>
+      <span class="sidebar-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'サイドバー', THEME_NAME ); ?></span>
     </label>
     <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
     <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
