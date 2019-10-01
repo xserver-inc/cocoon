@@ -536,6 +536,9 @@ function wp_enqueue_web_font_lazy_load_js(){
       loadWebFont("'.get_site_icon_font_url().'");
       loadWebFont("'.FONT_ICOMOON_URL.'");
     ');
+    if (is_site_icon_font_font_awesome_5()) {
+      $data .= 'loadWebFont("'.get_template_directory_uri().'/css/fontawesome5.css");';
+    }
     wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
   }
 }
