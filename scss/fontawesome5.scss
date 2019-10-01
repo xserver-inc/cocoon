@@ -11,7 +11,31 @@
 .blank-box.bb-ok::before,
 .fab-ok::before,
 .fab-lightbulb::before,
-.fab-clock::before
+.fab-clock::before,
+.fab-check-circle-o::before,
+.list-check-circle-o li::before,
+.fab-check-square-o::before,
+.list-check-square-o li::before,
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before,
+.fab-play-circle-o::before,
+.list-play-circle-o li::before,
+.fab-star-o::before,
+.list-star-o li::before,
+.fab-caret-square-o-right::before,
+.list-caret-square-o-right li::before,
+.fab-square-o::before,
+.list-square-o li::before,
+.fab-circle-o::before,
+.list-circle-o li::before,
+.fab-plus-square-o::before,
+.list-plus-square-o li::before,
+.fab-minus-square-o::before,
+.list-minus-square-o li::before,
+.fab-times-circle-o::before,
+.list-times-circle-o li::before,
+.fab-window-close-o::before,
+.list-window-close-o li::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
@@ -20,6 +44,51 @@
 .comment-box::before{content: "\f075";}
 .ok-box::before,.fab-ok::before{content: "\f111";}
 .bb-ok::before{content: "\f111  OK";}
+.fab-check-circle-o::before,
+.list-check-circle-o li::before{
+  content: '\f058';
+}
+.fab-check-square-o::before,
+.list-check-square-o li::before{
+  content: '\f14a';
+}
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before{
+  content: '\f35a';
+}
+.fab-play-circle-o::before,
+.list-play-circle-o li::before{
+  content: '\f144';
+}
+.fab-star-o::before,
+.list-star-o li::before{
+  content: '\f005';
+}
+.fab-square-o::before,
+.list-square-o li::before{
+  content: '\f0c8';
+}
+.fab-circle-o::before,
+.list-circle-o li::before{
+  content: '\f111';
+}
+.fab-plus-square-o::before,
+.list-plus-square-o li::before{
+  content: '\f0fe';
+}
+.fab-minus-square-o::before,
+.list-minus-square-o li::before{
+  content: '\f146';
+}
+.fab-times-circle-o::before,
+.list-times-circle-o li::before{
+  content: '\f057';
+}
+.fab-window-close-o::before,
+.list-window-close-o li::before{
+  content: '\f410';
+}
+
 
 ///////////////////////////////////////////
 // Solid
@@ -103,7 +172,59 @@
 .fab-bookmark::before,
 .fab-download::before,
 .fab-coffee::before,
-.fab-user::before
+.fab-user::before,
+.btn-l::after,
+.ranking-item-link-buttons a::after,
+.btn-wrap.btn-wrap-l > a::after,
+.toggle-button::before,
+.fab-check-circle::before,
+.list-check-circle li::before,
+.fab-check-square::before,
+.list-check-square li::before,
+.fab-caret-right::before,
+.list-caret-right li::before,
+.fab-arrow-right::before,
+.list-arrow-right li::before,
+.fab-angle-right::before,
+.list-angle-right li::before,
+.fab-angle-double-right::before,
+.list-angle-double-right li::before,
+.fab-arrow-circle-right::before,
+.list-arrow-circle-right li::before,
+.fab-play-circle::before,
+.list-play-circle li::before,
+.fab-chevron-right::before,
+.list-chevron-right li::before,
+.fab-chevron-circle-right::before,
+.list-chevron-circle-right li::before,
+.fab-hand-o-right::before,
+.list-hand-o-right li::before,
+.fab-heart-o::before,
+.list-heart-o li::before,
+.fab-square::before,
+.list-square li::before,
+.fab-circle::before,
+.list-circle li::before,
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before,
+.fab-plus::before,
+.list-plus li::before,
+.fab-plus-circle::before,
+.list-plus-circle li::before,
+.fab-plus-square::before,
+.list-plus-square li::before,
+.fab-minus::before,
+.list-minus li::before,
+.fab-minus-circle::before,
+.list-minus-circle li::before,
+.fab-minus-square::before,
+.list-minus-square li::before,
+.fab-times::before,
+.list-times li::before,
+.fab-times-circle::before,
+.list-times-circle li::before,
+.fab-window-close::before,
+.list-window-close li::before
 {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -113,6 +234,10 @@
 .fab-pencil::before{content: "\f303";}
 .bb-memo::before{content: "\f303  MEMO";}
 .fab-cutlery::before{content: "\f2e7";}
+.fab-window-close::before,
+.list-window-close li::before{
+  content: "\f410";
+}
 
 ///////////////////////////////////////////
 // Brands
