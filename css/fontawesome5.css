@@ -28,7 +28,8 @@
 .fab-times-circle-o::before,
 .list-times-circle-o li::before,
 .fab-window-close-o::before,
-.list-window-close-o li::before {
+.list-window-close-o li::before,
+.search-form div.sbtn::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
@@ -231,7 +232,8 @@
 .fab-times-circle::before,
 .list-times-circle li::before,
 .fab-window-close::before,
-.list-window-close li::before {
+.list-window-close li::before,
+.search-form div.sbtn:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
