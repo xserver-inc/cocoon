@@ -1378,7 +1378,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
-.admin-settings .demo .comment-reply-link:before { content: '\f0e5'; }
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
@@ -2908,7 +2907,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .comment-form .logged-in-as { margin: 0.2em; font-size: 0.8em; }
 .admin-settings .demo .comment-area.website-hide .comment-form-url { display: none; }
 .admin-settings .demo .comment-reply-link { font-size: 14px; }
-.admin-settings .demo .comment-reply-link:before { content: '\f0e5'; }
 .admin-settings .demo .pagination { margin: 24px 0; clear: both; text-align: center; display: inline-flex; justify-content: center; width: 100%; }
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }

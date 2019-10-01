@@ -5123,9 +5123,6 @@ div .has-white-background-color {
 .comment-reply-link {
   font-size: 14px;
 }
-.comment-reply-link:before {
-  content: '\f0e5';
-}
 
 /************************************
 ** ページネーション
