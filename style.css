@@ -8815,6 +8815,7 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
 
 body[class*="wpf-reply-create"] {
   width: auto;
+  border: none;
 }
 
 .live-writer .main {
