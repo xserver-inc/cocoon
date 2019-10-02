@@ -189,11 +189,11 @@ function manage_cocoon_pwa_files(){
       'orderby' => 'modified',
       'posts_per_page' => 1,
     );
-    // $query = new WP_Query( $args );
-    // if (isset($query->post->post_modified)) {
-    //   $modified_date = '_'.date_i18n('YmdHis', strtotime($query->post->post_modified));
-    // }
-    $modified_date = '_'.date_i18n('YmdHis');
+    $query = new WP_Query( $args );
+    if (isset($query->post->post_modified)) {
+      $modified_date = '_'.date_i18n('YmdHis', strtotime($query->post->post_modified));
+    }
+    // $modified_date = '_'.date_i18n('YmdHis');
 
     //service-worker.js
     $service_worker_ver = THEME_NAME.'_'.PWA_SERVICE_WORKER_VERSION.$modified_date; //PWAに変更を加えたらバージョン変更
