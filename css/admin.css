@@ -3616,7 +3616,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mce-wpf-emoji-extra-wrap { min-width: 300px !important; min-height: 300px !important; }
 .admin-settings .demo .wpf-emoji-wrap .wpf-emoji { font-size: 24px; }
 .admin-settings .demo .wpforo-attached-file { word-break: break-all; }
-.admin-settings .demo body[class*="wpf-reply-create"] { width: auto; border: none; }
+.admin-settings .demo body[class*="wpf-reply-create"], .admin-settings .demo body[class*="wpf-topic-create"] { width: auto; border: none; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }

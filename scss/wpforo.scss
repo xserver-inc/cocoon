@@ -70,7 +70,8 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p{
 //   width: 100%;
 // }
 
-body[class*="wpf-reply-create"]{
+body[class*="wpf-reply-create"],
+body[class*="wpf-topic-create"]{
   width: auto;
   border: none;
 }
