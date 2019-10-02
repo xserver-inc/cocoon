@@ -2996,3 +2996,102 @@ function restore_global_skin_theme_options(){
   $_THEME_OPTIONS = $_FORM_SKIN_OPTIONS;
 }
 endif;
+
+//拡張エディターカラーのスタイル取得
+if ( !function_exists( 'generate_block_editor_color_style' ) ):
+function generate_block_editor_color_style($class, $name, $color_code){?>
+<?php if($class = 'bb-'.$name): ?>
+.blank-box.bb-<?php echo $name; ?> {
+  border-color: <?php echo $color_code; ?>;
+}
+
+.blank-box.bb-tab.bb-<?php echo $name; ?>::before {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'btn-wrap-'.$name): ?>
+.btn-<?php echo $name; ?>, .btn-wrap.btn-wrap-<?php echo $name; ?> > a {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'mc-'.$name): ?>
+.mc-<?php echo $name; ?> {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+  border: none;
+}
+.mc-<?php echo $name; ?>.micro-bottom::after {
+  border-bottom-color: <?php echo $color_code; ?>;
+  border-top-color: transparent;
+}
+.mc-<?php echo $name; ?>::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-<?php echo $name; ?>::after {
+  border-top-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'cb-'.$name): ?>
+.cb-<?php echo $name; ?>.caption-box {
+  border-color: <?php echo $color_code; ?>;
+}
+.cb-<?php echo $name; ?> .caption-box-label {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+}
+<?php endif; ?>
+
+<?php if($class = 'tcb-'.$name): ?>
+.tcb-<?php echo $name; ?> .tab-caption-box-label {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+}
+.tcb-<?php echo $name; ?> .tab-caption-box-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'lb-'.$name): ?>
+.lb-<?php echo $name; ?> .label-box-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'tb-'.$name): ?>
+.tb-<?php echo $name; ?> .toggle-button {
+  border: 2px solid <?php echo $color_code; ?>;
+  background: <?php echo $color_code; ?>;
+  color: #fff;
+}
+.tb-<?php echo $name; ?> .toggle-button::before {
+  color: #ccc;
+}
+.tb-<?php echo $name; ?> .toggle-checkbox:checked ~ .toggle-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'llc-'.$name): ?>
+.iic-<?php echo $name; ?> li::before {
+  color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'has-'.$name.'-color'): ?>
+div .has-<?php echo $name; ?>-color {
+  color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'has-'.$name.'-background-color'): ?>
+div .has-<?php echo $name; ?>-background-color {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+<?php
+}
+endif;
