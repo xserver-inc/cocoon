@@ -733,14 +733,14 @@ img.emoji {
   flex-direction: column-reverse;
 }
 
-.cl-slim #navi-in > ul li {
+.cl-slim .navi-in > ul li {
   height: 40px;
   line-height: 40px;
 }
-.cl-slim #navi-in > ul li .sub-menu ul {
+.cl-slim .navi-in > ul li .sub-menu ul {
   top: -40px;
 }
-.cl-slim #navi-in > ul li.menu-item-has-description > a > .caption-wrap {
+.cl-slim .navi-in > ul li.menu-item-has-description > a > .caption-wrap {
   height: 40px;
   line-height: 16px;
   font-size: 14px;

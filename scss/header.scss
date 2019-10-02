@@ -164,7 +164,7 @@
 
 //スリムサイズのグローバルナビ
 $slim_height: 40px;
-.cl-slim #navi-in > ul li{
+.cl-slim .navi-in > ul li{
   height: $slim_height;
   line-height: $slim_height;
 
