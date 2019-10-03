@@ -326,12 +326,12 @@ function cocoon_editor_color_palette_setup() {
       array(
           'name' => __( '黒', THEME_NAME ),
           'slug' => 'black',
-          'color' => '#333',
+          'color' => '#333333',
       ),
       array(
           'name' => __( '白', THEME_NAME ),
           'slug' => 'white',
-          'color' => '#fff',
+          'color' => '#ffffff',
       ),
     );
     //カラーパレットフック
@@ -340,5 +340,24 @@ function cocoon_editor_color_palette_setup() {
     add_theme_support('editor-color-palette', $colors);
     // 自由色選択を無効
     add_theme_support('disable-custom-colors');
+    return $colors;
+}
+endif;
+
+//ブロックエディターカラーパレット用のCSS
+if ( !function_exists( 'get_block_editor_color_palette_css' ) ):
+function get_block_editor_color_palette_css(){
+  $color_sets = cocoon_editor_color_palette_setup();
+  $default_colors = array(get_editor_key_color(), '#e60033', '#e95295', '#884898', '#55295b', '#1e50a2', '#0095d9', '#2ca9e1', '#00a3af', '#007b43', '#3eb370', '#8bc34a', '#c3d825', '#ffd900', '#ffc107', '#f39800', '#ea5506', '#954e2a', '#949495', '#333333', '#ffffff');
+  $css = '';
+  foreach ($color_sets as $color_set) {
+    $color = $color_set['color'];
+    //デフォルトで定義されていない色があった場合
+    if (!in_array($color, $default_colors)) {
+     $name = 'color--'.str_replace('#', '', $color);
+      $css .= get_block_editor_color_style(null, $name, $color);
+    }
+  }
+  return $css;
 }
 endif;
