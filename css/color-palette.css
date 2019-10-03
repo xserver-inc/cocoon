@@ -1,0 +1,1024 @@
+/*
+カラーパレット動作テスト用の静的ファイル
+現在の仕様で問題なく動作していれば、削除してよい
+*/
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}
+.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}
+.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}
+.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}
+.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+}
+.editor-styles-wrapper{
+.blank-box.bb-color--f39822 {
+  border-color: #f39822;
+}
+
+.blank-box.bb-tab.bb-color--f39822::before {
+  background-color: #f39822;
+}
+
+.btn-color--f39822, .btn-wrap.btn-wrap-color--f39822 > a {
+  background-color: #f39822;
+}
+
+.mc-color--f39822 {
+  background-color: #f39822;
+  color: #fff;
+  border: none;
+}
+.mc-color--f39822.micro-bottom::after {
+  border-bottom-color: #f39822;
+  border-top-color: transparent;
+}
+.mc-color--f39822::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--f39822::after {
+  border-top-color: #f39822;
+}
+
+.cb-color--f39822.caption-box {
+  border-color: #f39822;
+}
+.cb-color--f39822 .caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+
+.tcb-color--f39822 .tab-caption-box-label {
+  background-color: #f39822;
+  color: #fff;
+}
+.tcb-color--f39822 .tab-caption-box-content {
+  border-color: #f39822;
+}
+
+.lb-color--f39822 .label-box-content {
+  border-color: #f39822;
+}
+
+.tb-color--f39822 .toggle-button {
+  border: 2px solid #f39822;
+  background: #f39822;
+  color: #fff;
+}
+.tb-color--f39822 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--f39822 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #f39822;
+}
+
+.iic-color--f39822 li::before {
+  color: #f39822;
+}
+
+div .has-color--f39822-color {
+  color: #f39822;
+}
+
+div .has-color--f39822-background-color {
+  background-color: #f39822;
+}
+.blank-box.bb-color--ff0000 {
+  border-color: #ff0000;
+}
+
+.blank-box.bb-tab.bb-color--ff0000::before {
+  background-color: #ff0000;
+}
+
+.btn-color--ff0000, .btn-wrap.btn-wrap-color--ff0000 > a {
+  background-color: #ff0000;
+}
+
+.mc-color--ff0000 {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+}
+.mc-color--ff0000.micro-bottom::after {
+  border-bottom-color: #ff0000;
+  border-top-color: transparent;
+}
+.mc-color--ff0000::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-color--ff0000::after {
+  border-top-color: #ff0000;
+}
+
+.cb-color--ff0000.caption-box {
+  border-color: #ff0000;
+}
+.cb-color--ff0000 .caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.tcb-color--ff0000 .tab-caption-box-label {
+  background-color: #ff0000;
+  color: #fff;
+}
+.tcb-color--ff0000 .tab-caption-box-content {
+  border-color: #ff0000;
+}
+
+.lb-color--ff0000 .label-box-content {
+  border-color: #ff0000;
+}
+
+.tb-color--ff0000 .toggle-button {
+  border: 2px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+.tb-color--ff0000 .toggle-button::before {
+  color: #ccc;
+}
+.tb-color--ff0000 .toggle-checkbox:checked ~ .toggle-content {
+  border-color: #ff0000;
+}
+
+.iic-color--ff0000 li::before {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-color {
+  color: #ff0000;
+}
+
+div .has-color--ff0000-background-color {
+  background-color: #ff0000;
+}
+

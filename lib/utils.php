@@ -1233,6 +1233,39 @@ function get_theme_css_cache_file_url(){
 }
 endif;
 
+//ビジュアルエディターのカスタムカラーパレットCSSファイル
+if ( !function_exists( 'get_visual_color_palette_css_cache_file' ) ):
+function get_visual_color_palette_css_cache_file(){
+  $file = get_theme_css_cache_path().'visual-color-palette.css';
+  return $file;
+}
+endif;
+
+//ビジュアルエディターのカスタムカラーパレットCSSファイルURL
+if ( !function_exists( 'get_visual_color_palette_css_cache_url' ) ):
+function get_visual_color_palette_css_cache_url(){
+  $url = local_to_url(get_visual_color_palette_css_cache_file());
+  return $url;
+}
+endif;
+
+//ブロックエディターのカスタムカラーパレットCSSファイル
+if ( !function_exists( 'get_block_color_palette_css_cache_file' ) ):
+function get_block_color_palette_css_cache_file(){
+  $file = get_theme_css_cache_path().'block-color-palette.css';
+  return $file;
+}
+endif;
+
+//ブロックエディターのカスタムカラーパレットCSSファイルURL
+if ( !function_exists( 'get_block_color_palette_css_cache_url' ) ):
+function get_block_color_palette_css_cache_url(){
+  $url = local_to_url(get_block_color_palette_css_cache_file());
+  return $url;
+}
+endif;
+
+
 
 //画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
 if ( !function_exists( 'get_image_width_and_height' ) ):
@@ -2996,3 +3029,112 @@ function restore_global_skin_theme_options(){
   $_THEME_OPTIONS = $_FORM_SKIN_OPTIONS;
 }
 endif;
+
+//拡張エディターカラーのスタイル生成
+if ( !function_exists( 'generate_block_editor_color_style' ) ):
+function generate_block_editor_color_style($class, $name, $color_code, $is_all = false){?>
+<?php if($class = 'bb-'.$name || $is_all): ?>
+.blank-box.bb-<?php echo $name; ?> {
+  border-color: <?php echo $color_code; ?>;
+}
+
+.blank-box.bb-tab.bb-<?php echo $name; ?>::before {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'btn-wrap-'.$name || $is_all): ?>
+.btn-<?php echo $name; ?>, .btn-wrap.btn-wrap-<?php echo $name; ?> > a {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'mc-'.$name || $is_all): ?>
+.mc-<?php echo $name; ?> {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+  border: none;
+}
+.mc-<?php echo $name; ?>.micro-bottom::after {
+  border-bottom-color: <?php echo $color_code; ?>;
+  border-top-color: transparent;
+}
+.mc-<?php echo $name; ?>::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.mc-<?php echo $name; ?>::after {
+  border-top-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'cb-'.$name || $is_all): ?>
+.cb-<?php echo $name; ?>.caption-box {
+  border-color: <?php echo $color_code; ?>;
+}
+.cb-<?php echo $name; ?> .caption-box-label {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+}
+<?php endif; ?>
+
+<?php if($class = 'tcb-'.$name || $is_all): ?>
+.tcb-<?php echo $name; ?> .tab-caption-box-label {
+  background-color: <?php echo $color_code; ?>;
+  color: #fff;
+}
+.tcb-<?php echo $name; ?> .tab-caption-box-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'lb-'.$name || $is_all): ?>
+.lb-<?php echo $name; ?> .label-box-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'tb-'.$name || $is_all): ?>
+.tb-<?php echo $name; ?> .toggle-button {
+  border: 2px solid <?php echo $color_code; ?>;
+  background: <?php echo $color_code; ?>;
+  color: #fff;
+}
+.tb-<?php echo $name; ?> .toggle-button::before {
+  color: #ccc;
+}
+.tb-<?php echo $name; ?> .toggle-checkbox:checked ~ .toggle-content {
+  border-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'llc-'.$name || $is_all): ?>
+.iic-<?php echo $name; ?> li::before {
+  color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'has-'.$name.'-color' || $is_all): ?>
+div .has-<?php echo $name; ?>-color {
+  color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+
+<?php if($class = 'has-'.$name.'-background-color' || $is_all): ?>
+div .has-<?php echo $name; ?>-background-color {
+  background-color: <?php echo $color_code; ?>;
+}
+<?php endif; ?>
+<?php
+}
+endif;
+
+//拡張エディターカラーのスタイル取得
+if ( !function_exists( 'get_block_editor_color_style' ) ):
+function get_block_editor_color_style($class, $name, $color_code, $is_all = false){
+  ob_start();
+  generate_block_editor_color_style($class, $name, $color_code, $is_all);
+  return ob_get_clean();
+}
+endif;
+

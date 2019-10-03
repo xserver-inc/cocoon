@@ -733,3 +733,20 @@ if ($is_IE): ?>
   }
   <?php endif; ?>
 <?php endif; ?>
+<?php
+  global $post;
+  $content = $post->post_content;
+  if ($content) {
+    $res = preg_match_all('#[a-z\-]+-(color--([0-9a-f]{6}))#', $content, $m);
+    if ($res && isset($m[1])) {
+      $i = 0;
+      $classes = $m[0];
+      $names = $m[1];
+      $codes = $m[2];
+      foreach ($names as $name) {
+        generate_block_editor_color_style($classes[$i], $name,'#'.$codes[$i]);
+        $i++;
+      }
+    }
+  }
+?>

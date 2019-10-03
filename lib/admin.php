@@ -639,7 +639,9 @@ function tiny_mce_before_init_custom( $mceInit ) {
 
   //旧ビジュアルエディター
   if (isset($mceInit['body_class'])) {
-    $mceInit['body_class'] .= ' main article';
+    if (!is_plugin_fourm_page()) {
+      $mceInit['body_class'] .= ' main article';
+    }
 
     if (is_admin()) {
       $mceInit['body_class'] .= ' admin-page';
