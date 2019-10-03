@@ -100,7 +100,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     $css = get_block_editor_color_palette_css();
     $file = get_visual_color_palette_css_cache_file();
     $color_file_url = get_visual_color_palette_css_cache_url();
-    wp_filesystem_put_contents($file, $css);
+    wp_filesystem_put_contents($file, $css, 0);
     // phpでCSS呼び出しは動作せず
     //$color_php_file_url = get_template_directory_uri() . '/lib/common/color-palette-css.php';
     //$test_color_url = get_template_directory_uri() . '/css/color-palette.css' ;
@@ -148,7 +148,7 @@ function gutenberg_stylesheets_custom() {
 
     $css = get_block_editor_color_palette_css();
     $file = get_block_color_palette_css_cache_file();
-    wp_filesystem_put_contents($file, $css);
+    wp_filesystem_put_contents($file, $css, 0);
     wp_enqueue_style( THEME_NAME . '-color-palette', get_block_color_palette_css_cache_url() );
 
     //テスト用の静的ファイル
