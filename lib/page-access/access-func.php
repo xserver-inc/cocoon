@@ -334,7 +334,7 @@ function get_all_access_count($post_id = null){
 endif;
 
 if ( !function_exists( 'wrap_joined_wp_posts_sql' ) ):
-function wrap_joined_wp_posts_query($query){
+function wrap_joined_wp_posts_query($query, $limit){
   global $wpdb;
   $wp_posts = $wpdb->posts;
   $ranks_posts = 'ranks_posts';
@@ -347,6 +347,7 @@ function wrap_joined_wp_posts_query($query){
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'
+    LIMIT $limit
   ";
   //_v($query);
   //var_dump($query);
@@ -452,21 +453,19 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
 
         GROUP BY {$joined_table}.post_id
         ORDER BY sum_count DESC
-        LIMIT $limit
     ";
     //_v($query);
     //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query);
+    $query = wrap_joined_wp_posts_query($query, $limit);
   } else {
     $query = "
       SELECT {$access_table}.post_id, SUM({$access_table}.count) AS sum_count
         FROM {$access_table} $where
         GROUP BY {$access_table}.post_id
         ORDER BY sum_count DESC
-        LIMIT $limit
     ";
     //1回のクエリで投稿データを取り出せるようにケーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query);
+    $query = wrap_joined_wp_posts_query($query, $limit);
   }
 
   //_v($query);
