@@ -1299,46 +1299,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo div .has-red-color { color: #e60033; }
-.admin-settings .demo div .has-pink-color { color: #e95295; }
-.admin-settings .demo div .has-purple-color { color: #884898; }
-.admin-settings .demo div .has-blue-color { color: #0095d9; }
-.admin-settings .demo div .has-green-color { color: #3eb370; }
-.admin-settings .demo div .has-orange-color { color: #f39800; }
-.admin-settings .demo div .has-yellow-color { color: #ffd900; }
-.admin-settings .demo div .has-brown-color { color: #954e2a; }
-.admin-settings .demo div .has-grey-color { color: #949495; }
-.admin-settings .demo div .has-black-color { color: #333; }
-.admin-settings .demo div .has-deep-color { color: #55295b; }
-.admin-settings .demo div .has-indigo-color { color: #1e50a2; }
-.admin-settings .demo div .has-light-blue-color { color: #2ca9e1; }
-.admin-settings .demo div .has-cyan-color { color: #00a3af; }
-.admin-settings .demo div .has-teal-color { color: #007b43; }
-.admin-settings .demo div .has-light-green-color { color: #8bc34a; }
-.admin-settings .demo div .has-lime-color { color: #c3d825; }
-.admin-settings .demo div .has-amber-color { color: #ffc107; }
-.admin-settings .demo div .has-deep-orange-color { color: #ea5506; }
-.admin-settings .demo div .has-white-color { color: #fff; }
-.admin-settings .demo div .has-red-background-color { background-color: #e60033; }
-.admin-settings .demo div .has-pink-background-color { background-color: #e95295; }
-.admin-settings .demo div .has-purple-background-color { background-color: #884898; }
-.admin-settings .demo div .has-blue-background-color { background-color: #0095d9; }
-.admin-settings .demo div .has-green-background-color { background-color: #3eb370; }
-.admin-settings .demo div .has-orange-background-color { background-color: #f39800; }
-.admin-settings .demo div .has-yellow-background-color { background-color: #ffd900; }
-.admin-settings .demo div .has-brown-background-color { background-color: #954e2a; }
-.admin-settings .demo div .has-grey-background-color { background-color: #949495; }
-.admin-settings .demo div .has-black-background-color { background-color: #333; }
-.admin-settings .demo div .has-deep-background-color { background-color: #55295b; }
-.admin-settings .demo div .has-indigo-background-color { background-color: #1e50a2; }
-.admin-settings .demo div .has-light-blue-background-color { background-color: #2ca9e1; }
-.admin-settings .demo div .has-cyan-background-color { background-color: #00a3af; }
-.admin-settings .demo div .has-teal-background-color { background-color: #007b43; }
-.admin-settings .demo div .has-light-green-background-color { background-color: #8bc34a; }
-.admin-settings .demo div .has-lime-background-color { background-color: #c3d825; }
-.admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
-.admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
-.admin-settings .demo div .has-white-background-color { background-color: #fff; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -2859,46 +2819,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-amber li::before { color: #ffc107; }
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
-.admin-settings .demo div .has-red-color { color: #e60033; }
-.admin-settings .demo div .has-pink-color { color: #e95295; }
-.admin-settings .demo div .has-purple-color { color: #884898; }
-.admin-settings .demo div .has-blue-color { color: #0095d9; }
-.admin-settings .demo div .has-green-color { color: #3eb370; }
-.admin-settings .demo div .has-orange-color { color: #f39800; }
-.admin-settings .demo div .has-yellow-color { color: #ffd900; }
-.admin-settings .demo div .has-brown-color { color: #954e2a; }
-.admin-settings .demo div .has-grey-color { color: #949495; }
-.admin-settings .demo div .has-black-color { color: #333; }
-.admin-settings .demo div .has-deep-color { color: #55295b; }
-.admin-settings .demo div .has-indigo-color { color: #1e50a2; }
-.admin-settings .demo div .has-light-blue-color { color: #2ca9e1; }
-.admin-settings .demo div .has-cyan-color { color: #00a3af; }
-.admin-settings .demo div .has-teal-color { color: #007b43; }
-.admin-settings .demo div .has-light-green-color { color: #8bc34a; }
-.admin-settings .demo div .has-lime-color { color: #c3d825; }
-.admin-settings .demo div .has-amber-color { color: #ffc107; }
-.admin-settings .demo div .has-deep-orange-color { color: #ea5506; }
-.admin-settings .demo div .has-white-color { color: #fff; }
-.admin-settings .demo div .has-red-background-color { background-color: #e60033; }
-.admin-settings .demo div .has-pink-background-color { background-color: #e95295; }
-.admin-settings .demo div .has-purple-background-color { background-color: #884898; }
-.admin-settings .demo div .has-blue-background-color { background-color: #0095d9; }
-.admin-settings .demo div .has-green-background-color { background-color: #3eb370; }
-.admin-settings .demo div .has-orange-background-color { background-color: #f39800; }
-.admin-settings .demo div .has-yellow-background-color { background-color: #ffd900; }
-.admin-settings .demo div .has-brown-background-color { background-color: #954e2a; }
-.admin-settings .demo div .has-grey-background-color { background-color: #949495; }
-.admin-settings .demo div .has-black-background-color { background-color: #333; }
-.admin-settings .demo div .has-deep-background-color { background-color: #55295b; }
-.admin-settings .demo div .has-indigo-background-color { background-color: #1e50a2; }
-.admin-settings .demo div .has-light-blue-background-color { background-color: #2ca9e1; }
-.admin-settings .demo div .has-cyan-background-color { background-color: #00a3af; }
-.admin-settings .demo div .has-teal-background-color { background-color: #007b43; }
-.admin-settings .demo div .has-light-green-background-color { background-color: #8bc34a; }
-.admin-settings .demo div .has-lime-background-color { background-color: #c3d825; }
-.admin-settings .demo div .has-amber-background-color { background-color: #ffc107; }
-.admin-settings .demo div .has-deep-orange-background-color { background-color: #ea5506; }
-.admin-settings .demo div .has-white-background-color { background-color: #fff; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -4584,46 +4504,6 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .iic-amber li::before { color: #ffc107; }
 .components-popover__content .iic-deep-orange li::before { color: #ea5506; }
 .components-popover__content .iic-white li::before { color: #fff; }
-.components-popover__content div .has-red-color { color: #e60033; }
-.components-popover__content div .has-pink-color { color: #e95295; }
-.components-popover__content div .has-purple-color { color: #884898; }
-.components-popover__content div .has-blue-color { color: #0095d9; }
-.components-popover__content div .has-green-color { color: #3eb370; }
-.components-popover__content div .has-orange-color { color: #f39800; }
-.components-popover__content div .has-yellow-color { color: #ffd900; }
-.components-popover__content div .has-brown-color { color: #954e2a; }
-.components-popover__content div .has-grey-color { color: #949495; }
-.components-popover__content div .has-black-color { color: #333; }
-.components-popover__content div .has-deep-color { color: #55295b; }
-.components-popover__content div .has-indigo-color { color: #1e50a2; }
-.components-popover__content div .has-light-blue-color { color: #2ca9e1; }
-.components-popover__content div .has-cyan-color { color: #00a3af; }
-.components-popover__content div .has-teal-color { color: #007b43; }
-.components-popover__content div .has-light-green-color { color: #8bc34a; }
-.components-popover__content div .has-lime-color { color: #c3d825; }
-.components-popover__content div .has-amber-color { color: #ffc107; }
-.components-popover__content div .has-deep-orange-color { color: #ea5506; }
-.components-popover__content div .has-white-color { color: #fff; }
-.components-popover__content div .has-red-background-color { background-color: #e60033; }
-.components-popover__content div .has-pink-background-color { background-color: #e95295; }
-.components-popover__content div .has-purple-background-color { background-color: #884898; }
-.components-popover__content div .has-blue-background-color { background-color: #0095d9; }
-.components-popover__content div .has-green-background-color { background-color: #3eb370; }
-.components-popover__content div .has-orange-background-color { background-color: #f39800; }
-.components-popover__content div .has-yellow-background-color { background-color: #ffd900; }
-.components-popover__content div .has-brown-background-color { background-color: #954e2a; }
-.components-popover__content div .has-grey-background-color { background-color: #949495; }
-.components-popover__content div .has-black-background-color { background-color: #333; }
-.components-popover__content div .has-deep-background-color { background-color: #55295b; }
-.components-popover__content div .has-indigo-background-color { background-color: #1e50a2; }
-.components-popover__content div .has-light-blue-background-color { background-color: #2ca9e1; }
-.components-popover__content div .has-cyan-background-color { background-color: #00a3af; }
-.components-popover__content div .has-teal-background-color { background-color: #007b43; }
-.components-popover__content div .has-light-green-background-color { background-color: #8bc34a; }
-.components-popover__content div .has-lime-background-color { background-color: #c3d825; }
-.components-popover__content div .has-amber-background-color { background-color: #ffc107; }
-.components-popover__content div .has-deep-orange-background-color { background-color: #ea5506; }
-.components-popover__content div .has-white-background-color { background-color: #fff; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

@@ -733,20 +733,32 @@ if ($is_IE): ?>
   }
   <?php endif; ?>
 <?php endif; ?>
-<?php
-  global $post;
-  $content = $post->post_content;
-  if ($content) {
-    $res = preg_match_all('#[a-z\-]+-(color--([0-9a-f]{6}))#', $content, $m);
-    if ($res && isset($m[1])) {
-      $i = 0;
-      $classes = $m[0];
-      $names = $m[1];
-      $codes = $m[2];
-      foreach ($names as $name) {
-        generate_block_editor_color_style($classes[$i], $name,'#'.$codes[$i]);
-        $i++;
-      }
+<?php //WordPress仕様に合わせるため見送り
+  // global $post;
+  // $content = $post->post_content;
+  // if ($content) {
+  //   $res = preg_match_all('#[a-z\-]+-(color--([0-9a-f]{6}))#', $content, $m);
+  //   if ($res && isset($m[1])) {
+  //     $i = 0;
+  //     $classes = $m[0];
+  //     $names = $m[1];
+  //     $codes = $m[2];
+  //     foreach ($names as $name) {
+  //       generate_block_editor_color_style($classes[$i], $name,'#'.$codes[$i]);
+  //       $i++;
+  //     }
+  //   }
+  // }
+?>
+<?php //デフォルトブロックエディター色の色指定
+  $colors = get_cocoon_editor_color_palette_colors();
+  foreach ($colors as $color) { ?>
+    div .has-<?php echo $color['slug']; ?>-color {
+      color: <?php echo $color['color']; ?>;
     }
+    div .has-<?php echo $color['slug']; ?>-background-color {
+      background-color: <?php echo $color['color']; ?>;
+    }
+  <?php
   }
 ?>
