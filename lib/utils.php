@@ -2229,6 +2229,11 @@ function is_the_page_sidebar_visible(){
         $is_sidebar_visible = false;
       }
       break;
+    case 'no_display_404_pages':
+      if (is_404()) {
+        $is_sidebar_visible = false;
+      }
+      break;
     default:
 
       break;

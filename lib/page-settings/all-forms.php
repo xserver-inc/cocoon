@@ -245,6 +245,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'no_display_index_pages' => __( 'インデックスページで非表示', THEME_NAME ),
               'no_display_pages' => __( '固定ページで非表示', THEME_NAME ),
               'no_display_singles' => __( '投稿ページで非表示', THEME_NAME ),
+              'no_display_404_pages' => __( '404ページで非表示', THEME_NAME ),
             );
             //アドミンバーに独自管理メニューを表示
             generate_radiobox_tag(OP_SIDEBAR_DISPLAY_TYPE, $options, get_sidebar_display_type());
