@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 1.9.9.3
+Version: 1.9.9.4
 Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -4842,127 +4842,6 @@ label.screen-reader-text {
 
 .iic-white li::before {
   color: #fff;
-}
-
-div .has-red-color {
-  color: #e60033;
-}
-div .has-pink-color {
-  color: #e95295;
-}
-div .has-purple-color {
-  color: #884898;
-}
-div .has-blue-color {
-  color: #0095d9;
-}
-div .has-green-color {
-  color: #3eb370;
-}
-div .has-orange-color {
-  color: #f39800;
-}
-div .has-yellow-color {
-  color: #ffd900;
-}
-div .has-brown-color {
-  color: #954e2a;
-}
-div .has-grey-color {
-  color: #949495;
-}
-div .has-black-color {
-  color: #333;
-}
-div .has-deep-color {
-  color: #55295b;
-}
-div .has-indigo-color {
-  color: #1e50a2;
-}
-div .has-light-blue-color {
-  color: #2ca9e1;
-}
-div .has-cyan-color {
-  color: #00a3af;
-}
-div .has-teal-color {
-  color: #007b43;
-}
-div .has-light-green-color {
-  color: #8bc34a;
-}
-div .has-lime-color {
-  color: #c3d825;
-}
-div .has-amber-color {
-  color: #ffc107;
-}
-div .has-deep-orange-color {
-  color: #ea5506;
-}
-div .has-white-color {
-  color: #fff;
-}
-div .has-red-background-color {
-  background-color: #e60033;
-}
-div .has-pink-background-color {
-  background-color: #e95295;
-}
-div .has-purple-background-color {
-  background-color: #884898;
-}
-div .has-blue-background-color {
-  background-color: #0095d9;
-}
-div .has-green-background-color {
-  background-color: #3eb370;
-}
-div .has-orange-background-color {
-  background-color: #f39800;
-}
-div .has-yellow-background-color {
-  background-color: #ffd900;
-}
-div .has-brown-background-color {
-  background-color: #954e2a;
-}
-div .has-grey-background-color {
-  background-color: #949495;
-}
-div .has-black-background-color {
-  background-color: #333;
-}
-div .has-deep-background-color {
-  background-color: #55295b;
-}
-div .has-indigo-background-color {
-  background-color: #1e50a2;
-}
-div .has-light-blue-background-color {
-  background-color: #2ca9e1;
-}
-div .has-cyan-background-color {
-  background-color: #00a3af;
-}
-div .has-teal-background-color {
-  background-color: #007b43;
-}
-div .has-light-green-background-color {
-  background-color: #8bc34a;
-}
-div .has-lime-background-color {
-  background-color: #c3d825;
-}
-div .has-amber-background-color {
-  background-color: #ffc107;
-}
-div .has-deep-orange-background-color {
-  background-color: #ea5506;
-}
-div .has-white-background-color {
-  background-color: #fff;
 }
 
 .column-wrap {
