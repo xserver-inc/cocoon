@@ -315,10 +315,10 @@ function get_amazon_itemlookup_json($asin){
         return $res;
       }
 
-      // //取得できなかった商品のログ出力
-      // if (!is_paapi_json_item_exist($json)) {
-      //   error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
-      // }
+      //取得できなかった商品のログ出力
+      if (!is_paapi_json_item_exist($json)) {
+        error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
+      }
     }
 
     if (DEBUG_CACHE_ENABLE) {
@@ -433,8 +433,9 @@ function amazon_product_link_shortcode($atts){
   //アソシエイトurlの取得
   $associate_url = get_amazon_associate_url($asin, $associate_tracking_id);
 
-
+  //商品情報の取得
   $res = get_amazon_itemlookup_json($asin);
+
   if ($res === false) {//503エラーの場合
     return get_amazon_admin_error_message_tag($associate_url, __( '503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定することをおすすめします。', THEME_NAME ));
   }
@@ -445,16 +446,31 @@ function amazon_product_link_shortcode($atts){
     $json = json_decode( $res );
 
     if (is_paapi_json_error($json)) {
+
+      $json_error_code    = $json->{'Errors'}[0]->{'Code'};
+      $json_error_message = $json->{'Errors'}[0]->{'Message'};
+
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-      $admin_message .= '<pre class="nohighlight"><b>'.$json->{'Errors'}[0]->{'Code'}.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json->{'Errors'}[0]->{'Message'}).'</pre>';
+      $admin_message .= '<pre class="nohighlight"><b>'.$json_error_code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json_error_message).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
 
-      //メールの送信
-      $msg = 'アイテムを取得できませんでした。'.PHP_EOL.
-       $json_error_code.PHP_EOL.
-       $json_error_message.PHP_EOL;
-      error_log_to_amazon_product($asin, $msg);
-      //error_log_to_amazon_product($asin, $admin_message);
+      //キャッシュ名の取得
+      $transient_id = get_amazon_api_transient_id($asin);
+      $json_cache = get_transient( $transient_id );
+      //キャッシュがないときのみログ・メールする
+      if (!$json_cache) {
+        //メールの送信
+        $msg = 'アイテムを取得できませんでした。'.PHP_EOL.
+          $json_error_code.PHP_EOL.
+          $json_error_message.PHP_EOL;
+        error_log_to_amazon_product($asin, $msg);
+
+        //エラーの場合は一日だけキャッシュ
+        $expiration = DAY_IN_SECONDS;
+        //Amazon APIキャッシュの保存
+        set_transient($transient_id, $res, $expiration);
+      }
+
       return get_amazon_admin_error_message_tag($associate_url, $admin_message);
     }
 
