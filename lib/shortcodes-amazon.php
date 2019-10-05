@@ -315,10 +315,10 @@ function get_amazon_itemlookup_json($asin){
         return $res;
       }
 
-      //取得できなかった商品のログ出力
-      if (!is_paapi_json_item_exist($json)) {
-        error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
-      }
+      // //取得できなかった商品のログ出力
+      // if (!is_paapi_json_item_exist($json)) {
+      //   error_log_to_amazon_product($asin, AMAZON_ASIN_ERROR_MESSAGE);
+      // }
     }
 
     if (DEBUG_CACHE_ENABLE) {
@@ -448,6 +448,13 @@ function amazon_product_link_shortcode($atts){
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
       $admin_message .= '<pre class="nohighlight"><b>'.$json->{'Errors'}[0]->{'Code'}.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json->{'Errors'}[0]->{'Message'}).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
+
+      //メールの送信
+      $msg = 'アイテムを取得できませんでした。'.PHP_EOL.
+       $json_error_code.PHP_EOL.
+       $json_error_message.PHP_EOL;
+      error_log_to_amazon_product($asin, $msg);
+      //error_log_to_amazon_product($asin, $admin_message);
       return get_amazon_admin_error_message_tag($associate_url, $admin_message);
     }
 
