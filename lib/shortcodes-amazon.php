@@ -151,10 +151,10 @@ endif;
 
 //PA-APIの返り値のJSONにアイテムが存在するか
 if ( !function_exists( 'is_paapi_json_item_exist' ) ):
-  function is_paapi_json_item_exist($json){
-    return property_exists($json->{'ItemsResult'}, 'Items');
-  }
-  endif;
+function is_paapi_json_item_exist($json){
+  return property_exists($json->{'ItemsResult'}, 'Items');
+}
+endif;
 
 
 //Amazon APIから情報の取得
@@ -298,7 +298,7 @@ function get_amazon_itemlookup_json($asin){
 
   //_v($res);
   if ($res) {
-    //xml取得
+    //JSON取得
     $json = json_decode( $res );
     //_v($json);
     //_v(is_paapi_json_item_exist($json));
@@ -463,9 +463,6 @@ function amazon_product_link_shortcode($atts){
 
     if (is_paapi_json_item_exist($json)) {
       $item = $json->{'ItemsResult'}->{'Items'}[0];
-      //_v($item);
-
-      //$ASIN = esc_html($item->{'ASIN'});
 
       ///////////////////////////////////////
       // アマゾンURL
