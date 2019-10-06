@@ -491,6 +491,7 @@ function amazon_product_link_shortcode($atts){
 
     if (is_paapi_json_item_exist($json)) {
       $item = $json->{'ItemsResult'}->{'Items'}[0];
+      //_v($item);
 
       ///////////////////////////////////////
       // アマゾンURL
@@ -654,17 +655,22 @@ function amazon_product_link_shortcode($atts){
       $Offers = $item->{'Offers'};
       $HighestPrice = isset($Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'HighestPrice'}->{'DisplayAmount'} : null;
       $LowestPrice = isset($Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'LowestPrice'}->{'DisplayAmount'} : null;
-      $Price = isset($Offers->{'Summaries'}[0]->{'Price'}->{'DisplayAmount'}) ? $Offers->{'Summaries'}[0]->{'Price'}->{'DisplayAmount'} : null;
+
+      $SavingBasisPrice = isset($Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'SavingBasis'}->{'DisplayAmount'} : null;
+      $Price = isset($Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'}) ? $Offers->{'Listings'}[0]->{'Price'}->{'DisplayAmount'} : null;
+
       //$ListPrice = $item->ItemAttributes->ListPrice;
       //_v($FormattedPrice);
 
       ///////////////////////////////////////////
-      // 価格取得
+      // デフォルト価格取得
       ///////////////////////////////////////////
-      if ($Price) {
-        $FormattedPrice = $Price;
+      if ($SavingBasisPrice) {
+        $FormattedPrice = $SavingBasisPrice;
       } else {
-        if ($LowestPrice) {
+        if ($Price) {
+          $FormattedPrice = $Price;
+        } elseif ($LowestPrice) {
           $FormattedPrice = $LowestPrice;
         } else {
           $FormattedPrice = $HighestPrice;
@@ -672,11 +678,22 @@ function amazon_product_link_shortcode($atts){
       }
 
       ///////////////////////////////////////////
-      // Amazon価格の取得
+      // Amazon価格タイプに合わせる
       ///////////////////////////////////////////
-      if (is_amazon_item_stock_price_visible()) {
-        $FormattedPrice = esc_html($FormattedPrice);
+      switch (get_amazon_item_price_type()) {
+        case 'price':
+          $FormattedPrice = $Price ? $Price : $FormattedPrice;
+          break;
+        case 'lowest_price':
+          $FormattedPrice = $LowestPrice ? $LowestPrice : $FormattedPrice;
+          break;
+        case 'highest_price':
+          $FormattedPrice = $HighestPrice ? $HighestPrice : $FormattedPrice;
+          break;
       }
+      // if (is_amazon_item_lowest_price_visible()) {
+      //   $FormattedPrice = $LowestPrice ? $LowestPrice : $FormattedPrice;
+      // }
 
 
 

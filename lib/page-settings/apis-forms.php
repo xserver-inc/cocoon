@@ -61,8 +61,21 @@ $help_text = __( '取得方法', THEME_NAME );
             generate_checkbox_tag(OP_AMAZON_ITEM_PRICE_VISIBLE , is_amazon_item_price_visible(), __( '価格を表示する', THEME_NAME ));
 
             echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
-              generate_checkbox_tag(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE , is_amazon_item_stock_price_visible(), __( 'Amazon在庫価格を表示する', THEME_NAME ));
+            $options = array(
+              'price' => __( '標準価格', THEME_NAME ),
+              'in_stock' => __( '在庫価格（デフォルト）', THEME_NAME ),
+              'lowest_price' => __( '最安値', THEME_NAME ),
+              'highest_price' => __( '最高値', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_AMAZON_ITEM_PRICE_TYPE, $options, get_amazon_item_price_type());
             echo '</div>';
+
+            // echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
+            // generate_checkbox_tag(OP_AMAZON_ITEM_LOWEST_PRICE_VISIBLE , is_amazon_item_lowest_price_visible(), __( '最安価格を表示する', THEME_NAME ));
+            // echo '</div>';
+            // echo '<div class="indent'.get_not_allowed_form_class(is_amazon_item_price_visible(), true).'">';
+            //   generate_checkbox_tag(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE , is_amazon_item_stock_price_visible(), __( 'Amazon在庫価格を表示する', THEME_NAME ));
+            // echo '</div>';
 
             generate_tips_tag(__( 'データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-link-price/').get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/amazon-price.png'));
 
@@ -128,7 +141,7 @@ $help_text = __( '取得方法', THEME_NAME );
               '+itemPrice' => __( '価格順（安い順）', THEME_NAME ),
               '-itemPrice' => __( '価格順（高い順）', THEME_NAME ),
             );
-            generate_selectbox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort(), __( '商品並び替え優先度', THEME_NAME ));
+            generate_radiobox_tag(OP_GET_RAKUTEN_API_SORT, $options, get_rakuten_api_sort(), __( '商品並び替え優先度', THEME_NAME ));
             generate_tips_tag(__( '同一商品番号の商品が複数あった場合の表示優先度です。', THEME_NAME ));
 
             generate_checkbox_tag(OP_RAKUTEN_ITEM_PRICE_VISIBLE , is_rakuten_item_price_visible(), __( '価格を表示する', THEME_NAME ));

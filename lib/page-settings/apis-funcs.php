@@ -55,13 +55,29 @@ function is_amazon_item_price_visible(){
 }
 endif;
 
-//Amazon商品リンク在庫価格表示
-define('OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE', 'amazon_item_stock_price_visible');
-if ( !function_exists( 'is_amazon_item_stock_price_visible' ) ):
-function is_amazon_item_stock_price_visible(){
-  return get_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE, 1);
+//Amazon商品リンクで表示する価格
+define('OP_AMAZON_ITEM_PRICE_TYPE', 'amazon_item_price_type');
+if ( !function_exists( 'get_amazon_item_price_type' ) ):
+function get_amazon_item_price_type(){
+  return get_theme_option(OP_AMAZON_ITEM_PRICE_TYPE, 'in_stock');
 }
 endif;
+
+// //Amazon商品リンク在庫価格表示
+// define('OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE', 'amazon_item_stock_price_visible');
+// if ( !function_exists( 'is_amazon_item_stock_price_visible' ) ):
+// function is_amazon_item_stock_price_visible(){
+//   return get_theme_option(OP_AMAZON_ITEM_STOCK_PRICE_VISIBLE, 1);
+// }
+// endif;
+
+// //Amazon商品リンクの最安価格を表示する
+// define('OP_AMAZON_ITEM_LOWEST_PRICE_VISIBLE', 'amazon_item_lowest_price_visible');
+// if ( !function_exists( 'is_amazon_item_lowest_price_visible' ) ):
+// function is_amazon_item_lowest_price_visible(){
+//   return get_theme_option(OP_AMAZON_ITEM_LOWEST_PRICE_VISIBLE);
+// }
+// endif;
 
 //Amazon商品リンク説明文表示
 define('OP_AMAZON_ITEM_DESCRIPTION_VISIBLE', 'amazon_item_description_visible');

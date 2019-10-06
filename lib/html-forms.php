@@ -138,8 +138,12 @@ endif;
 
 //ラジオボックスの生成
 if ( !function_exists( 'generate_radiobox_tag' ) ):
-function generate_radiobox_tag($name, $options, $now_value){
-  ob_start();?>
+function generate_radiobox_tag($name, $options, $now_value, $label = null){
+  ob_start();
+  if ($label) {
+    generate_label_tag($name, $label);
+    generate_br_tag();
+  }?>
   <ul>
     <?php foreach ($options as $value => $caption) {
     // _v($value.' == '.$now_value);
