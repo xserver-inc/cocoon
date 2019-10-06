@@ -14,7 +14,6 @@ $home_url = apply_filters('site_logo_url', $home_url);
 $home_url = apply_filters('mobile_header_site_logo_url', $home_url);
 $site_logo_text = apply_filters('site_logo_text', get_bloginfo('name'));
 $site_logo_text = apply_filters('mobile_header_site_logo_text', $site_logo_text);
-$site_logo_text = apply_filters('site_logo_text', $site_logo_text);
 ?>
 <!-- ロゴボタン -->
 <li class="logo-menu-button menu-button">
