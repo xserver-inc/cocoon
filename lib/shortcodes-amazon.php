@@ -166,8 +166,10 @@ function get_amazon_itemlookup_json($asin){
   $transient_id = get_amazon_api_transient_id($asin);
   $transient_bk_id = get_amazon_api_transient_bk_id($asin);
   $json_cache = get_transient( $transient_id );
+  // $json = json_decode( $json_cache );
+  // $json_error_code    = isset($json->{'Errors'}[0]->{'Code'}) ? $json->{'Errors'}[0]->{'Code'} : null;
   //_v($json_cache);
-  if ($json_cache && DEBUG_CACHE_ENABLE) {
+  if ($json_cache /* && ($json_error_code != 'TooManyRequests')*/ && DEBUG_CACHE_ENABLE) {
     //_v($json_cache);
     return $json_cache;
   }
@@ -465,10 +467,13 @@ function amazon_product_link_shortcode($atts){
           $json_error_message.PHP_EOL;
         error_log_to_amazon_product($asin, $msg);
 
-        //エラーの場合は一日だけキャッシュ
-        $expiration = DAY_IN_SECONDS;
-        //Amazon APIキャッシュの保存
-        set_transient($transient_id, $res, $expiration);
+        //リクエスト過多エラーの場合はキャッシュを保存しない
+        if ($json_error_code != 'TooManyRequests') {
+          //エラーの場合は一日だけキャッシュ
+          $expiration = DAY_IN_SECONDS;
+          //Amazon APIキャッシュの保存
+          set_transient($transient_id, $res, $expiration);
+        }
       }
 
       return get_amazon_admin_error_message_tag($associate_url, $admin_message);
