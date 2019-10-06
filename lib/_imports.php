@@ -18,6 +18,7 @@ require_once abspath(__FILE__).'language.php';   //マルチ言語設定
 require_once abspath(__FILE__).'utils.php';      //ユーティリティー関数
 require_once abspath(__FILE__).'html-forms.php'; //HTMLフォーム生成関数
 require_once abspath(__FILE__).'html-tooltips.php'; //HTMLツールチップ生成関数
+require_once abspath(__FILE__).'gutenberg.php';   //ブロックエディター関係の関数
 require_once abspath(__FILE__).'ad.php';         //広告関係の設定
 require_once abspath(__FILE__).'sns.php';        //SNS関係の設定
 require_once abspath(__FILE__).'sns-share.php';  //SNSシェア関数
@@ -136,7 +137,6 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'tinymce/shortcodes.php'; //ショートコード追加
   require_once abspath(__FILE__).'admin-tools.php'; //外部ツールを利用したもの
   require_once abspath(__FILE__).'admin-forms.php'; //管理画面で使用するフォームパーツ
-  require_once abspath(__FILE__).'gutenberg.php';   //ブロックエディター関係の関数
 }
 
 require_once abspath(__FILE__).'settings.php';   //Wordpressの設定
