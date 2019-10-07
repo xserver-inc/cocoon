@@ -105,6 +105,14 @@ div.mobile-menu-buttons .menu-button:hover,
   content: '\f105';
 }
 
+.font-awesome-5 .cat-item a::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.font-awesome-5 .cat-item .children a::before {
+  content: '\f105';
+}
+
 .post-count {
   background-color: #f1f7ed;
   padding: 0 8px;
