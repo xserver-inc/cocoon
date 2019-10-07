@@ -3148,3 +3148,33 @@ function get_block_editor_color_style($class, $name, $color_code, $is_all = fals
 }
 endif;
 
+//タブレットをモバイルとしないモバイル判定関数
+if ( !function_exists( 'is_mobile' ) ):
+//スマホ表示分岐
+function is_mobile(){
+  if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+    return false;
+  }
+  $useragents = array(
+    'iPhone', // iPhone
+    'iPod', // iPod touch
+    'Android.*Mobile', // 1.5+ Android *** Only mobile
+    'Windows.*Phone', // *** Windows Phone
+    'dream', // Pre 1.5 Android
+    'CUPCAKE', // 1.5+ Android
+    'blackberry9500', // Storm
+    'blackberry9530', // Storm
+    'blackberry9520', // Storm v2
+    'blackberry9550', // Storm v2
+    'blackberry9800', // Torch
+    'webOS', // Palm Pre Experimental
+    'incognito', // Other iPhone browser
+    'webmate' ,// Other iPhone browser
+    'Mobile.*Firefox', // Firefox OS
+    'Opera Mini', // Opera Mini Browser
+    'BB10', // BlackBerry 10
+  );
+  $pattern = '/'.implode('|', $useragents).'/i';
+  return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
+endif;
