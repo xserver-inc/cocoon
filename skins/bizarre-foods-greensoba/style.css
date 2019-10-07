@@ -1108,7 +1108,7 @@ ul.menu-drawer:after{
     border-radius: 5px;
 }
 
-
+/*
 #slide-in-recent-posts-2 .widget-title:before,
 #slide-in-recent-comments-2 .widget-title:before,
 #slide-in-archives-2 .widget-title:before,
@@ -1135,7 +1135,7 @@ ul.menu-drawer:after{
 #slide-in-fb_like_box-2 .widget-title:before{content:"\f164";}
 #slide-in-author_box-2 .widget-title:before{content:"\f007";}
 #slide-in-item_ranking-2 .widget-title:before{content:"\f06d";}
-#slide-in-tag_cloud-2 .widget-title:before{content:"\f02c";}
+#slide-in-tag_cloud-2 .widget-title:before{content:"\f02c";} */
 
 .widget-entry-cards .widget-entry-card-content {
     color: slategray;
@@ -1266,5 +1266,17 @@ h3.wpforo-forum-title {
 }
 h3.wpforo-forum-title::before {
     display: none;
+}
+/************************************
+** Font Awesome 5対応
+************************************/
+.font-awesome-5 .posts-not-found h2:before,
+.font-awesome-5 .toc-title:before,
+.font-awesome-5 .blogcard-type .blogcard::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+.font-awesome-5 .blogcard::before{
+	content: "\f35d";
 }
 
