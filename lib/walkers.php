@@ -122,7 +122,7 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
           $fa_classes[] = 'fa';
           $fa_classes[] = 'fa-star';
         }
-        $fa_classes[] = 'menu-icon';
+        //$fa_classes[] = 'menu-icon';
         //_v($fa_classes);
         $classes = array_filter($classes, function($v, $k) { return !preg_match('/^fa/', $v); }, ARRAY_FILTER_USE_BOTH);
 
@@ -142,11 +142,11 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
         $attributes .= ! empty( $url )        ? ' href="'   . esc_attr( $url        ) .'"' : '';
 
-        $icon_before = '<div class="'.esc_attr($fa_class_names).'">';
-        $icon_after = '</div>';
+        $icon_before = '<span class="custom-menu-icon menu-icon"><span class="'.esc_attr($fa_class_names).'">';
+        $icon_after = '</span></span>';
 
-        $caption_before = '<div class="menu-caption">';
-        $caption_after = '</div>';
+        $caption_before = '<span class="custom-menu-caption menu-caption">';
+        $caption_after = '</span>';
         //$description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
 
         $item_output = $args->before;
