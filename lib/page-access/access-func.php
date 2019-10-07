@@ -347,6 +347,7 @@ function wrap_joined_wp_posts_query($query, $limit){
     INNER JOIN {$wp_posts} ON {$ranks_posts}.post_id = {$wp_posts}.id
     WHERE post_status = 'publish' AND
           post_type = '{$post_type}'
+    ORDER BY sum_count DESC
     LIMIT $limit
   ";
   //_v($query);
