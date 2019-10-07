@@ -219,7 +219,9 @@
 .list-times-circle li::before,
 .fab-window-close::before,
 .list-window-close li::before,
-.search-form div.sbtn:before {
+.search-form div.sbtn:before,
+.slick-prev.slick-arrow::before,
+.slick-next.slick-arrow::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
