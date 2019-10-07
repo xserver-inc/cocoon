@@ -11,6 +11,11 @@ Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
 .entry-card, .related-entry-card {
   position: relative;
   height: 100%;
@@ -754,6 +759,17 @@ img.emoji {
   background-color: #fff;
 }
 
+.navi-in a {
+  position: relative;
+}
+.navi-in .has-icon {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  display: inline-block;
+  opacity: 0.7;
+  font-size: 11px;
+}
 .navi-in > ul {
   padding: 0;
   margin: 0;
@@ -785,18 +801,6 @@ img.emoji {
 .navi-in > ul .menu-item-has-description > a > .caption-wrap > div {
   width: 100%;
 }
-.navi-in > ul > .menu-item-has-children {
-  position: relative;
-}
-.navi-in > ul > .menu-item-has-children > a::after {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  position: absolute;
-  right: 3px;
-  top: 0;
-  font-size: 12px;
-}
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;
@@ -811,18 +815,6 @@ img.emoji {
 }
 .navi-in > ul .sub-menu li {
   width: auto;
-}
-.navi-in > ul .sub-menu .menu-item-has-children {
-  position: relative;
-}
-.navi-in > ul .sub-menu .menu-item-has-children > a::after {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  position: absolute;
-  right: 3px;
-  top: 0;
-  font-size: 12px;
 }
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
@@ -943,18 +935,6 @@ img.emoji {
 .entry-card-info > * {
   font-size: 0.7em;
   padding: 2px;
-}
-
-.post-comment-count::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
-
-.entry-category::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
 }
 
 .entry-card-meta .entry-card-categorys {
@@ -1091,25 +1071,6 @@ img.emoji {
 
 .related-entry-post-date {
   margin-right: 0;
-}
-
-.post-date::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
-
-.post-update::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
-
-.amp-back::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-right: 0;
 }
 
 /************************************
@@ -1484,11 +1445,6 @@ img.emoji {
   border-radius: 2px;
   word-break: break-all;
 }
-.cat-link::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
 .cat-link:hover {
   opacity: 0.5;
   color: #fff;
@@ -1505,11 +1461,6 @@ img.emoji {
   border: 1px solid #999;
   border-radius: 2px;
   word-break: break-all;
-}
-.tag-link::before, .comment-reply-link::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
@@ -1672,13 +1623,6 @@ blockquote::after {
 /*投稿者*/
 .author-info .post-author {
   font-size: 14px;
-}
-
-.author-info::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-right: 0;
 }
 
 /************************************
@@ -2117,11 +2061,6 @@ label.screen-reader-text {
 .tagcloud a .tag-caption {
   word-break: break-all;
 }
-.tagcloud a .tag-caption::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-}
 .tagcloud a .tag-link-count {
   margin-left: 8px;
 }
@@ -2439,11 +2378,6 @@ label.screen-reader-text {
 
 .recent-comment-article {
   margin-top: 3px;
-}
-.recent-comment-article::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
 }
 
 .recent-comment-content {
@@ -5068,9 +5002,6 @@ label.screen-reader-text {
 .comment-reply-link {
   font-size: 14px;
 }
-.comment-reply-link:before {
-  content: '\f0e5';
-}
 
 /************************************
 ** ページネーション
@@ -5085,18 +5016,6 @@ label.screen-reader-text {
 }
 .pagination .current {
   background-color: #eee;
-}
-.pagination .prev::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-right: 3px;
-}
-.pagination .next::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding-left: 3px;
 }
 .pagination a:hover {
   background-color: #f5f8fa;
@@ -5115,8 +5034,6 @@ label.screen-reader-text {
   line-height: 46px;
   text-align: center;
   border-radius: 4px;
-  display: inline-flex;
-  justify-content: center;
 }
 
 .page-numbers.dots {
@@ -5196,9 +5113,10 @@ label.screen-reader-text {
   line-height: 1.2;
   font-size: 0.8em;
 }
-.pager-post-navi a::before {
+.pager-post-navi a .iconfont {
   font-size: 1.8em;
   color: #ccc;
+  padding: 8px;
 }
 .pager-post-navi a figure {
   min-width: 120px;
@@ -5208,26 +5126,12 @@ label.screen-reader-text {
   flex-direction: row;
   padding-left: 5px;
 }
-.pager-post-navi a.prev-post::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  margin-right: 5px;
-  padding-right: 0;
-}
 .pager-post-navi a.prev-post .prev-post-title {
   margin-left: 10px;
 }
 .pager-post-navi a.next-post {
   flex-direction: row-reverse;
   padding-right: 5px;
-}
-.pager-post-navi a.next-post::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  margin-left: 5px;
-  padding-right: 0;
 }
 .pager-post-navi a.next-post .next-post-title {
   margin-right: 10px;
@@ -5697,9 +5601,8 @@ div.sbs-think .speech-balloon::after {
   position: relative;
 }
 .product-item-box::after {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
+  content: '\ea87';
+  font-family: icomoon;
   position: absolute;
   bottom: 0;
   right: 6px;
@@ -6068,12 +5971,6 @@ div.sbs-think .speech-balloon::after {
 
 .item-price {
   color: #c9171e;
-}
-
-.item-review::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
 }
 
 .acquired-date {
@@ -6460,11 +6357,6 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-icon {
   text-align: center;
   width: 100%;
-  display: block;
-}
-.mobile-menu-buttons .menu-icon::before {
-  font-family: FontAwesome;
-  font-size: 1em;
 }
 .mobile-menu-buttons .menu-caption {
   font-size: 9px;
@@ -6514,46 +6406,6 @@ div.fb-like-mobile {
 
 .fa.menu-icon {
   font: inherit;
-}
-
-.navi-menu-icon::before {
-  content: '\f0c9';
-}
-
-.home-menu-icon::before {
-  content: '\f015';
-}
-
-.search-menu-icon::before {
-  content: '\f002';
-}
-
-.top-menu-icon::before {
-  content: '\f062';
-}
-
-.toc-menu-icon::before {
-  content: '\f0ca';
-}
-
-.sidebar-menu-icon::before {
-  content: '\f03b';
-}
-
-.share-menu-icon::before {
-  content: '\f1e0';
-}
-
-.follow-menu-icon::before {
-  content: '\f004';
-}
-
-.prev-menu-icon::before {
-  content: '\f060';
-}
-
-.next-menu-icon::before {
-  content: '\f061';
 }
 
 /*閉じる用の薄黒カバー*/
@@ -6680,12 +6532,6 @@ div.fb-like-mobile {
   display: block;
   cursor: pointer;
   text-align: center;
-}
-.menu-close-button::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
-  padding: 0;
   font-size: 2em;
 }
 
@@ -7167,11 +7013,6 @@ div.fb-like-mobile {
   color: #ccc;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
-}
-.search-submit::before {
-  font-family: FontAwesome;
-  content: "";
-  padding-right: 4px;
 }
 
 .timeline-box {

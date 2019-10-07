@@ -75,6 +75,24 @@ function get_site_font_weight(){
 }
 endif;
 
+//サイトアイコンフォント
+define('OP_SITE_ICON_FONT', 'site_icon_font');
+if ( !function_exists( 'get_site_icon_font' ) ):
+function get_site_icon_font(){
+  return get_theme_option(OP_SITE_ICON_FONT, 'font_awesome_4');
+}
+endif;
+if ( !function_exists( 'is_site_icon_font_font_awesome_4' ) ):
+function is_site_icon_font_font_awesome_4(){
+  return get_site_icon_font() == 'font_awesome_4';
+}
+endif;
+if ( !function_exists( 'is_site_icon_font_font_awesome_5' ) ):
+function is_site_icon_font_font_awesome_5(){
+  return get_site_icon_font() == 'font_awesome_5';
+}
+endif;
+
 //サイト背景色
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');
 if ( !function_exists( 'get_site_background_color' ) ):

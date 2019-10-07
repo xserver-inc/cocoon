@@ -272,14 +272,14 @@ define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)'
 define('URL_REG', '/'.URL_REG_STR.'/');
 
 //Font Awesome4.7のCDN
-define('FONT_AWESOME4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+define('FONT_AWESOME_4_CDN_URL', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 //Font Awesome5のCDN
-define('FONT_AWESOME5_CDN_URL', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.11.1/css/all.css');
 
 //Font Awesome4
-define('FONT_AWESOME4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
+define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
 //Font Awesome5
-define('FONT_AWESOME5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
+define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 

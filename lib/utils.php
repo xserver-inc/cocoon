@@ -27,7 +27,6 @@ function get_the_nolink_categories(){
   }
   return $categories;
 }
-
 endif;
 
 
@@ -46,7 +45,7 @@ function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
     $style = null;//get_category_label_style_attr($category->cat_ID);
-    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'>'.$category->cat_name.'</a>';
+    $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder" aria-hidden="true"></span> '.$category->cat_name.'</a>';
   }
   return $categories;
 }
@@ -99,7 +98,7 @@ function get_the_tag_links(){
   $posttags = get_the_tags();
   if ( $posttags ) {
     foreach(get_the_tags() as $tag){
-      $tags .= '<a class="tag-link tag-link-'.$tag->term_id.' border-element" href="'.get_tag_link( $tag->term_id ).'">'.$tag->name.'</a>';
+      $tags .= '<a class="tag-link tag-link-'.$tag->term_id.' border-element" href="'.get_tag_link( $tag->term_id ).'"><span class="fa fa-tag" aria-hidden="true"></span> '.$tag->name.'</a>';
     }
   }
   return $tags;
@@ -331,7 +330,10 @@ endif;
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
   if (!is_web_font_lazy_load_enable() || is_admin()) {
-    wp_enqueue_style( 'font-awesome-style', FONT_AWESOME4_URL );
+    wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
+    if (is_site_icon_font_font_awesome_5() && !is_admin()) {
+      wp_enqueue_style( 'font-awesome5-update-style', get_template_directory_uri().'/css/fontawesome5.css' );
+    }
   }
 }
 endif;
@@ -531,9 +533,12 @@ function wp_enqueue_web_font_lazy_load_js(){
   if ( is_web_font_lazy_load_enable() && !is_admin() ){
     wp_enqueue_script( 'web-font-lazy-load-js', get_template_directory_uri().'/js/web-font-lazy-load.js', array(), false, true );
     $data = ('
-      loadWebFont("'.FONT_AWESOME4_URL.'");
+      loadWebFont("'.get_site_icon_font_url().'");
       loadWebFont("'.FONT_ICOMOON_URL.'");
     ');
+    if (is_site_icon_font_font_awesome_5()) {
+      $data .= 'loadWebFont("'.get_template_directory_uri().'/css/fontawesome5.css");';
+    }
     wp_add_inline_script( 'web-font-lazy-load-js', $data, 'after' ) ;
   }
 }

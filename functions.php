@@ -97,7 +97,7 @@ function get_archive_chapter_title(){
   $chapter_title = null;
   if( is_category() ) {//カテゴリページの場合
     $cat_id = get_query_var('cat');
-    $icon_font = '<span class="fa fa-folder-open"></span>';
+    $icon_font = '<span class="fa fa-folder-open" aria-hidden="true"></span>';
     if ($cat_id && get_the_category_title($cat_id)) {
       $chapter_title .= $icon_font.get_the_category_title($cat_id);
     } else {
@@ -105,7 +105,7 @@ function get_archive_chapter_title(){
     }
   } elseif( is_tag() ) {//タグページの場合
     $tag_id = get_query_var('tag_id');
-    $icon_font = '<span class="fa fa-tags"></span>';
+    $icon_font = '<span class="fa fa-tags" aria-hidden="true"></span>';
     if ($tag_id && get_the_tag_title($tag_id)) {
       $chapter_title .= $icon_font.get_the_tag_title($tag_id);
     } else {
@@ -118,18 +118,18 @@ function get_archive_chapter_title(){
     if (empty($search_query)) {
       $search_query = __( 'キーワード指定なし', THEME_NAME );
     }
-    $chapter_title .= '<span class="fa fa-search"></span>"'.$search_query.'"';
+    $chapter_title .= '<span class="fa fa-search" aria-hidden="true"></span>"'.$search_query.'"';
   } elseif (is_day()) {
     //年月日のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y-m-d');
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m-d');
   } elseif (is_month()) {
     //年と月のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y-m');
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y-m');
   } elseif (is_year()) {
     //年のフォーマットを取得
-    $chapter_title .= '<span class="fa fa-calendar"></span>'.get_the_time('Y');
+    $chapter_title .= '<span class="fa fa-calendar" aria-hidden="true"></span>'.get_the_time('Y');
   } elseif (is_author()) {//著書ページの場合
-    $chapter_title .= '<span class="fa fa-user"></span>'.esc_html(get_queried_object()->display_name);
+    $chapter_title .= '<span class="fa fa-user" aria-hidden="true"></span>'.esc_html(get_queried_object()->display_name);
   } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
     $chapter_title .= 'Archives';
   } else {

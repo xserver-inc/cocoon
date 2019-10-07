@@ -202,7 +202,7 @@ function manage_cocoon_pwa_files(){
     $jquery_migrate_url = get_jquery_migrate_url(get_jquery_migrate_version());
     $theme_js_url = THEME_JS_URL;
     $theme_child_js_url = THEME_CHILD_JS_URL;
-    $font_awesome4_url = FONT_AWESOME4_URL;
+    $font_awesome_url = get_site_icon_font_url();
     $font_icomoon_url = FONT_ICOMOON_URL;
 
     //Service Worker
@@ -215,6 +215,7 @@ const urlsToCache = [
   '{$icon_url_l}',
   '{$theme_js_url}',
   '{$theme_child_js_url}',
+  '{$font_awesome_url}',
   '{$font_icomoon_url}'
 ];
 

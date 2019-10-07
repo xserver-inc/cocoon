@@ -117,6 +117,7 @@ require_once abspath(__FILE__).'html5.php'; //HTML5チェック関係
 //フルパスを指定しないとうまくいかないファイル
 require_once abspath(__FILE__).'profile.php'; //プロフィール関係の処理
 require_once abspath(__FILE__).'youtube.php'; //YouTube関係の処理
+require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
 
 //Cocoon Blocks

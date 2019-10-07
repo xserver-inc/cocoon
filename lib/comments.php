@@ -132,6 +132,14 @@ function simple_thread_comment_custom_callback($comment, $args, $depth) {
 }
 endif;
 
+add_filter( 'comment_reply_link', 'comment_reply_link_custom' );
+if ( !function_exists( 'comment_reply_link_custom' ) ):
+function comment_reply_link_custom($tag){
+  $tag = preg_replace('#<a .+?>#', '$0<span class="fa fa-comment-o"></span> ', $tag);
+  return $tag;
+}
+endif;
+
 // //get_avatarで取得するタグの変更
 // add_filter('get_avatar', 'get_avatar_tag_custom');
 // if ( !function_exists( 'get_avatar_tag_custom' ) ):

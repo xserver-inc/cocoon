@@ -1,0 +1,261 @@
+///////////////////////////////////////////
+// Font Awesome4 → Font Awesome5
+///////////////////////////////////////////
+
+///////////////////////////////////////////
+// Regular
+///////////////////////////////////////////
+.comment-box::before,
+.ok-box::before,
+.blank-box.bb-comment::before,
+.blank-box.bb-ok::before,
+.fab-ok::before,
+.fab-lightbulb::before,
+.fab-clock::before,
+.fab-check-circle-o::before,
+.list-check-circle-o li::before,
+.fab-check-square-o::before,
+.list-check-square-o li::before,
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before,
+.fab-play-circle-o::before,
+.list-play-circle-o li::before,
+.fab-star-o::before,
+.list-star-o li::before,
+.fab-caret-square-o-right::before,
+.list-caret-square-o-right li::before,
+.fab-square-o::before,
+.list-square-o li::before,
+.fab-circle-o::before,
+.list-circle-o li::before,
+.fab-plus-square-o::before,
+.list-plus-square-o li::before,
+.fab-minus-square-o::before,
+.list-minus-square-o li::before,
+.fab-times-circle-o::before,
+.list-times-circle-o li::before,
+.fab-window-close-o::before,
+.list-window-close-o li::before,
+.search-form div.sbtn::after
+// .comment-reply-link::before
+{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.comment-box::before{content: "\f075";}
+.ok-box::before,.fab-ok::before{content: "\f111";}
+.bb-ok::before{content: "\f111  OK";}
+.fab-check-circle-o::before,
+.list-check-circle-o li::before{
+  content: '\f058';
+}
+.fab-check-square-o::before,
+.list-check-square-o li::before{
+  content: '\f14a';
+}
+.fab-arrow-circle-o-right::before,
+.list-arrow-circle-o-right li::before{
+  content: '\f35a';
+}
+.fab-play-circle-o::before,
+.list-play-circle-o li::before{
+  content: '\f144';
+}
+.fab-star-o::before,
+.list-star-o li::before{
+  content: '\f005';
+}
+.fab-square-o::before,
+.list-square-o li::before{
+  content: '\f0c8';
+}
+.fab-circle-o::before,
+.list-circle-o li::before{
+  content: '\f111';
+}
+.fab-plus-square-o::before,
+.list-plus-square-o li::before{
+  content: '\f0fe';
+}
+.fab-minus-square-o::before,
+.list-minus-square-o li::before{
+  content: '\f146';
+}
+.fab-times-circle-o::before,
+.list-times-circle-o li::before{
+  content: '\f057';
+}
+.fab-window-close-o::before,
+.list-window-close-o li::before{
+  content: '\f410';
+}
+// .comment-reply-link::before{
+//   content: '\f075';
+//   margin-right: 4px;
+// }
+
+
+///////////////////////////////////////////
+// Solid
+///////////////////////////////////////////
+.information-box::before,
+.information::before,
+.question-box::before,
+.question::before,
+.alert-box::before,
+.alert::before,
+.memo-box::before,
+.profile-box::before,
+.ng-box::before,
+.good-box::before,
+.bad-box::before,
+.blank-box.bb-check::before,
+.blank-box.bb-point::before,
+.blank-box.bb-tips::before,
+.blank-box.bb-pickup::before,
+.blank-box.bb-hint::before,
+.blank-box.bb-bookmark::before,
+.blank-box.bb-memo::before,
+.blank-box.bb-download::before,
+.blank-box.bb-break::before,
+.blank-box.bb-ng::before,
+.blank-box.bb-good::before,
+.blank-box.bb-bad::before,
+.blank-box.bb-profile::before,
+.bct-related .blogcard::before,
+.bct-reference .blogcard::before,
+.bct-popular .blogcard::before,
+.bct-pickup .blogcard::before,
+.bct-check .blogcard::before,
+.bct-together .blogcard::before,
+.bct-detail .blogcard::before,
+.bct-official .blogcard::before,
+.bct-dl .blogcard::before,
+.fab-info-circle::before,
+.fab-question-circle::before,
+.fab-exclamation-circle::before,
+.fab-pencil::before,
+.fab-edit::before,
+.fab-comment::before,
+.fab-bad::before,
+.fab-graduation-cap::before,
+.fab-book::before,
+.fab-envelope::before,
+.fab-flag::before,
+.fab-ban::before,
+.fab-bolt::before,
+.fab-calendar::before,
+.fab-cutlery::before,
+.fab-heart::before,
+.list-heart li::before,
+.fab-camera::before,
+.fab-search::before,
+.fab-folder::before,
+.fab-tag::before,
+.fab-trophy::before,
+.fab-car::before,
+.fab-truck::before,
+.fab-bicycle::before,
+.fab-motorcycle::before,
+.fab-bus::before,
+.fab-plane::before,
+.fab-train::before,
+.fab-subway::before,
+.fab-taxi::before,
+.fab-file-text::before,
+.fab-jpy::before,
+.fab-usd::before,
+.fab-eur::before,
+.fab-ship::before,
+.fab-thumbs-up::before,
+.fab-thumbs-down::before,
+.fab-check::before,
+.list-check li::before,
+.fab-bell::before,
+.fab-star::before,
+.list-star li::before,
+.fab-bookmark::before,
+.fab-download::before,
+.fab-coffee::before,
+.fab-user::before,
+.btn-l::after,
+.ranking-item-link-buttons a::after,
+.btn-wrap.btn-wrap-l > a::after,
+.toggle-button::before,
+.fab-check-circle::before,
+.list-check-circle li::before,
+.fab-check-square::before,
+.list-check-square li::before,
+.fab-caret-right::before,
+.list-caret-right li::before,
+.fab-arrow-right::before,
+.list-arrow-right li::before,
+.fab-angle-right::before,
+.list-angle-right li::before,
+.fab-angle-double-right::before,
+.list-angle-double-right li::before,
+.fab-arrow-circle-right::before,
+.list-arrow-circle-right li::before,
+.fab-play-circle::before,
+.list-play-circle li::before,
+.fab-chevron-right::before,
+.list-chevron-right li::before,
+.fab-chevron-circle-right::before,
+.list-chevron-circle-right li::before,
+.fab-hand-o-right::before,
+.list-hand-o-right li::before,
+.fab-heart-o::before,
+.list-heart-o li::before,
+.fab-square::before,
+.list-square li::before,
+.fab-circle::before,
+.list-circle li::before,
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before,
+.fab-plus::before,
+.list-plus li::before,
+.fab-plus-circle::before,
+.list-plus-circle li::before,
+.fab-plus-square::before,
+.list-plus-square li::before,
+.fab-minus::before,
+.list-minus li::before,
+.fab-minus-circle::before,
+.list-minus-circle li::before,
+.fab-minus-square::before,
+.list-minus-square li::before,
+.fab-times::before,
+.list-times li::before,
+.fab-times-circle::before,
+.list-times-circle li::before,
+.fab-window-close::before,
+.list-window-close li::before,
+.search-form div.sbtn:before
+{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.memo-box::before,
+.fab-pencil::before{content: "\f303";}
+.bb-memo::before{content: "\f303  MEMO";}
+.fab-cutlery::before{content: "\f2e7";}
+.fab-window-close::before,
+.list-window-close li::before{
+  content: "\f410";
+}
+
+///////////////////////////////////////////
+// Brands
+///////////////////////////////////////////
+.blank-box.bb-amazon::before,
+.fab-amazon::before,
+.fab-btc::before,
+.fab-apple::before,
+.fab-android::before,
+.fab-wordpress::before
+{
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}

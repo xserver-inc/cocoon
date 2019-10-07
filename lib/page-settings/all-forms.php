@@ -130,6 +130,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         </tr>
 
 
+        <!-- サイトアイコフォント  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_SITE_ICON_FONT, __('サイトアイコンフォント', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'font_awesome_4' => __( 'Font Awesome 4', THEME_NAME ),
+              'font_awesome_5' => __( 'Font Awesome 5', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_SITE_ICON_FONT, $options, get_site_icon_font());
+            generate_tips_tag(__('サイト全体で使用するアイコンフォントを選択します。', THEME_NAME));
+            ?>
+
+          </td>
+        </tr>
+
+
         <!-- サイト背景色 -->
         <tr>
           <th scope="row">

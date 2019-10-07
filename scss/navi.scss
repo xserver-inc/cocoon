@@ -4,19 +4,20 @@
 $menu_height: 60px;
 $sub_menu_width: 240px;
 $icon_height: 16px;
-@mixin menu_item_has_children($unicode:''){
-  position: relative;
-  >a{
-    &::after{
-      @include fontawesome($unicode);
-      position: absolute;
-      right: 3px;
-      top: 0;
-      font-size: 12px;
-      //top: ($menu_height - $icon_height) / 2;
-    }
-  }
-}
+// @mixin menu_item_has_children($unicode:''){
+//   position: relative;
+//   >a{
+//     &::after{
+//       @include fontawesome($unicode);
+//       font-family: FontAwesome;
+//       position: absolute;
+//       right: 3px;
+//       top: 0;
+//       font-size: 12px;
+//       //top: ($menu_height - $icon_height) / 2;
+//     }
+//   }
+// }
 
 .navi{
   background-color: $white;
@@ -29,6 +30,17 @@ $icon_height: 16px;
 
 .navi-in{
   //font-family: $meiryo_font;
+  a{
+    position: relative;
+  }
+  .has-icon{
+    position: absolute;
+    right: 6px;
+    top: 0;
+    display: inline-block;
+    opacity: 0.7;
+    font-size: 11px;
+  }
 
   >ul{
     @include list_cancel;
@@ -93,9 +105,9 @@ $icon_height: 16px;
       // }
     }
 
-    >.menu-item-has-children{
-      @include menu_item_has_children('\f107');
-    }
+    // >.menu-item-has-children{
+    //   @include menu_item_has_children('\f107');
+    // }
 
     /*サブメニュー*/
     .sub-menu{
@@ -112,9 +124,9 @@ $icon_height: 16px;
         width: auto;
       }
 
-      .menu-item-has-children{
-        @include menu_item_has_children('\f105');
-      }
+      // .menu-item-has-children{
+      //   @include menu_item_has_children('\f105');
+      // }
       a{
         padding-left: 16px;
         padding-right: 16px;

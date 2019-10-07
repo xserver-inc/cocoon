@@ -37,12 +37,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         //echo $update_time;
         //投稿日の表示
         if (is_related_entry_card_post_date_visible() || (is_related_entry_card_post_date_or_update_visible() && !$update_time && is_related_entry_card_post_update_visible())): ?>
-          <span class="post-date"><?php the_time(get_site_date_format()); ?></span>
+          <span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span> <?php the_time(get_site_date_format()); ?></span>
         <?php endif ?>
         <?php //更新時の表示
         //_v(is_related_entry_card_post_update_visible());
         if (is_related_entry_card_post_update_visible() && $update_time && (get_the_time('U') < get_update_time('U'))): ?>
-          <span class="post-update"><?php echo $update_time; ?></span>
+          <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span> <?php echo $update_time; ?></span>
         <?php endif ?>
         <?php //投稿者の表示
         if (is_related_entry_card_post_author_visible()): ?>

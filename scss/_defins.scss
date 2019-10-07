@@ -96,8 +96,13 @@ $bgc_hover_anime: all .7s;
 
 //Font Awesomeアイコンを出力するとき
 @mixin fontawesome($unicode:'/f004') {
-  font-family: FontAwesome;
+  //font-family: FontAwesome;
   content: $unicode;
+  //padding-right: 4px;
+}
+
+.faw::before{
+  font-family: FontAwesome;
   padding-right: 4px;
 }
 
@@ -387,9 +392,6 @@ $bgc_hover_anime: all .7s;
 
   .tag-caption{
     word-break: break-all;
-    &::before{
-      @include fontawesome('\f02b');
-    }
   }
 
   .tag-link-count{

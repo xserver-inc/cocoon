@@ -13,8 +13,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !class_exists( 'menu_description_walker' ) ):
 class menu_description_walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-    //_v($args);
-    global $wp_query;
+    //_v($item);
+
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
     $url = trim($item->url);
 
@@ -35,16 +35,35 @@ class menu_description_walker extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $url )        ? ' href="'   . esc_attr( $url ) .'"' : '';
 
+    ///////////////////////////////////////////
+    // 説明文の作成
+    ///////////////////////////////////////////
     $prepend = '<div class="item-label">';
     $append = '</div>';
     $description  = ! empty( $item->description ) ? '<div class="item-description sub-caption">'.esc_html( $item->description ).'</div>' : '';
+    $has_sub_menu = in_array('menu-item-has-children', $item->classes);
+    $has_parent = $item->menu_item_parent;
 
+    ///////////////////////////////////////////
+    // サブメニューにアイコンフォントの準備
+    ///////////////////////////////////////////
+    $iconfont = null;
+    //トップメニューでサブメニューを持っている場合
+    if ($has_sub_menu && !$has_parent) {
+      $iconfont = '<div class="top-has-sub has-sub has-icon"><div class="fa fa-angle-down" aria-hidden="true"></div></div>';
+    } elseif ($has_sub_menu) {//サブメニューでサブメニューを持っている場合
+      $iconfont = '<div class="sub-has-sub has-sub has-icon"><div class="fa fa-angle-right" aria-hidden="true"></div></div>';
+    }
+
+    ///////////////////////////////////////////
+    // 最終組み立て
+    ///////////////////////////////////////////
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
     $item_output .= '<div class="caption-wrap">';
     $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
     $item_output .= $description.$args->link_after;
-    $item_output .= '</div>';
+    $item_output .= '</div>'.$iconfont;
     $item_output .= '</a>';
     $item_output .= $args->after;
 

@@ -105,7 +105,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     //$color_php_file_url = get_template_directory_uri() . '/lib/common/color-palette-css.php';
     //$test_color_url = get_template_directory_uri() . '/css/color-palette.css' ;
     array_push($stylesheets,
-      FONT_AWESOME4_URL,
+      add_file_ver_to_css_js(get_site_icon_font_url()),
       add_file_ver_to_css_js($style_url),
       add_file_ver_to_css_js($keyframes_url),
       add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル

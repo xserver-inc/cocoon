@@ -71,6 +71,14 @@ if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
 
+
+//Font Awesomeのスタイルの読み込み
+echo '<link rel="stylesheet" href="'.esc_url(get_site_icon_font_cdn_url()).'">'.PHP_EOL;
+//Google Fontsスタイルの読み込み
+if (!is_site_font_family_local()) {
+  echo '<link rel="stylesheet" href="'.esc_url(get_site_font_source_url()).'">'.PHP_EOL;
+}
+
 // //LinkSwitchが有効な時
 // if (is_all_linkswitch_enable()) {
 //   echo '<script async custom-element="amp-link-rewriter" src="https://cdn.ampproject.org/v0/amp-link-rewriter-0.1.js"></script>'.PHP_EOL;

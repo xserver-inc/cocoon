@@ -20,7 +20,8 @@
 .product-item-box{
   position: relative;
   &::after{
-    @include fontawesome('\f270');
+    content: '\ea87';
+    font-family: icomoon;
     position: absolute;
     bottom: 0;
     right: 6px;
@@ -382,10 +383,6 @@
 
 .item-price{
   color: #c9171e;
-}
-
-.item-review::before{
-  @include fontawesome('\f086');
 }
 
 .acquired-date{

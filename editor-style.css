@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.faw::before {
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+
 /*ビジュアルエディターのスタイルを書く*/
 body#tinymce {
   padding: 0 20px !important;

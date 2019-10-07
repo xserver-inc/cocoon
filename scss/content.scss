@@ -71,10 +71,6 @@
   border-radius: $badge_border_radius;
   word-break: break-all;
 
-  &::before{
-    @include fontawesome('\f07b');
-  }
-
   &:hover{
     opacity: 0.5;
     color: $white;
@@ -93,10 +89,6 @@
   border: 1px solid $x_pallid_text_color;
   border-radius: $badge_border_radius;
   word-break: break-all;
-
-  &::before{
-    @include fontawesome('\f02b');
-  }
 
   &:hover{
     @include bgc_hover;
@@ -216,10 +208,6 @@ blockquote {
 /*投稿者*/
 .author-info .post-author{
   font-size: 14px;
-}
-.author-info::before{
-  @include fontawesome('\f040');
-  padding-right: 0;
 }
 
 /************************************
