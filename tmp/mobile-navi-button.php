@@ -15,7 +15,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
-      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"></span>
+      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"><span class="fa fa-bars" aria-hidden="true"></span></span>
       <span class="navi-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'メニュー', THEME_NAME ); ?></span>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>

@@ -6357,6 +6357,7 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-icon {
   text-align: center;
   width: 100%;
+  display: block;
 }
 .mobile-menu-buttons .menu-caption {
   font-size: 9px;

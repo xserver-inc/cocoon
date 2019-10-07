@@ -16,7 +16,7 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'search-menu-icon'; ?>
   <li class="search-menu-button menu-button">
     <input id="search-menu-input" type="checkbox" class="display-none">
     <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
-      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"></span>
+      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"><span class="fa fa-search" aria-hidden="true"></span></span>
       <span class="search-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '検索', THEME_NAME ); ?></span>
     </label>
     <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
