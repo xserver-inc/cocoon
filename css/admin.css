@@ -3346,6 +3346,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
+.admin-settings .demo input[type='submit'] { -webkit-appearance: none; border: 1px solid #ccc; background-color: #f5f8fa; }
 .admin-settings .demo .bp-login-widget-register-link { display: block; margin-top: 10px; }
 .admin-settings .demo .bp-login-widget-register-link a { color: #333; text-decoration: none; display: block; text-align: center; border: 1px solid #777; padding: 6px; border-radius: 2px; }
 .admin-settings .demo .bp-login-widget-register-link a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
