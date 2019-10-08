@@ -3243,8 +3243,17 @@ label.screen-reader-text {
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
 .btn-wrap > a:hover::after {
-  right: -3px;
+  right: -4px;
   transition: all 0.7s;
+}
+
+.btn-l.btn-circle::after, .ranking-item-link-buttons a.btn-circle::after,
+.btn-wrap.btn-wrap-l.btn-wrap-circle > a::after {
+  right: 8px;
+}
+.btn-l.btn-circle:hover::after, .ranking-item-link-buttons a.btn-circle:hover::after,
+.btn-wrap.btn-wrap-l.btn-wrap-circle > a:hover::after {
+  right: 4px;
 }
 
 /* ボタンを光らせる */

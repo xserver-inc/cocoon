@@ -737,17 +737,11 @@ $bb_green: $green_color;
   display: flex;
   justify-content: center;
   align-items: center;
-
-
   &::after{
     content: "\f105";
     position: absolute;
     right: 0;
     font-size: 20px;
-    // top: 50%;
-    // margin-top: -.5em;
-
-    //margin-top: -0.15em;
   }
 }
 
@@ -757,8 +751,20 @@ $bb_green: $green_color;
   color: $white;
   transition: $bgc_hover_anime;
   &::after{
-    right: -3px;
+    right: -4px;
     transition: $bgc_hover_anime;
+  }
+}
+
+.btn-l.btn-circle,
+.btn-wrap.btn-wrap-l.btn-wrap-circle > a {
+  &::after{
+    right: 8px;
+  }
+  &:hover{
+    &::after{
+      right: 4px;
+    }
   }
 }
 
