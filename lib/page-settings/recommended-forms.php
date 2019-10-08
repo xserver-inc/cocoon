@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- おすすめカード -->
 <div id="recommended-cards" class="postbox">
-  <h2 class="hndle"><?php _e( 'おすすめカード設定（β版）', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'おすすめカード設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <p><?php _e( 'おすすめしたい記事やカテゴリーの画像リンクをヘッダー下の目立つ部分に表示させます。', THEME_NAME );

@@ -31,9 +31,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 $options = array(
                   'none' => __( 'ボタンを表示しない（ミドルメニューのみ）', THEME_NAME ),
                   'top' => __( 'トップメニュー', THEME_NAME ),
-                  'header_mobile_buttons' => __( 'ヘッダーモバイルボタン', THEME_NAME ).__( '（β版）', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-header-buttons/'),
+                  'header_mobile_buttons' => __( 'ヘッダーモバイルボタン', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-header-buttons/'),
                   'footer_mobile_buttons' => __( 'フッターモバイルボタン', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-footer-menu/'),
-                  'header_and_footer_mobile_buttons' => __( 'ヘッダー・フッターモバイルボタン', THEME_NAME ).__( '（β版）', THEME_NAME ),
+                  'header_and_footer_mobile_buttons' => __( 'ヘッダー・フッターモバイルボタン', THEME_NAME ),
                   // 'slidein' => __( 'スライドインメニューボタン', THEME_NAME ),
                   // 'top_slidein' => __( 'トップボタン＆スライドインメニューボタン', THEME_NAME ),
                 );
