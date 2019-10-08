@@ -377,8 +377,6 @@ input[type='submit'] {
 
 /* ----- 子カテゴリ ----- */
 .cat-item .children a::before {
-  font-family: FontAwesome;
-  content: '\f054';
   color: rgba(234, 168, 191, 0.6);
 }
 
@@ -449,4 +447,12 @@ blockquote{
     font-size: 90%;
     color: #3261ab;
     text-shadow: 1px 1px 0 rgba(234, 168, 191, 0.7);
+}
+
+/* □■-----------------------------------------------------
+/ Font Awesome5対応
+-----------------------------------------------------■□ */
+.font-awesome-5 .cat-item a::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 }
