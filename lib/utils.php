@@ -3178,3 +3178,13 @@ function is_mobile(){
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 }
 endif;
+
+//iOSかどうかを判定する
+//https://net-viz.info/archives/409/
+function is_ios() {
+  $is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
+  global $is_iphone;
+  if ($is_iphone || $is_ipad) {
+    return true;
+  }
+}
