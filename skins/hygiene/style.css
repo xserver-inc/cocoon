@@ -779,22 +779,31 @@ border-bottom:4px solid #5572ff;
 .tagcloud a .tag-caption::before{
   content: none;
 }
-.widget_recent_entries ul li a::before, .widget_categories ul li a::before, .widget_archive ul li a::before,
- .widget_pages ul li a::before, .widget_meta ul li a::before, .widget_rss ul li a::before, .widget_nav_menu ul li a::before{
-   content: '\f138';
-   font-family: 'FontAwesome';
-   color: #e1b6f6;
-   font-size: 18px;
-   margin-right: 0.4em;
-  }
-.widget_recent_entries ul li ul li a::before, .widget_categories ul li ul li a::before, .widget_archive ul li ul li a::before,
- .widget_pages ul li ul li a::before, .widget_meta ul li ul li a::before, .widget_rss ul li ul li a::before,
-  .widget_nav_menu ul li ul li a::before{
+.widget_recent_entries ul li a::before,
+.widget_categories ul li a::before,
+.widget_archive ul li a::before,
+.widget_pages ul li a::before,
+.widget_meta ul li a::before,
+.widget_rss ul li a::before,
+.widget_nav_menu ul li a::before{
+  content: '\f138';
+  font-family: 'FontAwesome';
+  color: #e1b6f6;
+  font-size: 18px;
+  margin-right: 0.4em;
+}
+.widget_recent_entries ul li ul li a::before,
+.widget_categories ul li ul li a::before,
+.widget_archive ul li ul li a::before,
+.widget_pages ul li ul li a::before,
+.widget_meta ul li ul li a::before,
+.widget_rss ul li ul li a::before,
+.widget_nav_menu ul li ul li a::before{
   content: '\f105';
   font-family: 'FontAwesome';
   background: unset;
-color: #403f3f;
-margin-right: 0;
+  color: #403f3f;
+  margin-right: 0;
 }
 
 
@@ -933,27 +942,24 @@ blockquote a {
     font-weight: bold;
     letter-spacing: -0.5px;
 }
-/*blockquote a::before{
-  content: '出典：';
-  color: #656565;
-}*/
-blockquote::before {
+
+.container blockquote::before {
     content: "\f10d";
-    font-family: FontAwesome!important;
+    font-family: FontAwesome;
     line-height: 1.1;
     left: 20px;
     top: 15px;
 }
-blockquote::after{
+.container blockquote::after{
   content: "\f10e";
-  font-family: FontAwesome!important;
+  font-family: FontAwesome;
   line-height: 1.1;
   right: 20px;
   bottom: 15px;
 }
-blockquote::before, blockquote::after{
+.container blockquote::before, blockquote::after{
   font-size: 100%;
-  color: #31b9ff!important;
+  color: #31b9ff;
 }
 
 
@@ -968,21 +974,21 @@ img.avatar.avatar-200.wp-user-avatar{
   text-align: center;
   padding-left: 0;
 }
-.author-widget-name {
+.author-name {
     text-align: center;
     font-family: serif;
     margin-top: 7px;
 }
-.author-widget-name::before{
+.container .author-name::before{
   content:"\f10d";
-  font-family: FontAwesome!important;
+  font-family: FontAwesome;
   font-size: 10px;
   position: relative;
   top: -10px
 }
-.author-widget-name::after{
+.container .author-name::after{
   content: "\f10e";
-  font-family: FontAwesome!important;
+  font-family: FontAwesome;
   font-size: 10px;
   position: relative;
   bottom: -5px;
@@ -1185,7 +1191,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 }
 
 .blogcard::before{
-	content: '\f02d あわせて読みたい';
+	content: '\f02d  あわせて読みたい';
   font-family: 'FontAwesome';
 	position: absolute;
 	top: -1rem;
@@ -1856,6 +1862,12 @@ border: none;
     border-radius: 50%;
     box-shadow: 0px 2px 8px 3px #0c1256;
 }
+.page-numbers span{
+  display: block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+}
 .pagination .current {
     color: white!important;
     background-color: #1e286f!important;
@@ -1903,9 +1915,9 @@ color: white!important;
 .pager-post-navi a.next-post{
   flex-direction: unset;
 }
-.prev-post-title::before{
+.container .prev-post-title::before{
   content: '\f190';
-  font-family: 'FontAwesome'!important;
+  font-family: 'FontAwesome';
   font-size: 25px;
     bottom: -4px;
     position: relative;
@@ -1913,9 +1925,9 @@ color: white!important;
     left: -3px;
     font-weight: normal;
 }
-.next-post-title::after{
+.container .next-post-title::after{
   content: '\f18e';
-  font-family: 'FontAwesome'!important;
+  font-family: 'FontAwesome';
   font-size: 25px;
   position: relative;
   bottom: -4px;
@@ -2157,4 +2169,53 @@ body{
     display: none;
   }
   /*IEでどうしても表示がおかしくなるものは、IEは切り捨てということで非表示*/
+}
+
+/* FontAwesome 5 */
+.font-awesome-5 .widget_recent_entries ul li a::before,
+.font-awesome-5 .widget_categories ul li a::before,
+.font-awesome-5 .widget_archive ul li a::before,
+.font-awesome-5 .widget_pages ul li a::before,
+.font-awesome-5 .widget_meta ul li a::before,
+.font-awesome-5 .widget_rss ul li a::before,
+.font-awesome-5 .widget_nav_menu ul li a::before,
+.font-awesome-5 .container blockquote::before,
+.font-awesome-5 .container blockquote::after,
+.font-awesome-5 .container .author-name::before,
+.font-awesome-5 .container .author-name::after,
+.font-awesome-5 .toc-title::before,
+.font-awesome-5 .toc ol li ol a::before,
+.font-awesome-5 .blogcard::before,
+.font-awesome-5 .internal-blogcard::after,
+.font-awesome-5 .yubi.hybtn a::after,
+.font-awesome-5 .ya.hybtn a::after,
+.font-awesome-5 .check.hybtn a::after,
+.font-awesome-5 .hato.hybtn a::after,
+.font-awesome-5 .hybtn a:hover,
+.font-awesome-5 .hytext a::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+.font-awesome-5 .toc-title::before,
+.font-awesome-5 .diya.hybtn a::after,
+.font-awesome-5 .container .prev-post-title::before,
+.font-awesome-5 .container .next-post-title::after{
+	font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+.font-awesome-5 .toc-title::before{
+  content: '\f15c';
+}
+.font-awesome-5 .diya.hybtn a::after,
+.font-awesome-5 .diya.hytext a::before{
+  content: '\f3a5';
+}
+.font-awesome-5 .container .prev-post-title::before{
+  content: '\f359';
+}
+.font-awesome-5 .container .next-post-title::after{
+  content: '\f35a';
+}
+.pager-post-navi .iconfont{
+  display: none;
 }
