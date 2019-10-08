@@ -341,3 +341,9 @@ h3.widget-title:before {
   color: #333;
 }
 
+.font-awesome-5 h5:before,
+.font-awesome-5 .article h5::before,
+.font-awesome-5 .article ul li:before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
