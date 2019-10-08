@@ -38,16 +38,11 @@ h1.entry-title {
   content: "\f058";
   font-size: 1.2em;
   left: 0;
-  top: 0;
+  top: 0.2em;
 }
 @media screen and (max-width: 440px) {
 .article h3:before {
-  font-family: "FontAwesome";
-  position: absolute;
-  color: #7b3341;
-  content: "\f058";
   font-size: 1.3em;
-  left: 0;
   top: 10%;
 }
 }
@@ -89,7 +84,7 @@ blockquote::after {
   position: absolute;
   font-size: 1em;
   left: 0;
-  top: 0.8em;
+  top: 0.5em;
   color: #7b3341;
 }
 /*関連記事見出し*/
@@ -129,18 +124,6 @@ blockquote::after {
   background-color: #7b3341;
   border-radius: 9px;
   color: #fff;
-}
-.pagination .prev::before {
-  font-family: FontAwesome;
-  content: "\f0d9";
-  padding-right: 3px;
-  padding-right: 3px;
-}
-.pagination .next::before {
-  font-family: FontAwesome;
-  content: "\f0da";
-  padding-right: 3px;
-  padding-left: 3px;
 }
 .pagination a:hover {
   color: #da8164;
@@ -217,4 +200,14 @@ blockquote::after {
 #footer a:hover {
   background-color: transparent;
   color:#f7bfc5;
+}
+
+.font-awesome-5 .article h3:before,
+.font-awesome-5 .sidebar h3:before,
+.font-awesome-5 .related-entry-heading::before,
+.font-awesome-5 .comment-title::before,
+.font-awesome-5 .pagination .prev::before,
+.font-awesome-5 .pagination .next::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 }
