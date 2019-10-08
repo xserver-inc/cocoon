@@ -577,3 +577,8 @@ main.main, div.sidebar {
 
 }
 
+.font-awesome-5 .toc-title:before,
+.font-awesome-5 .wp-caption-text:before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
