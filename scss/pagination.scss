@@ -40,6 +40,9 @@ $pagination_wh: 46px;
 
 .page-numbers{
   @include pagination_button;
+  span{
+    line-height: inherit;
+  }
 }
 
 .page-numbers.dots {

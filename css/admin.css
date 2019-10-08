@@ -1342,6 +1342,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
+.admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
@@ -2831,6 +2832,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pagination .current { background-color: #eee; }
 .admin-settings .demo .pagination a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .page-numbers { color: #333; text-decoration: none; display: inline-block; height: 46px; width: 46px; border: 1px solid #ccc; margin: 0 4px; line-height: 46px; text-align: center; border-radius: 4px; }
+.admin-settings .demo .page-numbers span { line-height: inherit; }
 .admin-settings .demo .page-numbers.dots { opacity: 0.6; background-color: #f3f4f5; }
 .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn { background-color: #f9f9f9; border: 1px solid #ccc; color: #333; display: block; font-size: 1.2em; text-decoration: none; width: 100%; text-align: center; padding: 10px; display: block; }
 .admin-settings .demo .pagination-next-link:hover, .admin-settings .demo .comment-btn:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }

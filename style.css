@@ -5035,6 +5035,9 @@ label.screen-reader-text {
   text-align: center;
   border-radius: 4px;
 }
+.page-numbers span {
+  line-height: inherit;
+}
 
 .page-numbers.dots {
   opacity: 0.6;
