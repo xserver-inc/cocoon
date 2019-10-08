@@ -368,7 +368,6 @@ endif;
 
 //[ad]ショートコードに対して広告を表示する
 add_filter('the_content', 'replace_ad_shortcode_to_advertisement');
-add_filter('the_category_tag_content', 'replace_ad_shortcode_to_advertisement');
 if ( !function_exists( 'replace_ad_shortcode_to_advertisement' ) ):
 function replace_ad_shortcode_to_advertisement($the_content){
   //[ad]機能が有効な時

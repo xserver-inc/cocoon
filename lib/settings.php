@@ -308,6 +308,7 @@ add_filter('the_category_tag_content', 'wptexturize');
 add_filter('the_category_tag_content', 'convert_smilies');
 add_filter('the_category_tag_content', 'convert_chars');
 add_filter('the_category_tag_content', 'wpautop');
+add_filter('the_category_tag_content', 'replace_ad_shortcode_to_advertisement');
 add_filter('the_category_tag_content', 'shortcode_unautop');
 add_filter('the_category_tag_content', 'do_shortcode');
 add_filter('the_category_tag_content', 'prepend_attachment');
