@@ -6472,6 +6472,10 @@ div.fb-like-mobile {
   transform: translateX(105%);
 }
 
+#slide-in-sidebar {
+  display: block;
+}
+
 .search-menu-content,
 .share-menu-content,
 .follow-menu-content {

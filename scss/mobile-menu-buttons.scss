@@ -211,6 +211,10 @@
   right: 0;
   -webkit-transform: translateX(105%);
   transform: translateX(105%);//右に隠す
+
+}
+#slide-in-sidebar{
+  display: block;
 }
 .search-menu-content,
 .share-menu-content,
