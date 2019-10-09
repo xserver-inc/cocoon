@@ -116,6 +116,36 @@ function get_cocoon_editor_color_palette_colors(){
         'slug' => 'white',
         'color' => '#ffffff',
     ),
+    array(
+        'name' => __( '拡張色A', THEME_NAME ),
+        'slug' => 'ex-a',
+        'color' => get_block_editor_extended_palette_color_a(),
+    ),
+    array(
+        'name' => __( '拡張色B', THEME_NAME ),
+        'slug' => 'ex-b',
+        'color' => get_block_editor_extended_palette_color_b(),
+    ),
+    array(
+        'name' => __( '拡張色C', THEME_NAME ),
+        'slug' => 'ex-c',
+        'color' => get_block_editor_extended_palette_color_c(),
+    ),
+    array(
+        'name' => __( '拡張色D', THEME_NAME ),
+        'slug' => 'ex-d',
+        'color' => get_block_editor_extended_palette_color_d(),
+    ),
+    array(
+        'name' => __( '拡張色E', THEME_NAME ),
+        'slug' => 'ex-e',
+        'color' => get_block_editor_extended_palette_color_e(),
+    ),
+    array(
+        'name' => __( '拡張色F', THEME_NAME ),
+        'slug' => 'ex-f',
+        'color' => get_block_editor_extended_palette_color_f(),
+    ),
   );
   //カラーパレットフック
   $colors = apply_filters('block_editor_color_palette_colors', $colors);

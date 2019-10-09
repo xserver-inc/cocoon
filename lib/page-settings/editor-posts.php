@@ -46,6 +46,24 @@ update_theme_option(OP_BLOCK_EDITOR_AFFILIATE_SHORTCODE_DROPDOWN_VISIBLE);
 //ブロックエディターランキングショートコードドロップダウン有効
 update_theme_option(OP_BLOCK_EDITOR_RANKING_SHORTCODE_DROPDOWN_VISIBLE);
 
+//拡張カラーパレット色A
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A);
+
+//拡張カラーパレット色B
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B);
+
+//拡張カラーパレット色C
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C);
+
+//拡張カラーパレット色D
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D);
+
+//拡張カラーパレット色E
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E);
+
+//拡張カラーパレット色F
+update_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F);
+
 //タイトル等の文字数カウンター表示
 update_theme_option(OP_ADMIN_EDITOR_COUNTER_VISIBLE);
 

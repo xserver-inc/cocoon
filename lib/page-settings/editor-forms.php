@@ -134,6 +134,25 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- 拡張カラーパレット色 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __('拡張カラーパレット色', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A,  get_block_editor_extended_palette_color_a(), '拡張色A');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B,  get_block_editor_extended_palette_color_b(), '拡張色B');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C,  get_block_editor_extended_palette_color_c(), '拡張色C');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D,  get_block_editor_extended_palette_color_d(), '拡張色D');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E,  get_block_editor_extended_palette_color_e(), '拡張色E');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F,  get_block_editor_extended_palette_color_f(), '拡張色F');
+
+            generate_tips_tag(__( '任意のカラーパレット色を設定できます。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
 
       </tbody>
     </table>
