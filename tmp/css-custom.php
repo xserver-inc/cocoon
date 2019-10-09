@@ -751,14 +751,5 @@ if ($is_IE): ?>
   // }
 ?>
 <?php //デフォルトブロックエディター色の色指定
-  $colors = get_cocoon_editor_color_palette_colors();
-  foreach ($colors as $color) { ?>
-    div .has-<?php echo $color['slug']; ?>-color {
-      color: <?php echo $color['color']; ?>;
-    }
-    div .has-<?php echo $color['slug']; ?>-background-color {
-      background-color: <?php echo $color['color']; ?>;
-    }
-  <?php
-  }
+  echo get_block_editor_color_palette_css();
 ?>

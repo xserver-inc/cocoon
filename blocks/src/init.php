@@ -156,6 +156,12 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     );
   }
 
+  //カラーパレット情報私
+  wp_localize_script(
+    'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
+    'cocoonPaletteColors', //任意のオブジェクト名
+    get_cocoon_editor_color_palette_colors() //カラーパレット
+  );
 
 
   // Styles.

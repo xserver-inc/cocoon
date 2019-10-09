@@ -123,20 +123,51 @@ function get_cocoon_editor_color_palette_colors(){
 }
 endif;
 
+// //ブロックエディターカラーパレット用のCSS
+// if ( !function_exists( 'get_block_editor_color_palette_css' ) ):
+// function get_block_editor_color_palette_css(){
+//   $color_sets = get_cocoon_editor_color_palette_colors();
+//   $default_colors = array(get_editor_key_color(), '#e60033', '#e95295', '#884898', '#55295b', '#1e50a2', '#0095d9', '#2ca9e1', '#00a3af', '#007b43', '#3eb370', '#8bc34a', '#c3d825', '#ffd900', '#ffc107', '#f39800', '#ea5506', '#954e2a', '#949495', '#333333', '#ffffff');
+//   $css = '';
+//   foreach ($color_sets as $color_set) {
+//     $color = $color_set['color'];
+//     //デフォルトで定義されていない色があった場合
+//     if (!in_array($color, $default_colors)) {
+//      $name = 'color--'.str_replace('#', '', $color);
+//       $css .= get_block_editor_color_style(null, $name, $color);
+//     }
+//   }
+//   return $css;
+// }
+// endif;
+
 //ブロックエディターカラーパレット用のCSS
 if ( !function_exists( 'get_block_editor_color_palette_css' ) ):
 function get_block_editor_color_palette_css(){
-  $color_sets = get_cocoon_editor_color_palette_colors();
-  $default_colors = array(get_editor_key_color(), '#e60033', '#e95295', '#884898', '#55295b', '#1e50a2', '#0095d9', '#2ca9e1', '#00a3af', '#007b43', '#3eb370', '#8bc34a', '#c3d825', '#ffd900', '#ffc107', '#f39800', '#ea5506', '#954e2a', '#949495', '#333333', '#ffffff');
-  $css = '';
-  foreach ($color_sets as $color_set) {
-    $color = $color_set['color'];
-    //デフォルトで定義されていない色があった場合
-    if (!in_array($color, $default_colors)) {
-     $name = 'color--'.str_replace('#', '', $color);
-      $css .= get_block_editor_color_style(null, $name, $color);
+    $colors = get_cocoon_editor_color_palette_colors();
+    ob_start();
+    foreach ($colors as $color) {
+    $slug = $color['slug'];
+    $color = $color['color']; ?>
+
+
+<?php //WordPressデフォルト ?>
+div .has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
+}
+div .has-<?php echo $slug; ?>-background-color {
+    background-color: <?php echo $color; ?>;
+}
+<?php //ボタン・囲みボタン ?>
+.btn.has-<?php echo $slug; ?>,
+.btn-wrap.has-<?php echo $slug; ?> > a{
+    background-color: <?php echo $color; ?>;
+}
+
+
+    <?php
     }
-  }
-  return $css;
+    $css = ob_get_clean();
+    return $css;
 }
 endif;
