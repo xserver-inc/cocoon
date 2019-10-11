@@ -5346,7 +5346,6 @@ canvas, iframe, video,
 }
 .nwa .author-box .author-content {
   margin: 0;
-  font-size: 0.9em;
 }
 .nwa .author-box .author-description {
   text-align: left;
@@ -9268,7 +9267,7 @@ twitter-widget {
   }
 
   .author-box {
-    font-size: 0.74em;
+    font-size: 0.9em;
     line-height: 1.3;
   }
   .author-box .author-thumb {
