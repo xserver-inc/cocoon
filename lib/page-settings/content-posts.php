@@ -82,6 +82,9 @@ update_theme_option(OP_INTERNAL_LINK_ICON);
 //レスポンシブテーブル
 update_theme_option(OP_RESPONSIVE_TABLE_ENABLE);
 
+//レスポンシブテーブルの1列目の見出し固定する
+update_theme_option(OP_RESPONSIVE_TABLE_FIRST_COLUMN_STICKY_ENABLE);
+
 ///////////////////////////////////////
 // 投稿情報の表示
 ///////////////////////////////////////

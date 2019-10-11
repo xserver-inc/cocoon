@@ -1498,6 +1498,12 @@ table td {
 .scrollable-table {
   -webkit-overflow-scrolling: touch;
 }
+.scrollable-table.stfc-sticky tr *:first-child {
+  background-color: #e9eff2;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
 
 .scrollable-table table {
   border-collapse: collapse;

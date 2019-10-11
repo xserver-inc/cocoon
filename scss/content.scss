@@ -137,6 +137,16 @@ table {
 ///////////////////////////////////////
 .scrollable-table{
   -webkit-overflow-scrolling: touch;
+
+  //1列目を固定
+  &.stfc-sticky tr{
+    *:first-child {
+      background-color: #e9eff2;
+      position: sticky;
+      left: 0;
+      z-index: 2;
+    }
+  }
 }
 
 .scrollable-table table{

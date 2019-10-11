@@ -317,6 +317,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_RESPONSIVE_TABLE_ENABLE , is_responsive_table_enable(), __( '横幅の広いテーブルは横スクロール', THEME_NAME ));
             generate_tips_tag(__( '端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れないようにします。', THEME_NAME ));
             ?>
+            <div class="indent<?php echo get_not_allowed_form_class(is_responsive_table_enable(), true); ?>">
+              <?php
+              generate_checkbox_tag(OP_RESPONSIVE_TABLE_FIRST_COLUMN_STICKY_ENABLE, is_responsive_table_first_column_sticky_enable(), __( 'テーブルの1列目を固定表示', THEME_NAME ));
+              generate_tips_tag(__( '横スクロールテーブルで1列目となるth、tdを固定します。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 
