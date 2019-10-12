@@ -54,11 +54,17 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
       $wp_nav_menu = ob_get_clean();
       //ドロワーメニュー用のグローバルナビからIDを削除（IDの重複HTML5エラー対応）
       $wp_nav_menu = preg_replace('/ id="[^"]+?"/i', '', $wp_nav_menu);
-      //ドロワーメニューのURLからURLスキーム削除
+      //ドロワーメニューのアンカーリンク対策
       if (preg_match_all('# href="(.+?)"#', $wp_nav_menu, $m)) {
         foreach ($m[1] as $url) {
-          $removed_url = preg_replace('#^https?:#', '', $url);
-          $wp_nav_menu = str_replace($url, $removed_url, $wp_nav_menu);
+          if (includes_string($url, '#')) {
+            if (includes_string($url, '?')) {
+              $changed_url = str_replace('#', '&#', $url);
+            } else {
+              $changed_url = str_replace('#', '?#', $url);
+            }
+            $wp_nav_menu = str_replace($url, $changed_url, $wp_nav_menu);
+          }
         }
       }
       //_v($wp_nav_menu);
