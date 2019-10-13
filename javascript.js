@@ -149,6 +149,11 @@
     }
   });
 
+  //モバイルメニューをクリックしたら閉じる
+  $('.menu-drawer .menu-item a').click(function() {
+    $("#navi-menu-input").prop("checked", false);
+  })
+
   /*
   //通常のGoogleフォント読み込み
   if (cocoon_localize_script_options.is_google_font_lazy_load_enable != 1) {
