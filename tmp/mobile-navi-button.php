@@ -58,16 +58,24 @@ $icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
       // if (preg_match_all('# href="(.+?)"#', $wp_nav_menu, $m)) {
       //   foreach ($m[1] as $url) {
       //     if (includes_string($url, '#')) {
-      //       if (includes_string($url, '?')) {
-      //         $changed_url = str_replace('#', '&#', $url);
+      //       $requested_url = get_requested_url();
+      //       // _v($requested_url);
+      //       // _v($url);
+      //       if (preg_match('/\?$/', $requested_url)) {
+      //         if (includes_string($url, '?')) {
+      //           $changed_url = str_replace('?', '', $url);
+      //         }
       //       } else {
-      //         $changed_url = str_replace('#', '?#', $url);
+      //         if (includes_string($url, '?')) {
+      //           $changed_url = str_replace('#', '&#', $url);
+      //         } else {
+      //           $changed_url = str_replace('#', '?#', $url);
+      //         }
       //       }
       //       $wp_nav_menu = str_replace($url, $changed_url, $wp_nav_menu);
       //     }
       //   }
       // }
-      //_v($wp_nav_menu);
       echo $wp_nav_menu;
         ?>
     </div>
