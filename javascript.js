@@ -149,10 +149,22 @@
     }
   });
 
+  function drawerCloser(selecter, checkbox){
+    $(selecter).click(function() {
+      href = $(this).attr('href');
+      url = location.href;
+      url = url.replace(/#.*$/, '');
+      if ((href.indexOf(url) != -1) && href.match(/#/)) {
+        $(checkbox).prop('checked', false);
+      }
+    })
+  }
+
   //モバイルメニューをクリックしたら閉じる
-  $('.menu-drawer .menu-item a').click(function() {
-    $("#navi-menu-input").prop("checked", false);
-  })
+  drawerCloser('.menu-drawer .menu-item a', '#navi-menu-input');
+
+  //モバイルサイドバーをクリックしたら閉じる
+  drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
 
   /*
   //通常のGoogleフォント読み込み
