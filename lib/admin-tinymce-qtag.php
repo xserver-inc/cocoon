@@ -1599,6 +1599,12 @@ function initialize_tinymce_styles($init_array) {
           'classes' => 'blogcard-type bct-reference'
         ),
         array(
+          'title' => __( '参考リンク', THEME_NAME ),
+          'block' => 'div',
+          'wrapper' => true,
+          'classes' => 'blogcard-type bct-reference-link'
+        ),
+        array(
           'title' => __( '人気記事', THEME_NAME ),
           'block' => 'div',
           'wrapper' => true,

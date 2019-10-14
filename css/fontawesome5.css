@@ -113,6 +113,7 @@
 .blank-box.bb-profile::before,
 .bct-related .blogcard::before,
 .bct-reference .blogcard::before,
+.bct-reference-link .blogcard::before,
 .bct-popular .blogcard::before,
 .bct-pickup .blogcard::before,
 .bct-check .blogcard::before,

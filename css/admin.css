@@ -1080,6 +1080,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
 .admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
+.admin-settings .demo .bct-reference-link .blogcard::before { content: " 参考リンク"; }
 .admin-settings .demo .bct-popular .blogcard::before { content: " 人気記事"; }
 .admin-settings .demo .bct-pickup .blogcard::before { content: " ピックアップ"; }
 .admin-settings .demo .bct-check .blogcard::before { content: " チェック"; }
@@ -2574,6 +2575,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
 .admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
+.admin-settings .demo .bct-reference-link .blogcard::before { content: " 参考リンク"; }
 .admin-settings .demo .bct-popular .blogcard::before { content: " 人気記事"; }
 .admin-settings .demo .bct-pickup .blogcard::before { content: " ピックアップ"; }
 .admin-settings .demo .bct-check .blogcard::before { content: " チェック"; }
@@ -4246,6 +4248,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
 .components-popover__content .bct-related .blogcard::before { content: " 関連記事"; }
 .components-popover__content .bct-reference .blogcard::before { content: " 参考記事"; }
+.components-popover__content .bct-reference-link .blogcard::before { content: " 参考リンク"; }
 .components-popover__content .bct-popular .blogcard::before { content: " 人気記事"; }
 .components-popover__content .bct-pickup .blogcard::before { content: " ピックアップ"; }
 .components-popover__content .bct-check .blogcard::before { content: " チェック"; }

@@ -3890,6 +3890,10 @@ label.screen-reader-text {
   content: " 参考記事";
 }
 
+.bct-reference-link .blogcard::before {
+  content: " 参考リンク";
+}
+
 .bct-popular .blogcard::before {
   content: " 人気記事";
 }

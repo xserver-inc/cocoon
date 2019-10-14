@@ -109,6 +109,10 @@ span.btn-wrap {
   content: " 参考記事";
 }
 
+.blogcard-type.bct-reference-link::before {
+  content: " 参考リンク";
+}
+
 .blogcard-type.bct-popular::before {
   content: " 人気記事";
 }

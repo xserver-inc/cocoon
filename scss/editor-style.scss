@@ -110,6 +110,10 @@ span.btn-wrap{
   content: $bct-reference;
 }
 
+.blogcard-type.bct-reference-link::before{
+  content: $bct-reference-link;
+}
+
 .blogcard-type.bct-popular::before{
   content: $bct-popular;
 }
