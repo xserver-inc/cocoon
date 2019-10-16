@@ -116,6 +116,46 @@ function get_cocoon_editor_color_palette_colors(){
         'slug' => 'white',
         'color' => '#ffffff',
     ),
+    // array(
+    //     'name' => __( '桜', THEME_NAME ),
+    //     'slug' => 'sakura',
+    //     'color' => '#fef4f4',
+    // ),
+    // array(
+    //     'name' => __( '象牙', THEME_NAME ),
+    //     'slug' => 'ebur',
+    //     'color' => '#f8f4e6',
+    // ),
+    // array(
+    //     'name' => __( '月白', THEME_NAME ),
+    //     'slug' => 'luna-white',
+    //     'color' => '#eaf4fc',
+    // ),
+    // array(
+    //     'name' => __( '白菫色', THEME_NAME ),
+    //     'slug' => 'white-violet',
+    //     'color' => '#eaedf7',
+    // ),
+    // array(
+    //     'name' => __( '白花色', THEME_NAME ),
+    //     'slug' => 'white-flower',
+    //     'color' => '#e8ecef',
+    // ),
+    // array(
+    //     'name' => __( '藍白', THEME_NAME ),
+    //     'slug' => 'indigo-white',
+    //     'color' => '#ebf6f7',
+    // ),
+    // array(
+    //     'name' => __( '白磁', THEME_NAME ),
+    //     'slug' => 'white-porcelain',
+    //     'color' => '#f8fbf8',
+    // ),
+    // array(
+    //     'name' => __( '生成り色', THEME_NAME ),
+    //     'slug' => 'kinari',
+    //     'color' => '#fbfaf5',
+    // ),
     array(
         'name' => __( '拡張色A', THEME_NAME ),
         'slug' => 'ex-a',
