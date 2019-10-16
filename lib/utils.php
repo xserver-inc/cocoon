@@ -1722,10 +1722,6 @@ if ( !function_exists( 'in_authors' ) ):
 function in_authors($authers){
   global $post;
   if ($post) {
-    //$author = get_userdata($post->post_author);
-    // var_dump($post->post_author);
-    // var_dump($authers);
-    // var_dump(in_array($post->post_author, $authers));
     return in_array($post->post_author, $authers);
   } else {
     return false;
@@ -1934,8 +1930,6 @@ endif;
 //現在表示しているページのURL
 if ( !function_exists( 'get_requested_url' ) ):
 function get_requested_url(){
-  // _v($_SERVER['HTTPS']);
-  // _v((empty($_SERVER['HTTPS']) ? 'http://' : 'https://'));
   return (!is_ssl() ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
 endif;
