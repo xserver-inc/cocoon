@@ -889,7 +889,6 @@ endif;
 //人気ランキングリストの取得
 if ( !function_exists( 'generate_popular_entries_tag' ) ):
 function generate_popular_entries_tag($atts){
-//function generate_popular_entries_tag($days = 'all', $entry_count = 5, $entry_type = ET_DEFAULT, $ranking_visible = 0, $pv_visible = 0, $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
   extract(shortcode_atts(array(
     'days' => 'all',
     'entry_count' => 5,
@@ -903,23 +902,9 @@ function generate_popular_entries_tag($atts){
     'arrow' => 0,
     'class' => null,
   ), $atts));
-  // if (DEBUG_MODE) {
-  //   $time_start = microtime(true);
-  // }
-  //var_dump($cat_ids);
-  //_v($atts);
 
   $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
 
-  // if (DEBUG_MODE) {
-  //   $time = microtime(true) - $time_start;
-  //   echo('<pre>');
-  //   echo($time);
-  //   echo('</pre>');
-  // }
-
-
-  //var_dump($records);
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
     'type' => $entry_type,
