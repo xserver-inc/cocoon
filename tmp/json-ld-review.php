@@ -21,7 +21,12 @@ $review_type = get_the_review_type() ? get_the_review_type() : 'Product';
   "@type": "Review",
   "itemReviewed": {
     "@type": "<?php echo esc_attr($review_type); ?>",
-    "name": "<?php echo esc_attr(get_the_review_name()); ?>"
+    "name": "<?php echo esc_attr(get_the_review_name()); ?>",
+    "review":{
+      "author": {
+      "@type": "Person"
+      }
+    }
   },
   "reviewRating": {
     "@type": "Rating",
