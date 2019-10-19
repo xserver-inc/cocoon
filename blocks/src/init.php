@@ -86,7 +86,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   $is_templates_visible = (has_valid_shortcode_item($templates) && is_block_editor_template_shortcode_dropdown_visible()) ? 1 : 0;
   $is_affiliates_visible = (has_valid_shortcode_item($affiliates) && is_block_editor_affiliate_shortcode_dropdown_visible()) ? 1 : 0;
   $is_rankings_visible = (has_valid_shortcode_item($rankings) && is_block_editor_ranking_shortcode_dropdown_visible()) ? 1 : 0;
-  $dropdownSettings = array(
+  $gutenberg_settings = array(
     'isRubyVisible' => is_block_editor_ruby_button_visible() ? 1 : 0,
     'isLetterVisible' => is_block_editor_letter_style_dropdown_visible() ? 1 : 0,
     'isMarkerVisible' => is_block_editor_marker_style_dropdown_visible() ? 1 : 0,
@@ -106,8 +106,8 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   ///////////////////////////////////////////
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
-    'gbDropdownSettings', //任意のオブジェクト名
-    $dropdownSettings //プロバティ
+    'gbSettings', //任意のオブジェクト名
+    $gutenberg_settings //プロバティ
   );
 
   ///////////////////////////////////////////
