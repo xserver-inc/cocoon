@@ -116,6 +116,26 @@ function get_cocoon_editor_color_palette_colors(){
         'slug' => 'white',
         'color' => '#ffffff',
     ),
+    array(
+        'name' => __( '淡い青', THEME_NAME ),
+        'slug' => 'watery-blue',
+        'color' => '#f3fafe',
+    ),
+    array(
+        'name' => __( '淡い黄色', THEME_NAME ),
+        'slug' => 'watery-yellow',
+        'color' => '#fff7cc',
+    ),
+    array(
+        'name' => __( '淡い赤', THEME_NAME ),
+        'slug' => 'watery-red',
+        'color' => '#fdf2f2',
+    ),
+    array(
+        'name' => __( '淡い緑', THEME_NAME ),
+        'slug' => 'watery-green',
+        'color' => '#ebf8f4',
+    ),
     // array(
     //     'name' => __( '桜', THEME_NAME ),
     //     'slug' => 'sakura',

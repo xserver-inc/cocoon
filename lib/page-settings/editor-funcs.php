@@ -128,7 +128,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A', 'block_editor_extended_palette_color_a');
 if ( !function_exists( 'get_block_editor_extended_palette_color_a' ) ):
 function get_block_editor_extended_palette_color_a(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A, '#fdeff2');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A, '#cce5ff');
 }
 endif;
 
@@ -136,7 +136,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B', 'block_editor_extended_palette_color_b');
 if ( !function_exists( 'get_block_editor_extended_palette_color_b' ) ):
 function get_block_editor_extended_palette_color_b(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B, '#f8f4e6');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B, '#e2e3e5');
 }
 endif;
 
@@ -144,7 +144,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C', 'block_editor_extended_palette_color_c');
 if ( !function_exists( 'get_block_editor_extended_palette_color_c' ) ):
 function get_block_editor_extended_palette_color_c(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C, '#d6e9ca');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C, '#d4edda');
 }
 endif;
 
@@ -152,7 +152,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D', 'block_editor_extended_palette_color_d');
 if ( !function_exists( 'get_block_editor_extended_palette_color_d' ) ):
 function get_block_editor_extended_palette_color_d(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D, '#f2f2b0');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D, '#d1ecf1');
 }
 endif;
 
@@ -160,7 +160,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E', 'block_editor_extended_palette_color_e');
 if ( !function_exists( 'get_block_editor_extended_palette_color_e' ) ):
 function get_block_editor_extended_palette_color_e(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E, '#bce2e8');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E, '#fff3cd');
 }
 endif;
 
@@ -168,7 +168,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F', 'block_editor_extended_palette_color_f');
 if ( !function_exists( 'get_block_editor_extended_palette_color_f' ) ):
 function get_block_editor_extended_palette_color_f(){
-  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F, '#dbd0e6');
+  return get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F, '#f8d7da');
 }
 endif;
 
