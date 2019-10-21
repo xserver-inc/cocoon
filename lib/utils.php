@@ -692,58 +692,60 @@ endif;
 //Slickの読み込み
 if ( !function_exists( 'wp_enqueue_slick' ) ):
 function wp_enqueue_slick(){
-  //wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/plugins/slick/slick.css' );
-  wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
-  //Slickスクリプトの呼び出し
-  wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
-  $autoplay = null;
-  if (is_carousel_autoplay_enable()) {
-    $autoplay = 'autoplay: true,';
-  }
-  $data = minify_js('
-            (function($){
-              $(".carousel-content").slick({
-                dots: true,'.
-                $autoplay.
-                'autoplaySpeed: '.strval(intval(get_carousel_autoplay_interval())*1000).',
-                infinite: true,
-                slidesToShow: 6,
-                slidesToScroll: 6,
-                responsive: [
-                    {
-                      breakpoint: 1240,
-                      settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5
+  if (is_carousel_visible()) {
+    wp_enqueue_style( 'slick-theme-style', get_template_directory_uri() . '/plugins/slick/slick-theme.css' );
+    //Slickスクリプトの呼び出し
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/plugins/slick/slick.min.js', array( 'jquery' ), false, true  );
+    $autoplay = null;
+    if (is_carousel_autoplay_enable()) {
+      $autoplay = 'autoplay: true,';
+    }
+    $data = minify_js('
+              (function($){
+                $(".carousel-content").slick({
+                  dots: true,'.
+                  $autoplay.
+                  'autoplaySpeed: '.strval(intval(get_carousel_autoplay_interval())*1000).',
+                  infinite: true,
+                  slidesToShow: 6,
+                  slidesToScroll: 6,
+                  responsive: [
+                      {
+                        breakpoint: 1240,
+                        settings: {
+                          slidesToShow: 5,
+                          slidesToScroll: 5
+                        }
+                      },
+                      {
+                        breakpoint: 1023,
+                        settings: {
+                          slidesToShow: 4,
+                          slidesToScroll: 4
+                        }
+                      },
+                      {
+                        breakpoint: 834,
+                        settings: {
+                          slidesToShow: 3,
+                          slidesToScroll: 3
+                        }
+                      },
+                      {
+                        breakpoint: 480,
+                        settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 2
+                        }
                       }
-                    },
-                    {
-                      breakpoint: 1023,
-                      settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                      }
-                    },
-                    {
-                      breakpoint: 834,
-                      settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                      }
-                    },
-                    {
-                      breakpoint: 480,
-                      settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                      }
-                    }
-                  ]
-              });
+                    ]
+                });
 
-            })(jQuery);
-          ');
-  wp_add_inline_script( 'slick-js', $data, 'after' ) ;
+              })(jQuery);
+            ');
+    wp_add_inline_script( 'slick-js', $data, 'after' ) ;
+  }
+
 }
 endif;
 
