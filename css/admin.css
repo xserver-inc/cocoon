@@ -1077,17 +1077,29 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
-.admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
-.admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
-.admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
-.admin-settings .demo .bct-reference-link .blogcard::before { content: " 参考リンク"; }
-.admin-settings .demo .bct-popular .blogcard::before { content: " 人気記事"; }
-.admin-settings .demo .bct-pickup .blogcard::before { content: " ピックアップ"; }
-.admin-settings .demo .bct-check .blogcard::before { content: " チェック"; }
-.admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
-.admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
-.admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
-.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
+.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; }
+.admin-settings .demo .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
+.admin-settings .demo .bct-related .blogcard::before { content: " "; }
+.admin-settings .demo .bct-related .blogcard::after { content: "関連記事"; }
+.admin-settings .demo .bct-reference .blogcard::before { content: " "; }
+.admin-settings .demo .bct-reference .blogcard::after { content: "参考記事"; left: 44px; }
+.admin-settings .demo .bct-reference-link .blogcard::before { content: " "; }
+.admin-settings .demo .bct-reference-link .blogcard::after { content: "参考リンク"; left: 44px; }
+.admin-settings .demo .bct-popular .blogcard::before { content: " "; }
+.admin-settings .demo .bct-popular .blogcard::after { content: "人気記事"; }
+.admin-settings .demo .bct-pickup .blogcard::before { content: " "; }
+.admin-settings .demo .bct-pickup .blogcard::after { content: "ピックアップ"; }
+.admin-settings .demo .bct-check .blogcard::before { content: " "; }
+.admin-settings .demo .bct-check .blogcard::after { content: "チェック"; }
+.admin-settings .demo .bct-together .blogcard::before { content: " "; }
+.admin-settings .demo .bct-together .blogcard::after { content: "あわせて読みたい"; }
+.admin-settings .demo .bct-detail .blogcard::before { content: " "; }
+.admin-settings .demo .bct-detail .blogcard::after { content: "詳細はこちら"; }
+.admin-settings .demo .bct-official .blogcard::before { content: " "; }
+.admin-settings .demo .bct-official .blogcard::after { content: "公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " "; }
+.admin-settings .demo .bct-dl .blogcard::after { content: "ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -2572,17 +2584,29 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
-.admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
-.admin-settings .demo .bct-related .blogcard::before { content: " 関連記事"; }
-.admin-settings .demo .bct-reference .blogcard::before { content: " 参考記事"; }
-.admin-settings .demo .bct-reference-link .blogcard::before { content: " 参考リンク"; }
-.admin-settings .demo .bct-popular .blogcard::before { content: " 人気記事"; }
-.admin-settings .demo .bct-pickup .blogcard::before { content: " ピックアップ"; }
-.admin-settings .demo .bct-check .blogcard::before { content: " チェック"; }
-.admin-settings .demo .bct-together .blogcard::before { content: " あわせて読みたい"; }
-.admin-settings .demo .bct-detail .blogcard::before { content: " 詳細はこちら"; }
-.admin-settings .demo .bct-official .blogcard::before { content: " 公式サイト"; }
-.admin-settings .demo .bct-dl .blogcard::before { content: " ダウンロード"; }
+.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; }
+.admin-settings .demo .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
+.admin-settings .demo .bct-related .blogcard::before { content: " "; }
+.admin-settings .demo .bct-related .blogcard::after { content: "関連記事"; }
+.admin-settings .demo .bct-reference .blogcard::before { content: " "; }
+.admin-settings .demo .bct-reference .blogcard::after { content: "参考記事"; left: 44px; }
+.admin-settings .demo .bct-reference-link .blogcard::before { content: " "; }
+.admin-settings .demo .bct-reference-link .blogcard::after { content: "参考リンク"; left: 44px; }
+.admin-settings .demo .bct-popular .blogcard::before { content: " "; }
+.admin-settings .demo .bct-popular .blogcard::after { content: "人気記事"; }
+.admin-settings .demo .bct-pickup .blogcard::before { content: " "; }
+.admin-settings .demo .bct-pickup .blogcard::after { content: "ピックアップ"; }
+.admin-settings .demo .bct-check .blogcard::before { content: " "; }
+.admin-settings .demo .bct-check .blogcard::after { content: "チェック"; }
+.admin-settings .demo .bct-together .blogcard::before { content: " "; }
+.admin-settings .demo .bct-together .blogcard::after { content: "あわせて読みたい"; }
+.admin-settings .demo .bct-detail .blogcard::before { content: " "; }
+.admin-settings .demo .bct-detail .blogcard::after { content: "詳細はこちら"; }
+.admin-settings .demo .bct-official .blogcard::before { content: " "; }
+.admin-settings .demo .bct-official .blogcard::after { content: "公式サイト"; }
+.admin-settings .demo .bct-dl .blogcard::before { content: " "; }
+.admin-settings .demo .bct-dl .blogcard::after { content: "ダウンロード"; }
 .admin-settings .demo .button-block { float: none; margin: 1em 0; }
 .admin-settings .demo .button-block.alignleft { text-align: left; }
 .admin-settings .demo .button-block.aligncenter { text-align: center; }
@@ -4245,17 +4269,29 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .components-popover__content .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .components-popover__content .mc-white::after { border-top-color: #fff; }
-.components-popover__content .blogcard-type .blogcard::before { font-family: FontAwesome; position: absolute; top: -1.1em; left: 2%; font-size: 0.7em; padding: 2px 0.6em 3px; background-color: #333; color: #fff; border-radius: 2px; white-space: pre; letter-spacing: 0.06em; }
-.components-popover__content .bct-related .blogcard::before { content: " 関連記事"; }
-.components-popover__content .bct-reference .blogcard::before { content: " 参考記事"; }
-.components-popover__content .bct-reference-link .blogcard::before { content: " 参考リンク"; }
-.components-popover__content .bct-popular .blogcard::before { content: " 人気記事"; }
-.components-popover__content .bct-pickup .blogcard::before { content: " ピックアップ"; }
-.components-popover__content .bct-check .blogcard::before { content: " チェック"; }
-.components-popover__content .bct-together .blogcard::before { content: " あわせて読みたい"; }
-.components-popover__content .bct-detail .blogcard::before { content: " 詳細はこちら"; }
-.components-popover__content .bct-official .blogcard::before { content: " 公式サイト"; }
-.components-popover__content .bct-dl .blogcard::before { content: " ダウンロード"; }
+.components-popover__content .blogcard-type .blogcard::before, .components-popover__content .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.components-popover__content .blogcard-type .blogcard::before { font-family: FontAwesome; }
+.components-popover__content .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
+.components-popover__content .bct-related .blogcard::before { content: " "; }
+.components-popover__content .bct-related .blogcard::after { content: "関連記事"; }
+.components-popover__content .bct-reference .blogcard::before { content: " "; }
+.components-popover__content .bct-reference .blogcard::after { content: "参考記事"; left: 44px; }
+.components-popover__content .bct-reference-link .blogcard::before { content: " "; }
+.components-popover__content .bct-reference-link .blogcard::after { content: "参考リンク"; left: 44px; }
+.components-popover__content .bct-popular .blogcard::before { content: " "; }
+.components-popover__content .bct-popular .blogcard::after { content: "人気記事"; }
+.components-popover__content .bct-pickup .blogcard::before { content: " "; }
+.components-popover__content .bct-pickup .blogcard::after { content: "ピックアップ"; }
+.components-popover__content .bct-check .blogcard::before { content: " "; }
+.components-popover__content .bct-check .blogcard::after { content: "チェック"; }
+.components-popover__content .bct-together .blogcard::before { content: " "; }
+.components-popover__content .bct-together .blogcard::after { content: "あわせて読みたい"; }
+.components-popover__content .bct-detail .blogcard::before { content: " "; }
+.components-popover__content .bct-detail .blogcard::after { content: "詳細はこちら"; }
+.components-popover__content .bct-official .blogcard::before { content: " "; }
+.components-popover__content .bct-official .blogcard::after { content: "公式サイト"; }
+.components-popover__content .bct-dl .blogcard::before { content: " "; }
+.components-popover__content .bct-dl .blogcard::after { content: "ダウンロード"; }
 .components-popover__content .button-block { float: none; margin: 1em 0; }
 .components-popover__content .button-block.alignleft { text-align: left; }
 .components-popover__content .button-block.aligncenter { text-align: center; }

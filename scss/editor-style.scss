@@ -99,47 +99,47 @@ span.btn-wrap{
 }
 
 .blogcard-type.bct-none::before{
-  content: $bct-none;
+  content: $bct-none + $bct-none-text;
 }
 
 .blogcard-type.bct-related::before{
-  content: $bct-related;
+  content: $bct-related + $bct-related-text;
 }
 
 .blogcard-type.bct-reference::before{
-  content: $bct-reference;
+  content: $bct-reference + $bct-reference-text;
 }
 
 .blogcard-type.bct-reference-link::before{
-  content: $bct-reference-link;
+  content: $bct-reference-link + $bct-reference-link-text;
 }
 
 .blogcard-type.bct-popular::before{
-  content: $bct-popular;
+  content: $bct-popular + $bct-popular-text;
 }
 
 .blogcard-type.bct-pickup::before{
-  content: $bct-pickup;
+  content: $bct-pickup + $bct-pickup-text;
 }
 
 .blogcard-type.bct-check::before{
-  content: $bct-check;
+  content: $bct-check + $bct-check-text;
 }
 
 .blogcard-type.bct-together::before{
-  content: $bct-together;
+  content: $bct-together + $bct-together-text;
 }
 
 .blogcard-type.bct-detail::before{
-  content: $bct-detail;
+  content: $bct-detail + $bct-detail-text;
 }
 
 .blogcard-type.bct-official::before{
-  content: $bct-official;
+  content: $bct-official + $bct-official-text;
 }
 
 .blogcard-type.bct-dl::before{
-  content: $bct-dl;
+  content: $bct-dl + $bct-dl-text;
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
