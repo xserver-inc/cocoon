@@ -280,6 +280,8 @@ define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.11.1/c
 define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
 //Font Awesome5
 define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
+//Font Awesome5アップデート
+define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
 

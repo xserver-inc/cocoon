@@ -329,10 +329,10 @@ endif;
 //Font Awesomeの読み込み
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
-  if (!is_web_font_lazy_load_enable() || is_admin()) {
+  if (!is_web_font_lazy_load_enable()) {
     wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
-    if (is_site_icon_font_font_awesome_5() && !is_admin()) {
-      wp_enqueue_style( 'font-awesome5-update-style', get_template_directory_uri().'/css/fontawesome5.css' );
+    if (is_site_icon_font_font_awesome_5()) {
+      wp_enqueue_style( 'font-awesome5-update-style', FONT_AWESOME_5_UPDATE_URL );
     }
   }
 }
@@ -3184,3 +3184,46 @@ function is_ios() {
     return true;
   }
 }
+
+//Font Awesome5変換
+if ( !function_exists( 'change_fa' ) ):
+function change_fa($buffer){
+  if (is_site_icon_font_font_awesome_5() &&
+      preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)) {
+    //_v($m);
+    $fa4_alls = $m[0];
+    //_v($fa4_alls);
+    $befores = $m[1];
+    $classes = $m[2];
+    $fa4_classes = $m[3];
+    //_v($fa4_classes);
+    $afters = $m[4];
+    $list = get_font_awesome_exchange_list();
+    //$fa4_classes = array_unique($fa4_classes);
+    $i = 0;
+    foreach ($fa4_classes as $fa4_class) {
+      //_v($i);
+      $fa5_class = str_replace('fa ', 'fas ', $fa4_class);
+      foreach ($list as $ex) {
+        $fa4 = $ex[0];
+        $fa5 = $ex[1];
+        //_v($fa4.'============'.$fa4_class);
+        if ($fa4 == $fa4_class) {
+          //_v($fa4.'============'.$fa4_class);
+          $fa5_class = $fa5;
+          //continue;
+        }
+      }
+      $fa4_all_tag = $fa4_alls[$i];
+      $fa5_all_tag = str_replace($fa4_class, $fa5_class, $fa4_all_tag);
+      //_v($i.'='.$fa4_all_tag);
+      // _v($fa5_class);
+      // _v($fa4_all_tag);
+      // _v($fa5_all_tag);
+      $buffer = str_replace($fa4_all_tag, $fa5_all_tag, $buffer);
+      $i++;
+    }
+  }
+  return $buffer;
+}
+endif;

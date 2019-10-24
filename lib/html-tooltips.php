@@ -10,7 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //ツールチップの生成
 if ( !function_exists( 'generate_tooltip_tag' ) ):
 function generate_tooltip_tag($content){?>
-  <span class="tooltip fa fa-exclamation-triangle">
+  <span class="tooltip">
+    <?php echo change_fa('<span class="fa fa-exclamation-triangle" aria-hidden="true"></span>'); ?>
     <span class="tip-content">
       <?php echo $content; ?>
     </span>

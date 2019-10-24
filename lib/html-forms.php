@@ -207,18 +207,26 @@ endif;
 
 //説明文の生成
 if ( !function_exists( 'generate_tips_tag' ) ):
-function generate_tips_tag($caption){?>
-  <p class="tips"><?php echo $caption; ?></p>
+function generate_tips_tag($caption){
+  ob_start();?>
+  <p class="tips"><span class="fa fa-info-circle" aria-hidden="true"></span> <?php echo $caption; ?></p>
   <?php
+  $tag = ob_get_clean();
+  $tag = change_fa($tag);
+  echo $tag;
 }
 endif;
 
 
 //アラート文の生成
 if ( !function_exists( 'generate_alert_tag' ) ):
-function generate_alert_tag($caption){?>
-  <p class="alert"><?php echo $caption; ?></p>
+function generate_alert_tag($caption){
+  ob_start();?>
+  <p class="alert"><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> <?php echo $caption; ?></p>
   <?php
+  $tag = ob_get_clean();
+  $tag = change_fa($tag);
+  echo $tag;
 }
 endif;
 
@@ -242,7 +250,8 @@ endif;
 if ( !function_exists( 'get_help_page_tag' ) ):
 function get_help_page_tag($url, $text = null){
   $link_text = $text ? $text : __( '解説ページ', THEME_NAME );
-  $tag = ' <a href="'.$url.'" target="_blank" rel="noopener" class="help-page">'.$link_text.'</a>';
+  $tag = ' <a href="'.$url.'" target="_blank" rel="noopener" class="help-page"><span class="fa fa-question-circle" aria-hidden="true"></span> '.$link_text.'</a>';
+  $tag = change_fa($tag);
   return $tag;
 }
 endif;

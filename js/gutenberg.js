@@ -8,7 +8,7 @@ wp.domReady(function () {
     // add classes
     const addClasses = function () {
         // add body class
-        $('#editor .editor-writing-flow').addClass('article main page-body');
+        $('#editor .editor-writing-flow').addClass('article main page-body font-awesome-5');
 
         // add title class
         $('#editor .editor-post-title__input').addClass('entry-title');

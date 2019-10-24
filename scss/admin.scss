@@ -181,47 +181,47 @@ body.wp-admin{
 
 
 /*設定項目のヒント*/
-p,
-a,
-.form-table td p{
+// p,
+// a,
+// .form-table td p{
 
-  &.tips,
-  &.alert,
-  &.help-page{
-    font-size: 14px;
-    font-style: italic;
-    margin-bottom: 1em;
+//   // &.tips,
+//   &.alert,
+//   &.help-page{
+//     font-size: 14px;
+//     font-style: italic;
+//     margin-bottom: 1em;
 
-    &::before{
-      font-family: FontAwesome;
-      margin-right: 4px;
-    }
+//     &::before{
+//       font-family: FontAwesome;
+//       margin-right: 4px;
+//     }
 
-    + .tips{
-      margin-top: -14px;
-    }
-  }
+//     // + .tips{
+//     //   margin-top: -14px;
+//     // }
+//   }
 
-  &.tips{
-    &::before{
-      content: '\f05a';
-    }
-  }
+//   // &.tips{
+//   //   &::before{
+//   //     content: '\f05a';
+//   //   }
+//   // }
 
-  &.help-page{
-    &::before{
-      content: '\f059';
-    }
-  }
+//   &.help-page{
+//     &::before{
+//       content: '\f059';
+//     }
+//   }
 
-  &.alert{
-    color: red;
+//   &.alert{
+//     color: red;
 
-    &::before{
-      content: '\f071';
-    }
-  }
-}
+//     &::before{
+//       content: '\f071';
+//     }
+//   }
+// }
 
 
 
@@ -691,9 +691,9 @@ select option.fa{
 
   }
 
-  .tips{
-    margin: 0;
-  }
+  // .tips{
+  //   margin: 0;
+  // }
   .rating-star{
     label{
       float: left;

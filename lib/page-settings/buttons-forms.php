@@ -54,19 +54,19 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'fa-angle-double-up' => __( '&#xf102', THEME_NAME ),
-              'fa-angle-up' => __( '&#xf106', THEME_NAME ),
-              'fa-arrow-circle-up' => __( '&#xf0aa', THEME_NAME ),
-              'fa-arrow-up' => __( '&#xf062', THEME_NAME ),
-              'fa-caret-up' => __( '&#xf0d8', THEME_NAME ),
-              'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
-              'fa-chevron-circle-up' => __( '&#xf139', THEME_NAME ),
-              'fa-chevron-up' => __( '&#xf077', THEME_NAME ),
-              'fa-hand-o-up' => __( '&#xf0a6', THEME_NAME ),
-              'fa-long-arrow-up' => __( '&#xf176', THEME_NAME ),
-              'fa-caret-square-o-up' => __( '&#xf151', THEME_NAME ),
+              'fa-angle-double-up' => change_fa('<span class="fa fa-angle-double-up" aria-hidden="true"></span>'),
+              'fa-angle-up' => change_fa('<span class="fa fa-angle-up" aria-hidden="true"></span>'),
+              'fa-arrow-circle-up' => change_fa('<span class="fa fa-arrow-circle-up" aria-hidden="true"></span>'),
+              'fa-arrow-up' => change_fa('<span class="fa fa-arrow-up" aria-hidden="true"></span>'),
+              'fa-caret-up' => change_fa('<span class="fa fa-caret-up" aria-hidden="true"></span>'),
+              'fa-caret-square-o-up' => change_fa('<span class="fa fa-caret-square-o-up" aria-hidden="true"></span>'),
+              'fa-chevron-circle-up' => change_fa('<span class="fa fa-chevron-circle-up" aria-hidden="true"></span>'),
+              'fa-chevron-up' => change_fa('<span class="fa fa-chevron-up" aria-hidden="true"></span>'),
+              'fa-hand-o-up' => change_fa('<span class="fa fa-hand-o-up" aria-hidden="true"></span>'),
+              'fa-long-arrow-up' => change_fa('<span class="fa fa-long-arrow-up" aria-hidden="true"></span>'),
+              'fa-caret-square-o-up' => change_fa('<span class="fa fa-caret-square-o-up" aria-hidden="true"></span>'),
             );
-            generate_selectbox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(),__( 'アイコンフォント', THEME_NAME ) , true);
+            generate_radiobox_tag(OP_GO_TO_TOP_BUTTON_ICON_FONT, $options, get_go_to_top_button_icon_font(),__( 'アイコンフォント', THEME_NAME ) , true);
             generate_tips_tag(__( 'トップへ戻るボタンを示すアイコンフォントを選択します。', THEME_NAME ));
             ?>
           </td>

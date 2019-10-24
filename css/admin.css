@@ -3769,14 +3769,6 @@ pre { background-color: #f3f4f5; border: 1px solid #ccc; overflow: auto; padding
 .preview-label { font-weight: bold; text-align: center; margin-bottom: 0; }
 
 /*設定項目のヒント*/
-p.tips, p.alert, p.help-page, a.tips, a.alert, a.help-page, .form-table td p.tips, .form-table td p.alert, .form-table td p.help-page { font-size: 14px; font-style: italic; margin-bottom: 1em; }
-p.tips::before, p.alert::before, p.help-page::before, a.tips::before, a.alert::before, a.help-page::before, .form-table td p.tips::before, .form-table td p.alert::before, .form-table td p.help-page::before { font-family: FontAwesome; margin-right: 4px; }
-p.tips + .tips, p.alert + .tips, p.help-page + .tips, a.tips + .tips, a.alert + .tips, a.help-page + .tips, .form-table td p.tips + .tips, .form-table td p.alert + .tips, .form-table td p.help-page + .tips { margin-top: -14px; }
-p.tips::before, a.tips::before, .form-table td p.tips::before { content: '\f05a'; }
-p.help-page::before, a.help-page::before, .form-table td p.help-page::before { content: '\f059'; }
-p.alert, a.alert, .form-table td p.alert { color: red; }
-p.alert::before, a.alert::before, .form-table td p.alert::before { content: '\f071'; }
-
 form.admin-settings { margin-top: 2em; }
 
 #tabs > div { display: none; }
@@ -3865,7 +3857,6 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 #ranking-items .rating-star { color: #333; font-size: 1em; }
 #ranking-items input[type='text'], #ranking-items textarea { width: 100%; font-size: 14px; }
 #ranking-items input[type='text'] { padding: 10px; border-width: 2px; }
-#ranking-items .tips { margin: 0; }
 #ranking-items .rating-star label { float: left; }
 #ranking-items .rating-star ul { margin: 0; display: flex; }
 #ranking-items .rating-star ul li { margin-right: 1em; }

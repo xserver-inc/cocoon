@@ -673,6 +673,7 @@ function get_sanitize_preview_template_part($slug, $name = null){
   get_template_part($slug, $name);
   $tag = ob_get_clean();
   $tag = preg_replace('{<form.+?</form>}is', '', $tag);
+  $tag = change_fa($tag);
   echo $tag;
   clear_global_skin_theme_options();
 }

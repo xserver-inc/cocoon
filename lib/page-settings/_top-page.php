@@ -154,7 +154,7 @@ endif;
 ?>
 <div class="wrap admin-settings">
 <h1><?php _e( SETTING_NAME_TOP, THEME_NAME ) ?></h1>
-<p><?php _e( 'Cocoonの設定全般についてはマニュアルを参照してください。', THEME_NAME ) ?><a href="https://wp-cocoon.com/manual/" target="_blank" rel="noopener"><span class="fa fa-book" aria-hidden="true"></span>
+<p><?php _e( 'Cocoonの設定全般についてはマニュアルを参照してください。', THEME_NAME ) ?><a href="https://wp-cocoon.com/manual/" target="_blank" rel="noopener"><?php echo change_fa('<span class="fa fa-book" aria-hidden="true">'); ?></span>
 <?php _e( 'テーマ利用マニュアル', THEME_NAME ) ?></a></p>
 <?php //var_dump($_POST) ?>
 <form name="form1" method="post" action="<?php echo add_query_arg(array('reset' => null)); ?>" class="admin-settings">

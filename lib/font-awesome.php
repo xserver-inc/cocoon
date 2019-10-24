@@ -11,12 +11,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'get_site_icon_font_url' ) ):
 function get_site_icon_font_url(){
   $url = FONT_AWESOME_4_URL;
-  if (!is_admin()) {
-    switch (get_site_icon_font()) {
-      case 'font_awesome_5':
-        $url = FONT_AWESOME_5_URL;
-        break;
-    }
+  switch (get_site_icon_font()) {
+    case 'font_awesome_5':
+      $url = FONT_AWESOME_5_URL;
+      break;
   }
   return $url;
 }
