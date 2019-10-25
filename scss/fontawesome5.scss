@@ -20,14 +20,20 @@
 .list-arrow-circle-o-right li::before,
 .fab-play-circle-o::before,
 .list-play-circle-o li::before,
+.fab-hand-o-right::before,
+.list-hand-o-right li::before,
 .fab-star-o::before,
 .list-star-o li::before,
+.fab-heart-o::before,
+.list-heart-o li::before,
 .fab-caret-square-o-right::before,
 .list-caret-square-o-right li::before,
 .fab-square-o::before,
 .list-square-o li::before,
 .fab-circle-o::before,
 .list-circle-o li::before,
+.fab-dot-circle-o::before,
+.list-dot-circle-o li::before,
 .fab-plus-square-o::before,
 .list-plus-square-o li::before,
 .fab-minus-square-o::before,
@@ -65,6 +71,10 @@
 .fab-star-o::before,
 .list-star-o li::before{
   content: '\f005';
+}
+.fab-heart-o::before,
+.list-heart-o li::before{
+  content: '\f004';
 }
 .fab-square-o::before,
 .list-square-o li::before{
@@ -204,16 +214,10 @@
 .list-chevron-right li::before,
 .fab-chevron-circle-right::before,
 .list-chevron-circle-right li::before,
-.fab-hand-o-right::before,
-.list-hand-o-right li::before,
-.fab-heart-o::before,
-.list-heart-o li::before,
 .fab-square::before,
 .list-square li::before,
 .fab-circle::before,
 .list-circle li::before,
-.fab-dot-circle-o::before,
-.list-dot-circle-o li::before,
 .fab-plus::before,
 .list-plus li::before,
 .fab-plus-circle::before,
