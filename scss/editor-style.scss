@@ -142,6 +142,27 @@ span.btn-wrap{
   content: $bct-dl + $bct-dl-text;
 }
 
+.font-awesome-5{
+  .bct-related::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+  }
+
+  .bct-none::before,
+  .bct-reference::before,
+  .bct-reference-link::before,
+  .bct-popular::before,
+  .bct-pickup::before,
+  .bct-check::before,
+  .bct-together::before,
+  .bct-detail::before,
+  .bct-official::before,
+  .bct-dl::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+}
+
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
 .instagram-media {
   position: relative !important;

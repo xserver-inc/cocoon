@@ -141,6 +141,24 @@ span.btn-wrap {
   content: " ダウンロード";
 }
 
+.font-awesome-5 .bct-related::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+.font-awesome-5 .bct-none::before,
+.font-awesome-5 .bct-reference::before,
+.font-awesome-5 .bct-reference-link::before,
+.font-awesome-5 .bct-popular::before,
+.font-awesome-5 .bct-pickup::before,
+.font-awesome-5 .bct-check::before,
+.font-awesome-5 .bct-together::before,
+.font-awesome-5 .bct-detail::before,
+.font-awesome-5 .bct-official::before,
+.font-awesome-5 .bct-dl::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
 .instagram-media {
   position: relative !important;
