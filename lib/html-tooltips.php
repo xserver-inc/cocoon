@@ -45,7 +45,8 @@ endif;
 //ツールチップの生成
 if ( !function_exists( 'generate_skin_preview_tag' ) ):
 function generate_skin_preview_tag($url, $description = null, $width = 680){?>
-  <span class="tooltip fa fa-picture-o">
+  <span class="tooltip">
+    <?php echo change_fa('<span class="fa fa-picture-o" aria-hidden="true"></span>'); ?>
     <span class="tip-content" style="width: <?php echo $width; ?>px;">
       <img src="<?php echo $url; ?>" alt="">
       <?php if (!empty($description)): ?>
