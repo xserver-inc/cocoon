@@ -1077,7 +1077,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
-.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.7px; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; }
 .admin-settings .demo .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
 .admin-settings .demo .bct-related .blogcard::before { content: " "; }
@@ -2584,7 +2584,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
-.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.admin-settings .demo .blogcard-type .blogcard::before, .admin-settings .demo .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.7px; }
 .admin-settings .demo .blogcard-type .blogcard::before { font-family: FontAwesome; }
 .admin-settings .demo .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
 .admin-settings .demo .bct-related .blogcard::before { content: " "; }
@@ -4260,7 +4260,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .mc-white.micro-bottom::after { border-bottom-color: #fff; border-top-color: transparent; }
 .components-popover__content .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .components-popover__content .mc-white::after { border-top-color: #fff; }
-.components-popover__content .blogcard-type .blogcard::before, .components-popover__content .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 0.7em; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.06em; }
+.components-popover__content .blogcard-type .blogcard::before, .components-popover__content .blogcard-type .blogcard::after { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; white-space: pre; letter-spacing: 0.7px; }
 .components-popover__content .blogcard-type .blogcard::before { font-family: FontAwesome; }
 .components-popover__content .blogcard-type .blogcard::after { padding: 3px 0.6em 3px 0; left: 42px; }
 .components-popover__content .bct-related .blogcard::before { content: " "; }
