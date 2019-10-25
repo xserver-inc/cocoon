@@ -48,7 +48,11 @@ generate_sort_options_tag($keyword, $order_by);
       </div>
       <?php endif ?>
       <div class="demo">
-        <?php generate_item_ranking_tag($record->id, true) ?>
+        <?php
+        ob_start();
+        generate_item_ranking_tag($record->id, true);
+        $tag = change_fa(ob_get_clean());
+        echo $tag; ?>
       </div>
     </td>
     <td class="list-option" style="width: 50px;">
