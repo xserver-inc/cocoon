@@ -235,7 +235,7 @@
   content: "\f303"; }
 
 .bb-memo::before {
-  content: "\f303  MEMO"; }
+  content: "\f303  "; }
 
 .fab-cutlery::before {
   content: "\f2e7"; }

@@ -877,48 +877,68 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
-.admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
-.admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
-.admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
-.admin-settings .demo .blank-box.bb-tab.bb-blue::before { background-color: #0095d9; }
-.admin-settings .demo .blank-box.bb-tab.bb-green::before { background-color: #3eb370; }
-.admin-settings .demo .blank-box.bb-tab.bb-orange::before { background-color: #f39800; }
-.admin-settings .demo .blank-box.bb-tab.bb-yellow::before { background-color: #ffd900; }
-.admin-settings .demo .blank-box.bb-tab.bb-brown::before { background-color: #954e2a; }
-.admin-settings .demo .blank-box.bb-tab.bb-grey::before { background-color: #949495; }
-.admin-settings .demo .blank-box.bb-tab.bb-black::before { background-color: #333; }
-.admin-settings .demo .blank-box.bb-tab.bb-deep::before { background-color: #55295b; }
-.admin-settings .demo .blank-box.bb-tab.bb-indigo::before { background-color: #1e50a2; }
-.admin-settings .demo .blank-box.bb-tab.bb-light-blue::before { background-color: #2ca9e1; }
-.admin-settings .demo .blank-box.bb-tab.bb-cyan::before { background-color: #00a3af; }
-.admin-settings .demo .blank-box.bb-tab.bb-teal::before { background-color: #007b43; }
-.admin-settings .demo .blank-box.bb-tab.bb-light-green::before { background-color: #8bc34a; }
-.admin-settings .demo .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
-.admin-settings .demo .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
-.admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
-.admin-settings .demo .blank-box.bb-tab.bb-white::before { background-color: #fff; }
+.admin-settings .demo .blank-box.bb-tab::before, .admin-settings .demo .blank-box.bb-tab::after { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: 13px; top: -1.8em; line-height: 1.8; color: #fff; }
+.admin-settings .demo .blank-box.bb-tab::before { left: -3px; border-radius: 6px 0 0 0; padding: 0 1em 0 .8em; }
+.admin-settings .demo .blank-box.bb-tab::after { left: 26px; border-radius: 0 6px 0 0; padding: 0 1em 0 0; }
+.admin-settings .demo .blank-box.bb-tab.bb-red::before, .admin-settings .demo .blank-box.bb-tab.bb-red::after { background-color: #e60033; }
+.admin-settings .demo .blank-box.bb-tab.bb-pink::before, .admin-settings .demo .blank-box.bb-tab.bb-pink::after { background-color: #e95295; }
+.admin-settings .demo .blank-box.bb-tab.bb-purple::before, .admin-settings .demo .blank-box.bb-tab.bb-purple::after { background-color: #884898; }
+.admin-settings .demo .blank-box.bb-tab.bb-blue::before, .admin-settings .demo .blank-box.bb-tab.bb-blue::after { background-color: #0095d9; }
+.admin-settings .demo .blank-box.bb-tab.bb-green::before, .admin-settings .demo .blank-box.bb-tab.bb-green::after { background-color: #3eb370; }
+.admin-settings .demo .blank-box.bb-tab.bb-orange::before, .admin-settings .demo .blank-box.bb-tab.bb-orange::after { background-color: #f39800; }
+.admin-settings .demo .blank-box.bb-tab.bb-yellow::before, .admin-settings .demo .blank-box.bb-tab.bb-yellow::after { background-color: #ffd900; }
+.admin-settings .demo .blank-box.bb-tab.bb-brown::before, .admin-settings .demo .blank-box.bb-tab.bb-brown::after { background-color: #954e2a; }
+.admin-settings .demo .blank-box.bb-tab.bb-grey::before, .admin-settings .demo .blank-box.bb-tab.bb-grey::after { background-color: #949495; }
+.admin-settings .demo .blank-box.bb-tab.bb-black::before, .admin-settings .demo .blank-box.bb-tab.bb-black::after { background-color: #333; }
+.admin-settings .demo .blank-box.bb-tab.bb-deep::before, .admin-settings .demo .blank-box.bb-tab.bb-deep::after { background-color: #55295b; }
+.admin-settings .demo .blank-box.bb-tab.bb-indigo::before, .admin-settings .demo .blank-box.bb-tab.bb-indigo::after { background-color: #1e50a2; }
+.admin-settings .demo .blank-box.bb-tab.bb-light-blue::before, .admin-settings .demo .blank-box.bb-tab.bb-light-blue::after { background-color: #2ca9e1; }
+.admin-settings .demo .blank-box.bb-tab.bb-cyan::before, .admin-settings .demo .blank-box.bb-tab.bb-cyan::after { background-color: #00a3af; }
+.admin-settings .demo .blank-box.bb-tab.bb-teal::before, .admin-settings .demo .blank-box.bb-tab.bb-teal::after { background-color: #007b43; }
+.admin-settings .demo .blank-box.bb-tab.bb-light-green::before, .admin-settings .demo .blank-box.bb-tab.bb-light-green::after { background-color: #8bc34a; }
+.admin-settings .demo .blank-box.bb-tab.bb-lime::before, .admin-settings .demo .blank-box.bb-tab.bb-lime::after { background-color: #c3d825; }
+.admin-settings .demo .blank-box.bb-tab.bb-amber::before, .admin-settings .demo .blank-box.bb-tab.bb-amber::after { background-color: #ffc107; }
+.admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before, .admin-settings .demo .blank-box.bb-tab.bb-deep-orange::after { background-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-tab.bb-white::before, .admin-settings .demo .blank-box.bb-tab.bb-white::after { background-color: #fff; }
 .admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .bb-check::before { content: "\f00c  CHECK"; }
-.admin-settings .demo .bb-comment::before { content: "\f075  COMMENT"; }
-.admin-settings .demo .bb-point::before { content: "\f0eb  POINT"; }
-.admin-settings .demo .bb-tips::before { content: "\f19d  TIPS"; }
-.admin-settings .demo .bb-hint::before { content: "\f0f3  HINT"; }
-.admin-settings .demo .bb-pickup::before { content: "\f005  PICKUP"; }
-.admin-settings .demo .bb-bookmark::before { content: "\f02e  BOOKMARK"; }
-.admin-settings .demo .bb-memo::before { content: "\f040  MEMO"; }
-.admin-settings .demo .bb-download::before { content: "\f019  DOWNLOAD"; }
-.admin-settings .demo .bb-break::before { content: "\f0f4  BREAK"; }
-.admin-settings .demo .bb-amazon::before { content: "\f270  AMAZON"; }
-.admin-settings .demo .bb-ok::before { content: "\f10c  OK"; }
-.admin-settings .demo .bb-ng::before { content: "\f00d  NG"; }
-.admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
-.admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
-.admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
+.admin-settings .demo .bb-check::before { content: "\f00c  "; }
+.admin-settings .demo .bb-check::after { content: "CHECK"; }
+.admin-settings .demo .bb-comment::before { content: "\f075  "; }
+.admin-settings .demo .bb-comment::after { content: "COMMENT"; }
+.admin-settings .demo .bb-point::before { content: "\f0eb  "; }
+.admin-settings .demo .bb-point::after { content: "POINT"; }
+.admin-settings .demo .bb-tips::before { content: "\f19d  "; }
+.admin-settings .demo .bb-tips::after { content: "TIPS"; }
+.admin-settings .demo .bb-hint::before { content: "\f0f3  "; }
+.admin-settings .demo .bb-hint::after { content: "HINT"; }
+.admin-settings .demo .bb-pickup::before { content: "\f005  "; }
+.admin-settings .demo .bb-pickup::after { content: "PICKUP"; }
+.admin-settings .demo .bb-bookmark::before { content: "\f02e  "; }
+.admin-settings .demo .bb-bookmark::after { content: "BOOKMARK"; }
+.admin-settings .demo .bb-memo::before { content: "\f040  "; }
+.admin-settings .demo .bb-memo::after { content: "MEMO"; }
+.admin-settings .demo .bb-download::before { content: "\f019  "; }
+.admin-settings .demo .bb-download::after { content: "DOWNLOAD"; }
+.admin-settings .demo .bb-break::before { content: "\f0f4  "; }
+.admin-settings .demo .bb-break::after { content: "BREAK"; }
+.admin-settings .demo .bb-amazon::before { content: "\f270  "; }
+.admin-settings .demo .bb-amazon::after { content: "AMAZON"; }
+.admin-settings .demo .bb-ok::before { content: "\f10c  "; }
+.admin-settings .demo .bb-ok::after { content: "OK"; }
+.admin-settings .demo .bb-ng::before { content: "\f00d  "; }
+.admin-settings .demo .bb-ng::after { content: "NG"; }
+.admin-settings .demo .bb-good::before { content: "\f164  "; }
+.admin-settings .demo .bb-good::after { content: "GOOD"; }
+.admin-settings .demo .bb-bad::before { content: "\f165  "; }
+.admin-settings .demo .bb-bad::after { content: "BAD"; }
+.admin-settings .demo .bb-profile::before { content: "\f007  "; }
+.admin-settings .demo .bb-profile::after { content: "PROFILE"; }
+.admin-settings .demo .bb-tab.bb-point::after, .admin-settings .demo .bb-tab.bb-ng::after { left: 23px; }
+.admin-settings .demo .bb-tab.bb-tips::after, .admin-settings .demo .bb-tab.bb-break::after { left: 29px; }
 .admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
@@ -2384,48 +2404,68 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.bb-deep-orange { border-color: #ea5506; }
 .admin-settings .demo .blank-box.bb-white { border-color: #fff; }
 .admin-settings .demo .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.admin-settings .demo .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
-.admin-settings .demo .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
-.admin-settings .demo .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
-.admin-settings .demo .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
-.admin-settings .demo .blank-box.bb-tab.bb-blue::before { background-color: #0095d9; }
-.admin-settings .demo .blank-box.bb-tab.bb-green::before { background-color: #3eb370; }
-.admin-settings .demo .blank-box.bb-tab.bb-orange::before { background-color: #f39800; }
-.admin-settings .demo .blank-box.bb-tab.bb-yellow::before { background-color: #ffd900; }
-.admin-settings .demo .blank-box.bb-tab.bb-brown::before { background-color: #954e2a; }
-.admin-settings .demo .blank-box.bb-tab.bb-grey::before { background-color: #949495; }
-.admin-settings .demo .blank-box.bb-tab.bb-black::before { background-color: #333; }
-.admin-settings .demo .blank-box.bb-tab.bb-deep::before { background-color: #55295b; }
-.admin-settings .demo .blank-box.bb-tab.bb-indigo::before { background-color: #1e50a2; }
-.admin-settings .demo .blank-box.bb-tab.bb-light-blue::before { background-color: #2ca9e1; }
-.admin-settings .demo .blank-box.bb-tab.bb-cyan::before { background-color: #00a3af; }
-.admin-settings .demo .blank-box.bb-tab.bb-teal::before { background-color: #007b43; }
-.admin-settings .demo .blank-box.bb-tab.bb-light-green::before { background-color: #8bc34a; }
-.admin-settings .demo .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
-.admin-settings .demo .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
-.admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
-.admin-settings .demo .blank-box.bb-tab.bb-white::before { background-color: #fff; }
+.admin-settings .demo .blank-box.bb-tab::before, .admin-settings .demo .blank-box.bb-tab::after { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: 13px; top: -1.8em; line-height: 1.8; color: #fff; }
+.admin-settings .demo .blank-box.bb-tab::before { left: -3px; border-radius: 6px 0 0 0; padding: 0 1em 0 .8em; }
+.admin-settings .demo .blank-box.bb-tab::after { left: 26px; border-radius: 0 6px 0 0; padding: 0 1em 0 0; }
+.admin-settings .demo .blank-box.bb-tab.bb-red::before, .admin-settings .demo .blank-box.bb-tab.bb-red::after { background-color: #e60033; }
+.admin-settings .demo .blank-box.bb-tab.bb-pink::before, .admin-settings .demo .blank-box.bb-tab.bb-pink::after { background-color: #e95295; }
+.admin-settings .demo .blank-box.bb-tab.bb-purple::before, .admin-settings .demo .blank-box.bb-tab.bb-purple::after { background-color: #884898; }
+.admin-settings .demo .blank-box.bb-tab.bb-blue::before, .admin-settings .demo .blank-box.bb-tab.bb-blue::after { background-color: #0095d9; }
+.admin-settings .demo .blank-box.bb-tab.bb-green::before, .admin-settings .demo .blank-box.bb-tab.bb-green::after { background-color: #3eb370; }
+.admin-settings .demo .blank-box.bb-tab.bb-orange::before, .admin-settings .demo .blank-box.bb-tab.bb-orange::after { background-color: #f39800; }
+.admin-settings .demo .blank-box.bb-tab.bb-yellow::before, .admin-settings .demo .blank-box.bb-tab.bb-yellow::after { background-color: #ffd900; }
+.admin-settings .demo .blank-box.bb-tab.bb-brown::before, .admin-settings .demo .blank-box.bb-tab.bb-brown::after { background-color: #954e2a; }
+.admin-settings .demo .blank-box.bb-tab.bb-grey::before, .admin-settings .demo .blank-box.bb-tab.bb-grey::after { background-color: #949495; }
+.admin-settings .demo .blank-box.bb-tab.bb-black::before, .admin-settings .demo .blank-box.bb-tab.bb-black::after { background-color: #333; }
+.admin-settings .demo .blank-box.bb-tab.bb-deep::before, .admin-settings .demo .blank-box.bb-tab.bb-deep::after { background-color: #55295b; }
+.admin-settings .demo .blank-box.bb-tab.bb-indigo::before, .admin-settings .demo .blank-box.bb-tab.bb-indigo::after { background-color: #1e50a2; }
+.admin-settings .demo .blank-box.bb-tab.bb-light-blue::before, .admin-settings .demo .blank-box.bb-tab.bb-light-blue::after { background-color: #2ca9e1; }
+.admin-settings .demo .blank-box.bb-tab.bb-cyan::before, .admin-settings .demo .blank-box.bb-tab.bb-cyan::after { background-color: #00a3af; }
+.admin-settings .demo .blank-box.bb-tab.bb-teal::before, .admin-settings .demo .blank-box.bb-tab.bb-teal::after { background-color: #007b43; }
+.admin-settings .demo .blank-box.bb-tab.bb-light-green::before, .admin-settings .demo .blank-box.bb-tab.bb-light-green::after { background-color: #8bc34a; }
+.admin-settings .demo .blank-box.bb-tab.bb-lime::before, .admin-settings .demo .blank-box.bb-tab.bb-lime::after { background-color: #c3d825; }
+.admin-settings .demo .blank-box.bb-tab.bb-amber::before, .admin-settings .demo .blank-box.bb-tab.bb-amber::after { background-color: #ffc107; }
+.admin-settings .demo .blank-box.bb-tab.bb-deep-orange::before, .admin-settings .demo .blank-box.bb-tab.bb-deep-orange::after { background-color: #ea5506; }
+.admin-settings .demo .blank-box.bb-tab.bb-white::before, .admin-settings .demo .blank-box.bb-tab.bb-white::after { background-color: #fff; }
 .admin-settings .demo .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .admin-settings .demo .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .bb-check::before { content: "\f00c  CHECK"; }
-.admin-settings .demo .bb-comment::before { content: "\f075  COMMENT"; }
-.admin-settings .demo .bb-point::before { content: "\f0eb  POINT"; }
-.admin-settings .demo .bb-tips::before { content: "\f19d  TIPS"; }
-.admin-settings .demo .bb-hint::before { content: "\f0f3  HINT"; }
-.admin-settings .demo .bb-pickup::before { content: "\f005  PICKUP"; }
-.admin-settings .demo .bb-bookmark::before { content: "\f02e  BOOKMARK"; }
-.admin-settings .demo .bb-memo::before { content: "\f040  MEMO"; }
-.admin-settings .demo .bb-download::before { content: "\f019  DOWNLOAD"; }
-.admin-settings .demo .bb-break::before { content: "\f0f4  BREAK"; }
-.admin-settings .demo .bb-amazon::before { content: "\f270  AMAZON"; }
-.admin-settings .demo .bb-ok::before { content: "\f10c  OK"; }
-.admin-settings .demo .bb-ng::before { content: "\f00d  NG"; }
-.admin-settings .demo .bb-good::before { content: "\f164  GOOD"; }
-.admin-settings .demo .bb-bad::before { content: "\f165  BAD"; }
-.admin-settings .demo .bb-profile::before { content: "\f007  PROFILE"; }
+.admin-settings .demo .bb-check::before { content: "\f00c  "; }
+.admin-settings .demo .bb-check::after { content: "CHECK"; }
+.admin-settings .demo .bb-comment::before { content: "\f075  "; }
+.admin-settings .demo .bb-comment::after { content: "COMMENT"; }
+.admin-settings .demo .bb-point::before { content: "\f0eb  "; }
+.admin-settings .demo .bb-point::after { content: "POINT"; }
+.admin-settings .demo .bb-tips::before { content: "\f19d  "; }
+.admin-settings .demo .bb-tips::after { content: "TIPS"; }
+.admin-settings .demo .bb-hint::before { content: "\f0f3  "; }
+.admin-settings .demo .bb-hint::after { content: "HINT"; }
+.admin-settings .demo .bb-pickup::before { content: "\f005  "; }
+.admin-settings .demo .bb-pickup::after { content: "PICKUP"; }
+.admin-settings .demo .bb-bookmark::before { content: "\f02e  "; }
+.admin-settings .demo .bb-bookmark::after { content: "BOOKMARK"; }
+.admin-settings .demo .bb-memo::before { content: "\f040  "; }
+.admin-settings .demo .bb-memo::after { content: "MEMO"; }
+.admin-settings .demo .bb-download::before { content: "\f019  "; }
+.admin-settings .demo .bb-download::after { content: "DOWNLOAD"; }
+.admin-settings .demo .bb-break::before { content: "\f0f4  "; }
+.admin-settings .demo .bb-break::after { content: "BREAK"; }
+.admin-settings .demo .bb-amazon::before { content: "\f270  "; }
+.admin-settings .demo .bb-amazon::after { content: "AMAZON"; }
+.admin-settings .demo .bb-ok::before { content: "\f10c  "; }
+.admin-settings .demo .bb-ok::after { content: "OK"; }
+.admin-settings .demo .bb-ng::before { content: "\f00d  "; }
+.admin-settings .demo .bb-ng::after { content: "NG"; }
+.admin-settings .demo .bb-good::before { content: "\f164  "; }
+.admin-settings .demo .bb-good::after { content: "GOOD"; }
+.admin-settings .demo .bb-bad::before { content: "\f165  "; }
+.admin-settings .demo .bb-bad::after { content: "BAD"; }
+.admin-settings .demo .bb-profile::before { content: "\f007  "; }
+.admin-settings .demo .bb-profile::after { content: "PROFILE"; }
+.admin-settings .demo .bb-tab.bb-point::after, .admin-settings .demo .bb-tab.bb-ng::after { left: 23px; }
+.admin-settings .demo .bb-tab.bb-tips::after, .admin-settings .demo .bb-tab.bb-break::after { left: 29px; }
 .admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .admin-settings .demo .search-form div.sform { min-width: 280px; background-color: #fff; }
@@ -4060,48 +4100,68 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.bb-deep-orange { border-color: #ea5506; }
 .components-popover__content .blank-box.bb-white { border-color: #fff; }
 .components-popover__content .blank-box.bb-tab { position: relative; margin-top: 2em; border-top-left-radius: 0; }
-.components-popover__content .blank-box.bb-tab::before { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: .8em; top: -1.8em; left: -3px; line-height: 1.8; padding: 0 1em 0 .8em; color: #fff; border-radius: 6px 6px 0 0; }
-.components-popover__content .blank-box.bb-tab.bb-red::before { background-color: #e60033; }
-.components-popover__content .blank-box.bb-tab.bb-pink::before { background-color: #e95295; }
-.components-popover__content .blank-box.bb-tab.bb-purple::before { background-color: #884898; }
-.components-popover__content .blank-box.bb-tab.bb-blue::before { background-color: #0095d9; }
-.components-popover__content .blank-box.bb-tab.bb-green::before { background-color: #3eb370; }
-.components-popover__content .blank-box.bb-tab.bb-orange::before { background-color: #f39800; }
-.components-popover__content .blank-box.bb-tab.bb-yellow::before { background-color: #ffd900; }
-.components-popover__content .blank-box.bb-tab.bb-brown::before { background-color: #954e2a; }
-.components-popover__content .blank-box.bb-tab.bb-grey::before { background-color: #949495; }
-.components-popover__content .blank-box.bb-tab.bb-black::before { background-color: #333; }
-.components-popover__content .blank-box.bb-tab.bb-deep::before { background-color: #55295b; }
-.components-popover__content .blank-box.bb-tab.bb-indigo::before { background-color: #1e50a2; }
-.components-popover__content .blank-box.bb-tab.bb-light-blue::before { background-color: #2ca9e1; }
-.components-popover__content .blank-box.bb-tab.bb-cyan::before { background-color: #00a3af; }
-.components-popover__content .blank-box.bb-tab.bb-teal::before { background-color: #007b43; }
-.components-popover__content .blank-box.bb-tab.bb-light-green::before { background-color: #8bc34a; }
-.components-popover__content .blank-box.bb-tab.bb-lime::before { background-color: #c3d825; }
-.components-popover__content .blank-box.bb-tab.bb-amber::before { background-color: #ffc107; }
-.components-popover__content .blank-box.bb-tab.bb-deep-orange::before { background-color: #ea5506; }
-.components-popover__content .blank-box.bb-tab.bb-white::before { background-color: #fff; }
+.components-popover__content .blank-box.bb-tab::before, .components-popover__content .blank-box.bb-tab::after { background-color: #949495; font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif; position: absolute; font-size: 13px; top: -1.8em; line-height: 1.8; color: #fff; }
+.components-popover__content .blank-box.bb-tab::before { left: -3px; border-radius: 6px 0 0 0; padding: 0 1em 0 .8em; }
+.components-popover__content .blank-box.bb-tab::after { left: 26px; border-radius: 0 6px 0 0; padding: 0 1em 0 0; }
+.components-popover__content .blank-box.bb-tab.bb-red::before, .components-popover__content .blank-box.bb-tab.bb-red::after { background-color: #e60033; }
+.components-popover__content .blank-box.bb-tab.bb-pink::before, .components-popover__content .blank-box.bb-tab.bb-pink::after { background-color: #e95295; }
+.components-popover__content .blank-box.bb-tab.bb-purple::before, .components-popover__content .blank-box.bb-tab.bb-purple::after { background-color: #884898; }
+.components-popover__content .blank-box.bb-tab.bb-blue::before, .components-popover__content .blank-box.bb-tab.bb-blue::after { background-color: #0095d9; }
+.components-popover__content .blank-box.bb-tab.bb-green::before, .components-popover__content .blank-box.bb-tab.bb-green::after { background-color: #3eb370; }
+.components-popover__content .blank-box.bb-tab.bb-orange::before, .components-popover__content .blank-box.bb-tab.bb-orange::after { background-color: #f39800; }
+.components-popover__content .blank-box.bb-tab.bb-yellow::before, .components-popover__content .blank-box.bb-tab.bb-yellow::after { background-color: #ffd900; }
+.components-popover__content .blank-box.bb-tab.bb-brown::before, .components-popover__content .blank-box.bb-tab.bb-brown::after { background-color: #954e2a; }
+.components-popover__content .blank-box.bb-tab.bb-grey::before, .components-popover__content .blank-box.bb-tab.bb-grey::after { background-color: #949495; }
+.components-popover__content .blank-box.bb-tab.bb-black::before, .components-popover__content .blank-box.bb-tab.bb-black::after { background-color: #333; }
+.components-popover__content .blank-box.bb-tab.bb-deep::before, .components-popover__content .blank-box.bb-tab.bb-deep::after { background-color: #55295b; }
+.components-popover__content .blank-box.bb-tab.bb-indigo::before, .components-popover__content .blank-box.bb-tab.bb-indigo::after { background-color: #1e50a2; }
+.components-popover__content .blank-box.bb-tab.bb-light-blue::before, .components-popover__content .blank-box.bb-tab.bb-light-blue::after { background-color: #2ca9e1; }
+.components-popover__content .blank-box.bb-tab.bb-cyan::before, .components-popover__content .blank-box.bb-tab.bb-cyan::after { background-color: #00a3af; }
+.components-popover__content .blank-box.bb-tab.bb-teal::before, .components-popover__content .blank-box.bb-tab.bb-teal::after { background-color: #007b43; }
+.components-popover__content .blank-box.bb-tab.bb-light-green::before, .components-popover__content .blank-box.bb-tab.bb-light-green::after { background-color: #8bc34a; }
+.components-popover__content .blank-box.bb-tab.bb-lime::before, .components-popover__content .blank-box.bb-tab.bb-lime::after { background-color: #c3d825; }
+.components-popover__content .blank-box.bb-tab.bb-amber::before, .components-popover__content .blank-box.bb-tab.bb-amber::after { background-color: #ffc107; }
+.components-popover__content .blank-box.bb-tab.bb-deep-orange::before, .components-popover__content .blank-box.bb-tab.bb-deep-orange::after { background-color: #ea5506; }
+.components-popover__content .blank-box.bb-tab.bb-white::before, .components-popover__content .blank-box.bb-tab.bb-white::after { background-color: #fff; }
 .components-popover__content .blank-box.sticky { border-width: 0 0 0 6px; border-color: #777; background-color: #f3f4f5; }
 .components-popover__content .blank-box.sticky.st-yellow { border-color: #FFA103; background-color: #ffeac7; }
 .components-popover__content .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .components-popover__content .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .components-popover__content .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.components-popover__content .bb-check::before { content: "\f00c  CHECK"; }
-.components-popover__content .bb-comment::before { content: "\f075  COMMENT"; }
-.components-popover__content .bb-point::before { content: "\f0eb  POINT"; }
-.components-popover__content .bb-tips::before { content: "\f19d  TIPS"; }
-.components-popover__content .bb-hint::before { content: "\f0f3  HINT"; }
-.components-popover__content .bb-pickup::before { content: "\f005  PICKUP"; }
-.components-popover__content .bb-bookmark::before { content: "\f02e  BOOKMARK"; }
-.components-popover__content .bb-memo::before { content: "\f040  MEMO"; }
-.components-popover__content .bb-download::before { content: "\f019  DOWNLOAD"; }
-.components-popover__content .bb-break::before { content: "\f0f4  BREAK"; }
-.components-popover__content .bb-amazon::before { content: "\f270  AMAZON"; }
-.components-popover__content .bb-ok::before { content: "\f10c  OK"; }
-.components-popover__content .bb-ng::before { content: "\f00d  NG"; }
-.components-popover__content .bb-good::before { content: "\f164  GOOD"; }
-.components-popover__content .bb-bad::before { content: "\f165  BAD"; }
-.components-popover__content .bb-profile::before { content: "\f007  PROFILE"; }
+.components-popover__content .bb-check::before { content: "\f00c  "; }
+.components-popover__content .bb-check::after { content: "CHECK"; }
+.components-popover__content .bb-comment::before { content: "\f075  "; }
+.components-popover__content .bb-comment::after { content: "COMMENT"; }
+.components-popover__content .bb-point::before { content: "\f0eb  "; }
+.components-popover__content .bb-point::after { content: "POINT"; }
+.components-popover__content .bb-tips::before { content: "\f19d  "; }
+.components-popover__content .bb-tips::after { content: "TIPS"; }
+.components-popover__content .bb-hint::before { content: "\f0f3  "; }
+.components-popover__content .bb-hint::after { content: "HINT"; }
+.components-popover__content .bb-pickup::before { content: "\f005  "; }
+.components-popover__content .bb-pickup::after { content: "PICKUP"; }
+.components-popover__content .bb-bookmark::before { content: "\f02e  "; }
+.components-popover__content .bb-bookmark::after { content: "BOOKMARK"; }
+.components-popover__content .bb-memo::before { content: "\f040  "; }
+.components-popover__content .bb-memo::after { content: "MEMO"; }
+.components-popover__content .bb-download::before { content: "\f019  "; }
+.components-popover__content .bb-download::after { content: "DOWNLOAD"; }
+.components-popover__content .bb-break::before { content: "\f0f4  "; }
+.components-popover__content .bb-break::after { content: "BREAK"; }
+.components-popover__content .bb-amazon::before { content: "\f270  "; }
+.components-popover__content .bb-amazon::after { content: "AMAZON"; }
+.components-popover__content .bb-ok::before { content: "\f10c  "; }
+.components-popover__content .bb-ok::after { content: "OK"; }
+.components-popover__content .bb-ng::before { content: "\f00d  "; }
+.components-popover__content .bb-ng::after { content: "NG"; }
+.components-popover__content .bb-good::before { content: "\f164  "; }
+.components-popover__content .bb-good::after { content: "GOOD"; }
+.components-popover__content .bb-bad::before { content: "\f165  "; }
+.components-popover__content .bb-bad::after { content: "BAD"; }
+.components-popover__content .bb-profile::before { content: "\f007  "; }
+.components-popover__content .bb-profile::after { content: "PROFILE"; }
+.components-popover__content .bb-tab.bb-point::after, .components-popover__content .bb-tab.bb-ng::after { left: 23px; }
+.components-popover__content .bb-tab.bb-tips::after, .components-popover__content .bb-tab.bb-break::after { left: 29px; }
 .components-popover__content .container .search-form { margin: 3em 0; }
 .components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
 .components-popover__content .search-form div.sform { min-width: 280px; background-color: #fff; }
