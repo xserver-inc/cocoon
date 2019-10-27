@@ -114,10 +114,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
             generate_tips_tag(__( '「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はできません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
             ?>
-            <?php
-            // generate_checkbox_tag( OP_AUTO_ADSENSE_ENABLE, is_auto_adsense_enable(), __( '自動アドセンスを有効にする', THEME_NAME ));
-            // generate_tips_tag(__( 'AdSenseの自動広告機能を利用して広告を表示します。この機能を有効にすると「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります', THEME_NAME ));
-            ?>
           </td>
         </tr>
 

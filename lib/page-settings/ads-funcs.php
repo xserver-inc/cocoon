@@ -82,11 +82,9 @@ function is_adsense_display_method_by_myself(){
 endif;
 
 //自動AdSenseコードを有効にする
-//define('OP_AUTO_ADSENSE_ENABLE', 'auto_adsense_enable');
 if ( !function_exists( 'is_auto_adsense_enable' ) ):
 function is_auto_adsense_enable(){
   return is_adsense_display_method_by_auto() || is_adsense_display_method_by_auto_and_myself();
-  // return get_theme_option(OP_AUTO_ADSENSE_ENABLE);
 }
 endif;
 

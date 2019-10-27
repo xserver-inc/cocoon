@@ -128,14 +128,6 @@ function is_admin_panel_visible(){
 }
 endif;
 
-// //管理者パネルを表示
-// define('OP_ADMIN_PANEL_VISIBLE', 'admin_panel_visible');
-// if ( !function_exists( 'is_admin_panel_visible' ) ):
-// function is_admin_panel_visible(){
-//   return get_theme_option(OP_ADMIN_PANEL_VISIBLE, 1);
-// }
-// endif;
-
 //管理者パネルのPVを表示
 define('OP_ADMIN_PANEL_PV_AREA_VISIBLE', 'admin_panel_pv_area_visible');
 if ( !function_exists( 'is_admin_panel_pv_area_visible' ) ):
