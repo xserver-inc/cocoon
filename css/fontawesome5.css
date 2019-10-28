@@ -228,14 +228,14 @@
 .slick-prev.slick-arrow::before,
 .slick-next.slick-arrow::before {
   font-family: "Font Awesome 5 Free";
-  font-weight: 501; }
+  font-weight: 900; }
 
 .memo-box::before,
 .fab-pencil::before {
   content: "\f303"; }
 
 .bb-memo::before {
-  content: "\f303  MEMO"; }
+  content: "\f303  "; }
 
 .fab-cutlery::before {
   content: "\f2e7"; }
