@@ -141,7 +141,8 @@ span.btn-wrap {
   content: " ダウンロード";
 }
 
-.font-awesome-5 .bct-related::before {
+.font-awesome-5 .bct-related::before,
+.font-awesome-5 .btn-wrap::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
