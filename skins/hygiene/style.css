@@ -1186,7 +1186,8 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 	}
 }
 
-.internal-blogcard-footer{
+.internal-blogcard-site,
+.internal-blogcard-date{
 	display: none;
 }
 
@@ -1204,12 +1205,12 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
   border-radius: 8px 8px 0 0;
 }
 
-.internal-blogcard::after{
+.internal-blogcard-footer::after{
 	content: '続きを読む \f138';
   font-family: 'FontAwesome';
-	position: relative;
-	font-size: 85%;
-	background: linear-gradient(203deg, #7144f7f5 15px, #d675ce);
+  position: relative;
+  font-size: 16px;
+  background: linear-gradient(203deg, #7144f7f5 15px, #d675ce);
 	padding: .4em 3em;
 	font-weight: bold;
 	color: #fff;
@@ -2186,7 +2187,7 @@ body{
 .font-awesome-5 .toc-title::before,
 .font-awesome-5 .toc ol li ol a::before,
 .font-awesome-5 .blogcard::before,
-.font-awesome-5 .internal-blogcard::after,
+.font-awesome-5 .internal-blogcard-footer::after,
 .font-awesome-5 .yubi.hybtn a::after,
 .font-awesome-5 .ya.hybtn a::after,
 .font-awesome-5 .check.hybtn a::after,
