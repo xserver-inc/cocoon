@@ -1281,3 +1281,6 @@ h3.wpforo-forum-title::before {
 .font-awesome-5 .blogcard::before{
 	content: "\f35d";
 }
+.blogcard::after{
+    display: none;
+}
