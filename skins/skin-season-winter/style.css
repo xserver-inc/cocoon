@@ -244,44 +244,57 @@ a {
 	border-radius: 0;
 }
 .blogcard-title {
-	color: #69788a;
-	margin-bottom: 0.4em;
+    color: #666;
+    margin-bottom: 0.4em;
 }
-.blogcard-type .blogcard::before {
-	padding: 5px 15px;
-	font-weight: 600;
-	font-size: 0.7em;
-	opacity: 0.8;
+.blogcard-type .blogcard::before,
+.blogcard-type .blogcard::after {
+    padding: 5px 15px;
+    font-weight: 600;
+    font-size: 0.7em;
+    opacity: 0.8;
 }
-.blogcard-wrap {
-	margin: 2.5em auto;
+.blogcard-type .blogcard::after{
+	padding-left: 0;
+	left: 54px;
 }
-.blogcard-snippet {
-	color: #b4bbc5;
+.blogcard-wrap{
+	margin:2.5em auto;
 }
-.bct-related .blogcard::before {
-	background: #fd79a8;
+.blogcard-snippet{
+	color:#999;
 }
-.bct-reference .blogcard::before {
-	background: #1abc9c;
+.bct-related .blogcard::before,
+.bct-related .blogcard::after{
+		background:#fd79a8;
 }
-.bct-popular .blogcard::before {
-	background: #ffa502;
+.bct-reference .blogcard::before,
+.bct-reference .blogcard::after{
+		background:#1abc9c;
 }
-.bct-together .blogcard::before {
-	background: #0984e3;
+.bct-popular .blogcard::before,
+.bct-popular .blogcard::after{
+		background:#ffa502;
 }
-.bct-detail .blogcard::before {
-	background: #848ee3;
+.bct-together .blogcard::before,
+.bct-together .blogcard::after{
+		background:#0984e3;
 }
-.bct-check .blogcard::before {
-	background: #ED4C67;
+.bct-detail .blogcard::before,
+.bct-detail .blogcard::after{
+		background:#848ee3;
 }
-.bct-pickup .blogcard::before {
-	background: #F79F1F;
+.bct-check .blogcard::before,
+.bct-check .blogcard::after{
+		background:#ED4C67;
 }
-.bct-official .blogcard::before {
-	background: #636e72;
+.bct-pickup .blogcard::before,
+.bct-pickup .blogcard::after{
+		background:#F79F1F;
+}
+.bct-official .blogcard::before,
+.bct-official .blogcard::after{
+		background:#636e72;
 }
 /************************************
 ** ページネーション
