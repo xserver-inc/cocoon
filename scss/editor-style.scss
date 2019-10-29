@@ -99,47 +99,47 @@ span.btn-wrap{
 }
 
 .blogcard-type.bct-none::before{
-  content: $bct-none + $bct-none-text;
+  content: $bct-none + '  ' + $bct-none-text;
 }
 
 .blogcard-type.bct-related::before{
-  content: $bct-related + $bct-related-text;
+  content: $bct-related + '  ' + $bct-related-text;
 }
 
 .blogcard-type.bct-reference::before{
-  content: $bct-reference + $bct-reference-text;
+  content: $bct-reference + '  ' + $bct-reference-text;
 }
 
 .blogcard-type.bct-reference-link::before{
-  content: $bct-reference-link + $bct-reference-link-text;
+  content: $bct-reference-link + '  ' + $bct-reference-link-text;
 }
 
 .blogcard-type.bct-popular::before{
-  content: $bct-popular + $bct-popular-text;
+  content: $bct-popular + '  ' + $bct-popular-text;
 }
 
 .blogcard-type.bct-pickup::before{
-  content: $bct-pickup + $bct-pickup-text;
+  content: $bct-pickup + '  ' + $bct-pickup-text;
 }
 
 .blogcard-type.bct-check::before{
-  content: $bct-check + $bct-check-text;
+  content: $bct-check + '  ' + $bct-check-text;
 }
 
 .blogcard-type.bct-together::before{
-  content: $bct-together + $bct-together-text;
+  content: $bct-together + '  ' + $bct-together-text;
 }
 
 .blogcard-type.bct-detail::before{
-  content: $bct-detail + $bct-detail-text;
+  content: $bct-detail + '  ' + $bct-detail-text;
 }
 
 .blogcard-type.bct-official::before{
-  content: $bct-official + $bct-official-text;
+  content: $bct-official + '  ' + $bct-official-text;
 }
 
 .blogcard-type.bct-dl::before{
-  content: $bct-dl + $bct-dl-text;
+  content: $bct-dl + '  ' + $bct-dl-text;
 }
 
 .font-awesome-5{
@@ -160,7 +160,7 @@ span.btn-wrap{
   .bct-official::before,
   .bct-dl::before{
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    font-weight: 501;
   }
 }
 
