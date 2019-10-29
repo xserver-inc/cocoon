@@ -179,7 +179,7 @@
 .fab-coffee::before,
 .fab-user::before,
 .btn-l::after,
-.ranking-item-link-buttons a::after,
+.ranking-items .ranking-item .ranking-item-link-buttons a::after,
 .btn-wrap.btn-wrap-l > a::after,
 .toggle-button::before,
 .fab-check-circle::before,
