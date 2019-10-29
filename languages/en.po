@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-10-29 16:04+0900\n"
-"PO-Revision-Date: 2019-10-29 16:05+0900\n"
+"PO-Revision-Date: 2019-10-29 20:30+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -9915,7 +9915,8 @@ msgstr "Table of contents settings"
 
 #: lib/page-settings/toc-forms.php:16
 msgid "プラグインのTable of contentsに似た目次設定です。"
-msgstr "Settings for the table of contents plugin or similar."
+msgstr ""
+"Table of contents settings similar to those of plugins for table of contents."
 
 #: lib/page-settings/toc-forms.php:35
 msgid "デモの記事はランダムです。H2見出しがない本文には目次は表示されません。"
