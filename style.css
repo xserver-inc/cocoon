@@ -3959,7 +3959,6 @@ label.screen-reader-text {
 }
 
 .blogcard-label .fa::before {
-  font-family: FontAwesome;
   margin-right: 6px;
 }
 

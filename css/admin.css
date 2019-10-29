@@ -1097,7 +1097,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
-.admin-settings .demo .blogcard-label .fa::before { font-family: FontAwesome; margin-right: 6px; }
+.admin-settings .demo .blogcard-label .fa::before { margin-right: 6px; }
 .admin-settings .demo .blogcard-type .blogcard-label { display: block; }
 .admin-settings .demo .bct-none .blogcard-label { display: none; }
 .admin-settings .demo .bct-related .blogcard-label .fa::before { content: ""; }
@@ -2624,7 +2624,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .admin-settings .demo .mc-white::after { border-top-color: #fff; }
 .admin-settings .demo .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
-.admin-settings .demo .blogcard-label .fa::before { font-family: FontAwesome; margin-right: 6px; }
+.admin-settings .demo .blogcard-label .fa::before { margin-right: 6px; }
 .admin-settings .demo .blogcard-type .blogcard-label { display: block; }
 .admin-settings .demo .bct-none .blogcard-label { display: none; }
 .admin-settings .demo .bct-related .blogcard-label .fa::before { content: ""; }
@@ -4324,7 +4324,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .mc-white::before { border-top-color: transparent; border-bottom-color: transparent; }
 .components-popover__content .mc-white::after { border-top-color: #fff; }
 .components-popover__content .blogcard-label { position: absolute; top: -18px; left: 16px; font-size: 13px; padding: 3px 0.6em; background-color: #333; color: #fff; border-radius: 3px; letter-spacing: 0.7px; display: none; }
-.components-popover__content .blogcard-label .fa::before { font-family: FontAwesome; margin-right: 6px; }
+.components-popover__content .blogcard-label .fa::before { margin-right: 6px; }
 .components-popover__content .blogcard-type .blogcard-label { display: block; }
 .components-popover__content .bct-none .blogcard-label { display: none; }
 .components-popover__content .bct-related .blogcard-label .fa::before { content: ""; }
