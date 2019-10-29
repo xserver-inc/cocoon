@@ -3962,7 +3962,7 @@ select option.fa:before { width: 18px; display: inline-block; text-align: center
 .range-wrap { display: table; }
 .range-wrap output { display: block; text-align: center; }
 
-.tooltip [class^='fa'] { color: #285294; }
+.tooltip .fa-image { color: #285294; }
 
 textarea[name="the_page_memo"] { width: 100%; }
 
