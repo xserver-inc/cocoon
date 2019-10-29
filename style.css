@@ -8023,7 +8023,7 @@ input[type='submit'],
   cursor: pointer;
 }
 
-input[type='submit'] {
+.container input[type='submit'] {
   -webkit-appearance: none;
   border: 1px solid #ccc;
   background-color: #f5f8fa;
