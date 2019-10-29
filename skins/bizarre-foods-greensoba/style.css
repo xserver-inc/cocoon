@@ -1272,14 +1272,14 @@ h3.wpforo-forum-title::before {
 ************************************/
 .font-awesome-5 .posts-not-found h2:before,
 .font-awesome-5 .toc-title:before,
-.font-awesome-5 .blogcard-type .blogcard::before{
+.font-awesome-5 .blogcard::before{
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
 .font-awesome-5 .blogcard::before{
 	content: "\f35d";
 }
-.blogcard::after{
+#container .blogcard-label{
     display: none;
 }
 
