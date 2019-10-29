@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'AMP設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'AMP（Accelerated Mobile Pages）に関する設定です。投稿ページをモバイル上で高速表示させるための仕組みです。', THEME_NAME );
+    <p><?php _e( 'AMP（Accelerated Mobile Pages）に関する設定です。投稿・固定ページをモバイル上で高速表示させるための仕組みです。', THEME_NAME );
     echo get_help_page_tag('https://wp-cocoon.com/amp/'); ?></p>
 
     <table class="form-table">
@@ -60,19 +60,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-
-        <!-- インラインスタイル処理 -->
-        <!-- <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, __( 'インラインスタイル処理', THEME_NAME )); ?>
-          </th>
-          <td>
-            <?php
-            generate_checkbox_tag(OP_AMP_REMOVAL_INLINE_STYLE_ENABLE, is_amp_removal_inline_style_enable(), __("インラインスタイルを取り除く",THEME_NAME ));
-            generate_tips_tag(__( '本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。', THEME_NAME ));
-            ?>
-          </td>
-        </tr> -->
 
         <!-- インラインスタイル -->
         <tr>

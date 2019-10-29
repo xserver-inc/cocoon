@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_PAGE_COMMENT_VISIBLE , is_page_comment_visible(), __( 'コメントを表示する', THEME_NAME ));
-            generate_tips_tag(__( '固定ページページにコメントを表示するか。', THEME_NAME ));
+            generate_tips_tag(__( '固定ページにコメントを表示するか。', THEME_NAME ));
             ?>
           </td>
         </tr>

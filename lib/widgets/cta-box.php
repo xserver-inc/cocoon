@@ -176,7 +176,7 @@ class CTABoxWidgetItem extends WP_Widget {
         'btn-yellow' => __( '黄色', THEME_NAME ),
         'btn-amber' => __( '琥珀色（アンバー）', THEME_NAME ),
         'btn-orange' => __( 'オレンジ', THEME_NAME ),
-        'btn-deep-orange' => __( 'ビープオレンジ', THEME_NAME ),
+        'btn-deep-orange' => __( 'ディープオレンジ', THEME_NAME ),
         'btn-brown' => __( '茶色', THEME_NAME ),
         'btn-grey' => __( '藍色', THEME_NAME ),
       );

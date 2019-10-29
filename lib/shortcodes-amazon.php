@@ -255,6 +255,7 @@ function get_amazon_itemlookup_json($asin){
     .' "Marketplace": "'.AMAZON_DOMAIN.'"'
     .'}';
   $host = __( 'webservices.amazon.co.jp', THEME_NAME );
+  $host = apply_filters('amazon_webservices_host', $host);
   $uriPath = '/paapi5/getitems';
   $awsv4 = new CocoonAwsV4 ($accessKey, $secretKey);
   $awsv4->setRegionName($region);

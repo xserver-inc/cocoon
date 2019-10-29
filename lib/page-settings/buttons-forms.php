@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( 'トップへ戻るボタン設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'ページトップにスクロール移動するかボタンの設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'ページトップにスクロール移動するボタンの設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

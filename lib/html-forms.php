@@ -582,7 +582,7 @@ function generate_upload_image_tag($name, $value, $id = null){
 
           custom_uploader = wp.media({
 
-              title: "<?php _e( '画像を選択してください', THEME_NAME ) ?>",
+              title: "<?php _e( '画像を選択してください。', THEME_NAME ) ?>",
 
               /* ライブラリの一覧は画像のみにする */
               library: {

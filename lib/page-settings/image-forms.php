@@ -206,8 +206,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <p><?php _e( 'これらの設定で変更されるサムネイル部分はこちら。', THEME_NAME ); ?></p>
     <ol>
-      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
-      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットもサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/index.jpg', __( 'インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。', THEME_NAME )).__('インデックスカード', THEME_NAME); ?></li>
+      <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/new.png', __( '新着記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('新着記事', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/popular.png', __( '人気記事ウィジェットのサムネイル。', THEME_NAME ), THUMB320WIDTH).__('人気記事', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/related.png', __( '関連記事のエントリーカードのサムネイル。', THEME_NAME )).__('関連記事', THEME_NAME); ?></li>
       <li><?php echo get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/carousel.png', __( 'カルーセルカードのサムネイル。', THEME_NAME )).__('カルーセル', THEME_NAME); ?></li>

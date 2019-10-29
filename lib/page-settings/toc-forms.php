@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <h2 class="hndle"><?php _e( '目次設定', THEME_NAME ) ?></h2>
   <div class="inside">
 
-    <p><?php _e( 'Table of contentsライクな目次設定です。', THEME_NAME ) ?></p>
+    <p><?php _e( 'プラグインのTable of contentsに似た目次設定です。', THEME_NAME ) ?></p>
 
     <table class="form-table">
       <tbody>

@@ -112,7 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_tips_tag(__( 'メッセージに対して独自の背景色を設定したい場合は色を選択してください。デフォルト色を変更したい場合は、こちらの色が優先されます。', THEME_NAME ));
 
             generate_color_picker_tag(OP_NOTICE_AREA_TEXT_COLOR,  get_notice_area_text_color(), '通知エリア文字色');
-            generate_tips_tag(__( 'メッセージに対して独自の背テキスト色を設定したい場合は色を選択してください。デフォルト色を変更したい場合は、こちらの色が優先されます。', THEME_NAME ));
+            generate_tips_tag(__( 'メッセージに対して独自のテキスト色を設定したい場合は色を選択してください。デフォルト色を変更したい場合は、こちらの色が優先されます。', THEME_NAME ));
             ?>
           </td>
         </tr>
