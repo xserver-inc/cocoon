@@ -26,7 +26,11 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
 <?php if ($id): ?>
   <p class="preview-label" style="max-width: 1000px;"><?php _e( 'プレビュー', THEME_NAME ) ?></p>
   <div class="demo" style="width: 1000px; height: 460px;margin-bottom: 2em;resize: both;">
-  <?php generate_item_ranking_tag($id); ?>
+        <?php
+        ob_start();
+        generate_item_ranking_tag($id);
+        $tag = change_fa(ob_get_clean());
+        echo $tag; ?>
   </div>
 <?php endif ?>
 
