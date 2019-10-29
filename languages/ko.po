@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-09-03 14:13+0900\n"
-"PO-Revision-Date: 2019-09-03 14:14+0900\n"
+"POT-Creation-Date: 2019-10-29 21:24+0900\n"
+"PO-Revision-Date: 2019-10-29 21:42+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -29,9 +29,8 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:60
 #: lib/page-settings/comment-forms.php:95
 #: lib/page-settings/single-forms.php:127
-#, fuzzy
 msgid "見出し"
-msgstr "제목"
+msgstr "헤드라인"
 
 #: blocks/src/block-universal/caption-box/block.js:35
 #: blocks/src/old/caption-box/block.js:22
@@ -49,9 +48,9 @@ msgstr "CTA 상자"
 #: blocks/src/demo/blank-box-demo/block.js:43
 #: blocks/src/micro/micro-balloon/block.js:87
 #: blocks/src/micro/micro-text/block.js:72 blocks/src/old/balloon-1/block.js:77
-#: blocks/src/old/balloon-2/block.js:108 blocks/src/old/balloon-ex/block.js:107
-#: blocks/src/old/balloon/block.js:60 blocks/src/old/blank-box/block.js:55
-#: blocks/src/old/caption-box/block.js:52 blocks/src/old/label-box/block.js:51
+#: blocks/src/old/balloon-2/block.js:108 blocks/src/old/balloon/block.js:60
+#: blocks/src/old/blank-box/block.js:55 blocks/src/old/caption-box/block.js:52
+#: blocks/src/old/label-box/block.js:51
 #: blocks/src/old/micro-balloon-1/block.js:61
 #: blocks/src/old/micro-balloon/block.js:60 blocks/src/old/tab-box/block.js:62
 #: blocks/src/old/tab-caption-box/block.js:52
@@ -67,7 +66,6 @@ msgstr "모바일 설정"
 #: blocks/src/old/tab-caption-box/block.js:82
 #: lib/page-settings/content-forms.php:149
 #: lib/page-settings/content-forms.php:269 lib/page-settings/pwa-forms.php:85
-#, fuzzy
 msgid "アイコン"
 msgstr "아이콘"
 
@@ -76,11 +74,11 @@ msgstr "아이콘"
 #: blocks/src/block-universal/tab-caption-box/block.js:103
 #: blocks/src/block/blank-box/block.js:90
 #: blocks/src/block/button-wrap/block.js:120
-#: blocks/src/block/button/block.js:139 blocks/src/block/tab-box/block.js:169
+#: blocks/src/block/button/block.js:146 blocks/src/block/tab-box/block.js:169
 #: blocks/src/block/toggle-box/block.js:68
 #: blocks/src/micro/micro-balloon/block.js:114
-#: blocks/src/old/button-1/block.js:117
-#: blocks/src/old/button-wrap-1/block.js:98
+#: blocks/src/old/button-1/block.js:139
+#: blocks/src/old/button-wrap-1/block.js:120
 #, fuzzy
 msgid "色設定"
 msgstr "설정"
@@ -89,20 +87,19 @@ msgstr "설정"
 #: blocks/src/block-universal/label-box/block.js:108
 #: blocks/src/block-universal/tab-caption-box/block.js:109
 #: blocks/src/block/button-wrap/block.js:126
-#: blocks/src/block/button/block.js:145 blocks/src/block/tab-box/block.js:175
+#: blocks/src/block/tab-box/block.js:175
 #: blocks/src/block/toggle-box/block.js:74
 #: blocks/src/micro/micro-balloon/block.js:120
-#: blocks/src/old/button-1/block.js:123
-#: blocks/src/old/button-wrap-1/block.js:104
+#: blocks/src/old/button-1/block.js:145
+#: blocks/src/old/button-wrap-1/block.js:126
 #: blocks/src/old/button-wrap/block.js:70 blocks/src/old/button/block.js:92
 #: blocks/src/old/caption-box/block.js:55 blocks/src/old/label-box/block.js:54
 #: blocks/src/old/micro-balloon-1/block.js:80
 #: blocks/src/old/micro-balloon/block.js:79 blocks/src/old/tab-box/block.js:137
 #: blocks/src/old/tab-caption-box/block.js:55
 #: blocks/src/old/toggle-box/block.js:58 lib/page-settings/notice-forms.php:106
-#, fuzzy
 msgid "色"
-msgstr "색"
+msgstr "색깔"
 
 #: blocks/src/block-universal/label-box/block.js:34
 #: blocks/src/old/label-box/block.js:21
@@ -127,14 +124,14 @@ msgstr "하위 제목"
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16
 #: blocks/src/old/balloon-ex/block.js:17 blocks/src/old/balloon/block.js:15
-#: lib/html-forms.php:477
+#: lib/html-forms.php:517
 #, fuzzy
 msgid "未入力"
 msgstr "미 입력"
 
 #: blocks/src/block/balloon/block.js:21 blocks/src/old/balloon-1/block.js:37
 #: blocks/src/old/balloon-2/block.js:21 blocks/src/old/balloon/block.js:20
-#: lib/admin.php:349 lib/original-menu.php:27
+#: lib/admin.php:351 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 #, fuzzy
 msgid "吹き出し"
@@ -142,8 +139,7 @@ msgstr "설명선"
 
 #: blocks/src/block/balloon/block.js:136
 #: blocks/src/old/balloon-ex-fix1/block.js:145
-#: blocks/src/old/balloon-ex-v2/block.js:79
-#: blocks/src/old/balloon-ex/block.js:117 lib/page-speech-balloon/form.php:85
+#: blocks/src/old/balloon-ex-v2/block.js:79 lib/page-speech-balloon/form.php:85
 #, fuzzy
 msgid "吹き出しスタイル"
 msgstr "풍선 도움말 텍스트 스타일"
@@ -151,39 +147,35 @@ msgstr "풍선 도움말 텍스트 스타일"
 #: blocks/src/block/balloon/block.js:142
 #: blocks/src/old/balloon-ex-fix1/block.js:151
 #: blocks/src/old/balloon-ex-v2/block.js:85
-#: blocks/src/old/balloon-ex/block.js:123 blocks/src/old/blank-box/block.js:64
-#: blocks/src/old/caption-box/block.js:61 blocks/src/old/label-box/block.js:60
+#: blocks/src/old/blank-box/block.js:64 blocks/src/old/caption-box/block.js:61
+#: blocks/src/old/label-box/block.js:60
 #: blocks/src/old/micro-balloon-1/block.js:86
 #: blocks/src/old/micro-balloon/block.js:85
 #: blocks/src/old/tab-caption-box/block.js:61
 #: blocks/src/old/toggle-box/block.js:64 lib/custom-fields/page-field.php:35
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:308 lib/page-speech-balloon/form.php:90
-#: lib/settings.php:464
-#, fuzzy
+#: lib/settings.php:499
 msgid "デフォルト"
-msgstr "기본"
+msgstr "기본값"
 
 #: blocks/src/block/balloon/block.js:146
 #: blocks/src/old/balloon-ex-fix1/block.js:155
-#: blocks/src/old/balloon-ex-v2/block.js:89
-#: blocks/src/old/balloon-ex/block.js:127 lib/page-speech-balloon/form.php:91
+#: blocks/src/old/balloon-ex-v2/block.js:89 lib/page-speech-balloon/form.php:91
 #, fuzzy
 msgid "フラット"
 msgstr "플랫"
 
 #: blocks/src/block/balloon/block.js:150
 #: blocks/src/old/balloon-ex-fix1/block.js:159
-#: blocks/src/old/balloon-ex-v2/block.js:93
-#: blocks/src/old/balloon-ex/block.js:131 lib/page-speech-balloon/form.php:92
+#: blocks/src/old/balloon-ex-v2/block.js:93 lib/page-speech-balloon/form.php:92
 #, fuzzy
 msgid "LINE風"
 msgstr "LINE 바람"
 
 #: blocks/src/block/balloon/block.js:154
 #: blocks/src/old/balloon-ex-fix1/block.js:163
-#: blocks/src/old/balloon-ex-v2/block.js:97
-#: blocks/src/old/balloon-ex/block.js:135 lib/page-speech-balloon/form.php:93
+#: blocks/src/old/balloon-ex-v2/block.js:97 lib/page-speech-balloon/form.php:93
 #, fuzzy
 msgid "考え事"
 msgstr "매우 무겁습니다."
@@ -191,7 +183,7 @@ msgstr "매우 무겁습니다."
 #: blocks/src/block/balloon/block.js:176
 #: blocks/src/old/balloon-ex-fix1/block.js:185
 #: blocks/src/old/balloon-ex-v2/block.js:119
-#: blocks/src/old/balloon-ex/block.js:157 lib/page-speech-balloon/form.php:119
+#: lib/page-speech-balloon/form.php:119
 #, fuzzy
 msgid "アイコンスタイル"
 msgstr "아이콘 스타일"
@@ -199,7 +191,7 @@ msgstr "아이콘 스타일"
 #: blocks/src/block/balloon/block.js:182
 #: blocks/src/old/balloon-ex-fix1/block.js:191
 #: blocks/src/old/balloon-ex-v2/block.js:125
-#: blocks/src/old/balloon-ex/block.js:163 lib/page-speech-balloon/form.php:124
+#: lib/page-speech-balloon/form.php:124
 #, fuzzy
 msgid "四角（枠線なし）"
 msgstr "직사각형 (테두리 없음)"
@@ -207,7 +199,7 @@ msgstr "직사각형 (테두리 없음)"
 #: blocks/src/block/balloon/block.js:186
 #: blocks/src/old/balloon-ex-fix1/block.js:195
 #: blocks/src/old/balloon-ex-v2/block.js:129
-#: blocks/src/old/balloon-ex/block.js:167 lib/page-speech-balloon/form.php:125
+#: lib/page-speech-balloon/form.php:125
 #, fuzzy
 msgid "四角（枠線あり）"
 msgstr "사각형 (윤곽선 있음)"
@@ -215,7 +207,7 @@ msgstr "사각형 (윤곽선 있음)"
 #: blocks/src/block/balloon/block.js:190
 #: blocks/src/old/balloon-ex-fix1/block.js:199
 #: blocks/src/old/balloon-ex-v2/block.js:133
-#: blocks/src/old/balloon-ex/block.js:171 lib/page-speech-balloon/form.php:126
+#: lib/page-speech-balloon/form.php:126
 #, fuzzy
 msgid "丸（枠線なし）"
 msgstr "1 (테두리 없음)"
@@ -223,7 +215,7 @@ msgstr "1 (테두리 없음)"
 #: blocks/src/block/balloon/block.js:194
 #: blocks/src/old/balloon-ex-fix1/block.js:203
 #: blocks/src/old/balloon-ex-v2/block.js:137
-#: blocks/src/old/balloon-ex/block.js:175 lib/page-speech-balloon/form.php:127
+#: lib/page-speech-balloon/form.php:127
 #, fuzzy
 msgid "丸（枠線あり）"
 msgstr "동그라미 (눈금선 있음)"
@@ -249,7 +241,7 @@ msgstr "보더 색"
 
 #: blocks/src/block/blogcard/block.js:18
 #: blocks/src/old/blogcard-class/block.js:31 lib/page-cache/cache-forms.php:64
-#: lib/page-settings/_top-page.php:182 lib/page-settings/image-forms.php:211
+#: lib/page-settings/_top-page.php:182 lib/page-settings/image-forms.php:215
 #, fuzzy
 msgid "ブログカード"
 msgstr "블로그 카드"
@@ -260,19 +252,17 @@ msgid "ブログカード表示用の入力ブロックを表示します。URL�
 msgstr "크레딧 표기를 입력 하십시오. 태그 입력도 가능 합니다."
 
 #: blocks/src/block/blogcard/block.js:54
-#, fuzzy
 msgid "ラベル"
-msgstr "중간"
+msgstr "레이블"
 
 #: blocks/src/block/blogcard/block.js:60 lib/page-item-ranking/form.php:125
 #: lib/page-settings/blogcard-in-forms.php:86
 #: lib/page-settings/skin-forms.php:36
-#, fuzzy
 msgid "なし"
-msgstr "없음"
+msgstr "사용 안 함"
 
 #: blocks/src/block/blogcard/block.js:64 lib/admin-tinymce-qtag.php:1590
-#: lib/page-settings/image-forms.php:208 lib/page-settings/single-funcs.php:53
+#: lib/page-settings/image-forms.php:212 lib/page-settings/single-funcs.php:53
 #: lib/widgets/related-entries.php:19 lib/widgets/related-entries.php:76
 #, fuzzy
 msgid "関連記事"
@@ -284,123 +274,122 @@ msgid "参考記事"
 msgstr "참고 기사"
 
 #: blocks/src/block/blogcard/block.js:72 lib/admin-tinymce-qtag.php:1602
+#, fuzzy
+msgid "参考リンク"
+msgstr "유용한 링크"
+
+#: blocks/src/block/blogcard/block.js:76 lib/admin-tinymce-qtag.php:1608
 #: lib/page-settings/carousel-forms.php:61
-#: lib/page-settings/image-forms.php:207 lib/widgets/popular-entries.php:21
+#: lib/page-settings/image-forms.php:211 lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:91
 #, fuzzy
 msgid "人気記事"
 msgstr "인기 기사"
 
-#: blocks/src/block/blogcard/block.js:76 lib/admin-tinymce-qtag.php:1608
+#: blocks/src/block/blogcard/block.js:80 lib/admin-tinymce-qtag.php:1614
 #, fuzzy
 msgid "あわせて読みたい"
 msgstr "함께 읽고 싶은"
 
-#: blocks/src/block/blogcard/block.js:80 lib/admin-tinymce-qtag.php:1614
+#: blocks/src/block/blogcard/block.js:84 lib/admin-tinymce-qtag.php:1620
 #: lib/widgets/cta-box.php:34
 #, fuzzy
 msgid "詳細はこちら"
 msgstr "자세히 알아보기"
 
-#: blocks/src/block/blogcard/block.js:84 blocks/src/block/tab-box/block.js:102
+#: blocks/src/block/blogcard/block.js:88 blocks/src/block/tab-box/block.js:102
 #: blocks/src/old/tab-box/block.js:71 lib/admin-tinymce-qtag.php:305
-#: lib/admin-tinymce-qtag.php:1620
-#, fuzzy
-msgid "チェック"
-msgstr "검사"
-
-#: blocks/src/block/blogcard/block.js:88 blocks/src/block/tab-box/block.js:122
-#: blocks/src/old/tab-box/block.js:91 lib/admin-tinymce-qtag.php:455
 #: lib/admin-tinymce-qtag.php:1626
-#, fuzzy
+msgid "チェック"
+msgstr "체크"
+
+#: blocks/src/block/blogcard/block.js:92 blocks/src/block/tab-box/block.js:122
+#: blocks/src/old/tab-box/block.js:91 lib/admin-tinymce-qtag.php:455
+#: lib/admin-tinymce-qtag.php:1632
 msgid "ピックアップ"
 msgstr "픽업"
 
-#: blocks/src/block/blogcard/block.js:92 lib/admin-tinymce-qtag.php:1632
+#: blocks/src/block/blogcard/block.js:96 lib/admin-tinymce-qtag.php:1638
 #, fuzzy
 msgid "公式サイト"
 msgstr "공식 사이트"
 
-#: blocks/src/block/blogcard/block.js:96 blocks/src/block/tab-box/block.js:134
+#: blocks/src/block/blogcard/block.js:100 blocks/src/block/tab-box/block.js:134
 #: blocks/src/old/tab-box/block.js:103 lib/admin-tinymce-qtag.php:545
-#: lib/admin-tinymce-qtag.php:1638
-#, fuzzy
+#: lib/admin-tinymce-qtag.php:1644
 msgid "ダウンロード"
 msgstr "다운로드"
 
 #: blocks/src/block/button-wrap/block.js:35
-#: blocks/src/old/button-wrap-1/block.js:33
+#: blocks/src/old/button-wrap-1/block.js:35
 #: blocks/src/old/button-wrap/block.js:21 lib/admin-tinymce-qtag.php:1255
 #, fuzzy
 msgid "囲みボタン"
 msgstr "줄 바꿈 단추"
 
 #: blocks/src/block/button-wrap/block.js:86
-#: blocks/src/block/button/block.js:105 blocks/src/old/button-1/block.js:95
-#: blocks/src/old/button-wrap-1/block.js:76
+#: blocks/src/block/button/block.js:112 blocks/src/old/button-1/block.js:105
+#: blocks/src/old/button-wrap-1/block.js:86
 #: blocks/src/old/button-wrap/block.js:150 blocks/src/old/button/block.js:172
-#, fuzzy
 msgid "サイズ"
-msgstr "문자 크기"
+msgstr "크기(S)"
 
 #: blocks/src/block/button-wrap/block.js:92
-#: blocks/src/block/button/block.js:111 blocks/src/old/button-1/block.js:101
-#: blocks/src/old/button-wrap-1/block.js:82
+#: blocks/src/block/button/block.js:118 blocks/src/old/button-1/block.js:111
+#: blocks/src/old/button-wrap-1/block.js:92
 #: blocks/src/old/button-wrap/block.js:156 blocks/src/old/button/block.js:178
-#, fuzzy
 msgid "小"
-msgstr "오른쪽"
+msgstr "작게"
 
 #: blocks/src/block/button-wrap/block.js:96
-#: blocks/src/block/button/block.js:115 blocks/src/old/button-1/block.js:105
-#: blocks/src/old/button-wrap-1/block.js:86
+#: blocks/src/block/button/block.js:122 blocks/src/old/button-1/block.js:115
+#: blocks/src/old/button-wrap-1/block.js:96
 #: blocks/src/old/button-wrap/block.js:160 blocks/src/old/button/block.js:182
-#, fuzzy
 msgid "中"
-msgstr "중앙"
+msgstr "보통으로"
 
 #: blocks/src/block/button-wrap/block.js:100
-#: blocks/src/block/button/block.js:119 blocks/src/old/button-1/block.js:109
-#: blocks/src/old/button-wrap-1/block.js:90
+#: blocks/src/block/button/block.js:126 blocks/src/old/button-1/block.js:119
+#: blocks/src/old/button-wrap-1/block.js:100
 #: blocks/src/old/button-wrap/block.js:164 blocks/src/old/button/block.js:186
-#, fuzzy
 msgid "大"
-msgstr "대"
+msgstr "크게"
 
 #: blocks/src/block/button-wrap/block.js:112
-#: blocks/src/block/button/block.js:131
+#: blocks/src/block/button/block.js:138 blocks/src/old/button-1/block.js:131
+#: blocks/src/old/button-wrap-1/block.js:112
 #, fuzzy
 msgid "光らせる"
 msgstr "감시"
 
-#: blocks/src/block/button/block.js:33 blocks/src/block/button/block.js:42
-#: blocks/src/old/button-1/block.js:31 blocks/src/old/button-1/block.js:40
+#: blocks/src/block/button/_attrs.js:14
+#: blocks/src/block/button/_deprecated.js:20
+#: blocks/src/block/button/block.js:37 blocks/src/block/button/block.js:46
+#: blocks/src/old/button-1/block.js:33 blocks/src/old/button-1/block.js:42
 #: blocks/src/old/button/block.js:20 blocks/src/old/button/block.js:28
 #: lib/admin-tinymce-qtag.php:960 lib/page-settings/_top-page.php:190
 #: lib/page-settings/editor-forms.php:83
-#, fuzzy
 msgid "ボタン"
 msgstr "단추"
 
-#: blocks/src/block/button/block.js:36 blocks/src/old/button-1/block.js:34
+#: blocks/src/block/button/block.js:40 blocks/src/old/button-1/block.js:36
 #: blocks/src/old/button/block.js:23
 #, fuzzy
 msgid "一般的なリンクボタンを作成します。"
 msgstr "순위를 새로 만들었습니다."
 
-#: blocks/src/block/button/block.js:80 blocks/src/old/button-1/block.js:70
+#: blocks/src/block/button/block.js:87 blocks/src/old/button-1/block.js:80
 #: blocks/src/old/button/block.js:67
 #, fuzzy
 msgid "ボタン設定"
 msgstr "맨 위로 돌아가기 단추 설정"
 
-#: blocks/src/block/button/block.js:83 blocks/src/old/button-1/block.js:73
+#: blocks/src/block/button/block.js:90 blocks/src/old/button-1/block.js:83
 #: blocks/src/old/button/block.js:70
-#, fuzzy
 msgid "URL"
-msgstr "URL"
+msgstr "URL:"
 
-#: blocks/src/block/button/block.js:89 blocks/src/old/button-1/block.js:79
+#: blocks/src/block/button/block.js:96 blocks/src/old/button-1/block.js:89
 #: blocks/src/old/button/block.js:76
 #: lib/page-settings/blogcard-in-forms.php:100
 #: lib/page-settings/blogcard-out-forms.php:79
@@ -409,27 +398,32 @@ msgstr "URL"
 msgid "リンクの開き方"
 msgstr "링크 열기"
 
-#: blocks/src/block/button/block.js:95 blocks/src/old/button-1/block.js:85
+#: blocks/src/block/button/block.js:102 blocks/src/old/button-1/block.js:95
 #: blocks/src/old/button/block.js:82
 #, fuzzy
 msgid "現在のタブで開く"
 msgstr "새 탭에서 열기"
 
-#: blocks/src/block/button/block.js:99 blocks/src/old/button-1/block.js:89
+#: blocks/src/block/button/block.js:106 blocks/src/old/button-1/block.js:99
 #: blocks/src/old/button/block.js:86
 #: lib/page-settings/blogcard-in-forms.php:105
 #: lib/page-settings/blogcard-out-forms.php:84
-#, fuzzy
 msgid "新しいタブで開く"
-msgstr "새 탭에서 열기"
+msgstr "새 탭으로 열기"
 
-#: blocks/src/block/button/block.js:125
+#: blocks/src/block/button/block.js:132
 #: blocks/src/micro/micro-balloon/block.js:106
+#: blocks/src/old/button-1/block.js:125
+#: blocks/src/old/button-wrap-1/block.js:106
 #: blocks/src/old/micro-balloon-1/block.js:108
 #: blocks/src/old/micro-balloon/block.js:107
 #, fuzzy
 msgid "円形にする"
 msgstr "이미지를 돈다"
+
+#: blocks/src/block/button/block.js:154 lib/content-category.php:217
+msgid "背景色"
+msgstr "배경색"
 
 #: blocks/src/block/icon-box/block.js:33
 #, fuzzy
@@ -443,9 +437,8 @@ msgstr "토글 상자"
 #: blocks/src/micro/micro-text/block.js:75 blocks/src/old/blank-box/block.js:58
 #: blocks/src/old/micro-balloon-1/block.js:64
 #: blocks/src/old/micro-balloon/block.js:63 blocks/src/old/tab-box/block.js:65
-#, fuzzy
 msgid "タイプ"
-msgstr "제목"
+msgstr "형식"
 
 #: blocks/src/block/icon-box/block.js:97 lib/admin-tinymce-qtag.php:33
 #: lib/admin-tinymce-qtag.php:173
@@ -466,25 +459,22 @@ msgstr "추가 정보 (!)"
 
 #: blocks/src/block/icon-box/block.js:109 blocks/src/block/tab-box/block.js:130
 #: blocks/src/old/tab-box/block.js:99 lib/admin-tinymce-qtag.php:188
-#: lib/admin-tinymce-qtag.php:515 lib/admin.php:182
+#: lib/admin-tinymce-qtag.php:515 lib/admin.php:184
 #: lib/custom-fields/memo-field.php:17 lib/custom-fields/memo-field.php:18
 #: lib/custom-fields/memo-field.php:21
-#, fuzzy
 msgid "メモ"
-msgstr "참고"
+msgstr "노트장"
 
 #: blocks/src/block/icon-box/block.js:113 blocks/src/block/tab-box/block.js:106
 #: blocks/src/old/tab-box/block.js:75 lib/admin-tinymce-qtag.php:193
 #: lib/admin-tinymce-qtag.php:335 lib/page-settings/_top-page.php:184
 #: lib/page-settings/comment-funcs.php:32
-#, fuzzy
 msgid "コメント"
-msgstr "코멘트"
+msgstr "설명"
 
 #: blocks/src/block/icon-box/block.js:117 blocks/src/block/tab-box/block.js:146
 #: blocks/src/old/tab-box/block.js:115 lib/admin-tinymce-qtag.php:198
 #: lib/admin-tinymce-qtag.php:637
-#, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -512,9 +502,8 @@ msgstr "BAD"
 #: blocks/src/block/icon-box/block.js:133 blocks/src/block/tab-box/block.js:162
 #: blocks/src/old/tab-box/block.js:131 lib/admin-tinymce-qtag.php:218
 #: lib/admin-tinymce-qtag.php:761 lib/widgets/author-box.php:19
-#, fuzzy
 msgid "プロフィール"
-msgstr "프로필"
+msgstr "프로파일"
 
 #: blocks/src/block/icon-list/block.js:38
 #, fuzzy
@@ -587,7 +576,6 @@ msgstr "다크 (어두운 회색)"
 #: blocks/src/toolbutton/dropdown-shortcodes.js:107
 #: blocks/src/toolbutton/dropdown-shortcodes.js:114
 #: lib/tinymce/html-tags.php:49 lib/tinymce/shortcodes.php:101
-#, fuzzy
 msgid "キーワード"
 msgstr "키워드"
 
@@ -598,7 +586,6 @@ msgstr "검색 안내"
 
 #: blocks/src/block/search-box/block.js:76 lib/tinymce/html-tags.php:114
 #: tmp/mobile-search-button.php:20
-#, fuzzy
 msgid "検索"
 msgstr "검색"
 
@@ -608,7 +595,7 @@ msgid "付箋風ボックス"
 msgstr "CTA 상자"
 
 #: blocks/src/block/sticky-box/block.js:98
-#: blocks/src/demo/blank-box-demo/block.js:55 blocks/src/init.php:322
+#: blocks/src/demo/blank-box-demo/block.js:55
 #: blocks/src/old/tab-box/block.js:143 blocks/src/toolbutton/badge-grey.js:13
 #: lib/admin-tinymce-qtag.php:274 lib/admin-tinymce-qtag.php:308
 #: lib/admin-tinymce-qtag.php:338 lib/admin-tinymce-qtag.php:368
@@ -619,12 +606,12 @@ msgstr "CTA 상자"
 #: lib/admin-tinymce-qtag.php:640 lib/admin-tinymce-qtag.php:671
 #: lib/admin-tinymce-qtag.php:702 lib/admin-tinymce-qtag.php:733
 #: lib/admin-tinymce-qtag.php:764 lib/admin-tinymce-qtag.php:797
-#, fuzzy
+#: lib/gutenberg.php:105
 msgid "灰色"
 msgstr "회색"
 
 #: blocks/src/block/sticky-box/block.js:102
-#: blocks/src/demo/blank-box-demo/block.js:59 blocks/src/init.php:297
+#: blocks/src/demo/blank-box-demo/block.js:59
 #: blocks/src/old/blank-box/block.js:68 blocks/src/old/caption-box/block.js:65
 #: blocks/src/old/label-box/block.js:64
 #: blocks/src/old/micro-balloon-1/block.js:90
@@ -640,13 +627,13 @@ msgstr "회색"
 #: lib/admin-tinymce-qtag.php:614 lib/admin-tinymce-qtag.php:645
 #: lib/admin-tinymce-qtag.php:676 lib/admin-tinymce-qtag.php:707
 #: lib/admin-tinymce-qtag.php:738 lib/admin-tinymce-qtag.php:769
-#: lib/admin-tinymce-qtag.php:802 lib/widgets/cta-box.php:176
-#, fuzzy
+#: lib/admin-tinymce-qtag.php:802 lib/gutenberg.php:80
+#: lib/widgets/cta-box.php:176
 msgid "黄色"
 msgstr "노란색"
 
 #: blocks/src/block/sticky-box/block.js:106
-#: blocks/src/demo/blank-box-demo/block.js:63 blocks/src/init.php:237
+#: blocks/src/demo/blank-box-demo/block.js:63
 #: blocks/src/old/blank-box/block.js:72 blocks/src/old/caption-box/block.js:69
 #: blocks/src/old/label-box/block.js:68
 #: blocks/src/old/micro-balloon-1/block.js:94
@@ -662,13 +649,13 @@ msgstr "노란색"
 #: lib/admin-tinymce-qtag.php:619 lib/admin-tinymce-qtag.php:650
 #: lib/admin-tinymce-qtag.php:681 lib/admin-tinymce-qtag.php:712
 #: lib/admin-tinymce-qtag.php:743 lib/admin-tinymce-qtag.php:774
-#: lib/admin-tinymce-qtag.php:807 lib/widgets/cta-box.php:164
-#, fuzzy
+#: lib/admin-tinymce-qtag.php:807 lib/gutenberg.php:20
+#: lib/widgets/cta-box.php:164
 msgid "赤色"
-msgstr "빨간색"
+msgstr "빨강"
 
 #: blocks/src/block/sticky-box/block.js:110
-#: blocks/src/demo/blank-box-demo/block.js:67 blocks/src/init.php:262
+#: blocks/src/demo/blank-box-demo/block.js:67
 #: blocks/src/old/blank-box/block.js:76 blocks/src/old/caption-box/block.js:73
 #: blocks/src/old/label-box/block.js:72
 #: blocks/src/old/micro-balloon-1/block.js:98
@@ -685,13 +672,13 @@ msgstr "빨간색"
 #: lib/admin-tinymce-qtag.php:655 lib/admin-tinymce-qtag.php:686
 #: lib/admin-tinymce-qtag.php:717 lib/admin-tinymce-qtag.php:748
 #: lib/admin-tinymce-qtag.php:779 lib/admin-tinymce-qtag.php:812
-#: lib/widgets/cta-box.php:169
+#: lib/gutenberg.php:45 lib/widgets/cta-box.php:169
 #, fuzzy
 msgid "青色"
 msgstr "파란색"
 
 #: blocks/src/block/sticky-box/block.js:114
-#: blocks/src/demo/blank-box-demo/block.js:71 blocks/src/init.php:282
+#: blocks/src/demo/blank-box-demo/block.js:71
 #: blocks/src/old/blank-box/block.js:80 blocks/src/old/caption-box/block.js:77
 #: blocks/src/old/label-box/block.js:76
 #: blocks/src/old/micro-balloon-1/block.js:102
@@ -709,10 +696,9 @@ msgstr "파란색"
 #: lib/admin-tinymce-qtag.php:660 lib/admin-tinymce-qtag.php:691
 #: lib/admin-tinymce-qtag.php:722 lib/admin-tinymce-qtag.php:753
 #: lib/admin-tinymce-qtag.php:784 lib/admin-tinymce-qtag.php:817
-#: lib/widgets/cta-box.php:173
-#, fuzzy
+#: lib/gutenberg.php:65 lib/widgets/cta-box.php:173
 msgid "緑色"
-msgstr "녹색"
+msgstr "초록"
 
 #: blocks/src/block/tab-box/block.js:34 blocks/src/old/tab-box/block.js:19
 #, fuzzy
@@ -726,9 +712,8 @@ msgstr "탭에 메시지를 전하기를 위한 문자가 써진 상자입니다
 
 #: blocks/src/block/tab-box/block.js:110 blocks/src/old/tab-box/block.js:79
 #: lib/admin-tinymce-qtag.php:365
-#, fuzzy
 msgid "ポイント"
-msgstr "포인트"
+msgstr "| 시사점"
 
 #: blocks/src/block/tab-box/block.js:114 blocks/src/old/tab-box/block.js:83
 #: lib/admin-tinymce-qtag.php:395
@@ -744,9 +729,8 @@ msgstr "팁"
 
 #: blocks/src/block/tab-box/block.js:126 blocks/src/old/tab-box/block.js:95
 #: lib/admin-tinymce-qtag.php:485
-#, fuzzy
 msgid "ブックマーク"
-msgstr "책갈피"
+msgstr "즐겨찾기"
 
 #: blocks/src/block/tab-box/block.js:138 blocks/src/old/tab-box/block.js:107
 #: lib/admin-tinymce-qtag.php:575
@@ -756,10 +740,9 @@ msgstr "블 래이 크"
 
 #: blocks/src/block/tab-box/block.js:142 blocks/src/old/tab-box/block.js:111
 #: lib/admin-tinymce-qtag.php:606 lib/page-settings/apis-forms.php:29
-#: lib/page-settings/apis-funcs.php:94
-#, fuzzy
+#: lib/page-settings/apis-funcs.php:118
 msgid "Amazon"
-msgstr "Amazon"
+msgstr "아마존"
 
 #: blocks/src/block/timeline/block.js:34 lib/tinymce/shortcodes.php:176
 #, fuzzy
@@ -792,9 +775,9 @@ msgstr "항목을 위로 이동"
 #: lib/widgets/author-box.php:72 lib/widgets/cta-box.php:99
 #: lib/widgets/fb-like-balloon.php:70 lib/widgets/fb-like-box.php:97
 #: lib/widgets/item-ranking.php:64 lib/widgets/mobile-text.php:73
-#: lib/widgets/navi-entries.php:112 lib/widgets/pc-text.php:72
-#: lib/widgets/recent-comments.php:142 lib/widgets/toc.php:75
-#, fuzzy
+#: lib/widgets/navi-entries.php:97 lib/widgets/pc-text.php:72
+#: lib/widgets/recent-comments.php:142 lib/widgets/recommended-cards.php:89
+#: lib/widgets/toc.php:75
 msgid "タイトル"
 msgstr "제목"
 
@@ -827,563 +810,475 @@ msgstr "단면 상자"
 msgid "ドロップダウンデモ"
 msgstr "드롭다운 데모"
 
-#: blocks/src/helpers.js:152
+#: blocks/src/helpers.js:175
 #, fuzzy
 msgid "fab-info-circle"
 msgstr "fab-info-circle"
 
-#: blocks/src/helpers.js:156
+#: blocks/src/helpers.js:179
 #, fuzzy
 msgid "fab-question-circle"
 msgstr "fab-question-circle"
 
-#: blocks/src/helpers.js:160
+#: blocks/src/helpers.js:183
 #, fuzzy
 msgid "fab-exclamation-circle"
 msgstr "fab-exclamation-circle"
 
-#: blocks/src/helpers.js:164
+#: blocks/src/helpers.js:187
 #, fuzzy
 msgid "fab-pencil"
 msgstr "fab-pencil"
 
-#: blocks/src/helpers.js:168
+#: blocks/src/helpers.js:191
 #, fuzzy
 msgid "fab-edit"
 msgstr "fab-edit"
 
-#: blocks/src/helpers.js:172
+#: blocks/src/helpers.js:195
 #, fuzzy
 msgid "fab-comment"
 msgstr "fab-comment"
 
-#: blocks/src/helpers.js:176
+#: blocks/src/helpers.js:199
 #, fuzzy
 msgid "fab-ok"
 msgstr "fab-ok"
 
-#: blocks/src/helpers.js:180
+#: blocks/src/helpers.js:203
 #, fuzzy
 msgid "fab-bad"
 msgstr "fab-bad"
 
-#: blocks/src/helpers.js:184
+#: blocks/src/helpers.js:207
 #, fuzzy
 msgid "fab-thumbs-up"
 msgstr "fab-thumbs-up"
 
-#: blocks/src/helpers.js:188
+#: blocks/src/helpers.js:211
 #, fuzzy
 msgid "fab-thumbs-down"
 msgstr "fab-thumbs-down"
 
-#: blocks/src/helpers.js:192 blocks/src/helpers.js:382
+#: blocks/src/helpers.js:215 blocks/src/helpers.js:405
 #, fuzzy
 msgid "fab-check"
 msgstr "fab-check"
 
-#: blocks/src/helpers.js:196 blocks/src/helpers.js:446
+#: blocks/src/helpers.js:219 blocks/src/helpers.js:469
 #, fuzzy
 msgid "fab-star"
 msgstr "fab-star"
 
-#: blocks/src/helpers.js:200
+#: blocks/src/helpers.js:223
 #, fuzzy
 msgid "fab-bell"
 msgstr "fab-bell"
 
-#: blocks/src/helpers.js:204
+#: blocks/src/helpers.js:227
 #, fuzzy
 msgid "fab-trophy"
 msgstr "fab-trophy"
 
-#: blocks/src/helpers.js:208
+#: blocks/src/helpers.js:231
 #, fuzzy
 msgid "fab-lightbulb"
 msgstr "fab-lightbulb"
 
-#: blocks/src/helpers.js:212
+#: blocks/src/helpers.js:235
 #, fuzzy
 msgid "fab-graduation-cap"
 msgstr "fab-graduation-cap"
 
-#: blocks/src/helpers.js:216
+#: blocks/src/helpers.js:239
 #, fuzzy
 msgid "fab-bolt"
 msgstr "fab-bolt"
 
-#: blocks/src/helpers.js:220
+#: blocks/src/helpers.js:243
 #, fuzzy
 msgid "fab-bookmark"
 msgstr "fab-bookmark"
 
-#: blocks/src/helpers.js:224
+#: blocks/src/helpers.js:247
 #, fuzzy
 msgid "fab-book"
 msgstr "Facebook"
 
-#: blocks/src/helpers.js:228
+#: blocks/src/helpers.js:251
 #, fuzzy
 msgid "fab-download"
 msgstr "fab-download"
 
-#: blocks/src/helpers.js:232
+#: blocks/src/helpers.js:255
 #, fuzzy
 msgid "fab-coffee"
 msgstr "fab-coffee"
 
-#: blocks/src/helpers.js:236
+#: blocks/src/helpers.js:259
 #, fuzzy
 msgid "fab-amazon"
 msgstr "Amazon"
 
-#: blocks/src/helpers.js:240
+#: blocks/src/helpers.js:263
 #, fuzzy
 msgid "fab-user"
 msgstr "fab-user"
 
-#: blocks/src/helpers.js:244
+#: blocks/src/helpers.js:267
 #, fuzzy
 msgid "fab-envelope"
 msgstr "fab-envelope"
 
-#: blocks/src/helpers.js:248
+#: blocks/src/helpers.js:271
 #, fuzzy
 msgid "fab-flag"
 msgstr "fab-flag"
 
-#: blocks/src/helpers.js:252
+#: blocks/src/helpers.js:275
 #, fuzzy
 msgid "fab-ban"
 msgstr "fab-ban"
 
-#: blocks/src/helpers.js:256
+#: blocks/src/helpers.js:279
 #, fuzzy
 msgid "fab-calendar"
 msgstr "fab-calendar"
 
-#: blocks/src/helpers.js:260
+#: blocks/src/helpers.js:283
 #, fuzzy
 msgid "fab-clock"
 msgstr "fab-clock"
 
-#: blocks/src/helpers.js:264
+#: blocks/src/helpers.js:287
 #, fuzzy
 msgid "fab-cutlery"
 msgstr "fab-cutlery"
 
-#: blocks/src/helpers.js:268 blocks/src/helpers.js:454
+#: blocks/src/helpers.js:291 blocks/src/helpers.js:477
 #, fuzzy
 msgid "fab-heart"
 msgstr "fab-heart"
 
-#: blocks/src/helpers.js:272
+#: blocks/src/helpers.js:295
 #, fuzzy
 msgid "fab-camera"
 msgstr "fab-camera"
 
-#: blocks/src/helpers.js:276
+#: blocks/src/helpers.js:299
 #, fuzzy
 msgid "fab-search"
 msgstr "fab-search"
 
-#: blocks/src/helpers.js:280
+#: blocks/src/helpers.js:303
 #, fuzzy
 msgid "fab-file-text"
 msgstr "fab-file-text"
 
-#: blocks/src/helpers.js:284
+#: blocks/src/helpers.js:307
 #, fuzzy
 msgid "fab-folder"
 msgstr "fab-folder"
 
-#: blocks/src/helpers.js:288
+#: blocks/src/helpers.js:311
 #, fuzzy
 msgid "fab-tag"
 msgstr "fab-tag"
 
-#: blocks/src/helpers.js:292
+#: blocks/src/helpers.js:315
 #, fuzzy
 msgid "fab-car"
 msgstr "fab-car"
 
-#: blocks/src/helpers.js:296
+#: blocks/src/helpers.js:319
 #, fuzzy
 msgid "fab-truck"
 msgstr "fab-truck"
 
-#: blocks/src/helpers.js:300
+#: blocks/src/helpers.js:323
 #, fuzzy
 msgid "fab-bicycle"
 msgstr "fab-bicycle"
 
-#: blocks/src/helpers.js:304
+#: blocks/src/helpers.js:327
 #, fuzzy
 msgid "fab-motorcycle"
 msgstr "fab-motorcycle"
 
-#: blocks/src/helpers.js:308
+#: blocks/src/helpers.js:331
 #, fuzzy
 msgid "fab-bus"
 msgstr "fab-bus"
 
-#: blocks/src/helpers.js:312
+#: blocks/src/helpers.js:335
 #, fuzzy
 msgid "fab-plane"
 msgstr "fab-plane"
 
-#: blocks/src/helpers.js:316
+#: blocks/src/helpers.js:339
 #, fuzzy
 msgid "fab-train"
 msgstr "fab-train"
 
-#: blocks/src/helpers.js:320
+#: blocks/src/helpers.js:343
 #, fuzzy
 msgid "fab-subway"
 msgstr "fab-subway"
 
-#: blocks/src/helpers.js:324
+#: blocks/src/helpers.js:347
 #, fuzzy
 msgid "fab-taxi"
 msgstr "fab-taxi"
 
-#: blocks/src/helpers.js:328
+#: blocks/src/helpers.js:351
 #, fuzzy
 msgid "fab-ship"
 msgstr "fab-ship"
 
-#: blocks/src/helpers.js:332
+#: blocks/src/helpers.js:355
 #, fuzzy
 msgid "fab-jpy"
 msgstr "fab-jpy"
 
-#: blocks/src/helpers.js:336
+#: blocks/src/helpers.js:359
 #, fuzzy
 msgid "fab-usd"
 msgstr "fab-usd"
 
-#: blocks/src/helpers.js:340
+#: blocks/src/helpers.js:363
 #, fuzzy
 msgid "fab-eur"
 msgstr "fab-eur"
 
-#: blocks/src/helpers.js:344
+#: blocks/src/helpers.js:367
 #, fuzzy
 msgid "fab-btc"
 msgstr "fab-btc"
 
-#: blocks/src/helpers.js:348
+#: blocks/src/helpers.js:371
 #, fuzzy
 msgid "fab-apple"
 msgstr "fab-apple"
 
-#: blocks/src/helpers.js:352
+#: blocks/src/helpers.js:375
 #, fuzzy
 msgid "fab-android"
 msgstr "fab-android"
 
-#: blocks/src/helpers.js:356
+#: blocks/src/helpers.js:379
 #, fuzzy
 msgid "fab-wordpress"
 msgstr "fab-wordpress"
 
-#: blocks/src/helpers.js:378
+#: blocks/src/helpers.js:401
 #, fuzzy
 msgid "fab-caret-right"
 msgstr "fab-caret-right"
 
-#: blocks/src/helpers.js:386
+#: blocks/src/helpers.js:409
 #, fuzzy
 msgid "fab-check-circle"
 msgstr "fab-check-circle"
 
-#: blocks/src/helpers.js:390
+#: blocks/src/helpers.js:413
 #, fuzzy
 msgid "fab-check-circle-o"
 msgstr "fab-check-circle-o"
 
-#: blocks/src/helpers.js:394
+#: blocks/src/helpers.js:417
 #, fuzzy
 msgid "fab-check-square"
 msgstr "fab-check-square"
 
-#: blocks/src/helpers.js:398
+#: blocks/src/helpers.js:421
 #, fuzzy
 msgid "fab-check-square-o"
 msgstr "fab-check-square-o"
 
-#: blocks/src/helpers.js:402
+#: blocks/src/helpers.js:425
 #, fuzzy
 msgid "fab-caret-square-o-right"
 msgstr "fab-caret-square-o-right"
 
-#: blocks/src/helpers.js:406
+#: blocks/src/helpers.js:429
 #, fuzzy
 msgid "fab-arrow-right"
 msgstr "fab-arrow-right"
 
-#: blocks/src/helpers.js:410
+#: blocks/src/helpers.js:433
 #, fuzzy
 msgid "fab-angle-right"
 msgstr "fab-angle-right"
 
-#: blocks/src/helpers.js:414
+#: blocks/src/helpers.js:437
 #, fuzzy
 msgid "fab-angle-double-right"
 msgstr "fab-angle-double-right"
 
-#: blocks/src/helpers.js:418
+#: blocks/src/helpers.js:441
 #, fuzzy
 msgid "fab-arrow-circle-right"
 msgstr "fab-arrow-circle-right"
 
-#: blocks/src/helpers.js:422
+#: blocks/src/helpers.js:445
 #, fuzzy
 msgid "fab-arrow-circle-o-right"
 msgstr "fab-arrow-circle-o-right"
 
-#: blocks/src/helpers.js:426
+#: blocks/src/helpers.js:449
 #, fuzzy
 msgid "fab-play-circle"
 msgstr "fab-play-circle"
 
-#: blocks/src/helpers.js:430
+#: blocks/src/helpers.js:453
 #, fuzzy
 msgid "fab-play-circle-o"
 msgstr "fab-play-circle-o"
 
-#: blocks/src/helpers.js:434
+#: blocks/src/helpers.js:457
 #, fuzzy
 msgid "fab-chevron-right"
 msgstr "fab-chevron-right"
 
-#: blocks/src/helpers.js:438
+#: blocks/src/helpers.js:461
 #, fuzzy
 msgid "fab-chevron-circle-right"
 msgstr "fab-chevron-circle-right"
 
-#: blocks/src/helpers.js:442
+#: blocks/src/helpers.js:465
 #, fuzzy
 msgid "fab-hand-o-right"
 msgstr "fab-hand-o-right"
 
-#: blocks/src/helpers.js:450
+#: blocks/src/helpers.js:473
 #, fuzzy
 msgid "fab-star-o"
 msgstr "fab-star-o"
 
-#: blocks/src/helpers.js:458
+#: blocks/src/helpers.js:481
 #, fuzzy
 msgid "fab-heart-o"
 msgstr "fab-heart-o"
 
-#: blocks/src/helpers.js:462
+#: blocks/src/helpers.js:485
 #, fuzzy
 msgid "fab-square"
 msgstr "fab-square"
 
-#: blocks/src/helpers.js:466
+#: blocks/src/helpers.js:489
 #, fuzzy
 msgid "fab-square-o"
 msgstr "fab-square-o"
 
-#: blocks/src/helpers.js:470
+#: blocks/src/helpers.js:493
 #, fuzzy
 msgid "fab-circle"
 msgstr "fab-circle"
 
-#: blocks/src/helpers.js:474
+#: blocks/src/helpers.js:497
 #, fuzzy
 msgid "fab-circle-o"
 msgstr "fab-circle-o"
 
-#: blocks/src/helpers.js:478
+#: blocks/src/helpers.js:501
 #, fuzzy
 msgid "fab-dot-circle-o"
 msgstr "fab-dot-circle-o"
 
-#: blocks/src/helpers.js:482
+#: blocks/src/helpers.js:505
 #, fuzzy
 msgid "fab-plus"
 msgstr "fab-plus"
 
-#: blocks/src/helpers.js:486
+#: blocks/src/helpers.js:509
 #, fuzzy
 msgid "fab-plus-circle"
 msgstr "fab-plus-circle"
 
-#: blocks/src/helpers.js:490
+#: blocks/src/helpers.js:513
 #, fuzzy
 msgid "fab-plus-square"
 msgstr "fab-plus-square"
 
-#: blocks/src/helpers.js:494
+#: blocks/src/helpers.js:517
 #, fuzzy
 msgid "fab-plus-square-o"
 msgstr "fab-plus-square-o"
 
-#: blocks/src/helpers.js:498
+#: blocks/src/helpers.js:521
 #, fuzzy
 msgid "fab-minus"
 msgstr "fab-minus"
 
-#: blocks/src/helpers.js:502
+#: blocks/src/helpers.js:525
 #, fuzzy
 msgid "fab-minus-circle"
 msgstr "fab-minus-circle"
 
-#: blocks/src/helpers.js:506
+#: blocks/src/helpers.js:529
 #, fuzzy
 msgid "fab-minus-square"
 msgstr "fab-minus-square"
 
-#: blocks/src/helpers.js:510
+#: blocks/src/helpers.js:533
 #, fuzzy
 msgid "fab-minus-square-o"
 msgstr "fab-minus-square-o"
 
-#: blocks/src/helpers.js:514
+#: blocks/src/helpers.js:537
 #, fuzzy
 msgid "fab-times"
 msgstr "fab-times"
 
-#: blocks/src/helpers.js:518
+#: blocks/src/helpers.js:541
 #, fuzzy
 msgid "fab-times-circle"
 msgstr "fab-times-circle"
 
-#: blocks/src/helpers.js:522
+#: blocks/src/helpers.js:545
 #, fuzzy
 msgid "fab-times-circle-o"
 msgstr "fab-times-circle-o"
 
-#: blocks/src/helpers.js:526
+#: blocks/src/helpers.js:549
 #, fuzzy
 msgid "fab-window-close"
 msgstr "fab-window-close"
 
-#: blocks/src/helpers.js:530
+#: blocks/src/helpers.js:553
 #, fuzzy
 msgid "fab-window-close-o"
 msgstr "fab-window-close-o"
 
-#: blocks/src/init.php:182
+#: blocks/src/init.php:189
 #, fuzzy
 msgid "Cocoonブロック"
 msgstr "Cocoon 블록"
 
-#: blocks/src/init.php:187
+#: blocks/src/init.php:194
 #, fuzzy
 msgid "Cocoon汎用ブロック"
 msgstr "Cocoon 일반 블록"
 
-#: blocks/src/init.php:192
+#: blocks/src/init.php:199
 #, fuzzy
 msgid "Cocoonマイクロコピー"
 msgstr "마이크로 복사"
 
-#: blocks/src/init.php:197
+#: blocks/src/init.php:204
 #, fuzzy
 msgid "Cocoonレイアウト"
 msgstr "헤더 레이아웃"
 
-#: blocks/src/init.php:202
+#: blocks/src/init.php:209
 #, fuzzy
 msgid "Cocoonショートコード"
 msgstr "단축 코드"
 
-#: blocks/src/init.php:207
+#: blocks/src/init.php:214
 #, fuzzy
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr "Cocoon 구 차단 (권장)"
-
-#: blocks/src/init.php:232 lib/page-settings/all-forms.php:31
-#, fuzzy
-msgid "キーカラー"
-msgstr "키 색상"
-
-#: blocks/src/init.php:242 blocks/src/old/button-wrap/block.js:80
-#: blocks/src/old/button/block.js:102 blocks/src/toolbutton/badge-pink.js:13
-#: lib/admin-tinymce-qtag.php:837 lib/widgets/cta-box.php:165
-#, fuzzy
-msgid "ピンク"
-msgstr "분홍색"
-
-#: blocks/src/init.php:247 blocks/src/toolbutton/badge-purple.js:13
-#: lib/widgets/cta-box.php:166
-#, fuzzy
-msgid "紫色"
-msgstr "자주색"
-
-#: blocks/src/init.php:252
-#, fuzzy
-msgid "深紫色"
-msgstr "자주색"
-
-#: blocks/src/init.php:257
-#, fuzzy
-msgid "紺色"
-msgstr "자주색"
-
-#: blocks/src/init.php:267
-#, fuzzy
-msgid "天色"
-msgstr "색"
-
-#: blocks/src/init.php:272
-#, fuzzy
-msgid "浅葱色"
-msgstr "연두색 컬러"
-
-#: blocks/src/init.php:277
-#, fuzzy
-msgid "深緑色"
-msgstr "녹색"
-
-#: blocks/src/init.php:287
-#, fuzzy
-msgid "黄緑色"
-msgstr "노란색"
-
-#: blocks/src/init.php:292 blocks/src/old/button-wrap/block.js:120
-#: blocks/src/old/button/block.js:142 lib/widgets/cta-box.php:175
-#, fuzzy
-msgid "ライム"
-msgstr "라임"
-
-#: blocks/src/init.php:302
-#, fuzzy
-msgid "アンバー"
-msgstr "앰버 (호박)"
-
-#: blocks/src/init.php:307 blocks/src/old/button-wrap/block.js:132
-#: blocks/src/old/button/block.js:154 blocks/src/toolbutton/badge-orange.js:13
-#: lib/admin-tinymce-qtag.php:827 lib/widgets/cta-box.php:178
-#, fuzzy
-msgid "オレンジ"
-msgstr "오렌지"
-
-#: blocks/src/init.php:312 blocks/src/old/button-wrap/block.js:136
-#: blocks/src/old/button/block.js:158
-#, fuzzy
-msgid "ディープオレンジ"
-msgstr "경고음 오렌지"
-
-#: blocks/src/init.php:317 blocks/src/toolbutton/badge-brown.js:13
-#: lib/widgets/cta-box.php:180
-#, fuzzy
-msgid "茶色"
-msgstr "갈색"
-
-#: blocks/src/init.php:327
-#, fuzzy
-msgid "黒"
-msgstr "파랑"
-
-#: blocks/src/init.php:332
-#, fuzzy
-msgid "白"
-msgstr "흰색"
 
 #: blocks/src/layout/column-2/block.js:35
 #, fuzzy
@@ -1509,7 +1404,7 @@ msgid "登録されている吹き出しを挿入できます。"
 msgstr "등록 된 표시를 삽입할 수 있습니다."
 
 #: blocks/src/old/balloon-1/block.js:80 blocks/src/old/balloon-2/block.js:111
-#: blocks/src/old/balloon-ex/block.js:110 blocks/src/old/balloon/block.js:63
+#: blocks/src/old/balloon/block.js:63
 #, fuzzy
 msgid "人物"
 msgstr "사용자 위치"
@@ -1526,31 +1421,18 @@ msgstr "설명선"
 msgid "登録されている吹き出しのオプションを変更できます。"
 msgstr "목차를 \"열기\" \"닫기\" 캡션을 변경 합니다."
 
-#: blocks/src/old/balloon-ex/block.js:141 lib/page-speech-balloon/form.php:103
-#, fuzzy
-msgid "人物位置"
-msgstr "사용자 위치"
-
-#: blocks/src/old/balloon-ex/block.js:147 lib/page-speech-balloon/form.php:108
-#, fuzzy
-msgid "左"
-msgstr "왼쪽"
-
-#: blocks/src/old/balloon-ex/block.js:151 lib/page-speech-balloon/form.php:109
-#, fuzzy
-msgid "右"
-msgstr "오른쪽"
-
 #: blocks/src/old/blank-box/block.js:24
 #, fuzzy
 msgid "コンテンツを囲むだけのブランクボックスを表示します。"
 msgstr "트 윗 후 저자에 따라 버튼을 표시 합니다."
 
+#: blocks/src/old/button-wrap-1/block.js:38
 #: blocks/src/old/button-wrap/block.js:24
 #, fuzzy
 msgid "アスリートタグ等のタグを変更できないリンクをボタン化します。"
 msgstr "선수 태그 등의 태그를 수정할 수 없는 링크를 설정 합니다."
 
+#: blocks/src/old/button-wrap-1/block.js:44
 #: blocks/src/old/button-wrap/block.js:29
 #, fuzzy
 msgid ""
@@ -1558,11 +1440,13 @@ msgid ""
 "ページで反映されません。"
 msgstr "어필 구역 제목을 입력 하십시오. 입력 하지 않으면 표시 되지 않습니다."
 
+#: blocks/src/old/button-wrap-1/block.js:77
 #: blocks/src/old/button-wrap/block.js:61
 #, fuzzy
 msgid "囲みボタン設定"
 msgstr "줄 바꿈 단추"
 
+#: blocks/src/old/button-wrap-1/block.js:80
 #: blocks/src/old/button-wrap/block.js:64
 #, fuzzy
 msgid "リンクタグ・ショートコード"
@@ -1573,6 +1457,12 @@ msgstr "단축 코드"
 #, fuzzy
 msgid "レッド"
 msgstr "레드"
+
+#: blocks/src/old/button-wrap/block.js:80 blocks/src/old/button/block.js:102
+#: blocks/src/toolbutton/badge-pink.js:13 lib/admin-tinymce-qtag.php:837
+#: lib/gutenberg.php:25 lib/widgets/cta-box.php:165
+msgid "ピンク"
+msgstr "분홍"
 
 #: blocks/src/old/button-wrap/block.js:84 blocks/src/old/button/block.js:106
 #: lib/admin-tinymce-qtag.php:842
@@ -1592,7 +1482,6 @@ msgstr "인디 고 [감색] (소)"
 
 #: blocks/src/old/button-wrap/block.js:96 blocks/src/old/button/block.js:118
 #: lib/admin-tinymce-qtag.php:847
-#, fuzzy
 msgid "ブルー"
 msgstr "블루"
 
@@ -1613,7 +1502,6 @@ msgstr "청록 [녹색을 띠는 파랑] (소)"
 
 #: blocks/src/old/button-wrap/block.js:112 blocks/src/old/button/block.js:134
 #: lib/admin-tinymce-qtag.php:852
-#, fuzzy
 msgid "グリーン"
 msgstr "그린"
 
@@ -1622,16 +1510,32 @@ msgstr "그린"
 msgid "ライトグリーン"
 msgstr "라이트 그린 (소)"
 
+#: blocks/src/old/button-wrap/block.js:120 blocks/src/old/button/block.js:142
+#: lib/gutenberg.php:75 lib/widgets/cta-box.php:175
+msgid "ライム"
+msgstr "라임"
+
 #: blocks/src/old/button-wrap/block.js:124 blocks/src/old/button/block.js:146
 #: lib/admin-tinymce-qtag.php:857
-#, fuzzy
 msgid "イエロー"
-msgstr "옐로우"
+msgstr "노랑"
 
 #: blocks/src/old/button-wrap/block.js:128 blocks/src/old/button/block.js:150
 #, fuzzy
 msgid "アンバー[琥珀色]"
 msgstr "호박 [호박] (소)"
+
+#: blocks/src/old/button-wrap/block.js:132 blocks/src/old/button/block.js:154
+#: blocks/src/toolbutton/badge-orange.js:13 lib/admin-tinymce-qtag.php:827
+#: lib/gutenberg.php:90 lib/widgets/cta-box.php:178
+msgid "オレンジ"
+msgstr "오렌지"
+
+#: blocks/src/old/button-wrap/block.js:136 blocks/src/old/button/block.js:158
+#: lib/gutenberg.php:95 lib/widgets/cta-box.php:179
+#, fuzzy
+msgid "ディープオレンジ"
+msgstr "경고음 오렌지"
 
 #: blocks/src/old/button-wrap/block.js:140 blocks/src/old/button/block.js:162
 #: lib/admin-tinymce-qtag.php:862
@@ -1676,11 +1580,23 @@ msgid "アフィリエイトタグタグ"
 msgstr "アフィリエイトタグ"
 
 #: blocks/src/shortcode/affi/block.js:21
-#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:363
+#: blocks/src/toolbutton/dropdown-affiliates.js:61 lib/admin.php:365
 #: lib/original-menu.php:33 lib/tinymce/affiliate-tags.php:48
 #, fuzzy
 msgid "アフィリエイトタグ"
 msgstr "アフィリエイトタグ"
+
+#: blocks/src/toolbutton/badge-brown.js:13 lib/gutenberg.php:100
+#: lib/widgets/cta-box.php:180
+#, fuzzy
+msgid "茶色"
+msgstr "갈색"
+
+#: blocks/src/toolbutton/badge-purple.js:13 lib/gutenberg.php:30
+#: lib/widgets/cta-box.php:166
+#, fuzzy
+msgid "紫色"
+msgstr "자주색"
 
 #: blocks/src/toolbutton/bold-green.js:14 lib/admin-tinymce-qtag.php:114
 #, fuzzy
@@ -1710,20 +1626,17 @@ msgstr "기장"
 
 #: blocks/src/toolbutton/dropdown-font-sizes.js:48
 #: lib/admin-tinymce-qtag.php:166
-#, fuzzy
 msgid "フォントサイズ"
-msgstr "글꼴 크기"
+msgstr "글꼴 크기( Z)"
 
 #: blocks/src/toolbutton/dropdown-letters.js:25
 #: blocks/src/toolbutton/dropdown-letters.js:38
-#, fuzzy
 msgid "文字"
-msgstr "문자 수"
+msgstr "문자"
 
 #: blocks/src/toolbutton/dropdown-markers.js:21 lib/admin-tinymce-qtag.php:131
-#, fuzzy
 msgid "マーカー"
-msgstr "표식"
+msgstr "마커"
 
 #: blocks/src/toolbutton/dropdown-rankings.js:48
 #: blocks/src/toolbutton/dropdown-rankings.js:61
@@ -1735,7 +1648,6 @@ msgstr "순위"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:43
 #: lib/page-settings/_top-page.php:168 lib/widgets/ad.php:19
-#, fuzzy
 msgid "広告"
 msgstr "광고"
 
@@ -1758,7 +1670,8 @@ msgid "ナビカード一覧"
 msgstr "나비 카드 목록"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:65
-#: lib/tinymce/shortcodes.php:78 lib/widgets/navi-entries.php:97
+#: lib/tinymce/shortcodes.php:78 lib/widgets/navi-entries.php:104
+#: lib/widgets/recommended-cards.php:96
 #, fuzzy
 msgid "メニュー名"
 msgstr "메뉴"
@@ -1823,9 +1736,8 @@ msgid "過去日時（年）"
 msgstr "과거 일"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:134
-#, fuzzy
 msgid "年齢"
-msgstr "년"
+msgstr "나이"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:141
 #, fuzzy
@@ -1851,9 +1763,8 @@ msgstr "이 콘텐츠는 로그인 사용자 에게만 표시 됩니다."
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:156
 #: lib/page-affiliate-tag/form.php:34 lib/page-func-text/form.php:34
-#, fuzzy
 msgid "内容"
-msgstr "내용"
+msgstr "노트"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:193
 #, fuzzy
@@ -1867,11 +1778,21 @@ msgid "ショートコード"
 msgstr "단축 코드"
 
 #: blocks/src/toolbutton/dropdown-templates.js:48
-#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:356
+#: blocks/src/toolbutton/dropdown-templates.js:61 lib/admin.php:358
 #: lib/original-menu.php:30 lib/tinymce/function-texts.php:49
-#, fuzzy
 msgid "テンプレート"
-msgstr "서식 파일"
+msgstr "치환( r)"
+
+#: blocks/src/toolbutton/html.js:17 blocks/src/toolbutton/html.js:35
+#: lib/tinymce/insert-html.php:34
+#, fuzzy
+msgid "HTML挿入"
+msgstr "HTML 삽입"
+
+#: blocks/src/toolbutton/html.js:24
+#, fuzzy
+msgid "HTMLを入力してください。"
+msgstr "HTML을 삽입 하십시오"
 
 #: blocks/src/toolbutton/keyboard-key.js:14 lib/admin-tinymce-qtag.php:124
 #, fuzzy
@@ -1966,83 +1887,85 @@ msgid "キーワード指定なし"
 msgstr "키워드 없음"
 
 #: lib/_defins.php:46
-#, fuzzy
 msgid "設定"
-msgstr "설정"
+msgstr "환경설정"
 
-#: lib/_defins.php:140 lib/_defins.php:164 lib/_defins.php:176
-#: lib/_defins.php:191
+#: lib/_defins.php:142 lib/_defins.php:166 lib/_defins.php:178
+#: lib/_defins.php:193
 #, fuzzy
 msgid "オート（AdSenseにおまかせ）"
 msgstr "자동 (AdSense에 맡 김)"
 
-#: lib/_defins.php:141 lib/_defins.php:165 lib/_defins.php:177
-#: lib/_defins.php:192
+#: lib/_defins.php:143 lib/_defins.php:167 lib/_defins.php:179
+#: lib/_defins.php:194
 #, fuzzy
 msgid "バナー"
 msgstr "배너"
 
-#: lib/_defins.php:142 lib/_defins.php:178 lib/_defins.php:193
+#: lib/_defins.php:144 lib/_defins.php:180 lib/_defins.php:195
 #, fuzzy
 msgid "レスポンシブレクタングル"
 msgstr "レスポンシブレクタングル"
 
-#: lib/_defins.php:143 lib/_defins.php:179 lib/_defins.php:194
+#: lib/_defins.php:145 lib/_defins.php:181 lib/_defins.php:196
 #, fuzzy
 msgid "シングルレクタングル"
 msgstr "단일 직사각형"
 
-#: lib/_defins.php:144 lib/_defins.php:180
+#: lib/_defins.php:146 lib/_defins.php:182
 #, fuzzy
 msgid "ダブルレクタングル"
 msgstr "이중 직사각형"
 
-#: lib/_defins.php:145 lib/_defins.php:182
+#: lib/_defins.php:147 lib/_defins.php:184
 #, fuzzy
 msgid "記事内広告"
 msgstr "기사 내 광고"
 
-#: lib/_defins.php:146 lib/_defins.php:168 lib/_defins.php:183
-#: lib/_defins.php:195
+#: lib/_defins.php:148 lib/_defins.php:170 lib/_defins.php:185
+#: lib/_defins.php:197
 #, fuzzy
 msgid "リンクユニット"
 msgstr "링크 단위"
 
-#: lib/_defins.php:166
+#: lib/_defins.php:168
 #, fuzzy
 msgid "レクタングル"
 msgstr "직사각형"
 
-#: lib/_defins.php:167 lib/_defins.php:181
+#: lib/_defins.php:169 lib/_defins.php:183
 #, fuzzy
 msgid "ラージスカイスクレイパー"
 msgstr "대형 스카이 스크 래퍼"
 
-#: lib/_defins.php:175 lib/_defins.php:190
+#: lib/_defins.php:177 lib/_defins.php:192
 #, fuzzy
 msgid "広告コードをそのまま表示"
 msgstr "광고 코드를 그대로 표시"
 
-#: lib/_defins.php:297
+#: lib/_defins.php:301
 #, fuzzy
 msgid "本当に削除してもいいですか？"
 msgstr "정말 삭제 해도 좋은가?"
 
-#: lib/_defins.php:318
+#: lib/_defins.php:322
+#, fuzzy
+msgid "www.amazon.co.jp"
+msgstr "www.amazon.co.jp"
+
+#: lib/_defins.php:325
 #, fuzzy
 msgid ""
 "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "상품을 검색할 수 없습니다. 없는 ASIN을 지정할 수 있습니다."
 
 #: lib/admin-tinymce-qtag.php:23 lib/tinymce/html-tags.php:134
-#, fuzzy
 msgid "ふりがな"
 msgstr "후리가나"
 
 #: lib/admin-tinymce-qtag.php:24 lib/admin-tinymce-qtag.php:79
-#, fuzzy
 msgid "太字"
-msgstr "굵게"
+msgstr "볼드"
 
 #: lib/admin-tinymce-qtag.php:25 lib/admin-tinymce-qtag.php:84
 #, fuzzy
@@ -2070,7 +1993,6 @@ msgid "打ち消し線"
 msgstr "취소선"
 
 #: lib/admin-tinymce-qtag.php:32
-#, fuzzy
 msgid "キーボード"
 msgstr "키보드"
 
@@ -2085,9 +2007,8 @@ msgid "success"
 msgstr "success"
 
 #: lib/admin-tinymce-qtag.php:39
-#, fuzzy
 msgid "warning"
-msgstr "warning"
+msgstr "위험"
 
 #: lib/admin-tinymce-qtag.php:40
 #, fuzzy
@@ -2095,7 +2016,6 @@ msgid "danger"
 msgstr "danger"
 
 #: lib/admin-tinymce-qtag.php:76
-#, fuzzy
 msgid "インライン"
 msgstr "인라인"
 
@@ -2105,9 +2025,8 @@ msgid "赤アンダーライン"
 msgstr "빨간색 밑줄"
 
 #: lib/admin-tinymce-qtag.php:99
-#, fuzzy
 msgid "青"
-msgstr "파랑"
+msgstr "청색"
 
 #: lib/admin-tinymce-qtag.php:104
 #, fuzzy
@@ -2115,9 +2034,8 @@ msgid "青太字"
 msgstr "파랑 굵게"
 
 #: lib/admin-tinymce-qtag.php:109
-#, fuzzy
 msgid "緑"
-msgstr "녹색"
+msgstr "푸른색"
 
 #: lib/admin-tinymce-qtag.php:170
 #, fuzzy
@@ -2169,9 +2087,8 @@ msgstr "왼쪽"
 
 #: lib/admin-tinymce-qtag.php:885 lib/admin-tinymce-qtag.php:905
 #: lib/admin-tinymce-qtag.php:925 lib/admin-tinymce-qtag.php:946
-#, fuzzy
 msgid "中央"
-msgstr "중앙"
+msgstr "가운데"
 
 #: lib/admin-tinymce-qtag.php:890 lib/admin-tinymce-qtag.php:910
 #: lib/admin-tinymce-qtag.php:930 lib/admin-tinymce-qtag.php:951
@@ -2476,121 +2393,116 @@ msgstr "둘러싸고 블로그 카드 상표"
 msgid "商品リンクの追加"
 msgstr "상품 링크 추가"
 
-#: lib/admin.php:167
-#, fuzzy
+#: lib/admin.php:169
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:172 lib/custom-fields/seo-field.php:61
+#: lib/admin.php:174 lib/custom-fields/seo-field.php:61
 #: lib/custom-fields/seo-field.php:83 lib/custom-fields/seo-field.php:93
 #, fuzzy
 msgid "文字数"
 msgstr "문자 수"
 
-#: lib/admin.php:177 lib/content-category.php:254 lib/content-tag.php:197
+#: lib/admin.php:179 lib/content-category.php:254 lib/content-tag.php:197
 #, fuzzy
 msgid "アイキャッチ"
 msgstr "아이 캐치"
 
-#: lib/admin.php:215
+#: lib/admin.php:217
 #, fuzzy
 msgid "　題："
 msgstr "제목:"
 
-#: lib/admin.php:223
+#: lib/admin.php:225
 #, fuzzy
 msgid "本文："
 msgstr "본문:"
 
-#: lib/admin.php:259
+#: lib/admin.php:261
 #, fuzzy
 msgid "管理メニュー"
 msgstr "관리 메뉴"
 
-#: lib/admin.php:271
+#: lib/admin.php:273
 #, fuzzy
 msgid "ダッシュボード"
 msgstr "대시보드"
 
-#: lib/admin.php:278
+#: lib/admin.php:280
 #, fuzzy
 msgid "投稿一覧"
 msgstr "게시물 목록"
 
-#: lib/admin.php:285
+#: lib/admin.php:287
 #, fuzzy
 msgid "固定ページ一覧"
 msgstr "고정 페이지 목록"
 
-#: lib/admin.php:292
+#: lib/admin.php:294
 #, fuzzy
 msgid "メディア一覧"
 msgstr "미디어 목록"
 
-#: lib/admin.php:299
-#, fuzzy
+#: lib/admin.php:301
 msgid "テーマ"
 msgstr "테마"
 
-#: lib/admin.php:306
-#, fuzzy
+#: lib/admin.php:308
 msgid "カスタマイズ"
-msgstr "사용자 지정"
+msgstr "사용자 설정"
 
-#: lib/admin.php:313 lib/page-settings/_top-page.php:196
-#, fuzzy
+#: lib/admin.php:315 lib/page-settings/_top-page.php:196
 msgid "ウィジェット"
 msgstr "위젯"
 
-#: lib/admin.php:320 tmp/mobile-navi-button.php:19
-#, fuzzy
+#: lib/admin.php:322 tmp/mobile-navi-button.php:19
 msgid "メニュー"
 msgstr "메뉴"
 
-#: lib/admin.php:327
+#: lib/admin.php:329
 #, fuzzy
 msgid "テーマの編集"
 msgstr "테마 편집"
 
-#: lib/admin.php:334
+#: lib/admin.php:336
 #, fuzzy
 msgid "プラグイン一覧"
 msgstr "플러그인 목록"
 
-#: lib/admin.php:370 lib/original-menu.php:36
+#: lib/admin.php:372 lib/original-menu.php:36
 #, fuzzy
 msgid "ランキング作成"
 msgstr "평가 작성"
 
-#: lib/admin.php:377 lib/original-menu.php:39 lib/page-access/_top-page.php:39
+#: lib/admin.php:379 lib/original-menu.php:39 lib/page-access/_top-page.php:39
 #: lib/page-access/access-forms.php:14 lib/page-access/access-forms.php:26
 #, fuzzy
 msgid "アクセス集計"
 msgstr "액세스 집계"
 
-#: lib/admin.php:384 lib/original-menu.php:42
+#: lib/admin.php:386 lib/original-menu.php:42
 #, fuzzy
 msgid "高速化"
 msgstr "속도"
 
-#: lib/admin.php:391 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
+#: lib/admin.php:393 lib/original-menu.php:45 lib/page-backup/_top-page.php:40
 #: lib/page-backup/backup-forms.php:24
 #, fuzzy
 msgid "バックアップ"
 msgstr "백업"
 
-#: lib/admin.php:398 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
-#: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:315
+#: lib/admin.php:400 lib/original-menu.php:48 lib/page-cache/_top-page.php:63
+#: lib/page-cache/cache-forms.php:14 lib/shortcodes-product-func.php:326
 #, fuzzy
 msgid "キャッシュ削除"
 msgstr "캐시 삭제"
 
-#: lib/admin.php:519
+#: lib/admin.php:521
 #, fuzzy
 msgid "カテゴリー検索"
 msgstr "카테고리 검색"
 
-#: lib/admin.php:578 lib/admin.php:591
+#: lib/admin.php:580 lib/admin.php:593
 #, fuzzy
 msgid "Excerpt"
 msgstr "Excerpt"
@@ -2657,11 +2569,6 @@ msgstr "「 %s 」 기사 목록입니다."
 msgid "カテゴリ色"
 msgstr "범주 색"
 
-#: lib/content-category.php:217
-#, fuzzy
-msgid "背景色"
-msgstr "배경색"
-
 #: lib/content-category.php:221
 #, fuzzy
 msgid "カテゴリの色を指定します。"
@@ -2712,7 +2619,7 @@ msgid "タイトル下に表示されるアイキャッチ画像を選択して�
 msgstr "제목 아래에 표시 되는 아이 캐치 이미지를 선택 하십시오."
 
 #: lib/content-category.php:263 lib/content-tag.php:206
-#: lib/custom-fields/seo-field.php:91 lib/page-settings/title-forms.php:162
+#: lib/custom-fields/seo-field.php:95 lib/page-settings/title-forms.php:162
 #: lib/page-settings/title-forms.php:263
 #, fuzzy
 msgid "メタディスクリプション"
@@ -2733,7 +2640,7 @@ msgstr ""
 "명 태그를 사용 합니다."
 
 #: lib/content-category.php:273 lib/content-tag.php:216
-#: lib/custom-fields/seo-field.php:100 lib/page-settings/title-forms.php:77
+#: lib/custom-fields/seo-field.php:101 lib/page-settings/title-forms.php:77
 #: lib/page-settings/title-forms.php:175 lib/page-settings/title-forms.php:276
 #, fuzzy
 msgid "メタキーワード"
@@ -2959,9 +2866,8 @@ msgstr "이 페이지에 목차를 표시 하거나 숨깁니다."
 #: lib/custom-fields/redirect-field.php:18
 #: lib/custom-fields/redirect-field.php:19
 #: lib/custom-fields/redirect-field.php:21
-#, fuzzy
 msgid "リダイレクト"
-msgstr "리디렉션"
+msgstr "방향 고침 상태"
 
 #: lib/custom-fields/redirect-field.php:32
 #, fuzzy
@@ -2984,32 +2890,89 @@ msgstr "이 페이지에 방문자를 설정한 URL에 301 리디렉션합니다
 msgid "レビュー"
 msgstr "미리 보기"
 
-#: lib/custom-fields/review-field.php:34
+#: lib/custom-fields/review-field.php:32
 #, fuzzy
 msgid "評価を表示する"
 msgstr "가격 보기"
 
-#: lib/custom-fields/review-field.php:35
+#: lib/custom-fields/review-field.php:33
 #, fuzzy
 msgid "レビュー構造化データを出力するか。"
 msgstr "메타 키워드 태그를 출력 하는"
 
-#: lib/custom-fields/review-field.php:39
+#: lib/custom-fields/review-field.php:40
 #, fuzzy
 msgid "レビュー対象"
 msgstr "미리 보기"
 
-#: lib/custom-fields/review-field.php:41
+#: lib/custom-fields/review-field.php:42
+#, fuzzy
+msgid "製品・サービス"
+msgstr "제품 및 서비스"
+
+#: lib/custom-fields/review-field.php:43
+#, fuzzy
+msgid "ゲーム"
+msgstr "컬럼"
+
+#: lib/custom-fields/review-field.php:44
+#, fuzzy
+msgid "プレイリスト形式の音楽トラックのコレクション"
+msgstr "재생 목록 형식 음악 대 위의 소장품"
+
+#: lib/custom-fields/review-field.php:45
+#, fuzzy
+msgid "音楽のトラック、通常は1曲"
+msgstr "음악 트랙, 대개 1 곡"
+
+#: lib/custom-fields/review-field.php:46
+#, fuzzy
+msgid "テレビ、ラジオ、ビデオゲームなどのメディアシーズン"
+msgstr "텔레비전, 라디오, 비디오 게임 등의 미디어 시즌"
+
+#: lib/custom-fields/review-field.php:47
+#, fuzzy
+msgid ""
+"メディア出版物（書籍や定期刊行物、テレビ、ラジオ、ゲームなど）\n"
+"    "
+msgstr "미디어 간행물 (도 서 및 정기 간행물, 텔레비전, 라디오, 게임 등)"
+
+#: lib/custom-fields/review-field.php:49
+#, fuzzy
+msgid "シリーズもののエピソード（テレビ、ラジオ、ビデオゲームなど）"
+msgstr "시리즈의 에피소드 (텔레비전, 라디오, 비디오 게임 등)"
+
+#: lib/custom-fields/review-field.php:50
+#, fuzzy
+msgid "ダウンロードデータ（画像、ビデオ、オーディオなど）"
+msgstr "다운로드 데이터 (이미지, 비디오, 오디오 등)"
+
+#: lib/custom-fields/review-field.php:51
+#, fuzzy
+msgid "学校、NGO、企業、クラブなどの組織"
+msgstr "학교, NGO, 기업 등의 조직"
+
+#: lib/custom-fields/review-field.php:54
+#, fuzzy
+msgid "レビュー対象となるschema typeを入力。※必須"
+msgstr "검토할 이름을 입력 합니다. ※ 필수"
+
+#: lib/custom-fields/review-field.php:58
+#, fuzzy
+msgid "レビュー対象名"
+msgstr "미리 보기"
+
+#: lib/custom-fields/review-field.php:60
 #, fuzzy
 msgid "レビュー対象名を入力。※必須"
 msgstr "검토할 이름을 입력 합니다. ※ 필수"
 
-#: lib/custom-fields/review-field.php:48
+#: lib/custom-fields/review-field.php:67
 #, fuzzy
 msgid "レビュー評価"
 msgstr "미리 보기"
 
-#: lib/custom-fields/review-field.php:50
+#: lib/custom-fields/review-field.php:69
 #, fuzzy
 msgid "0から5の範囲で評価を入力。"
 msgstr "0에서 5 사이에 성적을 입력."
@@ -3020,7 +2983,7 @@ msgstr "0에서 5 사이에 성적을 입력."
 msgid "SEO設定"
 msgstr "SEO 설정"
 
-#: lib/custom-fields/seo-field.php:81
+#: lib/custom-fields/seo-field.php:85
 #, fuzzy
 msgid "SEOタイトル"
 msgstr "SEO 타이틀"
@@ -3043,12 +3006,12 @@ msgstr ""
 "어의 경우 32 문자 이내를 최선으로 되어 있습니다. (※ 페이지나 인덱스 제목 부분"
 "에는 「 기사 」가 이용 됩니다)"
 
-#: lib/custom-fields/seo-field.php:96
+#: lib/custom-fields/seo-field.php:97
 #, fuzzy
 msgid "記事の説明文を入力してください。"
 msgstr "기사에 대 한 설명을 입력 하십시오."
 
-#: lib/custom-fields/seo-field.php:97
+#: lib/custom-fields/seo-field.php:98
 #, fuzzy
 msgid ""
 "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめし"
@@ -3062,12 +3025,12 @@ msgstr ""
 "여 메타 설명 블로그 카드 조각 (발췌 부분)에도 사용 됩니다. 여기에 입력 하지 "
 "않은 경우에는 「 인용 」에 입력 하는 것이 메타 설명으로 삽입 됩니다."
 
-#: lib/custom-fields/seo-field.php:101
+#: lib/custom-fields/seo-field.php:102
 #, fuzzy
 msgid "記事の関連キーワードを半角カンマ区切りで入力してください。"
 msgstr "기사에 있는 관련 키워드를 쉼표로 구분 하 여 입력 하십시오."
 
-#: lib/custom-fields/seo-field.php:102
+#: lib/custom-fields/seo-field.php:103
 #, fuzzy
 msgid ""
 "記事に関連するキーワードを,（カンマ）区切りで入力してください。入力しない場合"
@@ -3076,24 +3039,24 @@ msgstr ""
 "기사와 관련 된 키워드를 쉼표 (,) 구분 하 여 입력 하십시오. 입력 하지 않을 경"
 "우, 범주 이름 등에서 자동으로 설정 됩니다."
 
-#: lib/custom-fields/seo-field.php:107
+#: lib/custom-fields/seo-field.php:106
 #, fuzzy
 msgid "インデックスしない（noindex）"
 msgstr "인덱스 (noindex)"
 
-#: lib/custom-fields/seo-field.php:108
+#: lib/custom-fields/seo-field.php:107
 #, fuzzy
 msgid ""
 "このページが検索エンジンにインデックスされないようにメタタグを設定します。"
 msgstr ""
 "이 페이지를 검색 엔진에 색인이 생성 되지 않도록 메타 태그를 설정 합니다."
 
-#: lib/custom-fields/seo-field.php:113
+#: lib/custom-fields/seo-field.php:110
 #, fuzzy
 msgid "リンクをフォローしない（nofollow）"
 msgstr "링크를 따라 안 (nofollow)"
 
-#: lib/custom-fields/seo-field.php:114
+#: lib/custom-fields/seo-field.php:111
 #, fuzzy
 msgid ""
 "検索エンジンがこのページ上のリンクをフォローしないようにメタタグを設定しま"
@@ -3101,17 +3064,17 @@ msgid ""
 msgstr ""
 "검색 엔진에서이 페이지의 링크를 따라 하지 않도록 메타 태그를 설정 합니다."
 
-#: lib/custom-fields/seo-field.php:117
+#: lib/custom-fields/seo-field.php:114
 #, fuzzy
 msgid "canonical"
 msgstr "canonical"
 
-#: lib/custom-fields/seo-field.php:118
+#: lib/custom-fields/seo-field.php:115
 #, fuzzy
 msgid "canonical URLの入力"
 msgstr "Canonical 태그 추가"
 
-#: lib/custom-fields/seo-field.php:119
+#: lib/custom-fields/seo-field.php:116
 #, fuzzy
 msgid ""
 "ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンから"
@@ -3123,9 +3086,8 @@ msgstr ""
 "록 일반 URL이 어느 검색 엔진에 대 한 설명입니다. 콘텐츠가 중복 된 경우에는 일"
 "반 페이지의 URL을 입력 하십시오."
 
-#: lib/custom-fields/seo-field.php:120 lib/html-forms.php:429
-#: lib/html-forms.php:488
-#, fuzzy
+#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:469
+#: lib/html-forms.php:528
 msgid "詳細設定"
 msgstr "고급 설정"
 
@@ -3136,7 +3098,7 @@ msgstr "고급 설정"
 msgid "SNS画像"
 msgstr "SNS 이미지"
 
-#: lib/custom-fields/sns-image-field.php:34
+#: lib/custom-fields/sns-image-field.php:33
 #, fuzzy
 msgid ""
 "FacebookやTwitterなど、SNSでシェアする画像を設定します。未設定の場合はアイ"
@@ -3152,9 +3114,8 @@ msgid "更新日の変更"
 msgstr "수정한 날짜 변경"
 
 #: lib/custom-fields/update-field.php:34
-#, fuzzy
 msgid "更新"
-msgstr "업데이트"
+msgstr "새로 고침"
 
 #: lib/custom-fields/update-field.php:35
 #, fuzzy
@@ -3182,290 +3143,381 @@ msgid "M j, Y @ H:i"
 msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:85 lib/custom-fields/update-field.php:87
-#, fuzzy
 msgid "年"
 msgstr "년"
 
-#: lib/custom-fields/update-field.php:89 tmp/admin-panel.php:39
-#, fuzzy
+#: lib/custom-fields/update-field.php:89 tmp/admin-pv.php:30
 msgid "月"
 msgstr "월"
 
 #: lib/custom-fields/update-field.php:99 lib/custom-fields/update-field.php:101
-#: lib/page-settings/apis-forms.php:223
-#, fuzzy
+#: lib/page-settings/apis-forms.php:241
 msgid "日"
 msgstr "일"
 
-#: lib/html-forms.php:227
+#: lib/gutenberg.php:15 lib/page-settings/all-forms.php:31
+#, fuzzy
+msgid "キーカラー"
+msgstr "키 색상"
+
+#: lib/gutenberg.php:35
+#, fuzzy
+msgid "深紫色"
+msgstr "자주색"
+
+#: lib/gutenberg.php:40
+#, fuzzy
+msgid "紺色"
+msgstr "자주색"
+
+#: lib/gutenberg.php:50
+#, fuzzy
+msgid "天色"
+msgstr "색"
+
+#: lib/gutenberg.php:55
+#, fuzzy
+msgid "浅葱色"
+msgstr "연두색 컬러"
+
+#: lib/gutenberg.php:60
+#, fuzzy
+msgid "深緑色"
+msgstr "녹색"
+
+#: lib/gutenberg.php:70
+#, fuzzy
+msgid "黄緑色"
+msgstr "노란색"
+
+#: lib/gutenberg.php:85
+#, fuzzy
+msgid "アンバー"
+msgstr "앰버 (호박)"
+
+#: lib/gutenberg.php:110
+msgid "黒"
+msgstr "검은색"
+
+#: lib/gutenberg.php:115
+msgid "白"
+msgstr "흰색"
+
+#: lib/gutenberg.php:120
+#, fuzzy
+msgid "淡い青"
+msgstr "밝은 파랑"
+
+#: lib/gutenberg.php:125
+#, fuzzy
+msgid "淡い黄色"
+msgstr "밝은 황색"
+
+#: lib/gutenberg.php:130
+#, fuzzy
+msgid "淡い赤"
+msgstr "밝은 빨강"
+
+#: lib/gutenberg.php:135
+#, fuzzy
+msgid "淡い緑"
+msgstr "밝은 녹색"
+
+#: lib/gutenberg.php:180
+#, fuzzy
+msgid "拡張色A"
+msgstr "확장 색상 A"
+
+#: lib/gutenberg.php:185
+#, fuzzy
+msgid "拡張色B"
+msgstr "확장 색상 B"
+
+#: lib/gutenberg.php:190
+#, fuzzy
+msgid "拡張色C"
+msgstr "확장 색상 C"
+
+#: lib/gutenberg.php:195
+#, fuzzy
+msgid "拡張色D"
+msgstr "확장 색상 D"
+
+#: lib/gutenberg.php:200
+#, fuzzy
+msgid "拡張色E"
+msgstr "확장 색상 E"
+
+#: lib/gutenberg.php:205
+#, fuzzy
+msgid "拡張色F"
+msgstr "확장 색상 F"
+
+#: lib/html-forms.php:252
 #, fuzzy
 msgid "解説ページ"
 msgstr "설명 페이지"
 
-#: lib/html-forms.php:309
+#: lib/html-forms.php:339
 #, fuzzy
 msgid "タイトル検索"
 msgstr "제목 검색"
 
-#: lib/html-forms.php:313
+#: lib/html-forms.php:343
 #, fuzzy
 msgid "タイトル昇順"
 msgstr "제목 오름차순"
 
-#: lib/html-forms.php:314
+#: lib/html-forms.php:344
 #, fuzzy
 msgid "タイトル降順"
 msgstr "제목 내림차순"
 
-#: lib/html-forms.php:315
+#: lib/html-forms.php:345
 #, fuzzy
 msgid "作成日昇順"
 msgstr "만든 날짜 오름차순"
 
-#: lib/html-forms.php:316
+#: lib/html-forms.php:346
 #, fuzzy
 msgid "作成日降順"
 msgstr "만든 날짜 내림차순"
 
-#: lib/html-forms.php:317
+#: lib/html-forms.php:347
 #, fuzzy
 msgid "編集日昇順"
 msgstr "편집 일 오름차순"
 
-#: lib/html-forms.php:318
+#: lib/html-forms.php:348
 #, fuzzy
 msgid "編集日降順"
 msgstr "편집 일 내림차순"
 
-#: lib/html-forms.php:322
-#, fuzzy
+#: lib/html-forms.php:352
 msgid "抽出"
 msgstr "추출"
 
-#: lib/html-forms.php:435 lib/html-forms.php:494
-#, fuzzy
+#: lib/html-forms.php:475 lib/html-forms.php:534
 msgid "フォーマット"
-msgstr "포맷"
+msgstr "모두"
 
-#: lib/html-forms.php:439 lib/html-forms.php:497
+#: lib/html-forms.php:479 lib/html-forms.php:537
 #, fuzzy
 msgid "広告ラベルを表示"
 msgstr "광고 레이블을 표시"
 
-#: lib/html-forms.php:446
+#: lib/html-forms.php:486
 #, fuzzy
 msgid "全てのH2見出し手前に広告を挿入"
 msgstr "전체 H2 제목 앞에 광고를 삽입"
 
-#: lib/html-forms.php:475
+#: lib/html-forms.php:515
 #, fuzzy
 msgid "入力済"
 msgstr "입력 받는"
 
-#: lib/html-forms.php:516
-#, fuzzy
+#: lib/html-forms.php:556
 msgid "選択"
 msgstr "선택"
 
-#: lib/html-forms.php:517
-#, fuzzy
+#: lib/html-forms.php:557
 msgid "クリア"
 msgstr "지우기"
 
-#: lib/html-forms.php:524
+#: lib/html-forms.php:564
 #, fuzzy
 msgid "大きな画像は縮小して表示されます。"
 msgstr "큰 이미지는 축소 됩니다."
 
-#: lib/html-forms.php:545
+#: lib/html-forms.php:585
 #, fuzzy
-msgid "画像を選択してください"
+msgid "画像を選択してください。"
 msgstr "이미지를 선택 하십시오"
 
-#: lib/html-forms.php:553
+#: lib/html-forms.php:593
 #, fuzzy
 msgid "画像の選択"
 msgstr "그림 선택"
 
-#: lib/html-forms.php:716
+#: lib/html-forms.php:756
 #, fuzzy
 msgid "トップページのみ"
 msgstr "톱 페이지"
 
-#: lib/html-forms.php:720 lib/page-settings/_top-page.php:175
+#: lib/html-forms.php:760 lib/page-settings/_top-page.php:175
 #: lib/widgets/display-widgets.php:171
 #, fuzzy
 msgid "投稿"
 msgstr "게시물"
 
-#: lib/html-forms.php:724 lib/page-settings/_top-page.php:176
+#: lib/html-forms.php:764 lib/page-settings/_top-page.php:176
 #: lib/page-settings/toc-forms.php:62 lib/shortcodes.php:421
 #: lib/widgets/display-widgets.php:174
 #, fuzzy
 msgid "固定ページ"
 msgstr "고정 된 페이지"
 
-#: lib/html-forms.php:728
+#: lib/html-forms.php:768
 #, fuzzy
 msgid "カテゴリ一覧"
 msgstr "범주 목록"
 
-#: lib/html-forms.php:732
+#: lib/html-forms.php:772
 #, fuzzy
 msgid "タグ一覧"
 msgstr "태그 목록"
 
-#: lib/html-forms.php:736
+#: lib/html-forms.php:776
 #, fuzzy
 msgid "著者一覧"
 msgstr "저자 목록"
 
-#: lib/html-forms.php:740
+#: lib/html-forms.php:780
 #, fuzzy
 msgid "アーカイブ一覧"
 msgstr "보관 리스트"
 
-#: lib/html-forms.php:744
+#: lib/html-forms.php:784
 #, fuzzy
 msgid "検索結果一覧"
 msgstr "검색 결과 목록"
 
-#: lib/html-forms.php:748
+#: lib/html-forms.php:788
 #, fuzzy
 msgid "404ページ一覧"
 msgstr "404 페이지 목록"
 
-#: lib/html-forms.php:752
+#: lib/html-forms.php:792
 #, fuzzy
 msgid "AMPページ"
 msgstr "AMP 페이지"
 
-#: lib/html-forms.php:757
+#: lib/html-forms.php:797
 #, fuzzy
 msgid "wpForoページ"
 msgstr "WpForo 페이지"
 
-#: lib/html-forms.php:763
+#: lib/html-forms.php:803
 #, fuzzy
 msgid "bbPressページ"
 msgstr "BbPress 페이지"
 
-#: lib/html-forms.php:769
+#: lib/html-forms.php:809
 #, fuzzy
 msgid "BuddyPressページ"
 msgstr "BuddyPress 페이지"
 
-#: lib/html-forms.php:775
+#: lib/html-forms.php:815
 #, fuzzy
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "플러그인 공개 토론 페이지 (bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:820
+#: lib/html-forms.php:860
 #, fuzzy
 msgid "投稿ID入力"
 msgstr "게시물 ID 입력"
 
-#: lib/html-forms.php:821 lib/html-forms.php:841
+#: lib/html-forms.php:861 lib/html-forms.php:881
 #, fuzzy
 msgid "例：111,222,333"
 msgstr "보기: 111222333"
 
-#: lib/html-forms.php:822
+#: lib/html-forms.php:862
 #, fuzzy
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "게시물 ID를 쉼표로 구분 하 여 입력 하십시오."
 
-#: lib/html-forms.php:840
+#: lib/html-forms.php:880
 #, fuzzy
 msgid "固定ページID入力"
 msgstr "고정 페이지 ID 입력"
 
-#: lib/html-forms.php:842
+#: lib/html-forms.php:882
 #, fuzzy
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "고정 페이지 ID를 쉼표로 구분 하 여 입력 하십시오."
 
-#: lib/html-forms.php:957
+#: lib/html-forms.php:982
 #, fuzzy
 msgid "人気記事は見つかりませんでした。"
 msgstr "인기 기사를 찾을 수 없습니다."
 
-#: lib/html-forms.php:1121
+#: lib/html-forms.php:1146
 #, fuzzy
 msgid "記事は見つかりませんでした。"
 msgstr "기사는 찾을 수 없습니다."
 
-#: lib/html-forms.php:1243
+#: lib/html-forms.php:1268
 #, fuzzy, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1262
+#: lib/html-forms.php:1286
 #, fuzzy
 msgid "未登録のユーザーさん"
 msgstr "미등록 사용자 미스"
 
-#: lib/html-forms.php:1272
+#: lib/html-forms.php:1296
 #, fuzzy
 msgid "未登録のユーザーさんです。"
 msgstr "등록 되지 않은 사용자입니다."
 
-#: lib/html-forms.php:1274
+#: lib/html-forms.php:1298
 #, fuzzy
 msgid "ログイン・登録はこちら→"
 msgstr "로그인/등록 →"
 
-#: lib/html-forms.php:1276
+#: lib/html-forms.php:1300
 #, fuzzy
 msgid "ログインページ"
 msgstr "로그인 페이지"
 
-#: lib/html-forms.php:1281
+#: lib/html-forms.php:1305
 #, fuzzy
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "프로필 내용은 관리자 화면에서 변경할 수 있습니다 →"
 
-#: lib/html-forms.php:1281
+#: lib/html-forms.php:1305
 #, fuzzy
 msgid "プロフィール設定画面"
 msgstr "프로필 설정 화면"
 
-#: lib/html-forms.php:1281
+#: lib/html-forms.php:1305
 #, fuzzy
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*이 메시지는 로그인 사용자 에게만 표시 됩니다."
 
-#: lib/html-forms.php:1311
+#: lib/html-forms.php:1335
 #, fuzzy
 msgid "管理者用エラーメッセージ"
 msgstr "관리자 오류 메시지"
 
-#: lib/html-forms.php:1461
+#: lib/html-forms.php:1487
 #, fuzzy
 msgid "おすすめ"
 msgstr "추천"
 
-#: lib/html-forms.php:1464
+#: lib/html-forms.php:1490
 #, fuzzy
 msgid "新着"
 msgstr "새"
 
-#: lib/html-forms.php:1467
+#: lib/html-forms.php:1493
 #, fuzzy
 msgid "注目"
 msgstr "추천"
 
-#: lib/html-forms.php:1470
+#: lib/html-forms.php:1496
 #, fuzzy
 msgid "必見"
 msgstr "필독"
 
-#: lib/html-forms.php:1473
+#: lib/html-forms.php:1499
 #, fuzzy
 msgid "お得"
 msgstr "탁월한"
 
-#: lib/html-tooltips.php:76
+#: lib/html-tooltips.php:78
 #, fuzzy
 msgid ""
 "良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好"
@@ -3475,43 +3527,43 @@ msgstr ""
 "에 드는 색깔을 찾아내고 컬러 코드 색상 선택기에 코피 페 하 여 설정할 수 있습"
 "니다."
 
-#: lib/html-tooltips.php:77
+#: lib/html-tooltips.php:79
 #, fuzzy
 msgid "配色の見本帳"
 msgstr "색 구성표의 견본"
 
-#: lib/html-tooltips.php:78
+#: lib/html-tooltips.php:80
 #, fuzzy
 msgid "日本の伝統色"
 msgstr "일본의 전통 색"
 
-#: lib/html-tooltips.php:79
+#: lib/html-tooltips.php:81
 #, fuzzy
 msgid "NIPPON COLORS"
 msgstr "NIPPON COLORS"
 
-#: lib/html-tooltips.php:80
+#: lib/html-tooltips.php:82
 #, fuzzy
 msgid "Color Hunt"
 msgstr "Color Hunt"
 
-#: lib/html-tooltips.php:102 lib/html-tooltips.php:116
+#: lib/html-tooltips.php:104 lib/html-tooltips.php:118
 #, fuzzy
 msgid "広告にグローバルナビメニューが覆いかぶさっていませんか？"
 msgstr "광고에 대 한 전역 탐색 메뉴가 포장 덮여 있지 않습니까?"
 
-#: lib/html-tooltips.php:103 lib/html-tooltips.php:117
+#: lib/html-tooltips.php:105 lib/html-tooltips.php:119
 #, fuzzy
 msgid "広告設定の前にAdSenseポリシーをご確認ください。"
 msgstr "광고 앞에 AdSense 정책을 확인 하시기 바랍니다."
 
-#: lib/html-tooltips.php:104 lib/html-tooltips.php:118 tmp/admin-panel.php:97
-#: tmp/admin-panel.php:106
+#: lib/html-tooltips.php:106 lib/html-tooltips.php:120 tmp/admin-panel.php:64
+#: tmp/admin-panel.php:73
 #, fuzzy
 msgid "ja"
 msgstr "ja"
 
-#: lib/html-tooltips.php:104 lib/html-tooltips.php:118
+#: lib/html-tooltips.php:106 lib/html-tooltips.php:120
 #, fuzzy
 msgid "AdSense プログラム ポリシー"
 msgstr "AdSense 프로그램 정책"
@@ -3540,9 +3592,8 @@ msgstr ""
 
 #: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:102
 #: lib/page-speed-up/_top-page.php:51
-#, fuzzy
 msgid "変更を保存"
-msgstr "변경 내용을 저장"
+msgstr "변경 사항 저장"
 
 #: lib/page-access/access-forms.php:17
 #, fuzzy
@@ -3566,7 +3617,6 @@ msgstr ""
 "높다고 경우 비활성화 하십시오."
 
 #: lib/page-access/access-forms.php:39
-#, fuzzy
 msgid "キャッシュ"
 msgstr "캐시"
 
@@ -3665,19 +3715,16 @@ msgid "24時間"
 msgstr "24 시간"
 
 #: lib/page-access/access-forms.php:70
-#, fuzzy
 msgid "2日"
-msgstr "2 일"
+msgstr "2일"
 
 #: lib/page-access/access-forms.php:71
-#, fuzzy
 msgid "3日"
-msgstr "3 일"
+msgstr "3일"
 
 #: lib/page-access/access-forms.php:72 lib/page-settings/single-forms.php:177
-#, fuzzy
 msgid "1週間"
-msgstr "1 주일"
+msgstr "1주"
 
 #: lib/page-access/access-forms.php:75
 #, fuzzy
@@ -3699,9 +3746,8 @@ msgstr "목록 페이지"
 #: lib/page-affiliate-tag/_top-page.php:42 lib/page-func-text/_top-page.php:42
 #: lib/page-item-ranking/_top-page.php:42
 #: lib/page-speech-balloon/_top-page.php:42
-#, fuzzy
 msgid "新規追加"
-msgstr "새로 추가"
+msgstr "새로 더하기"
 
 #: lib/page-affiliate-tag/_top-page.php:45
 #, fuzzy
@@ -3779,7 +3825,6 @@ msgstr ""
 
 #: lib/page-affiliate-tag/form.php:46 lib/page-func-text/form.php:48
 #: lib/page-speech-balloon/form.php:152
-#, fuzzy
 msgid "保存"
 msgstr "저장"
 
@@ -3802,24 +3847,22 @@ msgid "ショートコード："
 msgstr "단축 코드:"
 
 #: lib/page-affiliate-tag/list.php:49 lib/page-func-text/list.php:49
-#: lib/page-item-ranking/list.php:56 lib/page-speech-balloon/list.php:76
+#: lib/page-item-ranking/list.php:60 lib/page-speech-balloon/list.php:76
 #, fuzzy
 msgid "非表示"
 msgstr "숨기기"
 
 #: lib/page-affiliate-tag/list.php:52 lib/page-func-text/list.php:52
-#: lib/page-item-ranking/list.php:59 lib/page-speech-balloon/list.php:73
-#: tmp/admin-panel.php:61
-#, fuzzy
+#: lib/page-item-ranking/list.php:63 lib/page-speech-balloon/list.php:73
+#: tmp/admin-panel.php:28
 msgid "編集"
-msgstr "편집"
+msgstr "구성 수정"
 
 #: lib/page-affiliate-tag/list.php:53 lib/page-func-text/list.php:53
-#: lib/page-item-ranking/form.php:222 lib/page-item-ranking/list.php:60
+#: lib/page-item-ranking/form.php:222 lib/page-item-ranking/list.php:64
 #: lib/page-speech-balloon/list.php:74
-#, fuzzy
 msgid "削除"
-msgstr "삭제"
+msgstr "제거"
 
 #: lib/page-affiliate-tag/posts-delete.php:18
 #, fuzzy
@@ -3942,9 +3985,8 @@ msgid "テーマで利用されている各種キャッシュを削除します�
 msgstr "테마에서 사용 되는 다양 한 캐시를 제거 합니다."
 
 #: lib/page-cache/cache-forms.php:25
-#, fuzzy
 msgid "すべて"
-msgstr "모든"
+msgstr "모두"
 
 #: lib/page-cache/cache-forms.php:28
 #, fuzzy
@@ -4142,9 +4184,8 @@ msgstr "순위를 만듭니다. 뒤에 오는 순위를 입력 하려면 저장 
 #: lib/page-settings/sns-share-forms-top.php:21
 #: lib/page-settings/title-forms.php:25 lib/page-settings/title-forms.php:108
 #: lib/page-settings/title-forms.php:206 lib/page-settings/toc-forms.php:25
-#, fuzzy
 msgid "プレビュー"
-msgstr "미리 보기"
+msgstr "미리보기"
 
 #: lib/page-item-ranking/form.php:71
 #, fuzzy
@@ -4182,57 +4223,46 @@ msgid "評価："
 msgstr "평점:"
 
 #: lib/page-item-ranking/form.php:126
-#, fuzzy
 msgid "0"
 msgstr "0"
 
 #: lib/page-item-ranking/form.php:127
-#, fuzzy
 msgid "0.5"
-msgstr "0.5"
+msgstr "0. 5"
 
 #: lib/page-item-ranking/form.php:128
-#, fuzzy
 msgid "1"
 msgstr "1"
 
 #: lib/page-item-ranking/form.php:129
-#, fuzzy
 msgid "1.5"
-msgstr "1.5"
+msgstr "1. 5"
 
 #: lib/page-item-ranking/form.php:130
-#, fuzzy
 msgid "2"
 msgstr "2"
 
 #: lib/page-item-ranking/form.php:131
-#, fuzzy
 msgid "2.5"
-msgstr "2.5"
+msgstr "2. 5"
 
 #: lib/page-item-ranking/form.php:132
-#, fuzzy
 msgid "3"
 msgstr "3"
 
 #: lib/page-item-ranking/form.php:133
-#, fuzzy
 msgid "3.5"
-msgstr "3.5"
+msgstr "3. 5"
 
 #: lib/page-item-ranking/form.php:134
-#, fuzzy
 msgid "4"
 msgstr "4"
 
 #: lib/page-item-ranking/form.php:135
-#, fuzzy
 msgid "4.5"
-msgstr "4.5"
+msgstr "4. 5"
 
 #: lib/page-item-ranking/form.php:136
-#, fuzzy
 msgid "5"
 msgstr "5"
 
@@ -4279,9 +4309,8 @@ msgstr "상세 페이지 URL"
 
 #: lib/page-item-ranking/form.php:166 lib/page-item-ranking/form.php:174
 #: lib/page-settings/notice-forms.php:66
-#, fuzzy
 msgid "http://"
-msgstr "http://"
+msgstr "http: //"
 
 #: lib/page-item-ranking/form.php:167
 #, fuzzy
@@ -4331,15 +4360,15 @@ msgstr ""
 msgid "アイテムを上に移動"
 msgstr "항목을 위로 이동"
 
-#: lib/page-item-ranking/item-ranking-func.php:345
-#: lib/shortcodes-amazon.php:154 lib/shortcodes-amazon.php:157
-#: lib/shortcodes-amazon.php:160 lib/shortcodes-rakuten.php:34
+#: lib/page-item-ranking/item-ranking-func.php:347
+#: lib/shortcodes-amazon.php:379 lib/shortcodes-amazon.php:382
+#: lib/shortcodes-amazon.php:385 lib/shortcodes-rakuten.php:34
 #: lib/shortcodes-rakuten.php:37 lib/shortcodes-rakuten.php:40
 #, fuzzy
 msgid "詳細ページ"
 msgstr "세부 정보 페이지"
 
-#: lib/page-item-ranking/item-ranking-func.php:356
+#: lib/page-item-ranking/item-ranking-func.php:358
 #, fuzzy
 msgid "公式ページ"
 msgstr "공식 페이지"
@@ -4483,14 +4512,12 @@ msgid "テーマ利用マニュアル"
 msgstr "테마 사용 설명서"
 
 #: lib/page-settings/_top-page.php:165
-#, fuzzy
 msgid "スキン"
 msgstr "스킨"
 
-#: lib/page-settings/_top-page.php:166 tmp/admin-panel.php:43
-#, fuzzy
+#: lib/page-settings/_top-page.php:166 tmp/admin-pv.php:34
 msgid "全体"
-msgstr "전체"
+msgstr "전역"
 
 #: lib/page-settings/_top-page.php:167
 #, fuzzy
@@ -4530,7 +4557,6 @@ msgstr "본문"
 #: lib/page-settings/_top-page.php:178 lib/page-settings/toc-forms.php:75
 #: lib/page-settings/toc-funcs.php:38 lib/widgets/toc.php:19
 #: lib/widgets/toc.php:43
-#, fuzzy
 msgid "目次"
 msgstr "목차"
 
@@ -4545,9 +4571,8 @@ msgid "SNSフォロー"
 msgstr "SNS 소식"
 
 #: lib/page-settings/_top-page.php:181
-#, fuzzy
 msgid "画像"
-msgstr "이미지"
+msgstr "사진"
 
 #: lib/page-settings/_top-page.php:183
 #, fuzzy
@@ -4555,21 +4580,20 @@ msgid "コード"
 msgstr "코드"
 
 #: lib/page-settings/_top-page.php:185
-#, fuzzy
 msgid "通知"
-msgstr "알림"
+msgstr "공지"
 
 #: lib/page-settings/_top-page.php:186
 #, fuzzy
 msgid "アピールエリア"
 msgstr "어필 구역"
 
-#: lib/page-settings/_top-page.php:187
+#: lib/page-settings/_top-page.php:187 lib/widgets/recommended-cards.php:19
 #, fuzzy
 msgid "おすすめカード"
 msgstr "추천"
 
-#: lib/page-settings/_top-page.php:188 lib/page-settings/image-forms.php:209
+#: lib/page-settings/_top-page.php:188 lib/page-settings/image-forms.php:213
 #, fuzzy
 msgid "カルーセル"
 msgstr "회전 목마"
@@ -4615,14 +4639,12 @@ msgid "API"
 msgstr "API"
 
 #: lib/page-settings/_top-page.php:200
-#, fuzzy
 msgid "その他"
-msgstr "기타"
+msgstr "PHP 4: AOLserver가 설치된 곳의 경로를 명시해 준다."
 
 #: lib/page-settings/_top-page.php:201 lib/page-settings/reset-forms.php:25
-#, fuzzy
 msgid "リセット"
-msgstr "재설정"
+msgstr "다시 설정"
 
 #: lib/page-settings/_top-page.php:202
 #, fuzzy
@@ -4865,228 +4887,241 @@ msgid "管理者バーに手軽に設定画面にアクセスできるメニュ�
 msgstr ""
 "관리자 표시줄에 간편 하 게 설정 화면에 액세스할 수 있는 메뉴를 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:47
+#: lib/page-settings/admin-forms.php:46
 #, fuzzy
 msgid "投稿一覧設定"
 msgstr "게시 목록 설정"
 
-#: lib/page-settings/admin-forms.php:51
+#: lib/page-settings/admin-forms.php:50
 #, fuzzy
 msgid "管理画面の投稿一覧ページの設定です。"
 msgstr "관리 화면의 게시 목록 페이지의 설정입니다."
 
-#: lib/page-settings/admin-forms.php:62
+#: lib/page-settings/admin-forms.php:61
 #, fuzzy
 msgid "カラム表示"
 msgstr "열 표시"
 
-#: lib/page-settings/admin-forms.php:63
+#: lib/page-settings/admin-forms.php:62
 #, fuzzy
 msgid "投稿・固定ページ記事一覧テーブルのカラム操作。"
 msgstr "게시물/고정 페이지 게시물 목록 테이블의 컬럼 가동."
 
-#: lib/page-settings/admin-forms.php:69
+#: lib/page-settings/admin-forms.php:68
 #, fuzzy
 msgid "作成者を表示する"
 msgstr "작성자를 표시 한다"
 
-#: lib/page-settings/admin-forms.php:72
+#: lib/page-settings/admin-forms.php:71
 #, fuzzy
 msgid "カテゴリーを表示する"
 msgstr "카테고리 보기"
 
-#: lib/page-settings/admin-forms.php:75
+#: lib/page-settings/admin-forms.php:74
 #, fuzzy
 msgid "タグを表示する"
 msgstr "태그 표시"
 
-#: lib/page-settings/admin-forms.php:78 lib/page-settings/page-forms.php:27
+#: lib/page-settings/admin-forms.php:77 lib/page-settings/page-forms.php:27
 #: lib/page-settings/single-forms.php:389
 #, fuzzy
 msgid "コメントを表示する"
 msgstr "메모 표시"
 
-#: lib/page-settings/admin-forms.php:82
+#: lib/page-settings/admin-forms.php:81
 #, fuzzy
 msgid "日付を表示する"
 msgstr "날짜 표시"
 
-#: lib/page-settings/admin-forms.php:85
+#: lib/page-settings/admin-forms.php:84
 #, fuzzy
 msgid "投稿IDを表示する"
 msgstr "태그 표시"
 
-#: lib/page-settings/admin-forms.php:88
+#: lib/page-settings/admin-forms.php:87
 #, fuzzy
 msgid "文字数を表示する"
 msgstr "문자 수를 표시 한다"
 
-#: lib/page-settings/admin-forms.php:91
+#: lib/page-settings/admin-forms.php:90
 #, fuzzy
 msgid "アイキャッチを表示する"
 msgstr "아이 캐치를 표시 한다"
 
-#: lib/page-settings/admin-forms.php:94
+#: lib/page-settings/admin-forms.php:93
 #, fuzzy
 msgid "メモの内容を表示する"
 msgstr "메모 내용 보기"
 
-#: lib/page-settings/admin-forms.php:95
+#: lib/page-settings/admin-forms.php:94
 #, fuzzy
 msgid "投稿一覧テーブルのカラム表示を切り替えます。"
 msgstr "게시 목록 테이블의 열 표시를 전환 합니다."
 
-#: lib/page-settings/admin-forms.php:114
+#: lib/page-settings/admin-forms.php:113
 #, fuzzy
 msgid "管理者パネル"
 msgstr "관리자 패널"
 
-#: lib/page-settings/admin-forms.php:117
+#: lib/page-settings/admin-forms.php:116
 #, fuzzy
 msgid "管理者向けのPV表示や編集リンクの表示です。"
 msgstr "관리자 용 PV 표시 및 편집 링크를 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:125
+#: lib/page-settings/admin-forms.php:124
 #, fuzzy
 msgid "管理者パネルの表示"
 msgstr "관리자 패널 표시"
 
-#: lib/page-settings/admin-forms.php:126
+#: lib/page-settings/admin-forms.php:125
 #, fuzzy
 msgid "管理者用のPV表示エリア、各種チェックツール表示用のパネルです。"
 msgstr "관리자 용 PV 보기 영역, 다양 한 검사 도구 표시할 패널입니다."
 
-#: lib/page-settings/admin-forms.php:130
+#: lib/page-settings/admin-forms.php:129
 #, fuzzy
 msgid "全て表示"
 msgstr "전체 보기"
 
-#: lib/page-settings/admin-forms.php:131
+#: lib/page-settings/admin-forms.php:130
 #, fuzzy
 msgid "PCのみ表示"
 msgstr "PC만 표시"
 
-#: lib/page-settings/admin-forms.php:132
+#: lib/page-settings/admin-forms.php:131
 #, fuzzy
 msgid "モバイルのみ表示"
 msgstr "모바일 전용 페이지"
 
-#: lib/page-settings/admin-forms.php:133 lib/page-settings/appeal-forms.php:38
+#: lib/page-settings/admin-forms.php:132 lib/page-settings/appeal-forms.php:38
 #: lib/page-settings/carousel-forms.php:38
 #: lib/page-settings/header-forms.php:114 lib/page-settings/page-forms.php:56
 #: lib/page-settings/recommended-forms.php:39
 #: lib/page-settings/seo-forms.php:114 lib/page-settings/single-forms.php:418
 #: lib/page-settings/toc-forms.php:155
-#, fuzzy
 msgid "表示しない"
-msgstr "표시 안 함"
+msgstr "끔"
 
-#: lib/page-settings/admin-forms.php:136
+#: lib/page-settings/admin-forms.php:135
 #, fuzzy
 msgid "管理者パネルの表示形式を選択します。"
 msgstr "관리자 패널의 표시 형식을 선택 합니다."
 
-#: lib/page-settings/admin-forms.php:147
+#: lib/page-settings/admin-forms.php:143
 #, fuzzy
 msgid "PVの表示"
 msgstr "PV 표시"
 
-#: lib/page-settings/admin-forms.php:151
+#: lib/page-settings/admin-forms.php:147
 #, fuzzy
 msgid "PVエリアを表示する"
 msgstr "PV 구역 표시"
 
-#: lib/page-settings/admin-forms.php:152
+#: lib/page-settings/admin-forms.php:148
 #, fuzzy
 msgid "管理者パネル内のPVエリアを表示します。"
 msgstr "관리자 패널에서 PV 영역을 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:155
+#: lib/page-settings/admin-forms.php:153
+#, fuzzy
+msgid "インデックスにPV数を表示"
+msgstr "인덱스 페이지 숨기기"
+
+#: lib/page-settings/admin-forms.php:154
+#, fuzzy
+msgid ""
+"インデックスページのエントリーカードごとにPV数を表示します。集計方法がJetpack"
+"の場合は、初回アクセス時に情報取得に時間がかかります。"
+msgstr ""
+"인덱스 페이지 등록 카드 마다 PV 수를 표시 합니다. 집계 방법이 Jetpack의 경우 "
+"처음 액세스할 때 정보 검색 하는 데 시간이 오래 걸립니다."
+
+#: lib/page-settings/admin-forms.php:156
 #, fuzzy
 msgid "アクセス集計方法"
 msgstr "액세스 집계 방법"
 
-#: lib/page-settings/admin-forms.php:160
+#: lib/page-settings/admin-forms.php:161
 #, fuzzy
 msgid "※テーマのアクセス集計が有効になっていません。"
 msgstr "※ 테마 사용 집계를 사용할 수 없습니다."
 
-#: lib/page-settings/admin-forms.php:165
+#: lib/page-settings/admin-forms.php:166
 #, fuzzy
 msgid "※Jetpackの統計機能が有効になっていません。"
 msgstr "※ Jetpack 통계 기능이 활성화 되어 있지 않습니다."
 
-#: lib/page-settings/admin-forms.php:168
+#: lib/page-settings/admin-forms.php:169
 #, fuzzy
 msgid "テーマ独自"
 msgstr "테마 사용자 지정"
 
-#: lib/page-settings/admin-forms.php:169
+#: lib/page-settings/admin-forms.php:170
 #, fuzzy
 msgid "Jetpack"
 msgstr "Jetpack"
 
-#: lib/page-settings/admin-forms.php:172
+#: lib/page-settings/admin-forms.php:173
 #, fuzzy
 msgid "管理者パネルで表示するPVの取得方法を選択します。"
 msgstr "관리자 패널에서 보려면 PV 가져오는 방법을 선택 합니다."
 
-#: lib/page-settings/admin-forms.php:183
+#: lib/page-settings/admin-forms.php:184
 #, fuzzy
 msgid "編集エリアの表示"
 msgstr "편집 영역 표시"
 
-#: lib/page-settings/admin-forms.php:187
+#: lib/page-settings/admin-forms.php:188
 #, fuzzy
 msgid "編集エリアを表示する"
 msgstr "편집 영역을 표시 하려면"
 
-#: lib/page-settings/admin-forms.php:188
+#: lib/page-settings/admin-forms.php:189
 #, fuzzy
 msgid "管理者パネル内の編集エリアを表示します。"
 msgstr "관리자 패널에 있는 편집 영역을 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:192
+#: lib/page-settings/admin-forms.php:193
 #, fuzzy
 msgid "投稿編集リンクの表示"
 msgstr ", 편집 링크 표시"
 
-#: lib/page-settings/admin-forms.php:193
+#: lib/page-settings/admin-forms.php:194
 #, fuzzy
 msgid "Wordpress管理画面で投稿内容を編集するためのリンクです。"
 msgstr "Wordpress 관리 화면에서 게시물을 편집할 수 있는 링크입니다."
 
-#: lib/page-settings/admin-forms.php:195
+#: lib/page-settings/admin-forms.php:196
 #, fuzzy
 msgid "WLW編集リンクの表示"
 msgstr "WLW 편집 링크 표시"
 
-#: lib/page-settings/admin-forms.php:196
+#: lib/page-settings/admin-forms.php:197
 #, fuzzy
 msgid "Windows Live Writerで投稿内容を編集するためのリンクです。"
 msgstr "Windows Live Writer에서 게시물을 편집할 수 있는 링크입니다."
 
-#: lib/page-settings/admin-forms.php:205
+#: lib/page-settings/admin-forms.php:206
 #, fuzzy
 msgid "AMPエリアの表示"
 msgstr "AMP 영역 표시"
 
-#: lib/page-settings/admin-forms.php:209
+#: lib/page-settings/admin-forms.php:210
 #, fuzzy
 msgid "AMPエリア表示する"
 msgstr "AMP 구역 표시"
 
-#: lib/page-settings/admin-forms.php:210
+#: lib/page-settings/admin-forms.php:211
 #, fuzzy
 msgid "AMP動作確認・テストリンクなどを表示します。"
 msgstr "AMP 동작 확인 테스트 링크 등을 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:214
+#: lib/page-settings/admin-forms.php:215
 #, fuzzy
 msgid "Google AMPテストを表示"
 msgstr "Google AMP 테스트 표시"
 
-#: lib/page-settings/admin-forms.php:215
+#: lib/page-settings/admin-forms.php:216
 #, fuzzy
 msgid ""
 "<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel="
@@ -5096,12 +5131,12 @@ msgstr ""
 "< A href = \"https://search.google.com/test/amp\" target = \"_blank\" > AMP "
 "테스트-Google Search Console </a>에서 검사 하는 링크가 나타납니다."
 
-#: lib/page-settings/admin-forms.php:217
+#: lib/page-settings/admin-forms.php:218
 #, fuzzy
 msgid "The AMP Validatorを表示"
 msgstr "The AMP Validator를 표시"
 
-#: lib/page-settings/admin-forms.php:218
+#: lib/page-settings/admin-forms.php:219
 #, fuzzy
 msgid ""
 "<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel="
@@ -5110,12 +5145,12 @@ msgstr ""
 "< A href = \"# https://validator.ampproject.org/\" target = \"_blank\" > The "
 "AMP Validator </a>에서 검사 하는 링크가 나타납니다."
 
-#: lib/page-settings/admin-forms.php:220
+#: lib/page-settings/admin-forms.php:221
 #, fuzzy
 msgid "AMPBenchを表示"
 msgstr "AMPBench 표시"
 
-#: lib/page-settings/admin-forms.php:221
+#: lib/page-settings/admin-forms.php:222
 #, fuzzy
 msgid ""
 "<a href=\"https://ampbench.appspot.com/\" target=\"_blank\" rel=\"noopener"
@@ -5124,17 +5159,17 @@ msgstr ""
 "< A href = \"https://ampbench.appspot.com/\" target = \"_blank\" > AMPBench "
 "</a>에서 검사 하는 링크가 나타납니다."
 
-#: lib/page-settings/admin-forms.php:230
+#: lib/page-settings/admin-forms.php:231
 #, fuzzy
 msgid "チェックツールエリアの表示"
 msgstr "검사 도구 영역 표시"
 
-#: lib/page-settings/admin-forms.php:234
+#: lib/page-settings/admin-forms.php:235
 #, fuzzy
 msgid "チェックツールエリアを表示する"
 msgstr "검사 도구 영역을 표시 하려면"
 
-#: lib/page-settings/admin-forms.php:235
+#: lib/page-settings/admin-forms.php:236
 #, fuzzy
 msgid ""
 "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed "
@@ -5144,12 +5179,12 @@ msgstr ""
 "페이지를 진단 하기 위한 검사 도구를 표시할 위치를 표시 합니다. PageSpeed "
 "Insights 구조화 된 데이터 확인, HTML5 검사 개요 표, Twitter의 반응."
 
-#: lib/page-settings/admin-forms.php:239
+#: lib/page-settings/admin-forms.php:240
 #, fuzzy
 msgid "PageSpeed Insightsを表示する"
 msgstr "PageSpeed Insights를 표시 한다"
 
-#: lib/page-settings/admin-forms.php:240
+#: lib/page-settings/admin-forms.php:241
 #, fuzzy
 msgid ""
 "<a href=\"https://developers.google.com/speed/pagespeed/insights/?"
@@ -5160,12 +5195,12 @@ msgstr ""
 "filter_third_party_resources=true\" target=\"_blank\">PageS Peed Insights </"
 "a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:242
+#: lib/page-settings/admin-forms.php:243
 #, fuzzy
 msgid "GTmetrixを表示する"
 msgstr "GTmetrix 표시"
 
-#: lib/page-settings/admin-forms.php:243
+#: lib/page-settings/admin-forms.php:244
 #, fuzzy
 msgid ""
 "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener"
@@ -5174,12 +5209,12 @@ msgstr ""
 "< A href = \"https://gtmetrix.com/\" target = \"_blank\" > GTmetrix </a> 링"
 "크 표시."
 
-#: lib/page-settings/admin-forms.php:245
+#: lib/page-settings/admin-forms.php:246
 #, fuzzy
 msgid "モバイルフレンドリーテストを表示する"
 msgstr "모바일 친화적 테스트를 표시 하려면"
 
-#: lib/page-settings/admin-forms.php:246
+#: lib/page-settings/admin-forms.php:247
 #, fuzzy
 msgid ""
 "<a href=\"https://search.google.com/test/mobile-friendly\" target=\"_blank\" "
@@ -5188,12 +5223,12 @@ msgstr ""
 "< A href = \"https://search.google.com/test/mobile-friendly\" target = "
 "\"_blank\" > 모바일 친화적인 테스트 </a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:248
+#: lib/page-settings/admin-forms.php:249
 #, fuzzy
 msgid "構造化データチェックを表示する"
 msgstr "구조적 데이터를 표시 하는"
 
-#: lib/page-settings/admin-forms.php:249
+#: lib/page-settings/admin-forms.php:250
 #, fuzzy
 msgid ""
 "<a href=\"https://search.google.com/structured-data/testing-tool#\" target="
@@ -5202,12 +5237,12 @@ msgstr ""
 "< A href = \"# https://search.google.com/structured-data/testing-tool\" "
 "target = \"_blank\" > 구조적 데이터 테스트 도구 </a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:251
+#: lib/page-settings/admin-forms.php:252
 #, fuzzy
 msgid "HTML5チェックを表示する"
 msgstr "HTML5 체크 표시"
 
-#: lib/page-settings/admin-forms.php:252
+#: lib/page-settings/admin-forms.php:253
 #, fuzzy
 msgid ""
 "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener"
@@ -5216,12 +5251,12 @@ msgstr ""
 "< A href = \"https://validator.w3.org/nu/\" target = \"_blank\" > Nu Html "
 "Checker </a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:254
+#: lib/page-settings/admin-forms.php:255
 #, fuzzy
 msgid "HTML5アウトラインチェックを表示する"
 msgstr "HTML5 개요 검사를 보여 주는"
 
-#: lib/page-settings/admin-forms.php:255
+#: lib/page-settings/admin-forms.php:256
 #, fuzzy
 msgid ""
 "<a href=\"https://gsnedders.html5.org/outliner/\" target=\"_blank\" rel="
@@ -5230,12 +5265,12 @@ msgstr ""
 "< A href = \"https://gsnedders.html5.org/outliner/\" target = \"_blank\" > "
 "HTML 5 Outliner </a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:257
+#: lib/page-settings/admin-forms.php:258
 #, fuzzy
 msgid "SEOチェキを表示する"
 msgstr "SEO チェキ 보기"
 
-#: lib/page-settings/admin-forms.php:258
+#: lib/page-settings/admin-forms.php:259
 #, fuzzy
 msgid ""
 "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェ"
@@ -5244,39 +5279,39 @@ msgstr ""
 "< A href = \"http://seocheki.net/\" target = \"_blank\" > SEO チェキ! 무료로 "
 "사용할 수 있는 SEO 도구 </a> 링크 표시."
 
-#: lib/page-settings/admin-forms.php:260
+#: lib/page-settings/admin-forms.php:261
 #, fuzzy
 msgid "ツイートチェックを表示する"
 msgstr "ツイートチェック 표시"
 
-#: lib/page-settings/admin-forms.php:261
+#: lib/page-settings/admin-forms.php:262
 #, fuzzy
 msgid "投稿・固定ページに対するツイートチェックリンクの表示。"
 msgstr "게시물/고정 페이지에 대 한 ツイートチェックリンク의 표시."
 
-#: lib/page-settings/admin-forms.php:270
+#: lib/page-settings/admin-forms.php:271
 #, fuzzy
 msgid "レスポンシブツールエリアの表示"
 msgstr "レスポンシブツールエリア 표시"
 
-#: lib/page-settings/admin-forms.php:274
+#: lib/page-settings/admin-forms.php:275
 #, fuzzy
 msgid "レスポンシブチェックを表示する"
 msgstr "レスポンシブチェック 표시"
 
-#: lib/page-settings/admin-forms.php:275
+#: lib/page-settings/admin-forms.php:276
 #, fuzzy
 msgid ""
 "レスポンシブ表示状態を効率的にチェックできるツールエリアの表示を切り替えま"
 "す。"
 msgstr "응답 상태를 효과적으로 확인할 수 있는 도구 영역 표시를 전환 합니다."
 
-#: lib/page-settings/admin-forms.php:279
+#: lib/page-settings/admin-forms.php:280
 #, fuzzy
 msgid "Responsinatorチェックを表示する"
 msgstr "Responsinator 체크 표시"
 
-#: lib/page-settings/admin-forms.php:280
+#: lib/page-settings/admin-forms.php:281
 #, fuzzy
 msgid ""
 "<a href=\"https://www.responsinator.com/\" target=\"_blank\" rel=\"noopener"
@@ -5285,12 +5320,12 @@ msgstr ""
 "< A href = \"https://www.responsinator.com/\" target = \"_blank\" > "
 "Responsinator </a> 확인 링크를 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:282
+#: lib/page-settings/admin-forms.php:283
 #, fuzzy
 msgid "Sizzyチェックを表示する"
 msgstr "Sizzy 체크 표시"
 
-#: lib/page-settings/admin-forms.php:283
+#: lib/page-settings/admin-forms.php:284
 #, fuzzy
 msgid ""
 "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>"
@@ -5299,12 +5334,12 @@ msgstr ""
 "< A href = \"https://sizzy.co/\" target = \"_blank\" > Sizzy </a> 확인 링크"
 "를 표시 합니다."
 
-#: lib/page-settings/admin-forms.php:285
+#: lib/page-settings/admin-forms.php:286
 #, fuzzy
 msgid "ScreenResolutionチェックを表示する"
 msgstr "ScreenResolution 체크 표시"
 
-#: lib/page-settings/admin-forms.php:286
+#: lib/page-settings/admin-forms.php:287
 #, fuzzy
 msgid ""
 "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target="
@@ -5335,8 +5370,8 @@ msgstr "전체 광고 게재"
 msgid "アドセンス設定、ウィジェット設定等、全ての広告の表示を切り替えます。"
 msgstr "애드 센스 설정, 위젯 설정 등 모든 광고를 표시 하거나 숨깁니다."
 
-#: lib/page-settings/ads-forms.php:35 lib/widgets/ad.php:80
-#: lib/widgets/mobile-ad.php:80 lib/widgets/pc-ad.php:84
+#: lib/page-settings/ads-forms.php:35 lib/widgets/ad.php:77
+#: lib/widgets/mobile-ad.php:77 lib/widgets/pc-ad.php:81
 #, fuzzy
 msgid "広告ラベル"
 msgstr "광고 라벨"
@@ -5453,97 +5488,97 @@ msgstr ""
 "으로 제어할 수 없습니다. 「 자동 광고 」가 사용 하는 경우, 「 광고 게재 위치 "
 "'와 ' [ad] 바로 코드 」에서 광고 표시를 해제할 수 있습니다."
 
-#: lib/page-settings/ads-forms.php:127
+#: lib/page-settings/ads-forms.php:123
 #, fuzzy
 msgid "広告の表示位置"
 msgstr "광고 게재 위치"
 
-#: lib/page-settings/ads-forms.php:136
+#: lib/page-settings/ads-forms.php:132
 #, fuzzy
 msgid "インデックスページの表示位置"
 msgstr "인덱스 페이지의 위치"
 
-#: lib/page-settings/ads-forms.php:139 tmp/mobile-top-button.php:24
+#: lib/page-settings/ads-forms.php:135 tmp/mobile-top-button.php:24
 #, fuzzy
 msgid "トップ"
 msgstr "상위"
 
-#: lib/page-settings/ads-forms.php:148
+#: lib/page-settings/ads-forms.php:144
 #, fuzzy
 msgid "ミドル"
 msgstr "중간"
 
-#: lib/page-settings/ads-forms.php:152
+#: lib/page-settings/ads-forms.php:148
 #, fuzzy
 msgid "ボトム"
 msgstr "히 프"
 
-#: lib/page-settings/ads-forms.php:160
+#: lib/page-settings/ads-forms.php:156
 #, fuzzy
 msgid "サイドバーの表示位置"
 msgstr "사이드바 표시 위치"
 
-#: lib/page-settings/ads-forms.php:164
+#: lib/page-settings/ads-forms.php:160
 #, fuzzy
 msgid "サイドバートップ"
 msgstr "사이드바 상단"
 
-#: lib/page-settings/ads-forms.php:171
+#: lib/page-settings/ads-forms.php:167
 #, fuzzy
 msgid "サイドバーボトム"
 msgstr "사이드바 하단"
 
-#: lib/page-settings/ads-forms.php:181
+#: lib/page-settings/ads-forms.php:177
 #, fuzzy
 msgid "投稿・固定ページの表示位置"
 msgstr "게시물/고정 페이지 위치"
 
-#: lib/page-settings/ads-forms.php:185
+#: lib/page-settings/ads-forms.php:181
 #, fuzzy
 msgid "タイトル上"
 msgstr "제목에"
 
-#: lib/page-settings/ads-forms.php:193
+#: lib/page-settings/ads-forms.php:189
 #, fuzzy
 msgid "タイトル下"
 msgstr "제목 아래"
 
-#: lib/page-settings/ads-forms.php:200
+#: lib/page-settings/ads-forms.php:196
 #, fuzzy
 msgid "本文上"
 msgstr "본문에"
 
-#: lib/page-settings/ads-forms.php:205
+#: lib/page-settings/ads-forms.php:201
 #, fuzzy
 msgid "本文中"
 msgstr "본문"
 
-#: lib/page-settings/ads-forms.php:210 lib/page-settings/single-forms.php:325
+#: lib/page-settings/ads-forms.php:206 lib/page-settings/single-forms.php:325
 #, fuzzy
 msgid "本文下"
 msgstr "본문 아래"
 
-#: lib/page-settings/ads-forms.php:215
+#: lib/page-settings/ads-forms.php:211
 #, fuzzy
 msgid "SNSボタン上（本文下部分）"
 msgstr "SNS 버튼 (본문 하단 분)"
 
-#: lib/page-settings/ads-forms.php:220
+#: lib/page-settings/ads-forms.php:216
 #, fuzzy
 msgid "SNSボタン下（本文下部分）"
 msgstr "SNS 버튼 (본문 하단 분)"
 
-#: lib/page-settings/ads-forms.php:225
+#: lib/page-settings/ads-forms.php:221
 #, fuzzy
 msgid "関連記事下（投稿ページのみ）"
 msgstr "관련 기사 (게시물 페이지)"
 
-#: lib/page-settings/ads-forms.php:235
+#: lib/page-settings/ads-forms.php:231
 #, fuzzy
 msgid "それぞれのページで広告を表示する位置を設定します。"
 msgstr "각 페이지에서 광고를 표시할 위치를 설정 합니다."
 
-#: lib/page-settings/ads-forms.php:237 lib/page-settings/ads-forms.php:255
+#: lib/page-settings/ads-forms.php:233 lib/page-settings/ads-forms.php:251
 #, fuzzy
 msgid ""
 "設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
@@ -5552,17 +5587,17 @@ msgstr ""
 "설정에 따라 애드 센스 정책에 위배 될 수도 있기 때문에 설정 후에는 철저 하 게 "
 "작동 하는지 확인 하십시오."
 
-#: lib/page-settings/ads-forms.php:245
+#: lib/page-settings/ads-forms.php:241
 #, fuzzy
 msgid "[ad]ショートコード"
 msgstr "[Ad] 단축 코드"
 
-#: lib/page-settings/ads-forms.php:249
+#: lib/page-settings/ads-forms.php:245
 #, fuzzy
 msgid "[ad]ショートコードを有効にする"
 msgstr "[Ad] 단축 코드를 사용 하려면"
 
-#: lib/page-settings/ads-forms.php:253
+#: lib/page-settings/ads-forms.php:249
 #, fuzzy
 msgid ""
 "本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示"
@@ -5571,27 +5606,27 @@ msgstr ""
 "본문에 [ad]을 입력 하면 해당 부분이 「 광고 코드 」로 설정 하 여 광고를 표시 "
 "합니다."
 
-#: lib/page-settings/ads-forms.php:268
+#: lib/page-settings/ads-forms.php:264
 #, fuzzy
 msgid "バリューコマース"
 msgstr "밸류 상거래 sid"
 
-#: lib/page-settings/ads-forms.php:271
+#: lib/page-settings/ads-forms.php:267
 #, fuzzy
 msgid "バリューコマース関連の広告設定です。"
 msgstr "사이드바를 표시할 페이지를 설정 합니다."
 
-#: lib/page-settings/ads-forms.php:278
+#: lib/page-settings/ads-forms.php:274
 #, fuzzy
 msgid "LinkSwitch"
 msgstr "LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:282
+#: lib/page-settings/ads-forms.php:278
 #, fuzzy
 msgid "LinkSwitchを有効にする"
 msgstr "인증을 사용 하도록 설정"
 
-#: lib/page-settings/ads-forms.php:283
+#: lib/page-settings/ads-forms.php:279
 #, fuzzy
 msgid ""
 "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている"
@@ -5600,60 +5635,60 @@ msgstr ""
 "밸류 상거래 LinkSwitch 기능을 사용할 수 있는지. LinkSwitch ID가 입력 되어 있"
 "어야 합니다."
 
-#: lib/page-settings/ads-forms.php:286
+#: lib/page-settings/ads-forms.php:282
 #, fuzzy
 msgid "LinkSwitch ID"
 msgstr "LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:288
+#: lib/page-settings/ads-forms.php:284
 #, fuzzy
 msgid "LinkSwitch IDの入力"
 msgstr "LinkSwitch ID 입력"
 
-#: lib/page-settings/ads-forms.php:289
+#: lib/page-settings/ads-forms.php:285
 #, fuzzy
 msgid ""
 "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してくだ"
 "さい。"
 msgstr "밸류 상거래에서 Yahoo! 쇼핑 등록 sid와 pid를 반환 하십시오."
 
-#: lib/page-settings/ads-forms.php:290
+#: lib/page-settings/ads-forms.php:286
 #, fuzzy
 msgid "LinkSwitchタグから取得できるIDを入力してください。"
 msgstr "단추에 연결할 URL을 입력 하십시오."
 
-#: lib/page-settings/ads-forms.php:304
+#: lib/page-settings/ads-forms.php:300
 #, fuzzy
 msgid "広告除外設定"
 msgstr "광고 제외"
 
-#: lib/page-settings/ads-forms.php:307
+#: lib/page-settings/ads-forms.php:303
 #, fuzzy
 msgid "広告を表示したくないページやカテゴリの設定です。"
 msgstr "광고를 표시 하지 않을 페이지 및 카테고리 설정입니다."
 
-#: lib/page-settings/ads-forms.php:314
+#: lib/page-settings/ads-forms.php:310
 #, fuzzy
 msgid "広告除外記事ID"
 msgstr "광고 제외 기사 ID"
 
-#: lib/page-settings/ads-forms.php:318
+#: lib/page-settings/ads-forms.php:314
 #, fuzzy
 msgid "例：111,222,3333"
 msgstr "보기: 111, 222, 3333"
 
-#: lib/page-settings/ads-forms.php:319
+#: lib/page-settings/ads-forms.php:315
 #, fuzzy
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr "광고를 숨길,/고정 페이지 ID를 쉼표 (,) 구분 하 여 지정 하십시오."
 
-#: lib/page-settings/ads-forms.php:327
+#: lib/page-settings/ads-forms.php:323
 #, fuzzy
 msgid "広告除外カテゴリー"
 msgstr "광고 제외 카테고리"
 
-#: lib/page-settings/ads-forms.php:333
+#: lib/page-settings/ads-forms.php:329
 #, fuzzy
 msgid "広告を非表示にするカテゴリを選択してください。"
 msgstr "광고를 숨길 수 있는 범주를 선택 하십시오."
@@ -5664,9 +5699,8 @@ msgid "スポンサーリンク"
 msgstr "스폰서 링크"
 
 #: lib/page-settings/all-forms.php:13
-#, fuzzy
 msgid "全体設定"
-msgstr "전체 설정"
+msgstr "전역 설정"
 
 #: lib/page-settings/all-forms.php:16
 #, fuzzy
@@ -5749,7 +5783,6 @@ msgid "さわらび明朝（WEBフォント）"
 msgstr "さわらび 체 (WEB)"
 
 #: lib/page-settings/all-forms.php:72
-#, fuzzy
 msgid "フォント"
 msgstr "글꼴"
 
@@ -5857,20 +5890,40 @@ msgstr ""
 
 #: lib/page-settings/all-forms.php:136
 #, fuzzy
+msgid "サイトアイコンフォント"
+msgstr "아이콘 글꼴"
+
+#: lib/page-settings/all-forms.php:141
+#, fuzzy
+msgid "Font Awesome 4"
+msgstr "Font Awesome 4"
+
+#: lib/page-settings/all-forms.php:142
+#, fuzzy
+msgid "Font Awesome 5"
+msgstr "Font Awesome 5"
+
+#: lib/page-settings/all-forms.php:145
+#, fuzzy
+msgid "サイト全体で使用するアイコンフォントを選択します。"
+msgstr "사이트 전체에 적용 되는 글꼴을 선택 합니다."
+
+#: lib/page-settings/all-forms.php:155
+#, fuzzy
 msgid "サイト背景色"
 msgstr "사이트 배경"
 
-#: lib/page-settings/all-forms.php:142
+#: lib/page-settings/all-forms.php:161
 #, fuzzy
 msgid "サイト全体の背景色を選択します。"
 msgstr "사이트 전체의 배경색을 선택 합니다."
 
-#: lib/page-settings/all-forms.php:150
+#: lib/page-settings/all-forms.php:169
 #, fuzzy
 msgid "サイト背景画像"
 msgstr "사이트 배경 이미지"
 
-#: lib/page-settings/all-forms.php:155
+#: lib/page-settings/all-forms.php:174
 #, fuzzy
 msgid ""
 "サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を"
@@ -5880,117 +5933,122 @@ msgstr ""
 "면이 설정을 사용 하지 않도록 설정 하 여 「 모양 → 사용자 지정의 \"배경 이미"
 "지 」 설정 합니다."
 
-#: lib/page-settings/all-forms.php:163
+#: lib/page-settings/all-forms.php:182
 #, fuzzy
 msgid "サイト幅の均一化"
 msgstr "사이트 너비의 균일화"
 
-#: lib/page-settings/all-forms.php:167
+#: lib/page-settings/all-forms.php:186
 #, fuzzy
 msgid "サイト幅を揃える"
 msgstr "사이트 너비를 같게"
 
-#: lib/page-settings/all-forms.php:168
+#: lib/page-settings/all-forms.php:187
 #, fuzzy
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr "전체 사이트의 너비를 콘텐츠의 너비에 통합 합니다."
 
-#: lib/page-settings/all-forms.php:177
+#: lib/page-settings/all-forms.php:196
 #, fuzzy
 msgid "サイトリンク色"
 msgstr "사이트 링크 색"
 
-#: lib/page-settings/all-forms.php:183
+#: lib/page-settings/all-forms.php:202
 #, fuzzy
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr "사이트에서 사용 하는 링크 색을 선택 합니다."
 
-#: lib/page-settings/all-forms.php:191
+#: lib/page-settings/all-forms.php:210
 #, fuzzy
 msgid "サイト選択文字色"
 msgstr "사이트 선택 문자 색"
 
-#: lib/page-settings/all-forms.php:197
+#: lib/page-settings/all-forms.php:216
 #, fuzzy
 msgid "サイト内のテキストを選択した際の文字色です。"
 msgstr "사이트에서 텍스트를 선택 했을 때의 텍스트 색입니다."
 
-#: lib/page-settings/all-forms.php:205
+#: lib/page-settings/all-forms.php:224
 #, fuzzy
 msgid "サイト選択背景色"
 msgstr "사이트 선택 배경색"
 
-#: lib/page-settings/all-forms.php:211
+#: lib/page-settings/all-forms.php:230
 #, fuzzy
 msgid "サイト内のテキストを選択した際の背景色です。"
 msgstr "사이트에서 텍스트를 선택한 경우 배경색입니다."
 
-#: lib/page-settings/all-forms.php:219
+#: lib/page-settings/all-forms.php:238
 #, fuzzy
 msgid "サイドバーの位置"
 msgstr "사이드바의 위치"
 
-#: lib/page-settings/all-forms.php:224
+#: lib/page-settings/all-forms.php:243
 #, fuzzy
 msgid "サイドバー右"
 msgstr "사이드바 오른쪽"
 
-#: lib/page-settings/all-forms.php:225
+#: lib/page-settings/all-forms.php:244
 #, fuzzy
 msgid "サイドバー左"
 msgstr "사이드바 좌측"
 
-#: lib/page-settings/all-forms.php:229
+#: lib/page-settings/all-forms.php:248
 #, fuzzy
 msgid "サイドバーの表示位置の設定です。"
 msgstr "사이드바 표시 위치 설정입니다."
 
-#: lib/page-settings/all-forms.php:237
+#: lib/page-settings/all-forms.php:256
 #, fuzzy
 msgid "サイドバーの表示状態"
 msgstr "사이드바를 표시 상태"
 
-#: lib/page-settings/all-forms.php:242
+#: lib/page-settings/all-forms.php:261
 #, fuzzy
 msgid "全てのページで表示"
 msgstr "전체 페이지 보기"
 
-#: lib/page-settings/all-forms.php:243
+#: lib/page-settings/all-forms.php:262
 #, fuzzy
 msgid "全てのページで非表示"
 msgstr "모든 페이지에 표시"
 
-#: lib/page-settings/all-forms.php:244
+#: lib/page-settings/all-forms.php:263
 #, fuzzy
 msgid "フロントページで非表示（固定ページがトップページの場合）"
 msgstr "프론트 페이지에서 숨겨진 (고정 페이지가 상위 페이지의 경우)"
 
-#: lib/page-settings/all-forms.php:245
+#: lib/page-settings/all-forms.php:264
 #, fuzzy
 msgid "インデックスページで非表示"
 msgstr "인덱스 페이지 숨기기"
 
-#: lib/page-settings/all-forms.php:246
+#: lib/page-settings/all-forms.php:265
 #, fuzzy
 msgid "固定ページで非表示"
 msgstr "고정 페이지 숨기기"
 
-#: lib/page-settings/all-forms.php:247
+#: lib/page-settings/all-forms.php:266
 #, fuzzy
 msgid "投稿ページで非表示"
 msgstr "게재 페이지에 표시"
 
-#: lib/page-settings/all-forms.php:251
+#: lib/page-settings/all-forms.php:267
+#, fuzzy
+msgid "404ページで非表示"
+msgstr "고정 페이지 숨기기"
+
+#: lib/page-settings/all-forms.php:271
 #, fuzzy
 msgid "サイドバーを表示するページの設定です。"
 msgstr "사이드바를 표시할 페이지를 설정 합니다."
 
-#: lib/page-settings/all-forms.php:259
+#: lib/page-settings/all-forms.php:279
 #, fuzzy
 msgid "ファビコン"
 msgstr "파비콘"
 
-#: lib/page-settings/all-forms.php:262
+#: lib/page-settings/all-forms.php:282
 #, fuzzy
 msgid ""
 "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイ"
@@ -6001,12 +6059,12 @@ msgstr ""
 "본 정보 \"에 나오는\" 사이트 아이콘 」 설정 합니다. 설정할 그림 512 × 512 px"
 "의 PNG 이미지를 권장 합니다."
 
-#: lib/page-settings/all-forms.php:270
+#: lib/page-settings/all-forms.php:290
 #, fuzzy
 msgid "サイトアイコン"
 msgstr "사이트 아이콘"
 
-#: lib/page-settings/all-forms.php:276
+#: lib/page-settings/all-forms.php:296
 #, fuzzy
 msgid ""
 "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイ"
@@ -6015,17 +6073,17 @@ msgstr ""
 "사이트 아이콘이 사이트 애플 리 케이 션과 브라우저의 아이콘으로 사용 됩니다. "
 "아이콘은 사각에서 너비/높이 함께 512 픽셀 이어야 합니다."
 
-#: lib/page-settings/all-forms.php:284
+#: lib/page-settings/all-forms.php:304
 #, fuzzy
 msgid "サムネイル表示"
 msgstr "축소판 그림 보기"
 
-#: lib/page-settings/all-forms.php:288
+#: lib/page-settings/all-forms.php:308
 #, fuzzy
 msgid "サイト全体のサムネイルを表示する"
 msgstr "사이트 전체 축소판을 표시 하려면"
 
-#: lib/page-settings/all-forms.php:289
+#: lib/page-settings/all-forms.php:309
 #, fuzzy
 msgid ""
 "サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※"
@@ -6034,19 +6092,19 @@ msgstr ""
 "사이트의 썸네일 이미지 표시를 전환 합니다. 문법 기본 사이트에 대 한 설정입니"
 "다. ※ 블로그 카드 뭔가요 이미지를 얻을 수로 표시 합니다."
 
-#: lib/page-settings/all-forms.php:298
+#: lib/page-settings/all-forms.php:318
 #, fuzzy
 msgid "日付フォーマット"
 msgstr "날짜 포맷"
 
-#: lib/page-settings/all-forms.php:303
+#: lib/page-settings/all-forms.php:323
 #, fuzzy
 msgid ""
 "テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y."
 "m.d）。"
 msgstr "전체 테마에 사용 된 날짜 포맷 형식을 입력 합니다 (초기 값: Y.m.d)."
 
-#: lib/page-settings/all-forms.php:305
+#: lib/page-settings/all-forms.php:325
 #, fuzzy
 msgid ""
 "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書式"
@@ -6055,7 +6113,7 @@ msgstr ""
 "< A href = \"https://wpdocs.osdn.jp/Formatting_Date_and_Time\" > 날짜 및 시"
 "간 서식 해설 </a>"
 
-#: lib/page-settings/all-funcs.php:226
+#: lib/page-settings/all-funcs.php:244
 #, fuzzy
 msgid "Y.m.d"
 msgstr "Y.m.d"
@@ -6063,8 +6121,8 @@ msgstr "Y.m.d"
 #: lib/page-settings/amp-forms.php:14
 #, fuzzy
 msgid ""
-"AMP（Accelerated Mobile Pages）に関する設定です。投稿ページをモバイル上で高速"
-"表示させるための仕組みです。"
+"AMP（Accelerated Mobile Pages）に関する設定です。投稿・固定ページをモバイル上"
+"で高速表示させるための仕組みです。"
 msgstr ""
 "AMP (Accelerated Mobile Pages)에 대 한 설정입니다. 게재 페이지를 모바일에서 "
 "빠르게 표시할 수 있습니다."
@@ -6104,7 +6162,7 @@ msgstr ""
 "비 600px, 높이 60px 다음과 같이 하십시오. 구조화 된 데이터의 Article > "
 "publisher > logo 에서도 사용 됩니다."
 
-#: lib/page-settings/amp-forms.php:49 lib/page-settings/image-forms.php:121
+#: lib/page-settings/amp-forms.php:49 lib/page-settings/image-forms.php:124
 #, fuzzy
 msgid "画像の拡大効果"
 msgstr "이미지의 확대 효과"
@@ -6119,43 +6177,22 @@ msgstr "AMP Lightbox (확대)"
 msgid "AMPギャラリー（複数画像ギャラリー表示対応）"
 msgstr "AMP 갤러리 (사진 갤러리 보기)"
 
-#: lib/page-settings/amp-forms.php:59 lib/page-settings/image-forms.php:132
+#: lib/page-settings/amp-forms.php:59 lib/page-settings/image-forms.php:136
 #, fuzzy
 msgid "リンク画像をクリックしたときの拡大効果の設定です。"
 msgstr "연결 된 그림을 클릭 하면 확대 효과입니다."
 
 #: lib/page-settings/amp-forms.php:67
 #, fuzzy
-msgid "インラインスタイル処理"
+msgid "インラインスタイル"
 msgstr "인라인 스타일"
 
 #: lib/page-settings/amp-forms.php:71
 #, fuzzy
-msgid "インラインスタイルを取り除く"
-msgstr "인라인 스타일 제거"
-
-#: lib/page-settings/amp-forms.php:72
-#, fuzzy
-msgid ""
-"本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内で"
-"もインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になっ"
-"たり、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしません。"
-msgstr ""
-"본문의 인라인 스타일을 제거 합니다 (권장). 해제 하면 본문 내에서 인라인 "
-"style 특성으로 스타일링 할 수 있습니다. 그러나 AMP 오류의 원인이 되거나 AMP "
-"크기 제한 (50KB) 보다 쉽게 비활성화는 권장 하지 않습니다."
-
-#: lib/page-settings/amp-forms.php:80
-#, fuzzy
-msgid "インラインスタイル"
-msgstr "인라인 스타일"
-
-#: lib/page-settings/amp-forms.php:84
-#, fuzzy
 msgid "インラインスタイルを有効にする"
 msgstr "인라인 스타일을 사용 하도록 설정"
 
-#: lib/page-settings/amp-forms.php:85
+#: lib/page-settings/amp-forms.php:72
 #, fuzzy
 msgid ""
 "本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内で"
@@ -6166,17 +6203,17 @@ msgstr ""
 "style 특성으로 스타일링 할 수 있습니다. 그러나 AMP 오류의 원인이 되거나 AMP "
 "크기 제한 (50KB) 보다 쉽게 되기 때문에 사용은 권장 하지 않습니다."
 
-#: lib/page-settings/amp-forms.php:93
+#: lib/page-settings/amp-forms.php:80
 #, fuzzy
 msgid "サイズ制限対応"
 msgstr "크기 제한 가능"
 
-#: lib/page-settings/amp-forms.php:97
+#: lib/page-settings/amp-forms.php:84
 #, fuzzy
 msgid "スキンのスタイルを有効にする"
 msgstr "스킨의 스타일 사용"
 
-#: lib/page-settings/amp-forms.php:98
+#: lib/page-settings/amp-forms.php:85
 #, fuzzy
 msgid ""
 "凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50KB）を超えてし"
@@ -6187,12 +6224,12 @@ msgstr ""
 "니다. 스킨을 적용 하 여 AMP 오류가 속 출 하는 경우 AMP 페이지에서 스킨을 적"
 "용 하지 않는다는 것은 CSS의 크기를 줄입니다."
 
-#: lib/page-settings/amp-forms.php:100
+#: lib/page-settings/amp-forms.php:87
 #, fuzzy
 msgid "子テーマのスタイルを有効にする"
 msgstr "아 테마의 스타일을 적용 하려면"
 
-#: lib/page-settings/amp-forms.php:101
+#: lib/page-settings/amp-forms.php:88
 #, fuzzy
 msgid ""
 "子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限"
@@ -6205,37 +6242,37 @@ msgstr ""
 "우 AMP 페이지에서 「 아 테마 CSS 」을 적용 하지 않는다는 것은 CSS의 크기를 줄"
 "입니다."
 
-#: lib/page-settings/amp-forms.php:110
+#: lib/page-settings/amp-forms.php:97
 #, fuzzy
 msgid "AMPバリデーター"
 msgstr "AMP 검사기"
 
-#: lib/page-settings/amp-forms.php:115 tmp/admin-panel.php:79
+#: lib/page-settings/amp-forms.php:102 tmp/admin-panel.php:46
 #, fuzzy
 msgid "Google AMPテスト"
 msgstr "Google AMP 테스트"
 
-#: lib/page-settings/amp-forms.php:116 tmp/admin-panel.php:82
+#: lib/page-settings/amp-forms.php:103 tmp/admin-panel.php:49
 #, fuzzy
 msgid "The AMP Validator"
 msgstr "The AMP Validator"
 
-#: lib/page-settings/amp-forms.php:117 tmp/admin-panel.php:85
+#: lib/page-settings/amp-forms.php:104 tmp/admin-panel.php:52
 #, fuzzy
 msgid "AMPBench"
 msgstr "AMPBench"
 
-#: lib/page-settings/amp-forms.php:120
+#: lib/page-settings/amp-forms.php:107
 #, fuzzy
 msgid "「AMPテスト」を行うテストツール（バリデーター）を選択します。"
 msgstr "「 AMP 시험 」을 수행 하는 테스트 도구 (유효성)을 선택 합니다."
 
-#: lib/page-settings/amp-forms.php:129
+#: lib/page-settings/amp-forms.php:116
 #, fuzzy
 msgid "AMP除外カテゴリー"
 msgstr "AMP 제외 카테고리"
 
-#: lib/page-settings/amp-forms.php:134
+#: lib/page-settings/amp-forms.php:121
 #, fuzzy
 msgid "AMPページを生成しないカテゴリを選択してください。"
 msgstr "AMP 페이지를 생성 하지 않는 범주를 선택 하십시오."
@@ -6493,8 +6530,8 @@ msgid "Amazon必須"
 msgstr "Amazon 필수"
 
 #: lib/page-settings/apis-forms.php:36 lib/page-settings/apis-forms.php:43
-#: lib/page-settings/apis-forms.php:50 lib/page-settings/apis-forms.php:104
-#: lib/page-settings/apis-forms.php:111 lib/page-settings/apis-forms.php:192
+#: lib/page-settings/apis-forms.php:50 lib/page-settings/apis-forms.php:122
+#: lib/page-settings/apis-forms.php:129 lib/page-settings/apis-forms.php:210
 #, fuzzy
 msgid "もしも必須"
 msgstr "만약 필수"
@@ -6544,17 +6581,32 @@ msgstr ""
 "섬네일과 별도로 상품에 관련 된 「 카탈로그 사진 (샘플 이미지) 」을 단추 형태"
 "로 표시 합니다. 단추 모양에 마우스를 올려 놓으면 큰 그림으로 표시 됩니다."
 
-#: lib/page-settings/apis-forms.php:61 lib/page-settings/apis-forms.php:129
+#: lib/page-settings/apis-forms.php:61 lib/page-settings/apis-forms.php:147
 #, fuzzy
 msgid "価格を表示する"
 msgstr "가격 보기"
 
-#: lib/page-settings/apis-forms.php:64
+#: lib/page-settings/apis-forms.php:65
 #, fuzzy
-msgid "Amazon在庫価格を表示する"
-msgstr "가격 보기"
+msgid "標準価格"
+msgstr "표준 가격"
+
+#: lib/page-settings/apis-forms.php:66
+#, fuzzy
+msgid "在庫価格（デフォルト）"
+msgstr "숫자 (기본값)"
 
 #: lib/page-settings/apis-forms.php:67
+#, fuzzy
+msgid "最安値"
+msgstr "최저가"
+
+#: lib/page-settings/apis-forms.php:68
+#, fuzzy
+msgid "最高値"
+msgstr "최대값"
+
+#: lib/page-settings/apis-forms.php:80
 #, fuzzy
 msgid ""
 "データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでprice"
@@ -6563,117 +6615,131 @@ msgstr ""
 "데이터 검색 시간 Amazon 판매 페이지에 가격을 표시 합니다. 바로 코드로 price "
 "옵션이 설정 되어 있는 경우 운영 체제의 버전이 우선적으로 적용 됩니다."
 
-#: lib/page-settings/apis-forms.php:69
+#: lib/page-settings/apis-forms.php:83
+#, fuzzy
+msgid "説明文を表示する"
+msgstr "날짜 표시"
+
+#: lib/page-settings/apis-forms.php:84
+#, fuzzy
+msgid ""
+"Amazon側に登録されている説明文を表示します（情報がない場合は表示されませ"
+"ん）。descオプションが設定されている場合は、オプション値が優先して表示されま"
+"す。"
+msgstr ""
+"Amazon 쪽에 등록 된 설명을 표시 합니다 (정보가 없으면 표시 되지 않습니다). "
+"Desc 옵션이 설정 되어 있으면 옵션 값이 무시 됩니다."
+
+#: lib/page-settings/apis-forms.php:87
 #, fuzzy
 msgid "レビューを表示する"
 msgstr "메모 표시"
 
-#: lib/page-settings/apis-forms.php:71
+#: lib/page-settings/apis-forms.php:89
 #, fuzzy
 msgid "レビューページへのリンクテキストを入力"
 msgstr "리뷰 페이지에 링크 텍스트를 입력"
 
-#: lib/page-settings/apis-forms.php:72
+#: lib/page-settings/apis-forms.php:90
 #, fuzzy
 msgid "レビューページへのリンクを表示します。"
 msgstr "카테고리 페이지를 무작위로 표시 합니다."
 
-#: lib/page-settings/apis-forms.php:74 lib/page-settings/apis-forms.php:132
+#: lib/page-settings/apis-forms.php:92 lib/page-settings/apis-forms.php:150
 #, fuzzy
 msgid "ロゴを表示する"
 msgstr "로고를 표시 한다"
 
-#: lib/page-settings/apis-forms.php:75
+#: lib/page-settings/apis-forms.php:93
 #, fuzzy
 msgid "Amazon商品リンクのロゴの表示切り替え。"
 msgstr "Amazon 상품 링크 로고 페이지 전환."
 
-#: lib/page-settings/apis-forms.php:77
+#: lib/page-settings/apis-forms.php:95
 #, fuzzy
 msgid "Amazon検索ボタンを表示する"
 msgstr "Amazon 검색 단추 표시"
 
-#: lib/page-settings/apis-forms.php:78
+#: lib/page-settings/apis-forms.php:96
 #, fuzzy
 msgid "Amazonのキーワード検索ボタンを表示するか。"
 msgstr "Amazon의 키워드 검색 단추를 표시할지 여부."
 
-#: lib/page-settings/apis-forms.php:81
+#: lib/page-settings/apis-forms.php:99
 #, fuzzy
 msgid "Amazonの検索ボタンに表示するテキストを入力してください。"
 msgstr "Amazon의 검색 단추에 표시할 텍스트를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:83 lib/page-settings/apis-forms.php:141
+#: lib/page-settings/apis-forms.php:101 lib/page-settings/apis-forms.php:159
 #, fuzzy
 msgid "検索ボタンのリンク先を詳細ページにする"
 msgstr "검색 단추를 링크로 세부 정보 페이지"
 
-#: lib/page-settings/apis-forms.php:84
+#: lib/page-settings/apis-forms.php:102
 #, fuzzy
 msgid "Amazon検索ボタンのリンクURLを商品詳細ページにするか。"
 msgstr "Amazon 검색 버튼의 링크 URL을 상품 상세 페이지에?"
 
-#: lib/page-settings/apis-forms.php:96 lib/page-settings/apis-funcs.php:158
-#, fuzzy
+#: lib/page-settings/apis-forms.php:114 lib/page-settings/apis-funcs.php:182
 msgid "楽天"
-msgstr "낙천"
+msgstr "라쿠텐"
 
-#: lib/page-settings/apis-forms.php:102
+#: lib/page-settings/apis-forms.php:120
 #, fuzzy
 msgid "楽天アプリケーションID"
 msgstr "낙천 응용 프로그램 ID"
 
-#: lib/page-settings/apis-forms.php:103 lib/page-settings/apis-forms.php:110
+#: lib/page-settings/apis-forms.php:121 lib/page-settings/apis-forms.php:128
 #, fuzzy
 msgid "楽天必須"
 msgstr "낙천 필수"
 
-#: lib/page-settings/apis-forms.php:107
+#: lib/page-settings/apis-forms.php:125
 #, fuzzy
 msgid "楽天APIを利用するためのアプリケーションIDを入力してください。"
 msgstr "낙천 API를 사용 하는 응용 프로그램 ID를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:109
+#: lib/page-settings/apis-forms.php:127
 #, fuzzy
 msgid "楽天アフィリエイトID"
 msgstr "라쿠텐 제휴 ID"
 
-#: lib/page-settings/apis-forms.php:114
+#: lib/page-settings/apis-forms.php:132
 #, fuzzy
 msgid "楽天アフィリエイト用のIDを入力してください。"
 msgstr "라쿠텐 제휴에 대 한 ID를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:121
+#: lib/page-settings/apis-forms.php:139
 #, fuzzy
 msgid "楽天標準ソート順"
 msgstr "낙천 표준 정렬 순서"
 
-#: lib/page-settings/apis-forms.php:122
+#: lib/page-settings/apis-forms.php:140
 #, fuzzy
 msgid "アフィリエイト料率順（高い順）"
 msgstr "제휴 요율 순서 (내림차순)"
 
-#: lib/page-settings/apis-forms.php:123
+#: lib/page-settings/apis-forms.php:141
 #, fuzzy
 msgid "価格順（安い順）"
 msgstr "가격 (오름차순)"
 
-#: lib/page-settings/apis-forms.php:124
+#: lib/page-settings/apis-forms.php:142
 #, fuzzy
 msgid "価格順（高い順）"
 msgstr "가격 (내림차순)"
 
-#: lib/page-settings/apis-forms.php:126
+#: lib/page-settings/apis-forms.php:144
 #, fuzzy
 msgid "商品並び替え優先度"
 msgstr "상품 정렬 우선 순위"
 
-#: lib/page-settings/apis-forms.php:127
+#: lib/page-settings/apis-forms.php:145
 #, fuzzy
 msgid "同一商品番号の商品が複数あった場合の表示優先度です。"
 msgstr "동일 상품 번호 상품이 복수 인 경우 표시 되는 우선 순위입니다."
 
-#: lib/page-settings/apis-forms.php:130
+#: lib/page-settings/apis-forms.php:148
 #, fuzzy
 msgid ""
 "データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードで"
@@ -6682,78 +6748,78 @@ msgstr ""
 "데이터 검색 시간 낙천 시장 판매 페이지에 가격을 표시 합니다. 바로 코드로 "
 "price 옵션이 설정 되어 있는 경우 운영 체제의 버전이 우선적으로 적용 됩니다."
 
-#: lib/page-settings/apis-forms.php:133
+#: lib/page-settings/apis-forms.php:151
 #, fuzzy
 msgid "楽天商品リンクのロゴの表示切り替え。"
 msgstr "라쿠텐 상품 링크 로고 페이지 전환."
 
-#: lib/page-settings/apis-forms.php:135
+#: lib/page-settings/apis-forms.php:153
 #, fuzzy
 msgid "楽天検索ボタンを表示する"
 msgstr "故 단추 표시"
 
-#: lib/page-settings/apis-forms.php:136
+#: lib/page-settings/apis-forms.php:154
 #, fuzzy
 msgid "楽天のキーワード検索ボタンを表示するか。"
 msgstr "라쿠텐의 키워드 검색 단추를 표시할지 여부."
 
-#: lib/page-settings/apis-forms.php:139
+#: lib/page-settings/apis-forms.php:157
 #, fuzzy
 msgid "楽天の検索ボタンに表示するテキストを入力してください。"
 msgstr "라쿠텐의 검색 단추에 표시할 텍스트를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:142
+#: lib/page-settings/apis-forms.php:160
 #, fuzzy
 msgid "楽天検索ボタンのリンク先URLを商品詳細ページにするか。"
 msgstr "故 버튼의 링크 URL을 상품 상세 페이지에?"
 
-#: lib/page-settings/apis-forms.php:153 lib/page-settings/apis-funcs.php:198
+#: lib/page-settings/apis-forms.php:171 lib/page-settings/apis-funcs.php:222
 #, fuzzy
 msgid "Yahoo!ショッピング"
 msgstr "Yahoo! 쇼핑"
 
-#: lib/page-settings/apis-forms.php:158
+#: lib/page-settings/apis-forms.php:176
 #, fuzzy
 msgid "バリューコマースsid"
 msgstr "밸류 상거래 sid"
 
-#: lib/page-settings/apis-forms.php:163
+#: lib/page-settings/apis-forms.php:181
 #, fuzzy
 msgid "バリューコマースpid"
 msgstr "밸류 상거래 pid"
 
-#: lib/page-settings/apis-forms.php:167
+#: lib/page-settings/apis-forms.php:185
 #, fuzzy
 msgid ""
 "バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。"
 msgstr "밸류 상거래에서 Yahoo! 쇼핑 등록 sid와 pid를 반환 하십시오."
 
-#: lib/page-settings/apis-forms.php:172
+#: lib/page-settings/apis-forms.php:190
 #, fuzzy
 msgid "Yahoo!検索ボタンを表示する"
 msgstr "Yahoo! 검색 단추 표시"
 
-#: lib/page-settings/apis-forms.php:173
+#: lib/page-settings/apis-forms.php:191
 #, fuzzy
 msgid "Yahoo!のキーワード検索ボタンを表示するか。"
 msgstr "Yahoo!의 키워드 검색 단추를 표시할지 여부."
 
-#: lib/page-settings/apis-forms.php:176
+#: lib/page-settings/apis-forms.php:194
 #, fuzzy
 msgid "Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。"
 msgstr "Yahoo! 쇼핑 검색 단추에 표시할 텍스트를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:187
+#: lib/page-settings/apis-forms.php:205
 #, fuzzy
 msgid "もしもアフィリエイト"
 msgstr "만약 제휴"
 
-#: lib/page-settings/apis-forms.php:191
+#: lib/page-settings/apis-forms.php:209
 #, fuzzy
 msgid "リンクをもしもアフィリエイトを経由にする"
 msgstr "링크를 만일 제휴사를 통해 하"
 
-#: lib/page-settings/apis-forms.php:193
+#: lib/page-settings/apis-forms.php:211
 #, fuzzy
 msgid ""
 "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月"
@@ -6775,49 +6841,49 @@ msgstr ""
 "일 API를 사용할 수 없게 될 수 있습니다 </span>. PA-API 제한 회수 되지 않으면 "
 "라쿠텐 상품 링크를 이용해 주십시오."
 
-#: lib/page-settings/apis-forms.php:195
+#: lib/page-settings/apis-forms.php:213
 #, fuzzy
 msgid "Amazon a_id"
 msgstr "Amazon a_id"
 
-#: lib/page-settings/apis-forms.php:198
+#: lib/page-settings/apis-forms.php:216
 #, fuzzy
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
 msgstr "만약 제휴 Amazon ID를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:198 lib/page-settings/apis-forms.php:203
-#: lib/page-settings/apis-forms.php:208
+#: lib/page-settings/apis-forms.php:216 lib/page-settings/apis-forms.php:221
+#: lib/page-settings/apis-forms.php:226
 #, fuzzy
 msgid "未入力の場合はデフォルトのリンクが出力されます。"
 msgstr "입력 하지 않은 경우 기본 링크가 출력 됩니다."
 
-#: lib/page-settings/apis-forms.php:200
+#: lib/page-settings/apis-forms.php:218
 #, fuzzy
 msgid "楽天 a_id"
 msgstr "낙천 a_id"
 
-#: lib/page-settings/apis-forms.php:203
+#: lib/page-settings/apis-forms.php:221
 #, fuzzy
 msgid "もしもアフィリエイトの楽天IDを入力してください。"
 msgstr "만약 제휴 낙천 ID를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:205
+#: lib/page-settings/apis-forms.php:223
 #, fuzzy
 msgid "Yahoo!ショッピング a_id"
 msgstr "Yahoo! 쇼핑 a_id"
 
-#: lib/page-settings/apis-forms.php:208
+#: lib/page-settings/apis-forms.php:226
 #, fuzzy
 msgid "もしもアフィリエイトのYahoo!ショッピングIDを入力してください。"
 msgstr "만약 제휴 Yahoo! 쇼핑 ID를 입력 하십시오."
 
-#: lib/page-settings/apis-forms.php:218
+#: lib/page-settings/apis-forms.php:236
 #: lib/page-settings/blogcard-out-forms.php:94
 #, fuzzy
 msgid "キャッシュの保存期間"
 msgstr "캐시 보존 기간"
 
-#: lib/page-settings/apis-forms.php:224
+#: lib/page-settings/apis-forms.php:242
 #, fuzzy
 msgid ""
 "APIキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。間隔が"
@@ -6828,62 +6894,62 @@ msgstr ""
 "다. 간격이 짧을수록 API 요청 제한에 걸릴 가능성이 있기 때문에 주의 해 주십시"
 "오. 자주 액세스 되는 사이트는 길 쭉 하 게 설정 하는 것이 좋습니다."
 
-#: lib/page-settings/apis-forms.php:224
+#: lib/page-settings/apis-forms.php:242
 #, fuzzy
 msgid "削除方法"
 msgstr "제거 방법"
 
-#: lib/page-settings/apis-forms.php:233
+#: lib/page-settings/apis-forms.php:251
 #, fuzzy
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 msgstr "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 
-#: lib/page-settings/apis-forms.php:233
+#: lib/page-settings/apis-forms.php:251
 #, fuzzy
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
 msgstr "Amazon.co.jp Product Advertising API 라이센스 계약"
 
-#: lib/page-settings/apis-forms.php:234
+#: lib/page-settings/apis-forms.php:252
 #, fuzzy
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
 msgstr "https://affiliate.amazon.co.jp/help/topic/t32/"
 
-#: lib/page-settings/apis-forms.php:234
+#: lib/page-settings/apis-forms.php:252
 #, fuzzy
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
 msgstr "Product Advertising API (PA-API) 사용 지침"
 
-#: lib/page-settings/apis-forms.php:235
+#: lib/page-settings/apis-forms.php:253
 #, fuzzy
 msgid "https://webservice.rakuten.co.jp/guide/rule"
 msgstr "https://webservice.rakuten.co.jp/guide/rule"
 
-#: lib/page-settings/apis-forms.php:235
+#: lib/page-settings/apis-forms.php:253
 #, fuzzy
 msgid "楽天ウェブサービス規約"
 msgstr "라쿠텐 웹 서비스 약관"
 
-#: lib/page-settings/apis-forms.php:244
+#: lib/page-settings/apis-forms.php:262
 #, fuzzy
 msgid "エラー設定"
 msgstr "오류 설정"
 
-#: lib/page-settings/apis-forms.php:247
+#: lib/page-settings/apis-forms.php:265
 #, fuzzy
 msgid "APIに関するエラー通知の設定です。"
 msgstr "API에 대 한 오류 알림을 설정 합니다."
 
-#: lib/page-settings/apis-forms.php:255
+#: lib/page-settings/apis-forms.php:273
 #, fuzzy
 msgid "メール通知"
 msgstr "메일 알림"
 
-#: lib/page-settings/apis-forms.php:260
+#: lib/page-settings/apis-forms.php:278
 #, fuzzy
 msgid "商品リンク切れ情報をメールで送信する"
 msgstr "상품 링크 된 정보를 이메일로 보내기"
 
-#: lib/page-settings/apis-forms.php:261
+#: lib/page-settings/apis-forms.php:279
 #, fuzzy
 msgid ""
 "APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエ"
@@ -6892,7 +6958,7 @@ msgstr ""
 "API에서 상품 정보를 얻을 수 없을 때, WordPress에 등록 된 메일 주소로 오류 메"
 "시지를 보냅니다. ※ 메일 보내기 몇 분 지연 될 수 있습니다."
 
-#: lib/page-settings/apis-funcs.php:78
+#: lib/page-settings/apis-funcs.php:102
 #, fuzzy
 msgid "Amazonの商品レビュー・口コミを見る"
 msgstr "Amazon의 상품 리뷰/리뷰 보기"
@@ -6966,7 +7032,6 @@ msgid "アピールエリアを表示するページを設定します。"
 msgstr "어필 영역을 표시할 페이지를 설정 합니다."
 
 #: lib/page-settings/appeal-forms.php:55 lib/page-settings/header-forms.php:54
-#, fuzzy
 msgid "高さ"
 msgstr "높이"
 
@@ -7203,9 +7268,8 @@ msgid "投稿日"
 msgstr "게시 날짜"
 
 #: lib/page-settings/blogcard-in-forms.php:88
-#, fuzzy
 msgid "更新日"
-msgstr "업데이트 날짜"
+msgstr "수정한 날짜"
 
 #: lib/page-settings/blogcard-in-forms.php:91
 #, fuzzy
@@ -7289,7 +7353,7 @@ msgstr "맨 위로 돌아가기 단추 설정"
 
 #: lib/page-settings/buttons-forms.php:16
 #, fuzzy
-msgid "ページトップにスクロール移動するかボタンの設定です。"
+msgid "ページトップにスクロール移動するボタンの設定です。"
 msgstr "페이지 상단으로 스크롤 이동 하거나 버튼 설정입니다."
 
 #: lib/page-settings/buttons-forms.php:31
@@ -7317,60 +7381,9 @@ msgstr "맨 위로 스크롤 단추를 표시할지 여부를 나타냅니다."
 msgid "ボタンのアイコンフォント"
 msgstr "단추 아이콘 글꼴"
 
-#: lib/page-settings/buttons-forms.php:57
-#, fuzzy
-msgid "&#xf102"
-msgstr "&#xf102"
-
-#: lib/page-settings/buttons-forms.php:58
-#, fuzzy
-msgid "&#xf106"
-msgstr "&#xf106"
-
-#: lib/page-settings/buttons-forms.php:59
-#, fuzzy
-msgid "&#xf0aa"
-msgstr "&#xf0aa"
-
-#: lib/page-settings/buttons-forms.php:60
-#, fuzzy
-msgid "&#xf062"
-msgstr "&#xf062"
-
-#: lib/page-settings/buttons-forms.php:61
-#, fuzzy
-msgid "&#xf0d8"
-msgstr "&#xf0d8"
-
-#: lib/page-settings/buttons-forms.php:62
-#: lib/page-settings/buttons-forms.php:67
-#, fuzzy
-msgid "&#xf151"
-msgstr "&#xf151"
-
-#: lib/page-settings/buttons-forms.php:63
-#, fuzzy
-msgid "&#xf139"
-msgstr "&#xf139"
-
-#: lib/page-settings/buttons-forms.php:64
-#, fuzzy
-msgid "&#xf077"
-msgstr "&#xf077"
-
-#: lib/page-settings/buttons-forms.php:65
-#, fuzzy
-msgid "&#xf0a6"
-msgstr "&#xf0a6"
-
-#: lib/page-settings/buttons-forms.php:66
-#, fuzzy
-msgid "&#xf176"
-msgstr "&#xf176"
-
 #: lib/page-settings/buttons-forms.php:69
 #: lib/page-settings/content-forms.php:165
-#: lib/page-settings/content-forms.php:286
+#: lib/page-settings/content-forms.php:285
 #, fuzzy
 msgid "アイコンフォント"
 msgstr "아이콘 글꼴"
@@ -7442,7 +7455,7 @@ msgid "表示内容"
 msgstr "표시 내용"
 
 #: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:216
-#: tmp/admin-panel.php:31
+#: tmp/admin-pv.php:22
 #, fuzzy
 msgid "本日"
 msgstr "오늘"
@@ -7464,9 +7477,8 @@ msgstr "1 년간"
 
 #: lib/page-settings/carousel-forms.php:69
 #: lib/page-settings/single-forms.php:176 lib/widgets/popular-entries.php:220
-#, fuzzy
 msgid "全期間"
-msgstr "전체 기간"
+msgstr "모든 기록"
 
 #: lib/page-settings/carousel-forms.php:72
 #, fuzzy
@@ -7483,9 +7495,8 @@ msgstr "카테고리"
 
 #: lib/page-settings/carousel-forms.php:80
 #: lib/page-settings/single-forms.php:112 lib/tinymce/html-tags.php:43
-#, fuzzy
 msgid "タグ"
-msgstr "태그"
+msgstr "새 이름:"
 
 #: lib/page-settings/carousel-forms.php:82
 #, fuzzy
@@ -7571,7 +7582,6 @@ msgid "オートプレイインターバル"
 msgstr "자동 재생 간격"
 
 #: lib/page-settings/carousel-forms.php:155
-#, fuzzy
 msgid "秒"
 msgstr "초"
 
@@ -7855,9 +7865,8 @@ msgid "ボタン切り換え動作。"
 msgstr "버튼 전환 동작."
 
 #: lib/page-settings/comment-forms.php:79
-#, fuzzy
 msgid "常に表示"
-msgstr "항상 표시"
+msgstr "일"
 
 #: lib/page-settings/comment-forms.php:80
 #, fuzzy
@@ -7974,9 +7983,8 @@ msgstr "외부 링크 열기"
 #: lib/page-settings/content-forms.php:92
 #: lib/page-settings/content-forms.php:197
 #: lib/page-settings/content-forms.php:215
-#, fuzzy
 msgid "変更しない"
-msgstr "변경 하지 않음"
+msgstr "그대로 두기"
 
 #: lib/page-settings/content-forms.php:79
 #, fuzzy
@@ -8072,9 +8080,8 @@ msgstr "Rel 속성으로 external을 추가 합니다."
 
 #: lib/page-settings/content-forms.php:136
 #: lib/page-settings/content-forms.php:256
-#, fuzzy
 msgid "アイコン表示"
-msgstr "아이콘 표시"
+msgstr "아이콘 보기"
 
 #: lib/page-settings/content-forms.php:140
 #: lib/page-settings/content-forms.php:260
@@ -8086,60 +8093,6 @@ msgstr "아이콘 표시"
 #, fuzzy
 msgid "外部リンクの右部にFont Awesomeアイコンを表示するか。"
 msgstr "외부 링크의 오른쪽 부분에 Font Awesome 아이콘을 표시 하는가?"
-
-#: lib/page-settings/content-forms.php:154
-#: lib/page-settings/content-forms.php:274
-#, fuzzy
-msgid "&#xf08e"
-msgstr "&#xf08e"
-
-#: lib/page-settings/content-forms.php:155
-#: lib/page-settings/content-forms.php:275
-#, fuzzy
-msgid "&#xf0c1"
-msgstr "&#xf0c1"
-
-#: lib/page-settings/content-forms.php:156
-#: lib/page-settings/content-forms.php:276
-#, fuzzy
-msgid "&#xf148"
-msgstr "&#xf148"
-
-#: lib/page-settings/content-forms.php:157
-#: lib/page-settings/content-forms.php:277
-#, fuzzy
-msgid "&#xf064"
-msgstr "&#xf064"
-
-#: lib/page-settings/content-forms.php:158
-#: lib/page-settings/content-forms.php:278
-#, fuzzy
-msgid "&#xf045"
-msgstr "&#xf045"
-
-#: lib/page-settings/content-forms.php:159
-#: lib/page-settings/content-forms.php:279
-#, fuzzy
-msgid "&#xf14d"
-msgstr "&#xf14d"
-
-#: lib/page-settings/content-forms.php:160
-#: lib/page-settings/content-forms.php:280
-#, fuzzy
-msgid "&#xf08b"
-msgstr "&#xf08b"
-
-#: lib/page-settings/content-forms.php:161
-#: lib/page-settings/content-forms.php:282
-#, fuzzy
-msgid "&#xf072"
-msgstr "&#xf072"
-
-#: lib/page-settings/content-forms.php:162
-#: lib/page-settings/content-forms.php:283
-#, fuzzy
-msgid "&#xf135"
-msgstr "&#xf135"
 
 #: lib/page-settings/content-forms.php:166
 #, fuzzy
@@ -8176,37 +8129,31 @@ msgstr "본문 내 링크 따라 상태를 설정 합니다."
 msgid "内部リンクの右部にFont Awesomeアイコンを表示するか。"
 msgstr "내부 링크의 오른쪽 부분에 Font Awesome 아이콘을 표시 하는가?"
 
-#: lib/page-settings/content-forms.php:281
-#, fuzzy
-msgid "&#xf090"
-msgstr "&#xf090"
-
-#: lib/page-settings/content-forms.php:287
+#: lib/page-settings/content-forms.php:286
 #, fuzzy
 msgid "内部リンクの右部に表示するFont Awesomeアイコンを設定します。"
 msgstr "내부 링크의 오른쪽 부분에 표시할 Font Awesome 아이콘을 설정 합니다."
 
-#: lib/page-settings/content-forms.php:302
-#, fuzzy
+#: lib/page-settings/content-forms.php:301
 msgid "テーブル設定"
-msgstr "테이블 설정"
+msgstr "표 옵션"
 
-#: lib/page-settings/content-forms.php:305
+#: lib/page-settings/content-forms.php:304
 #, fuzzy
 msgid "テーブル動作の設定です。"
 msgstr "테이블 동작 설정입니다."
 
-#: lib/page-settings/content-forms.php:313
+#: lib/page-settings/content-forms.php:312
 #, fuzzy
 msgid "レスポンシブテーブル"
 msgstr "レスポンシブテーブル"
 
-#: lib/page-settings/content-forms.php:317
+#: lib/page-settings/content-forms.php:316
 #, fuzzy
 msgid "横幅の広いテーブルは横スクロール"
 msgstr "폭 넓은 테이블은 횡 스크롤"
 
-#: lib/page-settings/content-forms.php:318
+#: lib/page-settings/content-forms.php:317
 #, fuzzy
 msgid ""
 "端末幅より広いテーブルが表示されるときは、テーブルを横スクロールして崩れない"
@@ -8215,40 +8162,50 @@ msgstr ""
 "터미널 너비 보다 넓은 테이블이 표시 되 면 테이블을 가로 스크롤 무너질 않도록 "
 "합니다."
 
-#: lib/page-settings/content-forms.php:333
+#: lib/page-settings/content-forms.php:321
+#, fuzzy
+msgid "テーブルの1列目を固定表示"
+msgstr "계속 단추 표시"
+
+#: lib/page-settings/content-forms.php:322
+#, fuzzy
+msgid "横スクロールテーブルで1列目となるth、tdを固定します。"
+msgstr "사이드 스크롤 테이블에서 첫 번째 열의 택일 th, td를 고정 합니다."
+
+#: lib/page-settings/content-forms.php:338
 #, fuzzy
 msgid "投稿情報表示設定"
 msgstr ", 정보 표시 설정"
 
-#: lib/page-settings/content-forms.php:336
+#: lib/page-settings/content-forms.php:341
 #, fuzzy
 msgid "投稿・固定ページの関連情報の表示に関する設定です。"
 msgstr "게시물/고정 페이지 관련 정보 표시에 대 한 설정입니다."
 
-#: lib/page-settings/content-forms.php:344
+#: lib/page-settings/content-forms.php:349
 #, fuzzy
 msgid "投稿関連情報"
 msgstr "게시 관련 정보 보기"
 
-#: lib/page-settings/content-forms.php:348
+#: lib/page-settings/content-forms.php:353
 #: lib/page-settings/index-forms.php:142 lib/page-settings/single-forms.php:236
 #, fuzzy
 msgid "投稿日の表示"
 msgstr "게시 날짜 표시"
 
-#: lib/page-settings/content-forms.php:350
+#: lib/page-settings/content-forms.php:355
 #: lib/page-settings/index-forms.php:150 lib/page-settings/single-forms.php:244
 #, fuzzy
 msgid "更新日の表示"
 msgstr "업데이트 날짜 표시"
 
-#: lib/page-settings/content-forms.php:352
+#: lib/page-settings/content-forms.php:357
 #: lib/page-settings/index-forms.php:153 lib/page-settings/single-forms.php:247
 #, fuzzy
 msgid "投稿者名の表示"
 msgstr "평가자 이름 표시"
 
-#: lib/page-settings/content-forms.php:353
+#: lib/page-settings/content-forms.php:358
 #, fuzzy
 msgid ""
 "投稿・固定ページの関連情報を表示するかどうか。構造化データエラーになるのを防"
@@ -8257,17 +8214,17 @@ msgstr ""
 "게시물/고정 페이지 관련 정보를 표시 하는지 여부. 구조화 된 데이터 오류를 방"
 "지 하기 위해 CSS에서 표시 됩니다."
 
-#: lib/page-settings/content-forms.php:361
+#: lib/page-settings/content-forms.php:366
 #, fuzzy
 msgid "記事を読む時間"
 msgstr "기사를 읽는 시간"
 
-#: lib/page-settings/content-forms.php:365
+#: lib/page-settings/content-forms.php:370
 #, fuzzy
 msgid "記事を読む時間の目安を表示する"
 msgstr "기사를 읽는 시간 기준 보기"
 
-#: lib/page-settings/content-forms.php:366
+#: lib/page-settings/content-forms.php:371
 #, fuzzy
 msgid "本文を読むのに必要な所要時間を表示します。時間はあくまで目安です。"
 msgstr ""
@@ -8443,44 +8400,54 @@ msgstr "순위 표시"
 msgid "ツールバーのランキングショートコードドロップダウンを表示するか。"
 msgstr "도구 모음 순위 바로 코드 드롭다운 표시 하는가?"
 
-#: lib/page-settings/editor-forms.php:149
+#: lib/page-settings/editor-forms.php:140
+#, fuzzy
+msgid "拡張カラーパレット色"
+msgstr "확장 된 색상 팔레트 색깔"
+
+#: lib/page-settings/editor-forms.php:151
+#, fuzzy
+msgid "任意のカラーパレット色を設定できます。"
+msgstr "JavaScript 라이브러리 버전을 설정할 수 있습니다."
+
+#: lib/page-settings/editor-forms.php:168
 #, fuzzy
 msgid "旧エディター設定"
 msgstr "편집기 설정"
 
-#: lib/page-settings/editor-forms.php:154
+#: lib/page-settings/editor-forms.php:173
 #, fuzzy
 msgid "ビジュアルエディター用の設定です。"
 msgstr "비주얼 편집기 목록에 표시"
 
-#: lib/page-settings/editor-forms.php:158
+#: lib/page-settings/editor-forms.php:177
 #, fuzzy
 msgid "文字カウンター"
 msgstr "문자 카운터"
 
-#: lib/page-settings/editor-forms.php:162
+#: lib/page-settings/editor-forms.php:181
 #, fuzzy
 msgid "タイトル等の文字数カウンター表示"
 msgstr "제목 등의 글자 수 카운터 표시"
 
-#: lib/page-settings/editor-forms.php:163
+#: lib/page-settings/editor-forms.php:182
 #, fuzzy
 msgid ""
 "タイトルや、SEOタイトル、メタディスクリプションの文字数を表示します。※ブロッ"
 "クエディターではタイトル文字数は表示されません。"
 msgstr "제목 및 SEO 제목, 메타 설명의 문자 수를 표시 합니다."
 
-#: lib/page-settings/editor-forms.php:171
+#: lib/page-settings/editor-forms.php:190
 #, fuzzy
 msgid "確認ダイアログ"
 msgstr "확인 대화 상자"
 
-#: lib/page-settings/editor-forms.php:175
+#: lib/page-settings/editor-forms.php:194
 #, fuzzy
 msgid "ページ公開前に確認アラートを出す"
 msgstr "페이지를 게시 하기 전에 확인 알림을 발행"
 
-#: lib/page-settings/editor-forms.php:176
+#: lib/page-settings/editor-forms.php:195
 #, fuzzy
 msgid "記事を投稿する前に確認ダイアログを表示します。※旧エディター用の設定"
 msgstr "기사를 게시 하기 전에 확인 대화 상자를 표시 합니다."
@@ -8646,7 +8613,6 @@ msgid "幅："
 msgstr "너비:"
 
 #: lib/page-settings/header-forms.php:99
-#, fuzzy
 msgid " × "
 msgstr "×"
 
@@ -8754,48 +8720,48 @@ msgstr "본문 이미지 설정"
 msgid "投稿・固定ページの本文部分に関する画像の設定です。"
 msgstr "게시물/고정 페이지 본문에 대 한 이미지 설정입니다."
 
-#: lib/page-settings/image-forms.php:59
+#: lib/page-settings/image-forms.php:62
 #, fuzzy
 msgid "アイキャッチの表示"
 msgstr "아이 캐치 볼"
 
-#: lib/page-settings/image-forms.php:63
+#: lib/page-settings/image-forms.php:66
 #, fuzzy
 msgid "本文上にアイキャッチを表示する"
 msgstr "본문에 아이 캐치를 표시 한다"
 
-#: lib/page-settings/image-forms.php:64
+#: lib/page-settings/image-forms.php:67
 #, fuzzy
 msgid "投稿・固定ページトップにアイキャッチを表示します。"
 msgstr "게시물/고정 페이지 상단에 아이 캐치를 표시 합니다."
 
-#: lib/page-settings/image-forms.php:68
+#: lib/page-settings/image-forms.php:71
 #, fuzzy
 msgid "アイキャッチラベルを表示する"
 msgstr "아이 캐치 레이블 표시"
 
-#: lib/page-settings/image-forms.php:69
+#: lib/page-settings/image-forms.php:72
 #, fuzzy
 msgid ""
 "投稿・固定ページのアイキャッチに表示されるカテゴリラベルの表示切り替えです。"
 msgstr "게시물/고정 페이지 아이 캐치에 표시 되는 범주 레이블 표시 토글입니다."
 
-#: lib/page-settings/image-forms.php:71
+#: lib/page-settings/image-forms.php:74
 #, fuzzy
 msgid "アイキャッチの中央寄せ"
 msgstr "아이 캐치의 가운데"
 
-#: lib/page-settings/image-forms.php:72
+#: lib/page-settings/image-forms.php:75
 #, fuzzy
 msgid "投稿・固定ページに表示されるアイキャッチをカラムの中央に表示します。"
 msgstr "게시물/고정 페이지에 표시 되는 아이 캐치를 열의 가운데에 표시 합니다."
 
-#: lib/page-settings/image-forms.php:74
+#: lib/page-settings/image-forms.php:77
 #, fuzzy
 msgid "アイキャッチをカラム幅に引き伸ばす"
 msgstr "아이 캐치를 열 너비를 늘이려면"
 
-#: lib/page-settings/image-forms.php:75
+#: lib/page-settings/image-forms.php:78
 #, fuzzy
 msgid ""
 "アイキャッチ画像に小さな画像を使っていても、強制的にカラム幅に拡大して表示し"
@@ -8804,27 +8770,27 @@ msgstr ""
 "아이 캐치 이미지 작은 이미지를 사용 하 여 강제로 열 너비를 확장 하 여 표시 합"
 "니다."
 
-#: lib/page-settings/image-forms.php:77
+#: lib/page-settings/image-forms.php:80
 #, fuzzy
 msgid "アイキャッチにキャプションがある場合は表示する"
 msgstr "아이 캐치에 캡션이 있으면 표시"
 
-#: lib/page-settings/image-forms.php:78
+#: lib/page-settings/image-forms.php:81
 #, fuzzy
 msgid "アイキャッチ画像にキャプションが設定してある場合、表示するかどうか。"
 msgstr "아이 캐치 이미지에 캡션을 설정한 경우 표시할지 여부를 나타냅니다."
 
-#: lib/page-settings/image-forms.php:87
+#: lib/page-settings/image-forms.php:90
 #, fuzzy
 msgid "アイキャッチの自動設定"
 msgstr "아이 캐치의 자동 설정"
 
-#: lib/page-settings/image-forms.php:92
+#: lib/page-settings/image-forms.php:95
 #, fuzzy
 msgid "アイキャッチ自動設定を有効にする"
 msgstr "아이 캐치 자동 설정 사용"
 
-#: lib/page-settings/image-forms.php:93
+#: lib/page-settings/image-forms.php:96
 #, fuzzy
 msgid ""
 "記事を保存したり公開したりするときに、本文中に最初に出てくる画像をアイキャッ"
@@ -8833,12 +8799,12 @@ msgstr ""
 "문서를 저장 하거나 게시할 때 본문에 처음 나올 사진을 아이 캐치 합니다. ※ 미"
 "리 보기에 반영 되지 않습니다."
 
-#: lib/page-settings/image-forms.php:101
+#: lib/page-settings/image-forms.php:104
 #, fuzzy
 msgid "画像の囲み効果"
 msgstr "사진의 포위 효과"
 
-#: lib/page-settings/image-forms.php:113
+#: lib/page-settings/image-forms.php:116
 #, fuzzy
 msgid ""
 "画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。"
@@ -8846,97 +8812,102 @@ msgstr ""
 "이미지 테두리 설정입니다. 사용 하면 흰색 계통의 그림도 그림으로 인식 하기 쉽"
 "습니다."
 
-#: lib/page-settings/image-forms.php:127
+#: lib/page-settings/image-forms.php:130
 #, fuzzy
-msgid "baguetteBox（スマホ向け）"
+msgid "Spotlight（軽量・高機能ギャラリー）"
+msgstr "Spotlight (경량 ㆍ 고성능 갤러리)"
+
+#: lib/page-settings/image-forms.php:131
+#, fuzzy
+msgid "baguetteBox（軽量・スマホ向け）"
 msgstr "BaguetteBox (헤매고 용)"
 
-#: lib/page-settings/image-forms.php:128
+#: lib/page-settings/image-forms.php:132
 #, fuzzy
-msgid "Lity（単機能・軽量）"
-msgstr "Lity (단일 기능/경량)"
+msgid "Lity（軽量・1枚ずつ表示）"
+msgstr "Lity (경량 ・ 1 장씩 보기)"
 
-#: lib/page-settings/image-forms.php:129
+#: lib/page-settings/image-forms.php:133
 #, fuzzy
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: lib/page-settings/image-forms.php:146
+#: lib/page-settings/image-forms.php:150
 #, fuzzy
 msgid "全体画像設定"
 msgstr "전체 사진 설정"
 
-#: lib/page-settings/image-forms.php:149
+#: lib/page-settings/image-forms.php:153
 #, fuzzy
 msgid "全てのページで共通して利用する画像の設定です。"
 msgstr "모든 페이지에 공통으로 사용 하는 이미지를 설정 합니다."
 
-#: lib/page-settings/image-forms.php:156
+#: lib/page-settings/image-forms.php:160
 #, fuzzy
 msgid "サムネイル画像"
 msgstr "축소판 이미지"
 
-#: lib/page-settings/image-forms.php:161
+#: lib/page-settings/image-forms.php:165
 #, fuzzy
 msgid "テレビ（地デジ）やYouTubeと同じ比率。"
 msgstr "텔레비전 (지 거) 및 YouTube와 같은 비율입니다."
 
-#: lib/page-settings/image-forms.php:162
+#: lib/page-settings/image-forms.php:166
 #, fuzzy
 msgid "9:16, 1:1.777..（地デジ・YouTube比）デフォルト"
 msgstr "9:16, 1:1.777 ... (땅 데 지/YouTube 비율) 기본"
 
-#: lib/page-settings/image-forms.php:164
+#: lib/page-settings/image-forms.php:168
 #, fuzzy
 msgid "人間が最も美しいと感じる比率とされています。"
 msgstr "인간이 가장 아름 답다 고 느끼는 비율로 되어 있습니다."
 
-#: lib/page-settings/image-forms.php:165
+#: lib/page-settings/image-forms.php:169
 #, fuzzy
 msgid "約5:8, 1:1.618..（黄金比）"
 msgstr "대략 5:8, 1:1.618 ... (황금 비율)"
 
-#: lib/page-settings/image-forms.php:167
+#: lib/page-settings/image-forms.php:171
 #, fuzzy
 msgid "一眼レフのアスペクト比。ハガキの縦横比に近いです。"
 msgstr "일안 반사식의 비율. 엽서의 종횡비에 가깝습니다."
 
-#: lib/page-settings/image-forms.php:168
+#: lib/page-settings/image-forms.php:172
 #, fuzzy
 msgid "2:3, 1:1.5（一眼レフ比）"
 msgstr "2:3, 1:1.5 (회장 님)"
 
-#: lib/page-settings/image-forms.php:170
+#: lib/page-settings/image-forms.php:174
 #, fuzzy
 msgid "日本の木造建築に古くから使われている比率。大和比とも呼ばれています。"
 msgstr "일본의 목조 건축에 옛부터 사용 되는 비율. 다 이와 비 라고도 합니다."
 
-#: lib/page-settings/image-forms.php:171
+#: lib/page-settings/image-forms.php:175
 #, fuzzy
 msgid "約5:7, 1:1.414..（白銀比）"
 msgstr "대략 5:7, 1:1.414 ... (백은 대비)"
 
-#: lib/page-settings/image-forms.php:173
+#: lib/page-settings/image-forms.php:177
 #, fuzzy
 msgid "アナログテレビやデジタルカメラ、PowerPointのスライドと同じ比率。"
 msgstr "아날로그 텔레비전과 디지털 카메라, PowerPoint 슬라이드와 동일한 비율."
 
-#: lib/page-settings/image-forms.php:174
+#: lib/page-settings/image-forms.php:178
 #, fuzzy
 msgid "3:4, 1:1.333..（アナログテレビ・デジカメ比）"
 msgstr "3:4, 1:1.333 ... (아날로그 텔레비전 디카 대비)"
 
-#: lib/page-settings/image-forms.php:176
+#: lib/page-settings/image-forms.php:180
 #, fuzzy
 msgid "単なる正方形。"
 msgstr "단순한 사각."
 
-#: lib/page-settings/image-forms.php:177
+#: lib/page-settings/image-forms.php:181
 #, fuzzy
 msgid "1:1（正方形）"
 msgstr "1:1 (사각)"
 
-#: lib/page-settings/image-forms.php:180
+#: lib/page-settings/image-forms.php:184
 #, fuzzy
 msgid ""
 "インデックス等で使われるサムネイル画像の縦横比率を変更します。※「インデックス"
@@ -8945,17 +8916,17 @@ msgstr ""
 "인덱스에 사용 되는 축소판 그림의 가로 세로 비율을 변경 합니다. ※ 「 인덱스 카"
 "드 타입 」 「 큰 카드 」와 「 타일 카드 」에는 적용 되지 않습니다."
 
-#: lib/page-settings/image-forms.php:189
+#: lib/page-settings/image-forms.php:193
 #, fuzzy
 msgid "Retinaディスプレイ"
 msgstr "Retina 디스플레이"
 
-#: lib/page-settings/image-forms.php:193
+#: lib/page-settings/image-forms.php:197
 #, fuzzy
 msgid "サムネイルをRetinaディスプレイ対応にする"
 msgstr "썸네일을 Retina 디스플레이에"
 
-#: lib/page-settings/image-forms.php:194
+#: lib/page-settings/image-forms.php:198
 #, fuzzy
 msgid ""
 "サムネイルをRetinaディスプレイ対応端末で見ても綺麗に表示されるようにします。"
@@ -8964,79 +8935,79 @@ msgstr ""
 "썸네일을 Retina 디스플레이 대응 단말기에서 봐도 깔끔하게 표시 되도록 합니다. "
 "※ 「 인덱스 카드 타입 」 「 큰 카드 」에는 적용 되지 않습니다."
 
-#: lib/page-settings/image-forms.php:203
+#: lib/page-settings/image-forms.php:207
 #, fuzzy
 msgid "これらの設定で変更されるサムネイル部分はこちら。"
 msgstr "이러한 설정이 변경 되는 썸네일 부분은 여기에 있습니다."
 
-#: lib/page-settings/image-forms.php:205
+#: lib/page-settings/image-forms.php:209
 #, fuzzy
 msgid ""
-"インデックス．アーカイブ、検索結果ページのエントリーカードのサムネイル。"
+"インデックス、アーカイブ、検索結果ページのエントリーカードのサムネイル。"
 msgstr "인덱스. 아카이브, 검색 결과 페이지에서 등록 카드의 축소판."
 
-#: lib/page-settings/image-forms.php:205
+#: lib/page-settings/image-forms.php:209
 #, fuzzy
 msgid "インデックスカード"
 msgstr "색인 카드"
 
-#: lib/page-settings/image-forms.php:206
+#: lib/page-settings/image-forms.php:210
 #, fuzzy
-msgid "新着記事ウィジェットもサムネイル。"
+msgid "新着記事ウィジェットのサムネイル。"
 msgstr "새 게시물 위젯도 축소판."
 
-#: lib/page-settings/image-forms.php:206 lib/widgets/new-entries.php:19
+#: lib/page-settings/image-forms.php:210 lib/widgets/new-entries.php:19
 #: lib/widgets/new-entries.php:57
 #, fuzzy
 msgid "新着記事"
 msgstr "최신 기사"
 
-#: lib/page-settings/image-forms.php:207
+#: lib/page-settings/image-forms.php:211
 #, fuzzy
 msgid "人気記事ウィジェットのサムネイル。"
 msgstr "인기 게시물 위젯 엄지."
 
-#: lib/page-settings/image-forms.php:208
+#: lib/page-settings/image-forms.php:212
 #, fuzzy
 msgid "関連記事のエントリーカードのサムネイル。"
 msgstr "관련 기사 등록 카드의 축소판."
 
-#: lib/page-settings/image-forms.php:209
+#: lib/page-settings/image-forms.php:213
 #, fuzzy
 msgid "カルーセルカードのサムネイル。"
 msgstr "회전식 카드의 축소판."
 
-#: lib/page-settings/image-forms.php:210
+#: lib/page-settings/image-forms.php:214
 #, fuzzy
 msgid "ページ送りナビのサムネイル。※デフォルトのみ）"
 msgstr "페이징을 내비게이션의 축소판. ※ 기본 전용)"
 
-#: lib/page-settings/image-forms.php:210
+#: lib/page-settings/image-forms.php:214
 #, fuzzy
 msgid "ページ送りナビ"
 msgstr "페이징을 나비"
 
-#: lib/page-settings/image-forms.php:211
+#: lib/page-settings/image-forms.php:215
 #, fuzzy
 msgid "内部ブログカード、外部ブログカードのサムネイル。"
 msgstr "내부 블로그 카드, 외부 블로그 카드의 축소판."
 
-#: lib/page-settings/image-forms.php:219
+#: lib/page-settings/image-forms.php:223
 #, fuzzy
 msgid "NO IMAGE設定"
 msgstr "NO IMAGE 설정"
 
-#: lib/page-settings/image-forms.php:222
+#: lib/page-settings/image-forms.php:226
 #, fuzzy
 msgid "アイキャッチの存在しない投稿のサムネイル画像設定です。"
 msgstr "아이 캐치의 존재 하지 않는 게시물의 썸네일 이미지 설정입니다."
 
-#: lib/page-settings/image-forms.php:230
+#: lib/page-settings/image-forms.php:234
 #, fuzzy
 msgid "NO IMAGE画像"
 msgstr "NO IMAGE 이미지"
 
-#: lib/page-settings/image-forms.php:235
+#: lib/page-settings/image-forms.php:239
 #, fuzzy
 msgid ""
 "アイキャッチが存在しない投稿・固定ページのサムネイルに利用される画像ファイル"
@@ -9113,8 +9084,8 @@ msgstr "타일 카드 3 열"
 #: lib/page-settings/index-forms.php:74
 #, fuzzy
 msgid ""
-"一覧リストのカード表示を変更します。カード表示数を変更するには、「設定→1ペー"
-"ジに表示する最大投稿数」から変更してください。"
+"一覧リストのカード表示を変更します。カード表示数を変更するには、「設定 → 表示"
+"設定 → 1ページに表示する最大投稿数」から変更してください。"
 msgstr ""
 "목록 카드 보기를 변경 합니다. 카드 숫자를 변경 하려면 「 설정 → 1 페이지에 표"
 "시할 최대 게시물 」에서 변경 하십시오."
@@ -9168,7 +9139,6 @@ msgid "省略文字列"
 msgstr "약어 문자열"
 
 #: lib/page-settings/index-forms.php:121 lib/page-settings/index-funcs.php:103
-#, fuzzy
 msgid "..."
 msgstr "..."
 
@@ -9236,18 +9206,12 @@ msgstr "버튼 숨기기 (중간 메뉴 에서만)"
 msgid "トップメニュー"
 msgstr "상단 메뉴 너비"
 
-#: lib/page-settings/mobile-buttons-forms.php:34 lib/settings.php:226
+#: lib/page-settings/mobile-buttons-forms.php:34 lib/settings.php:254
 #, fuzzy
 msgid "ヘッダーモバイルボタン"
 msgstr "헤더 레이아웃"
 
-#: lib/page-settings/mobile-buttons-forms.php:34
-#: lib/page-settings/mobile-buttons-forms.php:36
-#, fuzzy
-msgid "（β版）"
-msgstr "PWA 설정 (β 버전)"
-
-#: lib/page-settings/mobile-buttons-forms.php:35 lib/settings.php:228
+#: lib/page-settings/mobile-buttons-forms.php:35 lib/settings.php:256
 #, fuzzy
 msgid "フッターモバイルボタン"
 msgstr "바닥글 (모바일)"
@@ -9400,9 +9364,8 @@ msgstr ""
 "표시 됩니다."
 
 #: lib/page-settings/notice-forms.php:49
-#, fuzzy
 msgid "通知メッセージ"
-msgstr "알림 메시지"
+msgstr "정보 메시지"
 
 #: lib/page-settings/notice-forms.php:53
 #, fuzzy
@@ -9471,8 +9434,8 @@ msgstr ""
 #: lib/page-settings/notice-forms.php:115
 #, fuzzy
 msgid ""
-"メッセージに対して独自の背テキスト色を設定したい場合は色を選択してください。"
-"デフォルト色を変更したい場合は、こちらの色が優先されます。"
+"メッセージに対して独自のテキスト色を設定したい場合は色を選択してください。デ"
+"フォルト色を変更したい場合は、こちらの色が優先されます。"
 msgstr ""
 "메시지에 대해 고유 키 텍스트 색을 설정 하려면 색을 선택 하십시오. 기본 색을 "
 "변경 하려는 경우에는 색이 무시 됩니다."
@@ -9744,13 +9707,12 @@ msgstr "고정 페이지 코멘트 표시 설정입니다."
 #: lib/page-settings/page-forms.php:23 lib/page-settings/single-forms.php:93
 #: lib/page-settings/single-forms.php:290
 #: lib/page-settings/single-forms.php:385
-#, fuzzy
 msgid "表示"
-msgstr "표시"
+msgstr "보이기"
 
 #: lib/page-settings/page-forms.php:28
 #, fuzzy
-msgid "固定ページページにコメントを表示するか。"
+msgid "固定ページにコメントを表示するか。"
 msgstr "고정 페이지에 코멘트를 표시 하는가?"
 
 #: lib/page-settings/page-forms.php:41 lib/page-settings/single-forms.php:403
@@ -9867,7 +9829,6 @@ msgid "ユーザーがログイン時のPWA動作を制御します。"
 msgstr "사용자가 로그인 할 때 PWA 동작을 제어 합니다."
 
 #: lib/page-settings/pwa-forms.php:51 lib/page-speech-balloon/form.php:61
-#, fuzzy
 msgid "名前"
 msgstr "이름"
 
@@ -9956,9 +9917,8 @@ msgstr ""
 
 #: lib/page-settings/pwa-forms.php:140 lib/widgets/new-entries.php:133
 #: lib/widgets/popular-entries.php:182
-#, fuzzy
 msgid "表示モード"
-msgstr "디스플레이 모드"
+msgstr "프레젠테이션 모드"
 
 #: lib/page-settings/pwa-forms.php:145
 #, fuzzy
@@ -10012,8 +9972,8 @@ msgstr "화면 세로 가로 방향을 설정 합니다."
 
 #: lib/page-settings/recommended-forms.php:13
 #, fuzzy
-msgid "おすすめカード設定（β版）"
-msgstr "프리미엄 카드 설정 (β 버전)"
+msgid "おすすめカード設定"
+msgstr "추천"
 
 #: lib/page-settings/recommended-forms.php:16
 #, fuzzy
@@ -10052,46 +10012,26 @@ msgid ""
 msgstr "카테고리 페이지에 출력 될 제목 태그 서식을 선택 하십시오."
 
 #: lib/page-settings/recommended-forms.php:78
-#, fuzzy
+#: lib/widgets/recommended-cards.php:111
 msgid "表示スタイル"
-msgstr "풍선 도움말 텍스트 스타일"
-
-#: lib/page-settings/recommended-forms.php:83
-#, fuzzy
-msgid "画像のみ"
-msgstr "그림만"
+msgstr "보기 스타일"
 
 #: lib/page-settings/recommended-forms.php:84
-#, fuzzy
-msgid "画像中央に白文字タイトル"
-msgstr "사진 중앙에 흰색 글자 제목"
-
-#: lib/page-settings/recommended-forms.php:85
-#, fuzzy
-msgid "画像中央にラベルでタイトル"
-msgstr "프론트 페이지 제목"
-
-#: lib/page-settings/recommended-forms.php:86
-#, fuzzy
-msgid "画像下段もを黒背景にしタイトルを重ねる"
-msgstr "이미지 하단을 검정 배경으로 제목을 첨가"
-
-#: lib/page-settings/recommended-forms.php:89
 #, fuzzy
 msgid "おすすめカードの表示スタイルを変更します。"
 msgstr "목마를 표시할 순서를 변경 합니다."
 
-#: lib/page-settings/recommended-forms.php:97
+#: lib/page-settings/recommended-forms.php:92
 #, fuzzy
 msgid "カード余白"
 msgstr "카드 여백"
 
-#: lib/page-settings/recommended-forms.php:101
+#: lib/page-settings/recommended-forms.php:96
 #, fuzzy
 msgid "おすすめカード毎に余白を設ける"
 msgstr "프리미엄 카드 마다 여백을"
 
-#: lib/page-settings/recommended-forms.php:102
+#: lib/page-settings/recommended-forms.php:97
 #, fuzzy
 msgid ""
 "デフォルトだとカードはすべてくっついています。この機能を有効にすることによ"
@@ -10100,17 +10040,17 @@ msgstr ""
 "태 라고 카드는 모두 붙어 있습니다. 이 기능을 사용 하 여 각 카드에 여백으로 설"
 "정 됩니다."
 
-#: lib/page-settings/recommended-forms.php:110
+#: lib/page-settings/recommended-forms.php:105
 #, fuzzy
 msgid "カードエリア左右余白"
 msgstr "카드 영역 왼쪽 여백"
 
-#: lib/page-settings/recommended-forms.php:114
+#: lib/page-settings/recommended-forms.php:109
 #, fuzzy
 msgid "おすすめカードエリアの左右に余白を設ける"
 msgstr "프리미엄 카드 위치를 좌우로 여백을"
 
-#: lib/page-settings/recommended-forms.php:115
+#: lib/page-settings/recommended-forms.php:110
 #, fuzzy
 msgid ""
 "デフォルトだと、カードエリアは画面幅いっぱいになっています。この設定を有効に"
@@ -10268,7 +10208,7 @@ msgstr "첨부 파일 페이지에 noindex 하"
 msgid "画像や動画、ファイルなどの添付ページをnoindex設定にします。"
 msgstr "이미지나 동영상, 파일 등의 첨부 문서를 noindex 설정 합니다."
 
-#: lib/page-settings/seo-forms.php:73
+#: lib/page-settings/seo-forms.php:73 tmp/admin-panel.php:73
 #, fuzzy
 msgid "構造化データ"
 msgstr "구조적 데이터"
@@ -10577,9 +10517,8 @@ msgid "ページ送りナビの見た目を変更します。"
 msgstr "페이징을 나비 모양을 변경 합니다."
 
 #: lib/page-settings/single-forms.php:320
-#, fuzzy
 msgid "表示位置"
-msgstr "광고 게재 위치"
+msgstr "위치"
 
 #: lib/page-settings/single-forms.php:326
 #, fuzzy
@@ -10685,9 +10624,8 @@ msgid "スキン一覧"
 msgstr "스킨 목록"
 
 #: lib/page-settings/skin-forms.php:61
-#, fuzzy
 msgid "作者"
-msgstr "저자"
+msgstr "선택 반전"
 
 #: lib/page-settings/skin-forms.php:83
 #, fuzzy
@@ -10818,19 +10756,16 @@ msgstr "웹사이트"
 #: lib/page-settings/sns-follow-forms.php:72
 #: lib/page-settings/sns-share-forms-bottom.php:68
 #: lib/page-settings/sns-share-forms-top.php:55 tmp/sns-share-buttons.php:18
-#, fuzzy
 msgid "Twitter"
-msgstr "Twitter"
+msgstr "트위터"
 
 #: lib/page-settings/sns-follow-forms.php:73
 #: lib/page-settings/sns-share-forms-bottom.php:71
 #: lib/page-settings/sns-share-forms-top.php:58 tmp/sns-share-buttons.php:22
-#, fuzzy
 msgid "Facebook"
-msgstr "Facebook"
+msgstr "페이스북"
 
 #: lib/page-settings/sns-follow-forms.php:74 tmp/sns-share-buttons.php:30
-#, fuzzy
 msgid "Google+"
 msgstr "Google+"
 
@@ -10854,9 +10789,8 @@ msgid "Pinterest"
 msgstr "Pinterest"
 
 #: lib/page-settings/sns-follow-forms.php:78
-#, fuzzy
 msgid "YouTube"
-msgstr "YouTube"
+msgstr "유튜브"
 
 #: lib/page-settings/sns-follow-forms.php:79
 #: lib/page-settings/sns-share-forms-bottom.php:89
@@ -11135,9 +11069,8 @@ msgstr "개별 공유 버튼을 표시 하거나 숨깁니다."
 
 #: lib/page-settings/sns-share-forms-bottom.php:77
 #: lib/page-settings/sns-share-forms-top.php:64
-#, fuzzy
 msgid "Google"
-msgstr "Google"
+msgstr "&Google"
 
 #: lib/page-settings/sns-share-forms-bottom.php:80
 #: lib/page-settings/sns-share-forms-top.php:67 tmp/sns-share-buttons.php:34
@@ -11549,7 +11482,6 @@ msgstr "게시물/고정 페이지 제목"
 #: lib/page-settings/title-forms.php:150 lib/page-settings/title-forms.php:245
 #: lib/page-settings/title-forms.php:250 lib/page-settings/title-forms.php:251
 #: lib/page-settings/title-forms.php:252
-#, fuzzy
 msgid "ページタイトル"
 msgstr "페이지 제목"
 
@@ -11676,12 +11608,10 @@ msgid "タイトルの区切りとなる文字を設定してください。"
 msgstr "제목 구분 문자를 설정 하십시오."
 
 #: lib/page-settings/title-funcs.php:22
-#, fuzzy
 msgid " - "
 msgstr "-"
 
 #: lib/page-settings/title-funcs.php:25
-#, fuzzy
 msgid " | "
 msgstr "|"
 
@@ -11692,7 +11622,7 @@ msgstr "목차 설정"
 
 #: lib/page-settings/toc-forms.php:16
 #, fuzzy
-msgid "Table of contentsライクな目次設定です。"
+msgid "プラグインのTable of contentsに似た目次設定です。"
 msgstr "Table of contents와 목차 설정입니다."
 
 #: lib/page-settings/toc-forms.php:35
@@ -11769,7 +11699,6 @@ msgid "開："
 msgstr "포장:"
 
 #: lib/page-settings/toc-forms.php:94 lib/page-settings/toc-funcs.php:54
-#, fuzzy
 msgid "開く"
 msgstr "열기"
 
@@ -11779,7 +11708,6 @@ msgid "閉："
 msgstr "폐쇄:"
 
 #: lib/page-settings/toc-forms.php:98 lib/page-settings/toc-funcs.php:62
-#, fuzzy
 msgid "閉じる"
 msgstr "닫기"
 
@@ -12009,6 +11937,19 @@ msgstr ""
 msgid "吹き出しのスタイルを設定します。"
 msgstr "설명선 스타일을 가져오거나 설정 합니다."
 
+#: lib/page-speech-balloon/form.php:103
+#, fuzzy
+msgid "人物位置"
+msgstr "사용자 위치"
+
+#: lib/page-speech-balloon/form.php:108
+msgid "左"
+msgstr "왼쪽"
+
+#: lib/page-speech-balloon/form.php:109
+msgid "右"
+msgstr "높이:"
+
 #: lib/page-speech-balloon/form.php:112
 #, fuzzy
 msgid "アイコンを表示するポジションを設定します。"
@@ -12180,7 +12121,6 @@ msgid "アイコン画像が入力されていません。"
 msgstr "아이콘 이미지가 입력 되어 있지 않습니다."
 
 #: lib/page-speech-balloon/speech-balloon-func.php:19
-#, fuzzy
 msgid "匿名"
 msgstr "익명"
 
@@ -12435,8 +12375,8 @@ msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:147
 #, fuzzy
-msgid "Googleフォント（β版）"
-msgstr "WEB 글꼴 (β 버전)"
+msgid "Googleフォント"
+msgstr "글꼴"
 
 #: lib/page-speed-up/speed-up-forms.php:151
 #, fuzzy
@@ -12486,7 +12426,6 @@ msgid "JavaScriptの読み込み方式を変更する設定です。"
 msgstr "JavaScript를 로드 하는 방법을 변경 하는 설정입니다."
 
 #: lib/page-speed-up/speed-up-forms.php:194
-#, fuzzy
 msgid "スクリプト"
 msgstr "스크립트"
 
@@ -12551,77 +12490,95 @@ msgstr ""
 "필 페이지에 변경 됩니다. 입력 하지 않은 경우, 저자 아카이브 페이지에 연결 됩"
 "니다."
 
-#: lib/settings.php:224
+#: lib/settings.php:252
 #, fuzzy
 msgid "ヘッダーメニュー"
 msgstr "바닥글 메뉴 너비"
 
-#: lib/settings.php:225
+#: lib/settings.php:253
 #, fuzzy
 msgid "ヘッダーモバイルメニュー"
 msgstr "전역 탐색 메뉴 색"
 
-#: lib/settings.php:227
+#: lib/settings.php:255
 #, fuzzy
 msgid "フッターメニュー"
 msgstr "바닥글 메뉴 너비"
 
-#: lib/settings.php:229
+#: lib/settings.php:257
 #, fuzzy
 msgid "モバイルスライドインメニュー"
 msgstr "모바일 친화적"
 
-#: lib/settings.php:463
+#: lib/settings.php:498
 #, fuzzy
 msgid "通常のカード表示"
 msgstr "블로그 카드 보기"
 
-#: lib/settings.php:466
+#: lib/settings.php:501
 #, fuzzy
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr "카드의 상하에 점선 구분선이 표시 됩니다."
 
-#: lib/settings.php:467
-#, fuzzy
+#: lib/settings.php:502
 msgid "区切り線"
 msgstr "구분선"
 
-#: lib/settings.php:469
+#: lib/settings.php:504
 #, fuzzy
 msgid "カード自体を罫線で囲みます。"
 msgstr "카드 자체를 테두리로 둘러쌉니다."
 
-#: lib/settings.php:470
+#: lib/settings.php:505
 #, fuzzy
 msgid "囲み枠"
 msgstr "둘러싸고 테두리"
 
-#: lib/settings.php:472
+#: lib/settings.php:507
 #, fuzzy
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr "설명선 스타일을 가져오거나 설정 합니다."
 
-#: lib/settings.php:473
+#: lib/settings.php:508
 #, fuzzy
 msgid "大きなサムネイル"
 msgstr "큰 엄지 손톱"
 
-#: lib/settings.php:475
+#: lib/settings.php:510
 #, fuzzy
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr "큰 미리 보기 이미지 하단에 제목을 맞춥니다."
 
-#: lib/settings.php:476
+#: lib/settings.php:511
 #, fuzzy
 msgid "タイトルを重ねた大きなサムネイル"
 msgstr "제목을 첨가 했다 큰 축소판"
 
-#: lib/shortcodes-amazon.php:55
+#: lib/settings.php:520
+msgid "画像のみ"
+msgstr "이미지만"
+
+#: lib/settings.php:521
+#, fuzzy
+msgid "画像中央に白文字タイトル"
+msgstr "사진 중앙에 흰색 글자 제목"
+
+#: lib/settings.php:522
+#, fuzzy
+msgid "画像中央にラベルでタイトル"
+msgstr "프론트 페이지 제목"
+
+#: lib/settings.php:523
+#, fuzzy
+msgid "画像下段を黒背景にしタイトルを重ねる"
+msgstr "이미지 하단을 검정 배경으로 제목을 첨가"
+
+#: lib/shortcodes-amazon.php:257
 #, fuzzy
 msgid "webservices.amazon.co.jp"
 msgstr "webservices.amazon.co.jp"
 
-#: lib/shortcodes-amazon.php:197
+#: lib/shortcodes-amazon.php:426
 #, fuzzy
 msgid ""
 "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定"
@@ -12630,70 +12587,66 @@ msgstr ""
 "Amazon API 액세스 키 또는 비밀 키 또는 추적 ID가 설정 되어 있지 않습니다. "
 "「 Cocoon 설정 」의 「 API 」 탭에서 입력 하십시오."
 
-#: lib/shortcodes-amazon.php:203
+#: lib/shortcodes-amazon.php:432
 #, fuzzy
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "Amazon 상품 링크 바로 코드에 ASIN가 입력 되지 않습니다."
 
-#: lib/shortcodes-amazon.php:213
+#: lib/shortcodes-amazon.php:443
 #, fuzzy
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中な"
-"どにより、リクエストに応答できない場合に出力されるエラーコードです。このエ"
-"ラーが頻出する場合は「API」設定項目にある「キャッシュの保存期間」を長めに設定"
-"することをおすすめします。"
+"どにより、リクエストに応答できない場合に出力されるエラーコードです。サーバー"
+"の「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してく"
+"ださい。このエラーが頻出する場合は「API」設定項目にある「キャッシュの保存期"
+"間」を長めに設定することをおすすめします。"
 msgstr ""
 "503 오류가 발생 합니다. 이 오류는 PA-API 액세스 제한을 초과 하거나, 유지 보"
 "수 등으로 인해 요청에 응답할 수 없는 경우에 표시 되는 오류 코드입니다. 이 오"
 "류가 자주 사용 되는 경우에는 「 API 」 설정 항목에 있는 「 캐시 보존 」을 길 "
 "쭉 하 게 설정 하는 것이 좋습니다."
 
-#: lib/shortcodes-amazon.php:222
+#: lib/shortcodes-amazon.php:456
 #, fuzzy
 msgid "アイテムを取得できませんでした。"
 msgstr "항목을 가져올 수 없습니다."
 
-#: lib/shortcodes-amazon.php:224
+#: lib/shortcodes-amazon.php:458
 #, fuzzy
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "이 콘텐츠는 로그인 사용자 에게만 표시 됩니다."
 
-#: lib/shortcodes-amazon.php:633
+#: lib/shortcodes-amazon.php:918
 #, fuzzy
 msgid "Amazon商品取得エラー"
 msgstr "Amazon 상품 검색 오류"
 
-#: lib/shortcodes-amazon.php:635
+#: lib/shortcodes-amazon.php:920
 #, fuzzy
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Amazon 상품 링크를 가져올 수 없습니다."
 
-#: lib/shortcodes-amazon.php:649
+#: lib/shortcodes-amazon.php:934
 #, fuzzy
 msgid "Amazonで詳細を見る"
 msgstr "Amazon에서 자세히 보기"
 
-#: lib/shortcodes-product-func.php:13 lib/shortcodes-product-func.php:26
-#, fuzzy
-msgid "www.amazon.co.jp"
-msgstr "www.amazon.co.jp"
-
-#: lib/shortcodes-product-func.php:328
+#: lib/shortcodes-product-func.php:339
 #, fuzzy
 msgid "（"
 msgstr "("
 
-#: lib/shortcodes-product-func.php:328
+#: lib/shortcodes-product-func.php:339
 #, fuzzy
 msgid "時点"
 msgstr "시점"
 
-#: lib/shortcodes-product-func.php:328
+#: lib/shortcodes-product-func.php:339
 #, fuzzy
 msgid "）"
 msgstr ")"
 
-#: lib/shortcodes-product-func.php:396
+#: lib/shortcodes-product-func.php:407
 #, fuzzy
 msgid "楽天で詳細を見る"
 msgstr "Amazon에서 자세히 보기"
@@ -12762,9 +12715,8 @@ msgid "日付未入力"
 msgstr "날짜 입력"
 
 #: lib/shortcodes.php:343
-#, fuzzy
 msgid "歳"
-msgstr "세"
+msgstr "나이"
 
 #: lib/shortcodes.php:427
 #, fuzzy
@@ -12901,11 +12853,6 @@ msgstr "토글 상자 내용"
 msgid "振り仮名"
 msgstr "후리가나 이름"
 
-#: lib/tinymce/insert-html.php:34
-#, fuzzy
-msgid "HTML挿入"
-msgstr "HTML 삽입"
-
 #: lib/tinymce/insert-html.php:35
 #, fuzzy
 msgid "HTMLを挿入してください"
@@ -12996,27 +12943,26 @@ msgstr "로그인 사용자에 게 표시할 내용을 입력 하십시오."
 msgid "ログインユーザーのみ表示"
 msgstr "로그인 사용자만 표시"
 
-#: lib/utils.php:771
+#: lib/utils.php:784
 #, fuzzy
 msgid "スクロールできます"
 msgstr "스크롤할 수 있습니다"
 
-#: lib/utils.php:859
-#, fuzzy
+#: lib/utils.php:872
 msgid "公開"
-msgstr "공개"
+msgstr "발행"
 
-#: lib/utils.php:860
+#: lib/utils.php:873
 #, fuzzy
 msgid "記事を公開してもよろしいですか？"
 msgstr "기사를 게시 하 시겠습니까?"
 
-#: lib/utils.php:2418
+#: lib/utils.php:2463
 #, fuzzy, php-format
 msgid "%s年"
 msgstr "%s 년"
 
-#: lib/utils.php:2420
+#: lib/utils.php:2465
 #, fuzzy, php-format
 msgid "%s年%sヶ月"
 msgstr "%s %s 달"
@@ -13356,12 +13302,12 @@ msgstr "404 페이지를 사용자 지정 하는 ウィジットエリア입니�
 msgid "パソコンとモバイル端末両方に表示される広告ウィジェットです。"
 msgstr "컴퓨터와 모바일 기기 모두에 표시 되는 광고 위젯입니다."
 
-#: lib/widgets/ad.php:63 lib/widgets/mobile-ad.php:63 lib/widgets/pc-ad.php:67
+#: lib/widgets/ad.php:60 lib/widgets/mobile-ad.php:60 lib/widgets/pc-ad.php:64
 #, fuzzy
 msgid "広告タグ"
 msgstr "광고 태그"
 
-#: lib/widgets/ad.php:65 lib/widgets/mobile-ad.php:65 lib/widgets/pc-ad.php:69
+#: lib/widgets/ad.php:62 lib/widgets/mobile-ad.php:62 lib/widgets/pc-ad.php:66
 #, fuzzy
 msgid ""
 "AdSenseの場合はレスポンシブタグを挿入してください。未記入の場合は、設定項目に"
@@ -13370,12 +13316,12 @@ msgstr ""
 "AdSense의 경우 レスポンシブタグ를 삽입 하십시오. 설문의 경우 설정에 지정 된 "
 "AdSense 코드가 사용 됩니다."
 
-#: lib/widgets/ad.php:71 lib/widgets/mobile-ad.php:71 lib/widgets/pc-ad.php:75
+#: lib/widgets/ad.php:68 lib/widgets/mobile-ad.php:68 lib/widgets/pc-ad.php:72
 #, fuzzy
 msgid "広告フォーマット（AdSenseコード入力時のみ有効）"
 msgstr "광고 형식 (AdSense 코드 입력 시만 적용)"
 
-#: lib/widgets/ad.php:82 lib/widgets/mobile-ad.php:82 lib/widgets/pc-ad.php:86
+#: lib/widgets/ad.php:79 lib/widgets/mobile-ad.php:79 lib/widgets/pc-ad.php:83
 #, fuzzy
 msgid "広告ラベルを表示する"
 msgstr "광고 레이블을 표시 하려면"
@@ -13423,7 +13369,6 @@ msgid "[S] クラシックテキスト"
 msgstr "[S] 클래식 텍스트"
 
 #: lib/widgets/classic-text.php:59
-#, fuzzy
 msgid "タイトル："
 msgstr "제목:"
 
@@ -13535,18 +13480,12 @@ msgstr "밝은 녹색"
 msgid "琥珀色（アンバー）"
 msgstr "앰버 (호박)"
 
-#: lib/widgets/cta-box.php:179
-#, fuzzy
-msgid "ビープオレンジ"
-msgstr "경고음 오렌지"
-
 #: lib/widgets/cta-box.php:181
 #, fuzzy
 msgid "藍色"
 msgstr "인디 고"
 
 #: lib/widgets/display-widgets.php:127
-#, fuzzy
 msgid "表示設定"
 msgstr "표시 설정"
 
@@ -13566,9 +13505,8 @@ msgid "チェック・入力したページで表示"
 msgstr "검사 및 입력 한 페이지에 표시"
 
 #: lib/widgets/display-widgets.php:163
-#, fuzzy
 msgid "ページ"
-msgstr "페이지"
+msgstr "Page"
 
 #: lib/widgets/display-widgets.php:167
 #, fuzzy
@@ -13711,9 +13649,8 @@ msgid ""
 msgstr "모바일 에서만 나타나는 텍스트 위젯입니다. 768px 이하로 나타납니다."
 
 #: lib/widgets/mobile-text.php:80 lib/widgets/pc-text.php:79
-#, fuzzy
 msgid "テキスト"
-msgstr "텍스트"
+msgstr "RAW 그림"
 
 #: lib/widgets/navi-entries.php:19
 #, fuzzy
@@ -13800,12 +13737,12 @@ msgstr ""
 "컴퓨터 에서만 표시 되는 두 직사각형 광고 위젯입니다. 768px 보다 큰 화면에 표"
 "시 됩니다."
 
-#: lib/widgets/pc-double-ads.php:63
+#: lib/widgets/pc-double-ads.php:64
 #, fuzzy
 msgid "広告タグ（左）"
 msgstr "광고 태그 (왼쪽)"
 
-#: lib/widgets/pc-double-ads.php:70
+#: lib/widgets/pc-double-ads.php:71
 #, fuzzy
 msgid "広告タグ（右）"
 msgstr "광고 태그 (오른쪽)"
@@ -13904,6 +13841,16 @@ msgstr "관리자 제외"
 msgid "管理者のコメントを表示しない"
 msgstr "관리자 댓글 숨기기"
 
+#: lib/widgets/recommended-cards.php:20
+#, fuzzy
+msgid "おすすめカード一覧を表示するウィジェットです。"
+msgstr "최근에 게시 된 메모를 표시 하는 위젯입니다."
+
+#: lib/widgets/recommended-cards.php:120
+#, fuzzy
+msgid "余白を有効にする"
+msgstr "인증을 사용 하도록 설정"
+
 #: lib/widgets/related-entries.php:20
 #, fuzzy
 msgid ""
@@ -13948,93 +13895,85 @@ msgstr "목차의 링크를 표시 하는 위젯입니다."
 msgid "サイト内を検索"
 msgstr "사이트에서 찾기"
 
-#: tmp/admin-panel.php:35
-#, fuzzy
-msgid "週"
-msgstr "주"
-
-#: tmp/admin-panel.php:50
-#, fuzzy
-msgid "Jetpackの統計"
-msgstr "Jetpack 통계"
-
-#: tmp/admin-panel.php:65
+#: tmp/admin-panel.php:32
 #, fuzzy
 msgid "WLWで編集"
 msgstr "WLW에서 편집"
 
-#: tmp/admin-panel.php:74
+#: tmp/admin-panel.php:41
 #, fuzzy
 msgid "AMPページへ"
 msgstr "AMP 페이지"
 
-#: tmp/admin-panel.php:97
+#: tmp/admin-panel.php:64
 #, fuzzy
 msgid "ページスピード"
 msgstr "페이지 속도"
 
-#: tmp/admin-panel.php:100
+#: tmp/admin-panel.php:67
 #, fuzzy
 msgid "GTmetrix"
 msgstr "GTmetrix"
 
-#: tmp/admin-panel.php:103
+#: tmp/admin-panel.php:70
 #, fuzzy
 msgid "モバイルフレンドリー"
 msgstr "모바일 친화적"
 
-#: tmp/admin-panel.php:106
-#, fuzzy
-msgid "構造化データー"
-msgstr "구조적 데이터"
-
-#: tmp/admin-panel.php:109
+#: tmp/admin-panel.php:76
 #, fuzzy
 msgid "HTML5"
 msgstr "HTML5"
 
-#: tmp/admin-panel.php:112
-#, fuzzy
+#: tmp/admin-panel.php:79
 msgid "アウトライン"
-msgstr "개요"
+msgstr "윤곽"
 
-#: tmp/admin-panel.php:115
+#: tmp/admin-panel.php:82
 #, fuzzy
 msgid "SEOチェキ"
 msgstr "SEO チェキ"
 
-#: tmp/admin-panel.php:118
+#: tmp/admin-panel.php:85
 #, fuzzy
 msgid "ツイート検索"
 msgstr "트 윗 검색"
 
-#: tmp/admin-panel.php:130
+#: tmp/admin-panel.php:97
 #, fuzzy
 msgid "レスポンシブテスト"
 msgstr "レスポンシブテスト"
 
-#: tmp/admin-panel.php:133
+#: tmp/admin-panel.php:100
 #, fuzzy
 msgid "Sizzy"
 msgstr "Sizzy"
 
-#: tmp/admin-panel.php:137
+#: tmp/admin-panel.php:104
 #, fuzzy
 msgid "Resolution Test"
 msgstr "Resolution Test"
 
+#: tmp/admin-pv.php:26
+msgid "週"
+msgstr "주간"
+
+#: tmp/admin-pv.php:43
+#, fuzzy
+msgid "Jetpackの統計"
+msgstr "Jetpack 통계"
+
 #: tmp/breadcrumbs-page.php:13 tmp/breadcrumbs.php:15
 #: tmp/mobile-home-button.php:17
-#, fuzzy
 msgid "ホーム"
-msgstr "홈"
+msgstr "자택"
 
 #: tmp/button-go-to-top.php:19
 #, fuzzy
 msgid "トップへ戻る"
 msgstr "맨 위로 돌아가기"
 
-#: tmp/content.php:78
+#: tmp/content.php:81
 #, fuzzy, php-format
 msgid "この記事は<span class=\"bold\">約%s分</span>で読めます。"
 msgstr ""
@@ -14106,7 +14045,7 @@ msgstr "Mplus 1p (WEB)"
 msgid "タイトルとURLをコピーしました"
 msgstr "제목 및 URL을 복사 했습니다."
 
-#: tmp/list-not-found-posts.php:12
+#: tmp/list-not-found-posts.php:9
 #, fuzzy
 msgid "投稿が見つかりませんでした。"
 msgstr "게시물을 찾을 수 없습니다."
@@ -14117,14 +14056,12 @@ msgid "フォロー"
 msgstr "SNS 소식"
 
 #: tmp/mobile-next-button.php:18 tmp/pager-page-links.php:17
-#, fuzzy
 msgid "次へ"
-msgstr "다음에"
+msgstr "다음"
 
 #: tmp/mobile-prev-button.php:18 tmp/pager-page-links.php:16
-#, fuzzy
 msgid "前へ"
-msgstr "이전에"
+msgstr "image caption"
 
 #: tmp/mobile-share-button.php:20
 #, fuzzy
@@ -14137,9 +14074,8 @@ msgid "目次へ"
 msgstr "목차"
 
 #: tmp/pagination.php:33
-#, fuzzy
 msgid "次のページ"
-msgstr "다음 페이지"
+msgstr "다음"
 
 #: tmp/related-list.php:21
 #, fuzzy
@@ -14237,14 +14173,139 @@ msgid "はてブ"
 msgstr "はて 드라이브"
 
 #: tmp/sns-share-buttons.php:38
-#, fuzzy
 msgid "LINE"
 msgstr "LINE"
 
 #: tmp/sns-share-buttons.php:50
-#, fuzzy
 msgid "コピー"
-msgstr "복사"
+msgstr "복사(C)"
+
+#, fuzzy
+#~ msgid "インラインスタイル処理"
+#~ msgstr "인라인 스타일"
+
+#, fuzzy
+#~ msgid "インラインスタイルを取り除く"
+#~ msgstr "인라인 스타일 제거"
+
+#, fuzzy
+#~ msgid ""
+#~ "本文中のインラインスタイルを取り除きます（有効推奨）。無効にすると、本文内"
+#~ "でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因に"
+#~ "なったり、AMPのサイズ制限（50KB）を超えやすくなるため無効は推奨はしませ"
+#~ "ん。"
+#~ msgstr ""
+#~ "본문의 인라인 스타일을 제거 합니다 (권장). 해제 하면 본문 내에서 인라인 "
+#~ "style 특성으로 스타일링 할 수 있습니다. 그러나 AMP 오류의 원인이 되거나 "
+#~ "AMP 크기 제한 (50KB) 보다 쉽게 비활성화는 권장 하지 않습니다."
+
+#, fuzzy
+#~ msgid "Amazon在庫価格を表示する"
+#~ msgstr "가격 보기"
+
+#, fuzzy
+#~ msgid "&#xf102"
+#~ msgstr "&#xf102"
+
+#, fuzzy
+#~ msgid "&#xf106"
+#~ msgstr "&#xf106"
+
+#, fuzzy
+#~ msgid "&#xf0aa"
+#~ msgstr "&#xf0aa"
+
+#, fuzzy
+#~ msgid "&#xf062"
+#~ msgstr "&#xf062"
+
+#, fuzzy
+#~ msgid "&#xf0d8"
+#~ msgstr "&#xf0d8"
+
+#, fuzzy
+#~ msgid "&#xf151"
+#~ msgstr "&#xf151"
+
+#, fuzzy
+#~ msgid "&#xf139"
+#~ msgstr "&#xf139"
+
+#, fuzzy
+#~ msgid "&#xf077"
+#~ msgstr "&#xf077"
+
+#, fuzzy
+#~ msgid "&#xf0a6"
+#~ msgstr "&#xf0a6"
+
+#, fuzzy
+#~ msgid "&#xf176"
+#~ msgstr "&#xf176"
+
+#, fuzzy
+#~ msgid "&#xf08e"
+#~ msgstr "&#xf08e"
+
+#, fuzzy
+#~ msgid "&#xf0c1"
+#~ msgstr "&#xf0c1"
+
+#, fuzzy
+#~ msgid "&#xf148"
+#~ msgstr "&#xf148"
+
+#, fuzzy
+#~ msgid "&#xf064"
+#~ msgstr "&#xf064"
+
+#, fuzzy
+#~ msgid "&#xf045"
+#~ msgstr "&#xf045"
+
+#, fuzzy
+#~ msgid "&#xf14d"
+#~ msgstr "&#xf14d"
+
+#, fuzzy
+#~ msgid "&#xf08b"
+#~ msgstr "&#xf08b"
+
+#, fuzzy
+#~ msgid "&#xf072"
+#~ msgstr "&#xf072"
+
+#, fuzzy
+#~ msgid "&#xf135"
+#~ msgstr "&#xf135"
+
+#, fuzzy
+#~ msgid "&#xf090"
+#~ msgstr "&#xf090"
+
+#, fuzzy
+#~ msgid "Lity（単機能・軽量）"
+#~ msgstr "Lity (단일 기능/경량)"
+
+#, fuzzy
+#~ msgid "（β版）"
+#~ msgstr "PWA 설정 (β 버전)"
+
+#, fuzzy
+#~ msgid "おすすめカード設定（β版）"
+#~ msgstr "프리미엄 카드 설정 (β 버전)"
+
+#, fuzzy
+#~ msgid "Googleフォント（β版）"
+#~ msgstr "WEB 글꼴 (β 버전)"
+
+#, fuzzy
+#~ msgid "ビープオレンジ"
+#~ msgstr "경고음 오렌지"
+
+#, fuzzy
+#~ msgid "構造化データー"
+#~ msgstr "구조적 데이터"
 
 #, fuzzy
 #~ msgid "はんなり明朝（WEBフォント）"
