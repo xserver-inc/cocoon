@@ -610,11 +610,13 @@ select option.fa{
     &:last-of-type{
       background-color: #fff;
     }
+
   }
 
   .ranking-item-name-text .tips{
     font-weight: normal;
   }
+
 
   .ranking-item{
     margin-bottom: 1em;
@@ -622,6 +624,16 @@ select option.fa{
     overflow: visible;
     background-color: #fafafa;
 
+    ul{
+      display: flex;
+      padding-left: 0;
+      li{
+        margin-right: 12px;
+        input{
+          margin-right: 2px;
+        }
+      }
+    }
 
     &:last-of-type{
       background-color: #eaf5fa;
@@ -716,7 +728,6 @@ select option.fa{
 
   .ranking-item-link-tag textarea{
     height: 80px;
-
   }
 
   .ranking-item-img-desc > div,

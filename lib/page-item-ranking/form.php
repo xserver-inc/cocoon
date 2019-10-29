@@ -119,8 +119,8 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
 
       </div>
       <div class="ranking-item-rating">
+      <label style="float:left;"><?php _e('評価：', THEME_NAME); ?></label>
         <?php
-        generate_label_tag('', __('評価：', THEME_NAME) );
         $options = array(
           'none' => __( 'なし', THEME_NAME ),
           '0.0'    => __( '0',    THEME_NAME ),
