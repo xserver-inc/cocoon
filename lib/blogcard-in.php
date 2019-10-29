@@ -167,6 +167,9 @@ function url_to_internal_blogcard_tag($url){
   $tag =
   '<a href="'.$url.'" title="'.esc_attr($title).'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
     '<div class="blogcard internal-blogcard'.$additional_class.'">'.
+      '<div class="blogcard-label internal-blogcard-label">'.
+        '<span class="fa"></span>'.
+      '</div>'.
       '<figure class="blogcard-thumbnail internal-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content internal-blogcard-content">'.
         '<div class="blogcard-title internal-blogcard-title">'.$title.'</div>'.

@@ -3949,8 +3949,7 @@ label.screen-reader-text {
   border-top-color: #fff;
 }
 
-.blogcard-type .blogcard::before,
-.blogcard-type .blogcard::after {
+.blogcard-label {
   position: absolute;
   top: -18px;
   left: 16px;
@@ -3961,96 +3960,101 @@ label.screen-reader-text {
   border-radius: 3px;
   white-space: pre;
   letter-spacing: 0.7px;
+  display: none;
 }
 
-.blogcard-type .blogcard::before {
+.blogcard-label .fa::before {
   font-family: FontAwesome;
+  margin-right: 6px;
 }
 
-.blogcard-type .blogcard::after {
-  padding: 3px 0.6em 3px 0;
-  left: 42px;
+.blogcard-type .blogcard-label {
+  display: block;
 }
 
-.bct-related .blogcard::before {
-  content: " ";
+.bct-none .blogcard-label {
+  display: none;
 }
 
-.bct-related .blogcard::after {
+.bct-related .blogcard-label .fa::before {
+  content: "";
+}
+
+.bct-related .blogcard-label::after {
   content: "関連記事";
 }
 
-.bct-reference .blogcard::before {
-  content: " ";
+.bct-reference .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-reference .blogcard::after {
+.bct-reference .blogcard-label::after {
   content: "参考記事";
   left: 44px;
 }
 
-.bct-reference-link .blogcard::before {
-  content: " ";
+.bct-reference-link .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-reference-link .blogcard::after {
+.bct-reference-link .blogcard-label::after {
   content: "参考リンク";
   left: 44px;
 }
 
-.bct-popular .blogcard::before {
-  content: " ";
+.bct-popular .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-popular .blogcard::after {
+.bct-popular .blogcard-label::after {
   content: "人気記事";
 }
 
-.bct-pickup .blogcard::before {
-  content: " ";
+.bct-pickup .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-pickup .blogcard::after {
+.bct-pickup .blogcard-label::after {
   content: "ピックアップ";
 }
 
-.bct-check .blogcard::before {
-  content: " ";
+.bct-check .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-check .blogcard::after {
+.bct-check .blogcard-label::after {
   content: "チェック";
 }
 
-.bct-together .blogcard::before {
-  content: " ";
+.bct-together .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-together .blogcard::after {
+.bct-together .blogcard-label::after {
   content: "あわせて読みたい";
 }
 
-.bct-detail .blogcard::before {
-  content: " ";
+.bct-detail .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-detail .blogcard::after {
+.bct-detail .blogcard-label::after {
   content: "詳細はこちら";
 }
 
-.bct-official .blogcard::before {
-  content: " ";
+.bct-official .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-official .blogcard::after {
+.bct-official .blogcard-label::after {
   content: "公式サイト";
 }
 
-.bct-dl .blogcard::before {
-  content: " ";
+.bct-dl .blogcard-label .fa::before {
+  content: "";
 }
 
-.bct-dl .blogcard::after {
+.bct-dl .blogcard-label::after {
   content: "ダウンロード";
 }
 

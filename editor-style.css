@@ -98,47 +98,47 @@ span.btn-wrap {
 }
 
 .blogcard-type.bct-none::before {
-  content: " ラベルなし";
+  content: "  ラベルなし";
 }
 
 .blogcard-type.bct-related::before {
-  content: " 関連記事";
+  content: "  関連記事";
 }
 
 .blogcard-type.bct-reference::before {
-  content: " 参考記事";
+  content: "  参考記事";
 }
 
 .blogcard-type.bct-reference-link::before {
-  content: " 参考リンク";
+  content: "  参考リンク";
 }
 
 .blogcard-type.bct-popular::before {
-  content: " 人気記事";
+  content: "  人気記事";
 }
 
 .blogcard-type.bct-pickup::before {
-  content: " ピックアップ";
+  content: "  ピックアップ";
 }
 
 .blogcard-type.bct-check::before {
-  content: " チェック";
+  content: "  チェック";
 }
 
 .blogcard-type.bct-together::before {
-  content: " あわせて読みたい";
+  content: "  あわせて読みたい";
 }
 
 .blogcard-type.bct-detail::before {
-  content: " 詳細はこちら";
+  content: "  詳細はこちら";
 }
 
 .blogcard-type.bct-official::before {
-  content: " 公式サイト";
+  content: "  公式サイト";
 }
 
 .blogcard-type.bct-dl::before {
-  content: " ダウンロード";
+  content: "  ダウンロード";
 }
 
 .font-awesome-5 .bct-related::before,
