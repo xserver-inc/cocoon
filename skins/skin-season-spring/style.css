@@ -246,16 +246,11 @@ a {
     color: #666;
     margin-bottom: 0.4em;
 }
-.blogcard-type .blogcard::before,
-.blogcard-type .blogcard::after {
+.blogcard-label {
     padding: 5px 15px;
     font-weight: 600;
     font-size: 0.7em;
     opacity: 0.8;
-}
-.blogcard-type .blogcard::after{
-	padding-left: 0;
-	left: 54px;
 }
 .blogcard-wrap{
 	margin:2.5em auto;
@@ -263,36 +258,28 @@ a {
 .blogcard-snippet{
 	color:#999;
 }
-.bct-related .blogcard::before,
-.bct-related .blogcard::after{
+.bct-related .blogcard-label{
 		background:#fd79a8;
 }
-.bct-reference .blogcard::before,
-.bct-reference .blogcard::after{
+.bct-reference .blogcard-label{
 		background:#1abc9c;
 }
-.bct-popular .blogcard::before,
-.bct-popular .blogcard::after{
+.bct-popular .blogcard-label{
 		background:#ffa502;
 }
-.bct-together .blogcard::before,
-.bct-together .blogcard::after{
+.bct-together .blogcard-label{
 		background:#0984e3;
 }
-.bct-detail .blogcard::before,
-.bct-detail .blogcard::after{
+.bct-detail .blogcard-label{
 		background:#848ee3;
 }
-.bct-check .blogcard::before,
-.bct-check .blogcard::after{
+.bct-check .blogcard-label{
 		background:#ED4C67;
 }
-.bct-pickup .blogcard::before,
-.bct-pickup .blogcard::after{
+.bct-pickup .blogcard-label{
 		background:#F79F1F;
 }
-.bct-official .blogcard::before,
-.bct-official .blogcard::after{
+.bct-official .blogcard-label{
 		background:#636e72;
 }
 /************************************
