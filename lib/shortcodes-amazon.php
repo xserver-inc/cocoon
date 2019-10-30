@@ -175,7 +175,8 @@ function get_amazon_itemlookup_json($asin){
   }
 
   $serviceName = 'ProductAdvertisingAPI';
-  $region = 'us-west-2';
+  $region = __( 'us-west-2', THEME_NAME );
+  $region = apply_filters('amazon_webservices_region', $region);
 
   //アクセスキー
   $accessKey = trim(get_amazon_api_access_key_id());
