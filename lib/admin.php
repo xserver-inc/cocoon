@@ -640,7 +640,8 @@ function tiny_mce_before_init_custom( $mceInit ) {
   //旧ビジュアルエディター
   if (isset($mceInit['body_class'])) {
     if (!is_plugin_fourm_page()) {
-      $mceInit['body_class'] .= ' main article';
+      $fa_class = ' '.str_replace('_', '-', get_site_icon_font());;
+      $mceInit['body_class'] .= ' main article'.$fa_class;
     }
 
     if (is_admin()) {
