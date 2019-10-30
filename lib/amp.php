@@ -747,9 +747,11 @@ function generate_style_amp_custom_tag(){?>
   ///////////////////////////////////////////
   //Font Awesome5のスタイル
   ///////////////////////////////////////////
-  $css_fa5 = css_url_to_css_minify_code(get_template_directory_uri().'/css/fontawesome5.css');
-  if ($css_fa5 !== false) {
-    $css_all .= apply_filters( 'amp_font_awesome_5_css', $css_fa5 );
+  if (is_site_icon_font_font_awesome_5()) {
+    $css_fa5 = css_url_to_css_minify_code(get_template_directory_uri().'/css/fontawesome5.css');
+    if ($css_fa5 !== false) {
+      $css_all .= apply_filters( 'amp_font_awesome_5_css', $css_fa5 );
+    }
   }
 
   ///////////////////////////////////////////
