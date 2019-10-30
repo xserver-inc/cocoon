@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-29 20:31+0900\n"
-"PO-Revision-Date: 2019-10-29 20:55+0900\n"
+"POT-Creation-Date: 2019-10-30 23:32+0900\n"
+"PO-Revision-Date: 2019-10-30 23:34+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -260,7 +260,7 @@ msgstr "Bitte geben Sie die Gutschrift ein. Auch Tageingabe ist möglich."
 msgid "ラベル"
 msgstr "Aufkleber"
 
-#: blocks/src/block/blogcard/block.js:60 lib/page-item-ranking/form.php:125
+#: blocks/src/block/blogcard/block.js:60 lib/page-item-ranking/form.php:129
 #: lib/page-settings/blogcard-in-forms.php:86
 #: lib/page-settings/skin-forms.php:36
 msgid "なし"
@@ -3655,7 +3655,7 @@ msgstr ""
 "Machen Sie Ihren eigenen Zugang Summen innerhalb des Themas. Aggregierte "
 "Ergebnisse werden in populären Widgets und so weiter verwendet."
 
-#: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:102
+#: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:106
 #: lib/page-speed-up/_top-page.php:51
 #, fuzzy
 msgid "変更を保存"
@@ -3880,13 +3880,13 @@ msgid "アフィリエイトタグを入力してください。"
 msgstr "Geben Sie das Affiliate-Tag ein."
 
 #: lib/page-affiliate-tag/form.php:41 lib/page-func-text/form.php:43
-#: lib/page-item-ranking/form.php:78 lib/page-speech-balloon/form.php:141
+#: lib/page-item-ranking/form.php:82 lib/page-speech-balloon/form.php:141
 #, fuzzy
 msgid "ビジュアルエディターのリストに表示"
 msgstr "In der Liste der visuellen Redakteure anzeigen"
 
 #: lib/page-affiliate-tag/form.php:42 lib/page-func-text/form.php:44
-#: lib/page-item-ranking/form.php:79 lib/page-speech-balloon/form.php:142
+#: lib/page-item-ranking/form.php:83 lib/page-speech-balloon/form.php:142
 #, fuzzy
 msgid ""
 "エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてくださ"
@@ -3935,7 +3935,7 @@ msgid "編集"
 msgstr "Redaktion"
 
 #: lib/page-affiliate-tag/list.php:53 lib/page-func-text/list.php:53
-#: lib/page-item-ranking/form.php:222 lib/page-item-ranking/list.php:64
+#: lib/page-item-ranking/form.php:226 lib/page-item-ranking/list.php:64
 #: lib/page-speech-balloon/list.php:74
 msgid "削除"
 msgstr "Löschen"
@@ -4272,106 +4272,106 @@ msgstr ""
 msgid "プレビュー"
 msgstr "Vorschau"
 
-#: lib/page-item-ranking/form.php:71
+#: lib/page-item-ranking/form.php:75
 #, fuzzy
 msgid "タイトル（※必須）"
 msgstr "Titel (* erforderlich)"
 
-#: lib/page-item-ranking/form.php:73
+#: lib/page-item-ranking/form.php:77
 #, fuzzy
 msgid "タイトルを入力"
 msgstr "Titel eingeben"
 
-#: lib/page-item-ranking/form.php:74
+#: lib/page-item-ranking/form.php:78
 #, fuzzy
 msgid "ランキングを識別するためのタイトルを入力してください。"
 msgstr "Geben Sie einen Titel ein, um das Ranking zu identifizieren."
 
-#: lib/page-item-ranking/form.php:102
+#: lib/page-item-ranking/form.php:106
 #, fuzzy
 msgid "追加"
 msgstr "Hinzufügen"
 
-#: lib/page-item-ranking/form.php:115
+#: lib/page-item-ranking/form.php:119
 #, fuzzy
 msgid "商品名等、見出しとなる名前を入力してください（※必須）"
 msgstr ""
 "Geben Sie den Namen der Überschrift ein, wie zum Beispiel Produktname (* "
 "erforderlich)"
 
-#: lib/page-item-ranking/form.php:116
+#: lib/page-item-ranking/form.php:120
 #, fuzzy
 msgid "項目の名前です。タグ・ショートコード入力も可能です。"
 msgstr "Der Name des Artikels. Sie können auch Tags und Shortcodes eingeben."
 
-#: lib/page-item-ranking/form.php:123
+#: lib/page-item-ranking/form.php:126
 #, fuzzy
 msgid "評価："
 msgstr "Bewertung:"
 
-#: lib/page-item-ranking/form.php:126
+#: lib/page-item-ranking/form.php:130
 msgid "0"
 msgstr "0"
 
-#: lib/page-item-ranking/form.php:127
+#: lib/page-item-ranking/form.php:131
 msgid "0.5"
 msgstr "0,5"
 
-#: lib/page-item-ranking/form.php:128
+#: lib/page-item-ranking/form.php:132
 msgid "1"
 msgstr "1"
 
-#: lib/page-item-ranking/form.php:129
+#: lib/page-item-ranking/form.php:133
 #, fuzzy
 msgid "1.5"
 msgstr "1,5"
 
-#: lib/page-item-ranking/form.php:130
+#: lib/page-item-ranking/form.php:134
 #, fuzzy
 msgid "2"
 msgstr "2"
 
-#: lib/page-item-ranking/form.php:131
+#: lib/page-item-ranking/form.php:135
 #, fuzzy
 msgid "2.5"
 msgstr "2,5"
 
-#: lib/page-item-ranking/form.php:132
+#: lib/page-item-ranking/form.php:136
 #, fuzzy
 msgid "3"
 msgstr "3"
 
-#: lib/page-item-ranking/form.php:133
+#: lib/page-item-ranking/form.php:137
 msgid "3.5"
 msgstr "3,5"
 
-#: lib/page-item-ranking/form.php:134
+#: lib/page-item-ranking/form.php:138
 msgid "4"
 msgstr "4"
 
-#: lib/page-item-ranking/form.php:135
+#: lib/page-item-ranking/form.php:139
 #, fuzzy
 msgid "4.5"
 msgstr "4,5"
 
-#: lib/page-item-ranking/form.php:136
+#: lib/page-item-ranking/form.php:140
 #, fuzzy
 msgid "5"
 msgstr "5"
 
-#: lib/page-item-ranking/form.php:140
+#: lib/page-item-ranking/form.php:144
 #, fuzzy
 msgid "商品等を星の数で評価します。「なし」を選択した場合は表示されません。"
 msgstr ""
 "Wir bewerten die Produkte nach der Anzahl der Sterne. Wenn keine ausgewählt "
 "wird, wird sie nicht angezeigt."
 
-#: lib/page-item-ranking/form.php:146
+#: lib/page-item-ranking/form.php:150
 #, fuzzy
 msgid "画像・バナータグ"
 msgstr "Bild-und Banner-Tags"
 
-#: lib/page-item-ranking/form.php:148
+#: lib/page-item-ranking/form.php:152
 #, fuzzy
 msgid ""
 "商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能で"
@@ -4380,7 +4380,7 @@ msgstr ""
 "Bitte geben Sie den Tag des Produktbildes oder des Banners ein. Auch kurze "
 "Code-Eingaben sind möglich."
 
-#: lib/page-item-ranking/form.php:149
+#: lib/page-item-ranking/form.php:153
 #, fuzzy
 msgid ""
 "イメージ画像のタグを入力してください。※入力していない場合は表示されません。"
@@ -4388,40 +4388,40 @@ msgstr ""
 "Bitte geben Sie ein Tag für das Bild ein. * Wenn Sie es nicht eingegeben "
 "haben, wird es nicht angezeigt."
 
-#: lib/page-item-ranking/form.php:154
+#: lib/page-item-ranking/form.php:158
 #, fuzzy
 msgid "説明文（※必須）"
 msgstr "Ausläugerungstext (* erforderlich)"
 
-#: lib/page-item-ranking/form.php:157
+#: lib/page-item-ranking/form.php:161
 #, fuzzy
 msgid "紹介文を入力してください。タグ・ショートコード入力も可能です。"
 msgstr ""
 "Bitte geben Sie eine Beschreibung ein. Sie können auch Tags und Shortcodes "
 "eingeben."
 
-#: lib/page-item-ranking/form.php:164
+#: lib/page-item-ranking/form.php:168
 #, fuzzy
 msgid "詳細ページURL"
 msgstr "Detail Seite URL"
 
-#: lib/page-item-ranking/form.php:166 lib/page-item-ranking/form.php:174
+#: lib/page-item-ranking/form.php:170 lib/page-item-ranking/form.php:178
 #: lib/page-settings/notice-forms.php:66
 #, fuzzy
 msgid "http://"
 msgstr "Http://"
 
-#: lib/page-item-ranking/form.php:167
+#: lib/page-item-ranking/form.php:171
 #, fuzzy
 msgid "詳細ページへリンクするためのURLを入力してください。"
 msgstr "Geben Sie die URL ein, um auf die Detailseite zu verweisen."
 
-#: lib/page-item-ranking/form.php:172
+#: lib/page-item-ranking/form.php:176
 #, fuzzy
 msgid "ページURL"
 msgstr "Seite URL"
 
-#: lib/page-item-ranking/form.php:175
+#: lib/page-item-ranking/form.php:179
 #, fuzzy
 msgid ""
 "公式ページ等のURLを入力してください。「リンクタグ」と双方入力されている場合は"
@@ -4430,23 +4430,23 @@ msgstr ""
 "Bitte geben Sie die URL der offiziellen Seite, etc. Wenn das Link-Tag beide "
 "eingegeben wird, hat dies Vorrang."
 
-#: lib/page-item-ranking/form.php:178
+#: lib/page-item-ranking/form.php:182
 #, fuzzy
 msgid "タグで入力"
 msgstr "Geben Sie nach Tag ein"
 
-#: lib/page-item-ranking/form.php:180
+#: lib/page-item-ranking/form.php:184
 #, fuzzy
 msgid "リンクタグ"
 msgstr "Linktags"
 
-#: lib/page-item-ranking/form.php:182
+#: lib/page-item-ranking/form.php:186
 #, fuzzy
 msgid "公式ページ等のリンク（アフィリエイト）タグを入力してください。"
 msgstr ""
 "Bitte geben Sie den Link (Affiliate) Tag der offiziellen Seite usw. ein."
 
-#: lib/page-item-ranking/form.php:183
+#: lib/page-item-ranking/form.php:187
 #, fuzzy
 msgid ""
 "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショート"
@@ -4455,14 +4455,14 @@ msgstr ""
 "Wenn Sie den Affiliate-Tag direkt eingeben. Die Einstellungen für ASP, für "
 "die die Tagänderung nicht gültig ist. Sie können auch Shortcodes eingeben."
 
-#: lib/page-item-ranking/form.php:208
+#: lib/page-item-ranking/form.php:212
 #, fuzzy
 msgid "アイテムを上に移動"
 msgstr "Artikel nach oben schieben"
 
 #: lib/page-item-ranking/item-ranking-func.php:347
-#: lib/shortcodes-amazon.php:379 lib/shortcodes-amazon.php:382
-#: lib/shortcodes-amazon.php:385 lib/shortcodes-rakuten.php:34
+#: lib/shortcodes-amazon.php:380 lib/shortcodes-amazon.php:383
+#: lib/shortcodes-amazon.php:386 lib/shortcodes-rakuten.php:34
 #: lib/shortcodes-rakuten.php:37 lib/shortcodes-rakuten.php:40
 msgid "詳細ページ"
 msgstr "Suchseite"
@@ -13030,12 +13030,15 @@ msgstr ""
 "Der Titel ist mit dem unteren Teil des Bildes auf schwarzem Hintergrund "
 "gestapelt."
 
-#: lib/shortcodes-amazon.php:257
-#, fuzzy
-msgid "webservices.amazon.co.jp"
-msgstr "webservices.amazon.co.jp"
+#: lib/shortcodes-amazon.php:178
+msgid "us-west-2"
+msgstr "eu-west-1"
 
-#: lib/shortcodes-amazon.php:426
+#: lib/shortcodes-amazon.php:258
+msgid "webservices.amazon.co.jp"
+msgstr "webservices.amazon.de"
+
+#: lib/shortcodes-amazon.php:427
 #, fuzzy
 msgid ""
 "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定"
@@ -13044,12 +13047,12 @@ msgstr ""
 "Amazon API Access Key oder Secret Key oder Tracking ID ist nicht gesetzt. "
 "Bitte geben Sie aus der Registerkarte \"API\" \"\" Cocoon Settings \"ein."
 
-#: lib/shortcodes-amazon.php:432
+#: lib/shortcodes-amazon.php:433
 #, fuzzy
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "ASIN wurde nicht in den Amazon-Produkt-Link-Shortcode eingegeben."
 
-#: lib/shortcodes-amazon.php:443
+#: lib/shortcodes-amazon.php:444
 #, fuzzy
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中な"
@@ -13064,27 +13067,27 @@ msgstr ""
 "auftritt, wird empfohlen, den \"Cache-Aufbewahrungszeitraum\" im API-"
 "Einstellungselement auf einen längeren Zeitraum festzulegen."
 
-#: lib/shortcodes-amazon.php:456
+#: lib/shortcodes-amazon.php:457
 #, fuzzy
 msgid "アイテムを取得できませんでした。"
 msgstr "Der Gegenstand konnte nicht abgerufen werden."
 
-#: lib/shortcodes-amazon.php:458
+#: lib/shortcodes-amazon.php:459
 #, fuzzy
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "Diese Inhalte werden nur für angemeldeten Benutzer sichtbar."
 
-#: lib/shortcodes-amazon.php:918
+#: lib/shortcodes-amazon.php:919
 #, fuzzy
 msgid "Amazon商品取得エラー"
 msgstr "Amazon-Produktabruffehler"
 
-#: lib/shortcodes-amazon.php:920
+#: lib/shortcodes-amazon.php:921
 #, fuzzy
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Amazon-Produktlink konnte nicht abgerufen werden."
 
-#: lib/shortcodes-amazon.php:934
+#: lib/shortcodes-amazon.php:935
 #, fuzzy
 msgid "Amazonで詳細を見る"
 msgstr "Lesen Sie mehr auf Amazon"
