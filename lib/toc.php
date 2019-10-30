@@ -149,7 +149,8 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false){
   if($id!==''){$id = ' id="' . $id . '"';}else{$id = '';}
   if (is_toc_toggle_switch_enable()) {
     $checked = null;
-    if (is_toc_content_visible()) {
+    $is_visible = apply_filters('is_toc_content_visible', is_toc_content_visible());
+    if ($is_visible) {
       $checked = ' checked';
     }
     $title_elm = 'label';
