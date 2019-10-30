@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-29 16:04+0900\n"
-"PO-Revision-Date: 2019-10-29 20:30+0900\n"
+"POT-Creation-Date: 2019-10-30 23:29+0900\n"
+"PO-Revision-Date: 2019-10-30 23:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -237,7 +237,7 @@ msgstr ""
 msgid "ラベル"
 msgstr "Label"
 
-#: blocks/src/block/blogcard/block.js:60 lib/page-item-ranking/form.php:125
+#: blocks/src/block/blogcard/block.js:60 lib/page-item-ranking/form.php:129
 #: lib/page-settings/blogcard-in-forms.php:86
 #: lib/page-settings/skin-forms.php:36
 msgid "なし"
@@ -3060,7 +3060,7 @@ msgstr ""
 "Perform your own access summary in the theme. The summary results will be "
 "used in popular widgets, etc."
 
-#: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:102
+#: lib/page-access/_top-page.php:50 lib/page-item-ranking/form.php:106
 #: lib/page-speed-up/_top-page.php:51
 msgid "変更を保存"
 msgstr "Save changes"
@@ -3249,12 +3249,12 @@ msgid "アフィリエイトタグを入力してください。"
 msgstr "Enter your affiliate tag."
 
 #: lib/page-affiliate-tag/form.php:41 lib/page-func-text/form.php:43
-#: lib/page-item-ranking/form.php:78 lib/page-speech-balloon/form.php:141
+#: lib/page-item-ranking/form.php:82 lib/page-speech-balloon/form.php:141
 msgid "ビジュアルエディターのリストに表示"
 msgstr "Display in visual editor list"
 
 #: lib/page-affiliate-tag/form.php:42 lib/page-func-text/form.php:44
-#: lib/page-item-ranking/form.php:79 lib/page-speech-balloon/form.php:142
+#: lib/page-item-ranking/form.php:83 lib/page-speech-balloon/form.php:142
 msgid ""
 "エディターのドロップダウンリストに表示しなくて良い場合は、無効にしてくださ"
 "い。"
@@ -3295,7 +3295,7 @@ msgid "編集"
 msgstr "Edit"
 
 #: lib/page-affiliate-tag/list.php:53 lib/page-func-text/list.php:53
-#: lib/page-item-ranking/form.php:222 lib/page-item-ranking/list.php:64
+#: lib/page-item-ranking/form.php:226 lib/page-item-ranking/list.php:64
 #: lib/page-speech-balloon/list.php:74
 msgid "削除"
 msgstr "Remove"
@@ -3573,126 +3573,126 @@ msgstr "Create a ranking. Click \"Save\" to enter the next ranking."
 msgid "プレビュー"
 msgstr "Preview"
 
-#: lib/page-item-ranking/form.php:71
+#: lib/page-item-ranking/form.php:75
 msgid "タイトル（※必須）"
 msgstr "Title (*required)"
 
-#: lib/page-item-ranking/form.php:73
+#: lib/page-item-ranking/form.php:77
 msgid "タイトルを入力"
 msgstr "Enter title"
 
-#: lib/page-item-ranking/form.php:74
+#: lib/page-item-ranking/form.php:78
 msgid "ランキングを識別するためのタイトルを入力してください。"
 msgstr "Enter a title that identifies the ranking."
 
-#: lib/page-item-ranking/form.php:102
+#: lib/page-item-ranking/form.php:106
 msgid "追加"
 msgstr "Add"
 
-#: lib/page-item-ranking/form.php:115
+#: lib/page-item-ranking/form.php:119
 msgid "商品名等、見出しとなる名前を入力してください（※必須）"
 msgstr ""
 "Enter a name, such as a product name, to be used for the heading (*required)"
 
-#: lib/page-item-ranking/form.php:116
+#: lib/page-item-ranking/form.php:120
 msgid "項目の名前です。タグ・ショートコード入力も可能です。"
 msgstr "The item name. A tag or short code is also valid."
 
-#: lib/page-item-ranking/form.php:123
+#: lib/page-item-ranking/form.php:126
 msgid "評価："
 msgstr "Rating:"
 
-#: lib/page-item-ranking/form.php:126
+#: lib/page-item-ranking/form.php:130
 msgid "0"
 msgstr "0"
 
-#: lib/page-item-ranking/form.php:127
+#: lib/page-item-ranking/form.php:131
 msgid "0.5"
 msgstr "0.5"
 
-#: lib/page-item-ranking/form.php:128
+#: lib/page-item-ranking/form.php:132
 msgid "1"
 msgstr "1"
 
-#: lib/page-item-ranking/form.php:129
+#: lib/page-item-ranking/form.php:133
 msgid "1.5"
 msgstr "1.5"
 
-#: lib/page-item-ranking/form.php:130
+#: lib/page-item-ranking/form.php:134
 msgid "2"
 msgstr "2"
 
-#: lib/page-item-ranking/form.php:131
+#: lib/page-item-ranking/form.php:135
 msgid "2.5"
 msgstr "2.5"
 
-#: lib/page-item-ranking/form.php:132
+#: lib/page-item-ranking/form.php:136
 msgid "3"
 msgstr "3"
 
-#: lib/page-item-ranking/form.php:133
+#: lib/page-item-ranking/form.php:137
 msgid "3.5"
 msgstr "3.5"
 
-#: lib/page-item-ranking/form.php:134
+#: lib/page-item-ranking/form.php:138
 msgid "4"
 msgstr "4"
 
-#: lib/page-item-ranking/form.php:135
+#: lib/page-item-ranking/form.php:139
 msgid "4.5"
 msgstr "4.5"
 
-#: lib/page-item-ranking/form.php:136
+#: lib/page-item-ranking/form.php:140
 msgid "5"
 msgstr "5"
 
-#: lib/page-item-ranking/form.php:140
+#: lib/page-item-ranking/form.php:144
 msgid "商品等を星の数で評価します。「なし」を選択した場合は表示されません。"
 msgstr ""
 "Rate goods, etc. by the number of stars. This item will not be displayed if "
 "\"None\" is selected."
 
-#: lib/page-item-ranking/form.php:146
+#: lib/page-item-ranking/form.php:150
 msgid "画像・バナータグ"
 msgstr "Images and banner tags"
 
-#: lib/page-item-ranking/form.php:148
+#: lib/page-item-ranking/form.php:152
 msgid ""
 "商品画像、もしくはバナーのタグを入力してください。ショートコード入力も可能で"
 "す。"
 msgstr "Enter a product image or banner tag. A short code is also valid."
 
-#: lib/page-item-ranking/form.php:149
+#: lib/page-item-ranking/form.php:153
 msgid ""
 "イメージ画像のタグを入力してください。※入力していない場合は表示されません。"
 msgstr "Enter a tag of the image. *Will not be displayed if left blank."
 
-#: lib/page-item-ranking/form.php:154
+#: lib/page-item-ranking/form.php:158
 msgid "説明文（※必須）"
 msgstr "Description (*required)"
 
-#: lib/page-item-ranking/form.php:157
+#: lib/page-item-ranking/form.php:161
 msgid "紹介文を入力してください。タグ・ショートコード入力も可能です。"
 msgstr "Enter a product description. A tag or short code is also valid."
 
-#: lib/page-item-ranking/form.php:164
+#: lib/page-item-ranking/form.php:168
 msgid "詳細ページURL"
 msgstr "Details page URL"
 
-#: lib/page-item-ranking/form.php:166 lib/page-item-ranking/form.php:174
+#: lib/page-item-ranking/form.php:170 lib/page-item-ranking/form.php:178
 #: lib/page-settings/notice-forms.php:66
 msgid "http://"
 msgstr "http://"
 
-#: lib/page-item-ranking/form.php:167
+#: lib/page-item-ranking/form.php:171
 msgid "詳細ページへリンクするためのURLを入力してください。"
 msgstr "Enter the URL for the link to the details page."
 
-#: lib/page-item-ranking/form.php:172
+#: lib/page-item-ranking/form.php:176
 msgid "ページURL"
 msgstr "Page URL"
 
-#: lib/page-item-ranking/form.php:175
+#: lib/page-item-ranking/form.php:179
 msgid ""
 "公式ページ等のURLを入力してください。「リンクタグ」と双方入力されている場合は"
 "こちらが優先されます。"
@@ -3700,19 +3700,19 @@ msgstr ""
 "Enter the URL of the official page etc. If a link tag is also entered, this "
 "item will take precedence."
 
-#: lib/page-item-ranking/form.php:178
+#: lib/page-item-ranking/form.php:182
 msgid "タグで入力"
 msgstr "Enter a tag"
 
-#: lib/page-item-ranking/form.php:180
+#: lib/page-item-ranking/form.php:184
 msgid "リンクタグ"
 msgstr "Link tag"
 
-#: lib/page-item-ranking/form.php:182
+#: lib/page-item-ranking/form.php:186
 msgid "公式ページ等のリンク（アフィリエイト）タグを入力してください。"
 msgstr "Enter a link (affiliate) tag for the official page, etc."
 
-#: lib/page-item-ranking/form.php:183
+#: lib/page-item-ranking/form.php:187
 msgid ""
 "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショート"
 "コードも入力できます。"
@@ -3720,13 +3720,13 @@ msgstr ""
 "This is used for entering an affiliate tag directly, because tag changes are "
 "invalid for ASP settings. A short code is also valid."
 
-#: lib/page-item-ranking/form.php:208
+#: lib/page-item-ranking/form.php:212
 msgid "アイテムを上に移動"
 msgstr "Move item up"
 
 #: lib/page-item-ranking/item-ranking-func.php:347
-#: lib/shortcodes-amazon.php:379 lib/shortcodes-amazon.php:382
-#: lib/shortcodes-amazon.php:385 lib/shortcodes-rakuten.php:34
+#: lib/shortcodes-amazon.php:380 lib/shortcodes-amazon.php:383
+#: lib/shortcodes-amazon.php:386 lib/shortcodes-rakuten.php:34
 #: lib/shortcodes-rakuten.php:37 lib/shortcodes-rakuten.php:40
 msgid "詳細ページ"
 msgstr "Details page"
@@ -10746,11 +10746,15 @@ msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr ""
 "The title overlaps the lower part of the image with a black background."
 
-#: lib/shortcodes-amazon.php:257
+#: lib/shortcodes-amazon.php:178
+msgid "us-west-2"
+msgstr "us-east-1"
+
+#: lib/shortcodes-amazon.php:258
 msgid "webservices.amazon.co.jp"
 msgstr "webservices.amazon.com"
 
-#: lib/shortcodes-amazon.php:426
+#: lib/shortcodes-amazon.php:427
 msgid ""
 "Amazon APIのアクセスキーもしくはシークレットキーもしくはトラッキングIDが設定"
 "されていません。「Cocoon設定」の「API」タブから入力してください。"
@@ -10758,11 +10762,11 @@ msgstr ""
 "Amazon API access key, secret key or tracking ID has not been set. Enter it "
 "in the \"API\" tab of \"Cocoon settings\"."
 
-#: lib/shortcodes-amazon.php:432
+#: lib/shortcodes-amazon.php:433
 msgid "Amazon商品リンクショートコード内にASINが入力されていません。"
 msgstr "The ASIN has not been entered in the Amazon product link short code."
 
-#: lib/shortcodes-amazon.php:443
+#: lib/shortcodes-amazon.php:444
 msgid ""
 "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中な"
 "どにより、リクエストに応答できない場合に出力されるエラーコードです。サーバー"
@@ -10777,23 +10781,23 @@ msgstr ""
 "is recommended that you set a longer \"Cache retention period\" in the \"API"
 "\" setting item."
 
-#: lib/shortcodes-amazon.php:456
+#: lib/shortcodes-amazon.php:457
 msgid "アイテムを取得できませんでした。"
 msgstr "Failed to retrieve item."
 
-#: lib/shortcodes-amazon.php:458
+#: lib/shortcodes-amazon.php:459
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "This error message is displayed in \"Site administrators only\""
 
-#: lib/shortcodes-amazon.php:918
+#: lib/shortcodes-amazon.php:919
 msgid "Amazon商品取得エラー"
 msgstr "Amazon product retrieval error"
 
-#: lib/shortcodes-amazon.php:920
+#: lib/shortcodes-amazon.php:921
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Failed to retrieve the Amazon product link."
 
-#: lib/shortcodes-amazon.php:934
+#: lib/shortcodes-amazon.php:935
 msgid "Amazonで詳細を見る"
 msgstr "Read more on Amazon"
 
