@@ -144,11 +144,27 @@ span.btn-wrap{
 
 .font-awesome-5{
   .bct-related::before,
+  .blank-box.bb-ok::before,
+  .blank-box.bb-point::before,
   .btn-wrap::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
   }
+  .bb-ok::before{content: "\f111" + '  ' + $bb-ok-text;}
 
+  .blank-box.bb-check::before,
+  .blank-box.bb-comment::before,
+  .blank-box.bb-tips::before,
+  .blank-box.bb-pickup::before,
+  .blank-box.bb-hint::before,
+  .blank-box.bb-bookmark::before,
+  .blank-box.bb-memo::before,
+  .blank-box.bb-download::before,
+  .blank-box.bb-break::before,
+  .blank-box.bb-ng::before,
+  .blank-box.bb-good::before,
+  .blank-box.bb-bad::before,
+  .blank-box.bb-profile::before,
   .bct-none::before,
   .bct-reference::before,
   .bct-reference-link::before,
@@ -161,6 +177,17 @@ span.btn-wrap{
   .bct-dl::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 501;
+  }
+  .bb-memo::before{content: "\f303" + '  ' + $bb-memo-text;}
+
+  .blank-box.bb-tab::before{
+    font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  }
+
+  .blank-box.bb-amazon::before
+  {
+    font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+    font-weight: 400;
   }
 }
 
@@ -206,3 +233,94 @@ span.btn-wrap{
 // .btn-wrap > a{
 //   pointer-events: none;
 // }
+
+.blank-box{
+  &.bb-tab::before{
+    @include tabbox_label;
+  }
+
+  &.bb-red::before{background-color: $red_color;}
+  &.bb-pink::before{background-color: $pink_color;}
+  &.bb-purple::before{background-color: $purple_color;}
+  &.bb-blue::before{background-color: $blue_color;}
+  &.bb-green::before{background-color: $green_color;}
+  &.bb-orange::before{background-color: $orange_color;}
+  &.bb-yellow::before{background-color: $yellow_color;}
+  &.bb-brown::before{background-color: $brown_color;}
+  &.bb-grey::before{background-color: $grey_color;}
+  &.bb-black::before{background-color: $black_color;}
+  &.bb-deep::before{background-color: $deep_color;}
+  &.bb-indigo::before{background-color: $indigo_color;}
+  &.bb-light-blue::before{background-color: $light_blue_color;}
+  &.bb-cyan::before{background-color: $cyan_color;}
+  &.bb-teal::before{background-color: $teal_color;}
+  &.bb-light-green::before{background-color: $light_green_color;}
+  &.bb-lime::before{background-color: $lime_color;}
+  &.bb-amber::before{background-color: $amber_color;}
+  &.bb-deep-orange::before{background-color: $deep_orange_color;}
+  &.bb-white::before{background-color: $white;}
+}
+
+.bb-check::before{
+  content: $bb-check + '  ' + $bb-check-text;
+}
+
+.bb-comment::before{
+  content: $bb-comment + '  ' + $bb-comment-text;
+}
+
+.bb-point::before{
+  content: $bb-point + '  ' + $bb-point-text;
+}
+
+.bb-tips::before{
+  content: $bb-tips + '  ' + $bb-tips-text;
+}
+
+.bb-hint::before{
+  content: $bb-hint + '  ' + $bb-hint-text;
+}
+
+.bb-pickup::before{
+  content: $bb-pickup + '  ' + $bb-pickup-text;
+}
+
+.bb-bookmark::before{
+  content: $bb-bookmark + '  ' + $bb-bookmark-text;
+}
+
+.bb-memo::before{
+  content: $bb-memo + '  ' + $bb-memo-text;
+}
+
+.bb-download::before{
+  content: $bb-download + '  ' + $bb-download-text;
+}
+
+.bb-break::before{
+  content: $bb-break + '  ' + $bb-break-text;
+}
+
+.bb-amazon::before{
+  content: $bb-amazon + '  ' + $bb-amazon-text;
+}
+
+.bb-ok::before{
+  content: $bb-ok + '  ' + $bb-ok-text;
+}
+
+.bb-ng::before{
+  content: $bb-ng + '  ' + $bb-ng-text;
+}
+
+.bb-good::before{
+  content: $bb-good + '  ' + $bb-good-text;
+}
+
+.bb-bad::before{
+  content: $bb-bad + '  ' + $bb-bad-text;
+}
+
+.bb-profile::before{
+  content: $bb-profile + '  ' + $bb-profile-text;
+}

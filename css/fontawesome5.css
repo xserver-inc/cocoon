@@ -1,7 +1,7 @@
 .comment-box::before,
 .ok-box::before,
-.blank-box.bb-ok::before,
-.blank-box.bb-point::before,
+.blank-box.bb-ok .fa::before,
+.blank-box.bb-point .fa::before,
 .fab-ok::before,
 .fab-lightbulb::before,
 .fab-clock::before,
@@ -46,8 +46,8 @@
 .ok-box::before, .fab-ok::before {
   content: "\f111"; }
 
-.bb-ok::before {
-  content: "\f111  OK"; }
+.bb-ok .fa::before {
+  content: "\f111"; }
 
 .fab-check-circle-o::before,
 .list-check-circle-o li::before {
@@ -108,19 +108,6 @@
 .ng-box::before,
 .good-box::before,
 .bad-box::before,
-.blank-box.bb-check::before,
-.blank-box.bb-comment::before,
-.blank-box.bb-tips::before,
-.blank-box.bb-pickup::before,
-.blank-box.bb-hint::before,
-.blank-box.bb-bookmark::before,
-.blank-box.bb-memo::before,
-.blank-box.bb-download::before,
-.blank-box.bb-break::before,
-.blank-box.bb-ng::before,
-.blank-box.bb-good::before,
-.blank-box.bb-bad::before,
-.blank-box.bb-profile::before,
 .fab-info-circle::before,
 .fab-question-circle::before,
 .fab-exclamation-circle::before,
@@ -224,8 +211,8 @@
 .fab-pencil::before {
   content: "\f303"; }
 
-.bb-memo::before {
-  content: "\f303  "; }
+.bb-memo .fa::before {
+  content: "\f303"; }
 
 .fab-cutlery::before {
   content: "\f2e7"; }
@@ -234,7 +221,7 @@
 .list-window-close li::before {
   content: "\f410"; }
 
-.blank-box.bb-amazon::before,
+.blank-box.bb-amazon .fa::before,
 .fab-amazon::before,
 .fab-btc::before,
 .fab-apple::before,

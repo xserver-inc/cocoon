@@ -2683,10 +2683,10 @@ label.screen-reader-text {
   margin-bottom: 1em;
 }
 
-.block-box p:first-child {
+.block-box p:first-of-type {
   margin-top: 0;
 }
-.block-box p:last-child {
+.block-box p:last-of-type {
   margin-bottom: 0;
 }
 .block-box ol,
@@ -2951,7 +2951,7 @@ label.screen-reader-text {
   margin-top: 2em;
   border-top-left-radius: 0;
 }
-.blank-box.bb-tab::before, .blank-box.bb-tab::after {
+.blank-box.bb-tab .bb-label {
   background-color: #949495;
   font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
   position: absolute;
@@ -2959,75 +2959,71 @@ label.screen-reader-text {
   top: -1.8em;
   line-height: 1.8;
   color: #fff;
-}
-.blank-box.bb-tab::before {
   left: -3px;
-  border-radius: 6px 0 0 0;
+  border-radius: 6px 6px 0 0;
   padding: 0 1em 0 .8em;
 }
-.blank-box.bb-tab::after {
-  left: 26px;
-  border-radius: 0 6px 0 0;
-  padding: 0 1em 0 0;
+.blank-box.bb-tab .bb-label .fa {
+  margin-right: 6px;
 }
-.blank-box.bb-tab.bb-red::before, .blank-box.bb-tab.bb-red::after {
+.blank-box.bb-tab.bb-red .bb-label {
   background-color: #e60033;
 }
-.blank-box.bb-tab.bb-pink::before, .blank-box.bb-tab.bb-pink::after {
+.blank-box.bb-tab.bb-pink .bb-label {
   background-color: #e95295;
 }
-.blank-box.bb-tab.bb-purple::before, .blank-box.bb-tab.bb-purple::after {
+.blank-box.bb-tab.bb-purple .bb-label {
   background-color: #884898;
 }
-.blank-box.bb-tab.bb-blue::before, .blank-box.bb-tab.bb-blue::after {
+.blank-box.bb-tab.bb-blue .bb-label {
   background-color: #0095d9;
 }
-.blank-box.bb-tab.bb-green::before, .blank-box.bb-tab.bb-green::after {
+.blank-box.bb-tab.bb-green .bb-label {
   background-color: #3eb370;
 }
-.blank-box.bb-tab.bb-orange::before, .blank-box.bb-tab.bb-orange::after {
+.blank-box.bb-tab.bb-orange .bb-label {
   background-color: #f39800;
 }
-.blank-box.bb-tab.bb-yellow::before, .blank-box.bb-tab.bb-yellow::after {
+.blank-box.bb-tab.bb-yellow .bb-label {
   background-color: #ffd900;
 }
-.blank-box.bb-tab.bb-brown::before, .blank-box.bb-tab.bb-brown::after {
+.blank-box.bb-tab.bb-brown .bb-label {
   background-color: #954e2a;
 }
-.blank-box.bb-tab.bb-grey::before, .blank-box.bb-tab.bb-grey::after {
+.blank-box.bb-tab.bb-grey .bb-label {
   background-color: #949495;
 }
-.blank-box.bb-tab.bb-black::before, .blank-box.bb-tab.bb-black::after {
+.blank-box.bb-tab.bb-black .bb-label {
   background-color: #333;
 }
-.blank-box.bb-tab.bb-deep::before, .blank-box.bb-tab.bb-deep::after {
+.blank-box.bb-tab.bb-deep .bb-label {
   background-color: #55295b;
 }
-.blank-box.bb-tab.bb-indigo::before, .blank-box.bb-tab.bb-indigo::after {
+.blank-box.bb-tab.bb-indigo .bb-label {
   background-color: #1e50a2;
 }
-.blank-box.bb-tab.bb-light-blue::before, .blank-box.bb-tab.bb-light-blue::after {
+.blank-box.bb-tab.bb-light-blue .bb-label {
   background-color: #2ca9e1;
 }
-.blank-box.bb-tab.bb-cyan::before, .blank-box.bb-tab.bb-cyan::after {
+.blank-box.bb-tab.bb-cyan .bb-label {
   background-color: #00a3af;
 }
-.blank-box.bb-tab.bb-teal::before, .blank-box.bb-tab.bb-teal::after {
+.blank-box.bb-tab.bb-teal .bb-label {
   background-color: #007b43;
 }
-.blank-box.bb-tab.bb-light-green::before, .blank-box.bb-tab.bb-light-green::after {
+.blank-box.bb-tab.bb-light-green .bb-label {
   background-color: #8bc34a;
 }
-.blank-box.bb-tab.bb-lime::before, .blank-box.bb-tab.bb-lime::after {
+.blank-box.bb-tab.bb-lime .bb-label {
   background-color: #c3d825;
 }
-.blank-box.bb-tab.bb-amber::before, .blank-box.bb-tab.bb-amber::after {
+.blank-box.bb-tab.bb-amber .bb-label {
   background-color: #ffc107;
 }
-.blank-box.bb-tab.bb-deep-orange::before, .blank-box.bb-tab.bb-deep-orange::after {
+.blank-box.bb-tab.bb-deep-orange .bb-label {
   background-color: #ea5506;
 }
-.blank-box.bb-tab.bb-white::before, .blank-box.bb-tab.bb-white::after {
+.blank-box.bb-tab.bb-white .bb-label {
   background-color: #fff;
 }
 .blank-box.sticky {
@@ -3052,131 +3048,131 @@ label.screen-reader-text {
   background-color: #CBEFE4;
 }
 
-.bb-check::before {
-  content: "\f00c  ";
+.bb-check .fa::before {
+  content: "";
 }
 
-.bb-check::after {
+.bb-check .bb-label::after {
   content: "CHECK";
 }
 
-.bb-comment::before {
-  content: "\f075  ";
+.bb-comment .fa::before {
+  content: "";
 }
 
-.bb-comment::after {
+.bb-comment .bb-label::after {
   content: "COMMENT";
 }
 
-.bb-point::before {
-  content: "\f0eb  ";
+.bb-point .fa::before {
+  content: "";
 }
 
-.bb-point::after {
+.bb-point .bb-label::after {
   content: "POINT";
 }
 
-.bb-tips::before {
-  content: "\f19d  ";
+.bb-tips .fa::before {
+  content: "";
 }
 
-.bb-tips::after {
+.bb-tips .bb-label::after {
   content: "TIPS";
 }
 
-.bb-hint::before {
-  content: "\f0f3  ";
+.bb-hint .fa::before {
+  content: "";
 }
 
-.bb-hint::after {
+.bb-hint .bb-label::after {
   content: "HINT";
 }
 
-.bb-pickup::before {
-  content: "\f005  ";
+.bb-pickup .fa::before {
+  content: "";
 }
 
-.bb-pickup::after {
+.bb-pickup .bb-label::after {
   content: "PICKUP";
 }
 
-.bb-bookmark::before {
-  content: "\f02e  ";
+.bb-bookmark .fa::before {
+  content: "";
 }
 
-.bb-bookmark::after {
+.bb-bookmark .bb-label::after {
   content: "BOOKMARK";
 }
 
-.bb-memo::before {
-  content: "\f040  ";
+.bb-memo .fa::before {
+  content: "";
 }
 
-.bb-memo::after {
+.bb-memo .bb-label::after {
   content: "MEMO";
 }
 
-.bb-download::before {
-  content: "\f019  ";
+.bb-download .fa::before {
+  content: "";
 }
 
-.bb-download::after {
+.bb-download .bb-label::after {
   content: "DOWNLOAD";
 }
 
-.bb-break::before {
-  content: "\f0f4  ";
+.bb-break .fa::before {
+  content: "";
 }
 
-.bb-break::after {
+.bb-break .bb-label::after {
   content: "BREAK";
 }
 
-.bb-amazon::before {
-  content: "\f270  ";
+.bb-amazon .fa::before {
+  content: "";
 }
 
-.bb-amazon::after {
+.bb-amazon .bb-label::after {
   content: "AMAZON";
 }
 
-.bb-ok::before {
-  content: "\f10c  ";
+.bb-ok .fa::before {
+  content: "";
 }
 
-.bb-ok::after {
+.bb-ok .bb-label::after {
   content: "OK";
 }
 
-.bb-ng::before {
-  content: "\f00d  ";
+.bb-ng .fa::before {
+  content: "";
 }
 
-.bb-ng::after {
+.bb-ng .bb-label::after {
   content: "NG";
 }
 
-.bb-good::before {
-  content: "\f164  ";
+.bb-good .fa::before {
+  content: "";
 }
 
-.bb-good::after {
+.bb-good .bb-label::after {
   content: "GOOD";
 }
 
-.bb-bad::before {
-  content: "\f165  ";
+.bb-bad .fa::before {
+  content: "";
 }
 
-.bb-bad::after {
+.bb-bad .bb-label::after {
   content: "BAD";
 }
 
-.bb-profile::before {
-  content: "\f007  ";
+.bb-profile .fa::before {
+  content: "";
 }
 
-.bb-profile::after {
+.bb-profile .bb-label::after {
   content: "PROFILE";
 }
 

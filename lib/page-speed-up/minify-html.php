@@ -78,6 +78,9 @@ function code_minify_call_back($buffer) {
     }
   }
 
+  //タブボックスのタブ変換
+  $buffer = preg_replace('#<div class="(.*?)blank-box bb-tab bb-(.+?)".*?>#', '$0<div class="bb-label"><span class="fa"></span></div>', $buffer);
+
   //Font Awesome5変換
   $buffer = change_fa($buffer);
 
