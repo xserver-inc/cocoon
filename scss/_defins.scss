@@ -446,3 +446,51 @@ $form_padding: 11px;
     }
   }
 }
+
+///////////////////////////////////////////
+// タブボックス
+///////////////////////////////////////////
+@mixin tabbox_label{
+  background-color: $grey_color;
+  font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  position: absolute;
+  font-size: 13px;
+  top: -1.8em;
+  line-height: 1.8;
+  color: $white;      left: -3px;
+  border-radius: 6px 6px 0 0;
+  padding: 0 1em 0 .8em;
+}
+
+$bb-check: "\f00c";
+$bb-check-text: "CHECK";
+$bb-comment: "\f075";
+$bb-comment-text: "COMMENT";
+$bb-point: "\f0eb";
+$bb-point-text: "POINT";
+$bb-tips: "\f19d";
+$bb-tips-text: "TIPS";
+$bb-hint: "\f0f3";
+$bb-hint-text: "HINT";
+$bb-pickup: "\f005";
+$bb-pickup-text: "PICKUP";
+$bb-bookmark: "\f02e";
+$bb-bookmark-text: "BOOKMARK";
+$bb-memo: "\f040";
+$bb-memo-text: "MEMO";
+$bb-download: "\f019";
+$bb-download-text: "DOWNLOAD";
+$bb-break: "\f0f4";
+$bb-break-text: "BREAK";
+$bb-amazon: "\f270";
+$bb-amazon-text: "AMAZON";
+$bb-ok: "\f10c";
+$bb-ok-text: "OK";
+$bb-ng: "\f00d";
+$bb-ng-text: "NG";
+$bb-good: "\f164";
+$bb-good-text: "GOOD";
+$bb-bad: "\f165";
+$bb-bad-text: "BAD";
+$bb-profile: "\f007";
+$bb-profile-text: "PROFILE";

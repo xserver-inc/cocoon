@@ -938,19 +938,23 @@ a.page-numbers:hover {
 	border-color: #b4d09b;
 }
 
-.blank-box.bb-tab.bb-yellow::before {
+.blank-box.bb-tab.bb-yellow::before,
+.blank-box.bb-tab.bb-yellow .bb-label {
 	background-color: #e6da94;
 }
 
-.blank-box.bb-tab.bb-red::before {
+.blank-box.bb-tab.bb-red::before,
+.blank-box.bb-tab.bb-red .bb-label {
 	background-color: #df9a87;
 }
 
-.blank-box.bb-tab.bb-blue::before {
+.blank-box.bb-tab.bb-blue::before,
+.blank-box.bb-tab.bb-blue .bb-label {
 	background-color: #9ac4d0;
 }
 
-.blank-box.bb-tab.bb-green::before {
+.blank-box.bb-tab.bb-green::before,
+.blank-box.bb-tab.bb-green .bb-label {
 	background-color: #b4d09b;
 }
 

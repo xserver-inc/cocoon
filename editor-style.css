@@ -142,10 +142,28 @@ span.btn-wrap {
 }
 
 .font-awesome-5 .bct-related::before,
+.font-awesome-5 .blank-box.bb-ok::before,
+.font-awesome-5 .blank-box.bb-point::before,
 .font-awesome-5 .btn-wrap::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
+.font-awesome-5 .bb-ok::before {
+  content: "  OK";
+}
+.font-awesome-5 .blank-box.bb-check::before,
+.font-awesome-5 .blank-box.bb-comment::before,
+.font-awesome-5 .blank-box.bb-tips::before,
+.font-awesome-5 .blank-box.bb-pickup::before,
+.font-awesome-5 .blank-box.bb-hint::before,
+.font-awesome-5 .blank-box.bb-bookmark::before,
+.font-awesome-5 .blank-box.bb-memo::before,
+.font-awesome-5 .blank-box.bb-download::before,
+.font-awesome-5 .blank-box.bb-break::before,
+.font-awesome-5 .blank-box.bb-ng::before,
+.font-awesome-5 .blank-box.bb-good::before,
+.font-awesome-5 .blank-box.bb-bad::before,
+.font-awesome-5 .blank-box.bb-profile::before,
 .font-awesome-5 .bct-none::before,
 .font-awesome-5 .bct-reference::before,
 .font-awesome-5 .bct-reference-link::before,
@@ -158,6 +176,16 @@ span.btn-wrap {
 .font-awesome-5 .bct-dl::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 501;
+}
+.font-awesome-5 .bb-memo::before {
+  content: "  MEMO";
+}
+.font-awesome-5 .blank-box.bb-tab::before {
+  font-family: "Font Awesome 5 Free", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.font-awesome-5 .blank-box.bb-amazon::before {
+  font-family: "Font Awesome 5 Brands", Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  font-weight: 400;
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/
@@ -173,4 +201,142 @@ span.btn-wrap {
 .box-block-msg {
   font-size: 10px;
   text-align: center;
+}
+
+.blank-box.bb-tab::before {
+  background-color: #949495;
+  font-family: Aharoni, "Arial Black", Impact, Arial, sans-serif;
+  position: absolute;
+  font-size: 13px;
+  top: -1.8em;
+  line-height: 1.8;
+  color: #fff;
+  left: -3px;
+  border-radius: 6px 6px 0 0;
+  padding: 0 1em 0 .8em;
+  font-family: FontAwesome, Aharoni, "Arial Black", Impact, Arial, sans-serif;
+}
+.blank-box.bb-red::before {
+  background-color: #e60033;
+}
+.blank-box.bb-pink::before {
+  background-color: #e95295;
+}
+.blank-box.bb-purple::before {
+  background-color: #884898;
+}
+.blank-box.bb-blue::before {
+  background-color: #0095d9;
+}
+.blank-box.bb-green::before {
+  background-color: #3eb370;
+}
+.blank-box.bb-orange::before {
+  background-color: #f39800;
+}
+.blank-box.bb-yellow::before {
+  background-color: #ffd900;
+}
+.blank-box.bb-brown::before {
+  background-color: #954e2a;
+}
+.blank-box.bb-grey::before {
+  background-color: #949495;
+}
+.blank-box.bb-black::before {
+  background-color: #333;
+}
+.blank-box.bb-deep::before {
+  background-color: #55295b;
+}
+.blank-box.bb-indigo::before {
+  background-color: #1e50a2;
+}
+.blank-box.bb-light-blue::before {
+  background-color: #2ca9e1;
+}
+.blank-box.bb-cyan::before {
+  background-color: #00a3af;
+}
+.blank-box.bb-teal::before {
+  background-color: #007b43;
+}
+.blank-box.bb-light-green::before {
+  background-color: #8bc34a;
+}
+.blank-box.bb-lime::before {
+  background-color: #c3d825;
+}
+.blank-box.bb-amber::before {
+  background-color: #ffc107;
+}
+.blank-box.bb-deep-orange::before {
+  background-color: #ea5506;
+}
+.blank-box.bb-white::before {
+  background-color: #fff;
+}
+
+.bb-check::before {
+  content: "  CHECK";
+}
+
+.bb-comment::before {
+  content: "  COMMENT";
+}
+
+.bb-point::before {
+  content: "  POINT";
+}
+
+.bb-tips::before {
+  content: "  TIPS";
+}
+
+.bb-hint::before {
+  content: "  HINT";
+}
+
+.bb-pickup::before {
+  content: "  PICKUP";
+}
+
+.bb-bookmark::before {
+  content: "  BOOKMARK";
+}
+
+.bb-memo::before {
+  content: "  MEMO";
+}
+
+.bb-download::before {
+  content: "  DOWNLOAD";
+}
+
+.bb-break::before {
+  content: "  BREAK";
+}
+
+.bb-amazon::before {
+  content: "  AMAZON";
+}
+
+.bb-ok::before {
+  content: "  OK";
+}
+
+.bb-ng::before {
+  content: "  NG";
+}
+
+.bb-good::before {
+  content: "  GOOD";
+}
+
+.bb-bad::before {
+  content: "  BAD";
+}
+
+.bb-profile::before {
+  content: "  PROFILE";
 }
