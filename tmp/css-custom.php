@@ -27,7 +27,7 @@ if (get_site_key_color()): ?>
 .cat-label,
 .appeal-content .appeal-button,
 .demo .cat-label,
-.blogcard-type .blogcard::before,
+.blogcard-type .blogcard-label,
 #footer{
   background-color: <?php echo get_site_key_color(); ?>;
 }
