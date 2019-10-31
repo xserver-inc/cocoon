@@ -242,11 +242,14 @@ function get_block_editor_color_palette_css(){
 
 
 <?php //WordPressデフォルト ?>
-div .has-<?php echo $slug; ?>-color {
+.main .has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
-div .has-<?php echo $slug; ?>-background-color {
+.main .has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;
+}
+.main .has-<?php echo $slug; ?>-border-color {
+    border-color: <?php echo $color; ?>;
 }
 <?php //ボタン・囲みボタン ?>
 .btn.has-<?php echo $slug; ?>,
