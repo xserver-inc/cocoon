@@ -721,6 +721,7 @@ $bb_green: $green_color;
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a{
   color: $white;
+  background-color: #32373c;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;
@@ -736,14 +737,6 @@ $bb_green: $green_color;
   amp-img{
     position: absolute;
   }
-
-  // a{
-  //   @include link_cancel;
-
-  //   color: #fff;
-  //   display: block;
-  //   height: 100%;
-  // }
 }
 
 .btn:before,
@@ -754,14 +747,6 @@ $bb_green: $green_color;
   margin-right: 12px;
   transition: all .2s ease;
 }
-
-// #container .btn:hover,
-// #container .btn-wrap > a:hover{
-//   color: #333;
-//   background-color: #fff;
-//   border: 2px solid #000;
-//   transition: $bgc_hover_anime;
-// }
 
 .btn-m,
 .btn-wrap.btn-wrap-m > a{

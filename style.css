@@ -3253,6 +3253,7 @@ label.screen-reader-text {
 .btn-wrap > a,
 .wp-block-freeform .btn-wrap > a {
   color: #fff;
+  background-color: #32373c;
   font-weight: bold;
   border-radius: 4px;
   display: inline-block;

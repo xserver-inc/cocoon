@@ -325,3 +325,19 @@ span.btn-wrap{
 .bb-profile::before{
   content: $bb-profile + '  ' + $bb-profile-text;
 }
+
+///////////////////////////////////////////
+// フォントサイズ
+///////////////////////////////////////////
+.has-small-font-size {
+  font-size: 13px;
+}
+.has-medium-font-size {
+  font-size: 20px;
+}
+.has-large-font-size {
+  font-size: 36px;
+}
+.has-huge-font-size, .has-larger-font-size {
+  font-size: 42px;
+}
