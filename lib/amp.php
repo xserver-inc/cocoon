@@ -61,17 +61,16 @@ function convert_content_for_amp($the_content){
 
 
   // バリューコマースのバナー変換
-  $pattern = '/<script .+?ad\.jp\.ap\.valuecommerce\.com\/servlet\/jsbanner.+?<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?<\/a><\/noscript>/';
+  $pattern = '/<script language="javascript" src="(https?)?\/\/ad\.jp\.ap\.valuecommerce\.com\/servlet\/jsbanner.+?<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?<\/a><\/noscript>/';
   // preg_match($pattern, $the_content, $m);
   // _v($the_content);
   // _v($m);
   $append =
-    '<amp-ad width="300" height="250"
-    type="valuecommerce"
-    data-sid="$1"
-    data-pid="$2">
-    </amp-ad>';
+    '<amp-ad width="300" height="250" type="valuecommerce" data-sid="$2" data-pid="$3"></amp-ad>';
+  // preg_match($pattern, $the_content, $m);
+  // _v($m);
   $the_content = preg_replace($pattern, $append, $the_content);
+  //_v($the_content);
 
   //noscriptタグの削除
   $the_content = preg_replace('/<noscript>/i', '', $the_content);
