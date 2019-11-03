@@ -145,8 +145,7 @@ span.btn-wrap{
 .font-awesome-5{
   .bct-related::before,
   .blank-box.bb-ok::before,
-  .blank-box.bb-point::before,
-  .btn-wrap::before{
+  .blank-box.bb-point::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
   }
@@ -174,7 +173,8 @@ span.btn-wrap{
   .bct-together::before,
   .bct-detail::before,
   .bct-official::before,
-  .bct-dl::before{
+  .bct-dl::before,
+  .btn-wrap::before{
     font-family: "Font Awesome 5 Free";
     font-weight: 501;
   }

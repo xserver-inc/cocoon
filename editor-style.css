@@ -143,8 +143,7 @@ span.btn-wrap {
 
 .font-awesome-5 .bct-related::before,
 .font-awesome-5 .blank-box.bb-ok::before,
-.font-awesome-5 .blank-box.bb-point::before,
-.font-awesome-5 .btn-wrap::before {
+.font-awesome-5 .blank-box.bb-point::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
@@ -173,7 +172,8 @@ span.btn-wrap {
 .font-awesome-5 .bct-together::before,
 .font-awesome-5 .bct-detail::before,
 .font-awesome-5 .bct-official::before,
-.font-awesome-5 .bct-dl::before {
+.font-awesome-5 .bct-dl::before,
+.font-awesome-5 .btn-wrap::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 501;
 }
