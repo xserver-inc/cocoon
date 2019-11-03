@@ -92,6 +92,11 @@ function is_site_icon_font_font_awesome_5(){
   return get_site_icon_font() == 'font_awesome_5';
 }
 endif;
+if ( !function_exists( 'get_site_icon_font_class' ) ):
+function get_site_icon_font_class(){
+  return str_replace('_', '-', get_site_icon_font());
+}
+endif;
 
 //サイト背景色
 define('OP_SITE_BACKGROUND_COLOR', 'site_background_color');

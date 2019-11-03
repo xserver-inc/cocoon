@@ -347,7 +347,7 @@ function body_class_additional($classes) {
   }
 
   //利用アイコンフォントクラス
-  $classes[] = str_replace('_', '-', get_site_icon_font());
+  $classes[] = get_site_icon_font_class();
 
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional
