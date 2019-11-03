@@ -484,7 +484,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in a { position: relative; }
 .admin-settings .demo .navi-in .has-icon { position: absolute; right: 6px; top: 0; display: inline-block; opacity: 0.7; font-size: 11px; }
 .admin-settings .demo .navi-in > ul { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; text-align: center; /*サブメニュー*/ }
-.admin-settings .demo .navi-in > ul li { display: block; width: 176px; height: 60px; line-height: 60px; }
+.admin-settings .demo .navi-in > ul li { display: block; width: 176px; height: 60px; line-height: 60px; position: relative; }
 .admin-settings .demo .navi-in > ul li:hover > ul { display: block; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap { line-height: 21.4285714286px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; height: 60px; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div { width: 100%; }
@@ -2008,7 +2008,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .navi-in a { position: relative; }
 .admin-settings .demo .navi-in .has-icon { position: absolute; right: 6px; top: 0; display: inline-block; opacity: 0.7; font-size: 11px; }
 .admin-settings .demo .navi-in > ul { padding: 0; margin: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; text-align: center; /*サブメニュー*/ }
-.admin-settings .demo .navi-in > ul li { display: block; width: 176px; height: 60px; line-height: 60px; }
+.admin-settings .demo .navi-in > ul li { display: block; width: 176px; height: 60px; line-height: 60px; position: relative; }
 .admin-settings .demo .navi-in > ul li:hover > ul { display: block; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap { line-height: 21.4285714286px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; height: 60px; }
 .admin-settings .demo .navi-in > ul .menu-item-has-description > a > .caption-wrap > div { width: 100%; }

@@ -55,6 +55,7 @@ $icon_height: 16px;
       width: 176px;
       height: $menu_height;
       line-height: $menu_height;
+      position: relative;
 
       &:hover{
         >ul{

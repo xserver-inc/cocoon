@@ -781,6 +781,7 @@ img.emoji {
   width: 176px;
   height: 60px;
   line-height: 60px;
+  position: relative;
 }
 .navi-in > ul li:hover > ul {
   display: block;
