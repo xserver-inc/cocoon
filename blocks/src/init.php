@@ -96,6 +96,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'isTemplateVisible' => $is_templates_visible,
     'isAffiliateVisible' => $is_affiliates_visible,
     'isRankingVisible' => $is_rankings_visible,
+    'siteIconFont' => str_replace('_', '-', get_site_icon_font()),
     'isDebugMode' => DEBUG_MODE,
   );
 
