@@ -251,6 +251,8 @@ function convert_content_for_amp($the_content){
       //変数の初期化
       $src_attr = null;
       $url = null;
+      $id_attr = null;
+      $class_attr = null;
       $width_attr = null;
       $width_value = null;
       $height_attr = null;
@@ -267,6 +269,18 @@ function convert_content_for_amp($the_content){
       if ($src_res) {
         $src_attr = ' '.$srcs[0];//src属性を作成
         $url = $srcs[1];//srcの値（URL）を取得する
+      }
+
+      //id属性の取得
+      $id_res = preg_match('/id=["\']([^"\']*?)["\']/is', $match, $ids);
+      if ($id_res) {
+        $id_attr = ' '.$ids[0];//id属性を作成
+      }
+
+      //class属性の取得
+      $class_res = preg_match('/class=["\']([^"\']*?)["\']/is', $match, $classes);
+      if ($class_res) {
+        $class_attr = ' '.$classes[0];//id属性を作成
       }
 
       //width属性の取得
@@ -354,7 +368,7 @@ function convert_content_for_amp($the_content){
       }
 
       //amp-imgタグの作成
-      $tag = '<amp-img'.$src_attr.$width_attr.$height_attr.$alt_attr.$title_attr.$sizes_attr.$class_attr.'></amp-img>';
+      $tag = '<amp-img'.$src_attr.$id_attr.$class_attr.$width_attr.$height_attr.$alt_attr.$title_attr.$sizes_attr.$class_attr.'></amp-img>';
 
       //imgタグをamp-imgタグに置換
       $the_content = preg_replace('{'.preg_quote($match).'}', $tag , $the_content, 1);
