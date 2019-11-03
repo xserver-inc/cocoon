@@ -1461,9 +1461,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbp-r .speech-balloon { margin-right: 20px; }
 .admin-settings .demo .sbp-r .speech-balloon::before { right: -12px; left: auto; border-left: 12px solid #ccc; border-right: none; }
 .admin-settings .demo .sbp-r .speech-balloon::after { right: -9px; left: auto; border-left: 12px solid #fff; border-right: none; }
-.admin-settings .demo .sbis-sn .speech-icon-image { border-radius: 0; border-style: none; }
+.admin-settings .demo .sbis-sn .speech-icon-image { border-radius: 0; border-style: none; box-shadow: none; }
 .admin-settings .demo .sbis-sb .speech-icon-image { border-radius: 0; }
-.admin-settings .demo .sbis-cn .speech-icon-image { border-style: none; }
+.admin-settings .demo .sbis-cn .speech-icon-image { border-style: none; box-shadow: none; }
 .admin-settings .demo .sbs-flat .speech-balloon { background-color: #f1f1f1; border-color: #f1f1f1; }
 .admin-settings .demo .sbs-flat .speech-balloon::before, .admin-settings .demo .sbs-flat .speech-balloon::after { border-right-color: #f1f1f1; border-left-color: #f1f1f1; }
 .admin-settings .demo .sbs-line .speech-balloon { border-width: 1px; }
@@ -2985,9 +2985,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sbp-r .speech-balloon { margin-right: 20px; }
 .admin-settings .demo .sbp-r .speech-balloon::before { right: -12px; left: auto; border-left: 12px solid #ccc; border-right: none; }
 .admin-settings .demo .sbp-r .speech-balloon::after { right: -9px; left: auto; border-left: 12px solid #fff; border-right: none; }
-.admin-settings .demo .sbis-sn .speech-icon-image { border-radius: 0; border-style: none; }
+.admin-settings .demo .sbis-sn .speech-icon-image { border-radius: 0; border-style: none; box-shadow: none; }
 .admin-settings .demo .sbis-sb .speech-icon-image { border-radius: 0; }
-.admin-settings .demo .sbis-cn .speech-icon-image { border-style: none; }
+.admin-settings .demo .sbis-cn .speech-icon-image { border-style: none; box-shadow: none; }
 .admin-settings .demo .sbs-flat .speech-balloon { background-color: #f1f1f1; border-color: #f1f1f1; }
 .admin-settings .demo .sbs-flat .speech-balloon::before, .admin-settings .demo .sbs-flat .speech-balloon::after { border-right-color: #f1f1f1; border-left-color: #f1f1f1; }
 .admin-settings .demo .sbs-line .speech-balloon { border-width: 1px; }

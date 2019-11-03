@@ -5644,6 +5644,7 @@ div.speech-balloon p {
 .sbis-sn .speech-icon-image {
   border-radius: 0;
   border-style: none;
+  box-shadow: none;
 }
 
 .sbis-sb .speech-icon-image {
@@ -5652,6 +5653,7 @@ div.speech-balloon p {
 
 .sbis-cn .speech-icon-image {
   border-style: none;
+  box-shadow: none;
 }
 
 .sbs-flat .speech-balloon {
