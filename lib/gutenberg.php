@@ -242,24 +242,53 @@ function get_block_editor_color_palette_css(){
 
 
 <?php //WordPressデフォルト ?>
-.main .has-<?php echo $slug; ?>-color {
-    color: <?php echo $color; ?>;
-}
 .main .has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;
+}
+.main .has-<?php echo $slug; ?>-color {
+    color: <?php echo $color; ?>;
 }
 .main .has-<?php echo $slug; ?>-border-color {
     border-color: <?php echo $color; ?>;
 }
-<?php //ボタン・囲みボタン ?>
-.btn.has-<?php echo $slug; ?>,
-.btn-wrap.has-<?php echo $slug; ?> > a{
+<?php //囲みボタン ?>
+.btn-wrap.has-<?php echo $slug; ?>-background-color > a{
     background-color: <?php echo $color; ?>;
 }
-
+.btn-wrap.has-<?php echo $slug; ?>-color > a{
+    color: <?php echo $color; ?>;
+}
+.btn-wrap.has-<?php echo $slug; ?>-border-color > a{
+    border-color: <?php echo $color; ?>;
+}
 
     <?php
+    }//カラーパレットのループ
+    $btn_wrap_bk_color = 'transparent';
+    if (is_admin()) {
+        $btn_wrap_bk_color = '#f8e58c';
     }
+    //1回だけ呼び出す ?>
+.main .btn-wrap{
+    background-color: <?php echo $btn_wrap_bk_color; ?>;
+    color: #333;
+    border-color: transparent;
+    font-size: 16px;
+}
+    <?php // フォントサイズ ?>
+.btn-wrap.has-small-font-size > a {
+  font-size: 13px;
+}
+.btn-wrap.has-medium-font-size > a {
+  font-size: 20px;
+}
+.btn-wrap.has-large-font-size > a {
+  font-size: 36px;
+}
+.btn-wrap.has-huge-font-size > a, .btn-wrap.has-larger-font-size > a {
+  font-size: 42px;
+}
+    <?php
     $css = ob_get_clean();
     return $css;
 }
