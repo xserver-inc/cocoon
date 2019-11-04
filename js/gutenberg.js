@@ -8,10 +8,10 @@ wp.domReady(function () {
     // add classes
     const addClasses = function () {
         // add body class
-        $('#editor .editor-writing-flow').addClass('article main page-body ' + gbSettings['siteIconFont']);
+        jQuery('#editor .editor-writing-flow').addClass('article main page-body ' + gbSettings['siteIconFont']);
 
         // add title class
-        $('#editor .editor-post-title__input').addClass('entry-title');
+        jQuery('#editor .editor-post-title__input').addClass('entry-title');
     };
     addClasses();
 
@@ -34,8 +34,8 @@ wp.domReady(function () {
     // remove style
     const removeStyle = function (regexp, applyTo, index, keep, keepOriginal) {
         // TODO: consider media query
-        $('style').each(function () {
-            const html = $(this).html();
+        jQuery('style').each(function () {
+            const html = jQuery(this).html();
 
             // get all matched styles
             let m;
@@ -54,7 +54,7 @@ wp.domReady(function () {
                     match[index].replace(/\/\*[\s\S]+?\*\//g, '').trim().split(/\r\n|\r|\n/).forEach(function (item) {
                         const split = item.split(':');
                         if (split.length >= 2) {
-                            if (!keep || $.inArray(split[0], keep) >= 0) {
+                            if (!keep || jQuery.inArray(split[0], keep) >= 0) {
                                 style += item.replace(/;$/, '') + ';';
                             }
                         }
@@ -63,7 +63,7 @@ wp.domReady(function () {
                         replaced += ' ' + applyTo + ' {' + style + '}';
                     }
                 });
-                $(this).html(replaced);
+                jQuery(this).html(replaced);
             }
         });
     };
@@ -106,8 +106,8 @@ wp.domReady(function () {
         removeStyle(/\.editor-styles-wrapper\s+.article\s+h1\s*{([\s\S]+?)}/g, '.editor-post-title__block .editor-post-title__input.entry-title', 1);
     }
 
-    $('style').each(function () {
-        $(this).html($(this).html().replace(/main\.main/g, '.editor-writing-flow.main'));
+    jQuery('style').each(function () {
+        jQuery(this).html(jQuery(this).html().replace(/main\.main/g, '.editor-writing-flow.main'));
     });
 });
 
