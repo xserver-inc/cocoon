@@ -261,6 +261,15 @@ function get_block_editor_color_palette_css(){
 .btn-wrap.has-<?php echo $slug; ?>-border-color > a{
     border-color: <?php echo $color; ?>;
 }
+<?php //タブボックス ?>
+<?php if(is_admin()): ?>
+.bb-tab.has-<?php echo $slug; ?>-border-color::before{
+    background-color: <?php echo $color; ?>;
+}
+<?php endif; ?>
+.bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
+    background-color: <?php echo $color; ?>;
+}
 
     <?php
     }//カラーパレットのループ
