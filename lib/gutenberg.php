@@ -270,6 +270,16 @@ function get_block_editor_color_palette_css(){
 .bb-tab.has-<?php echo $slug; ?>-border-color .bb-label{
     background-color: <?php echo $color; ?>;
 }
+<?php //トグルボックス ?>
+.toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button{
+    background-color: <?php echo $color; ?>;
+}
+.toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-button,
+.toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
+    border-color: <?php echo $color; ?>;
+}
+
+
 
     <?php
     }//カラーパレットのループ
@@ -284,6 +294,12 @@ function get_block_editor_color_palette_css(){
     border-color: transparent;
     font-size: 16px;
 }
+
+
+.toggle-wrap.has-border-color .toggle-button{
+    color: #fff;
+}
+
     <?php // フォントサイズ ?>
 .btn-wrap.has-small-font-size > a {
   font-size: 13px;
