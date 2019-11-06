@@ -329,7 +329,7 @@ endif;
 //Font Awesomeの読み込み
 if ( !function_exists( 'wp_enqueue_style_font_awesome' ) ):
 function wp_enqueue_style_font_awesome(){
-  if (!is_web_font_lazy_load_enable()) {
+  if (!is_web_font_lazy_load_enable() || is_admin()) {
     wp_enqueue_style( 'font-awesome-style', get_site_icon_font_url() );
     if (is_site_icon_font_font_awesome_5()) {
       wp_enqueue_style( 'font-awesome5-update-style', FONT_AWESOME_5_UPDATE_URL );
