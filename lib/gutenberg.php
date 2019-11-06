@@ -278,8 +278,10 @@ function get_block_editor_color_palette_css(){
 .toggle-wrap.has-<?php echo $slug; ?>-border-color .toggle-content{
     border-color: <?php echo $color; ?>;
 }
-
-
+<?php //アイコンリストボックス ?>
+.iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
+    color: <?php echo $color; ?>;
+}
 
     <?php
     }//カラーパレットのループ

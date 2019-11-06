@@ -1811,6 +1811,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-download::before { content: '\f019'; }
 .admin-settings .demo .fab-coffee::before { content: '\f0f4'; }
 .admin-settings .demo .fab-user::before { content: '\f007'; }
+.admin-settings .demo .iconlist-box { border-color: transparent; }
 .admin-settings .demo .iconlist-box ul, .admin-settings .demo .iconlist-box ol { list-style: none; }
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }
@@ -3335,6 +3336,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fab-download::before { content: '\f019'; }
 .admin-settings .demo .fab-coffee::before { content: '\f0f4'; }
 .admin-settings .demo .fab-user::before { content: '\f007'; }
+.admin-settings .demo .iconlist-box { border-color: transparent; }
 .admin-settings .demo .iconlist-box ul, .admin-settings .demo .iconlist-box ol { list-style: none; }
 .admin-settings .demo .iconlist-box.list-none ul { list-style: disc; }
 .admin-settings .demo .iconlist-box.list-none ol { list-style: decimal; }

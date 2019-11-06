@@ -213,6 +213,9 @@
   content: '\f007';
 }
 
+.iconlist-box {
+  border-color: transparent;
+}
 .iconlist-box ul,
 .iconlist-box ol {
   list-style: none;
