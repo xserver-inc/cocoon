@@ -63,7 +63,7 @@ function admin_print_styles_custom() {
 
     $select_index = 0;
     if (isset($_POST['select_index'])) {
-    $select_index = intval($_POST[SELECT_INDEX_NAME]);
+      $select_index = intval($_POST[SELECT_INDEX_NAME]);
     }
     $data = 'jQuery(document).ready( function() {
          tabify("#tabs").select( '.$select_index.' );
