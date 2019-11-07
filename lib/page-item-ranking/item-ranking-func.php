@@ -201,6 +201,7 @@ endif;
 if ( !function_exists( 'get_rating_star_tag' ) ):
 function get_rating_star_tag($rate, $max = 5, $number = false){
   $rate = floatval($rate);
+  $rate = round($rate, 1, PHP_ROUND_HALF_DOWN);
   $max = intval($max);
   //数字じゃない場合
   if (!is_numeric($rate) || !is_numeric($max)) {
@@ -249,7 +250,7 @@ function get_rating_star_tag($rate, $max = 5, $number = false){
   }
 
   if ($number) {
-    $tag .= '<span class="rating-number">'.$rate.'</span>';
+    $tag .= '<span class="rating-number">'.sprintf('%.1f', $rate).'</span>';
   }
 
   $tag .= '</span>';
