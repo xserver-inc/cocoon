@@ -282,6 +282,36 @@ function get_block_editor_color_palette_css(){
 .iconlist-box.has-<?php echo $slug; ?>-icon-color li::before{
     color: <?php echo $color; ?>;
 }
+<?php //マイクロバルーン（背景色） ?>
+.micro-balloon.has-<?php echo $slug; ?>-background-color {
+  background-color: <?php echo $color; ?>;
+  border-color: transparent;
+}
+.micro-balloon.has-<?php echo $slug; ?>-background-color.micro-bottom::after {
+  border-bottom-color: <?php echo $color; ?>;
+  border-top-color: transparent;
+}
+.micro-balloon.has-<?php echo $slug; ?>-background-color::before {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.micro-balloon.has-<?php echo $slug; ?>-background-color::after {
+  border-top-color: <?php echo $color; ?>;
+}
+<?php //マイクロバルーン（ボーダー色） ?>
+.micro-balloon.has-border-color.has-<?php echo $slug; ?>-border-color {
+  border-color: <?php echo $color; ?>;
+}
+.micro-balloon.micro-top.has-<?php echo $slug; ?>-border-color::before {
+  border-top-color: <?php echo $color; ?>;
+}
+.micro-balloon.micro-bottom.has-<?php echo $slug; ?>-border-color::before {
+  border-bottom-color: <?php echo $color; ?>;
+}
+
+
+
+
 
     <?php
     }//カラーパレットのループ

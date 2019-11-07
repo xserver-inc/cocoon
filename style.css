@@ -3528,6 +3528,9 @@ label.screen-reader-text {
   display: table;
   font-size: 0.8em;
 }
+.micro-balloon.has-background {
+  color: #fff;
+}
 
 .micro-balloon:after, .micro-balloon:before {
   top: calc(100% - 1px);

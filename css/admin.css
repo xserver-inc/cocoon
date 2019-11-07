@@ -1001,6 +1001,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
 .admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon.has-background { color: #fff; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
@@ -2526,6 +2527,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-center { text-align: center; }
 .admin-settings .demo .micro-right { text-align: right; }
 .admin-settings .demo .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.admin-settings .demo .micro-balloon.has-background { color: #fff; }
 .admin-settings .demo .micro-balloon:after, .admin-settings .demo .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .admin-settings .demo .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .admin-settings .demo .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
@@ -4224,6 +4226,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .micro-center { text-align: center; }
 .components-popover__content .micro-right { text-align: right; }
 .components-popover__content .micro-balloon { position: relative; background: #fff; border: 1px solid #999; border-radius: 4px; padding: 3px 12px; display: table; font-size: 0.8em; }
+.components-popover__content .micro-balloon.has-background { color: #fff; }
 .components-popover__content .micro-balloon:after, .components-popover__content .micro-balloon:before { top: calc(100% - 1px); left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .components-popover__content .micro-balloon:after { border-top-color: #fff; border-width: 7px; margin-left: -7px; }
 .components-popover__content .micro-balloon:before { border-top-color: #999; border-width: 8px; margin-left: -8px; }
