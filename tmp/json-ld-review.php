@@ -30,7 +30,7 @@ $review_type = get_the_review_type() ? get_the_review_type() : 'Product';
   },
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": "<?php echo esc_attr(get_the_review_rate()); ?>",
+    "ratingValue": "<?php echo esc_attr(sprintf('%.1f', get_the_review_rate())); ?>",
     "bestRating": "5",
     "worstRating": "0"
   },
