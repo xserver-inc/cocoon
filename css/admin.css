@@ -1125,6 +1125,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .block-box-label { display: flex; }
 .admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
 .admin-settings .demo .cb-red.caption-box { border-color: #e60033; }
@@ -2651,6 +2652,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .block-box-label { display: flex; }
 .admin-settings .demo .block-box-label::before { margin-right: 0.3em; }
 .admin-settings .demo .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.admin-settings .demo .caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .admin-settings .demo .caption-box-content { padding: 0.4em 0.8em; }
 .admin-settings .demo .cb-red.caption-box { border-color: #e60033; }
@@ -4350,6 +4352,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .block-box-label { display: flex; }
 .components-popover__content .block-box-label::before { margin-right: 0.3em; }
 .components-popover__content .caption-box { margin: 1.2em 0; border: 2px solid #eee; border-radius: 4px; }
+.components-popover__content .caption-box.has-border-color .box-label { color: #fff; }
 .components-popover__content .caption-box-label { padding: 0.2em 0.8em; background-color: #eee; }
 .components-popover__content .caption-box-content { padding: 0.4em 0.8em; }
 .components-popover__content .cb-red.caption-box { border-color: #e60033; }

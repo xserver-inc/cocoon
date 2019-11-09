@@ -308,8 +308,10 @@ function get_block_editor_color_palette_css(){
 .micro-balloon.micro-bottom.has-<?php echo $slug; ?>-border-color::before {
   border-bottom-color: <?php echo $color; ?>;
 }
-
-
+<?php //見出しBox ?>
+.caption-box.has-<?php echo $slug; ?>-border-color .box-label{
+  background-color: <?php echo $color; ?>;
+}
 
 
 

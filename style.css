@@ -4073,6 +4073,9 @@ label.screen-reader-text {
   border: 2px solid #eee;
   border-radius: 4px;
 }
+.caption-box.has-border-color .box-label {
+  color: #fff;
+}
 
 .caption-box-label {
   padding: 0.2em 0.8em;

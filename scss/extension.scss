@@ -1120,6 +1120,9 @@ $bb_green: $green_color;
   margin: 1.2em 0;
   border: 2px solid $current_bgc;
   border-radius: $basic_border_radius;
+  &.has-border-color .box-label{
+    color: $white;
+  }
 }
 
 .caption-box-label{
