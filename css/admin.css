@@ -1169,6 +1169,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-white.caption-box { border-color: #fff; }
 .admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
+.admin-settings .demo .tab-caption-box.block-box.has-background { background-color: transparent; }
+.admin-settings .demo .tab-caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }
@@ -2696,6 +2698,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .cb-white.caption-box { border-color: #fff; }
 .admin-settings .demo .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tab-caption-box { margin: 1.2em 0; }
+.admin-settings .demo .tab-caption-box.block-box.has-background { background-color: transparent; }
+.admin-settings .demo .tab-caption-box.has-border-color .box-label { color: #fff; }
 .admin-settings .demo .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .admin-settings .demo .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .admin-settings .demo .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }
@@ -4396,6 +4400,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .cb-white.caption-box { border-color: #fff; }
 .components-popover__content .cb-white .caption-box-label { background-color: #fff; color: #fff; }
 .components-popover__content .tab-caption-box { margin: 1.2em 0; }
+.components-popover__content .tab-caption-box.block-box.has-background { background-color: transparent; }
+.components-popover__content .tab-caption-box.has-border-color .box-label { color: #fff; }
 .components-popover__content .tab-caption-box-label { padding: 0 0.8em; font-size: 0.9em; background-color: #eee; display: inline-block; border-top-left-radius: 8px; border-top-right-radius: 8px; }
 .components-popover__content .tab-caption-box-content { margin-top: -3px; border: 3px solid #eee; padding: 0.4em 0.8em; border-radius: 8px; border-top-left-radius: 0; }
 .components-popover__content .tcb-red .tab-caption-box-label { background-color: #e60033; color: #fff; }

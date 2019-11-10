@@ -308,11 +308,20 @@ function get_block_editor_color_palette_css(){
 .micro-balloon.micro-bottom.has-<?php echo $slug; ?>-border-color::before {
   border-bottom-color: <?php echo $color; ?>;
 }
-<?php //見出しBox ?>
+<?php //見出しボックス ?>
 .caption-box.has-<?php echo $slug; ?>-border-color .box-label{
   background-color: <?php echo $color; ?>;
 }
-
+<?php //タブ見出しボックス ?>
+.tab-caption-box.has-<?php echo $slug; ?>-border-color .box-label{
+  background-color: <?php echo $color; ?>;
+}
+.tab-caption-box.has-<?php echo $slug; ?>-border-color .box-content{
+  border-color: <?php echo $color; ?>;
+}
+.tab-caption-box.has-<?php echo $slug; ?>-background-color .box-content{
+  background-color: <?php echo $color; ?>;
+}
 
 
     <?php

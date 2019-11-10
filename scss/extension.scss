@@ -1170,6 +1170,12 @@ $bb_green: $green_color;
 ************************************/
 .tab-caption-box{
   margin: 1.2em 0;
+  &.block-box.has-background{
+    background-color: transparent;
+  }
+  &.has-border-color .box-label{
+    color: $white;
+  }
 }
 .tab-caption-box-label{
   padding: 0 0.8em;

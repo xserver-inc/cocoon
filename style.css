@@ -4252,6 +4252,12 @@ label.screen-reader-text {
 .tab-caption-box {
   margin: 1.2em 0;
 }
+.tab-caption-box.block-box.has-background {
+  background-color: transparent;
+}
+.tab-caption-box.has-border-color .box-label {
+  color: #fff;
+}
 
 .tab-caption-box-label {
   padding: 0 0.8em;
