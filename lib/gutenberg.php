@@ -322,6 +322,13 @@ function get_block_editor_color_palette_css(){
 .tab-caption-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
+<?php //ラベルボックス ?>
+.label-box.has-<?php echo $slug; ?>-border-color .box-content{
+  border-color: <?php echo $color; ?>;
+}
+.label-box.has-<?php echo $slug; ?>-background-color .box-content{
+  background-color: <?php echo $color; ?>;
+}
 
 
     <?php

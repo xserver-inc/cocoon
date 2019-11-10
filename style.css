@@ -4442,13 +4442,16 @@ label.screen-reader-text {
 .label-box {
   margin: 1.2em 0;
 }
+.label-box.block-box.has-background {
+  background-color: transparent;
+}
 
 .label-box-label {
   margin-left: 2em;
   padding: 0 0.8em;
   font-size: 0.9em;
-  background-color: #fff;
-  display: inline-block;
+  font-weight: bold;
+  text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px;
 }
 
 .label-box-content {

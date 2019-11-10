@@ -1229,13 +1229,37 @@ $bb_green: $green_color;
 ************************************/
 .label-box{
   margin: 1.2em 0;
+  &.block-box.has-background{
+    background-color: transparent;
+  }
 }
 .label-box-label{
   margin-left: 2em;
   padding: 0 0.8em;
   font-size: 0.9em;
-  background-color: $white;
-  display: inline-block;
+  //background-color: $white;
+  //display: inline-block;
+  font-weight: bold;
+  text-shadow:
+  $white 3px 0px 0px,
+  $white 2px 1px 0px,
+  $white 2px 2px 0px,
+  $white 2px 3px 0px,
+  $white 1px 3px 0px,
+  $white -0px 3px 0px,
+  $white -1px 3px 0px,
+  $white -2px 2px 0px,
+  $white -3px 1px 0px,
+  $white -3px 0px 0px,
+  $white -3px -1px 0px,
+  $white -3px -2px 0px,
+  $white -2px -2px 0px,
+  $white -1px -3px 0px,
+  $white -0px -3px 0px,
+  $white 1px -3px 0px,
+  $white 2px -2px 0px,
+  $white 2px -2px 0px,
+  $white 3px -1px 0px;
   // border: 2px solid $middle_thickness;
   // border-radius: $middle_border_radius;
 }

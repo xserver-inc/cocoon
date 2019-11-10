@@ -1214,7 +1214,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
-.admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
+.admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
+.admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
 .admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
@@ -2743,7 +2744,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .admin-settings .demo .tcb-white .tab-caption-box-content { border-color: #fff; }
 .admin-settings .demo .label-box { margin: 1.2em 0; }
-.admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
+.admin-settings .demo .label-box.block-box.has-background { background-color: transparent; }
+.admin-settings .demo .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .admin-settings .demo .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .admin-settings .demo .lb-red .label-box-content { border-color: #e60033; }
 .admin-settings .demo .lb-pink .label-box-content { border-color: #e95295; }
@@ -4445,7 +4447,8 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .tcb-white .tab-caption-box-label { background-color: #fff; color: #fff; }
 .components-popover__content .tcb-white .tab-caption-box-content { border-color: #fff; }
 .components-popover__content .label-box { margin: 1.2em 0; }
-.components-popover__content .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; background-color: #fff; display: inline-block; }
+.components-popover__content .label-box.block-box.has-background { background-color: transparent; }
+.components-popover__content .label-box-label { margin-left: 2em; padding: 0 0.8em; font-size: 0.9em; font-weight: bold; text-shadow: #fff 3px 0px 0px, #fff 2px 1px 0px, #fff 2px 2px 0px, #fff 2px 3px 0px, #fff 1px 3px 0px, #fff 0px 3px 0px, #fff -1px 3px 0px, #fff -2px 2px 0px, #fff -3px 1px 0px, #fff -3px 0px 0px, #fff -3px -1px 0px, #fff -3px -2px 0px, #fff -2px -2px 0px, #fff -1px -3px 0px, #fff 0px -3px 0px, #fff 1px -3px 0px, #fff 2px -2px 0px, #fff 2px -2px 0px, #fff 3px -1px 0px; }
 .components-popover__content .label-box-content { margin-top: -0.9em; border: 3px solid #777; padding: 1em 0.8em 0.4em; border-radius: 8px; }
 .components-popover__content .lb-red .label-box-content { border-color: #e60033; }
 .components-popover__content .lb-pink .label-box-content { border-color: #e95295; }
