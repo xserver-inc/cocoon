@@ -101,9 +101,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     $file = get_visual_color_palette_css_cache_file();
     $color_file_url = get_visual_color_palette_css_cache_url();
     wp_filesystem_put_contents($file, $css);
-    // phpでCSS呼び出しは動作せず
-    //$color_php_file_url = get_template_directory_uri() . '/lib/common/color-palette-css.php';
-    //$test_color_url = get_template_directory_uri() . '/css/color-palette.css' ;
+
     array_push($stylesheets,
       add_file_ver_to_css_js(get_site_icon_font_url()),
       add_file_ver_to_css_js($style_url),
@@ -111,8 +109,6 @@ function visual_editor_stylesheets_custom($stylesheets) {
       add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル
       add_file_ver_to_css_js($editor_style_url),
       add_file_ver_to_css_js($color_file_url)
-      //add_file_ver_to_css_js($test_color_url)//,
-      //add_file_ver_to_css_js($color_php_file_url) // phpでCSS呼び出しは動作せず
     );
     //Font Awesome5が有効な場合
     if (is_site_icon_font_font_awesome_5()) {
