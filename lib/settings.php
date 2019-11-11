@@ -95,7 +95,6 @@ function visual_editor_stylesheets_custom($stylesheets) {
   if (is_visual_editor_style_enable()) {
     $style_url = PARENT_THEME_STYLE_CSS_URL;
     $keyframes_url = PARENT_THEME_KEYFRAMES_CSS_URL;
-    $cache_file_url = get_theme_css_cache_file_url();
     $editor_style_url = get_template_directory_uri().'/editor-style.css';
     $css = get_block_editor_color_palette_css();
     $file = get_visual_color_palette_css_cache_file();
@@ -106,7 +105,6 @@ function visual_editor_stylesheets_custom($stylesheets) {
       add_file_ver_to_css_js(get_site_icon_font_url()),
       add_file_ver_to_css_js($style_url),
       add_file_ver_to_css_js($keyframes_url),
-      add_file_ver_to_css_js($cache_file_url), //テーマ設定で変更したスタイル
       add_file_ver_to_css_js($editor_style_url),
       add_file_ver_to_css_js($color_file_url)
     );
@@ -122,6 +120,11 @@ function visual_editor_stylesheets_custom($stylesheets) {
         add_file_ver_to_css_js(get_skin_url())
       );
     }
+    //カスタムスタイル
+    $cache_file_url = get_theme_css_cache_file_url();
+    array_push($stylesheets,
+        add_file_ver_to_css_js($cache_file_url)
+      );
     //子テーマがある場合、子テーマ内のスタイルも読み込む
     if (is_child_theme()) {
       array_push($stylesheets,
