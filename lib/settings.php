@@ -100,7 +100,7 @@ function visual_editor_stylesheets_custom($stylesheets) {
     $css = get_block_editor_color_palette_css();
     $file = get_visual_color_palette_css_cache_file();
     $color_file_url = get_visual_color_palette_css_cache_url();
-    wp_filesystem_put_contents($file, $css, 0);
+    wp_filesystem_put_contents($file, $css);
     // phpでCSS呼び出しは動作せず
     //$color_php_file_url = get_template_directory_uri() . '/lib/common/color-palette-css.php';
     //$test_color_url = get_template_directory_uri() . '/css/color-palette.css' ;
@@ -151,21 +151,6 @@ function gutenberg_stylesheets_custom() {
     // Gutenberg用のCSSとJSのみ読み込み
     wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME . '-gutenberg', get_template_directory_uri() . '/css/gutenberg-editor.css' );
-
-    $css = get_block_editor_color_palette_css();
-    $file = get_block_color_palette_css_cache_file();
-    wp_filesystem_put_contents($file, $css, 0);
-    wp_enqueue_style( THEME_NAME . '-color-palette', get_block_color_palette_css_cache_url() );
-
-    //テスト用の静的ファイル
-    //wp_enqueue_style( THEME_NAME . '-color-palette', get_template_directory_uri() . '/css/color-palette.css' );
-
-    // phpでCSS呼び出しは動作せず
-    // wp_enqueue_style( THEME_NAME . '-gutenberg-color-palette', get_template_directory_uri() . '/lib/common/color-palette-css.php' );
-
-    // if (file_exists(get_theme_css_cache_file())) {
-    //   wp_enqueue_style( THEME_NAME . '-gutenberg-custom-css', get_theme_css_cache_file_url() );
-    // }
 
     /**
      * Filters the script parameter name.

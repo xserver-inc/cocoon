@@ -1876,7 +1876,7 @@ if (!defined('FS_CHMOD_FILE')) {
 }
 //ファイル内容の出力
 if ( !function_exists( 'wp_filesystem_put_contents' ) ):
-function wp_filesystem_put_contents($new_file, $file_data, $chmod = FS_CHMOD_FILE ){
+function wp_filesystem_put_contents($new_file, $file_data, $chmod = 0 ){
   return file_put_contents($new_file, $file_data, $chmod);
 }
 endif;

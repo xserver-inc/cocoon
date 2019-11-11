@@ -734,5 +734,7 @@ if ($is_IE): ?>
   <?php endif; ?>
 <?php endif; ?>
 <?php //デフォルトブロックエディター色の色指定
+if (!is_admin()) {
   echo get_block_editor_color_palette_css();
+}
 ?>
