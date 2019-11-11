@@ -329,6 +329,33 @@ function get_block_editor_color_palette_css(){
 .label-box.has-<?php echo $slug; ?>-background-color .box-content{
   background-color: <?php echo $color; ?>;
 }
+<?php //吹き出しボックス ?>
+.sbp-l .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+  border-right-color: <?php echo $color; ?>;
+}
+.sbp-r .speech-balloon.has-<?php echo $slug; ?>-border-color::before{
+  border-left-color: <?php echo $color; ?>;
+}
+.sbp-l .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+  border-right-color: <?php echo $color; ?>;
+}
+.sbp-r .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+  border-left-color: <?php echo $color; ?>;
+}
+.sbs-line.sbp-r .speech-balloon.has-<?php echo $slug; ?>-background-color{
+  background-color: <?php echo $color; ?>;
+}
+.sbs-line.sbp-r .speech-balloon.has-<?php echo $slug; ?>-border-color{
+  border-color: <?php echo $color; ?>;
+}
+.speech-wrap.sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::before,
+.speech-wrap.sbs-think .speech-balloon.has-<?php echo $slug; ?>-border-color::after{
+  border-color: <?php echo $color; ?>;
+}
+.sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::before,
+.sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
+  background-color: <?php echo $color; ?>;
+}
 
 
     <?php
