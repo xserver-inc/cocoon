@@ -338,7 +338,10 @@ function get_block_editor_color_palette_css(){
 .sbs-think .speech-balloon.has-<?php echo $slug; ?>-background-color::after{
   background-color: <?php echo $color; ?>;
 }
-
+<?php //タイムライン ?>
+.timeline-box.has-<?php echo $slug; ?>-point-color .timeline-item::before{
+  background-color: <?php echo $color; ?>;
+}
 
     <?php
     }//カラーパレットのループ終了
