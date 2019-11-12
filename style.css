@@ -2758,7 +2758,7 @@ label.screen-reader-text {
 .comment-box::before,
 .common-icon-box::before {
   font-family: "FontAwesome";
-  font-size: 46px;
+  font-size: 42px;
   position: absolute;
   top: -13px;
   left: 13px;
