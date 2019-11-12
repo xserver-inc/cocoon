@@ -3188,21 +3188,19 @@ function is_ios() {
 //Font Awesome5変換
 if ( !function_exists( 'change_fa' ) ):
 function change_fa($buffer){
-  if (is_site_icon_font_font_awesome_5() &&
-      preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)) {
+  if (
+    is_site_icon_font_font_awesome_5() &&
+    preg_match_all('/<([a-z]+ [^>]*?class=")((fa fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)
+  ) {
     //_v($m);
     $fa4_alls = $m[0];
-    //_v($fa4_alls);
     $befores = $m[1];
     $classes = $m[2];
     $fa4_classes = $m[3];
-    //_v($fa4_classes);
     $afters = $m[4];
     $list = get_font_awesome_exchange_list();
-    //$fa4_classes = array_unique($fa4_classes);
     $i = 0;
     foreach ($fa4_classes as $fa4_class) {
-      //_v($i);
       $fa5_class = str_replace('fa ', 'fas ', $fa4_class);
       foreach ($list as $ex) {
         $fa4 = $ex[0];
@@ -3211,16 +3209,43 @@ function change_fa($buffer){
         if ($fa4 == $fa4_class) {
           //_v($fa4.'============'.$fa4_class);
           $fa5_class = $fa5;
-          //continue;
+          continue;
         }
       }
       $fa4_all_tag = $fa4_alls[$i];
       $fa5_all_tag = str_replace($fa4_class, $fa5_class, $fa4_all_tag);
-      //_v($i.'='.$fa4_all_tag);
-      // _v($fa5_class);
-      // _v($fa4_all_tag);
-      // _v($fa5_all_tag);
       $buffer = str_replace($fa4_all_tag, $fa5_all_tag, $buffer);
+      $i++;
+    }
+  } elseif (
+    is_site_icon_font_font_awesome_4() &&
+    preg_match_all('/<([a-z]+ [^>]*?class=")((fa[srb] fa-[a-z\-]+)[^"]*?)("[^>]*?)>/i', $buffer, $m)
+  ){
+    //_v($m);
+    $fa5_alls = $m[0];
+    $befores = $m[1];
+    $classes = $m[2];
+    $fa5_classes = $m[3];
+    //_v($fa5_classes);
+    $afters = $m[4];
+    $list = get_font_awesome_exchange_list();
+    $i = 0;
+    foreach ($fa5_classes as $fa5_class) {
+      //_v($i);
+      $fa4_class = str_replace('fas ', 'fa ', $fa5_class);
+      foreach ($list as $ex) {
+        $fa5 = $ex[1];
+        $fa4 = $ex[0];
+        //_v($fa5.'============'.$fa5_class);
+        if ($fa5 == $fa5_class) {
+          //_v($fa5.'============'.$fa5_class);
+          $fa4_class = $fa4;
+          continue;
+        }
+      }
+      $fa5_all_tag = $fa5_alls[$i];
+      $fa4_all_tag = str_replace($fa5_class, $fa4_class, $fa5_all_tag);
+      $buffer = str_replace($fa5_all_tag, $fa4_all_tag, $buffer);
       $i++;
     }
   }
