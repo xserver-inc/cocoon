@@ -1011,6 +1011,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: calc(100% - 1px); top: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon:after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .micro-bottom.micro-balloon:before { border-bottom-color: #999; border-top-color: transparent; }
+.admin-settings .demo .micro-icon { margin-right: 6px; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
 .admin-settings .demo .mc-circle { border-radius: 2em; }
@@ -2541,6 +2542,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-bottom.micro-balloon:after, .admin-settings .demo .micro-bottom.micro-balloon:before { bottom: calc(100% - 1px); top: auto; }
 .admin-settings .demo .micro-bottom.micro-balloon:after { border-bottom-color: #fff; border-top-color: transparent; }
 .admin-settings .demo .micro-bottom.micro-balloon:before { border-bottom-color: #999; border-top-color: transparent; }
+.admin-settings .demo .micro-icon { margin-right: 6px; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
 .admin-settings .demo .mc-circle { border-radius: 2em; }
@@ -4244,6 +4246,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .micro-bottom.micro-balloon:after, .components-popover__content .micro-bottom.micro-balloon:before { bottom: calc(100% - 1px); top: auto; }
 .components-popover__content .micro-bottom.micro-balloon:after { border-bottom-color: #fff; border-top-color: transparent; }
 .components-popover__content .micro-bottom.micro-balloon:before { border-bottom-color: #999; border-top-color: transparent; }
+.components-popover__content .micro-icon { margin-right: 6px; }
 .components-popover__content .micro-copy.alignleft, .components-popover__content .micro-copy.alignright { float: none; }
 .components-popover__content .micro-copy.alignright { margin-left: auto; }
 .components-popover__content .mc-circle { border-radius: 2em; }

@@ -905,3 +905,7 @@ ol, ul {
 .wp-block .widget.open {
   margin-left: 0;
 }
+
+.micro-content {
+  display: flex;
+}
