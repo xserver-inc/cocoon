@@ -128,7 +128,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A', 'block_editor_extended_palette_color_a');
 if ( !function_exists( 'get_block_editor_extended_palette_color_a' ) ):
 function get_block_editor_extended_palette_color_a(){
-  $default_color = '#cce5ff';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A, $default_color);
   return $color ? $color : $default_color;
 }
@@ -138,7 +138,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B', 'block_editor_extended_palette_color_b');
 if ( !function_exists( 'get_block_editor_extended_palette_color_b' ) ):
 function get_block_editor_extended_palette_color_b(){
-  $default_color = '#e2e3e5';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B, $default_color);
   return $color ? $color : $default_color;
 }
@@ -148,7 +148,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C', 'block_editor_extended_palette_color_c');
 if ( !function_exists( 'get_block_editor_extended_palette_color_c' ) ):
 function get_block_editor_extended_palette_color_c(){
-  $default_color = '#d4edda';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C, $default_color);
   return $color ? $color : $default_color;
 }
@@ -158,7 +158,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D', 'block_editor_extended_palette_color_d');
 if ( !function_exists( 'get_block_editor_extended_palette_color_d' ) ):
 function get_block_editor_extended_palette_color_d(){
-  $default_color = '#d1ecf1';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D, $default_color);
   return $color ? $color : $default_color;
 }
@@ -168,7 +168,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E', 'block_editor_extended_palette_color_e');
 if ( !function_exists( 'get_block_editor_extended_palette_color_e' ) ):
 function get_block_editor_extended_palette_color_e(){
-  $default_color = '#fff3cd';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E, $default_color);
   return $color ? $color : $default_color;
 }
@@ -178,7 +178,7 @@ endif;
 define('OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F', 'block_editor_extended_palette_color_f');
 if ( !function_exists( 'get_block_editor_extended_palette_color_f' ) ):
 function get_block_editor_extended_palette_color_f(){
-  $default_color = '#f8d7da';
+  $default_color = '#ffffff';
   $color = get_theme_option(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F, $default_color);
   return $color ? $color : $default_color;
 }
