@@ -913,3 +913,12 @@ ol, ul {
 .btn-wrap {
   background-color: #f8e58c !important;
 }
+
+.tab-caption-box-label,
+.label-box-label {
+  margin-bottom: -1px;
+}
+
+.timeline-box [data-block] {
+  margin: 0;
+}
