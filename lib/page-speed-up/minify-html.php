@@ -242,7 +242,8 @@ function convert_lazy_load_tag($the_content, $media){
   }
 
   $is_img = ($media == 'img');
-  if (!$is_img) {
+  $is_iframe = !$is_img;
+  if ($is_iframe) {
     //YouTube高速化がある場合はiframeは処理しない
     if (includes_string($the_content, ' data-iframe=')) {
       return $the_content;
@@ -251,14 +252,14 @@ function convert_lazy_load_tag($the_content, $media){
 
   $pattern = '{<'.$media.'.+?>}is';
 
-  if (!$is_img) {
-    $pattern = '{<iframe.+?>}is';
+  if ($is_iframe) {
+    $pattern = '{<iframe.+?>.*?</iframe>}is';
   }
 
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all($pattern, $the_content, $m);
   // _v($res);
-  // _v($m);
+  //_v($m);
   // if ($media == 'iframe') {
   //   //_v($pattern);
   //   _v($m);
@@ -281,6 +282,11 @@ function convert_lazy_load_tag($the_content, $media){
 
       //重複置換を避ける
       if (in_array($match, $img_tags, true)) {
+        continue;
+      }
+
+      //タグマネージャ用のものは避ける
+      if (includes_string($match, '<iframe src="https://www.googletagmanager.com/ns.html?id=')) {
         continue;
       }
 
