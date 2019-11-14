@@ -909,3 +909,7 @@ ol, ul {
 .micro-content {
   display: inline-flex;
 }
+
+.btn-wrap {
+  background-color: #f8e58c !important;
+}
