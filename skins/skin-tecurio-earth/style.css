@@ -460,3 +460,13 @@ table tr:nth-of-type(2n+1) {
   }
 
 }
+
+.widget_recent_entries ul,
+.widget_categories ul,
+.widget_archive ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_rss ul,
+.widget_nav_menu ul {
+	padding: 0 1em 1em;
+}

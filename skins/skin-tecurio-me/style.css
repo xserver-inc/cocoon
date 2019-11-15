@@ -6,7 +6,7 @@
   Author URI: https://tecurio.com/
   Screenshot URI: https://tecurio.com/wp-content/uploads/tecurio_earth.jpg
   Version: 1.0.2
-  Priority: 9860000000
+  Priority: 9860004000
 */
 /*以下にスタイルシートを記入してください*/
 
@@ -462,4 +462,14 @@ table tr:nth-of-type(2n+1) {
     padding-left: 1.2em;
   }
 
+}
+
+.widget_recent_entries ul,
+.widget_categories ul,
+.widget_archive ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_rss ul,
+.widget_nav_menu ul {
+	padding: 0 1em 1em;
 }
