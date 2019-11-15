@@ -1513,7 +1513,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-powered-date, .admin-settings .demo .kaerebalink-powered-date, .admin-settings .demo .tomarebalink-powered-date { font-size: 12px; }
 .admin-settings .demo .booklink-detail, .admin-settings .demo .kaerebalink-detail, .admin-settings .demo .tomarebalink-address { color: #333; font-size: 12px; margin: 0 0 10px; }
 .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { background: none !important; padding: 0 !important; display: block !important; }
-.admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 10px 0; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
+.admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 6px 12px; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
 .admin-settings .demo .kaerebalink-link1 a:hover, .admin-settings .demo .booklink-link2 a:hover, .admin-settings .demo .tomarebalink-link1 a:hover, .admin-settings .demo .product-item-buttons a:hover { opacity: 0.6; }
 .admin-settings .demo .product-item-buttons { margin-top: 1em; }
 @media screen and (min-width: 769px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { text-align: left; display: flex; font-size: inherit !important; }
@@ -1524,7 +1524,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; }
   .admin-settings .demo .booklink-link2 a, .admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: auto; text-align: center; border-radius: 3px; }
   .admin-settings .demo .booklink-link2 a img, .admin-settings .demo .kaerebalink-link1 a img, .admin-settings .demo .tomarebalink-link1 a img, .admin-settings .demo .product-item-buttons a img { position: absolute; bottom: 0; right: 0; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 31.5%; margin: 0.5%; box-sizing: border-box; } }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { margin: 0.5%; box-sizing: border-box; } }
 .admin-settings .demo .shoplinkbtn { position: relative; }
 .admin-settings .demo .shoplinkbtn img { position: absolute; }
 .admin-settings .demo .shoplinkbtn1 a { background: #192f60; }
@@ -1553,29 +1553,28 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pis-s { padding: 1em; }
 .admin-settings .demo .pis-s::after { font-size: 18px; }
 .admin-settings .demo .pis-s .product-item-thumb { width: 90px; min-width: 90px; }
-.admin-settings .demo .pis-s .product-item-buttons a { padding: 5px 0; }
 .admin-settings .demo .pis-l.product-item-box { display: block; }
 .admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
-.admin-settings .demo .nwa .booklink-link2, .admin-settings .demo .nwa .kaerebalink-link1, .admin-settings .demo .nwa .tomarebalink-link1, .admin-settings .demo .nwa .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
-.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
-.admin-settings .demo .nwa .booklink-link2 > * > a, .admin-settings .demo .nwa .kaerebalink-link1 > * > a, .admin-settings .demo .nwa .tomarebalink-link1 > * > a, .admin-settings .demo .nwa .product-item-buttons > * > a { width: auto; font-size: 11px; padding: 6px 0; }
+.admin-settings .demo .nwa .booklink-link2, .admin-settings .demo .nwa .kaerebalink-link1, .admin-settings .demo .nwa .tomarebalink-link1, .admin-settings .demo .nwa .product-item-buttons { display: flex; flex-wrap: wrap; }
+.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: auto; margin: 0 .5% !important; }
+.admin-settings .demo .nwa .booklink-link2 > * > a, .admin-settings .demo .nwa .kaerebalink-link1 > * > a, .admin-settings .demo .nwa .tomarebalink-link1 > * > a, .admin-settings .demo .nwa .product-item-buttons > * > a { width: auto; font-size: 11px; }
 .admin-settings .demo .nwa .product-item-box::after { font-size: 18px; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 80px; min-width: 80px; }
 .admin-settings .demo .nwa .booklink-info, .admin-settings .demo .nwa .kaerebalink-info, .admin-settings .demo .nwa .tomarebalink-info, .admin-settings .demo .nwa .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
-.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 49%; margin: 0 .5% !important; }
+.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 100%; margin: 0 .5% !important; }
 @media screen and (max-width: 834px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
-  .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
-  .admin-settings .demo .booklink-link2 > * > a, .admin-settings .demo .kaerebalink-link1 > * > a, .admin-settings .demo .tomarebalink-link1 > * > a, .admin-settings .demo .product-item-buttons > * > a { width: auto; font-size: 11px; padding: 6px 0; }
+  .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; }
+  .admin-settings .demo .booklink-link2 > * > a, .admin-settings .demo .kaerebalink-link1 > * > a, .admin-settings .demo .tomarebalink-link1 > * > a, .admin-settings .demo .product-item-buttons > * > a { width: auto; font-size: 11px; }
   .admin-settings .demo .product-item-box::after { font-size: 18px; } }
 @media screen and (max-width: 480px) { .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 80px; min-width: 80px; }
   .admin-settings .demo .booklink-info, .admin-settings .demo .kaerebalink-info, .admin-settings .demo .tomarebalink-info, .admin-settings .demo .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 100%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
@@ -3044,7 +3043,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .booklink-powered-date, .admin-settings .demo .kaerebalink-powered-date, .admin-settings .demo .tomarebalink-powered-date { font-size: 12px; }
 .admin-settings .demo .booklink-detail, .admin-settings .demo .kaerebalink-detail, .admin-settings .demo .tomarebalink-address { color: #333; font-size: 12px; margin: 0 0 10px; }
 .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { background: none !important; padding: 0 !important; display: block !important; }
-.admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 10px 0; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
+.admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 6px 12px; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
 .admin-settings .demo .kaerebalink-link1 a:hover, .admin-settings .demo .booklink-link2 a:hover, .admin-settings .demo .tomarebalink-link1 a:hover, .admin-settings .demo .product-item-buttons a:hover { opacity: 0.6; }
 .admin-settings .demo .product-item-buttons { margin-top: 1em; }
 @media screen and (min-width: 769px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { text-align: left; display: flex; font-size: inherit !important; }
@@ -3055,7 +3054,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; }
   .admin-settings .demo .booklink-link2 a, .admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: auto; text-align: center; border-radius: 3px; }
   .admin-settings .demo .booklink-link2 a img, .admin-settings .demo .kaerebalink-link1 a img, .admin-settings .demo .tomarebalink-link1 a img, .admin-settings .demo .product-item-buttons a img { position: absolute; bottom: 0; right: 0; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 31.5%; margin: 0.5%; box-sizing: border-box; } }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { margin: 0.5%; box-sizing: border-box; } }
 .admin-settings .demo .shoplinkbtn { position: relative; }
 .admin-settings .demo .shoplinkbtn img { position: absolute; }
 .admin-settings .demo .shoplinkbtn1 a { background: #192f60; }
@@ -3084,29 +3083,28 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .pis-s { padding: 1em; }
 .admin-settings .demo .pis-s::after { font-size: 18px; }
 .admin-settings .demo .pis-s .product-item-thumb { width: 90px; min-width: 90px; }
-.admin-settings .demo .pis-s .product-item-buttons a { padding: 5px 0; }
 .admin-settings .demo .pis-l.product-item-box { display: block; }
 .admin-settings .demo .pis-l figure.product-item-thumb { width: 100%; min-width: auto; }
 .admin-settings .demo .item-price { color: #c9171e; }
 .admin-settings .demo .acquired-date { font-size: 0.9em; }
 .admin-settings .demo .nwa .booklink-box, .admin-settings .demo .nwa .kaerebalink-box, .admin-settings .demo .nwa .tomarebalink-box, .admin-settings .demo .nwa .product-item-box { padding: 10px 10px 24px; display: block; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
-.admin-settings .demo .nwa .booklink-link2, .admin-settings .demo .nwa .kaerebalink-link1, .admin-settings .demo .nwa .tomarebalink-link1, .admin-settings .demo .nwa .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
-.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
-.admin-settings .demo .nwa .booklink-link2 > * > a, .admin-settings .demo .nwa .kaerebalink-link1 > * > a, .admin-settings .demo .nwa .tomarebalink-link1 > * > a, .admin-settings .demo .nwa .product-item-buttons > * > a { width: auto; font-size: 11px; padding: 6px 0; }
+.admin-settings .demo .nwa .booklink-link2, .admin-settings .demo .nwa .kaerebalink-link1, .admin-settings .demo .nwa .tomarebalink-link1, .admin-settings .demo .nwa .product-item-buttons { display: flex; flex-wrap: wrap; }
+.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: auto; margin: 0 .5% !important; }
+.admin-settings .demo .nwa .booklink-link2 > * > a, .admin-settings .demo .nwa .kaerebalink-link1 > * > a, .admin-settings .demo .nwa .tomarebalink-link1 > * > a, .admin-settings .demo .nwa .product-item-buttons > * > a { width: auto; font-size: 11px; }
 .admin-settings .demo .nwa .product-item-box::after { font-size: 18px; }
 .admin-settings .demo .nwa .booklink-image, .admin-settings .demo .nwa .kaerebalink-image, .admin-settings .demo .nwa .tomarebalink-image, .admin-settings .demo .nwa .product-item-thumb { width: 80px; min-width: 80px; }
 .admin-settings .demo .nwa .booklink-info, .admin-settings .demo .nwa .kaerebalink-info, .admin-settings .demo .nwa .tomarebalink-info, .admin-settings .demo .nwa .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
-.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 49%; margin: 0 .5% !important; }
+.admin-settings .demo .nwa .booklink-link2 > *, .admin-settings .demo .nwa .kaerebalink-link1 > *, .admin-settings .demo .nwa .tomarebalink-link1 > *, .admin-settings .demo .nwa .product-item-buttons > * { width: 100%; margin: 0 .5% !important; }
 @media screen and (max-width: 834px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { padding: 10px 10px 24px; display: block; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 120px; min-width: 120px; margin-right: 3% !important; float: left !important; height: 100% !important; }
-  .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; justify-content: space-between; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; flex: 1 1 auto; }
-  .admin-settings .demo .booklink-link2 > * > a, .admin-settings .demo .kaerebalink-link1 > * > a, .admin-settings .demo .tomarebalink-link1 > * > a, .admin-settings .demo .product-item-buttons > * > a { width: auto; font-size: 11px; padding: 6px 0; }
+  .admin-settings .demo .booklink-link2, .admin-settings .demo .kaerebalink-link1, .admin-settings .demo .tomarebalink-link1, .admin-settings .demo .product-item-buttons { display: flex; flex-wrap: wrap; }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: auto; margin: 0 .5% !important; }
+  .admin-settings .demo .booklink-link2 > * > a, .admin-settings .demo .kaerebalink-link1 > * > a, .admin-settings .demo .tomarebalink-link1 > * > a, .admin-settings .demo .product-item-buttons > * > a { width: auto; font-size: 11px; }
   .admin-settings .demo .product-item-box::after { font-size: 18px; } }
 @media screen and (max-width: 480px) { .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { width: 80px; min-width: 80px; }
   .admin-settings .demo .booklink-info, .admin-settings .demo .kaerebalink-info, .admin-settings .demo .tomarebalink-info, .admin-settings .demo .product-item-content { width: auto !important; overflow: visible !important; text-align: center !important; padding: 0 !important; }
-  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 49%; margin: 0 .5% !important; } }
+  .admin-settings .demo .booklink-link2 > *, .admin-settings .demo .kaerebalink-link1 > *, .admin-settings .demo .tomarebalink-link1 > *, .admin-settings .demo .product-item-buttons > * { width: 100%; margin: 0 .5% !important; } }
 .admin-settings .demo .fb-like-box { background-color: #444; color: #fff; display: flex; flex-wrap: nowrap; }
 .admin-settings .demo .fb-like-box .fb-like-thumb, .admin-settings .demo .fb-like-box .fb-like-content { width: 100%; }
 .admin-settings .demo .fb-like-box img { display: block; width: 100%; height: 100%; }
