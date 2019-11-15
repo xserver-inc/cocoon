@@ -470,3 +470,26 @@ table tr:nth-of-type(2n+1) {
 .widget_nav_menu ul {
 	padding: 0 1em 1em;
 }
+
+.font-awesome-5 .toc label.toc-title::before,
+.font-awesome-5 .toc .toc-checkbox:checked + label.toc-title::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 400;
+}
+.font-awesome-5 .toc label.toc-title::before{
+	content: '\f07b';
+}
+.font-awesome-5 .toc .toc-checkbox:checked + label.toc-title::before{
+	content: '\f07c';
+}
+
+.font-awesome-5 .article h4::before,
+.font-awesome-5 .article h5::before,
+.font-awesome-5 .article h6::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+.font-awesome-5 .article h6::before{
+	content: '\f30b';
+}
+
