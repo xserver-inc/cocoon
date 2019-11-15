@@ -181,7 +181,7 @@
     width: 90%;
     display: block;
     margin: 0px auto 8px;
-    padding: 10px 0;
+    padding: 6px 12px;
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
@@ -262,7 +262,6 @@
       }
     }
     >*{
-      width: 31.5%;
       margin: 0.5%;
       box-sizing: border-box;
     }
@@ -365,9 +364,9 @@
     min-width: 90px;
   }
 
-  .product-item-buttons a{
-    padding: 5px 0;
-  }
+  // .product-item-buttons a{
+  //   padding: 5px 8px;
+  // }
 }
 
 .pis-l{
@@ -415,15 +414,15 @@
     //clear: both;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    //justify-content: space-between;
     >*{
       width: auto;
       margin: 0 .5% !important;
-      flex: 1 1 auto;
+      //flex: 1 1 auto;
       >a{
         width: auto;
         font-size: 11px;
-        padding: 6px 0;
+        //padding: 6px 0;
       }
     }
   }
@@ -451,7 +450,7 @@
   .tomarebalink-link1,
   .product-item-buttons{
     >*{
-      width: 49%;
+      width: 100%;
       margin: 0 .5% !important;
     }
   }

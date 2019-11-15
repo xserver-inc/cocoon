@@ -5914,7 +5914,7 @@ div.sbs-think .speech-balloon::after {
   width: 90%;
   display: block;
   margin: 0px auto 8px;
-  padding: 10px 0;
+  padding: 6px 12px;
   text-decoration: none;
   font-size: 13px;
   font-weight: bold;
@@ -5997,7 +5997,6 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
   .product-item-buttons > * {
-    width: 31.5%;
     margin: 0.5%;
     box-sizing: border-box;
   }
@@ -6115,9 +6114,6 @@ div.sbs-think .speech-balloon::after {
   width: 90px;
   min-width: 90px;
 }
-.pis-s .product-item-buttons a {
-  padding: 5px 0;
-}
 
 .pis-l.product-item-box {
   display: block;
@@ -6152,7 +6148,6 @@ div.sbs-think .speech-balloon::after {
 .nwa .product-item-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .nwa .booklink-link2 > *,
 .nwa .kaerebalink-link1 > *,
@@ -6160,7 +6155,6 @@ div.sbs-think .speech-balloon::after {
 .nwa .product-item-buttons > * {
   width: auto;
   margin: 0 .5% !important;
-  flex: 1 1 auto;
 }
 .nwa .booklink-link2 > * > a,
 .nwa .kaerebalink-link1 > * > a,
@@ -6168,7 +6162,6 @@ div.sbs-think .speech-balloon::after {
 .nwa .product-item-buttons > * > a {
   width: auto;
   font-size: 11px;
-  padding: 6px 0;
 }
 .nwa .product-item-box::after {
   font-size: 18px;
@@ -6187,7 +6180,7 @@ div.sbs-think .speech-balloon::after {
 .nwa .kaerebalink-link1 > *,
 .nwa .tomarebalink-link1 > *,
 .nwa .product-item-buttons > * {
-  width: 49%;
+  width: 100%;
   margin: 0 .5% !important;
 }
 
@@ -6211,7 +6204,6 @@ div.sbs-think .speech-balloon::after {
   .product-item-buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
   .booklink-link2 > *,
   .kaerebalink-link1 > *,
@@ -6219,7 +6211,6 @@ div.sbs-think .speech-balloon::after {
   .product-item-buttons > * {
     width: auto;
     margin: 0 .5% !important;
-    flex: 1 1 auto;
   }
   .booklink-link2 > * > a,
   .kaerebalink-link1 > * > a,
@@ -6227,7 +6218,6 @@ div.sbs-think .speech-balloon::after {
   .product-item-buttons > * > a {
     width: auto;
     font-size: 11px;
-    padding: 6px 0;
   }
 
   .product-item-box::after {
@@ -6251,7 +6241,7 @@ div.sbs-think .speech-balloon::after {
   .kaerebalink-link1 > *,
   .tomarebalink-link1 > *,
   .product-item-buttons > * {
-    width: 49%;
+    width: 100%;
     margin: 0 .5% !important;
   }
 }
