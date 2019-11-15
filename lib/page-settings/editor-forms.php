@@ -148,7 +148,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E,  get_block_editor_extended_palette_color_e(), '拡張色E');
             generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F,  get_block_editor_extended_palette_color_f(), '拡張色F');
 
-            generate_tips_tag(__( '任意のカラーパレット色を設定できます。', THEME_NAME ));
+            generate_tips_tag(__( '任意のカラーパレット色を設定できます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/gutenberg-color-palette/'));
             ?>
           </td>
         </tr>

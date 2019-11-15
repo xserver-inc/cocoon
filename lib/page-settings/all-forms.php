@@ -142,7 +142,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'font_awesome_5' => __( 'Font Awesome 5', THEME_NAME ),
             );
             generate_radiobox_tag(OP_SITE_ICON_FONT, $options, get_site_icon_font());
-            generate_tips_tag(__('サイト全体で使用するアイコンフォントを選択します。', THEME_NAME));
+            generate_tips_tag(__('サイト全体で使用するアイコンフォントを選択します。', THEME_NAME).get_help_page_tag('https://wp-cocoon.com/site-iconfont/'));
             ?>
 
           </td>
