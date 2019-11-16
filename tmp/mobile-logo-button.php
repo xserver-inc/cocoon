@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
-$icon_class = $_MENU_ICON ? $_MENU_ICON : 'logo-menu-icon';
+//$icon_class = $_MENU_ICON ? $_MENU_ICON : 'logo-menu-icon';
 $home_url = user_trailingslashit(get_home_url());
 $home_url = apply_filters('site_logo_url', $home_url);
 $home_url = apply_filters('mobile_header_site_logo_url', $home_url);

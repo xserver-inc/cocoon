@@ -8,14 +8,16 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
-$icon_class = $_MENU_ICON ? $_MENU_ICON : 'navi-menu-icon'; ?>
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-bars'; ?>
 
 <?php if (has_nav_menu( NAV_MENU_HEADER ) || has_nav_menu( NAV_MENU_MOBILE_SLIDE_IN )): ?>
   <!-- メニューボタン -->
   <li class="navi-menu-button menu-button">
     <input id="navi-menu-input" type="checkbox" class="display-none">
     <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
-      <span class="<?php echo esc_attr($icon_class); ?> menu-icon"><span class="fa fa-bars" aria-hidden="true"></span></span>
+      <span class="navi-menu-icon menu-icon">
+        <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
+      </span>
       <span class="navi-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'メニュー', THEME_NAME ); ?></span>
     </label>
     <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>

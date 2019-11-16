@@ -8,13 +8,15 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
-$icon_class = $_MENU_ICON ? $_MENU_ICON : 'follow-menu-icon'; ?>
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-heart'; ?>
 
 <!-- フォローボタン -->
 <li class="follow-menu-button menu-button">
   <input id="follow-menu-input" type="checkbox" class="display-none">
   <label id="follow-menu-open" class="menu-open menu-button-in" for="follow-menu-input">
-    <span class="<?php echo esc_attr($icon_class); ?> menu-icon"><span class="fa fa-heart" aria-hidden="true"></span></span>
+    <span class="follow-menu-icon menu-icon">
+      <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
+    </span>
     <span class="follow-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( 'フォロー', THEME_NAME ); ?></span>
   </label>
   <label class="display-none" id="follow-menu-close" for="follow-menu-input"></label>

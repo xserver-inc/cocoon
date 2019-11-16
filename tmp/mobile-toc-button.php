@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 global $_MENU_CAPTION;
 global $_MENU_ICON;
-$icon_class = $_MENU_ICON ? $_MENU_ICON : 'toc-menu-icon'; ?>
+$icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-list-ul'; ?>
 
 <?php if (is_the_page_toc_use()): ?>
 
@@ -22,7 +22,9 @@ if (is_amp()) {
 <!-- 目次へボタン -->
 <li class="toc-menu-button menu-button">
   <a class="go-to-toc-common toc-menu-a menu-button-in"<?php echo $on; ?>>
-    <span class="<?php echo esc_attr($icon_class); ?> menu-icon"><span class="fa fa-list-ul" aria-hidden="true"></span></span>
+    <span class="toc-menu-icon menu-icon">
+      <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
+    </span>
     <span class="cop-menu-caption menu-caption"><?php echo $_MENU_CAPTION ? $_MENU_CAPTION : __( '目次へ', THEME_NAME ); ?></span>
   </a>
 </li>
