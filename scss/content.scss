@@ -142,6 +142,7 @@ table {
   &.stfc-sticky tr{
     *:first-child {
       background-color: #e9eff2;
+      color: $text_color;
       position: sticky;
       left: 0;
       z-index: 2;

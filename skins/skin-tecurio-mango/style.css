@@ -307,23 +307,23 @@ background-image: linear-gradient( 165deg, #ffe259 0%, #ffa751 20%);
 }
 
 /* テーブル */
-table{
+.container table{
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 }
-table th, table td {
+.container table th, .container table td {
 	padding: 6px;
 }
-table td {
+.container table td {
 	border: none;
 }
-table th {
+.container table th {
 	font-weight: normal;
 	background-color: #37474F;
 	color: #ECEFF1;
 }
-table tr:nth-of-type(2n+1) {
+.container table tr:nth-of-type(2n+1) {
 	background-color: #ffd78c;
 }
 
