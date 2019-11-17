@@ -1214,7 +1214,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
   -webkit-clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
 text-align: center;
-width: 35%;
+width: 50%;
 margin: 0 auto;
 margin-top: 25px;
 }
