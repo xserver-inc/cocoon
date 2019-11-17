@@ -112,6 +112,8 @@ if ( !class_exists( 'mobile_menu_walker' ) ):
         $item_output = get_mobile_next_button_tag();
       } elseif ($lower_url === '#logo') {
         $item_output = get_mobile_logo_button_tag();
+      } elseif ($lower_url === '#comments') {
+        $item_output = get_mobile_comments_button_tag();
       } else {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 

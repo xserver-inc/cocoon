@@ -47,6 +47,13 @@
             scrollTop: $('.entry-content .toc').offset().top
         }, 800);
   });
+  // //ボタン(.go-to-comment-area)のクリックイベント
+  // $('.go-to-comment-area').click(function(){
+  // //目次へ移動する
+  //   $('body,html').animate({
+  //           scrollTop: $('#comment-area').offset().top
+  //       }, 800);
+  // });
 
   //検索ボタンクリックでフォーカスを入力エリアに移す
   $('.search-menu-button').click(function(){
