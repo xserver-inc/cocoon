@@ -720,9 +720,9 @@ ol, ul {
   background-color: #f8e58c !important;
 }
 
-.tab-caption-box-label,
-.label-box-label {
-  margin-bottom: -1px;
+.tab-caption-box-label.box-label,
+.label-box-label.box-label {
+  margin-bottom: -2px;
 }
 
 .timeline-box [data-block]{
