@@ -636,7 +636,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: 100%; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; margin-bottom: 1em; }
 .admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
@@ -2166,7 +2166,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: 100%; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
-.admin-settings .demo .scrollable-table { overflow-x: auto; margin-bottom: 1em; }
+.admin-settings .demo .scrollable-table { overflow-x: auto !important; margin-bottom: 1em; }
 .admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
