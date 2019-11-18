@@ -31,6 +31,22 @@ function is_page_toc_visible(){
 }
 endif;
 
+//カテゴリーページで目次の表示
+define('OP_CATEGORY_TOC_VISIBLE', 'category_toc_visible');
+if ( !function_exists( 'is_category_toc_visible' ) ):
+function is_category_toc_visible(){
+  return get_theme_option(OP_CATEGORY_TOC_VISIBLE, 1);
+}
+endif;
+
+//タグページで目次の表示
+define('OP_TAG_TOC_VISIBLE', 'tag_toc_visible');
+if ( !function_exists( 'is_tag_toc_visible' ) ):
+function is_tag_toc_visible(){
+  return get_theme_option(OP_TAG_TOC_VISIBLE, 1);
+}
+endif;
+
 //目次タイトル
 define('OP_TOC_TITLE', 'toc_title');
 if ( !function_exists( 'get_toc_title' ) ):
