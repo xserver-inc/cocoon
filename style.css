@@ -1521,6 +1521,7 @@ table td {
 
 .scrollable-table {
   overflow-x: auto !important;
+  overflow-y: hidden !important;
   margin-bottom: 1em;
 }
 
