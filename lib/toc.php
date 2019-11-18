@@ -194,8 +194,8 @@ endif;
 
 if ( !function_exists( 'is_total_the_page_toc_visible' ) ):
 function is_total_the_page_toc_visible(){
-  //投稿・固定ページでない場合
-  if (!is_singular()) {
+  //投稿・固定・カテゴリー・タブページでない場合
+  if (!is_singular() && !is_category() && !is_tag()) {
     return false;
   }
 
@@ -226,6 +226,8 @@ endif;
 //最初のH2タグの前に目次を挿入する
 //ref:https://qiita.com/wkwkrnht/items/c2ee485ff1bbd81325f9
 add_filter('the_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
+add_filter('the_category_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
+add_filter('the_tag_content', 'add_toc_before_1st_h2', get_toc_filter_priority());
 if ( !function_exists( 'add_toc_before_1st_h2' ) ):
 function add_toc_before_1st_h2($the_content){
   global $_TOC_WIDGET_OR_SHORTCODE_USE;
