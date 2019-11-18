@@ -191,7 +191,7 @@ background-image: linear-gradient( 165deg, #2AFADF 0%, #4C83FF 20%);
 }
 
 /*ボタン*/
-.comment-btn, input.submit, .appeal-button, .comment-reply-link, .linkbtn {
+.comment-btn, input#submit, .appeal-button, .comment-reply-link, .linkbtn {
 	background-color: #4C83FF;
 	color: #fff;
 	border: none;
