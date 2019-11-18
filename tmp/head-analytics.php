@@ -11,6 +11,21 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (is_analytics() && !get_google_tag_manager_tracking_id() && !is_amp()): ?>
   <?php //Google Analytics(gtag.js)
   if ( $ga_tracking_id = get_google_analytics_tracking_id() )://トラッキングIDが設定されているとき ?>
+
+  <!-- Global site tag (ga-lite.min.js) - Google Analytics -->
+  <script>
+  (function(e,t,n,i,s,a,c){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)}
+  ;a=t.createElement(i);c=t.getElementsByTagName(i)[0];a.async=true;a.src=s
+  ;c.parentNode.insertBefore(a,c)
+  })(window,document,"galite","script","https://cdn.jsdelivr.net/npm/ga-lite@2/dist/ga-lite.min.js");
+
+  galite('create', '<?php echo $ga_tracking_id; ?>', 'auto');
+  galite('send', 'pageview');
+  </script>
+  <!-- /Global site tag (ga-lite.min.js) - Google Analytics -->
+
+  <?php
+  /*
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_tracking_id; ?>"></script>
   <script>
@@ -21,6 +36,8 @@ if (is_analytics() && !get_google_tag_manager_tracking_id() && !is_amp()): ?>
     gtag('config', '<?php echo $ga_tracking_id; ?>');
   </script>
   <!-- /Global site tag (gtag.js) - Google Analytics -->
+  */
+  ?>
   <?php endif; ?>
 
 <?php endif ?>
