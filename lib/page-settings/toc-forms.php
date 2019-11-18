@@ -60,6 +60,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_SINGLE_TOC_VISIBLE , is_single_toc_visible(), __( '投稿ページ', THEME_NAME ));
             echo '<br>';
             generate_checkbox_tag(OP_PAGE_TOC_VISIBLE , is_page_toc_visible(), __( '固定ページ', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_CATEGORY_TOC_VISIBLE , is_category_toc_visible(), __( 'カテゴリーページ', THEME_NAME ));
+            echo '<br>';
+            generate_checkbox_tag(OP_TAG_TOC_VISIBLE , is_tag_toc_visible(), __( 'タグページ', THEME_NAME ));
+            echo '<br>';
             generate_tips_tag(__( '上記のページの目次表示を切り替えることができます。※[toc]ショートコードで目次を表示させている場合は一貫して表示されます。', THEME_NAME ));
             ?>
           </td>

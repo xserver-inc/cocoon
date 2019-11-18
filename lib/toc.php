@@ -214,6 +214,16 @@ function is_total_the_page_toc_visible(){
     return false;
   }
 
+  //カテゴリーページだと表示しない
+  if (!is_category_toc_visible() && is_category()) {
+    return false;
+  }
+
+  //タグページだと表示しない
+  if (!is_tag_toc_visible() && is_tag()) {
+    return false;
+  }
+
   //投稿ページで非表示になっていると表示しない
   if (!is_the_page_toc_visible()) {
     return false;
