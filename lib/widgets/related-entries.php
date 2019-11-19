@@ -56,7 +56,9 @@ class RelatedEntryWidgetItem extends WP_Widget {
     $tags = array();
     if ($taxonomy == 'post_tag') {
       global $post;
-      $tags = get_the_tag_ids($post->ID);
+      if (isset($post->ID)) {
+        $tags = get_the_tag_ids($post->ID);
+      }
       // _v($tags);
       // _v($post->ID);
     }
@@ -79,7 +81,7 @@ class RelatedEntryWidgetItem extends WP_Widget {
       }
       //_v($exclude_cat_ids);
 
-      if ($taxonomy = 'category') {
+      if ($taxonomy == 'category') {
         //カテゴリーの時はタグを空にする
         $tags = array();
       } else {

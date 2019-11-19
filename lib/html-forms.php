@@ -1080,7 +1080,7 @@ function generate_widget_entries_tag($atts){
   if ( $cat_ids || $tag_ids ) {
     //_v($cat_ids);
     $tax_querys = array();
-    if ($cat_ids && empty($tag_ids)) {
+    if ($cat_ids) {
       $tax_querys[] = array(
         'taxonomy' => $taxonomy,
         'terms' => $cat_ids,
