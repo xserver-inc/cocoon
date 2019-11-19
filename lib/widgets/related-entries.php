@@ -79,6 +79,15 @@ class RelatedEntryWidgetItem extends WP_Widget {
       }
       //_v($exclude_cat_ids);
 
+      if ($taxonomy = 'category') {
+        //カテゴリーの時はタグを空にする
+        $tags = array();
+      } else {
+        //タグの時はカテゴリーを空にする
+        $categories = array();
+      }
+
+
       //引数配列のセット
       $atts = array(
         'entry_count' => $entry_count,
