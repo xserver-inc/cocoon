@@ -151,6 +151,11 @@ function gutenberg_stylesheets_custom() {
     wp_enqueue_script( THEME_NAME . '-gutenberg-js', get_template_directory_uri() . '/js/gutenberg.js', array( 'jquery' ), false, true );
     wp_enqueue_style( THEME_NAME . '-gutenberg', get_template_directory_uri() . '/css/gutenberg-editor.css' );
 
+    // $css = get_block_editor_color_palette_css();
+    // $file = get_block_color_palette_css_cache_file();
+    // wp_filesystem_put_contents($file, $css, 0);
+    // wp_enqueue_style( THEME_NAME . '-color-palette', get_block_color_palette_css_cache_url() );
+
     /**
      * Filters the script parameter name.
      *

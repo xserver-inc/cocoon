@@ -485,11 +485,14 @@ background-image: linear-gradient( 165deg, #F0C27B 0%, #4B1248 20%);
 
 .font-awesome-5 .article h4::before,
 .font-awesome-5 .article h5::before,
-.font-awesome-5 .article h6::before {
+.font-awesome-5 .article h6::before,
+.font-awesome-5.admin-page h4::before,
+.font-awesome-5.admin-page h5::before,
+.font-awesome-5.admin-page h6::before {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
-.font-awesome-5 .article h6::before{
+.font-awesome-5 .article h6::before,
+.font-awesome-5.admin-page h6::before{
 	content: '\f30b';
 }
-
