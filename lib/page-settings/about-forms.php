@@ -42,7 +42,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         $all .= __( 'サーバー：', THEME_NAME ).$host.PHP_EOL;
       }
     }
-    $all .= __( 'Wordpressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
+    $all .= __( 'WordPressバージョン：', THEME_NAME ).get_bloginfo('version').PHP_EOL;
     $all .= __( 'PHPバージョン：', THEME_NAME ).phpversion().PHP_EOL;
     if (isset($_SERVER['HTTP_USER_AGENT']))
       $all .= __( 'ブラウザ：', THEME_NAME ).$_SERVER['HTTP_USER_AGENT'].PHP_EOL;
