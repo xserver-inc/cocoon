@@ -81,6 +81,12 @@ function code_minify_call_back($buffer) {
   //タブボックスのタブ変換
   $buffer = preg_replace('#<div class="(.*?)blank-box bb-tab bb-(.+?)".*?>#', '$0<div class="bb-label"><span class="fa"></span></div>', $buffer);
 
+  // //モバイルボタンのロゴメニュー対応
+  // $res = preg_match('{<ul class="mobile-header-menu-buttons mobile-menu-buttons".+?</ul>}s', $buffer, $m);
+  // if ($res) {
+  //   _v($m);
+  // }
+
   //Font Awesome5変換
   $buffer = change_fa($buffer);
 

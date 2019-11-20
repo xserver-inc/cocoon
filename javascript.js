@@ -173,6 +173,15 @@
   //モバイルサイドバーをクリックしたら閉じる
   drawerCloser('#slide-in-sidebar a', '#sidebar-menu-input');
 
+  //モバイルヘッダーメニューのロゴ処理
+  //console.log($('.mobile-menu-buttons'));
+  $('.mobile-menu-buttons').each(function(){
+    if ($(this).has('.logo-menu-button').length) {
+      $(this).addClass('has-logo-button');
+      //console.log($(this).has('.logo-menu-button'));
+    }
+
+  });
   /*
   //通常のGoogleフォント読み込み
   if (cocoon_localize_script_options.is_google_font_lazy_load_enable != 1) {

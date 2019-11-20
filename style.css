@@ -8908,10 +8908,11 @@ twitter-widget {
     z-index: 3;
     box-shadow: 0 0 5px darkgrey;
   }
-  .mobile-header-menu-buttons .menu-button {
+
+  .has-logo-button .menu-button {
     width: 70px;
   }
-  .mobile-header-menu-buttons .logo-menu-button {
+  .has-logo-button .logo-menu-button {
     flex-grow: 99;
   }
 
