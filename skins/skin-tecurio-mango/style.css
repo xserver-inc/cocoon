@@ -63,16 +63,8 @@ body p{
 .navi-in ul.sub-menu a {
 	color: #ECEFF1;
 }
-.navi-in ul.sub-menu li {
-	height: auto;
-	line-height: 3.4em;
-}
 .navi-in ul.sub-menu a:hover {
 	color: #37474F;
-}
-.navi-in ul.sub-menu .item-label {
-	line-height: 1.6em;
-	padding: 1em 0;
 }
 /*フッター*/
 .footer {
