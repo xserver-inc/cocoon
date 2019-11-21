@@ -24,6 +24,8 @@ class menu_description_walker extends Walker_Nav_Menu {
     //$classes[] = 'fa';
     if ($item->description) {
       $classes[] = 'menu-item-has-description';
+    } else {
+      $classes[] = 'menu-item-has-no-description';
     }
 
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
