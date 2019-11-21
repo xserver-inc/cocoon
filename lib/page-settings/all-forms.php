@@ -144,7 +144,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_radiobox_tag(OP_SITE_ICON_FONT, $options, get_site_icon_font());
             generate_tips_tag(__('サイト全体で使用するアイコンフォントを選択します。', THEME_NAME).get_help_page_tag('https://wp-cocoon.com/site-iconfont/'));
             ?>
-
           </td>
         </tr>
 

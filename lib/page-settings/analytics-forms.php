@@ -103,6 +103,23 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- スクリプト  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_GOOGLE_ANALYTICS_SCRIPT, __('スクリプト', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'gtag.js' => __( 'gtag.js（純正）', THEME_NAME ),
+              'ga-lite.min.js' => __( 'ga-lite.min.js（高速化対策）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_GOOGLE_ANALYTICS_SCRIPT, $options, get_google_analytics_script());
+            generate_tips_tag(__('アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリプトのgtag.jsをご利用ください。', THEME_NAME));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

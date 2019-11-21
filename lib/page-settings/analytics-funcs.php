@@ -39,6 +39,19 @@ function get_google_analytics_tracking_id(){
 }
 endif;
 
+//Google Analyticsのスクリプト
+define('OP_GOOGLE_ANALYTICS_SCRIPT', 'google_analytics_script');
+if ( !function_exists( 'get_google_analytics_script' ) ):
+function get_google_analytics_script(){
+  return get_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT, 'gtag.js');
+}
+endif;
+if ( !function_exists( 'is_google_analytics_script_gtag_js' ) ):
+function is_google_analytics_script_gtag_js(){
+  return get_google_analytics_script() == 'gtag.js';
+}
+endif;
+
 //Google Search ConsoleのID
 define('OP_GOOGLE_SEARCH_CONSOLE_ID', 'google_search_console_id');
 if ( !function_exists( 'get_google_search_console_id' ) ):

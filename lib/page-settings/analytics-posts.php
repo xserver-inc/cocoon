@@ -19,6 +19,9 @@ update_theme_option(OP_GOOGLE_TAG_MANAGER_AMP_TRACKING_ID);
 //Google AnalyticsトラッキングID
 update_theme_option(OP_GOOGLE_ANALYTICS_TRACKING_ID);
 
+//Google Analyticsのスクリプト
+update_theme_option(OP_GOOGLE_ANALYTICS_SCRIPT);
+
 //Google Search Console ID
 update_theme_option(OP_GOOGLE_SEARCH_CONSOLE_ID);
 
