@@ -944,6 +944,9 @@ input[type='submit']:hover {
 .mobile-menu-buttons .menu-button > a {
 	color: #fff;
 }
+.mobile-menu-buttons .menu-button > a:hover{
+	color:#333;
+}
 .mobile-menu-buttons .menu-caption {
 	font-size: 0.7em;
 }
