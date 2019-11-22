@@ -6635,6 +6635,7 @@ div.fb-like-mobile {
   right: 5%;
   -webkit-transform: translateY(1200%);
   transform: translateY(1200%);
+  visibility: hidden;
 }
 .search-menu-content .search-edit,
 .share-menu-content .search-edit,
@@ -6660,6 +6661,7 @@ div.fb-like-mobile {
 #follow-menu-input:checked ~ #follow-menu-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
+  visibility: visible;
 }
 
 .menu-drawer ul {
