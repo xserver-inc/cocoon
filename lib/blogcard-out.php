@@ -248,7 +248,7 @@ function url_to_external_ogp_blogcard_tag($url){
   //取得した情報からブログカードのHTMLタグを作成
   $tag =
   '<a href="'.$url.'" title="'.esc_attr($title).'" class="blogcard-wrap external-blogcard-wrap a-wrap cf"'.$target.$nofollow.'>'.
-    '<div class="blogcard external-blogcard'.get_additional_external_blogcard_classes().'">'.
+    '<div class="blogcard external-blogcard'.get_additional_external_blogcard_classes().' cf">'.
       '<div class="blogcard-label external-blogcard-label">'.
         '<span class="fa"></span>'.
       '</div>'.
