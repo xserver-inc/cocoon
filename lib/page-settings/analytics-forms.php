@@ -111,8 +111,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'gtag.js' => __( 'gtag.js（純正）', THEME_NAME ),
-              'ga-lite.min.js' => __( 'ga-lite.min.js（高速化対策）', THEME_NAME ),
+              'gtag.js' => __( 'gtag.js（公式）', THEME_NAME ),
+              'ga-lite.min.js' => __( 'ga-lite.min.js（高速化）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_GOOGLE_ANALYTICS_SCRIPT, $options, get_google_analytics_script());
             generate_tips_tag(__('アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリプトのgtag.jsをご利用ください。', THEME_NAME));
