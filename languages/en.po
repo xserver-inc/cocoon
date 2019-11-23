@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-20 18:00+0900\n"
-"PO-Revision-Date: 2019-11-20 18:04+0900\n"
+"POT-Creation-Date: 2019-11-23 22:02+0900\n"
+"PO-Revision-Date: 2019-11-23 22:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -5160,19 +5160,19 @@ msgstr "Font Awesome 5"
 msgid "サイト全体で使用するアイコンフォントを選択します。"
 msgstr "Select the icon font that you want to use throughout the site."
 
-#: lib/page-settings/all-forms.php:155
+#: lib/page-settings/all-forms.php:154
 msgid "サイト背景色"
 msgstr "Site background color"
 
-#: lib/page-settings/all-forms.php:161
+#: lib/page-settings/all-forms.php:160
 msgid "サイト全体の背景色を選択します。"
 msgstr "Select the background color for the entire site."
 
-#: lib/page-settings/all-forms.php:169
+#: lib/page-settings/all-forms.php:168
 msgid "サイト背景画像"
 msgstr "Site background image"
 
-#: lib/page-settings/all-forms.php:174
+#: lib/page-settings/all-forms.php:173
 msgid ""
 "サイト全体の背景画像を選択します。より詳細に背景画像を設定するには、当設定を"
 "無効にして、「外観→カスタマイズ」の「背景画像」設定から行ってください。"
@@ -5181,99 +5181,99 @@ msgstr ""
 "with more detailed settings, disable this setting and make the settings in "
 "\"Appearance -> Customize\" > \"Background image\"."
 
-#: lib/page-settings/all-forms.php:182
+#: lib/page-settings/all-forms.php:181
 msgid "サイト幅の均一化"
 msgstr "Uniformity of site width"
 
-#: lib/page-settings/all-forms.php:186
+#: lib/page-settings/all-forms.php:185
 msgid "サイト幅を揃える"
 msgstr "Align the site width"
 
-#: lib/page-settings/all-forms.php:187
+#: lib/page-settings/all-forms.php:186
 msgid "サイト全体の幅をコンテンツ幅で統一します。"
 msgstr "Makes the width of the entire site uniform by content width."
 
-#: lib/page-settings/all-forms.php:196
+#: lib/page-settings/all-forms.php:195
 msgid "サイトリンク色"
 msgstr "Site link color"
 
-#: lib/page-settings/all-forms.php:202
+#: lib/page-settings/all-forms.php:201
 msgid "サイトで利用されるリンク色を選択します。"
 msgstr "Select the link color to be used on the site."
 
-#: lib/page-settings/all-forms.php:210
+#: lib/page-settings/all-forms.php:209
 msgid "サイト選択文字色"
 msgstr "Site selection text color"
 
-#: lib/page-settings/all-forms.php:216
+#: lib/page-settings/all-forms.php:215
 msgid "サイト内のテキストを選択した際の文字色です。"
 msgstr "This is the text color when text within the site is selected."
 
-#: lib/page-settings/all-forms.php:224
+#: lib/page-settings/all-forms.php:223
 msgid "サイト選択背景色"
 msgstr "Site selection background color"
 
-#: lib/page-settings/all-forms.php:230
+#: lib/page-settings/all-forms.php:229
 msgid "サイト内のテキストを選択した際の背景色です。"
 msgstr "This is the background color when text within the site is selected."
 
-#: lib/page-settings/all-forms.php:238
+#: lib/page-settings/all-forms.php:237
 msgid "サイドバーの位置"
 msgstr "Sidebar position"
 
-#: lib/page-settings/all-forms.php:243
+#: lib/page-settings/all-forms.php:242
 msgid "サイドバー右"
 msgstr "Sidebar right"
 
-#: lib/page-settings/all-forms.php:244
+#: lib/page-settings/all-forms.php:243
 msgid "サイドバー左"
 msgstr "Sidebar left"
 
-#: lib/page-settings/all-forms.php:248
+#: lib/page-settings/all-forms.php:247
 msgid "サイドバーの表示位置の設定です。"
 msgstr "This is the side bar display position setting."
 
-#: lib/page-settings/all-forms.php:256
+#: lib/page-settings/all-forms.php:255
 msgid "サイドバーの表示状態"
 msgstr "Display status of the sidebar"
 
-#: lib/page-settings/all-forms.php:261
+#: lib/page-settings/all-forms.php:260
 msgid "全てのページで表示"
 msgstr "Display on all pages"
 
-#: lib/page-settings/all-forms.php:262
+#: lib/page-settings/all-forms.php:261
 msgid "全てのページで非表示"
 msgstr "Hide on all pages"
 
-#: lib/page-settings/all-forms.php:263
+#: lib/page-settings/all-forms.php:262
 msgid "フロントページで非表示（固定ページがトップページの場合）"
 msgstr "Hide on the front page (when a page is the home page)"
 
-#: lib/page-settings/all-forms.php:264
+#: lib/page-settings/all-forms.php:263
 msgid "インデックスページで非表示"
 msgstr "Hide on index pages"
 
-#: lib/page-settings/all-forms.php:265
+#: lib/page-settings/all-forms.php:264
 msgid "固定ページで非表示"
 msgstr "Hide on pages"
 
-#: lib/page-settings/all-forms.php:266
+#: lib/page-settings/all-forms.php:265
 msgid "投稿ページで非表示"
 msgstr "Hide on post pages"
 
-#: lib/page-settings/all-forms.php:267
+#: lib/page-settings/all-forms.php:266
 msgid "404ページで非表示"
 msgstr "Hide on 404 pages"
 
-#: lib/page-settings/all-forms.php:271
+#: lib/page-settings/all-forms.php:270
 msgid "サイドバーを表示するページの設定です。"
 msgstr "This is the setting of pages on which the sidebar will be displayed."
 
-#: lib/page-settings/all-forms.php:279
+#: lib/page-settings/all-forms.php:278
 msgid "ファビコン"
 msgstr "Favicon"
 
-#: lib/page-settings/all-forms.php:282
+#: lib/page-settings/all-forms.php:281
 msgid ""
 "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイ"
 "ト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は"
@@ -5282,11 +5282,11 @@ msgstr ""
 "The Favicon (site icon) settings are accessed from the \"Site Icon\" setting "
 "in \"Appearance > Customize > Site Identity\" in the admin screen."
 
-#: lib/page-settings/all-forms.php:290
+#: lib/page-settings/all-forms.php:289
 msgid "サイトアイコン"
 msgstr "Site icon"
 
-#: lib/page-settings/all-forms.php:296
+#: lib/page-settings/all-forms.php:295
 msgid ""
 "サイトアイコンはサイトのアプリとブラウザーのアイコンとして使用されます。アイ"
 "コンは正方形で、幅・高さともに 512 ピクセル以上である必要があります。"
@@ -5294,15 +5294,15 @@ msgstr ""
 "Site icons are used as site apps and browser icons. The icon must be a "
 "square, and both the height and width must be at least 512 pixels."
 
-#: lib/page-settings/all-forms.php:304
+#: lib/page-settings/all-forms.php:303
 msgid "サムネイル表示"
 msgstr "Thumbnail display"
 
-#: lib/page-settings/all-forms.php:308
+#: lib/page-settings/all-forms.php:307
 msgid "サイト全体のサムネイルを表示する"
 msgstr "To display thumbnails of the entire site"
 
-#: lib/page-settings/all-forms.php:309
+#: lib/page-settings/all-forms.php:308
 msgid ""
 "サイト内のサムネイル画像の表示を切り替えます。文章メインのサイト用設定です。※"
 "ブログカードは何かしら画像が取得できるので表示します。"
@@ -5310,11 +5310,11 @@ msgstr ""
 "Toggle display of the thumbnail images within the site. The settings are for "
 "sites comprising mainly of text. *Any image will be displayed in a blog card."
 
-#: lib/page-settings/all-forms.php:318
+#: lib/page-settings/all-forms.php:317
 msgid "日付フォーマット"
 msgstr "Date format"
 
-#: lib/page-settings/all-forms.php:323
+#: lib/page-settings/all-forms.php:322
 msgid ""
 "テーマ全体に使われている日付のフォーマット形式を入力してください（初期値：Y."
 "m.d）。"
@@ -5322,7 +5322,7 @@ msgstr ""
 "Enter the date format to be used for the entire theme (initial values: Y.m."
 "d)."
 
-#: lib/page-settings/all-forms.php:325
+#: lib/page-settings/all-forms.php:324
 msgid ""
 "<a href=\"https://wpdocs.osdn.jp/Formatting_Date_and_Time\">日付と時刻の書式"
 "の解説</a>"
@@ -5558,51 +5558,72 @@ msgstr ""
 "entered, the tag manager takes precedence. This is also used as a SmartNews "
 "feed tracking ID."
 
+#: lib/page-settings/analytics-forms.php:109
+#: lib/page-speed-up/speed-up-forms.php:194
+msgid "スクリプト"
+msgstr "Script"
+
+#: lib/page-settings/analytics-forms.php:114
+msgid "gtag.js（公式）"
+msgstr "gtag.js (official)"
+
 #: lib/page-settings/analytics-forms.php:115
+msgid "ga-lite.min.js（高速化）"
+msgstr "ga-lite.min.js (faster)"
+
+#: lib/page-settings/analytics-forms.php:118
+msgid ""
+"アクセス解析で利用するスクリプトを指定します。よくわからない場合は公式スクリ"
+"プトのgtag.jsをご利用ください。"
+msgstr ""
+"Specifies the script to use for access analysis. If you're not sure, please "
+"use the official script gtag.js."
+
+#: lib/page-settings/analytics-forms.php:132
 msgid "Google Search Console設定"
 msgstr "Google Search Console settings"
 
-#: lib/page-settings/analytics-forms.php:118
+#: lib/page-settings/analytics-forms.php:135
 msgid "Google Search Consoleのサイト認証タグの設定です。"
 msgstr "Sets a site authentication tag of Google Search Console."
 
-#: lib/page-settings/analytics-forms.php:126
+#: lib/page-settings/analytics-forms.php:143
 msgid "Google Search Console ID"
 msgstr "Google Search Console ID"
 
-#: lib/page-settings/analytics-forms.php:130
+#: lib/page-settings/analytics-forms.php:147
 msgid "サイト認証IDのみ入力"
 msgstr "Enter a site authentication ID only"
 
-#: lib/page-settings/analytics-forms.php:131
+#: lib/page-settings/analytics-forms.php:148
 msgid "Google Search Consoleのサイト認証IDを入力してください。"
 msgstr "Enter a site authentication ID of Google Search Console."
 
-#: lib/page-settings/analytics-forms.php:145
+#: lib/page-settings/analytics-forms.php:162
 msgid "Ptengine設定"
 msgstr "Ptengine settings"
 
-#: lib/page-settings/analytics-forms.php:148
+#: lib/page-settings/analytics-forms.php:165
 msgid "Ptengineの解析タグの設定です。"
 msgstr "Sets an analysis tag of Ptengine."
 
-#: lib/page-settings/analytics-forms.php:156
+#: lib/page-settings/analytics-forms.php:173
 msgid "PtengineのトラッキングID"
 msgstr "Ptengine tracking ID"
 
-#: lib/page-settings/analytics-forms.php:160
+#: lib/page-settings/analytics-forms.php:177
 msgid "PtengineのトラッキングIDのみ入力"
 msgstr "Enter only a tracking ID of Ptengine"
 
-#: lib/page-settings/analytics-forms.php:161
+#: lib/page-settings/analytics-forms.php:178
 msgid "PtengineのトラッキングIDを入力してください。"
 msgstr "Enter a Ptengine tracking ID."
 
-#: lib/page-settings/analytics-forms.php:177
+#: lib/page-settings/analytics-forms.php:194
 msgid "その他のアクセス解析・認証コード設定"
 msgstr "Other access analysis and authentication code settings"
 
-#: lib/page-settings/analytics-forms.php:180
+#: lib/page-settings/analytics-forms.php:197
 msgid ""
 "ヘッダーやフッターに、その他サービスのアクセス解析・サイト認証タグをそのまま"
 "貼り付けます。"
@@ -5610,15 +5631,15 @@ msgstr ""
 "Paste other service access analysis and site authentication tags into the "
 "header or footer as is."
 
-#: lib/page-settings/analytics-forms.php:188
+#: lib/page-settings/analytics-forms.php:205
 msgid "ヘッド用コード"
 msgstr "Head code"
 
-#: lib/page-settings/analytics-forms.php:192
+#: lib/page-settings/analytics-forms.php:209
 msgid "head用のタグ入力"
 msgstr "Tag entry for head"
 
-#: lib/page-settings/analytics-forms.php:193
+#: lib/page-settings/analytics-forms.php:210
 msgid ""
 "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス"
 "解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、"
@@ -5628,15 +5649,15 @@ msgstr ""
 "into the header tags (&lt;head&gt;&lt;/head&gt;). It is easiest if access "
 "authentication codes are also pasted here for inspection."
 
-#: lib/page-settings/analytics-forms.php:201
+#: lib/page-settings/analytics-forms.php:218
 msgid "ヘッダー用コード"
 msgstr "Header code"
 
-#: lib/page-settings/analytics-forms.php:205
+#: lib/page-settings/analytics-forms.php:222
 msgid "ヘッダー用のタグ入力"
 msgstr "Tag entry for header"
 
-#: lib/page-settings/analytics-forms.php:206
+#: lib/page-settings/analytics-forms.php:223
 msgid ""
 "ヘッダー（&lt;body&gt;直後）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -5644,15 +5665,15 @@ msgstr ""
 "Enter other access analysis and authentication tags that must be inserted "
 "into the header (immediately after &lt;body&gt;)."
 
-#: lib/page-settings/analytics-forms.php:214
+#: lib/page-settings/analytics-forms.php:231
 msgid "フッター用コード"
 msgstr "Footer code"
 
-#: lib/page-settings/analytics-forms.php:218
+#: lib/page-settings/analytics-forms.php:235
 msgid "フッター用のタグ入力"
 msgstr "Tag entry for footer"
 
-#: lib/page-settings/analytics-forms.php:219
+#: lib/page-settings/analytics-forms.php:236
 msgid ""
 "フッター（&lt;/body&gt;直前）に挿入する必要のある、その他アクセス解析・認証タ"
 "グを入力してください。"
@@ -10763,10 +10784,6 @@ msgstr "Script loading settings"
 #: lib/page-speed-up/speed-up-forms.php:186
 msgid "JavaScriptの読み込み方式を変更する設定です。"
 msgstr "This setting changes the JavaScript loading method."
-
-#: lib/page-speed-up/speed-up-forms.php:194
-msgid "スクリプト"
-msgstr "Script"
 
 #: lib/page-speed-up/speed-up-forms.php:198
 msgid "JavaScriptをフッターで読み込む"
