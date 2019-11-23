@@ -249,6 +249,7 @@
 #search-menu-input:checked ~ #search-menu-content,
 #share-menu-input:checked ~ #share-menu-content,
 #follow-menu-input:checked ~ #follow-menu-content {
+  transition: .3s ease-in-out;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   visibility: visible;
