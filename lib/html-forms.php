@@ -1220,7 +1220,7 @@ endif;
 if ( !function_exists( 'generate_author_box_tag' ) ):
 function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0){
   $user_id = get_the_author_meta( 'ID' );
-  if (!$user_id || is_404()) {
+  if (!$user_id || !is_singular()) {
     $user_id = get_sns_default_follow_user();
   }
   if ($id && get_userdata( $id )) {
