@@ -1494,7 +1494,8 @@ pre.code-box{
   }
 }
 
-pre.code-box.auto{
+pre.code-box.auto,
+pre.code-box.nohighlight{
   padding-top: 0.5em;
   &::before{
     display: none;

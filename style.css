@@ -4949,10 +4949,12 @@ pre.code-box::before {
   font-size: 16px;
 }
 
-pre.code-box.auto {
+pre.code-box.auto,
+pre.code-box.nohighlight {
   padding-top: 0.5em;
 }
-pre.code-box.auto::before {
+pre.code-box.auto::before,
+pre.code-box.nohighlight::before {
   display: none;
 }
 
