@@ -922,3 +922,14 @@ ol, ul {
 .timeline-box [data-block] {
   margin: 0;
 }
+
+.editor-styles-wrapper .components-select-control__input {
+  padding: 0 10px;
+}
+
+.wp-block-cocoon-blocks-code-box {
+  background-color: #f3f4f5;
+  border: 1px solid #ccc;
+  padding: 10px !important;
+  margin: 1em 0;
+}
