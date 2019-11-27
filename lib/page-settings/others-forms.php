@@ -100,6 +100,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               '3' => __( 'jQuery Core 3.3.1', THEME_NAME ),
               '2' => __( 'jQuery Core 2.2.4', THEME_NAME ),
               '1' => __( 'jQuery Core 1.12.4', THEME_NAME ),
+              '' => __( 'なし', THEME_NAME ),
             );
             generate_radiobox_tag(OP_JQUERY_VERSION, $options, get_jquery_version());
             generate_tips_tag(__( 'jQueryのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
@@ -119,6 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               '3' => __( 'jQuery Migrate 3.0.1', THEME_NAME ),
               '1' => __( 'jQuery Migrate 1.4.1', THEME_NAME ),
+              '' => __( 'なし', THEME_NAME ),
             );
             generate_radiobox_tag(OP_JQUERY_MIGRATE_VERSION, $options, get_jquery_migrate_version());
             generate_tips_tag(__( 'jQuery Migrateのバージョン違いで動作しないプログラムがある場合は変更してください。', THEME_NAME ));
