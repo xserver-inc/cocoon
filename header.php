@@ -13,6 +13,36 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- google analytics, Googleタグマネージャー -->
+<link rel='preconnect dns-prefetch' href="//www.googletagmanager.com">
+<link rel='preconnect dns-prefetch' href="//www.google-analytics.com">
+
+<!-- Google AdSense -->
+<link rel="preconnect dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="preconnect dns-prefetch" href="//googleads.g.doubleclick.net">
+<link rel="preconnect dns-prefetch" href="//tpc.googlesyndication.com">
+<link rel="preconnect dns-prefetch" href="//ad.doubleclick.net">
+<link rel="preconnect dns-prefetch" href="//www.gstatic.com">
+
+<!-- 各種サービス -->
+<link rel="preconnect dns-prefetch" href="//cse.google.com">
+<link rel="preconnect dns-prefetch" href="//fonts.gstatic.com">
+<link rel="preconnect dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect dns-prefetch" href="//cms.quantserve.com">
+<link rel="preconnect dns-prefetch" href="//secure.gravatar.com">
+<link rel="preconnect dns-prefetch" href="//cdn.syndication.twimg.com">
+<link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- アフィリエイト -->
+<link rel='preconnect dns-prefetch' href="//images-fe.ssl-images-amazon.com">
+<link rel='preconnect dns-prefetch' href="//m.media-amazon.com">
+<link rel='preconnect dns-prefetch' href="//completion.amazon.com">
+<link rel="preconnect dns-prefetch" href="//i.moshimo.com">
+<link rel="preconnect dns-prefetch" href="//aml.valuecommerce.com">
+<link rel="preconnect dns-prefetch" href="//dalc.valuecommerce.com">
+<link rel="preconnect dns-prefetch" href="//dalb.valuecommerce.com">
+
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
 get_template_part('tmp/head-analytics'); ?>
 <?php //AMPの案内タグを出力
