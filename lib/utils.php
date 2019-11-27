@@ -426,6 +426,7 @@ function wp_enqueue_script_jquery_js(){
 
   $ver = get_jquery_version();
   $in_footer = is_footer_javascript_enable() ? true : false;
+  $in_footer = false;
 
   wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), get_jquery_core_full_version($ver), $in_footer);
 
