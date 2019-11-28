@@ -141,6 +141,7 @@ function user_contactmethods_custom($prof_items){
   $prof_items['youtube_url'] = __( 'YouTube URL', THEME_NAME );
   $prof_items['linkedin_url'] = __( 'LinkedIn URL', THEME_NAME );
   $prof_items['note_url'] = __( 'note URL', THEME_NAME );
+  $prof_items['soundcloud_url'] = __( 'SoundCloud URL', THEME_NAME );
   $prof_items['flickr_url'] = __( 'Flickr URL', THEME_NAME );
   $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
   $prof_items['amazon_url'] = __( 'Amazon URL', THEME_NAME );
@@ -305,7 +306,15 @@ function get_the_author_note_url($id = null){
 }
 endif;
 
-//プロフィール画面で設定した立夏 URLの取得
+//プロフィール画面で設定しSoundCloud URLの取得
+if ( !function_exists( 'get_the_author_soundcloud_url' ) ):
+function get_the_author_soundcloud_url($id = null){
+  $user_id = $id ? $id : get_the_posts_author_id();
+  return esc_html(get_the_author_meta('soundcloud_url', $user_id));
+}
+endif;
+
+//プロフィール画面で設定しFlickr URLの取得
 if ( !function_exists( 'get_the_author_flickr_url' ) ):
 function get_the_author_flickr_url($id = null){
   $user_id = $id ? $id : get_the_posts_author_id();
@@ -390,6 +399,7 @@ function is_author_follow_buttons_exits(){
          || get_the_author_youtube_url()
          || get_the_author_linkedin_url()
          || get_the_author_note_url()
+         || get_the_author_soundcloud_url()
          || get_the_author_flickr_url()
          || get_the_author_line_at_url()
          || get_the_author_amazon_url()

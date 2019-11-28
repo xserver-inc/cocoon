@@ -78,6 +78,10 @@
       background-color: $note_color;
     }
 
+    .soundcloud-button{
+      background-color: $soundcloud_color;
+    }
+
     .flickr-button{
       background-color: $flickr_color;
     }
@@ -182,6 +186,16 @@
     .note-button{
       color: $note_color;
       border-color: $note_color;
+    }
+
+    .soundcloud-button{
+      color: $soundcloud_color;
+      border-color: $soundcloud_color;
+    }
+
+    .soundcloud-button{
+      color: $soundcloud_color;
+      border-color: $soundcloud_color;
     }
 
     .flickr-button{

@@ -61,6 +61,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo get_the_author_note_url($user_id); //noteフォローIDの取得 ?>" class="follow-button note-button note-follow-button-sq" target="_blank" title="<?php _e( 'noteをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-note-logo"></span></a>
   <?php endif; ?>
 
+  <?php if (  get_the_author_soundcloud_url($user_id) )://SoundCloudフォローボタンを表示するか ?>
+    <a href="<?php echo get_the_author_soundcloud_url($user_id); //SoundCloudフォローIDの取得 ?>" class="follow-button soundcloud-button soundcloud-follow-button-sq" target="_blank" title="<?php _e( 'SoundCloudをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-soundcloud-logo"></span></a>
+  <?php endif; ?>
+
   <?php if (  get_the_author_flickr_url($user_id) )://Flickrフォローボタンを表示するか ?>
     <a href="<?php echo get_the_author_flickr_url($user_id); //FlickrフォローIDの取得 ?>" class="follow-button flickr-button flickr-follow-button-sq" target="_blank" title="<?php _e( 'Flickrをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer"><span class="icon-flickr-logo"></span></a>
   <?php endif; ?>
