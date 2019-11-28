@@ -19,12 +19,12 @@ body p{
 	line-height: 180%;
 	margin-bottom: 1.1em;
 }
-.content .main .entry-content > p, .content .main .entry-content > div, .content .main .entry-content > pre , .content .main .entry-content > a {
+.entry-content > * {
     margin-right: 2em;
     margin-left: 2em;
 }
 @media screen and (max-width: 480px) {
-	.content .main .entry-content > p, .content .main .entry-content > div, .content .main .entry-content > pre , .content .main .entry-content > a {
+	.entry-content > * {
 		margin-right: 1em;
 		margin-left: 1em;
 	}
