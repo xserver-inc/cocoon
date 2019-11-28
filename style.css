@@ -3544,6 +3544,16 @@ label.screen-reader-text {
 .micro-balloon.has-background {
   color: #fff;
 }
+.micro-balloon.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+.micro-balloon.alignleft {
+  margin-right: auto;
+}
+.micro-balloon.alignright {
+  margin-left: auto;
+}
 
 .micro-balloon:after, .micro-balloon:before {
   top: calc(100% - 1px);

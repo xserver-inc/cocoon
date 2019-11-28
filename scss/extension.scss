@@ -901,6 +901,16 @@ $bb_green: $green_color;
   &.has-background{
     color: #fff;
   }
+  &.aligncenter{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.alignleft{
+    margin-right: auto;
+  }
+  &.alignright{
+    margin-left: auto;
+  }
 }
 .micro-balloon:after, .micro-balloon:before {
   top: calc(100% - 1px);
