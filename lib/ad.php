@@ -126,13 +126,44 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
     //_v($format);
     //関連コンテンツユニットの場合
     if ($format == DATA_AD_FORMAT_AUTORELAXED) {
-      $layout = ' layout="fixed-height" height="600" ';
-      $code = '<amp-ad
-        '.$layout.'
-        type="adsense"
-        data-ad-client="'.$ad_client.'"
-        data-ad-slot="'.$ad_slot.'">
+      $code = '
+        <amp-ad
+          media="(max-width: 480px)"
+          layout="fixed-height"
+          height="1000"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
+        </amp-ad>
+
+        <amp-ad
+          media="(min-width: 481px)"
+          layout="fixed-height"
+          height="600"
+          type="adsense"
+          data-ad-client="'.$ad_client.'"
+          data-ad-slot="'.$ad_slot.'">
         </amp-ad>';
+      // $code = '<amp-ad
+      //   media="(max-width: 480px)"
+      //   width="100vw"
+      //   height="320"
+      //   type="adsense"
+      //   data-ad-client="'.$ad_client.'"
+      //   data-ad-slot="'.$ad_slot.'"
+      //   data-auto-format="mcrspv"
+      //   data-full-width="">
+      //   <div overflow=""></div>
+      // </amp-ad>
+
+      // <amp-ad
+      //   media="(min-width: 481px)"
+      //   layout="fixed-height"
+      //   height="600"
+      //   type="adsense"
+      //   data-ad-client="'.$ad_client.'"
+      //   data-ad-slot="'.$ad_slot.'">
+      // </amp-ad>';
     } else {
       //$layout = ' width="300" height="250" ';
       //リンクユニットの場合
