@@ -89,15 +89,6 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
   if (get_adsense_ids($code)) {
     $data_ad_layout = null;
 
-    // //フォーマットが設定されていない場合はフォーマットをコード内から取得
-    // if ($format == DATA_AD_FORMAT_NONE) {
-    //   if (preg_match('{data-ad-format="([^"]+?)"}i', $code, $m)) {
-    //     if (isset($m[1])) {
-    //       $format = $m[1];
-    //     }
-    //   }
-    // }
-
     //記事内広告の場合は付け加える
     if ($format == DATA_AD_FORMAT_FLUID) {
       $data_ad_layout = '     data-ad-layout="in-article"';
@@ -106,17 +97,8 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
     global $_IS_ADSENSE_EXIST;
     $_IS_ADSENSE_EXIST = true;
 
-    // //アドセンススクリプトコードの設定
-    // global $_IS_ADSENSE_SCRIPT_EMPTY;
     $adsense_script = null;
-    // if ($_IS_ADSENSE_SCRIPT_EMPTY) {
-    //   $adsense_script = ADSENSE_SCRIPT_CODE;
-    //   $_IS_ADSENSE_SCRIPT_EMPTY = false;
-    //   //_v($adsense_script);
-    // }
-    // _v($format);
-    // _v($_IS_ADSENSE_SCRIPT_EMPTY);
-    // _v($adsense_script);
+
     return $adsense_script.
 '<!-- レスポンシブコード -->
 <ins class="adsbygoogle"
