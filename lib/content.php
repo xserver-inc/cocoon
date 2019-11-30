@@ -15,7 +15,7 @@ if ( !function_exists( 'get_the_content_all_scripts' ) ):
 function get_the_content_all_scripts($the_content) {
   global $_THE_CONTENT_SCRIPTS;
 
-  if (false && is_footer_javascript_enable() &&
+  if (is_footer_javascript_enable() &&
       apply_filters('get_the_content_all_scripts', true) &&
       preg_match_all('{<script.*?>(.*?)</script>}is', $the_content, $m)) {
     $all_index = 0;

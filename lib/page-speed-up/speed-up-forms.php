@@ -177,7 +177,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
-<?php if (false): ?>
+
 <!-- スクリプト読み込み -->
 <div id="script-load" class="postbox">
   <h2 class="hndle"><?php _e( 'スクリプト読み込み設定', THEME_NAME ) ?></h2>
@@ -206,7 +206,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
-<?php endif; ?>
 
 
 

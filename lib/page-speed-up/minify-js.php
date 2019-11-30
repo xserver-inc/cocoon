@@ -203,7 +203,7 @@ function remove_code_comments($code){
 endif;
 
 /*async defer*/
-add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );
+//add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );
 if ( !function_exists( 'add_defer_async_scripts' ) ):
 function add_defer_async_scripts( $tag, $handle, $src ) {
   $async_defer = array(
