@@ -312,6 +312,7 @@ body {
   margin: 0;
   overflow-wrap: break-word;
   background-color: #f4f5f7;
+  text-size-adjust: 100%;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
 }
