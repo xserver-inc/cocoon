@@ -1,6 +1,6 @@
 /*
-	Name: Momoon（ピンク）
-	Description: ピンクを基調とした「cocoon」用のデザインスキン
+	Name: Momoon（オレンジ）
+	Description: オレンジを基調とした「cocoon」用のデザインスキン
 	Skin URI: https://rn.bex.jp/momoon/
 	Author: タイジーWP
 	Author URI: https://rn.bex.jp/
@@ -310,7 +310,7 @@ h3.footer-title{
 #footer,
 .go-to-top-button {
 	background-color:
-	#ffc6c6;
+	#ffce80;
 	color: #333;
 }
 .article h3,
@@ -320,14 +320,14 @@ h3.footer-title{
 .cat-link,
 .tag-link {
 	border-color:
-	#ffc6c6;
+	#ffce80;
 }
 
 blockquote,
 .key-btn {
-	background-color: #fff9f9;
+	background-color: #ffeccd;
 	border-color:
-	#ffc6c6;
+	#ffce80;
 }
 
 .font-awesome-5 .widget ul li a::before,
