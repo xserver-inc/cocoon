@@ -24,7 +24,7 @@ if (is_related_entries_visible()): ?>
     } else {//関連コンテンツユニットの場合
       //AdSense広告表示が許可されている場合
       if (is_all_adsenses_visible()) {
-        get_template_part_with_ad_format(DATA_AD_FORMAT_AUTORELAXED, 'ad-related-autorelaxed', false, get_ad_related_content_unit_code());
+        get_template_part_with_ad_format(DATA_AD_FORMAT_AUTORELAXED, 'ad-related-autorelaxed', false, get_ad_related_contents_unit_code());
       }
     }
   ?>

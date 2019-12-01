@@ -40,10 +40,10 @@ function get_ad_link_unit_code(){
 endif;
 
 //関連コンテンツユニットコード
-define('OP_AD_RELATED_CONTENT_UNIT_CODE', 'ad_related_content_unit_code');
-if ( !function_exists( 'get_ad_related_content_unit_code' ) ):
-function get_ad_related_content_unit_code(){
-  return stripslashes_deep(get_theme_option(OP_AD_RELATED_CONTENT_UNIT_CODE));
+define('OP_AD_RELATED_CONTENTS_UNIT_CODE', 'ad_related_contents_unit_code');
+if ( !function_exists( 'get_ad_related_contents_unit_code' ) ):
+function get_ad_related_contents_unit_code(){
+  return stripslashes_deep(get_theme_option(OP_AD_RELATED_CONTENTS_UNIT_CODE));
 }
 endif;
 
