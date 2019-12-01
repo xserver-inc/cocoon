@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-11-23 22:02+0900\n"
-"PO-Revision-Date: 2019-11-23 22:05+0900\n"
+"POT-Creation-Date: 2019-12-01 22:48+0900\n"
+"PO-Revision-Date: 2019-12-01 22:57+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -526,6 +526,22 @@ msgstr "Open in current tab"
 msgid "新しいタブで開く"
 msgstr "Open in new tab"
 
+#: blocks/src/block/code-box/block.js:132
+msgid "言語"
+msgstr "Language"
+
+#: blocks/src/block/code-box/block.js:159
+msgid "コードを入力"
+msgstr ""
+
+#: blocks/src/block/code-box/block.js:181 lib/page-settings/_top-page.php:183
+msgid "コード"
+msgstr "Code"
+
+#: blocks/src/block/code-box/block.js:184
+msgid "highlight.js用のコード出力ブロック。"
+msgstr "Code output block for highlight.js."
+
 #: blocks/src/block/icon-box/block.js:32
 msgid "アイコンボックス"
 msgstr "Icon box"
@@ -911,355 +927,355 @@ msgstr "Server operation demo box"
 msgid "ドロップダウンデモ"
 msgstr "Drop-down demo"
 
-#: blocks/src/helpers.js:213
+#: blocks/src/helpers.js:235
 msgid "fab-info-circle"
 msgstr "fab-info-circle"
 
-#: blocks/src/helpers.js:217
+#: blocks/src/helpers.js:239
 msgid "fab-question-circle"
 msgstr "fab-question-circle"
 
-#: blocks/src/helpers.js:221
+#: blocks/src/helpers.js:243
 msgid "fab-exclamation-circle"
 msgstr "fab-exclamation-circle"
 
-#: blocks/src/helpers.js:225
+#: blocks/src/helpers.js:247
 msgid "fab-pencil"
 msgstr "fab-pencil"
 
-#: blocks/src/helpers.js:229
+#: blocks/src/helpers.js:251
 msgid "fab-edit"
 msgstr "fab-edit"
 
-#: blocks/src/helpers.js:233
+#: blocks/src/helpers.js:255
 msgid "fab-comment"
 msgstr "fab-comment"
 
-#: blocks/src/helpers.js:237
+#: blocks/src/helpers.js:259
 msgid "fab-ok"
 msgstr "fab-ok"
 
-#: blocks/src/helpers.js:241
+#: blocks/src/helpers.js:263
 msgid "fab-bad"
 msgstr "fab-bad"
 
-#: blocks/src/helpers.js:245
+#: blocks/src/helpers.js:267
 msgid "fab-thumbs-up"
 msgstr "fab-thumbs-up"
 
-#: blocks/src/helpers.js:249
+#: blocks/src/helpers.js:271
 msgid "fab-thumbs-down"
 msgstr "fab-thumbs-down"
 
-#: blocks/src/helpers.js:253 blocks/src/helpers.js:682
+#: blocks/src/helpers.js:275 blocks/src/helpers.js:704
 msgid "fab-check"
 msgstr "fab-check"
 
-#: blocks/src/helpers.js:257 blocks/src/helpers.js:746
+#: blocks/src/helpers.js:279 blocks/src/helpers.js:768
 msgid "fab-star"
 msgstr "fab-star"
 
-#: blocks/src/helpers.js:261
+#: blocks/src/helpers.js:283
 msgid "fab-bell"
 msgstr "fab-bell"
 
-#: blocks/src/helpers.js:265
+#: blocks/src/helpers.js:287
 msgid "fab-trophy"
 msgstr "fab-trophy"
 
-#: blocks/src/helpers.js:269
+#: blocks/src/helpers.js:291
 msgid "fab-lightbulb"
 msgstr "fab-lightbulb"
 
-#: blocks/src/helpers.js:273
+#: blocks/src/helpers.js:295
 msgid "fab-graduation-cap"
 msgstr "fab-graduation-cap"
 
-#: blocks/src/helpers.js:277
+#: blocks/src/helpers.js:299
 msgid "fab-bolt"
 msgstr "fab-bolt"
 
-#: blocks/src/helpers.js:281
+#: blocks/src/helpers.js:303
 msgid "fab-bookmark"
 msgstr "fab-bookmark"
 
-#: blocks/src/helpers.js:285
+#: blocks/src/helpers.js:307
 msgid "fab-book"
 msgstr "fab-book"
 
-#: blocks/src/helpers.js:289
+#: blocks/src/helpers.js:311
 msgid "fab-download"
 msgstr "fab-download"
 
-#: blocks/src/helpers.js:293
+#: blocks/src/helpers.js:315
 msgid "fab-coffee"
 msgstr "fab-coffee"
 
-#: blocks/src/helpers.js:297
+#: blocks/src/helpers.js:319
 msgid "fab-amazon"
 msgstr "fab-amazon"
 
-#: blocks/src/helpers.js:301
+#: blocks/src/helpers.js:323
 msgid "fab-user"
 msgstr "fab-user"
 
-#: blocks/src/helpers.js:305
+#: blocks/src/helpers.js:327
 msgid "fab-envelope"
 msgstr "fab-envelope"
 
-#: blocks/src/helpers.js:309
+#: blocks/src/helpers.js:331
 msgid "fab-flag"
 msgstr "fab-flag"
 
-#: blocks/src/helpers.js:313
+#: blocks/src/helpers.js:335
 msgid "fab-ban"
 msgstr "fab-ban"
 
-#: blocks/src/helpers.js:317
+#: blocks/src/helpers.js:339
 msgid "fab-calendar"
 msgstr "fab-calendar"
 
-#: blocks/src/helpers.js:321
+#: blocks/src/helpers.js:343
 msgid "fab-clock"
 msgstr "fab-clock"
 
-#: blocks/src/helpers.js:325
+#: blocks/src/helpers.js:347
 msgid "fab-cutlery"
 msgstr "fab-cutlery"
 
-#: blocks/src/helpers.js:329 blocks/src/helpers.js:754
+#: blocks/src/helpers.js:351 blocks/src/helpers.js:776
 msgid "fab-heart"
 msgstr "fab-heart"
 
-#: blocks/src/helpers.js:333
+#: blocks/src/helpers.js:355
 msgid "fab-camera"
 msgstr "fab-camera"
 
-#: blocks/src/helpers.js:337
+#: blocks/src/helpers.js:359
 msgid "fab-search"
 msgstr "fab-search"
 
-#: blocks/src/helpers.js:341
+#: blocks/src/helpers.js:363
 msgid "fab-file-text"
 msgstr "fab-file-text"
 
-#: blocks/src/helpers.js:345
+#: blocks/src/helpers.js:367
 msgid "fab-folder"
 msgstr "fab-folder"
 
-#: blocks/src/helpers.js:349
+#: blocks/src/helpers.js:371
 msgid "fab-tag"
 msgstr "fab-tag"
 
-#: blocks/src/helpers.js:353
+#: blocks/src/helpers.js:375
 msgid "fab-car"
 msgstr "fab-car"
 
-#: blocks/src/helpers.js:357
+#: blocks/src/helpers.js:379
 msgid "fab-truck"
 msgstr "fab-truck"
 
-#: blocks/src/helpers.js:361
+#: blocks/src/helpers.js:383
 msgid "fab-bicycle"
 msgstr "fab-bicycle"
 
-#: blocks/src/helpers.js:365
+#: blocks/src/helpers.js:387
 msgid "fab-motorcycle"
 msgstr "fab-motorcycle"
 
-#: blocks/src/helpers.js:369
+#: blocks/src/helpers.js:391
 msgid "fab-bus"
 msgstr "fab-bus"
 
-#: blocks/src/helpers.js:373
+#: blocks/src/helpers.js:395
 msgid "fab-plane"
 msgstr "fab-plane"
 
-#: blocks/src/helpers.js:377
+#: blocks/src/helpers.js:399
 msgid "fab-train"
 msgstr "fab-train"
 
-#: blocks/src/helpers.js:381
+#: blocks/src/helpers.js:403
 msgid "fab-subway"
 msgstr "fab-subway"
 
-#: blocks/src/helpers.js:385
+#: blocks/src/helpers.js:407
 msgid "fab-taxi"
 msgstr "fab-taxi"
 
-#: blocks/src/helpers.js:389
+#: blocks/src/helpers.js:411
 msgid "fab-ship"
 msgstr "fab-ship"
 
-#: blocks/src/helpers.js:393
+#: blocks/src/helpers.js:415
 msgid "fab-jpy"
 msgstr "fab-jpy"
 
-#: blocks/src/helpers.js:397
+#: blocks/src/helpers.js:419
 msgid "fab-usd"
 msgstr "fab-usd"
 
-#: blocks/src/helpers.js:401
+#: blocks/src/helpers.js:423
 msgid "fab-eur"
 msgstr "fab-eur"
 
-#: blocks/src/helpers.js:405
+#: blocks/src/helpers.js:427
 msgid "fab-btc"
 msgstr "fab-btc"
 
-#: blocks/src/helpers.js:409
+#: blocks/src/helpers.js:431
 msgid "fab-apple"
 msgstr "fab-apple"
 
-#: blocks/src/helpers.js:413
+#: blocks/src/helpers.js:435
 msgid "fab-android"
 msgstr "fab-android"
 
-#: blocks/src/helpers.js:417
+#: blocks/src/helpers.js:439
 msgid "fab-wordpress"
 msgstr "fab-wordpress"
 
-#: blocks/src/helpers.js:678
+#: blocks/src/helpers.js:700
 msgid "fab-caret-right"
 msgstr "fab-caret-right"
 
-#: blocks/src/helpers.js:686
+#: blocks/src/helpers.js:708
 msgid "fab-check-circle"
 msgstr "fab-check-circle"
 
-#: blocks/src/helpers.js:690
+#: blocks/src/helpers.js:712
 msgid "fab-check-circle-o"
 msgstr "fab-check-circle-o"
 
-#: blocks/src/helpers.js:694
+#: blocks/src/helpers.js:716
 msgid "fab-check-square"
 msgstr "fab-check-square"
 
-#: blocks/src/helpers.js:698
+#: blocks/src/helpers.js:720
 msgid "fab-check-square-o"
 msgstr "fab-check-square-o"
 
-#: blocks/src/helpers.js:702
+#: blocks/src/helpers.js:724
 msgid "fab-caret-square-o-right"
 msgstr "fab-caret-square-o-right"
 
-#: blocks/src/helpers.js:706
+#: blocks/src/helpers.js:728
 msgid "fab-arrow-right"
 msgstr "fab-arrow-right"
 
-#: blocks/src/helpers.js:710
+#: blocks/src/helpers.js:732
 msgid "fab-angle-right"
 msgstr "fab-angle-right"
 
-#: blocks/src/helpers.js:714
+#: blocks/src/helpers.js:736
 msgid "fab-angle-double-right"
 msgstr "fab-angle-double-right"
 
-#: blocks/src/helpers.js:718
+#: blocks/src/helpers.js:740
 msgid "fab-arrow-circle-right"
 msgstr "fab-arrow-circle-right"
 
-#: blocks/src/helpers.js:722
+#: blocks/src/helpers.js:744
 msgid "fab-arrow-circle-o-right"
 msgstr "fab-arrow-circle-o-right"
 
-#: blocks/src/helpers.js:726
+#: blocks/src/helpers.js:748
 msgid "fab-play-circle"
 msgstr "fab-play-circle"
 
-#: blocks/src/helpers.js:730
+#: blocks/src/helpers.js:752
 msgid "fab-play-circle-o"
 msgstr "fab-play-circle-o"
 
-#: blocks/src/helpers.js:734
+#: blocks/src/helpers.js:756
 msgid "fab-chevron-right"
 msgstr "fab-chevron-right"
 
-#: blocks/src/helpers.js:738
+#: blocks/src/helpers.js:760
 msgid "fab-chevron-circle-right"
 msgstr "fab-chevron-circle-right"
 
-#: blocks/src/helpers.js:742
+#: blocks/src/helpers.js:764
 msgid "fab-hand-o-right"
 msgstr "fab-hand-o-right"
 
-#: blocks/src/helpers.js:750
+#: blocks/src/helpers.js:772
 msgid "fab-star-o"
 msgstr "fab-star-o"
 
-#: blocks/src/helpers.js:758
+#: blocks/src/helpers.js:780
 msgid "fab-heart-o"
 msgstr "fab-heart-o"
 
-#: blocks/src/helpers.js:762
+#: blocks/src/helpers.js:784
 msgid "fab-square"
 msgstr "fab-square"
 
-#: blocks/src/helpers.js:766
+#: blocks/src/helpers.js:788
 msgid "fab-square-o"
 msgstr "fab-square-o"
 
-#: blocks/src/helpers.js:770
+#: blocks/src/helpers.js:792
 msgid "fab-circle"
 msgstr "fab-circle"
 
-#: blocks/src/helpers.js:774
+#: blocks/src/helpers.js:796
 msgid "fab-circle-o"
 msgstr "fab-circle-o"
 
-#: blocks/src/helpers.js:778
+#: blocks/src/helpers.js:800
 msgid "fab-dot-circle-o"
 msgstr "fab-dot-circle-o"
 
-#: blocks/src/helpers.js:782
+#: blocks/src/helpers.js:804
 msgid "fab-plus"
 msgstr "fab-plus"
 
-#: blocks/src/helpers.js:786
+#: blocks/src/helpers.js:808
 msgid "fab-plus-circle"
 msgstr "fab-plus-circle"
 
-#: blocks/src/helpers.js:790
+#: blocks/src/helpers.js:812
 msgid "fab-plus-square"
 msgstr "fab-plus-square"
 
-#: blocks/src/helpers.js:794
+#: blocks/src/helpers.js:816
 msgid "fab-plus-square-o"
 msgstr "fab-plus-square-o"
 
-#: blocks/src/helpers.js:798
+#: blocks/src/helpers.js:820
 msgid "fab-minus"
 msgstr "fab-minus"
 
-#: blocks/src/helpers.js:802
+#: blocks/src/helpers.js:824
 msgid "fab-minus-circle"
 msgstr "fab-minus-circle"
 
-#: blocks/src/helpers.js:806
+#: blocks/src/helpers.js:828
 msgid "fab-minus-square"
 msgstr "fab-minus-square"
 
-#: blocks/src/helpers.js:810
+#: blocks/src/helpers.js:832
 msgid "fab-minus-square-o"
 msgstr "fab-minus-square-o"
 
-#: blocks/src/helpers.js:814
+#: blocks/src/helpers.js:836
 msgid "fab-times"
 msgstr "fab-times"
 
-#: blocks/src/helpers.js:818
+#: blocks/src/helpers.js:840
 msgid "fab-times-circle"
 msgstr "fab-times-circle"
 
-#: blocks/src/helpers.js:822
+#: blocks/src/helpers.js:844
 msgid "fab-times-circle-o"
 msgstr "fab-times-circle-o"
 
-#: blocks/src/helpers.js:826
+#: blocks/src/helpers.js:848
 msgid "fab-window-close"
 msgstr "fab-window-close"
 
-#: blocks/src/helpers.js:830
+#: blocks/src/helpers.js:852
 msgid "fab-window-close-o"
 msgstr "fab-window-close-o"
 
@@ -1692,7 +1708,7 @@ msgstr "Short code"
 msgid "テンプレート"
 msgstr "Template"
 
-#: blocks/src/toolbutton/html.js:17 blocks/src/toolbutton/html.js:35
+#: blocks/src/toolbutton/html.js:17 blocks/src/toolbutton/html.js:36
 #: lib/tinymce/insert-html.php:34
 msgid "HTML挿入"
 msgstr "HTML insert"
@@ -4040,10 +4056,6 @@ msgstr "Follow on social media"
 msgid "画像"
 msgstr "Image"
 
-#: lib/page-settings/_top-page.php:183
-msgid "コード"
-msgstr "Code"
-
 #: lib/page-settings/_top-page.php:185
 msgid "通知"
 msgstr "Notification"
@@ -4229,42 +4241,46 @@ msgid "Auto Post Thumbnail："
 msgstr "Auto post thumbnail:"
 
 #: lib/page-settings/about-forms.php:108
+msgid "Retina："
+msgstr "Retina:"
+
+#: lib/page-settings/about-forms.php:109
 msgid "ホームイメージ："
 msgstr "Home image:"
 
-#: lib/page-settings/about-forms.php:112
+#: lib/page-settings/about-forms.php:113
 msgid "ブラウザキャッシュ有効化："
 msgstr "Enable browser cache:"
 
-#: lib/page-settings/about-forms.php:113
+#: lib/page-settings/about-forms.php:114
 msgid "HTML縮小化："
 msgstr "Optimize HTML code:"
 
-#: lib/page-settings/about-forms.php:114
+#: lib/page-settings/about-forms.php:115
 msgid "CSS縮小化："
 msgstr "Optimize CSS code:"
 
-#: lib/page-settings/about-forms.php:115
+#: lib/page-settings/about-forms.php:116
 msgid "JavaScript縮小化："
 msgstr "Optimize JavaScript:"
 
-#: lib/page-settings/about-forms.php:116
+#: lib/page-settings/about-forms.php:117
 msgid "Lazy Load："
 msgstr "Lazy Load:"
 
-#: lib/page-settings/about-forms.php:117
+#: lib/page-settings/about-forms.php:118
 msgid "WEBフォントLazy Load："
 msgstr "Web font Lazy Load:"
 
-#: lib/page-settings/about-forms.php:118
+#: lib/page-settings/about-forms.php:119
 msgid "JavaScript（フッター）："
 msgstr "JavaScript (footer):"
 
-#: lib/page-settings/about-forms.php:125
+#: lib/page-settings/about-forms.php:126
 msgid "利用中のプラグイン："
 msgstr "Plugins in use:"
 
-#: lib/page-settings/about-forms.php:138
+#: lib/page-settings/about-forms.php:139
 msgid "不具合報告の際には以下の情報を添えてもらうと助かります。"
 msgstr ""
 "It is helpful to attach the following information when reporting an issue."
@@ -4784,23 +4800,39 @@ msgstr ""
 msgid "リンクユニット用コード入力"
 msgstr "Enter code for link unit"
 
-#: lib/page-settings/ads-forms.php:105
+#: lib/page-settings/ads-forms.php:101
+msgid "アドセンス関連コンテンツコードを入力"
+msgstr "Enter your Adsense related contents code"
+
+#: lib/page-settings/ads-forms.php:102
+msgid ""
+"関連コンテンツ用の広告コードを入力してください。ここに広告コードを入力するこ"
+"とでAMPページでも関連コンテンツが表示されます。"
+msgstr ""
+"Enter a related contents ad code. By entering an ad code here, the related "
+"contents will be displayed even in AMP pages."
+
+#: lib/page-settings/ads-forms.php:104
+msgid "関連コンテンツ用コード入力"
+msgstr "Enter for related contents code"
+
+#: lib/page-settings/ads-forms.php:114
 msgid "アドセンス表示方式"
 msgstr "Adsense display method"
 
-#: lib/page-settings/ads-forms.php:110
+#: lib/page-settings/ads-forms.php:119
 msgid "アドセンス自動広告のみ利用"
 msgstr "Use auto AdSense ads only"
 
-#: lib/page-settings/ads-forms.php:111
+#: lib/page-settings/ads-forms.php:120
 msgid "自動広告とマニュアル広告を併用"
 msgstr "Use both automated and manual ads"
 
-#: lib/page-settings/ads-forms.php:112
+#: lib/page-settings/ads-forms.php:121
 msgid "マニュアル広告設定（自前で位置を設定）"
 msgstr "Manual ad settings (Set the location yourself)"
 
-#: lib/page-settings/ads-forms.php:115
+#: lib/page-settings/ads-forms.php:124
 msgid ""
 "「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はで"
 "きません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショート"
@@ -4811,79 +4843,79 @@ msgstr ""
 "display settings in items such as \"Ad location\" and \"[ad] Short code\" "
 "will be disabled."
 
-#: lib/page-settings/ads-forms.php:123
+#: lib/page-settings/ads-forms.php:132
 msgid "広告の表示位置"
 msgstr "Ad location"
 
-#: lib/page-settings/ads-forms.php:132
+#: lib/page-settings/ads-forms.php:141
 msgid "インデックスページの表示位置"
 msgstr "Index page location"
 
-#: lib/page-settings/ads-forms.php:135 tmp/mobile-top-button.php:26
+#: lib/page-settings/ads-forms.php:144 tmp/mobile-top-button.php:26
 msgid "トップ"
 msgstr "Top"
 
-#: lib/page-settings/ads-forms.php:144
+#: lib/page-settings/ads-forms.php:153
 msgid "ミドル"
 msgstr "Middle"
 
-#: lib/page-settings/ads-forms.php:148
+#: lib/page-settings/ads-forms.php:157
 msgid "ボトム"
 msgstr "Bottom"
 
-#: lib/page-settings/ads-forms.php:156
+#: lib/page-settings/ads-forms.php:165
 msgid "サイドバーの表示位置"
 msgstr "Sidebar location"
 
-#: lib/page-settings/ads-forms.php:160
+#: lib/page-settings/ads-forms.php:169
 msgid "サイドバートップ"
 msgstr "Sidebar top"
 
-#: lib/page-settings/ads-forms.php:167
+#: lib/page-settings/ads-forms.php:176
 msgid "サイドバーボトム"
 msgstr "Sidebar bottom"
 
-#: lib/page-settings/ads-forms.php:177
+#: lib/page-settings/ads-forms.php:186
 msgid "投稿・固定ページの表示位置"
 msgstr "Post/page location"
 
-#: lib/page-settings/ads-forms.php:181
+#: lib/page-settings/ads-forms.php:190
 msgid "タイトル上"
 msgstr "Above title"
 
-#: lib/page-settings/ads-forms.php:189
+#: lib/page-settings/ads-forms.php:198
 msgid "タイトル下"
 msgstr "Below title"
 
-#: lib/page-settings/ads-forms.php:196
+#: lib/page-settings/ads-forms.php:205
 msgid "本文上"
 msgstr "Content top"
 
-#: lib/page-settings/ads-forms.php:201
+#: lib/page-settings/ads-forms.php:210
 msgid "本文中"
 msgstr "Content middle"
 
-#: lib/page-settings/ads-forms.php:206 lib/page-settings/single-forms.php:325
+#: lib/page-settings/ads-forms.php:215 lib/page-settings/single-forms.php:325
 msgid "本文下"
 msgstr "Content bottom"
 
-#: lib/page-settings/ads-forms.php:211
+#: lib/page-settings/ads-forms.php:220
 msgid "SNSボタン上（本文下部分）"
 msgstr "Above social media button (bottom part of content)"
 
-#: lib/page-settings/ads-forms.php:216
+#: lib/page-settings/ads-forms.php:225
 msgid "SNSボタン下（本文下部分）"
 msgstr "Below social media button (bottom part of content)"
 
-#: lib/page-settings/ads-forms.php:221
+#: lib/page-settings/ads-forms.php:230
 msgid "関連記事下（投稿ページのみ）"
 msgstr "Below related articles (post page only)"
 
-#: lib/page-settings/ads-forms.php:231
+#: lib/page-settings/ads-forms.php:240
 msgid "それぞれのページで広告を表示する位置を設定します。"
 msgstr "Set the location to display ads on each page."
 
-#: lib/page-settings/ads-forms.php:233 lib/page-settings/ads-forms.php:251
+#: lib/page-settings/ads-forms.php:242 lib/page-settings/ads-forms.php:260
 msgid ""
 "設定によっては、アドセンスポリシー違反になる可能性もあるので設定後は念入りに"
 "動作確認をしてください。"
@@ -4891,15 +4923,15 @@ msgstr ""
 "Depending on the setting, it may be a violation of Adsense policy, so "
 "carefully check the operation after configuring the setting."
 
-#: lib/page-settings/ads-forms.php:241
+#: lib/page-settings/ads-forms.php:250
 msgid "[ad]ショートコード"
 msgstr "[ad] Short code"
 
-#: lib/page-settings/ads-forms.php:245
+#: lib/page-settings/ads-forms.php:254
 msgid "[ad]ショートコードを有効にする"
 msgstr "Enable [ad] short code"
 
-#: lib/page-settings/ads-forms.php:249
+#: lib/page-settings/ads-forms.php:258
 msgid ""
 "本文内に[ad]と入力した場合、その部分に「広告コード」に設定してある広告を表示"
 "します。"
@@ -4907,23 +4939,23 @@ msgstr ""
 "If you enter [ad] in the text, ads that are set to \"ad code\" will be "
 "displayed in that location."
 
-#: lib/page-settings/ads-forms.php:264
+#: lib/page-settings/ads-forms.php:273
 msgid "バリューコマース"
 msgstr "Value Commerce"
 
-#: lib/page-settings/ads-forms.php:267
+#: lib/page-settings/ads-forms.php:276
 msgid "バリューコマース関連の広告設定です。"
 msgstr "The ad settings related to Value Commerce."
 
-#: lib/page-settings/ads-forms.php:274
+#: lib/page-settings/ads-forms.php:283
 msgid "LinkSwitch"
 msgstr "LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:278
+#: lib/page-settings/ads-forms.php:287
 msgid "LinkSwitchを有効にする"
 msgstr "Enable LinkSwitch"
 
-#: lib/page-settings/ads-forms.php:279
+#: lib/page-settings/ads-forms.php:288
 msgid ""
 "バリューコマースのLinkSwitch機能を有効にするか。LinkSwitch IDが入力されている"
 "必要があります。"
@@ -4931,59 +4963,59 @@ msgstr ""
 "Do you want to enable the LinkSwitch feature of Value Commerce? The "
 "LinkSwitch ID must be entered."
 
-#: lib/page-settings/ads-forms.php:282
+#: lib/page-settings/ads-forms.php:291
 msgid "LinkSwitch ID"
 msgstr "LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:284
+#: lib/page-settings/ads-forms.php:293
 msgid "LinkSwitch IDの入力"
 msgstr "Enter LinkSwitch ID"
 
-#: lib/page-settings/ads-forms.php:285
+#: lib/page-settings/ads-forms.php:294
 msgid ""
 "バリューコマースの「便利ツール」メニューの「LinkSwitch」からIDを取得してくだ"
 "さい。"
 msgstr ""
 "Get the ID from \"LinkSwitch\" in the \"Handy tools\" menu of Value Commerce."
 
-#: lib/page-settings/ads-forms.php:286
+#: lib/page-settings/ads-forms.php:295
 msgid "LinkSwitchタグから取得できるIDを入力してください。"
 msgstr "Enter the ID that can be obtained from the LinkSwitch tag."
 
-#: lib/page-settings/ads-forms.php:300
+#: lib/page-settings/ads-forms.php:309
 msgid "広告除外設定"
 msgstr "Ad exclusion settings"
 
-#: lib/page-settings/ads-forms.php:303
+#: lib/page-settings/ads-forms.php:312
 msgid "広告を表示したくないページやカテゴリの設定です。"
 msgstr ""
 "This is for setting pages or categories for which you do not want to display "
 "ads."
 
-#: lib/page-settings/ads-forms.php:310
+#: lib/page-settings/ads-forms.php:319
 msgid "広告除外記事ID"
 msgstr "Ad exclusion article IDs"
 
-#: lib/page-settings/ads-forms.php:314
+#: lib/page-settings/ads-forms.php:323
 msgid "例：111,222,3333"
 msgstr "Example: 111, 222, 3333"
 
-#: lib/page-settings/ads-forms.php:315
+#: lib/page-settings/ads-forms.php:324
 msgid ""
 "広告を非表示にする投稿・固定ページのIDを,（カンマ）区切りで指定してください。"
 msgstr ""
 "Specifies the IDs of posts/pages for which you want to hide ads. Separate "
 "the IDs with a comma."
 
-#: lib/page-settings/ads-forms.php:323
+#: lib/page-settings/ads-forms.php:332
 msgid "広告除外カテゴリー"
 msgstr "Ad exclusion category"
 
-#: lib/page-settings/ads-forms.php:329
+#: lib/page-settings/ads-forms.php:338
 msgid "広告を非表示にするカテゴリを選択してください。"
 msgstr "Select a category for which you want to hide ads."
 
-#: lib/page-settings/ads-funcs.php:46
+#: lib/page-settings/ads-funcs.php:54
 msgid "スポンサーリンク"
 msgstr "Sponsored links"
 
@@ -9370,11 +9402,11 @@ msgstr "note"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: lib/page-settings/sns-follow-forms.php:82 tmp/sns-follow-buttons.php:77
+#: lib/page-settings/sns-follow-forms.php:82 tmp/sns-follow-buttons.php:81
 msgid "Amazon欲しい物リスト"
 msgstr "Amazon Wishlist"
 
-#: lib/page-settings/sns-follow-forms.php:83 tmp/sns-follow-buttons.php:81
+#: lib/page-settings/sns-follow-forms.php:83 tmp/sns-follow-buttons.php:85
 msgid "楽天ROOM"
 msgstr "Rakuten Room"
 
@@ -11079,30 +11111,34 @@ msgid "note URL"
 msgstr "note URL"
 
 #: lib/sns-follow.php:144
+msgid "SoundCloud URL"
+msgstr "SoundCloud URL"
+
+#: lib/sns-follow.php:145
 msgid "Flickr URL"
 msgstr "Flickr URL"
 
-#: lib/sns-follow.php:145
+#: lib/sns-follow.php:146
 msgid "LINE@ URL"
 msgstr "LINE@ URL"
 
-#: lib/sns-follow.php:146
+#: lib/sns-follow.php:147
 msgid "Amazon URL"
 msgstr "Amazon URL"
 
-#: lib/sns-follow.php:147
+#: lib/sns-follow.php:148
 msgid "楽天 ROOM URL"
 msgstr "Rakuten ROOM URL"
 
-#: lib/sns-follow.php:148
+#: lib/sns-follow.php:149
 msgid "Slack URL"
 msgstr "Slack URL"
 
-#: lib/sns-follow.php:149
+#: lib/sns-follow.php:150
 msgid "GitHub URL"
 msgstr "Github URL"
 
-#: lib/sns-follow.php:150
+#: lib/sns-follow.php:151
 msgid "CodePen URL"
 msgstr "CodePen URL"
 
@@ -12225,34 +12261,38 @@ msgid "noteをフォロー"
 msgstr "Follow note"
 
 #: tmp/sns-follow-buttons.php:65
+msgid "SoundCloudをフォロー"
+msgstr "Follow SoundCloud"
+
+#: tmp/sns-follow-buttons.php:69
 msgid "Flickrをフォロー"
 msgstr "Follow Flickr"
 
-#: tmp/sns-follow-buttons.php:69
+#: tmp/sns-follow-buttons.php:73
 msgid "Pinterestをフォロー"
 msgstr "Follow Pinterest"
 
-#: tmp/sns-follow-buttons.php:73
+#: tmp/sns-follow-buttons.php:77
 msgid "LINE@をフォロー"
 msgstr "Follow LINE@"
 
-#: tmp/sns-follow-buttons.php:85
+#: tmp/sns-follow-buttons.php:89
 msgid "Slackをフォロー"
 msgstr "Follow Slack"
 
-#: tmp/sns-follow-buttons.php:89
+#: tmp/sns-follow-buttons.php:93
 msgid "GitHubをフォロー"
 msgstr "Follow GitHub"
 
-#: tmp/sns-follow-buttons.php:93
+#: tmp/sns-follow-buttons.php:97
 msgid "CodePenをフォロー"
 msgstr "Follow CodePen"
 
-#: tmp/sns-follow-buttons.php:97
+#: tmp/sns-follow-buttons.php:101
 msgid "feedlyで更新情報を購読"
 msgstr "Subscribe to feedly"
 
-#: tmp/sns-follow-buttons.php:101
+#: tmp/sns-follow-buttons.php:105
 msgid "RSSで更新情報をフォロー"
 msgstr "Follow RSS"
 
