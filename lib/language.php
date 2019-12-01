@@ -1,4 +1,4 @@
-<?php //Wordpressマルチ言語化の設定
+<?php //WordPressマルチ言語化の設定
 /**
  * Cocoon WordPress Theme
  * @author: yhira

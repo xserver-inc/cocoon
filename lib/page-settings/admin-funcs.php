@@ -152,7 +152,7 @@ function is_admin_panel_edit_area_visible(){
 }
 endif;
 
-//管理者パネルWordpress編集の表示
+//管理者パネルWordPress編集の表示
 define('OP_ADMIN_PANEL_WP_EDIT_VISIBLE', 'admin_panel_wp_edit_visible');
 if ( !function_exists( 'is_admin_panel_wp_edit_visible' ) ):
 function is_admin_panel_wp_edit_visible(){

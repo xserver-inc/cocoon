@@ -1,4 +1,4 @@
-<?php //Wordpressのセッティング
+<?php //WordPressのセッティング
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -344,7 +344,7 @@ add_theme_support( 'custom-background', $custom_background_defaults );
 //<link rel='https://api.w.org/' href='http:/xxxx/wordpress/wp-json/' />
 remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
-//Wordpress3.5で廃止されたリンクマネージャを表示する
+//WordPress3.5で廃止されたリンクマネージャを表示する
 add_filter('pre_option_link_manager_enabled','__return_true');
 
 //はてな oEmbed対応
@@ -355,7 +355,7 @@ add_filter( 'embed_oembed_discover', '__return_false' );
 remove_action( 'parse_query', 'wp_oembed_parse_query' );
 remove_action( 'wp_head', 'wp_oembed_remove_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_remove_host_js' );
-//本文中のURLが内部リンクの場合にWordpressがoembedをしてしまうのを解除(WP4.5.3向けの対策)
+//本文中のURLが内部リンクの場合にWordPressがoembedをしてしまうのを解除(WP4.5.3向けの対策)
 remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result' );
 
 
@@ -384,7 +384,7 @@ function customize_register_custom( $wp_customize ) {
 }
 endif;
 
-// //Wordpressデフォルトが出力するサイトアイコンを表示しない
+// //WordPressデフォルトが出力するサイトアイコンを表示しない
 // remove_action ('wp_head', 'wp_site_icon');
 // add_filter('site_icon_meta_tags', 'filter_site_icon_meta_tags');
 // if ( !function_exists( 'filter_site_icon_meta_tags' ) ):
@@ -417,7 +417,7 @@ if ( !function_exists( 'add_file_ver_to_css_js' ) ):
 function add_file_ver_to_css_js( $src ) {
   //サーバー内のファイルの場合
   if (includes_site_url($src)) {
-    //Wordpressのバージョンを除去する場合
+    //WordPressのバージョンを除去する場合
     // if ( strpos( $src, 'ver=' ) )
     //   $src = remove_query_arg( 'ver', $src );
     //クエリーを削除したファイルURLを取得

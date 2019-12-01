@@ -3215,7 +3215,7 @@ msgstr "Enable access summary"
 #: lib/page-access/access-forms.php:31
 msgid ""
 "有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的"
-"なWordpress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
+"なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
 "バーから負荷が高いといわれたら無効にしてください。"
 msgstr ""
 "When enabled, the summary can be used in the \"Popular articles\" widget, "
@@ -3652,16 +3652,16 @@ msgid "関数化するテキストを入力してください。"
 msgstr "Enter the text to be used as a function."
 
 #: lib/page-func-text/func-text-func.php:39
-msgid "Wordpressカスタマイズ注意文サンプル"
+msgid "WordPressカスタマイズ注意文サンプル"
 msgstr "WordPress customization notes sample"
 
 #: lib/page-func-text/func-text-func.php:40
 msgid ""
-"Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
+"WordPressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
 "してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元"
 "に復元してください。 "
 msgstr ""
-"Before editing Wordpress functions.php, be sure to save a backup. If an "
+"Before editing WordPress functions.php, be sure to save a backup. If an "
 "error is output after editing, use the backup file to restore."
 
 #: lib/page-func-text/posts-delete.php:18
@@ -4461,7 +4461,7 @@ msgid "投稿編集リンクの表示"
 msgstr "Post edit link display"
 
 #: lib/page-settings/admin-forms.php:194
-msgid "Wordpress管理画面で投稿内容を編集するためのリンクです。"
+msgid "WordPress管理画面で投稿内容を編集するためのリンクです。"
 msgstr ""
 "This is the link for editing post content in the WordPress admin screen."
 
@@ -8794,7 +8794,7 @@ msgstr "Add canonical tag"
 
 #: lib/page-settings/seo-forms.php:31
 msgid ""
-"Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
+"WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
 msgstr "A canonical tag is inserted in posts/pages by default in WordPress."
 
 #: lib/page-settings/seo-forms.php:31
@@ -11579,7 +11579,7 @@ msgstr ""
 
 #: lib/widgets/classic-text.php:17
 msgid ""
-"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビ"
+"テキストエディターのみの旧タイプのテキストウィジェット（WordPress4.8以前のビ"
 "ジュアルエディターのないテキストウィジェット）。"
 msgstr ""
 "Old-type text widget with a text editor only (text widget without a visual "
@@ -12805,10 +12805,10 @@ msgstr "Copy"
 
 #~ msgid ""
 #~ "トップページで「人気記事」リストを、それ以外のページで「新着記事」リストを"
-#~ "表示するSimplicityウィジェットです。（※要Wordpress Popular Postsプラグイ"
+#~ "表示するSimplicityウィジェットです。（※要WordPress Popular Postsプラグイ"
 #~ "ン）"
 #~ msgstr ""
-#~ "\"popular posts\" or \"new posts\" widget. (* Wordpress Popular Posts "
+#~ "\"popular posts\" or \"new posts\" widget. (* WordPress Popular Posts "
 #~ "plugin required)"
 
 #~ msgid "固定ページの表示（人気記事のみ）"
@@ -12847,10 +12847,10 @@ msgstr "Copy"
 #~ msgstr "[S] Popular Posts"
 
 #~ msgid ""
-#~ "人気記事リストを表示するSimplicityウィジェットです。（※要Wordpress "
+#~ "人気記事リストを表示するSimplicityウィジェットです。（※要WordPress "
 #~ "Popular Postsプラグイン）"
 #~ msgstr ""
-#~ "Popular posts ranking list. (* Wordpress Popular Posts plugin required)"
+#~ "Popular posts ranking list. (* WordPress Popular Posts plugin required)"
 
 #~ msgid "集計単位"
 #~ msgstr "Aggregation Period"

@@ -140,7 +140,7 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'admin-forms.php'; //管理画面で使用するフォームパーツ
 }
 
-require_once abspath(__FILE__).'settings.php';   //Wordpressの設定
+require_once abspath(__FILE__).'settings.php';   //WordPressの設定
 
 
 //新着記事ウィジェット

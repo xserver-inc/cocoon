@@ -3672,7 +3672,7 @@ msgstr "Activer l'agrégation d'accès"
 #, fuzzy
 msgid ""
 "有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的"
-"なWordpress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
+"なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
 "バーから負荷が高いといわれたら無効にしてください。"
 msgstr ""
 "En activant les widgets «articles populaires», etc. seront disponibles. S'il "
@@ -4201,13 +4201,13 @@ msgstr "Entrez le texte que vous souhaitez faire fonctionner."
 
 #: lib/page-func-text/func-text-func.php:39
 #, fuzzy
-msgid "Wordpressカスタマイズ注意文サンプル"
+msgid "WordPressカスタマイズ注意文サンプル"
 msgstr "Exemple de note personnalisée WordPress"
 
 #: lib/page-func-text/func-text-func.php:40
 #, fuzzy
 msgid ""
-"Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
+"WordPressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
 "してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元"
 "に復元してください。 "
 msgstr ""
@@ -4818,7 +4818,7 @@ msgstr "Serveur:"
 
 #: lib/page-settings/about-forms.php:45
 #, fuzzy
-msgid "Wordpressバージョン："
+msgid "WordPressバージョン："
 msgstr "Version de WordPress:"
 
 #: lib/page-settings/about-forms.php:46
@@ -5202,7 +5202,7 @@ msgstr "Afficher le post modifier les liens"
 
 #: lib/page-settings/admin-forms.php:194
 #, fuzzy
-msgid "Wordpress管理画面で投稿内容を編集するためのリンクです。"
+msgid "WordPress管理画面で投稿内容を編集するためのリンクです。"
 msgstr ""
 "Le lien pour éditer le contenu de la publication dans l'écran "
 "d'administration de WordPress."
@@ -10489,7 +10489,7 @@ msgstr "Ajouter une balise canonique"
 #: lib/page-settings/seo-forms.php:31
 #, fuzzy
 msgid ""
-"Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
+"WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
 msgstr ""
 "La balise canonique est insérée dans la page post/Fixed par la valeur par "
 "défaut de WordPress."
@@ -13873,7 +13873,7 @@ msgstr ""
 #: lib/widgets/classic-text.php:17
 #, fuzzy
 msgid ""
-"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビ"
+"テキストエディターのみの旧タイプのテキストウィジェット（WordPress4.8以前のビ"
 "ジュアルエディターのないテキストウィジェット）。"
 msgstr ""
 "Un widget de texte qui est seulement un éditeur de texte avec un ancien type "

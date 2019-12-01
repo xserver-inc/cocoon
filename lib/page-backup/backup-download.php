@@ -6,7 +6,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-//外部のphpからWordpress のAPIを扱う
+//外部のphpからWordPress のAPIを扱う
 require_once('../../../../../wp-load.php');
 require_once('../_defins.php');
 //管理者権限を持っているログインユーザーかどうか

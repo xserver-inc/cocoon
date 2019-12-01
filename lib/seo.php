@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//Wordpress4.1からのタイトル自動作成
+//WordPress4.1からのタイトル自動作成
 //https://www.nxworld.net/wordpress/wp-custom-title-tag.html
 add_action( 'after_setup_theme', 'setup_theme_custum' );
 if ( !function_exists( 'setup_theme_custum' ) ):
@@ -16,7 +16,7 @@ function setup_theme_custum() {
 }
 endif;
 
-//Wordpress4.4以上でのタイトルセパレーターの設定
+//WordPress4.4以上でのタイトルセパレーターの設定
 add_filter( 'document_title_separator', 'title_separator_custom' );
 if ( !function_exists( 'title_separator_custom' ) ):
 function title_separator_custom( $sep ){
@@ -26,7 +26,7 @@ function title_separator_custom( $sep ){
 endif;
 
 
-//Wordpress4.4以上でのタイトルカスタマイズ
+//WordPress4.4以上でのタイトルカスタマイズ
 add_filter( 'document_title_parts', 'title_parts_custom' );
 if ( !function_exists( 'title_parts_custom' ) ):
 function title_parts_custom( $title ){

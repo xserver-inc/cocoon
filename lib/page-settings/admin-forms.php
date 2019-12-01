@@ -191,7 +191,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <div class="indent">
               <?php
               generate_checkbox_tag(OP_ADMIN_PANEL_WP_EDIT_VISIBLE , is_admin_panel_wp_edit_visible(), __( '投稿編集リンクの表示', THEME_NAME ));
-              generate_tips_tag(__( 'Wordpress管理画面で投稿内容を編集するためのリンクです。', THEME_NAME ));
+              generate_tips_tag(__( 'WordPress管理画面で投稿内容を編集するためのリンクです。', THEME_NAME ));
 
               generate_checkbox_tag(OP_ADMIN_PANEL_WLW_EDIT_VISIBLE , is_admin_panel_wlw_edit_visible(), __( 'WLW編集リンクの表示', THEME_NAME ));
               generate_tips_tag(__( 'Windows Live Writerで投稿内容を編集するためのリンクです。', THEME_NAME ));

@@ -1664,7 +1664,7 @@ function initialize_tinymce_styles($init_array) {
 }
 endif;
 
-//Wordpressビジュアルエディターに文字サイズの変更機能を追加
+//WordPressビジュアルエディターに文字サイズの変更機能を追加
 add_filter('mce_buttons_2', 'add_ilc_mce_buttons_to_bar');
 if ( !function_exists( 'add_ilc_mce_buttons_to_bar' ) ):
 function add_ilc_mce_buttons_to_bar($buttons){

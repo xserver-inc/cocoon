@@ -59,7 +59,7 @@ update_theme_option(OP_ADMIN_PANEL_PV_TYPE);
 //管理者パネル編集エリアの表示
 update_theme_option(OP_ADMIN_PANEL_EDIT_AREA_VISIBLE);
 
-//管理者パネルWordpress編集の表示
+//管理者パネルWordPress編集の表示
 update_theme_option(OP_ADMIN_PANEL_WP_EDIT_VISIBLE);
 
 //管理者パネルWindows Live Writer編集の表示

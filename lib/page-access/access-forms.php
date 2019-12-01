@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_ACCESS_COUNT_ENABLE , is_access_count_enable(), __( 'アクセス集計の有効化', THEME_NAME ));
-            generate_tips_tag(__( '有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的なWordpress Popular Postsプラグインを実装しているようなものなのでレンタルサーバーから負荷が高いといわれたら無効にしてください。', THEME_NAME ));
+            generate_tips_tag(__( '有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサーバーから負荷が高いといわれたら無効にしてください。', THEME_NAME ));
             ?>
           </td>
         </tr>

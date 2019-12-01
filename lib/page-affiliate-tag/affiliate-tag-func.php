@@ -36,7 +36,7 @@ if ( !function_exists( 'add_default_affiliate_tag_records' ) ):
 function add_default_affiliate_tag_records(){
   $posts = array();
   $posts['title'] = __( 'アフィリエイトタグサンプル', THEME_NAME );
-  $posts['text'] = '<a href="https://wp-simplicity.com/">Simplicity | 内部SEO施策済みのシンプルな無料Wordpressテーマ</a>';
+  $posts['text'] = '<a href="https://wp-simplicity.com/">Simplicity | 内部SEO施策済みのシンプルな無料WordPressテーマ</a>';
   $posts['visible'] = 1;
   insert_affiliate_tag_record($posts);
 }

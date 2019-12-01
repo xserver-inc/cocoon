@@ -94,7 +94,7 @@ function deregister_thickbox_files() {
 }
 endif;
 
-//Wordpressサービスを用いてサイトのスクリーンショットの取得
+//WordPressサービスを用いてサイトのスクリーンショットの取得
 if ( !function_exists( 'get_site_screenshot_url' ) ):
 function get_site_screenshot_url($url){
   $mshot = 'https://s0.wordpress.com/mshots/v1/';

@@ -169,7 +169,7 @@ endif;
 
 //サイトアイコン
 define('OP_SITE_ICON_URL', 'site_icon_url');
-//Wordpressデフォルトのget_site_icon_url関数とかぶるため名前変更
+//WordPressデフォルトのget_site_icon_url関数とかぶるため名前変更
 if ( !function_exists( 'get_site_icon_url2' ) ):
 function get_site_icon_url2(){
   //return get_theme_option(OP_SITE_ICON_URL, get_default_site_icon_url());

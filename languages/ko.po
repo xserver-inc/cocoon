@@ -3609,11 +3609,11 @@ msgstr "액세스 집계 사용"
 #, fuzzy
 msgid ""
 "有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的"
-"なWordpress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
+"なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサー"
 "バーから負荷が高いといわれたら無効にしてください。"
 msgstr ""
 "사용 하는 것으로 「 인기 기사 」 위젯 등을 사용할 수 있습니다. 간단한 "
-"Wordpress Popular Posts 플러그인을 구현 하는 것 이므로 임대 서버에서 부하가 "
+"WordPress Popular Posts 플러그인을 구현 하는 것 이므로 임대 서버에서 부하가 "
 "높다고 경우 비활성화 하십시오."
 
 #: lib/page-access/access-forms.php:39
@@ -4120,17 +4120,17 @@ msgstr "함수 할 텍스트를 입력 하십시오."
 
 #: lib/page-func-text/func-text-func.php:39
 #, fuzzy
-msgid "Wordpressカスタマイズ注意文サンプル"
-msgstr "Wordpress 사용자 주의 문장 샘플"
+msgid "WordPressカスタマイズ注意文サンプル"
+msgstr "WordPress 사용자 주의 문장 샘플"
 
 #: lib/page-func-text/func-text-func.php:40
 #, fuzzy
 msgid ""
-"Wordpressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
+"WordPressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存"
 "してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元"
 "に復元してください。 "
 msgstr ""
-"Wordpress의 functions.php를 편집 하기 전에 편집 하기 전에 항상 백업을 저장 합"
+"WordPress의 functions.php를 편집 하기 전에 편집 하기 전에 항상 백업을 저장 합"
 "니다. 만약 편집 오류가 나오는 경우, 백업 파일을 원래 상태로 복원 하십시오."
 
 #: lib/page-func-text/posts-delete.php:18
@@ -4718,8 +4718,8 @@ msgstr "서버:"
 
 #: lib/page-settings/about-forms.php:45
 #, fuzzy
-msgid "Wordpressバージョン："
-msgstr "Wordpress 버전:"
+msgid "WordPressバージョン："
+msgstr "WordPress 버전:"
 
 #: lib/page-settings/about-forms.php:46
 #, fuzzy
@@ -5088,8 +5088,8 @@ msgstr ", 편집 링크 표시"
 
 #: lib/page-settings/admin-forms.php:194
 #, fuzzy
-msgid "Wordpress管理画面で投稿内容を編集するためのリンクです。"
-msgstr "Wordpress 관리 화면에서 게시물을 편집할 수 있는 링크입니다."
+msgid "WordPress管理画面で投稿内容を編集するためのリンクです。"
+msgstr "WordPress 관리 화면에서 게시물을 편집할 수 있는 링크입니다."
 
 #: lib/page-settings/admin-forms.php:196
 #, fuzzy
@@ -10122,8 +10122,8 @@ msgstr "Canonical 태그 추가"
 #: lib/page-settings/seo-forms.php:31
 #, fuzzy
 msgid ""
-"Wordpressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
-msgstr "Wordpress 기본 게시/고정 페이지는 canonical 태그가 삽입 됩니다."
+"WordPressデフォルトでも投稿・固定ページには、canonicalタグは挿入されます。"
+msgstr "WordPress 기본 게시/고정 페이지는 canonical 태그가 삽입 됩니다."
 
 #: lib/page-settings/seo-forms.php:31
 #, fuzzy
@@ -13362,10 +13362,10 @@ msgstr ""
 #: lib/widgets/classic-text.php:17
 #, fuzzy
 msgid ""
-"テキストエディターのみの旧タイプのテキストウィジェット（Wordpress4.8以前のビ"
+"テキストエディターのみの旧タイプのテキストウィジェット（WordPress4.8以前のビ"
 "ジュアルエディターのないテキストウィジェット）。"
 msgstr ""
-"텍스트 편집기만 옛 형식의 텍스트 위젯 (Wordpress4.8 이전 시각적 편집기 텍스"
+"텍스트 편집기만 옛 형식의 텍스트 위젯 (WordPress4.8 이전 시각적 편집기 텍스"
 "트 위젯)."
 
 #: lib/widgets/classic-text.php:19

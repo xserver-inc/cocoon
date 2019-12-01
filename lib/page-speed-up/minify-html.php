@@ -193,10 +193,10 @@ function wp_head_minify($buffer) {
   if (is_js_minify_enable()) {
     $buffer = tag_code_to_minify_js($buffer);
   }
-  //Wordpressが出力する type='text/javascript'を削除
+  //WordPressが出力する type='text/javascript'を削除
   $buffer = str_replace(" type='text/javascript'", '', $buffer);
   $buffer = str_replace(' type="text/javascript"', '', $buffer);
-  //Wordpressが出力する type='text/css'を削除
+  //WordPressが出力する type='text/css'を削除
   $buffer = str_replace(" type='text/css'", '', $buffer);
   $buffer = str_replace(' type="text/css"', '', $buffer);
 
@@ -218,7 +218,7 @@ function wp_footer_minify($buffer) {
     $buffer = tag_code_to_minify_js($buffer);
   }
 
-  //Wordpressが出力する type='text/javascript'を削除
+  //WordPressが出力する type='text/javascript'を削除
   $buffer = str_replace(" type='text/javascript'", '', $buffer);
   $buffer = str_replace(' type="text/javascript"', '', $buffer);
 
