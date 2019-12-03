@@ -1338,6 +1338,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo pre.code-box::before { content: attr(aria-label); position: absolute; top: 0; left: 0; background: #0e7ac4; color: #fff; padding: 0 1em; font-size: 16px; }
 .admin-settings .demo pre.code-box.auto, .admin-settings .demo pre.code-box.nohighlight { padding-top: 0.5em; }
 .admin-settings .demo pre.code-box.auto::before, .admin-settings .demo pre.code-box.nohighlight::before { display: none; }
+.admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -2878,6 +2879,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo pre.code-box::before { content: attr(aria-label); position: absolute; top: 0; left: 0; background: #0e7ac4; color: #fff; padding: 0 1em; font-size: 16px; }
 .admin-settings .demo pre.code-box.auto, .admin-settings .demo pre.code-box.nohighlight { padding-top: 0.5em; }
 .admin-settings .demo pre.code-box.auto::before, .admin-settings .demo pre.code-box.nohighlight::before { display: none; }
+.admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
 .admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
@@ -4588,6 +4590,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content pre.code-box::before { content: attr(aria-label); position: absolute; top: 0; left: 0; background: #0e7ac4; color: #fff; padding: 0 1em; font-size: 16px; }
 .components-popover__content pre.code-box.auto, .components-popover__content pre.code-box.nohighlight { padding-top: 0.5em; }
 .components-popover__content pre.code-box.auto::before, .components-popover__content pre.code-box.nohighlight::before { display: none; }
+.components-popover__content figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
 .components-popover__content .red { margin: 0; }
 .components-popover__content .fz-12px { font-size: 12px; }
 .components-popover__content .fz-13px { font-size: 13px; }

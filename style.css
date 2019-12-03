@@ -4980,6 +4980,13 @@ pre.code-box.nohighlight::before {
   display: none;
 }
 
+figure.wp-block-image figcaption {
+  margin: 0;
+  font-size: 0.8em;
+  opacity: 0.8;
+  padding: 0 6px;
+}
+
 .column-wrap {
   display: flex;
   justify-content: space-between;
