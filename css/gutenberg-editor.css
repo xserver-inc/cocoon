@@ -938,3 +938,10 @@ ol, ul {
   border-width: 1px;
   border-style: solid;
 }
+
+.editor-block-toolbar.block-editor-block-toolbar {
+  position: relative;
+}
+.editor-block-toolbar.block-editor-block-toolbar .block-editor-block-toolbar__slot {
+  display: inline-flex;
+}
