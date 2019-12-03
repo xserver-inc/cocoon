@@ -1044,7 +1044,7 @@ function includes_home_url($url){
 }
 endif;
 
-//Wordpressインストールフォルダが含まれているか
+//WordPressインストールフォルダが含まれているか
 if ( !function_exists( 'includes_abspath' ) ):
 function includes_abspath($local){
   //URLにサイトアドレスが含まれていない場合
@@ -2115,7 +2115,7 @@ function get_the_update_time(){
 }
 endif;
 
-//指定されたURLはWordpressホームURLかどうか
+//指定されたURLはWordPressホームURLかどうか
 if ( !function_exists( 'is_home_url' ) ):
 function is_home_url($url){
   //_v(home_url());
