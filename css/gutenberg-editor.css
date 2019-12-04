@@ -732,6 +732,10 @@ ol, ul {
   margin: 0.2em;
 }
  */
+.editor-styles-wrapper .article .wp-block-gallery ul li {
+  margin-left: 0;
+}
+
 @media (min-width: 600px) {
   .editor-styles-wrapper .article ul.wp-block-gallery.columns-3 li.blocks-gallery-image, .editor-styles-wrapper .article ul.wp-block-gallery.columns-3 li.blocks-gallery-item {
     margin-right: 16px;
