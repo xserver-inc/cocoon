@@ -48,12 +48,12 @@ function get_adsense_ids($code = null){
   //AdSenseコードからIDを取得する
   $res = preg_match(
     '/'.preg_quote(DATA_AD_CLIENT).'="([^"]+?)".+?'.preg_quote(DATA_AD_SLOT).'="([^"]+?)"/is', $code, $m);
- if ($res && isset($m[1]) && isset($m[2])) {
-   return array(
-    DATA_AD_CLIENT => $m[1],
-    DATA_AD_SLOT   => $m[2],
-    );
- }
+  if ($res && isset($m[1]) && isset($m[2])) {
+    return array(
+      DATA_AD_CLIENT => $m[1],
+      DATA_AD_SLOT   => $m[2],
+      );
+  }
 }
 endif;
 
@@ -102,11 +102,11 @@ function get_normal_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code
     return $adsense_script.
 '<!-- レスポンシブコード -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="'.get_adsense_data_ad_client($code).'"
-     data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
-     $data_ad_layout.'
-     data-ad-format="'.$format.'"></ins>
+  style="display:block"
+  data-ad-client="'.get_adsense_data_ad_client($code).'"
+  data-ad-slot="'.get_adsense_data_ad_slot($code).'"'.
+  $data_ad_layout.'
+  data-ad-format="'.$format.'"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
@@ -257,14 +257,6 @@ endif;
 add_filter('the_content', 'add_ads_before_1st_h2', BEFORE_1ST_H2_AD_PRIORITY_STANDARD);
 if ( !function_exists( 'add_ads_before_1st_h2' ) ):
 function add_ads_before_1st_h2($the_content) {
-  // if ( is_amp() ) {
-  //   return $the_content;
-  // }
-
-  // //マルチページの2ページ目以降は広告を表示しない
-  // if (is_singular() && is_multi_paged()) {
-  //   return $the_content;
-  // }
 
   if ( is_singular() //投稿日・固定ページのとき
        && is_ad_pos_content_middle_visible() //設定で表示が許可されているとき
@@ -330,14 +322,8 @@ function is_index_middle_widget_visible($count){
   $is_visible =
     //3個目の表示のときのみ
     $display_count_condition && //何番目に表示するかの表示条件（デフォルト：3）
-    // //トップページリストのみ
-    // is_home() &&
-    // //ページネーションの最終ページでないとき
-    // !is_pagination_last_page() &&
     //1ページに表示する最大投稿数が6以上の時
     is_posts_per_page_6_and_over() &&
-    //エントリーカードタイプの一覧のとき
-    //is_entry_card_type_entry_card() &&
     //タイル表示じゃないとき
     !is_entry_card_type_tile_card() &&
     //&&//公開記事が6以上の時
@@ -357,18 +343,8 @@ function is_index_middle_ad_visible($count){
   $is_visible =
     //広告表示設定が有効な時
     is_ad_pos_index_middle_visible() &&
-    // //3個目の表示のときのみ
-    // ($count == 3) &&
-    // //トップページリストのみ
-    // is_home() &&
     //ページネーションの最終ページでないとき
     !is_pagination_last_page() &&
-    // //1ページに表示する最大投稿数が6以上の時
-    // is_posts_per_page_6_and_over() &&
-    // //エントリーカードタイプの一覧のとき
-    // is_entry_card_type_entry_card() &&
-    // //&&//公開記事が6以上の時
-    // (get_all_post_count_in_publish() >= 6)
     is_index_middle_widget_visible($count);
 
   $is_visible = apply_filters('is_index_middle_ad_visible', $is_visible, $count);
