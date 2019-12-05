@@ -943,9 +943,19 @@ ol, ul {
   border-style: solid;
 }
 
-.editor-block-toolbar.block-editor-block-toolbar {
-  position: relative;
+@media all and (-ms-high-contrast: none) {
+  .editor-block-toolbar.block-editor-block-toolbar {
+    position: relative;
+  }
+  .editor-block-toolbar.block-editor-block-toolbar .block-editor-block-toolbar__slot {
+    display: inline-flex;
+  }
 }
-.editor-block-toolbar.block-editor-block-toolbar .block-editor-block-toolbar__slot {
-  display: inline-flex;
+@supports (-ms-ime-align: auto) {
+  .editor-block-toolbar.block-editor-block-toolbar {
+    position: relative;
+  }
+  .editor-block-toolbar.block-editor-block-toolbar .block-editor-block-toolbar__slot {
+    display: inline-flex;
+  }
 }

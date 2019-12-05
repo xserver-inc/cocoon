@@ -757,10 +757,22 @@ ol, ul {
 //   // }
 // }
 
-.editor-block-toolbar.block-editor-block-toolbar{
-  position: relative;
-  .block-editor-block-toolbar__slot{
-    display: inline-flex;
+//マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
+@mixin ms_block_fix{
+  .editor-block-toolbar.block-editor-block-toolbar{
+    position: relative;
+    .block-editor-block-toolbar__slot{
+      display: inline-flex;
+    }
   }
 }
+//IEのみに適用されるブラウザハック
+@media all and (-ms-high-contrast: none){
+  @include ms_block_fix;
+}
+//Edgeのみに適用されるブラウザハック
+@supports (-ms-ime-align: auto) {
+  @include ms_block_fix;
+}
+
 
