@@ -4959,30 +4959,6 @@ label.screen-reader-text {
   color: #fff;
 }
 
-pre.code-box {
-  padding-top: 26px;
-  position: relative;
-}
-pre.code-box::before {
-  content: attr(aria-label);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #0e7ac4;
-  color: #fff;
-  padding: 0 1em;
-  font-size: 16px;
-}
-
-pre.code-box.auto,
-pre.code-box.nohighlight {
-  padding-top: 0.5em;
-}
-pre.code-box.auto::before,
-pre.code-box.nohighlight::before {
-  display: none;
-}
-
 figure.wp-block-image figcaption {
   margin: 0;
   font-size: 0.8em;

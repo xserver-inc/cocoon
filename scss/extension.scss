@@ -1489,28 +1489,28 @@ $toggle_border_width: 2px;
 //   .has-white-background-color{background-color: $white_color;}
 // }
 
-pre.code-box{
-  padding-top: 26px;
-  position: relative;
-  &::before{
-    content: attr(aria-label);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #0e7ac4;
-    color: #fff;
-    padding: 0 1em;
-    font-size: 16px;
-  }
-}
+// pre.code-box{
+//   padding-top: 26px;
+//   position: relative;
+//   &::before{
+//     content: attr(aria-label);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background: #0e7ac4;
+//     color: #fff;
+//     padding: 0 1em;
+//     font-size: 16px;
+//   }
+// }
 
-pre.code-box.auto,
-pre.code-box.nohighlight{
-  padding-top: 0.5em;
-  &::before{
-    display: none;
-  }
-}
+// pre.code-box.auto,
+// pre.code-box.nohighlight{
+//   padding-top: 0.5em;
+//   &::before{
+//     display: none;
+//   }
+// }
 
 figure.wp-block-image{
   figcaption{
