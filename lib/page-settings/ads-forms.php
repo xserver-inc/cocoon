@@ -92,6 +92,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_toggle_area(__( 'リンクユニット用コード入力', THEME_NAME ), $form);
             //入力チェック
             generate_toggle_entered($link_unit_code);
+            echo get_help_page_tag('https://wp-cocoon.com/adsense-link-unit/');
 
             echo '<br>';
 
@@ -104,6 +105,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_toggle_area(__( '関連コンテンツ用コード入力', THEME_NAME ), $form);
             //入力チェック
             generate_toggle_entered($related_contents_unit_code);
+            echo get_help_page_tag('https://wp-cocoon.com/related-contents-unit/');
             ?>
           </td>
         </tr>
