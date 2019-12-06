@@ -32,16 +32,12 @@ endif;
 
 //目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($expanded_content, &$harray, $is_widget = false){
+function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth = 0){
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
   }
 
-  // //実行したくないショートコードを除外した本文の取得
-  // $removed_content = get_shortcode_removed_content($the_content);
-  // //ショートコードを実行した本文を取得
-  // $content     = do_shortcode($removed_content);
   $content     = $expanded_content;
   $headers     = array();
   $html        = '';
@@ -55,13 +51,17 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false){
   $class       = 'toc';
   $title       = get_toc_title(); //目次タイトル
   $showcount   = 0;
-  $depth       = intval(get_toc_depth()); //2-6 0で全て
+  //$depth       = intval(get_toc_depth()); //2-6 0で全て
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
 
-  $set_depth = $depth;
+  $set_depth = intval(get_toc_depth()); //2-6 0で全て
   if (intval($set_depth) == 0) {
     $set_depth = 6;
+  }
+  //ショートコードオプション
+  if (intval($depth) != 0 && intval($depth) >= 2 && intval($depth) <=6) {
+    $set_depth = $depth;
   }
   $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
   if ($number_visible) {

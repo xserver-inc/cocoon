@@ -394,12 +394,15 @@ if (!shortcode_exists('toc')) {
 }
 if ( !function_exists( 'toc_shortcode' ) ):
 function toc_shortcode( $atts, $content = null ) {
+  extract(shortcode_atts(array(
+    'depth' => 0,
+  ), $atts, 'author_box'));
   if (is_singular()) {
     global $_TOC_WIDGET_OR_SHORTCODE_USE;
     $_TOC_WIDGET_OR_SHORTCODE_USE = true;
     $harray = array();
     $the_content = get_toc_expanded_content();
-    return get_toc_tag($the_content, $harray);
+    return get_toc_tag($the_content, $harray, false, $depth);
 
   }
 }
