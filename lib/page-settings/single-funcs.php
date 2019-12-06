@@ -18,6 +18,29 @@ function get_category_tag_display_type(){
 }
 endif;
 
+//カテゴリ・タグ表示位置
+define('OP_CATEGORY_TAG_DISPLAY_POSITION', 'category_tag_display_position');
+if ( !function_exists( 'get_category_tag_display_position' ) ):
+function get_category_tag_display_position(){
+  return get_theme_option(OP_CATEGORY_TAG_DISPLAY_POSITION, 'content_bottom');
+}
+endif;
+if ( !function_exists( 'is_category_tag_display_position_title_top' ) ):
+function is_category_tag_display_position_title_top(){
+  return get_category_tag_display_position() == 'title_top';
+}
+endif;
+if ( !function_exists( 'is_category_tag_display_position_content_top' ) ):
+function is_category_tag_display_position_content_top(){
+  return get_category_tag_display_position() == 'content_top';
+}
+endif;
+if ( !function_exists( 'is_category_tag_display_position_content_bottom' ) ):
+function is_category_tag_display_position_content_bottom(){
+  return get_category_tag_display_position() == 'content_bottom';
+}
+endif;
+
 //関連記事の表示
 define('OP_RELATED_ENTRIES_VISIBLE', 'related_entries_visible');
 if ( !function_exists( 'is_related_entries_visible' ) ):

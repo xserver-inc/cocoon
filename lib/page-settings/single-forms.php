@@ -53,6 +53,24 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- カテゴリ・タグ表示位置 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_CATEGORY_TAG_DISPLAY_POSITION, __('カテゴリ・タグ表示位置', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            $options = array(
+              'title_top' => __( 'タイトル上', THEME_NAME ),
+              'content_top' => __( '本文上', THEME_NAME ),
+              'content_bottom' => __( '本文下（デフォルト）', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_CATEGORY_TAG_DISPLAY_POSITION, $options, get_category_tag_display_position());
+            generate_tips_tag(__( 'カテゴリとタグの表示位置を設定します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

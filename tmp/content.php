@@ -28,6 +28,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php dynamic_sidebar( 'above-page-content-title' ); ?>
       <?php endif; ?>
 
+      <?php //タイトル上のカテゴリー・タグ
+      if (is_category_tag_display_position_title_top()) {
+        get_template_part('tmp/categories-tags');
+      } ?>
+
       <header class="article-header entry-header">
         <h1 class="entry-title" itemprop="headline">
           <?php
@@ -76,6 +81,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <?php //投稿日と更新日テンプレート
         get_template_part('tmp/date-tags'); ?>
 
+        <?php //本文上のカテゴリー・タグ
+        if (is_category_tag_display_position_content_top()) {
+          get_template_part('tmp/categories-tags');
+        } ?>
+
         <?php if (is_content_read_time_visible() && is_the_page_read_time_visible() && !is_plugin_fourm_page()): ?>
           <div class="read-time"><?php echo '<span class="fa fa-hourglass-half" aria-hidden="true"></span>
 '.sprintf(__( 'この記事は<span class="bold">約%s分</span>で読めます。', THEME_NAME ), get_time_to_content_read(get_the_content())); ?></div>
@@ -123,8 +133,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           get_template_part('tmp/pager-post-navi');
         } ?>
 
-        <?php //カテゴリー・タグ
-        get_template_part('tmp/categories-tags'); ?>
+        <?php //本文下のカテゴリー・タグ
+        if (is_category_tag_display_position_content_bottom()) {
+          get_template_part('tmp/categories-tags');
+        } ?>
 
         <?php //本文下の広告表示
         if (is_ad_pos_content_bottom_visible() && is_all_adsenses_visible()){
