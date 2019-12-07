@@ -334,7 +334,7 @@ function is_the_page_toc_use(){
       is_toc_display_count_available($_TOC_AVAILABLE_H_COUNT)
     )
     //ショートコードで表示する場合
-    || (is_singular() && includes_string($content, '[toc]'));
+    || (is_singular() && preg_match('/\[toc.*?\]/', $content));
 }
 endif;
 
