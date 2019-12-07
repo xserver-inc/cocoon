@@ -431,12 +431,22 @@ function is_scc_push7_exists(){
 //シェア対象ページのURLを取得する
 if ( !function_exists( 'get_share_page_url' ) ):
 function get_share_page_url(){
+  $url = get_requested_url();
   if ( is_singular() ) {
     $url = get_the_permalink();
-  } else {
-    $url = get_requested_url();
+  } elseif (is_category() && !is_paged()) {
+    //カテゴリートップページ
+    $cat_id = get_query_var('cat');
+    $url = get_category_link($cat_id);
+  } elseif (is_tag() && !is_paged()) {
+    //タグトップページ
+    $name = single_tag_title('', false);
+    $tag = get_term_by('name', $name, 'post_tag');
+    $url = get_tag_link($tag->term_id);
+  } elseif (is_front_page() && !is_paged()) {
+    //フロントトップページ
+    $url = user_trailingslashit(get_home_url());
   }
-  //$url = get_requested_url();
   return $url;
 }
 endif;
