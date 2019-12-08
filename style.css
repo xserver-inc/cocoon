@@ -1507,7 +1507,8 @@ table td {
 .scrollable-table {
   -webkit-overflow-scrolling: touch;
 }
-.scrollable-table.stfc-sticky tr *:first-child {
+.scrollable-table.stfc-sticky tr th:first-child,
+.scrollable-table.stfc-sticky tr td:first-child {
   background-color: #e9eff2;
   color: #333;
   position: sticky;
