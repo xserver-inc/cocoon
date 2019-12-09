@@ -29,6 +29,16 @@ update_theme_option(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE);
 update_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE);
 //コピーシェアボタンの表示
 update_theme_option(OP_TOP_COPY_SHARE_BUTTON_VISIBLE);
+//フロントページシェアボタンの表示
+update_theme_option(OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE);
+//投稿シェアボタンの表示
+update_theme_option(OP_SNS_SINGLE_TOP_SHARE_BUTTONS_VISIBLE);
+//固定ページシェアボタンの表示
+update_theme_option(OP_SNS_PAGE_TOP_SHARE_BUTTONS_VISIBLE);
+//カテゴリーシェアボタンの表示
+update_theme_option(OP_SNS_CATEGORY_TOP_SHARE_BUTTONS_VISIBLE);
+//タグシェアボタンの表示
+update_theme_option(OP_SNS_TAG_TOP_SHARE_BUTTONS_VISIBLE);
 //SNSシェアボタンカラー
 update_theme_option(OP_SNS_TOP_SHARE_BUTTON_COLOR);
 //シェアボタンのカラム数
