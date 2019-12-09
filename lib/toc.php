@@ -32,7 +32,7 @@ endif;
 
 //目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth = 0){
+function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0){
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
@@ -51,7 +51,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth = 0
   $class       = 'toc';
   $title       = get_toc_title(); //目次タイトル
   $showcount   = 0;
-  //$depth       = intval(get_toc_depth()); //2-6 0で全て
+  $depth       = intval(get_toc_depth()); //2-6 0で全て
   $top_level   = 2; //h2がトップレベル
   $targetclass = 'entry-content'; //目次対象となるHTML要素
 
@@ -59,10 +59,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth = 0
   if (intval($set_depth) == 0) {
     $set_depth = 6;
   }
-  //ショートコードオプション
-  if (intval($depth) != 0 && intval($depth) >= 2 && intval($depth) <=6) {
-    $set_depth = $depth;
-  }
+
   $number_visible   = is_toc_number_visible(); //見出しの数字を表示するか
   if ($number_visible) {
     $list_tag = 'ol';
@@ -133,8 +130,12 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth = 0
         $counters[$current_depth - 1] ++;
       }
       //$counters[$current_depth - 1] ++;
+      $hide_class = null;
+      if ($depth == $depth_option) {
+        $hide_class = ' class="display-none"';
+      }
       $counter++;
-      $toc_list .= '<li><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
+      $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . strip_tags($headers[2][$i]) . '</a>';
       $prev_depth = $depth;
     }
   }
