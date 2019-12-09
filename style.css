@@ -7225,6 +7225,18 @@ div.fb-like-mobile {
   margin-bottom: 60px;
 }
 
+ul.timeline ul {
+  list-style-type: disc;
+}
+
+ul.timeline ul ul {
+  list-style-type: circle;
+}
+
+ul.timeline ul ul ul {
+  list-style-type: square;
+}
+
 /* for Desktop */
 .timeline > li.timeline-item {
   overflow: hidden;

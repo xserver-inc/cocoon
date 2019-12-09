@@ -1746,6 +1746,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
 .admin-settings .demo .timeline-title { font-weight: bold; font-size: 1.1em; text-align: center; }
 .admin-settings .demo .timeline > li { margin-bottom: 60px; }
+.admin-settings .demo ul.timeline ul { list-style-type: disc; }
+.admin-settings .demo ul.timeline ul ul { list-style-type: circle; }
+.admin-settings .demo ul.timeline ul ul ul { list-style-type: square; }
 .admin-settings .demo .timeline > li.timeline-item { overflow: hidden; margin: 0; position: relative; }
 .admin-settings .demo .timeline-item-label { width: 110px; float: left; padding-top: 18px; text-align: right; padding-right: 1em; font-size: 14px; }
 .admin-settings .demo .timeline-item-title { font-weight: bold; }
@@ -3284,6 +3287,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .timeline-box .timeline { list-style: none; padding: 0; margin: 0; }
 .admin-settings .demo .timeline-title { font-weight: bold; font-size: 1.1em; text-align: center; }
 .admin-settings .demo .timeline > li { margin-bottom: 60px; }
+.admin-settings .demo ul.timeline ul { list-style-type: disc; }
+.admin-settings .demo ul.timeline ul ul { list-style-type: circle; }
+.admin-settings .demo ul.timeline ul ul ul { list-style-type: square; }
 .admin-settings .demo .timeline > li.timeline-item { overflow: hidden; margin: 0; position: relative; }
 .admin-settings .demo .timeline-item-label { width: 110px; float: left; padding-top: 18px; text-align: right; padding-right: 1em; font-size: 14px; }
 .admin-settings .demo .timeline-item-title { font-weight: bold; }

@@ -16,6 +16,17 @@
   margin-bottom: 60px;
 }
 
+//タイムライン内の印
+ul.timeline ul {
+  list-style-type: disc;
+}
+ul.timeline ul ul {
+  list-style-type: circle;
+}
+ul.timeline ul ul ul {
+  list-style-type: square;
+}
+
 /* for Desktop */
 //@media ( min-width : 481px ){
   .timeline > li.timeline-item {
