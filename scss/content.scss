@@ -140,8 +140,7 @@ table {
 
   //1列目を固定
   &.stfc-sticky tr{
-    th:first-child,
-    td:first-child {
+    >*:first-child {
       background-color: #e9eff2;
       color: $text_color;
       position: sticky;
