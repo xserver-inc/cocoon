@@ -101,9 +101,11 @@
   padding: 0;
   border-width: 0;
   font-size: 0.9em;
-  white-space-collapse: discard;
   >span{
     padding: 0 7px 0 0;
+    &:nth-of-type(2){
+      padding: 0;
+    }
   }
   .admin-pv-by{
     background-color: transparent;

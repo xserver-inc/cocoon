@@ -3484,8 +3484,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 1023px) and (max-width: 782px) { .admin-settings .demo .admin-bar .mobile-header-menu-buttons { margin-top: 0; }
   .admin-settings .demo .admin-bar.mblt-header-mobile-buttons, .admin-settings .demo .admin-bar.mblt-header-and-footer-mobile-buttons { margin-top: 0; } }
 
-.admin-settings .demo .entry-card .admin-pv { margin: 0.4em 0 1.4em; padding: 0; border-width: 0; font-size: 0.9em; white-space-collapse: discard; }
+.admin-settings .demo .entry-card .admin-pv { margin: 0.4em 0 1.4em; padding: 0; border-width: 0; font-size: 0.9em; }
 .admin-settings .demo .entry-card .admin-pv > span { padding: 0 7px 0 0; }
+.admin-settings .demo .entry-card .admin-pv > span:nth-of-type(2) { padding: 0; }
 .admin-settings .demo .entry-card .admin-pv .admin-pv-by { background-color: transparent; bottom: 0; display: none; }
 .admin-settings .demo .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 .admin-settings .demo .slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }

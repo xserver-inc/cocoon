@@ -8258,10 +8258,12 @@ input[type='submit'],
   padding: 0;
   border-width: 0;
   font-size: 0.9em;
-  white-space-collapse: discard;
 }
 .entry-card .admin-pv > span {
   padding: 0 7px 0 0;
+}
+.entry-card .admin-pv > span:nth-of-type(2) {
+  padding: 0;
 }
 .entry-card .admin-pv .admin-pv-by {
   background-color: transparent;
