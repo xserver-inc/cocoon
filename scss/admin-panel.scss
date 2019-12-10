@@ -97,11 +97,17 @@
 }
 
 .entry-card .admin-pv {
-  margin: 0 0 8px;
+  margin: 0.4em 0 1.4em;
   padding: 0;
   border-width: 0;
+  font-size: 0.9em;
+  white-space-collapse: discard;
+  >span{
+    padding: 0 7px 0 0;
+  }
   .admin-pv-by{
     background-color: transparent;
     bottom: 0;
+    display: none;
   }
 }
