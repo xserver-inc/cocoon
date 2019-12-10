@@ -15,6 +15,7 @@ $ad_code = get_adsense_responsive_code(to_adsense_format($format), $ad_code);
 if (!$ad_code) {
   $ad_code = get_ad_code();
 }
+$ad_code = do_shortcode($ad_code);
 //広告を表示するか
 if (is_ads_visible() && !is_auto_adsens_only_enable() && $ad_code):
 //AdSenseコード時なかった場合は設定コードをそのまま取得
