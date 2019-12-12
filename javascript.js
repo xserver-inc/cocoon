@@ -58,7 +58,7 @@
   //検索ボタンクリックでフォーカスを入力エリアに移す
   $('.search-menu-button').click(function(){
     //フォーカスの移動
-    $('#search-menu-content .search-edit').first().focus();
+    setTimeout(function() { $('#search-menu-content .search-edit').first().focus() }, 800);
   });
 
 
