@@ -635,7 +635,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
+.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
@@ -2176,7 +2176,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
-.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
+.admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; left: 0; z-index: 2; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
@@ -3776,8 +3776,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .list .ect-vertical-card > * { width: 48%; padding: 0.5% !important; margin: 0.5% 0.5% 1.5% !important; }
   .admin-settings .demo .sp-display-none { display: none !important; }
   .admin-settings .demo .image-content amp-img { min-width: 200px; max-width: 200px; }
-  .admin-settings .demo .blogcard { padding-top: 3%; }
-  .admin-settings .demo div.wp-block-image .alignleft, .admin-settings .demo div.wp-block-image .alignright { float: none; } }
+  .admin-settings .demo .blogcard { padding-top: 3%; } }
 @media screen and (max-width: 356px) { .admin-settings .demo .ect-vertical-card .entry-card-wrap, .admin-settings .demo .rect-vartical-card .related-entry-card-wrap, .admin-settings .demo .ect-2-columns > *, .admin-settings .demo .ect-3-columns > * { width: 100% !important; } }
 @media print { .admin-settings .demo { /************************************
 ** 印刷用スタイル
