@@ -32,7 +32,7 @@ function register_sidebar_scroll_widget_area(){
     array(
     'name' => __( 'サイドバースクロール追従', THEME_NAME ),
     'id' => 'sidebar-scroll',
-    'description' => __( 'サイドバーで下にスクロールすると追いかけてくるエリアです。※ここにGoogle AdSenseを貼るのはポリシー違反です。', THEME_NAME ),
+    'description' => __( 'サイドバーで下にスクロールすると追いかけてくるエリアです。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-sidebar widget-sidebar-scroll %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-sidebar-scroll-title widget-title">',
@@ -48,7 +48,7 @@ function register_main_scroll_widget_area(){
     array(
     'name' => __( 'メインカラムスクロール追従', THEME_NAME ),
     'id' => 'main-scroll',
-    'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。※ここにGoogle AdSenseを貼るのはポリシー違反です。', THEME_NAME ),
+    'description' => __( 'メインカラムで下にスクロールすると追いかけてくるエリアです。サイドバーの方が長い場合に追従してきます。', THEME_NAME ),
     'before_widget' => '<aside id="%1$s" class="widget widget-main-scroll %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h2 class="widget-main-scroll-title main-widget-label">',
