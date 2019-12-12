@@ -9658,6 +9658,11 @@ twitter-widget {
   .blogcard {
     padding-top: 3%;
   }
+
+  div.wp-block-image .alignleft,
+  div.wp-block-image .alignright {
+    float: none;
+  }
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,
