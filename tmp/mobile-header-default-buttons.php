@@ -9,8 +9,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <ul class="mobile-header-menu-buttons mobile-menu-buttons">
 
-  <?php //ナビメニュー
-  get_template_part( 'tmp/mobile-navi-button' ); ?>
+  <?php
+  if (has_nav_menu( NAV_MENU_HEADER )) {
+    //ナビメニュー
+    get_template_part( 'tmp/mobile-navi-button' );
+  } else {
+    //フォローボタン
+    get_template_part( 'tmp/mobile-home-button' );
+  } ?>
 
   <?php //ロゴメニュー
   get_template_part( 'tmp/mobile-logo-button' ); ?>
