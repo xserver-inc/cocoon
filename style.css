@@ -1511,6 +1511,7 @@ table td {
   background-color: #e9eff2;
   color: #333;
   position: sticky;
+  position: -webkit-sticky;
   left: 0;
   z-index: 2;
 }
