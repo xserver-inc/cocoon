@@ -6668,7 +6668,7 @@ div.fb-like-mobile {
   right: 5%;
   -webkit-transform: translateY(1200%);
   transform: translateY(1200%);
-  visibility: hidden;
+  opacity: 0;
 }
 .search-menu-content .search-edit,
 .share-menu-content .search-edit,
@@ -6695,7 +6695,7 @@ div.fb-like-mobile {
   transition: .3s ease-in-out;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  visibility: visible;
+  opacity: 1;
 }
 
 .menu-drawer ul {

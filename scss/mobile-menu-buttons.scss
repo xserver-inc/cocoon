@@ -228,7 +228,7 @@
   right: 5%;
   -webkit-transform: translateY(1200%);
   transform: translateY(1200%);//下に隠す
-  visibility: hidden;
+  opacity: 0;
   .search-edit{
     width: 100%;
   }
@@ -252,7 +252,7 @@
   transition: .3s ease-in-out;
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  visibility: visible;
+  opacity: 1;
   //box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
