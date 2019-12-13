@@ -58,7 +58,7 @@
   //検索ボタンクリックでフォーカスを入力エリアに移す
   $('.search-menu-button').click(function(){
     //フォーカスの移動
-    setTimeout(function() { $('#search-menu-content .search-edit').first().focus() }, 800);
+    $('#search-menu-content .search-edit').first().focus();
   });
 
 
@@ -180,14 +180,8 @@
       $(this).addClass('has-logo-button');
       //console.log($(this).has('.logo-menu-button'));
     }
-
   });
-  /*
-  //通常のGoogleフォント読み込み
-  if (cocoon_localize_script_options.is_google_font_lazy_load_enable != 1) {
-    $('html').addClass('wf-active');
-  }
-  */
+
 /*
   $(function(){
     // #で始まるアンカーをクリックした場合に処理
@@ -222,15 +216,3 @@
     }
 })();
 
-/*
-//画像のLazy Load中高さを保持する
-if (cocoon_localize_script_options.is_lazy_load_enable) {
-  const imgs = document.querySelectorAll('body .lozad-img'),
-      sSize = window.parent.screen.width;
-  imgs.forEach(function (ele) {
-    const imgHeight = ele.getAttribute('height'),
-          imgWidth = ele.getAttribute('width');
-    ele.setAttribute('style','max-height:' + imgHeight * (sSize/imgWidth) +'px; height:initial;');
-  });
-}
-*/
