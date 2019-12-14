@@ -71,7 +71,12 @@ generate_sort_options_tag($keyword, $order_by);
       </div>
       <div class="balloon-option">
         <div><a href="<?php echo $edit_url; ?>"><?php _e( '編集', THEME_NAME ) ?></a></div>
-        <div><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></div>
+        <?php if (count($records) > 1): ?>
+          <div><a href="<?php echo $delete_url; ?>"><?php _e( '削除', THEME_NAME ) ?></a></div>
+        <?php else: ?>
+          <div><?php _e( '最後の一つは削除できません', THEME_NAME ) ?></div>
+        <?php endif; ?>
+
         <?php if (!$record->visible): ?>
           <div>[<?php _e( '非表示', THEME_NAME ) ?>]</div>
         <?php endif ?>
