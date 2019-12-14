@@ -6666,8 +6666,8 @@ div.fb-like-mobile {
   width: 90%;
   left: 5%;
   right: 5%;
-  -webkit-transform: translateY(1200%);
-  transform: translateY(1200%);
+  -webkit-transform: translateY(900%);
+  transform: translateY(900%);
   opacity: 0;
 }
 .search-menu-content .search-edit,
