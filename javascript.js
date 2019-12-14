@@ -49,7 +49,7 @@
   });
 
   //検索ボタンクリックでフォーカスを入力エリアに移す
-  $('.search-menu-button').click(function(e){
+  $('#search-menu-input').change(function(e){
     if( e.target.tagName == 'INPUT' ) {
       var searchEdit = $('#search-menu-content .search-edit').first();
       if( e.target.checked ) {
