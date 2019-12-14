@@ -41,7 +41,8 @@
 	border-top:1px solid #ccc;
 }
 article .blogcard-wrap,article .blogcard-wrap:first-of-type{
-	margin:0;
+	margin-left: auto;
+	margin-right: auto;
 	border:none;
 	padding:0;
 }
