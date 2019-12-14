@@ -47,20 +47,18 @@
             scrollTop: $('.entry-content .toc').offset().top
         }, 800);
   });
-  // //ボタン(.go-to-comment-area)のクリックイベント
-  // $('.go-to-comment-area').click(function(){
-  // //目次へ移動する
-  //   $('body,html').animate({
-  //           scrollTop: $('#comment-area').offset().top
-  //       }, 800);
-  // });
 
   //検索ボタンクリックでフォーカスを入力エリアに移す
-  $('.search-menu-button').click(function(){
-    //フォーカスの移動
-    $('#search-menu-content .search-edit').first().focus();
+  $('.search-menu-button').click(function(e){
+    if( e.target.tagName == 'INPUT' ) {
+      var searchEdit = $('#search-menu-content .search-edit').first();
+      if( e.target.checked ) {
+        searchEdit.focus();
+      } else {
+        searchEdit.blur();
+      }
+    }
   });
-
 
   //下にスクロールで管理パネルを隠す
   //上にスクロールで管理パネルを表示
@@ -130,7 +128,6 @@
 
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function() {
-    //$('#respond').slideToggle();
     $('#comment-reply-btn').slideUp();
     $('#respond').slideDown();
   });
@@ -178,7 +175,6 @@
   $('.mobile-menu-buttons').each(function(){
     if ($(this).has('.logo-menu-button').length) {
       $(this).addClass('has-logo-button');
-      //console.log($(this).has('.logo-menu-button'));
     }
   });
 
