@@ -79,7 +79,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
 		// true // Enqueue the script in the footer.
   );
   //ショートコードオブジェクトの取得
-  $baloons = get_speech_balloons(null, 'title');
+  $balloons = get_speech_balloons(null, 'title');
   $templates = get_function_texts(null, 'title');
   $affiliates = get_affiliate_tags(null, 'title');
   $rankings = get_item_rankings(null, 'title');
@@ -96,6 +96,7 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
     'isTemplateVisible' => $is_templates_visible,
     'isAffiliateVisible' => $is_affiliates_visible,
     'isRankingVisible' => $is_rankings_visible,
+    'isSpeechBalloonEnable' => $balloons ? 1 : 0,
     'siteIconFont' => get_site_icon_font_class(),
     'isDebugMode' => DEBUG_MODE,
   );
@@ -116,11 +117,11 @@ function cocoon_blocks_cgb_editor_assets() { // phpcs:ignore
   // オブジェクト渡し
   ///////////////////////////////////////////
   //吹き出し情報を渡す
-  //_v($baloons);
+  //_v($balloons);
   wp_localize_script(
     'cocoon-blocks-js', //値を渡すjsファイルのハンドル名
     'gbSpeechBalloons', //任意のオブジェクト名
-    $baloons //プロバティ
+    $balloons //プロバティ
   );
   //テーマのキーカラーを渡す
   wp_localize_script(
