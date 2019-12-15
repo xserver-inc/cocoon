@@ -50,13 +50,11 @@
 
   //検索ボタンクリックでフォーカスを入力エリアに移す
   $('#search-menu-input').change(function(e){
-    if( e.target.tagName == 'INPUT' ) {
-      var searchEdit = $('#search-menu-content .search-edit').first();
-      if( e.target.checked ) {
-        searchEdit.focus();
-      } else {
-        searchEdit.blur();
-      }
+    var searchEdit = $('#search-menu-content .search-edit').first();
+    if( e.target.checked ) {
+      searchEdit.focus();
+    } else {
+      searchEdit.blur();
     }
   });
 
