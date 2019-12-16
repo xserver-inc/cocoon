@@ -24,6 +24,8 @@ if ($eye_catch_url || $content): ?>
       </div>
       <?php do_action('tag_eye_catch_after'); ?>
     <?php endif ?>
+    <?php //タグシェアボタン
+    get_template_part('tmp/tag-sns-share-top'); ?>
   </header>
   <?php if ($content): ?>
     <div class="tag-page-content entry-content">
@@ -33,5 +35,7 @@ if ($eye_catch_url || $content): ?>
 </article>
 <?php else: ?>
   <?php //タグタイトル
-  get_template_part('tmp/list-title'); ?>
+  get_template_part('tmp/list-title');
+  //タグシェアボタン
+  get_template_part('tmp/tag-sns-share-top'); ?>
 <?php endif ?>

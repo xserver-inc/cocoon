@@ -35,9 +35,21 @@ if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
 ////////////////////////////
 if ( is_active_sidebar( 'index-top' ) ){
   dynamic_sidebar( 'index-top' );
-}; ?>
+};
+
+////////////////////////////
+// トップシェアボタン
+////////////////////////////
+//SNSトップシェアボタンの表示
+if (is_sns_top_share_buttons_visible() &&
+  //フロントページトップシェアボタンの表示
+  (is_front_page() && !is_paged() && is_sns_front_page_top_share_buttons_visible())
+){
+  get_template_part_with_option('tmp/sns-share-buttons', SS_TOP);
+} ?>
 
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
+
 <?php
 ////////////////////////////
 //一覧の繰り返し処理
@@ -69,6 +81,42 @@ endif;
 </div><!-- .list -->
 
 <?php
+////////////////////////////
+//フロントページボトムシェアボタン
+////////////////////////////
+//SNSボトムシェアボタンの表示
+if (is_sns_bottom_share_buttons_visible() && !is_paged() &&
+  (
+  //フロントページボトムシェアボタンの表示
+  (is_front_page() && is_sns_front_page_bottom_share_buttons_visible()) ||
+  //カテゴリーページトップシェアボタンの表示
+  (is_category() && is_sns_category_bottom_share_buttons_visible()) ||
+  //タグページトップシェアボタンの表示
+  (is_tag() && is_sns_tag_bottom_share_buttons_visible())
+  )
+
+){
+  get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM);
+}
+
+////////////////////////////
+//フロントページフォローボタン
+////////////////////////////
+//SNSフォローボタンの表示
+if (is_sns_follow_buttons_visible() && !is_paged() &&
+  (
+    //フロントページフォローボタンの表示
+    (is_front_page() && is_sns_front_page_follow_buttons_visible()) ||
+    //カテゴリーページボトムフォローボタンの表示
+    (is_category() && is_sns_category_follow_buttons_visible()) ||
+    //タグページボトムフォローボタンの表示
+    (is_tag() && is_sns_tag_follow_buttons_visible())
+  )
+
+){
+  get_template_part_with_option('tmp/sns-follow-buttons', SF_BOTTOM);
+}
+
 ////////////////////////////
 //インデクスボトム広告
 ////////////////////////////

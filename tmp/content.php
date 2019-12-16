@@ -73,9 +73,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         do_action('singular_eye_catch_after');
         ?>
 
-        <?php //SNSシェアボタン
-        if (is_sns_top_share_buttons_visible())
-          get_template_part_with_option('tmp/sns-share-buttons', SS_TOP); ?>
+        <?php //SNSトップシェアボタンの表示
+        if (is_sns_top_share_buttons_visible() &&
+          (
+            //投稿ページトップシェアボタンの表示
+            (is_single() && is_sns_single_top_share_buttons_visible()) ||
+            //固定するページトップシェアボタンの表示
+            (is_page() && is_sns_page_top_share_buttons_visible())
+          )
+        ){
+          get_template_part_with_option('tmp/sns-share-buttons', SS_TOP);
+        } ?>
 
 
         <?php //投稿日と更新日テンプレート
@@ -159,13 +167,30 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <?php dynamic_sidebar( 'above-page-sns-buttons' ); ?>
         <?php endif; ?>
 
-        <?php //SNSシェアボタン
-        if (is_sns_bottom_share_buttons_visible())
-          get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM); ?>
+        <?php //SNSボトムシェアボタンの表示
+        if (is_sns_bottom_share_buttons_visible() &&
+          (
+            //投稿ページボトムシェアボタンの表示
+            (is_single() && is_sns_single_bottom_share_buttons_visible()) ||
+            //固定するページボトムシェアボタンの表示
+            (is_page() && is_sns_page_bottom_share_buttons_visible())
+          )
+        ){
+          get_template_part_with_option('tmp/sns-share-buttons', SS_BOTTOM);
+        } ?>
 
         <?php //SNSフォローボタン
-        if (is_sns_follow_buttons_visible())
-        get_template_part_with_option('tmp/sns-follow-buttons', SF_BOTTOM); ?>
+        if (
+          is_sns_follow_buttons_visible() &&
+          (
+            //投稿ページフォローボタンの表示
+            (is_single() && is_sns_single_follow_buttons_visible()) ||
+            //固定するページフォローボタンの表示
+            (is_page() && is_sns_page_follow_buttons_visible())
+          )
+        ){
+          get_template_part_with_option('tmp/sns-follow-buttons', SF_BOTTOM);
+        } ?>
 
         <?php //SNSシェアボタン上の広告表示
         if (is_ad_pos_below_sns_buttons_visible() && is_all_adsenses_visible()){
