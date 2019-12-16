@@ -90,6 +90,35 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <?php if(0): ?>
+        <!-- 表示ページ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( '表示ページ', THEME_NAME )); ?>
+          </th>
+          <td>
+            <p><?php _e( 'フォローボタンを表示するページの切り替え。', THEME_NAME ) ?></p>
+            <ul>
+              <li>
+                <?php generate_checkbox_tag(OP_SNS_FRONT_PAGE_FOLLOW_BUTTONS_VISIBLE, is_sns_front_page_follow_buttons_visible(), __( 'フロントページ', THEME_NAME )); ?>
+              </li>
+              <li>
+                <?php generate_checkbox_tag(OP_SNS_SINGLE_FOLLOW_BUTTONS_VISIBLE, is_sns_single_follow_buttons_visible(), __( '投稿', THEME_NAME )); ?>
+              </li>
+              <li>
+                <?php generate_checkbox_tag(OP_SNS_PAGE_FOLLOW_BUTTONS_VISIBLE, is_sns_page_follow_buttons_visible(), __( '固定ページ', THEME_NAME )); ?>
+              </li>
+              <li>
+                <?php generate_checkbox_tag(OP_SNS_CATEGORY_FOLLOW_BUTTONS_VISIBLE, is_sns_category_follow_buttons_visible(), __( 'カテゴリー', THEME_NAME )); ?>
+              </li>
+              <li>
+                <?php generate_checkbox_tag(OP_SNS_TAG_FOLLOW_BUTTONS_VISIBLE, is_sns_tag_follow_buttons_visible(), __( 'タグ', THEME_NAME )); ?>
+              </li>
+            <p><?php _e( 'フォローボタンを表示するページを選択してください。', THEME_NAME ) ?></p>
+          </td>
+        </tr>
+        <?php endif; ?>
+
         <!-- feedlyの表示 -->
         <tr>
           <th scope="row">
