@@ -59,7 +59,8 @@ endif;
 define('OP_ADSENSE_DISPLAY_METHOD', 'adsense_display_method');
 if ( !function_exists( 'get_adsense_display_method' ) ):
 function get_adsense_display_method(){
-  return get_theme_option(OP_ADSENSE_DISPLAY_METHOD, 'by_myself');
+  return 'by_myself';
+  //return get_theme_option(OP_ADSENSE_DISPLAY_METHOD, 'by_myself');
 }
 endif;
 

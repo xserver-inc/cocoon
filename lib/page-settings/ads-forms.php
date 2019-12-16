@@ -110,6 +110,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <?php if (false): ?>
         <!-- 自動AdSense -->
         <tr>
           <th scope="row">
@@ -127,6 +128,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
+        <?php endif; ?>
+
 
         <!-- 広告の表示位置 -->
         <tr<?php generate_not_allowed_form_class(!is_auto_adsens_only_enable()); ?>>
