@@ -11,16 +11,16 @@ if ( !defined( 'ABSPATH' ) ) exit;
 update_theme_option(OP_SNS_FOLLOW_BUTTONS_VISIBLE);
 //SNSフォローメッセージ
 update_theme_option(OP_SNS_FOLLOW_MESSAGE);
-// //フロントページフォローボタンの表示
-// update_theme_option(OP_SNS_FRONT_PAGE_FOLLOW_BUTTONS_VISIBLE);
-// //投稿フォローボタンの表示
-// update_theme_option(OP_SNS_SINGLE_FOLLOW_BUTTONS_VISIBLE);
-// //固定ページフォローボタンの表示
-// update_theme_option(OP_SNS_PAGE_FOLLOW_BUTTONS_VISIBLE);
-// //カテゴリーフォローボタンの表示
-// update_theme_option(OP_SNS_CATEGORY_FOLLOW_BUTTONS_VISIBLE);
-// //タグフォローボタンの表示
-// update_theme_option(OP_SNS_TAG_FOLLOW_BUTTONS_VISIBLE);
+//フロントページフォローボタンの表示
+update_theme_option(OP_SNS_FRONT_PAGE_FOLLOW_BUTTONS_VISIBLE);
+//投稿フォローボタンの表示
+update_theme_option(OP_SNS_SINGLE_FOLLOW_BUTTONS_VISIBLE);
+//固定ページフォローボタンの表示
+update_theme_option(OP_SNS_PAGE_FOLLOW_BUTTONS_VISIBLE);
+//カテゴリーフォローボタンの表示
+update_theme_option(OP_SNS_CATEGORY_FOLLOW_BUTTONS_VISIBLE);
+//タグフォローボタンの表示
+update_theme_option(OP_SNS_TAG_FOLLOW_BUTTONS_VISIBLE);
 //feedlyフォローボタンの表示
 update_theme_option(OP_FEEDLY_FOLLOW_BUTTON_VISIBLE);
 //RSSフォローボタンの表示

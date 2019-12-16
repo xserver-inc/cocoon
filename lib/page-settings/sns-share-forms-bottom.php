@@ -96,7 +96,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
-        <?php if(0): ?>
+
         <!-- 表示ページ -->
         <tr>
           <th scope="row">
@@ -123,7 +123,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <p><?php _e( '本文下にシェアボタンを表示するページを選択してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
-        <?php endif; ?>
 
 
         <!-- ボタンカラー -->
