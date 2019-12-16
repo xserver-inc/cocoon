@@ -82,6 +82,21 @@ endif;
 
 <?php
 ////////////////////////////
+//インデクスボトム広告
+////////////////////////////
+if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
+  //レスポンシブ広告のフォーマットにrectangleを指定する
+  get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom', is_ad_pos_index_bottom_label_visible());
+};
+
+////////////////////////////
+//インデックスリストボトムウィジェット
+////////////////////////////
+if ( is_active_sidebar( 'index-bottom' ) ){
+  dynamic_sidebar( 'index-bottom' );
+};
+
+////////////////////////////
 //フロントページボトムシェアボタン
 ////////////////////////////
 //SNSボトムシェアボタンの表示
@@ -118,28 +133,10 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 }
 
 ////////////////////////////
-//インデクスボトム広告
-////////////////////////////
-if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
-  //レスポンシブ広告のフォーマットにrectangleを指定する
-  get_template_part_with_ad_format(get_ad_pos_index_bottom_format(), 'ad-index-bottom', is_ad_pos_index_bottom_label_visible());
-}; ?>
-
-<?php
-////////////////////////////
-//インデックスリストボトムウィジェット
-////////////////////////////
-if ( is_active_sidebar( 'index-bottom' ) ){
-  dynamic_sidebar( 'index-bottom' );
-}; ?>
-
-<?php
-////////////////////////////
 //ページネーション
 ////////////////////////////
-get_template_part('tmp/pagination'); ?>
+get_template_part('tmp/pagination');
 
-<?php
 ////////////////////////////
 //メインカラム追従領域
 ////////////////////////////
