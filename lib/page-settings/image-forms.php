@@ -106,11 +106,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'none' => 'なし',
-              'border' => 'ボーダー（薄い枠線）',
-              'border_bold' => 'ボーダー（薄い太線）',
-              'shadow' => 'シャドー（薄い影）',
-              'shadow_paper' => 'シャドー（ペーパー）',
+              'none' => __( 'なし', THEME_NAME ),
+              'border' => __( 'ボーダー（薄い枠線）', THEME_NAME ),
+              'border_bold' => __( 'ボーダー（薄い太線）', THEME_NAME ),
+              'shadow' => __( 'シャドー（薄い影）', THEME_NAME ),
+              'shadow_paper' => __( 'シャドー（ペーパー）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_IMAGE_WRAP_EFFECT, $options, get_image_wrap_effect());
             generate_tips_tag(__( '画像の枠線の設定です。有効にすると白系の画像でも画像と認識しやすくなります。', THEME_NAME ));
@@ -126,7 +126,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'none' => 'なし',
+              'none' => __( 'なし', THEME_NAME ),
               'spotlight' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/spotlight.gif').__( 'Spotlight（軽量・高機能ギャラリー）', THEME_NAME ),
               'baguettebox' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/baguettebox.gif').__( 'baguetteBox（軽量・スマホ向け）', THEME_NAME ),
               'lity' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/lity.gif').__( 'Lity（軽量・1枚ずつ表示）', THEME_NAME ),

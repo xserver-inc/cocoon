@@ -70,8 +70,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'light' => '軽量版（よく利用されている言語のみ）',
-              'all' => '全て（対応している言語全て）',
+              'light' => __( '軽量版（よく利用されている言語のみ）', THEME_NAME ),
+              'all' => __( '全て（対応している言語全て）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_CODE_HIGHLIGHT_PACKAGE, $options, get_code_highlight_package());
             generate_tips_tag(__( 'ソースコードの対応言語を増やすには「全て」を選択してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/highlight-js-library/'));

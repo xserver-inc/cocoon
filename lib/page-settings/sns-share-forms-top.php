@@ -120,7 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'monochrome' => __( 'モノクロ',, THEME_NAME )
+              'monochrome' => __( 'モノクロ', THEME_NAME ),
               'brand_color' => __( 'ブランドカラー', THEME_NAME ),
               'brand_color_white' => __( 'ブランドカラー（白抜き）', THEME_NAME ),
             );

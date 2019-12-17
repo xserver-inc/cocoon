@@ -77,7 +77,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_MAIN_COLUMN_BORDER_COLOR,  get_main_column_border_color(), 'ボーダー色');
+            generate_color_picker_tag(OP_MAIN_COLUMN_BORDER_COLOR,  get_main_column_border_color(), __( 'ボーダー色', THEME_NAME ));
             generate_tips_tag(__( 'メインカラムのボーダー色を設定します。未入力でデフォルトの透過色になります。', THEME_NAME ));
             ?>
           </td>
@@ -147,7 +147,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_SIDEBAR_BORDER_COLOR,  get_sidebar_border_color(), 'ボーダー色');
+            generate_color_picker_tag(OP_SIDEBAR_BORDER_COLOR,  get_sidebar_border_color(), __( 'ボーダー色', THEME_NAME ));
             generate_tips_tag(__( 'サイドバーのボーダー色を設定します。未入力でデフォルトの透過色になります。', THEME_NAME ));
             ?>
           </td>

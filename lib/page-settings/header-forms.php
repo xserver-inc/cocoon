@@ -33,14 +33,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'center_logo' => 'センターロゴ（デフォルト）',
-              'center_logo_top_menu' => 'センターロゴ（トップメニュー）',
-              'center_logo_slim' => 'センターロゴ（スリムメニュー）',
-              'center_logo_slim_top_menu' => 'センターロゴ（スリムトップメニュー）',
-              'top_menu' => 'トップメニュー',
-              'top_menu_right' => 'トップメニュー（右寄せ）',
-              'top_menu_small' => 'トップメニュー小',
-              'top_menu_small_right' => 'トップメニュー小（右寄せ）',
+              'center_logo' => __( 'センターロゴ（デフォルト）', THEME_NAME ),
+              'center_logo_top_menu' => __( 'センターロゴ（トップメニュー）', THEME_NAME ),
+              'center_logo_slim' => __( 'センターロゴ（スリムメニュー）', THEME_NAME ),
+              'center_logo_slim_top_menu' => __( 'センターロゴ（スリムトップメニュー）', THEME_NAME ),
+              'top_menu' => __( 'トップメニュー', THEME_NAME ),
+              'top_menu_right' => __( 'トップメニュー（右寄せ）', THEME_NAME ),
+              'top_menu_small' => __( 'トップメニュー小', THEME_NAME ),
+              'top_menu_small_right' => __( 'トップメニュー小（右寄せ）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_HEADER_LAYOUT_TYPE, $options, get_header_layout_type());
             generate_tips_tag(__( 'ヘッダーの表示形式を選択します。', THEME_NAME ));
@@ -148,10 +148,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
             <?php
 
-            generate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), 'ヘッダー全体背景色');
+            generate_color_picker_tag(OP_HEADER_CONTAINER_BACKGROUND_COLOR,  get_header_container_background_color(), __( 'ヘッダー全体背景色', THEME_NAME ));
             generate_tips_tag(__( 'ロゴ部分やグローバルナビ全てを含めた背景色を選択します。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_HEADER_CONTAINER_TEXT_COLOR,  get_header_container_text_color(), 'ヘッダー全体文字色');
+            generate_color_picker_tag(OP_HEADER_CONTAINER_TEXT_COLOR,  get_header_container_text_color(), __( 'ヘッダー全体文字色', THEME_NAME ));
             generate_tips_tag(__( 'ロゴ部分やグローバルナビ全てを含めたテキスト色を選択します。', THEME_NAME ));
             ?>
           </td>
@@ -166,10 +166,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
 
-            generate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), 'ロゴエリア背景色');
+            generate_color_picker_tag(OP_HEADER_BACKGROUND_COLOR,  get_header_background_color(), __( 'ロゴエリア背景色', THEME_NAME ));
             generate_tips_tag(__( 'グローバルナビ上のヘッダー背景色を選択します。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_HEADER_TEXT_COLOR,  get_header_text_color(), 'ロゴ文字色');
+            generate_color_picker_tag(OP_HEADER_TEXT_COLOR,  get_header_text_color(), __( 'ロゴ文字色', THEME_NAME ));
             generate_tips_tag(__( 'グローバルナビ上のヘッダーテキスト色を選択します。', THEME_NAME ));
             ?>
           </td>

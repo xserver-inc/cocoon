@@ -32,12 +32,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php generate_select_color_tip_tag(); ?>
           </th>
           <td>
-            <?php //_v(OP_SITE_KEY_COLOR.'='.get_skin_option(OP_SITE_KEY_COLOR));
-            generate_color_picker_tag(OP_SITE_KEY_COLOR,  get_site_key_color(), 'サイトキーカラー');
+            <?php
+            generate_color_picker_tag(OP_SITE_KEY_COLOR,  get_site_key_color(), __( 'サイトキーカラー', THEME_NAME ));
 
             generate_tips_tag(__( 'サイト全体のポイントとなる部分に適用される背景色を指定します。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_SITE_KEY_TEXT_COLOR,  get_site_key_text_color(), 'サイトキーテキストカラー');
+            generate_color_picker_tag(OP_SITE_KEY_TEXT_COLOR,  get_site_key_text_color(), __( 'サイトキーテキストカラー', THEME_NAME ));
             generate_tips_tag(__( 'サイト全体のポイントとなる部分に適用されるテキスト色を指定します。', THEME_NAME ));
             ?>
           </td>
@@ -90,7 +90,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 generate_tips_tag(__( 'サイト全体のフォントサイズを変更します。', THEME_NAME ));
 
                 //文字色
-                generate_color_picker_tag(OP_SITE_TEXT_COLOR,  get_site_text_color(), '文字色');
+                generate_color_picker_tag(OP_SITE_TEXT_COLOR,  get_site_text_color(), __( '文字色', THEME_NAME ));
 
                 generate_tips_tag(__( 'サイト全体の文字色を変更します。', THEME_NAME ));
                 ?>
@@ -156,7 +156,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_SITE_BACKGROUND_COLOR,  get_site_background_color(), '背景色');
+            generate_color_picker_tag(OP_SITE_BACKGROUND_COLOR,  get_site_background_color(), __( '背景色', THEME_NAME ));
             generate_tips_tag(__( 'サイト全体の背景色を選択します。', THEME_NAME ));
             ?>
           </td>
@@ -197,7 +197,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_SITE_LINK_COLOR,  get_site_link_color(), 'リンク色');
+            generate_color_picker_tag(OP_SITE_LINK_COLOR,  get_site_link_color(), __( 'リンク色', THEME_NAME ));
             generate_tips_tag(__( 'サイトで利用されるリンク色を選択します。', THEME_NAME ));
             ?>
           </td>
@@ -211,7 +211,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_SITE_SELECTION_COLOR,  get_site_selection_color(), '選択文字色');
+            generate_color_picker_tag(OP_SITE_SELECTION_COLOR,  get_site_selection_color(), __( '選択文字色', THEME_NAME ));
             generate_tips_tag(__( 'サイト内のテキストを選択した際の文字色です。', THEME_NAME ));
             ?>
           </td>
@@ -225,7 +225,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_SITE_SELECTION_BACKGROUND_COLOR,  get_site_selection_background_color(), '選択文字背景色');
+            generate_color_picker_tag(OP_SITE_SELECTION_BACKGROUND_COLOR,  get_site_selection_background_color(), __( '選択文字背景色', THEME_NAME ));
             generate_tips_tag(__( 'サイト内のテキストを選択した際の背景色です。', THEME_NAME ));
             ?>
           </td>

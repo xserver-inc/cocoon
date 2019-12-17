@@ -133,7 +133,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'monochrome' => __( 'モノクロ',, THEME_NAME )
+              'monochrome' => __( 'モノクロ', THEME_NAME ),
               'brand_color' => __( 'ブランドカラー', THEME_NAME ),
               'brand_color_white' => __( 'ブランドカラー（白抜き）', THEME_NAME ),
             );
@@ -172,9 +172,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'left_and_right' => 'ロゴ・キャプション 左右',
-              'high_and_low_lc' => 'ロゴ・キャプション 上下',
-              'high_and_low_cl' => 'キャプション・ロゴ 上下',
+              'left_and_right' => __( 'ロゴ・キャプション 左右', THEME_NAME ),
+              'high_and_low_lc' => __('ロゴ・キャプション 上下' , THEME_NAME ),
+              'high_and_low_cl' => __( 'キャプション・ロゴ 上下', THEME_NAME ),
             );
             generate_selectbox_tag(OP_SNS_BOTTOM_SHARE_LOGO_CAPTION_POSITION, $options, get_sns_bottom_share_logo_caption_position());
             generate_tips_tag(__( 'ボトムシェアボタンのロゴとキャプションの配置を選択してください。', THEME_NAME ));

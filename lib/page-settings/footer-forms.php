@@ -32,11 +32,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_FOOTER_BACKGROUND_COLOR,  get_footer_background_color(), 'フッター背景色');
+            generate_color_picker_tag(OP_FOOTER_BACKGROUND_COLOR,  get_footer_background_color(), __( 'フッター背景色', THEME_NAME ));
 
             generate_tips_tag(__( 'サイト下部（フッター部分）の背景色を指定します。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_FOOTER_TEXT_COLOR,  get_footer_text_color(), 'フッター文字色');
+            generate_color_picker_tag(OP_FOOTER_TEXT_COLOR,  get_footer_text_color(), __( 'フッター文字色', THEME_NAME ));
             generate_tips_tag(__( 'サイト下部（フッター部分）のテキスト色を指定します。', THEME_NAME ));
             ?>
           </td>
@@ -51,9 +51,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
 
             $options = array(
-              'logo_enable' => 'ロゴ＆メニュー＆クレジット',
-              'left_and_right' => 'メニュー＆クレジット（左右）',
-              'up_and_down' => 'メニュー＆クレジット（中央揃え）',
+              'logo_enable' => __( 'ロゴ＆メニュー＆クレジット', THEME_NAME ),
+              'left_and_right' => __( 'メニュー＆クレジット（左右）', THEME_NAME ),
+              'up_and_down' => __( 'メニュー＆クレジット（中央揃え）', THEME_NAME ),
             );
             generate_radiobox_tag(OP_FOOTER_DISPLAY_TYPE, $options, get_footer_display_type())
 
@@ -95,7 +95,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'simple_year_begin_to_now' => '© '.get_site_initiation_year().'-'.date_i18n('Y').' '.get_copyright_display_name().'.',
               'full' => 'Copyright © '.get_site_initiation_year().' '.get_copyright_display_name().' All Rights Reserved.',
               'full_year_begin_to_now' => 'Copyright © '.get_site_initiation_year().'-'.date_i18n('Y').' '.get_copyright_display_name().' All Rights Reserved.',
-              'user_credit' => '独自表記',
+              'user_credit' => __( '独自表記', THEME_NAME ),
             );
             generate_radiobox_tag(OP_CREDIT_NOTATION, $options, get_credit_notation());
 

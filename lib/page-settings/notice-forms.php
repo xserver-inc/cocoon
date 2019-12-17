@@ -108,10 +108,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_NOTICE_AREA_BACKGROUND_COLOR,  get_notice_area_background_color(), '通知エリア背景色');
+            generate_color_picker_tag(OP_NOTICE_AREA_BACKGROUND_COLOR,  get_notice_area_background_color(), __( '通知エリア背景色', THEME_NAME ));
             generate_tips_tag(__( 'メッセージに対して独自の背景色を設定したい場合は色を選択してください。デフォルト色を変更したい場合は、こちらの色が優先されます。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_NOTICE_AREA_TEXT_COLOR,  get_notice_area_text_color(), '通知エリア文字色');
+            generate_color_picker_tag(OP_NOTICE_AREA_TEXT_COLOR,  get_notice_area_text_color(), __( '通知エリア文字色', THEME_NAME ));
             generate_tips_tag(__( 'メッセージに対して独自のテキスト色を設定したい場合は色を選択してください。デフォルト色を変更したい場合は、こちらの色が優先されます。', THEME_NAME ));
             ?>
           </td>

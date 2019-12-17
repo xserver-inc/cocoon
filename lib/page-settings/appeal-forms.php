@@ -170,7 +170,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR,  get_appeal_area_button_background_color(), 'ボタン色');
+            generate_color_picker_tag(OP_APPEAL_AREA_BUTTON_BACKGROUND_COLOR,  get_appeal_area_button_background_color(), __( 'ボタン色', THEME_NAME ));
             generate_tips_tag(__( 'ボタン全体の色を選択してください。文字は白色となるので濃いめの色を設定することをおすすめします。', THEME_NAME ));
             ?>
           </td>

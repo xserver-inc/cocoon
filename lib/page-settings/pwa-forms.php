@@ -124,11 +124,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_PWA_THEME_COLOR,  get_pwa_theme_color(), 'テーマカラー');
+            generate_color_picker_tag(OP_PWA_THEME_COLOR,  get_pwa_theme_color(), __( 'テーマカラー', THEME_NAME ));
 
             generate_tips_tag(__( 'アプリのテーマカラーです。OSによってどこに適用されるかは異なります。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_PWA_BACKGROUND_COLOR,  get_pwa_background_color(), '背景色');
+            generate_color_picker_tag(OP_PWA_BACKGROUND_COLOR,  get_pwa_background_color(), __( '背景色', THEME_NAME ));
             generate_tips_tag(__( 'アプリの背景色です。サイトが表示されるまでの間、この色が適用される場合があります。', THEME_NAME ));
             ?>
           </td>

@@ -51,7 +51,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'none' => 'なし',
+              'none' => __( 'なし', THEME_NAME ),
               'amp-image-lightbox' => __( 'AMP Lightbox（単一拡大）', THEME_NAME ),
               'amp-lightbox-gallery' => __( 'AMPギャラリー（複数画像ギャラリー表示対応）', THEME_NAME ),
             );

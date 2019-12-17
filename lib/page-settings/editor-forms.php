@@ -51,11 +51,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_EDITOR_BACKGROUND_COLOR,  get_editor_background_color(), '背景色');
+            generate_color_picker_tag(OP_EDITOR_BACKGROUND_COLOR,  get_editor_background_color(), __( '背景色', THEME_NAME ));
 
             generate_tips_tag(__( 'エディターの背景色を指定します。', THEME_NAME ));
 
-            generate_color_picker_tag(OP_EDITOR_TEXT_COLOR,  get_editor_text_color(), '文字色');
+            generate_color_picker_tag(OP_EDITOR_TEXT_COLOR,  get_editor_text_color(), __( '文字色', THEME_NAME ));
             generate_tips_tag(__( 'エディターのテキスト色を指定します。', THEME_NAME ));
             ?>
           </td>
@@ -141,12 +141,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A,  get_block_editor_extended_palette_color_a(), '拡張色A');
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B,  get_block_editor_extended_palette_color_b(), '拡張色B');
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C,  get_block_editor_extended_palette_color_c(), '拡張色C');
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D,  get_block_editor_extended_palette_color_d(), '拡張色D');
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E,  get_block_editor_extended_palette_color_e(), '拡張色E');
-            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F,  get_block_editor_extended_palette_color_f(), '拡張色F');
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_A,  get_block_editor_extended_palette_color_a(), __( '拡張色A', THEME_NAME ));
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_B,  get_block_editor_extended_palette_color_b(), __( '拡張色B', THEME_NAME ));
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_C,  get_block_editor_extended_palette_color_c(), __( '拡張色C', THEME_NAME ));
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_D,  get_block_editor_extended_palette_color_d(), __( '拡張色D', THEME_NAME ));
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_E,  get_block_editor_extended_palette_color_e(), __( '拡張色E', THEME_NAME ));
+            generate_color_picker_tag(OP_BLOCK_EDITOR_EXTENDED_PALETTE_COLOR_F,  get_block_editor_extended_palette_color_f(), __( '拡張色F', THEME_NAME ));
 
             generate_tips_tag(__( '任意のカラーパレット色を設定できます。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/gutenberg-color-palette/'));
             ?>
