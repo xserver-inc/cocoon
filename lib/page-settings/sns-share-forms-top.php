@@ -38,7 +38,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag( OP_SNS_TOP_SHARE_BUTTONS_VISIBLE, is_sns_top_share_buttons_visible(), __( 'メインカラムトップシェアボタンを表示', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページのメインカラムにあるトップシェアボタンの表示を切り替えます。', THEME_NAME ));
+            generate_tips_tag(__( 'トップシェアボタンの表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>
@@ -107,7 +107,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li>
                 <?php generate_checkbox_tag(OP_SNS_TAG_TOP_SHARE_BUTTONS_VISIBLE, is_sns_tag_top_share_buttons_visible(), __( 'タグ', THEME_NAME )); ?>
               </li>
-            <p><?php _e( '本文下にシェアボタンを表示するページを選択してください。', THEME_NAME ) ?></p>
+            <p><?php _e( 'シェアボタンを表示するページを選択してください。', THEME_NAME ) ?></p>
           </td>
         </tr>
 
@@ -120,9 +120,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'monochrome' => 'モノクロ',
-              'brand_color' => 'ブランドカラー',
-              'brand_color_white' => 'ブランドカラー（白抜き）',
+              'monochrome' => __( 'モノクロ',, THEME_NAME )
+              'brand_color' => __( 'ブランドカラー', THEME_NAME ),
+              'brand_color_white' => __( 'ブランドカラー（白抜き）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_SNS_TOP_SHARE_BUTTON_COLOR, $options, get_sns_top_share_button_color());
             generate_tips_tag(__( 'トップシェアボタンの配色を選択してください。', THEME_NAME ));
@@ -140,12 +140,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              '1' => '1列',
-              '2' => '2列',
-              '3' => '3列',
-              '4' => '4列',
-              '5' => '5列',
-              '6' => '6列',
+              '1' => __( '1列', THEME_NAME ),
+              '2' => __( '2列', THEME_NAME ),
+              '3' => __( '3列', THEME_NAME ),
+              '4' => __( '4列', THEME_NAME ),
+              '5' => __( '5列', THEME_NAME ),
+              '6' => __( '6列', THEME_NAME ),
             );
             generate_selectbox_tag(OP_SNS_TOP_SHARE_COLUMN_COUNT, $options, get_sns_top_share_column_count());
             generate_tips_tag(__( 'トップシェアボタンのカラム数を選択してください。', THEME_NAME ));
@@ -162,9 +162,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'left_and_right' => 'ロゴ・キャプション 左右',
-              'high_and_low_lc' => 'ロゴ・キャプション 上下',
-              'high_and_low_cl' => 'キャプション・ロゴ 上下',
+              'left_and_right' => __( 'ロゴ・キャプション 左右', THEME_NAME ),
+              'high_and_low_lc' => __('ロゴ・キャプション 上下' , THEME_NAME ),
+              'high_and_low_cl' => __( 'キャプション・ロゴ 上下', THEME_NAME ),
             );
             generate_selectbox_tag(OP_SNS_TOP_SHARE_LOGO_CAPTION_POSITION, $options, get_sns_top_share_logo_caption_position());
             generate_tips_tag(__( 'トップシェアボタンのロゴとキャプションの配置を選択してください。', THEME_NAME ));
@@ -180,7 +180,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag( OP_SNS_TOP_SHARE_BUTTONS_COUNT_VISIBLE, is_sns_top_share_buttons_count_visible(), __( 'シェア数を表示', THEME_NAME ));
-            generate_tips_tag(__( '投稿・固定ページのメインカラムにあるトップシェアボタンの表示を切り替えます。', THEME_NAME ));
+            generate_tips_tag(__( 'トップシェアボタンのシェア数表示を切り替えます。', THEME_NAME ));
             ?>
           </td>
         </tr>
