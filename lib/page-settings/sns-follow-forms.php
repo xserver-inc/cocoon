@@ -153,9 +153,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'monochrome' => 'モノクロ',
-              'brand_color' => 'ブランドカラー',
-              'brand_color_white' => 'ブランドカラー（白抜き）',
+              'monochrome' => __( 'モノクロ', THEME_NAME ),
+              'brand_color' => __( 'ブランドカラー', THEME_NAME ),
+              'brand_color_white' => __( 'ブランドカラー（白抜き）', THEME_NAME ),
             );
             generate_selectbox_tag(OP_SNS_FOLLOW_BUTTON_COLOR, $options, get_sns_follow_button_color());
             generate_tips_tag(__( 'シェアボタンの配色を選択してください。', THEME_NAME ));
