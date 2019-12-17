@@ -35,7 +35,12 @@ function t($a, $b) {
 }
 
 function fn_minify($pattern, $input) {
-    return preg_split('#(' . implode('|', $pattern) . ')#', $input, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+    $array = array();
+    $res = preg_split('#(' . implode('|', $pattern) . ')#', $input, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+    if ($res) {
+        $array = $res;
+    }
+    return $array;
 }
 
 function fn_minify_css($input, $comment = 0, $quote = 2) {
