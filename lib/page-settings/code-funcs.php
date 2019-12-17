@@ -15,6 +15,14 @@ function is_code_highlight_enable(){
 }
 endif;
 
+//ソースコードの行番号を表示するか
+define('OP_CODE_ROW_NUMBER_ENABLE', 'code_row_number_enable');
+if ( !function_exists( 'is_code_row_number_enable' ) ):
+function is_code_row_number_enable(){
+  return get_theme_option(OP_CODE_ROW_NUMBER_ENABLE);
+}
+endif;
+
 //ソースコードのライブラリ
 define('OP_CODE_HIGHLIGHT_PACKAGE', 'code_highlight_package');
 if ( !function_exists( 'get_code_highlight_package' ) ):
