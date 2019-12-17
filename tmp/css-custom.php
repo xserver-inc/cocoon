@@ -738,3 +738,15 @@ if (!is_admin()) {
   echo get_block_editor_color_palette_css();
 }
 ?>
+<?php if (is_code_row_number_enable()):
+$max_code_row_count = 99;
+$max_code_row_count = apply_filters('max_code_row_count', $max_code_row_count);
+$rows = array();
+for ($i=1; $i <= $max_code_row_count; $i++) {
+  $rows[] = $i.'\A';
+}
+?>
+.is-code-row-number-enable pre::before {
+  content: "<?php echo implode(' ', $rows); ?>";
+}
+<?php endif; ?>

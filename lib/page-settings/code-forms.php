@@ -30,8 +30,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             if (is_code_highlight_enable()): ?>
               <link rel="stylesheet" href="<?php echo get_highlight_js_css_url(); ?>">
             <?php endif ?>
-            <div class="demo entry-content">
-<pre id="highlight-demo">/* コメント */
+            <div class="demo entry-content<?php echo get_additional_entry_content_classes(); ?>">
+<pre id="highlight-demo" style="line-height: 1.4em;">/* コメント */
 #container {
   float: left;
   margin: 0 -240px 0 0;
@@ -51,7 +51,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_checkbox_tag( OP_CODE_HIGHLIGHT_ENABLE, is_code_highlight_enable(), __( 'ソースコードをハイライト表示', THEME_NAME ));
             generate_tips_tag(__( '本文中に表示されているpreタグ中のソースコードをハイライト表示します。', THEME_NAME ));
+            echo '<br>';
             ?>
+            <div class="indent">
+              <?php
+              generate_checkbox_tag( OP_CODE_ROW_NUMBER_ENABLE, is_code_row_number_enable(), __( '行番号表示', THEME_NAME ));
+              generate_tips_tag(__( 'ソースコード左側に行番号を表示します。', THEME_NAME ));
+              ?>
+            </div>
           </td>
         </tr>
 

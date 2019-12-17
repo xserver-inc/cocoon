@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //ソースコードをハイライト表示するか
 update_theme_option(OP_CODE_HIGHLIGHT_ENABLE);
 
+//ソースコードの行番号を表示するか
+update_theme_option(OP_CODE_ROW_NUMBER_ENABLE);
+
 //ソースコードのライブラリ
 update_theme_option(OP_CODE_HIGHLIGHT_PACKAGE);
 
