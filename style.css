@@ -8041,10 +8041,8 @@ https://codepen.io/nxworld/pen/oLdoWb
   background-color: #dd4b39;
   font-weight: bold;
   text-align: center;
-  display: block;
-  max-width: 80%;
-  margin: auto;
-  padding: 10px 2em;
+  display: inline-block;
+  padding: 9px 42px;
   border-radius: 4px;
 }
 .appeal-button:hover {

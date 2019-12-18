@@ -57,10 +57,10 @@
   background-color: $google_plus_color;
   font-weight: bold;
   text-align: center;
-  display: block;
-  max-width: 80%;
-  margin: auto;
-  padding: 10px 2em;
+  display: inline-block;
+  //max-width: 80%;
+  //margin: auto;
+  padding: 9px 42px;
   border-radius: $basic_border_radius;
   &:hover{
     color: $white;
