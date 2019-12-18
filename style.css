@@ -8055,6 +8055,18 @@ https://codepen.io/nxworld/pen/oLdoWb
 /************************************
 ** 入力フォーム
 ************************************/
+input[type="search"] {
+  width: auto;
+  flex-grow: 1;
+}
+
+.wp-block-search__button {
+  width: 60px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
 textarea {
   min-height: 260px;
 }

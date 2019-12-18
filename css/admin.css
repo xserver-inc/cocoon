@@ -3447,6 +3447,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .appeal-message { margin-bottom: 1em; }
 .admin-settings .demo .appeal-button { color: #fff; text-decoration: none; background-color: #dd4b39; font-weight: bold; text-align: center; display: block; max-width: 80%; margin: auto; padding: 10px 2em; border-radius: 4px; }
 .admin-settings .demo .appeal-button:hover { color: #fff; opacity: 0.7; }
+.admin-settings .demo input[type="search"] { width: auto; flex-grow: 1; }
+.admin-settings .demo .wp-block-search__button { width: 60px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }
 .admin-settings .demo textarea { min-height: 260px; }
 .admin-settings .demo option { padding: 12px; }
 .admin-settings .demo input[type='submit'], .admin-settings .demo #bbp_reply_submit, .admin-settings .demo .bp-login-widget-register-link a { padding: 11px; width: 100%; margin: 0; cursor: pointer; }
