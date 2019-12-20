@@ -195,7 +195,7 @@ function add_default_site_icon_tag(){
   $tag .= '<link rel="icon" href="'.DEFAULT_SITE_ICON_192.'" sizes="192x192" />'.PHP_EOL;
   $tag .= '<link rel="apple-touch-icon" href="'.DEFAULT_SITE_ICON_180.'" />'.PHP_EOL;
   $tag .= '<meta name="msapplication-TileImage" content="'.DEFAULT_SITE_ICON_270.'" />'.PHP_EOL;
-  echo $tag;
+  echo apply_filters('add_default_site_icon_tag', $tag);
 }
 endif;
 
