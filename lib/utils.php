@@ -2324,11 +2324,11 @@ endif;
 //ファビコンを取得
 if ( !function_exists( 'get_site_favicon_url' ) ):
 function get_site_favicon_url(){
-  $icon = get_site_icon_url();
-  if (!$icon) {
-    $icon = get_template_directory_uri().'/images/site-icon32x32.png';
+  $url = get_site_icon_url();
+  if (!$url) {
+    $url = get_template_directory_uri().'/images/site-icon32x32.png';
   }
-  return $icon;
+  return apply_filters('get_site_favicon_url', $url);
 }
 endif;
 
