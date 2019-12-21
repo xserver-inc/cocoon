@@ -1052,12 +1052,7 @@ img.emoji {
 .date-tags {
   line-height: 0.8;
   text-align: right;
-  display: flex;
-  flex-direction: row-reverse;
   margin-bottom: 1em;
-}
-.date-tags .post-update {
-  margin-right: 0;
 }
 
 .post-date,

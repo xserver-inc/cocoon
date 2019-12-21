@@ -536,8 +536,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-card-day span:last-child { margin-right: 0; }
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-thumb, .admin-settings .demo .ect-big-card .card-thumb { float: none; width: 100%; }
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content, .admin-settings .demo .ect-big-card .card-content { margin: 0; }
-.admin-settings .demo .date-tags { line-height: 0.8; text-align: right; display: flex; flex-direction: row-reverse; margin-bottom: 1em; }
-.admin-settings .demo .date-tags .post-update { margin-right: 0; }
+.admin-settings .demo .date-tags { line-height: 0.8; text-align: right; margin-bottom: 1em; }
 .admin-settings .demo .post-date, .admin-settings .demo .post-update, .admin-settings .demo .post-author, .admin-settings .demo .amp-back { margin-right: 8px; }
 .admin-settings .demo .related-entry-post-date { margin-right: 0; }
 .admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
@@ -2077,8 +2076,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-card-day span:last-child { margin-right: 0; }
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-thumb, .admin-settings .demo .ect-big-card .card-thumb { float: none; width: 100%; }
 .admin-settings .demo .front-top-page .ect-big-card-first .a-wrap:first-of-type .card-content, .admin-settings .demo .ect-big-card .card-content { margin: 0; }
-.admin-settings .demo .date-tags { line-height: 0.8; text-align: right; display: flex; flex-direction: row-reverse; margin-bottom: 1em; }
-.admin-settings .demo .date-tags .post-update { margin-right: 0; }
+.admin-settings .demo .date-tags { line-height: 0.8; text-align: right; margin-bottom: 1em; }
 .admin-settings .demo .post-date, .admin-settings .demo .post-update, .admin-settings .demo .post-author, .admin-settings .demo .amp-back { margin-right: 8px; }
 .admin-settings .demo .related-entry-post-date { margin-right: 0; }
 .admin-settings .demo .breadcrumb { margin: 1em .4em; color: #777; font-size: 13px; }
