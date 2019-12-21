@@ -404,7 +404,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
 .admin-settings .demo .wrap { width: 1256px; margin: 0 auto; }
 .admin-settings .demo .content-in { display: flex; justify-content: space-between; flex-wrap: wrap; }
-.admin-settings .demo .main { width: 860px; margin-right: 20px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
+.admin-settings .demo .main { width: 860px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
 .admin-settings .demo .no-scrollable-main .main { height: 100%; }
 .admin-settings .demo .main-scroll { position: -webkit-sticky; position: sticky; top: 0; margin-top: 2em; }
@@ -1944,7 +1944,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .header-container, .admin-settings .demo .main, .admin-settings .demo .sidebar, .admin-settings .demo .footer { background-color: #fff; }
 .admin-settings .demo .wrap { width: 1256px; margin: 0 auto; }
 .admin-settings .demo .content-in { display: flex; justify-content: space-between; flex-wrap: wrap; }
-.admin-settings .demo .main { width: 860px; margin-right: 20px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
+.admin-settings .demo .main { width: 860px; padding: 20px 29px; border: 1px solid transparent; border-radius: 4px; position: relative; }
 .admin-settings .demo .no-sidebar .content .main { margin: 0; width: 100%; }
 .admin-settings .demo .no-scrollable-main .main { height: 100%; }
 .admin-settings .demo .main-scroll { position: -webkit-sticky; position: sticky; top: 0; margin-top: 2em; }
