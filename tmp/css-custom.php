@@ -371,7 +371,7 @@ if (get_sidebar_border_color()): ?>
 <?php endif ?>
 <?php //カラム間の幅
 $main_sidebar_margin = get_main_sidebar_margin();
-if (is_numeric($main_sidebar_margin)): ?>
+if (false && is_numeric($main_sidebar_margin)): ?>
 .main{
   <?php if (is_sidebar_position_right()): ?>
   margin-right: <?php echo $main_sidebar_margin; ?>px;
