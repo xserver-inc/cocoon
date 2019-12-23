@@ -839,7 +839,7 @@ function wp_enqueue_jquery_masonry(){
       $common_code = '
         $("#list.ect-tile-card").masonry({
           itemSelector: ".entry-card-wrap",
-          isAnimated: true
+          isAnimated: false
         });
       ';
       $admin_code = null;
@@ -848,7 +848,7 @@ function wp_enqueue_jquery_masonry(){
           $(function(){
             setInterval(function(){'.
               $common_code
-            .'},1000);
+            .'},100);
           });
         ';
       }
