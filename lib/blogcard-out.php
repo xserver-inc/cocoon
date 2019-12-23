@@ -20,7 +20,7 @@ function url_to_external_blog_card_tag($url){
     }//IDが取得できない場合は外部リンクとして処理する
   }
 
-  //独自プローブカード（キャッシュ）の利用
+  //独自ブログカード（キャッシュ）の利用
   $tag = url_to_external_ogp_blogcard_tag($url);
 
   return $tag;
