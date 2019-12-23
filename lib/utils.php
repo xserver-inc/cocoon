@@ -832,9 +832,11 @@ endif;
 if ( !function_exists( 'wp_enqueue_jquery_masonry' ) ):
 function wp_enqueue_jquery_masonry(){
     if ((is_entry_card_type_tile_card() || is_admin()) && !is_singular()) {
-      //wp_deregister_script('jquery-masonry');
-      wp_register_script('jquery-masonry', false, array('jquery'), false, true);
-      wp_enqueue_script('jquery-masonry');
+      // //wp_deregister_script('jquery-masonry');
+      // wp_register_script('jquery-masonry', false, array('jquery'), false, true);
+      // wp_enqueue_script('jquery-masonry');
+      //Masonryの呼び出し
+      wp_enqueue_script( 'jquery-masonry', get_template_directory_uri() . '/plugins/masonry/masonry.pkgd.min.js', array( 'jquery' ), false, true  );
 
       $common_code = '
         $("#list.ect-tile-card").masonry({
