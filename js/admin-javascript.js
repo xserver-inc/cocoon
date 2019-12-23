@@ -43,5 +43,5 @@
   delete_wp_adminbar('.iframe-demo');
 
 
-  $("iframe.iframe-demo").attr("src", $("iframe.iframe-demo").attr("src")+'?preview=theme-settings');
+  //$("iframe.iframe-demo").attr("src", $("iframe.iframe-demo").attr("src")+'?preview=theme-settings');
 })(jQuery);

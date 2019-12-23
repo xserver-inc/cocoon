@@ -10,7 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if (!is_amp()): ?>
   <?php //AdSense非同期スクリプトを出力
   global $_IS_ADSENSE_EXIST;
-  if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
+  //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
+  if ($_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
   }
   ?>
