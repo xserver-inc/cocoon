@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-18 00:19+0900\n"
-"PO-Revision-Date: 2019-12-18 00:19+0900\n"
+"POT-Creation-Date: 2019-12-24 23:24+0900\n"
+"PO-Revision-Date: 2019-12-24 23:24+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -66,7 +66,7 @@ msgstr "Heading box"
 #: blocks/src/micro/micro-balloon/block.js:90
 #: blocks/src/micro/micro-text/_block.js:72
 #: blocks/src/micro/micro-text/block.js:88 blocks/src/old/balloon-1/block.js:77
-#: blocks/src/old/balloon-2/block.js:108 blocks/src/old/balloon/block.js:94
+#: blocks/src/old/balloon-2/block.js:108 blocks/src/old/balloon/block.js:60
 #: blocks/src/old/blank-box/block.js:55 blocks/src/old/caption-box/block.js:52
 #: blocks/src/old/label-box/block.js:51
 #: blocks/src/old/micro-balloon-1/block.js:61
@@ -195,8 +195,9 @@ msgstr "Tab heading box"
 msgid "ボックスに「タブ見出し」を入力できる汎用ボックスです。"
 msgstr "A generic box where you can enter a tab heading in the box."
 
-#: blocks/src/block/balloon/_block.js:17 blocks/src/block/balloon/block.js:48
-#: blocks/src/old/balloon-1/block.js:17 blocks/src/old/balloon-2/block.js:17
+#: blocks/src/block/balloon/_block.js:17 blocks/src/block/balloon/_block2.js:48
+#: blocks/src/block/balloon/block.js:48 blocks/src/old/balloon-1/block.js:17
+#: blocks/src/old/balloon-2/block.js:17
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16
 #: blocks/src/old/balloon-ex/block.js:17 blocks/src/old/balloon/block.js:15
@@ -1430,7 +1431,7 @@ msgid "登録されている吹き出しを挿入できます。"
 msgstr "You can insert a registered speech balloon."
 
 #: blocks/src/old/balloon-1/block.js:80 blocks/src/old/balloon-2/block.js:111
-#: blocks/src/old/balloon/block.js:97
+#: blocks/src/old/balloon/block.js:63
 msgid "人物"
 msgstr "Person"
 
@@ -2364,8 +2365,8 @@ msgstr "Posted date:"
 msgid "Edit"
 msgstr "Edit"
 
-#: lib/content-category.php:180 lib/content-tag.php:147 lib/seo.php:405
-#: lib/seo.php:533
+#: lib/content-category.php:180 lib/content-tag.php:147 lib/seo.php:400
+#: lib/seo.php:528
 #, php-format
 msgid "「%s」の記事一覧です。"
 msgstr "Articles of \"%s\"."
@@ -2860,7 +2861,7 @@ msgstr "M j, Y @ H:i"
 msgid "年"
 msgstr "Year"
 
-#: lib/custom-fields/update-field.php:89 tmp/admin-pv.php:30
+#: lib/custom-fields/update-field.php:89
 msgid "月"
 msgstr "Month"
 
@@ -4023,7 +4024,7 @@ msgstr "Theme usage manual"
 msgid "スキン"
 msgstr "Skin"
 
-#: lib/page-settings/_top-page.php:166 tmp/admin-pv.php:34
+#: lib/page-settings/_top-page.php:166
 msgid "全体"
 msgstr "All"
 
@@ -6569,7 +6570,6 @@ msgid "表示内容"
 msgstr "What you see"
 
 #: lib/page-settings/carousel-forms.php:65 lib/widgets/popular-entries.php:216
-#: tmp/admin-pv.php:22
 msgid "本日"
 msgstr "Today"
 
@@ -9666,6 +9666,24 @@ msgstr "Displays the button for RSS subscriptions."
 msgid "ボタンカラー"
 msgstr "Button color"
 
+#: lib/page-settings/sns-follow-forms.php:156
+#: lib/page-settings/sns-share-forms-bottom.php:136
+#: lib/page-settings/sns-share-forms-top.php:123
+msgid "モノクロ"
+msgstr "Monochrome"
+
+#: lib/page-settings/sns-follow-forms.php:157
+#: lib/page-settings/sns-share-forms-bottom.php:137
+#: lib/page-settings/sns-share-forms-top.php:124
+msgid "ブランドカラー"
+msgstr "Brand color"
+
+#: lib/page-settings/sns-follow-forms.php:158
+#: lib/page-settings/sns-share-forms-bottom.php:138
+#: lib/page-settings/sns-share-forms-top.php:125
+msgid "ブランドカラー（白抜き）"
+msgstr "Brand color (white)"
+
 #: lib/page-settings/sns-follow-forms.php:161
 msgid "シェアボタンの配色を選択してください。"
 msgstr "Select the color scheme of the share button."
@@ -9855,21 +9873,6 @@ msgstr "Switch between pages that display share buttons."
 #: lib/page-settings/sns-share-forms-top.php:110
 msgid "シェアボタンを表示するページを選択してください。"
 msgstr "Select the pages where you want the share buttons to appear."
-
-#: lib/page-settings/sns-share-forms-bottom.php:136
-#: lib/page-settings/sns-share-forms-top.php:123
-msgid "モノクロ"
-msgstr "Monochrome"
-
-#: lib/page-settings/sns-share-forms-bottom.php:137
-#: lib/page-settings/sns-share-forms-top.php:124
-msgid "ブランドカラー"
-msgstr "Brand color"
-
-#: lib/page-settings/sns-share-forms-bottom.php:138
-#: lib/page-settings/sns-share-forms-top.php:125
-msgid "ブランドカラー（白抜き）"
-msgstr "Brand color (white)"
 
 #: lib/page-settings/sns-share-forms-bottom.php:141
 msgid "ボトムシェアボタンの配色を選択してください。"
@@ -12374,11 +12377,23 @@ msgstr "Sizzy"
 msgid "Resolution Test"
 msgstr "Resolution test"
 
-#: tmp/admin-pv.php:26
-msgid "週"
-msgstr "Week"
+#: tmp/admin-pv.php:23
+msgid "本日:"
+msgstr "Today:"
 
-#: tmp/admin-pv.php:43
+#: tmp/admin-pv.php:27
+msgid "週:"
+msgstr "Week:"
+
+#: tmp/admin-pv.php:31
+msgid "月:"
+msgstr "Month:"
+
+#: tmp/admin-pv.php:35
+msgid "全体:"
+msgstr "All:"
+
+#: tmp/admin-pv.php:45
 msgid "Jetpackの統計"
 msgstr "Jetpack statistics"
 
@@ -12449,7 +12464,7 @@ msgstr "Available:"
 msgid "（WEBフォント）"
 msgstr "(Web fonts)"
 
-#: tmp/footer-javascript.php:28
+#: tmp/footer-javascript.php:29
 msgid "タイトルとURLをコピーしました"
 msgstr "Copied title and URL"
 
@@ -12477,7 +12492,7 @@ msgstr "Share"
 msgid "目次へ"
 msgstr "To the table of contents"
 
-#: tmp/pagination.php:33
+#: tmp/pagination.php:35
 msgid "次のページ"
 msgstr "Next page"
 
