@@ -395,7 +395,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; margin: 0; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -1935,7 +1935,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; margin: 0; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }

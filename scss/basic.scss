@@ -32,6 +32,7 @@ body {
   @extend %background_image;
   background-color: #f4f5f7;
   text-size-adjust: 100%;
+  margin: 0;
   // -webkit-text-size-adjust: 100%;//Chrome,Safari
   // -ms-text-size-adjust: 100%;//EgdeMobile
   // -moz-text-size-adjust:100%;//firefox
