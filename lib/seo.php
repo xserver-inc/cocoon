@@ -174,9 +174,9 @@ function the_prev_next_link_tag() {
     //$multipage = check_multi_page();
     if($multipage) {
       $prev = get_multipage_url('prev');
-      $prev_url = get_query_removed_url(user_trailingslashit($prev));
+      $prev_url = user_trailingslashit($prev);
       $next = get_multipage_url('next');
-      $next_url = get_query_removed_url(user_trailingslashit($next));
+      $next_url = user_trailingslashit($next);
       if($prev) {
         echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
         echo '<link rel="prev" href="'.esc_url($prev_url).'" />'.PHP_EOL;
