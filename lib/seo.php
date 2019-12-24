@@ -174,16 +174,16 @@ function the_prev_next_link_tag() {
     //$multipage = check_multi_page();
     if($multipage) {
       $prev = get_multipage_url('prev');
-      $prev_path = user_trailingslashit($prev);
+      $prev_url = get_query_removed_url(user_trailingslashit($prev));
       $next = get_multipage_url('next');
-      $next_path = user_trailingslashit($next);
+      $next_url = get_query_removed_url(user_trailingslashit($next));
       if($prev) {
         echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
-        echo '<link rel="prev" href="'.$prev_path.'" />'.PHP_EOL;
+        echo '<link rel="prev" href="'.esc_url($prev_url).'" />'.PHP_EOL;
       }
       if($next) {
         echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
-        echo '<link rel="next" href="'.$next_path.'" />'.PHP_EOL;
+        echo '<link rel="next" href="'.esc_url($next_url).'" />'.PHP_EOL;
       }
     }
   } else if (is_search()){
@@ -194,13 +194,13 @@ function the_prev_next_link_tag() {
       $page = $paged - 1;
       $url = user_trailingslashit(get_site_url()).'?s='.$search_query.'&amp;paged='.$page;
       echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
-      echo '<link rel="prev" href="'.$url.'" />'.PHP_EOL;
+      echo '<link rel="prev" href="'.esc_url($url).'" />'.PHP_EOL;
     }
     if ( get_next_posts_link() ){
       $page = $paged + 1;
       $url = user_trailingslashit(get_site_url()).'?s='.$search_query.'&amp;paged='.$page;
       echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
-      echo '<link rel="next" href="'.$url.'" />'.PHP_EOL;
+      echo '<link rel="next" href="'.esc_url($url).'" />'.PHP_EOL;
     }
   } else if (!is_404()){
     //トップページやカテゴリページなどの分割ページの設定
@@ -208,12 +208,12 @@ function the_prev_next_link_tag() {
     if ( get_previous_posts_link() ){
       $url = user_trailingslashit(get_pagenum_link( $paged - 1 ));
       echo '<!-- '.THEME_NAME_CAMEL.' prev -->'.PHP_EOL;
-      echo '<link rel="prev" href="'.$url.'" />'.PHP_EOL;
+      echo '<link rel="prev" href="'.esc_url($url).'" />'.PHP_EOL;
     }
     if ( get_next_posts_link() ){
       $url = user_trailingslashit(get_pagenum_link( $paged + 1 ));
       echo '<!-- '.THEME_NAME_CAMEL.' next -->'.PHP_EOL;
-      echo '<link rel="next" href="'.$url.'" />'.PHP_EOL;
+      echo '<link rel="next" href="'.esc_url($url).'" />'.PHP_EOL;
     }
   }
 }
