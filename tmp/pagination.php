@@ -31,7 +31,7 @@ if($pages != 1) {
   //現在のページ番号が全ページ数よりも少ないときは「次のページ」タグを出力
   if ( $paged < $pages ) {
     $url = get_pagenum_link($next_page_num);
-    $url = get_query_removed_url($url);
+    //$url = get_query_removed_url($url);
     echo '<div class="pagination-next"><a href="'.esc_url($url).'" class="pagination-next-link key-btn">'.__( '次のページ', THEME_NAME ).'</a></div>';
   }
 
