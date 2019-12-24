@@ -543,7 +543,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .breadcrumb div { display: inline; }
 .admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
-.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em; }
+.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em 1em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }
@@ -2083,7 +2083,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .breadcrumb div { display: inline; }
 .admin-settings .demo .breadcrumb span.sp { margin: 0 10px; }
 .admin-settings .demo .breadcrumb a { text-decoration: none; color: #777; }
-.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em; }
+.admin-settings .demo .breadcrumb.sbp-main-before, .admin-settings .demo .breadcrumb.sbp-footer-before, .admin-settings .demo .breadcrumb.pbp-main-before, .admin-settings .demo .breadcrumb.pbp-footer-before { background-color: #fff; margin: 12px auto 0; padding: .6em 1em; }
 .admin-settings .demo .breadcrumb.sbp-main-before + .content, .admin-settings .demo .breadcrumb.pbp-main-before + .content { margin-top: 12px; }
 .admin-settings .demo .sns-buttons { display: flex; align-items: center; }
 .admin-settings .demo .sns-buttons a { display: block; background-color: #333; text-align: center; color: #fff; text-decoration: none; border-radius: 4px; height: 45px; }

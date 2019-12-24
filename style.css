@@ -1094,7 +1094,7 @@ img.emoji {
 .breadcrumb.pbp-footer-before {
   background-color: #fff;
   margin: 12px auto 0;
-  padding: .6em;
+  padding: .6em 1em;
 }
 
 .breadcrumb.sbp-main-before + .content,
