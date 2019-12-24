@@ -169,9 +169,7 @@ if ( !function_exists( 'the_prev_next_link_tag' ) ):
 function the_prev_next_link_tag() {
   //1ページを複数に分けた分割ページ
   if(is_singular()) {
-    global $wp_query;
     global $multipage;
-    //$multipage = check_multi_page();
     if($multipage) {
       $prev = get_multipage_url('prev');
       $prev_url = user_trailingslashit($prev);
@@ -229,10 +227,7 @@ function get_multipage_url($rel='prev') {
   global $page;
   global $numpages;
   $url = '';
-  //$multipage = check_multi_page();
   if($multipage) {
-    //$numpages = $multipage[0];
-    //$page = $multipage[1] == 0 ? 1 : $multipage[1];
     $i = 'prev' == $rel? $page - 1: $page + 1;
     if($i && $i > 0 && $i <= $numpages) {
       if(1 == $i) {
