@@ -492,10 +492,6 @@ div.mce-content-body {
 .editor-block-list__layout .editor-block-list__block[data-type="core/freeform"] {
   clear: both;
 }
-.editor-block-list__layout .editor-block-list__block .column-2,
-.editor-block-list__layout .editor-block-list__block .column-3 {
-  word-break: break-all;
-}
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-left,
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-center,
 .editor-block-list__layout .editor-block-list__block .column-2 .editor-inner-blocks .column-right,

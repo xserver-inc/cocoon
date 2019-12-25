@@ -4968,7 +4968,6 @@ figure.wp-block-image figcaption {
   position: relative;
   margin: 1em 0;
   margin: 0;
-  word-break: break-all;
 }
 .column-wrap > div {
   width: 49.5%;
@@ -5630,7 +5629,6 @@ div.speech-balloon {
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 6px;
-  word-break: break-all;
 }
 div.speech-balloon p {
   margin: 0;

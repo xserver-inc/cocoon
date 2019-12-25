@@ -1335,7 +1335,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
 .admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
@@ -1464,7 +1464,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; }
 .admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
@@ -2875,7 +2875,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
 .admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; word-break: break-all; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
@@ -3004,7 +3004,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .speech-person { width: 12%; min-width: 12%; }
 .admin-settings .demo .speech-icon img, .admin-settings .demo .speech-icon amp-img { border-radius: 50%; border: 2px solid #ccc; width: 100%; }
 .admin-settings .demo .speech-name { text-align: center; font-size: 13px; }
-.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; word-break: break-all; }
+.admin-settings .demo div.speech-balloon { height: 100%; position: relative; padding: 10px; background-color: #fff; border: 2px solid #ccc; border-radius: 6px; }
 .admin-settings .demo div.speech-balloon p { margin: 0; }
 .admin-settings .demo .speech-balloon::before { content: ''; position: absolute; display: block; width: 0; height: 0; left: -12px; top: 10px; border-right: 12px solid #ccc; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
 .admin-settings .demo .speech-balloon::after { content: ''; position: absolute; display: block; width: 0; height: 0; left: -9px; top: 10px; border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
