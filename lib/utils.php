@@ -44,7 +44,7 @@ if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
   foreach((get_the_category()) as $category){
-    $style = null;//get_category_label_style_attr($category->cat_ID);
+    $style = null;
     $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder" aria-hidden="true"></span> '.$category->cat_name.'</a>';
   }
   return $categories;
@@ -70,10 +70,8 @@ function get_the_nolink_category($id = null, $is_visible = true){
   $display_class = null;
   if (!$is_visible) {
     return;
-    //$display_class = ' display-none';
   }
 
-  //var_dump($categories);
   if ( isset($categories[0]) ) {
     $category = $categories[0];
     return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
@@ -1080,8 +1078,6 @@ function url_to_local($url){
   $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
 
-  // $path = str_replace(content_url(), WP_CONTENT_DIR, $url);
-  // $path = str_replace('\\', '/', $path);
   return $path;
 }
 endif;
@@ -1089,20 +1085,12 @@ endif;
 //ローカルパスを内部URLに変更
 if ( !function_exists( 'local_to_url' ) ):
 function local_to_url($local){
-  // _v($local);
-  // _v(get_abs_home_path());
-  // _v(includes_home_path($local));
-  // _v('----------');
   //URLにサイトアドレスが含まれていない場合
   if (!includes_home_path($local)) {
     return false;
   }
   $url = str_replace(get_abs_home_path(), home_url('/'), $local);
   $url = str_replace('\\', '/', $url);
-  // _v($local);
-  // _v(ABSPATH);
-  // _v(site_url());
-  // _v($url);
 
   return $url;
 }
@@ -1189,7 +1177,6 @@ endif;
 //PWAのマニフェストファイルへのパス
 if ( !function_exists( 'get_theme_pwa_manifest_json_file' ) ):
 function get_theme_pwa_manifest_json_file(){
-  //_v(get_abs_home_path().THEME_NAME.'-manifest.json');
   return get_abs_home_path().THEME_NAME.'-manifest.json';
 }
 endif;
@@ -1198,15 +1185,12 @@ endif;
 if ( !function_exists( 'get_theme_pwa_manifest_json_url' ) ):
 function get_theme_pwa_manifest_json_url(){
   return local_to_url(get_theme_pwa_manifest_json_file());
-  // $url = local_to_url(get_theme_pwa_manifest_json_file());
-  // return str_replace(site_url(), '', $url);
 }
 endif;
 
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_file' ) ):
 function get_theme_pwa_service_worker_js_file(){
-  //_v(get_abs_home_path().THEME_NAME.'-service-worker.js');
   return get_abs_home_path().THEME_NAME.'-service-worker.js';
 }
 endif;
@@ -1215,8 +1199,6 @@ endif;
 if ( !function_exists( 'get_theme_pwa_service_worker_js_url' ) ):
 function get_theme_pwa_service_worker_js_url(){
   return local_to_url(get_theme_pwa_service_worker_js_file());
-  // $url = local_to_url(get_theme_pwa_service_worker_js_file());
-  // return str_replace(site_url(), '', $url);
 }
 endif;
 
