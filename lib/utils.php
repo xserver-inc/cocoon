@@ -769,7 +769,7 @@ endif;
 //ScrollHint
 if ( !function_exists( 'wp_enqueue_scrollhint' ) ):
 function wp_enqueue_scrollhint(){
-  if (is_responsive_table_enable()) {
+  if (is_responsive_table_enable() && (is_singular() || (is_category() && !is_paged())|| (is_tag() && !is_paged()))) {
     //ScrollHintスタイルの呼び出し
     wp_enqueue_style( 'scrollhint-style', get_template_directory_uri() . '/plugins/scroll-hint-master/css/scroll-hint.css' );
     //ScrollHintスクリプトの呼び出し
