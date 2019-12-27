@@ -321,6 +321,14 @@ function is_ad_pos_all_content_middle_visible(){
 }
 endif;
 
+//投稿・固定ページ本文中の広表示数
+define('OP_AD_POS_CONTENT_MIDDLE_COUNT', 'ad_pos_content_middle_count');
+if ( !function_exists( 'get_ad_pos_content_middle_count' ) ):
+function get_ad_pos_content_middle_count(){
+  return get_theme_option(OP_AD_POS_CONTENT_MIDDLE_COUNT, -1);
+}
+endif;
+
 //投稿・固定ページ本文下の広告表示
 define('OP_AD_POS_CONTENT_BOTTOM_VISIBLE', 'ad_pos_content_bottom_visible');
 if ( !function_exists( 'is_ad_pos_content_bottom_visible' ) ):
