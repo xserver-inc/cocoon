@@ -8878,6 +8878,16 @@ twitter-widget {
   /* カーソルをポインターに */
 }
 
+.home main,
+.archive main {
+  z-index: 0;
+}
+
+.ad-index-bottom {
+  position: relative;
+  z-index: -1;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
