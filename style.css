@@ -8075,7 +8075,7 @@ input[type='submit'],
   cursor: pointer;
 }
 
-.container input[type='submit'] {
+input[type='submit'] {
   -webkit-appearance: none;
   border: 1px solid #ccc;
   background-color: #f5f8fa;

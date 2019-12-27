@@ -54,8 +54,8 @@ input[type='submit'],
   cursor: pointer;
 }
 
-.container input[type='submit']{
-	-webkit-appearance: none;
+input[type='submit']{
+  -webkit-appearance: none;
   border: 1px solid $thin;
   background-color: #f5f8fa;
 }
