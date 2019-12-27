@@ -33,10 +33,7 @@ endif;
 //count.jsoonからTwitterのツイート数を取得
 if ( !function_exists( 'fetch_twitter_count' ) ):
 function fetch_twitter_count($url = null) {
-
-  //_v('$res');
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'twitter_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'twitter_'.get_share_cache_ID();
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -136,8 +133,7 @@ endif;
 //Facebookシェア数を取得する
 if ( !function_exists( 'fetch_facebook_count' ) ):
 function fetch_facebook_count($url = null) {
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'facebook_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'facebook_'.get_share_cache_ID();
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -201,9 +197,7 @@ endif;
 
 if ( !function_exists( 'fetch_hatebu_count' ) ):
 function fetch_hatebu_count($url = null) {
-
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'hatebu_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'hatebu_'.get_share_cache_ID();
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -269,9 +263,7 @@ endif;
 //Google＋カウントの取得
 if ( !function_exists( 'fetch_google_plus_count' ) ):
 function fetch_google_plus_count($url = null) {
-
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'google_plus_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'google_plus_'.get_share_cache_ID();
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -337,9 +329,7 @@ endif;
 //Pocketカウントの取得
 if ( !function_exists( 'fetch_pocket_count' ) ):
 function fetch_pocket_count($url = null) {
-
-  global $post;
-  $transient_id = TRANSIENT_SHARE_PREFIX.'pocket_'.$post->ID;
+  $transient_id = TRANSIENT_SHARE_PREFIX.'pocket_'.get_share_cache_ID();
   //DBキャッシュからカウントの取得
   if (is_sns_share_count_cache_enable()) {
     $count = get_transient( $transient_id );
@@ -657,4 +647,26 @@ function is_copy_share_button_visible($option){
 }
 endif;
 
-
+//シェアページのIDを取得する
+if ( !function_exists( 'get_share_cache_ID' ) ):
+function get_share_cache_ID(){
+  $id = 'nuknown';
+  if ( is_singular() ) {
+    global $post;
+    $id = $post->ID;
+  } elseif (is_category() && !is_paged()) {
+    //カテゴリートップページ
+    $cat_id = get_query_var('cat');
+    $id = 'cat_'.$cat_id;
+  } elseif (is_tag() && !is_paged()) {
+    //タグトップページ
+    $name = single_tag_title('', false);
+    $tag = get_term_by('name', $name, 'post_tag');
+    $id = 'tag_'.$tag->term_id;
+  } elseif (is_front_page() && !is_paged()) {
+    //フロントトップページ
+    $id = 'front_top_page';
+  }
+  return $id;
+}
+endif;
