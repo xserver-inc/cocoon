@@ -320,9 +320,13 @@ endif;
 
 //ナンバーボックスの生成
 if ( !function_exists( 'generate_number_tag' ) ):
-function generate_number_tag($name, $value, $placeholder = '', $min = 1, $max = 100, $step = 1){
+function generate_number_tag($name, $value, $placeholder = '', $min = 1, $max = 100, $step = 1, $width = 100){
+  $width_attr = null;
+  if ($width) {
+    $width_attr = ' style="width: '.$width.'px;"';
+  }
   ob_start();?>
-  <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>">
+  <input type="number" name="<?php echo $name; ?>" value="<?php echo $value; ?>" placeholder="<?php echo $placeholder; ?>" min="<?php echo $min; ?>" max="<?php echo $max; ?>" step="<?php echo $step; ?>"<?php echo $width_attr; ?>>
   <?php
   $res = ob_get_clean();
   echo apply_filters('admin_input_form_tag', $res, $name);
@@ -482,9 +486,16 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
 
     //本文中広告用の設定
     if (isset($body_ad_name)){
-      echo '<p>';
-      generate_checkbox_tag( $body_ad_name, $body_ad_value, __( '全てのH2見出し手前に広告を挿入', THEME_NAME ));
-      echo '</p>';
+      echo '<div>';
+      generate_checkbox_tag( $body_ad_name, $body_ad_value, __( '広告の表示数を制御する', THEME_NAME ));
+        echo '<div class="indent">';
+        generate_label_tag(OP_AD_POS_CONTENT_MIDDLE_COUNT, __( '先頭から', THEME_NAME ));
+        generate_number_tag(OP_AD_POS_CONTENT_MIDDLE_COUNT,  get_ad_pos_content_middle_count(), -1, -1, 100, 1, 70);
+        echo '<span>'.__( '個まで', THEME_NAME ).'</span>';
+        echo '<br>';
+        echo '<span>'.__( '※-1で全てのH2見出し手前に広告を挿入', THEME_NAME ).'</span>';
+        echo '</span>';
+      echo '</br>';
     }
     ?>
     </div>

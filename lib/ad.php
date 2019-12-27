@@ -270,16 +270,14 @@ function add_ads_before_1st_h2($the_content) {
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
     //H2見出しが本文中にある場合のみ
     if ( $h2result ) {
-      //本文全てのH2見出し手前に広告を表示するか
-      if (is_ad_pos_all_content_middle_visible()) {
-        //無制限に置換する
-        $limit = -1;
-      } else {
-        //最初のH2の手前に広告を挿入（最初のH2を置換）
+      //本文全てのH2見出し手前に広告を表示しない場合
+      if (!is_ad_pos_all_content_middle_visible()) {
+        //最初のH2の手前のみに広告を挿入（最初のH2を置換）
         $limit = 1;
+      } else {
+        //無制限に置換する
+        $limit = get_ad_pos_content_middle_count();
       }
-
-
       $the_content = preg_replace(H2_REG, $ad_template.PHP_EOL.PHP_EOL.$h2result, $the_content, $limit);
     }
   }
