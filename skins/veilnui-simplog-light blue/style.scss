@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/*!
+  Skin Name: Veilnui Simplog (light blue)
+  Description: veilnuiが作成したシンプルなブログスキン（青色）
+  Skin URI: https://simplog.veilnui.org
+  Author: veilnui
+  Author URI: https://veilnui.net/
+  Screenshot URI: images/image.png
+  Version: 1.1
+  License: http://www.gnu.org/licenses/gpl-2.0.html/ GPL v2 or later
+*/
+
+//-------
+// Fields
+//-------
+// Font color
+$font-color: #333333;
+// Background color
+$white-color: white;
+// Hover color
+$hover-color: #E1F5FE;
+// Base color (60%)
+$base-color: #E1F5FE;
+// Key color（10%）
+$key-color: #0277BD;
+// Main color（30%）
+$main-color-light: #81D4FA;
+$main-color-midium: #29B6F6;
+$main-color-dark: #039BE5;
+
+// Base file import
+@import "..\\_base.scss";

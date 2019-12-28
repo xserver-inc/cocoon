@@ -1,0 +1,1137 @@
+// Author: veilnui
+// License : GNU GPL v2 or later.
+
+
+//-------------
+// Mixin
+// ミックスイン
+//-------------
+// Prosessing common implement of pseudo elements.
+// Recommended use both this and "position mixin".
+// 
+// Setting value(default value)
+// $pos: position property(absolute)
+// $con: string(empty string)
+//
+// 
+// 擬似要素でよく使用するミックスイン
+// positionミックスインとの併用をおすすめします
+// 
+// 設定値（デフォルト値）
+// $pos: positionプロパティ（absolute）
+// $con: 文字列（空文字）
+@mixin pseudo($pos: absolute, $con: "") {
+  position: $pos;
+  content: $con;
+}
+// Positioning processing.
+// Recommended use both this and "pseudo mixin".
+// 
+// Setting value(default value)
+// $top: top(auto)
+// $lef: left(auto)
+// $bot: bottom(auto)
+// $rig: right(auto)
+// 
+// 
+// 位置設定のミックスイン
+// pseudoミックスインとの併用をおすすめします
+// 
+// 設定値（デフォルト値）
+// $top: 上（auto）
+// $lef: 左（auto）
+// $bot: 下（auto）
+// $rig: 右（auto）
+@mixin position($top: auto, $lef: auto, $bot: auto, $rig: auto) {
+  top: $top;
+  left: $lef;
+  bottom: $bot;
+  right: $rig;
+}
+// Element size setting.
+//
+// Setting value
+// $wid: width
+// $hei: height
+// 
+// 
+// 要素のサイズ設定
+//
+// 設定値
+// $wid: 横幅
+// $hei: 縦幅
+@mixin size($wid, $hei) {
+  width: $wid;
+  height: $hei;
+}
+// gradient processing
+// 
+// Setting value(default value)
+// $dir: direct(right)
+// $start: start color($key-color)
+// $end: end color($main-color)
+// 
+// 
+// グラデーション作成
+// 
+// 設定値（デフォルト値）
+// $dir: 方向（右）
+// $start: 開始の色（$main-color-dark）
+// $end: 終わりの色（$main-color-midium）
+@mixin linear-gradient($dir: right, $start: $main-color-dark, $end: $main-color-midium) {
+  background: linear-gradient(to $dir, $start, $end);
+}
+
+//--------------
+// Animation
+// アニメーション
+//--------------
+// fade in animation
+// フェードインアニメーション
+@keyframes fadeIn {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+//---------
+// Selector
+// セレクタ
+//---------
+// all 全体
+body {
+  background-color: $base-color !important;
+}
+
+// footer float prevent フッター浮き上がり防止
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#content {
+  margin-bottom: 20px;
+}
+#footer {
+  margin-top: auto;
+}
+
+// Header ヘッダー
+#header {
+  background-color: $main-color-dark;
+  .tagline, .site-name-text {
+    color: $white-color;
+  }
+}
+
+// Navigation bar ナビゲーションメニュー
+#navi {
+  background-color: $main-color-midium;
+  a:hover {
+    background-color: $main-color-midium;
+  }
+  .item-label {
+    position: relative;
+    color: $white-color;
+    &::after {
+      @include pseudo();
+      @include position(auto, 0, 0, auto);
+      @include size(100%, 2px);
+      background-color: $white-color;
+      transform: scale(0, 1);
+      transform-origin: center top;
+      transition: transform 0.3s;
+    }
+    &:hover::after {
+      transform: scale(1, 1);
+    }
+  }
+  .sub-menu {
+    background-color: $main-color-midium;
+    color: $white-color;
+  }
+}
+
+// Go to top button Go to topボタン
+#go-to-top .go-to-top-button {
+  @include size(56px, 56px);
+  background-color: $main-color-dark;
+  border-radius: 50%;
+  &:hover .fa {
+    transform: rotate(360deg);
+    transition: 0.2s;
+  }
+  .fa {
+    color: $white-color;
+  }
+}
+
+// Breadcrumb パンくずリスト
+#breadcrumb {
+  span, a {
+    color: $main-color-midium;
+  }
+}
+
+// Sidebar サイドバー
+#sidebar-menu-content {
+  h3 {
+    background-color: $main-color-midium;
+    color: $white-color;
+    padding: 5px 5px 5px 42px;
+    line-height: 2.5;
+    position: relative;
+    z-index: 0;
+    &::after {
+      @include pseudo();
+      @include position(-2px, -2px, auto, auto);
+      z-index: 1;
+      border: 0;
+      border-left: solid 40px white;
+      border-bottom: solid 79px transparent;
+    }
+  }
+}
+#sidebar {
+  @extend #sidebar-menu-content;
+  // animation: fadeIn 1s ease-out 0s 1 normal;
+}
+
+// Sidebar widget サイドバーウェジット
+#sidebar, #slide-in-sidebar {
+  // RSS feed RSSフィード
+  .widget_rss {
+    .widget-title {
+      .rss-widget-icon {
+        display: none;
+      }
+      .rsswidget {
+        color: $white-color;
+        text-decoration: none;
+        &:hover {
+          background-color: $main-color-midium;
+        }
+      }
+    }
+    ul li {
+      border-radius: 4px;
+      padding: 0.5em;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+      a {
+        background-color: transparent;
+        border-bottom: solid transparent 1px;
+        &:hover {
+          border-bottom: solid $main-color-midium 1px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+  // CTA box CTAボックス
+  .widget_cta_box {
+    .cta-box {
+      border: solid $main-color-midium 1px;
+      background-color: $white-color;
+    }
+    .cta-heading {
+      color: $main-color-dark;
+    }
+    .cta-content {
+      color: $font-color;
+    }
+  }
+  // Facebook box Facebookボックス
+  // SNS follow button SNSフォローボタン
+  .widget_sns_follow_buttons {
+    .sns-follow {
+      .feedly-button:hover {
+        background-color: #2BB24C;
+        opacity: 0.7;
+      }
+      .rss-button:hover {
+        background-color: #F26522;
+        opacity: 0.7;
+      }
+    }
+  }
+  // Recommended cards おすすめカード
+  // PC text PCテキスト
+  // Mobile text Mobileテキスト
+  // Navi cards ナビカード
+  .widget_navi_entries {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    .navi-entry-card-link::after {
+      border-top: solid $main-color-midium 2px;
+      border-right: solid $main-color-midium 2px;
+    }
+    // ボーダーあり
+    .border-partition {
+      a {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: solid $main-color-midium 1px;
+        &:first-of-type {
+          border-top: solid $main-color-midium 1px;
+        }
+      }
+    }
+    // 囲み枠
+    .border-square a {
+      border: solid $main-color-midium 1px;
+    }
+    // 大きなブロック
+    .card-large-image a:hover {
+      background-color: transparent;
+    }
+  }
+  // Profile プロファイル
+  .widget_author_box {
+    .author-box {
+      border-color: $main-color-midium;
+      .author-widget-name {
+        color: $main-color-midium;
+        font-weight: bold;
+      }
+      .follow-button {
+        border: none;
+        color: $white-color;
+      }
+      .website-button {
+        background-color: #002561;
+      }
+      .twitter-button {
+        background-color: #1DA1F2;
+      }
+      .facebook-button {
+        background-color: #3B5998;
+      }
+      .hatebu-button {
+        background-color: #2C6EBD;
+      }
+      .instagram-button {
+        background-color: #405DE6;
+      }
+      .youtube-button {
+        background-color: #CD201F;
+      }
+      .linkedin-button {
+        background-color: #0077B5;
+      }
+      .note-button {
+        background-color: #41C9B4;
+      }
+      .flickr-button {
+        background-color: #111111;
+      }
+      .pinterest-button {
+        background-color: #BD081C;
+      }
+      .line-button {
+        background-color: #00C300;
+      }
+      .slack-button {
+        background-color: #E01563;
+      }
+      .amazon-button {
+        background-color: #FF9900;
+      }
+      .rakuten-room-button {
+        background-color: #C61E79;
+      }
+      .github-button {
+        background-color: #4078C0;
+      }
+      .codepen-button {
+        background-color: #333333;
+      }
+      .feedly-button {
+        background-color: #2BB24C;
+      }
+      .rss-button {
+        background-color: #F26522;
+      }
+    }
+  }
+  // Ranking ランキング
+  .widget_item_ranking {
+    .border-element {
+      border-radius: 4px;
+      border: solid $main-color-midium 1px;
+    }
+  }
+  // Popular posts 人気記事
+  .widget_popular_entries {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    .popular-entry-card-link::after {
+      border-top: solid $main-color-midium 2px;
+      border-right: solid $main-color-midium 2px;
+    }
+    // ボーダーあり
+    .border-partition {
+      a {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: solid $main-color-midium 1px;
+        &:first-of-type {
+          border-top: solid $main-color-midium 1px;
+        }
+      }
+    }
+    // 囲み枠
+    .border-square a {
+      border: solid $main-color-midium 1px;
+    }
+    // 大きなブロック
+    .card-large-image a:hover {
+      background-color: transparent;
+    }
+  }
+  // Ad 広告
+  // PC ad PC広告
+  // Mobile ad Mobile広告
+  // New post 新着記事
+  .widget_new_entries {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    .new-entry-card-link::after {
+      border-top: solid $main-color-midium 2px;
+      border-right: solid $main-color-midium 2px;
+    }
+    // ボーダーあり
+    .border-partition {
+      a {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: solid $main-color-midium 1px;
+        &:first-of-type {
+          border-top: solid $main-color-midium 1px;
+        }
+      }
+    }
+    // 囲み枠
+    .border-square a {
+      border: solid $main-color-midium 1px;
+    }
+    // 大きなブロック
+    .card-large-image a:hover {
+      background-color: transparent;
+    }
+  }
+  // Comments コメント
+  .widget_recent_comments {
+    .recent-comments {
+      .recent-comment-content {
+        border: solid $main-color-midium 1px;
+        &::before, &::after {
+          border-bottom-color: $main-color-midium;
+        }
+      }
+      a:hover {
+        background-color: $white-color;
+      }
+    }
+  }
+  // Toc 目次
+  .widget_toc {
+    .toc-content {
+      li a:hover {
+        transition: all 0.3s ease;
+        color: $main-color-midium;
+        text-decoration: none;
+      }
+    }
+  }
+  // related post 関連記事
+  .widget_related_entries {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    .widget-related-entry-card-link::after {
+      border-top: solid $main-color-midium 2px;
+      border-right: solid $main-color-midium 2px;
+    }
+    // ボーダーあり
+    .border-partition {
+      a {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: solid $main-color-midium 1px;
+        &:first-of-type {
+          border-top: solid $main-color-midium 1px;
+        }
+      }
+    }
+    // 囲み枠
+    .border-square a {
+      border: solid $main-color-midium 1px;
+    }
+    // 大きなブロック
+    .card-large-image a:hover {
+      background-color: transparent;
+    }
+  }
+  // Archives アーカイブ
+  .widget_archive {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    select {
+      border: none;
+      border-bottom: solid $main-color-midium 1px;
+      background-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:focus {
+        transition: all 0.3s ease;
+        background-color: $hover-color;
+      }
+    }
+  }
+  // Custom HTML カスタムHTML
+  // Category カテゴリー
+  .widget_categories {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    select {
+      border: none;
+      border-bottom: solid $main-color-midium 1px;
+      background-color: transparent;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:focus {
+        transition: all 0.3s ease;
+        background-color: $hover-color;
+      }
+    }
+  }
+  // Calendar カレンダー
+  .widget_calendar {
+    #wp-calendar {
+      caption {
+        color: $white-color;
+        border-color: $key-color;;
+        background-color: $main-color-dark;
+      }
+      thead tr th {
+        color: $white-color;
+        border-color: $key-color;
+        background-color: $main-color-midium;
+      }
+      tbody tr td {
+        color: $white-color;
+        border-color: $key-color;
+        background-color: $main-color-light;
+        a {
+          border-radius: 0;
+          background-color: $main-color-light;
+          color: $white-color;
+        }
+        &#today, &#today a {
+          background-color: $main-color-midium;
+          color: $white-color;
+        }
+      }
+      tfoot {
+        display: none;
+      }
+    }
+  }
+  // Gallery ギャラリー
+  .widget_media_gallery img {
+    border: none;
+  }
+  // Tag cloud タグクラウド
+  .widget_tag_cloud {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+      .fa-tag {
+        color: $main-color-midium;
+      }
+    }
+  }
+  // Text テキスト
+  // Navi menu ナビゲーションメニュー
+  .widget_nav_menu {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  // Meta data メタデータ
+  .widget_meta {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  // Video 動画
+  // Pages 固定ページ
+  .widget_pages {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  // Recent comment 最近のコメント
+  // Recent post 最近の投稿
+  .widget_recent_entries {
+    a {
+      border-radius: 4px;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  // Search box 検索ボックス
+  .widget_search {
+    .search-edit {
+      border-width: 0 0 2px 0;
+      border-radius: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom: 2px solid $main-color-midium;
+      &:focus {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+        ~ .search-submit {
+          transition: all 0.3s ease;
+          color: $main-color-midium;
+        }
+      }
+    }
+    .search-submit:hover {
+      transition: all 0.3s ease;
+      color: $main-color-midium;
+    }
+  }
+  // Image 画像
+  .widget_media_image {
+    .wp-caption {
+      border: none;
+      background-color: transparent;
+    }
+  }
+  // Music 音楽
+}
+
+// pager post navi ページ送りナビ
+#pager-post-navi {
+  // displya border settings ボーダー表示設定あり
+  &.post-navi-border a {
+    border-top: solid $main-color-midium 1px;
+    border-bottom: solid $main-color-midium 1px;
+  }
+  &.post-navi-border {
+    .prev-post~.next-post {
+      border-top: none;
+    }
+  }
+  a {
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: $hover-color;
+    }
+    .fa {
+      color: $main-color-dark;
+    }
+  }
+}
+
+// blog card ブログカード
+#main {
+  // animation: fadeIn 1s ease-out 0s 1 normal;
+  // Hover to float
+  // ホバーで浮き上がる
+  // .entry-card-wrap {
+  //  color: $font-color;
+  //  position: relative;
+  //  z-index: 2;
+  //  background-color: $white-color;
+  //  border-radius: 4px;
+  //  margin-bottom: 1em;
+  //  &:hover {
+  //    color: $font-color;
+  //    box-shadow: 0 10px 20px -5px black;
+  //    transform: translateY(-2px);
+  //    transition: all 0.3s ease;
+  //  }
+  //}
+  #list {
+    &.ecb-entry-border{
+      a {
+        border-top: solid 1px $main-color-midium;
+        margin-bottom: 0;
+        border-radius: 0;
+        &:nth-last-child(1) {
+          border-bottom: solid 1px $main-color-midium;
+        }
+      }
+      margin-bottom: 1em;
+    } 
+    .entry-card-wrap {
+      border: none;
+      color: $font-color;
+      border-radius: 4px;
+      margin-bottom: 1em;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+#main .cat-label {
+  @include position(0, 0, auto, auto);
+  border: none;
+}
+// internal and outside blog card 内部、外部ブログカード
+#main .article .blogcard {
+  border: solid $main-color-midium 1px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+// Password protect post パスワード保護記事
+#main .post-password-form {
+  input[type="password"] {
+    border-radius: 0;
+    border: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: solid $main-color-midium 1px;
+    background-color: transparent;
+    &:focus {
+      transition: all 0.3s ease;
+      background-color: $hover-color;
+    }
+  }
+  input[type="submit"] {
+    margin: 1em 0;
+    display: inline-block;
+    background-color: $main-color-midium;
+    border: none;
+    border-radius: 4px;
+    color: $white-color;
+  }
+}
+
+// relation post 関連記事
+#related-entries {
+  // ボーダーあり
+  &.recb-entry-border a {
+    border: none;
+    border-top: solid $main-color-midium 1px;
+    border-radius: 0;
+    &:nth-last-child(1) {
+      border-bottom: solid $main-color-midium 1px;
+    }
+  }
+  .related-entry-card-wrap {
+    margin: 0;
+    background-color: transparent;
+    border-radius: 4px;
+    &:hover {
+      transition: all 0.3s ease;
+      background-color: $hover-color;
+    }
+  }
+  
+}
+
+// Previous and Next 前、次へボタン
+#main {
+  .pagination-previous-link, .pagination-next-link {
+    color: $white-color;
+    background-color: $main-color-midium;
+    border: none;
+    border-radius: 4px;
+  }
+  .pagination {
+    span {
+      color: $white-color;
+      border: none;
+      border-radius: 4px;
+      background-color: $main-color-midium;
+    }
+    a {
+      color: $white-color;
+      border: none;
+      border-radius: 4px;
+      background-color: $main-color-midium;
+    }
+  }
+}
+
+// Toc 目次
+#toc, .toc {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  border-color: $main-color-midium;
+  border-radius: 4px;
+  .toc-title {
+    padding: 0;
+    background-color: $main-color-midium;
+    color: $white-color;
+    &::after {
+      color: $white-color;
+      transition: text-decoration 0.3s;
+    }
+  }
+  .toc-content {
+    padding: 0;
+    .toc-list {
+      margin: 0 1em;
+      li {
+        margin: 0;
+        a {
+          transition: all 0.3s ease;
+          &:hover {
+            color: $main-color-midium;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// General block 一般ブロック
+#main {
+  // Paragraph 段落
+  // Image 画像
+  // Heading 見出し
+  .entry-header h1.entry-title {
+      @include linear-gradient();
+      color: $white-color;
+      padding: 1em;
+  }
+  .entry-content {
+    h2, h3, h4, h5, h6 {
+      @include linear-gradient();
+      position: relative;
+      color: transparent;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -ms-background-clip: text;
+      border: 0;
+      &::after {
+        @include linear-gradient();
+        @include pseudo();
+        @include position(auto, 0px, 0px, auto);
+      }
+    }
+    h2, h3 {
+      padding: 0.5em;
+    }
+    h2::after {
+      @include size(100%, 5px);
+    }
+    h3::after {
+      @include size(100%, 3px);
+    }
+    h4, h5, h6 {
+      padding: 0.25em;
+      &::after {
+        @include size(100%, 1px);
+      }
+    }
+  }
+  // Garally ギャラリー
+  // List リスト
+  // Quote 引用
+  .wp-block-quote {
+    border: solid $main-color-dark 1px;
+    background-color: $hover-color;
+    &::before, &::after {
+      color: $main-color-dark;
+    }
+    cite {
+      color: $main-color-midium;
+    }
+  }
+  // Music 音楽
+  // Cover カバー
+  // File ファイル
+  .wp-block-file button {
+    background-color: $main-color-midium;
+  }
+  // Movie 動画
+}
+// Format フォーマット
+#main {
+  // Source code ソースコード
+  .wp-block-code {
+    border: none;
+  }
+  // Classic クラシック
+  // Custom HTML カスタムHTML
+  // Formatted 整形済み
+  .wp-block-preformatted {
+    border: solid $main-color-dark 1px;
+    background-color: $hover-color;
+  }
+  // Pull Quote プルクオート
+  blockquote {
+    border: solid $main-color-dark 1px;
+    background-color: $hover-color;
+    &::before, &::after {
+      color: $main-color-dark;
+    }
+    cite {
+      color: $main-color-midium;
+    }
+  }
+  // Table テーブル
+  .wp-block-table {
+    tbody {
+      border: solid $main-color-midium 1px;
+      tr {
+        &:nth-child(odd) {
+          background-color: $main-color-light;
+        }
+        &:nth-child(even) {
+          background-color: $white-color;
+        }
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+  // Verse 詩
+  .wp-block-verse {
+    background-color: $hover-color;
+    border: solid $main-color-dark 1px;
+  }
+}
+// Widget block ウィジェットブロック
+#main {
+  // Calendar カレンダー
+  .wp-block-calendar {
+    #wp-calendar {
+      caption {
+        color: $white-color;
+        border-color: $key-color;;
+        background-color: $main-color-dark;
+      }
+      thead tr th {
+        color: $white-color;
+        border-color: $key-color;
+        background-color: $main-color-midium;
+      }
+      tbody tr td {
+        color: $white-color;
+        border-color: $key-color;
+        background-color: $main-color-light;
+        a {
+          border-radius: 0;
+          background-color: $main-color-light;
+          color: $white-color;
+        }
+        &#today, &#today a {
+          background-color: $main-color-midium;
+          color: $white-color;
+        }
+      }
+      tfoot {
+        display: none;
+      }
+    }
+  }
+  // Archive アーカイブ
+  .wp-block-archives {
+    select {
+      border: solid $main-color-midium 1px;
+      background-color: $hover-color;
+    }
+  }
+  // Category カテゴリー
+  .wp-block-categories {
+    select {
+      border: solid $main-color-midium 1px;
+      background-color: $hover-color;
+    }
+  }
+  // Search box 検索ボックス
+  .wp-block-search {
+    display: flex;
+    flex-direction: row;
+    input {
+      width: auto;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: solid $main-color-midium 2px;
+      &:focus {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+    button {
+      display: inline-block;
+      padding: 1em 2em;
+      background-color: $main-color-midium;
+      border: none;
+      color: $white-color;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+  }
+  // Tag cloud タグクラウド
+  .wp-block-tag-cloud {
+    a {
+      text-decoration: none;
+      border-radius: 4px;
+      color: $font-color;
+      &:hover {
+        background-color: $hover-color;
+        transition: all 0.3s ease;
+      }
+      .fa-tag {
+        color: $main-color-midium;
+      }
+    }
+  }
+}
+
+// #region SNS SNSボタン
+#main .page {
+  .sns-share, .sns-follow {
+    display: none;
+  }
+}
+
+// Comments コメント
+#comment-area {
+  .reply a {
+    border: none;
+    color: $white-color;
+    background-color: $main-color-midium;
+  }
+}
+#comment-reply-btn {
+  color: $white-color;
+  background-color: $main-color-midium;
+  border-radius: 4px;
+  border: none;
+}
+#comment, #author, #email, #url{
+  border: none;
+  border-bottom: 2px solid $main-color-midium;
+  border-radius: 0;
+  &:focus {
+    background-color: $hover-color;
+    transition: all 0.3s ease;
+  }
+}
+#submit {
+  color: $white-color;
+  background-color: $main-color-midium;
+  border-radius: 4px;
+  border: none;
+}
+
+// Footer フッター
+#footer {
+  color: $white-color;
+  background-color: black;
+  .site-name-text {
+    color: $white-color;
+  }
+}
+body .mobile-footer-menu-buttons {
+  background-color: $main-color-dark;
+  .menu-button {
+    &:hover {
+      background-color: $main-color-dark;
+    }
+    .menu-button-in {
+      color: $white-color;
+    }
+  }
+  // Menu メニュー
+  .navi-menu-button {
+    .navi-menu-content {
+      background-color: $base-color;
+      a {
+        color: $main-color-dark;
+        margin: 0.5em 0 0.5em 0;
+        border-bottom: solid $main-color-midium 1px;
+        &:hover {
+          background-color: $base-color;
+        }
+      }
+      .fa {
+        color: $main-color-dark;
+      }
+    }
+  }
+  // Search box 検索ボックス
+  .search-menu-button {
+    .search-edit {
+      border-width: 0 0 2px 0;
+      border-radius: 4px;
+      border-bottom: 2px solid $main-color-midium;
+      background-color: $hover-color;
+    }
+    .search-submit {
+      color: $main-color-midium;
+    }
+  }
+}
