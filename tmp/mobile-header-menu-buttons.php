@@ -11,7 +11,7 @@ if (!is_amp() && (is_mobile_button_layout_type_header_mobile_buttons() || is_mob
 
 <?php
 if (has_nav_menu( NAV_MENU_HEADER_MOBILE_BUTTONS )) {
-  //モバイルフッターメニュー
+  //モバイルヘッダーメニュー
   get_template_part( 'tmp/mobile-header-custom-navi-buttons' );
 } else {
   //デフォルトモバイルボタン
