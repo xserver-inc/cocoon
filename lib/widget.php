@@ -79,8 +79,6 @@ endif;
 add_filter('widget_title', 'widget_title_hidable');
 if ( !function_exists( 'widget_title_hidable' ) ):
 function widget_title_hidable($title){
-  // _v($title);
-  // _v(strpos($title, '!') === 0);
   //ウィジェットタイトルの最初の一文字が！のとき
   if (is_first_char_exclamation($title)) {
     return null;
