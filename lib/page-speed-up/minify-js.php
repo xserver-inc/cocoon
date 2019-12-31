@@ -106,15 +106,15 @@ function tag_code_to_minify_js($buffer) {
             // if (includes_string($url, '/plugins/lity/dist/lity.min.js')) {
             //   _v($js);
             // }
-            if ($js) {
-              $start_name_url = $url.'-start';
-              $start_url = 'performance.mark("'.$start_name_url.'");';
-              $end_name_url = $url.'-end';
-              $end_url = 'performance.mark("'.$end_name_url.'");';
-              $measure_url = 'performance.measure("'.$url.'", "'.$start_name_url.'", "'.$end_name_url.'");';
-              $js = $start_url.$js.$end_url.$measure_url;
-              //_v($js);
-            }
+            // if ($js) {
+            //   $start_name_url = $url.'-start';
+            //   $start_url = 'performance.mark("'.$start_name_url.'");';
+            //   $end_name_url = $url.'-end';
+            //   $end_url = 'performance.mark("'.$end_name_url.'");';
+            //   $measure_url = 'performance.measure("'.$url.'", "'.$start_name_url.'", "'.$end_name_url.'");';
+            //   $js = $start_url.$js.$end_url.$measure_url;
+            //   //_v($js);
+            // }
 
 
             //縮小化可能なJSな時
@@ -136,6 +136,7 @@ function tag_code_to_minify_js($buffer) {
         if ($js_code) {
           $js = minify_js($js_code);
           //JSON-LDスクリプトは除外
+          /*
           if ($js && !preg_match('/<script.*? type="application\/ld\+json".*?>/i', $script_tag)) {
             $start_name_in = 'inline-js-'.$i.'-start';
             $start_in = 'performance.mark("'.$start_name_in.'");';
@@ -145,6 +146,7 @@ function tag_code_to_minify_js($buffer) {
             $js = $start_in.$js.$end_in.$measure_in;
             //_v($js);
           }
+          */
 
           //インラインタイプのscriptタグを縮小化して置換する
           $buffer = str_replace($script_tag, '<script'.$attr_code.'>'.$js.'</script>', $buffer);
