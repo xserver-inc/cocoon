@@ -27,13 +27,13 @@ class TOCWidgetItem extends WP_Widget {
     $title = !empty($instance['title']) ? $instance['title'] : '';
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     $title = apply_filters( 'toc_widget_title', $title, $instance, $this->id_base );
+    $depth = !empty($instance['depth']) ? $instance['depth'] : 6;
+    $depth = apply_filters( 'toc_widget_depth', $depth, $instance, $this->id_base );
 
     if ( is_singular() ){
-      //global $_TOC_WIDGET_OR_SHORTCODE_USE;
-
       $harray = array();
       $the_content = get_toc_expanded_content();
-      $html = get_toc_tag($the_content, $harray, true);
+      $html = get_toc_tag($the_content, $harray, true, $depth);
 
       //目次が出力されている場合
       if ($html) {
@@ -59,21 +59,37 @@ class TOCWidgetItem extends WP_Widget {
     $instance = $old_instance;
     if (isset($new_instance['title']))
       $instance['title'] = strip_tags($new_instance['title']);
+    if (isset($new_instance['depth']))
+      $instance['depth'] = strip_tags($new_instance['depth']);
     return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避
       $instance = array(
         'title' => null,
+        'depth' => null,
       );
     }
     $title = esc_attr(!empty($instance['title']) ? $instance['title'] : '');
+    $depth = esc_attr(!empty($instance['depth']) ? $instance['depth'] : 6);
     ?>
     <?php //タイトル入力フォーム ?>
     <p>
       <?php
       generate_label_tag($this->get_field_id('title'), __('タイトル', THEME_NAME) );
       generate_textbox_tag($this->get_field_name('title'), $title, '');
+       ?>
+    </p>
+    <?php //深さ入力フォーム ?>
+    <p>
+      <?php
+      generate_label_tag($this->get_field_id('depth'), __('目次の深さ', THEME_NAME) );
+      echo '<br>';
+      $dephths = array();
+      for ($i=2; $i <= 6; $i++) {
+        $dephths[$i] = 'H'.$i.__( '見出しまで表示', THEME_NAME );
+      }
+      generate_selectbox_tag($this->get_field_name('depth'), $dephths,$depth);
        ?>
     </p>
     <?php

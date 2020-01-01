@@ -702,9 +702,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
-.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
-.admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 20px; margin-top: 0.5em; }
-.admin-settings .demo .toc ul { list-style: none; padding-left: 5px; }
+.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; line-height: 2; }
+.admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
+.admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
+.admin-settings .demo .toc ul { list-style: none; }
 .admin-settings .demo .toc a { color: #333; text-decoration: none; }
 .admin-settings .demo .toc a:hover { text-decoration: underline; }
 .admin-settings .demo .toc-center { margin: 1em auto; }
@@ -2242,9 +2243,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
-.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
-.admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 20px; margin-top: 0.5em; }
-.admin-settings .demo .toc ul { list-style: none; padding-left: 5px; }
+.admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; line-height: 2; }
+.admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
+.admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
+.admin-settings .demo .toc ul { list-style: none; }
 .admin-settings .demo .toc a { color: #333; text-decoration: none; }
 .admin-settings .demo .toc a:hover { text-decoration: underline; }
 .admin-settings .demo .toc-center { margin: 1em auto; }
