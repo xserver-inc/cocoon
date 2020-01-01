@@ -75,11 +75,13 @@ endif;
 //スキンファイルリストの並べ替え用の関数
 if ( !function_exists( 'skin_files_comp' ) ):
 function skin_files_comp($a, $b) {
-  $f1 = (float)$a['priority'];
-  $f2 = (float)$b['priority'];
+  $f1 = (float)isset($a['priority']) ? $a['priority'] : 99999999999;
+  $f2 = (float)isset($b['priority']) ? $b['priority'] : 99999999999;
   //優先度（priority）で比較する
   if ($f1 == $f2) {
-      return $a['skin_name'] > $b['skin_name'];
+      $n1 = (float)isset($a['skin_name']) ? $a['skin_name'] : 99999999999;
+      $n2 = (float)isset($b['skin_name']) ? $b['skin_name'] : 99999999999;
+      return $n1 > $n2;
   }
   return ($f1 < $f2) ? -1 : 1;
 }
