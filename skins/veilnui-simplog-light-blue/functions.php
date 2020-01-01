@@ -1,11 +1,11 @@
 <?php
 /*!
-  Skin Name: Veilnui Simplog (light green)
-  Description: veilnuiが作成したシンプルなブログスキン（明るい緑色）
+  Skin Name: Veilnui Simplog (light blue)
+  Description: veilnuiが作成したシンプルなブログスキン（青色）
   Skin URI: https://simplog.veilnui.org
   Author: veilnui
   Author URI: https://veilnui.net/
-  Screenshot URI: images/image.png
+  Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-light-blue/images/image.png
   Version: 1.1
   License: http://www.gnu.org/licenses/gpl-2.0.html/ GPL v2 or later
 */
