@@ -79,7 +79,7 @@ function skin_files_comp($a, $b) {
   $f2 = (float)$b['priority'];
   //優先度（priority）で比較する
   if ($f1 == $f2) {
-      return 0;
+      return $a['skin_name'] > $b['skin_name'];
   }
   return ($f1 < $f2) ? -1 : 1;
 }
