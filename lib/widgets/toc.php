@@ -83,13 +83,17 @@ class TOCWidgetItem extends WP_Widget {
     <?php //深さ入力フォーム ?>
     <p>
       <?php
-      generate_label_tag($this->get_field_id('depth'), __('目次の深さ', THEME_NAME) );
+      generate_label_tag($this->get_field_id('depth'), __('目次表示の深さ', THEME_NAME) );
       echo '<br>';
-      $dephths = array();
-      for ($i=2; $i <= 6; $i++) {
-        $dephths[$i] = 'H'.$i.__( '見出しまで表示', THEME_NAME );
-      }
-      generate_selectbox_tag($this->get_field_name('depth'), $dephths,$depth);
+      $options = array(
+        '2' => __( 'H2見出しまで', THEME_NAME ),
+        '3' => __( 'H3見出しまで', THEME_NAME ),
+        '4' => __( 'H4見出しまで', THEME_NAME ),
+        '5' => __( 'H5見出しまで', THEME_NAME ),
+        '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
+      );
+      generate_selectbox_tag($this->get_field_name('depth'), $options, $depth);
+      generate_tips_tag(__( 'Cocoon設定「目次」タブの「目次表示の深さ」の設定が優先されます。', THEME_NAME ));
        ?>
     </p>
     <?php
