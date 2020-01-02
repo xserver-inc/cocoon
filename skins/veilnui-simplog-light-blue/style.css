@@ -51,11 +51,11 @@ body {
 #navi a:hover {
   background-color: #29B6F6;
 }
-#navi .item-label {
+#navi a {
   position: relative;
   color: white;
 }
-#navi .item-label::after {
+#navi a::after {
   position: absolute;
   content: "";
   top: auto;
@@ -69,7 +69,7 @@ body {
   transform-origin: center top;
   transition: transform 0.3s;
 }
-#navi .item-label:hover::after {
+#navi a:hover::after {
   transform: scale(1, 1);
 }
 #navi .sub-menu {
