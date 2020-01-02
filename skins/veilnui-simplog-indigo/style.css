@@ -38,6 +38,10 @@ body {
   margin-top: auto;
 }
 
+.footer a {
+  color: white;
+}
+
 #header-container {
   background-color: #3949AB;
 }
