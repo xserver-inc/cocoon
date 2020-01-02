@@ -7,7 +7,7 @@
   Author URI: https://veilnui.net/
   Priority: 9840001000
   Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-cyan/images/image.png
-  Version: 1.1
+  Version: 1.1.4
   License: http://www.gnu.org/licenses/gpl-2.0.html/ GPL v2 or later
   Visibility: false
 */
@@ -39,19 +39,42 @@ body {
   margin-top: auto;
 }
 
-#header {
+#header-container {
   background-color: #00ACC1;
 }
-#header .tagline, #header .site-name-text {
+#header-container .tagline, #header-container .site-name-text {
+  color: white;
+}
+#header-container #header {
+  background-color: #00ACC1;
+}
+#header-container .hlt-top-menu {
+  background-color: #00ACC1;
+}
+#header-container .hlt-top-menu #navi {
+  background-color: #00ACC1;
+}
+#header-container .hlt-top-menu #navi a:hover {
+  background-color: #00ACC1;
+}
+#header-container .hlt-top-menu #navi .sub-menu {
+  background-color: #00ACC1;
+  color: white;
+}
+#header-container .hlt-center-logo {
+  background-color: #26C6DA;
+}
+#header-container .hlt-center-logo #navi {
+  background-color: #26C6DA;
+}
+#header-container .hlt-center-logo #navi a:hover {
+  background-color: #26C6DA;
+}
+#header-container .hlt-center-logo #navi .sub-menu {
+  background-color: #26C6DA;
   color: white;
 }
 
-#navi {
-  background-color: #26C6DA;
-}
-#navi a:hover {
-  background-color: #26C6DA;
-}
 #navi a {
   position: relative;
   color: white;
@@ -72,10 +95,6 @@ body {
 }
 #navi a:hover::after {
   transform: scale(1, 1);
-}
-#navi .sub-menu {
-  background-color: #26C6DA;
-  color: white;
 }
 
 #go-to-top .go-to-top-button {
@@ -830,7 +849,7 @@ body .mobile-footer-menu-buttons .menu-button .menu-button-in {
   color: white;
 }
 body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content {
-  background-color: #E0F7FA;
+  background-color: white;
 }
 body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content a {
   color: #00ACC1;
@@ -838,7 +857,7 @@ body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content a {
   border-bottom: solid #26C6DA 1px;
 }
 body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content a:hover {
-  background-color: #E0F7FA;
+  background-color: white;
 }
 body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content .fa {
   color: #00ACC1;

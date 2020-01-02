@@ -122,23 +122,48 @@ body {
 }
 
 // Header ヘッダー
-#header {
+// Navigation bar ナビゲーションメニュー
+#header-container {
   background-color: $main-color-dark;
   .tagline, .site-name-text {
     color: $white-color;
   }
-}
-
-// Navigation bar ナビゲーションメニュー
-#navi {
-  background-color: $main-color-midium;
-  a:hover {
-    background-color: $main-color-midium;
+  #header {
+    background-color: $main-color-dark;
   }
+  // スリムメニュー
+  .hlt-top-menu {
+    background-color: $main-color-dark;
+    #navi {
+      background-color: $main-color-dark;
+      a:hover {
+        background-color: $main-color-dark;
+      }
+      .sub-menu {
+        background-color: $main-color-dark;
+        color: $white-color;
+      }
+    }
+  }
+  // ノーマルメニュー
+  .hlt-center-logo {
+    background-color: $main-color-midium;
+    #navi {
+      background-color: $main-color-midium;
+      a:hover {
+        background-color: $main-color-midium;
+      }
+      .sub-menu {
+        background-color: $main-color-midium;
+        color: $white-color;
+      }
+    }
+  }
+}
+#navi {
   a {
     position: relative;
     color: $white-color;
-
     &::after {
       @include pseudo();
       @include position(auto, 0, 0, auto);
@@ -151,10 +176,6 @@ body {
     &:hover::after {
       transform: scale(1, 1);
     }
-  }
-  .sub-menu {
-    background-color: $main-color-midium;
-    color: $white-color;
   }
 }
 
@@ -1109,13 +1130,13 @@ body .mobile-footer-menu-buttons {
   // Menu メニュー
   .navi-menu-button {
     .navi-menu-content {
-      background-color: $base-color;
+      background-color: $white-color;
       a {
         color: $main-color-dark;
         margin: 0.5em 0 0.5em 0;
         border-bottom: solid $main-color-midium 1px;
         &:hover {
-          background-color: $base-color;
+          background-color: $white-color;
         }
       }
       .fa {
