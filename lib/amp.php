@@ -49,7 +49,6 @@ function has_amp_page(){
 endif;
 
 //AMP用にコンテンツを変換する
-//add_filter('the_content','convert_content_for_amp', 999999999);
 if ( !function_exists( 'convert_content_for_amp' ) ):
 function convert_content_for_amp($the_content){
   if ( !is_amp() ) {
@@ -62,15 +61,11 @@ function convert_content_for_amp($the_content){
 
   // バリューコマースのバナー変換
   $pattern = '/<script language="javascript" src="(https?)?\/\/ad\.jp\.ap\.valuecommerce\.com\/servlet\/jsbanner.+?<a.+?ck\.jp\.ap\.valuecommerce\.com.+?sid=(\d+).+?pid=(\d+).+?<\/a><\/noscript>/';
-  // preg_match($pattern, $the_content, $m);
-  // _v($the_content);
-  // _v($m);
+
   $append =
     '<amp-ad width="300" height="250" type="valuecommerce" data-sid="$2" data-pid="$3"></amp-ad>';
-  // preg_match($pattern, $the_content, $m);
-  // _v($m);
+
   $the_content = preg_replace($pattern, $append, $the_content);
-  //_v($the_content);
 
   //noscriptタグの削除
   $the_content = preg_replace('/<noscript>/i', '', $the_content);
@@ -150,8 +145,6 @@ function convert_content_for_amp($the_content){
   //target属性を取り除く
   $the_content = preg_replace('/ +?target=["](?!.*_blank).*?["]/i', '', $the_content);
   $the_content = preg_replace('/ +?target=[\'](?!.*_blank).*?[\']/i', '', $the_content);
-  // $the_content = preg_replace('/ +?target=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ +?target=[\'][^\']*?[\']/i', '', $the_content);
 
   //rel属性を取り除く
   $the_content = preg_replace('/ +?rel=["][^"]*?["]/i', '', $the_content);
@@ -190,8 +183,6 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/ +?xml:lang=[\'][^\']*?[\']/i', '', $the_content);
 
   // //type属性を取り除く
-  // $the_content = preg_replace('/ +?type=["][^"]*?["]/i', '', $the_content);
-  // $the_content = preg_replace('/ +?type=[\'][^\']*?[\']/i', '', $the_content);
   $the_content = str_replace(' type="text/html"', '', $the_content);
 
   //YouTubeプレイヤーのtype属性を取り除く
@@ -243,10 +234,8 @@ function convert_content_for_amp($the_content){
 
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all('/<img(.+?)\/?>/is', $the_content, $m);
-  //var_dump($res);
-  //var_dump($m);
+
   if ($res) {//画像タグがある場合
-    //_v($m);
     foreach ($m[0] as $match) {
       //変数の初期化
       $src_attr = null;
@@ -262,7 +251,6 @@ function convert_content_for_amp($the_content){
       $title_attr = null;
       $title_value = null;
       $sizes_attr = null;
-      //var_dump(htmlspecialchars($match));
 
       //src属性の取得（画像URLの取得）
       $src_res = preg_match('/src=["\']([^"\']+?)["\']/is', $match, $srcs);
@@ -297,18 +285,6 @@ function convert_content_for_amp($the_content){
         $height_attr = ' '.$heights[0];//height属性を作成
         $height_value = $heights[1];//heightの値（高さ）を取得する
       }
-
-      // //class属性の取得
-      // $class_value = null;
-      // $class_attr = null;
-      // $class_res = preg_match('/class=["\']([^"\']*?)["\']/is', $match, $classes);
-      // if ($class_res) {
-      //   $class_attr = ' '.$classes[0];//class属性を作成
-      //   $class_value = $classes[1];//classの値を取得する
-      //   if ($class_value) {
-      //     $class_value = ' '.$class_value;
-      //   }
-      // }
 
       //alt属性の取得
       $alt_res = preg_match('/alt=["]([^"]*?)["]/is', $match, $alts);
@@ -354,7 +330,6 @@ function convert_content_for_amp($the_content){
             $height_value = get_amp_default_image_height();
             $height_attr = ' height="'.$height_value.'"';//height属性を作成
           }
-
         }
       }
 
@@ -439,7 +414,7 @@ function convert_content_for_amp($the_content){
     $width_idx = 3;
     $height_attr_idx = 4;
     $height_idx = 5;
-    //_v($m);
+
     if ($m[0]) {
       $i = 0;
       foreach ($m[$all_idx] as $key => $iframe_raw) {
@@ -453,12 +428,11 @@ function convert_content_for_amp($the_content){
           }
         }
         $iframe_new = '<amp-iframe sandbox="allow-scripts allow-same-origin allow-popups" src="'.$url.'" width="'.$width.'" height="'.$height.'">'.$amp_placeholder.'</amp-iframe>';
-        //_v($iframe_new);
+
         $the_content = str_replace($iframe_raw, $iframe_new, $the_content);
         $i++;
       }
     }
-    //_v($m);
   }
 
   //タイトルつきiframeでhttpを呼び出している場合は通常リンクに修正
@@ -513,30 +487,22 @@ function convert_content_for_amp($the_content){
   $append = $amp_keyframes_tag."\n".$pattern;
   $the_content = str_replace($pattern, $append, $the_content);
 
-
-  // $pattern = '/<script.+?<\/script>/is';
-  // $append = '';
-  // $the_content = preg_replace($pattern, $append, $the_content);
-
   //空のamp-imgタグは削除
   $pattern = '{<amp-img></amp-img>}i';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
-
 
   //空のpタグは削除
   $pattern = '{<p></p>}i';
   $append = '';
   $the_content = preg_replace($pattern, $append, $the_content);
 
-
-
   switch (get_amp_image_zoom_effect()) {
     case 'amp-image-lightbox':
       //amp-img を amp-image-lightbox 用に置換
       $pattern     = '{<a href="[^"]+?/wp-content/uploads.+?"><amp-img(.+?)></a>}i';
       $append      = '<amp-img class="amp-lightbox amp-image-lightbox" on="tap:amp-lightbox" role="button" tabindex="0"$1>';
-      // $the_content = preg_replace( $pattern, $append, $the_content );
+
       if (preg_match_all($pattern, $the_content, $m)) {
         $all_idx = 0;
         $etc_idx = 1;
@@ -608,7 +574,7 @@ function generate_amp_adsense_code(){
     ob_start();
     dynamic_sidebar('adsense-300');
     $ad300 .= ob_get_clean();
-    //var_dump(htmlspecialchars($ad300));
+
     preg_match('/data-ad-client="(ca-pub-[^"]+?)"/i', $ad300, $m);
     if (empty($m[1])) return;
     $data_ad_client = $m[1];
@@ -617,7 +583,6 @@ function generate_amp_adsense_code(){
     $data_ad_slot = $m[1];
     if (!$data_ad_slot) return;
     $adsense_code = '<amp-ad width="300" height="250" type="adsense" data-ad-client="'.$data_ad_client.'" data-ad-slot="'.$data_ad_slot.'"></amp-ad>';
-    //var_dump(htmlspecialchars($adsense_code));
   }
   return $adsense_code;
 }
@@ -672,62 +637,58 @@ endif;
 if ( !function_exists( 'get_the_singular_content' ) ):
 function get_the_singular_content(){
   $all_content = null;
-  //while(have_posts()): the_post();
-    ob_start();//バッファリング
-    get_template_part('tmp/body-top');//bodyタグ直下から本文まで
-    $body_top_content = ob_get_clean();
 
-    ob_start();//バッファリング
-    if (is_single()) {
-      get_template_part('tmp/single-contents');
-    } else {
-      get_template_part('tmp/page-contents');
-    }
-    $body_content = ob_get_clean();
-    //_v($body_content);
+  ob_start();//バッファリング
+  get_template_part('tmp/body-top');//bodyタグ直下から本文まで
+  $body_top_content = ob_get_clean();
 
-    ob_start();//バッファリング
-    dynamic_sidebar( 'sidebar' );
-    $sidebar_content = ob_get_clean();
-    //_v($sidebar_content);
+  ob_start();//バッファリング
+  if (is_single()) {
+    get_template_part('tmp/single-contents');
+  } else {
+    get_template_part('tmp/page-contents');
+  }
+  $body_content = ob_get_clean();
 
-    ob_start();//バッファリング
-    dynamic_sidebar( 'sidebar-scroll' );
-    $sidebar_scroll_content = ob_get_clean();
+  ob_start();//バッファリング
+  dynamic_sidebar( 'sidebar' );
+  $sidebar_content = ob_get_clean();
 
-    ob_start();//バッファリング
-    dynamic_sidebar('footer-left');
-    dynamic_sidebar('footer-center');
-    dynamic_sidebar('footer-right');
-    dynamic_sidebar('footer-mobile');
-    $footer_content = ob_get_clean();
+  ob_start();//バッファリング
+  dynamic_sidebar( 'sidebar-scroll' );
+  $sidebar_scroll_content = ob_get_clean();
 
-    ob_start();//バッファリング
-    get_template_part('tmp/amp-footer-insert');
-    $footer_insert = ob_get_clean();
+  ob_start();//バッファリング
+  dynamic_sidebar('footer-left');
+  dynamic_sidebar('footer-center');
+  dynamic_sidebar('footer-right');
+  dynamic_sidebar('footer-mobile');
+  $footer_content = ob_get_clean();
 
-    //モバイルメニューボタン
-    //モバイルフッターボタンのみ
-    if (is_mobile_button_layout_type_footer_mobile_buttons()) {
-      ob_start();
-      get_template_part('tmp/mobile-footer-menu-buttons');
-      $mobile_menu_buttons = ob_get_clean();
-    } elseif //モバイルヘッダーボタンのみ
-    (is_mobile_button_layout_type_header_mobile_buttons()) {
-      ob_start();
-      get_template_part('tmp/mobile-header-menu-buttons');
-      $mobile_menu_buttons = ob_get_clean();
-    } else {//ヘッダーとフッター双方のモバイルボタン
-      ob_start();
-      get_template_part('tmp/mobile-header-menu-buttons');
-      get_template_part('tmp/mobile-footer-menu-buttons');
-      $mobile_menu_buttons = ob_get_clean();
-    }
+  ob_start();//バッファリング
+  get_template_part('tmp/amp-footer-insert');
+  $footer_insert = ob_get_clean();
 
+  //モバイルメニューボタン
+  //モバイルフッターボタンのみ
+  if (is_mobile_button_layout_type_footer_mobile_buttons()) {
+    ob_start();
+    get_template_part('tmp/mobile-footer-menu-buttons');
+    $mobile_menu_buttons = ob_get_clean();
+  } elseif //モバイルヘッダーボタンのみ
+  (is_mobile_button_layout_type_header_mobile_buttons()) {
+    ob_start();
+    get_template_part('tmp/mobile-header-menu-buttons');
+    $mobile_menu_buttons = ob_get_clean();
+  } else {//ヘッダーとフッター双方のモバイルボタン
+    ob_start();
+    get_template_part('tmp/mobile-header-menu-buttons');
+    get_template_part('tmp/mobile-footer-menu-buttons');
+    $mobile_menu_buttons = ob_get_clean();
+  }
 
-    $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
-  //endwhile;
-  //$all_content = convert_content_for_amp($all_content);
+  $all_content = $body_top_content.$body_content.$sidebar_content.$sidebar_scroll_content.$footer_content.$footer_insert;
+
   return $all_content;
 }
 endif;
@@ -885,7 +846,7 @@ endif;
 //<style amp-keyframes>タグの出力
 if ( !function_exists( 'generate_style_amp_keyframes_tag' ) ):
 function generate_style_amp_keyframes_tag(){
- echo get_style_amp_keyframes_tag();
+  echo get_style_amp_keyframes_tag();
 }
 endif;
 
@@ -931,21 +892,11 @@ function is_comma_splited_selector_exists_in_body_tag($comma_splited_selector, $
   if (strpos($comma_splited_selector, 'amp-img') !== false) {
     return true;
   }
-  // if (strpos($comma_splited_selector, 'first-child') !== false) {
-  //   return true;
-  // }
+
   $comma_splited_selector = get_cleaned_css_selector($comma_splited_selector);
   $space_splited_selectors = explode(' ', $comma_splited_selector);
-  // if (count($space_splited_selectors) > 8) {
-  //   _v($comma_splited_selector);
-  // }
-  foreach ($space_splited_selectors as $selector) {
-    // if (preg_match('/amp-img/', $selector)) {
-    //   _v(strpos($body_tag, $selector) !== false);
-    //   _v($body_tag);
-    // }
-    //$selector = get_cleaned_css_selector($selector);
 
+  foreach ($space_splited_selectors as $selector) {
     //調べるまでもなく最初から存在するとわかっているセレクターは次に飛ばす（多少なりとも処理時間の短縮）
     $elements = array('html', 'body', 'div', 'span', 'a', 'aside', 'section', 'figure', 'main', 'header', 'footer', 'sidebar', 'article', 'ul', 'ol', 'li', 'p', 'h1', 'h2', 'h3');
     if (in_array($selector, $elements)) {
@@ -985,10 +936,8 @@ function get_dieted_amp_css_tag($style_amp_custom_tag, $body_tag){
           $delete_target_selectors[] = $delete_target_selector;
         }
       }
-
-
     }
-    //_v($delete_target_selectors);
+
     //削除候補のCSSセレクタを置換で削除
     foreach ($delete_target_selectors as $delete_target_selector) {
       $css = preg_replace('/\}'.preg_quote($delete_target_selector, '/').',/i', '}', $css);
@@ -1019,7 +968,6 @@ function html_ampfy_call_back( $html ) {
   if (is_admin()) {
     return $html;
   }
-  //_v('$html');
 
   if (!is_amp()) {
     return $html;
@@ -1060,10 +1008,10 @@ function html_ampfy_call_back( $html ) {
   if (preg_match('{<style amp-custom>.+</style>}is', $head_tag, $m)) {
     if (isset($m[0])) {
       $default_style_amp_custom_tag = $m[0];
-      //_v($default_style_amp_custom_tag);
+
       //不要なCSSを削除してサイズ削減
       $dieted_style_amp_custom_tag = get_dieted_amp_css_tag($default_style_amp_custom_tag, $body_tag);
-      //_v($dieted_style_amp_custom_tag);
+
       //ヘッダーの<style amp-custom>をサイズ削減したものに入れ替える
       $head_tag = str_replace($default_style_amp_custom_tag, $dieted_style_amp_custom_tag, $head_tag);
     }
@@ -1088,9 +1036,6 @@ function html_ampfy_call_back( $html ) {
     //AMP用全てのHTMLタグ編集用のフック
     return $body_tag = apply_filters('amp_html_all_tag', $all_tag);
   }
-
-  //_v($body);
-  //_v('$html');
 
   return $html;
 }
