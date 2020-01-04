@@ -234,3 +234,32 @@ function get_skin_infos(){
   return $results;
 }
 endif;
+
+//除外スキン設定
+if ( !function_exists( 'get_exclude_skins' ) ):
+function get_exclude_skins(){
+  $exclude_skins = array(
+    'veilnui-simplog-cyan',
+    'veilnui-simplog-deep-orange',
+    'veilnui-simplog-light-blue',
+    'veilnui-simplog-light-green',
+    'veilnui-simplog-lime',
+    'veilnui-simplog-purple',
+    'veilnui-simplog-yellow',
+  );
+  return apply_filters('get_exclude_skins', $exclude_skins);
+}
+endif;
+
+//除外するスキンかどうか
+if ( !function_exists( 'is_exclude_skin' ) ):
+function is_exclude_skin($url){
+  $exclude_skins = get_exclude_skins();
+  foreach ($exclude_skins as $exclude_skin) {
+    if (includes_string($url, $exclude_skin.'/style.css')) {
+      return true;
+    }
+  }
+  return false;
+}
+endif;
