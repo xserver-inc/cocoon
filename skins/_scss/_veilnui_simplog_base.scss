@@ -189,11 +189,11 @@ body {
   @include size(56px, 56px);
   background-color: $main-color-dark;
   border-radius: 50%;
-  &:hover .span {
+  &:hover .fa {
     transform: rotate(360deg);
     transition: 0.2s;
   }
-  .span {
+  .fa {
     color: $white-color;
   }
 }
@@ -1120,16 +1120,6 @@ body {
   background-color: black;
   .site-name-text {
     color: $white-color;
-  }
-  #navi-footer {
-    a {
-      color: $white-color;
-      background-color: black;
-      &:hover {
-        background-color: $white-color;
-        color: black;
-      }
-    }
   }
 }
 body .mobile-footer-menu-buttons {
