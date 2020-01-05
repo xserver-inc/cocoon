@@ -238,6 +238,7 @@ endif;
 //除外スキン設定
 if ( !function_exists( 'get_exclude_skins' ) ):
 function get_exclude_skins(){
+  //除外するスキンのフォルダ名を追加していく
   $exclude_skins = array(
     'veilnui-simplog-cyan',
     'veilnui-simplog-deep-orange',
