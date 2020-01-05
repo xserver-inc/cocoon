@@ -1774,7 +1774,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
 .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
 .admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
-.admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
+.admin-settings .demo [class*="fab-"]::before { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }
@@ -3315,7 +3315,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ribbon-top-left span { right: -45px; top: 18px; transform: rotate(-45deg); }
 .admin-settings .demo .border-square .ribbon-top-left { top: -13px; left: -13px; }
 .admin-settings .demo .card-large-image .ribbon-top-left { top: -7px; left: -9px; }
-.admin-settings .demo [class*="fab-"] { font-family: FontAwesome; }
+.admin-settings .demo [class*="fab-"]::before { font-family: FontAwesome; }
 .admin-settings .demo .fab-info-circle::before { content: '\f05a'; }
 .admin-settings .demo .fab-question-circle::before { content: '\f059'; }
 .admin-settings .demo .fab-exclamation-circle::before { content: '\f06a'; }

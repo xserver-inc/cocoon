@@ -7446,7 +7446,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   left: -9px;
 }
 
-[class*="fab-"] {
+[class*="fab-"]::before {
   font-family: FontAwesome;
 }
 

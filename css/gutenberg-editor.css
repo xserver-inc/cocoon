@@ -1,4 +1,4 @@
-[class*="fab-"] {
+[class*="fab-"]::before {
   font-family: FontAwesome;
 }
 
