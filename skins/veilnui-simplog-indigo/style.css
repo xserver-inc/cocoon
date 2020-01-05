@@ -852,35 +852,35 @@ body {
   color: black;
 }
 
-body .mobile-footer-menu-buttons {
+body .mobile-menu-buttons {
   background-color: #3949AB;
 }
-body .mobile-footer-menu-buttons .menu-button:hover {
+body .mobile-menu-buttons .menu-button:hover {
   background-color: #3949AB;
 }
-body .mobile-footer-menu-buttons .menu-button .menu-button-in {
+body .mobile-menu-buttons .menu-button .menu-button-in {
   color: white;
 }
-body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content {
+body .mobile-menu-buttons .navi-menu-button .navi-menu-content {
   background-color: white;
 }
-body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content a {
+body .mobile-menu-buttons .navi-menu-button .navi-menu-content a {
   color: #3949AB;
   margin: 0.5em 0 0.5em 0;
   border-bottom: solid #5C6BC0 1px;
 }
-body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content a:hover {
+body .mobile-menu-buttons .navi-menu-button .navi-menu-content a:hover {
   background-color: white;
 }
-body .mobile-footer-menu-buttons .navi-menu-button .navi-menu-content .fa {
+body .mobile-menu-buttons .navi-menu-button .navi-menu-content .fa {
   color: #3949AB;
 }
-body .mobile-footer-menu-buttons .search-menu-button .search-edit {
+body .mobile-menu-buttons .search-menu-button .search-edit {
   border-width: 0 0 2px 0;
   border-radius: 4px;
   border-bottom: 2px solid #5C6BC0;
   background-color: #E8EAF6;
 }
-body .mobile-footer-menu-buttons .search-menu-button .search-submit {
+body .mobile-menu-buttons .search-menu-button .search-submit {
   color: #5C6BC0;
 }
