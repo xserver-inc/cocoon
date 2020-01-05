@@ -8,15 +8,15 @@
 //-------------
 // Prosessing common implement of pseudo elements.
 // Recommended use both this and "position mixin".
-//
+// 
 // Setting value(default value)
 // $pos: position property(absolute)
 // $con: string(empty string)
 //
-//
+// 
 // 擬似要素でよく使用するミックスイン
 // positionミックスインとの併用をおすすめします
-//
+// 
 // 設定値（デフォルト値）
 // $pos: positionプロパティ（absolute）
 // $con: 文字列（空文字）
@@ -26,17 +26,17 @@
 }
 // Positioning processing.
 // Recommended use both this and "pseudo mixin".
-//
+// 
 // Setting value(default value)
 // $top: top(auto)
 // $lef: left(auto)
 // $bot: bottom(auto)
 // $rig: right(auto)
-//
-//
+// 
+// 
 // 位置設定のミックスイン
 // pseudoミックスインとの併用をおすすめします
-//
+// 
 // 設定値（デフォルト値）
 // $top: 上（auto）
 // $lef: 左（auto）
@@ -53,8 +53,8 @@
 // Setting value
 // $wid: width
 // $hei: height
-//
-//
+// 
+// 
 // 要素のサイズ設定
 //
 // 設定値
@@ -65,15 +65,15 @@
   height: $hei;
 }
 // gradient processing
-//
+// 
 // Setting value(default value)
 // $dir: direct(right)
 // $start: start color($key-color)
 // $end: end color($main-color)
-//
-//
+// 
+// 
 // グラデーション作成
-//
+// 
 // 設定値（デフォルト値）
 // $dir: 方向（右）
 // $start: 開始の色（$main-color-dark）
@@ -119,11 +119,6 @@ body {
 }
 #footer {
   margin-top: auto;
-}
-.footer{
-  a{
-    color: $white-color;
-  }
 }
 
 // Header ヘッダー
@@ -182,6 +177,12 @@ body {
       transform: scale(1, 1);
     }
   }
+  .fa-angle-down {
+    color: $white-color;
+    &:hover {
+      color: $white-color;
+    }
+  }
 }
 
 // Go to top button Go to topボタン
@@ -189,11 +190,11 @@ body {
   @include size(56px, 56px);
   background-color: $main-color-dark;
   border-radius: 50%;
-  &:hover .fa {
+  &:hover span {
     transform: rotate(360deg);
     transition: 0.2s;
   }
-  .fa {
+  span {
     color: $white-color;
   }
 }
@@ -747,7 +748,7 @@ body {
         }
       }
       margin-bottom: 1em;
-    }
+    } 
     .entry-card-wrap {
       border: none;
       color: $font-color;
@@ -817,7 +818,7 @@ body {
       background-color: $hover-color;
     }
   }
-
+  
 }
 
 // Previous and Next 前、次へボタン
@@ -857,7 +858,7 @@ body {
     color: $white-color;
     &::after {
       color: $white-color;
-      transition: text-decoration 0.3s;
+      text-decoration: none;
     }
   }
   .toc-content {
@@ -1120,6 +1121,16 @@ body {
   background-color: black;
   .site-name-text {
     color: $white-color;
+  }
+  #navi-footer {
+    a {
+      color: $white-color;
+      background-color: black;
+      &:hover {
+        background-color: $white-color;
+        color: black;
+      }
+    }
   }
 }
 body .mobile-footer-menu-buttons {
