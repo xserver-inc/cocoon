@@ -1,13 +1,13 @@
 <?php
 /*!
   Skin Name: Veilnui Simplog (indigo)
-  Description: veilnuiが作成したシンプルなブログスキン（群青色）
+  Description: シンプルなブログスキン（群青色）
   Skin URI: Veilnui Simplog
   Author: veilnui
   Author URI: https://veilnui.net/
   Priority: 9840001000
   Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-indigo/images/image.png
-  Version: 1.1.4
+  Version: 1.1.6
   License: http://www.gnu.org/licenses/gpl-2.0.html/ GPL v2 or later
 */
 /**

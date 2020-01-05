@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*!
   Skin Name: Veilnui Simplog (lime)
-  Description: veilnuiが作成したシンプルなブログスキン（ライム）
+  Description: シンプルなブログスキン（ライム）
   Skin URI: https://simplog.veilnui.org
   Author: veilnui
   Author URI: https://veilnui.net/
   Priority: 9840001000
   Screenshot URI: https://wp-cocoon.com/wp-content/themes/cocoon-master/skins/veilnui-simplog-lime/images/image.png
-  Version: 1.1.4
+  Version: 1.1.6
   License: http://www.gnu.org/licenses/gpl-2.0.html/ GPL v2 or later
 */
 @keyframes fadeIn {
@@ -36,10 +36,6 @@ body {
 
 #footer {
   margin-top: auto;
-}
-
-.footer a {
-  color: white;
 }
 
 #header-container {
@@ -99,6 +95,12 @@ body {
 #navi a:hover::after {
   transform: scale(1, 1);
 }
+#navi .fa-angle-down {
+  color: white;
+}
+#navi .fa-angle-down:hover {
+  color: white;
+}
 
 #go-to-top .go-to-top-button {
   width: 56px;
@@ -106,11 +108,11 @@ body {
   background-color: #C0CA33;
   border-radius: 50%;
 }
-#go-to-top .go-to-top-button:hover .fa {
+#go-to-top .go-to-top-button:hover span {
   transform: rotate(360deg);
   transition: 0.2s;
 }
-#go-to-top .go-to-top-button .fa {
+#go-to-top .go-to-top-button span {
   color: white;
 }
 
@@ -620,7 +622,7 @@ body {
 }
 #toc .toc-title::after, .toc .toc-title::after {
   color: white;
-  transition: text-decoration 0.3s;
+  text-decoration: none;
 }
 #toc .toc-content, .toc .toc-content {
   padding: 0;
@@ -840,6 +842,14 @@ body {
 }
 #footer .site-name-text {
   color: white;
+}
+#footer #navi-footer a {
+  color: white;
+  background-color: black;
+}
+#footer #navi-footer a:hover {
+  background-color: white;
+  color: black;
 }
 
 body .mobile-footer-menu-buttons {
