@@ -430,7 +430,7 @@ function get_the_meta_keywords(){
     foreach($categories as $category):
       array_push( $category_names, $category -> cat_name);
     endforeach ;
-    $keywords = implode($category_names, ',');
+    $keywords = implode(',', $category_names);
   }
   $keywords = htmlspecialchars($keywords);
   return apply_filters('get_the_meta_keywords', $keywords);
