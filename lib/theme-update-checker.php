@@ -179,6 +179,7 @@ class ThemeUpdateChecker {
 
 		//Is there an update to insert?
 		if ( !empty($state) && isset($state->update) && !empty($state->update) ){
+			$updates = new StdClass;
 			$updates->response[$this->theme] = $state->update->toWpFormat();
 		}
 
