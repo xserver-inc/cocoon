@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-24 23:24+0900\n"
-"PO-Revision-Date: 2019-12-24 23:24+0900\n"
+"POT-Creation-Date: 2020-01-08 16:29+0900\n"
+"PO-Revision-Date: 2020-01-08 16:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -201,7 +201,7 @@ msgstr "A generic box where you can enter a tab heading in the box."
 #: blocks/src/old/balloon-ex-fix1/block.js:17
 #: blocks/src/old/balloon-ex-v2/block.js:16
 #: blocks/src/old/balloon-ex/block.js:17 blocks/src/old/balloon/block.js:15
-#: lib/html-forms.php:517
+#: lib/html-forms.php:528
 msgid "未入力"
 msgstr "Not entered"
 
@@ -899,7 +899,7 @@ msgstr "Number of items"
 #: lib/widgets/item-ranking.php:64 lib/widgets/mobile-text.php:73
 #: lib/widgets/navi-entries.php:97 lib/widgets/pc-text.php:72
 #: lib/widgets/recent-comments.php:142 lib/widgets/recommended-cards.php:89
-#: lib/widgets/toc.php:75
+#: lib/widgets/toc.php:79
 msgid "タイトル"
 msgstr "Title"
 
@@ -2809,8 +2809,8 @@ msgstr ""
 "so that the page evaluation from the search engine is consolidated. If the "
 "content is duplicated, enter the URL of the canonical page."
 
-#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:469
-#: lib/html-forms.php:528
+#: lib/custom-fields/seo-field.php:117 lib/html-forms.php:473
+#: lib/html-forms.php:539
 msgid "詳細設定"
 msgstr "Advanced settings"
 
@@ -2954,79 +2954,91 @@ msgstr "Extended color F"
 msgid "解説ページ"
 msgstr "Description page"
 
-#: lib/html-forms.php:339
+#: lib/html-forms.php:343
 msgid "タイトル検索"
 msgstr "Title search"
 
-#: lib/html-forms.php:343
+#: lib/html-forms.php:347
 msgid "タイトル昇順"
 msgstr "Title (ascending)"
 
-#: lib/html-forms.php:344
+#: lib/html-forms.php:348
 msgid "タイトル降順"
 msgstr "Title (descending)"
 
-#: lib/html-forms.php:345
+#: lib/html-forms.php:349
 msgid "作成日昇順"
 msgstr "Creation date (ascending)"
 
-#: lib/html-forms.php:346
+#: lib/html-forms.php:350
 msgid "作成日降順"
 msgstr "Creation date (descending)"
 
-#: lib/html-forms.php:347
+#: lib/html-forms.php:351
 msgid "編集日昇順"
 msgstr "Edit date (ascending)"
 
-#: lib/html-forms.php:348
+#: lib/html-forms.php:352
 msgid "編集日降順"
 msgstr "Edit date (descending)"
 
-#: lib/html-forms.php:352
+#: lib/html-forms.php:356
 msgid "抽出"
 msgstr "Extract"
 
-#: lib/html-forms.php:475 lib/html-forms.php:534
+#: lib/html-forms.php:479 lib/html-forms.php:545
 msgid "フォーマット"
 msgstr "Format"
 
-#: lib/html-forms.php:479 lib/html-forms.php:537
+#: lib/html-forms.php:483 lib/html-forms.php:548
 msgid "広告ラベルを表示"
 msgstr "Show ad labels"
 
-#: lib/html-forms.php:486
-msgid "全てのH2見出し手前に広告を挿入"
-msgstr "Insert ad before all H2 headings"
+#: lib/html-forms.php:490
+msgid "広告の表示数を制御する"
+msgstr "Control how many ads are shown"
 
-#: lib/html-forms.php:515
+#: lib/html-forms.php:492
+msgid "先頭から"
+msgstr "From the first"
+
+#: lib/html-forms.php:494
+msgid "個まで"
+msgstr " "
+
+#: lib/html-forms.php:496
+msgid "※-1で全てのH2見出し手前に広告を挿入"
+msgstr "Insert ads in front of all H2 headlines with -1"
+
+#: lib/html-forms.php:526
 msgid "入力済"
 msgstr "Entered"
 
-#: lib/html-forms.php:556
+#: lib/html-forms.php:567
 msgid "選択"
 msgstr "Select"
 
-#: lib/html-forms.php:557
+#: lib/html-forms.php:568
 msgid "クリア"
 msgstr "Clear"
 
-#: lib/html-forms.php:564
+#: lib/html-forms.php:575
 msgid "大きな画像は縮小して表示されます。"
 msgstr "Large images are displayed in reduced size."
 
-#: lib/html-forms.php:585
+#: lib/html-forms.php:596
 msgid "画像を選択してください。"
 msgstr "Select an image."
 
-#: lib/html-forms.php:593
+#: lib/html-forms.php:604
 msgid "画像の選択"
 msgstr "Select image"
 
-#: lib/html-forms.php:756
+#: lib/html-forms.php:767
 msgid "トップページのみ"
 msgstr "Homepage only"
 
-#: lib/html-forms.php:760 lib/page-settings/_top-page.php:175
+#: lib/html-forms.php:771 lib/page-settings/_top-page.php:175
 #: lib/page-settings/sns-follow-forms.php:106
 #: lib/page-settings/sns-share-forms-bottom.php:112
 #: lib/page-settings/sns-share-forms-top.php:99
@@ -3034,7 +3046,7 @@ msgstr "Homepage only"
 msgid "投稿"
 msgstr "Post"
 
-#: lib/html-forms.php:764 lib/page-settings/_top-page.php:176
+#: lib/html-forms.php:775 lib/page-settings/_top-page.php:176
 #: lib/page-settings/sns-follow-forms.php:109
 #: lib/page-settings/sns-share-forms-bottom.php:115
 #: lib/page-settings/sns-share-forms-top.php:102
@@ -3043,132 +3055,132 @@ msgstr "Post"
 msgid "固定ページ"
 msgstr "Page"
 
-#: lib/html-forms.php:768
+#: lib/html-forms.php:779
 msgid "カテゴリ一覧"
 msgstr "Categories list"
 
-#: lib/html-forms.php:772
+#: lib/html-forms.php:783
 msgid "タグ一覧"
 msgstr "Tags list"
 
-#: lib/html-forms.php:776
+#: lib/html-forms.php:787
 msgid "著者一覧"
 msgstr "Authors list"
 
-#: lib/html-forms.php:780
+#: lib/html-forms.php:791
 msgid "アーカイブ一覧"
 msgstr "Archives list"
 
-#: lib/html-forms.php:784
+#: lib/html-forms.php:795
 msgid "検索結果一覧"
 msgstr "Search results list"
 
-#: lib/html-forms.php:788
+#: lib/html-forms.php:799
 msgid "404ページ一覧"
 msgstr "404 pages list"
 
-#: lib/html-forms.php:792
+#: lib/html-forms.php:803
 msgid "AMPページ"
 msgstr "AMP pages"
 
-#: lib/html-forms.php:797
+#: lib/html-forms.php:808
 msgid "wpForoページ"
 msgstr "wpForo pages"
 
-#: lib/html-forms.php:803
+#: lib/html-forms.php:814
 msgid "bbPressページ"
 msgstr "bbPress pages"
 
-#: lib/html-forms.php:809
+#: lib/html-forms.php:820
 msgid "BuddyPressページ"
 msgstr "BuddyPress pages"
 
-#: lib/html-forms.php:815
+#: lib/html-forms.php:826
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr "Plugins forum pages (bbPress, BuddyPress, wpForo)"
 
-#: lib/html-forms.php:860
+#: lib/html-forms.php:871
 msgid "投稿ID入力"
 msgstr "Enter post IDs"
 
-#: lib/html-forms.php:861 lib/html-forms.php:881
+#: lib/html-forms.php:872 lib/html-forms.php:892
 msgid "例：111,222,333"
 msgstr "Example: 111, 222, 333"
 
-#: lib/html-forms.php:862
+#: lib/html-forms.php:873
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr "Enter post IDs, separated by commas."
 
-#: lib/html-forms.php:880
+#: lib/html-forms.php:891
 msgid "固定ページID入力"
 msgstr "Enter page IDs"
 
-#: lib/html-forms.php:882
+#: lib/html-forms.php:893
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr "Enter page Ids, separated by commas."
 
-#: lib/html-forms.php:982
+#: lib/html-forms.php:993
 msgid "人気記事は見つかりませんでした。"
 msgstr "Popular articles were not found."
 
-#: lib/html-forms.php:1146
+#: lib/html-forms.php:1157
 msgid "記事は見つかりませんでした。"
 msgstr "No articles found."
 
-#: lib/html-forms.php:1268
+#: lib/html-forms.php:1279
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1286
+#: lib/html-forms.php:1297
 msgid "未登録のユーザーさん"
 msgstr "Unregistered user"
 
-#: lib/html-forms.php:1296
+#: lib/html-forms.php:1307
 msgid "未登録のユーザーさんです。"
 msgstr "The user is unregistered."
 
-#: lib/html-forms.php:1298
+#: lib/html-forms.php:1309
 msgid "ログイン・登録はこちら→"
 msgstr "To login and register, click here ->"
 
-#: lib/html-forms.php:1300
+#: lib/html-forms.php:1311
 msgid "ログインページ"
 msgstr "Login page"
 
-#: lib/html-forms.php:1305
+#: lib/html-forms.php:1316
 msgid "プロフィール内容は管理画面から変更可能です→"
 msgstr "Profile content can be changed in the admin screen ->"
 
-#: lib/html-forms.php:1305
+#: lib/html-forms.php:1316
 msgid "プロフィール設定画面"
 msgstr "Profile settings"
 
-#: lib/html-forms.php:1305
+#: lib/html-forms.php:1316
 msgid "※このメッセージは、ログインユーザーにしか表示されません。"
 msgstr "*This message is displayed for logged-in users only."
 
-#: lib/html-forms.php:1335
+#: lib/html-forms.php:1346
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1487
+#: lib/html-forms.php:1498
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1490
+#: lib/html-forms.php:1501
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1493
+#: lib/html-forms.php:1504
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1496
+#: lib/html-forms.php:1507
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1499
+#: lib/html-forms.php:1510
 msgid "お得"
 msgstr "Great deals"
 
@@ -10488,27 +10500,27 @@ msgstr ""
 "The table of contents is displayed only when the number of heading items is "
 "equal to or more than the set number."
 
-#: lib/page-settings/toc-forms.php:135
+#: lib/page-settings/toc-forms.php:135 lib/widgets/toc.php:86
 msgid "目次表示の深さ"
 msgstr "The level of headings to be displayed in the table of contents"
 
-#: lib/page-settings/toc-forms.php:140
+#: lib/page-settings/toc-forms.php:140 lib/widgets/toc.php:89
 msgid "H2見出しまで"
 msgstr "To H2 headings"
 
-#: lib/page-settings/toc-forms.php:141
+#: lib/page-settings/toc-forms.php:141 lib/widgets/toc.php:90
 msgid "H3見出しまで"
 msgstr "To H3 headings"
 
-#: lib/page-settings/toc-forms.php:142
+#: lib/page-settings/toc-forms.php:142 lib/widgets/toc.php:91
 msgid "H4見出しまで"
 msgstr "To H4 headings"
 
-#: lib/page-settings/toc-forms.php:143
+#: lib/page-settings/toc-forms.php:143 lib/widgets/toc.php:92
 msgid "H5見出しまで"
 msgstr "To H5 headings"
 
-#: lib/page-settings/toc-forms.php:144
+#: lib/page-settings/toc-forms.php:144 lib/widgets/toc.php:93
 msgid "H6見出しまで（デフォルト）"
 msgstr "To H6 headings (default)."
 
@@ -11523,24 +11535,24 @@ msgstr "Enter the content to display for logged-in users."
 msgid "ログインユーザーのみ表示"
 msgstr "Display for logged-in users only"
 
-#: lib/utils.php:784
+#: lib/utils.php:782
 msgid "スクロールできます"
 msgstr "Can scroll"
 
-#: lib/utils.php:872
+#: lib/utils.php:870
 msgid "公開"
 msgstr "Publish"
 
-#: lib/utils.php:873
+#: lib/utils.php:871
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2463
+#: lib/utils.php:2445
 #, php-format
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2465
+#: lib/utils.php:2447
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
@@ -12324,6 +12336,10 @@ msgstr "Social media follow button title"
 #: lib/widgets/toc.php:20
 msgid "目次リンクを表示するだけのウィジェットです。"
 msgstr "This is a widget for displaying table of contents links."
+
+#: lib/widgets/toc.php:96
+msgid "Cocoon設定「目次」タブの「目次表示の深さ」の設定が優先されます。"
+msgstr "Cocoon settings take precedence."
 
 #: searchform.php:15
 msgid "サイト内を検索"
