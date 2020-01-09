@@ -719,6 +719,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
+.admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
 .admin-settings .demo .sidebar-left .content-in { flex-direction: row-reverse; }
 .admin-settings .demo .nwa .ranking-item-img-desc, .admin-settings .demo .nwa .ranking-item-link-buttons { display: block; }
@@ -2260,6 +2261,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar h3 { background-color: #f3f4f5; padding: 12px; margin: 16px 0; border-radius: 2px; }
 .admin-settings .demo .no-scrollable-sidebar .sidebar { height: 100%; }
 .admin-settings .demo .sidebar-scroll { position: -webkit-sticky; /* Safari */ position: sticky; top: 0; }
+.admin-settings .demo .sidebar-menu-content .sidebar { height: auto; }
 .admin-settings .demo .no-sidebar .sidebar { display: none; }
 .admin-settings .demo .sidebar-left .content-in { flex-direction: row-reverse; }
 .admin-settings .demo .nwa .ranking-item-img-desc, .admin-settings .demo .nwa .ranking-item-link-buttons { display: block; }

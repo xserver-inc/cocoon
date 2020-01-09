@@ -15,7 +15,7 @@
     padding: 12px;
     margin: 16px 0;
     border-radius: $badge_border_radius;
-}
+  }
 }
 
 .no-scrollable-sidebar .sidebar{
@@ -28,10 +28,9 @@
   top: 0;
 }
 
-
-// .sidebar-scroll{
-//   background-color: $white;
-// }
+.sidebar-menu-content .sidebar{
+  height: auto;
+}
 
 /************************************
 ** サイドバーの非表示

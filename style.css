@@ -2003,6 +2003,10 @@ span.internal-icon {
   top: 0;
 }
 
+.sidebar-menu-content .sidebar {
+  height: auto;
+}
+
 /************************************
 ** サイドバーの非表示
 ************************************/
