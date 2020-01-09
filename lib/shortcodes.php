@@ -669,8 +669,6 @@ function get_box_menu_tag($atts){
   //_v($menu_items);
 
   foreach ($menu_items as $menu):
-    // //画像情報の取得
-    // $image_attributes = get_navi_card_image_attributes($menu, $type);
 
     $url = $menu->url;
     $title = $menu->title;
@@ -695,8 +693,12 @@ function get_box_menu_tag($atts){
       $description_tag.
     '</a>';
   endforeach;
-
-  $tag = '<div class="box-menus no-icon">'.$tag.'</div>';
+  $add_class = null;
+  if ($class) {
+    $add_class = ' '.$add_class;
+  }
+  //ラッパーで囲む
+  $tag = '<div class="box-menus'.$add_class.' no-icon">'.$tag.'</div>';
 
   return apply_filters('get_box_menu_tag', $tag);
 }
