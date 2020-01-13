@@ -696,38 +696,33 @@ body {
   background-color: #26A69A;
 }
 
-#main .wp-block-code {
-  border: none;
-}
-#main .wp-block-preformatted {
+pre {
   border: solid #00897B 1px;
   background-color: #E0F2F1;
 }
-#main blockquote {
+
+blockquote {
   border: solid #00897B 1px;
   background-color: #E0F2F1;
 }
-#main blockquote::before, #main blockquote::after {
+blockquote::before, blockquote::after {
   color: #00897B;
 }
-#main blockquote cite {
+blockquote cite {
   color: #26A69A;
 }
-#main .wp-block-table tbody {
+
+.wp-block-table tbody {
   border: solid #26A69A 1px;
 }
-#main .wp-block-table tbody tr:nth-child(odd) {
+.wp-block-table tbody tr:nth-child(odd) {
   background-color: #80CBC4;
 }
-#main .wp-block-table tbody tr:nth-child(even) {
+.wp-block-table tbody tr:nth-child(even) {
   background-color: white;
 }
-#main .wp-block-table tbody tr td {
+.wp-block-table tbody tr td {
   border: none;
-}
-#main .wp-block-verse {
-  background-color: #E0F2F1;
-  border: solid #00897B 1px;
 }
 
 #main .wp-block-calendar #wp-calendar caption {

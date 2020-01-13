@@ -943,18 +943,17 @@ body {
   // Movie 動画
 }
 // Format フォーマット
-#main {
+//#main {
   // Source code ソースコード
-  .wp-block-code {
-    border: none;
-  }
   // Classic クラシック
   // Custom HTML カスタムHTML
   // Formatted 整形済み
-  .wp-block-preformatted {
+  // Verse 詩
+  pre {
     border: solid $main-color-dark 1px;
     background-color: $hover-color;
   }
+
   // Pull Quote プルクオート
   blockquote {
     border: solid $main-color-dark 1px;
@@ -983,12 +982,7 @@ body {
       }
     }
   }
-  // Verse 詩
-  .wp-block-verse {
-    background-color: $hover-color;
-    border: solid $main-color-dark 1px;
-  }
-}
+//}
 // Widget block ウィジェットブロック
 #main {
   // Calendar カレンダー
