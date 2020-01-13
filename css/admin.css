@@ -1887,7 +1887,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
 .admin-settings .demo .recommended .ribbon { display: none; }
-.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
@@ -3429,7 +3429,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
 .admin-settings .demo .recommended .ribbon { display: none; }
-.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .nwa .recommended .navi-entry-cards { flex-wrap: wrap; }
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
@@ -3707,7 +3707,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .slick-dots { display: none !important; }
   .admin-settings .demo .carousel-entry-card-title { font-size: 0.7em; }
   .admin-settings .demo .header-container-in.hlt-top-menu.hlt-tm-small .logo-header { height: auto; }
-  .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; justify-content: space-around; }
+  .admin-settings .demo .recommended .navi-entry-cards { flex-wrap: wrap; }
   .admin-settings .demo .recommended .navi-entry-cards a { width: 50%; }
   .admin-settings .demo .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
   .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 0; } }

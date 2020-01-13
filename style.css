@@ -7952,7 +7952,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .nwa .recommended .navi-entry-cards {
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 .nwa .recommended .navi-entry-cards a {
   width: 50%;
@@ -9339,7 +9338,6 @@ twitter-widget {
 
   .recommended .navi-entry-cards {
     flex-wrap: wrap;
-    justify-content: space-around;
   }
   .recommended .navi-entry-cards a {
     width: 50%;
