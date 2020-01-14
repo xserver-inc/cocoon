@@ -8022,6 +8022,10 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: calc(100%/2);
 }
 
+.wwa .box-menu {
+  width: calc(100%/6);
+}
+
 .no-border {
   border: none;
 }

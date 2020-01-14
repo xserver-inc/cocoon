@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     //コンテンツ下部ウィジェット
     ////////////////////////////
     if ( is_active_sidebar( 'content-bottom' ) ) : ?>
-    <div id="content-bottom" class="content-bottom">
+    <div id="content-bottom" class="content-bottom wwa">
       <div id="content-bottom-in" class="content-bottom-in wrap">
         <?php dynamic_sidebar( 'content-bottom' ); ?>
       </div>

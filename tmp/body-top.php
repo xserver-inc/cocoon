@@ -28,7 +28,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   //コンテンツ上部ウィジェット
   ////////////////////////////
   if ( is_active_sidebar( 'content-top' ) ) : ?>
-  <div id="content-top" class="content-top">
+  <div id="content-top" class="content-top wwa">
     <div id="content-top-in" class="content-top-in wrap">
       <?php dynamic_sidebar( 'content-top' ); ?>
     </div>

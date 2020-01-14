@@ -1900,6 +1900,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
 .admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
+.admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -3451,6 +3452,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
 .admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
+.admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
