@@ -476,7 +476,7 @@ function generate_main_column_ad_detail_setting_forms($name, $value, $label_name
     <?php
     global $_MAIN_DATA_AD_FORMATS;
     $options = $_MAIN_DATA_AD_FORMATS;
-    generate_selectbox_tag($name, $options, $value, __( 'フォーマット', THEME_NAME ));
+    generate_selectbox_tag($name, $options, $value, __( 'フォーマット（広告ユニット）', THEME_NAME ));
     //ラベル表示の設定
     if ($label_name) {
       echo '<p>';
@@ -542,7 +542,7 @@ function generate_sidebar_ad_detail_setting_forms($name, $value, $label_name, $l
     <?php
     global $_SIDEBAR_DATA_AD_FORMATS;
     $options = $_SIDEBAR_DATA_AD_FORMATS;
-    generate_selectbox_tag($name, $options, $value, __( 'フォーマット', THEME_NAME ));
+    generate_selectbox_tag($name, $options, $value, __( 'フォーマット（広告ユニット）', THEME_NAME ));
     //ラベル表示の設定
     echo '<p>';
     generate_checkbox_tag( $label_name, $label_value, __( '広告ラベルを表示', THEME_NAME ));
@@ -1372,11 +1372,16 @@ function get_widget_entry_card_link_tag($atts){
     'image_attributes' => null,
     'ribbon_no' => null,
     'type' => null,
+    'classes' => null,
   ), $atts));
+  $class_text = null;
+  if (isset($classes[0]) && !empty($classes[0])) {
+    $class_text = ' '.implode(' ', $classes);
+  }
   //リボンタグの取得
   $ribbon_tag = get_navi_card_ribbon_tag($ribbon_no);
   ob_start(); ?>
-  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap" title="<?php echo esc_attr($title); ?>">
+  <a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?>" title="<?php echo esc_attr($title); ?>">
     <div class="<?php echo $prefix; ?>-entry-card widget-entry-card e-card cf">
       <?php echo $ribbon_tag; ?>
       <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">

@@ -26,7 +26,7 @@ body{
 /************************************
 ** p
 ************************************/
-.entry-content > *, .sidebar p{
+.entry-content > p, .sidebar p {
 	margin:2em 0;
 	line-height:2;
 }
