@@ -7965,6 +7965,63 @@ https://codepen.io/nxworld/pen/oLdoWb
   margin-right: 0;
 }
 
+.box-menus {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+.box-menus * {
+  line-height: 1.6;
+  margin: 0;
+}
+
+.box-menu {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  min-height: 100px;
+  cursor: pointer;
+  background: #fff;
+  width: calc(100%/4);
+  color: #777;
+  box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
+}
+.box-menu:hover {
+  color: #777;
+  z-index: 2;
+  box-shadow: inset 2px 2px 0 0 #f6a068, 2px 2px 0 0 #f6a068, 2px 0 0 0 #f6a068, 0 2px 0 0 #f6a068;
+  transition: 0.35s ease-in-out;
+}
+
+.box-menu-icon {
+  font-size: 40px;
+  color: #f6a068;
+}
+.box-menu-icon img {
+  max-width: 50px;
+  max-height: 50px;
+  height: auto;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1));
+  display: inline-block;
+}
+
+.box-menu-label {
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.box-menu-description {
+  font-size: 0.5em;
+  opacity: 0.8;
+}
+
+.nwa .box-menu {
+  width: calc(100%/2);
+}
+
 .no-border {
   border: none;
 }

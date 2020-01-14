@@ -1891,6 +1891,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
+.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
+.admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
+.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; }
+.admin-settings .demo .box-menu:hover { color: #777; z-index: 2; box-shadow: inset 2px 2px 0 0 #f6a068, 2px 2px 0 0 #f6a068, 2px 0 0 0 #f6a068, 0 2px 0 0 #f6a068; transition: 0.35s ease-in-out; }
+.admin-settings .demo .box-menu-icon { font-size: 40px; color: #f6a068; }
+.admin-settings .demo .box-menu-icon img { max-width: 50px; max-height: 50px; height: auto; filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); display: inline-block; }
+.admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
+.admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
+.admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -3433,6 +3442,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
+.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
+.admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
+.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; }
+.admin-settings .demo .box-menu:hover { color: #777; z-index: 2; box-shadow: inset 2px 2px 0 0 #f6a068, 2px 2px 0 0 #f6a068, 2px 0 0 0 #f6a068, 0 2px 0 0 #f6a068; transition: 0.35s ease-in-out; }
+.admin-settings .demo .box-menu-icon { font-size: 40px; color: #f6a068; }
+.admin-settings .demo .box-menu-icon img { max-width: 50px; max-height: 50px; height: auto; filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1)); display: inline-block; }
+.admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
+.admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
+.admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
