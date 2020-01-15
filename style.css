@@ -7988,18 +7988,14 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: calc(100%/4);
   color: #777;
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
-  transition: 0.4s;
 }
 .box-menu:hover {
   color: #777;
   z-index: 2;
-  box-shadow: inset 2px 2px 0 0 #f6a068, 2px 2px 0 0 #f6a068, 2px 0 0 0 #f6a068, 0 2px 0 0 #f6a068;
-  transition: 0.4s;
 }
 
 .box-menu-icon {
   font-size: 40px;
-  color: #f6a068;
 }
 .box-menu-icon img {
   max-width: 50px;

@@ -750,3 +750,13 @@ for ($i=1; $i <= $max_code_row_count; $i++) {
   content: "<?php echo implode(' ', $rows); ?>";
 }
 <?php endif; ?>
+<?php //ボックスメニュースタイル
+$color = get_site_key_color() ? get_site_key_color() : '#f6a068';
+ ?>
+.box-menu:hover{
+  box-shadow: inset 2px 2px 0 0 <?php echo $color; ?>, 2px 2px 0 0 <?php echo $color; ?>, 2px 0 0 0 <?php echo $color; ?>, 0 2px 0 0
+<?php echo $color; ?>;
+}
+.box-menu-icon{
+  color: <?php echo $color; ?>;
+}
