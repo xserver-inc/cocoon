@@ -3666,7 +3666,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .rect-mini-card .related-entry-card-thumb { width: 30%; }
   .admin-settings .demo .rect-mini-card .related-entry-card-content { margin-left: 32%; }
   .admin-settings .demo .header-container-in.hlt-top-menu { flex-direction: column; }
-  .admin-settings .demo .ect-vertical-card-3 .entry-card-wrap { width: 49%; }
+  .admin-settings .demo .ect-vertical-card .entry-card-wrap { width: 49%; }
   .admin-settings .demo .header div.header-in, .admin-settings .demo .appeal div.appeal-in { min-height: auto; }
   .admin-settings .demo .footer-widgets { display: none; }
   .admin-settings .demo .footer-widgets-mobile { display: block; }
