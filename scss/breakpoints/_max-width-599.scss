@@ -8,3 +8,19 @@
     padding: 1em 0;
   }
 }
+
+///////////////////////////////////////
+// ボックスメニュー
+///////////////////////////////////////
+.box-menus{
+  .box-menu{
+    width: calc(100%/2);
+  }
+}
+.wwa{
+  .box-menus{
+    margin-left:  10px;
+    margin-right: 10px;
+  }
+}
+

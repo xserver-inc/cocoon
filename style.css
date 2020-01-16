@@ -9424,6 +9424,15 @@ twitter-widget {
     width: 100%;
     padding: 1em 0;
   }
+
+  .box-menus .box-menu {
+    width: calc(100%/2);
+  }
+
+  .wwa .box-menus {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 480px) {
   h2,
