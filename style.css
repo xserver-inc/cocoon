@@ -7996,18 +7996,25 @@ https://codepen.io/nxworld/pen/oLdoWb
 
 .box-menu-icon {
   font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.box-menu-icon img {
+.box-menu-icon * {
+  margin: 10px 0;
   max-width: 50px;
   max-height: 50px;
   height: auto;
-  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1));
   display: inline-block;
+}
+.box-menu-icon img {
+  font-size: 16px;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2));
 }
 
 .box-menu-label {
   font-size: 0.7em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .box-menu-description {
