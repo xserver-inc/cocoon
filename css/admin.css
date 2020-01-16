@@ -1898,8 +1898,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-icon { font-size: 40px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .box-menu-icon * { margin: 10px 0; max-width: 50px; max-height: 50px; height: auto; display: inline-block; }
 .admin-settings .demo .box-menu-icon img { font-size: 16px; filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2)); }
-.admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
-.admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
+.admin-settings .demo .box-menu-label { font-size: 14px; font-weight: 600; }
+.admin-settings .demo .box-menu-description { font-size: 10px; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
 .admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
 .admin-settings .demo .no-border { border: none; }
@@ -3451,8 +3451,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-icon { font-size: 40px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .box-menu-icon * { margin: 10px 0; max-width: 50px; max-height: 50px; height: auto; display: inline-block; }
 .admin-settings .demo .box-menu-icon img { font-size: 16px; filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2)); }
-.admin-settings .demo .box-menu-label { font-size: 0.7em; font-weight: 600; }
-.admin-settings .demo .box-menu-description { font-size: 0.5em; opacity: 0.8; }
+.admin-settings .demo .box-menu-label { font-size: 14px; font-weight: 600; }
+.admin-settings .demo .box-menu-description { font-size: 10px; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
 .admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
 .admin-settings .demo .no-border { border: none; }
