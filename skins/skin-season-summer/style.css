@@ -625,7 +625,7 @@ article .tag-link:hover {
 .toc {
 	border: 1px solid #00a0e9;
 	border-radius: 5px;
-	padding: 0.5em;
+	padding: 1em 2em;
 }
 .toc-title {
 	color: #00a0e9;

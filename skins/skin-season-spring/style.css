@@ -615,9 +615,9 @@ article .tag-link:hover{
 ** 目次
 ************************************/
 .toc{
-	border:1px solid #89c997;
-	border-radius:5px;
-	padding:0.5em;
+	border: 1px solid #89c997;
+	border-radius: 5px;
+	padding: 1em 2em;
 }
 .toc-title {
     color: #89c997;
