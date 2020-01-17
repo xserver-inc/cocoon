@@ -15,6 +15,7 @@
 ************************************/
 body {
 	background: none;
+	color: #335361;
 }
 /************************************
 ** main
@@ -28,9 +29,6 @@ body {
 .entry-content > p, .sidebar p {
 	margin: 2em 0;
 	line-height: 2;
-}
-.entry-content {
-	color: #335361;
 }
 .entry-content .wp-caption-text {
 	margin: 0;
