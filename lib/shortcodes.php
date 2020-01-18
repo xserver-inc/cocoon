@@ -697,7 +697,7 @@ function get_box_menu_tag($atts){
   endforeach;
   $add_class = null;
   if ($class) {
-    $add_class = ' '.$add_class;
+    $add_class = ' '.$class;
   }
   //ラッパーで囲む
   $tag = '<div class="box-menus'.$add_class.' no-icon">'.$tag.'</div>';
