@@ -625,7 +625,7 @@ body {
   text-decoration: none;
 }
 #toc .toc-content, .toc .toc-content {
-  padding: 0;
+  padding: 1em;
 }
 #toc .toc-content .toc-list, .toc .toc-content .toc-list {
   margin: 0 1em;

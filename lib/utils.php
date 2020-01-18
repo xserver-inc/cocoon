@@ -74,6 +74,7 @@ function get_the_nolink_category($id = null, $is_visible = true){
 
   if ( isset($categories[0]) ) {
     $category = $categories[0];
+    $category = apply_filters('get_the_nolink_category', $category, $categories);
     return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
   }
 }

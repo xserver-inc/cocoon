@@ -15,6 +15,7 @@
 ************************************/
 body {
 	background: none;
+	color: #335361;
 }
 /************************************
 ** main
@@ -28,9 +29,6 @@ body {
 .entry-content > p, .sidebar p {
 	margin: 2em 0;
 	line-height: 2;
-}
-.entry-content {
-	color: #335361;
 }
 .entry-content .wp-caption-text {
 	margin: 0;
@@ -627,7 +625,7 @@ article .tag-link:hover {
 .toc {
 	border: 1px solid #00a0e9;
 	border-radius: 5px;
-	padding: 0.5em;
+	padding: 1em 2em;
 }
 .toc-title {
 	color: #00a0e9;

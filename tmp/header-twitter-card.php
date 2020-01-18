@@ -50,9 +50,9 @@ if (is_singular()){//単一記事ページの場合
 
 $title = apply_filters('sns_card_title', $title);
 $title = apply_filters('ogp_card_title', $title);
-echo '<meta property="og:description" content="'; echo esc_attr($description); echo '">';echo "\n";//ブログの説明文を表示
-echo '<meta property="og:title" content="'; echo esc_attr($title); echo '">';echo "\n";//ブログのタイトルを表示
-echo '<meta property="og:url" content="'; echo esc_url($url); echo '">';echo "\n";//ブログのURLを表示取る
+echo '<meta property="twitter:description" content="'; echo esc_attr($description); echo '">';echo "\n";//ブログの説明文を表示
+echo '<meta property="twitter:title" content="'; echo esc_attr($title); echo '">';echo "\n";//ブログのタイトルを表示
+echo '<meta property="twitter:url" content="'; echo esc_url($url); echo '">';echo "\n";//ブログのURLを表示取る
 
 if (is_singular()){//単一記事ページの場合
   if ($ogp_image = get_singular_sns_share_image_url()) {
