@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-08 16:29+0900\n"
-"PO-Revision-Date: 2020-01-08 16:45+0900\n"
+"POT-Creation-Date: 2020-01-19 13:37+0900\n"
+"PO-Revision-Date: 2020-01-19 13:40+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -65,8 +65,8 @@ msgstr "Heading box"
 #: blocks/src/micro/micro-balloon/_block.js:87
 #: blocks/src/micro/micro-balloon/block.js:90
 #: blocks/src/micro/micro-text/_block.js:72
-#: blocks/src/micro/micro-text/block.js:88 blocks/src/old/balloon-1/block.js:77
-#: blocks/src/old/balloon-2/block.js:108 blocks/src/old/balloon/block.js:60
+#: blocks/src/micro/micro-text/block.js:88 blocks/src/old/balloon-1/block.js:94
+#: blocks/src/old/balloon-2/block.js:125 blocks/src/old/balloon/block.js:76
 #: blocks/src/old/blank-box/block.js:55 blocks/src/old/caption-box/block.js:52
 #: blocks/src/old/label-box/block.js:51
 #: blocks/src/old/micro-balloon-1/block.js:61
@@ -205,8 +205,8 @@ msgstr "A generic box where you can enter a tab heading in the box."
 msgid "未入力"
 msgstr "Not entered"
 
-#: blocks/src/block/balloon/_block.js:21 blocks/src/old/balloon-1/block.js:37
-#: blocks/src/old/balloon-2/block.js:21 blocks/src/old/balloon/block.js:20
+#: blocks/src/block/balloon/_block.js:21 blocks/src/old/balloon-1/block.js:51
+#: blocks/src/old/balloon-2/block.js:35 blocks/src/old/balloon/block.js:34
 #: lib/admin.php:351 lib/original-menu.php:27
 #: lib/page-speech-balloon/_top-page.php:37 lib/tinymce/speech-balloons.php:50
 msgid "吹き出し"
@@ -939,355 +939,355 @@ msgstr "Server operation demo box"
 msgid "ドロップダウンデモ"
 msgstr "Drop-down demo"
 
-#: blocks/src/helpers.js:244
+#: blocks/src/helpers.js:257
 msgid "fab-info-circle"
 msgstr "fab-info-circle"
 
-#: blocks/src/helpers.js:248
+#: blocks/src/helpers.js:261
 msgid "fab-question-circle"
 msgstr "fab-question-circle"
 
-#: blocks/src/helpers.js:252
+#: blocks/src/helpers.js:265
 msgid "fab-exclamation-circle"
 msgstr "fab-exclamation-circle"
 
-#: blocks/src/helpers.js:256
+#: blocks/src/helpers.js:269
 msgid "fab-pencil"
 msgstr "fab-pencil"
 
-#: blocks/src/helpers.js:260
+#: blocks/src/helpers.js:273
 msgid "fab-edit"
 msgstr "fab-edit"
 
-#: blocks/src/helpers.js:264
+#: blocks/src/helpers.js:277
 msgid "fab-comment"
 msgstr "fab-comment"
 
-#: blocks/src/helpers.js:268
+#: blocks/src/helpers.js:281
 msgid "fab-ok"
 msgstr "fab-ok"
 
-#: blocks/src/helpers.js:272
+#: blocks/src/helpers.js:285
 msgid "fab-bad"
 msgstr "fab-bad"
 
-#: blocks/src/helpers.js:276
+#: blocks/src/helpers.js:289
 msgid "fab-thumbs-up"
 msgstr "fab-thumbs-up"
 
-#: blocks/src/helpers.js:280
+#: blocks/src/helpers.js:293
 msgid "fab-thumbs-down"
 msgstr "fab-thumbs-down"
 
-#: blocks/src/helpers.js:284 blocks/src/helpers.js:713
+#: blocks/src/helpers.js:297 blocks/src/helpers.js:726
 msgid "fab-check"
 msgstr "fab-check"
 
-#: blocks/src/helpers.js:288 blocks/src/helpers.js:777
+#: blocks/src/helpers.js:301 blocks/src/helpers.js:790
 msgid "fab-star"
 msgstr "fab-star"
 
-#: blocks/src/helpers.js:292
+#: blocks/src/helpers.js:305
 msgid "fab-bell"
 msgstr "fab-bell"
 
-#: blocks/src/helpers.js:296
+#: blocks/src/helpers.js:309
 msgid "fab-trophy"
 msgstr "fab-trophy"
 
-#: blocks/src/helpers.js:300
+#: blocks/src/helpers.js:313
 msgid "fab-lightbulb"
 msgstr "fab-lightbulb"
 
-#: blocks/src/helpers.js:304
+#: blocks/src/helpers.js:317
 msgid "fab-graduation-cap"
 msgstr "fab-graduation-cap"
 
-#: blocks/src/helpers.js:308
+#: blocks/src/helpers.js:321
 msgid "fab-bolt"
 msgstr "fab-bolt"
 
-#: blocks/src/helpers.js:312
+#: blocks/src/helpers.js:325
 msgid "fab-bookmark"
 msgstr "fab-bookmark"
 
-#: blocks/src/helpers.js:316
+#: blocks/src/helpers.js:329
 msgid "fab-book"
 msgstr "fab-book"
 
-#: blocks/src/helpers.js:320
+#: blocks/src/helpers.js:333
 msgid "fab-download"
 msgstr "fab-download"
 
-#: blocks/src/helpers.js:324
+#: blocks/src/helpers.js:337
 msgid "fab-coffee"
 msgstr "fab-coffee"
 
-#: blocks/src/helpers.js:328
+#: blocks/src/helpers.js:341
 msgid "fab-amazon"
 msgstr "fab-amazon"
 
-#: blocks/src/helpers.js:332
+#: blocks/src/helpers.js:345
 msgid "fab-user"
 msgstr "fab-user"
 
-#: blocks/src/helpers.js:336
+#: blocks/src/helpers.js:349
 msgid "fab-envelope"
 msgstr "fab-envelope"
 
-#: blocks/src/helpers.js:340
+#: blocks/src/helpers.js:353
 msgid "fab-flag"
 msgstr "fab-flag"
 
-#: blocks/src/helpers.js:344
+#: blocks/src/helpers.js:357
 msgid "fab-ban"
 msgstr "fab-ban"
 
-#: blocks/src/helpers.js:348
+#: blocks/src/helpers.js:361
 msgid "fab-calendar"
 msgstr "fab-calendar"
 
-#: blocks/src/helpers.js:352
+#: blocks/src/helpers.js:365
 msgid "fab-clock"
 msgstr "fab-clock"
 
-#: blocks/src/helpers.js:356
+#: blocks/src/helpers.js:369
 msgid "fab-cutlery"
 msgstr "fab-cutlery"
 
-#: blocks/src/helpers.js:360 blocks/src/helpers.js:785
+#: blocks/src/helpers.js:373 blocks/src/helpers.js:798
 msgid "fab-heart"
 msgstr "fab-heart"
 
-#: blocks/src/helpers.js:364
+#: blocks/src/helpers.js:377
 msgid "fab-camera"
 msgstr "fab-camera"
 
-#: blocks/src/helpers.js:368
+#: blocks/src/helpers.js:381
 msgid "fab-search"
 msgstr "fab-search"
 
-#: blocks/src/helpers.js:372
+#: blocks/src/helpers.js:385
 msgid "fab-file-text"
 msgstr "fab-file-text"
 
-#: blocks/src/helpers.js:376
+#: blocks/src/helpers.js:389
 msgid "fab-folder"
 msgstr "fab-folder"
 
-#: blocks/src/helpers.js:380
+#: blocks/src/helpers.js:393
 msgid "fab-tag"
 msgstr "fab-tag"
 
-#: blocks/src/helpers.js:384
+#: blocks/src/helpers.js:397
 msgid "fab-car"
 msgstr "fab-car"
 
-#: blocks/src/helpers.js:388
+#: blocks/src/helpers.js:401
 msgid "fab-truck"
 msgstr "fab-truck"
 
-#: blocks/src/helpers.js:392
+#: blocks/src/helpers.js:405
 msgid "fab-bicycle"
 msgstr "fab-bicycle"
 
-#: blocks/src/helpers.js:396
+#: blocks/src/helpers.js:409
 msgid "fab-motorcycle"
 msgstr "fab-motorcycle"
 
-#: blocks/src/helpers.js:400
+#: blocks/src/helpers.js:413
 msgid "fab-bus"
 msgstr "fab-bus"
 
-#: blocks/src/helpers.js:404
+#: blocks/src/helpers.js:417
 msgid "fab-plane"
 msgstr "fab-plane"
 
-#: blocks/src/helpers.js:408
+#: blocks/src/helpers.js:421
 msgid "fab-train"
 msgstr "fab-train"
 
-#: blocks/src/helpers.js:412
+#: blocks/src/helpers.js:425
 msgid "fab-subway"
 msgstr "fab-subway"
 
-#: blocks/src/helpers.js:416
+#: blocks/src/helpers.js:429
 msgid "fab-taxi"
 msgstr "fab-taxi"
 
-#: blocks/src/helpers.js:420
+#: blocks/src/helpers.js:433
 msgid "fab-ship"
 msgstr "fab-ship"
 
-#: blocks/src/helpers.js:424
+#: blocks/src/helpers.js:437
 msgid "fab-jpy"
 msgstr "fab-jpy"
 
-#: blocks/src/helpers.js:428
+#: blocks/src/helpers.js:441
 msgid "fab-usd"
 msgstr "fab-usd"
 
-#: blocks/src/helpers.js:432
+#: blocks/src/helpers.js:445
 msgid "fab-eur"
 msgstr "fab-eur"
 
-#: blocks/src/helpers.js:436
+#: blocks/src/helpers.js:449
 msgid "fab-btc"
 msgstr "fab-btc"
 
-#: blocks/src/helpers.js:440
+#: blocks/src/helpers.js:453
 msgid "fab-apple"
 msgstr "fab-apple"
 
-#: blocks/src/helpers.js:444
+#: blocks/src/helpers.js:457
 msgid "fab-android"
 msgstr "fab-android"
 
-#: blocks/src/helpers.js:448
+#: blocks/src/helpers.js:461
 msgid "fab-wordpress"
 msgstr "fab-wordpress"
 
-#: blocks/src/helpers.js:709
+#: blocks/src/helpers.js:722
 msgid "fab-caret-right"
 msgstr "fab-caret-right"
 
-#: blocks/src/helpers.js:717
+#: blocks/src/helpers.js:730
 msgid "fab-check-circle"
 msgstr "fab-check-circle"
 
-#: blocks/src/helpers.js:721
+#: blocks/src/helpers.js:734
 msgid "fab-check-circle-o"
 msgstr "fab-check-circle-o"
 
-#: blocks/src/helpers.js:725
+#: blocks/src/helpers.js:738
 msgid "fab-check-square"
 msgstr "fab-check-square"
 
-#: blocks/src/helpers.js:729
+#: blocks/src/helpers.js:742
 msgid "fab-check-square-o"
 msgstr "fab-check-square-o"
 
-#: blocks/src/helpers.js:733
+#: blocks/src/helpers.js:746
 msgid "fab-caret-square-o-right"
 msgstr "fab-caret-square-o-right"
 
-#: blocks/src/helpers.js:737
+#: blocks/src/helpers.js:750
 msgid "fab-arrow-right"
 msgstr "fab-arrow-right"
 
-#: blocks/src/helpers.js:741
+#: blocks/src/helpers.js:754
 msgid "fab-angle-right"
 msgstr "fab-angle-right"
 
-#: blocks/src/helpers.js:745
+#: blocks/src/helpers.js:758
 msgid "fab-angle-double-right"
 msgstr "fab-angle-double-right"
 
-#: blocks/src/helpers.js:749
+#: blocks/src/helpers.js:762
 msgid "fab-arrow-circle-right"
 msgstr "fab-arrow-circle-right"
 
-#: blocks/src/helpers.js:753
+#: blocks/src/helpers.js:766
 msgid "fab-arrow-circle-o-right"
 msgstr "fab-arrow-circle-o-right"
 
-#: blocks/src/helpers.js:757
+#: blocks/src/helpers.js:770
 msgid "fab-play-circle"
 msgstr "fab-play-circle"
 
-#: blocks/src/helpers.js:761
+#: blocks/src/helpers.js:774
 msgid "fab-play-circle-o"
 msgstr "fab-play-circle-o"
 
-#: blocks/src/helpers.js:765
+#: blocks/src/helpers.js:778
 msgid "fab-chevron-right"
 msgstr "fab-chevron-right"
 
-#: blocks/src/helpers.js:769
+#: blocks/src/helpers.js:782
 msgid "fab-chevron-circle-right"
 msgstr "fab-chevron-circle-right"
 
-#: blocks/src/helpers.js:773
+#: blocks/src/helpers.js:786
 msgid "fab-hand-o-right"
 msgstr "fab-hand-o-right"
 
-#: blocks/src/helpers.js:781
+#: blocks/src/helpers.js:794
 msgid "fab-star-o"
 msgstr "fab-star-o"
 
-#: blocks/src/helpers.js:789
+#: blocks/src/helpers.js:802
 msgid "fab-heart-o"
 msgstr "fab-heart-o"
 
-#: blocks/src/helpers.js:793
+#: blocks/src/helpers.js:806
 msgid "fab-square"
 msgstr "fab-square"
 
-#: blocks/src/helpers.js:797
+#: blocks/src/helpers.js:810
 msgid "fab-square-o"
 msgstr "fab-square-o"
 
-#: blocks/src/helpers.js:801
+#: blocks/src/helpers.js:814
 msgid "fab-circle"
 msgstr "fab-circle"
 
-#: blocks/src/helpers.js:805
+#: blocks/src/helpers.js:818
 msgid "fab-circle-o"
 msgstr "fab-circle-o"
 
-#: blocks/src/helpers.js:809
+#: blocks/src/helpers.js:822
 msgid "fab-dot-circle-o"
 msgstr "fab-dot-circle-o"
 
-#: blocks/src/helpers.js:813
+#: blocks/src/helpers.js:826
 msgid "fab-plus"
 msgstr "fab-plus"
 
-#: blocks/src/helpers.js:817
+#: blocks/src/helpers.js:830
 msgid "fab-plus-circle"
 msgstr "fab-plus-circle"
 
-#: blocks/src/helpers.js:821
+#: blocks/src/helpers.js:834
 msgid "fab-plus-square"
 msgstr "fab-plus-square"
 
-#: blocks/src/helpers.js:825
+#: blocks/src/helpers.js:838
 msgid "fab-plus-square-o"
 msgstr "fab-plus-square-o"
 
-#: blocks/src/helpers.js:829
+#: blocks/src/helpers.js:842
 msgid "fab-minus"
 msgstr "fab-minus"
 
-#: blocks/src/helpers.js:833
+#: blocks/src/helpers.js:846
 msgid "fab-minus-circle"
 msgstr "fab-minus-circle"
 
-#: blocks/src/helpers.js:837
+#: blocks/src/helpers.js:850
 msgid "fab-minus-square"
 msgstr "fab-minus-square"
 
-#: blocks/src/helpers.js:841
+#: blocks/src/helpers.js:854
 msgid "fab-minus-square-o"
 msgstr "fab-minus-square-o"
 
-#: blocks/src/helpers.js:845
+#: blocks/src/helpers.js:858
 msgid "fab-times"
 msgstr "fab-times"
 
-#: blocks/src/helpers.js:849
+#: blocks/src/helpers.js:862
 msgid "fab-times-circle"
 msgstr "fab-times-circle"
 
-#: blocks/src/helpers.js:853
+#: blocks/src/helpers.js:866
 msgid "fab-times-circle-o"
 msgstr "fab-times-circle-o"
 
-#: blocks/src/helpers.js:857
+#: blocks/src/helpers.js:870
 msgid "fab-window-close"
 msgstr "fab-window-close"
 
-#: blocks/src/helpers.js:861
+#: blocks/src/helpers.js:874
 msgid "fab-window-close-o"
 msgstr "fab-window-close-o"
 
@@ -1425,23 +1425,23 @@ msgstr ""
 "It is a microcopy to increase the conversion rate by displaying small text "
 "directly above or below the conversion link (button)."
 
-#: blocks/src/old/balloon-1/block.js:40 blocks/src/old/balloon-2/block.js:24
-#: blocks/src/old/balloon/block.js:23
+#: blocks/src/old/balloon-1/block.js:54 blocks/src/old/balloon-2/block.js:38
+#: blocks/src/old/balloon/block.js:37
 msgid "登録されている吹き出しを挿入できます。"
 msgstr "You can insert a registered speech balloon."
 
-#: blocks/src/old/balloon-1/block.js:80 blocks/src/old/balloon-2/block.js:111
-#: blocks/src/old/balloon/block.js:63
+#: blocks/src/old/balloon-1/block.js:97 blocks/src/old/balloon-2/block.js:128
+#: blocks/src/old/balloon/block.js:79
 msgid "人物"
 msgstr "Person"
 
 #: blocks/src/old/balloon-ex-fix1/block.js:59
 #: blocks/src/old/balloon-ex-v2/block.js:20
-#: blocks/src/old/balloon-ex/block.js:37
+#: blocks/src/old/balloon-ex/block.js:51
 msgid "吹き出しEX"
 msgstr "Speech balloon EX"
 
-#: blocks/src/old/balloon-ex/block.js:40
+#: blocks/src/old/balloon-ex/block.js:54
 msgid "登録されている吹き出しのオプションを変更できます。"
 msgstr "You can change the option of a registered speech balloon."
 
@@ -2987,8 +2987,8 @@ msgid "抽出"
 msgstr "Extract"
 
 #: lib/html-forms.php:479 lib/html-forms.php:545
-msgid "フォーマット"
-msgstr "Format"
+msgid "フォーマット（広告ユニット）"
+msgstr "Format (Ad Unit)"
 
 #: lib/html-forms.php:483 lib/html-forms.php:548
 msgid "広告ラベルを表示"
@@ -3164,23 +3164,23 @@ msgstr "*This message is displayed for logged-in users only."
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1498
+#: lib/html-forms.php:1503
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1501
+#: lib/html-forms.php:1506
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1504
+#: lib/html-forms.php:1509
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1507
+#: lib/html-forms.php:1512
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1510
+#: lib/html-forms.php:1515
 msgid "お得"
 msgstr "Great deals"
 
@@ -5486,13 +5486,14 @@ msgstr "Enable inline styles"
 msgid ""
 "本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内で"
 "もインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になっ"
-"たり、AMPのサイズ制限（50KB）を超えやすくなるため有効は推奨はしません。"
+"たり、AMPのサイズ制限（50000バイト）を超えやすくなるため有効は推奨はしませ"
+"ん。"
 msgstr ""
 "Enables the inline style in the body text (disabling this setting is "
 "recommended). If enabled, the inline style attribute can be used for styling "
 "even in the body text. However, enabling this setting is not recommended "
-"because it can cause AMP errors or cause the AMP size limit (50KB) to be "
-"exceeded."
+"because it can cause AMP errors or cause the AMP size limit (50000 Byte) to "
+"be exceeded."
 
 #: lib/page-settings/amp-forms.php:80
 msgid "サイズ制限対応"
@@ -5504,13 +5505,13 @@ msgstr "Enable skin styles"
 
 #: lib/page-settings/amp-forms.php:85
 msgid ""
-"凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50KB）を超えてし"
-"まう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、"
-"AMPページでスキンを適用しないことにより、CSSのサイズを減らします。"
+"凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（50000バイト）を超"
+"えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場"
+"合は、AMPページでスキンを適用しないことにより、CSSのサイズを減らします。"
 msgstr ""
 "If you are using a fancy-style skin, you may exceed the CSS size limit "
-"(50KB) for AMP. If you have applied a skin and get frequent AMP errors, "
-"reduce the size of the CSS by not applying a skin on AMP."
+"(50000 Byte) for AMP. If you have applied a skin and get frequent AMP "
+"errors, reduce the size of the CSS by not applying a skin on AMP."
 
 #: lib/page-settings/amp-forms.php:87
 msgid "子テーマのスタイルを有効にする"
@@ -5519,14 +5520,14 @@ msgstr "Enable child theme styles"
 #: lib/page-settings/amp-forms.php:88
 msgid ""
 "子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限"
-"（50KB）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMP"
-"エラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSS"
-"のサイズを減らします。"
+"（50000バイト）を超えてしまう可能性があります。子テーマのCSSカスタマイズによ"
+"り、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことによ"
+"り、CSSのサイズを減らします。"
 msgstr ""
 "If you customize the style.css of a child theme with a fancy style, you may "
-"exceed the CSS size limit (50KB) for AMP. If you have used CSS customization "
-"of a child theme and get frequent AMP errors, reduce the size of the CSS by "
-"not applying the \"Child theme CSS\" on AMP."
+"exceed the CSS size limit (50000 Byte) for AMP. If you have used CSS "
+"customization of a child theme and get frequent AMP errors, reduce the size "
+"of the CSS by not applying the \"Child theme CSS\" on AMP."
 
 #: lib/page-settings/amp-forms.php:97
 msgid "AMPバリデーター"
@@ -11535,24 +11536,24 @@ msgstr "Enter the content to display for logged-in users."
 msgid "ログインユーザーのみ表示"
 msgstr "Display for logged-in users only"
 
-#: lib/utils.php:782
+#: lib/utils.php:783
 msgid "スクロールできます"
 msgstr "Can scroll"
 
-#: lib/utils.php:870
+#: lib/utils.php:871
 msgid "公開"
 msgstr "Publish"
 
-#: lib/utils.php:871
+#: lib/utils.php:872
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2445
+#: lib/utils.php:2446
 #, php-format
 msgid "%s年"
 msgstr "%s years"
 
-#: lib/utils.php:2447
+#: lib/utils.php:2448
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s years and %s months"
