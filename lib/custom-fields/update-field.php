@@ -117,7 +117,7 @@ if( !function_exists( 'update_custom_insert_post_data' ) ):
 function update_custom_insert_post_data( $data, $postarr ){
   $mydata = isset( $_POST['update_level'] ) ? $_POST['update_level'] : null;
 
-  if( $mydata === 'low' || (!is_user_agent_live_writer() && $mydata == null) ){
+  if( $mydata === 'low' ){
     unset( $data['post_modified'] );
     unset( $data['post_modified_gmt'] );
   }
