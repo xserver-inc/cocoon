@@ -493,3 +493,11 @@ $bb-bad: "\f165";
 $bb-bad-text: "BAD";
 $bb-profile: "\f007";
 $bb-profile-text: "PROFILE";
+
+// //インデックスの末尾を左に揃える
+// .a-wrap,
+// .box-menu{
+//   &:last-child{
+//     margin-right: auto;
+//   }
+// }

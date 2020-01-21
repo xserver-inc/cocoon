@@ -22,6 +22,9 @@
   color: $pallid_text_color;
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
+  &:last-child{
+    margin-right: auto;
+  }
 
   &:hover{
     color: $pallid_text_color;

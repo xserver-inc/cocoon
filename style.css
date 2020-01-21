@@ -7990,6 +7990,9 @@ https://codepen.io/nxworld/pen/oLdoWb
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
   transition: none;
 }
+.box-menu:last-child {
+  margin-right: auto;
+}
 .box-menu:hover {
   color: #777;
   z-index: 2;
