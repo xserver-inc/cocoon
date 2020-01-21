@@ -1893,7 +1893,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
 .admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
-.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; }
+.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
 .admin-settings .demo .box-menu:hover { color: #777; z-index: 2; }
 .admin-settings .demo .box-menu-icon { font-size: 40px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .box-menu-icon * { margin: 10px 0; max-width: 60px; max-height: 60px; height: auto; display: inline-block; }
@@ -3446,7 +3446,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
 .admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
-.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; }
+.admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
 .admin-settings .demo .box-menu:hover { color: #777; z-index: 2; }
 .admin-settings .demo .box-menu-icon { font-size: 40px; display: flex; justify-content: center; align-items: center; }
 .admin-settings .demo .box-menu-icon * { margin: 10px 0; max-width: 60px; max-height: 60px; height: auto; display: inline-block; }

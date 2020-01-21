@@ -7988,6 +7988,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   width: calc(100%/4);
   color: #777;
   box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
+  transition: none;
 }
 .box-menu:hover {
   color: #777;
