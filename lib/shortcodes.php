@@ -710,67 +710,77 @@ endif;
 add_shortcode( 'rss', 'get_rss_feed_tag' );
 if ( !function_exists( 'get_rss_feed_tag' ) ):
 function get_rss_feed_tag( $atts ) {
-  //include_once( ABSPATH . WPINC . '/feed.php' );
+  include_once(ABSPATH . WPINC . '/feed.php');
+  extract(shortcode_atts(
+    array(
+      'url' => 'https://ja.wordpress.org/feed/', //取得するRSSフィードURL
+      'count' => '5', //取得する数
+      'no_image' => NO_IMAGE_150, //画像が取得できなかった場合のイメージ
+      'target' => '_blank', //ブラウザの開き方（target属性）
+      'cache_minute' => '60', //キャッシュ時間（分）
+      'class' => null, //拡張クラス
+    ),
+    $atts,
+    'rss'
+  ));
 
-  $blog_rss = shortcode_atts(
-  array(
-    'url' => 'https://ja.wordpress.org/feed/',
-    'count' => '5',
-    'img' => NO_IMAGE_150,
-    'target' => '_blank',
-    'class' => null,
-  ),
-  $atts );
-
-  $feed_url = $blog_rss['url'];
-  $feed_count = $blog_rss['count'];
-  $img_url = $blog_rss['img'];
+  $feed_url = $url;
+  $feed_count = $count;
+  $no_image_url = $no_image;
   $feed_content = '';
   $feed_contents = '';
 
-  $rss = fetch_feed( $feed_url );
-  if ( !is_wp_error( $rss ) ) :
-      $maxitems = $rss->get_item_quantity( $feed_count );
-      $rss_items = $rss->get_items( 0, $maxitems );
+  //Cache処理
+  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$no_image_url.'_'.$target.'_'.$class);
+  $feed_contents = get_transient( $transient_id );
+  if ($feed_contents) {
+    return $feed_contents;
+  } else {
+    $rss = fetch_feed( $feed_url );
+  }
+  if ( !is_wp_error( $rss ) ) {
+    $maxitems = $rss->get_item_quantity( $feed_count );
+    $rss_items = $rss->get_items( 0, $maxitems );
 
-      foreach ( $rss_items as $item ) :
-          $first_img = '';
-          if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
-          if ( !empty( $first_img ) ) :
-              $feed_img = esc_attr( $first_img );
-          else:
-              $feed_img = $img_url;
-          endif;
-          $feed_url = $item->get_permalink();
-          $feed_title = $item->get_title();
-          $feed_date = $item->get_date('Y.m.d');
-          $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
+    foreach ( $rss_items as $item ) :
+      $first_img = '';
+      if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
+      if ( !empty( $first_img ) ) :
+          $feed_img = esc_attr( $first_img );
+      else:
+          $feed_img = $no_image_url;
+      endif;
+      $feed_url = $item->get_permalink();
+      $feed_title = $item->get_title();
+      $feed_date = $item->get_date('Y.m.d');
+      $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
-          $feed_content .= '<a rel="noopener" href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'">';
-          $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
-          $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
-          $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
-          $feed_content .= '</figure>';
-          $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
-          $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
-          $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
-          $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
-            <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
-          </div>';
-          $feed_content .= '</div>';//card-content
-          $feed_content .= '</div>';
-          $feed_content .= '</a>';
-      endforeach;
-  else:
-      $feed_content = '<p>RSSフィードを取得できません</p>';
-  endif;
+      $feed_content .= '<a rel="noopener" href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'">';
+      $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
+      $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
+      $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
+      $feed_content .= '</figure>';
+      $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
+      $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
+      $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
+      $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
+        <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
+      </div>';
+      $feed_content .= '</div>';//card-content
+      $feed_content .= '</div>';
+      $feed_content .= '</a>';
+    endforeach;
+  } else {
+    $feed_content = '<p>RSSフィードを取得できません</p>';
+  }
   $add_class = null;
   if ($class) {
     $add_class = ' '.$class;
   }
   $feed_contents = '<div class="rss-entry-cards widget-entry-cards'.$add_class.' no-icon">' . $feed_content . '</div>';
+  set_transient($transient_id, $feed_contents, 60 * intval($cache_minute));
 
-  return $feed_contents;
+  return apply_filters( 'get_rss_feed_tag',  $feed_contents);
 
 }
 endif;
