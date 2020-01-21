@@ -1149,3 +1149,30 @@ div.speech-balloon {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+
+/* -------------------------------------------
+/ カルーセル・パンくずリスト背景対応
+------------------------------------------- */
+.carousel-in,
+.breadcrumb.sbp-main-before,
+.breadcrumb.sbp-footer-before,
+.breadcrumb.pbp-main-before,
+.breadcrumb.pbp-footer-before{
+  background-color: transparent;
+}
+
+/* -------------------------------------------
+/ ボックスメニュー対応
+------------------------------------------- */
+.box-menu{
+  background-color: transparent;
+  color: #d3d3d3;
+}
+
+.appeal-content{
+  color: #333333;
+}
+
+.appeal-button{
+  background-color: #84172f;
+}
