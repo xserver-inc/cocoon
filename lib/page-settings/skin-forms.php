@@ -47,7 +47,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               $version = $info['version'];
               $visibility = $info['visibility'];
               //表示を無効にしている場合は設定画面に表示しない
-              if ((!DEBUG_MODE && !$visibility) || is_exclude_skin($file_url)) {
+              if (!DEBUG_MODE && (!$visibility || is_exclude_skin($file_url))) {
                 continue;
               }
 
