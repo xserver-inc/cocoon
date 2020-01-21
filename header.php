@@ -36,13 +36,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','<?php echo $tracking_id; ?>');</script>
 <!-- End Google Tag Manager -->
 <?php endif //Google Tag Manager終了 ?>
-
 <?php //自動アドセンス
 get_template_part('tmp/ad-auto-adsense'); ?>
-
-
-<?php wp_head(); ?>
-
+<?php //WordPressが出力するヘッダー情報
+wp_head(); ?>
 
 <!-- google analytics, Googleタグマネージャー -->
 <link rel='preconnect dns-prefetch' href="//www.googletagmanager.com">
