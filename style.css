@@ -7965,6 +7965,73 @@ https://codepen.io/nxworld/pen/oLdoWb
   margin-right: 0;
 }
 
+.box-menus {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+.box-menus * {
+  line-height: 1.6;
+  margin: 0;
+}
+
+.box-menu {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  min-height: 100px;
+  cursor: pointer;
+  background: #fff;
+  width: calc(100%/4);
+  color: #777;
+  box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1;
+}
+.box-menu:hover {
+  color: #777;
+  z-index: 2;
+}
+
+.box-menu-icon {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-menu-icon * {
+  margin: 10px 0;
+  max-width: 60px;
+  max-height: 60px;
+  height: auto;
+  display: inline-block;
+}
+.box-menu-icon img {
+  font-size: 16px;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2));
+}
+
+.box-menu-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.box-menu-description {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.nwa .box-menu {
+  width: calc(100%/2);
+}
+
+.wwa .box-menu {
+  width: calc(100%/6);
+}
+
 .no-border {
   border: none;
 }
@@ -9358,6 +9425,15 @@ twitter-widget {
   .container .column-wrap > div {
     width: 100%;
     padding: 1em 0;
+  }
+
+  .box-menus .box-menu {
+    width: calc(100%/2);
+  }
+
+  .wwa .box-menus {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 @media screen and (max-width: 480px) {

@@ -624,3 +624,85 @@ function get_recommend_cards_tag($atts){
 }
 endif;
 
+//ナビメニューショートコード
+//参考：https://www.orank.net/1972
+add_shortcode('navi', 'get_ord_navi_card_list_tag');
+if ( !function_exists( 'get_ord_navi_card_list_tag' ) ):
+function get_ord_navi_card_list_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'type' => '',
+    'bold' => 1,
+    'arrow' => 1,
+    'class' => null,
+  ), $atts, 'navi'));
+  $atts = array(
+    'name' => $name,
+    'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
+    'class' => $class,
+  );
+  $tag = get_navi_card_list_tag($atts);
+
+  return apply_filters('get_ord_navi_card_list_tag', $tag);
+}
+endif;
+
+//ボックスメニューショートコード
+add_shortcode('box_menu', 'get_box_menu_tag');
+if ( !function_exists( 'get_box_menu_tag' ) ):
+function get_box_menu_tag($atts){
+  extract(shortcode_atts(array(
+    'name' => '', // メニュー名
+    'class' => null,
+  ), $atts, 'box_menu'));
+
+  if (is_admin() && !is_admin_php_page()) {
+    return;
+  }
+
+  $tag = null;
+  $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
+  if (!$menu_items) {
+    return;
+  }
+
+  //_v($menu_items);
+
+  foreach ($menu_items as $menu):
+
+    $url = $menu->url;
+    $title = $menu->title;
+    $title_tag = '<div class="box-menu-label">'.$title.'</div>';
+    $description_tag = '<div class="box-menu-description">'.$menu->description.'</div>';
+    $attr_title = $menu->attr_title;
+    $classes = implode(' ', $menu->classes);
+    $icon_tag = '<div class="fa fa-star" aria-hidden="true"></div>';
+    //画像URLの場合
+    if (preg_match('/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\.(jpg|jpeg|gif|png)/', $attr_title)) {
+      $img_url = $attr_title;
+      $icon_tag = '<img src="'.esc_url($img_url).'" alt="'.esc_attr($title).'" />';
+    } //アイコンフォントの場合
+    elseif (preg_match('/fa.? fa-[a-z\-]+/', $classes)) {
+      $icon_tag = '<div class="'.esc_attr($classes).'" aria-hidden="true"></div>';
+    }
+    $icon_tag = '<div class="box-menu-icon">'.$icon_tag.'</div>';
+
+    $tag .= '<a class="box-menu" href="'.esc_url($url).'">'.
+      $icon_tag.
+      $title_tag.
+      $description_tag.
+    '</a>';
+  endforeach;
+  $add_class = null;
+  if ($class) {
+    $add_class = ' '.$class;
+  }
+  //ラッパーで囲む
+  $tag = '<div class="box-menus'.$add_class.' no-icon">'.$tag.'</div>';
+
+  return apply_filters('get_box_menu_tag', $tag);
+}
+endif;
+
