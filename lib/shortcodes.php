@@ -715,7 +715,7 @@ function get_rss_feed_tag( $atts ) {
     array(
       'url' => 'https://ja.wordpress.org/feed/', //取得するRSSフィードURL
       'count' => '5', //取得する数
-      'no_image' => NO_IMAGE_150, //画像が取得できなかった場合のイメージ
+      'no_image' => NO_IMAGE_RSS, //画像が取得できなかった場合のイメージ
       'target' => '_blank', //ブラウザの開き方（target属性）
       'cache_minute' => '60', //キャッシュ時間（分）
       'class' => null, //拡張クラス
@@ -746,9 +746,9 @@ function get_rss_feed_tag( $atts ) {
       $first_img = '';
       if ( preg_match( '/<img.+?src=[\'"]([^\'"]+?)[\'"].*?>/msi', $item->get_content(), $matches )) $first_img = $matches[1];
       if ( !empty( $first_img ) ) :
-          $feed_img = esc_attr( $first_img );
+        $feed_img = esc_attr( $first_img );
       else:
-          $feed_img = $no_image_url;
+        $feed_img = $no_image_url;
       endif;
       $feed_url = $item->get_permalink();
       $feed_title = $item->get_title();

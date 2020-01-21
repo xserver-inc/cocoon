@@ -236,6 +236,7 @@ define('NO_IMAGE_160', get_template_directory_uri().'/images/no-image-160.png');
 define('NO_IMAGE_120', get_template_directory_uri().'/images/no-image-120.png');
 define('NO_IMAGE_150', get_template_directory_uri().'/images/no-image-150.png');
 define('NO_IMAGE_LARGE', get_template_directory_uri().'/images/no-image-large.png');
+define('NO_IMAGE_RSS', get_template_directory_uri().'/images/no-image-rss.png');
 
 ///////////////////////////////////////
 // キャッシュ
