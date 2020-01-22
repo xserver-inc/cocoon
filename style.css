@@ -8834,6 +8834,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   word-break: break-all;
 }
 
+#wpforo-wrap h3 {
+  background-color: transparent;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;
