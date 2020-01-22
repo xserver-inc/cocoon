@@ -3597,7 +3597,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #buddypress #members-friends { margin-left: 6px; }
 .admin-settings .demo #buddypress #members-friends select, .admin-settings .demo #buddypress #members-friends option { padding: 3px; font-size: 16px; }
 .admin-settings .demo #buddypress div.item-list-tabs ul li.last select { min-width: 210px; }
-.admin-settings .demo div#wpforo-wrap { padding: 0; }
+.admin-settings .demo div#wpforo-wrap { padding: 10px; }
 .admin-settings .demo div#wpforo-wrap .wpfl-1 .wpforo-forum-description, .admin-settings .demo div#wpforo-wrap .wpfl-1 .wpforo-last-post-title, .admin-settings .demo div#wpforo-wrap .wpforo-post-head { font-size: 16px; }
 .admin-settings .demo div#wpforo-wrap .wpfl-1 .head-title, .admin-settings .demo div#wpforo-wrap .wpforo-topic-title a { font-size: 20px; }
 .admin-settings .demo div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content, .admin-settings .demo div#wpforo-wrap .wpforo-recent-wrap .wpforo-recent-content td.wpf-spost-title .wpf-spost-title-link, .admin-settings .demo div#wpforo-wrap .wpf-htr td { font-size: 18px; }
@@ -3612,6 +3612,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wpf-emoji-wrap .wpf-emoji { font-size: 24px; }
 .admin-settings .demo .wpforo-attached-file { word-break: break-all; }
 .admin-settings .demo #wpforo-wrap h3 { background-color: transparent; }
+.admin-settings .demo #wpforo-wrap h3::after { display: none; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }

@@ -1169,10 +1169,12 @@ div.speech-balloon {
   color: #d3d3d3;
 }
 
-.appeal-content{
+.appeal-content,
+.label-box-label{
   color: #333333;
 }
 
 .appeal-button{
   background-color: #84172f;
 }
+

@@ -1,5 +1,5 @@
 div#wpforo-wrap{
-  padding: 0;
+  padding: 10px;
 
   .wpfl-1 .wpforo-forum-description,
   .wpfl-1 .wpforo-last-post-title,
@@ -68,6 +68,9 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p{
 
 #wpforo-wrap h3{
   background-color: transparent;
+  &::after{
+    display: none;
+  }
 }
 
 // #tinymce.main.article{
