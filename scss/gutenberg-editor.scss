@@ -638,39 +638,7 @@ ol, ul {
 .editor-styles-wrapper .red{
   margin-left: 0;
 }
-// [aria-label="赤字"],
-// [aria-label="赤太字"]{
-//   color: #E50202;
-// }
-// [aria-label="青字"],
-// [aria-label="青太字"]{
-//   color: blue;
-// }
-// [aria-label="緑字"],
-// [aria-label="緑太字"]{
-//   color: green;
-// }
 
-// [aria-label="黄色マーカー"]{
-//   background-color: #ff6;
-// }
-// [aria-label="黄色アンダーラインマーカー"]{
-//   color: #fcc800;
-// }
-
-// [aria-label="青色マーカー"]{
-//   background-color: #a5d7f9;
-// }
-// [aria-label="青色アンダーラインマーカー"]{
-//   color: #a5d7f9;
-// }
-
-// [aria-label="赤色マーカー"]{
-//   background-color: #ffb6b9;
-// }
-// [aria-label="赤色アンダーラインマーカー"]{
-//   color: #ffb6b9;
-// }
 
 //トグルボックス
 .toggle-wrap{
@@ -735,26 +703,11 @@ ol, ul {
   padding: 0 10px;
 }
 
-// .wp-block-cocoon-blocks-code-box{
-//   background-color: #f3f4f5;
-//   border: 1px solid #ccc;
-//   padding: 10px !important;
-//   margin: 1em 0;
-// }
-// .wp-block-cocoon-blocks-code-box.code-box{
-//   border-width: 1px;
-//   border-style: solid;
+// .editor-post-title__block {
+//   padding-left: 58px;
+//   padding-right: 58px;
 // }
 
-// .block-editor-block-toolbar__slot{
-//   display: inline-flex;
-//   // .editor-format-toolbar:first-child{
-//   //   margin-left: 30px;
-//   // }
-//   // .block-editor-format-toolbar{
-//   //   float: left;
-//   // }
-// }
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
 @mixin ms_block_fix{
