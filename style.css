@@ -610,7 +610,7 @@ img.emoji {
 .tagline {
   text-align: center;
   font-size: 14px;
-  margin: .6em 0;
+  margin: .6em 1em;
 }
 
 .logo {
