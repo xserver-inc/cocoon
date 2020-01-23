@@ -1170,7 +1170,6 @@ div.speech-balloon {
 }
 
 .appeal-content,
-.label-box-label,
 .block-box-label,
 .toggle-button{
   color: #333;
@@ -1180,3 +1179,12 @@ div.speech-balloon {
   background-color: #84172f;
 }
 
+.label-box-label {
+  color: #fff;
+  text-shadow: #191919 3px 0 0,#191919 2px 1px 0,#191919 2px 2px 0,#191919 2px 3px 0,#191919 1px 3px 0,#191919 0 3px 0,#191919 -1px 3px 0,#191919 -2px 2px 0,#191919 -3px 1px 0,#191919 -3px 0 0,#191919 -3px -1px 0,#191919 -3px -2px 0,#191919 -2px -2px 0,#191919 -1px -3px 0,#191919 0 -3px 0,#191919 1px -3px 0,#191919 2px -2px 0,#191919 2px -2px 0,
+  #191919 3px -1px 0
+}
+
+.wp-caption-text{
+  color: #191919;
+}
