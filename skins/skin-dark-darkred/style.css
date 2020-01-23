@@ -799,19 +799,11 @@ blockquote p {
   color: #d3d3d3;
 }
 
-.footer-bottom.fdt-up-and-down .footer-bottom-content .navi-footer-in>ul {
-  transform: skew(-20deg);
-}
-
-.footer-bottom.fnm-text-width .menu-footer li a {
-  transform: skew(20deg);
-  padding: 0 15px;
-}
-
 .footer-bottom.fnm-text-width .menu-footer li a:hover {
   background:none;
   color: #009250;
 }
+
 
 .footer {
   background-image: repeating-linear-gradient(
