@@ -1013,9 +1013,45 @@ select {
 /* -------------------------------------------
 / 『ボックス』
 ------------------------------------------- */
-div[class$="-box"].common-icon-box {
-  color: #595858;
+.information-box,
+.question-box,
+.alert-box,
+.information,
+.question,
+.alert,
+.memo-box,
+.comment-box,
+.common-icon-box{
+  background-color: transparent;
 }
+
+.primary-box,
+.sp-primary,
+.primary,
+.success-box,
+.sp-success,
+.success,
+.info-box,
+.sp-info,
+.info,
+.warning-box,
+.sp-warning,
+.warning,
+.danger-box,
+.sp-danger,
+.danger,
+.secondary-box,
+.light-box,
+.dark-box,
+.blank-box.sticky {
+  opacity: 0.85;
+}
+
+
+
+
+
+
 
 span[class^="marker"]{
   color: #595858;
