@@ -985,6 +985,7 @@ select {
 .comment-box,
 .common-icon-box{
   background-color: transparent;
+  border-width: 2px;
 }
 
 .primary-box,
