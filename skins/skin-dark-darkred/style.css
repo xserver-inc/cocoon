@@ -531,15 +531,23 @@ table tr:nth-of-type(2n) {
 /* -------------------------------------------
 / 『ウィジェット：エントリカード／コメント』
 ------------------------------------------- */
-.widget-entry-cards figure {
+.widget-entry-cards figure,
+.carousel-entry-card figure {
   overflow: hidden;
 }
 
-.widget-entry-card .card-thumb img {
+.carousel-in {
+  background-color: #191919;
+}
+
+.widget-entry-card .card-thumb img,
+.carousel-entry-card .card-thumb img {
   transform: scale(1);
   transition: .3s ease-in-out;
 }
-.widget-entry-cards .a-wrap:hover .widget-entry-card .card-thumb img {
+
+.widget-entry-cards .a-wrap:hover .widget-entry-card .card-thumb img,
+.carousel .a-wrap:hover .card-thumb img {
   transform: scale(1.3);
 }
 
