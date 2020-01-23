@@ -255,13 +255,27 @@ endif;
 
 //除外するスキンかどうか
 if ( !function_exists( 'is_exclude_skin' ) ):
-function is_exclude_skin($url){
-  $exclude_skins = get_exclude_skins();
+function is_exclude_skin($url, $exclude_skins = array()){
+  if (empty($exclude_skins)) {
+    $exclude_skins = get_exclude_skins();
+  }
   foreach ($exclude_skins as $exclude_skin) {
     if (includes_string($url, $exclude_skin.'/style.css')) {
       return true;
     }
   }
   return false;
+}
+endif;
+
+
+//エディター除外スキン設定
+if ( !function_exists( 'get_editor_exclude_skins' ) ):
+function get_editor_exclude_skins(){
+  //除外するスキンのフォルダ名を追加していく
+  $exclude_skins = array(
+    'skin-dark-darkred',
+  );
+  return apply_filters('get_editor_exclude_skins', $exclude_skins);
 }
 endif;
