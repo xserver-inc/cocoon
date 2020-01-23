@@ -115,7 +115,9 @@ function visual_editor_stylesheets_custom($stylesheets) {
       );
     }
     //スキンが設定されている場合
-    if (get_skin_url()) {
+    if (get_skin_url() &&
+        //エディター除外スキンの場合
+        !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
       array_push($stylesheets,
         add_file_ver_to_css_js(get_skin_url())
       );

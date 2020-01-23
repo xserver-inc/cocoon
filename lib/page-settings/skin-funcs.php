@@ -253,6 +253,17 @@ function get_exclude_skins(){
 }
 endif;
 
+//エディター除外スキン設定
+if ( !function_exists( 'get_editor_exclude_skins' ) ):
+function get_editor_exclude_skins(){
+  //除外するスキンのフォルダ名を追加していく
+  $exclude_skins = array(
+    'skin-dark-darkred',
+  );
+  return apply_filters('get_editor_exclude_skins', $exclude_skins);
+}
+endif;
+
 //除外するスキンかどうか
 if ( !function_exists( 'is_exclude_skin' ) ):
 function is_exclude_skin($url, $exclude_skins = array()){
@@ -265,17 +276,5 @@ function is_exclude_skin($url, $exclude_skins = array()){
     }
   }
   return false;
-}
-endif;
-
-
-//エディター除外スキン設定
-if ( !function_exists( 'get_editor_exclude_skins' ) ):
-function get_editor_exclude_skins(){
-  //除外するスキンのフォルダ名を追加していく
-  $exclude_skins = array(
-    'skin-dark-darkred',
-  );
-  return apply_filters('get_editor_exclude_skins', $exclude_skins);
 }
 endif;
