@@ -1499,6 +1499,10 @@ table td {
   padding: 6px;
 }
 
+figure.wp-block-table.aligncenter, figure.wp-block-table.alignleft, figure.wp-block-table.alignright {
+  display: block;
+}
+
 .scrollable-table {
   -webkit-overflow-scrolling: touch;
 }

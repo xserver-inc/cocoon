@@ -132,6 +132,14 @@ table {
   }
 }
 
+figure.wp-block-table{
+  &.aligncenter,
+  &.alignleft,
+  &.alignright{
+    display: block;
+  }
+}
+
 ///////////////////////////////////////
 // レスポンシブテーブル
 ///////////////////////////////////////
