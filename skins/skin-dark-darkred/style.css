@@ -1104,34 +1104,37 @@ span[class^="marker-under"]{
 /* -------------------------------------------
 / 『吹き出し』
 ------------------------------------------- */
-div.speech-balloon p {
-  color: #292929;
-}
-
 .speech-icon img, .speech-icon amp-img {
   border: 2px solid #f3f3f3;
   background-color: #b6b6b6;
 }
 
 div.speech-balloon {
-  background-color: #f1f1f1;
-  border: 2px solid #737373;
+  background-color: #191919;
+  border-color: #d3d3d3;
+}
+
+.sbs-flat .speech-balloon,
+.sbs-line.sbp-r .speech-balloon{
+  background-color: #191919;
 }
 
 .speech-balloon::before {
-  border-right: 12px solid #737373;
+  border-right-color: #d3d3d3;
 }
 
-.speech-balloon::after {
-  border-right: 12px solid #f1f1f1;
+.speech-balloon::after,
+.sbs-flat .speech-balloon::after {
+  border-right-color: #191919;
 }
 
 .sbp-r .speech-balloon::before {
-  border-left: 12px solid #f1f1f1;
+  border-left-color: #d3d3d3;
 }
 
-.sbp-r .speech-balloon::after {
-  border-left: 12px solid #f1f1f1;
+.sbp-r .speech-balloon::after,
+.sbs-line.sbp-r .speech-balloon::after {
+  border-left: 12px solid #191919;
 }
 
 /* -------------------------------------------
