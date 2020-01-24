@@ -212,6 +212,9 @@ function url_to_external_ogp_blogcard_tag($url){
   if ($user_title) {
     $title = $user_title;
   }
+  //タイトルのフック
+  $title = apply_filters('cocoon_blogcard_title',$title);
+  $title = apply_filters('cocoon_external_blogcard_title',$title);
 
 
   $image = strip_tags($image);

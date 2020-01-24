@@ -63,7 +63,6 @@ function url_to_internal_blogcard_tag($url){
     //global $post;
     $post_data = get_post($id);
     setup_postdata($post_data);
-    $exce = $post_data->post_excerpt;
 
     $title = $post_data->post_title;//タイトルの取得
 
@@ -136,6 +135,9 @@ function url_to_internal_blogcard_tag($url){
       $thumbnail = get_blogcard_thumbnail_image_tag($image);
     }
   }
+  //タイトルのフック
+  $title = apply_filters('cocoon_blogcard_title',$title);
+  $title = apply_filters('cocoon_internal_blogcard_title',$title);
   //スニペットのフック
   $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
   $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
