@@ -149,10 +149,6 @@ require_once abspath(__FILE__).'widgets/new-entries.php';
 require_once abspath(__FILE__).'widgets/related-entries.php';
 //人気記事ウィジェット
 require_once abspath(__FILE__).'widgets/popular-entries.php';
-//ナビカードウィジェット
-require_once abspath(__FILE__).'widgets/navi-entries.php';
-//おすすめカードウィジェット
-require_once abspath(__FILE__).'widgets/recommended-cards.php';
 //最近のコメントウィジェット
 require_once abspath(__FILE__).'widgets/recent-comments.php';
 //フォローボタンウィジェット
@@ -183,3 +179,13 @@ require_once abspath(__FILE__).'widgets/ad.php';
 require_once abspath(__FILE__).'widgets/toc.php';
 //ウィジェットの表示制御
 require_once abspath(__FILE__).'widgets/display-widgets.php';
+//メニューを取得
+$nav_menus = wp_get_nav_menus();
+if (!empty($nav_menus)) {
+  //ナビカードウィジェット
+  require_once abspath(__FILE__).'widgets/navi-entries.php';
+  //おすすめカードウィジェット
+  require_once abspath(__FILE__).'widgets/recommended-cards.php';
+  //ボックスメニューウィジェット
+  require_once abspath(__FILE__).'widgets/box-menus.php';
+}

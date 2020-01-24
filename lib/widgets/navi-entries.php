@@ -23,10 +23,10 @@ class NaviEntryWidgetItem extends WP_Widget {
   }
   function widget($args, $instance) {
     extract( $args );
-    //メニュー名
-    $name = apply_filters( 'navi_entries_widget_name', empty($instance['name']) ? '' : $instance['name'] );
     //タイトル名を取得
     $title = apply_filters( 'navi_entries_widget_title', empty($instance['title']) ? '' : $instance['title'] );
+    //メニュー名
+    $name = apply_filters( 'navi_entries_widget_name', empty($instance['name']) ? '' : $instance['name'] );
     $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
     //表示タイプ
     $entry_type = apply_filters( 'navi_entries_widget_entry_type', empty($instance['entry_type']) ? ET_DEFAULT : $instance['entry_type'] );
@@ -61,8 +61,8 @@ class NaviEntryWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['name'] = strip_tags($new_instance['name']);
     $instance['title'] = strip_tags($new_instance['title']);
+    $instance['name'] = strip_tags($new_instance['name']);
     $instance['entry_type'] = strip_tags($new_instance['entry_type']);
     $instance['is_bold'] = isset($new_instance['is_bold']) ? 1 : 0;
     $instance['is_arrow_visible'] = isset($new_instance['is_arrow_visible']) ? 1 : 0;
@@ -71,20 +71,20 @@ class NaviEntryWidgetItem extends WP_Widget {
   function form($instance) {
     if(empty($instance)){
       $instance = array(
-        'name'   => '',
         'title'   => '',
+        'name'   => '',
         'entry_type'  => ET_DEFAULT,
         'is_bold'  => 0,
         'is_arrow_visible'  => 0,
       );
     }
-    $name   = '';
     $title   = '';
+    $name   = '';
     $entry_type  = ET_DEFAULT;
-    if (isset($instance['name']))
-      $name = esc_attr($instance['name']);
     if (isset($instance['title']))
       $title = esc_attr($instance['title']);
+    if (isset($instance['name']))
+      $name = esc_attr($instance['name']);
     if (isset($instance['entry_type']))
       $entry_type = esc_attr($instance['entry_type']);
     $is_bold = empty($instance['is_bold']) ? 0 : 1;
