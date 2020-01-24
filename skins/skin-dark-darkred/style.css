@@ -566,13 +566,13 @@ table tr:nth-of-type(2n) {
 }
 
 .recent-comment-content {
-  background: #ccc;
+  background: #191919;
   border: 1px solid #ccc;
-  color: #191919;
+  color: #d3d3d3;
 }
 
 .recent-comment-content::after {
-  border: none;
+  border-bottom-color: #191919;
 }
 
 
