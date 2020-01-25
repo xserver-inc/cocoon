@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/*
+  Skin Name: ダークブルー
+  Description: ダークモードスキン
+  Skin URI: https://zvalinf.info/skin-check/archives/197?theme-switch=skin-dark-darkred
+  Author: y.hiroaki
+  Author URI: https://zvalinf.info
+  Screenshot URI: XXXXX
+  Version: 0.0.1
+  Priority: 9830001000
+*/
+
+//キーカラー
+$key: #1b51ad;
+$k1: rgba(27, 81, 173, 0.8);
+$k2: rgba(27, 81, 173, 0.6);
+$k3: #2266d9;
+$k4: rgba(27, 81, 173, 0.4);
+$k5: rgba(27, 81, 173, 0.2) ;
+$k6: #0c244c;
+
+//サブカラー
+$sub: #e0861a;
+$s1: rgba(224, 134, 26, 0.8);
+$s2: rgba(224, 134, 26, 0.08);
+$s3: #ecaa5b;
+$s4: rgba(224, 134, 26, 0.2);
+$s5: rgba(224, 134, 26, 0.3);
+$s6: rgba(224, 134, 26, 0.6);
+$s7: rgba(224, 134, 26, 0.7);
+$s8: #9b5d12;
+$s9: rgba(224, 134, 26, 0.4);
+
+// Base file import
+@import "..\\_scss\\_skin_dark_base.scss";
