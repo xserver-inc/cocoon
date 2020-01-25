@@ -213,6 +213,138 @@ function get_cocoon_editor_color_palette_colors(){
 }
 endif;
 
+//Gutenbergコードブロック用の言語CSS
+if ( !function_exists( 'get_block_editor_code_languages' ) ):
+function get_block_editor_code_languages(){
+  $languages = array(
+    array(
+      'value' => 'nohighlight',
+      'label' => __( 'ハイライト表示しない', THEME_NAME ),
+    ),
+    array(
+      'value' => 'plaintext',
+      'label' => __( 'プレーンテキスト', THEME_NAME ),
+    ),
+    array(
+      'value' => 'bash',
+      'label' => __( 'Bash', THEME_NAME ),
+    ),
+    array(
+      'value' => 'basic',
+      'label' => __( 'Basic', THEME_NAME ),
+    ),
+    array(
+      'value' => 'cs',
+      'label' => __( 'C#', THEME_NAME ),
+    ),
+    array(
+      'value' => 'cpp',
+      'label' => __( 'C++', THEME_NAME ),
+    ),
+    array(
+      'value' => 'css',
+      'label' => __( 'CSS', THEME_NAME ),
+    ),
+    array(
+      'value' => 'd',
+      'label' => __( 'D', THEME_NAME ),
+    ),
+    array(
+      'value' => 'dos',
+      'label' => __( 'DOS', THEME_NAME ),
+    ),
+    array(
+      'value' => 'delphi',
+      'label' => __( 'Delphi', THEME_NAME ),
+    ),
+    array(
+      'value' => 'go',
+      'label' => __( 'Go', THEME_NAME ),
+    ),
+    array(
+      'value' => 'html',
+      'label' => __( 'HTML', THEME_NAME ),
+    ),
+    array(
+      'value' => 'haml',
+      'label' => __( 'Haml', THEME_NAME ),
+    ),
+    array(
+      'value' => 'json',
+      'label' => __( 'JSON', THEME_NAME ),
+    ),
+    array(
+      'value' => 'java',
+      'label' => __( 'Java', THEME_NAME ),
+    ),
+    array(
+      'value' => 'javascript',
+      'label' => __( 'JavaScript', THEME_NAME ),
+    ),
+    array(
+      'value' => 'less',
+      'label' => __( 'Less', THEME_NAME ),
+    ),
+    array(
+      'value' => 'markdown',
+      'label' => __( 'Markdown', THEME_NAME ),
+    ),
+    array(
+      'value' => 'objectivec',
+      'label' => __( 'Objective C', THEME_NAME ),
+    ),
+    array(
+      'value' => 'php',
+      'label' => __( 'PHP', THEME_NAME ),
+    ),
+    array(
+      'value' => 'perl',
+      'label' => __( 'Perl', THEME_NAME ),
+    ),
+    array(
+      'value' => 'python',
+      'label' => __( 'Python', THEME_NAME ),
+    ),
+    array(
+      'value' => 'r',
+      'label' => __( 'R', THEME_NAME ),
+    ),
+    array(
+      'value' => 'ruby',
+      'label' => __( 'Ruby', THEME_NAME ),
+    ),
+    array(
+      'value' => 'rust',
+      'label' => __( 'Rust', THEME_NAME ),
+    ),
+    array(
+      'value' => 'scss',
+      'label' => __( 'SCSS', THEME_NAME ),
+    ),
+    array(
+      'value' => 'sql',
+      'label' => __( 'SQL', THEME_NAME ),
+    ),
+    array(
+      'value' => 'swift',
+      'label' => __( 'Swift', THEME_NAME ),
+    ),
+    array(
+      'value' => 'vbscript',
+      'label' => __( 'VBScript', THEME_NAME ),
+    ),
+    array(
+      'value' => 'xml',
+      'label' => __( 'XML', THEME_NAME ),
+    ),
+  );
+
+  //カラーパレットフック
+  $languages = apply_filters('get_block_editor_code_languages', $languages);
+  return $languages;
+}
+endif;
+
 //ブロックエディターカラーパレット用のCSS
 if ( !function_exists( 'get_block_editor_color_palette_css' ) ):
 function get_block_editor_color_palette_css(){
