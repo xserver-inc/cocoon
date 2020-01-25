@@ -164,7 +164,7 @@ body {
 .pager-post-navi a.prev-post,
 .pager-post-navi a.next-post,
 .pager-post-navi.post-navi-square a {
-  background-color: rgba(0, 146, 80, 0.05);
+  background-color: rgba(224, 134, 26, 0.05);
   border: 2px outset #1e2d28;
   color: #d3d3d3;
   transition: all 0.4s;
@@ -1165,6 +1165,18 @@ div.speech-balloon {
 
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
   color: #333 !important;
+}
+
+/* -------------------------------------------
+/ 『カルーセル』
+------------------------------------------- */
+.slick-dots li.slick-active button:before {
+  color: #2266d9;
+}
+
+.slick-dots li button:before {
+  color: #666;
+  opacity: 1;
 }
 
 /*

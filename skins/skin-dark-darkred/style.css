@@ -1167,6 +1167,18 @@ div.speech-balloon {
   color: #333 !important;
 }
 
+/* -------------------------------------------
+/ 『カルーセル』
+------------------------------------------- */
+.slick-dots li.slick-active button:before {
+  color: #8f2f44;
+}
+
+.slick-dots li button:before {
+  color: #666;
+  opacity: 1;
+}
+
 /*
 .wp-caption-text{
   color: #191919;
