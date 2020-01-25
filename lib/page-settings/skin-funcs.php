@@ -248,6 +248,8 @@ function get_exclude_skins(){
     'veilnui-simplog-purple',
     'veilnui-simplog-yellow',
     'skin-dark-darkred',
+    'skin-dark-darkblue',
+    'skin-dark-darkgreen',
   );
   return apply_filters('get_exclude_skins', $exclude_skins);
 }
@@ -259,6 +261,8 @@ function get_editor_exclude_skins(){
   //除外するスキンのフォルダ名を追加していく
   $exclude_skins = array(
     'skin-dark-darkred',
+    'skin-dark-darkblue',
+    'skin-dark-darkgreen',
   );
   return apply_filters('get_editor_exclude_skins', $exclude_skins);
 }
