@@ -1188,8 +1188,8 @@ div.speech-balloon {
   #191919 3px -1px 0
 }
 
-textarea{
-  color: #333;
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select{
+  color: #333 !important;
 }
 
 /*
