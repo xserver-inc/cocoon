@@ -718,6 +718,9 @@ function get_rss_feed_tag( $atts ) {
       'img' => NO_IMAGE_RSS, //画像が取得できなかった場合のイメージ
       'target' => '_blank', //ブラウザの開き方（target属性）
       'cache_minute' => '60', //キャッシュ時間（分）
+      'type' => '', //表示タイプ
+      'bold' => 0, //タイトルを太字にするか
+      'arrow' => 0, //矢印を出すか
       'class' => null, //拡張クラス
     ),
     $atts,
@@ -731,7 +734,7 @@ function get_rss_feed_tag( $atts ) {
   $feed_contents = '';
 
   //Cache処理
-  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$class);
+  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class);
   $feed_contents = get_transient( $transient_id );
   if ($feed_contents) {
     return $feed_contents;
@@ -773,11 +776,21 @@ function get_rss_feed_tag( $atts ) {
   } else {
     $feed_content = '<p>RSSフィードを取得できません</p>';
   }
-  $add_class = null;
-  if ($class) {
-    $add_class = ' '.$class;
-  }
-  $feed_contents = '<div class="rss-entry-cards widget-entry-cards'.$add_class.' no-icon">' . $feed_content . '</div>';
+  // $add_class = null;
+  // if ($class) {
+  //   $add_class = ' '.$class;
+  // }
+
+// _v($arrow);
+// _v($type);
+  $atts = array(
+    'type' => $type,
+    'bold' => $bold,
+    'arrow' => $arrow,
+    'class' => $class,
+  );
+  $card_class = get_additional_widget_entry_cards_classes($atts);
+  $feed_contents = '<div class="rss-entry-cards widget-entry-cards'.$card_class.' no-icon">' . $feed_content . '</div>';
   set_transient($transient_id, $feed_contents, 60 * intval($cache_minute));
 
   return apply_filters( 'get_rss_feed_tag',  $feed_contents);

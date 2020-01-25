@@ -417,24 +417,6 @@ function get_additional_widget_entry_cards_classes($atts){
     'class' => null,
   ), $atts));
   $classes = null;
-  // if (is_numeric($type)) {
-  //   $classes .= ' card-type-'.$type;
-  // } else {
-  //   if (includes_string($type, ET_LARGE_THUMB) && $type) {
-  //     $classes .= ' card-large-image';
-  //     if ($type == ET_LARGE_THUMB) {
-  //       $classes .= ' large-thumb';
-  //     } else if ($type == ET_LARGE_THUMB_ON) {
-  //       $classes .= ' large-thumb-on';
-  //     }
-  //   } else {
-  //     if ($type == ET_BORDER_PARTITION) {
-  //       $classes .= ' border-partition';
-  //     } else if ($type == ET_BORDER_SQUARE) {
-  //       $classes .= ' border-square';
-  //     }
-  //   }
-  // }
 
   if (includes_string($type, ET_LARGE_THUMB) && $type) {
     $classes .= ' card-large-image';
@@ -450,10 +432,6 @@ function get_additional_widget_entry_cards_classes($atts){
       $classes .= ' border-square';
     }
   }
-
-  // if ($type) {
-  //   $classes .= ' card-type-'.$type;
-  // }
 
   if ($bold) {
     $classes .= ' card-title-bold';
