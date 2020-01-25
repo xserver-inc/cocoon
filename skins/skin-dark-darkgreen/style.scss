@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/*
+  Skin Name: ダークグリーン
+  Description: ダークモードスキン
+  Skin URI: https://zvalinf.info/skin-check/archives/197?theme-switch=skin-dark-darkred
+  Author: y.hiroaki
+  Author URI: https://zvalinf.info
+  Screenshot URI: XXXXX
+  Version: 0.0.1
+  Priority: 9830001000
+*/
+
+//キーカラー
+$key: #075f66;
+$k1: rgba(7, 95, 102, 0.8);
+$k2: rgba(7, 95, 102, 0.6);
+$k3: #0a818b;
+$k4: rgba(7, 95, 102, 0.4);
+$k5: rgba(7, 95, 102, 0.2) ;
+$k6: #032c2f;
+
+//サブカラー
+$sub: #c31a0d;
+$s1: rgba(231, 30, 15, 0.8);
+$s2: rgba(231, 30, 15, 0.08);
+$s3: #f0291a;
+$s4: rgba(231, 30, 15, 0.2);
+$s5: rgba(231, 30, 15, 0.3);
+$s6: rgba(231, 30, 15, 0.6);
+$s7: rgba(231, 30, 15, 0.7);
+$s8: #540b05;
+$s9: rgba(231, 30, 15, 0.4);
+
+// Base file import
+@import "..\\_scss\\_skin_dark_base.scss";
