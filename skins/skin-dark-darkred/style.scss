@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*
+  Skin Name: ダークエンジ
+  Description: ダークモードスキン
+  Skin URI: https://zvalinf.info/skin-check/archives/197?theme-switch=skin-dark-darkred
+  Author: y.hiroaki
+  Author URI: https://zvalinf.info
+  Screenshot URI: XXXXX
+  Version: 0.0.1
+  Priority: 9830001000
+*/
+
+//キーカラー
+$key: #84172f;
+$k1: rgba(132, 23, 47, 0.8);
+$k2: rgba(132, 23, 47, 0.6);
+$k3: #8f2f44;
+$k4: rgba(132, 23, 47, 0.4);
+$k5: rgba(132, 23, 47, 0.2) ;
+
+//サブカラー
+$sub: #009250;
+$s1: rgba(0, 146, 80, 0.8);
+$s2: rgba(0, 146, 80, 0.08);
+$s3: #0b683e;
+$s4: rgba(0, 146, 80, 0.2);
+$s5: rgba(0, 146, 80, 0.3);
+$s6: rgba(0, 146, 80, 0.6);
+$s7: rgba(0, 147, 80, 0.7);
+$s8: #002d07;
+$s9: rgba(0, 146, 80, 0.4);
+
+// Base file import
+@import "..\\_scss\\_skin_dark_base.scss";

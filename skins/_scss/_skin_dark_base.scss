@@ -1,14 +1,6 @@
-@charset "UTF-8";
-/*
-  Skin Name: ダークエンジ
-  Description: ダークモードスキン
-  Skin URI: https://zvalinf.info/skin-check/archives/197?theme-switch=skin-dark-darkred
-  Author: y.hiroaki
-  Author URI: https://zvalinf.info
-  Screenshot URI: XXXXX
-  Version: 0.0.1
-  Priority: 9830001000
-*/
+// Skin: ダークエンジ
+// License : GNU GPL v2 or later.
+
 /* -------------------------------------------
 / 『全体の文字色／背景色』
 ------------------------------------------- */
@@ -40,25 +32,26 @@ body {
 /* -------------------------------------------
 / 『グローバルメニュー』
 ------------------------------------------- */
-#navi .navi-in > .menu-header .sub-menu {
-  background-color: #84172f;
+#navi .navi-in>.menu-header .sub-menu {
+  background-color:$key;
 }
 
-.header-container {
-  box-shadow: 0 6px 5px -3px rgba(0, 0, 0, 0.24), 0 6px 10px -3px rgba(0, 0, 0, 0.18);
+.header-container{
+  box-shadow: 0 6px 5px -3px rgba(0,0,0,0.24),
+                0 6px 10px -3px rgba(0,0,0,0.18);
 }
 
 .header-container .navi {
-  background-color: #84172f;
+  background-color:$key;
 }
 
-#navi .navi-in a {
+#navi .navi-in a{
   color: #f6f6f6;
   transition: 0.3s;
 }
 
 #navi .navi-in a:hover {
-  background-color: rgba(0, 146, 80, 0.8);
+  background-color: $s1;
 }
 
 /* -------------------------------------------
@@ -71,35 +64,35 @@ body {
 
 /* 奇数番目のカード */
 .entry-card-wrap.a-wrap:nth-child(odd) {
-  position: relative;
-  z-index: 0;
+    position: relative;
+    z-index: 0;
 }
 
 .entry-card-wrap.a-wrap:nth-child(odd):before {
-  content: "";
+  content:"";
   color: #d3d3d3;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:-1;
   top: 0;
-  left: 0;
-  transition: .4s;
+  left:0;
+  transition:.4s;
   background-image: linear-gradient(135deg, #1d1b1b, #1d1b1b 70%, #381c22 70%, #381c22 100%, transparent 0);
   border: 2px outset #332f2f;
 }
 
 .entry-card-wrap.a-wrap:nth-child(odd):after {
-  content: "";
+  content:"";
   color: #d3d3d3;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -2;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:-2;
   top: 0;
-  left: 0;
-  background-color: rgba(0, 146, 80, 0.08);
-  border: 2px outset #aaaaaa;
+  left:0;
+  background-color: $s2;
+  border:2px outset #aaaaaa;
 }
 
 /* 偶数番目のカード */
@@ -109,38 +102,38 @@ body {
 }
 
 .entry-card-wrap.a-wrap:nth-child(even):before {
-  content: "";
+  content:"";
   color: #d3d3d3;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:-1;
   top: 0;
-  left: 0;
-  transition: .4s;
+  left:0;
+  transition:.4s;
   background-image: linear-gradient(45deg, #381c22, #381c22 50%, #1d1b1b 50%, #1d1b1b 100%, transparent 0);
   border: 2px outset #332f2f;
 }
 
 .entry-card-wrap.a-wrap:nth-child(even):after {
-  content: "";
+  content:"";
   color: #d3d3d3;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -2;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:-2;
   top: 0;
-  left: 0;
-  background-color: rgba(0, 146, 80, 0.08);
-  border: 2px outset #aaaaaa;
+  left:0;
+  background-color: $s2;
+  border:2px outset #aaaaaa;
 }
 
-.entry-card-wrap.a-wrap:hover:before {
-  opacity: 0;
+.entry-card-wrap.a-wrap:hover:before{
+    opacity:0;
 }
 
 .a-wrap:hover {
-  background: none;
+  background:none;
   color: #d3d3d3;
 }
 
@@ -148,8 +141,8 @@ body {
 / 『ブログカード』
 ------------------------------------------- */
 .blogcard-label {
-  background-color: #0b683e;
-  color: #fff;
+    background-color: $s3;
+    color: #fff;
 }
 
 .entry-card-snippet,
@@ -164,7 +157,7 @@ body {
 .pager-post-navi a.prev-post,
 .pager-post-navi a.next-post,
 .pager-post-navi.post-navi-square a {
-  background-color: rgba(0, 146, 80, 0.05);
+  background-color:rgba(0, 146, 80, 0.05);
   border: 2px outset #1e2d28;
   color: #d3d3d3;
   transition: all 0.4s;
@@ -174,9 +167,9 @@ body {
 .related-entry-card-wrap:hover,
 .pager-post-navi a.prev-post:hover,
 .pager-post-navi a.next-post:hover,
-.pager-post-navi.post-navi-square a:hover {
-  background-color: rgba(0, 146, 80, 0.2);
-  border: 2px outset #aaaaaa;
+.pager-post-navi.post-navi-square a:hover{
+  background-color:$s4;
+  border:2px outset #aaaaaa;
 }
 
 /* -------------------------------------------
@@ -185,7 +178,12 @@ body {
 .toc-title {
   color: #d3d3d3;
   font-size: 120%;
-  background-image: linear-gradient(135deg, rgba(132, 23, 47, 0.8), rgba(132, 23, 47, 0.8) 50%, rgba(0, 146, 80, 0.8) 50%, rgba(0, 146, 80, 0.8) 100%, transparent 0);
+  background-image: linear-gradient(135deg,
+        $k1,
+        $k1 50%,
+         $s1 50%,
+         $s1 100%,
+        transparent 0);
   border-radius: 2px;
 }
 
@@ -194,8 +192,8 @@ body {
 }
 
 .toc-content ul li a:hover,
-.toc-content ol li a:hover {
-  background-color: rgba(0, 146, 80, 0.3);
+.toc-content ol li a:hover{
+  background-color: $s5;
 }
 
 .toc a:hover {
@@ -206,18 +204,20 @@ body {
   margin: 15px auto;
   min-width: 60%;
   position: relative;
-  border: none;
+  border:none;
 }
 
-.toc-content {
-  margin: 3px 0px;
+.toc-content{
+  margin:3px 0px;
   padding: .2em 1.4em;
   border-radius: 4px;
-  border-top: 2px solid;
-  border-left: 2px solid;
-  border-right: 2px solid;
-  border-bottom: 2px solid;
-  border-image: linear-gradient(to right, rgba(132, 23, 47, 0.6) 0%, rgba(0, 146, 80, 0.6) 100%);
+  border-top:2px solid;
+  border-left:2px solid;
+  border-right:2px solid;
+  border-bottom:2px solid;
+  border-image: linear-gradient(to right,
+  $k2 0%,
+    $s6 100%);
   border-image-slice: 1;
 }
 
@@ -229,7 +229,13 @@ body {
   color: #d2d2d2;
   border-radius: 4px;
   border: 2px solid #0c0b0b;
-  background-image: linear-gradient(135deg, #84172f, #84172f 30%, #8f2f44 30%, #84172f 70%, #84172f 100%, transparent 0);
+  background-image: linear-gradient(135deg,
+    $key,
+    $key 30%,
+    $k3 30%,
+    $key 70%,
+    $key 100%,
+    transparent 0);
   box-shadow: 0px 0px 0 2px #2c2b2b;
   font-size: 24px;
   text-shadow: -1px -1px #353434;
@@ -256,9 +262,9 @@ body {
   width: 6px;
   height: -webkit-calc(100% - 1em);
   height: calc(100% - 1.1em);
-  background-color: #84172f;
+  background-color: $key;
   border-radius: 2px;
-  box-shadow: 2px 2px 0 #009250;
+  box-shadow: 2px 2px 0 $sub;
 }
 
 /* -------------------------------------------
@@ -284,7 +290,7 @@ body {
   z-index: 2;
   width: 14px;
   height: 14px;
-  background: #84172f;
+  background: $key;
   border: 1px outset #817b7b;
 }
 
@@ -293,7 +299,7 @@ body {
   left: 17px;
   width: 8px;
   height: 8px;
-  background: #009250;
+  background: $sub;
   border: 1px outset #817b7b;
 }
 
@@ -315,8 +321,8 @@ body {
   content: '';
   width: 9px;
   height: 9px;
-  background-color: #84172f;
-  border: 1px outset #009250;
+  background-color: $key;
+  border: 1px outset $sub;
   transform: rotate(45deg);
 }
 
@@ -333,8 +339,8 @@ body {
 / 『サイドバーの見出し（h3）』
 ------------------------------------------- */
 .sidebar h3 {
-  margin-top: 26px;
-  background: none;
+  margin-top:26px;
+  background:none;
   position: relative;
   padding: 11px 0 2px 38px;
 }
@@ -346,7 +352,7 @@ body {
   content: '';
   width: 12px;
   height: 22px;
-  background-color: #84172f;
+  background-color: $key;
   transform: skew(-15deg);
   -o-transform: skew(-15deg);
   -moz-transform: skew(-15deg);
@@ -361,7 +367,7 @@ body {
   content: '';
   width: 12px;
   height: 22px;
-  background-color: #009250;
+  background-color: $sub;
   transform: skew(-15deg);
   -o-transform: skew(-15deg);
   -moz-transform: skew(-15deg);
@@ -375,7 +381,7 @@ body {
 /*  『次のページ』ボタンは隠す */
 .pagination-next-link,
 .pager-prev-next a {
-  display: none;
+    display: none;
 }
 
 .page-numbers {
@@ -385,7 +391,7 @@ body {
   color: #ccc;
   transition: all .3s;
   box-sizing: border-box;
-  background-image: linear-gradient(135deg, #3d3939, #0c0c0c 100%, transparent 0);
+  background-image: linear-gradient(135deg,#3d3939,#0c0c0c 100%,transparent 0);
   border: 1px outset #403d3d;
   border-radius: 50%;
 }
@@ -403,34 +409,34 @@ body {
 }
 
 .page-numbers::before {
-  border-top: 1px solid #009250;
-  border-bottom: 1px solid #009250;
+  border-top: 1px solid $sub;
+  border-bottom: 1px solid $sub;
   transform: scale(0, 1);
 }
 
 .page-numbers::after {
-  border-right: 1px solid #009250;
-  border-left: 1px solid #009250;
+  border-right: 1px solid $sub;
+  border-left: 1px solid $sub;
   transform: scale(1, 0);
 }
 
-.pagination a:hover {
+.pagination a:hover{
   border-radius: 50%;
-  color: #009250;
+  color:$sub;
 }
 
 .pagination a:hover::after,
 .pagination a:hover::before {
   border-radius: 50%;
-  color: #009250;
+  color:$sub;
   transform: scale(1);
 }
 
-.pagination .current {
-  color: #009250;
-  background: none;
+.pagination .current{
+  color: $sub;
+  background:none;
   border: 1px outset #403d3d;
-  background-image: linear-gradient(135deg, #3d3939, #0c0c0c 100%, transparent 0);
+  background-image: linear-gradient(135deg,#3d3939,#0c0c0c 100%,transparent 0);
   font-size: 120%;
   border-radius: 50%;
 }
@@ -438,8 +444,8 @@ body {
 /* -------------------------------------------
 / 『マルチページ』
 ------------------------------------------- */
-.pager-numbers .current {
-  color: #009250;
+.pager-numbers .current{
+  color: $sub;
 }
 
 .pager-links a:hover span {
@@ -458,49 +464,47 @@ body {
   transition: .4s;
   margin: auto;
   color: #ccc;
-  box-shadow: 0 2px 4px rgba(82, 76, 76, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  background-color: #84172f;
+  box-shadow: 0 2px 4px rgba(82, 76, 76, 0.3), inset 0 1px 0 rgba(255,255,255,.4);
+  background-color: $key;
 }
 
 .comment-btn:hover,
 .container input[type='submit']:hover {
   color: #ccc;
-  background-color: #84172f;
+  background-color: $key;
   border: 1px outset #aaaaaa;
 }
 
 input[type='submit'] {
   font-size: 22px;
 }
-
 /* -------------------------------------------
 / 『テーブル』
 ------------------------------------------- */
 table th, table td,
 .scrollable-table th,
-.scrollable-table td {
+.scrollable-table td{
   border: solid 1px #5c5b5b;
 }
 
 table th, .scrollable-table th {
-  background-color: rgba(132, 23, 47, 0.4);
+  background-color: $k4;
   color: #d3d3d3;
 }
 
 table tr:nth-of-type(2n+1) {
   background-color: #191919;
 }
-
 table tr:nth-of-type(2n) {
   background-color: #191e1c;
 }
 
 #wp-calendar th,
 #wp-calendar td {
-  border: solid 1px #5c5b5b;
+    border: solid 1px #5c5b5b;
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 834px){
   table th, table td {
     border: solid 1px #5c5b5b;
     padding: 0px;
@@ -508,6 +512,7 @@ table tr:nth-of-type(2n) {
     line-height: 1.8;
   }
 }
+
 /* -------------------------------------------
 / 『投稿ナビ』
 ------------------------------------------- */
@@ -562,6 +567,7 @@ table tr:nth-of-type(2n) {
   border-bottom-color: #191919;
 }
 
+
 .widget_recent_entries ul li a,
 .widget_categories ul li a,
 .widget_archive ul li a,
@@ -589,7 +595,7 @@ table tr:nth-of-type(2n) {
 .widget_meta ul li a:hover,
 .widget_rss ul li a:hover,
 .widget_categories ul li a:hover {
-  background-color: rgba(0, 146, 80, 0.3);
+  background-color: $s5;
   color: #d3d3d3;
 }
 
@@ -617,19 +623,18 @@ table tr:nth-of-type(2n) {
   content: '';
   width: 4px;
   height: 4px;
-  background-color: rgba(0, 146, 80, 0.6);
+  background-color: $s6;
   border: 1px outset #8a7c7c;
   transform: rotate(45deg);
 }
 
 .children .cat-item .cf::after {
-  background: none;
+    background: none;
 }
 
 .entry-content pre {
-  background-color: #191919;
+    background-color: #191919;
 }
-
 /* -------------------------------------------
 / 『カテゴリーなどの数』
 ------------------------------------------- */
@@ -640,23 +645,23 @@ table tr:nth-of-type(2n) {
 .widget_meta ul li a .post-count,
 .widget_rss ul li a .post-count,
 .widget_nav_menu ul li a .post-count {
-  font-style: italic;
-  font-size: 90%;
-  color: #d3d3d3;
+    font-style: italic;
+    font-size: 90%;
+    color: #d3d3d3;
 }
 
 /* -------------------------------------------
 / 『Topへ戻るボタン』
 ------------------------------------------- */
-.go-to-top-button {
-  border: 2px outset #009250;
-  color: #009250;
+.go-to-top-button{
+  border: 2px outset $sub;
+  color: $sub;
   background: none;
   border-radius: 50%;
 }
 
-.go-to-top-button:hover {
-  color: #009250;
+.go-to-top-button:hover{
+  color: $sub;
 }
 
 /* -------------------------------------------
@@ -685,7 +690,7 @@ blockquote:before {
   line-height: 1;
   z-index: 2;
   font-weight: 400;
-  color: rgba(0, 147, 80, 0.7);
+  color: $s7;
 }
 
 blockquote:after {
@@ -701,7 +706,7 @@ blockquote:after {
 blockquote p {
   margin: 14px 0;
   z-index: 3;
-  color: #002d07;
+  color: $s8;
 }
 
 /* -------------------------------------------
@@ -717,7 +722,7 @@ blockquote p {
   content: counter(p-rank);
   position: absolute;
   top: -5px;
-  left: -8px;
+  left:-8px;
   line-height: 30px;
   opacity: .9;
   text-align: center;
@@ -727,8 +732,8 @@ blockquote p {
   z-index: 1;
   font-weight: bold;
   font-style: italic;
-  text-shadow: -1px -1px 0 #fff, 2px 1px 0 rgba(51, 51, 51, 0);
-  color: #84172f;
+  text-shadow: -1px -1px 0 #fff, 2px 1px 0 rgba(51,51,51,0);
+  color: $key;
   text-align: center;
 }
 
@@ -736,7 +741,7 @@ blockquote p {
 .large-thumb.widget-entry-cards.ranking-visible .card-thumb::before,
 .large-thumb-on.widget-entry-cards.ranking-visible .card-thumb::before {
   top: -8px;
-  left: -1px;
+  left:-1px;
   line-height: 50px;
   font-size: 25px;
 }
@@ -775,7 +780,7 @@ blockquote p {
   border: 2px ridge #828282;
 }
 
-.author-thumb img {
+.author-thumb img{
   border: 3px outset #ccc;
 }
 
@@ -787,12 +792,23 @@ blockquote p {
 }
 
 .footer-bottom.fnm-text-width .menu-footer li a:hover {
-  background: none;
-  color: #009250;
+  background:none;
+  color: $sub;
 }
 
+
 .footer {
-  background-image: repeating-linear-gradient(135deg, rgba(0, 146, 80, 0.2), rgba(0, 146, 80, 0.2) 20%, rgba(132, 23, 47, 0.2) 20%, rgba(132, 23, 47, 0.2) 80%, rgba(0, 146, 80, 0.2) 80%, rgba(0, 146, 80, 0.2));
+  background-image: repeating-linear-gradient(
+    135deg,
+    $s4 ,
+    $s4 20%,
+
+    $k5 20%,
+    $k5 80%,
+
+    $s4 80%,
+    $s4
+  );
 }
 
 /* -------------------------------------------
@@ -813,10 +829,10 @@ a {
 /* -------------------------------------------
 / 『モバイル』
 ------------------------------------------- */
-#sidebar-menu-input:checked ~ #sidebar-menu-content,
-#search-menu-input:checked ~ #search-menu-content,
-#share-menu-input:checked ~ #share-menu-content,
-#follow-menu-input:checked ~ #follow-menu-content {
+#sidebar-menu-input:checked~#sidebar-menu-content,
+#search-menu-input:checked~#search-menu-content,
+#share-menu-input:checked~#share-menu-content,
+#follow-menu-input:checked~#follow-menu-content {
   background-color: #191919;
 }
 
@@ -824,7 +840,7 @@ a {
   color: #d3d3d3;
 }
 
-#navi-menu-input:checked ~ #navi-menu-content {
+#navi-menu-input:checked~#navi-menu-content {
   background-color: #191919;
 }
 
@@ -833,14 +849,13 @@ a {
   border-bottom: 1px solid #050505;
   box-shadow: 0 2px 0 #333;
 }
-
 .menu-drawer a:hover {
   color: #d3d3d3;
-  background-color: rgba(0, 146, 80, 0.6);
+  background-color:$s6;
 }
 
 .mobile-menu-buttons .menu-icon {
-  color: #333;
+    color: #333;
 }
 
 /* -------------------------------------------
@@ -858,21 +873,21 @@ a {
 }
 
 #wp-calendar td a,
-#slide-in-wp-calendar td a {
+#slide-in-wp-calendar td a{
   display: block;
-  background-color: rgba(0, 146, 80, 0.4);
+  background-color: $s9;
   color: #ccc;
 }
 
 #wp-calendar td a:hover,
 #slide-in-wp-calendar td a:hover {
-  background-color: rgba(0, 146, 80, 0.6);
+  background-color: $s6;
 }
 
 /* -------------------------------------------
 / 『クラウドタグ／パンくずリスト』
 ------------------------------------------- */
-.tagcloud a {
+.tagcloud a{
   border: 1px solid #aaaaaa;
   color: #ccc;
 }
@@ -960,7 +975,7 @@ select {
 .alert,
 .memo-box,
 .comment-box,
-.common-icon-box {
+.common-icon-box{
   background-color: transparent;
   border-width: 2px;
 }
@@ -987,28 +1002,34 @@ select {
   opacity: 0.85;
 }
 
-span[class^="marker"] {
+
+
+
+
+
+
+span[class^="marker"]{
   color: #595858;
 }
 
-span[class^="marker-under"] {
+span[class^="marker-under"]{
   color: #d3d3d3;
 }
 
 .marker-under {
-  background: linear-gradient(transparent 60%, #939310 60%);
+  background: linear-gradient(transparent 60%,#939310 60%);
 }
 
 .marker-under {
-  background: linear-gradient(transparent 60%, rgba(255, 255, 102, 0.6) 60%);
+  background: linear-gradient(transparent 60%,rgba(255, 255, 102, 0.6) 60%);
 }
 
 .marker-under-red {
-  background: linear-gradient(transparent 60%, rgba(255, 182, 185, 0.6) 60%);
+  background: linear-gradient(transparent 60%,rgba(255, 182, 185, 0.6) 60%);
 }
 
 .marker-under-blue {
-  background: linear-gradient(transparent 60%, rgba(168, 218, 251, 0.6) 60%);
+  background: linear-gradient(transparent 60%,rgba(168, 218, 251, 0.6) 60%);
 }
 
 .blank-box.bb-yellow {
@@ -1022,7 +1043,6 @@ span[class^="marker-under"] {
 .blank-box.bb-red {
   border-color: #b91e30;
 }
-
 .blank-box.bb-tab.bb-red .bb-label {
   background-color: #b91e30;
 }
@@ -1030,7 +1050,6 @@ span[class^="marker-under"] {
 .blank-box.bb-blue {
   border-color: #3278b1;
 }
-
 .blank-box.bb-tab.bb-blue .bb-label {
   background-color: #3278b1;
 }
@@ -1038,13 +1057,12 @@ span[class^="marker-under"] {
 .blank-box.bb-green {
   border-color: #389560;
 }
-
 .blank-box.bb-tab.bb-green .bb-label {
   border-color: #389560;
 }
 
 .blank-box.sticky {
-  color: #595858;
+    color: #595858;
 }
 
 /* -------------------------------------------
@@ -1057,7 +1075,6 @@ span[class^="marker-under"] {
 .micro-bottom.micro-balloon:before {
   border-bottom-color: #999;
 }
-
 .micro-bottom.micro-balloon:after {
   border-bottom-color: #191919;
 }
@@ -1065,7 +1082,6 @@ span[class^="marker-under"] {
 .micro-balloon:before {
   border-top-color: #999;
 }
-
 .micro-balloon:after {
   border-top-color: #191919;
 }
@@ -1091,7 +1107,7 @@ div.speech-balloon {
 }
 
 .sbs-flat .speech-balloon,
-.sbs-line.sbp-r .speech-balloon {
+.sbs-line.sbp-r .speech-balloon{
   background-color: #191919;
 }
 
@@ -1117,14 +1133,14 @@ div.speech-balloon {
 / 『画像（薄い影）』
 ------------------------------------------- */
 .iwe-shadow img, .iwe-shadow amp-img {
-  box-shadow: 5px 5px 15px #a3a0a0;
+    box-shadow: 5px 5px 15px #a3a0a0;
 }
 
 /* -------------------------------------------
 / Font Awesome5対応
 ------------------------------------------- */
 .font-awesome-5 .cat-item a::before,
-.font-awesome-5 blockquote::before {
+.font-awesome-5 blockquote::before{
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
@@ -1136,34 +1152,35 @@ div.speech-balloon {
 .breadcrumb.sbp-main-before,
 .breadcrumb.sbp-footer-before,
 .breadcrumb.pbp-main-before,
-.breadcrumb.pbp-footer-before {
+.breadcrumb.pbp-footer-before{
   background-color: transparent;
 }
 
 /* -------------------------------------------
 / ボックスメニュー対応
 ------------------------------------------- */
-.box-menu {
+.box-menu{
   background-color: transparent;
   color: #d3d3d3;
 }
 
 .appeal-content,
 .block-box-label,
-.toggle-button {
+.toggle-button{
   color: #333;
 }
 
-.appeal-button {
-  background-color: #84172f;
+.appeal-button{
+  background-color: $key;
 }
 
 .label-box-label {
   color: #fff;
-  text-shadow: #191919 3px 0 0, #191919 2px 1px 0, #191919 2px 2px 0, #191919 2px 3px 0, #191919 1px 3px 0, #191919 0 3px 0, #191919 -1px 3px 0, #191919 -2px 2px 0, #191919 -3px 1px 0, #191919 -3px 0 0, #191919 -3px -1px 0, #191919 -3px -2px 0, #191919 -2px -2px 0, #191919 -1px -3px 0, #191919 0 -3px 0, #191919 1px -3px 0, #191919 2px -2px 0, #191919 2px -2px 0, #191919 3px -1px 0;
+  text-shadow: #191919 3px 0 0,#191919 2px 1px 0,#191919 2px 2px 0,#191919 2px 3px 0,#191919 1px 3px 0,#191919 0 3px 0,#191919 -1px 3px 0,#191919 -2px 2px 0,#191919 -3px 1px 0,#191919 -3px 0 0,#191919 -3px -1px 0,#191919 -3px -2px 0,#191919 -2px -2px 0,#191919 -1px -3px 0,#191919 0 -3px 0,#191919 1px -3px 0,#191919 2px -2px 0,#191919 2px -2px 0,
+  #191919 3px -1px 0
 }
 
-.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select{
   color: #333 !important;
 }
 
