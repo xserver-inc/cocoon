@@ -810,7 +810,6 @@ a {
 / 『モバイル』
 ------------------------------------------- */
 #sidebar-menu-input:checked ~ #sidebar-menu-content,
-#search-menu-input:checked ~ #search-menu-content,
 #share-menu-input:checked ~ #share-menu-content,
 #follow-menu-input:checked ~ #follow-menu-content {
   background-color: #191919;
@@ -1152,7 +1151,7 @@ div.speech-balloon {
 }
 
 .appeal-button {
-  background-color: #1b51ad;
+  background-color: #e0861a;
 }
 
 .label-box-label {
