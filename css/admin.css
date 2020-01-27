@@ -1892,7 +1892,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
-.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
+.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 18px 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
 .admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
 .admin-settings .demo .box-menu:last-child { margin-right: auto; }
@@ -3447,7 +3447,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .recommended .navi-entry-cards a { width: 50%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a { margin: .3em 0; width: 48%; }
 .admin-settings .demo .nwa .recommended.rcs-card-margin a:last-child { margin-right: 0; }
-.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 2em 0; }
+.admin-settings .demo .box-menus { display: flex; justify-content: center; flex-wrap: wrap; margin: 18px 0; }
 .admin-settings .demo .box-menus * { line-height: 1.6; margin: 0; }
 .admin-settings .demo .box-menu { display: block; padding: 0.5em 1em; text-decoration: none; width: 100%; text-align: center; min-height: 100px; cursor: pointer; background: #fff; width: calc(100%/4); color: #777; box-shadow: inset 1px 1px 0 0 #e0ddd1, 1px 1px 0 0 #e0ddd1, 1px 0 0 0 #e0ddd1; transition: none; }
 .admin-settings .demo .box-menu:last-child { margin-right: auto; }
