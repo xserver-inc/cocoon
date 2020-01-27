@@ -96,6 +96,17 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         if (isset($info['version'])) {
           $all .= __( 'バージョン：', THEME_NAME ).$info['version'].PHP_EOL;
         }
+
+        //CSSサイズ
+        $css = wp_filesystem_get_contents($file);
+        $all .= __( 'style.cssサイズ：', THEME_NAME ).strlen($css).__( 'バイト', THEME_NAME ).PHP_EOL;
+
+        //functions.phpサイズ
+        $functions_file = get_stylesheet_directory().'/functions.php';
+        if (file_exists($functions_file)) {
+          $php = wp_filesystem_get_contents($functions_file);
+          $all .= __( 'functions.phpサイズ：', THEME_NAME ).strlen($php).__( 'バイト', THEME_NAME ).PHP_EOL;
+        }
         $all .= $sep;
       }
     }
