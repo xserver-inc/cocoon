@@ -185,9 +185,8 @@ $bgc_hover_anime: all .7s;
 
 %card_title{
   font-size: 18px;
-  margin: 0;
+  margin: 0 0 5px 0;
   line-height: 1.2;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -384,11 +383,9 @@ $bgc_hover_anime: all .7s;
 // タグクラウド
 ///////////////////////////////////////////
 @mixin tagcloud_a {
-  //background-color: $white;
   border: 1px solid $x_thin;
   border-radius: 2px;
   color: #555;
-  display: inline-block;
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;

@@ -33,9 +33,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .entry-card-title, .related-entry-card-title {
   font-size: 18px;
-  margin: 0;
+  margin: 0 0 5px 0;
   line-height: 1.2;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -313,7 +312,6 @@ body {
   overflow-wrap: break-word;
   background-color: #f4f5f7;
   text-size-adjust: 100%;
-  margin: 0;
   /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
   background-attachment: fixed;
 }
@@ -1726,13 +1724,12 @@ span.internal-icon {
   color: #fff;
   position: absolute;
   bottom: 0;
-  padding: 0.2em 0.6em;
+  padding: 2em 0.6em 0.2em;
   text-align: right;
   width: 100%;
   font-size: 0.9em;
   background: linear-gradient(180deg, transparent, #555);
   opacity: 0.9;
-  padding-top: 2em;
 }
 
 @media all and (-ms-high-contrast: none) {
@@ -2071,7 +2068,6 @@ label.screen-reader-text {
   border: 1px solid #ddd;
   border-radius: 2px;
   color: #555;
-  display: inline-block;
   padding: 3px 8px;
   text-decoration: none;
   font-size: 12px;
@@ -2785,12 +2781,11 @@ label.screen-reader-text {
   font-family: "FontAwesome";
   font-size: 42px;
   position: absolute;
-  top: -13px;
-  left: 13px;
   padding-right: .15em;
   line-height: 1em;
   top: 50%;
   margin-top: -.5em;
+  left: 13px;
   width: 44px;
   text-align: center;
 }
@@ -4978,7 +4973,6 @@ figure.wp-block-image figcaption {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin: 1em 0;
   margin: 0;
 }
 .column-wrap > div {
@@ -5874,7 +5868,6 @@ div.sbs-think .speech-balloon::after {
 }
 
 .swatchimages {
-  display: block;
   display: flex;
   flex-wrap: wrap;
   margin-top: 3px;
@@ -5893,7 +5886,6 @@ div.sbs-think .speech-balloon::after {
   display: block;
 }
 .swatchimages:hover .si-thumb {
-  display: block;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7934,7 +7926,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 }
 .recommended.rcs-center-label-title .card-content .card-title {
   color: #333;
-  background-color: #fffffc;
   padding: 6px 1em;
   opacity: 0.8;
   background-color: rgba(255, 255, 255, 0.9);

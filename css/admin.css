@@ -13,7 +13,7 @@ body.wp-admin { color: #444; }
 
 .admin-settings .demo .entry-card-content, .admin-settings .demo .related-entry-card-content { padding-bottom: 1.2em; }
 
-.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0; line-height: 1.2; margin-bottom: 5px; font-weight: bold; }
+.admin-settings .demo .entry-card-title, .admin-settings .demo .related-entry-card-title { font-size: 18px; margin: 0 0 5px 0; line-height: 1.2; font-weight: bold; }
 
 .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 0.8em; max-height: 7.8em; line-height: 1.3; overflow: hidden; }
 
@@ -395,7 +395,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; margin: 0; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -669,7 +669,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
 .admin-settings .demo .eye-catch img { vertical-align: bottom; }
-.admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 0.2em 0.6em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; padding-top: 2em; }
+.admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 2em 0.6em 0.2em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
@@ -731,7 +731,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
+.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
@@ -844,7 +844,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .admin-settings .demo .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .admin-settings .demo .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; left: 13px; width: 44px; text-align: center; }
 .admin-settings .demo .information-box::before, .admin-settings .demo .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .admin-settings .demo .question-box::before, .admin-settings .demo .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .admin-settings .demo .alert-box::before, .admin-settings .demo .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -1338,7 +1338,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
 .admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
@@ -1509,11 +1509,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
 .admin-settings .demo .image-thumb:hover > .image-content:hover { display: none; }
-.admin-settings .demo .swatchimages { display: block; display: flex; flex-wrap: wrap; margin-top: 3px; }
+.admin-settings .demo .swatchimages { display: flex; flex-wrap: wrap; margin-top: 3px; }
 .admin-settings .demo .swatchimages > * { border: 1px solid #ccc; margin: 1px; display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .swatchimages > *:hover { box-shadow: 0 0 4px #f79901; }
 .admin-settings .demo .swatchimages > * > img { display: block; }
-.admin-settings .demo .swatchimages:hover .si-thumb { display: block; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .swatchimages:hover .si-thumb { display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .pis-l .si-thumb { width: 30px; }
 .admin-settings .demo .pis-m .si-thumb { width: 18%; }
 .admin-settings .demo .pis-s .si-thumb { width: 30%; }
@@ -1883,7 +1883,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
@@ -1950,7 +1950,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; margin: 0; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -2224,7 +2224,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .eye-catch { position: relative; margin-bottom: .6em; max-width: 100%; }
 .admin-settings .demo .eye-catch .cat-label { position: absolute; right: auto; top: 0.4em; bottom: auto; left: 0.4em; font-size: 14px; padding: 4px 8px; opacity: 0.9; border: 1px solid #eee; }
 .admin-settings .demo .eye-catch img { vertical-align: bottom; }
-.admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 0.2em 0.6em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; padding-top: 2em; }
+.admin-settings .demo .eye-catch-caption { color: #fff; position: absolute; bottom: 0; padding: 2em 0.6em 0.2em; text-align: right; width: 100%; font-size: 0.9em; background: linear-gradient(180deg, transparent, #555); opacity: 0.9; }
 @media all and (-ms-high-contrast: none) { .admin-settings .demo { /* IE10～ */ }
   .admin-settings .demo .eye-catch-wrap { display: block; } }
 .admin-settings .demo .show-pinterest-button .eye-catch:hover .cat-label { display: none; }
@@ -2286,7 +2286,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-wrap { width: auto; }
 .admin-settings .demo label.screen-reader-text { display: none; }
 .admin-settings .demo .tagcloud { display: flex; flex-wrap: wrap; }
-.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
+.admin-settings .demo .tagcloud a { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; }
 .admin-settings .demo .tagcloud a:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .tagcloud a .tag-caption { word-break: break-all; }
 .admin-settings .demo .tagcloud a .tag-link-count { margin-left: 8px; }
@@ -2399,7 +2399,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .admin-settings .demo .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .admin-settings .demo .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.admin-settings .demo .information-box::before, .admin-settings .demo .question-box::before, .admin-settings .demo .alert-box::before, .admin-settings .demo .information::before, .admin-settings .demo .question::before, .admin-settings .demo .alert::before, .admin-settings .demo .memo-box::before, .admin-settings .demo .comment-box::before, .admin-settings .demo .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; left: 13px; width: 44px; text-align: center; }
 .admin-settings .demo .information-box::before, .admin-settings .demo .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .admin-settings .demo .question-box::before, .admin-settings .demo .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .admin-settings .demo .alert-box::before, .admin-settings .demo .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -2893,7 +2893,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iic-deep-orange li::before { color: #ea5506; }
 .admin-settings .demo .iic-white li::before { color: #fff; }
 .admin-settings .demo figure.wp-block-image figcaption { margin: 0; font-size: 0.8em; opacity: 0.8; padding: 0 6px; }
-.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 1em 0; margin: 0; }
+.admin-settings .demo .column-wrap { display: flex; justify-content: space-between; position: relative; margin: 0; }
 .admin-settings .demo .column-wrap > div { width: 49.5%; margin: 0; }
 .admin-settings .demo .column-wrap > div > *:first-child { margin-top: 0; }
 .admin-settings .demo .column-wrap.column-3 > div { width: 32.5%; }
@@ -3064,11 +3064,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .image-content amp-img { min-width: 500px; }
 .admin-settings .demo .image-thumb:hover > .image-content { visibility: visible; opacity: 1; }
 .admin-settings .demo .image-thumb:hover > .image-content:hover { display: none; }
-.admin-settings .demo .swatchimages { display: block; display: flex; flex-wrap: wrap; margin-top: 3px; }
+.admin-settings .demo .swatchimages { display: flex; flex-wrap: wrap; margin-top: 3px; }
 .admin-settings .demo .swatchimages > * { border: 1px solid #ccc; margin: 1px; display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .swatchimages > *:hover { box-shadow: 0 0 4px #f79901; }
 .admin-settings .demo .swatchimages > * > img { display: block; }
-.admin-settings .demo .swatchimages:hover .si-thumb { display: block; display: flex; align-items: center; justify-content: center; }
+.admin-settings .demo .swatchimages:hover .si-thumb { display: flex; align-items: center; justify-content: center; }
 .admin-settings .demo .pis-l .si-thumb { width: 30px; }
 .admin-settings .demo .pis-m .si-thumb { width: 18%; }
 .admin-settings .demo .pis-s .si-thumb { width: 30%; }
@@ -3438,7 +3438,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { background-color: rgba(51, 51, 51, 0); padding: 0; }
-.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; background-color: #fffffc; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
+.admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1em; opacity: 0.8; background-color: rgba(255, 255, 255, 0.9); width: 100%; transition: all .5s; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content:hover .card-title { transition: all .3s; }
 .admin-settings .demo .recommended.rcs-card-margin a { margin: 1em; margin-right: 0; }
 .admin-settings .demo .recommended.rcs-card-margin a:last-child { margin-right: 1em; }
@@ -4135,7 +4135,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .good-box { background: #f7fcf7; border: 1px solid #98e093; }
 .components-popover__content .bad-box { background: #fff1f4; border: 1px solid #eb6980; }
 .components-popover__content .profile-box { background: #fefefe; border: 1px solid #ccd; }
-.components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; top: -13px; left: 13px; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; width: 44px; text-align: center; }
+.components-popover__content .information-box::before, .components-popover__content .question-box::before, .components-popover__content .alert-box::before, .components-popover__content .information::before, .components-popover__content .question::before, .components-popover__content .alert::before, .components-popover__content .memo-box::before, .components-popover__content .comment-box::before, .components-popover__content .common-icon-box::before { font-family: "FontAwesome"; font-size: 42px; position: absolute; padding-right: .15em; line-height: 1em; top: 50%; margin-top: -.5em; left: 13px; width: 44px; text-align: center; }
 .components-popover__content .information-box::before, .components-popover__content .information::before { content: '\f05a'; color: #87cefa; border-right: 1px solid #bde4fc; }
 .components-popover__content .question-box::before, .components-popover__content .question::before { content: '\f059'; color: gold; border-right: 1px solid #ffe766; }
 .components-popover__content .alert-box::before, .components-popover__content .alert::before { content: '\f06a'; color: #f3aca9; border-right: 1px solid #f6b9b9; }
@@ -4672,7 +4672,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
 .tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }
-.tagcloud .admin-tag { border: 1px solid #ddd; border-radius: 2px; color: #555; display: inline-block; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; flex: 0 1 auto; }
+.tagcloud .admin-tag { border: 1px solid #ddd; border-radius: 2px; color: #555; padding: 3px 8px; text-decoration: none; font-size: 12px; margin: 2px; flex: 1 1 auto; display: flex; justify-content: space-between; transition: all 0.7s; flex: 0 1 auto; }
 .tagcloud .admin-tag:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .tagcloud .admin-tag .tag-caption { word-break: break-all; }
 .tagcloud .admin-tag .tag-link-count { margin-left: 8px; }
