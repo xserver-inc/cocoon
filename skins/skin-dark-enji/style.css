@@ -807,16 +807,26 @@ a {
 }
 
 /* -------------------------------------------
-/ 『モバイル』
+/
 ------------------------------------------- */
 #sidebar-menu-input:checked ~ #sidebar-menu-content,
+#search-menu-input:checked ~ #search-menu-content,
 #share-menu-input:checked ~ #share-menu-content,
 #follow-menu-input:checked ~ #follow-menu-content {
   background-color: #191919;
 }
 
-.mobile-menu-buttons .menu-button:hover {
+.mobile-menu-buttons .menu-button > a {
   color: #d3d3d3;
+}
+
+.mobile-menu-buttons .menu-button:hover {
+  background-color: #191919;
+  color: #d3d3d3;
+}
+
+.mobile-menu-buttons {
+  background-color: #191919;
 }
 
 #navi-menu-input:checked ~ #navi-menu-content {
@@ -835,7 +845,7 @@ a {
 }
 
 .mobile-menu-buttons .menu-icon {
-  color: #333;
+  color: #d3d3d3;
 }
 
 /* -------------------------------------------
