@@ -42,7 +42,7 @@
 
 .blogcard-footer{
   clear: both;
-  font-size: 0.8em;
+  font-size: 16px;
   padding-top: 0.6%;
   // vertical-align: baseline;
   // div{
@@ -90,4 +90,8 @@
     margin-right: 170px;
   }
 
+}
+
+.nwa{
+  @include blog_card_834;
 }

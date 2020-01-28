@@ -353,7 +353,12 @@ $bgc_hover_anime: all .7s;
   }
 
   .blogcard-thumbnail{
-    width: 30%;
+    width: 120px;
+  }
+
+  .blogcard-title{
+    font-size: 0.9em;
+    margin-bottom: 0;
   }
 
   .blogcard-snippet{
@@ -361,13 +366,16 @@ $bgc_hover_anime: all .7s;
   }
 
   .blogcard-content{
-    //width: 69%;
-    margin-left: 31.6%;
+    margin-left: 130px;
     margin-right: 0;
     max-height: 120px;
     min-height: 70px;
     font-size: 0.9em;
     line-height: 1.2;
+  }
+
+  .blogcard-footer{
+    font-size: 14px;
   }
 
   .ib-right,

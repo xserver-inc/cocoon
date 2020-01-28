@@ -697,12 +697,19 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; margin-bottom: 0.4em; }
 .admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
-.admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
+.admin-settings .demo .blogcard-footer { clear: both; font-size: 16px; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
+.admin-settings .demo .nwa .blogcard-wrap { width: 100%; }
+.admin-settings .demo .nwa .blogcard-thumbnail { width: 120px; }
+.admin-settings .demo .nwa .blogcard-title { font-size: 0.9em; margin-bottom: 0; }
+.admin-settings .demo .nwa .blogcard-snippet { font-size: 12px; }
+.admin-settings .demo .nwa .blogcard-content { margin-left: 130px; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
+.admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
+.admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
 .admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; line-height: 2; }
 .admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
@@ -2252,12 +2259,19 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blogcard-content { margin-left: 170px; max-height: 140px; min-height: 100px; overflow: hidden; }
 .admin-settings .demo .blogcard-title { font-weight: bold; margin-bottom: 0.4em; }
 .admin-settings .demo .blogcard-snippet { font-size: 0.8em; }
-.admin-settings .demo .blogcard-footer { clear: both; font-size: 0.8em; padding-top: 0.6%; }
+.admin-settings .demo .blogcard-footer { clear: both; font-size: 16px; padding-top: 0.6%; }
 .admin-settings .demo .blogcard-site { float: left; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-date { float: right; display: flex; align-content: center; }
 .admin-settings .demo .blogcard-favicon { margin-right: 4px; margin-top: 2px; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { float: right; margin-left: 1.6%; }
 .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-left: 0; margin-right: 170px; }
+.admin-settings .demo .nwa .blogcard-wrap { width: 100%; }
+.admin-settings .demo .nwa .blogcard-thumbnail { width: 120px; }
+.admin-settings .demo .nwa .blogcard-title { font-size: 0.9em; margin-bottom: 0; }
+.admin-settings .demo .nwa .blogcard-snippet { font-size: 12px; }
+.admin-settings .demo .nwa .blogcard-content { margin-left: 130px; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
+.admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
+.admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
 .admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; line-height: 1.5; padding: 1em 1.6em; margin-bottom: 1em; display: table; line-height: 2; }
 .admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
@@ -3679,9 +3693,11 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .entry-card-snippet, .admin-settings .demo .related-entry-card-snippet { font-size: 14px; }
   .admin-settings .demo table th, .admin-settings .demo table td { padding: 3px; font-size: 0.8em; }
   .admin-settings .demo .blogcard-wrap { width: 100%; }
-  .admin-settings .demo .blogcard-thumbnail { width: 30%; }
+  .admin-settings .demo .blogcard-thumbnail { width: 120px; }
+  .admin-settings .demo .blogcard-title { font-size: 0.9em; margin-bottom: 0; }
   .admin-settings .demo .blogcard-snippet { font-size: 12px; }
-  .admin-settings .demo .blogcard-content { margin-left: 31.6%; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
+  .admin-settings .demo .blogcard-content { margin-left: 130px; margin-right: 0; max-height: 120px; min-height: 70px; font-size: 0.9em; line-height: 1.2; }
+  .admin-settings .demo .blogcard-footer { font-size: 14px; }
   .admin-settings .demo .ib-right .blogcard-content, .admin-settings .demo .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
   .admin-settings .demo .ss-top .sns-share-buttons a, .admin-settings .demo .ss-bottom .sns-share-buttons a { font-size: 14px; }
   .admin-settings .demo .ss-top .sns-share-buttons a .button-caption, .admin-settings .demo .ss-bottom .sns-share-buttons a .button-caption { font-size: 14px; margin-left: 4px; }
