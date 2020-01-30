@@ -2592,20 +2592,20 @@ label.screen-reader-text {
 }
 
 .marker-blue {
-  background-color: #a5d7f9;
+  background-color: #a5d7 #a8dafbf9;
 }
 
 /*下半分のマーカー色（km）*/
 .marker-under {
-  background: linear-gradient(transparent 60%, #ff6 60%);
+  background: linear-gradient(transparent 60%, #ff9 60%);
 }
 
 .marker-under-red {
-  background: linear-gradient(transparent 60%, #ffb6b9 60%);
+  background: linear-gradient(transparent 60%, #ffd0d1 60%);
 }
 
 .marker-under-blue {
-  background: linear-gradient(transparent 60%, #a8dafb 60%);
+  background: linear-gradient(transparent 60%, #a5d7 #a8dafbf9 60%);
 }
 
 /*打ち消し線*/
@@ -6136,7 +6136,7 @@ div.sbs-think .speech-balloon::after {
 }
 
 .shoplinkjalan a {
-  background: #FF5800;
+  background: #ff5600;
 }
 
 .shoplinkjtb a {

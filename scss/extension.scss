@@ -72,7 +72,7 @@
 
 $marker_yellow: #ff9;
 $marker_red: #ffd0d1;
-$marker_blue: #a5d7f9;
+$marker_blue: #a5d7#a8dafbf9;
 
 /*マーカーの黄色のような色*/
 .marker{
@@ -85,9 +85,9 @@ $marker_blue: #a5d7f9;
   background-color: $marker_blue;
 }
 
-$marker_u_yellow: #ff6;
-$marker_u_red: #ffb6b9;
-$marker_u_blue: #a8dafb;
+$marker_u_yellow: $marker_yellow;
+$marker_u_red: $marker_red;
+$marker_u_blue: $marker_blue;
 
 /*下半分のマーカー色（km）*/
 .marker-under{
