@@ -1945,11 +1945,12 @@ span.internal-icon {
 .toc {
   border: 1px solid #ccc;
   font-size: 0.9em;
-  line-height: 1.5;
   padding: 1em 1.6em;
   margin-bottom: 1em;
   display: table;
-  line-height: 2;
+}
+.toc .toc-list {
+  padding-left: 0;
 }
 .toc ul, .toc ol {
   padding-left: 1em;
@@ -9160,11 +9161,6 @@ twitter-widget {
     padding: 16px;
     margin: 10px 0;
     border-width: 0;
-  }
-
-  .article ul,
-  .article ol {
-    padding-left: 26px;
   }
 
   .entry-card-title,

@@ -4,12 +4,13 @@
 .toc{
   border: 1px solid $basic_border_color;
   font-size: 0.9em;
-  line-height: 1.5;
   padding: 1em 1.6em;
   margin-bottom: 1em;
   display: table;
-  line-height: 2;
-  //margin: 0 auto;
+
+  .toc-list{
+    padding-left: 0;
+  }
 
   ul, ol{
     padding-left: 1em;
@@ -59,6 +60,13 @@
   border: 0;
   padding: 0 1em;
 }
+
+// .tnt-none,
+// .tnt-number-detail{
+//   .toc-list{
+//     padding-left: 0;
+//   }
+// }
 
 /************************************
 ** h2-h6の見出し目次に連番を振る
