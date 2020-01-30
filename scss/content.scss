@@ -132,14 +132,6 @@ table {
   }
 }
 
-figure.wp-block-table{
-  &.aligncenter,
-  &.alignleft,
-  &.alignright{
-    display: block;
-  }
-}
-
 ///////////////////////////////////////
 // レスポンシブテーブル
 ///////////////////////////////////////
@@ -155,6 +147,14 @@ figure.wp-block-table{
       position: -webkit-sticky;
       left: 0;
       z-index: 2;
+    }
+  }
+
+  figure.wp-block-table{
+    &.aligncenter,
+    &.alignleft,
+    &.alignright{
+      display: block;
     }
   }
 }

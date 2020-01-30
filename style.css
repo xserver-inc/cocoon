@@ -1497,10 +1497,6 @@ table td {
   padding: 6px;
 }
 
-figure.wp-block-table.aligncenter, figure.wp-block-table.alignleft, figure.wp-block-table.alignright {
-  display: block;
-}
-
 .scrollable-table {
   -webkit-overflow-scrolling: touch;
 }
@@ -1511,6 +1507,9 @@ figure.wp-block-table.aligncenter, figure.wp-block-table.alignleft, figure.wp-bl
   position: -webkit-sticky;
   left: 0;
   z-index: 2;
+}
+.scrollable-table figure.wp-block-table.aligncenter, .scrollable-table figure.wp-block-table.alignleft, .scrollable-table figure.wp-block-table.alignright {
+  display: block;
 }
 
 .scrollable-table table {

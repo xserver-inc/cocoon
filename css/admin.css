@@ -633,9 +633,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
-.admin-settings .demo figure.wp-block-table.aligncenter, .admin-settings .demo figure.wp-block-table.alignleft, .admin-settings .demo figure.wp-block-table.alignright { display: block; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
+.admin-settings .demo .scrollable-table figure.wp-block-table.aligncenter, .admin-settings .demo .scrollable-table figure.wp-block-table.alignleft, .admin-settings .demo .scrollable-table figure.wp-block-table.alignright { display: block; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
@@ -2196,9 +2196,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo table th { background-color: #f3f4f5; }
 .admin-settings .demo table tr:nth-of-type(2n+1) { background-color: #fafbfc; }
 .admin-settings .demo table th, .admin-settings .demo table td { border: 1px solid #ddd; padding: 6px; }
-.admin-settings .demo figure.wp-block-table.aligncenter, .admin-settings .demo figure.wp-block-table.alignleft, .admin-settings .demo figure.wp-block-table.alignright { display: block; }
 .admin-settings .demo .scrollable-table { -webkit-overflow-scrolling: touch; }
 .admin-settings .demo .scrollable-table.stfc-sticky tr > *:first-child { background-color: #e9eff2; color: #333; position: sticky; position: -webkit-sticky; left: 0; z-index: 2; }
+.admin-settings .demo .scrollable-table figure.wp-block-table.aligncenter, .admin-settings .demo .scrollable-table figure.wp-block-table.alignleft, .admin-settings .demo .scrollable-table figure.wp-block-table.alignright { display: block; }
 .admin-settings .demo .scrollable-table table { border-collapse: collapse; max-width: none; }
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
