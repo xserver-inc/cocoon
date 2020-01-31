@@ -784,7 +784,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.8; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content { margin-bottom: -4em; transition: all 0.5s; opacity: 0; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background: linear-gradient(180deg, transparent, #666); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-snippet { margin: 0; }
 .admin-settings .demo .widget-entry-cards.ranking-visible { counter-reset: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-1 .card-thumb::before { background: #cca11f; }
@@ -2348,7 +2348,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover { opacity: 0.8; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .a-wrap:hover .card-content { margin-bottom: -4em; transition: all 0.5s; opacity: 0; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .e-card { position: relative; }
-.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background-color: rgba(51, 51, 51, 0.7); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
+.admin-settings .demo .widget-entry-cards.large-thumb-on .card-content { margin: 0; position: absolute; width: 100%; bottom: 0; padding: .6em; background: linear-gradient(180deg, transparent, #666); color: #fff; max-height: 40%; overflow: hidden; transition: all 0.5s; }
 .admin-settings .demo .widget-entry-cards.large-thumb-on .card-snippet { margin: 0; }
 .admin-settings .demo .widget-entry-cards.ranking-visible { counter-reset: p-rank; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-1 .card-thumb::before { background: #cca11f; }

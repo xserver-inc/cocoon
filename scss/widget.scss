@@ -287,7 +287,8 @@ label.screen-reader-text{
     width: 100%;
     bottom: 0;
     padding: .6em;
-    background-color: $transpalent_black_bgc;
+    //background-color: $transpalent_black_bgc;
+    background: linear-gradient(180deg, transparent, #666);
     color: $white;
     max-height: 40%;
     overflow: hidden;
