@@ -4,11 +4,13 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+
 wp.domReady(function () {
+    console.log('1');
     // add classes
     const addClasses = function () {
         // add body class
-        jQuery('#editor .editor-writing-flow').addClass('article main page-body ' + gbSettings['siteIconFont']);
+        jQuery('#editor .block-editor-writing-flow').addClass('article main page-body ' + gbSettings['siteIconFont']);
 
         // add title class
         jQuery('#editor .editor-post-title__input').addClass('entry-title');
@@ -107,7 +109,7 @@ wp.domReady(function () {
     }
 
     jQuery('style').each(function () {
-        jQuery(this).html(jQuery(this).html().replace(/main\.main/g, '.editor-writing-flow.main'));
+        jQuery(this).html(jQuery(this).html().replace(/main\.main/g, '.block-editor-writing-flow.main'));
     });
 });
 
@@ -117,7 +119,7 @@ wp.domReady(function () {
 //   //もしWordPressフックを使った方法や、もうちょっと綺麗なjQueryの書き方があればフォーラムで教えていただければ幸いです。
 //   //https://wp-cocoon.com/community/cocoon-theme/
 //   setInterval(function(){
-//     $('.mce-content-body').addClass('article');
+//     $('#editor .block-editor-writing-flow').addClass('article main page-body ' + gbSettings['siteIconFont']);
 //   },1000);
 
 // })(jQuery);

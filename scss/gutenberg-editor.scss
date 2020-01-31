@@ -205,7 +205,7 @@ div.mce-content-body {
 
 /* main */
 
-.editor-writing-flow {
+.block-editor-writing-flow {
   max-width: 860px;
   margin: auto;
   padding-left: 14px;
@@ -213,7 +213,7 @@ div.mce-content-body {
   background-color: white;
 }
 
-.editor-styles-wrapper .editor-writing-flow.main {
+.editor-styles-wrapper .block-editor-writing-flow.main {
   width: auto;
   padding-left: 14px;
   padding-right: 14px;
@@ -240,7 +240,7 @@ div.mce-content-body {
     margin-left: auto;
     margin-right: auto;
   }
-  .editor-writing-flow textarea {
+  .block-editor-writing-flow textarea {
     min-height: auto;
   }
 }
@@ -607,7 +607,7 @@ ol, ul {
     display: flex;
     flex-direction: column;
 }
-- clear [height: 100%] of .editor-writing-flow
+- clear [height: 100%] of .block-editor-writing-flow
 */
 
 .edit-post-layout__content .edit-post-visual-editor {
@@ -617,7 +617,7 @@ ol, ul {
 }
 
 .editor-styles-wrapper {
-  .editor-writing-flow {
+  .block-editor-writing-flow {
     height: auto;
     flex-shrink: 0;
     > div {
