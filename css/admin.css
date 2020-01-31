@@ -825,10 +825,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .red-under { border-bottom: 2px solid red; }
 .admin-settings .demo .marker { background-color: #ff9; }
 .admin-settings .demo .marker-red { background-color: #ffd0d1; }
-.admin-settings .demo .marker-blue { background-color: #a5d7 #a8dafbf9; }
+.admin-settings .demo .marker-blue { background-color: #a8dafb; }
 .admin-settings .demo .marker-under { background: linear-gradient(transparent 60%, #ff9 60%); }
 .admin-settings .demo .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
-.admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a5d7 #a8dafbf9 60%); }
+.admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .admin-settings .demo .strike { text-decoration: line-through; }
 .admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .admin-settings .demo .primary-box, .admin-settings .demo .sp-primary, .admin-settings .demo .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
@@ -2389,10 +2389,10 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .red-under { border-bottom: 2px solid red; }
 .admin-settings .demo .marker { background-color: #ff9; }
 .admin-settings .demo .marker-red { background-color: #ffd0d1; }
-.admin-settings .demo .marker-blue { background-color: #a5d7 #a8dafbf9; }
+.admin-settings .demo .marker-blue { background-color: #a8dafb; }
 .admin-settings .demo .marker-under { background: linear-gradient(transparent 60%, #ff9 60%); }
 .admin-settings .demo .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
-.admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a5d7 #a8dafbf9 60%); }
+.admin-settings .demo .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .admin-settings .demo .strike { text-decoration: line-through; }
 .admin-settings .demo .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .admin-settings .demo .primary-box, .admin-settings .demo .sp-primary, .admin-settings .demo .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
@@ -4126,10 +4126,10 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .red-under { border-bottom: 2px solid red; }
 .components-popover__content .marker { background-color: #ff9; }
 .components-popover__content .marker-red { background-color: #ffd0d1; }
-.components-popover__content .marker-blue { background-color: #a5d7 #a8dafbf9; }
+.components-popover__content .marker-blue { background-color: #a8dafb; }
 .components-popover__content .marker-under { background: linear-gradient(transparent 60%, #ff9 60%); }
 .components-popover__content .marker-under-red { background: linear-gradient(transparent 60%, #ffd0d1 60%); }
-.components-popover__content .marker-under-blue { background: linear-gradient(transparent 60%, #a5d7 #a8dafbf9 60%); }
+.components-popover__content .marker-under-blue { background: linear-gradient(transparent 60%, #a8dafb 60%); }
 .components-popover__content .strike { text-decoration: line-through; }
 .components-popover__content .keyboard-key { background-color: #f9f9f9; background-image: -moz-linear-gradient(center top, #eee, #f9f9f9, #eee); border: 1px solid #777; border-radius: 2px; box-shadow: 1px 2px 2px #ddd; font-family: inherit; font-size: 0.85em; padding: 1px 3px; }
 .components-popover__content .primary-box, .components-popover__content .sp-primary, .components-popover__content .primary { color: #004085; background-color: #cce5ff; border-color: #b8daff; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
