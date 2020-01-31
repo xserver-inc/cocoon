@@ -711,7 +711,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
 .admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
 .admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
-.admin-settings .demo .toc .toc-list { padding-left: 0; }
+.admin-settings .demo .toc .toc-list { padding-left: 1em; }
 .admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
 .admin-settings .demo .toc ul { list-style: none; }
@@ -722,6 +722,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
+.admin-settings .demo .tnt-none .toc-list, .admin-settings .demo .tnt-number-detail .toc-list { padding-left: 0; }
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }
@@ -2274,7 +2275,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .nwa .blogcard-footer { font-size: 14px; }
 .admin-settings .demo .nwa .ib-right .blogcard-content, .admin-settings .demo .nwa .eb-right .blogcard-content { margin-right: 31.6%; margin-left: 0; }
 .admin-settings .demo .toc { border: 1px solid #ccc; font-size: 0.9em; padding: 1em 1.6em; margin-bottom: 1em; display: table; }
-.admin-settings .demo .toc .toc-list { padding-left: 0; }
+.admin-settings .demo .toc .toc-list { padding-left: 1em; }
 .admin-settings .demo .toc ul, .admin-settings .demo .toc ol { padding-left: 1em; margin: 0; }
 .admin-settings .demo .toc ul li, .admin-settings .demo .toc ol li { margin: 0; }
 .admin-settings .demo .toc ul { list-style: none; }
@@ -2285,6 +2286,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .toc-widget-box .toc-title { display: none; }
 .admin-settings .demo .toc-widget-box .toc-content { visibility: visible; opacity: 1; height: 100%; }
 .admin-settings .demo .nwa .toc { border: 0; padding: 0 1em; }
+.admin-settings .demo .tnt-none .toc-list, .admin-settings .demo .tnt-number-detail .toc-list { padding-left: 0; }
 .admin-settings .demo .toc.tnt-number-detail ol { list-style: none; counter-reset: toc; }
 .admin-settings .demo .toc.tnt-number-detail ol li:before { margin-right: 6px; counter-increment: toc; content: counters(toc,".") "."; }
 .admin-settings .demo .sidebar { width: 376px; border: 1px solid transparent; padding: 19px; border-radius: 4px; background-color: #fff; }

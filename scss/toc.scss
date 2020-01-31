@@ -9,7 +9,7 @@
   display: table;
 
   .toc-list{
-    padding-left: 0;
+    padding-left: 1em;
   }
 
   ul, ol{
@@ -61,12 +61,12 @@
   padding: 0 1em;
 }
 
-// .tnt-none,
-// .tnt-number-detail{
-//   .toc-list{
-//     padding-left: 0;
-//   }
-// }
+.tnt-none,
+.tnt-number-detail{
+  .toc-list{
+    padding-left: 0;
+  }
+}
 
 /************************************
 ** h2-h6の見出し目次に連番を振る

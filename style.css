@@ -1949,7 +1949,7 @@ span.internal-icon {
   display: table;
 }
 .toc .toc-list {
-  padding-left: 0;
+  padding-left: 1em;
 }
 .toc ul, .toc ol {
   padding-left: 1em;
@@ -1992,6 +1992,11 @@ span.internal-icon {
 .nwa .toc {
   border: 0;
   padding: 0 1em;
+}
+
+.tnt-none .toc-list,
+.tnt-number-detail .toc-list {
+  padding-left: 0;
 }
 
 /************************************
