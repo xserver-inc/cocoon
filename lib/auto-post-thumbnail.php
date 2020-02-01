@@ -160,6 +160,13 @@ function auto_post_thumbnail_image($post_id) {
     $post_id = $post_id->ID;
   }
 
+  if (!$post) {
+    return;
+  }
+
+  // _v($post);
+  // _v('a='.get_post_meta($post_id, '_thumbnail_id', true).'b='.get_post_meta($post_id, 'skip_post_thumb', true).'c='.has_post_thumbnail());
+
   //アイキャッチが既に設定されているかチェック
   if (get_post_meta($post_id, '_thumbnail_id', true) || get_post_meta($post_id, 'skip_post_thumb', true)) {
       return;
