@@ -1951,11 +1951,11 @@ span.internal-icon {
 .toc .toc-list {
   padding-left: 1em;
 }
-.toc ul, .toc ol {
+.toc .toc-list ul, .toc .toc-list ol {
   padding-left: 1em;
   margin: 0;
 }
-.toc ul li, .toc ol li {
+.toc li {
   margin: 0;
 }
 .toc ul {
@@ -9166,6 +9166,11 @@ twitter-widget {
     padding: 16px;
     margin: 10px 0;
     border-width: 0;
+  }
+
+  .article ul,
+  .article ol {
+    padding-left: 26px;
   }
 
   .entry-card-title,
