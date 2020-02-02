@@ -3104,7 +3104,7 @@ label.screen-reader-text {
   background-color: #CBEFE4;
 }
 
-.bb-check .fa::before {
+.bb-check .bb-label .fa::before {
   content: "";
 }
 
@@ -3112,7 +3112,7 @@ label.screen-reader-text {
   content: "CHECK";
 }
 
-.bb-comment .fa::before {
+.bb-comment .bb-label .fa::before {
   content: "";
 }
 
@@ -3120,7 +3120,7 @@ label.screen-reader-text {
   content: "COMMENT";
 }
 
-.bb-point .fa::before {
+.bb-point .bb-label .fa::before {
   content: "";
 }
 
@@ -3128,7 +3128,7 @@ label.screen-reader-text {
   content: "POINT";
 }
 
-.bb-tips .fa::before {
+.bb-tips .bb-label .fa::before {
   content: "";
 }
 
@@ -3136,7 +3136,7 @@ label.screen-reader-text {
   content: "TIPS";
 }
 
-.bb-hint .fa::before {
+.bb-hint .bb-label .fa::before {
   content: "";
 }
 
@@ -3144,7 +3144,7 @@ label.screen-reader-text {
   content: "HINT";
 }
 
-.bb-pickup .fa::before {
+.bb-pickup .bb-label .fa::before {
   content: "";
 }
 
@@ -3152,7 +3152,7 @@ label.screen-reader-text {
   content: "PICKUP";
 }
 
-.bb-bookmark .fa::before {
+.bb-bookmark .bb-label .fa::before {
   content: "";
 }
 
@@ -3160,7 +3160,7 @@ label.screen-reader-text {
   content: "BOOKMARK";
 }
 
-.bb-memo .fa::before {
+.bb-memo .bb-label .fa::before {
   content: "";
 }
 
@@ -3168,7 +3168,7 @@ label.screen-reader-text {
   content: "MEMO";
 }
 
-.bb-download .fa::before {
+.bb-download .bb-label .fa::before {
   content: "";
 }
 
@@ -3176,7 +3176,7 @@ label.screen-reader-text {
   content: "DOWNLOAD";
 }
 
-.bb-break .fa::before {
+.bb-break .bb-label .fa::before {
   content: "";
 }
 
@@ -3184,7 +3184,7 @@ label.screen-reader-text {
   content: "BREAK";
 }
 
-.bb-amazon .fa::before {
+.bb-amazon .bb-label .fa::before {
   content: "";
 }
 
@@ -3192,7 +3192,7 @@ label.screen-reader-text {
   content: "AMAZON";
 }
 
-.bb-ok .fa::before {
+.bb-ok .bb-label .fa::before {
   content: "";
 }
 
@@ -3200,7 +3200,7 @@ label.screen-reader-text {
   content: "OK";
 }
 
-.bb-ng .fa::before {
+.bb-ng .bb-label .fa::before {
   content: "";
 }
 
@@ -3208,7 +3208,7 @@ label.screen-reader-text {
   content: "NG";
 }
 
-.bb-good .fa::before {
+.bb-good .bb-label .fa::before {
   content: "";
 }
 
@@ -3216,7 +3216,7 @@ label.screen-reader-text {
   content: "GOOD";
 }
 
-.bb-bad .fa::before {
+.bb-bad .bb-label .fa::before {
   content: "";
 }
 
@@ -3224,7 +3224,7 @@ label.screen-reader-text {
   content: "BAD";
 }
 
-.bb-profile .fa::before {
+.bb-profile .bb-label .fa::before {
   content: "";
 }
 

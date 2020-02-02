@@ -529,112 +529,112 @@ $bb_green: $green_color;
   }
 }
 
-.bb-check .fa::before{
+.bb-check .bb-label .fa::before{
   content: $bb-check;
 }
 .bb-check .bb-label::after{
   content: $bb-check-text;
 }
 
-.bb-comment .fa::before{
+.bb-comment .bb-label .fa::before{
   content: $bb-comment;
 }
 .bb-comment .bb-label::after{
   content: $bb-comment-text;
 }
 
-.bb-point .fa::before{
+.bb-point .bb-label .fa::before{
   content: $bb-point;
 }
 .bb-point .bb-label::after{
   content: $bb-point-text;
 }
 
-.bb-tips .fa::before{
+.bb-tips .bb-label .fa::before{
   content: $bb-tips;
 }
 .bb-tips .bb-label::after{
   content: $bb-tips-text;
 }
 
-.bb-hint .fa::before{
+.bb-hint .bb-label .fa::before{
   content: $bb-hint;
 }
 .bb-hint .bb-label::after{
   content: $bb-hint-text;
 }
 
-.bb-pickup .fa::before{
+.bb-pickup .bb-label .fa::before{
   content: $bb-pickup;
 }
 .bb-pickup .bb-label::after{
   content: $bb-pickup-text;
 }
 
-.bb-bookmark .fa::before{
+.bb-bookmark .bb-label .fa::before{
   content: $bb-bookmark;
 }
 .bb-bookmark .bb-label::after{
   content: $bb-bookmark-text;
 }
 
-.bb-memo .fa::before{
+.bb-memo .bb-label .fa::before{
   content: $bb-memo;
 }
 .bb-memo .bb-label::after{
   content: $bb-memo-text;
 }
 
-.bb-download .fa::before{
+.bb-download .bb-label .fa::before{
   content: $bb-download;
 }
 .bb-download .bb-label::after{
   content: $bb-download-text;
 }
 
-.bb-break .fa::before{
+.bb-break .bb-label .fa::before{
   content: $bb-break;
 }
 .bb-break .bb-label::after{
   content: $bb-break-text;
 }
 
-.bb-amazon .fa::before{
+.bb-amazon .bb-label .fa::before{
   content: $bb-amazon;
 }
 .bb-amazon .bb-label::after{
   content: $bb-amazon-text;
 }
 
-.bb-ok .fa::before{
+.bb-ok .bb-label .fa::before{
   content: $bb-ok;
 }
 .bb-ok .bb-label::after{
   content: $bb-ok-text;
 }
 
-.bb-ng .fa::before{
+.bb-ng .bb-label .fa::before{
   content: $bb-ng;
 }
 .bb-ng .bb-label::after{
   content: $bb-ng-text;
 }
 
-.bb-good .fa::before{
+.bb-good .bb-label .fa::before{
   content: $bb-good;
 }
 .bb-good .bb-label::after{
   content: $bb-good-text;
 }
 
-.bb-bad .fa::before{
+.bb-bad .bb-label .fa::before{
   content: $bb-bad;
 }
 .bb-bad .bb-label::after{
   content: $bb-bad-text;
 }
 
-.bb-profile .fa::before{
+.bb-profile .bb-label .fa::before{
   content: $bb-profile;
 }
 .bb-profile .bb-label::after{

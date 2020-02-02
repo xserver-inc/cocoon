@@ -918,37 +918,37 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .bb-check .fa::before { content: ""; }
+.admin-settings .demo .bb-check .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-check .bb-label::after { content: "CHECK"; }
-.admin-settings .demo .bb-comment .fa::before { content: ""; }
+.admin-settings .demo .bb-comment .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-comment .bb-label::after { content: "COMMENT"; }
-.admin-settings .demo .bb-point .fa::before { content: ""; }
+.admin-settings .demo .bb-point .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-point .bb-label::after { content: "POINT"; }
-.admin-settings .demo .bb-tips .fa::before { content: ""; }
+.admin-settings .demo .bb-tips .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-tips .bb-label::after { content: "TIPS"; }
-.admin-settings .demo .bb-hint .fa::before { content: ""; }
+.admin-settings .demo .bb-hint .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-hint .bb-label::after { content: "HINT"; }
-.admin-settings .demo .bb-pickup .fa::before { content: ""; }
+.admin-settings .demo .bb-pickup .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-pickup .bb-label::after { content: "PICKUP"; }
-.admin-settings .demo .bb-bookmark .fa::before { content: ""; }
+.admin-settings .demo .bb-bookmark .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.admin-settings .demo .bb-memo .fa::before { content: ""; }
+.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-memo .bb-label::after { content: "MEMO"; }
-.admin-settings .demo .bb-download .fa::before { content: ""; }
+.admin-settings .demo .bb-download .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-download .bb-label::after { content: "DOWNLOAD"; }
-.admin-settings .demo .bb-break .fa::before { content: ""; }
+.admin-settings .demo .bb-break .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-break .bb-label::after { content: "BREAK"; }
-.admin-settings .demo .bb-amazon .fa::before { content: ""; }
+.admin-settings .demo .bb-amazon .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-amazon .bb-label::after { content: "AMAZON"; }
-.admin-settings .demo .bb-ok .fa::before { content: ""; }
+.admin-settings .demo .bb-ok .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-ok .bb-label::after { content: "OK"; }
-.admin-settings .demo .bb-ng .fa::before { content: ""; }
+.admin-settings .demo .bb-ng .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-ng .bb-label::after { content: "NG"; }
-.admin-settings .demo .bb-good .fa::before { content: ""; }
+.admin-settings .demo .bb-good .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-good .bb-label::after { content: "GOOD"; }
-.admin-settings .demo .bb-bad .fa::before { content: ""; }
+.admin-settings .demo .bb-bad .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
-.admin-settings .demo .bb-profile .fa::before { content: ""; }
+.admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
 .admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
@@ -2482,37 +2482,37 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .admin-settings .demo .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .admin-settings .demo .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.admin-settings .demo .bb-check .fa::before { content: ""; }
+.admin-settings .demo .bb-check .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-check .bb-label::after { content: "CHECK"; }
-.admin-settings .demo .bb-comment .fa::before { content: ""; }
+.admin-settings .demo .bb-comment .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-comment .bb-label::after { content: "COMMENT"; }
-.admin-settings .demo .bb-point .fa::before { content: ""; }
+.admin-settings .demo .bb-point .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-point .bb-label::after { content: "POINT"; }
-.admin-settings .demo .bb-tips .fa::before { content: ""; }
+.admin-settings .demo .bb-tips .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-tips .bb-label::after { content: "TIPS"; }
-.admin-settings .demo .bb-hint .fa::before { content: ""; }
+.admin-settings .demo .bb-hint .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-hint .bb-label::after { content: "HINT"; }
-.admin-settings .demo .bb-pickup .fa::before { content: ""; }
+.admin-settings .demo .bb-pickup .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-pickup .bb-label::after { content: "PICKUP"; }
-.admin-settings .demo .bb-bookmark .fa::before { content: ""; }
+.admin-settings .demo .bb-bookmark .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.admin-settings .demo .bb-memo .fa::before { content: ""; }
+.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-memo .bb-label::after { content: "MEMO"; }
-.admin-settings .demo .bb-download .fa::before { content: ""; }
+.admin-settings .demo .bb-download .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-download .bb-label::after { content: "DOWNLOAD"; }
-.admin-settings .demo .bb-break .fa::before { content: ""; }
+.admin-settings .demo .bb-break .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-break .bb-label::after { content: "BREAK"; }
-.admin-settings .demo .bb-amazon .fa::before { content: ""; }
+.admin-settings .demo .bb-amazon .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-amazon .bb-label::after { content: "AMAZON"; }
-.admin-settings .demo .bb-ok .fa::before { content: ""; }
+.admin-settings .demo .bb-ok .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-ok .bb-label::after { content: "OK"; }
-.admin-settings .demo .bb-ng .fa::before { content: ""; }
+.admin-settings .demo .bb-ng .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-ng .bb-label::after { content: "NG"; }
-.admin-settings .demo .bb-good .fa::before { content: ""; }
+.admin-settings .demo .bb-good .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-good .bb-label::after { content: "GOOD"; }
-.admin-settings .demo .bb-bad .fa::before { content: ""; }
+.admin-settings .demo .bb-bad .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bad .bb-label::after { content: "BAD"; }
-.admin-settings .demo .bb-profile .fa::before { content: ""; }
+.admin-settings .demo .bb-profile .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-profile .bb-label::after { content: "PROFILE"; }
 .admin-settings .demo .container .search-form { margin: 3em 0; }
 .admin-settings .demo .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
@@ -4220,37 +4220,37 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .blank-box.sticky.st-red { border-color: #CD3740; background-color: #F5DADC; }
 .components-popover__content .blank-box.sticky.st-blue { border-color: #0066cc; background-color: #E5F2FF; }
 .components-popover__content .blank-box.sticky.st-green { border-color: #028760; background-color: #CBEFE4; }
-.components-popover__content .bb-check .fa::before { content: ""; }
+.components-popover__content .bb-check .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-check .bb-label::after { content: "CHECK"; }
-.components-popover__content .bb-comment .fa::before { content: ""; }
+.components-popover__content .bb-comment .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-comment .bb-label::after { content: "COMMENT"; }
-.components-popover__content .bb-point .fa::before { content: ""; }
+.components-popover__content .bb-point .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-point .bb-label::after { content: "POINT"; }
-.components-popover__content .bb-tips .fa::before { content: ""; }
+.components-popover__content .bb-tips .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-tips .bb-label::after { content: "TIPS"; }
-.components-popover__content .bb-hint .fa::before { content: ""; }
+.components-popover__content .bb-hint .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-hint .bb-label::after { content: "HINT"; }
-.components-popover__content .bb-pickup .fa::before { content: ""; }
+.components-popover__content .bb-pickup .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-pickup .bb-label::after { content: "PICKUP"; }
-.components-popover__content .bb-bookmark .fa::before { content: ""; }
+.components-popover__content .bb-bookmark .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.components-popover__content .bb-memo .fa::before { content: ""; }
+.components-popover__content .bb-memo .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-memo .bb-label::after { content: "MEMO"; }
-.components-popover__content .bb-download .fa::before { content: ""; }
+.components-popover__content .bb-download .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-download .bb-label::after { content: "DOWNLOAD"; }
-.components-popover__content .bb-break .fa::before { content: ""; }
+.components-popover__content .bb-break .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-break .bb-label::after { content: "BREAK"; }
-.components-popover__content .bb-amazon .fa::before { content: ""; }
+.components-popover__content .bb-amazon .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-amazon .bb-label::after { content: "AMAZON"; }
-.components-popover__content .bb-ok .fa::before { content: ""; }
+.components-popover__content .bb-ok .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-ok .bb-label::after { content: "OK"; }
-.components-popover__content .bb-ng .fa::before { content: ""; }
+.components-popover__content .bb-ng .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-ng .bb-label::after { content: "NG"; }
-.components-popover__content .bb-good .fa::before { content: ""; }
+.components-popover__content .bb-good .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-good .bb-label::after { content: "GOOD"; }
-.components-popover__content .bb-bad .fa::before { content: ""; }
+.components-popover__content .bb-bad .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-bad .bb-label::after { content: "BAD"; }
-.components-popover__content .bb-profile .fa::before { content: ""; }
+.components-popover__content .bb-profile .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-profile .bb-label::after { content: "PROFILE"; }
 .components-popover__content .container .search-form { margin: 3em 0; }
 .components-popover__content .search-form > div { border: 1px solid #555; border-radius: 2px; padding: 5px; margin-left: 10px; display: inline-block; }
