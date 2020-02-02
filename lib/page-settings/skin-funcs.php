@@ -247,9 +247,6 @@ function get_exclude_skins(){
     'veilnui-simplog-lime',
     'veilnui-simplog-purple',
     'veilnui-simplog-yellow',
-    'skin-dark-enji',
-    'skin-dark-ruri',
-    'skin-dark-kamonoha',
   );
   return apply_filters('get_exclude_skins', $exclude_skins);
 }
