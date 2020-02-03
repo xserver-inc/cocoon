@@ -3484,8 +3484,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .notice-area-link { display: block; text-decoration: none; }
 .admin-settings .demo .notice-area-link:hover { opacity: 0.8; }
 .admin-settings .demo .notice-area { color: #fff; text-align: center; background-color: #4cae4c; padding: 0.6em; font-size: 0.8em; }
-.admin-settings .demo .notice-area.nt-warning { background-color: #f7ab00; }
-.admin-settings .demo .notice-area.nt-danger { background-color: #ff6666; }
+.admin-settings .demo .nt-warning { background-color: #f7ab00; }
+.admin-settings .demo .nt-danger { background-color: #ff6666; }
 .admin-settings .demo .no-appeal-area .appeal { display: none; }
 .admin-settings .demo .appeal-in { display: flex; min-height: 200px; padding: 3% 5%; }
 .admin-settings .demo .appeal-content { max-width: 800px; background-color: rgba(255, 255, 255, 0.85); margin: auto; padding: 1em; text-align: center; border-radius: 4px; display: block; }

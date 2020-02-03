@@ -8098,10 +8098,12 @@ https://codepen.io/nxworld/pen/oLdoWb
   padding: 0.6em;
   font-size: 0.8em;
 }
-.notice-area.nt-warning {
+
+.nt-warning {
   background-color: #f7ab00;
 }
-.notice-area.nt-danger {
+
+.nt-danger {
   background-color: #ff6666;
 }
 
