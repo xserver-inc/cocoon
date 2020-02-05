@@ -188,7 +188,7 @@ body {
 .pager-post-navi a.next-post,
 .pager-post-navi.post-navi-square a {
   background-color: rgba(224, 134, 26, 0.05);
-  border: 2px outset #1e2d28;
+  border: 2px outset #444;
   color: #d3d3d3;
   transition: all 0.4s;
 }
