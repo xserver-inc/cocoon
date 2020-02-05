@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 $msg = get_notice_area_message();
-if (is_notice_area_visible() && $msg && !is_amp()):
+if (is_notice_area_visible() && $msg && !is_amp() && apply_filters('notice_area_visible', true)):
   $url = get_notice_area_url();
  ?>
 
