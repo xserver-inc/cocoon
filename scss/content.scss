@@ -149,14 +149,6 @@ table {
       z-index: 2;
     }
   }
-
-  figure.wp-block-table{
-    &.aligncenter,
-    &.alignleft,
-    &.alignright{
-      display: block;
-    }
-  }
 }
 
 .scrollable-table table{
@@ -179,6 +171,14 @@ table {
   overflow-x: auto !important;
   overflow-y: hidden !important;
   margin-bottom: 1em;
+}
+
+figure.wp-block-table.scrollable-block-table{
+  &.aligncenter,
+  &.alignleft,
+  &.alignright{
+    display: block;
+  }
 }
 
 

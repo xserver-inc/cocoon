@@ -1508,9 +1508,6 @@ table td {
   left: 0;
   z-index: 2;
 }
-.scrollable-table figure.wp-block-table.aligncenter, .scrollable-table figure.wp-block-table.alignleft, .scrollable-table figure.wp-block-table.alignright {
-  display: block;
-}
 
 .scrollable-table table {
   border-collapse: collapse;
@@ -1532,6 +1529,10 @@ table td {
   overflow-x: auto !important;
   overflow-y: hidden !important;
   margin-bottom: 1em;
+}
+
+figure.wp-block-table.scrollable-block-table.aligncenter, figure.wp-block-table.scrollable-block-table.alignleft, figure.wp-block-table.scrollable-block-table.alignright {
+  display: block;
 }
 
 .article dl {
