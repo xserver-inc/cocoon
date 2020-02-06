@@ -449,27 +449,30 @@ add_action('restrict_manage_posts', 'custmuize_restrict_manage_posts');
 if ( !function_exists( 'custmuize_restrict_manage_posts' ) ):
 function custmuize_restrict_manage_posts(){
   global $post_type, $tag;
-  if ( is_object_in_taxonomy( $post_type, 'post_tag' ) ) {
-  $dropdown_options = array(
-    'show_option_all' => get_taxonomy( 'post_tag' )->labels->all_items,
-    'hide_empty' => 0,
-    'hierarchical' => 1,
-    'show_count' => 0,
-    'orderby' => 'name',
-    'selected' => $tag,
-    'name' => 'tag',
-    'taxonomy' => 'post_tag',
-    'value_field' => 'slug'
-  );
-  wp_dropdown_categories( $dropdown_options );
+  if (($post_type == 'post') || ($post_type == 'page')) {
+    if ( is_object_in_taxonomy( $post_type, 'post_tag' ) ) {
+      $dropdown_options = array(
+        'show_option_all' => get_taxonomy( 'post_tag' )->labels->all_items,
+        'hide_empty' => 0,
+        'hierarchical' => 1,
+        'show_count' => 0,
+        'orderby' => 'name',
+        'selected' => $tag,
+        'name' => 'tag',
+        'taxonomy' => 'post_tag',
+        'value_field' => 'slug'
+      );
+      wp_dropdown_categories( $dropdown_options );
+      }
+
+      wp_dropdown_users(
+      array(
+        'show_option_all' => 'すべてのユーザー',
+        'name' => 'author'
+      )
+    );
   }
 
-  wp_dropdown_users(
-  array(
-    'show_option_all' => 'すべてのユーザー',
-    'name' => 'author'
-  )
-  );
 }
 endif;
 
