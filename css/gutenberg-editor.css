@@ -561,6 +561,30 @@ div.mce-content-body {
 }
 
 /* main */
+.wp-block.editor-block-list__block[data-align="left"],
+.wp-block.editor-block-list__block[data-align="right"] {
+  display: block;
+}
+.wp-block.editor-block-list__block[data-align="left"] > .block-editor-block-list__block-edit,
+.wp-block.editor-block-list__block[data-align="right"] > .block-editor-block-list__block-edit {
+  float: none;
+}
+
+.block-editor-block-list__block[data-type="core/table"][data-align="left"] table {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.block-editor-block-list__block[data-type="core/table"][data-align="right"] table {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.wp-block.editor-block-list__block[data-align="wide"] table,
+.wp-block.editor-block-list__block[data-align="full"] table {
+  width: 100%;
+}
+
 .block-editor-writing-flow {
   max-width: 860px;
   margin: auto;
