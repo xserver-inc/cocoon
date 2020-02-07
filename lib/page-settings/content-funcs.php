@@ -232,8 +232,8 @@ function add_responsive_table_tag($the_content) {
   //テーブル対応
   $the_content = preg_replace('/<table/i', '<div class="scrollable-table'.$first_column_sticky.'"><table', $the_content);
   $the_content = preg_replace('/<\/table>/i', '</table></div>', $the_content);
-  //テーブルブロック対応
-  $the_content = str_replace('<figure class="wp-block-table ', '<figure class="wp-block-table scrollable-block-table ', $the_content);
+  // //テーブルブロック対応
+  // $the_content = str_replace('<figure class="wp-block-table ', '<figure class="wp-block-table scrollable-block-table ', $the_content);
   return $the_content;
 }
 endif;
