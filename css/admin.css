@@ -639,7 +639,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
-.admin-settings .demo figure.wp-block-table.scrollable-block-table.aligncenter, .admin-settings .demo figure.wp-block-table.scrollable-block-table.alignleft, .admin-settings .demo figure.wp-block-table.scrollable-block-table.alignright { display: block; }
+.admin-settings .demo figure.wp-block-table[class*="align"] { max-width: 100%; display: block; }
+.admin-settings .demo figure.wp-block-table[class*="align"] table { width: auto; margin-left: auto; margin-right: auto; }
+.admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
 .admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }
@@ -2203,7 +2205,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .scrollable-table th { background-color: #eee; }
 .admin-settings .demo .scrollable-table th, .admin-settings .demo .scrollable-table td { border: solid 1px #ccc; padding: 3px 5px; white-space: nowrap; }
 .admin-settings .demo .scrollable-table { overflow-x: auto !important; overflow-y: hidden !important; margin-bottom: 1em; }
-.admin-settings .demo figure.wp-block-table.scrollable-block-table.aligncenter, .admin-settings .demo figure.wp-block-table.scrollable-block-table.alignleft, .admin-settings .demo figure.wp-block-table.scrollable-block-table.alignright { display: block; }
+.admin-settings .demo figure.wp-block-table[class*="align"] { max-width: 100%; display: block; }
+.admin-settings .demo figure.wp-block-table[class*="align"] table { width: auto; margin-left: auto; margin-right: auto; }
+.admin-settings .demo .scroll-hint-icon-wrap { overflow: hidden; }
 .admin-settings .demo .article dl { margin: 1em 0; }
 .admin-settings .demo .article dd { margin-left: 40px; }
 .admin-settings .demo .article ul li, .admin-settings .demo .article ol li { margin: 0.2em; }

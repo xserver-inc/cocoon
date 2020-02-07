@@ -1531,8 +1531,19 @@ table td {
   margin-bottom: 1em;
 }
 
-figure.wp-block-table.scrollable-block-table.aligncenter, figure.wp-block-table.scrollable-block-table.alignleft, figure.wp-block-table.scrollable-block-table.alignright {
+figure.wp-block-table[class*="align"] {
+  max-width: 100%;
   display: block;
+}
+
+figure.wp-block-table[class*="align"] table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-hint-icon-wrap {
+  overflow: hidden;
 }
 
 .article dl {
