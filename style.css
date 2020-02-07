@@ -1531,6 +1531,10 @@ table td {
   margin-bottom: 1em;
 }
 
+figure.wp-block-table table {
+  width: auto;
+}
+
 figure.wp-block-table[class*="align"] {
   max-width: 100%;
   display: block;
