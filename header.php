@@ -67,6 +67,16 @@ wp_head(); ?>
 <link rel="preconnect dns-prefetch" href="//dalc.valuecommerce.com">
 <link rel="preconnect dns-prefetch" href="//dalb.valuecommerce.com">
 
+<!-- Preload -->
+<!-- <link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin> -->
+<?php if (is_site_icon_font_font_awesome_4()): ?>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin>
+<?php else: ?>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_BRANDS_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_REGULAR_WOFF2_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_5_SOLID_WOFF2_URL; ?>" crossorigin>
+<?php endif; ?>
+
 <?php //カスタムフィールドの挿入（カスタムフィールド名：head_custom
 get_template_part('tmp/head-custom-field'); ?>
 

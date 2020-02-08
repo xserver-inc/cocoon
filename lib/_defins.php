@@ -279,12 +279,18 @@ define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.11.1/c
 
 //Font Awesome4
 define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
+define('FONT_AWESOME_4_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2');
 //Font Awesome5
 define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
+define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
+define('FONT_AWESOME_5_REGULAR_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-regular-400.woff2');
+define('FONT_AWESOME_5_SOLID_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-solid-900.woff2');
 //Font Awesome5アップデート
 define('FONT_AWESOME_5_UPDATE_URL', get_template_directory_uri().'/css/fontawesome5.css');
 //IcoMoonフォント
 define('FONT_ICOMOON_URL', get_template_directory_uri() . '/webfonts/icomoon/style.css');
+define('FONT_ICOMOON_WOFF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.woff');
+define('FONT_ICOMOON_TTF_URL', get_template_directory_uri() . '/webfonts/icomoon/fonts/icomoon.ttf');
 
 //親テーマのJavaScript
 define('THEME_JS_URL', get_template_directory_uri() . '/javascript.js');
