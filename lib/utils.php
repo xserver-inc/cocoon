@@ -977,7 +977,7 @@ if ( !function_exists( 'get_latest_posts' ) ):
 function get_latest_posts($count = 1){
   $count = intval($count);
   $posts = get_posts('numberposts='.$count);
-  if ($couut == 1) {
+  if ($count == 1) {
     foreach( $posts as $post ) {
       return $post;
     }
