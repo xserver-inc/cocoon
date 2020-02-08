@@ -631,11 +631,11 @@ a.tag-link {
 
 /*share-button*/
 
-.sns-share.ss-col-6.ss-high-and-low-lc.bc-brand-color.sbc-hide.ss-top {
+/*.sns-share.ss-col-6.ss-high-and-low-lc.bc-brand-color.sbc-hide.ss-top {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
+}*/
 
 .share-button a{
     color:lightseagreen;
