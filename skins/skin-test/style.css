@@ -135,6 +135,10 @@ div.mobile-menu-buttons .menu-button:hover,
   border: 2px solid #eee;
 }
 
+.appeal-button {
+  background-color: #0095d9;
+}
+
 .navi {
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);

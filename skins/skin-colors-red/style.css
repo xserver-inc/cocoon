@@ -7,7 +7,7 @@
   Author URI: https://nelog.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/colors-red.png
   Version: 1.0.1
-  Priority: 9880005000
+  Priority: 102
 */
 /*以下にスタイルシートを記入してください*/
 body {
@@ -161,6 +161,10 @@ div.mobile-menu-buttons .menu-button:hover,
   top: -10px;
   left: -10px;
   border: 2px solid #eee;
+}
+
+.appeal-button {
+  background-color: #d3381c;
 }
 
 .navi {
