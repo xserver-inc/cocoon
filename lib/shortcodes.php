@@ -718,6 +718,8 @@ function get_rss_feed_tag( $atts ) {
       'img' => NO_IMAGE_RSS, //画像が取得できなかった場合のイメージ
       'target' => '_blank', //ブラウザの開き方（target属性）
       'cache_minute' => '60', //キャッシュ時間（分）
+      'desc' => '1', //説明文表示 1 or 0
+      'date' => '1', //日付表示 1 or 0
       'type' => '', //表示タイプ
       'bold' => 0, //タイトルを太字にするか
       'arrow' => 0, //矢印を出すか
@@ -733,8 +735,8 @@ function get_rss_feed_tag( $atts ) {
   $feed_content = '';
   $feed_contents = '';
 
-  //Cache処理
-  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class);
+  //Cache処理（かなり簡易的なもの）
+  $transient_id = 'ree_feed_'.md5($feed_url.'_'.$count.'_'.$img_url.'_'.$target.'_'.$desc.'_'.$date.'_'.$type.'_'.$bold.'_'.$arrow.'_'.$class);
   $feed_contents = get_transient( $transient_id );
   if ($feed_contents) {
     return $feed_contents;
@@ -765,10 +767,14 @@ function get_rss_feed_tag( $atts ) {
       $feed_content .= '</figure>';
       $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
       $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">' . esc_html($feed_title) . '</div>';
-      $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
-      $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
+      if ($desc) {
+        $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '…</div>';
+      }
+      if ($date) {
+        $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
         <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
       </div>';
+      }
       $feed_content .= '</div>';//card-content
       $feed_content .= '</div>';
       $feed_content .= '</a>';

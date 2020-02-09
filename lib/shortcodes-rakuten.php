@@ -428,7 +428,7 @@ function rakuten_product_link_shortcode($atts){
         $error_message = __( '商品が見つかりませんでした。', THEME_NAME );
         //楽天商品取得エラーの出力
         if (!$json_cache) {
-          error_log_to_rakuten_product($id, $search, $error_message);
+          error_log_to_rakuten_product($id, $search, $error_message, $keyword);
         }
         return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
       }
@@ -443,7 +443,7 @@ function rakuten_product_link_shortcode($atts){
         $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
         //楽天商品取得エラーの出力
         if (!$json_cache) {
-          error_log_to_rakuten_product($id, $search, $error_message);
+          error_log_to_rakuten_product($id, $search, $error_message, $keyword);
         }
         //楽天APIキャッシュの保存
         set_transient($transient_id, $json, $cache_expiration);
@@ -465,14 +465,20 @@ endif;
 
 //楽天APIで商品情報を取得できなかった場合のエラーログ
 if ( !function_exists( 'error_log_to_rakuten_product' ) ):
-  function error_log_to_rakuten_product($id, $no, $message = ''){
+  function error_log_to_rakuten_product($id, $no, $message = '', $keyword = ''){
     //エラーログに出力
     $msg = date_i18n("Y-m-d H:i:s").','.
            $id.','.
            $no.','.
            get_the_permalink().
            PHP_EOL;
-    error_log($msg, 3, get_theme_rakuten_product_error_log_file());
+   $rakuten_affiliate_id = trim(get_rakuten_affiliate_id());
+   if ($keyword) {
+     $rakuten_url = get_rakuten_affiliate_search_url($keyword, $rakuten_affiliate_id);
+   } else {
+    $rakuten_url = 'https://a.r10.to/hllTWS';
+   }
+  error_log($msg, 3, get_theme_rakuten_product_error_log_file());
 
     //メールで送信
     if (is_api_error_mail_enable()) {
@@ -484,7 +490,9 @@ if ( !function_exists( 'error_log_to_rakuten_product' ) ):
         'No.(Search):'.$no.PHP_EOL.
         'URL:'.get_the_permalink().PHP_EOL.
         'Message:'.$message.PHP_EOL.
-        THEME_MAIL_RAKUTEN_PR.THEME_MAIL_CREDIT;
+        THEME_MAIL_RAKUTEN_PR.PHP_EOL.
+        $rakuten_url.
+        THEME_MAIL_CREDIT;
       wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
     }
   }

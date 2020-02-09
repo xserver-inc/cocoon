@@ -338,8 +338,7 @@ define('THEME_MAIL_AMAZON_PR', "
 
 //楽天メール広告
 define('THEME_MAIL_RAKUTEN_PR', "
-楽天で代替え商品を調べる。
-https://a.r10.to/hllTWS");
+楽天で代替え商品を検索する。");
 
 //メール関連
 define('THEME_MAIL_CREDIT', "
