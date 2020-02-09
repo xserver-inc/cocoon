@@ -333,7 +333,14 @@ define('AMAZON_ASIN_ERROR_MESSAGE', __( '商品を取得できませんでした
 //Amazonメール広告
 define('THEME_MAIL_AMAZON_PR', "
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[PR]━┓
-　ここに広告を入れるかも。
+　▼▼ クラウド型レンタルサーバー ColorfulBox（カラフルボックス） ▼▼
+　https://px.a8.net/svt/ejp?a8mat=2ZNCKS+45FZ0Q+42SG+5YZ77
+　480円から始められるコスパ無双レンタルサーバー
+　https://nelog.jp/colorfulbox
+　サイト作成方法はこちら
+　https://nelog.jp/making-colorfulbox-wordpress-site
+　10％OFFクーポンはこちら
+　https://nelog.jp/colorfulbox-coupon-code
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
 //楽天メール広告
