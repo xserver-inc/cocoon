@@ -1895,7 +1895,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
 .admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
 .admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
-.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background: none; background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { padding: 0; background: transparent; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }
@@ -3465,7 +3465,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .recommended.rcs-image-only .card-content { display: none; }
 .admin-settings .demo .recommended.rcs-center-title .card-content { left: 0; top: 0; right: 0; bottom: 0; text-align: center; opacity: 1; font-size: 1em; max-height: none; display: flex; justify-content: center; align-items: center; height: 100%; }
 .admin-settings .demo .recommended.rcs-center-title .a-wrap:hover .card-content { opacity: 1; }
-.admin-settings .demo .recommended.rcs-center-white-title .card-content { background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
+.admin-settings .demo .recommended.rcs-center-white-title .card-content { background: none; background-color: rgba(51, 51, 51, 0.3); transition: all .7s; }
 .admin-settings .demo .recommended.rcs-center-white-title .a-wrap:hover .card-content { transition: all .7s; opacity: 0; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content { padding: 0; background: transparent; }
 .admin-settings .demo .recommended.rcs-center-label-title .card-content .card-title { color: #333; padding: 6px 1.2em; background-color: rgba(255, 255, 255, 0.8); transition: all .3s; border-radius: 99px; font-size: 0.9em; }

@@ -7976,6 +7976,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   opacity: 1;
 }
 .recommended.rcs-center-white-title .card-content {
+  background: none;
   background-color: rgba(51, 51, 51, 0.3);
   transition: all .7s;
 }
