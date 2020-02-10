@@ -664,6 +664,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
+.admin-settings .demo blockquote cite { font-size: 0.7em; }
 .admin-settings .demo .footer-meta { font-size: 0.8em; text-align: right; }
 .admin-settings .demo .author-info .post-author { font-size: 14px; }
 .admin-settings .demo .content-only .header-container, .admin-settings .demo .content-only .appeal, .admin-settings .demo .content-only .carousel, .admin-settings .demo .content-only .ad-area, .admin-settings .demo .content-only .sns-share, .admin-settings .demo .content-only .date-tags, .admin-settings .demo .content-only .sns-follow, .admin-settings .demo .content-only .article-footer, .admin-settings .demo .content-only .under-entry-content, .admin-settings .demo .content-only .breadcrumb, .admin-settings .demo .content-only .main-scroll, .admin-settings .demo .content-only .footer, .admin-settings .demo .content-only .go-to-top-button, .admin-settings .demo .content-only .notice-area, .admin-settings .demo .content-only .content-top, .admin-settings .demo .content-only .content-bottom { display: none; }
@@ -2234,6 +2235,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo blockquote::before, .admin-settings .demo blockquote::after { color: #C8C8C8; font-family: serif; position: absolute; font-size: 300%; }
 .admin-settings .demo blockquote::before { content: "“"; line-height: 1.1; left: 10px; top: 0; }
 .admin-settings .demo blockquote::after { content: "”"; line-height: 0; right: 10px; bottom: 0px; }
+.admin-settings .demo blockquote cite { font-size: 0.7em; }
 .admin-settings .demo .footer-meta { font-size: 0.8em; text-align: right; }
 .admin-settings .demo .author-info .post-author { font-size: 14px; }
 .admin-settings .demo .content-only .header-container, .admin-settings .demo .content-only .appeal, .admin-settings .demo .content-only .carousel, .admin-settings .demo .content-only .ad-area, .admin-settings .demo .content-only .sns-share, .admin-settings .demo .content-only .date-tags, .admin-settings .demo .content-only .sns-follow, .admin-settings .demo .content-only .article-footer, .admin-settings .demo .content-only .under-entry-content, .admin-settings .demo .content-only .breadcrumb, .admin-settings .demo .content-only .main-scroll, .admin-settings .demo .content-only .footer, .admin-settings .demo .content-only .go-to-top-button, .admin-settings .demo .content-only .notice-area, .admin-settings .demo .content-only .content-top, .admin-settings .demo .content-only .content-bottom { display: none; }
