@@ -64,8 +64,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             </span>
           <?php endif ?>
           <?php //コメント数の表示
-          if(is_entry_card_post_comment_count_visible() && is_single_comment_visible()): ?>
-            <span class="post-comment-count"><span class="fa fa-comment-o" aria-hidden="true"></span> <?php echo get_comments_number(); ?></span>
+          $count = get_comments_number();
+          if(is_entry_card_post_comment_count_visible() && is_single_comment_visible() && apply_filters('entry_card_post_comment_count_visible', true, $count)): ?>
+            <span class="post-comment-count"><span class="fa fa-comment-o" aria-hidden="true"></span> <?php echo $count; ?></span>
           <?php endif; ?>
         </div>
         <div class="entry-card-categorys"><?php the_nolink_categories() ?></div>
