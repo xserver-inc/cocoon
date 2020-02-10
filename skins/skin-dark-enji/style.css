@@ -552,7 +552,7 @@ table tr:nth-of-type(2n) {
 
 .widget-entry-card .card-thumb img,
 .carousel-entry-card .card-thumb img {
-  transform: scale(1);
+  transform: none;
   transition: .3s ease-in-out;
 }
 
