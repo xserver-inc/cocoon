@@ -14,7 +14,7 @@
         //カスタムメニュー名
         'theme_location' => NAV_MENU_HEADER,
         //ul 要素に適用するCSS クラス名
-        'menu_class' => 'menu-header',
+        'menu_class' => 'menu-top menu-header menu-pc',
         //コンテナを表示しない
         'container' => false,
         //カスタムメニューを設定しない際に固定ページでメニューを作成しない
@@ -31,7 +31,7 @@
         //カスタムメニュー名
         'theme_location' => NAV_MENU_HEADER_MOBILE,
         //ul 要素に適用するCSS クラス名
-        'menu_class' => 'menu-mobile',
+        'menu_class' => 'menu-top menu-mobile',
         //コンテナを表示しない
         'container' => false,
         //カスタムメニューを設定しない際に固定ページでメニューを作成しない
