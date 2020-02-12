@@ -5028,7 +5028,7 @@ label.screen-reader-text {
   color: #fff;
 }
 
-figure.wp-block-image figcaption {
+.body .wp-block-image figcaption {
   margin: 0;
   font-size: 0.7em;
   opacity: 0.8;

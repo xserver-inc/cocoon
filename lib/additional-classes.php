@@ -41,6 +41,9 @@ if ( !function_exists( 'body_class_additional' ) ):
 function body_class_additional($classes) {
   global $post;
 
+  //全体的なCSS優先度対策用
+  $classes[] = 'body';
+
   //フロントページかどうか
   if (is_front_top_page()) {
     $classes[] = 'front-top-page';
