@@ -97,18 +97,6 @@ if( $is_post_ok ):
   //その他
   require_once abspath(__FILE__).'others-posts.php';
 
-  ///////////////////////////////////////
-  // ビジュアルエディター用のカスタマイズCSS出力
-  ///////////////////////////////////////
-  ob_start();
-  get_template_part('tmp/css-custom');
-  $custum_css = ob_get_clean();
-  if ($custum_css) {
-    $custum_css_file = get_theme_css_cache_file();
-    //ビジュアルエディター用CSSファイルの書き出し
-    wp_filesystem_put_contents($custum_css_file, $custum_css);
-  }
-
   ///////////////////////////////////////////
   // テーマ設定ページではスキン設定の読み込みを保存後にするために遅らせる
   ///////////////////////////////////////////
@@ -117,6 +105,18 @@ if( $is_post_ok ):
   }
 
   do_action('cocoon_settings_after_save');
+
+  ///////////////////////////////////////
+  // エディター用のカスタマイズCSS出力
+  ///////////////////////////////////////
+  ob_start();
+  get_template_part('tmp/css-custom');
+  $custum_css = ob_get_clean();
+  if ($custum_css) {
+    $custum_css_file = get_theme_css_cache_file();
+    //エディター用CSSファイルの書き出し
+    wp_filesystem_put_contents($custum_css_file, $custum_css);
+  }
 
 endif;
 
