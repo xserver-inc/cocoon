@@ -36,30 +36,8 @@
 @import "youtube";
 //Gutenberg
 @import "gutenberg";
-
-/* 検索フォーム風スタイルのボタンを装飾 */
-.search-form div.sbtn {
-	transition: 0.3s; /* 変化をなめらかにする */
-}
-/* ボタンにカーソルを合わせた時のスタイル */
-.search-form div.sbtn:hover {
-	color: #333; /* 文字色 */
-	background: #fff; /* 背景色 */
-	border-color: #333; /* ボーダーの色 */
-	cursor: pointer; /* カーソルをポインターに */
-}
-
-//MacでChromeの際何度か提示遷移するとページャーがクリックできなくなる対応
-//https://is.gd/pl1Rvs
-.home main,
-.archive main {
-  z-index: 0;
-}
-
-.ad-index-bottom {
-  position: relative;
-  z-index: -1;
-}
+//AMP除外
+@import "amp-exclusions";
 
 ///////////////////////////////////////
 // メディアクエリ
