@@ -154,6 +154,9 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
     if (!is_string($input) || !$input = n(trim($input))) return $input;
     $output = $prev = "";
     foreach (fn_minify(array(MINIFY_COMMENT_HTML, MINIFY_HTML_KEEP, MINIFY_HTML, MINIFY_HTML_ENT), $input) as $part) {
+        // if (includes_string($part, '<pre') || includes_string($part, '<code')) {
+        //     _v($part);
+        // }
         if ($part === "\n") continue;
         if ($part !== ' ' && trim($part) === "" || $comment !== 1 && strpos($part, '<!--') === 0) {
             // Detect IE conditional comment(s) by its closing tag …
@@ -163,14 +166,29 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
             continue;
         }
         if ($part[0] === '<' && substr($part, -1) === '>') {
-            $output .= fn_minify_html_union($part, $quote);
+            //codeタグの場合は処理しない
+            if (includes_string($part, '<code')) {
+                $output .= $part;
+            } else {
+                $output .= fn_minify_html_union($part, $quote);
+            }
+            // if (includes_string($part, '<pre') || includes_string($part, '<code')) {
+            //     _v($output);
+            // }
         } else if ($part[0] === '&' && substr($part, -1) === ';' && $part !== '&lt;' && $part !== '&gt;' && $part !== '&amp;') {
             $output .= html_entity_decode($part); // Evaluate HTML entit(y|ies)
         } else {
             $output .= preg_replace('#\s+#', ' ', $part);
         }
         $prev = $part;
+        // if (preg_match('/<pre .+<\/pre>/is', $output, $m) && ($i < 1)) {
+        //     _v($m[0]);
+        // }
+        $i++;
     }
+    // if (preg_match('/<pre .+<\/pre>/is', $output, $m)) {
+    //     _v($m[0]);
+    // }
     $output = str_replace(' </', '</', $output);
     // Force space with `&#x0020;` and line–break with `&#x000A;`
     return str_ireplace(array('&#x0020;', '&#x20;', '&#x000A;', '&#xA;'), array(' ', ' ', "\n", "\n"), trim($output));
@@ -211,6 +229,8 @@ function fn_minify_html_union($input, $quote) {
             //     ), $m[2]);
             // }
             $a = 'a(sync|uto(focus|play))|c(hecked|ontrols)|d(efer|isabled)|hidden|ismap|loop|multiple|open|re(adonly|quired)|s((cop|elect)ed|pellcheck)';
+            //$subject = $m[2];
+            $subject = str_replace("\n", ' ', $m[2]);
             $a = '<' . $m[1] . preg_replace(array(
                 // From `a="a"`, `a='a'`, `a="true"`, `a='true'`, `a=""` and `a=''` to `a` [^1]
                 '#\s(' . $a . ')(?:=([\'"]?)(?:true|\1)?\2)#i',
@@ -225,7 +245,7 @@ function fn_minify_html_union($input, $quote) {
                 ' $1$2',
                 // [^3]
                 '/'
-            ), str_replace("\n", ' ', $m[2])) . '>';
+            ), $subject) . '>';
             return $quote !== 1 ? fn_minify_html_union_attr($a) : $a;
         }
         return '<' . $m[1] . '>';
