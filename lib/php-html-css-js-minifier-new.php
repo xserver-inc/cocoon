@@ -184,7 +184,6 @@ function fn_minify_html($input, $comment = 2, $quote = 1) {
         // if (preg_match('/<pre .+<\/pre>/is', $output, $m) && ($i < 1)) {
         //     _v($m[0]);
         // }
-        $i++;
     }
     // if (preg_match('/<pre .+<\/pre>/is', $output, $m)) {
     //     _v($m[0]);
