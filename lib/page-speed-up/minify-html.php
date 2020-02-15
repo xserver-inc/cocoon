@@ -333,8 +333,7 @@ function convert_lazy_load_tag($the_content, $media){
       //クラスの変更
       //挿入するクラス
       $classes = 'lozad lozad-'.$media;
-      //$chrome_lazy = 'loading="lazy"';
-      $chrome_lazy = '';
+      $chrome_lazy = 'loading="lazy"';
       if (preg_match('/class=/i', $tag)) {
         $search = '{class=["\'](.+?)["\']}i';
         $replace = 'class="$1 '.$classes.'" '.$chrome_lazy;
