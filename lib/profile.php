@@ -84,7 +84,7 @@ function update_avatar_to_user_profile($user_id) {
 endif;
 
 //プロフィール画像を変更する
-add_filter( 'get_avatar' , 'get_uploaded_user_profile_avatar' , 1 , 5 );
+add_filter( 'get_avatar' , 'get_uploaded_user_profile_avatar' , 100000 , 5 );//Ultimate Memberプラグインと干渉するため100000にした
 if ( !function_exists( 'get_uploaded_user_profile_avatar' ) ):
 function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $default, $alt ) {
   if ( is_numeric( $id_or_email ) )
