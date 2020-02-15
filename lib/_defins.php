@@ -279,7 +279,7 @@ define('FONT_AWESOME_5_CDN_URL', 'https://use.fontawesome.com/releases/v5.11.1/c
 
 //Font Awesome4
 define('FONT_AWESOME_4_URL', get_template_directory_uri().'/webfonts/fontawesome/css/font-awesome.min.css');
-define('FONT_AWESOME_4_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2');
+define('FONT_AWESOME_4_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0');
 //Font Awesome5
 define('FONT_AWESOME_5_URL', get_template_directory_uri().'/webfonts/fontawesome5/css/all.min.css');
 define('FONT_AWESOME_5_BRANDS_WOFF2_URL', get_template_directory_uri().'/webfonts/fontawesome5/webfonts/fa-brands-400.woff2');
