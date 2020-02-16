@@ -9060,6 +9060,11 @@ twitter-widget {
   border-color: #ccc;
 }
 
+.lozad {
+  min-height: 1px;
+  min-width: 1px;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
