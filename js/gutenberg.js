@@ -6,7 +6,6 @@
  */
 
 wp.domReady(function () {
-    console.log('1');
     // add classes
     const addClasses = function () {
         // add body class
