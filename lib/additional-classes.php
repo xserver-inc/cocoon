@@ -142,16 +142,10 @@ function body_class_additional($classes) {
   // }
 
   //ヘッダーが「センターロゴ」か「トップメニュー」か
-  switch (get_header_layout_type()) {
-    case 'top_menu':
-    case 'top_menu_right':
-    case 'top_menu_small':
-    case 'top_menu_small_right':
-      $classes[] = 'hlt-top-menu-wrap';
-      break;
-    default:
-      $classes[] = 'hlt-center-logo-wrap';
-      break;
+  if (get_header_layout_type_top()) {
+    $classes[] = 'hlt-top-menu-wrap';
+  } else {
+    $classes[] = 'hlt-center-logo-wrap';
   }
 
   //エントリーカードタイプ
@@ -351,6 +345,11 @@ function body_class_additional($classes) {
 
   //利用アイコンフォントクラス
   $classes[] = get_site_icon_font_class();
+
+  //ヘッダーを固定する場合
+  if (is_global_navi_fixed()) {
+    $classes[] = 'is-header-fixed';
+  }
 
   return apply_filters('body_class_additional', $classes);
 }//body_class_additional

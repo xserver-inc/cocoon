@@ -51,7 +51,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         </tr>
 
         <!-- グローバルナビの固定  -->
-        <!--
         <tr>
           <th scope="row">
             <?php generate_label_tag('', __( 'グローバルナビの固定', THEME_NAME ) ); ?>
@@ -64,4 +63,3 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             ?>
           </td>
         </tr>
-        -->

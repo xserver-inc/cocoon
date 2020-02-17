@@ -54,3 +54,14 @@
   min-height: 1px;
   min-width: 1px;
 }
+
+.is-header-fixed{
+	margin-top: 1px;
+}
+
+.header-container *{
+  transition: all .3s ease-out;
+}
+.header-container-in.hlt-top-menu *{
+  transition: all .5s ease-out;
+}

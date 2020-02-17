@@ -14,6 +14,24 @@ function get_header_layout_type(){
   return get_theme_option(OP_HEADER_LAYOUT_TYPE, 'center_logo');
 }
 endif;
+if ( !function_exists( 'get_header_layout_type_top' ) ):
+function get_header_layout_type_top(){
+  switch (get_header_layout_type()) {
+    case 'top_menu':
+    case 'top_menu_right':
+    case 'top_menu_small':
+    case 'top_menu_small_right':
+      return true;
+      break;
+  }
+  return false;
+}
+endif;
+if ( !function_exists( 'get_header_layout_type_center_logo' ) ):
+function get_header_layout_type_center_logo(){
+  return !get_header_layout_type_top();
+}
+endif;
 
 //ヘッダーの高さ
 define('OP_HEADER_AREA_HEIGHT', 'header_area_height');

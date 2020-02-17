@@ -3673,6 +3673,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page { background-color: #1A73E8; color: #fff; }
 .admin-settings .demo .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-page { border-color: #ccc; }
 .admin-settings .demo .lozad { min-height: 1px; min-width: 1px; }
+.admin-settings .demo .is-header-fixed { margin-top: 1px; }
+.admin-settings .demo .header-container * { transition: all .3s ease-out; }
+.admin-settings .demo .header-container-in.hlt-top-menu * { transition: all .5s ease-out; }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }
