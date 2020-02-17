@@ -666,6 +666,7 @@ function wp_enqueue_clingify(){
                 $("'.$selector.'").clingify({
                   extraClass: "fixed-header-wrapper",
                   breakpointWidth: 834,
+                  throttle: 150,
                   '.$options.'
                 });
               })(jQuery);
