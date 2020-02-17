@@ -218,8 +218,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               generate_checkbox_tag(OP_ADMIN_THE_AMP_VALIDATOR_VISIBLE, is_admin_the_amp_validator_visible(), __( 'The AMP Validatorを表示', THEME_NAME ));
               generate_tips_tag(__( '<a href="https://validator.ampproject.org/#" target="_blank" rel="noopener">The AMP Validator</a>でチェックするためのリンクの表示。', THEME_NAME ));
 
-              generate_checkbox_tag(OP_ADMIN_AMPBENCH_VISIBLE, is_admin_ampbench_visible(), __( 'AMPBenchを表示', THEME_NAME ));
-              generate_tips_tag(__( '<a href="https://ampbench.appspot.com/" target="_blank" rel="noopener">AMPBench</a>でチェックするためのリンクの表示。', THEME_NAME ));
+              // generate_checkbox_tag(OP_ADMIN_AMPBENCH_VISIBLE, is_admin_ampbench_visible(), __( 'AMPBenchを表示', THEME_NAME ));
+              // generate_tips_tag(__( '<a href="https://ampbench.appspot.com/" target="_blank" rel="noopener">AMPBench</a>でチェックするためのリンクの表示。', THEME_NAME ));
               ?>
             </div>
           </td>

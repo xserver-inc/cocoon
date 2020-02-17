@@ -196,7 +196,7 @@ endif;
 define('OP_ADMIN_AMPBENCH_VISIBLE', 'admin_ampbench_visible');
 if ( !function_exists( 'is_admin_ampbench_visible' ) ):
 function is_admin_ampbench_visible(){
-  return get_theme_option(OP_ADMIN_AMPBENCH_VISIBLE, 1);
+  return false;//get_theme_option(OP_ADMIN_AMPBENCH_VISIBLE, 1);
 }
 endif;
 
