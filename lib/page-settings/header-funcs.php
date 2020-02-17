@@ -33,6 +33,14 @@ function get_header_layout_type_center_logo(){
 }
 endif;
 
+//ヘッダーの固定
+define('OP_HEADER_FIXED', 'header_fixed');
+if ( !function_exists( 'is_header_fixed' ) ):
+function is_header_fixed(){
+  return get_theme_option(OP_HEADER_FIXED);
+}
+endif;
+
 //ヘッダーの高さ
 define('OP_HEADER_AREA_HEIGHT', 'header_area_height');
 if ( !function_exists( 'get_header_area_height' ) ):

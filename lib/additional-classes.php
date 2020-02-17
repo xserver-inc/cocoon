@@ -347,7 +347,7 @@ function body_class_additional($classes) {
   $classes[] = get_site_icon_font_class();
 
   //ヘッダーを固定する場合
-  if (is_global_navi_fixed()) {
+  if (is_header_fixed()) {
     $classes[] = 'is-header-fixed';
   }
 

@@ -48,6 +48,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- ヘッダーの固定  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'ヘッダーの固定', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_HEADER_FIXED, is_header_fixed(), __( 'ヘッダーを固定する', THEME_NAME ));
+            generate_tips_tag(__( 'ページをスクロールしても、ヘッダーが追従してきます。', THEME_NAME ));
+
+            ?>
+          </td>
+        </tr>
+
         <!-- 高さ -->
         <tr>
           <th scope="row">

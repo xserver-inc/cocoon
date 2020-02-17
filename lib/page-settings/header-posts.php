@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //ヘッダーの種類
 update_theme_option(OP_HEADER_LAYOUT_TYPE);
 
+//ヘッダーの固定
+update_theme_option(OP_HEADER_FIXED);
+
 //ヘッダーの高さ
 update_theme_option(OP_HEADER_AREA_HEIGHT);
 

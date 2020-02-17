@@ -642,18 +642,17 @@ function wp_enqueue_clingify(){
   // $is_ie = $browser_info['browser_name'] == 'IE';
   // $is_edge_version_under_16 = ($browser_info['browser_name'] == 'IE') && (intval($browser_info['browser_version']) < 16);
   //グローバルナビ追従が有効な時
-  if ( is_global_navi_fixed() ) {
+  if ( is_header_fixed() ) {
     //clingifyスタイルの呼び出し
     wp_enqueue_style( 'clingify-style', get_template_directory_uri() . '/plugins/clingify/clingify.css' );
     //clingifyスクリプトの呼び出し
     wp_enqueue_script( 'clingify-js', get_template_directory_uri() . '/plugins/clingify/jquery.clingify.min.js', array( 'jquery' ), false, true  );
-    if (is_global_navi_fixed()) {
+    if (is_header_fixed()) {
       $selector = '.header-container';
       $detached_classes = get_additional_header_container_classes();
       $options = null;
       if (get_header_layout_type_center_logo()) {
         $options = '
-        extraClass: "",
         detached : function() {
           $(".header-container-in").removeClass().addClass("header-container-in'.$detached_classes.'");
         },
@@ -665,6 +664,8 @@ function wp_enqueue_clingify(){
       $data = minify_js('
               (function($){
                 $("'.$selector.'").clingify({
+                  extraClass: "fixed-header-wrapper",
+                  breakpointWidth: 834,
                   '.$options.'
                 });
               })(jQuery);
