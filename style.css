@@ -9077,6 +9077,11 @@ twitter-widget {
   transition: all .5s ease-out;
 }
 
+.js-clingify-locked .has-sub,
+.js-clingify-locked .navi-in .sub-menu {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

@@ -55,6 +55,8 @@
   min-width: 1px;
 }
 
+
+//固定ヘッダー
 .is-header-fixed{
 	margin-top: 1px;
 }
@@ -64,4 +66,11 @@
 }
 .header-container-in.hlt-top-menu *{
   transition: all .5s ease-out;
+}
+
+.js-clingify-locked{
+	.has-sub,
+	.navi-in .sub-menu{
+		display: none;
+	}
 }

@@ -3676,6 +3676,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .is-header-fixed { margin-top: 1px; }
 .admin-settings .demo .header-container * { transition: all .3s ease-out; }
 .admin-settings .demo .header-container-in.hlt-top-menu * { transition: all .5s ease-out; }
+.admin-settings .demo .js-clingify-locked .has-sub, .admin-settings .demo .js-clingify-locked .navi-in .sub-menu { display: none; }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }
