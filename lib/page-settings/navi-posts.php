@@ -24,6 +24,3 @@ update_theme_option(OP_GLOBAL_NAVI_MENU_TEXT_WIDTH_ENABLE);
 
 //グローバルナビサブメニュー幅
 update_theme_option(OP_GLOBAL_NAVI_SUB_MENU_WIDTH);
-
-//グローバルナビメニューの固定
-update_theme_option(OP_GLOBAL_NAVI_FIXED);

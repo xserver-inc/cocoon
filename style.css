@@ -9065,6 +9065,23 @@ twitter-widget {
   min-width: 1px;
 }
 
+.is-header-fixed {
+  margin-top: 1px;
+}
+
+.header-container * {
+  transition: all .3s ease-out;
+}
+
+.header-container-in.hlt-top-menu * {
+  transition: all .5s ease-out;
+}
+
+.js-clingify-locked .has-sub,
+.js-clingify-locked .navi-in .sub-menu {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

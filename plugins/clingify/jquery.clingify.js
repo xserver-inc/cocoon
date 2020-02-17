@@ -1,5 +1,5 @@
 /*
- * Clingify v1.2.1
+ * Clingify v1.2
  *
  * A jQuery 1.7+ plugin for sticky elements
  * http://github.com/theroux/clingify
@@ -19,7 +19,7 @@
         defaults = {
             breakpointHeight: 0,
             breakpointWidth: 0,
-            // Media query breakpoints in pixels.
+            // Media query breakpoints in pixels. 
             // Below this value, Clingify behavior is disabled. (Useful for small screens.)
             // Use 0 if you want Clingify to work at all screen widths/heights.
 
@@ -28,7 +28,7 @@
             // Too fast is bad for performance, especially on older browsers/machines.
 
             extraClass: '',
-            // Add an additional class of your choosing to the sticky element
+            // Add an additional class of your choosing to the sticky element 
             // and its parent wrapper & placeholder divs
 
             // Classes for CSS hooks
@@ -41,24 +41,24 @@
             detached: $.noop, // Fires before element is detached
             locked: $.noop, // Fires before element is attached
             resized: $.noop, // Fires after window resize event, benefits from the throttle
-
-            //new
+        
+            //new 
             scrollingElem : 'window',
-            fixed: true, // Use fixed positioning vs. transforms applied to elem
+            fixed: true, // Use fixed positioning vs. transforms applied to elem    
 
         },
         $window = $(window);
 
-    /*
+    /* 
     var privateMethod = function () {
         console.log("private methods go here!");
-    };
+    }; 
     */
 
     // The actual plugin constructor
     var Plugin = function ( element ) {
         // Plugin instantiation
-
+        
         this.element = element;
         this.options = $.extend( {}, defaults );
     };
@@ -126,7 +126,7 @@
 
         unbindResize: function() {
             $(window).off('resize.Clingify');
-        },
+        },        
         unbindScroll: function() {
             $(this.options.scrollingElem).off('scroll.Clingify');
         },
@@ -249,18 +249,14 @@
             this.$element = $(this.element);
             this.elemHeight = this.$element.outerHeight();
 
-            //console.log(this.$element.is(':visible'));
-            if (this.$element.is(':visible')) {
-                this.$element
-                    .wrap($buildPlaceholder.height(this.elemHeight))
-                    .wrap($buildWrapper);
-                this.findPlaceholder().height(this.elemHeight);
-            }
-
+            this.$element
+                .wrap($buildPlaceholder.height(this.elemHeight))
+                .wrap($buildWrapper);
+            this.findPlaceholder().height(this.elemHeight);
             return;
         }
     };
-
+   
     $.fn[ pluginName ] = function ( arg ) {
 
         var args, instance;
