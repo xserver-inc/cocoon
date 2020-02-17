@@ -2399,7 +2399,7 @@ label.screen-reader-text {
   width: 100%;
   bottom: 0;
   padding: .6em;
-  background: linear-gradient(180deg, transparent, #666);
+  background: linear-gradient(180deg, transparent, #555);
   color: #fff;
   max-height: 40%;
   overflow: hidden;
