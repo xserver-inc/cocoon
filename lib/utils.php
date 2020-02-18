@@ -655,25 +655,35 @@ function wp_enqueue_clingify(){
         $options = '
         detached : function() {
           $(".header-container-in").removeClass().addClass("header-container-in'.$detached_classes.'");
+          adjustHeader();
         },
         locked : function() {
           $(".header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
-          //現在のheight取得
-          curHeight = $(".js-clingify-placeholder").height();
-          //メニューのheightを取得
-          meunHeight = $("#header-container").height();
-          //メニューのheightへ向かってanimate
-          //数値なのでanimateが有効
-          $(".js-clingify-placeholder").height(curHeight).animate({height: meunHeight}, 150);
+          adjustHeader();
         },
         ';
       }
       $data = minify_js('
               (function($){
+                function adjustHeader(){
+                  $(".js-clingify-placeholder").height($("#header-container").height());
+                  // placeholder = $(".js-clingify-placeholder");
+                  // //現在のheight取得
+                  // curHeight = placeholder.height();
+                  // //メニューのheightを取得
+                  // meunHeight = $("#header-container").height();
+                  // console.log(meunHeight);
+                  // //autoにした場合のheightを取得
+                  // autoHeight = placeholder.css("height", "auto").height();
+                  // //メニューのheightへ向かってanimate
+                  // //数値なのでanimateが有効
+                  // placeholder.height(curHeight).animate({height: meunHeight}, ms);
+                }
+
                 $("'.$selector.'").clingify({
                   extraClass: "fixed-header-wrapper",
                   breakpointWidth: 834,
-                  throttle: 150,
+                  throttle: 500,
                   '.$options.'
                 });
               })(jQuery);
