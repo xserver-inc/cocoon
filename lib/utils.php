@@ -658,6 +658,13 @@ function wp_enqueue_clingify(){
         },
         locked : function() {
           $(".header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
+          //現在のheight取得
+          curHeight = $(".js-clingify-placeholder").height();
+          //メニューのheightを取得
+          meunHeight = $("#header-container").height();
+          //メニューのheightへ向かってanimate
+          //数値なのでanimateが有効
+          $(".js-clingify-placeholder").height(curHeight).animate({height: meunHeight}, 150);
         },
         ';
       }
