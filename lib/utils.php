@@ -667,17 +667,6 @@ function wp_enqueue_clingify(){
               (function($){
                 function adjustHeader(){
                   $(".js-clingify-placeholder").height($("#header-container").height());
-                  // placeholder = $(".js-clingify-placeholder");
-                  // //現在のheight取得
-                  // curHeight = placeholder.height();
-                  // //メニューのheightを取得
-                  // meunHeight = $("#header-container").height();
-                  // console.log(meunHeight);
-                  // //autoにした場合のheightを取得
-                  // autoHeight = placeholder.css("height", "auto").height();
-                  // //メニューのheightへ向かってanimate
-                  // //数値なのでanimateが有効
-                  // placeholder.height(curHeight).animate({height: meunHeight}, ms);
                 }
 
                 $("'.$selector.'").clingify({
@@ -690,25 +679,6 @@ function wp_enqueue_clingify(){
             ');
       wp_add_inline_script( 'clingify-js', $data, 'after' );
     }
-
-    // //position: sticky;に対応していないブラウザの場合はclingifyを実行
-    // if (is_scrollable_sidebar_enable() && ($is_ie || $is_edge_version_under_16)) {
-    //   $data = minify_js('
-    //           (function($){
-    //            $(".sidebar-scroll").clingify();
-    //           })(jQuery);
-    //         ');
-    //   wp_add_inline_script( 'clingify-js', $data, 'after' );
-    // }
-    // if (is_scrollable_main_enable() && ($is_ie || $is_edge_version_under_16)) {
-    //   $data = minify_js('
-    //           (function($){
-    //            $(".main-scroll").clingify();
-    //           })(jQuery);
-    //         ');
-    //   wp_add_inline_script( 'clingify-js', $data, 'after' );
-    // }
-
   }
 }
 endif;
