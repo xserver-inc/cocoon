@@ -228,11 +228,17 @@ function url_to_external_ogp_blogcard_tag($url){
   $snippet = apply_filters( 'cocoon_external_blogcard_snippet', $snippet );
 
   //新しいタブで開く場合
-  $target = is_external_blogcard_target_blank() ? ' target="_blank" rel="noopener"' : '';
+  $target = is_external_blogcard_target_blank() ? ' target="_blank"' : '';
 
+  $rel = '';
+  if (is_external_blogcard_target_blank()) {
+    $rel = ' rel="noopener"';
+  }
   //コメント内でブログカード呼び出しが行われた際はnofollowをつける
   global $comment; //コメント内以外で$commentを呼び出すとnullになる
-  $nofollow = $comment || $error_rel_nofollow ? ' rel="nofollow"' : null;
+  if (is_external_blogcard_target_blank() && $comment) {
+    $rel = ' rel="nofollow noopener"';
+  }
 
   //GoogleファビコンAPIを利用する
   ////www.google.com/s2/favicons?domain=nelog.jp
@@ -245,12 +251,12 @@ function url_to_external_ogp_blogcard_tag($url){
   //サムネイルを取得できた場合
   $image = apply_filters('get_external_blogcard_thumbnail_url', $image);
   if ( $image ) {
-    $thumbnail = '<img src="'.$image.'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
+    $thumbnail = '<img src="'.esc_url($image).'" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="'.THUMB160WIDTH.'" height="'.THUMB160HEIGHT.'" />';
   }
 
   //取得した情報からブログカードのHTMLタグを作成
   $tag =
-  '<a href="'.$url.'" title="'.esc_attr($title).'" class="blogcard-wrap external-blogcard-wrap a-wrap cf"'.$target.$nofollow.'>'.
+  '<a href="'.esc_url($url).'" title="'.esc_attr($title).'" class="blogcard-wrap external-blogcard-wrap a-wrap cf"'.$target.$rel.'>'.
     '<div class="blogcard external-blogcard'.get_additional_external_blogcard_classes().' cf">'.
       '<div class="blogcard-label external-blogcard-label">'.
         '<span class="fa"></span>'.
