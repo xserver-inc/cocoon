@@ -9074,7 +9074,7 @@ twitter-widget {
 }
 
 .header-container-in.hlt-top-menu * {
-  transition: all .5s ease-out;
+  transition: all .2s ease-out;
 }
 
 .js-clingify-locked .has-sub,
