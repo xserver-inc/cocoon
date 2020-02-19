@@ -76,6 +76,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
               $caption = $screenshot_text.$skin_text.$author_text;//.$description;
               //var_dump($caption);
+              $file_url = apply_filters('cocoon_skin_file_url', $file_url);
               $options += array($file_url => $caption);
             }
             //var_dump($options);
