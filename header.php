@@ -68,7 +68,8 @@ wp_head(); ?>
 <link rel="preconnect dns-prefetch" href="//dalb.valuecommerce.com">
 
 <!-- Preload -->
-<!-- <link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin> -->
+<link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="<?php echo FONT_ICOMOON_TTF_URL; ?>" crossorigin>
 <?php if (is_site_icon_font_font_awesome_4()): ?>
 <link rel="preload" as="font" type="font/woff2" href="<?php echo FONT_AWESOME_4_WOFF2_URL; ?>" crossorigin>
 <?php else: ?>
