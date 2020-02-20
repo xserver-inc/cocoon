@@ -54,4 +54,50 @@ if (!is_amp()): ?>
   <script><?php echo $_THE_CONTENT_SCRIPTS; ?></script>
   <?php endif ?>
 <?php endif ?>
+<?php //固定ヘッダー
+if (is_header_fixed()): ?>
+<script>
+(function($){
+  var prevScrollTop = -1;
+  var $window = $(window);
+  $window.scroll(function(){
+    //最上部から現在位置までの距離を取得して、変数[scrollTop]に格納
+    var scrollTop = $window.scrollTop();
+    var threashold = 600;
+    var s1 = (prevScrollTop > threashold);
+    var s2 = (scrollTop > threashold);
+
+    // ヘッダーメニューの固定
+    if (s1 ^ s2) {
+      if (s2) {
+        <?php if (get_header_layout_type_center_logo()): ?>
+        //トップメニュータイプに変更する
+        $("#header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
+        <?php endif; ?>
+        $("#header-container").addClass("fixed-header");
+        $("#header-container").css({
+          'position': 'sticky',
+          'top': '-100px',
+        });
+        $("#header-container").animate({'top': '0'}, 500);
+      }
+    }
+    // console.log($(window).scrollTop());
+    if (scrollTop == 0) {
+      <?php if (get_header_layout_type_center_logo()): ?>
+      //センターロゴタイプに戻す
+      $("#header-container-in").removeClass().addClass("header-container-in <?php echo get_additional_header_container_classes(); ?>");
+      <?php endif; ?>
+      $("#header-container").removeClass("fixed-header");
+      $("#header-container").css({
+        'position': 'static',
+        'top': 'auto',
+      });
+    }
+
+    prevScrollTop = scrollTop;
+  });
+})($);
+</script>
+<?php endif; ?>
 

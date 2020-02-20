@@ -57,27 +57,42 @@
 
 
 //固定ヘッダー
-.is-header-fixed{
-	margin-top: 1px;
+// .is-header-fixed{
+// 	margin-top: 1px;
+// }
+
+// .header-container *{
+//   transition: all .3s ease-out;
+// }
+// .header-container-in.hlt-top-menu *{
+//   transition: all .2s ease-out;
+// }
+
+// .js-clingify-placeholder .js-clingify-wrapper{
+// 	transition: all .3s ease-out;
+// 	top: -100px;
+// }
+// .js-clingify-wrapper.js-clingify-locked{
+// 	transition: all .3s ease-out;
+// 	top: 0px;
+// }
+
+// .js-clingify-locked{
+// 	.has-sub,
+// 	.navi-in .sub-menu{
+// 		display: none;
+// 	}
+// }
+
+//固定ヘッダー
+.header-container{
+	z-index: 2;
+	*{
+		transition: .3s;
+	}
 }
 
-.header-container *{
-  transition: all .3s ease-out;
-}
-.header-container-in.hlt-top-menu *{
-  transition: all .2s ease-out;
-}
-
-.js-clingify-placeholder .js-clingify-wrapper{
-	transition: all .3s ease-out;
-	top: -100px;
-}
-.js-clingify-wrapper.js-clingify-locked{
-	transition: all .3s ease-out;
-	top: 0px;
-}
-
-.js-clingify-locked{
+.fixed-header{
 	.has-sub,
 	.navi-in .sub-menu{
 		display: none;

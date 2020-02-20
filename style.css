@@ -9065,30 +9065,15 @@ twitter-widget {
   min-width: 1px;
 }
 
-.is-header-fixed {
-  margin-top: 1px;
+.header-container {
+  z-index: 2;
 }
-
 .header-container * {
-  transition: all .3s ease-out;
+  transition: .3s;
 }
 
-.header-container-in.hlt-top-menu * {
-  transition: all .2s ease-out;
-}
-
-.js-clingify-placeholder .js-clingify-wrapper {
-  transition: all .3s ease-out;
-  top: -100px;
-}
-
-.js-clingify-wrapper.js-clingify-locked {
-  transition: all .3s ease-out;
-  top: 0px;
-}
-
-.js-clingify-locked .has-sub,
-.js-clingify-locked .navi-in .sub-menu {
+.fixed-header .has-sub,
+.fixed-header .navi-in .sub-menu {
   display: none;
 }
 

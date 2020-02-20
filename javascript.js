@@ -33,6 +33,7 @@
 
     prevScrollTop = scrollTop;
   });
+
   //ボタン(.go-to-top-common)のクリックイベント
   $('.go-to-top-common').click(function(){
   //ページトップへ移動する
