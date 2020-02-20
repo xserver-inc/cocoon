@@ -23,7 +23,7 @@ body {
   background-color: #f8b500;
 }
 
-.js-clingify-wrapper .header {
+.fixed-header .header {
   background-color: transparent;
 }
 
