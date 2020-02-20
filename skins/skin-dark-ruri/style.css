@@ -1215,8 +1215,9 @@ div.speech-balloon {
   opacity: 1;
 }
 
-/*
-.wp-caption-text{
-  color: #191919;
+/* -------------------------------------------
+/ 『固定ヘッダー』
+------------------------------------------- */
+.fixed-header .header {
+  background-color: #1b51ad;
 }
-*/
