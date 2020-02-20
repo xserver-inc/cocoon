@@ -9028,8 +9028,7 @@ twitter-widget {
   /* カーソルをポインターに */
 }
 
-.home main,
-.archive main {
+.main {
   z-index: 0;
 }
 

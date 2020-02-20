@@ -16,8 +16,7 @@
 
 //MacでChromeの際何度か提示遷移するとページャーがクリックできなくなる対応
 //https://is.gd/pl1Rvs
-.home main,
-.archive main {
+.main {
   z-index: 0;
 }
 

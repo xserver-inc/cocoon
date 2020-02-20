@@ -3667,7 +3667,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .entry-content .wp-block-gallery .blocks-gallery-item { display: list-item; }
 .admin-settings .demo .search-form div.sbtn { transition: 0.3s; /* 変化をなめらかにする */ }
 .admin-settings .demo .search-form div.sbtn:hover { color: #333; /* 文字色 */ background: #fff; /* 背景色 */ border-color: #333; /* ボーダーの色 */ cursor: pointer; /* カーソルをポインターに */ }
-.admin-settings .demo .home main, .admin-settings .demo .archive main { z-index: 0; }
+.admin-settings .demo .main { z-index: 0; }
 .admin-settings .demo .ad-index-bottom { position: relative; z-index: -1; }
 .admin-settings .demo .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page, .admin-settings .demo .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-page { font-size: 15px; border-width: 1px; border-style: solid; padding: 2px 10px; display: inline-block; margin-bottom: 8px; }
 .admin-settings .demo .gsc-resultsbox-visible .gsc-results .gsc-cursor-box .gsc-cursor-current-page { background-color: #1A73E8; color: #fff; }
