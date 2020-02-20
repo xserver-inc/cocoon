@@ -60,7 +60,7 @@ if (is_header_fixed()): ?>
 (function($){
   function stickyHeader(){
     <?php if (get_header_layout_type_center_logo()): ?>
-    //トップメニュータイプに変更する
+    /*トップメニュータイプに変更する*/
     $("#header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
     <?php endif; ?>
     $("#header-container").addClass("fixed-header");
@@ -72,7 +72,7 @@ if (is_header_fixed()): ?>
   }
   function staticHeader(){
     <?php if (get_header_layout_type_center_logo()): ?>
-    //センターロゴタイプに戻す
+    /*センターロゴタイプに戻す*/
     $("#header-container-in").removeClass().addClass("header-container-in <?php echo get_additional_header_container_classes(); ?>");
     <?php endif; ?>
     $("#header-container").removeClass("fixed-header");
@@ -91,13 +91,12 @@ if (is_header_fixed()): ?>
     var s2 = (scrollTop > threashold);
     var w = $window.width();
 
-    // ヘッダーメニューの固定
+    /*ヘッダーメニューの固定*/
     if (s1 ^ s2) {
       if (s2 && w >  mobileWidth) {
         stickyHeader();
       }
     }
-    //console.log(w);
     if (scrollTop == 0 || w <=  mobileWidth) {
       staticHeader();
     }
@@ -105,13 +104,13 @@ if (is_header_fixed()): ?>
     prevScrollTop = scrollTop;
   });
 
-  //ウインドウがリサイズされたら発動
+  /*ウインドウがリサイズされたら発動*/
   $window.resize(function() {
-    //ウインドウの幅を変数に格納
+    /*ウインドウの幅を変数に格納*/
     var w = $window.width();
-    if (w <=  mobileWidth) {//モバイル端末の場合
+    if (w <=  mobileWidth) {/*モバイル端末の場合*/
       staticHeader();
-    } else {//パソコン端末の場合
+    } else {/*パソコン端末の場合*/
       stickyHeader();
     }
   });
