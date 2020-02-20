@@ -58,43 +58,62 @@ if (!is_amp()): ?>
 if (is_header_fixed()): ?>
 <script>
 (function($){
+  function stickyHeader(){
+    <?php if (get_header_layout_type_center_logo()): ?>
+    //トップメニュータイプに変更する
+    $("#header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
+    <?php endif; ?>
+    $("#header-container").addClass("fixed-header");
+    $("#header-container").css({
+      'position': 'sticky',
+      'top': '-100px',
+    });
+    $("#header-container").animate({'top': '0'}, 500);
+  }
+  function staticHeader(){
+    <?php if (get_header_layout_type_center_logo()): ?>
+    //センターロゴタイプに戻す
+    $("#header-container-in").removeClass().addClass("header-container-in <?php echo get_additional_header_container_classes(); ?>");
+    <?php endif; ?>
+    $("#header-container").removeClass("fixed-header");
+    $("#header-container").css({
+      'position': 'static',
+      'top': 'auto',
+    });
+  }
   var prevScrollTop = -1;
   var $window = $(window);
+  var mobileWidth = 1023;
   $window.scroll(function(){
     var scrollTop = $window.scrollTop();
     var threashold = 600;
     var s1 = (prevScrollTop > threashold);
     var s2 = (scrollTop > threashold);
+    var w = $window.width();
 
     // ヘッダーメニューの固定
     if (s1 ^ s2) {
-      if (s2) {
-        <?php if (get_header_layout_type_center_logo()): ?>
-        //トップメニュータイプに変更する
-        $("#header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
-        <?php endif; ?>
-        $("#header-container").addClass("fixed-header");
-        $("#header-container").css({
-          'position': 'sticky',
-          'top': '-100px',
-        });
-        $("#header-container").animate({'top': '0'}, 500);
+      if (s2 && w >  mobileWidth) {
+        stickyHeader();
       }
     }
-    // console.log($(window).scrollTop());
-    if (scrollTop == 0) {
-      <?php if (get_header_layout_type_center_logo()): ?>
-      //センターロゴタイプに戻す
-      $("#header-container-in").removeClass().addClass("header-container-in <?php echo get_additional_header_container_classes(); ?>");
-      <?php endif; ?>
-      $("#header-container").removeClass("fixed-header");
-      $("#header-container").css({
-        'position': 'static',
-        'top': 'auto',
-      });
+    //console.log(w);
+    if (scrollTop == 0 || w <=  mobileWidth) {
+      staticHeader();
     }
 
     prevScrollTop = scrollTop;
+  });
+
+  //ウインドウがリサイズされたら発動
+  $window.resize(function() {
+    //ウインドウの幅を変数に格納
+    var w = $window.width();
+    if (w <=  mobileWidth) {//モバイル端末の場合
+      staticHeader();
+    } else {//パソコン端末の場合
+      stickyHeader();
+    }
   });
 })($);
 </script>
