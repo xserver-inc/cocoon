@@ -61,7 +61,6 @@ if (is_header_fixed()): ?>
   var prevScrollTop = -1;
   var $window = $(window);
   $window.scroll(function(){
-    //最上部から現在位置までの距離を取得して、変数[scrollTop]に格納
     var scrollTop = $window.scrollTop();
     var threashold = 600;
     var s1 = (prevScrollTop > threashold);
