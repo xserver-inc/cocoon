@@ -1,0 +1,91 @@
+/*
+  Skin Name: Like Simplicity
+  Description: 某無料WordPressテーマっぽいスキンです。
+  Skin URI: https://wp-cocoon.com/skin-simplicity/
+  Author: わいひら
+  Author URI: https://nelog.jp/
+  Screenshot URI: https://im-cocoon.net/wp-content/uploads/like-simplicity.png
+  Version: 1.0.1
+  Priority: 9880010000
+*/
+/*以下にスタイルシートを記入してください*/
+
+$menu_color: #F7F7F7;
+$border_color: #ccc;
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+}
+
+.navi{
+  background-color: $menu_color;
+}
+
+.main,
+.navi,
+.sidebar,
+.search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select{
+  border: 1px solid $border_color;
+  border-radius: 4px;
+}
+
+.header-in{
+  padding: 0 30px;
+}
+
+// .logo,
+// .tagline{
+//   text-align: left;
+// }
+
+.logo-text{
+  padding: 0;
+}
+
+.sidebar h3{
+  background: transparent;
+  padding: 0.4em;
+  margin: 0.3em 0;
+}
+
+.article h2{
+  background: transparent;
+  border-left: 1px solid #000;
+  margin: 40px -29px 20px;
+  padding: 25px 30px;
+  font-size: 26px;
+}
+
+.article h3 {
+  border: none;
+  font-size: 23px;
+  border-bottom: 5px solid #e7e7e7;
+  padding: 10px 0;
+}
+
+.article h4 {
+  border: none;
+  border-bottom: 5px dashed #eee;
+}
+
+.article h5,
+.article h6{
+  border: none;
+}
+
+//834px以下
+@media screen and (max-width: 834px){
+  .article h1, .entry h2 a, #archive-title, .article h2, .article h3, .article h4, .article h5 .article h6, .article h3, #comment-area h2, #related-entries h2{
+    font-size: 20px;
+  }
+  .article h2{
+    margin: 40px 0;
+    padding: 14px;
+  }
+}
+
+//480px以下
+@media screen and (max-width: 480px){
+
+}
