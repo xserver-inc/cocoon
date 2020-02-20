@@ -26,6 +26,9 @@ body {
 .fixed-header .header {
   background-color: transparent;
 }
+.fixed-header .navi {
+  box-shadow: none;
+}
 
 .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .tagcloud a:hover, .pagination a:hover, .pager-links a:hover span, .pagination-next-link:hover, .comment-btn:hover, .comment-reply-link:hover, .navi-footer-in a:hover, .navi-footer-in a:hover {
   background-color: rgba(248, 181, 0, 0.05);
@@ -161,10 +164,14 @@ div.mobile-menu-buttons .menu-button:hover,
 
 .widget-entry-cards.ranking-visible .card-thumb::before {
   border-radius: 50%;
-  background: #f8b500;
+  background: #ffec47;
   top: -10px;
   left: -10px;
   border: 2px solid #eee;
+}
+
+.appeal-button {
+  background-color: #f8b500;
 }
 
 .navi {
@@ -178,7 +185,7 @@ div.mobile-menu-buttons .menu-button:hover,
 }
 .navi ul .sub-menu {
   background-color: #f8b500;
-  opacity: 0.96;
+  opacity: 0.95;
 }
 .navi ul .sub-menu a {
   color: #fff;

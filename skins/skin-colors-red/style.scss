@@ -18,11 +18,5 @@ $h_bk_color: #fdeff2;
 $sub_menu_hover_bg_color: #333;
 $border_color: #ccc;
 
-//基本要素
-@import "base";
-//グローバルナビ
-@import "navi";
-//見出し
-@import "h";
-//追加
-@import "add";
+// Base file import
+@import "..\\_scss\\_colors_base.scss";

@@ -1,3 +1,6 @@
+// Skin: COLORS
+// License : GNU GPL v2 or later.
+
 //基本要素
 
 body {
@@ -11,8 +14,13 @@ body {
 .header{
   background-color: $key_color;
 }
-.fixed-header .header{
-  background-color: transparent;
+.fixed-header{
+  .header{
+    background-color: transparent;
+  }
+  .navi{
+    box-shadow: none;
+  }
 }
 
 .widget_recent_entries ul li a:hover, .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover, .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover, .tagcloud a:hover, .pagination a:hover, .pager-links a:hover span, .pagination-next-link:hover, .comment-btn:hover, .comment-reply-link:hover, .navi-footer-in a:hover, .navi-footer-in a:hover{
@@ -159,9 +167,122 @@ div.mobile-menu-buttons .menu-button:hover,
 .widget-entry-cards.ranking-visible .card-thumb{
   &::before{
     border-radius: 50%;
-    background: $key_color;
+    background: $key_sub_color;
     top: -10px;
     left: -10px;
     border: 2px solid #eee;
   }
+}
+
+.appeal-button{
+  background-color: $key_color;
+}
+
+
+//グローバルナビ関係
+.navi{
+  background-color: $white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+  font-weight: bold;
+
+  a {
+    //border-bottom: 4px solid $white;
+    //box-sizing: border-box;
+    &:hover{
+      background-color: $white;
+      text-decoration: underline;
+      //border-bottom: 4px solid $key_color;
+    }
+
+  }
+
+  ul .sub-menu{
+    background-color: $key_color;
+    opacity: 0.95;
+    a{
+      color: $white;
+      &:hover{
+        background-color: rgba(255,255,255,0.2);
+      }
+
+      .sub-caption{
+        opacity: .8;
+      }
+    }
+
+  }
+}
+
+//メニューアニメーション
+.navi-in > ul {
+  .sub-menu{
+    display: block;
+  }
+  .sub-menu li{
+    visibility: hidden;
+    transition: all 0.2s ease;
+    height: 0;
+    opacity: 0;
+  }
+  li:hover > ul > li{
+    transition: all 0.2s ease;
+    visibility: visible;
+    height: 60px;
+    opacity: 1;
+  }
+
+  .sub-menu .sub-menu li{
+    display: none;
+  }
+  .sub-menu li:hover > ul > li{
+    display: block;
+  }
+
+  > li {
+    &:last-of-type {
+      .sub-menu {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+
+.sidebar h3{
+  background: transparent;
+  padding: 0.4em;
+  margin: 0.3em 0;
+}
+
+.article h2 {
+  background: $h_bk_color;
+  border-left: solid 5px $key_color;
+}
+
+
+.article h3 {
+  border: none;
+  border-left: solid 5px $key_color;
+}
+
+// .article h3 {
+//   border: none;
+//   font-size: 23px;
+//   border-bottom: 5px solid #e7e7e7;
+//   padding: 10px 0;
+// }
+
+.article h4 {
+  border: none;
+  border-bottom: 6px solid $h_bk_color;
+}
+
+.article h5,
+.article h6{
+  border: none;
+}
+
+#tinymce.main{
+  box-shadow: none;
 }
