@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //外部ブログカードが有効
 update_theme_option(OP_EXTERNAL_BLOGCARD_ENABLE);
 
+//コメント外部ブログカードが有効
+update_theme_option(OP_COMMENT_EXTERNAL_BLOGCARD_ENABLE);
+
 //外部ブログカードのサムネイル設定
 update_theme_option(OP_EXTERNAL_BLOGCARD_THUMBNAIL_STYLE);
 

@@ -230,6 +230,7 @@ if ( is_internal_blogcard_enable() ) {
   //add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
   add_filter('the_category_tag_content', 'url_to_internal_blogcard', 11);
+  //コメント内ブログカード
   if (is_comment_internal_blogcard_enable()) {
     add_filter('comment_text', 'url_to_internal_blogcard' ,11);
   }
