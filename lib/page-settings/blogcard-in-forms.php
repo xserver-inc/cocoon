@@ -53,6 +53,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_checkbox_tag(OP_INTERNAL_BLOGCARD_ENABLE, is_internal_blogcard_enable(), __( 'ブログカード表示を有効にする', THEME_NAME ));
             generate_tips_tag(__( '本文中のURLやURLリンクをブログカード表示します。', THEME_NAME ));
+
+            echo '<div class="indent'.get_not_allowed_form_class(is_internal_blogcard_enable(), true).'">';
+              generate_checkbox_tag(OP_COMMENT_INTERNAL_BLOGCARD_ENABLE
+              , is_comment_internal_blogcard_enable(), __( 'コメント欄のブログカード表示を有効にする', THEME_NAME ));
+              generate_tips_tag(__( 'コメント内に書き込まれた独立したURLをブログカード化します。', THEME_NAME ));
+            echo '</div>';
             ?>
           </td>
         </tr>

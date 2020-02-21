@@ -15,6 +15,14 @@ function is_internal_blogcard_enable(){
 }
 endif;
 
+//コメント内部ブログカードが有効
+define('OP_COMMENT_INTERNAL_BLOGCARD_ENABLE', 'comment_internal_blogcard_enable');
+if ( !function_exists( 'is_comment_internal_blogcard_enable' ) ):
+function is_comment_internal_blogcard_enable(){
+  return get_theme_option(OP_COMMENT_INTERNAL_BLOGCARD_ENABLE);
+}
+endif;
+
 //内部ブログカードのサムネイル設定
 define('OP_INTERNAL_BLOGCARD_THUMBNAIL_STYLE', 'internal_blogcard_thumbnail_style');
 if ( !function_exists( 'get_internal_blogcard_thumbnail_style' ) ):

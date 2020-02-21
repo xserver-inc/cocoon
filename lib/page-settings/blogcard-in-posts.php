@@ -10,6 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //内部ブログカードが有効
 update_theme_option(OP_INTERNAL_BLOGCARD_ENABLE);
 
+//コメント内部ブログカードが有効
+update_theme_option(OP_COMMENT_INTERNAL_BLOGCARD_ENABLE);
+
 //内部ブログカードのサムネイル設定
 update_theme_option(OP_INTERNAL_BLOGCARD_THUMBNAIL_STYLE);
 
