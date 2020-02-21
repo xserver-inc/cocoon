@@ -56,7 +56,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             generate_checkbox_tag(OP_HEADER_FIXED, is_header_fixed(), __( 'ヘッダーを固定する', THEME_NAME ));
-            generate_tips_tag(__( 'ページをスクロールしても、ヘッダーが追従してきます。こちらはパソコン環境のみの動作になります。IEでは動作しません。', THEME_NAME ));
+            generate_tips_tag(__( 'ページをスクロールしても、ヘッダーが追従してきます。こちらはパソコン環境のみの動作になります。IEでは動作しません。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/header-fixed/'));
 
             ?>
           </td>

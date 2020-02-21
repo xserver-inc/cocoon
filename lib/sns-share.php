@@ -497,7 +497,7 @@ function get_hatebu_share_url(){
   } else {
     $u = preg_replace('/http:\/\//', '', $url);
   }
-  return '//b.hatena.ne.jp/entry/'.$u;
+  return '//b.hatena.ne.jp/entry/'.htmlspecialchars($u, ENT_QUOTES, 'UTF-8');;
 }
 endif;
 

@@ -221,13 +221,13 @@ function add_defer_async_scripts( $tag, $handle, $src ) {
   );
 
   if ( in_array( $handle, $async_defer ) ) {
-      return '<script type="text/javascript" src="' . $src . '" async defer></script>' . PHP_EOL;
+      return '<script async defer type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
   if ( in_array( $handle, $async_scripts ) ) {
-      return '<script type="text/javascript" src="' . $src . '" async></script>' . PHP_EOL;
+      return '<script async type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
   if ( in_array( $handle, $defer_scripts ) ) {
-      return '<script type="text/javascript" src="' . $src . '" defer></script>' . PHP_EOL;
+      return '<script defer type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
 
   return $tag;
