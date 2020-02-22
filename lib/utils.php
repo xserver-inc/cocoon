@@ -1018,7 +1018,7 @@ endif;
 //サイトアドレスが含まれているか
 if ( !function_exists( 'includes_site_url' ) ):
 function includes_site_url($url){
-  //URLにサイトアドレスが含まれていない場合
+  //URLにサイトアドレスが含まれている場合
   if (strpos($url, site_url()) === false) {
     return false;
   } else {
@@ -1031,10 +1031,10 @@ endif;
 if ( !function_exists( 'includes_home_url' ) ):
 function includes_home_url($url){
   //URLにホームアドレスが含まれていない場合
-  if (!includes_string($url, home_url())) {
-    return false;
-  } else {
+  if (includes_string($url, home_url())) {
     return true;
+  } else {
+    return false;
   }
 }
 endif;
@@ -1042,19 +1042,26 @@ endif;
 //WordPressインストールフォルダが含まれているか
 if ( !function_exists( 'includes_abspath' ) ):
 function includes_abspath($local){
-  //URLにサイトアドレスが含まれていない場合
+  //パスにサイトアドレスが含まれている場合
   if (includes_string($local, ABSPATH)) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
+}
+endif;
+
+//site_urlに対するフォルダパスが含まれているか
+if ( !function_exists( 'includes_site_path' ) ):
+function includes_site_path($local){
+  return includes_abspath($local);
 }
 endif;
 
 //ホームパスが含まれているか
 if ( !function_exists( 'includes_home_path' ) ):
 function includes_home_path($local){
-  //URLにサイトアドレスが含まれていない場合
+  //URLにホームアドレスが含まれていない場合
   if (!includes_string($local, get_abs_home_path())) {
     return false;
   } else {
@@ -1063,15 +1070,15 @@ function includes_home_path($local){
 }
 endif;
 
-//内部URLをローカルパスに変更
+//内部URLをローカルパスに変更（サイトURLを置換）
 if ( !function_exists( 'url_to_local' ) ):
 function url_to_local($url){
   //URLにサイトアドレスが含まれていない場合
-  if (!includes_home_url($url)) {
+  if (!includes_site_url($url)) {
     return false;
   }
 
-  $path = str_replace(home_url('/'), get_abs_home_path(), $url);
+  $path = str_replace(site_url('/'), ABSPATH, $url);
   $path = str_replace('//', '/', $path);
   $path = str_replace('\\', '/', $path);
 
@@ -1079,10 +1086,24 @@ function url_to_local($url){
 }
 endif;
 
-//ローカルパスを内部URLに変更
+//ローカルパスを内部URLに変更（サイトパス[ABSPATH：インストールパス]を置間）
 if ( !function_exists( 'local_to_url' ) ):
 function local_to_url($local){
-  //URLにサイトアドレスが含まれていない場合
+  //パスにサイトアドレスが含まれていない場合
+  if (!includes_site_path($local)) {
+    return false;
+  }
+  $url = str_replace(ABSPATH, site_url('/'), $local);
+  $url = str_replace('\\', '/', $url);
+
+  return $url;
+}
+endif;
+
+//ローカルパスを内部ホームURLに変更
+if ( !function_exists( 'local_to_home_url' ) ):
+function local_to_home_url($local){
+  //パスにサイトアドレスが含まれていない場合
   if (!includes_home_path($local)) {
     return false;
   }
@@ -1181,7 +1202,7 @@ endif;
 //PWAのマニフェストファイルへのURL
 if ( !function_exists( 'get_theme_pwa_manifest_json_url' ) ):
 function get_theme_pwa_manifest_json_url(){
-  return local_to_url(get_theme_pwa_manifest_json_file());
+  return local_to_home_url(get_theme_pwa_manifest_json_file());
 }
 endif;
 
@@ -1195,7 +1216,7 @@ endif;
 //PWAのサービスワーカーへのパス
 if ( !function_exists( 'get_theme_pwa_service_worker_js_url' ) ):
 function get_theme_pwa_service_worker_js_url(){
-  return local_to_url(get_theme_pwa_service_worker_js_file());
+  return local_to_home_url(get_theme_pwa_service_worker_js_file());
 }
 endif;
 
