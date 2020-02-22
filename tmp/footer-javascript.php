@@ -59,27 +59,33 @@ if (is_header_fixed()): ?>
 <script>
 (function($){
   function stickyHeader(){
-    <?php if (get_header_layout_type_center_logo()): ?>
-    /*トップメニュータイプに変更する*/
-    $("#header-container-in").removeClass().addClass("header-container-in hlt-top-menu wrap");
-    <?php endif; ?>
-    $("#header-container").addClass("fixed-header");
-    $("#header-container").css({
-      'position': 'sticky',
-      'top': '-100px',
-    });
-    $("#header-container").animate({'top': '0'}, 500);
+    if (!$("#header-container").hasClass("fixed-header")) {
+      <?php if (get_header_layout_type_center_logo()): ?>
+      /*トップメニュータイプに変更する*/
+      $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu cl-slim').addClass("hlt-top-menu wrap");
+      <?php endif; ?>
+      $("#header-container").addClass("fixed-header");
+      $("#header-container").css({
+        'position': 'sticky',
+        'top': '-100px',
+      });
+      $("#header-container").animate({'top': '0'}, 500);
+      /*console.log('stickyHeader');*/
+    }
   }
   function staticHeader(){
-    <?php if (get_header_layout_type_center_logo()): ?>
-    /*センターロゴタイプに戻す*/
-    $("#header-container-in").removeClass().addClass("header-container-in <?php echo get_additional_header_container_classes(); ?>");
-    <?php endif; ?>
-    $("#header-container").removeClass("fixed-header");
-    $("#header-container").css({
-      'position': 'static',
-      'top': 'auto',
-    });
+    if ($("#header-container").hasClass("fixed-header")) {
+      <?php if (get_header_layout_type_center_logo()): ?>
+      /*センターロゴタイプに戻す*/
+      $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass("<?php echo get_additional_header_container_classes(); ?>");
+      <?php endif; ?>
+      $("#header-container").removeClass("fixed-header");
+      $("#header-container").css({
+        'position': 'static',
+        'top': 'auto',
+      });
+      /*console.log('staticHeader');*/
+    }
   }
   var prevScrollTop = -1;
   var $window = $(window);
