@@ -66,11 +66,15 @@ if (is_header_fixed()): ?>
       <?php endif; ?>
       $("#header-container").addClass("fixed-header");
       $("#header-container").css({
-        'position': 'sticky',
+        'position': 'fixed',
         'top': '-100px',
+        'width': '100%',
       });
       $("#header-container").animate({'top': '0'}, 500);
-      /*console.log('stickyHeader');*/
+      /*$("#sidebar-scroll, #main-scroll").css({
+        'padding-top': $("#header-container").height() + 'px',
+      });
+      console.log('stickyHeader');*/
     }
   }
   function staticHeader(){
@@ -83,10 +87,15 @@ if (is_header_fixed()): ?>
       $("#header-container").css({
         'position': 'static',
         'top': 'auto',
+        'width': 'auto',
       });
-      /*console.log('staticHeader');*/
+      /*$("#sidebar-scroll, #main-scroll").css({
+        'padding-top': 0,
+      });
+      console.log('staticHeader');*/
     }
   }
+
   var prevScrollTop = -1;
   var $window = $(window);
   var mobileWidth = 1023;
@@ -97,6 +106,32 @@ if (is_header_fixed()): ?>
     var s2 = (scrollTop > threashold);
     var w = $window.width();
 
+    function adjustScrollArea(selector) {
+      offset = $(selector).offset().top;
+      h = $("#header-container").height();
+      /*console.log('of:'+offset);
+      console.log('st:'+scrollTop);
+      console.log($(selector).css('padding-top'));*/
+      if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
+        pt = $(selector).css('padding-top').replace('px', '');
+        if (pt <= 1) {
+          $(selector).css({
+            'padding-top': h + 'px',
+          });
+        }
+      } else {
+        if (pt > 0) {
+          $(selector).css({
+            'padding-top': 0,
+          });
+        }
+      }
+    }
+    function adjustScrollAreas() {
+      adjustScrollArea('#sidebar-scroll');
+      adjustScrollArea('#main-scroll');
+    }
+
     /*ヘッダーメニューの固定*/
     if (s1 ^ s2) {
       if (s2 && w >  mobileWidth) {
@@ -106,6 +141,7 @@ if (is_header_fixed()): ?>
     if (scrollTop == 0 || w <=  mobileWidth) {
       staticHeader();
     }
+    adjustScrollAreas();
 
     prevScrollTop = scrollTop;
   });
