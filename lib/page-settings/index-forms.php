@@ -160,6 +160,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+
+        <!-- タブ表示カテゴリーID -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_TAB_INDEX_CATEGORY_IDS, __( 'タブ表示カテゴリー', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_hierarchical_category_check_list( 0, OP_TAB_INDEX_CATEGORY_IDS, get_tab_index_category_ids(), 300 );
+            generate_tips_tag(__( '通常の記事インデックスの他に、カテゴリーの記事をタブ化して表示します。3つくらいの選択を推奨。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
       </tbody>
     </table>
 

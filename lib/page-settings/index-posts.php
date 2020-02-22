@@ -49,3 +49,6 @@ update_theme_option(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 
 //コメント数を表示
 update_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
+
+//タブインデックスカテゴリー
+update_theme_option(OP_TAB_INDEX_CATEGORY_IDS);

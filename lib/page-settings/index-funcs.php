@@ -160,3 +160,11 @@ function is_entry_card_post_comment_count_visible(){
   return get_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
 }
 endif;
+
+//タブインデックスカテゴリー
+define('OP_TAB_INDEX_CATEGORY_IDS', 'tab_index_category_ids');
+if ( !function_exists( 'get_tab_index_category_ids' ) ):
+function get_tab_index_category_ids(){
+  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS, array());
+}
+endif;
