@@ -191,13 +191,13 @@ function url_to_external_ogp_blogcard_tag($url){
   } elseif ( $ogp == 'error' ) {
     //前回取得したとき404ページだったら何も出力しない
   } else {
-    if ( isset( $ogp->title ) )
+    if ( isset( $ogp->title ) && $ogp->title )
       $title = $ogp->title;//タイトルの取得
 
-    if ( isset( $ogp->description ) )
+    if ( isset( $ogp->description ) && $ogp->description )
       $snippet = $ogp->description;//ディスクリプションの取得
 
-    if ( isset( $ogp->image ) )
+    if ( isset( $ogp->image ) && $ogp->image )
       $image = $ogp->image;//画像URLの取得
 
     $error_rel_nofollow = null;
