@@ -8,7 +8,7 @@
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <?php //アピールエリアを表示するか
-if (is_appeal_area_visible() && !is_amp()): ?>
+if (is_appeal_area_visible() && !is_amp() && apply_filters('appeal_area_visible', true)): ?>
 <div id="appeal" class="appeal<?php echo get_additional_appeal_area_classes(); ?>">
   <div id="appeal-in" class="appeal-in wrap">
     <div class="appeal-content">
