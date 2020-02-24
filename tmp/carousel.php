@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (is_carousel_visible() && !is_amp() apply_filters('carousel_visible', true)): ?>
+if (is_carousel_visible() && !is_amp() && apply_filters('carousel_visible', true)): ?>
 <?php //カルーセルに関連付けられた投稿の取得
 $args = array(
   'category__in' => get_carousel_category_ids(),
