@@ -9074,6 +9074,9 @@ twitter-widget {
 .fixed-header {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
+.fixed-header .header .header-in {
+  min-height: auto;
+}
 .fixed-header .has-sub,
 .fixed-header .navi-in .sub-menu {
   display: none;
