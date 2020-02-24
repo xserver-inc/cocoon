@@ -1678,7 +1678,6 @@ blockquote cite {
 ************************************/
 .content-only .header-container,
 .content-only .appeal,
-.content-only .carousel,
 .content-only .ad-area,
 .content-only .sns-share,
 .content-only .date-tags,
@@ -1691,8 +1690,12 @@ blockquote cite {
 .content-only .go-to-top-button,
 .content-only .notice-area,
 .content-only .content-top,
-.content-only .content-bottom {
+.content-only .content-bottom,
+.content-only .recommended {
   display: none;
+}
+.content-only .carousel {
+  display: none !important;
 }
 
 /************************************

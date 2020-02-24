@@ -280,7 +280,6 @@ blockquote {
 .content-only{
   .header-container,
   .appeal,
-  .carousel,
   .ad-area,
   .sns-share,
   .date-tags,
@@ -293,9 +292,13 @@ blockquote {
   .go-to-top-button,
   .notice-area,
   .content-top,
-  .content-bottom
+  .content-bottom,
+  .recommended
   {
     display: none;
+  }
+  .carousel{
+    display: none !important;
   }
 }
 
