@@ -1922,7 +1922,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-label { font-size: 14px; font-weight: 600; }
 .admin-settings .demo .box-menu-description { font-size: 10px; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
-.admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
+.admin-settings .demo .wwa .box-menu { width: 16.66%; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
@@ -3494,7 +3494,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .box-menu-label { font-size: 14px; font-weight: 600; }
 .admin-settings .demo .box-menu-description { font-size: 10px; opacity: 0.8; }
 .admin-settings .demo .nwa .box-menu { width: calc(100%/2); }
-.admin-settings .demo .wwa .box-menu { width: calc(100%/6); }
+.admin-settings .demo .wwa .box-menu { width: 16.66%; }
 .admin-settings .demo .no-border { border: none; }
 .admin-settings .demo .no-after::after { display: none; }
 .admin-settings .demo .display-block { display: block; }
