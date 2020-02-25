@@ -1461,7 +1461,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-thumb { float: left; margin-top: 3px; width: 120px; }
 .admin-settings .demo .author-content { margin-left: 130px; }
 .admin-settings .demo .author-description { margin-bottom: 1em; }
-.admin-settings .demo .nwa .author-box { text-align: center; max-width: 336px; padding: 20px; }
+.admin-settings .demo .nwa .author-box { text-align: center; padding: 20px; }
 .admin-settings .demo .nwa .author-box .author-thumb { float: none; width: 100px; margin: 9px auto 0; }
 .admin-settings .demo .nwa .author-box .author-content { margin: 0; }
 .admin-settings .demo .nwa .author-box .author-description { text-align: left; }
@@ -3033,7 +3033,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .author-thumb { float: left; margin-top: 3px; width: 120px; }
 .admin-settings .demo .author-content { margin-left: 130px; }
 .admin-settings .demo .author-description { margin-bottom: 1em; }
-.admin-settings .demo .nwa .author-box { text-align: center; max-width: 336px; padding: 20px; }
+.admin-settings .demo .nwa .author-box { text-align: center; padding: 20px; }
 .admin-settings .demo .nwa .author-box .author-thumb { float: none; width: 100px; margin: 9px auto 0; }
 .admin-settings .demo .nwa .author-box .author-content { margin: 0; }
 .admin-settings .demo .nwa .author-box .author-description { text-align: left; }
