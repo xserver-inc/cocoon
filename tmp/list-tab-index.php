@@ -29,9 +29,13 @@ $list_classes = 'list'.get_additional_entry_card_classes();
       <div class="<?php echo $list_classes; ?>">
           <?php get_template_part('tmp/list-index'); ?>
       </div>
-      <div class="wp-block-cocoon-blocks-button-1 aligncenter button-block">
-          <a href="<?php bloginfo('url') ?>/new" class="btn btn-l btn-circle" target="_self">新着記事をもっと見る</a>
-      </div>
+      <?php
+      ////////////////////////////
+      //ページネーション
+      ////////////////////////////
+      if (get_tab_index_category_ids()) {
+        get_template_part('tmp/pagination');
+      } ?>
   </div>
   <?php for ($i=0; $i < count($cat_ids); $i++):
   $number = $i + 2; ?>
