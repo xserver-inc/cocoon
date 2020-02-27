@@ -6,7 +6,9 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit;
-
+?>
+<div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
+<?php
 ////////////////////////////
 //一覧の繰り返し処理
 ////////////////////////////
@@ -34,3 +36,4 @@ if (have_posts()) : // WordPress ループ
   get_template_part('tmp/list-not-found-posts');
 endif;
 ?>
+</div><!-- .list -->

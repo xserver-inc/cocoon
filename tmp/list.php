@@ -48,7 +48,6 @@ if (is_sns_top_share_buttons_visible() &&
   get_template_part_with_option('tmp/sns-share-buttons', SS_TOP);
 } ?>
 
-<div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
 <?php
   if (!get_tab_index_category_ids()) {
     get_template_part('tmp/list-index');
@@ -56,7 +55,6 @@ if (is_sns_top_share_buttons_visible() &&
     get_template_part('tmp/list-tab-index');
   }
 ?>
-</div><!-- .list -->
 
 <?php
 ////////////////////////////

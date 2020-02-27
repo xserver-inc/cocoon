@@ -7,30 +7,57 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-////////////////////////////
-//一覧の繰り返し処理
-////////////////////////////
-$count = 0;
-if (have_posts()) : // WordPress ループ
-  while (have_posts()) : the_post(); // 繰り返し処理開始
-    $count++;
-    set_query_var( 'count', $count );
-    get_template_part('tmp/entry-card');
-
-    //インデックスミドルに広告を表示してよいかの判別
-    if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count) && is_all_adsenses_visible()) {
-      get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle', is_ad_pos_index_middle_label_visible());
-    }
-
-    ////////////////////////////
-    //インデックスリストミドルウィジェット
-    ////////////////////////////
-    if ( is_active_sidebar( 'index-middle' ) && is_index_middle_widget_visible($count) ){
-      dynamic_sidebar( 'index-middle' );
-    };
-
-  endwhile; // 繰り返し処理終了 ?>
-<?php else : // ここから記事が見つからなかった場合の処理
-  get_template_part('tmp/list-not-found-posts');
-endif;
+$cat_ids = get_tab_index_category_ids();
+$list_classes = 'list'.get_additional_entry_card_classes();
 ?>
+
+<div class="front-top-page top-page">
+  <input id="tab1" type="radio" name="tab_item" checked>
+  <?php for ($i=0; $i < count($cat_ids); $i++):
+  $number = $i + 2; ?>
+  <input id="tab<?php echo $number; ?>" type="radio" name="tab_item">
+  <?php endfor; ?>
+  <div class="top-cate-btn">
+    <label class="tab-btn" for="tab1">新着記事</label>
+    <?php for ($i=0; $i < count($cat_ids); $i++):
+    $number = $i + 2; ?>
+    <label class="tab-btn" for="tab<?php echo $number; ?>">コンテンツ<?php echo $number; ?>つ目</label>
+    <?php endfor; ?>
+  </div>
+  <div class="tab-cont tb1">
+      <!-- 1つ目のコンテンツ -->
+      <div class="<?php echo $list_classes; ?>">
+          <?php get_template_part('tmp/list-index'); ?>
+      </div>
+      <div class="wp-block-cocoon-blocks-button-1 aligncenter button-block">
+          <a href="<?php bloginfo('url') ?>/new" class="btn btn-l btn-circle" target="_self">新着記事をもっと見る</a>
+      </div>
+  </div>
+  <?php for ($i=0; $i < count($cat_ids); $i++):
+  $number = $i + 2; ?>
+  <div class="tab-cont tb<?php echo $number; ?>">
+      <!-- <?php echo $number; ?>つ目のコンテンツ -->
+      <?php
+          $arg = array(
+              'posts_per_page' => 8, // 表示させる件数
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'category_name' => '○○' // カテゴリーの指定（スラッグで指定）
+          );
+          $posts = get_posts( $arg );
+          if( $posts ): ?>
+      <div class="<?php echo $list_classes; ?>">
+          <?php
+              foreach ( $posts as $post ) :
+              setup_postdata( $post ); ?>
+                  <?php get_template_part('tmp/entry-card'); ?>
+          <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+      <?php endif; ?>
+      <div class="wp-block-cocoon-blocks-button-1 aligncenter button-block">
+      <!-- リンクのアドレスを任意の物に -->
+          <a href="<?php bloginfo('url') ?>/category/○○" class="btn btn-l btn-circle" target="_self">コンテンツ<?php echo $number; ?>をもっと見る</a>
+      </div>
+  </div>
+  <?php endfor; ?>
+</div>
