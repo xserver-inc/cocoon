@@ -16,7 +16,7 @@ function get_carousel_display_type(){
 endif;
 if ( !function_exists( 'is_carousel_visible' ) ):
 function is_carousel_visible(){
-  return (is_carousel_popular_posts_enable() || get_carousel_category_ids() || get_carousel_tag_ids()) &&
+  $is_visible = (is_carousel_popular_posts_enable() || get_carousel_category_ids() || get_carousel_tag_ids()) &&
     (
       is_carousel_display_type_all_page() ||
       (is_front_top_page() && is_carousel_display_type_front_page_only()) ||
@@ -26,6 +26,7 @@ function is_carousel_visible(){
       (is_page() && is_carousel_display_type_page_only()) ||
       (is_admin() && get_carousel_display_type() != 'none') //設定プレビュー
     );
+  return apply_filters('is_carousel_visible', $is_visible);
 }
 endif;
 if ( !function_exists( 'is_carousel_display_type_all_page' ) ):

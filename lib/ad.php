@@ -276,7 +276,8 @@ function add_ads_before_1st_h2($the_content) {
         $limit = 1;
       } else {
         //無制限に置換する
-        $limit = get_ad_pos_content_middle_count();
+        $limit = intval(get_ad_pos_content_middle_count());
+        $limit = $limit ? $limit : -1;
       }
       $the_content = preg_replace(H2_REG, $ad_template.PHP_EOL.PHP_EOL.$h2result, $the_content, $limit);
     }

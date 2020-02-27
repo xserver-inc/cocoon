@@ -31,7 +31,7 @@ class PcDoubleAdsWidgetItem extends WP_Widget {
           is_ads_visible()  ):
       echo $args['before_widget']; ?>
       <div class="ad-area ad-widget ad-dabble-rectangle">
-        <div class="ad-label"><?php echo get_ad_label_caption() ?></div>
+        <div class="ad-label" data-nosnippet><?php echo get_ad_label_caption() ?></div>
         <div class="ad-wrap">
           <div class="ad-left ad-pc ad-responsive"><?php echo $ad1;?></div>
           <div class="ad-right ad-pc ad-responsive"><?php echo $ad2;?></div>

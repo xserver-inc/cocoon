@@ -1213,8 +1213,8 @@ h1#archive-title {
 .article-header h1#archive-title{
     color: #545454;
 }
-span.fa.fa-search:before {
-    content: "\f002";
+.archive-title .fa-search:before,
+.search-submit .fa-search:before {
     color: whitesmoke;
 }
 

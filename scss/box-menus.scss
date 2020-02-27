@@ -74,6 +74,6 @@
 
 .wwa{
   .box-menu{
-    width: calc(100%/6);
+    width: 16.66%;//Edge対策：calc(100%/6);
   }
 }

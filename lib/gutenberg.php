@@ -356,13 +356,13 @@ function get_block_editor_color_palette_css(){
 
 
 <?php //WordPressデフォルト ?>
-.main .has-<?php echo $slug; ?>-background-color {
+.body .has-<?php echo $slug; ?>-background-color {
     background-color: <?php echo $color; ?>;
 }
-.main .has-<?php echo $slug; ?>-color {
+.body .has-<?php echo $slug; ?>-color {
     color: <?php echo $color; ?>;
 }
-.main .has-<?php echo $slug; ?>-border-color {
+.body .has-<?php echo $slug; ?>-border-color {
     border-color: <?php echo $color; ?>;
 }
 <?php //囲みボタン ?>
@@ -483,7 +483,7 @@ function get_block_editor_color_palette_css(){
         $btn_wrap_bk_color = '#f8e58c';
     }
     //1回だけ呼び出す ?>
-.main .btn-wrap{
+.body .btn-wrap{
     background-color: <?php echo $btn_wrap_bk_color; ?>;
     color: #333;
     border-color: transparent;

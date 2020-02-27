@@ -16,7 +16,7 @@ function get_appeal_area_display_type(){
 endif;
 if ( !function_exists( 'is_appeal_area_visible' ) ):
 function is_appeal_area_visible(){
-  return (
+  $is_visible =  (
     is_appeal_area_display_type_all_page() ||
     (is_front_top_page() && is_appeal_area_display_type_front_page_only()) ||
     (!is_singular() && is_appeal_area_display_type_not_singular()) ||
@@ -25,6 +25,7 @@ function is_appeal_area_visible(){
     (is_page() && is_appeal_area_display_type_page_only()) ||
     (is_admin() && get_appeal_area_display_type() != 'none') //設定プレビュー
   );
+  return apply_filters('is_appeal_area_visible', $is_visible);
 }
 endif;
 if ( !function_exists( 'is_appeal_area_display_type_all_page' ) ):
