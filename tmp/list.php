@@ -1,4 +1,4 @@
-<?php //インデックス一覧
+<?php //一覧
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -49,34 +49,12 @@ if (is_sns_top_share_buttons_visible() &&
 } ?>
 
 <div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
-
 <?php
-////////////////////////////
-//一覧の繰り返し処理
-////////////////////////////
-$count = 0;
-if (have_posts()) : // WordPress ループ
-  while (have_posts()) : the_post(); // 繰り返し処理開始
-    $count++;
-    set_query_var( 'count', $count );
-    get_template_part('tmp/entry-card');
-
-    //インデックスミドルに広告を表示してよいかの判別
-    if (is_ad_pos_index_middle_visible() && is_index_middle_ad_visible($count) && is_all_adsenses_visible()) {
-      get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle', is_ad_pos_index_middle_label_visible());
-    }
-
-    ////////////////////////////
-    //インデックスリストミドルウィジェット
-    ////////////////////////////
-    if ( is_active_sidebar( 'index-middle' ) && is_index_middle_widget_visible($count) ){
-      dynamic_sidebar( 'index-middle' );
-    };
-
-  endwhile; // 繰り返し処理終了 ?>
-<?php else : // ここから記事が見つからなかった場合の処理
-  get_template_part('tmp/list-not-found-posts');
-endif;
+  if (!get_tab_index_category_ids()) {
+    get_template_part('tmp/list-index');
+  } else {
+    get_template_part('tmp/list-tab-index');
+  }
 ?>
 </div><!-- .list -->
 
@@ -135,7 +113,9 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-get_template_part('tmp/pagination');
+if (!get_tab_index_category_ids()) {
+  get_template_part('tmp/pagination');
+}
 
 ////////////////////////////
 //メインカラム追従領域
