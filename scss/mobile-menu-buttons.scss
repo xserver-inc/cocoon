@@ -56,9 +56,9 @@
       @include link_cancel;
       //cursor: default;
     }
-    // &:hover{
-    //   @include bgc_hover;
-    // }
+    &:hover{
+      opacity: 0.8;
+    }
   }
 
   // >.sub-menu{
