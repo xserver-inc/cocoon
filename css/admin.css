@@ -1646,7 +1646,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
-.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
 .admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
@@ -3218,7 +3217,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .mobile-menu-buttons .menu-caption { font-size: 9px; text-align: center; opacity: 0.8; display: block; }
 .admin-settings .demo .mobile-menu-buttons .menu-button { position: relative; width: 100%; cursor: pointer; }
 .admin-settings .demo .mobile-menu-buttons .menu-button > a { display: block; color: #333; text-decoration: none; }
-.admin-settings .demo .mobile-menu-buttons .menu-button:hover { background-color: #f5f8fa; transition: all 0.7s; color: #333; }
 .admin-settings .demo .mobile-menu-buttons .ad-area { display: none; }
 .admin-settings .demo .mobile-menu-buttons .menu-content { cursor: default; }
 .admin-settings .demo .mobile-footer-menu-buttons { padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }

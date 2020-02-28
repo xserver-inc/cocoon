@@ -6623,11 +6623,6 @@ div.fb-like-mobile {
   color: #333;
   text-decoration: none;
 }
-.mobile-menu-buttons .menu-button:hover {
-  background-color: #f5f8fa;
-  transition: all 0.7s;
-  color: #333;
-}
 .mobile-menu-buttons .ad-area {
   display: none;
 }
