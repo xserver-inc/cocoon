@@ -544,6 +544,21 @@ function get_tag_meta_keywords(){
 }
 endif;
 
+//メタサムネイルを出力する
+add_action( 'wp_head', 'generate_meta_thumbnail_tag' );
+if ( !function_exists( 'generate_meta_thumbnail_tag' ) ):
+function generate_meta_thumbnail_tag() {
+  if (is_singular()) {
+    $thumbnail_url = get_singular_eyecatch_image_url();
+
+    if ($thumbnail_url && !is_wpforo_plugin_page()) {
+      echo '<!-- '.THEME_NAME_CAMEL.' meta thumbnail -->'.PHP_EOL;
+      echo '<meta name="thumbnail" content="'.esc_attr($thumbnail_url).'">'.PHP_EOL;
+    }
+  }
+}
+endif;
+
 //json-ldタグを出力する
 add_action( 'wp_head', 'the_json_ld_tag' );
 if ( !function_exists( 'the_json_ld_tag' ) ):
