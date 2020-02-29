@@ -302,7 +302,7 @@ endif;
 //インデックスページの最後のページかどうか
 if ( !function_exists( 'is_posts_per_page_6_and_over' ) ):
 function is_posts_per_page_6_and_over(){
-  return ( intval(get_option('posts_per_page')) >= 6 );
+  return get_option_posts_per_page() >= 6;
 }
 endif;
 

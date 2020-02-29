@@ -3259,3 +3259,22 @@ function change_fa($buffer){
   return $buffer;
 }
 endif;
+
+//WordPress「表示設定」の「1ページに表示する最大投稿数」を取得する
+if ( !function_exists( 'get_option_posts_per_page' ) ):
+function get_option_posts_per_page(){
+  return intval(get_option('posts_per_page'));
+}
+endif;
+
+//カテゴリーIDからカテゴリ名を取得
+if ( !function_exists( 'get_category_name_by_id' ) ):
+function get_category_name_by_id($id){
+  //カテゴリIDからカテゴリ情報取得
+  $category = get_category($id);
+  if (isset($category->cat_name)) {
+    //カテゴリ名表示
+    return $category->cat_name;
+  }
+}
+endif;
