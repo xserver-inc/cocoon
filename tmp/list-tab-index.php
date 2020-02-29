@@ -35,7 +35,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
       ////////////////////////////
       //ページネーション
       ////////////////////////////
-      if (get_tab_index_category_ids()) {
+      if (is_tab_index_page()) {
         get_template_part('tmp/pagination');
       } ?>
   </div>

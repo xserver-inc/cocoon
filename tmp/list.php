@@ -111,7 +111,7 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-if (!get_tab_index_category_ids()) {
+if (!is_tab_index_page()) {
   get_template_part('tmp/pagination');
 }
 

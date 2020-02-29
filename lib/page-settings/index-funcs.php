@@ -168,3 +168,10 @@ function get_tab_index_category_ids(){
   return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS, array());
 }
 endif;
+
+//タブインデックスページかどうか
+if ( !function_exists( 'is_tab_index_page' ) ):
+function is_tab_index_page(){
+  return get_tab_index_category_ids() && is_front_top_page() && is_home();
+}
+endif;
