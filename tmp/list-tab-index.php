@@ -10,6 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $cat_ids = get_tab_index_category_ids();
 $cat_ids = apply_filters('tab_index_category_ids', $cat_ids);
 $list_classes = 'list'.get_additional_entry_card_classes();
+$list_classes = apply_filters('tab_index_list_classes', $list_classes);
 ?>
 
 <div class="front-top-page top-page">
