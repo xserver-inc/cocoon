@@ -57,7 +57,7 @@
       //cursor: default;
     }
     &:hover{
-      @include bgc_hover;
+      opacity: 0.8;
     }
   }
 
