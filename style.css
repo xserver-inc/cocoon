@@ -6623,7 +6623,7 @@ div.fb-like-mobile {
   color: #333;
   text-decoration: none;
 }
-.mobile-menu-buttons .menu-button:hover {
+.mobile-menu-buttons .menu-button:hover .menu-button-in {
   opacity: 0.8;
 }
 .mobile-menu-buttons .ad-area {

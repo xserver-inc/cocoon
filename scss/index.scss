@@ -1,0 +1,96 @@
+///////////////////////////////////////////
+// インデックス
+///////////////////////////////////////////
+.top-cate-btn{
+  margin: 10px 0 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 10px -2px rgba(0,0,0,.2);
+}
+.top-cate-btn .tab-btn{
+  width: calc(100% / 4);
+  padding: 10px;
+  text-align: center;
+  background: #eee;
+  transition: .5s;
+  border-right: 1px solid #ddd;
+  box-sixing: border-box;
+}
+#tab1:checked ~ .top-cate-btn .tab-btn[for="tab1"],
+#tab2:checked ~ .top-cate-btn .tab-btn[for="tab2"],
+#tab3:checked ~ .top-cate-btn .tab-btn[for="tab3"],
+#tab4:checked ~ .top-cate-btn .tab-btn[for="tab4"]//,
+// #tab5:checked ~ .top-cate-btn .tab-btn[for="tab5"],
+// #tab6:checked ~ .top-cate-btn .tab-btn[for="tab6"],
+// #tab7:checked ~ .top-cate-btn .tab-btn[for="tab7"],
+// #tab8:checked ~ .top-cate-btn .tab-btn[for="tab8"],
+.top-cate-btn .tab-btn:hover{
+  background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */
+}
+.top-cate-btn .tab-btn:last-of-type{
+  border-right: none;
+}
+.tab-cont,
+input[name="tab_item"]{
+  display: none;
+}
+
+#tab1:checked ~ .tab-cont.tb1,
+#tab2:checked ~ .tab-cont.tb2,
+#tab3:checked ~ .tab-cont.tb3,
+#tab4:checked ~ .tab-cont.tb4 //,
+// #tab5:checked ~ .tab-cont.tb5,
+// #tab6:checked ~ .tab-cont.tb6,
+// #tab7:checked ~ .tab-cont.tb7,
+// #tab8:checked ~ .tab-cont.tb8
+{
+  display: block;
+  animation: tab-index-show .3s ease-in;
+}
+/* Cocoonのリンクボタンカスタマイズ */
+.btn-wrap-circle > a {
+  background: #999; /* お好みの色に */
+}
+/* スマホ用 */
+@media screen and (max-width: 768px){
+  .top-cate-btn .tab-btn{
+      width: calc(100% / 2);
+  }
+  .top-cate-btn .tab-btn:nth-of-type(2){
+      border-right: none;
+  }
+  .top-cate-btn .tab-btn:nth-last-of-type(n+3){
+      border-bottom: 1px solid #ddd;
+  }
+}
+
+
+
+
+
+// .tab-wrap {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .tab-label {
+//   color: White;
+//   background: LightGray;
+//   margin: 1em 1px;
+//   padding: 3px 12px;
+//   order:-1;
+// }
+// .tab-content {
+//   width: 100%;
+//   display: none;
+// }
+// .tab-switch:checked+.tab-label {
+//   background: DeepSkyBlue;
+// }
+// .tab-switch:checked+.tab-label+.tab-content {
+//   display: block;
+// }
+// .tab-switch {
+//   display: none;
+// }
