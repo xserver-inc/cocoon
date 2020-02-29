@@ -349,12 +349,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 ** カルーセル
 ************************************/ /************************************
 ** カルーセルの非表示設定
-************************************/ /* Slider */ /* Mobile Menu Core Style
+************************************/ /* Cocoonのリンクボタンカスタマイズ */ /* スマホ用 */ /* Slider */ /* Mobile Menu Core Style
 */ /* IE6/7 support */ /* User Default Style Change the following styles to modify the appearance of the menu.
 */ /* Button */ /* Button Text */ /* Button Lines */ /*bbPressのスタイルを整える*/ /** Cocoon WordPress Theme @author: yhira @link: https://wp-cocoon.com/ @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later  Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2 */ /* 検索フォーム風スタイルのボタンを装飾 */ /* ボタンにカーソルを合わせた時のスタイル */ /************************************
 ** Googleカスタム検索結果のページネーション
-************************************/ /* Cocoonのリンクボタンカスタマイズ */ /* スマホ用 */ /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
+************************************/ /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
 .admin-settings .demo .fz-12px { font-size: 12px; }
 .admin-settings .demo .fz-13px { font-size: 13px; }
 .admin-settings .demo .fz-14px { font-size: 14px; }
@@ -3536,6 +3536,16 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .carousel { display: none; }
 .admin-settings .demo .carousel .a-wrap { padding: 0.2em 0.3em; }
 .admin-settings .demo .ccb-carousel-border .a-wrap { border: 1px solid #ccc; }
+.admin-settings .demo .top-cate-btn { margin: 10px 0 20px; border-radius: 5px; overflow: hidden; display: flex; flex-wrap: wrap; box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.2); }
+.admin-settings .demo .top-cate-btn label { width: calc(100% / 4); padding: 10px; text-align: center; background: #eee; transition: .5s; border-right: 1px solid #ddd; box-sixing: border-box; }
+.admin-settings .demo #tab1:checked ~ .top-cate-btn label[for="tab1"], .admin-settings .demo #tab2:checked ~ .top-cate-btn label[for="tab2"], .admin-settings .demo #tab3:checked ~ .top-cate-btn label[for="tab3"], .admin-settings .demo #tab4:checked ~ .top-cate-btn label[for="tab4"], .admin-settings .demo .top-cate-btn label:hover { background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */ }
+.admin-settings .demo .top-cate-btn label:last-of-type { border-right: none; }
+.admin-settings .demo .tab-cont, .admin-settings .demo input[name="tab_item"] { display: none; }
+.admin-settings .demo #tab1:checked ~ .tab-cont.tb1, .admin-settings .demo #tab2:checked ~ .tab-cont.tb2, .admin-settings .demo #tab3:checked ~ .tab-cont.tb3, .admin-settings .demo #tab4:checked ~ .tab-cont.tb4 { display: block; animation: show 1s; }
+.admin-settings .demo .btn-wrap-circle > a { background: #999; /* お好みの色に */ }
+@media screen and (max-width: 768px) { .admin-settings .demo .top-cate-btn label { width: calc(100% / 2); }
+  .admin-settings .demo .top-cate-btn label:nth-of-type(2) { border-right: none; }
+  .admin-settings .demo .top-cate-btn label:nth-last-of-type(n+3) { border-bottom: 1px solid #ddd; } }
 .admin-settings .demo .admin-panel { background-color: #333; color: #fff; opacity: 0.8; padding: 10px; font-size: 16px; position: fixed; bottom: 0; left: 0; right: 0; display: flex; flex-direction: row; flex-wrap: wrap; transition: .3s; z-index: 9999; }
 .admin-settings .demo .admin-panel a { color: #fff; }
 .admin-settings .demo .admin-pv, .admin-settings .demo .admin-edit, .admin-settings .demo .admin-amp, .admin-settings .demo .admin-checks, .admin-settings .demo .admin-cresponsive { border-radius: 3px; padding: 0 10px; border: 1px solid #ccc; margin: 6px 4px; }
@@ -3680,18 +3690,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fixed-header { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25); }
 .admin-settings .demo .fixed-header .header .header-in { min-height: auto; }
 .admin-settings .demo .fixed-header .has-sub, .admin-settings .demo .fixed-header .navi-in .sub-menu { display: none; }
-.admin-settings .demo .top-cate-btn { margin: 10px 0 20px; border-radius: 5px; overflow: hidden; display: flex; flex-wrap: wrap; box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.2); }
-.admin-settings .demo .top-cate-btn label { width: calc(100% / 4); padding: 10px; text-align: center; background: #eee; transition: .5s; border-right: 1px solid #ddd; box-sixing: border-box; }
-.admin-settings .demo #tab1:checked ~ .top-cate-btn label[for="tab1"], .admin-settings .demo #tab2:checked ~ .top-cate-btn label[for="tab2"], .admin-settings .demo #tab3:checked ~ .top-cate-btn label[for="tab3"], .admin-settings .demo #tab4:checked ~ .top-cate-btn label[for="tab4"], .admin-settings .demo .top-cate-btn label:hover { background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */ }
-.admin-settings .demo .top-cate-btn label:last-of-type { border-right: none; }
-.admin-settings .demo .tab-cont, .admin-settings .demo input[name="tab_item"] { display: none; }
-@keyframes show { from { opacity: 0; }
-  to { opacity: 1; } }
-.admin-settings .demo #tab1:checked ~ .tab-cont.tb1, .admin-settings .demo #tab2:checked ~ .tab-cont.tb2, .admin-settings .demo #tab3:checked ~ .tab-cont.tb3, .admin-settings .demo #tab4:checked ~ .tab-cont.tb4 { display: block; animation: show 1s; }
-.admin-settings .demo .btn-wrap-circle > a { background: #999; /* お好みの色に */ }
-@media screen and (max-width: 768px) { .admin-settings .demo .top-cate-btn label { width: calc(100% / 2); }
-  .admin-settings .demo .top-cate-btn label:nth-of-type(2) { border-right: none; }
-  .admin-settings .demo .top-cate-btn label:nth-last-of-type(n+3) { border-bottom: 1px solid #ddd; } }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }

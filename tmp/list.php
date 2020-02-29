@@ -23,7 +23,7 @@ if ( is_category() && !is_paged() ){
 }
 
 ////////////////////////////
-//インデクストップ広告
+//インデックストップ広告
 ////////////////////////////
 if (is_ad_pos_index_top_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告
@@ -58,7 +58,7 @@ if (is_sns_top_share_buttons_visible() &&
 
 <?php
 ////////////////////////////
-//インデクスボトム広告
+//インデックスボトム広告
 ////////////////////////////
 if (is_ad_pos_index_bottom_visible() && is_all_adsenses_visible()){
   //レスポンシブ広告のフォーマットにrectangleを指定する
