@@ -3546,6 +3546,12 @@ https://codepen.io/nxworld/pen/oLdoWb
 @media screen and (max-width: 768px) { .admin-settings .demo .top-cate-btn label { width: calc(100% / 2); }
   .admin-settings .demo .top-cate-btn label:nth-of-type(2) { border-right: none; }
   .admin-settings .demo .top-cate-btn label:nth-last-of-type(n+3) { border-bottom: 1px solid #ddd; } }
+.admin-settings .demo .tab-wrap { display: flex; flex-wrap: wrap; }
+.admin-settings .demo .tab-label { color: White; background: LightGray; margin: 1em 1px; padding: 3px 12px; order: -1; }
+.admin-settings .demo .tab-content { width: 100%; display: none; }
+.admin-settings .demo .tab-switch:checked + .tab-label { background: DeepSkyBlue; }
+.admin-settings .demo .tab-switch:checked + .tab-label + .tab-content { display: block; }
+.admin-settings .demo .tab-switch { display: none; }
 .admin-settings .demo .admin-panel { background-color: #333; color: #fff; opacity: 0.8; padding: 10px; font-size: 16px; position: fixed; bottom: 0; left: 0; right: 0; display: flex; flex-direction: row; flex-wrap: wrap; transition: .3s; z-index: 9999; }
 .admin-settings .demo .admin-panel a { color: #fff; }
 .admin-settings .demo .admin-pv, .admin-settings .demo .admin-edit, .admin-settings .demo .admin-amp, .admin-settings .demo .admin-checks, .admin-settings .demo .admin-cresponsive { border-radius: 3px; padding: 0 10px; border: 1px solid #ccc; margin: 6px 4px; }
