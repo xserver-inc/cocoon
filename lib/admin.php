@@ -644,7 +644,7 @@ function tiny_mce_before_init_custom( $mceInit ) {
   if (isset($mceInit['body_class'])) {
     //if (!is_plugin_fourm_page()) {
       $fa_class = ' '.get_site_icon_font_class();
-      $mceInit['body_class'] .= ' main article'.$fa_class;
+      $mceInit['body_class'] .= ' body main article'.$fa_class;
     //}
 
     if (is_admin()) {
@@ -689,3 +689,16 @@ endif;
 //   return isset($_GET['preview']) && $_GET['preview'] == 'theme-settings';
 // }
 // endif;
+
+//グーテンベルグとクラシックエディターのタグをチェックリストボックス形式にする
+//参考：https://nldot.info/how-to-change-the-tags-to-checkbox-in-gutenberg/
+//add_action( 'init', 'register_check_list_box_tag', 1 );
+if ( !function_exists( 'register_check_list_box_tag' ) ):
+function register_check_list_box_tag() {
+  $tag_slug_args = get_taxonomy('post_tag'); // returns an object
+  $tag_slug_args->hierarchical = true;
+  $tag_slug_args->meta_box_cb = 'post_categories_meta_box';
+
+  register_taxonomy( 'post_tag', 'post',(array) $tag_slug_args);
+}
+endif;
