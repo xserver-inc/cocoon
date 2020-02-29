@@ -35,9 +35,8 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
       ////////////////////////////
       //ページネーション
       ////////////////////////////
-      if (is_tab_index_page()) {
-        get_template_part('tmp/pagination');
-      } ?>
+      get_template_part('tmp/pagination');
+       ?>
   </div>
   <?php for ($i=0; $i < count($cat_ids); $i++):
   $number = $i + 2; ?>

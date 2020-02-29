@@ -49,7 +49,7 @@ if (is_sns_top_share_buttons_visible() &&
 } ?>
 
 <?php
-  if (!get_tab_index_category_ids()) {
+  if (!is_tab_index_page()) {
     get_template_part('tmp/list-index');
   } else {
     get_template_part('tmp/list-tab-index');
