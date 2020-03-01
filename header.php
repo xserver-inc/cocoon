@@ -40,6 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 get_template_part('tmp/ad-auto-adsense'); ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head(); ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
 
 <!-- google analytics, Googleタグマネージャー -->
 <link rel='preconnect dns-prefetch' href="//www.googletagmanager.com">
@@ -92,6 +93,8 @@ get_template_part('tmp-user/head-insert'); ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
+<div id="barba-wrapper">
+  <div class="barba-container">
 
 <?php //body要素の直後に何かを挿入する際
 if ( function_exists( 'wp_body_open' ) ) {

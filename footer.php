@@ -117,6 +117,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   }
   ?>
 
+  </div>
+</div>
+
 </body>
 
 </html>
