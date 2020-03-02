@@ -119,7 +119,7 @@ function get_the_date_tags(){
   //spanタグの投稿日
   $span_post_date_tag =
     $post_date_tag_wrap_before.
-      '<span class="entry-date date published'.$updated.'" itemprop="datePublished'.$date_modified.'">'.get_the_time(get_site_date_format()).'</span>'.
+      '<span class="entry-date date published'.$updated.'"><meta itemprop="datePublished'.$date_modified.'" content="'.get_the_time('c').'">'.get_the_time(get_site_date_format()).'</span>'.
     $post_date_tag_wrap_after;
   //timeタグがある投稿日
   $time_post_date_tag =
