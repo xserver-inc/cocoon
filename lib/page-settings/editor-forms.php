@@ -61,6 +61,20 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <!-- タグ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_EDITOR_TAG_CHECK_LIST_ENABLE, __('タグ', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_EDITOR_TAG_CHECK_LIST_ENABLE , is_editor_tag_check_list_enable(), __( 'タグ選択をチェックリスト形式にする', THEME_NAME ));
+            generate_image_preview_tag('https://im-cocoon.net/wp-content/uploads/tag-check-box.png');
+            generate_tips_tag(__( 'エディターでチェックリストを選択する形でタグを選択する用に変更します。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
         </tbody>
     </table>
 

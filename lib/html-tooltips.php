@@ -69,6 +69,11 @@ function get_image_preview_tag($url, $description = null, $width = 680){
   return get_skin_preview_tag($url, $description, $width);
 }
 endif;
+if ( !function_exists( 'generate_image_preview_tag' ) ):
+function generate_image_preview_tag($url, $description = null, $width = 680){
+  echo get_skin_preview_tag($url, $description, $width);
+}
+endif;
 
 //色選択のツールチップ
 if ( !function_exists( 'generate_select_color_tip_tag' ) ):
