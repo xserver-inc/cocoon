@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 get_template_part('tmp/ad-auto-adsense'); ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head(); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
 
 <!-- google analytics, Googleタグマネージャー -->
 <link rel='preconnect dns-prefetch' href="//www.googletagmanager.com">
@@ -92,22 +92,7 @@ get_template_part('tmp/head-pwa'); ?>
 get_template_part('tmp-user/head-insert'); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
-<div id="barba-wrapper">
-  <div class="barba-container">
-
-<?php //body要素の直後に何かを挿入する際
-if ( function_exists( 'wp_body_open' ) ) {
-    wp_body_open();
-} else {
-    do_action( 'wp_body_open' );
-}?>
-
-<?php //body最初に挿入するアクセス解析ヘッダータグの取得
-get_template_part('tmp/body-top-analytics'); ?>
-
-<?php //ユーザーカスタマイズ用
-get_template_part('tmp-user/body-top-insert'); ?>
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage" data-barba="wrapper">
 
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
 get_template_part('tmp/body-top'); ?>

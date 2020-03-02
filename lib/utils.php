@@ -3259,3 +3259,14 @@ function change_fa($buffer){
   return $buffer;
 }
 endif;
+
+if ( !function_exists( 'get_barba_name_space' ) ):
+function get_barba_name_space(){
+  if (is_singular()) {
+    $name_space = 'singular';
+  } else {
+    $name_space = 'home';
+  }
+  return $name_space;
+}
+endif;
