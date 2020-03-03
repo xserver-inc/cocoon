@@ -13,7 +13,7 @@ if ( !function_exists( 'wrap_iframe_in_div' ) ):
 function wrap_iframe_in_div($the_content) {
   if ( is_singular() ) {
     //YouTube動画にラッパーを装着
-    $the_content = preg_replace('/<iframe[^>]+?(youtube\.com|jwplatform\.com)[^<]+?<\/iframe>/is', '<div class="video-container"><div class="video">${0}</div></div>', $the_content);
+    $the_content = preg_replace('/<iframe[^>]+?(youtube\.com|jwplatform\.com|player\.vimeo\.com)[^<]+?<\/iframe>/is', '<div class="video-container"><div class="video">${0}</div></div>', $the_content);
     //Instagram動画にラッパーを装着
     $the_content = preg_replace('/<iframe[^>]+?instagram\.com[^<]+?<\/iframe>/is', '<div class="instagram-container"><div class="instagram">${0}</div></div>', $the_content);
   }

@@ -30,11 +30,17 @@ if (!is_amp()): ?>
   <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
   <script>
   (function($){
-    var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
-    clipboard.on('success', function(e) {
-      $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+    selector = '.copy-button';//clipboardで使う要素を指定
+    $(selector).click(function(event){
+      //クリック動作をキャンセル
+      event.preventDefault();
+      //クリップボード動作
+      var clipboard = new Clipboard(selector);
+      clipboard.on('success', function(e) {
+        $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
 
-      e.clearSelection();
+        e.clearSelection();
+      });
     });
   })(jQuery);
   </script>
