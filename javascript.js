@@ -9,8 +9,104 @@
 /////////////////////////////////
 
 (function($){
-  barba.use(barbaPrefetch);
-  barba.init();
+  //barba.js
+  //barba.use(barbaPrefetch);
+
+  //head内タグのの移し替え
+  const replaceHeadTags = target => {
+    const head = document.head
+    const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]
+    //console.log(targetHead);
+    const newPageHead = document.createElement('head')
+    newPageHead.innerHTML = targetHead
+    // console.log(newPageHead);
+    //SEOに関係ありそうなタグ
+    const removeHeadTags = [
+      "meta[name='keywords']",
+      "meta[name='description']",
+      "meta[property^='fb']",
+      "meta[property^='og']",
+      "meta[property^='article']",
+      "meta[name^='twitter']",
+      "meta[property^='twitter']",
+      "meta[name='robots']",
+      'meta[itemprop]',
+      "meta[name='thumbnail']",
+      'link[itemprop]',
+      "link[rel='alternate']",
+      "link[rel='prev']",
+      "link[rel='next']",
+      "link[rel='canonical']",
+      "link[rel='amphtml']",
+      "link[rel='shortlink']",
+      "script[type='application/ld+json']",
+    ].join(',')
+    //前のページの古いタグを削除
+    const headTags = [...head.querySelectorAll(removeHeadTags)]
+    //console.log(headTags)
+    headTags.forEach(item => {
+      head.removeChild(item)
+    })
+    //新しいページの新しいタグを追加
+    const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)]
+    //console.log(newHeadTags)
+    newHeadTags.forEach(item => {
+      head.appendChild(item)
+    })
+  }
+
+  //barba.jsの実行
+  barba.init({
+    transitions: [
+      {
+        // before({ current, next, trigger }) {
+        //   console.log('before');
+        // },
+        // beforeLeave({ current, next, trigger }) {
+        //   console.log('beforeLeave');
+        // },
+        // leave({ current, next, trigger }) {
+        //   console.log('leave');
+        // },
+        // afterLeave({ current, next, trigger }) {
+        //   console.log('afterLeave');
+        // },
+        enter({ current, next, trigger }) {
+          //console.log('enter');
+        },
+        beforeEnter({ current, next, trigger }) {
+          //console.log('beforeEnter');
+          //console.log(next);
+          replaceHeadTags(next);
+        },
+        // afterEnter({ current, next, trigger }) {
+        //   console.log('afterEnter');
+        // },
+        // after({ current, next, trigger }) {
+        //   console.log('after');
+        // }
+      }
+    ]
+  })
+
+  const eventDelete = e => {
+    if (e.currentTarget.href === window.location.href) {
+      // console.log(e.currentTarget.href);
+      // console.log(window.location.href);
+      e.preventDefault()
+      e.stopPropagation()
+      return
+    }
+  }
+
+  const links = [...document.querySelectorAll('a[href]')]
+  //console.log(links);
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      //console.log('click');
+      eventDelete(e)
+    }, false)
+  })
   /////////////////////////////////
   //TOPへ戻るボタン
   /////////////////////////////////
