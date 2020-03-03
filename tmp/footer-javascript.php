@@ -115,11 +115,11 @@ if (is_header_fixed()): ?>
     function adjustScrollArea(selector) {
       offset = $(selector).offset().top;
       h = $("#header-container").height();
+      pt = $(selector).css('padding-top').replace('px', '');
       /*console.log('of:'+offset);
       console.log('st:'+scrollTop);
       console.log($(selector).css('padding-top'));*/
       if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
-        pt = $(selector).css('padding-top').replace('px', '');
         if (pt <= 1) {
           $(selector).css({
             'padding-top': h + 'px',
