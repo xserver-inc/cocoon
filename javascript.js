@@ -57,13 +57,19 @@
 
   //Google Analytics
   const gaPush = pagename => {
+    //古いAnalyticsコード
     if (typeof ga === 'function') {
       ga('send', 'pageview', pagename)
     }
+    //gtag.js（公式）
     if (typeof gtag === 'function') {
       gtag('config', 'UA-152823994-1', {'page_path': pathname})
     }
-
+    //ga-lite.min.js（高速化）
+    if (typeof gtag === 'function') {
+      galite('create', 'UA-152823994-1', {'page_path': pathname});
+      galite('send', 'pageview');
+    }
   }
 
   //barba.jsの実行
