@@ -55,6 +55,17 @@
     })
   }
 
+  //Google Analytics
+  const gaPush = pagename => {
+    if (typeof ga === 'function') {
+      ga('send', 'pageview', pagename)
+    }
+    if (typeof gtag === 'function') {
+      gtag('config', 'UA-152823994-1', {'page_path': pathname})
+    }
+
+  }
+
   //barba.jsの実行
   barba.init({
     transitions: [
@@ -77,7 +88,10 @@
         beforeEnter({ current, next, trigger }) {
           //console.log('beforeEnter');
           //console.log(next);
-          replaceHeadTags(next);
+          //headタグ変換
+          replaceHeadTags(next)
+          //Google Analytics
+          gaPush(location.pathname)
         },
         // afterEnter({ current, next, trigger }) {
         //   console.log('afterEnter');
