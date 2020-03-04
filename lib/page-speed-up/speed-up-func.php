@@ -133,3 +133,11 @@ function is_footer_javascript_enable(){
   return get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
 }
 endif;
+
+// //フッターJavaScript除外ファイルリスト
+// define('OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST', 'footer_javascript_exclude_list');
+// if ( !function_exists( 'get_footer_javascript_exclude_list' ) ):
+// function get_footer_javascript_exclude_list(){
+//   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST));
+// }
+// endif;

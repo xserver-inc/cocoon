@@ -280,7 +280,7 @@ endif;
 //子テーマkeyframes.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_child_keyframes' ) ):
 function wp_enqueue_style_theme_child_keyframes(){
-  if (file_exists(CHILD_THEME_KEYFRAMES_CSS_FILE)) {
+  if (is_child_theme() && file_exists(CHILD_THEME_KEYFRAMES_CSS_FILE)) {
     wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
   }
 }
