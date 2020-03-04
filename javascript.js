@@ -46,14 +46,14 @@
     //console.log(headTags)
     headTags.forEach(item => {
       head.removeChild(item);
-    })
+    });
     //新しいページの新しいタグを追加
     const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)];
     //console.log(newHeadTags)
     newHeadTags.forEach(item => {
       head.appendChild(item);
     })
-  }
+  };
 
   //Google Analytics
   const gaPush = pagename => {
@@ -71,7 +71,7 @@
       galite('create', 'UA-152823994-1', {'page_path': pagename});
       galite('send', 'pageview');
     }
-  }
+  };
 
   //barba.jsの実行
   barba.init({
@@ -111,26 +111,26 @@
         // }
       }
     ]
-  })
+  });
 
   const eventDelete = e => {
     if (e.currentTarget.href === window.location.href) {
       // console.log(e.currentTarget.href);
       // console.log(window.location.href);
-      e.preventDefault()
-      e.stopPropagation()
-      return
+      e.preventDefault();
+      e.stopPropagation();
+      return;
     }
-  }
+  };
 
-  const links = [...document.querySelectorAll('a[href]')]
+  const links = [...document.querySelectorAll('a[href]')];
   //console.log(links);
   links.forEach(link => {
     link.addEventListener('click', e => {
       //console.log('click');
-      eventDelete(e)
-    }, false)
-  })
+      eventDelete(e);
+    }, false);
+  });
   /////////////////////////////////
   //TOPへ戻るボタン
   /////////////////////////////////
