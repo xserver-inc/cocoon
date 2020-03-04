@@ -40,9 +40,38 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 
 
+<!-- ハイスピード -->
+<div id="highspeed" class="postbox">
+  <h2 class="hndle"><?php _e( 'ハイスピード', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- ハイスピード  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_HIGHSPEED_MODE_ENABLE, __( 'ハイスピード', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_HIGHSPEED_MODE_ENABLE , is_highspeed_mode_enable(), __( 'ハイスピードモードの有効化', THEME_NAME ));
+            generate_tips_tag(__( 'この機能を有効化すると、barba.jsを用いて非同期でコンテンツが読み込まれます。画面遷移はかなり早くなりますが、ある程度制限もあります。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
 
 <!-- 縮小化 -->
-<div id="speed-up" class="postbox">
+<div id="minify" class="postbox">
   <h2 class="hndle"><?php _e( '縮小化', THEME_NAME ) ?></h2>
   <div class="inside">
 

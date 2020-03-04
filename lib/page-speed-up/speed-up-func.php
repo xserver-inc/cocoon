@@ -19,6 +19,14 @@ function is_browser_cache_enable(){
 }
 endif;
 
+//ハイスピードモードを有効にするか
+define('OP_HIGHSPEED_MODE_ENABLE', 'highspeed_mode_enable');
+if ( !function_exists( 'is_highspeed_mode_enable' ) ):
+function is_highspeed_mode_enable(){
+  return get_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+}
+endif;
+
 //HTMLを縮小化するか
 define('OP_HTML_MINIFY_ENABLE', 'html_minify_enable');
 if ( !function_exists( 'is_html_minify_enable' ) ):
