@@ -9,6 +9,15 @@
 /////////////////////////////////
 
 (function($){
+  //コメントボタンがクリックされたとき
+  function register_comment_area_open(){
+    $('#comment-reply-btn, .comment-reply-link').click(function() {
+      $('#comment-reply-btn').slideUp();
+      $('#respond').slideDown();
+    });
+  }
+
+
   //barba.js
   //barba.use(barbaPrefetch);
 
@@ -71,6 +80,7 @@
       galite('create', 'UA-152823994-1', {'page_path': pagename});
       galite('send', 'pageview');
     }
+
   };
 
   //barba.jsの実行
@@ -102,6 +112,8 @@
           //ページトップに移動
           const scrollElem = document.scrollingElement || document.documentElement;
           scrollElem.scrollTop = 0;
+          //コメントエリアを開く動作の登録
+          register_comment_area_open();
         },
         // afterEnter({ current, next, trigger }) {
         //   console.log('afterEnter');
@@ -246,13 +258,13 @@
     })
   }
 
-
-
-  //コメントボタンがクリックされたとき
-  $('#comment-reply-btn, .comment-reply-link').click(function() {
-    $('#comment-reply-btn').slideUp();
-    $('#respond').slideDown();
-  });
+  //コメントエリアが押された時の動作登録
+  register_comment_area_open();
+  // //コメントボタンがクリックされたとき
+  // $('#comment-reply-btn, .comment-reply-link').click(function() {
+  //   $('#comment-reply-btn').slideUp();
+  //   $('#respond').slideDown();
+  // });
 
   //カレーセルの表示
   $('.carousel').fadeIn(1000);
