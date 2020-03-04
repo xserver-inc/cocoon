@@ -101,6 +101,7 @@
         // },
         enter({ current, next, trigger }) {
           //console.log('enter');
+          //$(".carousel-content").slick();
         },
         beforeEnter({ current, next, trigger }) {
           //console.log('beforeEnter');
@@ -114,13 +115,61 @@
           scrollElem.scrollTop = 0;
           //コメントエリアを開く動作の登録
           register_comment_area_open();
+
+          // // 外部ファイルの実行(任意の場所に追加)
+          // var script = document.createElement('script');
+          // script.src = 'https://cocoon.local/plugins/slick/slick.min.js';
+          // document.body.appendChild(script);
+
+          //    // 外部ファイルの実行(任意の場所に追加)
+          // var script = document.createElement('script');
+          // script.innerHTML = '$(".carousel-content").slick();';
+          // document.body.appendChild(script);
+
+
         },
-        // afterEnter({ current, next, trigger }) {
-        //   console.log('afterEnter');
-        // },
-        // after({ current, next, trigger }) {
-        //   console.log('after');
-        // }
+        afterEnter({ current, next, trigger }) {
+          console.log('afterEnter');
+        },
+        after({ current, next, trigger }) {
+          console.log('after');
+          $(".carousel-content").slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            responsive: [
+                {
+                  breakpoint: 1240,
+                  settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5
+                  }
+                },
+                {
+                  breakpoint: 1023,
+                  settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                  }
+                },
+                {
+                  breakpoint: 834,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                }
+              ]
+          });
+        }
       }
     ]
   });
