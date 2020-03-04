@@ -14,11 +14,11 @@
 
   //head内タグのの移し替え
   const replaceHeadTags = target => {
-    const head = document.head
-    const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]
+    const head = document.head;
+    const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
     //console.log(targetHead);
-    const newPageHead = document.createElement('head')
-    newPageHead.innerHTML = targetHead
+    const newPageHead = document.createElement('head');
+    newPageHead.innerHTML = targetHead;
     // console.log(newPageHead);
     //SEOに関係ありそうなタグ
     const removeHeadTags = [
@@ -40,18 +40,18 @@
       "link[rel='amphtml']",
       "link[rel='shortlink']",
       "script[type='application/ld+json']",
-    ].join(',')
+    ].join(',');
     //前のページの古いタグを削除
-    const headTags = [...head.querySelectorAll(removeHeadTags)]
+    const headTags = [...head.querySelectorAll(removeHeadTags)];
     //console.log(headTags)
     headTags.forEach(item => {
-      head.removeChild(item)
+      head.removeChild(item);
     })
     //新しいページの新しいタグを追加
-    const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)]
+    const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)];
     //console.log(newHeadTags)
     newHeadTags.forEach(item => {
-      head.appendChild(item)
+      head.appendChild(item);
     })
   }
 
@@ -63,11 +63,12 @@
     }
     //gtag.js（公式）
     if (typeof gtag === 'function') {
-      gtag('config', 'UA-152823994-1', {'page_path': pathname})
+      console.log('gtag');
+      gtag('config', 'UA-152823994-1', {'page_path': pagename});
     }
     //ga-lite.min.js（高速化）
-    if (typeof gtag === 'function') {
-      galite('create', 'UA-152823994-1', {'page_path': pathname});
+    if (typeof galite === 'function') {
+      galite('create', 'UA-152823994-1', {'page_path': pagename});
       galite('send', 'pageview');
     }
   }
@@ -95,12 +96,12 @@
           //console.log('beforeEnter');
           //console.log(next);
           //headタグ変換
-          replaceHeadTags(next)
-          // //Google Analytics
-          // gaPush(location.pathname)
+          replaceHeadTags(next);
+          //Google Analytics
+          gaPush(location.pathname);
           //ページトップに移動
-          const scrollElem = document.scrollingElement || document.documentElement
-          scrollElem.scrollTop = 0
+          const scrollElem = document.scrollingElement || document.documentElement;
+          scrollElem.scrollTop = 0;
         },
         // afterEnter({ current, next, trigger }) {
         //   console.log('afterEnter');
