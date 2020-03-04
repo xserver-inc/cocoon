@@ -96,5 +96,8 @@ get_template_part('tmp-user/head-insert'); ?>
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage" data-barba="wrapper">
 
+<?php //body最初に挿入するアクセス解析ヘッダータグの取得
+  get_template_part('tmp/body-top-analytics'); ?>
+
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
 get_template_part('tmp/body-top'); ?>

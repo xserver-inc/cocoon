@@ -16,9 +16,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       do_action( 'wp_body_open' );
   }?>
 
-  <?php //body最初に挿入するアクセス解析ヘッダータグの取得
-  get_template_part('tmp/body-top-analytics'); ?>
-
   <?php //ユーザーカスタマイズ用
   get_template_part('tmp-user/body-top-insert'); ?>
 
