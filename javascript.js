@@ -59,7 +59,7 @@
   const gaPush = pagename => {
     //古いAnalyticsコード
     if (typeof ga === 'function') {
-      ga('send', 'pageview', pagename)
+      ga('send', 'pageview', pagename);
     }
     //gtag.js（公式）
     if (typeof gtag === 'function') {
@@ -96,8 +96,11 @@
           //console.log(next);
           //headタグ変換
           replaceHeadTags(next)
-          //Google Analytics
-          gaPush(location.pathname)
+          // //Google Analytics
+          // gaPush(location.pathname)
+          //ページトップに移動
+          const scrollElem = document.scrollingElement || document.documentElement
+          scrollElem.scrollTop = 0
         },
         // afterEnter({ current, next, trigger }) {
         //   console.log('afterEnter');
