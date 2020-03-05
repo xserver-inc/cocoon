@@ -216,8 +216,8 @@ if (is_header_fixed()): ?>
       head.appendChild(item);
     })
   };
-
-  //Google Analytics
+  <?php //Google Analytics
+  if ($analytics_tracking_id = get_google_analytics_tracking_id() && is_analytics()): ?>
   const gaPush = pagename => {
     //古いAnalyticsコード
     if (typeof ga === 'function') {
@@ -226,15 +226,15 @@ if (is_header_fixed()): ?>
     //gtag.js（公式）
     if (typeof gtag === 'function') {
       console.log('gtag');
-      gtag('config', 'UA-152823994-1', {'page_path': pagename});
+      gtag('config', '<?php echo $analytics_tracking_id; ?>', {'page_path': pagename});
     }
     //ga-lite.min.js（高速化）
     if (typeof galite === 'function') {
-      galite('create', 'UA-152823994-1', {'page_path': pagename});
+      galite('create', '<?php echo $analytics_tracking_id; ?>', {'page_path': pagename});
       galite('send', 'pageview');
     }
-
   };
+  <?php endif; ?>
 
   //barba.jsの実行
   barba.init({
@@ -261,8 +261,10 @@ if (is_header_fixed()): ?>
           //console.log(next);
           //headタグ変換
           replaceHeadTags(next);
-          //Google Analytics
+          <?php //Google Analytics
+          if ($analytics_tracking_id && is_analytics()): ?>
           gaPush(location.pathname);
+          <?php endif; ?>
           //ページトップに移動
           const scrollElem = document.scrollingElement || document.documentElement;
           scrollElem.scrollTop = 0;
