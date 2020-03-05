@@ -14,7 +14,7 @@ if (is_user_administrator()
   && (is_admin_panel_singular_page_visible() || is_admin_panel_not_singular_page_visible())
 ):
 ?>
-<div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>">
+<div id="admin-panel" class="admin-panel<?php echo get_additional_admin_panel_area_classes(); ?>" data-barba-prevent="all">
 
   <?php //PVエリアの表示
   get_template_part('tmp/admin-pv'); ?>

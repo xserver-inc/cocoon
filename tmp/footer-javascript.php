@@ -168,6 +168,9 @@ if (is_header_fixed()): ?>
 <?php if (is_highspeed_mode_enable()): ?>
 <script>
 (function($){
+  //管理パネルはbarba.js動作から除外する
+  var d = document.getElementById("wpadminbar");
+  d.setAttribute("data-barba-prevent", "all");
   //barba.js
   //barba.use(barbaPrefetch);
 
