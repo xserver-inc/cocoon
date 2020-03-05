@@ -216,8 +216,10 @@ if (is_header_fixed()): ?>
       head.appendChild(item);
     })
   };
-  <?php //Google Analytics
-  if ($analytics_tracking_id = get_google_analytics_tracking_id() && is_analytics()): ?>
+  <?php
+  $analytics_tracking_id = get_google_analytics_tracking_id();
+  if ($analytics_tracking_id && is_analytics()): ?>
+  //Google Analytics
   const gaPush = pagename => {
     //古いAnalyticsコード
     if (typeof ga === 'function') {
