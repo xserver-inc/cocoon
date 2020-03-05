@@ -507,7 +507,8 @@ endif;
 if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
 function wp_enqueue_script_barba_js(){
   if ( is_highspeed_mode_enable() ){
-    wp_enqueue_script( 'barba-js', 'https://unpkg.com/@barba/core', array(), false, false );
+    wp_enqueue_script( 'barba-js', 'https://unpkg.com/@barba/core', array(), false, true );
+    //wp_enqueue_script( 'barba-js-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver%2CNodeList.prototype.forEach', array('barba-js'), false, true );
   }
 }
 endif;

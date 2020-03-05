@@ -204,30 +204,36 @@ function remove_code_comments($code){
 }
 endif;
 
-/*async defer*/
-//add_filter( 'script_loader_tag', 'add_defer_async_scripts', 10, 3 );
-if ( !function_exists( 'add_defer_async_scripts' ) ):
-function add_defer_async_scripts( $tag, $handle, $src ) {
-  $async_defer = array(
-    'jquery',
-    'jquery-migrate',
-    'jquery-core',
+/*スクリプトの特性を変更する（async defer ）*/
+add_filter( 'script_loader_tag', 'change_script_tag_attrs', 10, 3 );
+if ( !function_exists( 'change_script_tag_attrs' ) ):
+function change_script_tag_attrs( $tag, $handle, $src ) {
+  $async_defers = array(
+    // 'jquery',
+    // 'jquery-migrate',
+    // 'jquery-core',
   );
-  $async_scripts = array(
+  $asyncs = array(
     //'crayon_js',
   );
-  $defer_scripts = array(
+  $defers = array(
     //'code-highlight-js',
   );
+  $crossorigin_anonymouses = array(
+    'barba-js-polyfill',
+  );
 
-  if ( in_array( $handle, $async_defer ) ) {
-      return '<script async defer type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
+  if ( in_array( $handle, $async_defers ) ) {
+      return '<script async defer src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
-  if ( in_array( $handle, $async_scripts ) ) {
-      return '<script async type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
+  if ( in_array( $handle, $asyncs ) ) {
+      return '<script async src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
-  if ( in_array( $handle, $defer_scripts ) ) {
-      return '<script defer type="text/javascript" src="' . esc_url($src) . '"></script>' . PHP_EOL;
+  if ( in_array( $handle, $defers ) ) {
+      return '<script defer src="' . esc_url($src) . '"></script>' . PHP_EOL;
+  }
+  if ( in_array( $handle, $crossorigin_anonymouses ) ) {
+      return '<script crossorigin="anonymous" src="' . esc_url($src) . '"></script>' . PHP_EOL;
   }
 
   return $tag;
