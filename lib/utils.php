@@ -503,6 +503,15 @@ function wp_enqueue_script_hatebu_share_button_js(){
 }
 endif;
 
+//barba.jsスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
+function wp_enqueue_script_barba_js(){
+  if ( is_highspeed_mode_enable() ){
+    wp_enqueue_script( 'barba-js', 'https://unpkg.com/@barba/core', array(), false, false );
+  }
+}
+endif;
+
 //clipboard.jsスクリプトの読み込み
 if ( !function_exists( 'wp_enqueue_script_clipboard_js' ) ):
 function wp_enqueue_script_clipboard_js(){

@@ -40,9 +40,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 get_template_part('tmp/ad-auto-adsense'); ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head(); ?>
-<script src="https://unpkg.com/@barba/core"></script>
-<!-- <script src="https://unpkg.com/@barba/css"></script>
-<script src="https://unpkg.com/@barba/prefetch"></script> -->
 
 <!-- google analytics, Googleタグマネージャー -->
 <link rel='preconnect dns-prefetch' href="//www.googletagmanager.com">
