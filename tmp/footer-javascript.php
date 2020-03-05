@@ -170,7 +170,10 @@ if (is_header_fixed()): ?>
 (function($){
   //管理パネルはbarba.js動作から除外する
   var d = document.getElementById("wpadminbar");
-  d.setAttribute("data-barba-prevent", "all");
+  if (d) {
+    d.setAttribute("data-barba-prevent", "all");
+  }
+
   //barba.js
   //barba.use(barbaPrefetch);
 
