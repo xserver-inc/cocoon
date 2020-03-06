@@ -230,7 +230,7 @@ if (is_header_fixed()): ?>
     }
     //gtag.js（公式）
     if (typeof gtag === 'function') {
-      console.log('gtag');
+      //console.log('gtag');
       gtag('config', '<?php echo $analytics_tracking_id; ?>', {'page_path': pagename});
     }
     //ga-lite.min.js（高速化）
@@ -245,21 +245,21 @@ if (is_header_fixed()): ?>
   barba.init({
     transitions: [
       {
-        // before({ current, next, trigger }) {
-        //   console.log('before');
-        // },
-        // beforeLeave({ current, next, trigger }) {
-        //   console.log('beforeLeave');
-        // },
-        // leave({ current, next, trigger }) {
-        //   console.log('leave');
-        // },
-        // afterLeave({ current, next, trigger }) {
-        //   console.log('afterLeave');
-        // },
-        enter({ current, next, trigger }) {
-          //console.log('enter');
-          //$(".carousel-content").slick();
+        before({ current, next, trigger }) {
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_before'); ?>
+        },
+        beforeLeave({ current, next, trigger }) {
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_before_leave'); ?>
+        },
+        leave({ current, next, trigger }) {
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_leave'); ?>
+        },
+        afterLeave({ current, next, trigger }) {
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_after_leave'); ?>
         },
         beforeEnter({ current, next, trigger }) {
           //console.log('beforeEnter');
@@ -287,12 +287,18 @@ if (is_header_fixed()): ?>
           // document.body.appendChild(script);
 
 
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_before_enter'); ?>
+        },
+        enter({ current, next, trigger }) {
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_enter'); ?>
         },
         afterEnter({ current, next, trigger }) {
-          console.log('afterEnter');
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_after_enter'); ?>
         },
         after({ current, next, trigger }) {
-          console.log('after');
 
           $(".carousel-content").slick({
             dots: true,
@@ -331,6 +337,8 @@ if (is_header_fixed()): ?>
               ]
           });
 
+          <?php //一応PHPからも操作出来るようにフック
+          do_action('barba_init_transitions_after'); ?>
         }
       }
     ]
