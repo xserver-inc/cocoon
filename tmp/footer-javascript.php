@@ -270,9 +270,9 @@ if (is_header_fixed()): ?>
           if ($analytics_tracking_id && is_analytics()): ?>
           gaPush(location.pathname);
           <?php endif; ?>
-          //ページトップに移動
-          const scrollElem = document.scrollingElement || document.documentElement;
-          scrollElem.scrollTop = 0;
+          // //ページトップに移動
+          // const scrollElem = document.scrollingElement || document.documentElement;
+          // scrollElem.scrollTop = 0;
           //コメントエリアを開く動作の登録
           //register_comment_area_open();
 
@@ -285,6 +285,26 @@ if (is_header_fixed()): ?>
           // var script = document.createElement('script');
           // script.innerHTML = '$(".carousel-content").slick();';
           // document.body.appendChild(script);
+
+          //URLのアンカー（?以降の部分）を取得、加工してアンカーに移動する
+          //var urlSearch = location.search;
+          //urlSearch = getGET(); //「?」を除去
+          //console.log(location);
+
+          // const scrollElem = document.scrollingElement || document.documentElement;
+          // //console.log(tgt);
+          // var hash = location.hash;
+          // console.log(hash);
+          // console.log(current);
+          // if (hash) {
+          //   var anchor = document.getElementById(hash);
+          //   console.log(anchor);
+          //   // const target = anchor.offset().top; //アンカーの位置情報を取得
+          //   // console.log(target);
+          //   // scrollElem.scrollTop = Math.floor(target);
+          // } else {
+          //   scrollElem.scrollTop = 0;
+          // }
 
 
           <?php //一応PHPからも操作出来るようにフック
