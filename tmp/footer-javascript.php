@@ -115,7 +115,12 @@ if (is_header_fixed()): ?>
     function adjustScrollArea(selector) {
       offset = $(selector).offset().top;
       h = $("#header-container").height();
-      pt = $(selector).css('padding-top').replace('px', '');
+      pt = $(selector).css('padding-top')
+      if (pt) {
+        pt = pt.replace('px', '');
+      } else {
+        pt = 0;
+      }
       /*console.log('of:'+offset);
       console.log('st:'+scrollTop);
       console.log($(selector).css('padding-top'));*/
