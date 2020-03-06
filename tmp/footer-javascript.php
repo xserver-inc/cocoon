@@ -183,7 +183,7 @@ if (is_header_fixed()): ?>
   //barba.use(barbaPrefetch);
 
   //head内タグのの移し替え
-  const replaceHeadTags = target => {
+  function replaceHeadTags(target) {
     const head = document.head;
     const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
     //console.log(targetHead);
@@ -222,13 +222,14 @@ if (is_header_fixed()): ?>
     //console.log(newHeadTags)
     newHeadTags.forEach(item => {
       head.appendChild(item);
-    })
-  };
+    });
+  }
+
   <?php
   $analytics_tracking_id = get_google_analytics_tracking_id();
   if ($analytics_tracking_id && is_analytics()): ?>
   //Google Analytics
-  const gaPush = pagename => {
+  function gaPush(pagename) {
     //古いAnalyticsコード
     if (typeof ga === 'function') {
       ga('send', 'pageview', pagename);
@@ -243,7 +244,7 @@ if (is_header_fixed()): ?>
       galite('create', '<?php echo $analytics_tracking_id; ?>', {'page_path': pagename});
       galite('send', 'pageview');
     }
-  };
+  }
   <?php endif; ?>
 
   //barba.jsの実行
