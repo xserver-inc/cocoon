@@ -296,20 +296,21 @@ if (is_header_fixed()): ?>
           //urlSearch = getGET(); //「?」を除去
           //console.log(location);
 
-          // const scrollElem = document.scrollingElement || document.documentElement;
-          // //console.log(tgt);
-          // var hash = location.hash;
+          const scrollElem = document.scrollingElement || document.documentElement;
+          //console.log(tgt);
+          var hash = location.hash;
           // console.log(hash);
           // console.log(current);
-          // if (hash) {
-          //   var anchor = document.getElementById(hash);
-          //   console.log(anchor);
-          //   // const target = anchor.offset().top; //アンカーの位置情報を取得
-          //   // console.log(target);
-          //   // scrollElem.scrollTop = Math.floor(target);
-          // } else {
-          //   scrollElem.scrollTop = 0;
-          // }
+          //ハッシュ値がある場合
+          if (hash) {
+            // var anchor = document.getElementById(hash);
+            // console.log(anchor);
+            const target = $(hash).offset().top; //アンカーの位置情報を取得
+            //console.log(target);
+            scrollElem.scrollTop = Math.floor(target);
+          } else {
+            scrollElem.scrollTop = 0;
+          }
 
 
           <?php //一応PHPからも操作出来るようにフック
