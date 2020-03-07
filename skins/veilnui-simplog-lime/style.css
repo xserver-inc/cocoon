@@ -647,29 +647,16 @@ body {
   padding: 1em;
 }
 #main .entry-content h2, #main .entry-content h3, #main .entry-content h4, #main .entry-content h5, #main .entry-content h6 {
-  background: linear-gradient(to right, #C0CA33, #D4E157);
-  position: relative;
-  color: transparent;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -ms-background-clip: text;
+  color: #C0CA33;
+  background-color: transparent;
   border: 0;
-}
-#main .entry-content h2::after, #main .entry-content h3::after, #main .entry-content h4::after, #main .entry-content h5::after, #main .entry-content h6::after {
-  background: linear-gradient(to right, #C0CA33, #D4E157);
-  position: absolute;
-  content: "";
-  top: auto;
-  left: 0px;
-  bottom: 0px;
-  right: auto;
+  border-bottom: 5px solid #C0CA33;
 }
 #main .entry-content h2, #main .entry-content h3 {
   padding: 0.5em;
 }
-#main .entry-content h2::after {
-  width: 100%;
-  height: 5px;
+#main .entry-content h3 {
+  border-width: 3px;
 }
 #main .entry-content h3::after {
   width: 100%;
@@ -677,10 +664,7 @@ body {
 }
 #main .entry-content h4, #main .entry-content h5, #main .entry-content h6 {
   padding: 0.25em;
-}
-#main .entry-content h4::after, #main .entry-content h5::after, #main .entry-content h6::after {
-  width: 100%;
-  height: 1px;
+  border-width: 1px;
 }
 #main .wp-block-quote {
   border: solid #C0CA33 1px;
