@@ -295,24 +295,34 @@ if (is_header_fixed()): ?>
           //URLのアンカー（?以降の部分）を取得、加工してアンカーに移動する
           //var urlSearch = location.search;
           //urlSearch = getGET(); //「?」を除去
-          //console.log(location);
-
-          const scrollElem = document.scrollingElement || document.documentElement;
-          //console.log(tgt);
-          var hash = location.hash;
-          // console.log(hash);
           // console.log(current);
-          //ハッシュ値がある場合
-          if (hash) {
-            // var anchor = document.getElementById(hash);
-            // console.log(anchor);
-            const target = $(hash).offset().top; //アンカーの位置情報を取得
-            //console.log(target);
-            scrollElem.scrollTop = Math.floor(target);
-          } else {
-            scrollElem.scrollTop = 0;
-          }
 
+          // const scrollElem = document.scrollingElement || document.documentElement;
+          // //console.log(tgt);
+          // var hash = location.hash;
+          // // console.log(hash);
+          // // console.log(current);
+          // //ハッシュ値がある場合
+          // if (hash) {
+          //   // var anchor = document.getElementById(hash);
+          //   // console.log(anchor);
+          //   const target = $(hash).offset().top; //アンカーの位置情報を取得
+          //   //console.log(target);
+          //   scrollElem.scrollTop = Math.floor(target);
+          // } else {
+          //   scrollElem.scrollTop = 0;
+          // }
+
+          //window.history.pushState(null, null, pagelinkHref);
+
+          // // ブラウザがpushStateに対応しているかチェック
+          // if (window.history && window.history.pushState){
+          //   $(window).on("popstate",function(event){
+          //     console.log(event);
+          //     // if (!event.originalEvent.state) return; // 初回アクセス時対策
+          //     // var state = event.originalEvent.state; // stateオブジェクト
+          //   });
+          // }
 
           <?php //一応PHPからも操作出来るようにフック
           do_action('barba_init_transitions_before_enter'); ?>
@@ -326,43 +336,42 @@ if (is_header_fixed()): ?>
           do_action('barba_init_transitions_after_enter'); ?>
         },
         after({ current, next, trigger }) {
-
-          $(".carousel-content").slick({
-            dots: true,
-            infinite: true,
-            slidesToShow: 6,
-            slidesToScroll: 6,
-            responsive: [
-                {
-                  breakpoint: 1240,
-                  settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 5
-                  }
-                },
-                {
-                  breakpoint: 1023,
-                  settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
-                  }
-                },
-                {
-                  breakpoint: 834,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                  }
-                }
-              ]
-          });
+          // $(".carousel-content").slick({
+          //   dots: true,
+          //   infinite: true,
+          //   slidesToShow: 6,
+          //   slidesToScroll: 6,
+          //   responsive: [
+          //       {
+          //         breakpoint: 1240,
+          //         settings: {
+          //           slidesToShow: 5,
+          //           slidesToScroll: 5
+          //         }
+          //       },
+          //       {
+          //         breakpoint: 1023,
+          //         settings: {
+          //           slidesToShow: 4,
+          //           slidesToScroll: 4
+          //         }
+          //       },
+          //       {
+          //         breakpoint: 834,
+          //         settings: {
+          //           slidesToShow: 3,
+          //           slidesToScroll: 3
+          //         }
+          //       },
+          //       {
+          //         breakpoint: 480,
+          //         settings: {
+          //           slidesToShow: 2,
+          //           slidesToScroll: 2
+          //         }
+          //       }
+          //     ]
+          // });
 
           <?php //一応PHPからも操作出来るようにフック
           do_action('barba_init_transitions_after'); ?>
@@ -371,24 +380,24 @@ if (is_header_fixed()): ?>
     ]
   });
 
-  const eventDelete = e => {
-    if (e.currentTarget.href === window.location.href) {
-      // console.log(e.currentTarget.href);
-      // console.log(window.location.href);
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-  };
+  // const eventDelete = e => {
+  //   if (e.currentTarget.href === window.location.href) {
+  //     // console.log(e.currentTarget.href);
+  //     // console.log(window.location.href);
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //     return;
+  //   }
+  // };
 
-  const links = [...document.querySelectorAll('a[href]')];
-  //console.log(links);
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      //console.log('click');
-      eventDelete(e);
-    }, false);
-  });
+  // const links = [...document.querySelectorAll('a[href]')];
+  // //console.log(links);
+  // links.forEach(link => {
+  //   link.addEventListener('click', e => {
+  //     //console.log('click');
+  //     eventDelete(e);
+  //   }, false);
+  // });
 })($);
 </script>
 <?php endif; ?>
