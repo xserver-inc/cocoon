@@ -85,6 +85,17 @@ if (!is_amp()): ?>
     }
     <?php endif; ?>
 
+    function tweetLoad() {
+      if (typeof twttr === 'undefined') {
+        let twitterjs = document.createElement("script");
+        twitterjs.async = true;
+        twitterjs.src = '//platform.twitter.com/widgets.js';
+        document.getElementsByTagName('body')[0].appendChild(twitterjs);
+      } else {
+        twttr.widgets.load();
+      }
+    }
+
     //barba.jsの実行
     barba.init({
       transitions: [
@@ -116,10 +127,12 @@ if (!is_amp()): ?>
             //console.log(next);
             //headタグ変換
             replaceHeadTags(next);
-            <?php //Google Analytics
-            if ($analytics_tracking_id && is_analytics()): ?>
+            <?php if ($analytics_tracking_id && is_analytics()): ?>
+            //Google Analytics
             gaPush(location.pathname);
             <?php endif; ?>
+            //ツイート埋め込み
+            tweetLoad();
             // //ページトップに移動
             // const scrollElem = document.scrollingElement || document.documentElement;
             // scrollElem.scrollTop = 0;
