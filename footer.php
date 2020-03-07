@@ -87,10 +87,14 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div><!-- #container -->
 
+
   <?php //トップへ戻るボタンテンプレート
   get_template_part('tmp/button-go-to-top'); ?>
 
   <?php if (!is_amp()) wp_footer(); ?>
+
+  <?php //barba.js処理
+  get_template_part('tmp/footer-barba-js');?>
 
   <?php //フッターで読み込むJavaScript用テンプレート
   get_template_part('tmp/footer-javascript');?>
