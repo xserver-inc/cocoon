@@ -30,6 +30,7 @@ if (!is_amp()): ?>
       // console.log(newPageHead);
       //SEOに関係ありそうなタグ
       let removeHeadTags = [
+        "style",
         "meta[name='keywords']",
         "meta[name='description']",
         "meta[property^='fb']",
