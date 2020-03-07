@@ -892,33 +892,41 @@ body {
   }
   .entry-content {
     h2, h3, h4, h5, h6 {
-      @include linear-gradient();
-      position: relative;
-      color: transparent;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      -ms-background-clip: text;
+      // @include linear-gradient();
+      // position: relative;
+      // color: transparent;
+      // -webkit-background-clip: text;
+      // -moz-background-clip: text;
+      // -ms-background-clip: text;
+      // background-clip: text;
+      color: $main-color-dark;
+      background-color: transparent;
       border: 0;
-      &::after {
-        @include linear-gradient();
-        @include pseudo();
-        @include position(auto, 0px, 0px, auto);
-      }
+      border-bottom: 5px solid $main-color-dark;
+      // &::after {
+      //   @include linear-gradient();
+      //   @include pseudo();
+      //   @include position(auto, 0px, 0px, auto);
+      // }
     }
     h2, h3 {
       padding: 0.5em;
     }
-    h2::after {
-      @include size(100%, 5px);
-    }
-    h3::after {
-      @include size(100%, 3px);
+    // h2::after {
+    //   @include size(100%, 5px);
+    // }
+    h3{
+      border-width: 3px;
+      &::after {
+        @include size(100%, 3px);
+      }
     }
     h4, h5, h6 {
       padding: 0.25em;
-      &::after {
-        @include size(100%, 1px);
-      }
+      border-width: 1px;
+      // &::after {
+      //   @include size(100%, 1px);
+      // }
     }
   }
   // Garally ギャラリー
