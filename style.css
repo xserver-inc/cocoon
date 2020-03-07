@@ -9066,10 +9066,10 @@ twitter-widget {
   min-width: 1px;
 }
 
-.header-container {
-  z-index: 2;
+.is-header-fixed .header-container {
+  z-index: 3;
 }
-.header-container .logo {
+.is-header-fixed .header-container .logo {
   transition: .3s;
 }
 

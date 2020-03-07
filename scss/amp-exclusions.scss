@@ -84,12 +84,15 @@
 // }
 
 //固定ヘッダー
-.header-container{
-	z-index: 2;
-	.logo{
-		transition: .3s;
+.is-header-fixed{
+	.header-container{
+		z-index: 3;
+		.logo{
+			transition: .3s;
+		}
 	}
 }
+
 
 .fixed-header{
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
