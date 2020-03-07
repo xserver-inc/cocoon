@@ -99,13 +99,13 @@ if (!is_amp()): ?>
     //Instagramスクリプトの呼び出し
     function instagramLoad() {
       if (typeof window.instgrm === 'undefined') {
-					let instagramjs = document.createElement("script");
-					instagramjs.async = true;
-					instagramjs.src = '//www.instagram.com/embed.js';
-					document.getElementsByTagName('body')[0].appendChild(instagramjs);
-				} else {
-					window.instgrm.Embeds.process();
-        }
+        let instagramjs = document.createElement("script");
+        instagramjs.async = true;
+        instagramjs.src = '//www.instagram.com/embed.js';
+        document.getElementsByTagName('body')[0].appendChild(instagramjs);
+      } else {
+        window.instgrm.Embeds.process();
+      }
     }
 
     //barba.jsの実行
