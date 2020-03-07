@@ -12,9 +12,9 @@ if (!is_amp()): ?>
   <script>
   (function($){
     //管理パネルはbarba.js動作から除外する
-    let d = document.getElementById("wpadminbar");
-    if (d) {
-      d.setAttribute("data-barba-prevent", "all");
+    let wpadminbar = document.getElementById("wpadminbar");
+    if (wpadminbar) {
+      wpadminbar.setAttribute("data-barba-prevent", "all");
     }
 
     //barba.js
@@ -92,7 +92,7 @@ if (!is_amp()): ?>
         let twitterjs = document.createElement("script");
         twitterjs.async = true;
         twitterjs.src = '//platform.twitter.com/widgets.js';
-        document.getElementsByTagName('body')[0].appendChild(twitterjs);
+        document.getElementById("container").appendChild(twitterjs);
       } else {
         twttr.widgets.load();
       }
@@ -103,7 +103,7 @@ if (!is_amp()): ?>
         let instagramjs = document.createElement("script");
         instagramjs.async = true;
         instagramjs.src = '//www.instagram.com/embed.js';
-        document.getElementsByTagName('body')[0].appendChild(instagramjs);
+        document.getElementById("container").appendChild(instagramjs);
       } else {
         window.instgrm.Embeds.process();
       }
@@ -139,6 +139,8 @@ if (!is_amp()): ?>
             //console.log('beforeEnter');
             //console.log(next);
 
+            //headタグ変換
+            replaceHeadTags(next);
 
             // //ページトップに移動
             // const scrollElem = document.scrollingElement || document.documentElement;
@@ -200,16 +202,16 @@ if (!is_amp()): ?>
             do_action('barba_init_transitions_after_enter'); ?>
           },
           after({ current, next, trigger }) {
-            //headタグ変換
-            replaceHeadTags(next);
+            console.log(current);
             <?php if ($analytics_tracking_id && is_analytics()): ?>
-            //Google Analytics
-            gaPush(location.pathname);
+              //Google Analytics
+              gaPush(location.pathname);
             <?php endif; ?>
             //ツイート埋め込み
             tweetLoad();
             //instagram埋め込み
             instagramLoad();
+
             $(".carousel-content").slick({
               dots: true,
               infinite: true,

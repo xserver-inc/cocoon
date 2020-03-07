@@ -93,9 +93,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   <?php if (!is_amp()) wp_footer(); ?>
 
-  <?php //barba.js処理
-  get_template_part('tmp/footer-barba-js');?>
-
   <?php //フッターで読み込むJavaScript用テンプレート
   get_template_part('tmp/footer-javascript');?>
 
@@ -120,6 +117,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     get_template_part('tmp-user/footer-insert');
   }
   ?>
+
+  <?php //barba.js処理
+  get_template_part('tmp/footer-barba-js');?>
 
 </body>
 
