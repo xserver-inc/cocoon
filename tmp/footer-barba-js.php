@@ -85,6 +85,7 @@ if (!is_amp()): ?>
     }
     <?php endif; ?>
 
+    //Twitterスクリプトの呼び出し
     function tweetLoad() {
       if (typeof twttr === 'undefined') {
         let twitterjs = document.createElement("script");
@@ -94,6 +95,17 @@ if (!is_amp()): ?>
       } else {
         twttr.widgets.load();
       }
+    }
+    //Instagramスクリプトの呼び出し
+    function instagramLoad() {
+      if (typeof window.instgrm === 'undefined') {
+					let instagramjs = document.createElement("script");
+					instagramjs.async = true;
+					instagramjs.src = '//www.instagram.com/embed.js';
+					document.getElementsByTagName('body')[0].appendChild(instagramjs);
+				} else {
+					window.instgrm.Embeds.process();
+        }
     }
 
     //barba.jsの実行
@@ -133,6 +145,8 @@ if (!is_amp()): ?>
             <?php endif; ?>
             //ツイート埋め込み
             tweetLoad();
+            //instagram埋め込み
+            instagramLoad();
             // //ページトップに移動
             // const scrollElem = document.scrollingElement || document.documentElement;
             // scrollElem.scrollTop = 0;
