@@ -9069,7 +9069,7 @@ twitter-widget {
 .header-container {
   z-index: 2;
 }
-.header-container * {
+.header-container .logo {
   transition: .3s;
 }
 
