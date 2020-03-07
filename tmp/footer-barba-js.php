@@ -138,16 +138,8 @@ if (!is_amp()): ?>
           beforeEnter({ current, next, trigger }) {
             //console.log('beforeEnter');
             //console.log(next);
-            //headタグ変換
-            replaceHeadTags(next);
-            <?php if ($analytics_tracking_id && is_analytics()): ?>
-            //Google Analytics
-            gaPush(location.pathname);
-            <?php endif; ?>
-            //ツイート埋め込み
-            tweetLoad();
-            //instagram埋め込み
-            instagramLoad();
+
+
             // //ページトップに移動
             // const scrollElem = document.scrollingElement || document.documentElement;
             // scrollElem.scrollTop = 0;
@@ -208,42 +200,52 @@ if (!is_amp()): ?>
             do_action('barba_init_transitions_after_enter'); ?>
           },
           after({ current, next, trigger }) {
-            // $(".carousel-content").slick({
-            //   dots: true,
-            //   infinite: true,
-            //   slidesToShow: 6,
-            //   slidesToScroll: 6,
-            //   responsive: [
-            //       {
-            //         breakpoint: 1240,
-            //         settings: {
-            //           slidesToShow: 5,
-            //           slidesToScroll: 5
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 1023,
-            //         settings: {
-            //           slidesToShow: 4,
-            //           slidesToScroll: 4
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 834,
-            //         settings: {
-            //           slidesToShow: 3,
-            //           slidesToScroll: 3
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 480,
-            //         settings: {
-            //           slidesToShow: 2,
-            //           slidesToScroll: 2
-            //         }
-            //       }
-            //     ]
-            // });
+            //headタグ変換
+            replaceHeadTags(next);
+            <?php if ($analytics_tracking_id && is_analytics()): ?>
+            //Google Analytics
+            gaPush(location.pathname);
+            <?php endif; ?>
+            //ツイート埋め込み
+            tweetLoad();
+            //instagram埋め込み
+            instagramLoad();
+            $(".carousel-content").slick({
+              dots: true,
+              infinite: true,
+              slidesToShow: 6,
+              slidesToScroll: 6,
+              responsive: [
+                  {
+                    breakpoint: 1240,
+                    settings: {
+                      slidesToShow: 5,
+                      slidesToScroll: 5
+                    }
+                  },
+                  {
+                    breakpoint: 1023,
+                    settings: {
+                      slidesToShow: 4,
+                      slidesToScroll: 4
+                    }
+                  },
+                  {
+                    breakpoint: 834,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 3
+                    }
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                    }
+                  }
+                ]
+            });
 
             <?php //一応PHPからも操作出来るようにフック
             do_action('barba_init_transitions_after'); ?>
