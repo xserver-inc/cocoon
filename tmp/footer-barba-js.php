@@ -12,7 +12,7 @@ if (!is_amp()): ?>
   <script>
   (function($){
     //管理パネルはbarba.js動作から除外する
-    var d = document.getElementById("wpadminbar");
+    let d = document.getElementById("wpadminbar");
     if (d) {
       d.setAttribute("data-barba-prevent", "all");
     }
@@ -22,14 +22,14 @@ if (!is_amp()): ?>
 
     //head内タグのの移し替え
     function replaceHeadTags(target) {
-      const head = document.head;
-      const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
+      let head = document.head;
+      let targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
       //console.log(targetHead);
-      const newPageHead = document.createElement('head');
+      let newPageHead = document.createElement('head');
       newPageHead.innerHTML = targetHead;
       // console.log(newPageHead);
       //SEOに関係ありそうなタグ
-      const removeHeadTags = [
+      let removeHeadTags = [
         "meta[name='keywords']",
         "meta[name='description']",
         "meta[property^='fb']",
@@ -50,13 +50,13 @@ if (!is_amp()): ?>
         "script[type='application/ld+json']",
       ].join(',');
       //前のページの古いタグを削除
-      const headTags = [...head.querySelectorAll(removeHeadTags)];
+      let headTags = [...head.querySelectorAll(removeHeadTags)];
       //console.log(headTags)
       headTags.forEach(item => {
         head.removeChild(item);
       });
       //新しいページの新しいタグを追加
-      const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)];
+      let newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)];
       //console.log(newHeadTags)
       newHeadTags.forEach(item => {
         head.appendChild(item);
