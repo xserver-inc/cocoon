@@ -212,42 +212,42 @@ if (!is_amp()): ?>
             //instagram埋め込み
             instagramLoad();
 
-            $(".carousel-content").slick({
-              dots: true,
-              infinite: true,
-              slidesToShow: 6,
-              slidesToScroll: 6,
-              responsive: [
-                  {
-                    breakpoint: 1240,
-                    settings: {
-                      slidesToShow: 5,
-                      slidesToScroll: 5
-                    }
-                  },
-                  {
-                    breakpoint: 1023,
-                    settings: {
-                      slidesToShow: 4,
-                      slidesToScroll: 4
-                    }
-                  },
-                  {
-                    breakpoint: 834,
-                    settings: {
-                      slidesToShow: 3,
-                      slidesToScroll: 3
-                    }
-                  },
-                  {
-                    breakpoint: 480,
-                    settings: {
-                      slidesToShow: 2,
-                      slidesToScroll: 2
-                    }
-                  }
-                ]
-            });
+            // $(".carousel-content").slick({
+            //   dots: true,
+            //   infinite: true,
+            //   slidesToShow: 6,
+            //   slidesToScroll: 6,
+            //   responsive: [
+            //       {
+            //         breakpoint: 1240,
+            //         settings: {
+            //           slidesToShow: 5,
+            //           slidesToScroll: 5
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 1023,
+            //         settings: {
+            //           slidesToShow: 4,
+            //           slidesToScroll: 4
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 834,
+            //         settings: {
+            //           slidesToShow: 3,
+            //           slidesToScroll: 3
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 480,
+            //         settings: {
+            //           slidesToShow: 2,
+            //           slidesToScroll: 2
+            //         }
+            //       }
+            //     ]
+            // });
 
             <?php //一応PHPからも操作出来るようにフック
             do_action('barba_init_transitions_after'); ?>
