@@ -99,7 +99,7 @@ $bct-dl-text: 'ダウンロード';
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;
-$bgc_hover_anime: all .7s;
+$bgc_hover_anime: all .3s ease-in-out;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
