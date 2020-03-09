@@ -828,11 +828,11 @@ img.emoji {
   text-decoration: none;
   display: block;
   font-size: 16px;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 .navi-in a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 .navi-in a:hover > ul {
@@ -874,11 +874,11 @@ img.emoji {
   text-decoration: none;
   display: block;
   font-size: 14px;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 .navi-footer-in a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -891,11 +891,11 @@ img.emoji {
   color: #333;
   padding: 1.5%;
   margin-bottom: 3%;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 .a-wrap:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -1118,7 +1118,7 @@ img.emoji {
 .sns-buttons a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 
 .sns-share a, .sns-follow a {
@@ -1468,7 +1468,7 @@ img.emoji {
 }
 .tag-link:hover, .comment-reply-link:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -2146,11 +2146,11 @@ label.screen-reader-text {
   flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 .tagcloud a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 .tagcloud a .tag-caption {
@@ -2204,7 +2204,7 @@ label.screen-reader-text {
 .widget_rss ul li a:hover,
 .widget_nav_menu ul li a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 .widget_recent_entries ul li a .post-count,
@@ -3401,12 +3401,12 @@ label.screen-reader-text {
 .btn-wrap > a:hover {
   opacity: 0.7;
   color: #fff;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 .btn:hover::after, .ranking-item-link-buttons a:hover::after,
 .btn-wrap > a:hover::after {
   right: -4px;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-l.btn-circle::after, .ranking-item-link-buttons a.btn-circle::after,
@@ -4662,7 +4662,7 @@ label.screen-reader-text {
   opacity: 0;
   padding: 0 1em;
   height: 0;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
 
@@ -4705,7 +4705,7 @@ label.screen-reader-text {
   visibility: visible;
   opacity: 1;
   height: 100%;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   padding: 1em;
   border: 2px solid #ccc;
   border-top-width: 0;
@@ -5279,7 +5279,7 @@ label.screen-reader-text {
 }
 .pagination a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -5321,7 +5321,7 @@ label.screen-reader-text {
 }
 .pagination-next-link:hover, .comment-btn:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -5347,7 +5347,7 @@ label.screen-reader-text {
 }
 .pager-links a:hover span {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
@@ -6777,7 +6777,7 @@ div.fb-like-mobile {
 }
 .menu-drawer a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 .menu-drawer .sub-menu {
@@ -8240,7 +8240,7 @@ input[type='submit'] {
 }
 .bp-login-widget-register-link a:hover {
   background-color: #f5f8fa;
-  transition: all 0.7s;
+  transition: all 0.3s ease-in-out;
   color: #333;
 }
 
