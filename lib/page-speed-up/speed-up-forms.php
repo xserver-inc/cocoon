@@ -207,6 +207,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
+<?php if(0): ?>
 <!-- スクリプト読み込み -->
 <div id="script-load" class="postbox">
   <h2 class="hndle"><?php _e( 'スクリプト読み込み設定', THEME_NAME ) ?></h2>
@@ -216,6 +217,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
+
 
         <!-- Lazy Load画像 -->
         <tr>
@@ -236,6 +238,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       </tbody>
     </table>
+    <?php endif; ?>
 
   </div>
 </div>

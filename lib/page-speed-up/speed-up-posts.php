@@ -34,7 +34,7 @@ update_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE);
 update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 
 //スクリプトをフッターで読み込む
-update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
+//update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
 // //フッターJavaScript除外ファイルリスト
 // update_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST);
 

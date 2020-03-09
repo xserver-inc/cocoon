@@ -130,7 +130,7 @@ endif;
 define('OP_FOOTER_JAVASCRIPT_ENABLE', 'footer_javascript_enable');
 if ( !function_exists( 'is_footer_javascript_enable' ) ):
 function is_footer_javascript_enable(){
-  return get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
+  return false;//get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
 }
 endif;
 

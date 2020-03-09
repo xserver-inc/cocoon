@@ -263,6 +263,13 @@ if (!is_amp()): ?>
             //instagram埋め込み
             instagramLoad();
 
+            // (function($){$(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)})})(jQuery);
+
+            // (function($){$(".carousel-content").slick({dots:!0,autoplaySpeed:5000,infinite:!0,slidesToShow:6,slidesToScroll:6,responsive:[{breakpoint:1240,settings:{slidesToShow:5,slidesToScroll:5}},{breakpoint:1023,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:834,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:480,settings:{slidesToShow:2,slidesToScroll:2}}]})})(jQuery);
+
+            // (function($){new ScrollHint(".scrollable-table",{suggestiveShadow:!0,i18n:{scrollable:"スクロールできます"}})})(jQuery);
+
+
             //footerTagsLoad(current);
 
             <?php
