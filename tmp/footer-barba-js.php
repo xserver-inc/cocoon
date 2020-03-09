@@ -69,16 +69,18 @@ if (!is_amp()): ?>
       //console.log(footerHtml);
       let footerScripts = footerHtml.match(/<script[^>]*>([\s\S.]*?)<\/script>/ig);
       //console.log(footerScripts);
+      //$('script').delete();
       footerScripts.forEach(script => {
-        if (!script.match(/barba.init/)) {
+        if (!script.match(/barba/)) {
           //console.log(script);
+          //$(script).delete();
           //script属性にsrcがある場合
           let res = script.match(/ src="(.+?)"/);
           let scriptTag = document.createElement("script");
 
           if (res) {
             //console.log(res[1]);
-            // scriptTag.async = true;
+            scriptTag.async = true;
             // scriptTag.defer = true;
             scriptTag.src = res[1];
           } else {
@@ -131,24 +133,30 @@ if (!is_amp()): ?>
 
     //Twitterスクリプトの呼び出し
     function tweetLoad() {
-      if (typeof twttr === 'undefined') {
-        let twitterjs = document.createElement("script");
-        twitterjs.async = true;
-        twitterjs.src = '//platform.twitter.com/widgets.js';
-        document.getElementById("container").appendChild(twitterjs);
-      } else {
-        twttr.widgets.load();
+      let tweet = document.getElementsByClassName('twitter-tweet');
+      if (tweet) {
+        if (typeof twttr === 'undefined') {
+          let twitterjs = document.createElement("script");
+          twitterjs.async = true;
+          twitterjs.src = '//platform.twitter.com/widgets.js';
+          document.getElementById("container").appendChild(twitterjs);
+        } else {
+          twttr.widgets.load();
+        }
       }
     }
     //Instagramスクリプトの呼び出し
     function instagramLoad() {
-      if (typeof window.instgrm === 'undefined') {
-        let instagramjs = document.createElement("script");
-        instagramjs.async = true;
-        instagramjs.src = '//www.instagram.com/embed.js';
-        document.getElementById("container").appendChild(instagramjs);
-      } else {
-        window.instgrm.Embeds.process();
+      let im = document.getElementsByClassName('instagram-media');
+      if (im) {
+        if (typeof window.instgrm === 'undefined') {
+          let instagramjs = document.createElement("script");
+          instagramjs.async = true;
+          instagramjs.src = '//www.instagram.com/embed.js';
+          document.getElementById("container").appendChild(instagramjs);
+        } else {
+          window.instgrm.Embeds.process();
+        }
       }
     }
 
