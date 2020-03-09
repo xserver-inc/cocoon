@@ -77,16 +77,17 @@ if (!is_amp()): ?>
           let scriptTag = document.createElement("script");
 
           if (res) {
-            console.log(res[1]);
-            scriptTag.async = true;
+            //console.log(res[1]);
+            // scriptTag.async = true;
+            // scriptTag.defer = true;
             scriptTag.src = res[1];
           } else {
             //script内にコードがある場合
             let code = script.match(/<script[^>]*>([\s\S.]+?)<\/script>/i);
             //console.log(script);
             if (code) {
-              console.log(code[1]);
-              //scriptTag.defer = true;
+              //console.log(code[1]);
+              // scriptTag.async = true;
               scriptTag.innerHTML = code[1];
             }
           }
@@ -255,6 +256,30 @@ if (!is_amp()): ?>
             instagramLoad();
 
             //footerTagsLoad(current);
+
+            <?php
+            // ob_start();
+            // get_template_part('header');
+            // $header = ob_get_clean();
+            // if (preg_match('#<head>([\s\S.]+?)</head>#', $header, $m)) {
+            //   $head = $m[1];
+            //   if (preg_match_all('#<script[^>]*>([\s\S.]*?)</script>#', $header, $n)) {
+            //     //_v($n);
+            //     if (isset($n[1]) && $n[1]) {
+            //       $tags = $n[0];
+            //       $codes = $n[1];
+            //       $i = 0;
+            //       foreach ($codes as $code) {
+            //         if ($code && !includes_string($tags[$i], '<script type="application')) {
+            //           //echo $code.PHP_EOL.PHP_EOL;
+            //         }
+            //         $i++;
+            //       }
+            //     }
+            //   }
+            // }
+
+            ?>
 
             // $(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)});
 
