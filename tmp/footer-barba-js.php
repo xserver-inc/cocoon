@@ -48,7 +48,8 @@ if (!is_amp()): ?>
         "link[rel='canonical']",
         "link[rel='amphtml']",
         "link[rel='shortlink']",
-        "script[type='application/ld+json']",
+        "script",
+        // "script[type='application/ld+json']",
       ].join(',');
       //前のページの古いタグを削除
       let headTags = [...head.querySelectorAll(removeHeadTags)];
