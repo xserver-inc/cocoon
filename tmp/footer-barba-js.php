@@ -11,11 +11,18 @@ if (!is_amp()): ?>
   <?php if (is_highspeed_mode_enable()): ?>
   <script>
   (function($){
-    //管理パネルはbarba.js動作から除外する
-    let wpadminbar = document.getElementById("wpadminbar");
-    if (wpadminbar) {
-      wpadminbar.setAttribute("data-barba-prevent", "all");
+
+
+    //barba.js遷移を無効化する
+    function barbaPrevent() {
+      //管理パネルはbarba.js動作から除外する
+      let wpadminbar = document.getElementById("wpadminbar");
+      if (wpadminbar) {
+        wpadminbar.setAttribute("data-barba-prevent", "all");
+      }
     }
+    barbaPrevent();
+
 
     //barba.js
     //barba.use(barbaPrefetch);
@@ -68,28 +75,35 @@ if (!is_amp()): ?>
     //アンカーリンクを考慮したスクロール
     //参考：https://leap-in.com/ja/notes-when-you-use-barba-js-2/
     function pageScroll(){
-      let headerFixed = false;
+      let headerFixed = <?php echo is_header_fixed() ? 'true' : 'false'; ?>;
       // check if 「#」 exists
       if(location.hash){
         let anchor = document.querySelector( location.hash );
         if(anchor){
           let rect = anchor.getBoundingClientRect();
+          //console.log(rect);
           let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          if(headerFixed){
-              let header = document.getElementById('header');
-              if(header){
-                  top = top - header.clientHeight;
-              }
-          }
+          //let scrollElem = document.scrollingElement || document.documentElement;
+
+          console.log(scrollTop);
           let top = rect.top + scrollTop;
-          window.scrollTo(0,top);
+          // let top = $(location.hash).offset().top;
+          console.log($(location.hash).offset().top);
+          // if(headerFixed){
+          //   let header = document.getElementById('header-container');
+          //   if(header){
+          //     top = top - header.clientHeight;
+          //   }
+          // }
+          //scrollElem.scrollTop = top;
+          window.scrollTo(0, top);
         }else{
           // no anchor, go to top position
-          window.scrollTo(0,0);
+          window.scrollTo(0, 0);
         }
       }else{
         // no anchor, go to top position
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
       }
     }
 
@@ -402,6 +416,8 @@ if (!is_amp()): ?>
             //       }
             //     ]
             // });
+
+            barbaPrevent();
 
             <?php //一応PHPからも操作出来るようにフック
             do_action('barba_init_transitions_after'); ?>
