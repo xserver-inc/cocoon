@@ -7,7 +7,15 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
-<?php if (!is_amp()) wp_footer(); ?>
+<?php if (!is_amp()) {
+  //再利用用にフッターコードを取得しておく
+  global $_WP_FOOTER;
+  ob_start();
+  wp_footer();
+  $f = ob_get_clean();
+  echo $f;
+  $_WP_FOOTER = $f;
+} ?>
 
 <?php //フッターで読み込むJavaScript用テンプレート
 get_template_part('tmp/footer-javascript');?>

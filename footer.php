@@ -85,14 +85,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <?php //モバイルフッターメニューボタン
     get_template_part('tmp/mobile-footer-menu-buttons'); ?>
 
+    <?php //トップへ戻るボタンテンプレート
+    get_template_part('tmp/button-go-to-top'); ?>
+
+    <?php //フッターで読み込むscriptをまとめたもの
+    get_template_part('tmp/footer-scripts');?>
+
   </div><!-- #container -->
-
-
-  <?php //トップへ戻るボタンテンプレート
-  get_template_part('tmp/button-go-to-top'); ?>
-
-  <?php //フッターで読み込むscriptをまとめたもの
-  get_template_part('tmp/footer-scripts');?>
 
   <?php //barba.js処理
   get_template_part('tmp/footer-barba-js');?>
