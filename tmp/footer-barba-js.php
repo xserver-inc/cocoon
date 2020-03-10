@@ -64,6 +64,34 @@ if (!is_amp()): ?>
       });
     }
 
+    //アンカーリンクを考慮したスクロール
+    //参考：https://leap-in.com/ja/notes-when-you-use-barba-js-2/
+    function pageScroll(){
+      let headerFixed = false;
+      // check if 「#」 exists
+      if(location.hash){
+        let anchor = document.querySelector( location.hash );
+        if(anchor){
+          let rect = anchor.getBoundingClientRect();
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if(headerFixed){
+              let header = document.getElementById('header');
+              if(header){
+                  top = top - header.clientHeight;
+              }
+          }
+          let top = rect.top + scrollTop;
+          window.scrollTo(0,top);
+        }else{
+          // no anchor, go to top position
+          window.scrollTo(0,0);
+        }
+      }else{
+        // no anchor, go to top position
+        window.scrollTo(0,0);
+      }
+    }
+
     function footerTagsLoad(target) {
       let footerHtml = target.html.match(/<div id="go-to-top" class="go-to-top">([\s\S.]*)$/i)[0];
       //console.log(footerHtml);
@@ -200,28 +228,28 @@ if (!is_amp()): ?>
             //register_comment_area_open();
 
             // // 外部ファイルの実行(任意の場所に追加)
-            // var script = document.createElement('script');
+            // let script = document.createElement('script');
             // script.src = 'https://cocoon.local/plugins/slick/slick.min.js';
             // document.body.appendChild(script);
 
             //    // 外部ファイルの実行(任意の場所に追加)
-            // var script = document.createElement('script');
+            // let script = document.createElement('script');
             // script.innerHTML = '$(".carousel-content").slick();';
             // document.body.appendChild(script);
 
             //URLのアンカー（?以降の部分）を取得、加工してアンカーに移動する
-            //var urlSearch = location.search;
+            //let urlSearch = location.search;
             //urlSearch = getGET(); //「?」を除去
             // console.log(current);
 
             // const scrollElem = document.scrollingElement || document.documentElement;
             // //console.log(tgt);
-            // var hash = location.hash;
+            // let hash = location.hash;
             // // console.log(hash);
             // // console.log(current);
             // //ハッシュ値がある場合
             // if (hash) {
-            //   // var anchor = document.getElementById(hash);
+            //   // let anchor = document.getElementById(hash);
             //   // console.log(anchor);
             //   const target = $(hash).offset().top; //アンカーの位置情報を取得
             //   //console.log(target);
@@ -237,7 +265,7 @@ if (!is_amp()): ?>
             //   $(window).on("popstate",function(event){
             //     console.log(event);
             //     // if (!event.originalEvent.state) return; // 初回アクセス時対策
-            //     // var state = event.originalEvent.state; // stateオブジェクト
+            //     // let state = event.originalEvent.state; // stateオブジェクト
             //   });
             // }
 
@@ -262,6 +290,8 @@ if (!is_amp()): ?>
             tweetLoad();
             //instagram埋め込み
             instagramLoad();
+
+            pageScroll();
 
             // (function($){$(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)})})(jQuery);
 
