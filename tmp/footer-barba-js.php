@@ -205,6 +205,10 @@ if (!is_amp()): ?>
 
     //barba.jsの実行
     barba.init({
+      prevent: function (e) {
+        //console.log(e);
+        return false;
+      },
       transitions: [
         {
           before({ current, next, trigger }) {
