@@ -42,7 +42,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- ハイスピード -->
 <div id="highspeed" class="postbox">
-  <h2 class="hndle"><?php _e( 'ページ遷移', THEME_NAME ).__( 'α版', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'ページ遷移', THEME_NAME )_e( 'α版', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <table class="form-table">
@@ -243,10 +243,10 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
       </tbody>
     </table>
-    <?php endif; ?>
 
   </div>
 </div>
+<?php endif; ?>
 
 
 <!-- 事前読み込み -->
