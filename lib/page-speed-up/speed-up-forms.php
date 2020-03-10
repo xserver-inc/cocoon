@@ -244,5 +244,35 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
+<!-- 事前読み込み -->
+<div id="pre-acquisition" class="postbox">
+  <h2 class="hndle"><?php _e( '事前読み込み設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '画像やスクリプト等のリソースの事前読み込み設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 事前読み込み -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PRE_ACQUISITION_LIST, __('事前読み込み', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_textarea_tag(OP_PRE_ACQUISITION_LIST, get_pre_acquisition_list(), __( '事前読込ドメインを入力', THEME_NAME ) , 6);
+            generate_tips_tag(__( 'linkタグでdns-prefetchとpreconnectを用いて、外部リソース読み込みの高速化を行います。', THEME_NAME ).__( 'よくわからない場合は、デフォルトのままご利用ください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+</div>
+</div>
+
+
 
 </div><!-- /.metabox-holder -->

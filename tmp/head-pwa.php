@@ -60,15 +60,4 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 <!-- アイコンの指定 -->
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_site_icon_url_l(); ?>" sizes="512x512">
 <!-- /PWA -->
-<?php else: ?>
-<script>
-	// document.addEventListener('DOMContentLoaded', function() {
-	// 	if ('serviceWorker' in navigator) {
-	// 		navigator.serviceWorker.getRegistration()
-	// 			.then(registration => {
-	// 				registration.unregister();
-	// 		})
-	// 	}
-	// }, false);
-</script>
 <?php endif; ?>
