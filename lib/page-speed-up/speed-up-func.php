@@ -27,6 +27,14 @@ function is_highspeed_mode_enable(){
 }
 endif;
 
+//ハイスピードモード除外文字列リスト
+define('OP_HIGHSPEED_MODE_EXCLUDE_LIST', 'highspeed_mode_exclude_list');
+if ( !function_exists( 'get_highspeed_mode_exclude_list' ) ):
+function get_highspeed_mode_exclude_list(){
+  return stripslashes_deep(get_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST));
+}
+endif;
+
 //HTMLを縮小化するか
 define('OP_HTML_MINIFY_ENABLE', 'html_minify_enable');
 if ( !function_exists( 'is_html_minify_enable' ) ):

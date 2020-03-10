@@ -42,21 +42,26 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- ハイスピード -->
 <div id="highspeed" class="postbox">
-  <h2 class="hndle"><?php _e( 'ハイスピード', THEME_NAME ) ?></h2>
+  <h2 class="hndle"><?php _e( 'ページ遷移', THEME_NAME ).__( 'α版', THEME_NAME ) ?></h2>
   <div class="inside">
 
     <table class="form-table">
       <tbody>
 
-        <!-- ハイスピード  -->
+        <!-- ページ遷移  -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_HIGHSPEED_MODE_ENABLE, __( 'ハイスピード', THEME_NAME ) ); ?>
+            <?php generate_label_tag(OP_HIGHSPEED_MODE_ENABLE, __( 'ページ遷移', THEME_NAME ) ); ?>
           </th>
           <td>
             <?php
-            generate_checkbox_tag(OP_HIGHSPEED_MODE_ENABLE , is_highspeed_mode_enable(), __( 'ハイスピードモードの有効化', THEME_NAME ));
-            generate_tips_tag(__( 'この機能を有効化すると、barba.jsを用いて非同期でコンテンツが読み込まれます。画面遷移はかなり早くなりますが、ある程度制限もあります。', THEME_NAME ));
+            generate_checkbox_tag(OP_HIGHSPEED_MODE_ENABLE , is_highspeed_mode_enable(), __( 'ページ遷移の高速化', THEME_NAME ));
+            generate_tips_tag(__( 'この機能を有効化すると、barba.jsを用いて非同期でコンテンツが読み込まれます。', THEME_NAME ).__('ページ遷移はかなり早くなりますが、利用できないプラグインがあるなど、ある程度制限もあります。', THEME_NAME ).__('α版ですのでテストサイトからローカル環境でお試しください。', THEME_NAME ));
+
+
+            generate_textarea_tag(OP_HIGHSPEED_MODE_EXCLUDE_LIST, get_highspeed_mode_exclude_list(), __( '高速化を除外するURL（URLの一部）', THEME_NAME ) , 3);
+            generate_tips_tag(__( 'barba.jsを用いた遷移を行わないページのURLを改行区切りで入力してください。', THEME_NAME ).__( '複数指定したい場合はURLの一部を入力することで、その文字列が含まれるURLは除外します。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリページ全体を除外する例：/category/', THEME_NAME ));
             ?>
           </td>
         </tr>

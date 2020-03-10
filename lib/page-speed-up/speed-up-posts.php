@@ -11,6 +11,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 update_theme_option(OP_BROWSER_CACHE_ENABLE);
 //ハイスピードモードを有効にするか
 update_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+//ハイスピードモード除外文字列リスト
+update_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST);
 //HTMLを縮小化するか
 update_theme_option(OP_HTML_MINIFY_ENABLE);
 //AMP HTMLを縮小化するか
