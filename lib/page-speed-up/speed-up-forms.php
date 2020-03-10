@@ -238,7 +238,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       </tbody>
     </table>
 
-</div>
+  </div>
 </div>
 
 
