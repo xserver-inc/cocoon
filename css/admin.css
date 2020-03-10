@@ -3925,6 +3925,8 @@ pre { background-color: #f3f4f5; border: 1px solid #ccc; overflow: auto; padding
 ************************************/
 .preview-label { font-weight: bold; text-align: center; margin-bottom: 0; }
 
+.tips { margin: 4px 0 12px !important; }
+
 /*設定項目のヒント*/
 form.admin-settings { margin-top: 2em; }
 
