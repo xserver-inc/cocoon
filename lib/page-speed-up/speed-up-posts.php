@@ -36,6 +36,9 @@ update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
 // //フッターJavaScript除外ファイルリスト
 // update_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST);
 
+//preconnect dns-prefetchドメインリスト
+update_theme_option(OP_PRE_ACQUISITION_LIST);
+
 //ブラウザキャッシュが有効な時
 if (isset($_POST[OP_BROWSER_CACHE_ENABLE])){
   add_browser_cache_to_htaccess();

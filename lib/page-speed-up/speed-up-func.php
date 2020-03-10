@@ -133,3 +133,34 @@ endif;
 //   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST));
 // }
 // endif;
+
+//preconnect dns-prefetchドメインリスト
+define('OP_PRE_ACQUISITION_LIST', 'pre_acquisition_list');
+if ( !function_exists( 'get_pre_acquisition_list' ) ):
+function get_pre_acquisition_list(){
+  $list = <<<EOF
+www.googletagmanager.com
+www.google-analytics.com
+pagead2.googlesyndication.com
+googleads.g.doubleclick.net
+tpc.googlesyndication.com
+ad.doubleclick.net
+www.gstatic.com
+cse.google.com
+fonts.gstatic.com
+fonts.googleapis.com
+cms.quantserve.com
+secure.gravatar.com
+cdn.syndication.twimg.com
+cdn.jsdelivr.net
+images-fe.ssl-images-amazon.com
+completion.amazon.com
+m.media-amazon.com
+i.moshimo.com
+aml.valuecommerce.com
+dalc.valuecommerce.com
+dalb.valuecommerce.com
+EOF;
+  return stripslashes_deep(get_theme_option(OP_PRE_ACQUISITION_LIST, $list));
+}
+endif;
