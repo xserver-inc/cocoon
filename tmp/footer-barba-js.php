@@ -212,25 +212,19 @@ if (!is_amp()): ?>
       transitions: [
         {
           before({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_before'); ?>
-            // console.log(current.url.href);
-            // console.log(next.url.href);
-            // if (current.url.href == next.url.href) {
-            //   return false;
-            //   exit;
-            // }
           },
           beforeLeave({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_before_leave'); ?>
           },
           leave({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_leave'); ?>
           },
           afterLeave({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_after_leave'); ?>
           },
           beforeEnter({ current, next, trigger }) {
@@ -288,15 +282,15 @@ if (!is_amp()): ?>
             //   });
             // }
 
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_before_enter'); ?>
           },
           enter({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_enter'); ?>
           },
           afterEnter({ current, next, trigger }) {
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_after_enter'); ?>
           },
           after({ current, next, trigger }) {
@@ -309,16 +303,6 @@ if (!is_amp()): ?>
             tweetLoad();
             //instagram埋め込み
             instagramLoad();
-
-            pageScroll();
-
-            // (function($){$(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)})})(jQuery);
-
-            // (function($){$(".carousel-content").slick({dots:!0,autoplaySpeed:5000,infinite:!0,slidesToShow:6,slidesToScroll:6,responsive:[{breakpoint:1240,settings:{slidesToShow:5,slidesToScroll:5}},{breakpoint:1023,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:834,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:480,settings:{slidesToShow:2,slidesToScroll:2}}]})})(jQuery);
-
-            // (function($){new ScrollHint(".scrollable-table",{suggestiveShadow:!0,i18n:{scrollable:"スクロールできます"}})})(jQuery);
-
-
             //footerTagsLoad(current);
 
             <?php //フッタースクリプトの読み込み
@@ -332,28 +316,8 @@ if (!is_amp()): ?>
             generate_baruba_js_scripts($scripts);
             ?>
 
-            <?php
-            // ob_start();
-            // get_template_part('header');
-            // $header = ob_get_clean();
-            // if (preg_match('#<head>([\s\S.]+?)</head>#', $header, $m)) {
-            //   $head = $m[1];
-            //   if (preg_match_all('#<script[^>]*>([\s\S.]*?)</script>#', $header, $n)) {
-            //     //_v($n);
-            //     if (isset($n[1]) && $n[1]) {
-            //       $tags = $n[0];
-            //       $codes = $n[1];
-            //       $i = 0;
-            //       foreach ($codes as $code) {
-            //         if ($code && !includes_string($tags[$i], '<script type="application')) {
-            //           //echo $code.PHP_EOL.PHP_EOL;
-            //         }
-            //         $i++;
-            //       }
-            //     }
-            //   }
-            // }
-
+            //アンカーリンク対応
+            pageScroll();
             ?>
 
             // $(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)});
@@ -397,7 +361,7 @@ if (!is_amp()): ?>
 
             barbaPrevent();
 
-            <?php //一応PHPからも操作出来るようにフック
+            <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_after'); ?>
           }
         }
