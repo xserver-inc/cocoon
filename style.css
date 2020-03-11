@@ -9083,6 +9083,10 @@ twitter-widget {
   display: none;
 }
 
+.click-prevention {
+  pointer-events: none;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

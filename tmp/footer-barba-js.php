@@ -219,11 +219,18 @@ if (!is_amp()): ?>
     //barba.jsの実行
     barba.init({
       prevent: function (e) {
+        //同一リンクの遷移防止（ページ移動できず混乱を招くので不要かも？）
+        if (e.href === location.href) {
+          //リンクを動作させない
+          e.el.setAttribute('href','javascript:void(0)');
+          //CSSで対応する場合
+          //e.el.classList.add('click-prevention');
+        }
         <?php
         $urls = list_text_to_array(get_highspeed_mode_exclude_list());
         ?>
-        console.log(e);
-        return false;
+        //console.log(e);
+        //return false;
       },
       transitions: [
         {
@@ -244,59 +251,9 @@ if (!is_amp()): ?>
             do_action('barba_init_transitions_after_leave'); ?>
           },
           beforeEnter({ current, next, trigger }) {
-            //console.log('beforeEnter');
-            //console.log(next);
 
             //headタグ変換
             replaceHeadTags(next);
-
-            // //ページトップに移動
-            // const scrollElem = document.scrollingElement || document.documentElement;
-            // scrollElem.scrollTop = 0;
-            //コメントエリアを開く動作の登録
-            //register_comment_area_open();
-
-            // // 外部ファイルの実行(任意の場所に追加)
-            // let script = document.createElement('script');
-            // script.src = 'https://cocoon.local/plugins/slick/slick.min.js';
-            // document.body.appendChild(script);
-
-            //    // 外部ファイルの実行(任意の場所に追加)
-            // let script = document.createElement('script');
-            // script.innerHTML = '$(".carousel-content").slick();';
-            // document.body.appendChild(script);
-
-            //URLのアンカー（?以降の部分）を取得、加工してアンカーに移動する
-            //let urlSearch = location.search;
-            //urlSearch = getGET(); //「?」を除去
-            // console.log(current);
-
-            // const scrollElem = document.scrollingElement || document.documentElement;
-            // //console.log(tgt);
-            // let hash = location.hash;
-            // // console.log(hash);
-            // // console.log(current);
-            // //ハッシュ値がある場合
-            // if (hash) {
-            //   // let anchor = document.getElementById(hash);
-            //   // console.log(anchor);
-            //   const target = $(hash).offset().top; //アンカーの位置情報を取得
-            //   //console.log(target);
-            //   scrollElem.scrollTop = Math.floor(target);
-            // } else {
-            //   scrollElem.scrollTop = 0;
-            // }
-
-            //window.history.pushState(null, null, pagelinkHref);
-
-            // // ブラウザがpushStateに対応しているかチェック
-            // if (window.history && window.history.pushState){
-            //   $(window).on("popstate",function(event){
-            //     console.log(event);
-            //     // if (!event.originalEvent.state) return; // 初回アクセス時対策
-            //     // let state = event.originalEvent.state; // stateオブジェクト
-            //   });
-            // }
 
             <?php //一応PHPからもスクリプトを挿入できるようにフック
             do_action('barba_init_transitions_before_enter'); ?>
