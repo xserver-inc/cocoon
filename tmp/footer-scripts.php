@@ -8,7 +8,8 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
 <?php if (!is_amp()) {
-  //再利用用にフッターコードを取得しておく
+  //再利用用にフッターコードを取得
+  //wp_footer()関数では、一度しか出力が行われないようなので事前にグローバル変数に格納しておく
   global $_WP_FOOTER;
   ob_start();
   wp_footer();

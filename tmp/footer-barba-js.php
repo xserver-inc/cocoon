@@ -322,40 +322,14 @@ if (!is_amp()): ?>
             //footerTagsLoad(current);
 
             <?php //フッタースクリプトの読み込み
-            // ob_start();
-            // get_template_part('tmp/footer-scripts');
-            // $scripts = ob_get_clean();
+            //wp_footer()コードの再読み込み
             global $_WP_FOOTER;
-            $scripts = $_WP_FOOTER;
-            //_v($scripts);
-            if (preg_match_all('#<script[^>]*?>([\s\S.]*?)</script>#i', $scripts, $m)) {
-              //_v($m);
-              if (isset($m[1]) && $m[1]) {
-                $tags = $m[0];
-                $codes = $m[1];
-                $i = 0;
-                foreach ($codes as $code) {
-                  if ($code) {//コードの場合
-                    //_v($code);
-                    echo $code.PHP_EOL.PHP_EOL.PHP_EOL;
-                  } else {//スクリプトファイルの場合
-                    $tag = $tags[$i];
-                    if (preg_match('#src=[\'"](.+)[\'"]#i', $tag, $n)) {
-                      $src = get_query_removed_url($n[1]);
-                      if (includes_site_url($src)) {
-                        $src_file = url_to_local($src);
-                        if (file_exists($src_file)) {
-                          $script = wp_filesystem_get_contents($src_file);
-                          echo $script.PHP_EOL.PHP_EOL.PHP_EOL;
-                        }
-                      }
-                    }
-                  }
-                  $i++;
-                }
-              }
-            }
-
+            generate_baruba_js_scripts($_WP_FOOTER);
+            //テンプレートのスクリプトも再読み込み
+            ob_start();
+            get_template_part('tmp/footer-scripts');
+            $scripts = ob_get_clean();
+            generate_baruba_js_scripts($scripts);
             ?>
 
             <?php
