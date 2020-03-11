@@ -206,7 +206,10 @@ if (!is_amp()): ?>
     //barba.jsの実行
     barba.init({
       prevent: function (e) {
-        //console.log(e);
+        <?php
+
+        ?>
+        console.log(e);
         return false;
       },
       transitions: [
@@ -318,7 +321,6 @@ if (!is_amp()): ?>
 
             //アンカーリンク対応
             pageScroll();
-            ?>
 
             // $(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)});
 
