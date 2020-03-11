@@ -215,18 +215,18 @@ if (!is_amp()): ?>
     //barba.jsの実行
     barba.init({
       prevent: function (e) {
-        //同一リンクの遷移防止（ページ移動できず混乱を招くので不要かも？）
-        if (e.href === location.href) {
-          //リンクを動作させない
-          e.el.setAttribute('href','javascript:void(0)');
-          //CSSで対応する場合
-          //e.el.classList.add('click-prevention');
-        }
+        // //同一リンクの遷移防止（ページ移動できず混乱を招くので不要かも？）
+        // if (e.href === location.href) {
+        //   //リンクを動作させない
+        //   e.el.setAttribute('href','javascript:void(0)');
+        //   //CSSで対応する場合
+        //   //e.el.classList.add('click-prevention');
+        // }
         <?php
         $urls = list_text_to_array(get_highspeed_mode_exclude_list());
         ?>
         //console.log(e);
-        //return false;
+        return false;
       },
       transitions: [
         {
