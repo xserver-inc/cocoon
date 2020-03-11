@@ -7,16 +7,6 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
-<?php if (!is_amp()) {
-  //再利用用にフッターコードを取得
-  //wp_footer()関数では、一度しか出力が行われないようなので事前にグローバル変数に格納しておく
-  global $_WP_FOOTER;
-  ob_start();
-  wp_footer();
-  $f = ob_get_clean();
-  echo $f;
-  $_WP_FOOTER = $f;
-} ?>
 
 <?php //フッターで読み込むJavaScript用テンプレート
 get_template_part('tmp/footer-javascript');?>
