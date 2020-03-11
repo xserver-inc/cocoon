@@ -916,6 +916,7 @@ function generate_popular_entries_tag($atts){
     'ranking_visible' => 0,
     'pv_visible' => 0,
     'cat_ids' => array(),
+    'children' => 0,
     'exclude_post_ids' => array(),
     'exclude_cat_ids' => array(),
     'bold' => 0,
@@ -923,7 +924,7 @@ function generate_popular_entries_tag($atts){
     'class' => null,
   ), $atts));
 
-  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids);
+  $records = get_access_ranking_records($days, $entry_count, $entry_type, $cat_ids, $exclude_post_ids, $exclude_cat_ids, $children);
 
   $thumb_size = get_popular_entries_thumbnail_size($entry_type);
   $atts = array(
