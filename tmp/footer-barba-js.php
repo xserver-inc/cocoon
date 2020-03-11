@@ -85,17 +85,16 @@ if (!is_amp()): ?>
           let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           //let scrollElem = document.scrollingElement || document.documentElement;
 
-          console.log(scrollTop);
+          //console.log(scrollTop);
           let top = rect.top + scrollTop;
           // let top = $(location.hash).offset().top;
-          console.log($(location.hash).offset().top);
+          //console.log($(location.hash).offset().top);
           // if(headerFixed){
           //   let header = document.getElementById('header-container');
           //   if(header){
-          //     top = top - header.clientHeight;
+          //     top = top + header.clientHeight;
           //   }
           // }
-          //scrollElem.scrollTop = top;
           window.scrollTo(0, top);
         }else{
           // no anchor, go to top position
@@ -203,11 +202,24 @@ if (!is_amp()): ?>
       }
     }
 
+    //LinkSwitch
+    function LinkSwitchLoad() {
+      if  (typeof VcDal === 'function') {
+        let vcdalObj = new VcDal;
+        vcdalObj.finishLoad();
+      }
+
+      if (typeof myLinkBoxDal === 'function'){
+        let mlbObj = new myLinkBoxDal;
+        mlbObj.finishLoad();
+      }
+    }
+
     //barba.jsの実行
     barba.init({
       prevent: function (e) {
         <?php
-
+        $urls = list_text_to_array(get_highspeed_mode_exclude_list());
         ?>
         console.log(e);
         return false;
@@ -307,6 +319,9 @@ if (!is_amp()): ?>
             //instagram埋め込み
             instagramLoad();
             //footerTagsLoad(current);
+
+            //LinkSwitch
+            LinkSwitchLoad();
 
             <?php //フッタースクリプトの読み込み
             //wp_footer()コードの再読み込み
