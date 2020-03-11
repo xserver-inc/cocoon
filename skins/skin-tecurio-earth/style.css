@@ -29,6 +29,9 @@ body p{
 		margin-left: 1em;
 	}
 }
+.entry-content .wp-caption {
+  margin: 1.4em auto;
+}
 .content .main .entry-content > .blogcard-wrap{
 	width: auto;
 }
