@@ -174,6 +174,7 @@ if (!is_amp()): ?>
     <?php endif; ?>
 
     //Twitterスクリプトの呼び出し
+    //http://absg.hatenablog.com/entry/2018/08/31/230703
     function tweetLoad() {
       let tweet = document.getElementsByClassName('twitter-tweet');
       if (tweet) {
@@ -336,46 +337,7 @@ if (!is_amp()): ?>
 
             //アンカーリンク対応
             pageScroll();
-
-            // $(".entry-content pre").each(function(i,block){hljs.highlightBlock(block)});
-
-            // $(".carousel-content").slick({
-            //   dots: true,
-            //   infinite: true,
-            //   slidesToShow: 6,
-            //   slidesToScroll: 6,
-            //   responsive: [
-            //       {
-            //         breakpoint: 1240,
-            //         settings: {
-            //           slidesToShow: 5,
-            //           slidesToScroll: 5
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 1023,
-            //         settings: {
-            //           slidesToShow: 4,
-            //           slidesToScroll: 4
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 834,
-            //         settings: {
-            //           slidesToShow: 3,
-            //           slidesToScroll: 3
-            //         }
-            //       },
-            //       {
-            //         breakpoint: 480,
-            //         settings: {
-            //           slidesToShow: 2,
-            //           slidesToScroll: 2
-            //         }
-            //       }
-            //     ]
-            // });
-
+            //pjax防止リンクの設定
             barbaPrevent();
 
             <?php //一応PHPからもスクリプトを挿入できるようにフック
