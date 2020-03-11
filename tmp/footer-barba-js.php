@@ -23,10 +23,6 @@ if (!is_amp()): ?>
     }
     barbaPrevent();
 
-
-    //barba.js
-    //barba.use(barbaPrefetch);
-
     //head内タグのの移し替え
     function replaceHeadTags(target) {
       let head = document.head;
@@ -304,24 +300,6 @@ if (!is_amp()): ?>
       ]
     });
 
-    // const eventDelete = e => {
-    //   if (e.currentTarget.href === window.location.href) {
-    //     // console.log(e.currentTarget.href);
-    //     // console.log(window.location.href);
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     return;
-    //   }
-    // };
-
-    // const links = [...document.querySelectorAll('a[href]')];
-    // //console.log(links);
-    // links.forEach(link => {
-    //   link.addEventListener('click', e => {
-    //     //console.log('click');
-    //     eventDelete(e);
-    //   }, false);
-    // });
   })($);
   </script>
   <?php endif; ?>
