@@ -26,6 +26,14 @@ if ( get_google_search_console_id() ): ?>
 <meta name="google-site-verification" content="<?php echo get_google_search_console_id() ?>" />
 <!-- /Google Search Console -->
 <?php endif;//Google Search Console終了 ?>
+<?php //preconnect dns-prefetch
+$domains = list_text_to_array(get_pre_acquisition_list());
+if ($domains) {
+  echo '<!-- preconnect dns-prefetch -->'.PHP_EOL;
+}
+foreach ($domains as $domain): ?>
+<link rel="preconnect dns-prefetch" href="//<?php echo $domain; ?>">
+<?php endforeach; ?>
 <?php //Google Tag Manager
 if (is_analytics() && $tracking_id = get_google_tag_manager_tracking_id()): ?>
 <!-- Google Tag Manager -->
@@ -41,15 +49,6 @@ get_template_part('tmp/ad-auto-adsense'); ?>
 <?php //WordPressが出力するヘッダー情報
 wp_head();
 ?>
-
-<?php //preconnect dns-prefetch
-$domains = list_text_to_array(get_pre_acquisition_list());
-if ($domains) {
-  echo '<!-- preconnect dns-prefetch -->'.PHP_EOL;
-}
-foreach ($domains as $domain): ?>
-<link rel="preconnect dns-prefetch" href="//<?php echo $domain; ?>">
-<?php endforeach; ?>
 
 <!-- Preload -->
 <link rel="preload" as="font" type="font/woff" href="<?php echo FONT_ICOMOON_WOFF_URL; ?>" crossorigin>

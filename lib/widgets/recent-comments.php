@@ -61,13 +61,16 @@ class RecentCommentsWidgetItem extends WP_Widget {
           $comments = $comments_query->query( $comments_args );
           //コメントループ
           if ( $comments ) {
+            //日付フォーマットの指定
+            $format = get_site_date_format();
+            $format = apply_filters('recent_comments_widget_date_format', $format);
             foreach ( $comments as $comment ) {
               //var_dump($comment);
               $url = get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID;
               $title = $comment->post_title;
               $avatar = get_avatar( $comment, '42', null );
               $author = get_comment_author($comment->comment_ID);
-              $date = get_comment_date( get_site_date_format(), $comment->comment_ID);
+              $date = get_comment_date($format, $comment->comment_ID);
               $comment_content = strip_tags($comment->comment_content);
               if(mb_strlen($comment_content,"UTF-8") > $str_count) {
                 $comment_content = mb_substr($comment_content, 0, $str_count).'...';
