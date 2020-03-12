@@ -141,6 +141,8 @@ function get_pre_acquisition_list(){
   $list = <<<EOF
 www.googletagmanager.com
 www.google-analytics.com
+ajax.googleapis.com
+cdnjs.cloudflare.com
 pagead2.googlesyndication.com
 googleads.g.doubleclick.net
 tpc.googlesyndication.com
