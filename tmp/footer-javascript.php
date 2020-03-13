@@ -66,6 +66,7 @@ if (!is_amp()): ?>
   if (is_header_fixed()): ?>
   <script>
   (function($){
+    //固定ヘッダー化
     function stickyHeader(){
       if (!$("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
@@ -79,12 +80,9 @@ if (!is_amp()): ?>
           'width': '100%',
         });
         $("#header-container").animate({'top': '0'}, 500);
-        /*$("#sidebar-scroll, #main-scroll").css({
-          'padding-top': $("#header-container").height() + 'px',
-        });
-        console.log('stickyHeader');*/
       }
     }
+    //固定ヘッダー解除
     function staticHeader(){
       if ($("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
@@ -97,10 +95,6 @@ if (!is_amp()): ?>
           'top': 'auto',
           'width': 'auto',
         });
-        /*$("#sidebar-scroll, #main-scroll").css({
-          'padding-top': 0,
-        });
-        console.log('staticHeader');*/
       }
     }
 
@@ -123,9 +117,7 @@ if (!is_amp()): ?>
         } else {
           pt = 0;
         }
-        /*console.log('of:'+offset);
-        console.log('st:'+scrollTop);
-        console.log($(selector).css('padding-top'));*/
+
         if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
           if (pt <= 1) {
             $(selector).css({
@@ -140,20 +132,26 @@ if (!is_amp()): ?>
           }
         }
       }
+      //スクロール追従エリアの調整
       function adjustScrollAreas() {
         adjustScrollArea('#sidebar-scroll');
         adjustScrollArea('#main-scroll');
       }
 
-      /*ヘッダーメニューの固定*/
-      if (s1 ^ s2) {
-        if (s2 && w >  mobileWidth) {
-          stickyHeader();
+      //固定ヘッダーのスタイル決め
+      function adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth) {
+        /*ヘッダーメニューの固定*/
+        if (s1 ^ s2) {
+          if (s2 && w >  mobileWidth) {
+            stickyHeader();
+          }
+        }
+        if (scrollTop == 0 || w <=  mobileWidth) {
+          staticHeader();
         }
       }
-      if (scrollTop == 0 || w <=  mobileWidth) {
-        staticHeader();
-      }
+
+      adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth);
       adjustScrollAreas();
 
       prevScrollTop = scrollTop;
