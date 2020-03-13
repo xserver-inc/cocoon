@@ -71,7 +71,12 @@ if (!is_amp()): ?>
     //アンカーリンクを考慮したスクロール
     //参考：https://leap-in.com/ja/notes-when-you-use-barba-js-2/
     function pageScroll(){
-      let headerFixed = <?php echo is_header_fixed() ? 'true' : 'false'; ?>;
+      let headerFixed = <?php echo is_header_fixed() ? 1 : 0; ?>;
+      let headerContainer = document.getElementById("header-container");
+      let fixedHeaderClass = 'fixed-header';
+      if (headerFixed) {
+        headerContainer.classList.remove(fixedHeaderClass);
+      }
       // check if 「#」 exists
       if(location.hash){
         let anchor = document.querySelector( location.hash );
@@ -99,6 +104,9 @@ if (!is_amp()): ?>
       }else{
         // no anchor, go to top position
         window.scrollTo(0, 0);
+      }
+      if (headerFixed) {
+        headerContainer.classList.add(fixedHeaderClass);
       }
     }
 
