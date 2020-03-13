@@ -140,9 +140,12 @@ if (!is_amp()): ?>
 
       //固定ヘッダーのスタイル決め
       function adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth) {
+        // console.log(scrollTop);
         /*ヘッダーメニューの固定*/
+        // console.log(s1+'   '+s2+'    '+(s1 ^ s2));
         if (s1 ^ s2) {
-          if (s2 && w >  mobileWidth) {
+          // console.log(s2 && (w > mobileWidth));
+          if (s2 && (w > mobileWidth)) {
             stickyHeader();
           }
         }

@@ -72,17 +72,19 @@ if (!is_amp()): ?>
     //参考：https://leap-in.com/ja/notes-when-you-use-barba-js-2/
     function pageScroll(){
       let headerFixed = <?php echo is_header_fixed() ? 1 : 0; ?>;
-      let headerContainer = document.getElementById("header-container");
+      let headerContainer = document.getElementById('header-container');
       let fixedHeaderClass = 'fixed-header';
-      if (headerFixed) {
-        headerContainer.classList.remove(fixedHeaderClass);
-      }
+
       // check if 「#」 exists
       if(location.hash){
         let anchor = document.querySelector( location.hash );
         if(anchor){
+          if (headerFixed) {
+            headerContainer.classList.remove(fixedHeaderClass);
+          }
+
           let rect = anchor.getBoundingClientRect();
-          //console.log(rect);
+          console.log(rect);
           let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           //let scrollElem = document.scrollingElement || document.documentElement;
 
@@ -90,11 +92,16 @@ if (!is_amp()): ?>
           let top = rect.top + scrollTop;
           // let top = $(location.hash).offset().top;
           //console.log($(location.hash).offset().top);
-          // if(headerFixed){
-          //   let header = document.getElementById('header-container');
-          //   if(header){
-          //     top = top + header.clientHeight;
-          //   }
+          if(headerFixed){
+            if(headerContainer){
+              //ヘッダーが固定されている場合の高さ調整
+              top = top - headerContainer.clientHeight - 60;
+              //60はみやすくするための調整値
+            }
+          }
+
+          // if (headerFixed) {
+          //   headerContainer.classList.add(fixedHeaderClass);
           // }
           window.scrollTo(0, top);
         }else{
@@ -104,9 +111,6 @@ if (!is_amp()): ?>
       }else{
         // no anchor, go to top position
         window.scrollTo(0, 0);
-      }
-      if (headerFixed) {
-        headerContainer.classList.add(fixedHeaderClass);
       }
     }
 
