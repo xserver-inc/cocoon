@@ -224,9 +224,20 @@ if (!is_amp()): ?>
         // }
         <?php
         $urls = list_text_to_array(get_highspeed_mode_exclude_list());
+        $joined_urls = implode(',', $urls);
         ?>
-        //console.log(e);
-        return false;
+        // console.log(e);
+        $res = false;
+        let joinedUrls = '<?php echo $joined_urls;?>';
+        if (joinedUrls) {
+          let urls = joinedUrls.split(',');
+          // console.log(urls);
+          urls.forEach(item => {
+            // console.log(item+' == '+e.href+' => '+e.href.includes(item));
+            $res = $res || e.href.includes(item);
+          });
+        }
+        return $res;
       },
       transitions: [
         {
