@@ -561,7 +561,6 @@ jQuery(function($) {
 }
 endif;
 
-
 //デフォルトの抜粋入力欄をビジュアルエディターにする
 add_action( 'add_meta_boxes', array ( 'VisualEditorExcerpt', 'switch_boxes' ) );
 if ( !class_exists( 'VisualEditorExcerpt' ) ):
@@ -571,21 +570,24 @@ class VisualEditorExcerpt{
     if ( ! post_type_supports( $GLOBALS['post']->post_type, 'excerpt' ) )    {
       return;
     }
+    $current_screen = get_current_screen();
+    if ( ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) ) {
+    } else {
+      remove_meta_box(
+        'postexcerpt' // ID
+      ,   ''      // スクリーン、空だと全ての投稿タイプをサポート
+      ,   'normal'    // コンテキスト
+      );
 
-    remove_meta_box(
-      'postexcerpt' // ID
-    ,   ''      // スクリーン、空だと全ての投稿タイプをサポート
-    ,   'normal'    // コンテキスト
-    );
-
-    add_meta_box(
-      'postexcerpt2'   // Reusing just 'postexcerpt' doesn't work.
-    ,   __( 'Excerpt' )  // タイトル
-    ,   array ( __CLASS__, 'show' ) // 表示関数
-    ,   null          // スクリーン
-    ,   'normal'      // コンテキスト
-    ,   'core'        // 優先度
-    );
+      add_meta_box(
+        'postexcerpt2'   // Reusing just 'postexcerpt' doesn't work.
+      ,   __( 'Excerpt' )  // タイトル
+      ,   array ( __CLASS__, 'show' ) // 表示関数
+      ,   null          // スクリーン
+      ,   'normal'      // コンテキスト
+      ,   'core'        // 優先度
+      );
+    }
   }
 
 
