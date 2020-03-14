@@ -74,6 +74,7 @@ if (is_header_fixed()): ?>
       $("#header-container").css({
         'position': 'fixed',
         'top': '-100px',
+        'left': '0',
         'width': '100%',
       });
       $("#header-container").animate({'top': '0'}, 500);
@@ -93,6 +94,7 @@ if (is_header_fixed()): ?>
       $("#header-container").css({
         'position': 'static',
         'top': 'auto',
+        'left': 'auto',
         'width': 'auto',
       });
       /*$("#sidebar-scroll, #main-scroll").css({
