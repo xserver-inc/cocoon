@@ -4727,4 +4727,4 @@ textarea[name="the_page_memo"] { width: 100%; }
 .tagcloud .admin-tag .tag-link-count { margin-left: 8px; }
 .tagcloud input { margin-right: 5px; }
 
-.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover { background: #0071a1 !important; border-color: #0071a1 !important; color: #fff !important; }
+.wp-core-ui .button-primary { background: #0071a1 !important; border-color: #0071a1 !important; color: #fff !important; }
