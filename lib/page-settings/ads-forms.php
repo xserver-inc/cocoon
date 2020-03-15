@@ -120,7 +120,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'by_auto' => __( 'アドセンス自動広告のみ利用', THEME_NAME ),
               //'by_auto_and_myself' => __( '自動広告とマニュアル広告を併用', THEME_NAME ),
-              'by_myself' => __( 'マニュアル広告設定（自前で位置を設定）', THEME_NAME ).__( '※要AdSense管理画面で自動広告無効', THEME_NAME ),
+              'by_myself' => __( 'マニュアル広告設定（自前で位置を設定）', THEME_NAME ).__( '※要AdSense管理画面で自動広告無効', THEME_NAME ).get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/auto-adsense-off.png', __( 'AdSenseの「広告」設定からドメインの「編集」ボタンを押して「自動広告」の「無効」にしてください。', THEME_NAME ), 500),
             );
             generate_radiobox_tag(OP_ADSENSE_DISPLAY_METHOD, $options, get_adsense_display_method());
             generate_tips_tag(__( '「自動広告」を選択した場合は、AdSenseが勝手に広告コードを挿入するので制御はできません。「自動広告のみ」が有効の場合、「広告の表示位置」や「[ad]ショートコード」で設定した広告の表示は無効になります。', THEME_NAME ));
