@@ -1139,3 +1139,10 @@ textarea[name="the_page_memo"]{
   //   // border-radius: 6px;
   // }
 }
+
+//管理画面のボタン色
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+  background: #0071a1 !important;
+  border-color: #0071a1 !important;
+  color: #fff !important;
+}
