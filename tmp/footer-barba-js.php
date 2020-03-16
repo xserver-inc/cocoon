@@ -115,51 +115,51 @@ if (!is_amp()): ?>
       }
     }
 
-    function footerTagsLoad(target) {
-      let footerHtml = target.html.match(/<div id="go-to-top" class="go-to-top">([\s\S.]*)$/i)[0];
-      //console.log(footerHtml);
-      let footerScripts = footerHtml.match(/<script[^>]*>([\s\S.]*?)<\/script>/ig);
-      //console.log(footerScripts);
-      //$('script').delete();
-      footerScripts.forEach(script => {
-        if (!script.match(/barba/)) {
-          //console.log(script);
-          //$(script).delete();
-          //script属性にsrcがある場合
-          let res = script.match(/ src="(.+?)"/);
-          let scriptTag = document.createElement("script");
+    // function footerTagsLoad(target) {
+    //   let footerHtml = target.html.match(/<div id="go-to-top" class="go-to-top">([\s\S.]*)$/i)[0];
+    //   //console.log(footerHtml);
+    //   let footerScripts = footerHtml.match(/<script[^>]*>([\s\S.]*?)<\/script>/ig);
+    //   //console.log(footerScripts);
+    //   //$('script').delete();
+    //   footerScripts.forEach(script => {
+    //     if (!script.match(/barba/)) {
+    //       //console.log(script);
+    //       //$(script).delete();
+    //       //script属性にsrcがある場合
+    //       let res = script.match(/ src="(.+?)"/);
+    //       let scriptTag = document.createElement("script");
 
-          if (res) {
-            //console.log(res[1]);
-            scriptTag.async = true;
-            // scriptTag.defer = true;
-            scriptTag.src = res[1];
-          } else {
-            //script内にコードがある場合
-            let code = script.match(/<script[^>]*>([\s\S.]+?)<\/script>/i);
-            //console.log(script);
-            if (code) {
-              //console.log(code[1]);
-              // scriptTag.async = true;
-              scriptTag.innerHTML = code[1];
-            }
-          }
-          document.getElementById("container").appendChild(scriptTag);
-          // let url = script.match(/ src="(.+?)"/)[1];
-          // console.log(url);
-          // if (url) {
+    //       if (res) {
+    //         //console.log(res[1]);
+    //         scriptTag.async = true;
+    //         // scriptTag.defer = true;
+    //         scriptTag.src = res[1];
+    //       } else {
+    //         //script内にコードがある場合
+    //         let code = script.match(/<script[^>]*>([\s\S.]+?)<\/script>/i);
+    //         //console.log(script);
+    //         if (code) {
+    //           //console.log(code[1]);
+    //           // scriptTag.async = true;
+    //           scriptTag.innerHTML = code[1];
+    //         }
+    //       }
+    //       document.getElementById("container").appendChild(scriptTag);
+    //       // let url = script.match(/ src="(.+?)"/)[1];
+    //       // console.log(url);
+    //       // if (url) {
 
-          // } else {
+    //       // } else {
 
-          // }
-          // console.log($(script));
-          // $('#container').append(script);
-          //document.getElementById("container").appendChild($(script));
-        }
-        //
-      });
-      //console.log(footerScripts);
-    }
+    //       // }
+    //       // console.log($(script));
+    //       // $('#container').append(script);
+    //       //document.getElementById("container").appendChild($(script));
+    //     }
+    //     //
+    //   });
+    //   //console.log(footerScripts);
+    // }
     <?php
     $analytics_tracking_id = get_google_analytics_tracking_id();
     if ($analytics_tracking_id && is_analytics()): ?>
@@ -324,7 +324,7 @@ if (!is_amp()): ?>
       ]
     });
 
-  })($);
+  })(jQuery);
   </script>
   <?php endif; ?>
 <?php endif; ?>
@@ -332,7 +332,7 @@ if (!is_amp()): ?>
 $buffer = ob_get_clean();
 //JS縮小化
 if (is_js_minify_enable()) {
-  // $buffer = tag_code_to_minify_js($buffer);
+  //$buffer = tag_code_to_minify_js($buffer);
 }
 echo $buffer;
 ?>
