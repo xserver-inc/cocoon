@@ -118,8 +118,6 @@ add_action('get_header', 'code_minify_buffer_start', 99999999);
 add_action('get_template_part_tmp/amp-header', 'code_minify_buffer_start', 99999999);//AMP
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  // if (!is_minify_page()) return;
-
   ob_start('code_minify_call_back');
 }
 endif;
@@ -128,8 +126,6 @@ endif;
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  // if (!is_minify_page()) return;
-
   if (ob_get_length()){
     ob_end_flush();
   }
