@@ -6,6 +6,7 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit;
+ob_start();
 
 if (!is_amp()): ?>
   <?php if (is_highspeed_mode_enable()): ?>
@@ -327,3 +328,11 @@ if (!is_amp()): ?>
   </script>
   <?php endif; ?>
 <?php endif; ?>
+<?php
+$buffer = ob_get_clean();
+//JS縮小化
+if (is_js_minify_enable()) {
+  // $buffer = tag_code_to_minify_js($buffer);
+}
+echo $buffer;
+?>
