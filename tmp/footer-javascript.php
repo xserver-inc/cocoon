@@ -8,21 +8,29 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (!is_amp()): ?>
+
+
   <?php //AdSense非同期スクリプトを出力
   global $_IS_ADSENSE_EXIST;
   //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
   if ($_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
-  }
+  } //AdSense非同期スクリプトを出力
   ?>
+
+
   <?php //Pinterestシェア用のスクリプト
   if (is_singular() && is_pinterest_share_pin_visible()): ?>
   <script async defer data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
-  <?php endif ?>
+  <?php endif //Pinterestシェア用のスクリプト ?>
+
+
   <?php //Pinterestシェアボタン用のスクリプト
   if (is_singular() && (is_top_pinterest_share_button_visible() || is_bottom_pinterest_share_button_visible())): ?>
   <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="//assets.pinterest.com/js/pinit_main.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pinterest-btn-js");</script>
-  <?php endif ?>
+  <?php endif //Pinterestシェアボタン用のスクリプト ?>
+
+
   <?php //コピーシェアボタン用のスクリプト
   global $_MOBILE_COPY_BUTTON;
   if (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible() || $_MOBILE_COPY_BUTTON): ?>
@@ -44,7 +52,9 @@ if (!is_amp()): ?>
     });
   })(jQuery);
   </script>
-  <?php endif ?>
+  <?php endif //コピーシェアボタン用のスクリプト ?>
+
+
   <?php //カルーセルが表示されている時
   if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
   <script>
@@ -53,123 +63,130 @@ if (!is_amp()): ?>
     $('.carousel').fadeIn();
   });
   </script>
-  <?php endif ?>
+  <?php endif //カルーセルが表示されている時?>
+
+
   <?php //本文中のJavaScriptをまとめて出力
   global $_THE_CONTENT_SCRIPTS;
   if ($_THE_CONTENT_SCRIPTS): ?>
   <script><?php echo $_THE_CONTENT_SCRIPTS; ?></script>
-  <?php endif ?>
-<?php endif ?>
-<?php //固定ヘッダー
-if (is_header_fixed()): ?>
-<script>
-(function($){
-  function stickyHeader(){
-    if (!$("#header-container").hasClass("fixed-header")) {
-      <?php if (get_header_layout_type_center_logo()): ?>
-      /*トップメニュータイプに変更する*/
-      $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu cl-slim').addClass("hlt-top-menu wrap");
-      <?php endif; ?>
-      $("#header-container").addClass("fixed-header");
-      $("#header-container").css({
-        'position': 'fixed',
-        'top': '-100px',
-        'left': '0',
-        'width': '100%',
-      });
-      $("#header-container").animate({'top': '0'}, 500);
-      /*$("#sidebar-scroll, #main-scroll").css({
-        'padding-top': $("#header-container").height() + 'px',
-      });
-      console.log('stickyHeader');*/
-    }
-  }
-  function staticHeader(){
-    if ($("#header-container").hasClass("fixed-header")) {
-      <?php if (get_header_layout_type_center_logo()): ?>
-      /*センターロゴタイプに戻す*/
-      $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass("<?php echo get_additional_header_container_classes(); ?>");
-      <?php endif; ?>
-      $("#header-container").removeClass("fixed-header");
-      $("#header-container").css({
-        'position': 'static',
-        'top': 'auto',
-        'left': 'auto',
-        'width': 'auto',
-      });
-      /*$("#sidebar-scroll, #main-scroll").css({
-        'padding-top': 0,
-      });
-      console.log('staticHeader');*/
-    }
-  }
+  <?php endif //本文中のJavaScriptをまとめて出力 ?>
 
-  var prevScrollTop = -1;
-  var $window = $(window);
-  var mobileWidth = 1023;
-  $window.scroll(function(){
-    var scrollTop = $window.scrollTop();
-    var threashold = 600;
-    var s1 = (prevScrollTop > threashold);
-    var s2 = (scrollTop > threashold);
-    var w = $window.width();
 
-    function adjustScrollArea(selector) {
-      offset = $(selector).offset().top;
-      h = $("#header-container").height();
-      pt = $(selector).css('padding-top')
-      if (pt) {
-        pt = pt.replace('px', '');
-      } else {
-        pt = 0;
-      }
-      /*console.log('of:'+offset);
-      console.log('st:'+scrollTop);
-      console.log($(selector).css('padding-top'));*/
-      if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
-        if (pt <= 1) {
-          $(selector).css({
-            'padding-top': h + 'px',
-          });
-        }
-      } else {
-        if (pt > 0) {
-          $(selector).css({
-            'padding-top': 0,
-          });
-        }
+  <?php //固定ヘッダー
+  if (is_header_fixed()): ?>
+  <script>
+  (function($){
+    //固定ヘッダー化
+    function stickyHeader(){
+      if (!$("#header-container").hasClass("fixed-header")) {
+        <?php if (get_header_layout_type_center_logo()): ?>
+        /*トップメニュータイプに変更する*/
+        $("#header-container-in").removeClass('hlt-center-logo hlt-center-logo-top-menu cl-slim').addClass("hlt-top-menu wrap");
+        <?php endif; ?>
+        $("#header-container").addClass("fixed-header");
+        $("#header-container").css({
+          'position': 'fixed',
+          'top': '-100px',
+          'left': '0',
+          'width': '100%',
+        });
+        $("#header-container").animate({'top': '0'}, 500);
       }
     }
-    function adjustScrollAreas() {
-      adjustScrollArea('#sidebar-scroll');
-      adjustScrollArea('#main-scroll');
+
+    //固定ヘッダーの解除
+    function staticHeader(){
+      if ($("#header-container").hasClass("fixed-header")) {
+        <?php if (get_header_layout_type_center_logo()): ?>
+        /*センターロゴタイプに戻す*/
+        $("#header-container-in").removeClass("hlt-top-menu hlt-tm-right hlt-tm-small hlt-tm-small wrap").addClass("<?php echo get_additional_header_container_classes(); ?>");
+        <?php endif; ?>
+        $("#header-container").removeClass("fixed-header");
+        $("#header-container").css({
+          'position': 'static',
+          'top': 'auto',
+          'left': 'auto',
+          'width': 'auto',
+        });
+      }
     }
 
-    /*ヘッダーメニューの固定*/
-    if (s1 ^ s2) {
-      if (s2 && w >  mobileWidth) {
+    var prevScrollTop = -1;
+    var $window = $(window);
+    var mobileWidth = 1023;
+    $window.scroll(function(){
+      var scrollTop = $window.scrollTop();
+      var threashold = 600;
+      var s1 = (prevScrollTop > threashold);
+      var s2 = (scrollTop > threashold);
+      var w = $window.width();
+
+      function adjustScrollArea(selector) {
+        offset = $(selector).offset().top;
+        h = $("#header-container").height();
+        pt = $(selector).css('padding-top')
+        if (pt) {
+          pt = pt.replace('px', '');
+        } else {
+          pt = 0;
+        }
+
+        if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
+          if (pt <= 1) {
+            $(selector).css({
+              'padding-top': h + 'px',
+            });
+          }
+        } else {
+          if (pt > 0) {
+            $(selector).css({
+              'padding-top': 0,
+            });
+          }
+        }
+      }
+      //スクロール追従エリアの調整
+      function adjustScrollAreas() {
+        adjustScrollArea('#sidebar-scroll');
+        adjustScrollArea('#main-scroll');
+      }
+
+      //固定ヘッダーのスタイル決め
+      function adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth) {
+        // console.log(scrollTop);
+        /*ヘッダーメニューの固定*/
+        // console.log(s1+'   '+s2+'    '+(s1 ^ s2));
+        if (s1 ^ s2) {
+          // console.log(s2 && (w > mobileWidth));
+          if (s2 && (w > mobileWidth)) {
+            stickyHeader();
+          }
+        }
+        if (scrollTop == 0 || w <=  mobileWidth) {
+          staticHeader();
+        }
+      }
+
+      adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth);
+      adjustScrollAreas();
+
+      prevScrollTop = scrollTop;
+    });
+
+    /*ウインドウがリサイズされたら発動*/
+    $window.resize(function() {
+      /*ウインドウの幅を変数に格納*/
+      var w = $window.width();
+      if (w <=  mobileWidth) {/*モバイル端末の場合*/
+        staticHeader();
+      } else {/*パソコン端末の場合*/
         stickyHeader();
       }
-    }
-    if (scrollTop == 0 || w <=  mobileWidth) {
-      staticHeader();
-    }
-    adjustScrollAreas();
+    });
+  })($);
+  </script>
+  <?php endif //固定ヘッダー ?>
 
-    prevScrollTop = scrollTop;
-  });
 
-  /*ウインドウがリサイズされたら発動*/
-  $window.resize(function() {
-    /*ウインドウの幅を変数に格納*/
-    var w = $window.width();
-    if (w <=  mobileWidth) {/*モバイル端末の場合*/
-      staticHeader();
-    } else {/*パソコン端末の場合*/
-      stickyHeader();
-    }
-  });
-})($);
-</script>
-<?php endif; ?>
-
+<?php endif //!is_amp() ?>
