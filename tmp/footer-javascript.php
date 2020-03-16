@@ -8,21 +8,29 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (!is_amp()): ?>
+
+
   <?php //AdSense非同期スクリプトを出力
   global $_IS_ADSENSE_EXIST;
   //if ($_IS_ADSENSE_EXIST && !is_customize_preview() && !is_cocoon_settings_preview()) {
   if ($_IS_ADSENSE_EXIST && !is_customize_preview()) {
     echo ADSENSE_SCRIPT_CODE;
-  }
+  } //AdSense非同期スクリプトを出力
   ?>
+
+
   <?php //Pinterestシェア用のスクリプト
   if (is_singular() && is_pinterest_share_pin_visible()): ?>
   <script async defer data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
-  <?php endif ?>
+  <?php endif //Pinterestシェア用のスクリプト ?>
+
+
   <?php //Pinterestシェアボタン用のスクリプト
   if (is_singular() && (is_top_pinterest_share_button_visible() || is_bottom_pinterest_share_button_visible())): ?>
   <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="//assets.pinterest.com/js/pinit_main.js";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pinterest-btn-js");</script>
-  <?php endif ?>
+  <?php endif //Pinterestシェアボタン用のスクリプト ?>
+
+
   <?php //コピーシェアボタン用のスクリプト
   global $_MOBILE_COPY_BUTTON;
   if (is_top_copy_share_button_visible() || is_bottom_copy_share_button_visible() || $_MOBILE_COPY_BUTTON): ?>
@@ -44,7 +52,9 @@ if (!is_amp()): ?>
     });
   })(jQuery);
   </script>
-  <?php endif ?>
+  <?php endif //コピーシェアボタン用のスクリプト ?>
+
+
   <?php //カルーセルが表示されている時
   if (false && is_carousel_visible() && get_carousel_category_ids()): ?>
   <script>
@@ -53,13 +63,14 @@ if (!is_amp()): ?>
     $('.carousel').fadeIn();
   });
   </script>
-  <?php endif ?>
+  <?php endif //カルーセルが表示されている時?>
+
+
   <?php //本文中のJavaScriptをまとめて出力
   global $_THE_CONTENT_SCRIPTS;
   if ($_THE_CONTENT_SCRIPTS): ?>
   <script><?php echo $_THE_CONTENT_SCRIPTS; ?></script>
-  <?php endif ?>
-
+  <?php endif //本文中のJavaScriptをまとめて出力 ?>
 
 
   <?php //固定ヘッダー
@@ -77,12 +88,14 @@ if (!is_amp()): ?>
         $("#header-container").css({
           'position': 'fixed',
           'top': '-100px',
+          'left': '0',
           'width': '100%',
         });
         $("#header-container").animate({'top': '0'}, 500);
       }
     }
-    //固定ヘッダー解除
+
+    //固定ヘッダーの解除
     function staticHeader(){
       if ($("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
@@ -93,6 +106,7 @@ if (!is_amp()): ?>
         $("#header-container").css({
           'position': 'static',
           'top': 'auto',
+          'left': 'auto',
           'width': 'auto',
         });
       }
@@ -172,5 +186,7 @@ if (!is_amp()): ?>
     });
   })($);
   </script>
-  <?php endif; ?>
-<?php endif ?>
+  <?php endif //固定ヘッダー ?>
+
+
+<?php endif //!is_amp() ?>
