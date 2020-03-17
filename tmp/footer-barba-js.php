@@ -25,11 +25,13 @@ if (!is_amp()): ?>
     barbaPrevent();
 
     /*head内タグのの移し替え*/
-    function replaceHeadTags(target) {
+    function replaceHeadTags(next) {
       let head = document.head;
-      let targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
+      let nextHead = next.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0];
+      //console.log(nextHead);
       let newPageHead = document.createElement('head');
-      newPageHead.innerHTML = targetHead;
+      newPageHead.innerHTML = nextHead;
+
       /*SEOに関係ありそうなタグ*/
       let removeHeadTags = [
         "style",
@@ -58,10 +60,33 @@ if (!is_amp()): ?>
       headTags.forEach(item => {
         head.removeChild(item);
       });
+
       /*新しいページの新しいタグを追加*/
       let newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)];
       newHeadTags.forEach(item => {
         head.appendChild(item);
+      });
+
+      let linkStyleTags = [
+        "link[rel='stylesheet']",
+      ].join(',');
+
+      /*古いlink[rel='stylesheet'*/
+      let oldLinkStyleTags = [...head.querySelectorAll(linkStyleTags)];
+      /*新しいlink[rel='stylesheet'*/
+      let newLinkStyleTags = [...newPageHead.querySelectorAll(linkStyleTags)];
+
+      let appendLinkStyleTags = [];
+      newLinkStyleTags.forEach(newItem => {
+        let isAppend = true;
+        oldLinkStyleTags.forEach(oldwItem => {
+          if (newItem.href == oldwItem.href) {
+            isAppend = false;
+          }
+        });
+        if (isAppend) {
+          head.appendChild(newItem);
+        }
       });
     }
 
@@ -214,7 +239,6 @@ if (!is_amp()): ?>
             do_action('barba_init_transitions_after_leave'); ?>
           },
           beforeEnter({ current, next, trigger }) {
-
             /*headタグ変換*/
             replaceHeadTags(next);
 
@@ -242,7 +266,14 @@ if (!is_amp()): ?>
             /*LinkSwitch*/
             LinkSwitchLoad();
 
-            <?php /*フッタースクリプトの読み込み*/
+            <?php
+            /*ヘッダーの読み込み*/
+            // ob_start();
+            // get_template_part('header');
+            // $head = ob_get_clean();
+            // _v($head);
+
+            /*フッタースクリプトの読み込み*/
             /*wp_footer()コードの再読み込み*/
             global $_WP_FOOTER;
             generate_baruba_js_scripts($_WP_FOOTER);
