@@ -61,7 +61,7 @@ if (!is_amp()): ?>
   (function($){
     //カルーセルの表示
     $('.carousel').fadeIn();
-  });
+  })(jQuery);
   </script>
   <?php endif //カルーセルが表示されている時?>
 
@@ -125,7 +125,7 @@ if (!is_amp()): ?>
       function adjustScrollArea(selector) {
         offset = $(selector).offset().top;
         h = $("#header-container").height();
-        pt = $(selector).css('padding-top')
+        pt = $(selector).css('padding-top');
         if (pt) {
           pt = pt.replace('px', '');
         } else {
@@ -146,6 +146,7 @@ if (!is_amp()): ?>
           }
         }
       }
+
       //スクロール追従エリアの調整
       function adjustScrollAreas() {
         adjustScrollArea('#sidebar-scroll');
@@ -184,7 +185,8 @@ if (!is_amp()): ?>
         stickyHeader();
       }
     });
-  })($);
+
+  })(jQuery);
   </script>
   <?php endif //固定ヘッダー ?>
 
