@@ -73,11 +73,11 @@ if (!is_amp()): ?>
   <?php endif //本文中のJavaScriptをまとめて出力 ?>
 
 
-  <?php //固定ヘッダー
+  <?php /*固定ヘッダー*/
   if (is_header_fixed()): ?>
   <script>
   (function($){
-    //固定ヘッダー化
+    /*固定ヘッダー化*/
     function stickyHeader(){
       if (!$("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
@@ -95,7 +95,7 @@ if (!is_amp()): ?>
       }
     }
 
-    //固定ヘッダーの解除
+    /*固定ヘッダーの解除*/
     function staticHeader(){
       if ($("#header-container").hasClass("fixed-header")) {
         <?php if (get_header_layout_type_center_logo()): ?>
@@ -147,19 +147,15 @@ if (!is_amp()): ?>
         }
       }
 
-      //スクロール追従エリアの調整
+      //*スクロール追従エリアの調整*/
       function adjustScrollAreas() {
         adjustScrollArea('#sidebar-scroll');
         adjustScrollArea('#main-scroll');
       }
 
-      //固定ヘッダーのスタイル決め
+      /*固定ヘッダーのスタイル決め*/
       function adjustFixedHeaderStyle(s1, s2, w, scrollTop, mobileWidth) {
-        // console.log(scrollTop);
-        /*ヘッダーメニューの固定*/
-        // console.log(s1+'   '+s2+'    '+(s1 ^ s2));
         if (s1 ^ s2) {
-          // console.log(s2 && (w > mobileWidth));
           if (s2 && (w > mobileWidth)) {
             stickyHeader();
           }
