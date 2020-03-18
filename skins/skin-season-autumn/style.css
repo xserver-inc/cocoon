@@ -864,14 +864,14 @@ input[type='submit']:hover {
 	background: #fff;
 	color: #9b7b6c;
 }
-#footer #navi-footer li {
+#footer #navi-footer li li {
 	border-bottom: none;
 	border-left: 1px solid #fff;
 }
-#footer #navi-footer li:first-child {
+#footer #navi-footer li li:first-child {
 	border: none;
 }
-#footer #navi-footer li a {
+#footer #navi-footer li li a {
 	padding: 0 1em;
 }
 /************************************
@@ -980,8 +980,8 @@ input[type='submit']:hover {
 }
 }
 
-/*1030px以下*/
-@media screen and (max-width: 1030px) {
+/*1023px以下*/
+@media screen and (max-width: 1023px){
 	#header-container .menu-mobile{
 		display:none;
 	}
@@ -1008,13 +1008,8 @@ input[type='submit']:hover {
   #header-container .navi a {
 	  font-size: 0.8em;
   }
-  .navi-footer-in > .menu-footer li.menu-item {
+  #footer #navi-footer .navi-footer-in > .menu-footer li.menu-item {
 	  border: none;
-	  border-left: 1px solid #fff;
-	  margin-bottom:5px;
-  }
-  .navi-footer-in > .menu-footer li.menu-item:nth-child(odd) {
-	  border: none !important;
   }
   #sidebar {
 	  padding: 0 2em;
