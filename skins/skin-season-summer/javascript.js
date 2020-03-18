@@ -1,5 +1,5 @@
 //ここにスキンで利用するJavaScriptを記入する
-$('#footer').before('<div class="page-top"><p><a href="#container"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> PAGE TOP</a></p></div>');
+$('#footer').before('<div class="page-top"><a href="#container"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> PAGE TOP</a></div>');
 $( 'select' ).wrap( '<div class="select-box"></div>' );
 $(function () {$('.date-tags').insertAfter('.entry-title');});
 // $(function () {$('.blogcard-footer').remove();});
