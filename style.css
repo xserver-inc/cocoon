@@ -219,15 +219,15 @@ select {
 
 .ff-meiryo,
 .wf-loading body {
-  font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif;
+  font-family: "Helvetica Neue", Arial, Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
-.ff-hiragino {
-  font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif;
+.ff-yu-gothic {
+  font-family: "Helvetica Neue", Arial, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
 .ff-ms-pgothic {
-  font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif;
+  font-family: "Helvetica Neue", Arial, "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .ff-noto-sans-jp,
@@ -271,7 +271,7 @@ select {
 }
 
 .sub-caption {
-  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+  font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 400;
   font-size: 0.75em;
   opacity: 0.5;
@@ -302,7 +302,7 @@ span.sub-caption {
 
 body {
   /* フォントの種類 */
-  font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   /* フォントのサイズ */
   font-size: 18px;
   /* フォントの色 */
@@ -1355,7 +1355,6 @@ img.emoji {
   margin-left: 10px;
 }
 .sns-share-buttons a .share-count {
-  font-family: Arial, sans-serif;
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -2446,7 +2445,6 @@ label.screen-reader-text {
   opacity: 0.9;
   text-align: center;
   font-size: 14px;
-  font-family: Arial,sans-serif;
   z-index: 1;
 }
 
@@ -5112,7 +5110,6 @@ label.screen-reader-text {
   margin-right: 0;
 }
 .sns-follow-buttons a .follow-count {
-  font-family: Arial, sans-serif;
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -8995,7 +8992,7 @@ twitter-widget {
 
 .video-title-text {
   color: #eeeeee;
-  font-family: Roboto,Arial,Helvetica,sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 17px;
   overflow: hidden;
   padding: 12px 16px 4px;

@@ -354,7 +354,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 */ /* Button */ /* Button Text */ /* Button Lines */ /*bbPressのスタイルを整える*/ /** Cocoon WordPress Theme @author: yhira @link: https://wp-cocoon.com/ @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later  Cocoon WordPress Theme incorporates code from "Youtube SpeedLoad" WordPress Plugin, Copyright 2017 Alexufo[http://habrahabr.ru/users/alexufo/]
 "Youtube SpeedLoad" WordPress Plugin is distributed under the terms of the GNU GPL v2 */ /* 検索フォーム風スタイルのボタンを装飾 */ /* ボタンにカーソルを合わせた時のスタイル */ /************************************
 ** Googleカスタム検索結果のページネーション
-************************************/ /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
+************************************/ /* フォントの種類 */ font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; overflow: auto; resize: both; background-color: #fafbfc; padding: 10px; border: 2px solid #ddd; }
 .admin-settings .demo .fz-12px { font-size: 12px; }
 .admin-settings .demo .fz-13px { font-size: 13px; }
 .admin-settings .demo .fz-14px { font-size: 14px; }
@@ -382,9 +382,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fw-700 { font-weight: 700; }
 .admin-settings .demo .fw-800 { font-weight: 800; }
 .admin-settings .demo .fw-900 { font-weight: 900; }
-.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
-.admin-settings .demo .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
-.admin-settings .demo .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
+.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Helvetica Neue", Arial, Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.admin-settings .demo .ff-yu-gothic { font-family: "Helvetica Neue", Arial, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.admin-settings .demo .ff-ms-pgothic { font-family: "Helvetica Neue", Arial, "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; }
 .admin-settings .demo .ff-noto-sans-jp, .admin-settings .demo .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .admin-settings .demo .ff-noto-serif-jp, .admin-settings .demo .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
 .admin-settings .demo .ff-mplus-1p, .admin-settings .demo .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
@@ -393,11 +393,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ff-kosugi-maru, .admin-settings .demo .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-gothic, .admin-settings .demo .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-mincho, .admin-settings .demo .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
-.admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
+.admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -612,7 +612,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share-buttons { flex-wrap: wrap; justify-content: space-around; align-content: center; }
 .admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
-.admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .sns-share-buttons a .share-count { position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .share-menu-content .sns-share-buttons a { width: 24%; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
 .admin-settings .demo .copy-info { display: none; /*初期状態は非表示*/ padding: 1em 2em; color: #fff; border-radius: 8px; /*画面上部に表示*/ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px #777; z-index: 2; }
@@ -801,7 +801,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before { background: #b37036; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; font-family: Arial,sans-serif; z-index: 1; }
+.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
@@ -1373,7 +1373,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wp-block-media-text__content { padding: 0 1em; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
-.admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .sns-follow-buttons a .follow-count { position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
@@ -1954,9 +1954,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fw-700 { font-weight: 700; }
 .admin-settings .demo .fw-800 { font-weight: 800; }
 .admin-settings .demo .fw-900 { font-weight: 900; }
-.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
-.admin-settings .demo .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
-.admin-settings .demo .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
+.admin-settings .demo .ff-meiryo, .admin-settings .demo .wf-loading body { font-family: "Helvetica Neue", Arial, Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.admin-settings .demo .ff-yu-gothic { font-family: "Helvetica Neue", Arial, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.admin-settings .demo .ff-ms-pgothic { font-family: "Helvetica Neue", Arial, "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; }
 .admin-settings .demo .ff-noto-sans-jp, .admin-settings .demo .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .admin-settings .demo .ff-noto-serif-jp, .admin-settings .demo .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
 .admin-settings .demo .ff-mplus-1p, .admin-settings .demo .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
@@ -1965,11 +1965,11 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ff-kosugi-maru, .admin-settings .demo .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-gothic, .admin-settings .demo .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
 .admin-settings .demo .ff-sawarabi-mincho, .admin-settings .demo .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
-.admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
+.admin-settings .demo .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .admin-settings .demo span.sub-caption { opacity: 0.8; }
 .admin-settings .demo * { padding: 0; margin: 0; box-sizing: border-box; word-wrap: break-word; overflow-wrap: break-word; }
 .admin-settings .demo .container { padding-right: constant(safe-area-inset-right); padding-left: constant(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left); }
-.admin-settings .demo body { /* フォントの種類 */ font-family: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
+.admin-settings .demo body { /* フォントの種類 */ font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; /* フォントのサイズ */ font-size: 18px; /* フォントの色 */ color: #333; /* カーニングの設定 */ /* 行間の設定 */ line-height: 1.8; margin: 0; overflow-wrap: break-word; background-color: #f4f5f7; text-size-adjust: 100%; /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */ background-attachment: fixed; }
 .admin-settings .demo a { color: #1967d2; }
 .admin-settings .demo a:hover { color: #e53900; }
 .admin-settings .demo ol, .admin-settings .demo ul { margin: 1em 0; padding-left: 40px; }
@@ -2184,7 +2184,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sns-share-buttons { flex-wrap: wrap; justify-content: space-around; align-content: center; }
 .admin-settings .demo .sns-share-buttons a { width: 32%; margin-bottom: 8px; font-size: 18px; display: inline-flex; align-content: center; align-items: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-share-buttons a .button-caption { font-size: 16px; margin-left: 10px; }
-.admin-settings .demo .sns-share-buttons a .share-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .sns-share-buttons a .share-count { position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .share-menu-content .sns-share-buttons a { width: 24%; }
 .admin-settings .demo .sbc-hide .share-count { display: none; }
 .admin-settings .demo .copy-info { display: none; /*初期状態は非表示*/ padding: 1em 2em; color: #fff; border-radius: 8px; /*画面上部に表示*/ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #333; opacity: 0.8; box-shadow: 0 4px 8px #777; z-index: 2; }
@@ -2373,7 +2373,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-2 .card-thumb::before { background: #b1b1b3; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .no-3 .card-thumb::before { background: #b37036; }
 .admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb { counter-increment: p-rank; }
-.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; font-family: Arial,sans-serif; z-index: 1; }
+.admin-settings .demo .widget-entry-cards.ranking-visible .card-thumb::before { content: counter(p-rank); position: absolute; top: 0; left: 0; padding: 4px; width: 18px; height: 18px; line-height: 18px; background-color: #666; color: #fff; opacity: 0.9; text-align: center; font-size: 14px; z-index: 1; }
 .admin-settings .demo .recent-comments { line-height: 1.3; }
 .admin-settings .demo .recent-comment-avatar { float: left; margin-right: 10px; }
 .admin-settings .demo .recent-comment-author { font-weight: bold; }
@@ -2945,7 +2945,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wp-block-media-text__content { padding: 0 1em; }
 .admin-settings .demo .sns-follow-buttons a { width: 100%; margin-right: 8px; margin-bottom: 8px; font-size: 30px; display: flex; align-items: center; align-content: center; justify-content: center; position: relative; }
 .admin-settings .demo .sns-follow-buttons a:last-child { margin-right: 0; }
-.admin-settings .demo .sns-follow-buttons a .follow-count { font-family: Arial, sans-serif; position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
+.admin-settings .demo .sns-follow-buttons a .follow-count { position: absolute; right: 3px; bottom: 3px; font-size: 12px; line-height: 1; }
 .admin-settings .demo .fbc-hide .follow-count { display: none; }
 .admin-settings .demo .related-entry-card .cat-label { font-size: 9px; }
 .admin-settings .demo .related-entry-heading, .admin-settings .demo .comment-title { margin: 22px 0; font-size: 24px; }
@@ -3664,7 +3664,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .video-click:hover .video-play { background: url("images/youtube-play.png") no-repeat scroll -101px -13px rgba(0, 0, 0, 0); }
 .admin-settings .demo .video-play { background: url("images/youtube-play.png") no-repeat scroll 2px -13px rgba(0, 0, 0, 0); height: 62px; left: 50%; margin-left: -45px; margin-top: -33px; position: absolute; top: 50%; width: 100px; opacity: 0.8; }
 .admin-settings .demo .video-title-grad { position: absolute; top: 0; left: 0; right: 0; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABiCAQAAAA7fHH2AAAAQUlEQVQYV22KQQoAIAzDyv7/Et/oVlGZVCfkkIYamsENXESyi8vc0u/PKZ6o8+7fZ0h8ShRYnD+BFKToRJkHFpkM2hZSxuyWpEYAAAAASUVORK5CYII="); background-position: center top; }
-.admin-settings .demo .video-title-text { color: #eeeeee; font-family: Roboto,Arial,Helvetica,sans-serif; font-size: 17px; overflow: hidden; padding: 12px 16px 4px; text-overflow: ellipsis; white-space: nowrap; }
+.admin-settings .demo .video-title-text { color: #eeeeee; font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 17px; overflow: hidden; padding: 12px 16px 4px; text-overflow: ellipsis; white-space: nowrap; }
 .admin-settings .demo #main .wp-block-embed__wrapper::before { display: none; }
 .admin-settings .demo .entry-content .wp-block-gallery .blocks-gallery-item { display: list-item; }
 .admin-settings .demo .search-form div.sbtn { transition: 0.3s; /* 変化をなめらかにする */ }
@@ -3878,7 +3878,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo body { background-image: none !important; background-break: transparent; } }
 .admin-settings .demo pre { padding: 10px; }
 .admin-settings .demo .entry-content { margin: 0; }
-.admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; font-family: arial,sans-serif; max-width: 600px; }
+.admin-settings .demo .search-result { padding: 10px; font-size: 16px; line-height: 1.4; max-width: 600px; }
 .admin-settings .demo .search-result .title { color: #1a0dab; font-weight: bold; text-decoration: none; }
 .admin-settings .demo .search-result .url { color: #006621; font-size: 14px; max-width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .admin-settings .demo .search-result .description { font-size: 14px; }
@@ -4706,9 +4706,9 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .fw-700 { font-weight: 700; }
 .components-popover__content .fw-800 { font-weight: 800; }
 .components-popover__content .fw-900 { font-weight: 900; }
-.components-popover__content .ff-meiryo, .components-popover__content .wf-loading body { font-family: "Meiryo",  "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic",sans-serif; }
-.components-popover__content .ff-hiragino { font-family: 'ヒラギノ角ゴ ProN W3', "Hiragino Kaku Gothic Pro", "Meiryo", "游ゴシック体", "Yu Gothic",sans-serif; }
-.components-popover__content .ff-ms-pgothic { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", "Meiryo", sans-serif; }
+.components-popover__content .ff-meiryo, .components-popover__content .wf-loading body { font-family: "Helvetica Neue", Arial, Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.components-popover__content .ff-yu-gothic { font-family: "Helvetica Neue", Arial, "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+.components-popover__content .ff-ms-pgothic { font-family: "Helvetica Neue", Arial, "MS PGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; }
 .components-popover__content .ff-noto-sans-jp, .components-popover__content .wf-active .ff-noto-sans-jp { font-family: "Noto Sans JP" ,sans-serif; }
 .components-popover__content .ff-noto-serif-jp, .components-popover__content .wf-active .ff-noto-serif-jp { font-family: "Noto Serif JP" ,sans-serif; }
 .components-popover__content .ff-mplus-1p, .components-popover__content .wf-active .ff-mplus-1p { font-family: "M PLUS 1p" ,sans-serif; }
@@ -4717,7 +4717,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .ff-kosugi-maru, .components-popover__content .wf-active .ff-kosugi-maru { font-family: "Kosugi Maru" ,sans-serif; }
 .components-popover__content .ff-sawarabi-gothic, .components-popover__content .wf-active .ff-sawarabi-gothic { font-family: "Sawarabi Gothic" ,sans-serif; }
 .components-popover__content .ff-sawarabi-mincho, .components-popover__content .wf-active .ff-sawarabi-mincho { font-family: "Sawarabi Mincho" ,sans-serif; }
-.components-popover__content .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
+.components-popover__content .sub-caption { font-family: Tunga, "Trebuchet MS", Tahoma, Verdana, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; font-weight: 400; font-size: 0.75em; opacity: 0.5; }
 .components-popover__content span.sub-caption { opacity: 0.8; }
 
 .tagcloud { display: flex; flex-wrap: wrap; align-items: flex-start; }

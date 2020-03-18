@@ -12,7 +12,7 @@
 /*以下にスタイルシートを記入してください*/
 body {
   background-color: #e6ecf0;
-  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .header, .header .site-name-text {
