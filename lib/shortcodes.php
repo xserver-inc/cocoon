@@ -657,6 +657,7 @@ if ( !function_exists( 'get_box_menu_tag' ) ):
 function get_box_menu_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
+    'target' => '_self',
     'class' => null,
   ), $atts, 'box_menu'));
 
@@ -671,7 +672,6 @@ function get_box_menu_tag($atts){
   }
 
   //_v($menu_items);
-
   foreach ($menu_items as $menu):
 
     $url = $menu->url;
@@ -691,7 +691,7 @@ function get_box_menu_tag($atts){
     }
     $icon_tag = '<div class="box-menu-icon">'.$icon_tag.'</div>';
 
-    $tag .= '<a class="box-menu" href="'.esc_url($url).'">'.
+    $tag .= '<a class="box-menu" href="'.esc_url($url).'" target="'.$target.'"'.get_rel_by_target($target).'>'.
       $icon_tag.
       $title_tag.
       $description_tag.
@@ -762,7 +762,7 @@ function get_rss_feed_tag( $atts ) {
       $feed_date = $item->get_date('Y.m.d');
       $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
-      $feed_content .= '<a rel="noopener" href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'">';
+      $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
       $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
       $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
       $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';

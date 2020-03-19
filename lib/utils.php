@@ -3274,3 +3274,12 @@ function change_fa($buffer){
   return $buffer;
 }
 endif;
+
+//target=_blankの場合はrel=noopenerを取得
+if ( !function_exists( 'get_rel_by_target' ) ):
+function get_rel_by_target($target){
+  if ($target == '_blank') {
+    return ' rel="noopener"';
+  }
+}
+endif;
