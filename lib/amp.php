@@ -234,15 +234,29 @@ function convert_content_for_amp($the_content){
 
   //数式変換
   if (is_formula_enable()) {
-    // $the_content = preg_replace('/\\\([\s\S]+?\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $the_content);
-    // $the_content = preg_replace('/\\\[[\s\S]+?\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $the_content);
+    // $the_content = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $the_content);
+    // $the_content = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $the_content);
 
-    //インライン
-    $the_content = str_replace('\(', '<amp-mathml layout="container" inline data-formula="\(', $the_content);
-    $the_content = str_replace('\)', '\)"></amp-mathml>', $the_content);
-    //ブロック
-    $the_content = str_replace('\[', '<amp-mathml " layout="container" data-formula="\[', $the_content);
-    $the_content = str_replace('\]', '\]"></amp-mathml>', $the_content);
+    // //インライン
+    // $the_content = str_replace('\(', '<amp-mathml layout="container" inline data-formula="\(', $the_content);
+    // $the_content = str_replace('\)', '\)"></amp-mathml>', $the_content);
+    // //ブロック
+    // $the_content = str_replace('\[', '<amp-mathml " layout="container" data-formula="\[', $the_content);
+    // $the_content = str_replace('\]', '\]"></amp-mathml>', $the_content);
+
+    if (preg_match_all('#<p[^>]*?>[\s\S]+?</p>#', $the_content, $m)) {
+      //_v($m);
+      $paragraphs = $m[0];
+      foreach ($paragraphs as $paragraph) {
+        // preg_match_all('/\\\\\\(.+?\\\\\\)/m', $the_content, $m);
+        // _v($m);
+        $old_p = $paragraph;
+        $new_p = preg_replace('/\\\\\\(.+?\\\\\\)/m', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $old_p);
+        $new_p = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/m', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $new_p);
+        $the_content = str_replace($old_p, $new_p, $the_content);
+      }
+    }
+
   }
 
   //imgタグをamp-imgタグに変更する
