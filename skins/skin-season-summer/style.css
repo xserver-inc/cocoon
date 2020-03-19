@@ -126,6 +126,9 @@ a {
 #header-container .navi{
   background: #00a0e9;
 }
+#header-container.fixed-header{
+	background-color: #00a0e9;
+}
 #header-container .navi a{
   color: #fff;
 }

@@ -50,7 +50,11 @@ body {
 }
 
 .header-container .navi {
-  background-color:$key;
+  background-color: $key;
+}
+
+.header-container.fixed-header{
+	background-color: $key;
 }
 
 #navi .navi-in a{
