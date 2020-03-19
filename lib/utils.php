@@ -860,6 +860,21 @@ function wp_enqueue_jquery_masonry(){
 }
 endif;
 
+// //数式表示用
+// if ( !function_exists( 'wp_enqueue_mathjax' ) ):
+// function wp_enqueue_mathjax(){
+//   if ( is_formula_enable()) {
+//     wp_enqueue_script( 'mathjax', '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, false );
+//     $data = minify_js('
+//       MathJax.Hub.Config({
+//         TeX: { equationNumbers: { autoNumber: "all" } }
+//       });
+//     ');
+//     wp_add_inline_script( 'mathjax', $data, 'after' ) ;
+//   }
+// }
+// endif;
+
 //投稿画面ポスト時の確認ダイアログ
 if ( !function_exists( 'wp_enqueue_confirmation_before_publish' ) ):
 function wp_enqueue_confirmation_before_publish(){

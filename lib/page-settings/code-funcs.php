@@ -144,3 +144,11 @@ $_HIGHLIGHT_STYLES = array(
     'zenburn' => 'zenburn',
   );
 // define('HIGHLIGHT_STYLES', HIGHLIGHT_STYLES);
+
+//数式を表示するか
+define('OP_FORMULA_ENABLE', 'formula_enable');
+if ( !function_exists( 'is_formula_enable' ) ):
+function is_formula_enable(){
+  return get_theme_option(OP_FORMULA_ENABLE);
+}
+endif;

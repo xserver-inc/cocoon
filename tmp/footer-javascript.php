@@ -186,5 +186,13 @@ if (!is_amp()): ?>
   </script>
   <?php endif //固定ヘッダー ?>
 
+  <?php //数式表示
+  if (is_formula_enable()): ?>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+            TeX: { equationNumbers: { autoNumber: "all" } }
+    });
+  </script>
+  <?php endif; //数式表示 ?>
 
 <?php endif //!is_amp() ?>
