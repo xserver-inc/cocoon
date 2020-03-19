@@ -864,14 +864,14 @@ input[type='submit']:hover {
 	background: #fff;
 	color: #9b7b6c;
 }
-#footer #navi-footer li li {
+#footer #navi-footer li {
 	border-bottom: none;
 	border-left: 1px solid #fff;
 }
-#footer #navi-footer li li:first-child {
+#footer #navi-footer li:first-child {
 	border: none;
 }
-#footer #navi-footer li li a {
+#footer #navi-footer li a {
 	padding: 0 1em;
 }
 /************************************
