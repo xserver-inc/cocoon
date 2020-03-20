@@ -246,6 +246,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
   }
 }
 endif;
+
 //タイムラインの作成（timelineショートコード）
 if (!shortcode_exists('timeline')) {
   add_shortcode('timeline', 'timeline_shortcode');
@@ -657,6 +658,7 @@ if ( !function_exists( 'get_box_menu_tag' ) ):
 function get_box_menu_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
+    'target' => '_self',
     'class' => null,
   ), $atts, 'box_menu'));
 
@@ -671,7 +673,6 @@ function get_box_menu_tag($atts){
   }
 
   //_v($menu_items);
-
   foreach ($menu_items as $menu):
 
     $url = $menu->url;
@@ -691,7 +692,8 @@ function get_box_menu_tag($atts){
     }
     $icon_tag = '<div class="box-menu-icon">'.$icon_tag.'</div>';
 
-    $tag .= '<a class="box-menu" href="'.esc_url($url).'">'.
+    $target = apply_filters('box_menu_link_target', $target, $url);
+    $tag .= '<a class="box-menu" href="'.esc_url($url).'" target="'.$target.'"'.get_rel_by_target($target).'>'.
       $icon_tag.
       $title_tag.
       $description_tag.
@@ -762,7 +764,7 @@ function get_rss_feed_tag( $atts ) {
       $feed_date = $item->get_date('Y.m.d');
       $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
-      $feed_content .= '<a rel="noopener" href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'">';
+      $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
       $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
       $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
       $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
@@ -805,3 +807,18 @@ function get_rss_feed_tag( $atts ) {
 
 }
 endif;
+
+
+// //数式
+// add_shortcode('formula', 'formula_shortcode');
+// if ( !function_exists( 'formula_shortcode' ) ):
+// function formula_shortcode( $atts, $content = null ) {
+//   extract( shortcode_atts( array(
+//     'class' => null, //拡張クラス
+//   ), $atts, 'formula' ) );
+//   if ($class) {
+//     $class = ' '.$class;
+//   }
+//   return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
+// }
+// endif;

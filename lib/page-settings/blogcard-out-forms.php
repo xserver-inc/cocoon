@@ -101,7 +101,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </th>
           <td>
             <?php
-            generate_number_tag(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, get_external_blogcard_cache_retention_period(), 30, 1, 365);
+            generate_number_tag(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, get_external_blogcard_cache_retention_period(), 30, 1, 3650);
             generate_tips_tag(__( 'ブログカードキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。', THEME_NAME ));
             ?>
           </td>

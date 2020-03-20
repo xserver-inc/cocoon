@@ -35,10 +35,11 @@ $_THEME_OPTIONS =
 array(
   'entry_card_type' => 'entry_card',
   'entry_card_border_visible' => 0,
-	'smartphone_entry_card_1_column' => 0,
-	'entry_card_excerpt_max_length' => 60,
-	'related_excerpt_max_length' => 50,
-	'related_entry_border_visible' =>0,
+  'smartphone_entry_card_1_column' => 0,
+  'entry_card_excerpt_max_length' => 60,
+  'related_excerpt_max_length' => 50,
+  'related_entry_border_visible' =>0,
   'related_entry_type' => 'entry_card',
   'amp_skin_style_enable' => 0,
+  'code_row_number_enable' => 0,
 );

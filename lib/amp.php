@@ -232,6 +232,34 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?(mzstatic\.com|phobos\.apple\.com|ggpht\.com)[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="75" height="75" sizes="(max-width: 75px) 100vw, 75px"></amp-img>', $the_content);
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?nabettu\.github\.io[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="120" height="36" sizes="(max-width: 120px) 100vw, 120px"></amp-img>', $the_content);
 
+  //数式変換
+  if (is_formula_enable() && is_math_shortcode_exist()) {
+    // $the_content = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $the_content);
+    // $the_content = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $the_content);
+
+    // //インライン
+    // $the_content = str_replace('\(', '<amp-mathml layout="container" inline data-formula="\(', $the_content);
+    // $the_content = str_replace('\)', '\)"></amp-mathml>', $the_content);
+    // //ブロック
+    // $the_content = str_replace('\[', '<amp-mathml " layout="container" data-formula="\[', $the_content);
+    // $the_content = str_replace('\]', '\]"></amp-mathml>', $the_content);
+
+    if (preg_match_all('#<p[^>]*?>[\s\S]+?</p>#', $the_content, $m)) {
+      //_v($m);
+      $paragraphs = $m[0];
+      foreach ($paragraphs as $paragraph) {
+        // preg_match_all('#\$.+?\$#', $the_content, $m);
+        // _v($m);
+        $old_p = $paragraph;
+        $new_p = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $old_p);
+        $new_p = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $new_p);
+        // $new_p = preg_replace('#\$.+?\$#', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $new_p);
+        $the_content = str_replace($old_p, $new_p, $the_content);
+      }
+    }
+
+  }
+
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all('/<img(.+?)\/?>/is', $the_content, $m);
 

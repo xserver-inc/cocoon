@@ -126,6 +126,9 @@ a {
 #header-container .navi{
   background: #00a0e9;
 }
+#header-container.fixed-header{
+	background-color: #00a0e9;
+}
 #header-container .navi a{
   color: #fff;
 }
@@ -987,8 +990,8 @@ input[type='submit']:hover {
 }
 }
 
-/*1030px以下*/
-@media screen and (max-width: 1030px) {
+/*1023px以下*/
+@media screen and (max-width: 1023px){
 	#header-container .menu-mobile{
 		display:none;
 	}
@@ -1015,13 +1018,8 @@ input[type='submit']:hover {
   #header-container .navi a {
 	  font-size: 0.8em;
   }
-  .navi-footer-in > .menu-footer li.menu-item {
+  #footer #navi-footer .navi-footer-in > .menu-footer li.menu-item {
 	  border: none;
-	  border-left: 1px solid #fff;
-	  margin-bottom:5px;
-  }
-  .navi-footer-in > .menu-footer li.menu-item:nth-child(odd) {
-	  border: none !important;
   }
   #sidebar {
 	  padding: 0 2em;

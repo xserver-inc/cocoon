@@ -870,6 +870,21 @@ function wp_enqueue_jquery_masonry(){
 }
 endif;
 
+// //数式表示用
+// if ( !function_exists( 'wp_enqueue_mathjax' ) ):
+// function wp_enqueue_mathjax(){
+//   if ( is_formula_enable()) {
+//     wp_enqueue_script( 'mathjax', '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, false );
+//     $data = minify_js('
+//       MathJax.Hub.Config({
+//         TeX: { equationNumbers: { autoNumber: "all" } }
+//       });
+//     ');
+//     wp_add_inline_script( 'mathjax', $data, 'after' ) ;
+//   }
+// }
+// endif;
+
 //投稿画面ポスト時の確認ダイアログ
 if ( !function_exists( 'wp_enqueue_confirmation_before_publish' ) ):
 function wp_enqueue_confirmation_before_publish(){
@@ -3270,6 +3285,7 @@ function change_fa($buffer){
 }
 endif;
 
+//barba.jsのネームスペース
 if ( !function_exists( 'get_barba_name_space' ) ):
 function get_barba_name_space(){
   if (is_singular()) {
@@ -3278,5 +3294,14 @@ function get_barba_name_space(){
     $name_space = 'home';
   }
   return $name_space;
+}
+endif;
+
+//target=_blankの場合はrel=noopenerを取得
+if ( !function_exists( 'get_rel_by_target' ) ):
+function get_rel_by_target($target){
+  if ($target == '_blank') {
+    return ' rel="noopener"';
+  }
 }
 endif;

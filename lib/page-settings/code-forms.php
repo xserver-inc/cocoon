@@ -112,6 +112,38 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+<!-- 数式設定 -->
+<div id="formula" class="postbox">
+  <h2 class="hndle"><?php _e( '数式設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'MathJaxというスクリプトを利用して、LaTeXで記述された数式をウェブブラウザで表示することが出来るようになります。', THEME_NAME ); ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 数式 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FORMULA_ENABLE, __( '数式', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag( OP_FORMULA_ENABLE, is_formula_enable(), __( '数式表示を有効にする', THEME_NAME ));
+            generate_tips_tag(__( 'LaTeXで記述された数式表現を有効にします。', THEME_NAME ));
+            generate_tips_tag(__( sprintf('利用する場合は、投稿本文のどこでも良いのでに%sと入力してください。投稿・固定ページのみで利用できます。', MATH_SHORTCODE), THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
 
 
 </div><!-- /.metabox-holder -->

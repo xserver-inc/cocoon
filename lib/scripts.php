@@ -152,6 +152,9 @@ function wp_enqueue_scripts_custom() {
 
     //タイルカード
     wp_enqueue_jquery_masonry();
+
+    //MathJax
+    // wp_enqueue_mathjax();
   }
 
   ///////////////////////////////////////////

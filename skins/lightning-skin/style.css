@@ -146,6 +146,9 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 #header-container .navi{
 	background-color: #95e7a5;
 }
+#header-container.fixed-header{
+	background-color: #95e7a5;
+}
 
 #navi .navi-in > ul > li{
 	height: 50px;

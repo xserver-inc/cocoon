@@ -4,8 +4,7 @@
 @import 'brand-colors';
 
 //フォント
-$default_font: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
-$meiryo_font: "Meiryo", sans-serif;
+$default_font: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 $navi_font: FontAwesome, $default_font;
 
 //テキスト色
@@ -326,7 +325,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 // シェア数
 ///////////////////////////////////////
 @mixin service_count {
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   position: absolute;
   right: 3px;
   bottom: 3px;

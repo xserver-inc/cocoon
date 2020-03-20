@@ -44,6 +44,7 @@ $elements = array(
   'amp-audio' => 'amp-audio-0.1.js',
   'amp-video' => 'amp-video-0.1.js',
   'amp-image-lightbox' => 'amp-image-lightbox-0.1.js',
+  'amp-mathml' => 'amp-mathml-0.1.js',
   //'amp-link-rewriter' => 'amp-link-rewriter-0.1.js',
   //form class="amp-form'form class="amp-form' => 'amp-form-0.1.js',
 );
@@ -71,6 +72,10 @@ if (is_amp_image_zoom_effect_gallery()) {
   echo '<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>'.PHP_EOL;
 }
 
+// //数式表示が有効な時
+// if (is_formula_enable()) {
+//   echo '<script async custom-element="amp-mathml" src="https://cdn.ampproject.org/v0/amp-mathml-0.1.js"></script>'.PHP_EOL;
+// }
 
 //Font Awesomeのスタイルの読み込み
 echo '<link rel="stylesheet" href="'.esc_url(get_site_icon_font_cdn_url()).'">'.PHP_EOL;
