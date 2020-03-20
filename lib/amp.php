@@ -233,7 +233,7 @@ function convert_content_for_amp($the_content){
   $the_content = preg_replace('/<img([^>]+?src="[^"]+?nabettu\.github\.io[^"]+?[^>\/]+)\/?>/is', '<amp-img$1 width="120" height="36" sizes="(max-width: 120px) 100vw, 120px"></amp-img>', $the_content);
 
   //数式変換
-  if (is_formula_enable()) {
+  if (is_formula_enable() && is_math_shortcode_exist()) {
     // $the_content = preg_replace('/\\\\\\(.+?\\\\\\)/', '<amp-mathml layout="container" inline data-formula="$0"></amp-mathml>', $the_content);
     // $the_content = preg_replace('/\\\\\\[[\s\S]+?\\\\\\]/', '<amp-mathml layout="container" data-formula="$0"></amp-mathml>', $the_content);
 

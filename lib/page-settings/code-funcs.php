@@ -152,3 +152,10 @@ function is_formula_enable(){
   return get_theme_option(OP_FORMULA_ENABLE);
 }
 endif;
+
+//[math]ショートコードが存在するか
+if ( !function_exists( 'is_math_shortcode_exist' ) ):
+function is_math_shortcode_exist(){
+  return includes_string(get_the_content(), MATH_SHORTCODE);
+}
+endif;

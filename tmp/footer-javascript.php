@@ -187,7 +187,7 @@ if (!is_amp()): ?>
   <?php endif //固定ヘッダー ?>
 
   <?php //数式表示
-  if (is_formula_enable()): ?>
+  if (is_formula_enable() && is_math_shortcode_exist()): ?>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     MathJax.Hub.Config({
 

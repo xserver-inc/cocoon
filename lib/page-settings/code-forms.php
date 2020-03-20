@@ -131,6 +131,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_checkbox_tag( OP_FORMULA_ENABLE, is_formula_enable(), __( '数式表示を有効にする', THEME_NAME ));
             generate_tips_tag(__( 'LaTeXで記述された数式表現を有効にします。', THEME_NAME ));
+            generate_tips_tag(__( sprintf('利用する場合は、投稿本文のどこでも良いのでに%sと入力してください。投稿・固定ページのみで利用できます。', MATH_SHORTCODE), THEME_NAME ));
             ?>
           </td>
         </tr>

@@ -266,7 +266,8 @@ define('BEFORE_1ST_H2_AD_PRIORITY_STANDARD', 10001);
 define('BEFORE_1ST_H2_TOC_PRIORITY_STANDARD', 10003);
 define('BEFORE_1ST_H2_TOC_PRIORITY_HIGH', 10000);
 
-
+//ショートコード
+define('MATH_SHORTCODE', '[math]');
 
 //URLの正規表現
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');

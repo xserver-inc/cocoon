@@ -809,16 +809,16 @@ function get_rss_feed_tag( $atts ) {
 endif;
 
 
-//数式
-add_shortcode('formula', 'formula_shortcode');
-if ( !function_exists( 'formula_shortcode' ) ):
-function formula_shortcode( $atts, $content = null ) {
-  extract( shortcode_atts( array(
-    'class' => null, //拡張クラス
-  ), $atts, 'formula' ) );
-  if ($class) {
-    $class = ' '.$class;
-  }
-  return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
-}
-endif;
+// //数式
+// add_shortcode('formula', 'formula_shortcode');
+// if ( !function_exists( 'formula_shortcode' ) ):
+// function formula_shortcode( $atts, $content = null ) {
+//   extract( shortcode_atts( array(
+//     'class' => null, //拡張クラス
+//   ), $atts, 'formula' ) );
+//   if ($class) {
+//     $class = ' '.$class;
+//   }
+//   return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
+// }
+// endif;
