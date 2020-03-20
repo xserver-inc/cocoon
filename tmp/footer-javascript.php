@@ -189,11 +189,9 @@ if (!is_amp()): ?>
   <?php //数式表示
   if (is_formula_enable()): ?>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    <?php if (false): ?>
     MathJax.Hub.Config({
-            TeX: { equationNumbers: { autoNumber: "all" } }
+
     });
-    <?php endif; //MathJaxオプション ?>
   </script>
   <?php endif; //数式表示 ?>
 

@@ -246,6 +246,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
   }
 }
 endif;
+
 //タイムラインの作成（timelineショートコード）
 if (!shortcode_exists('timeline')) {
   add_shortcode('timeline', 'timeline_shortcode');
@@ -804,5 +805,20 @@ function get_rss_feed_tag( $atts ) {
 
   return apply_filters( 'get_rss_feed_tag',  $feed_contents);
 
+}
+endif;
+
+
+//数式
+add_shortcode('formula', 'formula_shortcode');
+if ( !function_exists( 'formula_shortcode' ) ):
+function formula_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'class' => null, //拡張クラス
+  ), $atts, 'formula' ) );
+  if ($class) {
+    $class = ' '.$class;
+  }
+  return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
 }
 endif;
