@@ -9,8 +9,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //ブラウザキャッシュの有効化
 update_theme_option(OP_BROWSER_CACHE_ENABLE);
-//ハイスピードモードを有効にするか
-update_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+if (DEBUG_MODE) {
+  //ハイスピードモードを有効にするか
+  update_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+}
 //ハイスピードモード除外文字列リスト
 update_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST);
 //HTMLを縮小化するか

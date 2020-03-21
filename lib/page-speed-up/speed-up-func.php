@@ -23,7 +23,7 @@ endif;
 define('OP_HIGHSPEED_MODE_ENABLE', 'highspeed_mode_enable');
 if ( !function_exists( 'is_highspeed_mode_enable' ) ):
 function is_highspeed_mode_enable(){
-  return get_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+  return DEBUG_MODE && get_theme_option(OP_HIGHSPEED_MODE_ENABLE);
 }
 endif;
 

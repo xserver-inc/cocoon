@@ -39,7 +39,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
-
+<?php if (DEBUG_MODE): ?>
 <!-- ハイスピード -->
 <div id="highspeed" class="postbox">
   <h2 class="hndle"><?php _e( 'ページ遷移', THEME_NAME );_e( '（α版：テストサイトでお試しください）', THEME_NAME ) ?></h2>
@@ -71,6 +71,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
+<?php endif; ?>
 
 
 
