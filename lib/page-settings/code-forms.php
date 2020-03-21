@@ -112,6 +112,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
+<?php if (DEBUG_MODE): ?>
 <!-- 数式設定 -->
 <div id="formula" class="postbox">
   <h2 class="hndle"><?php _e( '数式設定', THEME_NAME ) ?></h2>
@@ -143,7 +144,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
-
+<?php endif; ?>
 
 
 </div><!-- /.metabox-holder -->
