@@ -156,6 +156,6 @@ endif;
 //[math]ショートコードが存在するか
 if ( !function_exists( 'is_math_shortcode_exist' ) ):
 function is_math_shortcode_exist(){
-  return includes_string(get_the_content(), MATH_SHORTCODE);
+  return DEBUG_MODE && includes_string(get_the_content(), MATH_SHORTCODE);
 }
 endif;

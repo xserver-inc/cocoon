@@ -30,6 +30,7 @@ function rakuten_product_link_shortcode($atts){
     'logo' => null,
     'sort' => null,
     'image_only' => 0,
+    'text_only' => 0,
     'btn1_url' => null,
     'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
@@ -395,6 +396,18 @@ function rakuten_product_link_shortcode($atts){
           }
 
           ///////////////////////////////////////////
+          // 楽天テキストリンク
+          ///////////////////////////////////////////
+          $text_link_tag =
+          '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+            esc_html($TitleHtml).
+            $moshimo_rakuten_impression_tag.
+          '</a>';
+          if ($text_only) {
+            return $text_link_tag;
+          }
+
+          ///////////////////////////////////////////
           // 商品リンクタグの生成
           ///////////////////////////////////////////
           $tag =
@@ -404,10 +417,7 @@ function rakuten_product_link_shortcode($atts){
               '</figure>'.
               '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
-                  '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-                  esc_html($TitleHtml).
-                    $moshimo_rakuten_impression_tag.
-                  '</a>'.
+                  $text_link_tag.
                 '</div>'.
                 '<div class="rakuten-item-snippet product-item-snippet">'.
                   '<div class="rakuten-item-maker product-item-maker">'.

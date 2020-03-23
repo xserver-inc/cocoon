@@ -22,6 +22,8 @@ update_theme_option(OP_CODE_HIGHLIGHT_STYLE);
 //ソースコードをハイライト表示するCSSセレクタ
 update_theme_option(OP_CODE_HIGHLIGHT_CSS_SELECTOR);
 
+if (DEBUG_MODE) {
+  //数式を表示するか
+  update_theme_option(OP_FORMULA_ENABLE);
+}
 
-//数式を表示するか
-update_theme_option(OP_FORMULA_ENABLE);
