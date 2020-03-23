@@ -95,7 +95,6 @@ if (!is_amp()): ?>
       let head = document.head;
       let body = document.body;
       let nextBody = next.html.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0];
-      // console.log(nextBody);
       let newPageBody = document.createElement('body');
       newPageBody.innerHTML = nextBody;
 
@@ -103,54 +102,31 @@ if (!is_amp()): ?>
         "script",
       ].join(',');
 
-      // /*古いlink[rel='stylesheet'*/
-      // let oldScriptTags = [...body.querySelectorAll(scriptTags)];
-      // /*新しいlink[rel='stylesheet'*/
-      // let newScriptTags = [...newPageBody.querySelectorAll(scriptTags)];
-
-      // /*前のページの古いタグを削除*/
-      // let bodyTags = [...body.querySelectorAll(scriptTags)];
-      // bodyTags.forEach(item => {
-      //   //console.log(item);
-      //   //body.removeChild(item);
-      // });
 
       /*新しいページの新しいタグを追加*/
       let newBodyTags = [...newPageBody.querySelectorAll(scriptTags)];
       newBodyTags.forEach(item => {
         body.appendChild(item);
 
-        // //console.log(item);
-        // scriptTag = document.createElement("script");
-        // if (item.src) {
-        //   scriptTag.src = item.src;
-        //   $.getScript(item.src);
-        //   // body.appendChild(scriptTag);
-        // } else {
-        //   // scriptTag.innerHTML = item.innerHTML;
-        //   if (!item.innerHTML.match('baruba') && !item.innerHTML.match('tiny')/* && !item.innerHTML.match('wpforo-hidden-form') && !item.innerHTML.match('tinymce.addI18n') && !item.innerHTML.match('tinyMCEPreInit.load_ext')*/) {
-        //     eval(item.innerHTML);
-        //     console.log(item.innerHTML);
-        //   }
+        /*
+        scriptTag = document.createElement("script");
+        if (item.src) {
+          scriptTag.src = item.src;
+          body.appendChild(scriptTag);
+        } else {
+          if (!item.innerHTML.match('baruba') && !item.innerHTML.match('tiny')) {
+            eval(item.innerHTML);
+            console.log(item.innerHTML);
+          }
 
-
-        //   // // ビジーwaitを使う方法
-        //   // function sleep(waitMsec) {
-        //   //   var startMsec = new Date();
-
-        //   //   // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-        //   //   while (new Date() - startMsec < waitMsec);
-        //   // }
-
-        //   // sleep(500);
-        // }
-
-        // if (!scriptTag.innerHTML.match('baruba')) {
-        //   console.log(scriptTag);
-        //   //scriptTag.async = true;
-        //   body.appendChild(scriptTag);
-        //   // body.appendChild(item);
-        // }
+          if (!scriptTag.innerHTML.match('baruba')) {
+            console.log(scriptTag);
+            scriptTag.async = true;
+            body.appendChild(scriptTag);
+            body.appendChild(item);
+          }
+        }
+        */
 
       });
     }
@@ -171,7 +147,6 @@ if (!is_amp()): ?>
           }
 
           let rect = anchor.getBoundingClientRect();
-          // console.log(rect);
           let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
           let top = rect.top + scrollTop;
@@ -251,17 +226,14 @@ if (!is_amp()): ?>
     function adsenseLoad() {
       const adsenseClass = '.adsbygoogle';
       const ads = document.body.querySelectorAll(adsenseClass);
-      //console.log(ads);
       if (ads) {
         ads.forEach(function( ad ) {
-          //console.log(ad);
           parent = $(ad).parent();
-          //console.log(parent);
           script = parent.children('script');
           parent.children(adsenseClass).remove();
           parent.children('script').remove();
           parent.append($(ad));
-          parent.append($(script));
+          /*parent.append($(script));*/
         });
       }
     };
@@ -352,8 +324,8 @@ if (!is_amp()): ?>
             /*instagram埋め込み*/
             instagramLoad();
 
-            /*AdSense*/
-            adsenseLoad();
+            /*AdSense
+            adsenseLoad();*/
 
             /*LinkSwitch*/
             LinkSwitchLoad();
