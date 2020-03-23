@@ -231,6 +231,7 @@ if (!is_amp()): ?>
         }
       }
     }
+
     /*Instagramスクリプトの呼び出し*/
     function instagramLoad() {
       let im = document.getElementsByClassName('instagram-media');
@@ -245,6 +246,22 @@ if (!is_amp()): ?>
         }
       }
     }
+
+    /*AdSense*/
+    function adsenseLoad() {
+      const adsenseClass = '.adsbygoogle';
+      const ads = document.body.querySelectorAll(adsenseClass);
+      //console.log(ads);
+      if (ads) {
+        ads.forEach(function( ad ) {
+          //console.log(ad);
+          parent = $(ad).parent();
+          //console.log(parent);
+          parent.children(adsenseClass).remove();
+          parent.append($(ad));
+        });
+      }
+    };
 
     /*LinkSwitch*/
     function LinkSwitchLoad() {
@@ -328,8 +345,12 @@ if (!is_amp()): ?>
             <?php endif; ?>
             /*ツイート埋め込み*/
             tweetLoad();
+
             /*instagram埋め込み*/
             instagramLoad();
+
+            /*AdSense*/
+            adsenseLoad();
 
             /*LinkSwitch*/
             LinkSwitchLoad();
