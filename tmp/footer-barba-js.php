@@ -257,8 +257,11 @@ if (!is_amp()): ?>
           //console.log(ad);
           parent = $(ad).parent();
           //console.log(parent);
+          script = parent.children('script');
           parent.children(adsenseClass).remove();
+          parent.children('script').remove();
           parent.append($(ad));
+          parent.append($(script));
         });
       }
     };
