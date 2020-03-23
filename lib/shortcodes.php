@@ -692,8 +692,8 @@ function get_box_menu_tag($atts){
     }
     $icon_tag = '<div class="box-menu-icon">'.$icon_tag.'</div>';
 
-    $target = apply_filters('box_menu_link_target', $target, $url);
-    $tag .= '<a class="box-menu" href="'.esc_url($url).'" target="'.$target.'"'.get_rel_by_target($target).'>'.
+    $target_value = apply_filters('box_menu_link_target', $target, $url);
+    $tag .= '<a class="box-menu" href="'.esc_url($url).'" target="'.$target_value.'"'.get_rel_by_target($target_value).'>'.
       $icon_tag.
       $title_tag.
       $description_tag.
