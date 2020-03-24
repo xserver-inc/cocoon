@@ -386,7 +386,11 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // イメージリンクタグ
           ///////////////////////////////////////////
-          $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+          $image_only_class = null;
+          if ($image_only) {
+            $image_only_class = ' rakuten-item-image-only product-item-image-only no-icon';
+          }
+          $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link'.$image_only_class.'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
                   '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
                   $moshimo_rakuten_impression_tag.
                 '</a>';
