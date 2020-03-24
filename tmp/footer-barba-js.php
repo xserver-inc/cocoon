@@ -226,14 +226,20 @@ if (!is_amp()): ?>
     function adsenseLoad() {
       const adsenseClass = '.adsbygoogle';
       const ads = document.body.querySelectorAll(adsenseClass);
+      //console.log(ads);
       if (ads.length > 0) {
-        ads.forEach(function( ad ) {
+        ads.forEach(function (ad) {
+
           parent = $(ad).parent();
+          // console.log(parent);
           script = parent.children('script');
           parent.children(adsenseClass).remove();
           parent.children('script').remove();
           parent.append($(ad));
-          parent.append($(script));
+          if (typeof window.parent.google_sa_impl == 'function') {
+            parent.append($(script));
+          }
+
         });
       }
     };
@@ -324,8 +330,8 @@ if (!is_amp()): ?>
             /*instagram埋め込み*/
             instagramLoad();
 
-            /*AdSense
-            adsenseLoad();*/
+            /*AdSense*/
+            adsenseLoad();
 
             /*LinkSwitch*/
             LinkSwitchLoad();
