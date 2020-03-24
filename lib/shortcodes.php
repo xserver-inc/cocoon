@@ -822,3 +822,48 @@ endif;
 //   return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
 // }
 // endif;
+
+
+//キャンペーン
+add_shortcode('campaign', 'campaign_shortcode');
+if ( !function_exists( 'campaign_shortcode' ) ):
+function campaign_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'from' => null, //いつから（開始日時）
+    'to' => null, //いつまで（終了日時）
+    'class' => null, //拡張クラス
+  ), $atts, 'campaign' ) );
+  //内容がない場合は何も表示しない
+  if (!$content) return null;
+  //現在の日時を取得
+  $now = date_i18n('U');
+
+  //いつから（開始日時）
+  $from_time = strtotime($from);
+  if (!$from_time) {
+    $from_time = strtotime('-1 day');
+  };
+
+  //いつまで（終了日時）
+  $to_time = strtotime($to);
+  if (!$to_time) {
+    $to_time = strtotime('+1 day');
+  };
+
+  //拡張クラス
+  if ($class) {
+    $class = ' '.$class;
+  }
+
+  $tag = null;
+  if (($from_time < $now) && ($to_time > $now)) {
+    $tag = '<div class="campaign'.esc_attr($class).'">'.
+      // date_i18n('開始日時：Y年m月d日 H時i分s秒', $from_time).'<br>'.
+      // date_i18n('終了日時：Y年m月d日 H時i分s秒', $to_time).'<br>'.
+      $content.
+    '</div>';
+  }
+
+  return $tag;
+}
+endif;
