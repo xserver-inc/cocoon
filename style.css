@@ -6031,6 +6031,11 @@ div.sbs-think .speech-balloon::after {
   margin-top: 1em;
 }
 
+.product-item-image-only img {
+  border: 0;
+  box-shadow: none;
+}
+
 @media screen and (min-width: 769px) {
   .booklink-box,
   .kaerebalink-box,
