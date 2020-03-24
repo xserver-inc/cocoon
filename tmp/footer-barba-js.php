@@ -226,23 +226,37 @@ if (!is_amp()): ?>
     function adsenseLoad() {
       const adsenseClass = '.adsbygoogle';
       const ads = document.body.querySelectorAll(adsenseClass);
-      //console.log(ads);
       if (ads.length > 0) {
         ads.forEach(function (ad) {
 
           parent = $(ad).parent();
-          // console.log(parent);
           script = parent.children('script');
           parent.children(adsenseClass).remove();
           parent.children('script').remove();
           parent.append($(ad));
-          if (typeof window.parent.google_sa_impl == 'function') {
-            parent.append($(script));
-          }
+          parent.append($(script));
 
         });
       }
     };
+
+    /*
+    document.addEventListener('load', function () {
+      var ads = document.querySelectorAll('.adsbygoogle');
+
+      if (ads.length > 0) {
+        ads.forEach(function (ad) {
+          if (ad.firstChild) {
+            ad.removeChild(ad.firstChild);
+          }
+        });
+        ads.forEach(function() {
+          window.adsbygoogle = window.adsbygoogle || [];
+          window.adsbygoogle.push({});
+        });
+      }
+    });
+    */
 
     /*LinkSwitch*/
     function LinkSwitchLoad() {
@@ -317,9 +331,6 @@ if (!is_amp()): ?>
             do_action('barba_init_transitions_after_enter'); ?>
           },
           after({ current, next, trigger }) {
-            // console.log(document.body);
-            // console.log(current);
-            // console.log(next);
             <?php if ($analytics_tracking_id && is_analytics()): ?>
               /*Google Analytics*/
               gaPush(location.pathname);
@@ -330,8 +341,8 @@ if (!is_amp()): ?>
             /*instagram埋め込み*/
             instagramLoad();
 
-            /*AdSense*/
-            adsenseLoad();
+            /*AdSense
+            adsenseLoad();*/
 
             /*LinkSwitch*/
             LinkSwitchLoad();
