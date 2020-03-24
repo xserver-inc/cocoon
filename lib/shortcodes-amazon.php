@@ -861,13 +861,17 @@ function amazon_product_link_shortcode($atts){
       ///////////////////////////////////////////
       // Amazonテキストリンク
       ///////////////////////////////////////////
+      $text_only_class = null;
+      if ($text_only) {
+        $text_only_class = ' amazon-item-text-only product-item-text-only';
+      }
       $text_link_tag =
-        '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+        '<a href="'.esc_url($associate_url).'" class="amazon-item-title-link product-item-title-link'.esc_attr($text_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
         $TitleHtml.
         $moshimo_amazon_impression_tag.
         '</a>';
       if ($text_only) {
-        return $text_link_tag;
+        return apply_filters('amazon_product_text_link_tag', $text_link_tag);
       }
 
       ///////////////////////////////////////////
