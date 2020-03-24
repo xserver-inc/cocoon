@@ -195,7 +195,7 @@ if (!is_amp()): ?>
     http://absg.hatenablog.com/entry/2018/08/31/230703*/
     function tweetLoad() {
       let tweets = document.getElementsByClassName('twitter-tweet');
-      if (tweets.length > 0)) {
+      if (tweets.length > 0) {
         if (typeof twttr === 'undefined') {
           let twitterjs = document.createElement("script");
           twitterjs.async = true;
@@ -209,8 +209,8 @@ if (!is_amp()): ?>
 
     /*Instagramスクリプトの呼び出し*/
     function instagramLoad() {
-      let instagrams.length > 0) = document.getElementsByClassName('instagram-media');
-      if (instagrams.length > 0)) {
+      let instagrams = document.getElementsByClassName('instagram-media');
+      if (instagrams.length > 0) {
         if (typeof window.instgrm === 'undefined') {
           let instagramjs = document.createElement("script");
           instagramjs.async = true;
@@ -226,14 +226,14 @@ if (!is_amp()): ?>
     function adsenseLoad() {
       const adsenseClass = '.adsbygoogle';
       const ads = document.body.querySelectorAll(adsenseClass);
-      if (ads.length > 0)) {
+      if (ads.length > 0) {
         ads.forEach(function( ad ) {
           parent = $(ad).parent();
           script = parent.children('script');
           parent.children(adsenseClass).remove();
           parent.children('script').remove();
           parent.append($(ad));
-          /*parent.append($(script));*/
+          parent.append($(script));
         });
       }
     };
