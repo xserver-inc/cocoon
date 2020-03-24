@@ -123,7 +123,7 @@ if (!is_amp()): ?>
       var w = $window.width();
 
       function adjustScrollArea(selector) {
-        offset = $(selector).offset().top;
+        offset = $(selector).offset();
         h = $("#header-container").height();
         pt = $(selector).css('padding-top');
         if (pt) {
