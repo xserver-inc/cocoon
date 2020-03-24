@@ -1545,6 +1545,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 6px 12px; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
 .admin-settings .demo .kaerebalink-link1 a:hover, .admin-settings .demo .booklink-link2 a:hover, .admin-settings .demo .tomarebalink-link1 a:hover, .admin-settings .demo .product-item-buttons a:hover { opacity: 0.6; }
 .admin-settings .demo .product-item-buttons { margin-top: 1em; }
+.admin-settings .demo .product-item-image-only img { border: 0; box-shadow: none; }
 @media screen and (min-width: 769px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { text-align: left; display: flex; font-size: inherit !important; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { vertical-align: top; box-sizing: border-box; min-width: auto !important; }
   .admin-settings .demo .booklink-info, .admin-settings .demo .kaerebalink-info, .admin-settings .demo .tomarebalink-info, .admin-settings .demo .product-item-content { line-height: 125%; vertical-align: top; box-sizing: border-box; padding-left: 25px; width: 100%; }
@@ -3117,6 +3118,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .kaerebalink-link1 a, .admin-settings .demo .booklink-link2 a, .admin-settings .demo .tomarebalink-link1 a, .admin-settings .demo .product-item-buttons a { width: 90%; display: block; margin: 0px auto 8px; padding: 6px 12px; text-decoration: none; font-size: 13px; font-weight: bold; text-align: center; color: #fff; }
 .admin-settings .demo .kaerebalink-link1 a:hover, .admin-settings .demo .booklink-link2 a:hover, .admin-settings .demo .tomarebalink-link1 a:hover, .admin-settings .demo .product-item-buttons a:hover { opacity: 0.6; }
 .admin-settings .demo .product-item-buttons { margin-top: 1em; }
+.admin-settings .demo .product-item-image-only img { border: 0; box-shadow: none; }
 @media screen and (min-width: 769px) { .admin-settings .demo .booklink-box, .admin-settings .demo .kaerebalink-box, .admin-settings .demo .tomarebalink-box, .admin-settings .demo .product-item-box { text-align: left; display: flex; font-size: inherit !important; }
   .admin-settings .demo .booklink-image, .admin-settings .demo .kaerebalink-image, .admin-settings .demo .tomarebalink-image, .admin-settings .demo .product-item-thumb { vertical-align: top; box-sizing: border-box; min-width: auto !important; }
   .admin-settings .demo .booklink-info, .admin-settings .demo .kaerebalink-info, .admin-settings .demo .tomarebalink-info, .admin-settings .demo .product-item-content { line-height: 125%; vertical-align: top; box-sizing: border-box; padding-left: 25px; width: 100%; }
