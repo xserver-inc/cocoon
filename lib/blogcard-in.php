@@ -63,6 +63,7 @@ function url_to_internal_blogcard_tag($url){
     //global $post;
     $post_data = get_post($id);
     setup_postdata($post_data);
+    wp_reset_query();
 
     $title = $post_data->post_title;//タイトルの取得
 
