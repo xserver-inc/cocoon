@@ -93,7 +93,7 @@ class TOCWidgetItem extends WP_Widget {
         '0' => __( 'H6見出しまで（デフォルト）', THEME_NAME ),
       );
       generate_selectbox_tag($this->get_field_name('depth'), $options, $depth);
-      generate_tips_tag(__( 'Cocoon設定「目次」タブの「目次表示の深さ」の設定が優先されます。', THEME_NAME ));
+      generate_tips_tag(__( 'Cocoon設定「目次」タブの「目次表示の深さ」で表示されていないものは表示できません。', THEME_NAME ).'<br>'.__( '例：Cocoon設定で「h2見出しまで」と設定されている場合、このウィジェットで「h3見出し」以降を表示することはできません。', THEME_NAME ));
        ?>
     </p>
     <?php
