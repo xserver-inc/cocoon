@@ -824,7 +824,7 @@ endif;
 // endif;
 
 
-//キャンペーン
+//キャンペーン（指定期間中のみ表示）
 add_shortcode('campaign', 'campaign_shortcode');
 if ( !function_exists( 'campaign_shortcode' ) ):
 function campaign_shortcode( $atts, $content = null ) {
@@ -833,6 +833,7 @@ function campaign_shortcode( $atts, $content = null ) {
     'to' => null, //いつまで（終了日時）
     'class' => null, //拡張クラス
   ), $atts, 'campaign' ) );
+  
   //内容がない場合は何も表示しない
   if (!$content) return null;
   //現在の日時を取得
