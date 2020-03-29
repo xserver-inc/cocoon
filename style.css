@@ -5702,6 +5702,7 @@ div.speech-balloon {
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 6px;
+  max-width: calc(100% - 14%);
 }
 div.speech-balloon p {
   margin: 0;
@@ -9708,6 +9709,7 @@ twitter-widget {
 
   .speech-wrap .speech-balloon {
     padding: 7px;
+    max-width: calc(100% - 16%);
   }
   .speech-wrap .speech-balloon::before, .speech-wrap .speech-balloon::after {
     border-bottom-width: 7px;
