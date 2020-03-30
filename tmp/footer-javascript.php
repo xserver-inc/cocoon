@@ -123,31 +123,34 @@ if (!is_amp()): ?>
       var w = $window.width();
 
       function adjustScrollArea(selector) {
-        offset = $(selector).offset().top;
-        h = $("#header-container").height();
-        pt = $(selector).css('padding-top');
-        if (pt) {
-          pt = pt.replace('px', '');
-        } else {
-          pt = 0;
+        if ($(selector) && $(selector).offset()) {
+          offset = $(selector).offset().top;
+          h = $("#header-container").height();
+          pt = $(selector).css('padding-top');
+          if (pt) {
+            pt = pt.replace('px', '');
+          } else {
+            pt = 0;
+          }
+
+          if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
+            if (pt <= 1) {
+              $(selector).css({
+                'padding-top': h + 'px',
+              });
+            }
+          } else {
+            if (pt > 0) {
+              $(selector).css({
+                'padding-top': 0,
+              });
+            }
+          }
         }
 
-        if ((scrollTop >= offset - h) && (w >  mobileWidth)) {
-          if (pt <= 1) {
-            $(selector).css({
-              'padding-top': h + 'px',
-            });
-          }
-        } else {
-          if (pt > 0) {
-            $(selector).css({
-              'padding-top': 0,
-            });
-          }
-        }
       }
 
-      //*スクロール追従エリアの調整*/
+      /*スクロール追従エリアの調整*/
       function adjustScrollAreas() {
         adjustScrollArea('#sidebar-scroll');
         adjustScrollArea('#main-scroll');
