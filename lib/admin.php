@@ -174,6 +174,11 @@ function customize_admin_manage_posts_columns($columns) {
     $columns['word-count'] = __( '文字数', THEME_NAME );
   }
 
+  //文字数表示
+  if (is_admin_list_pv_visible()) {
+    $columns['pv'] = __( 'PV', THEME_NAME );
+  }
+
   //アイキャッチ表示
   if (is_admin_list_eyecatch_visible()) {
     $columns['thumbnail'] = __( 'アイキャッチ', THEME_NAME );
@@ -226,6 +231,52 @@ function customize_admin_add_column($column_name, $post_id) {
         '</span>'.
         '<span class="word-count-coutent-count">'.
           sprintf( '%s', $content_count ).
+        '</span>'.
+      '</div>'.
+    '</div>';
+  }
+
+  //PV表示
+  if ( 'pv' == $column_name ) {
+    //テーマで設定されているサムネイルを利用する場合
+    $post = get_post($post_id);
+    //_v($post);
+    $title_count = mb_strlen(strip_tags($post->post_title));
+    $content_count = mb_strlen(strip_tags($post->post_content));
+    $digit = max(array(strlen($title_count), strlen($content_count)));
+    //var_dump($digit);
+    $thum =
+    '<div class="pv-wrap">'.
+      '<div class="pv-title">'.
+        '<span class="pv-title-label">'.
+          __( '日：', THEME_NAME ).
+        '</span>'.
+        '<span class="pv-title-count">'.
+          get_todays_pv().
+        '</span>'.
+      '</div>'.
+      '<div class="pv-title">'.
+        '<span class="pv-title-label">'.
+          __( '週：', THEME_NAME ).
+        '</span>'.
+        '<span class="pv-title-count">'.
+          get_last_7days_pv().
+        '</span>'.
+      '</div>'.
+      '<div class="pv-title">'.
+        '<span class="pv-title-label">'.
+          __( '月：', THEME_NAME ).
+        '</span>'.
+        '<span class="pv-title-count">'.
+          get_last_30days_pv().
+        '</span>'.
+      '</div>'.
+      '<div class="pv-title">'.
+        '<span class="pv-title-label">'.
+          __( '全：', THEME_NAME ).
+        '</span>'.
+        '<span class="pv-title-count">'.
+          get_all_pv().
         '</span>'.
       '</div>'.
     '</div>';
