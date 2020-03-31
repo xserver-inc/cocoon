@@ -76,46 +76,36 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     </footer>
 
-  </div>
+    <?php //管理者用パネル
+    get_template_part('tmp/admin-panel'); ?>
 
-  <?php //トップへ戻るボタンテンプレート
-  get_template_part('tmp/button-go-to-top'); ?>
+    <?php //モバイルヘッダーメニューボタン
+    get_template_part('tmp/mobile-header-menu-buttons'); ?>
 
-  <?php //管理者用パネル
-  get_template_part('tmp/admin-panel'); ?>
+    <?php //モバイルフッターメニューボタン
+    get_template_part('tmp/mobile-footer-menu-buttons'); ?>
 
-  <?php //モバイルヘッダーメニューボタン
-  get_template_part('tmp/mobile-header-menu-buttons'); ?>
+    <?php //トップへ戻るボタンテンプレート
+    get_template_part('tmp/button-go-to-top'); ?>
 
-  <?php //モバイルフッターメニューボタン
-  get_template_part('tmp/mobile-footer-menu-buttons'); ?>
+    <?php if (!is_amp()) {
+      //再利用用にフッターコードを取得
+      //wp_footer()関数では、一度しか出力が行われないようなので事前にグローバル変数に格納しておく
+      global $_WP_FOOTER;
+      ob_start();
+      wp_footer();
+      $f = ob_get_clean();
+      echo $f;
+      $_WP_FOOTER = $f;
+    } ?>
 
-  <?php if (!is_amp()) wp_footer(); ?>
+    <?php //フッターで読み込むscriptをまとめたもの
+    get_template_part('tmp/footer-scripts');?>
 
-  <?php //フッターで読み込むJavaScript用テンプレート
-  get_template_part('tmp/footer-javascript');?>
+  </div><!-- #container -->
 
-  <?php //カスタムフィールドの挿入（カスタムフィールド名：footer_custom）
-  get_template_part('tmp/footer-custom-field');?>
-
-  <?php //アクセス解析フッタータグの取得
-  get_template_part('tmp/footer-analytics'); ?>
-
-  <?php //フッター挿入用のユーザー用テンプレート
-  if (is_amp()) {
-    //AMP用のフッターアクションフック
-    do_action( 'wp_amp_footer_insert_open' );
-    //親テーマのAMPフッター用
-    get_template_part('tmp/amp-footer-insert');
-    //子テーマのAMPフッター用
-    get_template_part('tmp-user/amp-footer-insert');
-  } else {
-    //フッター用のアクションフック
-    do_action( 'wp_footer_insert_open' );
-    //フッター用のテンプレート
-    get_template_part('tmp-user/footer-insert');
-  }
-  ?>
+  <?php //barba.js処理
+  get_template_part('tmp/footer-barba-js');?>
 
 </body>
 

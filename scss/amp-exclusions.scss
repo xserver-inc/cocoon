@@ -104,3 +104,9 @@
 		display: none;
 	}
 }
+
+
+//クリック動作しない
+.click-prevention{
+	pointer-events: none;
+}

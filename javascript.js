@@ -7,6 +7,7 @@
 /////////////////////////////////
 // JavaScriptコード
 /////////////////////////////////
+
 (function($){
   /////////////////////////////////
   //TOPへ戻るボタン
@@ -123,16 +124,15 @@
     })
   }
 
-
-
   //コメントボタンがクリックされたとき
   $('#comment-reply-btn, .comment-reply-link').click(function() {
     $('#comment-reply-btn').slideUp();
     $('#respond').slideDown();
   });
 
-  //カレーセルの表示
-  $('.carousel').fadeIn(1000);
+  // //カレーセルの表示
+  // $('.carousel').slideDown(300);
+  // $('.carousel .a-wrap').animate({'opacity': '1'}, 2200);
 
   //Google検索ボタン
   $('.sbtn').click(function(){

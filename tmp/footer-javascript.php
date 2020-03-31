@@ -121,8 +121,9 @@ if (!is_amp()): ?>
       var s1 = (prevScrollTop > threashold);
       var s2 = (scrollTop > threashold);
       var w = $window.width();
-
+      /*スクロールエリアの位置調整*/
       function adjustScrollArea(selector) {
+
         if ($(selector) && $(selector).offset()) {
           offset = $(selector).offset().top;
           h = $("#header-container").height();

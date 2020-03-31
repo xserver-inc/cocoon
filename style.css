@@ -8309,7 +8309,7 @@ input[type='submit'] {
 }
 
 .carousel {
-  display: none;
+  animation: carousel-show 0.6s cubic-bezier(0, 0, 0.2, 1);
 }
 .carousel .a-wrap {
   padding: 0.2em 0.3em;
@@ -9084,6 +9084,10 @@ twitter-widget {
 .fixed-header .has-sub,
 .fixed-header .navi-in .sub-menu {
   display: none;
+}
+
+.click-prevention {
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1023px) {

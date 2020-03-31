@@ -74,20 +74,10 @@ get_template_part('tmp/head-pwa'); ?>
 get_template_part('tmp-user/head-insert'); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
-
-<?php //body要素の直後に何かを挿入する際
-if ( function_exists( 'wp_body_open' ) ) {
-    wp_body_open();
-} else {
-    do_action( 'wp_body_open' );
-}?>
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage" data-barba="wrapper">
 
 <?php //body最初に挿入するアクセス解析ヘッダータグの取得
-get_template_part('tmp/body-top-analytics'); ?>
-
-<?php //ユーザーカスタマイズ用
-get_template_part('tmp-user/body-top-insert'); ?>
+  get_template_part('tmp/body-top-analytics'); ?>
 
 <?php //サイトヘッダーからコンテンツまでbodyタグ最初のHTML
 get_template_part('tmp/body-top'); ?>

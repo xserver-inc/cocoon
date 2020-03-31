@@ -503,6 +503,16 @@ function wp_enqueue_script_hatebu_share_button_js(){
 }
 endif;
 
+//barba.jsスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
+function wp_enqueue_script_barba_js(){
+  if ( is_highspeed_mode_enable() ){
+    wp_enqueue_script( 'barba-js', 'https://unpkg.com/@barba/core', array(), false, true );
+    //wp_enqueue_script( 'barba-js-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver%2CNodeList.prototype.forEach', array('barba-js'), false, true );
+  }
+}
+endif;
+
 //clipboard.jsスクリプトの読み込み
 if ( !function_exists( 'wp_enqueue_script_clipboard_js' ) ):
 function wp_enqueue_script_clipboard_js(){
@@ -3272,6 +3282,18 @@ function change_fa($buffer){
     }
   }
   return $buffer;
+}
+endif;
+
+//barba.jsのネームスペース
+if ( !function_exists( 'get_barba_name_space' ) ):
+function get_barba_name_space(){
+  if (is_singular()) {
+    $name_space = 'singular';
+  } else {
+    $name_space = 'home';
+  }
+  return $name_space;
 }
 endif;
 
