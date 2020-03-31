@@ -149,6 +149,7 @@ body{
   //font-size: 0.9em;
   .speech-balloon{
     padding: 7px;
+    max-width: calc(100% - 16%);
 
     &::before,
     &::after{

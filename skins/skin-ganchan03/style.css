@@ -16,10 +16,6 @@
     padding-top: 4px;
 }
 
-.navi {
-    background-color: #F2E7C7;
-}
-
 .navi-in a {
     color: #666;
     font-weight: bold;
@@ -120,12 +116,6 @@ main.main, div.sidebar {
 .article h3, .article h4, .article h5, .article h6 {
     font-size: 16px;
 }
-}
-
-.navi-in>ul li {
-    background-color: #F2E7C7;
-}
-
 
 .comment-title {
     font-size: 18px;

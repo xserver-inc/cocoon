@@ -387,16 +387,15 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
-      if (DEBUG_MODE) {
-        echo('<pre>');
-        echo $transient_id;
-        echo('</pre>');
+      if (DEBUG_MODE && is_user_administrator()) {
+        // echo('<pre>');
+        // echo $transient_id;
+        // echo('</pre>');
       } elseif (is_user_administrator()){
 
       } else {
         return $cache;
       }
-
     }
   }
 
