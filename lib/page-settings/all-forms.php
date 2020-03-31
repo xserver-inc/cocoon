@@ -54,7 +54,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                 <?php
                 //フォント
                 $options = array(
-                  'hiragino' => __( 'ヒラギノ角ゴ, メイリオ', THEME_NAME ),
+                  'hiragino' => __( 'ヒラギノ角ゴ, メイリオ', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
                   'meiryo' => __( 'メイリオ, ヒラギノ角ゴ', THEME_NAME ),
                   'yu_gothic' => __( '游ゴシック体, ヒラギノ角ゴ', THEME_NAME ),
                   'ms_pgothic' => __( 'ＭＳ Ｐゴシック, ヒラギノ角ゴ', THEME_NAME ),
