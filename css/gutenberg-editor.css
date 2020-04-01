@@ -959,6 +959,10 @@ ol, ul {
   padding: 0 10px;
 }
 
+.speech-wrap .components-button {
+  height: auto;
+}
+
 @media all and (-ms-high-contrast: none) {
   .editor-block-toolbar.block-editor-block-toolbar {
     position: relative;

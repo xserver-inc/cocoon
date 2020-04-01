@@ -737,6 +737,11 @@ ol, ul {
 //   padding-right: 58px;
 // }
 
+//WordPress 5.4からの吹き出しの不具合対応
+.speech-wrap .components-button{
+  height: auto;
+}
+
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
 @mixin ms_block_fix{
