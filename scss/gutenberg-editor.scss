@@ -742,6 +742,10 @@ ol, ul {
   height: auto;
 }
 
+.page-body p{
+  font-size: 18px;
+}
+
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
 @mixin ms_block_fix{
