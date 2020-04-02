@@ -16,7 +16,8 @@
     padding-top: 4px;
 }
 
-.navi-in a {
+.navi-in a,
+.navi-in > ul .sub-menu {
     color: #666;
     font-weight: bold;
 }

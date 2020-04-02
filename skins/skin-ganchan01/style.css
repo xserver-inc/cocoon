@@ -17,7 +17,8 @@
     padding-top: 4px;
 }
 
-.navi {
+.navi,
+.navi-in > ul .sub-menu {
     background-color: #333;
 }
 
