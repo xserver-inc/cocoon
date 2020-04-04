@@ -41,6 +41,37 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
+<!-- ダッシュボードメッセージ -->
+<div id="admin" class="postbox">
+  <h2 class="hndle"><?php _e( 'ダッシュボードメッセージ', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( 'WordPress管理画面上部に表示されるメッセージに関する設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- メッセージ表示 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag('', __( 'メッセージ表示', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+
+            //ダッシュボードメッセージの表示
+            generate_checkbox_tag(OP_DASHBOARD_MESSAGE_VISIBLE, is_dashboard_message_visible(), __( 'ダッシュボードメッセージの表示', THEME_NAME ));
+            generate_tips_tag(__( '管理画面上部のメッセージを表示するかどうか。', THEME_NAME ).__( '新型コロナウイルスに関する情報は、WHOの終息宣言が出るか、それに近い状態になるまで表示します（今回のウイルスの性質的に完全に終息できるものかもわからないので）。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
 <!-- 投稿一覧設定 -->
 <div id="admin" class="postbox">
   <h2 class="hndle"><?php _e( '投稿一覧設定', THEME_NAME ) ?></h2>

@@ -138,6 +138,9 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'tinymce/shortcodes.php'; //ショートコード追加
   require_once abspath(__FILE__).'admin-tools.php'; //外部ツールを利用したもの
   require_once abspath(__FILE__).'admin-forms.php'; //管理画面で使用するフォームパーツ
+  if (is_dashboard_message_visible()) {
+    require_once abspath(__FILE__).'dashboard-message.php'; //ダッシュボードに表示するメッセージ
+  }
 }
 
 require_once abspath(__FILE__).'settings.php';   //WordPressの設定

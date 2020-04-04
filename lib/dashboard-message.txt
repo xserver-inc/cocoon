@@ -1,0 +1,10 @@
+新型コロナ対策：換気の悪い「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密閉空間</a>」は避けましょう。
+新型コロナ対策：多くの人が集まる「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密集空間</a>」を避けましょう。
+新型コロナ対策：近距離での会話や発声をする「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密接場面</a>」を避けましょう。
+新型コロナ対策の基本は「<a href="https://www.cas.go.jp/jp/influenza/pdf/tearai.pdf" target="_blank" rel="noopener noreferrer">手洗い</a>」や「<a href="https://www.cas.go.jp/jp/influenza/pdf/seki.pdf" target="_blank" rel="noopener noreferrer">マスクの着用を含む咳エチケット</a>」です。
+新型コロナ対策スローガン：<a href="https://twitter.com/search?q=%23%E8%B7%9D%E9%9B%A2%E3%82%92%E3%81%82%E3%81%91%E3%82%88%E3%81%86&src=typed_query" target="_blank" rel="noopener noreferrer">#距離をあけよう</a>、<a href="https://twitter.com/hashtag/KEEPDISTANCE?src=hashtag_click" target="_blank" rel="noopener noreferrer">#KeepDistance</a>
+新型コロナ対策スローガン：<a href="https://twitter.com/hashtag/%E3%81%86%E3%81%A1%E3%81%A7%E9%81%8E%E3%81%94%E3%81%9D%E3%81%86?src=hashtag_click" target="_blank" rel="noopener noreferrer">#うちで過ごそう</a>、<a href="https://twitter.com/hashtag/StayHome?src=hashtag_click">#StayHome</a>
+新型コロナ情報：<a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener noreferrer">国別新型コロナウイルス感染者数マップ</a>
+新型コロナ情報：<a href="https://jagjapan.maps.arcgis.com/apps/opsdashboard/index.html#/641eba7fef234a47880e1e1dc4de85ce" target="_blank" rel="noopener noreferrer">都道府県別新型コロナウイルス感染者数マップ</a>
+新型コロナ情報：<a href="https://newsdigest.jp/pages/coronavirus/" target="_blank" rel="noopener noreferrer">新型コロナウイルスの最新感染状況マップ</a>
+新型コロナ情報：<a href="https://www.stopcovid19.jp/" target="_blank" rel="noopener noreferrer">都道府県別の空き感染症病床数</a>
