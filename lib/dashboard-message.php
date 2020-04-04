@@ -18,7 +18,7 @@ function dashboard_message_get_text() {
 	$messages = explode( "\n", $messages );
 
 	//一行だけを表示する
-	return wptexturize( $messages[ mt_rand( 0, count( $messages ) - 1 ) ] );
+	return wptexturize( $messages[ rand( 0, count( $messages ) - 1 ) ] );
 }
 endif;
 
