@@ -436,7 +436,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #ddd; }
 .admin-settings .demo .iwe-shadow-paper img, .admin-settings .demo .iwe-shadow-paper amp-img { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 .admin-settings .demo .entry-card-thumb, .admin-settings .demo .author-thumb, .admin-settings .demo .blogcard-thumbnail, .admin-settings .demo .related-entry-card-thumb, .admin-settings .demo .popular-entry-card-thumb, .admin-settings .demo .new-entry-card-thumb { margin-right: 1.6%; }
-.admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vartical-card .related-entry-card-thumb { margin: 0; }
+.admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { margin-right: 0; margin-left: 1.4%; }
 .admin-settings .demo .no-thumbnail .card-thumb, .admin-settings .demo .no-thumbnail .widget-entry-card-pv { display: none; }
 .admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content { margin: 0; }
@@ -1384,14 +1384,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .rect-mini-card .related-entry-card-content { margin-left: 130px; }
 .admin-settings .demo .rect-mini-card .related-entry-card-title { font-size: 16px; }
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet { display: none; }
-.admin-settings .demo .rect-vartical-card .related-list { display: flex; flex-wrap: wrap; justify-content: space-around; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-wrap { padding: 5px; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-thumb { float: none; width: 100%; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-thumb img { width: 100%; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-content { margin: 0; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-title { font-size: 16px; }
-.admin-settings .demo .rect-vartical-card-3 .related-entry-card-wrap { width: 33%; }
-.admin-settings .demo .rect-vartical-card-4 .related-entry-card-wrap { width: 24.5%; }
+.admin-settings .demo .rect-vertical-card .related-list { display: flex; flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-wrap { padding: 5px; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-thumb { float: none; width: 100%; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-thumb img { width: 100%; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-content { margin: 0; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-title { font-size: 16px; }
+.admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap { width: 33%; }
+.admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap { width: 24.5%; }
 .admin-settings .demo .recb-entry-border .related-entry-card-wrap { border: 1px solid #ccc; }
 .admin-settings .demo .commets-list { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .commets-list .avatar { float: right; }
@@ -2009,7 +2009,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .iwe-shadow img, .admin-settings .demo .iwe-shadow amp-img { box-shadow: 5px 5px 15px #ddd; }
 .admin-settings .demo .iwe-shadow-paper img, .admin-settings .demo .iwe-shadow-paper amp-img { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
 .admin-settings .demo .entry-card-thumb, .admin-settings .demo .author-thumb, .admin-settings .demo .blogcard-thumbnail, .admin-settings .demo .related-entry-card-thumb, .admin-settings .demo .popular-entry-card-thumb, .admin-settings .demo .new-entry-card-thumb { margin-right: 1.6%; }
-.admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vartical-card .related-entry-card-thumb { margin: 0; }
+.admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { margin-right: 0; margin-left: 1.4%; }
 .admin-settings .demo .no-thumbnail .card-thumb, .admin-settings .demo .no-thumbnail .widget-entry-card-pv { display: none; }
 .admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content { margin: 0; }
@@ -2957,14 +2957,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .rect-mini-card .related-entry-card-content { margin-left: 130px; }
 .admin-settings .demo .rect-mini-card .related-entry-card-title { font-size: 16px; }
 .admin-settings .demo .rect-mini-card .related-entry-card-snippet { display: none; }
-.admin-settings .demo .rect-vartical-card .related-list { display: flex; flex-wrap: wrap; justify-content: space-around; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-wrap { padding: 5px; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-thumb { float: none; width: 100%; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-thumb img { width: 100%; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-content { margin: 0; }
-.admin-settings .demo .rect-vartical-card .related-entry-card-title { font-size: 16px; }
-.admin-settings .demo .rect-vartical-card-3 .related-entry-card-wrap { width: 33%; }
-.admin-settings .demo .rect-vartical-card-4 .related-entry-card-wrap { width: 24.5%; }
+.admin-settings .demo .rect-vertical-card .related-list { display: flex; flex-wrap: wrap; justify-content: space-around; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-wrap { padding: 5px; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-thumb { float: none; width: 100%; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-thumb img { width: 100%; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-content { margin: 0; }
+.admin-settings .demo .rect-vertical-card .related-entry-card-title { font-size: 16px; }
+.admin-settings .demo .rect-vertical-card-3 .related-entry-card-wrap { width: 33%; }
+.admin-settings .demo .rect-vertical-card-4 .related-entry-card-wrap { width: 24.5%; }
 .admin-settings .demo .recb-entry-border .related-entry-card-wrap { border: 1px solid #ccc; }
 .admin-settings .demo .commets-list { padding: 0; margin: 0; list-style: none; }
 .admin-settings .demo .commets-list .avatar { float: right; }
@@ -3738,7 +3738,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .sns-share.ss-top.ss-col-6 a, .admin-settings .demo .sns-share.ss-bottom.ss-col-6 a { width: 32%; }
   .admin-settings .demo .sns-follow-buttons { flex-wrap: wrap; justify-content: space-around; }
   .admin-settings .demo .sns-follow-buttons a { margin-right: 0; width: 48%; }
-  .admin-settings .demo .rect-vartical-card .related-entry-card-wrap { width: 49%; }
+  .admin-settings .demo .rect-vertical-card .related-entry-card-wrap { width: 49%; }
   .admin-settings .demo .rect-mini-card .related-entry-card-wrap { margin-bottom: 10px; }
   .admin-settings .demo .rect-mini-card .cat-label { font-size: 8px; }
   .admin-settings .demo .rect-mini-card .related-entry-card-thumb { width: 30%; }
@@ -3863,7 +3863,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .sp-display-none { display: none !important; }
   .admin-settings .demo .image-content amp-img { min-width: 200px; max-width: 200px; }
   .admin-settings .demo .blogcard { padding-top: 3%; } }
-@media screen and (max-width: 356px) { .admin-settings .demo .ect-vertical-card .entry-card-wrap, .admin-settings .demo .rect-vartical-card .related-entry-card-wrap, .admin-settings .demo .ect-2-columns > *, .admin-settings .demo .ect-3-columns > * { width: 100% !important; } }
+@media screen and (max-width: 356px) { .admin-settings .demo .ect-vertical-card .entry-card-wrap, .admin-settings .demo .rect-vertical-card .related-entry-card-wrap, .admin-settings .demo .ect-2-columns > *, .admin-settings .demo .ect-3-columns > * { width: 100% !important; } }
 @media print { .admin-settings .demo { /************************************
 ** 印刷用スタイル
 ************************************/ }

@@ -541,7 +541,7 @@ img {
 }
 
 .ect-vertical-card .entry-card-thumb,
-.rect-vartical-card .related-entry-card-thumb {
+.rect-vertical-card .related-entry-card-thumb {
   margin: 0;
 }
 
@@ -5167,33 +5167,33 @@ label.screen-reader-text {
 /************************************
 ** 縦型カード
 ************************************/
-.rect-vartical-card .related-list {
+.rect-vertical-card .related-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.rect-vartical-card .related-entry-card-wrap {
+.rect-vertical-card .related-entry-card-wrap {
   padding: 5px;
 }
-.rect-vartical-card .related-entry-card-thumb {
+.rect-vertical-card .related-entry-card-thumb {
   float: none;
   width: 100%;
 }
-.rect-vartical-card .related-entry-card-thumb img {
+.rect-vertical-card .related-entry-card-thumb img {
   width: 100%;
 }
-.rect-vartical-card .related-entry-card-content {
+.rect-vertical-card .related-entry-card-content {
   margin: 0;
 }
-.rect-vartical-card .related-entry-card-title {
+.rect-vertical-card .related-entry-card-title {
   font-size: 16px;
 }
 
-.rect-vartical-card-3 .related-entry-card-wrap {
+.rect-vertical-card-3 .related-entry-card-wrap {
   width: 33%;
 }
 
-.rect-vartical-card-4 .related-entry-card-wrap {
+.rect-vertical-card-4 .related-entry-card-wrap {
   width: 24.5%;
 }
 
@@ -9339,7 +9339,7 @@ twitter-widget {
   /************************************
   ** 関連記事
   ************************************/
-  .rect-vartical-card .related-entry-card-wrap {
+  .rect-vertical-card .related-entry-card-wrap {
     width: 49%;
   }
 
@@ -9895,7 +9895,7 @@ twitter-widget {
 }
 @media screen and (max-width: 356px) {
   .ect-vertical-card .entry-card-wrap,
-  .rect-vartical-card .related-entry-card-wrap,
+  .rect-vertical-card .related-entry-card-wrap,
   .ect-2-columns > *,
   .ect-3-columns > * {
     width: 100% !important;

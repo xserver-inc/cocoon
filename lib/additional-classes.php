@@ -769,7 +769,7 @@ function get_additional_related_entries_classes($option = null){
   switch (get_related_entry_type()) {
     case 'vartical_card_3':
     case 'vartical_card_4':
-      $classes .= ' rect-vartical-card';
+      $classes .= ' rect-vertical-card';
       break;
   }
   $classes .= ' rect-'.replace_value_to_class(get_related_entry_type());

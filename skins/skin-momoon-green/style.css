@@ -49,13 +49,13 @@ article .blogcard-wrap,article .blogcard-wrap:first-of-type{
 .carousel{
 	padding:0 0 30px;
 }
-#recommended-in .a-wrap,.carousel .a-wrap,.rect-vartical-card .a-wrap{
+#recommended-in .a-wrap,.carousel .a-wrap,.rect-vertical-card .a-wrap{
 	border:none;
 }
 .rect-mini-card .a-wrap:first-of-type{
 	border-top:none;
 }
-.rect-vartical-card .related-entry-card-wrap {
+.rect-vertical-card .related-entry-card-wrap {
     padding: 15px 7.5px;
 }
 .entry-card-snippet{
