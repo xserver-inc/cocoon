@@ -1551,7 +1551,7 @@ margin-top: 25px;
     border-color: #cacaca;
     font-weight: bold;
 }
-.related-vartical-card .related-entry-card-title {
+.related-vertical-card .related-entry-card-title {
     font-size: 15px;
     font-weight: 100;
 }
@@ -1564,7 +1564,7 @@ margin-top: 25px;
   background-color: unset!important;
   color:unset!important;
 }
-.related-vartical-card .related-entry-card-wrap:hover .card-thumb img{
+.related-vertical-card .related-entry-card-wrap:hover .card-thumb img{
   transform: scale(1.07);
   transition: all 0.5s ease;
 }

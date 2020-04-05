@@ -792,7 +792,7 @@ function get_additional_post_navi_classes($option = null){
   // switch (get_post_navi_type()) {
   //   case 'vartical_card_3':
   //   case 'vartical_card_4':
-  //     $classes .= ' related-vartical-card';
+  //     $classes .= ' related-vertical-card';
   //     break;
   // }
   $classes .= ' post-navi-'.replace_value_to_class(get_post_navi_type());

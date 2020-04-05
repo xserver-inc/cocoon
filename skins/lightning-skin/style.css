@@ -403,7 +403,7 @@ table{
 }
 
 /* 関連記事 */
-.related-vartical-card .related-entry-card-title{
+.related-vertical-card .related-entry-card-title{
 	color: #454545;
 	margin-bottom: .5em;
 }
@@ -412,7 +412,7 @@ table{
 	color: #adadad;
 	line-height: 1em;
 }
-.related-vartical-card .related-entry-card-title{
+.related-vertical-card .related-entry-card-title{
 	line-height: 1em;
 }
 .related-entry-heading, .comment-title{
