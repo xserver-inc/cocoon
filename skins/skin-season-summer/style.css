@@ -963,6 +963,9 @@ input[type='submit']:hover {
 .mobile-menu-buttons .menu-button:last-child {
 	border-right: none;
 }
+.mobile-menu-buttons .menu-content{
+	color: #555;
+}
 .author-box .sns-follow-buttons a.follow-button {
 	color: #fff;
 	border-radius: 50%;
