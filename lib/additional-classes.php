@@ -767,8 +767,8 @@ if ( !function_exists( 'get_additional_related_entries_classes' ) ):
 function get_additional_related_entries_classes($option = null){
   $classes = null;
   switch (get_related_entry_type()) {
-    case 'vartical_card_3':
-    case 'vartical_card_4':
+    case 'vertical_card_3':
+    case 'vertical_card_4':
       $classes .= ' rect-vertical-card';
       break;
   }
@@ -790,8 +790,8 @@ if ( !function_exists( 'get_additional_post_navi_classes' ) ):
 function get_additional_post_navi_classes($option = null){
   $classes = null;
   // switch (get_post_navi_type()) {
-  //   case 'vartical_card_3':
-  //   case 'vartical_card_4':
+  //   case 'vertical_card_3':
+  //   case 'vertical_card_4':
   //     $classes .= ' related-vertical-card';
   //     break;
   // }

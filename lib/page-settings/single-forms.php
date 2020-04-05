@@ -160,8 +160,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'entry_card' => __( 'エントリーカード（デフォルト）', THEME_NAME ),
               'mini_card' => __( 'ミニカード（推奨表示数：偶数）', THEME_NAME ),
-              'vartical_card_3' => __( '縦型カード3列（推奨表示数：6, 12, 18...）', THEME_NAME ),
-              'vartical_card_4' => __( '縦型カード4列（推奨表示数：4, 8, 12...）', THEME_NAME ),
+              'vertical_card_3' => __( '縦型カード3列（推奨表示数：6, 12, 18...）', THEME_NAME ),
+              'vertical_card_4' => __( '縦型カード4列（推奨表示数：4, 8, 12...）', THEME_NAME ),
               DATA_AD_FORMAT_AUTORELAXED => __( 'AdSense関連コンテンツユニット', THEME_NAME ),
             );
             generate_radiobox_tag(OP_RELATED_ENTRY_TYPE, $options, get_related_entry_type());

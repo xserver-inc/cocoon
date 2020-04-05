@@ -109,7 +109,7 @@ if ( !function_exists( 'get_related_entry_card_thumbnail_size' ) ):
     $thumbnail_size = null;
     //適切なサムネイルサイズの選択
     switch (get_related_entry_type()) {
-      case 'vartical_card_3':
+      case 'vertical_card_3':
         $thumbnail_size = THUMB320;
         break;
       case 'mini_card':
