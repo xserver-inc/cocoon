@@ -327,6 +327,18 @@ ul{
   }
 }
 
+.wp-block-table{
+  overflow: hidden;
+}
+.wp-block .wp-block-table__cell-content{
+  min-width: 30px;
+  padding: 5px;
+}
+
+// table{
+//   width: 90% !important;
+// }
+
 /* wp-includes/css/dist/block-library/theme.css
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots){
     max-width:100px;
