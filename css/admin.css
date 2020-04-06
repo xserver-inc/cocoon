@@ -815,6 +815,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .sns-follow-buttons a, .admin-settings .demo .footer .sns-follow-buttons a { width: 49%; margin-right: 0; }
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
 .admin-settings .demo .widget h2 { font-size: 20px; }
+.admin-settings .demo .entry-content .main-widget-label { display: none; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou, .admin-settings .demo .badge-red, .admin-settings .demo .badge-pink, .admin-settings .demo .badge-purple, .admin-settings .demo .badge-blue, .admin-settings .demo .badge-green, .admin-settings .demo .badge-yellow, .admin-settings .demo .badge-brown, .admin-settings .demo .badge-grey { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #f39800; }
 .admin-settings .demo .badge-red { background-color: #e60033; }
@@ -2388,6 +2389,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .sidebar .sns-follow-buttons a, .admin-settings .demo .footer .sns-follow-buttons a { width: 49%; margin-right: 0; }
 .admin-settings .demo .widget_mobile_text, .admin-settings .demo .widget_mobile_ad { display: none; }
 .admin-settings .demo .widget h2 { font-size: 20px; }
+.admin-settings .demo .entry-content .main-widget-label { display: none; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou, .admin-settings .demo .badge-red, .admin-settings .demo .badge-pink, .admin-settings .demo .badge-purple, .admin-settings .demo .badge-blue, .admin-settings .demo .badge-green, .admin-settings .demo .badge-yellow, .admin-settings .demo .badge-brown, .admin-settings .demo .badge-grey { color: #fff; padding: 1px 5px 0; border-radius: 2px; font-size: 12px; }
 .admin-settings .demo .badge, .admin-settings .demo .ref, .admin-settings .demo .reffer, .admin-settings .demo .sankou { background-color: #f39800; }
 .admin-settings .demo .badge-red { background-color: #e60033; }
