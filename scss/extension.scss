@@ -973,7 +973,6 @@ $bb_green: $green_color;
 ///////////////////////////////////////////
 .mc-circle{
   border-radius: 2em;
-  border: none;
 }
 @mixin micro_copycolor($color: 'red'){
   background-color: $color;
