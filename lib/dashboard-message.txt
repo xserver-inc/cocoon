@@ -9,3 +9,4 @@
 新型コロナ情報：<a href="https://newsdigest.jp/pages/coronavirus/" target="_blank" rel="noopener noreferrer">新型コロナウイルスの最新感染状況マップ</a>
 新型コロナ情報：<a href="https://www.stopcovid19.jp/" target="_blank" rel="noopener noreferrer">都道府県別の空き感染症病床数</a>
 新型コロナ情報：<a href="https://stopcovid19.metro.tokyo.lg.jp/" target="_blank" rel="noopener noreferrer">東京都内の最新感染動向</a>
+新型コロナ税制：<a href="https://www.mof.go.jp/tax_policy/keizaitaisaku.html" target="_blank" rel="noopener noreferrer">新型コロナウイルス感染症緊急経済対策における税制上の措置（案）</a>
