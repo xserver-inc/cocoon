@@ -400,7 +400,6 @@ function get_block_editor_color_palette_css(){
 .micro-balloon.has-<?php echo $slug; ?>-background-color {
   background-color: <?php echo $color; ?>;
   border-color: transparent;
-  border: 1px;
 }
 .micro-balloon.has-<?php echo $slug; ?>-background-color.micro-bottom::after {
   border-bottom-color: <?php echo $color; ?>;
