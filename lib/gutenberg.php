@@ -399,15 +399,16 @@ function get_block_editor_color_palette_css(){
 <?php //マイクロバルーン（背景色） ?>
 .micro-balloon.has-<?php echo $slug; ?>-background-color {
   background-color: <?php echo $color; ?>;
-  border-color: #fff;
+  border-color: transparent;
+  border: 1px;
 }
 .micro-balloon.has-<?php echo $slug; ?>-background-color.micro-bottom::after {
   border-bottom-color: <?php echo $color; ?>;
-  border-top-color: #fff;
+  border-top-color: transparent;
 }
 .micro-balloon.has-<?php echo $slug; ?>-background-color::before {
-  border-top-color: #fff;
-  border-bottom-color: #fff;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
 }
 .micro-balloon.has-<?php echo $slug; ?>-background-color::after {
   border-top-color: <?php echo $color; ?>;
@@ -486,7 +487,7 @@ function get_block_editor_color_palette_css(){
 .body .btn-wrap{
     background-color: <?php echo $btn_wrap_bk_color; ?>;
     color: #333;
-    border-color: #fff;
+    border-color: transparent;
     font-size: 16px;
 }
 
