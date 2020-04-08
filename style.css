@@ -9096,6 +9096,10 @@ twitter-widget {
   pointer-events: none;
 }
 
+_:-ms-lang(x), .mc-circle {
+  background-clip: border-box;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

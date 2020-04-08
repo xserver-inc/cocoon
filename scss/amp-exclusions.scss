@@ -110,3 +110,8 @@
 .click-prevention{
 	pointer-events: none;
 }
+
+//IE・Edgeでbackground-clip: padding-box;除外
+_:-ms-lang(x), .mc-circle {
+  background-clip: border-box;
+}
