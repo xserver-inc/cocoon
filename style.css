@@ -3701,6 +3701,7 @@ label.screen-reader-text {
 
 .mc-circle {
   border-radius: 2em;
+  background-clip: padding-box;
 }
 
 .mc-red {

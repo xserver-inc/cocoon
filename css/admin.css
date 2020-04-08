@@ -1043,7 +1043,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-icon { margin-right: 6px; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
-.admin-settings .demo .mc-circle { border-radius: 2em; }
+.admin-settings .demo .mc-circle { border-radius: 2em; background-clip: padding-box; }
 .admin-settings .demo .mc-red { background-color: #e60033; color: #fff; border: none; }
 .admin-settings .demo .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
 .admin-settings .demo .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
@@ -2617,7 +2617,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .micro-icon { margin-right: 6px; }
 .admin-settings .demo .micro-copy.alignleft, .admin-settings .demo .micro-copy.alignright { float: none; }
 .admin-settings .demo .micro-copy.alignright { margin-left: auto; }
-.admin-settings .demo .mc-circle { border-radius: 2em; }
+.admin-settings .demo .mc-circle { border-radius: 2em; background-clip: padding-box; }
 .admin-settings .demo .mc-red { background-color: #e60033; color: #fff; border: none; }
 .admin-settings .demo .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
 .admin-settings .demo .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
@@ -4371,7 +4371,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .micro-icon { margin-right: 6px; }
 .components-popover__content .micro-copy.alignleft, .components-popover__content .micro-copy.alignright { float: none; }
 .components-popover__content .micro-copy.alignright { margin-left: auto; }
-.components-popover__content .mc-circle { border-radius: 2em; }
+.components-popover__content .mc-circle { border-radius: 2em; background-clip: padding-box; }
 .components-popover__content .mc-red { background-color: #e60033; color: #fff; border: none; }
 .components-popover__content .mc-red.micro-bottom::after { border-bottom-color: #e60033; border-top-color: transparent; }
 .components-popover__content .mc-red::before { border-top-color: transparent; border-bottom-color: transparent; }
