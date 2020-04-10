@@ -690,8 +690,7 @@ img.emoji {
 }
 .header-container-in.hlt-top-menu .logo-header img {
   max-height: 60px;
-  height: 100%;
-  width: auto;
+  height: auto;
 }
 .header-container-in.hlt-top-menu amp-img {
   max-width: 160px;
