@@ -3198,7 +3198,7 @@ label.screen-reader-text {
 }
 
 .bb-memo .bb-label .fa::before {
-  content: "";
+  content: "";
 }
 
 .bb-memo .bb-label::after {

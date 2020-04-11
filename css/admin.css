@@ -943,7 +943,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-pickup .bb-label::after { content: "PICKUP"; }
 .admin-settings .demo .bb-bookmark .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
+.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-memo .bb-label::after { content: "MEMO"; }
 .admin-settings .demo .bb-download .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-download .bb-label::after { content: "DOWNLOAD"; }
@@ -2517,7 +2517,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .bb-pickup .bb-label::after { content: "PICKUP"; }
 .admin-settings .demo .bb-bookmark .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
+.admin-settings .demo .bb-memo .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-memo .bb-label::after { content: "MEMO"; }
 .admin-settings .demo .bb-download .bb-label .fa::before { content: ""; }
 .admin-settings .demo .bb-download .bb-label::after { content: "DOWNLOAD"; }
@@ -4272,7 +4272,7 @@ textarea[name="the_page_memo"] { width: 100%; }
 .components-popover__content .bb-pickup .bb-label::after { content: "PICKUP"; }
 .components-popover__content .bb-bookmark .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-bookmark .bb-label::after { content: "BOOKMARK"; }
-.components-popover__content .bb-memo .bb-label .fa::before { content: ""; }
+.components-popover__content .bb-memo .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-memo .bb-label::after { content: "MEMO"; }
 .components-popover__content .bb-download .bb-label .fa::before { content: ""; }
 .components-popover__content .bb-download .bb-label::after { content: "DOWNLOAD"; }
