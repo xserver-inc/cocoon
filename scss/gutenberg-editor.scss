@@ -778,6 +778,11 @@ ol, ul {
   }
 }
 
+//ブロックエディターの吹き出しスタイルの調整
+.speech-balloon{
+  min-width: 160px;
+}
+
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
 @mixin ms_block_fix{

@@ -1045,6 +1045,10 @@ ol, ul {
     margin: 0 -18px;
   }
 }
+.speech-balloon {
+  min-width: 160px;
+}
+
 @media all and (-ms-high-contrast: none) {
   .editor-block-toolbar.block-editor-block-toolbar {
     position: relative;
