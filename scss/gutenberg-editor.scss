@@ -765,6 +765,19 @@ ol, ul {
   font-size: 18px;
 }
 
+//ブロックエディタータイトル余白の修正
+.block-editor-editor-skeleton__body {
+  .editor-post-title{
+    margin: 0 6px;
+  }
+}
+//ブロックエディターパーマリンク余白の修正
+@media screen and (min-width: 600px){
+  .edit-post-visual-editor .editor-post-title__block .editor-post-permalink{
+    margin: 0 -18px;
+  }
+}
+
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正
 @mixin ms_block_fix{

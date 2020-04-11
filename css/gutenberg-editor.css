@@ -1036,6 +1036,15 @@ ol, ul {
   font-size: 18px;
 }
 
+.block-editor-editor-skeleton__body .editor-post-title {
+  margin: 0 6px;
+}
+
+@media screen and (min-width: 600px) {
+  .edit-post-visual-editor .editor-post-title__block .editor-post-permalink {
+    margin: 0 -18px;
+  }
+}
 @media all and (-ms-high-contrast: none) {
   .editor-block-toolbar.block-editor-block-toolbar {
     position: relative;
