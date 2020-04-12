@@ -13,7 +13,7 @@ $list_classes = 'list'.get_additional_entry_card_classes();
 $list_classes = apply_filters('tab_index_list_classes', $list_classes);
 ?>
 
-<div id="tab-index" class="tab-index">
+<div id="index-tab-wrap" class="index-tab-wrap">
   <input id="tab1" type="radio" name="tab_item" checked>
   <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
   $number = $i + 2; ?>
