@@ -27,9 +27,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
     <?php endfor; ?>
   </div>
   <div class="tab-cont tb1">
-      <div class="<?php echo $list_classes; ?>">
-          <?php get_template_part('tmp/list-index'); ?>
-      </div>
+      <?php get_template_part('tmp/list-index'); ?>
       <?php
       ////////////////////////////
       //ページネーション
