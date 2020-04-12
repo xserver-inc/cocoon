@@ -1,7 +1,7 @@
 ///////////////////////////////////////////
 // インデックス
 ///////////////////////////////////////////
-.top-cate-btn{
+.index-tab-buttons{
   margin: 10px 0 20px;
   border-radius: 5px;
   overflow: hidden;
@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   box-shadow: 0 3px 10px -2px rgba(0,0,0,.2);
 }
-.top-cate-btn .tab-btn{
+.index-tab-buttons .index-tab-button{
   width: calc(100% / 4);
   padding: 10px;
   text-align: center;
@@ -18,18 +18,18 @@
   border-right: 1px solid #ddd;
   box-sixing: border-box;
 }
-#index-tab-1:checked ~ .top-cate-btn .tab-btn[for="tab1"],
-#index-tab-2:checked ~ .top-cate-btn .tab-btn[for="tab2"],
-#index-tab-3:checked ~ .top-cate-btn .tab-btn[for="tab3"],
-#index-tab-4:checked ~ .top-cate-btn .tab-btn[for="tab4"]//,
-// #index-tab-5:checked ~ .top-cate-btn .tab-btn[for="tab5"],
-// #index-tab-6:checked ~ .top-cate-btn .tab-btn[for="tab6"],
-// #index-tab-7:checked ~ .top-cate-btn .tab-btn[for="tab7"],
-// #index-tab-8:checked ~ .top-cate-btn .tab-btn[for="tab8"],
-.top-cate-btn .tab-btn:hover{
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"],
+#index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"],
+#index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"],
+#index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"]//,
+// #index-tab-5:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-5"],
+// #index-tab-6:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-6"],
+// #index-tab-7:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-7"],
+// #index-tab-8:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-8"],
+.index-tab-buttons .index-tab-button:hover{
   background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */
 }
-.top-cate-btn .tab-btn:last-of-type{
+.index-tab-buttons .index-tab-button:last-of-type{
   border-right: none;
 }
 .tab-cont,
@@ -55,13 +55,13 @@ input[name="tab_item"]{
 }
 /* スマホ用 */
 @media screen and (max-width: 768px){
-  .top-cate-btn .tab-btn{
+  .index-tab-buttons .index-tab-button{
       width: calc(100% / 2);
   }
-  .top-cate-btn .tab-btn:nth-of-type(2){
+  .index-tab-buttons .index-tab-button:nth-of-type(2){
       border-right: none;
   }
-  .top-cate-btn .tab-btn:nth-last-of-type(n+3){
+  .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){
       border-bottom: 1px solid #ddd;
   }
 }

@@ -19,11 +19,11 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
   $number = $i + 2; ?>
   <input id="index-tab-<?php echo $number; ?>" type="radio" name="tab_item">
   <?php endfor; ?>
-  <div class="top-cate-btn">
-    <label class="tab-btn" for="index-tab-1"><?php _e('新着記事', THEME_NAME); ?></label>
+  <div class="index-tab-buttons">
+    <label class="index-tab-button" for="index-tab-1"><?php _e('新着記事', THEME_NAME); ?></label>
     <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
     $number = $i + 2; ?>
-    <label class="tab-btn" for="index-tab-<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_ids[$i]); ?></label>
+    <label class="index-tab-button" for="index-tab-<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_ids[$i]); ?></label>
     <?php endfor; ?>
   </div>
   <div class="tab-cont tb1">
