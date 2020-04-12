@@ -25,6 +25,10 @@
   background-color:#28569a;
 }
 
+.header-container.fixed-header{
+	background-color: #28569a;
+}
+
 #navi .navi-in a{
   color: white;
   transition:0.5s;

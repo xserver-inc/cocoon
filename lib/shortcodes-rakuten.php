@@ -30,6 +30,7 @@ function rakuten_product_link_shortcode($atts){
     'logo' => null,
     'sort' => null,
     'image_only' => 0,
+    'text_only' => 0,
     'btn1_url' => null,
     'btn1_text' => __( '詳細ページ', THEME_NAME ),
     'btn1_tag' => null,
@@ -385,13 +386,33 @@ function rakuten_product_link_shortcode($atts){
           ///////////////////////////////////////////
           // イメージリンクタグ
           ///////////////////////////////////////////
-          $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+          $image_only_class = null;
+          if ($image_only) {
+            $image_only_class = ' rakuten-item-image-only product-item-image-only no-icon';
+          }
+          $image_link_tag = '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-thumb-link product-item-thumb-link'.esc_attr($image_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
                   '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($TitleAttr).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="rakuten-item-thumb-image product-item-thumb-image">'.
                   $moshimo_rakuten_impression_tag.
                 '</a>';
           //画像のみ出力する場合
           if ($image_only) {
             return apply_filters('rakuten_product_image_link_tag', $image_link_tag);
+          }
+
+          ///////////////////////////////////////////
+          // 楽天テキストリンク
+          ///////////////////////////////////////////
+          $text_only_class = null;
+          if ($text_only) {
+            $text_only_class = ' rakuten-item-text-only product-item-text-only';
+          }
+          $text_link_tag =
+          '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-title-link product-item-title-link'.esc_attr($text_only_class).'" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
+            esc_html($TitleHtml).
+            $moshimo_rakuten_impression_tag.
+          '</a>';
+          if ($text_only) {
+            return apply_filters('rakuten_product_text_link_tag', $text_link_tag);
           }
 
           ///////////////////////////////////////////
@@ -404,10 +425,7 @@ function rakuten_product_link_shortcode($atts){
               '</figure>'.
               '<div class="rakuten-item-content product-item-content cf">'.
                 '<div class="rakuten-item-title product-item-title">'.
-                  '<a href="'.esc_url($affiliateUrl).'" class="rakuten-item-title-link product-item-title-link" target="_blank" title="'.esc_attr($TitleAttr).'" rel="nofollow noopener">'.
-                  esc_html($TitleHtml).
-                    $moshimo_rakuten_impression_tag.
-                  '</a>'.
+                  $text_link_tag.
                 '</div>'.
                 '<div class="rakuten-item-snippet product-item-snippet">'.
                   '<div class="rakuten-item-maker product-item-maker">'.

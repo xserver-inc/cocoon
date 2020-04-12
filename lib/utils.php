@@ -280,7 +280,7 @@ endif;
 //子テーマkeyframes.cssの読み込み
 if ( !function_exists( 'wp_enqueue_style_theme_child_keyframes' ) ):
 function wp_enqueue_style_theme_child_keyframes(){
-  if (file_exists(CHILD_THEME_KEYFRAMES_CSS_FILE)) {
+  if (is_child_theme() && file_exists(CHILD_THEME_KEYFRAMES_CSS_FILE)) {
     wp_enqueue_style( THEME_NAME.'-child-keyframes', CHILD_THEME_KEYFRAMES_CSS_URL );
   }
 }
@@ -499,6 +499,16 @@ if ( !function_exists( 'wp_enqueue_script_hatebu_share_button_js' ) ):
 function wp_enqueue_script_hatebu_share_button_js(){
   if ( is_bottom_hatebu_share_button_visible() && is_singular() ){
     wp_enqueue_script( 'st-hatena-js', '//b.st-hatena.com/js/bookmark_button.js', array(), false, true );
+  }
+}
+endif;
+
+//barba.jsスクリプトの読み込み
+if ( !function_exists( 'wp_enqueue_script_barba_js' ) ):
+function wp_enqueue_script_barba_js(){
+  if ( is_highspeed_mode_enable() ){
+    wp_enqueue_script( 'barba-js', 'https://unpkg.com/@barba/core', array(), false, true );
+    //wp_enqueue_script( 'barba-js-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CIntersectionObserver%2CNodeList.prototype.forEach', array('barba-js'), false, true );
   }
 }
 endif;
@@ -859,6 +869,21 @@ function wp_enqueue_jquery_masonry(){
 
 }
 endif;
+
+// //数式表示用
+// if ( !function_exists( 'wp_enqueue_mathjax' ) ):
+// function wp_enqueue_mathjax(){
+//   if ( is_formula_enable()) {
+//     wp_enqueue_script( 'mathjax', '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, false );
+//     $data = minify_js('
+//       MathJax.Hub.Config({
+//         TeX: { equationNumbers: { autoNumber: "all" } }
+//       });
+//     ');
+//     wp_add_inline_script( 'mathjax', $data, 'after' ) ;
+//   }
+// }
+// endif;
 
 //投稿画面ポスト時の確認ダイアログ
 if ( !function_exists( 'wp_enqueue_confirmation_before_publish' ) ):
@@ -3275,6 +3300,27 @@ function get_category_name_by_id($id){
   if (isset($category->cat_name)) {
     //カテゴリ名表示
     return $category->cat_name;
+  }
+}
+endif;
+
+//barba.jsのネームスペース
+if ( !function_exists( 'get_barba_name_space' ) ):
+function get_barba_name_space(){
+  if (is_singular()) {
+    $name_space = 'singular';
+  } else {
+    $name_space = 'home';
+  }
+  return $name_space;
+}
+endif;
+
+//target=_blankの場合はrel=noopenerを取得
+if ( !function_exists( 'get_rel_by_target' ) ):
+function get_rel_by_target($target){
+  if ($target == '_blank') {
+    return ' rel="noopener"';
   }
 }
 endif;

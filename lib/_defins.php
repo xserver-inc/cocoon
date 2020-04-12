@@ -29,7 +29,7 @@ define('PWA_SERVICE_WORKER_VERSION', '20190523');
 
 //開発関係の場合デバッグ値を有効にする
 $http_host = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : '';
-define('DEBAG_VALUE', $http_host == THEME_NAME.'.local' ? 1 : 0);
+define('DEBAG_VALUE', ($http_host == THEME_NAME.'.local') /*|| ($http_host == 'wp-cocoon.com')*/ ? 1 : 0);
 
 //デバッグモード
 define('DEBUG_MODE', DEBAG_VALUE);
@@ -266,7 +266,8 @@ define('BEFORE_1ST_H2_AD_PRIORITY_STANDARD', 10001);
 define('BEFORE_1ST_H2_TOC_PRIORITY_STANDARD', 10003);
 define('BEFORE_1ST_H2_TOC_PRIORITY_HIGH', 10000);
 
-
+//ショートコード
+define('MATH_SHORTCODE', '[math]');
 
 //URLの正規表現
 define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');

@@ -214,7 +214,6 @@ const urlsToCache = [
   '{$icon_url_s}',
   '{$icon_url_l}',
   '{$theme_js_url}',
-  '{$theme_child_js_url}',
   '{$font_awesome_url}',
   '{$font_icomoon_url}'
 ];

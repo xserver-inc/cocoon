@@ -1237,6 +1237,10 @@ h1#archive-title {
     z-index:1;
 }
 
+.main .blogcard-type .blogcard::before{
+    color: white;
+}
+
 /*author-info*/
 
 .author-info,a.author-link {

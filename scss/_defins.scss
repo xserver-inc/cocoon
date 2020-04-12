@@ -4,8 +4,7 @@
 @import 'brand-colors';
 
 //フォント
-$default_font: "游ゴシック体", "Yu Gothic", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
-$meiryo_font: "Meiryo", sans-serif;
+$default_font: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 $navi_font: FontAwesome, $default_font;
 
 //テキスト色
@@ -99,7 +98,7 @@ $bct-dl-text: 'ダウンロード';
 
 //背景ホバー
 $bgc_hover_color: #f5f8fa;
-$bgc_hover_anime: all .7s;
+$bgc_hover_anime: all .3s ease-in-out;
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
@@ -326,7 +325,7 @@ $bgc_hover_anime: all .7s;
 // シェア数
 ///////////////////////////////////////
 @mixin service_count {
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -480,7 +479,7 @@ $bb-pickup: "\f005";
 $bb-pickup-text: "PICKUP";
 $bb-bookmark: "\f02e";
 $bb-bookmark-text: "BOOKMARK";
-$bb-memo: "\f040";
+$bb-memo: "\f249";
 $bb-memo-text: "MEMO";
 $bb-download: "\f019";
 $bb-download-text: "DOWNLOAD";

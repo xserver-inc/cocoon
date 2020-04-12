@@ -5,7 +5,7 @@
   Author: 風塵(ふーじん)
   Author URI: https://tecurio.com/
   Screenshot URI: https://tecurio.com/wp-content/uploads/tecurio_sunset.jpg
-  Version: 1.0.2
+  Version: 1.0.3
   Priority: 9860009000
 */
 /*以下にスタイルシートを記入してください*/
@@ -19,15 +19,8 @@ body p{
 	line-height: 180%;
 	margin-bottom: 1.1em;
 }
-.entry-content > * {
-    margin-right: 2em;
-    margin-left: 2em;
-}
-@media screen and (max-width: 480px) {
-	.entry-content > * {
-		margin-right: 1em;
-		margin-left: 1em;
-	}
+.entry-content .wp-caption {
+  margin: 1.4em auto;
 }
 .content .main .entry-content > .blogcard-wrap{
 	width: auto;
@@ -451,6 +444,11 @@ background-image: linear-gradient( 165deg, #ff6a00 0%, #ee0979 20%);
     padding-left: 1.2em;
   }
 
+}
+
+ul.mobile-footer-menu-buttons.mobile-menu-buttons .menu-button-in > span, ul.mobile-footer-menu-buttons.mobile-menu-buttons .menu-button-in > a {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
 
 .widget_recent_entries ul,

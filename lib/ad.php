@@ -123,7 +123,6 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
   if (get_adsense_ids($code)) {
     $ad_client = get_adsense_data_ad_client($code);
     $ad_slot = get_adsense_data_ad_slot($code);
-    //_v($format);
     //関連コンテンツユニットの場合
     if ($format == DATA_AD_FORMAT_AUTORELAXED) {
       $code = '
@@ -144,28 +143,7 @@ function get_amp_adsense_responsive_code($format = DATA_AD_FORMAT_AUTO, $code = 
           data-ad-client="'.$ad_client.'"
           data-ad-slot="'.$ad_slot.'">
         </amp-ad>';
-      // $code = '<amp-ad
-      //   media="(max-width: 480px)"
-      //   width="100vw"
-      //   height="320"
-      //   type="adsense"
-      //   data-ad-client="'.$ad_client.'"
-      //   data-ad-slot="'.$ad_slot.'"
-      //   data-auto-format="mcrspv"
-      //   data-full-width="">
-      //   <div overflow=""></div>
-      // </amp-ad>
-
-      // <amp-ad
-      //   media="(min-width: 481px)"
-      //   layout="fixed-height"
-      //   height="600"
-      //   type="adsense"
-      //   data-ad-client="'.$ad_client.'"
-      //   data-ad-slot="'.$ad_slot.'">
-      // </amp-ad>';
     } else {
-      //$layout = ' width="300" height="250" ';
       //リンクユニットの場合
       if ($format == DATA_AD_FORMAT_LINK) {
         $code = '<amp-ad

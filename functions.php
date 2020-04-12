@@ -25,7 +25,6 @@ $example_update_checker = new ThemeUpdateChecker(
 if ( !function_exists( 'get_content_excerpt' ) ):
 function get_content_excerpt($content, $length = 70){
   $content = apply_filters( 'content_excerpt_before', $content);
-  //_v($content);
   $content = cancel_blog_card_deactivation($content, false);
   $content = preg_replace('/<!--more-->.+/is', '', $content); //moreタグ以降削除
   $content = strip_tags($content);//タグの除去
@@ -222,14 +221,14 @@ endif;
 add_action('init', 'smartnews_feed_init');
 if ( !function_exists( 'smartnews_feed_init' ) ):
 function smartnews_feed_init(){
-	add_feed('smartnews', 'smartnews_feed');
+  add_feed('smartnews', 'smartnews_feed');
 }
 endif;
 
 //domain.com/?feed=smartnewsで表示
 if ( !function_exists( 'smartnews_feed' ) ):
 function smartnews_feed() {
-	get_template_part('/tmp/smartnews');
+  get_template_part('/tmp/smartnews');
 }
 endif;
 
@@ -237,9 +236,9 @@ endif;
 add_filter( 'feed_content_type', 'smartnews_feed_content_type', 10, 2 );
 if ( !function_exists( 'smartnews_feed_content_type' ) ):
 function smartnews_feed_content_type( $content_type, $type ) {
-	if ( 'smartnews' === $type ) {
-		return feed_content_type( 'rss2' );
-	}
-	return $content_type;
+  if ( 'smartnews' === $type ) {
+    return feed_content_type( 'rss2' );
+  }
+  return $content_type;
 }
 endif;

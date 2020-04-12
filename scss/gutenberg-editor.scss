@@ -44,7 +44,9 @@ div.mce-content-body {
   line-height: inherit;
 }
 
-.editor-block-list__layout .editor-block-list__block {
+.editor-block-list__layout .editor-block-list__block,,//Wordpress 5.4未満
+.block-editor-block-list__layout .block-editor-block-list__block //WordPress 5.4以降
+ {
   &[data-type^="cocoon-blocks/button"], &[data-type^="cocoon-blocks/button-wrap"] {
     height: auto;
     padding: 0 0 1px;
@@ -115,10 +117,14 @@ div.mce-content-body {
   }
 
   .column-wrap{
-    >.editor-inner-blocks{
+    >.editor-inner-blocks ,//Wordpress 5.4未満
+    >.block-editor-inner-blocks //WordPress5.4以降
+    {
       width: 100% !important;
     }
-     > .editor-inner-blocks > .editor-block-list__layout{
+     > .editor-inner-blocks > .editor-block-list__layout,//Wordpress 5.4未満
+     > .block-editor-inner-blocks > .block-editor-block-list__layout //WordPress5.4以降
+     {
       display: flex;
       position: relative;
       margin: 1em 0;
@@ -320,6 +326,18 @@ ul{
     margin: 1em 0;
   }
 }
+
+.wp-block-table{
+  overflow: hidden;
+}
+.wp-block .wp-block-table__cell-content{
+  min-width: 50px;
+  padding: 8px;
+}
+
+// table{
+//   width: 90% !important;
+// }
 
 /* wp-includes/css/dist/block-library/theme.css
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots){
@@ -736,6 +754,34 @@ ol, ul {
 //   padding-left: 58px;
 //   padding-right: 58px;
 // }
+
+//WordPress 5.4からの吹き出しの不具合対応
+.speech-wrap .components-button{
+  height: auto;
+}
+
+.page-body,
+.page-body p{
+  font-size: 18px;
+}
+
+//ブロックエディタータイトル余白の修正
+.block-editor-editor-skeleton__body {
+  .editor-post-title{
+    margin: 0 6px;
+  }
+}
+//ブロックエディターパーマリンク余白の修正
+@media screen and (min-width: 600px){
+  .edit-post-visual-editor .editor-post-title__block .editor-post-permalink{
+    margin: 0 -18px;
+  }
+}
+
+//ブロックエディターの吹き出しスタイルの調整
+.speech-balloon{
+  min-width: 160px;
+}
 
 
 //マイクロソフトブラウザーでツールボタンの表示が崩れる不具合修正

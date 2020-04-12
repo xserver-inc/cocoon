@@ -37,7 +37,7 @@ body.wp-admin{
     padding: 10px;
     font-size: 16px;
     line-height: 1.4;
-    font-family: arial,sans-serif;
+    // font-family: Arial,sans-serif;
     max-width: 600px;
 
 
@@ -144,6 +144,10 @@ body.wp-admin{
 .column-thumbnail{
   width:80px;
 }
+/*記事一覧のPV幅*/
+.column-pv{
+  width:70px;
+}
 /*記事一覧の投稿ID幅*/
 .column-post-id{
   width:42px;
@@ -179,7 +183,9 @@ body.wp-admin{
   margin-bottom: 0;
 }
 
-
+.tips{
+  margin: 4px 0 12px !important;
+}
 /*設定項目のヒント*/
 // p,
 // a,
@@ -1136,4 +1142,11 @@ textarea[name="the_page_memo"]{
   //   // border: 1px solid #ddd;
   //   // border-radius: 6px;
   // }
+}
+
+//管理画面のボタン色
+.wp-core-ui .button-primary {
+  background: #0071a1 !important;
+  border-color: #0071a1 !important;
+  color: #fff !important;
 }

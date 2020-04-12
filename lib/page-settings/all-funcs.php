@@ -27,14 +27,14 @@ endif;
 define('OP_SITE_FONT_FAMILY', 'site_font_family');
 if ( !function_exists( 'get_site_font_family' ) ):
 function get_site_font_family(){
-  return get_theme_option(OP_SITE_FONT_FAMILY, 'yu_gothic');
+  return get_theme_option(OP_SITE_FONT_FAMILY, 'hiragino');
 }
 endif;
 if ( !function_exists( 'is_site_font_family_local' ) ):
 function is_site_font_family_local(){
   switch (get_site_font_family()) {
-    case 'yu_gothic':
     case 'meiryo':
+    case 'yu_gothic':
     case 'hiragino':
     case 'ms_pgothic':
       return true;

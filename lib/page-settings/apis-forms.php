@@ -237,9 +237,9 @@ $help_text = __( '取得方法', THEME_NAME );
           </th>
           <td>
             <?php
-            generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), '', 1, 365);
+            generate_number_tag(OP_API_CACHE_RETENTION_PERIOD, get_api_cache_retention_period(), '', 1, 3650);
             _e( '日', THEME_NAME );
-            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。1～365日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことをおすすめします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-api-cache/', __( '削除方法', THEME_NAME )));
+            generate_tips_tag(__( 'APIキャッシュのリフレッシュ間隔を設定します。1～3650日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことをおすすめします。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/amazon-api-cache/', __( '削除方法', THEME_NAME )));
             ?>
           </td>
         </tr>

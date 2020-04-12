@@ -98,6 +98,7 @@ function popular_entries_shortcode($atts) {
     'rank' => 0,
     'pv' => 0,
     'cats' => 'all',
+    'children' => 0,
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
@@ -113,6 +114,7 @@ function popular_entries_shortcode($atts) {
     'ranking_visible' => $rank,
     'pv_visible' => $pv,
     'cat_ids' => $cat_ids,
+    'children' => $children,
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
@@ -244,6 +246,7 @@ function login_user_only_shortcode( $atts, $content = null ) {
   }
 }
 endif;
+
 //タイムラインの作成（timelineショートコード）
 if (!shortcode_exists('timeline')) {
   add_shortcode('timeline', 'timeline_shortcode');
@@ -655,6 +658,7 @@ if ( !function_exists( 'get_box_menu_tag' ) ):
 function get_box_menu_tag($atts){
   extract(shortcode_atts(array(
     'name' => '', // メニュー名
+    'target' => '_self',
     'class' => null,
   ), $atts, 'box_menu'));
 
@@ -669,7 +673,6 @@ function get_box_menu_tag($atts){
   }
 
   //_v($menu_items);
-
   foreach ($menu_items as $menu):
 
     $url = $menu->url;
@@ -689,7 +692,8 @@ function get_box_menu_tag($atts){
     }
     $icon_tag = '<div class="box-menu-icon">'.$icon_tag.'</div>';
 
-    $tag .= '<a class="box-menu" href="'.esc_url($url).'">'.
+    $target_value = apply_filters('box_menu_link_target', $target, $url);
+    $tag .= '<a class="box-menu" href="'.esc_url($url).'" target="'.$target_value.'"'.get_rel_by_target($target_value).'>'.
       $icon_tag.
       $title_tag.
       $description_tag.
@@ -760,7 +764,7 @@ function get_rss_feed_tag( $atts ) {
       $feed_date = $item->get_date('Y.m.d');
       $feed_text = mb_substr(strip_tags($item->get_content()), 0, 110);
 
-      $feed_content .= '<a rel="noopener" href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'">';
+      $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
       $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
       $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
       $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
@@ -801,5 +805,66 @@ function get_rss_feed_tag( $atts ) {
 
   return apply_filters( 'get_rss_feed_tag',  $feed_contents);
 
+}
+endif;
+
+
+// //数式
+// add_shortcode('formula', 'formula_shortcode');
+// if ( !function_exists( 'formula_shortcode' ) ):
+// function formula_shortcode( $atts, $content = null ) {
+//   extract( shortcode_atts( array(
+//     'class' => null, //拡張クラス
+//   ), $atts, 'formula' ) );
+//   if ($class) {
+//     $class = ' '.$class;
+//   }
+//   return '<figure class="tex2jax_process'.$class.'">'.$content.'</figure>';
+// }
+// endif;
+
+
+//キャンペーン（指定期間中のみ表示）
+add_shortcode('campaign', 'campaign_shortcode');
+if ( !function_exists( 'campaign_shortcode' ) ):
+function campaign_shortcode( $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'from' => null, //いつから（開始日時）
+    'to' => null, //いつまで（終了日時）
+    'class' => null, //拡張クラス
+  ), $atts, 'campaign' ) );
+  
+  //内容がない場合は何も表示しない
+  if (!$content) return null;
+  //現在の日時を取得
+  $now = date_i18n('U');
+
+  //いつから（開始日時）
+  $from_time = strtotime($from);
+  if (!$from_time) {
+    $from_time = strtotime('-1 day');
+  };
+
+  //いつまで（終了日時）
+  $to_time = strtotime($to);
+  if (!$to_time) {
+    $to_time = strtotime('+1 day');
+  };
+
+  //拡張クラス
+  if ($class) {
+    $class = ' '.$class;
+  }
+
+  $tag = null;
+  if (($from_time < $now) && ($to_time > $now)) {
+    $tag = '<div class="campaign'.esc_attr($class).'">'.
+      // date_i18n('開始日時：Y年m月d日 H時i分s秒', $from_time).'<br>'.
+      // date_i18n('終了日時：Y年m月d日 H時i分s秒', $to_time).'<br>'.
+      $content.
+    '</div>';
+  }
+
+  return $tag;
 }
 endif;

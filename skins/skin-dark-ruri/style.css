@@ -60,6 +60,10 @@ body {
   background-color: #1b51ad;
 }
 
+.header-container.fixed-header {
+  background-color: #1b51ad;
+}
+
 #navi .navi-in a {
   color: #f6f6f6;
   transition: 0.3s;
@@ -742,7 +746,6 @@ blockquote p {
   text-align: center;
   font-size: 18px;
   width: 32px;
-  font-family: Arial,sans-serif;
   z-index: 1;
   font-weight: bold;
   font-style: italic;

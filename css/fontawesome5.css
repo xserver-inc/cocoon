@@ -43,10 +43,9 @@
 .comment-box::before {
   content: "\f075"; }
 
-.ok-box::before, .fab-ok::before {
-  content: "\f111"; }
-
-.bb-ok .fa::before {
+.ok-box::before,
+.fab-ok::before,
+.bb-ok .bb-label .fa::before {
   content: "\f111"; }
 
 .fab-check-circle-o::before,
@@ -203,7 +202,8 @@
 .list-window-close li::before,
 .search-form div.sbtn:before,
 .slick-prev.slick-arrow::before,
-.slick-next.slick-arrow::before {
+.slick-next.slick-arrow::before,
+.fa-exclamation-triangle::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 

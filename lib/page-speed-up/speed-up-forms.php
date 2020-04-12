@@ -39,10 +39,45 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
+<?php if (DEBUG_MODE): ?>
+<!-- ハイスピード -->
+<div id="highspeed" class="postbox">
+  <h2 class="hndle"><?php _e( 'ページ遷移', THEME_NAME );_e( '（α版：テストサイトでお試しください）', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- ページ遷移  -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_HIGHSPEED_MODE_ENABLE, __( 'ページ遷移', THEME_NAME ) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_HIGHSPEED_MODE_ENABLE , is_highspeed_mode_enable(), __( 'ページ遷移の高速化', THEME_NAME ));
+            generate_tips_tag(__( 'この機能を有効化すると、barba.jsを用いて非同期でコンテンツが読み込まれます。', THEME_NAME ).__('ページ遷移はかなり早くなりますが、利用できないプラグインがあるなど、ある程度制限もあります。', THEME_NAME ).__('α版ですのでテストサイトからローカル環境でお試しください。', THEME_NAME ));
+
+
+            generate_textarea_tag(OP_HIGHSPEED_MODE_EXCLUDE_LIST, get_highspeed_mode_exclude_list(), __( '高速化を除外するURL（URLの一部）', THEME_NAME ) , 3);
+            generate_tips_tag(__( 'barba.jsを用いた遷移を行わないページのURLを改行区切りで入力してください。', THEME_NAME ).__( '複数指定したい場合はURLの一部を入力することで、その文字列が含まれるURLは除外します。', THEME_NAME ));
+            generate_tips_tag(__( 'カテゴリページ全体を除外する例：/category/', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<?php endif; ?>
+
+
 
 
 <!-- 縮小化 -->
-<div id="speed-up" class="postbox">
+<div id="minify" class="postbox">
   <h2 class="hndle"><?php _e( '縮小化', THEME_NAME ) ?></h2>
   <div class="inside">
 
@@ -178,6 +213,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 </div>
 
 
+<?php if(0): ?>
 <!-- スクリプト読み込み -->
 <div id="script-load" class="postbox">
   <h2 class="hndle"><?php _e( 'スクリプト読み込み設定', THEME_NAME ) ?></h2>
@@ -188,6 +224,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     <table class="form-table">
       <tbody>
 
+
         <!-- Lazy Load画像 -->
         <tr>
           <th scope="row">
@@ -197,6 +234,41 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_checkbox_tag(OP_FOOTER_JAVASCRIPT_ENABLE , is_footer_javascript_enable(), __( 'JavaScriptをフッターで読み込む', THEME_NAME ));
             generate_tips_tag(__( 'JavaScriptファイルのレンダリングブロックを避けるためにフッターでjsファイルを読み込みます。プラグインが正常に動作しない場合は、無効にしてください。ただしレンダリングブロックが発生するので、速さは犠牲になります。', THEME_NAME ));
+
+
+            // generate_textarea_tag(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST, get_footer_javascript_exclude_list(), __( '除外文字列を入力', THEME_NAME ) , 3);
+            // generate_tips_tag(__( '「JavaScriptのフッター読み込み」を行いたくない場合は、該当するスクリプトに含まれている文字列を改行区切りで入力してください。', THEME_NAME ));
+            ?>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<?php endif; ?>
+
+
+<!-- 事前読み込み -->
+<div id="pre-acquisition" class="postbox">
+  <h2 class="hndle"><?php _e( '事前読み込み設定', THEME_NAME ) ?></h2>
+  <div class="inside">
+
+    <p><?php _e( '画像やスクリプト等のリソースの事前読み込み設定です。', THEME_NAME ) ?></p>
+
+    <table class="form-table">
+      <tbody>
+
+        <!-- 事前読み込み -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_PRE_ACQUISITION_LIST, __('事前読み込み', THEME_NAME) ); ?>
+          </th>
+          <td>
+            <?php
+            generate_textarea_tag(OP_PRE_ACQUISITION_LIST, get_pre_acquisition_list(), __( '事前読込ドメインを入力', THEME_NAME ) , 6);
+            generate_tips_tag(__( 'linkタグでdns-prefetchとpreconnectを用いて、外部リソース読み込みの高速化を行います。', THEME_NAME ).__( 'よくわからない場合は、デフォルトのままご利用ください。', THEME_NAME ));
             ?>
           </td>
         </tr>

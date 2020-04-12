@@ -9,6 +9,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //ブラウザキャッシュの有効化
 update_theme_option(OP_BROWSER_CACHE_ENABLE);
+if (DEBUG_MODE) {
+  //ハイスピードモードを有効にするか
+  update_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+}
+//ハイスピードモード除外文字列リスト
+update_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST);
 //HTMLを縮小化するか
 update_theme_option(OP_HTML_MINIFY_ENABLE);
 //AMP HTMLを縮小化するか
@@ -32,7 +38,12 @@ update_theme_option(OP_GOOGLE_FONT_LAZY_LOAD_ENABLE);
 update_theme_option(OP_WEB_FONT_LAZY_LOAD_ENABLE);
 
 //スクリプトをフッターで読み込む
-update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
+//update_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE);
+// //フッターJavaScript除外ファイルリスト
+// update_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST);
+
+//preconnect dns-prefetchドメインリスト
+update_theme_option(OP_PRE_ACQUISITION_LIST);
 
 //ブラウザキャッシュが有効な時
 if (isset($_POST[OP_BROWSER_CACHE_ENABLE])){

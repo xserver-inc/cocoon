@@ -40,6 +40,12 @@ function code_minify_call_back($buffer) {
     $buffer = convert_lazy_load_tag($buffer, 'iframe');
   }
 
+  //数式表示ショートコードの除外
+  if (is_formula_enable() && is_math_shortcode_exist()) {
+    $esc_shortcode = preg_quote(MATH_SHORTCODE, '#');
+    $buffer = preg_replace('#<p[^>]*?>'.$esc_shortcode.'</p>|'.$esc_shortcode.'#', '', $buffer);
+  }
+
   //「Warning: Attribute aria-required is unnecessary for elements that have attribute required.」対策
   $buffer = str_replace('aria-required="true" required>', 'aria-required="true">', $buffer);
   $buffer = str_replace('aria-required="true" required="required">', 'aria-required="true">', $buffer);
@@ -118,8 +124,6 @@ add_action('get_header', 'code_minify_buffer_start', 99999999);
 add_action('get_template_part_tmp/amp-header', 'code_minify_buffer_start', 99999999);//AMP
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  // if (!is_minify_page()) return;
-
   ob_start('code_minify_call_back');
 }
 endif;
@@ -128,8 +132,6 @@ endif;
 add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  // if (!is_minify_page()) return;
-
   if (ob_get_length()){
     ob_end_flush();
   }

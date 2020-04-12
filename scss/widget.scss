@@ -336,7 +336,6 @@ label.screen-reader-text{
       opacity: 0.9;
       text-align: center;
       font-size: 14px;
-      font-family: Arial,sans-serif;
       z-index: 1;
     }
   }
@@ -436,4 +435,8 @@ label.screen-reader-text{
   h2{
     font-size: 20px;
   }
+}
+
+.entry-content .main-widget-label{
+  display: none;
 }

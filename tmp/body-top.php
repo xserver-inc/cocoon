@@ -7,7 +7,18 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<div id="container" class="container<?php echo get_additional_container_classes(); ?> cf">
+<div id="container" class="container<?php echo get_additional_container_classes(); ?> cf" data-barba="container" data-barba-namespace="<?php echo get_barba_name_space(); ?>">
+
+  <?php //body要素の直後に何かを挿入する際
+  if ( function_exists( 'wp_body_open' ) ) {
+      wp_body_open();
+  } else {
+      do_action( 'wp_body_open' );
+  }?>
+
+  <?php //ユーザーカスタマイズ用
+  get_template_part('tmp-user/body-top-insert'); ?>
+
   <?php //サイトヘッダー
   get_template_part('tmp/header-container'); ?>
 

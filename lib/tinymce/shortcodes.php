@@ -241,6 +241,18 @@ function generate_shortcodes_js($value){
   shortcodes[18].before = '<?php echo $before; ?>';
   shortcodes[18].after = '<?php echo $after; ?>';
 
+  <?php //キャンペーン
+  $content = __( 'キャンペーン中に表示するコンテンツを入力してください。', THEME_NAME );
+
+  $before = '[campaign from="" to=""]';
+  $after = '[/campaign]';
+   ?>
+  shortcodes[19] = new Array();
+  shortcodes[19].title  = '<?php echo __( 'キャンペーン期間中のみ表示', THEME_NAME ); ?>';
+  shortcodes[19].tag = '<?php echo $before.$content.$after; ?>';
+  shortcodes[19].before = '<?php echo $before; ?>';
+  shortcodes[19].after = '<?php echo $after; ?>';
+
   <?php
   echo '</script>';
 }

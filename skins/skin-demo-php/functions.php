@@ -31,7 +31,7 @@ array(
   'entry_card_type' => 'vertical_card_2',
   'entry_card_border_visible' => 1,
   'category_tag_display_type' => 'one_row',
-  'related_entry_type' => 'vartical_card_3',
+  'related_entry_type' => 'vertical_card_3',
   'related_entry_count' => 9,
   'post_navi_type' => 'square',
   'single_breadcrumbs_position' => 'main_before',

@@ -89,7 +89,9 @@ endif;
 define('OP_RELATED_ENTRY_TYPE', 'related_entry_type');
 if ( !function_exists( 'get_related_entry_type' ) ):
 function get_related_entry_type(){
-  return get_theme_option(OP_RELATED_ENTRY_TYPE, 'entry_card');
+  $res = get_theme_option(OP_RELATED_ENTRY_TYPE, 'entry_card');
+  $res = str_replace('vartical', 'vertical', $res);
+  return $res;
 }
 endif;
 

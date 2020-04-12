@@ -339,7 +339,7 @@ function body_class_additional($classes) {
   }
 
   //ヘッダーモバイルボタン表示時にサイトロゴを表示しない場合
-  if (!is_mobile_header_logo_visible() && !is_amp()) {
+  if (!is_mobile_header_logo_visible() && is_mobile_button_layout_type_mobile_buttons() && !is_amp()) {
     $classes[] = 'no-mobile-header-logo';
   }
 
@@ -767,9 +767,9 @@ if ( !function_exists( 'get_additional_related_entries_classes' ) ):
 function get_additional_related_entries_classes($option = null){
   $classes = null;
   switch (get_related_entry_type()) {
-    case 'vartical_card_3':
-    case 'vartical_card_4':
-      $classes .= ' rect-vartical-card';
+    case 'vertical_card_3':
+    case 'vertical_card_4':
+      $classes .= ' rect-vertical-card';
       break;
   }
   $classes .= ' rect-'.replace_value_to_class(get_related_entry_type());
@@ -790,9 +790,9 @@ if ( !function_exists( 'get_additional_post_navi_classes' ) ):
 function get_additional_post_navi_classes($option = null){
   $classes = null;
   // switch (get_post_navi_type()) {
-  //   case 'vartical_card_3':
-  //   case 'vartical_card_4':
-  //     $classes .= ' related-vartical-card';
+  //   case 'vertical_card_3':
+  //   case 'vertical_card_4':
+  //     $classes .= ' related-vertical-card';
   //     break;
   // }
   $classes .= ' post-navi-'.replace_value_to_class(get_post_navi_type());

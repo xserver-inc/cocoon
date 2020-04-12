@@ -26,7 +26,6 @@ function get_common_related_args($post_id){
       ),
     );
   }
-  //_v($related_args);
   return $related_args;
 }
 endif;
@@ -49,43 +48,6 @@ function get_related_wp_query_args(){
     if (!empty($set_args['tag__in'])) $args = $set_args;
   }
 
-  // $categories = get_the_category($post->ID);
-  // $cat_count = 0;
-  // foreach($categories as $category):
-  //   $cat_count += (intval($category->count) - 1);
-  // endforeach ;
-  // $is_cat_count_over_1 = ($cat_count > 1);
-  // $tags = wp_get_post_tags($post->ID);
-  // //タグが優先されている場合
-  // if ( (is_related_association_type_tag() && !empty($tags)) || (is_related_association_type_category() && !$is_cat_count_over_1) ) {
-  //   //タグ情報から関連記事をランダムに呼び出す
-  //   $tag_IDs = array();
-  //   foreach($tags as $tag):
-  //     array_push( $tag_IDs, $tag->term_id);
-  //   endforeach ;
-  //   if ( empty($tag_IDs) ) return;
-  //   $args = array(
-  //     'post__not_in' => array($post -> ID),
-  //     'posts_per_page'=> intval(get_related_entry_count()),
-  //     'tag__in' => $tag_IDs,
-  //     'orderby' => 'rand',
-  //     'no_found_rows' => true,
-  //   );
-  // } else {
-  //   //カテゴリ情報から関連記事をランダムに呼び出す
-  //   $category_IDs = array();
-  //   foreach($categories as $category):
-  //     array_push( $category_IDs, $category->cat_ID);
-  //   endforeach ;
-  //   if ( empty($category_IDs) ) return;
-  //   $args = array(
-  //     'post__not_in' => array($post->ID),
-  //     'posts_per_page'=> intval(get_related_entry_count()),
-  //     'category__in' => $category_IDs,
-  //     'orderby' => 'rand',
-  //     'no_found_rows' => true,
-  //   );
-  // }
   return apply_filters('get_related_wp_query_args', $args);
 }
 endif;
@@ -147,7 +109,7 @@ if ( !function_exists( 'get_related_entry_card_thumbnail_size' ) ):
     $thumbnail_size = null;
     //適切なサムネイルサイズの選択
     switch (get_related_entry_type()) {
-      case 'vartical_card_3':
+      case 'vertical_card_3':
         $thumbnail_size = THUMB320;
         break;
       case 'mini_card':

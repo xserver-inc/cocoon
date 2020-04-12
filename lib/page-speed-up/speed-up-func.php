@@ -19,6 +19,22 @@ function is_browser_cache_enable(){
 }
 endif;
 
+//ハイスピードモードを有効にするか
+define('OP_HIGHSPEED_MODE_ENABLE', 'highspeed_mode_enable');
+if ( !function_exists( 'is_highspeed_mode_enable' ) ):
+function is_highspeed_mode_enable(){
+  return DEBUG_MODE && get_theme_option(OP_HIGHSPEED_MODE_ENABLE);
+}
+endif;
+
+//ハイスピードモード除外文字列リスト
+define('OP_HIGHSPEED_MODE_EXCLUDE_LIST', 'highspeed_mode_exclude_list');
+if ( !function_exists( 'get_highspeed_mode_exclude_list' ) ):
+function get_highspeed_mode_exclude_list(){
+  return stripslashes_deep(get_theme_option(OP_HIGHSPEED_MODE_EXCLUDE_LIST));
+}
+endif;
+
 //HTMLを縮小化するか
 define('OP_HTML_MINIFY_ENABLE', 'html_minify_enable');
 if ( !function_exists( 'is_html_minify_enable' ) ):
@@ -122,6 +138,95 @@ endif;
 define('OP_FOOTER_JAVASCRIPT_ENABLE', 'footer_javascript_enable');
 if ( !function_exists( 'is_footer_javascript_enable' ) ):
 function is_footer_javascript_enable(){
-  return get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
+  return false;//get_theme_option(OP_FOOTER_JAVASCRIPT_ENABLE, 1);
+}
+endif;
+
+// //フッターJavaScript除外ファイルリスト
+// define('OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST', 'footer_javascript_exclude_list');
+// if ( !function_exists( 'get_footer_javascript_exclude_list' ) ):
+// function get_footer_javascript_exclude_list(){
+//   return stripslashes_deep(get_theme_option(OP_FOOTER_JAVASCRIPT_EXCLUDE_LIST));
+// }
+// endif;
+
+//preconnect dns-prefetchドメインリスト
+define('OP_PRE_ACQUISITION_LIST', 'pre_acquisition_list');
+if ( !function_exists( 'get_pre_acquisition_list' ) ):
+function get_pre_acquisition_list(){
+  $list = <<<EOF
+www.googletagmanager.com
+www.google-analytics.com
+ajax.googleapis.com
+cdnjs.cloudflare.com
+pagead2.googlesyndication.com
+googleads.g.doubleclick.net
+tpc.googlesyndication.com
+ad.doubleclick.net
+www.gstatic.com
+cse.google.com
+fonts.gstatic.com
+fonts.googleapis.com
+cms.quantserve.com
+secure.gravatar.com
+cdn.syndication.twimg.com
+cdn.jsdelivr.net
+images-fe.ssl-images-amazon.com
+completion.amazon.com
+m.media-amazon.com
+i.moshimo.com
+aml.valuecommerce.com
+dalc.valuecommerce.com
+dalb.valuecommerce.com
+EOF;
+  return stripslashes_deep(get_theme_option(OP_PRE_ACQUISITION_LIST, $list));
+}
+endif;
+
+
+//文字列内のスクリプトをbarba.js用に取り出して出力する
+if ( !function_exists( 'generate_baruba_js_scripts' ) ):
+function generate_baruba_js_scripts($tag){
+  if (preg_match_all('#<script[^>]*?>([\s\S.]*?)</script>#i', $tag, $m)) {
+    //_v($m);
+    if (isset($m[1]) && $m[1]) {
+      $tags = $m[0];
+      $codes = $m[1];
+      $i = 0;
+      foreach ($codes as $code) {
+        if ($code) {//コードの場合
+          //_v($code);
+          echo $code.PHP_EOL.PHP_EOL.PHP_EOL;
+        } else {//スクリプトファイルの場合
+          $tag = $tags[$i];
+          if (preg_match('#src=[\'"](.+)[\'"]#i', $tag, $n)) {
+            // $src = trim($n[1]);
+            // $script = '
+            //   //$("script[src=\''.$src.'\']").remove();
+
+            //   scriptTag = document.createElement("script");
+            //   // scriptTag.defer = true;
+            //   // scriptTag.async = true;
+            //   scriptTag.src = "'.$src.'";
+            //   //document.head.appendChild(scriptTag);
+            //   document.getElementsByTagName("body")[0].appendChild(scriptTag);
+            // '.PHP_EOL.PHP_EOL.PHP_EOL;
+            // //_v($script);
+            // echo $script;
+
+            $src = get_query_removed_url($n[1]);
+            if (includes_site_url($src)) {
+              $src_file = url_to_local($src);
+              if (file_exists($src_file)) {
+                $script = wp_filesystem_get_contents($src_file);
+                echo $script.PHP_EOL.PHP_EOL.PHP_EOL;
+              }
+            }
+          }
+        }
+        $i++;
+      }
+    }
+  }
 }
 endif;

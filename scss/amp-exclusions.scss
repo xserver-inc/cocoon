@@ -84,12 +84,15 @@
 // }
 
 //固定ヘッダー
-.header-container{
-	z-index: 2;
-	*{
-		transition: .3s;
+.is-header-fixed{
+	.header-container{
+		z-index: 3;
+		.logo{
+			transition: .3s;
+		}
 	}
 }
+
 
 .fixed-header{
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
@@ -100,4 +103,15 @@
 	.navi-in .sub-menu{
 		display: none;
 	}
+}
+
+
+//クリック動作しない
+.click-prevention{
+	pointer-events: none;
+}
+
+//IE・Edgeでbackground-clip: padding-box;除外
+_:-ms-lang(x), .mc-circle {
+  background-clip: border-box;
 }

@@ -15,6 +15,14 @@ function is_admin_tool_menu_visible(){
 }
 endif;
 
+//アドミンバーに独自管理メニューを表示
+define('OP_DASHBOARD_MESSAGE_VISIBLE', 'dashboard_message_visible');
+if ( !function_exists( 'is_dashboard_message_visible' ) ):
+function is_dashboard_message_visible(){
+  return get_theme_option(OP_DASHBOARD_MESSAGE_VISIBLE, 1);
+}
+endif;
+
 //インデックスのエントリーカードにPV数を表示
 define('OP_ADMIN_INDEX_PV_VISIBLE', 'admin_index_pv_visible');
 if ( !function_exists( 'is_admin_index_pv_visible' ) ):
@@ -84,6 +92,14 @@ define('OP_ADMIN_LIST_WORD_COUNT_VISIBLE', 'admin_list_word_count_visible');
 if ( !function_exists( 'is_admin_list_word_count_visible' ) ):
 function is_admin_list_word_count_visible(){
   return get_theme_option(OP_ADMIN_LIST_WORD_COUNT_VISIBLE, 1);
+}
+endif;
+
+//投稿一覧にPVを表示する
+define('OP_ADMIN_LIST_PV_VISIBLE', 'admin_list_pv_visible');
+if ( !function_exists( 'is_admin_list_pv_visible' ) ):
+function is_admin_list_pv_visible(){
+  return get_theme_option(OP_ADMIN_LIST_PV_VISIBLE, 1);
 }
 endif;
 

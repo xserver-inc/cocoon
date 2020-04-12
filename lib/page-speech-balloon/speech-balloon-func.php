@@ -378,12 +378,15 @@ function get_rest_speech_balloons( $data ) {
 endif;
 
 //https://cocoon.local/wp-json/cocoon/v1/balloon/
-add_action( 'rest_api_init', function () {
+add_action( 'rest_api_init', 'rest_api_init_balloon_custom' );
+if ( !function_exists( 'rest_api_init_balloon_custom' ) ):
+function rest_api_init_balloon_custom(){
   register_rest_route( THEME_NAME.'/v1', '/balloon/', array(
     'methods' => 'GET',
     'callback' => 'get_rest_speech_balloons',
   ) );
-} );
+}
+endif;
 
 //REST API出力用の吹き出しデータ取得
 if ( !function_exists( 'get_rest_speech_balloon' ) ):

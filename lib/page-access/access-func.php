@@ -358,7 +358,7 @@ endif;
 
 //アクセスランキングを取得
 if ( !function_exists( 'get_access_ranking_records' ) ):
-function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
+function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array(), $children = 0){
   // //ページの判別ができない場合はDBにアクセスしない
   // if (!is_singular()) {
   //   return null;
@@ -368,23 +368,34 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $
   //アクセスキャッシュを有効にしている場合
   if (is_access_count_cache_enable()) {
     $cats = implode(',', $cat_ids);
+    if ($cat_ids) {
+      //子孫カテゴリも含める場合
+      if ($children) {
+        $categories = $cat_ids;
+        $res = $categories;
+        foreach ($categories as $category) {
+          $res = array_merge($res, get_term_children( $category, 'category' ));
+        }
+        $cat_ids = $res;
+        $cats = implode(',', $res);
+      }
+    }
     $expids = implode(',', $exclude_post_ids);
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&expids='.$expids.'&excats='.$excats;
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats;
     //_v($transient_id);
     $cache = get_transient( $transient_id );
     if ($cache) {
-      if (DEBUG_MODE) {
-        echo('<pre>');
-        echo $transient_id;
-        echo('</pre>');
+      if (DEBUG_MODE && is_user_administrator()) {
+        // echo('<pre>');
+        // echo $transient_id;
+        // echo('</pre>');
       } elseif (is_user_administrator()){
 
       } else {
         return $cache;
       }
-
     }
   }
 

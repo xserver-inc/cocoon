@@ -306,7 +306,7 @@ span.btn-wrap {
 }
 
 .bb-memo::before {
-  content: "  MEMO";
+  content: "  MEMO";
 }
 
 .bb-download::before {

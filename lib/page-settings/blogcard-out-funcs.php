@@ -44,7 +44,7 @@ endif;
 define('OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD', 'external_blogcard_cache_retention_period');
 if ( !function_exists( 'get_external_blogcard_cache_retention_period' ) ):
 function get_external_blogcard_cache_retention_period(){
-  return get_theme_option(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, 30);
+  return get_theme_option(OP_EXTERNAL_BLOGCARD_CACHE_RETENTION_PERIOD, 365);
 }
 endif;
 
