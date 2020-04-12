@@ -18,14 +18,14 @@
   border-right: 1px solid #ddd;
   box-sixing: border-box;
 }
-#tab1:checked ~ .top-cate-btn .tab-btn[for="tab1"],
-#tab2:checked ~ .top-cate-btn .tab-btn[for="tab2"],
-#tab3:checked ~ .top-cate-btn .tab-btn[for="tab3"],
-#tab4:checked ~ .top-cate-btn .tab-btn[for="tab4"]//,
-// #tab5:checked ~ .top-cate-btn .tab-btn[for="tab5"],
-// #tab6:checked ~ .top-cate-btn .tab-btn[for="tab6"],
-// #tab7:checked ~ .top-cate-btn .tab-btn[for="tab7"],
-// #tab8:checked ~ .top-cate-btn .tab-btn[for="tab8"],
+#index-tab-1:checked ~ .top-cate-btn .tab-btn[for="tab1"],
+#index-tab-2:checked ~ .top-cate-btn .tab-btn[for="tab2"],
+#index-tab-3:checked ~ .top-cate-btn .tab-btn[for="tab3"],
+#index-tab-4:checked ~ .top-cate-btn .tab-btn[for="tab4"]//,
+// #index-tab-5:checked ~ .top-cate-btn .tab-btn[for="tab5"],
+// #index-tab-6:checked ~ .top-cate-btn .tab-btn[for="tab6"],
+// #index-tab-7:checked ~ .top-cate-btn .tab-btn[for="tab7"],
+// #index-tab-8:checked ~ .top-cate-btn .tab-btn[for="tab8"],
 .top-cate-btn .tab-btn:hover{
   background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */
 }
@@ -37,14 +37,14 @@ input[name="tab_item"]{
   display: none;
 }
 
-#tab1:checked ~ .tab-cont.tb1,
-#tab2:checked ~ .tab-cont.tb2,
-#tab3:checked ~ .tab-cont.tb3,
-#tab4:checked ~ .tab-cont.tb4 //,
-// #tab5:checked ~ .tab-cont.tb5,
-// #tab6:checked ~ .tab-cont.tb6,
-// #tab7:checked ~ .tab-cont.tb7,
-// #tab8:checked ~ .tab-cont.tb8
+#index-tab-1:checked ~ .tab-cont.tb1,
+#index-tab-2:checked ~ .tab-cont.tb2,
+#index-tab-3:checked ~ .tab-cont.tb3,
+#index-tab-4:checked ~ .tab-cont.tb4 //,
+// #index-tab-5:checked ~ .tab-cont.tb5,
+// #index-tab-6:checked ~ .tab-cont.tb6,
+// #index-tab-7:checked ~ .tab-cont.tb7,
+// #index-tab-8:checked ~ .tab-cont.tb8
 {
   display: block;
   animation: tab-index-show .3s ease-in;

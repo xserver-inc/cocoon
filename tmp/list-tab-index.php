@@ -14,16 +14,16 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
 ?>
 
 <div id="index-tab-wrap" class="index-tab-wrap">
-  <input id="tab1" type="radio" name="tab_item" checked>
+  <input id="index-tab-1" type="radio" name="tab_item" checked>
   <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
   $number = $i + 2; ?>
-  <input id="tab<?php echo $number; ?>" type="radio" name="tab_item">
+  <input id="index-tab-<?php echo $number; ?>" type="radio" name="tab_item">
   <?php endfor; ?>
   <div class="top-cate-btn">
-    <label class="tab-btn" for="tab1"><?php _e('新着記事', THEME_NAME); ?></label>
+    <label class="tab-btn" for="index-tab-1"><?php _e('新着記事', THEME_NAME); ?></label>
     <?php for ($i=0; $i < count($cat_ids) && $i < 3; $i++):
     $number = $i + 2; ?>
-    <label class="tab-btn" for="tab<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_ids[$i]); ?></label>
+    <label class="tab-btn" for="index-tab-<?php echo $number; ?>"><?php echo get_category_name_by_id($cat_ids[$i]); ?></label>
     <?php endfor; ?>
   </div>
   <div class="tab-cont tb1">
