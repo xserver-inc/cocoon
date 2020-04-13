@@ -21,13 +21,8 @@ function code_minify_call_back($buffer) {
   $buffer = preg_replace('{<p>(</a>)</p>}i', "$1", $buffer);
 
   //HTMLの縮小化
-  //global $_IS_HTTP_MINIFY;
-  //_v($_SERVER);
-  // if (is_html_minify_enable() && !$_IS_HTTP_MINIFY) {
   if (is_html_minify_enable()) {
     $buffer = minify_html($buffer);
-    //$_IS_HTTP_MINIFY = true;
-    //_v('minify_html');
   }
 
   ///////////////////////////////////////////
@@ -72,13 +67,11 @@ function code_minify_call_back($buffer) {
     $pattern = '{<script[^>]*?>(.*?)</script>}is';
     $subject = $buffer;
     $res = preg_match_all($pattern, $subject, $m);
-    //_v($m);
     if ($res && isset($m[1])) {
       foreach ($m[1] as $match) {
         if (empty($match)) {
           continue;
         }
-        //_v($match);
         $buffer = str_replace($match, minify_js($match), $buffer);
       }
     }
@@ -87,16 +80,9 @@ function code_minify_call_back($buffer) {
   //タブボックスのタブ変換
   $buffer = preg_replace('#<div class="(.*?)blank-box bb-tab bb-(.+?)".*?>#', '$0<div class="bb-label"><span class="fa"></span></div>', $buffer);
 
-  // //モバイルボタンのロゴメニュー対応
-  // $res = preg_match('{<ul class="mobile-header-menu-buttons mobile-menu-buttons".+?</ul>}s', $buffer, $m);
-  // if ($res) {
-  //   _v($m);
-  // }
-
   //Font Awesome5変換
   $buffer = change_fa($buffer);
 
-  //_v($buffer);
   return apply_filters('code_minify_call_back', $buffer);
 }
 endif;
@@ -113,8 +99,6 @@ function is_minify_page(){
   if (is_robots_txt_page()) return false;
   if (is_analytics_access_php_page()) return false;
   if (is_feed()) return false;
-  // _v($_SERVER);
-  //_v(time());
   return true;
 }
 endif;
@@ -224,7 +208,6 @@ function wp_footer_minify($buffer) {
   $buffer = str_replace(" type='text/javascript'", '', $buffer);
   $buffer = str_replace(' type="text/javascript"', '', $buffer);
 
-  //_v($buffer);
   return apply_filters('wp_footer_minify', $buffer);
 }
 endif;
@@ -266,13 +249,7 @@ function convert_lazy_load_tag($the_content, $media){
 
   //imgタグをamp-imgタグに変更する
   $res = preg_match_all($pattern, $the_content, $m);
-  // _v($res);
-  //_v($m);
-  // if ($media == 'iframe') {
-  //   //_v($pattern);
-  //   _v($m);
-  // }
-  //_v($m);
+
   if ($res) {//画像タグがある場合
     //_v($m);
     //置換するタグ格納用
@@ -322,7 +299,6 @@ function convert_lazy_load_tag($the_content, $media){
       //変数の初期化
       $src_attr = null;
       $url = null;
-      //var_dump(htmlspecialchars($match));
       $tag = $match;
 
       //Lazy Load：画像URLの入れ替え
