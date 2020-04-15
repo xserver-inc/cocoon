@@ -1,3 +1,4 @@
+新型コロナ対策：<a href="https://corona.go.jp/prevention/" target="_blank" rel="noopener noreferrer">新型コロナウイルス(COVID-19) 感染しない・広げないために｜内閣官房</a>
 新型コロナ対策：換気の悪い「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密閉空間</a>」は避けましょう
 新型コロナ対策：多くの人が集まる「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密集空間</a>」を避けましょう
 新型コロナ対策：近距離での会話や発声をする「<a href="https://www.cas.go.jp/jp/influenza/pdf/cluster2.pdf" target="_blank" rel="noopener noreferrer">密接場面</a>」を避けましょう
@@ -9,5 +10,6 @@
 新型コロナ情報：<a href="https://newsdigest.jp/pages/coronavirus/" target="_blank" rel="noopener noreferrer">新型コロナウイルスの最新感染状況マップ</a>
 新型コロナ情報：<a href="https://www.stopcovid19.jp/" target="_blank" rel="noopener noreferrer">都道府県別の空き感染症病床数</a>
 新型コロナ情報：<a href="https://stopcovid19.metro.tokyo.lg.jp/" target="_blank" rel="noopener noreferrer">東京都内の最新感染動向</a>
+新型コロナ情報：<a href="https://corona.go.jp/" target="_blank" rel="noopener noreferrer">緊急事態宣言の成果～人流の減少率～</a>
 新型コロナ税制：<a href="https://www.mof.go.jp/tax_policy/keizaitaisaku.html" target="_blank" rel="noopener noreferrer">新型コロナウイルス感染症緊急経済対策における税制上の措置（案）</a>
 新型コロナ補助：<a href="https://www3.nhk.or.jp/news/special/coronavirus/management/" target="_blank" rel="noopener noreferrer">「こんなときはどんな支援が？」 助成金や補助金の情報</a>
