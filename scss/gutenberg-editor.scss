@@ -40,8 +40,9 @@
   }
 }
 
+//ブロックエディタークラシックブロック本文の.mce-content-bodyをテーマデフォルトと同じにする
 div.mce-content-body {
-  line-height: inherit;
+  line-height: 1.8;
 }
 
 .editor-block-list__layout .editor-block-list__block,,//Wordpress 5.4未満

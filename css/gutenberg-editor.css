@@ -450,7 +450,7 @@
   }
 }
 div.mce-content-body {
-  line-height: inherit;
+  line-height: 1.8;
 }
 
 .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button"], .editor-block-list__layout .editor-block-list__block[data-type^="cocoon-blocks/button-wrap"],
