@@ -102,9 +102,6 @@ endif;
 if ( !function_exists( 'get_the_date_tags' ) ):
 function get_the_date_tags(){
   $is_reservation_post = (get_the_time('U') >= get_update_time('U'));
-  // _v(get_the_time('U'));
-  // _v(get_update_time('U'));
-  // _v($is_reservation_post);
 
   $update_time = get_update_time();
   $published = is_seo_date_type_update_date_only() ? ' published' : null;
@@ -144,8 +141,6 @@ function get_the_date_tags(){
       break;
     //更新日・投稿日を伝える
     default:
-      // _v(get_the_time('U'));
-      // _v(get_update_time('U'));
       $date_tags = null;
       //更新日があるとき
       if ($update_time && !$is_reservation_post) {
