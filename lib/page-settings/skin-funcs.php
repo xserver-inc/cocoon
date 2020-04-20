@@ -104,21 +104,12 @@ function get_skin_dirs($dir) {
 }
 endif;
 
-//var_dump(get_skin_dirs($dir = get_template_directory().'/skins/'));
-
-
 //スキン情報の取得
 if ( !function_exists( 'get_skin_infos' ) ):
 function get_skin_infos(){
   if (!defined('FS_METHOD')) {
     define( 'FS_METHOD', 'direct' );
   }
-
-  // $parent = true;
-  // // 子テーマで 親skins の取得有無の設定
-  // if(function_exists('include_parent_skins')){
-  //   $parent = include_parent_skins();
-  // }
 
   $skin_dirs  = array();
   $child_dirs  = array();
@@ -144,9 +135,7 @@ function get_skin_infos(){
 
   $results = array();
   foreach($skin_dirs as $dir){
-    //$dir = str_replace('\\', '/', $dir);
     $style_css_file = $dir.'/style.css';
-    //var_dump($style_css_file);
 
     //スキンフォルダ内にstyle.cssがある場合
     if (file_exists($style_css_file)){
