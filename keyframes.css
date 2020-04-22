@@ -16,3 +16,14 @@
     opacity: 0;
   }
 }
+@keyframes tab-index-show {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

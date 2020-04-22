@@ -3,20 +3,33 @@
 ///////////////////////////////////////////
 .index-tab-buttons{
   margin: 10px 0 20px;
-  border-radius: 5px;
-  overflow: hidden;
+  // border-radius: 5px;
+  // overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 3px 10px -2px rgba(0,0,0,.2);
+  border: 1px solid $thin;
+  border-radius: 4px;
+  // box-shadow: 0 3px 10px -2px rgba(0,0,0,.2);
 }
 .index-tab-buttons .index-tab-button{
   width: calc(100% / 4);
-  padding: 10px;
+  background-color: $xx_thin;
   text-align: center;
-  background: #eee;
-  transition: .5s;
-  border-right: 1px solid #ddd;
-  box-sixing: border-box;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+  border-right: 1px solid $thin;
+  //margin: 0 0 0 -1px;
+  padding: 8px 4px;
+  transition: all .4s;
+  opacity: 0.8;
+  font-size: 16px;
+  // &:first-child{
+  //   border-radius: 4px 0 0 4px;
+  // }
+  // &:last-child {
+  //   border-radius: 0 4px 4px 0;
+  // }
 }
 #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"],
 #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"],
@@ -26,8 +39,15 @@
 // #index-tab-6:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-6"],
 // #index-tab-7:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-7"],
 // #index-tab-8:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-8"],
-.index-tab-buttons .index-tab-button:hover{
-  background: #aaa; /* 選択・マウスオーバー時のタブの色。お好きな色に */
+//.index-tab-buttons .index-tab-button:hover
+{
+  //background: #aaa;
+  z-index: 4;
+  // border: 1px solid #aaa;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
+  background-color: $white;
+  opacity: 1;
+  //font-weight: 900;
 }
 .index-tab-buttons .index-tab-button:last-of-type{
   border-right: none;
@@ -51,17 +71,33 @@ input[name="tab_item"]{
 }
 /* Cocoonのリンクボタンカスタマイズ */
 .btn-wrap-circle > a {
-  background: #999; /* お好みの色に */
+  background: #999;
 }
 /* スマホ用 */
 @media screen and (max-width: 768px){
   .index-tab-buttons .index-tab-button{
-      width: calc(100% / 2);
+    width: calc(100% / 2);
+    // &:first-child{
+    //   border-radius: 4px 0 0 0;
+    // }
+    // &:nth-child(2){
+    //   border-radius: 0 4px 0 0;
+    // }
+    // &:nth-child(3){
+    //   border-radius: 0 0 0 4px;
+    // }
+    // &:last-child {
+    //   border-radius: 0 0 4px 0;
+    // }
+    &:nth-child(2){
+      border-right: 0;
+    }
+    &:nth-child(3),
+    &:nth-child(4){
+      border-top: 1px solid #aaa;;
+    }
   }
-  .index-tab-buttons .index-tab-button:nth-of-type(2){
-      border-right: none;
-  }
-  .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){
-      border-bottom: 1px solid #ddd;
-  }
+  // .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){
+  //   border-bottom: 1px solid #ddd;
+  // }
 }
