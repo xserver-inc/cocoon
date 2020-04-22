@@ -16,9 +16,3 @@
     opacity: 0;
   }
 }
-
-@keyframes carousel-show {
-  0% {
-    opacity: 0;
-  }
-}
