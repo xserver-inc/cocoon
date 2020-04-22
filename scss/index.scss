@@ -101,3 +101,25 @@ input[name="tab_item"]{
   //   border-bottom: 1px solid #ddd;
   // }
 }
+
+//ボタン
+.index-tab-more-button-wrap{
+  text-align: center;
+}
+.index-tab-more-button{
+  display: inline-block;
+  padding: 0.3em 2em;
+  text-decoration: none;
+  color: #333;
+  border: solid 2px #ccc;
+  border-radius: 3px;
+  transition: .4s;
+  margin: 1em 0 2em;
+  background: $xxx_thin;
+  font-size: 16px;
+  border-radius: 99px;
+}
+.index-tab-more-button:hover {
+  color: #333;
+  text-decoration: underline;
+}

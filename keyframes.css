@@ -19,11 +19,16 @@
 @keyframes tab-index-show {
   0% {
     opacity: 0;
+    padding-top: 100px;
+  }
+  20% {
+    padding-top: 20px;
   }
   80% {
     opacity: 0.5;
   }
   100% {
     opacity: 1;
+    padding-top: 0;
   }
 }

@@ -40,6 +40,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
   <div class="tab-cont tb<?php echo $number; ?>">
       <!-- <?php echo $number; ?>つ目のコンテンツ -->
       <?php
+      $cat_id = $cat_ids[$i];
           $arg = array(
               //表示件数（WordPressの表示設定に準拠）
               'posts_per_page' => get_option_posts_per_page(),
@@ -48,7 +49,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
               //降順
               'order' => 'DESC',
               //カテゴリーをIDで指定
-              'category' => $cat_ids[$i]
+              'category' => $cat_id,
           );
           $posts = get_posts( $arg );
           if( $posts ): ?>
@@ -59,10 +60,11 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
                   <?php get_template_part('tmp/entry-card'); ?>
           <?php endforeach; wp_reset_postdata(); ?>
       </div>
-      <div class="wp-block-cocoon-blocks-button-1 aligncenter button-block">
-      <!-- リンクのアドレスを任意の物に -->
-          <a href="<?php bloginfo('url') ?>/category/○○" class="btn btn-l btn-circle" target="_self">コンテンツ<?php echo $number; ?>をもっと見る</a>
-      </div>
+      <?php if($cat = get_category($cat_id)): ?>
+        <div class="index-tab-more-button-wrap">
+            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="index-tab-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?><?php //echo sprintf( __( '「%s」をもっと見る', THEME_NAME ), $cat->name ); ?></a>
+        </div>
+      <?php endif; ?>
       <?php endif; ?>
   </div>
   <?php endfor; ?>
