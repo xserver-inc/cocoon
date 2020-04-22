@@ -11,7 +11,7 @@ global $_MENU_ICON;
 $icon_class = $_MENU_ICON ? $_MENU_ICON : 'fa fa-search'; ?>
 
 <!-- 検索ボタン -->
-<?php if (!is_amp() || (is_amp() && is_ssl())): ?>
+<?php if (is_search() && (!is_amp() || (is_amp() && is_ssl()))): ?>
   <!-- 検索ボタン -->
   <li class="search-menu-button menu-button">
     <input id="search-menu-input" type="checkbox" class="display-none">
