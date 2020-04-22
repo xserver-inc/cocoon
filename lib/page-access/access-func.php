@@ -333,7 +333,7 @@ function get_all_access_count($post_id = null){
 }
 endif;
 
-if ( !function_exists( 'wrap_joined_wp_posts_sql' ) ):
+if ( !function_exists( 'wrap_joined_wp_posts_query' ) ):
 function wrap_joined_wp_posts_query($query, $limit){
   global $wpdb;
   $wp_posts = $wpdb->posts;

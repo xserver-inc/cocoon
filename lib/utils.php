@@ -2595,7 +2595,7 @@ function get_singular_sns_share_image_url(){
   } else {
     $sns_image_url = NO_IMAGE_LARGE;
   }
-  return $sns_image_url;
+  return apply_filters('get_singular_sns_share_image_url', $sns_image_url);
 }
 endif;
 
@@ -2625,7 +2625,7 @@ function get_singular_eyecatch_image_url(){
   } else {
     $eyecatch_image_url = NO_IMAGE_LARGE;
   }
-  return $eyecatch_image_url;
+  return apply_filters('get_singular_eyecatch_image_url', $eyecatch_image_url);
 }
 endif;
 
