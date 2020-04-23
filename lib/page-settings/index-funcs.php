@@ -175,3 +175,11 @@ function is_tab_index_page(){
   return get_tab_index_category_ids() && is_front_top_page() && is_home();
 }
 endif;
+
+//タブインデックスカテゴリー（カンマテキスト）
+define('OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT', 'tab_index_category_ids_comma_text');
+if ( !function_exists( 'get_tab_index_category_ids_comma_text' ) ):
+function get_tab_index_category_ids_comma_text(){
+  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+}
+endif;
