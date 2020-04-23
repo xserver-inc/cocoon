@@ -54,7 +54,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
           $posts = get_posts( $arg );
           if( $posts ): ?>
       <div class="<?php echo $list_classes; ?>">
-          <?php //var_dump(count($posts));
+          <?php
               foreach ( $posts as $post ) :
               setup_postdata( $post ); ?>
                   <?php get_template_part('tmp/entry-card'); ?>
@@ -62,7 +62,7 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
       </div>
       <?php if($cat = get_category($cat_id)): ?>
         <div class="index-tab-more-button-wrap">
-            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="index-tab-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?><?php //echo sprintf( __( '「%s」をもっと見る', THEME_NAME ), $cat->name ); ?></a>
+            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="index-tab-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
         </div>
       <?php endif; ?>
       <?php endif; ?>
