@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if (get_the_author()) {
+if (is_post_author_visible() && get_the_author()) {
   $author_id = get_the_author_meta( 'ID' );
   $profile_page_url = get_the_author_profile_page_url($author_id);
   if ($profile_page_url) {
