@@ -7267,11 +7267,11 @@ div.fb-like-mobile {
 
 .search-submit {
   position: absolute;
-  right: 0;
+  right: 3px;
   top: 0;
   font-size: 20px;
   cursor: pointer;
-  line-height: 49px;
+  line-height: 43px;
   border: none;
   color: #ccc;
   padding: 0 8px;
