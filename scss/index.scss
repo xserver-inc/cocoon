@@ -115,11 +115,9 @@ input[name="tab_item"]{
   border-radius: 3px;
   transition: .4s;
   margin: 1em 0 2em;
-  background: $xxx_thin;
   font-size: 16px;
   border-radius: 99px;
 }
 .index-tab-more-button:hover {
-  color: #333;
-  text-decoration: underline;
+  @include bgc_hover;
 }

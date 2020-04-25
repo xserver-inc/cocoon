@@ -8403,14 +8403,14 @@ input[name="tab_item"] {
   border-radius: 3px;
   transition: .4s;
   margin: 1em 0 2em;
-  background: #fafbfc;
   font-size: 16px;
   border-radius: 99px;
 }
 
 .index-tab-more-button:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease-in-out;
   color: #333;
-  text-decoration: underline;
 }
 
 .admin-panel {
