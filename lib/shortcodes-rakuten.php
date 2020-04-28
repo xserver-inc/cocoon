@@ -452,26 +452,27 @@ function rakuten_product_link_shortcode($atts){
       }
 
     } else {
-
-      $ebody = json_decode( $json['body'] );
-      $error = $ebody->{'error'};
-      $error_description = $ebody->{'error_description'};
-      switch ($error) {
-        case 'wrong_parameter':
-        $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
-        //楽天商品取得エラーの出力
-        if (!$json_cache) {
-          error_log_to_rakuten_product($id, $search, $error_message, $keyword);
+      if (isset($json['body'])) {
+        $ebody = json_decode( $json['body'] );
+        $error = $ebody->{'error'};
+        $error_description = $ebody->{'error_description'};
+        switch ($error) {
+          case 'wrong_parameter':
+          $error_message = $error_description.':'.__( 'ショートコードの値が正しく記入されていない可能性があります。', THEME_NAME );
+          //楽天商品取得エラーの出力
+          if (!$json_cache) {
+            error_log_to_rakuten_product($id, $search, $error_message, $keyword);
+          }
+          //楽天APIキャッシュの保存
+          set_transient($transient_id, $json, $cache_expiration);
+          return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
+            break;
+          default:
+          $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。', THEME_NAME );
+            break;
         }
-        //楽天APIキャッシュの保存
-        set_transient($transient_id, $json, $cache_expiration);
-        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message, $cache_delete_tag);
-          break;
-        default:
-        $error_message = $error_description.':'.__( 'Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。', THEME_NAME );
-          break;
+        return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
       }
-      return get_rakuten_error_message_tag($default_rakuten_link_tag, $error_message);
     }
   } else {
     $error_message = __( 'JSONを取得できませんでした。接続環境に問題がある可能性があります。', THEME_NAME );

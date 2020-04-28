@@ -9287,7 +9287,7 @@ _:-ms-lang(x), .mc-circle {
 
   .no-mobile-sidebar .sidebar,
   .mobile-button-fmb .go-to-top-button,
-  .no-mobile-header-logo .logo-header {
+  .no-mobile-header-logo .header .logo-header {
     display: none;
   }
 
