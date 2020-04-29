@@ -452,7 +452,7 @@ function rakuten_product_link_shortcode($atts){
       }
 
     } else {
-      if (isset($json['body'])) {
+      if (is_array($json) && isset($json['body'])) {
         $ebody = json_decode( $json['body'] );
         $error = $ebody->{'error'};
         $error_description = $ebody->{'error_description'};
