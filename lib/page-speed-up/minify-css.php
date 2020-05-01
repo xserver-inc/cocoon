@@ -79,9 +79,8 @@ function tag_code_to_minify_css($buffer) {
 
             //CSS URLからCSSコードの取得
             $css = css_url_to_css_minify_code( $url );
-            //縮小化可能ななCSSだと時
+            //縮小化可能なCSSだったとき
             if ($css !== false) {
-              //_v($css);//変換したCSSコード
 
               //CSSを縮小化したCSSファイルURL linkタグを削除する
               $buffer = str_replace($tag, '', $buffer);
