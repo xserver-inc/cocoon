@@ -1025,7 +1025,6 @@ function generate_widget_entries_tag($atts){
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
-    'snippet' => 0,
   ), $atts));
   global $post;
 
@@ -1153,12 +1152,6 @@ function generate_widget_entries_tag($atts){
       'thumb_size' => $thumb_size,
       'type' => $type,
     );
-    if ($snippet) {
-      $atts += array(
-        'snippet' => get_the_snippet( get_the_content(''), get_entry_card_excerpt_max_length() ),
-      );
-    }
-    //var_dump($atts);
     echo get_widget_entry_card_link_tag($atts); ?>
   <?php endwhile;
   else :

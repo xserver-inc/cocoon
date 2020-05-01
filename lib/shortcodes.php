@@ -47,7 +47,6 @@ function new_entries_shortcode($atts) {
     'bold' => 0,
     'arrow' => 0,
     'class' => null,
-    'snippet' => 0,
   ), $atts, 'new_list'));
 
   //カテゴリを配列化
@@ -77,10 +76,10 @@ function new_entries_shortcode($atts) {
     'bold' => $bold,
     'arrow' => $arrow,
     'class' => $class,
-    'snippet' => $snippet,
   );
   ob_start();
   generate_widget_entries_tag($atts);
+  // generate_widget_entries_tag($count, $type, $categories, $children, $post_type, $taxonomy, $random, $action);
   $res = ob_get_clean();
   return $res;
 }
@@ -834,7 +833,7 @@ function campaign_shortcode( $atts, $content = null ) {
     'to' => null, //いつまで（終了日時）
     'class' => null, //拡張クラス
   ), $atts, 'campaign' ) );
-
+  
   //内容がない場合は何も表示しない
   if (!$content) return null;
   //現在の日時を取得
