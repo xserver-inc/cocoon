@@ -10,6 +10,30 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ///////////////////////////////////////
 // リスト表示
 ///////////////////////////////////////
+
+//タブインデックスカテゴリー
+define('OP_TAB_INDEX_CATEGORY_IDS', 'tab_index_category_ids');
+if ( !function_exists( 'get_tab_index_category_ids' ) ):
+function get_tab_index_category_ids(){
+  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS, array());
+}
+endif;
+
+//タブインデックスページかどうか
+if ( !function_exists( 'is_tab_index_page' ) ):
+function is_tab_index_page(){
+  return get_tab_index_category_ids() && is_front_top_page() && is_home();
+}
+endif;
+
+//タブインデックスカテゴリー（カンマテキスト）
+define('OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT', 'tab_index_category_ids_comma_text');
+if ( !function_exists( 'get_tab_index_category_ids_comma_text' ) ):
+function get_tab_index_category_ids_comma_text(){
+  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+}
+endif;
+
 //インデックスの並び順
 define('OP_INDEX_SORT_ORDERBY', 'index_sort_orderby');
 if ( !function_exists( '' ) ):
@@ -161,25 +185,10 @@ function is_entry_card_post_comment_count_visible(){
 }
 endif;
 
-//タブインデックスカテゴリー
-define('OP_TAB_INDEX_CATEGORY_IDS', 'tab_index_category_ids');
-if ( !function_exists( 'get_tab_index_category_ids' ) ):
-function get_tab_index_category_ids(){
-  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS, array());
-}
-endif;
-
-//タブインデックスページかどうか
-if ( !function_exists( 'is_tab_index_page' ) ):
-function is_tab_index_page(){
-  return get_tab_index_category_ids() && is_front_top_page() && is_home();
-}
-endif;
-
-//タブインデックスカテゴリー（カンマテキスト）
-define('OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT', 'tab_index_category_ids_comma_text');
-if ( !function_exists( 'get_tab_index_category_ids_comma_text' ) ):
-function get_tab_index_category_ids_comma_text(){
-  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+//フロントページタイプ
+define('OP_FRONT_PAGE_TYPE', 'front_page_type');
+if ( !function_exists( 'get_front_page_type' ) ):
+function get_front_page_type(){
+  return get_theme_option(OP_FRONT_PAGE_TYPE, 'index');
 }
 endif;

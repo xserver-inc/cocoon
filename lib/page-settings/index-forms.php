@@ -37,6 +37,45 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         </tr>
         <?php endif; ?>
 
+
+        <!-- フロントページ -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_FRONT_PAGE_TYPE, __( 'フロントページタイプ', THEME_NAME )); ?>
+          </th>
+          <td>
+            <?php
+            generate_label_tag(OP_FRONT_PAGE_TYPE, __( '表示形式', THEME_NAME ));
+            $options = array(
+              'index' => __( '一覧', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
+              'tab_index' => __( 'タブ一覧', THEME_NAME ),
+              'category' => __( 'カテゴリごと', THEME_NAME ),
+              'category_2_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
+              'category_3_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ),
+            );
+            generate_radiobox_tag(OP_FRONT_PAGE_TYPE, $options, get_front_page_type());
+            generate_tips_tag(__( 'フロントページの表示形式を選択します。', THEME_NAME ));
+
+            //フロントページに表示するカテゴリー
+            generate_label_tag(OP_TAB_INDEX_CATEGORY_IDS, __( '表示カテゴリー', THEME_NAME ));
+            generate_hierarchical_category_check_list( 0, OP_TAB_INDEX_CATEGORY_IDS, get_tab_index_category_ids(), 300 );
+            generate_tips_tag(__( '通常の記事インデックスの他に、カテゴリーの記事をタブ化して表示します。', THEME_NAME ).__( '3つまで有効。4つ目以降は無視されます。', THEME_NAME ));
+
+            //カテゴリーIDのカンマテキスト
+            $comma_text = get_tab_index_category_ids_comma_text();
+            ob_start();
+            generate_label_tag(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT, __( 'カテゴリー順の変更', THEME_NAME ));
+            echo '<br>';
+            generate_textbox_tag(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT, $comma_text, __( 'カテゴリーIDのカンマテキストを入力', THEME_NAME )) ;
+            generate_tips_tag(__( '意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力してください。', THEME_NAME ).__( 'こちらの入力がある場合は、チェックボックスのものよりこちらの設定が優先されます。', THEME_NAME ));
+            $form = ob_get_clean();
+            generate_toggle_area(__( 'カテゴリ表示順を変更する場合はこちら', THEME_NAME ), $form);
+            //入力チェック
+            generate_toggle_entered($comma_text);
+            ?>
+          </td>
+        </tr>
+
         <!-- 並び順 -->
         <tr>
           <th scope="row">
@@ -156,32 +195,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_checkbox_tag(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE , is_entry_card_post_comment_count_visible(), __( 'コメント数の表示', THEME_NAME ));
 
             generate_tips_tag(__( 'エントリーカードに投稿関連情報を表示するかどうか。', THEME_NAME ));
-            ?>
-          </td>
-        </tr>
-
-
-        <!-- タブ表示カテゴリーID -->
-        <tr>
-          <th scope="row">
-            <?php generate_label_tag(OP_TAB_INDEX_CATEGORY_IDS, __( 'タブ表示カテゴリー', THEME_NAME )); ?>
-          </th>
-          <td>
-            <?php
-            generate_hierarchical_category_check_list( 0, OP_TAB_INDEX_CATEGORY_IDS, get_tab_index_category_ids(), 300 );
-            generate_tips_tag(__( '通常の記事インデックスの他に、カテゴリーの記事をタブ化して表示します。', THEME_NAME ).__( '3つまで有効。4つ目以降は無視されます。', THEME_NAME ));
-
-            //カテゴリーIDのカンマテキスト
-            $comma_text = get_tab_index_category_ids_comma_text();
-            ob_start();
-            generate_label_tag(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT, __( 'カテゴリー順の変更', THEME_NAME ));
-            echo '<br>';
-            generate_textbox_tag(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT, $comma_text, __( 'カテゴリーIDのカンマテキストを入力', THEME_NAME )) ;
-            generate_tips_tag(__( '意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力してください。', THEME_NAME ).__( 'こちらの入力がある場合は、チェックボックスのものよりこちらの設定が優先されます。', THEME_NAME ));
-            $form = ob_get_clean();
-            generate_toggle_area(__( 'カテゴリ表示順を変更する場合はこちら', THEME_NAME ), $form);
-            //入力チェック
-            generate_toggle_entered($comma_text);
             ?>
           </td>
         </tr>

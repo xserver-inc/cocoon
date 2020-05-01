@@ -7,6 +7,15 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//フロントページタイプ
+update_theme_option(OP_FRONT_PAGE_TYPE);
+
+//タブインデックスカテゴリー
+update_theme_option(OP_TAB_INDEX_CATEGORY_IDS);
+
+//タブインデックスカテゴリー（カンマテキスト）
+update_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+
 //インデックスの並び順
 update_theme_option(OP_INDEX_SORT_ORDERBY);
 
@@ -49,9 +58,3 @@ update_theme_option(OP_ENTRY_CARD_POST_AUTHOR_VISIBLE);
 
 //コメント数を表示
 update_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
-
-//タブインデックスカテゴリー
-update_theme_option(OP_TAB_INDEX_CATEGORY_IDS);
-
-//タブインデックスカテゴリー（カンマテキスト）
-update_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
