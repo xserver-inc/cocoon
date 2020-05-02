@@ -54,9 +54,9 @@ function get_tab_index_category_ids(){
 endif;
 
 //タブインデックスページかどうか
-if ( !function_exists( 'is_tab_index_page' ) ):
-function is_tab_index_page(){
-  return get_tab_index_category_ids() && is_front_top_page() && is_home();
+if ( !function_exists( 'is_front_index_page' ) ):
+function is_front_index_page(){
+  return is_front_top_page() && is_home();
 }
 endif;
 

@@ -49,7 +49,7 @@ if (is_sns_top_share_buttons_visible() &&
 } ?>
 
 <?php
-  if (!is_tab_index_page()) {
+  if (!is_front_index_page()) {
     get_template_part('tmp/list-index');
   } else {
     get_template_part('tmp/list-tab-index');
@@ -111,7 +111,7 @@ if (is_sns_follow_buttons_visible() && !is_paged() &&
 ////////////////////////////
 //ページネーション
 ////////////////////////////
-if (!is_tab_index_page()) {
+if (!is_front_index_page()) {
   get_template_part('tmp/pagination');
 }
 
