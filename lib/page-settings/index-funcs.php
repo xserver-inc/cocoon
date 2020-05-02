@@ -11,6 +11,40 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // リスト表示
 ///////////////////////////////////////
 
+//フロントページタイプ
+define('OP_FRONT_PAGE_TYPE', 'front_page_type');
+if ( !function_exists( 'get_front_page_type' ) ):
+function get_front_page_type(){
+  return get_theme_option(OP_FRONT_PAGE_TYPE, 'index');
+}
+endif;
+if ( !function_exists( 'is_front_page_type_index' ) ):
+function is_front_page_type_index(){
+  return get_front_page_type() == 'index';
+}
+endif;
+if ( !function_exists( 'is_front_page_type_tab_index' ) ):
+function is_front_page_type_tab_index(){
+  return get_front_page_type() == 'tab_index';
+}
+endif;
+if ( !function_exists( 'is_front_page_type_category' ) ):
+function is_front_page_type_category(){
+  return get_front_page_type() == 'category';
+}
+endif;
+if ( !function_exists( 'is_front_page_type_category_2_columns' ) ):
+function is_front_page_type_category_2_columns(){
+  return get_front_page_type() == 'category_2_columns';
+}
+endif;
+if ( !function_exists( 'is_front_page_type_category_3_columns' ) ):
+function is_front_page_type_category_3_columns(){
+  return get_front_page_type() == 'category_3_columns';
+}
+endif;
+
+
 //タブインデックスカテゴリー
 define('OP_TAB_INDEX_CATEGORY_IDS', 'tab_index_category_ids');
 if ( !function_exists( 'get_tab_index_category_ids' ) ):
@@ -182,13 +216,5 @@ define('OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE', 'entry_card_post_comment_coun
 if ( !function_exists( 'is_entry_card_post_comment_count_visible' ) ):
 function is_entry_card_post_comment_count_visible(){
   return get_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
-}
-endif;
-
-//フロントページタイプ
-define('OP_FRONT_PAGE_TYPE', 'front_page_type');
-if ( !function_exists( 'get_front_page_type' ) ):
-function get_front_page_type(){
-  return get_theme_option(OP_FRONT_PAGE_TYPE, 'index');
 }
 endif;
