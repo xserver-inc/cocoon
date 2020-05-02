@@ -254,9 +254,6 @@ h3.footer-title{
 	.related-entry-card-snippet{
 		display:none;
 	}
-	.entry-card-content{
-		padding:0;
-	}
 	.pagination-next{
 		display:block;
 		margin:30px 0 0;
