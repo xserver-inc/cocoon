@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php endif; ?>
 
       <?php //タイトル上のカテゴリー・タグ
-      if (is_category_tag_display_position_title_top()) {
+      if (is_category_tag_display_position_title_top() && is_single()) {
         get_template_part('tmp/categories-tags');
       } ?>
 
@@ -90,7 +90,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         get_template_part('tmp/date-tags'); ?>
 
         <?php //本文上のカテゴリー・タグ
-        if (is_category_tag_display_position_content_top()) {
+        if (is_category_tag_display_position_content_top() && is_single()) {
           get_template_part('tmp/categories-tags');
         } ?>
 
@@ -148,7 +148,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         } ?>
 
         <?php //本文下のカテゴリー・タグ
-        if (is_category_tag_display_position_content_bottom()) {
+        if (is_category_tag_display_position_content_bottom() && is_single()) {
           get_template_part('tmp/categories-tags');
         } ?>
 
