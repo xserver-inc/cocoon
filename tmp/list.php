@@ -49,10 +49,10 @@ if (is_sns_top_share_buttons_visible() &&
 } ?>
 
 <?php
-  if (!is_front_index_page()) {
-    get_template_part('tmp/list-index');
-  } else {
+  if (is_front_index_page() && is_front_page_type_tab_index()) {
     get_template_part('tmp/list-tab-index');
+  } else {
+    get_template_part('tmp/list-index');
   }
 ?>
 

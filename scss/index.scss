@@ -6,13 +6,14 @@
   // border-radius: 5px;
   // overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   border: 1px solid $thin;
   border-radius: 4px;
   // box-shadow: 0 3px 10px -2px rgba(0,0,0,.2);
 }
 .index-tab-buttons .index-tab-button{
-  width: calc(100% / 4);
+  min-width: calc(100% / 4);
+  width: 100%;
   background-color: $xx_thin;
   text-align: center;
   position: relative;
@@ -74,27 +75,30 @@ input[name="tab_item"]{
   background: #999;
 }
 /* スマホ用 */
-@media screen and (max-width: 768px){
-  .index-tab-buttons .index-tab-button{
-    width: calc(100% / 2);
-    // &:first-child{
-    //   border-radius: 4px 0 0 0;
-    // }
-    // &:nth-child(2){
-    //   border-radius: 0 4px 0 0;
-    // }
-    // &:nth-child(3){
-    //   border-radius: 0 0 0 4px;
-    // }
-    // &:last-child {
-    //   border-radius: 0 0 4px 0;
-    // }
-    &:nth-child(2){
-      border-right: 0;
-    }
-    &:nth-child(3),
-    &:nth-child(4){
-      border-top: 1px solid #aaa;;
+@media screen and (max-width: 834px){
+  .index-tab-buttons{
+    flex-wrap: wrap;
+    .index-tab-button{
+      width: calc(100% / 2);
+      // &:first-child{
+      //   border-radius: 4px 0 0 0;
+      // }
+      // &:nth-child(2){
+      //   border-radius: 0 4px 0 0;
+      // }
+      // &:nth-child(3){
+      //   border-radius: 0 0 0 4px;
+      // }
+      // &:last-child {
+      //   border-radius: 0 0 4px 0;
+      // }
+      &:nth-child(2){
+        border-right: 0;
+      }
+      &:nth-child(3),
+      &:nth-child(4){
+        border-top: 1px solid #aaa;;
+      }
     }
   }
   // .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){

@@ -3540,14 +3540,15 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .carousel { display: none; animation: carousel-show 0.6s cubic-bezier(0, 0, 0.2, 1); }
 .admin-settings .demo .carousel .a-wrap { padding: 0.2em 0.3em; }
 .admin-settings .demo .ccb-carousel-border .a-wrap { border: 1px solid #ccc; }
-.admin-settings .demo .index-tab-buttons { margin: 10px 0 20px; display: flex; flex-wrap: wrap; border: 1px solid #ccc; border-radius: 4px; }
-.admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(100% / 4); background-color: #f3f4f5; text-align: center; position: relative; z-index: 3; box-sizing: border-box; border-right: 1px solid #ccc; padding: 8px 4px; transition: all .4s; opacity: 0.8; font-size: 16px; }
+.admin-settings .demo .index-tab-buttons { margin: 10px 0 20px; display: flex; border: 1px solid #ccc; border-radius: 4px; }
+.admin-settings .demo .index-tab-buttons .index-tab-button { min-width: calc(100% / 4); width: 100%; background-color: #f3f4f5; text-align: center; position: relative; z-index: 3; box-sizing: border-box; border-right: 1px solid #ccc; padding: 8px 4px; transition: all .4s; opacity: 0.8; font-size: 16px; }
 .admin-settings .demo #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], .admin-settings .demo #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], .admin-settings .demo #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], .admin-settings .demo #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] { z-index: 4; box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2); background-color: #fff; opacity: 1; }
 .admin-settings .demo .index-tab-buttons .index-tab-button:last-of-type { border-right: none; }
 .admin-settings .demo .tab-cont, .admin-settings .demo input[name="tab_item"] { display: none; }
 .admin-settings .demo #index-tab-1:checked ~ .tab-cont.tb1, .admin-settings .demo #index-tab-2:checked ~ .tab-cont.tb2, .admin-settings .demo #index-tab-3:checked ~ .tab-cont.tb3, .admin-settings .demo #index-tab-4:checked ~ .tab-cont.tb4 { display: block; animation: tab-index-show .3s ease-in; }
 .admin-settings .demo .btn-wrap-circle > a { background: #999; }
-@media screen and (max-width: 768px) { .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(100% / 2); }
+@media screen and (max-width: 834px) { .admin-settings .demo .index-tab-buttons { flex-wrap: wrap; }
+  .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(100% / 2); }
   .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(2) { border-right: 0; }
   .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(3), .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(4) { border-top: 1px solid #aaa; } }
 .admin-settings .demo .index-tab-more-button-wrap { text-align: center; }

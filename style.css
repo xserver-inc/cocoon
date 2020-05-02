@@ -8327,13 +8327,13 @@ input[type='submit'] {
 .index-tab-buttons {
   margin: 10px 0 20px;
   display: flex;
-  flex-wrap: wrap;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .index-tab-buttons .index-tab-button {
-  width: calc(100% / 4);
+  min-width: calc(100% / 4);
+  width: 100%;
   background-color: #f3f4f5;
   text-align: center;
   position: relative;
@@ -8379,7 +8379,10 @@ input[name="tab_item"] {
 }
 
 /* スマホ用 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 834px) {
+  .index-tab-buttons {
+    flex-wrap: wrap;
+  }
   .index-tab-buttons .index-tab-button {
     width: calc(100% / 2);
   }
