@@ -11,10 +11,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 update_theme_option(OP_FRONT_PAGE_TYPE);
 
 //タブインデックスカテゴリー
-update_theme_option(OP_TAB_INDEX_CATEGORY_IDS);
+update_theme_option(OP_INDEX_CATEGORY_IDS);
 
 //タブインデックスカテゴリー（カンマテキスト）
-update_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+update_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT);
 
 //インデックスの並び順
 update_theme_option(OP_INDEX_SORT_ORDERBY);

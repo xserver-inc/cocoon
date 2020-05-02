@@ -8,14 +8,14 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //チェックリストのカテゴリを読み込む
-$cat_ids = get_tab_index_category_ids();
+$cat_ids = get_index_category_ids();
 //順番を変更したい場合はカンマテキストのほうを読み込む
-$cat_comma = trim(get_tab_index_category_ids_comma_text());
+$cat_comma = trim(get_index_category_ids_comma_text());
 if ($cat_comma) {
   $cat_ids = explode(',', $cat_comma);
 }
 //カテゴリーをPHP独自カスタマイズで制御したい人用のフック
-$cat_ids = apply_filters('tab_index_category_ids', $cat_ids);
+$cat_ids = apply_filters('index_category_ids', $cat_ids);
 $list_classes = 'list'.get_additional_entry_card_classes();
 //タブインデックスのクラス名をPHP独自カスタマイズで制御したい人用のフック
 $list_classes = apply_filters('tab_index_list_classes', $list_classes);

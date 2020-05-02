@@ -46,10 +46,10 @@ endif;
 
 
 //タブインデックスカテゴリー
-define('OP_TAB_INDEX_CATEGORY_IDS', 'tab_index_category_ids');
-if ( !function_exists( 'get_tab_index_category_ids' ) ):
-function get_tab_index_category_ids(){
-  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS, array());
+define('OP_INDEX_CATEGORY_IDS', 'index_category_ids');
+if ( !function_exists( 'get_index_category_ids' ) ):
+function get_index_category_ids(){
+  return get_theme_option(OP_INDEX_CATEGORY_IDS, array());
 }
 endif;
 
@@ -61,10 +61,10 @@ function is_front_index_page(){
 endif;
 
 //タブインデックスカテゴリー（カンマテキスト）
-define('OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT', 'tab_index_category_ids_comma_text');
-if ( !function_exists( 'get_tab_index_category_ids_comma_text' ) ):
-function get_tab_index_category_ids_comma_text(){
-  return get_theme_option(OP_TAB_INDEX_CATEGORY_IDS_COMMA_TEXT);
+define('OP_INDEX_CATEGORY_IDS_COMMA_TEXT', 'index_category_ids_comma_text');
+if ( !function_exists( 'get_index_category_ids_comma_text' ) ):
+function get_index_category_ids_comma_text(){
+  return get_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT);
 }
 endif;
 
