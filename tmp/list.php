@@ -51,6 +51,12 @@ if (is_sns_top_share_buttons_visible() &&
 <?php
   if (is_front_index_page() && is_front_page_type_tab_index()) {
     get_template_part('tmp/list-tab-index');
+  } elseif (is_front_index_page() && is_front_page_type_category()) {
+    get_template_part('tmp/list-category');
+  } elseif (is_front_index_page() && is_front_page_type_category_2_columns()) {
+    get_template_part('tmp/list-category-2-columns');
+  } elseif (is_front_index_page() && is_front_page_type_category_3_columns()) {
+    get_template_part('tmp/list-category-3-columns');
   } else {
     get_template_part('tmp/list-index');
   }
