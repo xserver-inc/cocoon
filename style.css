@@ -9099,6 +9099,14 @@ _:-ms-lang(x), .mc-circle {
   background-clip: border-box;
 }
 
+@media screen and (max-width: 782px) {
+  .logged-in {
+    margin-top: 46px !important;
+  }
+  .logged-in .mobile-header-menu-buttons {
+    margin-top: 46px;
+  }
+}
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;

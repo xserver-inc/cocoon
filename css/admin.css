@@ -3686,6 +3686,8 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fixed-header .has-sub, .admin-settings .demo .fixed-header .navi-in .sub-menu { display: none; }
 .admin-settings .demo .click-prevention { pointer-events: none; }
 .admin-settings .demo _:-ms-lang(x), .admin-settings .demo .mc-circle { background-clip: border-box; }
+@media screen and (max-width: 782px) { .admin-settings .demo .logged-in { margin-top: 46px !important; }
+  .admin-settings .demo .logged-in .mobile-header-menu-buttons { margin-top: 46px; } }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }
