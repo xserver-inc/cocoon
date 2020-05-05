@@ -3551,6 +3551,7 @@ https://codepen.io/nxworld/pen/oLdoWb
   .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(100% / 2); }
   .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(2) { border-right: 0; }
   .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(3), .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(4) { border-top: 1px solid #aaa; } }
+.admin-settings .demo .list-title { text-align: center; font-size: 20px; margin-top: 2em; margin-bottom: 1em; }
 .admin-settings .demo .list-more-button-wrap { text-align: center; }
 .admin-settings .demo .list-more-button { display: inline-block; padding: 0.3em 2em; text-decoration: none; color: #333; border: solid 2px #ccc; border-radius: 3px; transition: .4s; margin: 1em 0 2em; font-size: 16px; border-radius: 99px; }
 .admin-settings .demo .list-more-button:hover { background-color: #f5f8fa; transition: all 0.3s ease-in-out; color: #333; }
