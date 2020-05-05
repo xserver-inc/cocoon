@@ -24,6 +24,19 @@ $count = 6;
     </div>
   </div><!-- .list-new-entries -->
 
+  <?php //広告表示
+  //インデックスミドルに広告を表示してよいかの判別
+  if (is_ad_pos_index_middle_visible() && is_all_adsenses_visible()) {
+    get_template_part_with_ad_format(get_ad_pos_index_middle_format(), 'ad-index-middle', is_ad_pos_index_middle_label_visible());
+  }
+
+  ////////////////////////////
+  //インデックスリストミドルウィジェット
+  ////////////////////////////
+  if (is_active_sidebar( 'index-middle' )){
+    dynamic_sidebar( 'index-middle' );
+  }; ?>
+
   <?php //カテゴリの表示
   for ($i=0; $i < count($cat_ids); $i++):
     $cat_id = $cat_ids[$i]; ?>
