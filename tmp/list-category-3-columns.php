@@ -69,8 +69,8 @@ $list_classes = apply_filters('tab_index_list_classes', $list_classes);
           <?php endforeach; wp_reset_postdata(); ?>
       </div>
       <?php if($cat = get_category($cat_id)): ?>
-        <div class="index-tab-more-button-wrap">
-            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="index-tab-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+        <div class="list-more-button-wrap">
+            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
         </div>
       <?php endif; ?>
       <?php endif; ?>

@@ -107,10 +107,10 @@ input[name="tab_item"]{
 }
 
 //ボタン
-.index-tab-more-button-wrap{
+.list-more-button-wrap{
   text-align: center;
 }
-.index-tab-more-button{
+.list-more-button{
   display: inline-block;
   padding: 0.3em 2em;
   text-decoration: none;
@@ -122,6 +122,6 @@ input[name="tab_item"]{
   font-size: 16px;
   border-radius: 99px;
 }
-.index-tab-more-button:hover {
+.list-more-button:hover {
   @include bgc_hover;
 }

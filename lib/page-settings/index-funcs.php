@@ -56,7 +56,8 @@ endif;
 //タブインデックスページかどうか
 if ( !function_exists( 'is_front_index_page' ) ):
 function is_front_index_page(){
-  return is_front_top_page() && is_home();
+  //var_dump($_GET);
+  return is_front_top_page() && is_home() && !isset($_GET['cat']) && ($_GET['cat'] != '0');
 }
 endif;
 
@@ -243,5 +244,35 @@ function get_index_list_classes(){
   //タブインデックスのクラス名をPHP独自カスタマイズで制御したい人用のフック
   $list_classes = apply_filters('get_index_list_classes', $list_classes);
   return $list_classes;
+}
+endif;
+
+//インデックスエントリーカードの取得
+if ( !function_exists( 'get_category_index_list_entry_card_tag' ) ):
+function get_category_index_list_entry_card_tag($categories, $count){
+  ob_start();
+  $args = array(
+    'posts_per_page' => $count,
+    'post__not_in' => get_sticky_post_ids(),
+  );
+  if ($categories) {
+    $args += array(
+      'cat' => $categories,
+    );
+  }
+  $query = new WP_Query( $args );
+  ////////////////////////////
+  //一覧の繰り返し処理
+  ////////////////////////////
+  if ($query->have_posts()) { //投稿があるとき
+    while ($query->have_posts()) {
+      $query->the_post(); // 繰り返し処理開始
+      get_template_part('tmp/entry-card');
+    } // 繰り返し処理終了
+  } else { // ここから記事が見つからなかった場合の処理
+    get_template_part('tmp/list-not-found-posts');
+  }
+  wp_reset_postdata();
+  return ob_get_clean();
 }
 endif;
