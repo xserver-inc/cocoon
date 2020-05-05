@@ -12,3 +12,4 @@
 新型コロナ税制：<a href="https://www.mof.go.jp/tax_policy/keizaitaisaku.html" target="_blank" rel="noopener noreferrer">新型コロナウイルス感染症緊急経済対策における税制上の措置（案）</a>
 新型コロナ支援：<a href="https://www3.nhk.or.jp/news/special/coronavirus/management/" target="_blank" rel="noopener noreferrer">「こんなときはどんな支援が？」 助成金や補助金の情報</a>
 新型コロナ支援：<a href="https://www.mhlw.go.jp/content/10900000/000622924.pdf" target="_blank" rel="noopener noreferrer">生活を支えるための支援の案内（厚生労働省）</a>
+<a href="https://www.jimin.jp/covid19/?fbclid=IwAR0HI8u2QxeJBml4RIEg6uHR9YjQaT7mqTClQjLz76NL9Q42nNUpBzSUWng" target="_blank" rel="noopener noreferrer">新型コロナウイルスにともなう あなたが使える緊急支援</a>

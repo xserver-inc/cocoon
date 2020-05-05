@@ -67,6 +67,9 @@ article .blogcard-wrap,article .blogcard-wrap:first-of-type{
 	line-height: 1.6;
 	margin-top:10px;
 }
+.entry-card-snippet, .related-entry-card-snippet {
+	max-height: 7.2em;
+}
 .entry-card-thumb, .author-thumb, .blogcard-thumbnail, .related-entry-card-thumb, .popular-entry-card-thumb,.new-entry-card-thumb,.widget-entry-card-thumb{
 	margin-right: 3.5%;
 }
@@ -253,9 +256,6 @@ h3.footer-title{
 	}
 	.related-entry-card-snippet{
 		display:none;
-	}
-	.entry-card-content{
-		padding:0;
 	}
 	.pagination-next{
 		display:block;
