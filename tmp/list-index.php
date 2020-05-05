@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 ?>
-<div id="list" class="list<?php echo get_additional_entry_card_classes(); ?>">
+<div id="list" class="<?php echo get_index_list_classes(); ?>">
 <?php
 ////////////////////////////
 //一覧の繰り返し処理

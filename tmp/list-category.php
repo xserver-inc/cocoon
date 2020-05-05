@@ -9,9 +9,53 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //インデックスカテゴリを読み込む
 $cat_ids = get_index_list_category_ids();
-//インデックスリスト用のクラス取得
-$list_classes = get_index_list_classes();
+$count = 6;
 ?>
+<div id="category-list" class="category-list">
+  <div class="list-new-entries">
+    <h1 class="list-new-entries-title list-title">
+      <?php _e('新着記事', THEME_NAME); ?>
+    </h1>
+    <div class="<?php echo get_index_list_classes(); ?>">
+
+    <?php
+    $args = array(
+      'posts_per_page' => $count,
+      'post__not_in' => get_sticky_post_ids(),
+    );
+    $query = new WP_Query( $args );
+    ////////////////////////////
+    //一覧の繰り返し処理
+    ////////////////////////////
+    if ($query->have_posts()) : //投稿があるとき
+      while ($query->have_posts()) : $query->the_post(); // 繰り返し処理開始
+        get_template_part('tmp/entry-card');
+      endwhile; // 繰り返し処理終了 ?>
+    <?php else : // ここから記事が見つからなかった場合の処理
+      get_template_part('tmp/list-not-found-posts');
+    endif;
+    wp_reset_postdata();
+    ?>
+    </div><!-- .list -->
+  </div><!-- .list-new-entries -->
+
+
+</div><!-- .category-list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div id="index-tab-wrap" class="index-tab-wrap">
   <input id="index-tab-1" type="radio" name="tab_item" checked>
