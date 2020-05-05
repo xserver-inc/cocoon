@@ -218,3 +218,30 @@ function is_entry_card_post_comment_count_visible(){
   return get_theme_option(OP_ENTRY_CARD_POST_COMMENT_COUNT_VISIBLE);
 }
 endif;
+
+//フォントページタイプ用のカテゴリーID取得
+if ( !function_exists( 'get_index_list_category_ids' ) ):
+function get_index_list_category_ids(){
+  //チェックリストのカテゴリを読み込む
+  $cat_ids = get_index_category_ids();
+  //順番を変更したい場合はカンマテキストのほうを読み込む
+  $cat_comma = trim(get_index_category_ids_comma_text());
+  if ($cat_comma) {
+    $cat_ids = explode(',', $cat_comma);
+  }
+  //カテゴリーをPHP独自カスタマイズで制御したい人用のフック
+  $cat_ids = apply_filters('get_index_list_category_ids', $cat_ids);
+  return $cat_ids;
+}
+endif;
+
+//インデックスリストのクラス取得
+if ( !function_exists( 'get_index_list_classes' ) ):
+function get_index_list_classes(){
+  //インデクスリスト用のクラス
+  $list_classes = 'list'.get_additional_entry_card_classes();
+  //タブインデックスのクラス名をPHP独自カスタマイズで制御したい人用のフック
+  $list_classes = apply_filters('get_index_list_classes', $list_classes);
+  return $list_classes;
+}
+endif;
