@@ -44,12 +44,19 @@ function is_front_page_type_category_3_columns(){
 }
 endif;
 
-
 //タブインデックスカテゴリー
 define('OP_INDEX_CATEGORY_IDS', 'index_category_ids');
 if ( !function_exists( 'get_index_category_ids' ) ):
 function get_index_category_ids(){
   return get_theme_option(OP_INDEX_CATEGORY_IDS, array());
+}
+endif;
+
+//インデックスエントリーカード数
+define('OP_INDEX_CATEGORY_ENTRY_CARD_COUNT', 'index_category_entry_card_count');
+if ( !function_exists( 'get_index_category_entry_card_count' ) ):
+function get_index_category_entry_card_count(){
+  return get_theme_option(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, 6);
 }
 endif;
 

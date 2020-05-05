@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //インデックスカテゴリを読み込む
 $cat_ids = get_index_list_category_ids();
-$count = 6;
+$count = get_index_category_entry_card_count();
 ?>
 <div id="list-categories" class="list-categories">
   <div class="list-new-entries">

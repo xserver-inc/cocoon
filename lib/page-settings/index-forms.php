@@ -72,6 +72,26 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_toggle_area(__( 'カテゴリ表示順を変更する場合はこちら', THEME_NAME ), $form);
             //入力チェック
             generate_toggle_entered($comma_text);
+            echo '<br>';
+
+            //エントリーカード表示数
+            echo '<br>';
+            ob_start();
+            generate_label_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, __( 'エントリーカード表示数', THEME_NAME ));
+            echo '<br>';
+            $options = array(
+              '2'  => __( '2個', THEME_NAME ),
+              '3'  => __( '3個', THEME_NAME ),
+              '4'  => __( '4個', THEME_NAME ),
+              '6'  => __( '6個', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
+              '8'  => __( '8個', THEME_NAME ),
+              '9'  => __( '9個', THEME_NAME ),
+              '10' => __( '10個', THEME_NAME ),
+              '12' => __( '12個', THEME_NAME ),
+            );
+            generate_selectbox_tag(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, $options, get_index_category_entry_card_count());
+            generate_tips_tag(__( '個別に表示するエントリーカードの数を設定します。', THEME_NAME ).__( '2列でも3列表示でもいいように最小公倍数の6がデフォルトとなっています。', THEME_NAME ).__( '2列・3列双方とも割り切れない数字は設定値に入っていません。', THEME_NAME ));
+            $form = ob_get_clean();generate_toggle_area(__( '「カテゴリごと」表示でカード表示数を変更する場合はこちら', THEME_NAME ), $form);
             ?>
           </td>
         </tr>
