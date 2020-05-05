@@ -70,8 +70,6 @@ commenting:
   name: comment-dots
 compass:
   prefix: far
-compress:
-  name: compress-alt
 copyright:
   prefix: far
 creative-commons:
@@ -92,8 +90,6 @@ eur:
   name: euro-sign
 exchange:
   name: exchange-alt
-expand:
-  name: expand-alt
 external-link:
   name: external-link-alt
 external-link-square:
