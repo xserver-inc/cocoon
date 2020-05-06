@@ -12,17 +12,8 @@ $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 ?>
 <div id="list-categories" class="list-categories">
-  <div class="list-new-entries">
-    <h1 class="list-new-entries-title list-title">
-      <?php _e('新着記事', THEME_NAME); ?>
-    </h1>
-    <div class="<?php echo get_index_list_classes(); ?>">
-      <?php echo get_category_index_list_entry_card_tag(null, $count); ?>
-    </div><!-- .list -->
-    <div class="list-more-button-wrap">
-        <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>?cat=0" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
-    </div>
-  </div><!-- .list-new-entries -->
+  <!-- 新着記事 -->
+  <?php get_template_part('tmp/list-new-entries'); ?>
 
   <?php //広告表示
   //インデックスミドルに広告を表示してよいかの判別
