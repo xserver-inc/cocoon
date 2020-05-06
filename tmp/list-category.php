@@ -1,4 +1,4 @@
-<?php //タブインデックス
+<?php //カテゴリーインデックス
 /**
  * Cocoon WordPress Theme
  * @author: yhira
@@ -11,7 +11,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 $cat_ids = get_index_list_category_ids();
 $count = get_index_category_entry_card_count();
 ?>
-<div id="list-categories" class="list-categories">
+<div id="list-wrap" class="list-wrap">
   <!-- 新着記事 -->
   <?php get_template_part('tmp/list-new-entries'); ?>
 
@@ -28,21 +28,23 @@ $count = get_index_category_entry_card_count();
     dynamic_sidebar( 'index-middle' );
   }; ?>
 
-  <?php //カテゴリの表示
-  for ($i=0; $i < count($cat_ids); $i++):
-    $cat_id = $cat_ids[$i]; ?>
-    <div class="list-category-<?php echo $cat_id; ?>">
-      <h1 class="list-category-<?php echo $cat_id; ?> list-title">
-        <?php echo get_category_name_by_id($cat_id); ?>
-      </h1>
-      <div class="<?php echo get_index_list_classes(); ?>">
-      <?php echo get_category_index_list_entry_card_tag($cat_id, $count); ?>
-      </div><!-- .list -->
-      <?php if($cat = get_category($cat_id)): ?>
-        <div class="list-more-button-wrap">
-            <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
-        </div>
-      <?php endif; ?>
-    </div><!-- .list-category- -->
-  <?php endfor; ?>
-</div><!-- .list-categories -->
+  <div id="list-columns" class="list-columns">
+    <?php //カテゴリの表示
+    for ($i=0; $i < count($cat_ids); $i++):
+      $cat_id = $cat_ids[$i]; ?>
+      <div class="list-category-<?php echo $cat_id; ?> list-column">
+        <h1 class="list-category-<?php echo $cat_id; ?> list-title">
+          <?php echo get_category_name_by_id($cat_id); ?>
+        </h1>
+        <div class="<?php echo get_index_list_classes(); ?>">
+          <?php echo get_category_index_list_entry_card_tag($cat_id, $count); ?>
+        </div><!-- .list -->
+        <?php if($cat = get_category($cat_id)): ?>
+          <div class="list-more-button-wrap">
+              <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+          </div>
+        <?php endif; ?>
+      </div><!-- .list-category- -->
+    <?php endfor; ?>
+  </div><!-- .list-columns -->
+</div><!-- .list-wrap -->
