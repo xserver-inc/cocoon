@@ -3540,17 +3540,14 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .carousel { display: none; animation: carousel-show 0.6s cubic-bezier(0, 0, 0.2, 1); }
 .admin-settings .demo .carousel .a-wrap { padding: 0.2em 0.3em; }
 .admin-settings .demo .ccb-carousel-border .a-wrap { border: 1px solid #ccc; }
-.admin-settings .demo .index-tab-buttons { margin: 10px 0 20px; display: flex; border: 1px solid #ccc; border-radius: 4px; }
-.admin-settings .demo .index-tab-buttons .index-tab-button { min-width: calc(100% / 4); width: 100%; background-color: #f3f4f5; text-align: center; position: relative; z-index: 3; box-sizing: border-box; border-right: 1px solid #ccc; padding: 8px 4px; transition: all .4s; opacity: 0.8; font-size: 16px; }
-.admin-settings .demo #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], .admin-settings .demo #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], .admin-settings .demo #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], .admin-settings .demo #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] { z-index: 4; box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2); background-color: #fff; opacity: 1; }
-.admin-settings .demo .index-tab-buttons .index-tab-button:last-of-type { border-right: none; }
+.admin-settings .demo .index-tab-buttons { margin: 1em 0 1.4em; display: flex; }
+.admin-settings .demo .index-tab-buttons .index-tab-button { padding: 12px 16px; font-size: 14px; margin: 2px; border-radius: 4px; background-color: #fff; border: 1px solid #eee; min-width: calc(100% / 4); width: 100%; text-align: center; }
+.admin-settings .demo #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"], .admin-settings .demo #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"], .admin-settings .demo #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"], .admin-settings .demo #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] { background: none #404453; border: 1px solid #404453; color: #fff; font-weight: 700; }
 .admin-settings .demo .tab-cont, .admin-settings .demo input[name="tab_item"] { display: none; }
 .admin-settings .demo #index-tab-1:checked ~ .tab-cont.tb1, .admin-settings .demo #index-tab-2:checked ~ .tab-cont.tb2, .admin-settings .demo #index-tab-3:checked ~ .tab-cont.tb3, .admin-settings .demo #index-tab-4:checked ~ .tab-cont.tb4 { display: block; animation: tab-index-show .3s ease-in; }
 .admin-settings .demo .btn-wrap-circle > a { background: #999; }
 @media screen and (max-width: 834px) { .admin-settings .demo .index-tab-buttons { flex-wrap: wrap; }
-  .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(100% / 2); }
-  .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(2) { border-right: 0; }
-  .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(3), .admin-settings .demo .index-tab-buttons .index-tab-button:nth-child(4) { border-top: 1px solid #aaa; } }
+  .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(98% / 2); margin: .5%; } }
 .admin-settings .demo .list-title { text-align: center; font-size: 20px; margin-top: 2em; margin-bottom: 1em; }
 .admin-settings .demo .list-more-button-wrap { text-align: center; }
 .admin-settings .demo .list-more-button { display: inline-block; padding: 0.3em 2em; text-decoration: none; color: #333; border: solid 2px #ccc; border-radius: 3px; transition: .4s; margin: 1em 0 2em; font-size: 16px; border-radius: 99px; }
@@ -3703,6 +3700,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo _:-ms-lang(x), .admin-settings .demo .mc-circle { background-clip: border-box; }
 @media screen and (max-width: 782px) { .admin-settings .demo .logged-in { margin-top: 46px !important; }
   .admin-settings .demo .logged-in .mobile-header-menu-buttons { margin-top: 46px; } }
+.admin-settings .demo .blogcard, .admin-settings .demo .ecb-entry-border .entry-card-wrap, .admin-settings .demo .page-numbers, .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn, .admin-settings .demo .index-tab-buttons .index-tab-button, .admin-settings .demo .border-square a, .admin-settings .demo .author-box { border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6; }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }
   .admin-settings .demo .navi-footer-in > ul { justify-content: center; padding: 1em; }

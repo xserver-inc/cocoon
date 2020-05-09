@@ -8327,39 +8327,30 @@ input[type='submit'] {
 }
 
 .index-tab-buttons {
-  margin: 10px 0 20px;
+  margin: 1em 0 1.4em;
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .index-tab-buttons .index-tab-button {
+  padding: 12px 16px;
+  font-size: 14px;
+  margin: 2px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #eee;
   min-width: calc(100% / 4);
   width: 100%;
-  background-color: #f3f4f5;
   text-align: center;
-  position: relative;
-  z-index: 3;
-  box-sizing: border-box;
-  border-right: 1px solid #ccc;
-  padding: 8px 4px;
-  transition: all .4s;
-  opacity: 0.8;
-  font-size: 16px;
 }
 
 #index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"],
 #index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"],
 #index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"],
 #index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] {
-  z-index: 4;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  opacity: 1;
-}
-
-.index-tab-buttons .index-tab-button:last-of-type {
-  border-right: none;
+  background: none #404453;
+  border: 1px solid #404453;
+  color: #fff;
+  font-weight: 700;
 }
 
 .tab-cont,
@@ -8386,13 +8377,8 @@ input[name="tab_item"] {
     flex-wrap: wrap;
   }
   .index-tab-buttons .index-tab-button {
-    width: calc(100% / 2);
-  }
-  .index-tab-buttons .index-tab-button:nth-child(2) {
-    border-right: 0;
-  }
-  .index-tab-buttons .index-tab-button:nth-child(3), .index-tab-buttons .index-tab-button:nth-child(4) {
-    border-top: 1px solid #aaa;
+    width: calc(98% / 2);
+    margin: .5%;
   }
 }
 .list-title {
@@ -9208,6 +9194,17 @@ _:-ms-lang(x), .mc-circle {
     margin-top: 46px;
   }
 }
+.blogcard,
+.ecb-entry-border .entry-card-wrap,
+.page-numbers,
+.pagination-next-link,
+.comment-btn,
+.index-tab-buttons .index-tab-button,
+.border-square a,
+.author-box {
+  border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+}
+
 @media screen and (max-width: 1023px) {
   .navi-footer {
     float: none;
