@@ -9,6 +9,8 @@
 新型コロナ情報：<a href="https://www.stopcovid19.jp/" target="_blank" rel="noopener noreferrer">都道府県別の空き感染症病床数</a>
 新型コロナ情報：<a href="https://stopcovid19.metro.tokyo.lg.jp/" target="_blank" rel="noopener noreferrer">東京都内の最新感染動向</a>
 新型コロナ情報：<a href="https://corona.go.jp/" target="_blank" rel="noopener noreferrer">緊急事態宣言の成果～人流の減少率～</a>
+新型コロナ情報：<a href="https://www.worldometers.info/coronavirus/" target="_blank" rel="noopener noreferrer">ワールドメーター（全世界）</a>
+新型コロナ情報：<a href="https://www.worldometers.info/coronavirus/country/japan/" target="_blank" rel="noopener noreferrer">ワールドメーター（日本）</a>
 新型コロナ税制：<a href="https://www.mof.go.jp/tax_policy/keizaitaisaku.html" target="_blank" rel="noopener noreferrer">新型コロナウイルス感染症緊急経済対策における税制上の措置（案）</a>
 新型コロナ支援：<a href="https://www3.nhk.or.jp/news/special/coronavirus/management/" target="_blank" rel="noopener noreferrer">「こんなときはどんな支援が？」 助成金や補助金の情報</a>
 新型コロナ支援：<a href="https://www.mhlw.go.jp/content/10900000/000622924.pdf" target="_blank" rel="noopener noreferrer">生活を支えるための支援の案内（厚生労働省）</a>
