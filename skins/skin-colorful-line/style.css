@@ -1193,3 +1193,12 @@ table tr:nth-of-type(2n) {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 }
+
+/* ■ カテゴリーリスト ■ */
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_meta ul li a{
+  padding-left: 7px;
+  padding-right: 7px;
+}
