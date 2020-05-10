@@ -1186,3 +1186,10 @@ table tr:nth-of-type(2n) {
 .author-box .pocket-button:hover{
   background-color: #ef4056 !important;
 }
+
+/* ■ Font Awesome5用 ■ */
+.font-awesome-5 blockquote::before,
+.font-awesome-5 blockquote::after{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
