@@ -73,6 +73,13 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p{
   }
 }
 
+#wpforo-wrap h3.wpforo-forum-title{
+  &::before,
+  &::after{
+    display: none;
+  }
+}
+
 // #tinymce.main.article{
 //   width: 100%;
 // }

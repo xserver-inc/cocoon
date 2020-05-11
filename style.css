@@ -8917,6 +8917,10 @@ div#wpforo-wrap .wpforo-post .wpf-right .wpforo-post-content p {
   display: none;
 }
 
+#wpforo-wrap h3.wpforo-forum-title::before, #wpforo-wrap h3.wpforo-forum-title::after {
+  display: none;
+}
+
 .live-writer .main {
   max-width: 860px;
   width: 860px;

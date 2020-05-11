@@ -3655,6 +3655,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .wpforo-attached-file { word-break: break-all; }
 .admin-settings .demo #wpforo-wrap h3 { background-color: transparent; }
 .admin-settings .demo #wpforo-wrap h3::after { display: none; }
+.admin-settings .demo #wpforo-wrap h3.wpforo-forum-title::before, .admin-settings .demo #wpforo-wrap h3.wpforo-forum-title::after { display: none; }
 .admin-settings .demo .live-writer .main { max-width: 860px; width: 860px; min-width: 860px; }
 .admin-settings .demo .live-writer .article { width: 800px; }
 .admin-settings .demo .live-writer blockquote, .admin-settings .demo .live-writer .information-box, .admin-settings .demo .live-writer .question-box, .admin-settings .demo .live-writer .alert-box { padding: 10px; }
