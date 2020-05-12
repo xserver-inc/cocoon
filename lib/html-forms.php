@@ -896,6 +896,26 @@ function generate_fixed_page_check_list( $name, $value, $width = 0 ) {
 }
 endif;
 
+
+//タグエディット
+if ( !function_exists( 'generate_tag_check_list' ) ):
+function generate_tag_check_list( $name, $value, $width = 0 ) {
+  if ($width == 0) {
+    $width = 'auto';
+  } else {
+    $width = $width.'px';
+  }
+
+  echo '<div class="tab-content tag-check-list '.$name.'-list" style="width: '.$width.';">';
+
+  echo '<p>'.__( 'タグID入力', THEME_NAME ).'</p>';
+  generate_textbox_tag($name, $value, __( '例：111,222,333', THEME_NAME ));
+  echo '<p>'.__( 'タグIDをカンマ区切りで入力してください。', THEME_NAME ).'</p>';
+
+  echo '</div>';
+}
+endif;
+
 //Windows Live Writerで編集するためのリンクを作成する
 if ( !function_exists( 'wlw_edit_post_link' ) ):
 function wlw_edit_post_link($link, $before = '', $after = ''){
