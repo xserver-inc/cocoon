@@ -26,9 +26,11 @@ $count = get_index_category_entry_card_count();
   ////////////////////////////
   if (is_active_sidebar( 'index-middle' )){
     dynamic_sidebar( 'index-middle' );
-  }; ?>
+  };
+  $ect_columns = 'ect-2-columns';
+  ?>
 
-  <div id="list-columns" class="list-columns">
+  <div id="list-columns" class="list-columns ect-vertical-card <?php echo $ect_columns; ?>">
     <?php //カテゴリの表示
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>
@@ -36,8 +38,19 @@ $count = get_index_category_entry_card_count();
         <h1 class="list-category-<?php echo $cat_id; ?>-column list-title">
           <?php echo get_category_name_by_id($cat_id); ?>
         </h1>
-        <div class="<?php echo get_index_list_classes(); ?>">
-          <?php echo get_category_index_list_entry_card_tag($cat_id, $count); ?>
+        <div class="list">
+          <?php
+          $atts = array(
+            'entry_count' => apply_filters('index_widget_entry_card_count', $count, $cat_id),
+            'cat_ids' => $cat_id,
+            'type' => apply_filters('index_widget_entry_card_type', ET_DEFAULT, $cat_id),
+            'arrow' => apply_filters('index_widget_entry_card_arrow', 1, $cat_id),
+            'sticky' => 0,
+            'include_children' => 1,
+          );
+          //新着記事リストの作成
+          generate_widget_entries_tag($atts);
+          ?>
         </div><!-- .list -->
         <?php if($cat = get_category($cat_id)): ?>
           <div class="list-more-button-wrap">

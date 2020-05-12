@@ -56,7 +56,7 @@ endif;
 define('OP_INDEX_CATEGORY_ENTRY_CARD_COUNT', 'index_category_entry_card_count');
 if ( !function_exists( 'get_index_category_entry_card_count' ) ):
 function get_index_category_entry_card_count(){
-  return get_theme_option(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, 6);
+  return get_theme_option(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT, 4);
 }
 endif;
 
