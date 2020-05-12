@@ -41,7 +41,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <!-- フロントページ -->
         <tr>
           <th scope="row">
-            <?php generate_label_tag(OP_FRONT_PAGE_TYPE, __( 'フロントページタイプ', THEME_NAME )); ?>
+            <?php generate_label_tag(OP_FRONT_PAGE_TYPE, __( 'フロントページタイプ', THEME_NAME ).__( '（β版）', THEME_NAME )); ?>
           </th>
           <td>
             <?php
@@ -59,7 +59,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             //フロントページに表示するカテゴリー
             generate_label_tag(OP_INDEX_CATEGORY_IDS, __( '表示カテゴリー', THEME_NAME ));
             generate_hierarchical_category_check_list( 0, OP_INDEX_CATEGORY_IDS, get_index_category_ids(), 300 );
-            generate_tips_tag(__( '通常の記事インデックスの他に、カテゴリーの記事をタブ化して表示します。', THEME_NAME ).__( '3つまで有効。4つ目以降は無視されます。', THEME_NAME ));
+            generate_tips_tag(__( '通常の記事インデックスの他に、カテゴリーの記事をタブ化して表示します。', THEME_NAME ).__( '「タブ一覧」の際は、3つまで有効。4つ目以降は無視されます。', THEME_NAME ));
 
             //カテゴリーIDのカンマテキスト
             $comma_text = get_index_category_ids_comma_text();
@@ -69,7 +69,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             generate_textbox_tag(OP_INDEX_CATEGORY_IDS_COMMA_TEXT, $comma_text, __( 'カテゴリーIDのカンマテキストを入力', THEME_NAME )) ;
             generate_tips_tag(__( '意図通りの順番でカテゴリを表示する場合は、カテゴリーIDをカンマ区切りで入力してください。', THEME_NAME ).__( 'こちらの入力がある場合は、チェックボックスのものよりこちらの設定が優先されます。', THEME_NAME ));
             $form = ob_get_clean();
-            generate_toggle_area(__( 'カテゴリ表示順を変更する場合はこちら', THEME_NAME ), $form);
+            generate_toggle_area(__( 'カテゴリ表示の順番を並び替える場合はこちら', THEME_NAME ), $form);
             //入力チェック
             generate_toggle_entered($comma_text);
             echo '<br>';
