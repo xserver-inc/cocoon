@@ -33,11 +33,13 @@ $count = get_index_category_entry_card_count();
     for ($i=0; $i < count($cat_ids); $i++):
       $cat_id = $cat_ids[$i]; ?>
       <div class="list-category-<?php echo $cat_id; ?> list-column">
-        <h1 class="list-category-<?php echo $cat_id; ?> list-title">
+        <h1 class="list-category-<?php echo $cat_id; ?>-title list-title">
           <?php echo get_category_name_by_id($cat_id); ?>
         </h1>
         <div class="<?php echo get_index_list_classes(); ?>">
-          <?php echo get_category_index_list_entry_card_tag($cat_id, $count); ?>
+          <span class="list-title-in">
+            <?php echo get_category_index_list_entry_card_tag($cat_id, $count); ?>
+          </span>
         </div><!-- .list -->
         <?php if($cat = get_category($cat_id)): ?>
           <div class="list-more-button-wrap">

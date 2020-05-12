@@ -12,7 +12,9 @@ $count = get_index_category_entry_card_count();
 ?>
 <div class="list-new-entries">
   <h1 class="list-new-entries-title list-title">
-    <?php _e('新着記事', THEME_NAME); ?>
+    <span class="list-title-in">
+      <?php _e('新着記事', THEME_NAME); ?>
+    </span>
   </h1>
   <div class="<?php echo get_index_list_classes(); ?>">
     <?php echo get_category_index_list_entry_card_tag(null, $count); ?>

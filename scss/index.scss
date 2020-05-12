@@ -124,9 +124,35 @@ input[name="tab_item"]{
 //リストタイトル
 .list-title{
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 2em;
   margin-bottom: 1em;
+}
+
+.list-title-in{
+  position: relative;
+  display: inline-block;
+  padding: 0 75px;
+}
+
+.list-title-in:before,
+.list-title-in:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 55px;
+  height: 1px;
+  background-color: black;
+}
+
+.list-title-in:before {
+  left:0;
+  margin-right: 10px;
+}
+.list-title-in:after {
+  right: 0;
+  margin-left: 10px;
 }
 
 //ボタン
