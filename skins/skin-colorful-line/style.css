@@ -1,13 +1,12 @@
 /*
   Skin Name: カラフルライン
-  Description: カラフルラインスキン
+  Description: パステルカラー調のカラフルなスキン
   Skin URI: https://zvalinf.info/skin-check/?theme-switch=skin-colorful-line
   Author: y.hiroaki
   Author URI: https://zvalinf.info
-  Screenshot URI:
+  Screenshot URI:https://im-cocoon.net/wp-content/uploads/skin-colorful-line.png
   Version: 0.0.1
    Priority: 9830001000
-  Visibility: false
 */
 
 /* □■-----------------------------------------------------
@@ -1185,4 +1184,20 @@ table tr:nth-of-type(2n) {
 }
 .author-box .pocket-button:hover{
   background-color: #ef4056 !important;
+}
+
+/* ■ Font Awesome5用 ■ */
+.font-awesome-5 blockquote::before,
+.font-awesome-5 blockquote::after{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+/* ■ カテゴリーリスト ■ */
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_meta ul li a{
+  padding-left: 7px;
+  padding-right: 7px;
 }
