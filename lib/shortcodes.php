@@ -858,6 +858,7 @@ function campaign_shortcode( $atts, $content = null ) {
   }
 
   $tag = null;
+  $content = apply_filters('campaign_shortcode_content', $content);
   if (($from_time < $now) && ($to_time > $now)) {
     $tag = '<div class="campaign'.esc_attr($class).'">'.
       // date_i18n('開始日時：Y年m月d日 H時i分s秒', $from_time).'<br>'.
