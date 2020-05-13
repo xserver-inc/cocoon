@@ -115,16 +115,3 @@
 _:-ms-lang(x), .mc-circle {
   background-clip: border-box;
 }
-
-
-//ログイン時のモバイル画面
-@media screen and (max-width: 782px){
-	.logged-in{
-		margin-top: 46px !important;
-
-		.mobile-header-menu-buttons{
-			margin-top: 46px;
-		}
-	}
-}
-
