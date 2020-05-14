@@ -53,10 +53,8 @@ if (is_sns_top_share_buttons_visible() &&
     get_template_part('tmp/list-tab-index');
   } elseif (is_front_index_page() && is_front_page_type_category()) {
     get_template_part('tmp/list-category');
-  } elseif (is_front_index_page() && is_front_page_type_category_2_columns()) {
-    get_template_part('tmp/list-category-2-columns');
-  } elseif (is_front_index_page() && is_front_page_type_category_3_columns()) {
-    get_template_part('tmp/list-category-3-columns');
+  } elseif ((is_front_index_page() && is_front_page_type_category_2_columns()) || is_front_index_page() && is_front_page_type_category_3_columns()) {
+    get_template_part('tmp/list-category-columns');
   } else {
     get_template_part('tmp/list-index');
   }

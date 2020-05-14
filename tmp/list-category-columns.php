@@ -27,7 +27,12 @@ $count = get_index_category_entry_card_count();
   if (is_active_sidebar( 'index-middle' )){
     dynamic_sidebar( 'index-middle' );
   };
+
+  //フロントページタイプのカラムによる変更
   $ect_columns = 'ect-2-columns';
+  if (is_front_page_type_category_3_columns()) {
+    $ect_columns = 'ect-3-columns';
+  }
   ?>
 
   <div id="list-columns" class="list-columns ect-vertical-card <?php echo $ect_columns; ?>">

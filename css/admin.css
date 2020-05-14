@@ -3547,7 +3547,9 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo #index-tab-1:checked ~ .tab-cont.tb1, .admin-settings .demo #index-tab-2:checked ~ .tab-cont.tb2, .admin-settings .demo #index-tab-3:checked ~ .tab-cont.tb3, .admin-settings .demo #index-tab-4:checked ~ .tab-cont.tb4 { display: block; animation: tab-index-show .3s ease-in; }
 .admin-settings .demo .btn-wrap-circle > a { background: #999; }
 @media screen and (max-width: 834px) { .admin-settings .demo .index-tab-buttons { flex-wrap: wrap; }
-  .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(98% / 2); margin: .5%; } }
+  .admin-settings .demo .index-tab-buttons .index-tab-button { width: calc(98% / 2); margin: .5%; }
+  .admin-settings .demo .list-columns { flex-direction: column; }
+  .admin-settings .demo .list-columns .list-column { width: 100%; } }
 .admin-settings .demo .list-title { text-align: center; font-size: 18px; margin-top: 2em; margin-bottom: 1em; }
 .admin-settings .demo .list-title-in { position: relative; display: inline-block; padding: 0 75px; }
 .admin-settings .demo .list-title-in:before, .admin-settings .demo .list-title-in:after { content: ''; position: absolute; top: 50%; display: inline-block; width: 55px; height: 1px; background-color: black; }

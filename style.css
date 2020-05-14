@@ -8380,6 +8380,13 @@ input[name="tab_item"] {
     width: calc(98% / 2);
     margin: .5%;
   }
+
+  .list-columns {
+    flex-direction: column;
+  }
+  .list-columns .list-column {
+    width: 100%;
+  }
 }
 .list-title {
   text-align: center;

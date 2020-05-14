@@ -115,10 +115,18 @@ input[name="tab_item"]{
       //   border-top: 1px solid #aaa;;
       // }
     }
+
+
   }
   // .index-tab-buttons .index-tab-button:nth-last-of-type(n+3){
   //   border-bottom: 1px solid #ddd;
   // }
+  .list-columns {
+    flex-direction: column;
+    .list-column{
+      width: 100%;
+    }
+  }
 }
 
 //リストタイトル
