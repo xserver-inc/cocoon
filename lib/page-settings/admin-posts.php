@@ -10,8 +10,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 //アドミンバーに独自管理メニューを表示
 update_theme_option(OP_ADMIN_TOOL_MENU_VISIBLE);
 
-//ダッシュボードメッセージを表示
-update_theme_option(OP_DASHBOARD_MESSAGE_VISIBLE);
+// //ダッシュボードメッセージを表示
+// update_theme_option(OP_DASHBOARD_MESSAGE_VISIBLE);
 
 //インデックスのエントリーカードにPV数を表示
 update_theme_option(OP_ADMIN_INDEX_PV_VISIBLE);

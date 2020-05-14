@@ -54,13 +54,9 @@ endif;
 add_filter( 'in_widget_form', 'display_widgets_in_widget_form', 10, 3 );
 if ( !function_exists( 'display_widgets_in_widget_form' ) ):
 function display_widgets_in_widget_form( $widget, $return, $instance ){
-  // $widget = get_dropped_widget($widget);
-  // var_dump($widget);
-  // var_dump($widget->get_settings());
-  // var_dump($return);
-  // var_dump($instance);
+
   $info = display_widgets_info_by_id( $widget->id );
-  //var_dump($info);
+
   //値の初期化
   $widget_action_def = 'hide';
   $widget_categories_def = array();
@@ -68,6 +64,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_authors_def = array();
   $widget_posts_def = '';
   $widget_fixed_pages_def = '';
+  $widget_tags_def = '';
   if ($info) {
     if (isset($info['widget_action'])) {
       $widget_action_def = $info['widget_action'];
@@ -87,6 +84,9 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
     if (!empty($info['widget_fixed_pages'])) {
       $widget_fixed_pages_def = $info['widget_fixed_pages'];
     }
+    if (!empty($info['widget_tags'])) {
+      $widget_tags_def = $info['widget_tags'];
+    }
   }
 
   $widget_action = isset( $instance['widget_action'] ) ? $instance['widget_action'] : $widget_action_def;
@@ -95,32 +95,19 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
   $widget_authors = isset( $instance['widget_authors'] ) ? $instance['widget_authors'] : $widget_authors_def;
   $widget_posts = !empty( $instance['widget_posts'] ) ? $instance['widget_posts'] : $widget_posts_def;
   $widget_fixed_pages = !empty( $instance['widget_fixed_pages'] ) ? $instance['widget_fixed_pages'] : $widget_fixed_pages_def;
+  $widget_tags = !empty( $instance['widget_tags'] ) ? $instance['widget_tags'] : $widget_tags_def;
 
   ?>
   <?php
   //ウィジェットIDを取得
-  //$widget_id = get_dropped_widget_id($widget);
   $widget_id = $widget->id;
   //フィールドID
   $field_id = $widget->get_field_id('toggle-link');
-  //var_dump($field_id);
   //ウィジェットナンバーを取得
   $widget_number = $widget->number;
-  // //ウィジェットをD&Dでエリアにドロップ時スクデットナンバーを取得できないときに無理やり取得する
-  // if (preg_match('/__i__/', $widget_id)) {
-  //   foreach( $widget->get_settings() as $index => $settings ) {
-  //     $widget_number = $index + 1;
-  //   }
-  //   $widget_id = str_replace('__i__', $widget_number, $widget_id);
-  // }
-  //var_dump($widget_id);
+
   $toggle_name = 'tlink-'.$widget_id;
   $checkbox_id = 'toggle-checkbox-'.$widget_id;
-  // if (is_widget_dropped($widget)) {
-  //   $toggle_caption = __( '表示設定', THEME_NAME );
-  // } else {
-  //   $toggle_caption = __( '表示設定の前に設定を保存してください', THEME_NAME );
-  // }
 
    ?>
   <div class="toggle-wrap">
@@ -144,6 +131,7 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         $author_tab_id = 'author-tab-'.$widget_id;
         $post_tab_id = 'post-tab-'.$widget_id;
         $fixed_page_tab_id = 'fixed-page-tab-'.$widget_id;
+        $tag_tab_id = 'tag-tab-'.$widget_id;
       ?>
       <style type="text/css">
         /*選択されているタブのコンテンツのみを表示*/
@@ -151,7 +139,8 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         #page-tab-<?php echo $dw->id; ?>:checked ~ .page-display-check-list,
         #author-tab-<?php echo $dw->id; ?>:checked ~ .author-check-list,
         #post-tab-<?php echo $dw->id; ?>:checked ~ .post-check-list,
-        #fixed-page-tab-<?php echo $dw->id; ?>:checked ~ .fixed-page-check-list {
+        #fixed-page-tab-<?php echo $dw->id; ?>:checked ~ .fixed-page-check-list,
+        #tag-tab-<?php echo $dw->id; ?>:checked ~ .tag-check-list {
           display: block;
         }
       </style>
@@ -173,9 +162,11 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         <input id="<?php echo $fixed_page_tab_id; ?>" type="radio" name="tab_item">
         <label id="fixed-page-<?php echo $widget_id; ?>" class="fixed-page-tab tab-item" for="<?php echo $fixed_page_tab_id; ?>"><?php _e( '固定ページ', THEME_NAME ) ?></label>
 
+        <input id="<?php echo $tag_tab_id; ?>" type="radio" name="tab_item" checked>
+        <label id="tag-<?php echo $widget_id; ?>" class="tag-tab tab-item" for="<?php echo $tag_tab_id; ?>"><?php _e( 'タグ', THEME_NAME ) ?></label>
+
         <?php
         generate_hierarchical_category_check_list(0, $widget->get_field_name('widget_categories'), $widget_categories);
-        //var_dump($widget_pages);
         generate_page_display_check_list($widget->get_field_name('widget_pages'), $widget_pages);
 
         //著者タブ
@@ -184,7 +175,10 @@ function display_widgets_in_widget_form( $widget, $return, $instance ){
         }
 
         generate_post_check_list($widget->get_field_name('widget_posts'), $widget_posts);
+
         generate_fixed_page_check_list($widget->get_field_name('widget_fixed_pages'), $widget_fixed_pages);
+
+        generate_tag_check_list($widget->get_field_name('widget_tags'), $widget_tags);
 
        ?>
       </div>
@@ -237,6 +231,12 @@ function display_widgets_update_callback( $instance, $new_instance, $old_instanc
   else
     $instance['widget_fixed_pages'] = array();
 
+  //タグ条件
+  if ( isset( $new_instance['widget_tags'] ) )
+    $instance['widget_tags'] = $new_instance['widget_tags'];
+  else
+    $instance['widget_tags'] = array();
+
   return $instance;
 }
 endif;
@@ -252,20 +252,15 @@ function is_display_widgets_widget_visible( $info ){
   $widget_authors = isset($info['widget_authors']) ? $info['widget_authors'] : array();
   $widget_posts = isset($info['widget_posts']) ? $info['widget_posts'] : '';
   $widget_fixed_pages = isset($info['widget_fixed_pages']) ? $info['widget_fixed_pages'] : '';
+  $widget_tags = isset($info['widget_tags']) ? $info['widget_tags'] : '';
 
   $display = false;
 
   // //チェックリストすべてが空かどうか
-  $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages);
+  $is_all_empty = empty($widget_categories) && empty($widget_pages) && empty($widget_authors) && empty($widget_posts) && empty($widget_fixed_pages) && empty($widget_tags);
   //カテゴリーリストに何かチェックがついている場合
   if (!empty($widget_categories)) {
-    //_v(in_category($widget_categories));
-    //var_dump($instance);
-    //var_dump($widget_categories);
     $display = $display || (in_category($widget_categories) && is_singular()) || is_category($widget_categories);
-    // if ($widget_action == 'hide') {
-    //   $display = $display || is_single();
-    // }
   }
 
   //ページリストに何かチェックがついている場合
@@ -321,8 +316,6 @@ function is_display_widgets_widget_visible( $info ){
   //投稿者リストに何かチェックがついている場合
   if (!empty($widget_authors)) {
     $display = $display || in_authors($widget_authors) || is_authors($widget_authors);
-    //var_dump($display);
-    //var_dump(is_author(2));
   }
 
   //投稿IDが設定されているとき
@@ -337,6 +330,13 @@ function is_display_widgets_widget_visible( $info ){
     $widget_fixed_pages = sanitize_comma_text($widget_fixed_pages);
     $widget_fixed_pages = explode(',', $widget_fixed_pages);
     $display = $display || is_page($widget_fixed_pages);
+  }
+
+  //タグIDが設定されているとき
+  if (!empty($widget_tags)) {
+    $widget_tags = sanitize_comma_text($widget_tags);
+    $widget_tags = explode(',', $widget_tags);
+    $display = $display || (has_tag($widget_tags) && is_singular()) || is_tag($widget_tags);
   }
 
   //ウィジェットを表示する条件
@@ -354,9 +354,6 @@ function is_display_widgets_widget_visible( $info ){
     }
   }
 
-  // var_dump($widget_action);
-  // var_dump($widget_categories);
-  // var_dump($display);
   return $display;
 }
 endif;

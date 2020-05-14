@@ -3703,8 +3703,6 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .fixed-header .has-sub, .admin-settings .demo .fixed-header .navi-in .sub-menu { display: none; }
 .admin-settings .demo .click-prevention { pointer-events: none; }
 .admin-settings .demo _:-ms-lang(x), .admin-settings .demo .mc-circle { background-clip: border-box; }
-@media screen and (max-width: 782px) { .admin-settings .demo .logged-in { margin-top: 46px !important; }
-  .admin-settings .demo .logged-in .mobile-header-menu-buttons { margin-top: 46px; } }
 .admin-settings .demo .blogcard, .admin-settings .demo .ecb-entry-border .entry-card-wrap, .admin-settings .demo .page-numbers, .admin-settings .demo .pagination-next-link, .admin-settings .demo .comment-btn, .admin-settings .demo .index-tab-buttons .index-tab-button, .admin-settings .demo .border-square a, .admin-settings .demo .author-box { border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6; }
 @media screen and (max-width: 1023px) { .admin-settings .demo .navi-footer { float: none; margin: 0; width: 100%; }
   .admin-settings .demo .copyright { width: 100%; }

@@ -40,7 +40,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   </div>
 </div>
 
-
+<?php if (false): ?>
 <!-- ダッシュボードメッセージ -->
 <div id="admin" class="postbox">
   <h2 class="hndle"><?php _e( 'ダッシュボードメッセージ', THEME_NAME ) ?></h2>
@@ -50,7 +50,6 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <table class="form-table">
       <tbody>
-
         <!-- メッセージ表示 -->
         <tr>
           <th scope="row">
@@ -71,6 +70,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
   </div>
 </div>
+<?php endif; ?>
 
 <!-- 投稿一覧設定 -->
 <div id="admin" class="postbox">
