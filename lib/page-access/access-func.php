@@ -52,7 +52,8 @@ endif;
 //ページタイプの取得
 if ( !function_exists( 'get_accesses_post_type' ) ):
 function get_accesses_post_type(){
-  if (is_page()) {
+  global $post_type;
+  if (is_page() || ($post_type === 'page')) {
     $res = 'page'; //page
   } else {
     $res = 'post'; //single
