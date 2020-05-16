@@ -7,6 +7,18 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//フロントページタイプ
+update_theme_option(OP_FRONT_PAGE_TYPE);
+
+//タブインデックスカテゴリー
+update_theme_option(OP_INDEX_CATEGORY_IDS);
+
+//タブインデックスカテゴリー（カンマテキスト）
+update_theme_option(OP_INDEX_CATEGORY_IDS_COMMA_TEXT);
+
+//インデックスエントリーカード数
+update_theme_option(OP_INDEX_CATEGORY_ENTRY_CARD_COUNT);
+
 //インデックスの並び順
 update_theme_option(OP_INDEX_SORT_ORDERBY);
 

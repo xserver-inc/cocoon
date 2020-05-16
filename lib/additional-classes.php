@@ -904,6 +904,8 @@ function get_additional_entry_card_classes($option = null){
     $classes .= ' ecb-entry-border';
   }
 
+  //フロントページタイプ
+  $classes .= ' front-page-type-'.str_replace('_', '-', get_front_page_type());
 
   //スマートフォンでエントリーカードを1カラムに
   if (!is_entry_card_type_entry_card() && is_smartphone_entry_card_1_column()) {

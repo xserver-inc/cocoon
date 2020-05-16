@@ -44,9 +44,9 @@ class NewEntryWidgetItem extends WP_Widget {
 
     //classにwidgetと一意となるクラス名を追加する
     if ( //「表示モード」が「全ての新着記事」のとき
-               ($widget_mode == WM_DEFAULT) ||
-               //「表示モード」が「カテゴリ別新着記事」のとき
-               ( ($widget_mode == 'category') && get_category_ids() ) ):
+              ($widget_mode == WM_DEFAULT) ||
+              //「表示モード」が「カテゴリ別新着記事」のとき
+              ( ($widget_mode == 'category') && get_category_ids() ) ):
       echo $args['before_widget'];
       if (!is_null($title)) {
         echo $args['before_title'];

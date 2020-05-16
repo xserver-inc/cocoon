@@ -115,3 +115,14 @@
 _:-ms-lang(x), .mc-circle {
   background-clip: border-box;
 }
+
+.blogcard,
+.ecb-entry-border .entry-card-wrap,
+.page-numbers,
+.pagination-next-link,
+.index-tab-buttons .index-tab-button,
+.border-square a,
+.author-box
+{
+  border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
+}

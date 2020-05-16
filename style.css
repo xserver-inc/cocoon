@@ -8326,6 +8326,125 @@ input[type='submit'] {
   border: 1px solid #ccc;
 }
 
+.index-tab-buttons {
+  margin: 1em 0 1.4em;
+  display: flex;
+}
+
+.index-tab-buttons .index-tab-button {
+  padding: 12px 16px;
+  font-size: 14px;
+  margin: 2px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  min-width: calc(100% / 4);
+  width: 100%;
+  text-align: center;
+}
+
+#index-tab-1:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-1"],
+#index-tab-2:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-2"],
+#index-tab-3:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-3"],
+#index-tab-4:checked ~ .index-tab-buttons .index-tab-button[for="index-tab-4"] {
+  background: none #404453;
+  border: 1px solid #404453;
+  color: #fff;
+  font-weight: 700;
+}
+
+.tab-cont,
+input[name="tab_item"] {
+  display: none;
+}
+
+#index-tab-1:checked ~ .tab-cont.tb1,
+#index-tab-2:checked ~ .tab-cont.tb2,
+#index-tab-3:checked ~ .tab-cont.tb3,
+#index-tab-4:checked ~ .tab-cont.tb4 {
+  display: block;
+  animation: tab-index-show .3s ease-in;
+}
+
+/* Cocoonのリンクボタンカスタマイズ */
+.btn-wrap-circle > a {
+  background: #999;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 834px) {
+  .index-tab-buttons {
+    flex-wrap: wrap;
+  }
+  .index-tab-buttons .index-tab-button {
+    width: calc(98% / 2);
+    margin: .5%;
+  }
+
+  .list-columns {
+    flex-direction: column;
+  }
+  .list-columns .list-column {
+    width: 100%;
+  }
+}
+.list-title {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.list-title-in {
+  position: relative;
+  display: inline-block;
+  padding: 0 75px;
+}
+
+.list-title-in:before,
+.list-title-in:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 55px;
+  height: 1px;
+  background-color: black;
+}
+
+.list-title-in:before {
+  left: 0;
+  margin-right: 10px;
+}
+
+.list-title-in:after {
+  right: 0;
+  margin-left: 10px;
+}
+
+.list-more-button-wrap {
+  text-align: center;
+}
+
+.list-more-button {
+  display: inline-block;
+  padding: 0.3em 2em;
+  text-decoration: none;
+  color: #333;
+  border: solid 2px #ccc;
+  border-radius: 3px;
+  transition: .4s;
+  margin: 1em 0 2em;
+  font-size: 16px;
+  border-radius: 99px;
+}
+
+.list-more-button:hover {
+  background-color: #f5f8fa;
+  transition: all 0.3s ease-in-out;
+  color: #333;
+}
+
 .admin-panel {
   background-color: #333;
   color: #fff;
@@ -9103,6 +9222,17 @@ twitter-widget {
 
 _:-ms-lang(x), .mc-circle {
   background-clip: border-box;
+}
+
+.blogcard,
+.ecb-entry-border .entry-card-wrap,
+.page-numbers,
+.pagination-next-link,
+.comment-btn,
+.index-tab-buttons .index-tab-button,
+.border-square a,
+.author-box {
+  border-color: #e3e3e3 #cecece #b4b4b4 #d6d6d6;
 }
 
 @media screen and (max-width: 1023px) {
