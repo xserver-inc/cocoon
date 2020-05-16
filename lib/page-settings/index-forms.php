@@ -51,7 +51,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               'tab_index' => __( 'タブ一覧', THEME_NAME ),
               'category' => __( 'カテゴリごと', THEME_NAME ),
               'category_2_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
-              'category_3_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ),
+              'category_3_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ).__( '※サイドバーを表示しないレイアウト向け。', THEME_NAME ).__( '表示数は3の倍数推奨。', THEME_NAME ),
             );
             generate_radiobox_tag(OP_FRONT_PAGE_TYPE, $options, get_front_page_type());
             generate_tips_tag(__( 'フロントページの表示形式を選択します。', THEME_NAME ));
