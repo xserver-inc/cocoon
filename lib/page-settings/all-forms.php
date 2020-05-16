@@ -259,7 +259,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             $options = array(
               'display_all' => __( '全てのページで表示', THEME_NAME ),
               'no_display_all' => __( '全てのページで非表示', THEME_NAME ),
-              'no_display_front_page' => __( 'フロントページで非表示（固定ページがトップページの場合）', THEME_NAME ),
+              'no_display_front_page' => __( 'フロントページで非表示', THEME_NAME ),
               'no_display_index_pages' => __( 'インデックスページで非表示', THEME_NAME ),
               'no_display_pages' => __( '固定ページで非表示', THEME_NAME ),
               'no_display_singles' => __( '投稿ページで非表示', THEME_NAME ),

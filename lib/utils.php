@@ -2236,7 +2236,7 @@ function is_the_page_sidebar_visible(){
       $is_sidebar_visible = false;
       break;
     case 'no_display_front_page':
-      if (is_front_page() && !is_home()) {
+      if (is_front_page()) {
         $is_sidebar_visible = false;
       }
       break;
