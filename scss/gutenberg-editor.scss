@@ -803,4 +803,7 @@ ol, ul {
   @include ms_block_fix;
 }
 
-
+//ブロックエディター入力カラムの下（SEO等の設定項目の上）にある余白を削除
+.block-editor-writing-flow__click-redirect{
+  display: none;
+}
