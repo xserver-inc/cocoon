@@ -439,7 +439,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { margin-right: 0; margin-left: 1.4%; }
 .admin-settings .demo .no-thumbnail .card-thumb, .admin-settings .demo .no-thumbnail .widget-entry-card-pv { display: none; }
-.admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content { margin: 0; }
+.admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content, .admin-settings .demo .no-thumbnail .rect-mini-card .related-entry-card-content { margin: 0; }
 .admin-settings .demo .no-thumbnail .widget-entry-cards div.widget-entry-card-content { font-size: 18px; margin-bottom: 0.6em; }
 .admin-settings .demo .no-thumbnail .widget-entry-cards.large-thumb-on .card-title { max-height: none; position: static; }
 .admin-settings .demo .no-thumbnail .entry-card-meta { position: static; background-color: transparent; margin-top: 0.4em; }
@@ -2013,7 +2013,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .admin-settings .demo .ect-vertical-card .entry-card-thumb, .admin-settings .demo .rect-vertical-card .related-entry-card-thumb { margin: 0; }
 .admin-settings .demo .ib-right .blogcard-thumbnail, .admin-settings .demo .eb-right .blogcard-thumbnail { margin-right: 0; margin-left: 1.4%; }
 .admin-settings .demo .no-thumbnail .card-thumb, .admin-settings .demo .no-thumbnail .widget-entry-card-pv { display: none; }
-.admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content { margin: 0; }
+.admin-settings .demo .no-thumbnail .card-content, .admin-settings .demo .no-thumbnail .widget-entry-cards .widget-entry-card-content, .admin-settings .demo .no-thumbnail .rect-mini-card .related-entry-card-content { margin: 0; }
 .admin-settings .demo .no-thumbnail .widget-entry-cards div.widget-entry-card-content { font-size: 18px; margin-bottom: 0.6em; }
 .admin-settings .demo .no-thumbnail .widget-entry-cards.large-thumb-on .card-title { max-height: none; position: static; }
 .admin-settings .demo .no-thumbnail .entry-card-meta { position: static; background-color: transparent; margin-top: 0.4em; }

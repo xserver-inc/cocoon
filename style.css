@@ -558,7 +558,8 @@ img {
   display: none;
 }
 .no-thumbnail .card-content,
-.no-thumbnail .widget-entry-cards .widget-entry-card-content {
+.no-thumbnail .widget-entry-cards .widget-entry-card-content,
+.no-thumbnail .rect-mini-card .related-entry-card-content {
   margin: 0;
 }
 .no-thumbnail .widget-entry-cards div.widget-entry-card-content {
