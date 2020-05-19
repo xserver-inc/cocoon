@@ -12,6 +12,11 @@ if (is_admin_php_page()) {
   header('X-XSS-Protection: 0');
 }
 
+// //フィード用のヘッダー出力
+// if (is_feed()) {
+//   header('Content-type: application/rss+xml');
+// }
+
 // アイキャッチ画像を有効化
 add_theme_support('post-thumbnails');
 
