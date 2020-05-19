@@ -121,13 +121,13 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <?php
             $options = array(
-              'entry_card' => __( 'エントリーカード（デフォルト）', THEME_NAME ),
-              'big_card_first' => __( '大きなカード（先頭のみ）', THEME_NAME ),
-              'big_card' => __( '大きなカード', THEME_NAME ),
-              'vertical_card_2' => __( '縦型カード2列', THEME_NAME ),
-              'vertical_card_3' => __( '縦型カード3列', THEME_NAME ),
-              'tile_card_2' => __( 'タイルカード2列', THEME_NAME ),
-              'tile_card_3' => __( 'タイルカード3列', THEME_NAME ),
+              'entry_card' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-entry-card.png').__( 'エントリーカード（デフォルト）', THEME_NAME ),
+              'big_card_first' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-big-card-first.png').__( '大きなカード（先頭のみ）', THEME_NAME ),
+              'big_card' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-big-card.png').__( '大きなカード', THEME_NAME ),
+              'vertical_card_2' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-vertical-card-2.png').__( '縦型カード2列', THEME_NAME ),
+              'vertical_card_3' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-vertical-card-3.png').__( '縦型カード3列', THEME_NAME ),
+              'tile_card_2' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-tile-card-2.png').__( 'タイルカード2列', THEME_NAME ),
+              'tile_card_3' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/ect-tile-card-3.png').__( 'タイルカード3列', THEME_NAME ),
             );
             generate_radiobox_tag(OP_ENTRY_CARD_TYPE, $options, get_entry_card_type());
             generate_tips_tag(__( '一覧リストのカード表示を変更します。カード表示数を変更するには、「設定 → 表示設定 → 1ページに表示する最大投稿数」から変更してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/index-entry-card-type/'));
