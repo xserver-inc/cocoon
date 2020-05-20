@@ -61,7 +61,7 @@ $count = get_index_category_entry_card_count();
         </div><!-- .list -->
         <?php if($cat = get_category($cat_id)): ?>
           <div class="list-more-button-wrap">
-              <a href="<?php echo trailingslashit(get_bloginfo('url')) ?>archives/category/<?php echo $cat->slug ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
+              <a href="<?php echo get_category_link($cat_id); ?>" class="list-more-button"><?php echo __( 'もっと見る', THEME_NAME ); ?></a>
           </div>
         <?php endif; ?>
       </div><!-- .list-column -->
