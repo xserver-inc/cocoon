@@ -47,11 +47,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <?php
             generate_label_tag(OP_FRONT_PAGE_TYPE, __( '表示形式', THEME_NAME ));
             $options = array(
-              'index' => __( '一覧', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
-              'tab_index' => __( 'タブ一覧', THEME_NAME ),
-              'category' => __( 'カテゴリごと', THEME_NAME ),
-              'category_2_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
-              'category_3_columns' => __( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ).__( '※サイドバーを表示しないレイアウト向け。', THEME_NAME ).__( '表示数は3の倍数推奨。', THEME_NAME ),
+              'index' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-index.png').__( '一覧', THEME_NAME ).__( '（デフォルト）', THEME_NAME ),
+              'tab_index' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-tab-min.gif').__( 'タブ一覧', THEME_NAME ),
+              'category' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categories-min.gif').__( 'カテゴリごと', THEME_NAME ),
+              'category_2_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-2-min.gif').__( 'カテゴリごと', THEME_NAME ).__( '（2カラム）', THEME_NAME ),
+              'category_3_columns' => get_image_preview_tag('https://im-cocoon.net/wp-content/uploads/fpt-categoly-columnn-3-min.gif').__( 'カテゴリごと', THEME_NAME ).__( '（3カラム）', THEME_NAME ).__( '※サイドバーを表示しないレイアウト向け。', THEME_NAME ).__( '表示数は3の倍数推奨。', THEME_NAME ),
             );
             generate_radiobox_tag(OP_FRONT_PAGE_TYPE, $options, get_front_page_type());
             generate_tips_tag(__( 'フロントページの表示形式を選択します。', THEME_NAME ));
